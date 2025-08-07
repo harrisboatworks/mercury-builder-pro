@@ -32,157 +32,22 @@ Deno.serve(async (req) => {
     
     const supabase = createClient(supabaseUrl, supabaseKey)
 
-    // Try multiple URLs to get comprehensive inventory
-    const urls = [
-      'https://www.harrisboatworks.ca/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low',
-      'https://www.harrisboatworks.ca/search/inventory/availability/In%20Stock',
-      'https://www.harrisboatworks.ca/search/inventory/type/Outboard%20Motors'
-    ]
+    // Fetch the Harris Boat Works inventory page
+    const response = await fetch('https://www.harrisboatworks.ca/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low')
     
-    let allMotors: MotorData[] = []
-    
-    for (const url of urls) {
-      try {
-        console.log(`Fetching from: ${url}`)
-        const response = await fetch(url)
-        
-        if (!response.ok) {
-          console.log(`Failed to fetch ${url}: ${response.status}`)
-          continue
-        }
-        
-        const html = await response.text()
-        console.log(`Fetched HTML from ${url}`)
-        
-        // Parse the motor data from HTML
-        const motors = parseMotorData(html)
-        console.log(`Parsed ${motors.length} motors from ${url}`)
-        
-        allMotors.push(...motors)
-      } catch (error) {
-        console.error(`Error fetching ${url}:`, error)
-        continue
-      }
+    if (!response.ok) {
+      throw new Error(`Failed to fetch: ${response.status}`)
     }
     
-    // Remove duplicates across all URLs
-    const uniqueMotors = allMotors.filter((motor, index, self) => 
-      index === self.findIndex(m => m.model === motor.model && m.base_price === motor.base_price)
-    )
+    const html = await response.text()
+    console.log('Fetched HTML from Harris Boat Works')
     
-    console.log(`Found ${uniqueMotors.length} unique motors total`)
+    // Parse the motor data from HTML
+    const motors = parseMotorData(html)
+    console.log(`Parsed ${motors.length} motors from page`)
     
-    if (uniqueMotors.length === 0) {
-      // Add some sample motors if scraping fails completely
-      const sampleMotors: MotorData[] = [
-        // Portable motors (≤20HP)
-        {
-          make: 'Mercury',
-          model: 'FourStroke 2.5HP',
-          year: 2025,
-          horsepower: 2.5,
-          base_price: 1270,
-          motor_type: 'FourStroke',
-          availability: 'Brochure',
-          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/7b55e247-7752-4f77-a716-56afa3df9f57.jpg'
-        },
-        {
-          make: 'Mercury',
-          model: 'FourStroke 9.9HP',
-          year: 2025,
-          horsepower: 9.9,
-          base_price: 2999,
-          motor_type: 'FourStroke',
-          availability: 'In Stock',
-          image_url: 'https://cdnmedia.endeavorsuite.com/images/organizations/873ce1ca-42a6-40ae-ac55-07757f842998/inventory/13450257/9.9EFI.jpg'
-        },
-        {
-          make: 'Mercury',
-          model: 'FourStroke 15HP',
-          year: 2025,
-          horsepower: 15,
-          base_price: 3500,
-          motor_type: 'FourStroke',
-          availability: 'Brochure',
-          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/15EFI.jpg'
-        },
-        // Mid-range motors (25-100HP)
-        {
-          make: 'Mercury',
-          model: 'FourStroke 25HP',
-          year: 2025,
-          horsepower: 25,
-          base_price: 4500,
-          motor_type: 'FourStroke',
-          availability: 'Brochure',
-          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/25EFI.jpg'
-        },
-        {
-          make: 'Mercury', 
-          model: 'FourStroke 40HP',
-          year: 2025,
-          horsepower: 40,
-          base_price: 6800,
-          motor_type: 'FourStroke',
-          availability: 'Brochure',
-          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/40EFI.jpg'
-        },
-        {
-          make: 'Mercury',
-          model: 'FourStroke 60HP',
-          year: 2025,
-          horsepower: 60,
-          base_price: 9200,
-          motor_type: 'FourStroke', 
-          availability: 'Brochure',
-          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/60EFI.jpg'
-        },
-        // High-performance motors (115-200HP)
-        {
-          make: 'Mercury',
-          model: 'Pro XS 115HP',
-          year: 2025,
-          horsepower: 115,
-          base_price: 15500,
-          motor_type: 'Pro XS',
-          availability: 'Brochure',
-          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/115ProXS.jpg'
-        },
-        {
-          make: 'Mercury',
-          model: 'Pro XS 175HP',
-          year: 2025,
-          horsepower: 175,
-          base_price: 22500,
-          motor_type: 'Pro XS',
-          availability: 'Brochure',
-          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/175ProXS.jpg'
-        },
-        // V8 & Racing motors (200+HP)
-        {
-          make: 'Mercury',
-          model: 'Verado 250HP',
-          year: 2025,
-          horsepower: 250,
-          base_price: 32500,
-          motor_type: 'Verado',
-          availability: 'Brochure',
-          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/250Verado.jpg'
-        },
-        {
-          make: 'Mercury',
-          model: 'Verado 350HP',
-          year: 2025,
-          horsepower: 350,
-          base_price: 42500,
-          motor_type: 'Verado',
-          availability: 'Brochure',
-          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/350Verado.jpg'
-        }
-      ]
-      
-      console.log('No motors scraped, using sample data')
-      uniqueMotors.push(...sampleMotors)
+    if (motors.length === 0) {
+      throw new Error('No motors found on page')
     }
 
     // Clear existing data and insert new data
@@ -198,7 +63,7 @@ Deno.serve(async (req) => {
     // Insert new motor data
     const { data, error } = await supabase
       .from('motor_models')
-      .insert(uniqueMotors)
+      .insert(motors)
       .select()
 
     if (error) {
@@ -239,68 +104,75 @@ function parseMotorData(html: string): MotorData[] {
   const motors: MotorData[] = []
   
   try {
-    console.log('Starting to parse motor data from HTML...')
+    // Extract JSON data from script tags that contain motor information
+    const jsonMatches = html.match(/"item":"[^"]*Mercury[^"]*","name":"[^"]*","locationid":[^}]*}/g)
     
-    // Try multiple parsing approaches for better coverage
-    
-    // 1. Look for structured JSON data in script tags
-    const scriptMatches = html.match(/<script[^>]*>[\s\S]*?<\/script>/gi)
-    if (scriptMatches) {
-      for (const script of scriptMatches) {
+    if (jsonMatches) {
+      for (const match of jsonMatches) {
         try {
-          // Look for inventory data patterns
-          const inventoryMatches = script.match(/("item"[^}]*"price"[^}]*)/g)
-          if (inventoryMatches) {
-            for (const match of inventoryMatches) {
-              try {
-                const cleanMatch = match.replace(/,$/, '') // Remove trailing comma
-                const jsonData = JSON.parse(`{${cleanMatch}}`)
-                
-                if (jsonData.item && jsonData.item.toLowerCase().includes('mercury')) {
-                  const motor = extractMotorFromJson(jsonData)
-                  if (motor && motor.horsepower > 0 && motor.base_price > 0) {
-                    motors.push(motor)
-                  }
-                }
-              } catch (e) {
-                // Continue with other matches
-              }
-            }
+          const jsonData = JSON.parse(`{${match}}`)
+          
+          // Extract horsepower from the name or other fields
+          const hpMatch = jsonData.name?.match(/(\d+(?:\.\d+)?)\s*HP/i)
+          const hp = hpMatch ? parseFloat(hpMatch[1]) : 0
+          
+          // Determine motor type
+          let motorType = 'Outboard'
+          if (jsonData.name?.toLowerCase().includes('fourstroke')) {
+            motorType = 'FourStroke'
+          } else if (jsonData.name?.toLowerCase().includes('pro xs')) {
+            motorType = 'Pro XS'
+          } else if (jsonData.name?.toLowerCase().includes('verado')) {
+            motorType = 'Verado'
           }
-        } catch (e) {
-          // Continue with other scripts
-        }
-      }
-    }
-    
-    // 2. Parse from product grid/list HTML structure
-    const productMatches = html.match(/<div[^>]*class="[^"]*(?:product|item|listing)[^"]*"[^>]*>[\s\S]*?(?=<div[^>]*class="[^"]*(?:product|item|listing)|$)/gi)
-    if (productMatches) {
-      for (const productHtml of productMatches) {
-        try {
-          const motor = extractMotorFromHtml(productHtml)
-          if (motor && motor.horsepower > 0 && motor.base_price > 0) {
+
+          const motor: MotorData = {
+            make: jsonData.itemMake || 'Mercury',
+            model: jsonData.name || jsonData.item || 'Unknown Model',
+            year: jsonData.itemYear || 2025,
+            horsepower: hp,
+            base_price: jsonData.itemPrice || jsonData.unitPrice || 0,
+            motor_type: motorType,
+            image_url: jsonData.itemThumbNailUrl ? `https:${jsonData.itemThumbNailUrl}` : null,
+            availability: 'In Stock', // Default, could be parsed from HTML if available
+          }
+
+          if (motor.horsepower > 0 && motor.base_price > 0) {
             motors.push(motor)
           }
-        } catch (e) {
-          // Continue with other products
+        } catch (parseError) {
+          console.warn('Failed to parse motor JSON:', parseError)
         }
       }
     }
+
+    // Also try to parse from the main content structure
+    const itemMatches = html.match(/<div[^>]*class="[^"]*item[^"]*"[^>]*>[\s\S]*?<\/div>/gi)
     
-    // 3. Try parsing table rows if they exist
-    const tableRowMatches = html.match(/<tr[^>]*>[\s\S]*?<\/tr>/gi)
-    if (tableRowMatches) {
-      for (const row of tableRowMatches) {
-        if (row.toLowerCase().includes('mercury')) {
-          try {
-            const motor = extractMotorFromTableRow(row)
-            if (motor && motor.horsepower > 0 && motor.base_price > 0) {
-              motors.push(motor)
+    if (itemMatches) {
+      for (const itemHtml of itemMatches) {
+        try {
+          const nameMatch = itemHtml.match(/>([^<]*Mercury[^<]*)</i)
+          const priceMatch = itemHtml.match(/\$([0-9,]+(?:\.\d{2})?)/i)
+          const hpMatch = itemHtml.match(/(\d+(?:\.\d+)?)\s*(?:HP|bhp)/i)
+          const imageMatch = itemHtml.match(/src="([^"]*(?:jpg|jpeg|png|gif)[^"]*)"/i)
+          
+          if (nameMatch && priceMatch && hpMatch) {
+            const motor: MotorData = {
+              make: 'Mercury',
+              model: nameMatch[1].trim(),
+              year: 2025,
+              horsepower: parseFloat(hpMatch[1]),
+              base_price: parseFloat(priceMatch[1].replace(/,/g, '')),
+              motor_type: nameMatch[1].toLowerCase().includes('fourstroke') ? 'FourStroke' : 'Outboard',
+              image_url: imageMatch ? `https:${imageMatch[1]}` : null,
+              availability: 'In Stock',
             }
-          } catch (e) {
-            // Continue with other rows
+            
+            motors.push(motor)
           }
+        } catch (parseError) {
+          console.warn('Failed to parse motor HTML:', parseError)
         }
       }
     }
@@ -309,178 +181,11 @@ function parseMotorData(html: string): MotorData[] {
     console.error('Error parsing motor data:', error)
   }
 
-  // Remove duplicates based on model name and price
+  // Remove duplicates based on model name
   const uniqueMotors = motors.filter((motor, index, self) => 
-    index === self.findIndex(m => m.model === motor.model && m.base_price === motor.base_price)
+    index === self.findIndex(m => m.model === motor.model)
   )
 
-  console.log(`Parsed ${uniqueMotors.length} unique motors from ${motors.length} total found`)
+  console.log(`Parsed ${uniqueMotors.length} unique motors`)
   return uniqueMotors
-}
-
-function extractMotorFromJson(jsonData: any): MotorData | null {
-  try {
-    // Extract horsepower
-    const nameOrItem = jsonData.name || jsonData.item || ''
-    const hpMatch = nameOrItem.match(/(\d+(?:\.\d+)?)\s*(?:HP|bhp)/i)
-    const hp = hpMatch ? parseFloat(hpMatch[1]) : 0
-    
-    // Extract price
-    const price = parseFloat(jsonData.price || jsonData.itemPrice || jsonData.unitPrice || 0)
-    
-    // Determine motor type
-    let motorType = 'Outboard'
-    const lowerName = nameOrItem.toLowerCase()
-    if (lowerName.includes('fourstroke') || lowerName.includes('4-stroke')) {
-      motorType = 'FourStroke'
-    } else if (lowerName.includes('pro xs')) {
-      motorType = 'Pro XS'
-    } else if (lowerName.includes('verado')) {
-      motorType = 'Verado'
-    }
-    
-    // Determine availability status
-    let availability = 'Brochure' // Default
-    const availabilityText = (jsonData.availability || jsonData.status || '').toLowerCase()
-    if (availabilityText.includes('in stock') || availabilityText.includes('available')) {
-      availability = 'In Stock'
-    } else if (availabilityText.includes('order') || availabilityText.includes('coming')) {
-      availability = 'On Order'
-    } else if (availabilityText.includes('sold') || availabilityText.includes('unavailable')) {
-      availability = 'Out of Stock'
-    }
-
-    return {
-      make: jsonData.make || jsonData.itemMake || 'Mercury',
-      model: nameOrItem.trim(),
-      year: parseInt(jsonData.year || jsonData.itemYear || '2025'),
-      horsepower: hp,
-      base_price: price,
-      motor_type: motorType,
-      engine_type: jsonData.engineType || jsonData.engine_type,
-      image_url: jsonData.image || jsonData.itemThumbNailUrl || jsonData.thumbnail || 
-                (jsonData.itemThumbNailUrl ? `https:${jsonData.itemThumbNailUrl}` : null),
-      availability: availability,
-      stock_number: jsonData.stockNumber || jsonData.stock_number || jsonData.sku
-    }
-  } catch (e) {
-    return null
-  }
-}
-
-function extractMotorFromHtml(html: string): MotorData | null {
-  try {
-    // Extract name/model
-    const nameMatch = html.match(/>([^<]*Mercury[^<]*)<\/|>([^<]*\d+(?:\.\d+)?\s*HP[^<]*)</i)
-    const name = nameMatch ? (nameMatch[1] || nameMatch[2] || '').trim() : ''
-    
-    if (!name) return null
-    
-    // Extract horsepower
-    const hpMatch = name.match(/(\d+(?:\.\d+)?)\s*(?:HP|bhp)/i)
-    const hp = hpMatch ? parseFloat(hpMatch[1]) : 0
-    
-    // Extract price
-    const priceMatch = html.match(/\$([0-9,]+(?:\.\d{2})?)/i)
-    const price = priceMatch ? parseFloat(priceMatch[1].replace(/,/g, '')) : 0
-    
-    // Extract image with better patterns
-    const imagePatterns = [
-      /src="([^"]*(?:jpg|jpeg|png|gif|webp)[^"]*)"[^>]*alt="[^"]*motor[^"]*"/i,
-      /src="([^"]*(?:jpg|jpeg|png|gif|webp)[^"]*)"[^>]*class="[^"]*(?:product|motor|item)[^"]*"/i,
-      /src="([^"]*endeavorsuite[^"]*(?:jpg|jpeg|png|gif|webp)[^"]*)"/i,
-      /src="([^"]*(?:jpg|jpeg|png|gif|webp)[^"]*)"/i
-    ]
-    
-    let imageUrl = null
-    for (const pattern of imagePatterns) {
-      const imageMatch = html.match(pattern)
-      if (imageMatch) {
-        imageUrl = imageMatch[1]
-        break
-      }
-    }
-    
-    // Determine availability from text
-    let availability = 'Brochure'
-    if (html.toLowerCase().includes('in stock')) {
-      availability = 'In Stock'
-    } else if (html.toLowerCase().includes('on order') || html.toLowerCase().includes('coming soon')) {
-      availability = 'On Order'
-    } else if (html.toLowerCase().includes('sold') || html.toLowerCase().includes('out of stock')) {
-      availability = 'Out of Stock'
-    }
-    
-    // Determine motor type
-    let motorType = 'Outboard'
-    const lowerName = name.toLowerCase()
-    if (lowerName.includes('fourstroke') || lowerName.includes('4-stroke')) {
-      motorType = 'FourStroke'
-    } else if (lowerName.includes('pro xs')) {
-      motorType = 'Pro XS'
-    } else if (lowerName.includes('verado')) {
-      motorType = 'Verado'
-    }
-
-    return {
-      make: 'Mercury',
-      model: name,
-      year: 2025,
-      horsepower: hp,
-      base_price: price,
-      motor_type: motorType,
-      image_url: imageUrl && !imageUrl.startsWith('http') ? `https:${imageUrl}` : imageUrl,
-      availability: availability
-    }
-  } catch (e) {
-    return null
-  }
-}
-
-function extractMotorFromTableRow(html: string): MotorData | null {
-  try {
-    const cells = html.match(/<td[^>]*>[\s\S]*?<\/td>/gi) || []
-    
-    let name = '', price = 0, hp = 0, availability = 'Brochure'
-    
-    for (const cell of cells) {
-      const cellText = cell.replace(/<[^>]*>/g, '').trim()
-      
-      // Check for motor name with HP
-      const hpMatch = cellText.match(/Mercury.*?(\d+(?:\.\d+)?)\s*(?:HP|bhp)/i)
-      if (hpMatch) {
-        name = cellText
-        hp = parseFloat(hpMatch[1])
-      }
-      
-      // Check for price
-      const priceMatch = cellText.match(/\$([0-9,]+(?:\.\d{2})?)/i)
-      if (priceMatch) {
-        price = parseFloat(priceMatch[1].replace(/,/g, ''))
-      }
-      
-      // Check for availability
-      if (cellText.toLowerCase().includes('in stock')) {
-        availability = 'In Stock'
-      } else if (cellText.toLowerCase().includes('order')) {
-        availability = 'On Order'
-      }
-    }
-    
-    if (name && hp > 0 && price > 0) {
-      return {
-        make: 'Mercury',
-        model: name,
-        year: 2025,
-        horsepower: hp,
-        base_price: price,
-        motor_type: name.toLowerCase().includes('fourstroke') ? 'FourStroke' : 'Outboard',
-        availability: availability
-      }
-    }
-    
-    return null
-  } catch (e) {
-    return null
-  }
 }
