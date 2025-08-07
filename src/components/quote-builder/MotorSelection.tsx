@@ -11,32 +11,147 @@ interface MotorSelectionProps {
   onStepComplete: (motor: Motor) => void;
 }
 
-// Mock data - will be replaced with real scraped data
+// Expanded mock data - will be replaced with real scraped data
 const mockMotors: Motor[] = [
+  // Portable Motors (2.5-20hp)
   {
     id: '1',
-    model: 'Mercury 9.9HP FourStroke',
-    hp: 9.9,
-    price: 4299,
+    model: 'Mercury 2.5HP FourStroke',
+    hp: 2.5,
+    price: 1299,
     image: '/placeholder.svg',
     stockStatus: 'In Stock',
     category: 'portable',
     type: 'FourStroke',
-    specs: 'Portable, lightweight design perfect for small boats'
+    specs: 'Ultra-lightweight portable motor for small boats and dinghies'
   },
   {
     id: '2',
+    model: 'Mercury 6HP FourStroke',
+    hp: 6,
+    price: 2899,
+    image: '/placeholder.svg',
+    stockStatus: 'In Stock',
+    category: 'portable',
+    type: 'FourStroke',
+    specs: 'Perfect for fishing boats, sailboat auxiliary power, and small craft'
+  },
+  {
+    id: '3',
+    model: 'Mercury 9.9HP FourStroke',
+    hp: 9.9,
+    price: 4299,
+    image: '/placeholder.svg',
+    stockStatus: 'On Order',
+    category: 'portable',
+    type: 'FourStroke',
+    specs: 'Popular choice for small aluminum boats and tender applications'
+  },
+  {
+    id: '4',
+    model: 'Mercury 15HP FourStroke',
+    hp: 15,
+    price: 5799,
+    image: '/placeholder.svg',
+    stockStatus: 'In Stock',
+    category: 'portable',
+    type: 'FourStroke',
+    specs: 'Reliable power for jon boats, small pontoons, and utility craft'
+  },
+  {
+    id: '5',
+    model: 'Mercury 20HP FourStroke',
+    hp: 20,
+    price: 6899,
+    image: '/placeholder.svg',
+    stockStatus: 'In Stock',
+    category: 'portable',
+    type: 'FourStroke',
+    specs: 'Maximum portable power with tiller or remote steering options'
+  },
+
+  // Mid-Range Motors (25-100hp)
+  {
+    id: '6',
+    model: 'Mercury 25HP FourStroke',
+    hp: 25,
+    price: 8299,
+    image: '/placeholder.svg',
+    stockStatus: 'In Stock',
+    category: 'mid-range',
+    type: 'FourStroke',
+    specs: 'Entry-level big motor power for fishing and recreational boats'
+  },
+  {
+    id: '7',
+    model: 'Mercury 40HP FourStroke',
+    hp: 40,
+    price: 10750,
+    image: '/placeholder.svg',
+    stockStatus: 'In Stock',
+    category: 'mid-range',
+    type: 'FourStroke',
+    specs: 'Smooth and efficient power for mid-size boats'
+  },
+  {
+    id: '8',
     model: 'Mercury 60HP FourStroke',
     hp: 60,
     price: 12750,
     image: '/placeholder.svg',
-    stockStatus: 'In Stock',
+    stockStatus: 'Out of Stock',
     category: 'mid-range',
     type: 'FourStroke',
     specs: 'Reliable mid-range power for fishing and recreational boats'
   },
   {
-    id: '3',
+    id: '9',
+    model: 'Mercury 75HP FourStroke',
+    hp: 75,
+    price: 14299,
+    image: '/placeholder.svg',
+    stockStatus: 'In Stock',
+    category: 'mid-range',
+    type: 'FourStroke',
+    specs: 'Perfect balance of power and fuel efficiency'
+  },
+  {
+    id: '10',
+    model: 'Mercury 90HP FourStroke',
+    hp: 90,
+    price: 15999,
+    image: '/placeholder.svg',
+    stockStatus: 'On Order',
+    category: 'mid-range',
+    type: 'FourStroke',
+    specs: 'High-output performance for larger recreational boats'
+  },
+
+  // High Performance Motors (115-200hp)
+  {
+    id: '11',
+    model: 'Mercury 115HP FourStroke',
+    hp: 115,
+    price: 17499,
+    image: '/placeholder.svg',
+    stockStatus: 'In Stock',
+    category: 'high-performance',
+    type: 'FourStroke',
+    specs: 'Entry-level high performance with advanced features'
+  },
+  {
+    id: '12',
+    model: 'Mercury 135HP Pro XS',
+    hp: 135,
+    price: 19999,
+    image: '/placeholder.svg',
+    stockStatus: 'In Stock',
+    category: 'high-performance',
+    type: 'Pro XS',
+    specs: 'Tournament-grade performance for serious anglers'
+  },
+  {
+    id: '13',
     model: 'Mercury 150HP Pro XS',
     hp: 150,
     price: 18990,
@@ -47,7 +162,53 @@ const mockMotors: Motor[] = [
     specs: 'High-performance engine for serious anglers and speed enthusiasts'
   },
   {
-    id: '4',
+    id: '14',
+    model: 'Mercury 175HP Pro XS',
+    hp: 175,
+    price: 21750,
+    image: '/placeholder.svg',
+    stockStatus: 'In Stock',
+    category: 'high-performance',
+    type: 'Pro XS',
+    specs: 'Maximum hole shot and acceleration for competitive fishing'
+  },
+  {
+    id: '15',
+    model: 'Mercury 200HP FourStroke',
+    hp: 200,
+    price: 23299,
+    image: '/placeholder.svg',
+    stockStatus: 'In Stock',
+    category: 'high-performance',
+    type: 'FourStroke',
+    specs: 'Smooth, quiet power for luxury and fishing applications'
+  },
+
+  // V8 & Racing Motors (225-600hp)
+  {
+    id: '16',
+    model: 'Mercury 225HP Verado',
+    hp: 225,
+    price: 26500,
+    image: '/placeholder.svg',
+    stockStatus: 'In Stock',
+    category: 'v8-racing',
+    type: 'Verado',
+    specs: 'Supercharged V6 with premium features and smooth operation'
+  },
+  {
+    id: '17',
+    model: 'Mercury 250HP Pro XS',
+    hp: 250,
+    price: 28999,
+    image: '/placeholder.svg',
+    stockStatus: 'On Order',
+    category: 'v8-racing',
+    type: 'Pro XS',
+    specs: 'Racing-bred power for tournament fishing and high performance'
+  },
+  {
+    id: '18',
     model: 'Mercury 300HP Verado',
     hp: 300,
     price: 28500,
@@ -56,6 +217,28 @@ const mockMotors: Motor[] = [
     category: 'v8-racing',
     type: 'Verado',
     specs: 'Premium supercharged V8 power for ultimate performance'
+  },
+  {
+    id: '19',
+    model: 'Mercury 350HP Verado',
+    hp: 350,
+    price: 32999,
+    image: '/placeholder.svg',
+    stockStatus: 'In Stock',
+    category: 'v8-racing',
+    type: 'Verado',
+    specs: 'Maximum Verado power with advanced digital features'
+  },
+  {
+    id: '20',
+    model: 'Mercury 400HP Verado',
+    hp: 400,
+    price: 38750,
+    image: '/placeholder.svg',
+    stockStatus: 'On Order',
+    category: 'v8-racing',
+    type: 'Verado',
+    specs: 'Top-tier outboard power for luxury yachts and center consoles'
   }
 ];
 
