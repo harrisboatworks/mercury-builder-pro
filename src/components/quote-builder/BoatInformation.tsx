@@ -42,12 +42,48 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
   });
 
   const boatTypes = [
-    { id: 'fishing', name: 'Fishing Boat', icon: '🎣' },
-    { id: 'pontoon', name: 'Pontoon', icon: '🛥️' },
-    { id: 'speed', name: 'Speed Boat', icon: '🚤' },
-    { id: 'deck', name: 'Deck Boat', icon: '⛵' },
-    { id: 'bass', name: 'Bass Boat', icon: '🐟' },
-    { id: 'work', name: 'Work Boat', icon: '⚓' }
+    { 
+      id: 'fishing', 
+      name: 'Fishing', 
+      subtitle: 'Bass • Center Console • Jon Boats',
+      badge: 'Popular Choice',
+      gradient: 'from-blue-500 to-blue-600'
+    },
+    { 
+      id: 'pontoon', 
+      name: 'Pontoon', 
+      subtitle: 'Party Barges • Fishing Ponts • Luxury',
+      badge: 'Family Fun',
+      gradient: 'from-purple-500 to-pink-500'
+    },
+    { 
+      id: 'speed', 
+      name: 'Speed Boat', 
+      subtitle: 'Performance • Wakeboard • Ski Boats',
+      badge: 'Thrill Seeker',
+      gradient: 'from-orange-500 to-yellow-500'
+    },
+    { 
+      id: 'deck', 
+      name: 'Deck Boat', 
+      subtitle: 'Bow Riders • Runabouts • Cruisers',
+      badge: 'Versatile',
+      gradient: 'from-teal-500 to-cyan-500'
+    },
+    { 
+      id: 'bass', 
+      name: 'Bass Boat', 
+      subtitle: 'Tournament • Recreation • Pro Angler',
+      badge: 'Serious Angler',
+      gradient: 'from-green-500 to-emerald-500'
+    },
+    { 
+      id: 'work', 
+      name: 'Work Boat', 
+      subtitle: 'Commercial • Utility • Transport',
+      badge: 'Heavy Duty',
+      gradient: 'from-gray-600 to-gray-700'
+    }
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -87,23 +123,58 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
       <form onSubmit={handleSubmit} className="space-y-8">
         {/* Boat Type Selection */}
         <Card className="p-6">
-          <div className="space-y-4">
-            <Label className="text-lg font-semibold flex items-center gap-2">
-              <Ship className="w-5 h-5" />
-              Boat Type
-            </Label>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {boatTypes.map(type => (
-                <Button
+          <div className="space-y-6">
+            <div className="text-center space-y-2">
+              <Label className="text-2xl font-bold flex items-center justify-center gap-2">
+                🎯 Select Your Boat Type
+              </Label>
+              <p className="text-muted-foreground">Choose the category that best describes your boat</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {boatTypes.map((type, index) => (
+                <div
                   key={type.id}
-                  type="button"
-                  variant={boatInfo.type === type.id ? 'default' : 'outline'}
-                  className="h-20 flex flex-col items-center justify-center space-y-2"
+                  className={`boat-type-card relative cursor-pointer bg-gradient-to-br ${type.gradient} text-white p-6 rounded-2xl min-h-[200px] transition-all duration-300 hover:scale-105 hover:shadow-xl ${
+                    boatInfo.type === type.id 
+                      ? 'ring-4 ring-primary shadow-2xl scale-105' 
+                      : 'hover:shadow-lg'
+                  }`}
                   onClick={() => setBoatInfo(prev => ({ ...prev, type: type.id }))}
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <span className="text-2xl">{type.icon}</span>
-                  <span className="text-sm">{type.name}</span>
-                </Button>
+                  {/* Selection Checkmark */}
+                  {boatInfo.type === type.id && (
+                    <div className="absolute top-3 right-3 bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center animate-in zoom-in-50 duration-300">
+                      <CheckCircle2 className="w-5 h-5" />
+                    </div>
+                  )}
+                  
+                  {/* Badge */}
+                  <div className="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
+                    {type.badge}
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex flex-col justify-center items-center text-center h-full space-y-3">
+                    <div className="text-4xl mb-2">
+                      {type.id === 'fishing' && '🎣'}
+                      {type.id === 'pontoon' && '⛵'}
+                      {type.id === 'speed' && '🏁'}
+                      {type.id === 'deck' && '🛥️'}
+                      {type.id === 'bass' && '🦆'}
+                      {type.id === 'work' && '🔧'}
+                    </div>
+                    <h3 className="text-xl font-bold">{type.name}</h3>
+                    <p className="text-sm opacity-90 leading-relaxed">{type.subtitle}</p>
+                  </div>
+                  
+                  {/* Ripple effect container */}
+                  <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
+                    {boatInfo.type === type.id && (
+                      <div className="ripple-effect absolute inset-0 bg-white/20 animate-ping rounded-2xl"></div>
+                    )}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -258,6 +329,8 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
         <TradeInValuation 
           tradeInInfo={tradeInInfo}
           onTradeInChange={setTradeInInfo}
+          currentMotorBrand={boatInfo.currentMotorBrand}
+          currentHp={boatInfo.currentHp}
         />
 
         {/* Navigation */}

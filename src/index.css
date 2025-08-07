@@ -244,4 +244,56 @@
       opacity: 1;
     }
   }
+
+  /* Boat Type Card Animations */
+  .boat-type-card {
+    animation: boat-card-enter 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .boat-type-card:hover .ripple-effect {
+    animation: ripple 0.6s ease-out;
+  }
+
+  .condition-card {
+    animation: condition-card-enter 0.4s ease-out forwards;
+  }
+
+  .condition-card:hover {
+    transform: translateY(-2px);
+  }
+
+  @keyframes boat-card-enter {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  @keyframes condition-card-enter {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }

@@ -13,9 +13,11 @@ import { estimateTradeValue, getTradeValueFactors, type TradeValueEstimate, type
 interface TradeInValuationProps {
   tradeInInfo: TradeInInfo;
   onTradeInChange: (tradeInfo: TradeInInfo) => void;
+  currentMotorBrand?: string;
+  currentHp?: number;
 }
 
-export const TradeInValuation = ({ tradeInInfo, onTradeInChange }: TradeInValuationProps) => {
+export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBrand, currentHp }: TradeInValuationProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
 
@@ -94,12 +96,22 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange }: TradeInValuat
 
         {tradeInInfo.hasTradeIn && (
           <div className="space-y-6 animate-fade-in">
+            {/* Smart Auto-Population Logic */}
+            {currentMotorBrand && currentMotorBrand !== 'No Current Motor' && currentHp ? (
+              <Alert className="border-green-200 bg-green-50 dark:bg-green-950/20">
+                <CheckCircle2 className="w-4 h-4" />
+                <AlertDescription className="text-green-800 dark:text-green-200">
+                  ✅ Using your current motor details for trade-in valuation: {currentMotorBrand} {currentHp}HP
+                </AlertDescription>
+              </Alert>
+            ) : null}
+            
             {/* Trade-In Details */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="trade-brand">Brand *</Label>
                 <Select 
-                  value={tradeInInfo.brand} 
+                  value={tradeInInfo.brand || (currentMotorBrand !== 'No Current Motor' ? currentMotorBrand : '')} 
                   onValueChange={(value) => onTradeInChange({ ...tradeInInfo, brand: value })}
                 >
                   <SelectTrigger>
@@ -135,7 +147,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange }: TradeInValuat
                 <Input
                   id="trade-hp"
                   type="number"
-                  value={tradeInInfo.horsepower || ''}
+                  value={tradeInInfo.horsepower || (currentHp && currentMotorBrand !== 'No Current Motor' ? currentHp : '')}
                   onChange={(e) => onTradeInChange({ ...tradeInInfo, horsepower: parseInt(e.target.value) || 0 })}
                   placeholder="e.g., 115"
                   min="1"
@@ -154,24 +166,44 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange }: TradeInValuat
               </div>
             </div>
 
-            {/* Condition Slider */}
+            {/* Enhanced Condition Selection */}
             <div className="space-y-4">
-              <Label>Condition *</Label>
-              <div className="space-y-3">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  {conditionOptions.map((option) => (
-                    <Button
-                      key={option.value}
-                      type="button"
-                      variant={tradeInInfo.condition === option.value ? 'default' : 'outline'}
-                      className="h-16 flex flex-col items-center justify-center space-y-1"
-                      onClick={() => onTradeInChange({ ...tradeInInfo, condition: option.value as any })}
-                    >
-                      <span className="font-medium">{option.label}</span>
-                      <span className="text-xs text-muted-foreground">{option.description}</span>
-                    </Button>
-                  ))}
-                </div>
+              <Label className="text-lg font-semibold">Motor Condition *</Label>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {conditionOptions.map((option) => (
+                  <div
+                    key={option.value}
+                    className={`condition-card cursor-pointer border-2 rounded-xl p-4 text-center transition-all duration-300 hover:shadow-lg ${
+                      tradeInInfo.condition === option.value 
+                        ? 'border-primary bg-primary/10 shadow-md transform scale-105' 
+                        : 'border-border hover:border-primary/50'
+                    }`}
+                    onClick={() => onTradeInChange({ ...tradeInInfo, condition: option.value as any })}
+                  >
+                    {/* Emoji based on condition */}
+                    <div className="text-3xl mb-2">
+                      {option.value === 'excellent' && '😍'}
+                      {option.value === 'good' && '😊'}
+                      {option.value === 'fair' && '😐'}
+                      {option.value === 'poor' && '😟'}
+                    </div>
+                    <div className="font-bold text-lg">{option.label}</div>
+                    <div className="text-sm text-muted-foreground mt-1">{option.description}</div>
+                    <div className="text-xs text-muted-foreground mt-1">
+                      {option.value === 'excellent' && '<100 hours'}
+                      {option.value === 'good' && '100-500 hours'}
+                      {option.value === 'fair' && '500-1000 hours'}
+                      {option.value === 'poor' && '1000+ hours'}
+                    </div>
+                    
+                    {/* Selection indicator */}
+                    {tradeInInfo.condition === option.value && (
+                      <div className="mt-2 text-primary">
+                        <CheckCircle2 className="w-5 h-5 mx-auto" />
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
 
