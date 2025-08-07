@@ -25,7 +25,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
     currentMotorBrand: '',
     currentHp: 0,
     serialNumber: '',
-    controlType: '',
+    controlType: 'side-mount-external',
     shaftLength: '20'
   });
 
@@ -328,14 +328,28 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="controlType">Control Type</Label>
+                    <Label htmlFor="controlType" className="flex items-center gap-2">
+                      Control Type
+                      <div className="group relative">
+                        <Info className="w-4 h-4 text-muted-foreground hover:text-primary cursor-help" />
+                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block w-72 p-3 bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 rounded text-xs text-blue-800 dark:text-blue-200 z-10">
+                          <div className="space-y-1">
+                            <div><strong>External Box:</strong> Control box mounted on side of console</div>
+                            <div><strong>Recessed Panel:</strong> Control flush-mounted into console panel</div>
+                            <div><strong>Binnacle/Top Mount:</strong> Control mounted on top of console</div>
+                            <div><strong>Tiller:</strong> Handle control on the motor</div>
+                          </div>
+                        </div>
+                      </div>
+                    </Label>
                     <Select value={boatInfo.controlType} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, controlType: value }))}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select control type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="side-mount">Side Mount</SelectItem>
-                        <SelectItem value="binnacle">Binnacle/Top Mount</SelectItem>
+                        <SelectItem value="side-mount-external">Side Mount - External Box</SelectItem>
+                        <SelectItem value="side-mount-recessed">Side Mount - Recessed Panel</SelectItem>
+                        <SelectItem value="binnacle-top">Binnacle/Top Mount</SelectItem>
                         <SelectItem value="tiller">Tiller</SelectItem>
                         <SelectItem value="not-sure">Not Sure</SelectItem>
                       </SelectContent>
