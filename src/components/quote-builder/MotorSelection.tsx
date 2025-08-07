@@ -284,14 +284,11 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                 </div>
 
                 {motor.image && motor.image !== '/placeholder.svg' && (
-                  <div className="aspect-square bg-muted rounded-lg overflow-hidden p-4">
+                  <div className="aspect-video bg-muted rounded-lg overflow-hidden">
                     <img 
                       src={motor.image} 
                       alt={motor.model}
-                      className="w-full h-full object-contain"
-                      onError={(e) => {
-                        e.currentTarget.src = '/placeholder.svg';
-                      }}
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 )}
