@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -21,6 +21,17 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
 
+  // Auto-populate trade-in info when component mounts
+  React.useEffect(() => {
+    if (tradeInInfo.hasTradeIn && currentMotorBrand && currentMotorBrand !== 'No Current Motor' && currentHp) {
+      onTradeInChange({
+        ...tradeInInfo,
+        brand: tradeInInfo.brand || currentMotorBrand,
+        horsepower: tradeInInfo.horsepower || currentHp
+      });
+    }
+  }, [currentMotorBrand, currentHp, tradeInInfo.hasTradeIn]);
+
   const brandOptions = [
     'Mercury', 'Yamaha', 'Honda', 'Suzuki', 'Evinrude', 'Johnson', 'OMC', 'Mariner', 'Force', 'Other'
   ];
@@ -36,7 +47,15 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
   ];
 
   const handleGetEstimate = async () => {
-    if (!tradeInInfo.brand || !tradeInInfo.year || !tradeInInfo.horsepower) {
+    console.log('Button clicked - Current tradeInInfo:', tradeInInfo);
+    
+    if (!tradeInInfo.brand || !tradeInInfo.year || !tradeInInfo.horsepower || !tradeInInfo.condition) {
+      console.log('Missing required fields:', {
+        brand: tradeInInfo.brand,
+        year: tradeInInfo.year,
+        horsepower: tradeInInfo.horsepower,
+        condition: tradeInInfo.condition
+      });
       return;
     }
 
@@ -111,7 +130,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
               <div className="space-y-2">
                 <Label htmlFor="trade-brand">Brand *</Label>
                 <Select 
-                  value={tradeInInfo.brand || (currentMotorBrand !== 'No Current Motor' ? currentMotorBrand : '')} 
+                  value={tradeInInfo.brand} 
                   onValueChange={(value) => onTradeInChange({ ...tradeInInfo, brand: value })}
                 >
                   <SelectTrigger>
@@ -147,7 +166,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
                 <Input
                   id="trade-hp"
                   type="number"
-                  value={tradeInInfo.horsepower || (currentHp && currentMotorBrand !== 'No Current Motor' ? currentHp : '')}
+                  value={tradeInInfo.horsepower || ''}
                   onChange={(e) => onTradeInChange({ ...tradeInInfo, horsepower: parseInt(e.target.value) || 0 })}
                   placeholder="e.g., 115"
                   min="1"
@@ -222,7 +241,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
             <Button 
               onClick={handleGetEstimate}
               disabled={!tradeInInfo.brand || !tradeInInfo.year || !tradeInInfo.horsepower || !tradeInInfo.condition || isLoading}
-              className="w-full bg-primary hover:bg-primary/90"
+              className={`w-full ${
+                !tradeInInfo.brand || !tradeInInfo.year || !tradeInInfo.horsepower || !tradeInInfo.condition || isLoading
+                  ? 'bg-muted text-muted-foreground cursor-not-allowed' 
+                  : 'bg-primary hover:bg-primary/90'
+              }`}
               size="lg"
             >
               {isLoading ? (
