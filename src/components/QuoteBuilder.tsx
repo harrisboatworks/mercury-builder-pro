@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { LogOut, User } from 'lucide-react';
+import { useAuth } from '@/components/auth/AuthProvider';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { MotorSelection } from './quote-builder/MotorSelection';
@@ -43,6 +46,7 @@ export interface QuoteData {
 }
 
 const QuoteBuilder = () => {
+  const { user, signOut } = useAuth();
   const [currentStep, setCurrentStep] = useState(1);
   const [quoteData, setQuoteData] = useState<QuoteData>({
     motor: null,
@@ -84,27 +88,38 @@ const QuoteBuilder = () => {
       {/* Header */}
       <header className="bg-background border-b border-border">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center space-x-3">
-                <img 
-                  src={harrisLogo} 
-                  alt="Harris Boat Works" 
-                  className="h-12 w-auto"
-                />
-                <div className="border-l border-border h-10"></div>
-                <img 
-                  src={mercuryLogo} 
-                  alt="Mercury Marine" 
-                  className="h-8 w-auto"
-                />
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-6">
+                <div className="flex items-center space-x-3">
+                  <img 
+                    src={harrisLogo} 
+                    alt="Harris Boat Works" 
+                    className="h-12 w-auto"
+                  />
+                  <div className="border-l border-border h-10"></div>
+                  <img 
+                    src={mercuryLogo} 
+                    alt="Mercury Marine" 
+                    className="h-8 w-auto"
+                  />
+                </div>
+                <div>
+                  <h1 className="text-2xl font-bold text-foreground">Mercury Outboard Quote Builder</h1>
+                  <p className="text-muted-foreground">Harris Boat Works Authorized Dealer</p>
+                </div>
               </div>
-              <div>
-                <h1 className="text-2xl font-bold text-foreground">Mercury Outboard Quote Builder</h1>
-                <p className="text-muted-foreground">Harris Boat Works Authorized Dealer</p>
+              
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-2">
+                  <User className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-sm text-muted-foreground">{user?.email}</span>
+                </div>
+                <Button variant="outline" size="sm" onClick={() => signOut()}>
+                  <LogOut className="w-4 h-4 mr-2" />
+                  Sign Out
+                </Button>
               </div>
             </div>
-          </div>
         </div>
       </header>
 
