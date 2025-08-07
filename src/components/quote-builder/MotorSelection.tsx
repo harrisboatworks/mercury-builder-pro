@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { RefreshCw, Zap, Anchor, Check, Star, Sparkles } from 'lucide-react';
+import { RefreshCw, Zap, Check, Star, Sparkles } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -447,7 +447,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                     </div>
                     <div className="flex flex-col items-end gap-1">
                       <div className="flex items-center gap-2">
-                        <Anchor className="w-5 h-5 text-primary" />
+                        <img src="/lovable-uploads/29fca629-fbe7-44e9-ab71-703477b2c852.png" alt="Mercury outboard logo" className="w-5 h-5 object-contain" loading="lazy" />
                         <span className="text-sm font-medium text-muted-foreground">{motor.type}</span>
                       </div>
                       {motor.appliedPromotions && motor.appliedPromotions.length > 0 && (
