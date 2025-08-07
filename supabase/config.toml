@@ -1,1 +1,4 @@
 project_id = "eutsoqdpjurknjsshxes"
+
+[functions.scrape-inventory]
+verify_jwt = false
