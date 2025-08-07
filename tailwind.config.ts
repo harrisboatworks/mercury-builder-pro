@@ -61,6 +61,34 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				portable: {
+					DEFAULT: 'hsl(var(--portable))',
+					foreground: 'hsl(var(--portable-foreground))'
+				},
+				'mid-range': {
+					DEFAULT: 'hsl(var(--mid-range))',
+					foreground: 'hsl(var(--mid-range-foreground))'
+				},
+				'high-performance': {
+					DEFAULT: 'hsl(var(--high-performance))',
+					foreground: 'hsl(var(--high-performance-foreground))'
+				},
+				'v8-racing': {
+					DEFAULT: 'hsl(var(--v8-racing))',
+					foreground: 'hsl(var(--v8-racing-foreground))'
+				},
+				'in-stock': {
+					DEFAULT: 'hsl(var(--in-stock))',
+					foreground: 'hsl(var(--in-stock-foreground))'
+				},
+				'on-order': {
+					DEFAULT: 'hsl(var(--on-order))',
+					foreground: 'hsl(var(--on-order-foreground))'
+				},
+				'out-of-stock': {
+					DEFAULT: 'hsl(var(--out-of-stock))',
+					foreground: 'hsl(var(--out-of-stock-foreground))'
 				}
 			},
 			borderRadius: {
