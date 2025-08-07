@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import harrisLogo from '@/assets/harris-logo-black.png';
 import { MotorSelection } from './quote-builder/MotorSelection';
 import { BoatInformation } from './quote-builder/BoatInformation';
 import { QuoteDisplay } from './quote-builder/QuoteDisplay';
@@ -84,9 +85,11 @@ const QuoteBuilder = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">H</span>
-              </div>
+              <img 
+                src={harrisLogo} 
+                alt="Harris Boat Works" 
+                className="h-12 w-auto"
+              />
               <div>
                 <h1 className="text-2xl font-bold text-foreground">Harris Boat Works</h1>
                 <p className="text-muted-foreground">Mercury Outboard Quote Builder</p>
