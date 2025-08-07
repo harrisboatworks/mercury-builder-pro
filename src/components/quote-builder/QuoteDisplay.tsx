@@ -25,18 +25,20 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   const tradeInValue = quoteData.boatInfo?.tradeIn?.estimatedValue || 0;
 
   const motorPrice = quoteData.motor?.price || 0;
-  const totalWithTrade = motorPrice - (hasTradeIn ? tradeInValue : 0);
-  const maxDownPayment = totalWithTrade * 0.5;
-  const downPaymentPercentage = totalWithTrade > 0 ? (downPayment / totalWithTrade) * 100 : 0;
+  const subtotalAfterTrade = motorPrice - (hasTradeIn ? tradeInValue : 0);
+  const hst = subtotalAfterTrade * 0.13;
+  const totalCashPrice = subtotalAfterTrade + hst;
+  const maxDownPayment = totalCashPrice * 0.5;
+  const downPaymentPercentage = totalCashPrice > 0 ? (downPayment / totalCashPrice) * 100 : 0;
 
   const calculatePayments = () => {
-    const principal = totalWithTrade - downPayment;
+    const financedAmount = totalCashPrice - downPayment;
     const monthlyRate = quoteData.financing.rate / 100 / 12;
     const numPayments = term;
     
-    if (principal <= 0) return { weekly: 0, biweekly: 0, monthly: 0 };
+    if (financedAmount <= 0) return { weekly: 0, biweekly: 0, monthly: 0 };
     
-    const monthlyPayment = (principal * monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / 
+    const monthlyPayment = (financedAmount * monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / 
                           (Math.pow(1 + monthlyRate, numPayments) - 1);
     
     return {
@@ -47,7 +49,8 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   };
 
   const payments = calculatePayments();
-  const totalInterest = (payments.monthly * term) - (totalWithTrade - downPayment);
+  const totalFinanced = (payments.monthly * term);
+  const totalInterest = totalFinanced - (totalCashPrice - downPayment);
   const cashSavings = totalInterest;
 
   const handleContinue = () => {
@@ -69,62 +72,99 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Selected Motor */}
-        <Card className="p-6">
+      {/* Complete Financial Breakdown */}
+      <Card className="p-8">
+        <div className="space-y-6">
+          <h3 className="text-2xl font-bold text-center text-foreground border-b border-border pb-4">
+            QUOTE SUMMARY
+          </h3>
+          
+          {/* Selected Motor Section */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold flex items-center gap-2">
-              Selected Motor
-            </h3>
-            
-            <div className="space-y-4">
-              <div className="flex items-start justify-between">
-                <div className="space-y-2">
-                  <h4 className="text-lg font-semibold text-foreground">
-                    {quoteData.motor.model}
-                  </h4>
-                  <p className="text-muted-foreground">{quoteData.motor.specs}</p>
-                  <div className="flex items-center gap-2">
-                    <Badge className="bg-primary text-primary-foreground">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">
+                  <span className="text-xs font-medium text-muted-foreground">MOTOR</span>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-foreground">{quoteData.motor.model}</h4>
+                  <p className="text-sm text-muted-foreground">{quoteData.motor.specs}</p>
+                  <div className="flex items-center gap-2 mt-1">
+                    <Badge className="bg-primary text-primary-foreground text-xs">
                       {quoteData.motor.hp}HP
                     </Badge>
-                    <Badge className={`bg-in-stock text-in-stock-foreground`}>
+                    <Badge className="bg-in-stock text-in-stock-foreground text-xs">
                       {quoteData.motor.stockStatus}
                     </Badge>
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="space-y-1">
-                    {hasTradeIn && (
-                      <p className="text-sm text-muted-foreground line-through">
-                        ${motorPrice.toLocaleString()}
-                      </p>
-                    )}
-                    <p className="text-2xl font-bold text-foreground">
-                      ${totalWithTrade.toLocaleString()}
-                    </p>
-                    <p className="text-sm text-muted-foreground">CAD{hasTradeIn ? ' (After Trade)' : ''}</p>
-                  </div>
+              </div>
+              <div className="text-right">
+                <p className="text-xl font-bold text-foreground">${motorPrice.toLocaleString()}</p>
+              </div>
+            </div>
+            
+            {/* Trade-In Line */}
+            {hasTradeIn && (
+              <div className="flex justify-between items-center py-2">
+                <div className="text-green-600 dark:text-green-400">
+                  <span className="font-medium">Your {quoteData.boatInfo?.tradeIn?.year} {quoteData.boatInfo?.tradeIn?.brand} {quoteData.boatInfo?.tradeIn?.horsepower}HP</span>
                 </div>
+                <div className="text-xl font-bold text-green-600 dark:text-green-400">
+                  -${tradeInValue.toLocaleString()}
+                </div>
+              </div>
+            )}
+            
+            {/* Subtotal */}
+            <div className="border-t border-border pt-2">
+              <div className="flex justify-between items-center">
+                <span className="font-medium text-foreground">Subtotal:</span>
+                <span className="text-xl font-bold text-foreground">${subtotalAfterTrade.toLocaleString()}</span>
+              </div>
+            </div>
+            
+            {/* HST */}
+            <div className="flex justify-between items-center">
+              <span className="font-medium text-foreground">HST (13%):</span>
+              <span className="text-xl font-bold text-foreground">${hst.toLocaleString()}</span>
+            </div>
+            
+            {/* Total Cash Price */}
+            <div className="border-t border-border pt-4">
+              <div className="flex justify-between items-center">
+                <span className="text-xl font-bold text-foreground">TOTAL CASH PRICE:</span>
+                <span className="text-3xl font-bold text-primary">${totalCashPrice.toLocaleString()}</span>
               </div>
             </div>
           </div>
-        </Card>
-
-        {/* Financing Calculator */}
-        <Card className="p-6">
-          <div className="space-y-6">
-            <h3 className="text-xl font-semibold flex items-center gap-2">
-              <Calculator className="w-5 h-5" />
-              Financing Calculator
-            </h3>
-
-            {/* Down Payment */}
+          
+          {/* Financing Options */}
+          <div className="border-t border-border pt-6 space-y-6">
+            <h4 className="text-xl font-bold text-foreground">FINANCING OPTIONS {hasTradeIn ? '(after trade-in)' : ''}:</h4>
+            
+            {/* Cash Option */}
+            <div className="bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">💰</span>
+                  <div>
+                    <p className="font-bold text-green-800 dark:text-green-200">PAY CASH & SAVE:</p>
+                    <p className="text-sm text-green-700 dark:text-green-300">Save ${cashSavings.toFixed(0)} in interest</p>
+                  </div>
+                </div>
+                <div className="text-2xl font-bold text-green-800 dark:text-green-200">
+                  ${totalCashPrice.toLocaleString()}
+                </div>
+              </div>
+            </div>
+            
+            {/* Down Payment Slider */}
             <div className="space-y-3">
               <div className="flex justify-between items-center">
                 <Label className="text-base font-medium">Down Payment</Label>
                 <span className="text-sm text-muted-foreground">
-                  {downPaymentPercentage.toFixed(0)}% of price
+                  {downPaymentPercentage.toFixed(0)}% of total price
                 </span>
               </div>
               <Slider
@@ -143,7 +183,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                 <span>${maxDownPayment.toLocaleString()}</span>
               </div>
             </div>
-
+            
             {/* Term Selection */}
             <div className="space-y-3">
               <Label className="text-base font-medium">Financing Term</Label>
@@ -160,39 +200,80 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                 ))}
               </div>
             </div>
-
-            {/* Payment Display */}
-            <div className="bg-muted/50 rounded-lg p-4 space-y-3">
-              <div className="text-center">
-                <p className="text-sm text-muted-foreground mb-2">Estimated Payments at {quoteData.financing.rate}% APR</p>
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wide">Weekly</p>
-                    <p className="text-3xl font-bold text-foreground">${payments.weekly.toFixed(0)}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wide">Bi-Weekly</p>
-                    <p className="text-3xl font-bold text-foreground">${payments.biweekly.toFixed(0)}</p>
-                  </div>
-                   <div>
-                     <p className="text-xs text-muted-foreground uppercase tracking-wide">Monthly</p>
-                     <p className="text-6xl font-bold text-primary">${payments.monthly.toFixed(0)}</p>
-                   </div>
+            
+            {/* Finance Option */}
+            <div className="bg-primary/10 border border-primary/20 rounded-lg p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl">📅</span>
+                <p className="font-bold text-foreground">OR FINANCE FROM:</p>
+              </div>
+              
+              <div className="grid grid-cols-3 gap-4 text-center mb-4">
+                <div className="space-y-1">
+                  <p className="text-xs text-muted-foreground uppercase tracking-wide">WEEKLY</p>
+                  <p className="text-4xl font-bold text-foreground">${payments.weekly.toFixed(0)}</p>
+                  <p className="text-xs text-muted-foreground">/week</p>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-xs text-muted-foreground uppercase tracking-wide">BI-WEEKLY</p>
+                  <p className="text-4xl font-bold text-foreground">${payments.biweekly.toFixed(0)}</p>
+                  <p className="text-xs text-muted-foreground">/bi-weekly</p>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-xs text-muted-foreground uppercase tracking-wide">MONTHLY</p>
+                  <p className="text-6xl font-bold text-primary">${payments.monthly.toFixed(0)}</p>
+                  <p className="text-xs text-muted-foreground">/month</p>
                 </div>
               </div>
               
-              {cashSavings > 0 && (
-                <div className="text-center pt-2 border-t border-border">
-                  <Badge className="bg-in-stock text-in-stock-foreground">
-                    <DollarSign className="w-3 h-3 mr-1" />
-                    Cash Savings: ${cashSavings.toFixed(0)} interest
-                  </Badge>
+              <div className="text-center space-y-1 text-sm text-muted-foreground border-t border-border pt-3">
+                <p>*{quoteData.financing.rate}% APR for {term} months OAC</p>
+                <p>*All payments include HST</p>
+                <p>Total financed: ${totalFinanced.toLocaleString()}</p>
+              </div>
+            </div>
+            
+            {/* Cash Savings Highlight */}
+            {cashSavings > 0 && (
+              <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">💡</span>
+                  <div>
+                    <p className="font-bold text-amber-800 dark:text-amber-200">
+                      SAVE ${cashSavings.toFixed(0)} by paying cash!
+                    </p>
+                    <p className="text-sm text-amber-700 dark:text-amber-300">
+                      No interest charges = more money for fuel and fun!
+                    </p>
+                  </div>
                 </div>
-              )}
+              </div>
+            )}
+          </div>
+          
+          {/* Important Notes */}
+          <div className="border-t border-border pt-4 space-y-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-in-stock" />
+              <span>Quote valid for 30 days</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-in-stock" />
+              <span>Installation requirements to be determined</span>
+            </div>
+            {hasTradeIn && (
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-in-stock" />
+                <span>Trade value subject to inspection</span>
+              </div>
+            )}
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-in-stock" />
+              <span>Prices subject to change</span>
             </div>
           </div>
-        </Card>
-      </div>
+        </div>
+      </Card>
 
       {/* Installation Requirements */}
       <Card className="p-6">
