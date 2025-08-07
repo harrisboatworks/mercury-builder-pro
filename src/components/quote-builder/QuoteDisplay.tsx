@@ -111,8 +111,16 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">
-                  <span className="text-xs font-medium text-muted-foreground">MOTOR</span>
+                <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted flex items-center justify-center">
+                  {quoteData.motor.image ? (
+                    <img 
+                      src={quoteData.motor.image} 
+                      alt={quoteData.motor.model}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-xs font-medium text-muted-foreground">MOTOR</span>
+                  )}
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-foreground">{quoteData.motor.model}</h4>
