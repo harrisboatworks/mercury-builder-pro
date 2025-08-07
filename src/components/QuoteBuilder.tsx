@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { LogOut, User } from 'lucide-react';
 import { useAuth } from '@/components/auth/AuthProvider';
@@ -78,6 +78,27 @@ const QuoteBuilder = () => {
     hasTradein: false
   });
 
+  // SEO
+  useEffect(() => {
+    document.title = 'Mercury Outboard Quote Builder | Harris Boat Works';
+
+    let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!desc) {
+      desc = document.createElement('meta');
+      desc.name = 'description';
+      document.head.appendChild(desc);
+    }
+    desc.content = 'Build your Mercury outboard quote with live pricing, sale deals, and promotions.';
+
+    let canonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = window.location.origin + '/';
+  }, []);
+
   const handleStepComplete = (stepData: any) => {
     switch (currentStep) {
       case 1:
@@ -135,6 +156,9 @@ const QuoteBuilder = () => {
                       <User className="w-4 h-4 text-muted-foreground" />
                       <span className="text-sm text-muted-foreground">{user.email}</span>
                     </div>
+                    <Button variant="secondary" size="sm" onClick={() => (window.location.href = '/admin/promotions')}>
+                      Promotions
+                    </Button>
                     <Button variant="outline" size="sm" onClick={() => signOut()}>
                       <LogOut className="w-4 h-4 mr-2" />
                       Sign Out
