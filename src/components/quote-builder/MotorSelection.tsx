@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { RefreshCw, Zap, Anchor } from 'lucide-react';
+import { RefreshCw, Zap, Anchor, Check, Star, Sparkles } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/components/ui/use-toast';
 import { MotorFilters } from './MotorFilters';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface MotorSelectionProps {
   onStepComplete: (motor: Motor) => void;
@@ -15,10 +16,14 @@ interface MotorSelectionProps {
 
 export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
   const { toast } = useToast();
+  const isMobile = useIsMobile();
   const [motors, setMotors] = useState<Motor[]>([]);
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
   const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
+  const [showCelebration, setShowCelebration] = useState(false);
+  const [showStickyBar, setShowStickyBar] = useState(false);
+  const [celebrationParticles, setCelebrationParticles] = useState<Array<{ id: number; x: number; y: number; emoji: string }>>([]);
   const [filters, setFilters] = useState({
     category: 'all',
     stockStatus: 'all',
@@ -137,6 +142,40 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
     }
   };
 
+  const handleMotorSelection = (motor: Motor) => {
+    setSelectedMotor(motor);
+    
+    // Trigger celebration animation
+    setShowCelebration(true);
+    
+    // Create particle effect
+    const particles = Array.from({ length: 6 }, (_, i) => ({
+      id: Date.now() + i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      emoji: ['✨', '🎉', '⭐', '💚', '✅', '🚤'][i]
+    }));
+    setCelebrationParticles(particles);
+    
+    // Show success toast
+    toast({
+      title: "🎉 Excellent Choice!",
+      description: `${motor.model} selected - Let's continue!`,
+      duration: 3000,
+    });
+    
+    // Show sticky bar after animation
+    setTimeout(() => {
+      setShowStickyBar(true);
+    }, 500);
+    
+    // Clear celebration after animation
+    setTimeout(() => {
+      setShowCelebration(false);
+      setCelebrationParticles([]);
+    }, 2000);
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center py-12">
@@ -202,12 +241,36 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
             {filteredMotors.map(motor => (
               <Card 
                 key={motor.id}
-                className={`cursor-pointer transition-all duration-300 hover:shadow-lg ${
-                  selectedMotor?.id === motor.id ? 'ring-2 ring-primary shadow-lg' : ''
+                className={`relative cursor-pointer transition-all duration-500 hover:shadow-lg group overflow-hidden ${
+                  selectedMotor?.id === motor.id 
+                    ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' 
+                    : 'hover:scale-[1.01]'
+                } ${
+                  selectedMotor && selectedMotor.id !== motor.id 
+                    ? 'opacity-70' 
+                    : ''
                 }`}
-                onClick={() => setSelectedMotor(motor)}
+                onClick={() => handleMotorSelection(motor)}
               >
-                <div className="p-6 space-y-4">
+                {/* Selection Checkmark */}
+                {selectedMotor?.id === motor.id && (
+                  <div className="absolute top-4 right-4 z-20">
+                    <div className="bg-green-500 text-white rounded-full p-2 shadow-lg animate-in zoom-in-50 duration-500">
+                      <Check className="w-5 h-5" />
+                    </div>
+                  </div>
+                )}
+                
+                {/* Selected Banner */}
+                {selectedMotor?.id === motor.id && (
+                  <div className="absolute top-0 right-0 z-10">
+                    <div className="bg-green-500 text-white px-4 py-1 text-xs font-bold transform rotate-45 translate-x-6 translate-y-2">
+                      SELECTED
+                    </div>
+                  </div>
+                )}
+
+                <div className="p-6 space-y-4 relative">
                   <div className="flex items-start justify-between">
                     <Badge variant={getCategoryColor(motor.category)}>
                       {motor.hp}HP
@@ -251,12 +314,12 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
         )}
 
         {/* Continue Button */}
-        {selectedMotor && (
-          <div className="flex justify-center pt-8">
+        {selectedMotor && !showStickyBar && (
+          <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
             <Button 
               onClick={() => onStepComplete(selectedMotor)}
               size="lg"
-              className="px-8"
+              className="px-8 animate-pulse"
             >
               Continue with {selectedMotor.model}
               <Zap className="w-5 h-5 ml-2" />
@@ -264,6 +327,91 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
           </div>
         )}
       </div>
+      
+      {/* Sticky Bottom Navigation Bar */}
+      {showStickyBar && selectedMotor && (
+        <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom-5 duration-500">
+          <div className="bg-background/95 backdrop-blur-lg border-t-4 border-green-500 shadow-2xl">
+            <div className="container mx-auto px-4 py-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="bg-green-100 dark:bg-green-900 p-2 rounded-full">
+                    <Check className="w-5 h-5 text-green-600 dark:text-green-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-green-600 dark:text-green-400 text-sm">
+                      🎉 Excellent Choice!
+                    </p>
+                    <p className="font-bold text-lg">
+                      {selectedMotor.model} - ${selectedMotor.price.toLocaleString()}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => {
+                      setSelectedMotor(null);
+                      setShowStickyBar(false);
+                    }}
+                  >
+                    Change Selection
+                  </Button>
+                  <Button 
+                    onClick={() => onStepComplete(selectedMotor)}
+                    size="lg"
+                    className="px-6 animate-pulse shadow-lg bg-green-600 hover:bg-green-700"
+                  >
+                    Continue to Boat Info
+                    <Zap className="w-5 h-5 ml-2" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {/* Floating Action Button (Mobile) */}
+      {showStickyBar && selectedMotor && isMobile && (
+        <div className="fixed bottom-20 right-4 z-40 animate-in zoom-in-50 duration-500">
+          <Button 
+            onClick={() => onStepComplete(selectedMotor)}
+            size="lg"
+            className="rounded-full w-16 h-16 shadow-2xl bg-green-600 hover:bg-green-700 animate-bounce"
+          >
+            <Check className="w-6 h-6" />
+          </Button>
+        </div>
+      )}
+      
+      {/* Celebration Particles */}
+      {celebrationParticles.map(particle => (
+        <div
+          key={particle.id}
+          className="fixed pointer-events-none z-30 text-2xl animate-in zoom-in-50 fade-out-100 duration-2000"
+          style={{
+            left: `${particle.x}%`,
+            top: `${particle.y}%`,
+            animationDelay: `${Math.random() * 500}ms`,
+          }}
+        >
+          {particle.emoji}
+        </div>
+      ))}
+      
+      {/* Celebration Toast (Visual) */}
+      {showCelebration && selectedMotor && (
+        <div className="fixed top-4 right-4 z-40 animate-in slide-in-from-right-5 duration-500">
+          <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-2">
+            <Sparkles className="w-5 h-5" />
+            <span className="font-bold">Great Choice!</span>
+            <Star className="w-5 h-5" />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
