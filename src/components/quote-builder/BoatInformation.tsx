@@ -89,14 +89,6 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
       badge: 'Serious Angler',
       gradient: 'from-green-500 to-emerald-500',
       icon: '🦆'
-    },
-    { 
-      id: 'work', 
-      name: 'Work Boat', 
-      subtitle: 'Commercial • Utility • Transport',
-      badge: 'Heavy Duty',
-      gradient: 'from-gray-600 to-gray-700',
-      icon: '🔧'
     }
   ];
 
