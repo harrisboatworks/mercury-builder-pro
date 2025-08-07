@@ -18,7 +18,8 @@ interface QuoteDisplayProps {
 
 export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplayProps) => {
   const [downPayment, setDownPayment] = useState(0);
-  const [term, setTerm] = useState(48);
+  const [term, setTerm] = useState(60);
+  const [showTermComparison, setShowTermComparison] = useState(false);
   
   // Get trade-in info from boat information
   const hasTradeIn = quoteData.boatInfo?.tradeIn?.hasTradeIn || false;
@@ -27,31 +28,58 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   const motorPrice = quoteData.motor?.price || 0;
   const subtotalAfterTrade = motorPrice - (hasTradeIn ? tradeInValue : 0);
   const hst = subtotalAfterTrade * 0.13;
+  const financingFee = 299; // Added to all finance deals
   const totalCashPrice = subtotalAfterTrade + hst;
-  const maxDownPayment = totalCashPrice * 0.5;
-  const downPaymentPercentage = totalCashPrice > 0 ? (downPayment / totalCashPrice) * 100 : 0;
+  const totalFinancePrice = subtotalAfterTrade + hst + financingFee;
+  const maxDownPayment = totalFinancePrice * 0.5;
+  const downPaymentPercentage = totalFinancePrice > 0 ? (downPayment / totalFinancePrice) * 100 : 0;
 
   const calculatePayments = () => {
-    const financedAmount = totalCashPrice - downPayment;
+    const financedAmount = totalFinancePrice - downPayment;
     const monthlyRate = quoteData.financing.rate / 100 / 12;
     const numPayments = term;
     
-    if (financedAmount <= 0) return { weekly: 0, biweekly: 0, monthly: 0 };
+    if (financedAmount <= 0) return { weekly: 0, biweekly: 0, monthly: 0, totalOfPayments: 0, totalInterest: 0 };
     
     const monthlyPayment = (financedAmount * monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / 
                           (Math.pow(1 + monthlyRate, numPayments) - 1);
     
+    const totalOfPayments = monthlyPayment * numPayments;
+    const totalInterest = totalOfPayments - financedAmount;
+    
     return {
       weekly: monthlyPayment / 4.33,
       biweekly: monthlyPayment / 2,
-      monthly: monthlyPayment
+      monthly: monthlyPayment,
+      totalOfPayments,
+      totalInterest
     };
   };
 
+  const calculateAllTerms = () => {
+    const terms = [48, 60, 120, 180];
+    return terms.map(termMonths => {
+      const financedAmount = totalFinancePrice - downPayment;
+      const monthlyRate = quoteData.financing.rate / 100 / 12;
+      const monthlyPayment = financedAmount > 0 ? 
+        (financedAmount * monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / 
+        (Math.pow(1 + monthlyRate, termMonths) - 1) : 0;
+      const totalPaid = monthlyPayment * termMonths;
+      const totalInterest = totalPaid - financedAmount;
+      
+      return {
+        term: termMonths,
+        years: Math.floor(termMonths / 12),
+        monthly: monthlyPayment,
+        totalPaid,
+        totalInterest
+      };
+    });
+  };
+
   const payments = calculatePayments();
-  const totalFinanced = (payments.monthly * term);
-  const totalInterest = totalFinanced - (totalCashPrice - downPayment);
-  const cashSavings = totalInterest;
+  const allTerms = calculateAllTerms();
+  const cashSavings = payments.totalInterest + financingFee;
 
   const handleContinue = () => {
     onStepComplete({
@@ -184,52 +212,153 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
               </div>
             </div>
             
+            {/* Financing Fee */}
+            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4 mb-4">
+              <div className="flex justify-between items-center">
+                <span className="font-medium text-amber-800 dark:text-amber-200">Financing Fee:</span>
+                <span className="text-lg font-bold text-amber-800 dark:text-amber-200">${financingFee.toLocaleString()}</span>
+              </div>
+              <p className="text-xs text-amber-700 dark:text-amber-300 mt-1">Applied to all financed purchases</p>
+            </div>
+
+            {/* Amount to Finance */}
+            <div className="flex justify-between items-center py-2 bg-muted/30 px-4 rounded">
+              <span className="font-medium text-foreground">Amount to Finance:</span>
+              <span className="text-lg font-bold text-foreground">${(totalFinancePrice - downPayment).toLocaleString()}</span>
+            </div>
+
             {/* Term Selection */}
             <div className="space-y-3">
-              <Label className="text-base font-medium">Financing Term</Label>
-              <div className="grid grid-cols-3 gap-2">
-                {[36, 48, 60].map((months) => (
-                  <Button
-                    key={months}
-                    variant={term === months ? 'default' : 'outline'}
-                    onClick={() => setTerm(months)}
-                    className="h-12"
-                  >
-                    {months} months
-                  </Button>
-                ))}
+              <div className="flex justify-between items-center">
+                <Label className="text-base font-medium">SELECT YOUR TERM</Label>
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  onClick={() => setShowTermComparison(!showTermComparison)}
+                  className="text-xs"
+                >
+                  {showTermComparison ? 'Hide' : 'Show'} Payment Comparison
+                </Button>
+              </div>
+              <div className="grid grid-cols-4 gap-2">
+                {[48, 60, 120, 180].map((months) => {
+                  const years = Math.floor(months / 12);
+                  const isShortTerm = months <= 60;
+                  const isLongTerm = months >= 120;
+                  return (
+                    <Button
+                      key={months}
+                      variant={term === months ? 'default' : 'outline'}
+                      onClick={() => setTerm(months)}
+                      className={`h-16 flex flex-col ${
+                        isShortTerm ? 'border-green-300 hover:border-green-400' :
+                        isLongTerm ? 'border-orange-300 hover:border-orange-400' :
+                        'border-yellow-300 hover:border-yellow-400'
+                      }`}
+                    >
+                      <span className="text-lg font-bold">{months} mo</span>
+                      <span className="text-xs">{years} year{years > 1 ? 's' : ''}</span>
+                    </Button>
+                  );
+                })}
               </div>
             </div>
+
+            {/* Term Comparison Table */}
+            {showTermComparison && (
+              <div className="border border-border rounded-lg p-4 bg-muted/20">
+                <h5 className="font-semibold text-foreground mb-3">PAYMENT COMPARISON (Amount: ${(totalFinancePrice - downPayment).toLocaleString()})</h5>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-border">
+                        <th className="text-left py-2">Term</th>
+                        <th className="text-right py-2">Monthly</th>
+                        <th className="text-right py-2">Total Paid</th>
+                        <th className="text-right py-2">Interest</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {allTerms.map((termData) => (
+                        <tr key={termData.term} className={`border-b border-border/50 ${term === termData.term ? 'bg-primary/10' : ''}`}>
+                          <td className="py-2 font-medium">{termData.term} mo</td>
+                          <td className="text-right py-2 font-bold">${termData.monthly.toFixed(0)}</td>
+                          <td className="text-right py-2">${termData.totalPaid.toFixed(0)}</td>
+                          <td className="text-right py-2">${termData.totalInterest.toFixed(0)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
             
             {/* Finance Option */}
             <div className="bg-primary/10 border border-primary/20 rounded-lg p-6">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-2xl">📅</span>
-                <p className="font-bold text-foreground">OR FINANCE FROM:</p>
+                <p className="font-bold text-foreground">OR FINANCE:</p>
               </div>
               
               <div className="grid grid-cols-3 gap-4 text-center mb-4">
                 <div className="space-y-1">
                   <p className="text-xs text-muted-foreground uppercase tracking-wide">WEEKLY</p>
-                  <p className="text-4xl font-bold text-foreground">${payments.weekly.toFixed(0)}</p>
-                  <p className="text-xs text-muted-foreground">/week</p>
+                  <p className="text-5xl font-bold text-foreground">${payments.weekly.toFixed(0)}</p>
+                  <p className="text-xs text-muted-foreground">/week*</p>
                 </div>
                 <div className="space-y-1">
                   <p className="text-xs text-muted-foreground uppercase tracking-wide">BI-WEEKLY</p>
-                  <p className="text-4xl font-bold text-foreground">${payments.biweekly.toFixed(0)}</p>
-                  <p className="text-xs text-muted-foreground">/bi-weekly</p>
+                  <p className="text-5xl font-bold text-foreground">${payments.biweekly.toFixed(0)}</p>
+                  <p className="text-xs text-muted-foreground">/bi-weekly*</p>
                 </div>
                 <div className="space-y-1">
                   <p className="text-xs text-muted-foreground uppercase tracking-wide">MONTHLY</p>
-                  <p className="text-6xl font-bold text-primary">${payments.monthly.toFixed(0)}</p>
-                  <p className="text-xs text-muted-foreground">/month</p>
+                  <p className="text-7xl font-bold text-primary">${payments.monthly.toFixed(0)}</p>
+                  <p className="text-xs text-muted-foreground">/month*</p>
                 </div>
               </div>
               
               <div className="text-center space-y-1 text-sm text-muted-foreground border-t border-border pt-3">
-                <p>*{quoteData.financing.rate}% APR for {term} months OAC</p>
-                <p>*All payments include HST</p>
-                <p>Total financed: ${totalFinanced.toLocaleString()}</p>
+                <p className="font-medium">ESTIMATED PAYMENTS ({term} months):</p>
+                <p>Total of payments: ${payments.totalOfPayments.toLocaleString()}</p>
+                <p>Total interest: ${payments.totalInterest.toFixed(0)}</p>
+                <p className="text-xs mt-2">*{quoteData.financing.rate}% APR for {term} months OAC</p>
+                <p className="text-xs">*Plus applicable financing fee. All payments include HST</p>
+              </div>
+            </div>
+
+            {/* Financing Disclaimers */}
+            <div className="bg-slate-50 dark:bg-slate-950/20 border border-slate-200 dark:border-slate-800 rounded-lg p-4">
+              <h5 className="font-bold text-foreground mb-3">IMPORTANT FINANCING INFORMATION:</h5>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <div className="flex items-start gap-2">
+                  <span className="text-amber-500 mt-0.5">•</span>
+                  <span>All financing subject to approved credit (OAC)</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-amber-500 mt-0.5">•</span>
+                  <span>${financingFee} financing administration fee applies to all financed purchases</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-amber-500 mt-0.5">•</span>
+                  <span>Payments shown are estimates for quoting purposes only</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-amber-500 mt-0.5">•</span>
+                  <span>Final pricing, payments and terms must be finalized with Harris Boat Works Ltd, Dealerplan Peterborough (Broker), and lending institution</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-amber-500 mt-0.5">•</span>
+                  <span>Actual payments may vary based on credit approval</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-amber-500 mt-0.5">•</span>
+                  <span>Interest rate subject to credit qualification</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-amber-500 mt-0.5">•</span>
+                  <span>HST included in all payment calculations</span>
+                </div>
               </div>
             </div>
             
