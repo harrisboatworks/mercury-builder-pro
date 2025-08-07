@@ -111,7 +111,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted flex items-center justify-center">
+                <div className="w-24 h-24 rounded-lg overflow-hidden bg-muted flex items-center justify-center">
                   {quoteData.motor.image ? (
                     <img 
                       src={quoteData.motor.image} 
