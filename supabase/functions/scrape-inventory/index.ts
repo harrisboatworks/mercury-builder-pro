@@ -11,12 +11,14 @@ interface MotorData {
   year: number
   horsepower: number
   base_price: number
+  sale_price?: number | null
   motor_type: string
   engine_type?: string
   image_url?: string
   availability: string
   stock_number?: string
 }
+
 
 Deno.serve(async (req) => {
   // Handle CORS preflight requests
@@ -163,6 +165,7 @@ function parseMotorData(html: string): MotorData[] {
               year: motorData.itemYear || 2025,
               horsepower: hp,
               base_price: motorData.itemPrice || 0,
+              sale_price: (motorData.salePrice || motorData.itemSalePrice || motorData.sale_price) ?? null,
               motor_type: getMotorType(motorName),
               image_url: imageUrl,
               availability: availability,
@@ -198,13 +201,18 @@ function parseMotorData(html: string): MotorData[] {
           const priceMatch = cardHtml.match(/<span[^>]*itemprop="price"[^>]*>\$([0-9,]+(?:\.\d{2})?)<\/span>/i)
           const price = priceMatch ? parseFloat(priceMatch[1].replace(/,/g, '')) : 0
           
+          // Try to extract sale price (e.g., "Sale Price $12,345" or "Now $12,345")
+          const saleMatchA = cardHtml.match(/(?:Sale\s*Price|Now)\s*\$([0-9,]+(?:\.\d{2})?)/i)
+          const saleMatchB = cardHtml.match(/<span[^>]*class=\"[^\"]*sale[^\"]*\"[^>]*>\$([0-9,]+(?:\.\d{2})?)<\/span>/i)
+          const salePrice = saleMatchA ? parseFloat(saleMatchA[1].replace(/,/g, '')) : (saleMatchB ? parseFloat(saleMatchB[1].replace(/,/g, '')) : null)
+          
           // Extract availability
-          const availabilityMatch = cardHtml.match(/<span class="label[^"]*"[^>]*>([^<]+)</i)
+          const availabilityMatch = cardHtml.match(/<span class=\"label[^\"]*\"[^>]*>([^<]+)</i)
           const availability = availabilityMatch ? availabilityMatch[1].trim() : 'Brochure'
           
           // Extract image URL
-          const imageMatch = cardHtml.match(/src="([^"]*ThumbGenerator[^"]*)"/) || 
-                           cardHtml.match(/data-srcset="([^"]*ThumbGenerator[^"]*)"/)
+          const imageMatch = cardHtml.match(/src=\"([^\"]*ThumbGenerator[^\"]*)\"/) || 
+                           cardHtml.match(/data-srcset=\"([^\"]*ThumbGenerator[^\"]*)\"/)
           const imageUrl = imageMatch ? imageMatch[1] : getMotorImageUrl(fullTitle)
           
           const motor: MotorData = {
@@ -213,6 +221,7 @@ function parseMotorData(html: string): MotorData[] {
             year: 2025,
             horsepower: hp,
             base_price: price,
+            sale_price: salePrice,
             motor_type: getMotorType(fullTitle),
             image_url: imageUrl,
             availability: availability,

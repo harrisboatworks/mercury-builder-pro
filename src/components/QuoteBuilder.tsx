@@ -14,13 +14,21 @@ export interface Motor {
   id: string;
   model: string;
   hp: number;
-  price: number;
+  price: number; // effective price shown to user
   image: string;
   stockStatus: 'In Stock' | 'On Order' | 'Out of Stock';
   category: 'portable' | 'mid-range' | 'high-performance' | 'v8-racing';
   type: string;
   specs: string;
+  // Optional pricing metadata
+  basePrice?: number;
+  salePrice?: number | null;
+  originalPrice?: number; // base or sale before promos
+  savings?: number; // total savings applied
+  appliedPromotions?: string[];
+  promoEndsAt?: string | null;
 }
+
 
 export interface BoatInfo {
   type: string;

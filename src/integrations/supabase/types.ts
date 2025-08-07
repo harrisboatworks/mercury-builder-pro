@@ -122,6 +122,7 @@ export type Database = {
           make: string
           model: string
           motor_type: string
+          sale_price: number | null
           stock_number: string | null
           updated_at: string | null
           year: number
@@ -137,6 +138,7 @@ export type Database = {
           make?: string
           model: string
           motor_type: string
+          sale_price?: number | null
           stock_number?: string | null
           updated_at?: string | null
           year?: number
@@ -152,6 +154,7 @@ export type Database = {
           make?: string
           model?: string
           motor_type?: string
+          sale_price?: number | null
           stock_number?: string | null
           updated_at?: string | null
           year?: number
@@ -193,6 +196,7 @@ export type Database = {
           id: string
           is_active: boolean
           name: string
+          stackable: boolean
           start_date: string | null
         }
         Insert: {
@@ -202,6 +206,7 @@ export type Database = {
           id?: string
           is_active?: boolean
           name: string
+          stackable?: boolean
           start_date?: string | null
         }
         Update: {
@@ -211,9 +216,54 @@ export type Database = {
           id?: string
           is_active?: boolean
           name?: string
+          stackable?: boolean
           start_date?: string | null
         }
         Relationships: []
+      }
+      promotions_rules: {
+        Row: {
+          created_at: string
+          horsepower_max: number | null
+          horsepower_min: number | null
+          id: string
+          model: string | null
+          motor_type: string | null
+          promotion_id: string
+          rule_type: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          horsepower_max?: number | null
+          horsepower_min?: number | null
+          id?: string
+          model?: string | null
+          motor_type?: string | null
+          promotion_id: string
+          rule_type: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          horsepower_max?: number | null
+          horsepower_min?: number | null
+          id?: string
+          model?: string | null
+          motor_type?: string | null
+          promotion_id?: string
+          rule_type?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "promotions_rules_promotion_id_fkey"
+            columns: ["promotion_id"]
+            isOneToOne: false
+            referencedRelation: "promotions"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {

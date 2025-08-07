@@ -10,6 +10,41 @@ import { useToast } from '@/components/ui/use-toast';
 import { MotorFilters } from './MotorFilters';
 import { useIsMobile } from '@/hooks/use-mobile';
 
+// Database types
+interface DbMotor {
+  id: string;
+  model: string;
+  horsepower: number;
+  base_price: number;
+  sale_price?: number | null;
+  motor_type: string;
+  engine_type?: string | null;
+  image_url?: string | null;
+  availability?: string | null;
+  year: number;
+  make: string;
+}
+
+interface Promotion {
+  id: string;
+  name: string;
+  discount_percentage: number;
+  is_active: boolean;
+  start_date: string | null;
+  end_date: string | null;
+  stackable: boolean;
+}
+
+interface PromotionRule {
+  id: string;
+  promotion_id: string;
+  rule_type: 'all' | 'model' | 'motor_type' | 'horsepower_range';
+  model: string | null;
+  motor_type: string | null;
+  horsepower_min: number | null;
+  horsepower_max: number | null;
+}
+
 interface MotorSelectionProps {
   onStepComplete: (motor: Motor) => void;
 }
@@ -40,34 +75,54 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
 
   const loadMotors = async () => {
     try {
-      const { data, error } = await supabase
-        .from('motor_models')
-        .select('*')
-        .order('horsepower');
+      const [{ data: motorRows, error: motorsError }, { data: promos, error: promosError }, { data: rules, error: rulesError }] = await Promise.all([
+        supabase.from('motor_models').select('*').order('horsepower'),
+        supabase.from('promotions').select('*'),
+        supabase.from('promotions_rules').select('*')
+      ]);
 
-      if (error) throw error;
+      if (motorsError) throw motorsError;
+      if (promosError) throw promosError;
+      if (rulesError) throw rulesError;
 
-      // Transform database data to Motor interface
-      const transformedMotors: Motor[] = (data || []).map(motor => ({
-        id: motor.id,
-        model: motor.model,
-        hp: motor.horsepower,
-        price: motor.base_price,
-        image: motor.image_url || '/placeholder.svg',
-        stockStatus: motor.availability === 'In Stock' ? 'In Stock' : 
-                    motor.availability === 'On Order' ? 'On Order' : 'Out of Stock',
-        category: categorizeMotor(motor.horsepower),
-        type: motor.motor_type,
-        specs: `${motor.engine_type || ''} ${motor.year} ${motor.make} ${motor.model}`.trim()
-      }));
+      const activePromos: Promotion[] = (promos as Promotion[] | null)?.filter(p => isPromotionActive(p)) || [];
+      const promoRules: PromotionRule[] = (rules as PromotionRule[] | null) || [];
+
+      // Transform database data to Motor interface with effective pricing
+      const transformedMotors: Motor[] = (motorRows as DbMotor[] | null || []).map((m) => {
+        const basePrice = Number(m.base_price || 0);
+        const salePrice = m.sale_price != null ? Number(m.sale_price) : null;
+        const original = salePrice && salePrice > 0 && salePrice < basePrice ? salePrice : basePrice;
+
+        const { effectivePrice, appliedPromotions, promoEndsAt } = applyPromotions(m, original, activePromos, promoRules);
+        const savings = Math.max(0, original - effectivePrice);
+
+        return {
+          id: m.id,
+          model: m.model,
+          hp: Number(m.horsepower),
+          price: effectivePrice,
+          image: m.image_url || '/placeholder.svg',
+          stockStatus: m.availability === 'In Stock' ? 'In Stock' : m.availability === 'On Order' ? 'On Order' : 'Out of Stock',
+          category: categorizeMotor(Number(m.horsepower)),
+          type: m.motor_type,
+          specs: `${m.engine_type || ''} ${m.year} ${m.make} ${m.model}`.trim(),
+          basePrice,
+          salePrice,
+          originalPrice: original,
+          savings,
+          appliedPromotions,
+          promoEndsAt,
+        };
+      });
 
       setMotors(transformedMotors);
     } catch (error) {
-      console.error('Error loading motors:', error);
+      console.error('Error loading motors or promotions:', error);
       toast({
-        title: "Error",
-        description: "Failed to load motors from database",
-        variant: "destructive"
+        title: 'Error',
+        description: 'Failed to load inventory or promotions',
+        variant: 'destructive',
       });
     } finally {
       setLoading(false);
@@ -77,10 +132,71 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
   const categorizeMotor = (hp: number): 'portable' | 'mid-range' | 'high-performance' | 'v8-racing' => {
     if (hp <= 20) return 'portable';
     if (hp <= 100) return 'mid-range';
-    if (hp <= 200) return 'high-performance';
     return 'v8-racing';
   };
+  const isPromotionActive = (p: Promotion) => {
+    const now = new Date();
+    const startsOk = !p.start_date || new Date(p.start_date) <= now;
+    const endsOk = !p.end_date || new Date(p.end_date) >= now;
+    return p.is_active && startsOk && endsOk;
+  };
 
+  const ruleMatches = (m: DbMotor, r: PromotionRule) => {
+    if (r.rule_type === 'all') return true;
+    if (r.rule_type === 'model') return !!r.model && m.model.toLowerCase().includes(r.model.toLowerCase());
+    if (r.rule_type === 'motor_type') return !!r.motor_type && m.motor_type.toLowerCase() === r.motor_type.toLowerCase();
+    if (r.rule_type === 'horsepower_range') {
+      const hp = Number(m.horsepower);
+      const min = r.horsepower_min != null ? Number(r.horsepower_min) : -Infinity;
+      const max = r.horsepower_max != null ? Number(r.horsepower_max) : Infinity;
+      return hp >= min && hp <= max;
+    }
+    return false;
+  };
+
+  const applyPromotions = (
+    m: DbMotor,
+    startingPrice: number,
+    promos: Promotion[],
+    rules: PromotionRule[]
+  ) => {
+    const applicable = promos.filter((p) => {
+      const prules = rules.filter((r) => r.promotion_id === p.id);
+      if (prules.length === 0) return false; // must have at least one rule
+      return prules.some((r) => ruleMatches(m, r));
+    });
+
+    let price = startingPrice;
+    const applied: string[] = [];
+    let endsAt: string | null = null;
+
+    // Apply stackable promos first
+    const stackables = applicable.filter((p) => p.stackable);
+    for (const p of stackables) {
+      price = price * (1 - Number(p.discount_percentage) / 100);
+      applied.push(p.name);
+      if (p.end_date) {
+        if (!endsAt || new Date(p.end_date) < new Date(endsAt)) endsAt = p.end_date;
+      }
+    }
+
+    // Then best non-stackable promo
+    const nonStackables = applicable.filter((p) => !p.stackable);
+    if (nonStackables.length > 0) {
+      const best = nonStackables.reduce((a, b) => (Number(a.discount_percentage) > Number(b.discount_percentage) ? a : b));
+      price = price * (1 - Number(best.discount_percentage) / 100);
+      applied.push(best.name);
+      if (best.end_date) {
+        if (!endsAt || new Date(best.end_date) < new Date(endsAt)) endsAt = best.end_date;
+      }
+    }
+
+    return {
+      effectivePrice: Math.round(price),
+      appliedPromotions: applied,
+      promoEndsAt: endsAt,
+    };
+  };
   const updateInventory = async () => {
     setUpdating(true);
     try {
@@ -106,7 +222,6 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
       setUpdating(false);
     }
   };
-
   const categories = [
     { key: 'all', label: 'All Motors', color: 'primary' },
     { key: 'portable', label: 'Portable (2.5-20hp)', color: 'portable' },
@@ -297,14 +412,35 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
 
                   <div className="flex items-center justify-between pt-4">
                     <div className="space-y-1">
-                      <p className="text-2xl font-bold text-foreground">
-                        ${motor.price.toLocaleString()}
-                      </p>
-                      <p className="text-sm text-muted-foreground">CAD</p>
+                      {motor.savings && motor.savings > 0 ? (
+                        <>
+                          <p className="text-sm line-through text-muted-foreground">
+                            ${motor.originalPrice?.toLocaleString()}
+                          </p>
+                          <p className="text-2xl font-bold text-foreground">
+                            ${motor.price.toLocaleString()}
+                          </p>
+                          <p className="text-xs text-green-600 dark:text-green-400">
+                            You save ${Math.round(motor.savings).toLocaleString()} {motor.promoEndsAt ? `• Ends in ${Math.max(0, Math.ceil((new Date(motor.promoEndsAt).getTime() - Date.now())/86400000))}d` : ''}
+                          </p>
+                        </>
+                      ) : (
+                        <>
+                          <p className="text-2xl font-bold text-foreground">
+                            ${motor.price.toLocaleString()}
+                          </p>
+                          <p className="text-sm text-muted-foreground">CAD</p>
+                        </>
+                      )}
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Anchor className="w-5 h-5 text-primary" />
-                      <span className="text-sm font-medium text-muted-foreground">{motor.type}</span>
+                    <div className="flex flex-col items-end gap-1">
+                      <div className="flex items-center gap-2">
+                        <Anchor className="w-5 h-5 text-primary" />
+                        <span className="text-sm font-medium text-muted-foreground">{motor.type}</span>
+                      </div>
+                      {motor.appliedPromotions && motor.appliedPromotions.length > 0 && (
+                        <div className="text-xs text-primary">{motor.appliedPromotions.join(' + ')}</div>
+                      )}
                     </div>
                   </div>
                 </div>
