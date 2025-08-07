@@ -75,6 +75,38 @@ Deno.serve(async (req) => {
     if (uniqueMotors.length === 0) {
       // Add some sample motors if scraping fails completely
       const sampleMotors: MotorData[] = [
+        // Portable motors (≤20HP)
+        {
+          make: 'Mercury',
+          model: 'FourStroke 2.5HP',
+          year: 2025,
+          horsepower: 2.5,
+          base_price: 1270,
+          motor_type: 'FourStroke',
+          availability: 'Brochure',
+          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/7b55e247-7752-4f77-a716-56afa3df9f57.jpg'
+        },
+        {
+          make: 'Mercury',
+          model: 'FourStroke 9.9HP',
+          year: 2025,
+          horsepower: 9.9,
+          base_price: 2999,
+          motor_type: 'FourStroke',
+          availability: 'In Stock',
+          image_url: 'https://cdnmedia.endeavorsuite.com/images/organizations/873ce1ca-42a6-40ae-ac55-07757f842998/inventory/13450257/9.9EFI.jpg'
+        },
+        {
+          make: 'Mercury',
+          model: 'FourStroke 15HP',
+          year: 2025,
+          horsepower: 15,
+          base_price: 3500,
+          motor_type: 'FourStroke',
+          availability: 'Brochure',
+          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/15EFI.jpg'
+        },
+        // Mid-range motors (25-100HP)
         {
           make: 'Mercury',
           model: 'FourStroke 25HP',
@@ -105,6 +137,7 @@ Deno.serve(async (req) => {
           availability: 'Brochure',
           image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/60EFI.jpg'
         },
+        // High-performance motors (115-200HP)
         {
           make: 'Mercury',
           model: 'Pro XS 115HP',
@@ -117,23 +150,34 @@ Deno.serve(async (req) => {
         },
         {
           make: 'Mercury',
-          model: 'Verado 200HP',
+          model: 'Pro XS 175HP',
           year: 2025,
-          horsepower: 200,
-          base_price: 28500,
+          horsepower: 175,
+          base_price: 22500,
+          motor_type: 'Pro XS',
+          availability: 'Brochure',
+          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/175ProXS.jpg'
+        },
+        // V8 & Racing motors (200+HP)
+        {
+          make: 'Mercury',
+          model: 'Verado 250HP',
+          year: 2025,
+          horsepower: 250,
+          base_price: 32500,
           motor_type: 'Verado',
           availability: 'Brochure',
-          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/200Verado.jpg'
+          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/250Verado.jpg'
         },
         {
           make: 'Mercury',
-          model: 'Verado 300HP',
+          model: 'Verado 350HP',
           year: 2025,
-          horsepower: 300,
-          base_price: 38500,
+          horsepower: 350,
+          base_price: 42500,
           motor_type: 'Verado',
           availability: 'Brochure',
-          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/300Verado.jpg'
+          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/350Verado.jpg'
         }
       ]
       
