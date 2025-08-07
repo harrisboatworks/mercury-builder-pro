@@ -318,8 +318,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
           <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
             <Button 
               onClick={() => onStepComplete(selectedMotor)}
-              size="lg"
-              className="px-8 animate-pulse"
+              className="btn-primary px-8 animate-pulse"
             >
               Continue with {selectedMotor.model}
               <Zap className="w-5 h-5 ml-2" />
@@ -351,7 +350,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                 <div className="flex items-center gap-3">
                   <Button 
                     variant="outline" 
-                    size="sm"
+                    className="btn-secondary"
                     onClick={() => {
                       setSelectedMotor(null);
                       setShowStickyBar(false);
@@ -361,8 +360,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                   </Button>
                   <Button 
                     onClick={() => onStepComplete(selectedMotor)}
-                    size="lg"
-                    className="px-6 animate-pulse shadow-lg bg-green-600 hover:bg-green-700"
+                    className="btn-primary px-6 animate-pulse-green shadow-lg bg-green-600 hover:bg-green-700"
                   >
                     Continue to Boat Info
                     <Zap className="w-5 h-5 ml-2" />
@@ -379,8 +377,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
         <div className="fixed bottom-20 right-4 z-40 animate-in zoom-in-50 duration-500">
           <Button 
             onClick={() => onStepComplete(selectedMotor)}
-            size="lg"
-            className="rounded-full w-16 h-16 shadow-2xl bg-green-600 hover:bg-green-700 animate-bounce"
+            className="rounded-full w-14 h-14 shadow-2xl bg-green-600 hover:bg-green-700 animate-bounce"
           >
             <Check className="w-6 h-6" />
           </Button>

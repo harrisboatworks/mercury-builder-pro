@@ -403,8 +403,8 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
         />
 
         {/* Navigation */}
-        <div className="flex justify-between">
-          <Button type="button" variant="outline" onClick={onBack}>
+        <div className="form-navigation">
+          <Button type="button" variant="outline" onClick={onBack} className="btn-back">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Motor Selection
           </Button>
@@ -412,7 +412,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
           <Button 
             type="submit" 
             disabled={!boatInfo.type || (boatInfo.type !== 'motor-only' && !boatInfo.length)}
-            className="bg-primary hover:bg-primary/90"
+            className="btn-continue btn-primary"
           >
             {boatInfo.type === 'motor-only' ? 'Continue to Quote' : 'Continue to Quote'}
           </Button>

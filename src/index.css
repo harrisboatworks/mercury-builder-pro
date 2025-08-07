@@ -198,6 +198,122 @@
     animation: bounce-gentle 2s infinite;
   }
 
+  /* Button Size Standards */
+  .btn-primary {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 140px;
+    height: 44px;
+  }
+
+  .btn-secondary {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+  }
+
+  .btn-small {
+    padding: 6px 12px;
+    font-size: 13px;
+    height: 32px;
+  }
+
+  /* Sticky Bottom Bar Sizing */
+  .sticky-bottom-bar {
+    padding: 12px 20px;
+    height: auto;
+  }
+
+  .sticky-bottom-bar .selection-info {
+    font-size: 14px;
+  }
+
+  .sticky-bottom-bar .action-buttons {
+    gap: 12px;
+  }
+
+  /* Motor Card Buttons */
+  .motor-card .select-button {
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 14px;
+    height: 36px;
+    margin-top: auto;
+  }
+
+  .compare-checkbox {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Form Navigation */
+  .form-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .form-navigation .btn-back {
+    padding: 10px 20px;
+  }
+
+  .form-navigation .btn-continue {
+    padding: 12px 28px;
+    margin-left: auto;
+  }
+
+  /* Boat Type Cards */
+  .boat-type-card {
+    padding: 20px;
+    min-height: 160px;
+  }
+
+  .boat-type-card .boat-icon {
+    font-size: 32px;
+  }
+
+  .boat-type-card .boat-name {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .boat-type-card .boat-details {
+    font-size: 13px;
+  }
+
+  /* Responsive Button Scaling */
+  @media (max-width: 768px) {
+    .btn-primary {
+      padding: 10px 20px;
+      font-size: 15px;
+      height: 42px;
+    }
+    
+    .btn-primary.full-width {
+      width: 100%;
+    }
+    
+    .btn-primary.inline {
+      width: auto;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .btn-primary {
+      max-width: 200px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .btn-primary {
+      width: auto;
+      min-width: 120px;
+    }
+}
+
   @keyframes bounce-gentle {
     0%, 20%, 53%, 80%, 100% {
       transform: translate3d(0, 0, 0);
@@ -211,6 +327,7 @@
     90% {
       transform: translate3d(0, -2px, 0);
     }
+  }
   }
 
   /* Sticky bar slide animation */
