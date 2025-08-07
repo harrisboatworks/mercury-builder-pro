@@ -26,7 +26,7 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
     name: '',
     email: user?.email || '',
     phone: '',
-    preferredTime: '',
+    contactMethod: 'email',
     notes: ''
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -49,29 +49,44 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
     };
   }, []);
 
-  const validateForm = () => {
-    try {
-      const validationData = {
-        name: contactInfo.name,
-        email: contactInfo.email,
-        phone: contactInfo.phone,
-        preferredTime: contactInfo.preferredTime || 'No preference'
-      };
-      contactInfoSchema.parse(validationData);
-      setErrors({});
-      return true;
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        const fieldErrors: Record<string, string> = {};
-        error.errors.forEach((err) => {
-          if (err.path[0]) {
-            fieldErrors[err.path[0] as string] = err.message;
-          }
-        });
-        setErrors(fieldErrors);
-      }
-      return false;
+  const formatPhoneAsUserTypes = (value: string) => {
+    // Remove all non-digits
+    const phone = value.replace(/\D/g, '');
+    
+    // Format as (XXX) XXX-XXXX
+    if (phone.length <= 3) {
+      return phone;
+    } else if (phone.length <= 6) {
+      return `(${phone.slice(0, 3)}) ${phone.slice(3)}`;
+    } else {
+      return `(${phone.slice(0, 3)}) ${phone.slice(3, 6)}-${phone.slice(6, 10)}`;
     }
+  };
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+    
+    if (!contactInfo.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+    
+    if (!contactInfo.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(contactInfo.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    
+    if (!contactInfo.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+    } else {
+      const cleanPhone = contactInfo.phone.replace(/\D/g, '');
+      if (cleanPhone.length !== 10) {
+        newErrors.phone = 'Please enter a 10-digit phone number';
+      }
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const calculateMonthlyPayment = () => {
@@ -108,11 +123,14 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
     setIsSubmitting(true);
     
     try {
+      const cleanPhone = contactInfo.phone.replace(/\D/g, '');
+      const formattedPhone = `+1${cleanPhone}`;
+      
       const sanitizedContactInfo = {
         name: sanitizeInput(contactInfo.name),
         email: sanitizeInput(contactInfo.email),
-        phone: sanitizeInput(contactInfo.phone),
-        preferredTime: sanitizeInput(contactInfo.preferredTime || 'No preference'),
+        phone: formattedPhone,
+        contactMethod: contactInfo.contactMethod,
         notes: sanitizeInput(contactInfo.notes)
       };
 
@@ -129,14 +147,16 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
           total_cost: calculateTotalCost(),
           customer_name: sanitizedContactInfo.name,
           customer_email: sanitizedContactInfo.email,
-          customer_phone: sanitizedContactInfo.phone
+          customer_phone: sanitizedContactInfo.phone,
+          contact_method: sanitizedContactInfo.contactMethod,
+          notes: sanitizedContactInfo.notes
         });
 
       if (error) throw error;
 
       toast({
-        title: "Quote Saved Successfully!",
-        description: "Your quote has been saved and we'll contact you soon to schedule your consultation.",
+        title: "✅ Quote Submitted Successfully!",
+        description: `Thank you for your interest in the Mercury ${quoteData.motor?.model}. We'll contact you as soon as possible to review your quote details, schedule your boat inspection, discuss installation requirements, and finalize your trade-in value (if applicable). You should receive an email with your quote PDF shortly.`,
       });
       
     } catch (error) {
@@ -151,7 +171,7 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
   };
 
   const handleInputChange = (field: string, value: string) => {
-    const sanitizedValue = field === 'phone' ? formatPhoneNumber(value) : value;
+    const sanitizedValue = field === 'phone' ? formatPhoneAsUserTypes(value) : value;
     setContactInfo(prev => ({ ...prev, [field]: sanitizedValue }));
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: '' }));
@@ -226,7 +246,10 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
         {/* Contact Form */}
         <Card className="p-6">
           <form onSubmit={handleSubmit} className="space-y-6">
-            <h3 className="text-xl font-semibold">Contact Information</h3>
+            <div>
+              <h3 className="text-xl font-semibold">Contact Information</h3>
+              <p className="text-muted-foreground mt-2">We'll reach out as soon as possible to discuss your quote and schedule your consultation.</p>
+            </div>
             
             <div className="space-y-2">
               <Label htmlFor="name">Full Name *</Label>
@@ -264,35 +287,32 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
                 type="tel"
                 value={contactInfo.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
-                placeholder="(555) 123-4567"
+                placeholder="(705) 555-1234"
                 className={errors.phone ? 'border-destructive' : ''}
+                maxLength={14}
               />
               {errors.phone && (
                 <p className="text-sm text-destructive">{errors.phone}</p>
               )}
+              <p className="text-xs text-muted-foreground">Enter 10 digits (with or without formatting)</p>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="preferredTime">Preferred Consultation Time</Label>
-              <Select value={contactInfo.preferredTime} onValueChange={(value) => handleInputChange('preferredTime', value)}>
-                <SelectTrigger className={errors.preferredTime ? 'border-destructive' : ''}>
-                  <SelectValue placeholder="Select your preferred time" />
+              <Label htmlFor="contactMethod">Preferred Contact Method *</Label>
+              <Select value={contactInfo.contactMethod} onValueChange={(value) => handleInputChange('contactMethod', value)}>
+                <SelectTrigger>
+                  <SelectValue placeholder="How would you like us to contact you?" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="weekday-morning">Weekday Morning (9 AM - 12 PM)</SelectItem>
-                  <SelectItem value="weekday-afternoon">Weekday Afternoon (1 PM - 5 PM)</SelectItem>
-                  <SelectItem value="saturday-morning">Saturday Morning (9 AM - 12 PM)</SelectItem>
-                  <SelectItem value="saturday-afternoon">Saturday Afternoon (1 PM - 5 PM)</SelectItem>
-                  <SelectItem value="flexible">I'm flexible</SelectItem>
+                  <SelectItem value="email">Email</SelectItem>
+                  <SelectItem value="phone">Phone Call</SelectItem>
+                  <SelectItem value="text">Text Message</SelectItem>
                 </SelectContent>
               </Select>
-              {errors.preferredTime && (
-                <p className="text-sm text-destructive">{errors.preferredTime}</p>
-              )}
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="notes">Additional Notes</Label>
+              <Label htmlFor="notes">Additional Comments (Optional)</Label>
               <Textarea
                 id="notes"
                 value={contactInfo.notes}
@@ -306,7 +326,7 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
 
             <Button type="submit" className="w-full bg-primary hover:bg-primary/90" disabled={isSubmitting}>
               <Calendar className="w-4 h-4 mr-2" />
-              {isSubmitting ? 'Saving Quote...' : 'Schedule Consultation'}
+              {isSubmitting ? 'Saving Quote...' : 'Generate Quote'}
             </Button>
           </form>
         </Card>
