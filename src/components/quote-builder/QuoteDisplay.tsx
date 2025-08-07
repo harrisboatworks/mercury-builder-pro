@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle } from 'lucide-react';
@@ -11,7 +12,7 @@ import { QuoteData } from '../QuoteBuilder';
 
 interface QuoteDisplayProps {
   quoteData: QuoteData;
-  onStepComplete: (data: { financing: any; hasTradein: boolean }) => void;
+  onStepComplete: (data: { financing: any; hasTradein: boolean; tradeinInfo?: any }) => void;
   onBack: () => void;
 }
 
@@ -19,6 +20,11 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   const [downPayment, setDownPayment] = useState(0);
   const [term, setTerm] = useState(48);
   const [hasTradein, setHasTradein] = useState(false);
+  const [tradeinInfo, setTradeinInfo] = useState({
+    make: '',
+    model: '',
+    year: ''
+  });
 
   const motorPrice = quoteData.motor?.price || 0;
   const maxDownPayment = motorPrice * 0.5;
@@ -48,7 +54,8 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   const handleContinue = () => {
     onStepComplete({
       financing: { downPayment, term, rate: quoteData.financing.rate },
-      hasTradein
+      hasTradein,
+      tradeinInfo: hasTradein ? tradeinInfo : undefined
     });
   };
 
@@ -156,15 +163,15 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
                     <p className="text-xs text-muted-foreground uppercase tracking-wide">Weekly</p>
-                    <p className="text-lg font-bold text-foreground">${payments.weekly.toFixed(0)}</p>
+                    <p className="text-3xl font-bold text-foreground">${payments.weekly.toFixed(0)}</p>
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground uppercase tracking-wide">Bi-Weekly</p>
-                    <p className="text-lg font-bold text-foreground">${payments.biweekly.toFixed(0)}</p>
+                    <p className="text-3xl font-bold text-foreground">${payments.biweekly.toFixed(0)}</p>
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground uppercase tracking-wide">Monthly</p>
-                    <p className="text-lg font-bold text-primary">${payments.monthly.toFixed(0)}</p>
+                    <p className="text-3xl font-bold text-primary">${payments.monthly.toFixed(0)}</p>
                   </div>
                 </div>
               </div>
@@ -236,6 +243,38 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
               onCheckedChange={setHasTradein}
             />
           </div>
+          
+          {hasTradein && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 pt-4 border-t border-border">
+              <div className="space-y-2">
+                <Label htmlFor="tradein-make">Make</Label>
+                <Input
+                  id="tradein-make"
+                  value={tradeinInfo.make}
+                  onChange={(e) => setTradeinInfo(prev => ({ ...prev, make: e.target.value }))}
+                  placeholder="e.g., Mercury"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="tradein-model">Model</Label>
+                <Input
+                  id="tradein-model"
+                  value={tradeinInfo.model}
+                  onChange={(e) => setTradeinInfo(prev => ({ ...prev, model: e.target.value }))}
+                  placeholder="e.g., FourStroke 115"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="tradein-year">Year</Label>
+                <Input
+                  id="tradein-year"
+                  value={tradeinInfo.year}
+                  onChange={(e) => setTradeinInfo(prev => ({ ...prev, year: e.target.value }))}
+                  placeholder="e.g., 2020"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </Card>
 

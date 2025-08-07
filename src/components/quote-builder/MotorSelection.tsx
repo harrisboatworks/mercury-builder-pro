@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Slider } from '@/components/ui/slider';
-import { Filter, Grid, List, Zap, Anchor, RefreshCw } from 'lucide-react';
+import { RefreshCw, Zap, Anchor } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/components/ui/use-toast';
+import { MotorFilters } from './MotorFilters';
 
 interface MotorSelectionProps {
   onStepComplete: (motor: Motor) => void;
@@ -22,9 +22,11 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
   const [filters, setFilters] = useState({
     category: 'all',
     stockStatus: 'all',
-    priceRange: [0, 50000]
+    priceRange: [0, 50000] as [number, number],
+    hpRange: [2.5, 600] as [number, number]
   });
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [filtersOpen, setFiltersOpen] = useState(true);
 
   // Load motors from database
   useEffect(() => {
@@ -112,15 +114,16 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
     if (filters.category !== 'all' && motor.category !== filters.category) return false;
     if (filters.stockStatus !== 'all' && motor.stockStatus !== filters.stockStatus) return false;
     if (motor.price < filters.priceRange[0] || motor.price > filters.priceRange[1]) return false;
+    if (motor.hp < filters.hpRange[0] || motor.hp > filters.hpRange[1]) return false;
     return true;
   });
 
   const getStockBadgeColor = (status: string) => {
     switch (status) {
-      case 'In Stock': return 'default';
-      case 'On Order': return 'secondary'; 
-      case 'Out of Stock': return 'destructive';
-      default: return 'secondary';
+      case 'In Stock': return 'bg-green-500 text-white hover:bg-green-600';
+      case 'On Order': return 'bg-yellow-500 text-white hover:bg-yellow-600';
+      case 'Out of Stock': return 'bg-red-500 text-white hover:bg-red-600';
+      default: return 'bg-gray-500 text-white hover:bg-gray-600';
     }
   };
 
@@ -146,184 +149,121 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
   }
 
   return (
-    <div className="space-y-8">
-      {/* Header */}
-      <div className="text-center space-y-4">
-        <div className="flex items-center justify-center gap-4">
-          <img src={mercuryLogo} alt="Mercury Marine" className="h-12 w-auto" />
-          <h2 className="text-3xl font-bold text-foreground">Select Your Mercury Outboard</h2>
-        </div>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Choose from our current inventory of Mercury outboard motors. All prices and availability are updated from Harris Boat Works.
-        </p>
-        <Button 
-          onClick={updateInventory} 
-          disabled={updating}
-          variant="outline"
-          size="sm"
-        >
-          {updating ? (
-            <>
-              <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
-              Updating...
-            </>
-          ) : (
-            <>
-              <RefreshCw className="w-4 h-4 mr-2" />
-              Update Inventory
-            </>
-          )}
-        </Button>
-      </div>
+    <div className="flex gap-6">
+      {/* Filter Sidebar */}
+      <MotorFilters
+        filters={filters}
+        setFilters={setFilters}
+        viewMode={viewMode}
+        setViewMode={setViewMode}
+        resultsCount={filteredMotors.length}
+        isOpen={filtersOpen}
+        onToggle={() => setFiltersOpen(!filtersOpen)}
+      />
 
-      {/* Filters */}
-      <Card className="p-6">
-        <div className="space-y-6">
-          <div className="flex items-center justify-between">
-            <h3 className="text-lg font-semibold flex items-center gap-2">
-              <Filter className="w-5 h-5" />
-              Filter Motors ({filteredMotors.length} found)
-            </h3>
-            <div className="flex items-center gap-2">
-              <Button
-                variant={viewMode === 'grid' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setViewMode('grid')}
-              >
-                <Grid className="w-4 h-4" />
-              </Button>
-              <Button
-                variant={viewMode === 'list' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setViewMode('list')}
-              >
-                <List className="w-4 h-4" />
-              </Button>
-            </div>
+      {/* Main Content */}
+      <div className="flex-1 space-y-8">
+        {/* Header */}
+        <div className="text-center space-y-4">
+          <div className="flex items-center justify-center gap-4">
+            <img src={mercuryLogo} alt="Mercury Marine" className="h-12 w-auto" />
+            <h2 className="text-3xl font-bold text-foreground">Select Your Mercury Outboard</h2>
           </div>
-
-          {/* Category Filter */}
-          <div className="space-y-3">
-            <label className="text-sm font-medium">Motor Category</label>
-            <div className="flex flex-wrap gap-2">
-              {categories.map(category => (
-                <Button
-                  key={category.key}
-                  variant={filters.category === category.key ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => setFilters(prev => ({ ...prev, category: category.key }))}
-                >
-                  {category.label}
-                </Button>
-              ))}
-            </div>
-          </div>
-
-          {/* Stock Status Filter */}
-          <div className="space-y-3">
-            <label className="text-sm font-medium">Stock Status</label>
-            <div className="flex gap-2">
-              {['all', 'In Stock', 'On Order', 'Out of Stock'].map(status => (
-                <Button
-                  key={status}
-                  variant={filters.stockStatus === status ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => setFilters(prev => ({ ...prev, stockStatus: status }))}
-                >
-                  {status === 'all' ? 'All' : status}
-                </Button>
-              ))}
-            </div>
-          </div>
-
-          {/* Price Range */}
-          <div className="space-y-3">
-            <label className="text-sm font-medium">
-              Price Range: ${filters.priceRange[0].toLocaleString()} - ${filters.priceRange[1].toLocaleString()}
-            </label>
-            <Slider
-              value={filters.priceRange}
-              onValueChange={(value) => setFilters(prev => ({ ...prev, priceRange: value }))}
-              max={50000}
-              min={0}
-              step={500}
-              className="w-full"
-            />
-          </div>
-        </div>
-      </Card>
-
-      {/* Motors Grid */}
-      {filteredMotors.length === 0 ? (
-        <Card className="p-12 text-center">
-          <p className="text-muted-foreground">No motors found matching your filters.</p>
-        </Card>
-      ) : (
-        <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
-          {filteredMotors.map(motor => (
-            <Card 
-              key={motor.id}
-              className={`cursor-pointer transition-all duration-300 hover:shadow-lg ${
-                selectedMotor?.id === motor.id ? 'ring-2 ring-primary shadow-lg' : ''
-              }`}
-              onClick={() => setSelectedMotor(motor)}
-            >
-              <div className="p-6 space-y-4">
-                <div className="flex items-start justify-between">
-                  <Badge variant={getCategoryColor(motor.category)}>
-                    {motor.hp}HP
-                  </Badge>
-                  <Badge variant={getStockBadgeColor(motor.stockStatus)}>
-                    {motor.stockStatus}
-                  </Badge>
-                </div>
-
-                <div className="space-y-2">
-                  <h3 className="text-xl font-semibold text-foreground">{motor.model}</h3>
-                  <p className="text-muted-foreground text-sm">{motor.specs}</p>
-                </div>
-
-                {motor.image && motor.image !== '/placeholder.svg' && (
-                  <div className="aspect-video bg-muted rounded-lg overflow-hidden">
-                    <img 
-                      src={motor.image} 
-                      alt={motor.model}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                )}
-
-                <div className="flex items-center justify-between pt-4">
-                  <div className="space-y-1">
-                    <p className="text-2xl font-bold text-foreground">
-                      ${motor.price.toLocaleString()}
-                    </p>
-                    <p className="text-sm text-muted-foreground">CAD</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Anchor className="w-5 h-5 text-primary" />
-                    <span className="text-sm font-medium text-muted-foreground">{motor.type}</span>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
-      )}
-
-      {/* Continue Button */}
-      {selectedMotor && (
-        <div className="flex justify-center pt-8">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Choose from our current inventory of Mercury outboard motors. All prices and availability are updated from Harris Boat Works.
+          </p>
           <Button 
-            onClick={() => onStepComplete(selectedMotor)}
-            size="lg"
-            className="px-8"
+            onClick={updateInventory} 
+            disabled={updating}
+            variant="outline"
+            size="sm"
           >
-            Continue with {selectedMotor.model}
-            <Zap className="w-5 h-5 ml-2" />
+            {updating ? (
+              <>
+                <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
+                Updating...
+              </>
+            ) : (
+              <>
+                <RefreshCw className="w-4 h-4 mr-2" />
+                Update Inventory
+              </>
+            )}
           </Button>
         </div>
-      )}
+
+        {/* Motors Grid */}
+        {filteredMotors.length === 0 ? (
+          <Card className="p-12 text-center">
+            <p className="text-muted-foreground">No motors found matching your filters.</p>
+          </Card>
+        ) : (
+          <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
+            {filteredMotors.map(motor => (
+              <Card 
+                key={motor.id}
+                className={`cursor-pointer transition-all duration-300 hover:shadow-lg ${
+                  selectedMotor?.id === motor.id ? 'ring-2 ring-primary shadow-lg' : ''
+                }`}
+                onClick={() => setSelectedMotor(motor)}
+              >
+                <div className="p-6 space-y-4">
+                  <div className="flex items-start justify-between">
+                    <Badge variant={getCategoryColor(motor.category)}>
+                      {motor.hp}HP
+                    </Badge>
+                    <Badge className={getStockBadgeColor(motor.stockStatus)}>
+                      {motor.stockStatus}
+                    </Badge>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-semibold text-foreground">{motor.model}</h3>
+                    <p className="text-muted-foreground text-sm">{motor.specs}</p>
+                  </div>
+
+                  {motor.image && motor.image !== '/placeholder.svg' && (
+                    <div className="aspect-video bg-muted rounded-lg overflow-hidden">
+                      <img 
+                        src={motor.image} 
+                        alt={motor.model}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+
+                  <div className="flex items-center justify-between pt-4">
+                    <div className="space-y-1">
+                      <p className="text-2xl font-bold text-foreground">
+                        ${motor.price.toLocaleString()}
+                      </p>
+                      <p className="text-sm text-muted-foreground">CAD</p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Anchor className="w-5 h-5 text-primary" />
+                      <span className="text-sm font-medium text-muted-foreground">{motor.type}</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        )}
+
+        {/* Continue Button */}
+        {selectedMotor && (
+          <div className="flex justify-center pt-8">
+            <Button 
+              onClick={() => onStepComplete(selectedMotor)}
+              size="lg"
+              className="px-8"
+            >
+              Continue with {selectedMotor.model}
+              <Zap className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

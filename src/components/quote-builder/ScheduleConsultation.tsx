@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -31,6 +31,23 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
+
+  // Load Calendly widget
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    script.onload = () => setCalendlyLoaded(true);
+    document.head.appendChild(script);
+
+    return () => {
+      const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
+    };
+  }, []);
 
   const validateForm = () => {
     try {
@@ -191,7 +208,7 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
               </div>
 
               {quoteData.hasTradein && (
-                <Alert className="border-on-order bg-on-order/10">
+                <Alert className="border-orange-500 bg-orange-50 dark:bg-orange-950/20">
                   <AlertDescription>
                     Trade-in value will be assessed during consultation
                   </AlertDescription>
@@ -295,6 +312,34 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
         </Card>
       </div>
 
+      {/* Calendly Integration */}
+      <Card className="p-6">
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold flex items-center gap-2">
+            <Calendar className="w-5 h-5" />
+            Schedule Your Consultation
+          </h3>
+          <p className="text-muted-foreground">
+            Book a time that works for you to review your quote and discuss installation details.
+          </p>
+          
+          {calendlyLoaded ? (
+            <div 
+              className="calendly-inline-widget" 
+              data-url="https://calendly.com/harris-boat-works/outboard-consultation"
+              style={{ minWidth: '320px', height: '630px' }}
+            ></div>
+          ) : (
+            <div className="flex items-center justify-center h-96 bg-muted rounded-lg">
+              <div className="text-center space-y-2">
+                <Clock className="w-8 h-8 mx-auto text-muted-foreground animate-spin" />
+                <p className="text-muted-foreground">Loading scheduling calendar...</p>
+              </div>
+            </div>
+          )}
+        </div>
+      </Card>
+
       {/* Contact Information */}
       <Card className="p-6">
         <h3 className="text-xl font-semibold mb-4">Harris Boat Works</h3>
@@ -342,7 +387,7 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
       <div className="flex justify-between">
         <Button variant="outline" onClick={onBack}>
           <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Quote
+          Back to Quote Review
         </Button>
       </div>
     </div>

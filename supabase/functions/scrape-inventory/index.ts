@@ -39,8 +39,8 @@ Deno.serve(async (req) => {
     
     while (hasMorePages && pageNumber <= 10) { // Safety limit of 10 pages
       const url = pageNumber === 1 
-        ? 'https://www.harrisboatworks.ca/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low'
-        : `https://www.harrisboatworks.ca/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low/page/${pageNumber}`
+        ? 'https://www.harrisboatworks.ca/search/inventory/brand/Mercury/sort/price-low'
+        : `https://www.harrisboatworks.ca/search/inventory/brand/Mercury/sort/price-low/page/${pageNumber}`
       
       console.log(`Fetching page ${pageNumber}: ${url}`)
       
