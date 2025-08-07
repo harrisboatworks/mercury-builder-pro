@@ -9,6 +9,16 @@ import { BoatInformation } from './quote-builder/BoatInformation';
 import { QuoteDisplay } from './quote-builder/QuoteDisplay';
 import { ScheduleConsultation } from './quote-builder/ScheduleConsultation';
 import { QuoteProgress } from './quote-builder/QuoteProgress';
+import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
+import { toast } from 'sonner';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/components/ui/use-toast';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Switch } from '@/components/ui/switch';
+import { BonusOffers } from './quote-builder/BonusOffers';
 
 export interface Motor {
   id: string;
@@ -27,8 +37,19 @@ export interface Motor {
   savings?: number; // total savings applied
   appliedPromotions?: string[];
   promoEndsAt?: string | null;
+  // NEW: Bonus offers metadata (non-price)
+  bonusOffers?: Array<{
+    id: string;
+    title: string;
+    shortBadge?: string | null;
+    description?: string | null;
+    warrantyExtraYears?: number | null;
+    termsUrl?: string | null;
+    highlight: boolean;
+    endsAt: string | null;
+    priority: number;
+  }>;
 }
-
 
 export interface BoatInfo {
   type: string;
@@ -193,11 +214,15 @@ const QuoteBuilder = () => {
         )}
         
         {currentStep === 3 && (
-          <QuoteDisplay 
-            quoteData={quoteData}
-            onStepComplete={handleStepComplete} 
-            onBack={handleBack}
-          />
+          <>
+            <QuoteDisplay 
+              quoteData={quoteData}
+              onStepComplete={handleStepComplete} 
+              onBack={handleBack}
+            />
+            {/* NEW: Bonus offers section under the quote details */}
+            <BonusOffers motor={quoteData.motor} />
+          </>
         )}
         
         {currentStep === 4 && (

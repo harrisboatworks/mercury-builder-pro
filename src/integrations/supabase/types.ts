@@ -190,34 +190,58 @@ export type Database = {
       }
       promotions: {
         Row: {
+          bonus_description: string | null
+          bonus_short_badge: string | null
+          bonus_title: string | null
           created_at: string | null
           discount_percentage: number
           end_date: string | null
+          highlight: boolean
           id: string
           is_active: boolean
+          kind: string
           name: string
+          priority: number
           stackable: boolean
           start_date: string | null
+          terms_url: string | null
+          warranty_extra_years: number | null
         }
         Insert: {
-          created_at?: string | null
-          discount_percentage: number
-          end_date?: string | null
-          id?: string
-          is_active?: boolean
-          name: string
-          stackable?: boolean
-          start_date?: string | null
-        }
-        Update: {
+          bonus_description?: string | null
+          bonus_short_badge?: string | null
+          bonus_title?: string | null
           created_at?: string | null
           discount_percentage?: number
           end_date?: string | null
+          highlight?: boolean
           id?: string
           is_active?: boolean
-          name?: string
+          kind?: string
+          name: string
+          priority?: number
           stackable?: boolean
           start_date?: string | null
+          terms_url?: string | null
+          warranty_extra_years?: number | null
+        }
+        Update: {
+          bonus_description?: string | null
+          bonus_short_badge?: string | null
+          bonus_title?: string | null
+          created_at?: string | null
+          discount_percentage?: number
+          end_date?: string | null
+          highlight?: boolean
+          id?: string
+          is_active?: boolean
+          kind?: string
+          name?: string
+          priority?: number
+          stackable?: boolean
+          start_date?: string | null
+          terms_url?: string | null
+          warranty_extra_years?: number | null
         }
         Relationships: []
       }

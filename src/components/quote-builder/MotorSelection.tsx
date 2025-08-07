@@ -33,6 +33,14 @@ interface Promotion {
   start_date: string | null;
   end_date: string | null;
   stackable: boolean;
+  kind: 'discount' | 'bonus';
+  bonus_title: string | null;
+  bonus_short_badge: string | null;
+  bonus_description: string | null;
+  warranty_extra_years: number | null;
+  terms_url: string | null;
+  highlight: boolean;
+  priority: number;
 }
 
 interface PromotionRule {
@@ -94,7 +102,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
         const salePrice = m.sale_price != null ? Number(m.sale_price) : null;
         const original = salePrice && salePrice > 0 && salePrice < basePrice ? salePrice : basePrice;
 
-        const { effectivePrice, appliedPromotions, promoEndsAt } = applyPromotions(m, original, activePromos, promoRules);
+        const { effectivePrice, appliedPromotions, promoEndsAt, bonusOffers } = applyPromotions(m, original, activePromos, promoRules);
         const savings = Math.max(0, original - effectivePrice);
 
         return {
@@ -113,6 +121,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
           savings,
           appliedPromotions,
           promoEndsAt,
+          bonusOffers,
         };
       });
 
@@ -170,8 +179,15 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
     const applied: string[] = [];
     let endsAt: string | null = null;
 
-    // Apply stackable promos first
-    const stackables = applicable.filter((p) => p.stackable);
+    // Separate bonuses and discounts
+    const bonusOnly = applicable
+      .filter((p) => p.kind === 'bonus')
+      .sort((a, b) => (b.highlight === a.highlight ? (b.priority - a.priority) : (b.highlight ? 1 : -1)));
+
+    const discounts = applicable.filter((p) => p.kind !== 'bonus' && Number(p.discount_percentage) > 0);
+
+    // Apply stackable discounts first
+    const stackables = discounts.filter((p) => p.stackable);
     for (const p of stackables) {
       price = price * (1 - Number(p.discount_percentage) / 100);
       applied.push(p.name);
@@ -180,8 +196,8 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
       }
     }
 
-    // Then best non-stackable promo
-    const nonStackables = applicable.filter((p) => !p.stackable);
+    // Then best non-stackable discount
+    const nonStackables = discounts.filter((p) => !p.stackable);
     if (nonStackables.length > 0) {
       const best = nonStackables.reduce((a, b) => (Number(a.discount_percentage) > Number(b.discount_percentage) ? a : b));
       price = price * (1 - Number(best.discount_percentage) / 100);
@@ -191,12 +207,33 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
       }
     }
 
+    // Collect bonus offers (do not change price)
+    const bonusOffers = bonusOnly.map((b) => {
+      if (b.end_date) {
+        if (!endsAt || new Date(b.end_date) < new Date(endsAt)) endsAt = b.end_date;
+      }
+      applied.push(b.name);
+      return {
+        id: b.id,
+        title: b.bonus_title || b.name,
+        shortBadge: b.bonus_short_badge || (b.warranty_extra_years ? `+${b.warranty_extra_years}Y Warranty` : 'Bonus Offer'),
+        description: b.bonus_description || null,
+        warrantyExtraYears: b.warranty_extra_years || null,
+        termsUrl: b.terms_url || null,
+        highlight: !!b.highlight,
+        endsAt: b.end_date || null,
+        priority: b.priority || 0,
+      };
+    });
+
     return {
       effectivePrice: Math.round(price),
       appliedPromotions: applied,
       promoEndsAt: endsAt,
+      bonusOffers,
     };
   };
+
   const updateInventory = async () => {
     setUpdating(true);
     try {
@@ -222,6 +259,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
       setUpdating(false);
     }
   };
+
   const categories = [
     { key: 'all', label: 'All Motors', color: 'primary' },
     { key: 'portable', label: 'Portable (2.5-20hp)', color: 'portable' },
@@ -259,11 +297,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
 
   const handleMotorSelection = (motor: Motor) => {
     setSelectedMotor(motor);
-    
-    // Trigger celebration animation
     setShowCelebration(true);
-    
-    // Create particle effect
     const particles = Array.from({ length: 6 }, (_, i) => ({
       id: Date.now() + i,
       x: Math.random() * 100,
@@ -271,20 +305,14 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
       emoji: ['✨', '🎉', '⭐', '💚', '✅', '🚤'][i]
     }));
     setCelebrationParticles(particles);
-    
-    // Show success toast
     toast({
       title: "🎉 Excellent Choice!",
       description: `${motor.model} selected - Let's continue!`,
       duration: 2000,
     });
-    
-    // Show sticky bar after animation
     setTimeout(() => {
       setShowStickyBar(true);
     }, 500);
-    
-    // Clear celebration after animation
     setTimeout(() => {
       setShowCelebration(false);
       setCelebrationParticles([]);
@@ -304,7 +332,6 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
 
   return (
     <div className="flex gap-6">
-      {/* Filter Sidebar */}
       <MotorFilters
         filters={filters}
         setFilters={setFilters}
@@ -315,9 +342,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
         onToggle={() => setFiltersOpen(!filtersOpen)}
       />
 
-      {/* Main Content */}
       <div className="flex-1 space-y-8">
-        {/* Header */}
         <div className="text-center space-y-4">
           <div className="flex items-center justify-center gap-4">
             <img src={mercuryLogo} alt="Mercury Marine" className="h-12 w-auto" />
@@ -346,122 +371,142 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
           </Button>
         </div>
 
-        {/* Motors Grid */}
         {filteredMotors.length === 0 ? (
           <Card className="p-12 text-center">
             <p className="text-muted-foreground">No motors found matching your filters.</p>
           </Card>
         ) : (
           <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
-            {filteredMotors.map(motor => (
-              <Card 
-                key={motor.id}
-                className={`relative cursor-pointer transition-all duration-500 hover:shadow-lg group overflow-hidden ${
-                  selectedMotor?.id === motor.id 
-                    ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' 
-                    : 'hover:scale-[1.01]'
-                } ${
-                  selectedMotor && selectedMotor.id !== motor.id 
-                    ? 'opacity-70' 
-                    : ''
-                }`}
-                onClick={() => handleMotorSelection(motor)}
-              >
-                {/* Selection Checkmark */}
-                {selectedMotor?.id === motor.id && (
-                  <div className="absolute top-4 right-4 z-20">
-                    <div className="bg-green-500 text-white rounded-full p-2 shadow-lg animate-in zoom-in-50 duration-500">
-                      <Check className="w-5 h-5" />
+            {filteredMotors.map(motor => {
+              const hasSale = !!(motor.salePrice && motor.basePrice && motor.salePrice < motor.basePrice);
+              const hasBonus = !!(motor.bonusOffers && motor.bonusOffers.length > 0);
+              const topBonus = hasBonus
+                ? [...(motor.bonusOffers || [])].sort((a, b) => (b.highlight === a.highlight ? (b.priority - a.priority) : (b.highlight ? 1 : -1)))[0]
+                : null;
+
+              return (
+                <Card 
+                  key={motor.id}
+                  className={`relative cursor-pointer transition-all duration-500 hover:shadow-lg group overflow-hidden ${
+                    (selectedMotor?.id === motor.id) 
+                      ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' 
+                      : 'hover:scale-[1.01]'
+                  } ${
+                    selectedMotor && selectedMotor.id !== motor.id 
+                      ? 'opacity-70' 
+                      : ''
+                  }`}
+                  onClick={() => handleMotorSelection(motor)}
+                >
+                  {selectedMotor?.id === motor.id && (
+                    <div className="absolute top-4 right-4 z-20">
+                      <div className="bg-green-500 text-white rounded-full p-2 shadow-lg animate-in zoom-in-50 duration-500">
+                        <Check className="w-5 h-5" />
+                      </div>
                     </div>
-                  </div>
-                )}
-                
-                {/* Selected Banner */}
-                {selectedMotor?.id === motor.id && (
-                  <div className="absolute top-0 right-0 z-10">
-                    <div className="bg-green-500 text-white px-4 py-1 text-xs font-bold transform rotate-45 translate-x-6 translate-y-2">
-                      SELECTED
-                    </div>
-                  </div>
-                )}
-
-                {/* Promo/Sale Ribbons */}
-                {motor.salePrice && motor.basePrice && motor.salePrice < motor.basePrice && (
-                  <div className="absolute top-4 left-4 z-20">
-                    <Badge className="bg-primary text-primary-foreground">SALE</Badge>
-                  </div>
-                )}
-                {(!motor.salePrice || (motor.basePrice && motor.salePrice >= motor.basePrice)) && (motor.appliedPromotions && motor.appliedPromotions.length > 0) && (
-                  <div className="absolute top-4 left-4 z-20">
-                    <Badge variant="outline">PROMO</Badge>
-                  </div>
-                )}
-
-                <div className="p-6 space-y-4 relative">
-                  <div className="flex items-start justify-between">
-                    <Badge variant={getCategoryColor(motor.category)}>
-                      {motor.hp}HP
-                    </Badge>
-                    <Badge className={getStockBadgeColor(motor.stockStatus)}>
-                      {motor.stockStatus}
-                    </Badge>
-                  </div>
-
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-semibold text-foreground">{motor.model}</h3>
-                    <p className="text-muted-foreground text-sm">{motor.specs}</p>
-                  </div>
-
-                  {motor.image && motor.image !== '/placeholder.svg' && (
-                    <div className="aspect-video bg-muted rounded-lg overflow-hidden">
-                      <img 
-                        src={motor.image} 
-                        alt={motor.model}
-                        className="w-full h-full object-cover"
-                      />
+                  )}
+                  
+                  {selectedMotor?.id === motor.id && (
+                    <div className="absolute top-0 right-0 z-10">
+                      <div className="bg-green-500 text-white px-4 py-1 text-xs font-bold transform rotate-45 translate-x-6 translate-y-2">
+                        SELECTED
+                      </div>
                     </div>
                   )}
 
-                  <div className="flex items-center justify-between pt-4">
-                    <div className="space-y-1">
-                      {motor.savings && motor.savings > 0 ? (
-                        <>
-                          <p className="text-sm line-through text-muted-foreground">
-                            ${motor.originalPrice?.toLocaleString()}
-                          </p>
-                          <p className="text-2xl font-bold text-foreground">
-                            ${motor.price.toLocaleString()}
-                          </p>
-                          <p className="text-xs text-green-600 dark:text-green-400">
-                            You save ${Math.round(motor.savings).toLocaleString()} {motor.promoEndsAt ? `• Ends in ${Math.max(0, Math.ceil((new Date(motor.promoEndsAt).getTime() - Date.now())/86400000))}d` : ''}
-                          </p>
-                        </>
-                      ) : (
-                        <>
-                          <p className="text-2xl font-bold text-foreground">
-                            ${motor.price.toLocaleString()}
-                          </p>
-                          <p className="text-sm text-muted-foreground">CAD</p>
-                        </>
-                      )}
+                  {hasSale && (
+                    <div className="absolute top-4 left-4 z-20">
+                      <Badge className="bg-primary text-primary-foreground">SALE</Badge>
                     </div>
-                    <div className="flex flex-col items-end gap-1">
-                      <div className="flex items-center gap-2">
-                        <img src="/lovable-uploads/29fca629-fbe7-44e9-ab71-703477b2c852.png" alt="Mercury outboard logo" className="w-5 h-5 object-contain" loading="lazy" />
-                        <span className="text-sm font-medium text-muted-foreground">{motor.type}</span>
+                  )}
+                  {!hasSale && motor.appliedPromotions && motor.appliedPromotions.length > 0 && (
+                    <div className="absolute top-4 left-4 z-20">
+                      <Badge variant="outline">PROMO</Badge>
+                    </div>
+                  )}
+                  {!hasSale && !motor.appliedPromotions?.length && hasBonus && topBonus && (
+                    <div className="absolute top-4 left-4 z-20">
+                      <Badge className="bg-secondary text-secondary-foreground">
+                        {topBonus.shortBadge || 'BONUS'}
+                      </Badge>
+                    </div>
+                  )}
+
+                  <div className="p-6 space-y-4 relative">
+                    <div className="flex items-start justify-between">
+                      <Badge variant={getCategoryColor(motor.category)}>
+                        {motor.hp}HP
+                      </Badge>
+                      <Badge className={getStockBadgeColor(motor.stockStatus)}>
+                        {motor.stockStatus}
+                      </Badge>
+                    </div>
+
+                    <div className="space-y-2">
+                      <h3 className="text-xl font-semibold text-foreground">{motor.model}</h3>
+                      <p className="text-muted-foreground text-sm">{motor.specs}</p>
+                    </div>
+
+                    {motor.image && motor.image !== '/placeholder.svg' && (
+                      <div className="aspect-video bg-muted rounded-lg overflow-hidden">
+                        <img 
+                          src={motor.image} 
+                          alt={motor.model}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                      {motor.appliedPromotions && motor.appliedPromotions.length > 0 && (
-                        <div className="text-xs text-primary">{motor.appliedPromotions.join(' + ')}</div>
-                      )}
+                    )}
+
+                    {hasBonus && (
+                      <div className="flex flex-wrap gap-2">
+                        {(motor.bonusOffers || []).slice(0, 2).map((b) => (
+                          <Badge key={b.id} variant="outline" className="border-secondary text-secondary-foreground">
+                            {b.shortBadge || b.title}
+                          </Badge>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className="flex items-center justify-between pt-4">
+                      <div className="space-y-1">
+                        {motor.savings && motor.savings > 0 ? (
+                          <>
+                            <p className="text-sm line-through text-muted-foreground">
+                              ${motor.originalPrice?.toLocaleString()}
+                            </p>
+                            <p className="text-2xl font-bold text-foreground">
+                              ${motor.price.toLocaleString()}
+                            </p>
+                            <p className="text-xs text-green-600 dark:text-green-400">
+                              You save ${Math.round(motor.savings).toLocaleString()} {motor.promoEndsAt ? `• Ends in ${Math.max(0, Math.ceil((new Date(motor.promoEndsAt).getTime() - Date.now())/86400000))}d` : ''}
+                            </p>
+                          </>
+                        ) : (
+                          <>
+                            <p className="text-2xl font-bold text-foreground">
+                              ${motor.price.toLocaleString()}
+                            </p>
+                            <p className="text-sm text-muted-foreground">CAD</p>
+                          </>
+                        )}
+                      </div>
+                      <div className="flex flex-col items-end gap-1">
+                        <div className="flex items-center gap-2">
+                          <img src="/lovable-uploads/29fca629-fbe7-44e9-ab71-703477b2c852.png" alt="Mercury outboard logo" className="w-5 h-5 object-contain" loading="lazy" />
+                          <span className="text-sm font-medium text-muted-foreground">{motor.type}</span>
+                        </div>
+                        {motor.appliedPromotions && motor.appliedPromotions.length > 0 && (
+                          <div className="text-xs text-primary">{motor.appliedPromotions.join(' + ')}</div>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              );
+            })}
           </div>
         )}
 
-        {/* Continue Button */}
         {selectedMotor && !showStickyBar && (
           <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
             <Button 
@@ -474,8 +519,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
           </div>
         )}
       </div>
-      
-      {/* Sticky Bottom Navigation Bar */}
+
       {showStickyBar && selectedMotor && (
         <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom-5 duration-500">
           <div className="bg-background/95 backdrop-blur-lg border-t-4 border-green-500 shadow-2xl">
@@ -519,8 +563,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
           </div>
         </div>
       )}
-      
-      {/* Floating Action Button (Mobile) */}
+
       {showStickyBar && selectedMotor && isMobile && (
         <div className="fixed bottom-20 right-4 z-40 animate-in zoom-in-50 duration-500">
           <Button 
@@ -531,8 +574,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
           </Button>
         </div>
       )}
-      
-      {/* Celebration Particles */}
+
       {celebrationParticles.map(particle => (
         <div
           key={particle.id}
@@ -546,8 +588,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
           {particle.emoji}
         </div>
       ))}
-      
-      {/* Celebration Toast (Visual) */}
+
       {showCelebration && selectedMotor && (
         <div className="fixed top-4 right-4 z-40 animate-in slide-in-from-right-5 duration-500">
           <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-2">

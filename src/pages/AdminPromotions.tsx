@@ -1,3 +1,4 @@
+
 import { useEffect, useMemo, useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -18,6 +19,15 @@ interface Promotion {
   end_date: string | null;
   stackable: boolean;
   created_at?: string;
+  // Bonus/metadata
+  kind: 'discount' | 'bonus';
+  bonus_title: string | null;
+  bonus_short_badge: string | null;
+  bonus_description: string | null;
+  warranty_extra_years: number | null;
+  terms_url: string | null;
+  highlight: boolean;
+  priority: number;
 }
 
 interface PromotionRule {
@@ -64,6 +74,15 @@ const AdminPromotions = () => {
     stackable: false,
     start_date: null,
     end_date: null,
+    // New fields
+    kind: 'discount',
+    bonus_title: null,
+    bonus_short_badge: null,
+    bonus_description: null,
+    warranty_extra_years: null,
+    terms_url: null,
+    highlight: false,
+    priority: 0,
   });
 
   // New rule form
@@ -102,10 +121,30 @@ const AdminPromotions = () => {
 
   const createPromotion = async () => {
     try {
-      const { data, error } = await supabase.from('promotions').insert(newPromo).select('*').single();
+      const payload = {
+        ...newPromo,
+        // If it's a bonus, ensure discount is 0
+        discount_percentage: newPromo.kind === 'bonus' ? 0 : Number(newPromo.discount_percentage || 0),
+      };
+      const { data, error } = await supabase.from('promotions').insert(payload).select('*').single();
       if (error) throw error;
-      toast({ title: 'Promotion created', description: `${data.name} at ${data.discount_percentage}%` });
-      setNewPromo({ name: '', discount_percentage: 5, is_active: true, stackable: false, start_date: null, end_date: null });
+      toast({ title: 'Promotion created', description: `${data.name} (${data.kind})` });
+      setNewPromo({
+        name: '',
+        discount_percentage: 5,
+        is_active: true,
+        stackable: false,
+        start_date: null,
+        end_date: null,
+        kind: 'discount',
+        bonus_title: null,
+        bonus_short_badge: null,
+        bonus_description: null,
+        warranty_extra_years: null,
+        terms_url: null,
+        highlight: false,
+        priority: 0,
+      });
       await loadAll();
     } catch (e) {
       console.error(e);
@@ -181,15 +220,29 @@ const AdminPromotions = () => {
       <Card className="p-6 mb-8">
         <h2 className="text-xl font-semibold mb-4">Create Promotion</h2>
         <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
+          <div className="space-y-2">
+            <Label htmlFor="kind">Type</Label>
+            <Select value={newPromo.kind} onValueChange={(v: Promotion['kind']) => setNewPromo({ ...newPromo, kind: v })}>
+              <SelectTrigger id="kind">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="discount">Discount</SelectItem>
+                <SelectItem value="bonus">Bonus Offer</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
           <div className="space-y-2 md:col-span-2">
             <Label htmlFor="name">Name</Label>
             <Input id="name" value={newPromo.name} onChange={(e) => setNewPromo({ ...newPromo, name: e.target.value })} placeholder="Spring Bonus" />
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="discount">Discount %</Label>
-            <Input id="discount" type="number" value={newPromo.discount_percentage}
-              onChange={(e) => setNewPromo({ ...newPromo, discount_percentage: Number(e.target.value) })} />
-          </div>
+          {newPromo.kind === 'discount' && (
+            <div className="space-y-2">
+              <Label htmlFor="discount">Discount %</Label>
+              <Input id="discount" type="number" value={newPromo.discount_percentage}
+                onChange={(e) => setNewPromo({ ...newPromo, discount_percentage: Number(e.target.value) })} />
+            </div>
+          )}
           <div className="space-y-2">
             <Label htmlFor="start">Start Date</Label>
             <Input id="start" type="date" value={newPromo.start_date ?? ''}
@@ -208,6 +261,38 @@ const AdminPromotions = () => {
             <Switch checked={newPromo.stackable} onCheckedChange={(v) => setNewPromo({ ...newPromo, stackable: v })} />
             <Label>Stackable</Label>
           </div>
+          {newPromo.kind === 'bonus' && (
+            <>
+              <div className="space-y-2 md:col-span-2">
+                <Label htmlFor="bonus_title">Bonus Title</Label>
+                <Input id="bonus_title" value={newPromo.bonus_title ?? ''} onChange={(e) => setNewPromo({ ...newPromo, bonus_title: e.target.value })} placeholder="+2 Years Extended Warranty" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="bonus_badge">Badge Text</Label>
+                <Input id="bonus_badge" value={newPromo.bonus_short_badge ?? ''} onChange={(e) => setNewPromo({ ...newPromo, bonus_short_badge: e.target.value })} placeholder="+2Y Warranty" />
+              </div>
+              <div className="space-y-2 md:col-span-3">
+                <Label htmlFor="bonus_desc">Bonus Description</Label>
+                <Input id="bonus_desc" value={newPromo.bonus_description ?? ''} onChange={(e) => setNewPromo({ ...newPromo, bonus_description: e.target.value })} placeholder="Added value at no extra cost to the buyer." />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="warranty_years">Extra Warranty (years)</Label>
+                <Input id="warranty_years" type="number" value={newPromo.warranty_extra_years ?? ''} onChange={(e) => setNewPromo({ ...newPromo, warranty_extra_years: e.target.value ? Number(e.target.value) : null })} />
+              </div>
+              <div className="space-y-2 md:col-span-2">
+                <Label htmlFor="terms_url">Terms URL</Label>
+                <Input id="terms_url" value={newPromo.terms_url ?? ''} onChange={(e) => setNewPromo({ ...newPromo, terms_url: e.target.value })} placeholder="https://www.mercurymarine.com/..." />
+              </div>
+              <div className="flex items-center gap-2">
+                <Switch checked={newPromo.highlight} onCheckedChange={(v) => setNewPromo({ ...newPromo, highlight: v })} />
+                <Label>Highlight</Label>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="priority">Priority</Label>
+                <Input id="priority" type="number" value={newPromo.priority} onChange={(e) => setNewPromo({ ...newPromo, priority: Number(e.target.value || 0) })} />
+              </div>
+            </>
+          )}
         </div>
         <div className="mt-4">
           <Button onClick={createPromotion}>Create Promotion</Button>
@@ -225,12 +310,28 @@ const AdminPromotions = () => {
             <Card key={p.id} className="p-6">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="space-y-1">
-                  <h3 className="text-lg font-semibold">{p.name} <Badge variant={p.is_active ? 'default' : 'outline'}>{p.is_active ? 'Active' : 'Inactive'}</Badge></h3>
+                  <h3 className="text-lg font-semibold">
+                    {p.name}{' '}
+                    <Badge variant={p.is_active ? 'default' : 'outline'}>
+                      {p.is_active ? 'Active' : 'Inactive'}
+                    </Badge>{' '}
+                    <Badge variant={p.kind === 'bonus' ? 'secondary' : 'outline'}>
+                      {p.kind === 'bonus' ? 'Bonus Offer' : 'Discount'}
+                    </Badge>
+                    {p.highlight && <Badge className="ml-2">Highlighted</Badge>}
+                  </h3>
                   <div className="text-sm text-muted-foreground">
-                    <span>{p.discount_percentage}% off</span>
-                    {p.stackable && <span className="ml-2">• Stackable</span>}
+                    {p.kind === 'discount' ? (
+                      <span>{p.discount_percentage}% off</span>
+                    ) : (
+                      <>
+                        {p.warranty_extra_years ? <span>+{p.warranty_extra_years} Years Warranty</span> : <span>Bonus Offer</span>}
+                        {p.bonus_short_badge && <span className="ml-2">• {p.bonus_short_badge}</span>}
+                      </>
+                    )}
                     {p.start_date && <span className="ml-2">• Starts {new Date(p.start_date).toLocaleDateString()}</span>}
                     {p.end_date && <span className="ml-2">• Ends {new Date(p.end_date).toLocaleDateString()}</span>}
+                    {p.terms_url && <span className="ml-2">• <a href={p.terms_url} target="_blank" rel="noreferrer" className="underline">Terms</a></span>}
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
