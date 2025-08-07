@@ -31,6 +31,7 @@ export type Database = {
           promotion_id: string | null
           term_months: number
           total_cost: number
+          user_id: string | null
         }
         Insert: {
           base_price: number
@@ -48,6 +49,7 @@ export type Database = {
           promotion_id?: string | null
           term_months: number
           total_cost: number
+          user_id?: string | null
         }
         Update: {
           base_price?: number
@@ -65,6 +67,7 @@ export type Database = {
           promotion_id?: string | null
           term_months?: number
           total_cost?: number
+          user_id?: string | null
         }
         Relationships: [
           {
@@ -152,6 +155,33 @@ export type Database = {
           stock_number?: string | null
           updated_at?: string | null
           year?: number
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          id: string
+          phone: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id?: string
         }
         Relationships: []
       }
