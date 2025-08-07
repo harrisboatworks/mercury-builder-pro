@@ -32,6 +32,17 @@ export interface BoatInfo {
   serialNumber: string;
   controlType: string;
   shaftLength: string;
+  tradeIn?: {
+    hasTradeIn: boolean;
+    brand: string;
+    year: number;
+    horsepower: number;
+    model: string;
+    serialNumber: string;
+    condition: 'excellent' | 'good' | 'fair' | 'poor';
+    estimatedValue: number;
+    confidenceLevel: 'high' | 'medium' | 'low';
+  };
 }
 
 export interface QuoteData {

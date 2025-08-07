@@ -7,6 +7,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { ArrowLeft, Ship, Info, CheckCircle2 } from 'lucide-react';
 import { Motor, BoatInfo } from '../QuoteBuilder';
+import { TradeInValuation } from './TradeInValuation';
+import { type TradeInInfo } from '@/lib/trade-valuation';
 
 interface BoatInformationProps {
   onStepComplete: (boatInfo: BoatInfo) => void;
@@ -27,6 +29,18 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
     shaftLength: 'Not Sure'
   });
 
+  const [tradeInInfo, setTradeInInfo] = useState<TradeInInfo>({
+    hasTradeIn: false,
+    brand: '',
+    year: 0,
+    horsepower: 0,
+    model: '',
+    serialNumber: '',
+    condition: 'fair',
+    estimatedValue: 0,
+    confidenceLevel: 'low'
+  });
+
   const boatTypes = [
     { id: 'fishing', name: 'Fishing Boat', icon: '🎣' },
     { id: 'pontoon', name: 'Pontoon', icon: '🛥️' },
@@ -38,7 +52,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onStepComplete(boatInfo);
+    onStepComplete({ ...boatInfo, tradeIn: tradeInInfo });
   };
 
   const getCompatibilityMessage = () => {
@@ -239,6 +253,12 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
             )}
           </div>
         </Card>
+
+        {/* Trade-In Valuation */}
+        <TradeInValuation 
+          tradeInInfo={tradeInInfo}
+          onTradeInChange={setTradeInInfo}
+        />
 
         {/* Navigation */}
         <div className="flex justify-between">

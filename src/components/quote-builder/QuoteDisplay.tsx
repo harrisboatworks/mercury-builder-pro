@@ -19,19 +19,18 @@ interface QuoteDisplayProps {
 export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplayProps) => {
   const [downPayment, setDownPayment] = useState(0);
   const [term, setTerm] = useState(48);
-  const [hasTradein, setHasTradein] = useState(false);
-  const [tradeinInfo, setTradeinInfo] = useState({
-    make: '',
-    model: '',
-    year: ''
-  });
+  
+  // Get trade-in info from boat information
+  const hasTradeIn = quoteData.boatInfo?.tradeIn?.hasTradeIn || false;
+  const tradeInValue = quoteData.boatInfo?.tradeIn?.estimatedValue || 0;
 
   const motorPrice = quoteData.motor?.price || 0;
-  const maxDownPayment = motorPrice * 0.5;
-  const downPaymentPercentage = motorPrice > 0 ? (downPayment / motorPrice) * 100 : 0;
+  const totalWithTrade = motorPrice - (hasTradeIn ? tradeInValue : 0);
+  const maxDownPayment = totalWithTrade * 0.5;
+  const downPaymentPercentage = totalWithTrade > 0 ? (downPayment / totalWithTrade) * 100 : 0;
 
   const calculatePayments = () => {
-    const principal = motorPrice - downPayment;
+    const principal = totalWithTrade - downPayment;
     const monthlyRate = quoteData.financing.rate / 100 / 12;
     const numPayments = term;
     
@@ -48,14 +47,13 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   };
 
   const payments = calculatePayments();
-  const totalInterest = (payments.monthly * term) - (motorPrice - downPayment);
+  const totalInterest = (payments.monthly * term) - (totalWithTrade - downPayment);
   const cashSavings = totalInterest;
 
   const handleContinue = () => {
     onStepComplete({
       financing: { downPayment, term, rate: quoteData.financing.rate },
-      hasTradein,
-      tradeinInfo: hasTradein ? tradeinInfo : undefined
+      hasTradein: hasTradeIn
     });
   };
 
@@ -96,10 +94,17 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-2xl font-bold text-foreground">
-                    ${motorPrice.toLocaleString()}
-                  </p>
-                  <p className="text-sm text-muted-foreground">CAD</p>
+                  <div className="space-y-1">
+                    {hasTradeIn && (
+                      <p className="text-sm text-muted-foreground line-through">
+                        ${motorPrice.toLocaleString()}
+                      </p>
+                    )}
+                    <p className="text-2xl font-bold text-foreground">
+                      ${totalWithTrade.toLocaleString()}
+                    </p>
+                    <p className="text-sm text-muted-foreground">CAD{hasTradeIn ? ' (After Trade)' : ''}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -169,10 +174,10 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                     <p className="text-xs text-muted-foreground uppercase tracking-wide">Bi-Weekly</p>
                     <p className="text-3xl font-bold text-foreground">${payments.biweekly.toFixed(0)}</p>
                   </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wide">Monthly</p>
-                    <p className="text-3xl font-bold text-primary">${payments.monthly.toFixed(0)}</p>
-                  </div>
+                   <div>
+                     <p className="text-xs text-muted-foreground uppercase tracking-wide">Monthly</p>
+                     <p className="text-6xl font-bold text-primary">${payments.monthly.toFixed(0)}</p>
+                   </div>
                 </div>
               </div>
               
@@ -228,55 +233,50 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
         </div>
       </Card>
 
-      {/* Trade-in Option */}
-      <Card className="p-6">
-        <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="space-y-1">
-              <Label className="text-base font-medium">I have a trade-in motor</Label>
-              <p className="text-sm text-muted-foreground">
-                Trade-in value requires in-person inspection
-              </p>
+      {/* Trade-In Impact Display */}
+      {hasTradeIn && quoteData.boatInfo?.tradeIn && (
+        <Card className="p-6 bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-800">
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-green-800 dark:text-green-200 flex items-center gap-2">
+              <DollarSign className="w-5 h-5" />
+              Trade-In Impact
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="text-3xl font-bold text-green-900 dark:text-green-100">
+                  ${tradeInValue.toLocaleString()}
+                </div>
+                <div className="text-sm text-green-700 dark:text-green-300">Trade Value Applied</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-green-900 dark:text-green-100">
+                  ${tradeInValue.toLocaleString()}
+                </div>
+                <div className="text-sm text-green-700 dark:text-green-300">Total Price Reduction</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-green-900 dark:text-green-100">
+                  ${(Math.round((motorPrice - downPayment) * (0.0799 / 12) * 100) / 100 - payments.monthly).toFixed(0)}
+                </div>
+                <div className="text-sm text-green-700 dark:text-green-300">Monthly Payment Savings</div>
+              </div>
             </div>
-            <Switch
-              checked={hasTradein}
-              onCheckedChange={setHasTradein}
-            />
+
+            <div className="pt-4 border-t border-green-200 dark:border-green-800">
+              <div className="text-center">
+                <p className="text-sm text-green-700 dark:text-green-300">
+                  Trade-in: {quoteData.boatInfo.tradeIn.year} {quoteData.boatInfo.tradeIn.brand} {quoteData.boatInfo.tradeIn.horsepower}HP
+                  {quoteData.boatInfo.tradeIn.model && ` ${quoteData.boatInfo.tradeIn.model}`}
+                </p>
+                <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                  *Final value subject to in-person inspection
+                </p>
+              </div>
+            </div>
           </div>
-          
-          {hasTradein && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 pt-4 border-t border-border">
-              <div className="space-y-2">
-                <Label htmlFor="tradein-make">Make</Label>
-                <Input
-                  id="tradein-make"
-                  value={tradeinInfo.make}
-                  onChange={(e) => setTradeinInfo(prev => ({ ...prev, make: e.target.value }))}
-                  placeholder="e.g., Mercury"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="tradein-model">Model</Label>
-                <Input
-                  id="tradein-model"
-                  value={tradeinInfo.model}
-                  onChange={(e) => setTradeinInfo(prev => ({ ...prev, model: e.target.value }))}
-                  placeholder="e.g., FourStroke 115"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="tradein-year">Year</Label>
-                <Input
-                  id="tradein-year"
-                  value={tradeinInfo.year}
-                  onChange={(e) => setTradeinInfo(prev => ({ ...prev, year: e.target.value }))}
-                  placeholder="e.g., 2020"
-                />
-              </div>
-            </div>
-          )}
-        </div>
-      </Card>
+        </Card>
+      )}
 
       {/* Navigation */}
       <div className="flex justify-between">
