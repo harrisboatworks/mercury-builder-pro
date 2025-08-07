@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
 import { Filter, Grid, List, Zap, Anchor } from 'lucide-react';
+import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 
 interface MotorSelectionProps {
@@ -105,7 +106,10 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
     <div className="space-y-8">
       {/* Header */}
       <div className="text-center space-y-4">
-        <h2 className="text-3xl font-bold text-foreground">Select Your Mercury Outboard</h2>
+        <div className="flex items-center justify-center gap-4">
+          <img src={mercuryLogo} alt="Mercury Marine" className="h-12 w-auto" />
+          <h2 className="text-3xl font-bold text-foreground">Select Your Mercury Outboard</h2>
+        </div>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Choose from our current inventory of Mercury outboard motors. All prices and availability are updated in real-time.
         </p>
