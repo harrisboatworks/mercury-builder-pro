@@ -26,7 +26,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
     currentHp: 0,
     serialNumber: '',
     controlType: '',
-    shaftLength: 'Not Sure'
+    shaftLength: '20'
   });
 
   const [tradeInInfo, setTradeInInfo] = useState<TradeInInfo>({
@@ -213,15 +213,23 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="shaftLength">Shaft Length (if known)</Label>
+                  <Label htmlFor="shaftLength" className="flex items-center gap-2">
+                    Shaft Length (if known)
+                    <div className="group relative">
+                      <Info className="w-4 h-4 text-muted-foreground hover:text-primary cursor-help" />
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 rounded text-xs text-blue-800 dark:text-blue-200 z-10">
+                        The shaft length of the motor has to match your boat's transom height.
+                      </div>
+                    </div>
+                  </Label>
                   <Select value={boatInfo.shaftLength} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, shaftLength: value }))}>
                     <SelectTrigger>
                       <SelectValue placeholder="Select shaft length" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="15">15"</SelectItem>
-                      <SelectItem value="20">20"</SelectItem>
-                      <SelectItem value="25">25"</SelectItem>
+                      <SelectItem value="15">15" - Short Shaft</SelectItem>
+                      <SelectItem value="20">20" - Long Shaft</SelectItem>
+                      <SelectItem value="25">25" - Extra Long Shaft</SelectItem>
                       <SelectItem value="Not Sure">Not Sure</SelectItem>
                     </SelectContent>
                   </Select>
@@ -335,15 +343,23 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="shaftLength">Shaft Length</Label>
+                    <Label htmlFor="shaftLength" className="flex items-center gap-2">
+                      Shaft Length
+                      <div className="group relative">
+                        <Info className="w-4 h-4 text-muted-foreground hover:text-primary cursor-help" />
+                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 rounded text-xs text-blue-800 dark:text-blue-200 z-10">
+                          The shaft length of the motor has to match your boat's transom height.
+                        </div>
+                      </div>
+                    </Label>
                     <Select value={boatInfo.shaftLength} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, shaftLength: value }))}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select shaft length" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="15">15"</SelectItem>
-                        <SelectItem value="20">20"</SelectItem>
-                        <SelectItem value="25">25"</SelectItem>
+                        <SelectItem value="15">15" - Short Shaft</SelectItem>
+                        <SelectItem value="20">20" - Long Shaft</SelectItem>
+                        <SelectItem value="25">25" - Extra Long Shaft</SelectItem>
                         <SelectItem value="Not Sure">Not Sure</SelectItem>
                       </SelectContent>
                     </Select>
