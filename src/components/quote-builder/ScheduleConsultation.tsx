@@ -179,10 +179,47 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
   };
 
   const generatePDF = () => {
-    toast({
-      title: "PDF Generation",
-      description: "PDF generation will be available after consultation scheduling.",
-    });
+    if (!quoteData.motor) {
+      toast({
+        title: "Error",
+        description: "No motor selected for quote generation.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    try {
+      // Generate a unique quote number
+      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+      
+      // Import the PDF generator dynamically
+      import('@/lib/pdf-generator').then(({ generateQuotePDF }) => {
+        const pdfData = {
+          ...quoteData,
+          customerName: contactInfo.name || 'Valued Customer',
+          customerEmail: contactInfo.email || user?.email || '',
+          customerPhone: contactInfo.phone || '',
+          quoteNumber,
+          tradeInValue: quoteData.boatInfo?.tradeIn?.estimatedValue || 0
+        };
+        
+        const pdf = generateQuotePDF(pdfData);
+        
+        // Download the PDF
+        pdf.save(`Mercury-Quote-${quoteNumber}.pdf`);
+        
+        toast({
+          title: "PDF Generated Successfully!",
+          description: "Your professional quote has been downloaded.",
+        });
+      });
+    } catch (error) {
+      toast({
+        title: "PDF Generation Error",
+        description: "Failed to generate PDF. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
@@ -368,7 +405,7 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
             <Phone className="w-5 h-5 text-primary" />
             <div>
               <p className="font-medium">Phone</p>
-              <p className="text-muted-foreground">(555) 123-4567</p>
+              <p className="text-muted-foreground">(905) 342-2153</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -382,7 +419,7 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
             <MapPin className="w-5 h-5 text-primary" />
             <div>
               <p className="font-medium">Location</p>
-              <p className="text-muted-foreground">Marina Drive, ON</p>
+              <p className="text-muted-foreground">5369 Harris Boat Works Rd, Gores Landing, ON</p>
             </div>
           </div>
         </div>
