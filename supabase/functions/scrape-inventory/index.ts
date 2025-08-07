@@ -82,7 +82,8 @@ Deno.serve(async (req) => {
           horsepower: 25,
           base_price: 4500,
           motor_type: 'FourStroke',
-          availability: 'Brochure'
+          availability: 'Brochure',
+          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/25EFI.jpg'
         },
         {
           make: 'Mercury', 
@@ -91,7 +92,8 @@ Deno.serve(async (req) => {
           horsepower: 40,
           base_price: 6800,
           motor_type: 'FourStroke',
-          availability: 'Brochure'
+          availability: 'Brochure',
+          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/40EFI.jpg'
         },
         {
           make: 'Mercury',
@@ -100,7 +102,8 @@ Deno.serve(async (req) => {
           horsepower: 60,
           base_price: 9200,
           motor_type: 'FourStroke', 
-          availability: 'Brochure'
+          availability: 'Brochure',
+          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/60EFI.jpg'
         },
         {
           make: 'Mercury',
@@ -109,7 +112,8 @@ Deno.serve(async (req) => {
           horsepower: 115,
           base_price: 15500,
           motor_type: 'Pro XS',
-          availability: 'Brochure'
+          availability: 'Brochure',
+          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/115ProXS.jpg'
         },
         {
           make: 'Mercury',
@@ -118,7 +122,8 @@ Deno.serve(async (req) => {
           horsepower: 200,
           base_price: 28500,
           motor_type: 'Verado',
-          availability: 'Brochure'
+          availability: 'Brochure',
+          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/200Verado.jpg'
         },
         {
           make: 'Mercury',
@@ -127,7 +132,8 @@ Deno.serve(async (req) => {
           horsepower: 300,
           base_price: 38500,
           motor_type: 'Verado',
-          availability: 'Brochure'
+          availability: 'Brochure',
+          image_url: 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/300Verado.jpg'
         }
       ]
       
@@ -308,7 +314,8 @@ function extractMotorFromJson(jsonData: any): MotorData | null {
       base_price: price,
       motor_type: motorType,
       engine_type: jsonData.engineType || jsonData.engine_type,
-      image_url: jsonData.image || jsonData.itemThumbNailUrl || jsonData.thumbnail,
+      image_url: jsonData.image || jsonData.itemThumbNailUrl || jsonData.thumbnail || 
+                (jsonData.itemThumbNailUrl ? `https:${jsonData.itemThumbNailUrl}` : null),
       availability: availability,
       stock_number: jsonData.stockNumber || jsonData.stock_number || jsonData.sku
     }
@@ -333,9 +340,22 @@ function extractMotorFromHtml(html: string): MotorData | null {
     const priceMatch = html.match(/\$([0-9,]+(?:\.\d{2})?)/i)
     const price = priceMatch ? parseFloat(priceMatch[1].replace(/,/g, '')) : 0
     
-    // Extract image
-    const imageMatch = html.match(/src="([^"]*(?:jpg|jpeg|png|gif|webp)[^"]*)"/i)
-    const imageUrl = imageMatch ? imageMatch[1] : null
+    // Extract image with better patterns
+    const imagePatterns = [
+      /src="([^"]*(?:jpg|jpeg|png|gif|webp)[^"]*)"[^>]*alt="[^"]*motor[^"]*"/i,
+      /src="([^"]*(?:jpg|jpeg|png|gif|webp)[^"]*)"[^>]*class="[^"]*(?:product|motor|item)[^"]*"/i,
+      /src="([^"]*endeavorsuite[^"]*(?:jpg|jpeg|png|gif|webp)[^"]*)"/i,
+      /src="([^"]*(?:jpg|jpeg|png|gif|webp)[^"]*)"/i
+    ]
+    
+    let imageUrl = null
+    for (const pattern of imagePatterns) {
+      const imageMatch = html.match(pattern)
+      if (imageMatch) {
+        imageUrl = imageMatch[1]
+        break
+      }
+    }
     
     // Determine availability from text
     let availability = 'Brochure'
