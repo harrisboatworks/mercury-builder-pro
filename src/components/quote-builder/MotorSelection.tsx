@@ -161,7 +161,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
     toast({
       title: "🎉 Excellent Choice!",
       description: `${motor.model} selected - Let's continue!`,
-      duration: 3000,
+      duration: 2000,
     });
     
     // Show sticky bar after animation
