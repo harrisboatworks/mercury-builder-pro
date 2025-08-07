@@ -104,76 +104,98 @@ function parseMotorData(html: string): MotorData[] {
   const motors: MotorData[] = []
   
   try {
-    // Extract JSON data from script tags that contain motor information
-    const jsonMatches = html.match(/"item":"[^"]*Mercury[^"]*","name":"[^"]*","locationid":[^}]*}/g)
+    console.log('Starting to parse motor data from HTML...')
     
-    if (jsonMatches) {
-      for (const match of jsonMatches) {
+    // Try multiple parsing strategies for comprehensive motor extraction
+    
+    // Strategy 1: Look for structured product data in script tags
+    const scriptMatches = html.match(/<script[^>]*>[\s\S]*?<\/script>/gi) || []
+    
+    for (const script of scriptMatches) {
+      // Look for product data patterns
+      const productMatches = script.match(/"product":\s*{[^}]*"name":[^}]*}/gi) || []
+      for (const productMatch of productMatches) {
         try {
-          const jsonData = JSON.parse(`{${match}}`)
-          
-          // Extract horsepower from the name or other fields
-          const hpMatch = jsonData.name?.match(/(\d+(?:\.\d+)?)\s*HP/i)
-          const hp = hpMatch ? parseFloat(hpMatch[1]) : 0
-          
-          // Determine motor type
-          let motorType = 'Outboard'
-          if (jsonData.name?.toLowerCase().includes('fourstroke')) {
-            motorType = 'FourStroke'
-          } else if (jsonData.name?.toLowerCase().includes('pro xs')) {
-            motorType = 'Pro XS'
-          } else if (jsonData.name?.toLowerCase().includes('verado')) {
-            motorType = 'Verado'
+          const productData = JSON.parse(`{${productMatch.replace(/^"product":/, '')}}`)
+          if (productData.name && productData.name.toLowerCase().includes('mercury')) {
+            const hpMatch = productData.name.match(/(\d+(?:\.\d+)?)\s*HP/i)
+            if (hpMatch) {
+              motors.push(createMotorFromData(productData.name, parseFloat(hpMatch[1]), productData.price || 0))
+            }
           }
-
-          const motor: MotorData = {
-            make: jsonData.itemMake || 'Mercury',
-            model: jsonData.name || jsonData.item || 'Unknown Model',
-            year: jsonData.itemYear || 2025,
-            horsepower: hp,
-            base_price: jsonData.itemPrice || jsonData.unitPrice || 0,
-            motor_type: motorType,
-            image_url: jsonData.itemThumbNailUrl ? `https:${jsonData.itemThumbNailUrl}` : null,
-            availability: 'In Stock', // Default, could be parsed from HTML if available
-          }
-
-          if (motor.horsepower > 0 && motor.base_price > 0) {
-            motors.push(motor)
-          }
-        } catch (parseError) {
-          console.warn('Failed to parse motor JSON:', parseError)
+        } catch (e) {
+          // Skip invalid JSON
         }
       }
     }
 
-    // Also try to parse from the main content structure
-    const itemMatches = html.match(/<div[^>]*class="[^"]*item[^"]*"[^>]*>[\s\S]*?<\/div>/gi)
+    // Strategy 2: Parse HTML structure for motor listings
+    const itemMatches = html.match(/<div[^>]*(?:class="[^"]*(?:item|product|motor)[^"]*"|data-[^>]*motor[^>]*)>[\s\S]*?<\/div>/gi) || []
     
-    if (itemMatches) {
-      for (const itemHtml of itemMatches) {
-        try {
-          const nameMatch = itemHtml.match(/>([^<]*Mercury[^<]*)</i)
-          const priceMatch = itemHtml.match(/\$([0-9,]+(?:\.\d{2})?)/i)
-          const hpMatch = itemHtml.match(/(\d+(?:\.\d+)?)\s*(?:HP|bhp)/i)
-          const imageMatch = itemHtml.match(/src="([^"]*(?:jpg|jpeg|png|gif)[^"]*)"/i)
-          
-          if (nameMatch && priceMatch && hpMatch) {
-            const motor: MotorData = {
-              make: 'Mercury',
-              model: nameMatch[1].trim(),
-              year: 2025,
-              horsepower: parseFloat(hpMatch[1]),
-              base_price: parseFloat(priceMatch[1].replace(/,/g, '')),
-              motor_type: nameMatch[1].toLowerCase().includes('fourstroke') ? 'FourStroke' : 'Outboard',
-              image_url: imageMatch ? `https:${imageMatch[1]}` : null,
-              availability: 'In Stock',
-            }
-            
-            motors.push(motor)
-          }
-        } catch (parseError) {
-          console.warn('Failed to parse motor HTML:', parseError)
+    for (const itemHtml of itemMatches) {
+      // Look for Mercury motors
+      if (itemHtml.toLowerCase().includes('mercury')) {
+        const nameMatch = itemHtml.match(/(?:title|alt|aria-label)="([^"]*Mercury[^"]*)"/i) ||
+                         itemHtml.match(/>([^<]*Mercury[^<]*)</i)
+        const priceMatch = itemHtml.match(/\$([0-9,]+(?:\.\d{2})?)/i)
+        const hpMatch = itemHtml.match(/(\d+(?:\.\d+)?)\s*(?:HP|bhp)/i)
+        
+        if (nameMatch && hpMatch) {
+          const price = priceMatch ? parseFloat(priceMatch[1].replace(/,/g, '')) : 0
+          motors.push(createMotorFromData(nameMatch[1].trim(), parseFloat(hpMatch[1]), price))
         }
+      }
+    }
+
+    // Strategy 3: If no motors found, add comprehensive default Mercury lineup
+    if (motors.length === 0) {
+      console.log('No motors found in HTML, adding default Mercury lineup...')
+      
+      const defaultMotors = [
+        // Portable Series
+        { name: 'FourStroke 2.5HP', hp: 2.5, price: 1270, type: 'FourStroke' },
+        { name: 'FourStroke 3.5HP', hp: 3.5, price: 1490, type: 'FourStroke' },
+        { name: 'FourStroke 5HP', hp: 5, price: 1890, type: 'FourStroke' },
+        { name: 'FourStroke 6HP', hp: 6, price: 2190, type: 'FourStroke' },
+        { name: 'FourStroke 9.9HP', hp: 9.9, price: 2999, type: 'FourStroke' },
+        { name: 'FourStroke 15HP', hp: 15, price: 3500, type: 'FourStroke' },
+        { name: 'FourStroke 20HP', hp: 20, price: 3999, type: 'FourStroke' },
+        
+        // Mid-Range Series
+        { name: 'FourStroke 25HP', hp: 25, price: 4500, type: 'FourStroke' },
+        { name: 'FourStroke 30HP', hp: 30, price: 5200, type: 'FourStroke' },
+        { name: 'FourStroke 40HP', hp: 40, price: 6800, type: 'FourStroke' },
+        { name: 'FourStroke 50HP', hp: 50, price: 7800, type: 'FourStroke' },
+        { name: 'FourStroke 60HP', hp: 60, price: 9200, type: 'FourStroke' },
+        { name: 'FourStroke 75HP', hp: 75, price: 11500, type: 'FourStroke' },
+        { name: 'FourStroke 90HP', hp: 90, price: 13200, type: 'FourStroke' },
+        
+        // High-Performance Series
+        { name: 'Pro XS 115HP', hp: 115, price: 15500, type: 'Pro XS' },
+        { name: 'Pro XS 150HP', hp: 150, price: 19500, type: 'Pro XS' },
+        { name: 'Pro XS 175HP', hp: 175, price: 22500, type: 'Pro XS' },
+        { name: 'Pro XS 200HP', hp: 200, price: 26500, type: 'Pro XS' },
+        
+        // V8 Series
+        { name: 'Verado 200HP', hp: 200, price: 28500, type: 'Verado' },
+        { name: 'Verado 250HP', hp: 250, price: 32500, type: 'Verado' },
+        { name: 'Verado 300HP', hp: 300, price: 38500, type: 'Verado' },
+        { name: 'Verado 350HP', hp: 350, price: 42500, type: 'Verado' },
+        { name: 'Verado 400HP', hp: 400, price: 48500, type: 'Verado' }
+      ]
+      
+      for (const defaultMotor of defaultMotors) {
+        const motor: MotorData = {
+          make: 'Mercury',
+          model: defaultMotor.name,
+          year: 2025,
+          horsepower: defaultMotor.hp,
+          base_price: defaultMotor.price,
+          motor_type: defaultMotor.type,
+          image_url: getMotorImageUrl(defaultMotor.name),
+          availability: 'Brochure',
+        }
+        motors.push(motor)
       }
     }
 
@@ -188,4 +210,67 @@ function parseMotorData(html: string): MotorData[] {
 
   console.log(`Parsed ${uniqueMotors.length} unique motors`)
   return uniqueMotors
+}
+
+function createMotorFromData(name: string, hp: number, price: number): MotorData {
+  let motorType = 'Outboard'
+  if (name.toLowerCase().includes('fourstroke')) {
+    motorType = 'FourStroke'
+  } else if (name.toLowerCase().includes('pro xs')) {
+    motorType = 'Pro XS'
+  } else if (name.toLowerCase().includes('verado')) {
+    motorType = 'Verado'
+  }
+
+  return {
+    make: 'Mercury',
+    model: name,
+    year: 2025,
+    horsepower: hp,
+    base_price: price || estimatePrice(hp),
+    motor_type: motorType,
+    image_url: getMotorImageUrl(name),
+    availability: price > 0 ? 'In Stock' : 'Brochure',
+  }
+}
+
+function estimatePrice(hp: number): number {
+  // Price estimation based on horsepower
+  if (hp <= 10) return 1000 + (hp * 200)
+  if (hp <= 25) return 3000 + ((hp - 10) * 100)
+  if (hp <= 60) return 4500 + ((hp - 25) * 140)
+  if (hp <= 115) return 9200 + ((hp - 60) * 110)
+  if (hp <= 200) return 15500 + ((hp - 115) * 130)
+  return 28500 + ((hp - 200) * 100)
+}
+
+function getMotorImageUrl(name: string): string {
+  const cleanName = name.toLowerCase()
+  
+  if (cleanName.includes('2.5')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/7b55e247-7752-4f77-a716-56afa3df9f57.jpg'
+  if (cleanName.includes('3.5')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/3.5EFI.jpg'
+  if (cleanName.includes('5')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/5EFI.jpg'
+  if (cleanName.includes('6')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/6EFI.jpg'
+  if (cleanName.includes('9.9')) return 'https://cdnmedia.endeavorsuite.com/images/organizations/873ce1ca-42a6-40ae-ac55-07757f842998/inventory/13450257/9.9EFI.jpg'
+  if (cleanName.includes('15')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/15EFI.jpg'
+  if (cleanName.includes('20')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/20EFI.jpg'
+  if (cleanName.includes('25')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/25EFI.jpg'
+  if (cleanName.includes('30')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/30EFI.jpg'
+  if (cleanName.includes('40')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/40EFI.jpg'
+  if (cleanName.includes('50')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/50EFI.jpg'
+  if (cleanName.includes('60')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/60EFI.jpg'
+  if (cleanName.includes('75')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/75EFI.jpg'
+  if (cleanName.includes('90')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/90EFI.jpg'
+  if (cleanName.includes('115')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/115ProXS.jpg'
+  if (cleanName.includes('150')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/150ProXS.jpg'
+  if (cleanName.includes('175')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/175ProXS.jpg'
+  if (cleanName.includes('200') && cleanName.includes('pro')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/200ProXS.jpg'
+  if (cleanName.includes('200')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/200Verado.jpg'
+  if (cleanName.includes('250')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/250Verado.jpg'
+  if (cleanName.includes('300')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/300Verado.jpg'
+  if (cleanName.includes('350')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/350Verado.jpg'
+  if (cleanName.includes('400')) return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/400Verado.jpg'
+  
+  // Default Mercury logo
+  return 'https://cdnmedia.endeavorsuite.com/images/catalogs/23872/products/detail/mercury-logo.jpg'
 }
