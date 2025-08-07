@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import harrisLogo from '@/assets/harris-logo-black.png';
+import harrisLogo from '@/assets/harris-logo.png';
 import { MotorSelection } from './quote-builder/MotorSelection';
 import { BoatInformation } from './quote-builder/BoatInformation';
 import { QuoteDisplay } from './quote-builder/QuoteDisplay';
