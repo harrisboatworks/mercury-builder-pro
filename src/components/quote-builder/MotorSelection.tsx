@@ -385,6 +385,18 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                   </div>
                 )}
 
+                {/* Promo/Sale Ribbons */}
+                {motor.salePrice && motor.basePrice && motor.salePrice < motor.basePrice && (
+                  <div className="absolute top-4 left-4 z-20">
+                    <Badge className="bg-primary text-primary-foreground">SALE</Badge>
+                  </div>
+                )}
+                {(!motor.salePrice || (motor.basePrice && motor.salePrice >= motor.basePrice)) && (motor.appliedPromotions && motor.appliedPromotions.length > 0) && (
+                  <div className="absolute top-4 left-4 z-20">
+                    <Badge variant="outline">PROMO</Badge>
+                  </div>
+                )}
+
                 <div className="p-6 space-y-4 relative">
                   <div className="flex items-start justify-between">
                     <Badge variant={getCategoryColor(motor.category)}>
