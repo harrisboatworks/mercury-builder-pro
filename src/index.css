@@ -312,7 +312,7 @@
       width: auto;
       min-width: 120px;
     }
-}
+  }
 
   @keyframes bounce-gentle {
     0%, 20%, 53%, 80%, 100% {
@@ -327,7 +327,6 @@
     90% {
       transform: translate3d(0, -2px, 0);
     }
-  }
   }
 
   /* Sticky bar slide animation */
@@ -413,4 +412,3 @@
       transform: scale(1);
     }
   }
-}
