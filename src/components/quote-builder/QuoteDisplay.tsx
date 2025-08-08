@@ -511,21 +511,21 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
           <div className="border-t border-border pt-6">
             <h4 className="text-xl font-bold mb-3">Choose Your Adventure to the Water 🌊</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Card className="p-4 border-green-200 dark:border-green-800 bg-green-50/50 dark:bg-green-950/20">
+              <Card className="p-4 border-green-200 dark:border-green-800 bg-green-50/50 dark:bg-green-950/20 flex flex-col min-h-[300px]">
                 <div className="flex items-center justify-between">
                   <div className="font-semibold">💰 Cash Captain</div>
                   <Badge variant="secondary" className="text-[10px]">BEST VALUE</Badge>
                 </div>
                 <div className="text-3xl font-bold mt-2">${totalCashPrice.toLocaleString()}</div>
                 <div className="text-sm text-green-700 dark:text-green-300">Save {cashSavings.toFixed(0)} in interest!</div>
-                <Button className="mt-3">Pay Cash & Save</Button>
+                <Button className="mt-auto w-full">Pay Cash & Save</Button>
               </Card>
-              <Card className="p-4 border-primary/30 bg-primary/5">
+              <Card className="p-4 border-primary/30 bg-primary/5 flex flex-col min-h-[300px]">
                 <div className="font-semibold">📅 Easy Monthly</div>
                 <div className="text-3xl font-bold mt-2">${payments.monthly.toFixed(0)}/month</div>
                 <small className="text-muted-foreground">{term} months @ {quoteData.financing.rate}%</small>
                 <div className="mt-1 text-sm">✓ Keep cash on hand • ✓ Build credit</div>
-                <Button variant="secondary" className="mt-3">Finance This Motor</Button>
+                <Button className="mt-auto w-full">Finance This Motor</Button>
               </Card>
             </div>
           </div>
