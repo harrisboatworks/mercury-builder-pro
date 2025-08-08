@@ -438,14 +438,18 @@ const renderBannerPromos = (motor: Motor) => {
               <DialogHeader>
                 <DialogTitle>Active promotions</DialogTitle>
               </DialogHeader>
-              <div className="promos-popover__list flex flex-col gap-2" role="list">
-                {labels.map((l, idx) => (
-                  <div key={idx} className="flex items-center gap-2" role="listitem">
-                    <Check className="w-4 h-4 text-primary" aria-hidden="true" />
-                    <span className="font-medium">{l}</span>
-                  </div>
-                ))}
-              </div>
+                <div className="promos-popover__badges flex flex-wrap gap-2" role="list">
+                  {labels.map((l, idx) => (
+                    <span
+                      key={idx}
+                      role="listitem"
+                      className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-sm font-semibold"
+                    >
+                      <span className="mr-1" aria-hidden="true">✅</span>
+                      {l}
+                    </span>
+                  ))}
+                </div>
               <DialogFooter>
                 <Button type="button" onClick={() => setBannerPromosOpen(false)}>Close</Button>
               </DialogFooter>
