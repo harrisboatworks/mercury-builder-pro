@@ -1,6 +1,7 @@
 import jsPDF from 'jspdf';
+import harrisLogo from '@/assets/harris-logo.png';
+import mercuryLogo from '@/assets/mercury-logo.png';
 import { QuoteData } from '@/components/QuoteBuilder';
-
 interface PDFQuoteData extends QuoteData {
   customerName: string;
   customerEmail: string;
@@ -9,285 +10,295 @@ interface PDFQuoteData extends QuoteData {
   tradeInValue?: number;
 }
 
-export const generateQuotePDF = (quoteData: PDFQuoteData): jsPDF => {
-  const pdf = new jsPDF('p', 'mm', 'a4');
+export const generateQuotePDF = async (quoteData: PDFQuoteData): Promise<jsPDF> => {
+  const doc = new jsPDF('p', 'mm', 'a4');
   const pageWidth = 210;
-  const pageHeight = 297;
-  
-  // Colors
-  const primaryBlue = '#0066CC';
-  const mercuryBlack = '#000000';
-  const accentSilver = '#C0C0C0';
-  const successGreen = '#00A651';
-  
-  // Calculate pricing
+
+  // Helpers
+  const loadImage = (src: string) =>
+    new Promise<HTMLImageElement>((resolve, reject) => {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => resolve(img);
+      img.onerror = reject;
+      img.src = src;
+    });
+
+  const formatNumber = (num: number) =>
+    num.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+  const formatDate = (date?: string | number | Date) =>
+    new Date(date || Date.now()).toLocaleDateString('en-CA');
+
+  // Colors (RGB)
+  const navy = { r: 30, g: 58, b: 138 };      // #1e3a8a
+  const green = { r: 5, g: 150, b: 105 };     // #059669
+  const gold = { r: 251, g: 191, b: 36 };     // #fbbf24
+  const text = { r: 31, g: 41, b: 55 };       // #1f2937
+  const light = { r: 243, g: 244, b: 246 };   // #f3f4f6
+  const subtle = { r: 245, g: 245, b: 245 };  // #f5f5f5
+
+  // Pricing
   const motorPrice = (quoteData.motor?.salePrice ?? quoteData.motor?.basePrice ?? quoteData.motor?.price) || 0;
   const tradeValue = quoteData.boatInfo?.tradeIn?.estimatedValue || quoteData.tradeInValue || 0;
-  const subtotal = motorPrice - tradeValue;
+  const subtotal = Math.max(0, motorPrice - tradeValue);
   const hst = subtotal * 0.13;
-  const totalCashPrice = subtotal + hst;
-  const financingFee = 299;
-  const totalFinancePrice = totalCashPrice + financingFee;
-  
-  // Helper function to add text with proper styling
-  const addText = (text: string, x: number, y: number, options?: {
-    size?: number;
-    style?: 'normal' | 'bold';
-    align?: 'left' | 'center' | 'right';
-    color?: string;
-  }) => {
-    if (options?.size) pdf.setFontSize(options.size);
-    if (options?.style) pdf.setFont('helvetica', options.style);
-    if (options?.color) pdf.setTextColor(options.color);
-    if (options?.align) pdf.text(text, x, y, { align: options.align });
-    else pdf.text(text, x, y);
-  };
-  
-  // Header Section with Gradient Background
-  pdf.setFillColor(6, 102, 204); // Primary blue
-  pdf.rect(0, 0, pageWidth, 45, 'F');
-  
-  // Add logos (placeholder text for now)
-  pdf.setTextColor('#FFFFFF');
-  addText('HARRIS BOAT WORKS', 15, 20, { size: 14, style: 'bold' });
-  addText('MERCURY', pageWidth - 15, 20, { size: 14, style: 'bold', align: 'right' });
-  
-  // Main title
-  addText('OFFICIAL MERCURY OUTBOARD', pageWidth / 2, 30, { 
-    size: 16, style: 'bold', align: 'center' 
-  });
-  addText('PRICE QUOTE', pageWidth / 2, 38, { 
-    size: 16, style: 'bold', align: 'center' 
-  });
-  
-  // Quote number and date
-  pdf.setTextColor(mercuryBlack);
-  const currentDate = new Date().toLocaleDateString();
-  addText(`Quote #: ${quoteData.quoteNumber}`, 15, 55, { size: 10 });
-  addText(`Date: ${currentDate}`, pageWidth - 15, 55, { size: 10, align: 'right' });
-  
-  // Customer Information Box
-  pdf.setDrawColor(6, 102, 204);
-  pdf.setLineWidth(0.5);
-  pdf.rect(15, 65, pageWidth - 30, 25);
-  
-  addText('FOR:', 20, 75, { size: 12, style: 'bold' });
-  addText(quoteData.customerName, 20, 82, { size: 11 });
-  addText(`${quoteData.customerPhone} | ${quoteData.customerEmail}`, 20, 88, { size: 10 });
-  
-  const validUntil = new Date();
-  validUntil.setDate(validUntil.getDate() + 30);
-  addText(`Quote Valid Until: ${validUntil.toLocaleDateString()}`, pageWidth - 20, 82, { 
-    size: 10, align: 'right' 
-  });
-  
-  // Selected Motor Section
-  let yPos = 105;
-  pdf.setFillColor(248, 249, 250); // Light background
-  pdf.rect(15, yPos, pageWidth - 30, 50, 'F');
-  pdf.rect(15, yPos, pageWidth - 30, 50); // Border
-  
-  addText('YOUR SELECTED MERCURY OUTBOARD', 20, yPos + 10, { 
-    size: 14, style: 'bold' 
-  });
-  
-  if (quoteData.motor) {
-    addText(`Model: ${quoteData.motor.model}`, 20, yPos + 20, { size: 12, style: 'bold' });
-    addText(`⚡ Power: ${quoteData.motor.hp} HP`, 20, yPos + 28, { size: 11 });
-    
-    if (quoteData.boatInfo?.type) {
-      addText(`🎯 Perfect for: ${quoteData.boatInfo.type}`, 20, yPos + 36, { size: 11 });
-    }
-    
-    addText('Features:', 20, yPos + 44, { size: 11, style: 'bold' });
-    addText('• Electronic Fuel Injection   • Power Trim & Tilt   • 3 Year Factory Warranty', 
-            20, yPos + 50, { size: 10 });
+  const totalCash = subtotal + hst;
+  const financingFee = 299; // Mentioned only in terms page
+
+  // Finance calc (if provided)
+  const hasFinancing = !!quoteData.financing;
+  const principal = hasFinancing
+    ? Math.max(0, ((quoteData.motor?.salePrice ?? quoteData.motor?.basePrice ?? quoteData.motor?.price) || 0) - (quoteData.financing?.downPayment || 0))
+    : 0;
+  const monthlyRate = hasFinancing ? ((quoteData.financing!.rate || 0) / 100) / 12 : 0;
+  const term = hasFinancing ? (quoteData.financing!.term || 0) : 0;
+  const monthlyPayment = hasFinancing && principal > 0 && monthlyRate > 0 && term > 0
+    ? (principal * monthlyRate * Math.pow(1 + monthlyRate, term)) / (Math.pow(1 + monthlyRate, term) - 1)
+    : 0;
+
+  // PAGE 1 - Header
+  doc.setFillColor(navy.r, navy.g, navy.b);
+  doc.rect(0, 0, 210, 40, 'F');
+
+  // Logos
+  try {
+    const [hbwImg, mercImg] = await Promise.all([
+      loadImage(harrisLogo),
+      loadImage(mercuryLogo)
+    ]);
+    doc.addImage(hbwImg, 'PNG', 20, 10, 50, 20);
+    doc.addImage(mercImg, 'PNG', 140, 10, 50, 20);
+  } catch {}
+
+  // Title
+  doc.setTextColor(255, 255, 255);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(18);
+  doc.text('OFFICIAL MERCURY OUTBOARD QUOTE', 105, 35, { align: 'center' });
+
+  // Quote info bar
+  doc.setFillColor(light.r, light.g, light.b);
+  doc.rect(0, 40, 210, 15, 'F');
+  doc.setTextColor(text.r, text.g, text.b);
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10);
+  doc.text(`Quote #: ${quoteData.quoteNumber}`, 20, 48);
+  doc.text(`Date: ${formatDate(Date.now())}`, 105, 48, { align: 'center' });
+  const validUntil = new Date(); validUntil.setDate(validUntil.getDate() + 30);
+  doc.text(`Valid Until: ${formatDate(validUntil)}`, 190, 48, { align: 'right' });
+
+  // Customer Information
+  doc.setDrawColor(200, 200, 200);
+  doc.setLineWidth(0.5);
+  // @ts-ignore - roundedRect is available in jsPDF
+  doc.roundedRect(20, 65, 170, 30, 3, 3);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(12);
+  doc.text('PREPARED FOR:', 30, 75);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(11);
+  doc.text(quoteData.customerName || 'Valued Customer', 30, 82);
+  doc.text(quoteData.customerEmail || '', 30, 88);
+  doc.text(quoteData.customerPhone || '', 120, 88);
+
+  // Motor Details
+  doc.setFillColor(subtle.r, subtle.g, subtle.b);
+  // @ts-ignore
+  doc.roundedRect(20, 105, 170, 60, 3, 3, 'FD');
+
+  const motorImage = (quoteData as any).motor?.image as string | undefined;
+  if (motorImage) {
+    try {
+      const motorImg = await loadImage(motorImage);
+      doc.addImage(motorImg, 'PNG', 25, 110, 40, 40);
+    } catch {}
   }
-  
-  // Pricing Breakdown
-  yPos = 170;
-  
-  // Header with double line
-  pdf.setLineWidth(1);
-  pdf.line(15, yPos, pageWidth - 15, yPos);
-  addText('INVESTMENT SUMMARY', pageWidth / 2, yPos + 8, { 
-    size: 14, style: 'bold', align: 'center' 
-  });
-  pdf.line(15, yPos + 12, pageWidth - 15, yPos + 12);
-  
-  yPos += 20;
-  
-  // Pricing details
-  const priceLines = [
-    ['Motor Price:', `$${motorPrice.toLocaleString()}.00`],
-    ...(tradeValue > 0 ? [['Trade-In Allowance:', `-$${tradeValue.toLocaleString()}.00`]] : []),
-    ['', '───────────'],
-    ['Subtotal:', `$${subtotal.toLocaleString()}.00`],
-    ['HST (13%):', `$${hst.toLocaleString()}.00`],
-    ['', '═══════════'],
-    ['TOTAL CASH PRICE:', `$${totalCashPrice.toLocaleString()}.00`]
-  ];
-  
-  priceLines.forEach(([label, amount]) => {
-    if (label === '' && amount.includes('═')) {
-      // Double line for total
-      pdf.setLineWidth(2);
-      pdf.line(120, yPos - 2, pageWidth - 20, yPos - 2);
-    } else if (label === '' && amount.includes('─')) {
-      // Single line for subtotal
-      pdf.setLineWidth(0.5);
-      pdf.line(120, yPos - 2, pageWidth - 20, yPos - 2);
-    } else {
-      const isTotal = label.includes('TOTAL');
-      const isTradeIn = label.includes('Trade-In');
-      
-      addText(label, 20, yPos, { 
-        size: isTotal ? 12 : 11, 
-        style: isTotal ? 'bold' : 'normal',
-        color: isTradeIn ? successGreen : mercuryBlack
-      });
-      addText(amount, pageWidth - 20, yPos, { 
-        size: isTotal ? 12 : 11, 
-        style: isTotal ? 'bold' : 'normal',
-        align: 'right',
-        color: isTradeIn ? successGreen : mercuryBlack
-      });
-    }
-    yPos += 8;
-  });
-  
-  // Financing Options
-  yPos += 15;
-  pdf.setFillColor(6, 102, 204);
-  pdf.rect(0, yPos - 5, pageWidth, 20, 'F');
-  
-  pdf.setTextColor('#FFFFFF');
-  addText('💰 FINANCING OPTIONS AVAILABLE', pageWidth / 2, yPos + 5, { 
-    size: 12, style: 'bold', align: 'center' 
-  });
-  
-  yPos += 20;
-  pdf.setTextColor(mercuryBlack);
-  
-  addText(`Financing Administration Fee: $${financingFee}.00`, 20, yPos, { size: 11 });
-  addText(`Amount to Finance: $${totalFinancePrice.toLocaleString()}.00`, 20, yPos + 8, { 
-    size: 11, style: 'bold' 
-  });
-  
-  yPos += 20;
-  addText('ESTIMATED PAYMENTS (60 months @ 7.99%)*:', 20, yPos, { 
-    size: 11, style: 'bold' 
-  });
-  
-  // Payment box
-  pdf.setDrawColor(6, 102, 204);
-  pdf.rect(20, yPos + 5, pageWidth - 40, 25);
-  
-  const monthlyPayment = 321; // Calculated from financing
-  const biWeeklyPayment = 148;
-  const weeklyPayment = 74;
-  
-  addText(`📅 WEEKLY:        $${weeklyPayment}/week`, 25, yPos + 13, { size: 11 });
-  addText(`📅 BI-WEEKLY:     $${biWeeklyPayment}`, 25, yPos + 20, { size: 11 });
-  addText(`📅 MONTHLY:       $${monthlyPayment}/month`, 25, yPos + 27, { size: 11 });
-  
-  // Next Steps Section
-  yPos = 260;
-  pdf.setFillColor(0, 166, 81); // Success green
-  pdf.rect(15, yPos, pageWidth - 30, 30, 'F');
-  pdf.setDrawColor(0, 166, 81);
-  pdf.rect(15, yPos, pageWidth - 30, 30);
-  
-  pdf.setTextColor('#FFFFFF');
-  addText('✅ NEXT STEPS TO GET ON THE WATER', 20, yPos + 8, { 
-    size: 12, style: 'bold' 
-  });
-  
-  pdf.setTextColor(mercuryBlack);
-  const nextSteps = [
-    '1. Bring your boat for inspection',
-    '2. Confirm motor specifications', 
-    '3. Finalize control compatibility',
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(14);
+  doc.text('YOUR SELECTED MERCURY OUTBOARD', 70, 115);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(11);
+  const model = quoteData.motor?.model || '';
+  const hp = quoteData.motor?.hp ? `${quoteData.motor?.hp} HP` : '';
+  const boatType = quoteData.boatInfo?.type || '';
+  if (model) doc.text(`Model: ${model}`, 70, 125);
+  if (hp) doc.text(`Power: ${hp}`, 70, 132);
+  if (boatType) doc.text(`Configuration: ${boatType}`, 70, 139);
+
+  doc.setFontSize(10);
+  doc.text('Features:', 70, 148);
+  doc.text('• Electronic Fuel Injection', 70, 154);
+  doc.text('• Power Trim & Tilt', 120, 154);
+  doc.text('• 3 Year Factory Warranty', 70, 160);
+
+  // Pricing Section
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(16);
+  doc.setTextColor(navy.r, navy.g, navy.b);
+  doc.text('INVESTMENT SUMMARY', 105, 180, { align: 'center' });
+
+  doc.setTextColor(text.r, text.g, text.b);
+  doc.setFontSize(11);
+  doc.setFont('helvetica', 'normal');
+
+  const priceY = 190;
+  doc.text('Motor Price:', 30, priceY);
+  doc.text(`$${formatNumber(motorPrice)}`, 180, priceY, { align: 'right' });
+
+  if (tradeValue > 0) {
+    doc.text('Trade-In Value:', 30, priceY + 7);
+    doc.setTextColor(green.r, green.g, green.b);
+    doc.text(`-$${formatNumber(tradeValue)}`, 180, priceY + 7, { align: 'right' });
+    doc.setTextColor(text.r, text.g, text.b);
+  }
+
+  // Subtotal line
+  doc.setDrawColor(200, 200, 200);
+  doc.line(30, priceY + 15, 180, priceY + 15);
+
+  doc.text('Subtotal:', 30, priceY + 22);
+  doc.text(`$${formatNumber(subtotal)}`, 180, priceY + 22, { align: 'right' });
+  doc.text('HST (13%):', 30, priceY + 29);
+  doc.text(`$${formatNumber(hst)}`, 180, priceY + 29, { align: 'right' });
+
+  // Total line
+  doc.setLineWidth(2);
+  doc.setDrawColor(navy.r, navy.g, navy.b);
+  doc.line(30, priceY + 35, 180, priceY + 35);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(14);
+  doc.text('TOTAL CASH PRICE:', 30, priceY + 44);
+  doc.text(`$${formatNumber(totalCash)}`, 180, priceY + 44, { align: 'right' });
+
+  // Financing Box (optional)
+  if (hasFinancing) {
+    doc.setFillColor(240, 253, 244); // Light green
+    // @ts-ignore
+    doc.roundedRect(20, 245, 170, 35, 3, 3, 'F');
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(12);
+    doc.setTextColor(green.r, green.g, green.b);
+    doc.text('FINANCING AVAILABLE', 30, 255);
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(11);
+    doc.setTextColor(text.r, text.g, text.b);
+    const mp = Math.round(monthlyPayment || 0).toString();
+    doc.text(`Monthly Payment: $${mp}/month`, 30, 263);
+    doc.text(`${term} months @ ${quoteData.financing!.rate}% APR`, 30, 270);
+    doc.setFontSize(9);
+    doc.text('*OAC. All payments include HST.', 30, 276);
+  }
+
+  // PAGE 2 - Next Steps and Terms
+  doc.addPage();
+
+  doc.setFillColor(navy.r, navy.g, navy.b);
+  doc.rect(0, 0, 210, 20, 'F');
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(14);
+  doc.setFont('helvetica', 'bold');
+  doc.text('NEXT STEPS & TERMS', 105, 13, { align: 'center' });
+
+  // Next Steps
+  doc.setFillColor(240, 253, 244);
+  // @ts-ignore
+  doc.roundedRect(20, 30, 170, 50, 3, 3, 'F');
+
+  doc.setTextColor(green.r, green.g, green.b);
+  doc.setFontSize(14);
+  doc.text('✓ NEXT STEPS TO GET ON THE WATER', 30, 42);
+
+  doc.setTextColor(text.r, text.g, text.b);
+  doc.setFontSize(11);
+  doc.setFont('helvetica', 'normal');
+  const steps = [
+    '1. Contact us to schedule your consultation',
+    '2. Bring your boat for inspection',
+    '3. Confirm motor specifications and compatibility',
     '4. Schedule professional installation'
   ];
-  
-  nextSteps.forEach((step, index) => {
-    addText(step, 20, yPos + 15 + (index * 4), { size: 10 });
-  });
-  
-  // Contact Information
-  pdf.setTextColor(primaryBlue);
-  addText('📞 Call us: (905) 342-2153', pageWidth - 20, yPos + 15, { 
-    size: 10, align: 'right' 
-  });
-  addText('📍 Visit us: 5369 Harris Boat Works Rd, Gores Landing, ON', pageWidth - 20, yPos + 20, { 
-    size: 9, align: 'right' 
-  });
-  addText('🌐 info@harrisboatworks.ca', pageWidth - 20, yPos + 25, { 
-    size: 10, align: 'right' 
-  });
-  
-  // Footer with disclaimers (small but readable)
-  pdf.addPage();
-  
-  // Page 2: Terms and Conditions
-  addText('TERMS & CONDITIONS', pageWidth / 2, 20, { 
-    size: 14, style: 'bold', align: 'center' 
-  });
-  
-  const disclaimers = [
+  steps.forEach((step, i) => doc.text(step, 35, 52 + (i * 7)));
+
+  // Contact Info
+  doc.setFillColor(245, 245, 245);
+  // @ts-ignore
+  doc.roundedRect(20, 90, 170, 35, 3, 3, 'F');
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(12);
+  doc.text('CONTACT US', 30, 100);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(11);
+  doc.text('📞 (905) 342-2153', 30, 108);
+  doc.text('📧 info@harrisboatworks.ca', 30, 115);
+  doc.text('📍 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0', 30, 122);
+
+  // Terms & Conditions
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(12);
+  doc.setTextColor(navy.r, navy.g, navy.b);
+  doc.text('TERMS & CONDITIONS', 30, 140);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.setTextColor(107, 114, 128);
+
+  const terms = [
     '• Quote valid for 30 days from date of issue',
     '• Prices subject to change without notice',
     '• Installation requirements to be determined upon inspection',
-    '• Trade-in values subject to physical inspection', 
+    '• Trade-in values subject to physical inspection',
     '• All financing subject to approved credit (OAC)',
     '• Financing fee of $299 applies to all financed purchases',
-    '• Final terms to be confirmed with Harris Boat Works Ltd,',
-    '  Dealerplan Peterborough (Broker), and lending institution',
+    '• Final terms to be confirmed with Harris Boat Works Ltd, Dealerplan Peterborough (Broker), and lending institution',
     '• HST included in all prices shown',
     '• Professional installation recommended to maintain warranty'
   ];
-  
-  let disclaimerY = 35;
-  disclaimers.forEach((disclaimer) => {
-    addText(disclaimer, 20, disclaimerY, { size: 10 });
-    disclaimerY += 6;
-  });
-  
-  // Why Mercury section
-  disclaimerY += 15;
-  addText('WHY MERCURY OUTBOARDS?', 20, disclaimerY, { 
-    size: 12, style: 'bold' 
-  });
-  
-  const mercuryBenefits = [
+  let yPos2 = 148;
+  terms.forEach((t) => { doc.text(t, 30, yPos2); yPos2 += 6; });
+
+  // Why Mercury
+  doc.setFillColor(240, 249, 255);
+  // @ts-ignore
+  doc.roundedRect(20, 210, 170, 45, 3, 3, 'F');
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(12);
+  doc.setTextColor(navy.r, navy.g, navy.b);
+  doc.text('WHY MERCURY OUTBOARDS?', 30, 220);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10);
+  doc.setTextColor(text.r, text.g, text.b);
+  const benefits = [
     '✓ Industry-leading 3-year warranty',
     '✓ Best-in-class fuel efficiency',
     '✓ Quietest motors in their class',
     '✓ Unmatched reliability',
     '✓ Local service & support'
   ];
-  
-  disclaimerY += 10;
-  mercuryBenefits.forEach((benefit) => {
-    addText(benefit, 20, disclaimerY, { size: 10 });
-    disclaimerY += 6;
-  });
-  
-  // Footer
-  const footerY = pageHeight - 30;
-  pdf.setDrawColor(6, 102, 204);
-  pdf.line(15, footerY, pageWidth - 15, footerY);
-  
-  addText('Harris Boat Works Ltd - Exclusive Mercury Dealer', pageWidth / 2, footerY + 8, { 
-    size: 11, style: 'bold', align: 'center' 
-  });
-  addText('5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0', pageWidth / 2, footerY + 15, { 
-    size: 10, align: 'center' 
-  });
-  addText('(905) 342-2153 | info@harrisboatworks.ca', pageWidth / 2, footerY + 22, { 
-    size: 10, align: 'center' 
-  });
-  
-  return pdf;
+  benefits.forEach((b, i) => doc.text(b, 35, 228 + (i * 6)));
+
+  // Footer bar
+  doc.setFillColor(navy.r, navy.g, navy.b);
+  doc.rect(0, 270, 210, 27, 'F');
+  doc.setTextColor(255, 255, 255);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(11);
+  doc.text('Harris Boat Works Ltd - Exclusive Mercury Dealer', 105, 280, { align: 'center' });
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.text('5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0', 105, 287, { align: 'center' });
+  doc.text('(905) 342-2153 | info@harrisboatworks.ca | harrisboatworks.ca', 105, 293, { align: 'center' });
+
+  return doc;
 };

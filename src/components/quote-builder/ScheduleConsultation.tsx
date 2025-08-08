@@ -192,7 +192,6 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
       // Generate a unique quote number
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
       
-      // Import the PDF generator dynamically
       import('@/lib/pdf-generator').then(({ generateQuotePDF }) => {
         const pdfData = {
           ...quoteData,
@@ -203,15 +202,23 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
           tradeInValue: quoteData.boatInfo?.tradeIn?.estimatedValue || 0
         };
         
-        const pdf = generateQuotePDF(pdfData);
-        
-        // Download the PDF
-        pdf.save(`Mercury-Quote-${quoteNumber}.pdf`);
-        
-        toast({
-          title: "PDF Generated Successfully!",
-          description: "Your professional quote has been downloaded.",
-        });
+        generateQuotePDF(pdfData)
+          .then((pdf) => {
+            // Download the PDF
+            pdf.save(`Mercury-Quote-${quoteNumber}.pdf`);
+            
+            toast({
+              title: "PDF Generated Successfully!",
+              description: "Your professional quote has been downloaded.",
+            });
+          })
+          .catch(() => {
+            toast({
+              title: "PDF Generation Error",
+              description: "Failed to generate PDF. Please try again.",
+              variant: "destructive"
+            });
+          });
       });
     } catch (error) {
       toast({
