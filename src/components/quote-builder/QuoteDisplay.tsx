@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
@@ -32,6 +33,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
     points: string;
     color: 'gold' | 'blue';
   } | null>(null);
+  const [showFinancingInfoModal, setShowFinancingInfoModal] = useState(false);
   
   // Achievement toast on load
   useEffect(() => {
@@ -621,6 +623,90 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
               </div>
             )}
           </div>
+
+          {/* Financing Teaser Section */}
+          <div className="mt-6 rounded-xl border border-primary/30 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/10 p-6">
+            <div className="space-y-3">
+              <h3 className="text-lg font-semibold">💳 Financing Available!</h3>
+              <div className="grid gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-in-stock font-bold">✓</span>
+                  <span>Quick approval process</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-in-stock font-bold">✓</span>
+                  <span>Competitive rates from 7.99%</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-in-stock font-bold">✓</span>
+                  <span>Apply after consultation when we know your exact needs</span>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground italic mt-2 p-3 bg-background rounded-md border border-border">
+                We'll help you get the best financing terms after we've confirmed your perfect motor setup and trade-in value.
+              </p>
+              <div className="flex flex-wrap gap-3 mt-4">
+                <Button onClick={handleContinue}>📅 Schedule Your Consultation</Button>
+                <Button variant="outline" onClick={() => setShowFinancingInfoModal(true)}>Learn About Financing</Button>
+              </div>
+            </div>
+          </div>
+
+          <Dialog open={showFinancingInfoModal} onOpenChange={setShowFinancingInfoModal}>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Financing Your Mercury Outboard</DialogTitle>
+                <DialogDescription>Easy financing through our partners</DialogDescription>
+              </DialogHeader>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold">Easy Financing Through Our Partners</h4>
+                  <div className="mt-1 text-sm">
+                    <p><strong>Dealerplan Peterborough (Broker)</strong></p>
+                    <p className="text-muted-foreground">Working with major Canadian banks and lenders</p>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-semibold">What You Need to Know:</h4>
+                  <ul className="list-disc pl-5 space-y-1 text-sm">
+                    <li>Rates starting from 7.99% OAC</li>
+                    <li>Terms from 48 to 180 months available</li>
+                    <li>Quick approval process (usually same day)</li>
+                    <li>No penalties for early payment</li>
+                    <li>Finance insurance available</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold">What to Bring:</h4>
+                  <ul className="list-disc pl-5 space-y-1 text-sm">
+                    <li>Valid driver's license</li>
+                    <li>Proof of income</li>
+                    <li>Void cheque or bank info</li>
+                    <li>Trade ownership (if applicable)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold">Why Wait Until Consultation?</h4>
+                  <p className="text-muted-foreground text-sm">
+                    We want to ensure you're financing the right amount! After we:
+                  </p>
+                  <ul className="list-disc pl-5 space-y-1 text-sm mt-1">
+                    <li>Confirm the perfect motor for your boat</li>
+                    <li>Verify control compatibility costs</li>
+                    <li>Assess your trade-in value</li>
+                    <li>Calculate exact installation needs</li>
+                  </ul>
+                  <p className="text-muted-foreground text-sm mt-2">
+                    ...we'll know your exact financing needs and can get you the best possible terms.
+                  </p>
+                </div>
+              </div>
+              <DialogFooter>
+                <Button variant="outline" onClick={() => setShowFinancingInfoModal(false)}>Got It!</Button>
+                <Button onClick={handleContinue}>Schedule Consultation</Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
 
           {/* Important Notes */}
           <div className="border-t border-border pt-4 space-y-2 text-sm text-muted-foreground">
