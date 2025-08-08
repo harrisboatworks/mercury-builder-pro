@@ -267,7 +267,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
                       ESTIMATED TRADE VALUE
                     </h3>
                     <div className="text-3xl font-bold text-green-900 dark:text-green-100">
-                      ${estimate.low.toLocaleString()} - ${estimate.high.toLocaleString()} CAD
+                      ${estimate.low.toLocaleString()} - ${estimate.high.toLocaleString()}
                     </div>
                     <p className="text-sm text-green-700 dark:text-green-300 mt-1">
                       *Based on {tradeInInfo.condition} condition

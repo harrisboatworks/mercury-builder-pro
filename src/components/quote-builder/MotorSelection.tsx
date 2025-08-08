@@ -431,28 +431,6 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                     </div>
                   )}
 
-                  {(motor.savings > 0 || hasBonus) && (
-                    <div className={`absolute ${selectedMotor?.id === motor.id ? 'top-14' : 'top-3'} right-3 z-30 promo-badges-container`}>
-                      {motor.savings > 0 && motor.originalPrice ? (
-                        <div className="promo-badge-base promo-badge-discount pointer-events-auto">
-                          <Tag className="w-3.5 h-3.5" />
-                          <span>SAVE {Math.max(1, Math.round((1 - motor.price / (motor.originalPrice || motor.price)) * 100))}%</span>
-                        </div>
-                      ) : null}
-                      {(motor.bonusOffers || []).slice(0, 2).map((b) => (
-                        <div key={b.id} className={`promo-badge-base promo-badge-warranty pointer-events-auto ${b.highlight ? 'ring-2 ring-ring/50' : ''}`}>
-                          <ShieldCheck className="w-3.5 h-3.5" />
-                          <span>{b.shortBadge || b.title}</span>
-                        </div>
-                      ))}
-                      {topBonus && topBonus.highlight ? (
-                        <div className="promo-badge-base promo-badge-featured pointer-events-auto">
-                          <Star className="w-3.5 h-3.5" />
-                          <span>FEATURED</span>
-                        </div>
-                      ) : null}
-                    </div>
-                  )}
 
                   <div className="p-6 space-y-4 relative">
                     <div className="flex items-start justify-between">
@@ -498,7 +476,6 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                             <p className="text-2xl font-bold text-foreground">
                               ${motor.price.toLocaleString()}
                             </p>
-                            <p className="text-sm text-muted-foreground">CAD</p>
                           </>
                         )}
                       </div>
@@ -513,10 +490,12 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                       </div>
                     </div>
 
-                    {hasBonus && (
-                      <div className="mt-2 text-sm text-muted-foreground">
-                        <span className="mr-1">✨</span>
-                        Included: {(motor.bonusOffers || []).slice(0, 2).map((b) => b.title).join(' • ')}
+                    {hasBonus && topBonus && (
+                      <div className="warranty-badge-container flex justify-center mt-3">
+                        <div className="promo-badge-base promo-badge-warranty">
+                          <span className="mr-1">🛡️</span>
+                          <span>{topBonus.shortBadge || topBonus.title}</span>
+                        </div>
                       </div>
                     )}
                   </div>
