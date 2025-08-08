@@ -386,21 +386,65 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
     const savings = hasSale ? ((motor.basePrice as number) - (motor.salePrice as number)) : 0;
     const hasWarrantyBonus = (motor.bonusOffers || []).some(b => !!b.warrantyExtraYears && b.warrantyExtraYears > 0);
 
+    // Build normalized promo keys from multiple sources (badges/text/data)
+    const PROMO_MAP = [
+      { key: 'get5', test: /(mercury\s*)?(get\s*5|get5|5\s*year(\s*warranty)?)/i, label: 'Warranty bonus active' },
+      { key: 'repower', test: /(repower\s*rebate|repower)/i, label: 'Repower Rebate Promo active' },
+    ] as const;
+
+    const detectPromoKeys = (text?: string | null) => {
+      if (!text) return [] as string[];
+      const keys = new Set<string>();
+      PROMO_MAP.forEach(p => { if (p.test.test(text)) keys.add(p.key); });
+      return Array.from(keys);
+    };
+
+    const promoParts: string[] = [];
+    (motor.appliedPromotions || []).forEach(s => promoParts.push(String(s)));
+    (motor.bonusOffers || []).forEach(b => {
+      if (b.title) promoParts.push(String(b.title));
+      if (b.shortBadge) promoParts.push(String(b.shortBadge));
+      if (b.warrantyExtraYears && b.warrantyExtraYears > 0) promoParts.push(`${b.warrantyExtraYears} Year Warranty`);
+    });
+    const promoBlob = promoParts.join(' ');
+    const promoKeySet = new Set<string>();
+    detectPromoKeys(promoBlob).forEach(k => promoKeySet.add(k));
+    promoParts.forEach(s => detectPromoKeys(s).forEach(k => promoKeySet.add(k)));
+    if (hasWarrantyBonus) promoKeySet.add('get5');
+    const promoKeys = Array.from(promoKeySet);
+    const promoItems = promoKeys.map(k => PROMO_MAP.find(p => p.key === k)?.label || k);
+
     if (hasSale || hasWarrantyBonus) {
       toast({
         title: "Promotions applied",
         description: (
-          <div className="flex flex-wrap items-center gap-2 pt-1">
-            {hasWarrantyBonus && (
-              <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in">
-                <span className="mr-1">🛡️</span> Warranty bonus active
-              </span>
-            )}
-            {hasSale && (
-              <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in" style={{ animationDelay: '120ms' }}>
-                <span className="mr-1">💰</span> Save ${savings.toLocaleString()} applied
-              </span>
-            )}
+          <div className="modal">
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              {hasWarrantyBonus && (
+                <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in">
+                  <span className="mr-1">🛡️</span> Warranty bonus active
+                </span>
+              )}
+              {hasSale && (
+                <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in" style={{ animationDelay: '120ms' }}>
+                  <span className="mr-1">💰</span> Save ${savings.toLocaleString()} applied
+                </span>
+              )}
+            </div>
+            <div className="modal-promos" aria-live="polite">
+              {promoItems.length > 0 && (
+                <div className="promo-list" role="list">
+                  {promoItems.map((txt, idx) => (
+                    <div className="promo-item" role="listitem" key={idx}>
+                      <svg className="pi" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M9 16.2l-3.5-3.5-1.4 1.4 4.9 4.9 10-10-1.4-1.4z" />
+                      </svg>
+                      <span className="promo-note">{txt}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         ),
         duration: 2600,

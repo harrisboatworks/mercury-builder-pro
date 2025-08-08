@@ -644,4 +644,11 @@
       background: linear-gradient(120deg, transparent 0%, hsl(0 0% 100% / 0.25) 40%, transparent 80%);
     }
   }
+
+  /* Modal-scoped Promotions list */
+  .modal .modal-promos { margin-top: 0.75rem; }
+  .modal .promo-list { display: flex; flex-direction: column; gap: 0.4rem; }
+  .modal .promo-item { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 0.95rem; }
+  .modal .promo-item .pi { width: 1.1rem; height: 1.1rem; flex: 0 0 auto; }
+  .modal .promo-note { font-weight: 500; opacity: 0.85; }
 }
