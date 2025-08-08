@@ -217,14 +217,18 @@ const AdminPromotions = () => {
     }
   };
 
-  const createRule = async () => {
-    if (!selectedPromoId) return;
-    const payload = { ...newRule, promotion_id: selectedPromoId };
+  const createRule = async (fallbackPromotionId?: string) => {
+    const promotionId = selectedPromoId ?? fallbackPromotionId;
+    if (!promotionId) {
+      toast({ title: 'Select a promotion', description: 'Choose which promotion to attach this rule to.', variant: 'destructive' });
+      return;
+    }
+    const payload = { ...newRule, promotion_id: promotionId };
     try {
       const { error } = await supabase.from('promotions_rules').insert(payload);
       if (error) throw error;
       toast({ title: 'Rule added', description: 'Promotion rule saved' });
-      setNewRule({ promotion_id: selectedPromoId, rule_type: 'all', model: null, motor_type: null, horsepower_min: null, horsepower_max: null });
+      setNewRule({ promotion_id: promotionId, rule_type: 'all', model: null, motor_type: null, horsepower_min: null, horsepower_max: null });
       await loadAll();
     } catch (e) {
       console.error(e);
@@ -533,7 +537,7 @@ return (
                       </div>
                     )}
                     <div className="flex items-end">
-                      <Button onClick={createRule}>Add Rule</Button>
+                      <Button onClick={() => createRule(p.id)}>Add Rule</Button>
                     </div>
                   </div>
                 </div>
