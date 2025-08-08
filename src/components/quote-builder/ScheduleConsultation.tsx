@@ -421,32 +421,22 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
       </div>
 
       {/* Calendly Integration */}
-      <Card className="p-6">
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold flex items-center gap-2">
-            <Calendar className="w-5 h-5" />
-            Schedule Your Consultation
-          </h3>
-          <p className="text-muted-foreground">
-            Book a time that works for you to review your quote and discuss installation details.
-          </p>
-          
-          {calendlyLoaded ? (
-            <div 
-              className="calendly-inline-widget" 
-              data-url={calendlyUrl}
-              style={{ minWidth: '320px', height: '630px' }}
-              key={calendlyUrl}
-            ></div>
-          ) : (
-            <div className="flex items-center justify-center h-96 bg-muted rounded-lg">
-              <div className="text-center space-y-2">
-                <Clock className="w-8 h-8 mx-auto text-muted-foreground animate-spin" />
-                <p className="text-muted-foreground">Loading scheduling calendar...</p>
-              </div>
+      <Card className="p-0">
+        {calendlyLoaded ? (
+          <div 
+            className="calendly-inline-widget" 
+            data-url={calendlyUrl}
+            style={{ minWidth: '320px', height: '80vh' }}
+            key={calendlyUrl}
+          ></div>
+        ) : (
+          <div className="flex items-center justify-center bg-muted rounded-lg" style={{ height: '80vh' }}>
+            <div className="text-center space-y-2">
+              <Clock className="w-8 h-8 mx-auto text-muted-foreground animate-spin" />
+              <p className="text-muted-foreground">Loading scheduling calendar...</p>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </Card>
 
       {/* Contact Information */}
