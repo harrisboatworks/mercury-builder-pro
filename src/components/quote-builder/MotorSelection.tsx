@@ -753,11 +753,6 @@ const handleMotorSelection = (motor: Motor) => {
                             <span className="mr-1">💰</span> Save ${((selectedMotor.basePrice as number) - (selectedMotor.salePrice as number)).toLocaleString()}
                           </span>
                         )}
-                        {selectedMotor.bonusOffers?.some(b => !!b.warrantyExtraYears && b.warrantyExtraYears > 0) && (
-                          <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in" style={{ animationDelay: '120ms' }}>
-                            <span className="mr-1">🛡️</span> Warranty bonus active
-                          </span>
-                        )}
                         {renderBannerPromos(selectedMotor)}
                       </div>
                   </div>
