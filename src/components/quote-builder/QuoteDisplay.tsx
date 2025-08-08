@@ -11,6 +11,7 @@ import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle } from '
 import { QuoteData } from '../QuoteBuilder';
 import { Progress } from '@/components/ui/progress';
 import { toast } from '@/hooks/use-toast';
+import confetti from 'canvas-confetti';
 
 interface QuoteDisplayProps {
   quoteData: QuoteData;
@@ -22,6 +23,15 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   const [downPayment, setDownPayment] = useState(0);
   const [term, setTerm] = useState(60);
   const [showTermComparison, setShowTermComparison] = useState(false);
+  const [paymentPreference, setPaymentPreference] = useState<'cash' | 'finance' | null>(null);
+  const [achievement, setAchievement] = useState<{
+    icon: string;
+    title: string;
+    subtitle: string;
+    message: string;
+    points: string;
+    color: 'gold' | 'blue';
+  } | null>(null);
   
   // Achievement toast on load
   useEffect(() => {
@@ -119,6 +129,74 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   const allTerms = calculateAllTerms();
   const cashSavings = payments.totalInterest + financingFee;
 
+  type Achievement = {
+    icon: string;
+    title: string;
+    subtitle: string;
+    message: string;
+    points: string;
+    color: 'gold' | 'blue';
+  };
+
+  const showAchievement = (payload: Achievement) => setAchievement(payload);
+
+  const launchConfetti = (options: { colors?: string[] }) => {
+    const duration = 3000;
+    const animationEnd = Date.now() + duration;
+    const colors = options.colors || ['#28a745', '#ffc107'];
+
+    const interval: any = setInterval(() => {
+      const timeLeft = animationEnd - Date.now();
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        return;
+      }
+      const particleCount = Math.round(50 * (timeLeft / duration));
+      confetti({
+        particleCount,
+        startVelocity: 30,
+        spread: 360,
+        colors,
+        origin: { x: 0.5, y: 0.5 },
+      });
+    }, 250);
+  };
+
+  const playSound = (_key: string) => {
+    // Optional: Integrate subtle success sounds here
+  };
+
+  const triggerCashCelebration = () => {
+    showAchievement({
+      icon: '💰',
+      title: 'CASH BUYER LOCKED IN!',
+      subtitle: 'Maximum Savings Achieved',
+      message: `You just saved $${cashSavings.toFixed(0)} in interest!`,
+      points: '+500 Captain Points',
+      color: 'gold',
+    });
+    launchConfetti({ colors: ['#F2C94C', '#F2994A', '#F2C14E'] });
+    playSound('success-cash');
+  };
+
+  const triggerFinanceCelebration = () => {
+    showAchievement({
+      icon: '📅',
+      title: 'SMART FINANCING ACTIVATED!',
+      subtitle: 'Monthly Payment Plan Secured',
+      message: `Just $${payments.monthly.toFixed(0)}/month gets you on the water!`,
+      points: '+500 Flexibility Points',
+      color: 'blue',
+    });
+    launchConfetti({ colors: ['#60A5FA', '#06B6D4', '#A78BFA'] });
+    playSound('success-finance');
+  };
+
+  const handlePaymentSelection = (type: 'cash' | 'finance') => {
+    setPaymentPreference(type);
+    if (type === 'cash') triggerCashCelebration();
+    else triggerFinanceCelebration();
+  };
   const handleContinue = () => {
     onStepComplete({
       financing: { downPayment, term, rate: quoteData.financing.rate },
@@ -521,7 +599,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                   <div className="text-3xl font-bold leading-tight mt-2">${totalCashPrice.toLocaleString()}</div>
                   <div className="text-sm text-green-700 dark:text-green-300">Save {cashSavings.toFixed(0)} in interest!</div>
                 </div>
-                <Button className="mt-auto w-full">Pay Cash & Save</Button>
+                <Button className="mt-auto w-full" onClick={() => handlePaymentSelection('cash')}>Pay Cash & Save</Button>
               </Card>
 
               {/* Easy Monthly Card */}
@@ -535,9 +613,25 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                     <div>✓ Build credit</div>
                   </div>
                 </div>
-                <Button className="mt-auto w-full">Finance This Motor</Button>
+                <Button className="mt-auto w-full" onClick={() => handlePaymentSelection('finance')}>Finance This Motor</Button>
               </Card>
             </div>
+
+            {paymentPreference && (
+              <div className="mt-4 rounded-lg border border-in-stock/30 bg-in-stock/10 p-4 text-center">
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-xl">🔒</span>
+                  <h5 className="font-semibold">Payment Method Locked In!</h5>
+                </div>
+                <p className="text-sm mt-1">
+                  {paymentPreference === 'cash' ? `💰 Cash Payment - Save $${cashSavings.toFixed(0)}` : `📅 Financing - $${payments.monthly.toFixed(0)}/month`}
+                </p>
+                <div className="mt-3 flex justify-center gap-2">
+                  <Button variant="outline" size="sm" onClick={() => setPaymentPreference(null)}>Change Selection</Button>
+                  <Button size="sm" onClick={handleContinue}>Continue to Final Step →</Button>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Important Notes */}
@@ -668,6 +762,40 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
           </span>
         </Button>
       </div>
+
+      {/* Achievement Overlay */}
+      {achievement && (
+        <div className="achievement-overlay" role="dialog" aria-modal="true">
+          <div className="achievement-card animate-in">
+            <div className="achievement-icon-container">
+              <div
+                className="icon-pulse-ring"
+                style={{ ['--ring-color' as any]: achievement.color === 'gold' ? 'hsl(var(--promo-gold-1))' : 'hsl(var(--primary))' }}
+              ></div>
+              <div className="achievement-icon">{achievement.icon}</div>
+            </div>
+
+            <h1 className="achievement-title">{achievement.title}</h1>
+            <h2 className="achievement-subtitle">{achievement.subtitle}</h2>
+
+            <div className="achievement-stats">
+              <div className="stat-item">
+                <span className="stat-value">{achievement.message}</span>
+              </div>
+              <div className="points-earned">{achievement.points}</div>
+            </div>
+
+            <div className="progress-complete">
+              <div className="progress-bar-fill"></div>
+              <span>Payment Method Selected ✓</span>
+            </div>
+
+            <button className="btn-continue-epic" onClick={() => { setAchievement(null); handleContinue(); }}>
+              Continue to Final Step →
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
