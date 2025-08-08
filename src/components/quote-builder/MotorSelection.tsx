@@ -9,6 +9,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/components/ui/use-toast';
 import { MotorFilters } from './MotorFilters';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 // Database types
 interface DbMotor {
@@ -57,6 +58,42 @@ interface PromotionRule {
   discount_fixed_amount: number;
 }
 
+// Shared promotions detection (single source for modal + banner)
+const PROMO_MAP = [
+  { key: 'get5', test: /(mercury\s*)?(get\s*5|get5|5\s*year(\s*warranty)?)/i, label: 'Warranty bonus active' },
+  { key: 'repower', test: /(repower\s*rebate|repower)/i, label: 'Repower Rebate Promo active' },
+] as const;
+
+type PromoKey = typeof PROMO_MAP[number]['key'];
+
+const detectPromoKeysFromText = (text?: string | null): PromoKey[] => {
+  if (!text) return [];
+  const keys = new Set<PromoKey>();
+  PROMO_MAP.forEach(p => { if (p.test.test(text || '')) keys.add(p.key as PromoKey); });
+  return Array.from(keys);
+};
+
+const getPromoKeysForMotor = (motor: Motor): PromoKey[] => {
+  const parts: string[] = [];
+  (motor.appliedPromotions || []).forEach(s => parts.push(String(s)));
+  (motor.bonusOffers || []).forEach(b => {
+    if (b?.title) parts.push(String(b.title));
+    if (b?.shortBadge) parts.push(String(b.shortBadge));
+    if (b?.warrantyExtraYears && b.warrantyExtraYears > 0) parts.push(`${b.warrantyExtraYears} Year Warranty`);
+  });
+  const blob = parts.join(' ');
+  const set = new Set<PromoKey>();
+  detectPromoKeysFromText(blob).forEach(k => set.add(k));
+  parts.forEach(s => detectPromoKeysFromText(s).forEach(k => set.add(k)));
+  if ((motor.bonusOffers || []).some(b => !!b.warrantyExtraYears && b.warrantyExtraYears > 0)) set.add('get5');
+  return Array.from(set);
+};
+
+const getPromoLabelsForMotor = (motor: Motor): string[] => {
+  const keys = getPromoKeysForMotor(motor);
+  return keys.map(k => PROMO_MAP.find(p => p.key === k)?.label || k);
+};
+
 interface MotorSelectionProps {
   onStepComplete: (motor: Motor) => void;
 }
@@ -79,6 +116,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
   });
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [filtersOpen, setFiltersOpen] = useState(true);
+  const [bannerPromosOpen, setBannerPromosOpen] = useState(false);
 
   // Load motors from database
   useEffect(() => {
@@ -365,7 +403,61 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
     }
   };
 
-  const handleMotorSelection = (motor: Motor) => {
+// Inline renderer for bottom banner promotions (badges + "+N more")
+const renderBannerPromos = (motor: Motor) => {
+  const labels = getPromoLabelsForMotor(motor);
+  if (!labels.length) return null;
+  const inlineCount = Math.min(labels.length, isMobile ? 1 : 2);
+  const remaining = labels.length - inlineCount;
+  return (
+    <div className="promos-summary flex items-center gap-2" aria-live="polite">
+      <span className="promos-summary__label text-xs font-semibold text-muted-foreground">Promotions applied</span>
+      <div className="promos-summary__badges flex items-center gap-1 overflow-hidden whitespace-nowrap" role="list">
+        {labels.slice(0, inlineCount).map((lab, idx) => (
+          <span key={idx} role="listitem" className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold">
+            <span className="mr-1" aria-hidden="true">✅</span>
+            {lab}
+          </span>
+        ))}
+      </div>
+      {remaining > 0 && (
+        <>
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            className="promos-summary__more rounded-full h-6 px-2 py-0 text-xs"
+            aria-haspopup="dialog"
+            aria-expanded={bannerPromosOpen}
+            onClick={() => setBannerPromosOpen(true)}
+          >
+            +{remaining} more
+          </Button>
+          <Dialog open={bannerPromosOpen} onOpenChange={setBannerPromosOpen}>
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle>Active promotions</DialogTitle>
+              </DialogHeader>
+              <div className="promos-popover__list flex flex-col gap-2" role="list">
+                {labels.map((l, idx) => (
+                  <div key={idx} className="flex items-center gap-2" role="listitem">
+                    <Check className="w-4 h-4 text-primary" aria-hidden="true" />
+                    <span className="font-medium">{l}</span>
+                  </div>
+                ))}
+              </div>
+              <DialogFooter>
+                <Button type="button" onClick={() => setBannerPromosOpen(false)}>Close</Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        </>
+      )}
+    </div>
+  );
+};
+
+const handleMotorSelection = (motor: Motor) => {
     setSelectedMotor(motor);
     setShowCelebration(true);
     const particles = Array.from({ length: 6 }, (_, i) => ({
@@ -386,33 +478,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
     const savings = hasSale ? ((motor.basePrice as number) - (motor.salePrice as number)) : 0;
     const hasWarrantyBonus = (motor.bonusOffers || []).some(b => !!b.warrantyExtraYears && b.warrantyExtraYears > 0);
 
-    // Build normalized promo keys from multiple sources (badges/text/data)
-    const PROMO_MAP = [
-      { key: 'get5', test: /(mercury\s*)?(get\s*5|get5|5\s*year(\s*warranty)?)/i, label: 'Warranty bonus active' },
-      { key: 'repower', test: /(repower\s*rebate|repower)/i, label: 'Repower Rebate Promo active' },
-    ] as const;
-
-    const detectPromoKeys = (text?: string | null) => {
-      if (!text) return [] as string[];
-      const keys = new Set<string>();
-      PROMO_MAP.forEach(p => { if (p.test.test(text)) keys.add(p.key); });
-      return Array.from(keys);
-    };
-
-    const promoParts: string[] = [];
-    (motor.appliedPromotions || []).forEach(s => promoParts.push(String(s)));
-    (motor.bonusOffers || []).forEach(b => {
-      if (b.title) promoParts.push(String(b.title));
-      if (b.shortBadge) promoParts.push(String(b.shortBadge));
-      if (b.warrantyExtraYears && b.warrantyExtraYears > 0) promoParts.push(`${b.warrantyExtraYears} Year Warranty`);
-    });
-    const promoBlob = promoParts.join(' ');
-    const promoKeySet = new Set<string>();
-    detectPromoKeys(promoBlob).forEach(k => promoKeySet.add(k));
-    promoParts.forEach(s => detectPromoKeys(s).forEach(k => promoKeySet.add(k)));
-    if (hasWarrantyBonus) promoKeySet.add('get5');
-    const promoKeys = Array.from(promoKeySet);
-    const promoItems = promoKeys.map(k => PROMO_MAP.find(p => p.key === k)?.label || k);
+    const promoItems = getPromoLabelsForMotor(motor);
 
     if (hasSale || hasWarrantyBonus) {
       toast({
@@ -667,7 +733,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
 
       {showStickyBar && selectedMotor && (
         <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom-5 duration-500">
-          <div className="bg-background/95 backdrop-blur-lg border-t-4 border-green-500 shadow-2xl">
+          <div className="checkout-banner bg-background/95 backdrop-blur-lg border-t-4 border-green-500 shadow-2xl">
             <div className="container mx-auto px-4 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -681,18 +747,19 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                     <p className="font-bold text-lg">
                       {selectedMotor.model} - ${selectedMotor.price.toLocaleString()}
                     </p>
-                    <div className="flex gap-2 mt-1">
-                      {selectedMotor.stockStatus === 'In Stock' && selectedMotor.salePrice != null && selectedMotor.basePrice != null && (selectedMotor.salePrice as number) < (selectedMotor.basePrice as number) && (
-                        <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in">
-                          <span className="mr-1">💰</span> Save ${((selectedMotor.basePrice as number) - (selectedMotor.salePrice as number)).toLocaleString()}
-                        </span>
-                      )}
-                      {selectedMotor.bonusOffers?.some(b => !!b.warrantyExtraYears && b.warrantyExtraYears > 0) && (
-                        <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in" style={{ animationDelay: '120ms' }}>
-                          <span className="mr-1">🛡️</span> Warranty bonus active
-                        </span>
-                      )}
-                    </div>
+                      <div className="flex items-center gap-2 mt-1">
+                        {selectedMotor.stockStatus === 'In Stock' && selectedMotor.salePrice != null && selectedMotor.basePrice != null && (selectedMotor.salePrice as number) < (selectedMotor.basePrice as number) && (
+                          <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in">
+                            <span className="mr-1">💰</span> Save ${((selectedMotor.basePrice as number) - (selectedMotor.salePrice as number)).toLocaleString()}
+                          </span>
+                        )}
+                        {selectedMotor.bonusOffers?.some(b => !!b.warrantyExtraYears && b.warrantyExtraYears > 0) && (
+                          <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in" style={{ animationDelay: '120ms' }}>
+                            <span className="mr-1">🛡️</span> Warranty bonus active
+                          </span>
+                        )}
+                        {renderBannerPromos(selectedMotor)}
+                      </div>
                   </div>
                 </div>
                 
