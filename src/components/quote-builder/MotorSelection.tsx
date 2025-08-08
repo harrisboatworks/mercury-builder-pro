@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { RefreshCw, Zap, Check, Star, Sparkles } from 'lucide-react';
+import { RefreshCw, Zap, Check, Star, Sparkles, Eye, Scale } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -114,9 +114,15 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
     priceRange: [0, 50000] as [number, number],
     hpRange: [2.5, 600] as [number, number]
   });
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [filtersOpen, setFiltersOpen] = useState(true);
-  const [bannerPromosOpen, setBannerPromosOpen] = useState(false);
+const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+const [filtersOpen, setFiltersOpen] = useState(true);
+const [bannerPromosOpen, setBannerPromosOpen] = useState(false);
+// Phase 1 scaffolding & features
+const [selectionMode, setSelectionMode] = useState<'browse' | 'compare'>('browse');
+const [selectedForCompare, setSelectedForCompare] = useState<string[]>([]);
+const [showRebateModal, setShowRebateModal] = useState(false);
+const [quickViewMotor, setQuickViewMotor] = useState<Motor | null>(null);
+const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
 
   // Load motors from database
   useEffect(() => {
@@ -376,13 +382,22 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
     { key: 'v8-racing', label: 'V8 & Racing (225-600hp)', color: 'v8-racing' }
   ];
 
-  const filteredMotors = motors.filter(motor => {
-    if (filters.category !== 'all' && motor.category !== filters.category) return false;
-    if (filters.stockStatus !== 'all' && motor.stockStatus !== filters.stockStatus) return false;
-    if (motor.price < filters.priceRange[0] || motor.price > filters.priceRange[1]) return false;
-    if (motor.hp < filters.hpRange[0] || motor.hp > filters.hpRange[1]) return false;
-    return true;
-  });
+const filteredMotors = motors.filter(motor => {
+  if (filters.category !== 'all' && motor.category !== filters.category) return false;
+  if (filters.stockStatus !== 'all' && motor.stockStatus !== filters.stockStatus) return false;
+  if (motor.price < filters.priceRange[0] || motor.price > filters.priceRange[1]) return false;
+  if (motor.hp < filters.hpRange[0] || motor.hp > filters.hpRange[1]) return false;
+  return true;
+});
+
+// Filtered counts per category (Phase 1 - filtered counts)
+const categoryCounts: Record<string, number> = {
+  all: filteredMotors.length,
+  portable: filteredMotors.filter(m => m.category === 'portable').length,
+  'mid-range': filteredMotors.filter(m => m.category === 'mid-range').length,
+  'high-performance': filteredMotors.filter(m => m.category === 'high-performance').length,
+  'v8-racing': filteredMotors.filter(m => m.category === 'v8-racing').length,
+};
 
   const getStockBadgeColor = (status: string) => {
     switch (status) {
@@ -461,7 +476,36 @@ const renderBannerPromos = (motor: Motor) => {
   );
 };
 
+// Phase 1: Compare mode & quick actions helpers
+const toggleCompare = (motor: Motor) => {
+  setSelectedForCompare(prev => {
+    const exists = prev.includes(motor.id);
+    if (exists) return prev.filter(id => id !== motor.id);
+    if (prev.length >= 3) {
+      toast({ title: 'Compare limit reached', description: 'You can compare up to 3 motors.', variant: 'destructive' });
+      return prev;
+    }
+    return [...prev, motor.id];
+  });
+};
+
+const calculatePayment = (motor: Motor) => {
+  toast({ title: 'Coming soon', description: `Payment calculator for ${motor.model} is coming soon.` });
+};
+
+const openQuickView = (motor: Motor) => {
+  setQuickViewMotor(motor);
+};
+
+const isCompared = (motorId: string) => selectedForCompare.includes(motorId);
+
 const handleMotorSelection = (motor: Motor) => {
+    // Recently viewed scaffold
+    setRecentlyViewed(prev => {
+      const without = prev.filter(p => p.id !== motor.id);
+      const next = [motor, ...without];
+      return next.slice(0, 6);
+    });
     setSelectedMotor(motor);
     setShowCelebration(true);
     const particles = Array.from({ length: 6 }, (_, i) => ({
@@ -539,6 +583,7 @@ const handleMotorSelection = (motor: Motor) => {
         resultsCount={filteredMotors.length}
         isOpen={filtersOpen}
         onToggle={() => setFiltersOpen(!filtersOpen)}
+        categoryCounts={categoryCounts}
       />
 
       <div className="flex-1 space-y-8">
@@ -567,6 +612,34 @@ const handleMotorSelection = (motor: Motor) => {
                 Update Inventory
               </>
             )}
+          </Button>
+        </div>
+
+        {/* Repower rebate banner (Phase 1) */}
+        <div className="rounded-md p-3 text-center text-sm font-semibold bg-[linear-gradient(135deg,hsl(var(--promo-gold-1)),hsl(var(--promo-gold-2)))] shadow-md animate-[subtle-pulse_3s_ease-in-out_infinite]">
+          <div className="flex items-center justify-center gap-3 flex-wrap">
+            <span>💰 Repower Rebate Available! Trading in? You may qualify for additional savings.</span>
+            <Button size="sm" variant="secondary" onClick={() => setShowRebateModal(true)}>Learn More</Button>
+          </div>
+        </div>
+
+        {/* Browse vs Compare Mode (Phase 1) */}
+        <div className="flex items-center justify-center gap-2">
+          <Button
+            variant={selectionMode === 'browse' ? 'default' : 'outline'}
+            size="sm"
+            onClick={() => setSelectionMode('browse')}
+            className="flex items-center gap-2"
+          >
+            <Eye className="w-4 h-4" /> Browse Mode
+          </Button>
+          <Button
+            variant={selectionMode === 'compare' ? 'default' : 'outline'}
+            size="sm"
+            onClick={() => setSelectionMode('compare')}
+            className="flex items-center gap-2"
+          >
+            <Scale className="w-4 h-4" /> Compare Mode
           </Button>
         </div>
 

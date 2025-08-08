@@ -31,7 +31,8 @@ export const MotorFilters = ({
   setViewMode, 
   resultsCount,
   isOpen,
-  onToggle 
+  onToggle,
+  categoryCounts,
 }: MotorFiltersProps) => {
   const categories = [
     { key: 'all', label: 'All Motors', color: 'primary' },
@@ -123,7 +124,8 @@ export const MotorFilters = ({
                       onClick={() => setFilters({ ...filters, category: category.key })}
                       className="justify-start text-xs"
                     >
-                      {category.label}
+                      <span className="flex-1 text-left">{category.label}</span>
+                      <span className="ml-2 text-muted-foreground">({(categoryCounts?.[category.key] ?? 0) as number})</span>
                     </Button>
                   ))}
                 </div>
