@@ -81,6 +81,23 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
     loadMotors();
   }, []);
 
+  // Realtime updates for promotions changes
+  useEffect(() => {
+    const channel = supabase
+      .channel('promos-realtime')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'promotions' }, () => {
+        loadMotors();
+      })
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'promotions_rules' }, () => {
+        loadMotors();
+      })
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
+
   const loadMotors = async () => {
     try {
       const [{ data: motorRows, error: motorsError }, { data: promos, error: promosError }, { data: rules, error: rulesError }] = await Promise.all([

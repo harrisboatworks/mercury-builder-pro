@@ -140,6 +140,38 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
               </div>
             </div>
             
+            {/* Promotions Breakdown */}
+            {(quoteData.motor?.appliedPromotions?.length || (quoteData.motor?.bonusOffers?.length)) ? (
+              <div className="mt-3 rounded-lg border border-border p-3 bg-muted/20">
+                <h5 className="font-semibold text-foreground mb-2">Active Promotions</h5>
+                {quoteData.motor?.appliedPromotions?.length ? (
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex flex-wrap gap-2">
+                      {quoteData.motor.appliedPromotions.map((name, i) => (
+                        <Badge key={i} variant="outline">{name}</Badge>
+                      ))}
+                    </div>
+                    {quoteData.motor.originalPrice && quoteData.motor.price < (quoteData.motor.originalPrice || 0) && (
+                      <div className="text-right">
+                        <p className="text-xs text-muted-foreground line-through">${quoteData.motor.originalPrice?.toLocaleString()}</p>
+                        <p className="text-sm font-bold text-primary">You save ${Math.round(((quoteData.motor.originalPrice || 0) - quoteData.motor.price)).toLocaleString()}</p>
+                      </div>
+                    )}
+                  </div>
+                ) : null}
+                {quoteData.motor?.bonusOffers?.length ? (
+                  <div className="mt-2">
+                    <div className="text-sm text-muted-foreground mb-1">Included Bonus Offers:</div>
+                    <div className="flex flex-wrap gap-2">
+                      {quoteData.motor.bonusOffers.map((b) => (
+                        <Badge key={b.id} className="bg-secondary text-secondary-foreground">{b.shortBadge || b.title}</Badge>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
+            
             {/* Trade-In Line */}
             {hasTradeIn && (
               <div className="flex justify-between items-center py-2">

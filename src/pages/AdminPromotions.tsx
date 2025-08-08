@@ -134,6 +134,19 @@ const AdminPromotions = () => {
     loadAll();
   }, []);
 
+  // Realtime updates: auto-refresh when promotions or rules change
+  useEffect(() => {
+    const channel = supabase
+      .channel('admin-promos-realtime')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'promotions' }, () => loadAll())
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'promotions_rules' }, () => loadAll())
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
+
   const createPromotion = async () => {
     try {
       const payload = {
