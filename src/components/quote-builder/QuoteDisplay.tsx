@@ -417,14 +417,6 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
               </div>
             </div>
             
-            {/* Financing Fee */}
-            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4 mb-4">
-              <div className="flex justify-between items-center">
-                <span className="font-medium text-amber-800 dark:text-amber-200">Financing Fee:</span>
-                <span className="text-lg font-bold text-amber-800 dark:text-amber-200">${financingFee.toLocaleString()}</span>
-              </div>
-              <p className="text-xs text-amber-700 dark:text-amber-300 mt-1">Applied to all financed purchases</p>
-            </div>
 
             {/* Amount to Finance */}
             <div className="flex justify-between items-center py-2 bg-muted/30 px-4 rounded">
@@ -499,10 +491,10 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
             )}
             
             {/* Finance Option */}
-            <div className="bg-primary/10 border border-primary/20 rounded-lg p-6">
+            <div className="border border-border rounded-lg p-6 bg-muted/10">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-2xl">📅</span>
-                <p className="font-bold text-foreground">OR FINANCE:</p>
+                <p className="font-bold text-foreground">YOUR PAYMENT OPTIONS:</p>
               </div>
               
               <div className="grid grid-cols-3 gap-4 text-center mb-4">
@@ -518,7 +510,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                 </div>
                 <div className="space-y-1">
                   <p className="text-xs text-muted-foreground uppercase tracking-wide">MONTHLY</p>
-                  <p className="text-7xl font-bold text-primary">${payments.monthly.toFixed(0)}</p>
+                  <p className="text-5xl font-bold text-foreground">${payments.monthly.toFixed(0)}</p>
                   <p className="text-xs text-muted-foreground">/month*</p>
                 </div>
               </div>
@@ -528,7 +520,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                 <p>Total of payments: ${payments.totalOfPayments.toLocaleString()}</p>
                 <p>Total interest: ${payments.totalInterest.toFixed(0)}</p>
                 <p className="text-xs mt-2">*{quoteData.financing.rate}% APR for {term} months OAC</p>
-                <p className="text-xs">*Plus applicable financing fee. All payments include HST</p>
+                <p className="text-xs text-muted-foreground">Includes ${financingFee.toLocaleString()} financing administration fee. All payments include HST.</p>
               </div>
             </div>
 
@@ -539,10 +531,6 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                 <div className="flex items-start gap-2">
                   <span className="text-amber-500 mt-0.5">•</span>
                   <span>All financing subject to approved credit (OAC)</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-amber-500 mt-0.5">•</span>
-                  <span>${financingFee} financing administration fee applies to all financed purchases</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-amber-500 mt-0.5">•</span>
@@ -603,7 +591,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
               </Card>
 
               {/* Easy Monthly Card */}
-              <Card className="h-full flex flex-col gap-4 p-5 border-primary/30 bg-primary/5">
+              <Card className="h-full flex flex-col gap-4 p-5 border-border bg-card">
                 <div>
                   <div className="font-semibold">📅 Easy Monthly</div>
                   <div className="text-3xl font-bold leading-tight mt-2">${payments.monthly.toFixed(0)}/month</div>
