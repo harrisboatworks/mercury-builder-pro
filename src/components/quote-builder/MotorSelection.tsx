@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { RefreshCw, Zap, Check, Star, Sparkles } from 'lucide-react';
+import { RefreshCw, Zap, Check, Star, Sparkles, ShieldCheck, Tag } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -431,21 +431,26 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                     </div>
                   )}
 
-                  {hasSale && (
-                    <div className="absolute top-4 left-4 z-20">
-                      <Badge className="bg-primary text-primary-foreground">SALE</Badge>
-                    </div>
-                  )}
-                  {!hasSale && motor.appliedPromotions && motor.appliedPromotions.length > 0 && (
-                    <div className="absolute top-4 left-4 z-20">
-                      <Badge variant="outline">PROMO</Badge>
-                    </div>
-                  )}
-                  {!hasSale && !motor.appliedPromotions?.length && hasBonus && topBonus && (
-                    <div className="absolute top-4 left-4 z-20">
-                      <Badge className="bg-secondary text-secondary-foreground">
-                        {topBonus.shortBadge || 'BONUS'}
-                      </Badge>
+                  {(motor.savings > 0 || hasBonus) && (
+                    <div className={`absolute ${selectedMotor?.id === motor.id ? 'top-14' : 'top-3'} right-3 z-30 promo-badges-container`}>
+                      {motor.savings > 0 && motor.originalPrice ? (
+                        <div className="promo-badge-base promo-badge-discount pointer-events-auto">
+                          <Tag className="w-3.5 h-3.5" />
+                          <span>SAVE {Math.max(1, Math.round((1 - motor.price / (motor.originalPrice || motor.price)) * 100))}%</span>
+                        </div>
+                      ) : null}
+                      {(motor.bonusOffers || []).slice(0, 2).map((b) => (
+                        <div key={b.id} className={`promo-badge-base promo-badge-warranty pointer-events-auto ${b.highlight ? 'ring-2 ring-ring/50' : ''}`}>
+                          <ShieldCheck className="w-3.5 h-3.5" />
+                          <span>{b.shortBadge || b.title}</span>
+                        </div>
+                      ))}
+                      {topBonus && topBonus.highlight ? (
+                        <div className="promo-badge-base promo-badge-featured pointer-events-auto">
+                          <Star className="w-3.5 h-3.5" />
+                          <span>FEATURED</span>
+                        </div>
+                      ) : null}
                     </div>
                   )}
 
@@ -471,16 +476,6 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                           alt={motor.model}
                           className="w-full h-full object-cover"
                         />
-                      </div>
-                    )}
-
-                    {hasBonus && (
-                      <div className="flex flex-wrap gap-2">
-                        {(motor.bonusOffers || []).slice(0, 2).map((b) => (
-                          <Badge key={b.id} variant="outline" className="border-secondary text-secondary-foreground">
-                            {b.shortBadge || b.title}
-                          </Badge>
-                        ))}
                       </div>
                     )}
 
@@ -517,6 +512,13 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                         )}
                       </div>
                     </div>
+
+                    {hasBonus && (
+                      <div className="mt-2 text-sm text-muted-foreground">
+                        <span className="mr-1">✨</span>
+                        Included: {(motor.bonusOffers || []).slice(0, 2).map((b) => b.title).join(' • ')}
+                      </div>
+                    )}
                   </div>
                 </Card>
               );

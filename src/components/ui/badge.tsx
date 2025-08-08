@@ -15,6 +15,9 @@ const badgeVariants = cva(
         destructive:
           "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
         outline: "text-foreground",
+        // Promo variants for subtle inline usage (not main promo badges)
+        discount: "border-transparent bg-[hsl(var(--promo-red-1))] text-white",
+        warranty: "border-transparent bg-[linear-gradient(135deg,hsl(var(--promo-gold-1)),hsl(var(--promo-gold-2)))] text-foreground",
       },
     },
     defaultVariants: {
