@@ -1,4 +1,3 @@
-
 import { useEffect, useMemo, useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -46,6 +45,9 @@ interface PromotionRule {
   motor_type: string | null;
   horsepower_min: number | null;
   horsepower_max: number | null;
+  // NEW: rule-level discount overrides
+  discount_percentage: number;
+  discount_fixed_amount: number;
 }
 
 const AdminPromotions = () => {
@@ -97,6 +99,10 @@ const AdminPromotions = () => {
 
   const [discountType, setDiscountType] = useState<'percentage' | 'fixed'>('percentage');
 
+  // NEW: rule-level discount UI state
+  const [ruleDiscountType, setRuleDiscountType] = useState<'inherit' | 'percentage' | 'fixed'>('inherit');
+  const [ruleDiscountValue, setRuleDiscountValue] = useState<number>(0);
+
   // New rule form
   const [selectedPromoId, setSelectedPromoId] = useState<string | null>(null);
   const [newRule, setNewRule] = useState<Omit<PromotionRule, 'id'>>({
@@ -106,6 +112,9 @@ const AdminPromotions = () => {
     motor_type: null,
     horsepower_min: null,
     horsepower_max: null,
+    // NEW: default overrides to 0 (inherit promo)
+    discount_percentage: 0,
+    discount_fixed_amount: 0,
   });
 
   const loadAll = async () => {
@@ -153,7 +162,7 @@ const AdminPromotions = () => {
 
   const createPromotion = async () => {
     try {
-  const payload: Omit<Promotion, 'id'> = { ...newPromo } as Omit<Promotion, 'id'>;
+      const payload: Omit<Promotion, 'id'> = { ...newPromo } as Omit<Promotion, 'id'>;
       // If it's a bonus, ensure both discounts are 0
       if (newPromo.kind === 'bonus') {
         payload.discount_percentage = 0;
@@ -223,12 +232,31 @@ const AdminPromotions = () => {
       toast({ title: 'Select a promotion', description: 'Choose which promotion to attach this rule to.', variant: 'destructive' });
       return;
     }
-    const payload = { ...newRule, promotion_id: promotionId };
+
+    // Build payload with optional rule-level overrides
+    const payload: Omit<PromotionRule, 'id'> = {
+      ...newRule,
+      promotion_id: promotionId,
+      discount_percentage: ruleDiscountType === 'percentage' ? Number(ruleDiscountValue || 0) : 0,
+      discount_fixed_amount: ruleDiscountType === 'fixed' ? Number(ruleDiscountValue || 0) : 0,
+    };
+
     try {
       const { error } = await supabase.from('promotions_rules').insert(payload);
       if (error) throw error;
       toast({ title: 'Rule added', description: 'Promotion rule saved' });
-      setNewRule({ promotion_id: promotionId, rule_type: 'all', model: null, motor_type: null, horsepower_min: null, horsepower_max: null });
+      setNewRule({
+        promotion_id: promotionId,
+        rule_type: 'all',
+        model: null,
+        motor_type: null,
+        horsepower_min: null,
+        horsepower_max: null,
+        discount_percentage: 0,
+        discount_fixed_amount: 0,
+      });
+      setRuleDiscountType('inherit');
+      setRuleDiscountValue(0);
       await loadAll();
     } catch (e) {
       console.error(e);
@@ -256,33 +284,33 @@ const AdminPromotions = () => {
     return map;
   }, [rules]);
 
-const ruleMatches = (m: DbMotor, r: PromotionRule) => {
-  if (r.rule_type === 'all') return true;
-  if (r.rule_type === 'model') return !!r.model && m.model.toLowerCase().includes(r.model.toLowerCase());
-  if (r.rule_type === 'motor_type') return !!r.motor_type && m.motor_type.toLowerCase() === r.motor_type.toLowerCase();
-  if (r.rule_type === 'horsepower_range') {
-    const hp = Number(m.horsepower);
-    const min = r.horsepower_min != null ? Number(r.horsepower_min) : -Infinity;
-    const max = r.horsepower_max != null ? Number(r.horsepower_max) : Infinity;
-    return hp >= min && hp <= max;
-  }
-  return false;
-};
-
-const coverageByPromo = useMemo(() => {
-  const map: Record<string, number> = {};
-  for (const p of promotions) {
-    const prules = rules.filter(r => r.promotion_id === p.id);
-    if (prules.length === 0) {
-      map[p.id] = 0;
-      continue;
+  const ruleMatches = (m: DbMotor, r: PromotionRule) => {
+    if (r.rule_type === 'all') return true;
+    if (r.rule_type === 'model') return !!r.model && m.model.toLowerCase().includes(r.model.toLowerCase());
+    if (r.rule_type === 'motor_type') return !!r.motor_type && m.motor_type.toLowerCase() === r.motor_type.toLowerCase();
+    if (r.rule_type === 'horsepower_range') {
+      const hp = Number(m.horsepower);
+      const min = r.horsepower_min != null ? Number(r.horsepower_min) : -Infinity;
+      const max = r.horsepower_max != null ? Number(r.horsepower_max) : Infinity;
+      return hp >= min && hp <= max;
     }
-    map[p.id] = motors.filter(m => prules.some(r => ruleMatches(m, r))).length;
-  }
-  return map;
-}, [promotions, rules, motors]);
+    return false;
+  };
 
-return (
+  const coverageByPromo = useMemo(() => {
+    const map: Record<string, number> = {};
+    for (const p of promotions) {
+      const prules = rules.filter(r => r.promotion_id === p.id);
+      if (prules.length === 0) {
+        map[p.id] = 0;
+        continue;
+      }
+      map[p.id] = motors.filter(m => prules.some(r => ruleMatches(m, r))).length;
+    }
+    return map;
+  }, [promotions, rules, motors]);
+
+  return (
     <main className="container mx-auto px-4 py-8">
       <header className="mb-8">
         <h1 className="text-3xl font-bold">Promotions Manager</h1>
@@ -457,6 +485,9 @@ return (
                         motor_type: null,
                         horsepower_min: null,
                         horsepower_max: null,
+                        // Defaults; rule inherits promo discount
+                        discount_percentage: 0,
+                        discount_fixed_amount: 0,
                       });
                       if (error) {
                         toast({ title: 'Error', description: 'Failed to add rule', variant: 'destructive' });
@@ -474,6 +505,14 @@ return (
                         {r.rule_type === 'model' && r.model && <span className="ml-2">• {r.model}</span>}
                         {r.rule_type === 'motor_type' && r.motor_type && <span className="ml-2">• {r.motor_type}</span>}
                         {r.rule_type === 'horsepower_range' && <span className="ml-2">• {r.horsepower_min ?? 0} - {r.horsepower_max ?? '∞'} HP</span>}
+                        {/* NEW: show override details */}
+                        {Number(r.discount_fixed_amount) > 0 ? (
+                          <span className="ml-2">• ${Number(r.discount_fixed_amount).toLocaleString()} off</span>
+                        ) : Number(r.discount_percentage) > 0 ? (
+                          <span className="ml-2">• {Number(r.discount_percentage)}% off</span>
+                        ) : (
+                          <span className="ml-2 text-muted-foreground">• Inherits promo discount</span>
+                        )}
                       </div>
                       <Button variant="ghost" size="sm" onClick={() => deleteRule(r.id)}>Remove</Button>
                     </div>
@@ -536,6 +575,32 @@ return (
                         </div>
                       </div>
                     )}
+
+                    {/* NEW: Rule-level discount override controls */}
+                    <div className="space-y-2">
+                      <Label>Rule Discount</Label>
+                      <Select value={ruleDiscountType} onValueChange={(v) => setRuleDiscountType(v as 'inherit' | 'percentage' | 'fixed')}>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Inherit promo" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="inherit">Inherit promo discount</SelectItem>
+                          <SelectItem value="percentage">Percentage (%)</SelectItem>
+                          <SelectItem value="fixed">Fixed ($)</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    {ruleDiscountType !== 'inherit' && (
+                      <div className="space-y-2">
+                        <Label>{ruleDiscountType === 'percentage' ? 'Discount %' : 'Discount $'}</Label>
+                        <Input
+                          type="number"
+                          value={ruleDiscountValue || ''}
+                          onChange={(e) => setRuleDiscountValue(Number(e.target.value || 0))}
+                        />
+                      </div>
+                    )}
+
                     <div className="flex items-end">
                       <Button onClick={() => createRule(p.id)}>Add Rule</Button>
                     </div>

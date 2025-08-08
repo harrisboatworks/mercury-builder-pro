@@ -251,6 +251,8 @@ export type Database = {
       promotions_rules: {
         Row: {
           created_at: string
+          discount_fixed_amount: number
+          discount_percentage: number
           horsepower_max: number | null
           horsepower_min: number | null
           id: string
@@ -262,6 +264,8 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          discount_fixed_amount?: number
+          discount_percentage?: number
           horsepower_max?: number | null
           horsepower_min?: number | null
           id?: string
@@ -273,6 +277,8 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          discount_fixed_amount?: number
+          discount_percentage?: number
           horsepower_max?: number | null
           horsepower_min?: number | null
           id?: string

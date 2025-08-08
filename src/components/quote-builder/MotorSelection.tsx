@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { RefreshCw, Zap, Check, Star, Sparkles, ShieldCheck, Tag } from 'lucide-react';
+import { RefreshCw, Zap, Check, Star, Sparkles } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -52,6 +52,9 @@ interface PromotionRule {
   motor_type: string | null;
   horsepower_min: number | null;
   horsepower_max: number | null;
+  // NEW: rule-level discount overrides
+  discount_percentage: number;
+  discount_fixed_amount: number;
 }
 
 interface MotorSelectionProps {
@@ -202,19 +205,51 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
       .filter((p) => p.kind === 'bonus')
       .sort((a, b) => (b.highlight === a.highlight ? (b.priority - a.priority) : (b.highlight ? 1 : -1)));
 
-    const discounts = applicable.filter((p) => p.kind !== 'bonus' && (Number(p.discount_percentage) > 0 || Number(p.discount_fixed_amount) > 0));
+    // Include promos that have either promo-level discount OR a rule-level override for this motor
+    const discounts = applicable.filter((p) => {
+      const matchingRules = rules
+        .filter((r) => r.promotion_id === p.id)
+        .filter((r) => ruleMatches(m, r));
+      const hasRuleOverride = matchingRules.some(
+        (r) => Number(r.discount_percentage) > 0 || Number(r.discount_fixed_amount) > 0
+      );
+      return p.kind !== 'bonus' && (
+        Number(p.discount_percentage) > 0 ||
+        Number(p.discount_fixed_amount) > 0 ||
+        hasRuleOverride
+      );
+    });
 
-    // Apply stackable discounts first
+    const calcAfter = (current: number, fixed: number, pct: number) => {
+      let result = current;
+      if (Number(fixed) > 0) result = Math.max(0, result - Number(fixed));
+      if (Number(pct) > 0) result = result * (1 - Number(pct) / 100);
+      return result;
+    };
+
+    const bestPriceForPromo = (current: number, promo: Promotion) => {
+      const matchingRules = rules
+        .filter((r) => r.promotion_id === promo.id)
+        .filter((r) => ruleMatches(m, r));
+
+      // Default to promo-level if no matching rules (shouldn't happen due to applicable filter)
+      let best = calcAfter(current, Number(promo.discount_fixed_amount) || 0, Number(promo.discount_percentage) || 0);
+
+      for (const r of matchingRules) {
+        const hasOverride = (Number(r.discount_fixed_amount) > 0 || Number(r.discount_percentage) > 0);
+        const fixed = hasOverride ? Number(r.discount_fixed_amount) || 0 : Number(promo.discount_fixed_amount) || 0;
+        const pct = hasOverride ? Number(r.discount_percentage) || 0 : Number(promo.discount_percentage) || 0;
+        const candidate = calcAfter(current, fixed, pct);
+        if (candidate < best) best = candidate;
+      }
+      return best;
+    };
+
+    // Apply stackable discounts first (using best rule-level or promo-level value)
     const stackables = discounts.filter((p) => p.stackable);
     for (const p of stackables) {
-      const fixed = Number(p.discount_fixed_amount) || 0;
-      const pct = Number(p.discount_percentage) || 0;
-      if (fixed > 0) {
-        price = Math.max(0, price - fixed);
-      }
-      if (pct > 0) {
-        price = price * (1 - pct / 100);
-      }
+      const newPrice = bestPriceForPromo(price, p);
+      price = newPrice;
       applied.push(p.name);
       if (p.end_date) {
         if (!endsAt || new Date(p.end_date) < new Date(endsAt)) endsAt = p.end_date;
@@ -227,11 +262,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
       let best: Promotion | null = null;
       let bestPrice = price;
       for (const p of nonStackables) {
-        const fixed = Number(p.discount_fixed_amount) || 0;
-        const pct = Number(p.discount_percentage) || 0;
-        let candidate = price;
-        if (fixed > 0) candidate = Math.max(0, candidate - fixed);
-        if (pct > 0) candidate = candidate * (1 - pct / 100);
+        const candidate = bestPriceForPromo(price, p);
         if (!best || candidate < bestPrice) {
           best = p;
           bestPrice = candidate;
