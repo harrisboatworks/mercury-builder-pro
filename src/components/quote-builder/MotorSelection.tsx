@@ -618,21 +618,7 @@ const handleMotorSelection = (motor: Motor) => {
                   }`}
                   onClick={() => handleMotorSelection(motor)}
                 >
-                  {selectedMotor?.id === motor.id && (
-                    <div className="absolute top-4 right-4 z-20">
-                      <div className="bg-green-500 text-white rounded-full p-2 shadow-lg animate-in zoom-in-50 duration-500">
-                        <Check className="w-5 h-5" />
-                      </div>
-                    </div>
-                  )}
                   
-                  {selectedMotor?.id === motor.id && (
-                    <div className="absolute top-0 right-0 z-10">
-                      <div className="bg-green-500 text-white px-4 py-1 text-xs font-bold transform rotate-45 translate-x-6 translate-y-2">
-                        SELECTED
-                      </div>
-                    </div>
-                  )}
 
 
                   <div className="p-6 space-y-4 relative">
@@ -650,15 +636,23 @@ const handleMotorSelection = (motor: Motor) => {
                       <p className="text-muted-foreground text-sm">{motor.specs}</p>
                     </div>
 
-                    {motor.image && motor.image !== '/placeholder.svg' && (
-                      <div className="aspect-video bg-muted rounded-lg overflow-hidden">
-                        <img 
-                          src={motor.image} 
-                          alt={motor.model}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    )}
+                      {motor.image && motor.image !== '/placeholder.svg' && (
+                        <div className="motor-image-container aspect-video bg-muted rounded-lg overflow-hidden relative flex items-center justify-center">
+                          <img 
+                            src={motor.image} 
+                            alt={motor.model}
+                            className="w-full h-full object-cover"
+                          />
+                          {selectedMotor?.id === motor.id && (
+                            <div className="absolute inset-0 bg-black/30 flex items-center justify-center animate-fade-in" aria-hidden="true">
+                              <div className="relative">
+                                <div className="w-20 h-20 rounded-full bg-green-600 shadow-xl animate-scale-in"></div>
+                                <Check className="w-10 h-10 text-white absolute inset-0 m-auto" aria-hidden="true" />
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
 
                     <div className="flex items-center justify-between pt-4">
                       <div className="space-y-1">
@@ -741,9 +735,6 @@ const handleMotorSelection = (motor: Motor) => {
                     <Check className="w-5 h-5 text-green-600 dark:text-green-400" />
                   </div>
                   <div>
-                    <p className="font-semibold text-green-600 dark:text-green-400 text-sm">
-                      🎉 Excellent Choice!
-                    </p>
                     <p className="font-bold text-lg">
                       {selectedMotor.model} - ${selectedMotor.price.toLocaleString()}
                     </p>
