@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Slider } from '@/components/ui/slider';
@@ -9,6 +9,8 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
+import { Progress } from '@/components/ui/progress';
+import { toast } from '@/hooks/use-toast';
 
 interface QuoteDisplayProps {
   quoteData: QuoteData;
@@ -21,6 +23,42 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   const [term, setTerm] = useState(60);
   const [showTermComparison, setShowTermComparison] = useState(false);
   
+  // Achievement toast on load
+  useEffect(() => {
+    toast({
+      title: "🏆 Quote Generated!",
+      description: "You've configured the perfect motor.",
+      duration: 2200,
+    });
+  }, []);
+
+  // Gamified helpers
+  const hasSale = Boolean(quoteData.motor?.basePrice && quoteData.motor?.salePrice && (quoteData.motor!.salePrice as number) < (quoteData.motor!.basePrice as number));
+  const saleSavings = hasSale ? ((quoteData.motor!.basePrice as number) - (quoteData.motor!.salePrice as number)) : 0;
+  const hasWarrantyBonus = (quoteData.motor?.bonusOffers || []).some(b => !!b.warrantyExtraYears && b.warrantyExtraYears > 0);
+  const promoEndsAt = quoteData.motor?.promoEndsAt || null;
+
+  // Countdown (static on render)
+  const now = new Date();
+  const promoMsLeft = promoEndsAt ? (new Date(promoEndsAt).getTime() - now.getTime()) : 0;
+  const daysLeft = promoMsLeft > 0 ? Math.floor(promoMsLeft / (1000 * 60 * 60 * 24)) : 0;
+  const hoursLeft = promoMsLeft > 0 ? Math.floor((promoMsLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) : 0;
+
+  // Progress to water (Step 3 of 4)
+  const progressToWater = 75;
+
+  // Simple social proof counter
+  const [viewers, setViewers] = useState(0);
+  useEffect(() => {
+    const target = 12;
+    let current = 0;
+    const id = setInterval(() => {
+      current += 1;
+      setViewers(current);
+      if (current >= target) clearInterval(id);
+    }, 60);
+    return () => clearInterval(id);
+  }, []);
   // Get trade-in info from boat information
   const hasTradeIn = quoteData.boatInfo?.tradeIn?.hasTradeIn || false;
   const tradeInValue = quoteData.boatInfo?.tradeIn?.estimatedValue || 0;
@@ -99,6 +137,48 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
           Review your selection and financing options
         </p>
       </div>
+
+      {/* Savings Celebration */}
+      {(hasSale || hasWarrantyBonus) && (
+        <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 text-center animate-fade-in">
+          <div className="font-semibold">🎉 Great choice! You're getting:</div>
+          <div className="benefits-ticker mt-2">
+            <div>
+              {hasWarrantyBonus && (
+                <span className="benefit-item">✓ 5 Year Warranty (Value: $899)</span>
+              )}
+              <span className="benefit-item">✓ Exclusive Mercury Dealer Pricing</span>
+              <span className="benefit-item">✓ Professional Installation Available</span>
+            </div>
+          </div>
+          {hasSale && (
+            <div className="mt-2 text-sm text-primary font-medium">Instant Savings: ${saleSavings.toLocaleString()}</div>
+          )}
+        </div>
+      )}
+
+      {/* Progress Momentum Indicator */}
+      <div className="rounded-lg border border-border bg-muted/30 p-4 animate-fade-in">
+        <h3 className="font-semibold mb-2">You're Almost on the Water! 🚤</h3>
+        <div className="flex items-center gap-3">
+          <Progress value={progressToWater} className="h-3" />
+          <span className="text-sm text-muted-foreground">{progressToWater}% Complete</span>
+        </div>
+        <div className="mt-2 flex flex-wrap gap-3 text-xs">
+          <span className="text-green-700 dark:text-green-300">✓ Motor Selected</span>
+          <span className="text-green-700 dark:text-green-300">✓ Boat Configured</span>
+          <span className="font-medium">→ Review Quote</span>
+          <span className="text-muted-foreground">○ Schedule Consultation</span>
+        </div>
+      </div>
+
+      {/* Limited Time Urgency */}
+      {promoEndsAt && (daysLeft > 0 || hoursLeft > 0) && (
+        <div className="rounded-lg border border-destructive/30 bg-destructive/10 p-3 text-center pulse">
+          <div className="font-semibold">⏰ Promotion Ends In: <span className="ml-1">{daysLeft}d {hoursLeft}h</span></div>
+          <small className="text-muted-foreground block">Lock in your 5 Year Warranty today!</small>
+        </div>
+      )}
 
       {/* Complete Financial Breakdown */}
       <Card className="p-8">
@@ -427,6 +507,29 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
             )}
           </div>
           
+          {/* Gamified Financing Comparison */}
+          <div className="border-t border-border pt-6">
+            <h4 className="text-xl font-bold mb-3">Choose Your Adventure to the Water 🌊</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Card className="p-4 border-green-200 dark:border-green-800 bg-green-50/50 dark:bg-green-950/20">
+                <div className="flex items-center justify-between">
+                  <div className="font-semibold">💰 Cash Captain</div>
+                  <Badge variant="secondary" className="text-[10px]">BEST VALUE</Badge>
+                </div>
+                <div className="text-3xl font-bold mt-2">${totalCashPrice.toLocaleString()}</div>
+                <div className="text-sm text-green-700 dark:text-green-300">Save {cashSavings.toFixed(0)} in interest!</div>
+                <Button className="mt-3">Pay Cash & Save</Button>
+              </Card>
+              <Card className="p-4 border-primary/30 bg-primary/5">
+                <div className="font-semibold">📅 Easy Monthly</div>
+                <div className="text-3xl font-bold mt-2">${payments.monthly.toFixed(0)}/month</div>
+                <small className="text-muted-foreground">{term} months @ {quoteData.financing.rate}%</small>
+                <div className="mt-1 text-sm">✓ Keep cash on hand • ✓ Build credit</div>
+                <Button variant="secondary" className="mt-3">Finance This Motor</Button>
+              </Card>
+            </div>
+          </div>
+
           {/* Important Notes */}
           <div className="border-t border-border pt-4 space-y-2 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
@@ -535,6 +638,12 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
         </Card>
       )}
 
+      {/* Social Proof / Popularity Indicator */}
+      <div className="rounded-lg border border-border bg-muted/30 p-4 text-center">
+        <div className="font-medium">🔥 This motor is popular!</div>
+        <div className="text-sm text-muted-foreground"><span className="font-semibold">{viewers}</span> other customers viewed this model today</div>
+      </div>
+
       {/* Navigation */}
       <div className="flex justify-between">
         <Button variant="outline" onClick={onBack}>
@@ -542,8 +651,11 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
           Back to Boat Details
         </Button>
         
-        <Button onClick={handleContinue} className="bg-primary hover:bg-primary/90">
-          Schedule Consultation
+        <Button onClick={handleContinue} className="bg-primary hover:bg-primary/90 relative overflow-hidden">
+          <span className="flex flex-col items-start">
+            <span>Schedule Consultation</span>
+            <span className="text-xs opacity-90">Unlock installation quote</span>
+          </span>
         </Button>
       </div>
     </div>

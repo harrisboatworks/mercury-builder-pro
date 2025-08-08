@@ -452,4 +452,23 @@
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
   }
+
+  /* Benefits ticker for quote summary */
+  .benefits-ticker {
+    height: 30px;
+    overflow: hidden;
+  }
+  .benefits-ticker > div {
+    display: grid;
+  }
+  .benefit-item {
+    display: block;
+    line-height: 30px;
+    animation: ticker 9s linear infinite;
+  }
+  @keyframes ticker {
+    0%, 33% { transform: translateY(0); }
+    33.33%, 66% { transform: translateY(-30px); }
+    66.66%, 100% { transform: translateY(-60px); }
+  }
 }
