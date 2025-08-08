@@ -644,11 +644,8 @@ const handleMotorSelection = (motor: Motor) => {
                             className="w-full h-full object-cover"
                           />
                           {selectedMotor?.id === motor.id && (
-                            <div className="absolute inset-0 bg-black/30 flex items-center justify-center animate-fade-in" aria-hidden="true">
-                              <div className="relative">
-                                <div className="w-20 h-20 rounded-full bg-green-600 shadow-xl animate-scale-in"></div>
-                                <Check className="w-10 h-10 text-white absolute inset-0 m-auto" aria-hidden="true" />
-                              </div>
+                            <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
+                              <Check className="w-20 h-20 text-green-600 drop-shadow-lg animate-scale-in checkmark-icon" strokeWidth={4} aria-hidden="true" />
                             </div>
                           )}
                         </div>
