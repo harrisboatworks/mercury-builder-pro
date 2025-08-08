@@ -414,8 +414,9 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
           {calendlyLoaded ? (
             <div 
               className="calendly-inline-widget" 
-              data-url="https://calendly.com/harris-boat-works/outboard-consultation"
+              data-url={calendlyUrl}
               style={{ minWidth: '320px', height: '630px' }}
+              key={calendlyUrl}
             ></div>
           ) : (
             <div className="flex items-center justify-center h-96 bg-muted rounded-lg">
