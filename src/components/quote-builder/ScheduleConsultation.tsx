@@ -35,6 +35,13 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
 
   // Load Calendly widget
   useEffect(() => {
+    // Load Calendly CSS
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://assets.calendly.com/assets/external/widget.css';
+    document.head.appendChild(link);
+
+    // Load Calendly script
     const script = document.createElement('script');
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
     script.async = true;
@@ -45,6 +52,10 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
       const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
       if (existingScript) {
         document.head.removeChild(existingScript);
+      }
+      const existingLink = document.querySelector('link[href="https://assets.calendly.com/assets/external/widget.css"]');
+      if (existingLink) {
+        document.head.removeChild(existingLink);
       }
     };
   }, []);
@@ -252,6 +263,15 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
 
     return `${base}?${params.toString()}`;
   }, [contactInfo, quoteData]);
+
+  useEffect(() => {
+    if (!calendlyLoaded) return;
+    const el = document.querySelector('.calendly-inline-widget');
+    const Calendly = (window as any).Calendly;
+    if (el && Calendly?.initInlineWidget) {
+      Calendly.initInlineWidget({ url: calendlyUrl, parentElement: el as HTMLElement });
+    }
+  }, [calendlyLoaded, calendlyUrl]);
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
