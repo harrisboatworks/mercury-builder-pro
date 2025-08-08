@@ -21,6 +21,7 @@ interface Promotion {
   id: string;
   name: string;
   discount_percentage: number;
+  discount_fixed_amount: number;
   is_active: boolean;
   start_date: string | null;
   end_date: string | null;
@@ -78,6 +79,7 @@ const AdminPromotions = () => {
   const [newPromo, setNewPromo] = useState<Omit<Promotion, 'id'>>({
     name: '',
     discount_percentage: 5,
+    discount_fixed_amount: 0,
     is_active: true,
     stackable: false,
     start_date: null,
@@ -92,6 +94,8 @@ const AdminPromotions = () => {
     highlight: false,
     priority: 0,
   });
+
+  const [discountType, setDiscountType] = useState<'percentage' | 'fixed'>('percentage');
 
   // New rule form
   const [selectedPromoId, setSelectedPromoId] = useState<string | null>(null);
@@ -149,17 +153,27 @@ const AdminPromotions = () => {
 
   const createPromotion = async () => {
     try {
-      const payload = {
-        ...newPromo,
-        // If it's a bonus, ensure discount is 0
-        discount_percentage: newPromo.kind === 'bonus' ? 0 : Number(newPromo.discount_percentage || 0),
-      };
+  const payload: Omit<Promotion, 'id'> = { ...newPromo } as Omit<Promotion, 'id'>;
+      // If it's a bonus, ensure both discounts are 0
+      if (newPromo.kind === 'bonus') {
+        payload.discount_percentage = 0;
+        payload.discount_fixed_amount = 0;
+      } else {
+        if (discountType === 'percentage') {
+          payload.discount_fixed_amount = 0;
+          payload.discount_percentage = Number(newPromo.discount_percentage || 0);
+        } else {
+          payload.discount_percentage = 0;
+          payload.discount_fixed_amount = Number(newPromo.discount_fixed_amount || 0);
+        }
+      }
       const { data, error } = await supabase.from('promotions').insert(payload).select('*').single();
       if (error) throw error;
       toast({ title: 'Promotion created', description: `${data.name} (${data.kind})` });
       setNewPromo({
         name: '',
         discount_percentage: 5,
+        discount_fixed_amount: 0,
         is_active: true,
         stackable: false,
         start_date: null,
@@ -173,6 +187,7 @@ const AdminPromotions = () => {
         highlight: false,
         priority: 0,
       });
+      setDiscountType('percentage');
       await loadAll();
     } catch (e) {
       console.error(e);
@@ -291,11 +306,33 @@ return (
             <Input id="name" value={newPromo.name} onChange={(e) => setNewPromo({ ...newPromo, name: e.target.value })} placeholder="Spring Bonus" />
           </div>
           {newPromo.kind === 'discount' && (
-            <div className="space-y-2">
-              <Label htmlFor="discount">Discount %</Label>
-              <Input id="discount" type="number" value={newPromo.discount_percentage}
-                onChange={(e) => setNewPromo({ ...newPromo, discount_percentage: Number(e.target.value) })} />
-            </div>
+            <>
+              <div className="space-y-2">
+                <Label>Discount Type</Label>
+                <Select value={discountType} onValueChange={(v) => setDiscountType(v as 'percentage' | 'fixed')}>
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="percentage">Percentage (%)</SelectItem>
+                    <SelectItem value="fixed">Fixed ($)</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              {discountType === 'percentage' ? (
+                <div className="space-y-2">
+                  <Label htmlFor="discount">Discount %</Label>
+                  <Input id="discount" type="number" value={newPromo.discount_percentage}
+                    onChange={(e) => setNewPromo({ ...newPromo, discount_percentage: Number(e.target.value) })} />
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  <Label htmlFor="discount_fixed">Discount $</Label>
+                  <Input id="discount_fixed" type="number" value={newPromo.discount_fixed_amount}
+                    onChange={(e) => setNewPromo({ ...newPromo, discount_fixed_amount: Number(e.target.value) })} />
+                </div>
+              )}
+            </>
           )}
           <div className="space-y-2">
             <Label htmlFor="start">Start Date</Label>
@@ -379,7 +416,11 @@ return (
                   </h3>
                   <div className="text-sm text-muted-foreground">
                     {p.kind === 'discount' ? (
-                      <span>{p.discount_percentage}% off</span>
+                      <span>
+                        {Number((p as any).discount_fixed_amount) > 0
+                          ? `$${Number((p as any).discount_fixed_amount).toLocaleString()} off`
+                          : `${Number(p.discount_percentage)}% off`}
+                      </span>
                     ) : (
                       <>
                         {p.warranty_extra_years ? <span>+{p.warranty_extra_years} Years Warranty</span> : <span>Bonus Offer</span>}

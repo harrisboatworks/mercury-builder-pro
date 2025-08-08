@@ -194,6 +194,7 @@ export type Database = {
           bonus_short_badge: string | null
           bonus_title: string | null
           created_at: string | null
+          discount_fixed_amount: number
           discount_percentage: number
           end_date: string | null
           highlight: boolean
@@ -212,6 +213,7 @@ export type Database = {
           bonus_short_badge?: string | null
           bonus_title?: string | null
           created_at?: string | null
+          discount_fixed_amount?: number
           discount_percentage?: number
           end_date?: string | null
           highlight?: boolean
@@ -230,6 +232,7 @@ export type Database = {
           bonus_short_badge?: string | null
           bonus_title?: string | null
           created_at?: string | null
+          discount_fixed_amount?: number
           discount_percentage?: number
           end_date?: string | null
           highlight?: boolean

@@ -29,6 +29,7 @@ interface Promotion {
   id: string;
   name: string;
   discount_percentage: number;
+  discount_fixed_amount: number;
   is_active: boolean;
   start_date: string | null;
   end_date: string | null;
@@ -201,12 +202,19 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
       .filter((p) => p.kind === 'bonus')
       .sort((a, b) => (b.highlight === a.highlight ? (b.priority - a.priority) : (b.highlight ? 1 : -1)));
 
-    const discounts = applicable.filter((p) => p.kind !== 'bonus' && Number(p.discount_percentage) > 0);
+    const discounts = applicable.filter((p) => p.kind !== 'bonus' && (Number(p.discount_percentage) > 0 || Number(p.discount_fixed_amount) > 0));
 
     // Apply stackable discounts first
     const stackables = discounts.filter((p) => p.stackable);
     for (const p of stackables) {
-      price = price * (1 - Number(p.discount_percentage) / 100);
+      const fixed = Number(p.discount_fixed_amount) || 0;
+      const pct = Number(p.discount_percentage) || 0;
+      if (fixed > 0) {
+        price = Math.max(0, price - fixed);
+      }
+      if (pct > 0) {
+        price = price * (1 - pct / 100);
+      }
       applied.push(p.name);
       if (p.end_date) {
         if (!endsAt || new Date(p.end_date) < new Date(endsAt)) endsAt = p.end_date;
@@ -216,11 +224,25 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
     // Then best non-stackable discount
     const nonStackables = discounts.filter((p) => !p.stackable);
     if (nonStackables.length > 0) {
-      const best = nonStackables.reduce((a, b) => (Number(a.discount_percentage) > Number(b.discount_percentage) ? a : b));
-      price = price * (1 - Number(best.discount_percentage) / 100);
-      applied.push(best.name);
-      if (best.end_date) {
-        if (!endsAt || new Date(best.end_date) < new Date(endsAt)) endsAt = best.end_date;
+      let best: Promotion | null = null;
+      let bestPrice = price;
+      for (const p of nonStackables) {
+        const fixed = Number(p.discount_fixed_amount) || 0;
+        const pct = Number(p.discount_percentage) || 0;
+        let candidate = price;
+        if (fixed > 0) candidate = Math.max(0, candidate - fixed);
+        if (pct > 0) candidate = candidate * (1 - pct / 100);
+        if (!best || candidate < bestPrice) {
+          best = p;
+          bestPrice = candidate;
+        }
+      }
+      if (best) {
+        price = bestPrice;
+        applied.push(best.name);
+        if (best.end_date) {
+          if (!endsAt || new Date(best.end_date) < new Date(endsAt)) endsAt = best.end_date;
+        }
       }
     }
 
