@@ -21,6 +21,7 @@ interface MotorFiltersProps {
   resultsCount: number;
   isOpen: boolean;
   onToggle: () => void;
+  categoryCounts?: Record<string, number>;
 }
 
 export const MotorFilters = ({ 
