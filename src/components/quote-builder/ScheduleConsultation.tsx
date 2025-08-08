@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -228,6 +228,30 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
       });
     }
   };
+
+  const calendlyUrl = useMemo(() => {
+    const base = 'https://calendly.com/harrisboatworks/sales';
+    const name = contactInfo.name || '';
+    const email = contactInfo.email || '';
+
+    const motor = quoteData.motor;
+    const motorDetails = motor ? `${motor.model} | ${motor.hp}HP${motor.specs ? ' | ' + motor.specs : ''}` : 'No motor selected';
+
+    const trade = quoteData.boatInfo?.tradeIn;
+    const tradeDetails = trade?.hasTradeIn
+      ? `${trade.year || ''} ${trade.brand || ''} ${trade.horsepower ? trade.horsepower + 'HP' : ''} | Condition: ${trade.condition || ''} | Est: ${trade?.estimatedValue != null ? '$' + trade.estimatedValue : 'N/A'}`
+      : 'No trade-in';
+
+    const params = new URLSearchParams();
+    if (name) params.set('name', name);
+    if (email) params.set('email', email);
+    params.set('a1', motorDetails);
+    params.set('a2', tradeDetails);
+    params.set('a3', `Preferred contact: ${contactInfo.contactMethod}`);
+    if (contactInfo.notes) params.set('a4', contactInfo.notes);
+
+    return `${base}?${params.toString()}`;
+  }, [contactInfo, quoteData]);
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
