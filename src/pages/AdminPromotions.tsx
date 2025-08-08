@@ -10,6 +10,13 @@ import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/components/ui/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 
+interface DbMotor {
+  id: string;
+  model: string;
+  horsepower: number;
+  motor_type: string;
+}
+
 interface Promotion {
   id: string;
   name: string;
@@ -65,6 +72,7 @@ const AdminPromotions = () => {
   const [loading, setLoading] = useState(true);
   const [promotions, setPromotions] = useState<Promotion[]>([]);
   const [rules, setRules] = useState<PromotionRule[]>([]);
+  const [motors, setMotors] = useState<DbMotor[]>([]);
 
   // New promotion form
   const [newPromo, setNewPromo] = useState<Omit<Promotion, 'id'>>({
@@ -99,14 +107,21 @@ const AdminPromotions = () => {
   const loadAll = async () => {
     setLoading(true);
     try {
-      const [{ data: promos, error: pErr }, { data: rls, error: rErr }] = await Promise.all([
+      const [
+        { data: promos, error: pErr },
+        { data: rls, error: rErr },
+        { data: motorsData, error: mErr }
+      ] = await Promise.all([
         supabase.from('promotions').select('*').order('created_at', { ascending: false }),
         supabase.from('promotions_rules').select('*'),
+        supabase.from('motor_models').select('id, model, horsepower, motor_type'),
       ]);
       if (pErr) throw pErr;
       if (rErr) throw rErr;
+      if (mErr) throw mErr;
       setPromotions(promos as Promotion[]);
       setRules(rls as PromotionRule[]);
+      setMotors((motorsData as any[]).map(m => ({ id: m.id, model: m.model, horsepower: Number(m.horsepower), motor_type: m.motor_type })) as DbMotor[]);
     } catch (e) {
       console.error(e);
       toast({ title: 'Error', description: 'Failed to load promotions', variant: 'destructive' });
@@ -209,7 +224,33 @@ const AdminPromotions = () => {
     return map;
   }, [rules]);
 
-  return (
+const ruleMatches = (m: DbMotor, r: PromotionRule) => {
+  if (r.rule_type === 'all') return true;
+  if (r.rule_type === 'model') return !!r.model && m.model.toLowerCase().includes(r.model.toLowerCase());
+  if (r.rule_type === 'motor_type') return !!r.motor_type && m.motor_type.toLowerCase() === r.motor_type.toLowerCase();
+  if (r.rule_type === 'horsepower_range') {
+    const hp = Number(m.horsepower);
+    const min = r.horsepower_min != null ? Number(r.horsepower_min) : -Infinity;
+    const max = r.horsepower_max != null ? Number(r.horsepower_max) : Infinity;
+    return hp >= min && hp <= max;
+  }
+  return false;
+};
+
+const coverageByPromo = useMemo(() => {
+  const map: Record<string, number> = {};
+  for (const p of promotions) {
+    const prules = rules.filter(r => r.promotion_id === p.id);
+    if (prules.length === 0) {
+      map[p.id] = 0;
+      continue;
+    }
+    map[p.id] = motors.filter(m => prules.some(r => ruleMatches(m, r))).length;
+  }
+  return map;
+}, [promotions, rules, motors]);
+
+return (
     <main className="container mx-auto px-4 py-8">
       <header className="mb-8">
         <h1 className="text-3xl font-bold">Promotions Manager</h1>
@@ -318,6 +359,9 @@ const AdminPromotions = () => {
                     <Badge variant={p.kind === 'bonus' ? 'secondary' : 'outline'}>
                       {p.kind === 'bonus' ? 'Bonus Offer' : 'Discount'}
                     </Badge>
+                    <Badge className="ml-2" variant={(coverageByPromo[p.id] ?? 0) > 0 ? 'default' : 'outline'}>
+                      Applies to {(coverageByPromo[p.id] ?? 0)} motors
+                    </Badge>
                     {p.highlight && <Badge className="ml-2">Highlighted</Badge>}
                   </h3>
                   <div className="text-sm text-muted-foreground">
@@ -344,22 +388,39 @@ const AdminPromotions = () => {
               {/* Rules */}
               <div className="mt-6">
                 <h4 className="font-semibold mb-2">Rules</h4>
-                <div className="space-y-2">
-                  {(rulesByPromo[p.id] || []).length === 0 ? (
-                    <p className="text-sm text-muted-foreground">No rules yet.</p>
-                  ) : (
-                    (rulesByPromo[p.id] || []).map((r) => (
-                      <div key={r.id} className="flex items-center justify-between border border-border rounded p-2">
-                        <div className="text-sm">
-                          <span className="font-medium">{r.rule_type}</span>
-                          {r.rule_type === 'model' && r.model && <span className="ml-2">• {r.model}</span>}
-                          {r.rule_type === 'motor_type' && r.motor_type && <span className="ml-2">• {r.motor_type}</span>}
-                          {r.rule_type === 'horsepower_range' && <span className="ml-2">• {r.horsepower_min ?? 0} - {r.horsepower_max ?? '∞'} HP</span>}
-                        </div>
-                        <Button variant="ghost" size="sm" onClick={() => deleteRule(r.id)}>Remove</Button>
+                {(rulesByPromo[p.id] || []).length === 0 ? (
+                  <div className="flex items-center justify-between rounded border border-dashed p-3">
+                    <p className="text-sm text-muted-foreground">No rules yet — this promotion won't apply to anything.</p>
+                    <Button size="sm" variant="outline" onClick={async () => {
+                      const { error } = await supabase.from('promotions_rules').insert({
+                        promotion_id: p.id,
+                        rule_type: 'all',
+                        model: null,
+                        motor_type: null,
+                        horsepower_min: null,
+                        horsepower_max: null,
+                      });
+                      if (error) {
+                        toast({ title: 'Error', description: 'Failed to add rule', variant: 'destructive' });
+                      } else {
+                        toast({ title: 'Rule added', description: 'Applied to all motors' });
+                        await loadAll();
+                      }
+                    }}>Quick add: All Motors</Button>
+                  </div>
+                ) : (
+                  (rulesByPromo[p.id] || []).map((r) => (
+                    <div key={r.id} className="flex items-center justify-between border border-border rounded p-2">
+                      <div className="text-sm">
+                        <span className="font-medium">{r.rule_type}</span>
+                        {r.rule_type === 'model' && r.model && <span className="ml-2">• {r.model}</span>}
+                        {r.rule_type === 'motor_type' && r.motor_type && <span className="ml-2">• {r.motor_type}</span>}
+                        {r.rule_type === 'horsepower_range' && <span className="ml-2">• {r.horsepower_min ?? 0} - {r.horsepower_max ?? '∞'} HP</span>}
                       </div>
-                    ))
-                  )}
+                      <Button variant="ghost" size="sm" onClick={() => deleteRule(r.id)}>Remove</Button>
+                    </div>
+                  ))
+                )}
                 </div>
 
                 {/* Add Rule */}
@@ -422,7 +483,6 @@ const AdminPromotions = () => {
                     </div>
                   </div>
                 </div>
-              </div>
             </Card>
           ))
         )}
