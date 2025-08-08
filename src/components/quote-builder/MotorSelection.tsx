@@ -489,18 +489,6 @@ const handleMotorSelection = (motor: Motor) => {
         title: "Promotions applied",
         description: (
           <div className="modal">
-            <div className="flex flex-wrap items-center gap-2 pt-1">
-              {hasWarrantyBonus && (
-                <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in">
-                  <span className="mr-1">🛡️</span> Warranty bonus active
-                </span>
-              )}
-              {hasSale && (
-                <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in" style={{ animationDelay: '120ms' }}>
-                  <span className="mr-1">💰</span> Save ${savings.toLocaleString()} applied
-                </span>
-              )}
-            </div>
             <div className="modal-promos" aria-live="polite">
               {promoItems.length > 0 && (
                 <div className="promo-list" role="list">
