@@ -123,6 +123,7 @@ const [selectedForCompare, setSelectedForCompare] = useState<string[]>([]);
 const [showRebateModal, setShowRebateModal] = useState(false);
 const [quickViewMotor, setQuickViewMotor] = useState<Motor | null>(null);
 const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
+const [showComparePanel, setShowComparePanel] = useState(false);
 
   // Load motors from database
   useEffect(() => {
@@ -499,6 +500,16 @@ const openQuickView = (motor: Motor) => {
 
 const isCompared = (motorId: string) => selectedForCompare.includes(motorId);
 
+const handleSelectionModeToggle = (mode: 'browse' | 'compare') => {
+  setSelectionMode(mode);
+  if (mode === 'browse') setSelectedForCompare([]);
+};
+
+const handleCompareClick = () => {
+  if (selectedForCompare.length >= 2) setShowComparePanel(true);
+  else toast({ title: 'Select at least 2 motors', description: 'Pick two or more to compare.' });
+};
+
 const handleMotorSelection = (motor: Motor) => {
     // Recently viewed scaffold
     setRecentlyViewed(prev => {
@@ -628,7 +639,7 @@ const handleMotorSelection = (motor: Motor) => {
           <Button
             variant={selectionMode === 'browse' ? 'default' : 'outline'}
             size="sm"
-            onClick={() => setSelectionMode('browse')}
+            onClick={() => handleSelectionModeToggle('browse')}
             className="flex items-center gap-2"
           >
             <Eye className="w-4 h-4" /> Browse Mode
@@ -636,7 +647,7 @@ const handleMotorSelection = (motor: Motor) => {
           <Button
             variant={selectionMode === 'compare' ? 'default' : 'outline'}
             size="sm"
-            onClick={() => setSelectionMode('compare')}
+            onClick={() => handleSelectionModeToggle('compare')}
             className="flex items-center gap-2"
           >
             <Scale className="w-4 h-4" /> Compare Mode
@@ -680,11 +691,16 @@ const handleMotorSelection = (motor: Motor) => {
                     selectedMotor && selectedMotor.id !== motor.id 
                       ? 'opacity-70' 
                       : ''
+                  } ${
+                    isCompared(motor.id) ? 'ring-2 ring-primary border-primary bg-primary/5 scale-[1.02]' : ''
                   }`}
-                  onClick={() => handleMotorSelection(motor)}
+                  onClick={() => selectionMode === 'compare' ? toggleCompare(motor) : handleMotorSelection(motor)}
                 >
-                  
-
+                  {isCompared(motor.id) && (
+                    <div className="absolute top-3 left-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold shadow">
+                      {selectedForCompare.indexOf(motor.id) + 1}
+                    </div>
+                  )}
 
                   <div className="p-6 space-y-4 relative">
                     <div className="flex items-start justify-between">
@@ -767,11 +783,27 @@ const handleMotorSelection = (motor: Motor) => {
                         )}
                       </div>
                     )}
+
+                    {/* Quick actions overlay */}
+                    <div className="absolute top-3 right-3 hidden md:flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Button size="sm" variant="secondary" onClick={(e) => { e.stopPropagation(); openQuickView(motor); }}>👁️ Quick View</Button>
+                      <Button size="sm" variant={isCompared(motor.id) ? 'default' : 'outline'} onClick={(e) => { e.stopPropagation(); toggleCompare(motor); }}>⚖️ {isCompared(motor.id) ? 'Remove' : 'Compare'}</Button>
+                      <Button size="sm" variant="outline" onClick={(e) => { e.stopPropagation(); calculatePayment(motor); }}>💰 Calculate</Button>
+                    </div>
                   </div>
                 </Card>
               );
             })}
           </div>
+        )}
+
+        {selectionMode === 'compare' && selectedForCompare.length >= 2 && (
+          <Button
+            className="fixed bottom-6 right-6 shadow-lg animate-in slide-in-from-bottom-4"
+            onClick={handleCompareClick}
+          >
+            ⚖️ Compare Selected ({selectedForCompare.length}/3)
+          </Button>
         )}
 
         {selectedMotor && !showStickyBar && (
@@ -870,6 +902,98 @@ const handleMotorSelection = (motor: Motor) => {
           </div>
         </div>
       )}
+
+      {/* Rebate Learn More Dialog */}
+      <Dialog open={showRebateModal} onOpenChange={setShowRebateModal}>
+        <DialogContent className="sm:max-w-lg">
+          <DialogHeader>
+            <DialogTitle>Mercury Repower Rebate Program</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-3 text-sm">
+            <h3 className="text-lg font-semibold">💰 Save Extra on Your Repower!</h3>
+            <p>Trading in an older motor? You may qualify for Mercury's Repower Rebate:</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Up to $1,000 rebate on select models</li>
+              <li>Trade any brand 25HP or higher</li>
+              <li>Motor must be 2019 or older</li>
+              <li>Rebate applied at time of purchase</li>
+            </ul>
+            <div>
+              <p className="font-semibold">How it works:</p>
+              <ol className="list-decimal pl-5 space-y-1">
+                <li>Select your new Mercury motor</li>
+                <li>Tell us about your trade-in</li>
+                <li>We'll apply applicable rebates</li>
+                <li>Save even more!</li>
+              </ol>
+            </div>
+            <p className="text-xs text-muted-foreground">*Rebate amounts vary by model. Trade-in must be in working condition. See dealer for complete details.</p>
+          </div>
+          <DialogFooter>
+            <Button onClick={() => setShowRebateModal(false)}>Got it!</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Quick View Dialog */}
+      <Dialog open={!!quickViewMotor} onOpenChange={(o) => { if (!o) setQuickViewMotor(null); }}>
+        <DialogContent className="sm:max-w-xl">
+          <DialogHeader>
+            <DialogTitle>{quickViewMotor?.model} {quickViewMotor ? `- ${quickViewMotor.hp}HP` : ''}</DialogTitle>
+          </DialogHeader>
+          {quickViewMotor && (
+            <div className="space-y-4">
+              <div className="aspect-video bg-muted rounded-md overflow-hidden">
+                <img src={quickViewMotor.image} alt={quickViewMotor.model} className="w-full h-full object-cover" />
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="text-xl font-bold">
+                  ${ (quickViewMotor.salePrice || quickViewMotor.basePrice || quickViewMotor.price).toLocaleString() }
+                </div>
+                <Badge className={getStockBadgeColor(quickViewMotor.stockStatus)}>{quickViewMotor.stockStatus}</Badge>
+              </div>
+              <div className="text-sm text-muted-foreground">{quickViewMotor.specs}</div>
+              <Button onClick={() => { handleMotorSelection(quickViewMotor); setQuickViewMotor(null); }}>
+                Select This Motor
+              </Button>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Compare Panel Dialog */}
+      <Dialog open={showComparePanel} onOpenChange={setShowComparePanel}>
+        <DialogContent className="max-w-5xl">
+          <DialogHeader>
+            <DialogTitle>Compare Motors</DialogTitle>
+          </DialogHeader>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {motors.filter(m => selectedForCompare.includes(m.id)).map((m) => (
+              <Card key={m.id} className="p-4">
+                <div className="aspect-video bg-muted rounded-md overflow-hidden mb-3">
+                  <img src={m.image} alt={m.model} className="w-full h-full object-cover" />
+                </div>
+                <div className="flex items-center justify-between mb-2">
+                  <div>
+                    <h3 className="font-semibold">{m.model}</h3>
+                    <span className="text-sm text-muted-foreground">{m.hp} HP</span>
+                  </div>
+                  <Badge className={getStockBadgeColor(m.stockStatus)}>{m.stockStatus}</Badge>
+                </div>
+                <div className="space-y-1 text-sm">
+                  <div className="flex justify-between"><span>Price:</span><span className="font-semibold">${(m.salePrice || m.basePrice || m.price).toLocaleString()}</span></div>
+                  <div className="flex justify-between"><span>Weight:</span><span className="font-semibold">N/A</span></div>
+                  <div className="flex justify-between"><span>Warranty:</span><span className="font-semibold">N/A</span></div>
+                </div>
+                <Button className="mt-3 w-full" onClick={() => { handleMotorSelection(m); setShowComparePanel(false); }}>Select This Motor</Button>
+              </Card>
+            ))}
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setShowComparePanel(false)}>Close</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
