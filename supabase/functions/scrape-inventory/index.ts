@@ -16,7 +16,11 @@ interface MotorData {
   engine_type?: string
   image_url?: string
   availability: string
-  stock_number?: string
+  stock_number?: string | null
+  description?: string | null
+  features?: string[]
+  specifications?: Record<string, unknown> | null
+  detail_url?: string | null
 }
 
 
@@ -76,11 +80,14 @@ Deno.serve(async (req) => {
     }
     
     console.log(`Total motors collected from all pages: ${allMotors.length}`)
-    const motors = allMotors
+    const motorsBasic = allMotors
     
-    if (motors.length === 0) {
+    if (motorsBasic.length === 0) {
       throw new Error('No motors found on page')
     }
+
+    // Hydrate with detailed specs from product pages when available
+    const motors = await hydrateWithDetails(motorsBasic)
 
     // Clear existing data and insert new data
     const { error: deleteError } = await supabase
@@ -246,6 +253,115 @@ function parseMotorData(html: string): MotorData[] {
 
   console.log(`Parsed ${uniqueMotors.length} unique motors from page`)
   return uniqueMotors
+}
+
+function toAbsoluteUrl(href: string): string {
+  if (!href) return href
+  if (href.startsWith('http')) return href
+  return `https://www.harrisboatworks.ca${href.startsWith('/') ? '' : '/'}${href}`
+}
+
+function normalizeTitle(s: string): string {
+  return s.toLowerCase().replace(/\s+/g, ' ').trim()
+}
+
+async function fetchDetailSpecs(url: string): Promise<{ description?: string | null; features?: string[]; specifications?: Record<string, unknown> }> {
+  try {
+    const res = await fetch(url)
+    if (!res.ok) throw new Error(`Detail fetch failed: ${res.status}`)
+    const html = await res.text()
+
+    const specEntries: Record<string, string> = {}
+    const liRegex = /<li[^>]*>([\s\S]*?)<\/li>/gi
+    let m
+    while ((m = liRegex.exec(html)) !== null) {
+      const raw = m[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+      const kvMatch = raw.match(/^(Weight|Shaft(?: Length)?|Start(?:ing)?(?: System)?|Control(?:s)?|Fuel(?: System| Type)?|Warranty|Displacement|Gear(?: Ratio| Shift)?|Alternator|Prop(?: Range|eller Options)?|Cooling|Cylinders|Bore(?:\/?|\s*&\s*)Stroke|Steering(?: Type)?|Trim(?:\/?|\s*&\s*)Tilt|Ignition|Fuel Induction|Exhaust(?: System)?)[\s:–-]+(.+)$/i)
+      if (kvMatch) {
+        const label = kvMatch[1].toLowerCase()
+        const value = kvMatch[2].trim()
+        specEntries[label] = value
+      }
+    }
+
+    const map = (k: string) => specEntries[k] || null
+    const specifications: Record<string, unknown> = {
+      weight: map('weight'),
+      shaftLength: map('shaft') || map('shaft length'),
+      startType: map('start') || map('starting') || map('starting system'),
+      controls: map('controls') || map('control'),
+      fuelSystem: map('fuel system') || map('fuel type'),
+      displacement: map('displacement'),
+      gearRatio: map('gear ratio'),
+      gearShift: map('gear shift'),
+      alternator: map('alternator'),
+      propRange: map('prop range') || map('propeller options'),
+      cooling: map('cooling'),
+      cylinders: map('cylinders'),
+      boreStroke: map('bore/stroke') || map('bore & stroke') || map('bore stroke'),
+      steeringType: map('steering') || map('steering type'),
+      trimTilt: map('trim/tilt') || map('trim & tilt') || map('trim tilt'),
+      ignition: map('ignition'),
+      fuelInduction: map('fuel induction'),
+      exhaustSystem: map('exhaust system') || map('exhaust'),
+      warranty: map('warranty'),
+    }
+
+    // Features list
+    const features: string[] = []
+    const featureListMatches = html.match(/<ul[^>]*class=\"[^\"]*(features|product-features)[^\"]*\"[^>]*>[\s\S]*?<\/ul>/i)
+    if (featureListMatches) {
+      const list = featureListMatches[0]
+      const li = list.match(/<li[^>]*>[\s\S]*?<\/li>/gi) || []
+      for (const item of li) {
+        const text = item.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+        if (text) features.push(text)
+      }
+    }
+
+    // Description
+    let description: string | null = null
+    const descMatch = html.match(/<div[^>]*class=\"[^\"]*(product-description|description)[^\"]*\"[^>]*>[\s\S]*?<\/div>/i)
+    if (descMatch) {
+      description = descMatch[0].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+    } else {
+      const meta = html.match(/<meta[^>]*name=\"description\"[^>]*content=\"([^\"]+)\"[^>]*>/i)
+      if (meta) description = meta[1]
+    }
+
+    return { description, features, specifications }
+  } catch (e) {
+    console.error('Detail scrape failed', e)
+    return { specifications: {}, features: [], description: null }
+  }
+}
+
+async function hydrateWithDetails(items: MotorData[]): Promise<MotorData[]> {
+  const concurrency = 4
+  const result: MotorData[] = new Array(items.length)
+  let index = 0
+
+  async function worker() {
+    while (true) {
+      const current = index++
+      if (current >= items.length) break
+      const m = items[current]
+      if (m.detail_url) {
+        const details = await fetchDetailSpecs(m.detail_url)
+        result[current] = {
+          ...m,
+          description: details.description ?? m.description ?? null,
+          features: (details.features && details.features.length) ? details.features : (m.features || []),
+          specifications: { powerHP: m.horsepower, ...(m.specifications || {}), ...(details.specifications || {}) },
+        }
+      } else {
+        result[current] = { ...m, specifications: { powerHP: m.horsepower, ...(m.specifications || {}) } }
+      }
+    }
+  }
+
+  await Promise.all(Array.from({ length: concurrency }, () => worker()))
+  return result
 }
 
 function getMotorType(name: string): string {

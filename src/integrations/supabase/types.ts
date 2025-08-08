@@ -115,7 +115,10 @@ export type Database = {
           availability: string | null
           base_price: number
           created_at: string | null
+          description: string | null
+          detail_url: string | null
           engine_type: string | null
+          features: Json | null
           horsepower: number
           id: string
           image_url: string | null
@@ -123,6 +126,7 @@ export type Database = {
           model: string
           motor_type: string
           sale_price: number | null
+          specifications: Json | null
           stock_number: string | null
           updated_at: string | null
           year: number
@@ -131,7 +135,10 @@ export type Database = {
           availability?: string | null
           base_price: number
           created_at?: string | null
+          description?: string | null
+          detail_url?: string | null
           engine_type?: string | null
+          features?: Json | null
           horsepower: number
           id?: string
           image_url?: string | null
@@ -139,6 +146,7 @@ export type Database = {
           model: string
           motor_type: string
           sale_price?: number | null
+          specifications?: Json | null
           stock_number?: string | null
           updated_at?: string | null
           year?: number
@@ -147,7 +155,10 @@ export type Database = {
           availability?: string | null
           base_price?: number
           created_at?: string | null
+          description?: string | null
+          detail_url?: string | null
           engine_type?: string | null
+          features?: Json | null
           horsepower?: number
           id?: string
           image_url?: string | null
@@ -155,6 +166,7 @@ export type Database = {
           model?: string
           motor_type?: string
           sale_price?: number | null
+          specifications?: Json | null
           stock_number?: string | null
           updated_at?: string | null
           year?: number

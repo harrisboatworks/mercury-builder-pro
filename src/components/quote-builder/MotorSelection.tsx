@@ -24,6 +24,11 @@ interface DbMotor {
   availability?: string | null;
   year: number;
   make: string;
+  // New enhanced fields
+  description?: string | null;
+  features?: string[] | null;
+  specifications?: Record<string, any> | null;
+  detail_url?: string | null;
 }
 
 interface Promotion {
@@ -188,6 +193,11 @@ const [showComparePanel, setShowComparePanel] = useState(false);
           appliedPromotions,
           promoEndsAt,
           bonusOffers,
+          // Enhanced fields
+          specifications: (m.specifications as Record<string, any> | null) || {},
+          features: Array.isArray(m.features) ? (m.features as string[]) : [],
+          description: m.description || null,
+          detailUrl: m.detail_url || null,
         };
       });
 
@@ -952,7 +962,30 @@ const handleMotorSelection = (motor: Motor) => {
                 </div>
                 <Badge className={getStockBadgeColor(quickViewMotor.stockStatus)}>{quickViewMotor.stockStatus}</Badge>
               </div>
-              <div className="text-sm text-muted-foreground">{quickViewMotor.specs}</div>
+
+              {/* Specs grid */}
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div className="flex justify-between"><span className="text-muted-foreground">Power</span><strong>{quickViewMotor.specifications?.powerHP || quickViewMotor.hp} HP</strong></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Weight</span><strong>{(quickViewMotor.specifications as any)?.weight || 'N/A'}</strong></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Shaft</span><strong>{(quickViewMotor.specifications as any)?.shaftLength || 'N/A'}</strong></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Start</span><strong>{(quickViewMotor.specifications as any)?.startType || 'N/A'}</strong></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Controls</span><strong>{(quickViewMotor.specifications as any)?.controls || 'N/A'}</strong></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Warranty</span><strong>{(quickViewMotor.specifications as any)?.warrantyPromo || (quickViewMotor.specifications as any)?.warranty || 'N/A'}</strong></div>
+              </div>
+
+              {/* Features */}
+              {Array.isArray(quickViewMotor.features) && quickViewMotor.features.length > 0 && (
+                <div>
+                  <h4 className="font-semibold mb-2">Features</h4>
+                  <ul className="list-disc pl-5 space-y-1">
+                    {quickViewMotor.features.slice(0, 6).map((f) => (
+                      <li key={f}>{f}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <div className="text-sm text-muted-foreground">{quickViewMotor.description || quickViewMotor.specs}</div>
               <Button onClick={() => { handleMotorSelection(quickViewMotor); setQuickViewMotor(null); }}>
                 Select This Motor
               </Button>
@@ -982,8 +1015,12 @@ const handleMotorSelection = (motor: Motor) => {
                 </div>
                 <div className="space-y-1 text-sm">
                   <div className="flex justify-between"><span>Price:</span><span className="font-semibold">${(m.salePrice || m.basePrice || m.price).toLocaleString()}</span></div>
-                  <div className="flex justify-between"><span>Weight:</span><span className="font-semibold">N/A</span></div>
-                  <div className="flex justify-between"><span>Warranty:</span><span className="font-semibold">N/A</span></div>
+                  <div className="flex justify-between"><span>Power:</span><span className="font-semibold">{(m.specifications as any)?.powerHP || m.hp} HP</span></div>
+                  <div className="flex justify-between"><span>Weight:</span><span className="font-semibold">{(m.specifications as any)?.weight || 'N/A'}</span></div>
+                  <div className="flex justify-between"><span>Shaft:</span><span className="font-semibold">{(m.specifications as any)?.shaftLength || 'N/A'}</span></div>
+                  <div className="flex justify-between"><span>Start:</span><span className="font-semibold">{(m.specifications as any)?.startType || 'N/A'}</span></div>
+                  <div className="flex justify-between"><span>Fuel:</span><span className="font-semibold">{(m.specifications as any)?.fuelSystem || 'N/A'}</span></div>
+                  <div className="flex justify-between"><span>Warranty:</span><span className="font-semibold">{(m.specifications as any)?.warrantyPromo || (m.specifications as any)?.warranty || 'N/A'}</span></div>
                 </div>
                 <Button className="mt-3 w-full" onClick={() => { handleMotorSelection(m); setShowComparePanel(false); }}>Select This Motor</Button>
               </Card>

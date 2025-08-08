@@ -49,6 +49,11 @@ export interface Motor {
     endsAt: string | null;
     priority: number;
   }>;
+  // Enhanced scraped data
+  specifications?: Record<string, any>;
+  features?: string[];
+  description?: string | null;
+  detailUrl?: string | null;
 }
 
 export interface BoatInfo {
