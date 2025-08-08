@@ -327,6 +327,33 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
       description: `${motor.model} selected - Let's continue!`,
       duration: 2000,
     });
+
+    // Gamified promotion toast (if any promos apply)
+    const hasSale = motor.stockStatus === 'In Stock' && motor.salePrice != null && motor.basePrice != null && (motor.salePrice as number) < (motor.basePrice as number);
+    const savings = hasSale ? ((motor.basePrice as number) - (motor.salePrice as number)) : 0;
+    const hasWarrantyBonus = (motor.bonusOffers || []).some(b => !!b.warrantyExtraYears && b.warrantyExtraYears > 0);
+
+    if (hasSale || hasWarrantyBonus) {
+      toast({
+        title: "Promotions applied",
+        description: (
+          <div className="flex flex-wrap items-center gap-2 pt-1">
+            {hasWarrantyBonus && (
+              <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in">
+                <span className="mr-1">🛡️</span> Warranty bonus active
+              </span>
+            )}
+            {hasSale && (
+              <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in" style={{ animationDelay: '120ms' }}>
+                <span className="mr-1">💰</span> Save ${savings.toLocaleString()} applied
+              </span>
+            )}
+          </div>
+        ),
+        duration: 2600,
+      });
+    }
+
     setTimeout(() => {
       setShowStickyBar(true);
     }, 500);
@@ -534,6 +561,18 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                     <p className="font-bold text-lg">
                       {selectedMotor.model} - ${selectedMotor.price.toLocaleString()}
                     </p>
+                    <div className="flex gap-2 mt-1">
+                      {selectedMotor.stockStatus === 'In Stock' && selectedMotor.salePrice != null && selectedMotor.basePrice != null && (selectedMotor.salePrice as number) < (selectedMotor.basePrice as number) && (
+                        <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in">
+                          <span className="mr-1">💰</span> Save ${((selectedMotor.basePrice as number) - (selectedMotor.salePrice as number)).toLocaleString()}
+                        </span>
+                      )}
+                      {selectedMotor.bonusOffers?.some(b => !!b.warrantyExtraYears && b.warrantyExtraYears > 0) && (
+                        <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in" style={{ animationDelay: '120ms' }}>
+                          <span className="mr-1">🛡️</span> Warranty bonus active
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
                 
