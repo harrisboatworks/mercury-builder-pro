@@ -10,10 +10,15 @@ import { z } from 'zod';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
-const authSchema = z.object({
+const signInSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
   password: z.string().min(6, 'Password must be at least 6 characters'),
-  displayName: z.string().min(2, 'Name must be at least 2 characters').optional()
+});
+
+const signUpSchema = z.object({
+  email: z.string().email('Please enter a valid email address'),
+  password: z.string().min(6, 'Password must be at least 6 characters'),
+  displayName: z.string().min(2, 'Name must be at least 2 characters'),
 });
 
 const Auth = () => {
@@ -38,7 +43,18 @@ const Auth = () => {
 
   const validateForm = () => {
     try {
-      authSchema.parse(formData);
+      if (isSignUp) {
+        signUpSchema.parse({
+          email: formData.email,
+          password: formData.password,
+          displayName: formData.displayName,
+        });
+      } else {
+        signInSchema.parse({
+          email: formData.email,
+          password: formData.password,
+        });
+      }
       setErrors({});
       return true;
     } catch (error) {
