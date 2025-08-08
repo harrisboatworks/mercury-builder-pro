@@ -481,10 +481,23 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                 ? [...(motor.bonusOffers || [])].sort((a, b) => (b.highlight === a.highlight ? (b.priority - a.priority) : (b.highlight ? 1 : -1)))[0]
                 : null;
 
+              // Per-card promo parsing (case/whitespace tolerant)
+              const promoBlob = `${(motor.appliedPromotions || []).join(' ')} ${(motor.bonusOffers || []).map(b => `${b.title ?? ''} ${b.shortBadge ?? ''}`).join(' ')}`;
+              const hasGet5 = /(mercury\s*)?(get\s*5|get5|5\s*year)/i.test(promoBlob);
+              const hasRepower = /(repower(\s*rebate)?)/i.test(promoBlob);
+              const warrantyBonus = (motor.bonusOffers || []).find(b => (b.warrantyExtraYears || 0) > 0);
+              const showWarrantyBadge = hasGet5 || !!warrantyBonus;
+              const otherPromoNames = (motor.appliedPromotions || []).filter(name => {
+                const t = name.toLowerCase();
+                if (/(mercury\s*)?(get\s*5|get5|5\s*year)/i.test(t)) return false;
+                if (/(repower(\s*rebate)?)/i.test(t)) return false;
+                return true;
+              });
+
               return (
                 <Card 
                   key={motor.id}
-                  className={`relative cursor-pointer transition-all duration-500 hover:shadow-lg group overflow-hidden ${
+                  className={`product-card relative cursor-pointer transition-all duration-500 hover:shadow-lg group overflow-hidden ${
                     (selectedMotor?.id === motor.id) 
                       ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' 
                       : 'hover:scale-[1.01]'
@@ -564,18 +577,28 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
                           <img src="/lovable-uploads/29fca629-fbe7-44e9-ab71-703477b2c852.png" alt="Mercury outboard logo" className="w-5 h-5 object-contain" loading="lazy" />
                           <span className="text-sm font-medium text-muted-foreground">{motor.type}</span>
                         </div>
-                        {motor.appliedPromotions && motor.appliedPromotions.length > 0 && (
-                          <div className="text-xs text-primary">{motor.appliedPromotions.join(' + ')}</div>
+                        {otherPromoNames.length > 0 && (
+                          <div className="text-xs text-primary">{otherPromoNames.join(' + ')}</div>
                         )}
                       </div>
                     </div>
 
-                    {hasBonus && topBonus && (
-                      <div className="warranty-badge-container flex justify-center mt-3">
-                        <div className="promo-badge-base promo-badge-warranty">
-                          <span className="mr-1">🛡️</span>
-                          <span>{topBonus.shortBadge || topBonus.title}</span>
-                        </div>
+                    {(hasGet5 || hasRepower) && (
+                      <div className="promo-badges flex justify-center mt-3">
+                        {hasGet5 && (
+                          <span className="promo-badge-base promo-badge-warranty badge" aria-label="5 Year Warranty">
+                            <span className="mr-1">🛡️</span>
+                            <span>{warrantyBonus?.shortBadge || '5 Year Warranty'}</span>
+                          </span>
+                        )}
+                        {hasRepower && (
+                          <span className="badge badge--shimmer" data-badge="repower" aria-label="Repower Rebate Promo">
+                            <svg className="badge__icon" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M12 2l3 6 6 .9-4.3 4.2 1 6-5.7-3-5.7 3 1-6L3 8.9 9 8z" fill="currentColor"/>
+                            </svg>
+                            <span className="badge__text">Repower Rebate Promo</span>
+                          </span>
+                        )}
                       </div>
                     )}
                   </div>
