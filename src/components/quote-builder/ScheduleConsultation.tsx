@@ -91,7 +91,7 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
 
   const calculateMonthlyPayment = () => {
     if (!quoteData.motor) return 0;
-    const principal = quoteData.motor.price - quoteData.financing.downPayment;
+    const principal = (quoteData.motor.salePrice ?? quoteData.motor.basePrice ?? quoteData.motor.price) - quoteData.financing.downPayment;
     const monthlyRate = quoteData.financing.rate / 100 / 12;
     const numPayments = quoteData.financing.term;
     
@@ -138,10 +138,10 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
         .from('customer_quotes')
         .insert({
           user_id: user.id,
-          base_price: quoteData.motor.price,
-          final_price: quoteData.motor.price - quoteData.financing.downPayment,
+          base_price: (quoteData.motor.salePrice ?? quoteData.motor.basePrice ?? quoteData.motor.price),
+          final_price: (quoteData.motor.salePrice ?? quoteData.motor.basePrice ?? quoteData.motor.price) - quoteData.financing.downPayment,
           deposit_amount: quoteData.financing.downPayment,
-          loan_amount: quoteData.motor.price - quoteData.financing.downPayment,
+          loan_amount: (quoteData.motor.salePrice ?? quoteData.motor.basePrice ?? quoteData.motor.price) - quoteData.financing.downPayment,
           monthly_payment: calculateMonthlyPayment(),
           term_months: quoteData.financing.term,
           total_cost: calculateTotalCost(),

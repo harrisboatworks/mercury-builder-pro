@@ -395,7 +395,7 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
         ) : (
           <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
             {filteredMotors.map(motor => {
-              const hasSale = !!(motor.salePrice && motor.basePrice && motor.salePrice < motor.basePrice);
+              const hasSale = motor.stockStatus === 'In Stock' && motor.salePrice != null && motor.basePrice != null && motor.salePrice < motor.basePrice;
               const hasBonus = !!(motor.bonusOffers && motor.bonusOffers.length > 0);
               const topBonus = hasBonus
                 ? [...(motor.bonusOffers || [])].sort((a, b) => (b.highlight === a.highlight ? (b.priority - a.priority) : (b.highlight ? 1 : -1)))[0]
@@ -459,22 +459,22 @@ export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
 
                     <div className="flex items-center justify-between pt-4">
                       <div className="space-y-1">
-                        {motor.savings && motor.savings > 0 ? (
+                        {hasSale ? (
                           <>
                             <p className="text-sm line-through text-muted-foreground">
-                              ${motor.originalPrice?.toLocaleString()}
+                              ${motor.basePrice?.toLocaleString()}
                             </p>
                             <p className="text-2xl font-bold text-foreground">
-                              ${motor.price.toLocaleString()}
+                              ${motor.salePrice?.toLocaleString()}
                             </p>
-                            <p className="text-xs text-green-600 dark:text-green-400">
-                              You save ${Math.round(motor.savings).toLocaleString()} {motor.promoEndsAt ? `• Ends in ${Math.max(0, Math.ceil((new Date(motor.promoEndsAt).getTime() - Date.now())/86400000))}d` : ''}
-                            </p>
+                            <div className="inline-flex items-center gap-1 text-xs bg-green-600 text-white px-2 py-0.5 rounded-full">
+                              Save ${((motor.basePrice || 0) - (motor.salePrice || 0)).toLocaleString()}
+                            </div>
                           </>
                         ) : (
                           <>
                             <p className="text-2xl font-bold text-foreground">
-                              ${motor.price.toLocaleString()}
+                              ${(motor.salePrice || motor.basePrice || motor.price).toLocaleString()}
                             </p>
                           </>
                         )}

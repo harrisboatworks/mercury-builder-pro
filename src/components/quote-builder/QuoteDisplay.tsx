@@ -25,7 +25,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   const hasTradeIn = quoteData.boatInfo?.tradeIn?.hasTradeIn || false;
   const tradeInValue = quoteData.boatInfo?.tradeIn?.estimatedValue || 0;
 
-  const motorPrice = quoteData.motor?.price || 0;
+  const motorPrice = (quoteData.motor?.salePrice ?? quoteData.motor?.basePrice ?? quoteData.motor?.price) || 0;
   const subtotalAfterTrade = motorPrice - (hasTradeIn ? tradeInValue : 0);
   const hst = subtotalAfterTrade * 0.13;
   const financingFee = 299; // Added to all finance deals
@@ -137,6 +137,13 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
               </div>
               <div className="text-right">
                 <p className="text-xl font-bold text-foreground">${motorPrice.toLocaleString()}</p>
+                {quoteData.motor.basePrice && quoteData.motor.salePrice && quoteData.motor.salePrice < quoteData.motor.basePrice && (
+                  <div className="mt-1 text-xs">
+                    <div className="text-muted-foreground line-through">Motor List Price: ${quoteData.motor.basePrice.toLocaleString()}</div>
+                    <div className="text-green-600 dark:text-green-400">Current Sale Price: -${(quoteData.motor.basePrice - (quoteData.motor.salePrice || 0)).toLocaleString()}</div>
+                    <div className="text-foreground">Your Price: ${motorPrice.toLocaleString()}</div>
+                  </div>
+                )}
               </div>
             </div>
             

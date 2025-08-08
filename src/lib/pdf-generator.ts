@@ -21,7 +21,7 @@ export const generateQuotePDF = (quoteData: PDFQuoteData): jsPDF => {
   const successGreen = '#00A651';
   
   // Calculate pricing
-  const motorPrice = quoteData.motor?.price || 0;
+  const motorPrice = (quoteData.motor?.salePrice ?? quoteData.motor?.basePrice ?? quoteData.motor?.price) || 0;
   const tradeValue = quoteData.boatInfo?.tradeIn?.estimatedValue || quoteData.tradeInValue || 0;
   const subtotal = motorPrice - tradeValue;
   const hst = subtotal * 0.13;
