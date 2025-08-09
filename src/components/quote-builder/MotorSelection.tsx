@@ -10,6 +10,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { MotorFilters } from './MotorFilters';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { getPriceDisplayState } from '@/lib/pricing';
 
 // Database types
 interface DbMotor {
@@ -129,6 +130,7 @@ const [showRebateModal, setShowRebateModal] = useState(false);
 const [quickViewMotor, setQuickViewMotor] = useState<Motor | null>(null);
 const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
 const [showComparePanel, setShowComparePanel] = useState(false);
+const debugPricing = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
 
 // Automatic inventory refresh state
 const [lastInventoryUpdate, setLastInventoryUpdate] = useState<string | null>(
@@ -729,10 +731,14 @@ const handleMotorSelection = (motor: Motor) => {
             {filteredMotors.map(motor => {
               const msrp = motor.basePrice && motor.basePrice > 0 ? motor.basePrice : null;
               const sale = motor.salePrice && motor.salePrice > 0 ? motor.salePrice : null;
-              const hasSaleDisplay = motor.stockStatus === 'In Stock' && msrp != null && sale != null && sale < msrp;
-              const callForPrice = !msrp || msrp <= 0 || (msrp == null && sale == null);
-              const savingsAmount = hasSaleDisplay ? Math.round((msrp as number) - (sale as number)) : 0;
-              const savingsPct = hasSaleDisplay && (msrp as number) > 0 ? Math.floor((savingsAmount / (msrp as number)) * 100) : 0;
+              const state = getPriceDisplayState(msrp, sale);
+              const hasSaleDisplay = state.hasSale;
+              const callForPrice = state.callForPrice;
+              const savingsAmount = state.savingsRounded;
+              const savingsPct = state.percent;
+              if (sale != null && msrp != null && sale >= msrp) {
+                console.warn('[pricing] sale_price not less than base_price', { id: motor.id, model: motor.model, base_price: msrp, sale_price: sale });
+              }
               const hasBonus = !!(motor.bonusOffers && motor.bonusOffers.length > 0);
               const topBonus = hasBonus
                 ? [...(motor.bonusOffers || [])].sort((a, b) => (b.highlight === a.highlight ? (b.priority - a.priority) : (b.highlight ? 1 : -1)))[0]
@@ -806,16 +812,18 @@ const handleMotorSelection = (motor: Motor) => {
                     <div className="flex items-center justify-between pt-4">
                       <div className="w-full">
                         {/* Mobile: inline compact */}
-                        <div className="md:hidden flex items-center gap-2 flex-wrap">
+                        <div className="md:hidden">
                           {callForPrice ? (
                             <span className="text-base font-medium text-foreground">Call for Price</span>
                           ) : hasSaleDisplay ? (
                             <>
-                              <span className="text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
-                              <span className="text-lg font-bold text-destructive">Our Price ${(sale as number).toLocaleString()}</span>
-                              <span className="text-xs font-semibold px-2 py-1 rounded-full bg-destructive text-destructive-foreground">
-                                SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
-                              </span>
+                              <div className="text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</div>
+                              <div className="flex items-center gap-2 flex-wrap">
+                                <span className="text-lg font-bold text-destructive">Our Price ${(sale as number).toLocaleString()}</span>
+                                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-destructive text-destructive-foreground">
+                                  SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
+                                </span>
+                              </div>
                             </>
                           ) : (
                             <span className="text-lg font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
@@ -837,6 +845,11 @@ const handleMotorSelection = (motor: Motor) => {
                             <p className="text-xl font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</p>
                           )}
                         </div>
+                        {debugPricing && (
+                          <div className="mt-1 text-xs font-mono text-muted-foreground">
+                            [msrp: {msrp ?? 'null'} | sale: {sale ?? 'null'}]
+                          </div>
+                        )}
                       </div>
                       <div className="flex flex-col items-end gap-1">
                         <div className="flex items-center gap-2">
