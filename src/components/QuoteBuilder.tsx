@@ -23,6 +23,7 @@ import { BonusOffers } from './quote-builder/BonusOffers';
 export interface Motor {
   id: string;
   model: string;
+  year: number;
   hp: number;
   price: number; // effective price shown to user
   image: string;

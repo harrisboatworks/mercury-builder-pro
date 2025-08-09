@@ -232,6 +232,7 @@ useEffect(() => {
         return {
           id: m.id,
           model: m.model,
+          year: m.year,
           hp: Number(m.horsepower),
           price: effectivePrice,
           image: m.image_url || '/placeholder.svg',
@@ -289,6 +290,21 @@ useEffect(() => {
     if (hp <= 100) return 'mid-range';
     return 'v8-racing';
   };
+
+  const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const tokenize = (s: string) => s.toLowerCase().split(/[^a-z0-9+]+/).filter(Boolean);
+  const deriveVariant = (raw: string, title: string) => {
+    if (!raw) return '';
+    let v = ` ${raw} `;
+    const removeTokens = new Set([...tokenize(title), 'mercury']);
+    removeTokens.forEach(t => {
+      v = v.replace(new RegExp(`\\b${escapeRegExp(t)}\\b`, 'gi'), ' ');
+    });
+    v = v.replace(/\s+/g, ' ').replace(/[\s,;:–-]+$/g, '').replace(/^[\s,;:–-]+/g, '').trim();
+    // If what's left is too short or duplicates the model words, hide
+    return v;
+  };
+
   const isPromotionActive = (p: Promotion) => {
     const now = new Date();
     const startsOk = !p.start_date || new Date(p.start_date) <= now;
@@ -816,8 +832,21 @@ const handleMotorSelection = (motor: Motor) => {
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="text-xl font-semibold text-foreground">{motor.model}</h3>
-                      <p className="text-muted-foreground text-sm">{motor.specs}</p>
+                      {(() => {
+                        const title = `${motor.year} ${motor.model}`;
+                        const raw = motor.description || motor.specs || '';
+                        const variant = deriveVariant(raw, title);
+                        return (
+                          <>
+                            <h3 className="text-xl font-semibold text-foreground">{title}</h3>
+                            <div className="min-h-[1.25rem]">
+                              {variant && variant.length > 0 ? (
+                                <p className="text-muted-foreground text-sm truncate" title={variant}>{variant}</p>
+                              ) : null}
+                            </div>
+                          </>
+                        );
+                      })()}
                     </div>
 
                       {motor.image && motor.image !== '/placeholder.svg' && (
