@@ -108,7 +108,7 @@ const getPromoLabelsForMotor = (motor: Motor): string[] => {
 interface MotorSelectionProps {
   onStepComplete: (motor: Motor) => void;
   noSalePriceLayout?: 'default' | 'placeholder' | 'centered';
-  imageSizingMode?: 'current' | 'taller' | 'scale-msrp' | 'v2';
+  imageSizingMode?: 'current' | 'taller' | 'scale-msrp' | 'v2' | 'uniform-112';
 }
 
 export const MotorSelection = ({ onStepComplete, noSalePriceLayout = 'placeholder', imageSizingMode = 'current' }: MotorSelectionProps) => {
@@ -147,11 +147,11 @@ const paramNoSaleLayout: 'placeholder' | 'centered' | null =
 const effectiveNoSaleLayout: 'default' | 'placeholder' | 'centered' =
   (paramNoSaleLayout as any) ?? noSalePriceLayout;
 
-// Staging-only image sizing override via ?imgMode=current|taller|scale-msrp|v2
+// Staging-only image sizing override via ?imgMode=current|taller|scale-msrp|v2|uniform-112
 const urlImgMode = isStagingRoute ? new URLSearchParams(window.location.search).get('imgMode') : null;
-const paramImgMode: 'current' | 'taller' | 'scale-msrp' | 'v2' | null =
-  urlImgMode === 'taller' || urlImgMode === 'scale-msrp' || urlImgMode === 'current' || urlImgMode === 'v2' ? (urlImgMode as any) : null;
-const effectiveImageSizingMode: 'current' | 'taller' | 'scale-msrp' | 'v2' =
+const paramImgMode: 'current' | 'taller' | 'scale-msrp' | 'v2' | 'uniform-112' | null =
+  urlImgMode === 'taller' || urlImgMode === 'scale-msrp' || urlImgMode === 'current' || urlImgMode === 'v2' || urlImgMode === 'uniform-112' ? (urlImgMode as any) : null;
+const effectiveImageSizingMode: 'current' | 'taller' | 'scale-msrp' | 'v2' | 'uniform-112' =
   (paramImgMode as any) ?? imageSizingMode;
 
 const navigate = useNavigate();
@@ -807,7 +807,7 @@ const handleMotorSelection = (motor: Motor) => {
               const state = getPriceDisplayState(msrp, sale);
               const hasSaleDisplay = state.hasSale;
               const callForPrice = state.callForPrice;
-              const isMsrpOnly = !hasSaleDisplay && !callForPrice;
+              
               const savingsAmount = state.savingsRounded;
               const savingsPct = state.percent;
               if (sale != null && msrp != null && sale >= msrp) {
@@ -853,7 +853,7 @@ const handleMotorSelection = (motor: Motor) => {
                     </div>
                   )}
 
-                  <div className={`px-6 ${effectiveImageSizingMode === 'v2' ? 'pt-3 pb-5' : 'pt-4 pb-6'} ${effectiveImageSizingMode === 'v2' ? 'space-y-3.5' : 'space-y-4'} relative`}>
+                  <div className="px-6 pt-4 pb-6 space-y-4 relative">
                     <div className="flex items-start justify-between">
                       <Badge variant={getCategoryColor(motor.category)}>
                         {motor.hp}HP
@@ -863,7 +863,7 @@ const handleMotorSelection = (motor: Motor) => {
                       </Badge>
                     </div>
 
-                    <div className={`min-h-[56px] md:min-h-[64px] ${effectiveImageSizingMode === 'v2' ? 'space-y-1.5' : 'space-y-2.5'}`}>
+                    <div className="min-h-[56px] md:min-h-[64px] space-y-2.5">
                       {(() => {
 const title = formatMotorTitle(motor.year, motor.model);
 const raw = `${motor.model ?? ''} ${motor.description ?? motor.specs ?? ''}`.trim();
@@ -883,10 +883,10 @@ const subtitle = formatVariantSubtitle(raw, title);
 
       {motor.image && motor.image !== '/placeholder.svg' && (
         <div className={`motor-image-container image-wrap w-full ${
-          effectiveImageSizingMode === 'v2' ? 'h-56 md:h-64 lg:h-72' :
+          effectiveImageSizingMode === 'uniform-112' ? 'h-56 md:h-64 lg:h-72' :
           effectiveImageSizingMode === 'taller' ? 'h-52 md:h-60 lg:h-68' :
           'h-48 md:h-56 lg:h-64'
-        } flex items-start justify-center ${effectiveImageSizingMode === 'v2' ? 'pt-2 md:pt-3 bg-muted/10' : 'bg-muted/20'} rounded-lg overflow-hidden relative`}>
+        } flex items-center justify-center ${effectiveImageSizingMode === 'uniform-112' ? 'bg-muted/10' : 'bg-muted/20'} rounded-lg overflow-hidden relative`}>
           <img 
             src={motor.image} 
             alt={motor.model}
@@ -894,9 +894,11 @@ const subtitle = formatVariantSubtitle(raw, title);
             width={520}
             height={520}
             className={
-              effectiveImageSizingMode === 'v2'
-                ? `object-contain max-h-[92%] max-w-[95%] transition-transform ${isMsrpOnly ? 'scale-[1.18]' : 'scale-[1.10]'}`
-                : `max-w-full max-h-full object-contain ${effectiveImageSizingMode === 'scale-msrp' && !sale ? 'scale-105' : ''}`
+              effectiveImageSizingMode === 'uniform-112'
+                ? 'object-contain max-w-[96%] max-h-[96%] scale-[1.12]'
+                : (effectiveImageSizingMode === 'scale-msrp' && !sale)
+                  ? 'max-w-full max-h-full object-contain scale-105'
+                  : 'max-w-full max-h-full object-contain'
             }
           />
           {selectedMotor?.id === motor.id && (
@@ -907,7 +909,7 @@ const subtitle = formatVariantSubtitle(raw, title);
         </div>
       )}
 
-                    <div className={`flex items-center justify-between ${effectiveImageSizingMode === 'v2' ? (isMsrpOnly ? 'pt-1.5' : 'pt-3') : 'pt-5'}`}>
+                    <div className="flex items-center justify-between pt-5">
                       <div className="w-full">
                         <div className={`price-area min-h-[92px] md:min-h-[120px] flex ${(!hasSaleDisplay && !callForPrice && effectiveNoSaleLayout === 'centered') ? 'items-center justify-center' : 'flex-col justify-between'}`}>
                         {/* Mobile: inline compact */}
