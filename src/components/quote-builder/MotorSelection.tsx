@@ -887,7 +887,7 @@ const subtitle = formatVariantSubtitle(raw, title);
             src={motor.image} 
             alt={motor.model}
             loading="lazy"
-            className="motor-image object-contain h-full w-auto max-w-full"
+            className="motor-image object-contain h-[170px] w-auto"
           />
           {selectedMotor?.id === motor.id && (
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
