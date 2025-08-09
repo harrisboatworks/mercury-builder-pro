@@ -110,7 +110,7 @@ interface MotorSelectionProps {
   noSalePriceLayout?: 'default' | 'placeholder' | 'centered';
 }
 
-export const MotorSelection = ({ onStepComplete, noSalePriceLayout = 'default' }: MotorSelectionProps) => {
+export const MotorSelection = ({ onStepComplete, noSalePriceLayout = 'placeholder' }: MotorSelectionProps) => {
   const { toast } = useToast();
   const isMobile = useIsMobile();
   const [motors, setMotors] = useState<Motor[]>([]);
@@ -138,12 +138,13 @@ const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
 const [showComparePanel, setShowComparePanel] = useState(false);
 const debugPricing = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
 
-// Allow URL param override for the no-sale price layout when prop is not set
-const urlLayout = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('noSalePriceLayout') : null;
-const paramNoSaleLayout: 'default' | 'placeholder' | 'centered' =
-  urlLayout === 'placeholder' || urlLayout === 'centered' ? (urlLayout as 'placeholder' | 'centered') : 'default';
+// Allow URL param override for the no-sale price layout only on staging routes
+const isStagingRoute = typeof window !== 'undefined' && window.location?.pathname?.startsWith('/staging');
+const urlLayout = isStagingRoute ? new URLSearchParams(window.location.search).get('noSalePriceLayout') : null;
+const paramNoSaleLayout: 'placeholder' | 'centered' | null =
+  urlLayout === 'placeholder' || urlLayout === 'centered' ? (urlLayout as 'placeholder' | 'centered') : null;
 const effectiveNoSaleLayout: 'default' | 'placeholder' | 'centered' =
-  noSalePriceLayout !== 'default' ? noSalePriceLayout : paramNoSaleLayout;
+  (paramNoSaleLayout as any) ?? noSalePriceLayout;
 
 const navigate = useNavigate();
 
