@@ -727,7 +727,12 @@ const handleMotorSelection = (motor: Motor) => {
         ) : (
           <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
             {filteredMotors.map(motor => {
-              const hasSale = motor.stockStatus === 'In Stock' && motor.salePrice != null && motor.basePrice != null && motor.salePrice < motor.basePrice;
+              const msrp = motor.basePrice && motor.basePrice > 0 ? motor.basePrice : null;
+              const sale = motor.salePrice && motor.salePrice > 0 ? motor.salePrice : null;
+              const hasSaleDisplay = motor.stockStatus === 'In Stock' && msrp != null && sale != null && sale < msrp;
+              const callForPrice = !msrp || msrp <= 0 || (msrp == null && sale == null);
+              const savingsAmount = hasSaleDisplay ? Math.round((msrp as number) - (sale as number)) : 0;
+              const savingsPct = hasSaleDisplay && (msrp as number) > 0 ? Math.floor((savingsAmount / (msrp as number)) * 100) : 0;
               const hasBonus = !!(motor.bonusOffers && motor.bonusOffers.length > 0);
               const topBonus = hasBonus
                 ? [...(motor.bonusOffers || [])].sort((a, b) => (b.highlight === a.highlight ? (b.priority - a.priority) : (b.highlight ? 1 : -1)))[0]
@@ -799,26 +804,39 @@ const handleMotorSelection = (motor: Motor) => {
                       )}
 
                     <div className="flex items-center justify-between pt-4">
-                      <div className="space-y-1">
-                        {hasSale ? (
-                          <>
-                            <p className="text-sm line-through text-muted-foreground">
-                              ${motor.basePrice?.toLocaleString()}
-                            </p>
-                            <p className="text-2xl font-bold text-foreground">
-                              ${motor.salePrice?.toLocaleString()}
-                            </p>
-                            <div className="inline-flex items-center gap-1 text-xs bg-green-600 text-white px-2 py-0.5 rounded-full">
-                              Save ${((motor.basePrice || 0) - (motor.salePrice || 0)).toLocaleString()}
+                      <div className="w-full">
+                        {/* Mobile: inline compact */}
+                        <div className="md:hidden flex items-center gap-2 flex-wrap">
+                          {callForPrice ? (
+                            <span className="text-base font-medium text-foreground">Call for Price</span>
+                          ) : hasSaleDisplay ? (
+                            <>
+                              <span className="text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
+                              <span className="text-lg font-bold text-destructive">Our Price ${(sale as number).toLocaleString()}</span>
+                              <span className="text-xs font-semibold px-2 py-1 rounded-full bg-destructive text-destructive-foreground">
+                                SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
+                              </span>
+                            </>
+                          ) : (
+                            <span className="text-lg font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
+                          )}
+                        </div>
+                        {/* Desktop: stacked with badge below */}
+                        <div className="hidden md:block">
+                          {callForPrice ? (
+                            <p className="text-lg font-medium text-foreground">Call for Price</p>
+                          ) : hasSaleDisplay ? (
+                            <div className="space-y-1">
+                              <p className="text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</p>
+                              <p className="text-2xl font-bold text-destructive">Our Price ${(sale as number).toLocaleString()}</p>
+                              <div className="inline-flex items-center px-3 py-1 rounded-full bg-destructive text-destructive-foreground text-xs font-semibold">
+                                SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
+                              </div>
                             </div>
-                          </>
-                        ) : (
-                          <>
-                            <p className="text-2xl font-bold text-foreground">
-                              ${(motor.salePrice || motor.basePrice || motor.price).toLocaleString()}
-                            </p>
-                          </>
-                        )}
+                          ) : (
+                            <p className="text-xl font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</p>
+                          )}
+                        </div>
                       </div>
                       <div className="flex flex-col items-end gap-1">
                         <div className="flex items-center gap-2">

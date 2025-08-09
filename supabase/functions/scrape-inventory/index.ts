@@ -5,6 +5,53 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
+async function fetchWithRetry(url: string, init?: RequestInit, maxRetries = 3, initialDelayMs = 500): Promise<Response> {
+  let attempt = 0
+  let delay = initialDelayMs
+  while (true) {
+    try {
+      const res = await fetch(url, init)
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      return res
+    } catch (e) {
+      attempt++
+      if (attempt > maxRetries) throw e
+      await new Promise((r) => setTimeout(r, delay))
+      delay *= 2
+    }
+  }
+}
+
+async function sendFailureEmail(subject: string, message: string) {
+  try {
+    const apiKey = Deno.env.get('RESEND_API_KEY')
+    const to = Deno.env.get('ALERT_EMAIL_TO')
+    const from = Deno.env.get('ALERT_EMAIL_FROM') || 'alerts@harrisboatworks.local'
+    if (!apiKey || !to) {
+      console.warn('Email alert skipped: missing RESEND_API_KEY or ALERT_EMAIL_TO')
+      return
+    }
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from,
+        to: [to],
+        subject,
+        html: `<pre>${message.replace(/</g, '&lt;')}</pre>`
+      })
+    })
+    if (!res.ok) {
+      console.error('Failed to send alert email', await res.text())
+    }
+  } catch (e) {
+    console.error('Email alert error', e)
+  }
+}
+
 interface MotorData {
   make: string
   model: string
@@ -50,7 +97,7 @@ Deno.serve(async (req) => {
       
       console.log(`Fetching page ${pageNumber}: ${url}`)
       
-      const response = await fetch(url)
+      const response = await fetchWithRetry(url)
       if (!response.ok) {
         console.log(`Failed to fetch page ${pageNumber}: ${response.status}`)
         break
@@ -126,10 +173,18 @@ Deno.serve(async (req) => {
 
   } catch (error) {
     console.error('Scraping error:', error)
+    try {
+      await sendFailureEmail(
+        'HBW Inventory Scrape Failed',
+        typeof error?.message === 'string' ? error.message : JSON.stringify(error)
+      )
+    } catch (e) {
+      console.error('Failed to send failure email', e)
+    }
     return new Response(
       JSON.stringify({ 
         success: false, 
-        error: error.message 
+        error: (error as any)?.message || 'Unknown error'
       }),
       { 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -267,7 +322,7 @@ function normalizeTitle(s: string): string {
 
 async function fetchDetailSpecs(url: string): Promise<{ description?: string | null; features?: string[]; specifications?: Record<string, unknown> }> {
   try {
-    const res = await fetch(url)
+    const res = await fetchWithRetry(url)
     if (!res.ok) throw new Error(`Detail fetch failed: ${res.status}`)
     const html = await res.text()
 
