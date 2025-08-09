@@ -111,7 +111,7 @@ interface MotorSelectionProps {
   imageSizingMode?: 'current' | 'taller' | 'scale-msrp' | 'v2' | 'uniform-112';
 }
 
-export const MotorSelection = ({ onStepComplete, noSalePriceLayout = 'placeholder', imageSizingMode = 'current' }: MotorSelectionProps) => {
+export const MotorSelection = ({ onStepComplete, noSalePriceLayout = 'placeholder', imageSizingMode = 'uniform-112' }: MotorSelectionProps) => {
   const { toast } = useToast();
   const isMobile = useIsMobile();
   const [motors, setMotors] = useState<Motor[]>([]);
@@ -844,7 +844,7 @@ const handleMotorSelection = (motor: Motor) => {
                       : ''
                   } ${
                     isCompared(motor.id) ? 'ring-2 ring-primary border-primary bg-primary/5 scale-[1.02]' : ''
-                  }`}
+                  } flex flex-col h-full min-h-[450px]`}
                   onClick={() => selectionMode === 'compare' ? toggleCompare(motor) : handleMotorSelection(motor)}
                 >
                   {isCompared(motor.id) && (
@@ -909,7 +909,7 @@ const subtitle = formatVariantSubtitle(raw, title);
         </div>
       )}
 
-                    <div className="flex items-center justify-between pt-5">
+                    <div className="mt-auto pt-4 border-t border-border">
                       <div className="w-full">
                         <div className={`price-area min-h-[92px] md:min-h-[120px] flex ${(!hasSaleDisplay && !callForPrice && effectiveNoSaleLayout === 'centered') ? 'items-center justify-center' : 'flex-col justify-between'}`}>
                         {/* Mobile: inline compact */}
