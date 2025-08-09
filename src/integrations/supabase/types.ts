@@ -28,9 +28,14 @@ export type Database = {
           loan_amount: number
           monthly_payment: number
           motor_model_id: string | null
+          penalty_applied: boolean
+          penalty_factor: number | null
+          penalty_reason: string | null
           promotion_id: string | null
           term_months: number
           total_cost: number
+          tradein_value_final: number | null
+          tradein_value_pre_penalty: number | null
           user_id: string | null
         }
         Insert: {
@@ -46,9 +51,14 @@ export type Database = {
           loan_amount: number
           monthly_payment: number
           motor_model_id?: string | null
+          penalty_applied?: boolean
+          penalty_factor?: number | null
+          penalty_reason?: string | null
           promotion_id?: string | null
           term_months: number
           total_cost: number
+          tradein_value_final?: number | null
+          tradein_value_pre_penalty?: number | null
           user_id?: string | null
         }
         Update: {
@@ -64,9 +74,14 @@ export type Database = {
           loan_amount?: number
           monthly_payment?: number
           motor_model_id?: string | null
+          penalty_applied?: boolean
+          penalty_factor?: number | null
+          penalty_reason?: string | null
           promotion_id?: string | null
           term_months?: number
           total_cost?: number
+          tradein_value_final?: number | null
+          tradein_value_pre_penalty?: number | null
           user_id?: string | null
         }
         Relationships: [

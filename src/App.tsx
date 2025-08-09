@@ -9,6 +9,8 @@ import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 import AdminPromotions from "./pages/AdminPromotions";
+import AdminQuotes from "./pages/AdminQuotes";
+import AdminQuoteDetail from "./pages/AdminQuoteDetail";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +29,22 @@ const App = () => (
               element={
                 <ProtectedRoute>
                   <AdminPromotions />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/quotes"
+              element={
+                <ProtectedRoute>
+                  <AdminQuotes />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/quotes/:id"
+              element={
+                <ProtectedRoute>
+                  <AdminQuoteDetail />
                 </ProtectedRoute>
               }
             />

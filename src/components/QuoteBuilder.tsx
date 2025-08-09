@@ -194,6 +194,9 @@ const QuoteBuilder = () => {
                     <Button variant="secondary" size="sm" onClick={() => (window.location.href = '/admin/promotions')}>
                       Promotions
                     </Button>
+                    <Button variant="secondary" size="sm" onClick={() => (window.location.href = '/admin/quotes')}>
+                      Quotes
+                    </Button>
                     <Button variant="outline" size="sm" onClick={() => signOut()}>
                       <LogOut className="w-4 h-4 mr-2" />
                       Sign Out
