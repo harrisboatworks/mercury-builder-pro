@@ -22,15 +22,25 @@ async function fetchWithRetry(url: string, init?: RequestInit, maxRetries = 3, i
   }
 }
 
-async function sendFailureEmail(subject: string, message: string) {
+async function sendFailureAlert(subject: string, message: string) {
   try {
+    const enabled = (Deno.env.get('ENABLE_EMAIL_ALERTS') || 'false').toLowerCase() === 'true'
     const apiKey = Deno.env.get('RESEND_API_KEY')
     const to = Deno.env.get('ALERT_EMAIL_TO')
     const from = Deno.env.get('ALERT_EMAIL_FROM') || 'alerts@harrisboatworks.local'
-    if (!apiKey || !to) {
-      console.warn('Email alert skipped: missing RESEND_API_KEY or ALERT_EMAIL_TO')
-      return
-    }
+
+    // Always emit a structured log for observability
+    console.warn(JSON.stringify({
+      event: 'scrape_inventory_alert',
+      mode: enabled ? 'email' : 'log-only',
+      subject,
+      message,
+      timestamp: new Date().toISOString(),
+    }))
+
+    // Short-circuit if alerts are disabled or provider not configured
+    if (!enabled || !apiKey || !to) return
+
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -39,7 +49,7 @@ async function sendFailureEmail(subject: string, message: string) {
       },
       body: JSON.stringify({
         from,
-        to: [to],
+        to: to.split(',').map((s) => s.trim()).filter(Boolean),
         subject,
         html: `<pre>${message.replace(/</g, '&lt;')}</pre>`
       })
@@ -147,17 +157,18 @@ Deno.serve(async (req) => {
     }
 
     // Insert new motor data
-    const { data, error } = await supabase
-      .from('motor_models')
-      .insert(motors)
-      .select()
-
     if (error) {
       console.error('Error inserting motors:', error)
       throw error
     }
 
-    console.log(`Successfully updated ${data?.length || 0} motors in database`)
+    const summary = {
+      event: 'scrape_inventory_complete',
+      updatedCount: data?.length || 0,
+      collectedCount: motors.length,
+      timestamp: new Date().toISOString(),
+    }
+    console.log(JSON.stringify(summary))
 
     return new Response(
       JSON.stringify({ 
@@ -173,10 +184,16 @@ Deno.serve(async (req) => {
 
   } catch (error) {
     console.error('Scraping error:', error)
+    console.error(JSON.stringify({
+      event: 'scrape_inventory_error',
+      message: (error as any)?.message || 'Unknown error',
+      stack: (error as any)?.stack || null,
+      timestamp: new Date().toISOString(),
+    }))
     try {
-      await sendFailureEmail(
+      await sendFailureAlert(
         'HBW Inventory Scrape Failed',
-        typeof error?.message === 'string' ? error.message : JSON.stringify(error)
+        typeof (error as any)?.message === 'string' ? (error as any).message : JSON.stringify(error)
       )
     } catch (e) {
       console.error('Failed to send failure email', e)
