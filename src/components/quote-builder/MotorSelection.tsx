@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -14,6 +14,7 @@ import { getPriceDisplayState } from '@/lib/pricing';
 import { formatVariantSubtitle, formatMotorTitle } from '@/lib/card-title';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { useNavigate } from 'react-router-dom';
+import { canadianEncouragement, loadingMessages, comparisonHumor, emptyStateMessages, friendlyErrors } from '@/lib/canadian-messages';
 
 // Database types
 interface DbMotor {
@@ -155,6 +156,9 @@ const effectiveImageSizingMode: 'current' | 'taller' | 'scale-msrp' | 'v2' | 'un
   (paramImgMode as any) ?? imageSizingMode;
 
 const navigate = useNavigate();
+
+const pick = <T,>(arr: readonly T[]): T => arr[Math.floor(Math.random() * arr.length)];
+const loadingText = useMemo<string>(() => pick(loadingMessages as readonly string[]), []);
 
 const track = (name: string, payload: Record<string, any>) => {
   try { (window as any).analytics?.track?.(name, payload); } catch {}
@@ -305,8 +309,8 @@ useEffect(() => {
     } catch (error) {
       console.error('Error loading motors or promotions:', error);
       toast({
-        title: 'Error',
-        description: 'Failed to load inventory or promotions',
+        title: 'Network hiccup, eh?',
+        description: friendlyErrors.networkError,
         variant: 'destructive',
       });
     } finally {
@@ -614,7 +618,11 @@ const toggleCompare = (motor: Motor) => {
     const exists = prev.includes(motor.id);
     if (exists) return prev.filter(id => id !== motor.id);
     if (prev.length >= 3) {
-      toast({ title: 'Compare limit reached', description: 'You can compare up to 3 motors.', variant: 'destructive' });
+      toast({
+        title: 'Compare limit reached, eh!',
+        description: `You can compare up to 3 motors. ${comparisonHumor.threeMotors}`,
+        variant: 'destructive'
+      });
       return prev;
     }
     return [...prev, motor.id];
@@ -636,11 +644,14 @@ const isCompared = (motorId: string) => selectedForCompare.includes(motorId);
 const handleSelectionModeToggle = (mode: 'browse' | 'compare') => {
   setSelectionMode(mode);
   if (mode === 'browse') setSelectedForCompare([]);
+  if (mode === 'compare') {
+    toast({ title: canadianEncouragement.compareMode[0], duration: 1800 });
+  }
 };
 
 const handleCompareClick = () => {
   if (selectedForCompare.length >= 2) setShowComparePanel(true);
-  else toast({ title: 'Select at least 2 motors', description: 'Pick two or more to compare.' });
+  else toast({ title: 'Select at least 2 motors', description: canadianEncouragement.compareMode[1] || 'Pick two or more to compare.' });
 };
 
 const handleMotorSelection = (motor: Motor) => {
@@ -660,9 +671,9 @@ const handleMotorSelection = (motor: Motor) => {
     }));
     setCelebrationParticles(particles);
     toast({
-      title: "🎉 Excellent Choice!",
-      description: `${motor.model} selected - Let's continue!`,
-      duration: 2000,
+      title: pick(canadianEncouragement.motorSelected),
+      description: `${motor.model} selected — let's continue, eh!`,
+      duration: 2200,
     });
 
     // Gamified promotion toast (if any promos apply)
@@ -711,14 +722,14 @@ const handleMotorSelection = (motor: Motor) => {
       <div className="flex items-center justify-center py-12">
         <div className="text-center space-y-4">
           <RefreshCw className="w-8 h-8 animate-spin mx-auto text-primary" />
-          <p>Loading motor inventory...</p>
+          <p>{loadingText}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="flex gap-6">
+    <div className={`flex gap-6 ${showCelebration ? 'canadian-celebration' : ''}`}>
       <MotorFilters
         filters={filters}
         setFilters={setFilters}
@@ -798,8 +809,10 @@ const handleMotorSelection = (motor: Motor) => {
         </div>
 
         {filteredMotors.length === 0 ? (
-          <Card className="p-12 text-center">
-            <p className="text-muted-foreground">No motors found matching your filters.</p>
+          <Card className="p-12 text-center space-y-2">
+            <div className="text-2xl">🍁</div>
+            <p className="font-semibold">{emptyStateMessages.noResults.message}</p>
+            <p className="text-muted-foreground">{emptyStateMessages.noResults.submessage}</p>
           </Card>
         ) : (
           <div className={`grid motors-grid items-stretch ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1'}`}>

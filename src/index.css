@@ -689,7 +689,27 @@
   .modal .promo-item { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 0.95rem; }
   .modal .promo-item .pi { width: 1.1rem; height: 1.1rem; flex: 0 0 auto; }
   .modal .promo-note { font-weight: 500; opacity: 0.85; }
-
+  
   /* Utilities */
   .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+  /* Canadian themed animations */
+  @keyframes maple-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(5deg); }
+    75% { transform: translateY(-10px) rotate(-5deg); }
+  }
+  .canadian-celebration { position: relative; }
+  .canadian-celebration::after {
+    content: '🍁';
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    animation: maple-float 3s ease-in-out infinite;
+    opacity: 0.75;
+    transform-origin: center;
+    pointer-events: none;
+  }
+  .cottage-mode { background: var(--gradient-hero); }
 }
+
