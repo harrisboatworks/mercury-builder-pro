@@ -198,8 +198,89 @@ Deno.serve(async (req) => {
       }
     }
 
+    // Compute subtitle health metrics
+    let subtitles_non_empty = 0, subtitles_suppressed = 0;
+    const total_motors = rows.length;
+
+    // Helpers scoped to this block to avoid polluting global scope
+    const FEATURE_WORDS = ['Command Thrust','ProKicker','Big Tiller','Jet','SeaPro','Verado','Pro XS'] as const;
+    const SHAFT_ROTATION_CODES = ['XL','XXL','CXL'] as const;
+    const CONTROL_TRIM_CODES = ['DTS','CT'] as const;
+    const START_SHAFT_TRIM_BUNDLES = ['MH','MLH','ELH','ELPT','EXLPT'] as const;
+    const PRIORITY_LIST: string[][] = [
+      [...FEATURE_WORDS],
+      [...SHAFT_ROTATION_CODES],
+      [...CONTROL_TRIM_CODES],
+      [...START_SHAFT_TRIM_BUNDLES],
+    ];
+    const BRAND_REGEX = /\bmercury(?:\s+marine)?\b|mercury®|^merc\.\b/gi;
+    const normalize = (s: string) => ` ${s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()} `;
+    const tokenPresent = (haystackNorm: string, token: string) => haystackNorm.includes(` ${token.toLowerCase()} `);
+    const cleanModel = (year: number, model: string) => {
+      let m = model || '';
+      // remove leading year with optional punctuation/spaces
+      const yearRe = new RegExp(`^\\s*${year}[\\s\\-:–—.,]*`, 'i');
+      m = m.replace(yearRe, '');
+      // remove brand tokens (keep product lines like Verado/Pro XS/SeaPro)
+      m = m.replace(BRAND_REGEX, ' ');
+      m = m.replace(/\s+/g, ' ').trim();
+      return m;
+    };
+
+    const stripYearAndBrand = (text: string, year: number) => {
+      let t = text || '';
+      const yearAnyRe = new RegExp(`\\b${year}\\b`, 'gi');
+      t = t.replace(yearAnyRe, ' ');
+      t = t.replace(BRAND_REGEX, ' ');
+      return t;
+    };
+
+    const getOriginalVariantTokens = (raw: string): string[] => {
+      const rawNorm = normalize(raw);
+      const picked: string[] = [];
+      const seen = new Set<string>();
+      for (const group of PRIORITY_LIST) {
+        for (const token of group) {
+          if (tokenPresent(rawNorm, token)) {
+            const key = token.toUpperCase();
+            if (!seen.has(key)) { seen.add(key); picked.push(token); }
+          }
+        }
+      }
+      return picked;
+    };
+
+    for (const r of rows as any[]) {
+      const titleModel = cleanModel(r.year, String(r.model || ''));
+      const finalTitle = `${r.year} ${titleModel}`.trim();
+      const titleNorm = normalize(finalTitle);
+
+      // Build raw text source (model + description), strip year/brand for fair token detection
+      const rawSource = stripYearAndBrand(`${String(r.model || '')} ${String(r.description || '')}`, r.year);
+      const originalVariantTokens = getOriginalVariantTokens(rawSource);
+      // Filter out tokens that already appear in the cleaned title
+      const removedTokens: string[] = [];
+      const displayTokens: string[] = [];
+      for (const tok of originalVariantTokens) {
+        if (tokenPresent(titleNorm, tok)) {
+          removedTokens.push(tok);
+        } else {
+          displayTokens.push(tok);
+        }
+      }
+      // Limit to max 3
+      const limited = displayTokens.slice(0, 3);
+      if (limited.length > 0) {
+        subtitles_non_empty++;
+      } else if (originalVariantTokens.length > 0) {
+        subtitles_suppressed++;
+        // Per-card debug line to help diagnose suppression
+        console.log(`subtitle_suppressed_all_tokens_in_title: ${JSON.stringify({ title: finalTitle, originalVariantTokens, removedTokens })}`);
+      }
+    }
+
     // Human-friendly scrape summary line for quick verification
-    console.log(`discounted: ${discounted} | msrp_only: ${msrp_only} | call_for_price: ${call_for_price}`);
+    console.log(`discounted: ${discounted} | msrp_only: ${msrp_only} | call_for_price: ${call_for_price} | subtitles_non_empty: ${subtitles_non_empty} | subtitles_suppressed: ${subtitles_suppressed} | total_motors: ${total_motors}`);
 
     const summary = {
       event: 'scrape_inventory_complete',
@@ -208,6 +289,9 @@ Deno.serve(async (req) => {
       discounted,
       msrp_only,
       call_for_price,
+      subtitles_non_empty,
+      subtitles_suppressed,
+      total_motors,
       timestamp: new Date().toISOString(),
     } as const;
     console.log(JSON.stringify(summary))
