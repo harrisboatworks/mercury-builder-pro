@@ -216,24 +216,27 @@ Deno.serve(async (req) => {
     const BRAND_REGEX = /\bmercury(?:\s+marine)?\b|mercury®|^merc\.\b/gi;
     const normalize = (s: string) => ` ${s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()} `;
     const tokenPresent = (haystackNorm: string, token: string) => haystackNorm.includes(` ${token.toLowerCase()} `);
-    const cleanModel = (year: number, model: string) => {
-      let m = model || '';
-      // remove leading year with optional punctuation/spaces
-      const yearRe = new RegExp(`^\\s*${year}[\\s\\-:–—.,]*`, 'i');
-      m = m.replace(yearRe, '');
-      // remove brand tokens (keep product lines like Verado/Pro XS/SeaPro)
-      m = m.replace(BRAND_REGEX, ' ');
-      m = m.replace(/\s+/g, ' ').trim();
-      return m;
-    };
+const cleanModel = (year: number, model: string) => {
+  let m = model || '';
+  const yr = String(year).trim();
+  // Remove ALL leading year tokens (this year or any 20xx), including repeated with punctuation
+  const reYear = new RegExp(`^\\s*(?:${yr}|20\\d{2})(?:\\s|[-:–—·.:])*\\s*`, 'i');
+  while (reYear.test(m)) {
+    m = m.replace(reYear, '');
+  }
+  // remove brand tokens (keep product lines like Verado/Pro XS/SeaPro)
+  m = m.replace(BRAND_REGEX, ' ');
+  m = m.replace(/\s+/g, ' ').trim();
+  return m;
+};
 
-    const stripYearAndBrand = (text: string, year: number) => {
-      let t = text || '';
-      const yearAnyRe = new RegExp(`\\b${year}\\b`, 'gi');
-      t = t.replace(yearAnyRe, ' ');
-      t = t.replace(BRAND_REGEX, ' ');
-      return t;
-    };
+const stripYearAndBrand = (text: string, year: number) => {
+  let t = text || '';
+  const yearAnyRe = new RegExp(`\\b(?:${year}|20\\d{2})\\b`, 'gi');
+  t = t.replace(yearAnyRe, ' ');
+  t = t.replace(BRAND_REGEX, ' ');
+  return t;
+};
 
     const getOriginalVariantTokens = (raw: string): string[] => {
       const rawNorm = normalize(raw);

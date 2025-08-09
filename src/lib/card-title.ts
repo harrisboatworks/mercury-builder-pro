@@ -44,6 +44,8 @@ const PRIORITY_LIST: string[][] = [
   [...START_SHAFT_TRIM_BUNDLES],
 ];
 
+export const BRAND_REGEX = /\bmercury(?:\s+marine)?\b|mercury®|^merc\.\b/gi;
+
 const normalize = (s: string) => ` ${s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()} `;
 
 const tokenPresent = (haystackNorm: string, token: string) => {
@@ -53,9 +55,33 @@ const tokenPresent = (haystackNorm: string, token: string) => {
 
 const toTitleCaseWord = (s: string) => s.replace(/\w\S*/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
 
+// Build the final display title: `${year} ${cleanModel}` with deduped leading years and brand tokens removed
+export function formatMotorTitle(year: number, model: string): string {
+  let s = model ?? '';
+  const yr = String(year).trim();
+  // Strip ALL leading year tokens (this year or any 20xx), including punctuation between repeats
+  const reYear = new RegExp(`^\\s*(?:${yr}|20\\d{2})(?:\\s|[-:–—·.:])*\\s*`, 'i');
+  while (reYear.test(s)) {
+    s = s.replace(reYear, '');
+  }
+  // Brand dedupe (keep product lines like Verado/Pro XS/SeaPro)
+  s = s.replace(BRAND_REGEX, ' ');
+  const cleanModel = s.replace(/\s+/g, ' ').trim();
+  return `${yr} ${cleanModel}`.replace(/\s+/g, ' ').trim();
+}
+
 export function formatVariantSubtitle(raw: string, title: string): string {
   if (!raw) return '';
-  const normalizedRaw = normalize(raw);
+
+  // Remove any standalone year tokens anywhere in the raw string (this year or any 20xx)
+  // Try to infer year from the title if present
+  const inferredYearMatch = title.match(/\b(20\d{2})\b/);
+  const yearPattern = inferredYearMatch ? `(?:${inferredYearMatch[1]}|20\\d{2})` : '(?:20\\d{2})';
+  let cleanedRaw = raw.replace(new RegExp(`\\b${yearPattern}\\b`, 'gi'), ' ');
+  // Remove brand tokens (but keep product lines like Verado/Pro XS/SeaPro)
+  cleanedRaw = cleanedRaw.replace(BRAND_REGEX, ' ');
+
+  const normalizedRaw = normalize(cleanedRaw);
   const normalizedTitle = normalize(title);
 
   const picked: string[] = [];
