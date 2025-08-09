@@ -86,6 +86,9 @@
     --promo-red-2: 0 85% 45%;
     --promo-feature-1: 207 90% 35%;
     --promo-feature-2: 207 85% 45%;
+    /* Premium blue gradient for warranty badges */
+    --premium-blue-1: 217.2 91.2% 59.8%;
+    --premium-blue-2: 221.2 83.2% 53.3%;
   }
 
   .dark {
@@ -432,10 +435,10 @@
     transform: translateY(-1px);
   }
   .promo-badge-warranty {
-    background: linear-gradient(135deg, hsl(var(--promo-gold-1)), hsl(var(--promo-gold-2)));
-    color: hsl(var(--foreground));
+    background: linear-gradient(135deg, hsl(var(--premium-blue-1)), hsl(var(--premium-blue-2)));
+    color: hsl(0 0% 100%);
     border-color: hsl(0 0% 100% / 0.25);
-    box-shadow: 0 4px 12px hsl(var(--promo-gold-1) / 0.35);
+    box-shadow: 0 4px 12px hsl(var(--premium-blue-1) / 0.35);
     animation: subtle-pulse 2s ease-in-out infinite;
   }
   .promo-badge-discount {
@@ -451,6 +454,29 @@
   @keyframes subtle-pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
+  }
+
+  /* Repower banner pulse */
+  .repower-rebate-banner {
+    animation: subtle-pulse 3s ease-in-out infinite;
+  }
+
+  /* Uniform grid spacing for motors */
+  .motors-grid {
+    @apply gap-6 items-stretch;
+  }
+
+  /* Stock badge positioning and sizing */
+  .stock-badge {
+    @apply absolute top-2 right-2 px-2.5 py-1 rounded text-[11px] font-semibold uppercase shadow z-10;
+  }
+
+  /* Compare Mode toggle prominence */
+  .view-mode-toggle {
+    @apply bg-card border-2 border-border rounded-lg p-1 inline-flex gap-1;
+  }
+  .view-mode-toggle .active {
+    @apply bg-primary text-primary-foreground px-4 py-1.5 rounded-md;
   }
 
   /* Benefits ticker for quote summary */

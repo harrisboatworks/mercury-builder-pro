@@ -533,10 +533,10 @@ const categoryCounts: Record<string, number> = {
 
   const getStockBadgeColor = (status: string) => {
     switch (status) {
-      case 'In Stock': return 'bg-green-500 text-white hover:bg-green-600';
-      case 'On Order': return 'bg-yellow-500 text-white hover:bg-yellow-600';
-      case 'Out of Stock': return 'bg-red-500 text-white hover:bg-red-600';
-      default: return 'bg-gray-500 text-white hover:bg-gray-600';
+      case 'In Stock': return 'bg-in-stock text-in-stock-foreground';
+      case 'On Order': return 'bg-on-order text-on-order-foreground';
+      case 'Out of Stock': return 'bg-out-of-stock text-out-of-stock-foreground';
+      default: return 'bg-muted text-muted-foreground';
     }
   };
 
@@ -768,7 +768,7 @@ const handleMotorSelection = (motor: Motor) => {
         </div>
 
         {/* Repower rebate banner (Phase 1) */}
-        <div className="rounded-md p-3 text-center text-sm font-semibold bg-[linear-gradient(135deg,hsl(var(--promo-gold-1)),hsl(var(--promo-gold-2)))] shadow-md animate-[subtle-pulse_3s_ease-in-out_infinite]">
+        <div className="repower-rebate-banner rounded-md p-3 text-center text-sm font-semibold bg-[linear-gradient(135deg,hsl(var(--promo-gold-1)),hsl(var(--promo-gold-2)))] shadow-md">
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <span>💰 Repower Rebate Available! Trading in? You may qualify for additional savings.</span>
             <Button size="sm" variant="secondary" onClick={() => setShowRebateModal(true)}>Learn More</Button>
@@ -776,23 +776,25 @@ const handleMotorSelection = (motor: Motor) => {
         </div>
 
         {/* Browse vs Compare Mode (Phase 1) */}
-        <div className="flex items-center justify-center gap-2">
-          <Button
-            variant={selectionMode === 'browse' ? 'default' : 'outline'}
-            size="sm"
-            onClick={() => handleSelectionModeToggle('browse')}
-            className="flex items-center gap-2"
-          >
-            <Eye className="w-4 h-4" /> Browse Mode
-          </Button>
-          <Button
-            variant={selectionMode === 'compare' ? 'default' : 'outline'}
-            size="sm"
-            onClick={() => handleSelectionModeToggle('compare')}
-            className="flex items-center gap-2"
-          >
-            <Scale className="w-4 h-4" /> Compare Mode
-          </Button>
+        <div className="flex justify-center">
+          <div className="view-mode-toggle">
+            <Button
+              variant={selectionMode === 'browse' ? 'default' : 'outline'}
+              size="sm"
+              onClick={() => handleSelectionModeToggle('browse')}
+              className={`flex items-center gap-2 ${selectionMode === 'browse' ? 'active' : ''}`}
+            >
+              <Eye className="w-4 h-4" /> Browse Mode
+            </Button>
+            <Button
+              variant={selectionMode === 'compare' ? 'default' : 'outline'}
+              size="sm"
+              onClick={() => handleSelectionModeToggle('compare')}
+              className={`flex items-center gap-2 ${selectionMode === 'compare' ? 'active' : ''}`}
+            >
+              <Scale className="w-4 h-4" /> Compare Mode
+            </Button>
+          </div>
         </div>
 
         {filteredMotors.length === 0 ? (
@@ -800,7 +802,7 @@ const handleMotorSelection = (motor: Motor) => {
             <p className="text-muted-foreground">No motors found matching your filters.</p>
           </Card>
         ) : (
-          <div className={`grid gap-4 items-start ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1'}`}>
+          <div className={`grid motors-grid items-stretch ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1'}`}>
             {filteredMotors.map(motor => {
               const msrp = motor.basePrice && motor.basePrice > 0 ? motor.basePrice : null;
               const sale = motor.salePrice && motor.salePrice > 0 ? motor.salePrice : null;
@@ -853,13 +855,14 @@ const handleMotorSelection = (motor: Motor) => {
                     </div>
                   )}
 
+                  <Badge className={`stock-badge ${getStockBadgeColor(motor.stockStatus)}`}>
+                    {motor.stockStatus}
+                  </Badge>
+
                   <div className="p-3 space-y-3 relative h-full flex flex-col">
-                    <div className="flex items-start justify-between">
+                    <div className="flex items-start justify-start">
                       <Badge variant={getCategoryColor(motor.category)}>
                         {motor.hp}HP
-                      </Badge>
-                      <Badge className={getStockBadgeColor(motor.stockStatus)}>
-                        {motor.stockStatus}
                       </Badge>
                     </div>
 
