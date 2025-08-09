@@ -844,7 +844,7 @@ const handleMotorSelection = (motor: Motor) => {
                       : ''
                   } ${
                     isCompared(motor.id) ? 'ring-2 ring-primary border-primary bg-primary/5 scale-[1.02]' : ''
-                  } flex flex-col h-[420px]`}
+                  } flex flex-col h-[400px]`}
                   onClick={() => selectionMode === 'compare' ? toggleCompare(motor) : handleMotorSelection(motor)}
                 >
                   {isCompared(motor.id) && (
@@ -882,15 +882,12 @@ const subtitle = formatVariantSubtitle(raw, title);
                     </div>
 
       {motor.image && motor.image !== '/placeholder.svg' && (
-        <div className="motor-image-container image-wrap w-full h-[220px] bg-muted/10 overflow-hidden flex items-center justify-center rounded-lg py-3 px-2.5 relative">
+        <div className="motor-image-container image-wrap w-full flex-1 min-h-[250px] bg-muted/10 overflow-visible flex items-center justify-center rounded-lg py-3 px-2.5 relative">
           <img 
             src={motor.image} 
             alt={motor.model}
             loading="lazy"
-            width={400}
-            height={200}
-            className="motor-image object-contain w-[90%] h-[90%] max-w-none max-h-[200px]"
-            style={{ imageRendering: 'crisp-edges' }}
+            className="motor-image object-contain h-full w-auto max-w-full"
           />
           {selectedMotor?.id === motor.id && (
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
