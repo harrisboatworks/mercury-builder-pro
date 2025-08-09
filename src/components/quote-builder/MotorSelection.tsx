@@ -108,9 +108,10 @@ const getPromoLabelsForMotor = (motor: Motor): string[] => {
 interface MotorSelectionProps {
   onStepComplete: (motor: Motor) => void;
   noSalePriceLayout?: 'default' | 'placeholder' | 'centered';
+  imageSizingMode?: 'current' | 'taller' | 'scale-msrp';
 }
 
-export const MotorSelection = ({ onStepComplete, noSalePriceLayout = 'placeholder' }: MotorSelectionProps) => {
+export const MotorSelection = ({ onStepComplete, noSalePriceLayout = 'placeholder', imageSizingMode = 'current' }: MotorSelectionProps) => {
   const { toast } = useToast();
   const isMobile = useIsMobile();
   const [motors, setMotors] = useState<Motor[]>([]);
@@ -145,6 +146,13 @@ const paramNoSaleLayout: 'placeholder' | 'centered' | null =
   urlLayout === 'placeholder' || urlLayout === 'centered' ? (urlLayout as 'placeholder' | 'centered') : null;
 const effectiveNoSaleLayout: 'default' | 'placeholder' | 'centered' =
   (paramNoSaleLayout as any) ?? noSalePriceLayout;
+
+// Staging-only image sizing override via ?imgMode=current|taller|scale-msrp
+const urlImgMode = isStagingRoute ? new URLSearchParams(window.location.search).get('imgMode') : null;
+const paramImgMode: 'current' | 'taller' | 'scale-msrp' | null =
+  urlImgMode === 'taller' || urlImgMode === 'scale-msrp' || urlImgMode === 'current' ? (urlImgMode as any) : null;
+const effectiveImageSizingMode: 'current' | 'taller' | 'scale-msrp' =
+  (paramImgMode as any) ?? imageSizingMode;
 
 const navigate = useNavigate();
 
@@ -872,23 +880,23 @@ const subtitle = formatVariantSubtitle(raw, title);
                       })()}
                     </div>
 
-                      {motor.image && motor.image !== '/placeholder.svg' && (
-                        <div className="motor-image-container image-wrap w-full h-48 md:h-56 lg:h-64 flex items-center justify-center bg-muted/20 rounded-lg overflow-hidden relative">
-                          <img 
-                            src={motor.image} 
-                            alt={motor.model}
-                            loading="lazy"
-                            width={520}
-                            height={520}
-                            className="max-w-full max-h-full object-contain"
-                          />
-                          {selectedMotor?.id === motor.id && (
-                            <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
-                              <Check className="w-20 h-20 text-green-600 drop-shadow-lg animate-scale-in checkmark-icon" strokeWidth={4} aria-hidden="true" />
-                            </div>
-                          )}
-                        </div>
-                      )}
+      {motor.image && motor.image !== '/placeholder.svg' && (
+        <div className={`motor-image-container image-wrap w-full ${effectiveImageSizingMode === 'taller' ? 'h-52 md:h-60 lg:h-68' : 'h-48 md:h-56 lg:h-64'} flex items-center justify-center bg-muted/20 rounded-lg overflow-hidden relative`}>
+          <img 
+            src={motor.image} 
+            alt={motor.model}
+            loading="lazy"
+            width={520}
+            height={520}
+            className={`max-w-full max-h-full object-contain ${effectiveImageSizingMode === 'scale-msrp' && !sale ? 'scale-105' : ''}`}
+          />
+          {selectedMotor?.id === motor.id && (
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
+              <Check className="w-20 h-20 text-green-600 drop-shadow-lg animate-scale-in checkmark-icon" strokeWidth={4} aria-hidden="true" />
+            </div>
+          )}
+        </div>
+      )}
 
                     <div className="flex items-center justify-between pt-5">
                       <div className="w-full">
