@@ -130,7 +130,49 @@ const [quickViewMotor, setQuickViewMotor] = useState<Motor | null>(null);
 const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
 const [showComparePanel, setShowComparePanel] = useState(false);
 
-  // Load motors from database
+// Automatic inventory refresh state
+const [lastInventoryUpdate, setLastInventoryUpdate] = useState<string | null>(
+  typeof localStorage !== 'undefined' ? localStorage.getItem('lastInventoryUpdate') : null
+);
+
+const needsInventoryUpdate = () => {
+  if (!lastInventoryUpdate) return true;
+  const last = new Date(lastInventoryUpdate);
+  const now = new Date();
+  const hours = (now.getTime() - last.getTime()) / (1000 * 60 * 60);
+  return hours >= 24;
+};
+
+const formatRelativeTime = (timestamp: string) => {
+  const date = new Date(timestamp);
+  const now = new Date();
+  const diffMs = now.getTime() - date.getTime();
+  const hours = Math.floor(diffMs / (1000 * 60 * 60));
+  if (hours < 1) return 'Just now';
+  if (hours === 1) return '1 hour ago';
+  if (hours < 24) return `${hours} hours ago`;
+  if (hours < 48) return 'Yesterday';
+  return `${Math.floor(hours / 24)} days ago`;
+};
+
+// Auto-update on load and check hourly
+useEffect(() => {
+  const checkAndUpdateInventory = async () => {
+    try {
+      if (needsInventoryUpdate()) {
+        await updateInventory();
+      }
+    } catch (e) {
+      console.warn('Auto inventory update skipped:', e);
+    }
+  };
+
+  checkAndUpdateInventory();
+  const interval = setInterval(checkAndUpdateInventory, 60 * 60 * 1000);
+  return () => clearInterval(interval);
+}, []);
+
+// Load motors from database
   useEffect(() => {
     loadMotors();
   }, []);
@@ -363,22 +405,28 @@ const [showComparePanel, setShowComparePanel] = useState(false);
     setUpdating(true);
     try {
       const { data, error } = await supabase.functions.invoke('scrape-inventory');
-      
       if (error) throw error;
-      
-      toast({
-        title: "Success", 
-        description: `Updated ${data.count} motors from Harris Boat Works`,
-      });
-      
+
       // Reload motors after update
       await loadMotors();
+
+      // Save last update timestamp
+      const nowIso = new Date().toISOString();
+      try {
+        localStorage.setItem('lastInventoryUpdate', nowIso);
+      } catch {}
+      setLastInventoryUpdate(nowIso);
+
+      toast({
+        title: 'Success',
+        description: `Updated ${data?.count ?? ''} motors from Harris Boat Works`,
+      });
     } catch (error) {
       console.error('Error updating inventory:', error);
       toast({
-        title: "Error",
-        description: "Failed to update inventory",
-        variant: "destructive"
+        title: 'Error',
+        description: 'Failed to update inventory',
+        variant: 'destructive',
       });
     } finally {
       setUpdating(false);
@@ -616,24 +664,32 @@ const handleMotorSelection = (motor: Motor) => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Choose from our current inventory of Mercury outboard motors. All prices and availability are updated from Harris Boat Works.
           </p>
-          <Button 
-            onClick={updateInventory} 
-            disabled={updating}
-            variant="outline"
-            size="sm"
-          >
-            {updating ? (
-              <>
-                <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
-                Updating...
-              </>
-            ) : (
-              <>
-                <RefreshCw className="w-4 h-4 mr-2" />
-                Update Inventory
-              </>
-            )}
-          </Button>
+          <div className="flex items-center justify-center gap-3 flex-wrap">
+            <span className="text-sm text-muted-foreground">
+              Last updated: {lastInventoryUpdate ? formatRelativeTime(lastInventoryUpdate) : 'Never'}
+            </span>
+            <Badge variant={needsInventoryUpdate() ? 'destructive' : 'secondary'}>
+              {needsInventoryUpdate() ? 'Update recommended' : 'Fresh'}
+            </Badge>
+            <Button 
+              onClick={updateInventory} 
+              disabled={updating}
+              variant="outline"
+              size="sm"
+            >
+              {updating ? (
+                <>
+                  <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
+                  Updating...
+                </>
+              ) : (
+                <>
+                  <RefreshCw className="w-4 h-4 mr-2" />
+                  Update Inventory
+                </>
+              )}
+            </Button>
+          </div>
         </div>
 
         {/* Repower rebate banner (Phase 1) */}
