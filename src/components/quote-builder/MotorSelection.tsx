@@ -871,11 +871,6 @@ const handleMotorSelection = (motor: Motor) => {
                             <p className="text-xl font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</p>
                           )}
                         </div>
-                        {debugPricing && (
-                          <div className="mt-1 text-xs font-mono text-muted-foreground">
-                            [msrp: {msrp ?? 'null'} | sale: {sale ?? 'null'}]
-                          </div>
-                        )}
                       </div>
                       <div className="flex flex-col items-end gap-1">
                         <div className="flex items-center gap-2">

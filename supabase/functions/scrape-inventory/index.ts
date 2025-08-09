@@ -183,12 +183,33 @@ Deno.serve(async (req) => {
       throw error
     }
 
+    // Compute simple status counts for logging
+    let discounted = 0, msrp_only = 0, call_for_price = 0;
+    const rows = Array.isArray(data) ? data : [];
+    for (const r of rows as any[]) {
+      const base = typeof r.base_price === 'number' ? r.base_price : 0;
+      const sale = typeof r.sale_price === 'number' ? r.sale_price : null;
+      if (!(base > 0)) {
+        call_for_price++;
+      } else if (typeof sale === 'number' && sale > 0 && sale < base) {
+        discounted++;
+      } else {
+        msrp_only++;
+      }
+    }
+
+    // Human-friendly scrape summary line for quick verification
+    console.log(`discounted: ${discounted} | msrp_only: ${msrp_only} | call_for_price: ${call_for_price}`);
+
     const summary = {
       event: 'scrape_inventory_complete',
-      updatedCount: data?.length || 0,
+      updatedCount: rows.length,
       collectedCount: motors.length,
+      discounted,
+      msrp_only,
+      call_for_price,
       timestamp: new Date().toISOString(),
-    }
+    } as const;
     console.log(JSON.stringify(summary))
 
     return new Response(
