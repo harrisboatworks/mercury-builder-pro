@@ -107,9 +107,10 @@ const getPromoLabelsForMotor = (motor: Motor): string[] => {
 
 interface MotorSelectionProps {
   onStepComplete: (motor: Motor) => void;
+  noSalePriceLayout?: 'default' | 'placeholder' | 'centered';
 }
 
-export const MotorSelection = ({ onStepComplete }: MotorSelectionProps) => {
+export const MotorSelection = ({ onStepComplete, noSalePriceLayout = 'default' }: MotorSelectionProps) => {
   const { toast } = useToast();
   const isMobile = useIsMobile();
   const [motors, setMotors] = useState<Motor[]>([]);
@@ -880,7 +881,7 @@ const subtitle = formatVariantSubtitle(raw, title);
 
                     <div className="flex items-center justify-between pt-5">
                       <div className="w-full">
-                        <div className="price-area min-h-[92px] md:min-h-[120px] flex flex-col justify-between">
+                        <div className={`price-area min-h-[92px] md:min-h-[120px] flex ${(!hasSaleDisplay && !callForPrice && noSalePriceLayout === 'centered') ? 'items-center justify-center' : 'flex-col justify-between'}`}>
                         {/* Mobile: inline compact */}
                         <div className="md:hidden">
                           {callForPrice ? (
@@ -896,7 +897,17 @@ const subtitle = formatVariantSubtitle(raw, title);
                               </div>
                             </>
                           ) : (
-                            <span className="text-lg font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
+                            noSalePriceLayout === 'placeholder' ? (
+                              <>
+                                <span className="text-lg font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
+                                <div className="flex items-center gap-2 flex-wrap mt-1 opacity-0 select-none pointer-events-none" aria-hidden="true">
+                                  <span className="text-lg font-bold">Our Price $0</span>
+                                  <span className="text-xs font-semibold px-2 py-1 rounded-full">SAVE $0 (0%)</span>
+                                </div>
+                              </>
+                            ) : (
+                              <span className="text-lg font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
+                            )
                           )}
                         </div>
                         {/* Desktop: stacked with badge below */}
@@ -912,7 +923,17 @@ const subtitle = formatVariantSubtitle(raw, title);
                               </div>
                             </div>
                           ) : (
-                            <p className="text-xl font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</p>
+                            noSalePriceLayout === 'placeholder' ? (
+                              <div className="space-y-1 pt-1">
+                                <p className="text-xl font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</p>
+                                <p className="text-2xl font-bold text-transparent select-none">Our Price $0</p>
+                                <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold opacity-0 select-none" aria-hidden="true">
+                                  SAVE $0 (0%)
+                                </div>
+                              </div>
+                            ) : (
+                              <p className="text-xl font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</p>
+                            )
                           )}
                         </div>
                         </div>

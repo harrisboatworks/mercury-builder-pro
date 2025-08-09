@@ -12,6 +12,7 @@ import AdminPromotions from "./pages/AdminPromotions";
 import AdminQuotes from "./pages/AdminQuotes";
 import AdminQuoteDetail from "./pages/AdminQuoteDetail";
 import FinanceCalculator from "./pages/FinanceCalculator";
+import StagingPricingTweaks from "./pages/StagingPricingTweaks";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
               }
             />
             <Route path="/finance-calculator" element={<FinanceCalculator />} />
+            <Route path="/staging/pricing-spacing" element={<StagingPricingTweaks />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
