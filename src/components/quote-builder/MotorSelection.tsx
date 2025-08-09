@@ -852,10 +852,10 @@ const raw = `${motor.model ?? ''} ${motor.description ?? motor.specs ?? ''}`.tri
 const subtitle = formatVariantSubtitle(raw, title);
                         return (
                           <>
-                            <h3 className="text-lg md:text-xl font-semibold text-foreground line-clamp-2">{title}</h3>
+                            <h3 className="text-lg md:text-[22px] font-semibold text-foreground line-clamp-2">{title}</h3>
                             <div className="min-h-[1.25rem]">
                               {subtitle ? (
-                                <p className="text-foreground/80 text-sm line-clamp-2" title={subtitle}>{subtitle}</p>
+                                <p className="text-foreground/90 text-sm line-clamp-2" title={subtitle}>{subtitle}</p>
                               ) : null}
                             </div>
                           </>
