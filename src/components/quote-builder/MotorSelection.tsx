@@ -138,6 +138,13 @@ const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
 const [showComparePanel, setShowComparePanel] = useState(false);
 const debugPricing = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
 
+// Allow URL param override for the no-sale price layout when prop is not set
+const urlLayout = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('noSalePriceLayout') : null;
+const paramNoSaleLayout: 'default' | 'placeholder' | 'centered' =
+  urlLayout === 'placeholder' || urlLayout === 'centered' ? (urlLayout as 'placeholder' | 'centered') : 'default';
+const effectiveNoSaleLayout: 'default' | 'placeholder' | 'centered' =
+  noSalePriceLayout !== 'default' ? noSalePriceLayout : paramNoSaleLayout;
+
 const navigate = useNavigate();
 
 const track = (name: string, payload: Record<string, any>) => {
@@ -881,7 +888,7 @@ const subtitle = formatVariantSubtitle(raw, title);
 
                     <div className="flex items-center justify-between pt-5">
                       <div className="w-full">
-                        <div className={`price-area min-h-[92px] md:min-h-[120px] flex ${(!hasSaleDisplay && !callForPrice && noSalePriceLayout === 'centered') ? 'items-center justify-center' : 'flex-col justify-between'}`}>
+                        <div className={`price-area min-h-[92px] md:min-h-[120px] flex ${(!hasSaleDisplay && !callForPrice && effectiveNoSaleLayout === 'centered') ? 'items-center justify-center' : 'flex-col justify-between'}`}>
                         {/* Mobile: inline compact */}
                         <div className="md:hidden">
                           {callForPrice ? (
@@ -897,7 +904,7 @@ const subtitle = formatVariantSubtitle(raw, title);
                               </div>
                             </>
                           ) : (
-                            noSalePriceLayout === 'placeholder' ? (
+                            effectiveNoSaleLayout === 'placeholder' ? (
                               <>
                                 <span className="text-lg font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
                                 <div className="flex items-center gap-2 flex-wrap mt-1 opacity-0 select-none pointer-events-none" aria-hidden="true">
@@ -923,11 +930,11 @@ const subtitle = formatVariantSubtitle(raw, title);
                               </div>
                             </div>
                           ) : (
-                            noSalePriceLayout === 'placeholder' ? (
+                            effectiveNoSaleLayout === 'placeholder' ? (
                               <div className="space-y-1 pt-1">
                                 <p className="text-xl font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</p>
-                                <p className="text-2xl font-bold text-transparent select-none">Our Price $0</p>
-                                <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold opacity-0 select-none" aria-hidden="true">
+                                <p className="text-2xl font-bold text-transparent select-none pointer-events-none" aria-hidden="true">Our Price $0</p>
+                                <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold opacity-0 select-none pointer-events-none" aria-hidden="true">
                                   SAVE $0 (0%)
                                 </div>
                               </div>
