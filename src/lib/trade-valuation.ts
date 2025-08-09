@@ -19,6 +19,29 @@ export interface TradeValueEstimate {
   factors: string[];
 }
 
+// Config (could be wired to env; kept in-code due to app constraints)
+export const TRADEIN_BRAND_PENALTIES: Record<string, number> = {
+  JOHNSON: 0.5,
+  EVINRUDE: 0.5,
+};
+export const TRADEIN_MIN_VALUE = 100;
+
+export function normalizeBrand(input?: string): string {
+  return (input || '').trim().toUpperCase();
+}
+
+export function getBrandPenaltyFactor(brand?: string): number {
+  const b = normalizeBrand(brand);
+  if (!b) return 1;
+  // If the brand string contains any penalized brand name, apply the most severe (lowest factor)
+  let factor = 1;
+  for (const key of Object.keys(TRADEIN_BRAND_PENALTIES)) {
+    if (b.includes(key)) {
+      factor = Math.min(factor, TRADEIN_BRAND_PENALTIES[key]);
+    }
+  }
+  return factor;
+}
 // Trade value database with common outboard values (in CAD)
 const tradeValues = {
   'Mercury': {
@@ -146,14 +169,18 @@ export function estimateTradeValue(tradeInfo: Partial<TradeInInfo>): TradeValueE
     const conditionMultiplier = { excellent: 1.2, good: 1.0, fair: 0.75, poor: 0.45 }[condition];
     
     const estimatedValue = baseValue * ageDepreciation * conditionMultiplier;
+    let low = estimatedValue * 0.85;
+    let high = estimatedValue * 1.15;
+    const factors: string[] = ['Unknown brand', 'Estimated depreciation'];
+    const adj = applyBrandPenaltyToRange(low, high, brand, factors);
     
     return {
-      low: estimatedValue * 0.85,
-      high: estimatedValue * 1.15,
-      average: estimatedValue,
+      low: adj.low,
+      high: adj.high,
+      average: (adj.low + adj.high) / 2,
       confidence: 'low',
       source: 'Generic estimate',
-      factors: ['Unknown brand', 'Estimated depreciation']
+      factors: adj.factors
     };
   }
   
@@ -168,14 +195,18 @@ export function estimateTradeValue(tradeInfo: Partial<TradeInInfo>): TradeValueE
     const baseValue = horsepower * 25;
     const conditionMultiplier = { excellent: 1.0, good: 0.8, fair: 0.6, poor: 0.35 }[condition];
     const estimatedValue = baseValue * conditionMultiplier;
+    let low = estimatedValue * 0.8;
+    let high = estimatedValue * 1.2;
+    const factors = ['Motor age over 10 years'];
+    const adj = applyBrandPenaltyToRange(low, high, brand, factors);
     
     return {
-      low: estimatedValue * 0.8,
-      high: estimatedValue * 1.2,
-      average: estimatedValue,
+      low: adj.low,
+      high: adj.high,
+      average: (adj.low + adj.high) / 2,
       confidence: 'low',
       source: 'Age-based estimate',
-      factors: ['Motor age over 10 years']
+      factors: adj.factors
     };
   }
   
@@ -223,20 +254,27 @@ export function estimateTradeValue(tradeInfo: Partial<TradeInInfo>): TradeValueE
     factors.push('Older motor age estimate');
   }
   
+  const preLow = finalValue * 0.85;
+  const preHigh = finalValue * 1.15;
+  const adj = applyBrandPenaltyToRange(preLow, preHigh, brand, factors);
+  
   return {
-    low: finalValue * 0.85,
-    high: finalValue * 1.15,
-    average: finalValue,
+    low: adj.low,
+    high: adj.high,
+    average: (adj.low + adj.high) / 2,
     confidence,
     source: 'Harris Boat Works trade database',
-    factors: factors.length > 0 ? factors : ['Exact model match found']
+    factors: adj.factors.length > 0 ? adj.factors : ['Exact model match found']
   };
 }
 
 // Compute the median of a low/high range and round to the nearest $25
+// Compute the median of a low/high range and round to the nearest $25 (with min floor)
 export function medianRoundedTo25(low: number, high: number): number {
   const median = (low + high) / 2;
-  return Math.round(median / 25) * 25;
+  let rounded = Math.round(median / 25) * 25;
+  if (rounded < TRADEIN_MIN_VALUE) rounded = TRADEIN_MIN_VALUE;
+  return rounded;
 }
 
 export function getTradeValueFactors(): string[] {
@@ -248,4 +286,39 @@ export function getTradeValueFactors(): string[] {
     'Local demand',
     'Seasonal timing'
   ];
+}
+
+// Apply brand penalty and floors to a low/high range
+export function applyBrandPenaltyToRange(low: number, high: number, brand?: string, factors: string[] = []) {
+  const originalLow = low;
+  const originalHigh = high;
+  const factor = getBrandPenaltyFactor(brand);
+  let adjustedLow = low;
+  let adjustedHigh = high;
+  let penaltyApplied = false;
+
+  if (factor < 1) {
+    adjustedLow = Math.max(originalLow * factor, TRADEIN_MIN_VALUE);
+    adjustedHigh = Math.max(originalHigh * factor, TRADEIN_MIN_VALUE);
+    penaltyApplied = true;
+    const note = 'Adjusted for brand (-50%) — Manufacturer out of business; parts & service availability limited.';
+    if (!factors.includes(note)) factors.push(note);
+
+    const chosen = medianRoundedTo25(adjustedLow, adjustedHigh);
+    console.log(
+      `tradein_penalty_applied brand=${normalizeBrand(brand)} factor=${factor} original_low=${originalLow} original_high=${originalHigh} adjusted_low=${adjustedLow} adjusted_high=${adjustedHigh} chosen=${chosen}`
+    );
+  }
+
+  // Enforce floors even when no penalty
+  adjustedLow = Math.max(adjustedLow, TRADEIN_MIN_VALUE);
+  adjustedHigh = Math.max(adjustedHigh, TRADEIN_MIN_VALUE);
+
+  return { low: adjustedLow, high: adjustedHigh, factors, penaltyApplied, factor } as const;
+}
+
+// Helper for tests and utilities
+export function computeRoundedTradeIn(low: number, high: number, brand?: string) {
+  const { low: l2, high: h2 } = applyBrandPenaltyToRange(low, high, brand, []);
+  return { low: l2, high: h2, rounded: medianRoundedTo25(l2, h2) } as const;
 }

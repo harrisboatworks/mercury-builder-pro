@@ -8,7 +8,7 @@ import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, DollarSign, Star, AlertTriangle, CheckCircle2 } from 'lucide-react';
-import { estimateTradeValue, getTradeValueFactors, medianRoundedTo25, type TradeValueEstimate, type TradeInInfo } from '@/lib/trade-valuation';
+import { estimateTradeValue, getTradeValueFactors, medianRoundedTo25, getBrandPenaltyFactor, type TradeValueEstimate, type TradeInInfo } from '@/lib/trade-valuation';
 
 interface TradeInValuationProps {
   tradeInInfo: TradeInInfo;
@@ -291,22 +291,30 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
                           <span>{factor}</span>
                         </div>
                       ))}
+                      </div>
                     </div>
-                  </div>
 
-                  {estimate.factors.length > 0 && (
-                    <div className="pt-3 border-t border-green-200 dark:border-green-800">
-                      <p className="text-sm font-medium mb-1">Applied Adjustments:</p>
-                      <ul className="text-sm space-y-1">
-                        {estimate.factors.map((factor, index) => (
-                          <li key={index} className="flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                            <span>{factor}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                    {/* Brand penalty notice */}
+                    {getBrandPenaltyFactor(tradeInInfo.brand) < 1 && (
+                      <div className="mt-2 text-xs text-orange-700 dark:text-orange-300 flex items-center gap-2">
+                        <AlertTriangle className="w-3 h-3" />
+                        <span>Adjusted for brand (-50%) — Manufacturer out of business; parts & service availability limited.</span>
+                      </div>
+                    )}
+
+                    {estimate.factors.length > 0 && (
+                      <div className="pt-3 border-t border-green-200 dark:border-green-800">
+                        <p className="text-sm font-medium mb-1">Applied Adjustments:</p>
+                        <ul className="text-sm space-y-1">
+                          {estimate.factors.map((factor, index) => (
+                            <li key={index} className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                              <span>{factor}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
 
                   <Alert className="border-orange-200 bg-orange-50 dark:bg-orange-950/20">
                     <AlertTriangle className="w-4 h-4" />
