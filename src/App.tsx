@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import AdminPromotions from "./pages/AdminPromotions";
 import AdminQuotes from "./pages/AdminQuotes";
 import AdminQuoteDetail from "./pages/AdminQuoteDetail";
+import FinanceCalculator from "./pages/FinanceCalculator";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ const App = () => (
                 </ProtectedRoute>
               }
             />
+            <Route path="/finance-calculator" element={<FinanceCalculator />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
