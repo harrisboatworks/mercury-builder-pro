@@ -254,7 +254,24 @@ useEffect(() => {
         };
       });
 
-      setMotors(transformedMotors);
+      // Debug-only: simulate a few discounted items so card UI can be verified
+      const simulatedMotors: Motor[] = (() => {
+        if (!debugPricing) return transformedMotors;
+        const arr = [...transformedMotors];
+        const discounts = [0.15, 0.10, 0.08]; // 15%, 10%, 8%
+        let applied = 0;
+        for (let i = 0; i < arr.length && applied < discounts.length; i++) {
+          const m = arr[i];
+          if (m.basePrice && m.basePrice > 0) {
+            const sale = Math.max(1, Math.round(m.basePrice * (1 - discounts[applied])));
+            arr[i] = { ...m, salePrice: sale };
+            applied++;
+          }
+        }
+        return arr;
+      })();
+
+      setMotors(simulatedMotors);
     } catch (error) {
       console.error('Error loading motors or promotions:', error);
       toast({
