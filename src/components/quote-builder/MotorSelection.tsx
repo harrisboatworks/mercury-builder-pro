@@ -11,6 +11,7 @@ import { MotorFilters } from './MotorFilters';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { getPriceDisplayState } from '@/lib/pricing';
+import { formatVariantSubtitle } from '@/lib/card-title';
 
 // Database types
 interface DbMotor {
@@ -835,13 +836,13 @@ const handleMotorSelection = (motor: Motor) => {
                       {(() => {
                         const title = `${motor.year} ${motor.model}`;
                         const raw = motor.description || motor.specs || '';
-                        const variant = deriveVariant(raw, title);
+                        const subtitle = formatVariantSubtitle(raw, title);
                         return (
                           <>
                             <h3 className="text-xl font-semibold text-foreground">{title}</h3>
                             <div className="min-h-[1.25rem]">
-                              {variant && variant.length > 0 ? (
-                                <p className="text-muted-foreground text-sm truncate" title={variant}>{variant}</p>
+                              {subtitle ? (
+                                <p className="text-muted-foreground text-sm truncate" title={subtitle}>{subtitle}</p>
                               ) : null}
                             </div>
                           </>
