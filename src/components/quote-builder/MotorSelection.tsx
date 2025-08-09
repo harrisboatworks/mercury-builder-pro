@@ -174,6 +174,15 @@ useEffect(() => {
   return () => clearInterval(interval);
 }, []);
 
+// One-off manual scrape trigger via query param
+useEffect(() => {
+  const run = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('runScrape') === '1';
+  if (run) {
+    console.log('[inventory] Manual scrape requested via ?runScrape=1');
+    updateInventory();
+  }
+}, []);
+
 // Load motors from database
   useEffect(() => {
     loadMotors();
