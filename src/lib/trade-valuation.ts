@@ -8,6 +8,15 @@ export interface TradeInInfo {
   condition: 'excellent' | 'good' | 'fair' | 'poor';
   estimatedValue: number;
   confidenceLevel: 'high' | 'medium' | 'low';
+  // Optional audit fields for pre/post penalty values
+  rangePrePenaltyLow?: number;
+  rangePrePenaltyHigh?: number;
+  rangeFinalLow?: number;
+  rangeFinalHigh?: number;
+  tradeinValuePrePenalty?: number;
+  tradeinValueFinal?: number;
+  penaltyApplied?: boolean;
+  penaltyFactor?: number;
 }
 
 export interface TradeValueEstimate {
@@ -17,6 +26,11 @@ export interface TradeValueEstimate {
   confidence: 'high' | 'medium' | 'low';
   source: string;
   factors: string[];
+  // Audit fields
+  prePenaltyLow?: number;
+  prePenaltyHigh?: number;
+  penaltyApplied?: boolean;
+  penaltyFactor?: number;
 }
 
 // Config (could be wired to env; kept in-code due to app constraints)
@@ -180,7 +194,11 @@ export function estimateTradeValue(tradeInfo: Partial<TradeInInfo>): TradeValueE
       average: (adj.low + adj.high) / 2,
       confidence: 'low',
       source: 'Generic estimate',
-      factors: adj.factors
+      factors: adj.factors,
+      prePenaltyLow: low,
+      prePenaltyHigh: high,
+      penaltyApplied: adj.penaltyApplied,
+      penaltyFactor: adj.factor
     };
   }
   
@@ -206,7 +224,11 @@ export function estimateTradeValue(tradeInfo: Partial<TradeInInfo>): TradeValueE
       average: (adj.low + adj.high) / 2,
       confidence: 'low',
       source: 'Age-based estimate',
-      factors: adj.factors
+      factors: adj.factors,
+      prePenaltyLow: low,
+      prePenaltyHigh: high,
+      penaltyApplied: adj.penaltyApplied,
+      penaltyFactor: adj.factor
     };
   }
   
@@ -264,7 +286,11 @@ export function estimateTradeValue(tradeInfo: Partial<TradeInInfo>): TradeValueE
     average: (adj.low + adj.high) / 2,
     confidence,
     source: 'Harris Boat Works trade database',
-    factors: adj.factors.length > 0 ? adj.factors : ['Exact model match found']
+    factors: adj.factors.length > 0 ? adj.factors : ['Exact model match found'],
+    prePenaltyLow: preLow,
+    prePenaltyHigh: preHigh,
+    penaltyApplied: adj.penaltyApplied,
+    penaltyFactor: adj.factor
   };
 }
 
@@ -306,7 +332,7 @@ export function applyBrandPenaltyToRange(low: number, high: number, brand?: stri
 
     const chosen = medianRoundedTo25(adjustedLow, adjustedHigh);
     console.log(
-      `tradein_penalty_applied brand=${normalizeBrand(brand)} factor=${factor} original_low=${originalLow} original_high=${originalHigh} adjusted_low=${adjustedLow} adjusted_high=${adjustedHigh} chosen=${chosen}`
+      `tradein_penalty_applied penalty_reason="brand_out_of_business" brand=${normalizeBrand(brand)} factor=${factor} original_low=${originalLow} original_high=${originalHigh} adjusted_low=${adjustedLow} adjusted_high=${adjustedHigh} chosen=${chosen}`
     );
   }
 

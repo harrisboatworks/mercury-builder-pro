@@ -2,6 +2,7 @@ import jsPDF from 'jspdf';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { QuoteData } from '@/components/QuoteBuilder';
+import { getBrandPenaltyFactor } from '@/lib/trade-valuation';
 interface PDFQuoteData extends QuoteData {
   customerName: string;
   customerEmail: string;
@@ -155,6 +156,22 @@ export const generateQuotePDF = async (quoteData: PDFQuoteData): Promise<jsPDF> 
     doc.setTextColor(green.r, green.g, green.b);
     doc.text(`-$${formatNumber(tradeValue)}`, 180, priceY + 7, { align: 'right' });
     doc.setTextColor(text.r, text.g, text.b);
+
+    try {
+      const brand = (quoteData.boatInfo?.tradeIn?.brand || '').toString();
+      const factor = getBrandPenaltyFactor(brand);
+      const penaltyApplied = factor < 1;
+      if (penaltyApplied) {
+        // Small warning icon next to amount
+        doc.setFontSize(11);
+        doc.text('⚠', 184, priceY + 7, { align: 'right' });
+        // Footnote under the line
+        doc.setFontSize(9);
+        const prePenalty = (quoteData.boatInfo as any)?.tradeIn?.tradeinValuePrePenalty as number | undefined;
+        const preNote = prePenalty ? ` Was $${formatNumber(prePenalty)} before adjustment.` : '';
+        doc.text(`Adjusted for brand (-50%) — Manufacturer out of business; parts & service availability limited.${preNote}`, 30, priceY + 11);
+      }
+    } catch {}
   }
 
   // Subtotal line

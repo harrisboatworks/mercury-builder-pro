@@ -71,7 +71,18 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
     onTradeInChange({
       ...tradeInInfo,
       estimatedValue: medianRoundedTo25(tradeEstimate.low, tradeEstimate.high),
-      confidenceLevel: tradeEstimate.confidence
+      confidenceLevel: tradeEstimate.confidence,
+      // Audit fields
+      rangePrePenaltyLow: tradeEstimate.prePenaltyLow,
+      rangePrePenaltyHigh: tradeEstimate.prePenaltyHigh,
+      rangeFinalLow: tradeEstimate.low,
+      rangeFinalHigh: tradeEstimate.high,
+      tradeinValuePrePenalty: (tradeEstimate.prePenaltyLow !== undefined && tradeEstimate.prePenaltyHigh !== undefined)
+        ? medianRoundedTo25(tradeEstimate.prePenaltyLow, tradeEstimate.prePenaltyHigh)
+        : medianRoundedTo25(tradeEstimate.low, tradeEstimate.high),
+      tradeinValueFinal: medianRoundedTo25(tradeEstimate.low, tradeEstimate.high),
+      penaltyApplied: getBrandPenaltyFactor(tradeInInfo.brand) < 1,
+      penaltyFactor: getBrandPenaltyFactor(tradeInInfo.brand)
     });
     
     setIsLoading(false);

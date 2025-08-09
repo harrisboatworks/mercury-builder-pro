@@ -12,6 +12,7 @@ import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle } from '
 import { QuoteData } from '../QuoteBuilder';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, normalizeBrand } from '@/lib/trade-valuation';
 import { Progress } from '@/components/ui/progress';
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip';
 import { toast } from '@/hooks/use-toast';
 import confetti from 'canvas-confetti';
 
@@ -349,13 +350,32 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                   <div className="text-green-600 dark:text-green-400">
                     <span className="font-medium">Your {quoteData.boatInfo?.tradeIn?.year} {quoteData.boatInfo?.tradeIn?.brand} {quoteData.boatInfo?.tradeIn?.horsepower}HP</span>
                   </div>
-                  <div className="text-xl font-bold text-green-600 dark:text-green-400">
+                  <div className="text-xl font-bold text-green-600 dark:text-green-400 flex items-center gap-2">
                     -${tradeInValue.toLocaleString()}
+                    {getBrandPenaltyFactor(tradeInDetails?.brand) < 1 && (
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <span aria-label="Adjusted for brand" className="inline-flex items-center cursor-help">⚠️</span>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <div className="max-w-[240px]">
+                              Adjusted for brand (-50%) — Manufacturer out of business; parts & service availability limited.
+                              {tradeInDetails?.tradeinValuePrePenalty ? (
+                                <div className="mt-1 text-xs text-muted-foreground">
+                                  Was ${tradeInDetails.tradeinValuePrePenalty.toLocaleString()} before adjustment.
+                                </div>
+                              ) : null}
+                            </div>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    )}
                   </div>
                 </div>
                 {tradeEstimate && (
                   <div className="mt-1 text-xs text-muted-foreground">
-                    Using ${tradeInValue.toLocaleString()} (median of ${Math.round(tradeEstimate.low).toLocaleString()}–${Math.round(tradeEstimate.high).toLocaleString()}). Final value subject to inspection.
+                    Using ${tradeInValue.toLocaleString()} (median of ${Math.round(tradeEstimate.low).toLocaleString()}–${Math.round(tradeEstimate.high).toLocaleString()}${getBrandPenaltyFactor(tradeInDetails?.brand) < 1 ? ', adjusted −50% for Johnson/Evinrude' : ''}). Final value subject to inspection.
                   </div>
                 )}
               </div>

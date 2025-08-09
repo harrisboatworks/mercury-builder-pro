@@ -76,6 +76,15 @@ export interface BoatInfo {
     condition: 'excellent' | 'good' | 'fair' | 'poor';
     estimatedValue: number;
     confidenceLevel: 'high' | 'medium' | 'low';
+    // Audit fields (optional)
+    rangePrePenaltyLow?: number;
+    rangePrePenaltyHigh?: number;
+    rangeFinalLow?: number;
+    rangeFinalHigh?: number;
+    tradeinValuePrePenalty?: number;
+    tradeinValueFinal?: number;
+    penaltyApplied?: boolean;
+    penaltyFactor?: number;
   };
 }
 

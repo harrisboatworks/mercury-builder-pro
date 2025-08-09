@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { medianRoundedTo25 } from './trade-valuation';
+import { medianRoundedTo25, computeRoundedTradeIn, getBrandPenaltyFactor } from './trade-valuation';
 
 const compute = (low: number, high: number) => medianRoundedTo25(low, high);
 
