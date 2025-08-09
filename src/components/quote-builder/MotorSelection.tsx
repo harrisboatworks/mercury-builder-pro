@@ -807,6 +807,7 @@ const handleMotorSelection = (motor: Motor) => {
               const state = getPriceDisplayState(msrp, sale);
               const hasSaleDisplay = state.hasSale;
               const callForPrice = state.callForPrice;
+              const isMsrpOnly = !hasSaleDisplay && !callForPrice;
               const savingsAmount = state.savingsRounded;
               const savingsPct = state.percent;
               if (sale != null && msrp != null && sale >= msrp) {
@@ -885,7 +886,7 @@ const subtitle = formatVariantSubtitle(raw, title);
           effectiveImageSizingMode === 'v2' ? 'h-56 md:h-64 lg:h-72' :
           effectiveImageSizingMode === 'taller' ? 'h-52 md:h-60 lg:h-68' :
           'h-48 md:h-56 lg:h-64'
-        } flex items-center justify-center ${effectiveImageSizingMode === 'v2' ? 'bg-muted/10' : 'bg-muted/20'} rounded-lg overflow-hidden relative`}>
+        } flex items-start justify-center ${effectiveImageSizingMode === 'v2' ? 'pt-2 md:pt-3 bg-muted/10' : 'bg-muted/20'} rounded-lg overflow-hidden relative`}>
           <img 
             src={motor.image} 
             alt={motor.model}
@@ -894,7 +895,7 @@ const subtitle = formatVariantSubtitle(raw, title);
             height={520}
             className={
               effectiveImageSizingMode === 'v2'
-                ? 'object-contain max-h-[92%] max-w-[95%] scale-[1.10] transition-transform'
+                ? `object-contain max-h-[92%] max-w-[95%] transition-transform ${isMsrpOnly ? 'scale-[1.18]' : 'scale-[1.10]'}`
                 : `max-w-full max-h-full object-contain ${effectiveImageSizingMode === 'scale-msrp' && !sale ? 'scale-105' : ''}`
             }
           />
@@ -906,7 +907,7 @@ const subtitle = formatVariantSubtitle(raw, title);
         </div>
       )}
 
-                    <div className={`flex items-center justify-between ${effectiveImageSizingMode === 'v2' ? 'pt-3' : 'pt-5'}`}>
+                    <div className={`flex items-center justify-between ${effectiveImageSizingMode === 'v2' ? (isMsrpOnly ? 'pt-1.5' : 'pt-3') : 'pt-5'}`}>
                       <div className="w-full">
                         <div className={`price-area min-h-[92px] md:min-h-[120px] flex ${(!hasSaleDisplay && !callForPrice && effectiveNoSaleLayout === 'centered') ? 'items-center justify-center' : 'flex-col justify-between'}`}>
                         {/* Mobile: inline compact */}
