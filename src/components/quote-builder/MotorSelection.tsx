@@ -800,7 +800,7 @@ const handleMotorSelection = (motor: Motor) => {
             <p className="text-muted-foreground">No motors found matching your filters.</p>
           </Card>
         ) : (
-          <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
+          <div className={`grid gap-4 ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5' : 'grid-cols-1'}`}>
             {filteredMotors.map(motor => {
               const msrp = motor.basePrice && motor.basePrice > 0 ? motor.basePrice : null;
               const sale = motor.salePrice && motor.salePrice > 0 ? motor.salePrice : null;
@@ -844,7 +844,7 @@ const handleMotorSelection = (motor: Motor) => {
                       : ''
                   } ${
                     isCompared(motor.id) ? 'ring-2 ring-primary border-primary bg-primary/5 scale-[1.02]' : ''
-                  } flex flex-col h-full min-h-[450px]`}
+                  } flex flex-col h-[380px]`}
                   onClick={() => selectionMode === 'compare' ? toggleCompare(motor) : handleMotorSelection(motor)}
                 >
                   {isCompared(motor.id) && (
@@ -853,7 +853,7 @@ const handleMotorSelection = (motor: Motor) => {
                     </div>
                   )}
 
-                  <div className="px-6 pt-4 pb-6 space-y-4 relative">
+                  <div className="p-3 space-y-3 relative h-full flex flex-col">
                     <div className="flex items-start justify-between">
                       <Badge variant={getCategoryColor(motor.category)}>
                         {motor.hp}HP
@@ -863,17 +863,17 @@ const handleMotorSelection = (motor: Motor) => {
                       </Badge>
                     </div>
 
-                    <div className="min-h-[56px] md:min-h-[64px] space-y-2.5">
+                    <div className="space-y-1">
                       {(() => {
 const title = formatMotorTitle(motor.year, motor.model);
 const raw = `${motor.model ?? ''} ${motor.description ?? motor.specs ?? ''}`.trim();
 const subtitle = formatVariantSubtitle(raw, title);
                         return (
                           <>
-                            <h3 className="text-lg md:text-[22px] font-semibold text-foreground line-clamp-2">{title}</h3>
-                            <div className="min-h-[1.25rem]">
+                            <h3 className="text-sm md:text-base font-semibold text-foreground line-clamp-2">{title}</h3>
+                            <div className="min-h-[1rem]">
                               {subtitle ? (
-                                <p className="text-foreground/90 text-sm line-clamp-2" title={subtitle}>{subtitle}</p>
+                                <p className="text-foreground/90 text-xs line-clamp-1" title={subtitle}>{subtitle}</p>
                               ) : null}
                             </div>
                           </>
@@ -882,24 +882,14 @@ const subtitle = formatVariantSubtitle(raw, title);
                     </div>
 
       {motor.image && motor.image !== '/placeholder.svg' && (
-        <div className={`motor-image-container image-wrap w-full ${
-          effectiveImageSizingMode === 'uniform-112' ? 'h-56 md:h-64 lg:h-72' :
-          effectiveImageSizingMode === 'taller' ? 'h-52 md:h-60 lg:h-68' :
-          'h-48 md:h-56 lg:h-64'
-        } flex items-center justify-center ${effectiveImageSizingMode === 'uniform-112' ? 'bg-muted/10' : 'bg-muted/20'} rounded-lg overflow-hidden relative`}>
+        <div className="motor-image-container image-wrap w-full h-[180px] bg-muted/10 overflow-hidden flex items-center justify-center rounded-lg p-2.5 relative">
           <img 
             src={motor.image} 
             alt={motor.model}
             loading="lazy"
-            width={520}
-            height={520}
-            className={
-              effectiveImageSizingMode === 'uniform-112'
-                ? 'object-contain max-w-[96%] max-h-[96%] scale-[1.12]'
-                : (effectiveImageSizingMode === 'scale-msrp' && !sale)
-                  ? 'max-w-full max-h-full object-contain scale-105'
-                  : 'max-w-full max-h-full object-contain'
-            }
+            width={220}
+            height={170}
+            className="motor-image object-contain w-full h-full max-w-[220px] max-h-[170px]"
           />
           {selectedMotor?.id === motor.id && (
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
@@ -909,64 +899,35 @@ const subtitle = formatVariantSubtitle(raw, title);
         </div>
       )}
 
-                    <div className="mt-auto pt-4 border-t border-border">
-                      <div className="w-full">
-                        <div className={`price-area min-h-[92px] md:min-h-[120px] flex ${(!hasSaleDisplay && !callForPrice && effectiveNoSaleLayout === 'centered') ? 'items-center justify-center' : 'flex-col justify-between'}`}>
-                        {/* Mobile: inline compact */}
-                        <div className="md:hidden">
-                          {callForPrice ? (
-                            <span className="text-base font-medium text-foreground">Call for Price</span>
-                          ) : hasSaleDisplay ? (
-                            <>
-                              <div className="text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</div>
-                              <div className="flex items-center gap-2 flex-wrap mt-1">
-                                <span className="text-lg font-bold text-destructive">Our Price ${(sale as number).toLocaleString()}</span>
-                                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-destructive text-destructive-foreground">
-                                  SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
-                                </span>
-                              </div>
-                            </>
-                          ) : (
-                            effectiveNoSaleLayout === 'placeholder' ? (
-                              <>
-                                <span className="text-lg font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
-                                <div className="flex items-center gap-2 flex-wrap mt-1 opacity-0 select-none pointer-events-none" aria-hidden="true">
-                                  <span className="text-lg font-bold">Our Price $0</span>
-                                  <span className="text-xs font-semibold px-2 py-1 rounded-full">SAVE $0 (0%)</span>
-                                </div>
-                              </>
-                            ) : (
-                              <span className="text-lg font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
-                            )
-                          )}
-                        </div>
-                        {/* Desktop: stacked with badge below */}
-                        <div className="hidden md:block">
-                          {callForPrice ? (
-                            <p className="text-lg font-medium text-foreground">Call for Price</p>
-                          ) : hasSaleDisplay ? (
-                            <div className="space-y-1 pt-1">
-                              <p className="text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</p>
-                              <p className="text-2xl font-bold text-destructive">Our Price ${(sale as number).toLocaleString()}</p>
-                              <div className="inline-flex items-center px-3 py-1 rounded-full bg-destructive text-destructive-foreground text-xs font-semibold">
+                    <div className="mt-auto pt-2">
+                      <div className="price-area min-h-[60px] flex items-center">
+                        {callForPrice ? (
+                          <span className="text-sm md:text-base font-medium text-foreground">Call for Price</span>
+                        ) : hasSaleDisplay ? (
+                          <div className="w-full flex items-center justify-between gap-2">
+                            <span className="text-xs md:text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
+                            <div className="flex items-center gap-2">
+                              <span className="text-lg font-bold text-destructive">${(sale as number).toLocaleString()}</span>
+                              <span className="text-[10px] md:text-xs font-semibold px-2 py-1 rounded bg-destructive text-destructive-foreground">
                                 SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
+                              </span>
+                            </div>
+                          </div>
+                        ) : (
+                          effectiveNoSaleLayout === 'placeholder' ? (
+                            <div className="w-full flex items-center justify-between gap-2">
+                              <span className="text-sm md:text-base font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
+                              <div className="flex items-center gap-2 opacity-0 select-none pointer-events-none" aria-hidden="true">
+                                <span className="text-lg font-bold">Our Price $0</span>
+                                <span className="text-xs font-semibold px-2 py-1 rounded">SAVE $0 (0%)</span>
                               </div>
                             </div>
                           ) : (
-                            effectiveNoSaleLayout === 'placeholder' ? (
-                              <div className="space-y-1 pt-1">
-                                <p className="text-xl font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</p>
-                                <p className="text-2xl font-bold text-transparent select-none pointer-events-none" aria-hidden="true">Our Price $0</p>
-                                <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold opacity-0 select-none pointer-events-none" aria-hidden="true">
-                                  SAVE $0 (0%)
-                                </div>
-                              </div>
-                            ) : (
-                              <p className="text-xl font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</p>
-                            )
-                          )}
-                        </div>
-                        </div>
+                            <div className="w-full text-center">
+                              <span className="text-lg font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
+                            </div>
+                          )
+                        )}
                       </div>
                     </div>
 
