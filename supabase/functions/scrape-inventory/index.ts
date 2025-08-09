@@ -157,6 +157,27 @@ Deno.serve(async (req) => {
     }
 
     // Insert new motor data
+    const { data, error } = await supabase
+      .from('motor_models')
+      .insert(motors.map((m) => ({
+        make: m.make,
+        model: m.model,
+        year: m.year,
+        base_price: m.base_price,
+        sale_price: m.sale_price ?? null,
+        motor_type: m.motor_type,
+        engine_type: m.engine_type ?? null,
+        horsepower: m.horsepower,
+        image_url: m.image_url ?? null,
+        availability: m.availability,
+        stock_number: m.stock_number ?? null,
+        description: m.description ?? null,
+        features: m.features ?? [],
+        specifications: m.specifications ?? {},
+        detail_url: m.detail_url ?? null,
+      })))
+      .select()
+
     if (error) {
       console.error('Error inserting motors:', error)
       throw error
@@ -238,17 +259,24 @@ function parseMotorData(html: string): MotorData[] {
               `https:${motorData.itemThumbNailUrl}` : 
               getMotorImageUrl(motorName)
             
+            const currentPrice = typeof motorData.itemPrice === 'number' ? motorData.itemPrice : 0;
+            const unitPrice = typeof motorData.unitPrice === 'number' ? motorData.unitPrice : 0;
+            const displayPrice = typeof motorData.itemDisplayPrice === 'string' ? parseFloat(motorData.itemDisplayPrice.replace(/[^0-9.]/g, '')) : 0;
+            const basePrice = unitPrice || displayPrice || currentPrice || 0;
+            const salePrice = ((unitPrice > 0 && currentPrice > 0 && currentPrice < unitPrice) || motorData.itemOnSale === true) ? (currentPrice || null) : null;
+
             const motor: MotorData = {
               make: 'Mercury',
               model: motorName.replace(/ - Mercury$/, ''),
               year: motorData.itemYear || 2025,
               horsepower: hp,
-              base_price: motorData.itemPrice || 0,
-              sale_price: (motorData.salePrice || motorData.itemSalePrice || motorData.sale_price) ?? null,
+              base_price: basePrice,
+              sale_price: salePrice,
               motor_type: getMotorType(motorName),
               image_url: imageUrl,
               availability: availability,
               stock_number: motorData.stockNumber || null,
+              detail_url: motorData.itemUrl ? toAbsoluteUrl(motorData.itemUrl) : null,
             }
             motors.push(motor)
           }
@@ -276,14 +304,27 @@ function parseMotorData(html: string): MotorData[] {
           
           const hp = parseFloat(hpMatch[1])
           
-          // Extract price
-          const priceMatch = cardHtml.match(/<span[^>]*itemprop="price"[^>]*>\$([0-9,]+(?:\.\d{2})?)<\/span>/i)
-          const price = priceMatch ? parseFloat(priceMatch[1].replace(/,/g, '')) : 0
+          // Extract base price candidate
+          const priceMatch = cardHtml.match(/<span[^>]*itemprop=\"price\"[^>]*>\$([0-9,]+(?:\.\d{2})?)<\/span>/i)
+          const basePriceCandidate = priceMatch ? parseFloat(priceMatch[1].replace(/,/g, '')) : 0
           
-          // Try to extract sale price (e.g., "Sale Price $12,345" or "Now $12,345")
+          // Try to extract sale price patterns: "Sale Price", "Now", or "On Sale"
           const saleMatchA = cardHtml.match(/(?:Sale\s*Price|Now)\s*\$([0-9,]+(?:\.\d{2})?)/i)
           const saleMatchB = cardHtml.match(/<span[^>]*class=\"[^\"]*sale[^\"]*\"[^>]*>\$([0-9,]+(?:\.\d{2})?)<\/span>/i)
-          const salePrice = saleMatchA ? parseFloat(saleMatchA[1].replace(/,/g, '')) : (saleMatchB ? parseFloat(saleMatchB[1].replace(/,/g, '')) : null)
+          const saleMatchC = cardHtml.match(/On\s*Sale\s*\$([0-9,]+(?:\.\d{2})?)/i)
+          const salePrice = saleMatchA
+            ? parseFloat(saleMatchA[1].replace(/,/g, ''))
+            : saleMatchB
+              ? parseFloat(saleMatchB[1].replace(/,/g, ''))
+              : saleMatchC
+                ? parseFloat(saleMatchC[1].replace(/,/g, ''))
+                : null
+          
+          // If we have "You Save", infer base price
+          const saveMatch = cardHtml.match(/You\s*Save\s*\$([0-9,]+(?:\.\d{2})?)/i)
+          const inferredBasePrice = (salePrice && saveMatch)
+            ? (salePrice + parseFloat(saveMatch[1].replace(/,/g, '')))
+            : basePriceCandidate
           
           // Extract availability
           const availabilityMatch = cardHtml.match(/<span class=\"label[^\"]*\"[^>]*>([^<]+)</i)
@@ -294,17 +335,22 @@ function parseMotorData(html: string): MotorData[] {
                            cardHtml.match(/data-srcset=\"([^\"]*ThumbGenerator[^\"]*)\"/)
           const imageUrl = imageMatch ? imageMatch[1] : getMotorImageUrl(fullTitle)
           
+          // Extract detail URL
+          const linkMatch = cardHtml.match(/<a[^>]*href=\"([^\"]+)\"[^>]*title=\"[^\"]*Mercury[^\"]*\"/i)
+          const detailUrl = linkMatch ? toAbsoluteUrl(linkMatch[1]) : null
+          
           const motor: MotorData = {
             make: 'Mercury',
             model: fullTitle.replace(/ - Mercury$/, ''),
             year: 2025,
             horsepower: hp,
-            base_price: price,
+            base_price: inferredBasePrice || 0,
             sale_price: salePrice,
             motor_type: getMotorType(fullTitle),
             image_url: imageUrl,
             availability: availability,
             stock_number: null,
+            detail_url: detailUrl,
           }
           motors.push(motor)
           
