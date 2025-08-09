@@ -844,7 +844,7 @@ const handleMotorSelection = (motor: Motor) => {
                       : ''
                   } ${
                     isCompared(motor.id) ? 'ring-2 ring-primary border-primary bg-primary/5 scale-[1.02]' : ''
-                  } flex flex-col h-[420px]`}
+                  } flex flex-col h-[480px]`}
                   onClick={() => selectionMode === 'compare' ? toggleCompare(motor) : handleMotorSelection(motor)}
                 >
                   {isCompared(motor.id) && (
@@ -898,7 +898,7 @@ const subtitle = formatVariantSubtitle(raw, title);
         </div>
       )}
 
-                    <div className="mt-auto pt-3 border-t border-border">
+                    <div className="mt-auto pt-3 border-t border-border min-h-[140px]">
                       <div className="price-area min-h-[60px] flex items-center">
                         {callForPrice ? (
                           <span className="text-sm md:text-base font-medium text-foreground">Call for Price</span>
