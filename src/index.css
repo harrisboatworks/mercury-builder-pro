@@ -645,6 +645,18 @@
     }
   }
 
+  /* Repower badge (enhanced) */
+  .product-card .badge--repower {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, hsl(var(--promo-gold-1)), hsl(var(--promo-gold-2)));
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(0 0% 100% / 0.25);
+    box-shadow: 0 2px 6px hsl(var(--promo-gold-1) / 0.35);
+  }
+
   /* Modal-scoped Promotions list */
   .modal .modal-promos { margin-top: 0.75rem; }
   .modal .promo-list { display: flex; flex-direction: column; gap: 0.4rem; }

@@ -12,6 +12,8 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { getPriceDisplayState } from '@/lib/pricing';
 import { formatVariantSubtitle, formatMotorTitle } from '@/lib/card-title';
+import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
+import { useNavigate } from 'react-router-dom';
 
 // Database types
 interface DbMotor {
@@ -73,6 +75,8 @@ const PROMO_MAP = [
 
 type PromoKey = typeof PROMO_MAP[number]['key'];
 
+const REPOWER_INFO_URL = 'https://www.mercurymarine.com/en/us/engines/outboard/promotions/';
+
 const detectPromoKeysFromText = (text?: string | null): PromoKey[] => {
   if (!text) return [];
   const keys = new Set<PromoKey>();
@@ -132,6 +136,13 @@ const [quickViewMotor, setQuickViewMotor] = useState<Motor | null>(null);
 const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
 const [showComparePanel, setShowComparePanel] = useState(false);
 const debugPricing = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
+
+const navigate = useNavigate();
+
+const track = (name: string, payload: Record<string, any>) => {
+  try { (window as any).analytics?.track?.(name, payload); } catch {}
+  console.log('[analytics]', name, payload);
+};
 
 // Automatic inventory refresh state
 const [lastInventoryUpdate, setLastInventoryUpdate] = useState<string | null>(
@@ -594,7 +605,9 @@ const toggleCompare = (motor: Motor) => {
 };
 
 const calculatePayment = (motor: Motor) => {
-  toast({ title: 'Coming soon', description: `Payment calculator for ${motor.model} is coming soon.` });
+  const url = `/finance-calculator?model=${encodeURIComponent(motor.id)}`;
+  track('calculate_button_click', { model_id: motor.id, model_name: motor.model, action: 'deeplink' });
+  navigate(url);
 };
 
 const openQuickView = (motor: Motor) => {
@@ -832,7 +845,7 @@ const handleMotorSelection = (motor: Motor) => {
                       </Badge>
                     </div>
 
-                    <div className="space-y-2">
+                    <div className="space-y-2 min-h-[56px] md:min-h-[64px]">
                       {(() => {
 const title = formatMotorTitle(motor.year, motor.model);
 const raw = `${motor.model ?? ''} ${motor.description ?? motor.specs ?? ''}`.trim();
@@ -867,6 +880,7 @@ const subtitle = formatVariantSubtitle(raw, title);
 
                     <div className="flex items-center justify-between pt-4">
                       <div className="w-full">
+                        <div className="price-area min-h-[92px] md:min-h-[120px] flex flex-col justify-between">
                         {/* Mobile: inline compact */}
                         <div className="md:hidden">
                           {callForPrice ? (
@@ -901,6 +915,7 @@ const subtitle = formatVariantSubtitle(raw, title);
                             <p className="text-xl font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</p>
                           )}
                         </div>
+                        </div>
                       </div>
                       <div className="flex flex-col items-end gap-1">
                         <div className="flex items-center gap-2">
@@ -922,12 +937,36 @@ const subtitle = formatVariantSubtitle(raw, title);
                           </span>
                         )}
                         {hasRepower && (
-                          <span className="badge badge--shimmer" data-badge="repower" aria-label="Repower Rebate Promo">
-                            <svg className="badge__icon" viewBox="0 0 24 24" aria-hidden="true">
-                              <path d="M12 2l3 6 6 .9-4.3 4.2 1 6-5.7-3-5.7 3 1-6L3 8.9 9 8z" fill="currentColor"/>
-                            </svg>
-                            <span className="badge__text">Repower Rebate Promo</span>
-                          </span>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <span
+                                className="badge badge--repower"
+                                data-badge="repower"
+                                aria-label="Repower Rebate Promo"
+                                onMouseEnter={() => track('rebate_badge_hover', { model_id: motor.id, model_name: motor.model })}
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <svg className="badge__icon" viewBox="0 0 24 24" aria-hidden="true">
+                                  <path d="M12 2l3 6 6 .9-4.3 4.2 1 6-5.7-3-5.7 3 1-6L3 8.9 9 8z" fill="currentColor"/>
+                                </svg>
+                                <span className="badge__text">Repower Rebate Promo</span>
+                              </span>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <div className="max-w-[260px] space-y-1">
+                                <p>Mercury’s Repower Rebate Program — trade in or repower for potential savings. See details.</p>
+                                <a
+                                  href={REPOWER_INFO_URL}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="underline"
+                                  onClick={(e) => { e.stopPropagation(); track('rebate_badge_click', { model_id: motor.id, model_name: motor.model }); }}
+                                >
+                                  Learn More
+                                </a>
+                              </div>
+                            </TooltipContent>
+                          </Tooltip>
                         )}
                       </div>
                     )}
@@ -936,7 +975,14 @@ const subtitle = formatVariantSubtitle(raw, title);
                     <div className="absolute top-3 right-3 hidden md:flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                       <Button size="sm" variant="secondary" onClick={(e) => { e.stopPropagation(); openQuickView(motor); }}>👁️ Quick View</Button>
                       <Button size="sm" variant={isCompared(motor.id) ? 'default' : 'outline'} onClick={(e) => { e.stopPropagation(); toggleCompare(motor); }}>⚖️ {isCompared(motor.id) ? 'Remove' : 'Compare'}</Button>
-                      <Button size="sm" variant="outline" onClick={(e) => { e.stopPropagation(); calculatePayment(motor); }}>💰 Calculate</Button>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button size="sm" variant="outline" onClick={(e) => { e.stopPropagation(); calculatePayment(motor); }}>💰 Calculate</Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <div className="max-w-[240px]">Estimate monthly payment with our finance calculator.</div>
+                        </TooltipContent>
+                      </Tooltip>
                     </div>
                   </div>
                 </Card>
