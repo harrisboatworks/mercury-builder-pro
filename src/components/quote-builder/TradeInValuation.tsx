@@ -8,7 +8,7 @@ import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, DollarSign, Star, AlertTriangle, CheckCircle2 } from 'lucide-react';
-import { estimateTradeValue, getTradeValueFactors, type TradeValueEstimate, type TradeInInfo } from '@/lib/trade-valuation';
+import { estimateTradeValue, getTradeValueFactors, medianRoundedTo25, type TradeValueEstimate, type TradeInInfo } from '@/lib/trade-valuation';
 
 interface TradeInValuationProps {
   tradeInInfo: TradeInInfo;
@@ -67,10 +67,10 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
     const tradeEstimate = estimateTradeValue(tradeInInfo);
     setEstimate(tradeEstimate);
     
-    // Update the trade-in info with the estimated value
+    // Update the trade-in info with the rounded median value ($25 increments)
     onTradeInChange({
       ...tradeInInfo,
-      estimatedValue: tradeEstimate.average,
+      estimatedValue: medianRoundedTo25(tradeEstimate.low, tradeEstimate.high),
       confidenceLevel: tradeEstimate.confidence
     });
     

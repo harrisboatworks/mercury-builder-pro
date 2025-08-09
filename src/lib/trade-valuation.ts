@@ -233,6 +233,12 @@ export function estimateTradeValue(tradeInfo: Partial<TradeInInfo>): TradeValueE
   };
 }
 
+// Compute the median of a low/high range and round to the nearest $25
+export function medianRoundedTo25(low: number, high: number): number {
+  const median = (low + high) / 2;
+  return Math.round(median / 25) * 25;
+}
+
 export function getTradeValueFactors(): string[] {
   return [
     'Hours of use',

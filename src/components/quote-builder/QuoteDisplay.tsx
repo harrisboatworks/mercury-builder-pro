@@ -10,6 +10,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
+import { estimateTradeValue, medianRoundedTo25 } from '@/lib/trade-valuation';
 import { Progress } from '@/components/ui/progress';
 import { toast } from '@/hooks/use-toast';
 import confetti from 'canvas-confetti';
@@ -74,6 +75,8 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   // Get trade-in info from boat information
   const hasTradeIn = quoteData.boatInfo?.tradeIn?.hasTradeIn || false;
   const tradeInValue = quoteData.boatInfo?.tradeIn?.estimatedValue || 0;
+  const tradeInDetails = quoteData.boatInfo?.tradeIn;
+  const tradeEstimate = hasTradeIn && tradeInDetails ? estimateTradeValue(tradeInDetails) : null;
 
   const motorPrice = (quoteData.motor?.salePrice ?? quoteData.motor?.basePrice ?? quoteData.motor?.price) || 0;
   const subtotalAfterTrade = motorPrice - (hasTradeIn ? tradeInValue : 0);
@@ -341,13 +344,20 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
             
             {/* Trade-In Line */}
             {hasTradeIn && (
-              <div className="flex justify-between items-center py-2">
-                <div className="text-green-600 dark:text-green-400">
-                  <span className="font-medium">Your {quoteData.boatInfo?.tradeIn?.year} {quoteData.boatInfo?.tradeIn?.brand} {quoteData.boatInfo?.tradeIn?.horsepower}HP</span>
+              <div className="py-2">
+                <div className="flex justify-between items-center">
+                  <div className="text-green-600 dark:text-green-400">
+                    <span className="font-medium">Your {quoteData.boatInfo?.tradeIn?.year} {quoteData.boatInfo?.tradeIn?.brand} {quoteData.boatInfo?.tradeIn?.horsepower}HP</span>
+                  </div>
+                  <div className="text-xl font-bold text-green-600 dark:text-green-400">
+                    -${tradeInValue.toLocaleString()}
+                  </div>
                 </div>
-                <div className="text-xl font-bold text-green-600 dark:text-green-400">
-                  -${tradeInValue.toLocaleString()}
-                </div>
+                {tradeEstimate && (
+                  <div className="mt-1 text-xs text-muted-foreground">
+                    Using ${tradeInValue.toLocaleString()} (median of ${Math.round(tradeEstimate.low).toLocaleString()}–${Math.round(tradeEstimate.high).toLocaleString()}). Final value subject to inspection.
+                  </div>
+                )}
               </div>
             )}
             
