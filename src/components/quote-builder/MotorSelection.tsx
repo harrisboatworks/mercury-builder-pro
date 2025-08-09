@@ -835,7 +835,7 @@ const handleMotorSelection = (motor: Motor) => {
                     </div>
                   )}
 
-                  <div className="p-6 space-y-4 relative">
+                  <div className="px-6 pt-4 pb-6 space-y-4 relative">
                     <div className="flex items-start justify-between">
                       <Badge variant={getCategoryColor(motor.category)}>
                         {motor.hp}HP
@@ -845,17 +845,17 @@ const handleMotorSelection = (motor: Motor) => {
                       </Badge>
                     </div>
 
-                    <div className="space-y-2 min-h-[56px] md:min-h-[64px]">
+                    <div className="space-y-2.5 min-h-[56px] md:min-h-[64px]">
                       {(() => {
 const title = formatMotorTitle(motor.year, motor.model);
 const raw = `${motor.model ?? ''} ${motor.description ?? motor.specs ?? ''}`.trim();
 const subtitle = formatVariantSubtitle(raw, title);
                         return (
                           <>
-                            <h3 className="text-xl font-semibold text-foreground">{title}</h3>
+                            <h3 className="text-lg md:text-xl font-semibold text-foreground line-clamp-2">{title}</h3>
                             <div className="min-h-[1.25rem]">
                               {subtitle ? (
-                                <p className="text-muted-foreground text-sm truncate" title={subtitle}>{subtitle}</p>
+                                <p className="text-foreground/80 text-sm line-clamp-2" title={subtitle}>{subtitle}</p>
                               ) : null}
                             </div>
                           </>
@@ -878,7 +878,7 @@ const subtitle = formatVariantSubtitle(raw, title);
                         </div>
                       )}
 
-                    <div className="flex items-center justify-between pt-4">
+                    <div className="flex items-center justify-between pt-5">
                       <div className="w-full">
                         <div className="price-area min-h-[92px] md:min-h-[120px] flex flex-col justify-between">
                         {/* Mobile: inline compact */}
@@ -888,7 +888,7 @@ const subtitle = formatVariantSubtitle(raw, title);
                           ) : hasSaleDisplay ? (
                             <>
                               <div className="text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</div>
-                              <div className="flex items-center gap-2 flex-wrap">
+                              <div className="flex items-center gap-2 flex-wrap mt-1">
                                 <span className="text-lg font-bold text-destructive">Our Price ${(sale as number).toLocaleString()}</span>
                                 <span className="text-xs font-semibold px-2 py-1 rounded-full bg-destructive text-destructive-foreground">
                                   SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
@@ -904,7 +904,7 @@ const subtitle = formatVariantSubtitle(raw, title);
                           {callForPrice ? (
                             <p className="text-lg font-medium text-foreground">Call for Price</p>
                           ) : hasSaleDisplay ? (
-                            <div className="space-y-1">
+                            <div className="space-y-1 pt-1">
                               <p className="text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</p>
                               <p className="text-2xl font-bold text-destructive">Our Price ${(sale as number).toLocaleString()}</p>
                               <div className="inline-flex items-center px-3 py-1 rounded-full bg-destructive text-destructive-foreground text-xs font-semibold">
@@ -916,15 +916,6 @@ const subtitle = formatVariantSubtitle(raw, title);
                           )}
                         </div>
                         </div>
-                      </div>
-                      <div className="flex flex-col items-end gap-1">
-                        <div className="flex items-center gap-2">
-                          <img src="/lovable-uploads/29fca629-fbe7-44e9-ab71-703477b2c852.png" alt="Mercury outboard logo" className="w-5 h-5 object-contain" loading="lazy" />
-                          <span className="text-sm font-medium text-muted-foreground">{motor.type}</span>
-                        </div>
-                        {otherPromoNames.length > 0 && (
-                          <div className="text-xs text-primary">{otherPromoNames.join(' + ')}</div>
-                        )}
                       </div>
                     </div>
 
