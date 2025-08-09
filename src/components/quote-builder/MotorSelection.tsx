@@ -882,12 +882,13 @@ const subtitle = formatVariantSubtitle(raw, title);
                     </div>
 
       {motor.image && motor.image !== '/placeholder.svg' && (
-        <div className="motor-image-container image-wrap w-full h-[200px] bg-muted/10 overflow-hidden flex items-center justify-center rounded-lg p-2.5 relative">
+        <div className="motor-image-container image-wrap w-full h-[200px] bg-muted/10 overflow-visible flex items-center justify-center rounded-lg p-2.5 relative">
           <img 
             src={motor.image} 
             alt={motor.model}
             loading="lazy"
-            className="motor-image object-contain h-[170px] w-auto"
+            className="motor-image"
+            style={{ height: '180px', width: 'auto', objectFit: 'contain', maxWidth: 'none', maxHeight: 'none' }}
           />
           {selectedMotor?.id === motor.id && (
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
