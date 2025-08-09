@@ -3,10 +3,13 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
+import { Badge } from '@/components/ui/badge';
 import { AlertTriangle, Download } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 interface QuoteRow {
   id: string;
@@ -33,6 +36,9 @@ const AdminQuotes = () => {
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [showPenalizedOnly, setShowPenalizedOnly] = useState(false);
+  const [penalizedTotal, setPenalizedTotal] = useState(0);
 
   useEffect(() => {
     document.title = 'Quotes | Admin';
@@ -44,12 +50,24 @@ const AdminQuotes = () => {
     canonical.href = window.location.origin + '/admin/quotes';
   }, []);
 
-  const load = async () => {
+  const load = async (penalizedOnly: boolean = showPenalizedOnly) => {
     setLoading(true);
-    const { data, error } = await supabase
+    let query = supabase
       .from('customer_quotes')
       .select('*')
       .order('created_at', { ascending: false });
+    if (penalizedOnly) {
+      query = query.eq('penalty_applied', true);
+    }
+    const { data, error } = await query;
+
+    // Get total penalized count for the counter chip
+    const { count } = await supabase
+      .from('customer_quotes')
+      .select('*', { count: 'exact', head: true })
+      .eq('penalty_applied', true);
+    setPenalizedTotal(count || 0);
+
     if (error) {
       toast({ title: 'Error', description: 'Failed to load quotes', variant: 'destructive' });
     } else {
@@ -57,9 +75,12 @@ const AdminQuotes = () => {
     }
     setLoading(false);
   };
-
-  useEffect(() => { load(); }, []);
-
+  useEffect(() => {
+    const initial = (searchParams.get('penalized') === '1');
+    setShowPenalizedOnly(initial);
+    load(initial);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const fmt = (n: number | null | undefined) => (n == null ? '-' : `$${Math.round(Number(n)).toLocaleString()}`);
 
   const toCSV = (items: QuoteRow[]) => {
@@ -94,9 +115,28 @@ const AdminQuotes = () => {
     <main className="container mx-auto px-4 py-8">
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold">Quotes</h1>
-        <div className="flex gap-2">
-          <Button variant="secondary" onClick={load}>Refresh</Button>
-          <Button onClick={downloadCSV}><Download className="w-4 h-4 mr-2"/>Download CSV</Button>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <Checkbox
+              id="penalized-only"
+              checked={showPenalizedOnly}
+              onCheckedChange={(checked) => {
+                const on = Boolean(checked);
+                setShowPenalizedOnly(on);
+                const params = new URLSearchParams(searchParams);
+                if (on) params.set('penalized', '1');
+                else params.delete('penalized');
+                setSearchParams(params);
+                load(on);
+              }}
+            />
+            <Label htmlFor="penalized-only" className="text-sm">Show penalized only</Label>
+          </div>
+          <Badge variant="secondary">Penalized: {showPenalizedOnly ? rows.length : penalizedTotal}</Badge>
+          <div className="flex gap-2">
+            <Button variant="secondary" onClick={() => load(showPenalizedOnly)}>Refresh</Button>
+            <Button onClick={downloadCSV}><Download className="w-4 h-4 mr-2"/>Download CSV</Button>
+          </div>
         </div>
       </div>
       <Card className="p-4">
@@ -115,7 +155,9 @@ const AdminQuotes = () => {
               {loading ? (
                 <TableRow><TableCell colSpan={5}>Loading...</TableCell></TableRow>
               ) : rows.length === 0 ? (
-                <TableRow><TableCell colSpan={5}>No quotes found.</TableCell></TableRow>
+                <TableRow>
+                  <TableCell colSpan={5}>{showPenalizedOnly ? 'No penalized quotes found.' : 'No quotes found.'}</TableCell>
+                </TableRow>
               ) : (
                 rows.map((r) => {
                   const penalty = !!r.penalty_applied;
