@@ -8,7 +8,7 @@ import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/components/ui/use-toast';
-import { MotorFilters } from './MotorFilters';
+import { MotorFinderWizard } from './MotorFinderWizard';
 import { TestimonialCarousel } from './TestimonialCarousel';
 import { PromoDetailsModal } from './PromoDetailsModal';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -109,7 +109,6 @@ const getPromoLabelsForMotor = (motor: Motor): string[] => {
   const keys = getPromoKeysForMotor(motor);
   return keys.map(k => PROMO_MAP.find(p => p.key === k)?.label || k);
 };
-
 const decodeModelName = (modelName: string) => {
   type Item = { code: string; meaning: string; benefit: string };
   const decoded: Item[] = [];
@@ -981,7 +980,7 @@ const handleMotorSelection = (motor: Motor) => {
 
   return (
     <div className={`flex gap-6 ${showCelebration ? 'canadian-celebration' : ''}`}>
-      <MotorFilters
+      <MotorFinderWizard
         filters={filters}
         setFilters={setFilters}
         viewMode={viewMode}
@@ -989,7 +988,6 @@ const handleMotorSelection = (motor: Motor) => {
         resultsCount={filteredMotors.length}
         isOpen={filtersOpen}
         onToggle={() => setFiltersOpen(!filtersOpen)}
-        categoryCounts={categoryCounts}
       />
 
       <div className="flex-1 space-y-8">
