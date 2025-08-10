@@ -184,6 +184,90 @@ async function scrapeDetails(url: string, apiKey: string, modelName?: string): P
       }
     }
 
+    // Additionally, parse spec tables (tr/td) commonly used on dealer pages
+    try {
+      const tableRegex = /<table[\s\S]*?<\/table>/gi;
+      const rowRegex = /<tr[\s\S]*?<\/tr>/gi;
+      const cellRegex = /<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi;
+      const tables = textHtml.match(tableRegex) || [];
+      for (const tbl of tables) {
+        const rows = tbl.match(rowRegex) || [];
+        for (const row of rows) {
+          const cells = row.match(cellRegex) || [];
+          if (cells.length >= 2) {
+            const label = cells[0].replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
+            const value = cells[1].replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
+            if (!label || !value) continue;
+            const map = (lab: string) => {
+              if (/weight/i.test(lab)) return 'weight';
+              if (/shaft/i.test(lab)) return 'shaft_length';
+              if (/displacement/i.test(lab)) return 'displacement';
+              if (/cylinder/i.test(lab)) return 'cylinders';
+              if (/start/i.test(lab)) return 'starting';
+              if (/control/i.test(lab)) return 'controls';
+              if (/gear.*ratio/i.test(lab)) return 'gearRatio';
+              if (/fuel/i.test(lab)) return 'fuel_system';
+              if (/cooling/i.test(lab)) return 'cooling';
+              if (/bore/i.test(lab)) return 'bore';
+              if (/stroke/i.test(lab)) return 'stroke';
+              if (/alternator/i.test(lab)) return 'alternator';
+              if (/prop/i.test(lab)) return 'propeller';
+              return '';
+            };
+            const key = map(label);
+            if (key && !(key in specifications)) (specifications as Record<string, string>)[key] = value;
+          }
+        }
+      }
+    } catch {}
+
+    // Parse definition lists (dl/dt/dd)
+    try {
+      const dlRegex = /<dl[\s\S]*?<\/dl>/gi;
+      const itemRegex = /<dt[^>]*>([\s\S]*?)<\/dt>\s*<dd[^>]*>([\s\S]*?)<\/dd>/gi;
+      const dls = textHtml.match(dlRegex) || [];
+      for (const dl of dls) {
+        let mItem: RegExpExecArray | null;
+        while ((mItem = itemRegex.exec(dl))) {
+          const label = (mItem[1] || '').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
+          const value = (mItem[2] || '').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
+          if (!label || !value) continue;
+          const map = (lab: string) => {
+            if (/weight/i.test(lab)) return 'weight';
+            if (/shaft/i.test(lab)) return 'shaft_length';
+            if (/displacement/i.test(lab)) return 'displacement';
+            if (/cylinder/i.test(lab)) return 'cylinders';
+            if (/start/i.test(lab)) return 'starting';
+            if (/control/i.test(lab)) return 'controls';
+            if (/gear.*ratio/i.test(lab)) return 'gearRatio';
+            if (/fuel/i.test(lab)) return 'fuel_system';
+            if (/cooling/i.test(lab)) return 'cooling';
+            if (/bore/i.test(lab)) return 'bore';
+            if (/stroke/i.test(lab)) return 'stroke';
+            if (/alternator/i.test(lab)) return 'alternator';
+            if (/prop/i.test(lab)) return 'propeller';
+            return '';
+          };
+          const key = map(label);
+          if (key && !(key in specifications)) (specifications as Record<string, string>)[key] = value;
+        }
+      }
+    } catch {}
+
+    // If weight still missing, try more text patterns
+    if (!(specifications as any).weight) {
+      const weightPatterns = [
+        /Weight[:\s]+([0-9,.]+ ?(lbs?|kg))/i,
+        /Dry Weight[:\s]+([0-9,.]+ ?(lbs?|kg))/i,
+        /(\d+\.?\d*)\s*(lbs?|kg)\s*\(?dry weight\)?/i,
+        /weighs?\s+(\d+\.?\d*)\s*(lbs?|kg)/i,
+      ];
+      for (const pat of weightPatterns) {
+        const m = textMd.match(pat) || textHtml.match(pat);
+        if (m) { (specifications as any).weight = `${m[1]} ${m[2] || 'lbs'}`.trim(); break; }
+      }
+    }
+
     // Extract features from lists that look like product features/specs (not nav)
     const ulRegex = /<ul[^>]*class="[^"]*(?:feature|spec)[^"]*"[^>]*>([\s\S]*?)<\/ul>/gi;
     const liRegex = /<li[^>]*>([\s\S]*?)<\/li>/gi;
@@ -263,6 +347,30 @@ async function scrapeDetails(url: string, apiKey: string, modelName?: string): P
     specifications = { ...specifications, ...s };
     if (!features.length && f.length) features = f;
   }
+
+  // Secondary fallback: standard Mercury specs by HP if few specs extracted
+  try {
+    if (modelName && Object.keys(specifications || {}).length < 3) {
+      const hpMatch2 = modelName.match(/(\d+\.?\d*)\s*HP/i);
+      if (hpMatch2) {
+        const hpKey = `${parseFloat(hpMatch2[1])}HP`;
+        const mercuryStandardSpecs: Record<string, Record<string, string>> = {
+          '2.5HP': { weight: '57 lbs', displacement: '85.5 cc', cylinders: '1', bore: '2.13" (55mm)', stroke: '1.73" (44mm)', gearRatio: '2.15:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
+          '3.5HP': { weight: '59 lbs', displacement: '85.5 cc', cylinders: '1', bore: '2.13" (55mm)', stroke: '1.73" (44mm)', gearRatio: '2.15:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
+          '5HP':   { weight: '60 lbs', displacement: '123 cc', cylinders: '1', bore: '2.36" (60mm)', stroke: '2.17" (55mm)', gearRatio: '2.15:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
+          '9.9HP': { weight: '84-87 lbs', displacement: '209 cc', cylinders: '2', bore: '2.56" (65mm)', stroke: '1.97" (50mm)', gearRatio: '2.08:1', cooling: 'Water cooled', shaft_length: '15", 20", or 25"' },
+          '15HP':  { weight: '99-104 lbs', displacement: '333 cc', cylinders: '2', bore: '2.36" (60mm)', stroke: '2.95" (75mm)', gearRatio: '2.15:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
+          '20HP':  { weight: '99-104 lbs', displacement: '333 cc', cylinders: '2', bore: '2.36" (60mm)', stroke: '2.95" (75mm)', gearRatio: '2.08:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
+        };
+        const std = mercuryStandardSpecs[hpKey];
+        if (std) {
+          for (const [k, v] of Object.entries(std)) {
+            if (!(k in (specifications as any))) (specifications as any)[k] = v;
+          }
+        }
+      }
+    }
+  } catch {}
 
   return { description, features, specifications };
 }
