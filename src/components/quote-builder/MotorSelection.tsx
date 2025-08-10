@@ -107,8 +107,10 @@ const getPromoLabelsForMotor = (motor: Motor): string[] => {
 };
 
 const decodeModelName = (modelName: string) => {
-  const decoded: { code: string; meaning: string; benefit: string }[] = [];
+  type Item = { code: string; meaning: string; benefit: string };
+  const decoded: Item[] = [];
   const name = modelName || '';
+  const upper = name.toUpperCase();
   const added = new Set<string>();
   const add = (code: string, meaning: string, benefit: string) => {
     if (!added.has(code)) {
@@ -116,37 +118,48 @@ const decodeModelName = (modelName: string) => {
       added.add(code);
     }
   };
+  const hasWord = (w: string) => new RegExp(`\\b${w}\\b`).test(upper);
 
-  // Engine family
-  if (/Four\s*Stroke|FourStroke/i.test(name)) {
-    add('FourStroke', '4-Stroke Engine', 'Quiet, fuel-efficient, no oil mixing');
-  }
+  // Engine family & special designations
+  if (/FOUR\s*STROKE|FOURSTROKE/i.test(name)) add('FourStroke', '4-Stroke Engine', 'Quiet, fuel-efficient, no oil mixing');
+  if (/SEAPRO/i.test(name)) add('SeaPro', 'Commercial Grade', 'Built for heavy use & durability');
+  if (/PROKICKER/i.test(name)) add('ProKicker', 'Kicker Motor', 'Optimized for trolling & backup power');
+  if (/JET\b/i.test(name)) add('Jet', 'Jet Drive', 'Great for shallow water operation');
+  if (/BIGFOOT/i.test(name)) add('BigFoot', 'High Thrust', 'Ideal for pontoons & heavy boats');
 
-  // Common suffix codes
-  if (name.includes('MH')) {
-    add('M', 'Manual Start', 'Pull cord - simple & reliable');
-    add('H', 'Tiller Handle', 'Steer directly from motor');
-  }
+  // Multi-part combos (match first to avoid partial overlaps)
+  if (upper.includes('ELHPT')) { add('E','Electric Start','Push-button start'); add('L','Long Shaft (20\")','Standard transom height'); add('H','Tiller Handle','Direct steering control'); add('PT','Power Tilt','Easy motor lifting'); }
+  if (upper.includes('ELXPT') || upper.includes('EXLPT')) { add('E','Electric Start','Push-button start'); add('XL','Extra Long Shaft (25\")','For 25\" transom boats'); add('PT','Power Trim & Tilt','Adjust angle on the fly'); }
+  if (upper.includes('ELPT')) { add('E','Electric Start','Push-button convenience'); add('L','Long Shaft (20\")','For 20\" transom boats'); add('PT','Power Trim & Tilt','Adjust angle on the fly'); }
+  if (upper.includes('MLH')) { add('M','Manual Start','Pull cord — simple & reliable'); add('L','Long Shaft (20\")','For 20\" transom boats'); add('H','Tiller Handle','Steer directly from motor'); }
+  if (upper.includes('MH')) { add('M','Manual Start','Pull cord — simple & reliable'); add('H','Tiller Handle','Steer directly from motor'); }
+  if (upper.includes('EH')) { add('E','Electric Start','Push-button convenience'); add('H','Tiller Handle','Direct steering control'); }
 
-  // Check ELHPT before ELPT to avoid duplicate weaker match
-  if (name.includes('ELHPT')) {
-    add('E', 'Electric Start', 'Push-button start');
-    add('L', 'Long Shaft (20")', 'Standard transom height');
-    add('H', 'Tiller Handle', 'Direct steering control');
-    add('PT', 'Power Tilt', 'Easy motor lifting');
-  } else if (name.includes('ELPT')) {
-    add('E', 'Electric Start', 'Push-button convenience');
-    add('L', 'Long Shaft (20")', 'For 20" transom boats');
-    add('PT', 'Power Trim & Tilt', 'Adjust angle on the fly');
-  }
+  // Steering and control
+  if (hasWord('RC') || upper.includes('ERC')) add('RC','Remote Control','Steering wheel & console controls');
 
-  if (/\bCT\b/.test(name) || /Command\s*Thrust/i.test(name)) {
-    add('CT', 'Command Thrust', 'Larger gearcase & prop for superior control');
-  }
+  // Command Thrust
+  if (hasWord('CT') || /COMMAND\s*THRUST/i.test(name)) add('CT','Command Thrust','Larger gearcase & prop for superior control');
 
-  if (name.includes('ProKicker')) {
-    add('ProKicker', 'Kicker Motor', 'Optimized for trolling & backup power');
-  }
+  // Shaft length (check longer tokens first)
+  if (hasWord('XXL') || hasWord('XX')) add('XX','Ultra Long Shaft (30\")','For 30\" transom boats');
+  else if (hasWord('XL') || (hasWord('X') && !hasWord('XX'))) add('XL','Extra Long Shaft (25\")','For 25\" transom boats');
+  else if (hasWord('L')) add('L','Long Shaft (20\")','For 20\" transom boats');
+  else if (hasWord('S')) add('S','Short Shaft (15\")','For 15\" transom boats');
+
+  // Features / technology
+  if (hasWord('PT')) add('PT','Power Trim & Tilt','Adjust motor angle on the fly');
+  if (hasWord('T')) add('T','Power Tilt','Easy motor lifting');
+  if (hasWord('GA')) add('GA','Gas Assist Tilt','Lighter effort when tilting');
+  if (hasWord('EFI')) add('EFI','Electronic Fuel Injection','Reliable starting & efficiency');
+  if (hasWord('DTS')) add('DTS','Digital Throttle & Shift','Smooth precise electronic controls');
+  if (hasWord('PXS') || /PROXS/i.test(name)) add('PXS','ProXS (High Performance)','Sport-tuned for acceleration');
+
+  // Single flags
+  if (hasWord('EL')) add('EL','Electric Start','Push-button convenience');
+  if (hasWord('E') && !added.has('E')) add('E','Electric Start','Push-button convenience');
+  if (hasWord('M') && !added.has('M')) add('M','Manual Start','Pull cord — simple & reliable');
+  if (hasWord('H') && !added.has('H')) add('H','Tiller Handle','Steer directly from motor');
 
   return decoded;
 };
@@ -1291,6 +1304,11 @@ const subtitle = formatVariantSubtitle(raw, title);
                 {quickViewMotor.model.includes('H') && (
                   <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
                     <strong>Tiller Handle:</strong> Perfect if you sit at the back of the boat. Great for fishing where precise control matters.
+                  </div>
+                )}
+                {(quickViewMotor.model.includes('RC') || quickViewMotor.model.includes('ERC')) && (
+                  <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
+                    <strong>Remote Control:</strong> Ideal for console boats — steer with a wheel and control throttle/shifting from the helm.
                   </div>
                 )}
                 {!quickViewMotor.model.includes('E') && quickViewMotor.model.includes('M') && (
