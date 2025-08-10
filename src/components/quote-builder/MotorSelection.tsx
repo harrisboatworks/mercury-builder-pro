@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
-import { RefreshCw, Zap, Check, Star, Sparkles, Eye, Scale, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info } from 'lucide-react';
+import { RefreshCw, Zap, Check, Star, Sparkles, Eye, Scale, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Plus } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -1280,7 +1280,7 @@ const subtitle = formatVariantSubtitle(raw, title);
                                 onMouseEnter={() => track('rebate_badge_hover', { model_id: motor.id, model_name: motor.model })}
                                 onClick={(e) => e.stopPropagation()}
                               >
-                                <span className="badge__icon" aria-hidden="true">✨</span>
+                                <span className="badge__icon" aria-hidden="true"><Plus className="w-3.5 h-3.5" /></span>
                                 <span className="badge__text">Repower Rebate</span>
                               </span>
                             </TooltipTrigger>

@@ -701,8 +701,8 @@
     background: linear-gradient(135deg, hsl(var(--promo-green-1)), hsl(var(--promo-green-2)));
     color: hsl(0 0% 100%);
     border: 1px solid hsl(0 0% 100% / 0.25);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    letter-spacing: normal;
+    text-transform: none;
     box-shadow: 0 2px 6px hsl(var(--promo-green-1) / 0.35);
     animation: pulse-glow 2s ease-in-out infinite;
     position: relative;
