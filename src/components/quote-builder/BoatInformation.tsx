@@ -366,7 +366,14 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
                       onClick={() => setShowHelp(s => !s)}
                       className="group relative rounded-xl border-2 border-border bg-card p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg"
                     >
-                      <div className="icon mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-border text-sm">?</div>
+                      <div className="mb-3 h-24 overflow-hidden rounded-md border-b border-border bg-gradient-to-b from-muted/40 to-background flex items-center justify-center">
+                        <img
+                          src="/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076.png"
+                          alt="Not sure? We'll help you choose your boat type"
+                          className="h-20 w-full object-contain"
+                          loading="lazy"
+                        />
+                      </div>
                       <h3 className="font-semibold">Not Sure?</h3>
                       <p className="text-sm text-muted-foreground">We'll help you figure it out</p>
                     </button>
