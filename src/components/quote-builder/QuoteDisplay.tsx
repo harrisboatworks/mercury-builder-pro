@@ -1056,7 +1056,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
           </div>
           <div className="flex items-center gap-3">
             <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-10 w-auto" />
-            <span className="text-sm text-foreground/90">Best repower deals guaranteed</span>
+            <span className="text-sm text-foreground/90">Expert repower consultation</span>
           </div>
         </div>
       </div>

@@ -349,7 +349,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
               />
               <p className="font-semibold text-foreground">As a Certified Mercury Repower Center, we offer:</p>
               <ul className="mt-2 space-y-1 text-sm text-foreground/90">
-                <li>✓ Maximum trade-in values</li>
+                <li>✓ Competitive trade-in options</li>
                 <li>✓ Expert repower consultation</li>
                 <li>✓ Up to $1,000 in Mercury rebates</li>
               </ul>

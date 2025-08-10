@@ -1085,7 +1085,7 @@ const handleMotorSelection = (motor: Motor) => {
               <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 md:h-16 w-auto" />
               <div className="text-left">
                 <p className="font-semibold text-foreground">Certified Repower Center</p>
-                <p className="text-sm text-muted-foreground">Maximum Trade Values</p>
+                <p className="text-sm text-muted-foreground">Expert Repower Consultation</p>
               </div>
             </div>
           </div>
