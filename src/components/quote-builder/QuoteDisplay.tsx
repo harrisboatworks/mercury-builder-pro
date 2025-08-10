@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle, Info } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, normalizeBrand } from '@/lib/trade-valuation';
 import { Progress } from '@/components/ui/progress';
@@ -82,51 +82,58 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   const motorPrice = (quoteData.motor?.salePrice ?? quoteData.motor?.basePrice ?? quoteData.motor?.price) || 0;
   
   const calculateAccessoryCosts = (motor: any, boatDetails: any) => {
+    let installationCost: number | 'TBD' = 500;
+    const hp = typeof motor?.hp === 'string' ? parseInt(motor.hp) : (motor?.hp || 0);
+    const model = String(motor?.model || '').toUpperCase();
+
+    // ProKicker special handling: installation is custom
+    if (/PROKICKER/.test(model)) {
+      installationCost = 'TBD';
+    }
+
     const costs = {
       controls: 0,
       controlAdapter: 0,
       battery: 0,
       propeller: 0,
-      installation: 500,
+      installation: installationCost,
       waterTest: 0,
-    };
-    const hp = typeof motor?.hp === 'string' ? parseInt(motor.hp) : (motor?.hp || 0);
-    const model = String(motor?.model || '').toUpperCase();
+    } as const;
 
     // Controls logic with adapter option
     if (hp >= 40) {
       switch (boatDetails?.controlsOption) {
         case 'none':
-          costs.controls = 1200; break;
+          (costs as any).controls = 1200; break;
         case 'adapter':
-          costs.controlAdapter = 125; break;
+          (costs as any).controlAdapter = 125; break;
         case 'compatible':
-          costs.controls = 0; break;
+          (costs as any).controls = 0; break;
       }
     }
 
     // Battery - Required for electric start
     const isElectricStart = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
     if (isElectricStart) {
-      costs.battery = boatDetails?.hasBattery ? 0 : 300;
+      (costs as any).battery = boatDetails?.hasBattery ? 0 : 300;
     }
 
     // Propeller - Required for 25HP+
     if (hp >= 25) {
       if (boatDetails?.hasCompatibleProp) {
-        costs.propeller = 0;
+        (costs as any).propeller = 0;
       } else if (hp >= 150) {
-        costs.propeller = 950; // Stainless steel
+        (costs as any).propeller = 950; // Stainless steel
       } else {
-        costs.propeller = 350; // Aluminum
+        (costs as any).propeller = 350; // Aluminum
       }
     }
 
-    return costs;
+    return costs as any;
   };
-
   const accessoryCosts = calculateAccessoryCosts(quoteData.motor, quoteData.boatInfo);
-  const accessoriesSubtotal = Object.values(accessoryCosts).reduce((sum, v) => sum + (v || 0), 0);
+  const installationTBD = accessoryCosts.installation === 'TBD';
+  const accessoriesSubtotal = (Object.values(accessoryCosts) as any[]).reduce((sum: number, v: any) => sum + (typeof v === 'number' ? v : 0), 0);
 
   const subtotalBeforeTrade = motorPrice + accessoriesSubtotal;
   const subtotalAfterTrade = subtotalBeforeTrade - (hasTradeIn ? tradeInValue : 0);
@@ -460,10 +467,23 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                 <span>+${accessoryCosts.propeller}</span>
               </div>
             )}
-            <div className="line-item flex justify-between items-center">
-              <span>Professional Installation</span>
-              <span>+$500</span>
-            </div>
+            {installationTBD ? (
+              <div className="line-item flex justify-between items-center">
+                <span>Installation & Rigging</span>
+                <span className="text-amber-600">TBD*</span>
+              </div>
+            ) : (
+              <div className="line-item flex justify-between items-center">
+                <span>Professional Installation</span>
+                <span>+$500</span>
+              </div>
+            )}
+            {installationTBD && (
+              <div className="mt-1 text-sm text-amber-600 flex items-start gap-2">
+                <Info size={16} className="mt-0.5" />
+                <p>* ProKicker installation & rigging costs determined by Harris Boat Works based on your specific setup and main motor integration requirements.</p>
+              </div>
+            )}
             <div className="line-item flex justify-between items-center">
               <span className="text-in-stock">✓ Water Testing & Prop Sizing</span>
               <span>FREE</span>
@@ -486,7 +506,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
             <div className="border-t border-border pt-4">
               <div className="flex justify-between items-center">
                 <span className="text-xl font-bold text-foreground">TOTAL CASH PRICE:</span>
-                <span className="text-3xl font-bold text-primary">${totalCashPrice.toLocaleString()}</span>
+                <span className="text-3xl font-bold text-primary">{installationTBD ? 'Contact for Quote' : `$${totalCashPrice.toLocaleString()}`}</span>
               </div>
             </div>
           </div>
@@ -703,7 +723,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                     <div className="font-semibold">💰 Cash Captain</div>
                     <Badge variant="secondary" className="text-[10px]">BEST VALUE</Badge>
                   </div>
-                  <div className="text-3xl font-bold leading-tight mt-2">${totalCashPrice.toLocaleString()}</div>
+                  <div className="text-3xl font-bold leading-tight mt-2">{installationTBD ? 'Contact for Quote' : `$${totalCashPrice.toLocaleString()}`}</div>
                   <div className="text-sm text-green-700 dark:text-green-300">Save {cashSavings.toFixed(0)} in interest!</div>
                 </div>
                 <Button className="mt-auto w-full" onClick={() => handlePaymentSelection('cash')}>Pay Cash & Save</Button>
