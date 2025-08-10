@@ -79,7 +79,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
       label: 'Pontoon',
       description: 'Family & entertainment',
       recommendedHP: '25-150',
-      image: '/lovable-uploads/e243e2aa-485a-41e6-a8c6-fc1b1ead54a9.png'
+      image: '/lovable-uploads/3c356039-87bb-4280-8f5d-555aa777d1ff.png'
     },
     {
       id: 'bowrider',
