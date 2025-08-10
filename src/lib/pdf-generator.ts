@@ -67,8 +67,8 @@ export const generateQuotePDF = async (quoteData: PDFQuoteData): Promise<jsPDF> 
     const [hbwImg, mercImg, csiImg, repowerImg] = await Promise.all([
       loadImage(harrisLogo),
       loadImage(mercuryLogo),
-      loadImage('/lovable-uploads/mercury-csi-award.png'),
-      loadImage('/lovable-uploads/mercury-repower-center.png'),
+      loadImage('/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png'),
+      loadImage('/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png'),
     ]);
     doc.addImage(hbwImg, 'PNG', 20, 10, 50, 20);
     doc.addImage(mercImg, 'PNG', 140, 10, 50, 20);

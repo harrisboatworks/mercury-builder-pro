@@ -944,11 +944,11 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
         <h4 className="font-bold mb-3 text-foreground">Why Buy From Harris Boat Works?</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="flex items-center gap-3">
-            <img src="/lovable-uploads/mercury-csi-award.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-10 w-auto" />
+            <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-10 w-auto" />
             <span className="text-sm text-foreground/90">Award-winning service you can trust</span>
           </div>
           <div className="flex items-center gap-3">
-            <img src="/lovable-uploads/mercury-repower-center.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-10 w-auto" />
+            <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-10 w-auto" />
             <span className="text-sm text-foreground/90">Best repower deals guaranteed</span>
           </div>
         </div>

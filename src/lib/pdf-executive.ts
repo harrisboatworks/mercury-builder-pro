@@ -66,9 +66,11 @@ export async function generateExecutivePDF(quoteData: PDFExecutiveQuoteData) {
   };
 
   // Preload images as Data URLs
-  const [harrisDataUrl, mercuryDataUrl] = await Promise.all([
+  const [harrisDataUrl, mercuryDataUrl, csiDataUrl, repowerDataUrl] = await Promise.all([
     urlToDataURL(harrisLogo),
     urlToDataURL(mercuryLogo),
+    urlToDataURL('/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png'),
+    urlToDataURL('/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png'),
   ]);
 
   // PAGE 1 - EXECUTIVE COVER
@@ -83,6 +85,9 @@ export async function generateExecutivePDF(quoteData: PDFExecutiveQuoteData) {
   // Logos
   doc.addImage(harrisDataUrl, "PNG", 20, 15, 40, 15);
   doc.addImage(mercuryDataUrl, "PNG", 150, 15, 40, 15);
+  // Credibility badges
+  doc.addImage(csiDataUrl, "PNG", 100, 13, 25, 12);
+  doc.addImage(repowerDataUrl, "PNG", 100, 28, 45, 15);
 
   // Title
   doc.setTextColor(255, 255, 255);

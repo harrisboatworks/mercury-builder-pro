@@ -342,7 +342,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
             {/* Repower Center Authority */}
             <div className="repower-authority text-center mt-4">
               <img
-                src="/lovable-uploads/mercury-repower-center.png"
+                src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
                 alt="Official Mercury Repower Center badge"
                 loading="lazy"
                 className="h-12 mx-auto mb-2 w-auto"
