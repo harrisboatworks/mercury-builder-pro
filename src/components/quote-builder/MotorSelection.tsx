@@ -9,7 +9,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/components/ui/use-toast';
 import { MotorFilters } from './MotorFilters';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { getPriceDisplayState } from '@/lib/pricing';
 import { formatVariantSubtitle, formatMotorTitle } from '@/lib/card-title';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
@@ -1240,46 +1240,62 @@ const subtitle = formatVariantSubtitle(raw, title);
 
       {/* Quick View Dialog */}
       <Dialog open={!!quickViewMotor} onOpenChange={(o) => { if (!o) setQuickViewMotor(null); }}>
-        <DialogContent className="sm:max-w-xl">
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>{quickViewMotor?.model} {quickViewMotor ? `- ${quickViewMotor.hp}HP` : ''}</DialogTitle>
+            <DialogDescription className="sr-only">
+              Quick view details for {quickViewMotor?.model} {quickViewMotor ? `- ${quickViewMotor.hp}HP` : ''}
+            </DialogDescription>
           </DialogHeader>
           {quickViewMotor && (
             <div className="space-y-4">
               {quickViewLoading && (
                 <div className="text-sm text-muted-foreground">Loading details…</div>
               )}
-              <div className="aspect-video bg-muted rounded-md overflow-hidden">
-                <img src={quickViewMotor.image} alt={quickViewMotor.model} className="w-full h-full object-cover" />
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="text-xl font-bold">
-                  ${ (quickViewMotor.salePrice || quickViewMotor.basePrice || quickViewMotor.price).toLocaleString() }
-                </div>
-                <Badge className={getStockBadgeColor(quickViewMotor.stockStatus)}>{quickViewMotor.stockStatus}</Badge>
-              </div>
+              {(() => {
+                console.log('Motor data:', quickViewMotor);
+                console.log('Specifications:', (quickViewMotor as any).specifications);
+                console.log('Features:', quickViewMotor.features);
+                return null;
+              })()}
 
-              {/* Specs grid */}
-              <div className="grid grid-cols-2 gap-3 text-sm">
-                <div className="flex justify-between"><span className="text-muted-foreground">Power</span><strong>{(quickViewMotor.specifications as any)?.horsepower || quickViewMotor.specifications?.powerHP || quickViewMotor.hp} HP</strong></div>
-                <div className="flex justify-between"><span className="text-muted-foreground">Weight</span><strong>{(quickViewMotor.specifications as any)?.weight || 'N/A'}</strong></div>
-                <div className="flex justify-between"><span className="text-muted-foreground">Shaft</span><strong>{(quickViewMotor.specifications as any)?.shaftLength || 'N/A'}</strong></div>
-                <div className="flex justify-between"><span className="text-muted-foreground">Start</span><strong>{(quickViewMotor.specifications as any)?.starting || (quickViewMotor.specifications as any)?.startType || 'N/A'}</strong></div>
-                <div className="flex justify-between"><span className="text-muted-foreground">Fuel System</span><strong>{(quickViewMotor.specifications as any)?.fuelSystem || 'N/A'}</strong></div>
-                <div className="flex justify-between"><span className="text-muted-foreground">Warranty</span><strong>{(quickViewMotor.specifications as any)?.warranty || (quickViewMotor.specifications as any)?.warrantyPromo || 'N/A'}</strong></div>
-              </div>
-
-              {/* Features */}
-              {Array.isArray(quickViewMotor.features) && quickViewMotor.features.length > 0 && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Left column - image and price */}
                 <div>
-                  <h4 className="font-semibold mb-2">Features</h4>
-                  <ul className="list-disc pl-5 space-y-1">
-                    {quickViewMotor.features.slice(0, 6).map((f) => (
-                      <li key={f}>{f}</li>
-                    ))}
-                  </ul>
+                  <div className="bg-muted rounded-md overflow-hidden">
+                    <img src={quickViewMotor.image} alt={quickViewMotor.model} className="w-full max-h-[300px] object-contain" />
+                  </div>
+                  <div className="mt-4 flex items-center justify-between">
+                    <div className="text-2xl font-bold">
+                      ${ (quickViewMotor.salePrice || quickViewMotor.basePrice || quickViewMotor.price).toLocaleString() }
+                    </div>
+                    <Badge className={getStockBadgeColor(quickViewMotor.stockStatus)}>{quickViewMotor.stockStatus}</Badge>
+                  </div>
                 </div>
-              )}
+
+                {/* Right column - specs and features */}
+                <div className="space-y-4">
+                  <div className="grid grid-cols-2 gap-3 bg-accent p-4 rounded-md text-sm">
+                    <div className="flex justify-between"><span className="text-muted-foreground">Power</span><strong>{(quickViewMotor.specifications as any)?.horsepower || quickViewMotor.specifications?.powerHP || quickViewMotor.hp} HP</strong></div>
+                    <div className="flex justify-between"><span className="text-muted-foreground">Weight</span><strong>{(quickViewMotor.specifications as any)?.weight || 'Contact for specs'}</strong></div>
+                    <div className="flex justify-between"><span className="text-muted-foreground">Shaft</span><strong>{(quickViewMotor.specifications as any)?.shaftLength || (quickViewMotor.specifications as any)?.shaft_length || 'Multiple options'}</strong></div>
+                    <div className="flex justify-between"><span className="text-muted-foreground">Start</span><strong>{(quickViewMotor.specifications as any)?.starting || (quickViewMotor.specifications as any)?.startType || 'See details'}</strong></div>
+                    <div className="flex justify-between"><span className="text-muted-foreground">Fuel</span><strong>{(quickViewMotor.specifications as any)?.fuelSystem || (quickViewMotor.specifications as any)?.fuel_system || 'Standard'}</strong></div>
+                    <div className="flex justify-between"><span className="text-muted-foreground">Warranty</span><strong>{(quickViewMotor.specifications as any)?.warranty || (quickViewMotor.specifications as any)?.warrantyPromo || '3 Year'}</strong></div>
+                  </div>
+
+                  {Array.isArray(quickViewMotor.features) && quickViewMotor.features.length > 0 && (
+                    <div>
+                      <h4 className="font-semibold mb-2">Features</h4>
+                      <ul className="list-disc pl-5 space-y-1">
+                        {quickViewMotor.features.slice(0, 6).map((f) => (
+                          <li key={f}>{f}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </div>
 
               <div className="text-sm text-muted-foreground">{quickViewMotor.description || quickViewMotor.specs}</div>
 
@@ -1317,6 +1333,13 @@ const subtitle = formatVariantSubtitle(raw, title);
                   </div>
                 )}
               </div>
+
+              {quickViewMotor.specifications && (
+                <details className="mt-4 p-3 bg-muted rounded-md">
+                  <summary className="cursor-pointer font-semibold">Debug: Raw Specs</summary>
+                  <pre className="text-xs mt-2">{JSON.stringify(quickViewMotor.specifications, null, 2)}</pre>
+                </details>
+              )}
 
               <Button onClick={() => { handleMotorSelection(quickViewMotor); setQuickViewMotor(null); }}>
                 Select This Motor
