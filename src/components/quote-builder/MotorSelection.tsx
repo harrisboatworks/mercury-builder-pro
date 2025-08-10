@@ -11,6 +11,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { MotorFinderWizard } from './MotorFinderWizard';
 import { TestimonialCarousel } from './TestimonialCarousel';
 import { PromoDetailsModal } from './PromoDetailsModal';
+import { ActivityTicker } from './ActivityTicker';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { getPriceDisplayState } from '@/lib/pricing';
@@ -1076,6 +1077,8 @@ const handleMotorSelection = (motor: Motor) => {
             </div>
           </div>
         </div>
+
+<ActivityTicker />
 
         <TestimonialCarousel />
 
