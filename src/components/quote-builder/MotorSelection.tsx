@@ -119,6 +119,8 @@ const decodeModelName = (modelName: string) => {
     }
   };
   const hasWord = (w: string) => new RegExp(`\\b${w}\\b`).test(upper);
+  const hpMatch = upper.match(/(\d+(?:\.\d+)?)HP/);
+  const hp = hpMatch ? parseFloat(hpMatch[1]) : 0;
 
   // Engine family & special designations
   if (/FOUR\s*STROKE|FOURSTROKE/i.test(name)) add('FourStroke', '4-Stroke Engine', 'Quiet, fuel-efficient, no oil mixing');
@@ -137,7 +139,7 @@ const decodeModelName = (modelName: string) => {
 
   // Steering and control
   if (hasWord('RC') || upper.includes('ERC')) add('RC','Remote Control','Steering wheel & console controls');
-
+  if (hp >= 40 && !added.has('RC')) add('RC','Remote Control','Steering wheel & console controls');
   // Command Thrust
   if (hasWord('CT') || /COMMAND\s*THRUST/i.test(name)) add('CT','Command Thrust','Larger gearcase & prop for superior control');
 
@@ -159,7 +161,7 @@ const decodeModelName = (modelName: string) => {
   if (hasWord('EL')) add('EL','Electric Start','Push-button convenience');
   if (hasWord('E') && !added.has('E')) add('E','Electric Start','Push-button convenience');
   if (hasWord('M') && !added.has('M')) add('M','Manual Start','Pull cord — simple & reliable');
-  if (hasWord('H') && !added.has('H')) add('H','Tiller Handle','Steer directly from motor');
+  if (hp <= 30 && hasWord('H') && !added.has('H')) add('H','Tiller Handle','Steer directly from motor');
 
   return decoded;
 };
@@ -1458,14 +1460,14 @@ const subtitle = formatVariantSubtitle(raw, title);
                 </div>
 
                 {/* Helpful tips */}
-                {quickViewMotor.model.includes('H') && (
+                {quickViewMotor.hp >= 40 && (
                   <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
-                    <strong>Tiller Handle:</strong> Perfect if you sit at the back of the boat. Great for fishing where precise control matters.
+                    <strong>Remote Control Only:</strong> This motor requires console steering with remote throttle and shift controls. Too powerful for tiller operation.
                   </div>
                 )}
-                {(quickViewMotor.model.includes('RC') || quickViewMotor.model.includes('ERC')) && (
+                {quickViewMotor.hp <= 30 && /(MH|MLH|EH|ELH)/i.test(quickViewMotor.model) && (
                   <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
-                    <strong>Remote Control:</strong> Ideal for console boats — steer with a wheel and control throttle/shifting from the helm.
+                    <strong>Tiller Handle:</strong> Perfect if you sit at the back of the boat. Great for fishing where precise control matters.
                   </div>
                 )}
                 {!quickViewMotor.model.includes('E') && quickViewMotor.model.includes('M') && (
