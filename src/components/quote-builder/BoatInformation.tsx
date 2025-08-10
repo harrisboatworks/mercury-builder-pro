@@ -12,6 +12,7 @@ import { type TradeInInfo } from '@/lib/trade-valuation';
 import { Slider } from '@/components/ui/slider';
 import { Progress } from '@/components/ui/progress';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 interface BoatInformationProps {
   onStepComplete: (boatInfo: BoatInfo) => void;
   onBack: () => void;
@@ -79,7 +80,8 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
       label: 'Pontoon',
       description: 'Family & entertainment',
       recommendedHP: '25-150',
-      image: '/lovable-uploads/3c356039-87bb-4280-8f5d-555aa777d1ff.png'
+      image: '/lovable-uploads/3c356039-87bb-4280-8f5d-555aa777d1ff.png',
+      note: 'Needs Command Thrust motor'
     },
     {
       id: 'bowrider',
@@ -338,7 +340,21 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
                           )}
                         </div>
                         <div className="selection-impact mt-2 text-xs text-muted-foreground">
-                          {type.id === 'pontoon' && <span>Needs high-thrust motor</span>}
+                          {type.id === 'pontoon' && (
+                            <span className="inline-flex items-center gap-1">
+                              Needs Command Thrust motor
+                              <TooltipProvider delayDuration={150}>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <Info className="h-3.5 w-3.5 text-primary/70" />
+                                  </TooltipTrigger>
+                                  <TooltipContent className="max-w-xs text-xs">
+                                    Command Thrust = larger gearcase and prop for better low-speed control and pushing power.
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </span>
+                          )}
                           {type.id === 'bass-boat' && <span>Built for speed</span>}
                         </div>
                       </button>
