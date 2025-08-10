@@ -166,6 +166,158 @@ const decodeModelName = (modelName: string) => {
   return decoded;
 };
 
+// Buyer-critical helper functions for Quick View
+const getRecommendedBoatSize = (hp: number | string) => {
+  const n = typeof hp === 'string' ? parseInt(hp) : hp;
+  if (n <= 6) return 'Up to 12ft';
+  if (n <= 15) return '12-16ft';
+  if (n <= 30) return '14-18ft';
+  if (n <= 60) return '16-20ft';
+  if (n <= 90) return '18-22ft';
+  if (n <= 115) return '20-24ft';
+  if (n <= 150) return '22-26ft';
+  if (n <= 200) return '24-28ft';
+  return '26ft+';
+};
+
+const getEstimatedSpeed = (hp: number | string) => {
+  const n = typeof hp === 'string' ? parseInt(hp) : hp;
+  if (n <= 6) return '5-8 mph';
+  if (n <= 15) return '15-20 mph';
+  if (n <= 30) return '25-30 mph';
+  if (n <= 60) return '35-40 mph';
+  if (n <= 90) return '40-45 mph';
+  if (n <= 115) return '45-50 mph';
+  if (n <= 150) return '50-55 mph';
+  return '55+ mph';
+};
+
+const getFuelConsumption = (hp: number | string) => {
+  const n = typeof hp === 'string' ? parseInt(hp) : hp;
+  if (n <= 6) return '0.5-1 gph';
+  if (n <= 15) return '1-2 gph';
+  if (n <= 30) return '2-3 gph';
+  if (n <= 60) return '4-6 gph';
+  if (n <= 90) return '7-9 gph';
+  if (n <= 115) return '9-11 gph';
+  if (n <= 150) return '12-15 gph';
+  return '15+ gph';
+};
+
+const getRange = (hp: number | string) => {
+  const n = typeof hp === 'string' ? parseInt(hp) : hp;
+  if (n <= 6) return 'N/A (portable tank)';
+  if (n <= 15) return '80-120 miles';
+  if (n <= 30) return '70-110 miles';
+  if (n <= 60) return '60-100 miles';
+  if (n <= 90) return '55-90 miles';
+  if (n <= 115) return '50-85 miles';
+  if (n <= 150) return '45-80 miles';
+  return '40-70 miles';
+};
+
+const getTransomRequirement = (motor: Motor) => {
+  const model = (motor.model || '').toUpperCase();
+  const shaft = (motor as any).specifications?.shaft_length as string | undefined;
+  if (shaft?.includes('30')) return '30" (XXL) transom';
+  if (shaft?.includes('25')) return '25" (XL) transom';
+  if (shaft?.includes('20')) return '20" (L) transom';
+  if (/\bXXL\b/.test(model)) return '30" (XXL) transom';
+  if (/\bXL\b|EXLPT/.test(model)) return '25" (XL) transom';
+  if (/\bL\b|ELPT|MLH|LPT/.test(model)) return '20" (L) transom';
+  if (/\bS\b/.test(model)) return '15" (S) transom';
+  return '15", 20" or 25" (check model)';
+};
+
+const getBatteryRequirement = (motor: Motor) => {
+  const model = (motor.model || '').toUpperCase();
+  if (/\bM\b/.test(model)) return 'Not required (manual start)';
+  const n = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
+  if (n <= 30) return '12V marine battery';
+  if (n <= 115) return '12V marine cranking battery (min 800 CCA)';
+  return 'High-output 12V (or dual) marine battery';
+};
+
+const getControlRequirement = (motor: Motor) => {
+  const model = (motor.model || '').toUpperCase();
+  const n = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
+  if (n <= 30 && /\bH\b/.test(model)) return 'Tiller handle (built-in)';
+  if (n >= 40) return 'Remote control kit required (~$800-1500)';
+  return 'Tiller or remote available';
+};
+
+const getFuelRequirement = (_motor: Motor) => {
+  return 'Unleaded 87 octane gasoline (E10 up to 10%)';
+};
+
+const getOilRequirement = (_motor: Motor) => {
+  return '4-stroke marine oil 10W-30 or 25W-40 (Mercury)';
+};
+
+const getIdealUses = (hp: number | string) => {
+  const n = typeof hp === 'string' ? parseInt(hp) : hp;
+  if (n <= 6) {
+    return (
+      <ul className="list-disc pl-5">
+        <li>Dinghies & tenders</li>
+        <li>Canoes & kayaks</li>
+        <li>Emergency backup</li>
+        <li>Trolling</li>
+      </ul>
+    );
+  }
+  if (n <= 30) {
+    return (
+      <ul className="list-disc pl-5">
+        <li>Aluminum fishing boats</li>
+        <li>Small pontoons</li>
+        <li>Day cruising</li>
+        <li>Lake fishing</li>
+      </ul>
+    );
+  }
+  if (n <= 90) {
+    return (
+      <ul className="list-disc pl-5">
+        <li>Family pontoons</li>
+        <li>Bass boats</li>
+        <li>Runabouts</li>
+        <li>Water sports</li>
+      </ul>
+    );
+  }
+  if (n <= 150) {
+    return (
+      <ul className="list-disc pl-5">
+        <li>Large pontoons</li>
+        <li>Offshore fishing</li>
+        <li>Performance boats</li>
+        <li>Tournament fishing</li>
+      </ul>
+    );
+  }
+  return (
+    <ul className="list-disc pl-5">
+      <li>High-performance boats</li>
+      <li>Commercial use</li>
+      <li>Offshore racing</li>
+      <li>Heavy loads</li>
+    </ul>
+  );
+};
+
+const getComparisonTip = (motor: Motor) => {
+  const model = (motor.model || '').toUpperCase();
+  const n = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
+  if (/COMMAND\s*THRUST|\bCT\b/.test(model)) return 'Command Thrust = Better for heavy boats & pontoons (larger prop, lower gear ratio)';
+  if (/PROKICKER/.test(model)) return 'ProKicker = Optimized for trolling with precise low-speed control';
+  if (/PRO\s*XS|PROXS/.test(model)) return 'Pro XS = Race-bred performance with higher top speed';
+  if (/SEAPRO/.test(model)) return 'SeaPro = Commercial grade for heavy use (stronger components)';
+  if (n <= 30) return `Compare to: ${Math.max(2, n - 5)}HP (save ~$500, ~5mph slower) or ${n + 10}HP (cost ~$800 more, ~5mph faster)`;
+  return `This size typically replaces older ${Math.round(n * 1.3)}HP 2-strokes with better fuel economy`;
+};
+
+
 interface MotorSelectionProps {
   onStepComplete: (motor: Motor) => void;
   noSalePriceLayout?: 'default' | 'placeholder' | 'centered';
@@ -1456,6 +1608,55 @@ const subtitle = formatVariantSubtitle(raw, title);
                             </ul>
                           </div>
                         )}
+
+                        {/* Buyer-critical information */}
+                        <div className="bg-accent p-4 rounded-md mt-4 performance-section">
+                          <h4 className="font-semibold mb-2 flex items-center">⚡ Performance Estimates</h4>
+                          <div className="grid grid-cols-2 gap-3 text-sm">
+                            <div>
+                              <span className="text-muted-foreground">Recommended Boat Size:</span>
+                              <strong className="ml-2">{getRecommendedBoatSize(quickViewMotor.hp)}</strong>
+                            </div>
+                            <div>
+                              <span className="text-muted-foreground">Est. Top Speed:</span>
+                              <strong className="ml-2">{getEstimatedSpeed(quickViewMotor.hp)}</strong>
+                            </div>
+                            <div>
+                              <span className="text-muted-foreground">Fuel Consumption:</span>
+                              <strong className="ml-2">{getFuelConsumption(quickViewMotor.hp)}</strong>
+                            </div>
+                            <div>
+                              <span className="text-muted-foreground">Range (25 gal tank):</span>
+                              <strong className="ml-2">{getRange(quickViewMotor.hp)}</strong>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="bg-secondary text-secondary-foreground p-4 rounded-md mt-4 requirements-section">
+                          <h4 className="font-semibold mb-2 flex items-center">🔧 Installation Requirements</h4>
+                          <ul className="text-sm space-y-1">
+                            <li>✓ Transom Height: {getTransomRequirement(quickViewMotor)}</li>
+                            <li>✓ Battery Required: {getBatteryRequirement(quickViewMotor)}</li>
+                            <li>✓ Control Type: {getControlRequirement(quickViewMotor)}</li>
+                            <li>✓ Fuel Type: {getFuelRequirement(quickViewMotor)}</li>
+                            <li>✓ Oil Requirements: {getOilRequirement(quickViewMotor)}</li>
+                          </ul>
+                        </div>
+
+                        <div className="bg-accent p-4 rounded-md mt-4 use-cases-section">
+                          <h4 className="font-semibold mb-2">🎯 Perfect For</h4>
+                          <div className="text-sm">
+                            {getIdealUses(quickViewMotor.hp)}
+                          </div>
+                        </div>
+
+                        <div className="bg-muted p-3 rounded-md mt-4 text-sm comparison-tip">
+                          <strong>💡 Quick Comparison:</strong>
+                          <div className="mt-1">
+                            {getComparisonTip(quickViewMotor)}
+                          </div>
+                        </div>
+
                       </>
                     );
                   })()}
