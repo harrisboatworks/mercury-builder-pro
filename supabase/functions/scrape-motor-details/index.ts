@@ -358,7 +358,7 @@ async function scrapeDetails(url: string, apiKey: string, modelName?: string): P
           '2.5HP': { weight: '57 lbs', displacement: '85.5 cc', cylinders: '1', bore: '2.13" (55mm)', stroke: '1.73" (44mm)', gearRatio: '2.15:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
           '3.5HP': { weight: '59 lbs', displacement: '85.5 cc', cylinders: '1', bore: '2.13" (55mm)', stroke: '1.73" (44mm)', gearRatio: '2.15:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
           '5HP':   { weight: '60 lbs', displacement: '123 cc', cylinders: '1', bore: '2.36" (60mm)', stroke: '2.17" (55mm)', gearRatio: '2.15:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
-          '9.9HP': { weight: '84-87 lbs', displacement: '209 cc', cylinders: '2', bore: '2.56" (65mm)', stroke: '1.97" (50mm)', gearRatio: '2.08:1', cooling: 'Water cooled', shaft_length: '15", 20", or 25"' },
+          '9.9HP': { weight: '84 lbs', displacement: '209 cc', cylinders: '2', bore: '2.56" (65mm)', stroke: '1.97" (50mm)', gearRatio: '2.08:1', cooling: 'Water cooled', shaft_length: '15", 20", or 25"' },
           '15HP':  { weight: '99-104 lbs', displacement: '333 cc', cylinders: '2', bore: '2.36" (60mm)', stroke: '2.95" (75mm)', gearRatio: '2.15:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
           '20HP':  { weight: '99-104 lbs', displacement: '333 cc', cylinders: '2', bore: '2.36" (60mm)', stroke: '2.95" (75mm)', gearRatio: '2.08:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
         };

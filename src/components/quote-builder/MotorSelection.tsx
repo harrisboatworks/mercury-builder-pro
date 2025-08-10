@@ -1289,6 +1289,28 @@ const subtitle = formatVariantSubtitle(raw, title);
                         warranty: '3 Year',
                       };
 
+                      const getStandardWeight = (model: string): string => {
+                        const upper = model.toUpperCase();
+                        if (upper.includes('2.5HP')) return '57 lbs';
+                        if (upper.includes('3.5HP')) return '59 lbs';
+                        if (upper.includes('5HP')) return '60 lbs';
+                        if (upper.includes('6HP')) return '60 lbs';
+                        if (upper.includes('8HP')) return '78 lbs';
+                        if (upper.includes('9.9HP')) {
+                          if (upper.includes('COMMAND THRUST') || upper.includes('CT')) return '90 lbs';
+                          if (upper.includes('ELH') || upper.includes('ELPT')) return '87 lbs';
+                          return '84 lbs';
+                        }
+                        if (upper.includes('15HP')) return '99 lbs';
+                        if (upper.includes('20HP')) return '104 lbs';
+                        if (upper.includes('25HP')) return '126 lbs';
+                        if (upper.includes('30HP')) return '163 lbs';
+                        if (upper.includes('40HP')) return '209 lbs';
+                        if (upper.includes('50HP')) return '216 lbs';
+                        if (upper.includes('60HP')) return '216 lbs';
+                        return 'Contact for specs';
+                      };
+
                       features.forEach((f) => {
                         const text = String(f);
                         // Weight
@@ -1323,12 +1345,19 @@ const subtitle = formatVariantSubtitle(raw, title);
                       if (/\bL\b/.test(model)) specs.shaft = specs.shaft === 'Multiple options' ? '20" (Long)' : specs.shaft;
                       if (/\bS\b/.test(model)) specs.shaft = specs.shaft === 'Multiple options' ? '15" (Short)' : specs.shaft;
 
+                      // Final weight fallback: prefer scraped specification weight, else standard mapping
+                      const specWeight = (quickViewMotor.specifications as any)?.weight;
+                      if (specs.weight === 'Contact for specs') {
+                        if (specWeight) specs.weight = String(specWeight);
+                        else specs.weight = getStandardWeight(model);
+                      }
+
                       return specs;
                     })();
 
                     // Clean features for display (exclude nav/social links, urls, too short)
                     const displayFeatures = features
-                      .filter((f) => !/https?:\/\//i.test(f) && !/\[.*\]\(.*\)/.test(f) && f.trim().length > 5)
+                      .filter((f) => !/https?:\/\//i.test(f) && !/\[.*\]\(.*\)/.test(f) && !/^\s*URL:/i.test(f) && f.trim().length > 5)
                       .slice(0, 8);
 
                     return (
