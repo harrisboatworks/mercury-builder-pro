@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { RefreshCw, Zap, Check, Star, Sparkles, Eye, Scale } from 'lucide-react';
+import { RefreshCw, Zap, Check, Star, Sparkles, Eye, Scale, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -256,54 +256,54 @@ const getOilRequirement = (_motor: Motor) => {
 
 const getIdealUses = (hp: number | string) => {
   const n = typeof hp === 'string' ? parseInt(hp) : hp;
-  if (n <= 6) {
-    return (
-      <ul className="list-disc pl-5">
-        <li>Dinghies & tenders</li>
-        <li>Canoes & kayaks</li>
-        <li>Emergency backup</li>
-        <li>Trolling</li>
-      </ul>
-    );
-  }
-  if (n <= 30) {
-    return (
-      <ul className="list-disc pl-5">
-        <li>Aluminum fishing boats</li>
-        <li>Small pontoons</li>
-        <li>Day cruising</li>
-        <li>Lake fishing</li>
-      </ul>
-    );
-  }
-  if (n <= 90) {
-    return (
-      <ul className="list-disc pl-5">
-        <li>Family pontoons</li>
-        <li>Bass boats</li>
-        <li>Runabouts</li>
-        <li>Water sports</li>
-      </ul>
-    );
-  }
-  if (n <= 150) {
-    return (
-      <ul className="list-disc pl-5">
-        <li>Large pontoons</li>
-        <li>Offshore fishing</li>
-        <li>Performance boats</li>
-        <li>Tournament fishing</li>
-      </ul>
-    );
-  }
-  return (
-    <ul className="list-disc pl-5">
-      <li>High-performance boats</li>
-      <li>Commercial use</li>
-      <li>Offshore racing</li>
-      <li>Heavy loads</li>
+  const Bullets = ({ items }: { items: string[] }) => (
+    <ul className="space-y-1">
+      {items.map((txt, i) => (
+        <li key={i} className="flex items-start">
+          <span className="mr-2">•</span>
+          <span>{txt}</span>
+        </li>
+      ))}
     </ul>
   );
+  if (n <= 6) {
+    return <Bullets items={[
+      'Dinghies & tenders',
+      'Canoes & kayaks',
+      'Emergency backup',
+      'Trolling',
+    ]} />;
+  }
+  if (n <= 30) {
+    return <Bullets items={[
+      'Aluminum fishing boats',
+      'Small pontoons',
+      'Day cruising',
+      'Lake fishing',
+    ]} />;
+  }
+  if (n <= 90) {
+    return <Bullets items={[
+      'Family pontoons',
+      'Bass boats',
+      'Runabouts',
+      'Water sports',
+    ]} />;
+  }
+  if (n <= 150) {
+    return <Bullets items={[
+      'Large pontoons',
+      'Offshore fishing',
+      'Performance boats',
+      'Tournament fishing',
+    ]} />;
+  }
+  return <Bullets items={[
+    'High-performance boats',
+    'Commercial use',
+    'Offshore racing',
+    'Heavy loads',
+  ]} />;
 };
 
 const getComparisonTip = (motor: Motor) => {
@@ -1610,30 +1610,45 @@ const subtitle = formatVariantSubtitle(raw, title);
                         )}
 
                         {/* Buyer-critical information */}
+                        <hr className="my-4 border-border" />
                         <div className="bg-accent p-4 rounded-md mt-4 performance-section">
                           <h4 className="font-semibold mb-2 flex items-center">⚡ Performance Estimates</h4>
                           <div className="grid grid-cols-2 gap-3 text-sm">
                             <div>
-                              <span className="text-muted-foreground">Recommended Boat Size:</span>
-                              <strong className="ml-2">{getRecommendedBoatSize(quickViewMotor.hp)}</strong>
+                              <div className="flex items-center gap-2 text-muted-foreground">
+                                <Ship size={16} /> <span>Boat Size</span>
+                              </div>
+                              <strong className="block">{getRecommendedBoatSize(quickViewMotor.hp)}</strong>
                             </div>
                             <div>
-                              <span className="text-muted-foreground">Est. Top Speed:</span>
-                              <strong className="ml-2">{getEstimatedSpeed(quickViewMotor.hp)}</strong>
+                              <div className="flex items-center gap-2 text-muted-foreground">
+                                <Gauge size={16} /> <span>Top Speed</span>
+                              </div>
+                              <strong className="block">{getEstimatedSpeed(quickViewMotor.hp)}</strong>
                             </div>
                             <div>
-                              <span className="text-muted-foreground">Fuel Consumption:</span>
-                              <strong className="ml-2">{getFuelConsumption(quickViewMotor.hp)}</strong>
+                              <div className="flex items-center gap-2 text-muted-foreground">
+                                <Fuel size={16} /> <span>Fuel Use</span>
+                              </div>
+                              <strong className="block">{getFuelConsumption(quickViewMotor.hp)}</strong>
                             </div>
                             <div>
-                              <span className="text-muted-foreground">Range (25 gal tank):</span>
-                              <strong className="ml-2">{getRange(quickViewMotor.hp)}</strong>
+                              <div className="flex items-center gap-2 text-muted-foreground">
+                                <MapPin size={16} /> <span>Range</span>
+                              </div>
+                              <strong className="block">{getRange(quickViewMotor.hp)}</strong>
                             </div>
                           </div>
                         </div>
 
                         <div className="bg-secondary text-secondary-foreground p-4 rounded-md mt-4 requirements-section">
-                          <h4 className="font-semibold mb-2 flex items-center">🔧 Installation Requirements</h4>
+                          <h4 className="font-semibold mb-2 flex items-center"><Wrench size={16} className="mr-2" /> Installation Requirements</h4>
+                          {quickViewMotor.hp >= 40 && (
+                            <div className="text-destructive font-semibold flex items-center gap-2 mb-2">
+                              <AlertTriangle size={16} />
+                              <span>Note: Remote controls required (additional ~$1,200)</span>
+                            </div>
+                          )}
                           <ul className="text-sm space-y-1">
                             <li>✓ Transom Height: {getTransomRequirement(quickViewMotor)}</li>
                             <li>✓ Battery Required: {getBatteryRequirement(quickViewMotor)}</li>
@@ -1657,7 +1672,26 @@ const subtitle = formatVariantSubtitle(raw, title);
                           </div>
                         </div>
 
-                      </>
+                        <div className="bg-accent p-3 rounded-md mt-4 text-sm total-investment">
+                          <h4 className="font-semibold flex items-center gap-2"><Calculator size={16} /> Total Investment Estimate</h4>
+                          <div className="text-sm space-y-1">
+                            {(() => {
+                              const price = Number((quickViewMotor as any).salePrice ?? (quickViewMotor as any).basePrice ?? (quickViewMotor as any).price ?? 0);
+                              const needsControls = (quickViewMotor.hp as number) >= 40;
+                              const needsBattery = !/\bM\b/i.test(quickViewMotor.model || '');
+                              const total = price + (needsControls ? 1200 : 0) + (needsBattery ? 300 : 0) + 500;
+                              return (
+                                <>
+                                  <div>Motor: {'$' + price.toLocaleString()}</div>
+                                  {needsControls && <div>Controls: ~$1,200</div>}
+                                  {needsBattery && <div>Battery: ~$300</div>}
+                                  <div>Installation: ~$500</div>
+                                  <div className="font-bold pt-1 border-t border-border">Total: ~{'$' + total.toLocaleString()}</div>
+                                </>
+                              );
+                            })()}
+                          </div>
+                        </div>
                     );
                   })()}
                 </div>
