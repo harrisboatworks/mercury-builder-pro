@@ -1031,6 +1031,15 @@ const handleMotorSelection = (motor: Motor) => {
           </div>
         </div>
 
+        {selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && (
+          <div className="controls-savings-banner rounded-md border border-border bg-accent/20 p-3 mt-3">
+            <div className="flex items-center gap-3">
+              <Badge variant="secondary">MONEY SAVER</Badge>
+              <p className="text-sm">Have Mercury controls from your old motor? Save over $1,000 with our adapter harness!</p>
+            </div>
+          </div>
+        )}
+
         {/* Browse vs Compare Mode (Phase 1) */}
         <div className="flex justify-center">
           <div className="view-mode-toggle">
@@ -1652,7 +1661,16 @@ const subtitle = formatVariantSubtitle(raw, title);
                           <ul className="text-sm space-y-1">
                             <li>✓ Transom Height: {getTransomRequirement(quickViewMotor)}</li>
                             <li>✓ Battery Required: {getBatteryRequirement(quickViewMotor)}</li>
-                            <li>✓ Control Type: {getControlRequirement(quickViewMotor)}</li>
+                            <li>✓ Control Type: {(() => {
+                              const hp = typeof quickViewMotor.hp === 'string' ? parseInt(quickViewMotor.hp) : quickViewMotor.hp;
+                              if (hp < 40) return 'Tiller or Remote';
+                              return (
+                                <>
+                                  Remote required
+                                  <span className="text-in-stock text-xs block">(Existing Mercury controls? Save $1,075 with adapter!)</span>
+                                </>
+                              );
+                            })()}</li>
                             <li>✓ Fuel Type: {getFuelRequirement(quickViewMotor)}</li>
                             <li>✓ Oil Requirements: {getOilRequirement(quickViewMotor)}</li>
                           </ul>

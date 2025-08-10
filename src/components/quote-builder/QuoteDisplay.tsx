@@ -80,7 +80,35 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   const tradeEstimate = hasTradeIn && tradeInDetails ? estimateTradeValue(tradeInDetails) : null;
 
   const motorPrice = (quoteData.motor?.salePrice ?? quoteData.motor?.basePrice ?? quoteData.motor?.price) || 0;
-  const subtotalAfterTrade = motorPrice - (hasTradeIn ? tradeInValue : 0);
+  
+  const calculateAccessoryCosts = (motor: any, boatDetails: any) => {
+    const costs = {
+      controls: 0,
+      controlAdapter: 0,
+      battery: 0,
+      propeller: 0,
+      installation: 500,
+      waterTest: 0,
+    };
+    const hp = typeof motor?.hp === 'string' ? parseInt(motor.hp) : (motor?.hp || 0);
+    if (hp >= 40) {
+      switch (boatDetails?.controlsOption) {
+        case 'none':
+          costs.controls = 1200; break;
+        case 'adapter':
+          costs.controlAdapter = 125; break;
+        case 'compatible':
+          costs.controls = 0; break;
+      }
+    }
+    return costs;
+  };
+
+  const accessoryCosts = calculateAccessoryCosts(quoteData.motor, quoteData.boatInfo);
+  const accessoriesSubtotal = Object.values(accessoryCosts).reduce((sum, v) => sum + (v || 0), 0);
+
+  const subtotalBeforeTrade = motorPrice + accessoriesSubtotal;
+  const subtotalAfterTrade = subtotalBeforeTrade - (hasTradeIn ? tradeInValue : 0);
   const hst = subtotalAfterTrade * 0.13;
   const financingFee = 299; // Added to all finance deals
   const totalCashPrice = subtotalAfterTrade + hst;
@@ -381,6 +409,20 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
               </div>
             )}
             
+            {/* Accessory Items */}
+            {accessoryCosts.controlAdapter > 0 && (
+              <>
+                <div className="line-item flex justify-between items-center">
+                  <span>Control Harness Adapter</span>
+                  <span>+$125</span>
+                </div>
+                <div className="savings-callout mt-1">
+                  <span className="text-in-stock">
+                    ✓ Reusing your Mercury controls saves $1,075!
+                  </span>
+                </div>
+              </>
+            )}
             {/* Subtotal */}
             <div className="border-t border-border pt-2">
               <div className="flex justify-between items-center">

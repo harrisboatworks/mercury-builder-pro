@@ -444,6 +444,88 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
                       </Select>
                     </div>
 
+                    {selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && (
+                      <div className="controls-section rounded-lg border border-border bg-muted/30 p-4">
+                        <h4 className="font-semibold mb-3">Steering Controls Required</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 control-options">
+                          <label className="option-card rounded-md border border-border bg-background p-3 cursor-pointer">
+                            <input
+                              type="radio"
+                              name="controls"
+                              value="none"
+                              className="mr-2"
+                              checked={boatInfo.controlsOption === 'none'}
+                              onChange={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'none' }))}
+                            />
+                            <div>
+                              <strong className="block">I need new controls</strong>
+                              <span className="text-sm text-muted-foreground">+$1,200</span>
+                              <small className="block text-xs text-muted-foreground">Complete remote control kit</small>
+                            </div>
+                          </label>
+
+                          <label className="option-card rounded-md border-2 border-primary bg-primary/5 p-3 cursor-pointer">
+                            <input
+                              type="radio"
+                              name="controls"
+                              value="adapter"
+                              className="mr-2"
+                              checked={boatInfo.controlsOption === 'adapter'}
+                              onChange={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'adapter' }))}
+                            />
+                            <div>
+                              <strong className="block">I have Mercury controls (2004 or newer)</strong>
+                              <span className="text-sm text-primary">+$125 (Save $1,075!)</span>
+                              <small className="block text-xs text-muted-foreground">We'll adapt your existing controls</small>
+                            </div>
+                          </label>
+
+                          <label className="option-card rounded-md border border-border bg-background p-3 cursor-pointer">
+                            <input
+                              type="radio"
+                              name="controls"
+                              value="compatible"
+                              className="mr-2"
+                              checked={boatInfo.controlsOption === 'compatible'}
+                              onChange={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'compatible' }))}
+                            />
+                            <div>
+                              <strong className="block">I have compatible controls ready</strong>
+                              <span className="text-sm text-muted-foreground">No charge</span>
+                              <small className="block text-xs text-muted-foreground">Already have the right setup</small>
+                            </div>
+                          </label>
+                        </div>
+
+                        {boatInfo.controlsOption === 'adapter' && (
+                          <div className="adapter-info rounded-lg mt-3 p-3 bg-green-500/10">
+                            <h5 className="font-bold">💰 Smart Choice!</h5>
+                            <p className="text-sm">
+                              Your existing Mercury controls can work with your new motor using our control harness adapter. This saves you over $1,000!
+                            </p>
+                            <small className="text-xs text-muted-foreground">
+                              Compatible with most Mercury controls from 2004-present. We'll confirm compatibility during installation.
+                            </small>
+                          </div>
+                        )}
+
+                        <details className="mt-3">
+                          <summary className="text-sm text-primary cursor-pointer">Not sure what controls you have?</summary>
+                          <div className="help-content p-3 bg-muted/30 rounded">
+                            <p className="text-sm mb-2">Check your control box for:</p>
+                            <ul className="text-sm space-y-1">
+                              <li>• Mercury logo on the throttle</li>
+                              <li>• Model years 2004-2024 typically compatible</li>
+                              <li>• Quicksilver controls also work</li>
+                            </ul>
+                            <p className="text-sm mt-2">
+                              <strong>Brands that need new controls:</strong> Yamaha, Honda, Evinrude, Johnson
+                            </p>
+                          </div>
+                        </details>
+                      </div>
+                    )}
+
                     {/* Optional make/model */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
