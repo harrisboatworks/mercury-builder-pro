@@ -10,6 +10,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/components/ui/use-toast';
 import { MotorFilters } from './MotorFilters';
 import { TestimonialCarousel } from './TestimonialCarousel';
+import { PromoDetailsModal } from './PromoDetailsModal';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { getPriceDisplayState } from '@/lib/pricing';
@@ -55,6 +56,7 @@ interface Promotion {
   terms_url: string | null;
   highlight: boolean;
   priority: number;
+  details?: any;
 }
 
 interface PromotionRule {
@@ -348,7 +350,8 @@ const [bannerPromosOpen, setBannerPromosOpen] = useState(false);
 // Phase 1 scaffolding & features
 const [selectionMode, setSelectionMode] = useState<'browse' | 'compare'>('browse');
 const [selectedForCompare, setSelectedForCompare] = useState<string[]>([]);
-const [showRebateModal, setShowRebateModal] = useState(false);
+const [activePromoModal, setActivePromoModal] = useState<Promotion | null>(null);
+const [promotionsState, setPromotionsState] = useState<Promotion[]>([]);
 const [quickViewMotor, setQuickViewMotor] = useState<Motor | null>(null);
 const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
 const [showComparePanel, setShowComparePanel] = useState(false);
@@ -466,6 +469,7 @@ useEffect(() => {
       if (rulesError) throw rulesError;
 
       const activePromos: Promotion[] = (promos as Promotion[] | null)?.filter(p => isPromotionActive(p)) || [];
+      setPromotionsState(activePromos);
       const promoRules: PromotionRule[] = (rules as PromotionRule[] | null) || [];
 
       // Transform database data to Motor interface with effective pricing
@@ -1029,7 +1033,7 @@ const handleMotorSelection = (motor: Motor) => {
         <div className="repower-rebate-banner rounded-md p-3 text-center text-sm font-semibold bg-[linear-gradient(135deg,hsl(var(--promo-gold-1)),hsl(var(--promo-gold-2)))] shadow-md">
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <span>💰 Repower Rebate Available! Trading in? You may qualify for additional savings.</span>
-            <Button size="sm" variant="secondary" onClick={() => setShowRebateModal(true)}>Learn More</Button>
+            <Button size="sm" variant="secondary" onClick={() => setActivePromoModal((promotionsState.find(p => /(repower\s*rebate|repower)/i.test([p.name, p.bonus_title, p.bonus_short_badge, p.bonus_description].filter(Boolean).join(' '))) || null))}>Learn More</Button>
           </div>
         </div>
 
@@ -1274,15 +1278,13 @@ const subtitle = formatVariantSubtitle(raw, title);
                             <TooltipContent>
                               <div className="max-w-[260px] space-y-1">
                                 <p>Mercury’s Repower Rebate Program — trade in or repower for potential savings. See details.</p>
-                                <a
-                                  href={REPOWER_INFO_URL}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className="underline"
-                                  onClick={(e) => { e.stopPropagation(); track('rebate_badge_click', { model_id: motor.id, model_name: motor.model }); }}
+                                <button
+                                  type="button"
+                                  className="underline text-left"
+                                  onClick={(e) => { e.stopPropagation(); setActivePromoModal((promotionsState.find(p => /(repower\s*rebate|repower)/i.test([p.name, p.bonus_title, p.bonus_short_badge, p.bonus_description].filter(Boolean).join(' '))) || null)); track('rebate_badge_click', { model_id: motor.id, model_name: motor.model }); }}
                                 >
                                   Learn More
-                                </a>
+                                </button>
                               </div>
                             </TooltipContent>
                           </Tooltip>
@@ -1409,37 +1411,12 @@ const subtitle = formatVariantSubtitle(raw, title);
         </div>
       )}
 
-      {/* Rebate Learn More Dialog */}
-      <Dialog open={showRebateModal} onOpenChange={setShowRebateModal}>
-        <DialogContent className="sm:max-w-lg">
-          <DialogHeader>
-            <DialogTitle>Mercury Repower Rebate Program</DialogTitle>
-          </DialogHeader>
-          <div className="space-y-3 text-sm">
-            <h3 className="text-lg font-semibold">💰 Save Extra on Your Repower!</h3>
-            <p>Trading in an older motor? You may qualify for Mercury's Repower Rebate:</p>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Up to $1,000 rebate on select models</li>
-              <li>Trade any brand 25HP or higher</li>
-              <li>Motor must be 2019 or older</li>
-              <li>Rebate applied at time of purchase</li>
-            </ul>
-            <div>
-              <p className="font-semibold">How it works:</p>
-              <ol className="list-decimal pl-5 space-y-1">
-                <li>Select your new Mercury motor</li>
-                <li>Tell us about your trade-in</li>
-                <li>We'll apply applicable rebates</li>
-                <li>Save even more!</li>
-              </ol>
-            </div>
-            <p className="text-xs text-muted-foreground">*Rebate amounts vary by model. Trade-in must be in working condition. See dealer for complete details.</p>
-          </div>
-          <DialogFooter>
-            <Button onClick={() => setShowRebateModal(false)}>Got it!</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+      {/* Promo Details Modal */}
+      <PromoDetailsModal
+        promo={activePromoModal}
+        open={!!activePromoModal}
+        onOpenChange={(open) => { if (!open) setActivePromoModal(null); }}
+      />
 
       {/* Water test floating badge */}
       <div className="water-test-badge fixed bottom-6 right-6 z-40 bg-accent text-accent-foreground shadow-lg rounded-full px-3 py-2 flex items-center gap-2">

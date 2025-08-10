@@ -35,6 +35,7 @@ interface Promotion {
   terms_url: string | null;
   highlight: boolean;
   priority: number;
+  details?: any;
 }
 
 interface PromotionRule {
@@ -468,6 +469,40 @@ const AdminPromotions = () => {
                   <Button variant="outline" onClick={() => updatePromotion(p.id, { is_active: !p.is_active })}>{p.is_active ? 'Deactivate' : 'Activate'}</Button>
                   <Button variant="outline" onClick={() => updatePromotion(p.id, { stackable: !p.stackable })}>{p.stackable ? 'Unstack' : 'Make Stackable'}</Button>
                   <Button variant="destructive" onClick={() => deletePromotion(p.id)}>Delete</Button>
+                </div>
+              </div>
+
+              {/* Promo Details / Terms */}
+              <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label>Eligibility (one per line)</Label>
+                  <textarea
+                    className="w-full border rounded p-2 min-h-[120px] bg-background"
+                    placeholder="25HP and up\nTrade required\n2004 or older"
+                    value={Array.isArray((p as any).details?.eligibility) ? (p as any).details.eligibility.join('\n') : ''}
+                    onChange={(e) => updatePromotion(p.id, { details: { ...(p as any).details, eligibility: e.target.value.split('\n').map(s => s.replace(/^[-•\s]+/, '').trim()).filter(Boolean) } as any })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label>Terms (one per line)</Label>
+                  <textarea
+                    className="w-full border rounded p-2 min-h-[120px] bg-background"
+                    placeholder="Cannot combine with other offers\nDealer installation required"
+                    value={Array.isArray((p as any).details?.terms) ? (p as any).details.terms.join('\n') : ''}
+                    onChange={(e) => updatePromotion(p.id, { details: { ...(p as any).details, terms: e.target.value.split('\n').map(s => s.replace(/^[-•\s]+/, '').trim()).filter(Boolean) } as any })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label>Processing Time</Label>
+                  <Input value={(p as any).details?.processingTime ?? ''} onChange={(e) => updatePromotion(p.id, { details: { ...(p as any).details, processingTime: e.target.value } as any })} placeholder="30 days" />
+                </div>
+                <div className="space-y-2">
+                  <Label>Expiry Note</Label>
+                  <Input value={(p as any).details?.expiryNote ?? ''} onChange={(e) => updatePromotion(p.id, { details: { ...(p as any).details, expiryNote: e.target.value } as any })} placeholder="Limited time offer" />
+                </div>
+                <div className="space-y-2 md:col-span-2">
+                  <Label>Fine Print</Label>
+                  <Input value={(p as any).details?.finePrint ?? ''} onChange={(e) => updatePromotion(p.id, { details: { ...(p as any).details, finePrint: e.target.value } as any })} placeholder="See dealer for complete details and eligibility" />
                 </div>
               </div>
 
