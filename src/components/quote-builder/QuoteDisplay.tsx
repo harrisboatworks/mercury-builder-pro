@@ -44,7 +44,9 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
 
   // SMS via Zapier
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [zapierWebhookUrl, setZapierWebhookUrl] = useState<string>(() => localStorage.getItem('zapierWebhookUrl') || '');
+  const [zapierWebhookUrl, setZapierWebhookUrl] = useState<string>(() =>
+    localStorage.getItem('zapierWebhookUrl') || 'https://hooks.zapier.com/hooks/catch/7238949/u6hvee9/'
+  );
 
   useEffect(() => {
     if (zapierWebhookUrl) {
