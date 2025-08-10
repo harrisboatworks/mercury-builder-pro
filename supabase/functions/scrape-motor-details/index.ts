@@ -18,14 +18,18 @@ interface ScrapeResult {
 }
 
 async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: string; markdown?: string }> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 30000); // 30s timeout
   const res = await fetch('https://api.firecrawl.dev/v1/scrape', {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ url, formats: ['html','markdown'] }),
+    body: JSON.stringify({ url, formats: ['html','markdown'], onlyMainContent: true }),
+    signal: controller.signal,
   });
+  clearTimeout(timeoutId);
   if (!res.ok) {
     throw new Error(`Firecrawl scrape failed: ${res.status} ${await res.text()}`);
   }
@@ -113,19 +117,43 @@ function extractSpecifications(md?: string | null): Record<string, unknown> {
   return specs;
 }
 
+function normalizeDetailUrl(input: string): string {
+  const base = 'https://www.harrisboatworks.ca';
+  if (!input) return '';
+  try {
+    let s = input.trim();
+    // Fix duplicated domain pattern
+    s = s.replace(/https?:\/\/(?:www\.)?harrisboatworks\.ca\/?https?:\/\/(?:www\.)?harrisboatworks\.ca/i, 'https://www.harrisboatworks.ca');
+    const u = new URL(s.startsWith('http') ? s : s.startsWith('/') ? `${base}${s}` : `${base}/${s}`);
+    // Remove duplicated host fragment in pathname (e.g., //www.harrisboatworks.ca/...) and collapse slashes
+    const dupHost = `//${u.host}`;
+    let path = u.pathname.startsWith(dupHost) ? u.pathname.slice(dupHost.length) : u.pathname;
+    path = path.replace(/\/+/, '/');
+    const normalized = `${u.protocol}//${u.host}${path}${u.search}${u.hash}`;
+    return normalized;
+  } catch {
+    return input.startsWith('/') ? `${base}${input}` : `${base}/${input}`;
+  }
+}
+
 async function scrapeDetails(url: string, apiKey: string): Promise<ScrapeResult> {
   let html: string | undefined;
   let markdown: string | undefined;
   try {
+    console.log('Attempting to scrape:', url);
     const res = await firecrawlScrape(url, apiKey);
     html = res.html;
     markdown = res.markdown;
+    console.log('Scrape successful for:', url);
   } catch (e) {
+    console.error('Scrape failed for:', url, e);
     console.warn('Firecrawl error, falling back to direct fetch:', e);
     try {
       const resp = await fetch(url);
       if (resp.ok) html = await resp.text();
-    } catch {}
+    } catch (err) {
+      console.error('Direct fetch failed for:', url, err);
+    }
   }
   const description = firstNonEmptyParagraph(markdown) || extractMetaDescription(html) || null;
   const features = extractFeatures(markdown);
@@ -166,6 +194,9 @@ serve(async (req) => {
       if (error) throw error;
       detailUrl = (motor?.detail_url || '').trim();
     }
+
+    // Normalize any malformed URLs (e.g., duplicated domain, missing host)
+    detailUrl = normalizeDetailUrl(detailUrl);
 
     if (!detailUrl) {
       return new Response(JSON.stringify({ success: false, error: 'No detail_url provided or found for motor_id' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
