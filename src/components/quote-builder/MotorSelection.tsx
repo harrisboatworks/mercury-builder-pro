@@ -106,6 +106,51 @@ const getPromoLabelsForMotor = (motor: Motor): string[] => {
   return keys.map(k => PROMO_MAP.find(p => p.key === k)?.label || k);
 };
 
+const decodeModelName = (modelName: string) => {
+  const decoded: { code: string; meaning: string; benefit: string }[] = [];
+  const name = modelName || '';
+  const added = new Set<string>();
+  const add = (code: string, meaning: string, benefit: string) => {
+    if (!added.has(code)) {
+      decoded.push({ code, meaning, benefit });
+      added.add(code);
+    }
+  };
+
+  // Engine family
+  if (/Four\s*Stroke|FourStroke/i.test(name)) {
+    add('FourStroke', '4-Stroke Engine', 'Quiet, fuel-efficient, no oil mixing');
+  }
+
+  // Common suffix codes
+  if (name.includes('MH')) {
+    add('M', 'Manual Start', 'Pull cord - simple & reliable');
+    add('H', 'Tiller Handle', 'Steer directly from motor');
+  }
+
+  // Check ELHPT before ELPT to avoid duplicate weaker match
+  if (name.includes('ELHPT')) {
+    add('E', 'Electric Start', 'Push-button start');
+    add('L', 'Long Shaft (20")', 'Standard transom height');
+    add('H', 'Tiller Handle', 'Direct steering control');
+    add('PT', 'Power Tilt', 'Easy motor lifting');
+  } else if (name.includes('ELPT')) {
+    add('E', 'Electric Start', 'Push-button convenience');
+    add('L', 'Long Shaft (20")', 'For 20" transom boats');
+    add('PT', 'Power Trim & Tilt', 'Adjust angle on the fly');
+  }
+
+  if (/\bCT\b/.test(name) || /Command\s*Thrust/i.test(name)) {
+    add('CT', 'Command Thrust', 'Larger gearcase & prop for superior control');
+  }
+
+  if (name.includes('ProKicker')) {
+    add('ProKicker', 'Kicker Motor', 'Optimized for trolling & backup power');
+  }
+
+  return decoded;
+};
+
 interface MotorSelectionProps {
   onStepComplete: (motor: Motor) => void;
   noSalePriceLayout?: 'default' | 'placeholder' | 'centered';
@@ -1224,6 +1269,37 @@ const subtitle = formatVariantSubtitle(raw, title);
               )}
 
               <div className="text-sm text-muted-foreground">{quickViewMotor.description || quickViewMotor.specs}</div>
+
+              {/* Model code decoder */}
+              <div className="bg-accent border border-border p-4 rounded-md mt-2">
+                <h4 className="font-semibold mb-2">Understanding This Model</h4>
+                <div className="space-y-2">
+                  {decodeModelName(quickViewMotor.model).map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      <span className="bg-primary text-primary-foreground px-2 py-0.5 rounded text-xs font-bold">
+                        {item.code}
+                      </span>
+                      <div className="flex-1">
+                        <span className="font-medium">{item.meaning}</span>
+                        <span className="text-muted-foreground text-sm ml-2">- {item.benefit}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Helpful tips */}
+                {quickViewMotor.model.includes('H') && (
+                  <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
+                    <strong>Tiller Handle:</strong> Perfect if you sit at the back of the boat. Great for fishing where precise control matters.
+                  </div>
+                )}
+                {!quickViewMotor.model.includes('E') && quickViewMotor.model.includes('M') && (
+                  <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
+                    <strong>Manual Start:</strong> No battery needed — ideal for occasional use or as a backup motor. Very reliable.
+                  </div>
+                )}
+              </div>
+
               <Button onClick={() => { handleMotorSelection(quickViewMotor); setQuickViewMotor(null); }}>
                 Select This Motor
               </Button>
