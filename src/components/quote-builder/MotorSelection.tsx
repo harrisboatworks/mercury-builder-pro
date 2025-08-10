@@ -1064,13 +1064,27 @@ const handleMotorSelection = (motor: Motor) => {
         </div>
 
         <div className="dealer-credentials rounded-lg mb-6 p-4 md:p-6 bg-gradient-to-r from-primary/5 to-muted/40 border border-border">
-          <div className="flex items-center justify-center gap-6 md:gap-8 flex-wrap">
-            <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-12 md:h-16 w-auto" />
-            <div className="text-center">
-              <h3 className="font-bold text-base md:text-lg text-foreground">Buy with Confidence</h3>
-              <p className="text-sm text-muted-foreground">Customer-Nominated Service Excellence • Maximum Trade Values</p>
+          <div className="dealer-credentials-banner flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+            {/* CSI Award */}
+            <div className="credential-group flex items-center gap-3">
+              <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-12 md:h-16 w-auto" />
+              <div className="text-left">
+                <p className="font-semibold text-foreground">Customer-Nominated</p>
+                <p className="text-sm text-muted-foreground">Service Excellence</p>
+              </div>
             </div>
-            <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 md:h-16 w-auto" />
+
+            {/* Divider */}
+            <div className="hidden md:block h-10 w-px bg-border" />
+
+            {/* Repower Center */}
+            <div className="credential-group flex items-center gap-3">
+              <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 md:h-16 w-auto" />
+              <div className="text-left">
+                <p className="font-semibold text-foreground">Certified Repower Center</p>
+                <p className="text-sm text-muted-foreground">Maximum Trade Values</p>
+              </div>
+            </div>
           </div>
         </div>
 
