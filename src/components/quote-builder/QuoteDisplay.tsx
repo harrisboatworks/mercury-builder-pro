@@ -44,15 +44,6 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
 
   // SMS via Zapier
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [zapierWebhookUrl, setZapierWebhookUrl] = useState<string>(() =>
-    localStorage.getItem('zapierWebhookUrl') || 'https://hooks.zapier.com/hooks/catch/7238949/u6hvee9/'
-  );
-
-  useEffect(() => {
-    if (zapierWebhookUrl) {
-      localStorage.setItem('zapierWebhookUrl', zapierWebhookUrl);
-    }
-  }, [zapierWebhookUrl]);
 
   const today = new Date();
   const isDateAvailable = (date: Date) => {
@@ -323,54 +314,39 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
     });
   };
   
-  // Send quote via SMS using Zapier webhook
+  // Send quote via SMS using Zapier webhook (no localStorage, fixed URL)
   const handleSendQuoteSms = async () => {
     if (!phoneNumber) {
       toast({ title: 'Enter phone number', description: 'Please enter your mobile number.', variant: 'destructive' });
       return;
     }
-    if (!zapierWebhookUrl) {
-      toast({ title: 'Zapier webhook required', description: 'Add your Zapier Webhook URL first.', variant: 'destructive' });
-      return;
-    }
 
-    const quoteId = crypto.randomUUID();
+    const webhookUrl = 'https://hooks.zapier.com/hooks/catch/7238949/u6hvee9/';
     const payload = {
       phone: phoneNumber,
-      customerName: (quoteData as any)?.boatInfo?.ownerName || 'Customer',
-      motorModel: quoteData.motor.model,
+      customerName: (quoteData as any)?.customerName || (quoteData as any)?.boatInfo?.ownerName || 'Customer',
+      motorModel: quoteData.motor?.model || 'Mercury Motor',
       totalPrice: Math.round(totalCashPrice),
-      monthlyPayment: Math.round(payments.monthly || 0),
-      termMonths: term,
-      quoteId,
-      quoteLink: `${window.location.origin}/quote/${quoteId}`,
-      quote: {
-        motor: quoteData.motor,
-        boatInfo: quoteData.boatInfo,
-        totals: {
-          cashTotal: totalCashPrice,
-          financeTotal: totalFinancePrice,
-          hst,
-          accessories: accessoriesSubtotal,
-          downPayment,
-        },
-      },
+      quoteId: Date.now().toString(),
+      quoteLink: 'Quote details will be texted',
     };
 
     try {
-      await fetch(zapierWebhookUrl, {
+      const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        mode: 'no-cors',
         body: JSON.stringify(payload),
       });
-      toast({ title: 'Request sent', description: 'We sent your quote to Zapier. Check your SMS shortly.' });
+      if (response.ok) {
+        toast({ title: 'Sent', description: 'Quote was sent to your phone.' });
+      } else {
+        toast({ title: 'Zapier error', description: 'The webhook did not accept the request.', variant: 'destructive' });
+      }
     } catch (error) {
       console.error('SMS failed:', error);
-      toast({ title: 'Error', description: 'Could not send SMS. Please try again.', variant: 'destructive' });
+      toast({ title: 'Network error', description: 'Could not send SMS. Please try again.', variant: 'destructive' });
     }
   };
-
   if (!quoteData.motor) return null;
 
   return (
@@ -1035,18 +1011,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
             </Button>
           </div>
         </div>
-        <div className="mt-4 grid gap-2">
-          <Label htmlFor="zapierWebhookUrl">Zapier Webhook URL</Label>
-          <Input
-            id="zapierWebhookUrl"
-            placeholder="https://hooks.zapier.com/hooks/catch/XXXXX/YYYYY/"
-            value={zapierWebhookUrl}
-            onChange={(e) => setZapierWebhookUrl(e.target.value)}
-          />
-          <p className="text-xs text-muted-foreground">
-            This URL is stored only in your browser (localStorage).
-          </p>
-        </div>
+        <p className="mt-2 text-xs text-muted-foreground">We’ll text a secure link to your quote.</p>
       </Card>
 
       {/* Installation Requirements */}
