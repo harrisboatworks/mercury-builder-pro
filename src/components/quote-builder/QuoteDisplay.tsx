@@ -16,6 +16,8 @@ import { Calendar } from '@/components/ui/calendar';
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip';
 import { toast } from '@/hooks/use-toast';
 import confetti from 'canvas-confetti';
+import { supabase } from '@/integrations/supabase/client';
+import { generateQuotePDF } from '@/lib/pdf-generator';
 
 interface QuoteDisplayProps {
   quoteData: QuoteData;
@@ -314,25 +316,87 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
     });
   };
   
-  // Send quote via SMS using Zapier webhook (no localStorage, fixed URL)
+  // Send quote via SMS with PDF link and full details
   const handleSendQuoteSms = async () => {
     if (!phoneNumber) {
       toast({ title: 'Enter phone number', description: 'Please enter your mobile number.', variant: 'destructive' });
       return;
     }
 
-    const webhookUrl = 'https://hooks.zapier.com/hooks/catch/7238949/u6hvee9/';
-    const payload = {
-      phone: phoneNumber,
-      customerName: (quoteData as any)?.customerName || (quoteData as any)?.boatInfo?.ownerName || 'Customer',
-      motorModel: quoteData.motor?.model || 'Mercury Motor',
-      totalPrice: Math.round(totalCashPrice) || '0',
-      quoteId: Date.now().toString(),
-      quoteLink: 'Quote details will be texted',
-      timestamp: new Date().toISOString(),
-    };
+    const customerName = ((quoteData as any)?.customerName || (quoteData as any)?.boatInfo?.ownerName || 'Customer') as string;
+    const quoteNumber = `Q-${Date.now()}`;
 
     try {
+      // 1) Generate PDF
+      const pdfData: any = {
+        ...quoteData,
+        customerName,
+        customerEmail: '',
+        customerPhone: phoneNumber,
+        quoteNumber,
+        tradeInValue: hasTradeIn ? tradeInValue : undefined,
+      };
+      const pdf = await generateQuotePDF(pdfData);
+      const pdfBlob = pdf.output('blob');
+
+      // 2) Upload to Supabase Storage (public bucket 'quotes')
+      const safeName = customerName
+        .replace(/[^a-z0-9\-]+/gi, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '')
+        .toLowerCase() || 'customer';
+      const fileName = `quote-${Date.now()}-${safeName}.pdf`;
+      const { error: uploadError } = await supabase.storage
+        .from('quotes')
+        .upload(fileName, pdfBlob, { contentType: 'application/pdf', upsert: true });
+      if (uploadError) throw uploadError;
+      const { data: pub } = supabase.storage.from('quotes').getPublicUrl(fileName);
+      const pdfUrl = pub.publicUrl;
+
+      // 3) Save quote record
+      const { data: quoteRecord, error: insertError } = await supabase
+        .from('quotes')
+        .insert({
+          customer_name: customerName,
+          customer_phone: phoneNumber,
+          motor_model: quoteData.motor?.model || null,
+          motor_price: motorPrice,
+          total_price: Math.round(totalCashPrice),
+          pdf_url: pdfUrl,
+          quote_data: quoteData as any,
+        })
+        .select()
+        .single();
+      if (insertError) throw insertError;
+
+      // 4) Send to Zapier webhook with ALL details
+      const webhookUrl = 'https://hooks.zapier.com/hooks/catch/7238949/u6hvee9/';
+      const payload = {
+        phone: phoneNumber,
+        customerName,
+        motorModel: quoteData.motor?.model || 'Mercury Motor',
+        motorPrice: motorPrice,
+        totalPrice: Math.round(totalCashPrice),
+        pdfUrl,
+        quoteId: quoteRecord?.id || quoteNumber,
+        quoteUrl: `${window.location.origin}/quote/${quoteRecord?.id || ''}`,
+        // Extra details
+        boatType: quoteData.boatInfo?.type,
+        boatLength: quoteData.boatInfo?.length,
+        hasTradeIn,
+        tradeInValue,
+        accessoryCosts,
+        financing: {
+          rate: quoteData.financing.rate,
+          termMonths: term,
+          downPayment,
+          monthly: Math.round(payments.monthly || 0),
+        },
+        installationIncluded: 'Yes - Professional installation',
+        validUntil: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString(),
+        timestamp: new Date().toISOString(),
+      };
+
       const response = await fetch(webhookUrl, {
         method: 'POST',
         // Do not set Content-Type to avoid CORS preflight; Zapier will handle raw body
@@ -344,7 +408,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
         toast({ title: 'Zapier error', description: 'The webhook did not accept the request.', variant: 'destructive' });
       }
     } catch (error) {
-      console.error('SMS failed:', error);
+      console.error('SMS error:', error);
       toast({ title: 'Network error', description: 'SMS service temporarily unavailable. Your quote is saved above.', variant: 'destructive' });
     }
   };

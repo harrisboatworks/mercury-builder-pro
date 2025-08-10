@@ -328,6 +328,42 @@ export type Database = {
           },
         ]
       }
+      quotes: {
+        Row: {
+          created_at: string
+          customer_name: string | null
+          customer_phone: string | null
+          id: string
+          motor_model: string | null
+          motor_price: number | null
+          pdf_url: string | null
+          quote_data: Json | null
+          total_price: number | null
+        }
+        Insert: {
+          created_at?: string
+          customer_name?: string | null
+          customer_phone?: string | null
+          id?: string
+          motor_model?: string | null
+          motor_price?: number | null
+          pdf_url?: string | null
+          quote_data?: Json | null
+          total_price?: number | null
+        }
+        Update: {
+          created_at?: string
+          customer_name?: string | null
+          customer_phone?: string | null
+          id?: string
+          motor_model?: string | null
+          motor_price?: number | null
+          pdf_url?: string | null
+          quote_data?: Json | null
+          total_price?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
