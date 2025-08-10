@@ -465,6 +465,18 @@
     50% { box-shadow: 0 2px 10px hsl(var(--promo-green-1) / 0.6); }
   }
 
+  /* Subtle shimmer sweep for power-up effect */
+  @keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%); }
+    100% { transform: translateX(100%) translateY(100%); }
+  }
+
+  /* Sparkle wiggle for icon */
+  @keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.2); }
+  }
+
   /* Repower banner pulse */
   .repower-rebate-banner {
     animation: subtle-pulse 3s ease-in-out infinite;
@@ -693,6 +705,25 @@
     text-transform: uppercase;
     box-shadow: 0 2px 6px hsl(var(--promo-green-1) / 0.35);
     animation: pulse-glow 2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-card .badge--repower::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, hsl(0 0% 100% / 0.12) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
+    pointer-events: none;
+  }
+
+  .product-card .badge--repower .badge__icon {
+    font-size: 14px;
+    animation: sparkle 1.5s ease-in-out infinite;
   }
 
   /* Modal-scoped Promotions list */

@@ -1263,14 +1263,12 @@ const subtitle = formatVariantSubtitle(raw, title);
                               <span
                                 className="badge badge--repower"
                                 data-badge="repower"
-                                aria-label="Repower Rebate Promo"
+                                aria-label="Repower Rebate"
                                 onMouseEnter={() => track('rebate_badge_hover', { model_id: motor.id, model_name: motor.model })}
                                 onClick={(e) => e.stopPropagation()}
                               >
-                                <svg className="badge__icon" viewBox="0 0 24 24" aria-hidden="true">
-                                  <path d="M12 2l3 6 6 .9-4.3 4.2 1 6-5.7-3-5.7 3 1-6L3 8.9 9 8z" fill="currentColor"/>
-                                </svg>
-                                <span className="badge__text">Repower Rebate Promo</span>
+                                <span className="badge__icon" aria-hidden="true">✨</span>
+                                <span className="badge__text">Repower Rebate</span>
                               </span>
                             </TooltipTrigger>
                             <TooltipContent>
