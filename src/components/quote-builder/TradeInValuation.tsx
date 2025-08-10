@@ -7,8 +7,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, DollarSign, Star, AlertTriangle, CheckCircle2 } from 'lucide-react';
-import { estimateTradeValue, getTradeValueFactors, medianRoundedTo25, getBrandPenaltyFactor, type TradeValueEstimate, type TradeInInfo } from '@/lib/trade-valuation';
+import { Loader2, DollarSign, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, type TradeValueEstimate, type TradeInInfo } from '@/lib/trade-valuation';
 
 interface TradeInValuationProps {
   tradeInInfo: TradeInInfo;
@@ -88,17 +88,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
     setIsLoading(false);
   };
 
-  const getConfidenceStars = (confidence: string) => {
-    const starCount = confidence === 'high' ? 3 : confidence === 'medium' ? 2 : 1;
-    return Array.from({ length: 3 }, (_, i) => (
-      <Star 
-        key={i} 
-        className={`w-4 h-4 ${i < starCount ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'}`} 
-      />
-    ));
-  };
+  // Confidence meter removed per UX update
 
-  const factors = getTradeValueFactors();
+  const medianValue = estimate ? medianRoundedTo25(estimate.low, estimate.high) : 0;
 
   return (
     <Card className="p-6">
@@ -277,55 +269,65 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
                     <h3 className="text-lg font-semibold text-green-800 dark:text-green-200 mb-2">
                       ESTIMATED TRADE VALUE
                     </h3>
-                    <div className="text-3xl font-bold text-green-900 dark:text-green-100">
-                      ${estimate.low.toLocaleString()} - ${estimate.high.toLocaleString()}
+                    <div className="text-4xl font-extrabold text-green-900 dark:text-green-100 tracking-tight">
+                      ${medianValue.toLocaleString()}
                     </div>
                     <p className="text-sm text-green-700 dark:text-green-300 mt-1">
                       *Based on {tradeInInfo.condition} condition
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-center space-x-2">
-                    <span className="text-sm font-medium">Confidence Level:</span>
-                    <div className="flex space-x-1">
-                      {getConfidenceStars(estimate.confidence)}
+                  <div className="space-y-2">
+                    <p className="text-sm font-medium">We pay more for:</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                      {tradeInInfo.brand && tradeInInfo.brand.toLowerCase() === 'mercury' && (
+                        <div className="flex items-center space-x-2 text-sm">
+                          <CheckCircle2 className="w-3 h-3 text-green-600" />
+                          <span>Mercury motors (brand bonus applied!)</span>
+                        </div>
+                      )}
+                      <div className="flex items-center space-x-2 text-sm">
+                        <CheckCircle2 className="w-3 h-3 text-green-600" />
+                        <span>Recent service history</span>
+                      </div>
+                      <div className="flex items-center space-x-2 text-sm">
+                        <CheckCircle2 className="w-3 h-3 text-green-600" />
+                        <span>Low hours</span>
+                      </div>
+                      <div className="flex items-center space-x-2 text-sm">
+                        <CheckCircle2 className="w-3 h-3 text-green-600" />
+                        <span>Power trim/tilt models</span>
+                      </div>
                     </div>
-                    <span className="text-sm capitalize">{estimate.confidence}</span>
                   </div>
 
-                  <div className="space-y-2">
-                    <p className="text-sm font-medium">Value Factors:</p>
-                    <div className="grid grid-cols-2 gap-2">
-                      {factors.map((factor, index) => (
-                        <div key={index} className="flex items-center space-x-2 text-sm">
-                          <CheckCircle2 className="w-3 h-3 text-green-600" />
-                          <span>{factor}</span>
-                        </div>
-                      ))}
-                      </div>
+                  <div className="upside-message">
+                    <p className="text-sm text-green-700 dark:text-green-300">
+                      💰 Excellent condition could add 10–15% more
+                    </p>
+                  </div>
+
+                  {/* Brand penalty notice */}
+                  {getBrandPenaltyFactor(tradeInInfo.brand) < 1 && (
+                    <div className="mt-2 text-xs text-orange-700 dark:text-orange-300 flex items-center gap-2">
+                      <AlertTriangle className="w-3 h-3" />
+                      <span>Adjusted for brand (-50%) — Manufacturer out of business; parts & service availability limited.</span>
                     </div>
+                  )}
 
-                    {/* Brand penalty notice */}
-                    {getBrandPenaltyFactor(tradeInInfo.brand) < 1 && (
-                      <div className="mt-2 text-xs text-orange-700 dark:text-orange-300 flex items-center gap-2">
-                        <AlertTriangle className="w-3 h-3" />
-                        <span>Adjusted for brand (-50%) — Manufacturer out of business; parts & service availability limited.</span>
-                      </div>
-                    )}
-
-                    {estimate.factors.length > 0 && (
-                      <div className="pt-3 border-t border-green-200 dark:border-green-800">
-                        <p className="text-sm font-medium mb-1">Applied Adjustments:</p>
-                        <ul className="text-sm space-y-1">
-                          {estimate.factors.map((factor, index) => (
-                            <li key={index} className="flex items-center space-x-2">
-                              <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                              <span>{factor}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+                  {estimate.factors.length > 0 && (
+                    <div className="pt-3 border-t border-green-200 dark:border-green-800">
+                      <p className="text-sm font-medium mb-1">Applied Adjustments:</p>
+                      <ul className="text-sm space-y-1">
+                        {estimate.factors.map((factor, index) => (
+                          <li key={index} className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                            <span>{factor}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
                   <Alert className="border-orange-200 bg-orange-50 dark:bg-orange-950/20">
                     <AlertTriangle className="w-4 h-4" />
