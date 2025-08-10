@@ -1242,9 +1242,9 @@ const subtitle = formatVariantSubtitle(raw, title);
       <Dialog open={!!quickViewMotor} onOpenChange={(o) => { if (!o) setQuickViewMotor(null); }}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle>{quickViewMotor?.model} {quickViewMotor ? `- ${quickViewMotor.hp}HP` : ''}</DialogTitle>
+            <DialogTitle>{(quickViewMotor?.model || '').replace(/ - \d+(\.\d+)?HP$/i, '')}</DialogTitle>
             <DialogDescription className="sr-only">
-              Quick view details for {quickViewMotor?.model} {quickViewMotor ? `- ${quickViewMotor.hp}HP` : ''}
+              Quick view details for {(quickViewMotor?.model || '').replace(/ - \d+(\.\d+)?HP$/i, '')}
             </DialogDescription>
           </DialogHeader>
           {quickViewMotor && (
@@ -1284,6 +1284,33 @@ const subtitle = formatVariantSubtitle(raw, title);
                     <div className="flex justify-between"><span className="text-muted-foreground">Warranty</span><strong>{(quickViewMotor.specifications as any)?.warranty || (quickViewMotor.specifications as any)?.warrantyPromo || '3 Year'}</strong></div>
                   </div>
 
+                  {(!quickViewMotor.description || !quickViewMotor.specifications || Object.keys(quickViewMotor.specifications as any).length === 0) && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      disabled={quickViewLoading}
+                      onClick={async () => {
+                        try {
+                          setQuickViewLoading(true);
+                          const { data, error } = await supabase.functions.invoke('scrape-motor-details', {
+                            body: { motor_id: quickViewMotor.id, detail_url: quickViewMotor.detailUrl }
+                          });
+                          if (error) throw error;
+                          const { description, features, specifications } = (data as any) || {};
+                          setMotors((prev) => prev.map((mm) => mm.id === quickViewMotor.id ? { ...mm, description, features, specifications } : mm));
+                          setQuickViewMotor((prev) => prev ? { ...prev, description, features, specifications } as Motor : prev);
+                        } catch (e) {
+                          console.warn('manual scrape-motor-details error', e);
+                          toast({ title: 'Couldn\'t load full specs', description: 'Please try again in a moment.', variant: 'destructive' });
+                        } finally {
+                          setQuickViewLoading(false);
+                        }
+                      }}
+                    >
+                      {quickViewLoading ? 'Loading…' : 'Load Full Specs'}
+                    </Button>
+                  )}
+
                   {Array.isArray(quickViewMotor.features) && quickViewMotor.features.length > 0 && (
                     <div>
                       <h4 className="font-semibold mb-2">Features</h4>
@@ -1298,6 +1325,14 @@ const subtitle = formatVariantSubtitle(raw, title);
               </div>
 
               <div className="text-sm text-muted-foreground">{quickViewMotor.description || quickViewMotor.specs}</div>
+
+              {/* Data presence debug - temporary */}
+              <div className="text-xs bg-accent p-2 rounded mt-2">
+                <div>Has specs: {(quickViewMotor.specifications && Object.keys(quickViewMotor.specifications as any).length > 0) ? 'Yes' : 'No'}</div>
+                <div>Has description: {quickViewMotor.description ? 'Yes' : 'No'}</div>
+                <div>Has features: {(Array.isArray(quickViewMotor.features) && quickViewMotor.features.length > 0) ? 'Yes' : 'No'}</div>
+                <div>Detail URL: {quickViewMotor.detailUrl || 'None'}</div>
+              </div>
 
               {/* Model code decoder */}
               <div className="bg-accent border border-border p-4 rounded-md mt-2">
@@ -1341,9 +1376,19 @@ const subtitle = formatVariantSubtitle(raw, title);
                 </details>
               )}
 
-              <Button onClick={() => { handleMotorSelection(quickViewMotor); setQuickViewMotor(null); }}>
-                Select This Motor
-              </Button>
+              <div className="flex justify-between items-center mt-6 pt-4 border-t">
+                <div className="flex gap-3">
+                  <Button variant="outline" onClick={() => { toggleCompare(quickViewMotor); setQuickViewMotor(null); }}>
+                    Add to Compare
+                  </Button>
+                  <Button variant="outline" onClick={() => { calculatePayment(quickViewMotor); setQuickViewMotor(null); }}>
+                    Calculate Payment
+                  </Button>
+                </div>
+                <Button size="lg" onClick={() => { handleMotorSelection(quickViewMotor); setQuickViewMotor(null); }}>
+                  Select This Motor →
+                </Button>
+              </div>
             </div>
           )}
         </DialogContent>
