@@ -46,53 +46,54 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
   });
 
   const boatTypes = [
-    { 
-      id: 'motor-only', 
-      name: 'Motor Only', 
-      subtitle: 'No boat yet • Spare motor • I know my specs',
-      badge: 'Skip to Quote',
-      gradient: 'from-emerald-500 to-teal-600',
-      icon: '📦'
+    {
+      id: 'motor-only',
+      label: 'Motor Only',
+      description: 'No boat yet • Spare motor • I know my specs',
+      recommendedHP: '',
+      icon: ''
     },
-    { 
-      id: 'fishing', 
-      name: 'Fishing', 
-      subtitle: 'Bass • Center Console • Jon Boats',
-      badge: 'Popular Choice',
-      gradient: 'from-blue-500 to-blue-600',
-      icon: '🎣'
+    {
+      id: 'aluminum-fishing',
+      label: 'Aluminum Fishing',
+      description: 'V-hull fishing boats',
+      recommendedHP: '9.9-25',
+      icon: 'aluminum-fishing.svg'
     },
-    { 
-      id: 'pontoon', 
-      name: 'Pontoon', 
-      subtitle: 'Party Barges • Fishing Ponts • Luxury',
-      badge: 'Family Fun',
-      gradient: 'from-purple-500 to-pink-500',
-      icon: '⛵'
+    {
+      id: 'utility',
+      label: 'Utility Boat',
+      description: 'V-hull work boats',
+      recommendedHP: '9.9-30',
+      icon: 'utility-vhull.svg'
     },
-    { 
-      id: 'speed', 
-      name: 'Speed Boat', 
-      subtitle: 'Performance • Wakeboard • Ski Boats',
-      badge: 'Thrill Seeker',
-      gradient: 'from-orange-500 to-yellow-500',
-      icon: '🏁'
+    {
+      id: 'bass-boat',
+      label: 'Bass Boat',
+      description: 'Tournament ready',
+      recommendedHP: '115-250',
+      icon: 'bass-boat.svg'
     },
-    { 
-      id: 'deck', 
-      name: 'Deck Boat', 
-      subtitle: 'Bow Riders • Runabouts • Cruisers',
-      badge: 'Versatile',
-      gradient: 'from-teal-500 to-cyan-500',
-      icon: '🛥️'
+    {
+      id: 'pontoon',
+      label: 'Pontoon',
+      description: 'Family & entertainment',
+      recommendedHP: '25-150',
+      icon: 'pontoon.svg'
     },
-    { 
-      id: 'bass', 
-      name: 'Bass Boat', 
-      subtitle: 'Tournament • Recreation • Pro Angler',
-      badge: 'Serious Angler',
-      gradient: 'from-green-500 to-emerald-500',
-      icon: '🦆'
+    {
+      id: 'bowrider',
+      label: 'Bowrider',
+      description: 'Open bow runabout',
+      recommendedHP: '90-300',
+      icon: 'bowrider.svg'
+    },
+    {
+      id: 'center-console',
+      label: 'Center Console',
+      description: 'Offshore fishing',
+      recommendedHP: '115-600',
+      icon: 'center-console.svg'
     }
   ];
 
@@ -158,23 +159,9 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
 
   const [showHelp, setShowHelp] = useState(false);
 
-  const recommendedHPByType: Record<string, string> = {
-    pontoon: '60–115',
-    bass: '60–90',
-    fishing: '15–60',
-    deck: '75–150',
-    speed: '115+',
-  };
-
-  const silhouetteByType: Record<string, string> = {
-    fishing: 'aluminum-fishing',
-    pontoon: 'pontoon',
-    bass: 'bass-boat',
-    deck: 'bowrider',
-    speed: 'center-console',
-  };
+  // (Using per-type recommendedHP from boatTypes entries)
   const handleSkip = () => {
-    const defaultType = 'fishing';
+    const defaultType = 'aluminum-fishing';
     const typicalLength = hp < 25 ? 14 : hp < 60 ? 16 : hp < 115 ? 18 : 20;
     setBoatInfo(prev => ({
       ...prev,
@@ -335,20 +322,19 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
                         className={`group relative rounded-xl border-2 bg-card p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg ${boatInfo.type === type.id ? 'border-primary bg-primary/5' : 'border-border'}`}
                         aria-pressed={boatInfo.type === type.id}
                       >
-                        <div className="absolute top-3 left-3 rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground">{type.badge}</div>
                         <div className="boat-icon mb-3 flex h-12 items-center justify-center">
-                          <img src={`/boat-types/${silhouetteByType[type.id] || 'aluminum-fishing'}.svg`} alt={`${type.name} silhouette`} className="h-10 w-16 object-contain opacity-90" />
+                          <img src={`/boat-types/${type.icon}`} alt={`${type.label} silhouette`} className="h-10 w-16 object-contain opacity-90" />
                         </div>
-                        <h3 className="font-semibold">{type.name}</h3>
+                        <h3 className="font-semibold">{type.label}</h3>
                         <div className="boat-details mt-1 space-y-0.5">
-                          <span className="block text-sm text-muted-foreground">{type.subtitle}</span>
-                          {recommendedHPByType[type.id] && (
-                            <span className="block text-xs text-primary">Recommended: {recommendedHPByType[type.id]} HP</span>
+                          <span className="block text-sm text-muted-foreground">{type.description}</span>
+                          {type.recommendedHP && (
+                            <span className="block text-xs text-primary">Recommended: {type.recommendedHP} HP</span>
                           )}
                         </div>
                         <div className="selection-impact mt-2 text-xs text-muted-foreground">
                           {type.id === 'pontoon' && <span>Needs high-thrust motor</span>}
-                          {type.id === 'bass' && <span>Built for speed</span>}
+                          {type.id === 'bass-boat' && <span>Built for speed</span>}
                         </div>
                       </button>
                     ))}

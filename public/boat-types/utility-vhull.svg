@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc">
+  <title>Utility V-Hull Silhouette</title>
+  <desc>Stable V-hull utility boat outline</desc>
+  <!-- Hull line slightly wider and flatter than fishing -->
+  <path d="M10 70 L55 70 L100 62 L150 60 L190 64" stroke="#0052cc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Wider transom to suggest stability -->
+  <path d="M148 60 L148 54 L162 54 L162 60" stroke="#0052cc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Subtle waterline -->
+  <path d="M12 72 Q60 86 120 86 Q160 86 188 74" stroke="#0052cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"/>
+</svg>
