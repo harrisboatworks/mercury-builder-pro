@@ -51,49 +51,49 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
       label: 'Motor Only',
       description: 'No boat yet • Spare motor • I know my specs',
       recommendedHP: '',
-      icon: ''
+      image: ''
     },
     {
       id: 'aluminum-fishing',
       label: 'Aluminum Fishing',
       description: 'V-hull fishing boats',
       recommendedHP: '9.9-25',
-      icon: 'aluminum-fishing.svg'
+      image: '/lovable-uploads/6422c1aa-1ab1-4860-b77c-84dd486e4845.png'
     },
     {
       id: 'utility',
       label: 'Utility Boat',
       description: 'V-hull work boats',
       recommendedHP: '9.9-30',
-      icon: 'utility-vhull.svg'
+      image: '/lovable-uploads/6422c1aa-1ab1-4860-b77c-84dd486e4845.png'
     },
     {
       id: 'bass-boat',
       label: 'Bass Boat',
       description: 'Tournament ready',
       recommendedHP: '115-250',
-      icon: 'bass-boat.svg'
+      image: '/lovable-uploads/10d8a150-14cb-4481-b36a-3715fcae9605.png'
     },
     {
       id: 'pontoon',
       label: 'Pontoon',
       description: 'Family & entertainment',
       recommendedHP: '25-150',
-      icon: 'pontoon.svg'
+      image: '/lovable-uploads/e243e2aa-485a-41e6-a8c6-fc1b1ead54a9.png'
     },
     {
       id: 'bowrider',
       label: 'Bowrider',
       description: 'Open bow runabout',
       recommendedHP: '90-300',
-      icon: 'bowrider.svg'
+      image: '/lovable-uploads/359dcfb9-5466-47ba-a79e-cde787caea6e.png'
     },
     {
       id: 'center-console',
       label: 'Center Console',
       description: 'Offshore fishing',
       recommendedHP: '115-600',
-      icon: 'center-console.svg'
+      image: '/lovable-uploads/bc00ebae-067a-49d1-be75-82e023004a92.png'
     }
   ];
 
@@ -322,8 +322,13 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
                         className={`group relative rounded-xl border-2 bg-card p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg ${boatInfo.type === type.id ? 'border-primary bg-primary/5' : 'border-border'}`}
                         aria-pressed={boatInfo.type === type.id}
                       >
-                        <div className="boat-icon mb-3 flex h-12 items-center justify-center">
-                          <img src={`/boat-types/${type.icon}`} alt={`${type.label} silhouette`} className="h-10 w-16 object-contain opacity-90" />
+                        <div className="mb-3 h-36 overflow-hidden rounded-md border-b border-border bg-gradient-to-b from-muted/40 to-background flex items-center justify-center">
+                          <img
+                            src={type.image}
+                            alt={`${type.label} boat`}
+                            className="h-32 w-full object-contain transition-transform duration-200 group-hover:scale-[1.03]"
+                            loading="lazy"
+                          />
                         </div>
                         <h3 className="font-semibold">{type.label}</h3>
                         <div className="boat-details mt-1 space-y-0.5">
@@ -386,7 +391,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
                     <div className="boat-identifier rounded-lg border border-border bg-muted/30 p-4">
                       <h3 className="font-semibold mb-2">Let's identify your boat:</h3>
                       <ul className="text-sm space-y-1">
-                        <li>• Does it have a flat bottom? → Jon Boat</li>
+                        <li>• Simple V-hull for work? → Utility Boat</li>
                         <li>• Does it have two tubes? → Pontoon</li>
                         <li>• Is it V-shaped and low? → Bass Boat</li>
                       </ul>
