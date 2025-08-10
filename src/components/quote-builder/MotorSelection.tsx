@@ -1427,12 +1427,6 @@ const subtitle = formatVariantSubtitle(raw, title);
         onOpenChange={(open) => { if (!open) setActivePromoModal(null); }}
       />
 
-      {/* Water test floating badge */}
-      <div className="water-test-badge fixed bottom-6 right-6 z-40 bg-accent text-accent-foreground shadow-lg rounded-full px-3 py-2 flex items-center gap-2">
-        <img src="/water-icon.svg" alt="Free water testing" className="w-5 h-5" />
-        <span className="text-sm font-medium">FREE Water Testing</span>
-        <span className="sr-only">We're the only dealer on the water! Every motor includes professional testing.</span>
-      </div>
 
       {/* Quick View Dialog */}
       <Dialog open={!!quickViewMotor} onOpenChange={(o) => { if (!o) setQuickViewMotor(null); }}>
