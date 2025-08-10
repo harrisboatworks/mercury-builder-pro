@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Checkbox } from '@/components/ui/checkbox';
+
 import { RefreshCw, Zap, Check, Star, Sparkles, Eye, Scale, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Plus } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
@@ -1227,127 +1227,7 @@ const handleMotorSelection = (motor: Motor) => {
                     >
                       {selectedForCompare.indexOf(motor.id) + 1}
                     </button>
-                  ) : (
-                    <div className="absolute top-3 left-3 z-10">
-                      <label
-                        onClick={(e) => e.stopPropagation()}
-                        className="flex items-center gap-1 rounded border border-border bg-background/80 backdrop-blur-sm px-2 py-1 shadow-sm"
-                      >
-                        <Checkbox
-                          checked={false}
-                          onCheckedChange={() => toggleCompare(motor)}
-                          aria-label="Add to compare"
-                          className="size-3.5"
-                        />
-                        <span className="text-[10px] leading-none">Compare</span>
-                      </label>
-                    </div>
-                  )}
-
-
-                  <Badge className={`stock-badge ${getStockBadgeColor(motor.stockStatus)}`}>
-                    {motor.stockStatus}
-                  </Badge>
-
-                  <div className="p-3 space-y-3 relative h-full flex flex-col">
-                    <div className="flex items-start justify-start">
-                      <Badge variant={getCategoryColor(motor.category)}>
-                        {motor.hp}HP
-                      </Badge>
-                    </div>
-
-                    <div className="space-y-1">
-                      {(() => {
-const title = formatMotorTitle(motor.year, motor.model);
-const raw = `${motor.model ?? ''} ${motor.description ?? motor.specs ?? ''}`.trim();
-const subtitle = formatVariantSubtitle(raw, title);
-                        return (
-                          <>
-                            <h3 className="text-sm md:text-base font-semibold text-foreground line-clamp-2">{title}</h3>
-                            <div className="min-h-[1rem]">
-                              {subtitle ? (
-                                <p className="text-foreground/90 text-xs line-clamp-1" title={subtitle}>{subtitle}</p>
-                              ) : null}
-                            </div>
-                          </>
-                        );
-                      })()}
-                    </div>
-
-      {motor.image && motor.image !== '/placeholder.svg' && (
-        <div className="motor-image-container image-wrap w-full h-[200px] shrink-0 bg-muted/10 overflow-hidden flex items-center justify-center rounded-lg p-2.5 relative">
-    <img 
-      src={motor.image} 
-      alt={motor.model}
-      loading="lazy"
-      className="motor-image"
-      style={{ height: '180px', width: 'auto', objectFit: 'contain', maxWidth: 'none', maxHeight: 'none' }}
-    />
-
-    {/* Urgency: low stock */}
-    {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && (
-      <div className="absolute top-14 left-3 z-20 animate-fade-in">
-        <Badge variant="discount" className="flex items-center gap-1 shadow">
-          <AlertTriangle className="w-3.5 h-3.5" />
-          <span>Only {stockCount} left</span>
-        </Badge>
-      </div>
-    )}
-
-    {/* Social proof: recent sales */}
-    {typeof recentSales === 'number' && recentSales > 5 && (
-      <div className="absolute top-14 right-3 z-20 animate-fade-in">
-        <Badge variant="warranty" className="flex items-center gap-1 shadow">
-          <Star className="w-3.5 h-3.5" />
-          <span>{recentSales} sold this month</span>
-        </Badge>
-      </div>
-    )}
-
-    <button
-      type="button"
-      className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-background/95 text-foreground border border-border shadow-md flex items-center justify-center opacity-90 transition-transform transition-opacity hover:opacity-100 hover:scale-110"
-      aria-label="Motor info"
-      onClick={(e) => { e.stopPropagation(); openQuickView(motor); }}
-    >
-      <Info className="w-4 h-4" />
-    </button>
-          {selectedMotor?.id === motor.id && (
-            <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
-              <Check className="w-20 h-20 text-green-600 drop-shadow-lg animate-scale-in checkmark-icon" strokeWidth={4} aria-hidden="true" />
-            </div>
-          )}
-        </div>
-      )}
-
-                    <div className="mt-auto pt-3 border-t border-border">
-                      <div className="price-area min-h-[60px] flex items-center">
-                        {callForPrice ? (
-                          <span className="text-sm md:text-base font-medium text-foreground">Call for Price</span>
-                        ) : hasSaleDisplay ? (
-                          <div className="w-full flex items-center justify-between gap-2">
-                            <span className="text-xs md:text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
-                            <div className="flex items-center gap-2">
-                              <span className="text-lg font-bold text-destructive">${(sale as number).toLocaleString()}</span>
-                              <span className="text-[10px] md:text-xs font-semibold px-2 py-1 rounded bg-destructive text-destructive-foreground">
-                                SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
-                              </span>
-                            </div>
-                          </div>
-                        ) : (
-                          effectiveNoSaleLayout === 'placeholder' ? (
-                            <div className="w-full flex items-center justify-between gap-2">
-                              <span className="text-sm md:text-base font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
-                              <div className="flex items-center gap-2 opacity-0 select-none pointer-events-none" aria-hidden="true">
-                                <span className="text-lg font-bold">Our Price $0</span>
-                                <span className="text-xs font-semibold px-2 py-1 rounded">SAVE $0 (0%)</span>
-                              </div>
-                            </div>
-                          ) : (
-                            <div className="w-full text-center">
-                              <span className="text-lg font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
-                            </div>
-                          )
+                  ) : null)}
                         )}
                       </div>
                     </div>
