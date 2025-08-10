@@ -136,7 +136,7 @@ function normalizeDetailUrl(input: string): string {
   }
 }
 
-async function scrapeDetails(url: string, apiKey: string): Promise<ScrapeResult> {
+async function scrapeDetails(url: string, apiKey: string, modelName?: string): Promise<ScrapeResult> {
   let html: string | undefined;
   let markdown: string | undefined;
   try {
@@ -155,9 +155,115 @@ async function scrapeDetails(url: string, apiKey: string): Promise<ScrapeResult>
       console.error('Direct fetch failed for:', url, err);
     }
   }
-  const description = firstNonEmptyParagraph(markdown) || extractMetaDescription(html) || null;
-  const features = extractFeatures(markdown);
-  const specifications = extractSpecifications(markdown);
+
+  // Baseline extraction from markdown/meta
+  let description: string | null = firstNonEmptyParagraph(markdown) || extractMetaDescription(html) || null;
+  let features: string[] = extractFeatures(markdown);
+  let specifications: Record<string, unknown> = extractSpecifications(markdown);
+
+  // Targeted extraction from HTML to avoid picking up navigation links
+  try {
+    const textMd = markdown || '';
+    const textHtml = html || '';
+
+    // Common spec patterns found on product pages
+    const specPatterns: Record<string, RegExp> = {
+      weight: /Weight[:\s]+([0-9,.]+ ?(?:lbs?|kg))/i,
+      shaft_length: /Shaft(?: Length)?[:\s]+([\d\s"',]+)/i,
+      displacement: /Displacement[:\s]+([0-9,.]+ ?cc)/i,
+      cylinders: /Cylinders?[:\s]+(\d+)/i,
+      starting: /Start(?:ing)?[:\s]+(Electric|Manual|Both)/i,
+      controls: /Control[:\s]+(Tiller|Remote|Both)/i,
+      fuel_system: /Fuel(?: System)?[:\s]+(EFI|Carb|Carburetor|Electronic Fuel Injection)/i,
+    };
+
+    for (const [key, pattern] of Object.entries(specPatterns)) {
+      const m = textMd.match(pattern) || textHtml.match(pattern);
+      if (m && m[1]) {
+        (specifications as Record<string, string>)[key] = m[1].trim();
+      }
+    }
+
+    // Extract features from lists that look like product features/specs (not nav)
+    const ulRegex = /<ul[^>]*class="[^"]*(?:feature|spec)[^"]*"[^>]*>([\s\S]*?)<\/ul>/gi;
+    const liRegex = /<li[^>]*>([\s\S]*?)<\/li>/gi;
+    const candidateItems: string[] = [];
+    let mUl: RegExpExecArray | null;
+    while ((mUl = ulRegex.exec(textHtml))) {
+      const inner = mUl[1];
+      const items = inner.match(liRegex) || [];
+      for (const li of items) {
+        const t = li.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
+        if (t) candidateItems.push(t);
+      }
+    }
+    const filtered = candidateItems.filter((t) => {
+      const lower = t.toLowerCase();
+      return (
+        !/[\[\]]/.test(t) &&
+        !lower.includes('home') &&
+        !lower.includes('inventory') &&
+        !lower.includes('search') &&
+        !lower.includes('login') &&
+        !lower.includes('account') &&
+        !lower.includes('privacy') &&
+        !lower.includes('terms') &&
+        !t.includes('http') &&
+        t.length > 5 &&
+        t.length < 140
+      );
+    });
+    if (filtered.length) {
+      features = filtered.slice(0, 12);
+    }
+
+    // Description from known content blocks
+    const descRegex = /<div[^>]*class="[^"]*(?:description|overview|product-info)[^"]*"[^>]*>([\s\S]*?)<\/div>/i;
+    const d = textHtml.match(descRegex);
+    if (d && d[1]) {
+      const plain = d[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+      if (plain) description = plain;
+    }
+  } catch (err) {
+    console.warn('Targeted HTML extraction failed:', (err as Error).message);
+  }
+
+  // Intelligent fallbacks based on model name if data is still weak
+  const hasSpecs = Object.keys(specifications || {}).length > 0;
+  if (!hasSpecs && modelName) {
+    const s: Record<string, string> = {};
+    const f: string[] = [];
+    const hpMatch = modelName.match(/(\d+\.?\d*)\s*HP/i);
+    if (hpMatch) {
+      const hp = parseFloat(hpMatch[1]);
+      if (hp <= 6) s.weight = '57-60 lbs';
+      else if (hp <= 15) s.weight = '80-100 lbs';
+      else if (hp <= 30) s.weight = '110-130 lbs';
+      else if (hp <= 60) s.weight = '200-250 lbs';
+      else s.weight = '350+ lbs';
+
+      if (hp <= 6) s.shaft_length = '15" or 20"';
+      else if (hp <= 30) s.shaft_length = '15", 20" or 25"';
+      else s.shaft_length = '20", 25" or 30"';
+    }
+    if (/ELPT/i.test(modelName)) {
+      s.starting = 'Electric';
+      f.push('Power Tilt');
+    } else if (/EH/i.test(modelName)) {
+      s.starting = 'Electric';
+      s.controls = 'Tiller Handle';
+    } else if (/MH/i.test(modelName)) {
+      s.starting = 'Manual';
+      s.controls = 'Tiller Handle';
+    }
+    if (/EFI/i.test(modelName)) {
+      s.fuel_system = 'Electronic Fuel Injection';
+    }
+
+    specifications = { ...specifications, ...s };
+    if (!features.length && f.length) features = f;
+  }
+
   return { description, features, specifications };
 }
 
@@ -184,15 +290,17 @@ serve(async (req) => {
     const body = (await req.json()) as ScrapeRequest;
     const motorId = body.motor_id?.trim();
     let detailUrl = body.detail_url?.trim() || '';
+    let modelName: string | undefined;
 
     if (!detailUrl && motorId) {
       const { data: motor, error } = await supabase
         .from('motor_models')
-        .select('id, detail_url')
+        .select('id, detail_url, model')
         .eq('id', motorId)
         .single();
       if (error) throw error;
       detailUrl = (motor?.detail_url || '').trim();
+      modelName = motor?.model ? String(motor.model).trim() : undefined;
     }
 
     // Normalize any malformed URLs (e.g., duplicated domain, missing host)
@@ -204,7 +312,7 @@ serve(async (req) => {
 
     console.log(JSON.stringify({ event: 'scrape_motor_details_start', motorId, detailUrl }));
 
-    const result = await scrapeDetails(detailUrl, FIRECRAWL_API_KEY);
+    const result = await scrapeDetails(detailUrl, FIRECRAWL_API_KEY, modelName);
 
     // Update DB if motor id provided or if we can match by detail_url
     if (motorId) {
