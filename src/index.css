@@ -492,13 +492,6 @@
     @apply absolute top-2 right-2 px-2.5 py-1 rounded text-[11px] font-semibold uppercase shadow z-10;
   }
 
-  /* Compare Mode toggle prominence */
-  .view-mode-toggle {
-    @apply bg-card border-2 border-border rounded-lg p-1 inline-flex gap-1;
-  }
-  .view-mode-toggle .active {
-    @apply bg-primary text-primary-foreground px-4 py-1.5 rounded-md;
-  }
 
   /* Benefits ticker for quote summary */
   .benefits-ticker {

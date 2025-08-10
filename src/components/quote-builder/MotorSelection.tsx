@@ -2,8 +2,8 @@ import { useState, useEffect, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Checkbox } from '@/components/ui/checkbox';
-import { RefreshCw, Zap, Check, Star, Sparkles, Eye, Scale, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Plus } from 'lucide-react';
+
+import { RefreshCw, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Plus } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -17,7 +17,7 @@ import { getPriceDisplayState } from '@/lib/pricing';
 import { formatVariantSubtitle, formatMotorTitle } from '@/lib/card-title';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { useNavigate } from 'react-router-dom';
-import { canadianEncouragement, loadingMessages, comparisonHumor, emptyStateMessages, friendlyErrors } from '@/lib/canadian-messages';
+import { canadianEncouragement, loadingMessages, emptyStateMessages, friendlyErrors } from '@/lib/canadian-messages';
 
 // Database types
 interface DbMotor {
@@ -309,16 +309,6 @@ const getIdealUses = (hp: number | string) => {
   ]} />;
 };
 
-const getComparisonTip = (motor: Motor) => {
-  const model = (motor.model || '').toUpperCase();
-  const n = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
-  if (/COMMAND\s*THRUST|\bCT\b/.test(model)) return 'Command Thrust = Better for heavy boats & pontoons (larger prop, lower gear ratio)';
-  if (/PROKICKER/.test(model)) return 'ProKicker = Optimized for trolling with precise low-speed control';
-  if (/PRO\s*XS|PROXS/.test(model)) return 'Pro XS = Race-bred performance with higher top speed';
-  if (/SEAPRO/.test(model)) return 'SeaPro = Commercial grade for heavy use (stronger components)';
-  if (n <= 30) return `Compare to: ${Math.max(2, n - 5)}HP (save ~$500, ~5mph slower) or ${n + 10}HP (cost ~$800 more, ~5mph faster)`;
-  return `This size typically replaces older ${Math.round(n * 1.3)}HP 2-strokes with better fuel economy`;
-};
 
 // Normalize scraped/spec data into consistent keys used by the UI
 const normalizeSpecifications = (
@@ -390,13 +380,13 @@ const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 const [filtersOpen, setFiltersOpen] = useState(true);
 const [bannerPromosOpen, setBannerPromosOpen] = useState(false);
 // Phase 1 scaffolding & features
-const [selectionMode, setSelectionMode] = useState<'browse' | 'compare'>('browse');
-const [selectedForCompare, setSelectedForCompare] = useState<string[]>([]);
+
+
 const [activePromoModal, setActivePromoModal] = useState<Promotion | null>(null);
 const [promotionsState, setPromotionsState] = useState<Promotion[]>([]);
 const [quickViewMotor, setQuickViewMotor] = useState<Motor | null>(null);
 const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
-const [showComparePanel, setShowComparePanel] = useState(false);
+
 const debugPricing = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
 const [quickViewLoading, setQuickViewLoading] = useState(false);
 
@@ -873,22 +863,6 @@ const renderBannerPromos = (motor: Motor) => {
   );
 };
 
-// Phase 1: Compare mode & quick actions helpers
-const toggleCompare = (motor: Motor) => {
-  setSelectedForCompare(prev => {
-    const exists = prev.includes(motor.id);
-    if (exists) return prev.filter(id => id !== motor.id);
-    if (prev.length >= 3) {
-      toast({
-        title: 'Compare limit reached, eh!',
-        description: `You can compare up to 3 motors. ${comparisonHumor.threeMotors}`,
-        variant: 'destructive'
-      });
-      return prev;
-    }
-    return [...prev, motor.id];
-  });
-};
 
 const calculatePayment = (motor: Motor) => {
   const url = `/finance-calculator?model=${encodeURIComponent(motor.id)}`;
@@ -932,45 +906,10 @@ useEffect(() => {
   }
 }, [quickViewMotor?.id]);
 
-const isCompared = (motorId: string) => selectedForCompare.includes(motorId);
 
-const handleSelectionModeToggle = (mode: 'browse' | 'compare') => {
-  setSelectionMode(mode);
-  if (mode === 'browse') setSelectedForCompare([]);
-  if (mode === 'compare') {
-    toast({ title: canadianEncouragement.compareMode[0], duration: 1800 });
-  }
-};
 
-const handleCompareClick = () => {
-  if (selectedForCompare.length >= 2) setShowComparePanel(true);
-  else toast({ title: 'Select at least 2 motors', description: canadianEncouragement.compareMode[1] || 'Pick two or more to compare.' });
-};
 
-// Auto-enrich specs for items in the compare panel
-useEffect(() => {
-  if (!showComparePanel) return;
-  const selected = motors.filter(m => selectedForCompare.includes(m.id));
-  selected.forEach(async (m) => {
-    const specs = (m as any)?.specifications || {};
-    const missing = !specs || Object.keys(specs).length === 0 || !specs.weight || !specs.shaftLength || !specs.startType || !specs.fuelSystem;
-    if (missing) {
-      try {
-        const { data, error } = await supabase.functions.invoke('scrape-motor-details', {
-          body: { motor_id: m.id, detail_url: (m as any).detailUrl }
-        });
-        if (!error && (data as any)?.success) {
-          const { description, features, specifications } = (data as any) || {};
-          const normalized = normalizeSpecifications(specifications, { hp: typeof m.hp === 'number' ? m.hp : parseInt(String(m.hp)), model: m.model });
-          setMotors(prev => prev.map(mm => mm.id === m.id ? { ...mm, description, features, specifications: normalized } : mm));
-        }
-      } catch (e) {
-        console.warn('compare: enrich specs failed', e);
-      }
-    }
-  });
-// eslint-disable-next-line react-hooks/exhaustive-deps
-}, [showComparePanel]);
+
 
 const handleMotorSelection = (motor: Motor) => {
     // Recently viewed scaffold
@@ -1112,27 +1051,6 @@ const handleMotorSelection = (motor: Motor) => {
           </div>
         )}
 
-        {/* Browse vs Compare Mode (Phase 1) */}
-        <div className="flex justify-center">
-          <div className="view-mode-toggle">
-            <Button
-              variant={selectionMode === 'browse' ? 'default' : 'outline'}
-              size="sm"
-              onClick={() => handleSelectionModeToggle('browse')}
-              className={`flex items-center gap-2 ${selectionMode === 'browse' ? 'active' : ''}`}
-            >
-              <Eye className="w-4 h-4" /> Browse Mode
-            </Button>
-            <Button
-              variant={selectionMode === 'compare' ? 'default' : 'outline'}
-              size="sm"
-              onClick={() => handleSelectionModeToggle('compare')}
-              className={`flex items-center gap-2 ${selectionMode === 'compare' ? 'active' : ''}`}
-            >
-              <Scale className="w-4 h-4" /> Compare Mode
-            </Button>
-          </div>
-        </div>
 
         <div className="dealer-credentials rounded-lg mb-6 p-4 md:p-6 bg-gradient-to-r from-primary/5 to-muted/40 border border-border">
           <div className="dealer-credentials-banner flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
@@ -1213,37 +1131,9 @@ const handleMotorSelection = (motor: Motor) => {
                     selectedMotor && selectedMotor.id !== motor.id 
                       ? 'opacity-70' 
                       : ''
-                  } ${
-                    isCompared(motor.id) ? 'ring-2 ring-primary border-primary bg-primary/5 scale-[1.02]' : ''
                   } flex flex-col`}
-                  onClick={() => selectionMode === 'compare' ? toggleCompare(motor) : handleMotorSelection(motor)}
+                  onClick={() => handleMotorSelection(motor)}
                 >
-                  {isCompared(motor.id) ? (
-                    <button
-                      type="button"
-                      className="absolute top-3 left-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold shadow cursor-pointer"
-                      title="Remove from compare"
-                      onClick={(e) => { e.stopPropagation(); toggleCompare(motor); }}
-                    >
-                      {selectedForCompare.indexOf(motor.id) + 1}
-                    </button>
-                  ) : (
-                    <div className="absolute top-3 left-3 z-10">
-                      <label
-                        onClick={(e) => e.stopPropagation()}
-                        className="flex items-center gap-1 rounded border border-border bg-background/80 backdrop-blur-sm px-2 py-1 shadow-sm"
-                      >
-                        <Checkbox
-                          checked={false}
-                          onCheckedChange={() => toggleCompare(motor)}
-                          aria-label="Add to compare"
-                          className="size-3.5"
-                        />
-                        <span className="text-[10px] leading-none">Compare</span>
-                      </label>
-                    </div>
-                  )}
-
 
                   <Badge className={`stock-badge ${getStockBadgeColor(motor.stockStatus)}`}>
                     {motor.stockStatus}
@@ -1398,14 +1288,6 @@ const subtitle = formatVariantSubtitle(raw, title);
           </div>
         )}
 
-        {selectionMode === 'compare' && selectedForCompare.length >= 2 && (
-          <Button
-            className="fixed bottom-6 right-6 shadow-lg animate-in slide-in-from-bottom-4"
-            onClick={handleCompareClick}
-          >
-            ⚖️ Compare Selected ({selectedForCompare.length}/3)
-          </Button>
-        )}
 
         {selectedMotor && !showStickyBar && (
           <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
@@ -1794,12 +1676,6 @@ const subtitle = formatVariantSubtitle(raw, title);
                           </div>
                         </div>
 
-                        <div className="bg-muted p-3 rounded-md mt-4 text-sm comparison-tip">
-                          <strong>💡 Quick Comparison:</strong>
-                          <div className="mt-1">
-                            {getComparisonTip(quickViewMotor)}
-                          </div>
-                        </div>
 
                         <div className="bg-accent p-3 rounded-md mt-4 text-sm total-investment">
                           <h4 className="font-semibold flex items-center gap-2"><Calculator size={16} /> Total Investment Estimate</h4>
@@ -1887,9 +1763,6 @@ const subtitle = formatVariantSubtitle(raw, title);
 
               <div className="flex justify-between items-center mt-6 pt-4 border-t">
                 <div className="flex gap-3">
-                  <Button variant="outline" onClick={() => { toggleCompare(quickViewMotor); setQuickViewMotor(null); }}>
-                    Add to Compare
-                  </Button>
                   <Button variant="outline" onClick={() => { calculatePayment(quickViewMotor); setQuickViewMotor(null); }}>
                     Calculate Payment
                   </Button>
@@ -1903,44 +1776,6 @@ const subtitle = formatVariantSubtitle(raw, title);
         </DialogContent>
       </Dialog>
 
-      {/* Compare Panel Dialog */}
-      <Dialog open={showComparePanel} onOpenChange={setShowComparePanel}>
-        <DialogContent className="max-w-5xl">
-          <DialogHeader>
-            <DialogTitle>Compare Motors</DialogTitle>
-            <DialogDescription>Compare key specs side by side. We’ll fetch missing details if available.</DialogDescription>
-          </DialogHeader>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {motors.filter(m => selectedForCompare.includes(m.id)).map((m) => (
-              <Card key={m.id} className="p-4">
-                <div className="aspect-video bg-muted rounded-md overflow-hidden mb-3">
-                  <img src={m.image} alt={m.model} className="w-full h-full object-cover" />
-                </div>
-                <div className="flex items-center justify-between mb-2">
-                  <div>
-                    <h3 className="font-semibold">{m.model}</h3>
-                    <span className="text-sm text-muted-foreground">{m.hp} HP</span>
-                  </div>
-                  <Badge className={getStockBadgeColor(m.stockStatus)}>{m.stockStatus}</Badge>
-                </div>
-                <div className="space-y-1 text-sm">
-                  <div className="flex justify-between"><span>Price:</span><span className="font-semibold">${(m.salePrice || m.basePrice || m.price).toLocaleString()}</span></div>
-                  <div className="flex justify-between"><span>Power:</span><span className="font-semibold">{(m.specifications as any)?.powerHP || (m.specifications as any)?.power_hp || m.hp} HP</span></div>
-                  <div className="flex justify-between"><span>Weight:</span><span className="font-semibold">{(m.specifications as any)?.weight || (m.specifications as any)?.weight_lbs || (m.specifications as any)?.dry_weight || 'N/A'}</span></div>
-                  <div className="flex justify-between"><span>Shaft:</span><span className="font-semibold">{(m.specifications as any)?.shaftLength || (m.specifications as any)?.shaft_length || 'N/A'}</span></div>
-                  <div className="flex justify-between"><span>Start:</span><span className="font-semibold">{(m.specifications as any)?.startType || (m.specifications as any)?.start_type || 'N/A'}</span></div>
-                  <div className="flex justify-between"><span>Fuel:</span><span className="font-semibold">{(m.specifications as any)?.fuelSystem || (m.specifications as any)?.fuel_system || 'N/A'}</span></div>
-                  <div className="flex justify-between"><span>Warranty:</span><span className="font-semibold">{(m.specifications as any)?.warrantyPromo || (m.specifications as any)?.warranty_promo || (m.specifications as any)?.warranty || 'N/A'}</span></div>
-                </div>
-                <Button className="mt-3 w-full" onClick={() => { handleMotorSelection(m); setShowComparePanel(false); }}>Select This Motor</Button>
-              </Card>
-            ))}
-          </div>
-          <DialogFooter>
-            <Button variant="outline" onClick={() => setShowComparePanel(false)}>Close</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };
