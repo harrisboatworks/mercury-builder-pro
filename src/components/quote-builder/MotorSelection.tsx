@@ -1357,7 +1357,16 @@ const subtitle = formatVariantSubtitle(raw, title);
 
                     // Clean features for display (exclude nav/social links, urls, too short)
                     const displayFeatures = features
-                      .filter((f) => !/https?:\/\//i.test(f) && !/\[.*\]\(.*\)/.test(f) && !/^\s*URL:/i.test(f) && f.trim().length > 5)
+                      .filter((f) => {
+                        const t = String(f).trim();
+                        return t.length > 5 && t.length < 200 &&
+                          !/https?:\/\//i.test(t) &&
+                          !/\[.*\]\(.*\)/.test(t) &&
+                          !/^\s*URL:/i.test(t) &&
+                          !/can't find/i.test(t) &&
+                          !/click here/i.test(t) &&
+                          !/looking for/i.test(t);
+                      })
                       .slice(0, 8);
 
                     return (
@@ -1462,7 +1471,7 @@ const subtitle = formatVariantSubtitle(raw, title);
                 )}
               </div>
 
-              {quickViewMotor.specifications && (
+              {import.meta.env.DEV && quickViewMotor.specifications && (
                 <details className="mt-4 p-3 bg-muted rounded-md">
                   <summary className="cursor-pointer font-semibold">Debug: Raw Specs</summary>
                   <pre className="text-xs mt-2">{JSON.stringify(quickViewMotor.specifications, null, 2)}</pre>
