@@ -142,6 +142,42 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
 
   const compatibility = getCompatibilityMessage();
 
+  // Derived values and UI helpers
+  const hp = typeof selectedMotor?.hp === 'string' ? parseInt(String(selectedMotor?.hp)) : (selectedMotor?.hp || 0);
+  const steps = boatInfo.type === 'motor-only'
+    ? [{ label: 'Specs' }, { label: 'Trade-In (Optional)' }, { label: 'Review' }]
+    : [
+        { label: 'Boat Type' },
+        { label: 'Length' },
+        { label: 'Transom Height' },
+        { label: 'Controls & Rigging' },
+        { label: 'Trade-In (Optional)' },
+        { label: 'Review' },
+      ];
+  const nextStepLabel = steps[currentStep + 1]?.label;
+
+  const [showHelp, setShowHelp] = useState(false);
+
+  const recommendedHPByType: Record<string, string> = {
+    pontoon: '60–115',
+    bass: '60–90',
+    fishing: '15–60',
+    deck: '75–150',
+    speed: '115+',
+  };
+
+  const handleSkip = () => {
+    const defaultType = 'fishing';
+    const typicalLength = hp < 25 ? 14 : hp < 60 ? 16 : hp < 115 ? 18 : 20;
+    setBoatInfo(prev => ({
+      ...prev,
+      type: prev.type || defaultType,
+      length: lengthBucket(typicalLength),
+    }));
+    setLengthFeet(typicalLength);
+    handleNext();
+  };
+
   const totalSteps = boatInfo.type === 'motor-only' ? 3 : 6;
   const canNext = () => {
     if (boatInfo.type === 'motor-only') {
@@ -191,7 +227,19 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
           <span className="text-sm font-medium">Progress</span>
           <span className="text-sm text-muted-foreground">Step {currentStep + 1} of {totalSteps}</span>
         </div>
-        <Progress value={((currentStep + 1) / totalSteps) * 100} className="h-3" />
+        <Progress value={((currentStep + 1) / totalSteps) * 100} className="h-3 mb-3" />
+        <div className="flex flex-wrap items-center gap-3">
+          {steps.map((step, i) => (
+            <div key={step.label} className={`flex items-center gap-2 ${i <= currentStep ? 'text-foreground' : 'text-muted-foreground'}`}>
+              <div className={`h-6 w-6 rounded-full flex items-center justify-center text-xs font-semibold border ${i <= currentStep ? 'bg-primary text-primary-foreground border-primary' : 'bg-background border-border'}`}>{i + 1}</div>
+              <div className="text-xs md:text-sm">{step.label}</div>
+              {i < steps.length - 1 && <div className="w-6 h-px bg-border mx-1 hidden md:block" />}
+            </div>
+          ))}
+          <div className="ml-auto text-xs text-muted-foreground">
+            {nextStepLabel ? `Next: ${nextStepLabel}` : 'Ready to continue'}
+          </div>
+        </div>
       </div>
 
       {/* Quick Presets */}
@@ -273,19 +321,90 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {boatTypes.filter(t => t.id !== 'motor-only').map((type) => (
-                      <div
+                      <button
+                        type="button"
                         key={type.id}
-                        className={`relative cursor-pointer bg-gradient-to-br ${type.gradient} text-white p-6 rounded-2xl min-h-[180px] transition-all hover:scale-105 ${boatInfo.type === type.id ? 'ring-4 ring-primary' : ''}`}
                         onClick={() => setBoatInfo(prev => ({ ...prev, type: type.id }))}
+                        className={`group relative rounded-xl border-2 bg-card p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg ${boatInfo.type === type.id ? 'border-primary bg-primary/5' : 'border-border'}`}
+                        aria-pressed={boatInfo.type === type.id}
                       >
-                        <div className="absolute top-3 left-3 bg-white/20 px-3 py-1 rounded-full text-xs">{type.badge}</div>
-                        <div className="h-full flex flex-col items-center justify-center space-y-2">
-                          <div className="text-4xl">{type.icon}</div>
-                          <div className="text-lg font-semibold">{type.name}</div>
-                          <div className="text-xs opacity-90">{type.subtitle}</div>
+                        <div className="absolute top-3 left-3 rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground">{type.badge}</div>
+                        <div className="boat-icon mb-3 flex h-12 items-center justify-center">
+                          <img src={`/boat-types/${type.id}.svg`} alt={`${type.name} silhouette`} className="h-10 w-16 object-contain opacity-90" />
                         </div>
-                      </div>
+                        <h3 className="font-semibold">{type.name}</h3>
+                        <div className="boat-details mt-1 space-y-0.5">
+                          <span className="block text-sm text-muted-foreground">{type.subtitle}</span>
+                          {recommendedHPByType[type.id] && (
+                            <span className="block text-xs text-primary">Recommended: {recommendedHPByType[type.id]} HP</span>
+                          )}
+                        </div>
+                        <div className="selection-impact mt-2 text-xs text-muted-foreground">
+                          {type.id === 'pontoon' && <span>Needs high-thrust motor</span>}
+                          {type.id === 'bass' && <span>Built for speed</span>}
+                        </div>
+                      </button>
                     ))}
+
+                    {/* Help option */}
+                    <button
+                      type="button"
+                      onClick={() => setShowHelp(s => !s)}
+                      className="group relative rounded-xl border-2 border-border bg-card p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                    >
+                      <div className="icon mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-border text-sm">?</div>
+                      <h3 className="font-semibold">Not Sure?</h3>
+                      <p className="text-sm text-muted-foreground">We'll help you figure it out</p>
+                    </button>
+                  </div>
+
+                  {/* Why this matters */}
+                  <div className="why-this-matters">
+                    <details className="text-sm">
+                      <summary className="cursor-pointer text-primary">Why do we need to know your boat type?</summary>
+                      <div className="mt-2 rounded-md bg-muted/30 p-3">
+                        <p>Different boats need different motor features:</p>
+                        <ul className="mt-2 space-y-1">
+                          <li>• Pontoons: Need extra thrust for heavy loads</li>
+                          <li>• Bass Boats: Need quick hole shot for tournaments</li>
+                          <li>• Aluminum: Lighter, needs less power</li>
+                        </ul>
+                      </div>
+                    </details>
+                  </div>
+
+                  {/* Selection feedback */}
+                  {boatInfo.type && selectedMotor && (
+                    <div className="selection-feedback">
+                      {boatInfo.type === 'pontoon' && hp < 25 ? (
+                        <Alert className="border-orange-500 bg-orange-50 dark:bg-orange-950/20">
+                          <AlertDescription>⚠️ Pontoons typically need 25HP+ for adequate performance</AlertDescription>
+                        </Alert>
+                      ) : (
+                        <Alert className="border-green-500/30 bg-green-500/10">
+                          <AlertDescription>✓ Good match for your {hp}HP motor</AlertDescription>
+                        </Alert>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Guided help */}
+                  {showHelp && (
+                    <div className="boat-identifier rounded-lg border border-border bg-muted/30 p-4">
+                      <h3 className="font-semibold mb-2">Let's identify your boat:</h3>
+                      <ul className="text-sm space-y-1">
+                        <li>• Does it have a flat bottom? → Jon Boat</li>
+                        <li>• Does it have two tubes? → Pontoon</li>
+                        <li>• Is it V-shaped and low? → Bass Boat</li>
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Quick Skip */}
+                  <div className="skip-option">
+                    <Button type="button" variant="ghost" size="sm" onClick={handleSkip} className="text-muted-foreground">
+                      Skip this step - Use typical settings for {hp || selectedMotor?.hp || '--'}HP
+                    </Button>
                   </div>
                 </div>
               </Card>
