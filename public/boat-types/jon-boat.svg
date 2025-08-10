@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc">
+  <title>Jon Boat Silhouette</title>
+  <desc>Flat bottom utility boat</desc>
+  <path d="M14 70 L72 70 L150 68 L188 68" stroke="#0052cc" stroke-width="3" stroke-linecap="round"/>
+  <path d="M14 70 L14 62 L188 62 L188 68" stroke="#0052cc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -166,6 +166,13 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
     speed: '115+',
   };
 
+  const silhouetteByType: Record<string, string> = {
+    fishing: 'aluminum-fishing',
+    pontoon: 'pontoon',
+    bass: 'bass-boat',
+    deck: 'bowrider',
+    speed: 'center-console',
+  };
   const handleSkip = () => {
     const defaultType = 'fishing';
     const typicalLength = hp < 25 ? 14 : hp < 60 ? 16 : hp < 115 ? 18 : 20;
@@ -330,7 +337,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
                       >
                         <div className="absolute top-3 left-3 rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground">{type.badge}</div>
                         <div className="boat-icon mb-3 flex h-12 items-center justify-center">
-                          <img src={`/boat-types/${type.id}.svg`} alt={`${type.name} silhouette`} className="h-10 w-16 object-contain opacity-90" />
+                          <img src={`/boat-types/${silhouetteByType[type.id] || 'aluminum-fishing'}.svg`} alt={`${type.name} silhouette`} className="h-10 w-16 object-contain opacity-90" />
                         </div>
                         <h3 className="font-semibold">{type.name}</h3>
                         <div className="boat-details mt-1 space-y-0.5">
