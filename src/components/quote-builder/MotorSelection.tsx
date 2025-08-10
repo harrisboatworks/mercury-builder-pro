@@ -1293,13 +1293,15 @@ const subtitle = formatVariantSubtitle(raw, title);
 
                       const getStandardWeight = (model: string): string => {
                         const upper = model.toUpperCase();
+                        // Small portables (2.5-6 HP)
                         if (upper.includes('2.5HP')) return '57 lbs';
                         if (upper.includes('3.5HP')) return '59 lbs';
                         if (upper.includes('5HP')) return '60 lbs';
                         if (upper.includes('6HP')) return '60 lbs';
+                        // Small motors (8-30 HP)
                         if (upper.includes('8HP')) return '78 lbs';
                         if (upper.includes('9.9HP')) {
-                          if (upper.includes('COMMAND THRUST') || upper.includes('CT')) return '90 lbs';
+                          if (upper.includes('COMMAND THRUST') || upper.includes(' CT')) return '90 lbs';
                           if (upper.includes('ELH') || upper.includes('ELPT')) return '87 lbs';
                           return '84 lbs';
                         }
@@ -1307,9 +1309,36 @@ const subtitle = formatVariantSubtitle(raw, title);
                         if (upper.includes('20HP')) return '104 lbs';
                         if (upper.includes('25HP')) return '126 lbs';
                         if (upper.includes('30HP')) return '163 lbs';
+                        // Mid-range (40-90 HP)
                         if (upper.includes('40HP')) return '209 lbs';
                         if (upper.includes('50HP')) return '216 lbs';
-                        if (upper.includes('60HP')) return '216 lbs';
+                        if (upper.includes('60HP')) return '256 lbs';
+                        if (upper.includes('75HP')) return '359 lbs';
+                        if (upper.includes('80HP')) return '359 lbs';
+                        if (upper.includes('90HP')) return '359 lbs';
+                        // Large motors (100+ HP)
+                        if (upper.includes('100HP')) return '363 lbs';
+                        if (upper.includes('115HP')) {
+                          if (upper.includes('COMMAND THRUST') || upper.includes(' CT')) return '377 lbs';
+                          if (upper.includes('PRO XS') || upper.includes('PROXS')) return '363 lbs';
+                          return '363 lbs';
+                        }
+                        if (upper.includes('125HP')) return '363 lbs';
+                        if (upper.includes('135HP')) return '468 lbs';
+                        if (upper.includes('150HP')) {
+                          if (upper.includes('PRO XS') || upper.includes('PROXS')) return '455 lbs';
+                          return '468 lbs';
+                        }
+                        if (upper.includes('175HP')) return '468 lbs';
+                        if (upper.includes('200HP')) return '475 lbs';
+                        if (upper.includes('225HP')) return '475 lbs';
+                        if (upper.includes('250HP')) return '527 lbs';
+                        if (upper.includes('300HP')) return '556 lbs';
+                        if (upper.includes('350HP')) return '668 lbs';
+                        if (upper.includes('400HP')) return '668 lbs';
+                        if (upper.includes('450HP')) return '689 lbs';
+                        if (upper.includes('500HP')) return '705 lbs';
+                        if (upper.includes('600HP')) return '1260 lbs';
                         return 'Contact for specs';
                       };
 
