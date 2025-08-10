@@ -1133,7 +1133,10 @@ const handleMotorSelection = (motor: Motor) => {
                 return true;
               });
 
-              return (
+               const stockCount = (motor as any)?.stockCount as number | undefined;
+               const recentSales = (motor as any)?.recentSales as number | undefined;
+
+               return (
                 <Card 
                   key={motor.id}
                   className={`product-card relative cursor-pointer transition-all duration-500 hover:shadow-lg group overflow-hidden ${
@@ -1214,6 +1217,27 @@ const subtitle = formatVariantSubtitle(raw, title);
       className="motor-image"
       style={{ height: '180px', width: 'auto', objectFit: 'contain', maxWidth: 'none', maxHeight: 'none' }}
     />
+
+    {/* Urgency: low stock */}
+    {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && (
+      <div className="absolute top-14 left-3 z-20 animate-fade-in">
+        <Badge variant="discount" className="flex items-center gap-1 shadow">
+          <AlertTriangle className="w-3.5 h-3.5" />
+          <span>Only {stockCount} left</span>
+        </Badge>
+      </div>
+    )}
+
+    {/* Social proof: recent sales */}
+    {typeof recentSales === 'number' && recentSales > 5 && (
+      <div className="absolute top-14 right-3 z-20 animate-fade-in">
+        <Badge variant="warranty" className="flex items-center gap-1 shadow">
+          <Star className="w-3.5 h-3.5" />
+          <span>{recentSales} sold this month</span>
+        </Badge>
+      </div>
+    )}
+
     <button
       type="button"
       className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-background/95 text-foreground border border-border shadow-md flex items-center justify-center opacity-90 transition-transform transition-opacity hover:opacity-100 hover:scale-110"
