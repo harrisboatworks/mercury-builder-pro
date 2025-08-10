@@ -1727,24 +1727,16 @@ const subtitle = formatVariantSubtitle(raw, title);
                               const needsControls = hp >= 40;
                               const needsBattery = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
                               const propCost = hp >= 25 ? (hp >= 150 ? 950 : 350) : 0;
-                              const isProKicker = /PROKICKER/.test(model);
-                              const total = isProKicker ? null : price + (needsControls ? 1200 : 0) + (needsBattery ? 300 : 0) + propCost + 500;
+                              const total = price + (needsControls ? 1200 : 0) + (needsBattery ? 300 : 0) + propCost + 500;
                               return (
                                 <>
                                   <div>Motor: {'$' + price.toLocaleString()}</div>
                                   {needsControls && <div>Controls: ~$1,200</div>}
                                   {needsBattery && <div>Battery: ~$300</div>}
                                   {propCost > 0 && <div>Propeller: ~${propCost}</div>}
-                                  <div>Installation: {isProKicker ? 'TBD*' : '~$500'}</div>
-                                  <div className="font-bold pt-1 border-t border-border">{isProKicker ? 'Total: Contact for Quote' : 'Total: ~' + ('$' + (total as number).toLocaleString())}</div>
-                                  {isProKicker && (
-                                    <div className="text-xs mt-2 text-amber-600">
-                                      * ProKicker installation & rigging costs determined by Harris Boat Works based on your specific setup.
-                                    </div>
-                                  )}
-                                </>
-                              );
-                            })()}
+                                  <div>Installation: ~$500</div>
+                                  <div className="font-bold pt-1 border-t border-border">Total: ~{'$' + total.toLocaleString()}</div>
+                                  <div className="investment-note text-xs mt-2">
                                     <p>* Includes all required accessories:</p>
                                     <ul className="text-xs list-disc pl-5">
                                       {hp >= 40 && <li>Remote controls</li>}
