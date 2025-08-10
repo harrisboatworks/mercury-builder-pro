@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
-import { RefreshCw, Zap, Check, Star, Sparkles, Eye, Scale, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator } from 'lucide-react';
+import { RefreshCw, Zap, Check, Star, Sparkles, Eye, Scale, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -1175,6 +1175,15 @@ const handleMotorSelection = (motor: Motor) => {
                     </div>
                   )}
 
+                  <button
+                    type="button"
+                    className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-background text-foreground border border-border shadow flex items-center justify-center opacity-80 transition-transform transition-opacity hover:opacity-100 hover:scale-110"
+                    aria-label="Quick view"
+                    onClick={(e) => { e.stopPropagation(); openQuickView(motor); }}
+                  >
+                    <Info className="w-4 h-4" />
+                  </button>
+
                   <Badge className={`stock-badge ${getStockBadgeColor(motor.stockStatus)}`}>
                     {motor.stockStatus}
                   </Badge>
@@ -1293,7 +1302,7 @@ const subtitle = formatVariantSubtitle(raw, title);
                     )}
 
                     {/* Quick actions overlay - single primary action */}
-                    <div className="absolute top-3 right-3 hidden md:flex opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="absolute top-3 right-12 hidden md:flex opacity-0 group-hover:opacity-100 transition-opacity">
                       <Button size="sm" variant="secondary" onClick={(e) => { e.stopPropagation(); openQuickView(motor); }}>
                         <Eye className="w-4 h-4 mr-1" /> Quick View
                       </Button>
