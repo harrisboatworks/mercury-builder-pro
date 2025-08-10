@@ -1275,52 +1275,116 @@ const subtitle = formatVariantSubtitle(raw, title);
 
                 {/* Right column - specs and features */}
                 <div className="space-y-4">
-                  <div className="grid grid-cols-2 gap-3 bg-accent p-4 rounded-md text-sm">
-                    <div className="flex justify-between"><span className="text-muted-foreground">Power</span><strong>{(quickViewMotor.specifications as any)?.horsepower || quickViewMotor.specifications?.powerHP || quickViewMotor.hp} HP</strong></div>
-                    <div className="flex justify-between"><span className="text-muted-foreground">Weight</span><strong>{(quickViewMotor.specifications as any)?.weight || 'Contact for specs'}</strong></div>
-                    <div className="flex justify-between"><span className="text-muted-foreground">Shaft</span><strong>{(quickViewMotor.specifications as any)?.shaftLength || (quickViewMotor.specifications as any)?.shaft_length || 'Multiple options'}</strong></div>
-                    <div className="flex justify-between"><span className="text-muted-foreground">Start</span><strong>{(quickViewMotor.specifications as any)?.starting || (quickViewMotor.specifications as any)?.startType || 'See details'}</strong></div>
-                    <div className="flex justify-between"><span className="text-muted-foreground">Fuel</span><strong>{(quickViewMotor.specifications as any)?.fuelSystem || (quickViewMotor.specifications as any)?.fuel_system || 'Standard'}</strong></div>
-                    <div className="flex justify-between"><span className="text-muted-foreground">Warranty</span><strong>{(quickViewMotor.specifications as any)?.warranty || (quickViewMotor.specifications as any)?.warrantyPromo || '3 Year'}</strong></div>
-                  </div>
+                  {(() => {
+                    const features = Array.isArray(quickViewMotor.features) ? quickViewMotor.features as string[] : [];
+                    const model = quickViewMotor.model || '';
 
-                  {(!quickViewMotor.description || !quickViewMotor.specifications || Object.keys(quickViewMotor.specifications as any).length === 0) && (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      disabled={quickViewLoading}
-                      onClick={async () => {
-                        try {
-                          setQuickViewLoading(true);
-                          const { data, error } = await supabase.functions.invoke('scrape-motor-details', {
-                            body: { motor_id: quickViewMotor.id, detail_url: quickViewMotor.detailUrl }
-                          });
-                          if (error) throw error;
-                          const { description, features, specifications } = (data as any) || {};
-                          setMotors((prev) => prev.map((mm) => mm.id === quickViewMotor.id ? { ...mm, description, features, specifications } : mm));
-                          setQuickViewMotor((prev) => prev ? { ...prev, description, features, specifications } as Motor : prev);
-                        } catch (e) {
-                          console.warn('manual scrape-motor-details error', e);
-                          toast({ title: 'Couldn\'t load full specs', description: 'Please try again in a moment.', variant: 'destructive' });
-                        } finally {
-                          setQuickViewLoading(false);
+                    // Parse features into displayable specs
+                    const displaySpecs = (() => {
+                      const specs = {
+                        weight: 'Contact for specs',
+                        shaft: 'Multiple options',
+                        start: 'See details',
+                        fuel: 'Standard',
+                        warranty: '3 Year',
+                      };
+
+                      features.forEach((f) => {
+                        const text = String(f);
+                        // Weight
+                        if (/weight/i.test(text) || /(lbs?|kg)/i.test(text)) {
+                          const m = text.match(/(\d+\.?\d*)\s*(lbs?|kg)/i);
+                          if (m) specs.weight = `${m[1]} ${m[2]}`;
                         }
-                      }}
-                    >
-                      {quickViewLoading ? 'Loading…' : 'Load Full Specs'}
-                    </Button>
-                  )}
+                        // Starting
+                        if (/start(ing)?:/i.test(text)) {
+                          if (/electric/i.test(text)) specs.start = 'Electric';
+                          else if (/manual/i.test(text)) specs.start = 'Manual';
+                        }
+                        // Warranty
+                        if (/warranty/i.test(text)) {
+                          const wm = text.match(/(\d+)\s*month/i);
+                          if (wm) specs.warranty = `${Math.floor(parseInt(wm[1], 10) / 12)} Year`;
+                        }
+                        // Shaft length
+                        if (/shaft/i.test(text) || /"/.test(text)) {
+                          const sm = text.match(/(\d+["])/);
+                          if (sm) specs.shaft = sm[1];
+                        }
+                        // Fuel system
+                        if (/efi|fuel injection/i.test(text)) specs.fuel = 'EFI';
+                        else if (/carb/i.test(text)) specs.fuel = 'Carburetor';
+                      });
 
-                  {Array.isArray(quickViewMotor.features) && quickViewMotor.features.length > 0 && (
-                    <div>
-                      <h4 className="font-semibold mb-2">Features</h4>
-                      <ul className="list-disc pl-5 space-y-1">
-                        {quickViewMotor.features.slice(0, 6).map((f) => (
-                          <li key={f}>{f}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                      // Model-based hints
+                      if (/\bMH\b/i.test(model)) specs.start = specs.start === 'See details' ? 'Manual' : specs.start;
+                      if (/\bEH\b|\bELPT\b/i.test(model)) specs.start = specs.start === 'See details' ? 'Electric' : specs.start;
+                      if (/EFI/i.test(model)) specs.fuel = 'EFI';
+                      if (/\bL\b/.test(model)) specs.shaft = specs.shaft === 'Multiple options' ? '20" (Long)' : specs.shaft;
+                      if (/\bS\b/.test(model)) specs.shaft = specs.shaft === 'Multiple options' ? '15" (Short)' : specs.shaft;
+
+                      return specs;
+                    })();
+
+                    // Clean features for display (exclude nav/social links, urls, too short)
+                    const displayFeatures = features
+                      .filter((f) => !/https?:\/\//i.test(f) && !/\[.*\]\(.*\)/.test(f) && f.trim().length > 5)
+                      .slice(0, 8);
+
+                    return (
+                      <>
+                        <div className="grid grid-cols-2 gap-3 bg-accent p-4 rounded-md text-sm">
+                          <div className="flex justify-between"><span className="text-muted-foreground">Power</span><strong>{quickViewMotor.hp} HP</strong></div>
+                          <div className="flex justify-between"><span className="text-muted-foreground">Weight</span><strong>{displaySpecs.weight}</strong></div>
+                          <div className="flex justify-between"><span className="text-muted-foreground">Shaft</span><strong>{displaySpecs.shaft}</strong></div>
+                          <div className="flex justify-between"><span className="text-muted-foreground">Start</span><strong>{displaySpecs.start}</strong></div>
+                          <div className="flex justify-between"><span className="text-muted-foreground">Fuel</span><strong>{displaySpecs.fuel}</strong></div>
+                          <div className="flex justify-between"><span className="text-muted-foreground">Warranty</span><strong>{displaySpecs.warranty}</strong></div>
+                        </div>
+
+                        {(!quickViewMotor.description || !quickViewMotor.specifications || Object.keys(quickViewMotor.specifications as any).length === 0) && (
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            disabled={quickViewLoading}
+                            onClick={async () => {
+                              try {
+                                setQuickViewLoading(true);
+                                const { data, error } = await supabase.functions.invoke('scrape-motor-details', {
+                                  body: { motor_id: quickViewMotor.id, detail_url: quickViewMotor.detailUrl }
+                                });
+                                if (error) throw error;
+                                const { description, features, specifications } = (data as any) || {};
+                                setMotors((prev) => prev.map((mm) => mm.id === quickViewMotor.id ? { ...mm, description, features, specifications } : mm));
+                                setQuickViewMotor((prev) => prev ? { ...prev, description, features, specifications } as Motor : prev);
+                              } catch (e) {
+                                console.warn('manual scrape-motor-details error', e);
+                                toast({ title: 'Couldn\'t load full specs', description: 'Please try again in a moment.', variant: 'destructive' });
+                              } finally {
+                                setQuickViewLoading(false);
+                              }
+                            }}
+                          >
+                            {quickViewLoading ? 'Loading…' : 'Load Full Specs'}
+                          </Button>
+                        )}
+
+                        {displayFeatures.length > 0 && (
+                          <div className="features-list">
+                            <h4 className="font-semibold mb-2">Key Features:</h4>
+                            <ul className="text-sm space-y-1">
+                              {displayFeatures.map((feature, i) => (
+                                <li key={`${feature}-${i}`} className="flex items-start">
+                                  <span className="text-green-500 mr-2">✓</span>
+                                  {feature}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
 
