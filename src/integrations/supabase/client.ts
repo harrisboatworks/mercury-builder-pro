@@ -5,12 +5,20 @@ import type { Database } from './types';
 const SUPABASE_URL = "https://eutsoqdpjurknjsshxes.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU";
 
+// In-memory storage to avoid localStorage (not allowed in Lovable iframe)
+const __memoryStore: Record<string, string> = {};
+const memoryStorage = {
+  getItem: (key: string) => (__memoryStore[key] ?? null),
+  setItem: (key: string, value: string) => { __memoryStore[key] = value },
+  removeItem: (key: string) => { delete __memoryStore[key] },
+};
+
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";
 
 export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
   auth: {
-    storage: localStorage,
+    storage: memoryStorage,
     persistSession: true,
     autoRefreshToken: true,
   }

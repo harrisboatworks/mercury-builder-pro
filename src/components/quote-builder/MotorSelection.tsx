@@ -417,9 +417,7 @@ const track = (name: string, payload: Record<string, any>) => {
 };
 
 // Automatic inventory refresh state
-const [lastInventoryUpdate, setLastInventoryUpdate] = useState<string | null>(
-  typeof localStorage !== 'undefined' ? localStorage.getItem('lastInventoryUpdate') : null
-);
+const [lastInventoryUpdate, setLastInventoryUpdate] = useState<string | null>(null);
 
 const needsInventoryUpdate = () => {
   if (!lastInventoryUpdate) return true;
@@ -741,9 +739,6 @@ useEffect(() => {
 
       // Save last update timestamp
       const nowIso = new Date().toISOString();
-      try {
-        localStorage.setItem('lastInventoryUpdate', nowIso);
-      } catch {}
       setLastInventoryUpdate(nowIso);
 
       toast({
