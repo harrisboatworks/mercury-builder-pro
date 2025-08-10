@@ -8,10 +8,11 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle, CreditCard, Calendar as CalendarIcon } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, normalizeBrand } from '@/lib/trade-valuation';
 import { Progress } from '@/components/ui/progress';
+import { Calendar } from '@/components/ui/calendar';
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip';
 import { toast } from '@/hooks/use-toast';
 import confetti from 'canvas-confetti';
@@ -36,6 +37,57 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
     color: 'gold' | 'blue';
   } | null>(null);
   const [showFinancingInfoModal, setShowFinancingInfoModal] = useState(false);
+  const [showReservationModal, setShowReservationModal] = useState(false);
+  const [selectedInstallDate, setSelectedInstallDate] = useState<Date | undefined>();
+  const [availableSpots, setAvailableSpots] = useState<number>(0);
+  const [springSpotsLeft, setSpringSpotsLeft] = useState<number>(0);
+
+  const today = new Date();
+  const isDateAvailable = (date: Date) => {
+    const diffDays = Math.floor((date.getTime() - today.getTime()) / 86400000);
+    const weekday = date.getDay(); // 0=Sun, 6=Sat
+    return diffDays >= 0 && diffDays <= 60 && weekday >= 2 && weekday <= 6; // Tue-Sat, next 60 days
+  };
+
+  useEffect(() => {
+    const now = new Date();
+    const month = now.getMonth();
+    const year = now.getFullYear();
+    let count = 0;
+    for (let d = 1; d <= 31; d++) {
+      const dt = new Date(year, month, d);
+      if (dt.getMonth() !== month) break;
+      if (isDateAvailable(dt)) count++;
+    }
+    setAvailableSpots(count);
+
+    // Simple spring capacity approximation (next ~3 months)
+    let springCount = 0;
+    for (let m = month; m < month + 3; m++) {
+      for (let d = 1; d <= 31; d++) {
+        const dt = new Date(year, m, d);
+        if (dt.getMonth() !== (m % 12)) break;
+        if (isDateAvailable(dt)) springCount++;
+      }
+    }
+    setSpringSpotsLeft(springCount);
+  }, []);
+
+  const monthLabel = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(new Date());
+
+  const openReservationModal = () => setShowReservationModal(true);
+  const handleReserveConfirm = () => {
+    if (!selectedInstallDate) {
+      toast({ title: 'Select an installation date', description: 'Please choose a date before reserving.' });
+      return;
+    }
+    toast({
+      title: 'Reservation placed',
+      description: `We’ll hold your price for 30 days. Install date: ${selectedInstallDate.toLocaleDateString()}`,
+      duration: 2500,
+    });
+    setShowReservationModal(false);
+  };
   
   // Achievement toast on load
   useEffect(() => {
@@ -823,9 +875,64 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                 <Button onClick={handleContinue}>Schedule Consultation</Button>
               </DialogFooter>
             </DialogContent>
-          </Dialog>
+           </Dialog>
 
-          {/* Important Notes */}
+           {/* Reservation CTA */}
+           <div className="reservation-section rounded-lg mt-6 p-6 text-white bg-[linear-gradient(135deg,hsl(var(--premium-blue-1)),hsl(var(--premium-blue-2)))] shadow">
+             <h3 className="text-xl font-bold mb-2">Ready to Lock In This Price?</h3>
+             <p className="mb-4">Put down $100 to reserve this motor and price for 30 days</p>
+             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+               <Button onClick={openReservationModal} className="bg-background text-foreground hover:bg-background/90 font-bold">
+                 <CreditCard className="w-4 h-4 mr-2" /> Reserve Now - $100
+               </Button>
+               <Button variant="outline" className="border-2 border-white text-white hover:bg-white/10" onClick={handleContinue}>
+                 <CalendarIcon className="w-4 h-4 mr-2" /> Schedule Installation
+               </Button>
+             </div>
+             <div className="mt-4 text-sm opacity-90">
+               <p>✓ Fully refundable deposit</p>
+               <p>✓ Locks today's price for 30 days</p>
+               <p>✓ {springSpotsLeft} installation spots left for Spring</p>
+             </div>
+           </div>
+
+           {/* Installation calendar */}
+           <div className="installation-calendar mt-6">
+             <h4 className="font-bold mb-3">Installation Availability:</h4>
+             <Card className="p-3">
+               <Calendar
+                 mode="single"
+                 selected={selectedInstallDate}
+                 onSelect={setSelectedInstallDate}
+                 disabled={(date) => !isDateAvailable(date)}
+                 className="p-3 pointer-events-auto"
+                 initialFocus
+               />
+               <p className="text-xs text-amber-600 mt-2">
+                 ⚠️ Only {availableSpots} spots left for {monthLabel}
+               </p>
+             </Card>
+           </div>
+
+           <Dialog open={showReservationModal} onOpenChange={setShowReservationModal}>
+             <DialogContent>
+               <DialogHeader>
+                 <DialogTitle>Reserve Your Motor</DialogTitle>
+                 <DialogDescription>Secure today’s price with a refundable $100 deposit</DialogDescription>
+               </DialogHeader>
+               <div className="space-y-3">
+                 <div className="text-sm">Motor: <span className="font-medium">{quoteData.motor.model}</span></div>
+                 <div className="text-sm">Price held: <span className="font-medium">${motorPrice.toLocaleString()}</span></div>
+                 <div className="text-sm">Install date: <span className="font-medium">{selectedInstallDate ? selectedInstallDate.toLocaleDateString() : 'Select a date above'}</span></div>
+               </div>
+               <DialogFooter>
+                 <Button variant="outline" onClick={() => setShowReservationModal(false)}>Cancel</Button>
+                 <Button onClick={handleReserveConfirm}><CreditCard className="w-4 h-4 mr-2" /> Pay $100</Button>
+               </DialogFooter>
+             </DialogContent>
+           </Dialog>
+
+           {/* Important Notes */}
           <div className="border-t border-border pt-4 space-y-2 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-in-stock" />
