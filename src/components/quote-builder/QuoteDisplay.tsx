@@ -42,6 +42,16 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   const [availableSpots, setAvailableSpots] = useState<number>(0);
   const [springSpotsLeft, setSpringSpotsLeft] = useState<number>(0);
 
+  // SMS via Zapier
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [zapierWebhookUrl, setZapierWebhookUrl] = useState<string>(() => localStorage.getItem('zapierWebhookUrl') || '');
+
+  useEffect(() => {
+    if (zapierWebhookUrl) {
+      localStorage.setItem('zapierWebhookUrl', zapierWebhookUrl);
+    }
+  }, [zapierWebhookUrl]);
+
   const today = new Date();
   const isDateAvailable = (date: Date) => {
     const diffDays = Math.floor((date.getTime() - today.getTime()) / 86400000);
@@ -309,6 +319,54 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
       financing: { downPayment, term, rate: quoteData.financing.rate },
       hasTradein: hasTradeIn
     });
+  };
+  
+  // Send quote via SMS using Zapier webhook
+  const handleSendQuoteSms = async () => {
+    if (!phoneNumber) {
+      toast({ title: 'Enter phone number', description: 'Please enter your mobile number.', variant: 'destructive' });
+      return;
+    }
+    if (!zapierWebhookUrl) {
+      toast({ title: 'Zapier webhook required', description: 'Add your Zapier Webhook URL first.', variant: 'destructive' });
+      return;
+    }
+
+    const quoteId = crypto.randomUUID();
+    const payload = {
+      phone: phoneNumber,
+      customerName: (quoteData as any)?.boatInfo?.ownerName || 'Customer',
+      motorModel: quoteData.motor.model,
+      totalPrice: Math.round(totalCashPrice),
+      monthlyPayment: Math.round(payments.monthly || 0),
+      termMonths: term,
+      quoteId,
+      quoteLink: `${window.location.origin}/quote/${quoteId}`,
+      quote: {
+        motor: quoteData.motor,
+        boatInfo: quoteData.boatInfo,
+        totals: {
+          cashTotal: totalCashPrice,
+          financeTotal: totalFinancePrice,
+          hst,
+          accessories: accessoriesSubtotal,
+          downPayment,
+        },
+      },
+    };
+
+    try {
+      await fetch(zapierWebhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors',
+        body: JSON.stringify(payload),
+      });
+      toast({ title: 'Request sent', description: 'We sent your quote to Zapier. Check your SMS shortly.' });
+    } catch (error) {
+      console.error('SMS failed:', error);
+      toast({ title: 'Error', description: 'Could not send SMS. Please try again.', variant: 'destructive' });
+    }
   };
 
   if (!quoteData.motor) return null;
@@ -953,6 +1011,39 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
               <span>Prices subject to change</span>
             </div>
           </div>
+        </div>
+      </Card>
+
+      <Card className="p-6">
+        <h3 className="text-lg font-semibold mb-3">Text me this quote</h3>
+        <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
+          <div className="grid gap-2">
+            <Label htmlFor="phoneNumber">Mobile number</Label>
+            <Input
+              id="phoneNumber"
+              type="tel"
+              placeholder="+1 555-123-4567"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+          </div>
+          <div className="flex items-end">
+            <Button onClick={handleSendQuoteSms} className="w-full sm:w-auto">
+              📱 Send SMS
+            </Button>
+          </div>
+        </div>
+        <div className="mt-4 grid gap-2">
+          <Label htmlFor="zapierWebhookUrl">Zapier Webhook URL</Label>
+          <Input
+            id="zapierWebhookUrl"
+            placeholder="https://hooks.zapier.com/hooks/catch/XXXXX/YYYYY/"
+            value={zapierWebhookUrl}
+            onChange={(e) => setZapierWebhookUrl(e.target.value)}
+          />
+          <p className="text-xs text-muted-foreground">
+            This URL is stored only in your browser (localStorage).
+          </p>
         </div>
       </Card>
 
