@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Checkbox } from '@/components/ui/checkbox';
 import { RefreshCw, Zap, Check, Star, Sparkles, Eye, Scale, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
@@ -1116,9 +1117,29 @@ const handleMotorSelection = (motor: Motor) => {
                   } flex flex-col`}
                   onClick={() => selectionMode === 'compare' ? toggleCompare(motor) : handleMotorSelection(motor)}
                 >
-                  {isCompared(motor.id) && (
-                    <div className="absolute top-3 left-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold shadow">
+                  {isCompared(motor.id) ? (
+                    <button
+                      type="button"
+                      className="absolute top-3 left-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold shadow cursor-pointer"
+                      title="Remove from compare"
+                      onClick={(e) => { e.stopPropagation(); toggleCompare(motor); }}
+                    >
                       {selectedForCompare.indexOf(motor.id) + 1}
+                    </button>
+                  ) : (
+                    <div className="absolute top-3 left-3 z-10">
+                      <label
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-1 rounded border border-border bg-background/80 backdrop-blur-sm px-2 py-1 shadow-sm"
+                      >
+                        <Checkbox
+                          checked={false}
+                          onCheckedChange={() => toggleCompare(motor)}
+                          aria-label="Add to compare"
+                          className="size-3.5"
+                        />
+                        <span className="text-[10px] leading-none">Compare</span>
+                      </label>
                     </div>
                   )}
 
@@ -1243,18 +1264,11 @@ const subtitle = formatVariantSubtitle(raw, title);
                       </div>
                     )}
 
-                    {/* Quick actions overlay */}
-                    <div className="absolute top-3 right-3 hidden md:flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Button size="sm" variant="secondary" onClick={(e) => { e.stopPropagation(); openQuickView(motor); }}>👁️ Quick View</Button>
-                      <Button size="sm" variant={isCompared(motor.id) ? 'default' : 'outline'} onClick={(e) => { e.stopPropagation(); toggleCompare(motor); }}>⚖️ {isCompared(motor.id) ? 'Remove' : 'Compare'}</Button>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Button size="sm" variant="outline" onClick={(e) => { e.stopPropagation(); calculatePayment(motor); }}>💰 Calculate</Button>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <div className="max-w-[240px]">Estimate monthly payment with our finance calculator.</div>
-                        </TooltipContent>
-                      </Tooltip>
+                    {/* Quick actions overlay - single primary action */}
+                    <div className="absolute top-3 right-3 hidden md:flex opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Button size="sm" variant="secondary" onClick={(e) => { e.stopPropagation(); openQuickView(motor); }}>
+                        <Eye className="w-4 h-4 mr-1" /> Quick View
+                      </Button>
                     </div>
                   </div>
                 </Card>
