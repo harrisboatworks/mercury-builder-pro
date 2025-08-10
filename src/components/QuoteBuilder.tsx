@@ -67,6 +67,8 @@ export interface BoatInfo {
   serialNumber: string;
   controlType: string;
   controlsOption?: 'none' | 'adapter' | 'compatible';
+  hasBattery?: boolean;
+  hasCompatibleProp?: boolean;
   shaftLength: string;
   tradeIn?: {
     hasTradeIn: boolean;

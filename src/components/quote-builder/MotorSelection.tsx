@@ -1401,6 +1401,13 @@ const subtitle = formatVariantSubtitle(raw, title);
         </DialogContent>
       </Dialog>
 
+      {/* Water test floating badge */}
+      <div className="water-test-badge fixed bottom-6 right-6 z-40 bg-accent text-accent-foreground shadow-lg rounded-full px-3 py-2 flex items-center gap-2">
+        <img src="/water-icon.svg" alt="Free water testing" className="w-5 h-5" />
+        <span className="text-sm font-medium">FREE Water Testing</span>
+        <span className="sr-only">We're the only dealer on the water! Every motor includes professional testing.</span>
+      </div>
+
       {/* Quick View Dialog */}
       <Dialog open={!!quickViewMotor} onOpenChange={(o) => { if (!o) setQuickViewMotor(null); }}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
@@ -1695,16 +1702,29 @@ const subtitle = formatVariantSubtitle(raw, title);
                           <div className="text-sm space-y-1">
                             {(() => {
                               const price = Number((quickViewMotor as any).salePrice ?? (quickViewMotor as any).basePrice ?? (quickViewMotor as any).price ?? 0);
-                              const needsControls = (quickViewMotor.hp as number) >= 40;
-                              const needsBattery = !/\bM\b/i.test(quickViewMotor.model || '');
-                              const total = price + (needsControls ? 1200 : 0) + (needsBattery ? 300 : 0) + 500;
+                              const hp = typeof quickViewMotor.hp === 'string' ? parseInt(quickViewMotor.hp) : quickViewMotor.hp;
+                              const model = (quickViewMotor.model || '').toUpperCase();
+                              const needsControls = hp >= 40;
+                              const needsBattery = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
+                              const propCost = hp >= 25 ? (hp >= 150 ? 950 : 350) : 0;
+                              const total = price + (needsControls ? 1200 : 0) + (needsBattery ? 300 : 0) + propCost + 500;
                               return (
                                 <>
                                   <div>Motor: {'$' + price.toLocaleString()}</div>
                                   {needsControls && <div>Controls: ~$1,200</div>}
                                   {needsBattery && <div>Battery: ~$300</div>}
+                                  {propCost > 0 && <div>Propeller: ~${propCost}</div>}
                                   <div>Installation: ~$500</div>
                                   <div className="font-bold pt-1 border-t border-border">Total: ~{'$' + total.toLocaleString()}</div>
+                                  <div className="investment-note text-xs mt-2">
+                                    <p>* Includes all required accessories:</p>
+                                    <ul className="text-xs list-disc pl-5">
+                                      {hp >= 40 && <li>Remote controls</li>}
+                                      {hp >= 25 && <li>Propeller ({hp >= 150 ? 'SS' : 'Alum'})</li>}
+                                      <li>Battery (if electric start)</li>
+                                      <li>FREE water testing</li>
+                                    </ul>
+                                  </div>
                                 </>
                               );
                             })()}

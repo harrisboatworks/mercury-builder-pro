@@ -28,7 +28,9 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
     currentHp: 0,
     serialNumber: '',
     controlType: 'side-mount-external',
-    shaftLength: '20'
+    shaftLength: '20',
+    hasBattery: false,
+    hasCompatibleProp: false,
   });
 
   const [tradeInInfo, setTradeInInfo] = useState<TradeInInfo>({
@@ -525,6 +527,69 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
                         </details>
                       </div>
                     )}
+
+                    {/* Accessory checks */}
+                    {(() => {
+                      const hp = typeof selectedMotor?.hp === 'string' ? parseInt(String(selectedMotor?.hp)) : (selectedMotor?.hp || 0);
+                      const model = (selectedMotor?.model || '').toUpperCase();
+                      const isElectricStart = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
+                      return (
+                        <div className="accessories-check rounded-lg border border-border bg-muted/30 p-4 space-y-4">
+                          <h3 className="text-lg font-semibold">What do you already have?</h3>
+                          {hp >= 40 && (
+                            <div className="accessory-item">
+                              <div className="text-sm text-muted-foreground mb-1">Controls</div>
+                              {/* Control radio options already shown above */}
+                              <div className="text-xs text-muted-foreground">We’ll confirm compatibility during installation.</div>
+                            </div>
+                          )}
+                          {isElectricStart && (
+                            <div className="accessory-item">
+                              <label className="flex items-start gap-2">
+                                <input
+                                  type="checkbox"
+                                  checked={!!boatInfo.hasBattery}
+                                  onChange={(e) => setBoatInfo(prev => ({ ...prev, hasBattery: e.target.checked }))}
+                                />
+                                <span>I have a marine battery</span>
+                              </label>
+                              {!boatInfo.hasBattery && (
+                                <div className="cost-note text-sm text-primary">
+                                  +$300 for battery
+                                  <small className="block text-xs text-muted-foreground">Marine cranking battery</small>
+                                </div>
+                              )}
+                            </div>
+                          )}
+                          {hp >= 25 && (
+                            <div className="accessory-item">
+                              <label className="flex items-start gap-2">
+                                <input
+                                  type="checkbox"
+                                  checked={!!boatInfo.hasCompatibleProp}
+                                  onChange={(e) => setBoatInfo(prev => ({ ...prev, hasCompatibleProp: e.target.checked }))}
+                                />
+                                <span>I have a compatible propeller from my old {hp}HP motor</span>
+                              </label>
+                              {!boatInfo.hasCompatibleProp && (
+                                <div className="cost-note text-sm text-primary">
+                                  +${hp >= 150 ? '950 (Stainless Steel)' : '350 (Aluminum)'}
+                                  <small className="block text-xs text-muted-foreground">Size determined during water testing</small>
+                                </div>
+                              )}
+                            </div>
+                          )}
+
+                          {/* Highlight FREE water testing */}
+                          <div className="water-test-benefit bg-accent p-4 rounded-lg">
+                            <h4 className="font-bold">✅ FREE Water Testing Included</h4>
+                            <p className="text-sm text-muted-foreground">
+                              We're on the water! Every motor installation includes professional water testing to ensure perfect prop sizing and optimal performance. This $200 value is included FREE with your purchase.
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })()}
 
                     {/* Optional make/model */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

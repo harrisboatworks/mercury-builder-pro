@@ -91,6 +91,9 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
       waterTest: 0,
     };
     const hp = typeof motor?.hp === 'string' ? parseInt(motor.hp) : (motor?.hp || 0);
+    const model = String(motor?.model || '').toUpperCase();
+
+    // Controls logic with adapter option
     if (hp >= 40) {
       switch (boatDetails?.controlsOption) {
         case 'none':
@@ -101,6 +104,24 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
           costs.controls = 0; break;
       }
     }
+
+    // Battery - Required for electric start
+    const isElectricStart = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
+    if (isElectricStart) {
+      costs.battery = boatDetails?.hasBattery ? 0 : 300;
+    }
+
+    // Propeller - Required for 25HP+
+    if (hp >= 25) {
+      if (boatDetails?.hasCompatibleProp) {
+        costs.propeller = 0;
+      } else if (hp >= 150) {
+        costs.propeller = 950; // Stainless steel
+      } else {
+        costs.propeller = 350; // Aluminum
+      }
+    }
+
     return costs;
   };
 
@@ -410,6 +431,12 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
             )}
             
             {/* Accessory Items */}
+            {accessoryCosts.controls > 0 && (
+              <div className="line-item flex justify-between items-center">
+                <span>Remote Control Kit</span>
+                <span>+${accessoryCosts.controls}</span>
+              </div>
+            )}
             {accessoryCosts.controlAdapter > 0 && (
               <>
                 <div className="line-item flex justify-between items-center">
@@ -417,12 +444,30 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                   <span>+$125</span>
                 </div>
                 <div className="savings-callout mt-1">
-                  <span className="text-in-stock">
-                    ✓ Reusing your Mercury controls saves $1,075!
-                  </span>
+                  <span className="text-in-stock">✓ Reusing your Mercury controls saves $1,075!</span>
                 </div>
               </>
             )}
+            {accessoryCosts.battery > 0 && (
+              <div className="line-item flex justify-between items-center">
+                <span>Marine Battery</span>
+                <span>+${accessoryCosts.battery}</span>
+              </div>
+            )}
+            {accessoryCosts.propeller > 0 && (
+              <div className="line-item flex justify-between items-center">
+                <span>{accessoryCosts.propeller === 950 ? 'Stainless Steel' : 'Aluminum'} Propeller</span>
+                <span>+${accessoryCosts.propeller}</span>
+              </div>
+            )}
+            <div className="line-item flex justify-between items-center">
+              <span>Professional Installation</span>
+              <span>+$500</span>
+            </div>
+            <div className="line-item flex justify-between items-center">
+              <span className="text-in-stock">✓ Water Testing & Prop Sizing</span>
+              <span>FREE</span>
+            </div>
             {/* Subtotal */}
             <div className="border-t border-border pt-2">
               <div className="flex justify-between items-center">
