@@ -86,6 +86,9 @@
     --promo-red-2: 0 85% 45%;
     --promo-feature-1: 207 90% 35%;
     --promo-feature-2: 207 85% 45%;
+    /* Vibrant green gradient for Repower badges */
+    --promo-green-1: 142 71% 45%; /* ~#22c55e */
+    --promo-green-2: 142 76% 35%; /* ~#16a34a */
     /* Premium blue gradient for warranty badges */
     --premium-blue-1: 217.2 91.2% 59.8%;
     --premium-blue-2: 221.2 83.2% 53.3%;
@@ -456,6 +459,12 @@
     50% { transform: scale(1.05); }
   }
 
+  /* Green glow pulse for Repower badge */
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 2px 4px hsl(var(--promo-green-1) / 0.3); }
+    50% { box-shadow: 0 2px 10px hsl(var(--promo-green-1) / 0.6); }
+  }
+
   /* Repower banner pulse */
   .repower-rebate-banner {
     animation: subtle-pulse 3s ease-in-out infinite;
@@ -674,13 +683,16 @@
   /* Repower badge (enhanced) */
   .product-card .badge--repower {
     font-size: 12px;
-    font-weight: 700;
-    padding: 0.25rem 0.5rem;
+    font-weight: 800;
+    padding: 0.25rem 0.6rem;
     border-radius: 9999px;
-    background: linear-gradient(135deg, hsl(var(--promo-gold-1)), hsl(var(--promo-gold-2)));
-    color: hsl(var(--foreground));
+    background: linear-gradient(135deg, hsl(var(--promo-green-1)), hsl(var(--promo-green-2)));
+    color: hsl(0 0% 100%);
     border: 1px solid hsl(0 0% 100% / 0.25);
-    box-shadow: 0 2px 6px hsl(var(--promo-gold-1) / 0.35);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 6px hsl(var(--promo-green-1) / 0.35);
+    animation: pulse-glow 2s ease-in-out infinite;
   }
 
   /* Modal-scoped Promotions list */
