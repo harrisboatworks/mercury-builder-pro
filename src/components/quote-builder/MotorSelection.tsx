@@ -320,6 +320,49 @@ const getComparisonTip = (motor: Motor) => {
   return `This size typically replaces older ${Math.round(n * 1.3)}HP 2-strokes with better fuel economy`;
 };
 
+// Normalize scraped/spec data into consistent keys used by the UI
+const normalizeSpecifications = (
+  raw: any,
+  context: { hp?: number; model?: string } = {}
+): Record<string, any> => {
+  const r = raw || {};
+  const model = (context.model || '').toUpperCase();
+  const out: Record<string, any> = {};
+
+  const get = (...keys: string[]) => {
+    for (const k of keys) {
+      if (r[k] != null && r[k] !== '') return r[k];
+    }
+    return undefined;
+  };
+
+  out.powerHP = get('powerHP', 'power_hp', 'hp', 'horsepower') ?? context.hp;
+  out.weight = get('weight', 'weight_lbs', 'dry_weight', 'dryWeight', 'weight_kg');
+  out.shaftLength = get('shaftLength', 'shaft_length', 'shaft');
+  out.startType = get('startType', 'start_type', 'starting');
+  out.fuelSystem = get('fuelSystem', 'fuel_system', 'fuel');
+
+  const warranty = get('warrantyPromo', 'warranty_promo', 'warranty');
+  if (typeof warranty === 'number') out.warrantyPromo = `${warranty} Year`;
+  else out.warrantyPromo = warranty;
+
+  // Inference from model codes if missing
+  if (!out.startType) {
+    if (/\bMH\b|\bM\b/.test(model)) out.startType = 'Manual';
+    if (/\bEL|\bEH|\bE\b|EFI/.test(model)) out.startType = out.startType || 'Electric';
+  }
+  if (!out.shaftLength) {
+    if (/\bXXL\b/.test(model)) out.shaftLength = '30"';
+    else if (/\bXL\b/.test(model)) out.shaftLength = '25"';
+    else if (/\bL\b/.test(model)) out.shaftLength = '20"';
+    else if (/\bS\b/.test(model)) out.shaftLength = '15"';
+  }
+  if (!out.fuelSystem && /EFI/.test(model)) out.fuelSystem = 'EFI';
+
+  // Merge back to preserve any additional keys
+  return { ...r, ...out };
+};
+
 
 interface MotorSelectionProps {
   onStepComplete: (motor: Motor) => void;
@@ -499,7 +542,7 @@ useEffect(() => {
           promoEndsAt,
           bonusOffers,
           // Enhanced fields
-          specifications: (m.specifications as Record<string, any> | null) || {},
+          specifications: normalizeSpecifications(m.specifications, { hp: Number(m.horsepower), model: m.model }),
           features: Array.isArray(m.features) ? (m.features as string[]) : [],
           description: m.description || null,
           detailUrl: m.detail_url || null,
@@ -903,6 +946,31 @@ const handleCompareClick = () => {
   if (selectedForCompare.length >= 2) setShowComparePanel(true);
   else toast({ title: 'Select at least 2 motors', description: canadianEncouragement.compareMode[1] || 'Pick two or more to compare.' });
 };
+
+// Auto-enrich specs for items in the compare panel
+useEffect(() => {
+  if (!showComparePanel) return;
+  const selected = motors.filter(m => selectedForCompare.includes(m.id));
+  selected.forEach(async (m) => {
+    const specs = (m as any)?.specifications || {};
+    const missing = !specs || Object.keys(specs).length === 0 || !specs.weight || !specs.shaftLength || !specs.startType || !specs.fuelSystem;
+    if (missing) {
+      try {
+        const { data, error } = await supabase.functions.invoke('scrape-motor-details', {
+          body: { motor_id: m.id, detail_url: (m as any).detailUrl }
+        });
+        if (!error && (data as any)?.success) {
+          const { description, features, specifications } = (data as any) || {};
+          const normalized = normalizeSpecifications(specifications, { hp: typeof m.hp === 'number' ? m.hp : parseInt(String(m.hp)), model: m.model });
+          setMotors(prev => prev.map(mm => mm.id === m.id ? { ...mm, description, features, specifications: normalized } : mm));
+        }
+      } catch (e) {
+        console.warn('compare: enrich specs failed', e);
+      }
+    }
+  });
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [showComparePanel]);
 
 const handleMotorSelection = (motor: Motor) => {
     // Recently viewed scaffold
@@ -1840,6 +1908,7 @@ const subtitle = formatVariantSubtitle(raw, title);
         <DialogContent className="max-w-5xl">
           <DialogHeader>
             <DialogTitle>Compare Motors</DialogTitle>
+            <DialogDescription>Compare key specs side by side. We’ll fetch missing details if available.</DialogDescription>
           </DialogHeader>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {motors.filter(m => selectedForCompare.includes(m.id)).map((m) => (
@@ -1856,12 +1925,12 @@ const subtitle = formatVariantSubtitle(raw, title);
                 </div>
                 <div className="space-y-1 text-sm">
                   <div className="flex justify-between"><span>Price:</span><span className="font-semibold">${(m.salePrice || m.basePrice || m.price).toLocaleString()}</span></div>
-                  <div className="flex justify-between"><span>Power:</span><span className="font-semibold">{(m.specifications as any)?.powerHP || m.hp} HP</span></div>
-                  <div className="flex justify-between"><span>Weight:</span><span className="font-semibold">{(m.specifications as any)?.weight || 'N/A'}</span></div>
-                  <div className="flex justify-between"><span>Shaft:</span><span className="font-semibold">{(m.specifications as any)?.shaftLength || 'N/A'}</span></div>
-                  <div className="flex justify-between"><span>Start:</span><span className="font-semibold">{(m.specifications as any)?.startType || 'N/A'}</span></div>
-                  <div className="flex justify-between"><span>Fuel:</span><span className="font-semibold">{(m.specifications as any)?.fuelSystem || 'N/A'}</span></div>
-                  <div className="flex justify-between"><span>Warranty:</span><span className="font-semibold">{(m.specifications as any)?.warrantyPromo || (m.specifications as any)?.warranty || 'N/A'}</span></div>
+                  <div className="flex justify-between"><span>Power:</span><span className="font-semibold">{(m.specifications as any)?.powerHP || (m.specifications as any)?.power_hp || m.hp} HP</span></div>
+                  <div className="flex justify-between"><span>Weight:</span><span className="font-semibold">{(m.specifications as any)?.weight || (m.specifications as any)?.weight_lbs || (m.specifications as any)?.dry_weight || 'N/A'}</span></div>
+                  <div className="flex justify-between"><span>Shaft:</span><span className="font-semibold">{(m.specifications as any)?.shaftLength || (m.specifications as any)?.shaft_length || 'N/A'}</span></div>
+                  <div className="flex justify-between"><span>Start:</span><span className="font-semibold">{(m.specifications as any)?.startType || (m.specifications as any)?.start_type || 'N/A'}</span></div>
+                  <div className="flex justify-between"><span>Fuel:</span><span className="font-semibold">{(m.specifications as any)?.fuelSystem || (m.specifications as any)?.fuel_system || 'N/A'}</span></div>
+                  <div className="flex justify-between"><span>Warranty:</span><span className="font-semibold">{(m.specifications as any)?.warrantyPromo || (m.specifications as any)?.warranty_promo || (m.specifications as any)?.warranty || 'N/A'}</span></div>
                 </div>
                 <Button className="mt-3 w-full" onClick={() => { handleMotorSelection(m); setShowComparePanel(false); }}>Select This Motor</Button>
               </Card>
