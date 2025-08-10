@@ -62,14 +62,19 @@ export const generateQuotePDF = async (quoteData: PDFQuoteData): Promise<jsPDF> 
   doc.setFillColor(navy.r, navy.g, navy.b);
   doc.rect(0, 0, 210, 40, 'F');
 
-  // Logos
+  // Logos and credibility badges
   try {
-    const [hbwImg, mercImg] = await Promise.all([
+    const [hbwImg, mercImg, csiImg, repowerImg] = await Promise.all([
       loadImage(harrisLogo),
-      loadImage(mercuryLogo)
+      loadImage(mercuryLogo),
+      loadImage('/lovable-uploads/mercury-csi-award.png'),
+      loadImage('/lovable-uploads/mercury-repower-center.png'),
     ]);
     doc.addImage(hbwImg, 'PNG', 20, 10, 50, 20);
     doc.addImage(mercImg, 'PNG', 140, 10, 50, 20);
+    // Small credibility badges
+    doc.addImage(csiImg, 'PNG', 100, 8, 25, 12);
+    doc.addImage(repowerImg, 'PNG', 100, 22, 25, 12);
   } catch {}
 
   // Title
@@ -213,6 +218,12 @@ export const generateQuotePDF = async (quoteData: PDFQuoteData): Promise<jsPDF> 
     doc.setFontSize(9);
     doc.text('*OAC. All payments include HST.', 30, 276);
   }
+
+  // Footer credibility line
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(8);
+  doc.setTextColor(120, 120, 120);
+  doc.text('Mercury CSI Award Winner • Certified Repower Center', 105, 292, { align: 'center' });
 
   // PAGE 2 - Next Steps and Terms
   doc.addPage();

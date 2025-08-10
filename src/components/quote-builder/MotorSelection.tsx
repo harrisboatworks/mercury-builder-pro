@@ -1063,6 +1063,17 @@ const handleMotorSelection = (motor: Motor) => {
           </div>
         </div>
 
+        <div className="dealer-credentials rounded-lg mb-6 p-4 md:p-6 bg-gradient-to-r from-primary/5 to-muted/40 border border-border">
+          <div className="flex items-center justify-center gap-6 md:gap-8 flex-wrap">
+            <img src="/lovable-uploads/mercury-csi-award.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-12 md:h-16 w-auto" />
+            <div className="text-center">
+              <h3 className="font-bold text-base md:text-lg text-foreground">Buy with Confidence</h3>
+              <p className="text-sm text-muted-foreground">Customer-Nominated Service Excellence • Maximum Trade Values</p>
+            </div>
+            <img src="/lovable-uploads/mercury-repower-center.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 md:h-16 w-auto" />
+          </div>
+        </div>
+
         {filteredMotors.length === 0 ? (
           <Card className="p-12 text-center space-y-2">
             <div className="text-2xl">🍁</div>

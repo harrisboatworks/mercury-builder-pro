@@ -26,41 +26,51 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/auth" element={<Auth />} />
-            <Route path="/" element={<Index />} />
-            <Route
-              path="/admin/promotions"
-              element={
-                <ProtectedRoute>
-                  <AdminPromotions />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/admin/quotes"
-              element={
-                <ProtectedRoute>
-                  <AdminQuotes />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/admin/quotes/:id"
-              element={
-                <ProtectedRoute>
-                  <AdminQuoteDetail />
-                </ProtectedRoute>
-              }
-            />
-            <Route path="/finance-calculator" element={<FinanceCalculator />} />
-            <Route path="/staging/pricing-spacing" element={<StagingPricingTweaks />} />
-            <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
-            <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
-            <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <>
+            <Routes>
+              <Route path="/auth" element={<Auth />} />
+              <Route path="/" element={<Index />} />
+              <Route
+                path="/admin/promotions"
+                element={
+                  <ProtectedRoute>
+                    <AdminPromotions />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/admin/quotes"
+                element={
+                  <ProtectedRoute>
+                    <AdminQuotes />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/admin/quotes/:id"
+                element={
+                  <ProtectedRoute>
+                    <AdminQuoteDetail />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/finance-calculator" element={<FinanceCalculator />} />
+              <Route path="/staging/pricing-spacing" element={<StagingPricingTweaks />} />
+              <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
+              <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
+              <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+
+            {/* Global footer badges */}
+            <footer className="mt-12 border-t border-border bg-muted/30">
+              <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-center gap-6">
+                <img src="/lovable-uploads/mercury-csi-award.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-10 w-auto" />
+                <img src="/lovable-uploads/mercury-repower-center.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-10 w-auto" />
+              </div>
+            </footer>
+          </>
         </BrowserRouter>
       </TooltipProvider>
     </AuthProvider>

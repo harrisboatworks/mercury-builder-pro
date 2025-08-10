@@ -338,6 +338,22 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
                 </div>
               </Card>
             )}
+
+            {/* Repower Center Authority */}
+            <div className="repower-authority text-center mt-4">
+              <img
+                src="/lovable-uploads/mercury-repower-center.png"
+                alt="Official Mercury Repower Center badge"
+                loading="lazy"
+                className="h-12 mx-auto mb-2 w-auto"
+              />
+              <p className="font-semibold text-foreground">As a Certified Mercury Repower Center, we offer:</p>
+              <ul className="mt-2 space-y-1 text-sm text-foreground/90">
+                <li>✓ Maximum trade-in values</li>
+                <li>✓ Expert repower consultation</li>
+                <li>✓ Up to $1,000 in Mercury rebates</li>
+              </ul>
+            </div>
           </div>
         )}
       </div>

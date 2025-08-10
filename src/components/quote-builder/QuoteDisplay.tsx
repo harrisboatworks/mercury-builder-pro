@@ -939,6 +939,21 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
         <div className="text-sm text-muted-foreground"><span className="font-semibold">{viewers}</span> other customers viewed this model today</div>
       </div>
 
+      {/* Why buy from us */}
+      <div className="why-harris rounded-lg bg-primary/5 border border-border p-4">
+        <h4 className="font-bold mb-3 text-foreground">Why Buy From Harris Boat Works?</h4>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex items-center gap-3">
+            <img src="/lovable-uploads/mercury-csi-award.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-10 w-auto" />
+            <span className="text-sm text-foreground/90">Award-winning service you can trust</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <img src="/lovable-uploads/mercury-repower-center.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-10 w-auto" />
+            <span className="text-sm text-foreground/90">Best repower deals guaranteed</span>
+          </div>
+        </div>
+      </div>
+
       {/* Navigation */}
       <div className="flex justify-between">
         <Button variant="outline" onClick={onBack}>

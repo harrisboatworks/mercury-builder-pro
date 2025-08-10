@@ -217,6 +217,27 @@ const QuoteBuilder = () => {
         </div>
       </header>
 
+      {/* Trust Bar */}
+      <div className="bg-muted/40 border-b border-border">
+        <div className="container mx-auto px-4 py-2 flex items-center justify-center gap-4 md:gap-6">
+          <img
+            src="/lovable-uploads/mercury-csi-award.png"
+            alt="Mercury CSI Award Winner badge"
+            loading="lazy"
+            className="h-8 w-auto"
+          />
+          <span className="text-sm font-medium text-foreground/80">Award-Winning Service Team</span>
+          <span className="text-muted-foreground">|</span>
+          <img
+            src="/lovable-uploads/mercury-repower-center.png"
+            alt="Mercury Certified Repower Center badge"
+            loading="lazy"
+            className="h-8 w-auto"
+          />
+          <span className="text-sm font-medium text-foreground/80">Certified Repower Center</span>
+        </div>
+      </div>
+
       {/* Progress Indicator */}
       <QuoteProgress currentStep={currentStep} />
 
