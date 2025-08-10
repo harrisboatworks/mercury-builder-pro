@@ -1175,14 +1175,6 @@ const handleMotorSelection = (motor: Motor) => {
                     </div>
                   )}
 
-                  <button
-                    type="button"
-                    className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-background text-foreground border border-border shadow flex items-center justify-center opacity-80 transition-transform transition-opacity hover:opacity-100 hover:scale-110"
-                    aria-label="Quick view"
-                    onClick={(e) => { e.stopPropagation(); openQuickView(motor); }}
-                  >
-                    <Info className="w-4 h-4" />
-                  </button>
 
                   <Badge className={`stock-badge ${getStockBadgeColor(motor.stockStatus)}`}>
                     {motor.stockStatus}
@@ -1215,13 +1207,21 @@ const subtitle = formatVariantSubtitle(raw, title);
 
       {motor.image && motor.image !== '/placeholder.svg' && (
         <div className="motor-image-container image-wrap w-full h-[200px] shrink-0 bg-muted/10 overflow-hidden flex items-center justify-center rounded-lg p-2.5 relative">
-          <img 
-            src={motor.image} 
-            alt={motor.model}
-            loading="lazy"
-            className="motor-image"
-            style={{ height: '180px', width: 'auto', objectFit: 'contain', maxWidth: 'none', maxHeight: 'none' }}
-          />
+    <img 
+      src={motor.image} 
+      alt={motor.model}
+      loading="lazy"
+      className="motor-image"
+      style={{ height: '180px', width: 'auto', objectFit: 'contain', maxWidth: 'none', maxHeight: 'none' }}
+    />
+    <button
+      type="button"
+      className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-background/95 text-foreground border border-border shadow-md flex items-center justify-center opacity-90 transition-transform transition-opacity hover:opacity-100 hover:scale-110"
+      aria-label="Quick view"
+      onClick={(e) => { e.stopPropagation(); openQuickView(motor); }}
+    >
+      <Info className="w-4 h-4" />
+    </button>
           {selectedMotor?.id === motor.id && (
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
               <Check className="w-20 h-20 text-green-600 drop-shadow-lg animate-scale-in checkmark-icon" strokeWidth={4} aria-hidden="true" />
