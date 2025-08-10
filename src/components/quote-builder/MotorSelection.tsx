@@ -9,6 +9,7 @@ import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/components/ui/use-toast';
 import { MotorFilters } from './MotorFilters';
+import { TestimonialCarousel } from './TestimonialCarousel';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { getPriceDisplayState } from '@/lib/pricing';
@@ -1087,6 +1088,8 @@ const handleMotorSelection = (motor: Motor) => {
             </div>
           </div>
         </div>
+
+        <TestimonialCarousel />
 
         {filteredMotors.length === 0 ? (
           <Card className="p-12 text-center space-y-2">
