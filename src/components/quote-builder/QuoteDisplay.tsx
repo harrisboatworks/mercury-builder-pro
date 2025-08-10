@@ -326,15 +326,16 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
       phone: phoneNumber,
       customerName: (quoteData as any)?.customerName || (quoteData as any)?.boatInfo?.ownerName || 'Customer',
       motorModel: quoteData.motor?.model || 'Mercury Motor',
-      totalPrice: Math.round(totalCashPrice),
+      totalPrice: Math.round(totalCashPrice) || '0',
       quoteId: Date.now().toString(),
       quoteLink: 'Quote details will be texted',
+      timestamp: new Date().toISOString(),
     };
 
     try {
       const response = await fetch(webhookUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        // Do not set Content-Type to avoid CORS preflight; Zapier will handle raw body
         body: JSON.stringify(payload),
       });
       if (response.ok) {
@@ -344,7 +345,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
       }
     } catch (error) {
       console.error('SMS failed:', error);
-      toast({ title: 'Network error', description: 'Could not send SMS. Please try again.', variant: 'destructive' });
+      toast({ title: 'Network error', description: 'SMS service temporarily unavailable. Your quote is saved above.', variant: 'destructive' });
     }
   };
   if (!quoteData.motor) return null;
