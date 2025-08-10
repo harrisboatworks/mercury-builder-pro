@@ -1692,8 +1692,9 @@ const subtitle = formatVariantSubtitle(raw, title);
                             })()}
                           </div>
                         </div>
-                    );
-                  })()}
+                        </>
+                     );
+                   })()}
                 </div>
               </div>
 
