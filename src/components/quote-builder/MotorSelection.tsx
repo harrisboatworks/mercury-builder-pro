@@ -1217,7 +1217,7 @@ const subtitle = formatVariantSubtitle(raw, title);
     <button
       type="button"
       className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-background/95 text-foreground border border-border shadow-md flex items-center justify-center opacity-90 transition-transform transition-opacity hover:opacity-100 hover:scale-110"
-      aria-label="Quick view"
+      aria-label="Motor info"
       onClick={(e) => { e.stopPropagation(); openQuickView(motor); }}
     >
       <Info className="w-4 h-4" />
@@ -1301,12 +1301,6 @@ const subtitle = formatVariantSubtitle(raw, title);
                       </div>
                     )}
 
-                    {/* Quick actions overlay - single primary action */}
-                    <div className="absolute top-3 right-12 hidden md:flex opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Button size="sm" variant="secondary" onClick={(e) => { e.stopPropagation(); openQuickView(motor); }}>
-                        <Eye className="w-4 h-4 mr-1" /> Quick View
-                      </Button>
-                    </div>
                   </div>
                 </Card>
               );
