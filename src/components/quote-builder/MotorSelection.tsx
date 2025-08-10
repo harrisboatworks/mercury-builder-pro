@@ -139,6 +139,7 @@ const [quickViewMotor, setQuickViewMotor] = useState<Motor | null>(null);
 const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
 const [showComparePanel, setShowComparePanel] = useState(false);
 const debugPricing = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
+const [quickViewLoading, setQuickViewLoading] = useState(false);
 
 // Allow URL param override for the no-sale price layout only on staging routes
 const isStagingRoute = typeof window !== 'undefined' && window.location?.pathname?.startsWith('/staging');
@@ -638,6 +639,38 @@ const calculatePayment = (motor: Motor) => {
 const openQuickView = (motor: Motor) => {
   setQuickViewMotor(motor);
 };
+
+// Fetch rich details on-demand for Quick View
+useEffect(() => {
+  const needsEnrichment = (m: Motor | null) => {
+    if (!m) return false;
+    const noDesc = !m.description || m.description.trim().length < 20;
+    const noFeat = !Array.isArray(m.features) || m.features.length === 0;
+    const noSpecs = !m.specifications || Object.keys(m.specifications || {}).length === 0;
+    return noDesc || noFeat || noSpecs;
+  };
+
+  if (quickViewMotor && needsEnrichment(quickViewMotor)) {
+    setQuickViewLoading(true);
+    supabase.functions
+      .invoke('scrape-motor-details', {
+        body: { motor_id: quickViewMotor.id, detail_url: quickViewMotor.detailUrl },
+      })
+      .then(({ data, error }) => {
+        if (error) {
+          console.warn('scrape-motor-details error', error);
+          return;
+        }
+        if (data?.success) {
+          const { description, features, specifications } = data as any;
+          // Update list and quick view motor in place
+          setMotors((prev) => prev.map((mm) => mm.id === quickViewMotor.id ? { ...mm, description, features, specifications } : mm));
+          setQuickViewMotor((prev) => prev ? { ...prev, description, features, specifications } as Motor : prev);
+        }
+      })
+      .finally(() => setQuickViewLoading(false));
+  }
+}, [quickViewMotor?.id]);
 
 const isCompared = (motorId: string) => selectedForCompare.includes(motorId);
 
@@ -1155,6 +1188,9 @@ const subtitle = formatVariantSubtitle(raw, title);
           </DialogHeader>
           {quickViewMotor && (
             <div className="space-y-4">
+              {quickViewLoading && (
+                <div className="text-sm text-muted-foreground">Loading details…</div>
+              )}
               <div className="aspect-video bg-muted rounded-md overflow-hidden">
                 <img src={quickViewMotor.image} alt={quickViewMotor.model} className="w-full h-full object-cover" />
               </div>
@@ -1167,12 +1203,12 @@ const subtitle = formatVariantSubtitle(raw, title);
 
               {/* Specs grid */}
               <div className="grid grid-cols-2 gap-3 text-sm">
-                <div className="flex justify-between"><span className="text-muted-foreground">Power</span><strong>{quickViewMotor.specifications?.powerHP || quickViewMotor.hp} HP</strong></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Power</span><strong>{(quickViewMotor.specifications as any)?.horsepower || quickViewMotor.specifications?.powerHP || quickViewMotor.hp} HP</strong></div>
                 <div className="flex justify-between"><span className="text-muted-foreground">Weight</span><strong>{(quickViewMotor.specifications as any)?.weight || 'N/A'}</strong></div>
                 <div className="flex justify-between"><span className="text-muted-foreground">Shaft</span><strong>{(quickViewMotor.specifications as any)?.shaftLength || 'N/A'}</strong></div>
-                <div className="flex justify-between"><span className="text-muted-foreground">Start</span><strong>{(quickViewMotor.specifications as any)?.startType || 'N/A'}</strong></div>
-                <div className="flex justify-between"><span className="text-muted-foreground">Controls</span><strong>{(quickViewMotor.specifications as any)?.controls || 'N/A'}</strong></div>
-                <div className="flex justify-between"><span className="text-muted-foreground">Warranty</span><strong>{(quickViewMotor.specifications as any)?.warrantyPromo || (quickViewMotor.specifications as any)?.warranty || 'N/A'}</strong></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Start</span><strong>{(quickViewMotor.specifications as any)?.starting || (quickViewMotor.specifications as any)?.startType || 'N/A'}</strong></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Fuel System</span><strong>{(quickViewMotor.specifications as any)?.fuelSystem || 'N/A'}</strong></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Warranty</span><strong>{(quickViewMotor.specifications as any)?.warranty || (quickViewMotor.specifications as any)?.warrantyPromo || 'N/A'}</strong></div>
               </div>
 
               {/* Features */}
