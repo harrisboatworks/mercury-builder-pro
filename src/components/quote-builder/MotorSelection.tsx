@@ -1369,6 +1369,11 @@ const subtitle = formatVariantSubtitle(raw, title);
                       })
                       .slice(0, 8);
 
+                    const cleanedDescription = String(quickViewMotor.description || '')
+                      .replace(/Can't find what you're looking for\?[\s\S]*/i, '')
+                      .replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '')
+                      .trim();
+
                     return (
                       <>
                         <div className="grid grid-cols-2 gap-3 bg-accent p-4 rounded-md text-sm">
@@ -1426,15 +1431,14 @@ const subtitle = formatVariantSubtitle(raw, title);
                 </div>
               </div>
 
-              <div className="text-sm text-muted-foreground">{quickViewMotor.description || quickViewMotor.specs}</div>
+              {(() => {
+                const d = String(quickViewMotor.description || '')
+                  .replace(/Can't find what you're looking for\?[\s\S]*/i, '')
+                  .replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '')
+                  .trim();
+                return d ? (<div className="text-sm text-muted-foreground">{d}</div>) : null;
+              })()}
 
-              {/* Data presence debug - temporary */}
-              <div className="text-xs bg-accent p-2 rounded mt-2">
-                <div>Has specs: {(quickViewMotor.specifications && Object.keys(quickViewMotor.specifications as any).length > 0) ? 'Yes' : 'No'}</div>
-                <div>Has description: {quickViewMotor.description ? 'Yes' : 'No'}</div>
-                <div>Has features: {(Array.isArray(quickViewMotor.features) && quickViewMotor.features.length > 0) ? 'Yes' : 'No'}</div>
-                <div>Detail URL: {quickViewMotor.detailUrl || 'None'}</div>
-              </div>
 
               {/* Model code decoder */}
               <div className="bg-accent border border-border p-4 rounded-md mt-2">
@@ -1471,12 +1475,6 @@ const subtitle = formatVariantSubtitle(raw, title);
                 )}
               </div>
 
-              {import.meta.env.DEV && quickViewMotor.specifications && (
-                <details className="mt-4 p-3 bg-muted rounded-md">
-                  <summary className="cursor-pointer font-semibold">Debug: Raw Specs</summary>
-                  <pre className="text-xs mt-2">{JSON.stringify(quickViewMotor.specifications, null, 2)}</pre>
-                </details>
-              )}
 
               <div className="flex justify-between items-center mt-6 pt-4 border-t">
                 <div className="flex gap-3">
