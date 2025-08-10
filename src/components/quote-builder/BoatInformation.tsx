@@ -9,7 +9,9 @@ import { ArrowLeft, Ship, Info, CheckCircle2 } from 'lucide-react';
 import { Motor, BoatInfo } from '../QuoteBuilder';
 import { TradeInValuation } from './TradeInValuation';
 import { type TradeInInfo } from '@/lib/trade-valuation';
-
+import { Slider } from '@/components/ui/slider';
+import { Progress } from '@/components/ui/progress';
+import { useIsMobile } from '@/hooks/use-mobile';
 interface BoatInformationProps {
   onStepComplete: (boatInfo: BoatInfo) => void;
   onBack: () => void;
@@ -92,21 +94,43 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onStepComplete({ ...boatInfo, tradeIn: tradeInInfo });
+  // Progressive Wizard State
+  const [currentStep, setCurrentStep] = useState<number>(0);
+  const [lengthFeet, setLengthFeet] = useState<number>(16);
+  const isMobile = useIsMobile();
+
+  const lengthBucket = (feet: number): string => {
+    if (feet < 14) return 'under-14';
+    if (feet <= 16) return '14-16';
+    if (feet <= 19) return '17-19';
+    if (feet <= 22) return '20-22';
+    return '23-plus';
+  };
+
+  const handleLengthChange = (val: number[]) => {
+    const feet = val[0];
+    setLengthFeet(feet);
+    setBoatInfo(prev => ({ ...prev, length: lengthBucket(feet) }));
+  };
+
+  const computeCompatibilityScore = (): number => {
+    if (!selectedMotor) return 0;
+    const idealHp = Math.max(20, lengthFeet * 8); // rough heuristic
+    const ratio = selectedMotor.hp / idealHp;
+    const score = Math.max(0, Math.min(100, Math.round((1 - Math.abs(1 - ratio)) * 100)));
+    return score;
   };
 
   const getCompatibilityMessage = () => {
     if (boatInfo.currentMotorBrand === 'Mercury') {
       return {
-        type: 'info',
+        type: 'info' as const,
         message: 'Control compatibility will be verified during consultation',
         icon: <CheckCircle2 className="w-4 h-4" />
       };
     } else if (boatInfo.currentMotorBrand && boatInfo.currentMotorBrand !== 'No Current Motor') {
       return {
-        type: 'warning',
+        type: 'warning' as const,
         message: 'New Mercury controls and cables will be required (additional cost)',
         icon: <Info className="w-4 h-4" />
       };
@@ -116,256 +140,245 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
 
   const compatibility = getCompatibilityMessage();
 
+  const totalSteps = boatInfo.type === 'motor-only' ? 3 : 6;
+  const canNext = () => {
+    if (boatInfo.type === 'motor-only') {
+      if (currentStep === 0) return boatInfo.type === 'motor-only';
+      if (currentStep === 1) return true; // trade-in step optional
+      return true;
+    }
+    switch (currentStep) {
+      case 0:
+        return !!boatInfo.type && boatInfo.type !== 'motor-only';
+      case 1:
+        return !!boatInfo.length; // set via slider mapping
+      case 2:
+        return !!boatInfo.shaftLength; // transom helper
+      case 3:
+        return !!boatInfo.controlType;
+      case 4:
+        return true; // trade-in optional
+      default:
+        return true;
+    }
+  };
+
+  const handleNext = () => setCurrentStep(s => Math.min(totalSteps - 1, s + 1));
+  const handlePrev = () => {
+    if (currentStep === 0) onBack();
+    else setCurrentStep(s => Math.max(0, s - 1));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onStepComplete({ ...boatInfo, tradeIn: tradeInInfo });
+  };
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       {/* Header */}
-      <div className="text-center space-y-4">
-        <h2 className="text-3xl font-bold text-foreground">Tell Us About Your Boat</h2>
-        <p className="text-lg text-muted-foreground">
-          Help us ensure the perfect fit for your {selectedMotor?.model}
+      <div className="text-center space-y-3 animate-fade-in">
+        <h2 className="text-3xl font-bold text-foreground">Boat Details Wizard</h2>
+        <p className="text-muted-foreground">
+          Let's match your {selectedMotor?.model || 'Mercury motor'} to your boat, step by step.
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-8">
-        {/* Boat Type Selection */}
-        <Card className="p-6">
-          <div className="space-y-6">
-            <div className="text-center space-y-2">
-              <Label className="text-2xl font-bold flex items-center justify-center gap-2">
-                🎯 Select Your Boat Type
-              </Label>
-              <p className="text-muted-foreground">Choose the category that best describes your boat</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {boatTypes.map((type, index) => (
-                <div
-                  key={type.id}
-                  className={`boat-type-card relative cursor-pointer bg-gradient-to-br ${type.gradient} text-white p-6 rounded-2xl min-h-[200px] transition-all duration-300 hover:scale-105 hover:shadow-xl ${
-                    boatInfo.type === type.id 
-                      ? 'ring-4 ring-primary shadow-2xl scale-105' 
-                      : 'hover:shadow-lg'
-                  }`}
-                  onClick={() => setBoatInfo(prev => ({ ...prev, type: type.id }))}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  {/* Selection Checkmark */}
-                  {boatInfo.type === type.id && (
-                    <div className="absolute top-3 right-3 bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center animate-in zoom-in-50 duration-300">
-                      <CheckCircle2 className="w-5 h-5" />
-                    </div>
-                  )}
-                  
-                  {/* Badge */}
-                  <div className="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
-                    {type.badge}
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="flex flex-col justify-center items-center text-center h-full space-y-3">
-                    <div className="text-4xl mb-2">
-                      {type.icon}
-                    </div>
-                    <h3 className="text-xl font-bold">{type.name}</h3>
-                    <p className="text-sm opacity-90 leading-relaxed">{type.subtitle}</p>
-                  </div>
-                  
-                  {/* Ripple effect container */}
-                  <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
-                    {boatInfo.type === type.id && (
-                      <div className="ripple-effect absolute inset-0 bg-white/20 animate-ping rounded-2xl"></div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Card>
+      {/* Progress */}
+      <div className="rounded-lg border border-border bg-muted/30 p-4 animate-fade-in">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-sm font-medium">Progress</span>
+          <span className="text-sm text-muted-foreground">Step {currentStep + 1} of {totalSteps}</span>
+        </div>
+        <Progress value={((currentStep + 1) / totalSteps) * 100} className="h-3" />
+      </div>
 
-        {/* Motor Only Details */}
+      {/* Quick Presets */}
+      {currentStep === 0 && (
+        <div className="rounded-lg border border-border bg-background p-4 flex flex-wrap gap-3">
+          <span className="text-sm font-medium mr-1">Common Setups:</span>
+          <Button type="button" variant="secondary" size="sm" onClick={() => { setBoatInfo(prev => ({ ...prev, type: 'fishing' })); setLengthFeet(14); setBoatInfo(prev => ({ ...prev, length: lengthBucket(14) })); }}>14ft Aluminum Fishing</Button>
+          <Button type="button" variant="secondary" size="sm" onClick={() => { setBoatInfo(prev => ({ ...prev, type: 'pontoon' })); setLengthFeet(20); setBoatInfo(prev => ({ ...prev, length: lengthBucket(20) })); }}>20ft Pontoon</Button>
+          <Button type="button" variant="secondary" size="sm" onClick={() => { setBoatInfo(prev => ({ ...prev, type: 'bass' })); setLengthFeet(16); setBoatInfo(prev => ({ ...prev, length: lengthBucket(16) })); }}>16ft Bass Boat</Button>
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Step Content */}
         {boatInfo.type === 'motor-only' ? (
-          <Card className="p-6">
-            <div className="space-y-6">
-              <h3 className="text-lg font-semibold">Motor Purchase Details</h3>
-              
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <Label>I'm buying this motor for:</Label>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {[
-                      { id: 'future-boat', label: 'Future boat purchase' },
-                      { id: 'spare-backup', label: 'Spare/backup motor' },
-                      { id: 'replacement', label: 'Replacement (I know my specs)' },
-                      { id: 'other', label: 'Other/Not sure yet' }
-                    ].map((purpose) => (
+          <>
+            {currentStep === 0 && (
+              <Card className="p-6 animate-fade-in">
+                <div className="space-y-6">
+                  <h3 className="text-lg font-semibold">Motor Only</h3>
+                  <p className="text-sm text-muted-foreground">Buying a motor without a boat? We'll confirm specs at consultation.</p>
+
+                  <div className="space-y-2">
+                    <Label className="flex items-center gap-2">Shaft Length (if known)</Label>
+                    <Select value={boatInfo.shaftLength} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, shaftLength: value }))}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select shaft length" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="15">15" - Short</SelectItem>
+                        <SelectItem value="20">20" - Long</SelectItem>
+                        <SelectItem value="25">25" - XL</SelectItem>
+                        <SelectItem value="Not Sure">Not Sure</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <Alert className="border-blue-500 bg-blue-50 dark:bg-blue-950/20">
+                    <Info className="w-4 h-4" />
+                    <AlertDescription>
+                      We'll verify exact rigging and cables during your appointment.
+                    </AlertDescription>
+                  </Alert>
+                </div>
+              </Card>
+            )}
+
+            {currentStep === 1 && (
+              <Card className="p-6 animate-fade-in">
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold">Trade-In Valuation (Optional)</h3>
+                  <TradeInValuation 
+                    tradeInInfo={tradeInInfo}
+                    onTradeInChange={setTradeInInfo}
+                    currentMotorBrand={'No Current Motor'}
+                    currentHp={0}
+                  />
+                </div>
+              </Card>
+            )}
+
+            {currentStep === 2 && (
+              <Card className="p-6 animate-fade-in">
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold">Ready to Continue</h3>
+                  <p className="text-sm text-muted-foreground">We'll use typical settings and confirm any unknowns.</p>
+                </div>
+              </Card>
+            )}
+          </>
+        ) : (
+          <>
+            {currentStep === 0 && (
+              <Card className="p-6 animate-fade-in">
+                <div className="space-y-6">
+                  <div className="text-center space-y-2">
+                    <Label className="text-2xl font-bold">What type of boat do you have?</Label>
+                    <p className="text-muted-foreground">Pick the closest match.</p>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {boatTypes.filter(t => t.id !== 'motor-only').map((type) => (
                       <div
-                        key={purpose.id}
-                        className={`p-3 rounded-lg border cursor-pointer transition-all ${
-                          boatInfo.make === purpose.id 
-                            ? 'border-primary bg-primary/10' 
-                            : 'border-border hover:border-primary/50'
-                        }`}
-                        onClick={() => setBoatInfo(prev => ({ ...prev, make: purpose.id }))}
+                        key={type.id}
+                        className={`relative cursor-pointer bg-gradient-to-br ${type.gradient} text-white p-6 rounded-2xl min-h-[180px] transition-all hover:scale-105 ${boatInfo.type === type.id ? 'ring-4 ring-primary' : ''}`}
+                        onClick={() => setBoatInfo(prev => ({ ...prev, type: type.id }))}
                       >
-                        <span className="text-sm font-medium">{purpose.label}</span>
+                        <div className="absolute top-3 left-3 bg-white/20 px-3 py-1 rounded-full text-xs">{type.badge}</div>
+                        <div className="h-full flex flex-col items-center justify-center space-y-2">
+                          <div className="text-4xl">{type.icon}</div>
+                          <div className="text-lg font-semibold">{type.name}</div>
+                          <div className="text-xs opacity-90">{type.subtitle}</div>
+                        </div>
                       </div>
                     ))}
                   </div>
                 </div>
+              </Card>
+            )}
 
-                <div className="space-y-2">
-                  <Label htmlFor="shaftLength" className="flex items-center gap-2">
-                    Shaft Length (if known)
-                    <div className="group relative">
-                      <Info className="w-4 h-4 text-muted-foreground hover:text-primary cursor-help" />
-                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 rounded text-xs text-blue-800 dark:text-blue-200 z-10">
-                        The shaft length of the motor has to match your boat's transom height.
-                      </div>
-                    </div>
-                  </Label>
-                  <Select value={boatInfo.shaftLength} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, shaftLength: value }))}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select shaft length" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="15">15" - Short Shaft</SelectItem>
-                      <SelectItem value="20">20" - Long Shaft</SelectItem>
-                      <SelectItem value="25">25" - Extra Long Shaft</SelectItem>
-                      <SelectItem value="Not Sure">Not Sure</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-
-              <Alert className="border-blue-500 bg-blue-50 dark:bg-blue-950/20">
-                <Info className="w-4 h-4" />
-                <AlertDescription className="text-blue-800 dark:text-blue-200">
-                  Professional consultation recommended to confirm specifications when you're ready to install.
-                </AlertDescription>
-              </Alert>
-            </div>
-          </Card>
-        ) : (
-          <>
-            {/* Boat Details */}
-            <Card className="p-6">
-              <div className="space-y-6">
-                <h3 className="text-lg font-semibold">Boat Details</h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {currentStep === 1 && (
+              <Card className="p-6 animate-fade-in">
+                <div className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="make">Boat Make (Optional)</Label>
-                    <Input
-                      id="make"
-                      value={boatInfo.make}
-                      onChange={(e) => setBoatInfo(prev => ({ ...prev, make: e.target.value }))}
-                      placeholder="e.g., Boston Whaler"
+                    <Label className="text-lg font-semibold">How long is your boat?</Label>
+                    <Slider
+                      value={[lengthFeet]}
+                      min={10}
+                      max={30}
+                      step={1}
+                      onValueChange={handleLengthChange}
                     />
+                    <div className="text-sm text-muted-foreground">Approx. {lengthFeet} ft</div>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="model">Boat Model (Optional)</Label>
-                    <Input
-                      id="model"
-                      value={boatInfo.model}
-                      onChange={(e) => setBoatInfo(prev => ({ ...prev, model: e.target.value }))}
-                      placeholder="e.g., Montauk 170"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="length">Boat Length *</Label>
-                    <Select value={boatInfo.length} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, length: value }))}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select boat length" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="under-14">Under 14ft</SelectItem>
-                        <SelectItem value="14-16">14-16ft</SelectItem>
-                        <SelectItem value="17-19">17-19ft</SelectItem>
-                        <SelectItem value="20-22">20-22ft</SelectItem>
-                        <SelectItem value="23-plus">23ft+</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="currentBrand">Current Motor Brand</Label>
-                    <Select value={boatInfo.currentMotorBrand} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, currentMotorBrand: value }))}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select current motor brand" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="Mercury">Mercury</SelectItem>
-                        <SelectItem value="Yamaha">Yamaha</SelectItem>
-                        <SelectItem value="Honda">Honda</SelectItem>
-                        <SelectItem value="Suzuki">Suzuki</SelectItem>
-                        <SelectItem value="Evinrude">Evinrude</SelectItem>
-                        <SelectItem value="Other">Other</SelectItem>
-                        <SelectItem value="No Current Motor">No Current Motor</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
-                {/* Compatibility Alert */}
-                {compatibility && (
-                  <Alert className={compatibility.type === 'warning' ? 'border-orange-500 bg-orange-50 dark:bg-orange-950/20' : 'border-blue-500 bg-blue-50 dark:bg-blue-950/20'}>
-                    <div className="flex items-center gap-2">
-                      {compatibility.icon}
-                      <AlertDescription className={compatibility.type === 'warning' ? 'text-orange-800 dark:text-orange-200' : 'text-blue-800 dark:text-blue-200'}>
-                        {compatibility.message}
-                      </AlertDescription>
-                    </div>
-                  </Alert>
-                )}
-              </div>
-            </Card>
-
-            {/* Technical Details */}
-            <Card className="p-6">
-              <div className="space-y-6">
-                <h3 className="text-lg font-semibold">Technical Specifications</h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="controlType" className="flex items-center gap-2">
-                      Control Type
-                      <div className="group relative">
-                        <Info className="w-4 h-4 text-muted-foreground hover:text-primary cursor-help" />
-                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block w-72 p-3 bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 rounded text-xs text-blue-800 dark:text-blue-200 z-10">
-                          <div className="space-y-1">
-                            <div><strong>External Box:</strong> Control box mounted on side of console</div>
-                            <div><strong>Recessed Panel:</strong> Control flush-mounted into console panel</div>
-                            <div><strong>Binnacle/Top Mount:</strong> Control mounted on top of console</div>
-                            <div><strong>Tiller:</strong> Handle control on the motor</div>
-                          </div>
+                  {/* Visual Boat Builder */}
+                  <div className="rounded-lg border border-border bg-muted/30 p-4">
+                    <div className="flex flex-col md:flex-row gap-4 items-center">
+                      <svg viewBox="0 0 400 120" className="w-full md:w-2/3">
+                        <rect x="10" y="60" rx="6" ry="6" height="22" width={Math.max(80, Math.min(360, lengthFeet * 12))} className="fill-primary/50" />
+                        {/* Motor on transom */}
+                        {selectedMotor?.image && (
+                          <image href={selectedMotor.image} x={Math.max(50, Math.min(330, lengthFeet * 12 - 20))} y="30" height="48" width="48" preserveAspectRatio="xMidYMid slice" />
+                        )}
+                      </svg>
+                      <div className="md:w-1/3 space-y-2">
+                        <div className="text-sm">Estimated Speed</div>
+                        <div className="text-2xl font-bold">{selectedMotor ? Math.max(15, Math.round((selectedMotor.hp / Math.max(12, lengthFeet)) * 2)) : '--'} mph</div>
+                        <div className="text-sm">Match Score</div>
+                        <div className="flex items-center gap-2">
+                          <Progress value={computeCompatibilityScore()} className="h-2" />
+                          <span className="text-sm text-muted-foreground">{computeCompatibilityScore()}%</span>
                         </div>
                       </div>
-                    </Label>
-                    <Select value={boatInfo.controlType} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, controlType: value }))}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select control type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="side-mount-external">Side Mount - External Box</SelectItem>
-                        <SelectItem value="side-mount-recessed">Side Mount - Recessed Panel</SelectItem>
-                        <SelectItem value="binnacle-top">Binnacle/Top Mount</SelectItem>
-                        <SelectItem value="tiller">Tiller</SelectItem>
-                        <SelectItem value="not-sure">Not Sure</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    </div>
+                  </div>
+
+                  {/* Real-time validation */}
+                  {selectedMotor && (
+                    <div className="validation-feedback">
+                      {selectedMotor.hp > lengthFeet * 10 ? (
+                        <Alert className="border-orange-500 bg-orange-50 dark:bg-orange-950/20">
+                          <AlertDescription>⚠️ This motor might be overpowered for your boat.</AlertDescription>
+                        </Alert>
+                      ) : selectedMotor.hp < lengthFeet * 3 ? (
+                        <Alert className="border-blue-500 bg-blue-50 dark:bg-blue-950/20">
+                          <AlertDescription>💡 This will work, but you might want more power.</AlertDescription>
+                        </Alert>
+                      ) : (
+                        <Alert className="border-in-stock bg-in-stock/10">
+                          <AlertDescription>✅ Great power-to-weight ratio!</AlertDescription>
+                        </Alert>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </Card>
+            )}
+
+            {currentStep === 2 && (
+              <Card className="p-6 animate-fade-in">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-lg font-semibold">Transom Height Helper</h3>
+                    <p className="text-sm text-muted-foreground">Measure from top of transom to bottom of hull.</p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <Button type="button" variant="outline" onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: '15' }))}>
+                      <div className="text-left">
+                        <div className="font-semibold">15" (Short)</div>
+                        <div className="text-xs text-muted-foreground">Small boats, canoes</div>
+                      </div>
+                    </Button>
+                    <Button type="button" variant="outline" onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: '20' }))}>
+                      <div className="text-left">
+                        <div className="font-semibold">20" (Long)</div>
+                        <div className="text-xs text-muted-foreground">Most boats - if unsure, pick this</div>
+                      </div>
+                    </Button>
+                    <Button type="button" variant="outline" onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: '25' }))}>
+                      <div className="text-left">
+                        <div className="font-semibold">25" (XL)</div>
+                        <div className="text-xs text-muted-foreground">Sailboats, large pontoons</div>
+                      </div>
+                    </Button>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="shaftLength" className="flex items-center gap-2">
-                      Shaft Length
-                      <div className="group relative">
-                        <Info className="w-4 h-4 text-muted-foreground hover:text-primary cursor-help" />
-                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 rounded text-xs text-blue-800 dark:text-blue-200 z-10">
-                          The shaft length of the motor has to match your boat's transom height.
-                        </div>
-                      </div>
-                    </Label>
+                    <Label className="flex items-center gap-2">Prefer to select it manually?</Label>
                     <Select value={boatInfo.shaftLength} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, shaftLength: value }))}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select shaft length" />
@@ -378,68 +391,153 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
                       </SelectContent>
                     </Select>
                   </div>
+                </div>
+              </Card>
+            )}
 
-                  <div className="space-y-2">
-                    <Label htmlFor="currentHp">Current Horsepower (Optional)</Label>
-                    <Input
-                      id="currentHp"
-                      type="number"
-                      value={boatInfo.currentHp || ''}
-                      onChange={(e) => setBoatInfo(prev => ({ ...prev, currentHp: parseInt(e.target.value) || 0 }))}
-                      placeholder="e.g., 115"
-                    />
-                  </div>
+            {currentStep === 3 && (
+              <Card className="p-6 animate-fade-in">
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <Label>Current Motor Brand</Label>
+                      <Select value={boatInfo.currentMotorBrand} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, currentMotorBrand: value }))}>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select current motor brand" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="Mercury">Mercury</SelectItem>
+                          <SelectItem value="Yamaha">Yamaha</SelectItem>
+                          <SelectItem value="Honda">Honda</SelectItem>
+                          <SelectItem value="Suzuki">Suzuki</SelectItem>
+                          <SelectItem value="Evinrude">Evinrude</SelectItem>
+                          <SelectItem value="Other">Other</SelectItem>
+                          <SelectItem value="No Current Motor">No Current Motor</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="serialNumber">Serial Number (Optional)</Label>
-                    <Input
-                      id="serialNumber"
-                      value={boatInfo.serialNumber}
-                      onChange={(e) => setBoatInfo(prev => ({ ...prev, serialNumber: e.target.value }))}
-                      placeholder="Motor serial number"
-                    />
+                    {compatibility && (
+                      <Alert className={compatibility.type === 'warning' ? 'border-orange-500 bg-orange-50 dark:bg-orange-950/20' : 'border-blue-500 bg-blue-50 dark:bg-blue-950/20'}>
+                        <div className="flex items-center gap-2">
+                          {compatibility.icon}
+                          <AlertDescription className={compatibility.type === 'warning' ? 'text-orange-800 dark:text-orange-200' : 'text-blue-800 dark:text-blue-200'}>
+                            {compatibility.message}
+                          </AlertDescription>
+                        </div>
+                      </Alert>
+                    )}
+
+                    <div className="space-y-2">
+                      <Label>Control Type</Label>
+                      <Select value={boatInfo.controlType} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, controlType: value }))}>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select control type" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="side-mount-external">Side Mount - External Box</SelectItem>
+                          <SelectItem value="side-mount-recessed">Side Mount - Recessed Panel</SelectItem>
+                          <SelectItem value="binnacle-top">Binnacle/Top Mount</SelectItem>
+                          <SelectItem value="tiller">Tiller</SelectItem>
+                          <SelectItem value="not-sure">Not Sure</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    {/* Optional make/model */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label>Boat Make (Optional)</Label>
+                        <Input value={boatInfo.make} onChange={(e) => setBoatInfo(prev => ({ ...prev, make: e.target.value }))} placeholder="e.g., Boston Whaler" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label>Boat Model (Optional)</Label>
+                        <Input value={boatInfo.model} onChange={(e) => setBoatInfo(prev => ({ ...prev, model: e.target.value }))} placeholder="e.g., Montauk 170" />
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </Card>
+            )}
 
-                {/* Help Message */}
-                {(boatInfo.controlType === 'not-sure' || boatInfo.shaftLength === 'Not Sure') && (
-                  <Alert className="border-in-stock bg-in-stock/10">
-                    <CheckCircle2 className="w-4 h-4" />
-                    <AlertDescription>
-                      No problem! Our technicians will verify all specifications during your consultation.
-                    </AlertDescription>
-                  </Alert>
-                )}
-              </div>
-            </Card>
+            {currentStep === 4 && (
+              <Card className="p-6 animate-fade-in">
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold">Have a motor to trade?</h3>
+                  <TradeInValuation 
+                    tradeInInfo={tradeInInfo}
+                    onTradeInChange={setTradeInInfo}
+                    currentMotorBrand={boatInfo.currentMotorBrand}
+                    currentHp={boatInfo.currentHp}
+                  />
+                </div>
+              </Card>
+            )}
+
+            {currentStep === 5 && (
+              <Card className="p-6 animate-fade-in">
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold">Compatibility Check</h3>
+                    <div className="flex items-center gap-3">
+                      <Progress value={computeCompatibilityScore()} className="h-3" />
+                      <span className="text-sm text-muted-foreground">{computeCompatibilityScore()}% match</span>
+                    </div>
+                  </div>
+                  <div className="rounded-lg border border-border bg-muted/30 p-4">
+                    <div className="flex flex-col md:flex-row gap-4 items-center">
+                      <svg viewBox="0 0 400 120" className="w-full md:w-2/3">
+                        <rect x="10" y="60" rx="6" ry="6" height="22" width={Math.max(80, Math.min(360, lengthFeet * 12))} className="fill-primary/50" />
+                        {selectedMotor?.image && (
+                          <image href={selectedMotor.image} x={Math.max(50, Math.min(330, lengthFeet * 12 - 20))} y="30" height="48" width="48" preserveAspectRatio="xMidYMid slice" />
+                        )}
+                      </svg>
+                      <div className="md:w-1/3 space-y-2">
+                        <div className="text-sm">Estimated Speed</div>
+                        <div className="text-2xl font-bold">{selectedMotor ? Math.max(15, Math.round((selectedMotor.hp / Math.max(12, lengthFeet)) * 2)) : '--'} mph</div>
+                        <div className="text-sm text-muted-foreground">We'll fine-tune during consultation.</div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Gamification */}
+                  <div className="progress-rewards text-sm">
+                    {boatInfo.type && boatInfo.shaftLength && boatInfo.controlType && (
+                      <div className="rounded-md border border-primary/30 bg-primary/5 p-3">🏆 Detail Detective - You're thorough!</div>
+                    )}
+                    {selectedMotor && computeCompatibilityScore() > 80 && (
+                      <div className="mt-2 rounded-md border border-green-500/30 bg-green-500/10 p-3">⭐ Excellent match - Great motor/boat combo!</div>
+                    )}
+                  </div>
+                </div>
+              </Card>
+            )}
           </>
         )}
 
-
-        {/* Trade-In Valuation */}
-        <TradeInValuation 
-          tradeInInfo={tradeInInfo}
-          onTradeInChange={setTradeInInfo}
-          currentMotorBrand={boatInfo.type === 'motor-only' ? 'No Current Motor' : boatInfo.currentMotorBrand}
-          currentHp={boatInfo.type === 'motor-only' ? 0 : boatInfo.currentHp}
-        />
-
-        {/* Navigation */}
-        <div className="form-navigation">
-          <Button type="button" variant="outline" onClick={onBack} className="btn-back">
+        {/* Bottom Navigation */}
+        <div className="flex items-center justify-between pt-2">
+          <Button type="button" variant="outline" onClick={handlePrev}>
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Motor Selection
+            Back
           </Button>
-          
-          <Button 
-            type="submit" 
-            disabled={!boatInfo.type || (boatInfo.type !== 'motor-only' && !boatInfo.length)}
-            className="btn-continue btn-primary"
-          >
-            {boatInfo.type === 'motor-only' ? 'Continue to Quote' : 'Continue to Quote'}
-          </Button>
+          {currentStep < totalSteps - 1 ? (
+            <Button type="button" onClick={handleNext} disabled={!canNext()}>
+              Next
+            </Button>
+          ) : (
+            <Button type="submit" disabled={!boatInfo.type || (boatInfo.type !== 'motor-only' && !boatInfo.length)}>
+              Continue to Quote
+            </Button>
+          )}
         </div>
       </form>
+
+      {/* Mobile chat style hint */}
+      {isMobile && (
+        <div className="rounded-lg border border-border bg-muted/30 p-4">
+          <div className="text-sm text-muted-foreground">Tip: You can tap a preset above to speed things up.</div>
+        </div>
+      )}
     </div>
   );
 };
