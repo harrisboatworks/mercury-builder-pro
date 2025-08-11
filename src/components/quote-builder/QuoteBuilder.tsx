@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MotorSelection } from "./MotorSelection";
 import PurchasePath from "./PurchasePath";
 import InstallationConfig from "./InstallationConfig";
-import QuoteDisplay from "./QuoteDisplay";
+import { QuoteDisplay as LegacyQuoteDisplay } from "./QuoteDisplay";
 import { Sparkles } from "lucide-react";
 import confetti from "canvas-confetti";
 
@@ -119,7 +119,7 @@ export default function QuoteBuilder() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
           >
-            <MotorSelection onSelectMotor={handleMotorSelect} />
+            <MotorSelection onStepComplete={handleMotorSelect} />
           </motion.div>
         )}
 
@@ -151,20 +151,24 @@ export default function QuoteBuilder() {
           </motion.div>
         )}
 
-        {currentStep === 4 && (
-          <motion.div
-            key="quote-display"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
-            <QuoteDisplay
-              selectedMotor={selectedMotor}
-              purchasePath={purchasePath}
-              installConfig={installConfig}
-              totalXP={totalXP}
-            />
-          </motion.div>
-        )}
+          {currentStep === 4 && (
+            <motion.div
+              key="quote-display"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+            >
+              <LegacyQuoteDisplay
+                quoteData={{
+                  motor: selectedMotor,
+                  boatInfo: null,
+                  financing: { downPayment: 0, term: 48, rate: 7.99 },
+                  hasTradein: false,
+                } as any}
+                onStepComplete={() => {}}
+                onBack={() => setCurrentStep(purchasePath === 'installed' ? 3 : 2)}
+              />
+            </motion.div>
+          )}
       </AnimatePresence>
 
       {/* Floating Achievement Toast */}
