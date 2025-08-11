@@ -1,3 +1,4 @@
+import Dev from "./pages/Dev";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -55,6 +56,7 @@ const App = () => (
                 }
               />
               <Route path="/finance-calculator" element={<FinanceCalculator />} />
+              <Route path="/dev" element={<Dev />} />
               <Route path="/staging/pricing-spacing" element={<StagingPricingTweaks />} />
               <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
               <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
