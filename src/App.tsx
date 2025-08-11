@@ -20,7 +20,7 @@ import StagingPricingTweaks from "./pages/StagingPricingTweaks";
 import StagingImageSizing from "./pages/StagingImageSizing";
 import StagingImageSizingV2 from "./pages/StagingImageSizingV2";
 import StagingImageSizingFinal from "./pages/StagingImageSizingFinal";
-import AdminFinancing from "./pages/AdminFinancing";
+import FinancingAdmin from "./components/admin/FinancingAdmin";
 
 const queryClient = new QueryClient();
 function Canonical() {
@@ -77,7 +77,7 @@ const App = () => (
                 path="/admin/financing"
                 element={
                   <ProtectedRoute>
-                    <AdminFinancing />
+                    <FinancingAdmin />
                   </ProtectedRoute>
                 }
               />
