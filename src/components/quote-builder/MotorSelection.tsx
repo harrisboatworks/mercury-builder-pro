@@ -782,13 +782,8 @@ const categoryCounts: Record<string, number> = {
   'v8-racing': filteredMotors.filter(m => m.category === 'v8-racing').length,
 };
 
-  const getStockBadgeColor = (status: string) => {
-    switch (status) {
-      case 'In Stock': return 'bg-in-stock text-in-stock-foreground';
-      case 'On Order': return 'bg-on-order text-on-order-foreground';
-      case 'Out of Stock': return 'bg-out-of-stock text-out-of-stock-foreground';
-      default: return 'bg-muted text-muted-foreground';
-    }
+  const getStockBadgeColor = (_status: string) => {
+    return 'bg-[hsl(var(--muted)/.16)] text-[hsl(var(--foreground)/.80)]';
   };
 
   const getCategoryColor = (category: string): "default" | "destructive" | "secondary" | "outline" => {
@@ -1121,15 +1116,11 @@ const handleMotorSelection = (motor: Motor) => {
                return (
                 <Card 
                   key={motor.id}
-                  className={`product-card relative cursor-pointer transition-all duration-500 hover:shadow-lg group overflow-hidden ${
+                  className={`product-card relative cursor-pointer rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-shadow duration-300 hover:shadow-[0_10px_24px_rgba(0,0,0,0.10)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--accent-blue-400))]/60 overflow-hidden ${
                     (selectedMotor?.id === motor.id) 
-                      ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' 
-                      : 'hover:scale-[1.01]'
-                  } ${
-                    selectedMotor && selectedMotor.id !== motor.id 
-                      ? 'opacity-70' 
+                      ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 motor-selected border-green-500' 
                       : ''
-                  } flex flex-col`}
+                  } ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} flex flex-col`}
                   onClick={() => handleMotorSelection(motor)}
                 >
 
@@ -1137,69 +1128,104 @@ const handleMotorSelection = (motor: Motor) => {
                     {motor.stockStatus}
                   </Badge>
 
-                  <div className="p-3 space-y-3 relative h-full flex flex-col">
+                  <div className="p-4 md:p-5 space-y-3 md:space-y-3.5 relative h-full flex flex-col">
                     <div className="flex items-start justify-start">
-                      <Badge variant={getCategoryColor(motor.category)}>
+                      <Badge variant="outline" className="bg-[hsl(var(--muted)/.16)] text-[hsl(var(--foreground)/.80)] rounded-full px-2 py-0.5 text-xs border-0">
                         {motor.hp}HP
                       </Badge>
                     </div>
 
-                    <div className="space-y-1">
+                    <div>
                       {(() => {
 const title = formatMotorTitle(motor.year, motor.model);
 const raw = `${motor.model ?? ''} ${motor.description ?? motor.specs ?? ''}`.trim();
 const subtitle = formatVariantSubtitle(raw, title);
                         return (
                           <>
-                            <h3 className="text-sm md:text-base font-semibold text-foreground line-clamp-2">{title}</h3>
-                            <div className="min-h-[1rem]">
-                              {subtitle ? (
-                                <p className="text-foreground/90 text-xs line-clamp-1" title={subtitle}>{subtitle}</p>
-                              ) : null}
-                            </div>
+                            <h3 className="text-[hsl(var(--foreground))] font-semibold text-lg md:text-xl leading-snug line-clamp-2">{title}</h3>
+                            {subtitle ? (
+                              <p className="text-[hsl(var(--foreground)/.72)] text-sm md:text-[15px] leading-relaxed mt-1.5 line-clamp-1" title={subtitle}>{subtitle}</p>
+                            ) : null}
                           </>
                         );
                       })()}
                     </div>
 
       {motor.image && motor.image !== '/placeholder.svg' && (
-        <div className="motor-image-container image-wrap w-full h-[200px] shrink-0 bg-muted/10 overflow-hidden flex items-center justify-center rounded-lg p-2.5 relative">
-    <img 
-      src={motor.image} 
-      alt={motor.model}
-      loading="lazy"
-      className="motor-image"
-      style={{ height: '180px', width: 'auto', objectFit: 'contain', maxWidth: 'none', maxHeight: 'none' }}
-    />
+        <div className="motor-image-container image-wrap w-full h-[200px] sm:h-[224px] shrink-0 bg-[hsl(var(--muted)/.12)] overflow-hidden flex items-center justify-center rounded-xl relative">
+          {(hasGet5 || hasRepower) && (
+            <div className="absolute right-3 top-3 flex gap-2 z-10">
+              {hasGet5 && (
+                <span className="promo-badge-base promo-badge-warranty badge" aria-label="5 Year Warranty">
+                  <ShieldCheck className="w-4 h-4" aria-hidden="true" />
+                  <span>{warrantyBonus?.shortBadge || '5 Year Warranty'}</span>
+                </span>
+              )}
+              {hasRepower && (
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <span
+                      className="badge badge--repower"
+                      data-badge="repower"
+                      aria-label="Repower Rebate"
+                      onMouseEnter={() => track('rebate_badge_hover', { model_id: motor.id, model_name: motor.model })}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <span className="badge__icon" aria-hidden="true"><RefreshCcw className="w-4 h-4" /></span>
+                      <span className="badge__text">Repower Rebate</span>
+                    </span>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <div className="max-w-[260px] space-y-1">
+                      <p>Mercury’s Repower Rebate Program — trade in or repower for potential savings. See details.</p>
+                      <button
+                        type="button"
+                        className="underline text-left"
+                        onClick={(e) => { e.stopPropagation(); setActivePromoModal((promotionsState.find(p => /(repower\s*rebate|repower)/i.test([p.name, p.bonus_title, p.bonus_short_badge, p.bonus_description].filter(Boolean).join(' '))) || null)); track('rebate_badge_click', { model_id: motor.id, model_name: motor.model }); }}
+                      >
+                        Learn More
+                      </button>
+                    </div>
+                  </TooltipContent>
+                </Tooltip>
+              )}
+            </div>
+          )}
+          <img 
+            src={motor.image} 
+            alt={motor.model}
+            loading="lazy"
+            className="object-contain max-w-[96%] max-h-[96%]"
+          />
 
-    {/* Urgency: low stock */}
-    {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && (
-      <div className="absolute top-14 left-3 z-20 animate-fade-in">
-        <Badge variant="discount" className="flex items-center gap-1 shadow">
-          <AlertTriangle className="w-3.5 h-3.5" />
-          <span>Only {stockCount} left</span>
-        </Badge>
-      </div>
-    )}
+          {/* Urgency: low stock */}
+          {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && (
+            <div className="absolute top-14 left-3 z-20 animate-fade-in">
+              <Badge variant="discount" className="flex items-center gap-1 shadow">
+                <AlertTriangle className="w-3.5 h-3.5" />
+                <span>Only {stockCount} left</span>
+              </Badge>
+            </div>
+          )}
 
-    {/* Social proof: recent sales */}
-    {typeof recentSales === 'number' && recentSales > 5 && (
-      <div className="absolute top-14 right-3 z-20 animate-fade-in">
-        <Badge variant="warranty" className="flex items-center gap-1 shadow">
-          <Star className="w-3.5 h-3.5" />
-          <span>{recentSales} sold this month</span>
-        </Badge>
-      </div>
-    )}
+          {/* Social proof: recent sales */}
+          {typeof recentSales === 'number' && recentSales > 5 && (
+            <div className="absolute top-14 right-3 z-20 animate-fade-in">
+              <Badge variant="warranty" className="flex items-center gap-1 shadow">
+                <Star className="w-3.5 h-3.5" />
+                <span>{recentSales} sold this month</span>
+              </Badge>
+            </div>
+          )}
 
-    <button
-      type="button"
-      className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-background/95 text-foreground border border-border shadow-md flex items-center justify-center opacity-90 transition-transform transition-opacity hover:opacity-100 hover:scale-110"
-      aria-label="Motor info"
-      onClick={(e) => { e.stopPropagation(); openQuickView(motor); }}
-    >
-      <Info className="w-4 h-4" />
-    </button>
+          <button
+            type="button"
+            className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-background/95 text-foreground border border-border shadow-md flex items-center justify-center opacity-90 transition-transform transition-opacity hover:opacity-100 hover:scale-110"
+            aria-label="Motor info"
+            onClick={(e) => { e.stopPropagation(); openQuickView(motor); }}
+          >
+            <Info className="w-4 h-4" />
+          </button>
           {selectedMotor?.id === motor.id && (
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
               <Check className="w-20 h-20 text-green-600 drop-shadow-lg animate-scale-in checkmark-icon" strokeWidth={4} aria-hidden="true" />
@@ -1208,32 +1234,32 @@ const subtitle = formatVariantSubtitle(raw, title);
         </div>
       )}
 
-                    <div className="mt-auto pt-3 border-t border-border">
-                      <div className="price-area min-h-[60px] flex items-center">
+                    <div className="mt-2.5">
+                      <div className="price-area min-h-[86px] md:min-h-[92px] flex flex-col justify-start">
                         {callForPrice ? (
                           <span className="text-sm md:text-base font-medium text-foreground">Call for Price</span>
                         ) : hasSaleDisplay ? (
-                          <div className="w-full flex items-center justify-between gap-2">
-                            <span className="text-xs md:text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
-                            <div className="flex items-center gap-2">
-                              <span className="text-lg font-bold text-destructive">${(sale as number).toLocaleString()}</span>
-                              <span className="text-[10px] md:text-xs font-semibold px-2 py-1 rounded bg-destructive text-destructive-foreground">
-                                SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
+                          <div className="w-full">
+                            <span className="text-sm text-[hsl(var(--muted-foreground))] line-through">MSRP ${(msrp as number).toLocaleString()}</span>
+                            <div>
+                              <span className="mt-1 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[15px] font-semibold text-white bg-gradient-to-b from-[hsl(var(--accent-emerald-400))] to-[hsl(var(--accent-emerald-600))] shadow-[0_1px_3px_rgba(0,0,0,0.25)] border border-[hsl(var(--accent-emerald-700))]">
+                                Our Price ${(sale as number).toLocaleString()}
                               </span>
                             </div>
+                            <span className="mt-1 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs text-white bg-[hsl(var(--destructive))]/90">
+                              Save ${savingsAmount.toLocaleString()} ({savingsPct}%)
+                            </span>
                           </div>
                         ) : (
                           effectiveNoSaleLayout === 'placeholder' ? (
-                            <div className="w-full flex items-center justify-between gap-2">
-                              <span className="text-sm md:text-base font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
-                              <div className="flex items-center gap-2 opacity-0 select-none pointer-events-none" aria-hidden="true">
-                                <span className="text-lg font-bold">Our Price $0</span>
-                                <span className="text-xs font-semibold px-2 py-1 rounded">SAVE $0 (0%)</span>
-                              </div>
+                            <div className="w-full">
+                              <span className="text-lg font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
+                              <span className="mt-1 inline-flex items-center px-2.5 py-1 rounded-full text-xs opacity-0 select-none pointer-events-none" aria-hidden="true">placeholder</span>
                             </div>
                           ) : (
-                            <div className="w-full text-center">
+                            <div className="w-full text-left">
                               <span className="text-lg font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
+                              <span className="mt-1 inline-flex items-center px-2.5 py-1 rounded-full text-xs opacity-0 select-none pointer-events-none" aria-hidden="true">placeholder</span>
                             </div>
                           )
                         )}
