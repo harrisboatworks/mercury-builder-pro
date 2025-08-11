@@ -43,6 +43,9 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   const [selectedInstallDate, setSelectedInstallDate] = useState<Date | undefined>();
   const [availableSpots, setAvailableSpots] = useState<number>(0);
   const [springSpotsLeft, setSpringSpotsLeft] = useState<number>(0);
+  // Dynamic financing options
+  const [financingOptions, setFinancingOptions] = useState<any[]>([]);
+  const [selectedFinancing, setSelectedFinancing] = useState<string | null>(null);
 
   // SMS via Zapier
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -193,6 +196,23 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   const totalFinancePrice = subtotalAfterTrade + hst + financingFee;
   const maxDownPayment = totalFinancePrice * 0.5;
   const downPaymentPercentage = totalFinancePrice > 0 ? (downPayment / totalFinancePrice) * 100 : 0;
+
+  // Financing options loader (filter by min_amount <= total)
+  const calculateTotal = () => totalFinancePrice;
+  const loadFinancingOptions = async () => {
+    const totalAmount = calculateTotal();
+    const { data } = await (supabase as any)
+      .from('financing_options')
+      .select('*')
+      .eq('is_active', true)
+      .lte('min_amount', totalAmount)
+      .order('display_order', { ascending: true });
+    setFinancingOptions(data || []);
+  };
+  useEffect(() => {
+    loadFinancingOptions();
+    // Re-evaluate when total changes
+  }, [totalFinancePrice]);
 
   const calculatePayments = () => {
     const financedAmount = totalFinancePrice - downPayment;
@@ -412,6 +432,19 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
       toast({ title: 'Network error', description: 'SMS service temporarily unavailable. Your quote is saved above.', variant: 'destructive' });
     }
   };
+  const calculateMonthlyPayment = (principal: number, rate: number, months: number) => {
+    const monthlyRate = rate / 100 / 12;
+    const payment = principal * (monthlyRate * Math.pow(1 + monthlyRate, months)) /
+      (Math.pow(1 + monthlyRate, months) - 1);
+    return payment.toFixed(2);
+  };
+
+  const calculateTotalInterest = (principal: number, rate: number, months: number) => {
+    const monthly = parseFloat(calculateMonthlyPayment(principal, rate, months));
+    const total = monthly * months;
+    return (total - principal).toFixed(2);
+  };
+
   if (!quoteData.motor) return null;
 
   return (
@@ -762,6 +795,64 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
               </div>
             )}
             
+            {calculateTotal() >= 5000 && financingOptions.length > 0 && (
+              <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-6 mt-6">
+                <h3 className="text-xl font-bold mb-4">Financing Available</h3>
+                
+                {financingOptions.map((option) => (
+                  <div
+                    key={option.id}
+                    onClick={() => setSelectedFinancing(option.id)}
+                    className={`p-4 border-2 rounded-lg mb-3 cursor-pointer transition-all
+                      ${selectedFinancing === option.id 
+                        ? 'border-blue-500 bg-blue-50' 
+                        : 'border-gray-200 hover:border-blue-300'
+                      }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="font-bold text-lg">{option.name}</span>
+                          {option.is_promo && (
+                            <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold animate-pulse">
+                              PROMO
+                            </span>
+                          )}
+                        </div>
+                        {option.promo_text && (
+                          <p className="text-sm text-gray-600 mt-1">{option.promo_text}</p>
+                        )}
+                      </div>
+                      
+                      <div className="text-right">
+                        <div className="text-2xl font-bold text-blue-600">{option.rate}%</div>
+                        <div className="text-sm text-gray-600">{option.term_months} months</div>
+                      </div>
+                    </div>
+                    
+                    {selectedFinancing === option.id && (
+                      <div className="mt-4 pt-4 border-t">
+                        <div className="grid grid-cols-2 gap-4 text-sm">
+                          <div>
+                            <span className="text-gray-600">Monthly Payment:</span>
+                            <span className="font-bold ml-2">
+                              ${calculateMonthlyPayment(calculateTotal(), option.rate, option.term_months)}
+                            </span>
+                          </div>
+                          <div>
+                            <span className="text-gray-600">Total Interest:</span>
+                            <span className="font-bold ml-2">
+                              ${calculateTotalInterest(calculateTotal(), option.rate, option.term_months)}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+
             {/* Finance Option */}
             <div className="border border-border rounded-lg p-6 bg-muted/10">
               <div className="flex items-center gap-3 mb-4">
