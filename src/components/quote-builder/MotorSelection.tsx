@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-import { RefreshCw, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Plus } from 'lucide-react';
+import { RefreshCw, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Plus, Shield } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -1215,9 +1215,9 @@ const subtitle = formatVariantSubtitle(raw, title);
                         ) : hasSaleDisplay ? (
                           <div className="w-full flex items-center justify-between gap-2">
                             <span className="text-xs md:text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
-                            <div className="flex items-center gap-2">
+<div className="flex items-center gap-2">
                               <span className="text-lg font-bold text-destructive">${(sale as number).toLocaleString()}</span>
-                              <span className="text-[10px] md:text-xs font-semibold px-2 py-1 rounded bg-destructive text-destructive-foreground">
+                              <span className="promo-badge-base promo-badge-discount">
                                 SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
                               </span>
                             </div>
@@ -1242,9 +1242,9 @@ const subtitle = formatVariantSubtitle(raw, title);
 
                     {(hasGet5 || hasRepower) && (
                       <div className="promo-badges flex justify-center mt-3">
-                        {hasGet5 && (
+{hasGet5 && (
                           <span className="promo-badge-base promo-badge-warranty badge" aria-label="5 Year Warranty">
-                            <span className="mr-1">🛡️</span>
+                            <Shield className="w-3.5 h-3.5" />
                             <span>{warrantyBonus?.shortBadge || '5 Year Warranty'}</span>
                           </span>
                         )}
