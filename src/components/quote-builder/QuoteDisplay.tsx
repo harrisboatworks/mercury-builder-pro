@@ -18,7 +18,8 @@ import { toast } from '@/hooks/use-toast';
 import confetti from 'canvas-confetti';
 import { supabase } from '@/integrations/supabase/client';
 import { generateQuotePDF } from '@/lib/pdf-generator';
-
+import { motion } from 'framer-motion';
+import { format } from 'date-fns';
 interface QuoteDisplayProps {
   quoteData: QuoteData;
   onStepComplete: (data: { financing: any; hasTradein: boolean; tradeinInfo?: any }) => void;
@@ -795,6 +796,34 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
               </div>
             )}
             
+            {/* Featured promo banner */}
+            {financingOptions.length > 0 && financingOptions[0].is_promo && financingOptions[0].image_url && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-6 relative rounded-xl overflow-hidden shadow-xl"
+              >
+                <img
+                  src={financingOptions[0].image_url}
+                  alt={financingOptions[0].image_alt_text}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+                  <div className="text-white p-6">
+                    <h3 className="text-3xl font-bold mb-2">
+                      {financingOptions[0].rate}% Financing Available
+                    </h3>
+                    <p className="text-lg opacity-90">{financingOptions[0].promo_text}</p>
+                    {financingOptions[0].promo_end_date && (
+                      <p className="text-sm opacity-75 mt-2">
+                        Offer ends {format(new Date(financingOptions[0].promo_end_date), 'MMMM dd, yyyy')}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
             {calculateTotal() >= 5000 && financingOptions.length > 0 && (
               <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-6 mt-6">
                 <h3 className="text-xl font-bold mb-4">Financing Available</h3>
