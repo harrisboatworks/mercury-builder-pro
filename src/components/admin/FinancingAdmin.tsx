@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { Plus, Edit, Trash, TrendingUp, Calendar } from "lucide-react";
+import { Plus, Edit, Trash, TrendingUp, Calendar, Upload, X } from "lucide-react";
 import { format } from "date-fns";
 
 interface FinancingOption {
@@ -16,23 +16,31 @@ interface FinancingOption {
   promo_end_date?: string;
   is_active: boolean;
   display_order: number;
+  image_url?: string;
+  image_alt_text?: string;
 }
 
 export default function FinancingAdmin() {
   const [options, setOptions] = useState<FinancingOption[]>([]);
   const [isAddingNew, setIsAddingNew] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [formData, setFormData] = useState<Partial<FinancingOption>>({
-    name: '',
-    rate: 7.99,
-    term_months: 60,
-    min_amount: 5000,
-    is_promo: false,
-    promo_text: '',
-    is_active: true,
-    display_order: 0
-  });
-  const { toast } = useToast();
+const [formData, setFormData] = useState<Partial<FinancingOption>>({
+  name: '',
+  rate: 7.99,
+  term_months: 60,
+  min_amount: 5000,
+  is_promo: false,
+  promo_text: '',
+  promo_end_date: '',
+  is_active: true,
+  display_order: 0,
+  image_url: '',
+  image_alt_text: ''
+});
+const { toast } = useToast();
+
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string>("");
 
   useEffect(() => {
     loadFinancingOptions();
@@ -53,24 +61,61 @@ export default function FinancingAdmin() {
     } else {
       setOptions(data || []);
     }
+};
+  
+  // Upload promo image to Supabase storage and return public URL
+  const handleImageUpload = async (file: File) => {
+    const fileName = `financing/${Date.now()}-${file.name}`;
+    const { data, error } = await supabase.storage
+      .from('promo-images')
+      .upload(fileName, file);
+
+    if (error) {
+      toast({
+        title: "Error uploading image",
+        description: error.message,
+        variant: "destructive",
+      });
+      return null;
+    }
+
+    const { data: publicData } = supabase.storage
+      .from('promo-images')
+      .getPublicUrl(fileName);
+
+    return publicData.publicUrl as string;
   };
 
-  const handleSave = async () => {
+const handleSave = async () => {
     if (!formData.name || !formData.rate || !formData.term_months) {
       toast({
         title: "Missing required fields",
         description: "Please fill in all required fields",
-        variant: "destructive"
+        variant: "destructive",
       });
       return;
     }
+
+    let imageUrl = formData.image_url || "";
+
+    if (imageFile) {
+      const uploadedUrl = await handleImageUpload(imageFile);
+      if (uploadedUrl) {
+        imageUrl = uploadedUrl;
+      }
+    }
+
+    const saveData = {
+      ...formData,
+      image_url: imageUrl,
+    } as Partial<FinancingOption>;
 
     if (editingId) {
       // Update existing
       const { error } = await (supabase as any)
         .from('financing_options')
         .update({
-          ...formData,
+          ...saveData,
           updated_at: new Date().toISOString()
         })
         .eq('id', editingId);
@@ -79,31 +124,32 @@ export default function FinancingAdmin() {
         toast({
           title: "Error updating financing option",
           description: error.message,
-          variant: "destructive"
+          variant: "destructive",
         });
       } else {
         toast({
           title: "Success",
-          description: "Financing option updated"
+          description: "Financing option updated",
         });
         setEditingId(null);
+        setIsAddingNew(false);
       }
     } else {
       // Create new
       const { error } = await (supabase as any)
         .from('financing_options')
-        .insert([formData]);
+        .insert([saveData]);
 
       if (error) {
         toast({
           title: "Error creating financing option",
           description: error.message,
-          variant: "destructive"
+          variant: "destructive",
         });
       } else {
         toast({
           title: "Success",
-          description: "Financing option created"
+          description: "Financing option created",
         });
         setIsAddingNew(false);
       }
@@ -116,9 +162,14 @@ export default function FinancingAdmin() {
       min_amount: 5000,
       is_promo: false,
       promo_text: '',
+      promo_end_date: '',
       is_active: true,
-      display_order: 0
+      display_order: 0,
+      image_url: '',
+      image_alt_text: '',
     });
+    setImageFile(null);
+    setImagePreview('');
     loadFinancingOptions();
   };
 
@@ -145,10 +196,12 @@ export default function FinancingAdmin() {
     }
   };
 
-  const handleEdit = (option: FinancingOption) => {
+const handleEdit = (option: FinancingOption) => {
     setFormData(option);
     setEditingId(option.id);
     setIsAddingNew(true);
+    setImageFile(null);
+    setImagePreview(option.image_url || '');
   };
 
   return (
@@ -156,9 +209,11 @@ export default function FinancingAdmin() {
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl font-bold">Financing Options</h1>
         <button
-          onClick={() => {
+onClick={() => {
             setIsAddingNew(true);
             setEditingId(null);
+            setImageFile(null);
+            setImagePreview('');
             setFormData({
               name: '',
               rate: 7.99,
@@ -166,8 +221,11 @@ export default function FinancingAdmin() {
               min_amount: 5000,
               is_promo: false,
               promo_text: '',
+              promo_end_date: '',
               is_active: true,
-              display_order: options.length
+              display_order: options.length,
+              image_url: '',
+              image_alt_text: ''
             });
           }}
           className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
@@ -252,7 +310,7 @@ export default function FinancingAdmin() {
               </label>
             </div>
             
-            {formData.is_promo && (
+{formData.is_promo && (
               <>
                 <div>
                   <label className="block text-sm font-medium mb-1">Promo Text</label>
@@ -274,6 +332,66 @@ export default function FinancingAdmin() {
                     className="w-full px-3 py-2 border rounded-lg"
                   />
                 </div>
+
+                <div className="col-span-2">
+                  <label className="block text-sm font-medium mb-1">Promo Image (Optional)</label>
+                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-4">
+                    {(formData.image_url || imagePreview) ? (
+                      <div className="relative">
+                        <img 
+                          src={imagePreview || (formData.image_url || '')} 
+                          alt={formData.image_alt_text || 'Promo image'}
+                          className="w-full h-32 object-cover rounded-lg"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setImageFile(null);
+                            setImagePreview('');
+                            setFormData({ ...formData, image_url: '', image_alt_text: '' });
+                          }}
+                          className="absolute top-2 right-2 p-1 bg-red-500 text-white rounded-full hover:bg-red-600"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                    ) : (
+                      <label className="flex flex-col items-center justify-center h-32 cursor-pointer hover:bg-gray-50">
+                        <Upload className="w-8 h-8 text-gray-400 mb-2" />
+                        <span className="text-sm text-gray-600">Click to upload promo image</span>
+                        <span className="text-xs text-gray-500 mt-1">Recommended: 1200x400px</span>
+                        <input
+                          type="file"
+                          accept="image/*"
+                          className="hidden"
+                          onChange={(e) => {
+                            const file = e.target.files?.[0];
+                            if (file) {
+                              setImageFile(file);
+                              setImagePreview(URL.createObjectURL(file));
+                            }
+                          }}
+                        />
+                      </label>
+                    )}
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Use official Mercury/manufacturer promo graphics or professional banners
+                  </p>
+                </div>
+                
+                {(formData.image_url || imagePreview) && (
+                  <div className="col-span-2">
+                    <label className="block text-sm font-medium mb-1">Image Alt Text</label>
+                    <input
+                      type="text"
+                      value={formData.image_alt_text || ''}
+                      onChange={(e) => setFormData({ ...formData, image_alt_text: e.target.value })}
+                      className="w-full px-3 py-2 border rounded-lg"
+                      placeholder="e.g., Mercury Marine 4.9% financing promotion"
+                    />
+                  </div>
+                )}
               </>
             )}
             
@@ -309,9 +427,11 @@ export default function FinancingAdmin() {
               Save
             </button>
             <button
-              onClick={() => {
+onClick={() => {
                 setIsAddingNew(false);
                 setEditingId(null);
+                setImageFile(null);
+                setImagePreview('');
                 setFormData({
                   name: '',
                   rate: 7.99,
@@ -319,8 +439,11 @@ export default function FinancingAdmin() {
                   min_amount: 5000,
                   is_promo: false,
                   promo_text: '',
+                  promo_end_date: '',
                   is_active: true,
-                  display_order: 0
+                  display_order: 0,
+                  image_url: '',
+                  image_alt_text: ''
                 });
               }}
               className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400"
