@@ -1,4 +1,4 @@
-import QuoteBuilder from '@/components/QuoteBuilder';
+import QuoteBuilder from '@/components/quote-builder/QuoteBuilder';
 
 const Index = () => {
   return <QuoteBuilder />;
