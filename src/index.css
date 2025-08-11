@@ -100,14 +100,6 @@
     --badge-blue-1: 210 58% 48%;
     --badge-blue-2: 210 58% 36%;
     --badge-blue-border: 210 58% 31%;
-
-    /* Accent tokens for price pills and warranty */
-    --accent-emerald-400: 152 58% 42%;
-    --accent-emerald-600: 152 58% 32%;
-    --accent-emerald-700: 152 58% 27%;
-    --accent-blue-400: 210 58% 48%;
-    --accent-blue-600: 210 58% 36%;
-    --accent-blue-700: 210 58% 31%;
   }
 
   .dark {
@@ -506,7 +498,7 @@
 
   /* Stock badge positioning and sizing */
   .stock-badge {
-    @apply absolute top-2 right-2 px-2 py-0.5 rounded-full text-xs font-semibold shadow z-10;
+    @apply absolute top-2 right-2 px-2.5 py-1 rounded text-[11px] font-semibold uppercase shadow z-10;
   }
 
 
