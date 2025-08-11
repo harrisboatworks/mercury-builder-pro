@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-import { RefreshCw, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Plus } from 'lucide-react';
+import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -1244,7 +1244,7 @@ const subtitle = formatVariantSubtitle(raw, title);
                       <div className="promo-badges flex justify-center mt-3">
                         {hasGet5 && (
                           <span className="promo-badge-base promo-badge-warranty badge" aria-label="5 Year Warranty">
-                            <span className="mr-1">🛡️</span>
+                            <ShieldCheck className="w-4 h-4" aria-hidden="true" />
                             <span>{warrantyBonus?.shortBadge || '5 Year Warranty'}</span>
                           </span>
                         )}
@@ -1258,7 +1258,7 @@ const subtitle = formatVariantSubtitle(raw, title);
                                 onMouseEnter={() => track('rebate_badge_hover', { model_id: motor.id, model_name: motor.model })}
                                 onClick={(e) => e.stopPropagation()}
                               >
-                                <span className="badge__icon" aria-hidden="true"><Plus className="w-3.5 h-3.5" /></span>
+                                <span className="badge__icon" aria-hidden="true"><RefreshCcw className="w-4 h-4" /></span>
                                 <span className="badge__text">Repower Rebate</span>
                               </span>
                             </TooltipTrigger>
