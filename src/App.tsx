@@ -1,4 +1,6 @@
 import Dev from "./pages/Dev";
+import { useEffect } from "react";
+import { SITE_URL } from "./lib/site";
 import { Toaster } from "@/components/ui/toaster";
 import NewQuote from "./pages/NewQuote";
 import { Toaster as Sonner } from "@/components/ui/sonner";
