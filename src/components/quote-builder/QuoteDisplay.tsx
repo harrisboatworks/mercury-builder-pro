@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle, CreditCard, Calendar as CalendarIcon } from 'lucide-react';
+import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle, CreditCard, Calendar as CalendarIcon, Image } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, normalizeBrand } from '@/lib/trade-valuation';
 import { Progress } from '@/components/ui/progress';
@@ -800,54 +800,71 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                 <h3 className="text-xl font-bold mb-4">Financing Available</h3>
                 
                 {financingOptions.map((option) => (
-                  <div
-                    key={option.id}
-                    onClick={() => setSelectedFinancing(option.id)}
-                    className={`p-4 border-2 rounded-lg mb-3 cursor-pointer transition-all
-                      ${selectedFinancing === option.id 
-                        ? 'border-blue-500 bg-blue-50' 
-                        : 'border-gray-200 hover:border-blue-300'
-                      }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <span className="font-bold text-lg">{option.name}</span>
-                          {option.is_promo && (
-                            <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold animate-pulse">
-                              PROMO
-                            </span>
-                          )}
-                        </div>
-                        {option.promo_text && (
-                          <p className="text-sm text-gray-600 mt-1">{option.promo_text}</p>
-                        )}
-                      </div>
-                      
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-blue-600">{option.rate}%</div>
-                        <div className="text-sm text-gray-600">{option.term_months} months</div>
-                      </div>
-                    </div>
-                    
-                    {selectedFinancing === option.id && (
-                      <div className="mt-4 pt-4 border-t">
-                        <div className="grid grid-cols-2 gap-4 text-sm">
-                          <div>
-                            <span className="text-gray-600">Monthly Payment:</span>
-                            <span className="font-bold ml-2">
-                              ${calculateMonthlyPayment(calculateTotal(), option.rate, option.term_months)}
-                            </span>
-                          </div>
-                          <div>
-                            <span className="text-gray-600">Total Interest:</span>
-                            <span className="font-bold ml-2">
-                              ${calculateTotalInterest(calculateTotal(), option.rate, option.term_months)}
-                            </span>
-                          </div>
-                        </div>
+                  <div key={option.id} className="relative mb-3">
+                    {/* Show promo image if available */}
+                    {option.is_promo && option.image_url && (
+                      <div className="mb-3 rounded-lg overflow-hidden">
+                        <img
+                          src={option.image_url}
+                          alt={option.image_alt_text || `${option.name} promotion`}
+                          className="w-full h-32 object-cover"
+                        />
                       </div>
                     )}
+
+                    <div
+                      onClick={() => setSelectedFinancing(option.id)}
+                      className={`p-4 border-2 rounded-lg cursor-pointer transition-all
+                        ${selectedFinancing === option.id 
+                          ? 'border-blue-500 bg-blue-50 shadow-lg' 
+                          : 'border-gray-200 hover:border-blue-300'
+                        }
+                        ${option.is_promo && !option.image_url ? 'bg-gradient-to-r from-yellow-50 to-orange-50' : ''}
+                      `}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="flex items-center gap-2">
+                            {!option.image_url && option.is_promo && (
+                              <Image className="w-5 h-5 text-yellow-600" />
+                            )}
+                            <span className="font-bold text-lg">{option.name}</span>
+                            {option.is_promo && (
+                              <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold animate-pulse">
+                                LIMITED TIME
+                              </span>
+                            )}
+                          </div>
+                          {option.promo_text && (
+                            <p className="text-sm text-gray-600 mt-1">{option.promo_text}</p>
+                          )}
+                        </div>
+                        
+                        <div className="text-right">
+                          <div className="text-2xl font-bold text-blue-600">{option.rate}%</div>
+                          <div className="text-sm text-gray-600">{option.term_months} months</div>
+                        </div>
+                      </div>
+                      
+                      {selectedFinancing === option.id && (
+                        <div className="mt-4 pt-4 border-t">
+                          <div className="grid grid-cols-2 gap-4 text-sm">
+                            <div>
+                              <span className="text-gray-600">Monthly Payment:</span>
+                              <span className="font-bold ml-2">
+                                ${calculateMonthlyPayment(calculateTotal(), option.rate, option.term_months)}
+                              </span>
+                            </div>
+                            <div>
+                              <span className="text-gray-600">Total Interest:</span>
+                              <span className="font-bold ml-2">
+                                ${calculateTotalInterest(calculateTotal(), option.rate, option.term_months)}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
