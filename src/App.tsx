@@ -20,6 +20,7 @@ import StagingPricingTweaks from "./pages/StagingPricingTweaks";
 import StagingImageSizing from "./pages/StagingImageSizing";
 import StagingImageSizingV2 from "./pages/StagingImageSizingV2";
 import StagingImageSizingFinal from "./pages/StagingImageSizingFinal";
+import AdminFinancing from "./pages/AdminFinancing";
 
 const queryClient = new QueryClient();
 function Canonical() {
@@ -72,6 +73,14 @@ const App = () => (
                 }
               />
               <Route path="/finance-calculator" element={<FinanceCalculator />} />
+              <Route
+                path="/admin/financing"
+                element={
+                  <ProtectedRoute>
+                    <AdminFinancing />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="/dev" element={<Dev />} />
               <Route path="/staging/pricing-spacing" element={<StagingPricingTweaks />} />
               <Route path="/quotes/new" element={<NewQuote />} />

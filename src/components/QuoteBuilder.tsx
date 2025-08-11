@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { LogOut, User } from 'lucide-react';
+import { LogOut, User, DollarSign } from 'lucide-react';
 import { useAuth } from '@/components/auth/AuthProvider';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
@@ -197,6 +197,10 @@ const QuoteBuilder = () => {
                     </div>
                     <Button variant="secondary" size="sm" onClick={() => (window.location.href = '/admin/promotions')}>
                       Promotions
+                    </Button>
+                    <Button variant="secondary" size="sm" onClick={() => (window.location.href = '/admin/financing')}>
+                      <DollarSign className="w-4 h-4 mr-2" />
+                      Financing
                     </Button>
                     <Button variant="secondary" size="sm" onClick={() => (window.location.href = '/admin/quotes')}>
                       Quotes
