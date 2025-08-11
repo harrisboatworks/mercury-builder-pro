@@ -81,6 +81,15 @@ const App = () => (
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <BrowserRouter>
+  <Routes>
+    {/* all your <Route .../> lines stay as-is */}
+  </Routes>
+
+  {/* put it HERE, not inside <Routes> */}
+  <Canonical />
+</BrowserRouter>
+
 
             {/* Global footer badges */}
             <footer className="mt-12 border-t border-border bg-muted/30">
