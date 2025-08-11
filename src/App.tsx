@@ -1,5 +1,6 @@
 import Dev from "./pages/Dev";
 import { Toaster } from "@/components/ui/toaster";
+import NewQuote from "./pages/NewQuote";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -58,6 +59,7 @@ const App = () => (
               <Route path="/finance-calculator" element={<FinanceCalculator />} />
               <Route path="/dev" element={<Dev />} />
               <Route path="/staging/pricing-spacing" element={<StagingPricingTweaks />} />
+              <Route path="/quotes/new" element={<NewQuote />} />
               <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
               <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
               <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
