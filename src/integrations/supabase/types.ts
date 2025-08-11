@@ -125,6 +125,57 @@ export type Database = {
         }
         Relationships: []
       }
+      financing_options: {
+        Row: {
+          created_at: string
+          display_order: number
+          id: string
+          image_alt_text: string | null
+          image_url: string | null
+          is_active: boolean
+          is_promo: boolean
+          min_amount: number
+          name: string
+          promo_end_date: string | null
+          promo_text: string | null
+          rate: number
+          term_months: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_order?: number
+          id?: string
+          image_alt_text?: string | null
+          image_url?: string | null
+          is_active?: boolean
+          is_promo?: boolean
+          min_amount?: number
+          name: string
+          promo_end_date?: string | null
+          promo_text?: string | null
+          rate: number
+          term_months: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_order?: number
+          id?: string
+          image_alt_text?: string | null
+          image_url?: string | null
+          is_active?: boolean
+          is_promo?: boolean
+          min_amount?: number
+          name?: string
+          promo_end_date?: string | null
+          promo_text?: string | null
+          rate?: number
+          term_months?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       heartbeat: {
         Row: {
           created_at: string
