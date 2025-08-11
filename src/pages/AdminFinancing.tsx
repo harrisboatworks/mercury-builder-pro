@@ -2,17 +2,31 @@
 import { useMemo, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
-import type { Database } from "@/integrations/supabase/types";
+// Removed Database type import because the table isn't in generated types yet
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import FinancingForm, { FinancingFormValues } from "@/components/admin/FinancingForm";
-import { Label } from "@/components/ui/label";
+// Removed unused Label import
 import { toast } from "sonner";
 
-type FinancingOption = Database["public"]["Tables"]["financing_options"]["Row"];
+// Temporary local type until Supabase types are regenerated
+type FinancingOption = {
+  id: string;
+  name: string;
+  rate: number;
+  term_months: number;
+  min_amount: number;
+  is_promo: boolean | null;
+  promo_text: string | null;
+  promo_end_date: string | null; // date string 'YYYY-MM-DD'
+  is_active: boolean | null;
+  display_order: number | null;
+  created_at: string | null;
+  updated_at: string | null;
+};
 
 export default function AdminFinancing() {
   const qc = useQueryClient();
@@ -23,7 +37,7 @@ export default function AdminFinancing() {
   const { data, isLoading, error } = useQuery({
     queryKey: ["financing_options", "all"],
     queryFn: async () => {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from("financing_options")
         .select("*")
         .order("display_order", { ascending: true })
@@ -47,7 +61,7 @@ export default function AdminFinancing() {
       promo_end_date: values.is_promo && values.promo_end_date ? values.promo_end_date : null,
     };
 
-    const { error } = await supabase.from("financing_options").insert(payload);
+    const { error } = await (supabase as any).from("financing_options").insert(payload);
     if (error) {
       console.error("Create financing option failed:", error);
       toast.error("Failed to create option");
@@ -65,7 +79,7 @@ export default function AdminFinancing() {
       promo_end_date: values.is_promo && values.promo_end_date ? values.promo_end_date : null,
     };
 
-    const { error } = await supabase.from("financing_options").update(payload).eq("id", id);
+    const { error } = await (supabase as any).from("financing_options").update(payload).eq("id", id);
     if (error) {
       console.error("Update financing option failed:", error);
       toast.error("Failed to update option");
@@ -78,7 +92,7 @@ export default function AdminFinancing() {
 
   const handleDelete = async (row: FinancingOption) => {
     if (!confirm(`Delete "${row.name}"? This cannot be undone.`)) return;
-    const { error } = await supabase.from("financing_options").delete().eq("id", row.id);
+    const { error } = await (supabase as any).from("financing_options").delete().eq("id", row.id);
     if (error) {
       console.error("Delete financing option failed:", error);
       toast.error("Failed to delete option");
