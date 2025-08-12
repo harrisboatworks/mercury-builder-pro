@@ -5,7 +5,7 @@ import type { Database } from './types';
 const SUPABASE_URL = "https://eutsoqdpjurknjsshxes.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU";
 
-// In-memory storage to avoid localStorage (not allowed in Lovable iframe)
+// In-memory storage fallback
 const __memoryStore: Record<string, string> = {};
 const memoryStorage = {
   getItem: (key: string) => (__memoryStore[key] ?? null),
@@ -13,12 +13,26 @@ const memoryStorage = {
   removeItem: (key: string) => { delete __memoryStore[key] },
 };
 
+// Prefer persistent localStorage when available (prevents login loops on refresh)
+const supportsLocalStorage = typeof window !== 'undefined' && (() => {
+  try {
+    const k = '__supabase_test__';
+    window.localStorage.setItem(k, '1');
+    window.localStorage.removeItem(k);
+    return true;
+  } catch {
+    return false;
+  }
+})();
+
+const safeStorage: Pick<Storage, 'getItem' | 'setItem' | 'removeItem'> = supportsLocalStorage ? window.localStorage : memoryStorage;
+
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";
 
 export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
   auth: {
-    storage: memoryStorage,
+    storage: safeStorage,
     persistSession: true,
     autoRefreshToken: true,
   }
