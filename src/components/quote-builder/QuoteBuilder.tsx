@@ -15,6 +15,7 @@ import { useAuth } from "@/components/auth/AuthProvider";
 
 export default function QuoteBuilder() {
   const [currentStep, setCurrentStep] = useState(1);
+  const [maxStepReached, setMaxStepReached] = useState(1);
   const [selectedMotor, setSelectedMotor] = useState<any>(null);
   const [purchasePath, setPurchasePath] = useState<'loose' | 'installed' | null>(null);
   const [installConfig, setInstallConfig] = useState<any>(null);
@@ -33,6 +34,10 @@ export default function QuoteBuilder() {
     }
   }, [totalXP]);
 
+  // Track furthest step reached so users can navigate back to any unlocked step
+  useEffect(() => {
+    setMaxStepReached((prev) => Math.max(prev, currentStep));
+  }, [currentStep]);
   const handleMotorSelect = (motor: any) => {
     setSelectedMotor(motor);
     setCurrentStep(2);
@@ -94,8 +99,8 @@ export default function QuoteBuilder() {
                     <motion.button
                       type="button"
                       title={step.label}
-                      onClick={() => step.number <= currentStep && setCurrentStep(step.number)}
-                      disabled={step.number > currentStep}
+                      onClick={() => step.number <= maxStepReached && setCurrentStep(step.number)}
+                      disabled={step.number > maxStepReached}
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       className={`flex items-center justify-center w-10 h-10 rounded-full font-bold transition-all
@@ -103,7 +108,9 @@ export default function QuoteBuilder() {
                           ? 'bg-blue-600 text-white shadow-lg animate-pulse' 
                           : currentStep > step.number 
                             ? 'bg-green-500 text-white hover:scale-110 cursor-pointer' 
-                            : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                            : step.number <= maxStepReached
+                              ? 'bg-gray-200 text-gray-400 hover:scale-110 cursor-pointer'
+                              : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                         }`}
                       aria-label={step.label}
                     >
