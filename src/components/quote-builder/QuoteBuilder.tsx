@@ -1,5 +1,5 @@
 // src/components/quote-builder/QuoteBuilder.tsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MotorSelection } from "./MotorSelection";
 import PurchasePath from "./PurchasePath";
@@ -10,7 +10,6 @@ import { Sparkles } from "lucide-react";
 import confetti from "canvas-confetti";
 import { xpActions } from "@/config/xpActions";
 
-
 export default function QuoteBuilder() {
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedMotor, setSelectedMotor] = useState<any>(null);
@@ -18,6 +17,16 @@ export default function QuoteBuilder() {
   const [installConfig, setInstallConfig] = useState<any>(null);
   const [totalXP, setTotalXP] = useState(0);
   const [quoteForSchedule, setQuoteForSchedule] = useState<any | null>(null);
+
+  // Auto-dismiss achievement badge after 3s when XP threshold reached
+  const [showAchievement, setShowAchievement] = useState(false);
+  useEffect(() => {
+    if (totalXP >= 100) {
+      setShowAchievement(true);
+      const t = setTimeout(() => setShowAchievement(false), 3000);
+      return () => clearTimeout(t);
+    }
+  }, [totalXP]);
 
   const handleMotorSelect = (motor: any) => {
     setSelectedMotor(motor);
@@ -206,7 +215,7 @@ export default function QuoteBuilder() {
         </AnimatePresence>
 
       {/* Floating Achievement Toast */}
-      {totalXP >= 100 && (
+      {showAchievement && (
         <motion.div
           initial={{ bottom: -100 }}
           animate={{ bottom: 20 }}
