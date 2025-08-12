@@ -994,7 +994,7 @@ const handleMotorSelection = (motor: Motor) => {
         onToggle={() => setFiltersOpen(!filtersOpen)}
       />
 
-      <div className="flex-1 space-y-8 px-4 py-8">
+      <div className="flex-1 space-y-8 max-w-7xl mx-auto">
         <div className="text-center space-y-4">
           <div className="flex items-center justify-center gap-4">
             <img src={mercuryLogo} alt="Mercury Marine" className="h-12 w-auto" />
@@ -1126,7 +1126,7 @@ const handleMotorSelection = (motor: Motor) => {
             <p className="text-muted-foreground">{emptyStateMessages.noResults.submessage}</p>
           </Card>
         ) : (
-          <div className={`grid gap-6 motors-grid items-stretch ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1'}`}>
+          <div className={`grid gap-6 motors-grid items-stretch ${viewMode === 'grid' ? 'grid-cols-1 lg:grid-cols-2' : 'grid-cols-1'}`}>
             {filteredMotors.map(motor => {
               const msrp = motor.basePrice && motor.basePrice > 0 ? motor.basePrice : null;
               const sale = motor.salePrice && motor.salePrice > 0 ? motor.salePrice : null;

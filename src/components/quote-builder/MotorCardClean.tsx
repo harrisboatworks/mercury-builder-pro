@@ -27,26 +27,26 @@ export function MotorCardClean({ motor, onSelect, onQuickView }: MotorCardCleanP
   const hasRepower = /(repower(\s*rebate)?)/i.test(promoBlob);
 
   const inStock = motor.stockStatus === 'In Stock';
+  const status = motor.stockStatus || 'Out of Stock';
+  const statusCls = status === 'In Stock' ? 'bg-in-stock/15 text-in-stock' : status === 'On Order' ? 'bg-accent/30 text-accent-foreground' : 'bg-destructive/15 text-destructive';
 
   return (
     <motion.div whileHover={{ y: -4, transition: { duration: 0.2 } }}>
-      <Card className="bg-card text-card-foreground rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-border flex flex-col">
+      <Card className="bg-card text-card-foreground rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-visible border border-border flex flex-col">
         {/* Header */}
         <div className="p-6 border-b border-border">
           <div className="flex justify-between items-start mb-4">
-            <div>
-              <h3 className="text-xl font-bold text-foreground line-clamp-2">{title}</h3>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-xl font-bold text-foreground truncate" title={title}>{title}</h3>
               {subtitle && (
-                <p className="text-sm text-muted-foreground mt-1 line-clamp-1" title={subtitle}>{subtitle}</p>
+                <p className="text-sm text-muted-foreground mt-1 truncate" title={subtitle}>{subtitle}</p>
               )}
             </div>
 
-            {inStock && (
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium bg-in-stock/15 text-in-stock">
-                <Check className="w-3 h-3" />
-                In Stock
-              </span>
-            )}
+            <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium ${statusCls}`}>
+              {status === 'In Stock' && <Check className="w-3 h-3" />}
+              {status}
+            </span>
           </div>
 
           {/* Image */}
