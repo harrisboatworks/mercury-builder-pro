@@ -9,6 +9,9 @@ import { ScheduleConsultation } from "./ScheduleConsultation";
 import { Sparkles } from "lucide-react";
 import confetti from "canvas-confetti";
 import { xpActions } from "@/config/xpActions";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { useAuth } from "@/components/auth/AuthProvider";
 
 export default function QuoteBuilder() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -17,6 +20,8 @@ export default function QuoteBuilder() {
   const [installConfig, setInstallConfig] = useState<any>(null);
   const [totalXP, setTotalXP] = useState(0);
   const [quoteForSchedule, setQuoteForSchedule] = useState<any | null>(null);
+
+  const { user, loading, signOut } = useAuth();
 
   // Auto-dismiss achievement badge after 3s when XP threshold reached
   const [showAchievement, setShowAchievement] = useState(false);
@@ -109,20 +114,39 @@ export default function QuoteBuilder() {
               </div>
             </div>
             
-            {/* XP Display */}
-            {totalXP > 0 && (
-              <motion.div
-                initial={{ scale: 0, rotate: -180 }}
-                animate={{ scale: 1, rotate: 0 }}
-                className="flex items-center gap-2 bg-gradient-to-r from-yellow-100 to-orange-100 px-4 py-2 rounded-full"
-              >
-                <Sparkles className="w-5 h-5 text-orange-600" />
-                <span className="font-bold text-orange-800">{totalXP} XP Total</span>
-              </motion.div>
-            )}
-          </div>
+            {/* Right side: XP + Admin */}
+            <div className="flex items-center gap-3">
+              {totalXP > 0 && (
+                <motion.div
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  className="flex items-center gap-2 bg-gradient-to-r from-yellow-100 to-orange-100 px-4 py-2 rounded-full"
+                >
+                  <Sparkles className="w-5 h-5 text-orange-600" />
+                  <span className="font-bold text-orange-800">{totalXP} XP Total</span>
+                </motion.div>
+              )}
+
+              {!loading && (
+                user ? (
+                  <div className="flex items-center gap-2">
+                    <Link to="/admin/quotes">
+                      <Button variant="secondary" size="sm">Admin</Button>
+                    </Link>
+                    <Button variant="outline" size="sm" onClick={async () => { await signOut(); }}>
+                      Sign Out
+                    </Button>
+                  </div>
+                ) : (
+                  <Link to="/auth">
+                    <Button size="sm">Admin Sign In</Button>
+                  </Link>
+                )
+              )}
+            </div>
         </div>
       </div>
+    </div>
 
       {/* Main Content */}
       <AnimatePresence mode="wait">
