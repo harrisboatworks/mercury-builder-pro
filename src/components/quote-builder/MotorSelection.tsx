@@ -1214,9 +1214,11 @@ const subtitle = formatVariantSubtitle(raw, title);
                           <span className="text-sm md:text-base font-medium text-foreground">Call for Price</span>
                         ) : hasSaleDisplay ? (
                           <div className="w-full flex items-center justify-between gap-2">
-                            <span className="text-xs md:text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
+                            {motor.stockStatus === 'In Stock' && (
+                              <span className="text-xs md:text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
+                            )}
                             <div className="flex items-center gap-2">
-                              <span className="text-lg font-bold text-destructive">${(sale as number).toLocaleString()}</span>
+                              <span className="text-lg font-bold text-destructive">${motor.price.toLocaleString()}</span>
                               <span className="text-[10px] md:text-xs font-semibold px-2 py-1 rounded bg-destructive text-destructive-foreground">
                                 SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
                               </span>
@@ -1224,16 +1226,12 @@ const subtitle = formatVariantSubtitle(raw, title);
                           </div>
                         ) : (
                           effectiveNoSaleLayout === 'placeholder' ? (
-                            <div className="w-full flex items-center justify-between gap-2">
-                              <span className="text-sm md:text-base font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
-                              <div className="flex items-center gap-2 opacity-0 select-none pointer-events-none" aria-hidden="true">
-                                <span className="text-lg font-bold">Our Price $0</span>
-                                <span className="text-xs font-semibold px-2 py-1 rounded">SAVE $0 (0%)</span>
-                              </div>
+                            <div className="w-full">
+                              <span className="text-lg font-semibold text-foreground">${motor.price.toLocaleString()}</span>
                             </div>
                           ) : (
                             <div className="w-full text-center">
-                              <span className="text-lg font-semibold text-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
+                              <span className="text-lg font-semibold text-foreground">${motor.price.toLocaleString()}</span>
                             </div>
                           )
                         )}
