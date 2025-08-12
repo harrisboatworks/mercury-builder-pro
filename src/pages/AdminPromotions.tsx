@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Card } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -8,7 +8,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/components/ui/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from '@/components/ui/dialog';
+import FinancingForm, { FinancingFormValues } from '@/components/admin/FinancingForm';
+import { toast } from 'sonner';
+import AdminNav from '@/components/admin/AdminNav';
 interface DbMotor {
   id: string;
   model: string;
@@ -313,6 +317,7 @@ const AdminPromotions = () => {
 
   return (
     <main className="container mx-auto px-4 py-8">
+      <AdminNav />
       <header className="mb-8">
         <h1 className="text-3xl font-bold">Promotions Manager</h1>
         <p className="text-muted-foreground">Create sales and bonus promos. Assign rules by model, motor type, or HP range.</p>

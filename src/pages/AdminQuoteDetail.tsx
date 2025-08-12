@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import AdminNav from '@/components/admin/AdminNav';
 
 interface QuoteDetail {
   id: string;
@@ -42,6 +43,7 @@ const AdminQuoteDetail = () => {
 
   return (
     <main className="container mx-auto px-4 py-8">
+      <AdminNav />
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold">Quote Details</h1>
         <Button variant="secondary" onClick={() => navigate('/admin/quotes')}>Back</Button>

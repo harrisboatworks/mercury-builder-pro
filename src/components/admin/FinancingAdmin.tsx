@@ -4,6 +4,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Plus, Edit, Trash, TrendingUp, Calendar, Upload, X } from "lucide-react";
 import { format } from "date-fns";
+import AdminNav from "@/components/admin/AdminNav";
+
 
 interface FinancingOption {
   id: string;
@@ -206,6 +208,7 @@ const handleEdit = (option: FinancingOption) => {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <AdminNav />
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl font-bold">Financing Options</h1>
         <button

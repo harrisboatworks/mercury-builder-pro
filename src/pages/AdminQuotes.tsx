@@ -10,6 +10,7 @@ import { AlertTriangle, Download } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import AdminNav from '@/components/admin/AdminNav';
 
 interface QuoteRow {
   id: string;
@@ -113,6 +114,7 @@ const AdminQuotes = () => {
 
   return (
     <main className="container mx-auto px-4 py-8">
+      <AdminNav />
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold">Quotes</h1>
         <div className="flex items-center gap-4">
