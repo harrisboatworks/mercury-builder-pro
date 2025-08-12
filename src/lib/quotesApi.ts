@@ -1,4 +1,5 @@
 // src/lib/quotesApi.ts
+import { supabase } from '@/integrations/supabase/client';
 
 // --- Types ---
 export type QuoteOption = { name: string; price: number };
@@ -20,22 +21,35 @@ export type CreateQuoteInput = {
 
 // --- Existing helpers ---
 export async function seedQuote() {
-  const res = await fetch('/api/quotes-seed');
+  const { data: { session } } = await supabase.auth.getSession();
+  const token = session?.access_token;
+  const res = await fetch('/api/quotes-seed', {
+    headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+  });
   if (!res.ok) throw new Error(`Seed failed: ${res.status}`);
   return res.json();
 }
 
 export async function listQuotes(limit = 20) {
-  const res = await fetch(`/api/quotes-list?limit=${limit}`);
+  const { data: { session } } = await supabase.auth.getSession();
+  const token = session?.access_token;
+  const res = await fetch(`/api/quotes-list?limit=${limit}`, {
+    headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+  });
   if (!res.ok) throw new Error(`List failed: ${res.status}`);
   return res.json() as Promise<{ ok: boolean; quotes: any[] }>;
 }
 
 // --- New: create a real quote (POST) ---
 export async function createQuote(input: CreateQuoteInput) {
+  const { data: { session } } = await supabase.auth.getSession();
+  const token = session?.access_token;
   const res = await fetch('/api/quotes', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      ...(token ? { Authorization: `Bearer ${token}` } : {})
+    },
     body: JSON.stringify(input),
   });
   if (!res.ok) {

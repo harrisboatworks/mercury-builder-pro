@@ -1,9 +1,32 @@
 // api/quotes.js  — Vercel serverless function
 import { supabaseAdmin } from '../lib/supabaseAdmin.js';
+import { createClient } from '@supabase/supabase-js';
+
+const SUPABASE_URL = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+async function requireAuth(req) {
+  try {
+    const auth = req.headers?.authorization || req.headers?.Authorization;
+    if (!auth || !auth.startsWith('Bearer ')) return null;
+    const token = auth.slice(7);
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { global: { headers: { Authorization: `Bearer ${token}` } } });
+    const { data: { user }, error } = await supabase.auth.getUser();
+    if (error || !user) return null;
+    return user;
+  } catch {
+    return null;
+  }
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ ok: false, error: 'Use POST' });
+  }
+
+  const user = await requireAuth(req);
+  if (!user) {
+    return res.status(401).json({ ok: false, error: 'Unauthorized' });
   }
 
   // Parse JSON body (works whether req.body is object or string)

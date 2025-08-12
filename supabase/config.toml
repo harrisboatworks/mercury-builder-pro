@@ -1,10 +1,10 @@
 project_id = "eutsoqdpjurknjsshxes"
 
 [functions.scrape-inventory]
-verify_jwt = false
+verify_jwt = true
 
 [functions.auth-health-summary]
-verify_jwt = false
+verify_jwt = true
 
 [functions.scrape-motor-details]
-verify_jwt = false
+verify_jwt = true
