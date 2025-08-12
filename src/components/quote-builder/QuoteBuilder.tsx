@@ -5,6 +5,7 @@ import { MotorSelection } from "./MotorSelection";
 import PurchasePath from "./PurchasePath";
 import InstallationConfig from "./InstallationConfig";
 import { QuoteDisplay as LegacyQuoteDisplay } from "./QuoteDisplay";
+import { ScheduleConsultation } from "./ScheduleConsultation";
 import { Sparkles } from "lucide-react";
 import confetti from "canvas-confetti";
 import { xpActions } from "@/config/xpActions";
@@ -16,6 +17,7 @@ export default function QuoteBuilder() {
   const [purchasePath, setPurchasePath] = useState<'loose' | 'installed' | null>(null);
   const [installConfig, setInstallConfig] = useState<any>(null);
   const [totalXP, setTotalXP] = useState(0);
+  const [quoteForSchedule, setQuoteForSchedule] = useState<any | null>(null);
 
   const handleMotorSelect = (motor: any) => {
     setSelectedMotor(motor);
@@ -60,7 +62,8 @@ export default function QuoteBuilder() {
     { number: 1, label: "Select Motor", icon: "🚤" },
     { number: 2, label: "Purchase Type", icon: "🛒" },
     { number: 3, label: "Configure", icon: "⚙️" },
-    { number: 4, label: "Your Quote", icon: "📋" }
+    { number: 4, label: "Your Quote", icon: "📋" },
+    { number: 5, label: "Consultation", icon: "📅" },
   ];
 
   return (
@@ -168,12 +171,39 @@ export default function QuoteBuilder() {
                 } as any}
                 totalXP={totalXP}
                 onEarnXP={(amount) => setTotalXP((prev) => prev + amount)}
-                onStepComplete={() => {}}
+                onStepComplete={(data) => {
+                  setQuoteForSchedule({
+                    motor: selectedMotor,
+                    boatInfo: null,
+                    financing: data.financing,
+                    hasTradein: data.hasTradein,
+                  } as any);
+                  setTotalXP((prev) => prev + xpActions.completeQuote);
+                  setCurrentStep(5);
+                }}
                 onBack={() => setCurrentStep(purchasePath === 'installed' ? 3 : 2)}
               />
             </motion.div>
           )}
-      </AnimatePresence>
+          {currentStep === 5 && (
+            <motion.div
+              key="schedule-consultation"
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+            >
+              <ScheduleConsultation
+                quoteData={(quoteForSchedule ?? {
+                  motor: selectedMotor,
+                  boatInfo: null,
+                  financing: { downPayment: 0, term: 48, rate: 7.99 },
+                  hasTradein: false,
+                }) as any}
+                onBack={() => setCurrentStep(4)}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
 
       {/* Floating Achievement Toast */}
       {totalXP >= 100 && (
