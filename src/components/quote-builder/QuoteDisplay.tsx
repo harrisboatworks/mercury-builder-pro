@@ -19,14 +19,18 @@ import confetti from 'canvas-confetti';
 import { supabase } from '@/integrations/supabase/client';
 import { generateQuotePDF } from '@/lib/pdf-generator';
 import { motion } from 'framer-motion';
+import { xpActions } from '@/config/xpActions';
+import { xpRewards, getCurrentReward, getNextReward } from '@/config/xpRewards';
 import { format } from 'date-fns';
 interface QuoteDisplayProps {
   quoteData: QuoteData;
   onStepComplete: (data: { financing: any; hasTradein: boolean; tradeinInfo?: any }) => void;
   onBack: () => void;
+  totalXP?: number;
+  onEarnXP?: (amount: number) => void;
 }
 
-export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplayProps) => {
+export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, onEarnXP }: QuoteDisplayProps) => {
   const [downPayment, setDownPayment] = useState(0);
   const [term, setTerm] = useState(60);
   const [showTermComparison, setShowTermComparison] = useState(false);
@@ -38,6 +42,8 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
     message: string;
     points: string;
     color: 'gold' | 'blue';
+    rewardUnlocked?: string;
+    rewardValue?: number;
   } | null>(null);
   const [showFinancingInfoModal, setShowFinancingInfoModal] = useState(false);
   const [showReservationModal, setShowReservationModal] = useState(false);
@@ -266,6 +272,8 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
     message: string;
     points: string;
     color: 'gold' | 'blue';
+    rewardUnlocked?: string;
+    rewardValue?: number;
   };
 
   const showAchievement = (payload: Achievement) => setAchievement(payload);
@@ -297,27 +305,37 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   };
 
   const triggerCashCelebration = () => {
+    const projectedXP = (totalXP || 0) + xpActions.selectCash;
+    const reward = getCurrentReward(projectedXP);
     showAchievement({
       icon: '💰',
       title: 'CASH BUYER LOCKED IN!',
       subtitle: 'Maximum Savings Achieved',
       message: `You just saved $${cashSavings.toFixed(0)} in interest!`,
-      points: '+500 Captain Points',
+      points: `+${xpActions.selectCash} XP Points`,
       color: 'gold',
+      rewardUnlocked: reward?.reward,
+      rewardValue: reward?.value,
     });
+    onEarnXP?.(xpActions.selectCash);
     launchConfetti({ colors: ['#F2C94C', '#F2994A', '#F2C14E'] });
     playSound('success-cash');
   };
 
   const triggerFinanceCelebration = () => {
+    const projectedXP = (totalXP || 0) + xpActions.selectFinancing;
+    const reward = getCurrentReward(projectedXP);
     showAchievement({
       icon: '📅',
       title: 'SMART FINANCING ACTIVATED!',
       subtitle: 'Monthly Payment Plan Secured',
       message: `Just $${payments.monthly.toFixed(0)}/month gets you on the water!`,
-      points: '+500 Flexibility Points',
+      points: `+${xpActions.selectFinancing} XP Points`,
       color: 'blue',
+      rewardUnlocked: reward?.reward,
+      rewardValue: reward?.value,
     });
+    onEarnXP?.(xpActions.selectFinancing);
     launchConfetti({ colors: ['#60A5FA', '#06B6D4', '#A78BFA'] });
     playSound('success-finance');
   };
@@ -453,6 +471,43 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
         <p className="text-lg text-muted-foreground">
           Review your selection and financing options
         </p>
+      </div>
+
+      {/* Rewards Status */}
+      <div className="bg-gradient-to-r from-muted/50 to-primary/10 rounded-xl p-6 mb-6">
+        {(() => {
+          const current = getCurrentReward(totalXP);
+          const next = getNextReward(totalXP);
+          const lastXP = current?.xp ?? 0;
+          const progressPercent = next ? Math.min(100, Math.max(0, ((totalXP - lastXP) / (next.xp - lastXP)) * 100)) : 100;
+          const xpToNext = next ? Math.max(0, next.xp - totalXP) : 0;
+          return (
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <h3 className="font-bold text-lg mb-2">Your Rewards Status</h3>
+                <div className="flex items-center gap-4">
+                  <div className="text-3xl font-bold text-primary">{totalXP} XP</div>
+                  <div>
+                    {current ? (
+                      <div>
+                        <p className="text-green-600 font-semibold">✅ Unlocked: {current.reward}</p>
+                        <p className="text-sm text-muted-foreground">Value: ${current.value} - FREE with purchase!</p>
+                      </div>
+                    ) : (
+                      <p className="text-muted-foreground">{xpToNext} XP until {next?.reward}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className="w-48">
+                <div className="bg-muted rounded-full h-3 mb-2 overflow-hidden">
+                  <div className="bg-primary h-3 rounded-full" style={{ width: `${progressPercent}%` }} />
+                </div>
+                <p className="text-xs text-center text-muted-foreground">Next: {next?.reward} at {next?.xp} XP</p>
+              </div>
+            </div>
+          );
+        })()}
       </div>
 
       {/* Savings Celebration */}
@@ -1350,6 +1405,12 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
               </div>
               <div className="points-earned">{achievement.points}</div>
             </div>
+
+            {achievement.rewardUnlocked && (
+              <div className="mt-3 rounded-lg border-2 border-green-500 bg-green-50 p-3 text-green-700">
+                <div className="font-bold text-lg">You've unlocked: {achievement.rewardUnlocked}{achievement.rewardValue ? ` (Free - $${achievement.rewardValue} value)` : ''}</div>
+              </div>
+            )}
 
             <div className="progress-complete">
               <div className="progress-bar-fill"></div>

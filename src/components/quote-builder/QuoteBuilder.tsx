@@ -7,6 +7,8 @@ import InstallationConfig from "./InstallationConfig";
 import { QuoteDisplay as LegacyQuoteDisplay } from "./QuoteDisplay";
 import { Sparkles } from "lucide-react";
 import confetti from "canvas-confetti";
+import { xpActions } from "@/config/xpActions";
+
 
 export default function QuoteBuilder() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -20,7 +22,7 @@ export default function QuoteBuilder() {
     setCurrentStep(2);
     
     // Add XP for motor selection
-    setTotalXP(prev => prev + 25);
+    setTotalXP(prev => prev + xpActions.selectMotor);
     
     // Small celebration
     confetti({
@@ -164,6 +166,8 @@ export default function QuoteBuilder() {
                   financing: { downPayment: 0, term: 48, rate: 7.99 },
                   hasTradein: false,
                 } as any}
+                totalXP={totalXP}
+                onEarnXP={(amount) => setTotalXP((prev) => prev + amount)}
                 onStepComplete={() => {}}
                 onBack={() => setCurrentStep(purchasePath === 'installed' ? 3 : 2)}
               />
