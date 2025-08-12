@@ -1005,22 +1005,6 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
               </div>
             </div>
             
-            {/* Cash Savings Highlight */}
-            {cashSavings > 0 && (
-              <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">💡</span>
-                  <div>
-                    <p className="font-bold text-amber-800 dark:text-amber-200">
-                      SAVE ${cashSavings.toFixed(0)} by paying cash!
-                    </p>
-                    <p className="text-sm text-amber-700 dark:text-amber-300">
-                      No interest charges = more money for fuel and fun!
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
           
           {/* Gamified Financing Comparison */}
