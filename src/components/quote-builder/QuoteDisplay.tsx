@@ -371,6 +371,9 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
         customerPhone: phoneNumber,
         quoteNumber,
         tradeInValue: hasTradeIn ? tradeInValue : undefined,
+        xp: totalXP,
+        rewardName: getCurrentReward(totalXP)?.reward,
+        rewardValue: getCurrentReward(totalXP)?.value,
       };
       const pdf = await generateQuotePDF(pdfData);
       const pdfBlob = pdf.output('blob');

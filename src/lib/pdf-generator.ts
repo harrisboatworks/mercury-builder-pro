@@ -270,6 +270,29 @@ export const generateQuotePDF = async (quoteData: PDFQuoteData): Promise<jsPDF> 
   doc.text('📧 info@harrisboatworks.ca', 30, 115);
   doc.text('📍 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0', 30, 122);
 
+  // XP Rewards highlight (if available)
+  try {
+    const xpEarned = (quoteData as any).xp as number | undefined;
+    const rewardName = (quoteData as any).rewardName as string | undefined;
+    const rewardValue = (quoteData as any).rewardValue as number | undefined;
+    if (xpEarned && xpEarned > 0) {
+      doc.setFillColor(240, 253, 244); // light green
+      // @ts-ignore
+      doc.roundedRect(20, 130, 170, 20, 3, 3, 'F');
+      doc.setTextColor(5, 150, 105); // green
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(12);
+      doc.text(`🎉 Rewards: ${xpEarned} XP`, 30, 142);
+      if (rewardName) {
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(31, 41, 55);
+        doc.setFontSize(11);
+        const valueText = rewardValue ? ` ($${formatNumber(rewardValue)} value)` : '';
+        doc.text(`Free Gift Unlocked: ${rewardName}${valueText}`, 110, 142, { align: 'left' });
+      }
+    }
+  } catch {}
+
   // Terms & Conditions
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(12);

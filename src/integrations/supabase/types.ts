@@ -101,6 +101,39 @@ export type Database = {
           },
         ]
       }
+      customer_xp: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: string
+          phone: string | null
+          rewards_claimed: Json
+          total_xp: number
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          phone?: string | null
+          rewards_claimed?: Json
+          total_xp?: number
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          phone?: string | null
+          rewards_claimed?: Json
+          total_xp?: number
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       finance_settings: {
         Row: {
           created_at: string | null
@@ -404,7 +437,9 @@ export type Database = {
           motor_price: number | null
           pdf_url: string | null
           quote_data: Json | null
+          reward_claimed: string | null
           total_price: number | null
+          xp_earned: number
         }
         Insert: {
           created_at?: string
@@ -415,7 +450,9 @@ export type Database = {
           motor_price?: number | null
           pdf_url?: string | null
           quote_data?: Json | null
+          reward_claimed?: string | null
           total_price?: number | null
+          xp_earned?: number
         }
         Update: {
           created_at?: string
@@ -426,7 +463,9 @@ export type Database = {
           motor_price?: number | null
           pdf_url?: string | null
           quote_data?: Json | null
+          reward_claimed?: string | null
           total_price?: number | null
+          xp_earned?: number
         }
         Relationships: []
       }
