@@ -8,6 +8,10 @@ interface PurchasePathProps {
 }
 
 export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePathProps) {
+  const model = (selectedMotor?.model || '').toUpperCase();
+  const hp = typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp;
+  const isTiller = (hp ?? 0) <= 30 && (/\bH\b/.test(model) || model.includes('TILLER'));
+  const isInStock = selectedMotor?.stockStatus === 'In Stock';
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -35,7 +39,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
           <Package className="w-16 h-16 mb-4 text-blue-600 group-hover:scale-110 transition-transform" />
           <h3 className="text-2xl font-bold mb-2">Loose Motor</h3>
           <p className="text-gray-600 mb-4">
-            Pick up or delivery • No installation
+            In-store pickup only • No installation
           </p>
           
           <div className="space-y-2 text-sm">
@@ -47,10 +51,12 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
               <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
               <span>Add fuel tank & accessories</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
-              <span>Take home today if in stock</span>
-            </div>
+            {isTiller && isInStock && (
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+                <span>Same-day pickup available</span>
+              </div>
+            )}
           </div>
           
           <div className="mt-4 flex items-center gap-2 text-yellow-600">
