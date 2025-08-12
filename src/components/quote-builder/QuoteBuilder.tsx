@@ -91,19 +91,24 @@ export default function QuoteBuilder() {
               <div className="flex items-center gap-2">
                 {steps.map((step, index) => (
                   <div key={step.number} className="flex items-center">
-                    <motion.div
+                    <motion.button
+                      type="button"
+                      title={step.label}
+                      onClick={() => step.number <= currentStep && setCurrentStep(step.number)}
+                      disabled={step.number > currentStep}
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      className={`flex items-center justify-center w-10 h-10 rounded-full font-bold
+                      className={`flex items-center justify-center w-10 h-10 rounded-full font-bold transition-all
                         ${currentStep === step.number 
                           ? 'bg-blue-600 text-white shadow-lg animate-pulse' 
                           : currentStep > step.number 
-                            ? 'bg-green-500 text-white' 
-                            : 'bg-gray-200 text-gray-400'
+                            ? 'bg-green-500 text-white hover:scale-110 cursor-pointer' 
+                            : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                         }`}
+                      aria-label={step.label}
                     >
                       {currentStep > step.number ? '✓' : step.icon}
-                    </motion.div>
+                    </motion.button>
                     {index < steps.length - 1 && (
                       <div className={`w-12 h-1 mx-2 rounded
                         ${currentStep > step.number ? 'bg-green-500' : 'bg-gray-200'}`} 
