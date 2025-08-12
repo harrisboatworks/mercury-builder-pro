@@ -113,8 +113,8 @@ export const MotorFinderWizard: React.FC<MotorFinderWizardProps> = ({
                 </Button>
               </div>
 
-              <div className="motor-finder-wizard">
-                <h3 className="text-base font-bold mb-4">Let's find your perfect motor:</h3>
+              <div className="motor-finder-wizard bg-muted rounded-lg p-4">
+                <h3 className="text-lg font-bold mb-4">Let's find your perfect motor:</h3>
 
                 {/* Question 1 */}
                 <div className="question-block mb-4">

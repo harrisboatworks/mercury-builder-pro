@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
 
 import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
@@ -387,6 +388,7 @@ const [activePromoModal, setActivePromoModal] = useState<Promotion | null>(null)
 const [promotionsState, setPromotionsState] = useState<Promotion[]>([]);
 const [quickViewMotor, setQuickViewMotor] = useState<Motor | null>(null);
 const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
+const [modelSearch, setModelSearch] = useState<string>('');
 
 const debugPricing = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
 const [quickViewLoading, setQuickViewLoading] = useState(false);
@@ -765,7 +767,27 @@ useEffect(() => {
     { key: 'v8-racing', label: 'V8 & Racing (225-600hp)', color: 'v8-racing' }
   ];
 
+  const filterByHPRange = (minHP: number, maxHP: number) => {
+    // Update hpRange filter
+    setFilters({ ...filters, hpRange: [minHP, maxHP] });
+    // Compute how many would match with the new range and current filters
+    const count = motors.filter((motor) => {
+      if (filters.category !== 'all' && motor.category !== filters.category) return false;
+      if (filters.stockStatus !== 'all' && motor.stockStatus !== filters.stockStatus) return false;
+      if (motor.price < filters.priceRange[0] || motor.price > filters.priceRange[1]) return false;
+      if (modelSearch && !motor.model?.toLowerCase().includes(modelSearch.toLowerCase())) return false;
+      return motor.hp >= minHP && motor.hp <= maxHP;
+    }).length;
+    if (count === 0) {
+      toast({
+        title: 'No motors found',
+        description: `No motors available in the ${minHP}-${maxHP} HP range`,
+      });
+    }
+  };
+
 const filteredMotors = motors.filter(motor => {
+  if (modelSearch && !motor.model?.toLowerCase().includes(modelSearch.toLowerCase())) return false;
   if (filters.category !== 'all' && motor.category !== filters.category) return false;
   if (filters.stockStatus !== 'all' && motor.stockStatus !== filters.stockStatus) return false;
   if (motor.price < filters.priceRange[0] || motor.price > filters.priceRange[1]) return false;
@@ -983,15 +1005,55 @@ const handleMotorSelection = (motor: Motor) => {
 
   return (
     <div className={`flex gap-6 ${showCelebration ? 'canadian-celebration' : ''}`}>
-      <MotorFinderWizard
-        filters={filters}
-        setFilters={setFilters}
-        viewMode={viewMode}
-        setViewMode={setViewMode}
-        resultsCount={filteredMotors.length}
-        isOpen={filtersOpen}
-        onToggle={() => setFiltersOpen(!filtersOpen)}
-      />
+      <div className={`${filtersOpen ? 'w-80' : 'w-16'} transition-all duration-300 flex-shrink-0`}>
+        {filtersOpen && (
+          <Card className="mb-4">
+            <div className="p-4 space-y-6">
+              <div>
+                <h3 className="font-bold text-sm mb-2">Know your model?</h3>
+                <Input
+                  type="text"
+                  placeholder="e.g., 90ELPT, 115EXLPT"
+                  value={modelSearch}
+                  onChange={(e) => setModelSearch(e.target.value)}
+                />
+              </div>
+              <div>
+                <h3 className="font-bold text-sm mb-2">Quick HP Selection:</h3>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(2.5, 20)}>2.5 - 20 HP</Button>
+                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(25, 60)}>25 - 60 HP</Button>
+                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(75, 115)}>75 - 115 HP</Button>
+                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(150, 200)}>150 - 200 HP</Button>
+                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(225, 300)}>225 - 300 HP</Button>
+                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(350, 600)}>350+ HP</Button>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="w-full mt-2"
+                  onClick={() => {
+                    setFilters({ ...filters, hpRange: [2.5, 600] });
+                    setModelSearch('');
+                  }}
+                >
+                  Show all motors →
+                </Button>
+              </div>
+            </div>
+          </Card>
+        )}
+        {filtersOpen && <div className="border-t border-border my-4" />}
+        <MotorFinderWizard
+          filters={filters}
+          setFilters={setFilters}
+          viewMode={viewMode}
+          setViewMode={setViewMode}
+          resultsCount={filteredMotors.length}
+          isOpen={filtersOpen}
+          onToggle={() => setFiltersOpen(!filtersOpen)}
+        />
+      </div>
 
       <div className="flex-1 space-y-8">
         <div className="text-center space-y-4">
