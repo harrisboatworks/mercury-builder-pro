@@ -1116,9 +1116,9 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                <Button onClick={openReservationModal} className="bg-background text-foreground hover:bg-background/90 font-bold">
                  <CreditCard className="w-4 h-4 mr-2" /> Reserve Now - $100
                </Button>
-               <Button variant="outline" className="border-2 border-white text-white hover:bg-white/10" onClick={handleContinue}>
-                 <CalendarIcon className="w-4 h-4 mr-2" /> Schedule Installation
-               </Button>
+                <Button onClick={handleContinue} className="bg-background text-foreground hover:bg-background/90 font-bold">
+                  <CalendarIcon className="w-4 h-4 mr-2" /> Schedule Installation
+                </Button>
              </div>
              <div className="mt-4 text-sm opacity-90">
                <p>✓ Fully refundable deposit</p>
