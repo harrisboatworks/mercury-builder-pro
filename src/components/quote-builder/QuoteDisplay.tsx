@@ -11,7 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle, CreditCard, Calendar as CalendarIcon, Image } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, normalizeBrand } from '@/lib/trade-valuation';
-import { Progress } from '@/components/ui/progress';
+
 import { Calendar } from '@/components/ui/calendar';
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip';
 import { toast } from '@/hooks/use-toast';
@@ -118,9 +118,6 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
   const promoMsLeft = promoEndsAt ? (new Date(promoEndsAt).getTime() - now.getTime()) : 0;
   const daysLeft = promoMsLeft > 0 ? Math.floor(promoMsLeft / (1000 * 60 * 60 * 24)) : 0;
   const hoursLeft = promoMsLeft > 0 ? Math.floor((promoMsLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) : 0;
-
-  // Progress to water (Step 3 of 4)
-  const progressToWater = 75;
 
   // Simple social proof counter
   const [viewers, setViewers] = useState(0);
@@ -480,10 +477,6 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
       {/* Progress Momentum Indicator */}
       <div className="rounded-lg border border-border bg-muted/30 p-4 animate-fade-in">
         <h3 className="font-semibold mb-2">You're Almost on the Water! 🚤</h3>
-        <div className="flex items-center gap-3">
-          <Progress value={progressToWater} className="h-3" />
-          <span className="text-sm text-muted-foreground">{progressToWater}% Complete</span>
-        </div>
         <div className="mt-2 flex flex-wrap gap-3 text-xs">
           <span className="text-green-700 dark:text-green-300">✓ Motor Selected</span>
           <span className="text-green-700 dark:text-green-300">✓ Boat Configured</span>
