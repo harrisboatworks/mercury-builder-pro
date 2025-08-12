@@ -1042,7 +1042,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack }: QuoteDisplay
                   <span>Apply after consultation when we know your exact needs</span>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground italic mt-2 p-3 bg-background rounded-md border border-border">
+              <p className="text-sm text-muted-foreground italic mt-2">
                 We'll help you get the best financing terms after we've confirmed your perfect motor setup and trade-in value.
               </p>
               <div className="flex flex-wrap gap-3 mt-4">
