@@ -532,16 +532,6 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
         </div>
       )}
 
-      {/* Progress Momentum Indicator */}
-      <div className="rounded-lg border border-border bg-muted/30 p-4 animate-fade-in">
-        <h3 className="font-semibold mb-2">You're Almost on the Water! 🚤</h3>
-        <div className="mt-2 flex flex-wrap gap-3 text-xs">
-          <span className="text-green-700 dark:text-green-300">✓ Motor Selected</span>
-          <span className="text-green-700 dark:text-green-300">✓ Boat Configured</span>
-          <span className="font-medium">→ Review Quote</span>
-          <span className="text-muted-foreground">○ Schedule Consultation</span>
-        </div>
-      </div>
 
       {/* Limited Time Urgency */}
       {promoEndsAt && (daysLeft > 0 || hoursLeft > 0) && (
