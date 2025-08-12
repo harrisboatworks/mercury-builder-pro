@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info } from 'lucide-react';
+import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Grid, List } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -1028,6 +1028,47 @@ const handleMotorSelection = (motor: Motor) => {
                 </>
               )}
             </Button>
+          </div>
+        </div>
+
+        {/* Quick filter bar (clean, subtle) */}
+        <div className="bg-card rounded-2xl shadow-sm p-6 mb-8 border border-border">
+          <div className="flex items-center justify-between">
+            <div className="flex gap-3">
+              <Button
+                variant={filters.stockStatus === 'all' ? 'secondary' : 'outline'}
+                onClick={() => setFilters(f => ({ ...f, stockStatus: 'all' }))}
+              >
+                All Motors
+              </Button>
+              <Button
+                variant={filters.stockStatus === 'In Stock' ? 'secondary' : 'outline'}
+                onClick={() => setFilters(f => ({ ...f, stockStatus: 'In Stock' }))}
+              >
+                In Stock Only
+              </Button>
+            </div>
+
+            <div className="flex gap-2">
+              <Button
+                size="icon"
+                variant={viewMode === 'grid' ? 'default' : 'outline'}
+                aria-pressed={viewMode === 'grid'}
+                aria-label="Grid view"
+                onClick={() => setViewMode('grid')}
+              >
+                <Grid className="w-5 h-5" />
+              </Button>
+              <Button
+                size="icon"
+                variant={viewMode === 'list' ? 'default' : 'outline'}
+                aria-pressed={viewMode === 'list'}
+                aria-label="List view"
+                onClick={() => setViewMode('list')}
+              >
+                <List className="w-5 h-5" />
+              </Button>
+            </div>
           </div>
         </div>
 
