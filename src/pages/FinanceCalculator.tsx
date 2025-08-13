@@ -140,7 +140,7 @@ export default function FinanceCalculator() {
             </Button>
             {motor && (
               <Button variant="outline" asChild>
-                <a href={`/?select=${encodeURIComponent(modelId || '')}`}>Use this motor</a>
+                <Link to={`/?select=${encodeURIComponent(modelId || '')}`}>Use this motor</Link>
               </Button>
             )}
           </div>
