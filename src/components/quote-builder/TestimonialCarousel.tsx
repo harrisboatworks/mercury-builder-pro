@@ -76,25 +76,27 @@ export const TestimonialCarousel = () => {
     >
       <div className="max-w-3xl mx-auto">
         <div className="bg-card border border-border rounded-xl shadow-sm p-6 md:p-8 transition-shadow hover:shadow-md">
-          <div className="flex items-center justify-center mb-3">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star
-                key={i}
-                className={`w-5 h-5 ${i < t.rating ? 'text-primary fill-primary' : 'text-muted-foreground'}`}
-              />
-            ))}
-          </div>
+          <div key={current} className="animate-fade-in">
+            <div className="flex items-center justify-center mb-3">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star
+                  key={i}
+                  className={`w-5 h-5 ${i < t.rating ? 'text-primary fill-primary' : 'text-muted-foreground'}`}
+                />
+              ))}
+            </div>
 
-          <blockquote className="text-center text-base md:text-lg mb-4 text-foreground">
-            <span aria-hidden="true" className="select-none text-muted-foreground text-3xl mr-1">“</span>
-            {t.text}
-            <span aria-hidden="true" className="select-none text-muted-foreground text-3xl ml-1">”</span>
-          </blockquote>
+            <blockquote className="text-center text-base md:text-lg mb-4 text-foreground">
+              <span aria-hidden="true" className="select-none text-muted-foreground text-3xl mr-1">"</span>
+              {t.text}
+              <span aria-hidden="true" className="select-none text-muted-foreground text-3xl ml-1">"</span>
+            </blockquote>
 
-          <div className="text-center">
-            <p className="font-semibold text-foreground">{t.name}</p>
-            <p className="text-sm text-muted-foreground">{t.location} • {t.motor}</p>
-            <p className="text-xs text-muted-foreground mt-1">Verified Purchase • {t.date}</p>
+            <div className="text-center">
+              <p className="font-semibold text-foreground">{t.name}</p>
+              <p className="text-sm text-muted-foreground">{t.location} • {t.motor}</p>
+              <p className="text-xs text-muted-foreground mt-1">Verified Purchase • {t.date}</p>
+            </div>
           </div>
         </div>
 
