@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -121,6 +121,12 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     setBoatInfo(prev => ({ ...prev, length: lengthBucket(feet) }));
   };
 
+  // Auto-set length bucket when entering the Length step so users don't have to move the slider
+  useEffect(() => {
+    if (boatInfo.type !== 'motor-only' && currentStep === 1 && !boatInfo.length) {
+      setBoatInfo(prev => ({ ...prev, length: lengthBucket(lengthFeet) }));
+    }
+  }, [currentStep, boatInfo.type]);
   const computeCompatibilityScore = (): number => {
     if (!selectedMotor) return 0;
     const idealHp = Math.max(20, lengthFeet * 8); // rough heuristic
