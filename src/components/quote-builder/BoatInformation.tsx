@@ -672,53 +672,73 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                       <div className="controls-section rounded-lg border border-border bg-muted/30 p-4">
                         <h4 className="font-semibold mb-3">Steering Controls Required</h4>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 control-options">
-                          <label className="option-card rounded-md border border-border bg-background p-3 cursor-pointer">
-                            <input
-                              type="radio"
-                              name="controls"
-                              value="none"
-                              className="mr-2"
-                              checked={boatInfo.controlsOption === 'none'}
-                              onChange={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'none' }))}
-                            />
-                            <div>
-                              <strong className="block">I need new controls</strong>
-                              <span className="text-sm text-muted-foreground">+$1,200</span>
-                              <small className="block text-xs text-muted-foreground">Complete remote control kit</small>
-                            </div>
-                          </label>
+                          {isNonMercuryBrand ? (
+                            <label className="option-card rounded-md border-2 border-primary bg-primary/5 p-3">
+                              <input
+                                type="radio"
+                                name="controls"
+                                value="none"
+                                className="mr-2"
+                                checked={true}
+                                readOnly
+                              />
+                              <div>
+                                <strong className="block">I need new controls</strong>
+                                <span className="text-sm text-muted-foreground">+$1,200</span>
+                                <small className="block text-xs text-muted-foreground">Required for non‑Mercury controls</small>
+                              </div>
+                            </label>
+                          ) : (
+                            <>
+                              <label className="option-card rounded-md border-2 border-border bg-background p-3 cursor-pointer">
+                                <input
+                                  type="radio"
+                                  name="controls"
+                                  value="none"
+                                  className="mr-2"
+                                  checked={boatInfo.controlsOption === 'none'}
+                                  onChange={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'none' }))}
+                                />
+                                <div>
+                                  <strong className="block">I need new controls</strong>
+                                  <span className="text-sm text-muted-foreground">+$1,200</span>
+                                  <small className="block text-xs text-muted-foreground">Complete remote control kit</small>
+                                </div>
+                              </label>
 
-                          <label className="option-card rounded-md border-2 border-primary bg-primary/5 p-3 cursor-pointer">
-                            <input
-                              type="radio"
-                              name="controls"
-                              value="adapter"
-                              className="mr-2"
-                              checked={boatInfo.controlsOption === 'adapter'}
-                              onChange={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'adapter' }))}
-                            />
-                            <div>
-                              <strong className="block">I have Mercury controls (2004 or newer)</strong>
-                              <span className="text-sm text-primary">+$125 (Save $1,075!)</span>
-                              <small className="block text-xs text-muted-foreground">We'll adapt your existing controls</small>
-                            </div>
-                          </label>
+                              <label className="option-card rounded-md border-2 border-primary bg-primary/5 p-3 cursor-pointer">
+                                <input
+                                  type="radio"
+                                  name="controls"
+                                  value="adapter"
+                                  className="mr-2"
+                                  checked={boatInfo.controlsOption === 'adapter'}
+                                  onChange={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'adapter' }))}
+                                />
+                                <div>
+                                  <strong className="block">I have Mercury controls (2004 or newer)</strong>
+                                  <span className="text-sm text-primary">+$125 (Save $1,075!)</span>
+                                  <small className="block text-xs text-muted-foreground">We'll adapt your existing controls</small>
+                                </div>
+                              </label>
 
-                          <label className="option-card rounded-md border border-border bg-background p-3 cursor-pointer">
-                            <input
-                              type="radio"
-                              name="controls"
-                              value="compatible"
-                              className="mr-2"
-                              checked={boatInfo.controlsOption === 'compatible'}
-                              onChange={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'compatible' }))}
-                            />
-                            <div>
-                              <strong className="block">I have compatible controls ready</strong>
-                              <span className="text-sm text-muted-foreground">No charge</span>
-                              <small className="block text-xs text-muted-foreground">Already have the right setup</small>
-                            </div>
-                          </label>
+                              <label className="option-card rounded-md border-2 border-border bg-background p-3 cursor-pointer">
+                                <input
+                                  type="radio"
+                                  name="controls"
+                                  value="compatible"
+                                  className="mr-2"
+                                  checked={boatInfo.controlsOption === 'compatible'}
+                                  onChange={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'compatible' }))}
+                                />
+                                <div>
+                                  <strong className="block">I have compatible controls ready</strong>
+                                  <span className="text-sm text-muted-foreground">No charge</span>
+                                  <small className="block text-xs text-muted-foreground">Already have the right setup</small>
+                                </div>
+                              </label>
+                            </>
+                          )}
                         </div>
 
                         {boatInfo.controlsOption === 'adapter' && (
