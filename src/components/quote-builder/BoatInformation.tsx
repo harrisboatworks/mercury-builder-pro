@@ -123,10 +123,13 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
 
   // Auto-set length bucket when entering the Length step so users don't have to move the slider
   useEffect(() => {
-    if (boatInfo.type !== 'motor-only' && currentStep === 1 && !boatInfo.length) {
-      setBoatInfo(prev => ({ ...prev, length: lengthBucket(lengthFeet) }));
+    if (boatInfo.type !== 'motor-only' && currentStep === 1) {
+      const bucket = lengthBucket(lengthFeet);
+      if (boatInfo.length !== bucket) {
+        setBoatInfo(prev => ({ ...prev, length: bucket }));
+      }
     }
-  }, [currentStep, boatInfo.type]);
+  }, [currentStep, boatInfo.type, lengthFeet, boatInfo.length]);
   const computeCompatibilityScore = (): number => {
     if (!selectedMotor) return 0;
     const idealHp = Math.max(20, lengthFeet * 8); // rough heuristic
