@@ -13,7 +13,6 @@ import { Slider } from '@/components/ui/slider';
 import { Progress } from '@/components/ui/progress';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import transomHeightGuide from '@/assets/transom-height-guide.png';
 interface BoatInformationProps {
   onStepComplete: (boatInfo: BoatInfo) => void;
   onBack: () => void;
@@ -559,7 +558,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
 
                   <div className="bg-muted/30 rounded-lg p-4">
                     <img 
-                      src={transomHeightGuide} 
+                      src="/lovable-uploads/05341264-6462-45f9-b133-687f357bf615.png" 
                       alt="Transom height measurement guide showing how to measure from top of transom to bottom of hull" 
                       className="w-full max-w-lg mx-auto rounded-lg shadow-sm"
                     />
