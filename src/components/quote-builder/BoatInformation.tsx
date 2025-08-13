@@ -13,14 +13,16 @@ import { Slider } from '@/components/ui/slider';
 import { Progress } from '@/components/ui/progress';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import transomHeightGuide from '@/assets/transom-height-guide.png';
 interface BoatInformationProps {
   onStepComplete: (boatInfo: BoatInfo) => void;
   onBack: () => void;
   selectedMotor: Motor | null;
   includeTradeIn?: boolean;
+  onShowCompatibleMotors?: () => void;
 }
 
-export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, includeTradeIn = true }: BoatInformationProps) => {
+export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, includeTradeIn = true, onShowCompatibleMotors }: BoatInformationProps) => {
   const [boatInfo, setBoatInfo] = useState<BoatInfo>({
     type: '',
     make: '',
@@ -555,6 +557,14 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                     <p className="text-sm text-muted-foreground">Measure from top of transom to bottom of hull.</p>
                   </div>
 
+                  <div className="bg-muted/30 rounded-lg p-4">
+                    <img 
+                      src={transomHeightGuide} 
+                      alt="Transom height measurement guide showing how to measure from top of transom to bottom of hull" 
+                      className="w-full max-w-lg mx-auto rounded-lg shadow-sm"
+                    />
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                     <Button type="button" variant="outline" onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: '15' }))}>
                       <div className="text-left">
@@ -585,9 +595,31 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                               Selected motor: {selectedMotor.model} • Matches your {shaftLabel(chosenShaft)} transom.
                             </>
                           ) : (
-                            <>
-                              Heads up: your selected motor ({selectedMotor.model}) is {shaftLabel(motorShaft)}, but you chose {shaftLabel(chosenShaft)}. Mercury model must match the boat's transom height. Consider selecting {shaftLabel(motorShaft)} or revisiting motor selection.
-                            </>
+                            <div className="space-y-3">
+                              <p>
+                                Heads up: your selected motor ({selectedMotor.model}) is {shaftLabel(motorShaft)}, but you chose {shaftLabel(chosenShaft)}. Mercury model must match the boat's transom height.
+                              </p>
+                              <div className="flex flex-col sm:flex-row gap-2">
+                                <Button 
+                                  variant="outline" 
+                                  size="sm" 
+                                  onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: motorShaft }))}
+                                  className="text-orange-700 border-orange-300 hover:bg-orange-50"
+                                >
+                                  Change to {shaftLabel(motorShaft)} transom
+                                </Button>
+                                {onShowCompatibleMotors && (
+                                  <Button 
+                                    variant="outline" 
+                                    size="sm" 
+                                    onClick={onShowCompatibleMotors}
+                                    className="text-blue-700 border-blue-300 hover:bg-blue-50"
+                                  >
+                                    Show compatible motors
+                                  </Button>
+                                )}
+                              </div>
+                            </div>
                           )}
                         </AlertDescription>
                       </Alert>

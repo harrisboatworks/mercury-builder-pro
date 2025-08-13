@@ -256,6 +256,7 @@ const QuoteBuilder = () => {
             onStepComplete={handleStepComplete} 
             onBack={handleBack}
             selectedMotor={quoteData.motor}
+            onShowCompatibleMotors={() => setCurrentStep(1)}
           />
         )}
         

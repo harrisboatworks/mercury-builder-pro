@@ -259,6 +259,7 @@ export default function QuoteBuilder() {
                   setBoatInfo(info);
                   setCurrentStep(4);
                 }}
+                onShowCompatibleMotors={() => setCurrentStep(1)}
               />
             </div>
           </motion.div>
