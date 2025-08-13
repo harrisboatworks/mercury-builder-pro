@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Slider } from '@/components/ui/slider';
 
+import { motion } from 'framer-motion';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, DollarSign, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, type TradeValueEstimate, type TradeInInfo } from '@/lib/trade-valuation';
@@ -102,25 +103,31 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
           </Label>
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <div className="text-sm text-muted-foreground">Do you have a motor to trade?</div>
-            <div className="inline-flex rounded-md border border-border overflow-hidden">
-              <Button
-                type="button"
-                variant={tradeInInfo.hasTradeIn ? 'default' : 'ghost'}
+            <div className="grid md:grid-cols-2 gap-4 w-full md:w-auto">
+              <motion.button
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => onTradeInChange({ ...tradeInInfo, hasTradeIn: true })}
                 aria-pressed={tradeInInfo.hasTradeIn}
-                className="rounded-none"
-              >
-                Yes
-              </Button>
-              <Button
+                className={`relative p-6 border-2 rounded-3xl transition-all bg-white text-left group ${tradeInInfo.hasTradeIn ? 'border-blue-500 shadow-2xl' : 'border-gray-200 hover:border-blue-500 hover:shadow-2xl'}`}
                 type="button"
-                variant={!tradeInInfo.hasTradeIn ? 'default' : 'ghost'}
+              >
+                <CheckCircle2 className="w-8 h-8 mb-2 text-blue-600 group-hover:scale-110 transition-transform" />
+                <div className="font-bold text-lg">Yes, I have a trade-in</div>
+                <div className="text-sm text-muted-foreground">We'll estimate your value instantly</div>
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => onTradeInChange({ ...tradeInInfo, hasTradeIn: false, estimatedValue: 0 })}
                 aria-pressed={!tradeInInfo.hasTradeIn}
-                className="rounded-none border-l border-border"
+                className={`relative p-6 border-2 rounded-3xl transition-all bg-white text-left group ${!tradeInInfo.hasTradeIn ? 'border-blue-500 shadow-2xl' : 'border-gray-200 hover:border-blue-500 hover:shadow-2xl'}`}
+                type="button"
               >
-                No
-              </Button>
+                <AlertTriangle className="w-8 h-8 mb-2 text-blue-600 group-hover:scale-110 transition-transform" />
+                <div className="font-bold text-lg">No trade-in</div>
+                <div className="text-sm text-muted-foreground">Skip valuation and continue</div>
+              </motion.button>
             </div>
           </div>
         </div>
