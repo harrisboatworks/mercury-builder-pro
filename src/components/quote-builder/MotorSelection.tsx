@@ -1130,7 +1130,7 @@ export const MotorSelection = ({
           </div>
         </div>
 
-      {/* ActivityTicker moved to sidebar */}
+      <ActivityTicker />
 
         <TestimonialCarousel />
 
