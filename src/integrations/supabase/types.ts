@@ -224,6 +224,36 @@ export type Database = {
         }
         Relationships: []
       }
+      inventory_updates: {
+        Row: {
+          completed_at: string | null
+          error_message: string | null
+          id: string
+          is_scheduled: boolean | null
+          motors_updated: number | null
+          started_at: string
+          status: string
+        }
+        Insert: {
+          completed_at?: string | null
+          error_message?: string | null
+          id?: string
+          is_scheduled?: boolean | null
+          motors_updated?: number | null
+          started_at?: string
+          status?: string
+        }
+        Update: {
+          completed_at?: string | null
+          error_message?: string | null
+          id?: string
+          is_scheduled?: boolean | null
+          motors_updated?: number | null
+          started_at?: string
+          status?: string
+        }
+        Relationships: []
+      }
       motor_models: {
         Row: {
           availability: string | null

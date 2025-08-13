@@ -1061,24 +1061,15 @@ export const MotorSelection = ({
             <h2 className="text-3xl font-bold text-foreground">Select Your Mercury Outboard</h2>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Choose from our current inventory of Mercury outboard motors. All prices and availability are updated from Harris Boat Works.
+            Choose from our current inventory of Mercury outboard motors. Inventory is automatically updated daily at 2 AM.
           </p>
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <span className="text-sm text-muted-foreground">
               Last updated: {lastInventoryUpdate ? formatRelativeTime(lastInventoryUpdate) : 'Never'}
             </span>
             <Badge variant={needsInventoryUpdate() ? 'destructive' : 'secondary'}>
-              {needsInventoryUpdate() ? 'Update recommended' : 'Fresh'}
+              {needsInventoryUpdate() ? 'Updating soon' : 'Fresh'}
             </Badge>
-            <Button onClick={updateInventory} disabled={updating} variant="outline" size="sm">
-              {updating ? <>
-                  <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
-                  Updating...
-                </> : <>
-                  <RefreshCw className="w-4 h-4 mr-2" />
-                  Update Inventory
-                </>}
-            </Button>
           </div>
         </div>
 

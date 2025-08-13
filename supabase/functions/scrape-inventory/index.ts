@@ -87,13 +87,53 @@ Deno.serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  let updateTrackingId: string | null = null;
+  let isScheduled = false;
+
   try {
-    console.log('Starting Harris Boat Works inventory scrape...')
+    // Parse request body to check if this is a scheduled run
+    const body = await req.json().catch(() => ({}));
+    isScheduled = body.scheduled === true;
+    
+    console.log(`Starting Harris Boat Works inventory scrape (scheduled: ${isScheduled})...`)
     
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!
     const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     
     const supabase = createClient(supabaseUrl, supabaseKey)
+
+    // Track the update start
+    const { data: trackingData, error: trackingError } = await supabase
+      .from('inventory_updates')
+      .insert({
+        status: 'running',
+        is_scheduled: isScheduled
+      })
+      .select('id')
+      .single();
+
+    if (trackingError) {
+      console.error('Failed to create tracking record:', trackingError);
+    } else {
+      updateTrackingId = trackingData.id;
+      console.log(`Started inventory update (ID: ${updateTrackingId})`);
+    }
+
+    // If this is a scheduled run, start background processing
+    if (isScheduled) {
+      EdgeRuntime.waitUntil(processInventoryUpdate(supabase, updateTrackingId));
+      return new Response(
+        JSON.stringify({ 
+          success: true, 
+          message: 'Scheduled inventory update started',
+          trackingId: updateTrackingId
+        }),
+        { 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          status: 200 
+        }
+      );
+    }
 
     // Fetch all pages of Harris Boat Works inventory
     let allMotors: MotorData[] = []
@@ -299,11 +339,24 @@ const stripYearAndBrand = (text: string, year: number) => {
     } as const;
     console.log(JSON.stringify(summary))
 
+    // Update tracking record on success
+    if (updateTrackingId) {
+      await supabase
+        .from('inventory_updates')
+        .update({
+          status: 'completed',
+          completed_at: new Date().toISOString(),
+          motors_updated: rows.length
+        })
+        .eq('id', updateTrackingId);
+    }
+
     return new Response(
       JSON.stringify({ 
         success: true, 
         count: data?.length || 0,
-        motors: data?.slice(0, 5) // Return first 5 as sample
+        motors: data?.slice(0, 5), // Return first 5 as sample
+        trackingId: updateTrackingId
       }),
       { 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -319,6 +372,23 @@ const stripYearAndBrand = (text: string, year: number) => {
       stack: (error as any)?.stack || null,
       timestamp: new Date().toISOString(),
     }))
+
+    // Update tracking record on failure
+    if (updateTrackingId) {
+      const supabase = createClient(
+        Deno.env.get('SUPABASE_URL')!,
+        Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+      );
+      await supabase
+        .from('inventory_updates')
+        .update({
+          status: 'failed',
+          completed_at: new Date().toISOString(),
+          error_message: (error as any)?.message || 'Unknown error'
+        })
+        .eq('id', updateTrackingId);
+    }
+
     try {
       await sendFailureAlert(
         'HBW Inventory Scrape Failed',
@@ -330,7 +400,8 @@ const stripYearAndBrand = (text: string, year: number) => {
     return new Response(
       JSON.stringify({ 
         success: false, 
-        error: (error as any)?.message || 'Unknown error'
+        error: (error as any)?.message || 'Unknown error',
+        trackingId: updateTrackingId
       }),
       { 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -339,6 +410,141 @@ const stripYearAndBrand = (text: string, year: number) => {
     )
   }
 })
+
+// Background processing function for scheduled updates
+async function processInventoryUpdate(supabase: any, trackingId: string | null) {
+  try {
+    console.log('Processing scheduled inventory update in background...');
+    
+    // Fetch all pages of Harris Boat Works inventory
+    let allMotors: MotorData[] = []
+    let pageNumber = 1
+    let hasMorePages = true
+    
+    while (hasMorePages && pageNumber <= 10) { // Safety limit of 10 pages
+      const url = pageNumber === 1 
+        ? 'https://www.harrisboatworks.ca/search/inventory/brand/Mercury/sort/price-low'
+        : `https://www.harrisboatworks.ca/search/inventory/brand/Mercury/sort/price-low/page/${pageNumber}`
+      
+      console.log(`Background: Fetching page ${pageNumber}: ${url}`)
+      
+      const response = await fetchWithRetry(url)
+      if (!response.ok) {
+        console.log(`Background: Failed to fetch page ${pageNumber}: ${response.status}`)
+        break
+      }
+      
+      const html = await response.text()
+      const pageMotors = parseMotorData(html)
+      
+      if (pageMotors.length === 0) {
+        console.log(`Background: No motors found on page ${pageNumber}, stopping`)
+        hasMorePages = false
+      } else {
+        console.log(`Background: Found ${pageMotors.length} motors on page ${pageNumber}`)
+        allMotors = allMotors.concat(pageMotors)
+        pageNumber++
+        
+        // Check if there are more results
+        if (!html.includes('next') && !html.includes(`page/${pageNumber}`)) {
+          hasMorePages = false
+        }
+      }
+      
+      // Longer delay for background processing to be more respectful
+      if (hasMorePages) {
+        await new Promise(resolve => setTimeout(resolve, 2000))
+      }
+    }
+    
+    console.log(`Background: Total motors collected: ${allMotors.length}`)
+    
+    if (allMotors.length === 0) {
+      throw new Error('No motors found during background update')
+    }
+
+    // Hydrate with detailed specs
+    const motors = await hydrateWithDetails(allMotors)
+
+    // Clear existing data and insert new data
+    const { error: deleteError } = await supabase
+      .from('motor_models')
+      .delete()
+      .neq('id', '00000000-0000-0000-0000-000000000000')
+    
+    if (deleteError) {
+      console.error('Background: Error clearing existing data:', deleteError)
+    }
+
+    // Insert new motor data
+    const { data, error } = await supabase
+      .from('motor_models')
+      .insert(motors.map((m) => ({
+        make: m.make,
+        model: m.model,
+        year: m.year,
+        base_price: m.base_price,
+        sale_price: m.sale_price ?? null,
+        motor_type: m.motor_type,
+        engine_type: m.engine_type ?? null,
+        horsepower: m.horsepower,
+        image_url: m.image_url ?? null,
+        availability: m.availability,
+        stock_number: m.stock_number ?? null,
+        description: m.description ?? null,
+        features: m.features ?? [],
+        specifications: m.specifications ?? {},
+        detail_url: m.detail_url ?? null,
+      })))
+      .select()
+
+    if (error) {
+      console.error('Background: Error inserting motors:', error)
+      throw error
+    }
+
+    const rows = Array.isArray(data) ? data : [];
+    console.log(`Background: Successfully updated ${rows.length} motors`)
+
+    // Update tracking record on success
+    if (trackingId) {
+      await supabase
+        .from('inventory_updates')
+        .update({
+          status: 'completed',
+          completed_at: new Date().toISOString(),
+          motors_updated: rows.length
+        })
+        .eq('id', trackingId);
+    }
+
+    console.log('Background inventory update completed successfully');
+  } catch (error) {
+    console.error('Background inventory update failed:', error);
+    
+    // Update tracking record on failure
+    if (trackingId) {
+      await supabase
+        .from('inventory_updates')
+        .update({
+          status: 'failed',
+          completed_at: new Date().toISOString(),
+          error_message: (error as any)?.message || 'Unknown error'
+        })
+        .eq('id', trackingId);
+    }
+    
+    // Send failure alert
+    try {
+      await sendFailureAlert(
+        'HBW Scheduled Inventory Update Failed',
+        `Background update failed: ${(error as any)?.message || 'Unknown error'}`
+      )
+    } catch (e) {
+      console.error('Failed to send background failure alert', e)
+    }
+  }
+}
 
 function parseMotorData(html: string): MotorData[] {
   const motors: MotorData[] = []
