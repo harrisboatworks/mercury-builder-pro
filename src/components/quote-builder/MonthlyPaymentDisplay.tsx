@@ -11,7 +11,7 @@ export function MonthlyPaymentDisplay({ motorPrice }: MonthlyPaymentDisplayProps
   // Debug logging
   console.log('MonthlyPaymentDisplay:', { motorPrice, monthlyPayment });
   
-  if (!monthlyPayment) return null;
+  if (!monthlyPayment || motorPrice <= 5000) return null;
   
   return (
     <div className="mt-0 mb-1 text-center">
