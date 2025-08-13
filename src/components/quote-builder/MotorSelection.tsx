@@ -1132,6 +1132,20 @@ const handleMotorSelection = (motor: Motor) => {
                 <p className="text-sm text-muted-foreground">Expert Repower Consultation</p>
               </div>
             </div>
+
+            {/* Divider */}
+            <div className="hidden md:block h-10 w-px bg-border" />
+
+            {/* Platinum Dealer Heritage */}
+            <div className="credential-group flex items-center gap-3">
+              <div className="flex h-12 md:h-16 w-12 md:w-16 items-center justify-center rounded-full bg-primary/10">
+                <span className="text-2xl md:text-3xl">⭐</span>
+              </div>
+              <div className="text-left">
+                <p className="font-semibold text-foreground">Platinum Mercury Dealer</p>
+                <p className="text-sm text-muted-foreground">Family Owned Since 1947 • Serving Rice Lake Area</p>
+              </div>
+            </div>
           </div>
         </div>
 
