@@ -566,19 +566,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                     </Button>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label className="flex items-center gap-2">Or choose from a list</Label>
-                    <Select value={boatInfo.shaftLength} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, shaftLength: value }))}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select shaft length" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="15">15" - Short Shaft</SelectItem>
-                        <SelectItem value="20">20" - Long Shaft</SelectItem>
-                        <SelectItem value="25">25" - Extra Long Shaft</SelectItem>
-                        <SelectItem value="Not Sure">Not Sure</SelectItem>
-                      </SelectContent>
-                    </Select>
+                  <div className="mt-2">
                     {selectedMotor && chosenShaft && (
                       <Alert className={shaftMatch ? 'border-in-stock bg-in-stock/10' : 'border-orange-500 bg-orange-50 dark:bg-orange-950/20'}>
                         <AlertDescription>
