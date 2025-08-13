@@ -60,7 +60,11 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
           <div className="space-y-2 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
-              <span>Ready to run with PDI</span>
+              <span>Free Prep</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+              <span>Shop Tank Tested</span>
             </div>
             {isTiller ? (
               <div className="flex items-center gap-2">
@@ -70,7 +74,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             ) : (
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
-                <span>Add fuel system & accessories</span>
+                <span>Ready for rigging & accessories</span>
               </div>
             )}
             {isTiller && isInStock && (
