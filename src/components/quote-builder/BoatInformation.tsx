@@ -174,6 +174,38 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     );
   const nextStepLabel = steps[currentStep + 1]?.label;
 
+  // Derive motor shaft length from specifications or model code
+  const deriveMotorShaftFromModel = (motor?: Motor | null): '15' | '20' | '25' | '30' | null => {
+    if (!motor) return null;
+    const shaftSpec = (motor as any).specifications?.shaft_length as string | undefined;
+    if (shaftSpec) {
+      if (/30/.test(shaftSpec)) return '30';
+      if (/25/.test(shaftSpec)) return '25';
+      if (/20/.test(shaftSpec)) return '20';
+      if (/15/.test(shaftSpec)) return '15';
+    }
+    const model = (motor.model || '').toUpperCase();
+    if (/\bXXL\b/.test(model)) return '30';
+    if (/\bXL\b|EXLPT/.test(model)) return '25';
+    if (/\bL\b|ELPT|MLH|LPT/.test(model)) return '20';
+    if (/\bS\b/.test(model)) return '15';
+    return null;
+  };
+
+  const motorShaft = deriveMotorShaftFromModel(selectedMotor);
+  const chosenShaft = boatInfo.shaftLength && boatInfo.shaftLength !== 'Not Sure' ? boatInfo.shaftLength : null;
+  const shaftMatch = motorShaft && chosenShaft ? motorShaft === chosenShaft : null;
+
+  const shaftLabel = (inches?: string | null) => {
+    switch (inches) {
+      case '15': return '15" (Short)';
+      case '20': return '20" (Long)';
+      case '25': return '25" (XL)';
+      case '30': return '30" (XXL)';
+      default: return '--';
+    }
+  };
+
   const [showHelp, setShowHelp] = useState(false);
 
   // (Using per-type recommendedHP from boatTypes entries)
@@ -535,7 +567,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="flex items-center gap-2">Prefer to select it manually?</Label>
+                    <Label className="flex items-center gap-2">Or choose from a list</Label>
                     <Select value={boatInfo.shaftLength} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, shaftLength: value }))}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select shaft length" />
@@ -547,6 +579,21 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                         <SelectItem value="Not Sure">Not Sure</SelectItem>
                       </SelectContent>
                     </Select>
+                    {selectedMotor && chosenShaft && (
+                      <Alert className={shaftMatch ? 'border-in-stock bg-in-stock/10' : 'border-orange-500 bg-orange-50 dark:bg-orange-950/20'}>
+                        <AlertDescription>
+                          {shaftMatch ? (
+                            <>
+                              Selected motor: {selectedMotor.model} • Matches your {shaftLabel(chosenShaft)} transom.
+                            </>
+                          ) : (
+                            <>
+                              Heads up: your selected motor ({selectedMotor.model}) is {shaftLabel(motorShaft)}, but you chose {shaftLabel(chosenShaft)}. Mercury model must match the boat's transom height. Consider selecting {shaftLabel(motorShaft)} or revisiting motor selection.
+                            </>
+                          )}
+                        </AlertDescription>
+                      </Alert>
+                    )}
                   </div>
                 </div>
               </Card>
