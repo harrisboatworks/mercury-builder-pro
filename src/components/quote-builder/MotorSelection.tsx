@@ -1138,9 +1138,7 @@ const handleMotorSelection = (motor: Motor) => {
 
             {/* Platinum Dealer Heritage */}
             <div className="credential-group flex items-center gap-3">
-              <div className="flex h-12 md:h-16 w-12 md:w-16 items-center justify-center rounded-full bg-primary/10">
-                <span className="text-2xl md:text-3xl">⭐</span>
-              </div>
+              <img src="/lovable-uploads/f90cad3b-0db1-4a32-8b72-94f9e07a064d.png" alt="Harris Boat Works Since 1947 logo" loading="lazy" className="h-12 md:h-16 w-auto" />
               <div className="text-left">
                 <p className="font-semibold text-foreground">Platinum Mercury Dealer</p>
                 <p className="text-sm text-muted-foreground">Family Owned Since 1947 • Serving Rice Lake Area</p>
