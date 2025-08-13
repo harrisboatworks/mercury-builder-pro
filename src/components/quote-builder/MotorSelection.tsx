@@ -1047,6 +1047,11 @@ export const MotorSelection = ({
           </Card>}
         {filtersOpen && <div className="border-t border-border my-4" />}
         <MotorFinderWizard filters={filters} setFilters={setFilters} viewMode={viewMode} setViewMode={setViewMode} resultsCount={filteredMotors.length} isOpen={filtersOpen} onToggle={() => setFiltersOpen(!filtersOpen)} />
+        
+        {/* Live Activities Section */}
+        <div className="mt-6">
+          <ActivityTicker />
+        </div>
       </div>
 
       <div className="flex-1 space-y-8">
@@ -1129,8 +1134,6 @@ export const MotorSelection = ({
             </div>
           </div>
         </div>
-
-      <ActivityTicker />
 
         <TestimonialCarousel />
 
