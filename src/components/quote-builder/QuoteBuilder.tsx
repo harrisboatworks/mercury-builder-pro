@@ -33,6 +33,7 @@ export default function QuoteBuilder() {
     estimatedValue: 0,
     confidenceLevel: 'low',
   });
+  const [boatInfo, setBoatInfo] = useState<any>(null);
   const [totalXP, setTotalXP] = useState(0);
   const [quoteForSchedule, setQuoteForSchedule] = useState<any | null>(null);
 
@@ -73,15 +74,15 @@ export default function QuoteBuilder() {
     setTotalXP(prev => prev + xpEarned);
     
     if (path === 'installed') {
-      setCurrentStep(3); // Go to trade-in step first
+      setCurrentStep(3); // Go to boat info step first
     } else {
-      setCurrentStep(3); // Go to trade-in step for loose motors as well
+      setCurrentStep(3); // Go to trade-in step for loose motors
     }
   };
 
   const handleConfigComplete = (config: any) => {
     setInstallConfig(config);
-    setCurrentStep(5); // Go to quote display
+    setCurrentStep(6); // Go to quote display (installed path)
     
     // Big celebration!
     confetti({
@@ -91,14 +92,23 @@ export default function QuoteBuilder() {
     });
   };
 
-  const steps = [
-    { number: 1, label: "Select Motor", icon: "🚤" },
-    { number: 2, label: "Purchase Type", icon: "🛒" },
-    { number: 3, label: "Trade-In", icon: "💱" },
-    { number: 4, label: "Configure", icon: "⚙️" },
-    { number: 5, label: "Your Quote", icon: "📋" },
-    { number: 6, label: "Consultation", icon: "📅" },
-  ];
+  const steps = purchasePath === 'installed'
+    ? [
+        { number: 1, label: "Select Motor", icon: "🚤" },
+        { number: 2, label: "Purchase Type", icon: "🛒" },
+        { number: 3, label: "Boat Info", icon: "🛥️" },
+        { number: 4, label: "Trade-In", icon: "💱" },
+        { number: 5, label: "Configure", icon: "⚙️" },
+        { number: 6, label: "Your Quote", icon: "📋" },
+        { number: 7, label: "Consultation", icon: "📅" },
+      ]
+    : [
+        { number: 1, label: "Select Motor", icon: "🚤" },
+        { number: 2, label: "Purchase Type", icon: "🛒" },
+        { number: 3, label: "Trade-In", icon: "💱" },
+        { number: 4, label: "Your Quote", icon: "📋" },
+        { number: 5, label: "Consultation", icon: "📅" },
+      ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -202,7 +212,28 @@ export default function QuoteBuilder() {
           </motion.div>
         )}
 
-        {currentStep === 3 && (
+        {purchasePath === 'installed' && currentStep === 3 && (
+          <motion.div
+            key="boat-info"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+          >
+            <div className="container mx-auto px-4 py-8">
+              <BoatInformation
+                selectedMotor={selectedMotor}
+                includeTradeIn={false}
+                onBack={() => setCurrentStep(2)}
+                onStepComplete={(info) => {
+                  setBoatInfo(info);
+                  setCurrentStep(4);
+                }}
+              />
+            </div>
+          </motion.div>
+        )}
+
+        {((purchasePath !== 'installed' && currentStep === 3) || (purchasePath === 'installed' && currentStep === 4)) && (
           <motion.div
             key="trade-in"
             initial={{ opacity: 0, x: 100 }}
@@ -213,12 +244,12 @@ export default function QuoteBuilder() {
               <TradeInValuation
                 tradeInInfo={tradeInInfo}
                 onTradeInChange={setTradeInInfo}
-                currentMotorBrand={selectedMotor?.brand || selectedMotor?.manufacturer || 'Mercury'}
-                currentHp={typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp}
+                currentMotorBrand={boatInfo?.currentMotorBrand || selectedMotor?.brand || selectedMotor?.manufacturer || 'Mercury'}
+                currentHp={boatInfo?.currentHp || (typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp)}
               />
               <div className="mt-6 flex items-center justify-between">
-                <Button variant="outline" onClick={() => setCurrentStep(2)}>Back</Button>
-                <Button onClick={() => setCurrentStep(purchasePath === 'installed' ? 4 : 5)}>
+                <Button variant="outline" onClick={() => setCurrentStep(purchasePath === 'installed' ? 3 : 2)}>Back</Button>
+                <Button onClick={() => setCurrentStep(5)}>
                   Continue
                 </Button>
               </div>
@@ -226,7 +257,7 @@ export default function QuoteBuilder() {
           </motion.div>
         )}
 
-        {currentStep === 4 && purchasePath === 'installed' && (
+        {currentStep === 5 && purchasePath === 'installed' && (
           <motion.div
             key="installation-config"
             initial={{ opacity: 0, x: 100 }}
@@ -240,7 +271,7 @@ export default function QuoteBuilder() {
           </motion.div>
         )}
 
-          {currentStep === 5 && (
+          {currentStep === (purchasePath === 'installed' ? 6 : 5) && (
             <motion.div
               key="quote-display"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -249,7 +280,7 @@ export default function QuoteBuilder() {
               <LegacyQuoteDisplay
                 quoteData={{
                   motor: selectedMotor,
-                  boatInfo: { tradeIn: tradeInInfo } as any,
+                  boatInfo: (purchasePath === 'installed' ? { ...(boatInfo || {}), tradeIn: tradeInInfo } : { tradeIn: tradeInInfo }) as any,
                   financing: { downPayment: 0, term: 48, rate: 7.99 },
                   hasTradein: tradeInInfo.hasTradeIn,
                 } as any}
@@ -258,18 +289,18 @@ export default function QuoteBuilder() {
                 onStepComplete={(data) => {
                   setQuoteForSchedule({
                     motor: selectedMotor,
-                    boatInfo: { tradeIn: tradeInInfo } as any,
+                    boatInfo: (purchasePath === 'installed' ? { ...(boatInfo || {}), tradeIn: tradeInInfo } : { tradeIn: tradeInInfo }) as any,
                     financing: data.financing,
                     hasTradein: tradeInInfo.hasTradeIn,
                   } as any);
                   setTotalXP((prev) => prev + xpActions.completeQuote);
-                  setCurrentStep(6);
+                  setCurrentStep(purchasePath === 'installed' ? 7 : 6);
                 }}
-                onBack={() => setCurrentStep(purchasePath === 'installed' ? 4 : 3)}
+                onBack={() => setCurrentStep(purchasePath === 'installed' ? 5 : 3)}
               />
             </motion.div>
           )}
-          {currentStep === 6 && (
+          {currentStep === (purchasePath === 'installed' ? 7 : 6) && (
             <motion.div
               key="schedule-consultation"
               initial={{ opacity: 0, x: 100 }}
@@ -279,11 +310,11 @@ export default function QuoteBuilder() {
               <ScheduleConsultation
                 quoteData={(quoteForSchedule ?? {
                   motor: selectedMotor,
-                  boatInfo: { tradeIn: tradeInInfo } as any,
+                  boatInfo: (purchasePath === 'installed' ? { ...(boatInfo || {}), tradeIn: tradeInInfo } : { tradeIn: tradeInInfo }) as any,
                   financing: { downPayment: 0, term: 48, rate: 7.99 },
                   hasTradein: tradeInInfo.hasTradeIn,
                 }) as any}
-                onBack={() => setCurrentStep(5)}
+                onBack={() => setCurrentStep(purchasePath === 'installed' ? 6 : 5)}
               />
             </motion.div>
           )}
