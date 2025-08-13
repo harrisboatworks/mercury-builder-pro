@@ -175,7 +175,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
     // Battery - Required for electric start
     const isElectricStart = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
     if (isElectricStart) {
-      costs.battery = boatDetails?.hasBattery ? 0 : 300;
+      costs.battery = boatDetails?.hasBattery ? 0 : 179.99;
     }
 
     // Propeller - Required for 25HP+

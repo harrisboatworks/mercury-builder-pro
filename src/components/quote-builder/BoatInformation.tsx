@@ -710,7 +710,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                               </label>
                               {!boatInfo.hasBattery && (
                                 <div className="cost-note text-sm text-primary">
-                                  +$300 for battery
+                                  +$179.99 for battery
                                   <small className="block text-xs text-muted-foreground">Marine cranking battery</small>
                                 </div>
                               )}

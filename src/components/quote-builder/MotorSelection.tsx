@@ -1744,14 +1744,14 @@ const subtitle = formatVariantSubtitle(raw, title);
                               const model = (quickViewMotor.model || '').toUpperCase();
                               const needsControls = hp >= 40;
                               const needsBattery = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
-                              const propCost = hp >= 25 ? (hp >= 150 ? 950 : 350) : 0;
-                              const total = price + (needsControls ? 1200 : 0) + (needsBattery ? 300 : 0) + propCost + 500;
-                              return (
-                                <>
-                                  <div>Motor: {'$' + price.toLocaleString()}</div>
-                                  {needsControls && <div>Controls: ~$1,200</div>}
-                                  {needsBattery && <div>Battery: ~$300</div>}
-                                  {propCost > 0 && <div>Propeller: ~${propCost}</div>}
+                               const propCost = hp >= 25 ? (hp >= 150 ? 950 : 350) : 0;
+                               const total = price + (needsControls ? 1200 : 0) + (needsBattery ? 179.99 : 0) + propCost + 500;
+                               return (
+                                 <>
+                                   <div>Motor: {'$' + price.toLocaleString()}</div>
+                                   {needsControls && <div>Controls: ~$1,200</div>}
+                                   {needsBattery && <div>Battery: ~$179.99</div>}
+                                   {propCost > 0 && <div>Propeller: ~${propCost}</div>}
                                   <div>Installation: ~$500</div>
                                   <div className="font-bold pt-1 border-t border-border">Total: ~{'$' + total.toLocaleString()}</div>
                                   <div className="investment-note text-xs mt-2">
