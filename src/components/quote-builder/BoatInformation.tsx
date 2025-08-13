@@ -30,7 +30,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     currentHp: 0,
     serialNumber: '',
     controlType: 'side-mount-external',
-    shaftLength: '20',
+    shaftLength: '',
     hasBattery: false,
     hasCompatibleProp: false,
   });
