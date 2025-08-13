@@ -8,6 +8,7 @@ import { QuoteDisplay as LegacyQuoteDisplay } from "./QuoteDisplay";
 import { TradeInValuation } from "./TradeInValuation";
 import { BoatInformation } from "./BoatInformation";
 import { ScheduleConsultation } from "./ScheduleConsultation";
+import FuelTankOptions from "./FuelTankOptions";
 import type { TradeInInfo } from "@/lib/trade-valuation";
 import { Sparkles } from "lucide-react";
 import confetti from "canvas-confetti";
@@ -34,10 +35,18 @@ export default function QuoteBuilder() {
     confidenceLevel: 'low',
   });
   const [boatInfo, setBoatInfo] = useState<any>(null);
+  const [fuelTankConfig, setFuelTankConfig] = useState<any>(null);
   const [totalXP, setTotalXP] = useState(0);
   const [quoteForSchedule, setQuoteForSchedule] = useState<any | null>(null);
 
   const { user, loading, signOut } = useAuth();
+
+  // Helper function to check if motor is small tiller (2.5-6 HP)
+  const isSmallTillerMotor = (motor: any) => {
+    return motor?.horsepower <= 6 && 
+      (motor?.model?.toLowerCase().includes('tiller') || 
+       motor?.engine_type?.toLowerCase().includes('tiller'));
+  };
 
   // Auto-dismiss achievement badge after 3s when XP threshold reached
   const [showAchievement, setShowAchievement] = useState(false);
@@ -76,7 +85,12 @@ export default function QuoteBuilder() {
     if (path === 'installed') {
       setCurrentStep(3); // Go to boat info step first
     } else {
-      setCurrentStep(3); // Go to trade-in step for loose motors
+      // For small tiller motors, go to fuel tank options, otherwise trade-in
+      if (isSmallTillerMotor(selectedMotor)) {
+        setCurrentStep(3); // Go to fuel tank options
+      } else {
+        setCurrentStep(3); // Go to trade-in step for other loose motors
+      }
     }
   };
 
@@ -92,6 +106,14 @@ export default function QuoteBuilder() {
     });
   };
 
+  const handleFuelTankConfigComplete = (config: any) => {
+    setFuelTankConfig(config);
+    setCurrentStep(4); // Go to trade-in for small tiller motors
+    setTotalXP(prev => prev + 25); // Award XP for configuration
+  };
+
+  const isSmallTillerLoose = purchasePath === 'loose' && isSmallTillerMotor(selectedMotor);
+
   const steps = purchasePath === 'installed'
     ? [
         { number: 1, label: "Select Motor", icon: "🚤" },
@@ -102,13 +124,22 @@ export default function QuoteBuilder() {
         { number: 6, label: "Your Quote", icon: "📋" },
         { number: 7, label: "Consultation", icon: "📅" },
       ]
-    : [
-        { number: 1, label: "Select Motor", icon: "🚤" },
-        { number: 2, label: "Purchase Type", icon: "🛒" },
-        { number: 3, label: "Trade-In", icon: "💱" },
-        { number: 4, label: "Your Quote", icon: "📋" },
-        { number: 5, label: "Consultation", icon: "📅" },
-      ];
+    : isSmallTillerLoose
+      ? [
+          { number: 1, label: "Select Motor", icon: "🚤" },
+          { number: 2, label: "Purchase Type", icon: "🛒" },
+          { number: 3, label: "Fuel Options", icon: "⛽" },
+          { number: 4, label: "Trade-In", icon: "💱" },
+          { number: 5, label: "Your Quote", icon: "📋" },
+          { number: 6, label: "Consultation", icon: "📅" },
+        ]
+      : [
+          { number: 1, label: "Select Motor", icon: "🚤" },
+          { number: 2, label: "Purchase Type", icon: "🛒" },
+          { number: 3, label: "Trade-In", icon: "💱" },
+          { number: 4, label: "Your Quote", icon: "📋" },
+          { number: 5, label: "Consultation", icon: "📅" },
+        ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -233,7 +264,25 @@ export default function QuoteBuilder() {
           </motion.div>
         )}
 
-        {((purchasePath !== 'installed' && currentStep === 3) || (purchasePath === 'installed' && currentStep === 4)) && (
+        {/* Fuel Tank Options for Small Tiller Motors */}
+        {isSmallTillerLoose && currentStep === 3 && (
+          <motion.div
+            key="fuel-tank-options"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+          >
+            <FuelTankOptions
+              selectedMotor={selectedMotor}
+              onComplete={handleFuelTankConfigComplete}
+              onBack={() => setCurrentStep(2)}
+            />
+          </motion.div>
+        )}
+
+        {((!isSmallTillerLoose && purchasePath !== 'installed' && currentStep === 3) || 
+          (isSmallTillerLoose && currentStep === 4) || 
+          (purchasePath === 'installed' && currentStep === 4)) && (
           <motion.div
             key="trade-in"
             initial={{ opacity: 0, x: 100 }}
@@ -248,8 +297,16 @@ export default function QuoteBuilder() {
                 currentHp={boatInfo?.currentHp || (typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp)}
               />
               <div className="mt-6 flex items-center justify-between">
-                <Button variant="outline" onClick={() => setCurrentStep(purchasePath === 'installed' ? 3 : 2)}>Back</Button>
-                <Button onClick={() => setCurrentStep(5)}>
+                <Button variant="outline" onClick={() => {
+                  if (purchasePath === 'installed') {
+                    setCurrentStep(3);
+                  } else if (isSmallTillerLoose) {
+                    setCurrentStep(3); // Back to fuel options
+                  } else {
+                    setCurrentStep(2); // Back to purchase path
+                  }
+                }}>Back</Button>
+                <Button onClick={() => setCurrentStep(isSmallTillerLoose ? 5 : (purchasePath === 'installed' ? 5 : 4))}>
                   Continue
                 </Button>
               </div>
@@ -277,12 +334,13 @@ export default function QuoteBuilder() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
             >
-              <LegacyQuoteDisplay
+               <LegacyQuoteDisplay
                 quoteData={{
                   motor: selectedMotor,
                   boatInfo: (purchasePath === 'installed' ? { ...(boatInfo || {}), tradeIn: tradeInInfo } : { tradeIn: tradeInInfo }) as any,
                   financing: { downPayment: 0, term: 48, rate: 7.99 },
                   hasTradein: tradeInInfo.hasTradeIn,
+                  fuelTankConfig: fuelTankConfig,
                 } as any}
                 totalXP={totalXP}
                 onEarnXP={(amount) => setTotalXP((prev) => prev + amount)}
@@ -296,7 +354,7 @@ export default function QuoteBuilder() {
                   setTotalXP((prev) => prev + xpActions.completeQuote);
                   setCurrentStep(purchasePath === 'installed' ? 7 : 6);
                 }}
-                onBack={() => setCurrentStep(purchasePath === 'installed' ? 5 : 3)}
+                onBack={() => setCurrentStep(purchasePath === 'installed' ? 5 : (isSmallTillerLoose ? 4 : 3))}
               />
             </motion.div>
           )}
