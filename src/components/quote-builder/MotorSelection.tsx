@@ -1074,7 +1074,7 @@ export const MotorSelection = ({
             <Star className="w-4 h-4 text-yellow-500" />
             Customer Reviews (4.6/5 ⭐)
           </h4>
-          <RotatingTestimonials />
+          <TestimonialCarousel />
         </div>
       </div>
 
