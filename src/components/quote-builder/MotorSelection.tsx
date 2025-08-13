@@ -12,6 +12,7 @@ import { MotorFinderWizard } from './MotorFinderWizard';
 import { TestimonialCarousel } from './TestimonialCarousel';
 import { PromoDetailsModal } from './PromoDetailsModal';
 import { ActivityTicker } from './ActivityTicker';
+import { RotatingTestimonials } from './RotatingTestimonials';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { getPriceDisplayState } from '@/lib/pricing';
@@ -1057,45 +1058,9 @@ export const MotorSelection = ({
         <div className="mt-6">
           <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
             <Star className="w-4 h-4 text-yellow-500" />
-            Customer Reviews
+            Customer Reviews (4.6/5 ⭐)
           </h4>
-          <div className="space-y-3">
-            <div className="bg-card border rounded-lg p-3">
-              <div className="flex items-center gap-1 mb-2">
-                {[1,2,3,4,5].map(i => (
-                  <Star key={i} className="w-3 h-3 fill-yellow-500 text-yellow-500" />
-                ))}
-              </div>
-              <p className="text-xs text-muted-foreground mb-2">
-                "Bought a Mercury 115HP from Harris. Runs like a dream, great service from a family business that knows boats."
-              </p>
-              <p className="text-xs font-medium">— Mike T., Rice Lake</p>
-            </div>
-            
-            <div className="bg-card border rounded-lg p-3">
-              <div className="flex items-center gap-1 mb-2">
-                {[1,2,3,4,5].map(i => (
-                  <Star key={i} className="w-3 h-3 fill-yellow-500 text-yellow-500" />
-                ))}
-              </div>
-              <p className="text-xs text-muted-foreground mb-2">
-                "Third generation customer. Harris has always taken care of our family's boating needs. Mercury motors last forever with their service."
-              </p>
-              <p className="text-xs font-medium">— Sarah K., Peterborough</p>
-            </div>
-
-            <div className="bg-card border rounded-lg p-3">
-              <div className="flex items-center gap-1 mb-2">
-                {[1,2,3,4,5].map(i => (
-                  <Star key={i} className="w-3 h-3 fill-yellow-500 text-yellow-500" />
-                ))}
-              </div>
-              <p className="text-xs text-muted-foreground mb-2">
-                "Best price I found anywhere! Motor runs perfect, installation was professional. Highly recommend Harris Boat Works."
-              </p>
-              <p className="text-xs font-medium">— Dave M., Cobourg</p>
-            </div>
-          </div>
+          <RotatingTestimonials />
         </div>
       </div>
 

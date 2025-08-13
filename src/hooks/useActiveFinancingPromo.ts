@@ -10,12 +10,25 @@ export type ActiveFinancingPromo = {
   promo_end_date?: string | null;
 };
 
+// Simple cache to prevent excessive API calls
+let cachedPromo: ActiveFinancingPromo | null = null;
+let cacheTimestamp: number = 0;
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
 export function useActiveFinancingPromo() {
-  const [promo, setPromo] = useState<ActiveFinancingPromo | null>(null);
+  const [promo, setPromo] = useState<ActiveFinancingPromo | null>(cachedPromo);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const now = Date.now();
+    
+    // Use cached data if it's still fresh
+    if (cachedPromo && (now - cacheTimestamp) < CACHE_DURATION) {
+      setPromo(cachedPromo);
+      return;
+    }
+
     const fetchPromo = async () => {
       setLoading(true);
       setError(null);
@@ -32,17 +45,18 @@ export function useActiveFinancingPromo() {
           .limit(1);
         if (error) throw error;
         const first = (data || [])[0] as any | undefined;
-        if (first) {
-          setPromo({
-            id: first.id,
-            name: first.name,
-            rate: Number(first.rate),
-            promo_text: first.promo_text ?? null,
-            promo_end_date: first.promo_end_date ?? null,
-          });
-        } else {
-          setPromo(null);
-        }
+        const promoData = first ? {
+          id: first.id,
+          name: first.name,
+          rate: Number(first.rate),
+          promo_text: first.promo_text ?? null,
+          promo_end_date: first.promo_end_date ?? null,
+        } : null;
+        
+        // Update cache
+        cachedPromo = promoData;
+        cacheTimestamp = now;
+        setPromo(promoData);
       } catch (e: any) {
         setError(e?.message || 'Failed to load financing promo');
       } finally {
