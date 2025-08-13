@@ -409,20 +409,20 @@ export const MotorSelection = ({
       (window as any).analytics?.track?.(name, payload);
     } catch {}
     console.log('[analytics]', name, payload);
-
-    // Process Harris logo background removal
-    useEffect(() => {
-      const processLogo = async () => {
-        try {
-          const processedUrl = await processHarrisLogoBackground();
-          setHarrisLogoUrl(processedUrl);
-        } catch (error) {
-          console.warn('Failed to process Harris logo, using original:', error);
-        }
-      };
-      processLogo();
-    }, []);
   };
+
+  // Process Harris logo background removal
+  useEffect(() => {
+    const processLogo = async () => {
+      try {
+        const processedUrl = await processHarrisLogoBackground();
+        setHarrisLogoUrl(processedUrl);
+      } catch (error) {
+        console.warn('Failed to process Harris logo, using original:', error);
+      }
+    };
+    processLogo();
+  }, []);
 
   // Automatic inventory refresh state
   const [lastInventoryUpdate, setLastInventoryUpdate] = useState<string | null>(null);
