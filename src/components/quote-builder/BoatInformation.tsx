@@ -558,7 +558,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
 
                   <div className="bg-muted/30 rounded-lg p-4">
                     <img 
-                      src="/lovable-uploads/05341264-6462-45f9-b133-687f357bf615.png" 
+                      src="/lovable-uploads/cb45570a-2b96-4b08-af3d-412c7607a66e.png" 
                       alt="Transom height measurement guide showing how to measure from top of transom to bottom of hull" 
                       className="w-full max-w-lg mx-auto rounded-lg shadow-sm"
                     />
