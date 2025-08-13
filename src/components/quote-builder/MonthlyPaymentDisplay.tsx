@@ -13,7 +13,7 @@ export function MonthlyPaymentDisplay({ motorPrice }: MonthlyPaymentDisplayProps
   if (!monthlyPayment) return null;
   
   return (
-    <div className="mt-2 text-center">
+    <div className="mt-3 mb-2 text-center">
       <div className="text-sm text-muted-foreground">
         Starting at <span className="font-semibold text-foreground">${monthlyPayment.amount.toLocaleString()}/mo</span>*
       </div>
