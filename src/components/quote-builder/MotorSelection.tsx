@@ -388,7 +388,7 @@ const [bannerPromosOpen, setBannerPromosOpen] = useState(false);
 const [activePromoModal, setActivePromoModal] = useState<Promotion | null>(null);
 const [promotionsState, setPromotionsState] = useState<Promotion[]>([]);
 const [quickViewMotor, setQuickViewMotor] = useState<Motor | null>(null);
-const [harrisLogoUrl, setHarrisLogoUrl] = useState<string>('/lovable-uploads/f90cad3b-0db1-4a32-8b72-94f9e07a064d.png');
+const [harrisLogoUrl, setHarrisLogoUrl] = useState<string>('/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png');
 const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
 const [modelSearch, setModelSearch] = useState<string>('');
 
