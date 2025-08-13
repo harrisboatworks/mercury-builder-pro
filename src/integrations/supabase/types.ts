@@ -356,6 +356,8 @@ export type Database = {
           end_date: string | null
           highlight: boolean
           id: string
+          image_alt_text: string | null
+          image_url: string | null
           is_active: boolean
           kind: string
           name: string
@@ -376,6 +378,8 @@ export type Database = {
           end_date?: string | null
           highlight?: boolean
           id?: string
+          image_alt_text?: string | null
+          image_url?: string | null
           is_active?: boolean
           kind?: string
           name: string
@@ -396,6 +400,8 @@ export type Database = {
           end_date?: string | null
           highlight?: boolean
           id?: string
+          image_alt_text?: string | null
+          image_url?: string | null
           is_active?: boolean
           kind?: string
           name?: string

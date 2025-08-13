@@ -40,6 +40,9 @@ interface Promotion {
   highlight: boolean;
   priority: number;
   details?: any;
+  // Image fields
+  image_url: string | null;
+  image_alt_text: string | null;
 }
 
 interface PromotionRule {
@@ -100,6 +103,9 @@ const AdminPromotions = () => {
     terms_url: null,
     highlight: false,
     priority: 0,
+    // Image fields
+    image_url: null,
+    image_alt_text: null,
   });
 
   const [discountType, setDiscountType] = useState<'percentage' | 'fixed'>('percentage');
@@ -200,6 +206,8 @@ const AdminPromotions = () => {
         terms_url: null,
         highlight: false,
         priority: 0,
+        image_url: null,
+        image_alt_text: null,
       });
       setDiscountType('percentage');
       await loadAll();
@@ -422,6 +430,26 @@ const AdminPromotions = () => {
               </div>
             </>
           )}
+          
+          {/* Image Upload Section */}
+          <div className="space-y-2 md:col-span-3">
+            <Label htmlFor="image_url">Promotion Image URL</Label>
+            <Input 
+              id="image_url" 
+              value={newPromo.image_url ?? ''} 
+              onChange={(e) => setNewPromo({ ...newPromo, image_url: e.target.value })} 
+              placeholder="https://example.com/promo-image.jpg" 
+            />
+          </div>
+          <div className="space-y-2 md:col-span-3">
+            <Label htmlFor="image_alt">Image Alt Text</Label>
+            <Input 
+              id="image_alt" 
+              value={newPromo.image_alt_text ?? ''} 
+              onChange={(e) => setNewPromo({ ...newPromo, image_alt_text: e.target.value })} 
+              placeholder="Descriptive text for screen readers" 
+            />
+          </div>
         </div>
         <div className="mt-4">
           <Button onClick={createPromotion}>Create Promotion</Button>
