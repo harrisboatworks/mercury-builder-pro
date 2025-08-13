@@ -17,7 +17,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
   const model = (selectedMotor?.model || '').toUpperCase();
   const hp = typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp;
   const isTiller = model.includes('TILLER') || (hp && hp <= 30 && (/\bH\b/.test(model) || model.includes('MH')));
-  const isElectricStart = !model.includes('MANUAL') && !model.includes('PULL') && !model.includes('RECOIL');
+  const isElectricStart = !model.includes('MANUAL') && !model.includes('PULL') && !model.includes('RECOIL') && !model.includes('ROPE');
   const isInStock = selectedMotor?.stockStatus === 'In Stock';
   
   const handleLooseMotorSelect = () => {
