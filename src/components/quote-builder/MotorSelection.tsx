@@ -471,6 +471,13 @@ export const MotorSelection = ({
 
   // Load motors from database
   useEffect(() => {
+    // Clear any sticky bar state on component mount
+    console.log('[MotorSelection] Component mounted, clearing sticky bar state');
+    setShowStickyBar(false);
+    setSelectedMotor(null);
+    setShowCelebration(false);
+    setCelebrationParticles([]);
+    
     loadMotors();
   }, []);
 
@@ -1002,6 +1009,7 @@ export const MotorSelection = ({
       });
     }
     setTimeout(() => {
+      console.log('[MotorSelection] Setting sticky bar to true for motor:', motor.model);
       setShowStickyBar(true);
     }, 500);
     setTimeout(() => {
@@ -1348,8 +1356,11 @@ export const MotorSelection = ({
                 
                 <div className="flex items-center gap-3">
                   <Button variant="outline" className="btn-secondary" onClick={() => {
+                console.log('[MotorSelection] Change Selection clicked, clearing state');
                 setSelectedMotor(null);
                 setShowStickyBar(false);
+                setShowCelebration(false);
+                setCelebrationParticles([]);
               }}>
                     Change Selection
                   </Button>
