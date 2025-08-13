@@ -1,4 +1,3 @@
-// src/components/quote-builder/QuoteBuilder.tsx
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MotorSelection } from "./MotorSelection";
@@ -16,6 +15,8 @@ import { xpActions } from "@/config/xpActions";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/components/auth/AuthProvider";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/AppSidebar";
 
 export default function QuoteBuilder() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -62,6 +63,7 @@ export default function QuoteBuilder() {
   useEffect(() => {
     setMaxStepReached((prev) => Math.max(prev, currentStep));
   }, [currentStep]);
+  
   const handleMotorSelect = (motor: any) => {
     setSelectedMotor(motor);
     setCurrentStep(2);
@@ -142,257 +144,264 @@ export default function QuoteBuilder() {
         ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Header with XP Display */}
-      <div className="bg-white border-b sticky top-0 z-40">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-8">
-              {/* Step Indicators */}
-              <div className="flex items-center gap-2">
-                {steps.map((step, index) => (
-                  <div key={step.number} className="flex items-center">
-                    <motion.button
-                      type="button"
-                      title={step.label}
-                      onClick={() => step.number <= maxStepReached && setCurrentStep(step.number)}
-                      disabled={step.number > maxStepReached}
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      className={`flex items-center justify-center w-10 h-10 rounded-full font-bold transition-all
-                        ${currentStep === step.number 
-                          ? 'bg-blue-600 text-white shadow-lg animate-pulse' 
-                          : currentStep > step.number 
-                            ? 'bg-green-500 text-white hover:scale-110 cursor-pointer' 
-                            : step.number <= maxStepReached
-                              ? 'bg-gray-200 text-gray-400 hover:scale-110 cursor-pointer'
-                              : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                        }`}
-                      aria-label={step.label}
-                    >
-                      {currentStep > step.number ? '✓' : step.icon}
-                    </motion.button>
-                    {index < steps.length - 1 && (
-                      <div className={`w-12 h-1 mx-2 rounded
-                        ${currentStep > step.number ? 'bg-green-500' : 'bg-gray-200'}`} 
-                      />
-                    )}
+    <SidebarProvider>
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white w-full flex">
+        <AppSidebar harrisLogoUrl="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" />
+        
+        <div className="flex-1 flex flex-col">
+          {/* Header with XP Display */}
+          <div className="bg-white border-b sticky top-0 z-40">
+            <div className="container mx-auto px-4 py-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-8">
+                  {/* Step Indicators */}
+                  <div className="flex items-center gap-2">
+                    {steps.map((step, index) => (
+                      <div key={step.number} className="flex items-center">
+                        <motion.button
+                          type="button"
+                          title={step.label}
+                          onClick={() => step.number <= maxStepReached && setCurrentStep(step.number)}
+                          disabled={step.number > maxStepReached}
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          className={`flex items-center justify-center w-10 h-10 rounded-full font-bold transition-all
+                            ${currentStep === step.number 
+                              ? 'bg-blue-600 text-white shadow-lg animate-pulse' 
+                              : currentStep > step.number 
+                                ? 'bg-green-500 text-white hover:scale-110 cursor-pointer' 
+                                : step.number <= maxStepReached
+                                  ? 'bg-gray-200 text-gray-400 hover:scale-110 cursor-pointer'
+                                  : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                            }`}
+                          aria-label={step.label}
+                        >
+                          {currentStep > step.number ? '✓' : step.icon}
+                        </motion.button>
+                        {index < steps.length - 1 && (
+                          <div className={`w-12 h-1 mx-2 rounded
+                            ${currentStep > step.number ? 'bg-green-500' : 'bg-gray-200'}`} 
+                          />
+                        )}
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+                
+                {/* Right side: XP + Admin */}
+                <div className="flex items-center gap-3">
+                  {totalXP > 0 && (
+                    <motion.div
+                      initial={{ scale: 0, rotate: -180 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      className="flex items-center gap-2 bg-gradient-to-r from-yellow-100 to-orange-100 px-4 py-2 rounded-full"
+                    >
+                      <Sparkles className="w-5 h-5 text-orange-600" />
+                      <span className="font-bold text-orange-800">{totalXP} XP Total</span>
+                    </motion.div>
+                  )}
+
+                  {!loading && (
+                    user ? (
+                      <div className="flex items-center gap-2">
+                        <Link to="/admin/quotes">
+                          <Button variant="secondary" size="sm">Admin</Button>
+                        </Link>
+                        <Button variant="outline" size="sm" onClick={async () => { await signOut(); }}>
+                          Sign Out
+                        </Button>
+                      </div>
+                    ) : (
+                      <Link to="/auth">
+                        <Button size="sm">Admin Sign In</Button>
+                      </Link>
+                    )
+                  )}
+                </div>
               </div>
             </div>
-            
-            {/* Right side: XP + Admin */}
-            <div className="flex items-center gap-3">
-              {totalXP > 0 && (
-                <motion.div
-                  initial={{ scale: 0, rotate: -180 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  className="flex items-center gap-2 bg-gradient-to-r from-yellow-100 to-orange-100 px-4 py-2 rounded-full"
-                >
-                  <Sparkles className="w-5 h-5 text-orange-600" />
-                  <span className="font-bold text-orange-800">{totalXP} XP Total</span>
-                </motion.div>
-              )}
+          </div>
 
-              {!loading && (
-                user ? (
-                  <div className="flex items-center gap-2">
-                    <Link to="/admin/quotes">
-                      <Button variant="secondary" size="sm">Admin</Button>
-                    </Link>
-                    <Button variant="outline" size="sm" onClick={async () => { await signOut(); }}>
-                      Sign Out
+          {/* Main Content */}
+          <AnimatePresence mode="wait">
+            {currentStep === 1 && (
+              <motion.div
+                key="motor-selection"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+              >
+                <MotorSelection onStepComplete={handleMotorSelect} />
+              </motion.div>
+            )}
+
+            {currentStep === 2 && (
+              <motion.div
+                key="purchase-path"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+              >
+                <PurchasePath 
+                  selectedMotor={selectedMotor}
+                  onSelectPath={handlePathSelect}
+                />
+              </motion.div>
+            )}
+
+            {purchasePath === 'installed' && currentStep === 3 && (
+              <motion.div
+                key="boat-info"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+              >
+                <div className="container mx-auto px-4 py-8">
+                  <BoatInformation
+                    selectedMotor={selectedMotor}
+                    includeTradeIn={false}
+                    onBack={() => setCurrentStep(2)}
+                    onStepComplete={(info) => {
+                      setBoatInfo(info);
+                      setCurrentStep(4);
+                    }}
+                    onShowCompatibleMotors={() => setCurrentStep(1)}
+                  />
+                </div>
+              </motion.div>
+            )}
+
+            {/* Fuel Tank Options for Small Tiller Motors */}
+            {isSmallTillerLoose && currentStep === 3 && (
+              <motion.div
+                key="fuel-tank-options"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+              >
+                <FuelTankOptions
+                  selectedMotor={selectedMotor}
+                  onComplete={handleFuelTankConfigComplete}
+                  onBack={() => setCurrentStep(2)}
+                />
+              </motion.div>
+            )}
+
+            {((!isSmallTillerLoose && purchasePath !== 'installed' && currentStep === 3) || 
+              (isSmallTillerLoose && currentStep === 4) || 
+              (purchasePath === 'installed' && currentStep === 4)) && (
+              <motion.div
+                key="trade-in"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+              >
+                <div className="container mx-auto px-4 py-8">
+                  <TradeInValuation
+                    tradeInInfo={tradeInInfo}
+                    onTradeInChange={setTradeInInfo}
+                    currentMotorBrand={boatInfo?.currentMotorBrand || selectedMotor?.brand || selectedMotor?.manufacturer || 'Mercury'}
+                    currentHp={boatInfo?.currentHp || (typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp)}
+                  />
+                  <div className="mt-6 flex items-center justify-between">
+                    <Button variant="outline" onClick={() => {
+                      if (purchasePath === 'installed') {
+                        setCurrentStep(3);
+                      } else if (isSmallTillerLoose) {
+                        setCurrentStep(3); // Back to fuel options
+                      } else {
+                        setCurrentStep(2); // Back to purchase path
+                      }
+                    }}>Back</Button>
+                    <Button onClick={() => setCurrentStep(isSmallTillerLoose ? 5 : (purchasePath === 'installed' ? 5 : 4))}>
+                      Continue
                     </Button>
                   </div>
-                ) : (
-                  <Link to="/auth">
-                    <Button size="sm">Admin Sign In</Button>
-                  </Link>
-                )
-              )}
-            </div>
-        </div>
-      </div>
-    </div>
+                </div>
+              </motion.div>
+            )}
 
-      {/* Main Content */}
-      <AnimatePresence mode="wait">
-        {currentStep === 1 && (
-          <motion.div
-            key="motor-selection"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-          >
-            <MotorSelection onStepComplete={handleMotorSelect} />
-          </motion.div>
-        )}
+            {currentStep === 5 && purchasePath === 'installed' && (
+              <motion.div
+                key="installation-config"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+              >
+                <InstallationConfig
+                  selectedMotor={selectedMotor}
+                  onComplete={handleConfigComplete}
+                />
+              </motion.div>
+            )}
 
-        {currentStep === 2 && (
-          <motion.div
-            key="purchase-path"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-          >
-            <PurchasePath 
-              selectedMotor={selectedMotor}
-              onSelectPath={handlePathSelect}
-            />
-          </motion.div>
-        )}
-
-        {purchasePath === 'installed' && currentStep === 3 && (
-          <motion.div
-            key="boat-info"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-          >
-            <div className="container mx-auto px-4 py-8">
-              <BoatInformation
-                selectedMotor={selectedMotor}
-                includeTradeIn={false}
-                onBack={() => setCurrentStep(2)}
-                onStepComplete={(info) => {
-                  setBoatInfo(info);
-                  setCurrentStep(4);
-                }}
-                onShowCompatibleMotors={() => setCurrentStep(1)}
-              />
-            </div>
-          </motion.div>
-        )}
-
-        {/* Fuel Tank Options for Small Tiller Motors */}
-        {isSmallTillerLoose && currentStep === 3 && (
-          <motion.div
-            key="fuel-tank-options"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-          >
-            <FuelTankOptions
-              selectedMotor={selectedMotor}
-              onComplete={handleFuelTankConfigComplete}
-              onBack={() => setCurrentStep(2)}
-            />
-          </motion.div>
-        )}
-
-        {((!isSmallTillerLoose && purchasePath !== 'installed' && currentStep === 3) || 
-          (isSmallTillerLoose && currentStep === 4) || 
-          (purchasePath === 'installed' && currentStep === 4)) && (
-          <motion.div
-            key="trade-in"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-          >
-            <div className="container mx-auto px-4 py-8">
-              <TradeInValuation
-                tradeInInfo={tradeInInfo}
-                onTradeInChange={setTradeInInfo}
-                currentMotorBrand={boatInfo?.currentMotorBrand || selectedMotor?.brand || selectedMotor?.manufacturer || 'Mercury'}
-                currentHp={boatInfo?.currentHp || (typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp)}
-              />
-              <div className="mt-6 flex items-center justify-between">
-                <Button variant="outline" onClick={() => {
-                  if (purchasePath === 'installed') {
-                    setCurrentStep(3);
-                  } else if (isSmallTillerLoose) {
-                    setCurrentStep(3); // Back to fuel options
-                  } else {
-                    setCurrentStep(2); // Back to purchase path
-                  }
-                }}>Back</Button>
-                <Button onClick={() => setCurrentStep(isSmallTillerLoose ? 5 : (purchasePath === 'installed' ? 5 : 4))}>
-                  Continue
-                </Button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-
-        {currentStep === 5 && purchasePath === 'installed' && (
-          <motion.div
-            key="installation-config"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-          >
-            <InstallationConfig
-              selectedMotor={selectedMotor}
-              onComplete={handleConfigComplete}
-            />
-          </motion.div>
-        )}
-
-          {currentStep === (purchasePath === 'installed' ? 6 : 5) && (
-            <motion.div
-              key="quote-display"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-            >
-               <LegacyQuoteDisplay
-                quoteData={{
-                  motor: selectedMotor,
-                  boatInfo: (purchasePath === 'installed' ? { ...(boatInfo || {}), tradeIn: tradeInInfo } : { tradeIn: tradeInInfo }) as any,
-                  financing: { downPayment: 0, term: 48, rate: 7.99 },
-                  hasTradein: tradeInInfo.hasTradeIn,
-                  fuelTankConfig: fuelTankConfig,
-                } as any}
-                totalXP={totalXP}
-                onEarnXP={(amount) => setTotalXP((prev) => prev + amount)}
-                onStepComplete={(data) => {
-                  setQuoteForSchedule({
+            {currentStep === (purchasePath === 'installed' ? 6 : 5) && (
+              <motion.div
+                key="quote-display"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+              >
+                <LegacyQuoteDisplay
+                  quoteData={{
                     motor: selectedMotor,
                     boatInfo: (purchasePath === 'installed' ? { ...(boatInfo || {}), tradeIn: tradeInInfo } : { tradeIn: tradeInInfo }) as any,
-                    financing: data.financing,
+                    financing: { downPayment: 0, term: 48, rate: 7.99 },
                     hasTradein: tradeInInfo.hasTradeIn,
-                  } as any);
-                  setTotalXP((prev) => prev + xpActions.completeQuote);
-                  setCurrentStep(purchasePath === 'installed' ? 7 : 6);
-                }}
-                onBack={() => setCurrentStep(purchasePath === 'installed' ? 5 : (isSmallTillerLoose ? 4 : 3))}
-              />
-            </motion.div>
-          )}
-          {currentStep === (purchasePath === 'installed' ? 7 : 6) && (
-            <motion.div
-              key="schedule-consultation"
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-            >
-              <ScheduleConsultation
-                quoteData={(quoteForSchedule ?? {
-                  motor: selectedMotor,
-                  boatInfo: (purchasePath === 'installed' ? { ...(boatInfo || {}), tradeIn: tradeInInfo } : { tradeIn: tradeInInfo }) as any,
-                  financing: { downPayment: 0, term: 48, rate: 7.99 },
-                  hasTradein: tradeInInfo.hasTradeIn,
-                }) as any}
-                onBack={() => setCurrentStep(purchasePath === 'installed' ? 6 : 5)}
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
+                    fuelTankConfig: fuelTankConfig,
+                  } as any}
+                  totalXP={totalXP}
+                  onEarnXP={(amount) => setTotalXP((prev) => prev + amount)}
+                  onStepComplete={(data) => {
+                    setQuoteForSchedule({
+                      motor: selectedMotor,
+                      boatInfo: (purchasePath === 'installed' ? { ...(boatInfo || {}), tradeIn: tradeInInfo } : { tradeIn: tradeInInfo }) as any,
+                      financing: data.financing,
+                      hasTradein: tradeInInfo.hasTradeIn,
+                    } as any);
+                    setTotalXP((prev) => prev + xpActions.completeQuote);
+                    setCurrentStep(purchasePath === 'installed' ? 7 : 6);
+                  }}
+                  onBack={() => setCurrentStep(purchasePath === 'installed' ? 5 : (isSmallTillerLoose ? 4 : 3))}
+                />
+              </motion.div>
+            )}
+            
+            {currentStep === (purchasePath === 'installed' ? 7 : 6) && (
+              <motion.div
+                key="schedule-consultation"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+              >
+                <ScheduleConsultation
+                  quoteData={(quoteForSchedule ?? {
+                    motor: selectedMotor,
+                    boatInfo: (purchasePath === 'installed' ? { ...(boatInfo || {}), tradeIn: tradeInInfo } : { tradeIn: tradeInInfo }) as any,
+                    financing: { downPayment: 0, term: 48, rate: 7.99 },
+                    hasTradein: tradeInInfo.hasTradeIn,
+                  }) as any}
+                  onBack={() => setCurrentStep(purchasePath === 'installed' ? 6 : 5)}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-      {/* Floating Achievement Toast */}
-      {showAchievement && (
-        <motion.div
-          initial={{ bottom: -100 }}
-          animate={{ bottom: 20 }}
-          className="fixed bottom-20 right-4 bg-purple-600 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3"
-        >
-          <span className="text-2xl">🏆</span>
-          <div>
-            <div className="font-bold">Master Configurator!</div>
-            <div className="text-sm opacity-90">You've earned {totalXP} XP</div>
-          </div>
-        </motion.div>
-      )}
-    </div>
+          {/* Floating Achievement Toast */}
+          {showAchievement && (
+            <motion.div
+              initial={{ bottom: -100 }}
+              animate={{ bottom: 20 }}
+              className="fixed bottom-20 right-4 bg-purple-600 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3"
+            >
+              <span className="text-2xl">🏆</span>
+              <div>
+                <div className="font-bold">Master Configurator!</div>
+                <div className="text-sm opacity-90">You've earned {totalXP} XP</div>
+              </div>
+            </motion.div>
+          )}
+        </div>
+      </div>
+    </SidebarProvider>
   );
 }
