@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Slider } from '@/components/ui/slider';
-import { Switch } from '@/components/ui/switch';
+
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, DollarSign, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, type TradeValueEstimate, type TradeInInfo } from '@/lib/trade-valuation';
@@ -95,24 +95,33 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
   return (
     <Card className="p-6">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="space-y-2">
           <Label className="text-lg font-semibold flex items-center gap-2">
             <DollarSign className="w-5 h-5" />
             Trade-In Valuation
           </Label>
-          <div className="flex items-center space-x-2">
-            <Label htmlFor="trade-toggle" className="text-sm">I have a motor to trade</Label>
-            <Switch
-              id="trade-toggle"
-              checked={tradeInInfo.hasTradeIn}
-              onCheckedChange={(checked) => 
-                onTradeInChange({ 
-                  ...tradeInInfo, 
-                  hasTradeIn: checked,
-                  estimatedValue: checked ? tradeInInfo.estimatedValue : 0
-                })
-              }
-            />
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <div className="text-sm text-muted-foreground">Do you have a motor to trade?</div>
+            <div className="inline-flex rounded-md border border-border overflow-hidden">
+              <Button
+                type="button"
+                variant={tradeInInfo.hasTradeIn ? 'default' : 'ghost'}
+                onClick={() => onTradeInChange({ ...tradeInInfo, hasTradeIn: true })}
+                aria-pressed={tradeInInfo.hasTradeIn}
+                className="rounded-none"
+              >
+                Yes
+              </Button>
+              <Button
+                type="button"
+                variant={!tradeInInfo.hasTradeIn ? 'default' : 'ghost'}
+                onClick={() => onTradeInChange({ ...tradeInInfo, hasTradeIn: false, estimatedValue: 0 })}
+                aria-pressed={!tradeInInfo.hasTradeIn}
+                className="rounded-none border-l border-border"
+              >
+                No
+              </Button>
+            </div>
           </div>
         </div>
 
