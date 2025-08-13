@@ -17,6 +17,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { getPriceDisplayState } from '@/lib/pricing';
 import { formatVariantSubtitle, formatMotorTitle } from '@/lib/card-title';
+import { useSocialProofNotifications } from '@/hooks/useSocialProofNotifications';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { useNavigate } from 'react-router-dom';
 import { canadianEncouragement, loadingMessages, emptyStateMessages, friendlyErrors } from '@/lib/canadian-messages';
@@ -360,6 +361,7 @@ export const MotorSelection = ({
   } = useToast();
   const isMobile = useIsMobile();
   const [motors, setMotors] = useState<Motor[]>([]);
+  const socialProofNotifications = useSocialProofNotifications(motors);
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
   const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
@@ -1204,19 +1206,25 @@ export const MotorSelection = ({
                       </Badge>
                     </div>
 
-                    <div className="space-y-1">
-                      {(() => {
-                  const title = formatMotorTitle(motor.year, motor.model);
-                  const raw = `${motor.model ?? ''} ${motor.description ?? motor.specs ?? ''}`.trim();
-                  const subtitle = formatVariantSubtitle(raw, title);
-                  return <>
-                            <h3 className="text-sm md:text-base font-semibold text-foreground line-clamp-2">{title}</h3>
-                            <div className="min-h-[1rem]">
-                              {subtitle ? <p className="text-foreground/90 text-xs line-clamp-1" title={subtitle}>{subtitle}</p> : null}
-                            </div>
-                          </>;
-                })()}
-                    </div>
+                     <div className="space-y-1">
+                       {(() => {
+                   const title = formatMotorTitle(motor.year, motor.model);
+                   const raw = `${motor.model ?? ''} ${motor.description ?? motor.specs ?? ''}`.trim();
+                   const subtitle = formatVariantSubtitle(raw, title);
+                   const notification = socialProofNotifications.get(motor.id);
+                   return <>
+                             <h3 className="text-sm md:text-base font-semibold text-foreground line-clamp-2">{title}</h3>
+                             {notification && (
+                               <div className={`inline-flex items-center px-2 py-0.5 text-xs font-medium rounded border animate-fade-in ${notification.color}`}>
+                                 🔥 {notification.message}
+                               </div>
+                             )}
+                             <div className="min-h-[1rem]">
+                               {subtitle ? <p className="text-foreground/90 text-xs line-clamp-1" title={subtitle}>{subtitle}</p> : null}
+                             </div>
+                           </>;
+                 })()}
+                     </div>
 
       {motor.image && motor.image !== '/placeholder.svg' && <div className="motor-image-container image-wrap w-full h-[200px] shrink-0 bg-muted/10 overflow-hidden flex items-center justify-center rounded-lg p-2.5 relative">
     <img src={motor.image} alt={motor.model} loading="lazy" className="motor-image" style={{
