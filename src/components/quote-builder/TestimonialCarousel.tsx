@@ -57,12 +57,20 @@ export const TestimonialCarousel = () => {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
 
+  console.log('TestimonialCarousel: Render - current:', current, 'paused:', paused);
+
   useEffect(() => {
+    console.log('TestimonialCarousel: useEffect triggered, paused:', paused);
     if (paused) return;
     const timer = setInterval(() => {
+      console.log('TestimonialCarousel: Timer fired, changing from', current, 'to', (current + 1) % testimonials.length);
       setCurrent((prev) => (prev + 1) % testimonials.length);
     }, 6000);
-    return () => clearInterval(timer);
+    console.log('TestimonialCarousel: Timer set with ID:', timer);
+    return () => {
+      console.log('TestimonialCarousel: Cleaning up timer:', timer);
+      clearInterval(timer);
+    };
   }, [paused]);
 
   const t = testimonials[current];
