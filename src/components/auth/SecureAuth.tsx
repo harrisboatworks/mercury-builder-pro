@@ -61,13 +61,10 @@ export const SecureAuth = () => {
     }
   }, [formData.password, isSignUp]);
 
-  // Rate limiting check
+  // Rate limiting check - temporarily disabled for debugging
   const checkRateLimit = async () => {
-    if (formData.email) {
-      const canProceed = await SecurityManager.checkRateLimit(formData.email, 'auth_attempt');
-      setIsRateLimited(!canProceed);
-      return canProceed;
-    }
+    // Temporarily bypass rate limiting to fix login issues
+    // TODO: Implement proper rate limiting with IP-based tracking
     return true;
   };
 

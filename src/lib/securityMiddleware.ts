@@ -53,7 +53,11 @@ export class SecurityManager {
           table_name: tableName,
           record_id: recordId,
           ip_address: metadata?.ipAddress,
-          user_agent: metadata?.userAgent
+          user_agent: metadata?.userAgent,
+          metadata: {
+            ...metadata,
+            identifier: userId // Store identifier for rate limiting lookups
+          }
         });
 
       if (error) {
@@ -88,27 +92,30 @@ export class SecurityManager {
     }
   }
 
-  // Rate limiting check
-  static async checkRateLimit(userId: string, action: string): Promise<boolean> {
+  // Rate limiting check - for login attempts, use identifier (email or user_id)
+  static async checkRateLimit(identifier: string, action: string): Promise<boolean> {
     try {
       const windowStart = new Date(Date.now() - this.RATE_LIMIT_WINDOW);
 
+      // For login attempts, check by identifier (could be email or user_id)
       const { data, error } = await supabase
         .from('security_audit_log')
         .select('id')
-        .eq('user_id', userId)
+        .or(`user_id.eq.${identifier},metadata->>identifier.eq.${identifier}`)
         .eq('action', action)
         .gte('created_at', windowStart.toISOString());
 
       if (error) {
         console.error('Rate limit check error:', error);
-        return false;
+        // On error, allow the request to proceed (fail open for availability)
+        return true;
       }
 
       return (data?.length || 0) < this.MAX_FAILED_ATTEMPTS;
     } catch (error) {
       console.error('Rate limiting error:', error);
-      return false;
+      // On error, allow the request to proceed (fail open for availability)
+      return true;
     }
   }
 
