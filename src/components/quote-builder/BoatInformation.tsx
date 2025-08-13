@@ -189,6 +189,8 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
   // Derive motor shaft length from specifications or model code
   const deriveMotorShaftFromModel = (motor?: Motor | null): '15' | '20' | '25' | '30' | null => {
     if (!motor) return null;
+    
+    // First check specifications if available
     const shaftSpec = (motor as any).specifications?.shaft_length as string | undefined;
     if (shaftSpec) {
       if (/30/.test(shaftSpec)) return '30';
@@ -196,12 +198,16 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
       if (/20/.test(shaftSpec)) return '20';
       if (/15/.test(shaftSpec)) return '15';
     }
+    
+    // Then check model code for shaft indicators
     const model = (motor.model || '').toUpperCase();
     if (/\bXXL\b/.test(model)) return '30';
     if (/\bXL\b|EXLPT/.test(model)) return '25';
     if (/\bL\b|ELPT|MLH|LPT/.test(model)) return '20';
     if (/\bS\b/.test(model)) return '15';
-    return null;
+    
+    // Default assumption for most motors is 20" Long shaft if no specific indicator
+    return '20';
   };
 
   const motorShaft = deriveMotorShaftFromModel(selectedMotor);
