@@ -1707,7 +1707,7 @@ export const MotorSelection = ({
                            {needsBattery && <div>Battery: ~$179.99</div>}
                            {propCost > 0 && <div>Propeller: ~${propCost}</div>}
                           <div>Installation: ~$500</div>
-                          <div className="font-bold pt-1 border-t border-border">Total: ~{'$' + total.toLocaleString()}</div>
+                          <div className="font-bold pt-1 border-t border-border">Total: ~{'$' + total.toLocaleString()} + HST</div>
                           <div className="investment-note text-xs mt-2">
                             <p>* Includes all required accessories:</p>
                             <ul className="text-xs list-disc pl-5">
@@ -1716,6 +1716,7 @@ export const MotorSelection = ({
                               <li>Battery (if electric start)</li>
                               <li>FREE water testing</li>
                             </ul>
+                            <p className="text-xs mt-2 text-muted-foreground">*Approximate amounts only. Confirm with Harris Boat Works.</p>
                           </div>
                         </>;
               })()}
