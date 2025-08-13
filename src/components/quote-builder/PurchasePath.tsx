@@ -179,6 +179,13 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
                   </div>
                 </div>
               </div>
+              <div className="hidden md:block flex-shrink-0 ml-4">
+                <img 
+                  src="/lovable-uploads/4bdf5164-e316-4a1a-959e-654fe246f29c.png" 
+                  alt="Deka Marine Master Battery" 
+                  className="w-24 h-24 object-contain rounded-lg"
+                />
+              </div>
             </div>
           </motion.div>
         </TooltipProvider>
