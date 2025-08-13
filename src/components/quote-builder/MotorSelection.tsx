@@ -34,6 +34,7 @@ interface DbMotor {
   engine_type?: string | null;
   image_url?: string | null;
   availability?: string | null;
+  stock_number?: string | null;
   year: number;
   make: string;
   // New enhanced fields
@@ -547,7 +548,10 @@ export const MotorSelection = ({
           hp: Number(m.horsepower),
           price: effectivePrice,
           image: m.image_url || '/placeholder.svg',
-          stockStatus: m.availability === 'In Stock' ? 'In Stock' : m.availability === 'On Order' ? 'On Order' : 'Out of Stock',
+          stockStatus: m.availability === 'In Stock' ? 'In Stock' : 
+                      m.availability === 'Sold' ? 'Sold' :
+                      m.availability === 'On Order' ? 'On Order' : 'Out of Stock',
+          stockNumber: m.stock_number,
           category: categorizeMotor(Number(m.horsepower)),
           type: m.motor_type,
           specs: `${m.engine_type || ''} ${m.year} ${m.make} ${m.model}`.trim(),
@@ -828,6 +832,8 @@ export const MotorSelection = ({
         return 'bg-in-stock text-in-stock-foreground';
       case 'On Order':
         return 'bg-on-order text-on-order-foreground';
+      case 'Sold':
+        return 'bg-destructive text-destructive-foreground';
       case 'Out of Stock':
         return 'bg-out-of-stock text-out-of-stock-foreground';
       default:
@@ -1182,10 +1188,13 @@ export const MotorSelection = ({
           });
           const stockCount = (motor as any)?.stockCount as number | undefined;
           const recentSales = (motor as any)?.recentSales as number | undefined;
-          return <Card key={motor.id} className={`product-card relative cursor-pointer transition-all duration-500 hover:shadow-lg group overflow-hidden ${selectedMotor?.id === motor.id ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' : 'hover:scale-[1.01]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} flex flex-col`} onClick={() => handleMotorSelection(motor)}>
+          return <Card key={motor.id} className={`product-card relative cursor-pointer transition-all duration-500 hover:shadow-lg group overflow-hidden ${selectedMotor?.id === motor.id ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' : 'hover:scale-[1.01]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} ${(motor as any).stockStatus === 'Sold' ? 'opacity-50 cursor-not-allowed' : ''} flex flex-col`} onClick={() => (motor as any).stockStatus !== 'Sold' && handleMotorSelection(motor)}>
 
                   <Badge className={`stock-badge ${getStockBadgeColor(motor.stockStatus)}`}>
                     {motor.stockStatus}
+                    {motor.stockStatus === 'In Stock' && motor.stockNumber && (
+                      <span className="ml-1 text-xs opacity-70">#{motor.stockNumber}</span>
+                    )}
                   </Badge>
 
                   <div className="p-3 space-y-3 relative h-full flex flex-col">
@@ -1325,7 +1334,7 @@ export const MotorSelection = ({
           </div>}
 
 
-        {selectedMotor && !showStickyBar && <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
+        {selectedMotor && !showStickyBar && (selectedMotor as any).stockStatus !== 'Sold' && <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
             <Button onClick={() => onStepComplete(selectedMotor)} className="btn-primary px-8 animate-pulse">
               Continue with {selectedMotor.model}
               <Zap className="w-5 h-5 ml-2" />
@@ -1333,7 +1342,7 @@ export const MotorSelection = ({
           </div>}
       </div>
 
-      {showStickyBar && selectedMotor && <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom-5 duration-500">
+      {showStickyBar && selectedMotor && (selectedMotor as any).stockStatus !== 'Sold' && <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom-5 duration-500">
           <div className="checkout-banner bg-background/95 backdrop-blur-lg border-t-4 border-green-500 shadow-2xl">
             <div className="container mx-auto px-4 py-4">
               <div className="flex items-center justify-between">
@@ -1364,8 +1373,10 @@ export const MotorSelection = ({
               }}>
                     Change Selection
                   </Button>
-                  <Button onClick={() => onStepComplete(selectedMotor)} className="btn-primary px-6 animate-pulse-green shadow-lg bg-green-600 hover:bg-green-700">
-                    Continue to Boat Info
+                  <Button onClick={() => onStepComplete(selectedMotor)} 
+                    disabled={(selectedMotor as any).stockStatus === 'Sold'}
+                    className={`btn-primary px-6 shadow-lg ${(selectedMotor as any).stockStatus === 'Sold' ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700 animate-pulse-green'}`}>
+                    {(selectedMotor as any).stockStatus === 'Sold' ? 'Motor Sold' : 'Continue to Boat Info'}
                     <Zap className="w-5 h-5 ml-2" />
                   </Button>
                 </div>
@@ -1374,7 +1385,7 @@ export const MotorSelection = ({
           </div>
         </div>}
 
-      {showStickyBar && selectedMotor && isMobile && <div className="fixed bottom-20 right-4 z-40 animate-in zoom-in-50 duration-500">
+      {showStickyBar && selectedMotor && isMobile && (selectedMotor as any).stockStatus !== 'Sold' && <div className="fixed bottom-20 right-4 z-40 animate-in zoom-in-50 duration-500">
           <Button onClick={() => onStepComplete(selectedMotor)} className="rounded-full w-14 h-14 shadow-2xl bg-green-600 hover:bg-green-700 animate-bounce">
             <Check className="w-6 h-6" />
           </Button>

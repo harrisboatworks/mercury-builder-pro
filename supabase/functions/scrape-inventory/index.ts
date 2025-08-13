@@ -568,7 +568,24 @@ function parseMotorData(html: string): MotorData[] {
           const hp = hpMatch ? parseFloat(hpMatch[1]) : 0
           
           if (hp > 0 && motorData.itemMake === 'Mercury') {
-            const availability = motorData.stockNumber ? 'In Stock' : 'Brochure'
+            // Determine availability - check for sold status
+            let availability = 'Brochure'
+            if (motorData.stockNumber) {
+              availability = 'In Stock'
+            }
+            
+            // Check for sold indicators
+            const soldIndicators = [
+              motorData.sold === true,
+              motorData.itemAvailability === 'Sold',
+              motorData.itemAvailability === 'Unavailable',
+              /sold|unavailable/i.test(motorData.itemName || ''),
+              /sold|unavailable/i.test(motorData.itemDescription || '')
+            ]
+            
+            if (soldIndicators.some(Boolean)) {
+              availability = 'Sold'
+            }
             // Prefer detail images over thumbnails for better quality
             let imageUrl = getMotorImageUrl(motorName) // fallback
             if (motorData.itemThumbNailUrl) {
@@ -644,9 +661,28 @@ function parseMotorData(html: string): MotorData[] {
             ? (salePrice + parseFloat(saveMatch[1].replace(/,/g, '')))
             : basePriceCandidate
           
-          // Extract availability
+          // Extract availability - check for sold, in stock, or default to brochure
           const availabilityMatch = cardHtml.match(/<span class=\"label[^\"]*\"[^>]*>([^<]+)</i)
-          const availability = availabilityMatch ? availabilityMatch[1].trim() : 'Brochure'
+          let availability = availabilityMatch ? availabilityMatch[1].trim() : 'Brochure'
+          
+          // Check for sold indicators in various places
+          const soldIndicators = [
+            /sold/i,
+            /unavailable/i,
+            /out\s*of\s*stock/i
+          ]
+          
+          const isSold = soldIndicators.some(pattern => 
+            pattern.test(availability) || 
+            pattern.test(cardHtml) ||
+            pattern.test(fullTitle)
+          )
+          
+          if (isSold) {
+            availability = 'Sold'
+          } else if (availability.toLowerCase().includes('stock')) {
+            availability = 'In Stock'
+          }
           
           // Extract image URL
           const imageMatch = cardHtml.match(/src=\"([^\"]*ThumbGenerator[^\"]*)\"/) || 
