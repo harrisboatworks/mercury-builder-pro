@@ -5,7 +5,9 @@ import { MotorSelection } from "./MotorSelection";
 import PurchasePath from "./PurchasePath";
 import InstallationConfig from "./InstallationConfig";
 import { QuoteDisplay as LegacyQuoteDisplay } from "./QuoteDisplay";
+import { TradeInValuation } from "./TradeInValuation";
 import { ScheduleConsultation } from "./ScheduleConsultation";
+import type { TradeInInfo } from "@/lib/trade-valuation";
 import { Sparkles } from "lucide-react";
 import confetti from "canvas-confetti";
 import { xpActions } from "@/config/xpActions";
@@ -19,6 +21,17 @@ export default function QuoteBuilder() {
   const [selectedMotor, setSelectedMotor] = useState<any>(null);
   const [purchasePath, setPurchasePath] = useState<'loose' | 'installed' | null>(null);
   const [installConfig, setInstallConfig] = useState<any>(null);
+  const [tradeInInfo, setTradeInInfo] = useState<TradeInInfo>({
+    hasTradeIn: false,
+    brand: '',
+    year: new Date().getFullYear(),
+    horsepower: 0,
+    model: '',
+    serialNumber: '',
+    condition: 'good',
+    estimatedValue: 0,
+    confidenceLevel: 'low',
+  });
   const [totalXP, setTotalXP] = useState(0);
   const [quoteForSchedule, setQuoteForSchedule] = useState<any | null>(null);
 
@@ -59,15 +72,15 @@ export default function QuoteBuilder() {
     setTotalXP(prev => prev + xpEarned);
     
     if (path === 'installed') {
-      setCurrentStep(3); // Go to configuration
+      setCurrentStep(3); // Go to trade-in step first
     } else {
-      setCurrentStep(4); // Skip to quote for loose motors
+      setCurrentStep(3); // Go to trade-in step for loose motors as well
     }
   };
 
   const handleConfigComplete = (config: any) => {
     setInstallConfig(config);
-    setCurrentStep(4); // Go to quote display
+    setCurrentStep(5); // Go to quote display
     
     // Big celebration!
     confetti({
@@ -80,9 +93,10 @@ export default function QuoteBuilder() {
   const steps = [
     { number: 1, label: "Select Motor", icon: "🚤" },
     { number: 2, label: "Purchase Type", icon: "🛒" },
-    { number: 3, label: "Configure", icon: "⚙️" },
-    { number: 4, label: "Your Quote", icon: "📋" },
-    { number: 5, label: "Consultation", icon: "📅" },
+    { number: 3, label: "Trade-In", icon: "💱" },
+    { number: 4, label: "Configure", icon: "⚙️" },
+    { number: 5, label: "Your Quote", icon: "📋" },
+    { number: 6, label: "Consultation", icon: "📅" },
   ];
 
   return (
@@ -187,7 +201,31 @@ export default function QuoteBuilder() {
           </motion.div>
         )}
 
-        {currentStep === 3 && purchasePath === 'installed' && (
+        {currentStep === 3 && (
+          <motion.div
+            key="trade-in"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+          >
+            <div className="container mx-auto px-4 py-8">
+              <TradeInValuation
+                tradeInInfo={tradeInInfo}
+                onTradeInChange={setTradeInInfo}
+                currentMotorBrand={selectedMotor?.brand || selectedMotor?.manufacturer || 'Mercury'}
+                currentHp={typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp}
+              />
+              <div className="mt-6 flex items-center justify-between">
+                <Button variant="outline" onClick={() => setCurrentStep(2)}>Back</Button>
+                <Button onClick={() => setCurrentStep(purchasePath === 'installed' ? 4 : 5)}>
+                  Continue
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {currentStep === 4 && purchasePath === 'installed' && (
           <motion.div
             key="installation-config"
             initial={{ opacity: 0, x: 100 }}
@@ -201,7 +239,7 @@ export default function QuoteBuilder() {
           </motion.div>
         )}
 
-          {currentStep === 4 && (
+          {currentStep === 5 && (
             <motion.div
               key="quote-display"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -210,27 +248,27 @@ export default function QuoteBuilder() {
               <LegacyQuoteDisplay
                 quoteData={{
                   motor: selectedMotor,
-                  boatInfo: null,
+                  boatInfo: { tradeIn: tradeInInfo } as any,
                   financing: { downPayment: 0, term: 48, rate: 7.99 },
-                  hasTradein: false,
+                  hasTradein: tradeInInfo.hasTradeIn,
                 } as any}
                 totalXP={totalXP}
                 onEarnXP={(amount) => setTotalXP((prev) => prev + amount)}
                 onStepComplete={(data) => {
                   setQuoteForSchedule({
                     motor: selectedMotor,
-                    boatInfo: null,
+                    boatInfo: { tradeIn: tradeInInfo } as any,
                     financing: data.financing,
-                    hasTradein: data.hasTradein,
+                    hasTradein: tradeInInfo.hasTradeIn,
                   } as any);
                   setTotalXP((prev) => prev + xpActions.completeQuote);
-                  setCurrentStep(5);
+                  setCurrentStep(6);
                 }}
-                onBack={() => setCurrentStep(purchasePath === 'installed' ? 3 : 2)}
+                onBack={() => setCurrentStep(purchasePath === 'installed' ? 4 : 3)}
               />
             </motion.div>
           )}
-          {currentStep === 5 && (
+          {currentStep === 6 && (
             <motion.div
               key="schedule-consultation"
               initial={{ opacity: 0, x: 100 }}
@@ -240,11 +278,11 @@ export default function QuoteBuilder() {
               <ScheduleConsultation
                 quoteData={(quoteForSchedule ?? {
                   motor: selectedMotor,
-                  boatInfo: null,
+                  boatInfo: { tradeIn: tradeInInfo } as any,
                   financing: { downPayment: 0, term: 48, rate: 7.99 },
-                  hasTradein: false,
+                  hasTradein: tradeInInfo.hasTradeIn,
                 }) as any}
-                onBack={() => setCurrentStep(4)}
+                onBack={() => setCurrentStep(5)}
               />
             </motion.div>
           )}
