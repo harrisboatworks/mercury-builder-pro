@@ -13,8 +13,16 @@ export function useMotorMonthlyPayment({
   const { promo } = useActiveFinancingPromo();
   
   const monthlyPayment = useMemo(() => {
+    console.log('useMotorMonthlyPayment:', { motorPrice, minimumThreshold, promo });
+    
     // Only calculate for motors above threshold
     if (motorPrice <= minimumThreshold) {
+      console.log('Motor price below threshold:', motorPrice, '<=', minimumThreshold);
+      return null;
+    }
+
+    if (!motorPrice || motorPrice <= 0) {
+      console.log('Invalid motor price:', motorPrice);
       return null;
     }
 

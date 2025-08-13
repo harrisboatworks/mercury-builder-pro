@@ -5,7 +5,10 @@ interface MonthlyPaymentDisplayProps {
 }
 
 export function MonthlyPaymentDisplay({ motorPrice }: MonthlyPaymentDisplayProps) {
-  const monthlyPayment = useMotorMonthlyPayment({ motorPrice });
+  const monthlyPayment = useMotorMonthlyPayment({ motorPrice, minimumThreshold: 1000 });
+  
+  // Debug logging
+  console.log('MonthlyPaymentDisplay:', { motorPrice, monthlyPayment });
   
   if (!monthlyPayment) return null;
   
