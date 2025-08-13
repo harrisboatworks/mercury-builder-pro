@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info } from 'lucide-react';
+import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Flame, TrendingUp, CheckCircle, Tag, Anchor, Heart, Eye } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -361,7 +361,7 @@ export const MotorSelection = ({
   } = useToast();
   const isMobile = useIsMobile();
   const [motors, setMotors] = useState<Motor[]>([]);
-  const socialProofNotifications = useSocialProofNotifications(motors);
+  const { notifications: socialProofNotifications, trackInteraction } = useSocialProofNotifications(motors);
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
   const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
@@ -955,6 +955,9 @@ export const MotorSelection = ({
     }
   }, [quickViewMotor?.id]);
   const handleMotorSelection = (motor: Motor) => {
+    // Track interaction for social proof
+    trackInteraction(motor.id);
+    
     // Check if clicking on already selected motor to deselect
     if (selectedMotor?.id === motor.id) {
       setSelectedMotor(null);
@@ -1211,14 +1214,30 @@ export const MotorSelection = ({
                    const title = formatMotorTitle(motor.year, motor.model);
                    const raw = `${motor.model ?? ''} ${motor.description ?? motor.specs ?? ''}`.trim();
                    const subtitle = formatVariantSubtitle(raw, title);
-                   const notification = socialProofNotifications.get(motor.id);
-                   return <>
-                             <h3 className="text-sm md:text-base font-semibold text-foreground line-clamp-2">{title}</h3>
-                             {notification && (
-                               <div className={`inline-flex items-center px-2 py-0.5 text-xs font-medium rounded border animate-fade-in ${notification.color}`}>
-                                 🔥 {notification.message}
-                               </div>
-                             )}
+                    const notification = socialProofNotifications.get(motor.id);
+                    
+                    const getNotificationIcon = (iconName: string) => {
+                      const iconProps = { className: "w-3 h-3" };
+                      switch(iconName) {
+                        case 'flame': return <Flame {...iconProps} />;
+                        case 'trending-up': return <TrendingUp {...iconProps} />;
+                        case 'check-circle': return <CheckCircle {...iconProps} />;
+                        case 'tag': return <Tag {...iconProps} />;
+                        case 'anchor': return <Anchor {...iconProps} />;
+                        case 'heart': return <Heart {...iconProps} />;
+                        case 'eye': return <Eye {...iconProps} />;
+                        default: return <Star {...iconProps} />;
+                      }
+                    };
+                    
+                    return <>
+                              <h3 className="text-sm md:text-base font-semibold text-foreground line-clamp-2">{title}</h3>
+                              {notification && (
+                                <div className={`inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-medium rounded border animate-fade-in transition-all duration-300 hover:scale-105 ${notification.color}`}>
+                                  {getNotificationIcon(notification.icon)}
+                                  {notification.message}
+                                </div>
+                              )}
                              <div className="min-h-[1rem]">
                                {subtitle ? <p className="text-foreground/90 text-xs line-clamp-1" title={subtitle}>{subtitle}</p> : null}
                              </div>
