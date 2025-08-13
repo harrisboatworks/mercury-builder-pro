@@ -18,6 +18,10 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
   const isSmallTiller = selectedMotor?.horsepower <= 6 && 
     (selectedMotor?.model?.toLowerCase().includes('tiller') || 
      selectedMotor?.engine_type?.toLowerCase().includes('tiller'));
+  
+  const isMediumTiller = selectedMotor?.horsepower >= 9.9 && selectedMotor?.horsepower <= 20 &&
+    (selectedMotor?.model?.toLowerCase().includes('tiller') || 
+     selectedMotor?.engine_type?.toLowerCase().includes('tiller'));
 
   const handleComplete = () => {
     onComplete({ externalTank });
@@ -33,7 +37,10 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2">Fuel Tank Configuration</h1>
           <p className="text-gray-600">
-            Your {selectedMotor?.horsepower}HP tiller motor includes an internal fuel tank and propeller
+            {isMediumTiller 
+              ? `Your ${selectedMotor?.horsepower}HP tiller motor includes valuable extras worth $598!`
+              : `Your ${selectedMotor?.horsepower}HP tiller motor includes an internal fuel tank and propeller`
+            }
           </p>
         </div>
 
@@ -53,7 +60,22 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
               <div className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-green-600" />
                 <span>Propeller included</span>
+                {isMediumTiller && <Badge variant="secondary">$300 value</Badge>}
               </div>
+              {isMediumTiller && (
+                <>
+                  <div className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-green-600" />
+                    <span>12L External Fuel Tank & Hose included</span>
+                    <Badge variant="secondary">$199 value</Badge>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-green-600" />
+                    <span>Free preparation service</span>
+                    <Badge variant="secondary">$99 value</Badge>
+                  </div>
+                </>
+              )}
               <div className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-green-600" />
                 <span>Ready for customer pickup - no installation required</span>
@@ -62,43 +84,66 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
           </CardContent>
         </Card>
 
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>Optional Upgrade</CardTitle>
-            <CardDescription>
-              Add extended range with an external fuel tank system
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-start gap-4">
-              <Checkbox
-                id="external-tank"
-                checked={externalTank}
-                onCheckedChange={(checked) => setExternalTank(checked === true)}
-                className="mt-1"
-              />
-              <div className="flex-1">
-                <label htmlFor="external-tank" className="cursor-pointer">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="font-medium">12L External Fuel Tank & Hose</span>
-                    <Badge variant="secondary">+$199</Badge>
-                  </div>
-                  <p className="text-sm text-gray-600">
-                    Provides extended range and convenience for longer trips. 
-                    Tank connects easily to your motor's fuel inlet.
-                  </p>
-                </label>
-              </div>
-              {externalTank && (
-                <img 
-                  src="/lovable-uploads/2bb92128-ea57-4233-ae9e-4215f5fc256d.png" 
-                  alt="12L External Fuel Tank"
-                  className="w-24 h-24 object-contain rounded-lg border"
+        {isSmallTiller && (
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle>Optional Upgrade</CardTitle>
+              <CardDescription>
+                Add extended range with an external fuel tank system
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-start gap-4">
+                <Checkbox
+                  id="external-tank"
+                  checked={externalTank}
+                  onCheckedChange={(checked) => setExternalTank(checked === true)}
+                  className="mt-1"
                 />
-              )}
-            </div>
-          </CardContent>
-        </Card>
+                <div className="flex-1">
+                  <label htmlFor="external-tank" className="cursor-pointer">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="font-medium">12L External Fuel Tank & Hose</span>
+                      <Badge variant="secondary">+$199</Badge>
+                    </div>
+                    <p className="text-sm text-gray-600">
+                      Provides extended range and convenience for longer trips. 
+                      Tank connects easily to your motor's fuel inlet.
+                    </p>
+                  </label>
+                </div>
+                {externalTank && (
+                  <img 
+                    src="/lovable-uploads/2bb92128-ea57-4233-ae9e-4215f5fc256d.png" 
+                    alt="12L External Fuel Tank"
+                    className="w-24 h-24 object-contain rounded-lg border"
+                  />
+                )}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {isMediumTiller && (
+          <Card className="mb-8 bg-green-50 border-green-200">
+            <CardHeader>
+              <CardTitle className="text-green-800">All Extras Included!</CardTitle>
+              <CardDescription className="text-green-700">
+                Your 9.9-20HP tiller motor comes with everything you need - no additional purchases required
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-green-800 mb-2">
+                  Total Value: $598 in FREE extras
+                </div>
+                <p className="text-green-700">
+                  Propeller, fuel tank system, and preparation service all included
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
         <div className="flex items-center justify-between">
           <Button variant="outline" onClick={onBack}>
