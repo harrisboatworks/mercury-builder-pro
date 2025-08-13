@@ -156,6 +156,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
   };
 
   const compatibility = getCompatibilityMessage();
+  const isNonMercuryBrand = !!boatInfo.currentMotorBrand && boatInfo.currentMotorBrand !== 'Mercury' && boatInfo.currentMotorBrand !== 'No Current Motor';
 
   // Derived values and UI helpers
   const hp = typeof selectedMotor?.hp === 'string' ? parseInt(String(selectedMotor?.hp)) : (selectedMotor?.hp || 0);
@@ -602,7 +603,12 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <Label>Current Motor Brand</Label>
-                      <Select value={boatInfo.currentMotorBrand} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, currentMotorBrand: value, currentHp: value === 'No Current Motor' ? 0 : prev.currentHp }))}>
+                      <Select value={boatInfo.currentMotorBrand} onValueChange={(value) => setBoatInfo(prev => ({
+                        ...prev,
+                        currentMotorBrand: value,
+                        currentHp: value === 'No Current Motor' ? 0 : prev.currentHp,
+                        controlsOption: (value !== 'Mercury' && value !== 'No Current Motor') ? 'none' : prev.controlsOption,
+                      }))}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select current motor brand" />
                         </SelectTrigger>
