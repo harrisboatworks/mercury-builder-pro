@@ -8,7 +8,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/components/auth/AuthProvider";
-import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
+import { SecureRoute } from "@/components/auth/SecureRoute";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
@@ -51,34 +51,34 @@ const App = () => (
               <Route
                 path="/admin/promotions"
                 element={
-                  <ProtectedRoute>
+                  <SecureRoute requireAdmin={true}>
                     <AdminPromotions />
-                  </ProtectedRoute>
+                  </SecureRoute>
                 }
               />
               <Route
                 path="/admin/quotes"
                 element={
-                  <ProtectedRoute>
+                  <SecureRoute requireAdmin={true}>
                     <AdminQuotes />
-                  </ProtectedRoute>
+                  </SecureRoute>
                 }
               />
               <Route
                 path="/admin/quotes/:id"
                 element={
-                  <ProtectedRoute>
+                  <SecureRoute requireAdmin={true}>
                     <AdminQuoteDetail />
-                  </ProtectedRoute>
+                  </SecureRoute>
                 }
               />
               <Route path="/finance-calculator" element={<FinanceCalculator />} />
               <Route
                 path="/admin/financing"
                 element={
-                  <ProtectedRoute>
+                  <SecureRoute requireAdmin={true}>
                     <FinancingAdmin />
-                  </ProtectedRoute>
+                  </SecureRoute>
                 }
               />
               <Route path="/dev" element={<Dev />} />

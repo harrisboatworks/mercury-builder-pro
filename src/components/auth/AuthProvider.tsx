@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
+import { SecurityManager } from '@/lib/securityMiddleware';
 
 interface AuthContextType {
   user: User | null;
@@ -67,10 +68,33 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       email,
       password
     });
+    
+    // Track successful sign-in
+    if (!error) {
+      await SecurityManager.logSecurityEvent(
+        email,
+        'signin_success',
+        'auth',
+        undefined,
+        { userAgent: navigator.userAgent }
+      );
+    }
+    
     return { error };
   };
 
   const signOut = async () => {
+    // Log sign-out event
+    if (user) {
+      await SecurityManager.logSecurityEvent(
+        user.id,
+        'signout',
+        'auth',
+        undefined,
+        { userAgent: navigator.userAgent }
+      );
+    }
+    
     const { error } = await supabase.auth.signOut();
     return { error };
   };
