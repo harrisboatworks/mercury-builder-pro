@@ -102,7 +102,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
             Trade-In Valuation
           </Label>
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-            <div className="text-sm text-muted-foreground">Do you have a motor to trade?</div>
+            <div className="text-lg font-bold text-foreground">Do you have a motor to trade?</div>
             <div className="grid md:grid-cols-2 gap-4 w-full md:w-auto">
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
