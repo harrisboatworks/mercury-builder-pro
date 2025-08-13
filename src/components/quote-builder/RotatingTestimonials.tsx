@@ -41,6 +41,66 @@ const testimonials = [
     text: "Best price I found anywhere! Motor runs perfect, installation was professional. Highly recommend Harris Boat Works.",
     author: "Dave M.",
     source: "Cobourg Customer"
+  },
+  {
+    text: "Just picked up my new Mercury 60HP 4-stroke. Installation was flawless and the team walked me through everything. Ready for fishing season on Scugog!",
+    author: "Tom R.",
+    source: "Port Perry Customer"
+  },
+  {
+    text: "Shopped around for months for a Mercury 25HP tiller. Harris had the best price and their knowledge about which model would work best for my jon boat was spot on.",
+    author: "Jennifer M.",
+    source: "Lindsay Customer"
+  },
+  {
+    text: "Mercury 150HP ProXS installed last spring. Incredible power and fuel efficiency. Harris knows Mercury motors inside and out.",
+    author: "Craig S.",
+    source: "Kawartha Lakes Customer"
+  },
+  {
+    text: "Family business that actually cares. They helped me choose between the Mercury 40HP and 60HP for my pontoon. Made the right call - couldn't be happier.",
+    author: "Lisa W.",
+    source: "Google Reviews"
+  },
+  {
+    text: "Mercury 90HP 4-stroke has been running perfect for 3 seasons now. Harris's installation and annual service keeps it purring like new.",
+    author: "Robert K.",
+    source: "Fenelon Falls Customer"
+  },
+  {
+    text: "Great experience upgrading from my old 2-stroke to a new Mercury 75HP. Night and day difference in performance and fuel economy.",
+    author: "Mark D.",
+    source: "Buckhorn Customer"
+  },
+  {
+    text: "Been coming to Harris for 20+ years. Just bought my second Mercury from them - a 200HP Verado for my new bass boat. Installation was perfect as always.",
+    author: "Steve L.",
+    source: "Omemee Customer"
+  },
+  {
+    text: "Called 4 different dealers about Mercury 9.9HP kicker motors. Harris was the only one who had it in stock and ready to install same week.",
+    author: "Angela P.",
+    source: "Google Reviews"
+  },
+  {
+    text: "Mercury 20HP tiller for my aluminum fishing boat. Harris helped me get the right shaft length and prop. Starts first pull every time.",
+    author: "Brian H.",
+    source: "Lakefield Customer"
+  },
+  {
+    text: "Outstanding service on my Mercury 250HP Verado installation. These guys know their stuff and the motor runs like a Swiss watch.",
+    author: "Derek T.",
+    source: "Peterborough Customer"
+  },
+  {
+    text: "Third Mercury I've bought from Harris over the years. 40HP, 60HP, and now 115HP. Each one has been reliable and well-serviced.",
+    author: "Nancy F.",
+    source: "Google Reviews"
+  },
+  {
+    text: "Mercury 8HP for my dinghy. Small motor but Harris treated it with the same care as the big ones. Great people to deal with.",
+    author: "John P.",
+    source: "Rice Lake Customer"
   }
 ];
 
