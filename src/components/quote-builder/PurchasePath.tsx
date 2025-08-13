@@ -1,17 +1,32 @@
 // src/components/quote-builder/PurchasePath.tsx
 import { motion } from "framer-motion";
-import { Package, Wrench, Sparkles } from "lucide-react";
+import { Package, Wrench, Sparkles, Battery, Info } from "lucide-react";
+import { useState } from "react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Badge } from "@/components/ui/badge";
 
 interface PurchasePathProps {
   selectedMotor: any;
-  onSelectPath: (path: 'loose' | 'installed') => void;
+  onSelectPath: (path: 'loose' | 'installed', options?: { battery?: boolean }) => void;
 }
 
 export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePathProps) {
+  const [needsBattery, setNeedsBattery] = useState(false);
+  
   const model = (selectedMotor?.model || '').toUpperCase();
   const hp = typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp;
   const isTiller = (hp ?? 0) <= 30 && (/\bH\b/.test(model) || model.includes('TILLER'));
+  const isElectricStart = !isTiller && !model.includes('MANUAL') && !model.includes('PULL');
   const isInStock = selectedMotor?.stockStatus === 'In Stock';
+  
+  const handleLooseMotorSelect = () => {
+    onSelectPath('loose', { battery: needsBattery });
+  };
+  
+  const handleInstalledSelect = () => {
+    onSelectPath('installed', { battery: needsBattery });
+  };
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -29,7 +44,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
         <motion.button
           whileHover={{ scale: 1.02, y: -4 }}
           whileTap={{ scale: 0.98 }}
-          onClick={() => onSelectPath('loose')}
+          onClick={handleLooseMotorSelect}
           className="relative p-8 border-2 border-gray-200 rounded-3xl hover:border-blue-500 hover:shadow-2xl transition-all bg-white text-left group"
         >
           <div className="absolute -top-3 -right-3 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
@@ -47,10 +62,17 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
               <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
               <span>Ready to run with PDI</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
-              <span>Add fuel tank & accessories</span>
-            </div>
+            {isTiller ? (
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+                <span>Includes propeller & internal fuel tank</span>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+                <span>Add fuel system & accessories</span>
+              </div>
+            )}
             {isTiller && isInStock && (
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
@@ -68,7 +90,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
         <motion.button
           whileHover={{ scale: 1.02, y: -4 }}
           whileTap={{ scale: 0.98 }}
-          onClick={() => onSelectPath('installed')}
+          onClick={handleInstalledSelect}
           className="relative p-8 border-2 border-gray-200 rounded-3xl hover:border-blue-500 hover:shadow-2xl transition-all bg-white text-left group"
         >
           <div className="absolute -top-3 -right-3 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold">
@@ -78,14 +100,16 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
           <Wrench className="w-16 h-16 mb-4 text-blue-600 group-hover:scale-110 transition-transform" />
           <h3 className="text-2xl font-bold mb-2">Professional Installation</h3>
           <p className="text-gray-600 mb-4">
-            Complete rigging & water test
+            {isTiller ? 'Complete motor prep & water test' : 'Complete rigging & water test'}
           </p>
           
           <div className="space-y-2 text-sm">
-            <div className="flex items-center gap-2">
-              <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
-              <span>Controls & gauges configured</span>
-            </div>
+            {!isTiller && (
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+                <span>Controls & gauges configured</span>
+              </div>
+            )}
             <div className="flex items-center gap-2">
               <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
               <span>Old motor removal available</span>
@@ -102,6 +126,59 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
           </div>
         </motion.button>
       </div>
+      
+      {isElectricStart && (
+        <TooltipProvider>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="max-w-2xl mx-auto mt-8 p-6 bg-blue-50 rounded-2xl border border-blue-200"
+          >
+            <div className="flex items-start gap-4">
+              <Battery className="w-8 h-8 text-blue-600 mt-1 flex-shrink-0" />
+              <div className="flex-1">
+                <h4 className="text-lg font-semibold text-blue-900 mb-2">Battery Required</h4>
+                <p className="text-blue-700 text-sm mb-4">
+                  Electric start motors require a marine battery for operation. 
+                </p>
+                
+                <div className="flex items-start gap-3">
+                  <Checkbox
+                    id="battery-option"
+                    checked={needsBattery}
+                    onCheckedChange={(checked) => setNeedsBattery(checked === true)}
+                    className="mt-1"
+                  />
+                  <div className="flex-1">
+                    <label htmlFor="battery-option" className="cursor-pointer">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="font-medium text-blue-900">Add Deka Marine Master Battery</span>
+                        <Badge variant="secondary" className="bg-blue-100 text-blue-800">$179.99</Badge>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Info className="w-4 h-4 text-blue-600 cursor-help" />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <div className="text-sm">
+                              <p className="font-medium">Deka Marine Master 24M7</p>
+                              <p>1000 Cold Cranking Amps</p>
+                              <p>2-year warranty included</p>
+                            </div>
+                          </TooltipContent>
+                        </Tooltip>
+                      </div>
+                      <p className="text-sm text-blue-600">
+                        High-quality marine starting battery with 2-year warranty
+                      </p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </TooltipProvider>
+      )}
     </motion.div>
   );
 }
