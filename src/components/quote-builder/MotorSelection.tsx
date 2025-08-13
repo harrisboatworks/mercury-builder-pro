@@ -1052,14 +1052,13 @@ const handleMotorSelection = (motor: Motor) => {
                   <Button variant="secondary" size="sm" onClick={() => filterByHPRange(75, 115)}>75 - 115 HP</Button>
                   <Button variant="secondary" size="sm" onClick={() => filterByHPRange(150, 200)}>150 - 200 HP</Button>
                   <Button variant="secondary" size="sm" onClick={() => filterByHPRange(225, 300)}>225 - 300 HP</Button>
-                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(350, 600)}>350+ HP</Button>
                 </div>
                 <Button
                   variant="ghost"
                   size="sm"
                   className="w-full mt-2"
                   onClick={() => {
-                    setFilters({ ...filters, hpRange: [2.5, 600] });
+                    setFilters({ ...filters, hpRange: [2.5, 300] });
                     setModelSearch('');
                   }}
                 >
