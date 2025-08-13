@@ -1651,106 +1651,106 @@ export const MotorSelection = ({
                               <strong>Manual Start:</strong> No battery needed — ideal for occasional use or as a backup motor. Very reliable.
                             </div>}
                         </div>
-
-                        {/* Two-column grid for remaining info blocks */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                          {/* Installation Requirements */}
-                          <div className="bg-secondary text-secondary-foreground p-4 rounded-md requirements-section">
-                            <h4 className="font-semibold mb-2 flex items-center"><Wrench size={16} className="mr-2" /> Installation Requirements</h4>
-                            {quickViewMotor.hp >= 40 && <div className="text-destructive font-semibold flex items-center gap-2 mb-2">
-                                <AlertTriangle size={16} />
-                                <span>Note: Remote controls required (additional ~$1,200)</span>
-                              </div>}
-                            <ul className="text-sm space-y-1">
-                              <li>✓ Transom Height: {getTransomRequirement(quickViewMotor)}</li>
-                              <li>✓ Battery Required: {getBatteryRequirement(quickViewMotor)}</li>
-                              <li>✓ Control Type: {(() => {
-                            const hp = typeof quickViewMotor.hp === 'string' ? parseInt(quickViewMotor.hp) : quickViewMotor.hp;
-                            if (hp < 40) return 'Tiller or Remote';
-                            return <>
-                                    Remote required
-                                    <span className="text-in-stock text-xs block">(Existing Mercury controls? Save $1,075 with adapter!)</span>
-                                  </>;
-                          })()}</li>
-                              <li>✓ Fuel Type: {getFuelRequirement(quickViewMotor)}</li>
-                              <li>✓ Oil Requirements: {getOilRequirement(quickViewMotor)}</li>
-                            </ul>
-                          </div>
-
-                          {/* Perfect For */}
-                          <div className="bg-accent p-4 rounded-md use-cases-section">
-                            <h4 className="font-semibold mb-2">🎯 Perfect For</h4>
-                            <div className="text-sm">
-                              {getIdealUses(quickViewMotor.hp)}
-                            </div>
-                          </div>
-
-                          {/* Total Investment Estimate */}
-                          <div className="bg-accent p-3 rounded-md text-sm total-investment">
-                            <h4 className="font-semibold flex items-center gap-2"><Calculator size={16} /> Total Investment Estimate</h4>
-                            <div className="text-sm space-y-1">
-                              {(() => {
-                          const price = Number((quickViewMotor as any).salePrice ?? (quickViewMotor as any).basePrice ?? (quickViewMotor as any).price ?? 0);
-                          const hp = typeof quickViewMotor.hp === 'string' ? parseInt(quickViewMotor.hp) : quickViewMotor.hp;
-                          const model = (quickViewMotor.model || '').toUpperCase();
-                          const needsControls = hp >= 40;
-                          const needsBattery = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
-                          const propCost = hp >= 25 ? hp >= 150 ? 950 : 350 : 0;
-                          const total = price + (needsControls ? 1200 : 0) + (needsBattery ? 179.99 : 0) + propCost + 500;
-                          return <>
-                                     <div>Motor: {'$' + price.toLocaleString()}</div>
-                                     {needsControls && <div>Controls: ~$1,200</div>}
-                                     {needsBattery && <div>Battery: ~$179.99</div>}
-                                     {propCost > 0 && <div>Propeller: ~${propCost}</div>}
-                                    <div>Installation: ~$500</div>
-                                    <div className="font-bold pt-1 border-t border-border">Total: ~{'$' + total.toLocaleString()}</div>
-                                    <div className="investment-note text-xs mt-2">
-                                      <p>* Includes all required accessories:</p>
-                                      <ul className="text-xs list-disc pl-5">
-                                        {hp >= 40 && <li>Remote controls</li>}
-                                        {hp >= 25 && <li>Propeller ({hp >= 150 ? 'SS' : 'Alum'})</li>}
-                                        <li>Battery (if electric start)</li>
-                                        <li>FREE water testing</li>
-                                      </ul>
-                                    </div>
-                                  </>;
-                        })()}
-                            </div>
-                          </div>
-
-                          {/* Performance Estimates - moved from top */}
-                          <div className="bg-accent p-4 rounded-md performance-section">
-                            <h4 className="font-semibold mb-2 flex items-center">⚡ Performance Estimates</h4>
-                            <div className="grid grid-cols-2 gap-3 text-sm">
-                              <div>
-                                <div className="flex items-center gap-2 text-muted-foreground">
-                                  <Ship size={16} /> <span>Boat Size</span>
-                                </div>
-                                <strong className="block">{getRecommendedBoatSize(quickViewMotor.hp)}</strong>
-                              </div>
-                              <div>
-                                <div className="flex items-center gap-2 text-muted-foreground">
-                                  <Gauge size={16} /> <span>Top Speed</span>
-                                </div>
-                                <strong className="block">{getEstimatedSpeed(quickViewMotor.hp)}</strong>
-                              </div>
-                              <div>
-                                <div className="flex items-center gap-2 text-muted-foreground">
-                                  <Fuel size={16} /> <span>Fuel Use</span>
-                                </div>
-                                <strong className="block">{getFuelConsumption(quickViewMotor.hp)}</strong>
-                              </div>
-                              <div>
-                                <div className="flex items-center gap-2 text-muted-foreground">
-                                  <MapPin size={16} /> <span>Range</span>
-                                </div>
-                                <strong className="block">{getRange(quickViewMotor.hp)}</strong>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
                         </>;
               })()}
+                </div>
+              </div>
+
+              {/* Two-column grid for remaining info blocks - spans full modal width */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                {/* Installation Requirements */}
+                <div className="bg-secondary text-secondary-foreground p-4 rounded-md requirements-section">
+                  <h4 className="font-semibold mb-2 flex items-center"><Wrench size={16} className="mr-2" /> Installation Requirements</h4>
+                  {quickViewMotor.hp >= 40 && <div className="text-destructive font-semibold flex items-center gap-2 mb-2">
+                      <AlertTriangle size={16} />
+                      <span>Note: Remote controls required (additional ~$1,200)</span>
+                    </div>}
+                  <ul className="text-sm space-y-1">
+                    <li>✓ Transom Height: {getTransomRequirement(quickViewMotor)}</li>
+                    <li>✓ Battery Required: {getBatteryRequirement(quickViewMotor)}</li>
+                    <li>✓ Control Type: {(() => {
+                  const hp = typeof quickViewMotor.hp === 'string' ? parseInt(quickViewMotor.hp) : quickViewMotor.hp;
+                  if (hp < 40) return 'Tiller or Remote';
+                  return <>
+                          Remote required
+                          <span className="text-in-stock text-xs block">(Existing Mercury controls? Save $1,075 with adapter!)</span>
+                        </>;
+                })()}</li>
+                    <li>✓ Fuel Type: {getFuelRequirement(quickViewMotor)}</li>
+                    <li>✓ Oil Requirements: {getOilRequirement(quickViewMotor)}</li>
+                  </ul>
+                </div>
+
+                {/* Perfect For */}
+                <div className="bg-accent p-4 rounded-md use-cases-section">
+                  <h4 className="font-semibold mb-2">🎯 Perfect For</h4>
+                  <div className="text-sm">
+                    {getIdealUses(quickViewMotor.hp)}
+                  </div>
+                </div>
+
+                {/* Total Investment Estimate */}
+                <div className="bg-accent p-3 rounded-md text-sm total-investment">
+                  <h4 className="font-semibold flex items-center gap-2"><Calculator size={16} /> Total Investment Estimate</h4>
+                  <div className="text-sm space-y-1">
+                    {(() => {
+                const price = Number((quickViewMotor as any).salePrice ?? (quickViewMotor as any).basePrice ?? (quickViewMotor as any).price ?? 0);
+                const hp = typeof quickViewMotor.hp === 'string' ? parseInt(quickViewMotor.hp) : quickViewMotor.hp;
+                const model = (quickViewMotor.model || '').toUpperCase();
+                const needsControls = hp >= 40;
+                const needsBattery = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
+                const propCost = hp >= 25 ? hp >= 150 ? 950 : 350 : 0;
+                const total = price + (needsControls ? 1200 : 0) + (needsBattery ? 179.99 : 0) + propCost + 500;
+                return <>
+                           <div>Motor: {'$' + price.toLocaleString()}</div>
+                           {needsControls && <div>Controls: ~$1,200</div>}
+                           {needsBattery && <div>Battery: ~$179.99</div>}
+                           {propCost > 0 && <div>Propeller: ~${propCost}</div>}
+                          <div>Installation: ~$500</div>
+                          <div className="font-bold pt-1 border-t border-border">Total: ~{'$' + total.toLocaleString()}</div>
+                          <div className="investment-note text-xs mt-2">
+                            <p>* Includes all required accessories:</p>
+                            <ul className="text-xs list-disc pl-5">
+                              {hp >= 40 && <li>Remote controls</li>}
+                              {hp >= 25 && <li>Propeller ({hp >= 150 ? 'SS' : 'Alum'})</li>}
+                              <li>Battery (if electric start)</li>
+                              <li>FREE water testing</li>
+                            </ul>
+                          </div>
+                        </>;
+              })()}
+                  </div>
+                </div>
+
+                {/* Performance Estimates - moved from top */}
+                <div className="bg-accent p-4 rounded-md performance-section">
+                  <h4 className="font-semibold mb-2 flex items-center">⚡ Performance Estimates</h4>
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <div>
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <Ship size={16} /> <span>Boat Size</span>
+                      </div>
+                      <strong className="block">{getRecommendedBoatSize(quickViewMotor.hp)}</strong>
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <Gauge size={16} /> <span>Top Speed</span>
+                      </div>
+                      <strong className="block">{getEstimatedSpeed(quickViewMotor.hp)}</strong>
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <Fuel size={16} /> <span>Fuel Use</span>
+                      </div>
+                      <strong className="block">{getFuelConsumption(quickViewMotor.hp)}</strong>
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <MapPin size={16} /> <span>Range</span>
+                      </div>
+                      <strong className="block">{getRange(quickViewMotor.hp)}</strong>
+                    </div>
+                  </div>
                 </div>
               </div>
 
