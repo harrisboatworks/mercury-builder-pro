@@ -1257,10 +1257,30 @@ export const MotorSelection = ({
                     </div>
 
                     {(hasGet5 || hasRepower) && <div className="promo-badges flex justify-center mt-1">
-                        {hasGet5 && <span aria-label="5 Year Warranty" className="promo-badge-base promo-badge-warranty badge text-[#fcf7f7]">
-                            <ShieldCheck className="w-4 h-4" aria-hidden="true" />
-                            <span>{warrantyBonus?.shortBadge || '5 Year Warranty'}</span>
-                          </span>}
+                        {hasGet5 && <Tooltip>
+                            <TooltipTrigger asChild>
+                              <span aria-label="5 Year Warranty" className="promo-badge-base promo-badge-warranty badge text-[#fcf7f7]" onMouseEnter={() => track('warranty_badge_hover', {
+                        model_id: motor.id,
+                        model_name: motor.model
+                      })} onClick={e => e.stopPropagation()}>
+                                <ShieldCheck className="w-4 h-4" aria-hidden="true" />
+                                <span>{warrantyBonus?.shortBadge || '5 Year Warranty'}</span>
+                              </span>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <div className="max-w-[260px] space-y-1">
+                                <p>Mercury's 5-Year Limited Warranty — comprehensive coverage for peace of mind on your investment.</p>
+                                <button type="button" className="underline text-left" onClick={e => {
+                        e.stopPropagation();
+                        setActivePromoModal(promotionsState.find(p => /(get\s*5|5\s*year|warranty)/i.test([p.name, p.bonus_title, p.bonus_short_badge, p.bonus_description].filter(Boolean).join(' '))) || null);
+                        track('warranty_badge_click', {
+                          model_id: motor.id,
+                          model_name: motor.model
+                        });
+                      }}>Learn More</button>
+                              </div>
+                            </TooltipContent>
+                          </Tooltip>}
                         {hasRepower && <Tooltip>
                             <TooltipTrigger asChild>
                               <span className="badge badge--repower" data-badge="repower" aria-label="Repower Rebate" onMouseEnter={() => track('rebate_badge_hover', {
