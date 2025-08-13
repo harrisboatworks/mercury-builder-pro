@@ -439,6 +439,7 @@ export type Database = {
           quote_data: Json | null
           reward_claimed: string | null
           total_price: number | null
+          user_id: string | null
           xp_earned: number
         }
         Insert: {
@@ -452,6 +453,7 @@ export type Database = {
           quote_data?: Json | null
           reward_claimed?: string | null
           total_price?: number | null
+          user_id?: string | null
           xp_earned?: number
         }
         Update: {
@@ -465,6 +467,7 @@ export type Database = {
           quote_data?: Json | null
           reward_claimed?: string | null
           total_price?: number | null
+          user_id?: string | null
           xp_earned?: number
         }
         Relationships: []

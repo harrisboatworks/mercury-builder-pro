@@ -71,7 +71,8 @@ export default async function handler(req, res) {
         discount: num(discount),
         options: safeOptions,
         subtotal, tax_rate: num(tax_rate), tax_amount, total,
-        notes
+        notes,
+        user_id: user.id // Associate quote with authenticated user for security
       }])
       .select()
       .single();
