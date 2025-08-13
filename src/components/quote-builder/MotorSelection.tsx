@@ -62,6 +62,8 @@ interface Promotion {
   highlight: boolean;
   priority: number;
   details?: any;
+  image_url: string | null;
+  image_alt_text: string | null;
 }
 interface PromotionRule {
   id: string;
@@ -724,6 +726,8 @@ export const MotorSelection = ({
         id: b.id,
         title: b.bonus_title || b.name,
         shortBadge: b.bonus_short_badge || (b.warranty_extra_years ? `+${b.warranty_extra_years}Y Warranty` : 'Bonus Offer'),
+        image_url: b.image_url,
+        image_alt_text: b.image_alt_text,
         description: b.bonus_description || null,
         warrantyExtraYears: b.warranty_extra_years || null,
         termsUrl: b.terms_url || null,
@@ -1184,6 +1188,7 @@ export const MotorSelection = ({
           const hasGet5 = /(mercury\s*)?(get\s*5|get5|5\s*year)/i.test(promoBlob);
           const hasRepower = /(repower(\s*rebate)?)/i.test(promoBlob);
           const warrantyBonus = (motor.bonusOffers || []).find(b => (b.warrantyExtraYears || 0) > 0);
+          const repowerBonus = (motor.bonusOffers || []).find(b => /(repower(\s*rebate)?)/i.test(`${b.title ?? ''} ${b.shortBadge ?? ''}`));
           const showWarrantyBadge = hasGet5 || !!warrantyBonus;
           const otherPromoNames = (motor.appliedPromotions || []).filter(name => {
             const t = name.toLowerCase();
@@ -1314,7 +1319,14 @@ export const MotorSelection = ({
                               </span>
                             </TooltipTrigger>
                             <TooltipContent>
-                              <div className="max-w-[260px] space-y-1">
+                              <div className="max-w-[260px] space-y-2">
+                                {warrantyBonus?.image_url && (
+                                  <img 
+                                    src={warrantyBonus.image_url} 
+                                    alt={warrantyBonus.image_alt_text || 'Warranty promotion'} 
+                                    className="w-full h-auto rounded-md"
+                                  />
+                                )}
                                 <p>Mercury's 5-Year Limited Warranty — comprehensive coverage for peace of mind on your investment.</p>
                                 <button type="button" className="underline text-left" onClick={e => {
                         e.stopPropagation();
@@ -1338,7 +1350,7 @@ export const MotorSelection = ({
                               </span>
                             </TooltipTrigger>
                             <TooltipContent>
-                              <div className="max-w-[260px] space-y-1">
+                              <div className="max-w-[260px] space-y-2">
                                 <p>Mercury’s Repower Rebate Program — trade in or repower for potential savings. See details.</p>
                                 <button type="button" className="underline text-left" onClick={e => {
                         e.stopPropagation();

@@ -50,6 +50,8 @@ export interface Motor {
     highlight: boolean;
     endsAt: string | null;
     priority: number;
+    image_url?: string | null;
+    image_alt_text?: string | null;
   }>;
   // Enhanced scraped data
   specifications?: Record<string, any>;
