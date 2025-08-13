@@ -363,9 +363,13 @@ function parseMotorData(html: string): MotorData[] {
           
           if (hp > 0 && motorData.itemMake === 'Mercury') {
             const availability = motorData.stockNumber ? 'In Stock' : 'Brochure'
-            const imageUrl = motorData.itemThumbNailUrl ? 
-              `https:${motorData.itemThumbNailUrl}` : 
-              getMotorImageUrl(motorName)
+            // Prefer detail images over thumbnails for better quality
+            let imageUrl = getMotorImageUrl(motorName) // fallback
+            if (motorData.itemThumbNailUrl) {
+              const thumbUrl = `https:${motorData.itemThumbNailUrl}`
+              // Convert thumb URLs to detail URLs for better quality
+              imageUrl = thumbUrl.replace('/thumb/', '/detail/')
+            }
             
             const currentPrice = typeof motorData.itemPrice === 'number' ? motorData.itemPrice : 0;
             const unitPrice = typeof motorData.unitPrice === 'number' ? motorData.unitPrice : 0;
