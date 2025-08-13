@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { supabase } from '@/integrations/supabase/client';
 import { formatMotorTitle } from '@/lib/card-title';
+import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 
 interface DbMotor {
   id: string;
@@ -46,6 +47,7 @@ export default function FinanceCalculator() {
   const [down, setDown] = useState<number>(0);
   const [apr, setApr] = useState<number>(6.99);
   const [term, setTerm] = useState<number>(60);
+  const { promo } = useActiveFinancingPromo();
 
   useEffect(() => {
     setSeo('Finance Calculator | Harris Boats', 'Estimate monthly payments for Mercury outboards.');
@@ -65,6 +67,12 @@ export default function FinanceCalculator() {
     };
     run();
   }, [modelId]);
+
+  useEffect(() => {
+    if (promo?.rate) {
+      setApr(Number(promo.rate));
+    }
+  }, [promo]);
 
   const monthly = useMemo(() => {
     const principal = Math.max(0, price - down);
@@ -112,6 +120,14 @@ export default function FinanceCalculator() {
               <Input id="term" type="number" inputMode="numeric" value={term} onChange={(e) => setTerm(Number(e.target.value || 0))} />
             </div>
           </div>
+
+          {promo && (
+            <div className="mt-4 text-sm text-foreground">
+              <span className="font-medium">Promo APR applied:</span> {promo.rate}%{' '}
+              {promo.promo_text ? (<><span>— {promo.promo_text}</span></>) : null}{' '}
+              {promo.promo_end_date ? (<><span>(ends {new Date(promo.promo_end_date).toLocaleDateString()})</span></>) : null}
+            </div>
+          )}
 
           <div className="mt-6 flex items-baseline gap-3">
             <div className="text-muted-foreground">Estimated Monthly:</div>

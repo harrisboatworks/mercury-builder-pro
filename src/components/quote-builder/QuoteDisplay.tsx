@@ -22,6 +22,7 @@ import { motion } from 'framer-motion';
 import { xpActions } from '@/config/xpActions';
 import { xpRewards, getCurrentReward, getNextReward } from '@/config/xpRewards';
 import { format } from 'date-fns';
+import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 interface QuoteDisplayProps {
   quoteData: QuoteData;
   onStepComplete: (data: { financing: any; hasTradein: boolean; tradeinInfo?: any }) => void;
@@ -53,6 +54,8 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   // Dynamic financing options
   const [financingOptions, setFinancingOptions] = useState<any[]>([]);
   const [selectedFinancing, setSelectedFinancing] = useState<string | null>(null);
+  const { promo: activePromo } = useActiveFinancingPromo();
+  const effectiveRate = (activePromo?.rate ?? quoteData.financing.rate);
 
   // SMS via Zapier
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -220,7 +223,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
 
   const calculatePayments = () => {
     const financedAmount = totalFinancePrice - downPayment;
-    const monthlyRate = quoteData.financing.rate / 100 / 12;
+    const monthlyRate = effectiveRate / 100 / 12;
     const numPayments = term;
     
     if (financedAmount <= 0) return { weekly: 0, biweekly: 0, monthly: 0, totalOfPayments: 0, totalInterest: 0 };
@@ -244,7 +247,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
     const terms = [48, 60, 120, 180];
     return terms.map(termMonths => {
       const financedAmount = totalFinancePrice - downPayment;
-      const monthlyRate = quoteData.financing.rate / 100 / 12;
+      const monthlyRate = effectiveRate / 100 / 12;
       const monthlyPayment = financedAmount > 0 ? 
         (financedAmount * monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / 
         (Math.pow(1 + monthlyRate, termMonths) - 1) : 0;
@@ -347,7 +350,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   };
   const handleContinue = () => {
     onStepComplete({
-      financing: { downPayment, term, rate: quoteData.financing.rate },
+      financing: { downPayment, term, rate: effectiveRate },
       hasTradein: hasTradeIn
     });
   };
@@ -426,7 +429,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
         tradeInValue,
         accessoryCosts,
         financing: {
-          rate: quoteData.financing.rate,
+          rate: effectiveRate,
           termMonths: term,
           downPayment,
           monthly: Math.round(payments.monthly || 0),
@@ -969,7 +972,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                 <p className="font-medium">ESTIMATED PAYMENTS ({term} months):</p>
                 <p>Total of payments: ${payments.totalOfPayments.toLocaleString()}</p>
                 <p>Total interest: ${payments.totalInterest.toFixed(0)}</p>
-                <p className="text-xs mt-2">*{quoteData.financing.rate}% APR for {term} months OAC</p>
+                <p className="text-xs mt-2">*{effectiveRate}% APR for {term} months OAC</p>
                 <p className="text-xs text-muted-foreground">Includes ${financingFee.toLocaleString()} financing administration fee. All payments include HST.</p>
               </div>
             </div>
@@ -1029,7 +1032,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                 <div>
                   <div className="font-semibold">📅 Easy Monthly</div>
                   <div className="text-3xl font-bold leading-tight mt-2">${payments.monthly.toFixed(0)}/month</div>
-                  <small className="block text-muted-foreground">{term} months @ {quoteData.financing.rate}%</small>
+                  <small className="block text-muted-foreground">{term} months @ {effectiveRate}%</small>
                   <div className="mt-2 text-sm leading-relaxed">
                     <div>✓ Keep cash on hand</div>
                     <div>✓ Build credit</div>
