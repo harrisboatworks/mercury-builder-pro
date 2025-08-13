@@ -5,7 +5,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { ArrowLeft, Ship, Info, CheckCircle2 } from 'lucide-react';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { ArrowLeft, Ship, Info, CheckCircle2, ChevronDown, HelpCircle } from 'lucide-react';
 import { Motor, BoatInfo } from '../QuoteBuilder';
 import { TradeInValuation } from './TradeInValuation';
 import { type TradeInInfo } from '@/lib/trade-valuation';
@@ -577,53 +578,64 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                     </Button>
                   </div>
 
-                  <div className="bg-muted/30 rounded-lg p-4">
-                    <img 
-                      src="/lovable-uploads/cb45570a-2b96-4b08-af3d-412c7607a66e.png" 
-                      alt="Transom height measurement guide showing how to measure from top of transom to bottom of hull" 
-                      className="w-full max-w-lg mx-auto rounded-lg shadow-sm"
-                    />
-                  </div>
-
-                  <div className="mt-2">
-                    {selectedMotor && chosenShaft && (
-                      <Alert className={shaftMatch ? 'border-in-stock bg-in-stock/10' : 'border-orange-500 bg-orange-50 dark:bg-orange-950/20'}>
-                        <AlertDescription>
-                          {shaftMatch ? (
-                            <>
-                              Selected motor: {selectedMotor.model} • Matches your {shaftLabel(chosenShaft)} transom.
-                            </>
-                          ) : (
-                            <div className="space-y-3">
-                              <p>
-                                Heads up: your selected motor ({selectedMotor.model}) is {shaftLabel(motorShaft)}, but you chose {shaftLabel(chosenShaft)}. Mercury model must match the boat's transom height.
-                              </p>
-                              <div className="flex flex-col sm:flex-row gap-2">
+                  {selectedMotor && chosenShaft && (
+                    <Alert className={shaftMatch ? 'border-in-stock bg-in-stock/10' : 'border-orange-500 bg-orange-50 dark:bg-orange-950/20'}>
+                      <AlertDescription>
+                        {shaftMatch ? (
+                          <>
+                            Selected motor: {selectedMotor.model} • Matches your {shaftLabel(chosenShaft)} transom.
+                          </>
+                        ) : (
+                          <div className="space-y-3">
+                            <p>
+                              Heads up: your selected motor ({selectedMotor.model}) is {shaftLabel(motorShaft)}, but you chose {shaftLabel(chosenShaft)}. Mercury model must match the boat's transom height.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-2">
+                              <Button 
+                                variant="outline" 
+                                size="sm" 
+                                onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: motorShaft }))}
+                                className="text-orange-700 border-orange-300 hover:bg-orange-50"
+                              >
+                                Change to {shaftLabel(motorShaft)} transom
+                              </Button>
+                              {onShowCompatibleMotors && (
                                 <Button 
                                   variant="outline" 
                                   size="sm" 
-                                  onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: motorShaft }))}
-                                  className="text-orange-700 border-orange-300 hover:bg-orange-50"
+                                  onClick={onShowCompatibleMotors}
+                                  className="text-blue-700 border-blue-300 hover:bg-blue-50"
                                 >
-                                  Change to {shaftLabel(motorShaft)} transom
+                                  Show compatible motors
                                 </Button>
-                                {onShowCompatibleMotors && (
-                                  <Button 
-                                    variant="outline" 
-                                    size="sm" 
-                                    onClick={onShowCompatibleMotors}
-                                    className="text-blue-700 border-blue-300 hover:bg-blue-50"
-                                  >
-                                    Show compatible motors
-                                  </Button>
-                                )}
-                              </div>
+                              )}
                             </div>
-                          )}
-                        </AlertDescription>
-                      </Alert>
-                    )}
-                  </div>
+                          </div>
+                        )}
+                      </AlertDescription>
+                    </Alert>
+                  )}
+
+                  <Collapsible>
+                    <CollapsibleTrigger asChild>
+                      <Button variant="outline" className="w-full justify-between">
+                        <div className="flex items-center gap-2">
+                          <HelpCircle className="w-4 h-4" />
+                          <span>Need help measuring transom height?</span>
+                        </div>
+                        <ChevronDown className="w-4 h-4" />
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="mt-3">
+                      <div className="bg-muted/30 rounded-lg p-4">
+                        <img 
+                          src="/lovable-uploads/cb45570a-2b96-4b08-af3d-412c7607a66e.png" 
+                          alt="Transom height measurement guide showing how to measure from top of transom to bottom of hull" 
+                          className="w-full max-w-lg mx-auto rounded-lg shadow-sm"
+                        />
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
                 </div>
               </Card>
             )}
