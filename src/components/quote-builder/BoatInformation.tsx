@@ -671,6 +671,16 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                     {selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && (
                       <div className="controls-section rounded-lg border border-border bg-muted/30 p-4">
                         <h4 className="font-semibold mb-3">Steering Controls Required</h4>
+                        {isNonMercuryBrand && (
+                          <Alert className="mb-3 border-blue-500 bg-blue-50 dark:bg-blue-950/20">
+                            <div className="flex items-center gap-2">
+                              <Info className="w-4 h-4" />
+                              <AlertDescription>
+                                Your current brand isn’t Mercury, so existing controls aren’t compatible. We’ve selected new Mercury controls by default.
+                              </AlertDescription>
+                            </div>
+                          </Alert>
+                        )}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 control-options">
                           {isNonMercuryBrand ? (
                             <label className="option-card rounded-md border-2 border-primary bg-primary/5 p-3">
