@@ -1357,7 +1357,7 @@ const subtitle = formatVariantSubtitle(raw, title);
                     </div>
 
                     {(hasGet5 || hasRepower) && (
-                      <div className="promo-badges flex justify-center mt-3">
+                      <div className="promo-badges flex justify-center mt-1">
                         {hasGet5 && (
                           <span className="promo-badge-base promo-badge-warranty badge" aria-label="5 Year Warranty">
                             <ShieldCheck className="w-4 h-4" aria-hidden="true" />
