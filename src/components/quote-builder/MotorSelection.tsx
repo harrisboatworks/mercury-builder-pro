@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-
 import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
@@ -42,7 +41,6 @@ interface DbMotor {
   specifications?: Record<string, any> | null;
   detail_url?: string | null;
 }
-
 interface Promotion {
   id: string;
   name: string;
@@ -62,7 +60,6 @@ interface Promotion {
   priority: number;
   details?: any;
 }
-
 interface PromotionRule {
   id: string;
   promotion_id: string;
@@ -77,22 +74,25 @@ interface PromotionRule {
 }
 
 // Shared promotions detection (single source for modal + banner)
-const PROMO_MAP = [
-  { key: 'get5', test: /(mercury\s*)?(get\s*5|get5|5\s*year(\s*warranty)?)/i, label: 'Warranty bonus active' },
-  { key: 'repower', test: /(repower\s*rebate|repower)/i, label: 'Repower Rebate Promo active' },
-] as const;
-
+const PROMO_MAP = [{
+  key: 'get5',
+  test: /(mercury\s*)?(get\s*5|get5|5\s*year(\s*warranty)?)/i,
+  label: 'Warranty bonus active'
+}, {
+  key: 'repower',
+  test: /(repower\s*rebate|repower)/i,
+  label: 'Repower Rebate Promo active'
+}] as const;
 type PromoKey = typeof PROMO_MAP[number]['key'];
-
 const REPOWER_INFO_URL = 'https://www.mercurymarine.com/en/us/engines/outboard/promotions/';
-
 const detectPromoKeysFromText = (text?: string | null): PromoKey[] => {
   if (!text) return [];
   const keys = new Set<PromoKey>();
-  PROMO_MAP.forEach(p => { if (p.test.test(text || '')) keys.add(p.key as PromoKey); });
+  PROMO_MAP.forEach(p => {
+    if (p.test.test(text || '')) keys.add(p.key as PromoKey);
+  });
   return Array.from(keys);
 };
-
 const getPromoKeysForMotor = (motor: Motor): PromoKey[] => {
   const parts: string[] = [];
   (motor.appliedPromotions || []).forEach(s => parts.push(String(s)));
@@ -108,20 +108,27 @@ const getPromoKeysForMotor = (motor: Motor): PromoKey[] => {
   if ((motor.bonusOffers || []).some(b => !!b.warrantyExtraYears && b.warrantyExtraYears > 0)) set.add('get5');
   return Array.from(set);
 };
-
 const getPromoLabelsForMotor = (motor: Motor): string[] => {
   const keys = getPromoKeysForMotor(motor);
   return keys.map(k => PROMO_MAP.find(p => p.key === k)?.label || k);
 };
 const decodeModelName = (modelName: string) => {
-  type Item = { code: string; meaning: string; benefit: string };
+  type Item = {
+    code: string;
+    meaning: string;
+    benefit: string;
+  };
   const decoded: Item[] = [];
   const name = modelName || '';
   const upper = name.toUpperCase();
   const added = new Set<string>();
   const add = (code: string, meaning: string, benefit: string) => {
     if (!added.has(code)) {
-      decoded.push({ code, meaning, benefit });
+      decoded.push({
+        code,
+        meaning,
+        benefit
+      });
       added.add(code);
     }
   };
@@ -137,39 +144,58 @@ const decodeModelName = (modelName: string) => {
   if (/BIGFOOT/i.test(name)) add('BigFoot', 'High Thrust', 'Ideal for pontoons & heavy boats');
 
   // Multi-part combos (match first to avoid partial overlaps)
-  if (upper.includes('ELHPT')) { add('E','Electric Start','Push-button start'); add('L','Long Shaft (20\")','Standard transom height'); add('H','Tiller Handle','Direct steering control'); add('PT','Power Tilt','Easy motor lifting'); }
-  if (upper.includes('ELXPT') || upper.includes('EXLPT')) { add('E','Electric Start','Push-button start'); add('XL','Extra Long Shaft (25\")','For 25\" transom boats'); add('PT','Power Trim & Tilt','Adjust angle on the fly'); }
-  if (upper.includes('ELPT')) { add('E','Electric Start','Push-button convenience'); add('L','Long Shaft (20\")','For 20\" transom boats'); add('PT','Power Trim & Tilt','Adjust angle on the fly'); }
-  if (upper.includes('MLH')) { add('M','Manual Start','Pull cord — simple & reliable'); add('L','Long Shaft (20\")','For 20\" transom boats'); add('H','Tiller Handle','Steer directly from motor'); }
-  if (upper.includes('MH')) { add('M','Manual Start','Pull cord — simple & reliable'); add('H','Tiller Handle','Steer directly from motor'); }
-  if (upper.includes('EH')) { add('E','Electric Start','Push-button convenience'); add('H','Tiller Handle','Direct steering control'); }
+  if (upper.includes('ELHPT')) {
+    add('E', 'Electric Start', 'Push-button start');
+    add('L', 'Long Shaft (20\")', 'Standard transom height');
+    add('H', 'Tiller Handle', 'Direct steering control');
+    add('PT', 'Power Tilt', 'Easy motor lifting');
+  }
+  if (upper.includes('ELXPT') || upper.includes('EXLPT')) {
+    add('E', 'Electric Start', 'Push-button start');
+    add('XL', 'Extra Long Shaft (25\")', 'For 25\" transom boats');
+    add('PT', 'Power Trim & Tilt', 'Adjust angle on the fly');
+  }
+  if (upper.includes('ELPT')) {
+    add('E', 'Electric Start', 'Push-button convenience');
+    add('L', 'Long Shaft (20\")', 'For 20\" transom boats');
+    add('PT', 'Power Trim & Tilt', 'Adjust angle on the fly');
+  }
+  if (upper.includes('MLH')) {
+    add('M', 'Manual Start', 'Pull cord — simple & reliable');
+    add('L', 'Long Shaft (20\")', 'For 20\" transom boats');
+    add('H', 'Tiller Handle', 'Steer directly from motor');
+  }
+  if (upper.includes('MH')) {
+    add('M', 'Manual Start', 'Pull cord — simple & reliable');
+    add('H', 'Tiller Handle', 'Steer directly from motor');
+  }
+  if (upper.includes('EH')) {
+    add('E', 'Electric Start', 'Push-button convenience');
+    add('H', 'Tiller Handle', 'Direct steering control');
+  }
 
   // Steering and control
-  if (hasWord('RC') || upper.includes('ERC')) add('RC','Remote Control','Steering wheel & console controls');
-  if (hp >= 40 && !added.has('RC')) add('RC','Remote Control','Steering wheel & console controls');
+  if (hasWord('RC') || upper.includes('ERC')) add('RC', 'Remote Control', 'Steering wheel & console controls');
+  if (hp >= 40 && !added.has('RC')) add('RC', 'Remote Control', 'Steering wheel & console controls');
   // Command Thrust
-  if (hasWord('CT') || /COMMAND\s*THRUST/i.test(name)) add('CT','Command Thrust','Larger gearcase & prop for superior control');
+  if (hasWord('CT') || /COMMAND\s*THRUST/i.test(name)) add('CT', 'Command Thrust', 'Larger gearcase & prop for superior control');
 
   // Shaft length (check longer tokens first)
-  if (hasWord('XXL') || hasWord('XX')) add('XX','Ultra Long Shaft (30\")','For 30\" transom boats');
-  else if (hasWord('XL') || (hasWord('X') && !hasWord('XX'))) add('XL','Extra Long Shaft (25\")','For 25\" transom boats');
-  else if (hasWord('L')) add('L','Long Shaft (20\")','For 20\" transom boats');
-  else if (hasWord('S')) add('S','Short Shaft (15\")','For 15\" transom boats');
+  if (hasWord('XXL') || hasWord('XX')) add('XX', 'Ultra Long Shaft (30\")', 'For 30\" transom boats');else if (hasWord('XL') || hasWord('X') && !hasWord('XX')) add('XL', 'Extra Long Shaft (25\")', 'For 25\" transom boats');else if (hasWord('L')) add('L', 'Long Shaft (20\")', 'For 20\" transom boats');else if (hasWord('S')) add('S', 'Short Shaft (15\")', 'For 15\" transom boats');
 
   // Features / technology
-  if (hasWord('PT')) add('PT','Power Trim & Tilt','Adjust motor angle on the fly');
-  if (hasWord('T')) add('T','Power Tilt','Easy motor lifting');
-  if (hasWord('GA')) add('GA','Gas Assist Tilt','Lighter effort when tilting');
-  if (hasWord('EFI')) add('EFI','Electronic Fuel Injection','Reliable starting & efficiency');
-  if (hasWord('DTS')) add('DTS','Digital Throttle & Shift','Smooth precise electronic controls');
-  if (hasWord('PXS') || /PROXS/i.test(name)) add('PXS','ProXS (High Performance)','Sport-tuned for acceleration');
+  if (hasWord('PT')) add('PT', 'Power Trim & Tilt', 'Adjust motor angle on the fly');
+  if (hasWord('T')) add('T', 'Power Tilt', 'Easy motor lifting');
+  if (hasWord('GA')) add('GA', 'Gas Assist Tilt', 'Lighter effort when tilting');
+  if (hasWord('EFI')) add('EFI', 'Electronic Fuel Injection', 'Reliable starting & efficiency');
+  if (hasWord('DTS')) add('DTS', 'Digital Throttle & Shift', 'Smooth precise electronic controls');
+  if (hasWord('PXS') || /PROXS/i.test(name)) add('PXS', 'ProXS (High Performance)', 'Sport-tuned for acceleration');
 
   // Single flags
-  if (hasWord('EL')) add('EL','Electric Start','Push-button convenience');
-  if (hasWord('E') && !added.has('E')) add('E','Electric Start','Push-button convenience');
-  if (hasWord('M') && !added.has('M')) add('M','Manual Start','Pull cord — simple & reliable');
-  if (hp <= 30 && hasWord('H') && !added.has('H')) add('H','Tiller Handle','Steer directly from motor');
-
+  if (hasWord('EL')) add('EL', 'Electric Start', 'Push-button convenience');
+  if (hasWord('E') && !added.has('E')) add('E', 'Electric Start', 'Push-button convenience');
+  if (hasWord('M') && !added.has('M')) add('M', 'Manual Start', 'Pull cord — simple & reliable');
+  if (hp <= 30 && hasWord('H') && !added.has('H')) add('H', 'Tiller Handle', 'Steer directly from motor');
   return decoded;
 };
 
@@ -186,7 +212,6 @@ const getRecommendedBoatSize = (hp: number | string) => {
   if (n <= 200) return '24-28ft';
   return '26ft+';
 };
-
 const getEstimatedSpeed = (hp: number | string) => {
   const n = typeof hp === 'string' ? parseInt(hp) : hp;
   if (n <= 6) return '5-8 mph';
@@ -198,7 +223,6 @@ const getEstimatedSpeed = (hp: number | string) => {
   if (n <= 150) return '50-55 mph';
   return '55+ mph';
 };
-
 const getFuelConsumption = (hp: number | string) => {
   const n = typeof hp === 'string' ? parseInt(hp) : hp;
   if (n <= 6) return '0.5-1 gph';
@@ -210,7 +234,6 @@ const getFuelConsumption = (hp: number | string) => {
   if (n <= 150) return '12-15 gph';
   return '15+ gph';
 };
-
 const getRange = (hp: number | string) => {
   const n = typeof hp === 'string' ? parseInt(hp) : hp;
   if (n <= 6) return 'N/A (portable tank)';
@@ -222,7 +245,6 @@ const getRange = (hp: number | string) => {
   if (n <= 150) return '45-80 miles';
   return '40-70 miles';
 };
-
 const getTransomRequirement = (motor: Motor) => {
   const model = (motor.model || '').toUpperCase();
   const shaft = (motor as any).specifications?.shaft_length as string | undefined;
@@ -235,7 +257,6 @@ const getTransomRequirement = (motor: Motor) => {
   if (/\bS\b/.test(model)) return '15" (S) transom';
   return '15", 20" or 25" (check model)';
 };
-
 const getBatteryRequirement = (motor: Motor) => {
   const model = (motor.model || '').toUpperCase();
   if (/\bM\b/.test(model)) return 'Not required (manual start)';
@@ -244,7 +265,6 @@ const getBatteryRequirement = (motor: Motor) => {
   if (n <= 115) return '12V marine cranking battery (min 800 CCA)';
   return 'High-output 12V (or dual) marine battery';
 };
-
 const getControlRequirement = (motor: Motor) => {
   const model = (motor.model || '').toUpperCase();
   const n = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
@@ -252,93 +272,60 @@ const getControlRequirement = (motor: Motor) => {
   if (n >= 40) return 'Remote control kit required (~$800-1500)';
   return 'Tiller or remote available';
 };
-
 const getFuelRequirement = (_motor: Motor) => {
   return 'Unleaded 87 octane gasoline (E10 up to 10%)';
 };
-
 const getOilRequirement = (_motor: Motor) => {
   return '4-stroke marine oil 10W-30 or 25W-40 (Mercury)';
 };
-
 const getIdealUses = (hp: number | string) => {
   const n = typeof hp === 'string' ? parseInt(hp) : hp;
-  const Bullets = ({ items }: { items: string[] }) => (
-    <ul className="space-y-1">
-      {items.map((txt, i) => (
-        <li key={i} className="flex items-start">
+  const Bullets = ({
+    items
+  }: {
+    items: string[];
+  }) => <ul className="space-y-1">
+      {items.map((txt, i) => <li key={i} className="flex items-start">
           <span className="mr-2">•</span>
           <span>{txt}</span>
-        </li>
-      ))}
-    </ul>
-  );
+        </li>)}
+    </ul>;
   if (n <= 6) {
-    return <Bullets items={[
-      'Dinghies & tenders',
-      'Canoes & kayaks',
-      'Emergency backup',
-      'Trolling',
-    ]} />;
+    return <Bullets items={['Dinghies & tenders', 'Canoes & kayaks', 'Emergency backup', 'Trolling']} />;
   }
   if (n <= 30) {
-    return <Bullets items={[
-      'Aluminum fishing boats',
-      'Small pontoons',
-      'Day cruising',
-      'Lake fishing',
-    ]} />;
+    return <Bullets items={['Aluminum fishing boats', 'Small pontoons', 'Day cruising', 'Lake fishing']} />;
   }
   if (n <= 90) {
-    return <Bullets items={[
-      'Family pontoons',
-      'Bass boats',
-      'Runabouts',
-      'Water sports',
-    ]} />;
+    return <Bullets items={['Family pontoons', 'Bass boats', 'Runabouts', 'Water sports']} />;
   }
   if (n <= 150) {
-    return <Bullets items={[
-      'Large pontoons',
-      'Offshore fishing',
-      'Performance boats',
-      'Tournament fishing',
-    ]} />;
+    return <Bullets items={['Large pontoons', 'Offshore fishing', 'Performance boats', 'Tournament fishing']} />;
   }
-  return <Bullets items={[
-    'High-performance boats',
-    'Commercial use',
-    'Offshore racing',
-    'Heavy loads',
-  ]} />;
+  return <Bullets items={['High-performance boats', 'Commercial use', 'Offshore racing', 'Heavy loads']} />;
 };
 
-
 // Normalize scraped/spec data into consistent keys used by the UI
-const normalizeSpecifications = (
-  raw: any,
-  context: { hp?: number; model?: string } = {}
-): Record<string, any> => {
+const normalizeSpecifications = (raw: any, context: {
+  hp?: number;
+  model?: string;
+} = {}): Record<string, any> => {
   const r = raw || {};
   const model = (context.model || '').toUpperCase();
   const out: Record<string, any> = {};
-
   const get = (...keys: string[]) => {
     for (const k of keys) {
       if (r[k] != null && r[k] !== '') return r[k];
     }
     return undefined;
   };
-
   out.powerHP = get('powerHP', 'power_hp', 'hp', 'horsepower') ?? context.hp;
   out.weight = get('weight', 'weight_lbs', 'dry_weight', 'dryWeight', 'weight_kg');
   out.shaftLength = get('shaftLength', 'shaft_length', 'shaft');
   out.startType = get('startType', 'start_type', 'starting');
   out.fuelSystem = get('fuelSystem', 'fuel_system', 'fuel');
-
   const warranty = get('warrantyPromo', 'warranty_promo', 'warranty');
-  if (typeof warranty === 'number') out.warrantyPromo = `${warranty} Year`;
-  else out.warrantyPromo = warranty;
+  if (typeof warranty === 'number') out.warrantyPromo = `${warranty} Year`;else out.warrantyPromo = warranty;
 
   // Inference from model codes if missing
   if (!out.startType) {
@@ -346,26 +333,29 @@ const normalizeSpecifications = (
     if (/\bEL|\bEH|\bE\b|EFI/.test(model)) out.startType = out.startType || 'Electric';
   }
   if (!out.shaftLength) {
-    if (/\bXXL\b/.test(model)) out.shaftLength = '30"';
-    else if (/\bXL\b/.test(model)) out.shaftLength = '25"';
-    else if (/\bL\b/.test(model)) out.shaftLength = '20"';
-    else if (/\bS\b/.test(model)) out.shaftLength = '15"';
+    if (/\bXXL\b/.test(model)) out.shaftLength = '30"';else if (/\bXL\b/.test(model)) out.shaftLength = '25"';else if (/\bL\b/.test(model)) out.shaftLength = '20"';else if (/\bS\b/.test(model)) out.shaftLength = '15"';
   }
   if (!out.fuelSystem && /EFI/.test(model)) out.fuelSystem = 'EFI';
 
   // Merge back to preserve any additional keys
-  return { ...r, ...out };
+  return {
+    ...r,
+    ...out
+  };
 };
-
-
 interface MotorSelectionProps {
   onStepComplete: (motor: Motor) => void;
   noSalePriceLayout?: 'default' | 'placeholder' | 'centered';
   imageSizingMode?: 'current' | 'taller' | 'scale-msrp' | 'v2' | 'uniform-112';
 }
-
-export const MotorSelection = ({ onStepComplete, noSalePriceLayout = 'placeholder', imageSizingMode = 'uniform-112' }: MotorSelectionProps) => {
-  const { toast } = useToast();
+export const MotorSelection = ({
+  onStepComplete,
+  noSalePriceLayout = 'placeholder',
+  imageSizingMode = 'uniform-112'
+}: MotorSelectionProps) => {
+  const {
+    toast
+  } = useToast();
   const isMobile = useIsMobile();
   const [motors, setMotors] = useState<Motor[]>([]);
   const [loading, setLoading] = useState(true);
@@ -373,174 +363,175 @@ export const MotorSelection = ({ onStepComplete, noSalePriceLayout = 'placeholde
   const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
   const [showCelebration, setShowCelebration] = useState(false);
   const [showStickyBar, setShowStickyBar] = useState(false);
-  const [celebrationParticles, setCelebrationParticles] = useState<Array<{ id: number; x: number; y: number; emoji: string }>>([]);
+  const [celebrationParticles, setCelebrationParticles] = useState<Array<{
+    id: number;
+    x: number;
+    y: number;
+    emoji: string;
+  }>>([]);
   const [filters, setFilters] = useState({
     category: 'all',
     stockStatus: 'all',
     priceRange: [0, 50000] as [number, number],
     hpRange: [2.5, 300] as [number, number]
   });
-const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-const [filtersOpen, setFiltersOpen] = useState(true);
-const [bannerPromosOpen, setBannerPromosOpen] = useState(false);
-// Phase 1 scaffolding & features
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [filtersOpen, setFiltersOpen] = useState(true);
+  const [bannerPromosOpen, setBannerPromosOpen] = useState(false);
+  // Phase 1 scaffolding & features
 
+  const [activePromoModal, setActivePromoModal] = useState<Promotion | null>(null);
+  const [promotionsState, setPromotionsState] = useState<Promotion[]>([]);
+  const [quickViewMotor, setQuickViewMotor] = useState<Motor | null>(null);
+  const [harrisLogoUrl, setHarrisLogoUrl] = useState<string>('/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png');
+  const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
+  const [modelSearch, setModelSearch] = useState<string>('');
+  const debugPricing = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
+  const [quickViewLoading, setQuickViewLoading] = useState(false);
 
-const [activePromoModal, setActivePromoModal] = useState<Promotion | null>(null);
-const [promotionsState, setPromotionsState] = useState<Promotion[]>([]);
-const [quickViewMotor, setQuickViewMotor] = useState<Motor | null>(null);
-const [harrisLogoUrl, setHarrisLogoUrl] = useState<string>('/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png');
-const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
-const [modelSearch, setModelSearch] = useState<string>('');
+  // Allow URL param override for the no-sale price layout only on staging routes
+  const isStagingRoute = typeof window !== 'undefined' && window.location?.pathname?.startsWith('/staging');
+  const urlLayout = isStagingRoute ? new URLSearchParams(window.location.search).get('noSalePriceLayout') : null;
+  const paramNoSaleLayout: 'placeholder' | 'centered' | null = urlLayout === 'placeholder' || urlLayout === 'centered' ? urlLayout as 'placeholder' | 'centered' : null;
+  const effectiveNoSaleLayout: 'default' | 'placeholder' | 'centered' = paramNoSaleLayout as any ?? noSalePriceLayout;
 
-const debugPricing = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
-const [quickViewLoading, setQuickViewLoading] = useState(false);
-
-// Allow URL param override for the no-sale price layout only on staging routes
-const isStagingRoute = typeof window !== 'undefined' && window.location?.pathname?.startsWith('/staging');
-const urlLayout = isStagingRoute ? new URLSearchParams(window.location.search).get('noSalePriceLayout') : null;
-const paramNoSaleLayout: 'placeholder' | 'centered' | null =
-  urlLayout === 'placeholder' || urlLayout === 'centered' ? (urlLayout as 'placeholder' | 'centered') : null;
-const effectiveNoSaleLayout: 'default' | 'placeholder' | 'centered' =
-  (paramNoSaleLayout as any) ?? noSalePriceLayout;
-
-// Staging-only image sizing override via ?imgMode=current|taller|scale-msrp|v2|uniform-112
-const urlImgMode = isStagingRoute ? new URLSearchParams(window.location.search).get('imgMode') : null;
-const paramImgMode: 'current' | 'taller' | 'scale-msrp' | 'v2' | 'uniform-112' | null =
-  urlImgMode === 'taller' || urlImgMode === 'scale-msrp' || urlImgMode === 'current' || urlImgMode === 'v2' || urlImgMode === 'uniform-112' ? (urlImgMode as any) : null;
-const effectiveImageSizingMode: 'current' | 'taller' | 'scale-msrp' | 'v2' | 'uniform-112' =
-  (paramImgMode as any) ?? imageSizingMode;
-
-const navigate = useNavigate();
-
-const pick = <T,>(arr: readonly T[]): T => arr[Math.floor(Math.random() * arr.length)];
-const loadingText = useMemo<string>(() => pick(loadingMessages as readonly string[]), []);
-
-const track = (name: string, payload: Record<string, any>) => {
-  try { (window as any).analytics?.track?.(name, payload); } catch {}
-  console.log('[analytics]', name, payload);
-
-// Process Harris logo background removal
-useEffect(() => {
-  const processLogo = async () => {
+  // Staging-only image sizing override via ?imgMode=current|taller|scale-msrp|v2|uniform-112
+  const urlImgMode = isStagingRoute ? new URLSearchParams(window.location.search).get('imgMode') : null;
+  const paramImgMode: 'current' | 'taller' | 'scale-msrp' | 'v2' | 'uniform-112' | null = urlImgMode === 'taller' || urlImgMode === 'scale-msrp' || urlImgMode === 'current' || urlImgMode === 'v2' || urlImgMode === 'uniform-112' ? urlImgMode as any : null;
+  const effectiveImageSizingMode: 'current' | 'taller' | 'scale-msrp' | 'v2' | 'uniform-112' = paramImgMode as any ?? imageSizingMode;
+  const navigate = useNavigate();
+  const pick = <T,>(arr: readonly T[]): T => arr[Math.floor(Math.random() * arr.length)];
+  const loadingText = useMemo<string>(() => pick(loadingMessages as readonly string[]), []);
+  const track = (name: string, payload: Record<string, any>) => {
     try {
-      const processedUrl = await processHarrisLogoBackground();
-      setHarrisLogoUrl(processedUrl);
-    } catch (error) {
-      console.warn('Failed to process Harris logo, using original:', error);
-    }
+      (window as any).analytics?.track?.(name, payload);
+    } catch {}
+    console.log('[analytics]', name, payload);
+
+    // Process Harris logo background removal
+    useEffect(() => {
+      const processLogo = async () => {
+        try {
+          const processedUrl = await processHarrisLogoBackground();
+          setHarrisLogoUrl(processedUrl);
+        } catch (error) {
+          console.warn('Failed to process Harris logo, using original:', error);
+        }
+      };
+      processLogo();
+    }, []);
   };
-  
-  processLogo();
-}, []);
-};
 
-// Automatic inventory refresh state
-const [lastInventoryUpdate, setLastInventoryUpdate] = useState<string | null>(null);
+  // Automatic inventory refresh state
+  const [lastInventoryUpdate, setLastInventoryUpdate] = useState<string | null>(null);
+  const needsInventoryUpdate = () => {
+    if (!lastInventoryUpdate) return true;
+    const last = new Date(lastInventoryUpdate);
+    const now = new Date();
+    const hours = (now.getTime() - last.getTime()) / (1000 * 60 * 60);
+    return hours >= 24;
+  };
+  const formatRelativeTime = (timestamp: string) => {
+    const date = new Date(timestamp);
+    const now = new Date();
+    const diffMs = now.getTime() - date.getTime();
+    const hours = Math.floor(diffMs / (1000 * 60 * 60));
+    if (hours < 1) return 'Just now';
+    if (hours === 1) return '1 hour ago';
+    if (hours < 24) return `${hours} hours ago`;
+    if (hours < 48) return 'Yesterday';
+    return `${Math.floor(hours / 24)} days ago`;
+  };
 
-const needsInventoryUpdate = () => {
-  if (!lastInventoryUpdate) return true;
-  const last = new Date(lastInventoryUpdate);
-  const now = new Date();
-  const hours = (now.getTime() - last.getTime()) / (1000 * 60 * 60);
-  return hours >= 24;
-};
-
-const formatRelativeTime = (timestamp: string) => {
-  const date = new Date(timestamp);
-  const now = new Date();
-  const diffMs = now.getTime() - date.getTime();
-  const hours = Math.floor(diffMs / (1000 * 60 * 60));
-  if (hours < 1) return 'Just now';
-  if (hours === 1) return '1 hour ago';
-  if (hours < 24) return `${hours} hours ago`;
-  if (hours < 48) return 'Yesterday';
-  return `${Math.floor(hours / 24)} days ago`;
-};
-
-// Auto-update on load and check hourly
-useEffect(() => {
-  const checkAndUpdateInventory = async () => {
-    try {
-      if (needsInventoryUpdate()) {
-        await updateInventory();
+  // Auto-update on load and check hourly
+  useEffect(() => {
+    const checkAndUpdateInventory = async () => {
+      try {
+        if (needsInventoryUpdate()) {
+          await updateInventory();
+        }
+      } catch (e) {
+        console.warn('Auto inventory update skipped:', e);
       }
-    } catch (e) {
-      console.warn('Auto inventory update skipped:', e);
+    };
+    checkAndUpdateInventory();
+    const interval = setInterval(checkAndUpdateInventory, 60 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // One-off manual scrape trigger via query param
+  useEffect(() => {
+    const run = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('runScrape') === '1';
+    if (run) {
+      console.log('[inventory] Manual scrape requested via ?runScrape=1');
+      updateInventory();
     }
-  };
+  }, []);
 
-  checkAndUpdateInventory();
-  const interval = setInterval(checkAndUpdateInventory, 60 * 60 * 1000);
-  return () => clearInterval(interval);
-}, []);
-
-// One-off manual scrape trigger via query param
-useEffect(() => {
-  const run = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('runScrape') === '1';
-  if (run) {
-    console.log('[inventory] Manual scrape requested via ?runScrape=1');
-    updateInventory();
-  }
-}, []);
-
-// Load motors from database
+  // Load motors from database
   useEffect(() => {
     loadMotors();
   }, []);
 
   // Realtime updates for promotions changes
   useEffect(() => {
-    const channel = supabase
-      .channel('promos-realtime')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'promotions' }, () => {
-        loadMotors();
-      })
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'promotions_rules' }, () => {
-        loadMotors();
-      })
-      .subscribe();
-
+    const channel = supabase.channel('promos-realtime').on('postgres_changes', {
+      event: '*',
+      schema: 'public',
+      table: 'promotions'
+    }, () => {
+      loadMotors();
+    }).on('postgres_changes', {
+      event: '*',
+      schema: 'public',
+      table: 'promotions_rules'
+    }, () => {
+      loadMotors();
+    }).subscribe();
     return () => {
       supabase.removeChannel(channel);
     };
   }, []);
-
   const loadMotors = async () => {
     try {
-      const [{ data: motorRows, error: motorsError }, { data: promos, error: promosError }, { data: rules, error: rulesError }] = await Promise.all([
-        supabase.from('motor_models').select('*').order('horsepower'),
-        supabase.from('promotions').select('*'),
-        supabase.from('promotions_rules').select('*')
-      ]);
-
+      const [{
+        data: motorRows,
+        error: motorsError
+      }, {
+        data: promos,
+        error: promosError
+      }, {
+        data: rules,
+        error: rulesError
+      }] = await Promise.all([supabase.from('motor_models').select('*').order('horsepower'), supabase.from('promotions').select('*'), supabase.from('promotions_rules').select('*')]);
       if (motorsError) throw motorsError;
       if (promosError) throw promosError;
       if (rulesError) throw rulesError;
-
       const activePromos: Promotion[] = (promos as Promotion[] | null)?.filter(p => isPromotionActive(p)) || [];
       setPromotionsState(activePromos);
-      const promoRules: PromotionRule[] = (rules as PromotionRule[] | null) || [];
+      const promoRules: PromotionRule[] = rules as PromotionRule[] | null || [];
 
       // Filter out Jet models and cap horsepower at 300
-      const filteredMotorRows = (motorRows as DbMotor[] | null || []).filter((m) => {
+      const filteredMotorRows = (motorRows as DbMotor[] | null || []).filter(m => {
         // Exclude Jet models (check model name for "Jet" case-insensitive)
         const isJetModel = m.model.toLowerCase().includes('jet');
         // Cap horsepower at 300
         const isOverHpLimit = m.horsepower > 300;
-        
         return !isJetModel && !isOverHpLimit;
       });
 
       // Transform database data to Motor interface with effective pricing
-      const transformedMotors: Motor[] = filteredMotorRows.map((m) => {
+      const transformedMotors: Motor[] = filteredMotorRows.map(m => {
         const basePrice = Number(m.base_price || 0);
         const salePrice = m.sale_price != null ? Number(m.sale_price) : null;
         const original = salePrice && salePrice > 0 && salePrice < basePrice ? salePrice : basePrice;
-
-        const { effectivePrice, appliedPromotions, promoEndsAt, bonusOffers } = applyPromotions(m, original, activePromos, promoRules);
+        const {
+          effectivePrice,
+          appliedPromotions,
+          promoEndsAt,
+          bonusOffers
+        } = applyPromotions(m, original, activePromos, promoRules);
         const savings = Math.max(0, original - effectivePrice);
-
         return {
           id: m.id,
           model: m.model,
@@ -560,10 +551,13 @@ useEffect(() => {
           promoEndsAt,
           bonusOffers,
           // Enhanced fields
-          specifications: normalizeSpecifications(m.specifications, { hp: Number(m.horsepower), model: m.model }),
-          features: Array.isArray(m.features) ? (m.features as string[]) : [],
+          specifications: normalizeSpecifications(m.specifications, {
+            hp: Number(m.horsepower),
+            model: m.model
+          }),
+          features: Array.isArray(m.features) ? m.features as string[] : [],
           description: m.description || null,
-          detailUrl: m.detail_url || null,
+          detailUrl: m.detail_url || null
         };
       });
 
@@ -577,32 +571,32 @@ useEffect(() => {
           const m = arr[i];
           if (m.basePrice && m.basePrice > 0) {
             const sale = Math.max(1, Math.round(m.basePrice * (1 - discounts[applied])));
-            arr[i] = { ...m, salePrice: sale };
+            arr[i] = {
+              ...m,
+              salePrice: sale
+            };
             applied++;
           }
         }
         return arr;
       })();
-
       setMotors(simulatedMotors);
     } catch (error) {
       console.error('Error loading motors or promotions:', error);
       toast({
         title: 'Network hiccup, eh?',
         description: friendlyErrors.networkError,
-        variant: 'destructive',
+        variant: 'destructive'
       });
     } finally {
       setLoading(false);
     }
   };
-
   const categorizeMotor = (hp: number): 'portable' | 'mid-range' | 'high-performance' | 'v8-racing' => {
     if (hp <= 20) return 'portable';
     if (hp <= 100) return 'mid-range';
     return 'v8-racing';
   };
-
   const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const tokenize = (s: string) => s.toLowerCase().split(/[^a-z0-9+]+/).filter(Boolean);
   const deriveVariant = (raw: string, title: string) => {
@@ -616,14 +610,12 @@ useEffect(() => {
     // If what's left is too short or duplicates the model words, hide
     return v;
   };
-
   const isPromotionActive = (p: Promotion) => {
     const now = new Date();
     const startsOk = !p.start_date || new Date(p.start_date) <= now;
     const endsOk = !p.end_date || new Date(p.end_date) >= now;
     return p.is_active && startsOk && endsOk;
   };
-
   const ruleMatches = (m: DbMotor, r: PromotionRule) => {
     if (r.rule_type === 'all') return true;
     if (r.rule_type === 'model') return !!r.model && m.model.toLowerCase().includes(r.model.toLowerCase());
@@ -636,60 +628,38 @@ useEffect(() => {
     }
     return false;
   };
-
-  const applyPromotions = (
-    m: DbMotor,
-    startingPrice: number,
-    promos: Promotion[],
-    rules: PromotionRule[]
-  ) => {
-    const applicable = promos.filter((p) => {
-      const prules = rules.filter((r) => r.promotion_id === p.id);
+  const applyPromotions = (m: DbMotor, startingPrice: number, promos: Promotion[], rules: PromotionRule[]) => {
+    const applicable = promos.filter(p => {
+      const prules = rules.filter(r => r.promotion_id === p.id);
       if (prules.length === 0) return false; // must have at least one rule
-      return prules.some((r) => ruleMatches(m, r));
+      return prules.some(r => ruleMatches(m, r));
     });
-
     let price = startingPrice;
     const applied: string[] = [];
     let endsAt: string | null = null;
 
     // Separate bonuses and discounts
-    const bonusOnly = applicable
-      .filter((p) => p.kind === 'bonus')
-      .sort((a, b) => (b.highlight === a.highlight ? (b.priority - a.priority) : (b.highlight ? 1 : -1)));
+    const bonusOnly = applicable.filter(p => p.kind === 'bonus').sort((a, b) => b.highlight === a.highlight ? b.priority - a.priority : b.highlight ? 1 : -1);
 
     // Include promos that have either promo-level discount OR a rule-level override for this motor
-    const discounts = applicable.filter((p) => {
-      const matchingRules = rules
-        .filter((r) => r.promotion_id === p.id)
-        .filter((r) => ruleMatches(m, r));
-      const hasRuleOverride = matchingRules.some(
-        (r) => Number(r.discount_percentage) > 0 || Number(r.discount_fixed_amount) > 0
-      );
-      return p.kind !== 'bonus' && (
-        Number(p.discount_percentage) > 0 ||
-        Number(p.discount_fixed_amount) > 0 ||
-        hasRuleOverride
-      );
+    const discounts = applicable.filter(p => {
+      const matchingRules = rules.filter(r => r.promotion_id === p.id).filter(r => ruleMatches(m, r));
+      const hasRuleOverride = matchingRules.some(r => Number(r.discount_percentage) > 0 || Number(r.discount_fixed_amount) > 0);
+      return p.kind !== 'bonus' && (Number(p.discount_percentage) > 0 || Number(p.discount_fixed_amount) > 0 || hasRuleOverride);
     });
-
     const calcAfter = (current: number, fixed: number, pct: number) => {
       let result = current;
       if (Number(fixed) > 0) result = Math.max(0, result - Number(fixed));
       if (Number(pct) > 0) result = result * (1 - Number(pct) / 100);
       return result;
     };
-
     const bestPriceForPromo = (current: number, promo: Promotion) => {
-      const matchingRules = rules
-        .filter((r) => r.promotion_id === promo.id)
-        .filter((r) => ruleMatches(m, r));
+      const matchingRules = rules.filter(r => r.promotion_id === promo.id).filter(r => ruleMatches(m, r));
 
       // Default to promo-level if no matching rules (shouldn't happen due to applicable filter)
       let best = calcAfter(current, Number(promo.discount_fixed_amount) || 0, Number(promo.discount_percentage) || 0);
-
       for (const r of matchingRules) {
-        const hasOverride = (Number(r.discount_fixed_amount) > 0 || Number(r.discount_percentage) > 0);
+        const hasOverride = Number(r.discount_fixed_amount) > 0 || Number(r.discount_percentage) > 0;
         const fixed = hasOverride ? Number(r.discount_fixed_amount) || 0 : Number(promo.discount_fixed_amount) || 0;
         const pct = hasOverride ? Number(r.discount_percentage) || 0 : Number(promo.discount_percentage) || 0;
         const candidate = calcAfter(current, fixed, pct);
@@ -699,7 +669,7 @@ useEffect(() => {
     };
 
     // Apply stackable discounts first (using best rule-level or promo-level value)
-    const stackables = discounts.filter((p) => p.stackable);
+    const stackables = discounts.filter(p => p.stackable);
     for (const p of stackables) {
       const newPrice = bestPriceForPromo(price, p);
       price = newPrice;
@@ -710,7 +680,7 @@ useEffect(() => {
     }
 
     // Then best non-stackable discount
-    const nonStackables = discounts.filter((p) => !p.stackable);
+    const nonStackables = discounts.filter(p => !p.stackable);
     if (nonStackables.length > 0) {
       let best: Promotion | null = null;
       let bestPrice = price;
@@ -731,7 +701,7 @@ useEffect(() => {
     }
 
     // Collect bonus offers (do not change price)
-    const bonusOffers = bonusOnly.map((b) => {
+    const bonusOffers = bonusOnly.map(b => {
       if (b.end_date) {
         if (!endsAt || new Date(b.end_date) < new Date(endsAt)) endsAt = b.end_date;
       }
@@ -745,22 +715,23 @@ useEffect(() => {
         termsUrl: b.terms_url || null,
         highlight: !!b.highlight,
         endsAt: b.end_date || null,
-        priority: b.priority || 0,
+        priority: b.priority || 0
       };
     });
-
     return {
       effectivePrice: Math.round(price),
       appliedPromotions: applied,
       promoEndsAt: endsAt,
-      bonusOffers,
+      bonusOffers
     };
   };
-
   const updateInventory = async () => {
     setUpdating(true);
     try {
-      const { data, error } = await supabase.functions.invoke('scrape-inventory');
+      const {
+        data,
+        error
+      } = await supabase.functions.invoke('scrape-inventory');
       if (error) throw error;
 
       // Reload motors after update
@@ -769,36 +740,50 @@ useEffect(() => {
       // Save last update timestamp
       const nowIso = new Date().toISOString();
       setLastInventoryUpdate(nowIso);
-
       toast({
         title: 'Success',
-        description: `Updated ${data?.count ?? ''} motors from Harris Boat Works`,
+        description: `Updated ${data?.count ?? ''} motors from Harris Boat Works`
       });
     } catch (error) {
       console.error('Error updating inventory:', error);
       toast({
         title: 'Error',
         description: 'Failed to update inventory',
-        variant: 'destructive',
+        variant: 'destructive'
       });
     } finally {
       setUpdating(false);
     }
   };
-
-  const categories = [
-    { key: 'all', label: 'All Motors', color: 'primary' },
-    { key: 'portable', label: 'Portable (2.5-20hp)', color: 'portable' },
-    { key: 'mid-range', label: 'Mid-Range (25-100hp)', color: 'mid-range' },
-    { key: 'high-performance', label: 'High Performance (115-200hp)', color: 'high-performance' },
-    { key: 'v8-racing', label: 'V8 & Racing (225-600hp)', color: 'v8-racing' }
-  ];
-
+  const categories = [{
+    key: 'all',
+    label: 'All Motors',
+    color: 'primary'
+  }, {
+    key: 'portable',
+    label: 'Portable (2.5-20hp)',
+    color: 'portable'
+  }, {
+    key: 'mid-range',
+    label: 'Mid-Range (25-100hp)',
+    color: 'mid-range'
+  }, {
+    key: 'high-performance',
+    label: 'High Performance (115-200hp)',
+    color: 'high-performance'
+  }, {
+    key: 'v8-racing',
+    label: 'V8 & Racing (225-600hp)',
+    color: 'v8-racing'
+  }];
   const filterByHPRange = (minHP: number, maxHP: number) => {
     // Update hpRange filter
-    setFilters({ ...filters, hpRange: [minHP, maxHP] });
+    setFilters({
+      ...filters,
+      hpRange: [minHP, maxHP]
+    });
     // Compute how many would match with the new range and current filters
-    const count = motors.filter((motor) => {
+    const count = motors.filter(motor => {
       if (filters.category !== 'all' && motor.category !== filters.category) return false;
       if (filters.stockStatus !== 'all' && motor.stockStatus !== filters.stockStatus) return false;
       if (motor.price < filters.priceRange[0] || motor.price > filters.priceRange[1]) return false;
@@ -808,76 +793,70 @@ useEffect(() => {
     if (count === 0) {
       toast({
         title: 'No motors found',
-        description: `No motors available in the ${minHP}-${maxHP} HP range`,
+        description: `No motors available in the ${minHP}-${maxHP} HP range`
       });
     }
   };
+  const filteredMotors = motors.filter(motor => {
+    if (modelSearch && !motor.model?.toLowerCase().includes(modelSearch.toLowerCase())) return false;
+    if (filters.category !== 'all' && motor.category !== filters.category) return false;
+    if (filters.stockStatus !== 'all' && motor.stockStatus !== filters.stockStatus) return false;
+    if (motor.price < filters.priceRange[0] || motor.price > filters.priceRange[1]) return false;
+    if (motor.hp < filters.hpRange[0] || motor.hp > filters.hpRange[1]) return false;
+    return true;
+  });
 
-const filteredMotors = motors.filter(motor => {
-  if (modelSearch && !motor.model?.toLowerCase().includes(modelSearch.toLowerCase())) return false;
-  if (filters.category !== 'all' && motor.category !== filters.category) return false;
-  if (filters.stockStatus !== 'all' && motor.stockStatus !== filters.stockStatus) return false;
-  if (motor.price < filters.priceRange[0] || motor.price > filters.priceRange[1]) return false;
-  if (motor.hp < filters.hpRange[0] || motor.hp > filters.hpRange[1]) return false;
-  return true;
-});
-
-// Filtered counts per category (Phase 1 - filtered counts)
-const categoryCounts: Record<string, number> = {
-  all: filteredMotors.length,
-  portable: filteredMotors.filter(m => m.category === 'portable').length,
-  'mid-range': filteredMotors.filter(m => m.category === 'mid-range').length,
-  'high-performance': filteredMotors.filter(m => m.category === 'high-performance').length,
-  'v8-racing': filteredMotors.filter(m => m.category === 'v8-racing').length,
-};
-
+  // Filtered counts per category (Phase 1 - filtered counts)
+  const categoryCounts: Record<string, number> = {
+    all: filteredMotors.length,
+    portable: filteredMotors.filter(m => m.category === 'portable').length,
+    'mid-range': filteredMotors.filter(m => m.category === 'mid-range').length,
+    'high-performance': filteredMotors.filter(m => m.category === 'high-performance').length,
+    'v8-racing': filteredMotors.filter(m => m.category === 'v8-racing').length
+  };
   const getStockBadgeColor = (status: string) => {
     switch (status) {
-      case 'In Stock': return 'bg-in-stock text-in-stock-foreground';
-      case 'On Order': return 'bg-on-order text-on-order-foreground';
-      case 'Out of Stock': return 'bg-out-of-stock text-out-of-stock-foreground';
-      default: return 'bg-muted text-muted-foreground';
+      case 'In Stock':
+        return 'bg-in-stock text-in-stock-foreground';
+      case 'On Order':
+        return 'bg-on-order text-on-order-foreground';
+      case 'Out of Stock':
+        return 'bg-out-of-stock text-out-of-stock-foreground';
+      default:
+        return 'bg-muted text-muted-foreground';
     }
   };
-
   const getCategoryColor = (category: string): "default" | "destructive" | "secondary" | "outline" => {
     switch (category) {
-      case 'portable': return 'secondary';
-      case 'mid-range': return 'outline';
-      case 'high-performance': return 'default';
-      case 'v8-racing': return 'destructive';
-      default: return 'default';
+      case 'portable':
+        return 'secondary';
+      case 'mid-range':
+        return 'outline';
+      case 'high-performance':
+        return 'default';
+      case 'v8-racing':
+        return 'destructive';
+      default:
+        return 'default';
     }
   };
 
-// Inline renderer for bottom banner promotions (badges + "+N more")
-const renderBannerPromos = (motor: Motor) => {
-  const labels = getPromoLabelsForMotor(motor);
-  if (!labels.length) return null;
-  const inlineCount = Math.min(labels.length, isMobile ? 1 : 2);
-  const remaining = labels.length - inlineCount;
-  return (
-    <div className="promos-summary flex items-center gap-2" aria-live="polite">
+  // Inline renderer for bottom banner promotions (badges + "+N more")
+  const renderBannerPromos = (motor: Motor) => {
+    const labels = getPromoLabelsForMotor(motor);
+    if (!labels.length) return null;
+    const inlineCount = Math.min(labels.length, isMobile ? 1 : 2);
+    const remaining = labels.length - inlineCount;
+    return <div className="promos-summary flex items-center gap-2" aria-live="polite">
       <span className="promos-summary__label text-xs font-semibold text-muted-foreground">Promotions applied</span>
       <div className="promos-summary__badges flex items-center gap-1 overflow-hidden whitespace-nowrap" role="list">
-        {labels.slice(0, inlineCount).map((lab, idx) => (
-          <span key={idx} role="listitem" className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold">
+        {labels.slice(0, inlineCount).map((lab, idx) => <span key={idx} role="listitem" className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold">
             <span className="mr-1" aria-hidden="true">✅</span>
             {lab}
-          </span>
-        ))}
+          </span>)}
       </div>
-      {remaining > 0 && (
-        <>
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            className="promos-summary__more rounded-full h-6 px-2 py-0 text-xs"
-            aria-haspopup="dialog"
-            aria-expanded={bannerPromosOpen}
-            onClick={() => setBannerPromosOpen(true)}
-          >
+      {remaining > 0 && <>
+          <Button type="button" variant="outline" size="sm" className="promos-summary__more rounded-full h-6 px-2 py-0 text-xs" aria-haspopup="dialog" aria-expanded={bannerPromosOpen} onClick={() => setBannerPromosOpen(true)}>
             +{remaining} more
           </Button>
           <Dialog open={bannerPromosOpen} onOpenChange={setBannerPromosOpen}>
@@ -886,77 +865,80 @@ const renderBannerPromos = (motor: Motor) => {
                 <DialogTitle>Active promotions</DialogTitle>
               </DialogHeader>
                 <div className="promos-popover__badges flex flex-wrap gap-2" role="list">
-                  {labels.map((l, idx) => (
-                    <span
-                      key={idx}
-                      role="listitem"
-                      className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-sm font-semibold"
-                    >
+                  {labels.map((l, idx) => <span key={idx} role="listitem" className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-sm font-semibold">
                       <span className="mr-1" aria-hidden="true">✅</span>
                       {l}
-                    </span>
-                  ))}
+                    </span>)}
                 </div>
               <DialogFooter>
                 <Button type="button" onClick={() => setBannerPromosOpen(false)}>Close</Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>
-        </>
-      )}
-    </div>
-  );
-};
-
-
-const calculatePayment = (motor: Motor) => {
-  const url = `/finance-calculator?model=${encodeURIComponent(motor.id)}`;
-  track('calculate_button_click', { model_id: motor.id, model_name: motor.model, action: 'deeplink' });
-  navigate(url);
-};
-
-const openQuickView = (motor: Motor) => {
-  setQuickViewMotor(motor);
-};
-
-// Fetch rich details on-demand for Quick View
-useEffect(() => {
-  const needsEnrichment = (m: Motor | null) => {
-    if (!m) return false;
-    const noDesc = !m.description || m.description.trim().length < 20;
-    const noFeat = !Array.isArray(m.features) || m.features.length === 0;
-    const noSpecs = !m.specifications || Object.keys(m.specifications || {}).length === 0;
-    return noDesc || noFeat || noSpecs;
+        </>}
+    </div>;
+  };
+  const calculatePayment = (motor: Motor) => {
+    const url = `/finance-calculator?model=${encodeURIComponent(motor.id)}`;
+    track('calculate_button_click', {
+      model_id: motor.id,
+      model_name: motor.model,
+      action: 'deeplink'
+    });
+    navigate(url);
+  };
+  const openQuickView = (motor: Motor) => {
+    setQuickViewMotor(motor);
   };
 
-  if (quickViewMotor && needsEnrichment(quickViewMotor)) {
-    setQuickViewLoading(true);
-    supabase.functions
-      .invoke('scrape-motor-details', {
-        body: { motor_id: quickViewMotor.id, detail_url: quickViewMotor.detailUrl },
-      })
-      .then(({ data, error }) => {
+  // Fetch rich details on-demand for Quick View
+  useEffect(() => {
+    const needsEnrichment = (m: Motor | null) => {
+      if (!m) return false;
+      const noDesc = !m.description || m.description.trim().length < 20;
+      const noFeat = !Array.isArray(m.features) || m.features.length === 0;
+      const noSpecs = !m.specifications || Object.keys(m.specifications || {}).length === 0;
+      return noDesc || noFeat || noSpecs;
+    };
+    if (quickViewMotor && needsEnrichment(quickViewMotor)) {
+      setQuickViewLoading(true);
+      supabase.functions.invoke('scrape-motor-details', {
+        body: {
+          motor_id: quickViewMotor.id,
+          detail_url: quickViewMotor.detailUrl
+        }
+      }).then(({
+        data,
+        error
+      }) => {
         if (error) {
           console.warn('scrape-motor-details error', error);
           return;
         }
         if (data?.success) {
-          const { description, features, specifications } = data as any;
+          const {
+            description,
+            features,
+            specifications
+          } = data as any;
           // Update list and quick view motor in place
-          setMotors((prev) => prev.map((mm) => mm.id === quickViewMotor.id ? { ...mm, description, features, specifications } : mm));
-          setQuickViewMotor((prev) => prev ? { ...prev, description, features, specifications } as Motor : prev);
+          setMotors(prev => prev.map(mm => mm.id === quickViewMotor.id ? {
+            ...mm,
+            description,
+            features,
+            specifications
+          } : mm));
+          setQuickViewMotor(prev => prev ? {
+            ...prev,
+            description,
+            features,
+            specifications
+          } as Motor : prev);
         }
-      })
-      .finally(() => setQuickViewLoading(false));
-  }
-}, [quickViewMotor?.id]);
-
-
-
-
-
-
-const handleMotorSelection = (motor: Motor) => {
+      }).finally(() => setQuickViewLoading(false));
+    }
+  }, [quickViewMotor?.id]);
+  const handleMotorSelection = (motor: Motor) => {
     // Check if clicking on already selected motor to deselect
     if (selectedMotor?.id === motor.id) {
       setSelectedMotor(null);
@@ -966,7 +948,7 @@ const handleMotorSelection = (motor: Motor) => {
       toast({
         title: "Motor deselected 🔄",
         description: "You can pick another one, eh!",
-        duration: 2000,
+        duration: 2000
       });
       return;
     }
@@ -980,7 +962,9 @@ const handleMotorSelection = (motor: Motor) => {
     });
     setSelectedMotor(motor);
     setShowCelebration(true);
-    const particles = Array.from({ length: 6 }, (_, i) => ({
+    const particles = Array.from({
+      length: 6
+    }, (_, i) => ({
       id: Date.now() + i,
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -990,41 +974,32 @@ const handleMotorSelection = (motor: Motor) => {
     toast({
       title: pick(canadianEncouragement.motorSelected),
       description: `${motor.model} selected — let's continue, eh!`,
-      duration: 2200,
+      duration: 2200
     });
 
     // Gamified promotion toast (if any promos apply)
-    const hasSale = motor.stockStatus === 'In Stock' && motor.salePrice != null && motor.basePrice != null && (motor.salePrice as number) < (motor.basePrice as number);
-    const savings = hasSale ? ((motor.basePrice as number) - (motor.salePrice as number)) : 0;
+    const hasSale = motor.stockStatus === 'In Stock' && motor.salePrice != null && motor.basePrice != null && motor.salePrice as number < (motor.basePrice as number);
+    const savings = hasSale ? (motor.basePrice as number) - (motor.salePrice as number) : 0;
     const hasWarrantyBonus = (motor.bonusOffers || []).some(b => !!b.warrantyExtraYears && b.warrantyExtraYears > 0);
-
     const promoItems = getPromoLabelsForMotor(motor);
-
     if (hasSale || hasWarrantyBonus) {
       toast({
         title: "Promotions applied",
-        description: (
-          <div className="modal">
+        description: <div className="modal">
             <div className="modal-promos" aria-live="polite">
-              {promoItems.length > 0 && (
-                <div className="promo-list" role="list">
-                  {promoItems.map((txt, idx) => (
-                    <div className="promo-item" role="listitem" key={idx}>
+              {promoItems.length > 0 && <div className="promo-list" role="list">
+                  {promoItems.map((txt, idx) => <div className="promo-item" role="listitem" key={idx}>
                       <svg className="pi" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M9 16.2l-3.5-3.5-1.4 1.4 4.9 4.9 10-10-1.4-1.4z" />
                       </svg>
                       <span className="promo-note">{txt}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
+                    </div>)}
+                </div>}
             </div>
-          </div>
-        ),
-        duration: 2600,
+          </div>,
+        duration: 2600
       });
     }
-
     setTimeout(() => {
       setShowStickyBar(true);
     }, 500);
@@ -1033,32 +1008,21 @@ const handleMotorSelection = (motor: Motor) => {
       setCelebrationParticles([]);
     }, 2000);
   };
-
   if (loading) {
-    return (
-      <div className="flex items-center justify-center py-12">
+    return <div className="flex items-center justify-center py-12">
         <div className="text-center space-y-4">
           <RefreshCw className="w-8 h-8 animate-spin mx-auto text-primary" />
           <p>{loadingText}</p>
         </div>
-      </div>
-    );
+      </div>;
   }
-
-  return (
-    <div className={`flex gap-6 ${showCelebration ? 'canadian-celebration' : ''}`}>
+  return <div className={`flex gap-6 ${showCelebration ? 'canadian-celebration' : ''}`}>
       <div className={`${filtersOpen ? 'w-80' : 'w-16'} transition-all duration-300 flex-shrink-0`}>
-        {filtersOpen && (
-          <Card className="mb-4">
+        {filtersOpen && <Card className="mb-4">
             <div className="p-4 space-y-6">
               <div>
                 <h3 className="font-bold text-sm mb-2">Know your model?</h3>
-                <Input
-                  type="text"
-                  placeholder="e.g., 90ELPT, 115EXLPT"
-                  value={modelSearch}
-                  onChange={(e) => setModelSearch(e.target.value)}
-                />
+                <Input type="text" placeholder="e.g., 90ELPT, 115EXLPT" value={modelSearch} onChange={e => setModelSearch(e.target.value)} />
               </div>
               <div>
                 <h3 className="font-bold text-sm mb-2">Quick HP Selection:</h3>
@@ -1069,31 +1033,20 @@ const handleMotorSelection = (motor: Motor) => {
                   <Button variant="secondary" size="sm" onClick={() => filterByHPRange(150, 200)}>150 - 200 HP</Button>
                   <Button variant="secondary" size="sm" onClick={() => filterByHPRange(225, 300)}>225 - 300 HP</Button>
                 </div>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="w-full mt-2"
-                  onClick={() => {
-                    setFilters({ ...filters, hpRange: [2.5, 300] });
-                    setModelSearch('');
-                  }}
-                >
+                <Button variant="ghost" size="sm" className="w-full mt-2" onClick={() => {
+              setFilters({
+                ...filters,
+                hpRange: [2.5, 300]
+              });
+              setModelSearch('');
+            }}>
                   Show all motors →
                 </Button>
               </div>
             </div>
-          </Card>
-        )}
+          </Card>}
         {filtersOpen && <div className="border-t border-border my-4" />}
-        <MotorFinderWizard
-          filters={filters}
-          setFilters={setFilters}
-          viewMode={viewMode}
-          setViewMode={setViewMode}
-          resultsCount={filteredMotors.length}
-          isOpen={filtersOpen}
-          onToggle={() => setFiltersOpen(!filtersOpen)}
-        />
+        <MotorFinderWizard filters={filters} setFilters={setFilters} viewMode={viewMode} setViewMode={setViewMode} resultsCount={filteredMotors.length} isOpen={filtersOpen} onToggle={() => setFiltersOpen(!filtersOpen)} />
       </div>
 
       <div className="flex-1 space-y-8">
@@ -1112,23 +1065,14 @@ const handleMotorSelection = (motor: Motor) => {
             <Badge variant={needsInventoryUpdate() ? 'destructive' : 'secondary'}>
               {needsInventoryUpdate() ? 'Update recommended' : 'Fresh'}
             </Badge>
-            <Button 
-              onClick={updateInventory} 
-              disabled={updating}
-              variant="outline"
-              size="sm"
-            >
-              {updating ? (
-                <>
+            <Button onClick={updateInventory} disabled={updating} variant="outline" size="sm">
+              {updating ? <>
                   <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
                   Updating...
-                </>
-              ) : (
-                <>
+                </> : <>
                   <RefreshCw className="w-4 h-4 mr-2" />
                   Update Inventory
-                </>
-              )}
+                </>}
             </Button>
           </div>
         </div>
@@ -1137,18 +1081,16 @@ const handleMotorSelection = (motor: Motor) => {
         <div className="repower-rebate-banner rounded-md p-3 text-center text-sm font-semibold bg-[linear-gradient(135deg,hsl(var(--promo-gold-1)),hsl(var(--promo-gold-2)))] shadow-md">
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <span>💰 Repower Rebate Available! Trading in? You may qualify for additional savings.</span>
-            <Button size="sm" variant="secondary" onClick={() => setActivePromoModal((promotionsState.find(p => /(repower\s*rebate|repower)/i.test([p.name, p.bonus_title, p.bonus_short_badge, p.bonus_description].filter(Boolean).join(' '))) || null))}>Learn More</Button>
+            <Button size="sm" variant="secondary" onClick={() => setActivePromoModal(promotionsState.find(p => /(repower\s*rebate|repower)/i.test([p.name, p.bonus_title, p.bonus_short_badge, p.bonus_description].filter(Boolean).join(' '))) || null)}>Learn More</Button>
           </div>
         </div>
 
-        {selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && (
-          <div className="controls-savings-banner rounded-md border border-border bg-accent/20 p-3 mt-3">
+        {selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && <div className="controls-savings-banner rounded-md border border-border bg-accent/20 p-3 mt-3">
             <div className="flex items-center gap-3">
               <Badge variant="secondary">MONEY SAVER</Badge>
               <p className="text-sm">Have Mercury controls from your old motor? Save over $1,000 with our adapter harness!</p>
             </div>
-          </div>
-        )}
+          </div>}
 
 
         <div className="dealer-credentials rounded-lg mb-6 p-4 md:p-6 bg-gradient-to-r from-primary/5 to-muted/40 border border-border">
@@ -1188,65 +1130,49 @@ const handleMotorSelection = (motor: Motor) => {
           </div>
         </div>
 
-<ActivityTicker />
+      <ActivityTicker />
 
         <TestimonialCarousel />
 
-        {filteredMotors.length === 0 ? (
-          <Card className="p-12 text-center space-y-2">
+        {filteredMotors.length === 0 ? <Card className="p-12 text-center space-y-2">
             <div className="text-2xl">🍁</div>
             <p className="font-semibold">{emptyStateMessages.noResults.message}</p>
             <p className="text-muted-foreground">{emptyStateMessages.noResults.submessage}</p>
-          </Card>
-        ) : (
-          <div className={`grid motors-grid items-stretch ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1'}`}>
+          </Card> : <div className={`grid motors-grid items-stretch ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1'}`}>
             {filteredMotors.map(motor => {
-              const msrp = motor.basePrice && motor.basePrice > 0 ? motor.basePrice : null;
-              const sale = motor.salePrice && motor.salePrice > 0 ? motor.salePrice : null;
-              const state = getPriceDisplayState(msrp, sale);
-              const hasSaleDisplay = state.hasSale;
-              const callForPrice = state.callForPrice;
-              
-              const savingsAmount = state.savingsRounded;
-              const savingsPct = state.percent;
-              if (sale != null && msrp != null && sale >= msrp) {
-                console.warn('[pricing] sale_price not less than base_price', { id: motor.id, model: motor.model, base_price: msrp, sale_price: sale });
-              }
-              const hasBonus = !!(motor.bonusOffers && motor.bonusOffers.length > 0);
-              const topBonus = hasBonus
-                ? [...(motor.bonusOffers || [])].sort((a, b) => (b.highlight === a.highlight ? (b.priority - a.priority) : (b.highlight ? 1 : -1)))[0]
-                : null;
+          const msrp = motor.basePrice && motor.basePrice > 0 ? motor.basePrice : null;
+          const sale = motor.salePrice && motor.salePrice > 0 ? motor.salePrice : null;
+          const state = getPriceDisplayState(msrp, sale);
+          const hasSaleDisplay = state.hasSale;
+          const callForPrice = state.callForPrice;
+          const savingsAmount = state.savingsRounded;
+          const savingsPct = state.percent;
+          if (sale != null && msrp != null && sale >= msrp) {
+            console.warn('[pricing] sale_price not less than base_price', {
+              id: motor.id,
+              model: motor.model,
+              base_price: msrp,
+              sale_price: sale
+            });
+          }
+          const hasBonus = !!(motor.bonusOffers && motor.bonusOffers.length > 0);
+          const topBonus = hasBonus ? [...(motor.bonusOffers || [])].sort((a, b) => b.highlight === a.highlight ? b.priority - a.priority : b.highlight ? 1 : -1)[0] : null;
 
-              // Per-card promo parsing (case/whitespace tolerant)
-              const promoBlob = `${(motor.appliedPromotions || []).join(' ')} ${(motor.bonusOffers || []).map(b => `${b.title ?? ''} ${b.shortBadge ?? ''}`).join(' ')}`;
-              const hasGet5 = /(mercury\s*)?(get\s*5|get5|5\s*year)/i.test(promoBlob);
-              const hasRepower = /(repower(\s*rebate)?)/i.test(promoBlob);
-              const warrantyBonus = (motor.bonusOffers || []).find(b => (b.warrantyExtraYears || 0) > 0);
-              const showWarrantyBadge = hasGet5 || !!warrantyBonus;
-              const otherPromoNames = (motor.appliedPromotions || []).filter(name => {
-                const t = name.toLowerCase();
-                if (/(mercury\s*)?(get\s*5|get5|5\s*year)/i.test(t)) return false;
-                if (/(repower(\s*rebate)?)/i.test(t)) return false;
-                return true;
-              });
-
-               const stockCount = (motor as any)?.stockCount as number | undefined;
-               const recentSales = (motor as any)?.recentSales as number | undefined;
-
-               return (
-                <Card 
-                  key={motor.id}
-                  className={`product-card relative cursor-pointer transition-all duration-500 hover:shadow-lg group overflow-hidden ${
-                    (selectedMotor?.id === motor.id) 
-                      ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' 
-                      : 'hover:scale-[1.01]'
-                  } ${
-                    selectedMotor && selectedMotor.id !== motor.id 
-                      ? 'opacity-70' 
-                      : ''
-                  } flex flex-col`}
-                  onClick={() => handleMotorSelection(motor)}
-                >
+          // Per-card promo parsing (case/whitespace tolerant)
+          const promoBlob = `${(motor.appliedPromotions || []).join(' ')} ${(motor.bonusOffers || []).map(b => `${b.title ?? ''} ${b.shortBadge ?? ''}`).join(' ')}`;
+          const hasGet5 = /(mercury\s*)?(get\s*5|get5|5\s*year)/i.test(promoBlob);
+          const hasRepower = /(repower(\s*rebate)?)/i.test(promoBlob);
+          const warrantyBonus = (motor.bonusOffers || []).find(b => (b.warrantyExtraYears || 0) > 0);
+          const showWarrantyBadge = hasGet5 || !!warrantyBonus;
+          const otherPromoNames = (motor.appliedPromotions || []).filter(name => {
+            const t = name.toLowerCase();
+            if (/(mercury\s*)?(get\s*5|get5|5\s*year)/i.test(t)) return false;
+            if (/(repower(\s*rebate)?)/i.test(t)) return false;
+            return true;
+          });
+          const stockCount = (motor as any)?.stockCount as number | undefined;
+          const recentSales = (motor as any)?.recentSales as number | undefined;
+          return <Card key={motor.id} className={`product-card relative cursor-pointer transition-all duration-500 hover:shadow-lg group overflow-hidden ${selectedMotor?.id === motor.id ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' : 'hover:scale-[1.01]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} flex flex-col`} onClick={() => handleMotorSelection(motor)}>
 
                   <Badge className={`stock-badge ${getStockBadgeColor(motor.stockStatus)}`}>
                     {motor.stockStatus}
@@ -1261,119 +1187,86 @@ const handleMotorSelection = (motor: Motor) => {
 
                     <div className="space-y-1">
                       {(() => {
-const title = formatMotorTitle(motor.year, motor.model);
-const raw = `${motor.model ?? ''} ${motor.description ?? motor.specs ?? ''}`.trim();
-const subtitle = formatVariantSubtitle(raw, title);
-                        return (
-                          <>
+                  const title = formatMotorTitle(motor.year, motor.model);
+                  const raw = `${motor.model ?? ''} ${motor.description ?? motor.specs ?? ''}`.trim();
+                  const subtitle = formatVariantSubtitle(raw, title);
+                  return <>
                             <h3 className="text-sm md:text-base font-semibold text-foreground line-clamp-2">{title}</h3>
                             <div className="min-h-[1rem]">
-                              {subtitle ? (
-                                <p className="text-foreground/90 text-xs line-clamp-1" title={subtitle}>{subtitle}</p>
-                              ) : null}
+                              {subtitle ? <p className="text-foreground/90 text-xs line-clamp-1" title={subtitle}>{subtitle}</p> : null}
                             </div>
-                          </>
-                        );
-                      })()}
+                          </>;
+                })()}
                     </div>
 
-      {motor.image && motor.image !== '/placeholder.svg' && (
-        <div className="motor-image-container image-wrap w-full h-[200px] shrink-0 bg-muted/10 overflow-hidden flex items-center justify-center rounded-lg p-2.5 relative">
-    <img 
-      src={motor.image} 
-      alt={motor.model}
-      loading="lazy"
-      className="motor-image"
-      style={{ height: '180px', width: 'auto', objectFit: 'contain', maxWidth: 'none', maxHeight: 'none' }}
-    />
+      {motor.image && motor.image !== '/placeholder.svg' && <div className="motor-image-container image-wrap w-full h-[200px] shrink-0 bg-muted/10 overflow-hidden flex items-center justify-center rounded-lg p-2.5 relative">
+    <img src={motor.image} alt={motor.model} loading="lazy" className="motor-image" style={{
+                  height: '180px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  maxWidth: 'none',
+                  maxHeight: 'none'
+                }} />
 
     {/* Urgency: low stock */}
-    {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && (
-      <div className="absolute top-14 left-3 z-20 animate-fade-in">
+    {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && <div className="absolute top-14 left-3 z-20 animate-fade-in">
         <Badge variant="discount" className="flex items-center gap-1 shadow">
           <AlertTriangle className="w-3.5 h-3.5" />
           <span>Only {stockCount} left</span>
         </Badge>
-      </div>
-    )}
+      </div>}
 
     {/* Social proof: recent sales */}
-    {typeof recentSales === 'number' && recentSales > 5 && (
-      <div className="absolute top-14 right-3 z-20 animate-fade-in">
+    {typeof recentSales === 'number' && recentSales > 5 && <div className="absolute top-14 right-3 z-20 animate-fade-in">
         <Badge variant="warranty" className="flex items-center gap-1 shadow">
           <Star className="w-3.5 h-3.5" />
           <span>{recentSales} sold this month</span>
         </Badge>
-      </div>
-    )}
+      </div>}
 
-    <button
-      type="button"
-      className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-background/95 text-foreground border border-border shadow-md flex items-center justify-center opacity-90 transition-transform transition-opacity hover:opacity-100 hover:scale-110"
-      aria-label="Motor info"
-      onClick={(e) => { e.stopPropagation(); openQuickView(motor); }}
-    >
+    <button type="button" className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-background/95 text-foreground border border-border shadow-md flex items-center justify-center opacity-90 transition-transform transition-opacity hover:opacity-100 hover:scale-110" aria-label="Motor info" onClick={e => {
+                  e.stopPropagation();
+                  openQuickView(motor);
+                }}>
       <Info className="w-4 h-4" />
     </button>
-          {selectedMotor?.id === motor.id && (
-            <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
+          {selectedMotor?.id === motor.id && <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
               <Check className="w-20 h-20 text-green-600 drop-shadow-lg animate-scale-in checkmark-icon" strokeWidth={4} aria-hidden="true" />
-            </div>
-          )}
-        </div>
-      )}
+            </div>}
+        </div>}
 
                     <div className="mt-auto pt-3 border-t border-border">
                       <div className="price-area min-h-[60px] flex items-center">
-                        {callForPrice ? (
-                          <span className="text-sm md:text-base font-medium text-foreground">Call for Price</span>
-                        ) : hasSaleDisplay ? (
-                          <div className="w-full flex items-center justify-between gap-2">
-                            {motor.stockStatus === 'In Stock' && (
-                              <span className="text-xs md:text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</span>
-                            )}
+                        {callForPrice ? <span className="text-sm md:text-base font-medium text-foreground">Call for Price</span> : hasSaleDisplay ? <div className="w-full flex items-center justify-between gap-2">
+                            {motor.stockStatus === 'In Stock' && <span className="text-xs md:text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</span>}
                             <div className="flex items-center gap-2">
                               <span className="text-lg font-bold text-destructive">${motor.price.toLocaleString()}</span>
                               <span className="text-[10px] md:text-xs font-semibold px-2 py-1 rounded bg-destructive text-destructive-foreground">
                                 SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
                               </span>
                             </div>
-                          </div>
-                        ) : (
-                          effectiveNoSaleLayout === 'placeholder' ? (
-                            <div className="w-full">
+                          </div> : effectiveNoSaleLayout === 'placeholder' ? <div className="w-full">
                               <span className="text-lg font-semibold text-foreground">${motor.price.toLocaleString()}</span>
-                            </div>
-                          ) : (
-                            <div className="w-full text-center">
+                            </div> : <div className="w-full text-center">
                               <span className="text-lg font-semibold text-foreground">${motor.price.toLocaleString()}</span>
-                            </div>
-                          )
-                        )}
+                            </div>}
                       </div>
                       
                       {/* Monthly Payment Display */}
                       <MonthlyPaymentDisplay motorPrice={motor.price} />
                     </div>
 
-                    {(hasGet5 || hasRepower) && (
-                      <div className="promo-badges flex justify-center mt-1">
-                        {hasGet5 && (
-                          <span className="promo-badge-base promo-badge-warranty badge" aria-label="5 Year Warranty">
+                    {(hasGet5 || hasRepower) && <div className="promo-badges flex justify-center mt-1">
+                        {hasGet5 && <span aria-label="5 Year Warranty" className="promo-badge-base promo-badge-warranty badge text-[#fcf7f7]">
                             <ShieldCheck className="w-4 h-4" aria-hidden="true" />
                             <span>{warrantyBonus?.shortBadge || '5 Year Warranty'}</span>
-                          </span>
-                        )}
-                        {hasRepower && (
-                          <Tooltip>
+                          </span>}
+                        {hasRepower && <Tooltip>
                             <TooltipTrigger asChild>
-                              <span
-                                className="badge badge--repower"
-                                data-badge="repower"
-                                aria-label="Repower Rebate"
-                                onMouseEnter={() => track('rebate_badge_hover', { model_id: motor.id, model_name: motor.model })}
-                                onClick={(e) => e.stopPropagation()}
-                              >
+                              <span className="badge badge--repower" data-badge="repower" aria-label="Repower Rebate" onMouseEnter={() => track('rebate_badge_hover', {
+                      model_id: motor.id,
+                      model_name: motor.model
+                    })} onClick={e => e.stopPropagation()}>
                                 <span className="badge__icon" aria-hidden="true"><RefreshCcw className="w-4 h-4" /></span>
                                 <span className="badge__text">Repower Rebate</span>
                               </span>
@@ -1381,43 +1274,36 @@ const subtitle = formatVariantSubtitle(raw, title);
                             <TooltipContent>
                               <div className="max-w-[260px] space-y-1">
                                 <p>Mercury’s Repower Rebate Program — trade in or repower for potential savings. See details.</p>
-                                <button
-                                  type="button"
-                                  className="underline text-left"
-                                  onClick={(e) => { e.stopPropagation(); setActivePromoModal((promotionsState.find(p => /(repower\s*rebate|repower)/i.test([p.name, p.bonus_title, p.bonus_short_badge, p.bonus_description].filter(Boolean).join(' '))) || null)); track('rebate_badge_click', { model_id: motor.id, model_name: motor.model }); }}
-                                >
+                                <button type="button" className="underline text-left" onClick={e => {
+                        e.stopPropagation();
+                        setActivePromoModal(promotionsState.find(p => /(repower\s*rebate|repower)/i.test([p.name, p.bonus_title, p.bonus_short_badge, p.bonus_description].filter(Boolean).join(' '))) || null);
+                        track('rebate_badge_click', {
+                          model_id: motor.id,
+                          model_name: motor.model
+                        });
+                      }}>
                                   Learn More
                                 </button>
                               </div>
                             </TooltipContent>
-                          </Tooltip>
-                        )}
-                      </div>
-                    )}
+                          </Tooltip>}
+                      </div>}
 
                   </div>
-                </Card>
-              );
-            })}
-          </div>
-        )}
+                </Card>;
+        })}
+          </div>}
 
 
-        {selectedMotor && !showStickyBar && (
-          <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
-            <Button 
-              onClick={() => onStepComplete(selectedMotor)}
-              className="btn-primary px-8 animate-pulse"
-            >
+        {selectedMotor && !showStickyBar && <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
+            <Button onClick={() => onStepComplete(selectedMotor)} className="btn-primary px-8 animate-pulse">
               Continue with {selectedMotor.model}
               <Zap className="w-5 h-5 ml-2" />
             </Button>
-          </div>
-        )}
+          </div>}
       </div>
 
-      {showStickyBar && selectedMotor && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom-5 duration-500">
+      {showStickyBar && selectedMotor && <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom-5 duration-500">
           <div className="checkout-banner bg-background/95 backdrop-blur-lg border-t-4 border-green-500 shadow-2xl">
             <div className="container mx-auto px-4 py-4">
               <div className="flex items-center justify-between">
@@ -1430,31 +1316,22 @@ const subtitle = formatVariantSubtitle(raw, title);
                       {selectedMotor.model} - ${selectedMotor.price.toLocaleString()}
                     </p>
                       <div className="flex items-center gap-2 mt-1">
-                        {selectedMotor.stockStatus === 'In Stock' && selectedMotor.salePrice != null && selectedMotor.basePrice != null && (selectedMotor.salePrice as number) < (selectedMotor.basePrice as number) && (
-                          <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in">
+                        {selectedMotor.stockStatus === 'In Stock' && selectedMotor.salePrice != null && selectedMotor.basePrice != null && selectedMotor.salePrice as number < (selectedMotor.basePrice as number) && <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in">
                             <span className="mr-1">💰</span> Save ${((selectedMotor.basePrice as number) - (selectedMotor.salePrice as number)).toLocaleString()}
-                          </span>
-                        )}
+                          </span>}
                         {renderBannerPromos(selectedMotor)}
                       </div>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <Button 
-                    variant="outline" 
-                    className="btn-secondary"
-                    onClick={() => {
-                      setSelectedMotor(null);
-                      setShowStickyBar(false);
-                    }}
-                  >
+                  <Button variant="outline" className="btn-secondary" onClick={() => {
+                setSelectedMotor(null);
+                setShowStickyBar(false);
+              }}>
                     Change Selection
                   </Button>
-                  <Button 
-                    onClick={() => onStepComplete(selectedMotor)}
-                    className="btn-primary px-6 animate-pulse-green shadow-lg bg-green-600 hover:bg-green-700"
-                  >
+                  <Button onClick={() => onStepComplete(selectedMotor)} className="btn-primary px-6 animate-pulse-green shadow-lg bg-green-600 hover:bg-green-700">
                     Continue to Boat Info
                     <Zap className="w-5 h-5 ml-2" />
                   </Button>
@@ -1462,54 +1339,40 @@ const subtitle = formatVariantSubtitle(raw, title);
               </div>
             </div>
           </div>
-        </div>
-      )}
+        </div>}
 
-      {showStickyBar && selectedMotor && isMobile && (
-        <div className="fixed bottom-20 right-4 z-40 animate-in zoom-in-50 duration-500">
-          <Button 
-            onClick={() => onStepComplete(selectedMotor)}
-            className="rounded-full w-14 h-14 shadow-2xl bg-green-600 hover:bg-green-700 animate-bounce"
-          >
+      {showStickyBar && selectedMotor && isMobile && <div className="fixed bottom-20 right-4 z-40 animate-in zoom-in-50 duration-500">
+          <Button onClick={() => onStepComplete(selectedMotor)} className="rounded-full w-14 h-14 shadow-2xl bg-green-600 hover:bg-green-700 animate-bounce">
             <Check className="w-6 h-6" />
           </Button>
-        </div>
-      )}
+        </div>}
 
-      {celebrationParticles.map(particle => (
-        <div
-          key={particle.id}
-          className="fixed pointer-events-none z-30 text-2xl animate-in zoom-in-50 fade-out-100 duration-2000"
-          style={{
-            left: `${particle.x}%`,
-            top: `${particle.y}%`,
-            animationDelay: `${Math.random() * 500}ms`,
-          }}
-        >
+      {celebrationParticles.map(particle => <div key={particle.id} className="fixed pointer-events-none z-30 text-2xl animate-in zoom-in-50 fade-out-100 duration-2000" style={{
+      left: `${particle.x}%`,
+      top: `${particle.y}%`,
+      animationDelay: `${Math.random() * 500}ms`
+    }}>
           {particle.emoji}
-        </div>
-      ))}
+        </div>)}
 
-      {showCelebration && selectedMotor && (
-        <div className="fixed top-4 right-4 z-40 animate-in slide-in-from-right-5 duration-500">
+      {showCelebration && selectedMotor && <div className="fixed top-4 right-4 z-40 animate-in slide-in-from-right-5 duration-500">
           <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-2">
             <Sparkles className="w-5 h-5" />
             <span className="font-bold">Great Choice!</span>
             <Star className="w-5 h-5" />
           </div>
-        </div>
-      )}
+        </div>}
 
       {/* Promo Details Modal */}
-      <PromoDetailsModal
-        promo={activePromoModal}
-        open={!!activePromoModal}
-        onOpenChange={(open) => { if (!open) setActivePromoModal(null); }}
-      />
+      <PromoDetailsModal promo={activePromoModal} open={!!activePromoModal} onOpenChange={open => {
+      if (!open) setActivePromoModal(null);
+    }} />
 
 
       {/* Quick View Dialog */}
-      <Dialog open={!!quickViewMotor} onOpenChange={(o) => { if (!o) setQuickViewMotor(null); }}>
+      <Dialog open={!!quickViewMotor} onOpenChange={o => {
+      if (!o) setQuickViewMotor(null);
+    }}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>{(quickViewMotor?.model || '').replace(/ - \d+(\.\d+)?HP$/i, '')}</DialogTitle>
@@ -1517,17 +1380,14 @@ const subtitle = formatVariantSubtitle(raw, title);
               Quick view details for {(quickViewMotor?.model || '').replace(/ - \d+(\.\d+)?HP$/i, '')}
             </DialogDescription>
           </DialogHeader>
-          {quickViewMotor && (
-            <div className="space-y-4">
-              {quickViewLoading && (
-                <div className="text-sm text-muted-foreground">Loading details…</div>
-              )}
+          {quickViewMotor && <div className="space-y-4">
+              {quickViewLoading && <div className="text-sm text-muted-foreground">Loading details…</div>}
               {(() => {
-                console.log('Motor data:', quickViewMotor);
-                console.log('Specifications:', (quickViewMotor as any).specifications);
-                console.log('Features:', quickViewMotor.features);
-                return null;
-              })()}
+            console.log('Motor data:', quickViewMotor);
+            console.log('Specifications:', (quickViewMotor as any).specifications);
+            console.log('Features:', quickViewMotor.features);
+            return null;
+          })()}
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Left column - image and price */}
@@ -1537,7 +1397,7 @@ const subtitle = formatVariantSubtitle(raw, title);
                   </div>
                   <div className="mt-4 flex items-center justify-between">
                     <div className="text-2xl font-bold">
-                      ${ (quickViewMotor.salePrice || quickViewMotor.basePrice || quickViewMotor.price).toLocaleString() }
+                      ${(quickViewMotor.salePrice || quickViewMotor.basePrice || quickViewMotor.price).toLocaleString()}
                     </div>
                     <Badge className={getStockBadgeColor(quickViewMotor.stockStatus)}>{quickViewMotor.stockStatus}</Badge>
                   </div>
@@ -1546,135 +1406,115 @@ const subtitle = formatVariantSubtitle(raw, title);
                 {/* Right column - specs and features */}
                 <div className="space-y-4">
                   {(() => {
-                    const features = Array.isArray(quickViewMotor.features) ? quickViewMotor.features as string[] : [];
-                    const model = quickViewMotor.model || '';
+                const features = Array.isArray(quickViewMotor.features) ? quickViewMotor.features as string[] : [];
+                const model = quickViewMotor.model || '';
 
-                    // Parse features into displayable specs
-                    const displaySpecs = (() => {
-                      const specs = {
-                        weight: 'Contact for specs',
-                        shaft: 'Multiple options',
-                        start: 'See details',
-                        fuel: 'Standard',
-                        warranty: '3 Year',
-                      };
+                // Parse features into displayable specs
+                const displaySpecs = (() => {
+                  const specs = {
+                    weight: 'Contact for specs',
+                    shaft: 'Multiple options',
+                    start: 'See details',
+                    fuel: 'Standard',
+                    warranty: '3 Year'
+                  };
+                  const getStandardWeight = (model: string): string => {
+                    const upper = model.toUpperCase();
+                    // Small portables (2.5-6 HP)
+                    if (upper.includes('2.5HP')) return '57 lbs';
+                    if (upper.includes('3.5HP')) return '59 lbs';
+                    if (upper.includes('5HP')) return '60 lbs';
+                    if (upper.includes('6HP')) return '60 lbs';
+                    // Small motors (8-30 HP)
+                    if (upper.includes('8HP')) return '78 lbs';
+                    if (upper.includes('9.9HP')) {
+                      if (upper.includes('COMMAND THRUST') || upper.includes(' CT')) return '90 lbs';
+                      if (upper.includes('ELH') || upper.includes('ELPT')) return '87 lbs';
+                      return '84 lbs';
+                    }
+                    if (upper.includes('15HP')) return '99 lbs';
+                    if (upper.includes('20HP')) return '104 lbs';
+                    if (upper.includes('25HP')) return '126 lbs';
+                    if (upper.includes('30HP')) return '163 lbs';
+                    // Mid-range (40-90 HP)
+                    if (upper.includes('40HP')) return '209 lbs';
+                    if (upper.includes('50HP')) return '216 lbs';
+                    if (upper.includes('60HP')) return '256 lbs';
+                    if (upper.includes('75HP')) return '359 lbs';
+                    if (upper.includes('80HP')) return '359 lbs';
+                    if (upper.includes('90HP')) return '359 lbs';
+                    // Large motors (100+ HP)
+                    if (upper.includes('100HP')) return '363 lbs';
+                    if (upper.includes('115HP')) {
+                      if (upper.includes('COMMAND THRUST') || upper.includes(' CT')) return '377 lbs';
+                      if (upper.includes('PRO XS') || upper.includes('PROXS')) return '363 lbs';
+                      return '363 lbs';
+                    }
+                    if (upper.includes('125HP')) return '363 lbs';
+                    if (upper.includes('135HP')) return '468 lbs';
+                    if (upper.includes('150HP')) {
+                      if (upper.includes('PRO XS') || upper.includes('PROXS')) return '455 lbs';
+                      return '468 lbs';
+                    }
+                    if (upper.includes('175HP')) return '468 lbs';
+                    if (upper.includes('200HP')) return '475 lbs';
+                    if (upper.includes('225HP')) return '475 lbs';
+                    if (upper.includes('250HP')) return '527 lbs';
+                    if (upper.includes('300HP')) return '556 lbs';
+                    if (upper.includes('350HP')) return '668 lbs';
+                    if (upper.includes('400HP')) return '668 lbs';
+                    if (upper.includes('450HP')) return '689 lbs';
+                    if (upper.includes('500HP')) return '705 lbs';
+                    if (upper.includes('600HP')) return '1260 lbs';
+                    return 'Contact for specs';
+                  };
+                  features.forEach(f => {
+                    const text = String(f);
+                    // Weight
+                    if (/weight/i.test(text) || /(lbs?|kg)/i.test(text)) {
+                      const m = text.match(/(\d+\.?\d*)\s*(lbs?|kg)/i);
+                      if (m) specs.weight = `${m[1]} ${m[2]}`;
+                    }
+                    // Starting
+                    if (/start(ing)?:/i.test(text)) {
+                      if (/electric/i.test(text)) specs.start = 'Electric';else if (/manual/i.test(text)) specs.start = 'Manual';
+                    }
+                    // Warranty
+                    if (/warranty/i.test(text)) {
+                      const wm = text.match(/(\d+)\s*month/i);
+                      if (wm) specs.warranty = `${Math.floor(parseInt(wm[1], 10) / 12)} Year`;
+                    }
+                    // Shaft length
+                    if (/shaft/i.test(text) || /"/.test(text)) {
+                      const sm = text.match(/(\d+["])/);
+                      if (sm) specs.shaft = sm[1];
+                    }
+                    // Fuel system
+                    if (/efi|fuel injection/i.test(text)) specs.fuel = 'EFI';else if (/carb/i.test(text)) specs.fuel = 'Carburetor';
+                  });
 
-                      const getStandardWeight = (model: string): string => {
-                        const upper = model.toUpperCase();
-                        // Small portables (2.5-6 HP)
-                        if (upper.includes('2.5HP')) return '57 lbs';
-                        if (upper.includes('3.5HP')) return '59 lbs';
-                        if (upper.includes('5HP')) return '60 lbs';
-                        if (upper.includes('6HP')) return '60 lbs';
-                        // Small motors (8-30 HP)
-                        if (upper.includes('8HP')) return '78 lbs';
-                        if (upper.includes('9.9HP')) {
-                          if (upper.includes('COMMAND THRUST') || upper.includes(' CT')) return '90 lbs';
-                          if (upper.includes('ELH') || upper.includes('ELPT')) return '87 lbs';
-                          return '84 lbs';
-                        }
-                        if (upper.includes('15HP')) return '99 lbs';
-                        if (upper.includes('20HP')) return '104 lbs';
-                        if (upper.includes('25HP')) return '126 lbs';
-                        if (upper.includes('30HP')) return '163 lbs';
-                        // Mid-range (40-90 HP)
-                        if (upper.includes('40HP')) return '209 lbs';
-                        if (upper.includes('50HP')) return '216 lbs';
-                        if (upper.includes('60HP')) return '256 lbs';
-                        if (upper.includes('75HP')) return '359 lbs';
-                        if (upper.includes('80HP')) return '359 lbs';
-                        if (upper.includes('90HP')) return '359 lbs';
-                        // Large motors (100+ HP)
-                        if (upper.includes('100HP')) return '363 lbs';
-                        if (upper.includes('115HP')) {
-                          if (upper.includes('COMMAND THRUST') || upper.includes(' CT')) return '377 lbs';
-                          if (upper.includes('PRO XS') || upper.includes('PROXS')) return '363 lbs';
-                          return '363 lbs';
-                        }
-                        if (upper.includes('125HP')) return '363 lbs';
-                        if (upper.includes('135HP')) return '468 lbs';
-                        if (upper.includes('150HP')) {
-                          if (upper.includes('PRO XS') || upper.includes('PROXS')) return '455 lbs';
-                          return '468 lbs';
-                        }
-                        if (upper.includes('175HP')) return '468 lbs';
-                        if (upper.includes('200HP')) return '475 lbs';
-                        if (upper.includes('225HP')) return '475 lbs';
-                        if (upper.includes('250HP')) return '527 lbs';
-                        if (upper.includes('300HP')) return '556 lbs';
-                        if (upper.includes('350HP')) return '668 lbs';
-                        if (upper.includes('400HP')) return '668 lbs';
-                        if (upper.includes('450HP')) return '689 lbs';
-                        if (upper.includes('500HP')) return '705 lbs';
-                        if (upper.includes('600HP')) return '1260 lbs';
-                        return 'Contact for specs';
-                      };
+                  // Model-based hints
+                  if (/\bMH\b/i.test(model)) specs.start = specs.start === 'See details' ? 'Manual' : specs.start;
+                  if (/\bEH\b|\bELPT\b/i.test(model)) specs.start = specs.start === 'See details' ? 'Electric' : specs.start;
+                  if (/EFI/i.test(model)) specs.fuel = 'EFI';
+                  if (/\bL\b/.test(model)) specs.shaft = specs.shaft === 'Multiple options' ? '20" (Long)' : specs.shaft;
+                  if (/\bS\b/.test(model)) specs.shaft = specs.shaft === 'Multiple options' ? '15" (Short)' : specs.shaft;
 
-                      features.forEach((f) => {
-                        const text = String(f);
-                        // Weight
-                        if (/weight/i.test(text) || /(lbs?|kg)/i.test(text)) {
-                          const m = text.match(/(\d+\.?\d*)\s*(lbs?|kg)/i);
-                          if (m) specs.weight = `${m[1]} ${m[2]}`;
-                        }
-                        // Starting
-                        if (/start(ing)?:/i.test(text)) {
-                          if (/electric/i.test(text)) specs.start = 'Electric';
-                          else if (/manual/i.test(text)) specs.start = 'Manual';
-                        }
-                        // Warranty
-                        if (/warranty/i.test(text)) {
-                          const wm = text.match(/(\d+)\s*month/i);
-                          if (wm) specs.warranty = `${Math.floor(parseInt(wm[1], 10) / 12)} Year`;
-                        }
-                        // Shaft length
-                        if (/shaft/i.test(text) || /"/.test(text)) {
-                          const sm = text.match(/(\d+["])/);
-                          if (sm) specs.shaft = sm[1];
-                        }
-                        // Fuel system
-                        if (/efi|fuel injection/i.test(text)) specs.fuel = 'EFI';
-                        else if (/carb/i.test(text)) specs.fuel = 'Carburetor';
-                      });
+                  // Final weight fallback: prefer scraped specification weight, else standard mapping
+                  const specWeight = (quickViewMotor.specifications as any)?.weight;
+                  if (specs.weight === 'Contact for specs') {
+                    if (specWeight) specs.weight = String(specWeight);else specs.weight = getStandardWeight(model);
+                  }
+                  return specs;
+                })();
 
-                      // Model-based hints
-                      if (/\bMH\b/i.test(model)) specs.start = specs.start === 'See details' ? 'Manual' : specs.start;
-                      if (/\bEH\b|\bELPT\b/i.test(model)) specs.start = specs.start === 'See details' ? 'Electric' : specs.start;
-                      if (/EFI/i.test(model)) specs.fuel = 'EFI';
-                      if (/\bL\b/.test(model)) specs.shaft = specs.shaft === 'Multiple options' ? '20" (Long)' : specs.shaft;
-                      if (/\bS\b/.test(model)) specs.shaft = specs.shaft === 'Multiple options' ? '15" (Short)' : specs.shaft;
-
-                      // Final weight fallback: prefer scraped specification weight, else standard mapping
-                      const specWeight = (quickViewMotor.specifications as any)?.weight;
-                      if (specs.weight === 'Contact for specs') {
-                        if (specWeight) specs.weight = String(specWeight);
-                        else specs.weight = getStandardWeight(model);
-                      }
-
-                      return specs;
-                    })();
-
-                    // Clean features for display (exclude nav/social links, urls, too short)
-                    const displayFeatures = features
-                      .filter((f) => {
-                        const t = String(f).trim();
-                        return t.length > 5 && t.length < 200 &&
-                          !/https?:\/\//i.test(t) &&
-                          !/\[.*\]\(.*\)/.test(t) &&
-                          !/^\s*URL:/i.test(t) &&
-                          !/can't find/i.test(t) &&
-                          !/click here/i.test(t) &&
-                          !/looking for/i.test(t);
-                      })
-                      .slice(0, 8);
-
-                    const cleanedDescription = String(quickViewMotor.description || '')
-                      .replace(/Can't find what you're looking for\?[\s\S]*/i, '')
-                      .replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '')
-                      .trim();
-
-                    return (
-                      <>
+                // Clean features for display (exclude nav/social links, urls, too short)
+                const displayFeatures = features.filter(f => {
+                  const t = String(f).trim();
+                  return t.length > 5 && t.length < 200 && !/https?:\/\//i.test(t) && !/\[.*\]\(.*\)/.test(t) && !/^\s*URL:/i.test(t) && !/can't find/i.test(t) && !/click here/i.test(t) && !/looking for/i.test(t);
+                }).slice(0, 8);
+                const cleanedDescription = String(quickViewMotor.description || '').replace(/Can't find what you're looking for\?[\s\S]*/i, '').replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '').trim();
+                return <>
                         <div className="grid grid-cols-2 gap-3 bg-accent p-4 rounded-md text-sm">
                           <div className="flex justify-between"><span className="text-muted-foreground">Power</span><strong>{quickViewMotor.hp} HP</strong></div>
                           <div className="flex justify-between"><span className="text-muted-foreground">Weight</span><strong>{displaySpecs.weight}</strong></div>
@@ -1684,46 +1524,59 @@ const subtitle = formatVariantSubtitle(raw, title);
                           <div className="flex justify-between"><span className="text-muted-foreground">Warranty</span><strong>{displaySpecs.warranty}</strong></div>
                         </div>
 
-                        {(!quickViewMotor.description || !quickViewMotor.specifications || Object.keys(quickViewMotor.specifications as any).length === 0) && (
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            disabled={quickViewLoading}
-                            onClick={async () => {
-                              try {
-                                setQuickViewLoading(true);
-                                const { data, error } = await supabase.functions.invoke('scrape-motor-details', {
-                                  body: { motor_id: quickViewMotor.id, detail_url: quickViewMotor.detailUrl }
-                                });
-                                if (error) throw error;
-                                const { description, features, specifications } = (data as any) || {};
-                                setMotors((prev) => prev.map((mm) => mm.id === quickViewMotor.id ? { ...mm, description, features, specifications } : mm));
-                                setQuickViewMotor((prev) => prev ? { ...prev, description, features, specifications } as Motor : prev);
-                              } catch (e) {
-                                console.warn('manual scrape-motor-details error', e);
-                                toast({ title: 'Couldn\'t load full specs', description: 'Please try again in a moment.', variant: 'destructive' });
-                              } finally {
-                                setQuickViewLoading(false);
-                              }
-                            }}
-                          >
+                        {(!quickViewMotor.description || !quickViewMotor.specifications || Object.keys(quickViewMotor.specifications as any).length === 0) && <Button variant="outline" size="sm" disabled={quickViewLoading} onClick={async () => {
+                    try {
+                      setQuickViewLoading(true);
+                      const {
+                        data,
+                        error
+                      } = await supabase.functions.invoke('scrape-motor-details', {
+                        body: {
+                          motor_id: quickViewMotor.id,
+                          detail_url: quickViewMotor.detailUrl
+                        }
+                      });
+                      if (error) throw error;
+                      const {
+                        description,
+                        features,
+                        specifications
+                      } = data as any || {};
+                      setMotors(prev => prev.map(mm => mm.id === quickViewMotor.id ? {
+                        ...mm,
+                        description,
+                        features,
+                        specifications
+                      } : mm));
+                      setQuickViewMotor(prev => prev ? {
+                        ...prev,
+                        description,
+                        features,
+                        specifications
+                      } as Motor : prev);
+                    } catch (e) {
+                      console.warn('manual scrape-motor-details error', e);
+                      toast({
+                        title: 'Couldn\'t load full specs',
+                        description: 'Please try again in a moment.',
+                        variant: 'destructive'
+                      });
+                    } finally {
+                      setQuickViewLoading(false);
+                    }
+                  }}>
                             {quickViewLoading ? 'Loading…' : 'Load Full Specs'}
-                          </Button>
-                        )}
+                          </Button>}
 
-                        {displayFeatures.length > 0 && (
-                          <div className="features-list">
+                        {displayFeatures.length > 0 && <div className="features-list">
                             <h4 className="font-semibold mb-2">Key Features:</h4>
                             <ul className="text-sm space-y-1">
-                              {displayFeatures.map((feature, i) => (
-                                <li key={`${feature}-${i}`} className="flex items-start">
+                              {displayFeatures.map((feature, i) => <li key={`${feature}-${i}`} className="flex items-start">
                                   <span className="text-green-500 mr-2">✓</span>
                                   {feature}
-                                </li>
-                              ))}
+                                </li>)}
                             </ul>
-                          </div>
-                        )}
+                          </div>}
 
                         {/* Buyer-critical information */}
                         <hr className="my-4 border-border" />
@@ -1759,25 +1612,21 @@ const subtitle = formatVariantSubtitle(raw, title);
 
                         <div className="bg-secondary text-secondary-foreground p-4 rounded-md mt-4 requirements-section">
                           <h4 className="font-semibold mb-2 flex items-center"><Wrench size={16} className="mr-2" /> Installation Requirements</h4>
-                          {quickViewMotor.hp >= 40 && (
-                            <div className="text-destructive font-semibold flex items-center gap-2 mb-2">
+                          {quickViewMotor.hp >= 40 && <div className="text-destructive font-semibold flex items-center gap-2 mb-2">
                               <AlertTriangle size={16} />
                               <span>Note: Remote controls required (additional ~$1,200)</span>
-                            </div>
-                          )}
+                            </div>}
                           <ul className="text-sm space-y-1">
                             <li>✓ Transom Height: {getTransomRequirement(quickViewMotor)}</li>
                             <li>✓ Battery Required: {getBatteryRequirement(quickViewMotor)}</li>
                             <li>✓ Control Type: {(() => {
-                              const hp = typeof quickViewMotor.hp === 'string' ? parseInt(quickViewMotor.hp) : quickViewMotor.hp;
-                              if (hp < 40) return 'Tiller or Remote';
-                              return (
-                                <>
+                          const hp = typeof quickViewMotor.hp === 'string' ? parseInt(quickViewMotor.hp) : quickViewMotor.hp;
+                          if (hp < 40) return 'Tiller or Remote';
+                          return <>
                                   Remote required
                                   <span className="text-in-stock text-xs block">(Existing Mercury controls? Save $1,075 with adapter!)</span>
-                                </>
-                              );
-                            })()}</li>
+                                </>;
+                        })()}</li>
                             <li>✓ Fuel Type: {getFuelRequirement(quickViewMotor)}</li>
                             <li>✓ Oil Requirements: {getOilRequirement(quickViewMotor)}</li>
                           </ul>
@@ -1795,15 +1644,14 @@ const subtitle = formatVariantSubtitle(raw, title);
                           <h4 className="font-semibold flex items-center gap-2"><Calculator size={16} /> Total Investment Estimate</h4>
                           <div className="text-sm space-y-1">
                             {(() => {
-                              const price = Number((quickViewMotor as any).salePrice ?? (quickViewMotor as any).basePrice ?? (quickViewMotor as any).price ?? 0);
-                              const hp = typeof quickViewMotor.hp === 'string' ? parseInt(quickViewMotor.hp) : quickViewMotor.hp;
-                              const model = (quickViewMotor.model || '').toUpperCase();
-                              const needsControls = hp >= 40;
-                              const needsBattery = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
-                               const propCost = hp >= 25 ? (hp >= 150 ? 950 : 350) : 0;
-                               const total = price + (needsControls ? 1200 : 0) + (needsBattery ? 179.99 : 0) + propCost + 500;
-                               return (
-                                 <>
+                        const price = Number((quickViewMotor as any).salePrice ?? (quickViewMotor as any).basePrice ?? (quickViewMotor as any).price ?? 0);
+                        const hp = typeof quickViewMotor.hp === 'string' ? parseInt(quickViewMotor.hp) : quickViewMotor.hp;
+                        const model = (quickViewMotor.model || '').toUpperCase();
+                        const needsControls = hp >= 40;
+                        const needsBattery = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
+                        const propCost = hp >= 25 ? hp >= 150 ? 950 : 350 : 0;
+                        const total = price + (needsControls ? 1200 : 0) + (needsBattery ? 179.99 : 0) + propCost + 500;
+                        return <>
                                    <div>Motor: {'$' + price.toLocaleString()}</div>
                                    {needsControls && <div>Controls: ~$1,200</div>}
                                    {needsBattery && <div>Battery: ~$179.99</div>}
@@ -1819,32 +1667,26 @@ const subtitle = formatVariantSubtitle(raw, title);
                                       <li>FREE water testing</li>
                                     </ul>
                                   </div>
-                                </>
-                              );
-                            })()}
+                                </>;
+                      })()}
                           </div>
                         </div>
-                        </>
-                     );
-                   })()}
+                        </>;
+              })()}
                 </div>
               </div>
 
               {(() => {
-                const d = String(quickViewMotor.description || '')
-                  .replace(/Can't find what you're looking for\?[\s\S]*/i, '')
-                  .replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '')
-                  .trim();
-                return d ? (<div className="text-sm text-muted-foreground">{d}</div>) : null;
-              })()}
+            const d = String(quickViewMotor.description || '').replace(/Can't find what you're looking for\?[\s\S]*/i, '').replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '').trim();
+            return d ? <div className="text-sm text-muted-foreground">{d}</div> : null;
+          })()}
 
 
               {/* Model code decoder */}
               <div className="bg-accent border border-border p-4 rounded-md mt-2">
                 <h4 className="font-semibold mb-2">Understanding This Model</h4>
                 <div className="space-y-2">
-                  {decodeModelName(quickViewMotor.model).map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
+                  {decodeModelName(quickViewMotor.model).map((item, idx) => <div key={idx} className="flex items-start gap-3">
                       <span className="bg-primary text-primary-foreground px-2 py-0.5 rounded text-xs font-bold">
                         {item.code}
                       </span>
@@ -1852,44 +1694,41 @@ const subtitle = formatVariantSubtitle(raw, title);
                         <span className="font-medium">{item.meaning}</span>
                         <span className="text-muted-foreground text-sm ml-2">- {item.benefit}</span>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
 
                 {/* Helpful tips */}
-                {quickViewMotor.hp >= 40 && (
-                  <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
+                {quickViewMotor.hp >= 40 && <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
                     <strong>Remote Control Only:</strong> This motor requires console steering with remote throttle and shift controls. Too powerful for tiller operation.
-                  </div>
-                )}
-                {quickViewMotor.hp <= 30 && /(MH|MLH|EH|ELH)/i.test(quickViewMotor.model) && (
-                  <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
+                  </div>}
+                {quickViewMotor.hp <= 30 && /(MH|MLH|EH|ELH)/i.test(quickViewMotor.model) && <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
                     <strong>Tiller Handle:</strong> Perfect if you sit at the back of the boat. Great for fishing where precise control matters.
-                  </div>
-                )}
-                {!quickViewMotor.model.includes('E') && quickViewMotor.model.includes('M') && (
-                  <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
+                  </div>}
+                {!quickViewMotor.model.includes('E') && quickViewMotor.model.includes('M') && <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
                     <strong>Manual Start:</strong> No battery needed — ideal for occasional use or as a backup motor. Very reliable.
-                  </div>
-                )}
+                  </div>}
               </div>
 
 
               <div className="flex justify-between items-center mt-6 pt-4 border-t">
                 <div className="flex gap-3">
-                  <Button variant="outline" onClick={() => { calculatePayment(quickViewMotor); setQuickViewMotor(null); }}>
+                  <Button variant="outline" onClick={() => {
+                calculatePayment(quickViewMotor);
+                setQuickViewMotor(null);
+              }}>
                     Calculate Payment
                   </Button>
                 </div>
-                <Button size="lg" onClick={() => { handleMotorSelection(quickViewMotor); setQuickViewMotor(null); }}>
+                <Button size="lg" onClick={() => {
+              handleMotorSelection(quickViewMotor);
+              setQuickViewMotor(null);
+            }}>
                   Select This Motor →
                 </Button>
               </div>
-            </div>
-          )}
+            </div>}
         </DialogContent>
       </Dialog>
 
-    </div>
-  );
+    </div>;
 };
