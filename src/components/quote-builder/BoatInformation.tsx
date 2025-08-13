@@ -556,14 +556,6 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                     <p className="text-sm text-muted-foreground">Measure from top of transom to bottom of hull.</p>
                   </div>
 
-                  <div className="bg-muted/30 rounded-lg p-4">
-                    <img 
-                      src="/lovable-uploads/cb45570a-2b96-4b08-af3d-412c7607a66e.png" 
-                      alt="Transom height measurement guide showing how to measure from top of transom to bottom of hull" 
-                      className="w-full max-w-lg mx-auto rounded-lg shadow-sm"
-                    />
-                  </div>
-
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                     <Button type="button" variant="outline" onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: '15' }))}>
                       <div className="text-left">
@@ -583,6 +575,14 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                         <div className="text-xs text-muted-foreground">Sailboats, large pontoons</div>
                       </div>
                     </Button>
+                  </div>
+
+                  <div className="bg-muted/30 rounded-lg p-4">
+                    <img 
+                      src="/lovable-uploads/cb45570a-2b96-4b08-af3d-412c7607a66e.png" 
+                      alt="Transom height measurement guide showing how to measure from top of transom to bottom of hull" 
+                      className="w-full max-w-lg mx-auto rounded-lg shadow-sm"
+                    />
                   </div>
 
                   <div className="mt-2">
