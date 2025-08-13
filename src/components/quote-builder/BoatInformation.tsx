@@ -602,7 +602,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <Label>Current Motor Brand</Label>
-                      <Select value={boatInfo.currentMotorBrand} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, currentMotorBrand: value }))}>
+                      <Select value={boatInfo.currentMotorBrand} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, currentMotorBrand: value, currentHp: value === 'No Current Motor' ? 0 : prev.currentHp }))}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select current motor brand" />
                         </SelectTrigger>
@@ -617,6 +617,23 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                         </SelectContent>
                       </Select>
                     </div>
+
+                    {boatInfo.currentMotorBrand && boatInfo.currentMotorBrand !== 'No Current Motor' && (
+                      <div className="space-y-2">
+                        <Label>Current Motor Horsepower (HP)</Label>
+                        <Input
+                          type="number"
+                          inputMode="numeric"
+                          min={1}
+                          max={600}
+                          placeholder="e.g., 115"
+                          value={boatInfo.currentHp || ''}
+                          onChange={(e) => setBoatInfo(prev => ({ ...prev, currentHp: parseInt(e.target.value || '0', 10) || 0 }))}
+                        />
+                        <p className="text-xs text-muted-foreground">We'll carry this into your trade-in details automatically.</p>
+                      </div>
+                    )}
+
 
                     {compatibility && (
                       <Alert className={compatibility.type === 'warning' ? 'border-orange-500 bg-orange-50 dark:bg-orange-950/20' : 'border-blue-500 bg-blue-50 dark:bg-blue-950/20'}>
