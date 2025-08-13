@@ -590,26 +590,16 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                             <p>
                               Heads up: your selected motor ({selectedMotor.model}) is {shaftLabel(motorShaft)}, but you chose {shaftLabel(chosenShaft)}. Mercury model must match the boat's transom height.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-2">
+                            {onShowCompatibleMotors && (
                               <Button 
                                 variant="outline" 
                                 size="sm" 
-                                onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: motorShaft }))}
-                                className="text-orange-700 border-orange-300 hover:bg-orange-50"
+                                onClick={onShowCompatibleMotors}
+                                className="text-blue-700 border-blue-300 hover:bg-blue-50"
                               >
-                                Change to {shaftLabel(motorShaft)} transom
+                                Show compatible motors
                               </Button>
-                              {onShowCompatibleMotors && (
-                                <Button 
-                                  variant="outline" 
-                                  size="sm" 
-                                  onClick={onShowCompatibleMotors}
-                                  className="text-blue-700 border-blue-300 hover:bg-blue-50"
-                                >
-                                  Show compatible motors
-                                </Button>
-                              )}
-                            </div>
+                            )}
                           </div>
                         )}
                       </AlertDescription>
