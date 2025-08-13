@@ -1624,36 +1624,36 @@ export const MotorSelection = ({
 
                         {/* Buyer-critical information */}
                         <hr className="my-4 border-border" />
-                        
-                        {/* Understanding This Model - moved from bottom */}
-                        <div className="bg-accent border border-border p-4 rounded-md mt-4">
-                          <h4 className="font-semibold mb-2">Understanding This Model</h4>
-                          <div className="space-y-2">
-                            {decodeModelName(quickViewMotor.model).map((item, idx) => <div key={idx} className="flex items-start gap-3">
-                                <span className="bg-primary text-primary-foreground px-2 py-0.5 rounded text-xs font-bold">
-                                  {item.code}
-                                </span>
-                                <div className="flex-1">
-                                  <span className="font-medium">{item.meaning}</span>
-                                  <span className="text-muted-foreground text-sm ml-2">- {item.benefit}</span>
-                                </div>
-                              </div>)}
-                          </div>
-
-                          {/* Helpful tips */}
-                          {quickViewMotor.hp >= 40 && <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
-                              <strong>Remote Control Only:</strong> This motor requires console steering with remote throttle and shift controls. Too powerful for tiller operation.
-                            </div>}
-                          {quickViewMotor.hp <= 30 && /(MH|MLH|EH|ELH)/i.test(quickViewMotor.model) && <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
-                              <strong>Tiller Handle:</strong> Perfect if you sit at the back of the boat. Great for fishing where precise control matters.
-                            </div>}
-                          {!quickViewMotor.model.includes('E') && quickViewMotor.model.includes('M') && <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
-                              <strong>Manual Start:</strong> No battery needed — ideal for occasional use or as a backup motor. Very reliable.
-                            </div>}
-                        </div>
                         </>;
               })()}
                 </div>
+              </div>
+
+              {/* Understanding This Model - full width section */}
+              <div className="bg-accent border border-border p-4 rounded-md mt-6">
+                <h4 className="font-semibold mb-2">Understanding This Model</h4>
+                <div className="space-y-2">
+                  {decodeModelName(quickViewMotor.model).map((item, idx) => <div key={idx} className="flex items-start gap-3">
+                      <span className="bg-primary text-primary-foreground px-2 py-0.5 rounded text-xs font-bold">
+                        {item.code}
+                      </span>
+                      <div className="flex-1">
+                        <span className="font-medium">{item.meaning}</span>
+                        <span className="text-muted-foreground text-sm ml-2">- {item.benefit}</span>
+                      </div>
+                    </div>)}
+                </div>
+
+                {/* Helpful tips */}
+                {quickViewMotor.hp >= 40 && <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
+                    <strong>Remote Control Only:</strong> This motor requires console steering with remote throttle and shift controls. Too powerful for tiller operation.
+                  </div>}
+                {quickViewMotor.hp <= 30 && /(MH|MLH|EH|ELH)/i.test(quickViewMotor.model) && <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
+                    <strong>Tiller Handle:</strong> Perfect if you sit at the back of the boat. Great for fishing where precise control matters.
+                  </div>}
+                {!quickViewMotor.model.includes('E') && quickViewMotor.model.includes('M') && <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
+                    <strong>Manual Start:</strong> No battery needed — ideal for occasional use or as a backup motor. Very reliable.
+                  </div>}
               </div>
 
               {/* Two-column grid for remaining info blocks - spans full modal width */}
