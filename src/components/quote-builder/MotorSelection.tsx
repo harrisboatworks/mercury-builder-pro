@@ -377,7 +377,7 @@ export const MotorSelection = ({ onStepComplete, noSalePriceLayout = 'placeholde
     category: 'all',
     stockStatus: 'all',
     priceRange: [0, 50000] as [number, number],
-    hpRange: [2.5, 600] as [number, number]
+    hpRange: [2.5, 300] as [number, number]
   });
 const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 const [filtersOpen, setFiltersOpen] = useState(true);
@@ -521,8 +521,18 @@ useEffect(() => {
       setPromotionsState(activePromos);
       const promoRules: PromotionRule[] = (rules as PromotionRule[] | null) || [];
 
+      // Filter out Jet models and cap horsepower at 300
+      const filteredMotorRows = (motorRows as DbMotor[] | null || []).filter((m) => {
+        // Exclude Jet models (check model name for "Jet" case-insensitive)
+        const isJetModel = m.model.toLowerCase().includes('jet');
+        // Cap horsepower at 300
+        const isOverHpLimit = m.horsepower > 300;
+        
+        return !isJetModel && !isOverHpLimit;
+      });
+
       // Transform database data to Motor interface with effective pricing
-      const transformedMotors: Motor[] = (motorRows as DbMotor[] | null || []).map((m) => {
+      const transformedMotors: Motor[] = filteredMotorRows.map((m) => {
         const basePrice = Number(m.base_price || 0);
         const salePrice = m.sale_price != null ? Number(m.sale_price) : null;
         const original = salePrice && salePrice > 0 && salePrice < basePrice ? salePrice : basePrice;
