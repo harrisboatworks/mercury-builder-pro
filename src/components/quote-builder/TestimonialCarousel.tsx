@@ -1,67 +1,17 @@
 import { useEffect, useState } from 'react';
 import { Star } from 'lucide-react';
-
-interface Testimonial {
-  name: string;
-  location: string;
-  motor: string;
-  rating: number;
-  text: string;
-  date: string;
-}
-
-const testimonials: Testimonial[] = [
-  {
-    name: 'Mike Thompson',
-    location: 'Rice Lake, ON',
-    motor: 'Mercury 115HP',
-    rating: 5,
-    text: 'Best price I found anywhere! Motor runs like a dream. The water testing really dialed in the perfect prop.',
-    date: '2 weeks ago',
-  },
-  {
-    name: 'Sarah Mitchell',
-    location: 'Peterborough, ON',
-    motor: 'Mercury 9.9HP',
-    rating: 5,
-    text: 'They made the trade-in so easy. Got way more than expected for my old Yamaha. Installation was perfect!',
-    date: '1 month ago',
-  },
-  {
-    name: 'Dave Wilson',
-    location: 'Kawartha Lakes, ON',
-    motor: 'Mercury 50HP',
-    rating: 5,
-    text: 'The control adapter saved me $1,000! Didn\'t know my old controls would work. These guys know their stuff.',
-    date: '3 weeks ago',
-  },
-  {
-    name: 'Jennifer Cole',
-    location: 'Cobourg, ON',
-    motor: 'Mercury 150HP Pro XS',
-    rating: 5,
-    text: 'CSI award is well deserved. Service team went above and beyond. My bass boat has never run better!',
-    date: '2 months ago',
-  },
-  {
-    name: 'Rob Anderson',
-    location: 'Gores Landing, ON',
-    motor: 'Mercury 25HP',
-    rating: 5,
-    text: 'Online quote tool made it so easy. Knew exactly what I\'d pay. No surprises, just great service.',
-    date: '1 month ago',
-  },
-];
+import { useGoogleReviews } from '@/hooks/useGoogleReviews';
 
 export const TestimonialCarousel = () => {
+  const { testimonials, loading } = useGoogleReviews();
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
 
   console.log('TestimonialCarousel: Render - current:', current, 'paused:', paused);
 
   useEffect(() => {
-    console.log('TestimonialCarousel: useEffect triggered, paused:', paused);
-    if (paused) return;
+    console.log('TestimonialCarousel: useEffect triggered, paused:', paused, 'testimonials.length:', testimonials.length);
+    if (paused || testimonials.length === 0) return;
     const timer = setInterval(() => {
       console.log('TestimonialCarousel: Timer fired, changing from', current, 'to', (current + 1) % testimonials.length);
       setCurrent((prev) => (prev + 1) % testimonials.length);
@@ -71,7 +21,33 @@ export const TestimonialCarousel = () => {
       console.log('TestimonialCarousel: Cleaning up timer:', timer);
       clearInterval(timer);
     };
-  }, [paused]);
+  }, [paused, testimonials.length]);
+
+  if (loading || testimonials.length === 0) {
+    return (
+      <section
+        aria-label="Loading testimonials"
+        className="rounded-lg my-6 p-4 md:p-6 bg-gradient-to-r from-primary/5 to-muted/40 border border-border"
+      >
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-card border border-border rounded-xl shadow-sm p-6 md:p-8">
+            <div className="animate-pulse">
+              <div className="flex items-center justify-center mb-3">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-muted-foreground/30" />
+                ))}
+              </div>
+              <div className="space-y-3">
+                <div className="h-4 bg-muted-foreground/20 rounded mx-auto w-3/4"></div>
+                <div className="h-4 bg-muted-foreground/20 rounded mx-auto w-1/2"></div>
+                <div className="h-3 bg-muted-foreground/20 rounded mx-auto w-1/4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   const t = testimonials[current];
 
@@ -103,7 +79,9 @@ export const TestimonialCarousel = () => {
             <div className="text-center">
               <p className="font-semibold text-foreground">{t.name}</p>
               <p className="text-sm text-muted-foreground">{t.location} • {t.motor}</p>
-              <p className="text-xs text-muted-foreground mt-1">Verified Purchase • {t.date}</p>
+              <p className="text-xs text-muted-foreground mt-1">
+                {t.isGoogleReview ? 'Google Review' : 'Verified Purchase'} • {t.date}
+              </p>
             </div>
           </div>
         </div>
@@ -122,7 +100,7 @@ export const TestimonialCarousel = () => {
 
         <div className="text-center mt-3">
           <button type="button" className="text-xs text-muted-foreground hover:text-primary transition-colors">
-            Read All Reviews →
+            Read All Reviews ({testimonials.length}) →
           </button>
         </div>
       </div>
