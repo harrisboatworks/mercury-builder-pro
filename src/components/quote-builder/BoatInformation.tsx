@@ -17,9 +17,10 @@ interface BoatInformationProps {
   onStepComplete: (boatInfo: BoatInfo) => void;
   onBack: () => void;
   selectedMotor: Motor | null;
+  includeTradeIn?: boolean;
 }
 
-export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatInformationProps) => {
+export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, includeTradeIn = true }: BoatInformationProps) => {
   const [boatInfo, setBoatInfo] = useState<BoatInfo>({
     type: '',
     make: '',
@@ -45,6 +46,8 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
     estimatedValue: 0,
     confidenceLevel: 'low'
   });
+
+  const showTradeIn = includeTradeIn !== false;
 
   const boatTypes = [
     {
@@ -148,15 +151,27 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
   // Derived values and UI helpers
   const hp = typeof selectedMotor?.hp === 'string' ? parseInt(String(selectedMotor?.hp)) : (selectedMotor?.hp || 0);
   const steps = boatInfo.type === 'motor-only'
-    ? [{ label: 'Specs' }, { label: 'Trade-In (Optional)' }, { label: 'Review' }]
-    : [
-        { label: 'Boat Type' },
-        { label: 'Length' },
-        { label: 'Transom Height' },
-        { label: 'Controls & Rigging' },
-        { label: 'Trade-In (Optional)' },
-        { label: 'Review' },
-      ];
+    ? (showTradeIn
+      ? [{ label: 'Specs' }, { label: 'Trade-In (Optional)' }, { label: 'Review' }]
+      : [{ label: 'Specs' }, { label: 'Review' }]
+    )
+    : (showTradeIn
+      ? [
+          { label: 'Boat Type' },
+          { label: 'Length' },
+          { label: 'Transom Height' },
+          { label: 'Controls & Rigging' },
+          { label: 'Trade-In (Optional)' },
+          { label: 'Review' },
+        ]
+      : [
+          { label: 'Boat Type' },
+          { label: 'Length' },
+          { label: 'Transom Height' },
+          { label: 'Controls & Rigging' },
+          { label: 'Review' },
+        ]
+    );
   const nextStepLabel = steps[currentStep + 1]?.label;
 
   const [showHelp, setShowHelp] = useState(false);
@@ -174,7 +189,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
     handleNext();
   };
 
-  const totalSteps = boatInfo.type === 'motor-only' ? 3 : 6;
+  const totalSteps = boatInfo.type === 'motor-only' ? (showTradeIn ? 3 : 2) : (showTradeIn ? 6 : 5);
   const canNext = () => {
     if (boatInfo.type === 'motor-only') {
       if (currentStep === 0) return boatInfo.type === 'motor-only';
@@ -283,7 +298,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
               </Card>
             )}
 
-            {currentStep === 1 && (
+            {showTradeIn && currentStep === 1 && (
               <Card className="p-6 animate-fade-in">
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold">Trade-In Valuation (Optional)</h3>
@@ -747,7 +762,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor }: BoatI
               </Card>
             )}
 
-            {currentStep === 4 && (
+            {showTradeIn && currentStep === 4 && (
               <Card className="p-6 animate-fade-in">
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold">Have a motor to trade?</h3>

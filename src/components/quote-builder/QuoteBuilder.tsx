@@ -6,6 +6,7 @@ import PurchasePath from "./PurchasePath";
 import InstallationConfig from "./InstallationConfig";
 import { QuoteDisplay as LegacyQuoteDisplay } from "./QuoteDisplay";
 import { TradeInValuation } from "./TradeInValuation";
+import { BoatInformation } from "./BoatInformation";
 import { ScheduleConsultation } from "./ScheduleConsultation";
 import type { TradeInInfo } from "@/lib/trade-valuation";
 import { Sparkles } from "lucide-react";
