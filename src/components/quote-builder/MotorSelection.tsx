@@ -956,6 +956,21 @@ useEffect(() => {
 
 
 const handleMotorSelection = (motor: Motor) => {
+    // Check if clicking on already selected motor to deselect
+    if (selectedMotor?.id === motor.id) {
+      setSelectedMotor(null);
+      setShowCelebration(false);
+      setShowStickyBar(false);
+      setCelebrationParticles([]);
+      toast({
+        title: "Motor deselected 🔄",
+        description: "You can pick another one, eh!",
+        duration: 2000,
+      });
+      return;
+    }
+
+    // Select new motor
     // Recently viewed scaffold
     setRecentlyViewed(prev => {
       const without = prev.filter(p => p.id !== motor.id);
