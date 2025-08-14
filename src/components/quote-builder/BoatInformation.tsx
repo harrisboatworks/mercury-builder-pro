@@ -62,7 +62,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     {
       id: 'utility',
       label: 'Utility Boat',
-      description: 'V-hull work boats',
+      description: 'Small v-hull boats',
       recommendedHP: '9.9-30',
       image: '/lovable-uploads/6422c1aa-1ab1-4860-b77c-84dd486e4845.png'
     },
