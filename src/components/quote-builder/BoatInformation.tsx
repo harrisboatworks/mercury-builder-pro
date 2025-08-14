@@ -303,15 +303,6 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
         </div>
       </div>
 
-      {/* Quick Presets */}
-      {currentStep === 0 && (
-        <div className="rounded-lg border border-border bg-background p-4 flex flex-wrap gap-3">
-          <span className="text-sm font-medium mr-1">Common Setups:</span>
-          <Button type="button" variant="secondary" size="sm" onClick={() => { setBoatInfo(prev => ({ ...prev, type: 'fishing' })); setLengthFeet(14); setBoatInfo(prev => ({ ...prev, length: lengthBucket(14) })); }}>14ft Aluminum Fishing</Button>
-          <Button type="button" variant="secondary" size="sm" onClick={() => { setBoatInfo(prev => ({ ...prev, type: 'pontoon' })); setLengthFeet(20); setBoatInfo(prev => ({ ...prev, length: lengthBucket(20) })); }}>20ft Pontoon</Button>
-          <Button type="button" variant="secondary" size="sm" onClick={() => { setBoatInfo(prev => ({ ...prev, type: 'bass' })); setLengthFeet(16); setBoatInfo(prev => ({ ...prev, length: lengthBucket(16) })); }}>16ft Bass Boat</Button>
-        </div>
-      )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Step Content */}
