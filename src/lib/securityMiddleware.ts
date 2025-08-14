@@ -97,35 +97,41 @@ export class SecurityManager {
     try {
       const windowStart = new Date(Date.now() - this.RATE_LIMIT_WINDOW);
 
+      // Sanitize identifier to prevent injection attacks
+      const sanitizedIdentifier = this.sanitizeInput(identifier);
+      
       // For login attempts, check by identifier (could be email or user_id)
       const { data, error } = await supabase
         .from('security_audit_log')
         .select('id')
-        .or(`user_id.eq.${identifier},metadata->>identifier.eq.${identifier}`)
+        .or(`user_id.eq.${sanitizedIdentifier},metadata->>identifier.eq.${sanitizedIdentifier}`)
         .eq('action', action)
         .gte('created_at', windowStart.toISOString());
 
       if (error) {
         console.error('Rate limit check error:', error);
-        // On error, allow the request to proceed (fail open for availability)
-        return true;
+        // Fail closed for security - deny on error for rate limiting
+        return false;
       }
 
-      return (data?.length || 0) < this.MAX_FAILED_ATTEMPTS;
+      const attemptCount = data?.length || 0;
+      return attemptCount < this.MAX_FAILED_ATTEMPTS;
     } catch (error) {
       console.error('Rate limiting error:', error);
-      // On error, allow the request to proceed (fail open for availability)
-      return true;
+      // Fail closed for security - deny on error for rate limiting
+      return false;
     }
   }
 
-  // Sanitize input data
+  // Enhanced input sanitization
   static sanitizeInput(input: any): any {
     if (typeof input === 'string') {
       return input
         .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-        .replace(/[<>'"]/g, '')
-        .trim();
+        .replace(/[<>'"`;(){}]/g, '') // Enhanced character filtering for SQL injection prevention
+        .replace(/(\b(union|select|insert|update|delete|drop|create|alter|exec|execute)\b)/gi, '') // Basic SQL keyword filtering
+        .trim()
+        .substring(0, 1000); // Limit input length
     }
 
     if (Array.isArray(input)) {
@@ -135,7 +141,9 @@ export class SecurityManager {
     if (typeof input === 'object' && input !== null) {
       const sanitized: any = {};
       for (const [key, value] of Object.entries(input)) {
-        sanitized[key] = this.sanitizeInput(value);
+        // Sanitize both keys and values
+        const sanitizedKey = this.sanitizeInput(key);
+        sanitized[sanitizedKey] = this.sanitizeInput(value);
       }
       return sanitized;
     }
@@ -169,13 +177,15 @@ export class SecurityManager {
   }
 }
 
-// Security headers for API responses
+// Enhanced security headers for API responses
 export const SECURITY_HEADERS = {
   'X-Content-Type-Options': 'nosniff',
   'X-Frame-Options': 'DENY',
   'X-XSS-Protection': '1; mode=block',
   'Referrer-Policy': 'strict-origin-when-cross-origin',
-  'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+  'X-Permitted-Cross-Domain-Policies': 'none',
+  'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none';"
 };
 
 // Password strength validation

@@ -600,11 +600,22 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      audit_orphaned_customer_data: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          table_name: string
+          record_count: number
+        }[]
+      }
       has_role: {
         Args: {
           _user_id: string
           _role: Database["public"]["Enums"]["app_role"]
         }
+        Returns: boolean
+      }
+      validate_user_data_access: {
+        Args: { _table_name: string; _record_id: string }
         Returns: boolean
       }
     }

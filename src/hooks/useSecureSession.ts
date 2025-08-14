@@ -23,13 +23,22 @@ export const useSecureSession = () => {
     }
   }, [user]);
 
-  // Check session validity
+  // Check session validity with enhanced security logging
   const validateSession = useCallback(async () => {
     if (!user) return;
 
     try {
       const isValid = await SecurityManager.validateSession(user.id);
       if (!isValid) {
+        // Log security event for session invalidation
+        await SecurityManager.logSecurityEvent(
+          user.id,
+          'session_expired',
+          'user_sessions',
+          undefined,
+          { reason: 'timeout_or_security', ipAddress: getClientIP() }
+        );
+
         toast({
           title: "Session Expired",
           description: "Your session has expired for security reasons. Please sign in again.",
