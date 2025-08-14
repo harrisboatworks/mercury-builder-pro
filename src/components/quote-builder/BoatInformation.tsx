@@ -60,13 +60,6 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
       image: ''
     },
     {
-      id: 'aluminum-fishing',
-      label: 'Aluminum Fishing',
-      description: 'V-hull fishing boats',
-      recommendedHP: '9.9-25',
-      image: '/lovable-uploads/6422c1aa-1ab1-4860-b77c-84dd486e4845.png'
-    },
-    {
       id: 'utility',
       label: 'Utility Boat',
       description: 'V-hull work boats',
@@ -228,7 +221,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
 
   // (Using per-type recommendedHP from boatTypes entries)
   const handleSkip = () => {
-    const defaultType = 'aluminum-fishing';
+    const defaultType = 'utility';
     const typicalLength = hp < 25 ? 14 : hp < 60 ? 16 : hp < 115 ? 18 : 20;
     setBoatInfo(prev => ({
       ...prev,
