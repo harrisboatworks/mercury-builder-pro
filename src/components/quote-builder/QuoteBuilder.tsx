@@ -163,22 +163,22 @@ export default function QuoteBuilder() {
               
               {/* Centered Logo Group on Mobile */}
               <div className="flex items-center justify-center gap-3 flex-1">
-                <img src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" alt="Harris Boat Works" className="h-10" />
-                <img src="/src/assets/mercury-logo.png" alt="Mercury" className="h-8" />
+                <img src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" alt="Harris Boat Works" className="h-16" />
+                <img src="/src/assets/mercury-logo.png" alt="Mercury" className="h-12" />
               </div>
               
-              {selectedMotor && (
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center gap-1.5 px-2 py-1 bg-green-50 rounded-full">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs text-green-700 font-medium">Live Inventory</span>
-                  </div>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 px-3 py-1 bg-green-50 rounded-full">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-xs text-green-700 font-medium">Live Inventory</span>
+                </div>
+                {selectedMotor && (
                   <div className="text-right">
                     <div className="text-lg font-bold text-gray-900">${selectedMotor.price.toLocaleString()}</div>
                     <div className="text-xs text-gray-500">Your Build</div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </div>
 
@@ -187,8 +187,8 @@ export default function QuoteBuilder() {
             <div className="flex items-center gap-8">
               {/* Desktop Logo Group */}
               <div className="flex items-center gap-4">
-                <img src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" alt="Harris Boat Works" className="h-14" />
-                <img src="/src/assets/mercury-logo.png" alt="Mercury" className="h-10" />
+                <img src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" alt="Harris Boat Works" className="h-20" />
+                <img src="/src/assets/mercury-logo.png" alt="Mercury" className="h-16" />
               </div>
               
               {/* Desktop Step Indicators */}
@@ -225,30 +225,18 @@ export default function QuoteBuilder() {
               </div>
             </div>
             
-            {/* Desktop Right side: Live Inventory + Price + XP + Admin */}
+            {/* Desktop Right side: Live Inventory + Price + Admin */}
             <div className="flex items-center gap-3">
-              {selectedMotor && (
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center gap-1.5 px-2 py-1 bg-green-50 rounded-full">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs text-green-700 font-medium">Live Inventory</span>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-lg font-bold text-gray-900">${selectedMotor.price.toLocaleString()}</div>
-                    <div className="text-xs text-gray-500">Your Build</div>
-                  </div>
-                </div>
-              )}
+              <div className="flex items-center gap-2 px-3 py-1 bg-green-50 rounded-full">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-xs text-green-700 font-medium">Live Inventory</span>
+              </div>
               
-              {totalXP > 0 && (
-                <motion.div
-                  initial={{ scale: 0, rotate: -180 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  className="flex items-center gap-2 bg-gradient-to-r from-yellow-100 to-orange-100 px-4 py-2 rounded-full"
-                >
-                  <Sparkles className="w-5 h-5 text-orange-600" />
-                  <span className="font-bold text-orange-800">{totalXP} XP Total</span>
-                </motion.div>
+              {selectedMotor && (
+                <div className="text-right">
+                  <div className="text-lg font-bold text-gray-900">${selectedMotor.price.toLocaleString()}</div>
+                  <div className="text-xs text-gray-500">Your Build</div>
+                </div>
               )}
 
               {!loading && (
