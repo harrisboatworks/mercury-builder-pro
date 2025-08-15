@@ -1102,14 +1102,6 @@ export const MotorSelection = ({
           </div>
         </div>
 
-        {/* Repower rebate banner (Phase 1) */}
-        <div className="repower-rebate-banner rounded-md p-3 text-center text-sm font-semibold bg-[linear-gradient(135deg,hsl(var(--promo-gold-1)),hsl(var(--promo-gold-2)))] shadow-md hidden sm:block">
-          <div className="flex items-center justify-center gap-3 flex-wrap">
-            <span>💰 Repower Rebate Available! Trading in? You may qualify for additional savings.</span>
-            <Button size="sm" variant="secondary" onClick={() => setActivePromoModal(promotionsState.find(p => /(repower\s*rebate|repower)/i.test([p.name, p.bonus_title, p.bonus_short_badge, p.bonus_description].filter(Boolean).join(' '))) || null)}>Learn More</Button>
-          </div>
-        </div>
-
         {selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && <div className="controls-savings-banner rounded-md border border-border bg-accent/20 p-3 mt-3">
             <div className="flex items-center gap-3">
               <Badge variant="secondary">MONEY SAVER</Badge>
