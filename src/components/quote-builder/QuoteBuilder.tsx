@@ -143,12 +143,66 @@ export default function QuoteBuilder() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Header with XP Display */}
+      {/* Mobile-Optimized Header */}
       <div className="bg-white border-b sticky top-0 z-40">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+        <div className="container mx-auto px-4 py-3">
+          {/* Mobile Layout */}
+          <div className="lg:hidden">
+            <div className="flex items-center justify-between mb-3">
+              <h1 className="text-lg font-bold text-foreground">Quote Builder</h1>
+              {!loading && (
+                user ? (
+                  <div className="flex items-center gap-2">
+                    <Link to="/admin/quotes">
+                      <Button variant="secondary" size="sm" className="h-9 px-3 text-xs">Admin</Button>
+                    </Link>
+                    <Button variant="outline" size="sm" className="h-9 px-3 text-xs" onClick={async () => { await signOut(); }}>
+                      Sign Out
+                    </Button>
+                  </div>
+                ) : (
+                  <Link to="/auth">
+                    <Button size="sm" className="h-9 px-3 text-xs">Admin</Button>
+                  </Link>
+                )
+              )}
+            </div>
+            
+            {/* Mobile Step Progress */}
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm font-medium text-muted-foreground">
+                Step {currentStep} of {steps.length}
+              </span>
+              <span className="text-sm text-muted-foreground">
+                {steps[currentStep - 1]?.label}
+              </span>
+            </div>
+            
+            {/* Mobile Progress Bar */}
+            <div className="w-full bg-gray-200 rounded-full h-2 mb-3">
+              <div 
+                className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                style={{ width: `${(currentStep / steps.length) * 100}%` }}
+              />
+            </div>
+
+            {/* XP Display - Mobile */}
+            {totalXP > 0 && (
+              <motion.div
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                className="flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-100 to-orange-100 px-3 py-2 rounded-full mb-2"
+              >
+                <Sparkles className="w-4 h-4 text-orange-600" />
+                <span className="font-bold text-orange-800 text-sm">{totalXP} XP</span>
+              </motion.div>
+            )}
+          </div>
+
+          {/* Desktop Layout */}
+          <div className="hidden lg:flex items-center justify-between">
             <div className="flex items-center gap-8">
-              {/* Step Indicators */}
+              {/* Desktop Step Indicators */}
               <div className="flex items-center gap-2">
                 {steps.map((step, index) => (
                   <div key={step.number} className="flex items-center">
@@ -182,7 +236,7 @@ export default function QuoteBuilder() {
               </div>
             </div>
             
-            {/* Right side: XP + Admin */}
+            {/* Desktop Right side: XP + Admin */}
             <div className="flex items-center gap-3">
               {totalXP > 0 && (
                 <motion.div
@@ -212,9 +266,9 @@ export default function QuoteBuilder() {
                 )
               )}
             </div>
+          </div>
         </div>
       </div>
-    </div>
 
       {/* Main Content */}
       <AnimatePresence mode="wait">

@@ -266,11 +266,11 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     onStepComplete({ ...boatInfo, tradeIn: tradeInInfo });
   };
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 px-4">
       {/* Header */}
       <div className="text-center space-y-3 animate-fade-in">
-        <h2 className="text-3xl font-bold text-foreground">Boat Details Wizard</h2>
-        <p className="text-muted-foreground">
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground">Boat Details Wizard</h2>
+        <p className="text-base md:text-lg text-muted-foreground">
           Let's match your {selectedMotor?.model || 'Mercury motor'} to your boat, step by step.
         </p>
       </div>
@@ -299,6 +299,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Step Content */}
+        <div className="px-4 md:px-0">
         {boatInfo.type === 'motor-only' ? (
           <>
             {currentStep === 0 && (
@@ -364,28 +365,28 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                     <Label className="text-2xl font-bold">What type of boat do you have?</Label>
                     <p className="text-muted-foreground">Pick the closest match.</p>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {boatTypes.filter(t => t.id !== 'motor-only').map((type) => (
                       <button
                         type="button"
                         key={type.id}
                         onClick={() => setBoatInfo(prev => ({ ...prev, type: type.id }))}
-                        className={`group relative rounded-xl border-2 bg-card p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg ${boatInfo.type === type.id ? 'border-primary bg-primary/5' : 'border-border'}`}
+                        className={`group relative rounded-xl border-2 bg-card p-4 md:p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-primary bg-primary/5' : 'border-border'}`}
                         aria-pressed={boatInfo.type === type.id}
                       >
-                        <div className="mb-3 h-36 overflow-hidden rounded-md border-b border-border bg-gradient-to-b from-muted/40 to-background flex items-center justify-center">
+                        <div className="mb-3 h-28 md:h-36 overflow-hidden rounded-md border-b border-border bg-gradient-to-b from-muted/40 to-background flex items-center justify-center">
                           <img
                             src={type.image}
                             alt={`${type.label} boat`}
-                            className="h-32 w-full object-contain transition-transform duration-200 group-hover:scale-[1.03]"
+                            className="h-24 md:h-32 w-full object-contain transition-transform duration-200 group-hover:scale-[1.03]"
                             loading="lazy"
                           />
                         </div>
-                        <h3 className="font-semibold">{type.label}</h3>
+                        <h3 className="font-semibold text-base md:text-lg">{type.label}</h3>
                         <div className="boat-details mt-1 space-y-0.5">
-                          <span className="block text-sm text-muted-foreground">{type.description}</span>
+                          <span className="block text-sm md:text-base text-muted-foreground">{type.description}</span>
                           {type.recommendedHP && (
-                            <span className="block text-xs text-primary">Recommended: {type.recommendedHP} HP</span>
+                            <span className="block text-xs md:text-sm text-primary font-medium">Recommended: {type.recommendedHP} HP</span>
                           )}
                         </div>
                         <div className="selection-impact mt-2 text-xs text-muted-foreground">
@@ -936,21 +937,50 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
           </>
         )}
 
-        {/* Bottom Navigation */}
-        <div className="flex items-center justify-between pt-2">
-          <Button type="button" variant="outline" onClick={handlePrev}>
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back
+        {/* Navigation */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between pt-6 border-t gap-3">
+          <Button
+            type="button"
+            variant="outline"
+            onClick={handlePrev}
+            className="flex items-center justify-center gap-2 min-h-[44px] order-2 sm:order-1"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            {currentStep === 0 ? 'Back to Motor' : 'Previous'}
           </Button>
-          {currentStep < totalSteps - 1 ? (
-            <Button type="button" onClick={handleNext} disabled={!canNext()}>
-              Next
-            </Button>
-          ) : (
-            <Button type="submit" disabled={!boatInfo.type || (boatInfo.type !== 'motor-only' && !boatInfo.length)}>
-              Continue to Quote
-            </Button>
-          )}
+          
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 order-1 sm:order-2">
+            {currentStep < totalSteps - 1 && (
+              <Button
+                type="button"
+                variant="secondary"
+                onClick={handleSkip}
+                className="text-sm min-h-[44px]"
+              >
+                Skip for now
+              </Button>
+            )}
+            
+            {currentStep === totalSteps - 1 ? (
+              <Button 
+                type="submit" 
+                className="bg-green-600 hover:bg-green-700 text-white px-8 min-h-[44px] text-base font-medium"
+                disabled={!canNext()}
+              >
+                Continue to Quote
+              </Button>
+            ) : (
+              <Button
+                type="button"
+                onClick={handleNext}
+                disabled={!canNext()}
+                className="px-8 min-h-[44px] text-base font-medium"
+              >
+                Next: {nextStepLabel}
+              </Button>
+            )}
+          </div>
+        </div>
         </div>
       </form>
 

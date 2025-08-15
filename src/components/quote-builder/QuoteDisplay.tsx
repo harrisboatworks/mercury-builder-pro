@@ -470,11 +470,11 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   if (!quoteData.motor) return null;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
-      {/* Header */}
-      <div className="text-center space-y-4">
-        <h2 className="text-3xl font-bold text-foreground">Your Quote Summary</h2>
-        <p className="text-lg text-muted-foreground">
+    <div className="container mx-auto px-4 py-6 md:py-8 max-w-4xl">
+      {/* Mobile-Optimized Header */}
+      <div className="text-center space-y-3 md:space-y-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground">Your Quote Summary</h2>
+        <p className="text-base md:text-lg text-muted-foreground">
           Review your selection and financing options
         </p>
       </div>
@@ -1043,17 +1043,21 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
             </div>
 
             {paymentPreference && (
-              <div className="mt-4 rounded-lg border border-in-stock/30 bg-in-stock/10 p-4 text-center">
+              <div className="mt-4 rounded-lg border border-green-500/30 bg-green-50 dark:bg-green-950/20 p-4 text-center">
                 <div className="flex items-center justify-center gap-2">
-                  <span className="text-xl">🔒</span>
-                  <h5 className="font-semibold">Payment Method Locked In!</h5>
+                  <CheckCircle2 className="w-5 h-5 text-green-600" />
+                  <h5 className="font-semibold">Payment Method Selected!</h5>
                 </div>
                 <p className="text-sm mt-1">
                   {paymentPreference === 'cash' ? `💰 Cash Payment - Save $${cashSavings.toFixed(0)}` : `📅 Financing - $${payments.monthly.toFixed(0)}/month`}
                 </p>
-                <div className="mt-3 flex justify-center gap-2">
-                  <Button variant="outline" size="sm" onClick={() => setPaymentPreference(null)}>Change Selection</Button>
-                  <Button size="sm" onClick={handleContinue}>Continue to Final Step →</Button>
+                <div className="mt-3 flex flex-col sm:flex-row justify-center gap-2">
+                  <Button variant="outline" size="sm" className="min-h-[44px]" onClick={() => setPaymentPreference(null)}>
+                    Change Selection
+                  </Button>
+                  <Button size="sm" className="min-h-[44px] bg-blue-600 hover:bg-blue-700" onClick={handleContinue}>
+                    Continue to Final Step →
+                  </Button>
                 </div>
               </div>
             )}
