@@ -1329,7 +1329,7 @@ export const MotorSelection = ({
                           </Tooltip>}
                         {hasRepower && <Tooltip>
                             <TooltipTrigger asChild>
-                              <span className="promo-badge-base promo-badge-warranty badge text-white !bg-gray-800" data-badge="repower" aria-label="Repower Rebate" onMouseEnter={() => track('rebate_badge_hover', {
+                              <span className="promo-badge-base badge text-white bg-gray-800 border border-gray-700" data-badge="repower" aria-label="Repower Rebate" onMouseEnter={() => track('rebate_badge_hover', {
                       model_id: motor.id,
                       model_name: motor.model
                     })} onClick={e => e.stopPropagation()}>
