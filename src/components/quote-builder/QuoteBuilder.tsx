@@ -151,18 +151,23 @@ export default function QuoteBuilder() {
           {/* Mobile Layout */}
           <div className="flex lg:hidden">
             <div className="flex items-center justify-between w-full">
-              <div className="flex items-center gap-3">
-                <button 
-                  id="hamburger" 
-                  className="p-2 text-gray-900 hover:bg-gray-100 rounded-lg"
-                  onClick={() => setHamburgerOpen(true)}
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
-                <img src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" alt="Harris Boat Works" className="h-8" />
+              <button 
+                id="hamburger" 
+                className="p-2 text-gray-900 hover:bg-gray-100 rounded-lg"
+                onClick={() => setHamburgerOpen(true)}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+              
+              {/* Centered Logo Group on Mobile */}
+              <div className="flex items-center justify-center gap-3 flex-1">
+                <img src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" alt="Harris Boat Works" className="h-10" />
+                <img src="/src/assets/mercury-logo.png" alt="Mercury" className="h-8" />
+                <span className="hidden sm:inline text-xs text-gray-600">Authorized Dealer</span>
               </div>
+              
               {selectedMotor && (
                 <div className="text-right">
                   <div className="text-lg font-bold text-gray-900">${selectedMotor.price.toLocaleString()}</div>
@@ -175,6 +180,13 @@ export default function QuoteBuilder() {
           {/* Desktop Layout - Hidden on mobile */}
           <div className="hidden lg:flex items-center justify-between">
             <div className="flex items-center gap-8">
+              {/* Desktop Logo Group */}
+              <div className="flex items-center gap-4">
+                <img src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" alt="Harris Boat Works" className="h-14" />
+                <img src="/src/assets/mercury-logo.png" alt="Mercury" className="h-10" />
+                <span className="text-xs text-gray-600">Authorized Dealer</span>
+              </div>
+              
               {/* Desktop Step Indicators */}
               <div className="flex items-center gap-2">
                 {steps.map((step, index) => (
