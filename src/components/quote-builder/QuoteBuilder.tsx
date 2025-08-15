@@ -273,7 +273,7 @@ export default function QuoteBuilder() {
       <HamburgerMenu 
         isOpen={hamburgerOpen}
         onClose={() => setHamburgerOpen(false)}
-        totalXP={totalXP}
+        totalXP={0}
         user={user}
         loading={loading}
         signOut={signOut}
@@ -457,21 +457,6 @@ export default function QuoteBuilder() {
           )}
         </AnimatePresence>
       </div>
-
-      {/* Floating Achievement Toast */}
-      {showAchievement && (
-        <motion.div
-          initial={{ bottom: -100 }}
-          animate={{ bottom: 20 }}
-          className="fixed bottom-20 right-4 bg-purple-600 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3"
-        >
-          <span className="text-2xl">🏆</span>
-          <div>
-            <div className="font-bold">Master Configurator!</div>
-            <div className="text-sm opacity-90">You've earned {totalXP} XP</div>
-          </div>
-        </motion.div>
-      )}
     </div>
   );
 }
