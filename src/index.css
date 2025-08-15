@@ -783,6 +783,9 @@
     border: 1px solid hsl(var(--badge-black-border));
     letter-spacing: normal;
     text-transform: none;
+    gap: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  }
     box-shadow: 0 1px 3px rgba(0,0,0,0.25);
     position: relative;
     overflow: hidden;
