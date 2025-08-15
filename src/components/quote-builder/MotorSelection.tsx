@@ -394,6 +394,7 @@ export const MotorSelection = ({
   const [modelSearch, setModelSearch] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedHPRange, setSelectedHPRange] = useState<string>('all');
+  const [inStockOnly, setInStockOnly] = useState<boolean>(false);
   const debugPricing = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
   const [quickViewLoading, setQuickViewLoading] = useState(false);
 
@@ -829,6 +830,9 @@ export const MotorSelection = ({
     if (searchQuery && !motor.model?.toLowerCase().includes(searchQuery.toLowerCase()) && 
         !motor.hp.toString().includes(searchQuery)) return false;
     
+    // In Stock Only toggle
+    if (inStockOnly && motor.stockStatus !== 'In Stock') return false;
+    
     // HP Range filtering from tabs
     if (selectedHPRange !== 'all') {
       const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
@@ -1099,10 +1103,29 @@ export const MotorSelection = ({
               onClick={() => {
                 setSearchQuery('');
                 setSelectedHPRange('all');
+                setInStockOnly(false);
               }}
             >
               Clear
             </Button>
+          </div>
+          
+          {/* Quick Filters Row */}
+          <div className="flex gap-2 overflow-x-auto">
+            {/* In Stock Only Toggle */}
+            <label className={`flex items-center gap-2 px-3 py-2 rounded-full cursor-pointer transition-colors ${
+              inStockOnly 
+                ? 'bg-green-100 text-green-700 border border-green-200' 
+                : 'bg-muted text-muted-foreground border border-border'
+            }`}>
+              <input 
+                type="checkbox" 
+                className="w-4 h-4 rounded"
+                checked={inStockOnly}
+                onChange={(e) => setInStockOnly(e.target.checked)}
+              />
+              <span className="text-sm font-medium whitespace-nowrap">In Stock Only</span>
+            </label>
           </div>
           
           {/* HP Range Filter Tabs */}
