@@ -16,6 +16,7 @@ import { xpActions } from "@/config/xpActions";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/components/auth/AuthProvider";
+import { HamburgerMenu } from "@/components/ui/hamburger-menu";
 
 export default function QuoteBuilder() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -38,6 +39,7 @@ export default function QuoteBuilder() {
   const [fuelTankConfig, setFuelTankConfig] = useState<any>(null);
   const [totalXP, setTotalXP] = useState(0);
   const [quoteForSchedule, setQuoteForSchedule] = useState<any | null>(null);
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
   const { user, loading, signOut } = useAuth();
 
@@ -147,67 +149,31 @@ export default function QuoteBuilder() {
       <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           {/* Mobile Layout */}
-          <div className="flex md:hidden">
-            <div className="flex items-center justify-between mb-3 w-full">
+          <div className="flex lg:hidden">
+            <div className="flex items-center justify-between w-full">
               <div className="flex items-center gap-3">
-                <button className="md:hidden p-2 text-gray-900 hover:bg-gray-100 rounded-lg">
+                <button 
+                  id="hamburger" 
+                  className="p-2 text-gray-900 hover:bg-gray-100 rounded-lg"
+                  onClick={() => setHamburgerOpen(true)}
+                >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                 </button>
-                <h1 className="text-lg font-bold text-gray-900">Quote Builder</h1>
+                <img src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" alt="Harris Boat Works" className="h-8" />
               </div>
-              {!loading && (
-                user ? (
-                  <div className="flex items-center gap-2">
-                    <Link to="/admin/quotes">
-                      <Button variant="secondary" size="sm" className="h-9 px-3 text-xs">Admin</Button>
-                    </Link>
-                    <Button variant="outline" size="sm" className="h-9 px-3 text-xs" onClick={async () => { await signOut(); }}>
-                      Sign Out
-                    </Button>
-                  </div>
-                ) : (
-                  <Link to="/auth">
-                    <Button size="sm" className="h-9 px-3 text-xs">Admin</Button>
-                  </Link>
-                )
+              {selectedMotor && (
+                <div className="text-right">
+                  <div className="text-lg font-bold text-gray-900">${selectedMotor.price.toLocaleString()}</div>
+                  <div className="text-xs text-gray-500">Your Build</div>
+                </div>
               )}
             </div>
-            
-            {/* Mobile Step Progress */}
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-gray-700">
-                Step {currentStep} of {steps.length}
-              </span>
-              <span className="text-sm text-gray-500">
-                {steps[currentStep - 1]?.label}
-              </span>
-            </div>
-            
-            {/* Mobile Progress Bar */}
-            <div className="w-full bg-gray-200 rounded-full h-2 mb-3">
-              <div 
-                className="bg-red-600 h-2 rounded-full transition-all duration-300"
-                style={{ width: `${(currentStep / steps.length) * 100}%` }}
-              />
-            </div>
-
-            {/* XP Display - Mobile */}
-            {totalXP > 0 && (
-              <motion.div
-                initial={{ scale: 0, rotate: -180 }}
-                animate={{ scale: 1, rotate: 0 }}
-                className="flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-100 to-orange-100 px-3 py-2 rounded-full mb-2"
-              >
-                <Sparkles className="w-4 h-4 text-orange-600" />
-                <span className="font-bold text-orange-800 text-sm">{totalXP} XP</span>
-              </motion.div>
-            )}
           </div>
 
           {/* Desktop Layout - Hidden on mobile */}
-          <div className="hidden md:flex items-center justify-between">
+          <div className="hidden lg:flex items-center justify-between">
             <div className="flex items-center gap-8">
               {/* Desktop Step Indicators */}
               <div className="flex items-center gap-2">
@@ -277,8 +243,36 @@ export default function QuoteBuilder() {
         </div>
       </div>
 
+      {/* Hamburger Menu */}
+      <HamburgerMenu 
+        isOpen={hamburgerOpen}
+        onClose={() => setHamburgerOpen(false)}
+        totalXP={totalXP}
+        user={user}
+        loading={loading}
+        signOut={signOut}
+      />
+
+      {/* Sticky Mobile Bottom Bar - Only show on motor selection step */}
+      {currentStep === 1 && selectedMotor && (
+        <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-white border-t border-gray-200 p-3 z-40">
+          <div className="flex justify-between items-center">
+            <div>
+              <div className="text-2xl font-bold text-gray-900">${selectedMotor.price.toLocaleString()}</div>
+              <div className="text-xs text-gray-500">Total Build</div>
+            </div>
+            <Button 
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold"
+              onClick={() => handleMotorSelect(selectedMotor)}
+            >
+              Complete Quote →
+            </Button>
+          </div>
+        </div>
+      )}
+
       {/* Main Content */}
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 pb-20 lg:pb-20">
         <AnimatePresence mode="wait">
         {currentStep === 1 && (
           <motion.div

@@ -1041,7 +1041,7 @@ export const MotorSelection = ({
       </div>;
   }
   return <div className={`flex gap-6 ${showCelebration ? 'canadian-celebration' : ''}`}>
-      <div className={`${filtersOpen ? 'w-80' : 'w-16'} transition-all duration-300 flex-shrink-0`}>
+      <div className={`${filtersOpen ? 'w-80' : 'w-16'} transition-all duration-300 flex-shrink-0 hidden lg:block`}>
         {filtersOpen && <Card className="mb-4">
             <div className="p-4 space-y-6">
               <div>
@@ -1107,7 +1107,7 @@ export const MotorSelection = ({
         </div>
 
         {/* Repower rebate banner (Phase 1) */}
-        <div className="repower-rebate-banner rounded-md p-3 text-center text-sm font-semibold bg-[linear-gradient(135deg,hsl(var(--promo-gold-1)),hsl(var(--promo-gold-2)))] shadow-md">
+        <div className="repower-rebate-banner rounded-md p-3 text-center text-sm font-semibold bg-[linear-gradient(135deg,hsl(var(--promo-gold-1)),hsl(var(--promo-gold-2)))] shadow-md hidden sm:block">
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <span>💰 Repower Rebate Available! Trading in? You may qualify for additional savings.</span>
             <Button size="sm" variant="secondary" onClick={() => setActivePromoModal(promotionsState.find(p => /(repower\s*rebate|repower)/i.test([p.name, p.bonus_title, p.bonus_short_badge, p.bonus_description].filter(Boolean).join(' '))) || null)}>Learn More</Button>
@@ -1122,7 +1122,7 @@ export const MotorSelection = ({
           </div>}
 
 
-        <div className="dealer-credentials rounded-lg mb-6 p-4 md:p-6 bg-gradient-to-r from-primary/5 to-muted/40 border border-border">
+        <div className="dealer-credentials rounded-lg mb-6 p-4 md:p-6 bg-gradient-to-r from-primary/5 to-muted/40 border border-border hidden sm:block">
           <div className="dealer-credentials-banner flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
             {/* CSI Award */}
             <div className="credential-group flex items-center gap-3">
@@ -1163,7 +1163,7 @@ export const MotorSelection = ({
             <div className="text-2xl">🍁</div>
             <p className="font-semibold">{emptyStateMessages.noResults.message}</p>
             <p className="text-muted-foreground">{emptyStateMessages.noResults.submessage}</p>
-          </Card> : <div className={`grid motors-grid items-stretch gap-4 ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' : 'grid-cols-1'}`}>
+          </Card> : <div className={`grid motors-grid items-stretch gap-2 sm:gap-4 ${viewMode === 'grid' ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-1'}`}>
             {filteredMotors.map(motor => {
           const msrp = motor.basePrice && motor.basePrice > 0 ? motor.basePrice : null;
           const sale = motor.salePrice && motor.salePrice > 0 ? motor.salePrice : null;
@@ -1207,7 +1207,7 @@ export const MotorSelection = ({
                     )}
                   </Badge>
 
-                  <div className="p-3 sm:p-4 space-y-3 relative h-full flex flex-col">
+                  <div className="p-2 sm:p-3 lg:p-4 space-y-2 sm:space-y-3 relative h-full flex flex-col">
                     <div className="flex items-start justify-start">
                       <Badge variant={getCategoryColor(motor.category)}>
                         {motor.hp}HP
@@ -1236,7 +1236,7 @@ export const MotorSelection = ({
                     };
                     
                     return <>
-                              <h3 className="text-sm md:text-base font-semibold text-foreground line-clamp-2">{title}</h3>
+                              <h3 className="text-xs sm:text-sm lg:text-base font-semibold text-foreground line-clamp-2">{title}</h3>
                               {notification && (
                                 <div className={`inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-medium rounded border animate-fade-in transition-all duration-300 hover:scale-105 ${notification.color}`}>
                                   {getNotificationIcon(notification.icon)}
