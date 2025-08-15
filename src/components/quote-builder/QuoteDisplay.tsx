@@ -470,7 +470,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   if (!quoteData.motor) return null;
 
   return (
-    <div className="pb-20">
+    <div className="container mx-auto px-4 md:px-6 lg:px-8 pb-20 md:pb-8 max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-6xl">
       {/* Mobile-Optimized Header */}
       <div className="text-center space-y-3 md:space-y-4 mb-6">
         <h2 className="text-xl md:text-3xl font-bold text-foreground">Your Quote Summary</h2>
@@ -1407,6 +1407,19 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
           </div>
         </div>
       )}
+      
+      {/* Mobile Sticky CTA - Hidden on desktop */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-black/95 backdrop-blur-sm border-t border-white/10 block md:hidden">
+        <div className="max-w-screen-sm mx-auto">
+          <Button 
+            onClick={handleContinue}
+            className="w-full bg-red-600 hover:bg-red-700 py-4 rounded-xl text-white font-semibold text-lg"
+            disabled={!paymentPreference}
+          >
+            {paymentPreference === 'cash' ? 'Confirm Cash Purchase' : paymentPreference === 'finance' ? 'Continue to Financing' : 'Choose Payment Method Above'}
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };

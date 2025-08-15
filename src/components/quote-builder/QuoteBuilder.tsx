@@ -145,10 +145,10 @@ export default function QuoteBuilder() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Mobile-Optimized Header */}
       <div className="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-screen-sm mx-auto px-4 py-3">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl py-3">
           {/* Mobile Layout */}
-          <div className="md:hidden">
-            <div className="flex items-center justify-between mb-3">
+          <div className="flex md:hidden">
+            <div className="flex items-center justify-between mb-3 w-full">
               <h1 className="text-lg font-bold text-white">Quote Builder</h1>
               {!loading && (
                 user ? (
@@ -271,7 +271,7 @@ export default function QuoteBuilder() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-screen-sm mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
         <AnimatePresence mode="wait">
         {currentStep === 1 && (
           <motion.div
