@@ -371,7 +371,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                          type="button"
                          key={type.id}
                          onClick={() => setBoatInfo(prev => ({ ...prev, type: type.id }))}
-                         className={`group relative rounded-2xl border-2 p-4 bg-zinc-900 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-red-600 bg-red-600/10' : 'border-zinc-700'}`}
+                         className={`group relative rounded-2xl border-2 p-4 bg-gray-50 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-red-600 bg-red-50' : 'border-gray-200'}`}
                          aria-pressed={boatInfo.type === type.id}
                        >
                          <div className="mb-3 h-28 md:h-36 overflow-hidden rounded-md border-b border-zinc-700 bg-gradient-to-b from-zinc-800 to-zinc-900 flex items-center justify-center">

@@ -1409,7 +1409,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
       )}
       
       {/* Mobile Sticky CTA - Hidden on desktop */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-black/95 backdrop-blur-sm border-t border-zinc-800 block md:hidden">
+      <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-white/95 backdrop-blur-sm border-t border-gray-200 block md:hidden">
         <div className="max-w-screen-sm mx-auto">
           <Button 
             onClick={handleContinue}

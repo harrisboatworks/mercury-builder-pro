@@ -142,20 +142,20 @@ export default function QuoteBuilder() {
         ];
 
   return (
-    <div className="min-h-screen bg-black overflow-x-hidden">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Mobile-Optimized Header */}
-      <div className="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-zinc-800">
+      <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           {/* Mobile Layout */}
           <div className="flex md:hidden">
             <div className="flex items-center justify-between mb-3 w-full">
               <div className="flex items-center gap-3">
-                <button className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg">
+                <button className="md:hidden p-2 text-gray-900 hover:bg-gray-100 rounded-lg">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                 </button>
-                <h1 className="text-lg font-bold text-white">Quote Builder</h1>
+                <h1 className="text-lg font-bold text-gray-900">Quote Builder</h1>
               </div>
               {!loading && (
                 user ? (
@@ -177,16 +177,16 @@ export default function QuoteBuilder() {
             
             {/* Mobile Step Progress */}
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-white/80">
+              <span className="text-sm font-medium text-gray-700">
                 Step {currentStep} of {steps.length}
               </span>
-              <span className="text-sm text-white/60">
+              <span className="text-sm text-gray-500">
                 {steps[currentStep - 1]?.label}
               </span>
             </div>
             
             {/* Mobile Progress Bar */}
-            <div className="w-full bg-white/20 rounded-full h-2 mb-3">
+            <div className="w-full bg-gray-200 rounded-full h-2 mb-3">
               <div 
                 className="bg-red-600 h-2 rounded-full transition-all duration-300"
                 style={{ width: `${(currentStep / steps.length) * 100}%` }}

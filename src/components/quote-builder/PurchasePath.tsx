@@ -45,7 +45,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
           whileHover={{ scale: 1.02, y: -4 }}
           whileTap={{ scale: 0.98 }}
           onClick={handleLooseMotorSelect}
-          className="relative p-6 bg-zinc-900 rounded-2xl hover:bg-zinc-800 transition-colors border-2 border-gray-200 hover:border-blue-500 hover:shadow-2xl text-left group"
+          className="relative p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors border-2 border-gray-200 hover:border-blue-500 hover:shadow-2xl text-left group"
         >
           <div className="absolute -top-3 -right-3 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
             Quick & Easy
@@ -95,7 +95,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
           whileHover={{ scale: 1.02, y: -4 }}
           whileTap={{ scale: 0.98 }}
           onClick={handleInstalledSelect}
-          className="relative p-6 bg-zinc-900 rounded-2xl hover:bg-zinc-800 transition-colors border-2 border-gray-200 hover:border-blue-500 hover:shadow-2xl text-left group"
+          className="relative p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors border-2 border-gray-200 hover:border-blue-500 hover:shadow-2xl text-left group"
         >
           <div className="absolute -top-3 -right-3 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold">
             Full Service
