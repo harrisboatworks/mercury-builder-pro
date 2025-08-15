@@ -179,45 +179,39 @@
     .container {
       padding-left: 1rem;
       padding-right: 1rem;
-/* Mobile-first responsive layout improvements */
-@media (max-width: 768px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    }
+    
+    /* Grid improvements for mobile */
+    .grid-cols-2 {
+      grid-template-columns: 1fr;
+    }
+    
+    .grid-cols-3 {
+      grid-template-columns: 1fr;
+    }
+    
+    /* Card spacing optimization */
+    .space-y-8 > * + * {
+      margin-top: 1.5rem;
+    }
+    
+    /* Better button grouping on mobile */
+    .flex.gap-2 {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .flex.gap-3 {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
   }
-  
-  /* Grid improvements for mobile */
-  .grid-cols-2 {
-    grid-template-columns: 1fr;
-  }
-  
-  .grid-cols-3 {
-    grid-template-columns: 1fr;
-  }
-  
-  /* Card spacing optimization */
-  .space-y-8 > * + * {
-    margin-top: 1.5rem;
-  }
-  
-  /* Better button grouping on mobile */
-  .flex.gap-2 {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  
-  .flex.gap-3 {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-}
 
 /* Tablet improvements */
 @media (min-width: 769px) and (max-width: 1024px) {
   .grid-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 }
 
 /* Motor Selection Animations */
