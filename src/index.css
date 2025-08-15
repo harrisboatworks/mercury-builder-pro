@@ -216,6 +216,7 @@
       gap: 0.75rem;
     }
   }
+}
 
 /* Tablet improvements */
 @media (min-width: 769px) and (max-width: 1024px) {
