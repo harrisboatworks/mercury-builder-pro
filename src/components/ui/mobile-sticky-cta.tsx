@@ -9,17 +9,17 @@ interface MobileStickyCTAProps {
 
 export const MobileStickyCTA = ({ onAction, label, price, className = "" }: MobileStickyCTAProps) => {
   return (
-    <div className={`fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200 p-3 ${className}`}>
-      <div className="flex gap-2 items-center max-w-screen-2xl mx-auto">
+    <div className={`fixed inset-x-0 bottom-0 z-40 p-4 bg-black/95 backdrop-blur md:hidden ${className}`}>
+      <div className="flex gap-2 items-center">
         {price && (
-          <div className="text-gray-900">
-            <div className="text-xs text-gray-600">Your Build</div>
-            <div className="text-xl font-bold text-gray-900">{price}</div>
+          <div className="text-white">
+            <div className="text-xs text-gray-300">Your Build</div>
+            <div className="text-xl font-bold">{price}</div>
           </div>
         )}
         <Button 
           onClick={onAction}
-          className="flex-1 bg-red-600 hover:bg-red-700 py-3 px-4 rounded-lg text-white font-semibold min-h-[48px]"
+          className="flex-1 py-4 rounded-xl bg-red-600 hover:bg-red-500 font-semibold text-white min-h-[44px]"
         >
           {label}
         </Button>

@@ -143,62 +143,64 @@ export default function QuoteBuilder() {
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
-      {/* Mobile-Optimized Header */}
-      <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          {/* Mobile Layout */}
-          <div className="flex md:hidden">
-            <div className="flex items-center justify-between mb-3 w-full">
-              <div className="flex items-center gap-3">
-                <button className="md:hidden p-2 text-gray-900 hover:bg-gray-100 rounded-lg">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
-                <h1 className="text-lg font-bold text-gray-900">Quote Builder</h1>
-              </div>
-              {!loading && (
-                user ? (
-                  <div className="flex items-center gap-2">
-                    <Link to="/admin/quotes">
-                      <Button variant="secondary" size="sm" className="h-9 px-3 text-xs">Admin</Button>
-                    </Link>
-                    <Button variant="outline" size="sm" className="h-9 px-3 text-xs" onClick={async () => { await signOut(); }}>
-                      Sign Out
-                    </Button>
-                  </div>
-                ) : (
-                  <Link to="/auth">
-                    <Button size="sm" className="h-9 px-3 text-xs">Admin</Button>
-                  </Link>
-                )
-              )}
-            </div>
-            
-            {/* Mobile Step Progress */}
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-black/90 backdrop-blur">
+        <div className="mx-auto px-4 max-w-screen-sm md:max-w-3xl lg:max-w-5xl xl:max-w-7xl h-14 md:h-16 flex items-center justify-between">
+          <a href="/" className="flex items-center gap-3">
+            <img src="/water-icon.svg" alt="Harris Boat Works • Mercury Dealer" className="h-6 md:h-7" />
+            <span className="text-white font-semibold">Mercury Quote</span>
+          </a>
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-6 text-sm text-gray-200">
+            <a href="#engines" className="hover:text-white">Engines</a>
+            <a href="#accessories" className="hover:text-white">Accessories</a>
+            <a href="#financing" className="hover:text-white">Financing</a>
+            <a href="#contact" className="hover:text-white">Contact</a>
+          </nav>
+
+          <div className="hidden md:flex items-center gap-2">
+            <a href="#quote" className="inline-flex items-center px-4 py-2 rounded-lg bg-red-600 hover:bg-red-500 font-semibold text-white">
+              Get a Quote
+            </a>
+            {!loading && (
+              user ? (
+                <Link to="/admin/quotes">
+                  <Button variant="secondary" size="sm" className="h-9 px-3 text-xs text-white">Admin</Button>
+                </Link>
+              ) : (
+                <Link to="/auth">
+                  <Button size="sm" className="h-9 px-3 text-xs">Admin</Button>
+                </Link>
+              )
+            )}
+          </div>
+
+          {/* Mobile burger */}
+          <button className="md:hidden h-10 w-10 text-white" aria-label="Menu">☰</button>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="grid grid-cols-1 lg:grid-cols-[1fr,360px] gap-6 md:gap-8">
+        <section id="quote-form" className="mx-auto px-4 max-w-screen-sm md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
+          {/* Mobile Step Progress - only on mobile */}
+          <div className="md:hidden mb-6 rounded-lg border border-border bg-muted/30 p-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-gray-700">
-                Step {currentStep} of {steps.length}
-              </span>
-              <span className="text-sm text-gray-500">
-                {steps[currentStep - 1]?.label}
-              </span>
+              <span className="text-sm font-medium">Step {currentStep} of {steps.length}</span>
+              <span className="text-sm text-muted-foreground">{steps[currentStep - 1]?.label}</span>
             </div>
-            
-            {/* Mobile Progress Bar */}
             <div className="w-full bg-gray-200 rounded-full h-2 mb-3">
               <div 
                 className="bg-red-600 h-2 rounded-full transition-all duration-300"
                 style={{ width: `${(currentStep / steps.length) * 100}%` }}
               />
             </div>
-
-            {/* XP Display - Mobile */}
             {totalXP > 0 && (
               <motion.div
                 initial={{ scale: 0, rotate: -180 }}
                 animate={{ scale: 1, rotate: 0 }}
-                className="flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-100 to-orange-100 px-3 py-2 rounded-full mb-2"
+                className="flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-100 to-orange-100 px-3 py-2 rounded-full"
               >
                 <Sparkles className="w-4 h-4 text-orange-600" />
                 <span className="font-bold text-orange-800 text-sm">{totalXP} XP</span>
@@ -206,80 +208,52 @@ export default function QuoteBuilder() {
             )}
           </div>
 
-          {/* Desktop Layout - Hidden on mobile */}
-          <div className="hidden md:flex items-center justify-between">
-            <div className="flex items-center gap-8">
-              {/* Desktop Step Indicators */}
-              <div className="flex items-center gap-2">
-                {steps.map((step, index) => (
-                  <div key={step.number} className="flex items-center">
-                    <motion.button
-                      type="button"
-                      title={step.label}
-                      onClick={() => step.number <= maxStepReached && setCurrentStep(step.number)}
-                      disabled={step.number > maxStepReached}
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      className={`flex items-center justify-center w-10 h-10 rounded-full font-bold transition-all
-                        ${currentStep === step.number 
-                          ? 'bg-blue-600 text-white shadow-lg animate-pulse' 
-                          : currentStep > step.number 
-                            ? 'bg-green-500 text-white hover:scale-110 cursor-pointer' 
-                            : step.number <= maxStepReached
-                              ? 'bg-gray-200 text-gray-400 hover:scale-110 cursor-pointer'
-                              : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                        }`}
-                      aria-label={step.label}
-                    >
-                      {currentStep > step.number ? '✓' : step.icon}
-                    </motion.button>
-                    {index < steps.length - 1 && (
-                      <div className={`w-12 h-1 mx-2 rounded
-                        ${currentStep > step.number ? 'bg-green-500' : 'bg-gray-200'}`} 
-                      />
-                    )}
-                  </div>
-                ))}
-              </div>
+          {/* Desktop Step Progress - only on desktop */}
+          <div className="hidden md:flex items-center justify-between mb-8">
+            <div className="flex items-center gap-2">
+              {steps.map((step, index) => (
+                <div key={step.number} className="flex items-center">
+                  <motion.button
+                    type="button"
+                    title={step.label}
+                    onClick={() => step.number <= maxStepReached && setCurrentStep(step.number)}
+                    disabled={step.number > maxStepReached}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className={`flex items-center justify-center w-10 h-10 rounded-full font-bold transition-all
+                      ${currentStep === step.number 
+                        ? 'bg-blue-600 text-white shadow-lg animate-pulse' 
+                        : currentStep > step.number 
+                          ? 'bg-green-500 text-white hover:scale-110 cursor-pointer' 
+                          : step.number <= maxStepReached
+                            ? 'bg-gray-200 text-gray-400 hover:scale-110 cursor-pointer'
+                            : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                      }`}
+                    aria-label={step.label}
+                  >
+                    {currentStep > step.number ? '✓' : step.icon}
+                  </motion.button>
+                  {index < steps.length - 1 && (
+                    <div className={`w-12 h-1 mx-2 rounded
+                      ${currentStep > step.number ? 'bg-green-500' : 'bg-gray-200'}`} 
+                    />
+                  )}
+                </div>
+              ))}
             </div>
-            
-            {/* Desktop Right side: XP + Admin */}
-            <div className="flex items-center gap-3">
-              {totalXP > 0 && (
-                <motion.div
-                  initial={{ scale: 0, rotate: -180 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  className="flex items-center gap-2 bg-gradient-to-r from-yellow-100 to-orange-100 px-4 py-2 rounded-full"
-                >
-                  <Sparkles className="w-5 h-5 text-orange-600" />
-                  <span className="font-bold text-orange-800">{totalXP} XP Total</span>
-                </motion.div>
-              )}
-
-              {!loading && (
-                user ? (
-                  <div className="flex items-center gap-2">
-                    <Link to="/admin/quotes">
-                      <Button variant="secondary" size="sm">Admin</Button>
-                    </Link>
-                    <Button variant="outline" size="sm" onClick={async () => { await signOut(); }}>
-                      Sign Out
-                    </Button>
-                  </div>
-                ) : (
-                  <Link to="/auth">
-                    <Button size="sm">Admin Sign In</Button>
-                  </Link>
-                )
-              )}
-            </div>
+            {totalXP > 0 && (
+              <motion.div
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                className="flex items-center gap-2 bg-gradient-to-r from-yellow-100 to-orange-100 px-4 py-2 rounded-full"
+              >
+                <Sparkles className="w-5 h-5 text-orange-600" />
+                <span className="font-bold text-orange-800">{totalXP} XP Total</span>
+              </motion.div>
+            )}
           </div>
-        </div>
-      </div>
 
-      {/* Main Content */}
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
-        <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait">
         {currentStep === 1 && (
           <motion.div
             key="motor-selection"
@@ -434,8 +408,82 @@ export default function QuoteBuilder() {
                 onBack={() => setCurrentStep(purchasePath === 'installed' ? 6 : 5)}
               />
             </motion.div>
-          )}
-        </AnimatePresence>
+        )}
+          </AnimatePresence>
+        </section>
+
+        {/* Desktop Sidebar - hidden on mobile */}
+        <aside className="hidden lg:block" id="sidebar">
+          <div className="sticky top-20 space-y-4">
+            <div className="rounded-2xl bg-zinc-900 p-4 text-white">
+              <h3 className="font-semibold text-lg mb-2">Mercury Warranty</h3>
+              <p className="text-sm text-gray-300 mb-3">Industry-leading protection for your investment</p>
+              <a href="https://www.mercurymarine.com/owner-resources/warranty/" className="underline text-red-400 hover:text-red-300 text-sm">View official coverage</a>
+            </div>
+            
+            <div className="rounded-2xl bg-zinc-900 p-4 text-white">
+              <h3 className="font-semibold text-lg mb-2">Financing Available</h3>
+              <p className="text-sm text-gray-300 mb-3">Flexible payment options starting at 5.99% APR</p>
+              <button className="w-full py-2 rounded-lg bg-red-600 hover:bg-red-500 font-semibold text-sm">Calculate Payment</button>
+            </div>
+
+            <div className="rounded-2xl bg-zinc-900 p-4 text-white">
+              <h3 className="font-semibold text-lg mb-2">Harris Boat Works</h3>
+              <div className="text-sm text-gray-300 space-y-1">
+                <p>📍 Rice Lake, Ontario</p>
+                <p>📞 <a href="tel:705-652-7880" className="underline text-red-400 hover:text-red-300">705-652-7880</a></p>
+                <p>📱 <a href="sms:705-652-7880" className="underline text-red-400 hover:text-red-300">Text Us</a></p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      {/* Mobile Info Accordions - only on mobile */}
+      <section className="mt-6 md:mt-8 lg:hidden mx-auto px-4 max-w-screen-sm" id="mobile-info">
+        <details className="group rounded-2xl bg-zinc-900 p-4 open:bg-zinc-800">
+          <summary className="cursor-pointer select-none text-sm font-semibold flex items-center justify-between text-white">
+            Warranty & Coverage
+            <span className="ml-2 text-gray-400 group-open:rotate-180 transition">⌄</span>
+          </summary>
+          <div className="mt-3 text-sm text-gray-300">
+            <p className="mb-2">Industry-leading protection for your investment</p>
+            <a href="https://www.mercurymarine.com/owner-resources/warranty/" className="underline text-red-400 hover:text-red-300">View official coverage</a>
+          </div>
+        </details>
+
+        <details className="group mt-3 rounded-2xl bg-zinc-900 p-4 open:bg-zinc-800">
+          <summary className="cursor-pointer select-none text-sm font-semibold flex items-center justify-between text-white">
+            Financing
+            <span className="ml-2 text-gray-400 group-open:rotate-180 transition">⌄</span>
+          </summary>
+          <div className="mt-3 text-sm text-gray-300">
+            <p className="mb-2">Flexible payment options starting at 5.99% APR</p>
+            <button className="w-full py-2 rounded-lg bg-red-600 hover:bg-red-500 font-semibold text-sm text-white">Calculate Payment</button>
+          </div>
+        </details>
+
+        <details className="group mt-3 rounded-2xl bg-zinc-900 p-4 open:bg-zinc-800">
+          <summary className="cursor-pointer select-none text-sm font-semibold flex items-center justify-between text-white">
+            Dealer Info
+            <span className="ml-2 text-gray-400 group-open:rotate-180 transition">⌄</span>
+          </summary>
+          <div className="mt-3 text-sm text-gray-300 space-y-1">
+            <p>📍 Rice Lake, Ontario</p>
+            <p>📞 <a href="tel:705-652-7880" className="underline text-red-400 hover:text-red-300">705-652-7880</a></p>
+            <p>📱 <a href="sms:705-652-7880" className="underline text-red-400 hover:text-red-300">Text Us</a></p>
+          </div>
+        </details>
+      </section>
+
+      {/* Mobile Sticky Bottom CTA */}
+      <div className="fixed inset-x-0 bottom-0 z-40 p-4 bg-black/95 backdrop-blur md:hidden">
+        <button 
+          className="w-full py-4 rounded-xl bg-red-600 hover:bg-red-500 font-semibold text-white"
+          onClick={() => document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })}
+        >
+          Start My Quote
+        </button>
       </div>
 
       {/* Floating Achievement Toast */}

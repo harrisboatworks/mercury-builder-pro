@@ -266,7 +266,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     onStepComplete({ ...boatInfo, tradeIn: tradeInInfo });
   };
   return (
-    <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 md:space-y-8 py-12 md:py-16 lg:py-20 overflow-x-hidden">
+    <div className="mx-auto px-4 max-w-screen-sm md:max-w-3xl lg:max-w-5xl xl:max-w-7xl space-y-6 md:space-y-8 overflow-x-hidden">
       {/* Header */}
       <div className="text-center space-y-3 animate-fade-in">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">Boat Details Wizard</h2>
