@@ -3,7 +3,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Grid, List, Zap, Fuel, DollarSign, Filter, X } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
+import { Grid, List, Zap, Fuel, DollarSign, Filter, X, Package } from "lucide-react";
 
 type ViewMode = "grid" | "list";
 
@@ -74,6 +75,13 @@ export const MotorFinderWizard: React.FC<MotorFinderWizardProps> = ({
     setFilters({ category: "all", stockStatus: "all", priceRange: [0, 50000], hpRange: [2.5, 600] });
   };
 
+  const toggleInStockOnly = (enabled: boolean) => {
+    setFilters({ 
+      ...filters, 
+      stockStatus: enabled ? "In Stock" : "all" 
+    });
+  };
+
   return (
     <div className={`${isOpen ? "w-80" : "w-16"} transition-all duration-300 flex-shrink-0`}>
       <Card className="h-fit sticky top-4">
@@ -111,6 +119,21 @@ export const MotorFinderWizard: React.FC<MotorFinderWizardProps> = ({
                 >
                   <List className="w-4 h-4" />
                 </Button>
+              </div>
+
+              {/* In Stock Only Toggle */}
+              <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                <div className="flex items-center gap-2">
+                  <Package className="w-4 h-4 text-muted-foreground" />
+                  <Label htmlFor="stock-toggle" className="text-sm font-medium cursor-pointer">
+                    In Stock Only
+                  </Label>
+                </div>
+                <Switch
+                  id="stock-toggle"
+                  checked={filters.stockStatus === "In Stock"}
+                  onCheckedChange={toggleInStockOnly}
+                />
               </div>
 
               <div className="motor-finder-wizard bg-muted rounded-lg p-4">
