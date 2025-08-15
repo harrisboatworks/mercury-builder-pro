@@ -303,18 +303,18 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
         {boatInfo.type === 'motor-only' ? (
           <>
             {currentStep === 0 && (
-              <Card className="p-6 animate-fade-in">
+              <Card className="p-6 animate-fade-in bg-zinc-900 border-zinc-700">
                 <div className="space-y-6">
-                  <h3 className="text-lg font-semibold">Motor Only</h3>
-                  <p className="text-sm text-muted-foreground">Buying a motor without a boat? We'll confirm specs at consultation.</p>
+                  <h3 className="text-lg font-semibold text-white">Motor Only</h3>
+                  <p className="text-sm text-gray-300">Buying a motor without a boat? We'll confirm specs at consultation.</p>
 
                   <div className="space-y-2">
-                    <Label className="flex items-center gap-2">Shaft Length (if known)</Label>
+                    <Label className="flex items-center gap-2 text-white">Shaft Length (if known)</Label>
                     <Select value={boatInfo.shaftLength} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, shaftLength: value }))}>
-                      <SelectTrigger>
+                      <SelectTrigger className="w-full min-h-[44px] bg-zinc-800 text-white border-zinc-600">
                         <SelectValue placeholder="Select shaft length" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-zinc-800 border-zinc-600">
                         <SelectItem value="15">15" - Short</SelectItem>
                         <SelectItem value="20">20" - Long</SelectItem>
                         <SelectItem value="25">25" - XL</SelectItem>
@@ -323,9 +323,9 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                     </Select>
                   </div>
 
-                  <Alert className="border-blue-500 bg-blue-50 dark:bg-blue-950/20">
+                  <Alert className="border-blue-500 bg-blue-950/20">
                     <Info className="w-4 h-4" />
-                    <AlertDescription>
+                    <AlertDescription className="text-gray-300">
                       We'll verify exact rigging and cables during your appointment.
                     </AlertDescription>
                   </Alert>
@@ -359,36 +359,36 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
         ) : (
           <>
             {currentStep === 0 && (
-              <Card className="p-6 animate-fade-in">
+              <Card className="p-6 animate-fade-in bg-zinc-900 border-zinc-700">
                 <div className="space-y-6">
                   <div className="text-center space-y-2">
-                    <Label className="text-2xl font-bold">What type of boat do you have?</Label>
-                    <p className="text-muted-foreground">Pick the closest match.</p>
+                    <Label className="text-2xl font-bold text-white">What type of boat do you have?</Label>
+                    <p className="text-gray-300">Pick the closest match.</p>
                   </div>
                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                     {boatTypes.filter(t => t.id !== 'motor-only').map((type) => (
-                       <button
-                         type="button"
-                         key={type.id}
-                         onClick={() => setBoatInfo(prev => ({ ...prev, type: type.id }))}
-                         className={`group relative rounded-2xl border-2 p-4 bg-zinc-900 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-red-600 bg-red-600/10' : 'border-zinc-700'}`}
-                         aria-pressed={boatInfo.type === type.id}
-                       >
-                         <div className="mb-3 h-28 md:h-36 overflow-hidden rounded-md border-b border-zinc-700 bg-gradient-to-b from-zinc-800 to-zinc-900 flex items-center justify-center">
-                            <img
-                              src={type.image}
-                              alt={`${type.label} boat`}
-                              className="w-full h-auto object-contain transition-transform duration-200 group-hover:scale-[1.03]"
-                              loading="lazy"
-                            />
+                      {boatTypes.filter(t => t.id !== 'motor-only').map((type) => (
+                        <button
+                          type="button"
+                          key={type.id}
+                          onClick={() => setBoatInfo(prev => ({ ...prev, type: type.id }))}
+                          className={`group relative rounded-2xl border-2 p-4 bg-zinc-800 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-red-600 bg-red-600/10' : 'border-zinc-600 hover:border-zinc-500'}`}
+                          aria-pressed={boatInfo.type === type.id}
+                        >
+                          <div className="mb-3 h-28 md:h-36 overflow-hidden rounded-md border-b border-zinc-600 bg-gradient-to-b from-zinc-700 to-zinc-800 flex items-center justify-center">
+                             <img
+                               src={type.image}
+                               alt={`${type.label} boat`}
+                               className="w-full h-auto object-contain transition-transform duration-200 group-hover:scale-[1.03]"
+                               loading="lazy"
+                             />
+                          </div>
+                         <h3 className="font-semibold text-base md:text-lg text-white">{type.label}</h3>
+                         <div className="boat-details mt-1 space-y-0.5">
+                           <span className="block text-sm md:text-base text-gray-300">{type.description}</span>
+                           {type.recommendedHP && (
+                             <span className="block text-xs md:text-sm text-red-500 font-medium">Recommended: {type.recommendedHP} HP</span>
+                           )}
                          </div>
-                        <h3 className="font-semibold text-base md:text-lg">{type.label}</h3>
-                        <div className="boat-details mt-1 space-y-0.5">
-                          <span className="block text-sm md:text-base text-muted-foreground">{type.description}</span>
-                          {type.recommendedHP && (
-                            <span className="block text-xs md:text-sm text-primary font-medium">Recommended: {type.recommendedHP} HP</span>
-                          )}
-                        </div>
                         <div className="selection-impact mt-2 text-xs text-muted-foreground">
                           {type.id === 'pontoon' && (
                             <span className="inline-flex items-center gap-1">

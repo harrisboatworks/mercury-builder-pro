@@ -142,7 +142,7 @@ export default function QuoteBuilder() {
         ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-black">
       {/* Mobile-Optimized Header */}
       <div className="sticky top-0 z-50 bg-black backdrop-blur-sm border-b border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
@@ -437,6 +437,23 @@ export default function QuoteBuilder() {
           )}
         </AnimatePresence>
       </div>
+      
+      {/* Mobile Sticky CTA */}
+      {currentStep > 1 && selectedMotor && (
+        <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-black/95 backdrop-blur-sm border-t border-zinc-700 md:hidden">
+          <div className="max-w-screen-sm mx-auto">
+            <div className="text-center text-gray-300 text-sm mb-2">
+              {selectedMotor.model} - ${selectedMotor.salePrice || selectedMotor.basePrice || selectedMotor.price}
+            </div>
+            <Button 
+              onClick={() => setCurrentStep(steps.length - 1)}
+              className="w-full bg-red-600 hover:bg-red-700 py-4 rounded-xl text-white font-semibold text-lg min-h-[44px]"
+            >
+              Get My Quote →
+            </Button>
+          </div>
+        </div>
+      )}
 
       {/* Floating Achievement Toast */}
       {showAchievement && (
