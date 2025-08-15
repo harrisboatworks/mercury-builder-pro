@@ -144,12 +144,12 @@ export default function QuoteBuilder() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Mobile-Optimized Header */}
-      <div className="bg-white border-b sticky top-0 z-40">
-        <div className="container mx-auto px-4 py-3">
+      <div className="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10">
+        <div className="max-w-screen-sm mx-auto px-4 py-3">
           {/* Mobile Layout */}
-          <div className="lg:hidden">
+          <div className="md:hidden">
             <div className="flex items-center justify-between mb-3">
-              <h1 className="text-lg font-bold text-foreground">Quote Builder</h1>
+              <h1 className="text-lg font-bold text-white">Quote Builder</h1>
               {!loading && (
                 user ? (
                   <div className="flex items-center gap-2">
@@ -170,18 +170,18 @@ export default function QuoteBuilder() {
             
             {/* Mobile Step Progress */}
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-muted-foreground">
+              <span className="text-sm font-medium text-white/80">
                 Step {currentStep} of {steps.length}
               </span>
-              <span className="text-sm text-muted-foreground">
+              <span className="text-sm text-white/60">
                 {steps[currentStep - 1]?.label}
               </span>
             </div>
             
             {/* Mobile Progress Bar */}
-            <div className="w-full bg-gray-200 rounded-full h-2 mb-3">
+            <div className="w-full bg-white/20 rounded-full h-2 mb-3">
               <div 
-                className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                className="bg-red-600 h-2 rounded-full transition-all duration-300"
                 style={{ width: `${(currentStep / steps.length) * 100}%` }}
               />
             </div>
@@ -199,8 +199,8 @@ export default function QuoteBuilder() {
             )}
           </div>
 
-          {/* Desktop Layout */}
-          <div className="hidden lg:flex items-center justify-between">
+          {/* Desktop Layout - Hidden on mobile */}
+          <div className="hidden md:flex items-center justify-between">
             <div className="flex items-center gap-8">
               {/* Desktop Step Indicators */}
               <div className="flex items-center gap-2">
@@ -271,7 +271,8 @@ export default function QuoteBuilder() {
       </div>
 
       {/* Main Content */}
-      <AnimatePresence mode="wait">
+      <div className="max-w-screen-sm mx-auto px-4">
+        <AnimatePresence mode="wait">
         {currentStep === 1 && (
           <motion.div
             key="motor-selection"
@@ -304,18 +305,16 @@ export default function QuoteBuilder() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
           >
-            <div className="container mx-auto px-4 py-8">
-              <BoatInformation
-                selectedMotor={selectedMotor}
-                includeTradeIn={false}
-                onBack={() => setCurrentStep(2)}
-                onStepComplete={(info) => {
-                  setBoatInfo(info);
-                  setCurrentStep(4);
-                }}
-                onShowCompatibleMotors={() => setCurrentStep(1)}
-              />
-            </div>
+            <BoatInformation
+              selectedMotor={selectedMotor}
+              includeTradeIn={false}
+              onBack={() => setCurrentStep(2)}
+              onStepComplete={(info) => {
+                setBoatInfo(info);
+                setCurrentStep(4);
+              }}
+              onShowCompatibleMotors={() => setCurrentStep(1)}
+            />
           </motion.div>
         )}
 
@@ -344,27 +343,25 @@ export default function QuoteBuilder() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
           >
-            <div className="container mx-auto px-4 py-8">
-              <TradeInValuation
-                tradeInInfo={tradeInInfo}
-                onTradeInChange={setTradeInInfo}
-                currentMotorBrand={boatInfo?.currentMotorBrand || selectedMotor?.brand || selectedMotor?.manufacturer || 'Mercury'}
-                currentHp={boatInfo?.currentHp || (typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp)}
-              />
-              <div className="mt-6 flex items-center justify-between">
-                <Button variant="outline" onClick={() => {
-                  if (purchasePath === 'installed') {
-                    setCurrentStep(3);
-                  } else if (isSmallTillerLoose) {
-                    setCurrentStep(3); // Back to fuel options
-                  } else {
-                    setCurrentStep(2); // Back to purchase path
-                  }
-                }}>Back</Button>
-                <Button onClick={() => setCurrentStep(isSmallTillerLoose ? 5 : (purchasePath === 'installed' ? 5 : 4))}>
-                  Continue
-                </Button>
-              </div>
+            <TradeInValuation
+              tradeInInfo={tradeInInfo}
+              onTradeInChange={setTradeInInfo}
+              currentMotorBrand={boatInfo?.currentMotorBrand || selectedMotor?.brand || selectedMotor?.manufacturer || 'Mercury'}
+              currentHp={boatInfo?.currentHp || (typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp)}
+            />
+            <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+              <Button variant="outline" className="min-h-[44px] w-full md:w-auto" onClick={() => {
+                if (purchasePath === 'installed') {
+                  setCurrentStep(3);
+                } else if (isSmallTillerLoose) {
+                  setCurrentStep(3); // Back to fuel options
+                } else {
+                  setCurrentStep(2); // Back to purchase path
+                }
+              }}>Back</Button>
+              <Button className="w-full md:w-auto py-3 bg-red-600 rounded-xl" onClick={() => setCurrentStep(isSmallTillerLoose ? 5 : (purchasePath === 'installed' ? 5 : 4))}>
+                Continue
+              </Button>
             </div>
           </motion.div>
         )}
@@ -432,6 +429,7 @@ export default function QuoteBuilder() {
             </motion.div>
           )}
         </AnimatePresence>
+      </div>
 
       {/* Floating Achievement Toast */}
       {showAchievement && (

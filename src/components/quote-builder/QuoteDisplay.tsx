@@ -470,10 +470,10 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   if (!quoteData.motor) return null;
 
   return (
-    <div className="container mx-auto px-4 py-6 md:py-8 max-w-4xl">
+    <div className="pb-20">
       {/* Mobile-Optimized Header */}
-      <div className="text-center space-y-3 md:space-y-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground">Your Quote Summary</h2>
+      <div className="text-center space-y-3 md:space-y-4 mb-6">
+        <h2 className="text-xl md:text-3xl font-bold text-foreground">Your Quote Summary</h2>
         <p className="text-base md:text-lg text-muted-foreground">
           Review your selection and financing options
         </p>

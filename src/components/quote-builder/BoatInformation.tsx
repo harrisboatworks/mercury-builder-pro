@@ -266,7 +266,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     onStepComplete({ ...boatInfo, tradeIn: tradeInInfo });
   };
   return (
-    <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 px-4">
+    <div className="space-y-6 md:space-y-8">
       {/* Header */}
       <div className="text-center space-y-3 animate-fade-in">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">Boat Details Wizard</h2>
@@ -299,7 +299,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Step Content */}
-        <div className="px-4 md:px-0">
+        <div>
         {boatInfo.type === 'motor-only' ? (
           <>
             {currentStep === 0 && (
@@ -365,23 +365,23 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                     <Label className="text-2xl font-bold">What type of boat do you have?</Label>
                     <p className="text-muted-foreground">Pick the closest match.</p>
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                    {boatTypes.filter(t => t.id !== 'motor-only').map((type) => (
-                      <button
-                        type="button"
-                        key={type.id}
-                        onClick={() => setBoatInfo(prev => ({ ...prev, type: type.id }))}
-                        className={`group relative rounded-xl border-2 bg-card p-4 md:p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-primary bg-primary/5' : 'border-border'}`}
-                        aria-pressed={boatInfo.type === type.id}
-                      >
-                        <div className="mb-3 h-28 md:h-36 overflow-hidden rounded-md border-b border-border bg-gradient-to-b from-muted/40 to-background flex items-center justify-center">
-                          <img
-                            src={type.image}
-                            alt={`${type.label} boat`}
-                            className="h-24 md:h-32 w-full object-contain transition-transform duration-200 group-hover:scale-[1.03]"
-                            loading="lazy"
-                          />
-                        </div>
+                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                     {boatTypes.filter(t => t.id !== 'motor-only').map((type) => (
+                       <button
+                         type="button"
+                         key={type.id}
+                         onClick={() => setBoatInfo(prev => ({ ...prev, type: type.id }))}
+                         className={`group relative rounded-2xl border-2 p-4 bg-zinc-900 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-red-600 bg-red-600/10' : 'border-zinc-700'}`}
+                         aria-pressed={boatInfo.type === type.id}
+                       >
+                         <div className="mb-3 h-28 md:h-36 overflow-hidden rounded-md border-b border-zinc-700 bg-gradient-to-b from-zinc-800 to-zinc-900 flex items-center justify-center">
+                           <img
+                             src={type.image}
+                             alt={`${type.label} boat`}
+                             className="w-full h-auto object-contain transition-transform duration-200 group-hover:scale-[1.03]"
+                             loading="lazy"
+                           />
+                         </div>
                         <h3 className="font-semibold text-base md:text-lg">{type.label}</h3>
                         <div className="boat-details mt-1 space-y-0.5">
                           <span className="block text-sm md:text-base text-muted-foreground">{type.description}</span>
@@ -417,11 +417,11 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                       className="group relative rounded-xl border-2 border-border bg-card p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg"
                     >
                       <div className="mb-3 h-24 overflow-hidden rounded-md border-b border-border bg-gradient-to-b from-muted/40 to-background flex items-center justify-center">
-                        <img
-                          src="/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076.png"
-                          alt="Not sure? We'll help you choose your boat type"
-                          className="h-20 w-full object-contain"
-                          loading="lazy"
+                           <img
+                             src="/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076.png"
+                             alt="Not sure? We'll help you choose your boat type"
+                             className="h-20 w-full object-contain"
+                             loading="lazy"
                         />
                       </div>
                       <h3 className="font-semibold">Not Sure?</h3>
@@ -868,16 +868,26 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                     })()}
 
                     {/* Optional make/model */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label>Boat Make (Optional)</Label>
-                        <Input value={boatInfo.make} onChange={(e) => setBoatInfo(prev => ({ ...prev, make: e.target.value }))} placeholder="e.g., Boston Whaler" />
-                      </div>
-                      <div className="space-y-2">
-                        <Label>Boat Model (Optional)</Label>
-                        <Input value={boatInfo.model} onChange={(e) => setBoatInfo(prev => ({ ...prev, model: e.target.value }))} placeholder="e.g., Montauk 170" />
-                      </div>
-                    </div>
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                       <div className="space-y-2">
+                         <Label>Boat Make (Optional)</Label>
+                         <Input 
+                           value={boatInfo.make} 
+                           onChange={(e) => setBoatInfo(prev => ({ ...prev, make: e.target.value }))} 
+                           placeholder="e.g., Boston Whaler" 
+                           className="min-h-[44px] py-3 text-base w-full"
+                         />
+                       </div>
+                       <div className="space-y-2">
+                         <Label>Boat Model (Optional)</Label>
+                         <Input 
+                           value={boatInfo.model} 
+                           onChange={(e) => setBoatInfo(prev => ({ ...prev, model: e.target.value }))} 
+                           placeholder="e.g., Montauk 170" 
+                           className="min-h-[44px] py-3 text-base w-full"
+                         />
+                       </div>
+                     </div>
                   </div>
                 </div>
               </Card>
