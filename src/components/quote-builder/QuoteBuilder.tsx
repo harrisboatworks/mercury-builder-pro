@@ -163,7 +163,11 @@ export default function QuoteBuilder() {
               
               {/* Centered Logo Group on Mobile */}
               <div className="flex items-center justify-center gap-3 flex-1">
-                <img src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" alt="Harris Boat Works" className="h-16" />
+                <img 
+                  src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" 
+                  alt="Harris Boat Works" 
+                  className="h-16" 
+                />
                 <img src="/src/assets/mercury-logo.png" alt="Mercury" className="h-12" />
               </div>
               
@@ -187,8 +191,13 @@ export default function QuoteBuilder() {
             <div className="flex items-center gap-8">
               {/* Desktop Logo Group */}
               <div className="flex items-center gap-4">
-                <img src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" alt="Harris Boat Works" className="h-20" />
+                <img 
+                  src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" 
+                  alt="Harris Boat Works" 
+                  className="h-20" 
+                />
                 <img src="/src/assets/mercury-logo.png" alt="Mercury" className="h-16" />
+                <span className="text-sm text-gray-600 font-medium">Platinum Mercury Dealer</span>
               </div>
               
               {/* Desktop Step Indicators */}
