@@ -6,36 +6,36 @@
 
 @layer base {
   :root {
-    /* Base colors - Dark maritime theme */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    /* Base colors - Clean maritime theme */
+    --background: 0 0% 100%;
+    --foreground: 210 15% 20%;
 
-    --card: 240 10% 8%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 20%;
 
-    --popover: 240 10% 8%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 20%;
 
-    /* Red accent primary */
-    --primary: 0 84% 60%;
+    /* Ocean blue primary - Professional marine brand */
+    --primary: 207 90% 25%;
     --primary-foreground: 0 0% 100%;
 
-    /* Dark grays */
-    --secondary: 240 4% 16%;
-    --secondary-foreground: 210 40% 98%;
+    /* Light maritime grays */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 210 15% 25%;
 
-    --muted: 240 4% 16%;
-    --muted-foreground: 240 5% 64%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 10% 55%;
 
-    --accent: 240 4% 16%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 210 20% 94%;
+    --accent-foreground: 210 15% 25%;
 
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 4% 25%;
-    --input: 240 4% 16%;
-    --ring: 0 84% 60%;
+    --border: 210 20% 90%;
+    --input: 210 20% 95%;
+    --ring: 207 90% 25%;
 
     --radius: 0.5rem;
 

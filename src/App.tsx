@@ -12,7 +12,6 @@ import { SecureRoute } from "@/components/auth/SecureRoute";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
-import PreviewRedesign from "./pages/PreviewRedesign";
 import AdminPromotions from "./pages/AdminPromotions";
 import AdminQuotes from "./pages/AdminQuotes";
 import AdminQuoteDetail from "./pages/AdminQuoteDetail";
@@ -88,7 +87,6 @@ const App = () => (
               <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
               <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
               <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
-              <Route path="/preview-redesign" element={<PreviewRedesign />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
