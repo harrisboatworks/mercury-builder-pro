@@ -1088,14 +1088,10 @@ export const MotorSelection = ({
       </div>
 
       <div className="flex-1 space-y-8">
-        <div className="text-center space-y-4">
+        <div className="text-center space-y-4 hidden lg:block">
           <div className="flex items-center justify-center gap-4">
             <img src={mercuryLogo} alt="Mercury Marine" className="h-12 w-auto" />
-            <h2 className="text-3xl font-bold text-foreground">Select Your Mercury Outboard</h2>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Choose from our current inventory of Mercury outboard motors. Inventory is automatically updated daily at 2 AM.
-          </p>
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <span className="text-sm text-muted-foreground">
               Last updated: {lastInventoryUpdate ? formatRelativeTime(lastInventoryUpdate) : 'Never'}
