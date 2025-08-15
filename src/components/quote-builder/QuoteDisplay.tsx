@@ -470,10 +470,10 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   if (!quoteData.motor) return null;
 
   return (
-    <div className="container mx-auto px-4 md:px-6 lg:px-8 pb-20 md:pb-8 max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-6xl">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-8 py-12 md:py-16 lg:py-20">
       {/* Mobile-Optimized Header */}
       <div className="text-center space-y-3 md:space-y-4 mb-6">
-        <h2 className="text-xl md:text-3xl font-bold text-foreground">Your Quote Summary</h2>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">Your Quote Summary</h2>
         <p className="text-base md:text-lg text-muted-foreground">
           Review your selection and financing options
         </p>
@@ -1409,7 +1409,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
       )}
       
       {/* Mobile Sticky CTA - Hidden on desktop */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-black/95 backdrop-blur-sm border-t border-white/10 block md:hidden">
+      <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-black/95 backdrop-blur-sm border-t border-zinc-800 block md:hidden">
         <div className="max-w-screen-sm mx-auto">
           <Button 
             onClick={handleContinue}

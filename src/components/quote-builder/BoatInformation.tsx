@@ -266,10 +266,10 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     onStepComplete({ ...boatInfo, tradeIn: tradeInInfo });
   };
   return (
-    <div className="container mx-auto px-4 md:px-6 lg:px-8 space-y-6 md:space-y-8 max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-6xl">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 md:space-y-8 py-12 md:py-16 lg:py-20">
       {/* Header */}
       <div className="text-center space-y-3 animate-fade-in">
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground">Boat Details Wizard</h2>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">Boat Details Wizard</h2>
         <p className="text-base md:text-lg text-muted-foreground">
           Let's match your {selectedMotor?.model || 'Mercury motor'} to your boat, step by step.
         </p>
@@ -365,7 +365,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                     <Label className="text-2xl font-bold">What type of boat do you have?</Label>
                     <p className="text-muted-foreground">Pick the closest match.</p>
                   </div>
-                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                      {boatTypes.filter(t => t.id !== 'motor-only').map((type) => (
                        <button
                          type="button"
@@ -375,12 +375,12 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                          aria-pressed={boatInfo.type === type.id}
                        >
                          <div className="mb-3 h-28 md:h-36 overflow-hidden rounded-md border-b border-zinc-700 bg-gradient-to-b from-zinc-800 to-zinc-900 flex items-center justify-center">
-                           <img
-                             src={type.image}
-                             alt={`${type.label} boat`}
-                             className="w-full h-auto object-contain transition-transform duration-200 group-hover:scale-[1.03]"
-                             loading="lazy"
-                           />
+                            <img
+                              src={type.image}
+                              alt={`${type.label} boat`}
+                              className="w-full h-auto object-contain transition-transform duration-200 group-hover:scale-[1.03]"
+                              loading="lazy"
+                            />
                          </div>
                         <h3 className="font-semibold text-base md:text-lg">{type.label}</h3>
                         <div className="boat-details mt-1 space-y-0.5">
@@ -418,11 +418,11 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                     >
                       <div className="mb-3 h-24 overflow-hidden rounded-md border-b border-border bg-gradient-to-b from-muted/40 to-background flex items-center justify-center">
                            <img
-                             src="/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076.png"
-                             alt="Not sure? We'll help you choose your boat type"
-                             className="h-20 w-full object-contain"
-                             loading="lazy"
-                        />
+                              src="/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076.png"
+                              alt="Not sure? We'll help you choose your boat type"
+                              className="h-20 w-full h-auto object-contain"
+                              loading="lazy"
+                         />
                       </div>
                       <h3 className="font-semibold">Not Sure?</h3>
                       <p className="text-sm text-muted-foreground">We'll help you figure it out</p>
@@ -612,7 +612,8 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                         <img 
                           src="/lovable-uploads/cb45570a-2b96-4b08-af3d-412c7607a66e.png" 
                           alt="Transom height measurement guide showing how to measure from top of transom to bottom of hull" 
-                          className="w-full max-w-lg mx-auto rounded-lg shadow-sm"
+                          className="w-full h-auto max-w-lg mx-auto rounded-lg shadow-sm"
+                          loading="lazy"
                         />
                       </div>
                     </CollapsibleContent>

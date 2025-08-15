@@ -144,12 +144,19 @@ export default function QuoteBuilder() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Mobile-Optimized Header */}
-      <div className="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl py-3">
+      <div className="sticky top-0 z-50 bg-black backdrop-blur-sm border-b border-zinc-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           {/* Mobile Layout */}
           <div className="flex md:hidden">
             <div className="flex items-center justify-between mb-3 w-full">
-              <h1 className="text-lg font-bold text-white">Quote Builder</h1>
+              <div className="flex items-center gap-3">
+                <button className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+                <h1 className="text-lg font-bold text-white">Quote Builder</h1>
+              </div>
               {!loading && (
                 user ? (
                   <div className="flex items-center gap-2">
@@ -271,7 +278,7 @@ export default function QuoteBuilder() {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
         <AnimatePresence mode="wait">
         {currentStep === 1 && (
           <motion.div

@@ -31,21 +31,21 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="container mx-auto px-4 py-8"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20"
     >
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-[#2A4D69] mb-2">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#2A4D69] mb-2">
           Great Choice! {selectedMotor?.model}
         </h2>
         <p className="text-gray-600">How would you like to purchase this motor?</p>
       </div>
       
-      <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         <motion.button
           whileHover={{ scale: 1.02, y: -4 }}
           whileTap={{ scale: 0.98 }}
           onClick={handleLooseMotorSelect}
-          className="relative p-8 border-2 border-gray-200 rounded-3xl hover:border-blue-500 hover:shadow-2xl transition-all bg-white text-left group"
+          className="relative p-6 bg-zinc-900 rounded-2xl hover:bg-zinc-800 transition-colors border-2 border-gray-200 hover:border-blue-500 hover:shadow-2xl text-left group"
         >
           <div className="absolute -top-3 -right-3 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
             Quick & Easy
@@ -95,7 +95,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
           whileHover={{ scale: 1.02, y: -4 }}
           whileTap={{ scale: 0.98 }}
           onClick={handleInstalledSelect}
-          className="relative p-8 border-2 border-gray-200 rounded-3xl hover:border-blue-500 hover:shadow-2xl transition-all bg-white text-left group"
+          className="relative p-6 bg-zinc-900 rounded-2xl hover:bg-zinc-800 transition-colors border-2 border-gray-200 hover:border-blue-500 hover:shadow-2xl text-left group"
         >
           <div className="absolute -top-3 -right-3 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold">
             Full Service
@@ -184,6 +184,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
                   src="/lovable-uploads/4bdf5164-e316-4a1a-959e-654fe246f29c.png" 
                   alt="Deka Marine Master Battery" 
                   className="w-24 h-24 object-contain rounded-lg"
+                  loading="lazy"
                 />
               </div>
             </div>

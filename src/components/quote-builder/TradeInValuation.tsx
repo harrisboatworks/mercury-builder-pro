@@ -103,7 +103,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
           </Label>
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <div className="text-lg font-bold text-foreground">Do you have a motor to trade?</div>
-            <div className="grid md:grid-cols-2 gap-4 w-full md:w-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-auto">
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -152,7 +152,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
                   value={tradeInInfo.brand} 
                   onValueChange={(value) => onTradeInChange({ ...tradeInInfo, brand: value })}
                 >
-                  <SelectTrigger>
+                  <SelectTrigger className="w-full min-h-[44px] py-3 px-4 rounded-lg bg-white text-black border border-gray-300">
                     <SelectValue placeholder="Select brand" />
                   </SelectTrigger>
                   <SelectContent>
@@ -169,7 +169,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
                   value={tradeInInfo.year?.toString() || ''} 
                   onValueChange={(value) => onTradeInChange({ ...tradeInInfo, year: parseInt(value) })}
                 >
-                  <SelectTrigger>
+                  <SelectTrigger className="w-full min-h-[44px] py-3 px-4 rounded-lg bg-white text-black border border-gray-300">
                     <SelectValue placeholder="Select year" />
                   </SelectTrigger>
                   <SelectContent>
@@ -190,6 +190,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
                   placeholder="e.g., 115"
                   min="1"
                   max="600"
+                  className="w-full min-h-[44px] py-3 px-4 rounded-lg bg-white text-black border border-gray-300"
                 />
               </div>
 
@@ -200,6 +201,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
                   value={tradeInInfo.model}
                   onChange={(e) => onTradeInChange({ ...tradeInInfo, model: e.target.value })}
                   placeholder="e.g., OptiMax Pro XS"
+                  className="w-full min-h-[44px] py-3 px-4 rounded-lg bg-white text-black border border-gray-300"
                 />
               </div>
             </div>
@@ -253,6 +255,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
                 value={tradeInInfo.serialNumber}
                 onChange={(e) => onTradeInChange({ ...tradeInInfo, serialNumber: e.target.value })}
                 placeholder="Motor serial number"
+                className="w-full min-h-[44px] py-3 px-4 rounded-lg bg-white text-black border border-gray-300"
               />
             </div>
 
@@ -260,10 +263,10 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
             <Button 
               onClick={handleGetEstimate}
               disabled={!tradeInInfo.brand || !tradeInInfo.year || !tradeInInfo.horsepower || !tradeInInfo.condition || isLoading}
-              className={`w-full ${
+              className={`w-full py-3 px-6 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-colors ${
                 !tradeInInfo.brand || !tradeInInfo.year || !tradeInInfo.horsepower || !tradeInInfo.condition || isLoading
                   ? 'bg-muted text-muted-foreground cursor-not-allowed' 
-                  : 'bg-primary hover:bg-primary/90'
+                  : ''
               }`}
               size="lg"
             >
@@ -357,12 +360,12 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
 
             {/* Repower Center Authority */}
             <div className="repower-authority text-center mt-4">
-              <img
-                src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
-                alt="Official Mercury Repower Center badge"
-                loading="lazy"
-                className="h-12 mx-auto mb-2 w-auto"
-              />
+                <img
+                  src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
+                  alt="Official Mercury Repower Center badge"
+                  loading="lazy"
+                  className="h-12 mx-auto mb-2 w-auto"
+                />
               <p className="font-semibold text-foreground">As a Certified Mercury Repower Center, we offer:</p>
               <ul className="mt-2 space-y-1 text-sm text-foreground/90">
                 <li>✓ Competitive trade-in options</li>
