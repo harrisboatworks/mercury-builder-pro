@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Flame, TrendingUp, CheckCircle, Tag, Anchor, Heart, Eye } from 'lucide-react';
+import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Flame, TrendingUp, CheckCircle, Tag, Anchor, Heart, Eye, Search } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -395,6 +395,8 @@ export const MotorSelection = ({
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedHPRange, setSelectedHPRange] = useState<string>('all');
   const [inStockOnly, setInStockOnly] = useState<boolean>(false);
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState<boolean>(false);
+  const [selectedEngineType, setSelectedEngineType] = useState<string>('all');
   const debugPricing = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
   const [quickViewLoading, setQuickViewLoading] = useState(false);
 
@@ -833,6 +835,25 @@ export const MotorSelection = ({
     // In Stock Only toggle
     if (inStockOnly && motor.stockStatus !== 'In Stock') return false;
     
+    // Engine Type filtering
+    if (selectedEngineType !== 'all') {
+      const model = motor.model?.toLowerCase() || '';
+      switch (selectedEngineType) {
+        case 'fourstroke':
+          if (!model.includes('fourstroke') && !model.includes('4-stroke')) return false;
+          break;
+        case 'verado':
+          if (!model.includes('verado')) return false;
+          break;
+        case 'proxs':
+          if (!model.includes('proxs') && !model.includes('pro xs')) return false;
+          break;
+        case 'seapro':
+          if (!model.includes('seapro')) return false;
+          break;
+      }
+    }
+    
     // HP Range filtering from tabs
     if (selectedHPRange !== 'all') {
       const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
@@ -1079,8 +1100,161 @@ export const MotorSelection = ({
       </div>;
   }
   return <div className={`${showCelebration ? 'canadian-celebration' : ''}`}>
-      {/* Sticky Search and Filter Bar - Always visible on top */}
-      <div className="sticky top-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border mb-6">
+      {/* Mobile-Only Sticky Search and Filter Bar */}
+      <div className="sticky top-[60px] z-30 bg-background border-b border-border shadow-sm lg:hidden">
+        {/* Compact single row */}
+        <div className="flex items-center gap-2 p-3">
+          {/* Search - compact with icon */}
+          <div className="flex-1 relative">
+            <Input 
+              type="search" 
+              placeholder="Search HP"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-8 pr-3 py-2 bg-muted/50 border-0 rounded-lg text-sm h-9"
+            />
+            <Search className="absolute left-2.5 top-2.5 w-4 h-4 text-muted-foreground" />
+          </div>
+          
+          {/* In Stock Toggle - compact */}
+          <label className={`flex items-center gap-1.5 px-3 py-2 rounded-lg cursor-pointer transition-all ${
+            inStockOnly 
+              ? 'bg-green-100 text-green-700 border border-green-200' 
+              : 'bg-muted/50 text-muted-foreground border-0'
+          }`}>
+            <input 
+              type="checkbox" 
+              className="w-4 h-4 rounded text-green-600"
+              checked={inStockOnly}
+              onChange={(e) => setInStockOnly(e.target.checked)}
+            />
+            <span className="text-sm font-medium">Stock</span>
+          </label>
+          
+          {/* Filter button - icon only */}
+          <Button 
+            variant="ghost"
+            size="sm"
+            className="p-2 bg-muted/50 rounded-lg h-9 w-9"
+            onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}
+          >
+            <Settings className="w-5 h-5" />
+          </Button>
+        </div>
+        
+        {/* Active Filters Chips */}
+        {(selectedHPRange !== 'all' || selectedEngineType !== 'all' || inStockOnly || searchQuery) && (
+          <div className="flex gap-2 px-3 pb-2 overflow-x-auto">
+            {selectedHPRange !== 'all' && (
+              <button 
+                className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium whitespace-nowrap"
+                onClick={() => setSelectedHPRange('all')}
+              >
+                {selectedHPRange === '2.5-20' && 'Portable (2.5-20 HP)'}
+                {selectedHPRange === '25-60' && 'Mid-Range (25-60 HP)'}
+                {selectedHPRange === '75-150' && 'High Power (75-150 HP)'}
+                {selectedHPRange === '175-300' && 'V6 (175-300 HP)'}
+                {selectedHPRange === '350+' && 'V8 (350+ HP)'}
+                <span>✕</span>
+              </button>
+            )}
+            {selectedEngineType !== 'all' && (
+              <button 
+                className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium whitespace-nowrap"
+                onClick={() => setSelectedEngineType('all')}
+              >
+                {selectedEngineType === 'fourstroke' && 'FourStroke'}
+                {selectedEngineType === 'verado' && 'Verado'}
+                {selectedEngineType === 'proxs' && 'Pro XS'}
+                {selectedEngineType === 'seapro' && 'SeaPro'}
+                <span>✕</span>
+              </button>
+            )}
+            {inStockOnly && (
+              <button 
+                className="flex items-center gap-1 px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium whitespace-nowrap"
+                onClick={() => setInStockOnly(false)}
+              >
+                In Stock <span>✕</span>
+              </button>
+            )}
+            {searchQuery && (
+              <button 
+                className="flex items-center gap-1 px-3 py-1 bg-muted text-muted-foreground rounded-full text-xs font-medium whitespace-nowrap"
+                onClick={() => setSearchQuery('')}
+              >
+                "{searchQuery}" <span>✕</span>
+              </button>
+            )}
+          </div>
+        )}
+        
+        {/* Expandable Filter Dropdown */}
+        {mobileFiltersOpen && (
+          <div className="bg-background border-t border-border p-3 space-y-2">
+            {/* HP Range */}
+            <select 
+              className="w-full px-3 py-2 bg-muted/50 rounded-lg text-sm border-0"
+              value={selectedHPRange}
+              onChange={(e) => setSelectedHPRange(e.target.value)}
+            >
+              <option value="all">All Horsepower</option>
+              <option value="2.5-20">Portable (2.5-20 HP)</option>
+              <option value="25-60">Mid-Range (25-60 HP)</option>
+              <option value="75-150">High Power (75-150 HP)</option>
+              <option value="175-300">V6 (175-300 HP)</option>
+              <option value="350+">V8 (350+ HP)</option>
+            </select>
+            
+            {/* Engine Type */}
+            <select 
+              className="w-full px-3 py-2 bg-muted/50 rounded-lg text-sm border-0"
+              value={selectedEngineType}
+              onChange={(e) => setSelectedEngineType(e.target.value)}
+            >
+              <option value="all">All Types</option>
+              <option value="fourstroke">FourStroke</option>
+              <option value="verado">Verado</option>
+              <option value="proxs">Pro XS</option>
+              <option value="seapro">SeaPro</option>
+            </select>
+            
+            {/* Clear/Apply buttons */}
+            <div className="flex gap-2 pt-1">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="flex-1 text-sm text-muted-foreground"
+                onClick={() => {
+                  setSearchQuery('');
+                  setSelectedHPRange('all');
+                  setSelectedEngineType('all');
+                  setInStockOnly(false);
+                }}
+              >
+                Clear All
+              </Button>
+              <Button 
+                size="sm" 
+                className="flex-1 text-sm font-medium"
+                onClick={() => setMobileFiltersOpen(false)}
+              >
+                Apply Filters
+              </Button>
+            </div>
+          </div>
+        )}
+        
+        {/* Results Count - Mobile */}
+        <div className="px-3 pb-2">
+          <p className="text-sm text-muted-foreground">
+            Showing {filteredMotors.length} motor{filteredMotors.length !== 1 ? 's' : ''}
+          </p>
+        </div>
+      </div>
+
+      {/* Desktop Search and Filter Bar */}
+      <div className="sticky top-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border mb-6 hidden lg:block">
         <div className="container mx-auto px-4 py-3 space-y-3">
           {/* Search Bar */}
           <div className="flex gap-2">
