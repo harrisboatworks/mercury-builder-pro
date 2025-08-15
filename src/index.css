@@ -785,11 +785,8 @@
     text-transform: none;
     gap: 0.25rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.25);
-  }
-    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
     position: relative;
     overflow: hidden;
-    gap: 0.25rem;
   }
 
   .product-card .badge--repower::before {
@@ -837,5 +834,4 @@
     pointer-events: none;
   }
   .cottage-mode { background: var(--gradient-hero); }
-}
 
