@@ -6,36 +6,36 @@
 
 @layer base {
   :root {
-    /* Base colors - Clean maritime theme */
-    --background: 0 0% 100%;
-    --foreground: 210 15% 20%;
+    /* Dark Theme Colors - Harris Maritime Professional */
+    --background: 0 0% 3.9%; /* Very dark gray/black */
+    --foreground: 0 0% 98%; /* Near white */
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 15% 20%;
+    --card: 0 0% 8%; /* Slightly lighter than background */
+    --card-foreground: 0 0% 95%; /* Light text on cards */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 15% 20%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    /* Ocean blue primary - Professional marine brand */
-    --primary: 207 90% 25%;
-    --primary-foreground: 0 0% 100%;
+    /* Red accent for CTAs */
+    --primary: 0 72.2% 50.6%; /* Mercury Red */
+    --primary-foreground: 0 85.7% 97.3%;
 
-    /* Light maritime grays */
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 210 15% 25%;
+    /* Dark maritime grays */
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 210 10% 55%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
 
-    --accent: 210 20% 94%;
-    --accent-foreground: 210 15% 25%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 75% 55%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 95%;
-    --ring: 207 90% 25%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 72.2% 50.6%;
 
     --radius: 0.5rem;
 
@@ -103,33 +103,34 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme now matches root - keep for compatibility */
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 72.2% 50.6%;
+    --primary-foreground: 0 85.7% 97.3%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 72.2% 50.6%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -148,30 +149,37 @@
 
   body {
     @apply bg-background text-foreground;
-    /* Mobile-first font sizing */
+    /* Mobile-first font sizing - prevent horizontal scroll */
     font-size: 16px;
     line-height: 1.5;
+    overflow-x: hidden;
   }
   
   /* Mobile typography improvements */
   @media (max-width: 768px) {
     body {
       font-size: 16px; /* Ensure minimum 16px for mobile readability */
+      overflow-x: hidden;
     }
     
+    /* Responsive text scaling for mobile */
     h1 { font-size: 1.75rem; line-height: 1.2; }
     h2 { font-size: 1.5rem; line-height: 1.3; }
     h3 { font-size: 1.25rem; line-height: 1.4; }
     
+    .text-4xl { font-size: 2rem !important; }
+    .text-3xl { font-size: 1.75rem !important; }
+    .text-2xl { font-size: 1.5rem !important; }
+    
     /* Minimum touch target sizes */
     button, .btn, [role="button"] {
-      min-height: 44px;
-      min-width: 44px;
+      min-height: 48px;
+      min-width: 48px;
     }
     
     /* Better form field sizing */  
     input, select, textarea {
-      min-height: 44px;
+      min-height: 48px;
       font-size: 16px; /* Prevents zoom on iOS */
     }
     
@@ -181,13 +189,17 @@
       padding-right: 1rem;
     }
     
-    /* Grid improvements for mobile */
+    /* Grid improvements for mobile - force single column */
     .grid-cols-2 {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr !important;
     }
     
     .grid-cols-3 {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr !important;
+    }
+    
+    .grid-cols-4 {
+      grid-template-columns: 1fr !important;
     }
     
     /* Card spacing optimization */
@@ -196,12 +208,12 @@
     }
     
     /* Better button grouping on mobile */
-    .flex.gap-2 {
+    .flex.gap-2:not(.keep-flex) {
       flex-direction: column;
       gap: 0.75rem;
     }
     
-    .flex.gap-3 {
+    .flex.gap-3:not(.keep-flex) {
       flex-direction: column;
       gap: 0.75rem;
     }

@@ -142,9 +142,9 @@ export default function QuoteBuilder() {
         ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-black overflow-x-hidden">
       {/* Mobile-Optimized Header */}
-      <div className="sticky top-0 z-50 bg-black backdrop-blur-sm border-b border-zinc-800">
+      <div className="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           {/* Mobile Layout */}
           <div className="flex md:hidden">
@@ -278,7 +278,7 @@ export default function QuoteBuilder() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
         <AnimatePresence mode="wait">
         {currentStep === 1 && (
           <motion.div
@@ -357,7 +357,7 @@ export default function QuoteBuilder() {
               currentHp={boatInfo?.currentHp || (typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp)}
             />
             <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-              <Button variant="outline" className="min-h-[44px] w-full md:w-auto" onClick={() => {
+              <Button variant="outline" className="min-h-[48px] w-full md:w-auto py-3" onClick={() => {
                 if (purchasePath === 'installed') {
                   setCurrentStep(3);
                 } else if (isSmallTillerLoose) {
@@ -366,7 +366,7 @@ export default function QuoteBuilder() {
                   setCurrentStep(2); // Back to purchase path
                 }
               }}>Back</Button>
-              <Button className="w-full md:w-auto py-3 bg-red-600 rounded-xl" onClick={() => setCurrentStep(isSmallTillerLoose ? 5 : (purchasePath === 'installed' ? 5 : 4))}>
+              <Button className="w-full md:w-auto py-3 bg-red-600 rounded-xl min-h-[48px]" onClick={() => setCurrentStep(isSmallTillerLoose ? 5 : (purchasePath === 'installed' ? 5 : 4))}>
                 Continue
               </Button>
             </div>
