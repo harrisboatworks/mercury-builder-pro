@@ -392,6 +392,8 @@ export const MotorSelection = ({
   const [harrisLogoUrl, setHarrisLogoUrl] = useState<string>('/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png');
   const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
   const [modelSearch, setModelSearch] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [selectedHPRange, setSelectedHPRange] = useState<string>('all');
   const debugPricing = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
   const [quickViewLoading, setQuickViewLoading] = useState(false);
 
@@ -822,7 +824,33 @@ export const MotorSelection = ({
     }
   };
   const filteredMotors = motors.filter(motor => {
+    // Search functionality - check both model search (sidebar) and main search query
     if (modelSearch && !motor.model?.toLowerCase().includes(modelSearch.toLowerCase())) return false;
+    if (searchQuery && !motor.model?.toLowerCase().includes(searchQuery.toLowerCase()) && 
+        !motor.hp.toString().includes(searchQuery)) return false;
+    
+    // HP Range filtering from tabs
+    if (selectedHPRange !== 'all') {
+      const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
+      switch (selectedHPRange) {
+        case '2.5-20':
+          if (hp < 2.5 || hp > 20) return false;
+          break;
+        case '25-60':
+          if (hp < 25 || hp > 60) return false;
+          break;
+        case '75-150':
+          if (hp < 75 || hp > 150) return false;
+          break;
+        case '175-300':
+          if (hp < 175 || hp > 300) return false;
+          break;
+        case '350+':
+          if (hp < 350) return false;
+          break;
+      }
+    }
+    
     if (filters.category !== 'all' && motor.category !== filters.category) return false;
     if (filters.stockStatus !== 'all' && motor.stockStatus !== filters.stockStatus) return false;
     if (motor.price < filters.priceRange[0] || motor.price > filters.priceRange[1]) return false;
@@ -1046,8 +1074,110 @@ export const MotorSelection = ({
         </div>
       </div>;
   }
-  return <div className={`flex gap-6 ${showCelebration ? 'canadian-celebration' : ''}`}>
-      <div className={`${filtersOpen ? 'w-80' : 'w-16'} transition-all duration-300 flex-shrink-0 hidden lg:block`}>
+  return <div className={`${showCelebration ? 'canadian-celebration' : ''}`}>
+      {/* Sticky Search and Filter Bar - Always visible on top */}
+      <div className="sticky top-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border mb-6">
+        <div className="container mx-auto px-4 py-3 space-y-3">
+          {/* Search Bar */}
+          <div className="flex gap-2">
+            <div className="flex-1 relative">
+              <Input 
+                type="search" 
+                placeholder="Search HP (e.g., '150' or '9.9')"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10"
+              />
+              <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">
+                🔍
+              </div>
+            </div>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="px-4"
+              onClick={() => {
+                setSearchQuery('');
+                setSelectedHPRange('all');
+              }}
+            >
+              Clear
+            </Button>
+          </div>
+          
+          {/* HP Range Filter Tabs */}
+          <div className="flex gap-2 overflow-x-auto pb-2">
+            <Button 
+              variant={selectedHPRange === 'all' ? 'default' : 'outline'}
+              size="sm"
+              className="whitespace-nowrap rounded-full"
+              onClick={() => setSelectedHPRange('all')}
+            >
+              All
+            </Button>
+            <Button 
+              variant={selectedHPRange === '2.5-20' ? 'default' : 'outline'}
+              size="sm"
+              className="whitespace-nowrap rounded-full"
+              onClick={() => setSelectedHPRange('2.5-20')}
+            >
+              2.5-20 HP
+            </Button>
+            <Button 
+              variant={selectedHPRange === '25-60' ? 'default' : 'outline'}
+              size="sm"
+              className="whitespace-nowrap rounded-full"
+              onClick={() => setSelectedHPRange('25-60')}
+            >
+              25-60 HP
+            </Button>
+            <Button 
+              variant={selectedHPRange === '75-150' ? 'default' : 'outline'}
+              size="sm"
+              className="whitespace-nowrap rounded-full"
+              onClick={() => setSelectedHPRange('75-150')}
+            >
+              75-150 HP
+            </Button>
+            <Button 
+              variant={selectedHPRange === '175-300' ? 'default' : 'outline'}
+              size="sm"
+              className="whitespace-nowrap rounded-full"
+              onClick={() => setSelectedHPRange('175-300')}
+            >
+              175-300 HP
+            </Button>
+            <Button 
+              variant={selectedHPRange === '350+' ? 'default' : 'outline'}
+              size="sm"
+              className="whitespace-nowrap rounded-full"
+              onClick={() => setSelectedHPRange('350+')}
+            >
+              350+ HP
+            </Button>
+          </div>
+          
+          {/* Results Count */}
+          <div className="flex items-center justify-between">
+            <p className="text-sm text-muted-foreground">
+              Showing {filteredMotors.length} motor{filteredMotors.length !== 1 ? 's' : ''}
+            </p>
+            <div className="flex items-center gap-2 lg:hidden">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => setFiltersOpen(!filtersOpen)}
+                className="text-xs"
+              >
+                🎚️ Filter
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex gap-6">
+        <div className={`${filtersOpen ? 'w-80' : 'w-16'} transition-all duration-300 flex-shrink-0 hidden lg:block`}>
         {filtersOpen && <Card className="mb-4">
             <div className="p-4 space-y-6">
               <div>
@@ -1816,5 +1946,6 @@ export const MotorSelection = ({
         </DialogContent>
       </Dialog>
 
-    </div>;
+    </div>
+  </div>;
 };
