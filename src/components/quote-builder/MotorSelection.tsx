@@ -1708,28 +1708,7 @@ export const MotorSelection = ({
           </Card>;
         })}
         </div>}
-                              
                                 <p>Mercury’s Repower Rebate Program — trade in or repower for potential savings. See details.</p>
-                                
-                        setActivePromoModal(promotionsState.find(p => /(repower\s*rebate|repower)/i.test([p.name, p.bonus_title, p.bonus_short_badge, p.bonus_description].filter(Boolean).join(' '))) || null);
-                        track('rebate_badge_click', {
-                          model_id: motor.id,
-                          model_name: motor.model
-                        });
-                      }}>
-                                  Learn More
-                                </button>
-                              </div>
-                            </TooltipContent>
-                          </Tooltip>}
-                       </div>}
-
-                    {/* Mobile Get Quote Button - REMOVED per requirements */}
-
-                  </div>
-                </Card>;
-        })}
-          </div>}
 
 
         {selectedMotor && !showStickyBar && (selectedMotor as any).stockStatus !== 'Sold' && <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
@@ -2216,7 +2195,7 @@ export const MotorSelection = ({
             {/* CTA Button */}
             <button 
               className="flex-1 bg-gradient-to-r from-red-600 to-red-500 text-white py-3 px-6 rounded-xl font-bold text-lg shadow-lg active:scale-95 transition-transform"
-              onClick={() => handleMotorSelect(selectedMotor)}
+              onClick={() => handleMotorSelection(selectedMotor)}
             >
               Get Quote →
             </button>
