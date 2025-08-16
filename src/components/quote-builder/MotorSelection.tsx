@@ -1384,7 +1384,7 @@ export const MotorSelection = ({
       </div>
 
       <div className="flex gap-6">
-        <div className={`${filtersOpen ? 'w-80' : 'w-16'} transition-all duration-300 flex-shrink-0 hidden lg:block sticky top-[88px] self-start max-h-[calc(100vh-96px)] overflow-y-auto`}>
+        <div className={`${filtersOpen ? 'w-80' : 'w-16'} transition-all duration-300 flex-shrink-0 hidden lg:block sticky top-[88px] self-start`}>
         {filtersOpen && <div className="border-t border-border my-4" />}
         <MotorFinderWizard filters={filters} setFilters={setFilters} viewMode={viewMode} setViewMode={setViewMode} resultsCount={filteredMotors.length} isOpen={filtersOpen} onToggle={() => setFiltersOpen(!filtersOpen)} />
         
