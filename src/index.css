@@ -881,6 +881,32 @@
     height: 44px;
     min-height: 44px;
     max-height: 44px;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    overflow: hidden;
+  }
+  
+  /* Force horizontal layout for search bar children */
+  .mobile-search-bar > * {
+    flex-shrink: 0;
+  }
+  
+  .mobile-search-bar .search-input-container {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .mobile-search-bar .stock-toggle-container {
+    width: 64px;
+    min-width: 64px;
+    max-width: 64px;
+  }
+  
+  .mobile-search-bar .filter-button-container {
+    width: 44px;
+    min-width: 44px;
+    max-width: 44px;
   }
   
   /* Reduce card padding on mobile for more content visibility */

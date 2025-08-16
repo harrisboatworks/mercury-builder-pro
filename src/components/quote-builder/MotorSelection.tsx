@@ -1116,10 +1116,10 @@ export const MotorSelection = ({
   return <div className={`${showCelebration ? 'canadian-celebration' : ''}`}>
       {/* Mobile-Only Sticky Search and Filter Bar - Compact ≤44px */}
       <div className="sticky top-[56px] z-30 bg-background border-b border-border shadow-sm lg:hidden">
-        {/* Compact single row */}
-        <div className="flex items-center gap-2 p-2">
-          {/* Search - compact with icon */}
-          <div className="flex-1 relative">
+        {/* Compact single row - force horizontal layout */}
+        <div className="flex flex-row items-center gap-2 p-2 h-12 overflow-hidden">
+          {/* Search - compact with icon, constrained width */}
+          <div className="flex-1 min-w-0 relative">
             <Input 
               type="search" 
               placeholder="Search HP"
@@ -1138,53 +1138,57 @@ export const MotorSelection = ({
             <Search className="absolute left-2.5 top-2 w-4 h-4 text-muted-foreground" />
           </div>
           
-          {/* In Stock Toggle - compact */}
-          <label className={`flex items-center gap-1.5 px-2 py-1.5 rounded-lg cursor-pointer transition-all min-w-11 h-8 ${
-            inStockOnly 
-              ? 'bg-green-100 text-green-700 border border-green-200' 
-              : 'bg-muted/50 text-muted-foreground border-0'
-          }`}>
-            <input 
-              type="checkbox" 
-              className="w-3.5 h-3.5 rounded text-green-600"
-              checked={inStockOnly}
-              onChange={(e) => {
-                setInStockOnly(e.target.checked);
-                // Fire filter_applied analytics event
+          {/* In Stock Toggle - compact, fixed width */}
+          <div className="flex-shrink-0">
+            <label className={`flex items-center gap-1.5 px-2 py-1.5 rounded-lg cursor-pointer transition-all w-16 h-8 ${
+              inStockOnly 
+                ? 'bg-green-100 text-green-700 border border-green-200' 
+                : 'bg-muted/50 text-muted-foreground border-0'
+            }`}>
+              <input 
+                type="checkbox" 
+                className="w-3.5 h-3.5 rounded text-green-600 flex-shrink-0"
+                checked={inStockOnly}
+                onChange={(e) => {
+                  setInStockOnly(e.target.checked);
+                  // Fire filter_applied analytics event
+                  if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'filter_applied', {
+                      filter_type: 'in_stock_only',
+                      filter_value: e.target.checked
+                    });
+                  }
+                }}
+              />
+              <span className="text-xs font-medium whitespace-nowrap">Stock</span>
+            </label>
+          </div>
+          
+          {/* Filter button - icon only, fixed width */}
+          <div className="flex-shrink-0">
+            <MobileFilterSheet 
+              filters={{
+                inStockOnly,
+                hpRange: selectedHPRange === 'all' ? '' : selectedHPRange,
+                engineType: selectedEngineType === 'all' ? '' : selectedEngineType
+              }}
+              onFiltersChange={(filters) => {
+                // Apply filters to the component state
+                setInStockOnly(filters.inStockOnly);
+                setSelectedHPRange(filters.hpRange || 'all');
+                setSelectedEngineType(filters.engineType || 'all');
+                
+                // Fire analytics
                 if (typeof window !== 'undefined' && (window as any).gtag) {
                   (window as any).gtag('event', 'filter_applied', {
-                    filter_type: 'in_stock_only',
-                    filter_value: e.target.checked
+                    hp_range: filters.hpRange || 'all',
+                    engine_type: filters.engineType || 'all', 
+                    in_stock_only: filters.inStockOnly
                   });
                 }
               }}
             />
-            <span className="text-xs font-medium">Stock</span>
-          </label>
-          
-          {/* Filter button - icon only */}
-          <MobileFilterSheet 
-            filters={{
-              inStockOnly,
-              hpRange: selectedHPRange === 'all' ? '' : selectedHPRange,
-              engineType: selectedEngineType === 'all' ? '' : selectedEngineType
-            }}
-            onFiltersChange={(filters) => {
-              // Apply filters to the component state
-              setInStockOnly(filters.inStockOnly);
-              setSelectedHPRange(filters.hpRange || 'all');
-              setSelectedEngineType(filters.engineType || 'all');
-              
-              // Fire analytics
-              if (typeof window !== 'undefined' && (window as any).gtag) {
-                (window as any).gtag('event', 'filter_applied', {
-                  hp_range: filters.hpRange || 'all',
-                  engine_type: filters.engineType || 'all', 
-                  in_stock_only: filters.inStockOnly
-                });
-              }
-            }}
-          />
+          </div>
         </div>
         
         {/* Active Filters Chips */}
