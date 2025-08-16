@@ -1637,11 +1637,22 @@ export const MotorSelection = ({
                       {motor.hp} HP
                     </div>
                     
-                    {/* Model - smaller, secondary */}
-                    <div className="motor-details text-xs text-gray-500">
+                    {/* Model - More prominent with variations */}
+                    <div className="motor-details space-y-1">
+                      <div className="text-sm font-semibold text-gray-800 leading-tight">
+                        {(() => {
+                          const title = formatMotorTitle(motor.year, motor.model);
+                          return title;
+                        })()}
+                      </div>
                       {(() => {
                         const title = formatMotorTitle(motor.year, motor.model);
-                        return title;
+                        const subtitle = formatVariantSubtitle(motor.model, title);
+                        return subtitle ? (
+                          <div className="text-xs font-medium text-gray-600">
+                            {subtitle}
+                          </div>
+                        ) : null;
                       })()}
                     </div>
                     
