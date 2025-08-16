@@ -164,17 +164,12 @@ export default function QuoteBuilder() {
                 </svg>
               </button>
               
-              {/* Centered Logo Group */}
-              <div className="flex-1 flex justify-center items-center gap-3">
+              {/* Centered Harris Logo Only */}
+              <div className="flex-1 flex justify-center items-center">
                 <img 
                   src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" 
                   alt="Harris Boat Works" 
                   className="harris-logo w-auto max-w-none" 
-                />
-                <img 
-                  src={mercuryPng} 
-                  alt="Mercury" 
-                  className="mercury-logo w-auto max-w-none" 
                 />
               </div>
             </div>

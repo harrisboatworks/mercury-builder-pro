@@ -15,12 +15,6 @@
     margin-top: 4px !important;
   }
   
-  /* Mercury logo in mobile header - keep it reasonable size */
-  .mercury-logo {
-    height: 36px !important;
-    margin-left: 8px !important;
-  }
-  
   /* FIX 2: Replace "Last updated" text with green pulsing dot */
   .last-updated-text {
     display: none !important;
