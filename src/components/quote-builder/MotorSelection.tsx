@@ -1393,6 +1393,32 @@ export const MotorSelection = ({
         {/* Mobile Trust Accordion - Replaces desktop badges on mobile */}
         <MobileTrustAccordion />
 
+        {/* Desktop Live Activities and Reviews - Right sidebar style */}
+        <div className="hidden lg:flex lg:gap-6 mb-6">
+          <div className="flex-1">
+            {/* Main content spacer */}
+          </div>
+          <div className="w-80 space-y-6">
+            {/* Live Activities Section */}
+            <div>
+              <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                Live Activity
+              </h4>
+              <ActivityTicker />
+            </div>
+
+            {/* Customer Reviews Section */}
+            <div>
+              <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                <Star className="w-4 h-4 text-yellow-500" />
+                Customer Reviews (4.6/5 ⭐)
+              </h4>
+              <TestimonialCarousel />
+            </div>
+          </div>
+        </div>
+
         <div className="dealer-credentials rounded-lg mb-4 p-3 md:p-4 bg-gradient-to-r from-primary/5 to-muted/40 border border-border hidden sm:block">
           <div className="dealer-credentials-banner flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6">
             {/* CSI Award */}
