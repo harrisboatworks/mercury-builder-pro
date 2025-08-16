@@ -934,6 +934,20 @@ export const MotorSelection = ({
     }
   };
 
+  // Handle promo badge clicks
+  const handlePromoBadgeClick = (label: string) => {
+    // Find matching promotion by name/label
+    const matchingPromo = promotionsState.find(p => 
+      p.name === label || 
+      label.includes(p.name) || 
+      p.name.includes(label)
+    );
+    
+    if (matchingPromo) {
+      setActivePromoModal(matchingPromo);
+    }
+  };
+
   // Inline renderer for bottom banner promotions (badges + "+N more")
   const renderBannerPromos = (motor: Motor) => {
     const labels = getPromoLabelsForMotor(motor);
@@ -943,10 +957,15 @@ export const MotorSelection = ({
     return <div className="promos-summary flex items-center gap-2" aria-live="polite">
       <span className="promos-summary__label text-xs font-semibold text-muted-foreground">Promotions applied</span>
       <div className="promos-summary__badges flex items-center gap-1 overflow-hidden whitespace-nowrap" role="list">
-        {labels.slice(0, inlineCount).map((lab, idx) => <span key={idx} role="listitem" className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold">
+        {labels.slice(0, inlineCount).map((lab, idx) => <button 
+            key={idx} 
+            role="listitem" 
+            onClick={() => handlePromoBadgeClick(lab)}
+            className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-px text-xs font-semibold hover:bg-primary/20 transition-colors cursor-pointer border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-1"
+          >
             <span className="mr-1" aria-hidden="true">✅</span>
             {lab}
-          </span>)}
+          </button>)}
       </div>
       {remaining > 0 && <>
           <Button type="button" variant="outline" size="sm" className="promos-summary__more rounded-full h-6 px-2 py-0 text-xs" aria-haspopup="dialog" aria-expanded={bannerPromosOpen} onClick={() => setBannerPromosOpen(true)}>
@@ -958,10 +977,15 @@ export const MotorSelection = ({
                 <DialogTitle>Active promotions</DialogTitle>
               </DialogHeader>
                 <div className="promos-popover__badges flex flex-wrap gap-2" role="list">
-                  {labels.map((l, idx) => <span key={idx} role="listitem" className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-sm font-semibold">
+                  {labels.map((l, idx) => <button 
+                      key={idx} 
+                      role="listitem" 
+                      onClick={() => handlePromoBadgeClick(l)}
+                      className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-px text-sm font-semibold hover:bg-primary/20 transition-colors cursor-pointer border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-1"
+                    >
                       <span className="mr-1" aria-hidden="true">✅</span>
                       {l}
-                    </span>)}
+                    </button>)}
                 </div>
               <DialogFooter>
                 <Button type="button" onClick={() => setBannerPromosOpen(false)}>Close</Button>
