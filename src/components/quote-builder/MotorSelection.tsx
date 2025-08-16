@@ -1624,9 +1624,27 @@ export const MotorSelection = ({
                       {motor.hp} HP
                     </div>
                     
-                    {/* Price - Bold but smaller than model name */}
-                    <div className="motor-price text-lg font-bold text-gray-900">
-                      {callForPrice ? 'Call for Price' : `$${motor.price.toLocaleString()}`}
+                    {/* Price */}
+                    <div className="motor-price space-y-1">
+                      {callForPrice ? (
+                        <div className="text-lg font-bold text-foreground">Call for Price</div>
+                      ) : hasSaleDisplay ? (
+                        <div className="space-y-1">
+                          <div className="text-sm text-muted-foreground line-through">
+                            MSRP ${motor.basePrice?.toLocaleString() || motor.price.toLocaleString()}
+                          </div>
+                          <div className="text-lg font-bold text-red-600">
+                            Our Price ${motor.salePrice?.toLocaleString() || motor.price.toLocaleString()}
+                          </div>
+                          <div className="inline-flex items-center px-2 py-1 rounded-md bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs font-medium">
+                            SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="text-lg font-bold text-foreground">
+                          ${motor.price.toLocaleString()}
+                        </div>
+                      )}
                     </div>
                     
                     {/* Badges */}
