@@ -868,44 +868,45 @@
   }
 
 /* Mobile Header and Search Optimizations */
-  /* Mobile Search Bar - Fixed Height and Layout */
-  @media (max-width: 640px) {
-    /* Ensure mobile header stays compact */
-    .sticky-header {
-      height: 56px;
-      min-height: 56px;
-      max-height: 56px;
-    }
-    
-    /* Mobile search bar - proper display */
-    .mobile-search-bar {
-      display: flex !important;
-      flex-direction: row !important;
-      align-items: center !important;
-      gap: 8px !important;
-      padding: 12px !important;
-      background: white !important;
-      border-bottom: 1px solid #e5e7eb !important;
-    }
-    
-    /* Search input - takes most space */
-    .mobile-search-bar .search-input {
-      flex: 1 !important;
-      min-width: 0 !important;
-    }
-    
-    /* Stock toggle - compact */
-    .mobile-search-bar .stock-toggle-label {
-      flex-shrink: 0 !important;
-      white-space: nowrap !important;
-    }
-    
-    /* Filter button - icon only */
-    .mobile-search-bar .filter-button {
-      flex-shrink: 0 !important;
-      width: 36px !important;
-      height: 36px !important;
-    }
+@media (max-width: 640px) {
+  /* Ensure mobile header stays compact */
+  .sticky-header {
+    height: 56px;
+    min-height: 56px;
+    max-height: 56px;
+  }
+  
+  /* Mobile search bar compactness */
+  .mobile-search-bar {
+    height: 44px;
+    min-height: 44px;
+    max-height: 44px;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    overflow: hidden;
+  }
+  
+  /* Force horizontal layout for search bar children */
+  .mobile-search-bar > * {
+    flex-shrink: 0;
+  }
+  
+  .mobile-search-bar .search-input-container {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .mobile-search-bar .stock-toggle-container {
+    width: 64px;
+    min-width: 64px;
+    max-width: 64px;
+  }
+  
+  .mobile-search-bar .filter-button-container {
+    width: 44px;
+    min-width: 44px;
+    max-width: 44px;
   }
   
   /* Reduce card padding on mobile for more content visibility */
@@ -1021,22 +1022,39 @@
     flex-shrink: 0;
   }
 
-  /* Mobile only - simplified search bar layout */
+  /* Mobile only - single row, compact */
   @media (max-width: 768px) {
-    /* Ensure motor grid is 2 columns on mobile */
-    .motors-grid {
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 0.5rem !important;
+    .mobile-search-bar {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px;
     }
     
-    /* Motor cards - proper mobile sizing */
-    .motor-card {
-      min-height: 300px !important;
+    /* Search takes 50% */
+    .search-input {
+      flex: 0 0 50%;
+      font-size: 14px;
+      padding: 6px 8px;
     }
     
-    /* Stock badges stay on individual cards */
-    .motor-card .absolute {
-      position: absolute !important;
+    /* Stock toggle - just checkbox + "Stock" */
+    .stock-toggle-label {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 14px;
+    }
+    
+    /* Hide filter text, show icon only */
+    .filter-button-text {
+      display: none;
+    }
+    
+    .filter-button {
+      padding: 6px;
+      width: 32px;
+      height: 32px;
     }
   }
   button {
@@ -1090,6 +1108,7 @@
   50% { 
     opacity: 0.8; 
   }
+}
 }
 
 /* Floating CTA safe area handling */
