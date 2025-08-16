@@ -19,8 +19,8 @@
 /* Tablet-specific logo constraints */
 @media (min-width: 769px) and (max-width: 1024px) {
   .harris-logo {
-    height: 48px !important;
-    max-width: 300px !important;
+    height: 60px !important;
+    max-width: 400px !important;
   }
   
   /* FIX 2: Replace "Last updated" text with green pulsing dot */

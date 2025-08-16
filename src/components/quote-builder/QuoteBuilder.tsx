@@ -169,7 +169,7 @@ export default function QuoteBuilder() {
                 <img 
                   src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" 
                   alt="Harris Boat Works" 
-                  className="harris-logo w-auto max-w-[280px] md:max-w-[320px] lg:max-w-[360px]" 
+                  className="harris-logo w-auto max-w-[280px] md:max-w-[400px] lg:max-w-[360px]" 
                 />
               </div>
             </div>
