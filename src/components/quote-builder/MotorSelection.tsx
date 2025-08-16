@@ -1565,9 +1565,16 @@ export const MotorSelection = ({
                         className="motor-card-image w-full object-contain"
                       />
 
+                      {/* HP Badge - Top left */}
+                      <div className="absolute top-3 left-3 z-20">
+                        <div className="px-2 py-1 rounded-md bg-gray-900/90 text-white text-xs font-medium">
+                          {motor.hp} HP
+                        </div>
+                      </div>
+
                       {/* Urgency: low stock */}
                       {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && (
-                        <div className="absolute top-3 left-3 z-20 animate-fade-in">
+                        <div className="absolute top-3 left-3 z-20 animate-fade-in" style={{ marginTop: '2.5rem' }}>
                           <Badge variant="discount" className="flex items-center gap-1 shadow">
                             <AlertTriangle className="w-3.5 h-3.5" />
                             <span>Only {stockCount} left</span>
@@ -1578,7 +1585,7 @@ export const MotorSelection = ({
                       {/* Social proof: recent sales */}
                       {typeof recentSales === 'number' && recentSales > 5 && (
                         <div className="absolute top-3 left-3 z-20 animate-fade-in" style={{ 
-                          marginTop: typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 ? '2.5rem' : '0' 
+                          marginTop: typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 ? '5rem' : '2.5rem'
                         }}>
                           <Badge variant="warranty" className="flex items-center gap-1 shadow">
                             <Star className="w-3.5 h-3.5" />
@@ -1619,10 +1626,6 @@ export const MotorSelection = ({
                       })()}
                     </div>
                     
-                    {/* Subline - HP rating only, smaller */}
-                    <div className="motor-hp text-sm font-medium text-gray-600">
-                      {motor.hp} HP
-                    </div>
                     
                     {/* Price */}
                     <div className="motor-price space-y-1">
