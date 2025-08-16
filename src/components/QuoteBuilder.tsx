@@ -172,17 +172,11 @@ const QuoteBuilder = () => {
         <div className="container mx-auto px-4 py-6">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-6">
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center">
                   <img 
                     src={harrisLogo} 
                     alt="Harris Boat Works" 
                     className="h-12 w-auto"
-                  />
-                  <div className="border-l border-border h-10"></div>
-                  <img 
-                    src={mercuryLogo} 
-                    alt="Mercury Marine" 
-                    className="h-8 w-auto"
                   />
                 </div>
                 <div>

@@ -178,14 +178,12 @@ export default function QuoteBuilder() {
           <div className="hidden lg:flex items-center justify-between">
             <div className="flex items-center gap-8">
               {/* Desktop Logo Group */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center">
                 <img 
                   src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" 
                   alt="Harris Boat Works" 
                   className="h-20" 
                 />
-                <img src="/src/assets/mercury-logo.png" alt="Mercury" className="h-16" />
-                <span className="text-sm text-gray-600 font-medium">Platinum Mercury Dealer</span>
               </div>
               
               {/* Desktop Step Indicators */}
