@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { HamburgerMenu } from "@/components/ui/hamburger-menu";
+import mercuryPng from "@/assets/mercury-logo.png";
 
 export default function QuoteBuilder() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -171,7 +172,7 @@ export default function QuoteBuilder() {
                   className="h-12 w-auto max-w-none" 
                 />
                 <img 
-                  src="/src/assets/mercury-logo.png" 
+                  src={mercuryPng} 
                   alt="Mercury" 
                   className="h-8 w-auto max-w-none" 
                 />
