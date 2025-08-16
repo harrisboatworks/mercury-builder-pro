@@ -1557,26 +1557,21 @@ export const MotorSelection = ({
 
                   {/* Card Info Section */}
                   <div className="p-3 space-y-2">
-                    {/* Model Name - Top and most prominent */}
-                    <div className="motor-model text-lg font-bold text-gray-900 leading-tight">
+                    {/* Model Name - Biggest text (bold, 18-20px) */}
+                    <div className="motor-model text-xl font-bold text-gray-900 leading-tight">
                       {(() => {
                         const title = formatMotorTitle(motor.year, motor.model);
                         return title;
                       })()}
                     </div>
                     
-                    {/* Subline Detail - HP rating */}
-                    <div className="motor-hp text-sm font-semibold text-gray-700">
+                    {/* Subline - HP rating only, smaller */}
+                    <div className="motor-hp text-sm font-medium text-gray-600">
                       {motor.hp} HP
-                      {(() => {
-                        const title = formatMotorTitle(motor.year, motor.model);
-                        const subtitle = formatVariantSubtitle(motor.model, title);
-                        return subtitle ? ` • ${subtitle}` : '';
-                      })()}
                     </div>
                     
-                    {/* Price */}
-                    <div className="motor-price text-xl font-bold text-gray-900">
+                    {/* Price - Bold but smaller than model name */}
+                    <div className="motor-price text-lg font-bold text-gray-900">
                       {callForPrice ? 'Call for Price' : `$${motor.price.toLocaleString()}`}
                     </div>
                     
