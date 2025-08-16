@@ -1116,7 +1116,7 @@ export const MotorSelection = ({
   return <div className={`${showCelebration ? 'canadian-celebration' : ''}`}>
       {/* Mobile-Only Sticky Search and Filter Bar - Premium Style */}
       <div className="sticky top-[56px] z-30 bg-white border-b shadow-sm lg:hidden">
-        <div className="bg-gradient-to-b from-gray-50 to-white p-4">
+        <div className="mobile-search-bar bg-gradient-to-b from-gray-50 to-white p-4">
           <div className="flex items-center gap-3">
             {/* Search - Premium styling */}
             <div className="flex-1 relative">
@@ -1133,13 +1133,13 @@ export const MotorSelection = ({
                     });
                   }
                 }}
-                className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl shadow-sm text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                className="search-input w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl shadow-sm text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-all"
               />
               <Search className="absolute left-3 top-3.5 w-4 h-4 text-gray-400" />
             </div>
             
             {/* In Stock Toggle - Premium styling */}
-            <label className={`flex items-center gap-2 px-4 py-3 bg-white border border-gray-200 rounded-xl shadow-sm cursor-pointer hover:bg-gray-50 transition-colors ${
+            <label className={`stock-toggle-label flex items-center gap-2 px-4 py-3 bg-white border border-gray-200 rounded-xl shadow-sm cursor-pointer hover:bg-gray-50 transition-colors ${
               inStockOnly 
                 ? 'bg-green-50 border-green-200 text-green-700' 
                 : 'text-gray-700'
@@ -1386,11 +1386,11 @@ export const MotorSelection = ({
           </div>
           
           {/* HP Range Filter Tabs */}
-          <div className="flex gap-2 overflow-x-auto pb-2">
+          <div className="hp-filter-buttons flex gap-2 overflow-x-auto pb-2">
             <Button 
               variant={selectedHPRange === 'all' ? 'default' : 'outline'}
               size="sm"
-              className="whitespace-nowrap rounded-full"
+              className="hp-filter-button whitespace-nowrap rounded-full"
               onClick={() => setSelectedHPRange('all')}
             >
               All
@@ -1398,7 +1398,7 @@ export const MotorSelection = ({
             <Button 
               variant={selectedHPRange === '2.5-20' ? 'default' : 'outline'}
               size="sm"
-              className="whitespace-nowrap rounded-full"
+              className="hp-filter-button whitespace-nowrap rounded-full"
               onClick={() => setSelectedHPRange('2.5-20')}
             >
               2.5-20 HP
@@ -1406,7 +1406,7 @@ export const MotorSelection = ({
             <Button 
               variant={selectedHPRange === '25-60' ? 'default' : 'outline'}
               size="sm"
-              className="whitespace-nowrap rounded-full"
+              className="hp-filter-button whitespace-nowrap rounded-full"
               onClick={() => setSelectedHPRange('25-60')}
             >
               25-60 HP
@@ -1414,7 +1414,7 @@ export const MotorSelection = ({
             <Button 
               variant={selectedHPRange === '75-150' ? 'default' : 'outline'}
               size="sm"
-              className="whitespace-nowrap rounded-full"
+              className="hp-filter-button whitespace-nowrap rounded-full"
               onClick={() => setSelectedHPRange('75-150')}
             >
               75-150 HP
@@ -1422,7 +1422,7 @@ export const MotorSelection = ({
             <Button 
               variant={selectedHPRange === '175-300' ? 'default' : 'outline'}
               size="sm"
-              className="whitespace-nowrap rounded-full"
+              className="hp-filter-button whitespace-nowrap rounded-full"
               onClick={() => setSelectedHPRange('175-300')}
             >
               175-300 HP
@@ -1430,7 +1430,7 @@ export const MotorSelection = ({
             <Button 
               variant={selectedHPRange === '350+' ? 'default' : 'outline'}
               size="sm"
-              className="whitespace-nowrap rounded-full"
+              className="hp-filter-button whitespace-nowrap rounded-full"
               onClick={() => setSelectedHPRange('350+')}
             >
               350+ HP
@@ -1679,8 +1679,8 @@ export const MotorSelection = ({
                     <MonthlyPaymentDisplay motorPrice={motor.price} />
                   </div>
 
-      {motor.image && motor.image !== '/placeholder.svg' && <div className="relative p-4 bg-gradient-to-b from-gray-50 to-white">
-        <img src={motor.image} alt={motor.model} loading="lazy" className="w-full h-auto" style={{
+      {motor.image && motor.image !== '/placeholder.svg' && <div className="motor-card-image-container relative p-4 bg-gradient-to-b from-gray-50 to-white">
+        <img src={motor.image} alt={motor.model} loading="lazy" className="motor-card img w-full h-auto" style={{
                       height: '180px',
                       width: 'auto',
                       objectFit: 'contain',

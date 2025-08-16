@@ -992,64 +992,69 @@
   
   /* Button press animations */
 
-  /* Mobile Search Bar Fix - cleaner layout under 768px */
-  @media (max-width: 767px) {
-    .search-filter-bar {
+  /* Motor card images - CENTER them properly */
+  .motor-card-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .motor-card img {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* HP Range buttons - give them room */
+  .hp-filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 0.5rem 0;
+  }
+
+  .hp-filter-button {
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Mobile only - single row, compact */
+  @media (max-width: 768px) {
+    .mobile-search-bar {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 12px;
+      gap: 4px;
+      padding: 8px;
     }
     
-    /* Search takes most space */
-    .search-input-wrapper {
-      flex: 1;
-      min-width: 0; /* Prevents overflow */
-    }
-    
+    /* Search takes 50% */
     .search-input {
-      width: 100%;
-      padding: 8px 12px;
+      flex: 0 0 50%;
+      font-size: 14px;
+      padding: 6px 8px;
+    }
+    
+    /* Stock toggle - just checkbox + "Stock" */
+    .stock-toggle-label {
+      display: flex;
+      align-items: center;
+      gap: 4px;
       font-size: 14px;
     }
     
-    /* Stock toggle - compact */
-    .stock-toggle {
-      flex-shrink: 0;
-      padding: 8px 12px;
-      white-space: nowrap;
+    /* Hide filter text, show icon only */
+    .filter-button-text {
+      display: none;
     }
     
-    /* Filter button - icon only */
     .filter-button {
-      flex-shrink: 0;
-      width: 36px;
-      height: 36px;
-      padding: 8px;
-    }
-  }
-
-  /* Desktop Motor Image Centering - center images on desktop cards */
-  @media (min-width: 768px) {
-    .motor-card-image-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 16px;
-      min-height: 200px; /* Consistent height */
-    }
-    
-    .motor-card-image {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-  }
-
-  /* Mobile motor images stay as is */
-  @media (max-width: 767px) {
-    .motor-card-image-wrapper {
-      padding: 8px;
+      padding: 6px;
+      width: 32px;
+      height: 32px;
     }
   }
   button {
