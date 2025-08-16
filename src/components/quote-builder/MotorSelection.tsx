@@ -387,7 +387,6 @@ export const MotorSelection = ({
     hpRange: [2.5, 300] as [number, number]
   });
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [filtersOpen, setFiltersOpen] = useState(true);
   const [bannerPromosOpen, setBannerPromosOpen] = useState(false);
   // Phase 1 scaffolding & features
 
@@ -396,7 +395,6 @@ export const MotorSelection = ({
   const [quickViewMotor, setQuickViewMotor] = useState<Motor | null>(null);
   const [harrisLogoUrl, setHarrisLogoUrl] = useState<string>('/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png');
   const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
-  const [modelSearch, setModelSearch] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedHPRange, setSelectedHPRange] = useState<string>('all');
   const [inStockOnly, setInStockOnly] = useState<boolean>(false);
@@ -830,7 +828,6 @@ export const MotorSelection = ({
       if (filters.category !== 'all' && motor.category !== filters.category) return false;
       if (filters.stockStatus !== 'all' && motor.stockStatus !== filters.stockStatus) return false;
       if (motor.price < filters.priceRange[0] || motor.price > filters.priceRange[1]) return false;
-      if (modelSearch && !motor.model?.toLowerCase().includes(modelSearch.toLowerCase())) return false;
       return motor.hp >= minHP && motor.hp <= maxHP;
     }).length;
     if (count === 0) {
@@ -841,8 +838,7 @@ export const MotorSelection = ({
     }
   };
   const filteredMotors = motors.filter(motor => {
-    // Search functionality - check both model search (sidebar) and main search query
-    if (modelSearch && !motor.model?.toLowerCase().includes(modelSearch.toLowerCase())) return false;
+    // Search functionality - main search query only
     if (searchQuery && !motor.model?.toLowerCase().includes(searchQuery.toLowerCase()) && 
         !motor.hp.toString().includes(searchQuery)) return false;
     
@@ -1372,68 +1368,12 @@ export const MotorSelection = ({
             <p className="text-sm text-muted-foreground">
               Showing {filteredMotors.length} motor{filteredMotors.length !== 1 ? 's' : ''}
             </p>
-            <div className="flex items-center gap-2 lg:hidden">
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={() => setFiltersOpen(!filtersOpen)}
-                className="text-xs"
-              >
-                🎚️ Filter
-              </Button>
-            </div>
           </div>
         </div>
       </div>
 
-      <div className="flex gap-6">
-        <div className={`${filtersOpen ? 'w-80' : 'w-16'} transition-all duration-300 flex-shrink-0 hidden lg:block`}>
-        {filtersOpen && <Card className="mb-4">
-            <div className="p-4 space-y-6">
-              <div>
-                <h3 className="font-bold text-sm mb-2">Know your model?</h3>
-                <Input type="text" placeholder="e.g., 90ELPT, 115EXLPT" value={modelSearch} onChange={e => setModelSearch(e.target.value)} />
-              </div>
-              <div>
-                <h3 className="font-bold text-sm mb-2">Quick HP Selection:</h3>
-                <div className="grid grid-cols-2 gap-2">
-                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(2.5, 20)}>2.5 - 20 HP</Button>
-                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(25, 60)}>25 - 60 HP</Button>
-                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(75, 115)}>75 - 115 HP</Button>
-                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(150, 200)}>150 - 200 HP</Button>
-                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(225, 300)}>225 - 300 HP</Button>
-                </div>
-                <Button variant="ghost" size="sm" className="w-full mt-2" onClick={() => {
-              setFilters({
-                ...filters,
-                hpRange: [2.5, 300]
-              });
-              setModelSearch('');
-            }}>
-                  Show all motors →
-                </Button>
-              </div>
-            </div>
-          </Card>}
-        {filtersOpen && <div className="border-t border-border my-4" />}
-        <MotorFinderWizard filters={filters} setFilters={setFilters} viewMode={viewMode} setViewMode={setViewMode} resultsCount={filteredMotors.length} isOpen={filtersOpen} onToggle={() => setFiltersOpen(!filtersOpen)} />
-        
-        {/* Live Activities Section */}
-        <div className="mt-6">
-          <ActivityTicker />
-        </div>
-
-        {/* Customer Reviews Section */}
-        <div className="mt-6">
-          <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-            <Star className="w-4 h-4 text-yellow-500" />
-            Customer Reviews (4.6/5 ⭐)
-          </h4>
-          <TestimonialCarousel />
-        </div>
-      </div>
-
-      <div className="flex-1 space-y-8">
+      {/* Main content area - full width on desktop without sidebar */}
+      <div className="w-full space-y-6">
         <div className="text-center space-y-4 hidden lg:block">
           <div className="flex items-center justify-center gap-4">
             <img src={mercuryLogo} alt="Mercury Marine" className="h-12 w-auto" />
@@ -1453,8 +1393,8 @@ export const MotorSelection = ({
         {/* Mobile Trust Accordion - Replaces desktop badges on mobile */}
         <MobileTrustAccordion />
 
-        <div className="dealer-credentials rounded-lg mb-6 p-4 md:p-6 bg-gradient-to-r from-primary/5 to-muted/40 border border-border hidden sm:block">
-          <div className="dealer-credentials-banner flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+        <div className="dealer-credentials rounded-lg mb-4 p-3 md:p-4 bg-gradient-to-r from-primary/5 to-muted/40 border border-border hidden sm:block">
+          <div className="dealer-credentials-banner flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6">
             {/* CSI Award */}
             <div className="credential-group flex items-center gap-3">
               <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-12 md:h-16 w-auto" />
@@ -1647,6 +1587,13 @@ export const MotorSelection = ({
               <Zap className="w-5 h-5 ml-2" />
             </Button>
           </div>}
+        
+        {/* Results count for desktop */}
+        <div className="hidden lg:flex items-center justify-between mb-4">
+          <p className="text-sm text-muted-foreground">
+            Showing {filteredMotors.length} motor{filteredMotors.length !== 1 ? 's' : ''}
+          </p>
+        </div>
       </div>
 
       {showStickyBar && selectedMotor && (selectedMotor as any).stockStatus !== 'Sold' && <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom-5 duration-500">
@@ -2137,6 +2084,5 @@ export const MotorSelection = ({
       {/* Mobile spacer to prevent sticky CTA from covering content */}
       <div className="mobile-cta-spacer lg:hidden" />
 
-    </div>
-  </div>;
-};
+    </div>;
+  };
