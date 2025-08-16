@@ -86,9 +86,9 @@ export default {
 					DEFAULT: 'hsl(var(--on-order))',
 					foreground: 'hsl(var(--on-order-foreground))'
 				},
-				'out-of-stock': {
-					DEFAULT: 'hsl(var(--out-of-stock))',
-					foreground: 'hsl(var(--out-of-stock-foreground))'
+				'special-order': {
+					DEFAULT: 'hsl(var(--special-order))',
+					foreground: 'hsl(var(--special-order-foreground))'
 				}
 			},
 			borderRadius: {

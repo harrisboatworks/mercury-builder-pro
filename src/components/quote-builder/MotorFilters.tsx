@@ -135,7 +135,7 @@ export const MotorFilters = ({
               <div className="space-y-3">
                 <Label className="text-sm font-medium">Stock Status</Label>
                 <div className="flex flex-col gap-2">
-                  {['all', 'In Stock', 'On Order', 'Out of Stock'].map(status => (
+                  {['all', 'In Stock', 'On Order', 'Special Order'].map(status => (
                     <Button
                       key={status}
                       variant={filters.stockStatus === status ? 'default' : 'outline'}

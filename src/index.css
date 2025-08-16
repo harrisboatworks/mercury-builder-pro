@@ -141,8 +141,8 @@
     --in-stock-foreground: 0 0% 100%;
     --on-order: 45 93% 47%;
     --on-order-foreground: 0 0% 100%;
-    --out-of-stock: 0 75% 55%;
-    --out-of-stock-foreground: 0 0% 100%;
+    --special-order: 25 95% 53%;
+    --special-order-foreground: 0 0% 100%;
 
     /* Interactive Elements */
     --gradient-primary: linear-gradient(135deg, hsl(207 90% 25%), hsl(207 85% 35%));
