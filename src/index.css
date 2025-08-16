@@ -923,6 +923,15 @@
   .mobile-cta-spacer {
     height: calc(64px + env(safe-area-inset-bottom, 0px));
   }
+
+  /* Hide scrollbar for filter chips */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
   
   /* Compact text on mobile */
   .mobile-compact {

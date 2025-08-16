@@ -1116,13 +1116,13 @@ export const MotorSelection = ({
   return <div className={`${showCelebration ? 'canadian-celebration' : ''}`}>
       {/* Mobile-Only Sticky Search and Filter Bar - Premium Style */}
       <div className="sticky top-[56px] z-30 bg-white border-b shadow-sm lg:hidden">
-        <div className="bg-gradient-to-b from-gray-50 to-white p-3">
-          <div className="flex items-center gap-2">
+        <div className="bg-gradient-to-b from-gray-50 to-white p-4">
+          <div className="flex items-center gap-3">
             {/* Search - Premium styling */}
             <div className="flex-1 relative">
               <Input 
                 type="search" 
-                placeholder="Search HP"
+                placeholder="Search motors..."
                 value={searchQuery}
                 onChange={(e) => {
                   setSearchQuery(e.target.value);
@@ -1133,20 +1133,20 @@ export const MotorSelection = ({
                     });
                   }
                 }}
-                className="w-full pl-9 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl shadow-sm text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl shadow-sm text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-all"
               />
-              <Search className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
+              <Search className="absolute left-3 top-3.5 w-4 h-4 text-gray-400" />
             </div>
             
             {/* In Stock Toggle - Premium styling */}
-            <label className={`flex items-center gap-1.5 px-3 py-2.5 bg-white border border-gray-200 rounded-xl shadow-sm cursor-pointer hover:bg-gray-50 transition ${
+            <label className={`flex items-center gap-2 px-4 py-3 bg-white border border-gray-200 rounded-xl shadow-sm cursor-pointer hover:bg-gray-50 transition-colors ${
               inStockOnly 
-                ? 'bg-green-50 border-green-200' 
-                : ''
+                ? 'bg-green-50 border-green-200 text-green-700' 
+                : 'text-gray-700'
             }`}>
               <input 
                 type="checkbox" 
-                className="w-4 h-4 rounded text-green-600"
+                className="w-4 h-4 rounded text-green-600 focus:ring-green-500"
                 checked={inStockOnly}
                 onChange={(e) => {
                   setInStockOnly(e.target.checked);
@@ -1159,11 +1159,11 @@ export const MotorSelection = ({
                   }
                 }}
               />
-              <span className="text-sm font-semibold text-gray-700">Stock</span>
+              <span className="text-sm font-medium">Stock</span>
             </label>
             
             {/* Filter button - Premium styling */}
-            <div className="p-2.5 bg-white border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition">
+            <div className="bg-white border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition-colors">
               <MobileFilterSheet 
                 filters={{
                   inStockOnly,
@@ -1192,7 +1192,7 @@ export const MotorSelection = ({
         
         {/* Active Filters Chips */}
         {(selectedHPRange !== 'all' || selectedEngineType !== 'all' || inStockOnly || searchQuery) && (
-          <div className="flex gap-2 px-3 pb-2 overflow-x-auto">
+          <div className="flex gap-2 px-4 pb-3 overflow-x-auto scrollbar-hide">
             {selectedHPRange !== 'all' && (
               <button 
                 className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium whitespace-nowrap"
@@ -2184,20 +2184,21 @@ export const MotorSelection = ({
 
       {/* Sticky Bottom Price Bar - Mobile Only */}
       {selectedMotor && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 shadow-2xl p-3 z-40 lg:hidden">
-          <div className="flex items-center justify-between gap-3">
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-primary/20 shadow-2xl p-4 z-40 lg:hidden backdrop-blur-sm">
+          <div className="flex items-center justify-between gap-4">
             {/* Price Display */}
-            <div>
-              <div className="text-xs text-gray-500 uppercase tracking-wide">Your Build</div>
-              <div className="text-2xl font-bold text-gray-900">${selectedMotor.price.toLocaleString()}</div>
+            <div className="flex-shrink-0">
+              <div className="text-xs text-muted-foreground uppercase tracking-wide font-medium">Selected Motor</div>
+              <div className="text-xl font-bold text-foreground">${selectedMotor.price.toLocaleString()}</div>
+              <div className="text-xs text-muted-foreground">{selectedMotor.model}</div>
             </div>
             
             {/* CTA Button */}
             <button 
-              className="flex-1 bg-gradient-to-r from-red-600 to-red-500 text-white py-3 px-6 rounded-xl font-bold text-lg shadow-lg active:scale-95 transition-transform"
-              onClick={() => handleMotorSelection(selectedMotor)}
+              className="flex-1 max-w-48 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground py-3 px-6 rounded-xl font-bold text-base shadow-lg active:scale-95 transition-all hover:shadow-xl"
+              onClick={() => onStepComplete(selectedMotor)}
             >
-              Get Quote →
+              Continue →
             </button>
           </div>
         </div>
