@@ -1114,15 +1114,16 @@ export const MotorSelection = ({
       </div>;
   }
   return <div className={`${showCelebration ? 'canadian-celebration' : ''}`}>
-      {/* Mobile-Only Sticky Search and Filter Bar - Premium Style */}
+      {/* Mobile-Only Sticky Search Bar - Compact Single Row */}
       <div className="sticky top-[56px] z-30 bg-white border-b shadow-sm lg:hidden">
-        <div className="mobile-search-bar bg-gradient-to-b from-gray-50 to-white p-4">
-          <div className="flex items-center gap-3">
-            {/* Search - Premium styling */}
+        <div className="p-3">
+          {/* Single Row: Search + Stock Toggle + Filter Button */}
+          <div className="flex items-center gap-2 h-11">
+            {/* Search Input - Full Width with iOS zoom prevention */}
             <div className="flex-1 relative">
               <Input 
                 type="search" 
-                placeholder="Search motors..."
+                placeholder="Search HP"
                 value={searchQuery}
                 onChange={(e) => {
                   setSearchQuery(e.target.value);
@@ -1133,207 +1134,136 @@ export const MotorSelection = ({
                     });
                   }
                 }}
-                className="search-input w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl shadow-sm text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                className="w-full pl-8 pr-3 py-2 border rounded-lg text-[16px] focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                style={{ fontSize: '16px' }} // iOS zoom prevention
               />
-              <Search className="absolute left-3 top-3.5 w-4 h-4 text-gray-400" />
+              <Search className="absolute left-2.5 top-2.5 w-4 h-4 text-gray-400" />
             </div>
             
-            {/* In Stock Toggle - Premium styling */}
-            <label className={`stock-toggle-label flex items-center gap-2 px-4 py-3 bg-white border border-gray-200 rounded-xl shadow-sm cursor-pointer hover:bg-gray-50 transition-colors ${
-              inStockOnly 
-                ? 'bg-green-50 border-green-200 text-green-700' 
-                : 'text-gray-700'
-            }`}>
-              <input 
-                type="checkbox" 
-                className="w-4 h-4 rounded text-green-600 focus:ring-green-500"
-                checked={inStockOnly}
-                onChange={(e) => {
-                  setInStockOnly(e.target.checked);
-                  // Fire filter_applied analytics event
+            {/* Compact Icon Buttons */}
+            <div className="flex items-center gap-1">
+              {/* Stock Toggle Button */}
+              <button
+                className={`p-2 rounded-lg border transition-colors flex items-center justify-center min-w-[44px] h-[44px] ${
+                  inStockOnly 
+                    ? 'bg-green-50 border-green-200 text-green-700' 
+                    : 'bg-white border-gray-200 text-gray-600'
+                }`}
+                onClick={() => {
+                  setInStockOnly(!inStockOnly);
+                  // Fire analytics
                   if (typeof window !== 'undefined' && (window as any).gtag) {
                     (window as any).gtag('event', 'filter_applied', {
                       filter_type: 'in_stock_only',
-                      filter_value: e.target.checked
+                      filter_value: !inStockOnly
                     });
                   }
                 }}
-              />
-              <span className="text-sm font-medium">Stock</span>
-            </label>
-            
-            {/* Filter button - Premium styling */}
-            <div className="bg-white border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition-colors">
-              <MobileFilterSheet 
-                filters={{
-                  inStockOnly,
-                  hpRange: selectedHPRange === 'all' ? '' : selectedHPRange,
-                  engineType: selectedEngineType === 'all' ? '' : selectedEngineType
-                }}
-                onFiltersChange={(filters) => {
-                  // Apply filters to the component state
-                  setInStockOnly(filters.inStockOnly);
-                  setSelectedHPRange(filters.hpRange || 'all');
-                  setSelectedEngineType(filters.engineType || 'all');
-                  
-                  // Fire analytics
-                  if (typeof window !== 'undefined' && (window as any).gtag) {
-                    (window as any).gtag('event', 'filter_applied', {
-                      hp_range: filters.hpRange || 'all',
-                      engine_type: filters.engineType || 'all', 
-                      in_stock_only: filters.inStockOnly
-                    });
-                  }
-                }}
-              />
+                aria-label={inStockOnly ? "Show all motors" : "Show in-stock only"}
+              >
+                <span className="text-xs font-bold">✓</span>
+              </button>
+              
+              {/* Filters Button */}
+              <div className="min-w-[44px] h-[44px]">
+                <MobileFilterSheet 
+                  filters={{
+                    inStockOnly,
+                    hpRange: selectedHPRange === 'all' ? '' : selectedHPRange,
+                    engineType: selectedEngineType === 'all' ? '' : selectedEngineType
+                  }}
+                  onFiltersChange={(filters) => {
+                    // Apply filters to the component state
+                    setInStockOnly(filters.inStockOnly);
+                    setSelectedHPRange(filters.hpRange || 'all');
+                    setSelectedEngineType(filters.engineType || 'all');
+                    
+                    // Fire analytics
+                    if (typeof window !== 'undefined' && (window as any).gtag) {
+                      (window as any).gtag('event', 'filter_applied', {
+                        hp_range: filters.hpRange || 'all',
+                        engine_type: filters.engineType || 'all', 
+                        in_stock_only: filters.inStockOnly
+                      });
+                    }
+                  }}
+                />
+              </div>
             </div>
           </div>
-        </div>
-        
-        {/* Active Filters Chips */}
-        {(selectedHPRange !== 'all' || selectedEngineType !== 'all' || inStockOnly || searchQuery) && (
-          <div className="flex gap-2 px-4 pb-3 overflow-x-auto scrollbar-hide">
-            {selectedHPRange !== 'all' && (
-              <button 
-                className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium whitespace-nowrap"
-                onClick={() => {
-                  setSelectedHPRange('all');
-                  // Fire analytics
-                  if (typeof window !== 'undefined' && (window as any).gtag) {
-                    (window as any).gtag('event', 'filter_chip_removed', {
-                      filter_type: 'hp_range',
-                      filter_value: selectedHPRange
-                    });
-                  }
-                }}
-              >
-                {selectedHPRange === '2.5-20' && 'Portable (2.5-20 HP)'}
-                {selectedHPRange === '25-60' && 'Mid-Range (25-60 HP)'}
-                {selectedHPRange === '75-150' && 'High Power (75-150 HP)'}
-                {selectedHPRange === '175-300' && 'V6 (175-300 HP)'}
-                {selectedHPRange === '350+' && 'V8 (350+ HP)'}
-                <span>✕</span>
-              </button>
-            )}
-            {selectedEngineType !== 'all' && (
-              <button 
-                className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium whitespace-nowrap"
-                onClick={() => {
-                  setSelectedEngineType('all');
-                  // Fire analytics
-                  if (typeof window !== 'undefined' && (window as any).gtag) {
-                    (window as any).gtag('event', 'filter_chip_removed', {
-                      filter_type: 'engine_type',
-                      filter_value: selectedEngineType
-                    });
-                  }
-                }}
-              >
-                {selectedEngineType === 'fourstroke' && 'FourStroke'}
-                {selectedEngineType === 'verado' && 'Verado'}
-                {selectedEngineType === 'proxs' && 'Pro XS'}
-                {selectedEngineType === 'seapro' && 'SeaPro'}
-                <span>✕</span>
-              </button>
-            )}
-            {inStockOnly && (
-              <button 
-                className="flex items-center gap-1 px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium whitespace-nowrap"
-                onClick={() => {
-                  setInStockOnly(false);
-                  // Fire analytics
-                  if (typeof window !== 'undefined' && (window as any).gtag) {
-                    (window as any).gtag('event', 'filter_chip_removed', {
-                      filter_type: 'in_stock_only',
-                      filter_value: 'true'
-                    });
-                  }
-                }}
-              >
-                In Stock <span>✕</span>
-              </button>
-            )}
-            {searchQuery && (
-              <button 
-                className="flex items-center gap-1 px-3 py-1 bg-muted text-muted-foreground rounded-full text-xs font-medium whitespace-nowrap"
-                onClick={() => {
-                  setSearchQuery('');
-                  // Fire analytics
-                  if (typeof window !== 'undefined' && (window as any).gtag) {
-                    (window as any).gtag('event', 'search_cleared', {
-                      search_query: searchQuery
-                    });
-                  }
-                }}
-              >
-                "{searchQuery}" <span>✕</span>
-              </button>
-            )}
-          </div>
-        )}
-        
-        {/* Expandable Filter Dropdown */}
-        {mobileFiltersOpen && (
-          <div className="bg-background border-t border-border p-3 space-y-2">
-            {/* HP Range */}
-            <select 
-              className="w-full px-3 py-2 bg-muted/50 rounded-lg text-sm border-0"
-              value={selectedHPRange}
-              onChange={(e) => setSelectedHPRange(e.target.value)}
-            >
-              <option value="all">All Horsepower</option>
-              <option value="2.5-20">Portable (2.5-20 HP)</option>
-              <option value="25-60">Mid-Range (25-60 HP)</option>
-              <option value="75-150">High Power (75-150 HP)</option>
-              <option value="175-300">V6 (175-300 HP)</option>
-              <option value="350+">V8 (350+ HP)</option>
-            </select>
-            
-            {/* Engine Type */}
-            <select 
-              className="w-full px-3 py-2 bg-muted/50 rounded-lg text-sm border-0"
-              value={selectedEngineType}
-              onChange={(e) => setSelectedEngineType(e.target.value)}
-            >
-              <option value="all">All Types</option>
-              <option value="fourstroke">FourStroke</option>
-              <option value="verado">Verado</option>
-              <option value="proxs">Pro XS</option>
-              <option value="seapro">SeaPro</option>
-            </select>
-            
-            {/* Clear/Apply buttons */}
-            <div className="flex gap-2 pt-1">
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="flex-1 text-sm text-muted-foreground"
-                onClick={() => {
-                  setSearchQuery('');
-                  setSelectedHPRange('all');
-                  setSelectedEngineType('all');
-                  setInStockOnly(false);
-                }}
-              >
-                Clear All
-              </Button>
-              <Button 
-                size="sm" 
-                className="flex-1 text-sm font-medium"
-                onClick={() => setMobileFiltersOpen(false)}
-              >
-                Apply Filters
-              </Button>
+          
+          {/* Active Filters Chips */}
+          {(selectedHPRange !== 'all' || selectedEngineType !== 'all' || searchQuery) && (
+            <div className="flex gap-2 mt-2 overflow-x-auto scrollbar-hide">
+              {selectedHPRange !== 'all' && (
+                <button 
+                  className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium whitespace-nowrap"
+                  onClick={() => {
+                    setSelectedHPRange('all');
+                    // Fire analytics
+                    if (typeof window !== 'undefined' && (window as any).gtag) {
+                      (window as any).gtag('event', 'filter_chip_removed', {
+                        filter_type: 'hp_range',
+                        filter_value: selectedHPRange
+                      });
+                    }
+                  }}
+                >
+                  {selectedHPRange === '2.5-20' && 'Portable (2.5-20 HP)'}
+                  {selectedHPRange === '25-60' && 'Mid-Range (25-60 HP)'}
+                  {selectedHPRange === '75-150' && 'High Power (75-150 HP)'}
+                  {selectedHPRange === '175-300' && 'V6 (175-300 HP)'}
+                  {selectedHPRange === '350+' && 'V8 (350+ HP)'}
+                  <span>✕</span>
+                </button>
+              )}
+              {selectedEngineType !== 'all' && (
+                <button 
+                  className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium whitespace-nowrap"
+                  onClick={() => {
+                    setSelectedEngineType('all');
+                    // Fire analytics
+                    if (typeof window !== 'undefined' && (window as any).gtag) {
+                      (window as any).gtag('event', 'filter_chip_removed', {
+                        filter_type: 'engine_type',
+                        filter_value: selectedEngineType
+                      });
+                    }
+                  }}
+                >
+                  {selectedEngineType === 'fourstroke' && 'FourStroke'}
+                  {selectedEngineType === 'verado' && 'Verado'}
+                  {selectedEngineType === 'proxs' && 'Pro XS'}
+                  {selectedEngineType === 'seapro' && 'SeaPro'}
+                  <span>✕</span>
+                </button>
+              )}
+              {searchQuery && (
+                <button 
+                  className="flex items-center gap-1 px-3 py-1 bg-muted text-muted-foreground rounded-full text-xs font-medium whitespace-nowrap"
+                  onClick={() => {
+                    setSearchQuery('');
+                    // Fire analytics
+                    if (typeof window !== 'undefined' && (window as any).gtag) {
+                      (window as any).gtag('event', 'search_cleared', {
+                        search_query: searchQuery
+                      });
+                    }
+                  }}
+                >
+                  "{searchQuery}" <span>✕</span>
+                </button>
+              )}
             </div>
-          </div>
-        )}
-        
-        {/* Results Count - Mobile */}
-        <div className="px-2 pb-1">
-          <p className="text-sm text-muted-foreground">
-            Showing {filteredMotors.length} motor{filteredMotors.length !== 1 ? 's' : ''}
-          </p>
+          )}
         </div>
+      </div>
+
+      {/* Results Count - Outside and Below Search Bar */}
+      <div className="px-4 py-2 bg-gray-50/50 border-b lg:hidden">
+        <p className="text-sm text-muted-foreground">
+          Showing {filteredMotors.length} motor{filteredMotors.length !== 1 ? 's' : ''}
+        </p>
       </div>
 
       {/* Desktop Search and Filter Bar */}
@@ -1599,9 +1529,9 @@ export const MotorSelection = ({
           });
           const stockCount = (motor as any)?.stockCount as number | undefined;
           const recentSales = (motor as any)?.recentSales as number | undefined;
-          return <Card key={motor.id} className={`motor-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer group ${selectedMotor?.id === motor.id ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' : 'hover:scale-[1.01] active:scale-[0.98]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} ${(motor as any).stockStatus === 'Sold' ? 'opacity-50 cursor-not-allowed' : ''} flex flex-col`} onClick={() => (motor as any).stockStatus !== 'Sold' && handleMotorSelection(motor)}>
+          return <Card key={motor.id} className={`motor-card relative bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer group ${selectedMotor?.id === motor.id ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' : 'hover:scale-[1.01] active:scale-[0.98]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} ${(motor as any).stockStatus === 'Sold' ? 'opacity-50 cursor-not-allowed' : ''} flex flex-col`} onClick={() => (motor as any).stockStatus !== 'Sold' && handleMotorSelection(motor)}>
 
-                  {/* Stock Badge - Positioned absolute in top-right */}
+                  {/* Stock Badge - Positioned absolute in top-right, anchored to card */}
                   <div className="absolute top-2 right-2 z-20">
                     {motor.stockStatus === 'In Stock' && (
                       <span className="in-stock-badge px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">
