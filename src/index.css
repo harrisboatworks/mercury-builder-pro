@@ -1029,15 +1029,42 @@
   
   /* Button press animations */
 
-  /* Motor card images - Standardized height and centering */
+  /* Motor card images - Force positioning with multiple methods */
   .motor-card-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
     width: 100%;
-    padding: 20px 16px 10px 16px; /* More space above, balanced sides, less below */
+    min-height: 220px !important;
+    padding: 0 !important;
     background: white;
     position: relative;
+  }
+
+  /* Add spacer before image */
+  .motor-card-image-container::before {
+    content: '' !important;
+    height: 40px !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
+  /* Override ALL possible image positioning */
+  .motor-card img,
+  .motor-card-image,
+  .motor-card .motor-card-image,
+  .motor-card-image-container img,
+  img[alt*="Mercury"],
+  img[alt*="motor"] {
+    margin: 0 auto 20px auto !important;
+    position: relative !important;
+    top: 0 !important;
+    transform: translateY(0) !important;
+    max-width: 80% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center bottom !important;
   }
 
   /* Desktop-specific image styling for consistent heights */
