@@ -1042,21 +1042,16 @@
     position: relative;
   }
 
-  /* DESKTOP ONLY - Fix motor images without affecting mobile */
+  /* DESKTOP ONLY - Use transform to physically move images down */
   @media (min-width: 769px) {
-    .motor-card-image-container {
-      display: block !important;
-      padding-top: 40px !important;
-      min-height: 200px !important;
-    }
-    
-    .motor-card {
-      align-items: flex-start !important;
-    }
-    
     .motor-card-image {
-      display: block !important;
-      margin: 0 auto;
+      transform: translateY(40px) !important;
+      position: relative;
+    }
+    
+    .motor-card-image-container {
+      padding-bottom: 40px !important;
+      min-height: 240px !important;
     }
   }
 
