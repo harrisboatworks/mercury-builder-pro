@@ -1033,9 +1033,9 @@
   .motor-card-image-container {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
-    padding: 1rem;
+    padding: 20px 16px 10px 16px; /* More space above, balanced sides, less below */
     background: white;
     position: relative;
   }
