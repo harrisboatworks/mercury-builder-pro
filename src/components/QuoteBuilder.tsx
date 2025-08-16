@@ -27,7 +27,7 @@ export interface Motor {
   hp: number;
   price: number; // effective price shown to user
   image: string;
-  stockStatus: 'In Stock' | 'On Order' | 'Special Order' | 'Sold';
+  stockStatus: 'In Stock' | 'On Order' | 'Order Now' | 'Sold';
   stockNumber?: string | null; // subtle stock number display
   category: 'portable' | 'mid-range' | 'high-performance' | 'v8-racing';
   type: string;

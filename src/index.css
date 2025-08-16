@@ -1028,7 +1028,7 @@
     align-items: center;
     width: 100%;
     padding: 1rem;
-    background: linear-gradient(to bottom, rgb(249 250 251), white);
+    background: white;
     position: relative;
   }
 

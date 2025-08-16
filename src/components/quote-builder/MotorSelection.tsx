@@ -573,7 +573,7 @@ export const MotorSelection = ({
           image: m.image_url || '/placeholder.svg',
           stockStatus: m.availability === 'In Stock' ? 'In Stock' : 
                       m.availability === 'Sold' ? 'Sold' :
-                      m.availability === 'On Order' ? 'On Order' : 'Special Order',
+                      m.availability === 'On Order' ? 'On Order' : 'Order Now',
           stockNumber: m.stock_number,
           category: categorizeMotor(Number(m.horsepower)),
           type: m.motor_type,
@@ -913,7 +913,7 @@ export const MotorSelection = ({
         return 'bg-on-order text-on-order-foreground';
       case 'Sold':
         return 'bg-destructive text-destructive-foreground';
-      case 'Special Order':
+      case 'Order Now':
         return 'bg-special-order text-special-order-foreground';
       default:
         return 'bg-muted text-muted-foreground';
@@ -1538,9 +1538,9 @@ export const MotorSelection = ({
                         IN STOCK
                       </span>
                     )}
-                    {motor.stockStatus === 'Special Order' && (
+                    {motor.stockStatus === 'Order Now' && (
                       <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full">
-                        SPECIAL ORDER
+                        ORDER NOW
                       </span>
                     )}
                     {motor.stockStatus === 'On Order' && (
