@@ -43,12 +43,12 @@ interface DbMotor {
   stock_number?: string | null;
   year: number;
   make: string;
-  // New enhanced fields
   description?: string | null;
   features?: string[] | null;
   specifications?: Record<string, any> | null;
   detail_url?: string | null;
 }
+
 interface Promotion {
   id: string;
   name: string;
@@ -70,6 +70,7 @@ interface Promotion {
   image_url: string | null;
   image_alt_text: string | null;
 }
+
 interface PromotionRule {
   id: string;
   promotion_id: string;
@@ -78,12 +79,11 @@ interface PromotionRule {
   motor_type: string | null;
   horsepower_min: number | null;
   horsepower_max: number | null;
-  // NEW: rule-level discount overrides
   discount_percentage: number;
   discount_fixed_amount: number;
 }
 
-// Shared promotions detection (single source for modal + banner)
+// Shared promotions detection
 const PROMO_MAP = [{
   key: 'get5',
   test: /(mercury\s*)?(get\s*5|get5|5\s*year(\s*warranty)?)/i,
@@ -93,8 +93,11 @@ const PROMO_MAP = [{
   test: /(repower\s*rebate|repower)/i,
   label: 'Repower Rebate Promo active'
 }] as const;
+
 type PromoKey = typeof PROMO_MAP[number]['key'];
+
 const REPOWER_INFO_URL = 'https://www.mercurymarine.com/en/us/engines/outboard/promotions/';
+
 const detectPromoKeysFromText = (text?: string | null): PromoKey[] => {
   if (!text) return [];
   const keys = new Set<PromoKey>();
@@ -106,13 +109,18 @@ const detectPromoKeysFromText = (text?: string | null): PromoKey[] => {
   return Array.from(keys);
 };
 
-const pick = <T>(arr: T[]): T => arr[Math.floor(Math.random() * arr.length)];
+function pick<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
 
 interface MotorSelectionProps {
-  onMotorSelected: (motor: Motor) => void;
+  onMotorSelected?: (motor: Motor) => void;
   onStepComplete: (motor: Motor) => void;
   existingBoatInfo?: any;
   quoteFocus?: 'performance' | 'efficiency' | 'value' | null;
+  // Legacy props for staging pages
+  noSalePriceLayout?: string;
+  imageSizingMode?: string;
 }
 
 export function MotorSelection({ onMotorSelected, onStepComplete }: MotorSelectionProps) {
@@ -141,7 +149,7 @@ export function MotorSelection({ onMotorSelected, onStepComplete }: MotorSelecti
     hpRange: [0, 600] as [number, number]
   });
 
-  const loadingText = useMemo(() => pick(loadingMessages.motorLoading), []);
+  const loadingText = useMemo(() => pick([...loadingMessages]), []);
 
   // HP Ranges for filtering
   const hpRanges = [{
@@ -241,7 +249,9 @@ export function MotorSelection({ onMotorSelected, onStepComplete }: MotorSelecti
           stockStatus: motor.availability === 'In Stock' ? 'In Stock' : 
                       motor.availability === 'On Order' ? 'On Order' : 'Out of Stock',
           appliedPromotions: [],
-          bonusOffers: []
+          bonusOffers: [],
+          type: motor.motor_type || 'outboard',
+          specs: 'N/A'
         }));
 
         setMotors(transformedMotors);
@@ -284,7 +294,7 @@ export function MotorSelection({ onMotorSelected, onStepComplete }: MotorSelecti
     setCelebrationParticles(particles);
     
     toast({
-      title: pick(canadianEncouragement.motorSelected),
+      title: pick([...canadianEncouragement.motorSelected]),
       description: `${motor.model} selected — let's continue, eh!`,
       duration: 2200
     });
@@ -304,7 +314,7 @@ export function MotorSelection({ onMotorSelected, onStepComplete }: MotorSelecti
       <div className="flex items-center justify-center py-12">
         <div className="text-center space-y-4">
           <RefreshCw className="w-8 h-8 animate-spin mx-auto text-primary" />
-          <p>{loadingText}</p>
+          <p>{loadingText as string}</p>
         </div>
       </div>
     );
