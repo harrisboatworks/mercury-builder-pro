@@ -1708,11 +1708,9 @@ export const MotorSelection = ({
           </Card>;
         })}
         </div>}
-                            <TooltipContent>
-                              <div className="max-w-[260px] space-y-2">
+                              
                                 <p>Mercury’s Repower Rebate Program — trade in or repower for potential savings. See details.</p>
-                                <button type="button" className="underline text-left" onClick={e => {
-                        e.stopPropagation();
+                                
                         setActivePromoModal(promotionsState.find(p => /(repower\s*rebate|repower)/i.test([p.name, p.bonus_title, p.bonus_short_badge, p.bonus_description].filter(Boolean).join(' '))) || null);
                         track('rebate_badge_click', {
                           model_id: motor.id,
