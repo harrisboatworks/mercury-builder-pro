@@ -1114,40 +1114,39 @@ export const MotorSelection = ({
       </div>;
   }
   return <div className={`${showCelebration ? 'canadian-celebration' : ''}`}>
-      {/* Mobile-Only Sticky Search and Filter Bar - Compact ≤44px */}
-      <div className="sticky top-[56px] z-30 bg-background border-b border-border shadow-sm lg:hidden">
-        {/* Compact single row - force horizontal layout */}
-        <div className="flex flex-row items-center gap-2 p-2 h-12 overflow-hidden">
-          {/* Search - compact with icon, constrained width */}
-          <div className="flex-1 min-w-0 relative">
-            <Input 
-              type="search" 
-              placeholder="Search HP"
-              value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-                // Fire search_performed analytics event
-                if (e.target.value && typeof window !== 'undefined' && (window as any).gtag) {
-                  (window as any).gtag('event', 'search_performed', {
-                    search_query: e.target.value
-                  });
-                }
-              }}
-              className="w-full pl-8 pr-3 py-1.5 bg-muted/50 border-0 rounded-lg text-sm h-8"
-            />
-            <Search className="absolute left-2.5 top-2 w-4 h-4 text-muted-foreground" />
-          </div>
-          
-          {/* In Stock Toggle - compact, fixed width */}
-          <div className="flex-shrink-0">
-            <label className={`flex items-center gap-1.5 px-2 py-1.5 rounded-lg cursor-pointer transition-all w-16 h-8 ${
+      {/* Mobile-Only Sticky Search and Filter Bar - Premium Style */}
+      <div className="sticky top-[56px] z-30 bg-white border-b shadow-sm lg:hidden">
+        <div className="bg-gradient-to-b from-gray-50 to-white p-3">
+          <div className="flex items-center gap-2">
+            {/* Search - Premium styling */}
+            <div className="flex-1 relative">
+              <Input 
+                type="search" 
+                placeholder="Search HP"
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  // Fire search_performed analytics event
+                  if (e.target.value && typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'search_performed', {
+                      search_query: e.target.value
+                    });
+                  }
+                }}
+                className="w-full pl-9 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl shadow-sm text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+              <Search className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
+            </div>
+            
+            {/* In Stock Toggle - Premium styling */}
+            <label className={`flex items-center gap-1.5 px-3 py-2.5 bg-white border border-gray-200 rounded-xl shadow-sm cursor-pointer hover:bg-gray-50 transition ${
               inStockOnly 
-                ? 'bg-green-100 text-green-700 border border-green-200' 
-                : 'bg-muted/50 text-muted-foreground border-0'
+                ? 'bg-green-50 border-green-200' 
+                : ''
             }`}>
               <input 
                 type="checkbox" 
-                className="w-3.5 h-3.5 rounded text-green-600 flex-shrink-0"
+                className="w-4 h-4 rounded text-green-600"
                 checked={inStockOnly}
                 onChange={(e) => {
                   setInStockOnly(e.target.checked);
@@ -1160,34 +1159,34 @@ export const MotorSelection = ({
                   }
                 }}
               />
-              <span className="text-xs font-medium whitespace-nowrap">Stock</span>
+              <span className="text-sm font-semibold text-gray-700">Stock</span>
             </label>
-          </div>
-          
-          {/* Filter button - icon only, fixed width */}
-          <div className="flex-shrink-0">
-            <MobileFilterSheet 
-              filters={{
-                inStockOnly,
-                hpRange: selectedHPRange === 'all' ? '' : selectedHPRange,
-                engineType: selectedEngineType === 'all' ? '' : selectedEngineType
-              }}
-              onFiltersChange={(filters) => {
-                // Apply filters to the component state
-                setInStockOnly(filters.inStockOnly);
-                setSelectedHPRange(filters.hpRange || 'all');
-                setSelectedEngineType(filters.engineType || 'all');
-                
-                // Fire analytics
-                if (typeof window !== 'undefined' && (window as any).gtag) {
-                  (window as any).gtag('event', 'filter_applied', {
-                    hp_range: filters.hpRange || 'all',
-                    engine_type: filters.engineType || 'all', 
-                    in_stock_only: filters.inStockOnly
-                  });
-                }
-              }}
-            />
+            
+            {/* Filter button - Premium styling */}
+            <div className="p-2.5 bg-white border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition">
+              <MobileFilterSheet 
+                filters={{
+                  inStockOnly,
+                  hpRange: selectedHPRange === 'all' ? '' : selectedHPRange,
+                  engineType: selectedEngineType === 'all' ? '' : selectedEngineType
+                }}
+                onFiltersChange={(filters) => {
+                  // Apply filters to the component state
+                  setInStockOnly(filters.inStockOnly);
+                  setSelectedHPRange(filters.hpRange || 'all');
+                  setSelectedEngineType(filters.engineType || 'all');
+                  
+                  // Fire analytics
+                  if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'filter_applied', {
+                      hp_range: filters.hpRange || 'all',
+                      engine_type: filters.engineType || 'all', 
+                      in_stock_only: filters.inStockOnly
+                    });
+                  }
+                }}
+              />
+            </div>
           </div>
         </div>
         
@@ -1600,157 +1599,115 @@ export const MotorSelection = ({
           });
           const stockCount = (motor as any)?.stockCount as number | undefined;
           const recentSales = (motor as any)?.recentSales as number | undefined;
-          return <Card key={motor.id} className={`product-card relative cursor-pointer transition-all duration-500 hover:shadow-lg group overflow-hidden ${selectedMotor?.id === motor.id ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' : 'hover:scale-[1.01]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} ${(motor as any).stockStatus === 'Sold' ? 'opacity-50 cursor-not-allowed' : ''} flex flex-col`} onClick={() => (motor as any).stockStatus !== 'Sold' && handleMotorSelection(motor)}>
+          return <Card key={motor.id} className={`motor-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer group ${selectedMotor?.id === motor.id ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' : 'hover:scale-[1.01] active:scale-[0.98]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} ${(motor as any).stockStatus === 'Sold' ? 'opacity-50 cursor-not-allowed' : ''} flex flex-col`} onClick={() => (motor as any).stockStatus !== 'Sold' && handleMotorSelection(motor)}>
 
-                  <Badge className={`stock-badge ${getStockBadgeColor(motor.stockStatus)}`}>
-                    {motor.stockStatus}
-                    {motor.stockStatus === 'In Stock' && motor.stockNumber && (
-                      <span className="ml-1 text-xs opacity-70">#{motor.stockNumber}</span>
+                  {/* Stock Badge - Positioned absolute in top-right */}
+                  <div className="absolute top-2 right-2 z-20">
+                    {motor.stockStatus === 'In Stock' && (
+                      <span className="in-stock-badge px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">
+                        IN STOCK
+                      </span>
                     )}
-                  </Badge>
+                    {motor.stockStatus === 'Out of Stock' && (
+                      <span className="px-2 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full">
+                        OUT OF STOCK
+                      </span>
+                    )}
+                    {motor.stockStatus === 'On Order' && (
+                      <span className="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full">
+                        ON ORDER
+                      </span>
+                    )}
+                    {motor.stockStatus === 'Sold' && (
+                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-bold rounded-full">
+                        SOLD
+                      </span>
+                    )}
+                  </div>
 
-                  <div className="p-1.5 sm:p-3 lg:p-4 space-y-1.5 sm:space-y-3 relative h-full flex flex-col">
-                    <div className="flex items-start justify-start">
-                      <Badge variant={getCategoryColor(motor.category)}>
-                        {motor.hp}HP
-                      </Badge>
+                  {/* Card Info Section */}
+                  <div className="p-3 space-y-2">
+                    {/* Price - HUGE and BOLD */}
+                    <div className="motor-price text-2xl font-black text-gray-900">
+                      {callForPrice ? 'Call for Price' : `$${motor.price.toLocaleString()}`}
                     </div>
-
-                     <div className="space-y-1">
-                       {(() => {
-                   const title = formatMotorTitle(motor.year, motor.model);
-                   const raw = `${motor.model ?? ''} ${motor.description ?? motor.specs ?? ''}`.trim();
-                   const subtitle = formatVariantSubtitle(raw, title);
-                    const notification = socialProofNotifications.get(motor.id);
                     
-                    const getNotificationIcon = (iconName: string) => {
-                      const iconProps = { className: "w-3 h-3" };
-                      switch(iconName) {
-                        case 'flame': return <Flame {...iconProps} />;
-                        case 'trending-up': return <TrendingUp {...iconProps} />;
-                        case 'check-circle': return <CheckCircle {...iconProps} />;
-                        case 'tag': return <Tag {...iconProps} />;
-                        case 'anchor': return <Anchor {...iconProps} />;
-                        case 'heart': return <Heart {...iconProps} />;
-                        case 'eye': return <Eye {...iconProps} />;
-                        default: return <Star {...iconProps} />;
-                      }
-                    };
+                    {/* HP - Clear and prominent */}
+                    <div className="motor-hp text-lg font-bold text-gray-700">
+                      {motor.hp} HP
+                    </div>
                     
-                    return <>
-                              <h3 className="text-xs sm:text-sm lg:text-base font-semibold text-foreground line-clamp-2">{title}</h3>
-                              {notification && (
-                                <div className={`inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-medium rounded border animate-fade-in transition-all duration-300 hover:scale-105 ${notification.color}`}>
-                                  {getNotificationIcon(notification.icon)}
-                                  {notification.message}
-                                </div>
-                              )}
-                             <div className="min-h-[1rem]">
-                               {subtitle ? <p className="text-foreground/90 text-xs line-clamp-1" title={subtitle}>{subtitle}</p> : null}
-                             </div>
-                           </>;
-                 })()}
-                     </div>
+                    {/* Model - smaller, secondary */}
+                    <div className="motor-details text-xs text-gray-500">
+                      {(() => {
+                        const title = formatMotorTitle(motor.year, motor.model);
+                        return title;
+                      })()}
+                    </div>
+                    
+                    {/* Badges */}
+                    <div className="flex gap-1 flex-wrap">
+                      {showWarrantyBadge && (
+                        <span className="px-2 py-0.5 bg-red-100 text-red-700 text-xs font-medium rounded">
+                          {warrantyBonus?.shortBadge || '5 Year Warranty'}
+                        </span>
+                      )}
+                      {hasRepower && (
+                        <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-medium rounded">
+                          Repower Rebate
+                        </span>
+                      )}
+                      {otherPromoNames.slice(0, 1).map((name, idx) => (
+                        <span key={idx} className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-medium rounded">
+                          {name}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    {/* Monthly Payment Display */}
+                    <MonthlyPaymentDisplay motorPrice={motor.price} />
+                  </div>
 
-      {motor.image && motor.image !== '/placeholder.svg' && <div className="motor-image-container image-wrap w-full h-[200px] shrink-0 bg-muted/10 overflow-hidden flex items-center justify-center rounded-lg p-2.5 relative">
-    <img src={motor.image} alt={motor.model} loading="lazy" className="motor-image" style={{
-                  height: '180px',
-                  width: 'auto',
-                  objectFit: 'contain',
-                  maxWidth: 'none',
-                  maxHeight: 'none'
-                }} />
+      {motor.image && motor.image !== '/placeholder.svg' && <div className="relative p-4 bg-gradient-to-b from-gray-50 to-white">
+        <img src={motor.image} alt={motor.model} loading="lazy" className="w-full h-auto" style={{
+                      height: '180px',
+                      width: 'auto',
+                      objectFit: 'contain',
+                      maxWidth: 'none',
+                      maxHeight: 'none'
+                    }} />
 
-    {/* Urgency: low stock */}
-    {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && <div className="absolute top-14 left-3 z-20 animate-fade-in">
-        <Badge variant="discount" className="flex items-center gap-1 shadow">
-          <AlertTriangle className="w-3.5 h-3.5" />
-          <span>Only {stockCount} left</span>
-        </Badge>
-      </div>}
+        {/* Urgency: low stock */}
+        {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && <div className="absolute top-14 left-3 z-20 animate-fade-in">
+            <Badge variant="discount" className="flex items-center gap-1 shadow">
+              <AlertTriangle className="w-3.5 h-3.5" />
+              <span>Only {stockCount} left</span>
+            </Badge>
+          </div>}
 
-    {/* Social proof: recent sales */}
-    {typeof recentSales === 'number' && recentSales > 5 && <div className="absolute top-14 right-3 z-20 animate-fade-in">
-        <Badge variant="warranty" className="flex items-center gap-1 shadow">
-          <Star className="w-3.5 h-3.5" />
-          <span>{recentSales} sold this month</span>
-        </Badge>
-      </div>}
+        {/* Social proof: recent sales */}
+        {typeof recentSales === 'number' && recentSales > 5 && <div className="absolute top-14 right-3 z-20 animate-fade-in">
+            <Badge variant="warranty" className="flex items-center gap-1 shadow">
+              <Star className="w-3.5 h-3.5" />
+              <span>{recentSales} sold this month</span>
+            </Badge>
+          </div>}
 
-    <button type="button" className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-background/95 text-foreground border border-border shadow-md flex items-center justify-center opacity-90 transition-transform transition-opacity hover:opacity-100 hover:scale-110" aria-label="Motor info" onClick={e => {
-                  e.stopPropagation();
-                  openQuickView(motor);
-                }}>
-      <Info className="w-4 h-4" />
-    </button>
-          {selectedMotor?.id === motor.id && <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
+        <button type="button" className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-background/95 text-foreground border border-border shadow-md flex items-center justify-center opacity-90 transition-transform transition-opacity hover:opacity-100 hover:scale-110" aria-label="Motor info" onClick={e => {
+                      e.stopPropagation();
+                      openQuickView(motor);
+                    }}>
+          <Info className="w-4 h-4" />
+        </button>
+            
+        {selectedMotor?.id === motor.id && <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
               <Check className="w-20 h-20 text-green-600 drop-shadow-lg animate-scale-in checkmark-icon" strokeWidth={4} aria-hidden="true" />
             </div>}
         </div>}
 
-                    <div className="mt-auto pt-3 border-t border-border">
-                      <div className="price-area min-h-[60px] flex items-center">
-                        {callForPrice ? <span className="text-sm md:text-base font-medium text-foreground">Call for Price</span> : hasSaleDisplay ? <div className="w-full flex items-center justify-between gap-2">
-                            {motor.stockStatus === 'In Stock' && <span className="text-xs md:text-sm line-through text-muted-foreground">MSRP ${(msrp as number).toLocaleString()}</span>}
-                            <div className="flex items-center gap-2">
-                              <span className="text-lg font-bold text-destructive">${motor.price.toLocaleString()}</span>
-                              <span className="text-[10px] md:text-xs font-semibold px-2 py-1 rounded bg-destructive text-destructive-foreground">
-                                SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
-                              </span>
-                            </div>
-                          </div> : effectiveNoSaleLayout === 'placeholder' ? <div className="w-full">
-                              <span className="text-lg font-semibold text-foreground">${motor.price.toLocaleString()}</span>
-                            </div> : <div className="w-full text-center">
-                              <span className="text-lg font-semibold text-foreground">${motor.price.toLocaleString()}</span>
-                            </div>}
-                      </div>
-                      
-                      {/* Monthly Payment Display */}
-                      <MonthlyPaymentDisplay motorPrice={motor.price} />
-                    </div>
-
-                    {(hasGet5 || hasRepower) && <div className="promo-badges flex justify-center mt-1">
-                        {hasGet5 && <Tooltip>
-                            <TooltipTrigger asChild>
-                              <span aria-label="5 Year Warranty" className="promo-badge-base promo-badge-warranty badge text-[#fcf7f7]" onMouseEnter={() => track('warranty_badge_hover', {
-                        model_id: motor.id,
-                        model_name: motor.model
-                      })} onClick={e => e.stopPropagation()}>
-                                <ShieldCheck className="w-4 h-4" aria-hidden="true" />
-                                <span>{warrantyBonus?.shortBadge || '5 Year Warranty'}</span>
-                              </span>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <div className="max-w-[260px] space-y-2">
-                                {warrantyBonus?.image_url && (
-                                  <img 
-                                    src={warrantyBonus.image_url} 
-                                    alt={warrantyBonus.image_alt_text || 'Warranty promotion'} 
-                                    className="w-full h-auto rounded-md"
-                                  />
-                                )}
-                                <p>Mercury's 5-Year Limited Warranty — comprehensive coverage for peace of mind on your investment.</p>
-                                <button type="button" className="underline text-left" onClick={e => {
-                        e.stopPropagation();
-                        setActivePromoModal(promotionsState.find(p => /(get\s*5|5\s*year|warranty)/i.test([p.name, p.bonus_title, p.bonus_short_badge, p.bonus_description].filter(Boolean).join(' '))) || null);
-                        track('warranty_badge_click', {
-                          model_id: motor.id,
-                          model_name: motor.model
-                        });
-                      }}>Learn More</button>
-                              </div>
-                            </TooltipContent>
-                          </Tooltip>}
-                        {hasRepower && <Tooltip>
-                            <TooltipTrigger asChild>
-                              <span className="promo-badge-base badge text-white bg-gray-800 border border-gray-700" data-badge="repower" aria-label="Repower Rebate" onMouseEnter={() => track('rebate_badge_hover', {
-                      model_id: motor.id,
-                      model_name: motor.model
-                    })} onClick={e => e.stopPropagation()}>
-                                <RefreshCcw className="w-4 h-4" aria-hidden="true" />
-                                <span>Repower Rebate</span>
-                              </span>
-                            </TooltipTrigger>
+          </Card>;
+        })}
+        </div>}
                             <TooltipContent>
                               <div className="max-w-[260px] space-y-2">
                                 <p>Mercury’s Repower Rebate Program — trade in or repower for potential savings. See details.</p>
@@ -2247,6 +2204,27 @@ export const MotorSelection = ({
         }}
         prefilledModel={quoteFormModel}
       />
+
+      {/* Sticky Bottom Price Bar - Mobile Only */}
+      {selectedMotor && (
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 shadow-2xl p-3 z-40 lg:hidden">
+          <div className="flex items-center justify-between gap-3">
+            {/* Price Display */}
+            <div>
+              <div className="text-xs text-gray-500 uppercase tracking-wide">Your Build</div>
+              <div className="text-2xl font-bold text-gray-900">${selectedMotor.price.toLocaleString()}</div>
+            </div>
+            
+            {/* CTA Button */}
+            <button 
+              className="flex-1 bg-gradient-to-r from-red-600 to-red-500 text-white py-3 px-6 rounded-xl font-bold text-lg shadow-lg active:scale-95 transition-transform"
+              onClick={() => handleMotorSelect(selectedMotor)}
+            >
+              Get Quote →
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Mobile spacer to prevent sticky CTA from covering content */}
       <div className="mobile-cta-spacer lg:hidden" />

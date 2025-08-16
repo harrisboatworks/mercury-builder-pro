@@ -944,21 +944,50 @@
     padding: 8px;
   }
   
-  /* Ensure tap targets are properly sized (44px minimum) */
-  button, 
-  .cursor-pointer,
-  input[type="checkbox"],
-  [role="button"] {
-    min-height: 44px;
-    min-width: 44px;
+/* Premium Mobile Styling */
+@media (max-width: 768px) {
+  /* Mobile text sizing - Visual hierarchy */
+  .motor-price {
+    font-size: 1.5rem !important;  /* 24px */
+    font-weight: 900 !important;
+    color: #111 !important;
   }
   
-  /* Exception for very small checkboxes and icons inside buttons */
-  button input[type="checkbox"],
-  button .w-3,
-  button .w-4 {
-    min-height: auto;
-    min-width: auto;
+  .motor-hp {
+    font-size: 1.125rem !important;  /* 18px */
+    font-weight: 700 !important;
+    color: #374151 !important;
+  }
+  
+  .motor-details {
+    font-size: 0.75rem !important;  /* 12px */
+    color: #6B7280 !important;
+  }
+  
+  /* Premium motor card styling */
+  .motor-card {
+    padding: 0.75rem !important;
+    transition: all 0.2s ease !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  }
+  
+  .motor-card:active {
+    transform: scale(0.98) !important;
+  }
+  
+  /* In-stock badge pulse animation */
+  .in-stock-badge {
+    animation: subtle-pulse 2s infinite;
+  }
+  
+  /* Button press animations */
+  button {
+    transition: all 0.15s ease !important;
+  }
+  
+  button:active {
+    transform: scale(0.95) !important;
   }
   
   /* Tighter spacing between search and motor grid */
@@ -977,6 +1006,34 @@
     margin: 0.25rem 0;
     gap: 0.25rem;
   }
+  
+  /* Ensure minimum tap target sizes */
+  button, 
+  .cursor-pointer,
+  input[type="checkbox"],
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Exception for very small checkboxes and icons inside buttons */
+  button input[type="checkbox"],
+  button .w-3,
+  button .w-4 {
+    min-height: auto;
+    min-width: auto;
+  }
+}
+
+/* Subtle pulse animation for in-stock badges */
+@keyframes subtle-pulse {
+  0%, 100%) { 
+    opacity: 1; 
+  }
+  50% { 
+    opacity: 0.8; 
+  }
+}
 }
 
 /* Floating CTA safe area handling */
