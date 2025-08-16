@@ -1050,12 +1050,40 @@
     display: block !important;
   }
 
-  /* Move motor images down on product/motor cards */
+/* Move motor images down on product/motor cards */
+.motor-card__media img,
+.product-card__media img {
+  display: block;
+  margin-top: 16px;   /* adjust this value until it looks right */
+}
+
+/* DESKTOP ONLY - Fix motor images without affecting mobile */
+@media (min-width: 769px) {
+  .motor-card img,
   .motor-card__media img,
-  .product-card__media img {
-    display: block;
-    margin-top: 16px;   /* adjust this value until it looks right */
+  .product-card__media img,
+  [class*="motor-card"] img,
+  [class*="product-card"] img {
+    margin-top: 40px !important;
+    display: block !important;
   }
+  
+  /* Alternative approach - add padding to container */
+  .motor-card-image-container,
+  .motor-card > div:first-child,
+  .motor-card__media,
+  .product-card__media {
+    padding-top: 40px !important;
+  }
+  
+  /* Flex centering approach for better positioning */
+  .motor-card-image-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 200px !important;
+  }
+}
 
   /* Desktop-specific image styling for consistent heights */
   @media (min-width: 1024px) {
