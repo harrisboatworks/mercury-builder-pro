@@ -1653,19 +1653,101 @@ export const MotorSelection = ({
                     {/* Badges */}
                     <div className="flex gap-1 flex-wrap">
                       {showWarrantyBadge && (
-                        <span className="px-2 py-0.5 bg-red-100 text-red-700 text-xs font-medium rounded">
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const promoData = {
+                              id: warrantyBonus?.id || 'warranty-promo',
+                              name: warrantyBonus?.title || '5 Year Mercury Warranty',
+                              end_date: warrantyBonus?.endsAt || null,
+                              terms_url: warrantyBonus?.termsUrl || null,
+                              details: {
+                                amount: warrantyBonus?.shortBadge || '5 Year Warranty',
+                                eligibility: [
+                                  'Valid on select Mercury outboard motors',
+                                  'Must be installed by certified dealer',
+                                  'Registration required within 30 days'
+                                ],
+                                terms: [
+                                  'Warranty covers parts and labor',
+                                  'Factory-trained technicians only',
+                                  'Proof of purchase required'
+                                ],
+                                processingTime: 'Immediate upon installation',
+                                finePrint: 'See dealer for complete warranty terms and conditions.'
+                              }
+                            };
+                            setActivePromoModal(promoData as any);
+                          }}
+                          className="px-2 py-0.5 bg-red-100 text-red-700 text-xs font-medium rounded hover:bg-red-200 transition-colors cursor-pointer"
+                        >
                           {warrantyBonus?.shortBadge || '5 Year Warranty'}
-                        </span>
+                        </button>
                       )}
                       {hasRepower && (
-                        <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-medium rounded">
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const promoData = {
+                              id: repowerBonus?.id || 'repower-promo',
+                              name: repowerBonus?.title || 'Mercury Repower Rebate',
+                              end_date: repowerBonus?.endsAt || null,
+                              terms_url: repowerBonus?.termsUrl || null,
+                              details: {
+                                amount: 'Up to $2,000 Rebate',
+                                eligibility: [
+                                  'Trade in your old outboard motor',
+                                  'Purchase eligible Mercury outboard',
+                                  'Installation by certified dealer required'
+                                ],
+                                terms: [
+                                  'Rebate amount varies by motor model',
+                                  'Old motor must be operational',
+                                  'Cannot be combined with other offers'
+                                ],
+                                processingTime: '6-8 weeks after submission',
+                                finePrint: 'Rebate offer subject to change. See dealer for current rebate amounts and eligible models.'
+                              }
+                            };
+                            setActivePromoModal(promoData as any);
+                          }}
+                          className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-medium rounded hover:bg-blue-200 transition-colors cursor-pointer"
+                        >
                           Repower Rebate
-                        </span>
+                        </button>
                       )}
                       {otherPromoNames.slice(0, 1).map((name, idx) => (
-                        <span key={idx} className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-medium rounded">
+                        <button 
+                          key={idx}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const promoData = {
+                              id: `other-promo-${idx}`,
+                              name: name,
+                              end_date: null,
+                              terms_url: null,
+                              details: {
+                                amount: 'Special Offer',
+                                eligibility: [
+                                  'Valid on qualifying purchases',
+                                  'Must meet promotion requirements',
+                                  'Installation by authorized dealer'
+                                ],
+                                terms: [
+                                  'Limited time offer',
+                                  'Cannot be combined with other promotions',
+                                  'See dealer for complete details'
+                                ],
+                                processingTime: 'Varies by promotion',
+                                finePrint: 'Promotion terms subject to change. Contact dealer for current offer details.'
+                              }
+                            };
+                            setActivePromoModal(promoData as any);
+                          }}
+                          className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-medium rounded hover:bg-purple-200 transition-colors cursor-pointer"
+                        >
                           {name}
-                        </span>
+                        </button>
                       ))}
                     </div>
                     
@@ -2174,6 +2256,13 @@ export const MotorSelection = ({
 
       {/* Mobile spacer to prevent sticky CTA from covering content */}
       <div className="mobile-cta-spacer lg:hidden" />
+
+      {/* Promo Details Modal */}
+      <PromoDetailsModal
+        promo={activePromoModal}
+        open={!!activePromoModal}
+        onOpenChange={(open) => !open && setActivePromoModal(null)}
+      />
 
     </div>
   </div>;
