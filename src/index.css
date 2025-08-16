@@ -1042,21 +1042,31 @@
     position: relative;
   }
 
-  /* DESKTOP ONLY - Add padding above motor images */
+  /* DESKTOP ONLY - Motor card layout with bottom-aligned content */
   @media (min-width: 769px) {
+    .motor-card {
+      min-height: 400px !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    
     .motor-card-image-container {
-      padding-top: 30px !important;
-      padding-bottom: 10px !important;
+      flex: 1 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 20px !important;
     }
     
     .motor-card-image {
-      margin-top: 0 !important;
+      max-height: 180px !important;
+      width: auto !important;
+      object-fit: contain !important;
     }
     
-    /* Fallback - target image directly if container doesn't work */
-    .motor-card img[src*="motor"],
-    .motor-card img[alt*="motor"] {
-      margin-top: 30px !important;
+    /* Push details to bottom */
+    .motor-card > div:last-child {
+      margin-top: auto !important;
     }
   }
 
