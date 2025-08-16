@@ -1529,48 +1529,48 @@ export const MotorSelection = ({
           });
           const stockCount = (motor as any)?.stockCount as number | undefined;
           const recentSales = (motor as any)?.recentSales as number | undefined;
-          return <Card key={motor.id} className={`motor-card relative bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer group ${selectedMotor?.id === motor.id ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' : 'hover:scale-[1.01] active:scale-[0.98]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} ${(motor as any).stockStatus === 'Sold' ? 'opacity-50 cursor-not-allowed' : ''} flex flex-col`} onClick={() => (motor as any).stockStatus !== 'Sold' && handleMotorSelection(motor)}>
+           return <Card key={motor.id} className={`motor-card relative bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer group ${selectedMotor?.id === motor.id ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' : 'hover:scale-[1.01] active:scale-[0.98]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} ${(motor as any).stockStatus === 'Sold' ? 'opacity-50 cursor-not-allowed' : ''} flex flex-col`} onClick={() => (motor as any).stockStatus !== 'Sold' && handleMotorSelection(motor)}>
 
-                  {/* Stock Badge - Positioned absolute in top-right, anchored to card */}
-                  <div className="absolute top-3 right-3 z-30">
-                    {motor.stockStatus === 'In Stock' && (
-                      <span className="in-stock-badge px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">
-                        IN STOCK
-                      </span>
-                    )}
-                    {motor.stockStatus === 'Order Now' && (
-                      <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full">
-                        ORDER NOW
-                      </span>
-                    )}
-                    {motor.stockStatus === 'On Order' && (
-                      <span className="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full">
-                        ON ORDER
-                      </span>
-                    )}
-                    {motor.stockStatus === 'Sold' && (
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-bold rounded-full">
-                        SOLD
-                      </span>
-                    )}
-                  </div>
+                   {/* Image Section - Moved to top for better layout consistency */}
+                   {motor.image && motor.image !== '/placeholder.svg' && (
+                     <div className="motor-card-image-container relative">
+                       <img 
+                         src={motor.image} 
+                         alt={motor.model} 
+                         loading="lazy" 
+                         className="motor-card-image w-full object-contain"
+                       />
 
-                  {/* Image Section - Moved to top for better layout consistency */}
-                  {motor.image && motor.image !== '/placeholder.svg' && (
-                    <div className="motor-card-image-container relative">
-                      <img 
-                        src={motor.image} 
-                        alt={motor.model} 
-                        loading="lazy" 
-                        className="motor-card-image w-full object-contain"
-                      />
+                       {/* HP Badge - Top left */}
+                       <div className="absolute top-3 left-3 z-20">
+                         <div className="px-2 py-1 rounded-md bg-gray-900/90 text-white text-xs font-medium">
+                           {motor.hp} HP
+                         </div>
+                       </div>
 
-                      {/* HP Badge - Top left */}
-                      <div className="absolute top-3 left-3 z-20">
-                        <div className="px-2 py-1 rounded-md bg-gray-900/90 text-white text-xs font-medium">
-                          {motor.hp} HP
-                        </div>
-                      </div>
+                       {/* Stock Badge - Top right, aligned with HP badge */}
+                       <div className="absolute top-3 right-3 z-20">
+                         {motor.stockStatus === 'In Stock' && (
+                           <span className="in-stock-badge px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">
+                             IN STOCK
+                           </span>
+                         )}
+                         {motor.stockStatus === 'Order Now' && (
+                           <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full">
+                             ORDER NOW
+                           </span>
+                         )}
+                         {motor.stockStatus === 'On Order' && (
+                           <span className="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full">
+                             ON ORDER
+                           </span>
+                         )}
+                         {motor.stockStatus === 'Sold' && (
+                           <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-bold rounded-full">
+                             SOLD
+                           </span>
+                         )}
+                       </div>
 
                       {/* Urgency: low stock */}
                       {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && (
