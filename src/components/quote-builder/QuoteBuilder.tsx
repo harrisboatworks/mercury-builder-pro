@@ -151,7 +151,7 @@ export default function QuoteBuilder() {
       <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Mobile Layout - Taller Height for Logo */}
-          <div className="flex lg:hidden h-20 items-center">
+          <div className="flex lg:hidden mobile-header items-center">
             <div className="flex items-center justify-between w-full">
               <button 
                 id="hamburger" 
@@ -169,12 +169,12 @@ export default function QuoteBuilder() {
                 <img 
                   src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" 
                   alt="Harris Boat Works" 
-                  className="h-16 w-auto max-w-none" 
+                  className="harris-logo w-auto max-w-none" 
                 />
                 <img 
                   src={mercuryPng} 
                   alt="Mercury" 
-                  className="h-10 w-auto max-w-none" 
+                  className="mercury-logo w-auto max-w-none" 
                 />
               </div>
             </div>

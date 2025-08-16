@@ -2,8 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Mobile optimization: Limit promotional badges to 1 on small screens */
-@media (max-width: 640px) {
+/* Mobile-only fixes for header, logo, and search issues */
+@media (max-width: 768px) {
+  /* FIX 1: Harris logo getting cut off */
+  .mobile-header {
+    padding-top: 12px !important;
+    min-height: 60px !important;
+  }
+  
+  .harris-logo {
+    height: 40px !important;
+    margin-top: 4px !important;
+  }
+  
+  /* FIX 2: Replace "Last updated" text with green pulsing dot */
+  .last-updated-text {
+    display: none !important;
+  }
+  
+  .last-updated {
+    position: relative;
+  }
+  
+  .last-updated::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+  
+  /* FIX 3: Mercury logo overlapping with search */
+  .mercury-logo {
+    max-width: 140px !important;
+    height: 30px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .search-container {
+    margin-top: 8px !important;
+    clear: both !important;
+  }
+  
+  /* Existing mobile optimizations */
   .promo-badges .promo-badge-base:not(:first-child) {
     display: none;
   }
@@ -26,11 +72,6 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  }
-  
-  /* Ensure proper mobile header height */
-  .mobile-header {
-    height: 56px;
   }
   
   /* Reserve space for sticky CTA to avoid layout shift */
