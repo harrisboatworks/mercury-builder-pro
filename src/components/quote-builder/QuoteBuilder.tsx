@@ -171,23 +171,6 @@ export default function QuoteBuilder() {
                   className="h-10 w-auto max-w-none" 
                 />
               </div>
-              
-              {/* Mobile Quote Button */}
-              <button 
-                className="text-sm font-medium text-blue-600 hover:text-blue-700 px-2 py-2 min-w-11 h-11 flex items-center justify-center"
-                onClick={() => {
-                  // Fire analytics event
-                  if (typeof window !== 'undefined' && (window as any).gtag) {
-                    (window as any).gtag('event', 'cta_quote_open', {
-                      source: 'header_mobile'
-                    });
-                  }
-                  // Open quote form - will be handled by parent component
-                }}
-                aria-label="Get a quote"
-              >
-                Quote
-              </button>
             </div>
           </div>
 
