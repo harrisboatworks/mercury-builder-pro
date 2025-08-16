@@ -1052,7 +1052,7 @@
       max-height: 160px; /* Ensure image fits within container with padding */
       height: auto;
       width: auto;
-      margin: 0 auto;
+      margin: auto 0;
       display: block;
       transform-origin: center center; /* Ensure hover zoom scales from center */
       transition: transform 0.2s ease-out;
