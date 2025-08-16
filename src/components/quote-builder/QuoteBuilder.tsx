@@ -149,32 +149,32 @@ export default function QuoteBuilder() {
       {/* Mobile-Optimized Header - Compact ≤56px */}
       <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Mobile Layout - Compact Height */}
+          {/* Mobile Layout - Compact Height ≤56px */}
           <div className="flex lg:hidden h-14 items-center">
             <div className="flex items-center justify-between w-full">
               <button 
                 id="hamburger" 
-                className="p-2 text-gray-900 hover:bg-gray-100 rounded-lg -ml-2"
+                className="p-2 text-gray-900 hover:bg-gray-100 rounded-lg -ml-2 w-11 h-11 flex items-center justify-center"
                 onClick={() => setHamburgerOpen(true)}
+                aria-label="Open menu"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
               
-              {/* Compact Logo Group */}
-              <div className="flex items-center gap-2 flex-1 justify-center">
+              {/* Centered Harris Logo Only */}
+              <div className="flex-1 flex justify-center">
                 <img 
                   src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" 
                   alt="Harris Boat Works" 
-                  className="h-8" 
+                  className="h-7 w-auto max-w-none" 
                 />
-                <img src="/src/assets/mercury-logo.png" alt="Mercury" className="h-6" />
               </div>
               
-              {/* Mobile CTA Button */}
+              {/* Mobile Quote Button */}
               <button 
-                className="text-sm font-medium text-blue-600 hover:text-blue-700 px-2"
+                className="text-sm font-medium text-blue-600 hover:text-blue-700 px-2 py-2 min-w-11 h-11 flex items-center justify-center"
                 onClick={() => {
                   // Fire analytics event
                   if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -184,6 +184,7 @@ export default function QuoteBuilder() {
                   }
                   // Open quote form - will be handled by parent component
                 }}
+                aria-label="Get a quote"
               >
                 Quote
               </button>

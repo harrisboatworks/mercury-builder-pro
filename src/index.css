@@ -865,8 +865,101 @@
   .product-card .badge--repower .badge__icon {
     font-size: 14px;
     animation: none;
+/* Mobile Header and Search Optimizations */
+@media (max-width: 640px) {
+  /* Ensure mobile header stays compact */
+  .sticky-header {
+    height: 56px;
+    min-height: 56px;
+    max-height: 56px;
   }
+  
+  /* Mobile search bar compactness */
+  .mobile-search-bar {
+    height: 44px;
+    min-height: 44px;
+    max-height: 44px;
+  }
+  
+  /* Reduce card padding on mobile for more content visibility */
+  .product-card .card-content {
+    padding: 6px 12px;
+  }
+  
+  /* Mobile badge limiting - hide extra badges */
+  .promo-badges > *:nth-child(n+2) {
+    display: none;
+  }
+  
+  /* Ensure safe area respect for floating elements */
+  .mobile-cta-spacer {
+    height: calc(64px + env(safe-area-inset-bottom, 0px));
+  }
+  
+  /* Compact text on mobile */
+  .mobile-compact {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  
+  /* Two-column motor grid optimization */
+  .motors-grid.grid-cols-2 {
+    gap: 8px;
+  }
+  
+  .motors-grid.grid-cols-2 > * {
+    min-height: 280px; /* Ensure consistent height */
+  }
+  
+  /* Tighter spacing for mobile product cards */
+  .product-card {
+    padding: 8px;
+  }
+  
+  /* Ensure tap targets are properly sized (44px minimum) */
+  button, 
+  .cursor-pointer,
+  input[type="checkbox"],
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Exception for very small checkboxes and icons inside buttons */
+  button input[type="checkbox"],
+  button .w-3,
+  button .w-4 {
+    min-height: auto;
+    min-width: auto;
+  }
+}
 
+/* Floating CTA safe area handling */
+.mobile-sticky-cta {
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  right: 16px;
+}
+
+/* Badge priority system */
+.promo-badges {
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .promo-badges {
+    justify-content: center;
+    max-width: 100%;
+  }
+  
+  .promo-badges > .tooltip-trigger:first-child {
+    display: flex; /* Always show first badge */
+  }
+  
+  .promo-badges > .tooltip-trigger:not(:first-child) {
+    display: none; /* Hide additional badges on mobile */
+  }
+}
   /* Modal-scoped Promotions list */
   .modal .modal-promos { margin-top: 0.75rem; }
   .modal .promo-list { display: flex; flex-direction: column; gap: 0.4rem; }
