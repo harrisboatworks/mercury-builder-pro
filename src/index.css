@@ -1050,21 +1050,11 @@
     display: block !important;
   }
 
-  /* Override ALL possible image positioning */
-  .motor-card img,
-  .motor-card-image,
-  .motor-card .motor-card-image,
-  .motor-card-image-container img,
-  img[alt*="Mercury"],
-  img[alt*="motor"] {
-    margin: 0 auto 20px auto !important;
-    position: relative !important;
-    top: 0 !important;
-    transform: translateY(0) !important;
-    max-width: 80% !important;
-    height: auto !important;
-    object-fit: contain !important;
-    object-position: center bottom !important;
+  /* Move motor images down on product/motor cards */
+  .motor-card__media img,
+  .product-card__media img {
+    display: block;
+    margin-top: 16px;   /* adjust this value until it looks right */
   }
 
   /* Desktop-specific image styling for consistent heights */
