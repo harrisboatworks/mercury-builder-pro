@@ -1,29 +1,31 @@
 import { Button } from "@/components/ui/button";
+import { MessageCircle } from "lucide-react";
 
 interface MobileStickyCTAProps {
-  onAction: () => void;
-  label: string;
-  price?: string;
+  onQuoteClick: () => void;
   className?: string;
 }
 
-export const MobileStickyCTA = ({ onAction, label, price, className = "" }: MobileStickyCTAProps) => {
+export const MobileStickyCTA = ({ onQuoteClick, className = "" }: MobileStickyCTAProps) => {
+  const handleClick = () => {
+    // Fire analytics event
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'cta_quote_open', {
+        source: 'sticky_mobile_cta'
+      });
+    }
+    onQuoteClick();
+  };
+
   return (
-    <div className={`fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200 p-3 ${className}`}>
-      <div className="flex gap-2 items-center max-w-screen-2xl mx-auto">
-        {price && (
-          <div className="text-gray-900">
-            <div className="text-xs text-gray-600">Your Build</div>
-            <div className="text-xl font-bold text-gray-900">{price}</div>
-          </div>
-        )}
-        <Button 
-          onClick={onAction}
-          className="flex-1 bg-red-600 hover:bg-red-700 py-3 px-4 rounded-lg text-white font-semibold min-h-[48px]"
-        >
-          {label}
-        </Button>
-      </div>
+    <div className={`fixed bottom-4 right-4 z-50 sm:hidden ${className}`}>
+      <Button 
+        onClick={handleClick}
+        className="bg-red-600 hover:bg-red-700 text-white shadow-lg rounded-full w-14 h-14 p-0 flex items-center justify-center"
+        aria-label="Get a Quote"
+      >
+        <MessageCircle className="w-6 h-6" />
+      </Button>
     </div>
   );
 };

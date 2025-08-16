@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Flame, TrendingUp, CheckCircle, Tag, Anchor, Heart, Eye, Search } from 'lucide-react';
+import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Flame, TrendingUp, CheckCircle, Tag, Anchor, Heart, Eye, Search, X } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -23,6 +23,11 @@ import { useNavigate } from 'react-router-dom';
 import { canadianEncouragement, loadingMessages, emptyStateMessages, friendlyErrors } from '@/lib/canadian-messages';
 import { MonthlyPaymentDisplay } from './MonthlyPaymentDisplay';
 import { processHarrisLogoBackground } from '@/utils/processHarrisLogo';
+// Mobile optimization imports
+import { MobileTrustAccordion } from '@/components/ui/mobile-trust-accordion';
+import { MobileFilterSheet } from '@/components/ui/mobile-filter-sheet';
+import { MobileStickyCTA } from '@/components/ui/mobile-sticky-cta';
+import { MobileQuoteForm } from '@/components/ui/mobile-quote-form';
 
 // Database types
 interface DbMotor {
@@ -410,6 +415,15 @@ export const MotorSelection = ({
   const urlImgMode = isStagingRoute ? new URLSearchParams(window.location.search).get('imgMode') : null;
   const paramImgMode: 'current' | 'taller' | 'scale-msrp' | 'v2' | 'uniform-112' | null = urlImgMode === 'taller' || urlImgMode === 'scale-msrp' || urlImgMode === 'current' || urlImgMode === 'v2' || urlImgMode === 'uniform-112' ? urlImgMode as any : null;
   const effectiveImageSizingMode: 'current' | 'taller' | 'scale-msrp' | 'v2' | 'uniform-112' = paramImgMode as any ?? imageSizingMode;
+  // Mobile-specific state additions
+  const [showQuoteForm, setShowQuoteForm] = useState(false);
+  const [quoteFormModel, setQuoteFormModel] = useState('');
+  const [mobileFilters, setMobileFilters] = useState({
+    inStockOnly: false,
+    hpRange: '',
+    engineType: ''
+  });
+
   const navigate = useNavigate();
   const pick = <T,>(arr: readonly T[]): T => arr[Math.floor(Math.random() * arr.length)];
   const loadingText = useMemo<string>(() => pick(loadingMessages as readonly string[]), []);
@@ -1443,6 +1457,9 @@ export const MotorSelection = ({
           </div>}
 
 
+        {/* Mobile Trust Accordion - Replaces desktop badges on mobile */}
+        <MobileTrustAccordion />
+
         <div className="dealer-credentials rounded-lg mb-6 p-4 md:p-6 bg-gradient-to-r from-primary/5 to-muted/40 border border-border hidden sm:block">
           <div className="dealer-credentials-banner flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
             {/* CSI Award */}
@@ -2142,6 +2159,16 @@ export const MotorSelection = ({
             </div>}
         </DialogContent>
       </Dialog>
+
+      {/* Mobile Sticky CTA */}
+      <MobileStickyCTA onQuoteClick={() => setShowQuoteForm(true)} />
+
+      {/* Mobile Quote Form */}
+      <MobileQuoteForm 
+        isOpen={showQuoteForm}
+        onClose={() => setShowQuoteForm(false)}
+        prefilledModel={quoteFormModel}
+      />
 
     </div>
   </div>;

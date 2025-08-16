@@ -40,6 +40,7 @@ export default function QuoteBuilder() {
   const [totalXP, setTotalXP] = useState(0);
   const [quoteForSchedule, setQuoteForSchedule] = useState<any | null>(null);
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const [showQuoteForm, setShowQuoteForm] = useState(false);
 
   const { user, loading, signOut } = useAuth();
 
@@ -145,44 +146,47 @@ export default function QuoteBuilder() {
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
-      {/* Mobile-Optimized Header */}
+      {/* Mobile-Optimized Header - Compact ≤56px */}
       <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          {/* Mobile Layout */}
-          <div className="flex lg:hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Mobile Layout - Compact Height */}
+          <div className="flex lg:hidden h-14 items-center">
             <div className="flex items-center justify-between w-full">
               <button 
                 id="hamburger" 
-                className="p-2 text-gray-900 hover:bg-gray-100 rounded-lg"
+                className="p-2 text-gray-900 hover:bg-gray-100 rounded-lg -ml-2"
                 onClick={() => setHamburgerOpen(true)}
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
               
-              {/* Centered Logo Group on Mobile */}
-              <div className="flex items-center justify-center gap-3 flex-1">
+              {/* Compact Logo Group */}
+              <div className="flex items-center gap-2 flex-1 justify-center">
                 <img 
                   src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" 
                   alt="Harris Boat Works" 
-                  className="h-16" 
+                  className="h-8" 
                 />
-                <img src="/src/assets/mercury-logo.png" alt="Mercury" className="h-12" />
+                <img src="/src/assets/mercury-logo.png" alt="Mercury" className="h-6" />
               </div>
               
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-2 px-3 py-1 bg-green-50 rounded-full">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-xs text-green-700 font-medium">Live Inventory</span>
-                </div>
-                {selectedMotor && (
-                  <div className="text-right">
-                    <div className="text-lg font-bold text-gray-900">${selectedMotor.price.toLocaleString()}</div>
-                    <div className="text-xs text-gray-500">Your Build</div>
-                  </div>
-                )}
-              </div>
+              {/* Mobile CTA Button */}
+              <button 
+                className="text-sm font-medium text-blue-600 hover:text-blue-700 px-2"
+                onClick={() => {
+                  // Fire analytics event
+                  if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'cta_quote_open', {
+                      source: 'header_mobile'
+                    });
+                  }
+                  // Open quote form - will be handled by parent component
+                }}
+              >
+                Quote
+              </button>
             </div>
           </div>
 
