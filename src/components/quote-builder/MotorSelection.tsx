@@ -1590,7 +1590,7 @@ export const MotorSelection = ({
                       {/* Info button */}
                       <button 
                         type="button" 
-                        className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-background/95 text-foreground border border-border shadow-md flex items-center justify-center opacity-90 transition-transform transition-opacity hover:opacity-100 hover:scale-110" 
+                        className="absolute top-16 left-3 z-20 w-8 h-8 rounded-full bg-background/95 text-foreground border border-border shadow-md flex items-center justify-center opacity-90 transition-transform transition-opacity hover:opacity-100 hover:scale-110"
                         aria-label="Motor info" 
                         onClick={e => {
                           e.stopPropagation();
