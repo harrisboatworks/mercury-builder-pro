@@ -147,43 +147,36 @@ export default function QuoteBuilder() {
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
-      {/* Mobile-Optimized Header - Safe Area Responsive */}
+      {/* Mobile-Optimized Header - Compact ≤56px */}
       <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Mobile Layout - Single Row with Safe Areas */}
-          <div className="flex lg:hidden items-center justify-between min-h-[56px] py-2" style={{ paddingTop: 'max(8px, env(safe-area-inset-top))', paddingBottom: '8px' }}>
-            {/* Left: Hamburger */}
-            <button 
-              id="hamburger" 
-              className="p-2 text-gray-900 hover:bg-gray-100 rounded-lg -ml-2 w-11 h-11 flex items-center justify-center flex-shrink-0"
-              onClick={() => setHamburgerOpen(true)}
-              aria-label="Open menu"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-            
-            {/* Center: HBW Logo Only */}
-            <div className="flex-1 flex justify-center items-center overflow-visible">
-              <img 
-                src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" 
-                alt="Harris Boat Works" 
-                className="h-7 w-auto max-w-none object-contain"
-                style={{ maxHeight: '28px' }}
-              />
-            </div>
-            
-            {/* Right: Live Indicator */}
-            <div className="flex items-center flex-shrink-0">
-              <button
-                className="live-dot relative w-3 h-3 bg-green-500 rounded-full"
-                aria-label="Live inventory. Updated just now"
-                title="Live inventory"
+          {/* Mobile Layout - Taller Height for Logo */}
+          <div className="flex lg:hidden h-20 items-center">
+            <div className="flex items-center justify-between w-full">
+              <button 
+                id="hamburger" 
+                className="p-2 text-gray-900 hover:bg-gray-100 rounded-lg -ml-2 w-11 h-11 flex items-center justify-center"
+                onClick={() => setHamburgerOpen(true)}
+                aria-label="Open menu"
               >
-                <span className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75"></span>
-                <span className="absolute inset-0 bg-green-500 rounded-full"></span>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
               </button>
+              
+              {/* Centered Logo Group */}
+              <div className="flex-1 flex justify-center items-center gap-3">
+                <img 
+                  src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" 
+                  alt="Harris Boat Works" 
+                  className="h-16 w-auto max-w-none" 
+                />
+                <img 
+                  src={mercuryPng} 
+                  alt="Mercury" 
+                  className="h-10 w-auto max-w-none" 
+                />
+              </div>
             </div>
           </div>
 

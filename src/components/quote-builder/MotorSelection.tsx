@@ -1114,7 +1114,7 @@ export const MotorSelection = ({
       </div>;
   }
   return <div className={`${showCelebration ? 'canadian-celebration' : ''}`}>
-      {/* Mobile-Only Sticky Search Bar - No Mercury Logo to Prevent Collision */}
+      {/* Mobile-Only Sticky Search Bar - Compact Single Row */}
       <div className="sticky top-[56px] z-30 bg-white border-b shadow-sm lg:hidden">
         <div className="p-3">
           {/* Single Row: Search + Stock Toggle + Filter Button */}
@@ -1434,10 +1434,9 @@ export const MotorSelection = ({
       </div>
 
       <div className="flex-1 space-y-8">
-        {/* Mercury Logo - Desktop Only, Positioned to Avoid Search Collision */}
-        <div className="text-center space-y-4 hidden lg:block mb-6">
+        <div className="text-center space-y-4 hidden lg:block">
           <div className="flex items-center justify-center gap-4">
-            <img src={mercuryLogo} alt="Mercury Marine" className="h-10 w-auto" />
+            <img src={mercuryLogo} alt="Mercury Marine" className="h-12 w-auto" />
           </div>
         </div>
 
