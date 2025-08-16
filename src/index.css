@@ -4,8 +4,38 @@
 
 /* Mobile optimization: Limit promotional badges to 1 on small screens */
 @media (max-width: 640px) {
-  .promo-badges .badge:not(:first-child) {
+  .promo-badges .promo-badge-base:not(:first-child) {
     display: none;
+  }
+  
+  /* Ensure 2-column mobile grid with proper spacing */
+  .motors-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  
+  /* Optimize card content for mobile scanning */
+  .product-card .motor-image-container {
+    height: 140px;
+  }
+  
+  .product-card h3 {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Ensure proper mobile header height */
+  .mobile-header {
+    height: 56px;
+  }
+  
+  /* Reserve space for sticky CTA to avoid layout shift */
+  .mobile-cta-spacer {
+    height: 80px;
   }
 }
 

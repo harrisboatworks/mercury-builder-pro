@@ -1124,7 +1124,15 @@ export const MotorSelection = ({
               type="search" 
               placeholder="Search HP"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                // Fire search_performed analytics event
+                if (e.target.value && typeof window !== 'undefined' && (window as any).gtag) {
+                  (window as any).gtag('event', 'search_performed', {
+                    search_query: e.target.value
+                  });
+                }
+              }}
               className="w-full pl-8 pr-3 py-2 bg-muted/50 border-0 rounded-lg text-sm h-9"
             />
             <Search className="absolute left-2.5 top-2.5 w-4 h-4 text-muted-foreground" />
@@ -1140,7 +1148,16 @@ export const MotorSelection = ({
               type="checkbox" 
               className="w-4 h-4 rounded text-green-600"
               checked={inStockOnly}
-              onChange={(e) => setInStockOnly(e.target.checked)}
+              onChange={(e) => {
+                setInStockOnly(e.target.checked);
+                // Fire filter_applied analytics event
+                if (typeof window !== 'undefined' && (window as any).gtag) {
+                  (window as any).gtag('event', 'filter_applied', {
+                    filter_type: 'in_stock_only',
+                    filter_value: e.target.checked
+                  });
+                }
+              }}
             />
             <span className="text-sm font-medium">Stock</span>
           </label>
@@ -1752,7 +1769,32 @@ export const MotorSelection = ({
                               </div>
                             </TooltipContent>
                           </Tooltip>}
-                      </div>}
+                       </div>}
+
+                    {/* Mobile Get Quote Button */}
+                    <div className="mt-3 lg:hidden">
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="w-full text-xs border-primary text-primary hover:bg-primary hover:text-primary-foreground" 
+                        onClick={e => {
+                          e.stopPropagation();
+                          // Fire analytics event
+                          if (typeof window !== 'undefined' && (window as any).gtag) {
+                            (window as any).gtag('event', 'cta_quote_open', {
+                              source: 'motor_card',
+                              motor_model: motor.model,
+                              motor_hp: motor.hp,
+                              motor_stock_status: motor.stockStatus
+                            });
+                          }
+                          setQuoteFormModel(motor.model || '');
+                          setShowQuoteForm(true);
+                        }}
+                      >
+                        Get Quote
+                      </Button>
+                    </div>
 
                   </div>
                 </Card>;
@@ -2210,14 +2252,29 @@ export const MotorSelection = ({
       </Dialog>
 
       {/* Mobile Sticky CTA */}
-      <MobileStickyCTA onQuoteClick={() => setShowQuoteForm(true)} />
+      <MobileStickyCTA onQuoteClick={() => {
+        // Fire analytics event
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('event', 'cta_quote_open', {
+            source: 'sticky_mobile_cta'
+          });
+        }
+        setQuoteFormModel(''); // Clear any previous selection
+        setShowQuoteForm(true);
+      }} />
 
       {/* Mobile Quote Form */}
       <MobileQuoteForm 
         isOpen={showQuoteForm}
-        onClose={() => setShowQuoteForm(false)}
+        onClose={() => {
+          setShowQuoteForm(false);
+          setQuoteFormModel(''); // Clear model when closing
+        }}
         prefilledModel={quoteFormModel}
       />
+
+      {/* Mobile spacer to prevent sticky CTA from covering content */}
+      <div className="mobile-cta-spacer lg:hidden" />
 
     </div>
   </div>;
