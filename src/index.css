@@ -1042,16 +1042,21 @@
     position: relative;
   }
 
-  /* DESKTOP ONLY - Use transform to physically move images down */
+  /* DESKTOP ONLY - Add padding above motor images */
   @media (min-width: 769px) {
-    .motor-card-image {
-      transform: translateY(40px) !important;
-      position: relative;
+    .motor-card-image-container {
+      padding-top: 30px !important;
+      padding-bottom: 10px !important;
     }
     
-    .motor-card-image-container {
-      padding-bottom: 40px !important;
-      min-height: 240px !important;
+    .motor-card-image {
+      margin-top: 0 !important;
+    }
+    
+    /* Fallback - target image directly if container doesn't work */
+    .motor-card img[src*="motor"],
+    .motor-card img[alt*="motor"] {
+      margin-top: 30px !important;
     }
   }
 
