@@ -14,6 +14,14 @@
     height: 64px !important; /* Increased for better visibility */
     margin-top: 2px !important;
   }
+}
+
+/* Tablet-specific logo constraints */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .harris-logo {
+    height: 60px !important;
+    max-width: 400px !important;
+  }
   
   /* FIX 2: Replace "Last updated" text with green pulsing dot */
   .last-updated-text {
@@ -1021,15 +1029,29 @@
   
   /* Button press animations */
 
-  /* Motor card images - Standardized height and centering */
+  /* Motor card images - Force positioning with multiple methods */
   .motor-card-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
     width: 100%;
-    padding: 1rem;
+    min-height: 220px !important;
+    padding: 0 !important;
     background: white;
     position: relative;
+  }
+
+  /* DESKTOP ONLY - Fix motor images without affecting mobile */
+  @media (min-width: 769px) {
+    .motor-card-image-container {
+      padding-top: 40px !important;
+      min-height: 200px !important;
+    }
+    
+    .motor-card-image {
+      display: block !important;
+    }
   }
 
   /* Desktop-specific image styling for consistent heights */
@@ -1044,7 +1066,7 @@
       max-height: 160px; /* Ensure image fits within container with padding */
       height: auto;
       width: auto;
-      margin: 0 auto;
+      margin: auto 0;
       display: block;
       transform-origin: center center; /* Ensure hover zoom scales from center */
       transition: transform 0.2s ease-out;

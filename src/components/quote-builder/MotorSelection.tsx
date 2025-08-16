@@ -934,20 +934,6 @@ export const MotorSelection = ({
     }
   };
 
-  // Handle promo badge clicks
-  const handlePromoBadgeClick = (label: string) => {
-    // Find matching promotion by name/label
-    const matchingPromo = promotionsState.find(p => 
-      p.name === label || 
-      label.includes(p.name) || 
-      p.name.includes(label)
-    );
-    
-    if (matchingPromo) {
-      setActivePromoModal(matchingPromo);
-    }
-  };
-
   // Inline renderer for bottom banner promotions (badges + "+N more")
   const renderBannerPromos = (motor: Motor) => {
     const labels = getPromoLabelsForMotor(motor);
@@ -957,15 +943,10 @@ export const MotorSelection = ({
     return <div className="promos-summary flex items-center gap-2" aria-live="polite">
       <span className="promos-summary__label text-xs font-semibold text-muted-foreground">Promotions applied</span>
       <div className="promos-summary__badges flex items-center gap-1 overflow-hidden whitespace-nowrap" role="list">
-        {labels.slice(0, inlineCount).map((lab, idx) => <button 
-            key={idx} 
-            role="listitem" 
-            onClick={() => handlePromoBadgeClick(lab)}
-            className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-px text-xs font-semibold hover:bg-primary/20 transition-colors cursor-pointer border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-1"
-          >
+        {labels.slice(0, inlineCount).map((lab, idx) => <span key={idx} role="listitem" className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold">
             <span className="mr-1" aria-hidden="true">✅</span>
             {lab}
-          </button>)}
+          </span>)}
       </div>
       {remaining > 0 && <>
           <Button type="button" variant="outline" size="sm" className="promos-summary__more rounded-full h-6 px-2 py-0 text-xs" aria-haspopup="dialog" aria-expanded={bannerPromosOpen} onClick={() => setBannerPromosOpen(true)}>
@@ -977,15 +958,10 @@ export const MotorSelection = ({
                 <DialogTitle>Active promotions</DialogTitle>
               </DialogHeader>
                 <div className="promos-popover__badges flex flex-wrap gap-2" role="list">
-                  {labels.map((l, idx) => <button 
-                      key={idx} 
-                      role="listitem" 
-                      onClick={() => handlePromoBadgeClick(l)}
-                      className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-px text-sm font-semibold hover:bg-primary/20 transition-colors cursor-pointer border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-1"
-                    >
+                  {labels.map((l, idx) => <span key={idx} role="listitem" className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-sm font-semibold">
                       <span className="mr-1" aria-hidden="true">✅</span>
                       {l}
-                    </button>)}
+                    </span>)}
                 </div>
               <DialogFooter>
                 <Button type="button" onClick={() => setBannerPromosOpen(false)}>Close</Button>
@@ -1518,7 +1494,7 @@ export const MotorSelection = ({
             <div className="text-2xl">🍁</div>
             <p className="font-semibold">{emptyStateMessages.noResults.message}</p>
             <p className="text-muted-foreground">{emptyStateMessages.noResults.submessage}</p>
-          </Card> : <div className={`grid motors-grid items-stretch gap-2 sm:gap-4 ${viewMode === 'grid' ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-1'}`}>
+          </Card> : <div className={`grid motors-grid items-stretch gap-2 sm:gap-4 ${viewMode === 'grid' ? 'grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
             {filteredMotors.map(motor => {
           const msrp = motor.basePrice && motor.basePrice > 0 ? motor.basePrice : null;
           const sale = motor.salePrice && motor.salePrice > 0 ? motor.salePrice : null;
@@ -1677,101 +1653,19 @@ export const MotorSelection = ({
                     {/* Badges */}
                     <div className="flex gap-1 flex-wrap">
                       {showWarrantyBadge && (
-                        <button 
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            const promoData = {
-                              id: warrantyBonus?.id || 'warranty-promo',
-                              name: warrantyBonus?.title || '5 Year Mercury Warranty',
-                              end_date: warrantyBonus?.endsAt || null,
-                              terms_url: warrantyBonus?.termsUrl || null,
-                              details: {
-                                amount: warrantyBonus?.shortBadge || '5 Year Warranty',
-                                eligibility: [
-                                  'Valid on select Mercury outboard motors',
-                                  'Must be installed by certified dealer',
-                                  'Registration required within 30 days'
-                                ],
-                                terms: [
-                                  'Warranty covers parts and labor',
-                                  'Factory-trained technicians only',
-                                  'Proof of purchase required'
-                                ],
-                                processingTime: 'Immediate upon installation',
-                                finePrint: 'See dealer for complete warranty terms and conditions.'
-                              }
-                            };
-                            setActivePromoModal(promoData as any);
-                          }}
-                          className="px-2 py-0.5 bg-red-100 text-red-700 text-xs font-medium rounded hover:bg-red-200 transition-colors cursor-pointer"
-                        >
+                        <span className="px-2 py-0.5 bg-red-100 text-red-700 text-xs font-medium rounded">
                           {warrantyBonus?.shortBadge || '5 Year Warranty'}
-                        </button>
+                        </span>
                       )}
                       {hasRepower && (
-                        <button 
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            const promoData = {
-                              id: repowerBonus?.id || 'repower-promo',
-                              name: repowerBonus?.title || 'Mercury Repower Rebate',
-                              end_date: repowerBonus?.endsAt || null,
-                              terms_url: repowerBonus?.termsUrl || null,
-                              details: {
-                                amount: 'Up to $2,000 Rebate',
-                                eligibility: [
-                                  'Trade in your old outboard motor',
-                                  'Purchase eligible Mercury outboard',
-                                  'Installation by certified dealer required'
-                                ],
-                                terms: [
-                                  'Rebate amount varies by motor model',
-                                  'Old motor must be operational',
-                                  'Cannot be combined with other offers'
-                                ],
-                                processingTime: '6-8 weeks after submission',
-                                finePrint: 'Rebate offer subject to change. See dealer for current rebate amounts and eligible models.'
-                              }
-                            };
-                            setActivePromoModal(promoData as any);
-                          }}
-                          className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-medium rounded hover:bg-blue-200 transition-colors cursor-pointer"
-                        >
+                        <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-medium rounded">
                           Repower Rebate
-                        </button>
+                        </span>
                       )}
                       {otherPromoNames.slice(0, 1).map((name, idx) => (
-                        <button 
-                          key={idx}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            const promoData = {
-                              id: `other-promo-${idx}`,
-                              name: name,
-                              end_date: null,
-                              terms_url: null,
-                              details: {
-                                amount: 'Special Offer',
-                                eligibility: [
-                                  'Valid on qualifying purchases',
-                                  'Must meet promotion requirements',
-                                  'Installation by authorized dealer'
-                                ],
-                                terms: [
-                                  'Limited time offer',
-                                  'Cannot be combined with other promotions',
-                                  'See dealer for complete details'
-                                ],
-                                processingTime: 'Varies by promotion',
-                                finePrint: 'Promotion terms subject to change. Contact dealer for current offer details.'
-                              }
-                            };
-                            setActivePromoModal(promoData as any);
-                          }}
-                          className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-medium rounded hover:bg-purple-200 transition-colors cursor-pointer"
-                        >
+                        <span key={idx} className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-medium rounded">
                           {name}
-                        </button>
+                        </span>
                       ))}
                     </div>
                     
@@ -2280,13 +2174,6 @@ export const MotorSelection = ({
 
       {/* Mobile spacer to prevent sticky CTA from covering content */}
       <div className="mobile-cta-spacer lg:hidden" />
-
-      {/* Promo Details Modal */}
-      <PromoDetailsModal
-        promo={activePromoModal}
-        open={!!activePromoModal}
-        onOpenChange={(open) => !open && setActivePromoModal(null)}
-      />
 
     </div>
   </div>;

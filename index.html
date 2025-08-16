@@ -20,5 +20,38 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+window.addEventListener('load', () => {
+  const ifr = document.querySelector('iframe[src*="quote.harrisboatworks.ca"]');
+  if (!ifr) return;
+
+  try {
+    const doc = ifr.contentDocument || ifr.contentWindow.document;
+    const style = doc.createElement('style');
+    style.textContent = `
+      /* Nudge images down inside motor/product cards */
+      .motor-card__media,
+      .product-card__media,
+      [class*="card__media"],
+      [class*="CardMedia"],
+      [class*="card-media"] {
+        padding-top: 14px !important;
+      }
+
+      .motor-card__media img,
+      .product-card__media img,
+      [class*="card__media"] img,
+      [class*="CardMedia"] img,
+      [class*="card-media"] img {
+        display:block !important;
+        transform: translateY(8px) !important; /* adjust to taste */
+      }
+    `;
+    doc.head.appendChild(style);
+  } catch (e) {
+    console.warn('Cross-origin iframe: inject inside the quote app instead.');
+  }
+});
+    </script>
   </body>
 </html>
