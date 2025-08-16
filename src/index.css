@@ -1027,7 +1027,7 @@
 
 /* Subtle pulse animation for in-stock badges */
 @keyframes subtle-pulse {
-  0%, 100%) { 
+  0%, 100% { 
     opacity: 1; 
   }
   50% { 
