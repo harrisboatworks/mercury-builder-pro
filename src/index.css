@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Mobile optimization: Limit promotional badges to 1 on small screens */
 @media (max-width: 640px) {
   .promo-badges .badge:not(:first-child) {
