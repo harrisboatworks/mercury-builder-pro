@@ -838,7 +838,7 @@ export const MotorSelection = ({
     }
   };
   const filteredMotors = motors.filter(motor => {
-    // Search functionality - main search query only
+    // Search functionality - main search query only (modelSearch removed)
     if (searchQuery && !motor.model?.toLowerCase().includes(searchQuery.toLowerCase()) && 
         !motor.hp.toString().includes(searchQuery)) return false;
     
