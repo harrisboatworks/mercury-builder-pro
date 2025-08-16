@@ -1029,7 +1029,7 @@
   
   /* Button press animations */
 
-  /* Motor card images - Force positioning with multiple methods */
+  /* Motor card images - Mobile-first approach */
   .motor-card-image-container {
     display: flex !important;
     flex-direction: column !important;
@@ -1045,6 +1045,7 @@
   /* DESKTOP ONLY - Fix motor images without affecting mobile */
   @media (min-width: 769px) {
     .motor-card-image-container {
+      justify-content: center !important;
       padding-top: 40px !important;
       min-height: 200px !important;
     }
