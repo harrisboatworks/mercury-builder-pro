@@ -1384,34 +1384,7 @@ export const MotorSelection = ({
       </div>
 
       <div className="flex gap-6">
-        <div className={`${filtersOpen ? 'w-80' : 'w-16'} transition-all duration-300 flex-shrink-0 hidden lg:block`}>
-        {filtersOpen && <Card className="mb-4">
-            <div className="p-4 space-y-6">
-              <div>
-                <h3 className="font-bold text-sm mb-2">Know your model?</h3>
-                <Input type="text" placeholder="e.g., 90ELPT, 115EXLPT" value={modelSearch} onChange={e => setModelSearch(e.target.value)} />
-              </div>
-              <div>
-                <h3 className="font-bold text-sm mb-2">Quick HP Selection:</h3>
-                <div className="grid grid-cols-2 gap-2">
-                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(2.5, 20)}>2.5 - 20 HP</Button>
-                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(25, 60)}>25 - 60 HP</Button>
-                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(75, 115)}>75 - 115 HP</Button>
-                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(150, 200)}>150 - 200 HP</Button>
-                  <Button variant="secondary" size="sm" onClick={() => filterByHPRange(225, 300)}>225 - 300 HP</Button>
-                </div>
-                <Button variant="ghost" size="sm" className="w-full mt-2" onClick={() => {
-              setFilters({
-                ...filters,
-                hpRange: [2.5, 300]
-              });
-              setModelSearch('');
-            }}>
-                  Show all motors →
-                </Button>
-              </div>
-            </div>
-          </Card>}
+        <div className={`${filtersOpen ? 'w-80' : 'w-16'} transition-all duration-300 flex-shrink-0 hidden lg:block sticky top-[88px] self-start max-h-[calc(100vh-96px)] overflow-y-auto`}>
         {filtersOpen && <div className="border-t border-border my-4" />}
         <MotorFinderWizard filters={filters} setFilters={setFilters} viewMode={viewMode} setViewMode={setViewMode} resultsCount={filteredMotors.length} isOpen={filtersOpen} onToggle={() => setFiltersOpen(!filtersOpen)} />
         
