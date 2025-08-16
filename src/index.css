@@ -1165,6 +1165,14 @@
   .promo-badges > .tooltip-trigger:not(:first-child) {
     display: none; /* Hide additional badges on mobile */
   }
+
+  /* Fix tooltip positioning on mobile to avoid blocking inventory badges */
+  @media (max-width: 768px) {
+    [data-radix-tooltip-content] {
+      transform: translateY(20px) !important;
+      margin-top: 20px !important;
+    }
+  }
 }
   /* Modal-scoped Promotions list */
   .modal .modal-promos { margin-top: 0.75rem; }

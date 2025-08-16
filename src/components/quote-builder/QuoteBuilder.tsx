@@ -163,12 +163,17 @@ export default function QuoteBuilder() {
                 </svg>
               </button>
               
-              {/* Centered Harris Logo Only */}
-              <div className="flex-1 flex justify-center">
+              {/* Centered Logo Group */}
+              <div className="flex-1 flex justify-center items-center gap-3">
                 <img 
                   src="/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png" 
                   alt="Harris Boat Works" 
-                  className="h-10 w-auto max-w-none" 
+                  className="h-12 w-auto max-w-none" 
+                />
+                <img 
+                  src="/src/assets/mercury-logo.png" 
+                  alt="Mercury" 
+                  className="h-8 w-auto max-w-none" 
                 />
               </div>
             </div>
@@ -284,7 +289,7 @@ export default function QuoteBuilder() {
       )}
 
       {/* Main Content */}
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 pb-20 lg:pb-20">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 md:pt-4 lg:pt-8 py-8 md:py-12 lg:py-16 pb-20 lg:pb-20">
         <AnimatePresence mode="wait">
         {currentStep === 1 && (
           <motion.div
