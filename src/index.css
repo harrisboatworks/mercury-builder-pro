@@ -1045,13 +1045,18 @@
   /* DESKTOP ONLY - Fix motor images without affecting mobile */
   @media (min-width: 769px) {
     .motor-card-image-container {
-      justify-content: center !important;
+      display: block !important;
       padding-top: 40px !important;
       min-height: 200px !important;
     }
     
+    .motor-card {
+      align-items: flex-start !important;
+    }
+    
     .motor-card-image {
       display: block !important;
+      margin: 0 auto;
     }
   }
 
