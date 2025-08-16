@@ -992,20 +992,49 @@
   
   /* Button press animations */
 
-  /* Motor card images - CENTER them properly */
+  /* Motor card images - Standardized height and centering */
   .motor-card-image-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 1rem;
+    background: linear-gradient(to bottom, rgb(249 250 251), white);
+    position: relative;
   }
 
-  .motor-card img {
-    max-width: 80%;
-    height: auto;
-    margin: 0 auto;
-    display: block;
+  /* Desktop-specific image styling for consistent heights */
+  @media (min-width: 1024px) {
+    .motor-card-image-container {
+      height: 200px; /* Fixed height for all desktop cards */
+      min-height: 200px;
+    }
+    
+    .motor-card-image {
+      max-width: 85%;
+      max-height: 160px; /* Ensure image fits within container with padding */
+      height: auto;
+      width: auto;
+      margin: 0 auto;
+      display: block;
+      transform-origin: center center; /* Ensure hover zoom scales from center */
+      transition: transform 0.2s ease-out;
+    }
+    
+    .motor-card:hover .motor-card-image {
+      transform: scale(1.05);
+    }
+  }
+
+  /* Mobile styling - unchanged behavior */
+  @media (max-width: 1023px) {
+    .motor-card img,
+    .motor-card-image {
+      max-width: 80%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
   }
 
   /* HP Range buttons - give them room */

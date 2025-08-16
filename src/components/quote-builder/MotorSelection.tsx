@@ -1532,7 +1532,7 @@ export const MotorSelection = ({
           return <Card key={motor.id} className={`motor-card relative bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer group ${selectedMotor?.id === motor.id ? 'ring-3 ring-green-500 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-green-500' : 'hover:scale-[1.01] active:scale-[0.98]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} ${(motor as any).stockStatus === 'Sold' ? 'opacity-50 cursor-not-allowed' : ''} flex flex-col`} onClick={() => (motor as any).stockStatus !== 'Sold' && handleMotorSelection(motor)}>
 
                   {/* Stock Badge - Positioned absolute in top-right, anchored to card */}
-                  <div className="absolute top-2 right-2 z-20">
+                  <div className="absolute top-2 right-2 z-30">
                     {motor.stockStatus === 'In Stock' && (
                       <span className="in-stock-badge px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">
                         IN STOCK
@@ -1555,10 +1555,64 @@ export const MotorSelection = ({
                     )}
                   </div>
 
+                  {/* Image Section - Moved to top for better layout consistency */}
+                  {motor.image && motor.image !== '/placeholder.svg' && (
+                    <div className="motor-card-image-container relative">
+                      <img 
+                        src={motor.image} 
+                        alt={motor.model} 
+                        loading="lazy" 
+                        className="motor-card-image w-full object-contain"
+                      />
+
+                      {/* Urgency: low stock */}
+                      {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && (
+                        <div className="absolute top-3 left-3 z-20 animate-fade-in">
+                          <Badge variant="discount" className="flex items-center gap-1 shadow">
+                            <AlertTriangle className="w-3.5 h-3.5" />
+                            <span>Only {stockCount} left</span>
+                          </Badge>
+                        </div>
+                      )}
+
+                      {/* Social proof: recent sales */}
+                      {typeof recentSales === 'number' && recentSales > 5 && (
+                        <div className="absolute top-3 left-3 z-20 animate-fade-in" style={{ 
+                          marginTop: typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 ? '2.5rem' : '0' 
+                        }}>
+                          <Badge variant="warranty" className="flex items-center gap-1 shadow">
+                            <Star className="w-3.5 h-3.5" />
+                            <span>{recentSales} sold this month</span>
+                          </Badge>
+                        </div>
+                      )}
+
+                      {/* Info button */}
+                      <button 
+                        type="button" 
+                        className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-background/95 text-foreground border border-border shadow-md flex items-center justify-center opacity-90 transition-transform transition-opacity hover:opacity-100 hover:scale-110" 
+                        aria-label="Motor info" 
+                        onClick={e => {
+                          e.stopPropagation();
+                          openQuickView(motor);
+                        }}
+                      >
+                        <Info className="w-4 h-4" />
+                      </button>
+                          
+                      {/* Selection overlay */}
+                      {selectedMotor?.id === motor.id && (
+                        <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
+                          <Check className="w-20 h-20 text-green-600 drop-shadow-lg animate-scale-in checkmark-icon" strokeWidth={4} aria-hidden="true" />
+                        </div>
+                      )}
+                    </div>
+                  )}
+
                   {/* Card Info Section */}
-                  <div className="p-3 space-y-2">
-                    {/* Model Name - Biggest text (bold, 18-20px) */}
-                    <div className="motor-model text-xl font-bold text-gray-900 leading-tight">
+                  <div className="p-3 space-y-2 flex-1">
+                    {/* Model Name - Clamped to 2 lines for consistency */}
+                    <div className="motor-model text-xl font-bold text-gray-900 leading-tight line-clamp-2">
                       {(() => {
                         const title = formatMotorTitle(motor.year, motor.model);
                         return title;
@@ -1597,43 +1651,6 @@ export const MotorSelection = ({
                     {/* Monthly Payment Display */}
                     <MonthlyPaymentDisplay motorPrice={motor.price} />
                   </div>
-
-      {motor.image && motor.image !== '/placeholder.svg' && <div className="motor-card-image-container relative p-4 bg-gradient-to-b from-gray-50 to-white">
-        <img src={motor.image} alt={motor.model} loading="lazy" className="motor-card img w-full h-auto" style={{
-                      height: '180px',
-                      width: 'auto',
-                      objectFit: 'contain',
-                      maxWidth: 'none',
-                      maxHeight: 'none'
-                    }} />
-
-        {/* Urgency: low stock */}
-        {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && <div className="absolute top-14 left-3 z-20 animate-fade-in">
-            <Badge variant="discount" className="flex items-center gap-1 shadow">
-              <AlertTriangle className="w-3.5 h-3.5" />
-              <span>Only {stockCount} left</span>
-            </Badge>
-          </div>}
-
-        {/* Social proof: recent sales */}
-        {typeof recentSales === 'number' && recentSales > 5 && <div className="absolute top-14 right-3 z-20 animate-fade-in">
-            <Badge variant="warranty" className="flex items-center gap-1 shadow">
-              <Star className="w-3.5 h-3.5" />
-              <span>{recentSales} sold this month</span>
-            </Badge>
-          </div>}
-
-        <button type="button" className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-background/95 text-foreground border border-border shadow-md flex items-center justify-center opacity-90 transition-transform transition-opacity hover:opacity-100 hover:scale-110" aria-label="Motor info" onClick={e => {
-                      e.stopPropagation();
-                      openQuickView(motor);
-                    }}>
-          <Info className="w-4 h-4" />
-        </button>
-            
-        {selectedMotor?.id === motor.id && <div className="absolute inset-0 bg-black/20 flex items-center justify-center animate-fade-in selection-overlay" aria-hidden="true">
-              <Check className="w-20 h-20 text-green-600 drop-shadow-lg animate-scale-in checkmark-icon" strokeWidth={4} aria-hidden="true" />
-            </div>}
-        </div>}
 
           </Card>;
         })}
