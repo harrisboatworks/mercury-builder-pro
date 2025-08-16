@@ -1270,7 +1270,7 @@ export const MotorSelection = ({
       <div className="sticky top-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border mb-6 hidden lg:block">
         <div className="container mx-auto px-4 py-3 space-y-3">
           {/* Search Bar */}
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
             <div className="flex-1 relative">
               <Input 
                 type="search" 
@@ -1283,6 +1283,9 @@ export const MotorSelection = ({
                 🔍
               </div>
             </div>
+            <p className="text-sm text-muted-foreground whitespace-nowrap">
+              Showing {filteredMotors.length} motor{filteredMotors.length !== 1 ? 's' : ''}
+            </p>
             <Button 
               variant="outline" 
               size="sm" 
@@ -1366,21 +1369,16 @@ export const MotorSelection = ({
             </label>
           </div>
           
-          {/* Results Count */}
-          <div className="flex items-center justify-between">
-            <p className="text-sm text-muted-foreground">
-              Showing {filteredMotors.length} motor{filteredMotors.length !== 1 ? 's' : ''}
-            </p>
-            <div className="flex items-center gap-2 lg:hidden">
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={() => setFiltersOpen(!filtersOpen)}
-                className="text-xs"
-              >
-                🎚️ Filter
-              </Button>
-            </div>
+          {/* Mobile Filter Button */}
+          <div className="flex justify-end lg:hidden">
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => setFiltersOpen(!filtersOpen)}
+              className="text-xs"
+            >
+              🎚️ Filter
+            </Button>
           </div>
         </div>
       </div>
