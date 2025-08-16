@@ -1297,26 +1297,9 @@ export const MotorSelection = ({
             </Button>
           </div>
           
-          {/* Quick Filters Row */}
-          <div className="flex gap-2 overflow-x-auto">
-            {/* In Stock Only Toggle */}
-            <label className={`flex items-center gap-2 px-3 py-2 rounded-full cursor-pointer transition-colors ${
-              inStockOnly 
-                ? 'bg-green-100 text-green-700 border border-green-200' 
-                : 'bg-muted text-muted-foreground border border-border'
-            }`}>
-              <input 
-                type="checkbox" 
-                className="w-4 h-4 rounded"
-                checked={inStockOnly}
-                onChange={(e) => setInStockOnly(e.target.checked)}
-              />
-              <span className="text-sm font-medium whitespace-nowrap">In Stock Only</span>
-            </label>
-          </div>
-          
-          {/* HP Range Filter Tabs */}
-          <div className="hp-filter-buttons flex gap-2 overflow-x-auto pb-2">
+          {/* HP Range Filter Tabs and Stock Toggle Row */}
+          <div className="flex items-center justify-between gap-4">
+            <div className="hp-filter-buttons flex gap-2 overflow-x-auto flex-1">
             <Button 
               variant={selectedHPRange === 'all' ? 'default' : 'outline'}
               size="sm"
@@ -1365,6 +1348,22 @@ export const MotorSelection = ({
             >
               350+ HP
             </Button>
+            </div>
+            
+            {/* In Stock Only Toggle */}
+            <label className={`flex items-center gap-2 px-3 py-2 rounded-full cursor-pointer transition-colors ${
+              inStockOnly 
+                ? 'bg-green-100 text-green-700 border border-green-200' 
+                : 'bg-muted text-muted-foreground border border-border'
+            }`}>
+              <input 
+                type="checkbox" 
+                className="w-4 h-4 rounded"
+                checked={inStockOnly}
+                onChange={(e) => setInStockOnly(e.target.checked)}
+              />
+              <span className="text-sm font-medium whitespace-nowrap">In Stock Only</span>
+            </label>
           </div>
           
           {/* Results Count */}
