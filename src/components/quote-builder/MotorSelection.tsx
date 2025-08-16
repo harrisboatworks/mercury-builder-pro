@@ -1511,25 +1511,7 @@ export const MotorSelection = ({
           </div>
         </div>
 
-        {/* Last Updated - Mobile - Above Product Grid */}
-        <div className="flex items-center justify-center gap-3 flex-wrap mb-4 lg:hidden">
-          <span className="text-xs text-muted-foreground">
-            Last updated: {lastInventoryUpdate ? formatRelativeTime(lastInventoryUpdate) : 'Never'}
-          </span>
-          <Badge variant={needsInventoryUpdate() ? 'destructive' : 'secondary'} className="text-xs">
-            {needsInventoryUpdate() ? 'Updating soon' : 'Fresh'}
-          </Badge>
-        </div>
 
-        {/* Last Updated - Desktop */}
-        <div className="hidden lg:flex items-center justify-center gap-3 flex-wrap">
-          <span className="text-sm text-muted-foreground">
-            Last updated: {lastInventoryUpdate ? formatRelativeTime(lastInventoryUpdate) : 'Never'}
-          </span>
-          <Badge variant={needsInventoryUpdate() ? 'destructive' : 'secondary'}>
-            {needsInventoryUpdate() ? 'Updating soon' : 'Fresh'}
-          </Badge>
-        </div>
 
         {selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && <div className="controls-savings-banner rounded-md border border-border bg-accent/20 p-3 mt-3">
             <div className="flex items-center gap-3">
@@ -1570,7 +1552,7 @@ export const MotorSelection = ({
 
             {/* Platinum Dealer Heritage */}
             <div className="credential-group flex items-center gap-3">
-              <img src={harrisLogoUrl} alt="Harris Boat Works Since 1947 logo" loading="lazy" className="h-12 md:h-16 w-auto" />
+              <img src={harrisLogoUrl} alt="Harris Boat Works Since 1947 logo" loading="lazy" className="h-10 md:h-16 w-auto" />
               <div className="text-left">
                 <p className="font-semibold text-foreground">Platinum Mercury Dealer</p>
                 <p className="text-sm text-muted-foreground">Family Owned Since 1947 • Serving Rice Lake Area</p>
