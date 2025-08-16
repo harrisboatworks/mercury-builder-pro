@@ -1557,33 +1557,27 @@ export const MotorSelection = ({
 
                   {/* Card Info Section */}
                   <div className="p-3 space-y-2">
-                    {/* Price - HUGE and BOLD */}
-                    <div className="motor-price text-2xl font-black text-gray-900">
-                      {callForPrice ? 'Call for Price' : `$${motor.price.toLocaleString()}`}
+                    {/* Model Name - Top and most prominent */}
+                    <div className="motor-model text-lg font-bold text-gray-900 leading-tight">
+                      {(() => {
+                        const title = formatMotorTitle(motor.year, motor.model);
+                        return title;
+                      })()}
                     </div>
                     
-                    {/* HP - Clear and prominent */}
-                    <div className="motor-hp text-lg font-bold text-gray-700">
+                    {/* Subline Detail - HP rating */}
+                    <div className="motor-hp text-sm font-semibold text-gray-700">
                       {motor.hp} HP
-                    </div>
-                    
-                    {/* Model - More prominent with variations */}
-                    <div className="motor-details space-y-1">
-                      <div className="text-sm font-semibold text-gray-800 leading-tight">
-                        {(() => {
-                          const title = formatMotorTitle(motor.year, motor.model);
-                          return title;
-                        })()}
-                      </div>
                       {(() => {
                         const title = formatMotorTitle(motor.year, motor.model);
                         const subtitle = formatVariantSubtitle(motor.model, title);
-                        return subtitle ? (
-                          <div className="text-xs font-medium text-gray-600">
-                            {subtitle}
-                          </div>
-                        ) : null;
+                        return subtitle ? ` • ${subtitle}` : '';
                       })()}
+                    </div>
+                    
+                    {/* Price */}
+                    <div className="motor-price text-xl font-bold text-gray-900">
+                      {callForPrice ? 'Call for Price' : `$${motor.price.toLocaleString()}`}
                     </div>
                     
                     {/* Badges */}
