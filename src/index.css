@@ -1,6 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Mobile optimization: Limit promotional badges to 1 on small screens */
+@media (max-width: 640px) {
+  .promo-badges .badge:not(:first-child) {
+    display: none;
+  }
+}
+
+/* Ensure motor grid is properly spaced on mobile */
+@media (max-width: 640px) {
+  .motors-grid {
+    gap: 0.5rem;
+  }
+  
+  .motor-image {
+    height: 160px !important;
+  }
+  
+  .product-card h3 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+/* Header height mobile optimization */
+@media (max-width: 1024px) {
+  .sticky.top-0 {
+    height: 56px;
+  }
+}
 
 /* Harris Boat Works Design System - Maritime Professional Theme */
 

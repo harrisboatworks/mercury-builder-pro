@@ -1146,14 +1146,28 @@ export const MotorSelection = ({
           </label>
           
           {/* Filter button - icon only */}
-          <Button 
-            variant="ghost"
-            size="sm"
-            className="p-2 bg-muted/50 rounded-lg h-9 w-9"
-            onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}
-          >
-            <Settings className="w-5 h-5" />
-          </Button>
+          <MobileFilterSheet 
+            filters={{
+              inStockOnly,
+              hpRange: selectedHPRange === 'all' ? '' : selectedHPRange,
+              engineType: selectedEngineType === 'all' ? '' : selectedEngineType
+            }}
+            onFiltersChange={(filters) => {
+              // Apply filters to the component state
+              setInStockOnly(filters.inStockOnly);
+              setSelectedHPRange(filters.hpRange || 'all');
+              setSelectedEngineType(filters.engineType || 'all');
+              
+              // Fire analytics
+              if (typeof window !== 'undefined' && (window as any).gtag) {
+                (window as any).gtag('event', 'filter_applied', {
+                  hp_range: filters.hpRange || 'all',
+                  engine_type: filters.engineType || 'all', 
+                  in_stock_only: filters.inStockOnly
+                });
+              }
+            }}
+          />
         </div>
         
         {/* Active Filters Chips */}
@@ -1162,7 +1176,16 @@ export const MotorSelection = ({
             {selectedHPRange !== 'all' && (
               <button 
                 className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium whitespace-nowrap"
-                onClick={() => setSelectedHPRange('all')}
+                onClick={() => {
+                  setSelectedHPRange('all');
+                  // Fire analytics
+                  if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'filter_chip_removed', {
+                      filter_type: 'hp_range',
+                      filter_value: selectedHPRange
+                    });
+                  }
+                }}
               >
                 {selectedHPRange === '2.5-20' && 'Portable (2.5-20 HP)'}
                 {selectedHPRange === '25-60' && 'Mid-Range (25-60 HP)'}
@@ -1175,7 +1198,16 @@ export const MotorSelection = ({
             {selectedEngineType !== 'all' && (
               <button 
                 className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium whitespace-nowrap"
-                onClick={() => setSelectedEngineType('all')}
+                onClick={() => {
+                  setSelectedEngineType('all');
+                  // Fire analytics
+                  if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'filter_chip_removed', {
+                      filter_type: 'engine_type',
+                      filter_value: selectedEngineType
+                    });
+                  }
+                }}
               >
                 {selectedEngineType === 'fourstroke' && 'FourStroke'}
                 {selectedEngineType === 'verado' && 'Verado'}
@@ -1187,7 +1219,16 @@ export const MotorSelection = ({
             {inStockOnly && (
               <button 
                 className="flex items-center gap-1 px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium whitespace-nowrap"
-                onClick={() => setInStockOnly(false)}
+                onClick={() => {
+                  setInStockOnly(false);
+                  // Fire analytics
+                  if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'filter_chip_removed', {
+                      filter_type: 'in_stock_only',
+                      filter_value: 'true'
+                    });
+                  }
+                }}
               >
                 In Stock <span>✕</span>
               </button>
@@ -1195,7 +1236,15 @@ export const MotorSelection = ({
             {searchQuery && (
               <button 
                 className="flex items-center gap-1 px-3 py-1 bg-muted text-muted-foreground rounded-full text-xs font-medium whitespace-nowrap"
-                onClick={() => setSearchQuery('')}
+                onClick={() => {
+                  setSearchQuery('');
+                  // Fire analytics
+                  if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'search_cleared', {
+                      search_query: searchQuery
+                    });
+                  }
+                }}
               >
                 "{searchQuery}" <span>✕</span>
               </button>
