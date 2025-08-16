@@ -865,6 +865,8 @@
   .product-card .badge--repower .badge__icon {
     font-size: 14px;
     animation: none;
+  }
+
 /* Mobile Header and Search Optimizations */
 @media (max-width: 640px) {
   /* Ensure mobile header stays compact */
