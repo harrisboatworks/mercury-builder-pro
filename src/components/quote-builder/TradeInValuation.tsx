@@ -22,16 +22,6 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
 
-  // Auto-populate trade-in info when component mounts
-  React.useEffect(() => {
-    if (tradeInInfo.hasTradeIn && currentMotorBrand && currentMotorBrand !== 'No Current Motor' && currentHp) {
-      onTradeInChange({
-        ...tradeInInfo,
-        brand: tradeInInfo.brand || currentMotorBrand,
-        horsepower: tradeInInfo.horsepower || currentHp
-      });
-    }
-  }, [currentMotorBrand, currentHp, tradeInInfo.hasTradeIn]);
 
   const brandOptions = [
     'Mercury', 'Yamaha', 'Honda', 'Suzuki', 'Evinrude', 'Johnson', 'OMC', 'Mariner', 'Force', 'Other'
@@ -119,7 +109,17 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => onTradeInChange({ ...tradeInInfo, hasTradeIn: false, estimatedValue: 0 })}
+                onClick={() => onTradeInChange({ 
+                  ...tradeInInfo,
+                  hasTradeIn: false, 
+                  estimatedValue: 0,
+                  brand: '',
+                  year: undefined,
+                  horsepower: undefined,
+                  model: '',
+                  condition: undefined,
+                  serialNumber: ''
+                })}
                 aria-pressed={!tradeInInfo.hasTradeIn}
                 className={`relative p-6 border-2 rounded-3xl transition-all bg-white text-left group ${!tradeInInfo.hasTradeIn ? 'border-blue-500 shadow-2xl' : 'border-gray-200 hover:border-blue-500 hover:shadow-2xl'}`}
                 type="button"
@@ -134,15 +134,6 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
 
         {tradeInInfo.hasTradeIn && (
           <div className="space-y-6 animate-fade-in">
-            {/* Smart Auto-Population Logic */}
-            {currentMotorBrand && currentMotorBrand !== 'No Current Motor' && currentHp ? (
-              <Alert className="border-green-200 bg-green-50 dark:bg-green-950/20">
-                <CheckCircle2 className="w-4 h-4" />
-                <AlertDescription className="text-green-800 dark:text-green-200">
-                  ✅ Using your current motor details for trade-in valuation: {currentMotorBrand} {currentHp}HP
-                </AlertDescription>
-              </Alert>
-            ) : null}
             
             {/* Trade-In Details */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
