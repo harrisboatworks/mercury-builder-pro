@@ -22,7 +22,7 @@ import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip
 import { useNavigate } from 'react-router-dom';
 import { canadianEncouragement, loadingMessages, emptyStateMessages, friendlyErrors } from '@/lib/canadian-messages';
 import { MonthlyPaymentDisplay } from './MonthlyPaymentDisplay';
-import { processHarrisLogoBackground } from '@/utils/processHarrisLogo';
+import harrisLogo from '@/assets/harris-logo.png';
 // Mobile optimization imports
 import { MobileTrustAccordion } from '@/components/ui/mobile-trust-accordion';
 import { MobileFilterSheet } from '@/components/ui/mobile-filter-sheet';
@@ -394,7 +394,7 @@ export const MotorSelection = ({
   const [activePromoModal, setActivePromoModal] = useState<Promotion | null>(null);
   const [promotionsState, setPromotionsState] = useState<Promotion[]>([]);
   const [quickViewMotor, setQuickViewMotor] = useState<Motor | null>(null);
-  const [harrisLogoUrl, setHarrisLogoUrl] = useState<string>('/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png');
+  
   const [recentlyViewed, setRecentlyViewed] = useState<Motor[]>([]);
   const [modelSearch, setModelSearch] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -434,18 +434,6 @@ export const MotorSelection = ({
     console.log('[analytics]', name, payload);
   };
 
-  // Process Harris logo background removal
-  useEffect(() => {
-    const processLogo = async () => {
-      try {
-        const processedUrl = await processHarrisLogoBackground();
-        setHarrisLogoUrl(processedUrl);
-      } catch (error) {
-        console.warn('Failed to process Harris logo, using original:', error);
-      }
-    };
-    processLogo();
-  }, []);
 
   // Automatic inventory refresh state
   const [lastInventoryUpdate, setLastInventoryUpdate] = useState<string | null>(null);
@@ -1451,7 +1439,7 @@ export const MotorSelection = ({
 
             {/* Platinum Dealer Heritage */}
             <div className="credential-group flex items-center gap-3">
-              <img src={harrisLogoUrl} alt="Harris Boat Works Since 1947 logo" loading="lazy" className="h-10 md:h-16 w-auto" />
+              <img src={harrisLogo} alt="Harris Boat Works Since 1947 logo" loading="lazy" className="h-10 md:h-16 w-auto" />
               <div className="text-left">
                 <p className="font-semibold text-foreground">Platinum Mercury Dealer</p>
                 <p className="text-sm text-muted-foreground">Family Owned Since 1947 • Serving Rice Lake Area</p>
