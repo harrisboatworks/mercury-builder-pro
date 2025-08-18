@@ -170,6 +170,11 @@ const decodeModelName = (modelName: string) => {
     add('L', 'Long Shaft (20\")', 'For 20\" transom boats');
     add('PT', 'Power Trim & Tilt', 'Adjust angle on the fly');
   }
+  // Handle standalone EL (Electric start + Long shaft) - must check after longer combos
+  if (upper.includes('EL') && !upper.includes('ELH') && !upper.includes('ELP') && !upper.includes('ELX')) {
+    add('E', 'Electric Start', 'Push-button convenience');
+    add('L', 'Long Shaft (20\")', 'For 20\" transom boats');
+  }
   if (upper.includes('MLH')) {
     add('M', 'Manual Start', 'Pull cord — simple & reliable');
     add('L', 'Long Shaft (20\")', 'For 20\" transom boats');
@@ -202,7 +207,6 @@ const decodeModelName = (modelName: string) => {
   if (hasWord('PXS') || /PROXS/i.test(name)) add('PXS', 'ProXS (High Performance)', 'Sport-tuned for acceleration');
 
   // Single flags
-  if (hasWord('EL')) add('EL', 'Electric Start', 'Push-button convenience');
   if (hasWord('E') && !added.has('E')) add('E', 'Electric Start', 'Push-button convenience');
   if (hasWord('M') && !added.has('M')) add('M', 'Manual Start', 'Pull cord — simple & reliable');
   if (hp <= 30 && hasWord('H') && !added.has('H')) add('H', 'Tiller Handle', 'Steer directly from motor');
@@ -263,7 +267,7 @@ const getTransomRequirement = (motor: Motor) => {
   if (shaft?.includes('20')) return '20" (L) transom';
   if (/\bXXL\b/.test(model)) return '30" (XXL) transom';
   if (/\bXL\b|EXLPT/.test(model)) return '25" (XL) transom';
-  if (/\bL\b|ELPT|MLH|LPT/.test(model)) return '20" (L) transom';
+  if (/\bL\b|ELPT|MLH|LPT|\bEL\b/.test(model)) return '20" (L) transom';
   if (/\bS\b/.test(model)) return '15" (S) transom';
   return '15", 20" or 25" (check model)';
 };
