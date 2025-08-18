@@ -195,8 +195,21 @@ const decodeModelName = (modelName: string) => {
   // Command Thrust
   if (hasWord('CT') || /COMMAND\s*THRUST/i.test(name)) add('CT', 'Command Thrust', 'Larger gearcase & prop for superior control');
 
-  // Shaft length (check longer tokens first)
-  if (hasWord('XXL') || hasWord('XX')) add('XX', 'Ultra Long Shaft (30\")', 'For 30\" transom boats');else if (hasWord('XL') || hasWord('X') && !hasWord('XX')) add('XL', 'Extra Long Shaft (25\")', 'For 25\" transom boats');else if (hasWord('L')) add('L', 'Long Shaft (20\")', 'For 20\" transom boats');else if (hasWord('S')) add('S', 'Short Shaft (15\")', 'For 15\" transom boats');
+  // Shaft length (check longer tokens first, skip if already handled in combos)
+  if (!added.has('XX') && !added.has('XL') && !added.has('L') && !added.has('S')) {
+    if (hasWord('XXL') || hasWord('XX')) {
+      add('XX', 'Ultra Long Shaft (30\")', 'For 30\" transom boats');
+    } else if (hasWord('XL') || (hasWord('X') && !hasWord('XX'))) {
+      add('XL', 'Extra Long Shaft (25\")', 'For 25\" transom boats');
+    } else if (hasWord('L')) {
+      add('L', 'Long Shaft (20\")', 'For 20\" transom boats');
+    } else if (hasWord('S')) {
+      add('S', 'Short Shaft (15\")', 'For 15\" transom boats');
+    } else {
+      // Default: No shaft indicators means Short Shaft (15")
+      add('S', 'Short Shaft (15\")', 'For 15\" transom boats');
+    }
+  }
 
   // Features / technology
   if (hasWord('PT')) add('PT', 'Power Trim & Tilt', 'Adjust motor angle on the fly');
@@ -262,14 +275,20 @@ const getRange = (hp: number | string) => {
 const getTransomRequirement = (motor: Motor) => {
   const model = (motor.model || '').toUpperCase();
   const shaft = (motor as any).specifications?.shaft_length as string | undefined;
+  
+  // Check specifications first
   if (shaft?.includes('30')) return '30" (XXL) transom';
   if (shaft?.includes('25')) return '25" (XL) transom';
   if (shaft?.includes('20')) return '20" (L) transom';
+  
+  // Check model codes
   if (/\bXXL\b/.test(model)) return '30" (XXL) transom';
   if (/\bXL\b|EXLPT/.test(model)) return '25" (XL) transom';
   if (/\bL\b|ELPT|MLH|LPT|\bEL\b/.test(model)) return '20" (L) transom';
   if (/\bS\b/.test(model)) return '15" (S) transom';
-  return '15", 20" or 25" (check model)';
+  
+  // Default: No shaft indicators means Short Shaft (15")
+  return '15" (S) transom';
 };
 const getBatteryRequirement = (motor: Motor) => {
   const model = (motor.model || '').toUpperCase();
