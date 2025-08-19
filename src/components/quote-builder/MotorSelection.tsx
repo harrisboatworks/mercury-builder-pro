@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Flame, TrendingUp, CheckCircle, Tag, Anchor, Heart, Eye, Search, X } from 'lucide-react';
+import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Flame, TrendingUp, CheckCircle, Tag, Anchor, Heart, Eye, Search, X, Menu, Filter } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -1396,8 +1396,42 @@ export const MotorSelection = ({
 
       <div className="flex gap-6">
         <div className={`${filtersOpen ? 'w-80' : 'w-16'} transition-all duration-300 flex-shrink-0 hidden lg:block sticky top-[88px] self-start`}>
-        {filtersOpen && <div className="border-t border-border my-4" />}
-        <MotorFinderWizard filters={filters} setFilters={setFilters} viewMode={viewMode} setViewMode={setViewMode} resultsCount={filteredMotors.length} isOpen={filtersOpen} onToggle={() => setFiltersOpen(!filtersOpen)} />
+          {filtersOpen ? (
+            <>
+              <div className="border-t border-border my-4" />
+              <MotorFinderWizard 
+                filters={filters} 
+                setFilters={setFilters} 
+                viewMode={viewMode} 
+                setViewMode={setViewMode} 
+                resultsCount={filteredMotors.length} 
+                isOpen={filtersOpen} 
+                onToggle={() => setFiltersOpen(!filtersOpen)} 
+              />
+            </>
+          ) : (
+            <div className="bg-background border border-border rounded-lg flex flex-col items-center py-4 space-y-4 h-fit">
+              {/* Expand button */}
+              <button
+                onClick={() => setFiltersOpen(true)}
+                className="p-2 hover:bg-muted rounded-lg transition-colors"
+                title="Expand filters"
+              >
+                <Menu className="w-5 h-5" />
+              </button>
+              
+              {/* Filter icon */}
+              <div className="p-2 text-muted-foreground" title="Filters">
+                <Filter className="w-5 h-5" />
+              </div>
+              
+              {/* Just show motor count */}
+              <div className="text-center">
+                <div className="text-2xl font-bold">{filteredMotors.length}</div>
+                <div className="text-xs text-muted-foreground">motors</div>
+              </div>
+            </div>
+          )}
         
         {/* Live Activities Section */}
         <div className="mt-6">
