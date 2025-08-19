@@ -19,6 +19,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
   const isTiller = model.includes('TILLER') || (hp && hp <= 30 && (/\bH\b/.test(model) || model.includes('MH')));
   const isElectricStart = !(/\bM\b/.test(model) || model.includes('MH'));
   const isInStock = selectedMotor?.stockStatus === 'In Stock';
+  const includes12LTank = hp && hp >= 9.9 && hp <= 20 && !isTiller;
   
   const handleLooseMotorSelect = () => {
     onSelectPath('loose', { battery: needsBattery });
@@ -70,6 +71,11 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
                 <span>Includes propeller & internal fuel tank</span>
+              </div>
+            ) : includes12LTank ? (
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+                <span>Includes 12L fuel tank & hose</span>
               </div>
             ) : (
               <div className="flex items-center gap-2">
