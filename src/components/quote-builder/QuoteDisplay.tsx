@@ -581,12 +581,12 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                 </div>
               </div>
               <div className="text-right">
-                <p className="text-xl font-bold text-foreground">${motorPrice.toLocaleString()}</p>
+                <p className="text-xl font-bold text-foreground">${(quoteData.motor.basePrice || quoteData.motor.price || 0).toLocaleString()}</p>
                 {quoteData.motor.basePrice && quoteData.motor.salePrice && quoteData.motor.salePrice < quoteData.motor.basePrice && (
-                  <div className="mt-1 text-xs">
+                  <div className="mt-1 text-sm space-y-0.5">
                     <div className="text-muted-foreground line-through">Motor List Price: ${quoteData.motor.basePrice.toLocaleString()}</div>
-                    <div className="text-green-600 dark:text-green-400">Current Sale Price: -${(quoteData.motor.basePrice - (quoteData.motor.salePrice || 0)).toLocaleString()}</div>
-                    <div className="text-foreground">Your Price: ${motorPrice.toLocaleString()}</div>
+                    <div className="text-green-600 dark:text-green-400 font-semibold">Current Sale Price: -${(quoteData.motor.basePrice - (quoteData.motor.salePrice || 0)).toLocaleString()}</div>
+                    <div className="text-foreground font-semibold">Your Price: ${motorPrice.toLocaleString()}</div>
                   </div>
                 )}
               </div>
