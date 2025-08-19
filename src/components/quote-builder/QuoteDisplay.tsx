@@ -217,8 +217,9 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
     setFinancingOptions(data || []);
   };
   useEffect(() => {
-    loadFinancingOptions();
-    // Re-evaluate when total changes
+    if (totalFinancePrice > 0) {
+      loadFinancingOptions();
+    }
   }, [totalFinancePrice]);
 
   const calculatePayments = () => {

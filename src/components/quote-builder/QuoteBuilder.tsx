@@ -373,7 +373,16 @@ export default function QuoteBuilder() {
                   setCurrentStep(2); // Back to purchase path
                 }
               }}>Back</Button>
-              <Button className="w-full md:w-auto py-3 bg-red-600 rounded-xl min-h-[48px]" onClick={() => setCurrentStep(isSmallTillerLoose ? 5 : (purchasePath === 'installed' ? 5 : 4))}>
+              <Button className="w-full md:w-auto py-3 bg-red-600 rounded-xl min-h-[48px]" onClick={() => {
+                console.log('Trade-in continue clicked', { isSmallTillerLoose, purchasePath });
+                if (isSmallTillerLoose) {
+                  setCurrentStep(5); // Quote display for small tiller loose path
+                } else if (purchasePath === 'installed') {
+                  setCurrentStep(5); // Installation config for installed path
+                } else {
+                  setCurrentStep(4); // Quote display for regular loose path
+                }
+              }}>
                 Continue
               </Button>
             </div>
@@ -394,7 +403,9 @@ export default function QuoteBuilder() {
           </motion.div>
         )}
 
-          {currentStep === (purchasePath === 'installed' ? 6 : 5) && (
+          {((purchasePath === 'installed' && currentStep === 6) || 
+            (isSmallTillerLoose && currentStep === 5) || 
+            (purchasePath === 'loose' && !isSmallTillerLoose && currentStep === 4)) && (
             <motion.div
               key="quote-display"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -418,13 +429,25 @@ export default function QuoteBuilder() {
                     hasTradein: tradeInInfo.hasTradeIn,
                   } as any);
                   setTotalXP((prev) => prev + xpActions.completeQuote);
-                  setCurrentStep(purchasePath === 'installed' ? 7 : 6);
+                  const nextStep = purchasePath === 'installed' ? 7 : (isSmallTillerLoose ? 6 : 5);
+                  setCurrentStep(nextStep);
                 }}
-                onBack={() => setCurrentStep(purchasePath === 'installed' ? 5 : (isSmallTillerLoose ? 4 : 3))}
+                onBack={() => {
+                  console.log('Quote display back clicked', { purchasePath, isSmallTillerLoose });
+                  if (purchasePath === 'installed') {
+                    setCurrentStep(5); // Back to installation config
+                  } else if (isSmallTillerLoose) {
+                    setCurrentStep(4); // Back to trade-in for small tiller
+                  } else {
+                    setCurrentStep(3); // Back to trade-in for regular loose
+                  }
+                }}
               />
             </motion.div>
           )}
-          {currentStep === (purchasePath === 'installed' ? 7 : 6) && (
+          {((purchasePath === 'installed' && currentStep === 7) || 
+            (isSmallTillerLoose && currentStep === 6) || 
+            (purchasePath === 'loose' && !isSmallTillerLoose && currentStep === 5)) && (
             <motion.div
               key="schedule-consultation"
               initial={{ opacity: 0, x: 100 }}
