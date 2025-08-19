@@ -33,7 +33,18 @@ export default function PurchasePathPage() {
     dispatch({ type: 'COMPLETE_STEP', payload: 2 });
     
     if (path === 'installed') {
-      navigate('/quote/boat-info');
+      // Check if it's a tiller motor (same logic as PurchasePath.tsx)
+      const model = (state.motor?.model || '').toUpperCase();
+      const hp = typeof state.motor?.hp === 'string' ? parseInt(state.motor.hp, 10) : state.motor?.hp;
+      const isTiller = model.includes('TILLER') || (hp && hp <= 30 && (model.includes('EH') || model.includes('MH') || /\bH\b/.test(model)));
+      
+      if (isTiller) {
+        // Tiller motors don't need installation configuration, skip to trade-in
+        navigate('/quote/trade-in');
+      } else {
+        // Non-tiller motors need installation configuration
+        navigate('/quote/boat-info');
+      }
     } else {
       // For loose path, check if it's a small tiller motor
       const isSmallTillerMotor = state.motor && state.motor.hp <= 9.9 && state.motor.type?.toLowerCase().includes('tiller');
