@@ -589,9 +589,9 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
               <div className="text-right">
                 <p className="text-xl font-bold text-foreground">${(quoteData.motor.basePrice || quoteData.motor.price || 0).toLocaleString()}</p>
                 {quoteData.motor.basePrice && quoteData.motor.salePrice && quoteData.motor.salePrice < quoteData.motor.basePrice && (
-                  <div className="mt-1 text-sm space-y-0.5">
+                  <div className="mt-1 text-lg space-y-0.5">
                     <div className="text-muted-foreground line-through">Motor List Price: ${quoteData.motor.basePrice.toLocaleString()}</div>
-                    <div className="text-green-600 dark:text-green-400 font-semibold">Current Sale Price: -${(quoteData.motor.basePrice - (quoteData.motor.salePrice || 0)).toLocaleString()}</div>
+                    <div className="text-green-600 dark:text-green-400 font-semibold">Discount: -${(quoteData.motor.basePrice - (quoteData.motor.salePrice || 0)).toLocaleString()}</div>
                     <div className="text-foreground font-semibold">Your Price: ${motorPrice.toLocaleString()}</div>
                   </div>
                 )}
@@ -670,14 +670,14 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
             
             {/* Accessory Items */}
             {accessoryCosts.controls > 0 && (
-              <div className="line-item flex justify-between items-center">
+              <div className="line-item flex justify-between items-center text-lg font-medium">
                 <span>Remote Control Kit</span>
                 <span>+${accessoryCosts.controls}</span>
               </div>
             )}
             {accessoryCosts.controlAdapter > 0 && (
               <>
-                <div className="line-item flex justify-between items-center">
+                <div className="line-item flex justify-between items-center text-lg font-medium">
                   <span>Control Harness Adapter</span>
                   <span>+$125</span>
                 </div>
@@ -687,24 +687,24 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
               </>
             )}
             {accessoryCosts.battery > 0 && (
-              <div className="line-item flex justify-between items-center">
+              <div className="line-item flex justify-between items-center text-lg font-medium">
                 <span>Marine Battery</span>
                 <span>+${accessoryCosts.battery}</span>
               </div>
             )}
             {accessoryCosts.propeller > 0 && (
-              <div className="line-item flex justify-between items-center">
+              <div className="line-item flex justify-between items-center text-lg font-medium">
                 <span>{accessoryCosts.propeller === 950 ? 'Stainless Steel' : 'Aluminum'} Propeller</span>
                 <span>+${accessoryCosts.propeller}</span>
               </div>
             )}
             {accessoryCosts.installation > 0 && (
-              <div className="line-item flex justify-between items-center">
+              <div className="line-item flex justify-between items-center text-lg font-medium">
                 <span>Professional Installation</span>
                 <span>+$500</span>
               </div>
             )}
-            <div className="line-item flex justify-between items-center">
+            <div className="line-item flex justify-between items-center text-lg font-medium">
               <span className="text-in-stock">✓ Water Testing & Prop Sizing</span>
               <span>FREE</span>
             </div>
