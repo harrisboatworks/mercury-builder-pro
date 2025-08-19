@@ -18,7 +18,9 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
   const isTiller = selectedMotor?.model?.toLowerCase().includes('tiller') || 
     selectedMotor?.engine_type?.toLowerCase().includes('tiller');
   
-  const isSmallTiller = selectedMotor?.horsepower <= 6 && isTiller;
+  // Specific detection for internal-only motors (2.5HP and 3.5HP)
+  const isInternalOnlyTiller = (selectedMotor?.horsepower === 2.5 || selectedMotor?.horsepower === 3.5) && isTiller;
+  const isSmallTiller = selectedMotor?.horsepower <= 6 && isTiller && !isInternalOnlyTiller;
   const isMediumTiller = selectedMotor?.horsepower >= 9.9 && selectedMotor?.horsepower <= 20 && isTiller;
   const isLargeTiller = selectedMotor?.horsepower >= 25 && isTiller;
 
@@ -36,6 +38,7 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2">Fuel Tank Configuration</h1>
           <p className="text-gray-600">
+            {isInternalOnlyTiller && `Your ${selectedMotor?.horsepower}HP tiller motor has a built-in internal fuel system - no external connection available`}
             {isSmallTiller && `Your ${selectedMotor?.horsepower}HP tiller motor includes an internal fuel tank and propeller`}
             {isMediumTiller && `Your ${selectedMotor?.horsepower}HP tiller motor includes valuable extras worth $598!`}
             {isLargeTiller && `Your ${selectedMotor?.horsepower}HP tiller motor includes a propeller - fuel tank available as optional upgrade`}
@@ -51,10 +54,12 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              {isSmallTiller && (
+              {(isInternalOnlyTiller || isSmallTiller) && (
                 <div className="flex items-center gap-3">
                   <Check className="w-5 h-5 text-green-600" />
-                  <span>Internal fuel tank</span>
+                  <span>
+                    {isInternalOnlyTiller ? "Built-in internal fuel system" : "Internal fuel tank"}
+                  </span>
                 </div>
               )}
               <div className="flex items-center gap-3">
@@ -80,6 +85,14 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
                 <Check className="w-5 h-5 text-green-600" />
                 <span>Ready for customer pickup - no installation required</span>
               </div>
+              {isInternalOnlyTiller && (
+                <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-md">
+                  <p className="text-sm text-blue-800">
+                    <strong>Note:</strong> This motor is designed with a built-in fuel system and does not have 
+                    an external fuel connection port. The internal tank provides reliable fuel supply for typical use.
+                  </p>
+                </div>
+              )}
             </div>
           </CardContent>
         </Card>

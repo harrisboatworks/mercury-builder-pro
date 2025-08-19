@@ -1867,6 +1867,12 @@ export const MotorSelection = ({
                   if (/\bMH\b/i.test(model)) specs.start = specs.start === 'See details' ? 'Manual' : specs.start;
                   if (/\bEH\b|\bELPT\b/i.test(model)) specs.start = specs.start === 'See details' ? 'Electric' : specs.start;
                   if (/EFI/i.test(model)) specs.fuel = 'EFI';
+                  
+                  // Fuel system for 2.5HP and 3.5HP motors (internal only, no external connection)
+                  const hp = quickViewMotor.hp || 0;
+                  if ((hp === 2.5 || hp === 3.5) && /tiller/i.test(model)) {
+                    specs.fuel = 'Internal only';
+                  }
                   if (/\bL\b/.test(model)) specs.shaft = specs.shaft === 'Multiple options' ? '20" (Long)' : specs.shaft;
                   if (/\bS\b/.test(model)) specs.shaft = specs.shaft === 'Multiple options' ? '15" (Short)' : specs.shaft;
 
