@@ -15,13 +15,12 @@ interface FuelTankOptionsProps {
 export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: FuelTankOptionsProps) {
   const [externalTank, setExternalTank] = useState(false);
 
-  const isSmallTiller = selectedMotor?.horsepower <= 6 && 
-    (selectedMotor?.model?.toLowerCase().includes('tiller') || 
-     selectedMotor?.engine_type?.toLowerCase().includes('tiller'));
+  const isTiller = selectedMotor?.model?.toLowerCase().includes('tiller') || 
+    selectedMotor?.engine_type?.toLowerCase().includes('tiller');
   
-  const isMediumTiller = selectedMotor?.horsepower >= 9.9 && selectedMotor?.horsepower <= 20 &&
-    (selectedMotor?.model?.toLowerCase().includes('tiller') || 
-     selectedMotor?.engine_type?.toLowerCase().includes('tiller'));
+  const isSmallTiller = selectedMotor?.horsepower <= 6 && isTiller;
+  const isMediumTiller = selectedMotor?.horsepower >= 9.9 && selectedMotor?.horsepower <= 20 && isTiller;
+  const isLargeTiller = selectedMotor?.horsepower >= 25 && isTiller;
 
   const handleComplete = () => {
     onComplete({ externalTank });
@@ -37,10 +36,9 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2">Fuel Tank Configuration</h1>
           <p className="text-gray-600">
-            {isMediumTiller 
-              ? `Your ${selectedMotor?.horsepower}HP tiller motor includes valuable extras worth $598!`
-              : `Your ${selectedMotor?.horsepower}HP tiller motor includes an internal fuel tank and propeller`
-            }
+            {isSmallTiller && `Your ${selectedMotor?.horsepower}HP tiller motor includes an internal fuel tank and propeller`}
+            {isMediumTiller && `Your ${selectedMotor?.horsepower}HP tiller motor includes valuable extras worth $598!`}
+            {isLargeTiller && `Your ${selectedMotor?.horsepower}HP tiller motor includes a propeller - fuel tank available as optional upgrade`}
           </p>
         </div>
 
@@ -53,10 +51,12 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <Check className="w-5 h-5 text-green-600" />
-                <span>Internal fuel tank</span>
-              </div>
+              {isSmallTiller && (
+                <div className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-green-600" />
+                  <span>Internal fuel tank</span>
+                </div>
+              )}
               <div className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-green-600" />
                 <span>Propeller included</span>
@@ -84,12 +84,12 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
           </CardContent>
         </Card>
 
-        {isSmallTiller && (
+        {isLargeTiller && (
           <Card className="mb-8">
             <CardHeader>
               <CardTitle>Optional Upgrade</CardTitle>
               <CardDescription>
-                Add extended range with an external fuel tank system
+                Add fuel capacity with an external fuel tank system
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -107,8 +107,7 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
                       <Badge variant="secondary">+$199</Badge>
                     </div>
                     <p className="text-sm text-gray-600">
-                      Provides extended range and convenience for longer trips. 
-                      Tank connects easily to your motor's fuel inlet.
+                      Essential for extended operation. Tank connects to your motor's fuel inlet for reliable fuel supply.
                     </p>
                   </label>
                 </div>
