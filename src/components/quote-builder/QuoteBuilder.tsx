@@ -419,6 +419,7 @@ export default function QuoteBuilder() {
                   hasTradein: tradeInInfo.hasTradeIn,
                   fuelTankConfig: fuelTankConfig,
                 } as any}
+                purchasePath={purchasePath}
                 totalXP={totalXP}
                 onEarnXP={(amount) => setTotalXP((prev) => prev + amount)}
                 onStepComplete={(data) => {

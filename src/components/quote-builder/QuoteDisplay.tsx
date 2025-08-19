@@ -29,9 +29,10 @@ interface QuoteDisplayProps {
   onBack: () => void;
   totalXP?: number;
   onEarnXP?: (amount: number) => void;
+  purchasePath?: string;
 }
 
-export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, onEarnXP }: QuoteDisplayProps) => {
+export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, onEarnXP, purchasePath }: QuoteDisplayProps) => {
   const [downPayment, setDownPayment] = useState(0);
   const [term, setTerm] = useState(60);
   const [showTermComparison, setShowTermComparison] = useState(false);
@@ -154,7 +155,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
       controlAdapter: 0,
       battery: 0,
       propeller: 0,
-      installation: 500,
+      installation: purchasePath === 'loose' ? 0 : 500,
       waterTest: 0,
     };
     const hp = typeof motor?.hp === 'string' ? parseInt(motor.hp) : (motor?.hp || 0);
@@ -435,7 +436,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
           downPayment,
           monthly: Math.round(payments.monthly || 0),
         },
-        installationIncluded: 'Yes - Professional installation',
+        installationIncluded: purchasePath === 'loose' ? 'No - Loose motor only' : 'Yes - Professional installation',
         validUntil: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString(),
         timestamp: new Date().toISOString(),
       };
@@ -527,7 +528,12 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                 <span className="benefit-item">✓ 5 Year Warranty (Value: $899)</span>
               )}
               <span className="benefit-item">✓ Exclusive Mercury Dealer Pricing</span>
-              <span className="benefit-item">✓ Professional Installation Available</span>
+              {purchasePath === 'installed' && (
+                <span className="benefit-item">✓ Professional Installation Included</span>
+              )}
+              {purchasePath === 'loose' && (
+                <span className="benefit-item">✓ Professional Installation Available</span>
+              )}
             </div>
           </div>
           {hasSale && (
@@ -692,10 +698,12 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                 <span>+${accessoryCosts.propeller}</span>
               </div>
             )}
-            <div className="line-item flex justify-between items-center">
-              <span>Professional Installation</span>
-              <span>+$500</span>
-            </div>
+            {accessoryCosts.installation > 0 && (
+              <div className="line-item flex justify-between items-center">
+                <span>Professional Installation</span>
+                <span>+$500</span>
+              </div>
+            )}
             <div className="line-item flex justify-between items-center">
               <span className="text-in-stock">✓ Water Testing & Prop Sizing</span>
               <span>FREE</span>
