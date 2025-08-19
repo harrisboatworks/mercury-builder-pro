@@ -193,14 +193,14 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   };
 
   const accessoryCosts = calculateAccessoryCosts(quoteData.motor, quoteData.boatInfo);
-  const accessoriesSubtotal = Object.values(accessoryCosts).reduce((sum, v) => sum + (v || 0), 0);
+  const accessoriesSubtotal = Math.round((Object.values(accessoryCosts).reduce((sum, v) => sum + (v || 0), 0)) * 100) / 100;
 
-  const subtotalBeforeTrade = motorPrice + accessoriesSubtotal;
-  const subtotalAfterTrade = subtotalBeforeTrade - (hasTradeIn ? tradeInValue : 0);
-  const hst = subtotalAfterTrade * 0.13;
+  const subtotalBeforeTrade = Math.round((motorPrice + accessoriesSubtotal) * 100) / 100;
+  const subtotalAfterTrade = Math.round((subtotalBeforeTrade - (hasTradeIn ? tradeInValue : 0)) * 100) / 100;
+  const hst = Math.round((subtotalAfterTrade * 0.13) * 100) / 100;
   const financingFee = 299; // Added to all finance deals
-  const totalCashPrice = subtotalAfterTrade + hst;
-  const totalFinancePrice = subtotalAfterTrade + hst + financingFee;
+  const totalCashPrice = Math.round((subtotalAfterTrade + hst) * 100) / 100;
+  const totalFinancePrice = Math.round((subtotalAfterTrade + hst + financingFee) * 100) / 100;
   const maxDownPayment = totalFinancePrice * 0.5;
   const downPaymentPercentage = totalFinancePrice > 0 ? (downPayment / totalFinancePrice) * 100 : 0;
 
