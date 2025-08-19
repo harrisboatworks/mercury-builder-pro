@@ -1475,7 +1475,7 @@ export const MotorSelection = ({
             <div className="text-2xl">🍁</div>
             <p className="font-semibold">{emptyStateMessages.noResults.message}</p>
             <p className="text-muted-foreground">{emptyStateMessages.noResults.submessage}</p>
-          </Card> : <div className={`grid motors-grid items-stretch gap-2 sm:gap-4 ${viewMode === 'grid' ? (filtersOpen ? 'grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 lg:grid-cols-4') : 'grid-cols-1'}`}>
+          </Card> : <div className={`grid motors-grid items-stretch gap-2 sm:gap-4 ${viewMode === 'grid' ? 'grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
             {filteredMotors.map(motor => {
           const msrp = motor.basePrice && motor.basePrice > 0 ? motor.basePrice : null;
           const sale = motor.salePrice && motor.salePrice > 0 ? motor.salePrice : null;
