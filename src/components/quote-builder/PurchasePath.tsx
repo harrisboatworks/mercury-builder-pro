@@ -120,6 +120,12 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
                 <span>Controls & gauges configured</span>
               </div>
             )}
+            {isTiller && (
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+                <span>Securely bolted to transom (if requested)</span>
+              </div>
+            )}
             <div className="flex items-center gap-2">
               <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
               <span>Old motor removal available</span>
