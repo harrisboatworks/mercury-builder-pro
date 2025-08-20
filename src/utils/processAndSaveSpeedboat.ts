@@ -4,8 +4,8 @@ export const processAndSaveSpeedboat = async (): Promise<Blob> => {
   try {
     console.log('Processing speedboat image to remove background...');
     
-    // Load the user's uploaded speed boat image
-    const imageUrl = '/lovable-uploads/09e4fbbd-de35-435d-bdc1-7b7fb4cf400d.png';
+    // Load the user's uploaded STV speed boat image
+    const imageUrl = '/lovable-uploads/7c0dc81a-0fa8-4274-9b88-cf69604130dc.png';
     const imageElement = await loadImageFromUrl(imageUrl);
     
     // Remove the background
