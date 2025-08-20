@@ -18,9 +18,6 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -92,18 +89,6 @@ export default {
 				'special-order': {
 					DEFAULT: 'hsl(var(--special-order))',
 					foreground: 'hsl(var(--special-order-foreground))'
-				},
-				teal: {
-					50: 'hsl(var(--teal-50))',
-					100: 'hsl(var(--teal-100))',
-					200: 'hsl(var(--teal-200))',
-					300: 'hsl(var(--teal-300))',
-					400: 'hsl(var(--teal-400))',
-					500: 'hsl(var(--teal-500))',
-					600: 'hsl(var(--teal-600))',
-					700: 'hsl(var(--teal-700))',
-					800: 'hsl(var(--teal-800))',
-					900: 'hsl(var(--teal-900))'
 				}
 			},
 			borderRadius: {
