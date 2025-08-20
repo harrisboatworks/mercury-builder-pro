@@ -216,7 +216,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     } else if (motorHP > hpRange.max) {
       return {
         type: 'overpowered' as const,
-        message: `⚠️ Your ${motorHP}HP motor is more powerful than typically recommended for ${boatType.label}s (${boatType.recommendedHP}HP). This will work but may affect fuel economy.`,
+        message: `⚠️ Your ${motorHP}HP motor is too powerful for ${boatType.label}s (recommended: ${boatType.recommendedHP}HP). This won't work safely.`,
         motorHP,
         recommendedRange: boatType.recommendedHP
       };
