@@ -1,6 +1,7 @@
 // src/pages/Dev.tsx
 import { useEffect, useState } from 'react';
 import { listQuotes, seedQuote } from '../lib/quotesApi';
+import { ImageProcessor } from '@/components/ui/image-processor';
 
 export default function Dev() {
   const [quotes, setQuotes] = useState<any[]>([]);
@@ -31,6 +32,11 @@ export default function Dev() {
   return (
     <div style={{ padding: 16 }}>
       <h1>HBW Quotes – Dev</h1>
+      
+      <div style={{ marginBottom: 24 }}>
+        <ImageProcessor />
+      </div>
+      
       <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
         <button onClick={refresh} disabled={loading}>Refresh</button>
         <button onClick={createSeed} disabled={loading}>Create Seed Quote</button>
