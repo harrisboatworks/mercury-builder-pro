@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -101,6 +101,9 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [lengthFeet, setLengthFeet] = useState<number>(16);
   const isMobile = useIsMobile();
+  
+  // Ref for auto-scroll to length input
+  const lengthSectionRef = useRef<HTMLDivElement>(null);
 
   const lengthBucket = (feet: number): string => {
     if (feet < 14) return 'under-14';
@@ -125,6 +128,18 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
       }
     }
   }, [boatInfo.type, lengthFeet, boatInfo.length]);
+
+  // Auto-scroll to length input when boat type is selected
+  useEffect(() => {
+    if (boatInfo.type && boatInfo.type !== 'motor-only' && lengthSectionRef.current) {
+      setTimeout(() => {
+        lengthSectionRef.current?.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center' 
+        });
+      }, 300); // Wait for fade-in animation
+    }
+  }, [boatInfo.type]);
   const computeCompatibilityScore = (): number => {
     if (!selectedMotor) return 0;
     
@@ -515,7 +530,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
 
                   {/* Length Input Section - Shows after boat type is selected */}
                   {boatInfo.type && boatInfo.type !== 'motor-only' && (
-                    <div className="length-input-section animate-fade-in mt-6 p-6 bg-muted/30 rounded-lg border border-border">
+                    <div ref={lengthSectionRef} className="length-input-section animate-fade-in mt-6 p-6 bg-muted/30 rounded-lg border border-border">
                       <div className="space-y-4">
                         <div className="text-center space-y-2">
                           <Label className="text-lg font-semibold">What's your {boatTypes.find(t => t.id === boatInfo.type)?.label} length?</Label>
