@@ -116,15 +116,15 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     setBoatInfo(prev => ({ ...prev, length: lengthBucket(feet) }));
   };
 
-  // Auto-set length bucket when entering the Length step so users don't have to move the slider
+  // Auto-set length bucket when boat type is selected
   useEffect(() => {
-    if (boatInfo.type !== 'motor-only' && currentStep === 1) {
+    if (boatInfo.type && boatInfo.type !== 'motor-only') {
       const bucket = lengthBucket(lengthFeet);
       if (boatInfo.length !== bucket) {
         setBoatInfo(prev => ({ ...prev, length: bucket }));
       }
     }
-  }, [currentStep, boatInfo.type, lengthFeet, boatInfo.length]);
+  }, [boatInfo.type, lengthFeet, boatInfo.length]);
   const computeCompatibilityScore = (): number => {
     if (!selectedMotor) return 0;
     
@@ -201,16 +201,14 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     )
     : (showTradeIn
       ? [
-          { label: 'Boat Type' },
-          { label: 'Length' },
+          { label: 'Boat Details' },
           { label: 'Transom Height' },
           { label: 'Controls & Rigging' },
           { label: 'Trade-In (Optional)' },
           { label: 'Review' },
         ]
       : [
-          { label: 'Boat Type' },
-          { label: 'Length' },
+          { label: 'Boat Details' },
           { label: 'Transom Height' },
           { label: 'Controls & Rigging' },
           { label: 'Review' },
@@ -271,7 +269,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     handleNext();
   };
 
-  const totalSteps = boatInfo.type === 'motor-only' ? (showTradeIn ? 3 : 2) : (showTradeIn ? 6 : 5);
+  const totalSteps = boatInfo.type === 'motor-only' ? (showTradeIn ? 3 : 2) : (showTradeIn ? 5 : 4);
   const canNext = () => {
     if (boatInfo.type === 'motor-only') {
       if (currentStep === 0) return boatInfo.type === 'motor-only';
@@ -280,14 +278,12 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     }
     switch (currentStep) {
       case 0:
-        return !!boatInfo.type && boatInfo.type !== 'motor-only';
+        return !!boatInfo.type && boatInfo.type !== 'motor-only' && !!boatInfo.length;
       case 1:
-        return !!boatInfo.length; // set via slider mapping
-      case 2:
         return !!boatInfo.shaftLength; // transom helper
-      case 3:
+      case 2:
         return !!boatInfo.controlType;
-      case 4:
+      case 3:
         return true; // trade-in optional
       default:
         return true;
@@ -402,7 +398,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                 <div className="space-y-6">
                   <div className="text-center space-y-2">
                     <Label className="text-2xl font-bold">What type of boat do you have?</Label>
-                    <p className="text-muted-foreground">Pick the closest match.</p>
+                    <p className="text-muted-foreground">Pick the closest match and enter your boat length.</p>
                   </div>
                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                      {boatTypes.filter(t => t.id !== 'motor-only').map((type) => (
@@ -516,70 +512,41 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                       Skip this step - Use typical settings for {hp || selectedMotor?.hp || '--'}HP
                     </Button>
                   </div>
-                </div>
-              </Card>
-            )}
 
-            {currentStep === 1 && (
-              <Card className="p-6 animate-fade-in">
-                <div className="space-y-6">
-                  <div className="space-y-2">
-                    <Label className="text-lg font-semibold">How long is your boat?</Label>
-                    <Slider
-                      value={[lengthFeet]}
-                      min={10}
-                      max={30}
-                      step={1}
-                      onValueChange={handleLengthChange}
-                    />
-                    <div className="text-sm text-muted-foreground">Approx. {lengthFeet} ft</div>
-                  </div>
-
-                  {/* Visual Boat Builder */}
-                  <div className="rounded-lg border border-border bg-muted/30 p-4">
-                    <div className="flex flex-col md:flex-row gap-4 items-center">
-                      <svg viewBox="0 0 400 120" className="w-full md:w-2/3">
-                        <rect x="10" y="60" rx="6" ry="6" height="22" width={Math.max(80, Math.min(360, lengthFeet * 12))} className="fill-primary/50" />
-                        {/* Motor on transom */}
-                        {selectedMotor?.image && (
-                          <image href={selectedMotor.image} x={Math.max(50, Math.min(330, lengthFeet * 12 - 20))} y="30" height="48" width="48" preserveAspectRatio="xMidYMid slice" />
-                        )}
-                      </svg>
-                      <div className="md:w-1/3 space-y-2">
-                        <div className="text-sm">Estimated Speed</div>
-                        <div className="text-2xl font-bold">{selectedMotor ? calculateEstimatedSpeed() : '--'} mph</div>
-                        <div className="text-sm">Match Score</div>
-                        <div className="flex items-center gap-2">
-                          <Progress value={computeCompatibilityScore()} className="h-2" />
-                          <span className="text-sm text-muted-foreground">{computeCompatibilityScore()}%</span>
+                  {/* Length Input Section - Shows after boat type is selected */}
+                  {boatInfo.type && boatInfo.type !== 'motor-only' && (
+                    <div className="length-input-section animate-fade-in mt-6 p-6 bg-muted/30 rounded-lg border border-border">
+                      <div className="space-y-4">
+                        <div className="text-center space-y-2">
+                          <Label className="text-lg font-semibold">What's your {boatTypes.find(t => t.id === boatInfo.type)?.label} length?</Label>
+                          <p className="text-sm text-muted-foreground">Use the slider to set your boat length</p>
+                        </div>
+                        
+                        <div className="slider-container">
+                          <Slider
+                            value={[lengthFeet]}
+                            min={14}
+                            max={30}
+                            step={1}
+                            onValueChange={handleLengthChange}
+                            className="w-full"
+                          />
+                          <div className="flex justify-between items-center mt-3">
+                            <span className="text-sm text-muted-foreground">14 ft</span>
+                            <span className="text-2xl font-bold text-primary">
+                              {lengthFeet} ft
+                            </span>
+                            <span className="text-sm text-muted-foreground">30 ft</span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Real-time validation */}
-                  {selectedMotor && (
-                    <div className="validation-feedback">
-                      {selectedMotor.hp > lengthFeet * 10 ? (
-                        <Alert className="border-orange-500 bg-orange-50 dark:bg-orange-950/20">
-                          <AlertDescription>⚠️ This motor might be overpowered for your boat.</AlertDescription>
-                        </Alert>
-                      ) : selectedMotor.hp < lengthFeet * 3 ? (
-                        <Alert className="border-blue-500 bg-blue-50 dark:bg-blue-950/20">
-                          <AlertDescription>💡 This will work, but you might want more power.</AlertDescription>
-                        </Alert>
-                      ) : (
-                        <Alert className="border-in-stock bg-in-stock/10">
-                          <AlertDescription>✅ Great power-to-weight ratio!</AlertDescription>
-                        </Alert>
-                      )}
                     </div>
                   )}
                 </div>
               </Card>
             )}
 
-            {currentStep === 2 && (
+            {currentStep === 1 && (
               <Card className="p-6 animate-fade-in">
                 <div className="space-y-6">
                   <div>
@@ -661,7 +628,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
               </Card>
             )}
 
-            {currentStep === 3 && (
+            {currentStep === 2 && (
               <Card className="p-6 animate-fade-in">
                 <div className="space-y-6">
                   <div className="space-y-4">
@@ -933,7 +900,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
               </Card>
             )}
 
-            {showTradeIn && currentStep === 4 && (
+            {showTradeIn && currentStep === 3 && (
               <Card className="p-6 animate-fade-in">
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold">Have a motor to trade?</h3>
@@ -947,7 +914,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
               </Card>
             )}
 
-            {currentStep === 5 && (
+            {currentStep === 4 && (
               <Card className="p-6 animate-fade-in">
                 <div className="space-y-6">
                   <div className="space-y-2">
