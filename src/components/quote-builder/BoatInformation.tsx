@@ -424,7 +424,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                          className={`group relative rounded-2xl border-2 p-4 bg-gray-50 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-red-600 bg-red-50' : 'border-gray-200'}`}
                          aria-pressed={boatInfo.type === type.id}
                        >
-                         <div className="mb-3 h-28 md:h-36 overflow-hidden rounded-md border border-gray-200 bg-white flex items-center justify-center">
+                         <div className="mb-3 h-28 md:h-36 overflow-hidden rounded-md border border-border flex items-center justify-center">
                             <img
                               src={type.image}
                               alt={`${type.label} boat`}
