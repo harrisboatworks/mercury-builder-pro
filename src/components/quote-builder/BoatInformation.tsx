@@ -578,17 +578,6 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                     </div>
                   )}
 
-                  {/* Guided help */}
-                  {showHelp && (
-                    <div className="boat-identifier rounded-lg border border-border bg-muted/30 p-4">
-                      <h3 className="font-semibold mb-2">Need help choosing?</h3>
-                      <ul className="text-sm space-y-1">
-                        <li>• Simple V-hull for work? → Utility Boat</li>
-                        <li>• Does it have two tubes? → Pontoon</li>
-                        <li>• Is it V-shaped and low? → Bass Boat</li>
-                      </ul>
-                    </div>
-                  )}
 
                   {/* Quick Skip */}
                   <div className="skip-option">
