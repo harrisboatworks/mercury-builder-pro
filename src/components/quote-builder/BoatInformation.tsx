@@ -550,28 +550,36 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
               <Card className="p-6 animate-fade-in">
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold">Transom Height Helper</h3>
+                    <h3 className="text-lg font-semibold">Transom Height Confirmation</h3>
                     <p className="text-sm text-muted-foreground">Measure from top of transom to bottom of hull.</p>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    <Button type="button" variant="outline" onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: '15' }))}>
-                      <div className="text-left">
-                        <div className="font-semibold">15" (Short)</div>
-                        <div className="text-xs text-muted-foreground">Small boats, canoes</div>
-                      </div>
+                  <div className={`grid grid-cols-1 gap-3 ${hp >= 40 ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
+                    {hp < 40 && (
+                      <Button 
+                        type="button" 
+                        variant={boatInfo.shaftLength === '15' ? "default" : "outline"} 
+                        onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: '15' }))}
+                        className="h-auto py-4 px-6 justify-center text-center"
+                      >
+                        <div className="text-lg font-semibold">15" (Short)</div>
+                      </Button>
+                    )}
+                    <Button 
+                      type="button" 
+                      variant={boatInfo.shaftLength === '20' ? "default" : "outline"} 
+                      onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: '20' }))}
+                      className="h-auto py-4 px-6 justify-center text-center"
+                    >
+                      <div className="text-lg font-semibold">20" (Long)</div>
                     </Button>
-                    <Button type="button" variant="outline" onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: '20' }))}>
-                      <div className="text-left">
-                        <div className="font-semibold">20" (Long)</div>
-                        <div className="text-xs text-muted-foreground">Most boats - if unsure, pick this</div>
-                      </div>
-                    </Button>
-                    <Button type="button" variant="outline" onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: '25' }))}>
-                      <div className="text-left">
-                        <div className="font-semibold">25" (XL)</div>
-                        <div className="text-xs text-muted-foreground">Sailboats, large pontoons</div>
-                      </div>
+                    <Button 
+                      type="button" 
+                      variant={boatInfo.shaftLength === '25' ? "default" : "outline"} 
+                      onClick={() => setBoatInfo(prev => ({ ...prev, shaftLength: '25' }))}
+                      className="h-auto py-4 px-6 justify-center text-center"
+                    >
+                      <div className="text-lg font-semibold">25" (Extra Long)</div>
                     </Button>
                   </div>
 
