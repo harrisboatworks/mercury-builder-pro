@@ -1408,6 +1408,20 @@ export const MotorSelection = ({
                 isOpen={filtersOpen} 
                 onToggle={() => setFiltersOpen(!filtersOpen)} 
               />
+              
+              {/* Live Activities Section */}
+              <div className="mt-6">
+                <ActivityTicker />
+              </div>
+
+              {/* Customer Reviews Section */}
+              <div className="mt-6">
+                <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <Star className="w-4 h-4 text-yellow-500" />
+                  Customer Reviews (4.6/5 ⭐)
+                </h4>
+                <TestimonialCarousel />
+              </div>
             </>
           ) : (
             <div className="bg-background border border-border rounded-lg flex flex-col items-center py-4 space-y-4 h-fit">
@@ -1432,20 +1446,6 @@ export const MotorSelection = ({
               </div>
             </div>
           )}
-        
-        {/* Live Activities Section */}
-        <div className="mt-6">
-          <ActivityTicker />
-        </div>
-
-        {/* Customer Reviews Section */}
-        <div className="mt-6">
-          <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-            <Star className="w-4 h-4 text-yellow-500" />
-            Customer Reviews (4.6/5 ⭐)
-          </h4>
-          <TestimonialCarousel />
-        </div>
       </div>
 
       <div className="flex-1 space-y-8">
