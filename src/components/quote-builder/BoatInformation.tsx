@@ -127,10 +127,49 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
   }, [currentStep, boatInfo.type, lengthFeet, boatInfo.length]);
   const computeCompatibilityScore = (): number => {
     if (!selectedMotor) return 0;
-    const idealHp = Math.max(20, lengthFeet * 8); // rough heuristic
-    const ratio = selectedMotor.hp / idealHp;
+    
+    // Boat type efficiency factors for power-to-weight calculation
+    const boatEfficiencyFactors: Record<string, number> = {
+      'bass-boat': 1.2,      // Lighter, more efficient hull
+      'center-console': 1.0,  // Standard efficiency
+      'bowrider': 0.95,      // Slightly heavier
+      'pontoon': 0.7,        // Much heavier, less efficient
+      'utility': 1.1,        // Simple, efficient hull
+      'jon-boat': 1.15,      // Very light aluminum
+      'aluminum-fishing': 1.1, // Light aluminum
+    };
+    
+    const efficiency = boatEfficiencyFactors[boatInfo.type] || 1.0;
+    const idealHpPerFoot = boatInfo.type === 'pontoon' ? 10 : 6; // Pontoons need more power
+    const idealHp = lengthFeet * idealHpPerFoot;
+    const adjustedIdealHp = idealHp / efficiency; // Account for boat efficiency
+    
+    const ratio = selectedMotor.hp / adjustedIdealHp;
     const score = Math.max(0, Math.min(100, Math.round((1 - Math.abs(1 - ratio)) * 100)));
     return score;
+  };
+
+  const calculateEstimatedSpeed = (): number => {
+    if (!selectedMotor || !boatInfo.type) return 0;
+    
+    // Boat type efficiency factors for speed calculation
+    const boatSpeedFactors: Record<string, number> = {
+      'bass-boat': 1.3,      // Lighter, faster hull design
+      'center-console': 1.1,  // Good performance hull
+      'bowrider': 1.0,       // Standard runabout performance
+      'pontoon': 0.6,        // Heavy, less efficient
+      'utility': 1.15,      // Simple, efficient hull
+      'jon-boat': 1.2,      // Very light aluminum
+      'aluminum-fishing': 1.1, // Light aluminum
+    };
+    
+    const speedFactor = boatSpeedFactors[boatInfo.type] || 1.0;
+    
+    // More realistic speed calculation: base speed from power-to-weight ratio
+    const baseSpeed = (selectedMotor.hp / lengthFeet) * speedFactor * 1.8;
+    
+    // Realistic speed range limits
+    return Math.round(Math.max(8, Math.min(65, baseSpeed)));
   };
 
   const getCompatibilityMessage = () => {
@@ -508,7 +547,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                       </svg>
                       <div className="md:w-1/3 space-y-2">
                         <div className="text-sm">Estimated Speed</div>
-                        <div className="text-2xl font-bold">{selectedMotor ? Math.max(15, Math.round((selectedMotor.hp / Math.max(12, lengthFeet)) * 2)) : '--'} mph</div>
+                        <div className="text-2xl font-bold">{selectedMotor ? calculateEstimatedSpeed() : '--'} mph</div>
                         <div className="text-sm">Match Score</div>
                         <div className="flex items-center gap-2">
                           <Progress value={computeCompatibilityScore()} className="h-2" />
