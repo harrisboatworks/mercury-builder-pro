@@ -6,6 +6,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { BoatInfo } from '@/components/QuoteBuilder';
+import { SpeedboatImageProcessor } from '@/components/SpeedboatImageProcessor';
 
 export default function BoatInfoPage() {
   const navigate = useNavigate();
@@ -59,6 +60,8 @@ export default function BoatInfoPage() {
           selectedMotor={state.motor!}
           onShowCompatibleMotors={handleShowCompatibleMotors}
         />
+        
+        <SpeedboatImageProcessor />
       </div>
     </QuoteLayout>
   );
