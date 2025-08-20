@@ -187,6 +187,49 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     return Math.round(Math.max(8, Math.min(65, baseSpeed)));
   };
 
+  // Parse HP range string (e.g., "115-250") to extract min/max values
+  const parseHPRange = (hpString: string) => {
+    if (!hpString) return null;
+    const match = hpString.match(/(\d+\.?\d*)-(\d+)/);
+    return match ? { min: parseFloat(match[1]), max: parseFloat(match[2]) } : null;
+  };
+
+  // Check if motor HP fits within boat type's recommended range
+  const getMotorBoatCompatibility = () => {
+    if (!selectedMotor || !boatInfo.type) return null;
+    
+    const boatType = boatTypes.find(t => t.id === boatInfo.type);
+    if (!boatType?.recommendedHP) return null;
+    
+    const hpRange = parseHPRange(boatType.recommendedHP);
+    if (!hpRange) return null;
+    
+    const motorHP = hp;
+    
+    if (motorHP >= hpRange.min && motorHP <= hpRange.max) {
+      return {
+        type: 'perfect' as const,
+        message: `✓ Perfect match for your ${boatType.label}`,
+        motorHP,
+        recommendedRange: boatType.recommendedHP
+      };
+    } else if (motorHP > hpRange.max) {
+      return {
+        type: 'overpowered' as const,
+        message: `⚠️ Your ${motorHP}HP motor is more powerful than typically recommended for ${boatType.label}s (${boatType.recommendedHP}HP). This will work but may affect fuel economy.`,
+        motorHP,
+        recommendedRange: boatType.recommendedHP
+      };
+    } else {
+      return {
+        type: 'underpowered' as const,
+        message: `⚠️ Your ${motorHP}HP motor is below the recommended range for ${boatType.label}s (${boatType.recommendedHP}HP). Performance may be limited.`,
+        motorHP,
+        recommendedRange: boatType.recommendedHP
+      };
+    }
+  };
+
   const getCompatibilityMessage = () => {
     if (boatInfo.currentMotorBrand === 'Mercury') {
       return {
@@ -497,22 +540,48 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                   {/* Selection feedback */}
                   {boatInfo.type && selectedMotor && (
                     <div className="selection-feedback">
-                      {boatInfo.type === 'pontoon' && hp < 25 ? (
-                        <Alert className="border-orange-500 bg-orange-50 dark:bg-orange-950/20">
-                          <AlertDescription>⚠️ Pontoons typically need 25HP+ for adequate performance</AlertDescription>
-                        </Alert>
-                      ) : (
-                        <Alert className="border-green-500/30 bg-green-500/10">
-                          <AlertDescription>✓ Good match for your {hp}HP motor</AlertDescription>
-                        </Alert>
-                      )}
+                      {(() => {
+                        // Special case for pontoons with very low HP
+                        if (boatInfo.type === 'pontoon' && hp < 25) {
+                          return (
+                            <Alert className="border-orange-500 bg-orange-50 dark:bg-orange-950/20">
+                              <AlertDescription>⚠️ Pontoons typically need 25HP+ for adequate performance</AlertDescription>
+                            </Alert>
+                          );
+                        }
+                        
+                        // Check motor-boat compatibility
+                        const compatibility = getMotorBoatCompatibility();
+                        if (compatibility) {
+                          if (compatibility.type === 'perfect') {
+                            return (
+                              <Alert className="border-green-500/30 bg-green-500/10">
+                                <AlertDescription>{compatibility.message}</AlertDescription>
+                              </Alert>
+                            );
+                          } else {
+                            return (
+                              <Alert className="border-orange-500 bg-orange-50 dark:bg-orange-950/20">
+                                <AlertDescription>{compatibility.message}</AlertDescription>
+                              </Alert>
+                            );
+                          }
+                        }
+                        
+                        // Fallback for cases where no specific range is defined
+                        return (
+                          <Alert className="border-green-500/30 bg-green-500/10">
+                            <AlertDescription>✓ Good match for your {hp}HP motor</AlertDescription>
+                          </Alert>
+                        );
+                      })()}
                     </div>
                   )}
 
                   {/* Guided help */}
                   {showHelp && (
                     <div className="boat-identifier rounded-lg border border-border bg-muted/30 p-4">
-                      <h3 className="font-semibold mb-2">Let's identify your boat:</h3>
+                      <h3 className="font-semibold mb-2">Need help choosing?</h3>
                       <ul className="text-sm space-y-1">
                         <li>• Simple V-hull for work? → Utility Boat</li>
                         <li>• Does it have two tubes? → Pontoon</li>
