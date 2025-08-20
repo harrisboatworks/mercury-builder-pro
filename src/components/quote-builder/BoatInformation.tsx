@@ -94,6 +94,13 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
       description: 'Offshore fishing',
       recommendedHP: '115-600',
       image: '/lovable-uploads/bc00ebae-067a-49d1-be75-82e023004a92.png'
+    },
+    {
+      id: 'speed-boat',
+      label: 'Speed Boat',
+      description: 'Hydrostreams / Tunnel Hull',
+      recommendedHP: '90-450',
+      image: '/public/lovable-uploads/speedboat-tunnel-hull.jpg'
     }
   ];
 
@@ -152,6 +159,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
       'utility': 1.1,        // Simple, efficient hull
       'jon-boat': 1.15,      // Very light aluminum
       'aluminum-fishing': 1.1, // Light aluminum
+      'speed-boat': 1.4,     // Very efficient planing hull
     };
     
     const efficiency = boatEfficiencyFactors[boatInfo.type] || 1.0;
@@ -176,6 +184,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
       'utility': 1.15,      // Simple, efficient hull
       'jon-boat': 1.2,      // Very light aluminum
       'aluminum-fishing': 1.1, // Light aluminum
+      'speed-boat': 1.6,     // Designed for high speed
     };
     
     const speedFactor = boatSpeedFactors[boatInfo.type] || 1.0;
