@@ -5,8 +5,8 @@ export const processSpeedBoatImage = async (): Promise<string> => {
   try {
     toast.loading('Processing speed boat image...', { id: 'bg-removal' });
     
-    // Load the current speed boat image
-    const imageUrl = '/lovable-uploads/e00f8c7f-fcf6-48a9-b1ee-5c2478f26d84.png';
+    // Load the user's uploaded speed boat image
+    const imageUrl = '/lovable-uploads/09e4fbbd-de35-435d-bdc1-7b7fb4cf400d.png';
     const imageElement = await loadImageFromUrl(imageUrl);
     
     // Remove the background
