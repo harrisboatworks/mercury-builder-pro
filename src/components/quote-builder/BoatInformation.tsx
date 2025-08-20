@@ -14,7 +14,7 @@ import { Slider } from '@/components/ui/slider';
 import { Progress } from '@/components/ui/progress';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import speedboatImage from '@/assets/speedboat-transparent.png';
+
 interface BoatInformationProps {
   onStepComplete: (boatInfo: BoatInfo) => void;
   onBack: () => void;
@@ -101,7 +101,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
       label: 'Speed Boat',
       description: 'Hydrostreams / Tunnel Hull',
       recommendedHP: '90-450',
-      image: speedboatImage
+      image: '/lovable-uploads/7c0dc81a-0fa8-4274-9b88-cf69604130dc.png'
     }
   ];
 
