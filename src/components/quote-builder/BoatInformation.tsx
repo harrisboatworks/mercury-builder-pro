@@ -69,6 +69,13 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
       image: '/lovable-uploads/6422c1aa-1ab1-4860-b77c-84dd486e4845.png'
     },
     {
+      id: 'v-hull-fishing',
+      label: 'V-Hull Fishing',
+      description: 'Deep V-hull fishing boats',
+      recommendedHP: '40-150',
+      image: '/lovable-uploads/799d1518-6210-44ae-9edf-a0f0488e5b25.png'
+    },
+    {
       id: 'bass-boat',
       label: 'Bass Boat',
       description: 'Tournament ready',
