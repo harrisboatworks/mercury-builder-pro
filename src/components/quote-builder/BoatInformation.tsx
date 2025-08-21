@@ -101,7 +101,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
       label: 'Speed Boat',
       description: 'Hydrostreams / Tunnel Hull',
       recommendedHP: '90-450',
-      image: '/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png'
+      image: '/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png'
     }
   ];
 
