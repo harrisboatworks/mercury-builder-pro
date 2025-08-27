@@ -643,35 +643,67 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                     </Button>
                   </div>
 
-                  {/* Length Input Section - Shows after boat type is selected */}
-                  {boatInfo.type && boatInfo.type !== 'motor-only' && (
-                    <div ref={lengthSectionRef} className="length-input-section animate-fade-in mt-6 p-6 bg-muted/30 rounded-lg border border-border">
-                      <div className="space-y-4">
-                        <div className="text-center space-y-2">
-                          <Label className="text-lg font-semibold">What's your {boatTypes.find(t => t.id === boatInfo.type)?.label} length?</Label>
-                          <p className="text-sm text-muted-foreground">Use the slider to set your boat length</p>
-                        </div>
-                        
-                        <div className="slider-container">
-                          <Slider
-                            value={[lengthFeet]}
-                            min={14}
-                            max={30}
-                            step={1}
-                            onValueChange={handleLengthChange}
-                            className="w-full"
-                          />
-                          <div className="flex justify-between items-center mt-3">
-                            <span className="text-sm text-muted-foreground">14 ft</span>
-                            <span className="text-2xl font-bold text-primary">
-                              {lengthFeet} ft
-                            </span>
-                            <span className="text-sm text-muted-foreground">30 ft</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                   {/* Boat Details Section - Shows after boat type is selected */}
+                   {boatInfo.type && boatInfo.type !== 'motor-only' && (
+                     <div ref={lengthSectionRef} className="boat-details-section animate-fade-in mt-6 p-6 bg-muted/30 rounded-lg border border-border">
+                       <div className="space-y-6">
+                         {/* Boat Make and Model */}
+                         <div className="space-y-4">
+                           <div className="text-center space-y-2">
+                             <Label className="text-lg font-semibold">Tell us about your {boatTypes.find(t => t.id === boatInfo.type)?.label}</Label>
+                             <p className="text-sm text-muted-foreground">Boat details help us provide more accurate recommendations</p>
+                           </div>
+                           
+                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                             <div className="space-y-2">
+                               <Label>Boat Make</Label>
+                               <Input 
+                                 value={boatInfo.make} 
+                                 onChange={(e) => setBoatInfo(prev => ({ ...prev, make: e.target.value }))} 
+                                 placeholder="e.g., Harris, Ranger, Boston Whaler" 
+                                 className="min-h-[44px] py-3 text-base w-full"
+                               />
+                             </div>
+                             <div className="space-y-2">
+                               <Label>Boat Model</Label>
+                               <Input 
+                                 value={boatInfo.model} 
+                                 onChange={(e) => setBoatInfo(prev => ({ ...prev, model: e.target.value }))} 
+                                 placeholder="e.g., Solstice 230, Z520L" 
+                                 className="min-h-[44px] py-3 text-base w-full"
+                               />
+                             </div>
+                           </div>
+                         </div>
+
+                         {/* Length Input */}
+                         <div className="space-y-4">
+                           <div className="text-center space-y-2">
+                             <Label className="text-lg font-semibold">Boat Length</Label>
+                             <p className="text-sm text-muted-foreground">Use the slider to set your boat length</p>
+                           </div>
+                           
+                           <div className="slider-container">
+                             <Slider
+                               value={[lengthFeet]}
+                               min={14}
+                               max={30}
+                               step={1}
+                               onValueChange={handleLengthChange}
+                               className="w-full"
+                             />
+                             <div className="flex justify-between items-center mt-3">
+                               <span className="text-sm text-muted-foreground">14 ft</span>
+                               <span className="text-2xl font-bold text-primary">
+                                 {lengthFeet} ft
+                               </span>
+                               <span className="text-sm text-muted-foreground">30 ft</span>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                   )}
                 </div>
               </Card>
             )}
@@ -1012,27 +1044,6 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                       );
                     })()}
 
-                    {/* Optional make/model */}
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                       <div className="space-y-2">
-                         <Label>Boat Make (Optional)</Label>
-                         <Input 
-                           value={boatInfo.make} 
-                           onChange={(e) => setBoatInfo(prev => ({ ...prev, make: e.target.value }))} 
-                           placeholder="e.g., Boston Whaler" 
-                           className="min-h-[44px] py-3 text-base w-full"
-                         />
-                       </div>
-                       <div className="space-y-2">
-                         <Label>Boat Model (Optional)</Label>
-                         <Input 
-                           value={boatInfo.model} 
-                           onChange={(e) => setBoatInfo(prev => ({ ...prev, model: e.target.value }))} 
-                           placeholder="e.g., Montauk 170" 
-                           className="min-h-[44px] py-3 text-base w-full"
-                         />
-                       </div>
-                     </div>
                   </div>
                 </div>
               </Card>
