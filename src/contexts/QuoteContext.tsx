@@ -16,6 +16,7 @@ interface QuoteState {
   hasTradein: boolean;
   completedSteps: number[];
   currentStep: number;
+  isLoading: boolean;
 }
 
 type QuoteAction = 
@@ -30,6 +31,7 @@ type QuoteAction =
   | { type: 'COMPLETE_STEP'; payload: number }
   | { type: 'SET_CURRENT_STEP'; payload: number }
   | { type: 'LOAD_FROM_STORAGE'; payload: QuoteState }
+  | { type: 'SET_LOADING'; payload: boolean }
   | { type: 'RESET_QUOTE' };
 
 const initialState: QuoteState = {
@@ -46,7 +48,8 @@ const initialState: QuoteState = {
   },
   hasTradein: false,
   completedSteps: [],
-  currentStep: 1
+  currentStep: 1,
+  isLoading: true
 };
 
 const QuoteContext = createContext<{
@@ -83,7 +86,9 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
     case 'SET_CURRENT_STEP':
       return { ...state, currentStep: action.payload };
     case 'LOAD_FROM_STORAGE':
-      return action.payload;
+      return { ...action.payload, isLoading: false };
+    case 'SET_LOADING':
+      return { ...state, isLoading: action.payload };
     case 'RESET_QUOTE':
       return initialState;
     default:
@@ -105,10 +110,14 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
           dispatch({ type: 'LOAD_FROM_STORAGE', payload: parsedData.state });
         } else {
           localStorage.removeItem('quoteBuilder');
+          dispatch({ type: 'SET_LOADING', payload: false });
         }
       } catch (error) {
         localStorage.removeItem('quoteBuilder');
+        dispatch({ type: 'SET_LOADING', payload: false });
       }
+    } else {
+      dispatch({ type: 'SET_LOADING', payload: false });
     }
   }, []);
 
