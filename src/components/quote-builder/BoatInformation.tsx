@@ -537,10 +537,49 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                       </div>
                       <h3 className="font-semibold">Not Sure?</h3>
                       <p className="text-sm text-muted-foreground">We'll help you figure it out</p>
-                    </button>
-                  </div>
+                     </button>
+                   </div>
 
-                  {/* Why this matters */}
+                   {/* Help content for "Not Sure?" option */}
+                   {showHelp && (
+                     <div className="help-content animate-fade-in mt-4 p-4 bg-muted/30 rounded-lg border border-border">
+                       <h4 className="font-semibold mb-3">Let's figure out your boat type together!</h4>
+                       <div className="space-y-3 text-sm">
+                         <p>Answer these quick questions to identify your boat:</p>
+                         <div className="space-y-2">
+                           <div>
+                             <strong>What's the primary use?</strong>
+                             <ul className="ml-4 mt-1 space-y-1">
+                               <li>• Fishing in lakes/rivers → <strong>V-Hull Fishing</strong> or <strong>Bass Boat</strong></li>
+                               <li>• Family fun/cruising → <strong>Pontoon</strong> or <strong>Bowrider</strong></li>
+                               <li>• Small lakes/portability → <strong>Utility Boat</strong></li>
+                               <li>• Offshore fishing → <strong>Center Console</strong></li>
+                               <li>• Racing/speed → <strong>Speed Boat</strong></li>
+                             </ul>
+                           </div>
+                           <div>
+                             <strong>Hull shape:</strong>
+                             <ul className="ml-4 mt-1 space-y-1">
+                               <li>• Flat bottom with aluminum → <strong>Utility Boat</strong></li>
+                               <li>• V-shaped hull → <strong>V-Hull Fishing</strong></li>
+                               <li>• Two tubes/pontoons → <strong>Pontoon</strong></li>
+                               <li>• Open bow area → <strong>Bowrider</strong></li>
+                             </ul>
+                           </div>
+                         </div>
+                         <Button
+                           variant="outline"
+                           size="sm"
+                           onClick={() => setShowHelp(false)}
+                           className="mt-3"
+                         >
+                           Close Help
+                         </Button>
+                       </div>
+                     </div>
+                   )}
+
+                   {/* Why this matters */}
                   <div className="why-this-matters">
                     <details className="text-sm">
                       <summary className="cursor-pointer text-primary">Why do we need to know your boat type?</summary>
