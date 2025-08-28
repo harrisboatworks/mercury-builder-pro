@@ -16,11 +16,9 @@ interface TradeInValuationProps {
   onTradeInChange: (tradeInfo: TradeInInfo) => void;
   currentMotorBrand?: string;
   currentHp?: number;
-  autoAdvance?: boolean;
-  onComplete?: () => void;
 }
 
-export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBrand, currentHp, autoAdvance, onComplete }: TradeInValuationProps) => {
+export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBrand, currentHp }: TradeInValuationProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
 
@@ -111,25 +109,17 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => {
-                  const updatedInfo = { 
-                    ...tradeInInfo,
-                    hasTradeIn: false, 
-                    estimatedValue: 0,
-                    brand: '',
-                    year: undefined,
-                    horsepower: undefined,
-                    model: '',
-                    condition: undefined,
-                    serialNumber: ''
-                  };
-                  onTradeInChange(updatedInfo);
-                  
-                  // Auto-advance if enabled
-                  if (autoAdvance && onComplete) {
-                    onComplete();
-                  }
-                }}
+                onClick={() => onTradeInChange({ 
+                  ...tradeInInfo,
+                  hasTradeIn: false, 
+                  estimatedValue: 0,
+                  brand: '',
+                  year: undefined,
+                  horsepower: undefined,
+                  model: '',
+                  condition: undefined,
+                  serialNumber: ''
+                })}
                 aria-pressed={!tradeInInfo.hasTradeIn}
                 className={`relative p-6 border-2 rounded-3xl transition-all bg-white text-left group ${!tradeInInfo.hasTradeIn ? 'border-blue-500 shadow-2xl' : 'border-gray-200 hover:border-blue-500 hover:shadow-2xl'}`}
                 type="button"

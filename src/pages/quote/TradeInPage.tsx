@@ -90,8 +90,6 @@ export default function TradeInPage() {
             onTradeInChange={handleTradeInChange}
             currentMotorBrand={state.boatInfo?.currentMotorBrand || 'Mercury'}
             currentHp={state.boatInfo?.currentHp || (typeof state.motor?.hp === 'string' ? parseInt(state.motor.hp, 10) : state.motor?.hp)}
-            autoAdvance={true}
-            onComplete={handleComplete}
           />
           
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6">
