@@ -109,17 +109,20 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => onTradeInChange({ 
-                  ...tradeInInfo,
-                  hasTradeIn: false, 
-                  estimatedValue: 0,
-                  brand: '',
-                  year: undefined,
-                  horsepower: undefined,
-                  model: '',
-                  condition: undefined,
-                  serialNumber: ''
-                })}
+                onClick={() => {
+                  console.log('No trade-in clicked, resetting tradeInInfo');
+                  onTradeInChange({ 
+                    hasTradeIn: false,
+                    brand: '',
+                    year: 0,
+                    horsepower: 0,
+                    model: '',
+                    serialNumber: '',
+                    condition: 'good' as const,
+                    estimatedValue: 0,
+                    confidenceLevel: 'medium' as const
+                  });
+                }}
                 aria-pressed={!tradeInInfo.hasTradeIn}
                 className={`relative p-6 border-2 rounded-3xl transition-all bg-white text-left group ${!tradeInInfo.hasTradeIn ? 'border-blue-500 shadow-2xl' : 'border-gray-200 hover:border-blue-500 hover:shadow-2xl'}`}
                 type="button"

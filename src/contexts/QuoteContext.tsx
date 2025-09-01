@@ -146,9 +146,9 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         }
       case 5: // Installation config OR quote display
         if (state.purchasePath === 'installed') {
-          return !!state.motor && !!state.boatInfo && (!!state.tradeInInfo || !state.hasTradein);
+          return !!state.motor && !!state.boatInfo && state.completedSteps.includes(4);
         } else {
-          return !!state.motor && (!!state.tradeInInfo || !state.hasTradein);
+          return !!state.motor && state.completedSteps.includes(4);
         }
       case 6: // Quote display OR schedule
         if (state.purchasePath === 'installed') {

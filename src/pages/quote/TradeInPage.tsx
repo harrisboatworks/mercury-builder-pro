@@ -50,9 +50,26 @@ export default function TradeInPage() {
   };
 
   const handleComplete = () => {
-    dispatch({ type: 'SET_TRADE_IN_INFO', payload: tradeInInfo });
-    dispatch({ type: 'SET_HAS_TRADEIN', payload: tradeInInfo.hasTradeIn || false });
+    console.log('TradeInPage handleComplete - tradeInInfo:', tradeInInfo);
+    
+    // If no trade-in, ensure clean state
+    const finalTradeInInfo = tradeInInfo.hasTradeIn ? tradeInInfo : {
+      hasTradeIn: false,
+      brand: '',
+      year: 0,
+      horsepower: 0,
+      model: '',
+      serialNumber: '',
+      condition: 'good' as const,
+      estimatedValue: 0,
+      confidenceLevel: 'medium' as const
+    };
+    
+    dispatch({ type: 'SET_TRADE_IN_INFO', payload: finalTradeInInfo });
+    dispatch({ type: 'SET_HAS_TRADEIN', payload: finalTradeInInfo.hasTradeIn });
     dispatch({ type: 'COMPLETE_STEP', payload: 4 });
+    
+    console.log('Navigating to next step - purchasePath:', state.purchasePath);
     
     if (state.purchasePath === 'installed') {
       navigate('/quote/installation');
