@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -31,34 +31,6 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
-
-  // Load Calendly widget
-  useEffect(() => {
-    // Load Calendly CSS
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://assets.calendly.com/assets/external/widget.css';
-    document.head.appendChild(link);
-
-    // Load Calendly script
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    script.onload = () => setCalendlyLoaded(true);
-    document.head.appendChild(script);
-
-    return () => {
-      const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
-      if (existingScript) {
-        document.head.removeChild(existingScript);
-      }
-      const existingLink = document.querySelector('link[href="https://assets.calendly.com/assets/external/widget.css"]');
-      if (existingLink) {
-        document.head.removeChild(existingLink);
-      }
-    };
-  }, []);
 
   const formatPhoneAsUserTypes = (value: string) => {
     // Remove all non-digits
@@ -246,46 +218,14 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
     }
   };
 
-  const calendlyUrl = useMemo(() => {
-    const base = 'https://calendly.com/harrisboatworks/sales';
-    const name = contactInfo.name || '';
-    const email = contactInfo.email || '';
-
-    const motor = quoteData.motor;
-    const motorDetails = motor ? `${motor.model} | ${motor.hp}HP${motor.specs ? ' | ' + motor.specs : ''}` : 'No motor selected';
-
-    const trade = quoteData.boatInfo?.tradeIn;
-    const tradeDetails = trade?.hasTradeIn
-      ? `${trade.year || ''} ${trade.brand || ''} ${trade.horsepower ? trade.horsepower + 'HP' : ''} | Condition: ${trade.condition || ''} | Est: ${trade?.estimatedValue != null ? '$' + trade.estimatedValue : 'N/A'}`
-      : 'No trade-in';
-
-    const params = new URLSearchParams();
-    if (name) params.set('name', name);
-    if (email) params.set('email', email);
-    params.set('a1', motorDetails);
-    params.set('a2', tradeDetails);
-    params.set('a3', `Preferred contact: ${contactInfo.contactMethod}`);
-    if (contactInfo.notes) params.set('a4', contactInfo.notes);
-
-    return `${base}?${params.toString()}`;
-  }, [contactInfo, quoteData]);
-
-  useEffect(() => {
-    if (!calendlyLoaded) return;
-    const el = document.querySelector('.calendly-inline-widget');
-    const Calendly = (window as any).Calendly;
-    if (el && Calendly?.initInlineWidget) {
-      Calendly.initInlineWidget({ url: calendlyUrl, parentElement: el as HTMLElement });
-    }
-  }, [calendlyLoaded, calendlyUrl]);
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       {/* Header */}
       <div className="text-center space-y-4">
-        <h2 className="text-3xl font-bold text-foreground">Schedule Your Consultation</h2>
+        <h2 className="text-3xl font-bold text-foreground">Submit Your Quote</h2>
         <p className="text-lg text-muted-foreground">
-          Let's finalize the details and get your new Mercury outboard installed!
+          Complete your contact information and we'll reach out to finalize the details!
         </p>
       </div>
 
@@ -426,34 +366,6 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
         </Card>
       </div>
 
-      {/* Calendly Integration */}
-      <Card className="p-6">
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold flex items-center gap-2">
-            <Calendar className="w-5 h-5" />
-            Schedule Your Consultation
-          </h3>
-          <p className="text-muted-foreground">
-            Book a time that works for you to review your quote and discuss installation details.
-          </p>
-          
-          {calendlyLoaded ? (
-            <div 
-              className="calendly-inline-widget" 
-              data-url={calendlyUrl}
-              style={{ minWidth: '320px', height: '630px' }}
-              key={calendlyUrl}
-            ></div>
-          ) : (
-            <div className="flex items-center justify-center h-96 bg-muted rounded-lg">
-              <div className="text-center space-y-2">
-                <Clock className="w-8 h-8 mx-auto text-muted-foreground animate-spin" />
-                <p className="text-muted-foreground">Loading scheduling calendar...</p>
-              </div>
-            </div>
-          )}
-        </div>
-      </Card>
 
       {/* Contact Information */}
       <Card className="p-6">

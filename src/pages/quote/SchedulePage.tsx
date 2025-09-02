@@ -17,7 +17,7 @@ export default function SchedulePage() {
       return;
     }
 
-    document.title = 'Schedule Consultation | Harris Boat Works';
+    document.title = 'Submit Your Quote | Harris Boat Works';
     
     let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (!desc) {
@@ -25,7 +25,7 @@ export default function SchedulePage() {
       desc.name = 'description';
       document.head.appendChild(desc);
     }
-    desc.content = 'Schedule your consultation with our Mercury outboard motor experts.';
+    desc.content = 'Submit your Mercury outboard motor quote and we\'ll contact you to finalize the details.';
   }, [isStepAccessible, navigate]);
 
   const handleBack = () => {
@@ -35,7 +35,7 @@ export default function SchedulePage() {
   const quoteData = getQuoteData();
 
   return (
-    <QuoteLayout title="Schedule Your Consultation">
+    <QuoteLayout title="Submit Your Quote">
       <div className="space-y-6">
         <div className="flex items-center gap-4">
           <Button variant="outline" size="sm" onClick={handleBack}>
