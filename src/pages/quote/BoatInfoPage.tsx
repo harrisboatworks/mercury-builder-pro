@@ -58,6 +58,7 @@ export default function BoatInfoPage() {
           onBack={handleBack}
           selectedMotor={state.motor!}
           onShowCompatibleMotors={handleShowCompatibleMotors}
+          includeTradeIn={false}
         />
       </div>
     </QuoteLayout>
