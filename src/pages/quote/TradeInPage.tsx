@@ -105,19 +105,10 @@ export default function TradeInPage() {
           <TradeInValuation 
             tradeInInfo={tradeInInfo}
             onTradeInChange={handleTradeInChange}
+            onAutoAdvance={handleComplete}
             currentMotorBrand={state.boatInfo?.currentMotorBrand || 'Mercury'}
             currentHp={state.boatInfo?.currentHp || (typeof state.motor?.hp === 'string' ? parseInt(state.motor.hp, 10) : state.motor?.hp)}
           />
-          
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6">
-            <Button variant="outline" onClick={handleBack}>
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back
-            </Button>
-            <Button onClick={handleComplete}>
-              Continue to {state.purchasePath === 'installed' ? 'Installation' : 'Quote'}
-            </Button>
-          </div>
         </div>
       </div>
     </QuoteLayout>

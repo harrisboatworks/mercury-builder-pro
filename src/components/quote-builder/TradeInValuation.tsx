@@ -14,11 +14,12 @@ import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, type Trad
 interface TradeInValuationProps {
   tradeInInfo: TradeInInfo;
   onTradeInChange: (tradeInfo: TradeInInfo) => void;
+  onAutoAdvance?: () => void;
   currentMotorBrand?: string;
   currentHp?: number;
 }
 
-export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBrand, currentHp }: TradeInValuationProps) => {
+export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp }: TradeInValuationProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
 
@@ -97,7 +98,10 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => onTradeInChange({ ...tradeInInfo, hasTradeIn: true })}
+                onClick={() => {
+                  onTradeInChange({ ...tradeInInfo, hasTradeIn: true });
+                  onAutoAdvance?.();
+                }}
                 aria-pressed={tradeInInfo.hasTradeIn}
                 className={`relative p-6 border-2 rounded-3xl transition-all bg-white text-left group ${tradeInInfo.hasTradeIn ? 'border-blue-500 shadow-2xl' : 'border-gray-200 hover:border-blue-500 hover:shadow-2xl'}`}
                 type="button"
@@ -122,6 +126,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, currentMotorBra
                     estimatedValue: 0,
                     confidenceLevel: 'medium' as const
                   });
+                  onAutoAdvance?.();
                 }}
                 aria-pressed={!tradeInInfo.hasTradeIn}
                 className={`relative p-6 border-2 rounded-3xl transition-all bg-white text-left group ${!tradeInInfo.hasTradeIn ? 'border-blue-500 shadow-2xl' : 'border-gray-200 hover:border-blue-500 hover:shadow-2xl'}`}
