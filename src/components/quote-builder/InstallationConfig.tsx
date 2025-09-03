@@ -15,6 +15,7 @@ interface InstallationConfigProps {
 export default function InstallationConfig({ selectedMotor, onComplete }: InstallationConfigProps) {
   const [currentXP, setCurrentXP] = useState(50); // Start with 50 from path selection
   const [step, setStep] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [config, setConfig] = useState({
     controls: '',
     steering: '',
@@ -30,12 +31,16 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
     setConfig(prev => ({ ...prev, [field]: value }));
     setCurrentXP(prev => prev + xp);
     
-    // Auto-advance to next step
+    // Show transition feedback
+    setIsTransitioning(true);
+    
+    // Auto-advance to next step with smoother timing
     setTimeout(() => {
       if (step < totalSteps - 1) {
         setStep(step + 1);
       }
-    }, 500);
+      setIsTransitioning(false);
+    }, 200);
   };
 
   const handleComplete = () => {
@@ -65,8 +70,23 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="max-w-6xl mx-auto"
+        className="max-w-6xl mx-auto relative"
       >
+        {/* Transition Overlay */}
+        {isTransitioning && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 bg-white/50 backdrop-blur-sm rounded-2xl z-10 flex items-center justify-center"
+          >
+            <div className="flex items-center gap-2 text-primary">
+              <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+              <span className="font-medium">Moving to next step...</span>
+            </div>
+          </motion.div>
+        )}
+
         <h2 className="text-3xl font-bold text-[#2A4D69] mb-2">
           Configure Your Installation
         </h2>
