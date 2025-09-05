@@ -128,6 +128,9 @@ const AdminPromotions = () => {
     discount_fixed_amount: 0,
   });
 
+  // State for inline date editing
+  const [editingDates, setEditingDates] = useState<Record<string, { start_date: string, end_date: string }>>({});
+
   const loadAll = async () => {
     setLoading(true);
     try {
@@ -226,6 +229,91 @@ const AdminPromotions = () => {
       console.error(e);
       toast({ title: 'Error', description: 'Failed to update promotion', variant: 'destructive' });
     }
+  };
+
+  // Helper function to get promotion status
+  const getPromotionStatus = (promo: Promotion): 'active' | 'expired' | 'future' | 'inactive' => {
+    if (!promo.is_active) return 'inactive';
+    
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    
+    if (promo.start_date) {
+      const startDate = new Date(promo.start_date);
+      if (startDate > now) return 'future';
+    }
+    
+    if (promo.end_date) {
+      const endDate = new Date(promo.end_date);
+      if (endDate < now) return 'expired';
+    }
+    
+    return 'active';
+  };
+
+  // Quick renewal functions
+  const extendPromotion = async (id: string, days: number) => {
+    const today = new Date();
+    const endDate = new Date(today);
+    endDate.setDate(today.getDate() + days);
+    
+    await updatePromotion(id, {
+      start_date: today.toISOString().split('T')[0],
+      end_date: endDate.toISOString().split('T')[0],
+      is_active: true
+    });
+    
+    toast({ title: 'Promotion Extended', description: `Extended for ${days} days` });
+  };
+
+  const renewPromotion = async (id: string) => {
+    const today = new Date();
+    const endDate = new Date(today);
+    endDate.setDate(today.getDate() + 90); // Default 90 days
+    
+    await updatePromotion(id, {
+      start_date: today.toISOString().split('T')[0],
+      end_date: endDate.toISOString().split('T')[0],
+      is_active: true
+    });
+    
+    toast({ title: 'Promotion Renewed', description: 'Renewed for 90 days from today' });
+  };
+
+  // Save inline date edits
+  const saveDateEdit = async (id: string) => {
+    const dates = editingDates[id];
+    if (!dates) return;
+    
+    await updatePromotion(id, {
+      start_date: dates.start_date || null,
+      end_date: dates.end_date || null
+    });
+    
+    // Clear editing state
+    const newEditing = { ...editingDates };
+    delete newEditing[id];
+    setEditingDates(newEditing);
+    
+    toast({ title: 'Dates Updated', description: 'Promotion dates saved' });
+  };
+
+  // Cancel date edit
+  const cancelDateEdit = (id: string) => {
+    const newEditing = { ...editingDates };
+    delete newEditing[id];
+    setEditingDates(newEditing);
+  };
+
+  // Start editing dates
+  const startDateEdit = (promo: Promotion) => {
+    setEditingDates({
+      ...editingDates,
+      [promo.id]: {
+        start_date: promo.start_date || '',
+        end_date: promo.end_date || ''
+      }
+    });
   };
 
   const deletePromotion = async (id: string) => {
@@ -469,9 +557,20 @@ const AdminPromotions = () => {
                 <div className="space-y-1">
                   <h3 className="text-lg font-semibold">
                     {p.name}{' '}
-                    <Badge variant={p.is_active ? 'default' : 'outline'}>
-                      {p.is_active ? 'Active' : 'Inactive'}
-                    </Badge>{' '}
+                    {(() => {
+                      const status = getPromotionStatus(p);
+                      return (
+                        <Badge variant={
+                          status === 'active' ? 'default' : 
+                          status === 'expired' ? 'destructive' : 
+                          status === 'future' ? 'secondary' : 'outline'
+                        }>
+                          {status === 'active' ? 'Active' : 
+                           status === 'expired' ? 'Expired' : 
+                           status === 'future' ? 'Future' : 'Inactive'}
+                        </Badge>
+                      );
+                    })()} {' '}
                     <Badge variant={p.kind === 'bonus' ? 'secondary' : 'outline'}>
                       {p.kind === 'bonus' ? 'Bonus Offer' : 'Discount'}
                     </Badge>
@@ -497,11 +596,67 @@ const AdminPromotions = () => {
                     {p.end_date && <span className="ml-2">• Ends {new Date(p.end_date).toLocaleDateString()}</span>}
                     {p.terms_url && <span className="ml-2">• <a href={p.terms_url} target="_blank" rel="noreferrer" className="underline">Terms</a></span>}
                   </div>
+
+                  {/* Inline Date Editing */}
+                  {editingDates[p.id] ? (
+                    <div className="mt-2 flex flex-wrap gap-2 items-center">
+                      <div className="flex gap-2 items-center">
+                        <Label className="text-xs">Start:</Label>
+                         <Input
+                           type="date"
+                           className="w-32"
+                           value={editingDates[p.id].start_date}
+                           onChange={(e) => setEditingDates({
+                             ...editingDates,
+                             [p.id]: { ...editingDates[p.id], start_date: e.target.value }
+                           })}
+                         />
+                      </div>
+                      <div className="flex gap-2 items-center">
+                        <Label className="text-xs">End:</Label>
+                         <Input
+                           type="date"
+                           className="w-32"
+                           value={editingDates[p.id].end_date}
+                           onChange={(e) => setEditingDates({
+                             ...editingDates,
+                             [p.id]: { ...editingDates[p.id], end_date: e.target.value }
+                           })}
+                         />
+                      </div>
+                      <Button size="sm" onClick={() => saveDateEdit(p.id)}>Save</Button>
+                      <Button size="sm" variant="outline" onClick={() => cancelDateEdit(p.id)}>Cancel</Button>
+                    </div>
+                  ) : null}
                 </div>
-                <div className="flex items-center gap-2">
-                  <Button variant="outline" onClick={() => updatePromotion(p.id, { is_active: !p.is_active })}>{p.is_active ? 'Deactivate' : 'Activate'}</Button>
-                  <Button variant="outline" onClick={() => updatePromotion(p.id, { stackable: !p.stackable })}>{p.stackable ? 'Unstack' : 'Make Stackable'}</Button>
-                  <Button variant="destructive" onClick={() => deletePromotion(p.id)}>Delete</Button>
+                <div className="flex flex-wrap items-center gap-2">
+                  {(() => {
+                    const status = getPromotionStatus(p);
+                    
+                    if (status === 'expired') {
+                      return (
+                        <>
+                          <Button size="sm" onClick={() => renewPromotion(p.id)}>Renew (90d)</Button>
+                          <Button size="sm" variant="outline" onClick={() => extendPromotion(p.id, 30)}>+30 Days</Button>
+                          <Button size="sm" variant="outline" onClick={() => extendPromotion(p.id, 90)}>+90 Days</Button>
+                          <Button size="sm" variant="outline" onClick={() => startDateEdit(p)}>Edit Dates</Button>
+                        </>
+                      );
+                    }
+                    
+                    return (
+                      <>
+                        <Button size="sm" variant="outline" onClick={() => startDateEdit(p)}>Edit Dates</Button>
+                        <Button size="sm" variant="outline" onClick={() => updatePromotion(p.id, { is_active: !p.is_active })}>
+                          {p.is_active ? 'Deactivate' : 'Activate'}
+                        </Button>
+                        <Button size="sm" variant="outline" onClick={() => updatePromotion(p.id, { stackable: !p.stackable })}>
+                          {p.stackable ? 'Unstack' : 'Make Stackable'}
+                        </Button>
+                      </>
+                    );
+                  })()}
+                  <Button size="sm" variant="destructive" onClick={() => deletePromotion(p.id)}>Delete</Button>
                 </div>
               </div>
 
