@@ -22,6 +22,7 @@ import { xpActions } from '@/config/xpActions';
 import { xpRewards, getCurrentReward, getNextReward } from '@/config/xpRewards';
 import { format } from 'date-fns';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface QuoteDisplayProps {
   quoteData: QuoteData;
@@ -57,6 +58,30 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
 
   // SMS via Zapier
   const [phoneNumber, setPhoneNumber] = useState('');
+
+  // Mobile auto-dismiss functionality
+  const isMobile = useIsMobile();
+  const [countdownSeconds, setCountdownSeconds] = useState(0);
+
+  // Auto-dismiss achievement on mobile
+  useEffect(() => {
+    if (achievement && isMobile) {
+      setCountdownSeconds(5); // 5 second countdown
+      
+      const timer = setInterval(() => {
+        setCountdownSeconds((prev) => {
+          if (prev <= 1) {
+            setAchievement(null);
+            handleContinue();
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+
+      return () => clearInterval(timer);
+    }
+  }, [achievement, isMobile]);
 
   const openReservationModal = () => setShowReservationModal(true);
   const handleReserveConfirm = () => {
@@ -847,8 +872,21 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
               <span>Payment Method Selected ✓</span>
             </div>
 
+            {/* Mobile countdown indicator */}
+            {isMobile && countdownSeconds > 0 && (
+              <div className="text-center mb-3 text-sm text-muted-foreground">
+                Auto-continuing in {countdownSeconds} seconds...
+                <div className="w-full bg-muted rounded-full h-1 mt-1">
+                  <div 
+                    className="bg-primary h-1 rounded-full transition-all duration-1000 ease-linear"
+                    style={{ width: `${((5 - countdownSeconds) / 5) * 100}%` }}
+                  ></div>
+                </div>
+              </div>
+            )}
+
             <button className="btn-continue-epic" onClick={() => { setAchievement(null); handleContinue(); }}>
-              Continue to Final Step →
+              {isMobile && countdownSeconds > 0 ? `Continue (${countdownSeconds}s)` : 'Continue to Final Step →'}
             </button>
           </div>
         </div>
