@@ -17,11 +17,6 @@ export default function PurchasePathPage() {
       return;
     }
 
-    // Clear any existing purchase path to force user selection
-    if (state.purchasePath) {
-      dispatch({ type: 'SET_PURCHASE_PATH', payload: null as any });
-    }
-
     document.title = 'Choose Installation Option | Harris Boat Works';
     
     let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
