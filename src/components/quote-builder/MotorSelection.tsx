@@ -1126,7 +1126,7 @@ export const MotorSelection = ({
   }
   return <div className={`${showCelebration ? 'canadian-celebration' : ''}`}>
       {/* Mobile-Only Sticky Search Bar - Compact Single Row */}
-      <div className="sticky top-[72px] z-30 bg-white border-b shadow-sm lg:hidden">
+      <div className="sticky top-0 z-30 bg-white border-b shadow-sm lg:hidden">
         <div className="p-3">
           {/* Single Row: Search + Stock Toggle + Filter Button */}
           <div className="flex items-center gap-2 h-11">
