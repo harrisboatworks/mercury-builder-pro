@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Flame, TrendingUp, CheckCircle, Tag, Anchor, Heart, Eye, Search, X, Menu, Filter } from 'lucide-react';
+import { RefreshCw, RefreshCcw, ShieldCheck, Zap, Check, Star, Sparkles, Ship, Gauge, Fuel, MapPin, Wrench, Battery, Settings, AlertTriangle, Calculator, Info, Flame, TrendingUp, CheckCircle, Tag, Anchor, Heart, Eye, Search, X, Menu, Filter, ArrowLeft } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Motor } from '../QuoteBuilder';
 import { supabase } from '@/integrations/supabase/client';
@@ -28,6 +28,8 @@ import { MobileTrustAccordion } from '@/components/ui/mobile-trust-accordion';
 import { MobileFilterSheet } from '@/components/ui/mobile-filter-sheet';
 import { MobileStickyCTA } from '@/components/ui/mobile-sticky-cta';
 import { MobileQuoteForm } from '@/components/ui/mobile-quote-form';
+// HP Category Selector
+import { HPCategorySelector, HP_CATEGORIES, HPCategory } from './HPCategorySelector';
 
 // Database types
 interface DbMotor {
@@ -380,11 +382,13 @@ interface MotorSelectionProps {
   onStepComplete: (motor: Motor) => void;
   noSalePriceLayout?: 'default' | 'placeholder' | 'centered';
   imageSizingMode?: 'current' | 'taller' | 'scale-msrp' | 'v2' | 'uniform-112';
+  useCategoryView?: boolean;
 }
 export const MotorSelection = ({
   onStepComplete,
   noSalePriceLayout = 'placeholder',
-  imageSizingMode = 'uniform-112'
+  imageSizingMode = 'uniform-112',
+  useCategoryView = true
 }: MotorSelectionProps) => {
   const {
     toast
@@ -447,9 +451,39 @@ export const MotorSelection = ({
     engineType: ''
   });
 
+  // Category selection state
+  const [selectedCategory, setSelectedCategory] = useState<HPCategory | null>(null);
+  const [showCategoryView, setShowCategoryView] = useState(useCategoryView);
+
   const navigate = useNavigate();
   const pick = <T,>(arr: readonly T[]): T => arr[Math.floor(Math.random() * arr.length)];
   const loadingText = useMemo<string>(() => pick(loadingMessages as readonly string[]), []);
+
+  // Category selection handlers
+  const handleCategorySelect = (category: HPCategory) => {
+    setSelectedCategory(category);
+    setShowCategoryView(false);
+    
+    // Set HP range filter based on selected category
+    const hpRangeKey = `${category.hpRange.min}-${category.hpRange.max > 600 ? '600+' : category.hpRange.max}`;
+    setSelectedHPRange(hpRangeKey);
+    
+    // Analytics
+    track('category_selected', {
+      category_id: category.id,
+      category_name: category.name,
+      hp_range: hpRangeKey
+    });
+  };
+
+  const handleBackToCategories = () => {
+    setSelectedCategory(null);
+    setShowCategoryView(true);
+    setSelectedHPRange('all');
+    
+    // Analytics
+    track('back_to_categories', {});
+  };
   const track = (name: string, payload: Record<string, any>) => {
     try {
       (window as any).analytics?.track?.(name, payload);
@@ -898,6 +932,23 @@ export const MotorSelection = ({
         case '350+':
           if (hp < 350) return false;
           break;
+        // New category ranges
+        case '2.5-6':
+          if (hp < 2.5 || hp > 6) return false;
+          break;
+        case '9.9-30':
+          if (hp < 9.9 || hp > 30) return false;
+          break;
+        case '40-90':
+          if (hp < 40 || hp > 90) return false;
+          break;
+        case '115-250':
+          if (hp < 115 || hp > 250) return false;
+          break;
+        case '300-600':
+        case '300-600+':
+          if (hp < 300) return false;
+          break;
       }
     }
     
@@ -1124,7 +1175,40 @@ export const MotorSelection = ({
         </div>
       </div>;
   }
+
+  // Category view - show HP categories first
+  if (showCategoryView) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <HPCategorySelector 
+          onCategorySelect={handleCategorySelect}
+        />
+      </div>
+    );
+  }
+
+  // Motor selection view with breadcrumb navigation
   return <div className={`${showCelebration ? 'canadian-celebration' : ''}`}>
+      {/* Breadcrumb Navigation */}
+      {selectedCategory && (
+        <div className="bg-muted/30 border-b">
+          <div className="container mx-auto px-4 py-3">
+            <div className="flex items-center gap-2 text-sm">
+              <button
+                onClick={handleBackToCategories}
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                <span>Motor Selection</span>
+              </button>
+              <span className="text-muted-foreground">&gt;</span>
+              <span className="text-foreground font-medium">
+                {selectedCategory.name} ({selectedCategory.hpRange.min}-{selectedCategory.hpRange.max > 600 ? '600+' : selectedCategory.hpRange.max} HP)
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
       {/* Mobile-Only Sticky Search Bar - Compact Single Row */}
       <div className="sticky top-0 z-30 bg-white border-b shadow-sm lg:hidden">
         <div className="p-3">

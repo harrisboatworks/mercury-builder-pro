@@ -31,11 +31,11 @@ const StagingImageSizingV2 = () => {
       <section className="grid grid-cols-1 xl:grid-cols-2 gap-8">
         <article>
           <h2 className="text-xl font-semibold mb-3 text-foreground">Current (baseline)</h2>
-          <MotorSelection onStepComplete={handleNoop} noSalePriceLayout="placeholder" imageSizingMode="current" />
+          <MotorSelection onStepComplete={handleNoop} noSalePriceLayout="placeholder" imageSizingMode="current" useCategoryView={false} />
         </article>
         <article>
           <h2 className="text-xl font-semibold mb-3 text-foreground">Adjusted (v2 tighter layout)</h2>
-          <MotorSelection onStepComplete={handleNoop} noSalePriceLayout="placeholder" imageSizingMode="v2" />
+          <MotorSelection onStepComplete={handleNoop} noSalePriceLayout="placeholder" imageSizingMode="v2" useCategoryView={false} />
         </article>
       </section>
     </main>

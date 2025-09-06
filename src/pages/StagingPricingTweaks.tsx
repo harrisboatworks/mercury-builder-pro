@@ -34,11 +34,11 @@ const StagingPricingTweaks = () => {
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <article>
           <h2 className="text-xl font-semibold mb-3 text-foreground">Approach A: Placeholder block</h2>
-          <MotorSelection onStepComplete={handleNoop} noSalePriceLayout="placeholder" />
+          <MotorSelection onStepComplete={handleNoop} noSalePriceLayout="placeholder" useCategoryView={false} />
         </article>
         <article>
           <h2 className="text-xl font-semibold mb-3 text-foreground">Approach B: Vertical centering</h2>
-          <MotorSelection onStepComplete={handleNoop} noSalePriceLayout="centered" />
+          <MotorSelection onStepComplete={handleNoop} noSalePriceLayout="centered" useCategoryView={false} />
         </article>
       </section>
     </main>

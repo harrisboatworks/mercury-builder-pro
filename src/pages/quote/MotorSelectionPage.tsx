@@ -29,7 +29,7 @@ export default function MotorSelectionPage() {
 
   return (
     <QuoteLayout title="Select Your Mercury Motor">
-      <MotorSelection onStepComplete={handleStepComplete} />
+      <MotorSelection onStepComplete={handleStepComplete} useCategoryView={true} />
     </QuoteLayout>
   );
 }

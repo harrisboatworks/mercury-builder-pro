@@ -31,15 +31,15 @@ const StagingImageSizing = () => {
       <section className="grid grid-cols-1 xl:grid-cols-3 gap-8">
         <article>
           <h2 className="text-xl font-semibold mb-3 text-foreground">A: Current (baseline)</h2>
-          <MotorSelection onStepComplete={handleNoop} noSalePriceLayout="placeholder" imageSizingMode="current" />
+          <MotorSelection onStepComplete={handleNoop} noSalePriceLayout="placeholder" imageSizingMode="current" useCategoryView={false} />
         </article>
         <article>
           <h2 className="text-xl font-semibold mb-3 text-foreground">B: Increased height (h-52 / md:h-60 / lg:h-68)</h2>
-          <MotorSelection onStepComplete={handleNoop} noSalePriceLayout="placeholder" imageSizingMode="taller" />
+          <MotorSelection onStepComplete={handleNoop} noSalePriceLayout="placeholder" imageSizingMode="taller" useCategoryView={false} />
         </article>
         <article>
           <h2 className="text-xl font-semibold mb-3 text-foreground">C: Conditional scale-105 for MSRP-only</h2>
-          <MotorSelection onStepComplete={handleNoop} noSalePriceLayout="placeholder" imageSizingMode="scale-msrp" />
+          <MotorSelection onStepComplete={handleNoop} noSalePriceLayout="placeholder" imageSizingMode="scale-msrp" useCategoryView={false} />
         </article>
       </section>
     </main>
