@@ -100,7 +100,6 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 whileTap={{ scale: 0.98 }}
                 onClick={() => {
                   onTradeInChange({ ...tradeInInfo, hasTradeIn: true });
-                  onAutoAdvance?.();
                 }}
                 aria-pressed={tradeInInfo.hasTradeIn}
                 className={`relative p-6 border-2 rounded-3xl transition-all bg-white text-left group ${tradeInInfo.hasTradeIn ? 'border-blue-500 shadow-2xl' : 'border-gray-200 hover:border-blue-500 hover:shadow-2xl'}`}
