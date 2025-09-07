@@ -20,6 +20,7 @@ import QuoteSummaryPage from "@/pages/quote/QuoteSummaryPage";
 import SchedulePage from "@/pages/quote/SchedulePage";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { SecureRoute } from "@/components/auth/SecureRoute";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
@@ -57,6 +58,7 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <>
+              <ScrollToTop />
               <Routes>
                 <Route path="/auth" element={<Auth />} />
                 <Route path="/" element={<Index />} />
