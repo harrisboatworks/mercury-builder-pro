@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import React, { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
 import { Motor, BoatInfo, QuoteData } from '@/components/QuoteBuilder';
 
 interface QuoteState {
@@ -130,7 +130,18 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     localStorage.setItem('quoteBuilder', JSON.stringify(dataToSave));
   }, [state]);
 
-  const isStepAccessible = (step: number): boolean => {
+  const isStepAccessible = useCallback((step: number): boolean => {
+    console.log('isStepAccessible check:', { 
+      step, 
+      motor: !!state.motor, 
+      purchasePath: state.purchasePath,
+      boatInfo: !!state.boatInfo,
+      completedSteps: state.completedSteps,
+      hasTradein: state.hasTradein,
+      tradeInInfo: !!state.tradeInInfo,
+      installConfig: !!state.installConfig
+    });
+    
     switch (step) {
       case 1: // Motor selection
         return true;
@@ -151,17 +162,24 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
           return !!state.motor && state.completedSteps.includes(4);
         }
       case 6: // Quote display OR schedule
+        // More robust check for step 6 - ensure basic requirements are met
+        const hasMotor = !!state.motor;
+        const hasPath = !!state.purchasePath;
+        
         if (state.purchasePath === 'installed') {
-          return !!state.motor && !!state.boatInfo && !!state.installConfig && (!!state.tradeInInfo || !state.hasTradein);
+          const hasBoatInfo = !!state.boatInfo;
+          const tradeInSatisfied = state.hasTradein ? !!state.tradeInInfo : true;
+          return hasMotor && hasPath && hasBoatInfo && tradeInSatisfied;
         } else {
-          return !!state.motor && (!!state.tradeInInfo || !state.hasTradein);
+          const tradeInSatisfied = state.hasTradein ? !!state.tradeInInfo : true;
+          return hasMotor && hasPath && tradeInSatisfied;
         }
       case 7: // Schedule consultation
         return !!state.motor;
       default:
         return false;
     }
-  };
+  }, [state.motor, state.purchasePath, state.boatInfo, state.completedSteps, state.hasTradein, state.tradeInInfo, state.installConfig]);
 
   const getQuoteData = (): QuoteData => ({
     motor: state.motor,

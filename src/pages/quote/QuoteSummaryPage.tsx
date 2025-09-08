@@ -12,11 +12,27 @@ export default function QuoteSummaryPage() {
   const { state, dispatch, isStepAccessible, getQuoteData } = useQuote();
 
   useEffect(() => {
-    // Redirect if step not accessible
-    if (!isStepAccessible(6)) {
-      navigate('/quote/motor-selection');
-      return;
-    }
+    console.log('QuoteSummaryPage accessibility check:', {
+      isLoading: state.isLoading,
+      stepAccessible: isStepAccessible(6),
+      motor: !!state.motor,
+      purchasePath: state.purchasePath,
+      boatInfo: !!state.boatInfo,
+      hasTradein: state.hasTradein,
+      tradeInInfo: !!state.tradeInInfo
+    });
+    
+    // Add delay and loading check to prevent navigation during state updates
+    const checkAccessibility = () => {
+      if (!state.isLoading && !isStepAccessible(6)) {
+        console.log('QuoteSummaryPage navigation triggered - step not accessible');
+        navigate('/quote/motor-selection');
+        return;
+      }
+    };
+
+    // Delay the accessibility check to allow for state synchronization
+    const timeoutId = setTimeout(checkAccessibility, 100);
 
     document.title = 'Your Mercury Motor Quote | Harris Boat Works';
     
@@ -27,7 +43,9 @@ export default function QuoteSummaryPage() {
       document.head.appendChild(desc);
     }
     desc.content = 'Review your complete Mercury outboard motor quote with pricing, financing options, and bonus offers.';
-  }, [isStepAccessible, navigate]);
+
+    return () => clearTimeout(timeoutId);
+  }, [state.isLoading, isStepAccessible, navigate, state.motor, state.purchasePath, state.boatInfo, state.hasTradein, state.tradeInInfo]);
 
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });
