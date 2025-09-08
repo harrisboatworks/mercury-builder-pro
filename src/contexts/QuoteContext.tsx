@@ -59,6 +59,13 @@ const QuoteContext = createContext<{
   getQuoteData: () => QuoteData;
   clearQuote: () => void;
   isNavigationBlocked: boolean;
+  isQuoteComplete: () => boolean;
+  getQuoteCompletionStatus: () => {
+    hasMotor: boolean;
+    hasPath: boolean;
+    hasRequiredInfo: boolean;
+    isComplete: boolean;
+  };
 } | null>(null);
 
 function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
@@ -204,6 +211,44 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     dispatch({ type: 'RESET_QUOTE' });
   };
 
+  const isQuoteComplete = useCallback((): boolean => {
+    const hasMotor = !!state.motor;
+    const hasPath = !!state.purchasePath;
+    
+    if (!hasMotor || !hasPath) return false;
+    
+    if (state.purchasePath === 'installed') {
+      const hasBoatInfo = !!state.boatInfo;
+      const tradeInSatisfied = state.hasTradein ? !!state.tradeInInfo : true;
+      return hasMotor && hasPath && hasBoatInfo && tradeInSatisfied;
+    } else {
+      const tradeInSatisfied = state.hasTradein ? !!state.tradeInInfo : true;
+      return hasMotor && hasPath && tradeInSatisfied;
+    }
+  }, [state.motor, state.purchasePath, state.boatInfo, state.hasTradein, state.tradeInInfo]);
+
+  const getQuoteCompletionStatus = useCallback(() => {
+    const hasMotor = !!state.motor;
+    const hasPath = !!state.purchasePath;
+    
+    let hasRequiredInfo = false;
+    if (state.purchasePath === 'installed') {
+      hasRequiredInfo = !!state.boatInfo;
+    } else {
+      hasRequiredInfo = true; // Loose path doesn't require boat info
+    }
+    
+    const tradeInSatisfied = state.hasTradein ? !!state.tradeInInfo : true;
+    const isComplete = hasMotor && hasPath && hasRequiredInfo && tradeInSatisfied;
+    
+    return {
+      hasMotor,
+      hasPath,
+      hasRequiredInfo,
+      isComplete
+    };
+  }, [state.motor, state.purchasePath, state.boatInfo, state.hasTradein, state.tradeInInfo]);
+
   return (
     <QuoteContext.Provider value={{ 
       state, 
@@ -211,7 +256,9 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       isStepAccessible,
       getQuoteData,
       clearQuote,
-      isNavigationBlocked: navigationBlocked
+      isNavigationBlocked: navigationBlocked,
+      isQuoteComplete,
+      getQuoteCompletionStatus
     }}>
       {children}
     </QuoteContext.Provider>

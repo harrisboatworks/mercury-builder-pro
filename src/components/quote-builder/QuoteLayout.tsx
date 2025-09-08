@@ -5,6 +5,7 @@ import harrisLogo from '@/assets/harris-logo.png';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { cn } from '@/lib/utils';
+import { QuoteStatusHeader } from './QuoteStatusHeader';
 
 interface QuoteLayoutProps {
   children: React.ReactNode;
@@ -26,6 +27,7 @@ export const QuoteLayout = ({ children, showProgress = true, title }: QuoteLayou
   const { user, signOut } = useAuth();
   const { state, isStepAccessible } = useQuote();
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Determine current step based on path
   const getCurrentStep = () => {
@@ -125,6 +127,9 @@ export const QuoteLayout = ({ children, showProgress = true, title }: QuoteLayou
         </div>
       </header>
 
+      {/* Quote Status Header */}
+      <QuoteStatusHeader />
+
       {/* Trust Bar */}
       <div className="bg-muted/40 border-b border-border">
         <div className="container mx-auto px-4 py-2 flex items-center justify-center gap-4 md:gap-6">
@@ -156,34 +161,55 @@ export const QuoteLayout = ({ children, showProgress = true, title }: QuoteLayou
                 const isCurrent = currentStep === step.id;
                 const isAccessible = isStepAccessible(step.id);
                 
+                const handleStepClick = (e: React.MouseEvent) => {
+                  if (!isAccessible) {
+                    e.preventDefault();
+                    return;
+                  }
+                  navigate(step.path);
+                };
+                
                 return (
                   <div key={step.id} className="flex items-center">
-                    <Link 
-                      to={isAccessible ? step.path : '#'}
+                    <button
+                      onClick={handleStepClick}
+                      disabled={!isAccessible}
                       className={cn(
-                        "flex items-center space-x-3 transition-colors",
-                        !isAccessible && "cursor-not-allowed opacity-50"
+                        "flex items-center space-x-3 transition-all hover:scale-105",
+                        isAccessible ? "cursor-pointer" : "cursor-not-allowed opacity-50",
+                        isAccessible && "hover:opacity-80"
                       )}
                     >
                       <div className={cn(
-                        "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors",
-                        isCompleted ? "bg-primary text-primary-foreground" :
-                        isCurrent ? "bg-primary/20 text-primary border-2 border-primary" :
+                        "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all",
+                        isCompleted ? "bg-primary text-primary-foreground shadow-md" :
+                        isCurrent ? "bg-primary/20 text-primary border-2 border-primary shadow-sm" :
+                        isAccessible ? "bg-muted text-muted-foreground hover:bg-muted/80" :
                         "bg-muted text-muted-foreground"
                       )}>
                         {isCompleted ? '✓' : step.id}
                       </div>
                       <div className="hidden md:block">
                         <div className={cn(
-                          "text-sm font-medium",
-                          isCurrent ? "text-primary" : "text-muted-foreground"
+                          "text-sm font-medium transition-colors",
+                          isCurrent ? "text-primary" : 
+                          isAccessible ? "text-foreground hover:text-primary" :
+                          "text-muted-foreground"
                         )}>
                           {step.title}
                         </div>
+                        {isCompleted && (
+                          <div className="text-xs text-muted-foreground">
+                            Completed
+                          </div>
+                        )}
                       </div>
-                    </Link>
+                    </button>
                     {index < visibleSteps.length - 1 && (
-                      <div className="hidden md:block w-12 h-px bg-border mx-4" />
+                      <div className={cn(
+                        "hidden md:block w-12 h-px mx-4 transition-colors",
+                        isCompleted ? "bg-primary/30" : "bg-border"
+                      )} />
                     )}
                   </div>
                 );
