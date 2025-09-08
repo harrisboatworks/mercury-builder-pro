@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import speedboatImage from '@/assets/speedboat-transparent.png';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -104,7 +103,7 @@ export const BoatInformation = ({
     label: 'Speed Boat',
     description: 'Hydrostreams / Tunnel Hull',
     recommendedHP: '90-450',
-    image: speedboatImage
+    image: '/lovable-uploads/78ce4cb2-311a-44f3-88d3-36903efc2e7e.png'
   }];
 
   // Progressive Wizard State
