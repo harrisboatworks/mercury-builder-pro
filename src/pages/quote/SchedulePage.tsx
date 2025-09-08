@@ -47,6 +47,7 @@ export default function SchedulePage() {
         <ScheduleConsultation 
           quoteData={quoteData}
           onBack={handleBack}
+          purchasePath={state.purchasePath}
         />
       </div>
     </QuoteLayout>

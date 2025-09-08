@@ -141,7 +141,6 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
       controlAdapter: 0,
       battery: 0,
       propeller: 0,
-      installation: purchasePath === 'loose' ? 0 : 500,
       waterTest: 0,
     };
     const hp = typeof motor?.hp === 'string' ? parseInt(motor.hp) : (motor?.hp || 0);
@@ -181,8 +180,9 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
 
   const accessoryCosts = calculateAccessoryCosts(quoteData.motor, quoteData.boatInfo);
   const accessoriesSubtotal = Math.round((Object.values(accessoryCosts).reduce((sum, v) => sum + (v || 0), 0)) * 100) / 100;
+  const installationCost = purchasePath === 'loose' ? 0 : 500;
 
-  const subtotalBeforeTrade = Math.round((motorPrice + accessoriesSubtotal) * 100) / 100;
+  const subtotalBeforeTrade = Math.round((motorPrice + accessoriesSubtotal + installationCost) * 100) / 100;
   const subtotalAfterTrade = Math.round((subtotalBeforeTrade - (hasTradeIn ? tradeInValue : 0)) * 100) / 100;
   const hst = Math.round((subtotalAfterTrade * 0.13) * 100) / 100;
   const financingFee = 299; // Added to all finance deals
@@ -568,6 +568,13 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                 <div className="flex justify-between">
                   <span>Accessories:</span>
                   <span className="font-medium">{formatCurrency(accessoriesSubtotal)}</span>
+                </div>
+              )}
+
+              {installationCost > 0 && (
+                <div className="flex justify-between">
+                  <span>Installation:</span>
+                  <span className="font-medium">{formatCurrency(installationCost)}</span>
                 </div>
               )}
               

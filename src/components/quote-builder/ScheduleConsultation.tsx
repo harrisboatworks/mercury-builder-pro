@@ -17,9 +17,10 @@ import { z } from 'zod';
 interface ScheduleConsultationProps {
   quoteData: QuoteData;
   onBack: () => void;
+  purchasePath?: string;
 }
 
-export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultationProps) => {
+export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: ScheduleConsultationProps) => {
   const { user } = useAuth();
   const { toast } = useToast();
   const [contactInfo, setContactInfo] = useState({
@@ -84,13 +85,12 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
            (Math.pow(1 + monthlyRate, numPayments) - 1);
   };
 
-  const calculateAccessoryCosts = (motor: any, boatDetails: any) => {
+  const calculateAccessoryCosts = (motor: any, boatDetails: any, purchasePath?: string) => {
     const costs = {
       controls: 0,
       controlAdapter: 0,
       battery: 0,
       propeller: 0,
-      installation: 500, // Default installation cost
       waterTest: 0,
     };
     const hp = typeof motor?.hp === 'string' ? parseInt(motor.hp) : (motor?.hp || 0);
@@ -129,13 +129,14 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
   };
 
   const motorPrice = (quoteData.motor?.salePrice ?? quoteData.motor?.basePrice ?? quoteData.motor?.price) || 0;
-  const accessoryCosts = calculateAccessoryCosts(quoteData.motor, quoteData.boatInfo);
+  const accessoryCosts = calculateAccessoryCosts(quoteData.motor, quoteData.boatInfo, purchasePath);
   const accessoriesSubtotal = Math.round((Object.values(accessoryCosts).reduce((sum, v) => sum + (v || 0), 0)) * 100) / 100;
+  const installationCost = purchasePath === 'loose' ? 0 : 500;
   
   const hasTradeIn = quoteData.boatInfo?.tradeIn?.hasTradeIn || false;
   const tradeInValue = quoteData.boatInfo?.tradeIn?.estimatedValue || 0;
   
-  const subtotalBeforeTrade = Math.round((motorPrice + accessoriesSubtotal) * 100) / 100;
+  const subtotalBeforeTrade = Math.round((motorPrice + accessoriesSubtotal + installationCost) * 100) / 100;
   const subtotalAfterTrade = Math.round((subtotalBeforeTrade - (hasTradeIn ? tradeInValue : 0)) * 100) / 100;
   const hst = Math.round((subtotalAfterTrade * 0.13) * 100) / 100;
   const totalCashPrice = Math.round((subtotalAfterTrade + hst) * 100) / 100;
@@ -304,6 +305,13 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Accessories</span>
                   <span>${accessoriesSubtotal.toLocaleString()}</span>
+                </div>
+              )}
+
+              {installationCost > 0 && (
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Installation</span>
+                  <span>${installationCost.toLocaleString()}</span>
                 </div>
               )}
 
