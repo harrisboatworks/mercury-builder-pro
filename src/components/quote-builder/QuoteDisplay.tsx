@@ -526,7 +526,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
               <div className="aspect-video rounded-lg overflow-hidden bg-muted">
                 <img 
                   src={quoteData.motor.image} 
-                  alt={quoteData.motor.model}
+                  alt={quoteData.motor?.model || 'Mercury Motor'}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -766,7 +766,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
               <DialogDescription>Secure today's price with a refundable $100 deposit</DialogDescription>
             </DialogHeader>
             <div className="space-y-3">
-              <div className="text-sm">Motor: <span className="font-medium">{quoteData.motor.model}</span></div>
+              <div className="text-sm">Motor: <span className="font-medium">{quoteData.motor?.model || 'Mercury Motor'}</span></div>
               <div className="text-sm">Price held: <span className="font-medium">${motorPrice.toLocaleString()}</span></div>
               <div className="text-sm">Valid for: <span className="font-medium">30 days</span></div>
             </div>
