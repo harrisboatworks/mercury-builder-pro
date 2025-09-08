@@ -1730,17 +1730,19 @@ export const MotorSelection = ({
                     <div className="motor-price space-y-1">
                       {callForPrice ? (
                         <div className="text-lg font-bold text-foreground">Call for Price</div>
-                      ) : hasSaleDisplay ? (
+                      ) : msrp ? (
                         <div className="space-y-1">
                           <div className="text-sm text-muted-foreground line-through">
-                            MSRP ${motor.basePrice?.toLocaleString() || motor.price.toLocaleString()}
+                            MSRP ${msrp.toLocaleString()}
                           </div>
-                          <div className="text-lg font-bold text-red-600">
-                            Our Price ${motor.salePrice?.toLocaleString() || motor.price.toLocaleString()}
+                          <div className={`text-lg font-bold ${hasSaleDisplay ? 'text-red-600' : 'text-foreground'}`}>
+                            Our Price ${(sale || msrp).toLocaleString()}
                           </div>
-                          <div className="inline-flex items-center px-2 py-1 rounded-md bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs font-medium">
-                            SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
-                          </div>
+                          {hasSaleDisplay && (
+                            <div className="inline-flex items-center px-2 py-1 rounded-md bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs font-medium">
+                              SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
+                            </div>
+                          )}
                         </div>
                       ) : (
                         <div className="text-lg font-bold text-foreground">
