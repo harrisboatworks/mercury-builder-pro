@@ -113,11 +113,11 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   useEffect(() => {
     console.log('🔄 QuoteContext: Starting localStorage load...');
     
-    // Safety timeout to prevent infinite loading
+    // Safety timeout to prevent infinite loading - reduced to 3 seconds for faster recovery
     const loadingTimeout = setTimeout(() => {
-      console.warn('⚠️ QuoteContext: Loading timeout reached, forcing isLoading: false');
+      console.warn('⚠️ QuoteContext: Loading timeout reached (3s), forcing isLoading: false');
       dispatch({ type: 'SET_LOADING', payload: false });
-    }, 5000);
+    }, 3000);
 
     try {
       const saved = localStorage.getItem('quoteBuilder');
@@ -126,20 +126,45 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       if (saved) {
         try {
           const parsedData = JSON.parse(saved);
-          console.log('✅ QuoteContext: Data parsed successfully');
+          console.log('✅ QuoteContext: Data parsed successfully', {
+            hasState: !!parsedData.state,
+            hasMotor: !!parsedData.state?.motor,
+            timestamp: parsedData.timestamp ? new Date(parsedData.timestamp).toLocaleString() : 'No timestamp'
+          });
           
-          // Check if data is not too old (24 hours)
-          if (parsedData.timestamp && Date.now() - parsedData.timestamp < 24 * 60 * 60 * 1000) {
-            console.log('✅ QuoteContext: Data is fresh, loading state');
+          // Check if data structure is valid
+          if (!parsedData.state || typeof parsedData.state !== 'object') {
+            console.warn('⚠️ QuoteContext: Invalid data structure, removing');
+            localStorage.removeItem('quoteBuilder');
+            dispatch({ type: 'SET_LOADING', payload: false });
+            return;
+          }
+          
+          // Check if data is not too old (24 hours) and has valid timestamp
+          const dataAge = parsedData.timestamp ? Date.now() - parsedData.timestamp : Infinity;
+          const maxAge = 24 * 60 * 60 * 1000; // 24 hours
+          
+          if (parsedData.timestamp && dataAge < maxAge) {
+            console.log('✅ QuoteContext: Data is fresh, loading state', {
+              ageHours: Math.round(dataAge / (60 * 60 * 1000) * 10) / 10
+            });
             dispatch({ type: 'LOAD_FROM_STORAGE', payload: parsedData.state });
           } else {
-            console.log('⏰ QuoteContext: Data is stale, removing');
+            console.log('⏰ QuoteContext: Data is stale or missing timestamp, removing', {
+              hasTimestamp: !!parsedData.timestamp,
+              ageHours: parsedData.timestamp ? Math.round(dataAge / (60 * 60 * 1000) * 10) / 10 : 'unknown'
+            });
             localStorage.removeItem('quoteBuilder');
             dispatch({ type: 'SET_LOADING', payload: false });
           }
         } catch (parseError) {
           console.error('❌ QuoteContext: JSON parse error:', parseError);
-          localStorage.removeItem('quoteBuilder');
+          console.log('🧹 QuoteContext: Cleaning up corrupted localStorage data');
+          try {
+            localStorage.removeItem('quoteBuilder');
+          } catch (cleanupError) {
+            console.error('❌ QuoteContext: Failed to cleanup localStorage:', cleanupError);
+          }
           dispatch({ type: 'SET_LOADING', payload: false });
         }
       } else {
@@ -148,6 +173,13 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       }
     } catch (error) {
       console.error('❌ QuoteContext: Unexpected error during load:', error);
+      // Try to clear potentially corrupted data
+      try {
+        localStorage.removeItem('quoteBuilder');
+        console.log('🧹 QuoteContext: Cleared localStorage after error');
+      } catch (cleanupError) {
+        console.error('❌ QuoteContext: Failed to cleanup after error:', cleanupError);
+      }
       dispatch({ type: 'SET_LOADING', payload: false });
     } finally {
       clearTimeout(loadingTimeout);
@@ -168,11 +200,21 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
     
     saveTimeoutRef.current = setTimeout(() => {
-      const dataToSave = {
-        state,
-        timestamp: Date.now()
-      };
-      localStorage.setItem('quoteBuilder', JSON.stringify(dataToSave));
+      try {
+        const dataToSave = {
+          state,
+          timestamp: Date.now()
+        };
+        localStorage.setItem('quoteBuilder', JSON.stringify(dataToSave));
+        console.log('💾 QuoteContext: Quote data saved to localStorage', {
+          hasMotor: !!state.motor,
+          purchasePath: state.purchasePath,
+          timestamp: new Date().toLocaleString()
+        });
+      } catch (error) {
+        console.error('❌ QuoteContext: Failed to save to localStorage:', error);
+        // Don't throw error, just log it - continue operating without persistence
+      }
     }, 1000); // Increased to 1000ms debounce for better performance
     
     return () => {
@@ -231,7 +273,13 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   });
 
   const clearQuote = () => {
-    localStorage.removeItem('quoteBuilder');
+    console.log('🧹 QuoteContext: Clearing quote and localStorage');
+    try {
+      localStorage.removeItem('quoteBuilder');
+      console.log('✅ QuoteContext: localStorage cleared successfully');
+    } catch (error) {
+      console.error('❌ QuoteContext: Failed to clear localStorage:', error);
+    }
     dispatch({ type: 'RESET_QUOTE' });
   };
 

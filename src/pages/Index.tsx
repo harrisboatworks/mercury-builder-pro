@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StatusIndicator } from '@/components/StatusIndicator';
 import { MobileQuoteForm } from '@/components/ui/mobile-quote-form';
@@ -7,29 +7,102 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ShoppingCart, RotateCcw, ArrowRight, User, FileText, LogOut } from 'lucide-react';
+import { ShoppingCart, RotateCcw, ArrowRight, User, FileText, LogOut, Trash2, AlertTriangle } from 'lucide-react';
 
 const Index = () => {
   const [showQuoteForm, setShowQuoteForm] = useState(false);
   const [showLanding, setShowLanding] = useState(false);
+  const [loadingMessage, setLoadingMessage] = useState('Loading Mercury Quote Builder...');
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [showDebug, setShowDebug] = useState(false);
+  const [emergencyMode, setEmergencyMode] = useState(false);
+  
   const navigate = useNavigate();
   const hasChecked = useRef(false);
+  const loadingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  
   const { state, isQuoteComplete, getQuoteCompletionStatus, clearQuote } = useQuote();
   const { user, signOut } = useAuth();
 
+  // Memoize the completion status function to prevent unnecessary re-renders
+  const getCompletionStatus = useCallback(() => {
+    return getQuoteCompletionStatus();
+  }, [state.motor, state.purchasePath, state.boatInfo, state.hasTradein, state.tradeInInfo]);
+
+  // Loading timeout and progress effects
   useEffect(() => {
-    console.log('🔄 Index: Checking quote status...');
+    if (state.isLoading) {
+      console.log('🔄 Index: Starting loading timeout and progress tracking...');
+      
+      // Progressive loading messages
+      const messages = [
+        'Loading Mercury Quote Builder...',
+        'Checking for existing quotes...',
+        'Preparing your quote experience...',
+        'Almost ready...'
+      ];
+      
+      let messageIndex = 0;
+      setLoadingMessage(messages[0]);
+      setLoadingProgress(10);
+      
+      // Update loading message and progress
+      const messageInterval = setInterval(() => {
+        messageIndex = (messageIndex + 1) % messages.length;
+        setLoadingMessage(messages[messageIndex]);
+        setLoadingProgress(prev => Math.min(prev + 20, 90));
+      }, 1000);
+      
+      progressIntervalRef.current = messageInterval;
+      
+      // Emergency timeout - if loading takes more than 8 seconds, force emergency mode
+      loadingTimeoutRef.current = setTimeout(() => {
+        console.warn('⚠️ Index: Emergency timeout reached - forcing emergency mode');
+        setEmergencyMode(true);
+        setLoadingMessage('Loading is taking longer than expected...');
+        setLoadingProgress(100);
+      }, 8000);
+      
+      return () => {
+        if (loadingTimeoutRef.current) {
+          clearTimeout(loadingTimeoutRef.current);
+        }
+        if (progressIntervalRef.current) {
+          clearInterval(progressIntervalRef.current);
+        }
+      };
+    } else {
+      // Clear loading states when no longer loading
+      if (loadingTimeoutRef.current) {
+        clearTimeout(loadingTimeoutRef.current);
+      }
+      if (progressIntervalRef.current) {
+        clearInterval(progressIntervalRef.current);
+      }
+      setLoadingProgress(100);
+    }
+  }, [state.isLoading]);
+
+  // Main navigation effect - separated from loading logic
+  useEffect(() => {
+    console.log('🔄 Index: Checking quote status...', { 
+      isLoading: state.isLoading, 
+      hasChecked: hasChecked.current 
+    });
     
     // Wait for context to load
-    if (state.isLoading) {
+    if (state.isLoading && !emergencyMode) {
       return;
     }
     
     if (hasChecked.current) return;
     hasChecked.current = true;
     
-    const completionStatus = getQuoteCompletionStatus();
+    const completionStatus = getCompletionStatus();
     const hasExistingQuote = completionStatus.hasMotor;
+    
+    console.log('📊 Quote status:', completionStatus);
     
     if (hasExistingQuote) {
       console.log('📋 Found existing quote, showing landing options');
@@ -38,10 +111,10 @@ const Index = () => {
       console.log('🆕 No existing quote, redirecting to motor selection');
       navigate('/quote/motor-selection');
     }
-  }, [navigate, state.isLoading, getQuoteCompletionStatus]);
+  }, [navigate, state.isLoading, emergencyMode, getCompletionStatus]);
 
   const handleContinueQuote = () => {
-    const completionStatus = getQuoteCompletionStatus();
+    const completionStatus = getCompletionStatus();
     
     if (completionStatus.isComplete) {
       navigate('/quote/summary');
@@ -59,6 +132,25 @@ const Index = () => {
     }
   };
 
+  const handleEmergencyClear = () => {
+    console.log('🚨 Index: Emergency clear localStorage');
+    try {
+      localStorage.removeItem('quoteBuilder');
+      console.log('✅ Index: localStorage cleared successfully');
+      
+      // Force reload the page to restart cleanly
+      window.location.reload();
+    } catch (error) {
+      console.error('❌ Index: Failed to clear localStorage:', error);
+    }
+  };
+
+  const handleForceStart = () => {
+    console.log('🚀 Index: Force start new quote');
+    clearQuote();
+    navigate('/quote/motor-selection');
+  };
+
   const handleStartFresh = () => {
     clearQuote();
     navigate('/quote/motor-selection');
@@ -74,16 +166,99 @@ const Index = () => {
     };
   };
 
-  if (state.isLoading) {
+  if (state.isLoading && !emergencyMode) {
     return (
       <>
         <div className="container mx-auto px-4 py-2 flex justify-end">
           <StatusIndicator />
         </div>
         <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center space-y-4">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
-            <p className="text-muted-foreground">Loading Mercury Quote Builder...</p>
+          <div className="text-center space-y-6 max-w-md mx-auto">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+            <div className="space-y-3">
+              <p className="text-lg font-medium text-foreground">{loadingMessage}</p>
+              <div className="w-full bg-secondary rounded-full h-2">
+                <div 
+                  className="bg-primary h-2 rounded-full transition-all duration-300 ease-out"
+                  style={{ width: `${loadingProgress}%` }}
+                />
+              </div>
+              <p className="text-sm text-muted-foreground">
+                {loadingProgress < 90 ? 'Please wait...' : 'Just a few more seconds...'}
+              </p>
+            </div>
+            {/* Debug toggle - only show in development */}
+            {process.env.NODE_ENV === 'development' && (
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                onClick={() => setShowDebug(!showDebug)}
+                className="text-xs"
+              >
+                Debug Info
+              </Button>
+            )}
+            {showDebug && (
+              <div className="text-left text-xs text-muted-foreground bg-secondary/50 p-3 rounded">
+                <p>Loading: {state.isLoading ? 'true' : 'false'}</p>
+                <p>Has Motor: {state.motor ? 'true' : 'false'}</p>
+                <p>Has Checked: {hasChecked.current ? 'true' : 'false'}</p>
+                <p>Progress: {loadingProgress}%</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  // Emergency mode - show manual options if loading is stuck
+  if (emergencyMode) {
+    return (
+      <>
+        <div className="container mx-auto px-4 py-2 flex justify-end">
+          <StatusIndicator />
+        </div>
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-secondary/30 to-destructive/10">
+          <div className="text-center space-y-6 max-w-md mx-auto p-6">
+            <div className="text-destructive">
+              <AlertTriangle className="w-16 h-16 mx-auto mb-4" />
+            </div>
+            <div className="space-y-3">
+              <h2 className="text-xl font-semibold text-foreground">Loading Issue Detected</h2>
+              <p className="text-muted-foreground">
+                We're having trouble loading your quote data. You can try one of these options:
+              </p>
+            </div>
+            <div className="space-y-3">
+              <Button 
+                onClick={handleForceStart} 
+                className="w-full"
+                variant="default"
+              >
+                <ArrowRight className="w-4 h-4 mr-2" />
+                Start New Quote
+              </Button>
+              <Button 
+                onClick={handleEmergencyClear} 
+                variant="destructive" 
+                className="w-full"
+              >
+                <Trash2 className="w-4 h-4 mr-2" />
+                Clear All Data & Restart
+              </Button>
+              <Button 
+                onClick={() => window.location.reload()} 
+                variant="outline" 
+                className="w-full"
+              >
+                <RotateCcw className="w-4 h-4 mr-2" />
+                Reload Page
+              </Button>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              If this problem persists, please contact our support team.
+            </p>
           </div>
         </div>
       </>
@@ -108,7 +283,7 @@ const Index = () => {
   }
 
   const quoteSummary = getQuoteSummary();
-  const completionStatus = getQuoteCompletionStatus();
+  const completionStatus = getCompletionStatus();
 
   return (
     <>
