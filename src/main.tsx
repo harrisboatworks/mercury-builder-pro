@@ -26,14 +26,6 @@ try {
   
   console.log('✅ App rendered successfully!');
   
-  // Fallback redirect if React routing fails
-  setTimeout(() => {
-    if (window.location.pathname === '/' && !document.querySelector('[data-testid="quote-builder"]')) {
-      console.warn('⚠️ Fallback redirect triggered');
-      window.location.href = '/quote/motor-selection';
-    }
-  }, 3000);
-  
 } catch (error) {
   console.error('❌ Fatal error in main.tsx:', error);
   

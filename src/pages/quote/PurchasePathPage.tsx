@@ -8,14 +8,19 @@ import { ArrowLeft } from 'lucide-react';
 
 export default function PurchasePathPage() {
   const navigate = useNavigate();
-  const { state, dispatch, isStepAccessible } = useQuote();
+  const { state, dispatch, isStepAccessible, isNavigationBlocked } = useQuote();
 
   useEffect(() => {
-    // Redirect if step not accessible with loading protection
-    if (!state.isLoading && !isStepAccessible(2)) {
-      navigate('/quote/motor-selection');
-      return;
-    }
+    // Redirect if step not accessible with loading and navigation block protection
+    const checkAccessibility = () => {
+      if (!state.isLoading && !isNavigationBlocked && !isStepAccessible(2)) {
+        navigate('/quote/motor-selection');
+        return;
+      }
+    };
+
+    // Standardized timeout to 500ms to match other pages
+    const timeoutId = setTimeout(checkAccessibility, 500);
 
     document.title = 'Choose Installation Option | Harris Boat Works';
     
@@ -26,7 +31,9 @@ export default function PurchasePathPage() {
       document.head.appendChild(desc);
     }
     desc.content = 'Choose between professional installation or loose motor purchase for your Mercury outboard.';
-  }, [state.isLoading, isStepAccessible, navigate]);
+
+    return () => clearTimeout(timeoutId);
+  }, [state.isLoading, isStepAccessible, isNavigationBlocked, navigate]);
 
   const handleStepComplete = (path: 'loose' | 'installed') => {
     dispatch({ type: 'SET_PURCHASE_PATH', payload: path });

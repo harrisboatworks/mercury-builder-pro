@@ -36,10 +36,12 @@ export const ActivityTicker: React.FC<ActivityTickerProps> = ({
     if (!safeActivities.length) return;
 
     let cancelled = false;
-    const jitterRange = 1500; // +/- 1.5s to feel more organic
-
+    let timeoutId: NodeJS.Timeout;
+    const jitterRange = 2000; // Increased jitter for more varied timing
+    
     const tick = () => {
-      if (cancelled) return;
+      if (cancelled || document.hidden) return; // Pause when tab is not active
+      
       setCurrentIndex((prev) => {
         const next = (prev + 1) % safeActivities.length;
         try {
@@ -47,17 +49,32 @@ export const ActivityTicker: React.FC<ActivityTickerProps> = ({
         } catch {}
         return next;
       });
+      
       const jitter = Math.floor((Math.random() - 0.5) * 2 * jitterRange);
-      const nextDelay = Math.max(2000, intervalMs + jitter);
-      setTimeout(tick, nextDelay);
+      const nextDelay = Math.max(3000, intervalMs + jitter); // Increased base delay
+      timeoutId = setTimeout(tick, nextDelay);
     };
 
-    // Start the ticking with an initial slight delay to avoid synchrony
-    const startDelay = Math.max(1500, intervalMs + Math.floor((Math.random() - 0.5) * 1000));
-    const id = setTimeout(tick, startDelay);
+    // Handle visibility changes to pause/resume
+    const handleVisibilityChange = () => {
+      if (!document.hidden && !cancelled) {
+        // Resume with a random delay when tab becomes active again
+        clearTimeout(timeoutId);
+        const resumeDelay = Math.max(1000, Math.random() * 3000);
+        timeoutId = setTimeout(tick, resumeDelay);
+      }
+    };
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // Start the ticking with an initial delay
+    const startDelay = Math.max(2000, intervalMs + Math.floor(Math.random() * 2000));
+    timeoutId = setTimeout(tick, startDelay);
+    
     return () => {
       cancelled = true;
-      clearTimeout(id);
+      clearTimeout(timeoutId);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, [intervalMs, safeActivities.length, storageKey]);
 

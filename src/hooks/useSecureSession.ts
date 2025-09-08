@@ -64,15 +64,15 @@ export const useSecureSession = () => {
 
     const handleActivity = () => {
       clearTimeout(activityTimeout);
-      activityTimeout = setTimeout(trackActivity, 5000); // Debounce activity tracking
+      activityTimeout = setTimeout(trackActivity, 10000); // Increased debounce to reduce frequency
     };
 
     events.forEach(event => {
       document.addEventListener(event, handleActivity);
     });
 
-    // Validate session every 5 minutes
-    const sessionInterval = setInterval(validateSession, 5 * 60 * 1000);
+    // Validate session every 10 minutes (reduced frequency)
+    const sessionInterval = setInterval(validateSession, 10 * 60 * 1000);
 
     return () => {
       events.forEach(event => {

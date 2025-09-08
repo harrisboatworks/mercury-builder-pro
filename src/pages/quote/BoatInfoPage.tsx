@@ -9,20 +9,20 @@ import { BoatInfo } from '@/components/QuoteBuilder';
 
 export default function BoatInfoPage() {
   const navigate = useNavigate();
-  const { state, dispatch, isStepAccessible } = useQuote();
+  const { state, dispatch, isStepAccessible, isNavigationBlocked } = useQuote();
 
   useEffect(() => {
     // Add delay to prevent navigation during state updates
     const checkAccessibility = () => {
-      // Only navigate if we're not in loading state and have a valid motor selected
-      if (!state.isLoading && state.motor && !isStepAccessible(3)) {
+      // Only navigate if we're not in loading state, not navigation blocked, and have a valid motor selected
+      if (!state.isLoading && !isNavigationBlocked && state.motor && !isStepAccessible(3)) {
         navigate('/quote/motor-selection');
         return;
       }
     };
 
-    // Increased delay to allow for proper state synchronization
-    const timeoutId = setTimeout(checkAccessibility, 300);
+    // Standardized delay to 500ms to match other pages
+    const timeoutId = setTimeout(checkAccessibility, 500);
 
     document.title = 'Boat Information | Harris Boat Works';
     
@@ -35,7 +35,7 @@ export default function BoatInfoPage() {
     desc.content = 'Provide your boat details for accurate motor compatibility and installation requirements.';
 
     return () => clearTimeout(timeoutId);
-  }, [state.isLoading, isStepAccessible, navigate]);
+  }, [state.isLoading, isStepAccessible, isNavigationBlocked, navigate]);
 
   const handleStepComplete = (boatInfo: BoatInfo) => {
     dispatch({ type: 'SET_BOAT_INFO', payload: boatInfo });

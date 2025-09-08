@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useEffect, useCallback, useRef } from 'react';
+import React, { createContext, useContext, useReducer, useEffect, useCallback, useRef, useMemo, useState } from 'react';
 import { Motor, BoatInfo, QuoteData } from '@/components/QuoteBuilder';
 
 interface QuoteState {
@@ -58,6 +58,7 @@ const QuoteContext = createContext<{
   isStepAccessible: (step: number) => boolean;
   getQuoteData: () => QuoteData;
   clearQuote: () => void;
+  isNavigationBlocked: boolean;
 } | null>(null);
 
 function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
@@ -99,6 +100,7 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
 export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(quoteReducer, initialState);
   const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [navigationBlocked, setNavigationBlocked] = useState(false);
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -122,9 +124,13 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   }, []);
 
-  // Debounced save to localStorage
+  // Debounced save to localStorage - increased to 1000ms for better performance
   useEffect(() => {
     if (state.isLoading) return; // Don't save during initial load
+    
+    // Block navigation during state updates to prevent instability
+    setNavigationBlocked(true);
+    const unblockTimeout = setTimeout(() => setNavigationBlocked(false), 100);
     
     if (saveTimeoutRef.current) {
       clearTimeout(saveTimeoutRef.current);
@@ -136,16 +142,17 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         timestamp: Date.now()
       };
       localStorage.setItem('quoteBuilder', JSON.stringify(dataToSave));
-    }, 500); // 500ms debounce
+    }, 1000); // Increased to 1000ms debounce for better performance
     
     return () => {
       if (saveTimeoutRef.current) {
         clearTimeout(saveTimeoutRef.current);
       }
+      clearTimeout(unblockTimeout);
     };
   }, [state]);
 
-  const isStepAccessible = useCallback((step: number): boolean => {
+  const isStepAccessible = useMemo(() => (step: number): boolean => {
     switch (step) {
       case 1: // Motor selection
         return true;
@@ -203,7 +210,8 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       dispatch, 
       isStepAccessible,
       getQuoteData,
-      clearQuote
+      clearQuote,
+      isNavigationBlocked: navigationBlocked
     }}>
       {children}
     </QuoteContext.Provider>

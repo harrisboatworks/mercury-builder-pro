@@ -9,19 +9,19 @@ import { ArrowLeft } from 'lucide-react';
 
 export default function QuoteSummaryPage() {
   const navigate = useNavigate();
-  const { state, dispatch, isStepAccessible, getQuoteData } = useQuote();
+  const { state, dispatch, isStepAccessible, getQuoteData, isNavigationBlocked } = useQuote();
 
   useEffect(() => {
     // Add delay and loading check to prevent navigation during state updates
     const checkAccessibility = () => {
-      if (!state.isLoading && !isStepAccessible(6)) {
+      if (!state.isLoading && !isNavigationBlocked && !isStepAccessible(6)) {
         navigate('/quote/motor-selection');
         return;
       }
     };
 
-    // Delay the accessibility check to allow for state synchronization
-    const timeoutId = setTimeout(checkAccessibility, 100);
+    // Standardized timeout to 500ms to match other pages
+    const timeoutId = setTimeout(checkAccessibility, 500);
 
     document.title = 'Your Mercury Motor Quote | Harris Boat Works';
     
@@ -34,7 +34,7 @@ export default function QuoteSummaryPage() {
     desc.content = 'Review your complete Mercury outboard motor quote with pricing, financing options, and bonus offers.';
 
     return () => clearTimeout(timeoutId);
-  }, [state.isLoading, isStepAccessible, navigate]);
+  }, [state.isLoading, isStepAccessible, isNavigationBlocked, navigate]);
 
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });
