@@ -309,7 +309,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     // Then check model code for shaft indicators
     const model = (motor.model || '').toUpperCase();
     if (/\bXXL\b/.test(model)) return '30';
-    if (/\bXL\b|EXLPT/.test(model)) return '25';
+    if (/\bXL\b|EXLPT|EXLHPT/.test(model)) return '25';
     if (/\bL\b|ELPT|MLH|LPT/.test(model)) return '20';
     if (/\bS\b/.test(model)) return '15';
     
