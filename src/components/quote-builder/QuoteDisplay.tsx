@@ -194,14 +194,26 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   // Financing options loader (filter by min_amount <= total)
   const calculateTotal = () => totalFinancePrice;
   const loadFinancingOptions = async () => {
-    const totalAmount = calculateTotal();
-    const { data } = await (supabase as any)
-      .from('financing_options')
-      .select('*')
-      .eq('is_active', true)
-      .lte('min_amount', totalAmount)
-      .order('display_order', { ascending: true });
-    setFinancingOptions(data || []);
+    try {
+      const totalAmount = calculateTotal();
+      const { data, error } = await supabase
+        .from('financing_options')
+        .select('*')
+        .eq('is_active', true)
+        .lte('min_amount', totalAmount)
+        .order('display_order', { ascending: true });
+      
+      if (error) {
+        console.warn('Failed to load financing options:', error);
+        setFinancingOptions([]);
+        return;
+      }
+      
+      setFinancingOptions(data || []);
+    } catch (error) {
+      console.warn('Error loading financing options:', error);
+      setFinancingOptions([]);
+    }
   };
   useEffect(() => {
     if (totalFinancePrice > 0) {
