@@ -8,6 +8,7 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ShoppingCart, RotateCcw, ArrowRight, User, FileText, LogOut, Trash2, AlertTriangle } from 'lucide-react';
+import harrisLogo from '@/assets/harris-logo.png';
 
 const Index = () => {
   const [showQuoteForm, setShowQuoteForm] = useState(false);
@@ -174,6 +175,11 @@ const Index = () => {
         </div>
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center space-y-6 max-w-md mx-auto">
+            <img 
+              src={harrisLogo} 
+              alt="Harris Boat Works" 
+              className="h-16 w-auto mx-auto mb-4"
+            />
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
             <div className="space-y-3">
               <p className="text-lg font-medium text-foreground">{loadingMessage}</p>
@@ -221,8 +227,13 @@ const Index = () => {
         </div>
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-secondary/30 to-destructive/10">
           <div className="text-center space-y-6 max-w-md mx-auto p-6">
+            <img 
+              src={harrisLogo} 
+              alt="Harris Boat Works" 
+              className="h-16 w-auto mx-auto mb-2"
+            />
             <div className="text-destructive">
-              <AlertTriangle className="w-16 h-16 mx-auto mb-4" />
+              <AlertTriangle className="w-12 h-12 mx-auto mb-4" />
             </div>
             <div className="space-y-3">
               <h2 className="text-xl font-semibold text-foreground">Loading Issue Detected</h2>
@@ -274,6 +285,11 @@ const Index = () => {
         </div>
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center space-y-4">
+            <img 
+              src={harrisLogo} 
+              alt="Harris Boat Works" 
+              className="h-12 w-auto mx-auto mb-4"
+            />
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
             <p className="text-muted-foreground">Loading Mercury Quote Builder...</p>
           </div>
@@ -291,9 +307,11 @@ const Index = () => {
       <header className="border-b border-border bg-background/95 backdrop-blur">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <div className="text-lg font-semibold text-foreground">
-              Harris Boat Works
-            </div>
+            <img 
+              src={harrisLogo} 
+              alt="Harris Boat Works" 
+              className="h-8 w-auto"
+            />
             <div className="flex items-center gap-4">
               <StatusIndicator />
               {user ? (
@@ -339,8 +357,13 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             {/* Header */}
             <div className="text-center mb-12">
+              <img 
+                src={harrisLogo} 
+                alt="Harris Boat Works" 
+                className="h-20 w-auto mx-auto mb-6"
+              />
               <h1 className="text-4xl font-bold text-foreground mb-4">
-                Welcome Back to Harris Boat Works
+                Welcome Back
               </h1>
               <p className="text-lg text-muted-foreground">
                 You have a quote in progress. What would you like to do?
