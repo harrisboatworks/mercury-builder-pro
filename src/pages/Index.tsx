@@ -18,15 +18,15 @@ const Index = () => {
   const { user, signOut } = useAuth();
 
   useEffect(() => {
-    if (hasChecked.current) return;
-    hasChecked.current = true;
-    
     console.log('🔄 Index: Checking quote status...');
     
     // Wait for context to load
     if (state.isLoading) {
       return;
     }
+    
+    if (hasChecked.current) return;
+    hasChecked.current = true;
     
     const completionStatus = getQuoteCompletionStatus();
     const hasExistingQuote = completionStatus.hasMotor;
