@@ -546,13 +546,12 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                       <span>MSRP:</span>
                       <span className="line-through">{formatCurrency(quoteData.motor.basePrice)}</span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center gap-2">
-                        <span className="font-medium">Our Price:</span>
-                        <Badge variant="discount" className="text-xs">
-                          SAVE {Math.floor((saleSavings / (quoteData.motor.basePrice as number)) * 100)}%
-                        </Badge>
-                      </div>
+                    <div className="flex justify-between text-green-600">
+                      <span>Discount:</span>
+                      <span className="font-medium">-{formatCurrency(saleSavings)}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="font-medium">Our Price:</span>
                       <span className="font-semibold text-primary">{formatCurrency(motorPrice)}</span>
                     </div>
                   </>
@@ -624,47 +623,24 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
               </div>
             </div>
 
-            {/* Promotions Applied Section */}
-            {(hasSale || hasWarrantyBonus || activePromo) && (
+            {/* Simplified Promotional Information */}
+            {(hasWarrantyBonus || activePromo) && (
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-4 mt-4">
                 <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4" />
-                  Promotions Applied
+                  Special Offers Included
                 </h4>
                 <div className="space-y-2 text-sm text-green-700">
-                  {hasSale && saleSavings > 0 && (
-                    <div className="flex justify-between items-center">
-                      <span>Sale Discount:</span>
-                      <div className="flex items-center gap-2">
-                        <span className="font-semibold">-{formatCurrency(saleSavings)}</span>
-                        <Badge variant="discount" className="text-xs">
-                          {Math.floor((saleSavings / (quoteData.motor?.basePrice as number)) * 100)}% OFF
-                        </Badge>
-                      </div>
-                    </div>
-                  )}
-                  
                   {hasWarrantyBonus && (
                     <div className="flex justify-between items-center">
                       <span>Extended Warranty:</span>
-                      <div className="flex items-center gap-2">
-                        <span className="font-semibold">FREE</span>
-                        <Badge variant="warranty" className="text-xs">
-                          BONUS
-                        </Badge>
-                      </div>
+                      <span className="font-semibold">Included FREE</span>
                     </div>
                   )}
-                  
                   {activePromo && (
                     <div className="flex justify-between items-center">
-                      <span>Special Financing:</span>
-                      <div className="flex items-center gap-2">
-                        <span className="font-semibold">{activePromo.rate}% APR</span>
-                        <Badge variant="warranty" className="text-xs">
-                          LIMITED TIME
-                        </Badge>
-                      </div>
+                      <span>Promotional Rate:</span>
+                      <span className="font-semibold">{effectiveRate}% APR</span>
                     </div>
                   )}
                   

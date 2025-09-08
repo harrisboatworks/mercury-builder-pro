@@ -293,12 +293,34 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             <h3 className="text-xl font-semibold">Quote Summary</h3>
             
             <div className="space-y-4">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h4 className="font-medium">{quoteData.motor?.model}</h4>
-                  <p className="text-sm text-muted-foreground">{quoteData.motor?.hp}HP</p>
+              <div className="space-y-2">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h4 className="font-medium">{quoteData.motor?.model}</h4>
+                    <p className="text-sm text-muted-foreground">{quoteData.motor?.hp}HP</p>
+                  </div>
                 </div>
-                <p className="font-semibold">${motorPrice.toLocaleString()}</p>
+                {quoteData.motor?.basePrice && quoteData.motor?.salePrice && quoteData.motor.salePrice < quoteData.motor.basePrice ? (
+                  <>
+                    <div className="flex justify-between text-muted-foreground text-sm">
+                      <span>MSRP:</span>
+                      <span className="line-through">${quoteData.motor.basePrice.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between text-green-600 text-sm">
+                      <span>Discount:</span>
+                      <span>-${(quoteData.motor.basePrice - quoteData.motor.salePrice).toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="font-medium">Our Price:</span>
+                      <span className="font-semibold">${motorPrice.toLocaleString()}</span>
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex justify-between">
+                    <span className="font-medium">Motor Price:</span>
+                    <span className="font-semibold">${motorPrice.toLocaleString()}</span>
+                  </div>
+                )}
               </div>
 
               {accessoryCosts.controls > 0 && (
