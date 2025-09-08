@@ -353,8 +353,11 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
   // Auto-set control type for tiller motors on initial load
   useEffect(() => {
     if (isSelectedTillerMotor && !boatInfo.controlType) {
-      console.log('Setting tiller motor control type');
-      setBoatInfo(prev => ({ ...prev, controlType: 'tiller' }));
+      // Use a small delay to prevent race conditions with state updates
+      const timeoutId = setTimeout(() => {
+        setBoatInfo(prev => ({ ...prev, controlType: 'tiller' }));
+      }, 50);
+      return () => clearTimeout(timeoutId);
     }
   }, [isSelectedTillerMotor]); // Remove boatInfo.controlType dependency to prevent loops
 

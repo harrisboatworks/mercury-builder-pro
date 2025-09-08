@@ -14,14 +14,15 @@ export default function BoatInfoPage() {
   useEffect(() => {
     // Add delay to prevent navigation during state updates
     const checkAccessibility = () => {
-      if (!state.isLoading && !isStepAccessible(3)) {
+      // Only navigate if we're not in loading state and have a valid motor selected
+      if (!state.isLoading && state.motor && !isStepAccessible(3)) {
         navigate('/quote/motor-selection');
         return;
       }
     };
 
-    // Delay the accessibility check to allow for state synchronization
-    const timeoutId = setTimeout(checkAccessibility, 100);
+    // Increased delay to allow for proper state synchronization
+    const timeoutId = setTimeout(checkAccessibility, 300);
 
     document.title = 'Boat Information | Harris Boat Works';
     
