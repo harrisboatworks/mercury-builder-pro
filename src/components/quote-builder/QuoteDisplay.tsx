@@ -538,9 +538,30 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
             <h3 className="text-lg font-semibold">Quote Summary</h3>
             
             <div className="space-y-2 text-sm">
-              <div className="flex justify-between">
-                <span>Motor Price:</span>
-                <span className="font-medium">{formatCurrency(motorPrice)}</span>
+              {/* Enhanced Motor Pricing Display */}
+              <div className="space-y-1">
+                {hasSale && quoteData.motor?.basePrice ? (
+                  <>
+                    <div className="flex justify-between text-muted-foreground">
+                      <span>MSRP:</span>
+                      <span className="line-through">{formatCurrency(quoteData.motor.basePrice)}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="font-medium">Our Price:</span>
+                      <div className="flex items-center gap-2">
+                        <span className="font-semibold text-primary">{formatCurrency(motorPrice)}</span>
+                        <Badge variant="discount" className="text-xs">
+                          SAVE {Math.floor((saleSavings / (quoteData.motor.basePrice as number)) * 100)}%
+                        </Badge>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex justify-between">
+                    <span>Motor Price:</span>
+                    <span className="font-medium">{formatCurrency(motorPrice)}</span>
+                  </div>
+                )}
               </div>
               
               {accessoriesSubtotal > 0 && (
@@ -574,6 +595,59 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                 </div>
               </div>
             </div>
+
+            {/* Promotions Applied Section */}
+            {(hasSale || hasWarrantyBonus || activePromo) && (
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-4 mt-4">
+                <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4" />
+                  Promotions Applied
+                </h4>
+                <div className="space-y-2 text-sm text-green-700">
+                  {hasSale && saleSavings > 0 && (
+                    <div className="flex justify-between items-center">
+                      <span>Sale Discount:</span>
+                      <div className="flex items-center gap-2">
+                        <span className="font-semibold">-{formatCurrency(saleSavings)}</span>
+                        <Badge variant="discount" className="text-xs">
+                          {Math.floor((saleSavings / (quoteData.motor?.basePrice as number)) * 100)}% OFF
+                        </Badge>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {hasWarrantyBonus && (
+                    <div className="flex justify-between items-center">
+                      <span>Extended Warranty:</span>
+                      <div className="flex items-center gap-2">
+                        <span className="font-semibold">FREE</span>
+                        <Badge variant="warranty" className="text-xs">
+                          BONUS
+                        </Badge>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {activePromo && (
+                    <div className="flex justify-between items-center">
+                      <span>Special Financing:</span>
+                      <div className="flex items-center gap-2">
+                        <span className="font-semibold">{activePromo.rate}% APR</span>
+                        <Badge variant="warranty" className="text-xs">
+                          LIMITED TIME
+                        </Badge>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {promoEndsAt && daysLeft > 0 && (
+                    <div className="text-xs text-green-600 font-medium mt-2 text-center">
+                      ⏰ Offer expires in {daysLeft} day{daysLeft !== 1 ? 's' : ''} {hoursLeft > 0 && `${hoursLeft}h`}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
