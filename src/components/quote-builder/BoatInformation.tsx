@@ -15,6 +15,7 @@ import { Slider } from '@/components/ui/slider';
 import { Progress } from '@/components/ui/progress';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { isTillerMotor } from '@/lib/utils';
 
 interface BoatInformationProps {
   onStepComplete: (boatInfo: BoatInfo) => void;
@@ -346,6 +347,16 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     handleNext();
   };
 
+  // Check if selected motor is a tiller motor
+  const isSelectedTillerMotor = selectedMotor ? isTillerMotor(selectedMotor.model || '') : false;
+  
+  // Auto-set control type for tiller motors
+  useEffect(() => {
+    if (isSelectedTillerMotor && boatInfo.controlType !== 'tiller') {
+      setBoatInfo(prev => ({ ...prev, controlType: 'tiller' }));
+    }
+  }, [isSelectedTillerMotor, boatInfo.controlType]);
+
   const totalSteps = boatInfo.type === 'motor-only' ? (showTradeIn ? 3 : 2) : (showTradeIn ? 5 : 4);
   const canNext = () => {
     if (boatInfo.type === 'motor-only') {
@@ -359,7 +370,8 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
       case 1:
         return !!boatInfo.shaftLength; // transom helper
       case 2:
-        return !!boatInfo.controlType;
+        // Skip control type validation for tiller motors since it's auto-set
+        return isSelectedTillerMotor || !!boatInfo.controlType;
       case 3:
         return true; // trade-in optional
       default:
@@ -874,23 +886,32 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                       </Alert>
                     )}
 
-                    <div className="space-y-2">
-                      <Label>Control Type</Label>
-                      <Select value={boatInfo.controlType} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, controlType: value }))}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select control type" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="side-mount-external">Side Mount - External Box</SelectItem>
-                          <SelectItem value="side-mount-recessed">Side Mount - Recessed Panel</SelectItem>
-                          <SelectItem value="binnacle-top">Binnacle/Top Mount</SelectItem>
-                          <SelectItem value="tiller">Tiller</SelectItem>
-                          <SelectItem value="not-sure">Not Sure</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
+                    {isSelectedTillerMotor ? (
+                      <Alert className="border-blue-500 bg-blue-50 dark:bg-blue-950/20">
+                        <Info className="w-4 h-4" />
+                        <AlertDescription>
+                          <strong>Tiller Motor Selected:</strong> Your {selectedMotor?.model} is a tiller motor that's steered by hand. No remote controls are needed or applicable.
+                        </AlertDescription>
+                      </Alert>
+                    ) : (
+                      <div className="space-y-2">
+                        <Label>Control Type</Label>
+                        <Select value={boatInfo.controlType} onValueChange={(value) => setBoatInfo(prev => ({ ...prev, controlType: value }))}>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select control type" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="side-mount-external">Side Mount - External Box</SelectItem>
+                            <SelectItem value="side-mount-recessed">Side Mount - Recessed Panel</SelectItem>
+                            <SelectItem value="binnacle-top">Binnacle/Top Mount</SelectItem>
+                            <SelectItem value="tiller">Tiller</SelectItem>
+                            <SelectItem value="not-sure">Not Sure</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    )}
 
-                    {selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && (
+                    {!isSelectedTillerMotor && selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && (
                       <div className="controls-section rounded-lg border border-border bg-muted/30 p-4">
                         <h4 className="font-semibold mb-3">Steering Controls Required</h4>
                         {isNonMercuryBrand && (
