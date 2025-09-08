@@ -18,63 +18,51 @@ export interface HPCategory {
 export const HP_CATEGORIES: HPCategory[] = [{
   id: 'portable-power',
   name: 'Portable Power',
-  tagline: 'Lightweight & Versatile',
+  tagline: 'Lightweight & Reliable',
   hpRange: {
     min: 2.5,
-    max: 6
+    max: 20
   },
-  idealFor: 'Dinghies, canoes, tender duty',
+  idealFor: 'Dinghies, tenders, small fishing boats',
   startingPrice: 'Starting at $1,270',
   heroImage: '/boat-types/jon-boat.svg',
-  modelCount: 4
-}, {
-  id: 'lake-cruising',
-  name: 'Lake Cruising',
-  tagline: 'Perfect Balance',
-  hpRange: {
-    min: 9.9,
-    max: 30
-  },
-  idealFor: 'Aluminum boats, small pontoons',
-  startingPrice: 'Starting at $6,415',
-  heroImage: '/boat-types/aluminum-fishing.svg',
-  modelCount: 15
-}, {
-  id: 'family-performance',
-  name: 'Family Performance',
-  tagline: 'Power Meets Versatility',
-  hpRange: {
-    min: 40,
-    max: 90
-  },
-  idealFor: 'Family pontoons, bass boats, runabouts',
-  startingPrice: 'Starting at $17,270',
-  heroImage: '/boat-types/pontoon.svg',
   modelCount: 8
 }, {
-  id: 'high-performance',
-  name: 'High Performance',
+  id: 'mid-range',
+  name: 'Mid-Range',
+  tagline: 'Versatile Performance',
+  hpRange: {
+    min: 25,
+    max: 100
+  },
+  idealFor: 'Fishing boats, pontoons, runabouts',
+  startingPrice: 'Starting at $17,270',
+  heroImage: '/boat-types/pontoon.svg',
+  modelCount: 12
+}, {
+  id: 'proxs-performance',
+  name: 'ProXS Performance',
   tagline: 'Tournament Ready',
   hpRange: {
     min: 115,
     max: 250
   },
-  idealFor: 'Offshore fishing, performance boats',
+  idealFor: 'Bass boats, competitive fishing, watersports',
   startingPrice: 'Starting at $19,220',
-  heroImage: '/boat-types/center-console.svg',
-  modelCount: 12
+  heroImage: '/boat-types/bass-boat.svg',
+  modelCount: 15
 }, {
-  id: 'ultimate-power',
-  name: 'Ultimate Power',
-  tagline: 'Maximum Performance',
+  id: 'big-block-power',
+  name: 'Big Block Power',
+  tagline: 'Maximum Capability',
   hpRange: {
-    min: 300,
-    max: 600
+    min: 225,
+    max: 400
   },
-  idealFor: 'High-performance boats, commercial use',
+  idealFor: 'Offshore boats, performance hulls, commercial use',
   startingPrice: 'Contact for pricing',
-  heroImage: '/boat-types/bowrider.svg',
-  modelCount: 5
+  heroImage: '/boat-types/center-console.svg',
+  modelCount: 8
 }];
 interface HPCategorySelectorProps {
   onCategorySelect: (category: HPCategory) => void;
