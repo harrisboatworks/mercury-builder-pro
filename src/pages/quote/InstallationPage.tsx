@@ -5,6 +5,7 @@ import InstallationConfig from '@/components/quote-builder/InstallationConfig';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
+import { isTillerMotor } from '@/lib/utils';
 
 export default function InstallationPage() {
   const navigate = useNavigate();
@@ -14,6 +15,12 @@ export default function InstallationPage() {
     // Only accessible for installed path
     if (!isStepAccessible(5) || state.purchasePath !== 'installed') {
       navigate('/quote/motor-selection');
+      return;
+    }
+
+    // Redirect tiller motors directly to quote summary (they don't need installation config)
+    if (state.motor && isTillerMotor(state.motor.model || '')) {
+      navigate('/quote/summary');
       return;
     }
 

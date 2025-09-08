@@ -5,6 +5,7 @@ import PurchasePath from '@/components/quote-builder/PurchasePath';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
+import { isTillerMotor } from '@/lib/utils';
 
 export default function PurchasePathPage() {
   const navigate = useNavigate();
@@ -33,10 +34,8 @@ export default function PurchasePathPage() {
     dispatch({ type: 'COMPLETE_STEP', payload: 2 });
     
     if (path === 'installed') {
-      // Check if it's a tiller motor (same logic as PurchasePath.tsx)
-      const model = (state.motor?.model || '').toUpperCase();
-      const hp = typeof state.motor?.hp === 'string' ? parseInt(state.motor.hp, 10) : state.motor?.hp;
-      const isTiller = model.includes('TILLER') || (hp && hp <= 30 && (model.includes('EH') || model.includes('MH') || /\bH\b/.test(model)));
+      // Check if it's a tiller motor using Mercury's naming convention
+      const isTiller = state.motor && isTillerMotor(state.motor.model || '');
       
       if (isTiller) {
         // Tiller motors don't need installation configuration, skip to trade-in
