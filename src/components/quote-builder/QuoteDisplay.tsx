@@ -564,10 +564,31 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                 )}
               </div>
               
-              {accessoriesSubtotal > 0 && (
+              {accessoryCosts.controls > 0 && (
                 <div className="flex justify-between">
-                  <span>Accessories:</span>
-                  <span className="font-medium">{formatCurrency(accessoriesSubtotal)}</span>
+                  <span>Controls:</span>
+                  <span className="font-medium">{formatCurrency(accessoryCosts.controls)}</span>
+                </div>
+              )}
+
+              {accessoryCosts.controlAdapter > 0 && (
+                <div className="flex justify-between">
+                  <span>Control Adapter:</span>
+                  <span className="font-medium">{formatCurrency(accessoryCosts.controlAdapter)}</span>
+                </div>
+              )}
+
+              {accessoryCosts.battery > 0 && (
+                <div className="flex justify-between">
+                  <span>Battery:</span>
+                  <span className="font-medium">{formatCurrency(accessoryCosts.battery)}</span>
+                </div>
+              )}
+
+              {accessoryCosts.propeller > 0 && (
+                <div className="flex justify-between">
+                  <span>Propeller:</span>
+                  <span className="font-medium">{formatCurrency(accessoryCosts.propeller)}</span>
                 </div>
               )}
 

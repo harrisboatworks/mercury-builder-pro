@@ -301,10 +301,31 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 <p className="font-semibold">${motorPrice.toLocaleString()}</p>
               </div>
 
-              {accessoriesSubtotal > 0 && (
+              {accessoryCosts.controls > 0 && (
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Accessories</span>
-                  <span>${accessoriesSubtotal.toLocaleString()}</span>
+                  <span className="text-muted-foreground">Controls</span>
+                  <span>${accessoryCosts.controls.toLocaleString()}</span>
+                </div>
+              )}
+
+              {accessoryCosts.controlAdapter > 0 && (
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Control Adapter</span>
+                  <span>${accessoryCosts.controlAdapter.toLocaleString()}</span>
+                </div>
+              )}
+
+              {accessoryCosts.battery > 0 && (
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Battery</span>
+                  <span>${accessoryCosts.battery.toLocaleString()}</span>
+                </div>
+              )}
+
+              {accessoryCosts.propeller > 0 && (
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Propeller</span>
+                  <span>${accessoryCosts.propeller.toLocaleString()}</span>
                 </div>
               )}
 
