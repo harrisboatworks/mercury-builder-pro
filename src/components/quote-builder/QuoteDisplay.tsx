@@ -547,13 +547,13 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                       <span className="line-through">{formatCurrency(quoteData.motor.basePrice)}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="font-medium">Our Price:</span>
                       <div className="flex items-center gap-2">
-                        <span className="font-semibold text-primary">{formatCurrency(motorPrice)}</span>
+                        <span className="font-medium">Our Price:</span>
                         <Badge variant="discount" className="text-xs">
                           SAVE {Math.floor((saleSavings / (quoteData.motor.basePrice as number)) * 100)}%
                         </Badge>
                       </div>
+                      <span className="font-semibold text-primary">{formatCurrency(motorPrice)}</span>
                     </div>
                   </>
                 ) : (
