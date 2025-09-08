@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle, CreditCard, Image, Check } from 'lucide-react';
+import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle, CreditCard, Image, Check, Download } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, normalizeBrand } from '@/lib/trade-valuation';
 
@@ -23,6 +23,10 @@ import { xpRewards, getCurrentReward, getNextReward } from '@/config/xpRewards';
 import { format } from 'date-fns';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useAuth } from '@/components/auth/AuthProvider';
+import { AuthModal } from '@/components/auth/AuthModal';
+import { createQuote } from '@/lib/quotesApi';
+import { generateExecutivePDF } from '@/lib/pdf-executive';
 
 interface QuoteDisplayProps {
   quoteData: QuoteData;
@@ -51,6 +55,8 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   } | null>(null);
   const [showFinancingInfoModal, setShowFinancingInfoModal] = useState(false);
   const [showReservationModal, setShowReservationModal] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [authModalMode, setAuthModalMode] = useState<'signin' | 'signup'>('signup');
   // Dynamic financing options
   const [financingOptions, setFinancingOptions] = useState<any[]>([]);
   const [selectedFinancing, setSelectedFinancing] = useState<string | null>(null);
@@ -63,6 +69,9 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   // Mobile auto-dismiss functionality
   const isMobile = useIsMobile();
   const [countdownSeconds, setCountdownSeconds] = useState(0);
+  
+  // Auth
+  const { user } = useAuth();
 
   // Auto-dismiss achievement on mobile
   useEffect(() => {
@@ -425,6 +434,79 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
       financing: { downPayment, term, rate: effectiveRate },
       hasTradein: hasTradeIn
     });
+  };
+  
+  // Save quote to database (with auth check)
+  const handleSaveQuote = async () => {
+    if (!user) {
+      setAuthModalMode('signup');
+      setShowAuthModal(true);
+      return;
+    }
+
+    try {
+      const customerName = ((quoteData as any)?.customerName || (quoteData as any)?.boatInfo?.ownerName || user.email || 'Customer') as string;
+      
+      const quoteInput = {
+        customer_name: customerName,
+        customer_email: user.email,
+        motor_model: quoteData.motor?.model || 'Mercury Motor',
+        motor_hp: quoteData.motor?.hp || 0,
+        base_price: motorPrice,
+        discount: saleSavings,
+        tax_rate: 13,
+        notes: `Quote generated via quote builder. Payment preference: ${paymentPreference || 'not selected'}`
+      };
+
+      await createQuote(quoteInput);
+      
+      toast({
+        title: 'Quote saved!',
+        description: 'Your quote has been saved to your account.',
+      });
+    } catch (error) {
+      console.error('Error saving quote:', error);
+      toast({
+        title: 'Save failed',
+        description: 'Unable to save quote. Please try again.',
+        variant: 'destructive',
+      });
+    }
+  };
+
+  // Download PDF directly
+  const handleDownloadPDF = async () => {
+    try {
+      const customerName = ((quoteData as any)?.customerName || (quoteData as any)?.boatInfo?.ownerName || user?.email || 'Valued Customer') as string;
+      const quoteNumber = `Q-${Date.now()}`;
+
+      const pdfDoc = await generateQuotePDF({
+        ...quoteData,
+        customerName,
+        customerPhone: user?.phone || '',
+        quoteNumber,
+        customerEmail: user?.email,
+        financing: paymentPreference === 'finance' ? {
+          downPayment,
+          term,
+          rate: effectiveRate
+        } : undefined
+      });
+
+      pdfDoc.save(`mercury-quote-${quoteNumber}.pdf`);
+      
+      toast({
+        title: 'PDF Downloaded',
+        description: 'Your quote has been saved to your downloads.',
+      });
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      toast({
+        title: 'Download failed',
+        description: 'Unable to generate PDF. Please try again.',
+        variant: 'destructive',
+      });
+    }
   };
   
   // Send quote via SMS with PDF link and full details
@@ -1000,6 +1082,29 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
         </div>
       </Card>
 
+      {/* Save & Download Options */}
+      <Card className="p-6">
+        <h3 className="text-lg font-semibold mb-4">Save & Share Your Quote</h3>
+        <div className="grid gap-3 sm:grid-cols-2 mb-4">
+          <Button 
+            onClick={handleSaveQuote}
+            variant="outline"
+            className="flex items-center gap-2"
+          >
+            <CheckCircle2 className="w-4 h-4" />
+            {user ? 'Save Quote' : 'Save Quote (Sign Up)'}
+          </Button>
+          <Button 
+            onClick={handleDownloadPDF}
+            variant="outline"
+            className="flex items-center gap-2"
+          >
+            <Download className="w-4 h-4" />
+            Download PDF
+          </Button>
+        </div>
+      </Card>
+
       <Card className="p-6">
         <h3 className="text-lg font-semibold mb-3">Text me this quote</h3>
         <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
@@ -1103,6 +1208,23 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
           </div>
         </div>
       )}
+      
+      {/* Auth Modal */}
+      <AuthModal
+        open={showAuthModal}
+        onOpenChange={setShowAuthModal}
+        mode={authModalMode}
+        title="Save Your Quote"
+        description="Create an account to save your quotes and manage them anytime."
+        onSuccess={() => {
+          toast({
+            title: 'Welcome!',
+            description: 'Your account has been created. You can now save quotes.',
+          });
+          // Auto-save after successful signup
+          setTimeout(handleSaveQuote, 1000);
+        }}
+      />
       
       {/* Mobile Sticky CTA - Hidden on desktop */}
       <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-white/95 backdrop-blur-sm border-t border-gray-200 block md:hidden">

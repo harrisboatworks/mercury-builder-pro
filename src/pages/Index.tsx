@@ -4,9 +4,10 @@ import { StatusIndicator } from '@/components/StatusIndicator';
 import { MobileQuoteForm } from '@/components/ui/mobile-quote-form';
 import { MobileStickyCTA } from '@/components/ui/mobile-sticky-cta';
 import { useQuote } from '@/contexts/QuoteContext';
+import { useAuth } from '@/components/auth/AuthProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ShoppingCart, RotateCcw, ArrowRight } from 'lucide-react';
+import { ShoppingCart, RotateCcw, ArrowRight, User, FileText, LogOut } from 'lucide-react';
 
 const Index = () => {
   const [showQuoteForm, setShowQuoteForm] = useState(false);
@@ -14,6 +15,7 @@ const Index = () => {
   const navigate = useNavigate();
   const hasChecked = useRef(false);
   const { state, isQuoteComplete, getQuoteCompletionStatus, clearQuote } = useQuote();
+  const { user, signOut } = useAuth();
 
   useEffect(() => {
     if (hasChecked.current) return;
@@ -110,9 +112,51 @@ const Index = () => {
 
   return (
     <>
-      <div className="container mx-auto px-4 py-2 flex justify-end">
-        <StatusIndicator />
-      </div>
+      {/* Header with Auth */}
+      <header className="border-b border-border bg-background/95 backdrop-blur">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between">
+            <div className="text-lg font-semibold text-foreground">
+              Harris Boat Works
+            </div>
+            <div className="flex items-center gap-4">
+              <StatusIndicator />
+              {user ? (
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => navigate('/my-quotes')}
+                    className="flex items-center gap-2"
+                  >
+                    <FileText className="w-4 h-4" />
+                    My Quotes
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => signOut()}
+                    className="flex items-center gap-2"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    Sign Out
+                  </Button>
+                </div>
+              ) : (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => navigate('/auth')}
+                  className="flex items-center gap-2"
+                >
+                  <User className="w-4 h-4" />
+                  Sign In
+                </Button>
+              )}
+            </div>
+          </div>
+        </div>
+      </header>
       
       {/* Quote Landing Page */}
       <div className="min-h-screen bg-gradient-to-br from-background via-secondary/30 to-accent/50">
