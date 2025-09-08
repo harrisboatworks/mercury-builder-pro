@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useReducer, useEffect, useCallback, useRef } from 'react';
 import { Motor, BoatInfo, QuoteData } from '@/components/QuoteBuilder';
 
 interface QuoteState {
@@ -98,6 +98,7 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
 
 export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(quoteReducer, initialState);
+  const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -121,27 +122,30 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   }, []);
 
-  // Save to localStorage whenever state changes
+  // Debounced save to localStorage
   useEffect(() => {
-    const dataToSave = {
-      state,
-      timestamp: Date.now()
+    if (state.isLoading) return; // Don't save during initial load
+    
+    if (saveTimeoutRef.current) {
+      clearTimeout(saveTimeoutRef.current);
+    }
+    
+    saveTimeoutRef.current = setTimeout(() => {
+      const dataToSave = {
+        state,
+        timestamp: Date.now()
+      };
+      localStorage.setItem('quoteBuilder', JSON.stringify(dataToSave));
+    }, 500); // 500ms debounce
+    
+    return () => {
+      if (saveTimeoutRef.current) {
+        clearTimeout(saveTimeoutRef.current);
+      }
     };
-    localStorage.setItem('quoteBuilder', JSON.stringify(dataToSave));
   }, [state]);
 
   const isStepAccessible = useCallback((step: number): boolean => {
-    console.log('isStepAccessible check:', { 
-      step, 
-      motor: !!state.motor, 
-      purchasePath: state.purchasePath,
-      boatInfo: !!state.boatInfo,
-      completedSteps: state.completedSteps,
-      hasTradein: state.hasTradein,
-      tradeInInfo: !!state.tradeInInfo,
-      installConfig: !!state.installConfig
-    });
-    
     switch (step) {
       case 1: // Motor selection
         return true;

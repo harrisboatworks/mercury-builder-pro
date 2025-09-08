@@ -11,8 +11,8 @@ export default function PurchasePathPage() {
   const { state, dispatch, isStepAccessible } = useQuote();
 
   useEffect(() => {
-    // Redirect if step not accessible
-    if (!isStepAccessible(2)) {
+    // Redirect if step not accessible with loading protection
+    if (!state.isLoading && !isStepAccessible(2)) {
       navigate('/quote/motor-selection');
       return;
     }
@@ -26,7 +26,7 @@ export default function PurchasePathPage() {
       document.head.appendChild(desc);
     }
     desc.content = 'Choose between professional installation or loose motor purchase for your Mercury outboard.';
-  }, [isStepAccessible, navigate]);
+  }, [state.isLoading, isStepAccessible, navigate]);
 
   const handleStepComplete = (path: 'loose' | 'installed') => {
     dispatch({ type: 'SET_PURCHASE_PATH', payload: path });

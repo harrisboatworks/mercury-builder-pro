@@ -12,20 +12,9 @@ export default function QuoteSummaryPage() {
   const { state, dispatch, isStepAccessible, getQuoteData } = useQuote();
 
   useEffect(() => {
-    console.log('QuoteSummaryPage accessibility check:', {
-      isLoading: state.isLoading,
-      stepAccessible: isStepAccessible(6),
-      motor: !!state.motor,
-      purchasePath: state.purchasePath,
-      boatInfo: !!state.boatInfo,
-      hasTradein: state.hasTradein,
-      tradeInInfo: !!state.tradeInInfo
-    });
-    
     // Add delay and loading check to prevent navigation during state updates
     const checkAccessibility = () => {
       if (!state.isLoading && !isStepAccessible(6)) {
-        console.log('QuoteSummaryPage navigation triggered - step not accessible');
         navigate('/quote/motor-selection');
         return;
       }
@@ -45,7 +34,7 @@ export default function QuoteSummaryPage() {
     desc.content = 'Review your complete Mercury outboard motor quote with pricing, financing options, and bonus offers.';
 
     return () => clearTimeout(timeoutId);
-  }, [state.isLoading, isStepAccessible, navigate, state.motor, state.purchasePath, state.boatInfo, state.hasTradein, state.tradeInInfo]);
+  }, [state.isLoading, isStepAccessible, navigate]);
 
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });

@@ -12,18 +12,9 @@ export default function BoatInfoPage() {
   const { state, dispatch, isStepAccessible } = useQuote();
 
   useEffect(() => {
-    console.log('BoatInfoPage accessibility check:', {
-      isLoading: state.isLoading,
-      stepAccessible: isStepAccessible(3),
-      motor: !!state.motor,
-      purchasePath: state.purchasePath,
-      boatInfo: !!state.boatInfo
-    });
-    
     // Add delay to prevent navigation during state updates
     const checkAccessibility = () => {
       if (!state.isLoading && !isStepAccessible(3)) {
-        console.log('Navigation triggered - step not accessible');
         navigate('/quote/motor-selection');
         return;
       }
@@ -43,7 +34,7 @@ export default function BoatInfoPage() {
     desc.content = 'Provide your boat details for accurate motor compatibility and installation requirements.';
 
     return () => clearTimeout(timeoutId);
-  }, [state.isLoading, isStepAccessible, navigate, state.motor, state.purchasePath, state.boatInfo]);
+  }, [state.isLoading, isStepAccessible, navigate]);
 
   const handleStepComplete = (boatInfo: BoatInfo) => {
     dispatch({ type: 'SET_BOAT_INFO', payload: boatInfo });
