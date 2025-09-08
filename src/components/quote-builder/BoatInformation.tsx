@@ -32,6 +32,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     length: '',
     currentMotorBrand: '',
     currentHp: 0,
+    currentMotorYear: undefined,
     serialNumber: '',
     controlType: 'side-mount-external',
     shaftLength: '',
@@ -826,19 +827,39 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                     </div>
 
                     {boatInfo.currentMotorBrand && boatInfo.currentMotorBrand !== 'No Current Motor' && (
-                      <div className="space-y-2">
-                        <Label>Current Motor Horsepower (HP)</Label>
-                        <Input
-                          type="number"
-                          inputMode="numeric"
-                          min={1}
+                      <>
+                        <div className="space-y-2">
+                          <Label>Current Motor Horsepower (HP)</Label>
+                          <Input
+                            type="number"
+                            inputMode="numeric"
+                            min={1}
                           max={600}
                           placeholder="e.g., 115"
                           value={boatInfo.currentHp || ''}
                           onChange={(e) => setBoatInfo(prev => ({ ...prev, currentHp: parseInt(e.target.value || '0', 10) || 0 }))}
                         />
-                        <p className="text-xs text-muted-foreground">We'll carry this into your trade-in details automatically.</p>
-                      </div>
+                         <p className="text-xs text-muted-foreground">We'll carry this into your trade-in details automatically.</p>
+                       </div>
+
+                       <div className="space-y-2">
+                         <Label>Current Motor Year</Label>
+                         <Select 
+                           value={boatInfo.currentMotorYear?.toString() || ''} 
+                           onValueChange={(value) => setBoatInfo(prev => ({ ...prev, currentMotorYear: parseInt(value) }))}
+                         >
+                           <SelectTrigger>
+                             <SelectValue placeholder="Select year" />
+                           </SelectTrigger>
+                           <SelectContent>
+                             {Array.from({ length: new Date().getFullYear() - 1989 }, (_, i) => new Date().getFullYear() - i).map(year => (
+                               <SelectItem key={year} value={year.toString()}>{year}</SelectItem>
+                             ))}
+                           </SelectContent>
+                         </Select>
+                         <p className="text-xs text-muted-foreground">Helps us provide more accurate trade-in estimates.</p>
+                       </div>
+                      </>
                     )}
 
 
@@ -1027,12 +1048,13 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
               <Card className="p-6 animate-fade-in">
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold">Have a motor to trade?</h3>
-                  <TradeInValuation 
-                    tradeInInfo={tradeInInfo}
-                    onTradeInChange={setTradeInInfo}
-                    currentMotorBrand={boatInfo.currentMotorBrand}
-                    currentHp={boatInfo.currentHp}
-                  />
+                   <TradeInValuation 
+                     tradeInInfo={tradeInInfo}
+                     onTradeInChange={setTradeInInfo}
+                     currentMotorBrand={boatInfo.currentMotorBrand}
+                     currentHp={boatInfo.currentHp}
+                     currentMotorYear={boatInfo.currentMotorYear}
+                   />
                 </div>
               </Card>
             )}

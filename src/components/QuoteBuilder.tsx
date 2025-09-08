@@ -67,6 +67,7 @@ export interface BoatInfo {
   length: string;
   currentMotorBrand: string;
   currentHp: number;
+  currentMotorYear?: number;
   serialNumber: string;
   controlType: string;
   controlsOption?: 'none' | 'adapter' | 'compatible';

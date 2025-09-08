@@ -17,9 +17,10 @@ interface TradeInValuationProps {
   onAutoAdvance?: () => void;
   currentMotorBrand?: string;
   currentHp?: number;
+  currentMotorYear?: number;
 }
 
-export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp }: TradeInValuationProps) => {
+export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp, currentMotorYear }: TradeInValuationProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
 
@@ -99,8 +100,18 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => {
-                  onTradeInChange({ ...tradeInInfo, hasTradeIn: true });
-                }}
+                   // Auto-populate from current motor details if available
+                   const autoPopulatedInfo = {
+                     ...tradeInInfo,
+                     hasTradeIn: true,
+                     ...(currentMotorBrand && currentMotorBrand !== 'No Current Motor' && {
+                       brand: currentMotorBrand,
+                       horsepower: currentHp || 0,
+                       year: currentMotorYear || 0
+                     })
+                   };
+                   onTradeInChange(autoPopulatedInfo);
+                 }}
                 aria-pressed={tradeInInfo.hasTradeIn}
                 className={`relative p-6 border-2 rounded-3xl transition-all bg-white text-left group ${tradeInInfo.hasTradeIn ? 'border-blue-500 shadow-2xl' : 'border-gray-200 hover:border-blue-500 hover:shadow-2xl'}`}
                 type="button"
@@ -141,6 +152,17 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
         {tradeInInfo.hasTradeIn && (
           <div className="space-y-6 animate-fade-in">
+            
+            {/* Pre-filled notice */}
+            {currentMotorBrand && currentMotorBrand !== 'No Current Motor' && (
+              <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+                <div className="flex items-center gap-2 text-blue-700 dark:text-blue-300">
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span className="text-sm font-medium">Pre-filled from your current motor details</span>
+                </div>
+                <p className="text-xs text-blue-600 dark:text-blue-400 mt-1">You can adjust any details below if needed.</p>
+              </div>
+            )}
             
             {/* Trade-In Details */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

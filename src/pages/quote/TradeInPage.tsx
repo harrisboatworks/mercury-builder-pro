@@ -104,10 +104,11 @@ export default function TradeInPage() {
         <div className="space-y-4">
           <TradeInValuation 
             tradeInInfo={tradeInInfo}
-            onTradeInChange={handleTradeInChange}
-            onAutoAdvance={handleComplete}
-            currentMotorBrand={state.boatInfo?.currentMotorBrand || 'Mercury'}
-            currentHp={state.boatInfo?.currentHp || (typeof state.motor?.hp === 'string' ? parseInt(state.motor.hp, 10) : state.motor?.hp)}
+          onTradeInChange={handleTradeInChange}
+          onAutoAdvance={handleComplete}
+          currentMotorBrand={state.boatInfo?.currentMotorBrand || 'Mercury'}
+          currentHp={state.boatInfo?.currentHp || (typeof state.motor?.hp === 'string' ? parseInt(state.motor.hp, 10) : state.motor?.hp)}
+          currentMotorYear={state.boatInfo?.currentMotorYear}
           />
         </div>
       </div>
