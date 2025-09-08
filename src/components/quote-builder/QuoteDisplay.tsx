@@ -772,15 +772,6 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
           )}
         </div>
 
-        {/* Warranty and Bonus Offers */}
-        {hasWarrantyBonus && (
-          <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
-            <h4 className="font-semibold text-blue-900 mb-2">🛡️ Extended Warranty Included</h4>
-            <p className="text-sm text-blue-800">
-              Your motor includes an extended warranty at no extra cost!
-            </p>
-          </div>
-        )}
 
         {/* Financing Information Modal */}
         <Dialog open={showFinancingInfoModal} onOpenChange={setShowFinancingInfoModal}>
