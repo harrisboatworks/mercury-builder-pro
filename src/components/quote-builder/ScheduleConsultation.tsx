@@ -84,6 +84,62 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
            (Math.pow(1 + monthlyRate, numPayments) - 1);
   };
 
+  const calculateAccessoryCosts = (motor: any, boatDetails: any) => {
+    const costs = {
+      controls: 0,
+      controlAdapter: 0,
+      battery: 0,
+      propeller: 0,
+      installation: 500, // Default installation cost
+      waterTest: 0,
+    };
+    const hp = typeof motor?.hp === 'string' ? parseInt(motor.hp) : (motor?.hp || 0);
+    const model = String(motor?.model || '').toUpperCase();
+
+    // Controls logic with adapter option
+    if (hp >= 40) {
+      switch (boatDetails?.controlsOption) {
+        case 'none':
+          costs.controls = 1200; break;
+        case 'adapter':
+          costs.controlAdapter = 125; break;
+        case 'compatible':
+          costs.controls = 0; break;
+      }
+    }
+
+    // Battery - Required for electric start
+    const isElectricStart = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
+    if (isElectricStart) {
+      costs.battery = boatDetails?.hasBattery ? 0 : 179.99;
+    }
+
+    // Propeller - Required for 25HP+
+    if (hp >= 25) {
+      if (boatDetails?.hasCompatibleProp) {
+        costs.propeller = 0;
+      } else if (hp >= 150) {
+        costs.propeller = 950; // Stainless steel
+      } else {
+        costs.propeller = 350; // Aluminum
+      }
+    }
+
+    return costs;
+  };
+
+  const motorPrice = (quoteData.motor?.salePrice ?? quoteData.motor?.basePrice ?? quoteData.motor?.price) || 0;
+  const accessoryCosts = calculateAccessoryCosts(quoteData.motor, quoteData.boatInfo);
+  const accessoriesSubtotal = Math.round((Object.values(accessoryCosts).reduce((sum, v) => sum + (v || 0), 0)) * 100) / 100;
+  
+  const hasTradeIn = quoteData.boatInfo?.tradeIn?.hasTradeIn || false;
+  const tradeInValue = quoteData.boatInfo?.tradeIn?.estimatedValue || 0;
+  
+  const subtotalBeforeTrade = Math.round((motorPrice + accessoriesSubtotal) * 100) / 100;
+  const subtotalAfterTrade = Math.round((subtotalBeforeTrade - (hasTradeIn ? tradeInValue : 0)) * 100) / 100;
+  const hst = Math.round((subtotalAfterTrade * 0.13) * 100) / 100;
+  const totalCashPrice = Math.round((subtotalAfterTrade + hst) * 100) / 100;
+
   const calculateTotalCost = () => {
     const monthlyPayment = calculateMonthlyPayment();
     return (monthlyPayment * quoteData.financing.term) + quoteData.financing.downPayment;
@@ -241,27 +297,41 @@ export const ScheduleConsultation = ({ quoteData, onBack }: ScheduleConsultation
                   <h4 className="font-medium">{quoteData.motor?.model}</h4>
                   <p className="text-sm text-muted-foreground">{quoteData.motor?.hp}HP</p>
                 </div>
-                <p className="font-semibold">${quoteData.motor?.price.toLocaleString()}</p>
+                <p className="font-semibold">${motorPrice.toLocaleString()}</p>
               </div>
 
-              {quoteData.financing.downPayment > 0 && (
+              {accessoriesSubtotal > 0 && (
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Down Payment</span>
-                  <span>-${quoteData.financing.downPayment.toLocaleString()}</span>
+                  <span className="text-muted-foreground">Accessories</span>
+                  <span>${accessoriesSubtotal.toLocaleString()}</span>
                 </div>
               )}
 
-              <div className="border-t pt-4">
-                <div className="flex justify-between font-semibold text-lg">
-                  <span>Financed Amount</span>
-                  <span>${((quoteData.motor?.price || 0) - quoteData.financing.downPayment).toLocaleString()}</span>
+              {hasTradeIn && (
+                <div className="flex justify-between text-green-600">
+                  <span className="text-muted-foreground">Trade-in Credit</span>
+                  <span>-${tradeInValue.toLocaleString()}</span>
                 </div>
-                <p className="text-sm text-muted-foreground mt-1">
-                  {quoteData.financing.term} months at {quoteData.financing.rate}% APR
-                </p>
+              )}
+
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">Subtotal</span>
+                <span>${subtotalAfterTrade.toLocaleString()}</span>
               </div>
 
-              {quoteData.hasTradein && (
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">HST (13%)</span>
+                <span>${hst.toLocaleString()}</span>
+              </div>
+
+              <div className="border-t pt-4">
+                <div className="flex justify-between font-semibold text-lg">
+                  <span>Total Price</span>
+                  <span>${totalCashPrice.toLocaleString()}</span>
+                </div>
+              </div>
+
+              {hasTradeIn && (
                 <Alert className="border-orange-500 bg-orange-50 dark:bg-orange-950/20">
                   <AlertDescription>
                     Trade-in value will be assessed during consultation
