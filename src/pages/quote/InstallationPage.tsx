@@ -11,6 +11,12 @@ export default function InstallationPage() {
   const { state, dispatch, isStepAccessible } = useQuote();
 
   useEffect(() => {
+    // Add defensive checks
+    if (!state || !state.motor) {
+      navigate('/quote/motor-selection');
+      return;
+    }
+    
     // Only accessible for installed path
     if (!isStepAccessible(5) || state.purchasePath !== 'installed') {
       navigate('/quote/motor-selection');
@@ -48,10 +54,16 @@ export default function InstallationPage() {
           </Button>
         </div>
         
-        <InstallationConfig 
-          selectedMotor={state.motor!}
-          onComplete={handleStepComplete}
-        />
+        {state.motor ? (
+          <InstallationConfig 
+            selectedMotor={state.motor}
+            onComplete={handleStepComplete}
+          />
+        ) : (
+          <div className="text-center py-8">
+            <p>Loading installation configuration...</p>
+          </div>
+        )}
       </div>
     </QuoteLayout>
   );
