@@ -75,6 +75,26 @@ export const gaugeChoices = [
   }
 ];
 
+// Tiller motor mounting options
+export const tillerMountingChoices = [
+  {
+    id: "transom_bolt",
+    label: "Transom Bolt Mount",
+    value: "transom_bolt",
+    image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=400&h=300&fit=crop",
+    helper: "Permanent bolt-through mounting",
+    xpReward: 15
+  },
+  {
+    id: "clamp_on",
+    label: "Clamp-On Mount",
+    value: "clamp_on", 
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc61?w=400&h=300&fit=crop",
+    helper: "Removable clamp mounting",
+    xpReward: 10
+  }
+];
+
 // Fun achievement milestones
 export const achievements = [
   { xp: 50, title: "Gear Head", icon: "🔧" },
