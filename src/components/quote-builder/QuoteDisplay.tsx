@@ -34,6 +34,7 @@ interface QuoteDisplayProps {
 }
 
 export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, onEarnXP, purchasePath }: QuoteDisplayProps) => {
+  const FINANCING_MINIMUM = 5000;
   const [downPayment, setDownPayment] = useState(0);
   const [term, setTerm] = useState(60);
   const [showTermComparison, setShowTermComparison] = useState(false);
@@ -344,6 +345,11 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   };
 
   const handlePaymentSelection = (type: 'cash' | 'finance') => {
+    // Prevent financing for motors under $5,000
+    if (type === 'finance' && motorPrice < FINANCING_MINIMUM) {
+      return;
+    }
+    
     setPaymentPreference(type);
     if (type === 'cash') triggerCashCelebration();
     else triggerFinanceCelebration();
@@ -659,51 +665,79 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
         <div className="mt-8 space-y-6">
           <h3 className="text-lg font-semibold text-center">Choose Your Payment Method</h3>
           
-          <div className="grid gap-4 md:grid-cols-2">
-            {/* Cash Payment */}
-            <Card 
-              className={`p-4 cursor-pointer transition-all border-2 ${
-                paymentPreference === 'cash' ? 'border-green-500 bg-green-50' : 'border-border hover:border-green-300'
-              }`}
-              onClick={() => handlePaymentSelection('cash')}
-            >
-              <div className="text-center space-y-2">
-                <DollarSign className="w-8 h-8 mx-auto text-green-600" />
-                <h4 className="font-semibold">Pay Cash</h4>
-                <p className="text-2xl font-bold text-green-600">{formatCurrency(totalCashPrice)}</p>
-                <p className="text-sm text-muted-foreground">
-                  Save {formatCurrency(cashSavings)} in interest!
-                </p>
-              </div>
-            </Card>
+          {motorPrice >= FINANCING_MINIMUM ? (
+            <div className="grid gap-4 md:grid-cols-2">
+              {/* Cash Payment */}
+              <Card 
+                className={`p-4 cursor-pointer transition-all border-2 ${
+                  paymentPreference === 'cash' ? 'border-green-500 bg-green-50' : 'border-border hover:border-green-300'
+                }`}
+                onClick={() => handlePaymentSelection('cash')}
+              >
+                <div className="text-center space-y-2">
+                  <DollarSign className="w-8 h-8 mx-auto text-green-600" />
+                  <h4 className="font-semibold">Pay Cash</h4>
+                  <p className="text-2xl font-bold text-green-600">{formatCurrency(totalCashPrice)}</p>
+                  <p className="text-sm text-muted-foreground">
+                    Save {formatCurrency(cashSavings)} in interest!
+                  </p>
+                </div>
+              </Card>
 
-            {/* Finance Payment */}
-            <Card 
-              className={`p-4 cursor-pointer transition-all border-2 ${
-                paymentPreference === 'finance' ? 'border-blue-500 bg-blue-50' : 'border-border hover:border-blue-300'
-              }`}
-              onClick={() => handlePaymentSelection('finance')}
-            >
-              <div className="text-center space-y-2">
-                <Calculator className="w-8 h-8 mx-auto text-blue-600" />
-                <h4 className="font-semibold">Finance</h4>
-                <p className="text-2xl font-bold text-blue-600">
-                  {formatCurrency(payments.monthly)}/mo
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {effectiveRate}% APR for {term} months
-                </p>
-                {activePromo && (
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800">
-                    Promotional Rate!
-                  </Badge>
-                )}
+              {/* Finance Payment */}
+              <Card 
+                className={`p-4 cursor-pointer transition-all border-2 ${
+                  paymentPreference === 'finance' ? 'border-blue-500 bg-blue-50' : 'border-border hover:border-blue-300'
+                }`}
+                onClick={() => handlePaymentSelection('finance')}
+              >
+                <div className="text-center space-y-2">
+                  <Calculator className="w-8 h-8 mx-auto text-blue-600" />
+                  <h4 className="font-semibold">Finance</h4>
+                  <p className="text-2xl font-bold text-blue-600">
+                    {formatCurrency(payments.monthly)}/mo
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {effectiveRate}% APR for {term} months
+                  </p>
+                  {activePromo && (
+                    <Badge variant="secondary" className="bg-blue-100 text-blue-800">
+                      Promotional Rate!
+                    </Badge>
+                  )}
+                </div>
+              </Card>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {/* Cash Payment Only */}
+              <div className="max-w-md mx-auto">
+                <Card 
+                  className={`p-4 cursor-pointer transition-all border-2 ${
+                    paymentPreference === 'cash' ? 'border-green-500 bg-green-50' : 'border-border hover:border-green-300'
+                  }`}
+                  onClick={() => handlePaymentSelection('cash')}
+                >
+                  <div className="text-center space-y-2">
+                    <DollarSign className="w-8 h-8 mx-auto text-green-600" />
+                    <h4 className="font-semibold">Pay Cash</h4>
+                    <p className="text-2xl font-bold text-green-600">{formatCurrency(totalCashPrice)}</p>
+                    <p className="text-sm text-muted-foreground">
+                      Best price for this motor
+                    </p>
+                  </div>
+                </Card>
               </div>
-            </Card>
-          </div>
+              
+              {/* Financing Not Available Notice */}
+              <div className="text-center text-sm text-muted-foreground">
+                Financing available on motors ${FINANCING_MINIMUM.toLocaleString()}+
+              </div>
+            </div>
+          )}
 
           {/* Financing Details */}
-          {paymentPreference === 'finance' && (
+          {paymentPreference === 'finance' && motorPrice >= FINANCING_MINIMUM && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
