@@ -285,7 +285,7 @@ const getTransomRequirement = (motor: Motor) => {
   
   // Check model codes
   if (/\bXXL\b/.test(model)) return '30" (XXL) transom';
-  if (/\bXL\b|EXLPT/.test(model)) return '25" (XL) transom';
+  if (/XL|EXLPT|EXLHPT/.test(model)) return '25" (XL) transom';
   if (/\bL\b|ELPT|MLH|LPT|\bEL\b/.test(model)) return '20" (L) transom';
   if (/\bS\b/.test(model)) return '15" (S) transom';
   
@@ -368,7 +368,7 @@ const normalizeSpecifications = (raw: any, context: {
     if (/\bEL|\bEH|\bE\b|EFI/.test(model)) out.startType = out.startType || 'Electric';
   }
   if (!out.shaftLength) {
-    if (/\bXXL\b/.test(model)) out.shaftLength = '30"';else if (/\bXL\b/.test(model)) out.shaftLength = '25"';else if (/\bL\b/.test(model)) out.shaftLength = '20"';else if (/\bS\b/.test(model)) out.shaftLength = '15"';
+    if (/\bXXL\b/.test(model)) out.shaftLength = '30"';else if (/XL|EXLPT|EXLHPT/.test(model)) out.shaftLength = '25"';else if (/\bL\b/.test(model)) out.shaftLength = '20"';else if (/\bS\b/.test(model)) out.shaftLength = '15"';
   }
   if (!out.fuelSystem && /EFI/.test(model)) out.fuelSystem = 'EFI';
 
