@@ -144,7 +144,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
         setBoatInfo(prev => ({ ...prev, length: bucket }));
       }
     }
-  }, [boatInfo.type, lengthFeet, boatInfo.length]);
+  }, [boatInfo.type, lengthFeet]);
 
   // Auto-scroll to length input when boat type is selected
   useEffect(() => {
