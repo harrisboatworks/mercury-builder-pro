@@ -5,34 +5,58 @@ export function ScrollToTop() {
   const location = useLocation();
 
   useEffect(() => {
-    // Add a small delay to ensure DOM is fully rendered after route change
+    // Increase delay to ensure complex components are fully rendered
     const timer = setTimeout(() => {
-      // Calculate dynamic header height
+      // Calculate dynamic header height with better element detection
       const header = document.querySelector('header') as HTMLElement;
-      const trustBar = (document.querySelector('[class*="trust"]') || document.querySelector('.bg-slate-50')) as HTMLElement;
-      const progressBar = (document.querySelector('[class*="progress"]') || document.querySelector('.mb-8')) as HTMLElement;
+      const trustBar = (
+        document.querySelector('[class*="trust"]') || 
+        document.querySelector('.bg-slate-50') ||
+        document.querySelector('[class*="bg-slate-50"]')
+      ) as HTMLElement;
+      const progressBar = (
+        document.querySelector('[class*="progress"]') || 
+        document.querySelector('.mb-8') ||
+        document.querySelector('[class*="QuoteProgress"]')
+      ) as HTMLElement;
       
       let headerHeight = 0;
       if (header) headerHeight += header.offsetHeight;
       if (trustBar) headerHeight += trustBar.offsetHeight;
       if (progressBar) headerHeight += progressBar.offsetHeight;
       
-      // Find the main content heading (h1, h2) within main
+      // Enhanced heading detection - look for main content headings
       const mainContent = document.querySelector('main');
-      const stepHeading = mainContent?.querySelector('h1, h2, [class*="text-3xl"], [class*="text-2xl"]');
+      const stepHeading = mainContent?.querySelector(
+        'h1, h2, ' +
+        '[class*="text-3xl"], [class*="text-2xl"], ' +
+        '[class*="font-bold"]:not([class*="text-sm"]):not([class*="text-base"]), ' +
+        '.text-3xl, .text-2xl, ' +
+        // Specifically look for headings that might contain "Great Choice!" or similar
+        'div:has(> h1), div:has(> h2), ' +
+        'div[class*="text-3xl"]:first-of-type, div[class*="text-2xl"]:first-of-type'
+      );
       
-      let scrollTarget = headerHeight + 80; // Default with padding
+      let scrollTarget = headerHeight + 60; // Default with reduced padding
       
       if (stepHeading) {
-        // Get the heading's position and subtract some padding for optimal viewing
+        // Get the heading's position and calculate optimal viewing position
         const headingRect = stepHeading.getBoundingClientRect();
         const currentScrollY = window.scrollY;
         const headingTop = headingRect.top + currentScrollY;
         
-        // Position heading with breathing room (150-200px on desktop, 100-120px on mobile)
+        // Optimized padding for better positioning - heading should appear "just above" the fold
         const isMobile = window.innerWidth < 768;
-        const padding = isMobile ? 110 : 175;
+        const padding = isMobile ? 80 : 120; // Reduced padding for tighter positioning
         scrollTarget = Math.max(0, headingTop - headerHeight - padding);
+        
+        console.log('ScrollToTop Debug:', {
+          headingText: stepHeading.textContent?.substring(0, 50),
+          headerHeight,
+          headingTop,
+          padding,
+          scrollTarget
+        });
       }
       
       // Smooth scroll to the calculated position
@@ -50,7 +74,7 @@ export function ScrollToTop() {
           mainContent.removeAttribute('tabindex');
         }, 100);
       }
-    }, 50);
+    }, 100);
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
