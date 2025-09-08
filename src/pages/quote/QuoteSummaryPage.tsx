@@ -65,6 +65,7 @@ export default function QuoteSummaryPage() {
           quoteData={quoteData}
           onStepComplete={handleStepComplete} 
           onBack={handleBack}
+          purchasePath={state.purchasePath}
         />
         
         {/* Bonus offers section under the quote details */}
