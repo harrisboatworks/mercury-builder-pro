@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
 import { SecurityManager } from '@/lib/securityMiddleware';
+import { SessionTimeout } from './SessionTimeout';
 
 interface AuthContextType {
   user: User | null;
@@ -108,5 +109,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     signOut
   };
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={value}>
+      {children}
+      <SessionTimeout />
+    </AuthContext.Provider>
+  );
 };
