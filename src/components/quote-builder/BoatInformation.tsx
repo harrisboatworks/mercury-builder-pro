@@ -212,6 +212,9 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
     return match ? { min: parseFloat(match[1]), max: parseFloat(match[2]) } : null;
   };
 
+  // Derived values
+  const hp = typeof selectedMotor?.hp === 'string' ? parseInt(String(selectedMotor?.hp)) : (selectedMotor?.hp || 0);
+
   // Check if motor HP fits within boat type's recommended range
   const getMotorBoatCompatibility = () => {
     if (!selectedMotor || !boatInfo.type) return null;
@@ -267,9 +270,6 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
 
   const compatibility = getCompatibilityMessage();
   const isNonMercuryBrand = !!boatInfo.currentMotorBrand && boatInfo.currentMotorBrand !== 'Mercury' && boatInfo.currentMotorBrand !== 'No Current Motor';
-
-  // Derived values and UI helpers
-  const hp = typeof selectedMotor?.hp === 'string' ? parseInt(String(selectedMotor?.hp)) : (selectedMotor?.hp || 0);
   const steps = boatInfo.type === 'motor-only'
     ? (showTradeIn
       ? [{ label: 'Specs' }, { label: 'Trade-In (Optional)' }, { label: 'Review' }]
