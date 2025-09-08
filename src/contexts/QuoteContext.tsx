@@ -98,7 +98,7 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
     case 'SET_LOADING':
       return { ...state, isLoading: action.payload };
     case 'RESET_QUOTE':
-      return initialState;
+      return { ...initialState, isLoading: false };
     default:
       return state;
   }
@@ -111,23 +111,47 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   // Load from localStorage on mount
   useEffect(() => {
-    const saved = localStorage.getItem('quoteBuilder');
-    if (saved) {
-      try {
-        const parsedData = JSON.parse(saved);
-        // Check if data is not too old (24 hours)
-        if (parsedData.timestamp && Date.now() - parsedData.timestamp < 24 * 60 * 60 * 1000) {
-          dispatch({ type: 'LOAD_FROM_STORAGE', payload: parsedData.state });
-        } else {
+    console.log('🔄 QuoteContext: Starting localStorage load...');
+    
+    // Safety timeout to prevent infinite loading
+    const loadingTimeout = setTimeout(() => {
+      console.warn('⚠️ QuoteContext: Loading timeout reached, forcing isLoading: false');
+      dispatch({ type: 'SET_LOADING', payload: false });
+    }, 5000);
+
+    try {
+      const saved = localStorage.getItem('quoteBuilder');
+      console.log('📦 QuoteContext: localStorage data found:', !!saved);
+      
+      if (saved) {
+        try {
+          const parsedData = JSON.parse(saved);
+          console.log('✅ QuoteContext: Data parsed successfully');
+          
+          // Check if data is not too old (24 hours)
+          if (parsedData.timestamp && Date.now() - parsedData.timestamp < 24 * 60 * 60 * 1000) {
+            console.log('✅ QuoteContext: Data is fresh, loading state');
+            dispatch({ type: 'LOAD_FROM_STORAGE', payload: parsedData.state });
+          } else {
+            console.log('⏰ QuoteContext: Data is stale, removing');
+            localStorage.removeItem('quoteBuilder');
+            dispatch({ type: 'SET_LOADING', payload: false });
+          }
+        } catch (parseError) {
+          console.error('❌ QuoteContext: JSON parse error:', parseError);
           localStorage.removeItem('quoteBuilder');
           dispatch({ type: 'SET_LOADING', payload: false });
         }
-      } catch (error) {
-        localStorage.removeItem('quoteBuilder');
+      } else {
+        console.log('📭 QuoteContext: No saved data found');
         dispatch({ type: 'SET_LOADING', payload: false });
       }
-    } else {
+    } catch (error) {
+      console.error('❌ QuoteContext: Unexpected error during load:', error);
       dispatch({ type: 'SET_LOADING', payload: false });
+    } finally {
+      clearTimeout(loadingTimeout);
+      console.log('🏁 QuoteContext: Load process completed');
     }
   }, []);
 
