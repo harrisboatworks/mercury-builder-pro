@@ -139,8 +139,14 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   // Get included items for this motor
   const getIncludedItems = (motor: any) => {
     const hp = typeof motor?.hp === 'string' ? parseInt(motor.hp) : (motor?.hp || 0);
-    const isTiller = motor?.model?.toLowerCase().includes('tiller') || 
-      motor?.engine_type?.toLowerCase().includes('tiller');
+    // Mercury uses abbreviations for tiller motors: MH, MLH, EH, ELH, ELPT, ELHPT, EXLHPT, EXLPT, EXLH
+    const tillerAbbreviations = ['mh', 'mlh', 'eh', 'elh', 'elpt', 'elhpt', 'exlhpt', 'exlpt', 'exlh'];
+    const modelLower = motor?.model?.toLowerCase() || '';
+    const engineTypeLower = motor?.engine_type?.toLowerCase() || '';
+    
+    const isTiller = modelLower.includes('tiller') || 
+      engineTypeLower.includes('tiller') ||
+      tillerAbbreviations.some(abbr => modelLower.includes(` ${abbr}`) || modelLower.endsWith(abbr));
     
     const items: Array<{ name: string; value: number; included: boolean }> = [];
     
