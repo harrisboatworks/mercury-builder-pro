@@ -884,70 +884,44 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                         )}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 control-options">
                           {isNonMercuryBrand ? (
-                            <label className="option-card rounded-md border-2 border-primary bg-primary/5 p-3">
-                              <input
-                                type="radio"
-                                name="controls"
-                                value="none"
-                                className="mr-2"
-                                checked={true}
-                                readOnly
-                              />
-                              <div>
+                            <div className="rounded-lg border-2 border-primary bg-primary/5 p-4">
+                              <div className="text-left">
                                 <strong className="block">I need new controls</strong>
                                 <span className="text-sm text-muted-foreground">+$1,200</span>
                                 <small className="block text-xs text-muted-foreground">Required for non‑Mercury controls</small>
                               </div>
-                            </label>
+                            </div>
                           ) : (
                             <>
-                              <label className="option-card rounded-md border-2 border-border bg-background p-3 cursor-pointer">
-                                <input
-                                  type="radio"
-                                  name="controls"
-                                  value="none"
-                                  className="mr-2"
-                                  checked={boatInfo.controlsOption === 'none'}
-                                  onChange={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'none' }))}
-                                />
-                                <div>
-                                  <strong className="block">I need new controls</strong>
-                                  <span className="text-sm text-muted-foreground">+$1,200</span>
-                                  <small className="block text-xs text-muted-foreground">Complete remote control kit</small>
-                                </div>
-                              </label>
+                              <Button
+                                variant={boatInfo.controlsOption === 'none' ? 'default' : 'outline'}
+                                className="h-auto p-4 text-left justify-start flex-col items-start"
+                                onClick={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'none' }))}
+                              >
+                                <strong className="block">I need new controls</strong>
+                                <span className="text-sm opacity-70">+$1,200</span>
+                                <small className="block text-xs opacity-60">Complete remote control kit</small>
+                              </Button>
 
-                              <label className="option-card rounded-md border-2 border-primary bg-primary/5 p-3 cursor-pointer">
-                                <input
-                                  type="radio"
-                                  name="controls"
-                                  value="adapter"
-                                  className="mr-2"
-                                  checked={boatInfo.controlsOption === 'adapter'}
-                                  onChange={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'adapter' }))}
-                                />
-                                <div>
-                                  <strong className="block">I have Mercury controls (2004 or newer)</strong>
-                                  <span className="text-sm text-primary">+$125 (Save $1,075!)</span>
-                                  <small className="block text-xs text-muted-foreground">We'll adapt your existing controls</small>
-                                </div>
-                              </label>
+                              <Button
+                                variant={boatInfo.controlsOption === 'adapter' ? 'default' : 'outline'}
+                                className="h-auto p-4 text-left justify-start flex-col items-start"
+                                onClick={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'adapter' }))}
+                              >
+                                <strong className="block">I have Mercury controls (2004 or newer)</strong>
+                                <span className="text-sm text-primary">+$125 (Save $1,075!)</span>
+                                <small className="block text-xs opacity-60">We'll adapt your existing controls</small>
+                              </Button>
 
-                              <label className="option-card rounded-md border-2 border-border bg-background p-3 cursor-pointer">
-                                <input
-                                  type="radio"
-                                  name="controls"
-                                  value="compatible"
-                                  className="mr-2"
-                                  checked={boatInfo.controlsOption === 'compatible'}
-                                  onChange={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'compatible' }))}
-                                />
-                                <div>
-                                  <strong className="block">I have compatible controls ready</strong>
-                                  <span className="text-sm text-muted-foreground">No charge</span>
-                                  <small className="block text-xs text-muted-foreground">Already have the right setup</small>
-                                </div>
-                              </label>
+                              <Button
+                                variant={boatInfo.controlsOption === 'compatible' ? 'default' : 'outline'}
+                                className="h-auto p-4 text-left justify-start flex-col items-start"
+                                onClick={() => setBoatInfo(prev => ({ ...prev, controlsOption: 'compatible' }))}
+                              >
+                                <strong className="block">I have compatible controls ready</strong>
+                                <span className="text-sm opacity-70">No charge</span>
+                                <small className="block text-xs opacity-60">Already have the right setup</small>
+                              </Button>
                             </>
                           )}
                         </div>
