@@ -29,9 +29,9 @@ export function ScrollToTop() {
         const currentScrollY = window.scrollY;
         const headingTop = headingRect.top + currentScrollY;
         
-        // Position heading with breathing room (80px on desktop, 40px on mobile)
+        // Position heading with breathing room (150-200px on desktop, 100-120px on mobile)
         const isMobile = window.innerWidth < 768;
-        const padding = isMobile ? 40 : 80;
+        const padding = isMobile ? 110 : 175;
         scrollTarget = Math.max(0, headingTop - headerHeight - padding);
       }
       
