@@ -1034,7 +1034,7 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
                               )}
                             </div>
                           )}
-                          {hp >= 25 && (
+                          {hp >= 25 && boatInfo.currentMotorBrand === 'Mercury' && (
                             <div className="accessory-item">
                               <label className="flex items-start gap-2">
                                 <input
