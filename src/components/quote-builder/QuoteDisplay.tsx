@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle, CreditCard, Image } from 'lucide-react';
+import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle, CreditCard, Image, Check } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, normalizeBrand } from '@/lib/trade-valuation';
 
@@ -136,6 +136,58 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
 
   const motorPrice = (quoteData.motor?.salePrice ?? quoteData.motor?.basePrice ?? quoteData.motor?.price) || 0;
   
+  // Get included items for this motor
+  const getIncludedItems = (motor: any) => {
+    const hp = typeof motor?.hp === 'string' ? parseInt(motor.hp) : (motor?.hp || 0);
+    const isTiller = motor?.model?.toLowerCase().includes('tiller') || 
+      motor?.engine_type?.toLowerCase().includes('tiller');
+    
+    const items: Array<{ name: string; value: number; included: boolean }> = [];
+    
+    if (isTiller) {
+      // Internal-only tillers (2.5HP and 3.5HP)
+      const isInternalOnlyTiller = (hp === 2.5 || hp === 3.5);
+      // Small tillers (4-6HP)
+      const isSmallTiller = hp <= 6 && !isInternalOnlyTiller;
+      // Medium tillers (9.9-20HP)
+      const isMediumTiller = hp >= 9.9 && hp <= 20;
+      // Large tillers (25HP+)
+      const isLargeTiller = hp >= 25;
+      
+      if (isInternalOnlyTiller) {
+        items.push(
+          { name: 'Built-in Internal Fuel System', value: 150, included: true },
+          { name: 'Propeller', value: 300, included: true }
+        );
+      } else if (isSmallTiller) {
+        items.push(
+          { name: 'Internal Fuel Tank', value: 100, included: true },
+          { name: 'Propeller', value: 300, included: true }
+        );
+      } else if (isMediumTiller) {
+        items.push(
+          { name: 'Propeller', value: 300, included: true },
+          { name: '12L External Fuel Tank & Hose', value: 199, included: true },
+          { name: 'Free Preparation Service', value: 99, included: true }
+        );
+      } else if (isLargeTiller) {
+        items.push(
+          { name: 'Propeller', value: 350, included: true }
+        );
+      }
+    } else {
+      // Non-tiller motors - check if they get propellers
+      if (hp >= 25) {
+        items.push({ name: 'Propeller', value: hp >= 150 ? 950 : 350, included: true });
+      }
+    }
+    
+    return items;
+  };
+
+  const includedItems = getIncludedItems(quoteData.motor);
+  const totalIncludedValue = includedItems.reduce((sum, item) => sum + (item.included ? item.value : 0), 0);
+  
   const calculateAccessoryCosts = (motor: any, boatDetails: any) => {
     const costs = {
       controls: 0,
@@ -165,14 +217,22 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
       costs.battery = boatDetails?.hasBattery ? 0 : 179.99;
     }
 
-    // Propeller - Required for 25HP+
+    // Propeller - Required for 25HP+ but may be included for tillers
     if (hp >= 25) {
-      if (boatDetails?.hasCompatibleProp) {
-        costs.propeller = 0;
-      } else if (hp >= 150) {
-        costs.propeller = 950; // Stainless steel
-      } else {
-        costs.propeller = 350; // Aluminum
+      const isTiller = motor?.model?.toLowerCase().includes('tiller') || 
+        motor?.engine_type?.toLowerCase().includes('tiller');
+      
+      // Check if propeller is already included (all tiller motors include propellers)
+      const propellerIncluded = isTiller;
+      
+      if (!propellerIncluded) {
+        if (boatDetails?.hasCompatibleProp) {
+          costs.propeller = 0;
+        } else if (hp >= 150) {
+          costs.propeller = 950; // Stainless steel
+        } else {
+          costs.propeller = 350; // Aluminum
+        }
       }
     }
 
@@ -568,6 +628,37 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                   </div>
                 )}
               </div>
+              
+              {/* Included Items Section */}
+              {includedItems.length > 0 && (
+                <div className="bg-green-50 border border-green-200 rounded-lg p-3 my-3">
+                  <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4" />
+                    Included FREE with Your Motor
+                  </h4>
+                  <div className="space-y-1 text-sm">
+                    {includedItems.map((item, index) => (
+                      <div key={index} className="flex justify-between items-center text-green-700">
+                        <span className="flex items-center gap-1">
+                          <Check className="w-3 h-3" />
+                          {item.name}
+                        </span>
+                        <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs">
+                          ${item.value} value
+                        </Badge>
+                      </div>
+                    ))}
+                    {totalIncludedValue > 0 && (
+                      <div className="border-t border-green-200 pt-2 mt-2">
+                        <div className="flex justify-between items-center font-semibold text-green-800">
+                          <span>You're saving:</span>
+                          <span>${totalIncludedValue}</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
               
               {accessoryCosts.controls > 0 && (
                 <div className="flex justify-between">
