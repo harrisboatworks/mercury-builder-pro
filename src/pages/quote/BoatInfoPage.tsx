@@ -12,11 +12,25 @@ export default function BoatInfoPage() {
   const { state, dispatch, isStepAccessible } = useQuote();
 
   useEffect(() => {
-    // Only check accessibility after loading is complete
-    if (!state.isLoading && !isStepAccessible(3)) {
-      navigate('/quote/motor-selection');
-      return;
-    }
+    console.log('BoatInfoPage accessibility check:', {
+      isLoading: state.isLoading,
+      stepAccessible: isStepAccessible(3),
+      motor: !!state.motor,
+      purchasePath: state.purchasePath,
+      boatInfo: !!state.boatInfo
+    });
+    
+    // Add delay to prevent navigation during state updates
+    const checkAccessibility = () => {
+      if (!state.isLoading && !isStepAccessible(3)) {
+        console.log('Navigation triggered - step not accessible');
+        navigate('/quote/motor-selection');
+        return;
+      }
+    };
+
+    // Delay the accessibility check to allow for state synchronization
+    const timeoutId = setTimeout(checkAccessibility, 100);
 
     document.title = 'Boat Information | Harris Boat Works';
     
@@ -27,7 +41,9 @@ export default function BoatInfoPage() {
       document.head.appendChild(desc);
     }
     desc.content = 'Provide your boat details for accurate motor compatibility and installation requirements.';
-  }, [state.isLoading, isStepAccessible, navigate]);
+
+    return () => clearTimeout(timeoutId);
+  }, [state.isLoading, isStepAccessible, navigate, state.motor, state.purchasePath, state.boatInfo]);
 
   const handleStepComplete = (boatInfo: BoatInfo) => {
     dispatch({ type: 'SET_BOAT_INFO', payload: boatInfo });

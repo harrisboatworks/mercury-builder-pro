@@ -350,12 +350,13 @@ export const BoatInformation = ({ onStepComplete, onBack, selectedMotor, include
   // Check if selected motor is a tiller motor
   const isSelectedTillerMotor = selectedMotor ? isTillerMotor(selectedMotor.model || '') : false;
   
-  // Auto-set control type for tiller motors
+  // Auto-set control type for tiller motors on initial load
   useEffect(() => {
-    if (isSelectedTillerMotor && boatInfo.controlType !== 'tiller') {
+    if (isSelectedTillerMotor && !boatInfo.controlType) {
+      console.log('Setting tiller motor control type');
       setBoatInfo(prev => ({ ...prev, controlType: 'tiller' }));
     }
-  }, [isSelectedTillerMotor, boatInfo.controlType]);
+  }, [isSelectedTillerMotor]); // Remove boatInfo.controlType dependency to prevent loops
 
   const totalSteps = boatInfo.type === 'motor-only' ? (showTradeIn ? 3 : 2) : (showTradeIn ? 5 : 4);
   const canNext = () => {
