@@ -1735,7 +1735,7 @@ export const MotorSelection = ({
                           <div className="text-sm text-muted-foreground line-through">
                             MSRP ${msrp.toLocaleString()}
                           </div>
-                          <div className={`text-lg font-bold ${hasSaleDisplay ? 'text-red-600' : 'text-foreground'}`}>
+                          <div className="text-lg font-bold text-red-600">
                             Our Price ${(sale || msrp).toLocaleString()}
                           </div>
                           {hasSaleDisplay && (
