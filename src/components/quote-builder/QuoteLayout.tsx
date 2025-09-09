@@ -150,8 +150,8 @@ export const QuoteLayout = ({
         </div>
       </header>
 
-      {/* Quote Status Header */}
-      <QuoteStatusHeader />
+      {/* Quote Status Header - hide when sticky bar is active */}
+      {!state.uiFlags?.useStickyQuoteBar && <QuoteStatusHeader />}
 
       {/* Trust Bar */}
       <div className="bg-muted/40 border-b border-border">

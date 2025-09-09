@@ -24,6 +24,9 @@ interface QuoteState {
   completedSteps: number[];
   currentStep: number;
   isLoading: boolean;
+  uiFlags: {
+    useStickyQuoteBar: boolean;
+  };
 }
 
 type QuoteAction = 
@@ -40,6 +43,7 @@ type QuoteAction =
   | { type: 'SET_CURRENT_STEP'; payload: number }
   | { type: 'LOAD_FROM_STORAGE'; payload: QuoteState }
   | { type: 'SET_LOADING'; payload: boolean }
+  | { type: 'SET_UI_FLAG'; payload: { key: string; value: any } }
   | { type: 'RESET_QUOTE' };
 
 const initialState: QuoteState = {
@@ -58,7 +62,10 @@ const initialState: QuoteState = {
   hasTradein: false,
   completedSteps: [],
   currentStep: 1,
-  isLoading: true
+  isLoading: true,
+  uiFlags: {
+    useStickyQuoteBar: false
+  }
 };
 
 const QuoteContext = createContext<{
@@ -108,6 +115,14 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
       return { ...action.payload, isLoading: false };
     case 'SET_LOADING':
       return { ...state, isLoading: action.payload };
+    case 'SET_UI_FLAG':
+      return { 
+        ...state, 
+        uiFlags: { 
+          ...state.uiFlags, 
+          [action.payload.key]: action.payload.value 
+        } 
+      };
     case 'RESET_QUOTE':
       return { ...initialState, isLoading: false };
     default:
@@ -123,6 +138,12 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   // Load from localStorage on mount
   useEffect(() => {
     console.log('🔄 QuoteContext: Starting localStorage load...');
+    
+    // Check URL for sticky bar flag
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('stickybar') === '1') {
+      dispatch({ type: 'SET_UI_FLAG', payload: { key: 'useStickyQuoteBar', value: true } });
+    }
     
     // Safety timeout to prevent infinite loading - reduced to 3 seconds for faster recovery
     const loadingTimeout = setTimeout(() => {

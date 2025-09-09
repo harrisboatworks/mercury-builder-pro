@@ -6,10 +6,17 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { BoatInfo } from '@/components/QuoteBuilder';
+import StickyQuoteBar from '@/components/quote/StickyQuoteBar';
+import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 
 export default function BoatInfoPage() {
   const navigate = useNavigate();
   const { state, dispatch, isStepAccessible, isNavigationBlocked } = useQuote();
+  
+  // Get monthly payment if motor is selected
+  const monthlyPayment = useMotorMonthlyPayment({ 
+    motorPrice: state.motor?.price || 0 
+  });
 
   useEffect(() => {
     // Add delay to prevent navigation during state updates
@@ -51,24 +58,56 @@ export default function BoatInfoPage() {
     navigate('/quote/motor-selection');
   };
 
+  const getModelString = () => {
+    if (!state.motor) return undefined;
+    return `${state.motor.year} Mercury ${state.motor.hp}HP ${state.motor.model}`;
+  };
+
+  const getTotalWithTax = () => {
+    if (!state.motor?.price) return undefined;
+    return Math.round(state.motor.price * 1.13); // 13% HST
+  };
+
+  const getCoverageYears = () => {
+    const baseYears = 3; // Standard Mercury warranty
+    const extendedYears = state.warrantyConfig?.extendedYears || 0;
+    return baseYears + extendedYears;
+  };
+
   return (
-    <QuoteLayout title="Boat Information">
-      <div className="space-y-6">
-        <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm" onClick={handleBack}>
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Purchase Path
-          </Button>
+    <>
+      <QuoteLayout title="Boat Information">
+        <div className="space-y-6">
+          <div className="flex items-center gap-4">
+            <Button variant="outline" size="sm" onClick={handleBack}>
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Purchase Path
+            </Button>
+          </div>
+          
+          <BoatInformation 
+            onStepComplete={handleStepComplete}
+            onBack={handleBack}
+            selectedMotor={state.motor!}
+            onShowCompatibleMotors={handleShowCompatibleMotors}
+            includeTradeIn={false}
+          />
         </div>
-        
-        <BoatInformation 
-          onStepComplete={handleStepComplete}
-          onBack={handleBack}
-          selectedMotor={state.motor!}
-          onShowCompatibleMotors={handleShowCompatibleMotors}
-          includeTradeIn={false}
+      </QuoteLayout>
+      
+      {/* Sticky Quote Bar - show when motor is selected and flag is enabled */}
+      {state.motor && state.uiFlags?.useStickyQuoteBar && (
+        <StickyQuoteBar
+          model={getModelString()}
+          totalWithTax={getTotalWithTax()}
+          monthly={monthlyPayment?.amount || null}
+          coverageYears={getCoverageYears()}
+          primaryLabel="Continue"
+          secondaryLabel="Edit Motor"
+          onPrimary={() => navigate('/quote/trade-in')}
+          onSecondary={() => navigate('/quote/motor-selection')}
         />
-      </div>
-    </QuoteLayout>
+      )}
+    </>
   );
 }
