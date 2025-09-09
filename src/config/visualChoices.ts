@@ -58,7 +58,7 @@ export const gaugeChoices = [
   },
   {
     id: "sc",
-    label: "SmartCraft",
+    label: "Smartcraft Connect",
     value: "smartcraft",
     image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop",
     helper: "Digital monitoring suite",
