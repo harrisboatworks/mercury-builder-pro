@@ -53,6 +53,18 @@ export default function QuoteSummaryPage() {
 
   const quoteData = getQuoteData();
 
+  // Calculate total cash price for Stripe integration
+  const calculateTotalCashPrice = () => {
+    const motorPrice = quoteData.motor?.salePrice || quoteData.motor?.basePrice || 0;
+    const accessoryCosts = state.purchasePath === 'loose' ? 0 : 3800; // Simplified calculation
+    const installationCost = state.installConfig?.selectedOption?.price || 0;
+    const tradeInValue = state.tradeInInfo?.estimatedValue || 0;
+    const subtotal = motorPrice + accessoryCosts + installationCost - tradeInValue;
+    return subtotal * 1.13; // Add 13% HST
+  };
+
+  const totalCashPrice = calculateTotalCashPrice();
+
   return (
     <QuoteLayout title="Your Mercury Motor Quote">
       <div className="space-y-8">
@@ -86,9 +98,9 @@ export default function QuoteSummaryPage() {
             quoteData={quoteData}
             motorPrice={quoteData.motor?.basePrice || 0} 
             accessoryCosts={0}
-            totalCashPrice={quoteData.pricing?.totalCashPrice || 0}
-            hasTradeIn={!!state.tradeIn?.motor}
-            tradeInValue={state.tradeIn?.finalValue || 0}
+            totalCashPrice={totalCashPrice}
+            hasTradeIn={!!state.tradeInInfo?.hasTradeIn}
+            tradeInValue={state.tradeInInfo?.estimatedValue || 0}
           />
         </div>
       </div>
