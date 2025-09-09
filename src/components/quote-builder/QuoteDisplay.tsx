@@ -155,15 +155,12 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
     });
     
     // Marine Battery
-    let batteryPrice = 450;
-    if (hp > 30 && hp <= 60) batteryPrice = 650;
-    else if (hp > 60 && hp <= 100) batteryPrice = 750;
-    else if (hp > 100) batteryPrice = 850;
+    const batteryPrice = 179.99;
     
     items.push({
       name: 'Marine Battery',
       price: batteryPrice,
-      description: `High-performance marine battery (${hp}HP rated)`
+      description: 'Marine starting battery (standard)'
     });
     
     // Propeller
