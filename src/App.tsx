@@ -5,7 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import NewQuote from "./pages/NewQuote";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QuoteProvider } from "@/contexts/QuoteContext";
 
@@ -38,8 +37,9 @@ import StagingImageSizingFinal from "./pages/StagingImageSizingFinal";
 import FinancingAdmin from "./components/admin/FinancingAdmin";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentCanceled from "./pages/PaymentCanceled";
+import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
+import Settings from "./pages/Settings";
 
-const queryClient = new QueryClient();
 function Canonical() {
   useEffect(() => {
     const href = `${SITE_URL}${window.location.pathname}`;
@@ -55,13 +55,12 @@ function Canonical() {
 }
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <QuoteProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
+  <AuthProvider>
+    <QuoteProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
             <>
               <ScrollToTop />
               <Routes>
@@ -73,6 +72,14 @@ const App = () => (
                     <SecureRoute>
                       <Dashboard />
                     </SecureRoute>
+                  } 
+                />
+                <Route 
+                  path="/settings" 
+                  element={
+                    <ProtectedRoute>
+                      <Settings />
+                    </ProtectedRoute>
                   } 
                 />
                 <Route path="/" element={<Index />} />
@@ -150,11 +157,10 @@ const App = () => (
                 </div>
               </footer>
             </>
-          </BrowserRouter>
-        </TooltipProvider>
-      </QuoteProvider>
-    </AuthProvider>
-  </QueryClientProvider>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QuoteProvider>
+  </AuthProvider>
 );
 
 export default App;

@@ -1,6 +1,10 @@
 import { createRoot } from 'react-dom/client'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ThemeProvider } from 'next-themes'
 import App from './App.tsx'
 import './index.css'
+
+const queryClient = new QueryClient()
 
 console.log('🚀 Main.tsx executing...');
 
@@ -22,7 +26,18 @@ try {
   const root = createRoot(rootElement);
   
   console.log('✅ React root created, rendering App...');
-  root.render(<App />);
+  root.render(
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange={false}
+      >
+        <App />
+      </ThemeProvider>
+    </QueryClientProvider>
+  );
   
   console.log('✅ App rendered successfully!');
   

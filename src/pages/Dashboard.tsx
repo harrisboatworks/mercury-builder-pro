@@ -106,7 +106,10 @@ const Dashboard = () => {
             </CardContent>
           </Card>
 
-          <Card className="border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-xl transition-shadow cursor-pointer">
+          <Card 
+            className="border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-xl transition-shadow cursor-pointer"
+            onClick={() => navigate('/settings')}
+          >
             <CardContent className="p-6">
               <div className="flex items-center space-x-3">
                 <div className="p-2 bg-slate-100 rounded-lg">
