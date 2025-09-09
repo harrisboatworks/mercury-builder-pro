@@ -412,6 +412,7 @@ export default function MotorSelectionPage() {
                     features={dbMotor?.features || []}
                     description={dbMotor?.description}
                     specSheetUrl={dbMotor?.detail_url}
+                    motor={motor as any}
                   />
                 );
               })}

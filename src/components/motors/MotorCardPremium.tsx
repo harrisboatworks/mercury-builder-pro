@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import { Info } from "lucide-react";
 import MotorQuickInfo from "./MotorQuickInfo";
-import MotorDetailsSheet from "./MotorDetailsSheet";
+import MotorDetailsSheet from './MotorDetailsSheet';
+import type { Motor } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function MotorCardPremium({ 
@@ -22,7 +23,8 @@ export default function MotorCardPremium({
   steering,
   features,
   description,
-  specSheetUrl
+  specSheetUrl,
+  motor
 }: {
   img?: string | null;
   title: string;
@@ -41,6 +43,7 @@ export default function MotorCardPremium({
   features?: string[];
   description?: string | null;
   specSheetUrl?: string | null;
+  motor?: Motor;
 }) {
   const fmt = (n?: number | null) => (typeof n === "number" ? `$${n.toLocaleString()}` : undefined);
   const hpNum = typeof hp === "string" ? parseFloat(hp) : (typeof hp === "number" ? hp : undefined);
@@ -151,6 +154,7 @@ export default function MotorCardPremium({
       <MotorDetailsSheet
         open={showDetailsSheet}
         onClose={() => setShowDetailsSheet(false)}
+        onSelect={onSelect}
         title={title}
         subtitle={hpNum ? `${hpNum} HP Mercury Outboard` : undefined}
         img={img}
@@ -165,6 +169,7 @@ export default function MotorCardPremium({
         steering={steering}
         features={features}
         specSheetUrl={specSheetUrl}
+        motor={motor}
       />
     </>
   );
