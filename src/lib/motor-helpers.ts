@@ -17,46 +17,102 @@ export const decodeModelName = (modelName: string) => {
     meaning: string;
     benefit: string;
   };
-
-  const items: Item[] = [];
-  const model = modelName.toUpperCase();
+  const decoded: Item[] = [];
+  const name = modelName || '';
+  const upper = name.toUpperCase();
   const added = new Set<string>();
-  
   const add = (code: string, meaning: string, benefit: string) => {
     if (!added.has(code)) {
-      items.push({ code, meaning, benefit });
+      decoded.push({
+        code,
+        meaning,
+        benefit
+      });
       added.add(code);
     }
   };
+  const hasWord = (w: string) => new RegExp(`\\b${w}\\b`).test(upper);
+  const hpMatch = upper.match(/(\d+(?:\.\d+)?)HP/);
+  const hp = hpMatch ? parseFloat(hpMatch[1]) : 0;
 
-  const hasWord = (w: string) => new RegExp(`\\b${w}\\b`).test(model);
-  
-  // HP extraction
-  const hpMatch = model.match(/(\d+(?:\.\d+)?)\s*HP/i);
-  if (hpMatch) add(hpMatch[1] + 'HP', `${hpMatch[1]} Horsepower`, 'Engine power rating');
-  
-  // Starting system
-  if (hasWord('M') && !hasWord('ELPT') && !hasWord('EL')) add('M', 'Manual Start', 'Pull cord start - no battery needed');
-  if (hasWord('E') || hasWord('EL') || hasWord('EH') || model.includes('EFI')) add('E', 'Electric Start', 'Push-button start with battery');
-  
-  // Shaft lengths
-  if (hasWord('S')) add('S', 'Short Shaft (15")', 'Standard transom height');
-  if (hasWord('L') && !hasWord('XL')) add('L', 'Long Shaft (20")', 'Higher transom boats');
-  if (hasWord('XL') && !hasWord('XXL')) add('XL', 'Extra Long (25")', 'Pontoon/high transom');
-  if (hasWord('XXL')) add('XXL', 'Extra Extra Long (30")', 'Very high transoms');
-  
-  // Control types
-  if (hasWord('H')) add('H', 'Tiller Handle', 'Steer directly from motor');
-  if (hasWord('PT')) add('PT', 'Power Tilt', 'Electric trim and tilt');
-  
-  // Fuel system
-  if (model.includes('EFI')) add('EFI', 'Electronic Fuel Injection', 'Better fuel economy and performance');
-  
-  // Special features
-  if (model.includes('PRO')) add('PRO', 'Pro Series', 'Enhanced features for serious anglers');
-  if (model.includes('COMMAND')) add('COMMAND', 'Command Thrust', '20% more thrust in reverse');
-  
-  return items;
+  // Engine family & special designations
+  if (/FOUR\s*STROKE|FOURSTROKE/i.test(name)) add('FourStroke', '4-Stroke Engine', 'Quiet, fuel-efficient, no oil mixing');
+  if (/SEAPRO/i.test(name)) add('SeaPro', 'Commercial Grade', 'Built for heavy use & durability');
+  if (/PROKICKER/i.test(name)) add('ProKicker', 'Kicker Motor', 'Optimized for trolling & backup power');
+  if (/JET\b/i.test(name)) add('Jet', 'Jet Drive', 'Great for shallow water operation');
+  if (/BIGFOOT/i.test(name)) add('BigFoot', 'High Thrust', 'Ideal for pontoons & heavy boats');
+
+  // Multi-part combos (match first to avoid partial overlaps)
+  if (upper.includes('ELHPT')) {
+    add('E', 'Electric Start', 'Push-button start');
+    add('L', 'Long Shaft (20")', 'Standard transom height');
+    add('H', 'Tiller Handle', 'Direct steering control');
+    add('PT', 'Power Tilt', 'Easy motor lifting');
+  }
+  if (upper.includes('ELXPT') || upper.includes('EXLPT')) {
+    add('E', 'Electric Start', 'Push-button start');
+    add('XL', 'Extra Long Shaft (25")', 'For 25" transom boats');
+    add('PT', 'Power Trim & Tilt', 'Adjust angle on the fly');
+  }
+  if (upper.includes('ELPT')) {
+    add('E', 'Electric Start', 'Push-button convenience');
+    add('L', 'Long Shaft (20")', 'For 20" transom boats');
+    add('PT', 'Power Trim & Tilt', 'Adjust angle on the fly');
+  }
+  // Handle standalone EL (Electric start + Long shaft) - must check after longer combos
+  if (upper.includes('EL') && !upper.includes('ELH') && !upper.includes('ELP') && !upper.includes('ELX')) {
+    add('E', 'Electric Start', 'Push-button convenience');
+    add('L', 'Long Shaft (20")', 'For 20" transom boats');
+  }
+  if (upper.includes('MLH')) {
+    add('M', 'Manual Start', 'Pull cord — simple & reliable');
+    add('L', 'Long Shaft (20")', 'For 20" transom boats');
+    add('H', 'Tiller Handle', 'Steer directly from motor');
+  }
+  if (upper.includes('MH')) {
+    add('M', 'Manual Start', 'Pull cord — simple & reliable');
+    add('H', 'Tiller Handle', 'Steer directly from motor');
+  }
+  if (upper.includes('EH')) {
+    add('E', 'Electric Start', 'Push-button convenience');
+    add('H', 'Tiller Handle', 'Direct steering control');
+  }
+
+  // Steering and control
+  if (hasWord('RC') || upper.includes('ERC')) add('RC', 'Remote Control', 'Steering wheel & console controls');
+  if (hp >= 40 && !added.has('RC')) add('RC', 'Remote Control', 'Steering wheel & console controls');
+  // Command Thrust
+  if (hasWord('CT') || /COMMAND\s*THRUST/i.test(name)) add('CT', 'Command Thrust', 'Larger gearcase & prop for superior control');
+
+  // Shaft length (check longer tokens first, skip if already handled in combos)
+  if (!added.has('XX') && !added.has('XL') && !added.has('L') && !added.has('S')) {
+    if (hasWord('XXL') || hasWord('XX')) {
+      add('XX', 'Ultra Long Shaft (30")', 'For 30" transom boats');
+    } else if (hasWord('XL') || (hasWord('X') && !hasWord('XX'))) {
+      add('XL', 'Extra Long Shaft (25")', 'For 25" transom boats');
+    } else if (hasWord('L')) {
+      add('L', 'Long Shaft (20")', 'For 20" transom boats');
+    } else if (hasWord('S')) {
+      add('S', 'Short Shaft (15")', 'For 15" transom boats');
+    } else {
+      // Default: No shaft indicators means Short Shaft (15")
+      add('S', 'Short Shaft (15")', 'For 15" transom boats');
+    }
+  }
+
+  // Features / technology
+  if (hasWord('PT')) add('PT', 'Power Trim & Tilt', 'Adjust motor angle on the fly');
+  if (hasWord('T')) add('T', 'Power Tilt', 'Easy motor lifting');
+  if (hasWord('GA')) add('GA', 'Gas Assist Tilt', 'Lighter effort when tilting');
+  if (hasWord('EFI')) add('EFI', 'Electronic Fuel Injection', 'Reliable starting & efficiency');
+  if (hasWord('DTS')) add('DTS', 'Digital Throttle & Shift', 'Smooth precise electronic controls');
+  if (hasWord('PXS') || /PROXS/i.test(name)) add('PXS', 'ProXS (High Performance)', 'Sport-tuned for acceleration');
+
+  // Single flags
+  if (hasWord('E') && !added.has('E')) add('E', 'Electric Start', 'Push-button convenience');
+  if (hasWord('M') && !added.has('M')) add('M', 'Manual Start', 'Pull cord — simple & reliable');
+  if (hp <= 30 && hasWord('H') && !added.has('H')) add('H', 'Tiller Handle', 'Steer directly from motor');
+  return decoded;
 };
 
 export const getRecommendedBoatSize = (hp: number | string) => {
