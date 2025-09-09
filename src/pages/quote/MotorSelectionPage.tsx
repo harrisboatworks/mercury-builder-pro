@@ -10,6 +10,7 @@ import MotorCardPremium from '@/components/motors/MotorCardPremium';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search, Filter } from 'lucide-react';
+import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 
@@ -303,144 +304,140 @@ export default function MotorSelectionPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
-        <div className="mx-auto max-w-6xl px-4 py-8">
-          <div className="flex items-center justify-center py-20">
-            <div className="text-center">
-              <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent"></div>
-              <p className="text-slate-600 dark:text-slate-300">Loading Mercury motors...</p>
-            </div>
+      <QuoteLayout title="Select Your Mercury Motor">
+        <div className="flex items-center justify-center py-20">
+          <div className="text-center">
+            <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
+            <p className="text-muted-foreground">Loading Mercury motors...</p>
           </div>
         </div>
-      </div>
+      </QuoteLayout>
     );
   }
 
   return (
-    <>
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
-        <div className="mx-auto max-w-6xl px-4 py-8 space-y-6">
-          {/* Header */}
-          <div className="rounded-2xl border border-slate-200/70 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
-            <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
-              Select Your Mercury Motor
-            </h1>
-            <p className="mt-2 text-slate-600 dark:text-slate-300">
-              Clean selection • clear pricing • promotions applied automatically.
-            </p>
+    <QuoteLayout title="Select Your Mercury Motor">
+      <div className="space-y-6">
+        {/* Header */}
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <h1 className="text-3xl font-bold text-foreground">
+            Select Your Mercury Motor
+          </h1>
+          <p className="mt-2 text-muted-foreground">
+            Clean selection • clear pricing • promotions applied automatically.
+          </p>
+          
+          {/* Filters */}
+          <div className="mt-6 space-y-4">
+            {/* Search */}
+            <div className="relative max-w-md">
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <Input
+                placeholder="Search motors..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10"
+              />
+            </div>
             
-            {/* Filters */}
-            <div className="mt-6 space-y-4">
-              {/* Search */}
-              <div className="relative max-w-md">
-                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
-                <Input
-                  placeholder="Search motors..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10"
-                />
-              </div>
+            {/* HP Range + Stock Filter */}
+            <div className="flex flex-wrap items-center gap-3">
+              {HP_RANGES.map(range => (
+                <button
+                  key={range.id}
+                  onClick={() => setHpRange(range.id)}
+                  className={`filter-chip rounded-full border px-3 py-1.5 text-sm transition-colors ${
+                    hpRange === range.id
+                      ? 'border-primary bg-primary/10 text-primary'
+                      : 'border-border text-foreground hover:bg-accent'
+                  }`}
+                >
+                  {range.label}
+                </button>
+              ))}
               
-              {/* HP Range + Stock Filter */}
-              <div className="flex flex-wrap items-center gap-3">
-                {HP_RANGES.map(range => (
-                  <button
-                    key={range.id}
-                    onClick={() => setHpRange(range.id)}
-                    className={`filter-chip rounded-full border px-3 py-1.5 text-sm transition-colors ${
-                      hpRange === range.id
-                        ? 'border-blue-600 bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400'
-                        : 'border-slate-300 text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800'
-                    }`}
-                  >
-                    {range.label}
-                  </button>
-                ))}
-                
-                <label className="ml-auto flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
-                  <input
-                    type="checkbox"
-                    checked={inStockOnly}
-                    onChange={(e) => setInStockOnly(e.target.checked)}
-                    className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
-                  />
-                  In Stock Only
-                </label>
-              </div>
+              <label className="ml-auto flex items-center gap-2 text-sm text-muted-foreground">
+                <input
+                  type="checkbox"
+                  checked={inStockOnly}
+                  onChange={(e) => setInStockOnly(e.target.checked)}
+                  className="h-4 w-4 rounded border-border text-primary focus:ring-primary"
+                />
+                In Stock Only
+              </label>
             </div>
           </div>
-
-          {/* Motors Grid */}
-          {filteredMotors.length > 0 ? (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredMotors.map(motor => {
-                // Find original DB motor to get specifications
-                const dbMotor = motors.find(m => m.id === motor.id);
-                const specs = dbMotor?.specifications || {};
-                
-                // Extract specification data with fallbacks
-                const shaft = specs.shaftLength || 
-                  (motor.model.includes('L') ? 'Long (20")' : 
-                   motor.model.includes('XL') ? 'Extra Long (25")' : 
-                   motor.model.includes('XXL') ? 'XX Long (30")' : undefined);
-                
-                const weightLbs = specs.weightLbs || specs.weight;
-                const altOutput = specs.alternatorOutput || specs.alternator;
-                const steering = specs.steering || 
-                  (motor.model.includes('MLH') ? 'manual' :
-                   motor.model.includes('ELPT') ? 'electric power tilt' :
-                   motor.model.includes('DTS') ? 'digital throttle & shift' : undefined);
-                
-                return (
-                  <MotorCardPremium
-                    key={motor.id}
-                    img={motor.image}
-                    title={motor.model}
-                    hp={motor.hp}
-                    msrp={motor.basePrice}
-                    price={motor.price}
-                    monthly={monthlyPayment?.amount || null}
-                    promoText={motor.appliedPromotions?.join(' • ') || null}
-                    selected={selectedMotor?.id === motor.id}
-                    onSelect={() => handleMotorSelect(motor)}
-                    // New specification props
-                    shaft={shaft}
-                    weightLbs={weightLbs}
-                    altOutput={altOutput}
-                    steering={steering}
-                    features={dbMotor?.features || []}
-                    description={dbMotor?.description}
-                    specSheetUrl={dbMotor?.detail_url}
-                    motor={motor as any}
-                  />
-                );
-              })}
-            </div>
-          ) : (
-            <div className="rounded-xl border border-amber-200 bg-amber-50 p-6 text-center dark:border-amber-800 dark:bg-amber-900/20">
-              <p className="text-amber-900 dark:text-amber-200">
-                No motors match your current filters.
-              </p>
-              <Button
-                variant="outline"
-                size="sm"
-                className="mt-3"
-                onClick={() => {
-                  setSearchTerm('');
-                  setHpRange('all');
-                  setInStockOnly(false);
-                }}
-              >
-                Clear filters
-              </Button>
-            </div>
-          )}
         </div>
 
+        {/* Motors Grid */}
+        {filteredMotors.length > 0 ? (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredMotors.map(motor => {
+              // Find original DB motor to get specifications
+              const dbMotor = motors.find(m => m.id === motor.id);
+              const specs = dbMotor?.specifications || {};
+              
+              // Extract specification data with fallbacks
+              const shaft = specs.shaftLength || 
+                (motor.model.includes('L') ? 'Long (20")' : 
+                 motor.model.includes('XL') ? 'Extra Long (25")' : 
+                 motor.model.includes('XXL') ? 'XX Long (30")' : undefined);
+              
+              const weightLbs = specs.weightLbs || specs.weight;
+              const altOutput = specs.alternatorOutput || specs.alternator;
+              const steering = specs.steering || 
+                (motor.model.includes('MLH') ? 'manual' :
+                 motor.model.includes('ELPT') ? 'electric power tilt' :
+                 motor.model.includes('DTS') ? 'digital throttle & shift' : undefined);
+              
+              return (
+                <MotorCardPremium
+                  key={motor.id}
+                  img={motor.image}
+                  title={motor.model}
+                  hp={motor.hp}
+                  msrp={motor.basePrice}
+                  price={motor.price}
+                  monthly={monthlyPayment?.amount || null}
+                  promoText={motor.appliedPromotions?.join(' • ') || null}
+                  selected={selectedMotor?.id === motor.id}
+                  onSelect={() => handleMotorSelect(motor)}
+                  // New specification props
+                  shaft={shaft}
+                  weightLbs={weightLbs}
+                  altOutput={altOutput}
+                  steering={steering}
+                  features={dbMotor?.features || []}
+                  description={dbMotor?.description}
+                  specSheetUrl={dbMotor?.detail_url}
+                  motor={motor as any}
+                />
+              );
+            })}
+          </div>
+        ) : (
+          <div className="rounded-xl border border-amber-200 bg-amber-50 p-6 text-center dark:border-amber-800 dark:bg-amber-900/20">
+            <p className="text-amber-900 dark:text-amber-200">
+              No motors match your current filters.
+            </p>
+            <Button
+              variant="outline"
+              size="sm"
+              className="mt-3"
+              onClick={() => {
+                setSearchTerm('');
+                setHpRange('all');
+                setInStockOnly(false);
+              }}
+            >
+              Clear filters
+            </Button>
+          </div>
+        )}
+
         {/* Sticky Continue Button */}
-        <div className="sticky bottom-0 z-40 border-t border-slate-200/70 bg-white/95 backdrop-blur dark:border-slate-700 dark:bg-slate-900/80">
-          <div className="mx-auto flex max-w-6xl items-center justify-end p-4">
+        <div className="sticky bottom-0 z-40 border-t border-border bg-background/95 backdrop-blur">
+          <div className="flex items-center justify-end p-4">
             <Button
               onClick={handleContinue}
               disabled={!selectedMotor}
@@ -469,6 +466,6 @@ export default function MotorSelectionPage() {
           }}
         />
       )}
-    </>
+    </QuoteLayout>
   );
 }

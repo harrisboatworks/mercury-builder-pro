@@ -199,9 +199,19 @@ function generateSpecSheetHTML(motor: any): string {
   const idealUses = getIdealUses(motor.horsepower)
   const keyAdvantages = getKeyAdvantages(motor.horsepower)
   
-  // Optimized compact logos
-  const harrisLogo = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjUwIiB5PSIxOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5IQVJSSVMgQk9BVCBXT1JLUzwvdGV4dD48dGV4dCB4PSI1MCIgeT0iMzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iOCIgZmlsbD0id2hpdGUiPlJpY2UgTGFrZSwgT048L3RleHQ+PC9zdmc+'
-  const mercuryLogo = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjE1IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI0NSIgeT0iMjUiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSI+TUVWQ1VSWTwvdGV4dD48L3N2Zz4='
+  // Use text-based logos as fallback for better PDF compatibility
+  const harrisLogoHtml = `
+    <div style="display: inline-block; background: #1e40af; color: white; padding: 8px 12px; border-radius: 4px; font-family: Arial, sans-serif;">
+      <div style="font-size: 12px; font-weight: bold; line-height: 1.2;">HARRIS BOAT WORKS</div>
+      <div style="font-size: 8px; line-height: 1.2;">Rice Lake, ON</div>
+    </div>
+  `
+  const mercuryLogoHtml = `
+    <div style="display: inline-block; background: #1e40af; color: white; padding: 8px 12px; border-radius: 4px; font-family: Arial, sans-serif;">
+      <div style="font-size: 14px; font-weight: bold; line-height: 1.2;">MERCURY</div>
+      <div style="font-size: 8px; line-height: 1.2;">MARINE</div>
+    </div>
+  `
   
   return `<!DOCTYPE html>
 <html lang="en">
@@ -469,12 +479,12 @@ function generateSpecSheetHTML(motor: any): string {
     <div class="page">
         <!-- Compact Header -->
         <div class="header">
-            <img src="${harrisLogo}" alt="Harris Boat Works" class="header-logo">
+            ${harrisLogoHtml}
             <div class="header-content">
                 <div class="motor-title">MERCURY ${motor.horsepower}HP ${motor.motor_type?.toUpperCase() || ''}</div>
                 <div class="header-subtitle">Technical Specifications</div>
             </div>
-            <img src="${mercuryLogo}" alt="Mercury Marine" class="header-logo">
+            ${mercuryLogoHtml}
         </div>
         
         <!-- Small Motor Image (Right Aligned) -->
