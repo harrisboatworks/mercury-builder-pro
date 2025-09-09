@@ -20,7 +20,6 @@
 }
 
 .motor-card-premium:hover { 
-  transform: translateY(-1px); 
   transition: transform .18s ease; 
 }
 
@@ -39,4 +38,18 @@
 .fixed.bottom-0.z-50,
 .fixed.top-4.right-4.z-40 {
   display: none !important;
+}
+
+/* Force remove transforms from all cards to fix modal stacking */
+.motor-card, [class*="motor-card"] {
+  transform: none !important;
+  filter: none !important;
+  will-change: auto !important;
+}
+
+/* Ensure modal is truly on top */
+body > div[role="dialog"],
+body > .modal-portal {
+  z-index: 2147483647 !important; /* Maximum z-index */
+  position: fixed !important;
 }
