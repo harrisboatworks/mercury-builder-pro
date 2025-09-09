@@ -500,6 +500,81 @@
     }
   }
 
+  /* Enhanced Quote Summary Animations */
+  .hero-price-enter {
+    animation: slideInUp 0.5s ease-out, fadeIn 0.3s ease-out;
+  }
+
+  .package-card-hover {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .package-card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .package-card-selected {
+    animation: selectPulse 0.4s ease-out;
+  }
+
+  .savings-badge {
+    animation: countUp 0.8s ease-out;
+  }
+
+  .sticky-summary {
+    animation: slideInFromRight 0.3s ease-out;
+  }
+
+  .mobile-summary-slide-up {
+    animation: slideInUp 0.3s ease-out;
+  }
+
+  /* Keyframes for new animations */
+  @keyframes slideInUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes selectPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes countUp {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
   @media (min-width: 768px) and (max-width: 1023px) {
     .btn-primary {
       width: auto;

@@ -1,0 +1,53 @@
+import { cn } from '@/lib/utils';
+import { money } from '@/lib/quote-utils';
+
+interface LineItemRowProps {
+  label: string;
+  amount: number;
+  description?: string;
+  isDiscount?: boolean;
+  isTotal?: boolean;
+  isSubtotal?: boolean;
+  className?: string;
+}
+
+export function LineItemRow({ 
+  label, 
+  amount, 
+  description, 
+  isDiscount = false,
+  isTotal = false,
+  isSubtotal = false,
+  className 
+}: LineItemRowProps) {
+  return (
+    <div className={cn(
+      "flex items-center justify-between py-2",
+      isTotal && "border-t border-border font-semibold text-lg",
+      isSubtotal && "border-t border-border/50 font-medium",
+      className
+    )}>
+      <div className="flex-1">
+        <div className={cn(
+          "text-sm",
+          isTotal ? "text-primary font-semibold" : "text-foreground",
+          isDiscount && "text-green-700"
+        )}>
+          {isDiscount && "−"}{label}
+        </div>
+        {description && (
+          <div className="text-xs text-muted-foreground">
+            {description}
+          </div>
+        )}
+      </div>
+      <div className={cn(
+        "text-right font-medium tabular-nums",
+        isTotal ? "text-lg font-semibold text-primary" : "text-foreground",
+        isDiscount ? "text-green-700" : "text-foreground"
+      )}>
+        {money(amount)}
+      </div>
+    </div>
+  );
+}
