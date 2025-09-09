@@ -144,6 +144,121 @@ export const getOilRequirement = (_motor: Motor) => {
   return '4-stroke marine oil 10W-30 or 25W-40 (Mercury)';
 };
 
+export const includesFuelTank = (motor: Motor) => {
+  const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
+  const model = (motor.model || '').toUpperCase();
+  
+  // Tiller motors have internal fuel tanks
+  if (isTillerMotor(model)) return true;
+  
+  // Small remote motors (9.9-20HP) typically include portable fuel tank
+  if (hp >= 9.9 && hp <= 20 && !isTillerMotor(model)) return true;
+  
+  return false;
+};
+
+export const includesPropeller = (motor: Motor) => {
+  const model = (motor.model || '').toUpperCase();
+  
+  // Tiller motors typically include propeller
+  if (isTillerMotor(model)) return true;
+  
+  return false;
+};
+
+export const isTillerMotor = (model: string) => {
+  const upperModel = model.toUpperCase();
+  
+  // Check for explicit tiller indicators
+  if (upperModel.includes('BIG TILLER') || upperModel.includes('TILLER')) {
+    return true;
+  }
+  
+  // Check for MH pattern (Manual start, tiller Handle)
+  const mhPattern = /(^|\s)MH(\s|$)/;
+  if (mhPattern.test(upperModel)) {
+    return true;
+  }
+  
+  // Check for standalone H pattern (not part of HP, ELH, etc.)
+  const standaloneHPattern = /\s H(\s|$)/;
+  if (standaloneHPattern.test(upperModel)) {
+    return true;
+  }
+  
+  return false;
+};
+
+export const getIncludedAccessories = (motor: Motor) => {
+  const accessories = [];
+  
+  // All motors include basic installation and testing
+  accessories.push('Professional installation');
+  accessories.push('Water testing & setup');
+  accessories.push('Basic rigging');
+  
+  // Check for fuel tank inclusion
+  if (includesFuelTank(motor)) {
+    if (isTillerMotor(motor.model || '')) {
+      accessories.push('Internal fuel tank');
+    } else {
+      accessories.push('12L portable fuel tank');
+      accessories.push('Fuel line & primer bulb');
+    }
+  }
+  
+  // Check for propeller inclusion
+  if (includesPropeller(motor)) {
+    accessories.push('Standard propeller');
+  }
+  
+  return accessories;
+};
+
+export const getAdditionalRequirements = (motor: Motor) => {
+  const requirements = [];
+  const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
+  const model = (motor.model || '').toUpperCase();
+  
+  // Battery requirement for electric start
+  if (!model.includes('M') || model.includes('E')) {
+    if (hp <= 30) {
+      requirements.push({ item: '12V marine battery', cost: '$150-250' });
+    } else if (hp <= 115) {
+      requirements.push({ item: 'High-output marine battery (800+ CCA)', cost: '$200-350' });
+    } else {
+      requirements.push({ item: 'High-performance marine battery', cost: '$300-500' });
+    }
+  }
+  
+  // Propeller for larger motors if not included
+  if (!includesPropeller(motor) && hp >= 25) {
+    requirements.push({ item: 'Performance propeller', cost: '$200-600' });
+  }
+  
+  // Fuel tank for larger motors if not included
+  if (!includesFuelTank(motor) && hp > 20) {
+    requirements.push({ item: 'Fuel tank & lines', cost: '$150-400' });
+  }
+  
+  return requirements;
+};
+
+export const cleanSpecSheetUrl = (url: string | undefined) => {
+  if (!url) return null;
+  
+  // Remove duplicate domain portions
+  const cleanedUrl = url.replace(/(https?:\/\/[^\/]+)(\/+)(https?:\/\/[^\/]+)/, '$1');
+  
+  // Basic URL validation
+  try {
+    new URL(cleanedUrl);
+    return cleanedUrl;
+  } catch {
+    return null;
+  }
+};
+
 export const getIdealUses = (hp: number | string) => {
   const n = typeof hp === 'string' ? parseInt(hp) : hp;
   

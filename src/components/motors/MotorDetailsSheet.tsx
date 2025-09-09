@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle } from "lucide-react";
+import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink } from "lucide-react";
 import { Button } from "../ui/button";
 import { money } from "../../lib/money";
 import { 
@@ -15,6 +15,9 @@ import {
   getFuelRequirement, 
   getOilRequirement, 
   getIdealUses,
+  getIncludedAccessories,
+  getAdditionalRequirements,
+  cleanSpecSheetUrl,
   type Motor 
 } from "../../lib/motor-helpers";
 
@@ -69,6 +72,10 @@ export default function MotorDetailsSheet({
     }
     onClose();
   };
+
+  const cleanedSpecUrl = cleanSpecSheetUrl(specSheetUrl);
+  const includedAccessories = motor ? getIncludedAccessories(motor) : [];
+  const additionalRequirements = motor ? getAdditionalRequirements(motor) : [];
   
   if(!open) return null;
 
@@ -164,6 +171,38 @@ export default function MotorDetailsSheet({
                 }
                 return null;
               })()}
+            </div>
+          )}
+
+          {/* What's Included */}
+          {motor && (
+            <div className="bg-emerald-50 dark:bg-emerald-900/20 rounded-lg p-4">
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-emerald-600" />
+                What's Included
+              </h3>
+              <div className="space-y-2">
+                {includedAccessories.map((accessory, index) => (
+                  <div key={index} className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="h-3 w-3 text-emerald-600 flex-shrink-0" />
+                    <span className="text-slate-700 dark:text-slate-300">{accessory}</span>
+                  </div>
+                ))}
+              </div>
+              
+              {additionalRequirements.length > 0 && (
+                <div className="mt-4 pt-4 border-t border-emerald-200 dark:border-emerald-700">
+                  <h4 className="font-medium text-slate-900 dark:text-white mb-2 text-sm">Additional Requirements:</h4>
+                  <div className="space-y-2">
+                    {additionalRequirements.map((req, index) => (
+                      <div key={index} className="flex items-center justify-between text-sm">
+                        <span className="text-slate-600 dark:text-slate-400">{req.item}</span>
+                        <span className="text-slate-500 dark:text-slate-400 font-medium">{req.cost}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
@@ -332,11 +371,20 @@ export default function MotorDetailsSheet({
           )}
 
           {/* Spec Sheet Link */}
-          {specSheetUrl && (
-            <div className="text-center">
-              <a href={specSheetUrl} target="_blank" rel="noopener noreferrer"
-                 className="inline-flex items-center gap-2 rounded-lg border border-slate-300 dark:border-slate-600 px-4 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">
-                Download spec sheet (PDF)
+          {cleanedSpecUrl && (
+            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                <FileText className="h-4 w-4" />
+                Technical Specifications
+              </h3>
+              <a
+                href={cleanedSpecUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm"
+              >
+                <ExternalLink className="h-4 w-4" />
+                Download Full Spec Sheet (PDF)
               </a>
             </div>
           )}
