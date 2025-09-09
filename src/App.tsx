@@ -24,7 +24,6 @@ import { SecureRoute } from "@/components/auth/SecureRoute";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { ChatWidget } from "@/components/chat/ChatWidget";
 import Index from "./pages/Index";
-import Auth from "./pages/Auth";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
@@ -66,7 +65,7 @@ const App = () => (
             <>
               <ScrollToTop />
               <Routes>
-                <Route path="/auth" element={<Auth />} />
+                <Route path="/auth" element={<Login />} />
                 <Route path="/login" element={<Login />} />
                 <Route 
                   path="/dashboard" 
