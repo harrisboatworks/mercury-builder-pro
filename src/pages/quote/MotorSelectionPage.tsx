@@ -320,12 +320,12 @@ export default function MotorSelectionPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-25">
+    <div className="min-h-screen bg-gray-50">
       <MobileHeader />
       
-      <main className="space-y-4">
-        {/* Search & Filters */}
-        <div className="bg-white shadow-sm border-b border-gray-100 p-4">
+      <main className="space-y-4 px-4 pt-4">
+        {/* Search & Filters Card */}
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
           {/* Search Input */}
           <div className="relative mb-4">
             <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
@@ -334,6 +334,7 @@ export default function MotorSelectionPage() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-12 h-12 rounded-lg border-gray-200 shadow-sm focus:border-primary focus:ring-primary text-base"
+              style={{ borderRadius: '8px' }}
               aria-label="Search motors by horsepower, model, or keyword"
             />
           </div>
@@ -346,11 +347,15 @@ export default function MotorSelectionPage() {
                   <button
                     key={range.id}
                     onClick={() => setHpRange(range.id)}
-                    className={`whitespace-nowrap px-3 py-2 rounded-2xl text-sm font-medium transition-all duration-200 min-h-[44px] ${
+                    className={`whitespace-nowrap text-sm font-medium transition-all duration-200 min-h-[44px] ${
                       hpRange === range.id
-                        ? 'bg-primary text-white border border-primary'
-                        : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+                        ? 'bg-harris-blue text-white border border-harris-blue'
+                        : 'bg-white text-gray-900 border border-gray-300 hover:bg-gray-50'
                     }`}
+                    style={{ 
+                      borderRadius: '16px',
+                      padding: '8px 14px'
+                    }}
                     role="button"
                     aria-pressed={hpRange === range.id}
                     aria-label={`Filter by ${range.label} horsepower`}
@@ -363,7 +368,7 @@ export default function MotorSelectionPage() {
             
             {/* Stock Filter - Inline */}
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-gray-700">In Stock Only</span>
+              <span className="text-sm font-medium text-gray-900">In Stock Only</span>
               <ToggleSwitch
                 checked={inStockOnly}
                 onChange={setInStockOnly}
@@ -372,7 +377,7 @@ export default function MotorSelectionPage() {
           </div>
         </div>
         
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
           {/* Motors Grid */}
           {filteredMotors.length > 0 ? (
             <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
