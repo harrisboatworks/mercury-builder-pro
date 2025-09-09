@@ -770,7 +770,7 @@ export const BoatInformation = ({
                       ...prev,
                       currentHp: parseInt(e.target.value || '0', 10) || 0
                     }))} />
-                         <p className="text-xs text-muted-foreground">We'll carry this into your trade-in details automatically.</p>
+                         <p className="text-xs text-muted-foreground">Helps us provide more accurate rigging and trade-in estimates if needed.</p>
                        </div>
 
                        <div className="space-y-2">
