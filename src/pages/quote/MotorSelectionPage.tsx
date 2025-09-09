@@ -318,12 +318,9 @@ export default function MotorSelectionPage() {
   return (
     <QuoteLayout title="Select Your Mercury Motor">
       <div className="space-y-6">
-        {/* Header */}
+        {/* Filters */}
         <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-          <h1 className="text-3xl font-bold text-foreground">
-            Select Your Mercury Motor
-          </h1>
-          <p className="mt-2 text-muted-foreground">
+          <p className="text-muted-foreground">
             Clean selection • clear pricing • promotions applied automatically.
           </p>
           
@@ -435,18 +432,6 @@ export default function MotorSelectionPage() {
           </div>
         )}
 
-        {/* Sticky Continue Button */}
-        <div className="sticky bottom-0 z-40 border-t border-border bg-background/95 backdrop-blur">
-          <div className="flex items-center justify-end p-4">
-            <Button
-              onClick={handleContinue}
-              disabled={!selectedMotor}
-              className="px-6 py-2.5"
-            >
-              Continue with Selected Motor
-            </Button>
-          </div>
-        </div>
       </div>
 
       {/* Sticky Quote Bar - show when motor is selected */}
