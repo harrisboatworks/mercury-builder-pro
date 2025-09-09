@@ -30,6 +30,7 @@ interface DbMotor {
   description?: string | null;
   features?: string[] | null;
   specifications?: Record<string, any> | null;
+  detail_url?: string | null;
 }
 
 interface Promotion {
@@ -373,20 +374,47 @@ export default function MotorSelectionPage() {
           {/* Motors Grid */}
           {filteredMotors.length > 0 ? (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredMotors.map(motor => (
-                <MotorCardPremium
-                  key={motor.id}
-                  img={motor.image}
-                  title={motor.model}
-                  hp={motor.hp}
-                  msrp={motor.basePrice}
-                  price={motor.price}
-                  monthly={monthlyPayment?.amount || null}
-                  promoText={motor.appliedPromotions?.join(' • ') || null}
-                  selected={selectedMotor?.id === motor.id}
-                  onSelect={() => handleMotorSelect(motor)}
-                />
-              ))}
+              {filteredMotors.map(motor => {
+                // Find original DB motor to get specifications
+                const dbMotor = motors.find(m => m.id === motor.id);
+                const specs = dbMotor?.specifications || {};
+                
+                // Extract specification data with fallbacks
+                const shaft = specs.shaftLength || 
+                  (motor.model.includes('L') ? 'Long (20")' : 
+                   motor.model.includes('XL') ? 'Extra Long (25")' : 
+                   motor.model.includes('XXL') ? 'XX Long (30")' : undefined);
+                
+                const weightLbs = specs.weightLbs || specs.weight;
+                const altOutput = specs.alternatorOutput || specs.alternator;
+                const steering = specs.steering || 
+                  (motor.model.includes('MLH') ? 'manual' :
+                   motor.model.includes('ELPT') ? 'electric power tilt' :
+                   motor.model.includes('DTS') ? 'digital throttle & shift' : undefined);
+                
+                return (
+                  <MotorCardPremium
+                    key={motor.id}
+                    img={motor.image}
+                    title={motor.model}
+                    hp={motor.hp}
+                    msrp={motor.basePrice}
+                    price={motor.price}
+                    monthly={monthlyPayment?.amount || null}
+                    promoText={motor.appliedPromotions?.join(' • ') || null}
+                    selected={selectedMotor?.id === motor.id}
+                    onSelect={() => handleMotorSelect(motor)}
+                    // New specification props
+                    shaft={shaft}
+                    weightLbs={weightLbs}
+                    altOutput={altOutput}
+                    steering={steering}
+                    features={dbMotor?.features || []}
+                    description={dbMotor?.description}
+                    specSheetUrl={dbMotor?.detail_url}
+                  />
+                );
+              })}
             </div>
           ) : (
             <div className="rounded-xl border border-amber-200 bg-amber-50 p-6 text-center dark:border-amber-800 dark:bg-amber-900/20">
