@@ -9,6 +9,7 @@ const corsHeaders = {
 interface ScrapeRequest {
   motor_id?: string;
   detail_url?: string;
+  force_refresh?: boolean;
 }
 
 interface ScrapeResult {
@@ -399,18 +400,44 @@ serve(async (req) => {
 
     const body = (await req.json()) as ScrapeRequest;
     const motorId = body.motor_id?.trim();
+    const forceRefresh = body.force_refresh === true;
     let detailUrl = body.detail_url?.trim() || '';
     let modelName: string | undefined;
 
     if (!detailUrl && motorId) {
       const { data: motor, error } = await supabase
         .from('motor_models')
-        .select('id, detail_url, model')
+        .select('id, detail_url, model, description, features, specifications, updated_at')
         .eq('id', motorId)
         .single();
       if (error) throw error;
       detailUrl = (motor?.detail_url || '').trim();
       modelName = motor?.model ? String(motor.model).trim() : undefined;
+
+      // Check if we have fresh cached data (within 7 days) and don't force refresh
+      if (!forceRefresh && motor?.updated_at && motor.description) {
+        const lastUpdated = new Date(motor.updated_at);
+        const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+        
+        if (lastUpdated > sevenDaysAgo) {
+          console.log(JSON.stringify({ event: 'using_cached_data', motorId, lastUpdated: motor.updated_at }));
+          
+          // Return cached data
+          return new Response(JSON.stringify({
+            success: true,
+            cached: true,
+            last_updated: motor.updated_at,
+            details: {
+              description: motor.description,
+              features: motor.features || [],
+              specifications: motor.specifications || {}
+            }
+          }), { 
+            status: 200, 
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+          });
+        }
+      }
     }
 
     // Normalize any malformed URLs (e.g., duplicated domain, missing host)

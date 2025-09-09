@@ -56,6 +56,10 @@
     {
       "path": "/api/cron/update-inventory",
       "schedule": "0 */12 * * *"
+    },
+    {
+      "path": "/api/cron/scrape-motor-details", 
+      "schedule": "0 3 * * 0"
     }
   ]
 }
