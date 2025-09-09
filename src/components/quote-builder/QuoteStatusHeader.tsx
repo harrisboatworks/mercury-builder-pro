@@ -46,72 +46,74 @@ export const QuoteStatusHeader = () => {
 
   return (
     <div className="bg-muted/20 border-b border-border">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-2">
-            <ShoppingCart className="w-4 h-4 text-muted-foreground" />
-            <span className="text-sm font-medium text-foreground">Current Quote:</span>
+      <div className="container mx-auto px-4 py-3">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
+              <ShoppingCart className="w-4 h-4 text-muted-foreground" />
+              <span className="text-sm font-medium text-foreground">Current Quote:</span>
+            </div>
+            
+            <div className="flex items-center space-x-2">
+              <span className="text-sm font-semibold text-foreground">
+                {summary.motorInfo}
+              </span>
+              <Badge variant="secondary" className={`${summary.pathColor} text-white text-xs`}>
+                {summary.pathBadge}
+              </Badge>
+            </div>
+
+            {state.boatInfo && (
+              <span className="text-xs text-muted-foreground">
+                • {state.boatInfo.make} {state.boatInfo.model} ({state.boatInfo.length})
+              </span>
+            )}
           </div>
-          
+
           <div className="flex items-center space-x-2">
-            <span className="text-sm font-semibold text-foreground">
-              {summary.motorInfo}
-            </span>
-            <Badge variant="secondary" className={`${summary.pathColor} text-white text-xs`}>
-              {summary.pathBadge}
-            </Badge>
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={handleBackToMotorSelection}
+              className="text-xs"
+            >
+              <RotateCcw className="w-3 h-3 mr-1" />
+              Change Motor
+            </Button>
+
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={handleNewQuote}
+              className="text-xs"
+            >
+              <Plus className="w-3 h-3 mr-1" />
+              New Quote
+            </Button>
+
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button variant="outline" size="sm" className="text-xs text-destructive hover:text-destructive">
+                  <Trash2 className="w-3 h-3 mr-1" />
+                  Clear
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Clear Current Quote?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    This will permanently delete your current quote configuration. You'll need to start over from motor selection.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction onClick={handleClearQuote} className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
+                    Clear Quote
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
           </div>
-
-          {state.boatInfo && (
-            <span className="text-xs text-muted-foreground">
-              • {state.boatInfo.make} {state.boatInfo.model} ({state.boatInfo.length})
-            </span>
-          )}
-        </div>
-
-        <div className="flex items-center space-x-2">
-          <Button 
-            variant="outline" 
-            size="sm"
-            onClick={handleBackToMotorSelection}
-            className="text-xs"
-          >
-            <RotateCcw className="w-3 h-3 mr-1" />
-            Change Motor
-          </Button>
-
-          <Button 
-            variant="outline" 
-            size="sm"
-            onClick={handleNewQuote}
-            className="text-xs"
-          >
-            <Plus className="w-3 h-3 mr-1" />
-            New Quote
-          </Button>
-
-          <AlertDialog>
-            <AlertDialogTrigger asChild>
-              <Button variant="outline" size="sm" className="text-xs text-destructive hover:text-destructive">
-                <Trash2 className="w-3 h-3 mr-1" />
-                Clear
-              </Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>Clear Current Quote?</AlertDialogTitle>
-                <AlertDialogDescription>
-                  This will permanently delete your current quote configuration. You'll need to start over from motor selection.
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel>Cancel</AlertDialogCancel>
-                <AlertDialogAction onClick={handleClearQuote} className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
-                  Clear Quote
-                </AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
         </div>
       </div>
     </div>
