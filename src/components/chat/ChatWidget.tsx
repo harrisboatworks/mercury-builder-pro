@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { MessageCircle, X, Send, Minimize2 } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { ChatBubble } from './ChatBubble';
 import { TypingIndicator } from './TypingIndicator';
@@ -15,6 +16,7 @@ interface Message {
 }
 
 export const ChatWidget: React.FC = () => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -23,6 +25,10 @@ export const ChatWidget: React.FC = () => {
   const [conversationHistory, setConversationHistory] = useState<any[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Check if we're on a quote page where sticky bar might be present
+  const isOnQuotePage = location.pathname.startsWith('/quote');
+  const bottomPosition = isOnQuotePage ? 'bottom-20' : 'bottom-6';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -111,7 +117,7 @@ export const ChatWidget: React.FC = () => {
 
   if (!isOpen) {
     return (
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className={`fixed ${bottomPosition} right-6 z-60`}>
         <Button
           onClick={handleOpen}
           className="bg-red-600 hover:bg-red-700 text-white shadow-lg rounded-full w-14 h-14 p-0 flex items-center justify-center transition-all duration-200 hover:scale-105"
@@ -124,7 +130,7 @@ export const ChatWidget: React.FC = () => {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className={`fixed ${bottomPosition} right-6 z-60`}>
       <Card className={`w-80 md:w-96 transition-all duration-200 ${isMinimized ? 'h-14' : 'h-96'} shadow-xl border-2`}>
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b bg-red-600 text-white rounded-t-lg">
