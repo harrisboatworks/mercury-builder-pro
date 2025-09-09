@@ -1,0 +1,42 @@
+/* Kill switch for any remaining gamification elements */
+.xp-badge, 
+.xp-chip, 
+.ribbon, 
+.confetti-root, 
+.celebration-banner, 
+.sticky-reward-bar,
+.canadian-celebration,
+.checkout-banner { 
+  display: none !important; 
+}
+
+/* Premium motor card styles */
+.motor-card, 
+.motor-card-premium { 
+  border-radius: 16px; 
+  box-shadow: 0 6px 20px rgba(15,23,42,0.06); 
+  border: 1px solid rgba(148,163,184,.35);
+  padding: 12px;
+}
+
+.motor-card-premium:hover { 
+  transform: translateY(-1px); 
+  transition: transform .18s ease; 
+}
+
+.msrp { 
+  text-decoration: line-through; 
+  color: #64748b; 
+}
+
+.filter-chip { 
+  border-radius: 999px; 
+  padding: 6px 10px; 
+}
+
+/* Hide celebration particles and sticky elements */
+.fixed.pointer-events-none.z-30,
+.fixed.bottom-0.z-50,
+.fixed.top-4.right-4.z-40 {
+  display: none !important;
+}

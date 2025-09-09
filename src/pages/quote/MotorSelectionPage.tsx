@@ -1,20 +1,291 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
-import { MotorSelection } from '@/components/quote-builder/MotorSelection';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Motor } from '@/components/QuoteBuilder';
 import StickyQuoteBar from '@/components/quote/StickyQuoteBar';
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/components/ui/use-toast';
+import MotorCardPremium from '@/components/motors/MotorCardPremium';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Search, Filter } from 'lucide-react';
+import '@/styles/premium-motor.css';
+
+// Types for Supabase data
+interface DbMotor {
+  id: string;
+  model: string;
+  horsepower: number;
+  base_price: number;
+  sale_price?: number | null;
+  motor_type: string;
+  engine_type?: string | null;
+  image_url?: string | null;
+  availability?: string | null;
+  stock_number?: string | null;
+  year: number;
+  make: string;
+  description?: string | null;
+  features?: string[] | null;
+  specifications?: Record<string, any> | null;
+}
+
+interface Promotion {
+  id: string;
+  name: string;
+  discount_percentage: number;
+  discount_fixed_amount: number;
+  is_active: boolean;
+  start_date: string | null;
+  end_date: string | null;
+  stackable: boolean;
+  kind: 'discount' | 'bonus';
+  bonus_title: string | null;
+  bonus_short_badge: string | null;
+  bonus_description: string | null;
+  warranty_extra_years: number | null;
+  terms_url: string | null;
+  highlight: boolean;
+  priority: number;
+  details?: any;
+  image_url: string | null;
+  image_alt_text: string | null;
+}
+
+interface PromotionRule {
+  id: string;
+  promotion_id: string;
+  rule_type: 'all' | 'model' | 'motor_type' | 'horsepower_range';
+  model: string | null;
+  motor_type: string | null;
+  horsepower_min: number | null;
+  horsepower_max: number | null;
+  discount_percentage: number;
+  discount_fixed_amount: number;
+}
+
+const HP_RANGES = [
+  { id: 'all', label: 'All HP', min: 0, max: 999 },
+  { id: '2_20', label: '2.5–20 HP', min: 2.5, max: 20 },
+  { id: '25_60', label: '25–60 HP', min: 25, max: 60 },
+  { id: '75_150', label: '75–150 HP', min: 75, max: 150 },
+  { id: '175_300', label: '175–300 HP', min: 175, max: 300 },
+  { id: '350p', label: '350+ HP', min: 350, max: 999 },
+];
 
 export default function MotorSelectionPage() {
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
+  const { toast } = useToast();
+  
+  // State for motor data and filters
+  const [motors, setMotors] = useState<DbMotor[]>([]);
+  const [promotions, setPromotions] = useState<Promotion[]>([]);
+  const [promotionRules, setPromotionRules] = useState<PromotionRule[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [hpRange, setHpRange] = useState('all');
+  const [inStockOnly, setInStockOnly] = useState(false);
+  const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
   
   // Get monthly payment if motor is selected
   const monthlyPayment = useMotorMonthlyPayment({ 
-    motorPrice: state.motor?.price || 0 
+    motorPrice: selectedMotor?.price || 0 
   });
+
+  // Load motors and promotions from Supabase (same as original MotorSelection)
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        // Load motors (same query as original)
+        const { data: motorsData, error: motorsError } = await supabase
+          .from('motor_models')
+          .select('*')
+          .order('horsepower', { ascending: true });
+
+        if (motorsError) throw motorsError;
+        
+        // Filter out Jet models (same as original)
+        const filteredMotors = motorsData?.filter(motor => 
+          !motor.model?.toLowerCase().includes('jet') &&
+          motor.horsepower <= 600 // HP cap same as original
+        ) || [];
+        
+        setMotors(filteredMotors);
+
+        // Load promotions (same as original)
+        const { data: promoData, error: promoError } = await supabase
+          .from('promotions')
+          .select('*')
+          .eq('is_active', true)
+          .order('priority', { ascending: false });
+
+        if (promoError) throw promoError;
+        setPromotions(promoData || []);
+
+        // Load promotion rules (same as original)
+        const { data: rulesData, error: rulesError } = await supabase
+          .from('promotions_rules')
+          .select('*');
+
+        if (rulesError) throw rulesError;
+        setPromotionRules(rulesData || []);
+        
+      } catch (error) {
+        console.error('Error loading motor data:', error);
+        toast({
+          title: "Error loading motors",
+          description: "Please refresh the page to try again.",
+          variant: "destructive"
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, [toast]);
+
+  // Convert DB motor to Motor type and apply promotions (same logic as original)
+  const processedMotors = useMemo(() => {
+    return motors.map(dbMotor => {
+      // Apply promotions (same logic as original MotorSelection)
+      let effectivePrice = dbMotor.sale_price || dbMotor.base_price;
+      let promoTexts: string[] = [];
+      
+      // Find applicable promotions
+      const applicableRules = promotionRules.filter(rule => {
+        const promo = promotions.find(p => p.id === rule.promotion_id);
+        if (!promo) return false;
+        
+        switch (rule.rule_type) {
+          case 'all':
+            return true;
+          case 'model':
+            return rule.model && dbMotor.model.toLowerCase().includes(rule.model.toLowerCase());
+          case 'motor_type':
+            return rule.motor_type && dbMotor.motor_type === rule.motor_type;
+          case 'horsepower_range':
+            return dbMotor.horsepower >= (rule.horsepower_min || 0) && 
+                   dbMotor.horsepower <= (rule.horsepower_max || 999);
+          default:
+            return false;
+        }
+      });
+
+      // Apply discounts and collect promo text
+      applicableRules.forEach(rule => {
+        const promo = promotions.find(p => p.id === rule.promotion_id);
+        if (!promo) return;
+        
+        if (rule.discount_percentage > 0) {
+          effectivePrice *= (1 - rule.discount_percentage / 100);
+        }
+        if (rule.discount_fixed_amount > 0) {
+          effectivePrice -= rule.discount_fixed_amount;
+        }
+        
+        if (promo.bonus_short_badge) {
+          promoTexts.push(promo.bonus_short_badge);
+        }
+      });
+
+      // Convert to Motor type (same as original)
+      const convertedMotor: Motor = {
+        id: dbMotor.id,
+        model: dbMotor.model,
+        year: dbMotor.year,
+        hp: dbMotor.horsepower,
+        price: Math.round(effectivePrice),
+        image: dbMotor.image_url || '',
+        stockStatus: dbMotor.availability === 'In Stock' ? 'In Stock' : 'On Order',
+        stockNumber: dbMotor.stock_number,
+        category: dbMotor.horsepower <= 20 ? 'portable' : 
+                 dbMotor.horsepower <= 60 ? 'mid-range' : 
+                 dbMotor.horsepower <= 150 ? 'high-performance' : 'v8-racing',
+        type: dbMotor.motor_type || 'FourStroke',
+        specs: `${dbMotor.horsepower}HP ${dbMotor.motor_type || 'FourStroke'}`,
+        basePrice: dbMotor.base_price,
+        salePrice: dbMotor.sale_price,
+        originalPrice: dbMotor.sale_price || dbMotor.base_price,
+        savings: (dbMotor.sale_price || dbMotor.base_price) - effectivePrice,
+        appliedPromotions: promoTexts,
+        bonusOffers: applicableRules.map(rule => {
+          const promo = promotions.find(p => p.id === rule.promotion_id);
+          return promo ? {
+            id: promo.id,
+            title: promo.bonus_title || promo.name,
+            shortBadge: promo.bonus_short_badge,
+            description: promo.bonus_description,
+            warrantyExtraYears: promo.warranty_extra_years,
+            termsUrl: promo.terms_url,
+            highlight: promo.highlight
+          } : null;
+        }).filter(Boolean) as any[]
+      };
+      
+      return convertedMotor;
+    });
+  }, [motors, promotions, promotionRules]);
+
+  // Filter motors
+  const filteredMotors = useMemo(() => {
+    let filtered = processedMotors;
+
+    // Search filter
+    if (searchTerm) {
+      const term = searchTerm.toLowerCase();
+      filtered = filtered.filter(motor => 
+        motor.model.toLowerCase().includes(term) ||
+        motor.hp.toString().includes(term)
+      );
+    }
+
+    // HP range filter
+    if (hpRange !== 'all') {
+      const range = HP_RANGES.find(r => r.id === hpRange);
+      if (range) {
+        filtered = filtered.filter(motor => 
+          motor.hp >= range.min && motor.hp <= range.max
+        );
+      }
+    }
+
+    // Stock filter
+    if (inStockOnly) {
+      filtered = filtered.filter(motor => motor.stockStatus === 'In Stock');
+    }
+
+    return filtered;
+  }, [processedMotors, searchTerm, hpRange, inStockOnly]);
+
+  const handleMotorSelect = (motor: Motor) => {
+    setSelectedMotor(motor);
+    dispatch({ type: 'SET_MOTOR', payload: motor });
+  };
+
+  const handleContinue = () => {
+    if (!selectedMotor) return;
+    dispatch({ type: 'COMPLETE_STEP', payload: 1 });
+    navigate('/quote/purchase-path');
+  };
+
+  const getModelString = () => {
+    if (!selectedMotor) return undefined;
+    return `${selectedMotor.year} Mercury ${selectedMotor.hp}HP ${selectedMotor.model}`;
+  };
+
+  const getTotalWithTax = () => {
+    if (!selectedMotor?.price) return undefined;
+    return Math.round(selectedMotor.price * 1.13); // 13% HST
+  };
+
+  const getCoverageYears = () => {
+    const baseYears = 3; // Standard Mercury warranty
+    const extendedYears = state.warrantyConfig?.extendedYears || 0;
+    return baseYears + extendedYears;
+  };
 
   useEffect(() => {
     document.title = 'Select Mercury Outboard Motor | Harris Boat Works';
@@ -28,36 +299,131 @@ export default function MotorSelectionPage() {
     desc.content = 'Choose from our selection of Mercury outboard motors with live pricing and current promotions.';
   }, []);
 
-  const handleStepComplete = (motor: Motor) => {
-    dispatch({ type: 'SET_MOTOR', payload: motor });
-    dispatch({ type: 'COMPLETE_STEP', payload: 1 });
-    navigate('/quote/purchase-path');
-  };
-
-  const getModelString = () => {
-    if (!state.motor) return undefined;
-    return `${state.motor.year} Mercury ${state.motor.hp}HP ${state.motor.model}`;
-  };
-
-  const getTotalWithTax = () => {
-    if (!state.motor?.price) return undefined;
-    return Math.round(state.motor.price * 1.13); // 13% HST
-  };
-
-  const getCoverageYears = () => {
-    const baseYears = 3; // Standard Mercury warranty
-    const extendedYears = state.warrantyConfig?.extendedYears || 0;
-    return baseYears + extendedYears;
-  };
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
+        <div className="mx-auto max-w-6xl px-4 py-8">
+          <div className="flex items-center justify-center py-20">
+            <div className="text-center">
+              <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent"></div>
+              <p className="text-slate-600 dark:text-slate-300">Loading Mercury motors...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
-      <QuoteLayout title="Select Your Mercury Motor">
-        <MotorSelection onStepComplete={handleStepComplete} useCategoryView={true} />
-      </QuoteLayout>
-      
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
+        <div className="mx-auto max-w-6xl px-4 py-8 space-y-6">
+          {/* Header */}
+          <div className="rounded-2xl border border-slate-200/70 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+            <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
+              Select Your Mercury Motor
+            </h1>
+            <p className="mt-2 text-slate-600 dark:text-slate-300">
+              Clean selection • clear pricing • promotions applied automatically.
+            </p>
+            
+            {/* Filters */}
+            <div className="mt-6 space-y-4">
+              {/* Search */}
+              <div className="relative max-w-md">
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
+                <Input
+                  placeholder="Search motors..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-10"
+                />
+              </div>
+              
+              {/* HP Range + Stock Filter */}
+              <div className="flex flex-wrap items-center gap-3">
+                {HP_RANGES.map(range => (
+                  <button
+                    key={range.id}
+                    onClick={() => setHpRange(range.id)}
+                    className={`filter-chip rounded-full border px-3 py-1.5 text-sm transition-colors ${
+                      hpRange === range.id
+                        ? 'border-blue-600 bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400'
+                        : 'border-slate-300 text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800'
+                    }`}
+                  >
+                    {range.label}
+                  </button>
+                ))}
+                
+                <label className="ml-auto flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+                  <input
+                    type="checkbox"
+                    checked={inStockOnly}
+                    onChange={(e) => setInStockOnly(e.target.checked)}
+                    className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                  />
+                  In Stock Only
+                </label>
+              </div>
+            </div>
+          </div>
+
+          {/* Motors Grid */}
+          {filteredMotors.length > 0 ? (
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredMotors.map(motor => (
+                <MotorCardPremium
+                  key={motor.id}
+                  img={motor.image}
+                  title={motor.model}
+                  hp={motor.hp}
+                  msrp={motor.basePrice}
+                  price={motor.price}
+                  monthly={monthlyPayment?.amount || null}
+                  promoText={motor.appliedPromotions?.join(' • ') || null}
+                  selected={selectedMotor?.id === motor.id}
+                  onSelect={() => handleMotorSelect(motor)}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-xl border border-amber-200 bg-amber-50 p-6 text-center dark:border-amber-800 dark:bg-amber-900/20">
+              <p className="text-amber-900 dark:text-amber-200">
+                No motors match your current filters.
+              </p>
+              <Button
+                variant="outline"
+                size="sm"
+                className="mt-3"
+                onClick={() => {
+                  setSearchTerm('');
+                  setHpRange('all');
+                  setInStockOnly(false);
+                }}
+              >
+                Clear filters
+              </Button>
+            </div>
+          )}
+        </div>
+
+        {/* Sticky Continue Button */}
+        <div className="sticky bottom-0 z-40 border-t border-slate-200/70 bg-white/95 backdrop-blur dark:border-slate-700 dark:bg-slate-900/80">
+          <div className="mx-auto flex max-w-6xl items-center justify-end p-4">
+            <Button
+              onClick={handleContinue}
+              disabled={!selectedMotor}
+              className="px-6 py-2.5"
+            >
+              Continue with Selected Motor
+            </Button>
+          </div>
+        </div>
+      </div>
+
       {/* Sticky Quote Bar - show when motor is selected and flag is enabled */}
-      {state.motor && state.uiFlags?.useStickyQuoteBar && (
+      {selectedMotor && state.uiFlags?.useStickyQuoteBar && (
         <StickyQuoteBar
           model={getModelString()}
           totalWithTax={getTotalWithTax()}
@@ -65,8 +431,9 @@ export default function MotorSelectionPage() {
           coverageYears={getCoverageYears()}
           primaryLabel="Continue"
           secondaryLabel="Change Motor"
-          onPrimary={() => navigate('/quote/purchase-path')}
+          onPrimary={handleContinue}
           onSecondary={() => {
+            setSelectedMotor(null);
             dispatch({ type: 'SET_MOTOR', payload: null });
           }}
         />
