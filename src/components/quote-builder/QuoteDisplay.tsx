@@ -22,6 +22,7 @@ import { xpActions } from '@/config/xpActions';
 import { xpRewards, getCurrentReward, getNextReward } from '@/config/xpRewards';
 import { format } from 'date-fns';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { AuthModal } from '@/components/auth/AuthModal';
@@ -61,6 +62,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   const [financingOptions, setFinancingOptions] = useState<any[]>([]);
   const [selectedFinancing, setSelectedFinancing] = useState<string | null>(null);
   const { promo: activePromo } = useActiveFinancingPromo();
+  const { promotions, getTotalWarrantyBonusYears } = useActivePromotions();
   const effectiveRate = (activePromo?.rate ?? quoteData.financing.rate);
 
   // SMS via Zapier
@@ -112,7 +114,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   const hasSale = (quoteData.motor?.basePrice || 0) > motorPrice;
   const saleSavings = hasSale ? (quoteData.motor?.basePrice || 0) - motorPrice : 0;
 
-  // Accessories calculation
+  // Accessories calculation with detailed breakdown
   const accessoryCosts = (() => {
     if (purchasePath === 'loose') return 0;
     
@@ -137,6 +139,78 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
     
     return total;
   })();
+
+  // Detailed accessory breakdown for display
+  const getAccessoryBreakdown = () => {
+    if (purchasePath === 'loose') return [];
+    
+    const hp = quoteData.motor?.hp || 0;
+    const items = [];
+    
+    // Controls & Rigging
+    items.push({
+      name: 'Controls & Rigging',
+      price: 2500,
+      description: 'Throttle & shift controls, cables, gauges'
+    });
+    
+    // Marine Battery
+    let batteryPrice = 450;
+    if (hp > 30 && hp <= 60) batteryPrice = 650;
+    else if (hp > 60 && hp <= 100) batteryPrice = 750;
+    else if (hp > 100) batteryPrice = 850;
+    
+    items.push({
+      name: 'Marine Battery',
+      price: batteryPrice,
+      description: `High-performance marine battery (${hp}HP rated)`
+    });
+    
+    // Propeller
+    let propPrice = 350;
+    if (hp > 25 && hp <= 60) propPrice = 450;
+    else if (hp > 60 && hp <= 115) propPrice = 600;
+    else if (hp > 115 && hp <= 200) propPrice = 750;
+    else if (hp > 200) propPrice = 850;
+    
+    items.push({
+      name: 'Propeller',
+      price: propPrice,
+      description: `Precision-matched propeller for ${hp}HP motor`
+    });
+    
+    return items;
+  };
+
+  // Calculate promotion savings
+  const calculatePromotionSavings = () => {
+    let totalFixedDiscount = 0;
+    let totalPercentageDiscount = 0;
+    let warrantyValue = 0;
+    
+    promotions.forEach(promo => {
+      if (promo.discount_fixed_amount > 0) {
+        totalFixedDiscount += promo.discount_fixed_amount;
+      }
+      if (promo.discount_percentage > 0) {
+        totalPercentageDiscount += (motorPrice * promo.discount_percentage / 100);
+      }
+      if (promo.warranty_extra_years && promo.warranty_extra_years > 0) {
+        // Estimate warranty value at $200 per extra year
+        warrantyValue += promo.warranty_extra_years * 200;
+      }
+    });
+    
+    return {
+      totalFixedDiscount,
+      totalPercentageDiscount,
+      warrantyValue,
+      totalPromoValue: totalFixedDiscount + totalPercentageDiscount + warrantyValue
+    };
+  };
+
+  const promotionSavings = calculatePromotionSavings();
+  const accessoryBreakdown = getAccessoryBreakdown();
 
   const installationCost = state.installConfig?.selectedOption?.price || 0;
   const subtotalBeforeTax = motorPrice + accessoryCosts + installationCost - tradeInValue;
@@ -401,11 +475,68 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                 </div>
               </div>
 
-              {/* Accessories */}
-              {accessoryCosts > 0 && (
-                <div className="flex justify-between">
-                  <span>Accessories:</span>
-                  <span>{formatCurrency(accessoryCosts)}</span>
+              {/* Detailed Accessories */}
+              {accessoryBreakdown.length > 0 && (
+                <div className="space-y-1">
+                  <div className="font-medium text-muted-foreground text-xs uppercase tracking-wide">Accessories & Setup</div>
+                  {accessoryBreakdown.map((item, index) => (
+                    <TooltipProvider key={index}>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <div className="flex justify-between hover:bg-muted/50 px-1 py-0.5 rounded cursor-help">
+                            <span>{item.name}:</span>
+                            <span>{formatCurrency(item.price)}</span>
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p className="max-w-xs">{item.description}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  ))}
+                </div>
+              )}
+
+              {/* Active Promotions */}
+              {promotions.length > 0 && (
+                <div className="space-y-1 bg-gradient-to-r from-green-50 to-emerald-50 p-3 rounded-lg border border-green-200">
+                  <div className="font-medium text-green-800 text-xs uppercase tracking-wide flex items-center gap-1">
+                    🎉 Active Promotions
+                  </div>
+                  {promotions.map((promo, index) => (
+                    <div key={index} className="space-y-1">
+                      <div className="text-xs font-medium text-green-700">{promo.name}</div>
+                      {promo.discount_fixed_amount > 0 && (
+                        <div className="flex justify-between text-green-600">
+                          <span className="text-xs">Cash Discount:</span>
+                          <span className="font-medium">-{formatCurrency(promo.discount_fixed_amount)}</span>
+                        </div>
+                      )}
+                      {promo.discount_percentage > 0 && (
+                        <div className="flex justify-between text-green-600">
+                          <span className="text-xs">{promo.discount_percentage}% Discount:</span>
+                          <span className="font-medium">-{formatCurrency(motorPrice * promo.discount_percentage / 100)}</span>
+                        </div>
+                      )}
+                      {promo.warranty_extra_years && promo.warranty_extra_years > 0 && (
+                        <div className="flex justify-between text-green-600">
+                          <span className="text-xs">+{promo.warranty_extra_years} Year Warranty:</span>
+                          <span className="font-medium">{formatCurrency(promo.warranty_extra_years * 200)} Value</span>
+                        </div>
+                      )}
+                      {promo.end_date && (
+                        <div className="text-xs text-orange-600 font-medium">
+                          Expires: {format(new Date(promo.end_date), 'MMM d, yyyy')}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                  {promotionSavings.totalPromoValue > 0 && (
+                    <div className="flex justify-between font-bold text-green-700 border-t border-green-200 pt-2 mt-2">
+                      <span>Total Promotional Value:</span>
+                      <span>{formatCurrency(promotionSavings.totalPromoValue)}</span>
+                    </div>
+                  )}
                 </div>
               )}
 
