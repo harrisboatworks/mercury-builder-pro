@@ -461,22 +461,20 @@ export default function MotorSelectionPage() {
 
       {/* Sticky Quote Bar - show when motor is selected */}
       {selectedMotor && (
-        <div className="sticky-bottom-safe">
-          <StickyQuoteBar
-            model={getModelString()}
-            total={getTotalWithTax()}
-            monthly={monthlyPayment?.amount || null}
-            coverageYears={getCoverageYears()}
-            stepLabel="Step 1 of 7"
-            primaryLabel="Continue"
-            secondaryLabel="Change Motor"
-            onPrimary={handleContinue}
-            onSecondary={() => {
-              setSelectedMotor(null);
-              dispatch({ type: 'SET_MOTOR', payload: null });
-            }}
-          />
-        </div>
+        <StickyQuoteBar
+          model={getModelString()}
+          total={getTotalWithTax()}
+          monthly={monthlyPayment?.amount || null}
+          coverageYears={getCoverageYears()}
+          stepLabel="Step 1 of 7"
+          primaryLabel="Continue"
+          secondaryLabel="Change Motor"
+          onPrimary={handleContinue}
+          onSecondary={() => {
+            setSelectedMotor(null);
+            dispatch({ type: 'SET_MOTOR', payload: null });
+          }}
+        />
       )}
     </div>
   );
