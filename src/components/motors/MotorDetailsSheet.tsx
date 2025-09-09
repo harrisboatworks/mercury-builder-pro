@@ -111,25 +111,40 @@ export default function MotorDetailsSheet({
       container.style.position = 'absolute';
       container.style.left = '-9999px';
       container.style.width = '794px'; // A4 width in pixels at 96 DPI
+      container.style.height = 'auto';
       container.style.backgroundColor = 'white';
+      container.style.fontFamily = 'Arial, sans-serif';
       document.body.appendChild(container);
 
-      // Generate canvas from HTML
+      // Wait a moment for fonts and images to load
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      // Generate canvas from HTML with optimized settings for professional output
       const canvas = await html2canvas(container, {
-        scale: 2,
+        scale: 2, // High resolution for crisp text
         useCORS: true,
         allowTaint: true,
-        backgroundColor: '#ffffff'
+        backgroundColor: '#ffffff',
+        logging: false,
+        imageTimeout: 15000,
+        onclone: (clonedDoc) => {
+          // Ensure all styles are properly applied
+          const clonedContainer = clonedDoc.querySelector('div');
+          if (clonedContainer) {
+            clonedContainer.style.width = '794px';
+            clonedContainer.style.fontFamily = 'Arial, sans-serif';
+          }
+        }
       });
 
       // Remove temporary container
       document.body.removeChild(container);
 
-      // Create PDF
-      const imgData = canvas.toDataURL('image/png');
+      // Create PDF with optimized settings
+      const imgData = canvas.toDataURL('image/png', 0.95); // High quality PNG
       const pdf = new jsPDF('p', 'mm', 'a4');
       const imgWidth = 210; // A4 width in mm
-      const pageHeight = 295; // A4 height in mm
+      const pageHeight = 297; // A4 height in mm
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
       let heightLeft = imgHeight;
 
@@ -147,12 +162,22 @@ export default function MotorDetailsSheet({
         heightLeft -= pageHeight;
       }
 
-      // Download the PDF
-      const fileName = `${motorModel.toLowerCase().replace(/\s+/g, '-')}-spec-sheet.pdf`;
+      // Set PDF metadata
+      pdf.setProperties({
+        title: `${motorModel} - Technical Specifications`,
+        subject: 'Mercury Marine Motor Specifications',
+        author: 'Harris Boat Works - Authorized Mercury Marine Dealer',
+        creator: 'Harris Boat Works Quote System'
+      });
+
+      // Download the PDF with professional naming
+      const fileName = `Mercury-${motorModel.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}-technical-specifications.pdf`;
       pdf.save(fileName);
       
     } catch (error) {
       console.error('Error generating PDF:', error);
+      // Show user-friendly error message
+      alert('Unable to generate PDF at this time. Please try again or contact support.');
     }
   };
 
