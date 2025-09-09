@@ -325,6 +325,24 @@ const stripYearAndBrand = (text: string, year: number) => {
     // Human-friendly scrape summary line for quick verification
     console.log(`discounted: ${discounted} | msrp_only: ${msrp_only} | call_for_price: ${call_for_price} | subtitles_non_empty: ${subtitles_non_empty} | subtitles_suppressed: ${subtitles_suppressed} | total_motors: ${total_motors}`);
 
+    // Step 5: Update motor prices from Mercury pricelist
+    let priceUpdateData = { successfulUpdates: 0, matchesFound: 0, errors: [] };
+    try {
+      console.log('Updating motor prices from Mercury pricelist...');
+      
+      const priceUpdateResult = await supabase.functions.invoke('scrape-motor-prices');
+      
+      if (priceUpdateResult.error) {
+        console.error('Failed to update motor prices:', priceUpdateResult.error);
+      } else if (priceUpdateResult.data) {
+        priceUpdateData = priceUpdateResult.data;
+        console.log(`Price update completed: ${priceUpdateData.successfulUpdates || 0} motors updated`);
+      }
+    } catch (error) {
+      console.error('Error updating motor prices:', error);
+      priceUpdateData.errors.push(error.message);
+    }
+
     const summary = {
       event: 'scrape_inventory_complete',
       updatedCount: rows.length,
@@ -335,6 +353,8 @@ const stripYearAndBrand = (text: string, year: number) => {
       subtitles_non_empty,
       subtitles_suppressed,
       total_motors,
+      pricesUpdated: priceUpdateData.successfulUpdates,
+      priceMatchesFound: priceUpdateData.matchesFound,
       timestamp: new Date().toISOString(),
     } as const;
     console.log(JSON.stringify(summary))
@@ -505,6 +525,22 @@ async function processInventoryUpdate(supabase: any, trackingId: string | null) 
 
     const rows = Array.isArray(data) ? data : [];
     console.log(`Background: Successfully updated ${rows.length} motors`)
+
+    // Step 5: Update motor prices from Mercury pricelist (Background)
+    try {
+      console.log('Background: Updating motor prices from Mercury pricelist...');
+      
+      const priceUpdateResult = await supabase.functions.invoke('scrape-motor-prices');
+      
+      if (priceUpdateResult.error) {
+        console.error('Background: Failed to update motor prices:', priceUpdateResult.error);
+      } else if (priceUpdateResult.data) {
+        const priceData = priceUpdateResult.data;
+        console.log(`Background: Price update completed: ${priceData.successfulUpdates || 0} motors updated`);
+      }
+    } catch (error) {
+      console.error('Background: Error updating motor prices:', error);
+    }
 
     // Update tracking record on success
     if (trackingId) {
