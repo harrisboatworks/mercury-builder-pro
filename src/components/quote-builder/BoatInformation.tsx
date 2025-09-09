@@ -844,7 +844,7 @@ export const BoatInformation = ({
                                 <small className="block text-xs text-muted-foreground">Required for non‑Mercury controls</small>
                               </div>
                             </div> : <>
-                              <Button variant={boatInfo.controlsOption === 'none' ? 'default' : 'outline'} className="h-auto p-4 text-left justify-start flex-col items-start" onClick={() => setBoatInfo(prev => ({
+                              <Button type="button" variant={boatInfo.controlsOption === 'none' ? 'default' : 'outline'} className="h-auto p-4 text-left justify-start flex-col items-start" onClick={() => setBoatInfo(prev => ({
                         ...prev,
                         controlsOption: 'none'
                       }))}>
@@ -853,7 +853,7 @@ export const BoatInformation = ({
                                 <small className="block text-xs opacity-60">Complete remote control kit</small>
                               </Button>
 
-                              <Button variant={boatInfo.controlsOption === 'adapter' ? 'default' : 'outline'} className="h-auto p-4 text-left justify-start flex-col items-start" onClick={() => setBoatInfo(prev => ({
+                              <Button type="button" variant={boatInfo.controlsOption === 'adapter' ? 'default' : 'outline'} className="h-auto p-4 text-left justify-start flex-col items-start" onClick={() => setBoatInfo(prev => ({
                         ...prev,
                         controlsOption: 'adapter'
                       }))}>
@@ -862,7 +862,7 @@ export const BoatInformation = ({
                                 <small className="block text-xs opacity-60">We'll adapt your existing controls</small>
                               </Button>
 
-                              <Button variant={boatInfo.controlsOption === 'compatible' ? 'default' : 'outline'} className="h-auto p-4 text-left justify-start flex-col items-start" onClick={() => setBoatInfo(prev => ({
+                              <Button type="button" variant={boatInfo.controlsOption === 'compatible' ? 'default' : 'outline'} className="h-auto p-4 text-left justify-start flex-col items-start" onClick={() => setBoatInfo(prev => ({
                         ...prev,
                         controlsOption: 'compatible'
                       }))}>
