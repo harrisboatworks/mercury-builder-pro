@@ -123,27 +123,25 @@ export default function MotorDetailsModal() {
       
       {/* Modal */}
       <div 
-        className="fixed inset-x-0 bottom-0 mx-auto w-full max-w-4xl rounded-t-2xl border border-slate-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-900 max-h-[90vh] overflow-y-auto z-[9999]"
+        className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-lg mx-4 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 max-h-[85vh] overflow-hidden z-[9999]"
         data-testid="motor-details-modal"
       >
-        {/* Sticky Header */}
-        <div className="sticky top-0 bg-white dark:bg-slate-900 p-4 border-b border-slate-200 dark:border-slate-700 z-10">
-          <div className="mx-auto h-1.5 w-12 rounded-full bg-slate-200 dark:bg-slate-700" />
-          
-          <div className="flex items-center justify-between mt-4">
+        {/* Header */}
+        <div className="bg-gradient-to-r from-red-600 to-red-700 p-6 text-white">
+          <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h2 className="text-xl font-bold">
                 {title}
               </h2>
               {subtitle && (
-                <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                <p className="text-red-100 text-sm mt-1">
                   {subtitle}
                 </p>
               )}
             </div>
             <button
               onClick={closeModal}
-              className="rounded-full p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="rounded-full p-2 hover:bg-white/20 transition-colors"
               aria-label="Close"
             >
               <X className="h-5 w-5" />
@@ -152,27 +150,26 @@ export default function MotorDetailsModal() {
         </div>
 
         {/* Scrollable Body */}
-        <div className="p-6 pb-24">
-          {/* Motor Image and Pricing */}
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div>
+        <div className="overflow-y-auto max-h-[calc(85vh-200px)]">
+          <div className="p-6">
+            {/* Motor Image and Pricing */}
+            <div className="text-center mb-6">
               {img && (
                 <img 
                   src={img} 
                   alt={title || 'Motor'} 
-                  className="w-full h-64 object-contain bg-slate-50 dark:bg-slate-800 rounded-lg" 
+                  className="w-full h-48 object-contain bg-slate-50 dark:bg-slate-800 rounded-lg mb-4" 
                 />
               )}
-            </div>
-            <div>
-              <div className="space-y-3">
+              
+              <div className="space-y-2">
                 {typeof msrp === "number" && msrp > 0 && (
                   <div className="text-sm text-slate-500 line-through">
                     MSRP: {fmt(msrp)}
                   </div>
                 )}
                 {typeof price === "number" && price > 0 && (
-                  <div className="text-3xl font-bold text-slate-900 dark:text-white">
+                  <div className="text-2xl font-bold text-slate-900 dark:text-white">
                     {fmt(price)}
                   </div>
                 )}
@@ -185,168 +182,97 @@ export default function MotorDetailsModal() {
                 )}
               </div>
             </div>
-          </div>
 
-          {/* Quick Specs */}
-          <div className="mb-8">
-            <h3 className="text-lg font-semibold mb-4 flex items-center">
-              <Zap className="h-5 w-5 mr-2 text-blue-600" />
-              Quick Specifications
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {hp && (
-                <div className="text-center p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600">{hp}</div>
-                  <div className="text-xs text-slate-600 dark:text-slate-400">Horsepower</div>
-                </div>
-              )}
-              {shaft && (
-                <div className="text-center p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                  <div className="text-lg font-semibold">{shaft}</div>
-                  <div className="text-xs text-slate-600 dark:text-slate-400">Shaft Length</div>
-                </div>
-              )}
-              {weightLbs && (
-                <div className="text-center p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                  <div className="text-lg font-semibold">{weightLbs} lbs</div>
-                  <div className="text-xs text-slate-600 dark:text-slate-400">Weight</div>
-                </div>
-              )}
-              {steering && (
-                <div className="text-center p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                  <div className="text-lg font-semibold">{steering}</div>
-                  <div className="text-xs text-slate-600 dark:text-slate-400">Steering</div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Key Features */}
-          {displayFeatures.length > 0 && (
-            <div className="mb-8">
-              <h3 className="text-lg font-semibold mb-4 flex items-center">
-                <Star className="h-5 w-5 mr-2 text-yellow-500" />
-                Key Features
+            {/* Quick Specs */}
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold mb-3 text-slate-900 dark:text-white">
+                Specifications
               </h3>
-              <div className="grid md:grid-cols-2 gap-2">
-                {displayFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0" />
-                    <span className="text-sm text-slate-700 dark:text-slate-300">{feature}</span>
+              <div className="grid grid-cols-2 gap-3">
+                {hp && (
+                  <div className="text-center p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
+                    <div className="text-xl font-bold text-red-600">{hp}</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">HP</div>
                   </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Installation Requirements */}
-          <div className="mb-8">
-            <h3 className="text-lg font-semibold mb-4 flex items-center">
-              <Wrench className="h-5 w-5 mr-2 text-orange-600" />
-              Installation Requirements
-            </h3>
-            <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
-              <div className="space-y-2">
-                {transomRequirement && (
-                  <div><strong>Transom Height:</strong> {transomRequirement}</div>
                 )}
-                {batteryRequirement && (
-                  <div><strong>Battery:</strong> {batteryRequirement}</div>
+                {shaft && (
+                  <div className="text-center p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
+                    <div className="text-sm font-semibold">{shaft}</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">Shaft</div>
+                  </div>
                 )}
-                {includedAccessories.length > 0 && (
-                  <div>
-                    <strong>Included:</strong> {includedAccessories.join(', ')}
+                {weightLbs && (
+                  <div className="text-center p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
+                    <div className="text-sm font-semibold">{weightLbs} lbs</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">Weight</div>
+                  </div>
+                )}
+                {steering && (
+                  <div className="text-center p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
+                    <div className="text-sm font-semibold">{steering}</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">Steering</div>
                   </div>
                 )}
               </div>
             </div>
-          </div>
 
-          {/* Performance Estimates */}
-          <div className="mb-8">
-            <h3 className="text-lg font-semibold mb-4 flex items-center">
-              <Award className="h-5 w-5 mr-2 text-purple-600" />
-              Performance Estimates
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                <div className="text-xl font-bold text-purple-600">{recommendedBoatSize}</div>
-                <div className="text-xs text-slate-600 dark:text-slate-400">Recommended Boat Size</div>
+            {/* Key Features */}
+            {displayFeatures.length > 0 && (
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold mb-3 text-slate-900 dark:text-white">
+                  Key Features
+                </h3>
+                <div className="space-y-2">
+                  {displayFeatures.slice(0, 4).map((feature, index) => (
+                    <div key={index} className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-red-600 rounded-full flex-shrink-0" />
+                      <span className="text-sm text-slate-700 dark:text-slate-300">{feature}</span>
+                    </div>
+                  ))}
+                  {displayFeatures.length > 4 && (
+                    <div className="text-xs text-slate-500">
+                      +{displayFeatures.length - 4} more features
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                <div className="text-xl font-bold text-green-600">{estimatedSpeed}</div>
-                <div className="text-xs text-slate-600 dark:text-slate-400">Est. Top Speed</div>
-                <div className="text-xs text-slate-500 mt-1">Conditions vary</div>
-              </div>
-              <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                <div className="text-xl font-bold text-blue-600">{fuelConsumption}</div>
-                <div className="text-xs text-slate-600 dark:text-slate-400">Est. Fuel Consumption</div>
-                <div className="text-xs text-slate-500 mt-1">At cruise</div>
-              </div>
-            </div>
-          </div>
+            )}
 
-          {/* Technical Specification Sheet */}
-          <div className="mb-8">
-            <h3 className="text-lg font-semibold mb-4 flex items-center">
-              <FileText className="h-5 w-5 mr-2 text-slate-600" />
-              Technical Specifications
-            </h3>
-            <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
-              <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
-                Download a comprehensive technical specification sheet with detailed motor information.
-              </p>
+            {/* Spec Sheet Download */}
+            <div className="mb-4">
               <button
                 onClick={handleGenerateSpecSheet}
                 disabled={specSheetLoading}
-                className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                className="w-full inline-flex items-center justify-center space-x-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
               >
                 <Download className="h-4 w-4" />
-                <span>{specSheetLoading ? 'Generating...' : 'Download Spec Sheet'}</span>
+                <span>{specSheetLoading ? 'Generating...' : 'Download Full Spec Sheet'}</span>
               </button>
             </div>
           </div>
-
-          {/* Description */}
-          {cleanedDescription && (
-            <div className="mb-8">
-              <h3 className="text-lg font-semibold mb-4">Description</h3>
-              <div className="prose prose-sm dark:prose-invert max-w-none">
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                  {cleanedDescription}
-                </p>
-              </div>
-            </div>
-          )}
         </div>
 
-        {/* Sticky Action Bar */}
-        <div className="sticky bottom-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 p-4">
+        {/* Action Bar */}
+        <div className="border-t border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50">
           <div className="flex space-x-3">
             {typeof price === "number" && price > 0 && (
               <button
                 onClick={handleCalculatePayment}
                 disabled={isLoading}
-                className="flex-1 inline-flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white px-4 py-3 rounded-lg font-medium transition-colors"
+                className="flex-1 inline-flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white px-4 py-2.5 rounded-lg font-medium transition-colors"
               >
                 <Calculator className="h-4 w-4" />
-                <span>Calculate Payment</span>
+                <span>Finance</span>
               </button>
             )}
             {onSelect && (
               <button
                 onClick={handleSelectMotor}
-                className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-lg font-medium transition-colors"
+                className="flex-1 bg-red-600 hover:bg-red-700 text-white px-4 py-2.5 rounded-lg font-medium transition-colors"
               >
-                Select This Motor
+                Select Motor
               </button>
             )}
-            <button
-              onClick={closeModal}
-              className="px-4 py-3 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-            >
-              Close
-            </button>
           </div>
         </div>
       </div>
