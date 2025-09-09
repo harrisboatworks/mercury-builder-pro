@@ -9,7 +9,8 @@ import { useToast } from '@/components/ui/use-toast';
 import MotorCardPremium from '@/components/motors/MotorCardPremium';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Search, Filter } from 'lucide-react';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Search, Filter, Menu } from 'lucide-react';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
@@ -336,19 +337,54 @@ export default function MotorSelectionPage() {
             
             {/* HP Range + Stock Filter */}
             <div className="flex flex-wrap items-center gap-3">
-              {HP_RANGES.map(range => (
-                <button
-                  key={range.id}
-                  onClick={() => setHpRange(range.id)}
-                  className={`filter-chip rounded-full border px-3 py-1.5 text-sm transition-colors ${
-                    hpRange === range.id
-                      ? 'border-primary bg-primary/10 text-primary'
-                      : 'border-border text-foreground hover:bg-accent'
-                  }`}
-                >
-                  {range.label}
-                </button>
-              ))}
+              {/* Desktop: Show all filter chips */}
+              <div className="hidden sm:contents">
+                {HP_RANGES.map(range => (
+                  <button
+                    key={range.id}
+                    onClick={() => setHpRange(range.id)}
+                    className={`filter-chip rounded-full border px-3 py-1.5 text-sm transition-colors ${
+                      hpRange === range.id
+                        ? 'border-primary bg-primary/10 text-primary'
+                        : 'border-border text-foreground hover:bg-accent'
+                    }`}
+                  >
+                    {range.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Mobile: Hamburger menu */}
+              <div className="sm:hidden">
+                <Sheet>
+                  <SheetTrigger asChild>
+                    <Button variant="outline" size="sm" className="gap-2">
+                      <Menu className="h-4 w-4" />
+                      {HP_RANGES.find(r => r.id === hpRange)?.label || 'All HP'}
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent side="bottom" className="h-auto">
+                    <SheetHeader>
+                      <SheetTitle>Select HP Range</SheetTitle>
+                    </SheetHeader>
+                    <div className="grid gap-3 py-4">
+                      {HP_RANGES.map(range => (
+                        <button
+                          key={range.id}
+                          onClick={() => setHpRange(range.id)}
+                          className={`w-full rounded-lg border p-3 text-left transition-colors ${
+                            hpRange === range.id
+                              ? 'border-primary bg-primary/10 text-primary'
+                              : 'border-border text-foreground hover:bg-accent'
+                          }`}
+                        >
+                          {range.label}
+                        </button>
+                      ))}
+                    </div>
+                  </SheetContent>
+                </Sheet>
+              </div>
               
               <label className="ml-auto flex items-center gap-2 text-sm text-muted-foreground">
                 <input
