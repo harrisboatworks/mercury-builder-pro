@@ -1,9 +1,9 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Info } from "lucide-react";
-import MotorDetailsSheet from './MotorDetailsSheet';
 import type { Motor } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useMotorModal } from "@/contexts/MotorModalContext";
 
 export default function MotorCardPremium({ 
   img, 
@@ -47,17 +47,30 @@ export default function MotorCardPremium({
   const fmt = (n?: number | null) => (typeof n === "number" ? `$${n.toLocaleString()}` : undefined);
   const hpNum = typeof hp === "string" ? parseFloat(hp) : (typeof hp === "number" ? hp : undefined);
   const isMobile = useIsMobile();
-  const [showDetailsSheet, setShowDetailsSheet] = useState(false);
+  const { openModal } = useMotorModal();
   const cardRef = useRef<HTMLDivElement | null>(null);
-  
-  const handleMoreInfoClick = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent card selection
-    setShowDetailsSheet(true);
-  };
   
   const handleInfoClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setShowDetailsSheet(true);
+    
+    // Open the global modal with motor details
+    openModal(motor || null, {
+      title,
+      subtitle: hpNum ? `${hpNum} HP Mercury Outboard` : undefined,
+      img,
+      msrp,
+      price,
+      promoText,
+      description,
+      hp: hpNum,
+      shaft,
+      weightLbs,
+      altOutput,
+      steering,
+      features,
+      specSheetUrl,
+      onSelect
+    });
   };
   
   return (
@@ -122,29 +135,6 @@ export default function MotorCardPremium({
       >
         <Info className="h-3.5 w-3.5 text-slate-600 dark:text-slate-300" />
       </button>
-
-
-      {/* Mobile/click details sheet */}
-      <MotorDetailsSheet
-        open={showDetailsSheet}
-        onClose={() => setShowDetailsSheet(false)}
-        onSelect={onSelect}
-        title={title}
-        subtitle={hpNum ? `${hpNum} HP Mercury Outboard` : undefined}
-        img={img}
-        msrp={msrp}
-        price={price}
-        promoText={promoText}
-        description={description}
-        hp={hpNum}
-        shaft={shaft}
-        weightLbs={weightLbs}
-        altOutput={altOutput}
-        steering={steering}
-        features={features}
-        specSheetUrl={specSheetUrl}
-        motor={motor}
-      />
     </div>
   );
 }
