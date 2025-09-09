@@ -9,9 +9,10 @@ import { useToast } from '@/components/ui/use-toast';
 import MotorCardPremium from '@/components/motors/MotorCardPremium';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { Search, Filter, Menu } from 'lucide-react';
+import { Switch } from '@/components/ui/switch';
+import { Search } from 'lucide-react';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { MobileHeader } from '@/components/ui/mobile-header';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 
@@ -305,97 +306,65 @@ export default function MotorSelectionPage() {
 
   if (loading) {
     return (
-      <QuoteLayout title="Select Your Mercury Motor">
-        <div className="flex items-center justify-center py-20">
+      <div className="min-h-screen bg-gradient-to-br from-background via-secondary/30 to-accent/50">
+        <MobileHeader title="Select Your Mercury Motor" />
+        <main className="flex items-center justify-center py-20">
           <div className="text-center">
-            <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
+            <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-mercury-red border-t-transparent"></div>
             <p className="text-muted-foreground">Loading Mercury motors...</p>
           </div>
-        </div>
-      </QuoteLayout>
+        </main>
+      </div>
     );
   }
 
   return (
-    <QuoteLayout title="Select Your Mercury Motor">
-      <div className="space-y-6">
-        {/* Filters */}
-        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+    <div className="min-h-screen bg-gradient-to-br from-background via-secondary/30 to-accent/50">
+      {/* Mobile Header */}
+      <MobileHeader title="Select Your Mercury Motor" />
+      
+      {/* Main Content */}
+      <main className="space-y-6 px-4 py-6">
+        {/* Modern Search Section */}
+        <div className="rounded-2xl border border-border bg-card/50 p-4 shadow-sm backdrop-blur-sm">
+          {/* Full-width search input */}
+          <div className="relative mb-4">
+            <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
+            <Input
+              placeholder="Search Mercury motors..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="h-12 rounded-2xl border-0 bg-white pl-12 text-base shadow-sm ring-1 ring-border focus:ring-2 focus:ring-mercury-red"
+            />
+          </div>
           
-          {/* Filters */}
-          <div className="mt-6 space-y-4">
-            {/* Search */}
-            <div className="relative max-w-md">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-              <Input
-                placeholder="Search motors..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
-              />
+          {/* HP Range Chips - Horizontal Scrollable */}
+          <div className="mb-4 overflow-x-auto pb-2">
+            <div className="flex gap-2" style={{ minWidth: 'max-content' }}>
+              {HP_RANGES.map(range => (
+                <button
+                  key={range.id}
+                  onClick={() => setHpRange(range.id)}
+                  className={`flex-shrink-0 rounded-full border-2 px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                    hpRange === range.id
+                      ? 'border-mercury-red bg-mercury-red text-white shadow-lg'
+                      : 'border-brand-blue bg-white text-brand-blue hover:bg-brand-blue/5'
+                  }`}
+                >
+                  {range.label}
+                </button>
+              ))}
             </div>
-            
-            {/* HP Range + Stock Filter */}
-            <div className="flex flex-wrap items-center gap-3">
-              {/* Desktop: Show all filter chips */}
-              <div className="hidden sm:contents">
-                {HP_RANGES.map(range => (
-                  <button
-                    key={range.id}
-                    onClick={() => setHpRange(range.id)}
-                    className={`filter-chip rounded-full border px-3 py-1.5 text-sm transition-colors ${
-                      hpRange === range.id
-                        ? 'border-primary bg-primary/10 text-primary'
-                        : 'border-border text-foreground hover:bg-accent'
-                    }`}
-                  >
-                    {range.label}
-                  </button>
-                ))}
-              </div>
+          </div>
 
-              {/* Mobile: Hamburger menu */}
-              <div className="sm:hidden">
-                <Sheet>
-                  <SheetTrigger asChild>
-                    <Button variant="outline" size="sm" className="gap-2">
-                      <Menu className="h-4 w-4" />
-                      {HP_RANGES.find(r => r.id === hpRange)?.label || 'All HP'}
-                    </Button>
-                  </SheetTrigger>
-                  <SheetContent side="bottom" className="h-auto">
-                    <SheetHeader>
-                      <SheetTitle>Select HP Range</SheetTitle>
-                    </SheetHeader>
-                    <div className="grid gap-3 py-4">
-                      {HP_RANGES.map(range => (
-                        <button
-                          key={range.id}
-                          onClick={() => setHpRange(range.id)}
-                          className={`w-full rounded-lg border p-3 text-left transition-colors ${
-                            hpRange === range.id
-                              ? 'border-primary bg-primary/10 text-primary'
-                              : 'border-border text-foreground hover:bg-accent'
-                          }`}
-                        >
-                          {range.label}
-                        </button>
-                      ))}
-                    </div>
-                  </SheetContent>
-                </Sheet>
-              </div>
-              
-              <label className="ml-auto flex items-center gap-2 text-sm text-muted-foreground">
-                <input
-                  type="checkbox"
-                  checked={inStockOnly}
-                  onChange={(e) => setInStockOnly(e.target.checked)}
-                  className="h-4 w-4 rounded border-border text-primary focus:ring-primary"
-                />
-                In Stock Only
-              </label>
-            </div>
+          {/* In Stock Toggle */}
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-medium text-foreground">In Stock Only</span>
+            <Switch
+              checked={inStockOnly}
+              onCheckedChange={setInStockOnly}
+              className="data-[state=checked]:bg-mercury-red"
+            />
           </div>
         </div>
 
@@ -465,7 +434,7 @@ export default function MotorSelectionPage() {
           </div>
         )}
 
-      </div>
+      </main>
 
       {/* Sticky Quote Bar - show when motor is selected */}
       {selectedMotor && (
@@ -484,6 +453,6 @@ export default function MotorSelectionPage() {
           }}
         />
       )}
-    </QuoteLayout>
+    </div>
   );
 }

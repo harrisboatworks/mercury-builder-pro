@@ -93,6 +93,14 @@ export default {
 				'special-order': {
 					DEFAULT: 'hsl(var(--special-order))',
 					foreground: 'hsl(var(--special-order-foreground))'
+				},
+				'mercury-red': {
+					DEFAULT: 'hsl(var(--mercury-red))',
+					hover: 'hsl(var(--mercury-red-hover))'
+				},
+				'brand-blue': {
+					DEFAULT: 'hsl(var(--brand-blue))',
+					hover: 'hsl(var(--brand-blue-hover))'
 				}
 			},
 			borderRadius: {
