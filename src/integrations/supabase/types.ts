@@ -260,6 +260,7 @@ export type Database = {
           horsepower: number
           id: string
           image_url: string | null
+          last_scraped: string | null
           make: string
           model: string
           motor_type: string
@@ -280,6 +281,7 @@ export type Database = {
           horsepower: number
           id?: string
           image_url?: string | null
+          last_scraped?: string | null
           make?: string
           model: string
           motor_type: string
@@ -300,6 +302,7 @@ export type Database = {
           horsepower?: number
           id?: string
           image_url?: string | null
+          last_scraped?: string | null
           make?: string
           model?: string
           motor_type?: string

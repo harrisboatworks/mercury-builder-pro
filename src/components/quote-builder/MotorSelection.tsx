@@ -2022,35 +2022,80 @@ export const MotorSelection = ({
 
                         {(!quickViewMotor.description || !quickViewMotor.specifications || Object.keys(quickViewMotor.specifications as any).length === 0) && <Button variant="outline" size="sm" disabled={quickViewLoading} onClick={async () => {
                     try {
-                      setQuickViewLoading(true);
-                      const {
-                        data,
-                        error
-                      } = await supabase.functions.invoke('scrape-motor-details', {
-                        body: {
-                          motor_id: quickViewMotor.id,
-                          detail_url: quickViewMotor.detailUrl
-                        }
-                      });
-                      if (error) throw error;
-                      const {
-                        description,
-                        features,
-                        specifications
-                      } = data as any || {};
-                      setMotors(prev => prev.map(mm => mm.id === quickViewMotor.id ? {
-                        ...mm,
-                        description,
-                        features,
-                        specifications
-                      } : mm));
-                      setQuickViewMotor(prev => prev ? {
-                        ...prev,
-                        description,
-                        features,
-                        specifications
-                      } as Motor : prev);
-                    } catch (e) {
+                       setQuickViewLoading(true);
+                       
+                       // Check if we have fresh cached data (less than 7 days old)
+                       const { data: freshMotorData } = await supabase
+                         .from('motor_models')
+                         .select('description, features, specifications, last_scraped')
+                         .eq('id', quickViewMotor.id)
+                         .single();
+                       
+                       const sevenDaysAgo = new Date();
+                       sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+                       const lastScraped = freshMotorData?.last_scraped ? new Date(freshMotorData.last_scraped) : null;
+                       
+                       // Use cached data if it's fresh and complete
+                       if (freshMotorData && lastScraped && lastScraped > sevenDaysAgo && 
+                           freshMotorData.description && freshMotorData.features?.length > 0) {
+                         
+                         const { description, features, specifications } = freshMotorData;
+                         setMotors(prev => prev.map(mm => mm.id === quickViewMotor.id ? {
+                           ...mm,
+                           description,
+                           features,
+                           specifications
+                         } : mm));
+                         setQuickViewMotor(prev => prev ? {
+                           ...prev,
+                           description,
+                           features,
+                           specifications
+                         } as Motor : prev);
+                         
+                         toast({
+                           title: 'Motor Details Loaded',
+                           description: `Updated ${lastScraped.toLocaleDateString()}`,
+                           variant: 'default'
+                         });
+                         return;
+                       }
+                       
+                       // Fallback to real-time scraping for stale or missing data
+                       const {
+                         data,
+                         error
+                       } = await supabase.functions.invoke('scrape-motor-details', {
+                         body: {
+                           motor_id: quickViewMotor.id,
+                           detail_url: quickViewMotor.detailUrl
+                         }
+                       });
+                       if (error) throw error;
+                       const {
+                         description,
+                         features,
+                         specifications
+                       } = data as any || {};
+                       setMotors(prev => prev.map(mm => mm.id === quickViewMotor.id ? {
+                         ...mm,
+                         description,
+                         features,
+                         specifications
+                       } : mm));
+                       setQuickViewMotor(prev => prev ? {
+                         ...prev,
+                         description,
+                         features,
+                         specifications
+                       } as Motor : prev);
+                       
+                       toast({
+                         title: 'Motor Details Updated',
+                         description: 'Fresh data loaded from manufacturer',
+                         variant: 'default'
+                       });
+                     } catch (e) {
                       console.log('Motor details sync issue - using available data:', e);
                       toast({
                          title: 'Motor Details',
