@@ -9,9 +9,9 @@ import { useToast } from '@/components/ui/use-toast';
 import MotorCardPremium from '@/components/motors/MotorCardPremium';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { Search, Filter, ChevronDown } from 'lucide-react';
-import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { Search } from 'lucide-react';
+import MobileHeader from '@/components/ui/mobile-header';
+import ToggleSwitch from '@/components/ui/toggle-switch';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 
@@ -305,93 +305,65 @@ export default function MotorSelectionPage() {
 
   if (loading) {
     return (
-      <QuoteLayout title="Select Your Mercury Motor">
-        <div className="flex items-center justify-center py-20">
-          <div className="text-center">
-            <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
-            <p className="text-muted-foreground">Loading Mercury motors...</p>
+      <div className="min-h-screen bg-background">
+        <MobileHeader title="Select Your Mercury Motor" />
+        <main className="container mx-auto px-4 py-8">
+          <div className="flex items-center justify-center py-20">
+            <div className="text-center">
+              <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
+              <p className="text-muted-foreground">Loading Mercury motors...</p>
+            </div>
           </div>
-        </div>
-      </QuoteLayout>
+        </main>
+      </div>
     );
   }
 
   return (
-    <QuoteLayout title="Select Your Mercury Motor">
-      <div className="space-y-6">
-        {/* Filters */}
-        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+    <div className="min-h-screen bg-background">
+      <MobileHeader title="Select Your Mercury Motor" />
+      
+      <main className="container mx-auto px-4 py-6 space-y-6">
+        {/* Search & Filters */}
+        <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
+          {/* Search Input */}
+          <div className="relative mb-4">
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <Input
+              placeholder="Search motors by HP, model, or keyword…"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-10 h-12 rounded-xl shadow-sm"
+            />
+          </div>
           
-          {/* Filters */}
-          <div className="mt-6 space-y-4">
-            {/* Search */}
-            <div className="relative max-w-md">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-              <Input
-                placeholder="Search motors..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
-              />
-            </div>
-            
-            {/* HP Range + Stock Filter */}
-            <div className="flex flex-wrap items-center gap-3">
-              {/* Desktop: Show all filter chips */}
-              <div className="hidden sm:contents">
+          {/* HP Range Chips */}
+          <div className="space-y-3">
+            <div className="overflow-x-auto">
+              <div className="flex gap-2 pb-2 min-w-max">
                 {HP_RANGES.map(range => (
                   <button
                     key={range.id}
                     onClick={() => setHpRange(range.id)}
-                    className={`filter-chip rounded-full border px-3 py-1.5 text-sm transition-colors ${
+                    className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                       hpRange === range.id
-                        ? 'border-primary bg-primary/10 text-primary'
-                        : 'border-border text-foreground hover:bg-accent'
+                        ? 'bg-primary text-primary-foreground'
+                        : 'bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary'
                     }`}
                   >
                     {range.label}
                   </button>
                 ))}
               </div>
-
-              {/* Mobile: Compact dropdown */}
-              <div className="sm:hidden">
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <Button variant="outline" size="sm" className="gap-2">
-                      <span>{HP_RANGES.find(r => r.id === hpRange)?.label || 'All HP'}</span>
-                      <ChevronDown className="h-4 w-4" />
-                    </Button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-56 p-2" align="start">
-                    <div className="space-y-1">
-                      {HP_RANGES.map(range => (
-                        <button
-                          key={range.id}
-                          onClick={() => setHpRange(range.id)}
-                          className={`w-full rounded-md px-3 py-2 text-left text-sm transition-colors ${
-                            hpRange === range.id
-                              ? 'bg-primary/10 text-primary font-medium'
-                              : 'hover:bg-accent'
-                          }`}
-                        >
-                          {range.label}
-                        </button>
-                      ))}
-                    </div>
-                  </PopoverContent>
-                </Popover>
-              </div>
-              
-              <label className="ml-auto flex items-center gap-2 text-sm text-muted-foreground">
-                <input
-                  type="checkbox"
-                  checked={inStockOnly}
-                  onChange={(e) => setInStockOnly(e.target.checked)}
-                  className="h-4 w-4 rounded border-border text-primary focus:ring-primary"
-                />
-                In Stock Only
-              </label>
+            </div>
+            
+            {/* Stock Filter */}
+            <div className="flex items-center justify-between pt-2 border-t border-border">
+              <span className="text-sm text-muted-foreground">Show only in-stock motors</span>
+              <ToggleSwitch
+                checked={inStockOnly}
+                onChange={setInStockOnly}
+              />
             </div>
           </div>
         </div>
@@ -461,8 +433,7 @@ export default function MotorSelectionPage() {
             </Button>
           </div>
         )}
-
-      </div>
+      </main>
 
       {/* Sticky Quote Bar - show when motor is selected */}
       {selectedMotor && (
@@ -481,6 +452,6 @@ export default function MotorSelectionPage() {
           }}
         />
       )}
-    </QuoteLayout>
+    </div>
   );
 }
