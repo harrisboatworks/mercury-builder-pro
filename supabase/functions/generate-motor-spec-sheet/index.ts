@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.7.1'
+import puppeteer from "https://deno.land/x/puppeteer@16.2.0/mod.ts"
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -62,18 +63,39 @@ serve(async (req) => {
       }
     }
 
-    // Generate PDF content using HTML template
+    // Generate PDF using Puppeteer
     const pdfHtml = generateSpecSheetHTML(motor)
+    const fileName = `spec-sheet-${motor.model.toLowerCase().replace(/\s+/g, '-')}-${Date.now()}.pdf`
     
-    // For now, return the HTML content - in production you'd convert to PDF
-    // This allows immediate functionality while we can enhance with proper PDF generation later
-    const fileName = `spec-sheet-${motor.model.toLowerCase().replace(/\s+/g, '-')}-${Date.now()}.html`
+    console.log('Launching Puppeteer to generate PDF for motor:', motor.model)
     
-    // Upload to storage
+    // Launch Puppeteer and generate PDF
+    const browser = await puppeteer.launch({
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    })
+    
+    const page = await browser.newPage()
+    await page.setContent(pdfHtml, { waitUntil: 'networkidle0' })
+    
+    const pdfBuffer = await page.pdf({
+      format: 'A4',
+      printBackground: true,
+      margin: {
+        top: '20px',
+        right: '20px',
+        bottom: '20px',
+        left: '20px'
+      }
+    })
+    
+    await browser.close()
+    console.log('PDF generated successfully')
+    
+    // Upload PDF to storage
     const { data: uploadData, error: uploadError } = await supabase.storage
       .from('spec-sheets')
-      .upload(fileName, new Blob([pdfHtml], { type: 'text/html' }), {
-        contentType: 'text/html',
+      .upload(fileName, pdfBuffer, {
+        contentType: 'application/pdf',
         upsert: true
       })
 
