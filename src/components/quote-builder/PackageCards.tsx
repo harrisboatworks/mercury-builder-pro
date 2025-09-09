@@ -11,6 +11,8 @@ export type PackageOption = {
   monthly?: number;
   features: string[];
   recommended?: boolean;
+  coverageYears?: number;
+  targetWarrantyYears?: number; // used only to trigger selection handler
 };
 
 type PackageCardsProps = {
@@ -62,6 +64,12 @@ export function PackageCards({
             <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
               From <span className="font-semibold">{money(Math.round(monthly))}/mo</span>
             </div>
+
+            {p.coverageYears != null && (
+              <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                Coverage: <span className="font-medium">{p.coverageYears} years total</span>
+              </div>
+            )}
 
             <div className="mt-2 inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 ring-1 ring-inset ring-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:ring-emerald-800">
               You save {money(p.savings)}

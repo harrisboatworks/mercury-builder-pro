@@ -9,6 +9,9 @@ type StickySummaryProps = {
   bullets?: string[];
   onReserve: () => void;
   depositAmount?: number;
+  coverageYears?: number;
+  monthlyDelta?: number; // extra per-month for warranty, precomputed upstream
+  promoWarrantyYears?: number; // optional: show "+X yrs promo"
 };
 
 export default function StickySummary({
@@ -19,6 +22,9 @@ export default function StickySummary({
   bullets = [],
   onReserve,
   depositAmount = 200,
+  coverageYears,
+  monthlyDelta,
+  promoWarrantyYears,
 }: StickySummaryProps) {
   return (
     <>
@@ -41,6 +47,22 @@ export default function StickySummary({
           )}
           You save <span className="font-semibold">{money(totalSavings)}</span>
         </div>
+
+        {typeof coverageYears === "number" && (
+          <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+            Coverage: <span className="font-medium">{coverageYears} years total</span>
+          </div>
+        )}
+        {typeof monthlyDelta === "number" && monthlyDelta > 0 && (
+          <div className="mt-1 text-sm text-slate-700 dark:text-slate-300">
+            +{money(Math.round(monthlyDelta))}/mo for Extended Warranty
+          </div>
+        )}
+        {promoWarrantyYears ? (
+          <div className="mt-1 text-xs text-emerald-700 dark:text-emerald-300">
+            Includes +{promoWarrantyYears} yrs promo warranty
+          </div>
+        ) : null}
 
         <ul className="mt-3 space-y-1 text-sm text-slate-700 dark:text-slate-300">
           {bullets.slice(0, 3).map((b, i) => (

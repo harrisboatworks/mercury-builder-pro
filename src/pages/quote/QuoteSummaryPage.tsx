@@ -6,20 +6,24 @@ import { PackageCards, type PackageOption } from '@/components/quote-builder/Pac
 import StickySummary from '@/components/quote-builder/StickySummary';
 import { PromoPanel } from '@/components/quote-builder/PromoPanel';
 import { PricingTable } from '@/components/quote-builder/PricingTable';
-import { WarrantySelector } from '@/components/quote-builder/WarrantySelector';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
+import WarrantyAddOnUI, { type WarrantyTarget } from '@/components/quote-builder/WarrantyAddOnUI';
+import BonusOffersBadge from '@/components/quote-builder/BonusOffersBadge';
 
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { computeTotals } from '@/lib/finance';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 import { useToast } from '@/hooks/use-toast';
 
 export default function QuoteSummaryPage() {
   const navigate = useNavigate();
   const { state, dispatch, isStepAccessible, getQuoteData, isNavigationBlocked } = useQuote();
   const { promo } = useActiveFinancingPromo();
+  const { getWarrantyPromotions, getTotalWarrantyBonusYears } = useActivePromotions();
   const { toast } = useToast();
   const [selectedPackage, setSelectedPackage] = useState<string>('better');
 
@@ -79,14 +83,67 @@ export default function QuoteSummaryPage() {
   
   const totals = computeTotals(data);
 
-  // Package options
+  // Get financing rate
+  const financingRate = promo?.rate || 7.99;
+
+  // Coverage years calculation (no math beyond reading promo years)
+  const baseYears = 3;
+  const promoYears = getTotalWarrantyBonusYears?.() ?? 0;
+  const currentCoverageYears = Math.min(baseYears + promoYears, 8);
+  const maxCoverageYears = 8;
+
+  // Mock warranty pricing data - in real app this would come from state.warrantyOptions
+  const mockWarrantyPricing = [
+    { years: 6, price: 899, monthlyDelta: 15 },
+    { years: 7, price: 1199, monthlyDelta: 20 },
+    { years: 8, price: 1499, monthlyDelta: 25 },
+  ];
+
+  const targets: WarrantyTarget[] = mockWarrantyPricing
+    .filter(o => o.years > currentCoverageYears && o.years <= maxCoverageYears)
+    .map(o => ({ targetYears: o.years, oneTimePrice: o.price, monthlyDelta: o.monthlyDelta }));
+
+  // Currently selected target years (total), or null
+  const selectedTargetYears =
+    state?.warrantyConfig?.totalYears && state.warrantyConfig.totalYears > currentCoverageYears
+      ? state.warrantyConfig.totalYears
+      : null;
+
+  // Precomputed "+$/mo" for the selected target (if any)
+  const selectedMonthlyDelta = selectedTargetYears
+    ? targets.find(t => t.targetYears === selectedTargetYears)?.monthlyDelta
+    : undefined;
+
+  const onSelectWarranty = (targetYears: number | null) => {
+    if (targetYears === null) {
+      dispatch({ type: "SET_WARRANTY_CONFIG", payload: { extendedYears: 0, warrantyPrice: 0, totalYears: currentCoverageYears } });
+    } else {
+      const opt = mockWarrantyPricing.find(o => o.years === targetYears);
+      const extendedYears = Math.max(0, targetYears - currentCoverageYears);
+      dispatch({
+        type: "SET_WARRANTY_CONFIG",
+        payload: {
+          extendedYears,
+          warrantyPrice: opt?.price ?? 0,
+          totalYears: targetYears,
+        },
+      });
+    }
+  };
+
+  // Promo warranty years for sticky summary
+  const warrantyPromos = getWarrantyPromotions?.() ?? [];
+  const promoWarrantyYears = warrantyPromos[0]?.warranty_extra_years ?? 0;
+
+  // Package options with coverage info
   const packages: PackageOption[] = [
     { 
       id: "good", 
       label: "Essential", 
       priceBeforeTax: data.subtotal, 
       savings: totals.savings, 
-      features: ["Mercury motor", "Standard controls & rigging", "Basic installation"] 
+      features: ["Mercury motor", "Standard controls & rigging", "Basic installation"],
+      coverageYears: currentCoverageYears
     },
     { 
       id: "better", 
@@ -94,14 +151,18 @@ export default function QuoteSummaryPage() {
       priceBeforeTax: data.subtotal + 179.99, 
       savings: totals.savings + 50, 
       features: ["Mercury motor", "Premium controls & rigging", "Marine starting battery", "Standard propeller", "Priority installation"], 
-      recommended: true 
+      recommended: true,
+      coverageYears: Math.max(currentCoverageYears, 6),
+      targetWarrantyYears: Math.max(currentCoverageYears, 6)
     },
     { 
       id: "best", 
-      label: "Premium", 
+      label: "Premium • Max coverage", 
       priceBeforeTax: data.subtotal + 179.99 + 500, 
       savings: totals.savings + 150, 
-      features: ["Mercury motor", "Premium controls & rigging", "Marine starting battery", "Performance propeller upgrade", "Extended warranty", "White-glove installation"] 
+      features: ["Max coverage", "Priority install", "Premium prop", "Extended warranty", "White-glove installation"],
+      coverageYears: maxCoverageYears,
+      targetWarrantyYears: maxCoverageYears
     },
   ];
 
@@ -125,9 +186,6 @@ export default function QuoteSummaryPage() {
       description: 'Additional coverage and peace of mind'
     });
   }
-
-  // Get financing rate
-  const financingRate = promo?.rate || 7.99;
 
   // CTA handlers (stub functions for now)
   const handleReserveDeposit = () => {
@@ -157,6 +215,11 @@ export default function QuoteSummaryPage() {
 
   const handlePackageSelect = (packageId: string) => {
     setSelectedPackage(packageId);
+    // If package implies a target, apply it so engine reprices
+    const pkg = packages.find(p => p.id === packageId);
+    if (pkg?.targetWarrantyYears) {
+      onSelectWarranty(pkg.targetWarrantyYears);
+    }
   };
 
   const selectedPackageData = packages.find(p => p.id === selectedPackage) || packages[1];
@@ -185,6 +248,9 @@ export default function QuoteSummaryPage() {
               rate={financingRate}
             />
 
+            {/* Bonus offers badge directly under hero price */}
+            <BonusOffersBadge />
+
             {/* Package Selection */}
             <PackageCards
               options={packages}
@@ -212,9 +278,17 @@ export default function QuoteSummaryPage() {
               tradeInValue={0}
             />
             
+            {/* New Warranty Add-on UI */}
+            <WarrantyAddOnUI
+              currentCoverageYears={currentCoverageYears}
+              maxCoverageYears={maxCoverageYears}
+              targets={targets}
+              selectedTargetYears={selectedTargetYears}
+              onSelectWarranty={onSelectWarranty}
+            />
+
             {/* Legacy Components - Keep for compatibility */}
             <div className="grid md:grid-cols-2 gap-6">
-              <WarrantySelector />
               <BonusOffers motor={quoteData.motor} />
             </div>
 
@@ -240,6 +314,9 @@ export default function QuoteSummaryPage() {
               bullets={selectedPackageData.features}
               onReserve={handleReserveDeposit}
               depositAmount={200}
+              coverageYears={selectedTargetYears ?? currentCoverageYears}
+              monthlyDelta={selectedMonthlyDelta}
+              promoWarrantyYears={promoWarrantyYears > 0 ? promoWarrantyYears : undefined}
             />
           </div>
         </div>
