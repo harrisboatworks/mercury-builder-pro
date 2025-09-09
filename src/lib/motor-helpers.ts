@@ -42,7 +42,13 @@ export const decodeModelName = (modelName: string) => {
   if (/JET\b/i.test(name)) add('Jet', 'Jet Drive', 'Great for shallow water operation');
   if (/BIGFOOT/i.test(name)) add('BigFoot', 'High Thrust', 'Ideal for pontoons & heavy boats');
 
-  // Multi-part combos (match first to avoid partial overlaps)
+  // Multi-part combos (match longest first to avoid partial overlaps)
+  if (upper.includes('EXLHPT')) {
+    add('E', 'Electric Start', 'Push-button start');
+    add('XL', 'Extra Long Shaft (25")', 'For 25" transom boats');
+    add('H', 'Tiller Handle', 'Direct steering control');
+    add('PT', 'Power Trim & Tilt', 'Adjust angle on the fly');
+  }
   if (upper.includes('ELHPT')) {
     add('E', 'Electric Start', 'Push-button start');
     add('L', 'Long Shaft (20")', 'Standard transom height');
@@ -248,11 +254,6 @@ export const isTillerMotor = (model: string) => {
 export const getIncludedAccessories = (motor: Motor) => {
   const accessories = [];
   
-  // All motors include basic installation and testing
-  accessories.push('Professional installation');
-  accessories.push('Water testing & setup');
-  accessories.push('Basic rigging');
-  
   // Check for fuel tank inclusion
   if (includesFuelTank(motor)) {
     if (isTillerMotor(motor.model || '')) {
@@ -267,6 +268,9 @@ export const getIncludedAccessories = (motor: Motor) => {
   if (includesPropeller(motor)) {
     accessories.push('Standard propeller');
   }
+  
+  // Standard documentation
+  accessories.push('Owner\'s manual & warranty');
   
   return accessories;
 };
