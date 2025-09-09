@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import mercuryLogo from "@/assets/mercury-logo.png";
 import harrisLogo from "@/assets/harris-logo.png";
+import "@/styles/viewport-xs.css";
 
 interface BrandHeaderLiteProps {
   phone?: string;
@@ -43,9 +44,11 @@ export default function BrandHeaderLite({
           </button>
           <a
             href={tel}
-            className="rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+            aria-label={`Call Harris Boat Works at ${phone}`}
+            className="inline-flex items-center gap-1 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
           >
-            <span className="hidden sm:inline">Call </span>{phone}
+            <span aria-hidden="true">📞</span>
+            <span className="xs:hidden">Call {phone}</span>
           </a>
         </div>
       </div>
