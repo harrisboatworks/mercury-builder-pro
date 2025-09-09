@@ -9,8 +9,8 @@ import { useToast } from '@/components/ui/use-toast';
 import MotorCardPremium from '@/components/motors/MotorCardPremium';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { Search, Filter, Menu } from 'lucide-react';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Search, Filter, ChevronDown } from 'lucide-react';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
@@ -354,36 +354,33 @@ export default function MotorSelectionPage() {
                 ))}
               </div>
 
-              {/* Mobile: Hamburger menu */}
+              {/* Mobile: Compact dropdown */}
               <div className="sm:hidden">
-                <Sheet>
-                  <SheetTrigger asChild>
+                <Popover>
+                  <PopoverTrigger asChild>
                     <Button variant="outline" size="sm" className="gap-2">
-                      <Menu className="h-4 w-4" />
-                      {HP_RANGES.find(r => r.id === hpRange)?.label || 'All HP'}
+                      <span>{HP_RANGES.find(r => r.id === hpRange)?.label || 'All HP'}</span>
+                      <ChevronDown className="h-4 w-4" />
                     </Button>
-                  </SheetTrigger>
-                  <SheetContent side="bottom" className="h-auto">
-                    <SheetHeader>
-                      <SheetTitle>Select HP Range</SheetTitle>
-                    </SheetHeader>
-                    <div className="grid gap-3 py-4">
+                  </PopoverTrigger>
+                  <PopoverContent className="w-56 p-2" align="start">
+                    <div className="space-y-1">
                       {HP_RANGES.map(range => (
                         <button
                           key={range.id}
                           onClick={() => setHpRange(range.id)}
-                          className={`w-full rounded-lg border p-3 text-left transition-colors ${
+                          className={`w-full rounded-md px-3 py-2 text-left text-sm transition-colors ${
                             hpRange === range.id
-                              ? 'border-primary bg-primary/10 text-primary'
-                              : 'border-border text-foreground hover:bg-accent'
+                              ? 'bg-primary/10 text-primary font-medium'
+                              : 'hover:bg-accent'
                           }`}
                         >
                           {range.label}
                         </button>
                       ))}
                     </div>
-                  </SheetContent>
-                </Sheet>
+                  </PopoverContent>
+                </Popover>
               </div>
               
               <label className="ml-auto flex items-center gap-2 text-sm text-muted-foreground">
