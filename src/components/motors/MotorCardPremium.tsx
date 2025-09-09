@@ -2,7 +2,6 @@
 import React, { useRef, useState } from "react";
 import { Info } from "lucide-react";
 import MotorDetailsSheet from './MotorDetailsSheet';
-import MotorQuickInfoPopover from "./MotorQuickInfoPopover";
 import type { Motor } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -49,7 +48,6 @@ export default function MotorCardPremium({
   const hpNum = typeof hp === "string" ? parseFloat(hp) : (typeof hp === "number" ? hp : undefined);
   const isMobile = useIsMobile();
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
-  const [infoOpen, setInfoOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement | null>(null);
   
   const handleMoreInfoClick = (e: React.MouseEvent) => {
@@ -59,8 +57,7 @@ export default function MotorCardPremium({
   
   const handleInfoClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    console.log('Info button clicked, toggling to:', !infoOpen);
-    setInfoOpen(!infoOpen);
+    setShowDetailsSheet(true);
   };
   
   return (
@@ -126,21 +123,6 @@ export default function MotorCardPremium({
         <Info className="h-3.5 w-3.5 text-slate-600 dark:text-slate-300" />
       </button>
 
-      <MotorQuickInfoPopover
-        anchorEl={cardRef.current}
-        open={infoOpen}
-        onClose={() => setInfoOpen(false)}
-        content={
-          <div className="grid gap-1">
-            {hpNum && <div><span className="text-muted-foreground">Horsepower:</span> <span className="font-medium">{hpNum}</span></div>}
-            {shaft && <div><span className="text-muted-foreground">Shaft:</span> <span className="font-medium">{shaft}</span></div>}
-            {weightLbs && <div><span className="text-muted-foreground">Weight:</span> <span className="font-medium">{weightLbs} lb</span></div>}
-            {altOutput && <div><span className="text-muted-foreground">Alternator:</span> <span className="font-medium">{altOutput}</span></div>}
-            {steering && <div><span className="text-muted-foreground">Steering:</span> <span className="font-medium capitalize">{steering}</span></div>}
-            {promoText && <div className="mt-1 rounded bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-700 dark:bg-emerald-900/25 dark:text-emerald-300">{promoText}</div>}
-          </div>
-        }
-      />
 
       {/* Mobile/click details sheet */}
       <MotorDetailsSheet
