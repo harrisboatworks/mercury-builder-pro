@@ -857,7 +857,7 @@ export const BoatInformation = ({
                         ...prev,
                         controlsOption: 'adapter'
                       }))}>
-                                <strong className="block">I have Mercury controls (2004 or newer)</strong>
+                                <strong className="block">I have Mercury controls (2004 +)</strong>
                                 <span className="text-sm text-primary">+$125 (Save $1,075!)</span>
                                 <small className="block text-xs opacity-60">We'll adapt your existing controls</small>
                               </Button>
