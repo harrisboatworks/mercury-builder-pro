@@ -1,12 +1,127 @@
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const SYSTEM_PROMPT = `You are a helpful assistant for Harris Boat Works, a Mercury outboard motor dealership. You help customers with:
+// Initialize Supabase client
+const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+// Helper function to get current motor inventory
+async function getCurrentMotorInventory() {
+  try {
+    const { data: motors, error } = await supabase
+      .from('motor_models')
+      .select('*')
+      .order('horsepower', { ascending: true });
+    
+    if (error) {
+      console.error('Error fetching motors:', error);
+      return [];
+    }
+    
+    return motors || [];
+  } catch (error) {
+    console.error('Error in getCurrentMotorInventory:', error);
+    return [];
+  }
+}
+
+// Helper function to get active promotions
+async function getActivePromotions() {
+  try {
+    const today = new Date().toISOString().split('T')[0];
+    const { data: promotions, error } = await supabase
+      .from('promotions')
+      .select('*')
+      .eq('is_active', true)
+      .or(`start_date.is.null,start_date.lte.${today}`)
+      .or(`end_date.is.null,end_date.gte.${today}`)
+      .order('priority', { ascending: false });
+    
+    if (error) {
+      console.error('Error fetching promotions:', error);
+      return [];
+    }
+    
+    return promotions || [];
+  } catch (error) {
+    console.error('Error in getActivePromotions:', error);
+    return [];
+  }
+}
+
+// Helper function to format motor data for AI
+function formatMotorData(motors) {
+  const motorsByType = {};
+  
+  motors.forEach(motor => {
+    const type = motor.motor_type || 'Other';
+    if (!motorsByType[type]) {
+      motorsByType[type] = [];
+    }
+    motorsByType[type].push({
+      model: motor.model,
+      hp: motor.horsepower,
+      price: motor.sale_price || motor.base_price,
+      availability: motor.availability,
+      year: motor.year
+    });
+  });
+  
+  let formatted = "\n## CURRENT INVENTORY (Real-time data):\n\n";
+  
+  Object.entries(motorsByType).forEach(([type, typeMotors]) => {
+    formatted += `**${type} Motors:**\n`;
+    typeMotors.slice(0, 10).forEach(motor => { // Limit to prevent prompt bloat
+      const price = motor.price ? `$${motor.price.toLocaleString()}` : 'Call for pricing';
+      formatted += `- ${motor.model} (${motor.hp}HP) - ${price} - ${motor.availability}\n`;
+    });
+    formatted += "\n";
+  });
+  
+  return formatted;
+}
+
+// Helper function to format promotion data for AI
+function formatPromotionData(promotions) {
+  if (!promotions.length) return "";
+  
+  let formatted = "\n## CURRENT PROMOTIONS & SPECIAL OFFERS:\n\n";
+  
+  promotions.slice(0, 5).forEach(promo => { // Limit to prevent prompt bloat
+    formatted += `**${promo.name}**\n`;
+    if (promo.discount_percentage > 0) {
+      formatted += `- ${promo.discount_percentage}% off qualifying motors\n`;
+    }
+    if (promo.discount_fixed_amount > 0) {
+      formatted += `- $${promo.discount_fixed_amount} off qualifying motors\n`;
+    }
+    if (promo.bonus_title) {
+      formatted += `- Bonus: ${promo.bonus_title}\n`;
+    }
+    if (promo.end_date) {
+      formatted += `- Valid until: ${promo.end_date}\n`;
+    }
+    formatted += "\n";
+  });
+  
+  return formatted;
+}
+
+// Build dynamic system prompt with real-time data
+async function buildSystemPrompt() {
+  const [motors, promotions] = await Promise.all([
+    getCurrentMotorInventory(),
+    getActivePromotions()
+  ]);
+  
+  const basePrompt = `You are a helpful assistant for Harris Boat Works, a Mercury outboard motor dealership. You help customers with:
 
 1. Mercury motor selection and compatibility
 2. Boat motor pricing and quotes  
@@ -91,10 +206,45 @@ Q: "Difference between 2-stroke and 4-stroke?"
 A: "4-stroke (FourStroke) motors are quieter, more fuel efficient, and have lower emissions. 2-stroke (OptiMax) motors are lighter, have better acceleration, and higher power-to-weight ratio."
 
 Q: "How much does installation cost?"
-A: "Installation typically runs $800-$2,000 depending on boat complexity. This includes controls, rigging, propeller, and setup. We always provide detailed quotes upfront."
+A: "Installation typically runs $800-$2,000 depending on boat complexity. This includes controls, rigging, propeller, and setup. We always provide detailed quotes upfront."`;
+
+  // Add real-time inventory data
+  const motorData = formatMotorData(motors);
+  const promotionData = formatPromotionData(promotions);
+  
+  const dynamicPrompt = basePrompt + motorData + promotionData + `
+
+## CONVERSATION RULES & ADVANCED KNOWLEDGE:
+
+### Lead Qualification Protocol:
+- Always ask about boat size, type, and intended use
+- Inquire about budget range to recommend appropriate motors
+- Ask about current motor (if replacing) for comparison
+- Determine timeline for purchase/installation
+
+### Response Guidelines:
+- Use specific pricing from inventory when available
+- Always mention current promotions when relevant
+- Provide 2-3 motor options when possible (good/better/best)
+- Ask qualifying questions to narrow down recommendations
+- Be enthusiastic but honest about product capabilities
+
+### Escalation Triggers:
+- Complex technical issues → "Let me connect you with our technical expert"
+- Warranty claims → "I'll have our service manager contact you directly"
+- Special financing needs → "Our finance specialist can help with that"
+- Custom rigging requirements → "Our installation team will need to assess that"
+
+### Context Awareness:
+- Reference previous conversation points
+- Build on customer's stated preferences
+- Remember budget constraints mentioned
+- Track boat details shared earlier
 
 IMPORTANT INSTRUCTIONS:
-- Always suggest getting a personalized quote for accurate pricing
+- Use REAL pricing from inventory when available (be specific: "The 90HP FourStroke is currently $8,995")
+- Always mention current promotions that apply
+- Suggest getting a personalized quote for final pricing
 - Mention our text line (647-952-2153) for quick questions
 - If technical issues or warranty questions come up, recommend calling directly
 - Be enthusiastic about Mercury products but honest about recommendations
@@ -102,6 +252,9 @@ IMPORTANT INSTRUCTIONS:
 - Keep responses conversational and helpful, not overly technical
 
 Location: Ontario, Canada - we serve Canadian customers with Canadian pricing and support.`;
+
+  return dynamicPrompt;
+}
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -120,14 +273,18 @@ serve(async (req) => {
       throw new Error('OpenAI API key not configured');
     }
 
+    // Build dynamic system prompt with real-time data
+    const systemPrompt = await buildSystemPrompt();
+
     // Build conversation context
     const messages = [
-      { role: 'system', content: SYSTEM_PROMPT },
+      { role: 'system', content: systemPrompt },
       ...conversationHistory,
       { role: 'user', content: message }
     ];
 
     console.log('Sending request to OpenAI with', messages.length, 'messages');
+    console.log('Using dynamic system prompt with real-time inventory and promotions');
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
