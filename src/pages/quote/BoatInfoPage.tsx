@@ -77,7 +77,7 @@ export default function BoatInfoPage() {
   return (
     <>
       <QuoteLayout title="Boat Information">
-        <div className="space-y-6">
+        <div className="space-y-3">
           <div className="flex items-center gap-4">
             <Button variant="outline" size="sm" onClick={handleBack}>
               <ArrowLeft className="w-4 h-4 mr-2" />
