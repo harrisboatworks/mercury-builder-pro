@@ -7,7 +7,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ShoppingCart, RotateCcw, ArrowRight, User, FileText, LogOut, Trash2, AlertTriangle } from 'lucide-react';
+import { ShoppingCart, RotateCcw, ArrowRight, User, FileText, LogOut, Trash2, AlertTriangle, MessageSquare } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo.png';
 
 const Index = () => {
@@ -450,10 +450,16 @@ const Index = () => {
               </p>
               <div className="flex justify-center space-x-4">
                 <Button variant="ghost" size="sm" asChild>
-                  <a href="tel:+1234567890">Call Us</a>
+                  <a href="tel:+16479522153">📞 Call Us</a>
                 </Button>
                 <Button variant="ghost" size="sm" asChild>
-                  <a href="mailto:sales@harrisboatworks.com">Email Us</a>
+                  <a href="sms:+16479522153">
+                    <MessageSquare className="w-4 h-4 mr-1" />
+                    Text Us
+                  </a>
+                </Button>
+                <Button variant="ghost" size="sm" asChild>
+                  <a href="mailto:sales@harrisboatworks.com">✉️ Email Us</a>
                 </Button>
               </div>
             </div>
