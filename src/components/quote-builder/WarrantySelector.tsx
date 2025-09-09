@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Shield, CheckCircle2, Clock, Star } from 'lucide-react';
 import { useQuote } from '@/contexts/QuoteContext';
-import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { supabase } from '@/integrations/supabase/client';
 
 interface WarrantyPricing {
@@ -26,7 +26,7 @@ interface WarrantyOption {
 
 export function WarrantySelector() {
   const { state, dispatch } = useQuote();
-  const { promo } = useActiveFinancingPromo();
+  const { getTotalWarrantyBonusYears, getWarrantyPromotions, loading: promotionsLoading } = useActivePromotions();
   const [warrantyPricing, setWarrantyPricing] = useState<WarrantyPricing | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -37,8 +37,9 @@ export function WarrantySelector() {
 
   // Calculate current warranty coverage
   const standardYears = 3;
-  // Check if current promo includes warranty extension (Mercury Get 5 Promo adds 2 years)
-  const promoYears = promo && promo.name.toLowerCase().includes('mercury get 5') ? 2 : 0;
+  // Get actual warranty bonus years from active promotions
+  const promoYears = getTotalWarrantyBonusYears();
+  const warrantyPromotions = getWarrantyPromotions();
   const currentTotalYears = standardYears + promoYears;
   const maxTotalYears = 8;
   const availableYears = maxTotalYears - currentTotalYears;
@@ -69,7 +70,7 @@ export function WarrantySelector() {
     fetchWarrantyPricing();
   }, [motorHP]);
 
-  if (loading || !warrantyPricing) {
+  if (loading || !warrantyPricing || promotionsLoading) {
     return (
       <Card className="border-accent">
         <CardContent className="p-6">
@@ -178,6 +179,11 @@ export function WarrantySelector() {
                 <div className="font-medium flex items-center gap-1">
                   +{promoYears} years <Badge variant="secondary" className="text-xs">FREE</Badge>
                 </div>
+                {warrantyPromotions.length > 0 && (
+                  <div className="text-xs text-muted-foreground mt-1">
+                    From: {warrantyPromotions.map(p => p.name).join(', ')}
+                  </div>
+                )}
               </div>
             )}
           </div>
