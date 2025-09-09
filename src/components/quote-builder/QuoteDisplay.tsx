@@ -190,11 +190,6 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
           { name: 'Propeller', value: 350, included: true }
         );
       }
-    } else {
-      // Non-tiller motors - check if they get propellers
-      if (hp >= 25) {
-        items.push({ name: 'Propeller', value: hp >= 150 ? 950 : 350, included: true });
-      }
     }
     
     return items;
