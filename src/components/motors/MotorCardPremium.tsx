@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import { Info } from "lucide-react";
 import MotorQuickInfo from "./MotorQuickInfo";
 import MotorDetailsSheet from './MotorDetailsSheet';
@@ -150,27 +151,30 @@ export default function MotorCardPremium({
         )}
       </div>
       
-      {/* Mobile/click details sheet */}
-      <MotorDetailsSheet
-        open={showDetailsSheet}
-        onClose={() => setShowDetailsSheet(false)}
-        onSelect={onSelect}
-        title={title}
-        subtitle={hpNum ? `${hpNum} HP Mercury Outboard` : undefined}
-        img={img}
-        msrp={msrp}
-        price={price}
-        promoText={promoText}
-        description={description}
-        hp={hpNum}
-        shaft={shaft}
-        weightLbs={weightLbs}
-        altOutput={altOutput}
-        steering={steering}
-        features={features}
-        specSheetUrl={specSheetUrl}
-        motor={motor}
-      />
+      {/* Mobile/click details sheet - rendered via portal */}
+      {showDetailsSheet && createPortal(
+        <MotorDetailsSheet
+          open={showDetailsSheet}
+          onClose={() => setShowDetailsSheet(false)}
+          onSelect={onSelect}
+          title={title}
+          subtitle={hpNum ? `${hpNum} HP Mercury Outboard` : undefined}
+          img={img}
+          msrp={msrp}
+          price={price}
+          promoText={promoText}
+          description={description}
+          hp={hpNum}
+          shaft={shaft}
+          weightLbs={weightLbs}
+          altOutput={altOutput}
+          steering={steering}
+          features={features}
+          specSheetUrl={specSheetUrl}
+          motor={motor}
+        />,
+        document.body
+      )}
     </>
   );
 }
