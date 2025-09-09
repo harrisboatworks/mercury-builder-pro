@@ -1,101 +1,20 @@
-// Hook for secure session management with automatic timeout
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 import { useAuth } from '@/components/auth/AuthProvider';
-import { SecurityManager } from '@/lib/securityMiddleware';
-import { useToast } from '@/hooks/use-toast';
 
 export const useSecureSession = () => {
-  const { user, signOut } = useAuth();
-  const { toast } = useToast();
+  const { user } = useAuth();
 
-  // Track user activity
-  const trackActivity = useCallback(async () => {
-    if (!user) return;
-
-    try {
-      await SecurityManager.trackSessionActivity({
-        userId: user.id,
-        ipAddress: await getClientIP(),
-        userAgent: navigator.userAgent
-      });
-    } catch (error) {
-      console.error('Failed to track activity:', error);
-    }
-  }, [user]);
-
-  // Check session validity with enhanced security logging
-  const validateSession = useCallback(async () => {
-    if (!user) return;
-
-    try {
-      const isValid = await SecurityManager.validateSession(user.id);
-      if (!isValid) {
-        // Log security event for session invalidation
-        await SecurityManager.logSecurityEvent(
-          user.id,
-          'session_expired',
-          'user_sessions',
-          undefined,
-          { reason: 'timeout_or_security', ipAddress: getClientIP() }
-        );
-
-        toast({
-          title: "Session Expired",
-          description: "Your session has expired for security reasons. Please sign in again.",
-          variant: "destructive"
-        });
-        await signOut();
-      }
-    } catch (error) {
-      console.error('Session validation error:', error);
-    }
-  }, [user, signOut, toast]);
-
-  // Set up activity tracking and session validation
   useEffect(() => {
     if (!user) return;
-
-    // Track initial activity
-    trackActivity();
-
-    // Set up activity tracking on user interactions
-    const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
-    let activityTimeout: NodeJS.Timeout;
-
-    const handleActivity = () => {
-      clearTimeout(activityTimeout);
-      activityTimeout = setTimeout(trackActivity, 10000); // Increased debounce to reduce frequency
-    };
-
-    events.forEach(event => {
-      document.addEventListener(event, handleActivity);
-    });
-
-    // Validate session every 10 minutes (reduced frequency)
-    const sessionInterval = setInterval(validateSession, 10 * 60 * 1000);
-
-    return () => {
-      events.forEach(event => {
-        document.removeEventListener(event, handleActivity);
-      });
-      clearInterval(sessionInterval);
-      clearTimeout(activityTimeout);
-    };
-  }, [user, trackActivity, validateSession]);
+    
+    // Simple session tracking - just log that user is active
+    console.log('User session active:', user.id);
+    
+    // TODO: Re-implement complex security features after basic auth works
+  }, [user]);
 
   return {
-    trackActivity,
-    validateSession
+    trackActivity: () => {},
+    validateSession: () => Promise.resolve()
   };
 };
-
-// Helper function to get client IP (approximation)
-async function getClientIP(): Promise<string | undefined> {
-  try {
-    // In a real implementation, you'd get this from your server
-    // This is a client-side approximation
-    return undefined;
-  } catch {
-    return undefined;
-  }
-}

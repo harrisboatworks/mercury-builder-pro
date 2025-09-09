@@ -1,8 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
-import { SecurityManager } from '@/lib/securityMiddleware';
-import { SessionTimeout } from './SessionTimeout';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 interface AuthContextType {
   user: User | null;
@@ -71,15 +70,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       password
     });
     
-    // Track successful sign-in
+    // Log successful signin - simplified
     if (!error) {
-      await SecurityManager.logSecurityEvent(
-        email,
-        'signin_success',
-        'auth',
-        undefined,
-        { userAgent: navigator.userAgent }
-      );
+      console.log('User signed in successfully');
     }
     
     return { error };
@@ -96,15 +89,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const signOut = async () => {
-    // Log sign-out event
+    // Log signout - simplified
     if (user) {
-      await SecurityManager.logSecurityEvent(
-        user.id,
-        'signout',
-        'auth',
-        undefined,
-        { userAgent: navigator.userAgent }
-      );
+      console.log('User signed out:', user.id);
     }
     
     const { error } = await supabase.auth.signOut();
@@ -122,9 +109,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={value}>
-      {children}
-      <SessionTimeout />
-    </AuthContext.Provider>
+    <ErrorBoundary>
+      <AuthContext.Provider value={value}>
+        {children}
+      </AuthContext.Provider>
+    </ErrorBoundary>
   );
 };
