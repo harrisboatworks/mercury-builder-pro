@@ -191,7 +191,7 @@ export default function MotorDetailsSheet({
   const cleanedDescription = String(description || '').replace(/Can't find what you're looking for\?[\s\S]*/i, '').replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '').trim();
   
   return (
-    <div role="dialog" aria-modal="true" className="fixed inset-0 z-[60]">
+    <div role="dialog" aria-modal="true" className="fixed inset-0 z-[9999]">
       <div onClick={onClose} className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
       <div className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-4xl rounded-t-2xl border border-slate-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-900 max-h-[90vh] overflow-y-auto">
         <div className="sticky top-0 bg-white dark:bg-slate-900 p-4 border-b border-slate-200 dark:border-slate-700">
