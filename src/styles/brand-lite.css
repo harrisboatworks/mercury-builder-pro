@@ -1,0 +1,17 @@
+/* Keep header compact on mobile so the sticky bottom bar has room */
+@media (max-width: 768px) {
+  .brand-header-lite .mx-auto { 
+    padding-top: 0.35rem !important; 
+    padding-bottom: 0.35rem !important; 
+  }
+  
+  /* Hide legacy filter chips on mobile */
+  .filter-chips-legacy { 
+    display: none !important; 
+  }
+}
+
+/* Ensure filter drawer appears above everything */
+.filter-drawer {
+  z-index: 9999;
+}
