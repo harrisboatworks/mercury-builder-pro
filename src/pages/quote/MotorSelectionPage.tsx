@@ -11,7 +11,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search } from 'lucide-react';
 import MobileHeader from '@/components/ui/mobile-header';
-import MotorFilterMenu from '@/components/quote-builder/MotorFilterMenu';
+import ToggleSwitch from '@/components/ui/toggle-switch';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 
@@ -69,6 +69,14 @@ interface PromotionRule {
   discount_fixed_amount: number;
 }
 
+const HP_RANGES = [
+  { id: 'all', label: 'All HP', min: 0, max: 999 },
+  { id: '2_20', label: '2.5–20', min: 2.5, max: 20 },
+  { id: '25_60', label: '25–60', min: 25, max: 60 },
+  { id: '75_150', label: '75–150', min: 75, max: 150 },
+  { id: '175_300', label: '175–300', min: 175, max: 300 },
+  { id: '350p', label: '350+', min: 350, max: 999 },
+];
 
 export default function MotorSelectionPage() {
   const navigate = useNavigate();
@@ -81,7 +89,7 @@ export default function MotorSelectionPage() {
   const [promotionRules, setPromotionRules] = useState<PromotionRule[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedHpRange, setSelectedHpRange] = useState<{ min: number; max: number }>({ min: 0, max: Infinity });
+  const [hpRange, setHpRange] = useState('all');
   const [inStockOnly, setInStockOnly] = useState(false);
   const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
   
@@ -239,10 +247,13 @@ export default function MotorSelectionPage() {
     }
 
     // HP range filter
-    if (selectedHpRange.min !== 0 || selectedHpRange.max !== Infinity) {
-      filtered = filtered.filter(motor => 
-        motor.hp >= selectedHpRange.min && motor.hp <= selectedHpRange.max
-      );
+    if (hpRange !== 'all') {
+      const range = HP_RANGES.find(r => r.id === hpRange);
+      if (range) {
+        filtered = filtered.filter(motor => 
+          motor.hp >= range.min && motor.hp <= range.max
+        );
+      }
     }
 
     // Stock filter
@@ -251,7 +262,7 @@ export default function MotorSelectionPage() {
     }
 
     return filtered;
-  }, [processedMotors, searchTerm, selectedHpRange, inStockOnly]);
+  }, [processedMotors, searchTerm, hpRange, inStockOnly]);
 
   const handleMotorSelect = (motor: Motor) => {
     setSelectedMotor(motor);
@@ -315,26 +326,54 @@ export default function MotorSelectionPage() {
       <main className="space-y-0">
         {/* Search & Filters Card */}
         <div className="bg-white shadow-sm border border-gray-200 mx-4 mt-4 rounded-lg p-4">
-          {/* Search Input with Filter Menu */}
-          <div className="flex gap-3 items-center">
-            <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
-              <Input
-                placeholder="Search motors by HP, model, or keyword…"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-12 h-12 rounded-lg border-gray-200 shadow-sm focus:border-primary focus:ring-primary text-base"
-                aria-label="Search motors by horsepower, model, or keyword"
+          {/* Search Input */}
+          <div className="relative mb-4">
+            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+            <Input
+              placeholder="Search motors by HP, model, or keyword…"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-12 h-12 rounded-lg border-gray-200 shadow-sm focus:border-primary focus:ring-primary text-base"
+              aria-label="Search motors by horsepower, model, or keyword"
+            />
+          </div>
+          
+          {/* HP Range Chips - Horizontal Scroll */}
+          <div className="space-y-4">
+            <div className="overflow-x-auto scrollbar-hide pr-4">
+              <div className="flex gap-2 pb-1 keep-flex">
+                {HP_RANGES.map(range => (
+                  <button
+                    key={range.id}
+                    onClick={() => setHpRange(range.id)}
+                    className={`whitespace-nowrap text-sm font-medium transition-all duration-200 min-h-[44px] rounded-2xl ${
+                      hpRange === range.id
+                        ? 'bg-primary text-white border border-primary px-4 py-2'
+                        : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 px-4 py-2'
+                    }`}
+                    style={{ 
+                      fontSize: '14px',
+                      padding: '8px 14px',
+                      borderRadius: '16px'
+                    }}
+                    role="button"
+                    aria-pressed={hpRange === range.id}
+                    aria-label={`Filter by ${range.label} horsepower`}
+                  >
+                    {range.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            
+            {/* Stock Filter - Inline */}
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-gray-700">In Stock Only</span>
+              <ToggleSwitch
+                checked={inStockOnly}
+                onChange={setInStockOnly}
               />
             </div>
-            <MotorFilterMenu
-              searchTerm={searchTerm}
-              selectedHpRange={selectedHpRange}
-              inStockOnly={inStockOnly}
-              onSearchChange={setSearchTerm}
-              onHpRangeChange={setSelectedHpRange}
-              onInStockChange={setInStockOnly}
-            />
           </div>
         </div>
         
@@ -396,7 +435,7 @@ export default function MotorSelectionPage() {
                 className="rounded-lg border-gray-300 text-gray-700 hover:bg-gray-50"
                 onClick={() => {
                   setSearchTerm('');
-                  setSelectedHpRange({ min: 0, max: Infinity });
+                  setHpRange('all');
                   setInStockOnly(false);
                 }}
               >
