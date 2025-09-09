@@ -5,7 +5,6 @@ import harrisLogo from '@/assets/harris-logo.png';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { cn } from '@/lib/utils';
-import { QuoteStatusHeader } from './QuoteStatusHeader';
 interface QuoteLayoutProps {
   children: React.ReactNode;
   showProgress?: boolean;
@@ -150,8 +149,6 @@ export const QuoteLayout = ({
         </div>
       </header>
 
-      {/* Quote Status Header - hide when sticky bar is active */}
-      {!state.uiFlags?.useStickyQuoteBar && <QuoteStatusHeader />}
 
       {/* Trust Bar */}
       <div className="bg-muted/40 border-b border-border">
