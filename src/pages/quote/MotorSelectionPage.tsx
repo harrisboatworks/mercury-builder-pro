@@ -320,9 +320,6 @@ export default function MotorSelectionPage() {
       <div className="space-y-6">
         {/* Filters */}
         <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-          <p className="text-muted-foreground">
-            Clean selection • clear pricing • promotions applied automatically.
-          </p>
           
           {/* Filters */}
           <div className="mt-6 space-y-4">
