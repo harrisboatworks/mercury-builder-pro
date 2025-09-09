@@ -47,11 +47,12 @@ export default function StickyQuoteBar({
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-1 p-2 sm:gap-2 sm:p-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0 flex-1">
-          {model && <div className="truncate text-sm sm:text-base font-semibold text-slate-900 dark:text-white">{model}</div>}
+          {model && <div className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white leading-tight">{model}</div>}
           <div className="mt-0.5 flex flex-wrap items-center gap-1 sm:gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-            {typeof total === "number" && <span>{money(total)}</span>}
-            {typeof monthly === "number" && monthly > 0 && <span>≈ {money(Math.round(monthly))}/mo</span>}
-            {typeof coverageYears === "number" && coverageYears > 0 && <span className="hidden sm:inline">{coverageYears} yrs</span>}
+            {typeof total === "number" && <span><span className="hidden sm:inline">Total: </span><span className="font-semibold">{money(total)}</span></span>}
+            {typeof monthly === "number" && monthly > 0 && <span>≈ {money(Math.round(monthly))}/mo<span className="hidden sm:inline"> OAC</span></span>}
+            {typeof coverageYears === "number" && coverageYears > 0 && <span className="sm:hidden">{coverageYears}yr</span>}
+            {typeof coverageYears === "number" && coverageYears > 0 && <span className="hidden sm:inline">{coverageYears} yrs coverage</span>}
             {promos.map(p => (
               <span key={p.id} className="hidden sm:inline rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:bg-emerald-900/25 dark:text-emerald-300">
                 {p.bonus_title || `+${p.warranty_extra_years} yrs warranty`}
