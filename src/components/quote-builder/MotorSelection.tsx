@@ -1090,16 +1090,16 @@ export const MotorSelection = ({
       return next.slice(0, 6);
     });
     setSelectedMotor(motor);
-    setShowCelebration(true);
-    const particles = Array.from({
-      length: 6
-    }, (_, i) => ({
-      id: Date.now() + i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      emoji: ['✨', '🎉', '⭐', '💚', '✅', '🚤'][i]
-    }));
-    setCelebrationParticles(particles);
+    // Gamification removed - setShowCelebration(true);
+    // const particles = Array.from({
+    //   length: 6
+    // }, (_, i) => ({
+    //   id: Date.now() + i,
+    //   x: Math.random() * 100,
+    //   y: Math.random() * 100,
+    //   emoji: ['✨', '🎉', '⭐', '💚', '✅', '🚤'][i]
+    // }));
+    // setCelebrationParticles(particles);
     toast({
       title: pick(canadianEncouragement.motorSelected),
       description: `${motor.model} selected — let's continue, eh!`,
@@ -1759,54 +1759,7 @@ export const MotorSelection = ({
           </div>}
       </div>
 
-      {showStickyBar && selectedMotor && (selectedMotor as any).stockStatus !== 'Sold' && <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom-5 duration-500">
-          <div className="checkout-banner bg-background/95 backdrop-blur-lg border-t-4 border-green-500 shadow-2xl">
-            <div className="container mx-auto px-4 py-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="bg-green-100 dark:bg-green-900 p-2 rounded-full">
-                    <Check className="w-5 h-5 text-green-600 dark:text-green-400" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-lg">
-                      {selectedMotor.model} - ${selectedMotor.price.toLocaleString()}
-                    </p>
-                      <div className="flex items-center gap-2 mt-1">
-                        {selectedMotor.stockStatus === 'In Stock' && selectedMotor.salePrice != null && selectedMotor.basePrice != null && selectedMotor.salePrice as number < (selectedMotor.basePrice as number) && <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in">
-                            <span className="mr-1">💰</span> Save ${((selectedMotor.basePrice as number) - (selectedMotor.salePrice as number)).toLocaleString()}
-                          </span>}
-                        {renderBannerPromos(selectedMotor)}
-                      </div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <Button variant="outline" className="btn-secondary" onClick={() => {
-                console.log('[MotorSelection] Change Selection clicked, clearing state');
-                setSelectedMotor(null);
-                setShowStickyBar(false);
-                setShowCelebration(false);
-                setCelebrationParticles([]);
-              }}>
-                    Change Selection
-                  </Button>
-                  <Button onClick={() => onStepComplete(selectedMotor)} 
-                    disabled={(selectedMotor as any).stockStatus === 'Sold'}
-                    className={`btn-primary px-6 shadow-lg ${(selectedMotor as any).stockStatus === 'Sold' ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700 animate-pulse-green'}`}>
-                    {(selectedMotor as any).stockStatus === 'Sold' ? 'Motor Sold' : 'Continue to Boat Info'}
-                    <Zap className="w-5 h-5 ml-2" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>}
-
-      {showStickyBar && selectedMotor && isMobile && (selectedMotor as any).stockStatus !== 'Sold' && <div className="fixed bottom-20 right-4 z-40 animate-in zoom-in-50 duration-500">
-          <Button onClick={() => onStepComplete(selectedMotor)} className="rounded-full w-14 h-14 shadow-2xl bg-green-600 hover:bg-green-700 animate-bounce">
-            <Check className="w-6 h-6" />
-          </Button>
-        </div>}
+      {/* Gamification removed - sticky checkout banner */}
 
       {/* Removed celebration particles */}
 
