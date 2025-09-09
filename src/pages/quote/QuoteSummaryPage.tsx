@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PremiumShell from '@/components/layout/PremiumShell';
-import RightSummary from '@/components/ui/RightSummary';
+import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import HeroPrice from '@/components/quote-builder/HeroPrice';
 import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
 import StickySummary from '@/components/quote-builder/StickySummary';
@@ -253,39 +252,20 @@ export default function QuoteSummaryPage() {
 
   const selectedPackageData = packages.find(p => p.id === selectedPackage) || packages[1];
 
-  // Calculate totals for right summary
-  const yourPriceBeforeTax = selectedPackageData.priceBeforeTax;
-  const totalWithTax = yourPriceBeforeTax * 1.13; // Assuming 13% tax
-  const motorMonthly = useMotorMonthlyPayment({ motorPrice: yourPriceBeforeTax });
-  const effectiveCoverageYears = selectedTargetYears ?? currentCoverageYears;
-  
   return (
-    <PremiumShell
-      title="Your Mercury Quote"
-      subtitle="Review pricing and coverage, then reserve."
-      right={
-        <RightSummary 
-          priceBeforeTax={yourPriceBeforeTax} 
-          totalWithTax={totalWithTax} 
-          monthly={motorMonthly?.amount} 
-          bullets={[
-            `${effectiveCoverageYears} years total coverage`,
-            "Dealer install available",
-            promoWarrantyYears ? `+${promoWarrantyYears} yrs promo warranty` : "Eligible promotions applied",
-          ]} 
-          onReserve={handleReserveDeposit} 
-        />
-      }
-    >
-      {/* Back Navigation */}
-      <div className="flex items-center gap-4">
-        <Button variant="outline" size="sm" onClick={handleBack}>
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back
-        </Button>
-      </div>
-      
-      <div className="space-y-6">
+    <QuoteLayout title="Your Mercury Motor Quote">
+      <div className="max-w-7xl mx-auto space-y-8">
+        {/* Back Navigation */}
+        <div className="flex items-center gap-4">
+          <Button variant="outline" size="sm" onClick={handleBack}>
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back
+          </Button>
+        </div>
+        
+        <div className="grid lg:grid-cols-[1fr_360px] gap-8">
+          {/* Main Content - Left Column */}
+          <div className="space-y-6">
             {/* Motor Header */}
             <MotorHeader
               name={motorName}
@@ -352,17 +332,35 @@ export default function QuoteSummaryPage() {
               <BonusOffers motor={quoteData.motor} />
             </div>
 
-        {/* Mobile CTA Section */}
-        <div className="lg:hidden space-y-4">
-          <Button 
-            onClick={handleStepComplete}
-            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-            size="lg"
-          >
-            Continue to Schedule
-          </Button>
+            {/* Mobile CTA Section */}
+            <div className="lg:hidden space-y-4">
+              <Button 
+                onClick={handleStepComplete}
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                size="lg"
+              >
+                Continue to Schedule
+              </Button>
+            </div>
+          </div>
+
+          {/* Sticky Summary - Right Column (Desktop) */}         
+          <div>
+            <StickySummary
+              packageLabel={selectedPackageData.label}
+              yourPriceBeforeTax={selectedPackageData.priceBeforeTax}
+              totalSavings={selectedPackageData.savings}
+              monthly={undefined}
+              bullets={selectedPackageData.features}
+              onReserve={handleReserveDeposit}
+              depositAmount={200}
+              coverageYears={selectedTargetYears ?? currentCoverageYears}
+              monthlyDelta={selectedMonthlyDelta}
+              promoWarrantyYears={promoWarrantyYears > 0 ? promoWarrantyYears : undefined}
+            />
+          </div>
         </div>
       </div>
-    </PremiumShell>
+    </QuoteLayout>
   );
 }

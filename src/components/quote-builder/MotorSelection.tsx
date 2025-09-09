@@ -399,6 +399,14 @@ export const MotorSelection = ({
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
   const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
+  const [showCelebration, setShowCelebration] = useState(false);
+  const [showStickyBar, setShowStickyBar] = useState(false);
+  const [celebrationParticles, setCelebrationParticles] = useState<Array<{
+    id: number;
+    x: number;
+    y: number;
+    emoji: string;
+  }>>([]);
   const [filters, setFilters] = useState({
     category: 'all',
     stockStatus: 'all',
@@ -532,12 +540,12 @@ export const MotorSelection = ({
 
   // Load motors from database
   useEffect(() => {
-    // Component mount cleanup - gamification removed
+    // Clear any sticky bar state on component mount
     console.log('[MotorSelection] Component mounted, clearing sticky bar state');
-    // setShowStickyBar(false);
+    setShowStickyBar(false);
     setSelectedMotor(null);
-    // setShowCelebration(false);
-    // setCelebrationParticles([]);
+    setShowCelebration(false);
+    setCelebrationParticles([]);
     
     loadMotors();
   }, []);
@@ -1071,9 +1079,9 @@ export const MotorSelection = ({
     // Check if clicking on already selected motor to deselect
     if (selectedMotor?.id === motor.id) {
       setSelectedMotor(null);
-      // setShowCelebration(false);
-      // setShowStickyBar(false);
-      // setCelebrationParticles([]);
+      setShowCelebration(false);
+      setShowStickyBar(false);
+      setCelebrationParticles([]);
       toast({
         title: "Motor deselected 🔄",
         description: "You can pick another one, eh!",
@@ -1090,16 +1098,16 @@ export const MotorSelection = ({
       return next.slice(0, 6);
     });
     setSelectedMotor(motor);
-    // Gamification removed - setShowCelebration(true);
-    // const particles = Array.from({
-    //   length: 6
-    // }, (_, i) => ({
-    //   id: Date.now() + i,
-    //   x: Math.random() * 100,
-    //   y: Math.random() * 100,
-    //   emoji: ['✨', '🎉', '⭐', '💚', '✅', '🚤'][i]
-    // }));
-    // setCelebrationParticles(particles);
+    setShowCelebration(true);
+    const particles = Array.from({
+      length: 6
+    }, (_, i) => ({
+      id: Date.now() + i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      emoji: ['✨', '🎉', '⭐', '💚', '✅', '🚤'][i]
+    }));
+    setCelebrationParticles(particles);
     toast({
       title: pick(canadianEncouragement.motorSelected),
       description: `${motor.model} selected — let's continue, eh!`,
@@ -1129,14 +1137,14 @@ export const MotorSelection = ({
         duration: 2600
       });
     }
-    // setTimeout(() => {
-    //   console.log('[MotorSelection] Setting sticky bar to true for motor:', motor.model);
-    //   setShowStickyBar(true);
-    // }, 500);
-    // setTimeout(() => {
-    //   setShowCelebration(false);
-    //   setCelebrationParticles([]);
-    // }, 2000);
+    setTimeout(() => {
+      console.log('[MotorSelection] Setting sticky bar to true for motor:', motor.model);
+      setShowStickyBar(true);
+    }, 500);
+    setTimeout(() => {
+      setShowCelebration(false);
+      setCelebrationParticles([]);
+    }, 2000);
   };
   if (loading) {
     return <div className="flex items-center justify-center py-12">
@@ -1159,7 +1167,7 @@ export const MotorSelection = ({
   }
 
   // Motor selection view with breadcrumb navigation
-  return <div className="">{/* gamification removed */}
+  return <div className={`${showCelebration ? 'canadian-celebration' : ''}`}>
       {/* Breadcrumb Navigation */}
       {selectedCategory && (
         <div className="bg-muted/30 border-b">
@@ -1751,7 +1759,7 @@ export const MotorSelection = ({
                                 <p>Mercury’s Repower Rebate Program — trade in or repower for potential savings. See details.</p>
 
 
-        {selectedMotor && (selectedMotor as any).stockStatus !== 'Sold' && <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
+        {selectedMotor && !showStickyBar && (selectedMotor as any).stockStatus !== 'Sold' && <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
             <Button onClick={() => onStepComplete(selectedMotor)} className="btn-primary px-8 animate-pulse">
               Continue with {selectedMotor.model}
               <Zap className="w-5 h-5 ml-2" />
@@ -1759,11 +1767,70 @@ export const MotorSelection = ({
           </div>}
       </div>
 
-      {/* Gamification removed - sticky checkout banner */}
+      {showStickyBar && selectedMotor && (selectedMotor as any).stockStatus !== 'Sold' && <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom-5 duration-500">
+          <div className="checkout-banner bg-background/95 backdrop-blur-lg border-t-4 border-green-500 shadow-2xl">
+            <div className="container mx-auto px-4 py-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="bg-green-100 dark:bg-green-900 p-2 rounded-full">
+                    <Check className="w-5 h-5 text-green-600 dark:text-green-400" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg">
+                      {selectedMotor.model} - ${selectedMotor.price.toLocaleString()}
+                    </p>
+                      <div className="flex items-center gap-2 mt-1">
+                        {selectedMotor.stockStatus === 'In Stock' && selectedMotor.salePrice != null && selectedMotor.basePrice != null && selectedMotor.salePrice as number < (selectedMotor.basePrice as number) && <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in">
+                            <span className="mr-1">💰</span> Save ${((selectedMotor.basePrice as number) - (selectedMotor.salePrice as number)).toLocaleString()}
+                          </span>}
+                        {renderBannerPromos(selectedMotor)}
+                      </div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <Button variant="outline" className="btn-secondary" onClick={() => {
+                console.log('[MotorSelection] Change Selection clicked, clearing state');
+                setSelectedMotor(null);
+                setShowStickyBar(false);
+                setShowCelebration(false);
+                setCelebrationParticles([]);
+              }}>
+                    Change Selection
+                  </Button>
+                  <Button onClick={() => onStepComplete(selectedMotor)} 
+                    disabled={(selectedMotor as any).stockStatus === 'Sold'}
+                    className={`btn-primary px-6 shadow-lg ${(selectedMotor as any).stockStatus === 'Sold' ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700 animate-pulse-green'}`}>
+                    {(selectedMotor as any).stockStatus === 'Sold' ? 'Motor Sold' : 'Continue to Boat Info'}
+                    <Zap className="w-5 h-5 ml-2" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>}
 
-      {/* Removed celebration particles */}
+      {showStickyBar && selectedMotor && isMobile && (selectedMotor as any).stockStatus !== 'Sold' && <div className="fixed bottom-20 right-4 z-40 animate-in zoom-in-50 duration-500">
+          <Button onClick={() => onStepComplete(selectedMotor)} className="rounded-full w-14 h-14 shadow-2xl bg-green-600 hover:bg-green-700 animate-bounce">
+            <Check className="w-6 h-6" />
+          </Button>
+        </div>}
 
-      {/* Removed celebration banner */}
+      {celebrationParticles.map(particle => <div key={particle.id} className="fixed pointer-events-none z-30 text-2xl animate-in zoom-in-50 fade-out-100 duration-2000" style={{
+      left: `${particle.x}%`,
+      top: `${particle.y}%`,
+      animationDelay: `${Math.random() * 500}ms`
+    }}>
+          {particle.emoji}
+        </div>)}
+
+      {showCelebration && selectedMotor && <div className="fixed top-4 right-4 z-40 animate-in slide-in-from-right-5 duration-500">
+          <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-2">
+            <Sparkles className="w-5 h-5" />
+            <span className="font-bold">Great Choice!</span>
+            <Star className="w-5 h-5" />
+          </div>
+        </div>}
 
       {/* Promo Details Modal */}
       <PromoDetailsModal promo={activePromoModal} open={!!activePromoModal} onOpenChange={open => {

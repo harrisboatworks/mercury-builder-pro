@@ -24,21 +24,6 @@ interface QuoteState {
   completedSteps: number[];
   currentStep: number;
   isLoading: boolean;
-  ui: {
-    intake: {
-      boatType?: string | null;
-      boatLengthFt?: number | null;
-      transomHeight?: "15" | "20" | "25" | "30" | null;
-      steering?: "tiller" | "cable" | "hydraulic" | "none" | null;
-      controls?: "tiller" | "side" | "binnacle" | "dts" | null;
-      unknowns?: Record<string, boolean>;
-      photos?: { 
-        transom?: string | null; 
-        helm?: string | null; 
-        dataplate?: string | null;
-      };
-    };
-  };
 }
 
 type QuoteAction = 
@@ -55,10 +40,7 @@ type QuoteAction =
   | { type: 'SET_CURRENT_STEP'; payload: number }
   | { type: 'LOAD_FROM_STORAGE'; payload: QuoteState }
   | { type: 'SET_LOADING'; payload: boolean }
-  | { type: 'RESET_QUOTE' }
-  | { type: 'SET_INTAKE_FIELD'; payload: { key: string; value: any } }
-  | { type: 'SET_INTAKE_UNKNOWN'; payload: { key: string; value: boolean } }
-  | { type: 'SET_INTAKE_PHOTO'; payload: { key: "transom" | "helm" | "dataplate"; dataUrl: string | null } };
+  | { type: 'RESET_QUOTE' };
 
 const initialState: QuoteState = {
   motor: null,
@@ -76,22 +58,7 @@ const initialState: QuoteState = {
   hasTradein: false,
   completedSteps: [],
   currentStep: 1,
-  isLoading: true,
-  ui: {
-    intake: {
-      boatType: null,
-      boatLengthFt: null,
-      transomHeight: null,
-      steering: null,
-      controls: null,
-      unknowns: {},
-      photos: {
-        transom: null,
-        helm: null,
-        dataplate: null
-      }
-    }
-  }
+  isLoading: true
 };
 
 const QuoteContext = createContext<{
@@ -143,45 +110,6 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
       return { ...state, isLoading: action.payload };
     case 'RESET_QUOTE':
       return { ...initialState, isLoading: false };
-    case 'SET_INTAKE_FIELD':
-      return {
-        ...state,
-        ui: {
-          ...state.ui,
-          intake: {
-            ...state.ui.intake,
-            [action.payload.key]: action.payload.value
-          }
-        }
-      };
-    case 'SET_INTAKE_UNKNOWN':
-      return {
-        ...state,
-        ui: {
-          ...state.ui,
-          intake: {
-            ...state.ui.intake,
-            unknowns: {
-              ...state.ui.intake.unknowns,
-              [action.payload.key]: action.payload.value
-            }
-          }
-        }
-      };
-    case 'SET_INTAKE_PHOTO':
-      return {
-        ...state,
-        ui: {
-          ...state.ui,
-          intake: {
-            ...state.ui.intake,
-            photos: {
-              ...state.ui.intake.photos,
-              [action.payload.key]: action.payload.dataUrl
-            }
-          }
-        }
-      };
     default:
       return state;
   }

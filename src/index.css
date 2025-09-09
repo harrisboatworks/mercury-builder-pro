@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './styles/premium.css';
-
 /* Mobile-only fixes for header, logo, and search issues */
 @media (max-width: 768px) {
   /* FIX 1: Harris logo getting cut off - make it larger */
