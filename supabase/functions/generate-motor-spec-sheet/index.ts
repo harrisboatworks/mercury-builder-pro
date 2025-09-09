@@ -69,6 +69,94 @@ function generateSpecSheetHTML(motor: any): string {
   const specs = motor.specifications || {}
   const features = motor.features || []
   
+  // Motor helper functions (inline implementation for edge function)
+  const decodeModelName = (modelName: string) => {
+    const decoded: Array<{code: string, meaning: string, benefit: string}> = []
+    const name = modelName || ''
+    const upper = name.toUpperCase()
+    const added = new Set<string>()
+    const add = (code: string, meaning: string, benefit: string) => {
+      if (!added.has(code)) {
+        decoded.push({ code, meaning, benefit })
+        added.add(code)
+      }
+    }
+    const hasWord = (w: string) => new RegExp(`\\b${w}\\b`).test(upper)
+    const hpMatch = upper.match(/(\d+(?:\.\d+)?)HP/)
+    const hp = hpMatch ? parseFloat(hpMatch[1]) : 0
+
+    // Engine family & special designations
+    if (/FOUR\s*STROKE|FOURSTROKE/i.test(name)) add('FourStroke', '4-Stroke Engine', 'Quiet, fuel-efficient, no oil mixing')
+    if (/SEAPRO/i.test(name)) add('SeaPro', 'Commercial Grade', 'Built for heavy use & durability')
+    if (/PROKICKER/i.test(name)) add('ProKicker', 'Kicker Motor', 'Optimized for trolling & backup power')
+    if (/JET\b/i.test(name)) add('Jet', 'Jet Drive', 'Great for shallow water operation')
+    if (/BIGFOOT/i.test(name)) add('BigFoot', 'High Thrust', 'Ideal for pontoons & heavy boats')
+
+    // Handle combinations
+    if (upper.includes('MLH')) {
+      add('M', 'Manual Start', 'Pull cord — simple & reliable')
+      add('L', 'Long Shaft (20")', 'For 20" transom boats')
+      add('H', 'Tiller Handle', 'Steer directly from motor')
+    } else if (upper.includes('MH')) {
+      add('M', 'Manual Start', 'Pull cord — simple & reliable')
+      add('H', 'Tiller Handle', 'Steer directly from motor')
+    } else if (upper.includes('EH')) {
+      add('E', 'Electric Start', 'Push-button convenience')
+      add('H', 'Tiller Handle', 'Direct steering control')
+    }
+
+    // Shaft length (if not handled in combos)
+    if (!added.has('L') && !added.has('S')) {
+      if (hasWord('L')) add('L', 'Long Shaft (20")', 'For 20" transom boats')
+      else add('S', 'Short Shaft (15")', 'For 15" transom boats')
+    }
+
+    return decoded
+  }
+
+  const getIncludedAccessories = (motor: any) => {
+    const accessories = []
+    const hp = motor.horsepower
+    const model = (motor.model || '').toUpperCase()
+    const isTiller = /(MH|MLH|EH|ELH|TILLER)/i.test(model)
+    
+    // Fuel tank inclusion
+    if (isTiller || (hp >= 9.9 && hp <= 20)) {
+      if (isTiller) {
+        accessories.push('Internal fuel tank')
+      } else {
+        accessories.push('12L portable fuel tank')
+        accessories.push('Fuel line & primer bulb')
+      }
+    }
+    
+    // Propeller inclusion
+    if (isTiller) {
+      accessories.push('Standard propeller')
+    }
+    
+    // Standard items
+    accessories.push('Owner\'s manual & warranty')
+    accessories.push('Tool kit')
+    
+    return accessories
+  }
+
+  const getIdealUses = (hp: number) => {
+    if (hp <= 6) return ['Dinghies & tenders', 'Canoes & kayaks', 'Emergency backup', 'Trolling']
+    if (hp <= 30) return ['Aluminum fishing boats', 'Small pontoons', 'Day cruising', 'Lake fishing']
+    if (hp <= 90) return ['Family pontoons', 'Bass boats', 'Runabouts', 'Water sports']
+    if (hp <= 150) return ['Large pontoons', 'Offshore fishing', 'Performance boats', 'Tournament fishing']
+    return ['High-performance boats', 'Commercial use', 'Offshore racing', 'Heavy loads']
+  }
+
+  const getKeyAdvantages = (hp: number) => {
+    if (hp <= 6) return ['Lightweight & portable', 'Fuel efficient operation', 'Quiet performance', 'Manual start reliability', 'No battery required']
+    if (hp <= 30) return ['Versatile performance', 'Easy maintenance', 'Fuel efficient', 'Compact design', 'Proven reliability']
+    if (hp <= 90) return ['Balanced power & efficiency', 'Advanced fuel injection', 'Smooth operation', 'SmartCraft ready', 'Commercial grade durability']
+    return ['Maximum performance', 'Advanced technology', 'High-speed capability', 'Professional grade', 'Tournament proven']
+  }
+  
   // Generate comprehensive specifications with smart defaults
   const generateEngineSpecs = (motor: any) => {
     const hp = motor.horsepower
@@ -106,6 +194,10 @@ function generateSpecSheetHTML(motor: any): string {
   const engineSpecs = generateEngineSpecs(motor)
   const physicalSpecs = generatePhysicalSpecs(motor)
   const performanceData = generatePerformanceData(motor)
+  const modelBreakdown = decodeModelName(motor.model)
+  const includedItems = getIncludedAccessories(motor)
+  const idealUses = getIdealUses(motor.horsepower)
+  const keyAdvantages = getKeyAdvantages(motor.horsepower)
   
   // Harris and Mercury logos as base64 data URLs (embedded for PDF generation)
   const harrisLogo = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiBmaWxsPSJ3aGl0ZSIvPgo8dGV4dCB4PSIxMDAiIHk9IjM1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iYmxhY2siPkhBUlJJUzwvdGV4dD4KPHR4dCB4PSIxMDAiIHk9IjU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmaWxsPSJibGFjayI+Qk9BVCBXT1JLUzwvdGV4dD4KPHR4dCB4PSIxMDAiIHk9IjcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJibGFjayI+UmljZSBMYWtlLCBPTjwvdGV4dD4KPC9zdmc+'
@@ -379,6 +471,116 @@ function generateSpecSheetHTML(motor: any): string {
         </div>
         ` : ''}
         
+        <!-- Understanding This Model Section -->
+        <div class="spec-section full-width-section" style="margin-bottom: 25px;">
+            <div class="spec-header">Understanding This Model</div>
+            <div style="padding: 20px;">
+                ${modelBreakdown.length > 0 ? `
+                <div style="margin-bottom: 20px;">
+                    <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 15px; color: #333;">Model Code Breakdown:</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+                        ${modelBreakdown.map(item => `
+                        <div style="display: flex; align-items: center; gap: 10px; padding: 8px; background: #f8f9fa; border-radius: 6px;">
+                            <span style="background: #007DC5; color: white; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; min-width: fit-content;">
+                                ${item.code}
+                            </span>
+                            <div>
+                                <div style="font-size: 12px; font-weight: 600; color: #333;">${item.meaning}</div>
+                                <div style="font-size: 10px; color: #666;">${item.benefit}</div>
+                            </div>
+                        </div>
+                        `).join('')}
+                    </div>
+                </div>
+                ` : ''}
+                
+                ${motor.horsepower <= 30 && /(MH|MLH|EH|ELH)/i.test(motor.model) ? `
+                <div style="background: #e3f2fd; border: 1px solid #007DC5; border-radius: 6px; padding: 12px; margin-top: 15px;">
+                    <strong style="color: #007DC5;">Tiller Handle Advantage:</strong>
+                    <span style="font-size: 12px; color: #333;"> Perfect for precise boat control when fishing. Allows you to steer and control throttle from the back of the boat.</span>
+                </div>
+                ` : motor.horsepower >= 40 ? `
+                <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 12px; margin-top: 15px;">
+                    <strong style="color: #856404;">Remote Control Required:</strong>
+                    <span style="font-size: 12px; color: #333;"> This motor requires console steering with remote throttle and shift controls. Too powerful for tiller operation.</span>
+                </div>
+                ` : ''}
+            </div>
+        </div>
+
+        <!-- What's Included Section -->
+        <div class="spec-section full-width-section" style="margin-bottom: 25px;">
+            <div class="spec-header" style="background: #28a745; color: white;">
+                <span style="margin-right: 8px;">✓</span> What's Included
+            </div>
+            <div style="padding: 20px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 8px;">
+                    ${includedItems.map(item => `
+                    <div style="display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 13px;">
+                        <span style="color: #28a745; font-weight: bold;">✓</span>
+                        <span style="color: #333;">${item}</span>
+                    </div>
+                    `).join('')}
+                </div>
+                
+                ${motor.base_price ? `
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #dee2e6;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 16px; font-weight: bold; color: #333;">MSRP:</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #007DC5;">$${motor.base_price?.toLocaleString()}</span>
+                    </div>
+                    <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                        • Professional installation available<br>
+                        • Contact for current promotions<br>
+                        • Extended warranty options
+                    </div>
+                </div>
+                ` : ''}
+            </div>
+        </div>
+
+        <!-- Key Advantages Section -->
+        <div class="spec-section full-width-section" style="margin-bottom: 25px;">
+            <div class="spec-header">Key Advantages</div>
+            <div style="padding: 20px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                    ${keyAdvantages.map(advantage => `
+                    <div style="display: flex; align-items: center; gap: 8px; padding: 8px; background: #f8f9fa; border-radius: 6px;">
+                        <span style="color: #007DC5; font-size: 14px;">•</span>
+                        <span style="font-size: 12px; color: #333; font-weight: 500;">${advantage}</span>
+                    </div>
+                    `).join('')}
+                </div>
+            </div>
+        </div>
+
+        <!-- Ideal Applications Section -->
+        <div class="spec-section full-width-section" style="margin-bottom: 25px;">
+            <div class="spec-header">Ideal Applications</div>
+            <div style="padding: 20px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
+                    ${idealUses.map(use => `
+                    <div style="display: flex; align-items: center; gap: 8px; padding: 6px 0;">
+                        <span style="color: #007DC5; font-size: 16px;">🎯</span>
+                        <span style="font-size: 13px; color: #333;">${use}</span>
+                    </div>
+                    `).join('')}
+                </div>
+                
+                <div style="margin-top: 15px; padding: 12px; background: #e8f4fd; border-radius: 6px; border: 1px solid #007DC5;">
+                    <strong style="color: #007DC5; font-size: 12px;">Recommended Boat Size:</strong>
+                    <span style="font-size: 12px; color: #333; margin-left: 5px;">
+                        ${motor.horsepower <= 6 ? 'Up to 12ft' : 
+                          motor.horsepower <= 15 ? '12-16ft' : 
+                          motor.horsepower <= 30 ? '14-18ft' : 
+                          motor.horsepower <= 60 ? '16-20ft' : 
+                          motor.horsepower <= 90 ? '18-22ft' : 
+                          motor.horsepower <= 115 ? '20-24ft' : '22ft+'}
+                    </span>
+                </div>
+            </div>
+        </div>
+        
         <!-- Specifications Grid -->
         <div class="specs-container">
             <!-- Engine Specifications -->
@@ -516,25 +718,46 @@ function generateSpecSheetHTML(motor: any): string {
         <!-- Footer -->
         <div class="footer">
             <div class="dealer-info">
-                <div class="dealer-header">AUTHORIZED MERCURY MARINE DEALER</div>
+                <div class="dealer-header">HARRIS BOAT WORKS - Authorized Mercury Marine Dealer</div>
+                <div style="text-align: center; margin: 15px 0; padding: 12px; background: linear-gradient(135deg, #007DC5, #0056b3); border-radius: 8px; color: white;">
+                    <div style="font-size: 18px; font-weight: bold; margin-bottom: 5px;">"Go Boldly"</div>
+                    <div style="font-size: 12px;">Your Mercury Marine adventure starts here</div>
+                </div>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-label">Harris Boat Works</div>
-                        <div>Rice Lake, Ontario</div>
-                        <div>Phone: (705) 877-2628</div>
+                        <span class="contact-label">Phone:</span> (705) 645-5274
                     </div>
                     <div class="contact-item">
-                        <div class="contact-label">Get Your Quote Online</div>
-                        <div>quote.harrisboatworks.ca</div>
-                        <div>Professional Installation Available</div>
+                        <span class="contact-label">Website:</span> quote.harrisboatworks.ca
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Location:</span> Rice Lake, Ontario
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Email:</span> info@harrisboatworks.ca
+                    </div>
+                </div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #007DC5;">
+                    <div style="font-weight: bold; color: #007DC5; margin-bottom: 8px;">Why Choose Mercury Marine?</div>
+                    <div style="font-size: 11px; color: #555; line-height: 1.4;">
+                        • #1 Marine Engine Brand Worldwide<br>
+                        • Unmatched Reliability & Performance<br>
+                        • Comprehensive Warranty Coverage<br>
+                        • Global Service Network Support<br>
+                        • Proven Innovation Since 1939
                     </div>
                 </div>
                 <div class="disclaimer">
-                    Specifications subject to change without notice. Contact your dealer for the most current information.
-                    Performance data based on manufacturer specifications and optimal conditions.
+                    Specifications subject to change without notice. Mercury Marine warranty applies. 
+                    Professional installation recommended. Contact dealer for current pricing and promotions.
+                    <br><br>
+                    <strong>Expert Installation & Service:</strong> Harris Boat Works provides professional installation, 
+                    service, and parts for all Mercury Marine products. Our certified technicians ensure optimal performance and warranty compliance.
+                </div>
+                <div class="generation-date">
+                    Generated: ${new Date().toLocaleDateString()} | Harris Boat Works Quote System v2.0
                 </div>
             </div>
-            <div class="generation-date">Generated on ${new Date().toLocaleDateString()} | Mercury Marine Authorized Dealer</div>
         </div>
     </div>
 </body>
