@@ -17,3 +17,15 @@ verify_jwt = false
 
 [functions.create-payment]
 verify_jwt = true
+
+[functions.send-notification]
+verify_jwt = true
+
+[functions.process-notifications]
+verify_jwt = false
+
+[functions.notification-webhook]
+verify_jwt = false
+
+[functions.update-motor-images]
+verify_jwt = false

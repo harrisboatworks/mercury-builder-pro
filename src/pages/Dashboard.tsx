@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { LogOut, User, Settings, BarChart3 } from 'lucide-react';
+import { NotificationCenter } from '@/components/notifications/NotificationCenter';
 import { motion } from 'framer-motion';
 
 const Dashboard = () => {
@@ -39,15 +40,18 @@ const Dashboard = () => {
             <h1 className="text-xl font-semibold text-slate-900 font-inter tracking-tight">
               Dashboard
             </h1>
-            <Button
-              onClick={handleSignOut}
-              variant="ghost"
-              size="sm"
-              className="text-slate-600 hover:text-slate-900 hover:bg-slate-100"
-            >
-              <LogOut className="h-4 w-4 mr-2" />
-              Sign Out
-            </Button>
+            <div className="flex items-center gap-2">
+              <NotificationCenter />
+              <Button
+                onClick={handleSignOut}
+                variant="ghost"
+                size="sm"
+                className="text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+              >
+                <LogOut className="h-4 w-4 mr-2" />
+                Sign Out
+              </Button>
+            </div>
           </div>
         </div>
       </motion.header>

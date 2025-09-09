@@ -39,6 +39,7 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentCanceled from "./pages/PaymentCanceled";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import Settings from "./pages/Settings";
+import { NotificationToast } from "@/components/notifications/NotificationToast";
 
 function Canonical() {
   useEffect(() => {
@@ -63,6 +64,7 @@ const App = () => (
         <BrowserRouter>
             <>
               <ScrollToTop />
+              <NotificationToast />
               <Routes>
                 <Route path="/auth" element={<Login />} />
                 <Route path="/login" element={<Login />} />
