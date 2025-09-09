@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
-import { MotorSelection } from '@/components/quote-builder/MotorSelection';
+import PremiumMotorSelection from './PremiumMotorSelection';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Motor } from '@/components/QuoteBuilder';
 
@@ -27,9 +26,5 @@ export default function MotorSelectionPage() {
     navigate('/quote/purchase-path');
   };
 
-  return (
-    <QuoteLayout title="Select Your Mercury Motor">
-      <MotorSelection onStepComplete={handleStepComplete} useCategoryView={true} />
-    </QuoteLayout>
-  );
+  return <PremiumMotorSelection onStepComplete={handleStepComplete} />;
 }

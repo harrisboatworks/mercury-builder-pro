@@ -399,14 +399,6 @@ export const MotorSelection = ({
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
   const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
-  const [showCelebration, setShowCelebration] = useState(false);
-  const [showStickyBar, setShowStickyBar] = useState(false);
-  const [celebrationParticles, setCelebrationParticles] = useState<Array<{
-    id: number;
-    x: number;
-    y: number;
-    emoji: string;
-  }>>([]);
   const [filters, setFilters] = useState({
     category: 'all',
     stockStatus: 'all',
@@ -540,12 +532,12 @@ export const MotorSelection = ({
 
   // Load motors from database
   useEffect(() => {
-    // Clear any sticky bar state on component mount
+    // Component mount cleanup - gamification removed
     console.log('[MotorSelection] Component mounted, clearing sticky bar state');
-    setShowStickyBar(false);
+    // setShowStickyBar(false);
     setSelectedMotor(null);
-    setShowCelebration(false);
-    setCelebrationParticles([]);
+    // setShowCelebration(false);
+    // setCelebrationParticles([]);
     
     loadMotors();
   }, []);
@@ -1079,9 +1071,9 @@ export const MotorSelection = ({
     // Check if clicking on already selected motor to deselect
     if (selectedMotor?.id === motor.id) {
       setSelectedMotor(null);
-      setShowCelebration(false);
-      setShowStickyBar(false);
-      setCelebrationParticles([]);
+      // setShowCelebration(false);
+      // setShowStickyBar(false);
+      // setCelebrationParticles([]);
       toast({
         title: "Motor deselected 🔄",
         description: "You can pick another one, eh!",
@@ -1137,14 +1129,14 @@ export const MotorSelection = ({
         duration: 2600
       });
     }
-    setTimeout(() => {
-      console.log('[MotorSelection] Setting sticky bar to true for motor:', motor.model);
-      setShowStickyBar(true);
-    }, 500);
-    setTimeout(() => {
-      setShowCelebration(false);
-      setCelebrationParticles([]);
-    }, 2000);
+    // setTimeout(() => {
+    //   console.log('[MotorSelection] Setting sticky bar to true for motor:', motor.model);
+    //   setShowStickyBar(true);
+    // }, 500);
+    // setTimeout(() => {
+    //   setShowCelebration(false);
+    //   setCelebrationParticles([]);
+    // }, 2000);
   };
   if (loading) {
     return <div className="flex items-center justify-center py-12">
@@ -1167,7 +1159,7 @@ export const MotorSelection = ({
   }
 
   // Motor selection view with breadcrumb navigation
-  return <div className={`${showCelebration ? 'canadian-celebration' : ''}`}>
+  return <div className="">{/* gamification removed */}
       {/* Breadcrumb Navigation */}
       {selectedCategory && (
         <div className="bg-muted/30 border-b">
@@ -1759,7 +1751,7 @@ export const MotorSelection = ({
                                 <p>Mercury’s Repower Rebate Program — trade in or repower for potential savings. See details.</p>
 
 
-        {selectedMotor && !showStickyBar && (selectedMotor as any).stockStatus !== 'Sold' && <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
+        {selectedMotor && (selectedMotor as any).stockStatus !== 'Sold' && <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
             <Button onClick={() => onStepComplete(selectedMotor)} className="btn-primary px-8 animate-pulse">
               Continue with {selectedMotor.model}
               <Zap className="w-5 h-5 ml-2" />
@@ -1816,21 +1808,9 @@ export const MotorSelection = ({
           </Button>
         </div>}
 
-      {celebrationParticles.map(particle => <div key={particle.id} className="fixed pointer-events-none z-30 text-2xl animate-in zoom-in-50 fade-out-100 duration-2000" style={{
-      left: `${particle.x}%`,
-      top: `${particle.y}%`,
-      animationDelay: `${Math.random() * 500}ms`
-    }}>
-          {particle.emoji}
-        </div>)}
+      {/* Removed celebration particles */}
 
-      {showCelebration && selectedMotor && <div className="fixed top-4 right-4 z-40 animate-in slide-in-from-right-5 duration-500">
-          <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-2">
-            <Sparkles className="w-5 h-5" />
-            <span className="font-bold">Great Choice!</span>
-            <Star className="w-5 h-5" />
-          </div>
-        </div>}
+      {/* Removed celebration banner */}
 
       {/* Promo Details Modal */}
       <PromoDetailsModal promo={activePromoModal} open={!!activePromoModal} onOpenChange={open => {
