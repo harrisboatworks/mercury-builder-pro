@@ -191,11 +191,40 @@ export default function MotorDetailsSheet({
   const displayFeatures = Array.isArray(features) ? features : [];
   const cleanedDescription = String(description || '').replace(/Can't find what you're looking for\?[\s\S]*/i, '').replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '').trim();
   
+  // Debug: Log when modal should be visible
+  console.log('MotorDetailsSheet render:', { open, title });
+  
   return createPortal(
-    <div role="dialog" aria-modal="true" className="fixed inset-0 z-[9999]" style={{ isolation: 'isolate' }}>
-      <div onClick={onClose} className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-      <div className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-4xl rounded-t-2xl border border-slate-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-900 max-h-[90vh] overflow-y-auto"
-           style={{ isolation: 'isolate' }}>
+    <div 
+      role="dialog" 
+      aria-modal="true" 
+      className="fixed inset-0" 
+      style={{ 
+        zIndex: 999999,
+        position: 'fixed',
+        isolation: 'isolate',
+        pointerEvents: 'auto' 
+      }}
+      data-testid="motor-details-modal"
+    >
+      <div 
+        onClick={onClose} 
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm" 
+        style={{ 
+          zIndex: 999998,
+          position: 'absolute' 
+        }}
+      />
+      <div 
+        className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-4xl rounded-t-2xl border border-slate-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-900 max-h-[90vh] overflow-y-auto"
+        style={{ 
+          zIndex: 999999,
+          position: 'absolute',
+          isolation: 'isolate',
+          pointerEvents: 'auto'
+        }}
+        data-testid="motor-details-content"
+      >
         <div className="sticky top-0 bg-white dark:bg-slate-900 p-4 border-b border-slate-200 dark:border-slate-700">
           <div className="mx-auto h-1.5 w-12 rounded-full bg-slate-200 dark:bg-slate-700" />
           

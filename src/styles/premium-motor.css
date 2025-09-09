@@ -22,6 +22,8 @@
 .motor-card-premium:hover { 
   transform: translateY(-1px); 
   transition: transform .18s ease; 
+  /* Ensure no new stacking context interferes with portal modals */
+  z-index: auto;
 }
 
 .msrp { 
