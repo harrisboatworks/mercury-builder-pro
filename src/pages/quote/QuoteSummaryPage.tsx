@@ -9,6 +9,7 @@ import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
 import WarrantyAddOnUI, { type WarrantyTarget } from '@/components/quote-builder/WarrantyAddOnUI';
 import BonusOffersBadge from '@/components/quote-builder/BonusOffersBadge';
+import CoverageComparisonTooltip from '@/components/quote-builder/CoverageComparisonTooltip';
 
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
@@ -250,6 +251,11 @@ export default function QuoteSummaryPage() {
 
             {/* Bonus offers badge directly under hero price */}
             <BonusOffersBadge />
+
+            {/* Coverage comparison tooltip */}
+            <div className="flex justify-start">
+              <CoverageComparisonTooltip />
+            </div>
 
             {/* Package Selection */}
             <PackageCards

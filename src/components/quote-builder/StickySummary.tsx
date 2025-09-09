@@ -1,5 +1,6 @@
 "use client";
 import { money } from "@/lib/money";
+import CoverageComparisonTooltip from "@/components/quote-builder/CoverageComparisonTooltip";
 
 type StickySummaryProps = {
   packageLabel: string;
@@ -35,6 +36,10 @@ export default function StickySummary({
       >
         <div className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
           {packageLabel}
+        </div>
+        
+        <div className="mt-1">
+          <CoverageComparisonTooltip />
         </div>
 
         <div className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
