@@ -25,6 +25,8 @@ import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { ChatWidget } from "@/components/chat/ChatWidget";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import AdminPromotions from "./pages/AdminPromotions";
 import AdminQuotes from "./pages/AdminQuotes";
@@ -65,6 +67,15 @@ const App = () => (
               <ScrollToTop />
               <Routes>
                 <Route path="/auth" element={<Auth />} />
+                <Route path="/login" element={<Login />} />
+                <Route 
+                  path="/dashboard" 
+                  element={
+                    <SecureRoute>
+                      <Dashboard />
+                    </SecureRoute>
+                  } 
+                />
                 <Route path="/" element={<Index />} />
                 
                 {/* Quote Builder Routes */}
