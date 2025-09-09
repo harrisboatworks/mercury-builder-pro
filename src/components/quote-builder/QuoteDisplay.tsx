@@ -447,28 +447,29 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
         <div className="mt-8 space-y-6">
           <h3 className="text-lg font-semibold text-center">Choose Your Payment Method</h3>
           
-          {motorPrice >= FINANCING_MINIMUM ? (
-            <div className="grid gap-4 md:grid-cols-3">
-              {/* Cash Payment */}
-              <Card 
-                className={`p-4 cursor-pointer transition-all border-2 ${
-                  paymentPreference === 'cash' ? 'border-green-500 bg-green-50' : 'border-border hover:border-green-300'
-                }`}
-                onClick={() => handlePaymentSelection('cash')}
-              >
-                <div className="text-center space-y-2">
-                  <DollarSign className="w-8 h-8 mx-auto text-green-600" />
-                  <h4 className="font-semibold">Pay Cash</h4>
-                  <p className="text-2xl font-bold text-green-600">{formatCurrency(totalCashPrice)}</p>
-                  <p className="text-sm text-muted-foreground">
-                    Save {formatCurrency(cashSavings)} in interest!
-                  </p>
-                </div>
-              </Card>
+          {/* Main Payment Options - Centered */}
+          <div className="flex justify-center gap-4 flex-wrap">
+            {/* Cash Payment */}
+            <Card 
+              className={`p-4 cursor-pointer transition-all border-2 w-full max-w-xs ${
+                paymentPreference === 'cash' ? 'border-green-500 bg-green-50' : 'border-border hover:border-green-300'
+              }`}
+              onClick={() => handlePaymentSelection('cash')}
+            >
+              <div className="text-center space-y-2">
+                <DollarSign className="w-8 h-8 mx-auto text-green-600" />
+                <h4 className="font-semibold">Pay Cash</h4>
+                <p className="text-2xl font-bold text-green-600">{formatCurrency(totalCashPrice)}</p>
+                <p className="text-sm text-muted-foreground">
+                  {motorPrice >= FINANCING_MINIMUM ? `Save ${formatCurrency(cashSavings)} in interest!` : 'Best price for this motor'}
+                </p>
+              </div>
+            </Card>
 
-              {/* Finance Payment */}
+            {/* Finance Payment - Only show if motor price is above financing minimum */}
+            {motorPrice >= FINANCING_MINIMUM && (
               <Card 
-                className={`p-4 cursor-pointer transition-all border-2 ${
+                className={`p-4 cursor-pointer transition-all border-2 w-full max-w-xs ${
                   paymentPreference === 'finance' ? 'border-blue-500 bg-blue-50' : 'border-border hover:border-blue-300'
                 }`}
                 onClick={() => handlePaymentSelection('finance')}
@@ -489,63 +490,25 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                   )}
                 </div>
               </Card>
+            )}
+          </div>
 
-              {/* Deposit Payment - Only show for Cash payment */}
-              {paymentPreference === 'cash' && (
-                <Card 
-                  className="p-4 cursor-pointer transition-all border-2 border-green-200 hover:border-green-300 bg-green-50"
-                  onClick={handleStripePayment}
-                >
-                  <div className="text-center space-y-2">
-                    <CreditCard className="w-8 h-8 mx-auto text-green-600" />
-                    <h4 className="font-semibold text-green-800">Secure Deal with Deposit</h4>
-                    <p className="text-2xl font-bold text-green-600">$100</p>
-                    <p className="text-sm text-muted-foreground">
-                      Lock in your quote • Balance due on delivery
-                    </p>
-                  </div>
-                </Card>
-              )}
-            </div>
-          ) : (
-            <div className="space-y-4">
-              <div className="grid gap-4 md:grid-cols-2">
-                {/* Cash Payment */}
-                <Card 
-                  className={`p-4 cursor-pointer transition-all border-2 ${
-                    paymentPreference === 'cash' ? 'border-green-500 bg-green-50' : 'border-border hover:border-green-300'
-                  }`}
-                  onClick={() => handlePaymentSelection('cash')}
-                >
-                  <div className="text-center space-y-2">
-                    <DollarSign className="w-8 h-8 mx-auto text-green-600" />
-                    <h4 className="font-semibold">Pay Cash</h4>
-                    <p className="text-2xl font-bold text-green-600">{formatCurrency(totalCashPrice)}</p>
-                    <p className="text-sm text-muted-foreground">
-                      Best price for this motor
-                    </p>
-                  </div>
-                </Card>
-              </div>
-
-              {/* Deposit Payment - Only show for Cash payment */}
-              {paymentPreference === 'cash' && (
-                <div className="flex justify-center">
-                  <Card 
-                    className="p-4 cursor-pointer transition-all border-2 border-green-200 hover:border-green-300 bg-green-50 max-w-xs w-full"
-                    onClick={handleStripePayment}
-                  >
-                    <div className="text-center space-y-2">
-                      <CreditCard className="w-8 h-8 mx-auto text-green-600" />
-                      <h4 className="font-semibold text-green-800">Secure Deal with Deposit</h4>
-                      <p className="text-2xl font-bold text-green-600">$100</p>
-                      <p className="text-sm text-muted-foreground">
-                        Lock in your quote • Balance due on delivery
-                      </p>
-                    </div>
-                  </Card>
+          {/* Deposit Payment - Only show when Cash is selected */}
+          {paymentPreference === 'cash' && (
+            <div className="flex justify-center mt-4">
+              <Card 
+                className="p-4 cursor-pointer transition-all border-2 border-green-200 hover:border-green-300 bg-green-50 w-full max-w-xs"
+                onClick={handleStripePayment}
+              >
+                <div className="text-center space-y-2">
+                  <CreditCard className="w-8 h-8 mx-auto text-green-600" />
+                  <h4 className="font-semibold text-green-800">Secure Deal with Deposit</h4>
+                  <p className="text-2xl font-bold text-green-600">$100</p>
+                  <p className="text-sm text-muted-foreground">
+                    Lock in your quote • Balance due on delivery
+                  </p>
                 </div>
-              )}
+              </Card>
             </div>
           )}
         </div>
