@@ -27,7 +27,7 @@ export const MercuryQuoteHeader = ({ title }: MercuryQuoteHeaderProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const phoneNumber = "(705) 877-2628";
+  const phoneNumber = "1-905-342-2153";
 
   return (
     <>
