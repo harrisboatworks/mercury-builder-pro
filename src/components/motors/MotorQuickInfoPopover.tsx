@@ -53,6 +53,13 @@ function usePopoverPosition(
 ) {
   const [style, setStyle] = useState<Record<string, number | string>>({ display: "none" });
 
+  // Add debugging
+  useLayoutEffect(() => {
+    if (anchorEl) {
+      console.log('MotorQuickInfoPopover positioning for element:', anchorEl);
+    }
+  }, [anchorEl]);
+
   useLayoutEffect(() => {
     if (!anchorEl) return;
     const safeBottom = Number(getComputedStyle(document.documentElement).getPropertyValue("--safe-bottom") || 0);

@@ -59,6 +59,7 @@ export default function MotorCardPremium({
   
   const handleInfoClick = (e: React.MouseEvent) => {
     e.stopPropagation();
+    console.log('Info button clicked, toggling to:', !infoOpen);
     setInfoOpen(!infoOpen);
   };
   
