@@ -913,42 +913,21 @@ export const MotorSelection = ({
       }
     }
     
-    // HP Range filtering from tabs
+    // HP Range filtering from tabs - dynamic parsing for any "min-max" or "min+" format
     if (selectedHPRange !== 'all') {
       const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
-      switch (selectedHPRange) {
-        case '2.5-20':
-          if (hp < 2.5 || hp > 20) return false;
-          break;
-        case '25-60':
-          if (hp < 25 || hp > 60) return false;
-          break;
-        case '75-150':
-          if (hp < 75 || hp > 150) return false;
-          break;
-        case '175-300':
-          if (hp < 175 || hp > 300) return false;
-          break;
-        case '350+':
-          if (hp < 350) return false;
-          break;
-        // New category ranges
-        case '2.5-6':
-          if (hp < 2.5 || hp > 6) return false;
-          break;
-        case '9.9-30':
-          if (hp < 9.9 || hp > 30) return false;
-          break;
-        case '40-90':
-          if (hp < 40 || hp > 90) return false;
-          break;
-        case '115-250':
-          if (hp < 115 || hp > 250) return false;
-          break;
-        case '300-600':
-        case '300-600+':
-          if (hp < 300) return false;
-          break;
+      
+      // Parse HP range dynamically
+      if (selectedHPRange.endsWith('+')) {
+        // Handle open-ended ranges like "350+"
+        const minHp = parseFloat(selectedHPRange.replace('+', ''));
+        if (hp < minHp) return false;
+      } else if (selectedHPRange.includes('-')) {
+        // Handle range format like "25-100"
+        const [minStr, maxStr] = selectedHPRange.split('-');
+        const minHp = parseFloat(minStr);
+        const maxHp = parseFloat(maxStr);
+        if (hp < minHp || hp > maxHp) return false;
       }
     }
     
