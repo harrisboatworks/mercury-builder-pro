@@ -1,0 +1,48 @@
+/* Premium Layout Mode Design Tokens */
+:root {
+  --p-h1: clamp(22px, 4vw, 28px);
+  --p-h2: clamp(18px, 3vw, 22px);
+  --p-text: 14.5px;
+  --p-radius: 16px;
+  --p-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+  --p-speed: 180ms;
+}
+
+@layer components {
+  .p-card { 
+    border-radius: var(--p-radius); 
+    box-shadow: var(--p-shadow); 
+  }
+  
+  .p-quiet { 
+    color: hsl(215.4 16.3% 46.9%); /* slate-600 */
+  }
+  
+  .p-muted { 
+    color: hsl(215 20.2% 65.1%); /* slate-500 */
+  }
+  
+  .p-title { 
+    font-size: var(--p-h2); 
+    font-weight: 600; 
+    letter-spacing: -0.01em; 
+  }
+  
+  .p-hero { 
+    font-size: var(--p-h1); 
+    font-weight: 650; 
+    letter-spacing: -0.015em; 
+  }
+  
+  .p-fade { 
+    transition: all var(--p-speed) ease; 
+  }
+  
+  .p-fade:hover { 
+    transform: translateY(-1px); 
+  }
+  
+  .p-sep { 
+    border-top: 1px solid hsl(215.3 19.3% 34.5% / 0.25); 
+  }
+}

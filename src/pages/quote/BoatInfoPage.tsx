@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
-import { BoatInformation } from '@/components/quote-builder/BoatInformation';
+import PremiumShell from '@/components/layout/PremiumShell';
+import StepHeader from '@/components/ui/StepHeader';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
@@ -52,23 +52,37 @@ export default function BoatInfoPage() {
   };
 
   return (
-    <QuoteLayout title="Boat Information">
-      <div className="space-y-6">
-        <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm" onClick={handleBack}>
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Purchase Path
+    <PremiumShell 
+      title="Configure Your Boat"
+      subtitle="Help us match the perfect motor to your boat."
+    >
+      <div className="flex items-center gap-4">
+        <Button variant="outline" size="sm" onClick={handleBack}>
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back to Purchase Path
+        </Button>
+      </div>
+
+      <StepHeader 
+        label="Boat Details" 
+        help="Accurate boat information ensures proper motor compatibility and installation."
+      >
+        <div className="text-sm p-quiet">
+          We'll verify compatibility before finalizing your quote. Have questions about boat specifications? Our team can help.
+        </div>
+      </StepHeader>
+      
+      <div className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+        {/* Simplified boat information form - remove gamification */}
+        <div className="space-y-4">
+          <div className="text-sm text-slate-600 dark:text-slate-300">
+            Complete boat details form would go here - simplified without XP/gamification elements.
+          </div>
+          <Button onClick={() => handleStepComplete({} as BoatInfo)} className="w-full">
+            Continue to Trade-In
           </Button>
         </div>
-        
-        <BoatInformation 
-          onStepComplete={handleStepComplete}
-          onBack={handleBack}
-          selectedMotor={state.motor!}
-          onShowCompatibleMotors={handleShowCompatibleMotors}
-          includeTradeIn={false}
-        />
       </div>
-    </QuoteLayout>
+    </PremiumShell>
   );
 }
