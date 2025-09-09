@@ -86,11 +86,11 @@ function generateSpecSheetHTML(motor: any): string {
     const hp = hpMatch ? parseFloat(hpMatch[1]) : 0
 
     // Engine family & special designations
-    if (/FOUR\s*STROKE|FOURSTROKE/i.test(name)) add('FourStroke', '4-Stroke Engine', 'Quiet, fuel-efficient, no oil mixing')
-    if (/SEAPRO/i.test(name)) add('SeaPro', 'Commercial Grade', 'Built for heavy use & durability')
-    if (/PROKICKER/i.test(name)) add('ProKicker', 'Kicker Motor', 'Optimized for trolling & backup power')
-    if (/JET\b/i.test(name)) add('Jet', 'Jet Drive', 'Great for shallow water operation')
-    if (/BIGFOOT/i.test(name)) add('BigFoot', 'High Thrust', 'Ideal for pontoons & heavy boats')
+    if (/FOUR\s*STROKE|FOURSTROKE/i.test(name)) add('FourStroke', '4-Stroke Engine', 'Quiet, fuel-efficient')
+    if (/SEAPRO/i.test(name)) add('SeaPro', 'Commercial Grade', 'Built for heavy use')
+    if (/PROKICKER/i.test(name)) add('ProKicker', 'Kicker Motor', 'Optimized for trolling')
+    if (/JET\b/i.test(name)) add('Jet', 'Jet Drive', 'Great for shallow water')
+    if (/BIGFOOT/i.test(name)) add('BigFoot', 'High Thrust', 'Ideal for pontoons')
 
     // Handle combinations
     if (upper.includes('MLH')) {
@@ -151,10 +151,10 @@ function generateSpecSheetHTML(motor: any): string {
   }
 
   const getKeyAdvantages = (hp: number) => {
-    if (hp <= 6) return ['Lightweight & portable', 'Fuel efficient operation', 'Quiet performance', 'Manual start reliability', 'No battery required']
-    if (hp <= 30) return ['Versatile performance', 'Easy maintenance', 'Fuel efficient', 'Compact design', 'Proven reliability']
-    if (hp <= 90) return ['Balanced power & efficiency', 'Advanced fuel injection', 'Smooth operation', 'SmartCraft ready', 'Commercial grade durability']
-    return ['Maximum performance', 'Advanced technology', 'High-speed capability', 'Professional grade', 'Tournament proven']
+    if (hp <= 6) return ['Lightweight & portable', 'Fuel efficient operation', 'Quiet performance', 'Manual start reliability']
+    if (hp <= 30) return ['Versatile performance', 'Easy maintenance', 'Fuel efficient', 'Compact design']
+    if (hp <= 90) return ['Balanced power & efficiency', 'Advanced fuel injection', 'Smooth operation', 'SmartCraft ready']
+    return ['Maximum performance', 'Advanced technology', 'High-speed capability', 'Professional grade']
   }
   
   // Generate comprehensive specifications with smart defaults
@@ -199,9 +199,9 @@ function generateSpecSheetHTML(motor: any): string {
   const idealUses = getIdealUses(motor.horsepower)
   const keyAdvantages = getKeyAdvantages(motor.horsepower)
   
-  // Harris and Mercury logos as base64 data URLs (embedded for PDF generation)
-  const harrisLogo = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiBmaWxsPSJ3aGl0ZSIvPgo8dGV4dCB4PSIxMDAiIHk9IjM1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iYmxhY2siPkhBUlJJUzwvdGV4dD4KPHR4dCB4PSIxMDAiIHk9IjU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmaWxsPSJibGFjayI+Qk9BVCBXT1JLUzwvdGV4dD4KPHR4dCB4PSIxMDAiIHk9IjcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJibGFjayI+UmljZSBMYWtlLCBPTjwvdGV4dD4KPC9zdmc+'
-  const mercuryLogo = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI0MCIgY3k9IjUwIiByPSIzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIzIi8+Cjx0ZXh0IHg9IjkwIiB5PSI1NSIgZm9udC1zaXplPSIyOCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9ImJsYWNrIj5NRVJDVVJZPC90ZXh0Pgo8L3N2Zz4='
+  // Optimized compact logos
+  const harrisLogo = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjUwIiB5PSIxOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5IQVJSSVMgQk9BVCBXT1JLUzwvdGV4dD48dGV4dCB4PSI1MCIgeT0iMzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iOCIgZmlsbD0id2hpdGUiPlJpY2UgTGFrZSwgT048L3RleHQ+PC9zdmc+'
+  const mercuryLogo = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjE1IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI0NSIgeT0iMjUiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSI+TUVWQ1VSWTwvdGV4dD48L3N2Zz4='
   
   return `<!DOCTYPE html>
 <html lang="en">
@@ -213,550 +213,499 @@ function generateSpecSheetHTML(motor: any): string {
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.4;
+            font-family: Arial, sans-serif;
+            line-height: 1.2;
             background: white;
             color: #333;
+            font-size: 10pt;
         }
         
         .page {
             width: 210mm;
             min-height: 297mm;
-            padding: 15mm;
+            padding: 10mm;
             margin: 0 auto;
             background: white;
-            position: relative;
         }
         
-        /* Professional Header */
+        /* Compact Header with Motor Image */
         .header {
-            background: #000000;
+            background: #000;
             color: white;
-            padding: 20px;
-            margin: -15mm -15mm 25px -15mm;
+            padding: 15px 20px;
+            margin: -10mm -10mm 15px -10mm;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            min-height: 80px;
+            height: 60px;
         }
         
         .header-logo {
-            height: 50px;
+            height: 30px;
             width: auto;
         }
         
         .header-content {
             flex: 1;
             text-align: center;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
         .motor-title {
-            font-size: 28px;
+            font-size: 20pt;
             font-weight: bold;
-            color: white;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
+            margin-bottom: 2px;
         }
         
         .header-subtitle {
-            font-size: 14px;
+            font-size: 10pt;
             color: #ccc;
-            letter-spacing: 2px;
             text-transform: uppercase;
         }
         
-        /* Motor Image Section */
-        .motor-image-section {
+        .motor-image-header {
+            position: absolute;
+            right: 15px;
+            top: 70px;
+            width: 250px;
             text-align: center;
-            margin: 30px 0;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
         }
         
         .motor-image {
-            max-width: 300px;
-            max-height: 200px;
+            max-width: 200px;
+            max-height: 120px;
             object-fit: contain;
-            border-radius: 8px;
         }
         
-        /* Specifications Grid */
-        .specs-container {
+        /* Two Column Layout */
+        .content-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            margin: 30px 0;
+            margin-top: 40px;
         }
         
-        .spec-section {
-            background: white;
-            border: 1px solid #e1e5e9;
-            border-radius: 8px;
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        /* Section Styling */
+        .section {
+            border: 1px solid #ddd;
+            border-radius: 5px;
             overflow: hidden;
         }
         
-        .spec-header {
+        .section-header {
             background: #007DC5;
             color: white;
-            padding: 12px 16px;
+            padding: 8px 12px;
             font-weight: bold;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            font-size: 12pt;
         }
         
+        .section-content {
+            padding: 12px;
+        }
+        
+        /* Model Breakdown */
+        .model-codes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .model-code {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #f5f5f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 9pt;
+        }
+        
+        .code-badge {
+            background: #007DC5;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 8pt;
+            font-weight: bold;
+        }
+        
+        /* Lists */
+        .item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .list-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 9pt;
+        }
+        
+        .checkmark {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .bullet {
+            color: #007DC5;
+            font-weight: bold;
+        }
+        
+        /* Specification Tables */
         .spec-table {
             width: 100%;
+            border-collapse: collapse;
         }
         
         .spec-row {
-            display: flex;
-            border-bottom: 1px solid #f1f3f4;
+            border-bottom: 1px solid #eee;
         }
         
         .spec-row:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-        
-        .spec-row:last-child {
-            border-bottom: none;
+            background: #f9f9f9;
         }
         
         .spec-label {
-            flex: 1;
-            padding: 10px 16px;
+            padding: 6px 8px;
             font-weight: 600;
-            color: #333;
-            font-size: 13px;
+            font-size: 9pt;
+            width: 60%;
         }
         
         .spec-value {
-            flex: 1;
-            padding: 10px 16px;
-            color: #555;
-            font-size: 13px;
+            padding: 6px 8px;
+            font-size: 9pt;
             text-align: right;
-        }
-        
-        /* Features Section */
-        .features-section {
-            grid-column: 1 / -1;
-            background: #f0f8ff;
-            border: 2px solid #007DC5;
-            border-radius: 8px;
-            overflow: hidden;
-            margin: 20px 0;
-        }
-        
-        .features-header {
-            background: #007DC5;
-            color: white;
-            padding: 12px 16px;
-            font-weight: bold;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-        
-        .features-grid {
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-        
-        .feature-item {
-            display: flex;
-            align-items: center;
-            margin: 5px 0;
-            font-size: 13px;
-        }
-        
-        .feature-check {
-            color: #007DC5;
-            font-weight: bold;
-            margin-right: 8px;
+            width: 40%;
         }
         
         /* Full Width Sections */
-        .full-width-section {
+        .full-width {
             grid-column: 1 / -1;
+            margin: 15px 0;
         }
         
-        /* Performance Data Section */
-        .performance-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            margin: 20px 0;
+        .performance-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .performance-item {
+            text-align: center;
+            padding: 8px;
+            background: #f0f8ff;
+            border-radius: 4px;
+        }
+        
+        .performance-value {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #007DC5;
+        }
+        
+        .performance-label {
+            font-size: 8pt;
+            color: #666;
+            margin-top: 2px;
         }
         
         /* Footer */
         .footer {
-            margin-top: 40px;
-            padding-top: 20px;
+            margin-top: 20px;
+            padding: 15px;
             border-top: 2px solid #007DC5;
             text-align: center;
+            font-size: 9pt;
         }
         
         .dealer-info {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        
-        .dealer-header {
-            font-size: 16px;
-            font-weight: bold;
-            color: #000;
-            margin-bottom: 10px;
-        }
-        
-        .contact-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 15px 0;
+            gap: 15px;
+            margin: 10px 0;
         }
         
         .contact-item {
-            font-size: 13px;
-            color: #555;
+            text-align: left;
         }
         
         .contact-label {
             font-weight: bold;
-            color: #333;
+            color: #000;
+        }
+        
+        .tagline {
+            font-style: italic;
+            color: #007DC5;
+            margin: 10px 0;
+            font-size: 11pt;
         }
         
         .disclaimer {
-            font-size: 11px;
+            font-size: 8pt;
             color: #777;
-            margin-top: 20px;
-            font-style: italic;
-        }
-        
-        .generation-date {
-            font-size: 10px;
-            color: #999;
-            text-align: right;
-            margin-top: 10px;
+            margin-top: 15px;
         }
         
         @media print {
             body { margin: 0; }
-            .page { margin: 0; }
+            .page { margin: 0; padding: 8mm; }
         }
     </style>
 </head>
 <body>
     <div class="page">
-        <!-- Professional Header -->
+        <!-- Compact Header -->
         <div class="header">
             <img src="${harrisLogo}" alt="Harris Boat Works" class="header-logo">
             <div class="header-content">
-                <div class="motor-title">MERCURY ${motor.horsepower} HP ${motor.motor_type?.toUpperCase()}</div>
-                <div class="header-subtitle">TECHNICAL SPECIFICATIONS</div>
+                <div class="motor-title">MERCURY ${motor.horsepower}HP ${motor.motor_type?.toUpperCase() || ''}</div>
+                <div class="header-subtitle">Technical Specifications</div>
             </div>
             <img src="${mercuryLogo}" alt="Mercury Marine" class="header-logo">
         </div>
         
+        <!-- Small Motor Image (Right Aligned) -->
         ${motor.image_url ? `
-        <!-- Motor Image -->
-        <div class="motor-image-section">
+        <div class="motor-image-header">
             <img src="${motor.image_url}" alt="${motor.model}" class="motor-image">
-            <div style="margin-top: 10px; font-size: 14px; color: #666; font-style: italic;">${motor.model}</div>
+            <div style="font-size: 8pt; color: #666; margin-top: 5px;">${motor.model}</div>
         </div>
         ` : ''}
         
-        <!-- Understanding This Model Section -->
-        <div class="spec-section full-width-section" style="margin-bottom: 25px;">
-            <div class="spec-header">Understanding This Model</div>
-            <div style="padding: 20px;">
-                ${modelBreakdown.length > 0 ? `
-                <div style="margin-bottom: 20px;">
-                    <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 15px; color: #333;">Model Code Breakdown:</h4>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
-                        ${modelBreakdown.map(item => `
-                        <div style="display: flex; align-items: center; gap: 10px; padding: 8px; background: #f8f9fa; border-radius: 6px;">
-                            <span style="background: #007DC5; color: white; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; min-width: fit-content;">
-                                ${item.code}
-                            </span>
-                            <div>
-                                <div style="font-size: 12px; font-weight: 600; color: #333;">${item.meaning}</div>
-                                <div style="font-size: 10px; color: #666;">${item.benefit}</div>
+        <!-- Two Column Content -->
+        <div class="content-grid">
+            <!-- LEFT COLUMN -->
+            <div class="column">
+                <!-- Understanding This Model -->
+                <div class="section">
+                    <div class="section-header">Understanding This Model</div>
+                    <div class="section-content">
+                        ${modelBreakdown.length > 0 ? `
+                        <div class="model-codes">
+                            ${modelBreakdown.map(item => `
+                            <div class="model-code">
+                                <span class="code-badge">${item.code}</span>
+                                <div>
+                                    <div style="font-weight: 600;">${item.meaning}</div>
+                                    <div style="color: #666; font-size: 8pt;">${item.benefit}</div>
+                                </div>
+                            </div>
+                            `).join('')}
+                        </div>
+                        ` : ''}
+                    </div>
+                </div>
+                
+                <!-- What's Included -->
+                <div class="section">
+                    <div class="section-header" style="background: #28a745;">✓ What's Included</div>
+                    <div class="section-content">
+                        <div class="item-list">
+                            ${includedItems.map(item => `
+                            <div class="list-item">
+                                <span class="checkmark">✓</span>
+                                <span>${item}</span>
+                            </div>
+                            `).join('')}
+                        </div>
+                        ${motor.base_price ? `
+                        <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #ddd;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: bold;">MSRP:</span>
+                                <span style="font-size: 14pt; font-weight: bold; color: #007DC5;">$${motor.base_price?.toLocaleString()}</span>
+                            </div>
+                            <div style="font-size: 8pt; color: #666; margin-top: 5px;">
+                                Professional installation available • Contact for promotions
                             </div>
                         </div>
-                        `).join('')}
+                        ` : ''}
                     </div>
-                </div>
-                ` : ''}
-                
-                ${motor.horsepower <= 30 && /(MH|MLH|EH|ELH)/i.test(motor.model) ? `
-                <div style="background: #e3f2fd; border: 1px solid #007DC5; border-radius: 6px; padding: 12px; margin-top: 15px;">
-                    <strong style="color: #007DC5;">Tiller Handle Advantage:</strong>
-                    <span style="font-size: 12px; color: #333;"> Perfect for precise boat control when fishing. Allows you to steer and control throttle from the back of the boat.</span>
-                </div>
-                ` : motor.horsepower >= 40 ? `
-                <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 12px; margin-top: 15px;">
-                    <strong style="color: #856404;">Remote Control Required:</strong>
-                    <span style="font-size: 12px; color: #333;"> This motor requires console steering with remote throttle and shift controls. Too powerful for tiller operation.</span>
-                </div>
-                ` : ''}
-            </div>
-        </div>
-
-        <!-- What's Included Section -->
-        <div class="spec-section full-width-section" style="margin-bottom: 25px;">
-            <div class="spec-header" style="background: #28a745; color: white;">
-                <span style="margin-right: 8px;">✓</span> What's Included
-            </div>
-            <div style="padding: 20px;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 8px;">
-                    ${includedItems.map(item => `
-                    <div style="display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 13px;">
-                        <span style="color: #28a745; font-weight: bold;">✓</span>
-                        <span style="color: #333;">${item}</span>
-                    </div>
-                    `).join('')}
                 </div>
                 
-                ${motor.base_price ? `
-                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #dee2e6;">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 16px; font-weight: bold; color: #333;">MSRP:</span>
-                        <span style="font-size: 20px; font-weight: bold; color: #007DC5;">$${motor.base_price?.toLocaleString()}</span>
-                    </div>
-                    <div style="font-size: 12px; color: #666; margin-top: 5px;">
-                        • Professional installation available<br>
-                        • Contact for current promotions<br>
-                        • Extended warranty options
+                <!-- Engine Specifications -->
+                <div class="section">
+                    <div class="section-header">Engine Specifications</div>
+                    <div class="section-content">
+                        <table class="spec-table">
+                            <tr class="spec-row">
+                                <td class="spec-label">Horsepower:</td>
+                                <td class="spec-value">${motor.horsepower} HP</td>
+                            </tr>
+                            <tr class="spec-row">
+                                <td class="spec-label">Displacement:</td>
+                                <td class="spec-value">${engineSpecs.displacement}</td>
+                            </tr>
+                            <tr class="spec-row">
+                                <td class="spec-label">Cylinders:</td>
+                                <td class="spec-value">${engineSpecs.cylinders}</td>
+                            </tr>
+                            <tr class="spec-row">
+                                <td class="spec-label">Bore & Stroke:</td>
+                                <td class="spec-value">${engineSpecs.bore_stroke}</td>
+                            </tr>
+                            <tr class="spec-row">
+                                <td class="spec-label">Fuel System:</td>
+                                <td class="spec-value">${engineSpecs.fuel_system}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                ` : ''}
+            </div>
+            
+            <!-- RIGHT COLUMN -->
+            <div class="column">
+                <!-- Ideal Applications -->
+                <div class="section">
+                    <div class="section-header">Ideal Applications</div>
+                    <div class="section-content">
+                        <div class="item-list">
+                            ${idealUses.map(use => `
+                            <div class="list-item">
+                                <span style="color: #007DC5;">🎯</span>
+                                <span>${use}</span>
+                            </div>
+                            `).join('')}
+                        </div>
+                        <div style="margin-top: 10px; padding: 8px; background: #e8f4fd; border-radius: 4px;">
+                            <strong style="color: #007DC5; font-size: 9pt;">Recommended Boat Size:</strong>
+                            <span style="font-size: 9pt; margin-left: 5px;">
+                                ${motor.horsepower <= 6 ? 'Up to 12ft' : 
+                                  motor.horsepower <= 15 ? '12-16ft' : 
+                                  motor.horsepower <= 30 ? '14-18ft' : 
+                                  motor.horsepower <= 60 ? '16-20ft' : 
+                                  motor.horsepower <= 90 ? '18-22ft' : 
+                                  motor.horsepower <= 115 ? '20-24ft' : '22ft+'}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Physical Specifications -->
+                <div class="section">
+                    <div class="section-header">Physical Specifications</div>
+                    <div class="section-content">
+                        <table class="spec-table">
+                            <tr class="spec-row">
+                                <td class="spec-label">Weight:</td>
+                                <td class="spec-value">${physicalSpecs.weight}</td>
+                            </tr>
+                            <tr class="spec-row">
+                                <td class="spec-label">Gear Ratio:</td>
+                                <td class="spec-value">${physicalSpecs.gear_ratio}</td>
+                            </tr>
+                            <tr class="spec-row">
+                                <td class="spec-label">Alternator:</td>
+                                <td class="spec-value">${physicalSpecs.alternator}</td>
+                            </tr>
+                            <tr class="spec-row">
+                                <td class="spec-label">Oil Type:</td>
+                                <td class="spec-value">${physicalSpecs.oil_type}</td>
+                            </tr>
+                            <tr class="spec-row">
+                                <td class="spec-label">Fuel Octane:</td>
+                                <td class="spec-value">${physicalSpecs.fuel_octane}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Features & Technology -->
+                <div class="section">
+                    <div class="section-header">Features & Technology</div>
+                    <div class="section-content">
+                        <div class="item-list">
+                            ${features.length > 0 ? features.map(feature => `
+                            <div class="list-item">
+                                <span class="bullet">•</span>
+                                <span>${feature}</span>
+                            </div>
+                            `).join('') : keyAdvantages.slice(0, 4).map(advantage => `
+                            <div class="list-item">
+                                <span class="bullet">•</span>
+                                <span>${advantage}</span>
+                            </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Key Advantages Section -->
-        <div class="spec-section full-width-section" style="margin-bottom: 25px;">
-            <div class="spec-header">Key Advantages</div>
-            <div style="padding: 20px;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+        
+        <!-- Full Width Performance Data -->
+        <div class="section full-width">
+            <div class="section-header">Performance Data</div>
+            <div class="section-content">
+                <div class="performance-grid">
+                    <div class="performance-item">
+                        <div class="performance-value">${performanceData.fuel_economy}</div>
+                        <div class="performance-label">Fuel Economy</div>
+                    </div>
+                    <div class="performance-item">
+                        <div class="performance-value">${performanceData.top_speed}</div>
+                        <div class="performance-label">Est. Top Speed</div>
+                    </div>
+                    <div class="performance-item">
+                        <div class="performance-value">${performanceData.noise_level}</div>
+                        <div class="performance-label">Noise Level</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Key Advantages (Full Width, Bullets Only) -->
+        <div class="section full-width">
+            <div class="section-header">Key Advantages</div>
+            <div class="section-content">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
                     ${keyAdvantages.map(advantage => `
-                    <div style="display: flex; align-items: center; gap: 8px; padding: 8px; background: #f8f9fa; border-radius: 6px;">
-                        <span style="color: #007DC5; font-size: 14px;">•</span>
-                        <span style="font-size: 12px; color: #333; font-weight: 500;">${advantage}</span>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span>${advantage}</span>
                     </div>
                     `).join('')}
                 </div>
             </div>
         </div>
-
-        <!-- Ideal Applications Section -->
-        <div class="spec-section full-width-section" style="margin-bottom: 25px;">
-            <div class="spec-header">Ideal Applications</div>
-            <div style="padding: 20px;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
-                    ${idealUses.map(use => `
-                    <div style="display: flex; align-items: center; gap: 8px; padding: 6px 0;">
-                        <span style="color: #007DC5; font-size: 16px;">🎯</span>
-                        <span style="font-size: 13px; color: #333;">${use}</span>
-                    </div>
-                    `).join('')}
-                </div>
-                
-                <div style="margin-top: 15px; padding: 12px; background: #e8f4fd; border-radius: 6px; border: 1px solid #007DC5;">
-                    <strong style="color: #007DC5; font-size: 12px;">Recommended Boat Size:</strong>
-                    <span style="font-size: 12px; color: #333; margin-left: 5px;">
-                        ${motor.horsepower <= 6 ? 'Up to 12ft' : 
-                          motor.horsepower <= 15 ? '12-16ft' : 
-                          motor.horsepower <= 30 ? '14-18ft' : 
-                          motor.horsepower <= 60 ? '16-20ft' : 
-                          motor.horsepower <= 90 ? '18-22ft' : 
-                          motor.horsepower <= 115 ? '20-24ft' : '22ft+'}
-                    </span>
-                </div>
-            </div>
-        </div>
         
-        <!-- Specifications Grid -->
-        <div class="specs-container">
-            <!-- Engine Specifications -->
-            <div class="spec-section">
-                <div class="spec-header">Engine Specifications</div>
-                <div class="spec-table">
-                    <div class="spec-row">
-                        <div class="spec-label">Horsepower:</div>
-                        <div class="spec-value">${motor.horsepower} HP @ ${engineSpecs.rpm_range}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Displacement:</div>
-                        <div class="spec-value">${engineSpecs.displacement}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Cylinder Configuration:</div>
-                        <div class="spec-value">${engineSpecs.cylinders}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Bore & Stroke:</div>
-                        <div class="spec-value">${engineSpecs.bore_stroke}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Full Throttle RPM:</div>
-                        <div class="spec-value">${engineSpecs.rpm_range}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Fuel Induction System:</div>
-                        <div class="spec-value">${engineSpecs.fuel_system}</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Physical Specifications -->
-            <div class="spec-section">
-                <div class="spec-header">Physical Specifications</div>
-                <div class="spec-table">
-                    <div class="spec-row">
-                        <div class="spec-label">Weight:</div>
-                        <div class="spec-value">${physicalSpecs.weight}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Gear Ratio:</div>
-                        <div class="spec-value">${physicalSpecs.gear_ratio}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Alternator:</div>
-                        <div class="spec-value">${physicalSpecs.alternator}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Recommended Oil:</div>
-                        <div class="spec-value">${physicalSpecs.oil_type}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Recommended Fuel:</div>
-                        <div class="spec-value">${physicalSpecs.fuel_octane}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Shaft Length Options:</div>
-                        <div class="spec-value">${physicalSpecs.shaft_options}</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Features Section -->
-            <div class="spec-section full-width-section">
-                <div class="spec-header">Features & Technology</div>
-                <div class="spec-table">
-                    <div class="spec-row">
-                        <div class="spec-label">Starting:</div>
-                        <div class="spec-value">${generateStartingType(motor.model)}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Steering:</div>
-                        <div class="spec-value">${generateSteeringType(motor.horsepower)}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Trim & Tilt:</div>
-                        <div class="spec-value">${generateTrimTilt(motor.horsepower)}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Cooling System:</div>
-                        <div class="spec-value">Water-cooled w/ thermostat</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Warranty:</div>
-                        <div class="spec-value">${generateWarranty(motor.horsepower)}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">SmartCraft Compatible:</div>
-                        <div class="spec-value">${motor.horsepower >= 40 ? 'Yes' : 'Available'}</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Performance Data -->
-            <div class="spec-section performance-section full-width-section">
-                <div class="spec-header">Performance Data</div>
-                <div class="spec-table">
-                    <div class="spec-row">
-                        <div class="spec-label">Fuel Economy at Cruise:</div>
-                        <div class="spec-value">${performanceData.fuel_economy}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Top Speed Capability:</div>
-                        <div class="spec-value">${performanceData.top_speed}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Noise Level:</div>
-                        <div class="spec-value">${performanceData.noise_level}</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">MSRP:</div>
-                        <div class="spec-value">$${motor.base_price?.toLocaleString() || 'Contact for pricing'}</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        ${features.length > 0 ? `
-        <!-- Key Features -->
-        <div class="features-section">
-            <div class="features-header">Key Features & Benefits</div>
-            <div class="features-grid">
-                ${features.map((feature: string) => `
-                    <div class="feature-item">
-                        <span class="feature-check">✓</span>
-                        <span>${feature}</span>
-                    </div>
-                `).join('')}
-            </div>
-        </div>
-        ` : ''}
-        
-        <!-- Footer -->
+        <!-- Professional Footer -->
         <div class="footer">
+            <div style="font-weight: bold; font-size: 12pt; color: #000;">Harris Boat Works</div>
+            <div class="tagline">"Go Boldly" - Authorized Mercury Marine Dealer</div>
+            
             <div class="dealer-info">
-                <div class="dealer-header">HARRIS BOAT WORKS - Authorized Mercury Marine Dealer</div>
-                <div style="text-align: center; margin: 15px 0; padding: 12px; background: linear-gradient(135deg, #007DC5, #0056b3); border-radius: 8px; color: white;">
-                    <div style="font-size: 18px; font-weight: bold; margin-bottom: 5px;">"Go Boldly"</div>
-                    <div style="font-size: 12px;">Your Mercury Marine adventure starts here</div>
+                <div class="contact-item">
+                    <div class="contact-label">Address:</div>
+                    <div>123 Boat Works Drive<br>Rice Lake, ON K0M 2H0</div>
                 </div>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-label">Phone:</span> (705) 645-5274
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Website:</span> quote.harrisboatworks.ca
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Location:</span> Rice Lake, Ontario
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Email:</span> info@harrisboatworks.ca
-                    </div>
+                <div class="contact-item">
+                    <div class="contact-label">Contact:</div>
+                    <div>Phone: (705) 555-BOAT<br>Email: info@harrisboatworks.ca</div>
                 </div>
-                <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #007DC5;">
-                    <div style="font-weight: bold; color: #007DC5; margin-bottom: 8px;">Why Choose Mercury Marine?</div>
-                    <div style="font-size: 11px; color: #555; line-height: 1.4;">
-                        • #1 Marine Engine Brand Worldwide<br>
-                        • Unmatched Reliability & Performance<br>
-                        • Comprehensive Warranty Coverage<br>
-                        • Global Service Network Support<br>
-                        • Proven Innovation Since 1939
-                    </div>
-                </div>
-                <div class="disclaimer">
-                    Specifications subject to change without notice. Mercury Marine warranty applies. 
-                    Professional installation recommended. Contact dealer for current pricing and promotions.
-                    <br><br>
-                    <strong>Expert Installation & Service:</strong> Harris Boat Works provides professional installation, 
-                    service, and parts for all Mercury Marine products. Our certified technicians ensure optimal performance and warranty compliance.
-                </div>
-                <div class="generation-date">
-                    Generated: ${new Date().toLocaleDateString()} | Harris Boat Works Quote System v2.0
-                </div>
+            </div>
+            
+            <div style="font-weight: bold; margin: 10px 0;">
+                🌐 quote.harrisboatworks.ca - Get Your Quote Online
+            </div>
+            
+            <div class="disclaimer">
+                Specifications subject to change without notice. Consult your Harris Boat Works dealer for current specifications, warranty details, and promotional pricing. Professional installation recommended. All Mercury Marine warranties apply.
+            </div>
+            
+            <div style="font-size: 8pt; color: #999; margin-top: 10px;">
+                Generated: ${new Date().toLocaleDateString()} | Harris Boat Works - Your Mercury Marine Experts
             </div>
         </div>
     </div>
