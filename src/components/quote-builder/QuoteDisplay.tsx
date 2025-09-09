@@ -258,23 +258,27 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
     if (!user) {
       toast({ 
         title: 'Please sign in', 
-        description: 'You need to be signed in to complete your purchase.',
+        description: 'You need to be signed in to secure your deal.',
         variant: 'destructive'
       });
       return;
     }
 
     try {
+      // For deposit, we only charge $100 to secure the deal
+      const depositAmount = 100;
       const stripeQuoteData = {
         motorModel: quoteData.motor?.model || 'Mercury Motor',
         horsepower: quoteData.motor?.hp || 0,
-        motorPrice,
-        accessoryCosts,
-        installationCost,
-        tradeInCredit: tradeInValue,
-        totalPrice: totalCashPrice,
+        motorPrice: depositAmount, // Only charge deposit amount
+        accessoryCosts: 0, // No accessories in deposit
+        installationCost: 0, // No installation in deposit
+        tradeInCredit: 0, // No trade-in credit in deposit
+        totalPrice: depositAmount, // Total is just the deposit
         customerName: user.email,
-        customerPhone: user.phone || ''
+        customerPhone: user.phone || '',
+        isDeposit: true, // Flag to indicate this is a deposit
+        fullQuoteTotal: totalCashPrice // Store full quote amount for reference
       };
 
       const { data, error } = await supabase.functions.invoke('create-payment', {
@@ -286,13 +290,13 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
       if (data?.url) {
         window.open(data.url, '_blank');
         toast({ 
-          title: 'Redirecting to payment', 
-          description: 'Opening Stripe checkout in a new window...' 
+          title: 'Securing your deal', 
+          description: 'Opening secure deposit payment...' 
         });
       }
     } catch (error) {
-      console.error('Stripe payment error:', error);
-      toast({ 
+      console.error('Deposit payment error:', error);
+      toast({
         title: 'Payment Error', 
         description: error.message || 'Failed to initiate payment. Please try again.',
         variant: 'destructive'
@@ -480,20 +484,22 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                 </div>
               </Card>
 
-              {/* Stripe Payment */}  
-              <Card 
-                className="p-4 cursor-pointer transition-all border-2 border-border hover:border-purple-300"
-                onClick={handleStripePayment}
-              >
-                <div className="text-center space-y-2">
-                  <CreditCard className="w-8 h-8 mx-auto text-purple-600" />
-                  <h4 className="font-semibold">Pay with Card</h4>
-                  <p className="text-2xl font-bold text-purple-600">{formatCurrency(totalCashPrice)}</p>
-                  <p className="text-sm text-muted-foreground">
-                    Secure payment via Stripe
-                  </p>
-                </div>
-              </Card>
+              {/* Deposit Payment - Only show for Cash payment */}
+              {paymentPreference === 'cash' && (
+                <Card 
+                  className="p-4 cursor-pointer transition-all border-2 border-green-200 hover:border-green-300 bg-green-50"
+                  onClick={handleStripePayment}
+                >
+                  <div className="text-center space-y-2">
+                    <CreditCard className="w-8 h-8 mx-auto text-green-600" />
+                    <h4 className="font-semibold text-green-800">Secure Deal with Deposit</h4>
+                    <p className="text-2xl font-bold text-green-600">$100</p>
+                    <p className="text-sm text-muted-foreground">
+                      Lock in your quote • Balance due on delivery
+                    </p>
+                  </div>
+                </Card>
+              )}
             </div>
           ) : (
             <div className="grid gap-4 md:grid-cols-2">
@@ -510,21 +516,6 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                   <p className="text-2xl font-bold text-green-600">{formatCurrency(totalCashPrice)}</p>
                   <p className="text-sm text-muted-foreground">
                     Best price for this motor
-                  </p>
-                </div>
-              </Card>
-
-              {/* Stripe Payment */}
-              <Card 
-                className="p-4 cursor-pointer transition-all border-2 border-border hover:border-purple-300"
-                onClick={handleStripePayment}
-              >
-                <div className="text-center space-y-2">
-                  <CreditCard className="w-8 h-8 mx-auto text-purple-600" />
-                  <h4 className="font-semibold">Pay with Card</h4>
-                  <p className="text-2xl font-bold text-purple-600">{formatCurrency(totalCashPrice)}</p>
-                  <p className="text-sm text-muted-foreground">
-                    Secure payment via Stripe
                   </p>
                 </div>
               </Card>
