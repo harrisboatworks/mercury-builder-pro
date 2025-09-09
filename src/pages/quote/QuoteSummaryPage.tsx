@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { QuoteDisplay } from '@/components/quote-builder/QuoteDisplay';
+import { WarrantySelector } from '@/components/quote-builder/WarrantySelector';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
@@ -68,7 +69,10 @@ export default function QuoteSummaryPage() {
           purchasePath={state.purchasePath}
         />
         
-        {/* Bonus offers section under the quote details */}
+        {/* Warranty selection section */}
+        <WarrantySelector />
+        
+        {/* Bonus offers section under the warranty selector */}
         <BonusOffers motor={quoteData.motor} />
       </div>
     </QuoteLayout>

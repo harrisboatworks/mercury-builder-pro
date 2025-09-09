@@ -1,6 +1,12 @@
 import React, { createContext, useContext, useReducer, useEffect, useCallback, useRef, useMemo, useState } from 'react';
 import { Motor, BoatInfo, QuoteData } from '@/components/QuoteBuilder';
 
+interface WarrantyConfig {
+  extendedYears: number;
+  warrantyPrice: number;
+  totalYears: number;
+}
+
 interface QuoteState {
   motor: Motor | null;
   purchasePath: 'loose' | 'installed' | null;
@@ -13,6 +19,7 @@ interface QuoteState {
     term: number;
     rate: number;
   };
+  warrantyConfig: WarrantyConfig | null;
   hasTradein: boolean;
   completedSteps: number[];
   currentStep: number;
@@ -27,6 +34,7 @@ type QuoteAction =
   | { type: 'SET_FUEL_TANK_CONFIG'; payload: any }
   | { type: 'SET_INSTALL_CONFIG'; payload: any }
   | { type: 'SET_FINANCING'; payload: { downPayment: number; term: number; rate: number } }
+  | { type: 'SET_WARRANTY_CONFIG'; payload: WarrantyConfig }
   | { type: 'SET_HAS_TRADEIN'; payload: boolean }
   | { type: 'COMPLETE_STEP'; payload: number }
   | { type: 'SET_CURRENT_STEP'; payload: number }
@@ -46,6 +54,7 @@ const initialState: QuoteState = {
     term: 48,
     rate: 7.99
   },
+  warrantyConfig: null,
   hasTradein: false,
   completedSteps: [],
   currentStep: 1,
@@ -84,6 +93,8 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
       return { ...state, installConfig: action.payload };
     case 'SET_FINANCING':
       return { ...state, financing: action.payload };
+    case 'SET_WARRANTY_CONFIG':
+      return { ...state, warrantyConfig: action.payload };
     case 'SET_HAS_TRADEIN':
       return { ...state, hasTradein: action.payload };
     case 'COMPLETE_STEP':
@@ -269,6 +280,7 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     motor: state.motor,
     boatInfo: state.boatInfo,
     financing: state.financing,
+    warrantyConfig: state.warrantyConfig,
     hasTradein: state.hasTradein
   });
 

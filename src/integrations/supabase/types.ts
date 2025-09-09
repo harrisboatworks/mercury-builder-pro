@@ -592,6 +592,45 @@ export type Database = {
         }
         Relationships: []
       }
+      warranty_pricing: {
+        Row: {
+          created_at: string
+          hp_max: number
+          hp_min: number
+          id: string
+          updated_at: string
+          year_1_price: number
+          year_2_price: number
+          year_3_price: number
+          year_4_price: number
+          year_5_price: number
+        }
+        Insert: {
+          created_at?: string
+          hp_max: number
+          hp_min: number
+          id?: string
+          updated_at?: string
+          year_1_price: number
+          year_2_price: number
+          year_3_price: number
+          year_4_price: number
+          year_5_price: number
+        }
+        Update: {
+          created_at?: string
+          hp_max?: number
+          hp_min?: number
+          id?: string
+          updated_at?: string
+          year_1_price?: number
+          year_2_price?: number
+          year_3_price?: number
+          year_4_price?: number
+          year_5_price?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

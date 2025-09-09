@@ -104,6 +104,11 @@ export interface QuoteData {
     term: number;
     rate: number;
   };
+  warrantyConfig: {
+    extendedYears: number;
+    warrantyPrice: number;
+    totalYears: number;
+  } | null;
   hasTradein: boolean;
 }
 
@@ -118,6 +123,7 @@ const QuoteBuilder = () => {
       term: 48,
       rate: 7.99
     },
+    warrantyConfig: null,
     hasTradein: false
   });
 
