@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2 } from "lucide-react";
 import { supabase } from "../../integrations/supabase/client";
@@ -190,11 +191,11 @@ export default function MotorDetailsSheet({
   const displayFeatures = Array.isArray(features) ? features : [];
   const cleanedDescription = String(description || '').replace(/Can't find what you're looking for\?[\s\S]*/i, '').replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '').trim();
   
-  return (
-    <div role="dialog" aria-modal="true" className="fixed inset-0 z-[9999]" style={{ position: 'fixed', isolation: 'isolate' }}>
-      <div onClick={onClose} className="absolute inset-0 bg-black/50 backdrop-blur-sm z-[9998]" />
-      <div className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-4xl rounded-t-2xl border border-slate-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-900 max-h-[90vh] overflow-y-auto z-[9999]"
-           style={{ position: 'fixed', isolation: 'isolate' }}>
+  return createPortal(
+    <div role="dialog" aria-modal="true" className="fixed inset-0 z-[9999]" style={{ isolation: 'isolate' }}>
+      <div onClick={onClose} className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+      <div className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-4xl rounded-t-2xl border border-slate-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-900 max-h-[90vh] overflow-y-auto"
+           style={{ isolation: 'isolate' }}>
         <div className="sticky top-0 bg-white dark:bg-slate-900 p-4 border-b border-slate-200 dark:border-slate-700">
           <div className="mx-auto h-1.5 w-12 rounded-full bg-slate-200 dark:bg-slate-700" />
           
@@ -531,6 +532,7 @@ export default function MotorDetailsSheet({
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

@@ -27,9 +27,9 @@
   z-index: 0; 
 }
 
-/* Ensure filter drawer appears above everything */
+/* Ensure filter drawer appears above content but below modals */
 .filter-drawer {
-  z-index: 9999;
+  z-index: 9000;
 }
 
 /* Remove any legacy top strips on mobile */
