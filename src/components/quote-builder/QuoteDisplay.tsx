@@ -180,6 +180,12 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
       });
 
       if (onEarnXP) onEarnXP(500);
+    } else if (type === 'finance') {
+      // Add visual feedback for finance selection
+      toast({
+        title: 'Financing selected',
+        description: `Monthly payment: ${formatCurrency(payments.monthly)} at ${effectiveRate}% APR`,
+      });
     }
   };
 
@@ -502,23 +508,44 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
               )}
             </div>
           ) : (
-            <div className="grid gap-4 md:grid-cols-2">
-              {/* Cash Payment */}
-              <Card 
-                className={`p-4 cursor-pointer transition-all border-2 ${
-                  paymentPreference === 'cash' ? 'border-green-500 bg-green-50' : 'border-border hover:border-green-300'
-                }`}
-                onClick={() => handlePaymentSelection('cash')}
-              >
-                <div className="text-center space-y-2">
-                  <DollarSign className="w-8 h-8 mx-auto text-green-600" />
-                  <h4 className="font-semibold">Pay Cash</h4>
-                  <p className="text-2xl font-bold text-green-600">{formatCurrency(totalCashPrice)}</p>
-                  <p className="text-sm text-muted-foreground">
-                    Best price for this motor
-                  </p>
+            <div className="space-y-4">
+              <div className="grid gap-4 md:grid-cols-2">
+                {/* Cash Payment */}
+                <Card 
+                  className={`p-4 cursor-pointer transition-all border-2 ${
+                    paymentPreference === 'cash' ? 'border-green-500 bg-green-50' : 'border-border hover:border-green-300'
+                  }`}
+                  onClick={() => handlePaymentSelection('cash')}
+                >
+                  <div className="text-center space-y-2">
+                    <DollarSign className="w-8 h-8 mx-auto text-green-600" />
+                    <h4 className="font-semibold">Pay Cash</h4>
+                    <p className="text-2xl font-bold text-green-600">{formatCurrency(totalCashPrice)}</p>
+                    <p className="text-sm text-muted-foreground">
+                      Best price for this motor
+                    </p>
+                  </div>
+                </Card>
+              </div>
+
+              {/* Deposit Payment - Only show for Cash payment */}
+              {paymentPreference === 'cash' && (
+                <div className="flex justify-center">
+                  <Card 
+                    className="p-4 cursor-pointer transition-all border-2 border-green-200 hover:border-green-300 bg-green-50 max-w-xs w-full"
+                    onClick={handleStripePayment}
+                  >
+                    <div className="text-center space-y-2">
+                      <CreditCard className="w-8 h-8 mx-auto text-green-600" />
+                      <h4 className="font-semibold text-green-800">Secure Deal with Deposit</h4>
+                      <p className="text-2xl font-bold text-green-600">$100</p>
+                      <p className="text-sm text-muted-foreground">
+                        Lock in your quote • Balance due on delivery
+                      </p>
+                    </div>
+                  </Card>
                 </div>
-              </Card>
+              )}
             </div>
           )}
         </div>
