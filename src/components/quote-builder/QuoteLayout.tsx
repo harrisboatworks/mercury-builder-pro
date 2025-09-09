@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { LogOut, User, DollarSign } from 'lucide-react';
 import { useAuth } from '@/components/auth/AuthProvider';
 import harrisLogo from '@/assets/harris-logo.png';
+import mercuryLogo from '@/assets/mercury-logo.png';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { cn } from '@/lib/utils';
@@ -105,8 +106,10 @@ export const QuoteLayout = ({
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-6">
-              <Link to="/" className="flex items-center">
+              <Link to="/" className="flex items-center space-x-4">
                 <img src={harrisLogo} alt="Harris Boat Works" className="h-12 w-auto" />
+                <div className="h-8 w-px bg-border"></div>
+                <img src={mercuryLogo} alt="Mercury Marine" className="h-10 w-auto" />
               </Link>
               <div>
                 <h1 className="text-2xl font-bold text-foreground">
