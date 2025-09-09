@@ -31,20 +31,15 @@ export function WarrantySelector() {
   const [loading, setLoading] = useState(true);
 
   const motor = state.motor;
-  if (!motor) return null;
+  const motorHP = motor ? (typeof motor.hp === 'string' ? parseFloat(motor.hp) : motor.hp) : 0;
 
-  const motorHP = typeof motor.hp === 'string' ? parseFloat(motor.hp) : motor.hp;
-
-  // Calculate current warranty coverage
-  const standardYears = 3;
-  // Get actual warranty bonus years from active promotions
-  const promoYears = getTotalWarrantyBonusYears();
-  const warrantyPromotions = getWarrantyPromotions();
-  const currentTotalYears = standardYears + promoYears;
-  const maxTotalYears = 8;
-  const availableYears = maxTotalYears - currentTotalYears;
-
+  // Move useEffect to top, before any early returns
   useEffect(() => {
+    if (!motor) {
+      setLoading(false);
+      return;
+    }
+
     async function fetchWarrantyPricing() {
       try {
         const { data, error } = await supabase
@@ -68,7 +63,19 @@ export function WarrantySelector() {
     }
 
     fetchWarrantyPricing();
-  }, [motorHP]);
+  }, [motor, motorHP]);
+
+  // Now safe to do early returns after all hooks
+  if (!motor) return null;
+
+  // Calculate current warranty coverage
+  const standardYears = 3;
+  // Get actual warranty bonus years from active promotions
+  const promoYears = getTotalWarrantyBonusYears();
+  const warrantyPromotions = getWarrantyPromotions();
+  const currentTotalYears = standardYears + promoYears;
+  const maxTotalYears = 8;
+  const availableYears = maxTotalYears - currentTotalYears;
 
   if (loading || !warrantyPricing || promotionsLoading) {
     return (
