@@ -1,16 +1,13 @@
-import { Button } from '@/components/ui/button';
-import { LogOut, User, DollarSign } from 'lucide-react';
-import { useAuth } from '@/components/auth/AuthProvider';
-import harrisLogo from '@/assets/harris-logo.png';
-import mercuryLogo from '@/assets/mercury-logo.png';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
-import { cn } from '@/lib/utils';
+import { MercuryQuoteHeader } from './MercuryQuoteHeader';
+
 interface QuoteLayoutProps {
   children: React.ReactNode;
   showProgress?: boolean;
   title?: string;
 }
+
 const steps = [{
   id: 1,
   title: "Select Motor",
@@ -40,21 +37,17 @@ const steps = [{
   title: "Schedule",
   path: "/quote/schedule"
 }];
+
 export const QuoteLayout = ({
   children,
   showProgress = true,
   title
 }: QuoteLayoutProps) => {
   const {
-    user,
-    signOut
-  } = useAuth();
-  const {
     state,
     isStepAccessible
   } = useQuote();
   const location = useLocation();
-  const navigate = useNavigate();
 
   // Determine current step based on path
   const getCurrentStep = () => {
@@ -100,74 +93,15 @@ export const QuoteLayout = ({
     }
   };
   const visibleSteps = getVisibleSteps();
-  return <div className="min-h-screen bg-gradient-to-br from-background via-secondary/30 to-accent/50">
-      {/* Header */}
-      <header className="bg-background border-b border-border">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-6">
-              <Link to="/" className="flex items-center space-x-4">
-                <img src={harrisLogo} alt="Harris Boat Works" className="h-12 w-auto" />
-                <div className="h-8 w-px bg-border"></div>
-                <img src={mercuryLogo} alt="Mercury Marine" className="h-10 w-auto" />
-              </Link>
-              <div>
-                <h1 className="text-2xl font-bold text-foreground">
-                  {title || 'Mercury Outboard Quote Builder'}
-                </h1>
-                <p className="text-muted-foreground">Mercury Marine Premier Dealer</p>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-4">
-              {user ? <>
-                  <div className="flex items-center space-x-2">
-                    <User className="w-4 h-4 text-muted-foreground" />
-                    <span className="text-sm text-muted-foreground">{user.email}</span>
-                  </div>
-                  <Button variant="secondary" size="sm" asChild>
-                    <Link to="/admin/promotions">Promotions</Link>
-                  </Button>
-                  <Button variant="secondary" size="sm" asChild>
-                    <Link to="/admin/financing">
-                      <DollarSign className="w-4 h-4 mr-2" />
-                      Financing
-                    </Link>
-                  </Button>
-                  <Button variant="secondary" size="sm" asChild>
-                    <Link to="/admin/quotes">Quotes</Link>
-                  </Button>
-                  <Button variant="outline" size="sm" onClick={() => signOut()}>
-                    <LogOut className="w-4 h-4 mr-2" />
-                    Sign Out
-                  </Button>
-                </> : <Button variant="outline" size="sm" asChild>
-                  <Link to="/auth">
-                    <User className="w-4 h-4 mr-2" />
-                    Sign In
-                  </Link>
-                </Button>}
-            </div>
-          </div>
-        </div>
-      </header>
-
-
-      {/* Trust Bar */}
-      <div className="bg-muted/40 border-b border-border">
-        <div className="container mx-auto px-4 py-2 flex items-center justify-center gap-4 md:gap-6">
-          <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-8 w-auto" />
-          <span className="text-sm font-medium text-foreground/80">Award-Winning Service Team</span>
-          <span className="text-muted-foreground">|</span>
-          <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-8 w-auto" />
-          <span className="text-sm font-medium text-foreground/80">Certified Repower Center</span>
-        </div>
-      </div>
-
+  
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-background via-secondary/30 to-accent/50">
+      <MercuryQuoteHeader title={title} />
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         {children}
       </main>
-    </div>;
+    </div>
+  );
 };
