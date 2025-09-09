@@ -40,8 +40,6 @@ import PaymentCanceled from "./pages/PaymentCanceled";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import Settings from "./pages/Settings";
 import { NotificationToast } from "@/components/notifications/NotificationToast";
-import { MotorModalProvider } from "@/contexts/MotorModalContext";
-import MotorDetailsModal from "@/components/motors/MotorDetailsModal";
 
 function Canonical() {
   useEffect(() => {
@@ -60,112 +58,109 @@ function Canonical() {
 const App = () => (
   <AuthProvider>
     <QuoteProvider>
-      <MotorModalProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-              <>
-                <ScrollToTop />
-                <NotificationToast />
-                <Routes>
-                  <Route path="/auth" element={<Login />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route 
-                    path="/dashboard" 
-                    element={
-                      <SecureRoute>
-                        <Dashboard />
-                      </SecureRoute>
-                    } 
-                  />
-                  <Route 
-                    path="/settings" 
-                    element={
-                      <ProtectedRoute>
-                        <Settings />
-                      </ProtectedRoute>
-                    } 
-                  />
-                  <Route path="/" element={<Index />} />
-                  
-                  {/* Quote Builder Routes */}
-                  <Route path="/quote" element={<MotorSelectionPage />} />
-                  <Route path="/quote/motor-selection" element={<MotorSelectionPage />} />
-                  <Route path="/quote/purchase-path" element={<PurchasePathPage />} />
-                  <Route path="/quote/boat-info" element={<BoatInfoPage />} />
-                  <Route path="/quote/fuel-tank" element={<FuelTankPage />} />
-                  <Route path="/quote/trade-in" element={<TradeInPage />} />
-                  <Route path="/quote/installation" element={<InstallationPage />} />
-                  <Route path="/quote/summary" element={<QuoteSummaryPage />} />
-                  <Route path="/quote/schedule" element={<SchedulePage />} />
-                  
-                  {/* User Account Routes */}
-                  <Route path="/my-quotes" element={<MyQuotes />} />
-                  
-                  {/* Admin Routes */}
-                  <Route
-                    path="/admin/promotions"
-                    element={
-                      <SecureRoute requireAdmin={true}>
-                        <AdminPromotions />
-                      </SecureRoute>
-                    }
-                  />
-                  <Route
-                    path="/admin/quotes"
-                    element={
-                      <SecureRoute requireAdmin={true}>
-                        <AdminQuotes />
-                      </SecureRoute>
-                    }
-                  />
-                  <Route
-                    path="/admin/quotes/:id"
-                    element={
-                      <SecureRoute requireAdmin={true}>
-                        <AdminQuoteDetail />
-                      </SecureRoute>
-                    }
-                  />
-                  <Route
-                    path="/admin/financing"
-                    element={
-                      <SecureRoute requireAdmin={true}>
-                        <FinancingAdmin />
-                      </SecureRoute>
-                    }
-                  />
-                  
-                  {/* Payment Routes */}
-                  <Route path="/payment-success" element={<PaymentSuccess />} />
-                  <Route path="/payment-canceled" element={<PaymentCanceled />} />
-                  
-                  {/* Other Routes */}
-                  <Route path="/finance-calculator" element={<FinanceCalculator />} />
-                  <Route path="/dev" element={<Dev />} />
-                  <Route path="/staging/pricing-spacing" element={<StagingPricingTweaks />} />
-                  <Route path="/quotes/new" element={<NewQuote />} />
-                  <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
-                  <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
-                  <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-                <Canonical />
-                <ChatWidget />
-                <MotorDetailsModal />
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+            <>
+              <ScrollToTop />
+              <NotificationToast />
+              <Routes>
+                <Route path="/auth" element={<Login />} />
+                <Route path="/login" element={<Login />} />
+                <Route 
+                  path="/dashboard" 
+                  element={
+                    <SecureRoute>
+                      <Dashboard />
+                    </SecureRoute>
+                  } 
+                />
+                <Route 
+                  path="/settings" 
+                  element={
+                    <ProtectedRoute>
+                      <Settings />
+                    </ProtectedRoute>
+                  } 
+                />
+                <Route path="/" element={<Index />} />
+                
+                {/* Quote Builder Routes */}
+                <Route path="/quote" element={<MotorSelectionPage />} />
+                <Route path="/quote/motor-selection" element={<MotorSelectionPage />} />
+                <Route path="/quote/purchase-path" element={<PurchasePathPage />} />
+                <Route path="/quote/boat-info" element={<BoatInfoPage />} />
+                <Route path="/quote/fuel-tank" element={<FuelTankPage />} />
+                <Route path="/quote/trade-in" element={<TradeInPage />} />
+                <Route path="/quote/installation" element={<InstallationPage />} />
+                <Route path="/quote/summary" element={<QuoteSummaryPage />} />
+                <Route path="/quote/schedule" element={<SchedulePage />} />
+                
+                {/* User Account Routes */}
+                <Route path="/my-quotes" element={<MyQuotes />} />
+                
+                {/* Admin Routes */}
+                <Route
+                  path="/admin/promotions"
+                  element={
+                    <SecureRoute requireAdmin={true}>
+                      <AdminPromotions />
+                    </SecureRoute>
+                  }
+                />
+                <Route
+                  path="/admin/quotes"
+                  element={
+                    <SecureRoute requireAdmin={true}>
+                      <AdminQuotes />
+                    </SecureRoute>
+                  }
+                />
+                <Route
+                  path="/admin/quotes/:id"
+                  element={
+                    <SecureRoute requireAdmin={true}>
+                      <AdminQuoteDetail />
+                    </SecureRoute>
+                  }
+                />
+                <Route
+                  path="/admin/financing"
+                  element={
+                    <SecureRoute requireAdmin={true}>
+                      <FinancingAdmin />
+                    </SecureRoute>
+                  }
+                />
+                
+                {/* Payment Routes */}
+                <Route path="/payment-success" element={<PaymentSuccess />} />
+                <Route path="/payment-canceled" element={<PaymentCanceled />} />
+                
+                {/* Other Routes */}
+                <Route path="/finance-calculator" element={<FinanceCalculator />} />
+                <Route path="/dev" element={<Dev />} />
+                <Route path="/staging/pricing-spacing" element={<StagingPricingTweaks />} />
+                <Route path="/quotes/new" element={<NewQuote />} />
+                <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
+                <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
+                <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              <Canonical />
+              <ChatWidget />
 
-                <footer className="mt-12 border-t border-border bg-muted/30">
-                  <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-center gap-8">
-                    <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-16 md:h-20 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-16 md:h-20 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                  </div>
-                </footer>
-              </>
-          </BrowserRouter>
-        </TooltipProvider>
-      </MotorModalProvider>
+              <footer className="mt-12 border-t border-border bg-muted/30">
+                <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-center gap-8">
+                  <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-16 md:h-20 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                  <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-16 md:h-20 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                </div>
+              </footer>
+            </>
+        </BrowserRouter>
+      </TooltipProvider>
     </QuoteProvider>
   </AuthProvider>
 );

@@ -42,8 +42,8 @@ export default function StickyQuoteBar({
     <div
       role="region"
       aria-label="Quote summary"
-      className="sticky bottom-0 z-50 border-t border-slate-200/70 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/75 dark:border-slate-700 dark:bg-slate-900/85 sticky-bottom-safe"
-      style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom))" }}
+      className="sticky bottom-0 z-50 border-t border-slate-200/70 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/75 dark:border-slate-700 dark:bg-slate-900/85"
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-2 p-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">

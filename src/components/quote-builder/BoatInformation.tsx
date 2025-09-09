@@ -412,9 +412,9 @@ export const BoatInformation = ({
       tradeIn: tradeInInfo
     });
   };
-  return <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 md:space-y-8 overflow-x-hidden">
+  return <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 md:space-y-8 py-4 md:py-6 lg:py-8 overflow-x-hidden">
       {/* Header */}
-      <div className="text-center space-y-2 animate-fade-in">
+      <div className="text-center space-y-3 animate-fade-in">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">Boat Details Wizard</h2>
         <p className="text-base md:text-lg text-muted-foreground">
           Let's match your {selectedMotor?.model || 'Mercury motor'} to your boat, step by step.

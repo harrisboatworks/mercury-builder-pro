@@ -10,13 +10,9 @@ import MotorCardPremium from '@/components/motors/MotorCardPremium';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search, Filter } from 'lucide-react';
-import BrandHeaderLite from '@/components/layout/BrandHeaderLite';
-import FilterDrawer from '@/components/filters/FilterDrawer';
+import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
-import '@/styles/brand-lite.css';
-import '@/styles/sticky-safe.css';
-import '@/styles/mobile-filters.css';
 
 // Types for Supabase data
 interface DbMotor {
@@ -95,7 +91,6 @@ export default function MotorSelectionPage() {
   const [hpRange, setHpRange] = useState('all');
   const [inStockOnly, setInStockOnly] = useState(false);
   const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
-  const [filtersOpen, setFiltersOpen] = useState(false);
   
   // Get monthly payment if motor is selected
   const monthlyPayment = useMotorMonthlyPayment({ 
@@ -279,13 +274,6 @@ export default function MotorSelectionPage() {
     navigate('/quote/purchase-path');
   };
 
-  const handleClearFilters = () => {
-    setSearchTerm('');
-    setHpRange('all');
-    setInStockOnly(false);
-    setFiltersOpen(false);
-  };
-
   const getModelString = () => {
     if (!selectedMotor) return undefined;
     return `${selectedMotor.year} Mercury ${selectedMotor.hp}HP ${selectedMotor.model}`;
@@ -316,29 +304,27 @@ export default function MotorSelectionPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-background">
-        <BrandHeaderLite onHamburger={() => setFiltersOpen(true)} />
+      <QuoteLayout title="Select Your Mercury Motor">
         <div className="flex items-center justify-center py-20">
           <div className="text-center">
             <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
             <p className="text-muted-foreground">Loading Mercury motors...</p>
           </div>
         </div>
-      </div>
+      </QuoteLayout>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <BrandHeaderLite onHamburger={() => setFiltersOpen(true)} />
-      
-      <div className="page-content mx-auto max-w-6xl space-y-6 px-4 py-6">
-        {/* Desktop Filters - hidden on mobile */}
-        <div className="legacy-top-strip filter-chips-legacy rounded-2xl border border-border bg-card p-6 shadow-sm">
+    <QuoteLayout title="Select Your Mercury Motor">
+      <div className="space-y-6">
+        {/* Filters */}
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
           <p className="text-muted-foreground">
             Clean selection • clear pricing • promotions applied automatically.
           </p>
           
+          {/* Filters */}
           <div className="mt-6 space-y-4">
             {/* Search */}
             <div className="relative max-w-md">
@@ -352,7 +338,7 @@ export default function MotorSelectionPage() {
             </div>
             
             {/* HP Range + Stock Filter */}
-            <div className="chips-legacy flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               {HP_RANGES.map(range => (
                 <button
                   key={range.id}
@@ -435,7 +421,11 @@ export default function MotorSelectionPage() {
               variant="outline"
               size="sm"
               className="mt-3"
-              onClick={handleClearFilters}
+              onClick={() => {
+                setSearchTerm('');
+                setHpRange('all');
+                setInStockOnly(false);
+              }}
             >
               Clear filters
             </Button>
@@ -443,21 +433,6 @@ export default function MotorSelectionPage() {
         )}
 
       </div>
-
-      {/* Mobile Filter Drawer */}
-      <FilterDrawer
-        open={filtersOpen}
-        onClose={() => setFiltersOpen(false)}
-        hpRanges={HP_RANGES}
-        selectedRange={hpRange}
-        onRangeChange={setHpRange}
-        inStockOnly={inStockOnly}
-        onToggleStock={() => setInStockOnly(!inStockOnly)}
-        search={searchTerm}
-        onSearchChange={setSearchTerm}
-        onApply={() => setFiltersOpen(false)}
-        onClear={handleClearFilters}
-      />
 
       {/* Sticky Quote Bar - show when motor is selected */}
       {selectedMotor && (
@@ -476,6 +451,6 @@ export default function MotorSelectionPage() {
           }}
         />
       )}
-    </div>
+    </QuoteLayout>
   );
 }
