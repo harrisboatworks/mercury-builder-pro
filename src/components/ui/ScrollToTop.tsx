@@ -50,8 +50,14 @@ export function ScrollToTop() {
         const padding = isMobile ? 80 : 120; // Reduced padding for tighter positioning
         scrollTarget = Math.max(0, headingTop - headerHeight - padding);
         
+        // Get better heading text by checking for specific heading tags first
+        const headingElement = stepHeading.tagName?.match(/^H[1-6]$/) 
+          ? stepHeading 
+          : stepHeading.querySelector('h1, h2, h3');
+        const headingText = headingElement?.textContent?.trim() || stepHeading.textContent?.trim();
+        
         console.log('ScrollToTop Debug:', {
-          headingText: stepHeading.textContent?.substring(0, 50),
+          headingText: headingText?.substring(0, 50),
           headerHeight,
           headingTop,
           padding,
