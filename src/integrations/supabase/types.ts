@@ -265,6 +265,7 @@ export type Database = {
           model: string
           motor_type: string
           sale_price: number | null
+          spec_sheet_file_id: string | null
           specifications: Json | null
           stock_number: string | null
           updated_at: string | null
@@ -286,6 +287,7 @@ export type Database = {
           model: string
           motor_type: string
           sale_price?: number | null
+          spec_sheet_file_id?: string | null
           specifications?: Json | null
           stock_number?: string | null
           updated_at?: string | null
@@ -307,6 +309,7 @@ export type Database = {
           model?: string
           motor_type?: string
           sale_price?: number | null
+          spec_sheet_file_id?: string | null
           specifications?: Json | null
           stock_number?: string | null
           updated_at?: string | null

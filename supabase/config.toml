@@ -29,3 +29,6 @@ verify_jwt = false
 
 [functions.update-motor-images]
 verify_jwt = false
+
+[functions.generate-motor-spec-sheet]
+verify_jwt = false

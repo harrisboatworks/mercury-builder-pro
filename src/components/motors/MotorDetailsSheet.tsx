@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink } from "lucide-react";
+import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2 } from "lucide-react";
+import { supabase } from "../../integrations/supabase/client";
 import { Button } from "../ui/button";
 import { money } from "../../lib/money";
 import { 
@@ -36,6 +37,8 @@ export default function MotorDetailsSheet({
 }) {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+  const [specSheetLoading, setSpecSheetLoading] = useState(false);
+  const [generatedSpecUrl, setGeneratedSpecUrl] = useState<string | null>(null);
   // Handle escape key
   useEffect(() => {
     if (!open) return;
@@ -71,6 +74,32 @@ export default function MotorDetailsSheet({
       onSelect();
     }
     onClose();
+  };
+
+  const handleGenerateSpecSheet = async () => {
+    if (!motor?.id) return;
+    
+    setSpecSheetLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('generate-motor-spec-sheet', {
+        body: { motorId: motor.id }
+      });
+
+      if (error) {
+        console.error('Error generating spec sheet:', error);
+        return;
+      }
+
+      if (data?.specSheetUrl) {
+        setGeneratedSpecUrl(data.specSheetUrl);
+        // Open the spec sheet in a new tab
+        window.open(data.specSheetUrl, '_blank');
+      }
+    } catch (error) {
+      console.error('Error generating spec sheet:', error);
+    } finally {
+      setSpecSheetLoading(false);
+    }
   };
 
   const cleanedSpecUrl = cleanSpecSheetUrl(specSheetUrl);
@@ -370,24 +399,39 @@ export default function MotorDetailsSheet({
             </div>
           )}
 
-          {/* Spec Sheet Link */}
-          {cleanedSpecUrl && (
-            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
-              <h3 className="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-                <FileText className="h-4 w-4" />
-                Technical Specifications
-              </h3>
-              <a
-                href={cleanedSpecUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm"
+          {/* Spec Sheet Generator */}
+          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+            <h3 className="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+              <FileText className="h-4 w-4" />
+              Technical Specifications
+            </h3>
+            <div className="flex items-center gap-3">
+              <Button
+                onClick={handleGenerateSpecSheet}
+                disabled={specSheetLoading || !motor?.id}
+                className="inline-flex items-center gap-2"
+                variant="outline"
               >
-                <ExternalLink className="h-4 w-4" />
-                Download Full Spec Sheet (PDF)
-              </a>
+                {specSheetLoading ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <Download className="h-4 w-4" />
+                )}
+                {specSheetLoading ? 'Generating...' : 'Download Spec Sheet'}
+              </Button>
+              {generatedSpecUrl && (
+                <a
+                  href={generatedSpecUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  View Generated Sheet
+                </a>
+              )}
             </div>
-          )}
+          </div>
         </div>
 
         {/* Sticky Action Bar */}
