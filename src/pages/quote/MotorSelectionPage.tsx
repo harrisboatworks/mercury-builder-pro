@@ -320,12 +320,12 @@ export default function MotorSelectionPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-25">
       <MobileHeader />
       
-      <main className="container mx-auto px-4 py-4 space-y-4">
+      <main className="space-y-4">
         {/* Search & Filters */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
+        <div className="bg-white shadow-sm border-b border-gray-100 p-4">
           {/* Search Input */}
           <div className="relative mb-4">
             <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
@@ -333,7 +333,8 @@ export default function MotorSelectionPage() {
               placeholder="Search motors by HP, model, or keyword…"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-12 h-12 rounded-xl border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base"
+              className="pl-12 h-12 rounded-lg border-gray-200 shadow-sm focus:border-primary focus:ring-primary text-base"
+              aria-label="Search motors by horsepower, model, or keyword"
             />
           </div>
           
@@ -345,11 +346,14 @@ export default function MotorSelectionPage() {
                   <button
                     key={range.id}
                     onClick={() => setHpRange(range.id)}
-                    className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                    className={`whitespace-nowrap px-3 py-2 rounded-2xl text-sm font-medium transition-all duration-200 min-h-[44px] ${
                       hpRange === range.id
-                        ? 'bg-blue-600 text-white shadow-sm'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        ? 'bg-primary text-white border border-primary'
+                        : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
                     }`}
+                    role="button"
+                    aria-pressed={hpRange === range.id}
+                    aria-label={`Filter by ${range.label} horsepower`}
                   >
                     {range.label}
                   </button>
@@ -357,82 +361,84 @@ export default function MotorSelectionPage() {
               </div>
             </div>
             
-            {/* Stock Filter */}
-            <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+            {/* Stock Filter - Inline */}
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-gray-700">In Stock Only</span>
               <ToggleSwitch
                 checked={inStockOnly}
                 onChange={setInStockOnly}
-                label="In Stock Only"
               />
             </div>
           </div>
         </div>
-
-        {/* Motors Grid */}
-        {filteredMotors.length > 0 ? (
-          <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredMotors.map(motor => {
-              // Find original DB motor to get specifications
-              const dbMotor = motors.find(m => m.id === motor.id);
-              const specs = dbMotor?.specifications || {};
-              
-              // Extract specification data with fallbacks
-              const shaft = specs.shaftLength || 
-                (motor.model.includes('L') ? 'Long (20")' : 
-                 motor.model.includes('XL') ? 'Extra Long (25")' : 
-                 motor.model.includes('XXL') ? 'XX Long (30")' : undefined);
-              
-              const weightLbs = specs.weightLbs || specs.weight;
-              const altOutput = specs.alternatorOutput || specs.alternator;
-              const steering = specs.steering || 
-                (motor.model.includes('MLH') ? 'manual' :
-                 motor.model.includes('ELPT') ? 'electric power tilt' :
-                 motor.model.includes('DTS') ? 'digital throttle & shift' : undefined);
-              
-              return (
-                <MotorCardPremium
-                  key={motor.id}
-                  img={motor.image}
-                  title={motor.model}
-                  hp={motor.hp}
-                  msrp={motor.basePrice}
-                  price={motor.price}
-                  monthly={monthlyPayment?.amount || null}
-                  promoText={motor.appliedPromotions?.join(' • ') || null}
-                  selected={selectedMotor?.id === motor.id}
-                  onSelect={() => handleMotorSelect(motor)}
-                  // New specification props
-                  shaft={shaft}
-                  weightLbs={weightLbs}
-                  altOutput={altOutput}
-                  steering={steering}
-                  features={dbMotor?.features || []}
-                  description={dbMotor?.description}
-                  specSheetUrl={dbMotor?.detail_url}
-                  motor={motor as any}
-                />
-              );
-            })}
-          </div>
-        ) : (
-          <div className="bg-white rounded-xl border border-gray-200 p-6 text-center">
-            <p className="text-gray-600 mb-3">
-              No motors match your current filters.
-            </p>
-            <Button
-              variant="outline"
-              size="sm"
-              className="rounded-lg border-gray-300 text-gray-700 hover:bg-gray-50"
-              onClick={() => {
-                setSearchTerm('');
-                setHpRange('all');
-                setInStockOnly(false);
-              }}
-            >
-              Clear filters
-            </Button>
-          </div>
-        )}
+        
+        <div className="container mx-auto px-4">
+          {/* Motors Grid */}
+          {filteredMotors.length > 0 ? (
+            <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredMotors.map(motor => {
+                // Find original DB motor to get specifications
+                const dbMotor = motors.find(m => m.id === motor.id);
+                const specs = dbMotor?.specifications || {};
+                
+                // Extract specification data with fallbacks
+                const shaft = specs.shaftLength || 
+                  (motor.model.includes('L') ? 'Long (20")' : 
+                   motor.model.includes('XL') ? 'Extra Long (25")' : 
+                   motor.model.includes('XXL') ? 'XX Long (30")' : undefined);
+                
+                const weightLbs = specs.weightLbs || specs.weight;
+                const altOutput = specs.alternatorOutput || specs.alternator;
+                const steering = specs.steering || 
+                  (motor.model.includes('MLH') ? 'manual' :
+                   motor.model.includes('ELPT') ? 'electric power tilt' :
+                   motor.model.includes('DTS') ? 'digital throttle & shift' : undefined);
+                
+                return (
+                  <MotorCardPremium
+                    key={motor.id}
+                    img={motor.image}
+                    title={motor.model}
+                    hp={motor.hp}
+                    msrp={motor.basePrice}
+                    price={motor.price}
+                    monthly={monthlyPayment?.amount || null}
+                    promoText={motor.appliedPromotions?.join(' • ') || null}
+                    selected={selectedMotor?.id === motor.id}
+                    onSelect={() => handleMotorSelect(motor)}
+                    // New specification props
+                    shaft={shaft}
+                    weightLbs={weightLbs}
+                    altOutput={altOutput}
+                    steering={steering}
+                    features={dbMotor?.features || []}
+                    description={dbMotor?.description}
+                    specSheetUrl={dbMotor?.detail_url}
+                    motor={motor as any}
+                  />
+                );
+              })}
+            </div>
+          ) : (
+            <div className="bg-white rounded-xl border border-gray-200 p-6 text-center">
+              <p className="text-gray-600 mb-3">
+                No motors match your current filters.
+              </p>
+              <Button
+                variant="outline"
+                size="sm"
+                className="rounded-lg border-gray-300 text-gray-700 hover:bg-gray-50"
+                onClick={() => {
+                  setSearchTerm('');
+                  setHpRange('all');
+                  setInStockOnly(false);
+                }}
+              >
+                Clear filters
+              </Button>
+            </div>
+          )}
+        </div>
       </main>
 
       {/* Sticky Quote Bar - show when motor is selected */}

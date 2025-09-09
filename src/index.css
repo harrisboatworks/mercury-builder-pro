@@ -124,6 +124,8 @@
 
     --accent: 211 48% 24%;  /* Harris Brand Blue for accents */
     --accent-foreground: 0 0% 100%;
+    
+    --gray-25: 210 17% 98%;  /* Very light gray background */
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;

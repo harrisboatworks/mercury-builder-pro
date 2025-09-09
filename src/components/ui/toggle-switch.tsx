@@ -17,14 +17,23 @@ export default function ToggleSwitch({ checked, onChange, label, className }: To
       )}
       <div 
         className={cn(
-          "relative inline-flex h-6 w-11 shrink-0 rounded-full transition-colors duration-200 ease-in-out focus:outline-none",
-          checked ? "bg-blue-600" : "bg-gray-300"
+          "relative inline-flex h-6 w-11 shrink-0 rounded-full transition-colors duration-200 ease-in-out focus:outline-none min-h-[44px] flex items-center",
+          checked ? "bg-primary" : "bg-gray-300"
         )}
         onClick={() => onChange(!checked)}
+        role="switch"
+        aria-checked={checked}
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onChange(!checked);
+          }
+        }}
       >
         <span
           className={cn(
-            "pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-sm ring-0 transition duration-200 ease-in-out mt-0.5 ml-0.5",
+            "pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-sm ring-0 transition duration-200 ease-in-out ml-0.5",
             checked ? "translate-x-5" : "translate-x-0"
           )}
         />

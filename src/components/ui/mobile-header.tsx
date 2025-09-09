@@ -27,7 +27,7 @@ export default function MobileHeader({ title }: MobileHeaderProps) {
     <>
       {/* Main Header */}
       <header className={`sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300 ${
-        scrolled ? 'py-2 shadow-md' : 'py-3'
+        scrolled ? 'py-3 shadow-md' : 'py-4'
       }`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
@@ -36,33 +36,30 @@ export default function MobileHeader({ title }: MobileHeaderProps) {
               <img 
                 src={harrisLogo} 
                 alt="Harris Boat Works" 
-                className={`w-auto transition-all duration-300 ${
-                  scrolled ? 'h-8' : 'h-9'
+                className={`w-auto transition-transform duration-300 ${
+                  scrolled ? 'h-7 scale-90' : 'h-9'
                 }`}
               />
             </Link>
             
-            {/* Center: Minimal Title */}
-            <div className="flex-1 text-center px-4">
-              <h1 className="text-sm font-medium text-gray-600 truncate">
-                Mercury Outboard Selection
-              </h1>
-            </div>
+            {/* Center: Spacer */}
+            <div className="flex-1"></div>
             
             {/* Right: Mercury Logo & Menu */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <img 
                 src={mercuryLogo} 
                 alt="Mercury Marine" 
-                className={`w-auto transition-all duration-300 ${
-                  scrolled ? 'h-8' : 'h-9'
+                className={`w-auto transition-transform duration-300 ${
+                  scrolled ? 'h-7 scale-90' : 'h-9'
                 }`}
               />
               <Button
                 variant="ghost"
                 size="sm"
-                className="p-2"
+                className="p-2 hover:bg-gray-100"
                 onClick={() => setMenuOpen(!menuOpen)}
+                aria-label="Open menu"
               >
                 {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
               </Button>
