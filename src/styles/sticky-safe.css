@@ -1,0 +1,21 @@
+/* Safe area handling for sticky elements */
+:root {
+  --safe-bottom: env(safe-area-inset-bottom);
+}
+
+.sticky-bottom-safe {
+  padding-bottom: max(12px, var(--safe-bottom));
+}
+
+/* Ensure sticky quote bar respects safe areas */
+.sticky-quote-mobile {
+  padding-bottom: max(1rem, var(--safe-bottom));
+  margin-bottom: var(--safe-bottom);
+}
+
+/* Prevent overlapping with header */
+@media (max-width: 1024px) {
+  .legacy-top-strip {
+    display: none !important;
+  }
+}

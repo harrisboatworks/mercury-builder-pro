@@ -15,6 +15,7 @@ import FilterDrawer from '@/components/filters/FilterDrawer';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import '@/styles/brand-lite.css';
+import '@/styles/sticky-safe.css';
 
 // Types for Supabase data
 interface DbMotor {
@@ -459,20 +460,22 @@ export default function MotorSelectionPage() {
 
       {/* Sticky Quote Bar - show when motor is selected */}
       {selectedMotor && (
-        <StickyQuoteBar
-          model={getModelString()}
-          total={getTotalWithTax()}
-          monthly={monthlyPayment?.amount || null}
-          coverageYears={getCoverageYears()}
-          stepLabel="Step 1 of 7"
-          primaryLabel="Continue"
-          secondaryLabel="Change Motor"
-          onPrimary={handleContinue}
-          onSecondary={() => {
-            setSelectedMotor(null);
-            dispatch({ type: 'SET_MOTOR', payload: null });
-          }}
-        />
+        <div className="sticky-bottom-safe">
+          <StickyQuoteBar
+            model={getModelString()}
+            total={getTotalWithTax()}
+            monthly={monthlyPayment?.amount || null}
+            coverageYears={getCoverageYears()}
+            stepLabel="Step 1 of 7"
+            primaryLabel="Continue"
+            secondaryLabel="Change Motor"
+            onPrimary={handleContinue}
+            onSecondary={() => {
+              setSelectedMotor(null);
+              dispatch({ type: 'SET_MOTOR', payload: null });
+            }}
+          />
+        </div>
       )}
     </div>
   );

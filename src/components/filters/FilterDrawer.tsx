@@ -37,12 +37,12 @@ export default function FilterDrawer({
   if (!open) return null;
   
   return (
-    <div className="fixed inset-0 z-50">
+    <div className="filter-drawer fixed inset-0 z-50">
       <div 
         className="absolute inset-0 bg-black/30 backdrop-blur-sm" 
         onClick={onClose} 
       />
-      <aside className="absolute bottom-0 left-0 right-0 mx-auto w-full max-w-xl rounded-t-2xl border border-border bg-card p-4 shadow-2xl">
+      <aside className="sticky-bottom-safe absolute bottom-0 left-0 right-0 mx-auto w-full max-w-xl rounded-t-2xl border border-border bg-card p-4 shadow-2xl">
         <div className="mx-auto h-1.5 w-10 rounded-full bg-border" />
         
         <div className="mt-3 space-y-4">

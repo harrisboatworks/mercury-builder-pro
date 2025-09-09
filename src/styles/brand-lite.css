@@ -15,3 +15,10 @@
 .filter-drawer {
   z-index: 9999;
 }
+
+/* Trust badges mobile optimization */
+@media (max-width: 640px) {
+  .brand-header-lite .trust-badges-row {
+    padding: 0.25rem 0.75rem;
+  }
+}
