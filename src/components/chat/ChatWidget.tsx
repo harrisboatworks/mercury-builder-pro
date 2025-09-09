@@ -117,7 +117,7 @@ export const ChatWidget: React.FC = () => {
 
   if (!isOpen) {
     return (
-      <div className={`fixed ${bottomPosition} right-6 z-60`}>
+      <div className={`fixed ${bottomPosition} right-6 z-[1000]`}>
         <Button
           onClick={handleOpen}
           className="bg-red-600 hover:bg-red-700 text-white shadow-lg rounded-full w-14 h-14 p-0 flex items-center justify-center transition-all duration-200 hover:scale-105"
@@ -130,7 +130,7 @@ export const ChatWidget: React.FC = () => {
   }
 
   return (
-    <div className={`fixed ${bottomPosition} right-6 z-60`}>
+    <div className={`fixed ${bottomPosition} right-6 z-[1000]`}>
       <Card className={`w-80 md:w-96 transition-all duration-200 ${isMinimized ? 'h-14' : 'h-96'} shadow-xl border-2`}>
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b bg-red-600 text-white rounded-t-lg">
