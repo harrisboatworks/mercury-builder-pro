@@ -17,12 +17,13 @@ export default function ToggleSwitch({ checked, onChange, label, className }: To
       )}
       <div 
         className={cn(
-          "relative inline-flex h-6 w-11 shrink-0 rounded-full transition-colors duration-200 ease-in-out focus:outline-none min-h-[44px] flex items-center",
+          "relative inline-flex h-6 w-11 shrink-0 rounded-full transition-colors duration-200 ease-in-out focus:outline-none min-h-[44px] flex items-center cursor-pointer",
           checked ? "bg-primary" : "bg-gray-300"
         )}
         onClick={() => onChange(!checked)}
         role="switch"
         aria-checked={checked}
+        aria-label={label || "Toggle switch"}
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
