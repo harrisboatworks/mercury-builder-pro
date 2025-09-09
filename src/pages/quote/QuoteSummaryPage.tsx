@@ -4,6 +4,7 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { QuoteDisplay } from '@/components/quote-builder/QuoteDisplay';
 import { WarrantySelector } from '@/components/quote-builder/WarrantySelector';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
+import { StripePaymentButton } from '@/components/quote-builder/StripePaymentButton';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
@@ -74,6 +75,22 @@ export default function QuoteSummaryPage() {
         
         {/* Bonus offers section under the warranty selector */}
         <BonusOffers motor={quoteData.motor} />
+        
+        {/* Stripe Payment Section */}
+        <div className="bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 rounded-lg p-6">
+          <h3 className="text-lg font-semibold mb-3 text-purple-800">Complete Your Purchase</h3>
+          <p className="text-sm text-purple-700 mb-4">
+            Pay securely with your credit or debit card through Stripe
+          </p>
+          <StripePaymentButton
+            quoteData={quoteData}
+            motorPrice={quoteData.motor?.basePrice || 0} 
+            accessoryCosts={0}
+            totalCashPrice={quoteData.pricing?.totalCashPrice || 0}
+            hasTradeIn={!!state.tradeIn?.motor}
+            tradeInValue={state.tradeIn?.finalValue || 0}
+          />
+        </div>
       </div>
     </QuoteLayout>
   );

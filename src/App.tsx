@@ -35,6 +35,8 @@ import StagingImageSizing from "./pages/StagingImageSizing";
 import StagingImageSizingV2 from "./pages/StagingImageSizingV2";
 import StagingImageSizingFinal from "./pages/StagingImageSizingFinal";
 import FinancingAdmin from "./components/admin/FinancingAdmin";
+import PaymentSuccess from "./pages/PaymentSuccess";
+import PaymentCanceled from "./pages/PaymentCanceled";
 
 const queryClient = new QueryClient();
 function Canonical() {
@@ -112,6 +114,10 @@ const App = () => (
                     </SecureRoute>
                   }
                 />
+                
+                {/* Payment Routes */}
+                <Route path="/payment-success" element={<PaymentSuccess />} />
+                <Route path="/payment-canceled" element={<PaymentCanceled />} />
                 
                 {/* Other Routes */}
                 <Route path="/finance-calculator" element={<FinanceCalculator />} />

@@ -55,6 +55,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   } | null>(null);
   const [showFinancingInfoModal, setShowFinancingInfoModal] = useState(false);
   const [showReservationModal, setShowReservationModal] = useState(false);
+  const [stripeLoading, setStripeLoading] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [authModalMode, setAuthModalMode] = useState<'signin' | 'signup'>('signup');
   // Dynamic financing options
@@ -840,7 +841,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
           <h3 className="text-lg font-semibold text-center">Choose Your Payment Method</h3>
           
           {motorPrice >= FINANCING_MINIMUM ? (
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-4 md:grid-cols-3">
               {/* Cash Payment */}
               <Card 
                 className={`p-4 cursor-pointer transition-all border-2 ${
@@ -881,11 +882,31 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                   )}
                 </div>
               </Card>
+
+              {/* Stripe Payment */}  
+              <Card 
+                className="p-4 cursor-pointer transition-all border-2 border-border hover:border-purple-300"
+                onClick={handleStripePayment}
+              >
+                <div className="text-center space-y-2">
+                  <CreditCard className="w-8 h-8 mx-auto text-purple-600" />
+                  <h4 className="font-semibold">Pay with Card</h4>
+                  <p className="text-2xl font-bold text-purple-600">{formatCurrency(totalCashPrice)}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {stripeLoading ? 'Opening checkout...' : 'Secure payment via Stripe'}
+                  </p>
+                  {stripeLoading && (
+                    <div className="flex justify-center">
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-purple-600"></div>
+                    </div>
+                  )}
+                </div>
+              </Card>
             </div>
           ) : (
             <div className="space-y-4">
-              {/* Cash Payment Only */}
-              <div className="max-w-md mx-auto">
+              {/* Cash Payment Only with Stripe Option */}
+              <div className="grid gap-4 md:grid-cols-2">
                 <Card 
                   className={`p-4 cursor-pointer transition-all border-2 ${
                     paymentPreference === 'cash' ? 'border-green-500 bg-green-50' : 'border-border hover:border-green-300'
@@ -897,10 +918,30 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                     <h4 className="font-semibold">Pay Cash</h4>
                     <p className="text-2xl font-bold text-green-600">{formatCurrency(totalCashPrice)}</p>
                     <p className="text-sm text-muted-foreground">
-                      Best price for this motor
-                    </p>
+                      Best price for this motor</p>
                   </div>
                 </Card>
+
+                {/* Stripe Payment for smaller amounts */}
+                <Card 
+                  className="p-4 cursor-pointer transition-all border-2 border-border hover:border-purple-300"
+                  onClick={handleStripePayment}
+                >
+                  <div className="text-center space-y-2">
+                    <CreditCard className="w-8 h-8 mx-auto text-purple-600" />
+                    <h4 className="font-semibold">Pay with Card</h4>
+                    <p className="text-2xl font-bold text-purple-600">{formatCurrency(totalCashPrice)}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {stripeLoading ? 'Opening checkout...' : 'Secure payment via Stripe'}
+                    </p>
+                    {stripeLoading && (
+                      <div className="flex justify-center">
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-purple-600"></div>
+                      </div>
+                    )}
+                  </div>
+                </Card>
+              </div>
               </div>
               
               {/* Financing Not Available Notice */}
