@@ -9,6 +9,7 @@ import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
 import WarrantyAddOnUI, { type WarrantyTarget } from '@/components/quote-builder/WarrantyAddOnUI';
 import BonusOffersBadge from '@/components/quote-builder/BonusOffersBadge';
+import MotorHeader from '@/components/quote-builder/MotorHeader';
 import CoverageComparisonTooltip from '@/components/quote-builder/CoverageComparisonTooltip';
 
 import { useQuote } from '@/contexts/QuoteContext';
@@ -71,6 +72,32 @@ export default function QuoteSummaryPage() {
   // Calculate pricing breakdown
   const motorPrice = quoteData.motor?.salePrice || quoteData.motor?.basePrice || quoteData.motor?.price || 0;
   const hp = quoteData.motor?.hp || 0;
+
+  // Motor details for header - use existing state only
+  const motor = state?.motor ?? {} as any;
+  const motorName = motor?.model ?? motor?.name ?? motor?.displayName ?? "Mercury Outboard";
+  const modelYear = motor?.year ?? motor?.modelYear ?? undefined;
+  const motorHp = motor?.hp ?? motor?.horsepower ?? hp;
+  const sku = motor?.sku ?? motor?.partNumber ?? null;
+  const imageUrl = motor?.imageUrl ?? motor?.thumbnail ?? null;
+
+  // Build spec pills from known fields (show only those that exist)
+  const specs = [
+    motor?.shaftLength ? { label: "Shaft", value: String(motor.shaftLength) } : null,
+    motor?.starting ? { label: "Start", value: String(motor.starting) } : null,
+    motor?.controls ? { label: "Controls", value: String(motor.controls) } : null,
+    motor?.weight ? { label: "Weight", value: `${motor.weight} lb` } : null,
+    motor?.alternatorOutput ? { label: "Alt", value: `${motor.alternatorOutput} A` } : null,
+  ].filter(Boolean) as Array<{label:string; value:string}>;
+
+  // Short "why this motor" bullets – keep generic unless you already store use-case text
+  const why = [
+    "Quiet, low-vibration four-stroke performance",
+    "Excellent fuel economy & range", 
+    "Factory-backed service at Harris Boat Works",
+  ];
+
+  const specSheetUrl = motor?.specSheetUrl ?? null;
   
   // Mock data - replace with real quote data
   const data = {
@@ -239,6 +266,18 @@ export default function QuoteSummaryPage() {
         <div className="grid lg:grid-cols-[1fr_360px] gap-8">
           {/* Main Content - Left Column */}
           <div className="space-y-6">
+            {/* Motor Header */}
+            <MotorHeader
+              name={motorName}
+              modelYear={modelYear}
+              hp={motorHp}
+              sku={sku}
+              imageUrl={imageUrl}
+              specs={specs}
+              why={why}
+              specSheetUrl={specSheetUrl}
+            />
+
             {/* Hero Price Section */}
             <HeroPrice 
               yourPriceBeforeTax={totals.subtotal}
@@ -251,11 +290,6 @@ export default function QuoteSummaryPage() {
 
             {/* Bonus offers badge directly under hero price */}
             <BonusOffersBadge />
-
-            {/* Coverage comparison tooltip */}
-            <div className="flex justify-start">
-              <CoverageComparisonTooltip />
-            </div>
 
             {/* Package Selection */}
             <PackageCards

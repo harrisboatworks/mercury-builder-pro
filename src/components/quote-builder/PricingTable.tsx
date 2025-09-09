@@ -33,12 +33,14 @@ export function PricingTable({
       <div className="space-y-1">
         {/* Motor Pricing */}
         <div className="space-y-1">
-          <LineItemRow
-            label="MSRP"
-            amount={pricing.msrp}
-            description={motorName}
-            className="text-muted-foreground line-through"
-          />
+          <div className="flex items-baseline justify-between">
+            <div className="text-muted-foreground">
+              MSRP - {motorName}
+            </div>
+            <div className="text-right">
+              <s className="text-muted-foreground">${pricing.msrp.toLocaleString()}</s>
+            </div>
+          </div>
           
           {pricing.discount > 0 && (
             <LineItemRow
