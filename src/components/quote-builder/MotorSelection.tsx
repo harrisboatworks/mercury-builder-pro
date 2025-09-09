@@ -431,7 +431,6 @@ export const MotorSelection = ({
   const [selectedEngineType, setSelectedEngineType] = useState<string>('all');
   const debugPricing = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === '1';
   const [quickViewLoading, setQuickViewLoading] = useState(false);
-  const [quickViewCached, setQuickViewCached] = useState(false);
 
   // Allow URL param override for the no-sale price layout only on staging routes
   const isStagingRoute = typeof window !== 'undefined' && window.location?.pathname?.startsWith('/staging');
@@ -1058,12 +1057,10 @@ export const MotorSelection = ({
     };
     if (quickViewMotor && needsEnrichment(quickViewMotor)) {
       setQuickViewLoading(true);
-      setQuickViewCached(false);
       supabase.functions.invoke('scrape-motor-details', {
         body: {
           motor_id: quickViewMotor.id,
-          detail_url: quickViewMotor.detailUrl,
-          force_refresh: false // Use cached data if available
+          detail_url: quickViewMotor.detailUrl
         }
       }).then(({
         data,
@@ -1073,11 +1070,13 @@ export const MotorSelection = ({
           console.warn('scrape-motor-details error', error);
           return;
         }
-        const result = data as any;
-        setQuickViewCached(result?.cached === true);
-        
-        if (result?.details) {
-          const { description, features, specifications } = result.details;
+        if (data?.success) {
+          const {
+            description,
+            features,
+            specifications
+          } = data as any;
+          // Update list and quick view motor in place
           setMotors(prev => prev.map(mm => mm.id === quickViewMotor.id ? {
             ...mm,
             description,
@@ -2012,61 +2011,53 @@ export const MotorSelection = ({
                 }).slice(0, 8);
                 const cleanedDescription = String(quickViewMotor.description || '').replace(/Can't find what you're looking for\?[\s\S]*/i, '').replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '').trim();
                 return <>
-                         <div className="grid grid-cols-2 gap-3 bg-accent p-4 rounded-md text-sm">
-                           <div className="flex justify-between"><span className="text-muted-foreground">Power</span><strong>{quickViewMotor.hp} HP</strong></div>
-                           <div className="flex justify-between"><span className="text-muted-foreground">Weight</span><strong>{displaySpecs.weight}</strong></div>
-                           <div className="flex justify-between"><span className="text-muted-foreground">Shaft</span><strong>{displaySpecs.shaft}</strong></div>
-                           <div className="flex justify-between"><span className="text-muted-foreground">Start</span><strong>{displaySpecs.start}</strong></div>
-                           <div className="flex justify-between"><span className="text-muted-foreground">Fuel</span><strong>{displaySpecs.fuel}</strong></div>
-                           <div className="flex justify-between"><span className="text-muted-foreground">Warranty</span><strong>{displaySpecs.warranty}</strong></div>
-                         </div>
+                        <div className="grid grid-cols-2 gap-3 bg-accent p-4 rounded-md text-sm">
+                          <div className="flex justify-between"><span className="text-muted-foreground">Power</span><strong>{quickViewMotor.hp} HP</strong></div>
+                          <div className="flex justify-between"><span className="text-muted-foreground">Weight</span><strong>{displaySpecs.weight}</strong></div>
+                          <div className="flex justify-between"><span className="text-muted-foreground">Shaft</span><strong>{displaySpecs.shaft}</strong></div>
+                          <div className="flex justify-between"><span className="text-muted-foreground">Start</span><strong>{displaySpecs.start}</strong></div>
+                          <div className="flex justify-between"><span className="text-muted-foreground">Fuel</span><strong>{displaySpecs.fuel}</strong></div>
+                          <div className="flex justify-between"><span className="text-muted-foreground">Warranty</span><strong>{displaySpecs.warranty}</strong></div>
+                        </div>
 
-                         {/* Data freshness indicator */}
-                         {quickViewCached && <div className="text-xs text-muted-foreground flex items-center gap-1 mt-2">
-                           <CheckCircle className="w-3 h-3" />
-                           Recent data (updated within 7 days)
-                         </div>}
-
-                         {(!quickViewMotor.description || !quickViewMotor.specifications || Object.keys(quickViewMotor.specifications as any).length === 0) && <Button variant="outline" size="sm" disabled={quickViewLoading} onClick={async () => {
-                     try {
-                       setQuickViewLoading(true);
-                       const {
-                         data,
-                         error
-                       } = await supabase.functions.invoke('scrape-motor-details', {
-                         body: {
-                           motor_id: quickViewMotor.id,
-                           detail_url: quickViewMotor.detailUrl,
-                           force_refresh: true // Manual refresh should force update
-                         }
-                       });
-                       if (error) throw error;
-                        const result = data as any;
-                        setQuickViewCached(result?.cached === true);
-                        
-                        if (result?.details) {
-                          const { description, features, specifications } = result.details;
-                          setMotors(prev => prev.map(mm => mm.id === quickViewMotor.id ? {
-                            ...mm,
-                            description,
-                            features,
-                            specifications
-                          } : mm));
-                          setQuickViewMotor(prev => prev ? {
-                            ...prev,
-                            description,
-                            features,
-                            specifications
-                          } as Motor : prev);
+                        {(!quickViewMotor.description || !quickViewMotor.specifications || Object.keys(quickViewMotor.specifications as any).length === 0) && <Button variant="outline" size="sm" disabled={quickViewLoading} onClick={async () => {
+                    try {
+                      setQuickViewLoading(true);
+                      const {
+                        data,
+                        error
+                      } = await supabase.functions.invoke('scrape-motor-details', {
+                        body: {
+                          motor_id: quickViewMotor.id,
+                          detail_url: quickViewMotor.detailUrl
                         }
-                     } catch (e) {
-                       console.error('Failed to load motor details:', e);
-                       toast({
-                          title: 'Unable to load full specs',
-                          description: 'Please try again or contact support if the issue persists',
-                          variant: 'destructive'
-                       });
-                     } finally {
+                      });
+                      if (error) throw error;
+                      const {
+                        description,
+                        features,
+                        specifications
+                      } = data as any || {};
+                      setMotors(prev => prev.map(mm => mm.id === quickViewMotor.id ? {
+                        ...mm,
+                        description,
+                        features,
+                        specifications
+                      } : mm));
+                      setQuickViewMotor(prev => prev ? {
+                        ...prev,
+                        description,
+                        features,
+                        specifications
+                      } as Motor : prev);
+                    } catch (e) {
+                      console.log('Motor details sync issue - using available data:', e);
+                      toast({
+                         title: 'Motor Details',
+                         description: 'Showing available specifications',
+                         variant: 'default'
+                      });
+                    } finally {
                       setQuickViewLoading(false);
                     }
                   }}>
