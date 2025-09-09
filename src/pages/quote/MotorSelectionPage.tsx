@@ -16,6 +16,7 @@ import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import '@/styles/brand-lite.css';
 import '@/styles/sticky-safe.css';
+import '@/styles/mobile-filters.css';
 
 // Types for Supabase data
 interface DbMotor {
@@ -331,9 +332,9 @@ export default function MotorSelectionPage() {
     <div className="min-h-screen bg-background">
       <BrandHeaderLite onHamburger={() => setFiltersOpen(true)} />
       
-      <div className="mx-auto max-w-6xl space-y-6 px-4 py-6">
+      <div className="page-content mx-auto max-w-6xl space-y-6 px-4 py-6">
         {/* Desktop Filters - hidden on mobile */}
-        <div className="filter-chips-legacy rounded-2xl border border-border bg-card p-6 shadow-sm">
+        <div className="legacy-top-strip filter-chips-legacy rounded-2xl border border-border bg-card p-6 shadow-sm">
           <p className="text-muted-foreground">
             Clean selection • clear pricing • promotions applied automatically.
           </p>
@@ -351,7 +352,7 @@ export default function MotorSelectionPage() {
             </div>
             
             {/* HP Range + Stock Filter */}
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="chips-legacy flex flex-wrap items-center gap-3">
               {HP_RANGES.map(range => (
                 <button
                   key={range.id}

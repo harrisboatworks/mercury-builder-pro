@@ -19,7 +19,7 @@ export default function BrandHeaderLite({
       <div className="mx-auto grid max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-2 px-3 py-2.5 sm:px-4">
         {/* Left: Harris logo */}
         <Link to="/" className="flex items-center">
-          <img src={harrisLogo} alt="Harris Boat Works" className="h-7 w-auto" />
+          <img src={harrisLogo} alt="Harris Boat Works" className="h-7 max-h-7 w-auto" />
         </Link>
 
         {/* Middle: center title (mobile) */}
@@ -51,10 +51,10 @@ export default function BrandHeaderLite({
       </div>
 
       {/* Trust badges row */}
-      <div className="trust-badges-row border-t border-border bg-muted/50 text-xs text-muted-foreground">
+      <div className="trust-row trust-badges-row border-t border-border bg-muted/50 text-xs text-muted-foreground">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-3 py-1.5 sm:px-4">
           <div className="flex items-center gap-2">
-            <img src={mercuryLogo} alt="Mercury" className="h-4 w-auto sm:h-5" />
+            <img src={mercuryLogo} alt="Mercury" className="h-4 max-h-4 w-auto sm:h-5 sm:max-h-5" />
           </div>
           <div className="flex items-center gap-3">
             <span className="inline-flex items-center gap-1">

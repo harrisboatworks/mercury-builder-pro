@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import '@/styles/drawer-anim.css';
 
 interface HpRange {
   id: string;
@@ -34,6 +35,16 @@ export default function FilterDrawer({
   onApply,
   onClear,
 }: FilterDrawerProps) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose?.();
+    };
+    if (open) {
+      window.addEventListener('keydown', onKey);
+    }
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open, onClose]);
+  
   if (!open) return null;
   
   return (
@@ -42,7 +53,7 @@ export default function FilterDrawer({
         className="absolute inset-0 bg-black/30 backdrop-blur-sm" 
         onClick={onClose} 
       />
-      <aside className="sticky-bottom-safe absolute bottom-0 left-0 right-0 mx-auto w-full max-w-xl rounded-t-2xl border border-border bg-card p-4 shadow-2xl">
+      <aside className="sticky-bottom-safe absolute bottom-0 left-0 right-0 mx-auto w-full max-w-xl rounded-t-2xl border border-border bg-card p-4 shadow-2xl animate-[slideUp_180ms_ease-out]">
         <div className="mx-auto h-1.5 w-10 rounded-full bg-border" />
         
         <div className="mt-3 space-y-4">

@@ -71,7 +71,7 @@ export default function MotorCardPremium({
   
   return (
     <>
-      <div className="relative">
+      <div className="relative min-h-[108px]">
         <button 
           onClick={onSelect} 
           aria-pressed={!!selected}
@@ -94,17 +94,17 @@ export default function MotorCardPremium({
                 className="mb-3 h-40 w-full rounded-lg object-contain bg-slate-50 dark:bg-slate-800" 
               />
             )}
-            <div className="text-[15px] font-semibold text-slate-900 dark:text-white">
+            <h3 className="text-[15px] font-semibold leading-tight text-slate-900 dark:text-white">
               {title}
-            </div>
+            </h3>
             {hpNum && (
-              <div className="mt-0.5 text-sm text-slate-600 dark:text-slate-300">
+              <div className="text-xs text-slate-500 dark:text-slate-400">
                 {hpNum} HP
               </div>
             )}
           </div>
           
-          <div className="mt-2">
+          <div className="mt-1">
             {typeof msrp === "number" && msrp > 0 && (
               <div className="msrp text-sm">{fmt(msrp)}</div>
             )}
@@ -114,8 +114,10 @@ export default function MotorCardPremium({
               </div>
             )}
             {promoText && (
-              <div className="mt-1 text-xs text-emerald-700 dark:text-emerald-300">
-                {promoText}
+              <div className="mt-1">
+                <span className="rounded bg-emerald-50 px-1.5 py-0.5 text-[11px] font-semibold text-emerald-700 dark:bg-emerald-900/25 dark:text-emerald-300">
+                  {promoText}
+                </span>
               </div>
             )}
             {typeof monthly === "number" && monthly > 0 && (
