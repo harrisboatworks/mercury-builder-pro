@@ -1,125 +1,85 @@
-import { useState } from 'react';
-import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Check } from 'lucide-react';
-import { money, calculateMonthly, PACKAGE_CONFIGS, type PackageConfig, type PricingBreakdown } from '@/lib/quote-utils';
+"use client";
+import { money } from "@/lib/money";
+import { calculateMonthly } from "@/lib/finance";
+import { cn } from "@/lib/utils";
 
-interface PackageCardsProps {
-  basePricing: PricingBreakdown;
-  onPackageSelect: (packageId: string) => void;
-  selectedPackage?: string;
+export type PackageOption = {
+  id: "good" | "better" | "best" | string;
+  label: string;
+  priceBeforeTax: number;
+  savings: number;
+  monthly?: number;
+  features: string[];
+  recommended?: boolean;
+};
+
+type PackageCardsProps = {
+  options: PackageOption[];
+  onSelect: (id: string) => void;
+  selectedId?: string;
   rate?: number;
-}
+  termMonths?: number;
+};
 
-export function PackageCards({ 
-  basePricing, 
-  onPackageSelect, 
-  selectedPackage = 'better',
-  rate = 7.99 
+export function PackageCards({
+  options,
+  onSelect,
+  selectedId,
+  rate = 7.99,
+  termMonths = 60,
 }: PackageCardsProps) {
-  const [hoveredPackage, setHoveredPackage] = useState<string | null>(null);
-
-  const calculatePackagePrice = (pkg: PackageConfig) => {
-    const packageTotal = basePricing.total + pkg.additionalCost;
-    const packageSavings = basePricing.savings;
-    const monthlyPayment = calculateMonthly(packageTotal, rate);
-    
-    return {
-      total: packageTotal,
-      savings: packageSavings,
-      monthly: monthlyPayment
-    };
-  };
-
   return (
-    <div className="space-y-4">
-      <div className="text-center">
-        <h3 className="text-xl font-semibold text-primary mb-2">
-          Choose Your Package
-        </h3>
-        <p className="text-muted-foreground text-sm">
-          Select the option that best fits your needs
-        </p>
-      </div>
-      
-      <div className="grid md:grid-cols-3 gap-4">
-        {PACKAGE_CONFIGS.map((pkg) => {
-          const pricing = calculatePackagePrice(pkg);
-          const isSelected = selectedPackage === pkg.id;
-          const isHovered = hoveredPackage === pkg.id;
-          
-          return (
-            <Card
-              key={pkg.id}
-              className={`relative cursor-pointer transition-all duration-200 ${
-                isSelected 
-                  ? 'ring-2 ring-primary border-primary bg-primary/5' 
-                  : 'hover:shadow-lg hover:border-primary/50'
-              } ${
-                isHovered ? 'scale-105' : ''
-              }`}
-              onMouseEnter={() => setHoveredPackage(pkg.id)}
-              onMouseLeave={() => setHoveredPackage(null)}
-              onClick={() => onPackageSelect(pkg.id)}
-            >
-              {pkg.recommended && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-primary text-primary-foreground">
-                    Recommended
-                  </Badge>
-                </div>
-              )}
-              
-              <div className="p-6 space-y-4">
-                {/* Package Header */}
-                <div className="text-center">
-                  <h4 className="text-lg font-semibold text-primary">
-                    {pkg.name}
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    {pkg.description}
-                  </p>
-                </div>
+    <section aria-label="Packages" className="grid gap-3 sm:grid-cols-3">
+      {options.map((p) => {
+        const monthly = p.monthly ?? calculateMonthly(p.priceBeforeTax, rate, termMonths);
+        const isSelected = selectedId === p.id;
 
-                {/* Pricing */}
-                <div className="text-center space-y-2">
-                  <div className="text-2xl font-bold text-primary">
-                    {money(pricing.total)}
-                  </div>
-                  {pricing.savings > 0 && (
-                    <div className="text-sm text-green-600">
-                      You save {money(pricing.savings)} vs MSRP
-                    </div>
-                  )}
-                  <div className="text-sm text-muted-foreground">
-                    From {money(pricing.monthly.amount)}/mo
-                  </div>
-                </div>
+        return (
+          <button
+            key={p.id}
+            onClick={() => onSelect(p.id)}
+            className={cn(
+              "group relative flex flex-col rounded-2xl border p-4 text-left transition",
+              "hover:shadow-md hover:scale-[1.02]",
+              isSelected
+                ? "border-blue-600 ring-2 ring-blue-600/20 dark:border-blue-400 dark:ring-blue-400/30"
+                : "border-slate-200 dark:border-slate-700"
+            )}
+            aria-pressed={isSelected}
+          >
+            {p.recommended && (
+              <span className="absolute right-3 top-3 rounded-full bg-blue-50 px-2 py-0.5 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:ring-blue-800">
+                Recommended
+              </span>
+            )}
 
-                {/* Inclusions */}
-                <div className="space-y-2">
-                  {pkg.inclusions.map((inclusion, index) => (
-                    <div key={index} className="flex items-center gap-2 text-sm">
-                      <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
-                      <span>{inclusion}</span>
-                    </div>
-                  ))}
-                </div>
+            <div className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">{p.label}</div>
 
-                {/* Selection Button */}
-                <Button
-                  variant={isSelected ? "default" : "outline"}
-                  className="w-full"
-                  size="sm"
-                >
-                  {isSelected ? 'Selected' : 'Select Package'}
-                </Button>
-              </div>
-            </Card>
-          );
-        })}
-      </div>
-    </div>
+            <div className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
+              {money(p.priceBeforeTax)}
+            </div>
+
+            <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+              From <span className="font-semibold">{money(Math.round(monthly))}/mo</span>
+            </div>
+
+            <div className="mt-2 inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 ring-1 ring-inset ring-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:ring-emerald-800">
+              You save {money(p.savings)}
+            </div>
+
+            <ul className="mt-3 space-y-1 text-sm text-slate-700 dark:text-slate-300">
+              {p.features.slice(0, 4).map((f, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span aria-hidden className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400/80 dark:bg-slate-500" />
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+          </button>
+        );
+      })}
+    </section>
   );
 }
+
+export default PackageCards;

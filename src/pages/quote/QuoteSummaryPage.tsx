@@ -1,19 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
-import { HeroPrice } from '@/components/quote-builder/HeroPrice';
-import { PackageCards } from '@/components/quote-builder/PackageCards';
+import HeroPrice from '@/components/quote-builder/HeroPrice';
+import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
+import StickySummary from '@/components/quote-builder/StickySummary';
 import { PromoPanel } from '@/components/quote-builder/PromoPanel';
 import { PricingTable } from '@/components/quote-builder/PricingTable';
-import { StickySummary } from '@/components/quote-builder/StickySummary';
-import { MobileSummaryBar } from '@/components/quote-builder/MobileSummaryBar';
 import { WarrantySelector } from '@/components/quote-builder/WarrantySelector';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
 
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
-import { computeTotals, PACKAGE_CONFIGS } from '@/lib/quote-utils';
+import { computeTotals } from '@/lib/finance';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useToast } from '@/hooks/use-toast';
 
@@ -68,11 +67,45 @@ export default function QuoteSummaryPage() {
   const motorPrice = quoteData.motor?.salePrice || quoteData.motor?.basePrice || quoteData.motor?.price || 0;
   const hp = quoteData.motor?.hp || 0;
   
-  // Calculate accessories based on selected package
-  const selectedPackageConfig = PACKAGE_CONFIGS.find(pkg => pkg.id === selectedPackage);
-  const accessoryTotal = selectedPackageConfig ? selectedPackageConfig.additionalCost + 2500 : 2500; // Base rigging cost
+  // Mock data - replace with real quote data
+  const data = {
+    msrp: motorPrice + 2500, // Motor + base accessories
+    discount: 546,
+    promoValue: 400,
+    subtotal: motorPrice + 2500 - 546 - 400,
+    tax: (motorPrice + 2500 - 546 - 400) * 0.13,
+    total: (motorPrice + 2500 - 546 - 400) * 1.13,
+  };
   
-  // Build accessory breakdown
+  const totals = computeTotals(data);
+
+  // Package options
+  const packages: PackageOption[] = [
+    { 
+      id: "good", 
+      label: "Essential", 
+      priceBeforeTax: data.subtotal, 
+      savings: totals.savings, 
+      features: ["Mercury motor", "Standard controls & rigging", "Basic installation"] 
+    },
+    { 
+      id: "better", 
+      label: "Complete", 
+      priceBeforeTax: data.subtotal + 179.99, 
+      savings: totals.savings + 50, 
+      features: ["Mercury motor", "Premium controls & rigging", "Marine starting battery", "Standard propeller", "Priority installation"], 
+      recommended: true 
+    },
+    { 
+      id: "best", 
+      label: "Premium", 
+      priceBeforeTax: data.subtotal + 179.99 + 500, 
+      savings: totals.savings + 150, 
+      features: ["Mercury motor", "Premium controls & rigging", "Marine starting battery", "Performance propeller upgrade", "Extended warranty", "White-glove installation"] 
+    },
+  ];
+
+  // Build accessory breakdown for legacy components
   const accessoryBreakdown = [
     { name: 'Controls & Rigging', price: 2500, description: 'Premium marine controls and installation hardware' }
   ];
@@ -93,20 +126,8 @@ export default function QuoteSummaryPage() {
     });
   }
 
-  // Calculate totals
-  const pricing = computeTotals({
-    motorPrice,
-    accessoryTotal,
-    promotionalSavings: 0, // Would be calculated from active promotions
-    tradeInValue: 0, // Would come from trade-in data
-    taxRate: 0.13
-  });
-
   // Get financing rate
   const financingRate = promo?.rate || 7.99;
-
-  // Get package inclusions
-  const packageInclusions = selectedPackageConfig?.inclusions || [];
 
   // CTA handlers (stub functions for now)
   const handleReserveDeposit = () => {
@@ -138,6 +159,8 @@ export default function QuoteSummaryPage() {
     setSelectedPackage(packageId);
   };
 
+  const selectedPackageData = packages.find(p => p.id === selectedPackage) || packages[1];
+
   return (
     <QuoteLayout title="Your Mercury Motor Quote">
       <div className="max-w-7xl mx-auto space-y-8">
@@ -149,21 +172,24 @@ export default function QuoteSummaryPage() {
           </Button>
         </div>
         
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-[1fr_360px] gap-8">
           {/* Main Content - Left Column */}
-          <div className="lg:col-span-3 space-y-8">
+          <div className="space-y-6">
             {/* Hero Price Section */}
             <HeroPrice 
-              pricing={pricing}
-              rate={financingRate}
+              yourPriceBeforeTax={totals.subtotal}
+              totalWithTax={totals.total}
+              discount={totals.discount}
+              promoValue={totals.promoValue}
               showMonthly={true}
+              rate={financingRate}
             />
 
             {/* Package Selection */}
             <PackageCards
-              basePricing={pricing}
-              onPackageSelect={handlePackageSelect}
-              selectedPackage={selectedPackage}
+              options={packages}
+              selectedId={selectedPackage}
+              onSelect={handlePackageSelect}
               rate={financingRate}
             />
 
@@ -172,7 +198,15 @@ export default function QuoteSummaryPage() {
 
             {/* Detailed Pricing Breakdown */}
             <PricingTable
-              pricing={pricing}
+              pricing={{
+                msrp: totals.msrp,
+                discount: totals.discount,
+                promoValue: totals.promoValue,
+                subtotal: totals.subtotal,
+                tax: totals.tax,
+                total: totals.total,
+                savings: totals.savings
+              }}
               motorName={quoteData.motor?.model || 'Mercury Motor'}
               accessoryBreakdown={accessoryBreakdown}
               tradeInValue={0}
@@ -197,33 +231,18 @@ export default function QuoteSummaryPage() {
           </div>
 
           {/* Sticky Summary - Right Column (Desktop) */}         
-          <div className="lg:col-span-1">
+          <div>
             <StickySummary
-              pricing={pricing}
-              selectedPackage={selectedPackage}
-              packageInclusions={packageInclusions}
-              onReserveDeposit={handleReserveDeposit}
-              onEmailQuote={handleEmailQuote}
-              onTextQuote={handleTextQuote}
-              onBookConsult={handleBookConsult}
+              packageLabel={selectedPackageData.label}
+              yourPriceBeforeTax={selectedPackageData.priceBeforeTax}
+              totalSavings={selectedPackageData.savings}
+              monthly={undefined}
+              bullets={selectedPackageData.features}
+              onReserve={handleReserveDeposit}
               depositAmount={200}
-              rate={financingRate}
             />
           </div>
         </div>
-
-        {/* Mobile Summary Bar */}
-        <MobileSummaryBar
-          pricing={pricing}
-          selectedPackage={selectedPackage}
-          packageInclusions={packageInclusions}
-          onReserveDeposit={handleReserveDeposit}
-          onEmailQuote={handleEmailQuote}
-          onTextQuote={handleTextQuote}
-          onBookConsult={handleBookConsult}
-          depositAmount={200}
-          rate={financingRate}
-        />
       </div>
     </QuoteLayout>
   );

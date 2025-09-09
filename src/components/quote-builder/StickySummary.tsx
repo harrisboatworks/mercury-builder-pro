@@ -1,130 +1,82 @@
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Check, CreditCard, Mail, MessageSquare, Calendar } from 'lucide-react';
-import { money, calculateMonthly, type PricingBreakdown } from '@/lib/quote-utils';
-import { useIsMobile } from '@/hooks/use-mobile';
+"use client";
+import { money } from "@/lib/money";
 
-interface StickySummaryProps {
-  pricing: PricingBreakdown;
-  selectedPackage: string;
-  packageInclusions: string[];
-  onReserveDeposit: () => void;
-  onEmailQuote: () => void;
-  onTextQuote: () => void;
-  onBookConsult: () => void;
+type StickySummaryProps = {
+  packageLabel: string;
+  yourPriceBeforeTax: number;
+  totalSavings: number;
+  monthly?: number;
+  bullets?: string[];
+  onReserve: () => void;
   depositAmount?: number;
-  rate?: number;
-}
+};
 
-export function StickySummary({
-  pricing,
-  selectedPackage,
-  packageInclusions,
-  onReserveDeposit,
-  onEmailQuote,
-  onTextQuote,
-  onBookConsult,
+export default function StickySummary({
+  packageLabel,
+  yourPriceBeforeTax,
+  totalSavings,
+  monthly,
+  bullets = [],
+  onReserve,
   depositAmount = 200,
-  rate = 7.99
 }: StickySummaryProps) {
-  const isMobile = useIsMobile();
-  const monthlyPayment = calculateMonthly(pricing.total, rate);
-
-  // Don't render sticky summary on mobile (use MobileSummaryBar instead)
-  if (isMobile) return null;
-
   return (
-    <div className="sticky top-24 space-y-4 sticky-summary">
-      <Card className="p-6 space-y-4 border-2 border-primary/20">
-        {/* Package Selection */}
-        <div>
-          <h4 className="font-semibold text-primary mb-2 capitalize">
-            {selectedPackage} Package
-          </h4>
-          <div className="space-y-1">
-            {packageInclusions.slice(0, 3).map((inclusion, index) => (
-              <div key={index} className="flex items-center gap-2 text-sm">
-                <Check className="w-3 h-3 text-green-600 flex-shrink-0" />
-                <span className="text-muted-foreground">{inclusion}</span>
-              </div>
-            ))}
-            {packageInclusions.length > 3 && (
-              <div className="text-xs text-muted-foreground">
-                +{packageInclusions.length - 3} more items
-              </div>
-            )}
-          </div>
+    <>
+      {/* Desktop sticky card */}
+      <aside
+        aria-label="Summary"
+        className="sticky top-4 hidden h-fit rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900 lg:block"
+      >
+        <div className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
+          {packageLabel}
         </div>
 
-        {/* Pricing Summary */}
-        <div className="space-y-2 py-4 border-y border-border/50">
-          <div className="text-center">
-            <div className="text-2xl font-bold text-primary">
-              {money(pricing.total)}
-            </div>
-            {pricing.savings > 0 && (
-              <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-200 mt-1 savings-badge">
-                Save {money(pricing.savings)}
-              </Badge>
-            )}
-          </div>
-          <div className="text-center text-sm text-muted-foreground">
-            From {money(monthlyPayment.amount)}/mo
-          </div>
+        <div className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
+          {money(yourPriceBeforeTax)}
         </div>
 
-        {/* Primary CTA */}
-        <Button 
-          onClick={onReserveDeposit}
-          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground hover-scale"
-          size="lg"
+        <div className="mt-1 text-sm text-slate-700 dark:text-slate-300">
+          {monthly != null && (
+            <>From <span className="font-semibold">{money(Math.round(monthly))}/mo</span> • </>
+          )}
+          You save <span className="font-semibold">{money(totalSavings)}</span>
+        </div>
+
+        <ul className="mt-3 space-y-1 text-sm text-slate-700 dark:text-slate-300">
+          {bullets.slice(0, 3).map((b, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <span aria-hidden className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400/80 dark:bg-slate-500" />
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          onClick={onReserve}
+          className="mt-4 w-full rounded-xl bg-blue-600 px-4 py-3 text-center text-white shadow-sm transition hover:scale-[1.01] hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
         >
-          <CreditCard className="w-4 h-4 mr-2" />
-          Reserve with ${depositAmount} deposit
-        </Button>
+          Reserve with {money(depositAmount)} refundable deposit
+        </button>
+      </aside>
 
-        {/* Secondary CTAs */}
-        <div className="space-y-2">
-          <Button 
-            variant="outline" 
-            className="w-full text-sm hover-scale" 
-            size="sm"
-            onClick={onEmailQuote}
-          >
-            <Mail className="w-4 h-4 mr-2" />
-            Email me this quote
-          </Button>
-          
-          <div className="grid grid-cols-2 gap-2">
-            <Button 
-              variant="outline" 
-              className="text-xs hover-scale" 
-              size="sm"
-              onClick={onTextQuote}
-            >
-              <MessageSquare className="w-3 h-3 mr-1" />
-              Text quote
-            </Button>
-            <Button 
-              variant="outline" 
-              className="text-xs hover-scale" 
-              size="sm"
-              onClick={onBookConsult}
-            >
-              <Calendar className="w-3 h-3 mr-1" />
-              Book consult
-            </Button>
+      {/* Mobile bottom bar */}
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200/70 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-slate-700 dark:bg-slate-900/80 lg:hidden">
+        <div className="mx-auto flex max-w-4xl items-center justify-between gap-3 p-3">
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">{packageLabel}</div>
+            <div className="text-lg font-semibold text-slate-900 dark:text-white">{money(yourPriceBeforeTax)}</div>
+            {monthly != null && (
+              <div className="text-xs text-slate-600 dark:text-slate-300">From {money(Math.round(monthly))}/mo</div>
+            )}
           </div>
+          <button
+            onClick={onReserve}
+            className="rounded-xl bg-blue-600 px-4 py-2.5 text-white shadow-sm transition hover:scale-[1.02] hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500"
+          >
+            Reserve
+          </button>
         </div>
-
-        {/* Policy Line */}
-        <div className="text-xs text-muted-foreground text-center">
-          Quote valid until {new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toLocaleDateString()}
-          <br />
-          Includes PDI & standard install
-        </div>
-      </Card>
-    </div>
+      </div>
+    </>
   );
 }

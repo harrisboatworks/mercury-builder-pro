@@ -5,6 +5,9 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+// Additional utility for simple class concatenation
+export const cnSimple = (...a: Array<string | false | undefined | null>) => a.filter(Boolean).join(" ");
+
 export function isTillerMotor(model: string): boolean {
   const upperModel = model.toUpperCase();
   
