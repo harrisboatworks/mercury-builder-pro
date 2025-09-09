@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2 } from "lucide-react";
 import { supabase } from "../../integrations/supabase/client";
 import { Button } from "../ui/button";
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import { money } from "../../lib/money";
 import { 
   decodeModelName, 
@@ -90,15 +92,67 @@ export default function MotorDetailsSheet({
         return;
       }
 
-      if (data?.specSheetUrl) {
-        setGeneratedSpecUrl(data.specSheetUrl);
-        // Open the spec sheet in a new tab
-        window.open(data.specSheetUrl, '_blank');
+      if (data?.htmlContent) {
+        // Generate PDF on client side
+        await generateClientSidePDF(data.htmlContent, data.motorModel || title);
       }
     } catch (error) {
       console.error('Error generating spec sheet:', error);
     } finally {
       setSpecSheetLoading(false);
+    }
+  };
+
+  const generateClientSidePDF = async (htmlContent: string, motorModel: string) => {
+    try {
+      // Create a temporary container for the HTML content
+      const container = document.createElement('div');
+      container.innerHTML = htmlContent;
+      container.style.position = 'absolute';
+      container.style.left = '-9999px';
+      container.style.width = '794px'; // A4 width in pixels at 96 DPI
+      container.style.backgroundColor = 'white';
+      document.body.appendChild(container);
+
+      // Generate canvas from HTML
+      const canvas = await html2canvas(container, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: '#ffffff'
+      });
+
+      // Remove temporary container
+      document.body.removeChild(container);
+
+      // Create PDF
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgWidth = 210; // A4 width in mm
+      const pageHeight = 295; // A4 height in mm
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+
+      let position = 0;
+
+      // Add first page
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      // Add additional pages if needed
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      // Download the PDF
+      const fileName = `${motorModel.toLowerCase().replace(/\s+/g, '-')}-spec-sheet.pdf`;
+      pdf.save(fileName);
+      
+    } catch (error) {
+      console.error('Error generating PDF:', error);
     }
   };
 

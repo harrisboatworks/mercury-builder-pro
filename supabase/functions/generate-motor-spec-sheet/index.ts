@@ -1,6 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.7.1'
-import puppeteer from "https://deno.land/x/puppeteer@16.2.0/mod.ts"
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -44,84 +43,16 @@ serve(async (req) => {
       )
     }
 
-    // Check if spec sheet already exists
-    if (motor.spec_sheet_file_id) {
-      const { data: existingFile } = await supabase.storage
-        .from('spec-sheets')
-        .download(motor.spec_sheet_file_id)
-      
-      if (existingFile) {
-        console.log('Returning existing spec sheet for motor:', motor.model)
-        const { data: { publicUrl } } = supabase.storage
-          .from('spec-sheets')
-          .getPublicUrl(motor.spec_sheet_file_id)
-        
-        return new Response(
-          JSON.stringify({ specSheetUrl: publicUrl }),
-          { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        )
-      }
-    }
-
-    // Generate PDF using Puppeteer
-    const pdfHtml = generateSpecSheetHTML(motor)
-    const fileName = `spec-sheet-${motor.model.toLowerCase().replace(/\s+/g, '-')}-${Date.now()}.pdf`
+    // Generate HTML content for client-side PDF generation
+    const htmlContent = generateSpecSheetHTML(motor)
     
-    console.log('Launching Puppeteer to generate PDF for motor:', motor.model)
-    
-    // Launch Puppeteer and generate PDF
-    const browser = await puppeteer.launch({
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
-    })
-    
-    const page = await browser.newPage()
-    await page.setContent(pdfHtml, { waitUntil: 'networkidle0' })
-    
-    const pdfBuffer = await page.pdf({
-      format: 'A4',
-      printBackground: true,
-      margin: {
-        top: '20px',
-        right: '20px',
-        bottom: '20px',
-        left: '20px'
-      }
-    })
-    
-    await browser.close()
-    console.log('PDF generated successfully')
-    
-    // Upload PDF to storage
-    const { data: uploadData, error: uploadError } = await supabase.storage
-      .from('spec-sheets')
-      .upload(fileName, pdfBuffer, {
-        contentType: 'application/pdf',
-        upsert: true
-      })
-
-    if (uploadError) {
-      console.error('Upload error:', uploadError)
-      return new Response(
-        JSON.stringify({ error: 'Failed to save spec sheet' }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 500 }
-      )
-    }
-
-    // Update motor record with file ID
-    await supabase
-      .from('motor_models')
-      .update({ spec_sheet_file_id: fileName })
-      .eq('id', motorId)
-
-    // Get public URL
-    const { data: { publicUrl } } = supabase.storage
-      .from('spec-sheets')
-      .getPublicUrl(fileName)
-
-    console.log('Generated spec sheet for motor:', motor.model)
+    console.log('Returning HTML content for client-side PDF generation for motor:', motor.model)
     
     return new Response(
-      JSON.stringify({ specSheetUrl: publicUrl }),
+      JSON.stringify({ 
+        htmlContent: htmlContent,
+        motorModel: motor.model 
+      }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )
 
