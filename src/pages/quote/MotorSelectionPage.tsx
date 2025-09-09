@@ -305,13 +305,13 @@ export default function MotorSelectionPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-background">
-        <MobileHeader title="Select Your Mercury Motor" />
+      <div className="min-h-screen bg-gray-50">
+        <MobileHeader />
         <main className="container mx-auto px-4 py-8">
           <div className="flex items-center justify-center py-20">
             <div className="text-center">
-              <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
-              <p className="text-muted-foreground">Loading Mercury motors...</p>
+              <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent"></div>
+              <p className="text-gray-600">Loading Mercury motors...</p>
             </div>
           </div>
         </main>
@@ -320,35 +320,35 @@ export default function MotorSelectionPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <MobileHeader title="Select Your Mercury Motor" />
+    <div className="min-h-screen bg-gray-50">
+      <MobileHeader />
       
-      <main className="container mx-auto px-4 py-6 space-y-6">
+      <main className="container mx-auto px-4 py-4 space-y-4">
         {/* Search & Filters */}
-        <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
           {/* Search Input */}
           <div className="relative mb-4">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
             <Input
               placeholder="Search motors by HP, model, or keyword…"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 h-12 rounded-xl shadow-sm"
+              className="pl-12 h-12 rounded-xl border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base"
             />
           </div>
           
-          {/* HP Range Chips */}
-          <div className="space-y-3">
-            <div className="overflow-x-auto">
-              <div className="flex gap-2 pb-2 min-w-max">
+          {/* HP Range Chips - Horizontal Scroll */}
+          <div className="space-y-4">
+            <div className="overflow-x-auto scrollbar-hide">
+              <div className="flex gap-2 pb-1" style={{ width: 'max-content' }}>
                 {HP_RANGES.map(range => (
                   <button
                     key={range.id}
                     onClick={() => setHpRange(range.id)}
-                    className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                       hpRange === range.id
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary'
+                        ? 'bg-blue-600 text-white shadow-sm'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
                     {range.label}
@@ -358,11 +358,11 @@ export default function MotorSelectionPage() {
             </div>
             
             {/* Stock Filter */}
-            <div className="flex items-center justify-between pt-2 border-t border-border">
-              <span className="text-sm text-muted-foreground">Show only in-stock motors</span>
+            <div className="flex items-center justify-between pt-3 border-t border-gray-100">
               <ToggleSwitch
                 checked={inStockOnly}
                 onChange={setInStockOnly}
+                label="In Stock Only"
               />
             </div>
           </div>
@@ -370,7 +370,7 @@ export default function MotorSelectionPage() {
 
         {/* Motors Grid */}
         {filteredMotors.length > 0 ? (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {filteredMotors.map(motor => {
               // Find original DB motor to get specifications
               const dbMotor = motors.find(m => m.id === motor.id);
@@ -415,14 +415,14 @@ export default function MotorSelectionPage() {
             })}
           </div>
         ) : (
-          <div className="rounded-xl border border-amber-200 bg-amber-50 p-6 text-center dark:border-amber-800 dark:bg-amber-900/20">
-            <p className="text-amber-900 dark:text-amber-200">
+          <div className="bg-white rounded-xl border border-gray-200 p-6 text-center">
+            <p className="text-gray-600 mb-3">
               No motors match your current filters.
             </p>
             <Button
               variant="outline"
               size="sm"
-              className="mt-3"
+              className="rounded-lg border-gray-300 text-gray-700 hover:bg-gray-50"
               onClick={() => {
                 setSearchTerm('');
                 setHpRange('all');
