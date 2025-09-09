@@ -314,6 +314,42 @@ export type Database = {
         }
         Relationships: []
       }
+      notifications: {
+        Row: {
+          channel: string | null
+          created_at: string | null
+          id: string
+          message: string
+          metadata: Json | null
+          read: boolean | null
+          title: string | null
+          type: string | null
+          user_id: string
+        }
+        Insert: {
+          channel?: string | null
+          created_at?: string | null
+          id?: string
+          message: string
+          metadata?: Json | null
+          read?: boolean | null
+          title?: string | null
+          type?: string | null
+          user_id: string
+        }
+        Update: {
+          channel?: string | null
+          created_at?: string | null
+          id?: string
+          message?: string
+          metadata?: Json | null
+          read?: boolean | null
+          title?: string | null
+          type?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -322,7 +358,12 @@ export type Database = {
           email: string | null
           full_name: string | null
           id: string
+          notification_in_app_enabled: boolean | null
+          notification_sms_enabled: boolean | null
           phone: string | null
+          preferred_channel: string | null
+          quiet_hours_end: string | null
+          quiet_hours_start: string | null
           theme: string | null
           updated_at: string
           user_id: string
@@ -334,7 +375,12 @@ export type Database = {
           email?: string | null
           full_name?: string | null
           id?: string
+          notification_in_app_enabled?: boolean | null
+          notification_sms_enabled?: boolean | null
           phone?: string | null
+          preferred_channel?: string | null
+          quiet_hours_end?: string | null
+          quiet_hours_start?: string | null
           theme?: string | null
           updated_at?: string
           user_id: string
@@ -346,7 +392,12 @@ export type Database = {
           email?: string | null
           full_name?: string | null
           id?: string
+          notification_in_app_enabled?: boolean | null
+          notification_sms_enabled?: boolean | null
           phone?: string | null
+          preferred_channel?: string | null
+          quiet_hours_end?: string | null
+          quiet_hours_start?: string | null
           theme?: string | null
           updated_at?: string
           user_id?: string
@@ -549,6 +600,44 @@ export type Database = {
           user_id?: string | null
         }
         Relationships: []
+      }
+      sms_logs: {
+        Row: {
+          created_at: string | null
+          error: string | null
+          id: string
+          message: string
+          notification_id: string | null
+          status: string | null
+          to_phone: string
+        }
+        Insert: {
+          created_at?: string | null
+          error?: string | null
+          id?: string
+          message: string
+          notification_id?: string | null
+          status?: string | null
+          to_phone: string
+        }
+        Update: {
+          created_at?: string | null
+          error?: string | null
+          id?: string
+          message?: string
+          notification_id?: string | null
+          status?: string | null
+          to_phone?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sms_logs_notification_id_fkey"
+            columns: ["notification_id"]
+            isOneToOne: false
+            referencedRelation: "notifications"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       user_roles: {
         Row: {
