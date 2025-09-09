@@ -11,6 +11,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search, Filter } from 'lucide-react';
 import '@/styles/premium-motor.css';
+import '@/styles/sticky-quote-mobile.css';
 
 // Types for Supabase data
 interface DbMotor {
@@ -422,13 +423,14 @@ export default function MotorSelectionPage() {
         </div>
       </div>
 
-      {/* Sticky Quote Bar - show when motor is selected and flag is enabled */}
-      {selectedMotor && state.uiFlags?.useStickyQuoteBar && (
+      {/* Sticky Quote Bar - show when motor is selected */}
+      {selectedMotor && (
         <StickyQuoteBar
           model={getModelString()}
-          totalWithTax={getTotalWithTax()}
+          total={getTotalWithTax()}
           monthly={monthlyPayment?.amount || null}
           coverageYears={getCoverageYears()}
+          stepLabel="Step 1 of 7"
           primaryLabel="Continue"
           secondaryLabel="Change Motor"
           onPrimary={handleContinue}

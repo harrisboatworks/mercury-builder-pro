@@ -95,13 +95,14 @@ export default function BoatInfoPage() {
         </div>
       </QuoteLayout>
       
-      {/* Sticky Quote Bar - show when motor is selected and flag is enabled */}
-      {state.motor && state.uiFlags?.useStickyQuoteBar && (
+      {/* Sticky Quote Bar - show when motor is selected */}
+      {state.motor && (
         <StickyQuoteBar
           model={getModelString()}
-          totalWithTax={getTotalWithTax()}
+          total={getTotalWithTax()}
           monthly={monthlyPayment?.amount || null}
           coverageYears={getCoverageYears()}
+          stepLabel="Step 2 of 7"
           primaryLabel="Continue"
           secondaryLabel="Edit Motor"
           onPrimary={() => navigate('/quote/trade-in')}

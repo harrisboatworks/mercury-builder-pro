@@ -1,51 +1,68 @@
 "use client";
 import React from "react";
 import { money } from "@/lib/money";
+import { useActivePromotions } from "@/hooks/useActivePromotions";
 
 type Props = {
-  model?: string;               // ex: "2025 FourStroke 40HP Command Thrust ELPT"
-  totalWithTax?: number;        // read from state.totals.total (or equivalent)
-  monthly?: number | null;      // read from financing hook if available
-  coverageYears?: number | null;// from state.warrantyConfig.totalYears
-  onPrimary?: () => void;       // Continue / Reserve
-  primaryLabel?: string;        // default "Continue"
-  onSecondary?: () => void;     // Change Motor or Edit
-  secondaryLabel?: string;      // default "Change"
-  deltaOnce?: { cash?: number | null; monthly?: number | null } | null; // optional one-shot price delta visual
+  model?: string;
+  total?: number | null;
+  monthly?: number | null;
+  coverageYears?: number | null;
+  stepLabel?: string | null;
+  primaryLabel?: string;
+  onPrimary?: () => void;
+  secondaryLabel?: string;
+  onSecondary?: () => void;
+  deltaOnce?: { cash?: number | null; monthly?: number | null } | null;
 };
 
 export default function StickyQuoteBar({
   model,
-  totalWithTax,
+  total,
   monthly,
   coverageYears,
-  onPrimary,
+  stepLabel,
   primaryLabel = "Continue",
-  onSecondary,
+  onPrimary,
   secondaryLabel = "Change",
+  onSecondary,
   deltaOnce
 }: Props) {
-  const [show, setShow] = React.useState(true);
+  const [showDelta, setShowDelta] = React.useState(true);
   React.useEffect(() => {
     if (!deltaOnce?.cash && !deltaOnce?.monthly) return;
-    const t = setTimeout(() => setShow(false), 2600);
+    const t = setTimeout(() => setShowDelta(false), 2400);
     return () => clearTimeout(t);
   }, [deltaOnce?.cash, deltaOnce?.monthly]);
 
+  const { getWarrantyPromotions } = useActivePromotions();
+  const promos = getWarrantyPromotions?.() ?? [];
+
   return (
-    <div className="sticky bottom-0 z-50 border-t border-slate-200/70 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:border-slate-700 dark:bg-slate-900/85">
+    <div
+      role="region"
+      aria-label="Quote summary"
+      className="sticky bottom-0 z-50 border-t border-slate-200/70 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/75 dark:border-slate-700 dark:bg-slate-900/85"
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+    >
       <div className="mx-auto flex max-w-6xl flex-col gap-2 p-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
           {model && <div className="truncate text-sm font-semibold text-slate-900 dark:text-white">{model}</div>}
-          <div className="mt-0.5 flex flex-wrap items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
-            {typeof totalWithTax === "number" && <span>Total: <span className="font-semibold">{money(totalWithTax)}</span></span>}
+          <div className="mt-0.5 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+            {typeof total === "number" && <span>Total: <span className="font-semibold">{money(total)}</span></span>}
             {typeof monthly === "number" && monthly > 0 && <span>≈ {money(Math.round(monthly))}/mo OAC</span>}
             {typeof coverageYears === "number" && coverageYears > 0 && <span>{coverageYears} yrs coverage</span>}
-            {show && deltaOnce && (deltaOnce.cash || deltaOnce.monthly) ? (
-              <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-900/25 dark:text-emerald-300 dark:ring-emerald-800">
+            {promos.map(p => (
+              <span key={p.id} className="rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:bg-emerald-900/25 dark:text-emerald-300">
+                {p.bonus_title || `+${p.warranty_extra_years} yrs warranty`}
+              </span>
+            ))}
+            {stepLabel && <span className="text-slate-500">{stepLabel}</span>}
+            {showDelta && deltaOnce && (deltaOnce.cash || deltaOnce.monthly) && (
+              <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-900/25 dark:text-emerald-300 dark:ring-emerald-800">
                 {deltaOnce.cash ? `+${money(deltaOnce.cash)}` : ""}{deltaOnce.cash && deltaOnce.monthly ? " • " : ""}{deltaOnce.monthly ? `+${money(Math.round(deltaOnce.monthly))}/mo` : ""}
               </span>
-            ) : null}
+            )}
           </div>
         </div>
 
