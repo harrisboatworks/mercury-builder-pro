@@ -2059,14 +2059,14 @@ export const MotorSelection = ({
                             specifications
                           } as Motor : prev);
                         }
-                    } catch (e) {
-                      console.log('Motor details sync issue - using available data:', e);
-                      toast({
-                         title: 'Motor Details',
-                         description: 'Showing available specifications',
-                         variant: 'default'
-                      });
-                    } finally {
+                     } catch (e) {
+                       console.error('Failed to load motor details:', e);
+                       toast({
+                          title: 'Unable to load full specs',
+                          description: 'Please try again or contact support if the issue persists',
+                          variant: 'destructive'
+                       });
+                     } finally {
                       setQuickViewLoading(false);
                     }
                   }}>
