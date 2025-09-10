@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/co
 import { Badge } from '@/components/ui/badge';
 import { CreditCard, ChevronUp, Check, Mail, MessageSquare, Calendar } from 'lucide-react';
 import { money, calculateMonthly, type PricingBreakdown } from '@/lib/quote-utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface MobileSummaryBarProps {
   pricing: PricingBreakdown;
@@ -28,8 +29,12 @@ export function MobileSummaryBar({
   depositAmount = 200,
   rate = 7.99
 }: MobileSummaryBarProps) {
+  const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
   const monthlyPayment = calculateMonthly(pricing.total, rate);
+
+  // Only render on mobile
+  if (!isMobile) return null;
 
   return (
     <>
