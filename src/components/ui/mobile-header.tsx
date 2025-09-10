@@ -68,7 +68,7 @@ export default function MobileHeader({ title, onMenuClick, showMenu = false }: M
             <img 
               src={mercuryLogo} 
               alt="Mercury Marine" 
-              className={`w-auto transition-transform duration-300 ${
+              className={`w-auto transition-transform duration-300 -mt-1 ${
                 scrolled ? 'h-7 scale-90' : 'h-9'
               }`}
             />
