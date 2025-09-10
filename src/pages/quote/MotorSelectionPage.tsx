@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Motor } from '@/components/QuoteBuilder';
 import StickyQuoteBar from '@/components/quote/StickyQuoteBar';
+import { MobileSummaryBar } from '@/components/quote-builder/MobileSummaryBar';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/components/ui/use-toast';
@@ -413,20 +415,48 @@ export default function MotorSelectionPage() {
 
       {/* Sticky Quote Bar - show when motor is selected */}
       {selectedMotor && (
-        <StickyQuoteBar
-          model={getModelString()}
-          total={getTotalWithTax()}
-          monthly={monthlyPayment?.amount || null}
-          coverageYears={getCoverageYears()}
-          stepLabel="Step 1 of 7"
-          primaryLabel="Continue"
-          secondaryLabel="Change Motor"
-          onPrimary={handleContinue}
-          onSecondary={() => {
-            setSelectedMotor(null);
-            dispatch({ type: 'SET_MOTOR', payload: null });
-          }}
-        />
+        <>
+          {useIsMobile() ? (
+            <MobileSummaryBar
+              pricing={{
+                msrp: selectedMotor.basePrice,
+                discount: selectedMotor.savings || 0,
+                promoValue: selectedMotor.savings || 0,
+                subtotal: selectedMotor.price,
+                tax: Math.round((selectedMotor.price * 0.13)),
+                total: getTotalWithTax() || selectedMotor.price,
+                savings: selectedMotor.savings || 0
+              }}
+              selectedPackage={`${selectedMotor.hp}HP Mercury Motor`}
+              packageInclusions={[
+                `${getCoverageYears()}-year Mercury warranty`,
+                'Professional installation available',
+                'Mercury certified parts & service'
+              ]}
+              onReserveDeposit={handleContinue}
+              onEmailQuote={() => console.log('Email quote')}
+              onTextQuote={() => console.log('Text quote')}
+              onBookConsult={() => console.log('Book consultation')}
+              depositAmount={500}
+              rate={monthlyPayment?.rate}
+            />
+          ) : (
+            <StickyQuoteBar
+              model={getModelString()}
+              total={getTotalWithTax()}
+              monthly={monthlyPayment?.amount || null}
+              coverageYears={getCoverageYears()}
+              stepLabel="Step 1 of 7"
+              primaryLabel="Continue"
+              secondaryLabel="Change Motor"
+              onPrimary={handleContinue}
+              onSecondary={() => {
+                setSelectedMotor(null);
+                dispatch({ type: 'SET_MOTOR', payload: null });
+              }}
+            />
+          )}
+        </>
       )}
     </QuoteLayout>
   );
