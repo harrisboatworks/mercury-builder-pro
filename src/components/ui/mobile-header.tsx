@@ -27,49 +27,40 @@ export default function MobileHeader({ title, onMenuClick, showMenu = false }: M
     <header className={`sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300 ${
       scrolled ? 'py-3 shadow-md' : 'py-4'
     }`}>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-3">
         <div className="flex items-center justify-between">
-          {/* Left: Menu or Harris Logo */}
-          {showMenu ? (
-            <button 
-              onClick={onMenuClick}
-              className="flex items-center gap-2 text-gray-900 hover:text-gray-700 transition-colors"
-            >
-              <Menu className="w-5 h-5" />
-              <span className="text-sm font-medium">Menu</span>
-            </button>
-          ) : (
-            <Link to="/" className="flex items-center">
-              <img 
-                src={harrisLogo} 
-                alt="Harris Boat Works" 
-                className={`w-auto transition-transform duration-300 ${
-                  scrolled ? 'h-7 scale-90' : 'h-9'
-                }`}
-              />
-            </Link>
-          )}
+          {/* Left: Menu button or empty space */}
+          <div className="flex items-center min-w-[40px]">
+            {showMenu ? (
+              <button 
+                onClick={onMenuClick}
+                className="p-2 text-gray-900 hover:text-gray-700 transition-colors"
+              >
+                <Menu className="w-5 h-5" />
+              </button>
+            ) : (
+              <div className="w-[40px]"></div>
+            )}
+          </div>
           
-          {/* Center: Harris Logo (when menu is shown) */}
-          {showMenu && (
-            <Link to="/" className="flex items-center">
-              <img 
-                src={harrisLogo} 
-                alt="Harris Boat Works" 
-                className={`w-auto transition-transform duration-300 ${
-                  scrolled ? 'h-6 scale-90' : 'h-8'
-                }`}
-              />
-            </Link>
-          )}
+          {/* Center: Harris Logo */}
+          <Link to="/" className="flex items-center">
+            <img 
+              src={harrisLogo} 
+              alt="Harris Boat Works" 
+              className={`w-auto transition-transform duration-300 ${
+                scrolled ? 'h-5' : 'h-7'
+              }`}
+            />
+          </Link>
           
           {/* Right: Mercury Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center min-w-[40px] justify-end">
             <img 
               src={mercuryLogo} 
               alt="Mercury Marine" 
-              className={`w-auto transition-transform duration-300 -mt-1 ${
-                scrolled ? 'h-7 scale-90' : 'h-9'
+              className={`w-auto transition-transform duration-300 -mt-0.5 ${
+                scrolled ? 'h-5' : 'h-7'
               }`}
             />
           </div>
