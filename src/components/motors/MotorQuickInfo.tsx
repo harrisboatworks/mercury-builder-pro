@@ -11,10 +11,6 @@ export default function MotorQuickInfo({
     <div role="tooltip" className="rounded-xl border border-slate-200 bg-white p-3 text-sm shadow-xl dark:border-slate-700 dark:bg-slate-900">
       <div className="grid gap-1">
         {hp && <div><span className="text-slate-500">Horsepower:</span> <span className="font-medium">{hp}</span></div>}
-        {shaft && <div><span className="text-slate-500">Shaft:</span> <span className="font-medium">{shaft}</span></div>}
-        {weightLbs && <div><span className="text-slate-500">Weight:</span> <span className="font-medium">{weightLbs} lb</span></div>}
-        {altOutput && <div><span className="text-slate-500">Alternator:</span> <span className="font-medium">{altOutput}</span></div>}
-        {steering && <div><span className="text-slate-500">Steering:</span> <span className="font-medium">{steering}</span></div>}
         {model && (() => {
           const decoded = decodeModelName(model);
           return decoded.length > 0 ? (
