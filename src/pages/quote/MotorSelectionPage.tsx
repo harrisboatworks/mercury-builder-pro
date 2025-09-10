@@ -314,18 +314,6 @@ export default function MotorSelectionPage() {
   return (
     <QuoteLayout title="Select Mercury Outboard Motor">
       <div className="space-y-6">
-        {/* Back button */}
-        <div className="flex items-center gap-4">
-          <Button 
-            variant="outline" 
-            size="sm" 
-            onClick={() => navigate('/')}
-            className="flex items-center gap-2"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Home
-          </Button>
-        </div>
         {/* Clean Search with inline Filter */}
         <div>
           <div className="flex items-center">
