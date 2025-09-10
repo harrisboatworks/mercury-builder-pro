@@ -76,6 +76,7 @@ export default function MotorSelectionPage() {
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
   const { toast } = useToast();
+  const isMobile = useIsMobile();
   
   // State for motor data and filters
   const [motors, setMotors] = useState<DbMotor[]>([]);
@@ -416,7 +417,7 @@ export default function MotorSelectionPage() {
       {/* Sticky Quote Bar - show when motor is selected */}
       {selectedMotor && (
         <>
-          {useIsMobile() ? (
+          {isMobile ? (
             <MobileSummaryBar
               pricing={{
                 msrp: selectedMotor.basePrice,
