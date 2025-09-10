@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Menu } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 interface MobileHeaderProps {
   title?: string;
+  onMenuClick?: () => void;
+  showMenu?: boolean;
 }
 
-export default function MobileHeader({ title }: MobileHeaderProps) {
+export default function MobileHeader({ title, onMenuClick, showMenu = false }: MobileHeaderProps) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -26,19 +29,39 @@ export default function MobileHeader({ title }: MobileHeaderProps) {
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          {/* Left: Harris Logo */}
-          <Link to="/" className="flex items-center">
-            <img 
-              src={harrisLogo} 
-              alt="Harris Boat Works" 
-              className={`w-auto transition-transform duration-300 ${
-                scrolled ? 'h-7 scale-90' : 'h-9'
-              }`}
-            />
-          </Link>
+          {/* Left: Menu or Harris Logo */}
+          {showMenu ? (
+            <button 
+              onClick={onMenuClick}
+              className="flex items-center gap-2 text-gray-900 hover:text-gray-700 transition-colors"
+            >
+              <Menu className="w-5 h-5" />
+              <span className="text-sm font-medium">Menu</span>
+            </button>
+          ) : (
+            <Link to="/" className="flex items-center">
+              <img 
+                src={harrisLogo} 
+                alt="Harris Boat Works" 
+                className={`w-auto transition-transform duration-300 ${
+                  scrolled ? 'h-7 scale-90' : 'h-9'
+                }`}
+              />
+            </Link>
+          )}
           
-          {/* Center: Spacer */}
-          <div className="flex-1"></div>
+          {/* Center: Harris Logo (when menu is shown) */}
+          {showMenu && (
+            <Link to="/" className="flex items-center">
+              <img 
+                src={harrisLogo} 
+                alt="Harris Boat Works" 
+                className={`w-auto transition-transform duration-300 ${
+                  scrolled ? 'h-6 scale-90' : 'h-8'
+                }`}
+              />
+            </Link>
+          )}
           
           {/* Right: Mercury Logo */}
           <div className="flex items-center">

@@ -59,73 +59,78 @@ export default function MotorFilterMenu({
       <SheetTrigger asChild>
         <Button 
           variant="outline" 
-          size="sm"
-          className="relative flex items-center gap-2"
+          className="relative h-12 px-6 rounded-full border-gray-300 bg-white hover:bg-gray-50 text-gray-700"
         >
-          <Filter className="h-4 w-4" />
-          <span>Filter</span>
+          <Filter className="h-4 w-4 mr-2" />
+          <span className="font-medium">Filter</span>
           {activeFilterCount > 0 && (
-            <Badge 
-              variant="secondary" 
-              className="ml-1 h-5 w-5 p-0 flex items-center justify-center text-xs bg-primary text-primary-foreground"
-            >
+            <div className="absolute -top-1 -right-1 h-5 w-5 bg-gray-900 text-white text-xs rounded-full flex items-center justify-center">
               {activeFilterCount}
-            </Badge>
+            </div>
           )}
         </Button>
       </SheetTrigger>
       
-      <SheetContent side="right" className="w-full sm:max-w-md">
-        <SheetHeader className="pb-6">
-          <SheetTitle className="text-left">Filter Motors</SheetTitle>
+      <SheetContent side="right" className="w-full sm:max-w-md bg-white">
+        <SheetHeader className="pb-8">
+          <SheetTitle className="text-left text-xl font-light text-gray-900">Filter</SheetTitle>
         </SheetHeader>
         
-        <div className="space-y-6">
+        <div className="space-y-8">
           {/* HP Range Filter */}
-          <div className="space-y-3">
-            <h3 className="text-sm font-medium text-foreground">Horsepower Range</h3>
-            <div className="grid gap-2">
+          <div className="space-y-4">
+            <h3 className="text-sm font-medium text-gray-900 uppercase tracking-wide">Horsepower</h3>
+            <div className="space-y-2">
               {HP_RANGES.map(range => {
                 const isSelected = selectedHpRange.min === range.min && selectedHpRange.max === range.max;
                 return (
-                  <Button
+                  <button
                     key={range.id}
-                    variant={isSelected ? "default" : "outline"}
-                    size="sm"
-                    className="justify-start"
+                    className={`w-full text-left py-3 px-0 text-base transition-colors border-b border-gray-100 ${
+                      isSelected 
+                        ? 'text-gray-900 font-medium' 
+                        : 'text-gray-600 hover:text-gray-900'
+                    }`}
                     onClick={() => handleHpRangeSelect({ min: range.min, max: range.max })}
                   >
                     {range.label}
-                  </Button>
+                    {isSelected && <span className="float-right">✓</span>}
+                  </button>
                 );
               })}
             </div>
           </div>
 
           {/* Stock Filter */}
-          <div className="space-y-3">
-            <h3 className="text-sm font-medium text-foreground">Availability</h3>
-            <ToggleSwitch
-              checked={inStockOnly}
-              onChange={onInStockChange}
-              label="In Stock Only"
-            />
+          <div className="space-y-4">
+            <h3 className="text-sm font-medium text-gray-900 uppercase tracking-wide">Availability</h3>
+            <button
+              className={`w-full text-left py-3 px-0 text-base transition-colors border-b border-gray-100 ${
+                inStockOnly 
+                  ? 'text-gray-900 font-medium' 
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+              onClick={() => onInStockChange(!inStockOnly)}
+            >
+              In Stock Only
+              {inStockOnly && <span className="float-right">✓</span>}
+            </button>
           </div>
 
           {/* Actions */}
-          <div className="flex gap-3 pt-6 border-t">
+          <div className="flex gap-4 pt-8">
             <Button 
               variant="outline" 
-              className="flex-1"
+              className="flex-1 h-12 rounded-full border-gray-300 text-gray-700 hover:bg-gray-50"
               onClick={handleClearFilters}
             >
               Clear All
             </Button>
             <Button 
-              className="flex-1"
+              className="flex-1 h-12 rounded-full bg-gray-900 hover:bg-gray-800 text-white"
               onClick={() => setIsOpen(false)}
             >
-              Done
+              Apply
             </Button>
           </div>
         </div>

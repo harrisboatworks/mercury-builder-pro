@@ -310,12 +310,14 @@ export default function MotorSelectionPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <MobileHeader />
+      <MobileHeader 
+        showMenu={true}
+        onMenuClick={() => {}} // Will be handled by MotorFilterMenu
+      />
       
-      <main className="space-y-0">
-        {/* Search & Filters Card */}
-        <div className="bg-white shadow-sm border border-gray-200 mx-4 mt-4 rounded-lg p-4">
-          {/* Search Input with Filter Menu */}
+      <main className="space-y-6">
+        {/* Clean Search - Porsche Style */}
+        <div className="container mx-auto px-4 pt-6">
           <div className="flex gap-3 items-center">
             <div className="relative flex-1">
               <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
@@ -323,7 +325,7 @@ export default function MotorSelectionPage() {
                 placeholder="Search motors by HP, model, or keyword…"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-12 h-12 rounded-lg border-gray-200 shadow-sm focus:border-primary focus:ring-primary text-base"
+                className="pl-12 h-12 rounded-full border-gray-300 bg-white shadow-sm focus:border-gray-400 focus:ring-gray-400 text-base"
                 aria-label="Search motors by horsepower, model, or keyword"
               />
             </div>
@@ -338,7 +340,7 @@ export default function MotorSelectionPage() {
           </div>
         </div>
         
-        <div className="container mx-auto px-4 pt-4">
+        <div className="container mx-auto px-4">
           {/* Motors Grid */}
           {filteredMotors.length > 0 ? (
             <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
