@@ -15,7 +15,7 @@ export default function MotorQuickInfo({
           const decoded = decodeModelName(model);
           return decoded.length > 0 ? (
             <div className="mt-1 rounded bg-slate-50 px-2 py-0.5 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-300">
-              {decoded.slice(0, 3).map((item, i) => (
+              {decoded.slice(0, 6).map((item, i) => (
                 <div key={i} className="truncate">
                   {item.code} - {item.meaning}
                 </div>
