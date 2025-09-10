@@ -24,8 +24,8 @@ export default function MobileHeader({ title, onMenuClick, showMenu = false }: M
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300 ${
-      scrolled ? 'py-3 shadow-md' : 'py-4'
+    <header className={`sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 py-3 ${
+      scrolled ? 'shadow-md' : ''
     }`}>
       <div className="container mx-auto px-3">
         <div className="flex items-start justify-between pt-1">
@@ -48,9 +48,7 @@ export default function MobileHeader({ title, onMenuClick, showMenu = false }: M
             <img 
               src={harrisLogo} 
               alt="Harris Boat Works" 
-              className={`w-auto transition-transform duration-300 ${
-                scrolled ? 'h-5' : 'h-7'
-              }`}
+              className="w-auto h-6"
             />
           </Link>
           
@@ -59,9 +57,7 @@ export default function MobileHeader({ title, onMenuClick, showMenu = false }: M
             <img 
               src={mercuryLogo} 
               alt="Mercury Marine" 
-              className={`w-auto transition-transform duration-300 ${
-                scrolled ? 'h-5' : 'h-7'
-              }`}
+              className="w-auto h-6"
             />
           </div>
         </div>
