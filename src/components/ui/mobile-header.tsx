@@ -57,7 +57,7 @@ export default function MobileHeader({ title, onMenuClick, showMenu = false }: M
             <img 
               src={mercuryLogo} 
               alt="Mercury Marine" 
-              className="w-auto h-6"
+              className="w-auto h-6 md:h-8 lg:h-10"
             />
           </div>
         </div>
