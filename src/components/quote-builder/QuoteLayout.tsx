@@ -111,7 +111,7 @@ export const QuoteLayout = ({
                 <div className="h-8 w-px bg-border"></div>
                 <img src={mercuryLogo} alt="Mercury Marine" className="h-12 w-auto" />
               </Link>
-              <div className="hidden md:block">
+              <div className="hidden lg:block">
                 <h1 className="text-2xl font-bold text-foreground">
                   {title || 'Mercury Outboard Quote Builder'}
                 </h1>

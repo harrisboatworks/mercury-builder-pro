@@ -343,7 +343,7 @@ export default function MotorSelectionPage() {
         <div>
           {/* Motors Grid */}
           {filteredMotors.length > 0 ? (
-            <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
               {filteredMotors.map(motor => {
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);
@@ -363,7 +363,8 @@ export default function MotorSelectionPage() {
                    motor.model.includes('DTS') ? 'digital throttle & shift' : undefined);
                 
                 return (
-                  <MotorCardPremium
+                  <div className="w-full max-w-sm mx-auto">
+                    <MotorCardPremium
                     key={motor.id}
                     img={motor.image}
                     title={motor.model}
@@ -383,7 +384,8 @@ export default function MotorSelectionPage() {
                     description={dbMotor?.description}
                     specSheetUrl={dbMotor?.detail_url}
                     motor={motor as any}
-                  />
+                    />
+                  </div>
                 );
               })}
             </div>
