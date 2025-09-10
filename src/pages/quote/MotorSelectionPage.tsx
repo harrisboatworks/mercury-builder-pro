@@ -326,27 +326,29 @@ export default function MotorSelectionPage() {
             Back to Home
           </Button>
         </div>
-        {/* Clean Search - Porsche Style */}
+        {/* Clean Search with inline Filter */}
         <div>
-          <div className="flex gap-2 md:gap-3 items-center">
+          <div className="flex items-center">
             <div className="relative flex-1">
               <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
               <Input
                 placeholder="Search motors by HP, model, or keyword…"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-12 h-12 rounded-full border-gray-300 bg-white shadow-sm focus:border-gray-400 focus:ring-gray-400 text-base"
+                className="pl-12 pr-4 h-12 rounded-l-full rounded-r-none border-gray-300 border-r-0 bg-white shadow-sm focus:border-gray-400 focus:ring-gray-400 text-base"
                 aria-label="Search motors by horsepower, model, or keyword"
               />
             </div>
-            <MotorFilterMenu
-              searchTerm={searchTerm}
-              selectedHpRange={selectedHpRange}
-              inStockOnly={inStockOnly}
-              onSearchChange={setSearchTerm}
-              onHpRangeChange={setSelectedHpRange}
-              onInStockChange={setInStockOnly}
-            />
+            <div className="flex-shrink-0">
+              <MotorFilterMenu
+                searchTerm={searchTerm}
+                selectedHpRange={selectedHpRange}
+                inStockOnly={inStockOnly}
+                onSearchChange={setSearchTerm}
+                onHpRangeChange={setSelectedHpRange}
+                onInStockChange={setInStockOnly}
+              />
+            </div>
           </div>
         </div>
         

@@ -59,7 +59,7 @@ export default function MotorFilterMenu({
       <SheetTrigger asChild>
         <Button 
           variant="outline" 
-          className="relative h-12 px-3 md:px-6 rounded-full border-gray-300 bg-white hover:bg-gray-50 text-gray-700"
+          className="relative h-12 px-3 md:px-6 rounded-r-full rounded-l-none border-gray-300 border-l-0 bg-white hover:bg-gray-50 text-gray-700"
         >
           <Filter className="h-4 w-4 md:mr-2" />
           <span className="font-medium hidden md:inline">Filter</span>
