@@ -254,8 +254,14 @@ export default function MotorSelectionPage() {
   }, [processedMotors, searchTerm, selectedHpRange, inStockOnly]);
 
   const handleMotorSelect = (motor: Motor) => {
-    setSelectedMotor(motor);
-    dispatch({ type: 'SET_MOTOR', payload: motor });
+    // Toggle selection - if already selected, deselect it
+    if (selectedMotor?.id === motor.id) {
+      setSelectedMotor(null);
+      dispatch({ type: 'SET_MOTOR', payload: null });
+    } else {
+      setSelectedMotor(motor);
+      dispatch({ type: 'SET_MOTOR', payload: motor });
+    }
   };
 
   const handleContinue = () => {
