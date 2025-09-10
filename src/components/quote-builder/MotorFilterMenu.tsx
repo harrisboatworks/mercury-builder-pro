@@ -59,10 +59,10 @@ export default function MotorFilterMenu({
       <SheetTrigger asChild>
         <Button 
           variant="outline" 
-          className="relative h-12 px-6 rounded-full border-gray-300 bg-white hover:bg-gray-50 text-gray-700"
+          className="relative h-12 px-3 md:px-6 rounded-full border-gray-300 bg-white hover:bg-gray-50 text-gray-700"
         >
-          <Filter className="h-4 w-4 mr-2" />
-          <span className="font-medium">Filter</span>
+          <Filter className="h-4 w-4 md:mr-2" />
+          <span className="font-medium hidden md:inline">Filter</span>
           {activeFilterCount > 0 && (
             <div className="absolute -top-1 -right-1 h-5 w-5 bg-gray-900 text-white text-xs rounded-full flex items-center justify-center">
               {activeFilterCount}

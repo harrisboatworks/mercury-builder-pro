@@ -328,7 +328,7 @@ export default function MotorSelectionPage() {
         </div>
         {/* Clean Search - Porsche Style */}
         <div>
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-2 md:gap-3 items-center">
             <div className="relative flex-1">
               <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
               <Input

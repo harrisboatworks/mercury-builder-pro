@@ -111,40 +111,42 @@ export const QuoteLayout = ({
                 <div className="h-8 w-px bg-border"></div>
                 <img src={mercuryLogo} alt="Mercury Marine" className="h-12 w-auto" />
               </Link>
-              <div>
+              <div className="hidden md:block">
                 <h1 className="text-2xl font-bold text-foreground">
                   {title || 'Mercury Outboard Quote Builder'}
                 </h1>
-                <p className="text-muted-foreground">Mercury Marine Premier Dealer</p>
+                <p className="text-muted-foreground">Mercury Marine Premier Dealer</p>
               </div>
             </div>
             
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 md:space-x-4">
               {user ? <>
-                  <div className="flex items-center space-x-2">
+                  <div className="hidden md:flex items-center space-x-2">
                     <User className="w-4 h-4 text-muted-foreground" />
                     <span className="text-sm text-muted-foreground">{user.email}</span>
                   </div>
-                  <Button variant="secondary" size="sm" asChild>
-                    <Link to="/admin/promotions">Promotions</Link>
-                  </Button>
-                  <Button variant="secondary" size="sm" asChild>
-                    <Link to="/admin/financing">
-                      <DollarSign className="w-4 h-4 mr-2" />
-                      Financing
-                    </Link>
-                  </Button>
-                  <Button variant="secondary" size="sm" asChild>
-                    <Link to="/admin/quotes">Quotes</Link>
-                  </Button>
-                  <Button variant="outline" size="sm" onClick={() => signOut()}>
-                    <LogOut className="w-4 h-4 mr-2" />
-                    Sign Out
-                  </Button>
+                  <div className="flex items-center space-x-1 md:space-x-2">
+                    <Button variant="secondary" size="sm" className="hidden md:inline-flex" asChild>
+                      <Link to="/admin/promotions">Promotions</Link>
+                    </Button>
+                    <Button variant="secondary" size="sm" className="hidden md:inline-flex" asChild>
+                      <Link to="/admin/financing">
+                        <DollarSign className="w-4 h-4 mr-2" />
+                        Financing
+                      </Link>
+                    </Button>
+                    <Button variant="secondary" size="sm" className="hidden md:inline-flex" asChild>
+                      <Link to="/admin/quotes">Quotes</Link>
+                    </Button>
+                    <Button variant="outline" size="sm" onClick={() => signOut()}>
+                      <LogOut className="w-4 h-4 md:mr-2" />
+                      <span className="hidden md:inline">Sign Out</span>
+                    </Button>
+                  </div>
                 </> : <Button variant="outline" size="sm" asChild>
                   <Link to="/auth">
-                    <User className="w-4 h-4 mr-2" />
-                    Sign In
+                    <User className="w-4 h-4 md:mr-2" />
+                    <span className="hidden md:inline">Sign In</span>
                   </Link>
                 </Button>}
             </div>
