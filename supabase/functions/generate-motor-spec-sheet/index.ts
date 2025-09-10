@@ -28,12 +28,33 @@ serve(async (req) => {
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     )
 
-    // Fetch motor details
-    const { data: motor, error: motorError } = await supabase
-      .from('motor_models')
-      .select('*')
-      .eq('id', motorId)
-      .single()
+    // Fetch motor details and active promotions in parallel
+    const [
+      { data: motor, error: motorError },
+      { data: promotions, error: promoError }
+    ] = await Promise.all([
+      supabase
+        .from('motor_models')
+        .select('*')
+        .eq('id', motorId)
+        .single(),
+      supabase
+        .from('promotions')
+        .select(`
+          id,
+          name,
+          discount_percentage,
+          discount_fixed_amount,
+          warranty_extra_years,
+          bonus_title,
+          bonus_description,
+          end_date
+        `)
+        .eq('is_active', true)
+        .or('end_date.is.null,end_date.gte.now()')
+        .order('priority', { ascending: false })
+        .limit(3) // Limit to 3 promotions for space
+    ]);
 
     if (motorError || !motor) {
       console.error('Motor fetch error:', motorError)
@@ -43,8 +64,12 @@ serve(async (req) => {
       )
     }
 
+    if (promoError) {
+      console.warn('Promotions fetch error:', promoError)
+    }
+
     // Generate HTML content for client-side PDF generation
-    const htmlContent = generateSpecSheetHTML(motor)
+    const htmlContent = generateSpecSheetHTML(motor, promotions || [])
     
     console.log('Returning HTML content for client-side PDF generation for motor:', motor.model)
     
@@ -65,7 +90,21 @@ serve(async (req) => {
   }
 })
 
-function generateSpecSheetHTML(motor: any): string {
+// Company information constants
+const COMPANY_INFO = {
+  name: "Harris Boat Works",
+  tagline: "Go Boldly - Authorized Mercury Marine Dealer",
+  address: {
+    full: "5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0"
+  },
+  contact: {
+    phone: "(905) 342-2153",
+    email: "info@harrisboatworks.ca",
+    website: "quote.harrisboatworks.ca"
+  }
+};
+
+function generateSpecSheetHTML(motor: any, promotions: any[] = []): string {
   const specs = motor.specifications || {}
   const features = motor.features || []
   
@@ -199,17 +238,23 @@ function generateSpecSheetHTML(motor: any): string {
   const idealUses = getIdealUses(motor.horsepower)
   const keyAdvantages = getKeyAdvantages(motor.horsepower)
   
+  // Filter promotions relevant to this motor
+  const relevantPromotions = promotions.filter(promo => {
+    // Show all active promotions for now - could add HP filtering logic here
+    return true;
+  });
+
   // Use text-based logos as fallback for better PDF compatibility
   const harrisLogoHtml = `
-    <div style="display: inline-block; background: #1e40af; color: white; padding: 8px 12px; border-radius: 4px; font-family: Arial, sans-serif;">
-      <div style="font-size: 12px; font-weight: bold; line-height: 1.2;">HARRIS BOAT WORKS</div>
-      <div style="font-size: 8px; line-height: 1.2;">Rice Lake, ON</div>
+    <div style="display: inline-block; background: #1e40af; color: white; padding: 6px 10px; border-radius: 3px; font-family: Arial, sans-serif;">
+      <div style="font-size: 10px; font-weight: bold; line-height: 1.1;">HARRIS BOAT WORKS</div>
+      <div style="font-size: 7px; line-height: 1.1;">Gores Landing, ON</div>
     </div>
   `
   const mercuryLogoHtml = `
-    <div style="display: inline-block; background: #1e40af; color: white; padding: 8px 12px; border-radius: 4px; font-family: Arial, sans-serif;">
-      <div style="font-size: 14px; font-weight: bold; line-height: 1.2;">MERCURY</div>
-      <div style="font-size: 8px; line-height: 1.2;">MARINE</div>
+    <div style="display: inline-block; background: #1e40af; color: white; padding: 6px 10px; border-radius: 3px; font-family: Arial, sans-serif;">
+      <div style="font-size: 12px; font-weight: bold; line-height: 1.1;">MERCURY</div>
+      <div style="font-size: 7px; line-height: 1.1;">MARINE</div>
     </div>
   `
   
@@ -224,30 +269,30 @@ function generateSpecSheetHTML(motor: any): string {
         
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.2;
+            line-height: 1.1;
             background: white;
             color: #333;
-            font-size: 10pt;
+            font-size: 9pt;
         }
         
         .page {
             width: 210mm;
             min-height: 297mm;
-            padding: 10mm;
+            padding: 5mm;
             margin: 0 auto;
             background: white;
         }
         
-        /* Compact Header with Motor Image */
+        /* Ultra Compact Header */
         .header {
             background: #000;
             color: white;
-            padding: 15px 20px;
-            margin: -10mm -10mm 15px -10mm;
+            padding: 8px 15px;
+            margin: -5mm -5mm 8px -5mm;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 60px;
+            height: 40px;
         }
         
         .header-logo {
@@ -262,13 +307,13 @@ function generateSpecSheetHTML(motor: any): string {
         }
         
         .motor-title {
-            font-size: 20pt;
+            font-size: 16pt;
             font-weight: bold;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
         
         .header-subtitle {
-            font-size: 10pt;
+            font-size: 8pt;
             color: #ccc;
             text-transform: uppercase;
         }
@@ -287,18 +332,18 @@ function generateSpecSheetHTML(motor: any): string {
             object-fit: contain;
         }
         
-        /* Two Column Layout */
+        /* Three Column Layout for Single-Page Optimization */
         .content-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 40px;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
         }
         
         .column {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 8px;
         }
         
         /* Section Styling */
@@ -311,13 +356,13 @@ function generateSpecSheetHTML(motor: any): string {
         .section-header {
             background: #007DC5;
             color: white;
-            padding: 8px 12px;
+            padding: 4px 8px;
             font-weight: bold;
-            font-size: 12pt;
+            font-size: 9pt;
         }
         
         .section-content {
-            padding: 12px;
+            padding: 8px;
         }
         
         /* Model Breakdown */
@@ -386,15 +431,15 @@ function generateSpecSheetHTML(motor: any): string {
         }
         
         .spec-label {
-            padding: 6px 8px;
+            padding: 3px 6px;
             font-weight: 600;
-            font-size: 9pt;
+            font-size: 8pt;
             width: 60%;
         }
         
         .spec-value {
-            padding: 6px 8px;
-            font-size: 9pt;
+            padding: 3px 6px;
+            font-size: 8pt;
             text-align: right;
             width: 40%;
         }
@@ -405,30 +450,58 @@ function generateSpecSheetHTML(motor: any): string {
             margin: 15px 0;
         }
         
-        .performance-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 10px;
-            margin: 10px 0;
-        }
-        
-        .performance-item {
-            text-align: center;
-            padding: 8px;
+        .performance-compact {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
             background: #f0f8ff;
-            border-radius: 4px;
+            padding: 6px;
+            border-radius: 3px;
         }
         
-        .performance-value {
-            font-size: 14pt;
+        .performance-item-compact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 8pt;
+        }
+        
+        .performance-value-compact {
             font-weight: bold;
             color: #007DC5;
         }
         
-        .performance-label {
+        /* Promotions Section */
+        .promotions-section {
+            background: #fefce8;
+            border: 1px solid #facc15;
+            border-radius: 4px;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        
+        .promotions-header {
+            background: #facc15;
+            color: #000;
+            padding: 4px 6px;
+            font-weight: bold;
+            font-size: 9pt;
+            border-radius: 3px;
+            margin-bottom: 6px;
+        }
+        
+        .promo-item {
             font-size: 8pt;
-            color: #666;
-            margin-top: 2px;
+            margin: 3px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 4px;
+        }
+        
+        .promo-bullet {
+            color: #f59e0b;
+            font-weight: bold;
+            flex-shrink: 0;
         }
         
         /* Footer */
@@ -471,7 +544,24 @@ function generateSpecSheetHTML(motor: any): string {
         
         @media print {
             body { margin: 0; }
-            .page { margin: 0; padding: 8mm; }
+            .page { margin: 0; padding: 5mm; }
+        }
+        
+        @page {
+            size: A4;
+            margin: 0.5in;
+        }
+        
+        /* Mobile PDF compatibility */
+        @media (max-width: 768px) {
+            .page {
+                width: 100%;
+                padding: 10px;
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
         }
     </style>
 </head>
@@ -495,9 +585,9 @@ function generateSpecSheetHTML(motor: any): string {
         </div>
         ` : ''}
         
-        <!-- Two Column Content -->
+        <!-- Three Column Content for Single-Page Layout -->
         <div class="content-grid">
-            <!-- LEFT COLUMN -->
+            <!-- COLUMN 1: Understanding + What's Included -->
             <div class="column">
                 <!-- Understanding This Model -->
                 <div class="section">
@@ -505,12 +595,12 @@ function generateSpecSheetHTML(motor: any): string {
                     <div class="section-content">
                         ${modelBreakdown.length > 0 ? `
                         <div class="model-codes">
-                            ${modelBreakdown.map(item => `
+                            ${modelBreakdown.slice(0, 3).map(item => `
                             <div class="model-code">
                                 <span class="code-badge">${item.code}</span>
                                 <div>
-                                    <div style="font-weight: 600;">${item.meaning}</div>
-                                    <div style="color: #666; font-size: 8pt;">${item.benefit}</div>
+                                    <div style="font-weight: 600; font-size: 8pt;">${item.meaning}</div>
+                                    <div style="color: #666; font-size: 7pt;">${item.benefit}</div>
                                 </div>
                             </div>
                             `).join('')}
@@ -524,21 +614,18 @@ function generateSpecSheetHTML(motor: any): string {
                     <div class="section-header" style="background: #28a745;">✓ What's Included</div>
                     <div class="section-content">
                         <div class="item-list">
-                            ${includedItems.map(item => `
+                            ${includedItems.slice(0, 4).map(item => `
                             <div class="list-item">
                                 <span class="checkmark">✓</span>
-                                <span>${item}</span>
+                                <span style="font-size: 8pt;">${item}</span>
                             </div>
                             `).join('')}
                         </div>
                         ${motor.base_price ? `
-                        <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #ddd;">
+                        <div style="margin-top: 8px; padding-top: 6px; border-top: 1px solid #ddd;">
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="font-weight: bold;">MSRP:</span>
-                                <span style="font-size: 14pt; font-weight: bold; color: #007DC5;">$${motor.base_price?.toLocaleString()}</span>
-                            </div>
-                            <div style="font-size: 8pt; color: #666; margin-top: 5px;">
-                                Professional installation available • Contact for promotions
+                                <span style="font-weight: bold; font-size: 8pt;">MSRP:</span>
+                                <span style="font-size: 11pt; font-weight: bold; color: #007DC5;">$${motor.base_price?.toLocaleString()}</span>
                             </div>
                         </div>
                         ` : ''}
@@ -547,11 +634,11 @@ function generateSpecSheetHTML(motor: any): string {
                 
                 <!-- Engine Specifications -->
                 <div class="section">
-                    <div class="section-header">Engine Specifications</div>
+                    <div class="section-header">Engine Specs</div>
                     <div class="section-content">
                         <table class="spec-table">
                             <tr class="spec-row">
-                                <td class="spec-label">Horsepower:</td>
+                                <td class="spec-label">Power:</td>
                                 <td class="spec-value">${motor.horsepower} HP</td>
                             </tr>
                             <tr class="spec-row">
@@ -563,10 +650,6 @@ function generateSpecSheetHTML(motor: any): string {
                                 <td class="spec-value">${engineSpecs.cylinders}</td>
                             </tr>
                             <tr class="spec-row">
-                                <td class="spec-label">Bore & Stroke:</td>
-                                <td class="spec-value">${engineSpecs.bore_stroke}</td>
-                            </tr>
-                            <tr class="spec-row">
                                 <td class="spec-label">Fuel System:</td>
                                 <td class="spec-value">${engineSpecs.fuel_system}</td>
                             </tr>
@@ -575,23 +658,23 @@ function generateSpecSheetHTML(motor: any): string {
                 </div>
             </div>
             
-            <!-- RIGHT COLUMN -->
+            <!-- COLUMN 2: Ideal Apps + Physical Specs -->  
             <div class="column">
                 <!-- Ideal Applications -->
                 <div class="section">
                     <div class="section-header">Ideal Applications</div>
                     <div class="section-content">
                         <div class="item-list">
-                            ${idealUses.map(use => `
+                            ${idealUses.slice(0, 3).map(use => `
                             <div class="list-item">
                                 <span style="color: #007DC5;">🎯</span>
-                                <span>${use}</span>
+                                <span style="font-size: 8pt;">${use}</span>
                             </div>
                             `).join('')}
                         </div>
-                        <div style="margin-top: 10px; padding: 8px; background: #e8f4fd; border-radius: 4px;">
-                            <strong style="color: #007DC5; font-size: 9pt;">Recommended Boat Size:</strong>
-                            <span style="font-size: 9pt; margin-left: 5px;">
+                        <div style="margin-top: 6px; padding: 4px; background: #e8f4fd; border-radius: 3px;">
+                            <strong style="color: #007DC5; font-size: 8pt;">Boat Size:</strong>
+                            <span style="font-size: 8pt; margin-left: 3px;">
                                 ${motor.horsepower <= 6 ? 'Up to 12ft' : 
                                   motor.horsepower <= 15 ? '12-16ft' : 
                                   motor.horsepower <= 30 ? '14-18ft' : 
@@ -605,7 +688,7 @@ function generateSpecSheetHTML(motor: any): string {
                 
                 <!-- Physical Specifications -->
                 <div class="section">
-                    <div class="section-header">Physical Specifications</div>
+                    <div class="section-header">Physical Specs</div>
                     <div class="section-content">
                         <table class="spec-table">
                             <tr class="spec-row">
@@ -624,33 +707,96 @@ function generateSpecSheetHTML(motor: any): string {
                                 <td class="spec-label">Oil Type:</td>
                                 <td class="spec-value">${physicalSpecs.oil_type}</td>
                             </tr>
-                            <tr class="spec-row">
-                                <td class="spec-label">Fuel Octane:</td>
-                                <td class="spec-value">${physicalSpecs.fuel_octane}</td>
-                            </tr>
                         </table>
                     </div>
                 </div>
                 
                 <!-- Features & Technology -->
                 <div class="section">
-                    <div class="section-header">Features & Technology</div>
+                    <div class="section-header">Features</div>
                     <div class="section-content">
                         <div class="item-list">
-                            ${features.length > 0 ? features.map(feature => `
+                            ${features.length > 0 ? features.slice(0, 4).map(feature => `
                             <div class="list-item">
                                 <span class="bullet">•</span>
-                                <span>${feature}</span>
+                                <span style="font-size: 8pt;">${feature}</span>
                             </div>
                             `).join('') : keyAdvantages.slice(0, 4).map(advantage => `
                             <div class="list-item">
                                 <span class="bullet">•</span>
-                                <span>${advantage}</span>
+                                <span style="font-size: 8pt;">${advantage}</span>
                             </div>
                             `).join('')}
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <!-- COLUMN 3: Performance + Key Advantages + Promotions -->
+            <div class="column">
+                <!-- Performance Data (Vertical Compact) -->
+                <div class="section">
+                    <div class="section-header">Performance Data</div>
+                    <div class="section-content">
+                        <div class="performance-compact">
+                            <div class="performance-item-compact">
+                                <span>Fuel Economy:</span>
+                                <span class="performance-value-compact">${performanceData.fuel_economy}</span>
+                            </div>
+                            <div class="performance-item-compact">
+                                <span>Est. Top Speed:</span>
+                                <span class="performance-value-compact">${performanceData.top_speed}</span>
+                            </div>
+                            <div class="performance-item-compact">
+                                <span>Noise Level:</span>
+                                <span class="performance-value-compact">${performanceData.noise_level}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Key Advantages -->
+                <div class="section">
+                    <div class="section-header">Key Advantages</div>
+                    <div class="section-content">
+                        <div class="item-list">
+                            ${keyAdvantages.slice(0, 4).map(advantage => `
+                            <div class="list-item">
+                                <span class="bullet">•</span>
+                                <span style="font-size: 8pt;">${advantage}</span>
+                            </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Current Promotions (Only if promotions exist) -->
+                ${relevantPromotions.length > 0 ? `
+                <div class="promotions-section">
+                    <div class="promotions-header">🎉 CURRENT PROMOTIONS</div>
+                    ${relevantPromotions.map(promo => {
+                        const expiryText = promo.end_date ? ` - Expires ${new Date(promo.end_date).toLocaleDateString('en-US', {month: 'short', day: 'numeric'})}` : ' - Limited time';
+                        let promoText = '';
+                        
+                        if (promo.discount_percentage > 0) {
+                            promoText = `${promo.discount_percentage}% off`;
+                        } else if (promo.discount_fixed_amount > 0) {
+                            promoText = `$${promo.discount_fixed_amount} off`;
+                        } else if (promo.warranty_extra_years > 0) {
+                            promoText = `+${promo.warranty_extra_years} year warranty`;
+                        } else if (promo.bonus_description) {
+                            promoText = promo.bonus_description;
+                        }
+                        
+                        return `
+                        <div class="promo-item">
+                            <span class="promo-bullet">•</span>
+                            <span><strong>${promo.name}:</strong> ${promoText}${expiryText}</span>
+                        </div>
+                        `;
+                    }).join('')}
+                </div>
+                ` : ''}
             </div>
         </div>
         
@@ -690,31 +836,31 @@ function generateSpecSheetHTML(motor: any): string {
             </div>
         </div>
         
-        <!-- Professional Footer -->
+        <!-- Compact Professional Footer -->
         <div class="footer">
-            <div style="font-weight: bold; font-size: 12pt; color: #000;">Harris Boat Works</div>
-            <div class="tagline">"Go Boldly" - Authorized Mercury Marine Dealer</div>
+            <div style="font-weight: bold; font-size: 10pt; color: #000;">${COMPANY_INFO.name}</div>
+            <div class="tagline">${COMPANY_INFO.tagline}</div>
             
             <div class="dealer-info">
                 <div class="contact-item">
                     <div class="contact-label">Address:</div>
-                    <div>123 Boat Works Drive<br>Rice Lake, ON K0M 2H0</div>
+                    <div style="font-size: 8pt;">${COMPANY_INFO.address.full}</div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-label">Contact:</div>
-                    <div>Phone: (705) 555-BOAT<br>Email: info@harrisboatworks.ca</div>
+                    <div style="font-size: 8pt;">Phone: ${COMPANY_INFO.contact.phone}<br>Email: ${COMPANY_INFO.contact.email}</div>
                 </div>
             </div>
             
-            <div style="font-weight: bold; margin: 10px 0;">
-                🌐 quote.harrisboatworks.ca - Get Your Quote Online
+            <div style="font-weight: bold; margin: 8px 0; font-size: 9pt;">
+                🌐 ${COMPANY_INFO.contact.website} - Get Your Quote Online 
             </div>
             
             <div class="disclaimer">
                 Specifications subject to change without notice. Consult your Harris Boat Works dealer for current specifications, warranty details, and promotional pricing. Professional installation recommended. All Mercury Marine warranties apply.
             </div>
             
-            <div style="font-size: 8pt; color: #999; margin-top: 10px;">
+            <div style="font-size: 7pt; color: #999; margin-top: 8px;">
                 Generated: ${new Date().toLocaleDateString()} | Harris Boat Works - Your Mercury Marine Experts
             </div>
         </div>

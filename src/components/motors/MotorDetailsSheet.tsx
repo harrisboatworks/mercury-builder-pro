@@ -105,7 +105,7 @@ export default function MotorDetailsSheet({
 
   const generateClientSidePDF = async (htmlContent: string, motorModel: string) => {
     try {
-      // Create a temporary container for the HTML content
+      // Create a temporary container for the HTML content with mobile-optimized settings
       const container = document.createElement('div');
       container.innerHTML = htmlContent;
       container.style.position = 'absolute';
@@ -114,25 +114,36 @@ export default function MotorDetailsSheet({
       container.style.height = 'auto';
       container.style.backgroundColor = 'white';
       container.style.fontFamily = 'Arial, sans-serif';
+      container.style.fontSize = '9pt';
+      container.style.lineHeight = '1.1';
       document.body.appendChild(container);
 
-      // Wait a moment for fonts and images to load
-      await new Promise(resolve => setTimeout(resolve, 500));
+      // Wait for fonts and images to load
+      await new Promise(resolve => setTimeout(resolve, 800));
 
-      // Generate canvas from HTML with optimized settings for professional output
+      // Generate canvas from HTML with mobile-optimized settings
+      const devicePixelRatio = window.devicePixelRatio || 1;
       const canvas = await html2canvas(container, {
-        scale: 2, // High resolution for crisp text
+        scale: Math.min(devicePixelRatio * 1.5, 3), // Adaptive scale for mobile
         useCORS: true,
         allowTaint: true,
         backgroundColor: '#ffffff',
         logging: false,
         imageTimeout: 15000,
+        width: 794,
+        height: container.scrollHeight,
         onclone: (clonedDoc) => {
-          // Ensure all styles are properly applied
+          // Ensure mobile-compatible styles
           const clonedContainer = clonedDoc.querySelector('div');
           if (clonedContainer) {
             clonedContainer.style.width = '794px';
             clonedContainer.style.fontFamily = 'Arial, sans-serif';
+            clonedContainer.style.fontSize = '9pt';
+            // Force single page if motor is under 100HP
+            if (typeof hp === 'number' && hp < 100) {
+              clonedContainer.style.maxHeight = '1123px'; // A4 height at 96 DPI
+              clonedContainer.style.overflow = 'hidden';
+            }
           }
         }
       });
