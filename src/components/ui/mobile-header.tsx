@@ -28,13 +28,13 @@ export default function MobileHeader({ title, onMenuClick, showMenu = false }: M
       scrolled ? 'py-3 shadow-md' : 'py-4'
     }`}>
       <div className="container mx-auto px-3">
-        <div className="flex items-center justify-between h-12">
+        <div className="flex items-start justify-between pt-1">
           {/* Left: Menu button or empty space */}
-          <div className="flex items-center justify-center min-w-[40px] h-full">
+          <div className="flex items-center min-w-[40px]">
             {showMenu ? (
               <button 
                 onClick={onMenuClick}
-                className="flex items-center justify-center w-10 h-10 text-gray-900 hover:text-gray-700 transition-colors rounded-full"
+                className="p-1 text-gray-900 hover:text-gray-700 transition-colors"
               >
                 <Menu className="w-5 h-5" />
               </button>
@@ -44,7 +44,7 @@ export default function MobileHeader({ title, onMenuClick, showMenu = false }: M
           </div>
           
           {/* Center: Harris Logo */}
-          <Link to="/" className="flex items-center justify-center h-full">
+          <Link to="/" className="flex items-center -mt-1">
             <img 
               src={harrisLogo} 
               alt="Harris Boat Works" 
@@ -55,7 +55,7 @@ export default function MobileHeader({ title, onMenuClick, showMenu = false }: M
           </Link>
           
           {/* Right: Mercury Logo */}
-          <div className="flex items-center justify-center min-w-[40px] h-full">
+          <div className="flex items-center min-w-[40px] justify-end -mt-1">
             <img 
               src={mercuryLogo} 
               alt="Mercury Marine" 
