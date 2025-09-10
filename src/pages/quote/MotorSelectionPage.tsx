@@ -340,8 +340,8 @@ export default function MotorSelectionPage() {
           
           {/* HP Range Chips - Horizontal Scroll */}
           <div className="space-y-4">
-            <div className="overflow-x-auto scrollbar-hide pr-4">
-              <div className="flex gap-2 pb-1 keep-flex">
+            <div className="overflow-x-auto scrollbar-hide">
+              <div className="flex gap-2 pb-1 keep-flex" style={{ width: 'max-content' }}>
                 {HP_RANGES.map(range => (
                   <button
                     key={range.id}
