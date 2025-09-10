@@ -9,8 +9,8 @@ import { useToast } from '@/components/ui/use-toast';
 import MotorCardPremium from '@/components/motors/MotorCardPremium';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Search } from 'lucide-react';
-import MobileHeader from '@/components/ui/mobile-header';
+import { Search, ArrowLeft } from 'lucide-react';
+import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import MotorFilterMenu from '@/components/quote-builder/MotorFilterMenu';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
@@ -300,30 +300,34 @@ export default function MotorSelectionPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <MobileHeader />
-        <main className="container mx-auto px-4 py-8">
-          <div className="flex items-center justify-center py-20">
-            <div className="text-center">
-              <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent"></div>
-              <p className="text-gray-600">Loading Mercury motors...</p>
-            </div>
+      <QuoteLayout title="Select Mercury Outboard Motor">
+        <div className="flex items-center justify-center py-20">
+          <div className="text-center">
+            <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
+            <p className="text-muted-foreground">Loading Mercury motors...</p>
           </div>
-        </main>
-      </div>
+        </div>
+      </QuoteLayout>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <MobileHeader 
-        showMenu={true}
-        onMenuClick={() => {}} // Will be handled by MotorFilterMenu
-      />
-      
-      <main className="space-y-6">
+    <QuoteLayout title="Select Mercury Outboard Motor">
+      <div className="space-y-6">
+        {/* Back button */}
+        <div className="flex items-center gap-4">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={() => navigate('/')}
+            className="flex items-center gap-2"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Home
+          </Button>
+        </div>
         {/* Clean Search - Porsche Style */}
-        <div className="container mx-auto px-4 pt-6">
+        <div>
           <div className="flex gap-3 items-center">
             <div className="relative flex-1">
               <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
@@ -346,7 +350,7 @@ export default function MotorSelectionPage() {
           </div>
         </div>
         
-        <div className="container mx-auto px-4">
+        <div>
           {/* Motors Grid */}
           {filteredMotors.length > 0 ? (
             <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -413,7 +417,7 @@ export default function MotorSelectionPage() {
             </div>
           )}
         </div>
-      </main>
+      </div>
 
       {/* Sticky Quote Bar - show when motor is selected */}
       {selectedMotor && (
@@ -432,6 +436,6 @@ export default function MotorSelectionPage() {
           }}
         />
       )}
-    </div>
+    </QuoteLayout>
   );
 }
