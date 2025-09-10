@@ -145,7 +145,7 @@ export default function MotorCardPremium({
               weightLbs={weightLbs}
               altOutput={altOutput}
               steering={steering}
-              promoText={promoText}
+              model={motor?.model || title}
             />
           </div>
         )}
