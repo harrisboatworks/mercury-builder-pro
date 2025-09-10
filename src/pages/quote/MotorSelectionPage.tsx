@@ -272,15 +272,7 @@ export default function MotorSelectionPage() {
 
   const getModelString = () => {
     if (!selectedMotor) return undefined;
-    
-    // Check if model already includes HP to avoid duplication
-    const modelIncludesHP = selectedMotor.model.toLowerCase().includes(`${selectedMotor.hp}hp`);
-    
-    if (modelIncludesHP) {
-      return `${selectedMotor.year} Mercury ${selectedMotor.model}`;
-    } else {
-      return `${selectedMotor.year} Mercury ${selectedMotor.hp}HP ${selectedMotor.model}`;
-    }
+    return selectedMotor.model;
   };
 
   const getTotalWithTax = () => {
