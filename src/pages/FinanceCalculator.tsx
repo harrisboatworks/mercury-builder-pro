@@ -103,7 +103,10 @@ export default function FinanceCalculator() {
   }, [promo]);
 
   const monthly = useMemo(() => {
-    const principal = Math.max(0, price - down);
+    // Add HST (13%) and $299 finance fee to the price
+    const priceWithHST = price * 1.13;
+    const financeAmount = priceWithHST + 299; // Add $299 finance fee
+    const principal = Math.max(0, financeAmount - down);
     const r = apr / 100 / 12;
     const n = term;
     if (!principal || principal <= 0) return 0;
@@ -196,6 +199,10 @@ export default function FinanceCalculator() {
               {promo.promo_end_date ? (<><span>(ends {new Date(promo.promo_end_date).toLocaleDateString()})</span></>) : null}
             </div>
           )}
+          
+          <div className="mt-3 text-xs text-muted-foreground">
+            * Includes 13% HST and $299 finance fee
+          </div>
 
           <div className="mt-6 flex items-baseline gap-3">
             <div className="text-muted-foreground">Estimated Monthly:</div>
