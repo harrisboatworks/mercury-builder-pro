@@ -13,6 +13,7 @@ import { money } from "../../lib/money";
 import { MotorImageGallery } from './MotorImageGallery';
 import { MonthlyPaymentDisplay } from '../quote-builder/MonthlyPaymentDisplay';
 import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption, getRange, getTransomRequirement, getBatteryRequirement, getFuelRequirement, getOilRequirement, getIdealUses, getIncludedAccessories, getAdditionalRequirements, cleanSpecSheetUrl, type Motor } from "../../lib/motor-helpers";
+import { findMotorSpecs, getMotorSpecs, type MercuryMotor } from "../../lib/data/mercury-motors";
 export default function MotorDetailsSheet({
   open,
   onClose,
@@ -211,6 +212,10 @@ export default function MotorDetailsSheet({
   const cleanedSpecUrl = cleanSpecSheetUrl(specSheetUrl);
   const includedAccessories = motor ? getIncludedAccessories(motor) : [];
   const additionalRequirements = motor ? getAdditionalRequirements(motor) : [];
+  
+  // Find matching Mercury specs - Full specs available for AI assistant
+  const motorSpecs = motor ? findMotorSpecs(typeof hp === 'string' ? parseInt(hp) : hp || 0, title) : undefined;
+  
   if (!open) return null;
   const displayFeatures = Array.isArray(features) ? features : [];
   const cleanedDescription = String(description || '').replace(/Can't find what you're looking for\?[\s\S]*/i, '').replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '').trim();
@@ -252,7 +257,7 @@ export default function MotorDetailsSheet({
 
 
           {/* Scrollable Content Area */}
-          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto overscroll-contain">
+          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto overscroll-contain pt-20">
             <div className="p-4 space-y-8">
               
               {/* Motor Image */}
@@ -282,21 +287,53 @@ export default function MotorDetailsSheet({
               </div>
 
               {/* Technical Specifications Section */}
-              {motor?.specifications && Object.keys(motor.specifications).length > 0 && <div className="space-y-3">
-                  <h3 className="font-semibold text-base text-slate-900 dark:text-white">Technical Specifications</h3>
-                  <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-3">
-                    <div className="grid gap-2">
-                      {Object.entries(motor.specifications).map(([key, value]) => <div key={key} className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700 last:border-0">
+              <div className="space-y-3">
+                <h3 className="font-semibold text-base text-slate-900 dark:text-white">Technical Specifications</h3>
+                <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-3">
+                  <div className="grid gap-2">
+                    {motorSpecs && (
+                      <>
+                        <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
+                          <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Engine Type</span>
+                          <span className="text-sm text-slate-900 dark:text-white font-medium">
+                            {motorSpecs.cylinders} {motorSpecs.displacement}
+                          </span>
+                        </div>
+                        <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
+                          <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Max RPM</span>
+                          <span className="text-sm text-slate-900 dark:text-white font-medium">{motorSpecs.max_rpm}</span>
+                        </div>
+                        <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
+                          <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Gear Ratio</span>
+                          <span className="text-sm text-slate-900 dark:text-white font-medium">{motorSpecs.gear_ratio}</span>
+                        </div>
+                        {motorSpecs.gearcase && (
+                          <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
+                            <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Gearcase</span>
+                            <span className="text-sm text-slate-900 dark:text-white font-medium">{motorSpecs.gearcase}</span>
+                          </div>
+                        )}
+                        <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700 last:border-0">
+                          <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Weight</span>
+                          <span className="text-sm text-slate-900 dark:text-white font-medium">{motorSpecs.weight_kg} kg</span>
+                        </div>
+                      </>
+                    )}
+                    {motor?.specifications && Object.keys(motor.specifications).length > 0 && 
+                      Object.entries(motor.specifications).map(([key, value]) => (
+                        <div key={key} className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700 last:border-0">
                           <span className="text-sm font-medium text-slate-600 dark:text-slate-400 capitalize">
                             {key.replace(/_/g, ' ').replace(/([A-Z])/g, ' $1').trim()}
                           </span>
                           <span className="text-sm text-slate-900 dark:text-white font-medium">
                             {String(value)}
                           </span>
-                        </div>)}
-                    </div>
+                        </div>
+                      ))
+                    }
                   </div>
-                </div>}
+                </div>
+              </div>
 
               {/* Key Features Section */}
               {displayFeatures.length > 0 && <div className="space-y-4">
@@ -319,12 +356,37 @@ export default function MotorDetailsSheet({
                   What's Included
                 </h2>
                 <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 p-4 rounded-lg">
-                  {includedAccessories.length > 0 ? <ul className="text-sm space-y-1">
-                      {includedAccessories.map((accessory, i) => <li key={i} className="flex items-start">
+                  <ul className="text-sm space-y-1">
+                    {motorSpecs && (
+                      <>
+                        <li className="flex items-start">
                           <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                          <span className="text-slate-700 dark:text-slate-300">{accessory}</span>
-                        </li>)}
-                    </ul> : <p className="text-sm text-slate-600 dark:text-slate-400">Standard motor components included. Contact us for detailed specifications.</p>}
+                          <span className="text-slate-700 dark:text-slate-300">Fuel System: {motorSpecs.fuel_system}</span>
+                        </li>
+                        <li className="flex items-start">
+                          <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                          <span className="text-slate-700 dark:text-slate-300">Alternator: {motorSpecs.alternator}</span>
+                        </li>
+                        <li className="flex items-start">
+                          <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                          <span className="text-slate-700 dark:text-slate-300">Starting: {motorSpecs.starting}</span>
+                        </li>
+                        <li className="flex items-start">
+                          <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                          <span className="text-slate-700 dark:text-slate-300">Steering: {motorSpecs.steering}</span>
+                        </li>
+                      </>
+                    )}
+                    {includedAccessories.map((accessory, i) => (
+                      <li key={`acc-${i}`} className="flex items-start">
+                        <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-700 dark:text-slate-300">{accessory}</span>
+                      </li>
+                    ))}
+                    {!motorSpecs && includedAccessories.length === 0 && (
+                      <li className="text-slate-600 dark:text-slate-400">Standard motor components included. Contact us for detailed specifications.</li>
+                    )}
+                  </ul>
                 </div>
               </div>
 
@@ -334,15 +396,38 @@ export default function MotorDetailsSheet({
                   Installation Requirements
                 </h2>
                 <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-4 rounded-lg">
-                  {additionalRequirements.length > 0 ? <ul className="text-sm space-y-1">
-                      {additionalRequirements.map((requirement, i) => <li key={i} className="flex items-start">
+                  <ul className="text-sm space-y-1">
+                    {motorSpecs && (
+                      <>
+                        <li className="flex items-start">
                           <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
                           <div className="flex-1 text-slate-700 dark:text-slate-300">
-                            <span className="font-medium">{requirement.item}</span>
-                            <span className="text-slate-500 dark:text-slate-400 ml-2">({requirement.cost})</span>
+                            <span className="font-medium">Available Transom Heights</span>
+                            <span className="text-slate-500 dark:text-slate-400 ml-2">({motorSpecs.transom_heights.join(', ')})</span>
                           </div>
-                        </li>)}
-                    </ul> : <p className="text-sm text-slate-600 dark:text-slate-400">Standard installation requirements apply. Our certified technicians will handle all setup.</p>}
+                        </li>
+                        <li className="flex items-start">
+                          <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
+                          <div className="flex-1 text-slate-700 dark:text-slate-300">
+                            <span className="font-medium">Weight</span>
+                            <span className="text-slate-500 dark:text-slate-400 ml-2">({motorSpecs.weight_kg} kg dry weight)</span>
+                          </div>
+                        </li>
+                      </>
+                    )}
+                    {additionalRequirements.map((requirement, i) => (
+                      <li key={`req-${i}`} className="flex items-start">
+                        <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
+                        <div className="flex-1 text-slate-700 dark:text-slate-300">
+                          <span className="font-medium">{requirement.item}</span>
+                          <span className="text-slate-500 dark:text-slate-400 ml-2">({requirement.cost})</span>
+                        </div>
+                      </li>
+                    ))}
+                    {!motorSpecs && additionalRequirements.length === 0 && (
+                      <li className="text-slate-600 dark:text-slate-400">Standard installation requirements apply. Our certified technicians will handle all setup.</li>
+                    )}
+                  </ul>
                 </div>
               </div>
 
@@ -352,14 +437,38 @@ export default function MotorDetailsSheet({
                   Performance Estimates
                 </h2>
                 <div className="grid grid-cols-2 gap-4 text-sm">
-                  {hp && <div className="bg-slate-50 dark:bg-slate-800 p-3 rounded-lg">
-                      <div className="text-slate-500 dark:text-slate-400">Boat Size</div>
-                      <div className="font-medium text-slate-900 dark:text-white">{getRecommendedBoatSize(typeof hp === 'string' ? parseInt(hp) : hp)}</div>
-                    </div>}
-                  {hp && <div className="bg-slate-50 dark:bg-slate-800 p-3 rounded-lg">
-                      <div className="text-slate-500 dark:text-slate-400">Est. Speed</div>
-                      <div className="font-medium text-slate-900 dark:text-white">{getEstimatedSpeed(typeof hp === 'string' ? parseInt(hp) : hp)}</div>
-                    </div>}
+                  {motorSpecs && (
+                    <>
+                      <div className="bg-slate-50 dark:bg-slate-800 p-3 rounded-lg">
+                        <div className="text-slate-500 dark:text-slate-400">Horsepower</div>
+                        <div className="font-medium text-slate-900 dark:text-white">{motorSpecs.hp} HP</div>
+                      </div>
+                      <div className="bg-slate-50 dark:bg-slate-800 p-3 rounded-lg">
+                        <div className="text-slate-500 dark:text-slate-400">Displacement</div>
+                        <div className="font-medium text-slate-900 dark:text-white">{motorSpecs.displacement}</div>
+                      </div>
+                      <div className="bg-slate-50 dark:bg-slate-800 p-3 rounded-lg">
+                        <div className="text-slate-500 dark:text-slate-400">Max RPM Range</div>
+                        <div className="font-medium text-slate-900 dark:text-white">{motorSpecs.max_rpm}</div>
+                      </div>
+                      <div className="bg-slate-50 dark:bg-slate-800 p-3 rounded-lg">
+                        <div className="text-slate-500 dark:text-slate-400">Fuel Requirements</div>
+                        <div className="font-medium text-slate-900 dark:text-white">{motorSpecs.fuel_type}</div>
+                      </div>
+                    </>
+                  )}
+                  {!motorSpecs && hp && (
+                    <>
+                      <div className="bg-slate-50 dark:bg-slate-800 p-3 rounded-lg">
+                        <div className="text-slate-500 dark:text-slate-400">Boat Size</div>
+                        <div className="font-medium text-slate-900 dark:text-white">{getRecommendedBoatSize(typeof hp === 'string' ? parseInt(hp) : hp)}</div>
+                      </div>
+                      <div className="bg-slate-50 dark:bg-slate-800 p-3 rounded-lg">
+                        <div className="text-slate-500 dark:text-slate-400">Est. Speed</div>
+                        <div className="font-medium text-slate-900 dark:text-white">{getEstimatedSpeed(typeof hp === 'string' ? parseInt(hp) : hp)}</div>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
 

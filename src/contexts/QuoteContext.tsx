@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useReducer, useEffect, useCallback, useRef, useMemo, useState } from 'react';
 import { Motor, BoatInfo, QuoteData } from '@/components/QuoteBuilder';
+import { findMotorSpecs, type MercuryMotor } from '@/lib/data/mercury-motors';
 
 interface WarrantyConfig {
   extendedYears: number;
@@ -9,6 +10,7 @@ interface WarrantyConfig {
 
 interface QuoteState {
   motor: Motor | null;
+  motorSpecs: MercuryMotor | null; // Full specs available for AI assistant
   purchasePath: 'loose' | 'installed' | null;
   boatInfo: BoatInfo | null;
   tradeInInfo: any | null;
@@ -48,6 +50,7 @@ type QuoteAction =
 
 const initialState: QuoteState = {
   motor: null,
+  motorSpecs: null,
   purchasePath: null,
   boatInfo: null,
   tradeInInfo: null,
@@ -87,7 +90,8 @@ const QuoteContext = createContext<{
 function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
   switch (action.type) {
     case 'SET_MOTOR':
-      return { ...state, motor: action.payload };
+      const motorSpecs = findMotorSpecs(action.payload.hp, action.payload.model);
+      return { ...state, motor: action.payload, motorSpecs };
     case 'SET_PURCHASE_PATH':
       return { ...state, purchasePath: action.payload };
     case 'SET_BOAT_INFO':
