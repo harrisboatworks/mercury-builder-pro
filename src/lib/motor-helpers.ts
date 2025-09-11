@@ -286,10 +286,26 @@ export const getIncludedAccessories = (motor: Motor) => {
   return accessories;
 };
 
+export const requiresMercuryControls = (motor: Motor) => {
+  const model = (motor.model || '').toUpperCase();
+  return !isTillerMotor(model);
+};
+
 export const getAdditionalRequirements = (motor: Motor) => {
   const requirements = [];
   const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
   const model = (motor.model || '').toUpperCase();
+  
+  // Mercury controls and cables for non-tiller motors
+  if (requiresMercuryControls(motor)) {
+    if (hp <= 30) {
+      requirements.push({ item: 'Mercury controls & cables', cost: '$800-1,000' });
+    } else if (hp <= 115) {
+      requirements.push({ item: 'Mercury digital controls & cables', cost: '$1,000-1,300' });
+    } else {
+      requirements.push({ item: 'Mercury premium controls & cables', cost: '$1,200-1,500' });
+    }
+  }
   
   // Battery requirement for electric start
   if (!model.includes('M') || model.includes('E')) {

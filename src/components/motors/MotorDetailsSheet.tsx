@@ -12,7 +12,7 @@ import html2canvas from 'html2canvas';
 import { money } from "../../lib/money";
 import { MotorImageGallery } from './MotorImageGallery';
 import { MonthlyPaymentDisplay } from '../quote-builder/MonthlyPaymentDisplay';
-import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption, getRange, getTransomRequirement, getBatteryRequirement, getFuelRequirement, getOilRequirement, getIdealUses, getIncludedAccessories, getAdditionalRequirements, cleanSpecSheetUrl, type Motor } from "../../lib/motor-helpers";
+import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption, getRange, getTransomRequirement, getBatteryRequirement, getFuelRequirement, getOilRequirement, getIdealUses, getIncludedAccessories, getAdditionalRequirements, cleanSpecSheetUrl, requiresMercuryControls, isTillerMotor, type Motor } from "../../lib/motor-helpers";
 import { findMotorSpecs, getMotorSpecs, type MercuryMotor } from "../../lib/data/mercury-motors";
 export default function MotorDetailsSheet({
   open,
@@ -454,6 +454,64 @@ export default function MotorDetailsSheet({
                   </ul>
                 </div>
               </div>
+
+              {/* Controls & Installation Notice */}
+              {motor && (
+                <div className="space-y-4">
+                  <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                    Controls & Installation
+                  </h2>
+                  {requiresMercuryControls(motor) ? (
+                    <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 p-4 rounded-lg">
+                      <div className="flex items-start gap-3">
+                        <Wrench className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5 flex-shrink-0" />
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">
+                            Mercury Controls & Cables Required
+                          </h3>
+                          <p className="text-sm text-blue-800 dark:text-blue-200 mb-2">
+                            All remote control motors require Mercury digital throttle & shift controls, steering cables, and wiring harness for proper operation.
+                          </p>
+                          <div className="text-sm text-blue-700 dark:text-blue-300">
+                            <strong>Installation includes:</strong>
+                            <ul className="list-disc list-inside mt-1 space-y-1">
+                              <li>Digital throttle & shift controls</li>
+                              <li>Steering cables and hardware</li>
+                              <li>Complete wiring harness</li>
+                              <li>Professional installation & setup</li>
+                            </ul>
+                          </div>
+                          <div className="mt-3 text-sm font-medium text-blue-900 dark:text-blue-100">
+                            Cost: {(() => {
+                              const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
+                              if (hpValue <= 30) return '$800-1,000';
+                              if (hpValue <= 115) return '$1,000-1,300';
+                              return '$1,200-1,500';
+                            })()} (depending on motor size and boat configuration)
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 p-4 rounded-lg">
+                      <div className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-green-900 dark:text-green-100 mb-2">
+                            No Additional Controls Required
+                          </h3>
+                          <p className="text-sm text-green-800 dark:text-green-200">
+                            This tiller motor includes integrated steering and throttle controls. No additional controls or cables needed - just mount and go!
+                          </p>
+                          <div className="mt-2 text-sm font-medium text-green-900 dark:text-green-100">
+                            Savings: $800-1,500 compared to remote control models
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
 
               {/* Performance Section */}
               <div className="space-y-4">

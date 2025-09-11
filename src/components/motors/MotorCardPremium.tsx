@@ -5,7 +5,7 @@ import { Info } from "lucide-react";
 import MotorQuickInfo from "./MotorQuickInfo";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import type { Motor } from '../../lib/motor-helpers';
-import { getHPDescriptor, getPopularityIndicator, getBadgeColor } from '../../lib/motor-helpers';
+import { getHPDescriptor, getPopularityIndicator, getBadgeColor, requiresMercuryControls, isTillerMotor } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 import { getFinancingDisplay } from '@/lib/finance';
@@ -136,6 +136,13 @@ export default function MotorCardPremium({
                 <p className="text-xs text-slate-600 dark:text-slate-400">
                   {getHPDescriptor(hpNum)}
                 </p>
+                
+                {/* Controls required indicator for non-tiller motors */}
+                {motor && requiresMercuryControls(motor) && (
+                  <p className="text-xs text-blue-600 dark:text-blue-300 font-medium">
+                    + Controls Required
+                  </p>
+                )}
                 
                 {/* Badge container - ALWAYS rendered with minimum height to prevent layout shift */}
                 <div className="h-4 transition-opacity duration-300">
