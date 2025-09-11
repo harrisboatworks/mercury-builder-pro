@@ -346,19 +346,39 @@ export default function MotorDetailsSheet({
               </div>
 
               {/* Key Features Section */}
-              {displayFeatures.length > 0 && <div className="space-y-4">
-                  <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
-                    Key Features
-                  </h2>
-                  <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
-                    <ul className="text-sm space-y-2">
-                      {displayFeatures.slice(0, 8).map((feature, i) => <li key={`${feature}-${i}`} className="flex items-start">
-                          <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
-                          <span className="text-slate-700 dark:text-slate-300">{feature}</span>
-                        </li>)}
-                    </ul>
-                  </div>
-                </div>}
+              <div className="space-y-4">
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                  Key Features
+                </h2>
+                <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
+                  <ul className="text-sm space-y-2">
+                    {/* Technical specifications moved from "What's Included" */}
+                    {motorSpecs && <>
+                      <li className="flex items-start">
+                        <span className="text-blue-500 mr-2 flex-shrink-0">•</span>
+                        <span className="text-slate-700 dark:text-slate-300"><strong>Fuel System:</strong> {motorSpecs.fuel_system}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-blue-500 mr-2 flex-shrink-0">•</span>
+                        <span className="text-slate-700 dark:text-slate-300"><strong>Alternator:</strong> {motorSpecs.alternator}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-blue-500 mr-2 flex-shrink-0">•</span>
+                        <span className="text-slate-700 dark:text-slate-300"><strong>Starting:</strong> {motorSpecs.starting}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-blue-500 mr-2 flex-shrink-0">•</span>
+                        <span className="text-slate-700 dark:text-slate-300"><strong>Steering:</strong> {motorSpecs.steering}</span>
+                      </li>
+                    </>}
+                    {/* Original features */}
+                    {displayFeatures.slice(0, 8).map((feature, i) => <li key={`${feature}-${i}`} className="flex items-start">
+                        <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
+                        <span className="text-slate-700 dark:text-slate-300">{feature}</span>
+                      </li>)}
+                  </ul>
+                </div>
+              </div>
 
               {/* What's Included Section */}
               <div className="space-y-4">
@@ -366,30 +386,15 @@ export default function MotorDetailsSheet({
                   What's Included
                 </h2>
                 <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 p-4 rounded-lg">
+                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Physical items included with your motor purchase:</p>
                   <ul className="text-sm space-y-1">
-                    {motorSpecs && <>
-                        <li className="flex items-start">
-                          <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                          <span className="text-slate-700 dark:text-slate-300">Fuel System: {motorSpecs.fuel_system}</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                          <span className="text-slate-700 dark:text-slate-300">Alternator: {motorSpecs.alternator}</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                          <span className="text-slate-700 dark:text-slate-300">Starting: {motorSpecs.starting}</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                          <span className="text-slate-700 dark:text-slate-300">Steering: {motorSpecs.steering}</span>
-                        </li>
-                      </>}
-                    {includedAccessories.map((accessory, i) => <li key={`acc-${i}`} className="flex items-start">
+                    {includedAccessories.length > 0 ? includedAccessories.map((accessory, i) => <li key={`acc-${i}`} className="flex items-start">
                         <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                         <span className="text-slate-700 dark:text-slate-300">{accessory}</span>
-                      </li>)}
-                    {!motorSpecs && includedAccessories.length === 0 && <li className="text-slate-600 dark:text-slate-400">Standard motor components included. Contact us for detailed specifications.</li>}
+                      </li>) : <li className="flex items-start">
+                        <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-700 dark:text-slate-300">Owner's manual & warranty documentation</span>
+                      </li>}
                   </ul>
                 </div>
               </div>
