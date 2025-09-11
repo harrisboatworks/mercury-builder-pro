@@ -355,19 +355,19 @@ export default function MotorDetailsSheet({
                     {/* Technical specifications moved from "What's Included" */}
                     {motorSpecs && <>
                       <li className="flex items-start">
-                        <span className="text-blue-500 mr-2 flex-shrink-0">•</span>
+                        <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
                         <span className="text-slate-700 dark:text-slate-300"><strong>Fuel System:</strong> {motorSpecs.fuel_system}</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-blue-500 mr-2 flex-shrink-0">•</span>
+                        <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
                         <span className="text-slate-700 dark:text-slate-300"><strong>Alternator:</strong> {motorSpecs.alternator}</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-blue-500 mr-2 flex-shrink-0">•</span>
+                        <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
                         <span className="text-slate-700 dark:text-slate-300"><strong>Starting:</strong> {motorSpecs.starting}</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-blue-500 mr-2 flex-shrink-0">•</span>
+                        <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
                         <span className="text-slate-700 dark:text-slate-300"><strong>Steering:</strong> {motorSpecs.steering}</span>
                       </li>
                     </>}
