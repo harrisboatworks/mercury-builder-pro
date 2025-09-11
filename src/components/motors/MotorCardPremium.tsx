@@ -92,7 +92,7 @@ export default function MotorCardPremium({
               <img 
                 src={img} 
                 alt="" 
-                className="mb-3 h-40 w-full rounded-lg object-contain bg-slate-50 dark:bg-slate-800" 
+                className="mb-3 h-40 w-full rounded-lg object-contain bg-white dark:bg-slate-900" 
               />
             )}
             <div className="text-[15px] font-semibold text-slate-900 dark:text-white">
