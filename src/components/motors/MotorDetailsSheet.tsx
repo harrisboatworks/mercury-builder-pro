@@ -14,6 +14,7 @@ import { MotorImageGallery } from './MotorImageGallery';
 import { MonthlyPaymentDisplay } from '../quote-builder/MonthlyPaymentDisplay';
 import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption, getRange, getTransomRequirement, getBatteryRequirement, getFuelRequirement, getOilRequirement, getIdealUses, getIncludedAccessories, getAdditionalRequirements, cleanSpecSheetUrl, requiresMercuryControls, isTillerMotor, type Motor } from "../../lib/motor-helpers";
 import { findMotorSpecs, getMotorSpecs, type MercuryMotor } from "../../lib/data/mercury-motors";
+import { getReviewsForMotor, getReviewCount } from "../../lib/data/mercury-reviews";
 export default function MotorDetailsSheet({
   open,
   onClose,
@@ -541,13 +542,47 @@ export default function MotorDetailsSheet({
                 </div>
               </div>
 
-              {/* Description Section */}
-              {cleanedDescription && <div className="space-y-4">
-                  <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
-                    Description
-                  </h2>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{cleanedDescription}</p>
-                </div>}
+              {/* Customer Reviews Section */}
+              <div className="space-y-4">
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                  What Customers Say
+                </h2>
+                
+                {(() => {
+                  const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
+                  const reviews = getReviewsForMotor(hpValue, title);
+                  const review = reviews[0]; // Get first review
+                  const reviewCount = getReviewCount(hpValue, title);
+
+                  return review ? (
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-1 text-yellow-500">
+                        <span>★★★★★</span>
+                        <span className="text-sm text-muted-foreground ml-2">
+                          ({reviewCount} review{reviewCount !== 1 ? 's' : ''})
+                        </span>
+                      </div>
+                      
+                      <blockquote className="border-l-2 border-primary/20 pl-4">
+                        <p className="text-sm italic text-foreground/90">
+                          "{review.comment}"
+                        </p>
+                        <footer className="text-xs text-muted-foreground mt-2">
+                          — {review.reviewer}, {review.location}
+                        </footer>
+                      </blockquote>
+                    </div>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">
+                      New model - contact us for customer experiences
+                    </p>
+                  );
+                })()}
+                
+                <div className="text-xs text-muted-foreground pt-2 border-t">
+                  Available at Harris Boat Works • (905) 342-2153
+                </div>
+              </div>
             </div>
           </div>
 
