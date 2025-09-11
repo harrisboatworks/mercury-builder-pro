@@ -12,7 +12,6 @@ export default function MotorQuickInfo({
       <div className="grid gap-1">
         {hp && <div><span className="text-muted-foreground">Horsepower:</span> <span className="font-medium">{hp}</span></div>}
         {weightLbs && <div><span className="text-muted-foreground">Weight:</span> <span className="font-medium">{weightLbs} lbs</span></div>}
-        {altOutput && <div><span className="text-muted-foreground">Alt Output:</span> <span className="font-medium">{altOutput}</span></div>}
         {model && (() => {
           console.log('MotorQuickInfo - model:', model);
           const decoded = decodeModelName(model);
