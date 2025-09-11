@@ -11,6 +11,7 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { money } from "../../lib/money";
 import { MotorImageGallery } from './MotorImageGallery';
+import { MonthlyPaymentDisplay } from '../quote-builder/MonthlyPaymentDisplay';
 import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption, getRange, getTransomRequirement, getBatteryRequirement, getFuelRequirement, getOilRequirement, getIdealUses, getIncludedAccessories, getAdditionalRequirements, cleanSpecSheetUrl, type Motor } from "../../lib/motor-helpers";
 export default function MotorDetailsSheet({
   open,
@@ -392,23 +393,31 @@ export default function MotorDetailsSheet({
 
           {/* Compact Sticky Bottom Action Bar */}
           <div className="sticky bottom-0 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-3 sm:p-4 sm:rounded-b-xl">
-            {/* Mobile: Optimized Layout */}
+            {/* Mobile: Space-Optimized Layout */}
             <div className="sm:hidden">
-              {/* Price Row */}
-              <div className="flex justify-center mb-3 pb-2 border-b border-slate-200 dark:border-slate-700">
-                <div className="text-center">
-                  <p className="text-lg font-bold text-slate-900 dark:text-white">
-                    {typeof price === "number" ? money(price) : 'Call for Price'}
-                  </p>
-                  <p className="text-xs text-green-600 dark:text-green-400">+2Y Warranty</p>
+              {/* Price & Payment Info */}
+              <div className="mb-2">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <p className="text-base font-bold text-slate-900 dark:text-white">
+                      {typeof price === "number" ? money(price) : 'Call for Price'}
+                    </p>
+                    <p className="text-xs text-green-600 dark:text-green-400">+2Y Warranty</p>
+                  </div>
+                  <div className="text-right">
+                    {typeof price === "number" && (
+                      <MonthlyPaymentDisplay motorPrice={price} />
+                    )}
+                  </div>
                 </div>
               </div>
-              {/* Button Row */}
-              <div className="flex gap-3">
-                <button onClick={handleCalculatePayment} className="flex-1 py-3 px-4 text-sm bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-medium">
+              
+              {/* Buttons Side-by-Side */}
+              <div className="flex gap-2 mt-2">
+                <button onClick={handleCalculatePayment} className="flex-1 py-2 px-3 text-sm bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-medium">
                   Calculate
                 </button>
-                <Button onClick={handleSelectMotor} className="flex-1 py-3 px-4 text-sm font-medium">
+                <Button onClick={handleSelectMotor} className="flex-1 py-2 px-3 text-sm font-medium">
                   Add to Quote
                 </Button>
               </div>
