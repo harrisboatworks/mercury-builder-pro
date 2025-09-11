@@ -34,7 +34,7 @@ export function money(amount: number): string {
 }
 
 /**
- * Calculate monthly payment for financing
+ * Calculate monthly payment for financing with smart term selection
  */
 export function calculateMonthly(
   amount: number, 

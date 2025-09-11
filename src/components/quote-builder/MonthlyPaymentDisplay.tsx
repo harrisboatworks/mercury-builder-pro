@@ -1,5 +1,7 @@
 
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
+import { getFinancingDisplay } from '@/lib/finance';
+import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 
 interface MonthlyPaymentDisplayProps {
   motorPrice: number;
@@ -7,19 +9,19 @@ interface MonthlyPaymentDisplayProps {
 
 export function MonthlyPaymentDisplay({ motorPrice }: MonthlyPaymentDisplayProps) {
   const monthlyPayment = useMotorMonthlyPayment({ motorPrice, minimumThreshold: 1000 });
-  
-  // Debug logging
-  console.log('MonthlyPaymentDisplay:', { motorPrice, monthlyPayment });
+  const { promo } = useActiveFinancingPromo();
   
   if (!monthlyPayment || motorPrice <= 5000) return null;
+  
+  const displayText = getFinancingDisplay(motorPrice * 1.13, promo?.rate || null);
   
   return (
     <div className="mt-0 mb-1 text-center">
       <div className="text-sm text-muted-foreground">
-        Starting at <span className="font-semibold text-foreground">${monthlyPayment.amount.toLocaleString()}/mo</span>*
+        {displayText}*
       </div>
       <div className="text-xs text-muted-foreground mt-1">
-        *Est. with {monthlyPayment.rate}%{monthlyPayment.isPromoRate ? ' promo' : ''} rate, 60 mo, incl. HST
+        *Estimated payment including HST
       </div>
     </div>
   );

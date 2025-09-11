@@ -1,6 +1,6 @@
 "use client";
 import { money } from "@/lib/money";
-import { calculateMonthly } from "@/lib/finance";
+import { calculateMonthlyPayment, getFinancingDisplay } from "@/lib/finance";
 import { useEffect, useState } from "react";
 
 type HeroPriceProps = {
@@ -36,7 +36,7 @@ export default function HeroPrice({
     requestAnimationFrame(step);
   }, [savings]);
 
-  const monthly = calculateMonthly(yourPriceBeforeTax, rate, termMonths);
+  const { payment: monthly } = calculateMonthlyPayment(yourPriceBeforeTax, rate !== 7.99 ? rate : null);
 
   return (
     <section aria-label="Your price summary" className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900">
@@ -65,8 +65,8 @@ export default function HeroPrice({
 
           {showMonthly && (
             <span className="text-sm text-slate-700 dark:text-slate-300">
-              From <span className="font-semibold">{money(Math.round(monthly))}/mo</span>
-              <span className="text-slate-500"> • 60 mo @ {rate}% OAC</span>
+              {getFinancingDisplay(yourPriceBeforeTax, rate !== 7.99 ? rate : null)}
+              <span className="text-slate-500"> • OAC</span>
             </span>
           )}
         </div>
