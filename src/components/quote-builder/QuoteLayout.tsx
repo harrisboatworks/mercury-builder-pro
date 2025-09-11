@@ -107,9 +107,9 @@ export const QuoteLayout = ({
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-6">
               <Link to="/" className="flex items-center space-x-4">
-                <img src={harrisLogo} alt="Harris Boat Works" className="h-16 w-auto" />
+                <img src={harrisLogo} alt="Harris Boat Works" className="h-8 w-auto sm:h-12 md:h-14 lg:h-16" />
                 <div className="h-8 w-px bg-border"></div>
-                <img src={mercuryLogo} alt="Mercury Marine" className="h-12 w-auto" />
+                <img src={mercuryLogo} alt="Mercury Marine" className="h-6 w-auto sm:h-8 md:h-10 lg:h-12" />
               </Link>
               <div className="hidden lg:block">
                 <h1 className="text-2xl font-bold text-foreground">
