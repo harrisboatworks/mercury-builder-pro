@@ -29,16 +29,37 @@ export default async function handler(req, res) {
 
     const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
-    const { data, error } = await supabase.functions.invoke('scrape-inventory', {
+    // First update inventory
+    const { data: inventoryData, error: inventoryError } = await supabase.functions.invoke('scrape-inventory', {
       body: { trigger: 'vercel-cron', at: new Date().toISOString() },
     });
 
-    if (error) {
-      console.error('scrape-inventory error:', error);
-      return res.status(500).json({ ok: false, error: error.message || 'Invoke failed' });
+    if (inventoryError) {
+      console.error('scrape-inventory error:', inventoryError);
+      return res.status(500).json({ ok: false, error: inventoryError.message || 'Inventory scrape failed' });
     }
 
-    return res.status(200).json({ ok: true, result: data });
+    // Then trigger image scraping for motors without images
+    console.log('Triggering motor image scraping for new motors...');
+    const { data: imageData, error: imageError } = await supabase.functions.invoke('scrape-motor-details', {
+      body: { 
+        trigger: 'auto-inventory-update',
+        prioritize_missing_images: true,
+        batch_size: 10
+      },
+    });
+
+    if (imageError) {
+      console.log('Motor image scraping had issues:', imageError.message);
+      // Don't fail the whole job if image scraping fails
+    }
+
+    const result = {
+      inventory: inventoryData,
+      images: imageData || { error: imageError?.message }
+    };
+
+    return res.status(200).json({ ok: true, result });
   } catch (e) {
     console.error('update-inventory error:', e);
     return res.status(500).json({ ok: false, error: (e as Error)?.message || 'Unexpected error' });

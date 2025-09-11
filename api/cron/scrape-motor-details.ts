@@ -7,11 +7,60 @@ export const config = {
 
 export default async function handler(req, res) {
   try {
-    if (req.method !== 'GET' && req.method !== 'POST') {
-      res.setHeader('Allow', 'GET, POST');
-      return res.status(405).json({ ok: false, error: 'Method Not Allowed' });
+    if (req.method !== 'OPTIONS' && req.method !== 'POST') {
+      res.setHeader('Allow', 'OPTIONS, POST');
+      return res.status(405).json({ error: 'Method not allowed' });
     }
 
+    // Handle CORS preflight requests
+    if (req.method === 'OPTIONS') {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Headers', 'authorization, x-client-info, apikey, content-type');
+      return res.status(200).end();
+    }
+
+    const { motor_id, detail_url, trigger, prioritize_missing_images, batch_size } = req.body;
+
+    // Handle batch processing requests
+    if (trigger === 'auto-inventory-update' || prioritize_missing_images) {
+      console.log('Handling batch image scraping request');
+      
+      const SUPABASE_URL = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+      if (!SUPABASE_URL || !SERVICE_ROLE_KEY) {
+        return res.status(500).json({ error: 'Missing Supabase configuration' });
+      }
+
+      const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
+
+      // Call the batch processing function
+      const { data, error } = await supabase.functions.invoke('scrape-motor-details-batch', {
+        body: {
+          prioritize_missing_images: prioritize_missing_images || true,
+          batch_size: batch_size || 10,
+          background: true
+        },
+      });
+
+      if (error) {
+        console.error('Batch scraping error:', error);
+        return res.status(500).json({ error: error.message || 'Batch scraping failed' });
+      }
+
+      return res.status(200).json({ 
+        ok: true, 
+        result: data,
+        message: 'Batch image scraping initiated'
+      });
+    }
+
+    // Handle single motor scraping (existing logic)
+    if (!motor_id && !detail_url) {
+      return res.status(400).json({ error: 'motor_id or detail_url is required' });
+    }
+
+    // Rest of the function handles weekly cron job for batch processing
     const isVercelCron = req.headers['x-vercel-cron'] === '1';
     const authHeader = (req.headers['authorization'] || req.headers['Authorization']) as string | undefined;
     const hasSecret = authHeader === `Bearer ${process.env.CRON_SECRET}`;

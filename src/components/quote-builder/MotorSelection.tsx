@@ -23,6 +23,7 @@ import { useNavigate } from 'react-router-dom';
 import { canadianEncouragement, loadingMessages, emptyStateMessages, friendlyErrors } from '@/lib/canadian-messages';
 import { MonthlyPaymentDisplay } from './MonthlyPaymentDisplay';
 import harrisLogo from '@/assets/harris-logo.png';
+import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 // Mobile optimization imports
 import { MobileTrustAccordion } from '@/components/ui/mobile-trust-accordion';
 import { MobileFilterSheet } from '@/components/ui/mobile-filter-sheet';
@@ -50,6 +51,7 @@ interface DbMotor {
   features?: string[] | null;
   specifications?: Record<string, any> | null;
   detail_url?: string | null;
+  images?: any[] | null;
 }
 interface Promotion {
   id: string;
@@ -399,6 +401,9 @@ export const MotorSelection = ({
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
   const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
+  
+  // Auto-trigger background image scraping for motors without images
+  const imageScrapeStatus = useAutoImageScraping(motors);
   const [showCelebration, setShowCelebration] = useState(false);
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [celebrationParticles, setCelebrationParticles] = useState<Array<{

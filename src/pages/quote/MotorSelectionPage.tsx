@@ -5,6 +5,7 @@ import { Motor } from '@/components/QuoteBuilder';
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 import MotorCardPremium from '@/components/motors/MotorCardPremium';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -14,7 +15,7 @@ import MotorFilterMenu from '@/components/quote-builder/MotorFilterMenu';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 
-// Types for Supabase data
+// Database types
 interface DbMotor {
   id: string;
   model: string;
@@ -32,6 +33,7 @@ interface DbMotor {
   features?: string[] | null;
   specifications?: Record<string, any> | null;
   detail_url?: string | null;
+  images?: any[] | null;
 }
 
 interface Promotion {
@@ -74,7 +76,6 @@ export default function MotorSelectionPage() {
   const { state, dispatch } = useQuote();
   const { toast } = useToast();
   
-  // State for motor data and filters
   const [motors, setMotors] = useState<DbMotor[]>([]);
   const [promotions, setPromotions] = useState<Promotion[]>([]);
   const [promotionRules, setPromotionRules] = useState<PromotionRule[]>([]);
@@ -83,6 +84,15 @@ export default function MotorSelectionPage() {
   const [selectedHpRange, setSelectedHpRange] = useState<{ min: number; max: number }>({ min: 0, max: Infinity });
   const [inStockOnly, setInStockOnly] = useState(false);
   // Remove selectedMotor state since we're not doing inline selection anymore
+
+  // Auto-trigger background image scraping for motors without images
+  const imageScrapeStatus = useAutoImageScraping(motors.map(motor => ({
+    id: motor.id,
+    model: motor.model,
+    images: motor.images,
+    image_url: motor.image_url,
+    detail_url: motor.detail_url
+  })));
 
   // Load motors and promotions from Supabase (same as original MotorSelection)
   useEffect(() => {
