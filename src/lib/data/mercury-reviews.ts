@@ -415,6 +415,9 @@ const gtaChineseReviews: CustomerReview[] = [
 // Combine all reviews
 const allMercuryReviews: CustomerReview[] = [...mercuryReviews, ...mercuryReviewsExpanded, ...gtaChineseReviews];
 
+// Export all reviews for smart rotation system
+export const getAllMercuryReviews = (): CustomerReview[] => allMercuryReviews;
+
 export function getReviewsForMotor(hp: number, model?: string): CustomerReview[] {
   return allMercuryReviews.filter(review => {
     if (review.motorHP !== hp) return false;

@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X } from "lucide-react";
 import { supabase } from "../../integrations/supabase/client";
@@ -14,7 +12,8 @@ import { MotorImageGallery } from './MotorImageGallery';
 import { MonthlyPaymentDisplay } from '../quote-builder/MonthlyPaymentDisplay';
 import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption, getRange, getTransomRequirement, getBatteryRequirement, getFuelRequirement, getOilRequirement, getIdealUses, getIncludedAccessories, getAdditionalRequirements, cleanSpecSheetUrl, requiresMercuryControls, isTillerMotor, type Motor } from "../../lib/motor-helpers";
 import { findMotorSpecs, getMotorSpecs, type MercuryMotor } from "../../lib/data/mercury-motors";
-import { getReviewsForMotor, getReviewCount } from "../../lib/data/mercury-reviews";
+import { getReviewCount } from "../../lib/data/mercury-reviews";
+import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
 export default function MotorDetailsSheet({
   open,
   onClose,
@@ -61,6 +60,11 @@ export default function MotorDetailsSheet({
   const [specSheetLoading, setSpecSheetLoading] = useState(false);
   const [generatedSpecUrl, setGeneratedSpecUrl] = useState<string | null>(null);
   const isMobile = useIsMobile();
+
+  // Get smart review for this motor with rotation logic
+  const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
+  const smartReview = useSmartReviewRotation(hpValue, title);
+  const reviewCount = getReviewCount(hpValue, title);
 
   // Section refs for navigation
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -545,39 +549,32 @@ export default function MotorDetailsSheet({
               {/* Customer Reviews Section */}
               <div className="space-y-4">
                 <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
-                  What Customers Say
+                  Customer Review
                 </h2>
                 
-                {(() => {
-                  const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
-                  const reviews = getReviewsForMotor(hpValue, title);
-                  const review = reviews[0]; // Get first review
-                  const reviewCount = getReviewCount(hpValue, title);
-
-                  return review ? (
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-1 text-yellow-500">
-                        <span>★★★★★</span>
-                        <span className="text-sm text-muted-foreground ml-2">
-                          ({reviewCount} review{reviewCount !== 1 ? 's' : ''})
-                        </span>
-                      </div>
-                      
-                      <blockquote className="border-l-2 border-primary/20 pl-4">
-                        <p className="text-sm italic text-foreground/90">
-                          "{review.comment}"
-                        </p>
-                        <footer className="text-xs text-muted-foreground mt-2">
-                          — {review.reviewer}, {review.location}
-                        </footer>
-                      </blockquote>
+                {smartReview ? (
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-1 text-yellow-500 text-sm">
+                      <span>★★★★★</span>
+                      <span className="text-muted-foreground ml-2">
+                        Verified Purchase
+                      </span>
                     </div>
-                  ) : (
-                    <p className="text-sm text-muted-foreground">
-                      New model - contact us for customer experiences
-                    </p>
-                  );
-                })()}
+                    
+                    <blockquote className="text-sm italic border-l-2 border-muted pl-3">
+                      <p className="text-foreground/90">
+                        "{smartReview.comment}"
+                      </p>
+                      <footer className="text-xs text-muted-foreground mt-2">
+                        — {smartReview.reviewer}, {smartReview.location}
+                      </footer>
+                    </blockquote>
+                  </div>
+                ) : (
+                  <p className="text-sm text-muted-foreground">
+                    New model - contact us for customer experiences
+                  </p>
+                )}
                 
                 <div className="text-xs text-muted-foreground pt-2 border-t">
                   Available at Harris Boat Works • (905) 342-2153
