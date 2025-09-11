@@ -1190,8 +1190,8 @@ export const MotorSelection = ({
           </div>
           
           {/* HP Range Filter Tabs and Stock Toggle Row */}
-          <div className="flex items-center justify-between gap-4">
-            <div className="hp-filter-buttons flex gap-2 overflow-x-auto flex-1">
+          <div className="flex items-center justify-between gap-4 keep-flex">
+            <div className="hp-filter-buttons flex gap-2 overflow-x-auto flex-1 scrollbar-hide keep-flex" style={{WebkitOverflowScrolling: 'touch'}}>
             <Button 
               variant={selectedHPRange === 'all' ? 'default' : 'outline'}
               size="sm"

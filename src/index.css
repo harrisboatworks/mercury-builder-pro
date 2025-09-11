@@ -322,7 +322,7 @@
       margin-top: 1.5rem;
     }
     
-    /* Better button grouping on mobile */
+  /* Better button grouping on mobile */
     .flex.gap-2:not(.keep-flex) {
       flex-direction: column;
       gap: 0.75rem;
@@ -331,6 +331,25 @@
     .flex.gap-3:not(.keep-flex) {
       flex-direction: column;
       gap: 0.75rem;
+    }
+    
+    /* Mobile horizontal navigation fixes */
+    .hp-filter-buttons {
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      flex-wrap: nowrap !important;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    
+    .hp-filter-buttons::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .hp-filter-button {
+      white-space: nowrap !important;
+      display: inline-flex !important;
+      flex-shrink: 0 !important;
     }
   }
 }
