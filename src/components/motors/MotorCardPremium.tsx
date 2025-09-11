@@ -97,7 +97,9 @@ export default function MotorCardPremium({
       <div className="relative">
         <button 
           onClick={handleMoreInfoClick} 
-          className="motor-card-premium text-left w-full transition-all duration-200 border-slate-200 hover:border-slate-300 dark:border-slate-700 dark:hover:border-slate-600 hover:shadow-md"
+          className={`motor-card-premium text-left w-full transition-all duration-200 border-slate-200 hover:border-slate-300 dark:border-slate-700 dark:hover:border-slate-600 hover:shadow-md ${
+            (hpNum === 15 || hpNum === 75) ? 'opacity-90' : ''
+          }`}
         >
           {/* Image and title area - hover for tooltip */}
           <div 
@@ -162,6 +164,13 @@ export default function MotorCardPremium({
             )}
           </div>
         </button>
+        
+        {/* Special Order banner for less-preferred models */}
+        {(hpNum === 15 || hpNum === 75) && (
+          <div className="absolute top-2 left-2 bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-md shadow-sm dark:bg-amber-900/50 dark:text-amber-200">
+            Special Order
+          </div>
+        )}
         
         {/* More info button with hover tooltip */}
         <button

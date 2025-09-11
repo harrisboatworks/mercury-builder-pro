@@ -353,15 +353,20 @@ export const getHPDescriptor = (hp: number | string) => {
   
   if (horsepower <= 5) return 'Perfect for Inflatables';
   if (horsepower <= 9.9) return 'Ideal for Small Utilities';
-  if (horsepower === 15) return 'Great for Aluminum Fishing Boats';
-  if (horsepower === 20) return 'Versatile Small Boat Power';
+  
+  // UPSELL DESCRIPTORS for less-preferred models
+  if (horsepower === 15) return '⚠️ See 20HP for Better Value';
+  if (horsepower === 75) return '⚠️ Consider 90HP - Same Frame';
+  
+  // POSITIVE DESCRIPTORS for preferred models
+  if (horsepower === 20) return '★ Best Value Under 25HP';
+  if (horsepower === 90) return '★ Sweet Spot Power Choice';
+  
   if (horsepower === 25) return 'Entry-Level Pontoon Option';
   if (horsepower === 30) return 'Small Pontoon Power';
   if (horsepower === 40) return 'Mid-Size Boat Choice';
   if (horsepower === 50) return 'Popular Pontoon Motor';
   if (horsepower === 60) return 'Ideal Pontoon Power';
-  if (horsepower === 75) return 'Strong Pontoon Performance';
-  if (horsepower === 90) return 'Premium Pontoon Power';
   if (horsepower === 115) return 'Performance Fishing Power';
   if (horsepower === 150) return 'Serious Multi-Species Power';
   if (horsepower <= 200) return 'High Performance Cruising';
@@ -376,6 +381,44 @@ export const getHPDescriptor = (hp: number | string) => {
 export const getPopularityIndicator = (motorModel: string, isInStock: boolean | null = null): string | null => {
   const model = motorModel.toUpperCase();
   const hp = parseInt(model.match(/\d+/)?.[0] || '0');
+  
+  // UPSELL INDICATORS for motors we don't want to sell
+  if (hp === 15) {
+    // Always show why 20HP is better
+    const upsellBadges = [
+      '💡 Consider 20HP - Same Weight',
+      '➡️ 20HP Only $200 More',
+      '📊 Compare with 20HP',
+      '⚠️ Special Order Only'
+    ];
+    return upsellBadges[Math.floor(Math.random() * upsellBadges.length)];
+  }
+  
+  if (hp === 75) {
+    // Always show why 90HP is better
+    const upsellBadges = [
+      '💡 90HP Better Value - Same Size',
+      '➡️ Upgrade to 90HP',
+      '📊 Compare with 90HP',
+      '⚠️ Special Order Item'
+    ];
+    return upsellBadges[Math.floor(Math.random() * upsellBadges.length)];
+  }
+  
+  // POSITIVE BADGES for the motors we want to sell
+  if (hp === 20) {
+    // Make 20HP extra attractive
+    if (Math.random() < 0.7) {  // Show more often
+      return '✅ Best Value - In Stock';
+    }
+  }
+  
+  if (hp === 90) {
+    // Make 90HP extra attractive
+    if (Math.random() < 0.7) {  // Show more often
+      return '✅ Smart Buy - Popular Choice';
+    }
+  }
   
   // If we KNOW it's out of stock, never say it's in stock
   if (isInStock === false) {
@@ -493,8 +536,8 @@ export const getPopularityIndicator = (motorModel: string, isInStock: boolean | 
     return midBadges[Math.floor(Math.random() * midBadges.length)];
   }
   
-  // 75-115HP RANGE
-  if (hp >= 75 && hp <= 115) {
+  // 75-115HP RANGE - Skip 75HP since it's handled above
+  if (hp >= 76 && hp <= 115) {
     const upperMidBadges = [
       '🏆 Tournament Ready',
       '🎣 Serious Fishing Power',
@@ -541,8 +584,16 @@ export const getPopularityIndicator = (motorModel: string, isInStock: boolean | 
 export const getBadgeColor = (badgeText: string | null): string => {
   if (!badgeText) return '';
   
+  // Upsell/warning badges = amber/orange
+  if (badgeText.includes('Consider') || badgeText.includes('Compare') || badgeText.includes('Special Order') || badgeText.includes('Upgrade')) {
+    return 'text-amber-600 dark:text-amber-400';
+  }
+  
   // Best sellers & hot items = orange
   if (badgeText.includes('Best Seller') || badgeText.includes('Most Talked')) return 'text-orange-600 dark:text-orange-400';
+  
+  // Smart choices & best values = green
+  if (badgeText.includes('Best Value') || badgeText.includes('Smart Buy')) return 'text-green-600 dark:text-green-400';
   
   // Awards & pro choice = gold/yellow
   if (badgeText.includes('Award') || badgeText.includes('Pro\'s Choice')) return 'text-yellow-600 dark:text-yellow-400';
