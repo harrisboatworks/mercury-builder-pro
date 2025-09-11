@@ -50,6 +50,11 @@ export const decodeModelName = (modelName: string) => {
     add('H', 'Tiller Handle', 'Direct steering control');
     add('PT', 'Power Trim & Tilt', 'Adjust angle on the fly');
   }
+  if (upper.includes('EXLH') && !upper.includes('EXLHPT')) {
+    add('E', 'Electric Start', 'Push-button start');
+    add('XL', 'Extra Long Shaft (25")', 'For 25" transom boats');
+    add('H', 'Tiller Handle', 'Direct steering control');
+  }
   if (upper.includes('ELHPT')) {
     add('E', 'Electric Start', 'Push-button start');
     add('L', 'Long Shaft (20")', 'Standard transom height');
@@ -182,7 +187,7 @@ export const getTransomRequirement = (motor: Motor) => {
   
   // Check model codes
   if (/\bXXL\b/.test(model)) return '30" (XXL) transom';
-  if (/XL|EXLPT|EXLHPT/.test(model)) return '25" (XL) transom';
+  if (/XL|EXLPT|EXLHPT|EXLH/.test(model)) return '25" (XL) transom';
   if (/\bL\b|ELPT|MLH|LPT|\bEL\b/.test(model)) return '20" (L) transom';
   if (/\bS\b/.test(model)) return '15" (S) transom';
   
