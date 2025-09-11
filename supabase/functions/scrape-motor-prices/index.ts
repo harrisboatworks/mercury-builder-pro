@@ -234,11 +234,58 @@ serve(async (req) => {
       }
     }
 
-    // Update motor prices in database - only exact matches, leave unmatched as "Call For Price"
+    // Update motor prices in database
     let successCount = 0;
     const errors: string[] = [];
+    const unmatchedMotors: any[] = [];
 
-    console.log(`Applying ${updates.length} exact matches`);
+    // Track unmatched motors for fallback pricing
+    const matchedMotorIds = new Set(updates.map(u => u.motor_id));
+    for (const motor of motors || []) {
+      if (!matchedMotorIds.has(motor.id)) {
+        unmatchedMotors.push(motor);
+      }
+    }
+
+    // Apply fallback pricing for unmatched motors based on horsepower ranges
+    const fallbackUpdates: any[] = [];
+    for (const motor of unmatchedMotors) {
+      let estimatedPrice = null;
+      
+      // Estimate price based on horsepower and motor type
+      if (motor.horsepower) {
+        const hp = motor.horsepower;
+        const type = motor.motor_type?.toLowerCase() || '';
+        
+        // Base pricing estimates (conservative, call-for-price alternative)
+        if (type.includes('verado')) {
+          estimatedPrice = hp * 180 + 5000; // Premium Verado pricing
+        } else if (type.includes('pro xs')) {
+          estimatedPrice = hp * 150 + 3000; // Pro XS pricing  
+        } else if (type.includes('fourstroke')) {
+          estimatedPrice = hp * 120 + 2000; // Standard FourStroke
+        } else {
+          estimatedPrice = hp * 100 + 1500; // Generic fallback
+        }
+        
+        // Round to nearest $100
+        estimatedPrice = Math.round(estimatedPrice / 100) * 100;
+        
+        // Only apply if reasonable (between $1000-$50000)
+        if (estimatedPrice >= 1000 && estimatedPrice <= 50000) {
+          fallbackUpdates.push({
+            motor_id: motor.id,
+            motor_model: motor.model,
+            estimated_price: estimatedPrice,
+            is_estimate: true
+          });
+          
+          console.log(`Fallback estimate for ${motor.model}: $${estimatedPrice} (${hp}HP ${type})`);
+        }
+      }
+    }
+
+    console.log(`Applying ${updates.length} exact matches and ${fallbackUpdates.length} fallback estimates`);
 
     // Update exact matches
     for (const update of updates) {
@@ -258,14 +305,40 @@ serve(async (req) => {
       }
     }
 
+    // Apply fallback estimates (only if requested via query param)
+    const url = new URL(req.url);
+    const applyFallbacks = url.searchParams.get('apply_fallbacks') === 'true';
+    
+    let fallbackSuccessCount = 0;
+    if (applyFallbacks) {
+      for (const fallback of fallbackUpdates) {
+        const { error } = await supabase
+          .from('motor_models')
+          .update({ 
+            base_price: fallback.estimated_price,
+            updated_at: new Date().toISOString()
+          })
+          .eq('id', fallback.motor_id);
+
+        if (error) {
+          errors.push(`Failed to update fallback ${fallback.motor_model}: ${error.message}`);
+        } else {
+          fallbackSuccessCount++;
+        }
+      }
+    }
+
     const result = {
       success: true,
       motorsScanned: motors?.length || 0,
       priceEntriesFound: priceEntries.length,
       exactMatches: updates.length,
+      fallbackEstimates: fallbackUpdates.length,
       exactMatchesApplied: successCount,
-      stillUnpriced: (motors?.length || 0) - successCount,
+      fallbackEstimatesApplied: fallbackSuccessCount,
+      stillUnpriced: (motors?.length || 0) - successCount - fallbackSuccessCount,
       errors: errors.length > 0 ? errors : undefined,
+      applyFallbacksNextTime: !applyFallbacks && fallbackUpdates.length > 0,
       timestamp: new Date().toISOString()
     };
 
