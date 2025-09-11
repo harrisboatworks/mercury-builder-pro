@@ -106,7 +106,7 @@ export const QuoteLayout = ({
   const visibleSteps = getVisibleSteps();
   return <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-6">
@@ -170,7 +170,7 @@ export const QuoteLayout = ({
 
 
       {/* Trust Bar */}
-      <div className="bg-muted/40 border-b border-border">
+      <div className="bg-muted/40 border-b border-border mt-[88px]">
         <div className="container mx-auto px-4 py-4 flex items-center justify-center gap-4 md:gap-6">
           <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-8 w-auto" />
           <span className="text-sm font-medium text-foreground/80">Award-Winning Service Team</span>
@@ -182,7 +182,7 @@ export const QuoteLayout = ({
 
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 pt-16">
         {children}
       </main>
 

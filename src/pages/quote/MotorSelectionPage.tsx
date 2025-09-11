@@ -4,7 +4,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { Motor } from '@/components/QuoteBuilder';
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 import { supabase } from '@/integrations/supabase/client';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
 import MotorCardPremium from '@/components/motors/MotorCardPremium';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -271,6 +271,17 @@ export default function MotorSelectionPage() {
   const handleMotorSelect = (motor: Motor) => {
     // Add motor to quote context
     dispatch({ type: 'SET_MOTOR', payload: motor });
+    
+    // Show success feedback
+    toast({
+      title: "Motor added to quote!",
+      description: `${motor.model} has been added to your quote.`,
+    });
+    
+    // Auto-navigate to next step
+    setTimeout(() => {
+      navigate('/quote/purchase-path');
+    }, 500);
   };
 
   const handleContinue = () => {
