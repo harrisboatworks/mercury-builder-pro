@@ -299,7 +299,7 @@ export default function MotorDetailsSheet({
         <div className="relative bg-white dark:bg-slate-900 w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-2xl sm:rounded-xl md:max-w-3xl lg:max-w-4xl flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-300">
           
           {/* Modal Header */}
-          <div className="sticky top-0 z-10 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 sm:rounded-t-xl">
+          <div className="sticky top-0 z-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 sm:rounded-t-xl">
             {/* Header Bar */}
             <div className="flex items-start justify-between p-4 gap-3">
               <div className="flex-1 min-w-0">
@@ -332,7 +332,7 @@ export default function MotorDetailsSheet({
             </div>
             
             {/* Navigation - Responsive */}
-            <div className="px-4 pb-2">
+            <div className="px-4 pb-2 modal-navigation">
               {/* Mobile Navigation - Header with hamburger menu */}
               <div className="lg:hidden flex items-center justify-between mb-2">
                 <h3 className="text-sm font-medium text-slate-700 dark:text-slate-300">Sections</h3>
@@ -346,7 +346,7 @@ export default function MotorDetailsSheet({
 
               {/* Mobile Navigation - Horizontal Scrollable Tabs */}
               <div className="lg:hidden">
-                <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide bg-white dark:bg-slate-900">
                   <button 
                     onClick={() => scrollToSection('overview')}
                     className={`px-3 py-1.5 text-xs rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
@@ -401,7 +401,7 @@ export default function MotorDetailsSheet({
               </div>
 
               {/* Desktop Navigation */}
-              <div className="hidden lg:flex gap-2 overflow-x-auto scrollbar-hide">
+              <div className="hidden lg:flex gap-2 overflow-x-auto scrollbar-hide bg-white dark:bg-slate-900">
                 {[
                   { id: 'overview', label: 'Specs' },
                   { id: 'included', label: "What's Included" },

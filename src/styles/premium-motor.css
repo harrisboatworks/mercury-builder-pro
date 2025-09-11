@@ -54,6 +54,33 @@ body > .modal-portal {
   position: fixed !important;
 }
 
+/* Fix modal navigation overlay issues */
+.modal-content {
+  position: relative;
+  z-index: 1;
+  /* Mobile: hide scrollbar completely */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Mobile: hide webkit scrollbar */
+@media (max-width: 767px) {
+  .modal-content::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+}
+
+.modal-content .sticky {
+  z-index: 10 !important;
+  position: sticky !important;
+}
+
+/* Prevent navigation from overlaying modal content */
+.modal-navigation {
+  background: inherit !important;
+  backdrop-filter: blur(8px) !important;
+}
+
 /* Hide scrollbar for navigation tabs */
 .scrollbar-hide {
   -ms-overflow-style: none;
@@ -63,14 +90,7 @@ body > .modal-portal {
   display: none;
 }
 
-/* Hide scrollbar for all browsers - Modal content */
-.modal-content {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
-}
-.modal-content::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
-}
+/* Hide scrollbar for all browsers - Modal content already defined above */
 
 /* Modern thin scrollbar for desktop only */
 @media (min-width: 768px) {
