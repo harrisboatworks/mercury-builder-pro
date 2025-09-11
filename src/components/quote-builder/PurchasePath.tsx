@@ -38,8 +38,8 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
         <p className="text-muted-foreground">How would you like to purchase this motor?</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
-        <Card className="relative hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50" 
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto items-stretch">
+        <Card className="relative hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
               onClick={handleLooseMotorSelect}>
           <Badge className="absolute -top-2 -right-2 bg-green-500 hover:bg-green-500 text-xs">
             Quick & Easy
@@ -55,8 +55,8 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             </p>
           </CardHeader>
           
-          <CardContent className="space-y-2">
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+          <CardContent className="flex flex-col flex-1">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm flex-1">
               <div className="flex items-center gap-1.5">
                 <span className="text-green-600 text-sm">✓</span>
                 <span>Free Prep</span>
@@ -89,13 +89,13 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
               )}
             </div>
             
-            <Button className="max-w-xs mx-auto mt-3 block h-8 md:h-9 px-4 py-2 text-sm">
+            <Button className="max-w-xs mx-auto mt-auto block h-8 md:h-9 px-4 py-2 text-sm">
               Select Loose Motor
             </Button>
           </CardContent>
         </Card>
         
-        <Card className="relative hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50" 
+        <Card className="relative hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
               onClick={handleInstalledSelect}>
           <Badge className="absolute -top-2 -right-2 bg-purple-600 hover:bg-purple-600 text-xs">
             Full Service
@@ -111,8 +111,8 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             </p>
           </CardHeader>
           
-          <CardContent className="space-y-2">
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+          <CardContent className="flex flex-col flex-1">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm flex-1">
               {!isTiller && (
                 <div className="flex items-center gap-1.5">
                   <span className="text-green-600 text-sm">✓</span>
@@ -139,7 +139,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
               </div>
             </div>
             
-            <Button className="max-w-xs mx-auto mt-3 block h-8 md:h-9 px-4 py-2 text-sm">
+            <Button className="max-w-xs mx-auto mt-auto block h-8 md:h-9 px-4 py-2 text-sm">
               Select Installation
             </Button>
           </CardContent>
