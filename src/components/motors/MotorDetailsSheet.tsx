@@ -45,6 +45,7 @@ export default function MotorDetailsSheet({
   const [activeSection, setActiveSection] = useState<string>('specs');
   
   // Section refs for navigation
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const specsRef = useRef<HTMLDivElement>(null);
   const includedRef = useRef<HTMLDivElement>(null);
   const requirementsRef = useRef<HTMLDivElement>(null);
@@ -70,6 +71,49 @@ export default function MotorDetailsSheet({
       document.body.style.overflow = '';
     };
   }, [open, onClose]);
+
+  // Intersection observer for active section detection
+  useEffect(() => {
+    if (!open || !scrollContainerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.getAttribute('data-section');
+            if (sectionId) {
+              setActiveSection(sectionId);
+            }
+          }
+        });
+      },
+      {
+        root: scrollContainerRef.current,
+        rootMargin: '-80px 0px -50% 0px', // Account for sticky nav and center detection
+        threshold: 0.1
+      }
+    );
+
+    const sections = [
+      { ref: specsRef, id: 'specs' },
+      { ref: includedRef, id: 'included' },
+      { ref: requirementsRef, id: 'requirements' },
+      { ref: investmentRef, id: 'investment' },
+      { ref: performanceRef, id: 'performance' },
+      { ref: resourcesRef, id: 'resources' }
+    ];
+
+    sections.forEach(({ ref, id }) => {
+      if (ref.current) {
+        ref.current.setAttribute('data-section', id);
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [open]);
 
   const handleCalculatePayment = () => {
     onClose();
@@ -132,8 +176,17 @@ export default function MotorDetailsSheet({
     };
     
     const element = sectionMap[sectionId as keyof typeof sectionMap];
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const scrollContainer = scrollContainerRef.current;
+    
+    if (element && scrollContainer) {
+      const containerRect = scrollContainer.getBoundingClientRect();
+      const elementRect = element.getBoundingClientRect();
+      const scrollOffset = element.offsetTop - scrollContainer.offsetTop - 80; // Account for sticky nav
+      
+      scrollContainer.scrollTo({
+        top: scrollOffset,
+        behavior: 'smooth'
+      });
       setActiveSection(sectionId);
     }
   };
@@ -292,13 +345,14 @@ export default function MotorDetailsSheet({
 
         {/* Mobile Navigation - Pill Style */}
         <div className="sm:hidden bg-gray-100 dark:bg-slate-800 p-1 rounded-lg mx-4 mt-2">
-          <div className="grid grid-cols-5 gap-1">
+          <div className="grid grid-cols-6 gap-1">
             {[
               { id: 'specs', label: 'Specs' },
               { id: 'included', label: 'What\'s' },
               { id: 'requirements', label: 'Install' },
               { id: 'investment', label: 'Cost' },
-              { id: 'performance', label: 'Perf' }
+              { id: 'performance', label: 'Perf' },
+              { id: 'resources', label: 'Docs' }
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -341,7 +395,7 @@ export default function MotorDetailsSheet({
         </div>
 
         {/* Scrollable Content Area */}
-        <div className="flex-1 overflow-y-auto">{/* Content wrapper */}
+        <div ref={scrollContainerRef} className="flex-1 overflow-y-auto scroll-smooth">{/* Content wrapper */}
 
         <div className="px-4 md:px-6 lg:px-8 max-w-4xl mx-auto space-y-8 pb-32 sm:pb-4">{/* Key Features */}
           {displayFeatures.length > 0 && (
