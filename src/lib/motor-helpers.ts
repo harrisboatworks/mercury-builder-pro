@@ -61,6 +61,11 @@ export const decodeModelName = (modelName: string) => {
     add('H', 'Tiller Handle', 'Direct steering control');
     add('PT', 'Power Tilt', 'Easy motor lifting');
   }
+  if (upper.includes('ELH') && !upper.includes('ELHPT')) {
+    add('E', 'Electric Start', 'Push-button start');
+    add('L', 'Long Shaft (20")', 'For 20" transom boats');
+    add('H', 'Tiller Handle', 'Direct steering control');
+  }
   if (upper.includes('ELXPT') || upper.includes('EXLPT')) {
     add('E', 'Electric Start', 'Push-button start');
     add('XL', 'Extra Long Shaft (25")', 'For 25" transom boats');
