@@ -1,8 +1,7 @@
 // src/components/quote-builder/InstallationConfig.tsx
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import OptionGallery from "../OptionGallery";
-import XPProgress from "../XPProgress";
 import { controlChoices, steeringChoices, gaugeChoices, tillerMountingChoices } from "@/config/visualChoices";
 import confetti from "canvas-confetti";
 import { useToast } from "@/hooks/use-toast";
@@ -14,7 +13,6 @@ interface InstallationConfigProps {
 }
 
 export default function InstallationConfig({ selectedMotor, onComplete }: InstallationConfigProps) {
-  const [currentXP, setCurrentXP] = useState(50); // Start with 50 from path selection
   const [step, setStep] = useState(1);
   const isTiller = isTillerMotor(selectedMotor?.model || '');
   const [config, setConfig] = useState({
@@ -29,9 +27,8 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
 
   const totalSteps = isTiller ? 2 : 4;
 
-  const handleOptionSelect = (field: string, value: string, xp: number) => {
+  const handleOptionSelect = (field: string, value: string) => {
     setConfig(prev => ({ ...prev, [field]: value }));
-    setCurrentXP(prev => prev + xp);
     
     // Auto-advance to next step
     setTimeout(() => {
@@ -51,7 +48,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
     
     toast({
       title: "🎉 Configuration Complete!",
-      description: `You earned ${currentXP} XP total!`,
+      description: "Your installation configuration is ready!",
     });
     
     onComplete(config);
@@ -59,12 +56,6 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <XPProgress 
-        currentXP={currentXP} 
-        totalSteps={totalSteps} 
-        currentStep={step}
-      />
-      
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -90,8 +81,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
               title="Step 1: Choose Your Mounting Option"
               choices={tillerMountingChoices}
               value={config.mounting}
-              onChange={(val, xp) => handleOptionSelect('mounting', val, xp)}
-              currentXP={currentXP}
+              onChange={(val) => handleOptionSelect('mounting', val)}
             />
           </motion.div>
         )}
@@ -109,8 +99,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
                 controlChoices
               }
               value={config.controls}
-              onChange={(val, xp) => handleOptionSelect('controls', val, xp)}
-              currentXP={currentXP}
+              onChange={(val) => handleOptionSelect('controls', val)}
             />
           </motion.div>
         )}
@@ -124,8 +113,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
               title="Step 2: Select Steering Type"
               choices={steeringChoices}
               value={config.steering}
-              onChange={(val, xp) => handleOptionSelect('steering', val, xp)}
-              currentXP={currentXP}
+              onChange={(val) => handleOptionSelect('steering', val)}
             />
           </motion.div>
         )}
@@ -139,8 +127,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
               title="Step 3: Pick Your Gauge Package"
               choices={gaugeChoices}
               value={config.gauges}
-              onChange={(val, xp) => handleOptionSelect('gauges', val, xp)}
-              currentXP={currentXP}
+              onChange={(val) => handleOptionSelect('gauges', val)}
             />
           </motion.div>
         )}
@@ -163,10 +150,6 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
                   checked={config.removeOld}
                   onChange={(e) => {
                     setConfig(prev => ({ ...prev, removeOld: e.target.checked }));
-                    if (e.target.checked) {
-                      setCurrentXP(prev => prev + 10);
-                      toast({ title: "+10 XP", description: "Old motor removal added" });
-                    }
                   }}
                   className="w-5 h-5"
                 />
@@ -174,7 +157,6 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
                   <span className="font-semibold">Remove & Dispose Old Motor</span>
                   <span className="text-sm text-gray-600 ml-2">+2 hours labour</span>
                 </div>
-                <span className="text-yellow-600 font-bold text-sm">+10 XP</span>
               </motion.label>
               
               <motion.label 
@@ -186,10 +168,6 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
                   checked={config.waterTest}
                   onChange={(e) => {
                     setConfig(prev => ({ ...prev, waterTest: e.target.checked }));
-                    if (e.target.checked && !config.waterTest) {
-                      setCurrentXP(prev => prev + 5);
-                      toast({ title: "+5 XP", description: "Water test included" });
-                    }
                   }}
                   className="w-5 h-5"
                 />
@@ -197,7 +175,6 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
                   <span className="font-semibold">Water Test & Prop Optimization</span>
                   <span className="text-sm text-gray-600 ml-2">Recommended</span>
                 </div>
-                <span className="text-yellow-600 font-bold text-sm">+5 XP</span>
               </motion.label>
             </div>
           </motion.div>

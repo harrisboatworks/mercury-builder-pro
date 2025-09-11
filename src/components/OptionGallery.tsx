@@ -1,8 +1,7 @@
 // src/components/OptionGallery.tsx
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, Award } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { Award } from "lucide-react";
 
 export type Choice = {
   id: string;
@@ -18,43 +17,22 @@ interface OptionGalleryProps {
   title: string;
   choices: Choice[];
   value?: string;
-  onChange: (val: string, xp: number) => void;
-  currentXP?: number;
+  onChange: (val: string) => void;
 }
 
 export default function OptionGallery({
-  title, choices, value, onChange, currentXP = 0
+  title, choices, value, onChange
 }: OptionGalleryProps) {
   const [hover, setHover] = useState<string | null>(null);
-  const { toast } = useToast();
 
   const handleSelect = (choice: Choice) => {
-    onChange(choice.value, choice.xpReward || 0);
-    
-    // XP toast animation
-    if (choice.xpReward) {
-      toast({
-        title: `+${choice.xpReward} XP`,
-        description: choice.badge ? `🏅 ${choice.badge} unlocked!` : "Nice choice!",
-        duration: 2000,
-      });
-    }
+    onChange(choice.value);
   };
 
   return (
     <section className="my-6">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-xl font-bold text-[#2A4D69]">{title}</h3>
-        {currentXP > 0 && (
-          <motion.div 
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            className="flex items-center gap-2 bg-yellow-100 px-3 py-1 rounded-full"
-          >
-            <Sparkles className="w-4 h-4 text-yellow-600" />
-            <span className="text-sm font-bold text-yellow-800">{currentXP} XP</span>
-          </motion.div>
-        )}
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -96,17 +74,6 @@ export default function OptionGallery({
                     animate={{ opacity: isHover ? 1 : 0 }}
                     className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
                   />
-                  
-                  {/* XP Badge */}
-                  {choice.xpReward && (
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: selected ? 1.2 : 1 }}
-                      className="absolute top-2 right-2 bg-yellow-400 text-black px-2 py-1 rounded-full text-xs font-bold"
-                    >
-                      +{choice.xpReward} XP
-                    </motion.div>
-                  )}
                   
                   {/* Badge */}
                   {choice.badge && (
