@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Menu } from "lucide-react";
+import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X } from "lucide-react";
 import { supabase } from "../../integrations/supabase/client";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
@@ -45,7 +45,6 @@ export default function MotorDetailsSheet({
   const [specSheetLoading, setSpecSheetLoading] = useState(false);
   const [generatedSpecUrl, setGeneratedSpecUrl] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<string>('overview');
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const isMobile = useIsMobile();
   
   // Section refs for navigation
@@ -205,10 +204,6 @@ export default function MotorDetailsSheet({
         inline: 'nearest'
       });
       setActiveSection(sectionId);
-      // Close mobile nav after selection
-      if (isMobile) {
-        setMobileNavOpen(false);
-      }
     }
   };
 
@@ -332,78 +327,11 @@ export default function MotorDetailsSheet({
             </div>
           </div>
 
-          {/* Sticky Navigation - Separate from header */}
+          {/* Compact Sticky Navigation */}
           <div className="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-sm">
-            <div className="px-4 py-2 modal-navigation">
-              {/* Mobile Navigation - Header with hamburger menu */}
-              <div className="lg:hidden flex items-center justify-between mb-2">
-                <h3 className="text-sm font-medium text-slate-700 dark:text-slate-300">Sections</h3>
-                <button 
-                  onClick={() => setMobileNavOpen(!mobileNavOpen)}
-                  className="p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg"
-                >
-                  <Menu className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Mobile Navigation - Horizontal Scrollable Tabs */}
-              <div className="lg:hidden">
-                <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide bg-white dark:bg-slate-900">
-                  <button 
-                    onClick={() => scrollToSection('overview')}
-                    className={`px-3 py-1.5 text-xs rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
-                      activeSection === 'overview'
-                        ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
-                        : 'bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-700 dark:text-slate-300'
-                    }`}
-                  >
-                    Specs
-                  </button>
-                  <button 
-                    onClick={() => scrollToSection('included')}
-                    className={`px-3 py-1.5 text-xs rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
-                      activeSection === 'included'
-                        ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
-                        : 'bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-700 dark:text-slate-300'
-                    }`}
-                  >
-                    What's Included
-                  </button>
-                  <button 
-                    onClick={() => scrollToSection('installation')}
-                    className={`px-3 py-1.5 text-xs rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
-                      activeSection === 'installation'
-                        ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
-                        : 'bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-700 dark:text-slate-300'
-                    }`}
-                  >
-                    Requirements
-                  </button>
-                  <button 
-                    onClick={() => scrollToSection('performance')}
-                    className={`px-3 py-1.5 text-xs rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
-                      activeSection === 'performance'
-                        ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
-                        : 'bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-700 dark:text-slate-300'
-                    }`}
-                  >
-                    Performance
-                  </button>
-                  <button 
-                    onClick={() => scrollToSection('features')}
-                    className={`px-3 py-1.5 text-xs rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
-                      activeSection === 'features'
-                        ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
-                        : 'bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-700 dark:text-slate-300'
-                    }`}
-                  >
-                    Features
-                  </button>
-                </div>
-              </div>
-
-              {/* Desktop Navigation */}
-              <div className="hidden lg:flex gap-2 overflow-x-auto scrollbar-hide bg-white dark:bg-slate-900">
+            <div className="px-4 py-2">
+              {/* Mobile & Desktop - Compact Horizontal Tabs */}
+              <div className="flex gap-2 overflow-x-auto scrollbar-hide">
                 {[
                   { id: 'overview', label: 'Specs' },
                   { id: 'included', label: "What's Included" },
@@ -414,7 +342,7 @@ export default function MotorDetailsSheet({
                   <button
                     key={tab.id}
                     onClick={() => scrollToSection(tab.id)}
-                    className={`px-3 py-1.5 text-sm rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
+                    className={`px-3 py-1.5 text-xs lg:text-sm rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
                       activeSection === tab.id 
                         ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' 
                         : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
@@ -601,32 +529,30 @@ export default function MotorDetailsSheet({
             </div>
           </div>
 
-          {/* Sticky Bottom Action Bar */}
+          {/* Compact Sticky Bottom Action Bar */}
           <div className="sticky bottom-0 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-3 sm:p-4 sm:rounded-b-xl">
-            {/* Mobile: Compact Layout */}
-            <div className="sm:hidden">
-              <div className="flex items-center justify-between gap-3 mb-3">
-                <div className="flex-shrink-0">
-                  <p className="text-xl font-bold text-slate-900 dark:text-white">
-                    {typeof price === "number" ? money(price) : 'Call for Price'}
-                  </p>
-                  <p className="text-xs text-green-600 dark:text-green-400">+2Y Warranty</p>
-                </div>
-                <div className="flex gap-2 flex-1 max-w-xs">
-                  <button 
-                    onClick={handleCalculatePayment}
-                    className="flex-1 py-2 px-3 text-xs bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
-                  >
-                    Calculate
-                  </button>
-                  <Button
-                    onClick={handleSelectMotor}
-                    size="sm"
-                    className="flex-1 py-2 px-3 text-xs font-medium"
-                  >
-                    Add to Quote
-                  </Button>
-                </div>
+            {/* Mobile: Single Row Layout */}
+            <div className="sm:hidden flex items-center gap-3">
+              <div className="flex-shrink-0">
+                <p className="text-lg font-bold text-slate-900 dark:text-white">
+                  {typeof price === "number" ? money(price) : 'Call for Price'}
+                </p>
+                <p className="text-xs text-green-600 dark:text-green-400">+2Y Warranty</p>
+              </div>
+              <div className="flex gap-2 flex-1">
+                <button 
+                  onClick={handleCalculatePayment}
+                  className="flex-1 py-2.5 px-3 text-sm bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-medium"
+                >
+                  Calculate
+                </button>
+                <Button
+                  onClick={handleSelectMotor}
+                  size="sm"
+                  className="flex-1 py-2.5 px-3 text-sm font-medium"
+                >
+                  Add to Quote
+                </Button>
               </div>
             </div>
             
