@@ -62,3 +62,34 @@ body > .modal-portal {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Hide scrollbar for all browsers - Modal content */
+.modal-content {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.modal-content::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Modern thin scrollbar for desktop only */
+@media (min-width: 768px) {
+  .modal-content::-webkit-scrollbar {
+    width: 4px;
+    display: block;
+  }
+  .modal-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+  .modal-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* Dark mode scrollbar */
+@media (min-width: 768px) {
+  .dark .modal-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}

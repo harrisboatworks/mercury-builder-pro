@@ -313,29 +313,30 @@ export default function MotorDetailsSheet({
                 <p className="text-xs text-green-600 dark:text-green-400">+2Y Warranty</p>
               </div>
               
-              {/* Close Button */}
+              {/* Close Button - More Visible */}
               <button 
                 onClick={onClose}
-                className="p-2 -m-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+                className="p-2 bg-white dark:bg-slate-800 shadow-md hover:shadow-lg dark:shadow-slate-900/50 rounded-full transition-all border border-slate-200 dark:border-slate-700"
+                aria-label="Close"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5 text-slate-700 dark:text-slate-300" />
               </button>
             </div>
             
             {/* Navigation Tabs */}
-            <div className="px-4 pb-2 -mt-2">
-              <div className="flex gap-1 overflow-x-auto scrollbar-hide">
+            <div className="px-4 pb-2">
+              <div className="flex gap-2 overflow-x-auto scrollbar-hide">
                 {[
-                  { id: 'overview', label: 'Overview' },
-                  { id: 'features', label: 'Features' },
+                  { id: 'overview', label: 'Specs' },
                   { id: 'included', label: "What's Included" },
-                  { id: 'installation', label: 'Installation' },
-                  { id: 'performance', label: 'Performance' }
+                  { id: 'installation', label: 'Requirements' },
+                  { id: 'performance', label: 'Performance' },
+                  { id: 'features', label: 'Features' }
                 ].map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => scrollToSection(tab.id)}
-                    className={`px-3 py-1.5 text-xs sm:text-sm rounded-full whitespace-nowrap transition-colors ${
+                    className={`px-3 py-1.5 text-xs sm:text-sm rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
                       activeSection === tab.id 
                         ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' 
                         : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
@@ -349,7 +350,7 @@ export default function MotorDetailsSheet({
           </div>
 
           {/* Scrollable Content Area */}
-          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto overscroll-contain">
+          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto overscroll-contain modal-content">
             <div className="p-4 space-y-6">
               
               {/* Motor Image */}
@@ -365,18 +366,18 @@ export default function MotorDetailsSheet({
                 )}
               </div>
               
-              {/* Overview Section */}
-              <div ref={overviewRef} data-section="overview">
-                <h3 className="font-semibold text-base mb-3 text-slate-900 dark:text-white">Understanding This Model</h3>
-                <div className="space-y-2">
+              {/* Understanding This Model Section */}
+              <div ref={overviewRef} data-section="overview" className="space-y-3">
+                <h3 className="font-semibold text-base text-slate-900 dark:text-white">Understanding This Model</h3>
+                <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-3">
                   {hp && decodeModelName(title).map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-3 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800">
+                    <div key={idx} className="flex items-start gap-3 py-2 border-b border-slate-200 dark:border-slate-700 last:border-0">
                       <span className="flex-shrink-0 w-10 h-10 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg flex items-center justify-center text-xs font-bold">
                         {item.code}
                       </span>
                       <div className="flex-1 min-w-0">
-                        <p className="font-medium text-sm text-slate-900 dark:text-white">{item.meaning}</p>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2">{item.benefit}</p>
+                        <div className="font-medium text-sm text-slate-900 dark:text-white">{item.meaning}</div>
+                        <div className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">{item.benefit}</div>
                       </div>
                     </div>
                   ))}
@@ -502,30 +503,32 @@ export default function MotorDetailsSheet({
           </div>
 
           {/* Sticky Bottom Action Bar */}
-          <div className="sticky bottom-0 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 sm:rounded-b-xl">
+          <div className="sticky bottom-0 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-3 sm:p-4 sm:rounded-b-xl">
             {/* Mobile: Compact Layout */}
             <div className="sm:hidden">
-              <div className="flex items-center justify-between mb-3">
-                <div>
-                  <p className="text-2xl font-bold text-slate-900 dark:text-white">
+              <div className="flex items-center justify-between gap-3 mb-3">
+                <div className="flex-shrink-0">
+                  <p className="text-xl font-bold text-slate-900 dark:text-white">
                     {typeof price === "number" ? money(price) : 'Call for Price'}
                   </p>
                   <p className="text-xs text-green-600 dark:text-green-400">+2Y Warranty</p>
                 </div>
-                <button 
-                  onClick={handleCalculatePayment}
-                  className="text-sm text-blue-600 dark:text-blue-400 font-medium"
-                >
-                  Calculate Payment
-                </button>
+                <div className="flex gap-2 flex-1 max-w-xs">
+                  <button 
+                    onClick={handleCalculatePayment}
+                    className="flex-1 py-2 px-3 text-xs bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                  >
+                    Calculate
+                  </button>
+                  <Button
+                    onClick={handleSelectMotor}
+                    size="sm"
+                    className="flex-1 py-2 px-3 text-xs font-medium"
+                  >
+                    Add to Quote
+                  </Button>
+                </div>
               </div>
-              <Button 
-                onClick={handleSelectMotor}
-                className="w-full"
-                size="lg"
-              >
-                Add to Quote →
-              </Button>
             </div>
             
             {/* Desktop: Side by side */}
