@@ -428,7 +428,10 @@ export default function MotorDetailsSheet({
                       {additionalRequirements.map((requirement, i) => (
                         <li key={i} className="flex items-start">
                           <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
-                          <span className="text-slate-700 dark:text-slate-300">{requirement}</span>
+                          <div className="flex-1 text-slate-700 dark:text-slate-300">
+                            <span className="font-medium">{requirement.item}</span>
+                            <span className="text-slate-500 dark:text-slate-400 ml-2">({requirement.cost})</span>
+                          </div>
                         </li>
                       ))}
                     </ul>
