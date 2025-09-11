@@ -69,10 +69,10 @@ export default function StickySummary({
           </div>
         ) : null}
 
-        <ul className="mt-3 space-y-1 text-sm text-slate-700 dark:text-slate-300">
+        <ul className="mt-3 space-y-0.5 lg:space-y-1 text-sm text-slate-700 dark:text-slate-300">
           {bullets.slice(0, 3).map((b, i) => (
             <li key={i} className="flex items-start gap-2">
-              <span aria-hidden className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400/80 dark:bg-slate-500" />
+              <span aria-hidden className="mt-0.5 h-1.5 w-1.5 rounded-full bg-slate-400/80 dark:bg-slate-500 flex-shrink-0" />
               <span>{b}</span>
             </li>
           ))}
