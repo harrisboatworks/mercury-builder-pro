@@ -352,7 +352,7 @@ const Index = () => {
       </header>
       
       {/* Quote Landing Page */}
-      <div className="min-h-screen bg-gradient-to-br from-background via-secondary/30 to-accent/50">
+      <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
