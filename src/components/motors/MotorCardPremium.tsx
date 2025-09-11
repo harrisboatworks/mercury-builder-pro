@@ -82,12 +82,8 @@ export default function MotorCardPremium({
               : "border-slate-200 hover:border-slate-300 dark:border-slate-700 dark:hover:border-slate-600"
           }`}
         >
-          {/* Tooltip trigger area - image and title */}
-          <div 
-            className="relative"
-            onMouseEnter={handleTooltipMouseEnter}
-            onMouseLeave={handleTooltipMouseLeave}
-          >
+          {/* Image and title area */}
+          <div className="relative">
             {img && (
               <img 
                 src={img} 
@@ -127,18 +123,20 @@ export default function MotorCardPremium({
           </div>
         </button>
         
-        {/* More info button - always visible */}
+        {/* More info button with hover tooltip */}
         <button
           onClick={handleMoreInfoClick}
+          onMouseEnter={handleTooltipMouseEnter}
+          onMouseLeave={handleTooltipMouseLeave}
           className="absolute top-2 right-2 rounded-full bg-white/80 p-1.5 shadow-sm backdrop-blur-sm transition-all hover:bg-white hover:shadow-md dark:bg-slate-800/80 dark:hover:bg-slate-800"
           aria-label="More details"
         >
-          <Info className="h-4 w-4 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200" />
+          <Info className="h-5 w-5 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200" />
         </button>
         
         {/* Desktop hover tooltip */}
         {showTooltip && !isMobile && hasHover && (
-          <div className="absolute left-1/2 top-full z-50 mt-2 -translate-x-1/2">
+          <div className="absolute right-0 top-full z-50 mt-2">
             <MotorQuickInfo
               hp={hpNum}
               shaft={shaft}
