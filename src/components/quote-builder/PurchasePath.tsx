@@ -1,9 +1,6 @@
 // src/components/quote-builder/PurchasePath.tsx
 import { motion } from "framer-motion";
-import { Package, Wrench, Battery, Info } from "lucide-react";
-import { useState } from "react";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Package, Wrench } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,25 +8,22 @@ import { isTillerMotor } from "@/lib/utils";
 
 interface PurchasePathProps {
   selectedMotor: any;
-  onSelectPath: (path: 'loose' | 'installed', options?: { battery?: boolean }) => void;
+  onSelectPath: (path: 'loose' | 'installed') => void;
 }
 
 export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePathProps) {
-  const [needsBattery, setNeedsBattery] = useState(false);
-  
   const model = (selectedMotor?.model || '').toUpperCase();
   const hp = typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp;
   const isTiller = isTillerMotor(selectedMotor?.model || '');
-  const isElectricStart = !(/\bM\b/.test(model) || model.includes('MH'));
   const isInStock = selectedMotor?.stockStatus === 'In Stock';
   const includes12LTank = hp && hp >= 9.9 && hp <= 20 && !isTiller;
   
   const handleLooseMotorSelect = () => {
-    onSelectPath('loose', { battery: needsBattery });
+    onSelectPath('loose');
   };
   
   const handleInstalledSelect = () => {
-    onSelectPath('installed', { battery: needsBattery });
+    onSelectPath('installed');
   };
   return (
     <motion.div
@@ -133,6 +127,10 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
               )}
               <div className="flex items-center gap-1.5">
                 <span className="text-green-600 text-sm">✓</span>
+                <span>Marine battery included ($180)</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-green-600 text-sm">✓</span>
                 <span>Old motor removal available</span>
               </div>
               <div className="flex items-center gap-1.5">
@@ -147,64 +145,6 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
           </CardContent>
         </Card>
       </div>
-      
-      {isElectricStart && (
-        <TooltipProvider>
-          <Card className="max-w-2xl mx-auto mt-6">
-            <CardContent className="pt-6">
-              <div className="flex items-start gap-4">
-                <Battery className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                <div className="flex-1">
-                  <h4 className="text-lg font-semibold mb-2">Battery Required</h4>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    Electric start motors require a marine battery for operation. 
-                  </p>
-                  
-                  <div className="flex items-start gap-3">
-                    <Checkbox
-                      id="battery-option"
-                      checked={needsBattery}
-                      onCheckedChange={(checked) => setNeedsBattery(checked === true)}
-                      className="mt-1"
-                    />
-                    <div className="flex-1">
-                      <label htmlFor="battery-option" className="cursor-pointer">
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="font-medium">Add Deka Marine Master Battery</span>
-                          <Badge variant="secondary">$179.99</Badge>
-                          <Tooltip>
-                            <TooltipTrigger asChild>
-                              <Info className="w-4 h-4 text-muted-foreground cursor-help" />
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <div className="text-sm">
-                                <p className="font-medium">Deka Marine Master 24M7</p>
-                                <p>1000 Cold Cranking Amps</p>
-                                <p>2-year warranty included</p>
-                              </div>
-                            </TooltipContent>
-                          </Tooltip>
-                        </div>
-                        <p className="text-sm text-muted-foreground">
-                          High-quality marine starting battery with 2-year warranty
-                        </p>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div className="hidden md:block flex-shrink-0 ml-4">
-                  <img 
-                    src="/lovable-uploads/4bdf5164-e316-4a1a-959e-654fe246f29c.png" 
-                    alt="Deka Marine Master Battery" 
-                    className="w-20 h-20 object-contain rounded-lg"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </TooltipProvider>
-      )}
     </motion.div>
   );
 }
