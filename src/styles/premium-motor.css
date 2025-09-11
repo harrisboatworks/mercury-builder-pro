@@ -57,7 +57,6 @@ body > .modal-portal {
 /* Fix modal navigation overlay issues */
 .modal-content {
   position: relative;
-  z-index: 1;
   /* Mobile: hide scrollbar completely */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
@@ -70,15 +69,11 @@ body > .modal-portal {
   }
 }
 
-.modal-content .sticky {
-  z-index: 10 !important;
-  position: sticky !important;
-}
-
-/* Prevent navigation from overlaying modal content */
-.modal-navigation {
-  background: inherit !important;
-  backdrop-filter: blur(8px) !important;
+/* Ensure proper spacing between sticky nav and content */
+@media (max-width: 768px) {
+  .modal-content {
+    scroll-padding-top: 120px; /* Account for sticky navigation height */
+  }
 }
 
 /* Hide scrollbar for navigation tabs */

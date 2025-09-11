@@ -299,7 +299,7 @@ export default function MotorDetailsSheet({
         <div className="relative bg-white dark:bg-slate-900 w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-2xl sm:rounded-xl md:max-w-3xl lg:max-w-4xl flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-300">
           
           {/* Modal Header */}
-          <div className="sticky top-0 z-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 sm:rounded-t-xl">
+          <div className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700 shadow-sm sm:rounded-t-xl">
             {/* Header Bar */}
             <div className="flex items-start justify-between p-4 gap-3">
               <div className="flex-1 min-w-0">
@@ -426,7 +426,7 @@ export default function MotorDetailsSheet({
           </div>
 
           {/* Scrollable Content Area */}
-          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto overscroll-contain modal-content">
+          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto overscroll-contain modal-content pt-2">
             <div className="p-4 space-y-6">
               
               {/* Motor Image */}
