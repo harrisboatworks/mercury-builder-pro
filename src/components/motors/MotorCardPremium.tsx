@@ -7,6 +7,8 @@ import MotorDetailsSheet from './MotorDetailsSheet';
 import type { Motor } from '../../lib/motor-helpers';
 import { getHPDescriptor, getPopularityIndicator, getBadgeColor } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
+import { getFinancingDisplay } from '@/lib/finance';
 
 export default function MotorCardPremium({ 
   img, 
@@ -14,7 +16,6 @@ export default function MotorCardPremium({
   hp, 
   msrp, 
   price, 
-  monthly, 
   promoText, 
   selected, 
   onSelect,
@@ -34,7 +35,6 @@ export default function MotorCardPremium({
   hp?: number | string;
   msrp?: number | null;
   price?: number | null;
-  monthly?: number | null;
   promoText?: string | null;
   selected?: boolean;
   onSelect: () => void;
@@ -55,6 +55,12 @@ export default function MotorCardPremium({
   const [showTooltip, setShowTooltip] = useState(false);
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
   const [motorBadge, setMotorBadge] = useState<string | null>(null);
+  
+  // Smart financing calculation
+  const financingInfo = useMotorMonthlyPayment({ 
+    motorPrice: price || 0, 
+    minimumThreshold: 1000 
+  });
   
   // Generate badge once when component mounts and optionally rotate
   useEffect(() => {
@@ -157,9 +163,9 @@ export default function MotorCardPremium({
                 {promoText}
               </div>
             )}
-            {typeof monthly === "number" && monthly > 0 && (
-              <div className="text-xs text-slate-500">
-                from ~${Math.round(monthly)}/mo OAC
+            {financingInfo && price && price > 5000 && (
+              <div className="text-xs text-muted-foreground mt-1">
+                {getFinancingDisplay(price * 1.13, financingInfo.rate !== 7.99 ? financingInfo.rate : null)}*
               </div>
             )}
           </div>

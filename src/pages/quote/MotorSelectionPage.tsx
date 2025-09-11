@@ -392,7 +392,7 @@ export default function MotorSelectionPage() {
                    motor.model.includes('ELPT') ? 'electric power tilt' :
                    motor.model.includes('DTS') ? 'digital throttle & shift' : undefined);
                 
-                return (
+                 return (
                   <div className="w-full max-w-sm mx-auto">
                     <MotorCardPremium
                     key={motor.id}
@@ -401,7 +401,6 @@ export default function MotorSelectionPage() {
                     hp={motor.hp}
                     msrp={motor.basePrice}
                     price={motor.price}
-                     monthly={monthlyPayments[motor.id]}
                     promoText={motor.appliedPromotions?.join(' • ') || null}
                     selected={state.motor?.id === motor.id}
                     onSelect={() => handleMotorSelect(motor)}
