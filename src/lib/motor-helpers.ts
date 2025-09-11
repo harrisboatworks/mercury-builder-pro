@@ -349,18 +349,24 @@ export const getIdealUses = (hp: number | string) => {
 };
 
 export const getHPDescriptor = (hp: number | string) => {
-  const horsepower = typeof hp === 'string' ? parseInt(hp) : hp;
+  const horsepower = typeof hp === 'string' ? parseFloat(hp) : hp;
   
-  if (horsepower <= 9.9) return 'Perfect for Inflatables & Utilities';
-  if (horsepower <= 20) return 'Lightweight & Fuel Efficient';
-  if (horsepower <= 30) return 'Ideal for Small Fishing Boats';
-  if (horsepower <= 50) return 'Great All-Around Power';
-  if (horsepower <= 75) return 'Popular Mid-Range Choice';
-  if (horsepower <= 115) return 'Versatile Family Boating';
-  if (horsepower <= 150) return 'Serious Fishing Power';
+  if (horsepower <= 5) return 'Perfect for Inflatables';
+  if (horsepower <= 9.9) return 'Ideal for Small Utilities';
+  if (horsepower === 15) return 'Great for Aluminum Fishing Boats';
+  if (horsepower === 20) return 'Versatile Small Boat Power';
+  if (horsepower === 25) return 'Entry-Level Pontoon Option';
+  if (horsepower === 30) return 'Small Pontoon Power';
+  if (horsepower === 40) return 'Mid-Size Boat Choice';
+  if (horsepower === 50) return 'Popular Pontoon Motor';
+  if (horsepower === 60) return 'Ideal Pontoon Power';
+  if (horsepower === 75) return 'Strong Pontoon Performance';
+  if (horsepower === 90) return 'Premium Pontoon Power';
+  if (horsepower === 115) return 'Performance Fishing Power';
+  if (horsepower === 150) return 'Serious Multi-Species Power';
   if (horsepower <= 200) return 'High Performance Cruising';
-  if (horsepower <= 250) return 'Offshore Capable Power';
-  if (horsepower <= 300) return 'Premium Performance';
+  if (horsepower <= 250) return 'Big Water Performance';
+  if (horsepower <= 300) return 'Offshore Capable Power';
   if (horsepower <= 400) return 'Maximum Offshore Power';
   if (horsepower > 400) return '💪 Ultimate Performance';
   
@@ -403,6 +409,14 @@ export const getPopularityIndicator = (motorModel: string, isInStock: boolean | 
     // Otherwise continue to other badges
   }
   
+  // CORRECTED BEST SELLERS - No 15HP pontoon nonsense!
+  if (model.includes('9.9') && model.includes('MH')) return '🔥 Best Seller - Perfect Utility';
+  if (model.includes('20') && model.includes('EH') && !model.includes('ELH')) return '🔥 Best Seller - Electric Start';
+  if (model.includes('20') && model.includes('ELH')) return '🔥 Best Seller - Fishing Favorite';
+  if (model.includes('60') && model.includes('ELPT') && model.includes('CT')) return '🔥 Best Seller - Pontoon Power';
+  if (model.includes('60') && model.includes('ELPT') && !model.includes('CT')) return '🔥 Best Seller - Walleye Special';
+  if (model.includes('115')) return '🔥 Best Seller - Bass Boat Choice';
+  
   // VERADO MODELS (V10, 350-425hp range)
   if (model.includes('VERADO')) {
     if (hp >= 350) {
@@ -430,17 +444,35 @@ export const getPopularityIndicator = (motorModel: string, isInStock: boolean | 
     return avatorBadges[Math.floor(Math.random() * avatorBadges.length)];
   }
   
-  // BEST SELLERS - Keep these consistent
-  if (model.includes('9.9') && model.includes('MH')) return '🔥 Best Seller - Perfect Utility Motor';
-  if (model.includes('20') && model.includes('EH') && !model.includes('ELH')) return '🔥 Best Seller - Electric Start';
-  if (model.includes('20') && model.includes('ELH')) return '🔥 Best Seller - Pontoon Ready';
-  if (model.includes('60') && model.includes('ELPT')) {
-    if (model.includes('CT')) return '🔥 Best Seller - Command Thrust Power';
-    return '🔥 Best Seller - Walleye Special';
+  // PONTOON-SPECIFIC BADGES for appropriate HP only (25HP+)
+  if (hp >= 25 && hp <= 90) {
+    // Command Thrust models are specifically for pontoons
+    if (model.includes('CT')) {
+      return '🚤 Command Thrust - Built for Pontoons';
+    }
+    
+    // Random pontoon-related badges for appropriate HP
+    if (Math.random() < 0.3 && hp >= 40) {
+      const pontoonBadges = [
+        '🚤 Popular Pontoon Choice',
+        '⚓ Pontoon Ready',
+        '🌊 Smooth Pontoon Cruising'
+      ];
+      return pontoonBadges[Math.floor(Math.random() * pontoonBadges.length)];
+    }
   }
-  if (model.includes('115')) return '🔥 #1 Bass Boat Choice';
   
-  // 25-30HP RANGE
+  // SEAPRO MODELS
+  if (model.includes('SEAPRO')) {
+    return '🛠️ Commercial Grade - Built to Work';
+  }
+  
+  // PRO XS MODELS
+  if (model.includes('PRO XS')) {
+    return '🏁 Tournament Performance';
+  }
+  
+  // 25-30HP RANGE (small boat focus, not pontoons for 25HP)
   if (hp >= 25 && hp <= 30) {
     const smallBadges = [
       '⭐ Fisherman\'s Favourite - Compact & Trusted',
@@ -456,8 +488,7 @@ export const getPopularityIndicator = (motorModel: string, isInStock: boolean | 
     const midBadges = [
       '🎣 Versatile Performer',
       '⭐ Family Boating Favourite',
-      '🛠️ Shop Recommended',
-      '✅ In Stock - Ready Now'
+      '🛠️ Shop Recommended'
     ];
     return midBadges[Math.floor(Math.random() * midBadges.length)];
   }
@@ -467,8 +498,7 @@ export const getPopularityIndicator = (motorModel: string, isInStock: boolean | 
     const upperMidBadges = [
       '🏆 Tournament Ready',
       '🎣 Serious Fishing Power',
-      '⭐ Most Popular HP Range',
-      '✅ In Stock at Rice Lake'
+      '⭐ Most Popular HP Range'
     ];
     return upperMidBadges[Math.floor(Math.random() * upperMidBadges.length)];
   }
@@ -482,16 +512,6 @@ export const getPopularityIndicator = (motorModel: string, isInStock: boolean | 
       '🎮 Digital Controls Available'
     ];
     return highBadges[Math.floor(Math.random() * highBadges.length)];
-  }
-  
-  // SEAPRO MODELS
-  if (model.includes('SEAPRO')) {
-    return '🛠️ Commercial Grade - Built to Work';
-  }
-  
-  // PRO XS MODELS
-  if (model.includes('PRO XS')) {
-    return '🏁 Tournament Performance';
   }
   
   // GENERAL MERCURY AWARDS (randomly apply to 20% of remaining motors)
