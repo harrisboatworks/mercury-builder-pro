@@ -106,7 +106,7 @@ export const QuoteLayout = ({
   return <div className="min-h-screen bg-gradient-to-br from-background via-secondary/30 to-accent/50">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-4 py-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-6">
               {/* Hamburger Menu Button */}
@@ -119,9 +119,9 @@ export const QuoteLayout = ({
                 <Menu className="w-5 h-5" />
               </Button>
               <Link to="/" className="flex items-center space-x-4">
-                <img src={harrisLogo} alt="Harris Boat Works" className="h-8 w-auto sm:h-12 md:h-14 lg:h-16" />
-                <div className="h-8 w-px bg-border"></div>
-                <img src={mercuryLogo} alt="Mercury Marine" className="h-6 w-auto sm:h-8 md:h-10 lg:h-12" />
+                <img src={harrisLogo} alt="Harris Boat Works" className="h-8 w-auto sm:h-10 md:h-12 lg:h-14" />
+                <div className="h-8 w-px bg-border sm:h-10 md:h-12 lg:h-14"></div>
+                <img src={mercuryLogo} alt="Mercury Marine" className="h-8 w-auto sm:h-10 md:h-12 lg:h-14" />
               </Link>
               <div className="hidden lg:block">
                 <h1 className="text-2xl font-bold text-foreground">
