@@ -1,9 +1,11 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X } from "lucide-react";
+import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Menu } from "lucide-react";
 import { supabase } from "../../integrations/supabase/client";
 import { Button } from "../ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+import { useIsMobile } from "../../hooks/use-mobile";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { money } from "../../lib/money";
@@ -43,6 +45,8 @@ export default function MotorDetailsSheet({
   const [specSheetLoading, setSpecSheetLoading] = useState(false);
   const [generatedSpecUrl, setGeneratedSpecUrl] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<string>('overview');
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const isMobile = useIsMobile();
   
   // Section refs for navigation
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -201,6 +205,10 @@ export default function MotorDetailsSheet({
         inline: 'nearest'
       });
       setActiveSection(sectionId);
+      // Close mobile nav after selection
+      if (isMobile) {
+        setMobileNavOpen(false);
+      }
     }
   };
 
@@ -323,9 +331,73 @@ export default function MotorDetailsSheet({
               </button>
             </div>
             
-            {/* Navigation Tabs */}
+            {/* Navigation - Responsive */}
             <div className="px-4 pb-2">
-              <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+              {/* Mobile Navigation */}
+              <div className="md:hidden flex items-center justify-between">
+                <div className="flex-1">
+                  <div className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                    {[
+                      { id: 'overview', label: 'Specs' },
+                      { id: 'included', label: "What's Included" },
+                      { id: 'installation', label: 'Requirements' },
+                      { id: 'performance', label: 'Performance' },
+                      { id: 'features', label: 'Features' }
+                    ].find(tab => tab.id === activeSection)?.label || 'Specs'}
+                  </div>
+                </div>
+                
+                <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
+                  <SheetTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="h-9 w-9 p-0"
+                      aria-label="Open section navigation"
+                    >
+                      <Menu className="h-5 w-5" />
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent side="right" className="w-[280px]">
+                    <div className="flex flex-col h-full">
+                      <div className="pb-4 border-b">
+                        <h3 className="text-lg font-semibold">Navigate Sections</h3>
+                      </div>
+                      
+                      <nav className="flex-1 py-4">
+                        <div className="space-y-2">
+                          {[
+                            { id: 'overview', label: 'Specs', icon: FileText },
+                            { id: 'included', label: "What's Included", icon: CheckCircle },
+                            { id: 'installation', label: 'Requirements', icon: Wrench },
+                            { id: 'performance', label: 'Performance', icon: BarChart3 },
+                            { id: 'features', label: 'Features', icon: Shield }
+                          ].map((tab) => {
+                            const Icon = tab.icon;
+                            return (
+                              <button
+                                key={tab.id}
+                                onClick={() => scrollToSection(tab.id)}
+                                className={`w-full flex items-center justify-start gap-3 px-3 py-3 rounded-lg text-left transition-colors ${
+                                  activeSection === tab.id 
+                                    ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' 
+                                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                                }`}
+                              >
+                                <Icon className="h-5 w-5 flex-shrink-0" />
+                                <span className="font-medium">{tab.label}</span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </nav>
+                    </div>
+                  </SheetContent>
+                </Sheet>
+              </div>
+
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex gap-2 overflow-x-auto scrollbar-hide">
                 {[
                   { id: 'overview', label: 'Specs' },
                   { id: 'included', label: "What's Included" },
@@ -336,7 +408,7 @@ export default function MotorDetailsSheet({
                   <button
                     key={tab.id}
                     onClick={() => scrollToSection(tab.id)}
-                    className={`px-3 py-1.5 text-xs sm:text-sm rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
+                    className={`px-3 py-1.5 text-sm rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
                       activeSection === tab.id 
                         ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' 
                         : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
