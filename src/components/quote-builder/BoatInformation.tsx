@@ -422,19 +422,19 @@ export const BoatInformation = ({
       </div>
 
       {/* Progress */}
-      <div className="rounded-lg border border-border bg-muted/30 p-4 animate-fade-in">
+      <div className="rounded-lg border border-border bg-muted/30 p-3 md:p-4 animate-fade-in">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium">Progress</span>
-          <span className="text-sm text-muted-foreground">Step {currentStep + 1} of {totalSteps}</span>
+          <span className="text-xs md:text-sm font-medium">Progress</span>
+          <span className="text-xs md:text-sm text-muted-foreground">Step {currentStep + 1} of {totalSteps}</span>
         </div>
-        <Progress value={(currentStep + 1) / totalSteps * 100} className="h-3 mb-3" />
-        <div className="flex flex-wrap items-center gap-3">
-          {steps.map((step, i) => <div key={step.label} className={`flex items-center gap-2 ${i <= currentStep ? 'text-foreground' : 'text-muted-foreground'}`}>
-              <div className={`h-6 w-6 rounded-full flex items-center justify-center text-xs font-semibold border ${i <= currentStep ? 'bg-primary text-primary-foreground border-primary' : 'bg-background border-border'}`}>{i + 1}</div>
-              <div className="text-xs md:text-sm">{step.label}</div>
-              {i < steps.length - 1 && <div className="w-6 h-px bg-border mx-1 hidden md:block" />}
+        <Progress value={(currentStep + 1) / totalSteps * 100} className="h-2 md:h-3 mb-2 md:mb-3" />
+        <div className="flex flex-wrap items-center gap-2 md:gap-3">
+          {steps.map((step, i) => <div key={step.label} className={`flex items-center gap-1.5 md:gap-2 ${i <= currentStep ? 'text-foreground' : 'text-muted-foreground'}`}>
+              <div className={`h-5 w-5 md:h-6 md:w-6 rounded-full flex items-center justify-center text-xs font-semibold border ${i <= currentStep ? 'bg-primary text-primary-foreground border-primary' : 'bg-background border-border'}`}>{i + 1}</div>
+              <div className="text-xs">{step.label}</div>
+              {i < steps.length - 1 && <div className="w-4 md:w-6 h-px bg-border mx-1 hidden md:block" />}
             </div>)}
-          <div className="ml-auto text-xs text-muted-foreground">
+          <div className="ml-auto text-xs text-muted-foreground hidden sm:block">
             {nextStepLabel ? `Next: ${nextStepLabel}` : 'Ready to continue'}
           </div>
         </div>
