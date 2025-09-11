@@ -25,17 +25,19 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
   });
   const { toast } = useToast();
 
-  const totalSteps = isTiller ? 2 : 4;
+  const totalSteps = isTiller ? 1 : 4;
 
   const handleOptionSelect = (field: string, value: string) => {
     setConfig(prev => ({ ...prev, [field]: value }));
     
-    // Auto-advance to next step
-    setTimeout(() => {
-      if (step < totalSteps - 1) {
-        setStep(step + 1);
-      }
-    }, 500);
+    // Auto-advance to next step (only for non-tiller motors)
+    if (!isTiller) {
+      setTimeout(() => {
+        if (step < totalSteps - 1) {
+          setStep(step + 1);
+        }
+      }, 500);
+    }
   };
 
   const handleComplete = () => {
@@ -71,14 +73,14 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
           }
         </p>
 
-        {/* Tiller Motor Flow - Step 1: Mounting */}
-        {isTiller && step >= 1 && (
+        {/* Tiller Motor Flow - Mounting Options */}
+        {isTiller && (
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
           >
             <OptionGallery
-              title="Step 1: Choose Your Mounting Option"
+              title="Choose Your Mounting Option"
               choices={tillerMountingChoices}
               value={config.mounting}
               onChange={(val) => handleOptionSelect('mounting', val)}
@@ -133,13 +135,13 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
         )}
 
         {/* Additional Services */}
-        {((isTiller && step >= 2) || (!isTiller && step >= 4)) && (
+        {(isTiller || (!isTiller && step >= 4)) && (
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 mt-6"
           >
-            <h3 className="text-xl font-bold mb-4">{isTiller ? 'Step 2' : 'Step 4'}: Additional Services</h3>
+            <h3 className="text-xl font-bold mb-4">{isTiller ? 'Additional Services' : 'Step 4: Additional Services'}</h3>
             <div className="space-y-3">
               <motion.label 
                 whileHover={{ x: 4 }}
