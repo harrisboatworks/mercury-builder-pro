@@ -1,11 +1,13 @@
 import { Button } from '@/components/ui/button';
-import { LogOut, User, DollarSign } from 'lucide-react';
+import { LogOut, User, DollarSign, Menu } from 'lucide-react';
 import { useAuth } from '@/components/auth/AuthProvider';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { cn } from '@/lib/utils';
+import { HamburgerMenu } from '@/components/ui/hamburger-menu';
+import { useState } from 'react';
 interface QuoteLayoutProps {
   children: React.ReactNode;
   showProgress?: boolean;
@@ -55,6 +57,7 @@ export const QuoteLayout = ({
   } = useQuote();
   const location = useLocation();
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Determine current step based on path
   const getCurrentStep = () => {
@@ -102,10 +105,19 @@ export const QuoteLayout = ({
   const visibleSteps = getVisibleSteps();
   return <div className="min-h-screen bg-gradient-to-br from-background via-secondary/30 to-accent/50">
       {/* Header */}
-      <header className="bg-background border-b border-border">
+      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-6">
+              {/* Hamburger Menu Button */}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsMenuOpen(true)}
+                className="p-2"
+              >
+                <Menu className="w-5 h-5" />
+              </Button>
               <Link to="/" className="flex items-center space-x-4">
                 <img src={harrisLogo} alt="Harris Boat Works" className="h-8 w-auto sm:h-12 md:h-14 lg:h-16" />
                 <div className="h-8 w-px bg-border"></div>
@@ -171,5 +183,13 @@ export const QuoteLayout = ({
       <main className="container mx-auto px-4 py-8">
         {children}
       </main>
+
+      {/* Hamburger Menu */}
+      <HamburgerMenu
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+        user={user}
+        signOut={signOut}
+      />
     </div>;
 };
