@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2 } from "lucide-react";
+import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3 } from "lucide-react";
 import { supabase } from "../../integrations/supabase/client";
 import { Button } from "../ui/button";
 import jsPDF from 'jspdf';
@@ -42,6 +42,15 @@ export default function MotorDetailsSheet({
   const [isLoading, setIsLoading] = useState(false);
   const [specSheetLoading, setSpecSheetLoading] = useState(false);
   const [generatedSpecUrl, setGeneratedSpecUrl] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState<string>('specs');
+  
+  // Section refs for navigation
+  const specsRef = useRef<HTMLDivElement>(null);
+  const includedRef = useRef<HTMLDivElement>(null);
+  const requirementsRef = useRef<HTMLDivElement>(null);
+  const investmentRef = useRef<HTMLDivElement>(null);
+  const performanceRef = useRef<HTMLDivElement>(null);
+  const resourcesRef = useRef<HTMLDivElement>(null);
   // Handle escape key
   useEffect(() => {
     if (!open) return;
@@ -109,6 +118,23 @@ export default function MotorDetailsSheet({
       console.error('Error generating spec sheet:', error);
     } finally {
       setSpecSheetLoading(false);
+    }
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const sectionMap = {
+      'specs': specsRef.current,
+      'included': includedRef.current,
+      'requirements': requirementsRef.current,
+      'investment': investmentRef.current,
+      'performance': performanceRef.current,
+      'resources': resourcesRef.current
+    };
+    
+    const element = sectionMap[sectionId as keyof typeof sectionMap];
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveSection(sectionId);
     }
   };
 
@@ -245,11 +271,37 @@ export default function MotorDetailsSheet({
           </div>
         </div>
 
-        <div className="p-4 space-y-6 pb-32 sm:pb-4">
-          {/* Key Features */}
+        {/* Sticky Section Navigation */}
+        <div className="sticky top-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 z-40 -mx-4 px-4">
+          <div className="flex gap-4 py-3 overflow-x-auto text-sm">
+            {[
+              { id: 'specs', label: 'Specs', icon: Gauge },
+              { id: 'included', label: "What's Included", icon: CheckCircle },
+              { id: 'requirements', label: 'Requirements', icon: Wrench },
+              { id: 'investment', label: 'Total Cost', icon: Calculator },
+              { id: 'performance', label: 'Performance', icon: Ship },
+              { id: 'resources', label: 'Resources', icon: FileText }
+            ].map(({ id, label, icon: Icon }) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className={`whitespace-nowrap flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors ${
+                  activeSection === id
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground hover:text-primary hover:bg-muted'
+                }`}
+              >
+                <Icon size={14} />
+                <span>{label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="px-4 md:px-6 lg:px-8 max-w-4xl mx-auto space-y-8 pb-32 sm:pb-4">{/* Key Features */}
           {displayFeatures.length > 0 && (
-            <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
-              <h4 className="font-semibold mb-3 text-slate-900 dark:text-white">Key Features:</h4>
+            <div ref={specsRef} className="py-6 border-b border-border bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
+              <h4 className="text-lg font-semibold mb-4 text-foreground">Key Features:</h4>
               <ul className="text-sm space-y-2">
                 {displayFeatures.slice(0, 8).map((feature, i) => (
                   <li key={`${feature}-${i}`} className="flex items-start">
@@ -310,8 +362,8 @@ export default function MotorDetailsSheet({
 
           {/* What's Included */}
           {motor && (
-            <div className="bg-emerald-50 dark:bg-emerald-900/20 rounded-lg p-4">
-              <h3 className="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+            <div ref={includedRef} className="py-6 border-b border-border bg-emerald-50 dark:bg-emerald-900/20 rounded-lg p-4">
+              <h3 className="text-lg font-semibold mb-4 text-foreground flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-emerald-600" />
                 What's Included
               </h3>
@@ -341,11 +393,11 @@ export default function MotorDetailsSheet({
           )}
 
           {/* Two-column grid for remaining info blocks */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Installation Requirements */}
             {motor && (
-              <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
-                <h4 className="font-semibold mb-3 flex items-center text-slate-900 dark:text-white">
+              <div ref={requirementsRef} className="py-6 border-b border-border bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
+                <h4 className="text-lg font-semibold mb-4 text-foreground flex items-center">
                   <Wrench size={16} className="mr-2" /> Installation Requirements
                 </h4>
                 {(() => {
@@ -406,8 +458,8 @@ export default function MotorDetailsSheet({
 
             {/* Total Investment Estimate */}
             {hp && price && (
-              <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
-                <h4 className="font-semibold mb-3 flex items-center text-slate-900 dark:text-white">
+              <div ref={investmentRef} className="py-6 border-b border-border bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
+                <h4 className="text-lg font-semibold mb-4 text-foreground flex items-center">
                   <Calculator size={16} className="mr-2" /> Total Investment Estimate
                 </h4>
                 <div className="text-sm space-y-2">
@@ -464,8 +516,8 @@ export default function MotorDetailsSheet({
 
             {/* Performance Estimates */}
             {hp && (
-              <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
-                <h4 className="font-semibold mb-3 text-slate-900 dark:text-white">⚡ Performance Estimates</h4>
+              <div ref={performanceRef} className="py-6 border-b border-border bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
+                <h4 className="text-lg font-semibold mb-4 text-foreground">⚡ Performance Estimates</h4>
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
                     <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 mb-1">
@@ -496,89 +548,90 @@ export default function MotorDetailsSheet({
             )}
           </div>
 
+          {/* Resources Section */}
+          <div ref={resourcesRef} className="py-6 border-b border-border">
+            <h3 className="text-lg font-semibold mb-4 text-foreground">Resources</h3>
+            <div className="grid grid-cols-2 gap-3">
+              <button 
+                onClick={handleGenerateSpecSheet}
+                disabled={specSheetLoading || !motor?.id}
+                className="py-3 px-4 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+              >
+                {specSheetLoading ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <Download className="w-4 h-4" />
+                )}
+                <span>Spec Sheet</span>
+              </button>
+              
+              <button className="py-3 px-4 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                <Shield className="w-4 h-4" />
+                <span>Warranty Info</span>
+              </button>
+              
+              <button className="py-3 px-4 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                <Calendar className="w-4 h-4" />
+                <span>Schedule Demo</span>
+              </button>
+              
+              <button className="py-3 px-4 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                <BarChart3 className="w-4 h-4" />
+                <span>Compare</span>
+              </button>
+            </div>
+
+            {/* Enhanced Calculate Payment Button */}
+            <button 
+              onClick={handleCalculatePayment}
+              className="w-full mt-6 py-4 bg-muted hover:bg-muted/80 rounded-lg font-medium transition-colors"
+            >
+              <div className="flex items-center justify-center gap-2 text-base">
+                💳 Calculate My Payment
+              </div>
+              <p className="text-xs font-normal text-muted-foreground mt-1">
+                See monthly options from ${price ? Math.round((price * 1.13) / 84) : 'XXX'}/mo*
+              </p>
+            </button>
+          </div>
+
           {/* Description */}
           {cleanedDescription && (
-            <div className="text-sm text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
-              <h4 className="font-semibold mb-2 text-slate-900 dark:text-white">Description</h4>
+            <div className="py-6 text-sm text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
+              <h4 className="text-sm font-medium text-muted-foreground mb-2">Description</h4>
               <p>{cleanedDescription}</p>
             </div>
           )}
-
-          {/* Spec Sheet Generator */}
-          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
-            <h3 className="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-              <FileText className="h-4 w-4" />
-              Technical Specifications
-            </h3>
-            <div className="flex items-center gap-3">
-              <Button
-                onClick={handleGenerateSpecSheet}
-                disabled={specSheetLoading || !motor?.id}
-                className="inline-flex items-center gap-2"
-                variant="outline"
-              >
-                {specSheetLoading ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                ) : (
-                  <Download className="h-4 w-4" />
-                )}
-                {specSheetLoading ? 'Generating...' : 'Download Spec Sheet'}
-              </Button>
-              {generatedSpecUrl && (
-                <a
-                  href={generatedSpecUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  View Generated Sheet
-                </a>
-              )}
-            </div>
-          </div>
         </div>
 
-        {/* Mobile-Optimized Action Bar */}
-        <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 shadow-lg p-3 sm:relative sm:p-4 sm:shadow-none">
-          {/* Mobile: Price and HP on same line | Desktop: Hidden (already shown in header) */}
-          <div className="flex justify-between items-center mb-3 sm:hidden">
+        {/* Enhanced Mobile Sticky Action Bar */}
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 shadow-lg z-50 p-4">
+          <div className="flex items-center justify-between mb-3">
             <div>
-              {typeof price === "number" && (
-                <div className="text-2xl font-bold text-slate-900 dark:text-white">{money(price)}</div>
-              )}
-              <div className="text-xs text-emerald-600 dark:text-emerald-400">+2Y Warranty</div>
+              <p className="text-2xl font-bold text-slate-900 dark:text-white">${typeof price === "number" ? money(price).replace('$', '') : 'N/A'}</p>
+              <p className="text-xs text-emerald-600">+2Y Warranty Included</p>
             </div>
-            <div className="text-right">
-              <div className="text-xs text-slate-500 dark:text-slate-400">Power</div>
-              <div className="text-sm font-medium text-slate-900 dark:text-white">{hp} HP</div>
-            </div>
+            <Button 
+              onClick={handleSelectMotor}
+              className="px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-medium"
+            >
+              Add to Quote →
+            </Button>
           </div>
-          
-          {/* Action Buttons */}
           <div className="flex gap-2">
             <Button 
+              onClick={handleCalculatePayment}
               variant="outline" 
-              onClick={handleCalculatePayment} 
-              className="flex-1 min-h-[44px] px-3 py-2 text-sm font-medium sm:min-h-[40px] sm:px-4 sm:text-base"
+              className="flex-1 text-sm"
             >
-              Calculate Payment
+              💳 Calculate Payment
             </Button>
-            {onSelect && (
-              <Button 
-                onClick={handleSelectMotor} 
-                className="flex-1 min-h-[44px] px-3 py-2 bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-medium sm:min-h-[40px] sm:px-4 sm:text-base"
-              >
-                Add to Quote →
-              </Button>
-            )}
             <Button 
+              onClick={onClose}
               variant="ghost" 
-              onClick={onClose} 
-              className="min-h-[44px] px-3 sm:min-h-[40px] sm:px-3"
+              className="px-6"
             >
-              <span className="sm:hidden">✕</span>
-              <span className="hidden sm:inline">Close</span>
+              Close
             </Button>
           </div>
         </div>
