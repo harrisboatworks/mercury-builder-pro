@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Info } from "lucide-react";
 import MotorQuickInfo from "./MotorQuickInfo";
@@ -26,7 +26,8 @@ export default function MotorCardPremium({
   features,
   description,
   specSheetUrl,
-  motor
+  motor,
+  inStock
 }: {
   img?: string | null;
   title: string;
@@ -46,12 +47,29 @@ export default function MotorCardPremium({
   description?: string | null;
   specSheetUrl?: string | null;
   motor?: Motor;
+  inStock?: boolean | null;
 }) {
   const fmt = (n?: number | null) => (typeof n === "number" ? `$${n.toLocaleString()}` : undefined);
   const hpNum = typeof hp === "string" ? parseFloat(hp) : (typeof hp === "number" ? hp : undefined);
   const isMobile = useIsMobile();
   const [showTooltip, setShowTooltip] = useState(false);
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
+  const [motorBadge, setMotorBadge] = useState<string | null>(null);
+  
+  // Generate badge once when component mounts and optionally rotate
+  useEffect(() => {
+    // Generate badge once when component mounts
+    const badge = getPopularityIndicator(title, inStock);
+    setMotorBadge(badge);
+    
+    // Optional: Rotate badges every 30 seconds for fresh feel
+    const interval = setInterval(() => {
+      const newBadge = getPopularityIndicator(title, inStock);
+      setMotorBadge(newBadge);
+    }, 30000); // 30 seconds
+    
+    return () => clearInterval(interval);
+  }, [title, inStock]);
   
   // Check if device has fine pointer (mouse) for hover
   const hasHover = typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches;
@@ -111,15 +129,14 @@ export default function MotorCardPremium({
                   {getHPDescriptor(hpNum)}
                 </p>
                 
-                {/* Popularity indicator - only show if exists */}
-                {(() => {
-                  const badge = getPopularityIndicator(title);
-                  return badge ? (
-                    <p className={`text-xs font-medium ${getBadgeColor(badge)}`}>
-                      {badge}
+                {/* Badge container - ALWAYS rendered with minimum height to prevent layout shift */}
+                <div className="h-4 transition-opacity duration-300">
+                  {motorBadge && (
+                    <p className={`text-xs font-medium transition-all duration-300 ${getBadgeColor(motorBadge)}`}>
+                      {motorBadge}
                     </p>
-                  ) : null;
-                })()}
+                  )}
+                </div>
               </div>
             )}
           </div>

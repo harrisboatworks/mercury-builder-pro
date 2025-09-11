@@ -1528,7 +1528,7 @@ export const MotorSelection = ({
                       
                       {/* Popularity indicator - only show if exists */}
                       {(() => {
-                        const badge = getPopularityIndicator(motor.model);
+                        const badge = getPopularityIndicator(motor.model, null);
                         return badge ? (
                           <p className={`text-xs font-medium ${getBadgeColor(badge)}`}>
                             {badge}

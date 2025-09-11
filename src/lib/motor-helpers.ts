@@ -367,9 +367,41 @@ export const getHPDescriptor = (hp: number | string) => {
   return 'Proven Mercury Power';
 };
 
-export const getPopularityIndicator = (motorModel: string): string | null => {
+export const getPopularityIndicator = (motorModel: string, isInStock: boolean | null = null): string | null => {
   const model = motorModel.toUpperCase();
   const hp = parseInt(model.match(/\d+/)?.[0] || '0');
+  
+  // If we KNOW it's out of stock, never say it's in stock
+  if (isInStock === false) {
+    // Only show badges that don't mention stock
+    const outOfStockBadges = [
+      '📦 Order for Spring Delivery',
+      '🔄 Available to Order',
+      '📅 Pre-Order for 2025',
+      '⏰ 2-3 Week Lead Time'
+    ];
+    
+    // 50% chance to show an out-of-stock badge
+    if (Math.random() < 0.5) {
+      return outOfStockBadges[Math.floor(Math.random() * outOfStockBadges.length)];
+    }
+    // Otherwise show performance/feature badges (not stock-related)
+  }
+  
+  // If we KNOW it's in stock, prioritize showing that
+  if (isInStock === true) {
+    // 60% chance to show in-stock status
+    if (Math.random() < 0.6) {
+      const inStockBadges = [
+        '✅ In Stock - Rice Lake',
+        '📦 Available Now',
+        '✓ Ready for Pickup',
+        '🏪 On Display in Store'
+      ];
+      return inStockBadges[Math.floor(Math.random() * inStockBadges.length)];
+    }
+    // Otherwise continue to other badges
+  }
   
   // VERADO MODELS (V10, 350-425hp range)
   if (model.includes('VERADO')) {
@@ -472,8 +504,8 @@ export const getPopularityIndicator = (motorModel: string): string | null => {
     return awardBadges[Math.floor(Math.random() * awardBadges.length)];
   }
   
-  // STOCK STATUS for remaining motors (30% show stock status)
-  if (Math.random() < 0.30) {
+  // STOCK STATUS for remaining motors (30% show stock status) - only if not already handled above
+  if (isInStock === null && Math.random() < 0.30) {
     const stockBadges = [
       '✅ In Stock - Rice Lake',
       '📦 Available Now',
