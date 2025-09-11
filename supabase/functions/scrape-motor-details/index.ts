@@ -118,6 +118,39 @@ function extractSpecifications(md?: string | null): Record<string, unknown> {
   return specs;
 }
 
+function extractImages(html?: string | null, baseUrl?: string): string[] {
+  if (!html) return [];
+  const images: string[] = [];
+  
+  // Extract images from HTML
+  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
+  let match;
+  
+  while ((match = imgRegex.exec(html)) !== null) {
+    let src = match[1];
+    if (!src) continue;
+    
+    // Skip small images, icons, logos, and navigation elements
+    if (src.includes('logo') || src.includes('icon') || src.includes('nav') || 
+        src.includes('menu') || src.includes('thumb') || src.includes('small')) continue;
+    
+    // Convert relative URLs to absolute
+    if (baseUrl && src.startsWith('/')) {
+      try {
+        const base = new URL(baseUrl);
+        src = `${base.protocol}//${base.host}${src}`;
+      } catch {}
+    }
+    
+    // Only include reasonable image URLs
+    if (src.match(/\.(jpg|jpeg|png|webp|gif)(\?|$)/i) && !images.includes(src)) {
+      images.push(src);
+    }
+  }
+  
+  return images.slice(0, 10); // Limit to 10 images
+}
+
 function normalizeDetailUrl(input: string): string {
   const base = 'https://www.harrisboatworks.ca';
   if (!input) return '';

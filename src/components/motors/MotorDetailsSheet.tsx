@@ -384,6 +384,27 @@ export default function MotorDetailsSheet({
                 </div>
               </div>
 
+              {/* Technical Specifications Section */}
+              {motor?.specifications && Object.keys(motor.specifications).length > 0 && (
+                <div className="space-y-3">
+                  <h3 className="font-semibold text-base text-slate-900 dark:text-white">Technical Specifications</h3>
+                  <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-3">
+                    <div className="grid gap-2">
+                      {Object.entries(motor.specifications).map(([key, value]) => (
+                        <div key={key} className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700 last:border-0">
+                          <span className="text-sm font-medium text-slate-600 dark:text-slate-400 capitalize">
+                            {key.replace(/_/g, ' ').replace(/([A-Z])/g, ' $1').trim()}
+                          </span>
+                          <span className="text-sm text-slate-900 dark:text-white font-medium">
+                            {String(value)}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Features Section */}
               {displayFeatures.length > 0 && (
                 <div ref={featuresRef} data-section="features">

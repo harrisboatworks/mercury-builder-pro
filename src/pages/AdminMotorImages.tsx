@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import AdminNav from '@/components/admin/AdminNav';
 import UpdateMotorImages from '@/components/motors/UpdateMotorImages';
+import { ScrapeMotorSpecs } from '@/components/admin/ScrapeMotorSpecs';
 
 const AdminMotorImages = () => {
   useEffect(() => {
@@ -26,9 +27,12 @@ const AdminMotorImages = () => {
     <main className="container mx-auto px-4 py-8">
       <AdminNav />
       <div className="flex items-center justify-between mb-4">
-        <h1 className="text-2xl font-bold">Motor Image Management</h1>
+        <h1 className="text-2xl font-bold">Motor Management</h1>
       </div>
-      <UpdateMotorImages />
+      <div className="space-y-6">
+        <ScrapeMotorSpecs />
+        <UpdateMotorImages />
+      </div>
     </main>
   );
 };
