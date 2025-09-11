@@ -237,14 +237,33 @@ export default function MotorDetailsSheet({
   const cleanedDescription = String(description || '').replace(/Can't find what you're looking for\?[\s\S]*/i, '').replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '').trim();
   
   return (
-    <div role="dialog" aria-modal="true" className="fixed inset-0 z-[9999]">
-      <div onClick={onClose} className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
-      <div className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-4xl rounded-t-2xl border border-slate-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-900 max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 z-50 overflow-hidden">
+      {/* Backdrop */}
+      <div 
+        className="absolute inset-0 bg-black/50" 
+        onClick={onClose}
+      />
+      
+      {/* Modal Content */}
+      <div className="absolute inset-4 sm:inset-8 lg:inset-12 bg-white dark:bg-slate-900 rounded-lg shadow-xl overflow-hidden flex flex-col max-h-full">
+        
+        {/* Header with Close Button */}
+        <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Motor Details</h2>
+          <button 
+            onClick={onClose}
+            className="p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+            aria-label="Close"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Motor Info Header */}
         <div className="bg-white dark:bg-slate-900 p-4 border-b border-slate-200 dark:border-slate-700">
-          <div className="mx-auto h-1.5 w-12 rounded-full bg-slate-200 dark:bg-slate-700" />
-          
-          {/* Header Section */}
-          <div className="mt-3 grid gap-4 sm:grid-cols-[200px_1fr]">
+          <div className="grid gap-4 sm:grid-cols-[200px_1fr]">
             <div>
               {motor?.images && motor.images.length > 0 ? (
                 <MotorImageGallery images={motor.images} motorTitle={title} />
@@ -271,32 +290,58 @@ export default function MotorDetailsSheet({
           </div>
         </div>
 
-        {/* Sticky Section Navigation */}
-        <div className="sticky top-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 z-40 -mx-4 px-4">
-          <div className="flex gap-4 py-3 overflow-x-auto text-sm">
+        {/* Mobile Navigation - Pill Style */}
+        <div className="sm:hidden bg-gray-100 dark:bg-slate-800 p-1 rounded-lg mx-4 mt-2">
+          <div className="grid grid-cols-5 gap-1">
             {[
-              { id: 'specs', label: 'Specs', icon: Gauge },
-              { id: 'included', label: "What's Included", icon: CheckCircle },
-              { id: 'requirements', label: 'Requirements', icon: Wrench },
-              { id: 'investment', label: 'Total Cost', icon: Calculator },
-              { id: 'performance', label: 'Performance', icon: Ship },
-              { id: 'resources', label: 'Resources', icon: FileText }
-            ].map(({ id, label, icon: Icon }) => (
+              { id: 'specs', label: 'Specs' },
+              { id: 'included', label: 'What\'s' },
+              { id: 'requirements', label: 'Install' },
+              { id: 'investment', label: 'Cost' },
+              { id: 'performance', label: 'Perf' }
+            ].map((tab) => (
               <button
-                key={id}
-                onClick={() => scrollToSection(id)}
-                className={`whitespace-nowrap flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors ${
-                  activeSection === id
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-muted-foreground hover:text-primary hover:bg-muted'
+                key={tab.id}
+                onClick={() => scrollToSection(tab.id)}
+                className={`py-2 px-1 text-xs font-medium rounded-md transition-colors ${
+                  activeSection === tab.id 
+                    ? 'bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-sm' 
+                    : 'text-gray-600 dark:text-gray-400'
                 }`}
               >
-                <Icon size={14} />
-                <span>{label}</span>
+                {tab.label}
               </button>
             ))}
           </div>
         </div>
+
+        {/* Desktop Navigation */}
+        <div className="hidden sm:flex sticky top-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 z-40 gap-1 py-2 px-4">
+          {[
+            { id: 'specs', label: 'Specs', icon: Gauge },
+            { id: 'included', label: "What's Included", icon: CheckCircle },
+            { id: 'requirements', label: 'Requirements', icon: Wrench },
+            { id: 'investment', label: 'Total Cost', icon: Calculator },
+            { id: 'performance', label: 'Performance', icon: Ship },
+            { id: 'resources', label: 'Resources', icon: FileText }
+          ].map(({ id, label, icon: Icon }) => (
+            <button
+              key={id}
+              onClick={() => scrollToSection(id)}
+              className={`px-4 py-2 text-sm rounded transition-colors flex items-center gap-2 ${
+                activeSection === id
+                  ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-slate-800'
+              }`}
+            >
+              <Icon size={14} />
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {/* Scrollable Content Area */}
+        <div className="flex-1 overflow-y-auto">{/* Content wrapper */}
 
         <div className="px-4 md:px-6 lg:px-8 max-w-4xl mx-auto space-y-8 pb-32 sm:pb-4">{/* Key Features */}
           {displayFeatures.length > 0 && (
@@ -603,36 +648,30 @@ export default function MotorDetailsSheet({
             </div>
           )}
         </div>
+        </div>
 
-        {/* Enhanced Mobile Sticky Action Bar */}
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 shadow-lg z-50 p-4">
+        {/* Sticky Bottom Action Bar */}
+        <div className="border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4">
           <div className="flex items-center justify-between mb-3">
             <div>
-              <p className="text-2xl font-bold text-slate-900 dark:text-white">${typeof price === "number" ? money(price).replace('$', '') : 'N/A'}</p>
-              <p className="text-xs text-emerald-600">+2Y Warranty Included</p>
+              <p className="text-2xl font-bold text-slate-900 dark:text-white">{price ? money(price) : 'N/A'}</p>
+              <p className="text-sm text-emerald-600">+2Y Warranty • {hp} HP • {shaft}</p>
             </div>
-            <Button 
-              onClick={handleSelectMotor}
-              className="px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-medium"
-            >
-              Add to Quote →
-            </Button>
+            <p className="text-sm text-gray-600 dark:text-gray-400">{typeof hp === 'number' && hp} HP • {shaft}</p>
           </div>
           <div className="flex gap-2">
-            <Button 
+            <button 
               onClick={handleCalculatePayment}
-              variant="outline" 
-              className="flex-1 text-sm"
+              className="flex-1 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
             >
               💳 Calculate Payment
-            </Button>
-            <Button 
-              onClick={onClose}
-              variant="ghost" 
-              className="px-6"
+            </button>
+            <button 
+              onClick={handleSelectMotor}
+              className="flex-1 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-colors"
             >
-              Close
-            </Button>
+              Add to Quote →
+            </button>
           </div>
         </div>
       </div>
