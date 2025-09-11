@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { MessageCircle, X, Send, Minimize2 } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
+import { HelpCircle, X, Send, Minimize2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { ChatBubble } from './ChatBubble';
 import { TypingIndicator } from './TypingIndicator';
@@ -15,8 +14,11 @@ interface Message {
   timestamp: Date;
 }
 
-export const ChatWidget: React.FC = () => {
-  const location = useLocation();
+interface ChatWidgetProps {
+  className?: string;
+}
+
+export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -25,10 +27,6 @@ export const ChatWidget: React.FC = () => {
   const [conversationHistory, setConversationHistory] = useState<any[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-
-  // Check if we're on a quote page where sticky bar might be present
-  const isOnQuotePage = location.pathname.startsWith('/quote');
-  const bottomPosition = isOnQuotePage ? 'bottom-20' : 'bottom-6';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -117,33 +115,35 @@ export const ChatWidget: React.FC = () => {
 
   if (!isOpen) {
     return (
-      <div className={`fixed ${bottomPosition} right-6 z-60`}>
+      <div className={className}>
         <Button
           onClick={handleOpen}
-          className="bg-red-600 hover:bg-red-700 text-white shadow-lg rounded-full w-14 h-14 p-0 flex items-center justify-center transition-all duration-200 hover:scale-105"
-          aria-label="Open Chat"
+          variant="ghost"
+          size="sm"
+          className="text-muted-foreground hover:text-foreground transition-colors p-2"
+          aria-label="Open Chat Support"
         >
-          <MessageCircle className="w-6 h-6" />
+          <HelpCircle className="w-5 h-5" />
         </Button>
       </div>
     );
   }
 
   return (
-    <div className={`fixed ${bottomPosition} right-6 z-60`}>
-      <Card className={`w-80 md:w-96 transition-all duration-200 ${isMinimized ? 'h-14' : 'h-96'} shadow-xl border-2`}>
+    <div className="fixed top-20 right-6 z-60">
+      <Card className={`w-80 md:w-96 transition-all duration-200 ${isMinimized ? 'h-14' : 'h-96'} shadow-xl border`}>
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b bg-red-600 text-white rounded-t-lg">
+        <div className="flex items-center justify-between p-4 border-b bg-primary text-primary-foreground rounded-t-lg">
           <div className="flex items-center space-x-2">
-            <MessageCircle className="w-5 h-5" />
-            <h3 className="font-semibold">Harris Boat Works</h3>
+            <HelpCircle className="w-5 h-5" />
+            <h3 className="font-semibold">Harris Support</h3>
           </div>
           <div className="flex items-center space-x-2">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsMinimized(!isMinimized)}
-              className="text-white hover:bg-red-700 h-8 w-8 p-0"
+              className="text-primary-foreground hover:bg-primary/90 h-8 w-8 p-0"
             >
               <Minimize2 className="w-4 h-4" />
             </Button>
@@ -151,7 +151,7 @@ export const ChatWidget: React.FC = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(false)}
-              className="text-white hover:bg-red-700 h-8 w-8 p-0"
+              className="text-primary-foreground hover:bg-primary/90 h-8 w-8 p-0"
             >
               <X className="w-4 h-4" />
             </Button>
@@ -190,7 +190,7 @@ export const ChatWidget: React.FC = () => {
                 <Button
                   onClick={() => handleSend()}
                   disabled={!inputText.trim() || isLoading}
-                  className="bg-red-600 hover:bg-red-700 text-white h-10 w-10 p-0"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground h-10 w-10 p-0"
                 >
                   <Send className="w-4 h-4" />
                 </Button>

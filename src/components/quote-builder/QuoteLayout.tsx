@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { HamburgerMenu } from '@/components/ui/hamburger-menu';
 import { useState } from 'react';
 import { CartHeader } from '@/components/ui/cart-header';
+import { ChatWidget } from '@/components/chat/ChatWidget';
 interface QuoteLayoutProps {
   children: React.ReactNode;
   showProgress?: boolean;
@@ -134,6 +135,7 @@ export const QuoteLayout = ({
             
             <div className="flex items-center space-x-2 md:space-x-4">
               <CartHeader />
+              <ChatWidget />
               {user ? <>
                   <div className="hidden md:flex items-center space-x-2">
                     <User className="w-4 h-4 text-muted-foreground" />

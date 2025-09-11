@@ -21,7 +21,6 @@ import MyQuotes from "@/pages/MyQuotes";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { SecureRoute } from "@/components/auth/SecureRoute";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
-import { ChatWidget } from "@/components/chat/ChatWidget";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
@@ -163,7 +162,6 @@ const App = () => (
                 <Route path="*" element={<NotFound />} />
               </Routes>
               <Canonical />
-              <ChatWidget />
 
               <footer className="mt-12 border-t border-border bg-muted/30">
                 <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-center gap-8">

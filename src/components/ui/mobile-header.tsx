@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Menu } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
+import { ChatWidget } from '@/components/chat/ChatWidget';
 
 interface MobileHeaderProps {
   title?: string;
@@ -52,13 +53,14 @@ export default function MobileHeader({ title, onMenuClick, showMenu = false }: M
             />
           </Link>
           
-          {/* Right: Mercury Logo */}
-          <div className="flex items-center min-w-[40px] justify-end -mt-1">
+          {/* Right: Mercury Logo and Chat */}
+          <div className="flex items-center gap-2 min-w-[40px] justify-end -mt-1">
             <img 
               src={mercuryLogo} 
               alt="Mercury Marine" 
               className="w-auto h-4 max-w-[80px] md:h-6 md:max-w-none lg:h-8"
             />
+            <ChatWidget />
           </div>
         </div>
       </div>
