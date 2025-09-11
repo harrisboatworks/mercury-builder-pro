@@ -85,8 +85,8 @@ export default function MotorSelectionPage() {
   const [inStockOnly, setInStockOnly] = useState(false);
   const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
   
-  // Get monthly payment if motor is selected
-  const monthlyPayment = useMotorMonthlyPayment({ 
+  // Get monthly payment for the selected motor (for sticky bar)
+  const selectedMotorMonthlyPayment = useMotorMonthlyPayment({ 
     motorPrice: selectedMotor?.price || 0 
   });
 
@@ -224,6 +224,27 @@ export default function MotorSelectionPage() {
       return convertedMotor;
     });
   }, [motors, promotions, promotionRules]);
+
+  // Calculate monthly payments for each motor
+  const monthlyPayments = useMemo(() => {
+    const payments: Record<string, number | null> = {};
+    
+    processedMotors.forEach(motor => {
+      // Simple calculation without hook - matches useMotorMonthlyPayment logic
+      if (motor.price > 5000) {
+        const annualRate = 6.99; // Default rate
+        const monthlyRate = annualRate / 100 / 12;
+        const termMonths = 60;
+        const priceWithHST = motor.price * 1.13;
+        const monthlyAmount = priceWithHST * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1);
+        payments[motor.id] = Math.round(monthlyAmount);
+      } else {
+        payments[motor.id] = null;
+      }
+    });
+    
+    return payments;
+  }, [processedMotors]);
 
   // Filter motors
   const filteredMotors = useMemo(() => {
@@ -371,7 +392,7 @@ export default function MotorSelectionPage() {
                     hp={motor.hp}
                     msrp={motor.basePrice}
                     price={motor.price}
-                    monthly={monthlyPayment?.amount || null}
+                     monthly={monthlyPayments[motor.id]}
                     promoText={motor.appliedPromotions?.join(' • ') || null}
                     selected={selectedMotor?.id === motor.id}
                     onSelect={() => handleMotorSelect(motor)}
@@ -416,7 +437,7 @@ export default function MotorSelectionPage() {
         <StickyQuoteBar
           model={getModelString()}
           total={getTotalWithTax()}
-          monthly={monthlyPayment?.amount || null}
+          monthly={selectedMotorMonthlyPayment?.amount || null}
           coverageYears={getCoverageYears()}
           stepLabel="Step 1 of 7"
           primaryLabel="Continue"
