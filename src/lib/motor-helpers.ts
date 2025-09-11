@@ -8,6 +8,7 @@ export interface Motor {
   specifications?: any;
   features?: string[];
   description?: string;
+  images?: string[];
   [key: string]: any;
 }
 

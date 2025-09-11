@@ -15,6 +15,7 @@ interface ScrapeResult {
   description: string | null;
   features: string[];
   specifications: Record<string, unknown>;
+  images: string[];
 }
 
 async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: string; markdown?: string }> {
@@ -160,6 +161,7 @@ async function scrapeDetails(url: string, apiKey: string, modelName?: string): P
   let description: string | null = firstNonEmptyParagraph(markdown) || extractMetaDescription(html) || null;
   let features: string[] = extractFeatures(markdown);
   let specifications: Record<string, unknown> = extractSpecifications(markdown);
+  let images: string[] = extractImages(html, url);
 
   // Targeted extraction from HTML to avoid picking up navigation links
   try {
@@ -374,7 +376,7 @@ async function scrapeDetails(url: string, apiKey: string, modelName?: string): P
     }
   } catch {}
 
-  return { description, features, specifications };
+  return { description, features, specifications, images };
 }
 
 serve(async (req) => {
@@ -432,6 +434,7 @@ serve(async (req) => {
           description: result.description,
           features: result.features,
           specifications: result.specifications,
+          images: result.images,
           updated_at: new Date().toISOString(),
         })
         .eq('id', motorId);
@@ -443,6 +446,7 @@ serve(async (req) => {
           description: result.description,
           features: result.features,
           specifications: result.specifications,
+          images: result.images,
           updated_at: new Date().toISOString(),
         })
         .eq('detail_url', detailUrl);

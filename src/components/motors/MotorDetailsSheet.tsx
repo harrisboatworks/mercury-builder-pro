@@ -7,6 +7,7 @@ import { Button } from "../ui/button";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { money } from "../../lib/money";
+import { MotorImageGallery } from './MotorImageGallery';
 import { 
   decodeModelName, 
   getRecommendedBoatSize, 
@@ -217,8 +218,14 @@ export default function MotorDetailsSheet({
           <div className="mx-auto h-1.5 w-12 rounded-full bg-slate-200 dark:bg-slate-700" />
           
           {/* Header Section */}
-          <div className="mt-3 grid gap-4 sm:grid-cols-[160px_1fr]">
-            {img && <img src={img} alt="" className="h-36 w-full rounded-xl object-contain bg-slate-50 dark:bg-slate-800" />}
+          <div className="mt-3 grid gap-4 sm:grid-cols-[200px_1fr]">
+            <div>
+              {motor?.images && motor.images.length > 0 ? (
+                <MotorImageGallery images={motor.images} motorTitle={title} />
+              ) : img ? (
+                <img src={img} alt="" className="h-36 w-full rounded-xl object-contain bg-slate-50 dark:bg-slate-800" />
+              ) : null}
+            </div>
             <div className="min-w-0">
               <div className="truncate text-xl font-bold text-slate-900 dark:text-white">{title}</div>
               {subtitle && <div className="text-sm text-slate-600 dark:text-slate-300">{subtitle}</div>}
