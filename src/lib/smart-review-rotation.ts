@@ -68,8 +68,8 @@ export class SmartReviewRotation {
     
     // Filter out reviews with personal mentions for separate handling
     const personalMentionReviews = allReviews.filter(review => 
-      /\b(mary|jay|jim|george|art foster|bill|betty|ron walsh)\b/i.test(review.comment) ||
-      /shop guys|harris team|the guys at harris/i.test(review.comment)
+      /\b(mary|jay|jim|george|art foster|bill|betty|ron walsh|walt|bud)\b/i.test(review.comment) ||
+      /shop guys|harris team|the guys at harris|shop boys|shop crew|service guys|mechanics/i.test(review.comment)
     );
     
     const regularExactMatches = exactMatches.filter(review => 

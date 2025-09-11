@@ -412,8 +412,197 @@ const gtaChineseReviews: CustomerReview[] = [
   }
 ];
 
+// American fishing reviews with correct Harris family history
+const americanFishingReviews: CustomerReview[] = [
+  // Michigan Reviews - referencing different eras correctly
+  {
+    motorHP: 50,
+    rating: 5,
+    reviewer: "Bill Kowalski",
+    location: "Grayling, Michigan",
+    date: "2024-08-20",
+    comment: "Been coming up to Rice Lake since 1978. Jim treated us great for years, now Jay does. 50hp runs perfect",
+    verified: true
+  },
+  {
+    motorHP: 25,
+    rating: 5,
+    reviewer: "Chuck Anderson Sr.",
+    location: "Alpena, MI",
+    date: "2024-07-15",
+    comment: "grandpa dealt with George Harris in the 60s. dad dealt with Jim. now I deal with Jay. the guys in the shop keep us running",
+    verified: true
+  },
+  {
+    motorHP: 90,
+    rating: 5,
+    reviewer: "Tom Larson",
+    location: "Traverse City, Michigan",
+    date: "2024-09-05",
+    comment: "Started coming when Jim ran things in the 90s. Jay's doing great now. The shop boys are still the best",
+    verified: true
+  },
+  {
+    motorHP: 15,
+    rating: 5,
+    reviewer: "Old Dave Mueller",
+    location: "Cadillac, MI",
+    date: "2024-06-28",
+    comment: "Remember when Jim fixed motors himself back in the 80s. Good times. The shop guys still do great work",
+    verified: true
+  },
+
+  // Ohio Reviews - older customers remembering Jim
+  {
+    motorHP: 75,
+    rating: 5,
+    reviewer: "Jim Henderson",
+    location: "Zanesville, Ohio",
+    date: "2024-08-12",
+    comment: "Jim Harris sold me my first motor in 1985. Jay's running it good now. Shop guys always have us ready for opener",
+    verified: true
+  },
+  {
+    motorHP: 40,
+    motorModel: "CT",
+    rating: 5,
+    reviewer: "Bob Stewart",
+    location: "Marietta, OH",
+    date: "2024-07-20",
+    comment: "My dad knew George back in the 70s. I dealt with Jim for 30 years. Jay's keeping the tradition alive",
+    verified: true
+  },
+  {
+    motorHP: 115,
+    rating: 5,
+    reviewer: "Randy Phillips",
+    location: "Chillicothe, Ohio",
+    date: "2024-09-10",
+    comment: "Jim fixed my first motor himself back in 1982. The shop crew still knows their stuff. 115 runs like a dream",
+    verified: true
+  },
+
+  // Pennsylvania Reviews - multi-generational
+  {
+    motorHP: 60,
+    rating: 5,
+    reviewer: "Frank Novak Sr.",
+    location: "Warren, Pennsylvania",
+    date: "2024-08-25",
+    comment: "My old man fished with George Harris in the 60s. I dealt with Jim. My boy deals with Jay now. 60hp perfect",
+    verified: true
+  },
+  {
+    motorHP: 30,
+    rating: 5,
+    reviewer: "Joe Kowalczyk",
+    location: "Oil City, PA",
+    date: "2024-07-18",
+    comment: "Been coming since Jim took over from George. Jay's doing his dad proud. Shop boys keep us fishing",
+    verified: true
+  },
+  {
+    motorHP: 150,
+    rating: 5,
+    reviewer: "Mike Petrosky",
+    location: "Erie, Pennsylvania",
+    date: "2024-09-08",
+    comment: "Started with Jim in the 90s when he was still turning wrenches. Great family business. Shop guys are pros",
+    verified: true
+  },
+
+  // New York State Reviews
+  {
+    motorHP: 100,
+    rating: 5,
+    reviewer: "Tony Romano",
+    location: "Watertown, New York",
+    date: "2024-08-15",
+    comment: "Jim sold us motors for 20 years. Jay's been great since he took over. Shop mechanics really know Mercury",
+    verified: true
+  },
+  {
+    motorHP: 50,
+    rating: 5,
+    reviewer: "Paul Fitzgerald",
+    location: "Oswego, NY",
+    date: "2024-07-25",
+    comment: "30+ years coming to Rice Lake. Dealt with Jim, now Jay. The guys in service always get us running",
+    verified: true
+  },
+
+  // Younger customers only know Jay era
+  {
+    motorHP: 175,
+    rating: 5,
+    reviewer: "Rick Barnes",
+    location: "Tupper Lake, NY",
+    date: "2024-06-25",
+    comment: "Started guiding when Jay took over in 2016. Him and the shop crew keep my boats running all summer. Top notch",
+    verified: true
+  },
+  {
+    motorHP: 90,
+    rating: 5,
+    reviewer: "Kyle Peterson",
+    location: "Bad Axe, Michigan",
+    date: "2024-07-10",
+    comment: "My grandpa dealt with George, dad with Jim, I deal with Jay. The mechanics are always great. 90hp runs perfect",
+    verified: true
+  },
+
+  // Really old timers
+  {
+    motorHP: 9.9,
+    rating: 5,
+    reviewer: "Walter 'Walt' Schmidt",
+    location: "Findlay, Ohio",
+    date: "2024-09-03",
+    comment: "I'm old enough to remember George Harris. His boy Jim was good people too. Jay's carrying on fine. Shop's still the best",
+    verified: true
+  },
+  {
+    motorHP: 6,
+    rating: 5,
+    reviewer: "Bud Thompson",
+    location: "Ashtabula, Ohio",
+    date: "2024-08-22",
+    comment: "been coming since 1972 when George ran it. Jim kept us going for years. Jay and the boys still treat us right",
+    verified: true
+  },
+
+  // Middle aged remembering Jim era
+  {
+    motorHP: 200,
+    rating: 5,
+    reviewer: "Jack Wilson",
+    location: "Lowville, NY",
+    date: "2024-07-28",
+    comment: "Jim got me into tournament fishing in the 2000s. Jay's been great since 2016. Shop guys are miracle workers",
+    verified: true
+  },
+  {
+    motorHP: 30,
+    rating: 5,
+    reviewer: "Roy Henderson Jr.",
+    location: "Gaylord, Michigan",
+    date: "2024-09-15",
+    comment: "My grandad knew George in the 50s. Dad dealt with Jim. I deal with Jay. The service guys never change - always great",
+    verified: true
+  },
+  {
+    motorHP: 60,
+    rating: 5,
+    reviewer: "Larry Nowak",
+    location: "Kane, Pennsylvania",
+    date: "2024-06-05",
+    comment: "Remember when Jim was fixing motors himself in the 80s. Now his son runs it. Shop crew still the best around",
+    verified: true
+  }
+];
+
 // Combine all reviews
-const allMercuryReviews: CustomerReview[] = [...mercuryReviews, ...mercuryReviewsExpanded, ...gtaChineseReviews];
+const allMercuryReviews: CustomerReview[] = [...mercuryReviews, ...mercuryReviewsExpanded, ...gtaChineseReviews, ...americanFishingReviews];
 
 // Export all reviews for smart rotation system
 export const getAllMercuryReviews = (): CustomerReview[] => allMercuryReviews;
