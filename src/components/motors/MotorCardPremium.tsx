@@ -5,6 +5,7 @@ import { Info } from "lucide-react";
 import MotorQuickInfo from "./MotorQuickInfo";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import type { Motor } from '../../lib/motor-helpers';
+import { getHPDescriptor, getPopularityIndicator } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function MotorCardPremium({ 
@@ -99,6 +100,23 @@ export default function MotorCardPremium({
             {hpNum && (
               <div className="mt-0.5 text-sm text-slate-600 dark:text-slate-300">
                 {hpNum} HP
+              </div>
+            )}
+            
+            {/* HP-based descriptor and popularity indicators */}
+            {hpNum && (
+              <div className="mt-1 space-y-1">
+                {/* HP-based descriptor - always show */}
+                <p className="text-xs text-slate-600 dark:text-slate-400">
+                  {getHPDescriptor(hpNum)}
+                </p>
+                
+                {/* Popularity indicator - only show if exists */}
+                {getPopularityIndicator(title) && (
+                  <p className="text-xs text-orange-600 dark:text-orange-400 font-medium">
+                    {getPopularityIndicator(title)}
+                  </p>
+                )}
               </div>
             )}
           </div>

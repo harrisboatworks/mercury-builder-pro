@@ -42,7 +42,9 @@ import {
   getBatteryRequirement, 
   getFuelRequirement, 
   getOilRequirement, 
-  getIdealUses 
+  getIdealUses,
+  getHPDescriptor,
+  getPopularityIndicator
 } from '@/lib/motor-helpers';
 
 // Database types
@@ -1514,6 +1516,21 @@ export const MotorSelection = ({
                         const title = formatMotorTitle(motor.year, motor.model);
                         return title;
                       })()}
+                    </div>
+                    
+                    {/* HP-based descriptor and popularity indicators */}
+                    <div className="mt-1 space-y-1">
+                      {/* HP-based descriptor - always show */}
+                      <p className="text-xs text-gray-600">
+                        {getHPDescriptor(motor.hp)}
+                      </p>
+                      
+                      {/* Popularity indicator - only show if exists */}
+                      {getPopularityIndicator(motor.model) && (
+                        <p className="text-xs text-orange-600 font-medium">
+                          {getPopularityIndicator(motor.model)}
+                        </p>
+                      )}
                     </div>
                     
                     

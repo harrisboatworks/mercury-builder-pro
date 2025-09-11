@@ -347,3 +347,49 @@ export const getIdealUses = (hp: number | string) => {
   }
   return ['High-performance boats', 'Commercial use', 'Offshore racing', 'Heavy loads'];
 };
+
+export const getHPDescriptor = (hp: number | string) => {
+  const horsepower = typeof hp === 'string' ? parseInt(hp) : hp;
+  
+  if (horsepower <= 9.9) return 'Perfect for Inflatables & Utilities';
+  if (horsepower <= 20) return 'Lightweight & Fuel Efficient';
+  if (horsepower <= 30) return 'Ideal for Small Fishing Boats';
+  if (horsepower <= 50) return 'Great All-Around Power';
+  if (horsepower <= 75) return 'Popular Mid-Range Choice';
+  if (horsepower <= 115) return 'Versatile Family Boating';
+  if (horsepower <= 150) return 'Serious Fishing Power';
+  if (horsepower <= 200) return 'High Performance Cruising';
+  if (horsepower <= 250) return 'Offshore Capable Power';
+  if (horsepower <= 300) return 'Premium Performance';
+  if (horsepower <= 400) return 'Maximum Offshore Power';
+  if (horsepower > 400) return '💪 Ultimate Performance';
+  
+  return 'Proven Mercury Power';
+};
+
+export const getPopularityIndicator = (motorModel: string) => {
+  // Check for specific best-selling models
+  if (motorModel.includes('20HP') && motorModel.includes('ELH')) return '🔥 Best Seller';
+  if (motorModel.includes('20HP') && motorModel.includes('EH')) return '🔥 Best Seller';
+  if (motorModel.includes('9.9HP') && motorModel.includes('MH')) return '🔥 Best Seller';
+  if (motorModel.includes('60HP') && motorModel.includes('ELPT') && motorModel.includes('CT')) return '🔥 Best Seller - Command Thrust';
+  if (motorModel.includes('60HP') && motorModel.includes('ELPT') && !motorModel.includes('CT')) return '🔥 Best Seller';
+  if (motorModel.includes('115HP')) return '🔥 Best Seller - Top Choice';
+  
+  // For demo purposes - random indicators for other models
+  // Replace with real quote tracking data when available
+  const indicators = [
+    { text: '⭐ Popular Choice', probability: 0.15 },
+    { text: '📈 Trending This Week', probability: 0.10 },
+    { text: '👥 2 quoted today', probability: 0.08 },
+    { text: null, probability: 0.67 } // Most motors show no badge
+  ];
+  
+  const random = Math.random();
+  let cumulative = 0;
+  for (const indicator of indicators) {
+    cumulative += indicator.probability;
+    if (random <= cumulative) return indicator.text;
+  }
+  return null;
+};
