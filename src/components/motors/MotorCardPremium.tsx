@@ -82,8 +82,12 @@ export default function MotorCardPremium({
               : "border-slate-200 hover:border-slate-300 dark:border-slate-700 dark:hover:border-slate-600"
           }`}
         >
-          {/* Image and title area */}
-          <div className="relative">
+          {/* Image and title area - hover for tooltip */}
+          <div 
+            className="relative"
+            onMouseEnter={handleTooltipMouseEnter}
+            onMouseLeave={handleTooltipMouseLeave}
+          >
             {img && (
               <img 
                 src={img} 
