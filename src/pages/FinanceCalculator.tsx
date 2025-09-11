@@ -146,28 +146,26 @@ export default function FinanceCalculator() {
               {navState.fromModal ? 'Prefilled from motor selection' : 'Prefilled from selected model'}
             </CardDescription>
           </CardHeader>
-          {motorSpecs && (
-            <CardContent>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                <div>
-                  <div className="font-medium text-muted-foreground">Engine</div>
-                  <div>{motorSpecs.cylinders} {motorSpecs.category}</div>
-                </div>
-                <div>
-                  <div className="font-medium text-muted-foreground">Displacement</div>
-                  <div>{motorSpecs.displacement}</div>
-                </div>
-                <div>
-                  <div className="font-medium text-muted-foreground">Starting</div>
-                  <div>{motorSpecs.starting}</div>
-                </div>
-                <div>
-                  <div className="font-medium text-muted-foreground">Fuel</div>
-                  <div>{motorSpecs.fuel_type}</div>
-                </div>
+          <CardContent>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+              <div>
+                <div className="font-medium text-muted-foreground">Motor Price</div>
+                <div>${price.toLocaleString()}</div>
               </div>
-            </CardContent>
-          )}
+              <div>
+                <div className="font-medium text-muted-foreground">HST (13%)</div>
+                <div>${Math.round(price * 0.13).toLocaleString()}</div>
+              </div>
+              <div>
+                <div className="font-medium text-muted-foreground">Finance Fee</div>
+                <div>$299</div>
+              </div>
+              <div>
+                <div className="font-medium text-muted-foreground">Total Financed</div>
+                <div className="font-semibold">${Math.round(price * 1.13 + 299).toLocaleString()}</div>
+              </div>
+            </div>
+          </CardContent>
         </Card>
       )}
 
