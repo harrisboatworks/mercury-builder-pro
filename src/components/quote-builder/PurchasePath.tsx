@@ -51,7 +51,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             Quick & Easy
           </Badge>
           
-          <CardHeader className="pb-3">
+          <CardHeader className="pb-2">
             <div className="flex items-center gap-3 mb-2">
               <Package className="w-8 h-8 text-primary" />
               <CardTitle className="text-xl">Loose Motor</CardTitle>
@@ -61,41 +61,41 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             </p>
           </CardHeader>
           
-          <CardContent className="space-y-3">
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 text-sm">
-                <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+          <CardContent className="space-y-2">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+              <div className="flex items-center gap-1.5">
+                <span className="text-green-600 text-sm">✓</span>
                 <span>Free Prep</span>
               </div>
-              <div className="flex items-center gap-2 text-sm">
-                <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-green-600 text-sm">✓</span>
                 <span>Shop Tank Tested</span>
               </div>
               {isTiller ? (
-                <div className="flex items-center gap-2 text-sm">
-                  <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-green-600 text-sm">✓</span>
                   <span>Includes propeller & internal fuel tank</span>
                 </div>
               ) : includes12LTank ? (
-                <div className="flex items-center gap-2 text-sm">
-                  <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-green-600 text-sm">✓</span>
                   <span>Includes 12L fuel tank & hose</span>
                 </div>
               ) : (
-                <div className="flex items-center gap-2 text-sm">
-                  <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-green-600 text-sm">✓</span>
                   <span>Ready for rigging & accessories</span>
                 </div>
               )}
               {isTiller && isInStock && (
-                <div className="flex items-center gap-2 text-sm">
-                  <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-green-600 text-sm">✓</span>
                   <span>Same-day pickup available</span>
                 </div>
               )}
             </div>
             
-            <Button className="max-w-xs mx-auto mt-4 block h-8 md:h-9 px-4 py-2 text-sm">
+            <Button className="max-w-xs mx-auto mt-3 block h-8 md:h-9 px-4 py-2 text-sm">
               Select Loose Motor
             </Button>
           </CardContent>
@@ -107,7 +107,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             Full Service
           </Badge>
           
-          <CardHeader className="pb-3">
+          <CardHeader className="pb-2">
             <div className="flex items-center gap-3 mb-2">
               <Wrench className="w-8 h-8 text-primary" />
               <CardTitle className="text-xl">Professional Installation</CardTitle>
@@ -117,31 +117,31 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             </p>
           </CardHeader>
           
-          <CardContent className="space-y-3">
-            <div className="space-y-2">
+          <CardContent className="space-y-2">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
               {!isTiller && (
-                <div className="flex items-center gap-2 text-sm">
-                  <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-green-600 text-sm">✓</span>
                   <span>Controls & gauges configured</span>
                 </div>
               )}
               {isTiller && (
-                <div className="flex items-center gap-2 text-sm">
-                  <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-green-600 text-sm">✓</span>
                   <span>Securely bolted to transom (if requested)</span>
                 </div>
               )}
-              <div className="flex items-center gap-2 text-sm">
-                <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-green-600 text-sm">✓</span>
                 <span>Old motor removal available</span>
               </div>
-              <div className="flex items-center gap-2 text-sm">
-                <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">✓</div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-green-600 text-sm">✓</span>
                 <span>Water tested & prop optimized</span>
               </div>
             </div>
             
-            <Button className="max-w-xs mx-auto mt-4 block h-8 md:h-9 px-4 py-2 text-sm">
+            <Button className="max-w-xs mx-auto mt-3 block h-8 md:h-9 px-4 py-2 text-sm">
               Select Installation
             </Button>
           </CardContent>
