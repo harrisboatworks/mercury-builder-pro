@@ -333,71 +333,75 @@ export default function MotorDetailsSheet({
             
             {/* Navigation - Responsive */}
             <div className="px-4 pb-2">
-              {/* Mobile Navigation */}
-              <div className="md:hidden flex items-center justify-between">
-                <div className="flex-1">
-                  <div className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                    {[
-                      { id: 'overview', label: 'Specs' },
-                      { id: 'included', label: "What's Included" },
-                      { id: 'installation', label: 'Requirements' },
-                      { id: 'performance', label: 'Performance' },
-                      { id: 'features', label: 'Features' }
-                    ].find(tab => tab.id === activeSection)?.label || 'Specs'}
-                  </div>
+              {/* Mobile Navigation - Header with hamburger menu */}
+              <div className="lg:hidden flex items-center justify-between mb-2">
+                <h3 className="text-sm font-medium text-slate-700 dark:text-slate-300">Sections</h3>
+                <button 
+                  onClick={() => setMobileNavOpen(!mobileNavOpen)}
+                  className="p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg"
+                >
+                  <Menu className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Mobile Navigation - Horizontal Scrollable Tabs */}
+              <div className="lg:hidden">
+                <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                  <button 
+                    onClick={() => scrollToSection('overview')}
+                    className={`px-3 py-1.5 text-xs rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
+                      activeSection === 'overview'
+                        ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
+                        : 'bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-700 dark:text-slate-300'
+                    }`}
+                  >
+                    Specs
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('included')}
+                    className={`px-3 py-1.5 text-xs rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
+                      activeSection === 'included'
+                        ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
+                        : 'bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-700 dark:text-slate-300'
+                    }`}
+                  >
+                    What's Included
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('installation')}
+                    className={`px-3 py-1.5 text-xs rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
+                      activeSection === 'installation'
+                        ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
+                        : 'bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-700 dark:text-slate-300'
+                    }`}
+                  >
+                    Requirements
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('performance')}
+                    className={`px-3 py-1.5 text-xs rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
+                      activeSection === 'performance'
+                        ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
+                        : 'bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-700 dark:text-slate-300'
+                    }`}
+                  >
+                    Performance
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('features')}
+                    className={`px-3 py-1.5 text-xs rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
+                      activeSection === 'features'
+                        ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
+                        : 'bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-700 dark:text-slate-300'
+                    }`}
+                  >
+                    Features
+                  </button>
                 </div>
-                
-                <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
-                  <SheetTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="h-9 w-9 p-0"
-                      aria-label="Open section navigation"
-                    >
-                      <Menu className="h-5 w-5" />
-                    </Button>
-                  </SheetTrigger>
-                  <SheetContent side="right" className="w-[280px]">
-                    <div className="flex flex-col h-full">
-                      <div className="pb-4 border-b">
-                        <h3 className="text-lg font-semibold">Navigate Sections</h3>
-                      </div>
-                      
-                      <nav className="flex-1 py-4">
-                        <div className="space-y-2">
-                          {[
-                            { id: 'overview', label: 'Specs', icon: FileText },
-                            { id: 'included', label: "What's Included", icon: CheckCircle },
-                            { id: 'installation', label: 'Requirements', icon: Wrench },
-                            { id: 'performance', label: 'Performance', icon: BarChart3 },
-                            { id: 'features', label: 'Features', icon: Shield }
-                          ].map((tab) => {
-                            const Icon = tab.icon;
-                            return (
-                              <button
-                                key={tab.id}
-                                onClick={() => scrollToSection(tab.id)}
-                                className={`w-full flex items-center justify-start gap-3 px-3 py-3 rounded-lg text-left transition-colors ${
-                                  activeSection === tab.id 
-                                    ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' 
-                                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
-                                }`}
-                              >
-                                <Icon className="h-5 w-5 flex-shrink-0" />
-                                <span className="font-medium">{tab.label}</span>
-                              </button>
-                            );
-                          })}
-                        </div>
-                      </nav>
-                    </div>
-                  </SheetContent>
-                </Sheet>
               </div>
 
               {/* Desktop Navigation */}
-              <div className="hidden md:flex gap-2 overflow-x-auto scrollbar-hide">
+              <div className="hidden lg:flex gap-2 overflow-x-auto scrollbar-hide">
                 {[
                   { id: 'overview', label: 'Specs' },
                   { id: 'included', label: "What's Included" },
