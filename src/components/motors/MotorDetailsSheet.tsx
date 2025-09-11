@@ -330,7 +330,9 @@ export default function MotorDetailsSheet({
                           </div>}
                         <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700 last:border-0">
                           <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Weight</span>
-                          <span className="text-sm text-slate-900 dark:text-white font-medium">{motorSpecs.weight_kg} kg</span>
+                          <span className="text-sm text-slate-900 dark:text-white font-medium">
+                            {Math.round(motorSpecs.weight_kg * 2.20462)} lbs ({motorSpecs.weight_kg} kg)
+                          </span>
                         </div>
                       </>}
                     {motor?.specifications && Object.keys(motor.specifications).length > 0 && Object.entries(motor.specifications).map(([key, value]) => <div key={key} className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700 last:border-0">
