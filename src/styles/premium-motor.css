@@ -53,3 +53,12 @@ body > .modal-portal {
   z-index: 2147483647 !important; /* Maximum z-index */
   position: fixed !important;
 }
+
+/* Hide scrollbar for navigation tabs */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
