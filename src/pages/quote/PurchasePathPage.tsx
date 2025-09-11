@@ -11,16 +11,11 @@ export default function PurchasePathPage() {
   const { state, dispatch, isStepAccessible, isNavigationBlocked } = useQuote();
 
   useEffect(() => {
-    // Redirect if step not accessible with loading and navigation block protection
-    const checkAccessibility = () => {
-      if (!state.isLoading && !isNavigationBlocked && !isStepAccessible(2)) {
-        navigate('/quote/motor-selection');
-        return;
-      }
-    };
-
-    // Standardized timeout to 500ms to match other pages
-    const timeoutId = setTimeout(checkAccessibility, 500);
+    // Initial redirect check for direct URL access (without timeout to avoid race conditions)
+    if (!state.isLoading && !isNavigationBlocked && !isStepAccessible(2)) {
+      navigate('/quote/motor-selection');
+      return;
+    }
 
     document.title = 'Choose Installation Option | Harris Boat Works';
     
@@ -31,8 +26,6 @@ export default function PurchasePathPage() {
       document.head.appendChild(desc);
     }
     desc.content = 'Choose between professional installation or loose motor purchase for your Mercury outboard.';
-
-    return () => clearTimeout(timeoutId);
   }, [state.isLoading, isStepAccessible, isNavigationBlocked, navigate]);
 
   const handleStepComplete = (path: 'loose' | 'installed') => {
