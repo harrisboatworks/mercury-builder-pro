@@ -5,7 +5,7 @@ import { Info } from "lucide-react";
 import MotorQuickInfo from "./MotorQuickInfo";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import type { Motor } from '../../lib/motor-helpers';
-import { getHPDescriptor, getPopularityIndicator } from '../../lib/motor-helpers';
+import { getHPDescriptor, getPopularityIndicator, getBadgeColor } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function MotorCardPremium({ 
@@ -112,11 +112,14 @@ export default function MotorCardPremium({
                 </p>
                 
                 {/* Popularity indicator - only show if exists */}
-                {getPopularityIndicator(title) && (
-                  <p className="text-xs text-orange-600 dark:text-orange-400 font-medium">
-                    {getPopularityIndicator(title)}
-                  </p>
-                )}
+                {(() => {
+                  const badge = getPopularityIndicator(title);
+                  return badge ? (
+                    <p className={`text-xs font-medium ${getBadgeColor(badge)}`}>
+                      {badge}
+                    </p>
+                  ) : null;
+                })()}
               </div>
             )}
           </div>

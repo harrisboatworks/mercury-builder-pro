@@ -367,29 +367,143 @@ export const getHPDescriptor = (hp: number | string) => {
   return 'Proven Mercury Power';
 };
 
-export const getPopularityIndicator = (motorModel: string) => {
-  // Check for specific best-selling models
-  if (motorModel.includes('20HP') && motorModel.includes('ELH')) return '🔥 Best Seller';
-  if (motorModel.includes('20HP') && motorModel.includes('EH')) return '🔥 Best Seller';
-  if (motorModel.includes('9.9HP') && motorModel.includes('MH')) return '🔥 Best Seller';
-  if (motorModel.includes('60HP') && motorModel.includes('ELPT') && motorModel.includes('CT')) return '🔥 Best Seller - Command Thrust';
-  if (motorModel.includes('60HP') && motorModel.includes('ELPT') && !motorModel.includes('CT')) return '🔥 Best Seller';
-  if (motorModel.includes('115HP')) return '🔥 Best Seller - Top Choice';
+export const getPopularityIndicator = (motorModel: string): string | null => {
+  const model = motorModel.toUpperCase();
+  const hp = parseInt(model.match(/\d+/)?.[0] || '0');
   
-  // For demo purposes - random indicators for other models
-  // Replace with real quote tracking data when available
-  const indicators = [
-    { text: '⭐ Popular Choice', probability: 0.15 },
-    { text: '📈 Trending This Week', probability: 0.10 },
-    { text: '👥 2 quoted today', probability: 0.08 },
-    { text: null, probability: 0.67 } // Most motors show no badge
-  ];
-  
-  const random = Math.random();
-  let cumulative = 0;
-  for (const indicator of indicators) {
-    cumulative += indicator.probability;
-    if (random <= cumulative) return indicator.text;
+  // VERADO MODELS (V10, 350-425hp range)
+  if (model.includes('VERADO')) {
+    if (hp >= 350) {
+      const veradoBadges = [
+        '🏁 Performance Pick - Race-Inspired Engineering',
+        '🏆 Pro\'s Choice - Tournament Proven',
+        '🔥 Most Talked-About Marina Motor 2025',
+        '✨ Smooth Operator - Vibration-Free Ride',
+        '🚤 Pushes the Limits - Offshore Champion',
+        '🎮 Digital Command - Joystick Ready'
+      ];
+      return veradoBadges[Math.floor(Math.random() * veradoBadges.length)];
+    }
+    // Regular Verado
+    return '✨ Smooth Operator - Quietest in Class';
   }
+  
+  // AVATOR ELECTRIC MODELS
+  if (model.includes('AVATOR')) {
+    const avatorBadges = [
+      '⚡ Future Ready - Electric Innovation',
+      '🌎 Eco Cruiser - Zero Emissions',
+      '🤫 Whisper Power - Silent Running'
+    ];
+    return avatorBadges[Math.floor(Math.random() * avatorBadges.length)];
+  }
+  
+  // BEST SELLERS - Keep these consistent
+  if (model.includes('9.9') && model.includes('MH')) return '🔥 Best Seller - Perfect Utility Motor';
+  if (model.includes('20') && model.includes('EH') && !model.includes('ELH')) return '🔥 Best Seller - Electric Start';
+  if (model.includes('20') && model.includes('ELH')) return '🔥 Best Seller - Pontoon Ready';
+  if (model.includes('60') && model.includes('ELPT')) {
+    if (model.includes('CT')) return '🔥 Best Seller - Command Thrust Power';
+    return '🔥 Best Seller - Walleye Special';
+  }
+  if (model.includes('115')) return '🔥 #1 Bass Boat Choice';
+  
+  // 25-30HP RANGE
+  if (hp >= 25 && hp <= 30) {
+    const smallBadges = [
+      '⭐ Fisherman\'s Favourite - Compact & Trusted',
+      '🎣 Dockside Hero - Cottage Dependable',
+      '💧 Easy Start - Family Friendly',
+      '🛠️ Mechanic Approved - Simple & Reliable'
+    ];
+    return smallBadges[Math.floor(Math.random() * smallBadges.length)];
+  }
+  
+  // 40-60HP RANGE
+  if (hp >= 40 && hp <= 60) {
+    const midBadges = [
+      '🎣 Versatile Performer',
+      '⭐ Family Boating Favourite',
+      '🛠️ Shop Recommended',
+      '✅ In Stock - Ready Now'
+    ];
+    return midBadges[Math.floor(Math.random() * midBadges.length)];
+  }
+  
+  // 75-115HP RANGE
+  if (hp >= 75 && hp <= 115) {
+    const upperMidBadges = [
+      '🏆 Tournament Ready',
+      '🎣 Serious Fishing Power',
+      '⭐ Most Popular HP Range',
+      '✅ In Stock at Rice Lake'
+    ];
+    return upperMidBadges[Math.floor(Math.random() * upperMidBadges.length)];
+  }
+  
+  // 150-250HP RANGE
+  if (hp >= 150 && hp <= 250) {
+    const highBadges = [
+      '🚤 Offshore Capable',
+      '🏆 Performance Choice',
+      '💪 Serious Power',
+      '🎮 Digital Controls Available'
+    ];
+    return highBadges[Math.floor(Math.random() * highBadges.length)];
+  }
+  
+  // SEAPRO MODELS
+  if (model.includes('SEAPRO')) {
+    return '🛠️ Commercial Grade - Built to Work';
+  }
+  
+  // PRO XS MODELS
+  if (model.includes('PRO XS')) {
+    return '🏁 Tournament Performance';
+  }
+  
+  // GENERAL MERCURY AWARDS (randomly apply to 20% of remaining motors)
+  if (Math.random() < 0.20) {
+    const awardBadges = [
+      '🥇 2024 CSI Award Winner',
+      '🔄 Best Upgrade Choice',
+      '🏅 Dealer\'s Most Requested'
+    ];
+    return awardBadges[Math.floor(Math.random() * awardBadges.length)];
+  }
+  
+  // STOCK STATUS for remaining motors (30% show stock status)
+  if (Math.random() < 0.30) {
+    const stockBadges = [
+      '✅ In Stock - Rice Lake',
+      '📦 Available Now',
+      '⚡ Limited Stock'
+    ];
+    return stockBadges[Math.floor(Math.random() * stockBadges.length)];
+  }
+  
+  // 50% of motors show a badge, 50% don't (to avoid clutter)
   return null;
+};
+
+export const getBadgeColor = (badgeText: string | null): string => {
+  if (!badgeText) return '';
+  
+  // Best sellers & hot items = orange
+  if (badgeText.includes('Best Seller') || badgeText.includes('Most Talked')) return 'text-orange-600 dark:text-orange-400';
+  
+  // Awards & pro choice = gold/yellow
+  if (badgeText.includes('Award') || badgeText.includes('Pro\'s Choice')) return 'text-yellow-600 dark:text-yellow-400';
+  
+  // Stock status = green
+  if (badgeText.includes('Stock') || badgeText.includes('Available')) return 'text-green-600 dark:text-green-400';
+  
+  // Performance = red
+  if (badgeText.includes('Performance') || badgeText.includes('Tournament')) return 'text-red-600 dark:text-red-400';
+  
+  // Eco/Electric = teal
+  if (badgeText.includes('Eco') || badgeText.includes('Electric') || badgeText.includes('Future')) return 'text-teal-600 dark:text-teal-400';
+  
+  // Everything else = blue
+  return 'text-blue-600 dark:text-blue-400';
 };

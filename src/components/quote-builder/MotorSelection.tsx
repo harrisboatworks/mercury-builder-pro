@@ -44,7 +44,8 @@ import {
   getOilRequirement, 
   getIdealUses,
   getHPDescriptor,
-  getPopularityIndicator
+  getPopularityIndicator,
+  getBadgeColor
 } from '@/lib/motor-helpers';
 
 // Database types
@@ -1526,11 +1527,14 @@ export const MotorSelection = ({
                       </p>
                       
                       {/* Popularity indicator - only show if exists */}
-                      {getPopularityIndicator(motor.model) && (
-                        <p className="text-xs text-orange-600 font-medium">
-                          {getPopularityIndicator(motor.model)}
-                        </p>
-                      )}
+                      {(() => {
+                        const badge = getPopularityIndicator(motor.model);
+                        return badge ? (
+                          <p className={`text-xs font-medium ${getBadgeColor(badge)}`}>
+                            {badge}
+                          </p>
+                        ) : null;
+                      })()}
                     </div>
                     
                     
