@@ -95,7 +95,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
               )}
             </div>
             
-            <Button className="max-w-xs w-full mt-4 mx-auto block" size="sm">
+            <Button className="max-w-xs mx-auto mt-4 block" size="sm">
               Select Loose Motor
             </Button>
           </CardContent>
@@ -141,7 +141,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
               </div>
             </div>
             
-            <Button className="max-w-xs w-full mt-4 mx-auto block" size="sm">
+            <Button className="max-w-xs mx-auto mt-4 block" size="sm">
               Select Installation
             </Button>
           </CardContent>
