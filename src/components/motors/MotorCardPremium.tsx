@@ -133,7 +133,7 @@ export default function MotorCardPremium({
           className="absolute top-2 right-2 rounded-full bg-white/80 p-1.5 shadow-sm backdrop-blur-sm transition-all hover:bg-white hover:shadow-md dark:bg-slate-800/80 dark:hover:bg-slate-800"
           aria-label="More details"
         >
-          <Info className="h-3.5 w-3.5 text-slate-600 dark:text-slate-300" />
+          <Info className="h-4 w-4 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200" />
         </button>
         
         {/* Desktop hover tooltip */}
