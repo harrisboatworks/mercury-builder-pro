@@ -35,6 +35,7 @@ import StagingImageSizing from "./pages/StagingImageSizing";
 import StagingImageSizingV2 from "./pages/StagingImageSizingV2";
 import StagingImageSizingFinal from "./pages/StagingImageSizingFinal";
 import TestPriceScraping from "./pages/TestPriceScraping";
+import TestEnhancedPricing from "./pages/TestEnhancedPricing";
 import FinancingAdmin from "./components/admin/FinancingAdmin";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentCanceled from "./pages/PaymentCanceled";
@@ -148,6 +149,7 @@ const App = () => (
                 <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
                 <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
                 <Route path="/test/price-scraping" element={<TestPriceScraping />} />
+                <Route path="/test/enhanced-pricing" element={<TestEnhancedPricing />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
