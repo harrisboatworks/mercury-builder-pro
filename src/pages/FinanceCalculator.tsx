@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams, useLocation, useNavigate, Link } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { supabase } from '@/integrations/supabase/client';
 import { formatMotorTitle } from '@/lib/card-title';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { findMotorSpecs } from '@/lib/data/mercury-motors';
 
 interface DbMotor {
   id: string;
@@ -38,10 +39,21 @@ const setSeo = (title: string, description: string) => {
 
 export default function FinanceCalculator() {
   const [params] = useSearchParams();
+  const location = useLocation();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [motor, setMotor] = useState<DbMotor | null>(null);
 
   const modelId = params.get('model');
+  
+  // Read navigation state from modal
+  const navState = location.state as { 
+    motorPrice?: number; 
+    motorModel?: string; 
+    motorId?: string; 
+    motorHp?: number;
+    fromModal?: boolean;
+  } || {};
 
   const [price, setPrice] = useState<number>(0);
   const [down, setDown] = useState<number>(0);
@@ -55,6 +67,22 @@ export default function FinanceCalculator() {
 
   useEffect(() => {
     const run = async () => {
+      // If we have navigation state from modal, use it first
+      if (navState.motorPrice && navState.motorModel) {
+        setPrice(Math.round(navState.motorPrice));
+        // Create a pseudo-motor object from navigation state
+        const pseudoMotor: DbMotor = {
+          id: navState.motorId || 'nav-state',
+          model: navState.motorModel,
+          year: new Date().getFullYear(),
+          base_price: navState.motorPrice,
+          sale_price: navState.motorPrice
+        };
+        setMotor(pseudoMotor);
+        return;
+      }
+      
+      // Fallback to database lookup
       if (!modelId) return;
       setLoading(true);
       const { data, error } = await supabase.from('motor_models').select('id, model, year, base_price, sale_price').eq('id', modelId).maybeSingle();
@@ -66,7 +94,7 @@ export default function FinanceCalculator() {
       setLoading(false);
     };
     run();
-  }, [modelId]);
+  }, [modelId, navState]);
 
   useEffect(() => {
     if (promo?.rate) {
@@ -84,6 +112,22 @@ export default function FinanceCalculator() {
     return Math.round(m);
   }, [price, down, apr, term]);
 
+  // Get motor specs if available
+  const motorSpecs = useMemo(() => {
+    if (navState.motorHp && navState.motorModel) {
+      return findMotorSpecs(navState.motorHp, navState.motorModel);
+    }
+    return null;
+  }, [navState.motorHp, navState.motorModel]);
+
+  const handleGoBack = () => {
+    if (navState.fromModal) {
+      navigate(-1); // Go back to previous screen
+    } else {
+      navigate('/'); // Go to motors page
+    }
+  };
+
   return (
     <main className="container mx-auto px-4 py-8">
       <header className="mb-6">
@@ -95,8 +139,32 @@ export default function FinanceCalculator() {
         <Card className="mb-6">
           <CardHeader>
             <CardTitle className="text-xl">{formatMotorTitle(motor.year, motor.model)}</CardTitle>
-            <CardDescription>Prefilled from selected model</CardDescription>
+            <CardDescription>
+              {navState.fromModal ? 'Prefilled from motor selection' : 'Prefilled from selected model'}
+            </CardDescription>
           </CardHeader>
+          {motorSpecs && (
+            <CardContent>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div>
+                  <div className="font-medium text-muted-foreground">Engine</div>
+                  <div>{motorSpecs.cylinders} {motorSpecs.category}</div>
+                </div>
+                <div>
+                  <div className="font-medium text-muted-foreground">Displacement</div>
+                  <div>{motorSpecs.displacement}</div>
+                </div>
+                <div>
+                  <div className="font-medium text-muted-foreground">Starting</div>
+                  <div>{motorSpecs.starting}</div>
+                </div>
+                <div>
+                  <div className="font-medium text-muted-foreground">Fuel</div>
+                  <div>{motorSpecs.fuel_type}</div>
+                </div>
+              </div>
+            </CardContent>
+          )}
         </Card>
       )}
 
@@ -135,12 +203,15 @@ export default function FinanceCalculator() {
           </div>
 
           <div className="mt-6 flex gap-3">
-            <Button asChild>
-              <Link to="/">Back to Motors</Link>
+            <Button onClick={handleGoBack}>
+              {navState.fromModal ? 'Back' : 'Back to Motors'}
             </Button>
-            {motor && (
+            <Button variant="outline" asChild>
+              <Link to="/">Browse Motors</Link>
+            </Button>
+            {motor && navState.motorId && (
               <Button variant="outline" asChild>
-                <Link to={`/?select=${encodeURIComponent(modelId || '')}`}>Use this motor</Link>
+                <Link to={`/?select=${encodeURIComponent(navState.motorId)}`}>Use this motor</Link>
               </Button>
             )}
           </div>

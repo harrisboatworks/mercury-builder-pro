@@ -112,7 +112,10 @@ export default function MotorDetailsSheet({
     navigate('/finance-calculator', {
       state: {
         motorPrice: price || 0,
-        motorModel: title
+        motorModel: title,
+        motorId: motor?.id || `${title}-${hp}`,
+        motorHp: typeof hp === 'string' ? parseInt(hp) : hp,
+        fromModal: true
       }
     });
   };
