@@ -61,12 +61,15 @@ export default function MotorCardPremium({
   };
   
   const handleTooltipMouseEnter = () => {
-    if (!isMobile && hasHover) {
+    console.log('Motor card hover enter:', { title, model: motor?.model, isMobile, hasHover });
+    // Simplified: show tooltip on desktop regardless of hasHover for debugging
+    if (!isMobile) {
       setShowTooltip(true);
     }
   };
   
   const handleTooltipMouseLeave = () => {
+    console.log('Motor card hover leave');
     setShowTooltip(false);
   };
   
@@ -138,9 +141,9 @@ export default function MotorCardPremium({
           <Info className="h-5 w-5 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200" />
         </button>
         
-        {/* Desktop hover tooltip */}
-        {showTooltip && !isMobile && hasHover && (
-          <div className="absolute right-0 top-full z-50 mt-2">
+        {/* Desktop hover tooltip - improved positioning and simplified condition */}
+        {showTooltip && !isMobile && (
+          <div className="absolute left-1/2 top-full z-50 mt-2 -translate-x-1/2">
             <MotorQuickInfo
               hp={hpNum}
               shaft={shaft}
