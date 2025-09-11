@@ -106,7 +106,7 @@ export const QuoteLayout = ({
   return <div className="min-h-screen bg-gradient-to-br from-background via-secondary/30 to-accent/50">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-4 py-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-6">
               {/* Hamburger Menu Button */}
