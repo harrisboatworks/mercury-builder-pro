@@ -7,8 +7,10 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ShoppingCart, RotateCcw, ArrowRight, User, FileText, LogOut, Trash2, AlertTriangle, MessageSquare } from 'lucide-react';
+import { ShoppingCart, RotateCcw, ArrowRight, User, FileText, LogOut, Trash2, AlertTriangle, MessageSquare, DollarSign, Calendar, Shield, Wrench } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo.png';
+import { money } from '@/lib/money';
+import { calculateMonthly } from '@/lib/finance';
 
 const Index = () => {
   const [showQuoteForm, setShowQuoteForm] = useState(false);
@@ -160,10 +162,75 @@ const Index = () => {
   const getQuoteSummary = () => {
     if (!state.motor) return null;
     
+    // Calculate quote total if we have motor price
+    const motorPrice = state.motor.salePrice || state.motor.basePrice || state.motor.price || 0;
+    const accessoryTotal = 0; // TODO: Add accessory calculation when available
+    const tradeInValue = state.hasTradein && state.tradeInInfo?.estimatedValue || 0;
+    const quoteTotal = motorPrice + accessoryTotal - tradeInValue;
+    
+    // Monthly payment if quote is substantial
+    const monthlyPayment = quoteTotal > 5000 ? calculateMonthly(quoteTotal) : null;
+    
+    // Most valuable info to show
+    const valueHighlights = [];
+    
+    // 1. Quote total (most important)
+    if (quoteTotal > 0) {
+      valueHighlights.push({ 
+        icon: DollarSign, 
+        label: 'Quote Total', 
+        value: money(quoteTotal),
+        primary: true
+      });
+    }
+    
+    // 2. Monthly payment if available
+    if (monthlyPayment) {
+      valueHighlights.push({ 
+        icon: Calendar, 
+        label: 'Monthly Payment', 
+        value: money(monthlyPayment) + '/mo',
+        subtext: '60 mo @ 7.99% APR'
+      });
+    }
+    
+    // 3. Trade-in value if exists
+    if (state.hasTradein && state.tradeInInfo?.estimatedValue) {
+      valueHighlights.push({ 
+        icon: RotateCcw, 
+        label: 'Trade-In Credit', 
+        value: money(state.tradeInInfo.estimatedValue),
+        subtext: `${state.tradeInInfo.make} ${state.tradeInInfo.model}`
+      });
+    }
+    
+    // 4. Warranty if selected
+    if (state.warrantyConfig) {
+      const warrantyYears = state.warrantyConfig.totalYears || 3;
+      valueHighlights.push({ 
+        icon: Shield, 
+        label: 'Warranty', 
+        value: `${warrantyYears} Years`,
+        subtext: 'Coverage included'
+      });
+    }
+    
+    // 5. Installation details if configured
+    if (state.purchasePath === 'installed' && state.installConfig?.mounting) {
+      valueHighlights.push({ 
+        icon: Wrench, 
+        label: 'Installation', 
+        value: state.installConfig.mounting === 'transom' ? 'Transom Mount' : 'Remote Steering',
+        subtext: 'Professional install'
+      });
+    }
+    
     return {
       motorInfo: `${state.motor.year} Mercury ${state.motor.hp}HP ${state.motor.model}`,
       pathBadge: state.purchasePath === 'installed' ? 'Installed' : 'Loose Motor',
-      boatInfo: state.boatInfo ? `${state.boatInfo.make} ${state.boatInfo.model} (${state.boatInfo.length})` : null
+      valueHighlights: valueHighlights.slice(0, 3), // Show top 3 most relevant
+      quoteTotal,
+      completionPercent: Math.round((Object.values(getCompletionStatus()).filter(Boolean).length / 6) * 100)
     };
   };
 
@@ -380,17 +447,12 @@ const Index = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
                       <p className="font-semibold text-lg">{quoteSummary.motorInfo}</p>
                       <p className="text-sm text-muted-foreground">
                         Purchase Type: <span className="font-medium">{quoteSummary.pathBadge}</span>
                       </p>
-                      {quoteSummary.boatInfo && (
-                        <p className="text-sm text-muted-foreground">
-                          Boat: <span className="font-medium">{quoteSummary.boatInfo}</span>
-                        </p>
-                      )}
                     </div>
                     <div className="text-right">
                       <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
@@ -398,10 +460,35 @@ const Index = () => {
                           ? 'bg-green-100 text-green-800' 
                           : 'bg-yellow-100 text-yellow-800'
                       }`}>
-                        {completionStatus.isComplete ? 'Complete' : 'In Progress'}
+                        {completionStatus.isComplete ? 'Complete' : `${quoteSummary.completionPercent}% Complete`}
                       </div>
                     </div>
                   </div>
+                  
+                  {/* Value Highlights */}
+                  {quoteSummary.valueHighlights.length > 0 && (
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-3 border-t border-border">
+                      {quoteSummary.valueHighlights.map((highlight, index) => {
+                        const IconComponent = highlight.icon;
+                        return (
+                          <div key={index} className="flex items-center gap-3">
+                            <div className={`p-2 rounded-full ${highlight.primary ? 'bg-primary/10 text-primary' : 'bg-muted'}`}>
+                              <IconComponent className="w-4 h-4" />
+                            </div>
+                            <div className="min-w-0 flex-1">
+                              <p className="text-xs text-muted-foreground">{highlight.label}</p>
+                              <p className={`font-semibold ${highlight.primary ? 'text-primary text-lg' : 'text-foreground'}`}>
+                                {highlight.value}
+                              </p>
+                              {highlight.subtext && (
+                                <p className="text-xs text-muted-foreground">{highlight.subtext}</p>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             )}
