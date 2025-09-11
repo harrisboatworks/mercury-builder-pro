@@ -273,16 +273,37 @@ export default function MotorDetailsSheet({
                   Specifications
                 </h2>
                 <h3 className="font-semibold text-lg text-slate-900 dark:text-white">About This Motor</h3>
-                <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-3">
-                  {hp && decodeModelName(title).map((item, idx) => <div key={idx} className="flex items-start gap-3 py-2 border-b border-slate-200 dark:border-slate-700 last:border-0">
-                      <span className="flex-shrink-0 w-10 h-10 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg flex items-center justify-center text-xs font-bold">
-                        {item.code}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <div className="font-medium text-sm text-slate-900 dark:text-white">{item.meaning}</div>
-                        <div className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">{item.benefit}</div>
+                <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
+                  {hp && (() => {
+                    const decoded = decodeModelName(title);
+                    if (decoded.length === 0) return null;
+                    
+                    // Create compact horizontal info bar
+                    const infoText = decoded.map(item => item.meaning).join(' • ');
+                    
+                    return (
+                      <div className="space-y-3">
+                        {/* Compact horizontal info bar */}
+                        <div className="text-sm font-medium text-slate-900 dark:text-white">
+                          {infoText}
+                        </div>
+                        
+                        {/* Clean specs grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                          {decoded.map((item, idx) => (
+                            <div key={idx} className="space-y-1">
+                              <div className="font-medium text-slate-700 dark:text-slate-300">
+                                {item.code === 'M' ? 'Starting' : item.code === 'H' ? 'Control' : item.code === 'S' ? 'Shaft' : item.meaning}:
+                              </div>
+                              <div className="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+                                {item.benefit}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>)}
+                    );
+                  })()}
                 </div>
               </div>
 
