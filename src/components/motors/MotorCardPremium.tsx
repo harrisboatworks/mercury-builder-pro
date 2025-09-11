@@ -77,13 +77,8 @@ export default function MotorCardPremium({
     <>
       <div className="relative">
         <button 
-          onClick={onSelect} 
-          aria-pressed={!!selected}
-          className={`motor-card-premium text-left w-full transition-all duration-200 ${
-            selected 
-              ? "border-blue-600 ring-2 ring-blue-600/15 shadow-lg" 
-              : "border-slate-200 hover:border-slate-300 dark:border-slate-700 dark:hover:border-slate-600"
-          }`}
+          onClick={handleMoreInfoClick} 
+          className="motor-card-premium text-left w-full transition-all duration-200 border-slate-200 hover:border-slate-300 dark:border-slate-700 dark:hover:border-slate-600 hover:shadow-md"
         >
           {/* Image and title area - hover for tooltip */}
           <div 

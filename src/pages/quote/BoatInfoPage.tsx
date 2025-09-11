@@ -6,7 +6,6 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { BoatInfo } from '@/components/QuoteBuilder';
-import StickyQuoteBar from '@/components/quote/StickyQuoteBar';
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 
 export default function BoatInfoPage() {
@@ -94,21 +93,6 @@ export default function BoatInfoPage() {
           />
         </div>
       </QuoteLayout>
-      
-      {/* Sticky Quote Bar - show when motor is selected */}
-      {state.motor && (
-        <StickyQuoteBar
-          model={getModelString()}
-          total={getTotalWithTax()}
-          monthly={monthlyPayment?.amount || null}
-          coverageYears={getCoverageYears()}
-          stepLabel="Step 2 of 7"
-          primaryLabel="Continue"
-          secondaryLabel="Edit Motor"
-          onPrimary={() => navigate('/quote/trade-in')}
-          onSecondary={() => navigate('/quote/motor-selection')}
-        />
-      )}
     </>
   );
 }

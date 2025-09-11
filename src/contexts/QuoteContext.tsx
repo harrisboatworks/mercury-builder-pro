@@ -25,7 +25,7 @@ interface QuoteState {
   currentStep: number;
   isLoading: boolean;
   uiFlags: {
-    useStickyQuoteBar: boolean;
+    // Can add other UI flags here if needed in the future
   };
 }
 
@@ -64,7 +64,7 @@ const initialState: QuoteState = {
   currentStep: 1,
   isLoading: true,
   uiFlags: {
-    useStickyQuoteBar: false
+    // Can add other UI flags here if needed in the future
   }
 };
 
@@ -138,12 +138,6 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   // Load from localStorage on mount
   useEffect(() => {
     console.log('🔄 QuoteContext: Starting localStorage load...');
-    
-    // Check URL for sticky bar flag
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('stickybar') === '1') {
-      dispatch({ type: 'SET_UI_FLAG', payload: { key: 'useStickyQuoteBar', value: true } });
-    }
     
     // Safety timeout to prevent infinite loading - reduced to 3 seconds for faster recovery
     const loadingTimeout = setTimeout(() => {

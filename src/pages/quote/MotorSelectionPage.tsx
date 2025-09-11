@@ -2,7 +2,6 @@ import { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Motor } from '@/components/QuoteBuilder';
-import StickyQuoteBar from '@/components/quote/StickyQuoteBar';
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/components/ui/use-toast';
@@ -83,12 +82,7 @@ export default function MotorSelectionPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedHpRange, setSelectedHpRange] = useState<{ min: number; max: number }>({ min: 0, max: Infinity });
   const [inStockOnly, setInStockOnly] = useState(false);
-  const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
-  
-  // Get monthly payment for the selected motor (for sticky bar)
-  const selectedMotorMonthlyPayment = useMotorMonthlyPayment({ 
-    motorPrice: selectedMotor?.price || 0 
-  });
+  // Remove selectedMotor state since we're not doing inline selection anymore
 
   // Load motors and promotions from Supabase (same as original MotorSelection)
   useEffect(() => {
@@ -275,30 +269,24 @@ export default function MotorSelectionPage() {
   }, [processedMotors, searchTerm, selectedHpRange, inStockOnly]);
 
   const handleMotorSelect = (motor: Motor) => {
-    // Toggle selection - if already selected, deselect it
-    if (selectedMotor?.id === motor.id) {
-      setSelectedMotor(null);
-      dispatch({ type: 'SET_MOTOR', payload: null });
-    } else {
-      setSelectedMotor(motor);
-      dispatch({ type: 'SET_MOTOR', payload: motor });
-    }
+    // Add motor to quote context
+    dispatch({ type: 'SET_MOTOR', payload: motor });
   };
 
   const handleContinue = () => {
-    if (!selectedMotor) return;
+    if (!state.motor) return;
     dispatch({ type: 'COMPLETE_STEP', payload: 1 });
     navigate('/quote/purchase-path');
   };
 
   const getModelString = () => {
-    if (!selectedMotor) return undefined;
-    return selectedMotor.model;
+    if (!state.motor) return undefined;
+    return state.motor.model;
   };
 
   const getTotalWithTax = () => {
-    if (!selectedMotor?.price) return undefined;
-    return Math.round(selectedMotor.price * 1.13); // 13% HST
+    if (!state.motor?.price) return undefined;
+    return Math.round(state.motor.price * 1.13); // 13% HST
   };
 
   const getCoverageYears = () => {
@@ -394,7 +382,7 @@ export default function MotorSelectionPage() {
                     price={motor.price}
                      monthly={monthlyPayments[motor.id]}
                     promoText={motor.appliedPromotions?.join(' • ') || null}
-                    selected={selectedMotor?.id === motor.id}
+                    selected={state.motor?.id === motor.id}
                     onSelect={() => handleMotorSelect(motor)}
                     // New specification props
                     shaft={shaft}
@@ -431,24 +419,6 @@ export default function MotorSelectionPage() {
           )}
         </div>
       </div>
-
-      {/* Sticky Quote Bar - show when motor is selected */}
-      {selectedMotor && (
-        <StickyQuoteBar
-          model={getModelString()}
-          total={getTotalWithTax()}
-          monthly={selectedMotorMonthlyPayment?.amount || null}
-          coverageYears={getCoverageYears()}
-          stepLabel="Step 1 of 7"
-          primaryLabel="Continue"
-          secondaryLabel="Change Motor"
-          onPrimary={handleContinue}
-          onSecondary={() => {
-            setSelectedMotor(null);
-            dispatch({ type: 'SET_MOTOR', payload: null });
-          }}
-        />
-      )}
     </QuoteLayout>
   );
 }

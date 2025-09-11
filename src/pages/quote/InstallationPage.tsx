@@ -5,7 +5,6 @@ import InstallationConfig from '@/components/quote-builder/InstallationConfig';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
-import StickyQuoteBar from '@/components/quote/StickyQuoteBar';
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 import { computeDelta } from '@/lib/ui-delta';
 
@@ -118,22 +117,6 @@ export default function InstallationPage() {
           )}
         </div>
       </QuoteLayout>
-      
-      {/* Sticky Quote Bar - show when motor is selected */}
-      {state.motor && (
-        <StickyQuoteBar
-          model={getModelString()}
-          total={currentTotal}
-          monthly={currentMonthly}
-          coverageYears={getCoverageYears()}
-          stepLabel="Step 3 of 7"
-          primaryLabel="Continue"
-          secondaryLabel="Edit Motor"
-          onPrimary={() => navigate('/quote/summary')}
-          onSecondary={() => navigate('/quote/motor-selection')}
-          deltaOnce={deltaOnce}
-        />
-      )}
     </>
   );
 }

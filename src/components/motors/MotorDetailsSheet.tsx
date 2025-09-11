@@ -76,6 +76,14 @@ export default function MotorDetailsSheet({
       onSelect();
     }
     onClose();
+    
+    // Show success feedback
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'motor_added_to_quote', {
+        motor_model: title,
+        motor_price: price
+      });
+    }
   };
 
   const handleGenerateSpecSheet = async () => {
@@ -532,7 +540,7 @@ export default function MotorDetailsSheet({
             </Button>
             {onSelect && (
               <Button onClick={handleSelectMotor} className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90">
-                Select This Motor →
+                Add to Quote →
               </Button>
             )}
             <Button variant="ghost" onClick={onClose} className="px-3">
