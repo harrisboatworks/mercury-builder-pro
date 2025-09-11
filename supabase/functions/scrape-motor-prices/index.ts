@@ -12,28 +12,43 @@ function parseMotorDescription(description: string) {
   // Remove symbols and extra text
   const cleaned = description.replace(/[†‡⚠️]/g, '').trim();
   
-  // Extract horsepower - look for patterns like "2.5MH", "9.9EH", "15EFI", etc.
-  const hpMatch = cleaned.match(/^(\d+(?:\.\d+)?)[A-Z]/);
-  const horsepower = hpMatch ? parseFloat(hpMatch[1]) : null;
+  // Extract horsepower - more flexible patterns
+  let horsepower = null;
+  const hpPatterns = [
+    /(\d+(?:\.\d+)?)(?:MH|MLH|EH|ELH|E|M|EPT|EHPT|ELPT|RC)/i, // 9.9EH, 25MLH, etc.
+    /(\d+(?:\.\d+)?)HP/i, // 25HP format
+    /^(\d+(?:\.\d+)?)/  // Just the number at start
+  ];
   
-  // Determine motor type
+  for (const pattern of hpPatterns) {
+    const match = cleaned.match(pattern);
+    if (match) {
+      horsepower = parseFloat(match[1]);
+      break;
+    }
+  }
+  
+  // Determine motor type - more flexible matching
   let motorType = 'FourStroke';
-  if (cleaned.includes('FourStroke')) {
+  if (cleaned.toLowerCase().includes('fourstroke')) {
     motorType = 'FourStroke';
-  } else if (cleaned.includes('EFI')) {
+  } else if (cleaned.toLowerCase().includes('efi')) {
     motorType = 'EFI';
-  } else if (cleaned.includes('SeaPro')) {
+  } else if (cleaned.toLowerCase().includes('seapro')) {
     motorType = 'SeaPro';  
-  } else if (cleaned.includes('Verado')) {
+  } else if (cleaned.toLowerCase().includes('verado')) {
     motorType = 'Verado';
-  } else if (cleaned.includes('Jet')) {
+  } else if (cleaned.toLowerCase().includes('jet')) {
     motorType = 'Jet';
   }
   
   // Extract engine configuration
   let engineType = null;
-  if (cleaned.includes('Command Thrust')) {
+  if (cleaned.toLowerCase().includes('command thrust')) {
     engineType = 'Command Thrust';
+  }
+  if (cleaned.toLowerCase().includes('prokicker')) {
+    engineType = engineType ? `${engineType} ProKicker` : 'ProKicker';
   }
   
   return {
@@ -57,7 +72,7 @@ function calculateMatchScore(dbMotor: any, priceMotor: any) {
     }
   }
   
-  // Motor type match
+  // Motor type match - more flexible
   if (dbMotor.motor_type && priceMotor.motorType) {
     const dbType = dbMotor.motor_type.toLowerCase();
     const priceType = priceMotor.motorType.toLowerCase();
@@ -67,12 +82,38 @@ function calculateMatchScore(dbMotor: any, priceMotor: any) {
     } else if (dbType.includes(priceType) || priceType.includes(dbType)) {
       score += 15;
     }
+    // Special case: FourStroke motors often match
+    if ((dbType === 'fourstroke' && priceType === 'fourstroke') || 
+        (dbType.includes('fourstroke') && priceType.includes('fourstroke'))) {
+      score += 20;
+    }
   }
   
-  // Engine type bonus
+  // Engine type bonus - more flexible matching
   if (dbMotor.engine_type && priceMotor.engineType) {
-    if (dbMotor.engine_type.toLowerCase().includes(priceMotor.engineType.toLowerCase())) {
+    const dbEngine = dbMotor.engine_type.toLowerCase();
+    const priceEngine = priceMotor.engineType.toLowerCase();
+    
+    if (dbEngine.includes(priceEngine) || priceEngine.includes(dbEngine)) {
       score += 10;
+    }
+    // Command Thrust matching
+    if (dbEngine.includes('command thrust') && priceEngine.includes('command thrust')) {
+      score += 15;
+    }
+  }
+  
+  // Model text similarity (new - check if key terms match)
+  if (dbMotor.model && priceMotor.description) {
+    const dbModel = dbMotor.model.toLowerCase();
+    const priceDesc = priceMotor.description.toLowerCase();
+    
+    // Check for common shaft configurations
+    const shaftTerms = ['eh', 'elh', 'el', 'mh', 'mlh', 'ept', 'elpt'];
+    for (const term of shaftTerms) {
+      if (dbModel.includes(term) && priceDesc.includes(term)) {
+        score += 5;
+      }
     }
   }
   
@@ -116,25 +157,44 @@ serve(async (req) => {
 
     const pricelistHtml = await pricelistResponse.text();
     
-    // Parse prices from HTML tables
+    // Parse prices from markdown table format
     const priceEntries: any[] = [];
     
-    // Look for table rows with price data
-    const tableRowRegex = /\|\s*([A-Z0-9]+)\s*\|\s*([^|]+?)\s*\|\s*\$([0-9,]+)\s*\|/g;
-    let match;
+    // Split into lines and find table rows (markdown format)
+    const lines = pricelistHtml.split('\n');
+    let inTable = false;
     
-    while ((match = tableRowRegex.exec(pricelistHtml)) !== null) {
-      const [, modelCode, description, priceStr] = match;
-      const price = parseFloat(priceStr.replace(/,/g, ''));
+    for (const line of lines) {
+      // Skip table headers and separators
+      if (line.includes('| Model #') || line.includes('| --- |')) {
+        inTable = true;
+        continue;
+      }
       
-      if (price > 0) {
-        const parsed = parseMotorDescription(description);
-        priceEntries.push({
-          modelCode,
-          description: description.trim(),
-          price,
-          ...parsed
-        });
+      // Parse actual table rows with price data
+      if (inTable && line.includes('|') && line.includes('$')) {
+        const parts = line.split('|').map(part => part.trim());
+        if (parts.length >= 4) {
+          const modelCode = parts[1];
+          const description = parts[2];
+          const priceStr = parts[3].replace('$', '').replace(/,/g, '');
+          const price = parseFloat(priceStr);
+          
+          if (price > 0 && modelCode && description) {
+            const parsed = parseMotorDescription(description);
+            priceEntries.push({
+              modelCode,
+              description: description.trim(),
+              price,
+              ...parsed
+            });
+          }
+        }
+      }
+      
+      // Stop parsing if we hit a new section
+      if (line.trim() === '' && inTable) {
+        break;
       }
     }
 
@@ -150,7 +210,7 @@ serve(async (req) => {
       for (const priceEntry of priceEntries) {
         const score = calculateMatchScore(motor, priceEntry);
         
-        if (score > bestScore && score >= 50) { // Minimum threshold for matching
+        if (score > bestScore && score >= 40) { // Lowered threshold since we improved matching
           bestScore = score;
           bestMatch = priceEntry;
         }
