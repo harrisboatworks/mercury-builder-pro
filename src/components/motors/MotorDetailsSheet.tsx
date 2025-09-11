@@ -245,7 +245,7 @@ export default function MotorDetailsSheet({
           </div>
         </div>
 
-        <div className="p-4 space-y-6">
+        <div className="p-4 space-y-6 pb-32 sm:pb-4">
           {/* Key Features */}
           {displayFeatures.length > 0 && (
             <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
@@ -539,19 +539,46 @@ export default function MotorDetailsSheet({
           </div>
         </div>
 
-        {/* Sticky Action Bar */}
-        <div className="sticky bottom-0 bg-white dark:bg-slate-900 p-4 border-t border-slate-200 dark:border-slate-700">
-          <div className="flex items-center justify-between gap-3">
-            <Button variant="outline" onClick={handleCalculatePayment} className="flex-1">
+        {/* Mobile-Optimized Action Bar */}
+        <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 shadow-lg p-3 sm:relative sm:p-4 sm:shadow-none">
+          {/* Mobile: Price and HP on same line | Desktop: Hidden (already shown in header) */}
+          <div className="flex justify-between items-center mb-3 sm:hidden">
+            <div>
+              {typeof price === "number" && (
+                <div className="text-2xl font-bold text-slate-900 dark:text-white">{money(price)}</div>
+              )}
+              <div className="text-xs text-emerald-600 dark:text-emerald-400">+2Y Warranty</div>
+            </div>
+            <div className="text-right">
+              <div className="text-xs text-slate-500 dark:text-slate-400">Power</div>
+              <div className="text-sm font-medium text-slate-900 dark:text-white">{hp} HP</div>
+            </div>
+          </div>
+          
+          {/* Action Buttons */}
+          <div className="flex gap-2">
+            <Button 
+              variant="outline" 
+              onClick={handleCalculatePayment} 
+              className="flex-1 min-h-[44px] px-3 py-2 text-sm font-medium sm:min-h-[40px] sm:px-4 sm:text-base"
+            >
               Calculate Payment
             </Button>
             {onSelect && (
-              <Button onClick={handleSelectMotor} className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button 
+                onClick={handleSelectMotor} 
+                className="flex-1 min-h-[44px] px-3 py-2 bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-medium sm:min-h-[40px] sm:px-4 sm:text-base"
+              >
                 Add to Quote →
               </Button>
             )}
-            <Button variant="ghost" onClick={onClose} className="px-3">
-              Close
+            <Button 
+              variant="ghost" 
+              onClick={onClose} 
+              className="min-h-[44px] px-3 sm:min-h-[40px] sm:px-3"
+            >
+              <span className="sm:hidden">✕</span>
+              <span className="hidden sm:inline">Close</span>
             </Button>
           </div>
         </div>
