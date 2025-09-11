@@ -133,9 +133,11 @@ export const QuoteLayout = ({
               </div>
             </div>
             
-            <div className="flex items-center space-x-2 md:space-x-4">
+            <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-4">
               <CartHeader />
-              <ChatWidget />
+              <div className="flex-shrink-0">
+                <ChatWidget />
+              </div>
               {user ? <>
                   <div className="hidden md:flex items-center space-x-2">
                     <User className="w-4 h-4 text-muted-foreground" />
