@@ -6,16 +6,19 @@ interface ReviewRotationOptions {
   modalOpenCount?: number;
 }
 
-/**
- * Smart review rotation system for motor detail modals
- * - 80% chance for exact HP matches, 20% for generic reviews
- * - Reviews with personal mentions appear 10% of the time
- * - Uses date + motorHP as seed for daily consistency
- * - Tracks rotation state in localStorage
- */
+  /**
+   * Smart review rotation system for motor detail modals
+   * - 30% chance for Rice Lake cottage reviews (core local customers)
+   * - 80% chance for exact HP matches, 20% for generic reviews
+   * - Reviews with personal mentions appear 10% of the time
+   * - Prevents showing same cottage review twice in a row
+   * - Uses date + motorHP as seed for daily consistency
+   * - Tracks rotation state in localStorage
+   */
 export class SmartReviewRotation {
   private static readonly STORAGE_KEY = 'hbw_review_rotation';
   private static readonly PERSONAL_MENTION_CHANCE = 0.1;
+  private static readonly COTTAGE_REVIEW_CHANCE = 0.3;
   private static readonly EXACT_HP_CHANCE = 0.8;
 
   /**
@@ -66,27 +69,45 @@ export class SmartReviewRotation {
     const exactMatches = getReviewsForMotor(motorHP, motorModel);
     const allReviews = getAllMercuryReviews();
     
+    // Filter cottage reviews (core local customers)
+    const cottageReviews = allReviews.filter(review => 
+      /cottage|marina|island|bewdley|harwood|gores landing|sugar island|cow island|webb's bay|rice lake|elmhirst|seasonal|weekend|slip at|dock at/i.test(review.location) ||
+      /winterize|summerize|cottage|marina|island|dock|slip/i.test(review.comment)
+    );
+    
     // Filter out reviews with personal mentions for separate handling
     const personalMentionReviews = allReviews.filter(review => 
       /\b(mary|jay|jim|george|art foster|bill|betty|ron walsh|walt|bud)\b/i.test(review.comment) ||
       /shop guys|harris team|the guys at harris|shop boys|shop crew|service guys|mechanics/i.test(review.comment)
     );
     
-    const regularExactMatches = exactMatches.filter(review => 
+    const cottageExactMatches = cottageReviews.filter(review => 
+      review.motorHP === motorHP &&
       !personalMentionReviews.some(pr => pr === review)
+    );
+    
+    const regularExactMatches = exactMatches.filter(review => 
+      !personalMentionReviews.some(pr => pr === review) &&
+      !cottageReviews.some(cr => cr === review)
     );
     
     const genericReviews = allReviews.filter(review => 
       review.comment.toLowerCase().includes('harris') && 
       review.comment.toLowerCase().includes('years') &&
       !personalMentionReviews.some(pr => pr === review) &&
-      !exactMatches.some(em => em === review)
+      !exactMatches.some(em => em === review) &&
+      !cottageReviews.some(cr => cr === review)
     );
 
     // Use seeded random for consistent daily selection
     const random1 = this.seededRandom(seed);
     const random2 = this.seededRandom(seed + 1);
     const random3 = this.seededRandom(seed + 2);
+    const random4 = this.seededRandom(seed + 3);
+
+    // Check last cottage review to prevent repeats
+    const rotationState = this.getRotationState();
+    const lastCottageReview = rotationState._lastCottageReview;
 
     // 10% chance for personal mention reviews
     if (random1 < this.PERSONAL_MENTION_CHANCE && personalMentionReviews.length > 0) {
@@ -94,21 +115,40 @@ export class SmartReviewRotation {
       return personalMentionReviews[index];
     }
 
+    // 30% chance for cottage reviews (core local customers)
+    if (random2 < this.COTTAGE_REVIEW_CHANCE && cottageExactMatches.length > 0) {
+      const availableCottageReviews = cottageExactMatches.filter(review => 
+        !lastCottageReview || review.reviewer !== lastCottageReview
+      );
+      
+      if (availableCottageReviews.length > 0) {
+        const index = Math.floor(random3 * availableCottageReviews.length);
+        const selectedReview = availableCottageReviews[index];
+        
+        // Store last cottage review to prevent repeats
+        const currentState = this.getRotationState();
+        currentState._lastCottageReview = selectedReview.reviewer;
+        this.saveRotationState(currentState);
+        
+        return selectedReview;
+      }
+    }
+
     // 80% chance for exact HP matches (if available)
-    if (random2 < this.EXACT_HP_CHANCE && regularExactMatches.length > 0) {
-      const index = Math.floor(random3 * regularExactMatches.length);
+    if (random3 < this.EXACT_HP_CHANCE && regularExactMatches.length > 0) {
+      const index = Math.floor(random4 * regularExactMatches.length);
       return regularExactMatches[index];
     }
 
     // 20% chance for generic family/tradition reviews
     if (genericReviews.length > 0) {
-      const index = Math.floor(random3 * genericReviews.length);
+      const index = Math.floor(random4 * genericReviews.length);
       return genericReviews[index];
     }
 
     // Fallback to any exact match
     if (exactMatches.length > 0) {
-      const index = Math.floor(random3 * exactMatches.length);
+      const index = Math.floor(random4 * exactMatches.length);
       return exactMatches[index];
     }
 
@@ -146,7 +186,7 @@ export class SmartReviewRotation {
     lastViewDate: string;
     selectedReview: CustomerReview | null;
     viewCount: number;
-  }> {
+  }> & { _lastCottageReview?: string } {
     try {
       const stored = localStorage.getItem(this.STORAGE_KEY);
       return stored ? JSON.parse(stored) : {};
@@ -162,7 +202,7 @@ export class SmartReviewRotation {
     lastViewDate: string;
     selectedReview: CustomerReview | null;
     viewCount: number;
-  }>): void {
+  }> & { _lastCottageReview?: string }): void {
     try {
       localStorage.setItem(this.STORAGE_KEY, JSON.stringify(state));
     } catch (error) {
