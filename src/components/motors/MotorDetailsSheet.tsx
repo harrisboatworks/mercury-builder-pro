@@ -230,9 +230,7 @@ export default function MotorDetailsSheet({
                   {title}
                 </h2>
                 <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                  <span>{hp} HP</span>
-                  <span className="text-slate-400">
-                </span>
+                  <span>{hp}</span>
                   <span>{shaft}</span>
                 </div>
               </div>
