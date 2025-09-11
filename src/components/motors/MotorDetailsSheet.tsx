@@ -299,7 +299,7 @@ export default function MotorDetailsSheet({
         <div className="relative bg-white dark:bg-slate-900 w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-2xl sm:rounded-xl md:max-w-3xl lg:max-w-4xl flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-300">
           
           {/* Modal Header */}
-          <div className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700 shadow-sm sm:rounded-t-xl">
+          <div className="sticky top-0 z-40 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-sm sm:rounded-t-xl">
             {/* Header Bar */}
             <div className="flex items-start justify-between p-4 gap-3">
               <div className="flex-1 min-w-0">
@@ -330,9 +330,11 @@ export default function MotorDetailsSheet({
                 <X className="w-5 h-5 text-slate-700 dark:text-slate-300" />
               </button>
             </div>
-            
-            {/* Navigation - Responsive */}
-            <div className="px-4 pb-2 modal-navigation">
+          </div>
+
+          {/* Sticky Navigation - Separate from header */}
+          <div className="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-sm">
+            <div className="px-4 py-2 modal-navigation">
               {/* Mobile Navigation - Header with hamburger menu */}
               <div className="lg:hidden flex items-center justify-between mb-2">
                 <h3 className="text-sm font-medium text-slate-700 dark:text-slate-300">Sections</h3>
@@ -426,8 +428,8 @@ export default function MotorDetailsSheet({
           </div>
 
           {/* Scrollable Content Area */}
-          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto overscroll-contain modal-content pt-2">
-            <div className="p-4 space-y-6">
+          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto overscroll-contain modal-content">
+            <div className="p-4 pt-6 space-y-6">
               
               {/* Motor Image */}
               <div className="flex justify-center py-4 bg-slate-50 dark:bg-slate-800 rounded-lg">

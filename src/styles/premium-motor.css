@@ -72,8 +72,17 @@ body > .modal-portal {
 /* Ensure proper spacing between sticky nav and content */
 @media (max-width: 768px) {
   .modal-content {
-    scroll-padding-top: 120px; /* Account for sticky navigation height */
+    scroll-padding-top: 80px; /* Account for sticky navigation height */
   }
+}
+
+/* Ensure navigation has solid background and proper stacking */
+.modal-navigation {
+  background: inherit;
+}
+
+.modal-navigation .flex {
+  background: inherit;
 }
 
 /* Hide scrollbar for navigation tabs */
