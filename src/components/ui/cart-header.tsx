@@ -10,9 +10,13 @@ export const CartHeader = () => {
   const navigate = useNavigate();
   
   const handleCartClick = () => {
+    console.log('CartHeader: handleCartClick called', { hasMotor: !!state.motor, motor: state.motor?.hp });
     if (state.motor) {
+      console.log('CartHeader: Navigating to /quote/summary');
       // Navigate to quote summary if we have a motor in cart
       navigate('/quote/summary');
+    } else {
+      console.log('CartHeader: No motor in state, not navigating');
     }
   };
 
@@ -25,7 +29,12 @@ export const CartHeader = () => {
     <Button
       variant="ghost" 
       size="sm"
-      onClick={handleCartClick}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('CartHeader: Button clicked');
+        handleCartClick();
+      }}
       className="relative flex-shrink-0 p-1.5 sm:p-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 min-w-0"
       aria-label={`View quote - ${money(totalPrice)}`}
     >
