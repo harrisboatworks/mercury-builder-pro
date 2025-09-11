@@ -233,15 +233,15 @@ export default function MotorDetailsSheet({
           {/* Modal Header */}
           <div className="sticky top-0 z-40 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-sm sm:rounded-t-xl">
             {/* Header Bar */}
-            <div className="flex items-start justify-between p-4 gap-3">
+            <div className="flex items-start justify-between p-4 sm:p-6 gap-3">
               <div className="flex-1 min-w-0">
-                <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white truncate">
+                <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight mb-1">
                   {title}
                 </h2>
-                <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
+                <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
                   <span>{hp} HP</span>
-                  <span>•</span>
-                  <span className="truncate">{shaft}</span>
+                  <span className="text-slate-400">|</span>
+                  <span>{shaft}</span>
                 </div>
               </div>
               
@@ -456,25 +456,28 @@ export default function MotorDetailsSheet({
 
           {/* Compact Sticky Bottom Action Bar */}
           <div className="sticky bottom-0 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-3 sm:p-4 sm:rounded-b-xl">
-            {/* Mobile: Single Row Layout */}
-            <div className="sm:hidden flex items-center gap-3">
-              <div className="flex-shrink-0">
-                <p className="text-lg font-bold text-slate-900 dark:text-white">
-                  {typeof price === "number" ? money(price) : 'Call for Price'}
-                </p>
-                <p className="text-xs text-green-600 dark:text-green-400">+2Y Warranty</p>
+            {/* Mobile: Optimized Layout */}
+            <div className="sm:hidden">
+              {/* Price Row */}
+              <div className="flex justify-center mb-3 pb-2 border-b border-slate-200 dark:border-slate-700">
+                <div className="text-center">
+                  <p className="text-lg font-bold text-slate-900 dark:text-white">
+                    {typeof price === "number" ? money(price) : 'Call for Price'}
+                  </p>
+                  <p className="text-xs text-green-600 dark:text-green-400">+2Y Warranty</p>
+                </div>
               </div>
-              <div className="flex gap-2 flex-1">
+              {/* Button Row */}
+              <div className="flex gap-3">
                 <button 
                   onClick={handleCalculatePayment}
-                  className="flex-1 py-2.5 px-3 text-sm bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-medium"
+                  className="flex-1 py-3 px-4 text-sm bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-medium"
                 >
                   Calculate
                 </button>
                 <Button
                   onClick={handleSelectMotor}
-                  size="sm"
-                  className="flex-1 py-2.5 px-3 text-sm font-medium"
+                  className="flex-1 py-3 px-4 text-sm font-medium"
                 >
                   Add to Quote
                 </Button>
