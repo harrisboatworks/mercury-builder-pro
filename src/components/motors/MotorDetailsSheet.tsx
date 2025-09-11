@@ -44,7 +44,6 @@ export default function MotorDetailsSheet({
   const [isLoading, setIsLoading] = useState(false);
   const [specSheetLoading, setSpecSheetLoading] = useState(false);
   const [generatedSpecUrl, setGeneratedSpecUrl] = useState<string | null>(null);
-  const [activeSection, setActiveSection] = useState<string>('overview');
   const isMobile = useIsMobile();
   
   // Section refs for navigation
@@ -96,48 +95,6 @@ export default function MotorDetailsSheet({
     };
   }, [open, onClose]);
 
-  // Intersection observer for active section detection
-  useEffect(() => {
-    if (!open || !scrollContainerRef.current) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const sectionId = entry.target.getAttribute('data-section');
-            if (sectionId) {
-              setActiveSection(sectionId);
-            }
-          }
-        });
-      },
-      {
-        root: scrollContainerRef.current,
-        rootMargin: '-100px 0px -50% 0px',
-        threshold: 0.1
-      }
-    );
-
-    const sections = [
-      { ref: overviewRef, id: 'overview' },
-      { ref: featuresRef, id: 'features' },
-      { ref: includedRef, id: 'included' },
-      { ref: installationRef, id: 'installation' },
-      { ref: performanceRef, id: 'performance' }
-    ];
-
-    sections.forEach(({ ref, id }) => {
-      if (ref.current) {
-        ref.current.setAttribute('data-section', id);
-        observer.observe(ref.current);
-      }
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [open]);
-
   const handleCalculatePayment = () => {
     onClose();
     navigate('/finance-calculator', { 
@@ -184,26 +141,6 @@ export default function MotorDetailsSheet({
       console.error('Error generating spec sheet:', error);
     } finally {
       setSpecSheetLoading(false);
-    }
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const sectionMap = {
-      'overview': overviewRef.current,
-      'features': featuresRef.current,
-      'included': includedRef.current,
-      'installation': installationRef.current,
-      'performance': performanceRef.current
-    };
-    
-    const element = sectionMap[sectionId as keyof typeof sectionMap];
-    if (element && scrollContainerRef.current) {
-      element.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'start',
-        inline: 'nearest'
-      });
-      setActiveSection(sectionId);
     }
   };
 
@@ -327,37 +264,10 @@ export default function MotorDetailsSheet({
             </div>
           </div>
 
-          {/* Compact Sticky Navigation */}
-          <div className="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-sm">
-            <div className="px-4 py-2">
-              {/* Mobile & Desktop - Compact Horizontal Tabs */}
-              <div className="flex gap-2 overflow-x-auto scrollbar-hide">
-                {[
-                  { id: 'overview', label: 'Specs' },
-                  { id: 'included', label: "What's Included" },
-                  { id: 'installation', label: 'Requirements' },
-                  { id: 'performance', label: 'Performance' },
-                  { id: 'features', label: 'Features' }
-                ].map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => scrollToSection(tab.id)}
-                    className={`px-3 py-1.5 text-xs lg:text-sm rounded-full whitespace-nowrap flex-shrink-0 transition-colors ${
-                      activeSection === tab.id 
-                        ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' 
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
 
           {/* Scrollable Content Area */}
-          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto overscroll-contain modal-content">
-            <div className="p-4 pt-6 space-y-6">
+          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto overscroll-contain">
+            <div className="p-4 space-y-8">
               
               {/* Motor Image */}
               <div className="flex justify-center py-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
@@ -372,9 +282,12 @@ export default function MotorDetailsSheet({
                 )}
               </div>
               
-              {/* Understanding This Model Section */}
-              <div ref={overviewRef} data-section="overview" className="space-y-3">
-                <h3 className="font-semibold text-base text-slate-900 dark:text-white">Understanding This Model</h3>
+              {/* Specifications Section */}
+              <div className="space-y-4">
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                  Specifications
+                </h2>
+                <h3 className="font-semibold text-lg text-slate-900 dark:text-white">About This Motor</h3>
                 <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-3">
                   {hp && decodeModelName(title).map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3 py-2 border-b border-slate-200 dark:border-slate-700 last:border-0">
@@ -411,10 +324,12 @@ export default function MotorDetailsSheet({
                 </div>
               )}
 
-              {/* Features Section */}
+              {/* Key Features Section */}
               {displayFeatures.length > 0 && (
-                <div ref={featuresRef} data-section="features">
-                  <h3 className="font-semibold text-base mb-3 text-slate-900 dark:text-white">Key Features</h3>
+                <div className="space-y-4">
+                  <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                    Key Features
+                  </h2>
                   <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
                     <ul className="text-sm space-y-2">
                       {displayFeatures.slice(0, 8).map((feature, i) => (
@@ -429,8 +344,10 @@ export default function MotorDetailsSheet({
               )}
 
               {/* What's Included Section */}
-              <div ref={includedRef} data-section="included">
-                <h3 className="font-semibold text-base mb-3 text-slate-900 dark:text-white">What's Included</h3>
+              <div className="space-y-4">
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                  What's Included
+                </h2>
                 <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 p-4 rounded-lg">
                   {includedAccessories.length > 0 ? (
                     <ul className="text-sm space-y-1">
@@ -448,8 +365,10 @@ export default function MotorDetailsSheet({
               </div>
 
               {/* Installation Requirements Section */}
-              <div ref={installationRef} data-section="installation">
-                <h3 className="font-semibold text-base mb-3 text-slate-900 dark:text-white">Installation Requirements</h3>
+              <div className="space-y-4">
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                  Installation Requirements
+                </h2>
                 <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-4 rounded-lg">
                   {additionalRequirements.length > 0 ? (
                     <ul className="text-sm space-y-1">
@@ -470,8 +389,10 @@ export default function MotorDetailsSheet({
               </div>
 
               {/* Performance Section */}
-              <div ref={performanceRef} data-section="performance">
-                <h3 className="font-semibold text-base mb-3 text-slate-900 dark:text-white">Performance Estimates</h3>
+              <div className="space-y-4">
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                  Performance Estimates
+                </h2>
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   {hp && (
                     <div className="bg-slate-50 dark:bg-slate-800 p-3 rounded-lg">
@@ -489,8 +410,10 @@ export default function MotorDetailsSheet({
               </div>
 
               {/* Resources Section */}
-              <div className="space-y-3">
-                <h3 className="font-semibold text-base text-slate-900 dark:text-white">Resources</h3>
+              <div className="space-y-4">
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                  Resources
+                </h2>
                 <div className="grid gap-2">
                   <Button
                     onClick={handleGenerateSpecSheet}
@@ -519,10 +442,12 @@ export default function MotorDetailsSheet({
                 </div>
               </div>
 
-              {/* Description */}
+              {/* Description Section */}
               {cleanedDescription && (
-                <div>
-                  <h3 className="font-semibold text-base mb-3 text-slate-900 dark:text-white">Description</h3>
+                <div className="space-y-4">
+                  <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                    Description
+                  </h2>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{cleanedDescription}</p>
                 </div>
               )}
