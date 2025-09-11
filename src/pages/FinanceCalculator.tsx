@@ -4,10 +4,12 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { supabase } from '@/integrations/supabase/client';
 import { formatMotorTitle } from '@/lib/card-title';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { findMotorSpecs } from '@/lib/data/mercury-motors';
+import { calculatePaymentWithFrequency, type PaymentFrequency } from '@/lib/finance';
 
 interface DbMotor {
   id: string;
@@ -59,6 +61,7 @@ export default function FinanceCalculator() {
   const [down, setDown] = useState<number>(0);
   const [apr, setApr] = useState<number>(6.99);
   const [term, setTerm] = useState<number>(60);
+  const [frequency, setFrequency] = useState<PaymentFrequency>('monthly');
   const { promo } = useActiveFinancingPromo();
 
   useEffect(() => {
@@ -102,18 +105,17 @@ export default function FinanceCalculator() {
     }
   }, [promo]);
 
-  const monthly = useMemo(() => {
+  const paymentCalculation = useMemo(() => {
     // Add HST (13%) and $299 finance fee to the price
     const priceWithHST = price * 1.13;
     const financeAmount = priceWithHST + 299; // Add $299 finance fee
     const principal = Math.max(0, financeAmount - down);
-    const r = apr / 100 / 12;
-    const n = term;
-    if (!principal || principal <= 0) return 0;
-    if (r <= 0 || n <= 0) return Math.round(principal / Math.max(1, n));
-    const m = principal * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-    return Math.round(m);
-  }, [price, down, apr, term]);
+    
+    if (!principal || principal <= 0) return { amount: 0, frequency };
+    
+    const result = calculatePaymentWithFrequency(principal, frequency, apr);
+    return { amount: result.payment, frequency, termPeriods: result.termPeriods };
+  }, [price, down, apr, frequency]);
 
   // Get motor specs if available
   const motorSpecs = useMemo(() => {
@@ -190,6 +192,28 @@ export default function FinanceCalculator() {
             </div>
           </div>
 
+          <div className="mt-4">
+            <Label>Payment Frequency</Label>
+            <RadioGroup
+              value={frequency}
+              onValueChange={(value: PaymentFrequency) => setFrequency(value)}
+              className="flex flex-row gap-6 mt-2"
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="monthly" id="monthly" />
+                <Label htmlFor="monthly" className="cursor-pointer">Monthly</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="bi-weekly" id="bi-weekly" />
+                <Label htmlFor="bi-weekly" className="cursor-pointer">Bi-weekly</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="weekly" id="weekly" />
+                <Label htmlFor="weekly" className="cursor-pointer">Weekly</Label>
+              </div>
+            </RadioGroup>
+          </div>
+
           {promo && (
             <div className="mt-4 text-sm text-foreground">
               <span className="font-medium">Promo APR applied:</span> {promo.rate}%{' '}
@@ -203,9 +227,17 @@ export default function FinanceCalculator() {
           </div>
 
           <div className="mt-6 flex items-baseline gap-3">
-            <div className="text-muted-foreground">Estimated Monthly:</div>
-            <div className="text-3xl font-bold">${monthly.toLocaleString()}</div>
+            <div className="text-muted-foreground">
+              Estimated {frequency === 'bi-weekly' ? 'Bi-weekly' : frequency === 'weekly' ? 'Weekly' : 'Monthly'}:
+            </div>
+            <div className="text-3xl font-bold">${paymentCalculation.amount.toLocaleString()}</div>
           </div>
+          
+          {paymentCalculation.termPeriods && (
+            <div className="mt-2 text-sm text-muted-foreground">
+              {paymentCalculation.termPeriods} {frequency === 'bi-weekly' ? 'bi-weekly' : frequency === 'weekly' ? 'weekly' : 'monthly'} payments
+            </div>
+          )}
 
           <div className="mt-6 flex gap-3">
             <Button onClick={handleGoBack}>

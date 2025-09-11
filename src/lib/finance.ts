@@ -9,46 +9,80 @@ export const getFinancingTerm = (price: number): number => {
 };
 
 /**
- * Calculate monthly payment with smart term selection
+ * Payment frequency options
  */
-export const calculateMonthlyPayment = (price: number, promoRate: number | null = null) => {
-  const term = getFinancingTerm(price);
-  const rate = promoRate || 7.99;  // Use promo rate if exists, otherwise default
+export type PaymentFrequency = 'monthly' | 'bi-weekly' | 'weekly';
+
+/**
+ * Get payment frequency multiplier (payments per year)
+ */
+export const getPaymentFrequencyMultiplier = (frequency: PaymentFrequency): number => {
+  switch (frequency) {
+    case 'weekly': return 52;
+    case 'bi-weekly': return 26;
+    case 'monthly': return 12;
+    default: return 12;
+  }
+};
+
+/**
+ * Calculate payment for any frequency with smart term selection
+ */
+export const calculatePaymentWithFrequency = (
+  price: number, 
+  frequency: PaymentFrequency = 'monthly',
+  promoRate: number | null = null
+) => {
+  const termMonths = getFinancingTerm(price);
+  const rate = promoRate || 7.99;
+  const paymentsPerYear = getPaymentFrequencyMultiplier(frequency);
   
-  const monthlyRate = rate / 100 / 12;
+  // Convert term to payment periods for the selected frequency
+  const termPeriods = Math.round((termMonths / 12) * paymentsPerYear);
+  
+  const periodRate = rate / 100 / paymentsPerYear;
   const payment = price * 
-    (monthlyRate * Math.pow(1 + monthlyRate, term)) / 
-    (Math.pow(1 + monthlyRate, term) - 1);
+    (periodRate * Math.pow(1 + periodRate, termPeriods)) / 
+    (Math.pow(1 + periodRate, termPeriods) - 1);
   
   return {
     payment: Math.round(payment),
-    term: term,
-    rate: rate
+    termMonths: termMonths,
+    termPeriods: termPeriods,
+    rate: rate,
+    frequency: frequency
   };
+};
+
+/**
+ * Calculate monthly payment with smart term selection (backward compatibility)
+ */
+export const calculateMonthlyPayment = (price: number, promoRate: number | null = null) => {
+  return calculatePaymentWithFrequency(price, 'monthly', promoRate);
 };
 
 /**
  * Get financing display text based on price and promo rate
  */
 export const getFinancingDisplay = (price: number, currentPromoRate: number | null = null) => {
-  const { payment, term, rate } = calculateMonthlyPayment(price, currentPromoRate);
+  const { payment, termMonths, rate } = calculateMonthlyPayment(price, currentPromoRate);
   
   // If there's a promo rate active (different from default 7.99%)
   if (currentPromoRate !== null && currentPromoRate < 7.99) {
     if (currentPromoRate === 0) {
       // 0% gets special treatment
-      return `$${payment}/mo • ${term} mo • 0% INTEREST`;
+      return `$${payment}/mo • ${termMonths} mo • 0% INTEREST`;
     } else if (currentPromoRate < 5) {
       // Low rates get shown
-      return `$${payment}/mo • ${term} mo • ${currentPromoRate}% APR`;
+      return `$${payment}/mo • ${termMonths} mo • ${currentPromoRate}% APR`;
     }
   }
   
   // Standard display (no rate shown for regular 7.99%)
-  if (term === 120) {
+  if (termMonths === 120) {
     return `From $${payment}/mo • 10 years`;  // Cleaner than "120 months"
   } else {
-    return `From $${payment}/mo • ${term} mo`;
+    return `From $${payment}/mo • ${termMonths} mo`;
   }
 };
 

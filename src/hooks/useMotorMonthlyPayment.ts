@@ -32,13 +32,13 @@ export function useMotorMonthlyPayment({
     
     // Use smart term selection and promotional rate
     const promoRate = promo?.rate || null;
-    const { payment, term, rate } = calculateMonthlyPayment(priceWithHST, promoRate);
+    const { payment, termMonths, rate } = calculateMonthlyPayment(priceWithHST, promoRate);
     
     return {
       amount: payment,
       rate: rate,
       isPromoRate: !!promo,
-      termMonths: term
+      termMonths: termMonths
     };
   }, [motorPrice, minimumThreshold, promo]);
 
