@@ -1,5 +1,7 @@
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet, PDFDownloadLink } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, PDFDownloadLink, Image } from '@react-pdf/renderer';
+import harrisLogo from '@/assets/harris-logo.png';
+import mercuryLogo from '@/assets/mercury-logo.png';
 
 export interface QuotePDFProps {
   quoteData: {
@@ -171,10 +173,15 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontWeight: 'bold',
   },
+  // Logo styles
+  hbwLogo: {
+    width: 120,
+    height: 45,
+    marginBottom: 8,
+  },
   mercuryLogo: {
-    width: 80,
-    height: 30,
-    marginTop: 10,
+    width: 90,
+    height: 35,
   },
   
   // Pricing Section
@@ -309,7 +316,11 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
       <View style={styles.header}>
         <View style={styles.headerRow}>
           <View style={styles.logoSection}>
-            <Text style={styles.companyName}>Harris Boat Works</Text>
+            {/* Harris Boat Works Logo */}
+            <Image 
+              src={harrisLogo} 
+              style={styles.hbwLogo} 
+            />
             <Text style={styles.tagline}>Your Trusted Mercury Dealer Since 1947</Text>
             <View style={styles.dealerBadge}>
               <Text style={styles.dealerBadgeText}>⚓ AUTHORIZED MERCURY MARINE DEALER ⚓</Text>
@@ -348,7 +359,14 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
 
       {/* Product Section */}
       <View style={styles.productSection}>
-        <Text style={styles.productTitle}>{quoteData.productName}</Text>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+          <Text style={styles.productTitle}>{quoteData.productName}</Text>
+          {/* Mercury Marine Logo */}
+          <Image 
+            src={mercuryLogo} 
+            style={styles.mercuryLogo} 
+          />
+        </View>
         <View style={styles.productDetails}>
           <View style={styles.productDetailBlock}>
             <Text style={styles.productLabel}>Horsepower</Text>
