@@ -204,9 +204,8 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       // Generate a unique quote number
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
       
-      // Import React-PDF renderer
-      const { pdf } = await import('@react-pdf/renderer');
-      const { default: ProfessionalQuotePDF } = await import('@/components/quote/professional-quote-pdf');
+      // Import PDF generator
+      const { generateQuotePDF, downloadPDF } = await import('@/lib/pdf-generator');
       
       const pdfData = {
         quoteNumber,
@@ -219,31 +218,38 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           year: quoteData.motor?.year,
           sku: (quoteData.motor as any)?.sku,
         },
-        tradeInValue: tradeInValue,
-        totals: {
-          ...totals,
+        pricing: {
+          msrp: totals.msrp,
+          discount: totals.discount,
+          promoValue: totals.promoValue,
+          subtotal: totals.subtotal,
+          tradeInValue: hasTradeIn ? tradeInValue : undefined,
           subtotalAfterTrade: Math.round(subtotalAfterTrade),
           hst: Math.round(hst),
-          totalCashPrice: Math.round(totalCashPrice)
+          totalCashPrice: Math.round(totalCashPrice),
+          savings: totals.savings
         },
         specs: [
           { label: "HP", value: `${quoteData.motor?.hp || 0}` },
           { label: "Year", value: `${quoteData.motor?.year || 2025}` }
-        ].filter(spec => spec.value && spec.value !== '0')
+        ].filter(spec => spec.value && spec.value !== '0'),
+        financing: {
+          monthlyPayment: Math.round(calculateMonthlyPayment()),
+          term: quoteData.financing.term,
+          rate: quoteData.financing.rate
+        }
       };
       
-      // Generate PDF blob
-      const pdfBlob = await pdf(<ProfessionalQuotePDF quoteData={pdfData} />).toBlob();
+      toast({
+        title: "Generating PDF...",
+        description: "Please wait while we create your professional quote.",
+      });
       
-      // Create download link
-      const url = URL.createObjectURL(pdfBlob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `Mercury-Quote-${quoteNumber}.pdf`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
+      // Generate PDF using PDF.co API
+      const pdfUrl = await generateQuotePDF(pdfData);
+      
+      // Download the PDF
+      downloadPDF(pdfUrl, `Mercury-Quote-${quoteNumber}.pdf`);
       
       toast({
         title: "PDF Generated Successfully!",

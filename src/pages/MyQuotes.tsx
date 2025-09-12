@@ -79,13 +79,37 @@ export default function MyQuotes() {
         return;
       }
 
-      const pdfDoc = await generateQuotePDF({
-        ...quote.quote_data,
-        customerName: quote.customer_name || 'Valued Customer',
+      const pdfUrl = await generateQuotePDF({
         quoteNumber: quote.id.slice(0, 8).toUpperCase(),
+        customerName: quote.customer_name || 'Valued Customer',
+        customerEmail: '',
+        customerPhone: '',
+        motor: {
+          model: quote.quote_data?.motor?.model || 'Mercury Motor',
+          hp: quote.quote_data?.motor?.hp || 0,
+          year: quote.quote_data?.motor?.year,
+          sku: (quote.quote_data?.motor as any)?.sku
+        },
+        pricing: {
+          msrp: quote.final_price * 1.2, // Estimate MSRP
+          discount: quote.final_price * 0.1, // Estimate discount
+          promoValue: 0,
+          subtotal: quote.final_price,
+          tradeInValue: undefined,
+          subtotalAfterTrade: quote.final_price,
+          hst: quote.final_price * 0.13,
+          totalCashPrice: quote.final_price * 1.13,
+          savings: quote.final_price * 0.1
+        },
+        specs: [
+          { label: "HP", value: `${quote.quote_data?.motor?.hp || 0}` },
+          { label: "Year", value: `${quote.quote_data?.motor?.year || 2025}` }
+        ].filter(spec => spec.value && spec.value !== '0')
       });
 
-      pdfDoc.save(`mercury-quote-${quote.id.slice(0, 8)}.pdf`);
+      // Download the PDF
+      const { downloadPDF } = await import('@/lib/pdf-generator');
+      downloadPDF(pdfUrl, `mercury-quote-${quote.id.slice(0, 8)}.pdf`);
       
       toast({
         title: 'PDF Downloaded',

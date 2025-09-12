@@ -321,8 +321,43 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
         tradeInValue: tradeInValue
       };
 
-      const pdf = await generateQuotePDF(pdfData);
-      pdf.save(`mercury-quote-${Date.now()}.pdf`);
+      // Generate PDF using PDF.co API  
+      const pdfUrl = await generateQuotePDF({
+        quoteNumber: `HBW-${Date.now().toString().slice(-6)}`,
+        customerName: pdfData.customerName,
+        customerEmail: pdfData.customerEmail, 
+        customerPhone: pdfData.customerPhone,
+        motor: {
+          model: pdfData.motor.model,
+          hp: pdfData.motor.hp,
+          year: pdfData.motor.year,
+          sku: (pdfData.motor as any)?.sku
+        },
+        pricing: {
+          msrp: motorPrice * 1.2, // Estimate MSRP
+          discount: motorPrice * 0.1, // Estimate discount  
+          promoValue: 0,
+          subtotal: motorPrice,
+          tradeInValue: hasTradeIn ? tradeInValue : undefined,
+          subtotalAfterTrade: motorPrice - (hasTradeIn ? tradeInValue : 0),
+          hst: (motorPrice - (hasTradeIn ? tradeInValue : 0)) * 0.13,
+          totalCashPrice: (motorPrice - (hasTradeIn ? tradeInValue : 0)) * 1.13,
+          savings: motorPrice * 0.1
+        },
+        specs: [
+          { label: "HP", value: `${pdfData.motor.hp}` },
+          { label: "Year", value: `${pdfData.motor.year || 2025}` }
+        ].filter(spec => spec.value && spec.value !== '0'),
+        financing: {
+          monthlyPayment: Math.round(monthlyPayment),
+          term: term,
+          rate: effectiveRate
+        }
+      });
+      
+      // Download the PDF
+      const { downloadPDF } = await import('@/lib/pdf-generator');
+      downloadPDF(pdfUrl, `mercury-quote-${Date.now()}.pdf`);
       
       toast({ title: 'Download complete!', description: 'Your quote PDF has been downloaded.' });
     } catch (error) {

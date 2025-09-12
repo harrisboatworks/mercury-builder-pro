@@ -1,6 +1,8 @@
 "use client";
 import { money } from "@/lib/money";
 import CoverageComparisonTooltip from "@/components/quote-builder/CoverageComparisonTooltip";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 type StickySummaryProps = {
   packageLabel: string;
@@ -13,6 +15,7 @@ type StickySummaryProps = {
   coverageYears?: number;
   monthlyDelta?: number; // extra per-month for warranty, precomputed upstream
   promoWarrantyYears?: number; // optional: show "+X yrs promo"
+  onDownloadPDF?: () => void;
 };
 
 export default function StickySummary({
@@ -26,6 +29,7 @@ export default function StickySummary({
   coverageYears,
   monthlyDelta,
   promoWarrantyYears,
+  onDownloadPDF,
 }: StickySummaryProps) {
   return (
     <>
@@ -78,12 +82,25 @@ export default function StickySummary({
           ))}
         </ul>
 
-        <button
-          onClick={onReserve}
-          className="mt-4 w-full rounded-xl bg-blue-600 px-4 py-3 text-center text-white shadow-sm transition hover:scale-[1.01] hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-        >
-          Reserve with {money(depositAmount)} refundable deposit
-        </button>
+        <div className="mt-4 space-y-2">
+          {onDownloadPDF && (
+            <Button
+              onClick={onDownloadPDF}
+              variant="outline"
+              className="w-full"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Download PDF Quote
+            </Button>
+          )}
+
+          <button
+            onClick={onReserve}
+            className="w-full rounded-xl bg-blue-600 px-4 py-3 text-center text-white shadow-sm transition hover:scale-[1.01] hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+          >
+            Reserve with {money(depositAmount)} refundable deposit
+          </button>
+        </div>
       </aside>
 
       {/* Mobile bottom bar */}

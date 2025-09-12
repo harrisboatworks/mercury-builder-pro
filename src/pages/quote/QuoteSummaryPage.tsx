@@ -20,6 +20,7 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 import { useToast } from '@/hooks/use-toast';
+import { Download } from 'lucide-react';
 
 export default function QuoteSummaryPage() {
   const navigate = useNavigate();
@@ -215,12 +216,74 @@ export default function QuoteSummaryPage() {
     });
   }
 
-  // CTA handlers (stub functions for now)
+  // CTA handlers
   const handleReserveDeposit = () => {
     toast({
       title: "Reserve Your Motor",
       description: "Deposit functionality would be integrated here.",
     });
+  };
+
+  const handleDownloadPDF = async () => {
+    try {
+      // Generate a unique quote number
+      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+      
+      // Import PDF generator
+      const { generateQuotePDF, downloadPDF } = await import('@/lib/pdf-generator');
+      
+      const pdfData = {
+        quoteNumber,
+        customerName: 'Valued Customer',
+        customerEmail: '',
+        customerPhone: '',
+        motor: {
+          model: quoteData.motor?.model || 'Mercury Motor',
+          hp: quoteData.motor?.hp || 0,
+          year: quoteData.motor?.year,
+          sku: (quoteData.motor as any)?.sku,
+        },
+        pricing: {
+          msrp: totals.msrp,
+          discount: totals.discount,
+          promoValue: totals.promoValue,
+          subtotal: totals.subtotal,
+          tradeInValue: undefined,
+          subtotalAfterTrade: totals.subtotal,
+          hst: totals.tax,
+          totalCashPrice: totals.total,
+          savings: totals.savings
+        },
+        specs: [
+          { label: "HP", value: `${quoteData.motor?.hp || 0}` },
+          { label: "Year", value: `${quoteData.motor?.year || 2025}` }
+        ].filter(spec => spec.value && spec.value !== '0')
+      };
+      
+      toast({
+        title: "Generating PDF...",
+        description: "Please wait while we create your professional quote.",
+      });
+      
+      // Generate PDF using PDF.co API
+      const pdfUrl = await generateQuotePDF(pdfData);
+      
+      // Download the PDF
+      downloadPDF(pdfUrl, `Mercury-Quote-${quoteNumber}.pdf`);
+      
+      toast({
+        title: "PDF Generated Successfully!",
+        description: "Your professional quote has been downloaded.",
+      });
+      
+    } catch (error) {
+      console.error('PDF Generation Error:', error);
+      toast({
+        title: "PDF Generation Error",
+        description: "Failed to generate PDF. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleEmailQuote = () => {
@@ -335,6 +398,15 @@ export default function QuoteSummaryPage() {
             {/* Mobile CTA Section */}
             <div className="lg:hidden space-y-4">
               <Button 
+                onClick={handleDownloadPDF}
+                variant="outline"
+                className="w-full"
+                size="lg"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Download PDF Quote
+              </Button>
+              <Button 
                 onClick={handleStepComplete}
                 className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                 size="lg"
@@ -356,7 +428,7 @@ export default function QuoteSummaryPage() {
               depositAmount={200}
               coverageYears={selectedTargetYears ?? currentCoverageYears}
               monthlyDelta={selectedMonthlyDelta}
-              promoWarrantyYears={promoWarrantyYears > 0 ? promoWarrantyYears : undefined}
+              onDownloadPDF={handleDownloadPDF}
             />
           </div>
         </div>
