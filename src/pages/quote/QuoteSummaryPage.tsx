@@ -22,6 +22,7 @@ import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
+import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 
 export default function QuoteSummaryPage() {
   const navigate = useNavigate();
@@ -226,342 +227,67 @@ export default function QuoteSummaryPage() {
     });
   };
 
-  const handleDownloadPDF = () => {
-    const quoteNum = Date.now().toString().slice(-6);
-    const currentDate = new Date().toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    });
+  const handleDownloadPDF = async () => {
+    setIsGeneratingPDF(true);
     
-    const htmlContent = `
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <title>Mercury Quote - HBW-${quoteNum}</title>
-        <style>
-          * { margin: 0; padding: 0; box-sizing: border-box; }
-          body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            color: #1f2937;
-            line-height: 1.6;
-          }
-          .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px;
-          }
-          
-          /* Header with Logo */
-          .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            border-bottom: 3px solid #1e40af;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-          }
-          .company-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-          }
-          .logo-box {
-            width: 60px;
-            height: 60px;
-            background: #1e40af;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 24px;
-            border-radius: 8px;
-          }
-          .company-text h1 {
-            color: #1e40af;
-            font-size: 28px;
-            margin-bottom: 5px;
-          }
-          .tagline {
-            color: #6b7280;
-            font-size: 14px;
-          }
-          
-          /* Mercury Badge */
-          .mercury-badge {
-            display: inline-block;
-            background: #000;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 14px;
-            margin-left: 10px;
-          }
-          
-          /* Rest of your existing styles... */
-          .quote-info {
-            text-align: right;
-          }
-          .quote-number {
-            font-size: 24px;
-            font-weight: bold;
-            color: #1e40af;
-          }
-          
-          /* Motor Section with Mercury branding */
-          .motor-section {
-            background: linear-gradient(135deg, #000 0%, #333 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            position: relative;
-          }
-          .motor-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-          }
-          .mercury-watermark {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 18px;
-            font-weight: bold;
-            opacity: 0.3;
-            letter-spacing: 2px;
-          }
-          
-          /* Professional badge */
-          .authorized-dealer {
-            background: #f9fafb;
-            border: 2px solid #1e40af;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-            margin: 30px 0;
-            font-weight: bold;
-            color: #1e40af;
-          }
-          
-          /* Continue with all the other styles from before */
-          .customer-section {
-            background: #f9fafb;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 30px;
-          }
-          .section-title {
-            color: #1e40af;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-          }
-          .motor-specs {
-            display: flex;
-            gap: 30px;
-            margin-top: 15px;
-          }
-          .spec-item {
-            flex: 1;
-          }
-          .spec-label {
-            font-size: 12px;
-            opacity: 0.9;
-            text-transform: uppercase;
-          }
-          .spec-value {
-            font-size: 20px;
-            font-weight: bold;
-          }
-          table {
-            width: 100%;
-            border-collapse: collapse;
-          }
-          td {
-            padding: 12px;
-            border-bottom: 1px solid #e5e7eb;
-            font-size: 16px;
-          }
-          td:last-child {
-            text-align: right;
-            font-weight: bold;
-          }
-          .discount-row td:last-child {
-            color: #10b981;
-          }
-          .subtotal-row {
-            background: #f9fafb;
-            font-weight: bold;
-          }
-          .total-row {
-            background: #1e40af;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-          }
-          .total-row td {
-            padding: 15px;
-            border: none;
-          }
-          .savings-badge {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            margin-bottom: 30px;
-          }
-          .savings-amount {
-            font-size: 28px;
-            font-weight: bold;
-          }
-          .footer {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px solid #e5e7eb;
-            text-align: center;
-            color: #6b7280;
-          }
-          .footer-company {
-            font-size: 18px;
-            font-weight: bold;
-            color: #1e40af;
-            margin-bottom: 10px;
-          }
-          
-          @media print {
-            .container { padding: 20px; }
-            .motor-section { background: #000 !important; -webkit-print-color-adjust: exact; }
-            .savings-badge { background: #10b981 !important; -webkit-print-color-adjust: exact; }
-          }
-        </style>
-      </head>
-      <body>
-        <div class="container">
-          <!-- Header with Logo -->
-          <div class="header">
-            <div class="company-info">
-              <div class="logo-box">HBW</div>
-              <div class="company-text">
-                <h1>Harris Boat Works</h1>
-                <div class="tagline">Your Trusted Mercury Dealer Since 1947</div>
-              </div>
-            </div>
-            <div class="quote-info">
-              <div class="quote-number">Quote #HBW-${quoteNum}</div>
-              <div class="date">${currentDate}</div>
-              <div class="date" style="color: #dc2626; font-weight: bold;">Valid for 30 days</div>
-            </div>
-          </div>
-          
-          <!-- Authorized Dealer Badge -->
-          <div class="authorized-dealer">
-            ⚓ AUTHORIZED MERCURY MARINE DEALER ⚓
-          </div>
-          
-          <!-- Customer Section -->
-          <div class="customer-section">
-            <div class="section-title">Customer Information</div>
-            <div>Name: Valued Customer</div>
-            <div>Email: To be provided</div>
-            <div>Phone: To be provided</div>
-          </div>
-          
-          <!-- Motor Section with Mercury branding -->
-          <div class="motor-section">
-            <div class="mercury-watermark">MERCURY</div>
-            <div class="motor-title">${modelYear || '2025'} Mercury ${motorName}</div>
-            <div class="motor-specs">
-              <div class="spec-item">
-                <div class="spec-label">Horsepower</div>
-                <div class="spec-value">${motorHp}HP</div>
-              </div>
-              ${sku ? `
-              <div class="spec-item">
-                <div class="spec-label">Model</div>
-                <div class="spec-value">${sku}</div>
-              </div>
-              ` : ''}
-              <div class="spec-item">
-                <div class="spec-label">Category</div>
-                <div class="spec-value">FourStroke</div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Pricing Table -->
-          <div class="pricing-section">
-            <div class="section-title">Investment Summary</div>
-            <table>
-              <tr>
-                <td>Manufacturer's Suggested Retail Price</td>
-                <td>$${totals.msrp.toLocaleString()}</td>
-              </tr>
-              <tr class="discount-row">
-                <td>Harris Boat Works Discount</td>
-                <td>-$${totals.discount.toLocaleString()}</td>
-              </tr>
-              ${totals.promoValue > 0 ? `
-              <tr class="discount-row">
-                <td>Promotional Savings</td>
-                <td>-$${totals.promoValue.toLocaleString()}</td>
-              </tr>
-              ` : ''}
-              <tr class="subtotal-row">
-                <td>Subtotal</td>
-                <td>$${totals.subtotal.toLocaleString()}</td>
-              </tr>
-              <tr>
-                <td>HST (13%)</td>
-                <td>$${totals.tax.toLocaleString()}</td>
-              </tr>
-              <tr class="total-row">
-                <td>TOTAL INVESTMENT</td>
-                <td>$${totals.total.toLocaleString()}</td>
-              </tr>
-            </table>
-          </div>
-          
-          ${totals.savings > 0 ? `
-          <div class="savings-badge">
-            <div>YOUR TOTAL SAVINGS</div>
-            <div class="savings-amount">$${totals.savings.toLocaleString()}</div>
-          </div>
-          ` : ''}
-          
-          <!-- Footer -->
-          <div class="footer">
-            <div class="footer-company">Harris Boat Works</div>
-            <div class="contact-info">
-              5369 Harris Boat Works Rd, Gore's Landing, ON K0K 2E0<br>
-              (905) 342-2153 | info@harrisboatworks.ca<br>
-              www.harrisboatworks.com
-            </div>
-          </div>
-        </div>
-      </body>
-      </html>
-    `;
-    
-    const newWindow = window.open('', '_blank');
-    if (newWindow) {
-      newWindow.document.write(htmlContent);
-      newWindow.document.close();
+    try {
+      const quoteData = getQuoteData();
+      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
       
-      setTimeout(() => {
-        newWindow.print();
-      }, 500);
+      // Calculate pricing breakdown (same as in component)
+      const motorPrice = quoteData.motor?.salePrice || quoteData.motor?.basePrice || quoteData.motor?.price || 0;
+      const msrp = motorPrice + 2500; // Motor + base accessories
+      const discount = 546;
+      const promoValue = 400;
+      const subtotal = msrp - discount - promoValue;
+      const tax = subtotal * 0.13;
+      const total = subtotal + tax;
+      
+      // Transform quote data for React PDF
+      const pdfData = {
+        quoteNumber,
+        customerName: 'Valued Customer',
+        customerEmail: '',
+        customerPhone: '',
+        motor: quoteData.motor || {},
+        // Use computed pricing values
+        pricing: {
+          msrp,
+          discount,
+          promoValue,
+          subtotal,
+          hst: tax,
+          totalCashPrice: total,
+          savings: discount + promoValue
+        }
+      };
+
+      toast({
+        title: "Generating PDF...",
+        description: "Please wait while we create your professional quote.",
+      });
+      
+      // Generate PDF using React PDF
+      const pdfUrl = await generateQuotePDF(pdfData);
+      
+      // Download the PDF
+      await downloadPDF(pdfUrl, `Mercury-Quote-${quoteNumber}.pdf`);
+      
+      toast({
+        title: "PDF Generated Successfully!",
+        description: "Your professional quote has been downloaded.",
+      });
+      
+    } catch (error) {
+      console.error('PDF generation error:', error);
+      toast({
+        title: "Error", 
+        description: "Failed to generate PDF. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsGeneratingPDF(false);
     }
-    
-    toast({
-      title: "Quote Generated",
-      description: "Use Print → Save as PDF to download",
-    });
   };
 
   const handleEmailQuote = () => {
