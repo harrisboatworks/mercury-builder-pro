@@ -238,10 +238,9 @@ export default function QuoteSummaryPage() {
         customerEmail: '',
         customerPhone: '',
         motor: {
-          model: quoteData.motor?.model || 'Mercury Motor',
-          hp: quoteData.motor?.hp || 0,
-          year: quoteData.motor?.year,
-          sku: (quoteData.motor as any)?.sku,
+          model: motor.model || motorName,
+          hp: motorHp,
+          year: modelYear || 2025
         },
         pricing: {
           msrp: totals.msrp,
@@ -253,41 +252,22 @@ export default function QuoteSummaryPage() {
           hst: totals.tax,
           totalCashPrice: totals.total,
           savings: totals.savings
-        },
-        specs: [
-          { label: "HP", value: `${quoteData.motor?.hp || 0}` },
-          { label: "Year", value: `${quoteData.motor?.year || 2025}` }
-        ].filter(spec => spec.value && spec.value !== '0')
+        }
       };
       
-      const { data, error } = await supabase.functions.invoke('generate-professional-pdf', {
+      const { data, error } = await supabase.functions.invoke('generate-pdf', {
         body: { quoteData: pdfQuoteData }
       });
       
       if (error) throw error;
       if (!data?.pdfUrl) throw new Error('No PDF URL received');
       
-      // Create a hidden iframe to trigger download
-      const iframe = document.createElement('iframe');
-      iframe.style.display = 'none';
-      iframe.src = data.pdfUrl;
-      document.body.appendChild(iframe);
-      
-      // Also open in new tab as backup
-      setTimeout(() => {
-        window.open(data.pdfUrl, '_blank');
-      }, 500);
-      
-      // Clean up iframe after a delay
-      setTimeout(() => {
-        if (document.body.contains(iframe)) {
-          document.body.removeChild(iframe);
-        }
-      }, 2000);
+      // Just open in new tab - simplest approach that works
+      window.open(data.pdfUrl, '_blank');
       
       toast({
         title: "PDF Generated",
-        description: "If download didn't start, check your new tab",
+        description: "Your quote PDF has opened in a new tab. Use your browser's download button to save.",
       });
       
     } catch (error) {
