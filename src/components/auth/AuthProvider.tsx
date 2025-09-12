@@ -10,6 +10,7 @@ interface AuthContextType {
   signUp: (email: string, password: string, displayName?: string) => Promise<{ error: any }>;
   signIn: (email: string, password: string) => Promise<{ error: any }>;
   signInWithGoogle: () => Promise<{ error: any }>;
+  signInWithFacebook: () => Promise<{ error: any }>;
   signOut: () => Promise<{ error: any }>;
 }
 
@@ -83,6 +84,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     return { error: new Error('Google sign-in is not currently available') };
   };
 
+  const signInWithFacebook = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'facebook',
+      options: {
+        redirectTo: `${window.location.origin}/dashboard`
+      }
+    });
+    return { error };
+  };
+
   const signOut = async () => {
     // Log signout - simplified
     if (user) {
@@ -100,6 +111,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     signUp,
     signIn,
     signInWithGoogle,
+    signInWithFacebook,
     signOut
   };
 
