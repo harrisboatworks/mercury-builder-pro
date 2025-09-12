@@ -17,23 +17,35 @@ async function requireAuth(req) {
   const clientIp = req.headers['x-forwarded-for'] || req.connection?.remoteAddress || 'unknown';
   const userAgent = req.headers['user-agent'] || 'unknown';
   
-  // Rate limiting
-  if (!(await securityManager.checkRateLimit(clientIp, 'auth_check'))) {
+  // Enhanced rate limiting
+  if (!(await SecurityManager.checkRateLimit(clientIp, 'auth_check'))) {
     throw new Error('Rate limit exceeded');
   }
 
   try {
     const auth = req.headers?.authorization || req.headers?.Authorization;
     if (!auth || !auth.startsWith('Bearer ')) return null;
+    
     const token = auth.slice(7);
+    
+    // Enhanced token validation
+    if (token.length < 10 || !/^[A-Za-z0-9\-_]+\.[A-Za-z0-9\-_]+\.[A-Za-z0-9\-_]+$/.test(token)) {
+      console.warn('Invalid token format detected');
+      await SecurityManager.logSecurityEvent('unknown', 'invalid_token', 'quotes_seed', null, {
+        ip: clientIp,
+        userAgent
+      });
+      return null;
+    }
+    
     const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { 
       global: { headers: { Authorization: `Bearer ${token}` } } 
     });
     const { data: { user }, error } = await supabase.auth.getUser();
     if (error || !user) return null;
     
-    // Track session activity
-    await securityManager.trackSessionActivity({
+    // Track session activity with SecurityManager
+    await SecurityManager.trackSessionActivity({
       userId: user.id,
       sessionId: token.substring(0, 16),
       ipAddress: clientIp,
@@ -42,7 +54,7 @@ async function requireAuth(req) {
     
     return user;
   } catch (error) {
-    await securityManager.logSecurityEvent('unknown', 'auth_failure', 'quotes_seed', null, {
+    await SecurityManager.logSecurityEvent('unknown', 'auth_failure', 'quotes_seed', null, {
       error: error.message,
       ip: clientIp,
       userAgent
@@ -75,7 +87,8 @@ export default async function handler(req, res) {
     const tax_amount = +(subtotal * (tax_rate / 100)).toFixed(2);
     const total = +(subtotal + tax_amount).toFixed(2);
 
-    const insert = securityManager.sanitizeInput({
+    // Enhanced input validation and sanitization
+    const insert = SecurityManager.sanitizeInput({
       status: 'draft',
       customer_name: 'Test Customer',
       customer_email: 'test@example.com',
@@ -83,9 +96,14 @@ export default async function handler(req, res) {
       salesperson: 'Jay Harris',
       boat_model: 'Legend 18',
       motor_model: 'Mercury 115 EFI',
-      motor_hp: 115,
-      base_price, discount, options,
-      subtotal, tax_rate, tax_amount, total,
+      motor_hp: Math.max(0, Math.min(1000, 115)), // Validate HP range
+      base_price: Math.max(0, base_price), // Ensure positive price
+      discount: Math.max(0, discount), // Ensure positive discount
+      options: Array.isArray(options) ? options.slice(0, 20) : [], // Limit options array
+      subtotal: Math.max(0, subtotal), // Ensure positive subtotal
+      tax_rate: Math.max(0, Math.min(100, tax_rate)), // Validate tax rate
+      tax_amount: Math.max(0, tax_amount), // Ensure positive tax
+      total: Math.max(0, total), // Ensure positive total
       notes: 'Seed quote from /api/quotes-seed',
       user_id: user.id
     });
@@ -98,16 +116,29 @@ export default async function handler(req, res) {
 
     if (error) throw error;
     
-    // Log successful quote creation
-    await securityManager.logSecurityEvent(user.id, 'create', 'quotes', data.id, {
-      action: 'seed_quote_created'
+    // Log successful quote creation with enhanced metadata
+    await SecurityManager.logSecurityEvent(user.id, 'create', 'quotes', data.id, {
+      action: 'seed_quote_created',
+      total_amount: total,
+      ip_address: req.headers['x-forwarded-for'],
+      user_agent: req.headers['user-agent']
     });
     
     res.status(200).json({ ok: true, created: data });
   } catch (e) {
-    await securityManager.logSecurityEvent(user?.id || 'unknown', 'error', 'quotes_seed', null, {
-      error: e.message
+    // Enhanced error logging with more context
+    await SecurityManager.logSecurityEvent(user?.id || 'unknown', 'error', 'quotes_seed', null, {
+      error: e.message,
+      stack: e.stack?.substring(0, 500), // Limit stack trace length
+      ip_address: req.headers['x-forwarded-for'],
+      user_agent: req.headers['user-agent'],
+      timestamp: new Date().toISOString()
     });
-    res.status(500).json({ ok: false, error: e.message });
+    
+    // Return generic error message to avoid information leakage
+    const isProduction = process.env.NODE_ENV === 'production';
+    const errorMessage = isProduction ? 'An error occurred while processing your request' : e.message;
+    
+    res.status(500).json({ ok: false, error: errorMessage });
   }
 }

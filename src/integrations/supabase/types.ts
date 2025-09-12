@@ -542,7 +542,7 @@ export type Database = {
           quote_number: number
           reward_claimed: string | null
           total_price: number | null
-          user_id: string | null
+          user_id: string
           xp_earned: number
         }
         Insert: {
@@ -557,7 +557,7 @@ export type Database = {
           quote_number?: number
           reward_claimed?: string | null
           total_price?: number | null
-          user_id?: string | null
+          user_id: string
           xp_earned?: number
         }
         Update: {
@@ -572,7 +572,7 @@ export type Database = {
           quote_number?: number
           reward_claimed?: string | null
           total_price?: number | null
-          user_id?: string | null
+          user_id?: string
           xp_earned?: number
         }
         Relationships: []

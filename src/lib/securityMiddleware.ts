@@ -13,7 +13,7 @@ export class SecurityManager {
   private static readonly MAX_FAILED_ATTEMPTS = 5;
   private static readonly RATE_LIMIT_WINDOW = 15 * 60 * 1000; // 15 minutes
 
-  // Track session activity
+  // Track session activity with enhanced security logging
   static async trackSessionActivity(context: SecurityContext) {
     try {
       const { error } = await supabase
@@ -30,9 +30,36 @@ export class SecurityManager {
 
       if (error) {
         console.error('Failed to track session activity:', error);
+        // Log the security event for monitoring
+        await this.logSecurityEvent(
+          context.userId,
+          'session_tracking_error',
+          'user_sessions',
+          undefined,
+          { error: error.message, ...context }
+        );
       }
     } catch (error) {
       console.error('Session tracking error:', error);
+    }
+  }
+
+  // Enhanced session validation with automatic cleanup
+  static async invalidateExpiredSessions(): Promise<void> {
+    try {
+      const expiryTime = new Date(Date.now() - this.SESSION_TIMEOUT);
+      
+      const { error } = await supabase
+        .from('user_sessions')
+        .update({ is_active: false })
+        .lt('last_activity', expiryTime.toISOString())
+        .eq('is_active', true);
+
+      if (error) {
+        console.error('Failed to invalidate expired sessions:', error);
+      }
+    } catch (error) {
+      console.error('Session cleanup error:', error);
     }
   }
 
@@ -123,13 +150,17 @@ export class SecurityManager {
     }
   }
 
-  // Enhanced input sanitization
+  // Enhanced input sanitization with additional security measures
   static sanitizeInput(input: any): any {
     if (typeof input === 'string') {
       return input
-        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '') // Remove script tags
+        .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '') // Remove iframe tags
+        .replace(/javascript:|data:|vbscript:/gi, '') // Remove dangerous protocols
+        .replace(/on\w+\s*=/gi, '') // Remove event handlers
         .replace(/[<>'"`;(){}]/g, '') // Enhanced character filtering for SQL injection prevention
-        .replace(/(\b(union|select|insert|update|delete|drop|create|alter|exec|execute)\b)/gi, '') // Basic SQL keyword filtering
+        .replace(/(\b(union|select|insert|update|delete|drop|create|alter|exec|execute|script|iframe)\b)/gi, '') // Expanded SQL keyword filtering
+        .replace(/(\-\-|\#|\/\*|\*\/)/g, '') // Remove SQL comment patterns
         .trim()
         .substring(0, 1000); // Limit input length
     }
