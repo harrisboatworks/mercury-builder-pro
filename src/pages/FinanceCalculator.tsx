@@ -57,7 +57,7 @@ export default function FinanceCalculator() {
     fromModal?: boolean;
   } || {};
 
-  const [price, setPrice] = useState<number>(0);
+  const [totalFinanced, setTotalFinanced] = useState<number>(0);
   const [down, setDown] = useState<number>(0);
   const [apr, setApr] = useState<number>(6.99);
   const [term, setTerm] = useState<number>(60);
@@ -72,7 +72,10 @@ export default function FinanceCalculator() {
     const run = async () => {
       // If we have navigation state from modal, use it first
       if (navState.motorPrice && navState.motorModel) {
-        setPrice(Math.round(navState.motorPrice));
+        // Calculate total financed from motor price
+        const motorPrice = Math.round(navState.motorPrice);
+        const totalWithFees = motorPrice * 1.13 + 299;
+        setTotalFinanced(Math.round(totalWithFees));
         // Create a pseudo-motor object from navigation state
         const pseudoMotor: DbMotor = {
           id: navState.motorId || 'nav-state',
@@ -91,8 +94,9 @@ export default function FinanceCalculator() {
       const { data, error } = await supabase.from('motor_models').select('id, model, year, base_price, sale_price').eq('id', modelId).maybeSingle();
       if (!error && data) {
         setMotor(data as DbMotor);
-        const p = (data.sale_price && data.sale_price > 0 ? data.sale_price : data.base_price) || 0;
-        setPrice(Math.round(Number(p)));
+        const motorPrice = (data.sale_price && data.sale_price > 0 ? data.sale_price : data.base_price) || 0;
+        const totalWithFees = motorPrice * 1.13 + 299;
+        setTotalFinanced(Math.round(totalWithFees));
       }
       setLoading(false);
     };
@@ -106,16 +110,26 @@ export default function FinanceCalculator() {
   }, [promo]);
 
   const paymentCalculation = useMemo(() => {
-    // Add HST (13%) and $299 finance fee to the price
-    const priceWithHST = price * 1.13;
-    const financeAmount = priceWithHST + 299; // Add $299 finance fee
-    const principal = Math.max(0, financeAmount - down);
+    const principal = Math.max(0, totalFinanced - down);
     
     if (!principal || principal <= 0) return { amount: 0, frequency };
     
     const result = calculatePaymentWithFrequency(principal, frequency, apr);
     return { amount: result.payment, frequency, termPeriods: result.termPeriods };
-  }, [price, down, apr, frequency]);
+  }, [totalFinanced, down, apr, frequency]);
+
+  // Calculate breakdown for display
+  const breakdown = useMemo(() => {
+    // Reverse calculate motor price from total financed
+    const motorPrice = Math.round((totalFinanced - 299) / 1.13);
+    const hst = Math.round(motorPrice * 0.13);
+    return {
+      motorPrice,
+      hst,
+      financeFee: 299,
+      total: totalFinanced
+    };
+  }, [totalFinanced]);
 
   // Get motor specs if available
   const motorSpecs = useMemo(() => {
@@ -152,11 +166,11 @@ export default function FinanceCalculator() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
               <div>
                 <div className="font-medium text-muted-foreground">Motor Price</div>
-                <div>${price.toLocaleString()}</div>
+                <div>${breakdown.motorPrice.toLocaleString()}</div>
               </div>
               <div>
                 <div className="font-medium text-muted-foreground">HST (13%)</div>
-                <div>${Math.round(price * 0.13).toLocaleString()}</div>
+                <div>${breakdown.hst.toLocaleString()}</div>
               </div>
               <div>
                 <div className="font-medium text-muted-foreground">Finance Fee</div>
@@ -164,7 +178,7 @@ export default function FinanceCalculator() {
               </div>
               <div>
                 <div className="font-medium text-muted-foreground">Total Financed</div>
-                <div className="font-semibold">${Math.round(price * 1.13 + 299).toLocaleString()}</div>
+                <div className="font-semibold">${totalFinanced.toLocaleString()}</div>
               </div>
             </div>
           </CardContent>
@@ -175,8 +189,14 @@ export default function FinanceCalculator() {
         <CardContent className="pt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="price">Price</Label>
-              <Input id="price" type="number" inputMode="numeric" value={price} onChange={(e) => setPrice(Number(e.target.value || 0))} />
+              <Label htmlFor="totalFinanced">Total Financed</Label>
+              <Input 
+                id="totalFinanced" 
+                type="number" 
+                inputMode="numeric" 
+                value={totalFinanced} 
+                onChange={(e) => setTotalFinanced(Number(e.target.value || 0))} 
+              />
             </div>
             <div>
               <Label htmlFor="down">Down Payment</Label>
