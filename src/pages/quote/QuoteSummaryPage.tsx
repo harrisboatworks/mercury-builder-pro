@@ -29,6 +29,7 @@ export default function QuoteSummaryPage() {
   const { getWarrantyPromotions, getTotalWarrantyBonusYears } = useActivePromotions();
   const { toast } = useToast();
   const [selectedPackage, setSelectedPackage] = useState<string>('better');
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
 
   useEffect(() => {
     // Add delay and loading check to prevent navigation during state updates
@@ -225,6 +226,10 @@ export default function QuoteSummaryPage() {
   };
 
   const handleDownloadPDF = async () => {
+    if (isGeneratingPDF) return; // Prevent multiple clicks
+    
+    setIsGeneratingPDF(true);
+    
     try {
       // Generate a unique quote number
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
@@ -265,11 +270,15 @@ export default function QuoteSummaryPage() {
         description: "Please wait while we create your professional quote.",
       });
       
-      // Generate PDF using PDF.co API
+      // Generate PDF using PDF.co API - with proper await
       const pdfUrl = await generateQuotePDF(pdfData);
       
+      if (!pdfUrl) {
+        throw new Error('No PDF URL returned from generator');
+      }
+      
       // Download the PDF
-      downloadPDF(pdfUrl, `Mercury-Quote-${quoteNumber}.pdf`);
+      await downloadPDF(pdfUrl, `Mercury-Quote-${quoteNumber}.pdf`);
       
       toast({
         title: "PDF Generated Successfully!",
@@ -280,9 +289,11 @@ export default function QuoteSummaryPage() {
       console.error('PDF Generation Error:', error);
       toast({
         title: "PDF Generation Error",
-        description: "Failed to generate PDF. Please try again.",
+        description: error instanceof Error ? error.message : "Failed to generate PDF. Please try again.",
         variant: "destructive"
       });
+    } finally {
+      setIsGeneratingPDF(false);
     }
   };
 
@@ -402,9 +413,10 @@ export default function QuoteSummaryPage() {
                 variant="outline"
                 className="w-full"
                 size="lg"
+                disabled={isGeneratingPDF}
               >
                 <Download className="w-4 h-4 mr-2" />
-                Download PDF Quote
+                {isGeneratingPDF ? 'Generating PDF...' : 'Download PDF Quote'}
               </Button>
               <Button 
                 onClick={handleStepComplete}
@@ -429,6 +441,7 @@ export default function QuoteSummaryPage() {
               coverageYears={selectedTargetYears ?? currentCoverageYears}
               monthlyDelta={selectedMonthlyDelta}
               onDownloadPDF={handleDownloadPDF}
+              isGeneratingPDF={isGeneratingPDF}
             />
           </div>
         </div>

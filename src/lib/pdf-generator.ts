@@ -50,24 +50,55 @@ export interface PdfQuoteData {
 
 export const generateQuotePDF = async (quoteData: PdfQuoteData): Promise<string> => {
   try {
+    console.log('🔄 Generating PDF with data:', { 
+      quoteNumber: quoteData.quoteNumber, 
+      motorModel: quoteData.motor.model,
+      customerName: quoteData.customerName 
+    });
+
     // Call the Supabase edge function to generate PDF
     const { data, error } = await supabase.functions.invoke('generate-professional-pdf', {
       body: { quoteData }
     });
 
+    // Handle Supabase function errors
     if (error) {
-      console.error('PDF Generation Error:', error);
-      throw new Error(`Failed to generate PDF: ${error.message}`);
+      console.error('📛 PDF Generation Supabase Error:', error);
+      throw new Error(`Failed to generate PDF: ${error.message || 'Unknown Supabase error'}`);
     }
 
-    if (!data?.success || !data?.pdfUrl) {
-      throw new Error('PDF generation failed - no URL returned');
+    // Handle API response errors
+    if (data?.error) {
+      console.error('📛 PDF.co API Error:', data);
+      throw new Error(data.message || data.error || 'PDF generation service failed');
     }
 
-    return data.pdfUrl;
+    // Check for successful response with URL
+    if (!data?.success) {
+      console.error('📛 PDF Generation Failed - No Success Flag:', data);
+      throw new Error('PDF generation failed - service returned unsuccessful response');
+    }
+
+    if (!data.pdfUrl && !data.url) {
+      console.error('📛 PDF Generation Failed - No URL:', data);
+      throw new Error('PDF generation failed - no URL returned from service');
+    }
+
+    // Return the PDF URL (handle both possible response formats)
+    const pdfUrl = data.pdfUrl || data.url;
+    console.log('✅ PDF Generated Successfully:', { url: pdfUrl });
+    
+    return pdfUrl;
+
   } catch (error) {
-    console.error('PDF Generation Error:', error);
-    throw new Error(`Failed to generate professional PDF: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    console.error('❌ PDF Generation Error:', error);
+    
+    // Re-throw with more specific error message
+    if (error instanceof Error) {
+      throw new Error(`PDF Generation Failed: ${error.message}`);
+    } else {
+      throw new Error(`PDF Generation Failed: Unknown error occurred`);
+    }
   }
 };
 

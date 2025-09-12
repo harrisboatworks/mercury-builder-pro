@@ -16,6 +16,7 @@ type StickySummaryProps = {
   monthlyDelta?: number; // extra per-month for warranty, precomputed upstream
   promoWarrantyYears?: number; // optional: show "+X yrs promo"
   onDownloadPDF?: () => void;
+  isGeneratingPDF?: boolean;
 };
 
 export default function StickySummary({
@@ -30,6 +31,7 @@ export default function StickySummary({
   monthlyDelta,
   promoWarrantyYears,
   onDownloadPDF,
+  isGeneratingPDF = false,
 }: StickySummaryProps) {
   return (
     <>
@@ -88,9 +90,10 @@ export default function StickySummary({
               onClick={onDownloadPDF}
               variant="outline"
               className="w-full"
+              disabled={isGeneratingPDF}
             >
               <Download className="w-4 h-4 mr-2" />
-              Download PDF Quote
+              {isGeneratingPDF ? 'Generating PDF...' : 'Download PDF Quote'}
             </Button>
           )}
 
