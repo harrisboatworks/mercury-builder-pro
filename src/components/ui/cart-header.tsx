@@ -62,6 +62,8 @@ export const CartHeader = () => {
 
   if (!hasItemsInCart) return null;
 
+  const motorDisplayName = state.motor ? `${state.motor.hp}HP ${state.motor.model || 'Motor'}` : '';
+
   return (
     <Button
       variant="ghost" 
@@ -72,16 +74,25 @@ export const CartHeader = () => {
         console.log('CartHeader: Button clicked');
         handleCartClick();
       }}
-      className="relative flex-shrink-0 p-1.5 sm:p-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 min-w-0"
-      aria-label={`View quote - ${money(totalPrice)}`}
+      className="relative flex-shrink-0 p-1.5 sm:p-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 min-w-0 max-w-xs"
+      aria-label={`View quote - ${motorDisplayName} - ${money(totalPrice)}`}
     >
-      <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5" />
+      <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
       {hasItemsInCart && (
         <span className="absolute -top-0.5 -right-0.5 h-3.5 w-3.5 sm:h-4 sm:w-4 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center font-medium">
           1
         </span>
       )}
-      <span className="ml-1.5 sm:ml-2 hidden sm:inline text-xs sm:text-sm font-medium truncate">
+      <div className="ml-1.5 sm:ml-2 hidden sm:flex flex-col items-start min-w-0">
+        <span className="text-xs font-medium truncate max-w-full text-foreground">
+          {motorDisplayName}
+        </span>
+        <span className="text-xs text-muted-foreground font-medium">
+          {money(totalPrice)}
+        </span>
+      </div>
+      {/* Mobile price only */}
+      <span className="ml-1.5 sm:hidden text-xs font-medium truncate">
         {money(totalPrice)}
       </span>
     </Button>
