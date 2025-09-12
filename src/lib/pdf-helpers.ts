@@ -1,7 +1,7 @@
 import { mercuryMotorsData, type MercuryMotor } from './data/mercury-motors';
 import { mercuryReviewsExpanded, type CustomerReview } from './data/mercury-reviews';
 import { calculateMonthlyPayment } from './finance';
-import type { PdfQuoteData } from './pdf-generator';
+import type { ReactPdfQuoteData } from './react-pdf-generator';
 
 /**
  * Find motor specifications by HP and model
@@ -75,7 +75,7 @@ export const buildEnhancedPdfData = (
   motor: any,
   pricing: any,
   quoteNumber?: string | number
-): PdfQuoteData => {
+): any => {
   // Generate quote number if not provided
   const finalQuoteNumber = quoteNumber || generateQuoteNumber();
   
@@ -92,7 +92,7 @@ export const buildEnhancedPdfData = (
   const accessories: Array<{ name: string; price: number }> = [];
   
   // Build the enhanced PDF data
-  const pdfData: PdfQuoteData = {
+  const pdfData: any = {
     quoteNumber: finalQuoteNumber,
     customerName,
     customerEmail,

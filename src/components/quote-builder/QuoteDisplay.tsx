@@ -17,7 +17,7 @@ import { toast } from '@/hooks/use-toast';
 import confetti from 'canvas-confetti';
 import { supabase } from '@/integrations/supabase/client';
 import { buildEnhancedPdfData } from '@/lib/pdf-helpers';
-import { generateQuotePDF } from '@/lib/pdf-generator';
+import { generateQuotePDF } from '@/lib/react-pdf-generator';
 import { motion } from 'framer-motion';
 import { xpActions } from '@/config/xpActions';
 import { xpRewards, getCurrentReward, getNextReward } from '@/config/xpRewards';
@@ -357,7 +357,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
       });
       
       // Download the PDF
-      const { downloadPDF } = await import('@/lib/pdf-generator');
+      const { downloadPDF } = await import('@/lib/react-pdf-generator');
       downloadPDF(pdfUrl, `mercury-quote-${Date.now()}.pdf`);
       
       toast({ title: 'Download complete!', description: 'Your quote PDF has been downloaded.' });

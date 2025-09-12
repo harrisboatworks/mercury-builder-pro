@@ -8,7 +8,7 @@ import { Download, FileText, Calendar, DollarSign, Settings, Trash2 } from 'luci
 import { listQuotes } from '@/lib/quotesApi';
 import { toast } from '@/hooks/use-toast';
 import { buildEnhancedPdfData } from '@/lib/pdf-helpers';
-import { generateQuotePDF } from '@/lib/pdf-generator';
+import { generateQuotePDF } from '@/lib/react-pdf-generator';
 import { format } from 'date-fns';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -109,7 +109,7 @@ export default function MyQuotes() {
       });
 
       // Download the PDF
-      const { downloadPDF } = await import('@/lib/pdf-generator');
+      const { downloadPDF } = await import('@/lib/react-pdf-generator');
       downloadPDF(pdfUrl, `mercury-quote-${quote.id.slice(0, 8)}.pdf`);
       
       toast({

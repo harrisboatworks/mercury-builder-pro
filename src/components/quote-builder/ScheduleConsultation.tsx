@@ -205,7 +205,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
       
       // Import PDF generator
-      const { generateQuotePDF, downloadPDF } = await import('@/lib/pdf-generator');
+      const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');
       
       const pdfData = {
         quoteNumber,
