@@ -74,16 +74,28 @@ export const CartHeader = () => {
         console.log('CartHeader: Button clicked');
         handleCartClick();
       }}
-      className="relative flex-shrink-0 p-1.5 sm:p-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 min-w-0 max-w-xs"
+      className="relative flex items-center gap-2 p-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 min-w-0 transition-colors"
       aria-label={`View quote - ${motorDisplayName} - ${money(totalPrice)}`}
     >
-      <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-      {hasItemsInCart && (
-        <span className="absolute -top-0.5 -right-0.5 h-3.5 w-3.5 sm:h-4 sm:w-4 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center font-medium">
-          1
+      <ShoppingCart className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
+      
+      {/* Mobile: Price only (< 640px) */}
+      <span className="text-xs font-medium truncate sm:hidden">
+        {money(totalPrice)}
+      </span>
+      
+      {/* Tablet: Motor HP + Price inline (640px - 1024px) */}
+      <div className="hidden sm:flex lg:hidden items-center gap-1.5 min-w-0">
+        <span className="text-xs font-medium truncate text-foreground">
+          {state.motor?.hp}HP
         </span>
-      )}
-      <div className="ml-1.5 sm:ml-2 hidden sm:flex flex-col items-start min-w-0">
+        <span className="text-xs text-muted-foreground font-medium">
+          {money(totalPrice)}
+        </span>
+      </div>
+      
+      {/* Desktop: Full details stacked (1024px+) */}
+      <div className="hidden lg:flex flex-col items-start min-w-0">
         <span className="text-xs font-medium truncate max-w-full text-foreground">
           {motorDisplayName}
         </span>
@@ -91,10 +103,6 @@ export const CartHeader = () => {
           {money(totalPrice)}
         </span>
       </div>
-      {/* Mobile price only */}
-      <span className="ml-1.5 sm:hidden text-xs font-medium truncate">
-        {money(totalPrice)}
-      </span>
     </Button>
   );
 };
