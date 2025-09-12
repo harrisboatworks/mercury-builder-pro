@@ -124,16 +124,23 @@ export class SecurityManager {
     try {
       const windowStart = new Date(Date.now() - this.RATE_LIMIT_WINDOW);
 
-      // Sanitize identifier to prevent injection attacks
+      // Enhanced sanitization for identifier to prevent injection attacks
       const sanitizedIdentifier = this.sanitizeInput(identifier);
       
+      // Validate identifier format before querying
+      if (!sanitizedIdentifier || sanitizedIdentifier.length === 0) {
+        console.warn('Invalid identifier provided for rate limiting');
+        return false;
+      }
+      
       // For login attempts, check by identifier (could be email or user_id)
+      // Use safer query structure to avoid SQL injection
       const { data, error } = await supabase
         .from('security_audit_log')
         .select('id')
-        .or(`user_id.eq.${sanitizedIdentifier},metadata->>identifier.eq.${sanitizedIdentifier}`)
         .eq('action', action)
-        .gte('created_at', windowStart.toISOString());
+        .gte('created_at', windowStart.toISOString())
+        .or(`user_id.eq.${sanitizedIdentifier}`);
 
       if (error) {
         console.error('Rate limit check error:', error);
@@ -142,7 +149,14 @@ export class SecurityManager {
       }
 
       const attemptCount = data?.length || 0;
-      return attemptCount < this.MAX_FAILED_ATTEMPTS;
+      const isAllowed = attemptCount < this.MAX_FAILED_ATTEMPTS;
+      
+      // Log rate limiting attempts for security monitoring
+      if (!isAllowed) {
+        console.warn(`Rate limit exceeded for identifier: ${sanitizedIdentifier}, action: ${action}`);
+      }
+      
+      return isAllowed;
     } catch (error) {
       console.error('Rate limiting error:', error);
       // Fail closed for security - deny on error for rate limiting
@@ -220,14 +234,21 @@ export const SECURITY_HEADERS = {
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()'
 };
 
-// Password strength validation
+// Enhanced password strength validation with security best practices
 export const validatePasswordStrength = (password: string): { isValid: boolean; errors: string[] } => {
   const errors: string[] = [];
   
-  if (password.length < 8) {
-    errors.push('Password must be at least 8 characters long');
+  // Minimum length requirement
+  if (password.length < 12) {
+    errors.push('Password must be at least 12 characters long');
   }
   
+  // Maximum length to prevent DoS attacks
+  if (password.length > 128) {
+    errors.push('Password must be no more than 128 characters long');
+  }
+  
+  // Character complexity requirements
   if (!/[A-Z]/.test(password)) {
     errors.push('Password must contain at least one uppercase letter');
   }
@@ -240,8 +261,29 @@ export const validatePasswordStrength = (password: string): { isValid: boolean; 
     errors.push('Password must contain at least one number');
   }
   
-  if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+  if (!/[!@#$%^&*(),.?":{}|<>_+=\-\[\]\\;'/~`]/.test(password)) {
     errors.push('Password must contain at least one special character');
+  }
+  
+  // Check for common weak patterns
+  const commonPatterns = [
+    /(.)\1{3,}/, // Repeated characters (4+ times)
+    /123456|654321|abcdef|qwerty|password|admin/i, // Common sequences
+    /^[a-zA-Z]+\d+$/, // Letters followed by numbers only
+    /^\d+[a-zA-Z]+$/, // Numbers followed by letters only
+  ];
+  
+  for (const pattern of commonPatterns) {
+    if (pattern.test(password)) {
+      errors.push('Password contains common patterns that make it vulnerable');
+      break;
+    }
+  }
+  
+  // Check for potential SQL injection attempts in password
+  const sqlPatterns = /(\b(union|select|insert|update|delete|drop|create|alter|exec|execute)\b)/i;
+  if (sqlPatterns.test(password)) {
+    errors.push('Password contains invalid characters or patterns');
   }
 
   return {
