@@ -280,14 +280,37 @@ export default function QuoteSummaryPage() {
         throw new Error('No PDF URL received');
       }
       
-      // Open the PDF
+      // Try to open the PDF - with popup blocker detection
       console.log('Opening PDF URL:', data.pdfUrl);
-      window.open(data.pdfUrl, '_blank');
       
-      toast({
-        title: "PDF Generated",
-        description: "PDF opened in new tab",
-      });
+      const newWindow = window.open(data.pdfUrl, '_blank', 'noopener,noreferrer');
+      
+      // Check if popup was blocked
+      if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+        console.warn('Popup blocked - providing fallback');
+        
+        // Create a temporary link and trigger download
+        const link = document.createElement('a');
+        link.href = data.pdfUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.download = `Mercury-Quote-${pdfQuoteData.quoteNumber}.pdf`;
+        
+        // Add to DOM temporarily
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        toast({
+          title: "PDF Generated",
+          description: "If the PDF didn't open automatically, check your downloads folder or allow popups for this site.",
+        });
+      } else {
+        toast({
+          title: "PDF Generated",
+          description: "PDF opened in new tab",
+        });
+      }
       
     } catch (error) {
       console.error('PDF generation failed:', error);
