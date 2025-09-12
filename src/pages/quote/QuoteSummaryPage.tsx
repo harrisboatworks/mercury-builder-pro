@@ -235,7 +235,7 @@ export default function QuoteSummaryPage() {
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
       
       // Import PDF generator
-      const { generateQuotePDF, downloadPDF } = await import('@/lib/pdf-generator');
+      const { generateQuotePDF } = await import('@/lib/pdf-generator');
       
       const pdfData = {
         quoteNumber,
@@ -270,20 +270,41 @@ export default function QuoteSummaryPage() {
         description: "Please wait while we create your professional quote.",
       });
       
-      // Generate PDF using PDF.co API - with proper await
+      // Generate PDF using PDF.co API
       const pdfUrl = await generateQuotePDF(pdfData);
       
       if (!pdfUrl) {
         throw new Error('No PDF URL returned from generator');
       }
       
-      // Download the PDF
-      await downloadPDF(pdfUrl, `Mercury-Quote-${quoteNumber}.pdf`);
-      
-      toast({
-        title: "PDF Generated Successfully!",
-        description: "Your professional quote has been downloaded.",
-      });
+      // Try to download the PDF using blob approach first
+      try {
+        const response = await fetch(pdfUrl);
+        const blob = await response.blob();
+        const downloadUrl = window.URL.createObjectURL(blob);
+        
+        const link = document.createElement('a');
+        link.href = downloadUrl;
+        link.download = `Mercury-Quote-${quoteNumber}.pdf`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(downloadUrl);
+        
+        toast({
+          title: "PDF Downloaded Successfully!",
+          description: "Your professional quote has been downloaded.",
+        });
+      } catch (fetchError) {
+        // Fallback: CORS blocked the fetch, open in new tab instead
+        console.log('CORS blocked direct download, opening in new tab:', fetchError);
+        window.open(pdfUrl, '_blank');
+        
+        toast({
+          title: "PDF Opened in New Tab",
+          description: "Use your browser's download button to save the PDF.",
+        });
+      }
       
     } catch (error) {
       console.error('PDF Generation Error:', error);
