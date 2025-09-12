@@ -11,6 +11,7 @@ import WarrantyAddOnUI, { type WarrantyTarget } from '@/components/quote-builder
 import BonusOffersBadge from '@/components/quote-builder/BonusOffersBadge';
 import MotorHeader from '@/components/quote-builder/MotorHeader';
 import CoverageComparisonTooltip from '@/components/quote-builder/CoverageComparisonTooltip';
+import { isTillerMotor, requiresMercuryControls } from '@/lib/motor-helpers';
 
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
@@ -103,14 +104,25 @@ export default function QuoteSummaryPage() {
 
   const specSheetUrl = motor?.specSheetUrl ?? null;
   
-  // Mock data - replace with real quote data
+  // Calculate base accessories needed based on motor type
+  const motorModel = motor?.model || '';
+  const isManualTiller = isTillerMotor(motorModel);
+  const needsControls = requiresMercuryControls(motor);
+  const isManualStart = motorModel.includes('MH') || motorModel.includes('MLH');
+  
+  // Calculate base accessory costs
+  const controlsCost = needsControls ? 2500 : 0;
+  const batteryCost = !isManualStart ? 179.99 : 0;
+  const baseAccessoryCost = controlsCost + batteryCost;
+  
+  // Pricing calculation with conditional accessories
   const data = {
-    msrp: motorPrice + 2500, // Motor + base accessories
+    msrp: motorPrice + baseAccessoryCost,
     discount: 546,
     promoValue: 400,
-    subtotal: motorPrice + 2500 - 546 - 400,
-    tax: (motorPrice + 2500 - 546 - 400) * 0.13,
-    total: (motorPrice + 2500 - 546 - 400) * 1.13,
+    subtotal: motorPrice + baseAccessoryCost - 546 - 400,
+    tax: (motorPrice + baseAccessoryCost - 546 - 400) * 0.13,
+    total: (motorPrice + baseAccessoryCost - 546 - 400) * 1.13,
   };
   
   const totals = computeTotals(data);
@@ -198,16 +210,24 @@ export default function QuoteSummaryPage() {
     },
   ];
 
-  // Build accessory breakdown for legacy components
-  const accessoryBreakdown = [
-    { name: 'Controls & Rigging', price: 2500, description: 'Premium marine controls and installation hardware' }
-  ];
+  // Build accessory breakdown based on motor requirements
+  const accessoryBreakdown = [];
   
-  if (selectedPackage !== 'good') {
+  // Only add controls if the motor requires them (not for tiller motors)
+  if (needsControls) {
+    accessoryBreakdown.push({
+      name: 'Controls & Rigging',
+      price: controlsCost,
+      description: 'Premium marine controls and installation hardware'
+    });
+  }
+  
+  // Only add battery for electric start motors or if package includes it
+  if (!isManualStart || selectedPackage !== 'good') {
     accessoryBreakdown.push({
       name: 'Marine Battery',
-      price: 179.99,
-      description: 'Marine starting battery (standard)'
+      price: batteryCost,
+      description: isManualStart ? 'Optional marine battery' : 'Marine starting battery (required)'
     });
   }
   
@@ -236,7 +256,7 @@ export default function QuoteSummaryPage() {
       
       // Calculate pricing breakdown (same as in component)
       const motorPrice = quoteData.motor?.salePrice || quoteData.motor?.basePrice || quoteData.motor?.price || 0;
-      const msrp = motorPrice + 2500; // Motor + base accessories
+      const msrp = motorPrice + baseAccessoryCost; // Motor + required accessories only
       const discount = 546;
       const promoValue = 400;
       const subtotal = msrp - discount - promoValue;
