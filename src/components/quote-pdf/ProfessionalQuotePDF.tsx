@@ -308,8 +308,24 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
         {/* Header */}
         <View style={styles.header}>
           <View style={styles.logoContainer}>
-            <Image src={harrisLogo} style={{ width: 60, height: 35 }} />
-            <Image src={mercuryLogo} style={{ width: 70, height: 25 }} />
+            <Image 
+              src={harrisLogo} 
+              style={{ 
+                width: 80, 
+                height: 40, 
+                objectFit: 'contain', 
+                objectPosition: 'center' 
+              }} 
+            />
+            <Image 
+              src={mercuryLogo} 
+              style={{ 
+                width: 100, 
+                height: 35, 
+                objectFit: 'contain', 
+                objectPosition: 'center' 
+              }} 
+            />
           </View>
           <View style={styles.headerRight}>
             <Text style={styles.quoteTitle}>Your Mercury Motor Quote</Text>
