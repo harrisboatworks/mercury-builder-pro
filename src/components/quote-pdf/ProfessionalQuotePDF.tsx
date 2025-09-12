@@ -1,7 +1,274 @@
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet, PDFDownloadLink, Image } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
+
+// Import logos
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
+
+// Clean, professional color scheme matching the website
+const colors = {
+  text: '#2c3142',           // Dark gray text
+  lightText: '#6b7280',      // Light gray for secondary text
+  primary: '#0066cc',         // Blue for accents only
+  success: '#10b981',         // Green for savings
+  border: '#e5e7eb',          // Light border
+  background: '#f9fafb',      // Very light gray background
+  white: '#ffffff'
+};
+
+const styles = StyleSheet.create({
+  page: {
+    backgroundColor: colors.white,
+    padding: 30,
+    fontFamily: 'Helvetica',
+    fontSize: 10,
+  },
+  
+  // Header with logos
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+    paddingBottom: 15,
+    borderBottom: `1 solid ${colors.border}`,
+  },
+  
+  logoContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 15,
+  },
+  
+  headerRight: {
+    alignItems: 'flex-end',
+  },
+  
+  quoteTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: colors.text,
+    marginBottom: 2,
+  },
+  
+  dealerText: {
+    fontSize: 9,
+    color: colors.lightText,
+  },
+  
+  // Main content in two columns
+  mainContent: {
+    flexDirection: 'row',
+    gap: 20,
+  },
+  
+  leftColumn: {
+    flex: 1.2,
+  },
+  
+  rightColumn: {
+    flex: 1,
+  },
+  
+  // Product section
+  productSection: {
+    marginBottom: 15,
+  },
+  
+  productName: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: colors.text,
+    marginBottom: 8,
+  },
+  
+  productDetails: {
+    fontSize: 9,
+    color: colors.lightText,
+    marginBottom: 3,
+  },
+  
+  // Pricing table
+  pricingSection: {
+    marginBottom: 15,
+  },
+  
+  sectionTitle: {
+    fontSize: 11,
+    fontWeight: 'bold',
+    color: colors.text,
+    marginBottom: 8,
+    paddingBottom: 4,
+    borderBottom: `1 solid ${colors.border}`,
+  },
+  
+  pricingRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 4,
+    borderBottom: `0.5 solid ${colors.border}`,
+  },
+  
+  pricingLabel: {
+    fontSize: 9,
+    color: colors.text,
+  },
+  
+  pricingValue: {
+    fontSize: 9,
+    color: colors.text,
+    fontWeight: 'bold',
+  },
+  
+  discountValue: {
+    color: colors.success,
+  },
+  
+  totalRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 8,
+    marginTop: 4,
+    borderTop: `2 solid ${colors.text}`,
+  },
+  
+  totalLabel: {
+    fontSize: 11,
+    fontWeight: 'bold',
+    color: colors.text,
+  },
+  
+  totalValue: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: colors.text,
+  },
+  
+  // Customer info box
+  infoBox: {
+    backgroundColor: colors.background,
+    padding: 10,
+    borderRadius: 4,
+    marginBottom: 15,
+  },
+  
+  infoRow: {
+    flexDirection: 'row',
+    marginBottom: 4,
+  },
+  
+  infoLabel: {
+    fontSize: 9,
+    color: colors.lightText,
+    width: 80,
+  },
+  
+  infoValue: {
+    fontSize: 9,
+    color: colors.text,
+    flex: 1,
+  },
+  
+  // Summary box in right column
+  summaryBox: {
+    padding: 12,
+    backgroundColor: colors.background,
+    borderRadius: 4,
+    marginBottom: 15,
+  },
+  
+  summaryTitle: {
+    fontSize: 11,
+    fontWeight: 'bold',
+    color: colors.text,
+    marginBottom: 8,
+  },
+  
+  summaryItem: {
+    fontSize: 9,
+    color: colors.text,
+    marginBottom: 3,
+  },
+  
+  savingsText: {
+    fontSize: 10,
+    color: colors.success,
+    fontWeight: 'bold',
+    marginTop: 4,
+  },
+  
+  // Extended warranty section
+  warrantySection: {
+    marginTop: 10,
+    padding: 8,
+    backgroundColor: colors.background,
+    borderRadius: 4,
+  },
+  
+  warrantyTitle: {
+    fontSize: 10,
+    fontWeight: 'bold',
+    color: colors.text,
+    marginBottom: 4,
+  },
+  
+  warrantyOption: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 3,
+  },
+  
+  warrantyText: {
+    fontSize: 9,
+    color: colors.text,
+  },
+  
+  warrantyPrice: {
+    fontSize: 9,
+    color: colors.text,
+    fontWeight: 'bold',
+  },
+  
+  // Terms section
+  termsSection: {
+    marginTop: 15,
+    paddingTop: 10,
+    borderTop: `1 solid ${colors.border}`,
+  },
+  
+  termsText: {
+    fontSize: 8,
+    color: colors.lightText,
+    marginBottom: 2,
+  },
+  
+  // Footer
+  footer: {
+    position: 'absolute',
+    bottom: 30,
+    left: 30,
+    right: 30,
+    paddingTop: 10,
+    borderTop: `1 solid ${colors.border}`,
+  },
+  
+  footerContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  
+  footerLeft: {
+    fontSize: 8,
+    color: colors.lightText,
+  },
+  
+  footerRight: {
+    fontSize: 8,
+    color: colors.lightText,
+    textAlign: 'right',
+  },
+});
 
 export interface QuotePDFProps {
   quoteData: {
@@ -25,459 +292,195 @@ export interface QuotePDFProps {
   };
 }
 
-// Register professional fonts (optional - will use Helvetica by default)
-// Font.register({
-//   family: 'Roboto',
-//   src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-regular-webfont.ttf'
-// });
-
-// Professional color scheme
-const colors = {
-  primary: '#003f7f',      // Deep blue for headers
-  secondary: '#0066cc',    // Bright blue for accents
-  success: '#00a651',      // Green for savings
-  dark: '#2c3e50',         // Dark gray for text
-  gray: '#7f8c8d',         // Medium gray for secondary text
-  light: '#ecf0f1',        // Light gray for backgrounds
-  border: '#dfe4e6',       // Border color
-  white: '#ffffff'
-};
-
-// Create styles
-const styles = StyleSheet.create({
-  page: {
-    backgroundColor: colors.white,
-    padding: 40,
-    fontFamily: 'Helvetica',
-  },
-  
-  // Header Styles
-  header: {
-    marginBottom: 30,
-    borderBottom: `2 solid ${colors.primary}`,
-    paddingBottom: 20,
-  },
-  headerRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    marginBottom: 10,
-  },
-  logoSection: {
-    flexDirection: 'column',
-  },
-  companyName: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: colors.primary,
-    marginBottom: 4,
-  },
-  tagline: {
-    fontSize: 10,
-    color: colors.gray,
-    marginBottom: 2,
-  },
-  dealerBadge: {
-    backgroundColor: colors.primary,
-    padding: '6 12',
-    borderRadius: 4,
-    marginTop: 8,
-  },
-  dealerBadgeText: {
-    color: colors.white,
-    fontSize: 9,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  quoteInfo: {
-    alignItems: 'flex-end',
-  },
-  quoteNumber: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: colors.primary,
-    marginBottom: 4,
-  },
-  quoteDate: {
-    fontSize: 10,
-    color: colors.dark,
-    marginBottom: 2,
-  },
-  validUntil: {
-    fontSize: 10,
-    color: colors.success,
-    fontWeight: 'bold',
-    marginTop: 4,
-    padding: '4 8',
-    backgroundColor: '#e8f5e9',
-    borderRadius: 3,
-  },
-  
-  // Customer Section
-  customerSection: {
-    marginBottom: 25,
-    padding: 15,
-    backgroundColor: '#f8f9fa',
-    borderRadius: 6,
-  },
-  sectionTitle: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    color: colors.primary,
-    marginBottom: 10,
-    textTransform: 'uppercase',
-    letterSpacing: 0.5,
-  },
-  customerInfo: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  customerField: {
-    fontSize: 10,
-    color: colors.dark,
-    marginBottom: 4,
-  },
-  customerLabel: {
-    fontWeight: 'bold',
-    marginRight: 5,
-  },
-  
-  // Product Section
-  productSection: {
-    marginBottom: 25,
-    padding: 20,
-    backgroundColor: colors.primary,
-    borderRadius: 6,
-  },
-  productTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: colors.white,
-    marginBottom: 12,
-  },
-  productDetails: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  productDetailBlock: {
-    flex: 1,
-  },
-  productLabel: {
-    fontSize: 10,
-    color: '#b3d4fc',
-    marginBottom: 4,
-    textTransform: 'uppercase',
-  },
-  productValue: {
-    fontSize: 14,
-    color: colors.white,
-    fontWeight: 'bold',
-  },
-  // Logo styles
-  hbwLogo: {
-    width: 120,
-    height: 45,
-    marginBottom: 8,
-  },
-  mercuryLogo: {
-    width: 90,
-    height: 35,
-  },
-  
-  // Pricing Section
-  pricingSection: {
-    marginBottom: 25,
-  },
-  pricingTable: {
-    borderRadius: 6,
-    overflow: 'hidden',
-    border: `1 solid ${colors.border}`,
-  },
-  pricingRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: '12 15',
-    borderBottom: `1 solid ${colors.border}`,
-  },
-  pricingRowAlt: {
-    backgroundColor: '#f8f9fa',
-  },
-  pricingLabel: {
-    fontSize: 11,
-    color: colors.dark,
-  },
-  pricingValue: {
-    fontSize: 11,
-    color: colors.dark,
-    fontWeight: 'bold',
-  },
-  discountValue: {
-    color: colors.success,
-  },
-  subtotalRow: {
-    backgroundColor: '#f1f3f4',
-    fontWeight: 'bold',
-  },
-  taxRow: {
-    backgroundColor: colors.white,
-  },
-  totalRow: {
-    backgroundColor: colors.primary,
-    padding: '15 15',
-  },
-  totalLabel: {
-    fontSize: 14,
-    color: colors.white,
-    fontWeight: 'bold',
-  },
-  totalValue: {
-    fontSize: 18,
-    color: colors.white,
-    fontWeight: 'bold',
-  },
-  
-  // Savings Badge
-  savingsBadge: {
-    backgroundColor: colors.success,
-    padding: 20,
-    borderRadius: 6,
-    marginBottom: 30,
-    alignItems: 'center',
-  },
-  savingsTitle: {
-    fontSize: 12,
-    color: colors.white,
-    marginBottom: 5,
-    textTransform: 'uppercase',
-  },
-  savingsAmount: {
-    fontSize: 28,
-    color: colors.white,
-    fontWeight: 'bold',
-  },
-  
-  // Footer
-  footer: {
-    marginTop: 'auto',
-    paddingTop: 30,
-    borderTop: `1 solid ${colors.border}`,
-  },
-  footerContent: {
-    alignItems: 'center',
-  },
-  footerCompanyName: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    color: colors.primary,
-    marginBottom: 8,
-  },
-  footerAddress: {
-    fontSize: 9,
-    color: colors.gray,
-    marginBottom: 2,
-    textAlign: 'center',
-  },
-  footerContact: {
-    fontSize: 9,
-    color: colors.gray,
-    marginBottom: 2,
-  },
-  footerWebsite: {
-    fontSize: 9,
-    color: colors.secondary,
-    marginTop: 4,
-  },
-  
-  // Terms section (optional)
-  termsSection: {
-    marginTop: 20,
-    padding: 10,
-    backgroundColor: '#f8f9fa',
-    borderRadius: 4,
-  },
-  termsTitle: {
-    fontSize: 9,
-    fontWeight: 'bold',
-    color: colors.dark,
-    marginBottom: 5,
-  },
-  termsText: {
-    fontSize: 8,
-    color: colors.gray,
-    lineHeight: 1.4,
-  },
-});
-
-// The PDF Document Component
-export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => (
-  <Document>
-    <Page size="LETTER" style={styles.page}>
-      {/* Header */}
-      <View style={styles.header}>
-        <View style={styles.headerRow}>
-          <View style={styles.logoSection}>
-            {/* Harris Boat Works Logo */}
-            <Image 
-              src={harrisLogo} 
-              style={styles.hbwLogo} 
-            />
-            <Text style={styles.tagline}>Your Trusted Mercury Dealer Since 1947</Text>
-            <View style={styles.dealerBadge}>
-              <Text style={styles.dealerBadgeText}>⚓ AUTHORIZED MERCURY MARINE DEALER ⚓</Text>
-            </View>
-          </View>
-          <View style={styles.quoteInfo}>
-            <Text style={styles.quoteNumber}>Quote #{quoteData.quoteNumber}</Text>
-            <Text style={styles.quoteDate}>{quoteData.date}</Text>
-            <Text style={styles.validUntil}>Valid for 30 days</Text>
-          </View>
-        </View>
-      </View>
-
-      {/* Customer Information */}
-      <View style={styles.customerSection}>
-        <Text style={styles.sectionTitle}>Customer Information</Text>
-        <View style={styles.customerInfo}>
-          <View>
-            <Text style={styles.customerField}>
-              <Text style={styles.customerLabel}>Name:</Text> {quoteData.customerName}
-            </Text>
-            <Text style={styles.customerField}>
-              <Text style={styles.customerLabel}>Email:</Text> {quoteData.customerEmail}
-            </Text>
-          </View>
-          <View>
-            <Text style={styles.customerField}>
-              <Text style={styles.customerLabel}>Phone:</Text> {quoteData.customerPhone}
-            </Text>
-            <Text style={styles.customerField}>
-              <Text style={styles.customerLabel}>Customer ID:</Text> {quoteData.customerId || 'New Customer'}
-            </Text>
-          </View>
-        </View>
-      </View>
-
-      {/* Product Section */}
-      <View style={styles.productSection}>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-          <Text style={styles.productTitle}>{quoteData.productName}</Text>
-          {/* Mercury Marine Logo */}
-          <Image 
-            src={mercuryLogo} 
-            style={styles.mercuryLogo} 
-          />
-        </View>
-        <View style={styles.productDetails}>
-          <View style={styles.productDetailBlock}>
-            <Text style={styles.productLabel}>Horsepower</Text>
-            <Text style={styles.productValue}>{quoteData.horsepower}</Text>
-          </View>
-          <View style={styles.productDetailBlock}>
-            <Text style={styles.productLabel}>Category</Text>
-            <Text style={styles.productValue}>{quoteData.category}</Text>
-          </View>
-          <View style={styles.productDetailBlock}>
-            <Text style={styles.productLabel}>Model Year</Text>
-            <Text style={styles.productValue}>{quoteData.modelYear}</Text>
-          </View>
-        </View>
-      </View>
-
-      {/* Pricing Section */}
-      <View style={styles.pricingSection}>
-        <Text style={styles.sectionTitle}>Investment Summary</Text>
-        <View style={styles.pricingTable}>
-          <View style={styles.pricingRow}>
-            <Text style={styles.pricingLabel}>Manufacturer's Suggested Retail Price</Text>
-            <Text style={styles.pricingValue}>${quoteData.msrp}</Text>
-          </View>
-          <View style={[styles.pricingRow, styles.pricingRowAlt]}>
-            <Text style={styles.pricingLabel}>Harris Boat Works Discount</Text>
-            <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.dealerDiscount}</Text>
-          </View>
-          <View style={styles.pricingRow}>
-            <Text style={styles.pricingLabel}>Promotional Savings</Text>
-            <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.promoSavings}</Text>
-          </View>
-          <View style={[styles.pricingRow, styles.subtotalRow]}>
-            <Text style={styles.pricingLabel}>Subtotal</Text>
-            <Text style={styles.pricingValue}>${quoteData.subtotal}</Text>
-          </View>
-          <View style={[styles.pricingRow, styles.taxRow]}>
-            <Text style={styles.pricingLabel}>HST (13%)</Text>
-            <Text style={styles.pricingValue}>${quoteData.tax}</Text>
-          </View>
-          <View style={[styles.pricingRow, styles.totalRow]}>
-            <Text style={styles.totalLabel}>TOTAL INVESTMENT</Text>
-            <Text style={styles.totalValue}>${quoteData.total}</Text>
-          </View>
-        </View>
-      </View>
-
-      {/* Savings Badge */}
-      <View style={styles.savingsBadge}>
-        <Text style={styles.savingsTitle}>Your Total Savings</Text>
-        <Text style={styles.savingsAmount}>${quoteData.totalSavings}</Text>
-      </View>
-
-      {/* Terms & Conditions (Optional) */}
-      <View style={styles.termsSection}>
-        <Text style={styles.termsTitle}>Terms & Conditions</Text>
-        <Text style={styles.termsText}>
-          • This quote is valid for 30 days from the date of issue
-          • Prices subject to change without notice after expiry
-          • Installation and additional accessories not included unless specified
-          • Financing options available - ask your sales representative
-        </Text>
-      </View>
-
-      {/* Footer */}
-      <View style={styles.footer}>
-        <View style={styles.footerContent}>
-          <Text style={styles.footerCompanyName}>Harris Boat Works</Text>
-          <Text style={styles.footerAddress}>5369 Harris Boat Works Rd, Gore's Landing, ON K0K 2E0</Text>
-          <Text style={styles.footerContact}>(905) 342-2153 | info@harrisboatworks.ca</Text>
-          <Text style={styles.footerWebsite}>www.harrisboatworks.com</Text>
-        </View>
-      </View>
-    </Page>
-  </Document>
-);
-
-// Example usage component showing how to implement
-export const QuoteGenerator: React.FC = () => {
-  // Sample quote data - this would come from your form/database
-  const quoteData = {
-    quoteNumber: 'HBW-100222',
-    date: 'September 12, 2025',
-    customerName: 'Valued Customer',
-    customerEmail: 'customer@example.com',
-    customerPhone: '(905) 555-0123',
-    customerId: 'CUST-001',
-    productName: '2025 Mercury FourStroke 9.9HP Command Thrust ProKicker EXLHPT',
-    horsepower: '9.9HP',
-    category: 'FourStroke',
-    modelYear: '2025',
-    msrp: '7,632',
-    dealerDiscount: '546',
-    promoSavings: '400',
-    subtotal: '6,686',
-    tax: '869.18',
-    total: '7,555.18',
-    totalSavings: '946'
-  };
+export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => {
+  // Calculate valid until date (30 days from now)
+  const validUntil = new Date();
+  validUntil.setDate(validUntil.getDate() + 30);
+  const validUntilString = validUntil.toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
 
   return (
-    <div>
-      <PDFDownloadLink 
-        document={<ProfessionalQuotePDF quoteData={quoteData} />} 
-        fileName={`Quote-${quoteData.quoteNumber}.pdf`}
-      >
-        {({ blob, url, loading, error }) =>
-          loading ? 'Generating PDF...' : 'Download Professional Quote PDF'
-        }
-      </PDFDownloadLink>
-    </div>
+    <Document>
+      <Page size="LETTER" style={styles.page}>
+        {/* Header */}
+        <View style={styles.header}>
+          <View style={styles.logoContainer}>
+            <Image src={harrisLogo} style={{ width: 60, height: 35 }} />
+            <Image src={mercuryLogo} style={{ width: 70, height: 25 }} />
+          </View>
+          <View style={styles.headerRight}>
+            <Text style={styles.quoteTitle}>Your Mercury Motor Quote</Text>
+            <Text style={styles.dealerText}>Mercury Marine Premier Dealer</Text>
+          </View>
+        </View>
+
+        {/* Main Content - Two Columns */}
+        <View style={styles.mainContent}>
+          {/* Left Column */}
+          <View style={styles.leftColumn}>
+            {/* Product Information */}
+            <View style={styles.productSection}>
+              <Text style={styles.productName}>{quoteData.productName}</Text>
+              <Text style={styles.productDetails}>• Quiet, low-vibration four-stroke performance</Text>
+              <Text style={styles.productDetails}>• Excellent fuel economy & range</Text>
+              <Text style={styles.productDetails}>• Factory-backed service at Harris Boat Works</Text>
+            </View>
+
+            {/* Pricing Breakdown */}
+            <View style={styles.pricingSection}>
+              <Text style={styles.sectionTitle}>Pricing Breakdown</Text>
+              
+              <View style={styles.pricingRow}>
+                <Text style={styles.pricingLabel}>MSRP - {quoteData.productName}</Text>
+                <Text style={styles.pricingValue}>${quoteData.msrp}</Text>
+              </View>
+              
+              <View style={styles.pricingRow}>
+                <Text style={styles.pricingLabel}>Dealer Discount</Text>
+                <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.dealerDiscount}</Text>
+              </View>
+              
+              <View style={styles.pricingRow}>
+                <Text style={styles.pricingLabel}>Promotional Savings</Text>
+                <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.promoSavings}</Text>
+              </View>
+              
+              <View style={styles.pricingRow}>
+                <Text style={styles.pricingLabel}>Subtotal</Text>
+                <Text style={styles.pricingValue}>${quoteData.subtotal}</Text>
+              </View>
+              
+              <View style={styles.pricingRow}>
+                <Text style={styles.pricingLabel}>HST (13%)</Text>
+                <Text style={styles.pricingValue}>${quoteData.tax}</Text>
+              </View>
+              
+              <View style={styles.totalRow}>
+                <Text style={styles.totalLabel}>Total Price</Text>
+                <Text style={styles.totalValue}>${quoteData.total}</Text>
+              </View>
+              
+              <Text style={styles.savingsText}>
+                Total savings of ${quoteData.totalSavings} vs MSRP
+              </Text>
+            </View>
+
+            {/* Extended Warranty Options */}
+            <View style={styles.warrantySection}>
+              <Text style={styles.warrantyTitle}>EXTENDED WARRANTY OPTIONS</Text>
+              <Text style={{ fontSize: 8, color: colors.lightText, marginBottom: 6 }}>
+                Current coverage: 5 years (base + promo)
+              </Text>
+              
+              <View style={styles.warrantyOption}>
+                <Text style={styles.warrantyText}>6 yrs total • +$899 • +$15/mo</Text>
+              </View>
+              <View style={styles.warrantyOption}>
+                <Text style={styles.warrantyText}>7 yrs total • +$1,199 • +$20/mo</Text>
+              </View>
+              <View style={styles.warrantyOption}>
+                <Text style={styles.warrantyText}>8 yrs total • +$1,499 • +$25/mo</Text>
+              </View>
+            </View>
+          </View>
+
+          {/* Right Column */}
+          <View style={styles.rightColumn}>
+            {/* Customer Information */}
+            <View style={styles.infoBox}>
+              <Text style={styles.summaryTitle}>Customer Information</Text>
+              <View style={styles.infoRow}>
+                <Text style={styles.infoLabel}>Name:</Text>
+                <Text style={styles.infoValue}>{quoteData.customerName}</Text>
+              </View>
+              <View style={styles.infoRow}>
+                <Text style={styles.infoLabel}>Email:</Text>
+                <Text style={styles.infoValue}>{quoteData.customerEmail}</Text>
+              </View>
+              <View style={styles.infoRow}>
+                <Text style={styles.infoLabel}>Phone:</Text>
+                <Text style={styles.infoValue}>{quoteData.customerPhone}</Text>
+              </View>
+              <View style={styles.infoRow}>
+                <Text style={styles.infoLabel}>Quote #:</Text>
+                <Text style={styles.infoValue}>{quoteData.quoteNumber}</Text>
+              </View>
+              <View style={styles.infoRow}>
+                <Text style={styles.infoLabel}>Date:</Text>
+                <Text style={styles.infoValue}>{quoteData.date}</Text>
+              </View>
+              <View style={styles.infoRow}>
+                <Text style={styles.infoLabel}>Valid Until:</Text>
+                <Text style={styles.infoValue}>{validUntilString}</Text>
+              </View>
+            </View>
+
+            {/* Coverage Summary */}
+            <View style={styles.summaryBox}>
+              <Text style={styles.summaryTitle}>COMPLETE COVERAGE</Text>
+              <Text style={styles.summaryItem}>Coverage: 5 years total</Text>
+              <Text style={styles.summaryItem}>• Mercury motor</Text>
+              <Text style={styles.summaryItem}>• Premium controls & rigging</Text>
+              <Text style={styles.summaryItem}>• Marine starting battery</Text>
+              <Text style={styles.summaryItem}>• Premium marine controls and installation hardware</Text>
+            </View>
+
+            {/* Bonus Offers */}
+            <View style={styles.summaryBox}>
+              <Text style={styles.summaryTitle}>Bonus Offers Included</Text>
+              <Text style={styles.summaryItem}>
+                • 2 Years Extended Warranty (+2 years warranty at no cost)
+              </Text>
+              <Text style={styles.summaryItem}>
+                • Added Value for Free
+              </Text>
+              <Text style={{ fontSize: 8, color: colors.lightText, marginTop: 4 }}>
+                Limited time offer
+              </Text>
+            </View>
+
+            {/* Financing */}
+            <View style={styles.summaryBox}>
+              <Text style={styles.summaryTitle}>Monthly Financing Available</Text>
+              <Text style={styles.summaryItem}>Starting from $271/mo</Text>
+              <Text style={{ fontSize: 8, color: colors.lightText, marginTop: 2 }}>
+                OAC. Final terms at checkout.
+              </Text>
+            </View>
+          </View>
+        </View>
+
+        {/* Terms */}
+        <View style={styles.termsSection}>
+          <Text style={styles.termsText}>
+            • This quote is valid for 30 days from date of issue • Prices subject to change without notice after expiry
+          </Text>
+          <Text style={styles.termsText}>
+            • Installation and PDI included where specified • All prices in Canadian dollars
+          </Text>
+          <Text style={styles.termsText}>
+            • Financing options available subject to credit approval • Ask your sales representative for details
+          </Text>
+        </View>
+
+        {/* Footer */}
+        <View style={styles.footer}>
+          <View style={styles.footerContent}>
+            <View>
+              <Text style={styles.footerLeft}>Harris Boat Works</Text>
+              <Text style={styles.footerLeft}>5369 Harris Boat Works Rd, Gore's Landing, ON K0K 2E0</Text>
+            </View>
+            <View>
+              <Text style={styles.footerRight}>(905) 342-2153</Text>
+              <Text style={styles.footerRight}>www.harrisboatworks.com</Text>
+            </View>
+          </View>
+        </View>
+      </Page>
+    </Document>
   );
 };
 
