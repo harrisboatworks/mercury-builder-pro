@@ -940,8 +940,8 @@ export const BoatInformation = ({
 
                           {/* Highlight FREE water testing */}
                           <div className="water-test-benefit bg-accent p-4 rounded-lg">
-                            <h4 className="font-bold">✅ FREE Water Testing Included</h4>
-                            <p className="text-sm text-muted-foreground">
+                            <h4 className="font-bold text-accent-foreground">✅ FREE Water Testing Included</h4>
+                            <p className="text-sm text-accent-foreground/90">
                               We're on the water! Every motor installation includes professional water testing to ensure perfect prop sizing and optimal performance. This $200 value is included FREE with your purchase.
                             </p>
                           </div>
