@@ -274,42 +274,30 @@ export default function QuoteSummaryPage() {
         console.error('Supabase error:', error);
         throw error;
       }
-      
-      if (!data?.pdfUrl) {
-        console.error('No PDF URL in response:', data);
-        throw new Error('No PDF URL received');
-      }
-      
-      // Try to open the PDF - with popup blocker detection
-      console.log('Opening PDF URL:', data.pdfUrl);
-      
-      const newWindow = window.open(data.pdfUrl, '_blank', 'noopener,noreferrer');
-      
-      // Check if popup was blocked
-      if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
-        console.warn('Popup blocked - providing fallback');
+
+      if (data?.pdfData) {
+        // Convert base64 to blob
+        const pdfBlob = new Blob(
+          [Uint8Array.from(atob(data.pdfData), c => c.charCodeAt(0))],
+          { type: 'application/pdf' }
+        );
         
-        // Create a temporary link and trigger download
+        // Create download link
+        const url = URL.createObjectURL(pdfBlob);
         const link = document.createElement('a');
-        link.href = data.pdfUrl;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        link.download = `Mercury-Quote-${pdfQuoteData.quoteNumber}.pdf`;
-        
-        // Add to DOM temporarily
+        link.href = url;
+        link.download = data.fileName || `Mercury-Quote-${pdfQuoteData.quoteNumber}.pdf`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+        URL.revokeObjectURL(url);
         
         toast({
-          title: "PDF Generated",
-          description: "If the PDF didn't open automatically, check your downloads folder or allow popups for this site.",
+          title: "PDF Downloaded",
+          description: "Your quote has been saved to downloads",
         });
       } else {
-        toast({
-          title: "PDF Generated",
-          description: "PDF opened in new tab",
-        });
+        throw new Error('No PDF data received');
       }
       
     } catch (error) {

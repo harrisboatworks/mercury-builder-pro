@@ -658,11 +658,16 @@ serve(async (req) => {
       );
     }
 
+    // Fetch the PDF content to avoid CORS issues
+    const pdfDataResponse = await fetch(pdfResult.url);
+    const pdfBuffer = await pdfDataResponse.arrayBuffer();
+    const pdfBase64 = btoa(String.fromCharCode(...new Uint8Array(pdfBuffer)));
+
     return new Response(
       JSON.stringify({ 
         success: true, 
-        pdfUrl: pdfResult.url,
-        downloadUrl: pdfResult.url
+        pdfData: pdfBase64,
+        fileName: `Mercury-Quote-${quoteData.quoteNumber}.pdf`
       }),
       { 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
