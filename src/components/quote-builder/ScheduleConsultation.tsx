@@ -206,7 +206,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       
       // Import React-PDF renderer
       const { pdf } = await import('@react-pdf/renderer');
-      const { default: QuotePDF } = await import('@/components/quote-pdf-generator');
+      const { default: ProfessionalQuotePDF } = await import('@/components/quote/professional-quote-pdf');
       
       const pdfData = {
         quoteNumber,
@@ -233,7 +233,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       };
       
       // Generate PDF blob
-      const pdfBlob = await pdf(<QuotePDF quoteData={pdfData} />).toBlob();
+      const pdfBlob = await pdf(<ProfessionalQuotePDF quoteData={pdfData} />).toBlob();
       
       // Create download link
       const url = URL.createObjectURL(pdfBlob);
