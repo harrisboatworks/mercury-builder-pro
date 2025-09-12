@@ -79,13 +79,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const signInWithGoogle = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: `${window.location.origin}/dashboard`
-      }
-    });
-    return { error };
+    // Google OAuth temporarily disabled - configure in Supabase first
+    return { error: new Error('Google sign-in is not currently available') };
   };
 
   const signOut = async () => {
