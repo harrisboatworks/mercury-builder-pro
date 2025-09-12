@@ -190,7 +190,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
     }
   };
 
-  const generatePDF = () => {
+  const generatePDF = async () => {
     if (!quoteData.motor) {
       toast({
         title: "Error",
@@ -204,42 +204,54 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       // Generate a unique quote number
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
       
-      import('@/lib/pdf-generator').then(({ generateQuotePDF }) => {
-        const pdfData = {
-          ...quoteData,
-          customerName: contactInfo.name || 'Valued Customer',
-          customerEmail: contactInfo.email || user?.email || '',
-          customerPhone: contactInfo.phone || '',
-          quoteNumber,
-          tradeInValue: tradeInValue,
-          // Include the calculated totals
-          totals: {
-            ...totals,
-            subtotalAfterTrade: Math.round(subtotalAfterTrade),
-            hst: Math.round(hst),
-            totalCashPrice: Math.round(totalCashPrice)
-          }
-        };
-        
-        generateQuotePDF(pdfData)
-          .then((pdf) => {
-            // Download the PDF
-            pdf.save(`Mercury-Quote-${quoteNumber}.pdf`);
-            
-            toast({
-              title: "PDF Generated Successfully!",
-              description: "Your professional quote has been downloaded.",
-            });
-          })
-          .catch(() => {
-            toast({
-              title: "PDF Generation Error",
-              description: "Failed to generate PDF. Please try again.",
-              variant: "destructive"
-            });
-          });
+      // Import React-PDF renderer
+      const { pdf } = await import('@react-pdf/renderer');
+      const { default: QuotePDF } = await import('@/components/quote-pdf-generator');
+      
+      const pdfData = {
+        quoteNumber,
+        customerName: contactInfo.name || 'Valued Customer',
+        customerEmail: contactInfo.email || user?.email || '',
+        customerPhone: contactInfo.phone || '',
+        motor: {
+          model: quoteData.motor?.model || 'Mercury Motor',
+          hp: quoteData.motor?.hp || 0,
+          year: quoteData.motor?.year,
+          sku: (quoteData.motor as any)?.sku,
+        },
+        tradeInValue: tradeInValue,
+        totals: {
+          ...totals,
+          subtotalAfterTrade: Math.round(subtotalAfterTrade),
+          hst: Math.round(hst),
+          totalCashPrice: Math.round(totalCashPrice)
+        },
+        specs: [
+          { label: "HP", value: `${quoteData.motor?.hp || 0}` },
+          { label: "Year", value: `${quoteData.motor?.year || 2025}` }
+        ].filter(spec => spec.value && spec.value !== '0')
+      };
+      
+      // Generate PDF blob
+      const pdfBlob = await pdf(<QuotePDF quoteData={pdfData} />).toBlob();
+      
+      // Create download link
+      const url = URL.createObjectURL(pdfBlob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `Mercury-Quote-${quoteNumber}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      
+      toast({
+        title: "PDF Generated Successfully!",
+        description: "Your professional quote has been downloaded.",
       });
+      
     } catch (error) {
+      console.error('PDF Generation Error:', error);
       toast({
         title: "PDF Generation Error",
         description: "Failed to generate PDF. Please try again.",
