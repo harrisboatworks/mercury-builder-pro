@@ -232,57 +232,68 @@ export default function QuoteSummaryPage() {
     setIsGeneratingPDF(true);
     
     try {
-      // Call the Supabase function directly
+      console.log('Starting PDF generation...');
+      
+      const pdfQuoteData = {
+        quoteNumber: Date.now().toString().slice(-6),
+        customerName: 'Valued Customer',
+        customerEmail: '',
+        customerPhone: '',
+        motor: {
+          model: quoteData.motor?.model || 'Mercury Motor',
+          hp: quoteData.motor?.hp || 0,
+          year: quoteData.motor?.year,
+          sku: (quoteData.motor as any)?.sku,
+        },
+        pricing: {
+          msrp: totals.msrp,
+          discount: totals.discount,
+          promoValue: totals.promoValue,
+          subtotal: totals.subtotal,
+          tradeInValue: 0,
+          subtotalAfterTrade: totals.subtotal,
+          hst: totals.tax,
+          totalCashPrice: totals.total,
+          savings: totals.savings
+        },
+        specs: [
+          { label: "HP", value: `${quoteData.motor?.hp || 0}` },
+          { label: "Year", value: `${quoteData.motor?.year || 2025}` }
+        ].filter(spec => spec.value && spec.value !== '0')
+      };
+      
+      console.log('Quote data:', pdfQuoteData);
+      
       const { data, error } = await supabase.functions.invoke('generate-professional-pdf', {
-        body: {
-          quoteData: {
-            quoteNumber: `HBW-${Date.now().toString().slice(-6)}`,
-            customerName: 'Valued Customer',
-            customerEmail: '',
-            customerPhone: '',
-            motor: {
-              model: quoteData.motor?.model || 'Mercury Motor',
-              hp: quoteData.motor?.hp || 0,
-              year: quoteData.motor?.year,
-              sku: (quoteData.motor as any)?.sku,
-            },
-            pricing: {
-              msrp: totals.msrp,
-              discount: totals.discount,
-              promoValue: totals.promoValue,
-              subtotal: totals.subtotal,
-              tradeInValue: undefined,
-              subtotalAfterTrade: totals.subtotal,
-              hst: totals.tax,
-              totalCashPrice: totals.total,
-              savings: totals.savings
-            },
-            specs: [
-              { label: "HP", value: `${quoteData.motor?.hp || 0}` },
-              { label: "Year", value: `${quoteData.motor?.year || 2025}` }
-            ].filter(spec => spec.value && spec.value !== '0')
-          }
-        }
+        body: { quoteData: pdfQuoteData }
       });
       
-      if (error) throw error;
+      console.log('Supabase response:', { data, error });
       
-      // Just open the PDF URL in a new tab
-      // Users can then save it from their browser
-      if (data?.pdfUrl) {
-        window.open(data.pdfUrl, '_blank');
-        
-        toast({
-          title: "PDF Generated",
-          description: "Your quote has been opened in a new tab. Use your browser's download button to save it.",
-        });
+      if (error) {
+        console.error('Supabase error:', error);
+        throw error;
       }
+      
+      if (!data?.pdfUrl) {
+        console.error('No PDF URL in response:', data);
+        throw new Error('No PDF URL received');
+      }
+      
+      // Open the PDF
+      console.log('Opening PDF URL:', data.pdfUrl);
+      window.open(data.pdfUrl, '_blank');
+      
+      toast({
+        title: "PDF Generated",
+        description: "PDF opened in new tab",
+      });
       
     } catch (error) {
       console.error('PDF generation failed:', error);
       toast({
         title: "Error",
-        description: error instanceof Error ? error.message : "Failed to generate PDF. Please try again.",
+        description: error instanceof Error ? error.message : "Failed to generate PDF",
         variant: "destructive"
       });
     } finally {
