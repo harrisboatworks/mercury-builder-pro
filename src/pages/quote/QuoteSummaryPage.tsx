@@ -227,50 +227,305 @@ export default function QuoteSummaryPage() {
   };
 
   const handleDownloadPDF = () => {
-    // Create a simple HTML quote
+    const quoteNum = Date.now().toString().slice(-6);
+    const currentDate = new Date().toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+    
     const htmlContent = `
+      <!DOCTYPE html>
       <html>
       <head>
-        <title>Mercury Quote - ${Date.now().toString().slice(-6)}</title>
+        <title>Mercury Quote - HBW-${quoteNum}</title>
         <style>
-          body { font-family: Arial; padding: 40px; }
-          h1 { color: #1e40af; }
-          table { width: 100%; border-collapse: collapse; }
-          td { padding: 10px; border-bottom: 1px solid #ddd; }
-          .total { background: #1e40af; color: white; font-weight: bold; }
+          * { margin: 0; padding: 0; box-sizing: border-box; }
+          body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            color: #1f2937;
+            line-height: 1.6;
+          }
+          .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+          }
+          
+          /* Header */
+          .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            border-bottom: 3px solid #1e40af;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+          }
+          .company-info h1 {
+            color: #1e40af;
+            font-size: 28px;
+            margin-bottom: 5px;
+          }
+          .tagline {
+            color: #6b7280;
+            font-size: 14px;
+          }
+          .quote-info {
+            text-align: right;
+          }
+          .quote-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e40af;
+          }
+          .date {
+            color: #6b7280;
+            font-size: 14px;
+          }
+          
+          /* Customer Section */
+          .customer-section {
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+          }
+          .section-title {
+            color: #1e40af;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+          
+          /* Motor Section */
+          .motor-section {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+          }
+          .motor-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+          .motor-specs {
+            display: flex;
+            gap: 30px;
+            margin-top: 15px;
+          }
+          .spec-item {
+            flex: 1;
+          }
+          .spec-label {
+            font-size: 12px;
+            opacity: 0.9;
+            text-transform: uppercase;
+          }
+          .spec-value {
+            font-size: 20px;
+            font-weight: bold;
+          }
+          
+          /* Pricing Table */
+          .pricing-section {
+            margin-bottom: 30px;
+          }
+          table {
+            width: 100%;
+            border-collapse: collapse;
+          }
+          td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 16px;
+          }
+          td:last-child {
+            text-align: right;
+            font-weight: bold;
+          }
+          .discount-row td:last-child {
+            color: #10b981;
+          }
+          .subtotal-row {
+            background: #f9fafb;
+            font-weight: bold;
+          }
+          .total-row {
+            background: #1e40af;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+          }
+          .total-row td {
+            padding: 15px;
+            border: none;
+          }
+          
+          /* Savings Badge */
+          .savings-badge {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+          }
+          .savings-amount {
+            font-size: 28px;
+            font-weight: bold;
+          }
+          
+          /* Footer */
+          .footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+            text-align: center;
+            color: #6b7280;
+          }
+          .footer-company {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 10px;
+          }
+          .contact-info {
+            font-size: 14px;
+            margin-bottom: 20px;
+          }
+          .terms {
+            font-size: 11px;
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: left;
+          }
+          
+          @media print {
+            .container { padding: 20px; }
+            .motor-section { background: #1e40af !important; -webkit-print-color-adjust: exact; }
+            .savings-badge { background: #10b981 !important; -webkit-print-color-adjust: exact; }
+          }
         </style>
       </head>
       <body>
-        <h1>Harris Boat Works - Mercury Quote</h1>
-        <p>Quote #${Date.now().toString().slice(-6)}</p>
-        <h2>${motorName} - ${motorHp}HP</h2>
-        <table>
-          <tr><td>MSRP</td><td>$${totals.msrp.toLocaleString()}</td></tr>
-          <tr><td>Discount</td><td>-$${totals.discount.toLocaleString()}</td></tr>
-          <tr><td>Subtotal</td><td>$${totals.subtotal.toLocaleString()}</td></tr>
-          <tr><td>HST</td><td>$${totals.tax.toLocaleString()}</td></tr>
-          <tr class="total"><td>Total</td><td>$${totals.total.toLocaleString()}</td></tr>
-        </table>
-        <p>Thank you for choosing Harris Boat Works!</p>
+        <div class="container">
+          <!-- Header -->
+          <div class="header">
+            <div class="company-info">
+              <h1>Harris Boat Works</h1>
+              <div class="tagline">Your Trusted Mercury Dealer Since 1947</div>
+            </div>
+            <div class="quote-info">
+              <div class="quote-number">Quote #HBW-${quoteNum}</div>
+              <div class="date">${currentDate}</div>
+              <div class="date" style="color: #dc2626; font-weight: bold;">Valid for 30 days</div>
+            </div>
+          </div>
+          
+          <!-- Customer Section -->
+          <div class="customer-section">
+            <div class="section-title">Customer Information</div>
+            <div>Name: Valued Customer</div>
+            <div>Email: To be provided</div>
+            <div>Phone: To be provided</div>
+          </div>
+          
+          <!-- Motor Section -->
+          <div class="motor-section">
+            <div class="motor-title">${modelYear || '2025'} Mercury ${motorName}</div>
+            <div class="motor-specs">
+              <div class="spec-item">
+                <div class="spec-label">Horsepower</div>
+                <div class="spec-value">${motorHp}HP</div>
+              </div>
+              ${sku ? `
+              <div class="spec-item">
+                <div class="spec-label">Model</div>
+                <div class="spec-value">${sku}</div>
+              </div>
+              ` : ''}
+              <div class="spec-item">
+                <div class="spec-label">Category</div>
+                <div class="spec-value">FourStroke</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Pricing Table -->
+          <div class="pricing-section">
+            <div class="section-title">Investment Summary</div>
+            <table>
+              <tr>
+                <td>Manufacturer's Suggested Retail Price</td>
+                <td>$${totals.msrp.toLocaleString()}</td>
+              </tr>
+              <tr class="discount-row">
+                <td>Harris Boat Works Discount</td>
+                <td>-$${totals.discount.toLocaleString()}</td>
+              </tr>
+              ${totals.promoValue > 0 ? `
+              <tr class="discount-row">
+                <td>Promotional Savings</td>
+                <td>-$${totals.promoValue.toLocaleString()}</td>
+              </tr>
+              ` : ''}
+              <tr class="subtotal-row">
+                <td>Subtotal</td>
+                <td>$${totals.subtotal.toLocaleString()}</td>
+              </tr>
+              <tr>
+                <td>HST (13%)</td>
+                <td>$${totals.tax.toLocaleString()}</td>
+              </tr>
+              <tr class="total-row">
+                <td>TOTAL INVESTMENT</td>
+                <td>$${totals.total.toLocaleString()}</td>
+              </tr>
+            </table>
+          </div>
+          
+          ${totals.savings > 0 ? `
+          <div class="savings-badge">
+            <div>YOUR TOTAL SAVINGS</div>
+            <div class="savings-amount">$${totals.savings.toLocaleString()}</div>
+          </div>
+          ` : ''}
+          
+          <!-- Footer -->
+          <div class="footer">
+            <div class="footer-company">Harris Boat Works</div>
+            <div class="contact-info">
+              5369 Harris Boat Works Rd, Gore's Landing, ON K0K 2E0<br>
+              (905) 342-2153 | info@harrisboatworks.ca<br>
+              www.harrisboatworks.com
+            </div>
+            <div class="terms">
+              <strong>Terms & Conditions:</strong> This quote is valid for 30 days from the date above. All prices are in Canadian dollars and include applicable taxes. Installation and rigging services available at additional cost. All new Mercury motors include comprehensive factory warranty. Financing available O.A.C.
+            </div>
+          </div>
+        </div>
       </body>
       </html>
     `;
     
-    // Open the HTML in a new window
     const newWindow = window.open('', '_blank');
     if (newWindow) {
       newWindow.document.write(htmlContent);
       newWindow.document.close();
       
-      // Let user print or save as PDF using browser
       setTimeout(() => {
         newWindow.print();
       }, 500);
     }
     
     toast({
-      title: "Quote Opened",
-      description: "Use your browser's Print option to save as PDF",
+      title: "Quote Generated",
+      description: "Use Print → Save as PDF to download",
     });
   };
 
