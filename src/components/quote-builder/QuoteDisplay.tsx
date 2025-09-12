@@ -16,6 +16,7 @@ import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/comp
 import { toast } from '@/hooks/use-toast';
 import confetti from 'canvas-confetti';
 import { supabase } from '@/integrations/supabase/client';
+import { buildEnhancedPdfData } from '@/lib/pdf-helpers';
 import { generateQuotePDF } from '@/lib/pdf-generator';
 import { motion } from 'framer-motion';
 import { xpActions } from '@/config/xpActions';

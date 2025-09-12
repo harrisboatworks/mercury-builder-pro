@@ -1,7 +1,7 @@
 import { supabase } from '@/integrations/supabase/client';
 
 export interface PdfQuoteData {
-  quoteNumber: string;
+  quoteNumber: string | number;
   customerName: string;
   customerEmail: string;
   customerPhone: string;
@@ -10,6 +10,17 @@ export interface PdfQuoteData {
     hp: number;
     year?: number;
     sku?: string;
+    category?: string;
+  };
+  motorSpecs?: {
+    cylinders?: string;
+    displacement?: string;
+    weight_kg?: number;
+    fuel_system?: string;
+    starting?: string;
+    alternator?: string;
+    gear_ratio?: string;
+    max_rpm?: string;
   };
   pricing: {
     msrp: number;
@@ -22,11 +33,18 @@ export interface PdfQuoteData {
     totalCashPrice: number;
     savings: number;
   };
+  accessories?: Array<{ name: string; price: number }>;
   specs?: Array<{ label: string; value: string }>;
   financing?: {
     monthlyPayment: number;
     term: number;
     rate: number;
+  };
+  customerReview?: {
+    comment: string;
+    reviewer: string;
+    location: string;
+    rating: number;
   };
 }
 

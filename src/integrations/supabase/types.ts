@@ -539,6 +539,7 @@ export type Database = {
           motor_price: number | null
           pdf_url: string | null
           quote_data: Json | null
+          quote_number: number
           reward_claimed: string | null
           total_price: number | null
           user_id: string | null
@@ -553,6 +554,7 @@ export type Database = {
           motor_price?: number | null
           pdf_url?: string | null
           quote_data?: Json | null
+          quote_number?: number
           reward_claimed?: string | null
           total_price?: number | null
           user_id?: string | null
@@ -567,6 +569,7 @@ export type Database = {
           motor_price?: number | null
           pdf_url?: string | null
           quote_data?: Json | null
+          quote_number?: number
           reward_claimed?: string | null
           total_price?: number | null
           user_id?: string | null

@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Download, FileText, Calendar, DollarSign, Settings, Trash2 } from 'lucide-react';
 import { listQuotes } from '@/lib/quotesApi';
 import { toast } from '@/hooks/use-toast';
+import { buildEnhancedPdfData } from '@/lib/pdf-helpers';
 import { generateQuotePDF } from '@/lib/pdf-generator';
 import { format } from 'date-fns';
 import { Skeleton } from '@/components/ui/skeleton';

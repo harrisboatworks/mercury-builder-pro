@@ -2,7 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { corsHeaders } from '../_shared/cors.ts'
 
 interface QuoteData {
-  quoteNumber: string;
+  quoteNumber: string | number;
   customerName: string;
   customerEmail: string;
   customerPhone: string;
@@ -11,6 +11,17 @@ interface QuoteData {
     hp: number;
     year?: number;
     sku?: string;
+    category?: string;
+  };
+  motorSpecs?: {
+    cylinders?: string;
+    displacement?: string;
+    weight_kg?: number;
+    fuel_system?: string;
+    starting?: string;
+    alternator?: string;
+    gear_ratio?: string;
+    max_rpm?: string;
   };
   pricing: {
     msrp: number;
@@ -23,11 +34,18 @@ interface QuoteData {
     totalCashPrice: number;
     savings: number;
   };
+  accessories?: Array<{ name: string; price: number }>;
   specs?: Array<{ label: string; value: string }>;
   financing?: {
     monthlyPayment: number;
     term: number;
     rate: number;
+  };
+  customerReview?: {
+    comment: string;
+    reviewer: string;
+    location: string;
+    rating: number;
   };
 }
 
@@ -319,11 +337,12 @@ const generateHTML = (data: QuoteData): string => {
         <!-- Header -->
         <div class="header">
             <div class="logo-section">
+                <img src="https://quote.harrisboatworks.ca/assets/harris-logo.png" alt="Harris Boat Works" style="height: 60px; margin-bottom: 10px;" />
                 <div class="company-name">Harris Boat Works</div>
                 <div class="tagline">Your Trusted Mercury Dealer Since 1947</div>
             </div>
             <div class="quote-info">
-                <div class="quote-number">Quote #${data.quoteNumber}</div>
+                <div class="quote-number">Quote #HBW-${String(data.quoteNumber).padStart(6, '0')}</div>
                 <div class="quote-date">${currentDate}</div>
                 <div class="validity">Valid for 30 days</div>
             </div>
@@ -356,14 +375,59 @@ const generateHTML = (data: QuoteData): string => {
 
         <!-- Motor Highlight -->
         <div class="motor-highlight">
-            <div class="motor-title">
-                ${data.motor.year ? data.motor.year + ' ' : ''}Mercury ${data.motor.model}
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+                <div class="motor-title">
+                    ${data.motor.year ? data.motor.year + ' ' : ''}Mercury ${data.motor.model}
+                </div>
+                <img src="https://quote.harrisboatworks.ca/assets/mercury-logo.png" alt="Mercury Marine" style="height: 40px;" />
             </div>
             <div class="motor-specs">
                 <div class="spec-item">
                     <div class="spec-label">Horsepower</div>
                     <div class="spec-value">${data.motor.hp}HP</div>
                 </div>
+                ${data.motor.category ? `
+                <div class="spec-item">
+                    <div class="spec-label">Category</div>
+                    <div class="spec-value">${data.motor.category}</div>
+                </div>
+                ` : ''}
+                ${data.motorSpecs?.cylinders ? `
+                <div class="spec-item">
+                    <div class="spec-label">Engine Type</div>
+                    <div class="spec-value">${data.motorSpecs.cylinders}</div>
+                </div>
+                ` : ''}
+                ${data.motorSpecs?.displacement ? `
+                <div class="spec-item">
+                    <div class="spec-label">Displacement</div>
+                    <div class="spec-value">${data.motorSpecs.displacement}</div>
+                </div>
+                ` : ''}
+                ${data.motorSpecs?.fuel_system ? `
+                <div class="spec-item">
+                    <div class="spec-label">Fuel System</div>
+                    <div class="spec-value">${data.motorSpecs.fuel_system}</div>
+                </div>
+                ` : ''}
+                ${data.motorSpecs?.starting ? `
+                <div class="spec-item">
+                    <div class="spec-label">Starting</div>
+                    <div class="spec-value">${data.motorSpecs.starting}</div>
+                </div>
+                ` : ''}
+                ${data.motorSpecs?.weight_kg ? `
+                <div class="spec-item">
+                    <div class="spec-label">Weight</div>
+                    <div class="spec-value">${data.motorSpecs.weight_kg}kg</div>
+                </div>
+                ` : ''}
+                ${data.motorSpecs?.alternator ? `
+                <div class="spec-item">
+                    <div class="spec-label">Alternator</div>
+                    <div class="spec-value">${data.motorSpecs.alternator}</div>
+                </div>
+                ` : ''}
                 ${data.motor.year ? `
                 <div class="spec-item">
                     <div class="spec-label">Model Year</div>
@@ -376,12 +440,6 @@ const generateHTML = (data: QuoteData): string => {
                     <div class="spec-value">${data.motor.sku}</div>
                 </div>
                 ` : ''}
-                ${data.specs?.map(spec => `
-                <div class="spec-item">
-                    <div class="spec-label">${spec.label}</div>
-                    <div class="spec-value">${spec.value}</div>
-                </div>
-                `).join('') || ''}
             </div>
         </div>
 
@@ -392,9 +450,16 @@ const generateHTML = (data: QuoteData): string => {
                 <div class="pricing-header">Pricing Breakdown</div>
                 
                 <div class="pricing-row">
-                    <div class="pricing-label">MSRP (Motor + Accessories)</div>
+                    <div class="pricing-label">MSRP (Motor${data.accessories?.length ? ' + Accessories' : ''})</div>
                     <div class="pricing-value">$${data.pricing.msrp.toLocaleString()}</div>
                 </div>
+                
+                ${data.accessories?.map(accessory => `
+                <div class="pricing-row" style="font-size: 14px; color: #6b7280;">
+                    <div class="pricing-label" style="padding-left: 20px;">• ${accessory.name}</div>
+                    <div class="pricing-value">$${accessory.price.toLocaleString()}</div>
+                </div>
+                `).join('') || ''}
                 
                 ${data.pricing.discount > 0 ? `
                 <div class="pricing-row">
@@ -450,7 +515,7 @@ const generateHTML = (data: QuoteData): string => {
         <div class="section">
             <div class="section-title">Financing Options Available</div>
             <div class="financing-box">
-                <div class="financing-title">Estimated Monthly Payment</div>
+                <div class="financing-title">As low as $${data.financing.monthlyPayment.toLocaleString()}/month OAC</div>
                 <div class="financing-details">
                     <div class="financing-item">
                         <div class="financing-label">Monthly Payment</div>
@@ -465,6 +530,30 @@ const generateHTML = (data: QuoteData): string => {
                         <div class="financing-value">${data.financing.rate}%</div>
                     </div>
                 </div>
+                <div style="font-size: 12px; color: #92400e; margin-top: 10px; text-align: center;">
+                    *On Approved Credit (OAC). Rates and terms subject to credit approval.
+                </div>
+            </div>
+        </div>
+        ` : ''}
+
+        <!-- Customer Review -->
+        ${data.customerReview ? `
+        <div class="section">
+            <div class="section-title">Customer Review</div>
+            <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #10b981;">
+                <div style="font-style: italic; font-size: 16px; line-height: 1.6; color: #374151; margin-bottom: 15px;">
+                    "${data.customerReview.comment}"
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div style="font-weight: bold; color: #111827;">${data.customerReview.reviewer}</div>
+                        <div style="color: #6b7280; font-size: 14px;">${data.customerReview.location}</div>
+                    </div>
+                    <div style="display: flex; color: #fbbf24;">
+                        ${'★'.repeat(data.customerReview.rating)}${'☆'.repeat(5 - data.customerReview.rating)}
+                    </div>
+                </div>
             </div>
         </div>
         ` : ''}
@@ -473,8 +562,19 @@ const generateHTML = (data: QuoteData): string => {
         <div class="footer">
             <div class="company-footer">Harris Boat Works</div>
             <div class="contact-info">
-                Gore's Landing, ON | (905) 342-2153 | info@harrisboatworks.com<br>
-                Visit us at: www.harrisboatworks.com
+                5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0<br>
+                (905) 342-2153 | info@harrisboatworks.ca<br>
+                Visit us at: quote.harrisboatworks.ca
+            </div>
+            
+            <!-- QR Code and Online Link -->
+            <div style="text-align: center; margin: 20px 0;">
+                <div style="font-size: 14px; color: #6b7280; margin-bottom: 10px;">
+                    View this quote online at:
+                </div>
+                <div style="font-size: 16px; font-weight: bold; color: #1e40af;">
+                    quote.harrisboatworks.ca/quote/HBW-${String(data.quoteNumber).padStart(6, '0')}
+                </div>
             </div>
             
             <div class="terms">
