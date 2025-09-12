@@ -226,60 +226,52 @@ export default function QuoteSummaryPage() {
     });
   };
 
-  const handleDownloadPDF = async () => {
-    if (isGeneratingPDF) return;
+  const handleDownloadPDF = () => {
+    // Create a simple HTML quote
+    const htmlContent = `
+      <html>
+      <head>
+        <title>Mercury Quote - ${Date.now().toString().slice(-6)}</title>
+        <style>
+          body { font-family: Arial; padding: 40px; }
+          h1 { color: #1e40af; }
+          table { width: 100%; border-collapse: collapse; }
+          td { padding: 10px; border-bottom: 1px solid #ddd; }
+          .total { background: #1e40af; color: white; font-weight: bold; }
+        </style>
+      </head>
+      <body>
+        <h1>Harris Boat Works - Mercury Quote</h1>
+        <p>Quote #${Date.now().toString().slice(-6)}</p>
+        <h2>${motorName} - ${motorHp}HP</h2>
+        <table>
+          <tr><td>MSRP</td><td>$${totals.msrp.toLocaleString()}</td></tr>
+          <tr><td>Discount</td><td>-$${totals.discount.toLocaleString()}</td></tr>
+          <tr><td>Subtotal</td><td>$${totals.subtotal.toLocaleString()}</td></tr>
+          <tr><td>HST</td><td>$${totals.tax.toLocaleString()}</td></tr>
+          <tr class="total"><td>Total</td><td>$${totals.total.toLocaleString()}</td></tr>
+        </table>
+        <p>Thank you for choosing Harris Boat Works!</p>
+      </body>
+      </html>
+    `;
     
-    setIsGeneratingPDF(true);
-    
-    try {
-      const pdfQuoteData = {
-        quoteNumber: Date.now().toString().slice(-6),
-        customerName: 'Valued Customer',
-        customerEmail: '',
-        customerPhone: '',
-        motor: {
-          model: motor.model || motorName,
-          hp: motorHp,
-          year: modelYear || 2025
-        },
-        pricing: {
-          msrp: totals.msrp,
-          discount: totals.discount,
-          promoValue: totals.promoValue,
-          subtotal: totals.subtotal,
-          tradeInValue: 0,
-          subtotalAfterTrade: totals.subtotal,
-          hst: totals.tax,
-          totalCashPrice: totals.total,
-          savings: totals.savings
-        }
-      };
+    // Open the HTML in a new window
+    const newWindow = window.open('', '_blank');
+    if (newWindow) {
+      newWindow.document.write(htmlContent);
+      newWindow.document.close();
       
-      const { data, error } = await supabase.functions.invoke('generate-pdf', {
-        body: { quoteData: pdfQuoteData }
-      });
-      
-      if (error) throw error;
-      if (!data?.pdfUrl) throw new Error('No PDF URL received');
-      
-      // Just open in new tab - simplest approach that works
-      window.open(data.pdfUrl, '_blank');
-      
-      toast({
-        title: "PDF Generated",
-        description: "Your quote PDF has opened in a new tab. Use your browser's download button to save.",
-      });
-      
-    } catch (error) {
-      console.error('PDF generation failed:', error);
-      toast({
-        title: "Error",
-        description: error instanceof Error ? error.message : "Failed to generate PDF",
-        variant: "destructive"
-      });
-    } finally {
-      setIsGeneratingPDF(false);
+      // Let user print or save as PDF using browser
+      setTimeout(() => {
+        newWindow.print();
+      }, 500);
     }
+    
+    toast({
+      title: "Quote Opened",
+      description: "Use your browser's Print option to save as PDF",
+    });
   };
 
   const handleEmailQuote = () => {
