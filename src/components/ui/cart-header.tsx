@@ -6,17 +6,54 @@ import { useNavigate } from 'react-router-dom';
 import { money } from '@/lib/money';
 
 export const CartHeader = () => {
-  const { state } = useQuote();
+  const { state, isStepAccessible } = useQuote();
   const navigate = useNavigate();
   
+  const findNextIncompleteStep = (): string => {
+    // Check each step in order to find the first incomplete one
+    for (let step = 1; step <= 7; step++) {
+      if (!isStepAccessible(step)) {
+        // Map step numbers to routes
+        switch (step) {
+          case 1: return '/quote/motor-selection';
+          case 2: return '/quote/purchase-path';
+          case 3: 
+            return state.purchasePath === 'installed' ? '/quote/boat-info' : '/quote/fuel-tank';
+          case 4: return '/quote/trade-in';
+          case 5: return state.purchasePath === 'installed' ? '/quote/installation' : '/quote/summary';
+          case 6: return '/quote/summary';
+          case 7: return '/quote/schedule';
+          default: return '/quote/motor-selection';
+        }
+      }
+    }
+    // If all steps are accessible, go to summary
+    return '/quote/summary';
+  };
+
   const handleCartClick = () => {
-    console.log('CartHeader: handleCartClick called', { hasMotor: !!state.motor, motor: state.motor?.hp });
-    if (state.motor) {
-      console.log('CartHeader: Navigating to /quote/summary');
-      // Navigate to quote summary if we have a motor in cart
+    console.log('CartHeader: handleCartClick called', { 
+      hasMotor: !!state.motor, 
+      motor: state.motor?.hp,
+      canAccessSummary: isStepAccessible(6),
+      purchasePath: state.purchasePath,
+      hasBoatInfo: !!state.boatInfo,
+      hasTradein: state.hasTradein,
+      hasTradeInInfo: !!state.tradeInInfo
+    });
+
+    if (!state.motor) {
+      console.log('CartHeader: No motor in state, not navigating');
+      return;
+    }
+
+    if (isStepAccessible(6)) {
+      console.log('CartHeader: All requirements met, navigating to /quote/summary');
       navigate('/quote/summary');
     } else {
-      console.log('CartHeader: No motor in state, not navigating');
+      const nextStep = findNextIncompleteStep();
+      console.log('CartHeader: Summary not accessible, navigating to next incomplete step:', nextStep);
+      navigate(nextStep);
     }
   };
 
