@@ -106,8 +106,8 @@ export default function TradeInPage() {
             tradeInInfo={tradeInInfo}
           onTradeInChange={handleTradeInChange}
           onAutoAdvance={handleComplete}
-          currentMotorBrand={state.boatInfo?.currentMotorBrand || 'Mercury'}
-          currentHp={state.boatInfo?.currentHp || (typeof state.motor?.hp === 'string' ? parseInt(state.motor.hp, 10) : state.motor?.hp)}
+          currentMotorBrand={state.boatInfo?.currentMotorBrand}
+          currentHp={state.boatInfo?.currentHp}
           currentMotorYear={state.boatInfo?.currentMotorYear}
           />
         </div>
