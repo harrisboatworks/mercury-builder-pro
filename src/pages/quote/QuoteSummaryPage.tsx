@@ -232,8 +232,6 @@ export default function QuoteSummaryPage() {
     setIsGeneratingPDF(true);
     
     try {
-      console.log('Starting PDF generation...');
-      
       const pdfQuoteData = {
         quoteNumber: Date.now().toString().slice(-6),
         customerName: 'Valued Customer',
@@ -262,43 +260,35 @@ export default function QuoteSummaryPage() {
         ].filter(spec => spec.value && spec.value !== '0')
       };
       
-      console.log('Quote data:', pdfQuoteData);
-      
       const { data, error } = await supabase.functions.invoke('generate-professional-pdf', {
         body: { quoteData: pdfQuoteData }
       });
       
-      console.log('Supabase response:', { data, error });
+      if (error) throw error;
+      if (!data?.pdfUrl) throw new Error('No PDF URL received');
       
-      if (error) {
-        console.error('Supabase error:', error);
-        throw error;
-      }
-
-      if (data?.pdfData) {
-        // Convert base64 to blob
-        const pdfBlob = new Blob(
-          [Uint8Array.from(atob(data.pdfData), c => c.charCodeAt(0))],
-          { type: 'application/pdf' }
-        );
-        
-        // Create download link
-        const url = URL.createObjectURL(pdfBlob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = data.fileName || `Mercury-Quote-${pdfQuoteData.quoteNumber}.pdf`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-        
-        toast({
-          title: "PDF Downloaded",
-          description: "Your quote has been saved to downloads",
-        });
-      } else {
-        throw new Error('No PDF data received');
-      }
+      // Create a hidden iframe to trigger download
+      const iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.src = data.pdfUrl;
+      document.body.appendChild(iframe);
+      
+      // Also open in new tab as backup
+      setTimeout(() => {
+        window.open(data.pdfUrl, '_blank');
+      }, 500);
+      
+      // Clean up iframe after a delay
+      setTimeout(() => {
+        if (document.body.contains(iframe)) {
+          document.body.removeChild(iframe);
+        }
+      }, 2000);
+      
+      toast({
+        title: "PDF Generated",
+        description: "If download didn't start, check your new tab",
+      });
       
     } catch (error) {
       console.error('PDF generation failed:', error);
