@@ -19,6 +19,7 @@ import { computeTotals } from '@/lib/finance';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
+import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
 
@@ -226,67 +227,59 @@ export default function QuoteSummaryPage() {
   };
 
   const handleDownloadPDF = async () => {
-    if (isGeneratingPDF) return; // Prevent multiple clicks
+    if (isGeneratingPDF) return;
     
     setIsGeneratingPDF(true);
     
     try {
-      // Generate a unique quote number
-      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-      
-      // Import PDF generator
-      const { generateQuotePDF } = await import('@/lib/pdf-generator');
-      
-      const pdfData = {
-        quoteNumber,
-        customerName: 'Valued Customer',
-        customerEmail: '',
-        customerPhone: '',
-        motor: {
-          model: quoteData.motor?.model || 'Mercury Motor',
-          hp: quoteData.motor?.hp || 0,
-          year: quoteData.motor?.year,
-          sku: (quoteData.motor as any)?.sku,
-        },
-        pricing: {
-          msrp: totals.msrp,
-          discount: totals.discount,
-          promoValue: totals.promoValue,
-          subtotal: totals.subtotal,
-          tradeInValue: undefined,
-          subtotalAfterTrade: totals.subtotal,
-          hst: totals.tax,
-          totalCashPrice: totals.total,
-          savings: totals.savings
-        },
-        specs: [
-          { label: "HP", value: `${quoteData.motor?.hp || 0}` },
-          { label: "Year", value: `${quoteData.motor?.year || 2025}` }
-        ].filter(spec => spec.value && spec.value !== '0')
-      };
-      
-      toast({
-        title: "Generating PDF...",
-        description: "Please wait while we create your professional quote.",
+      // Call the Supabase function directly
+      const { data, error } = await supabase.functions.invoke('generate-professional-pdf', {
+        body: {
+          quoteData: {
+            quoteNumber: `HBW-${Date.now().toString().slice(-6)}`,
+            customerName: 'Valued Customer',
+            customerEmail: '',
+            customerPhone: '',
+            motor: {
+              model: quoteData.motor?.model || 'Mercury Motor',
+              hp: quoteData.motor?.hp || 0,
+              year: quoteData.motor?.year,
+              sku: (quoteData.motor as any)?.sku,
+            },
+            pricing: {
+              msrp: totals.msrp,
+              discount: totals.discount,
+              promoValue: totals.promoValue,
+              subtotal: totals.subtotal,
+              tradeInValue: undefined,
+              subtotalAfterTrade: totals.subtotal,
+              hst: totals.tax,
+              totalCashPrice: totals.total,
+              savings: totals.savings
+            },
+            specs: [
+              { label: "HP", value: `${quoteData.motor?.hp || 0}` },
+              { label: "Year", value: `${quoteData.motor?.year || 2025}` }
+            ].filter(spec => spec.value && spec.value !== '0')
+          }
+        }
       });
       
-      // Generate PDF using PDF.co API
-      const pdfUrl = await generateQuotePDF(pdfData);
+      if (error) throw error;
       
-      if (!pdfUrl) {
-        throw new Error('No PDF URL returned from generator');
+      // Just open the PDF URL in a new tab
+      // Users can then save it from their browser
+      if (data?.pdfUrl) {
+        window.open(data.pdfUrl, '_blank');
+        
+        toast({
+          title: "PDF Generated",
+          description: "Your quote has been opened in a new tab. Use your browser's download button to save it.",
+        });
       }
       
-      // Just open it - let the browser handle the PDF
-      window.open(pdfUrl, '_blank');
-      
-      toast({
-        title: "PDF Generated",
-        description: "Your quote PDF has been opened in a new tab",
-      });
-      
     } catch (error) {
-      console.error('PDF generation error:', error);
+      console.error('PDF generation failed:', error);
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Failed to generate PDF. Please try again.",
