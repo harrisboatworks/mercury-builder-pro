@@ -243,6 +243,9 @@ export default function QuoteSummaryPage() {
       const tax = subtotal * 0.13;
       const total = subtotal + tax;
       
+      // Get selected package info
+      const selectedPkg = packages.find(p => p.id === selectedPackage) || packages[1];
+      
       // Transform quote data for React PDF
       const pdfData = {
         quoteNumber,
@@ -250,6 +253,12 @@ export default function QuoteSummaryPage() {
         customerEmail: '',
         customerPhone: '',
         motor: quoteData.motor || {},
+        selectedPackage: {
+          id: selectedPackage,
+          label: selectedPkg.label,
+          coverageYears: selectedTargetYears ?? currentCoverageYears,
+          features: selectedPkg.features
+        },
         // Use computed pricing values
         pricing: {
           msrp,

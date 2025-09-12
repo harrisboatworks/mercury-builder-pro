@@ -20,6 +20,12 @@ export interface ReactPdfQuoteData {
   tax: string;
   total: string;
   totalSavings: string;
+  selectedPackage?: {
+    id: string;
+    label: string;
+    coverageYears: number;
+    features: string[];
+  };
 }
 
 // Transform existing quote data to React PDF format
@@ -57,7 +63,8 @@ export const transformQuoteData = (quoteData: any): ReactPdfQuoteData => {
     subtotal: formatCurrency(subtotal),
     tax: formatCurrency(hst),
     total: formatCurrency(total),
-    totalSavings: formatCurrency(savings)
+    totalSavings: formatCurrency(savings),
+    selectedPackage: quoteData.selectedPackage
   };
 };
 

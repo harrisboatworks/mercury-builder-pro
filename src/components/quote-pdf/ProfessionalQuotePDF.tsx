@@ -289,6 +289,12 @@ export interface QuotePDFProps {
     tax: string;
     total: string;
     totalSavings: string;
+    selectedPackage?: {
+      id: string;
+      label: string;
+      coverageYears: number;
+      features: string[];
+    };
   };
 }
 
@@ -388,7 +394,8 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             <View style={styles.warrantySection}>
               <Text style={styles.warrantyTitle}>EXTENDED WARRANTY OPTIONS</Text>
               <Text style={{ fontSize: 8, color: colors.lightText, marginBottom: 6 }}>
-                Current coverage: 5 years (base + promo)
+                Current coverage: {quoteData.selectedPackage?.coverageYears || 5} years 
+                {quoteData.selectedPackage?.id === 'best' ? ' (Premium Max Coverage)' : ' (base + promo)'}
               </Text>
               
               <View style={styles.warrantyOption}>
@@ -436,25 +443,53 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
 
             {/* Coverage Summary */}
             <View style={styles.summaryBox}>
-              <Text style={styles.summaryTitle}>COMPLETE COVERAGE</Text>
-              <Text style={styles.summaryItem}>Coverage: 5 years total</Text>
-              <Text style={styles.summaryItem}>• Mercury motor</Text>
-              <Text style={styles.summaryItem}>• Premium controls & rigging</Text>
-              <Text style={styles.summaryItem}>• Marine starting battery</Text>
-              <Text style={styles.summaryItem}>• Premium marine controls and installation hardware</Text>
+              <Text style={styles.summaryTitle}>
+                {quoteData.selectedPackage?.label || 'COMPLETE COVERAGE'}
+              </Text>
+              <Text style={styles.summaryItem}>
+                Coverage: {quoteData.selectedPackage?.coverageYears || 5} years total
+              </Text>
+              {quoteData.selectedPackage?.features?.map((feature, index) => (
+                <Text key={index} style={styles.summaryItem}>• {feature}</Text>
+              )) || (
+                <>
+                  <Text style={styles.summaryItem}>• Mercury motor</Text>
+                  <Text style={styles.summaryItem}>• Premium controls & rigging</Text>
+                  <Text style={styles.summaryItem}>• Marine starting battery</Text>
+                  <Text style={styles.summaryItem}>• Premium marine controls and installation hardware</Text>
+                </>
+              )}
             </View>
 
             {/* Bonus Offers */}
             <View style={styles.summaryBox}>
-              <Text style={styles.summaryTitle}>Bonus Offers Included</Text>
-              <Text style={styles.summaryItem}>
-                • 2 Years Extended Warranty (+2 years warranty at no cost)
+              <Text style={styles.summaryTitle}>
+                {quoteData.selectedPackage?.id === 'best' ? 'Premium Max Coverage Selected' : 'Bonus Offers Included'}
               </Text>
-              <Text style={styles.summaryItem}>
-                • Added Value for Free
-              </Text>
+              {quoteData.selectedPackage?.id === 'best' ? (
+                <>
+                  <Text style={styles.summaryItem}>
+                    • Maximum 8-year warranty coverage
+                  </Text>
+                  <Text style={styles.summaryItem}>
+                    • White-glove installation service
+                  </Text>
+                  <Text style={styles.summaryItem}>
+                    • Premium propeller included
+                  </Text>
+                </>
+              ) : (
+                <>
+                  <Text style={styles.summaryItem}>
+                    • 2 Years Extended Warranty (+2 years warranty at no cost)
+                  </Text>
+                  <Text style={styles.summaryItem}>
+                    • Added Value for Free
+                  </Text>
+                </>
+              )}
               <Text style={{ fontSize: 8, color: colors.lightText, marginTop: 4 }}>
-                Limited time offer
+                {quoteData.selectedPackage?.id === 'best' ? 'Premium package benefits' : 'Limited time offer'}
               </Text>
             </View>
 
