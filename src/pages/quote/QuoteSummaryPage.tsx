@@ -252,7 +252,7 @@ export default function QuoteSummaryPage() {
             padding: 40px;
           }
           
-          /* Header */
+          /* Header with Logo */
           .header {
             display: flex;
             justify-content: space-between;
@@ -261,7 +261,24 @@ export default function QuoteSummaryPage() {
             padding-bottom: 20px;
             margin-bottom: 30px;
           }
-          .company-info h1 {
+          .company-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+          }
+          .logo-box {
+            width: 60px;
+            height: 60px;
+            background: #1e40af;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 24px;
+            border-radius: 8px;
+          }
+          .company-text h1 {
             color: #1e40af;
             font-size: 28px;
             margin-bottom: 5px;
@@ -270,6 +287,20 @@ export default function QuoteSummaryPage() {
             color: #6b7280;
             font-size: 14px;
           }
+          
+          /* Mercury Badge */
+          .mercury-badge {
+            display: inline-block;
+            background: #000;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-left: 10px;
+          }
+          
+          /* Rest of your existing styles... */
           .quote-info {
             text-align: right;
           }
@@ -278,12 +309,44 @@ export default function QuoteSummaryPage() {
             font-weight: bold;
             color: #1e40af;
           }
-          .date {
-            color: #6b7280;
-            font-size: 14px;
+          
+          /* Motor Section with Mercury branding */
+          .motor-section {
+            background: linear-gradient(135deg, #000 0%, #333 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            position: relative;
+          }
+          .motor-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+          .mercury-watermark {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            opacity: 0.3;
+            letter-spacing: 2px;
           }
           
-          /* Customer Section */
+          /* Professional badge */
+          .authorized-dealer {
+            background: #f9fafb;
+            border: 2px solid #1e40af;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin: 30px 0;
+            font-weight: bold;
+            color: #1e40af;
+          }
+          
+          /* Continue with all the other styles from before */
           .customer-section {
             background: #f9fafb;
             border-radius: 8px;
@@ -297,20 +360,6 @@ export default function QuoteSummaryPage() {
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
-          }
-          
-          /* Motor Section */
-          .motor-section {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-          }
-          .motor-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
           }
           .motor-specs {
             display: flex;
@@ -328,11 +377,6 @@ export default function QuoteSummaryPage() {
           .spec-value {
             font-size: 20px;
             font-weight: bold;
-          }
-          
-          /* Pricing Table */
-          .pricing-section {
-            margin-bottom: 30px;
           }
           table {
             width: 100%;
@@ -364,8 +408,6 @@ export default function QuoteSummaryPage() {
             padding: 15px;
             border: none;
           }
-          
-          /* Savings Badge */
           .savings-badge {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
@@ -378,8 +420,6 @@ export default function QuoteSummaryPage() {
             font-size: 28px;
             font-weight: bold;
           }
-          
-          /* Footer */
           .footer {
             margin-top: 50px;
             padding-top: 30px;
@@ -393,38 +433,35 @@ export default function QuoteSummaryPage() {
             color: #1e40af;
             margin-bottom: 10px;
           }
-          .contact-info {
-            font-size: 14px;
-            margin-bottom: 20px;
-          }
-          .terms {
-            font-size: 11px;
-            background: #f9fafb;
-            padding: 15px;
-            border-radius: 6px;
-            text-align: left;
-          }
           
           @media print {
             .container { padding: 20px; }
-            .motor-section { background: #1e40af !important; -webkit-print-color-adjust: exact; }
+            .motor-section { background: #000 !important; -webkit-print-color-adjust: exact; }
             .savings-badge { background: #10b981 !important; -webkit-print-color-adjust: exact; }
           }
         </style>
       </head>
       <body>
         <div class="container">
-          <!-- Header -->
+          <!-- Header with Logo -->
           <div class="header">
             <div class="company-info">
-              <h1>Harris Boat Works</h1>
-              <div class="tagline">Your Trusted Mercury Dealer Since 1947</div>
+              <div class="logo-box">HBW</div>
+              <div class="company-text">
+                <h1>Harris Boat Works</h1>
+                <div class="tagline">Your Trusted Mercury Dealer Since 1947</div>
+              </div>
             </div>
             <div class="quote-info">
               <div class="quote-number">Quote #HBW-${quoteNum}</div>
               <div class="date">${currentDate}</div>
               <div class="date" style="color: #dc2626; font-weight: bold;">Valid for 30 days</div>
             </div>
+          </div>
+          
+          <!-- Authorized Dealer Badge -->
+          <div class="authorized-dealer">
+            ⚓ AUTHORIZED MERCURY MARINE DEALER ⚓
           </div>
           
           <!-- Customer Section -->
@@ -435,8 +472,9 @@ export default function QuoteSummaryPage() {
             <div>Phone: To be provided</div>
           </div>
           
-          <!-- Motor Section -->
+          <!-- Motor Section with Mercury branding -->
           <div class="motor-section">
+            <div class="mercury-watermark">MERCURY</div>
             <div class="motor-title">${modelYear || '2025'} Mercury ${motorName}</div>
             <div class="motor-specs">
               <div class="spec-item">
@@ -503,9 +541,6 @@ export default function QuoteSummaryPage() {
               5369 Harris Boat Works Rd, Gore's Landing, ON K0K 2E0<br>
               (905) 342-2153 | info@harrisboatworks.ca<br>
               www.harrisboatworks.com
-            </div>
-            <div class="terms">
-              <strong>Terms & Conditions:</strong> This quote is valid for 30 days from the date above. All prices are in Canadian dollars and include applicable taxes. Installation and rigging services available at additional cost. All new Mercury motors include comprehensive factory warranty. Financing available O.A.C.
             </div>
           </div>
         </div>
