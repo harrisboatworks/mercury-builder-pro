@@ -277,39 +277,18 @@ export default function QuoteSummaryPage() {
         throw new Error('No PDF URL returned from generator');
       }
       
-      // Try to download the PDF using blob approach first
-      try {
-        const response = await fetch(pdfUrl);
-        const blob = await response.blob();
-        const downloadUrl = window.URL.createObjectURL(blob);
-        
-        const link = document.createElement('a');
-        link.href = downloadUrl;
-        link.download = `Mercury-Quote-${quoteNumber}.pdf`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(downloadUrl);
-        
-        toast({
-          title: "PDF Downloaded Successfully!",
-          description: "Your professional quote has been downloaded.",
-        });
-      } catch (fetchError) {
-        // Fallback: CORS blocked the fetch, open in new tab instead
-        console.log('CORS blocked direct download, opening in new tab:', fetchError);
-        window.open(pdfUrl, '_blank');
-        
-        toast({
-          title: "PDF Opened in New Tab",
-          description: "Use your browser's download button to save the PDF.",
-        });
-      }
+      // Just open it - let the browser handle the PDF
+      window.open(pdfUrl, '_blank');
+      
+      toast({
+        title: "PDF Generated",
+        description: "Your quote PDF has been opened in a new tab",
+      });
       
     } catch (error) {
-      console.error('PDF Generation Error:', error);
+      console.error('PDF generation error:', error);
       toast({
-        title: "PDF Generation Error",
+        title: "Error",
         description: error instanceof Error ? error.message : "Failed to generate PDF. Please try again.",
         variant: "destructive"
       });

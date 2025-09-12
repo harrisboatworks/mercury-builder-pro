@@ -639,7 +639,9 @@ serve(async (req) => {
         orientation: "Portrait",
         printBackground: true,
         header: "",
-        footer: ""
+        footer: "",
+        inline: false,  // This makes it downloadable instead of just viewable
+        async: false    // This makes it return immediately
       }),
     });
 
