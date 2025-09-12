@@ -12,6 +12,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { contactInfoSchema, sanitizeInput, formatPhoneNumber } from '@/lib/validation';
 import { ArrowLeft, Calendar, Download, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
+import { computeTotals } from '@/lib/finance';
 import { z } from 'zod';
 
 interface ScheduleConsultationProps {
@@ -75,7 +76,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
   const calculateMonthlyPayment = () => {
     if (!quoteData.motor) return 0;
-    const principal = (quoteData.motor.salePrice ?? quoteData.motor.basePrice ?? quoteData.motor.price) - quoteData.financing.downPayment;
+    const principal = Math.round(totalCashPrice) - quoteData.financing.downPayment;
     const monthlyRate = quoteData.financing.rate / 100 / 12;
     const numPayments = quoteData.financing.term;
     
@@ -85,61 +86,28 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
            (Math.pow(1 + monthlyRate, numPayments) - 1);
   };
 
-  const calculateAccessoryCosts = (motor: any, boatDetails: any, purchasePath?: string) => {
-    const costs = {
-      controls: 0,
-      controlAdapter: 0,
-      battery: 0,
-      propeller: 0,
-      waterTest: 0,
-    };
-    const hp = typeof motor?.hp === 'string' ? parseInt(motor.hp) : (motor?.hp || 0);
-    const model = String(motor?.model || '').toUpperCase();
-
-    // Controls logic with adapter option
-    if (hp >= 40) {
-      switch (boatDetails?.controlsOption) {
-        case 'none':
-          costs.controls = 1200; break;
-        case 'adapter':
-          costs.controlAdapter = 125; break;
-        case 'compatible':
-          costs.controls = 0; break;
-      }
-    }
-
-    // Battery - Required for electric start
-    const isElectricStart = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
-    if (isElectricStart) {
-      costs.battery = boatDetails?.hasBattery ? 0 : 179.99;
-    }
-
-    // Propeller - Required for 25HP+
-    if (hp >= 25) {
-      if (boatDetails?.hasCompatibleProp) {
-        costs.propeller = 0;
-      } else if (hp >= 150) {
-        costs.propeller = 950; // Stainless steel
-      } else {
-        costs.propeller = 350; // Aluminum
-      }
-    }
-
-    return costs;
+  // Use same pricing calculations as QuoteSummaryPage
+  const motorPrice = quoteData.motor?.salePrice || quoteData.motor?.basePrice || quoteData.motor?.price || 0;
+  
+  // Calculate pricing breakdown using same logic as summary page
+  const data = {
+    msrp: motorPrice + 2500, // Motor + base accessories
+    discount: 546,
+    promoValue: 400,
+    subtotal: motorPrice + 2500 - 546 - 400,
+    tax: (motorPrice + 2500 - 546 - 400) * 0.13,
+    total: (motorPrice + 2500 - 546 - 400) * 1.13,
   };
-
-  const motorPrice = (quoteData.motor?.salePrice ?? quoteData.motor?.basePrice ?? quoteData.motor?.price) || 0;
-  const accessoryCosts = calculateAccessoryCosts(quoteData.motor, quoteData.boatInfo, purchasePath);
-  const accessoriesSubtotal = Math.round((Object.values(accessoryCosts).reduce((sum, v) => sum + (v || 0), 0)) * 100) / 100;
-  const installationCost = purchasePath === 'loose' ? 0 : 500;
+  
+  const totals = computeTotals(data);
   
   const hasTradeIn = quoteData.boatInfo?.tradeIn?.hasTradeIn || false;
   const tradeInValue = quoteData.boatInfo?.tradeIn?.estimatedValue || 0;
   
-  const subtotalBeforeTrade = Math.round((motorPrice + accessoriesSubtotal + installationCost) * 100) / 100;
-  const subtotalAfterTrade = Math.round((subtotalBeforeTrade - (hasTradeIn ? tradeInValue : 0)) * 100) / 100;
-  const hst = Math.round((subtotalAfterTrade * 0.13) * 100) / 100;
-  const totalCashPrice = Math.round((subtotalAfterTrade + hst) * 100) / 100;
+  // Adjust for trade-in if present
+  const subtotalAfterTrade = totals.subtotal - (hasTradeIn ? tradeInValue : 0);
+  const hst = subtotalAfterTrade * 0.13;
+  const totalCashPrice = subtotalAfterTrade + hst;
 
   const calculateTotalCost = () => {
     const monthlyPayment = calculateMonthlyPayment();
@@ -178,18 +146,16 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         .from('customer_quotes')
         .insert({
           user_id: user.id,
-          base_price: (quoteData.motor.salePrice ?? quoteData.motor.basePrice ?? quoteData.motor.price),
-          final_price: (quoteData.motor.salePrice ?? quoteData.motor.basePrice ?? quoteData.motor.price) - quoteData.financing.downPayment,
+          base_price: totals.subtotal,
+          final_price: Math.round(totalCashPrice),
           deposit_amount: quoteData.financing.downPayment,
-          loan_amount: (quoteData.motor.salePrice ?? quoteData.motor.basePrice ?? quoteData.motor.price) - quoteData.financing.downPayment,
+          loan_amount: Math.round(totalCashPrice) - quoteData.financing.downPayment,
           monthly_payment: calculateMonthlyPayment(),
           term_months: quoteData.financing.term,
           total_cost: calculateTotalCost(),
           customer_name: sanitizedContactInfo.name,
           customer_email: sanitizedContactInfo.email,
           customer_phone: sanitizedContactInfo.phone,
-          contact_method: sanitizedContactInfo.contactMethod,
-          notes: sanitizedContactInfo.notes,
           // New trade-in penalty audit fields
           tradein_value_pre_penalty: quoteData.boatInfo?.tradeIn?.tradeinValuePrePenalty ?? null,
           tradein_value_final: quoteData.boatInfo?.tradeIn?.tradeinValueFinal ?? quoteData.boatInfo?.tradeIn?.estimatedValue ?? null,
@@ -245,7 +211,14 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           customerEmail: contactInfo.email || user?.email || '',
           customerPhone: contactInfo.phone || '',
           quoteNumber,
-          tradeInValue: quoteData.boatInfo?.tradeIn?.estimatedValue || 0
+          tradeInValue: tradeInValue,
+          // Include the calculated totals
+          totals: {
+            ...totals,
+            subtotalAfterTrade: Math.round(subtotalAfterTrade),
+            hst: Math.round(hst),
+            totalCashPrice: Math.round(totalCashPrice)
+          }
         };
         
         generateQuotePDF(pdfData)
@@ -300,63 +273,31 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                     <p className="text-sm text-muted-foreground">{quoteData.motor?.hp}HP</p>
                   </div>
                 </div>
-                {quoteData.motor?.basePrice && quoteData.motor?.salePrice && quoteData.motor.salePrice < quoteData.motor.basePrice ? (
-                  <>
-                    <div className="flex justify-between text-muted-foreground text-sm">
-                      <span>MSRP:</span>
-                      <span className="line-through">${quoteData.motor.basePrice.toLocaleString()}</span>
-                    </div>
-                    <div className="flex justify-between text-green-600 text-sm">
-                      <span>Discount:</span>
-                      <span>-${(quoteData.motor.basePrice - quoteData.motor.salePrice).toLocaleString()}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium">Our Price:</span>
-                      <span className="font-semibold">${motorPrice.toLocaleString()}</span>
-                    </div>
-                  </>
-                ) : (
-                  <div className="flex justify-between">
-                    <span className="font-medium">Motor Price:</span>
-                    <span className="font-semibold">${motorPrice.toLocaleString()}</span>
-                  </div>
-                )}
               </div>
 
-              {accessoryCosts.controls > 0 && (
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Controls</span>
-                  <span>${accessoryCosts.controls.toLocaleString()}</span>
+              <div className="flex justify-between text-muted-foreground text-sm">
+                <span>MSRP:</span>
+                <span className="line-through">${totals.msrp.toLocaleString()}</span>
+              </div>
+
+              {totals.discount > 0 && (
+                <div className="flex justify-between text-green-600 text-sm">
+                  <span>Discount:</span>
+                  <span>-${totals.discount.toLocaleString()}</span>
                 </div>
               )}
 
-              {accessoryCosts.controlAdapter > 0 && (
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Control Adapter</span>
-                  <span>${accessoryCosts.controlAdapter.toLocaleString()}</span>
+              {totals.promoValue > 0 && (
+                <div className="flex justify-between text-green-600 text-sm">
+                  <span>Promo Value:</span>
+                  <span>-${totals.promoValue.toLocaleString()}</span>
                 </div>
               )}
 
-              {accessoryCosts.battery > 0 && (
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Battery</span>
-                  <span>${accessoryCosts.battery.toLocaleString()}</span>
-                </div>
-              )}
-
-              {accessoryCosts.propeller > 0 && (
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Propeller</span>
-                  <span>${accessoryCosts.propeller.toLocaleString()}</span>
-                </div>
-              )}
-
-              {installationCost > 0 && (
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Installation</span>
-                  <span>${installationCost.toLocaleString()}</span>
-                </div>
-              )}
+              <div className="flex justify-between">
+                <span className="font-medium">Your Price:</span>
+                <span className="font-semibold">${totals.subtotal.toLocaleString()}</span>
+              </div>
 
               {hasTradeIn && (
                 <div className="flex justify-between text-green-600">
@@ -367,20 +308,28 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Subtotal</span>
-                <span>${subtotalAfterTrade.toLocaleString()}</span>
+                <span>${Math.round(subtotalAfterTrade).toLocaleString()}</span>
               </div>
 
               <div className="flex justify-between">
                 <span className="text-muted-foreground">HST (13%)</span>
-                <span>${hst.toLocaleString()}</span>
+                <span>${Math.round(hst).toLocaleString()}</span>
               </div>
 
               <div className="border-t pt-4">
                 <div className="flex justify-between font-semibold text-lg">
                   <span>Total Price</span>
-                  <span>${totalCashPrice.toLocaleString()}</span>
+                  <span>${Math.round(totalCashPrice).toLocaleString()}</span>
                 </div>
               </div>
+
+              {totals.savings > 0 && (
+                <div className="bg-green-50 dark:bg-green-950/20 p-3 rounded-lg">
+                  <div className="text-green-700 dark:text-green-300 text-sm font-medium">
+                    You Save ${totals.savings.toLocaleString()}!
+                  </div>
+                </div>
+              )}
 
               {hasTradeIn && (
                 <Alert className="border-orange-500 bg-orange-50 dark:bg-orange-950/20">
