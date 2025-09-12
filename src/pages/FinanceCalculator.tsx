@@ -217,7 +217,7 @@ export default function FinanceCalculator() {
             <RadioGroup
               value={frequency}
               onValueChange={(value: PaymentFrequency) => setFrequency(value)}
-              className="flex flex-row gap-6 mt-2"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-6 mt-2"
             >
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="monthly" id="monthly" />
