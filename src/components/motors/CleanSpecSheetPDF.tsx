@@ -1,19 +1,10 @@
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet, Font, Image } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import { getStartType } from '@/lib/motor-helpers';
 import { calculateMonthlyPayment, getFinancingDisplay } from '@/lib/finance';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
-
-// Register Helvetica font family
-Font.register({
-  family: 'Helvetica',
-  fonts: [
-    { src: 'https://fonts.gstatic.com/s/helvetica/v1/Helvetica.ttf' },
-    { src: 'https://fonts.gstatic.com/s/helvetica/v1/Helvetica-Bold.ttf', fontWeight: 'bold' }
-  ]
-});
 
 // Enhanced styles for professional spec sheet
 const styles = StyleSheet.create({
