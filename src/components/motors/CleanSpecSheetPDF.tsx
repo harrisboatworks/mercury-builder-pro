@@ -997,7 +997,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
                 )}
                 <Text style={[styles.bulletItem, { marginBottom: 0.5 }]}>• Required Transom Height: {getShaftLength(specData.motorModel)}</Text>
                 <Text style={[styles.bulletItem, { marginBottom: 0.5 }]}>• Mercury controls & cables: $800-1,000 (depending on configuration)</Text>
-                <Text style={[styles.bulletItem, { marginBottom: 0.5 }]}>• 12V marine battery: $180</Text>
+                <Text style={[styles.bulletItem, { marginBottom: 0.5 }]}>• 24M7 1000CA Starting Battery: $180</Text>
               </View>
             </View>
 

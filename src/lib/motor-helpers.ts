@@ -204,7 +204,7 @@ export const getBatteryRequirement = (motor: Motor) => {
   const model = (motor.model || '').toUpperCase();
   if (/\bM\b/.test(model)) return 'Not required (manual start)';
   const n = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
-  if (n <= 30) return '12V marine battery';
+  if (n <= 30) return '24M7 1000CA Starting Battery';
   if (n <= 115) return '12V marine cranking battery (min 800 CCA)';
   return 'High-output 12V (or dual) marine battery';
 };
@@ -366,7 +366,7 @@ export const getAdditionalRequirements = (motor: Motor) => {
   // Battery requirement for electric start
   if (!model.includes('M') || model.includes('E')) {
     if (hp <= 30) {
-      requirements.push({ item: '12V marine battery', cost: '$150-250' });
+      requirements.push({ item: '24M7 1000CA Starting Battery', cost: '$180' });
     } else if (hp <= 115) {
       requirements.push({ item: 'High-output marine battery (800+ CCA)', cost: '$200-350' });
     } else {
