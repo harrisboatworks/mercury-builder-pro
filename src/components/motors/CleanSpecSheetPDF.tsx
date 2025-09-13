@@ -835,19 +835,17 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
                   const smartTerm = getSmartTerm(price);
                   const smartPayment = calculateMonthlyPayment(priceWithHST, promoRate);
                   
-                  // Calculate alternate term with different rate for 60 months
-                  const alternateTerm = smartTerm === 36 ? 60 : 36;
-                  const alternateRate = alternateTerm === 60 ? (promoRate || 8.99) : (promoRate || 6.99);
-                  const alternatePayment = calculatePaymentWithFrequency(priceWithHST, 'monthly', alternateRate);
-
+                  // Calculate 60-month payment with explicit term (not smart term)
+                  const payment60 = Math.round((priceWithHST * (8.99/100/12)) / (1 - Math.pow(1 + (8.99/100/12), -60)));
+                  
                   return (
                     <>
                       <Text style={styles.financingItem}>
                         • {smartPayment.termMonths} months: ${smartPayment.payment}/month @ {smartPayment.rate.toFixed(2)}%
                       </Text>
-                      {smartTerm !== alternateTerm && (
+                      {smartTerm !== 60 && (
                         <Text style={styles.financingItem}>
-                          • {alternateTerm} months: ${alternatePayment.payment}/month @ {alternateRate.toFixed(2)}%
+                          • 60 months: ${payment60}/month @ 8.99%
                         </Text>
                       )}
                       {specData.currentPromotion && (
