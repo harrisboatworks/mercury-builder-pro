@@ -386,7 +386,7 @@ const styles = StyleSheet.create({
   },
   // Accessories Styles
   accessoriesSection: {
-    marginTop: 8,
+    marginTop: 6,
     padding: 6,
   },
   accessoryItem: {
@@ -434,8 +434,8 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
     day: 'numeric' 
   });
 
-  // Get HP number for lookups
-  const hpNumber = parseInt(specData.horsepower.replace(/[^\d]/g, ''));
+  // Get HP number for lookups - Fixed parsing for decimal HP values
+  const hpNumber = parseFloat(specData.horsepower.replace(/[^\d.]/g, '')) || 0;
   
   // Get actual Mercury motor specifications 
   const mercurySpecs = findMercurySpecs(hpNumber, specData.motorModel);
@@ -466,14 +466,14 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
   };
 
   const getWarrantyPrice = (hp: number, years: number) => {
-    // Simplified pricing structure based on HP ranges
+    // Fixed pricing structure based on HP ranges - smaller motors should be cheaper
     let basePrice = 0;
-    if (hp <= 15) basePrice = 200;
-    else if (hp <= 50) basePrice = 350;
-    else if (hp <= 115) basePrice = 500;
-    else basePrice = 750;
+    if (hp <= 15) basePrice = 160;      // Small motors: $160 base
+    else if (hp <= 50) basePrice = 280;  // Mid-range: $280 base
+    else if (hp <= 115) basePrice = 400; // Large: $400 base
+    else basePrice = 600;                // High performance: $600 base
     
-    return Math.round(basePrice * years * 0.8); // Approximate pricing
+    return Math.round(basePrice * years * 0.8); // Multiply by years and discount factor
   };
   
   // Model code decoder with XL, L, H
@@ -910,6 +910,14 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
 
           {/* Right Column */}
           <View style={styles.rightColumn}>
+
+            {/* Popular Add-Ons Section */}
+            <View style={styles.accessoriesSection}>
+              <Text style={styles.sectionTitle}>Popular Add-Ons</Text>
+              <Text style={styles.accessoryItem}>• Stainless prop upgrade: $295</Text>
+              <Text style={styles.accessoryItem}>• Digital gauges: $495</Text>
+              <Text style={styles.accessoryItem}>• Extended warranty: See options above</Text>
+            </View>
 
             {/* Warranty & Service - Enhanced */}
             <View style={styles.warrantyBox}>
