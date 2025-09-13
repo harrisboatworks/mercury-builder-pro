@@ -73,39 +73,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#e2e8f0',
   },
-  motorHeaderWithImage: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: '#f8fafc',
-    padding: 12,
-    marginBottom: 15,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#e2e8f0',
-  },
   motorInfo: {
     flex: 1,
-  },
-  motorImageContainer: {
-    width: 180,
-    height: 120,
-    backgroundColor: '#e5e7eb',
-    borderRadius: 6,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: '#d1d5db',
-  },
-  motorImagePlaceholder: {
-    fontSize: 12,
-    color: '#6b7280',
-    fontWeight: 'bold',
-  },
-  motorImageText: {
-    fontSize: 8,
-    color: '#9ca3af',
-    marginTop: 2,
   },
   motorTitle: {
     fontSize: 16,
@@ -153,9 +122,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   section: {
-    marginBottom: 20,
+    marginBottom: 12,
     backgroundColor: '#f9fafb',
-    padding: 10,
+    padding: 8,
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#e5e7eb',
@@ -199,33 +168,13 @@ const styles = StyleSheet.create({
     color: '#374151',
     paddingLeft: 6,
   },
-  comparisonBox: {
-    backgroundColor: '#eff6ff',
-    padding: 8,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#bfdbfe',
-    marginBottom: 20,
-  },
-  comparisonTitle: {
-    fontSize: 10,
-    fontWeight: 'bold',
-    color: '#1e40af',
-    marginBottom: 4,
-  },
-  comparisonItem: {
-    fontSize: 8,
-    color: '#1e40af',
-    marginBottom: 2,
-    paddingLeft: 6,
-  },
   warrantyBox: {
     backgroundColor: '#f0fdf4',
     padding: 8,
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#bbf7d0',
-    marginBottom: 20,
+    marginBottom: 12,
   },
   warrantyTitle: {
     fontSize: 10,
@@ -241,11 +190,11 @@ const styles = StyleSheet.create({
   },
   financingSection: {
     backgroundColor: '#f8fafc',
-    padding: 10,
+    padding: 8,
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#e2e8f0',
-    marginBottom: 40,
+    marginBottom: 12,
   },
   financingTitle: {
     fontSize: 10,
@@ -323,36 +272,9 @@ const styles = StyleSheet.create({
     fontSize: 8,
     color: '#374151',
   },
-  advantageGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 8,
-    marginBottom: 6,
-  },
-  advantageItem: {
-    width: '48%',
-    alignItems: 'center',
-    marginBottom: 4,
-  },
-  advantagePercent: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#059669',
-  },
-  advantageText: {
-    fontSize: 7,
-    color: '#1e40af',
-    textAlign: 'center',
-  },
-  comparisonNote: {
-    fontSize: 6,
-    color: '#6b7280',
-    fontStyle: 'italic',
-    textAlign: 'center',
-  },
   contactFooter: {
-    marginTop: 40,
-    paddingTop: 20,
+    marginTop: 20,
+    paddingTop: 15,
     borderTopWidth: 1,
     borderTopColor: '#e5e7eb',
   },
@@ -572,42 +494,6 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
   const uses = specData.idealUses || [];
   const performance = specData.performanceData || {};
 
-  // HP-based ideal applications
-  const getIdealApplicationsByHP = (hp: number): string[] => {
-    if (hp <= 9.9) {
-      return [
-        'Jon boats & dinghies',
-        'Shallow water trolling',
-        'Tender propulsion',
-        'Small aluminum boats',
-        'Auxiliary power'
-      ];
-    } else if (hp <= 40) {
-      return [
-        'Small fishing boats',
-        'Aluminum boats 14-16ft',
-        'Pontoon boats',
-        'Recreational boating',
-        'Light trolling'
-      ];
-    } else if (hp <= 115) {
-      return [
-        'Mid-size fishing boats',
-        'Aluminum boats 16-20ft',
-        'Recreational watersports',
-        'Bay & inland waters',
-        'Family boating'
-      ];
-    } else {
-      return [
-        'Larger fishing boats',
-        'High-performance applications',
-        'Offshore fishing',
-        'Heavy-duty commercial use',
-        'Multi-engine setups'
-      ];
-    }
-  };
 
   return (
     <Document>
@@ -706,87 +592,67 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               </View>
             </View>
 
-            {/* Performance Data - Dynamic */}
-            <View style={styles.section}>
-              <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>Performance Data</Text>
+            {/* Performance Data - Only show if real data exists */}
+            {(performance.recommendedBoatSize || performance.estimatedTopSpeed || performance.fuelConsumption || performance.operatingRange) && (
+              <View style={styles.section}>
+                <View style={styles.sectionHeader}>
+                  <Text style={styles.sectionTitle}>Performance Data</Text>
+                </View>
+                <View style={styles.specGrid}>
+                  {performance.recommendedBoatSize && (
+                    <View style={styles.specItem}>
+                      <Text style={styles.specLabel}>Recommended Boat Size:</Text>
+                      <Text style={styles.specValue}>{performance.recommendedBoatSize}</Text>
+                    </View>
+                  )}
+                  {performance.estimatedTopSpeed && (
+                    <View style={styles.specItem}>
+                      <Text style={styles.specLabel}>Top Speed:</Text>
+                      <Text style={styles.specValue}>{performance.estimatedTopSpeed}</Text>
+                    </View>
+                  )}
+                  {performance.fuelConsumption && (
+                    <View style={styles.specItem}>
+                      <Text style={styles.specLabel}>Fuel Consumption:</Text>
+                      <Text style={styles.specValue}>{performance.fuelConsumption}</Text>
+                    </View>
+                  )}
+                  {performance.operatingRange && (
+                    <View style={styles.specItem}>
+                      <Text style={styles.specLabel}>Operating Range:</Text>
+                      <Text style={styles.specValue}>{performance.operatingRange}</Text>
+                    </View>
+                  )}
+                </View>
               </View>
-              <View style={styles.specGrid}>
-                <View style={styles.specItem}>
-                  <Text style={styles.specLabel}>Recommended Boat Size:</Text>
-                  <Text style={styles.specValue}>{performance.recommendedBoatSize || getRecommendedBoatSize(hpNumber)}</Text>
-                </View>
-                <View style={styles.specItem}>
-                  <Text style={styles.specLabel}>Estimated Top Speed:</Text>
-                  <Text style={styles.specValue}>{performance.estimatedTopSpeed || getEstimatedSpeed(hpNumber)}</Text>
-                </View>
-                <View style={styles.specItem}>
-                  <Text style={styles.specLabel}>Fuel Consumption:</Text>
-                  <Text style={styles.specValue}>{performance.fuelConsumption || getFuelConsumption(hpNumber)}</Text>
-                </View>
-                <View style={styles.specItem}>
-                  <Text style={styles.specLabel}>Operating Range:</Text>
-                  <Text style={styles.specValue}>{performance.operatingRange || '120+ miles'}</Text>
-                </View>
-              </View>
-            </View>
+            )}
 
-            {/* Key Features - Clean Format */}
+            {/* Key Features - Motor Specific */}
             <View style={styles.section}>
               <View style={styles.sectionHeader}>
                 <Text style={styles.sectionTitle}>Key Features</Text>
               </View>
               <View style={styles.bulletList}>
                 <Text style={styles.bulletItem}>✓ Low Maintenance - Easy access service points</Text>
-                <Text style={styles.bulletItem}>✓ 360° Steering - Full rotation control</Text>
-                <Text style={styles.bulletItem}>✓ Electric Start - Push-button convenience</Text>
-                <Text style={styles.bulletItem}>✓ Tilt & Lock - Multiple positions</Text>
                 <Text style={styles.bulletItem}>✓ Advanced Protection - Corrosion resistant</Text>
-                <Text style={styles.bulletItem}>✓ Fresh Water Flush - Built-in port</Text>
+                {getStartType(specData.motorModel) === 'Electric' && (
+                  <Text style={styles.bulletItem}>✓ Electric Start - Push-button convenience</Text>
+                )}
+                {getControlType(specData.motorModel) === 'Tiller Handle' ? (
+                  <Text style={styles.bulletItem}>✓ Tiller Handle - Direct steering control</Text>
+                ) : (
+                  <Text style={styles.bulletItem}>✓ Remote Control - 360° steering</Text>
+                )}
+                <Text style={styles.bulletItem}>✓ Tilt & Lock - Multiple positions</Text>
+                {hpNumber >= 9.9 && (
+                  <Text style={styles.bulletItem}>✓ Fresh Water Flush - Built-in port</Text>
+                )}
               </View>
             </View>
           </View>
 
           {/* Right Column */}
           <View style={styles.rightColumn}>
-            {/* Competitive Advantages - Dynamic */}
-            <View style={styles.comparisonBox}>
-              <Text style={styles.comparisonTitle}>Competitive Advantages</Text>
-              <View style={styles.advantageGrid}>
-                {(() => {
-                  // Dynamic advantages based on HP class with realistic comparisons
-                  const advantages = hpNumber <= 15 ? [
-                    { percent: '35%', text: 'Better Fuel Economy' },
-                    { percent: '28%', text: 'Quieter Operation' },
-                    { percent: '15%', text: 'Lighter Weight' },
-                    { percent: '40%', text: 'Lower Emissions' }
-                  ] : hpNumber <= 50 ? [
-                    { percent: '25%', text: 'More Displacement' },
-                    { percent: '30%', text: 'Better Fuel Economy' },
-                    { percent: '20%', text: 'Quieter Operation' },
-                    { percent: '18%', text: 'Faster Acceleration' }
-                  ] : hpNumber <= 115 ? [
-                    { percent: '22%', text: 'More Power/Weight' },
-                    { percent: '35%', text: 'Better Fuel Economy' },
-                    { percent: '15%', text: 'Quieter Operation' },
-                    { percent: '28%', text: 'Advanced Technology' }
-                  ] : [
-                    { percent: '45%', text: 'Superior Power' },
-                    { percent: '38%', text: 'Advanced Features' },
-                    { percent: '25%', text: 'Better Reliability' },
-                    { percent: '30%', text: 'Fuel Technology' }
-                  ];
-                  
-                  return advantages.map((adv, index) => (
-                    <View key={index} style={styles.advantageItem}>
-                      <Text style={styles.advantagePercent}>{adv.percent}</Text>
-                      <Text style={styles.advantageText}>{adv.text}</Text>
-                    </View>
-                  ));
-                })()}
-              </View>
-              <Text style={styles.comparisonNote}>*Compared to leading competitors in {specData.horsepower} class</Text>
-            </View>
 
             {/* Warranty & Service */}
             <View style={styles.warrantyBox}>
@@ -802,45 +668,29 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               <Text style={styles.warrantyItem}>• Local service at {COMPANY_INFO.name}</Text>
             </View>
 
-            {/* Ideal Applications - HP-based */}
-            <View style={styles.section}>
-              <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>Ideal Applications</Text>
-              </View>
-              <View style={styles.bulletList}>
-                {getIdealApplicationsByHP(hpNumber).map((app, index) => (
-                  <Text key={index} style={styles.bulletItem}>• {app}</Text>
-                ))}
-              </View>
-            </View>
 
             {/* Professional Financing Section */}
             <View style={styles.financingSection}>
               <Text style={styles.financingTitle}>Financing Available</Text>
-              {specData.motorPrice && specData.motorPrice > 5000 ? (
+              {specData.motorPrice && specData.motorPrice > 1000 ? (
                 <>
                   {(() => {
-                    const priceWithHST = specData.motorPrice * 1.13;
-                    const promoRate = specData.currentPromotion?.rate || null;
-                    const { payment, termMonths, rate } = calculateMonthlyPayment(priceWithHST, promoRate);
-                    
+                    const monthlyPayment = Math.round(specData.motorPrice * 0.028);
                     return (
                       <>
-                        <Text style={styles.financingItem}>Financing available from ${payment}/month</Text>
-                        {promoRate === 0 && (
+                        <Text style={styles.financingItem}>From ~${monthlyPayment}/month</Text>
+                        {specData.currentPromotion?.rate === 0 ? (
                           <Text style={styles.financingItem}>0% interest for 12 months OAC</Text>
+                        ) : (
+                          <Text style={styles.financingItem}>Low rates available OAC</Text>
                         )}
-                        <Text style={styles.financingItem}>Terms up to {termMonths} months available</Text>
-                        <Text style={styles.financingItem}>*Price includes HST • OAC</Text>
+                        <Text style={styles.financingItem}>*Price plus HST • OAC</Text>
                       </>
                     );
                   })()}
                 </>
               ) : (
-                <>
-                  <Text style={styles.financingItem}>From $60/month - 0% for 12 months OAC</Text>
-                  <Text style={styles.financingItem}>Contact us for complete financing options</Text>
-                </>
+                <Text style={styles.financingItem}>Contact for pricing and financing options</Text>
               )}
             </View>
           </View>
