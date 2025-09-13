@@ -1,6 +1,7 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Font, Image } from '@react-pdf/renderer';
 import { COMPANY_INFO } from '@/lib/companyInfo';
+import { getStartType } from '@/lib/motor-helpers';
 
 // Register Helvetica font family
 Font.register({
@@ -426,11 +427,11 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           </View>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>WEIGHT</Text>
-            <Text style={styles.overviewValue}>96 lbs</Text>
+            <Text style={styles.overviewValue}>{specData.specifications?.weight?.split(' ')[0] || '96 lbs'}</Text>
           </View>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>START TYPE</Text>
-            <Text style={styles.overviewValue}>Manual</Text>
+            <Text style={styles.overviewValue}>{getStartType(specData.motorModel)}</Text>
           </View>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>WARRANTY</Text>

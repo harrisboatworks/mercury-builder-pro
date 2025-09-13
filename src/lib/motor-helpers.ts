@@ -239,6 +239,32 @@ export const includesPropeller = (motor: Motor) => {
   return false;
 };
 
+export const getStartType = (model: string): string => {
+  const decodedItems = decodeModelName(model);
+  
+  // Look for start type in decoded items
+  const startItem = decodedItems.find(item => 
+    item.meaning.includes('Electric Start') || item.meaning.includes('Manual Start')
+  );
+  
+  if (startItem) {
+    return startItem.meaning.includes('Electric') ? 'Electric' : 'Manual';
+  }
+  
+  // Fallback: check model directly for common patterns
+  const upperModel = model.toUpperCase();
+  if (upperModel.includes('E') && (upperModel.includes('H') || upperModel.includes('L') || upperModel.includes('PT'))) {
+    return 'Electric';
+  }
+  if (upperModel.includes('M') && (upperModel.includes('H') || upperModel.includes('L'))) {
+    return 'Manual';
+  }
+  
+  // Default for most motors over 25HP is electric start
+  const hp = parseInt(model.match(/\d+/)?.[0] || '0');
+  return hp > 25 ? 'Electric' : 'Manual';
+};
+
 export const isTillerMotor = (model: string) => {
   const upperModel = model.toUpperCase();
   
