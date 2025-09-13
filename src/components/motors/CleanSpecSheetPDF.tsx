@@ -675,10 +675,11 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               {specData.motorPrice && specData.motorPrice > 1000 ? (
                 <>
                   {(() => {
-                    const monthlyPayment = Math.round(specData.motorPrice * 0.028);
+                    const priceWithHST = specData.motorPrice * 1.13;
+                    const { payment } = calculateMonthlyPayment(priceWithHST, specData.currentPromotion?.rate || null);
                     return (
                       <>
-                        <Text style={styles.financingItem}>From ~${monthlyPayment}/month</Text>
+                        <Text style={styles.financingItem}>From ~${payment}/month</Text>
                         {specData.currentPromotion?.rate === 0 ? (
                           <Text style={styles.financingItem}>0% interest for 12 months OAC</Text>
                         ) : (
