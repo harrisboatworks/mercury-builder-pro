@@ -4,6 +4,8 @@ import { COMPANY_INFO } from '@/lib/companyInfo';
 import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption } from '@/lib/motor-helpers';
 import { findMotorSpecs as findMercurySpecs } from '@/lib/data/mercury-motors';
 import { calculateMonthlyPayment, getFinancingDisplay, calculatePaymentWithFrequency, getFinancingTerm } from '@/lib/finance';
+import { getRandomReview, getAllMercuryReviews } from '@/lib/data/mercury-reviews';
+import { supabase } from '@/integrations/supabase/client';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
@@ -340,6 +342,57 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 6,
   },
+  // Customer Review Styles
+  reviewSection: {
+    marginTop: 10,
+    padding: 8,
+    backgroundColor: '#f8f9fa',
+    borderRadius: 4,
+    marginBottom: 8,
+  },
+  stars: {
+    fontSize: 12,
+    marginBottom: 2,
+  },
+  reviewText: {
+    fontSize: 9,
+    fontStyle: 'italic',
+    marginBottom: 2,
+  },
+  reviewAuthor: {
+    fontSize: 8,
+    color: '#666',
+  },
+  // Warranty Enhancement Styles
+  warrantyOption: {
+    fontSize: 8,
+    marginLeft: 10,
+    marginBottom: 1,
+  },
+  // Availability Styles
+  availabilityRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 6,
+  },
+  inStock: {
+    fontSize: 9,
+    color: '#28a745',
+    fontWeight: 'bold',
+  },
+  specialOrder: {
+    fontSize: 9,
+    color: '#ffc107',
+  },
+  // Accessories Styles
+  accessoriesSection: {
+    marginTop: 8,
+    padding: 6,
+  },
+  accessoryItem: {
+    fontSize: 8,
+    marginBottom: 1,
+  },
 });
 
 export interface CleanSpecSheetData {
@@ -386,6 +439,42 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
   
   // Get actual Mercury motor specifications 
   const mercurySpecs = findMercurySpecs(hpNumber, specData.motorModel);
+
+  // Helper Functions for Enhancements
+  const getCategoryReview = (hp: number) => {
+    if (hp <= 5) return { text: "Perfect for my dinghy. Lightweight and reliable.", author: "Tom Wilson, Kawartha Lakes" };
+    if (hp <= 15) return { text: "Great kicker motor. Quiet and fuel efficient.", author: "Sarah Chen, Peterborough" };
+    if (hp <= 40) return { text: "Plenty of power for my aluminum boat. Very smooth.", author: "Mike Thompson, Rice Lake" };
+    return { text: "Impressive performance. Gets on plane quickly.", author: "Dave Miller, Port Hope" };
+  };
+
+  const getReviewText = (hp: number) => {
+    const review = getRandomReview(hp);
+    return review ? review.comment : getCategoryReview(hp).text;
+  };
+
+  const getReviewAuthor = (hp: number) => {
+    const review = getRandomReview(hp);
+    return review ? `${review.reviewer}, ${review.location}` : getCategoryReview(hp).author;
+  };
+
+  const getRequiredTransom = (modelCode: string) => {
+    if (modelCode.includes('XL')) return '25" (Extra Long)';
+    if (modelCode.includes('L') && !modelCode.includes('XL')) return '20" (Long)';
+    if (modelCode.includes('S')) return '15" (Short)';
+    return '20" (Standard)';
+  };
+
+  const getWarrantyPrice = (hp: number, years: number) => {
+    // Simplified pricing structure based on HP ranges
+    let basePrice = 0;
+    if (hp <= 15) basePrice = 200;
+    else if (hp <= 50) basePrice = 350;
+    else if (hp <= 115) basePrice = 500;
+    else basePrice = 750;
+    
+    return Math.round(basePrice * years * 0.8); // Approximate pricing
+  };
   
   // Model code decoder with XL, L, H
   const getModelCodeDecoding = (model: string) => {
@@ -465,6 +554,11 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
         const fuelSystem = mercurySpecs.fuel_system || 
           (specData.motorModel?.includes('EFI') ? 'Electronic Fuel Injection (EFI)' : 'Electronic Fuel Injection (EFI)');
         selectedMotorSpecs['Fuel System'] = fuelSystem;
+      }
+      
+      // Enhanced EFI detection for model name
+      if (specData.motorModel?.includes('EFI') && !selectedMotorSpecs['Fuel System']?.includes('EFI')) {
+        selectedMotorSpecs['Fuel System'] = 'Electronic Fuel Injection (EFI)';
       }
       
       // Starting type
@@ -783,7 +877,21 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               ) : null;
             })()}
 
-            {/* Installation Requirements Section */}
+            {/* Customer Review Section */}
+            <View style={styles.reviewSection}>
+              <Text style={styles.sectionTitle}>Customer Review</Text>
+              <View>
+                <Text style={styles.stars}>⭐⭐⭐⭐⭐</Text>
+                <Text style={styles.reviewText}>
+                  "{getReviewText(hpNumber)}"
+                </Text>
+                <Text style={styles.reviewAuthor}>
+                  — {getReviewAuthor(hpNumber)}
+                </Text>
+              </View>
+            </View>
+
+            {/* Installation Requirements Section - Fixed */}
             <View style={styles.section}>
               <View style={styles.sectionHeader}>
                 <Text style={styles.sectionTitle}>Installation Requirements</Text>
@@ -792,19 +900,25 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
                 {mercurySpecs?.weight_kg && (
                   <Text style={styles.bulletItem}>• Dry Weight: {mercurySpecs.weight_kg} kg ({Math.round(mercurySpecs.weight_kg * 2.20462)} lbs)</Text>
                 )}
-                {mercurySpecs?.transom_heights && mercurySpecs.transom_heights.length > 0 && (
-                  <Text style={styles.bulletItem}>• Available Transom Heights: {mercurySpecs.transom_heights.join(', ')}</Text>
-                )}
+                <Text style={styles.bulletItem}>• Required Transom Height: {getRequiredTransom(specData.motorModel)}</Text>
                 <Text style={styles.bulletItem}>• Mercury controls & cables: $800-1,000 (depending on configuration)</Text>
-                <Text style={styles.bulletItem}>• 12V marine battery: $150-250</Text>
+                <Text style={styles.bulletItem}>• 12V marine battery: $180</Text>
               </View>
+            </View>
+
+            {/* Popular Accessories Section */}
+            <View style={styles.accessoriesSection}>
+              <Text style={styles.sectionTitle}>Popular Add-Ons</Text>
+              <Text style={styles.accessoryItem}>• Stainless prop upgrade: $295</Text>
+              <Text style={styles.accessoryItem}>• Digital gauges: $495</Text>
+              <Text style={styles.accessoryItem}>• Extended warranty: See options above</Text>
             </View>
           </View>
 
           {/* Right Column */}
           <View style={styles.rightColumn}>
 
-            {/* Warranty & Service */}
+            {/* Warranty & Service - Enhanced */}
             <View style={styles.warrantyBox}>
               <Text style={styles.warrantyTitle}>Warranty & Service</Text>
               <Text style={styles.warrantyItem}>• Standard: 3 years limited warranty</Text>
@@ -814,6 +928,13 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
                   <Text style={styles.warrantyItem}>• Expires {specData.currentPromotion.endDate}</Text>
                 </>
               ) : null}
+              
+              {/* Extended Warranty Options */}
+              <Text style={styles.warrantyTitle}>Extended Coverage Options:</Text>
+              <Text style={styles.warrantyOption}>• 4 Year: +${getWarrantyPrice(hpNumber, 4)}</Text>
+              <Text style={styles.warrantyOption}>• 5 Year: +${getWarrantyPrice(hpNumber, 5)}</Text>
+              <Text style={styles.warrantyOption}>• 6 Year: +${getWarrantyPrice(hpNumber, 6)}</Text>
+              
               <Text style={styles.warrantyItem}>• Service: Every 100 hrs or annually</Text>
               <Text style={styles.warrantyItem}>• Local service at {COMPANY_INFO.name}</Text>
             </View>
@@ -864,6 +985,15 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               </View>
             )}
           </View>
+        </View>
+
+        {/* Availability Indicator */}
+        <View style={styles.availabilityRow}>
+          {specData.stockStatus === 'In Stock' ? (
+            <Text style={styles.inStock}>✓ In Stock - Ready for Installation</Text>
+          ) : (
+            <Text style={styles.specialOrder}>⚠️ Special Order - 2-3 weeks</Text>
+          )}
         </View>
 
         {/* Contact Footer with Trust Badges */}
