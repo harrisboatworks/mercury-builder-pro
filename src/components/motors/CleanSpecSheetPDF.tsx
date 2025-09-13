@@ -351,11 +351,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   contactFooter: {
-    position: 'absolute',
-    bottom: 30,
-    left: 20,
-    right: 20,
-    paddingTop: 12,
+    marginTop: 40,
+    paddingTop: 20,
     borderTopWidth: 1,
     borderTopColor: '#e5e7eb',
   },
@@ -367,17 +364,21 @@ const styles = StyleSheet.create({
   },
   trustBadge: {
     alignItems: 'center',
+    backgroundColor: '#065f46',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 6,
+  },
+  trustBadgeIcon: {
+    fontSize: 12,
+    color: '#ffffff',
+    marginBottom: 2,
   },
   trustBadgeText: {
     fontSize: 8,
     fontWeight: 'bold',
-    color: '#1e40af',
-    backgroundColor: '#eff6ff',
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#bfdbfe',
+    color: '#ffffff',
+    textAlign: 'center',
   },
   companyName: {
     fontSize: 10,
@@ -453,21 +454,20 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
     const decoded = decodeModelName(model);
     if (decoded.length === 0) return '';
     
-    // Simplified mappings
-    const simplifiedCodes = decoded.map(item => {
+    // Clean, simple mappings - no duplicates
+    const uniqueCodes = new Map();
+    decoded.forEach(item => {
       switch(item.code) {
-        case 'E': return 'E = Electric Start';
-        case 'M': return 'M = Manual Start';
-        case 'H': return 'H = Tiller Handle';
-        case 'XL': return 'XL = Extra Long Shaft';
-        case 'L': return 'L = Long Shaft';
-        case 'S': return 'S = Short Shaft';
-        case 'PT': return 'PT = Power Trim';
-        default: return `${item.code} = ${item.meaning}`;
+        case 'E': uniqueCodes.set('E', 'E = Electric Start'); break;
+        case 'M': uniqueCodes.set('M', 'M = Manual Start'); break;
+        case 'H': uniqueCodes.set('H', 'H = Tiller Handle'); break;
+        case 'L': uniqueCodes.set('L', 'L = Long Shaft'); break;
+        case 'S': uniqueCodes.set('S', 'S = Short Shaft'); break;
+        case 'PT': uniqueCodes.set('PT', 'PT = Power Trim'); break;
       }
     });
     
-    return simplifiedCodes.join(' | ');
+    return Array.from(uniqueCodes.values()).join(' | ');
   };
 
   // Get correct start type based on model decoding
@@ -846,9 +846,11 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           {/* Trust Badges */}
           <View style={styles.trustBadgesRow}>
             <View style={styles.trustBadge}>
+              <Text style={styles.trustBadgeIcon}>🏆</Text>
               <Text style={styles.trustBadgeText}>Award-Winning Service</Text>
             </View>
             <View style={styles.trustBadge}>
+              <Text style={styles.trustBadgeIcon}>✓</Text>
               <Text style={styles.trustBadgeText}>Certified Repower Center</Text>
             </View>
           </View>
