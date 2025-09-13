@@ -159,9 +159,6 @@ function extractImages(html?: string | null, baseUrl?: string): string[] {
   const uniqueImages = [...new Set(images)];
   return uniqueImages.slice(0, 10); // Limit to 10 images max
 }
-  
-  return images.slice(0, 10); // Limit to 10 images
-}
 
 function normalizeDetailUrl(input: string): string {
   const base = 'https://www.harrisboatworks.ca';
