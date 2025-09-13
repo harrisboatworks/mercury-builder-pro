@@ -16,6 +16,7 @@ import CleanSpecSheetPDF, { type CleanSpecSheetData } from './CleanSpecSheetPDF'
 import { getReviewCount } from "../../lib/data/mercury-reviews";
 import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
 export default function MotorDetailsSheet({
   open,
   onClose,
@@ -64,6 +65,7 @@ export default function MotorDetailsSheet({
   const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
   const isMobile = useIsMobile();
   const { promo: activePromo } = useActiveFinancingPromo();
+  const { promotions: activePromotions } = useActivePromotions();
   const { setScrollLock } = useScrollCoordination();
 
   // Get smart review for this motor with rotation logic
@@ -274,7 +276,7 @@ export default function MotorDetailsSheet({
       }
 
       // Generate PDF using React PDF
-      const blob = await pdf(<CleanSpecSheetPDF specData={specData} warrantyPricing={warrantyPricing} />).toBlob();
+      const blob = await pdf(<CleanSpecSheetPDF specData={specData} warrantyPricing={warrantyPricing} activePromotions={activePromotions} />).toBlob();
       
       // Create download link
       const url = URL.createObjectURL(blob);

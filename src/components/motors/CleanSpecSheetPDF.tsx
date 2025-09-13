@@ -5,7 +5,7 @@ import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelCons
 import { findMotorSpecs as findMercurySpecs } from '@/lib/data/mercury-motors';
 import { calculateMonthlyPayment, getFinancingDisplay, calculatePaymentWithFrequency, getFinancingTerm } from '@/lib/finance';
 import { getRandomReview, getAllMercuryReviews } from '@/lib/data/mercury-reviews';
-import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { type ActivePromotion } from '@/hooks/useActivePromotions';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
@@ -426,11 +426,16 @@ export interface CleanSpecSheetData {
 interface CleanSpecSheetPDFProps {
   specData: CleanSpecSheetData;
   warrantyPricing?: any;
+  activePromotions?: ActivePromotion[];
 }
 
-const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrantyPricing }) => {
-  // Get active promotions for warranty calculation
-  const { getTotalWarrantyBonusYears } = useActivePromotions();
+const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrantyPricing, activePromotions = [] }) => {
+  // Calculate warranty bonus years from passed promotions data
+  const getTotalWarrantyBonusYears = () => {
+    return activePromotions.reduce((total, promo) => {
+      return total + (promo.warranty_extra_years || 0);
+    }, 0);
+  };
   
   const currentDate = new Date().toLocaleDateString('en-US', { 
     year: 'numeric', 
