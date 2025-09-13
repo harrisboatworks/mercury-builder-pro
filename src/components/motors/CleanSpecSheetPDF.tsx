@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     gap: 2,
   },
   bulletItem: {
-    fontSize: 8,
+    fontSize: 7,
     color: '#374151',
     paddingLeft: 6,
   },
@@ -274,8 +274,8 @@ const styles = StyleSheet.create({
     color: '#374151',
   },
   contactFooter: {
-    marginTop: 6,
-    paddingTop: 6,
+    marginTop: 4,
+    paddingTop: 4,
     borderTopWidth: 1,
     borderTopColor: '#e5e7eb',
   },
@@ -834,40 +834,60 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               </View>
             )}
 
+            {/* Key Advantages Section */}
+            <View style={styles.section}>
+              <View style={styles.sectionHeader}>
+                <Text style={styles.sectionTitle}>Key Advantages</Text>
+              </View>
+              <View style={styles.bulletList}>
+                <Text style={styles.bulletItem}>• Fuel efficient - Up to 30% better than carbureted</Text>
+                <Text style={styles.bulletItem}>• Quiet operation - Won't spook fish</Text>
+                <Text style={styles.bulletItem}>• Reliable {specData.motorModel?.includes('EFI') ? 'EFI' : ''} starting in all conditions</Text>
+                <Text style={styles.bulletItem}>• Mercury-backed warranty & service</Text>
+              </View>
+            </View>
+
             {/* What's Included - Show ALL motor-specific items */}
-            {(() => {
-              // Get all included items from multiple sources without filtering
-              let includedItems = [];
+            <View style={styles.section}>
+              <View style={styles.sectionHeader}>
+                <Text style={styles.sectionTitle}>What's Included</Text>
+              </View>
+              <View style={styles.bulletList}>
+                {(() => {
+                  // Get all included items from multiple sources without filtering
+                  let includedItems = [];
 
-              // Priority 1: Motor features included
-              const motorFeatures = specData.features as any;
-              if (motorFeatures?.included) {
-                includedItems = Array.isArray(motorFeatures.included) ? motorFeatures.included : [motorFeatures.included];
-              } 
-              // Priority 2: Motor specifications included
-              else if (specData.specifications?.included) {
-                const specIncluded = (specData.specifications as any).included;
-                includedItems = Array.isArray(specIncluded) ? specIncluded : [specIncluded];
-              }
-              // Priority 3: Include accessories (complete list)
-              else if (specData.includedAccessories?.length) {
-                includedItems = specData.includedAccessories;
-              }
+                  // Priority 1: Motor features included
+                  const motorFeatures = specData.features as any;
+                  if (motorFeatures?.included) {
+                    includedItems = Array.isArray(motorFeatures.included) ? motorFeatures.included : [motorFeatures.included];
+                  } 
+                  // Priority 2: Motor specifications included
+                  else if (specData.specifications?.included) {
+                    const specIncluded = (specData.specifications as any).included;
+                    includedItems = Array.isArray(specIncluded) ? specIncluded : [specIncluded];
+                  }
+                  // Priority 3: Include accessories (complete list)
+                  else if (specData.includedAccessories?.length) {
+                    includedItems = specData.includedAccessories;
+                  }
+                  // Default items if no specific data available
+                  else {
+                    includedItems = [
+                      'Outboard motor',
+                      hpNumber <= 6 ? '12L portable fuel tank' : 'Installation hardware',
+                      hpNumber <= 6 ? 'Fuel line & primer bulb' : 'Control cables', 
+                      'Owner\'s manual & warranty'
+                    ];
+                    if (hpNumber <= 6) includedItems.push('Tiller handle (if applicable)');
+                  }
 
-              // Always show section if we have any included items
-              return includedItems.length > 0 ? (
-                <View style={styles.section}>
-                  <View style={styles.sectionHeader}>
-                    <Text style={styles.sectionTitle}>What's Included</Text>
-                  </View>
-                  <View style={styles.bulletList}>
-                    {includedItems.map((item, index) => (
-                      <Text key={index} style={styles.bulletItem}>• {item}</Text>
-                    ))}
-                  </View>
-                </View>
-              ) : null;
-            })()}
+                  return includedItems.map((item, index) => (
+                    <Text key={index} style={styles.bulletItem}>✓ {item}</Text>
+                  ));
+                })()}
+              </View>
+            </View>
 
             {/* Operating Costs - Only show if real data exists */}
             {(() => {
@@ -923,11 +943,11 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               </View>
               <View style={styles.bulletList}>
                 {mercurySpecs?.weight_kg && (
-                  <Text style={styles.bulletItem}>• Dry Weight: {mercurySpecs.weight_kg} kg ({Math.round(mercurySpecs.weight_kg * 2.20462)} lbs)</Text>
+                  <Text style={[styles.bulletItem, { marginBottom: 0.5 }]}>• Dry Weight: {mercurySpecs.weight_kg} kg ({Math.round(mercurySpecs.weight_kg * 2.20462)} lbs)</Text>
                 )}
-                <Text style={styles.bulletItem}>• Required Transom Height: {getShaftLength(specData.motorModel)}</Text>
-                <Text style={styles.bulletItem}>• Mercury controls & cables: $800-1,000 (depending on configuration)</Text>
-                <Text style={styles.bulletItem}>• 12V marine battery: $180</Text>
+                <Text style={[styles.bulletItem, { marginBottom: 0.5 }]}>• Required Transom Height: {getShaftLength(specData.motorModel)}</Text>
+                <Text style={[styles.bulletItem, { marginBottom: 0.5 }]}>• Mercury controls & cables: $800-1,000 (depending on configuration)</Text>
+                <Text style={[styles.bulletItem, { marginBottom: 0.5 }]}>• 12V marine battery: $180</Text>
               </View>
             </View>
 
@@ -992,15 +1012,6 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               </View>
             )}
           </View>
-        </View>
-
-        {/* Availability Indicator */}
-        <View style={styles.availabilityRow}>
-          {specData.stockStatus === 'In Stock' ? (
-            <Text style={styles.inStock}>✓ In Stock - Ready for Installation</Text>
-          ) : (
-            <Text style={styles.specialOrder}>⚠️ Special Order - 2-3 weeks</Text>
-          )}
         </View>
 
         {/* Contact Footer with Trust Badges */}
