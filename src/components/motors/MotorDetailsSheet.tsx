@@ -76,29 +76,44 @@ export default function MotorDetailsSheet({
   const installationRef = useRef<HTMLDivElement>(null);
   const performanceRef = useRef<HTMLDivElement>(null);
 
-  // Body scroll lock effect
+  // Body scroll lock effect with proper scroll restoration
   useEffect(() => {
+    let previousScrollY = 0;
+    
     if (open) {
-      const scrollY = window.scrollY;
+      // Store current scroll position
+      previousScrollY = window.scrollY;
       document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
+      document.body.style.top = `-${previousScrollY}px`;
       document.body.style.width = '100%';
       document.body.style.overflow = 'hidden';
+      
+      // Store scroll position in a data attribute for restoration
+      document.body.setAttribute('data-scroll-y', previousScrollY.toString());
     } else {
-      const scrollY = document.body.style.top;
+      // Restore scroll position
+      const storedScrollY = document.body.getAttribute('data-scroll-y');
+      
+      // Reset body styles
       document.body.style.position = '';
       document.body.style.top = '';
       document.body.style.width = '';
       document.body.style.overflow = '';
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      document.body.removeAttribute('data-scroll-y');
+      
+      // Restore scroll position if we have one stored
+      if (storedScrollY) {
+        window.scrollTo(0, parseInt(storedScrollY, 10));
       }
     }
+    
     return () => {
+      // Cleanup function
       document.body.style.position = '';
       document.body.style.top = '';
       document.body.style.width = '';
       document.body.style.overflow = '';
+      document.body.removeAttribute('data-scroll-y');
     };
   }, [open]);
 
