@@ -2,6 +2,7 @@ import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Font, Image } from '@react-pdf/renderer';
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import { getStartType } from '@/lib/motor-helpers';
+import { calculateMonthlyPayment, getFinancingDisplay } from '@/lib/finance';
 
 // Register Helvetica font family
 Font.register({
@@ -306,6 +307,7 @@ export interface CleanSpecSheetData {
   modelYear: string | number;
   sku?: string;
   msrp?: string;
+  motorPrice?: number; // Add motor price for financing calculations
   specifications?: Record<string, any>;
   features?: string[];
   includedAccessories?: string[];
@@ -321,6 +323,7 @@ export interface CleanSpecSheetData {
     name: string;
     description: string;
     endDate: string;
+    rate?: number; // Add promo rate for financing
   };
 }
 
@@ -365,6 +368,43 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
   const accessories = specData.includedAccessories || [];
   const uses = specData.idealUses || [];
   const performance = specData.performanceData || {};
+
+  // HP-based ideal applications
+  const getIdealApplicationsByHP = (hp: number): string[] => {
+    if (hp <= 9.9) {
+      return [
+        'Jon boats & dinghies',
+        'Shallow water trolling',
+        'Tender propulsion',
+        'Small aluminum boats',
+        'Auxiliary power'
+      ];
+    } else if (hp <= 40) {
+      return [
+        'Small fishing boats',
+        'Aluminum boats 14-16ft',
+        'Pontoon boats',
+        'Recreational boating',
+        'Light trolling'
+      ];
+    } else if (hp <= 115) {
+      return [
+        'Mid-size fishing boats',
+        'Aluminum boats 16-20ft',
+        'Recreational watersports',
+        'Bay & inland waters',
+        'Family boating'
+      ];
+    } else {
+      return [
+        'Larger fishing boats',
+        'High-performance applications',
+        'Offshore fishing',
+        'Heavy-duty commercial use',
+        'Multi-engine setups'
+      ];
+    }
+  };
 
   return (
     <Document>
@@ -524,26 +564,44 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               <Text style={styles.warrantyItem}>• Local service at {COMPANY_INFO.name}</Text>
             </View>
 
-            {/* Ideal Applications */}
+            {/* Ideal Applications - HP-based */}
             <View style={styles.section}>
               <View style={styles.sectionHeader}>
                 <Text style={styles.sectionTitle}>Ideal Applications</Text>
               </View>
               <View style={styles.bulletList}>
-                <Text style={styles.bulletItem}>• Fishing & recreational boating</Text>
-                <Text style={styles.bulletItem}>• Jon boats & small aluminum boats</Text>
-                <Text style={styles.bulletItem}>• Pontoon boats (auxiliary power)</Text>
-                <Text style={styles.bulletItem}>• Tender & dinghy propulsion</Text>
-                <Text style={styles.bulletItem}>• Shallow water operation</Text>
+                {getIdealApplicationsByHP(parseInt(specData.horsepower)).map((app, index) => (
+                  <Text key={index} style={styles.bulletItem}>• {app}</Text>
+                ))}
               </View>
             </View>
 
-            {/* Financing Options */}
+            {/* Financing Options - Real Data */}
             <View style={styles.financingBox}>
               <Text style={styles.financingTitle}>Financing Options</Text>
-              <Text style={styles.financingItem}>Competitive rates available</Text>
-              <Text style={styles.financingItem}>Contact for current rates</Text>
-              <Text style={styles.financingItem}>OAC - Terms vary</Text>
+              {specData.motorPrice && specData.motorPrice > 5000 ? (
+                <>
+                  {(() => {
+                    const priceWithHST = specData.motorPrice * 1.13;
+                    const promoRate = specData.currentPromotion?.rate || null;
+                    const { payment, termMonths, rate } = calculateMonthlyPayment(priceWithHST, promoRate);
+                    const displayText = getFinancingDisplay(priceWithHST, promoRate);
+                    
+                    return (
+                      <>
+                        <Text style={styles.financingItem}>{displayText}</Text>
+                        <Text style={styles.financingItem}>Price includes HST</Text>
+                        <Text style={styles.financingItem}>*OAC - Payment example only</Text>
+                      </>
+                    );
+                  })()}
+                </>
+              ) : (
+                <>
+                  <Text style={styles.financingItem}>Cash purchase recommended</Text>
+                  <Text style={styles.financingItem}>Financing available on larger packages</Text>
+                </>
+              )}
             </View>
           </View>
         </View>

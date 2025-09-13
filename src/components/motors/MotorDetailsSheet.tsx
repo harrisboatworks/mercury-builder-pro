@@ -153,6 +153,7 @@ export default function MotorDetailsSheet({
         modelYear: motor.year || new Date().getFullYear(),
         sku: motor.sku,
         msrp: typeof price === "number" ? price.toLocaleString('en-CA', { minimumFractionDigits: 0 }) : motor.msrp?.toLocaleString('en-CA', { minimumFractionDigits: 0 }),
+        motorPrice: typeof price === "number" ? price : motor.msrp, // Add motor price for financing
         specifications: {
           ...motor.specifications,
           'Weight': motorSpecs ? `${Math.round(motorSpecs.weight_kg * 2.20462)} lbs (${motorSpecs.weight_kg} kg)` : (weightLbs ? `${weightLbs} lbs` : undefined),
@@ -187,7 +188,8 @@ export default function MotorDetailsSheet({
         currentPromotion: activePromo ? {
           name: activePromo.name,
           description: activePromo.promo_text || 'Extended warranty included',
-          endDate: activePromo.promo_end_date ? new Date(activePromo.promo_end_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : ''
+          endDate: activePromo.promo_end_date ? new Date(activePromo.promo_end_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '',
+          rate: activePromo.rate // Include promo rate for financing calculations
         } : undefined
       };
 
