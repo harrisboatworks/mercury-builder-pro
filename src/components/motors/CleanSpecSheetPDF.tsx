@@ -450,7 +450,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
   // Get actual Mercury motor specifications 
   const mercurySpecs = findMercurySpecs(hpNumber, specData.motorModel);
   
-  // Simplified Model code decoder
+  // Model code decoder with XL, L, H
   const getModelCodeDecoding = (model: string) => {
     const decoded = decodeModelName(model);
     if (decoded.length === 0) return '';
@@ -463,6 +463,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
         case 'M': uniqueCodes.set('M', 'M = Manual Start'); break;
         case 'H': uniqueCodes.set('H', 'H = Tiller Handle'); break;
         case 'L': uniqueCodes.set('L', 'L = Long Shaft'); break;
+        case 'XL': uniqueCodes.set('XL', 'XL = Extra Long Shaft'); break;
         case 'S': uniqueCodes.set('S', 'S = Short Shaft'); break;
         case 'PT': uniqueCodes.set('PT', 'PT = Power Trim'); break;
       }
@@ -497,6 +498,9 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
       }
       if (!selectedMotorSpecs['Gear Ratio']) {
         selectedMotorSpecs['Gear Ratio'] = mercurySpecs.gear_ratio;
+      }
+      if (!selectedMotorSpecs['Cylinders']) {
+        selectedMotorSpecs['Cylinders'] = mercurySpecs.cylinders || (hpNumber <= 15 ? '1' : hpNumber <= 50 ? '2-3' : '4-6');
       }
       if (!selectedMotorSpecs['Fuel System']) {
         selectedMotorSpecs['Fuel System'] = mercurySpecs.fuel_type || 'Regular Unleaded (91 RON)';
@@ -625,27 +629,12 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           </View>
         </View>
 
-        {/* Motor Header with Image */}
-        <View style={styles.motorHeaderWithImage}>
-          <View style={styles.motorInfo}>
-            <Text style={styles.motorTitle}>{specData.motorModel}</Text>
-            <Text style={styles.motorSubtitle}>
-              {specData.modelYear} Mercury Marine {specData.category}
-            </Text>
-          </View>
-          <View style={styles.motorImageContainer}>
-            {specData.image_url ? (
-              <Image 
-                style={{ width: 180, height: 120 }}
-                src={specData.image_url}
-              />
-            ) : (
-              <>
-                <Text style={styles.motorImagePlaceholder}>{hpNumber}HP Motor</Text>
-                <Text style={styles.motorImageText}>Mercury Marine</Text>
-              </>
-            )}
-          </View>
+        {/* Motor Header */}
+        <View style={styles.motorHeader}>
+          <Text style={styles.motorTitle}>{specData.motorModel}</Text>
+          <Text style={styles.motorSubtitle}>
+            {specData.modelYear} Mercury Marine {specData.category}
+          </Text>
         </View>
 
         {/* Model Code Decoder */}
@@ -846,14 +835,14 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
         <View style={styles.contactFooter}>
           {/* Trust Badges */}
           <View style={styles.trustBadgesRow}>
-            <View style={styles.trustBadge}>
-              <Text style={styles.trustBadgeIcon}>AWARD</Text>
-              <Text style={styles.trustBadgeText}>Service Excellence</Text>
-            </View>
-            <View style={styles.trustBadge}>
-              <Text style={styles.trustBadgeIcon}>CERTIFIED</Text>
-              <Text style={styles.trustBadgeText}>Repower Center</Text>
-            </View>
+            <Image 
+              src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png"
+              style={{ width: 80, height: 40 }}
+            />
+            <Image 
+              src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
+              style={{ width: 80, height: 40 }}
+            />
           </View>
           
           <Text style={styles.companyName}>{COMPANY_INFO.name}</Text>
