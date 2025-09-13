@@ -108,6 +108,23 @@ export default function MyQuotes() {
         ].filter(spec => spec.value && spec.value !== '0')
       });
 
+      // Save lead interaction for PDF download
+      try {
+        const { saveLead } = await import('@/lib/leadCapture');
+        await saveLead({
+          motor_model: quote.quote_data?.motor?.model,
+          motor_hp: quote.quote_data?.motor?.hp,
+          base_price: quote.final_price,
+          final_price: quote.final_price,
+          customer_name: quote.customer_name,
+          lead_status: 'downloaded',
+          lead_source: 'pdf_download',
+          quote_data: quote.quote_data
+        });
+      } catch (leadError) {
+        console.error('Failed to save lead interaction:', leadError);
+      }
+
       // Download the PDF
       const { downloadPDF } = await import('@/lib/react-pdf-generator');
       downloadPDF(pdfUrl, `mercury-quote-${quote.id.slice(0, 8)}.pdf`);

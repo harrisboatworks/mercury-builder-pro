@@ -16,7 +16,9 @@ export type Database = {
     Tables: {
       customer_quotes: {
         Row: {
+          anonymous_session_id: string | null
           base_price: number
+          contact_attempts: number | null
           created_at: string | null
           customer_email: string
           customer_name: string
@@ -25,9 +27,14 @@ export type Database = {
           discount_amount: number | null
           final_price: number
           id: string
+          last_contact_attempt: string | null
+          lead_score: number | null
+          lead_source: string | null
+          lead_status: string | null
           loan_amount: number
           monthly_payment: number
           motor_model_id: string | null
+          notes: string | null
           penalty_applied: boolean
           penalty_factor: number | null
           penalty_reason: string | null
@@ -39,7 +46,9 @@ export type Database = {
           user_id: string
         }
         Insert: {
+          anonymous_session_id?: string | null
           base_price: number
+          contact_attempts?: number | null
           created_at?: string | null
           customer_email: string
           customer_name: string
@@ -48,9 +57,14 @@ export type Database = {
           discount_amount?: number | null
           final_price: number
           id?: string
+          last_contact_attempt?: string | null
+          lead_score?: number | null
+          lead_source?: string | null
+          lead_status?: string | null
           loan_amount: number
           monthly_payment: number
           motor_model_id?: string | null
+          notes?: string | null
           penalty_applied?: boolean
           penalty_factor?: number | null
           penalty_reason?: string | null
@@ -62,7 +76,9 @@ export type Database = {
           user_id: string
         }
         Update: {
+          anonymous_session_id?: string | null
           base_price?: number
+          contact_attempts?: number | null
           created_at?: string | null
           customer_email?: string
           customer_name?: string
@@ -71,9 +87,14 @@ export type Database = {
           discount_amount?: number | null
           final_price?: number
           id?: string
+          last_contact_attempt?: string | null
+          lead_score?: number | null
+          lead_source?: string | null
+          lead_status?: string | null
           loan_amount?: number
           monthly_payment?: number
           motor_model_id?: string | null
+          notes?: string | null
           penalty_applied?: boolean
           penalty_factor?: number | null
           penalty_reason?: string | null
@@ -752,6 +773,10 @@ export type Database = {
           record_count: number
           table_name: string
         }[]
+      }
+      generate_session_id: {
+        Args: Record<PropertyKey, never>
+        Returns: string
       }
       has_role: {
         Args: {

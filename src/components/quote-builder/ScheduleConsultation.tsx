@@ -156,12 +156,18 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           customer_name: sanitizedContactInfo.name,
           customer_email: sanitizedContactInfo.email,
           customer_phone: sanitizedContactInfo.phone,
+          // Lead tracking fields
+          lead_status: 'scheduled',
+          lead_source: 'consultation',
+          lead_score: 75, // High score for scheduled consultations
           // New trade-in penalty audit fields
           tradein_value_pre_penalty: quoteData.boatInfo?.tradeIn?.tradeinValuePrePenalty ?? null,
           tradein_value_final: quoteData.boatInfo?.tradeIn?.tradeinValueFinal ?? quoteData.boatInfo?.tradeIn?.estimatedValue ?? null,
           penalty_applied: Boolean(quoteData.boatInfo?.tradeIn?.penaltyApplied),
           penalty_factor: quoteData.boatInfo?.tradeIn?.penaltyFactor ?? null,
-          penalty_reason: (quoteData.boatInfo?.tradeIn?.penaltyApplied ? 'brand_out_of_business' : null)
+          penalty_reason: (quoteData.boatInfo?.tradeIn?.penaltyApplied ? 'brand_out_of_business' : null),
+          // Required fields with defaults
+          discount_amount: 0
         } as any);
 
       if (error) throw error;

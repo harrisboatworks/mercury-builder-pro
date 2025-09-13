@@ -296,6 +296,23 @@ export default function QuoteSummaryPage() {
         description: "Please wait while we create your professional quote.",
       });
       
+      // Save lead data when PDF is downloaded
+      try {
+        const { saveLead } = await import('@/lib/leadCapture');
+        await saveLead({
+          motor_model: quoteData.motor?.model,
+          motor_hp: quoteData.motor?.hp,
+          base_price: subtotal,
+          final_price: total,
+          lead_status: 'downloaded',
+          lead_source: 'pdf_download',
+          quote_data: quoteData
+        });
+      } catch (leadError) {
+        console.error('Failed to save lead:', leadError);
+        // Don't block PDF generation if lead save fails
+      }
+      
       // Generate PDF using React PDF
       const pdfUrl = await generateQuotePDF(pdfData);
       
