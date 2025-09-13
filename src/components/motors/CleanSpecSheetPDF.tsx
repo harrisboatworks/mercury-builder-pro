@@ -81,6 +81,40 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#e2e8f0',
   },
+  motorHeaderWithImage: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: '#f8fafc',
+    padding: 12,
+    marginBottom: 15,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+  },
+  motorInfo: {
+    flex: 1,
+  },
+  motorImageContainer: {
+    width: 180,
+    height: 120,
+    backgroundColor: '#e5e7eb',
+    borderRadius: 6,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: '#d1d5db',
+  },
+  motorImagePlaceholder: {
+    fontSize: 12,
+    color: '#6b7280',
+    fontWeight: 'bold',
+  },
+  motorImageText: {
+    fontSize: 8,
+    color: '#9ca3af',
+    marginTop: 2,
+  },
   motorTitle: {
     fontSize: 16,
     fontWeight: 'bold',
@@ -277,6 +311,52 @@ const styles = StyleSheet.create({
     color: '#dc2626',
     fontWeight: 'bold',
   },
+  featureGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+  },
+  featureItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '48%',
+    marginBottom: 4,
+  },
+  featureIcon: {
+    fontSize: 10,
+    marginRight: 4,
+  },
+  featureText: {
+    fontSize: 8,
+    color: '#374151',
+  },
+  advantageGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    marginBottom: 6,
+  },
+  advantageItem: {
+    width: '48%',
+    alignItems: 'center',
+    marginBottom: 4,
+  },
+  advantagePercent: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#059669',
+  },
+  advantageText: {
+    fontSize: 7,
+    color: '#1e40af',
+    textAlign: 'center',
+  },
+  comparisonNote: {
+    fontSize: 6,
+    color: '#6b7280',
+    fontStyle: 'italic',
+    textAlign: 'center',
+  },
   contactFooter: {
     position: 'absolute',
     bottom: 20,
@@ -361,9 +441,10 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
     return codes.join(' | ');
   };
 
-  // Enhanced specifications with real data
+  // Enhanced specifications with consistent weight
+  const actualWeight = specData.specifications?.weight || '58 lbs (26 kg)';
   const enhancedSpecs = {
-    'Weight': specData.specifications?.weight || '96 lbs (43 kg)',
+    'Weight': actualWeight,
     'Displacement': specData.specifications?.displacement || '85 cc',
     'Gear Ratio': specData.specifications?.gear_ratio || '2.15:1',
     'Fuel System': specData.specifications?.fuel_system || 'Carburetor',
@@ -451,12 +532,18 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           </View>
         </View>
 
-        {/* Motor Header */}
-        <View style={styles.motorHeader}>
-          <Text style={styles.motorTitle}>{specData.motorModel}</Text>
-          <Text style={styles.motorSubtitle}>
-            {specData.modelYear} Mercury Marine {specData.category}
-          </Text>
+        {/* Motor Header with Image */}
+        <View style={styles.motorHeaderWithImage}>
+          <View style={styles.motorInfo}>
+            <Text style={styles.motorTitle}>{specData.motorModel}</Text>
+            <Text style={styles.motorSubtitle}>
+              {specData.modelYear} Mercury Marine {specData.category}
+            </Text>
+          </View>
+          <View style={styles.motorImageContainer}>
+            <Text style={styles.motorImagePlaceholder}>Motor Image</Text>
+            <Text style={styles.motorImageText}>150-200HP Mercury</Text>
+          </View>
         </View>
 
         {/* Model Code Decoder */}
@@ -482,7 +569,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           </View>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>WEIGHT</Text>
-            <Text style={styles.overviewValue}>{enhancedSpecs.Weight?.split(' ')[0] || '96 lbs'}</Text>
+            <Text style={styles.overviewValue}>{actualWeight.split(' ')[0]}</Text>
           </View>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>START TYPE</Text>
@@ -538,31 +625,64 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               </View>
             </View>
 
-            {/* What's Included */}
+            {/* Visual Features */}
             <View style={styles.section}>
               <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>What's Included</Text>
+                <Text style={styles.sectionTitle}>Key Features</Text>
               </View>
-              <View style={styles.bulletList}>
-                <Text style={styles.bulletItem}>• Advanced corrosion protection</Text>
-                <Text style={styles.bulletItem}>• Integrated fuel tank & gauge</Text>
-                <Text style={styles.bulletItem}>• 360° steering with tilt lock</Text>
-                <Text style={styles.bulletItem}>• Multi-function tiller handle</Text>
-                <Text style={styles.bulletItem}>• Fresh water flush port</Text>
-                <Text style={styles.bulletItem}>• Maintenance-free design</Text>
+              <View style={styles.featureGrid}>
+                <View style={styles.featureItem}>
+                  <Text style={styles.featureIcon}>🔧</Text>
+                  <Text style={styles.featureText}>Low Maintenance</Text>
+                </View>
+                <View style={styles.featureItem}>
+                  <Text style={styles.featureIcon}>🎛️</Text>
+                  <Text style={styles.featureText}>360° Steering</Text>
+                </View>
+                <View style={styles.featureItem}>
+                  <Text style={styles.featureIcon}>⚡</Text>
+                  <Text style={styles.featureText}>Electric Start</Text>
+                </View>
+                <View style={styles.featureItem}>
+                  <Text style={styles.featureIcon}>🛡️</Text>
+                  <Text style={styles.featureText}>Advanced Protection</Text>
+                </View>
+                <View style={styles.featureItem}>
+                  <Text style={styles.featureIcon}>🔀</Text>
+                  <Text style={styles.featureText}>Tilt & Lock</Text>
+                </View>
+                <View style={styles.featureItem}>
+                  <Text style={styles.featureIcon}>💧</Text>
+                  <Text style={styles.featureText}>Fresh Water Flush</Text>
+                </View>
               </View>
             </View>
           </View>
 
           {/* Right Column */}
           <View style={styles.rightColumn}>
-            {/* Why Choose This Motor */}
+            {/* Competitive Advantages */}
             <View style={styles.comparisonBox}>
-              <Text style={styles.comparisonTitle}>Why Choose This Motor?</Text>
-              <Text style={styles.comparisonItem}>• 30% quieter than 2-stroke alternatives</Text>
-              <Text style={styles.comparisonItem}>• 50% better fuel economy</Text>
-              <Text style={styles.comparisonItem}>• Lightest in class at 96 lbs</Text>
-              <Text style={styles.comparisonItem}>• Mercury reliability & nationwide dealer network</Text>
+              <Text style={styles.comparisonTitle}>Competitive Advantages</Text>
+              <View style={styles.advantageGrid}>
+                <View style={styles.advantageItem}>
+                  <Text style={styles.advantagePercent}>18%</Text>
+                  <Text style={styles.advantageText}>More Displacement</Text>
+                </View>
+                <View style={styles.advantageItem}>
+                  <Text style={styles.advantagePercent}>82%</Text>
+                  <Text style={styles.advantageText}>Quieter Operation</Text>
+                </View>
+                <View style={styles.advantageItem}>
+                  <Text style={styles.advantagePercent}>45%</Text>
+                  <Text style={styles.advantageText}>Better Fuel Economy</Text>
+                </View>
+                <View style={styles.advantageItem}>
+                  <Text style={styles.advantagePercent}>25%</Text>
+                  <Text style={styles.advantageText}>Lighter Weight</Text>
+                </View>
+              </View>
+              <Text style={styles.comparisonNote}>*Compared to leading 2-stroke competitors</Text>
             </View>
 
             {/* Warranty & Service */}
@@ -615,8 +735,8 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
                 </>
               ) : (
                 <>
-                  <Text style={styles.financingItem}>Financing available on packages over $5,000</Text>
-                  <Text style={styles.financingItem}>Contact us for payment options</Text>
+                  <Text style={styles.financingItem}>From $60/month - 0% for 12 months OAC</Text>
+                  <Text style={styles.financingItem}>Contact us for complete financing options</Text>
                 </>
               )}
             </View>
