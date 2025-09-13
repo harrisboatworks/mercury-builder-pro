@@ -933,7 +933,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
                   }
 
                   return includedItems.map((item, index) => (
-                    <Text key={index} style={styles.bulletItem}>✓ {item}</Text>
+                    <Text key={index} style={styles.bulletItem}>✅ {item}</Text>
                   ));
                 })()}
               </View>
