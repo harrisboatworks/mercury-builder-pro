@@ -231,7 +231,7 @@ export default function MotorDetailsSheet({
           'Gear Ratio': motorSpecs?.gear_ratio || motor.gear_ratio,
           'Fuel System': motorSpecs?.fuel_type || motor.fuel_induction || 'Carburetor',
           'Oil Type': 'Mercury 25W-40 4-Stroke Marine Oil',
-          'Noise Level': '78 dB @ 1000 RPM',
+          // REMOVED hardcoded Noise Level - only show if motor actually has this data
           'Control Type': isTillerMotor(title || '') ? 'Tiller Handle' : (motor.steering_type || 'Remote Control'),
           'Shaft Options': 'Multiple shaft lengths available',
           'Max RPM': motorSpecs?.max_rpm || motor.full_throttle_rpm,
@@ -249,10 +249,11 @@ export default function MotorDetailsSheet({
         includedAccessories: getIncludedAccessories(motor),
         idealUses: getIdealUses(hp || motor.hp || 0),
         performanceData: {
-          recommendedBoatSize: getRecommendedBoatSize(hp || motor.hp || 0),
-          estimatedTopSpeed: getEstimatedSpeed(hp || motor.hp || 0),
-          fuelConsumption: getFuelConsumption(hp || motor.hp || 0),
-          operatingRange: getRange(hp || motor.hp || 0),
+          // Only use REAL motor data if available, don't generate generic values
+          recommendedBoatSize: motor.recommendedBoatSize || motor.boat_size_range || undefined,
+          estimatedTopSpeed: motor.topSpeed || motor.max_speed || motor.estimated_top_speed || undefined,
+          fuelConsumption: motor.fuelConsumption || motor.fuel_consumption || motor.gallons_per_hour || undefined,
+          operatingRange: motor.operatingRange || motor.range || undefined,
         },
         stockStatus: motor.availability || undefined,
         currentPromotion: activePromo ? {

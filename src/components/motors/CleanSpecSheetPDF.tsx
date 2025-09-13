@@ -443,13 +443,11 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
       }
     }
     
-    // Add standard specs only if missing
+    // Add standard specs only if missing - NO hardcoded noise level
     if (!selectedMotorSpecs['Oil Type']) {
       selectedMotorSpecs['Oil Type'] = 'Mercury 25W-40 4-Stroke Marine Oil';
     }
-    if (!selectedMotorSpecs['Noise Level']) {
-      selectedMotorSpecs['Noise Level'] = '78 dB @ 1000 RPM';
-    }
+    // REMOVED hardcoded noise level - only show if motor actually has this data
     if (!selectedMotorSpecs['Shaft Length']) {
       selectedMotorSpecs['Shaft Length'] = getShaftLength(specData.motorModel);
     }
