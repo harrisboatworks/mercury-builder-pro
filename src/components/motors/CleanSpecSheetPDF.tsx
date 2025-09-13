@@ -5,6 +5,7 @@ import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelCons
 import { findMotorSpecs as findMercurySpecs } from '@/lib/data/mercury-motors';
 import { calculateMonthlyPayment, getFinancingDisplay, calculatePaymentWithFrequency, getFinancingTerm } from '@/lib/finance';
 import { getRandomReview, getAllMercuryReviews } from '@/lib/data/mercury-reviews';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
@@ -428,6 +429,8 @@ interface CleanSpecSheetPDFProps {
 }
 
 const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrantyPricing }) => {
+  // Get active promotions for warranty calculation
+  const { getTotalWarrantyBonusYears } = useActivePromotions();
   
   const currentDate = new Date().toLocaleDateString('en-US', { 
     year: 'numeric', 
@@ -461,26 +464,61 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
   };
 
 
-  const getWarrantyPrice = (years: number) => {
-    if (!warrantyPricing) {
-      // Fallback pricing if not provided
-      const fallbackPrices = {
-        4: hpNumber <= 15 ? 247 : hpNumber <= 50 ? 576 : 1149,
-        5: hpNumber <= 15 ? 293 : hpNumber <= 50 ? 684 : 1365,
-        6: hpNumber <= 15 ? 352 : hpNumber <= 50 ? 821 : 1638
-      };
-      return fallbackPrices[years as keyof typeof fallbackPrices] || 'N/A';
+  // Calculate warranty options based on current total coverage
+  const getExtendedWarrantyOptions = () => {
+    const BASE_WARRANTY_YEARS = 3;
+    const MAXIMUM_WARRANTY_YEARS = 8;
+    
+    // Calculate current total warranty coverage
+    const bonusYears = getTotalWarrantyBonusYears();
+    const currentTotalYears = BASE_WARRANTY_YEARS + bonusYears;
+    
+    // Calculate remaining years available for extension
+    const maxAdditionalYears = MAXIMUM_WARRANTY_YEARS - currentTotalYears;
+    
+    if (maxAdditionalYears <= 0) {
+      return { options: [], message: "Maximum coverage reached (8 years total)" };
     }
     
-    // Get price from database based on year
-    switch (years) {
-      case 4:
-        return warrantyPricing.year_4_price || 'N/A';
-      case 5:
-        return warrantyPricing.year_5_price || 'N/A';
-      case 6:
-        // Calculate 6-year as 5-year + 20% (typical industry practice)
-        return warrantyPricing.year_5_price ? Math.round(warrantyPricing.year_5_price * 1.2) : 'N/A';
+    const options = [];
+    
+    // Generate options for each additional year available
+    for (let addYears = 1; addYears <= Math.min(maxAdditionalYears, 3); addYears++) {
+      const totalYears = currentTotalYears + addYears;
+      const price = getWarrantyPrice(addYears);
+      
+      if (price !== 'N/A') {
+        options.push({
+          totalYears,
+          addYears,
+          price,
+          label: `${totalYears} Year Total: +$${price}`
+        });
+      }
+    }
+    
+    return { options, currentTotalYears, bonusYears };
+  };
+
+  const getWarrantyPrice = (yearsToAdd: number) => {
+    if (!warrantyPricing) {
+      // Fallback pricing based on years being added (not total years)
+      const fallbackPrices = {
+        1: hpNumber <= 15 ? 178 : hpNumber <= 50 ? 247 : 384,
+        2: hpNumber <= 15 ? 319 : hpNumber <= 50 ? 442 : 688,
+        3: hpNumber <= 15 ? 454 : hpNumber <= 50 ? 629 : 979
+      };
+      return fallbackPrices[yearsToAdd as keyof typeof fallbackPrices] || 'N/A';
+    }
+    
+    // Get price from database based on years being added (not total years)
+    switch (yearsToAdd) {
+      case 1:
+        return warrantyPricing.year_1_price || 'N/A';
+      case 2:
+        return warrantyPricing.year_2_price || 'N/A';
+      case 3:
+        return warrantyPricing.year_3_price || 'N/A';
       default:
         return 'N/A';
     }
@@ -955,18 +993,30 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
             <View style={styles.warrantyBox}>
               <Text style={styles.warrantyTitle}>Warranty & Service</Text>
               <Text style={styles.warrantyItem}>• Standard: 3 years limited warranty</Text>
-              {specData.currentPromotion ? (
-                <>
-                  <Text style={styles.warrantyItem}>• Current Promo: Extended warranty included</Text>
-                  <Text style={styles.warrantyItem}>• Expires {specData.currentPromotion.endDate}</Text>
-                </>
-              ) : null}
-              
-              {/* Extended Warranty Options */}
-              <Text style={styles.warrantyTitle}>Extended Coverage Options:</Text>
-              <Text style={styles.warrantyOption}>• 4 Year: +${getWarrantyPrice(4)}</Text>
-              <Text style={styles.warrantyOption}>• 5 Year: +${getWarrantyPrice(5)}</Text>
-              <Text style={styles.warrantyOption}>• 6 Year: +${getWarrantyPrice(6)}</Text>
+              {(() => {
+                const warrantyInfo = getExtendedWarrantyOptions();
+                const { options, currentTotalYears, bonusYears } = warrantyInfo;
+                
+                return (
+                  <>
+                    {bonusYears > 0 && (
+                      <Text style={styles.warrantyItem}>• Current Promo: +{bonusYears} years bonus ({currentTotalYears} total)</Text>
+                    )}
+                    
+                    {/* Extended Warranty Options */}
+                    {options.length > 0 ? (
+                      <>
+                        <Text style={styles.warrantyTitle}>Extended Coverage Options:</Text>
+                        {options.map((option, index) => (
+                          <Text key={index} style={styles.warrantyOption}>• {option.label}</Text>
+                        ))}
+                      </>
+                    ) : (
+                      <Text style={styles.warrantyItem}>• {warrantyInfo.message}</Text>
+                    )}
+                  </>
+                );
+              })()}
               
               <Text style={styles.warrantyItem}>• Service: Every 100 hrs or annually</Text>
               <Text style={styles.warrantyItem}>• Local service at {COMPANY_INFO.name}</Text>
