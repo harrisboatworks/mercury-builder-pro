@@ -247,15 +247,45 @@ export const isTillerMotor = (model: string) => {
     return true;
   }
   
-  // Check for MH pattern (Manual start, tiller Handle)
-  const mhPattern = /(^|\s)MH(\s|$)/;
-  if (mhPattern.test(upperModel)) {
+  // Check for tiller handle patterns - more comprehensive detection
+  // MH = Manual start + tiller Handle
+  if (/(^|\s|-)MH(\s|$|-)/i.test(upperModel)) {
     return true;
   }
   
-  // Check for standalone H pattern (not part of HP, ELH, etc.)
-  const standaloneHPattern = /\s H(\s|$)/;
-  if (standaloneHPattern.test(upperModel)) {
+  // EH = Electric start + tiller Handle  
+  if (/(^|\s|-)EH(\s|$|-)/i.test(upperModel)) {
+    return true;
+  }
+  
+  // MLH = Manual start + Long shaft + tiller Handle
+  if (/(^|\s|-)MLH(\s|$|-)/i.test(upperModel)) {
+    return true;
+  }
+  
+  // ELH = Electric start + Long shaft + tiller Handle
+  if (/(^|\s|-)ELH(\s|$|-)/i.test(upperModel)) {
+    return true;
+  }
+  
+  // EXLH = Electric start + eXtra Long shaft + tiller Handle
+  if (/(^|\s|-)EXLH(\s|$|-)/i.test(upperModel)) {
+    return true;
+  }
+  
+  // ELHPT = Electric start + Long shaft + tiller Handle + Power Tilt
+  if (/(^|\s|-)ELHPT(\s|$|-)/i.test(upperModel)) {
+    return true;
+  }
+  
+  // EXLHPT = Electric start + eXtra Long shaft + tiller Handle + Power Tilt
+  if (/(^|\s|-)EXLHPT(\s|$|-)/i.test(upperModel)) {
+    return true;
+  }
+  
+  // Check for standalone H pattern (tiller Handle) - but avoid HP, FH, etc.
+  // Must be a standalone H, not part of another code
+  if (/(^|\s|-)H(\s|$|-)/i.test(upperModel) && !upperModel.includes('HP')) {
     return true;
   }
   
