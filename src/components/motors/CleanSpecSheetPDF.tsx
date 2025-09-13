@@ -3,6 +3,8 @@ import { Document, Page, Text, View, StyleSheet, Font, Image } from '@react-pdf/
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import { getStartType } from '@/lib/motor-helpers';
 import { calculateMonthlyPayment, getFinancingDisplay } from '@/lib/finance';
+import harrisLogo from '@/assets/harris-logo.png';
+import mercuryLogo from '@/assets/mercury-logo.png';
 
 // Register Helvetica font family
 Font.register({
@@ -211,23 +213,23 @@ const styles = StyleSheet.create({
     marginBottom: 2,
     paddingLeft: 6,
   },
-  financingBox: {
-    backgroundColor: '#fef3c7',
-    padding: 8,
+  financingSection: {
+    backgroundColor: '#f8fafc',
+    padding: 10,
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: '#fcd34d',
+    borderColor: '#e2e8f0',
   },
   financingTitle: {
-    fontSize: 9,
+    fontSize: 10,
     fontWeight: 'bold',
-    color: '#92400e',
-    marginBottom: 3,
+    color: '#1f2937',
+    marginBottom: 4,
   },
   financingItem: {
-    fontSize: 7,
-    color: '#92400e',
-    marginBottom: 1,
+    fontSize: 8,
+    color: '#4b5563',
+    marginBottom: 2,
   },
   modelCodeBox: {
     backgroundColor: '#f0f9ff',
@@ -247,25 +249,33 @@ const styles = StyleSheet.create({
     fontSize: 8,
     color: '#0c4a6e',
   },
-  promoBanner: {
-    backgroundColor: '#fef3c7',
-    padding: 10,
-    borderRadius: 4,
-    borderWidth: 2,
-    borderColor: '#f59e0b',
-    marginBottom: 15,
-    alignItems: 'center',
-  },
-  promoTitle: {
-    fontSize: 11,
-    fontWeight: 'bold',
-    color: '#92400e',
-    marginBottom: 3,
-  },
-  promoText: {
+  promoLine: {
     fontSize: 9,
-    color: '#92400e',
-    textAlign: 'center',
+    color: '#ea580c',
+    marginBottom: 12,
+    fontWeight: 'medium',
+  },
+  priceSection: {
+    alignItems: 'flex-end',
+  },
+  priceLabel: {
+    fontSize: 10,
+    color: '#6b7280',
+  },
+  priceValue: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#0066cc',
+  },
+  dealerPrice: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#059669',
+  },
+  savingsText: {
+    fontSize: 10,
+    color: '#dc2626',
+    fontWeight: 'bold',
   },
   contactFooter: {
     position: 'absolute',
@@ -414,22 +424,30 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           <View style={styles.headerLogos}>
             <Image 
               style={styles.harrisLogo}
-              src="/src/assets/harris-logo.png"
+              src={harrisLogo}
             />
             <Image 
               style={styles.mercuryLogo}
-              src="/src/assets/mercury-logo.png"
+              src={mercuryLogo}
             />
           </View>
           <View style={styles.headerRight}>
             <Text style={styles.docTitle}>Motor Specifications</Text>
             <Text style={styles.docDate}>{currentDate}</Text>
-            {specData.msrp && (
-              <View style={styles.msrpContainer}>
-                <Text style={styles.msrpLabel}>MSRP</Text>
-                <Text style={styles.msrpValue}>${specData.msrp}</Text>
-              </View>
-            )}
+            <View style={styles.priceSection}>
+              {specData.msrp && specData.motorPrice && specData.motorPrice < parseInt(specData.msrp.replace(/[^0-9]/g, '')) ? (
+                <>
+                  <Text style={styles.priceLabel}>MSRP: ${specData.msrp}</Text>
+                  <Text style={styles.dealerPrice}>Our Price: ${specData.motorPrice?.toLocaleString()}</Text>
+                  <Text style={styles.savingsText}>You Save: ${(parseInt(specData.msrp.replace(/[^0-9]/g, '')) - specData.motorPrice).toLocaleString()}</Text>
+                </>
+              ) : specData.msrp ? (
+                <>
+                  <Text style={styles.priceLabel}>MSRP</Text>
+                  <Text style={styles.priceValue}>${specData.msrp}</Text>
+                </>
+              ) : null}
+            </View>
           </View>
         </View>
 
@@ -449,14 +467,11 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           </View>
         )}
 
-        {/* Promotion Banner */}
+        {/* Subtle Promo Line */}
         {specData.currentPromotion && (
-          <View style={styles.promoBanner}>
-            <Text style={styles.promoTitle}>{specData.currentPromotion.name}</Text>
-            <Text style={styles.promoText}>
-              {specData.currentPromotion.description} - Ends {specData.currentPromotion.endDate}
-            </Text>
-          </View>
+          <Text style={styles.promoLine}>
+            🎯 Current Promo: {specData.currentPromotion.description} - Ends {specData.currentPromotion.endDate}
+          </Text>
         )}
 
         {/* Overview Boxes */}
@@ -467,7 +482,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           </View>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>WEIGHT</Text>
-            <Text style={styles.overviewValue}>{specData.specifications?.weight?.split(' ')[0] || '96 lbs'}</Text>
+            <Text style={styles.overviewValue}>{enhancedSpecs.Weight?.split(' ')[0] || '96 lbs'}</Text>
           </View>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>START TYPE</Text>
@@ -576,30 +591,32 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               </View>
             </View>
 
-            {/* Financing Options - Real Data */}
-            <View style={styles.financingBox}>
-              <Text style={styles.financingTitle}>Financing Options</Text>
+            {/* Professional Financing Section */}
+            <View style={styles.financingSection}>
+              <Text style={styles.financingTitle}>Financing Available</Text>
               {specData.motorPrice && specData.motorPrice > 5000 ? (
                 <>
                   {(() => {
                     const priceWithHST = specData.motorPrice * 1.13;
                     const promoRate = specData.currentPromotion?.rate || null;
                     const { payment, termMonths, rate } = calculateMonthlyPayment(priceWithHST, promoRate);
-                    const displayText = getFinancingDisplay(priceWithHST, promoRate);
                     
                     return (
                       <>
-                        <Text style={styles.financingItem}>{displayText}</Text>
-                        <Text style={styles.financingItem}>Price includes HST</Text>
-                        <Text style={styles.financingItem}>*OAC - Payment example only</Text>
+                        <Text style={styles.financingItem}>Financing available from ${payment}/month</Text>
+                        {promoRate === 0 && (
+                          <Text style={styles.financingItem}>0% interest for 12 months OAC</Text>
+                        )}
+                        <Text style={styles.financingItem}>Terms up to {termMonths} months available</Text>
+                        <Text style={styles.financingItem}>*Price includes HST • OAC</Text>
                       </>
                     );
                   })()}
                 </>
               ) : (
                 <>
-                  <Text style={styles.financingItem}>Cash purchase recommended</Text>
-                  <Text style={styles.financingItem}>Financing available on larger packages</Text>
+                  <Text style={styles.financingItem}>Financing available on packages over $5,000</Text>
+                  <Text style={styles.financingItem}>Contact us for payment options</Text>
                 </>
               )}
             </View>
