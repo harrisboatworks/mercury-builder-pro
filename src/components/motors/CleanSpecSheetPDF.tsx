@@ -897,7 +897,12 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               ) : null;
             })()}
 
-            {/* Customer Review Section */}
+          </View>
+
+          {/* Right Column */}
+          <View style={styles.rightColumn}>
+
+            {/* Customer Review Section - Moved from left column */}
             <View style={styles.reviewSection}>
               <Text style={styles.sectionTitle}>Customer Review</Text>
               <View>
@@ -911,7 +916,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               </View>
             </View>
 
-            {/* Installation Requirements Section - Fixed */}
+            {/* Installation Requirements Section - Moved from left column */}
             <View style={styles.section}>
               <View style={styles.sectionHeader}>
                 <Text style={styles.sectionTitle}>Installation Requirements</Text>
@@ -925,12 +930,6 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
                 <Text style={styles.bulletItem}>• 12V marine battery: $180</Text>
               </View>
             </View>
-
-          </View>
-
-          {/* Right Column */}
-          <View style={styles.rightColumn}>
-
 
             {/* Warranty & Service - Enhanced */}
             <View style={styles.warrantyBox}>
@@ -953,45 +952,39 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               <Text style={styles.warrantyItem}>• Local service at {COMPANY_INFO.name}</Text>
             </View>
 
-
-            {/* Real Finance Calculator with Smart Terms */}
+            {/* Fixed Financing - Payment Frequencies */}
             {specData.motorPrice && specData.motorPrice > 1000 && (
               <View style={styles.financingSection}>
-                <Text style={styles.financingTitle}>Financing</Text>
+                <Text style={styles.financingTitle}>Financing Options</Text>
                 {(() => {
-                  // Use real finance calculator with smart term selection
                   const price = specData.motorPrice;
                   const priceWithHST = price * 1.13;
                   const promoRate = specData.currentPromotion?.rate || null;
+                  const rate = promoRate || 7.99;
+                  const termMonths = getFinancingTerm(price);
                   
-                  // Get smart term based on price (from getFinancingTerm logic)
-                  const getSmartTerm = (price: number): number => {
-                    if (price < 5000) return 36;          
-                    if (price < 10000) return 48;         
-                    if (price < 20000) return 60;         
-                    return 120;                           
-                  };
-                  
-                  const smartTerm = getSmartTerm(price);
-                  const smartPayment = calculateMonthlyPayment(priceWithHST, promoRate);
-                  
-                  // Calculate 60-month payment with explicit term (not smart term)
-                  const payment60 = Math.round((priceWithHST * (8.99/100/12)) / (1 - Math.pow(1 + (8.99/100/12), -60)));
+                  // Calculate all three payment frequencies
+                  const weeklyPayment = calculatePaymentWithFrequency(priceWithHST, 'weekly', promoRate);
+                  const biweeklyPayment = calculatePaymentWithFrequency(priceWithHST, 'bi-weekly', promoRate);
+                  const monthlyPayment = calculatePaymentWithFrequency(priceWithHST, 'monthly', promoRate);
                   
                   return (
                     <>
                       <Text style={styles.financingItem}>
-                        • {smartPayment.termMonths} months: ${smartPayment.payment}/month @ {smartPayment.rate.toFixed(2)}%
+                        • Weekly: ${weeklyPayment.payment}/week
                       </Text>
-                      {smartTerm !== 60 && (
-                        <Text style={styles.financingItem}>
-                          • 60 months: ${payment60}/month @ 8.99%
-                        </Text>
-                      )}
+                      <Text style={styles.financingItem}>
+                        • Bi-weekly: ${biweeklyPayment.payment}/bi-weekly
+                      </Text>
+                      <Text style={styles.financingItem}>
+                        • Monthly: ${monthlyPayment.payment}/month
+                      </Text>
+                      <Text style={styles.financingItem}>
+                        • Term: {termMonths} months @ {rate.toFixed(2)}% APR
+                      </Text>
                       {specData.currentPromotion && (
                         <Text style={styles.financingItem}>• Promotion: {specData.currentPromotion.name}</Text>
                       )}
-                      <Text style={styles.financingItem}>• Rates from actual lender terms</Text>
                       <Text style={styles.financingItem}>*Price plus HST • OAC</Text>
                     </>
                   );
