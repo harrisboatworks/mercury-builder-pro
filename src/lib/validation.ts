@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { validatePasswordStrength } from '@/components/ui/password-strength';
 
 export const contactInfoSchema = z.object({
   name: z.string()
@@ -48,6 +49,29 @@ export const sanitizeInput = (input: string): string => {
     .replace(/[<>'"&]/g, '') // Remove potentially dangerous characters
     .trim();
 };
+
+// Enhanced password validation schema
+export const passwordSchema = z.string()
+  .min(12, 'Password must be at least 12 characters')
+  .max(128, 'Password must not exceed 128 characters')
+  .refine((password) => {
+    const { isValid } = validatePasswordStrength(password);
+    return isValid;
+  }, {
+    message: 'Password must include uppercase, lowercase, numbers, and special characters'
+  });
+
+export const authSchema = z.object({
+  email: z.string()
+    .email('Please enter a valid email address')
+    .max(255, 'Email must not exceed 255 characters'),
+  password: passwordSchema,
+  displayName: z.string()
+    .min(2, 'Display name must be at least 2 characters')
+    .max(100, 'Display name must not exceed 100 characters')
+    .regex(/^[a-zA-Z\s'-]+$/, 'Display name can only contain letters, spaces, hyphens, and apostrophes')
+    .optional()
+});
 
 export const formatPhoneNumber = (phone: string): string => {
   const cleaned = phone.replace(/\D/g, '');

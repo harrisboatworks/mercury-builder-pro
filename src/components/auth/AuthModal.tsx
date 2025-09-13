@@ -6,6 +6,8 @@ import { Label } from '@/components/ui/label';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useAuth } from './AuthProvider';
 import { Loader2, Mail, Lock, User } from 'lucide-react';
+import { PasswordStrength, validatePasswordStrength } from '@/components/ui/password-strength';
+import { authSchema } from '@/lib/validation';
 
 interface AuthModalProps {
   open: boolean;
@@ -30,6 +32,7 @@ export const AuthModal = ({
   const [displayName, setDisplayName] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
   
   const { signIn, signUp } = useAuth();
 
@@ -37,8 +40,36 @@ export const AuthModal = ({
     e.preventDefault();
     setLoading(true);
     setError(null);
+    setValidationErrors({});
 
     try {
+      // Enhanced validation for signup
+      if (mode === 'signup') {
+        const validation = authSchema.safeParse({
+          email,
+          password,
+          displayName: displayName || undefined
+        });
+
+        if (!validation.success) {
+          const errors: Record<string, string> = {};
+          validation.error.errors.forEach((err) => {
+            errors[err.path[0] as string] = err.message;
+          });
+          setValidationErrors(errors);
+          setLoading(false);
+          return;
+        }
+
+        // Additional password strength check
+        const { isValid } = validatePasswordStrength(password);
+        if (!isValid) {
+          setValidationErrors({ password: 'Password does not meet security requirements' });
+          setLoading(false);
+          return;
+        }
+      }
+
       let result;
       if (mode === 'signup') {
         result = await signUp(email, password, displayName);
@@ -55,6 +86,7 @@ export const AuthModal = ({
         setEmail('');
         setPassword('');
         setDisplayName('');
+        setValidationErrors({});
       }
     } catch (err: any) {
       setError(err.message || 'An unexpected error occurred');
@@ -66,6 +98,7 @@ export const AuthModal = ({
   const toggleMode = () => {
     setMode(mode === 'signin' ? 'signup' : 'signin');
     setError(null);
+    setValidationErrors({});
   };
 
   return (
@@ -99,6 +132,9 @@ export const AuthModal = ({
                   required
                 />
               </div>
+              {validationErrors.displayName && (
+                <p className="text-sm text-destructive">{validationErrors.displayName}</p>
+              )}
             </div>
           )}
 
@@ -116,6 +152,9 @@ export const AuthModal = ({
                 required
               />
             </div>
+            {validationErrors.email && (
+              <p className="text-sm text-destructive">{validationErrors.email}</p>
+            )}
           </div>
 
           <div className="space-y-2">
@@ -125,14 +164,20 @@ export const AuthModal = ({
               <Input
                 id="password"
                 type="password"
-                placeholder="Enter your password"
+                placeholder={mode === 'signup' ? 'Create a strong password' : 'Enter your password'}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="pl-10"
                 required
-                minLength={6}
+                minLength={mode === 'signup' ? 12 : 6}
               />
             </div>
+            {validationErrors.password && (
+              <p className="text-sm text-destructive">{validationErrors.password}</p>
+            )}
+            {mode === 'signup' && (
+              <PasswordStrength password={password} />
+            )}
           </div>
 
           {error && (

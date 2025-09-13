@@ -7,6 +7,7 @@ const navItems = [
   { label: "Promotions", to: "/admin/promotions" },
   { label: "Financing", to: "/admin/financing" },
   { label: "Motor Images", to: "/admin/motor-images" },
+  { label: "Security", to: "/admin/security" },
 ];
 
 export default function AdminNav() {
