@@ -78,7 +78,7 @@ function generateQuoteDeliveryEmail(data: QuoteEmailRequest): string {
           
           <div class="footer">
             <p>This quote was generated automatically. Please don't reply to this email address.</p>
-            <p>For questions, contact us at sales@mercurymotors.com or (555) 123-4567</p>
+            <p>For questions, contact us at support@resend.dev or (555) 123-4567</p>
           </div>
         </div>
       </body>
@@ -142,9 +142,9 @@ function generateFollowUpEmail(data: QuoteEmailRequest): string {
             Mercury Motor Specialist</p>
           </div>
           
-          <div class="footer">
-            <p>Questions? Contact Mike directly at mike@mercurymotors.com or (555) 123-4567</p>
-          </div>
+           <div class="footer">
+             <p>Questions? Contact our team at support@resend.dev or (555) 123-4567</p>
+           </div>
         </div>
       </body>
     </html>
@@ -194,7 +194,7 @@ serve(async (req) => {
 
     // Send email via Resend
     const emailResponse = await resend.emails.send({
-      from: 'Mercury Motors <quotes@mercurymotors.com>',
+      from: 'Mercury Motors <onboarding@resend.dev>',
       to: [emailData.customerEmail],
       subject: subject,
       html: htmlContent,
