@@ -426,6 +426,34 @@ export default function MotorDetailsSheet({
                 <h3 className="font-semibold text-base text-slate-900 dark:text-white">Technical Specifications</h3>
                 <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-3">
                   <div className="grid gap-2">
+                    {/* Add parsed model code specs first */}
+                    {hp && (() => {
+                      const decoded = decodeModelName(title);
+                      const shaftInfo = decoded.find(item => item.code === 'XL' || item.code === 'L' || item.code === 'S' || item.code === 'XX');
+                      const startInfo = decoded.find(item => item.code === 'M' || item.code === 'E');
+                      
+                      return (
+                        <>
+                          {shaftInfo && (
+                            <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
+                              <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Shaft Length</span>
+                              <span className="text-sm text-slate-900 dark:text-white font-medium">
+                                {shaftInfo.meaning}
+                              </span>
+                            </div>
+                          )}
+                          {startInfo && (
+                            <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
+                              <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Starting</span>
+                              <span className="text-sm text-slate-900 dark:text-white font-medium">
+                                {startInfo.code === 'M' ? 'Manual' : 'Electric'}
+                              </span>
+                            </div>
+                          )}
+                        </>
+                      );
+                    })()}
+                    
                     {motorSpecs && <>
                         <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
                           <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Engine Type</span>
@@ -525,14 +553,26 @@ export default function MotorDetailsSheet({
                 </h2>
                 <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-4 rounded-lg">
                   <ul className="text-sm space-y-1">
-                    {motorSpecs && <>
-                        <li className="flex items-start">
-                          <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
-                          <div className="flex-1 text-slate-700 dark:text-slate-300">
-                            <span className="font-medium">Available Transom Heights</span>
-                            <span className="text-slate-500 dark:text-slate-400 ml-2">({motorSpecs.transom_heights.join(', ')})</span>
-                          </div>
-                        </li>
+                    {/* Use parsed model code for required transom height */}
+                    {hp && (() => {
+                      const decoded = decodeModelName(title);
+                      const shaftInfo = decoded.find(item => item.code === 'XL' || item.code === 'L' || item.code === 'S' || item.code === 'XX');
+                      
+                      if (shaftInfo) {
+                        return (
+                          <li className="flex items-start">
+                            <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
+                            <div className="flex-1 text-slate-700 dark:text-slate-300">
+                              <span className="font-medium">Required Transom Height</span>
+                              <span className="text-slate-500 dark:text-slate-400 ml-2">({shaftInfo.meaning})</span>
+                            </div>
+                          </li>
+                        );
+                      }
+                      return null;
+                    })()}
+                    
+                    {motorSpecs && (
                         <li className="flex items-start">
                           <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
                           <div className="flex-1 text-slate-700 dark:text-slate-300">
@@ -540,7 +580,7 @@ export default function MotorDetailsSheet({
                             <span className="text-slate-500 dark:text-slate-400 ml-2">({motorSpecs.weight_kg} kg dry weight)</span>
                           </div>
                         </li>
-                      </>}
+                    )}
                     {additionalRequirements.map((requirement, i) => <li key={`req-${i}`} className="flex items-start">
                         <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
                         <div className="flex-1 text-slate-700 dark:text-slate-300">

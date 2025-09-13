@@ -516,7 +516,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
     
     if (manualStart) return 'Manual';
     if (electricStart) return 'Electric';
-    return 'Electric'; // Default for higher HP motors
+    return 'Manual'; // Default fallback
   };
 
   // Dynamic specifications using actual selectedMotor data FIRST
@@ -625,18 +625,9 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
     return selectedMotorSpecs;
   };
    
-  // Get shaft length from model code and Mercury specs
+  // Get shaft length from model code (primary) then Mercury specs (fallback)
   const getShaftLength = (model: string) => {
-    // First, try to get shaft length from Mercury specs database
-    if (mercurySpecs?.transom_heights && mercurySpecs.transom_heights.length > 0) {
-      const primaryHeight = mercurySpecs.transom_heights[0]; // Use primary/first height
-      if (primaryHeight === 'S') return '15" (Short)';
-      if (primaryHeight === 'L') return '20" (Long)';
-      if (primaryHeight === 'XL') return '25" (X-Long)';
-      if (primaryHeight === 'XXL') return '30" (XX-Long)';
-    }
-    
-    // Fallback to model code parsing if no Mercury specs available
+    // Use model code parsing as primary method (matches "About This Motor" logic)
     const decoded = decodeModelName(model);
     const shaftInfo = decoded.find(item => item.code === 'XL' || item.code === 'L' || item.code === 'S' || item.code === 'XX');
     
@@ -647,7 +638,16 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
       if (shaftInfo.code === 'XX') return '30" (XX-Long)';
     }
     
-    // Default based on HP if no shaft info in model
+    // Fallback to Mercury specs database if no shaft info in model code
+    if (mercurySpecs?.transom_heights && mercurySpecs.transom_heights.length > 0) {
+      const primaryHeight = mercurySpecs.transom_heights[0]; // Use primary/first height
+      if (primaryHeight === 'S') return '15" (Short)';
+      if (primaryHeight === 'L') return '20" (Long)';
+      if (primaryHeight === 'XL') return '25" (X-Long)';
+      if (primaryHeight === 'XXL') return '30" (XX-Long)';
+    }
+    
+    // Default based on HP if no shaft info available
     return hpNumber <= 5 ? '15" (Short)' : '20" (Long)';
   };
   
