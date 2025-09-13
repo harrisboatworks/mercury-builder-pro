@@ -1,11 +1,11 @@
-import React from 'react';
+import { supabase } from "@/integrations/supabase/client";
+import React, { useState, useEffect } from 'react';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption } from '@/lib/motor-helpers';
 import { findMotorSpecs as findMercurySpecs } from '@/lib/data/mercury-motors';
 import { calculateMonthlyPayment, getFinancingDisplay, calculatePaymentWithFrequency, getFinancingTerm } from '@/lib/finance';
 import { getRandomReview, getAllMercuryReviews } from '@/lib/data/mercury-reviews';
-import { supabase } from '@/integrations/supabase/client';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
@@ -428,6 +428,8 @@ interface CleanSpecSheetPDFProps {
 }
 
 const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
+  const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
+  
   const currentDate = new Date().toLocaleDateString('en-US', { 
     year: 'numeric', 
     month: 'long', 
@@ -439,6 +441,31 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
   
   // Get actual Mercury motor specifications 
   const mercurySpecs = findMercurySpecs(hpNumber, specData.motorModel);
+
+  // Fetch warranty pricing from database
+  useEffect(() => {
+    const fetchWarrantyPricing = async () => {
+      try {
+        const { data } = await supabase
+          .from('warranty_pricing')
+          .select('*')
+          .lte('hp_min', hpNumber)
+          .gte('hp_max', hpNumber)
+          .single();
+        
+        setWarrantyPricing(data);
+      } catch (error) {
+        console.error('Error fetching warranty pricing:', error);
+        // Set fallback pricing if database fails
+        setWarrantyPricing({
+          year_4_price: Math.round(hpNumber <= 15 ? 247 : hpNumber <= 50 ? 576 : 1149),
+          year_5_price: Math.round(hpNumber <= 15 ? 293 : hpNumber <= 50 ? 684 : 1365),
+        });
+      }
+    };
+    
+    fetchWarrantyPricing();
+  }, [hpNumber]);
 
   // Helper Functions for Enhancements
   const getCategoryReview = (hp: number) => {
@@ -465,15 +492,21 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
     return '20" (Standard)';
   };
 
-  const getWarrantyPrice = (hp: number, years: number) => {
-    // Fixed pricing structure based on HP ranges - smaller motors should be cheaper
-    let basePrice = 0;
-    if (hp <= 15) basePrice = 160;      // Small motors: $160 base
-    else if (hp <= 50) basePrice = 280;  // Mid-range: $280 base
-    else if (hp <= 115) basePrice = 400; // Large: $400 base
-    else basePrice = 600;                // High performance: $600 base
+  const getWarrantyPrice = (years: number) => {
+    if (!warrantyPricing) return 'Loading...';
     
-    return Math.round(basePrice * years * 0.8); // Multiply by years and discount factor
+    // Get price from database based on year
+    switch (years) {
+      case 4:
+        return warrantyPricing.year_4_price || 'N/A';
+      case 5:
+        return warrantyPricing.year_5_price || 'N/A';
+      case 6:
+        // Calculate 6-year as 5-year + 20% (typical industry practice)
+        return warrantyPricing.year_5_price ? Math.round(warrantyPricing.year_5_price * 1.2) : 'N/A';
+      default:
+        return 'N/A';
+    }
   };
   
   // Model code decoder with XL, L, H
@@ -932,9 +965,9 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               
               {/* Extended Warranty Options */}
               <Text style={styles.warrantyTitle}>Extended Coverage Options:</Text>
-              <Text style={styles.warrantyOption}>• 4 Year: +${getWarrantyPrice(hpNumber, 4)}</Text>
-              <Text style={styles.warrantyOption}>• 5 Year: +${getWarrantyPrice(hpNumber, 5)}</Text>
-              <Text style={styles.warrantyOption}>• 6 Year: +${getWarrantyPrice(hpNumber, 6)}</Text>
+              <Text style={styles.warrantyOption}>• 4 Year: +${getWarrantyPrice(4)}</Text>
+              <Text style={styles.warrantyOption}>• 5 Year: +${getWarrantyPrice(5)}</Text>
+              <Text style={styles.warrantyOption}>• 6 Year: +${getWarrantyPrice(6)}</Text>
               
               <Text style={styles.warrantyItem}>• Service: Every 100 hrs or annually</Text>
               <Text style={styles.warrantyItem}>• Local service at {COMPANY_INFO.name}</Text>
