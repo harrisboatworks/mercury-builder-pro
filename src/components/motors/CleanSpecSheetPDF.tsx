@@ -31,11 +31,11 @@ const styles = StyleSheet.create({
     gap: 15,
   },
   harrisLogo: {
-    width: 60,
+    width: 80,
     height: 'auto',
   },
   mercuryLogo: {
-    width: 70,
+    width: 100,
     height: 'auto',
   },
   headerRight: {
@@ -419,30 +419,34 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
     day: 'numeric' 
   });
 
-  // Model code decoder function
+  // Model code decoder function - fixed order for ELPT
   const decodeModelCode = (model: string) => {
     const codes = [];
-    if (model.includes('M')) codes.push('M = Manual Start');
-    if (model.includes('H')) codes.push('H = Tiller Handle');
+    // Decode in the order they appear (ELPT)
     if (model.includes('E')) codes.push('E = Electric Start');
-    if (model.includes('R')) codes.push('R = Remote Control');
+    if (model.includes('L')) codes.push('L = Long Shaft');
+    if (model.includes('P')) codes.push('P = Power Trim');
+    if (model.includes('T')) codes.push('T = Tiller Handle');
+    // Additional codes
     if (model.includes('CT')) codes.push('CT = Command Thrust');
     if (model.includes('XS')) codes.push('XS = Extra Short Shaft');
-    if (model.includes('L')) codes.push('L = Long Shaft');
+    if (model.includes('M')) codes.push('M = Manual Start');
+    if (model.includes('H')) codes.push('H = Tiller Handle');
+    if (model.includes('R')) codes.push('R = Remote Control');
     return codes.join(' | ');
   };
 
-  // Enhanced specifications with consistent weight
-  const actualWeight = specData.specifications?.weight || '58 lbs (26 kg)';
+  // Enhanced specifications with consistent weight formatting
+  const actualWeight = specData.specifications?.weight || '121 lbs (55 kg)';
   const enhancedSpecs = {
     'Weight': actualWeight,
-    'Displacement': specData.specifications?.displacement || '85 cc',
-    'Gear Ratio': specData.specifications?.gear_ratio || '2.15:1',
-    'Fuel System': specData.specifications?.fuel_system || 'Carburetor',
-    'Oil Type': specData.specifications?.oil_type || 'Mercury 25W-40 4-Stroke Marine Oil',
-    'Noise Level': specData.specifications?.noise_level || '78 dB @ 1000 RPM',
-    'Control Type': specData.specifications?.control_type || 'Tiller Handle',
-    'Shaft Options': specData.specifications?.shaft_options || '15" (S), 20" (L) available',
+    'Displacement': specData.specifications?.displacement || '209.5 cc',
+    'Gear Ratio': specData.specifications?.gear_ratio || '2.29:1',
+    'Fuel System': specData.specifications?.fuel_system || 'EFI (Electronic Fuel Injection)',
+    'Oil Type': specData.specifications?.oil_type || '25W-40 4-Stroke Marine Oil',
+    'Noise Level': specData.specifications?.noise_level || '68 dB @ WOT',
+    'Control Type': specData.specifications?.control_type || 'Tiller Handle with Power Trim',
+    'Shaft Length': specData.specifications?.shaft_options || '25" (X-Long)',
     ...specData.specifications
   };
 
@@ -523,18 +527,12 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           </View>
         </View>
 
-        {/* Motor Header with Image */}
-        <View style={styles.motorHeaderWithImage}>
-          <View style={styles.motorInfo}>
-            <Text style={styles.motorTitle}>{specData.motorModel}</Text>
-            <Text style={styles.motorSubtitle}>
-              {specData.modelYear} Mercury Marine {specData.category}
-            </Text>
-          </View>
-          <View style={styles.motorImageContainer}>
-            <Text style={styles.motorImagePlaceholder}>Motor Image</Text>
-            <Text style={styles.motorImageText}>150-200HP Mercury</Text>
-          </View>
+        {/* Motor Header - Simplified */}
+        <View style={styles.motorHeader}>
+          <Text style={styles.motorTitle}>{specData.motorModel}</Text>
+          <Text style={styles.motorSubtitle}>
+            {specData.modelYear} Mercury Marine {specData.category}
+          </Text>
         </View>
 
         {/* Model Code Decoder */}
@@ -560,7 +558,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           </View>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>WEIGHT</Text>
-            <Text style={styles.overviewValue}>{actualWeight.split(' ')[0]}</Text>
+            <Text style={styles.overviewValue}>{actualWeight.split(' ')[0]} {actualWeight.split(' ')[1]}</Text>
           </View>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>START TYPE</Text>
@@ -616,36 +614,18 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               </View>
             </View>
 
-            {/* Visual Features */}
+            {/* Key Features - Clean Format */}
             <View style={styles.section}>
               <View style={styles.sectionHeader}>
                 <Text style={styles.sectionTitle}>Key Features</Text>
               </View>
-              <View style={styles.featureGrid}>
-                <View style={styles.featureItem}>
-                  <Text style={styles.featureIcon}>🔧</Text>
-                  <Text style={styles.featureText}>Low Maintenance</Text>
-                </View>
-                <View style={styles.featureItem}>
-                  <Text style={styles.featureIcon}>🎛️</Text>
-                  <Text style={styles.featureText}>360° Steering</Text>
-                </View>
-                <View style={styles.featureItem}>
-                  <Text style={styles.featureIcon}>⚡</Text>
-                  <Text style={styles.featureText}>Electric Start</Text>
-                </View>
-                <View style={styles.featureItem}>
-                  <Text style={styles.featureIcon}>🛡️</Text>
-                  <Text style={styles.featureText}>Advanced Protection</Text>
-                </View>
-                <View style={styles.featureItem}>
-                  <Text style={styles.featureIcon}>🔀</Text>
-                  <Text style={styles.featureText}>Tilt & Lock</Text>
-                </View>
-                <View style={styles.featureItem}>
-                  <Text style={styles.featureIcon}>💧</Text>
-                  <Text style={styles.featureText}>Fresh Water Flush</Text>
-                </View>
+              <View style={styles.bulletList}>
+                <Text style={styles.bulletItem}>✓ Low Maintenance - Easy access service points</Text>
+                <Text style={styles.bulletItem}>✓ 360° Steering - Full rotation control</Text>
+                <Text style={styles.bulletItem}>✓ Electric Start - Push-button convenience</Text>
+                <Text style={styles.bulletItem}>✓ Tilt & Lock - Multiple positions</Text>
+                <Text style={styles.bulletItem}>✓ Advanced Protection - Corrosion resistant</Text>
+                <Text style={styles.bulletItem}>✓ Fresh Water Flush - Built-in port</Text>
               </View>
             </View>
           </View>
