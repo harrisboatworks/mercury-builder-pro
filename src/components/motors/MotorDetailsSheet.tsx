@@ -61,6 +61,7 @@ export default function MotorDetailsSheet({
   const [isLoading, setIsLoading] = useState(false);
   const [specSheetLoading, setSpecSheetLoading] = useState(false);
   const [generatedSpecUrl, setGeneratedSpecUrl] = useState<string | null>(null);
+  const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
   const isMobile = useIsMobile();
   const { promo: activePromo } = useActiveFinancingPromo();
   const { setScrollLock } = useScrollCoordination();
@@ -233,7 +234,6 @@ export default function MotorDetailsSheet({
           'Oil Type': 'Mercury 25W-40 4-Stroke Marine Oil',
           // REMOVED hardcoded Noise Level - only show if motor actually has this data
           'Control Type': isTillerMotor(title || '') ? 'Tiller Handle' : (motor.steering_type || 'Remote Control'),
-          'Shaft Options': 'Multiple shaft lengths available',
           'Max RPM': motorSpecs?.max_rpm || motor.full_throttle_rpm,
           'Starting': motor.starting_type || 'Electric',
           'Cylinders': motor.cylinders,
@@ -274,7 +274,7 @@ export default function MotorDetailsSheet({
       }
 
       // Generate PDF using React PDF
-      const blob = await pdf(<CleanSpecSheetPDF specData={specData} />).toBlob();
+      const blob = await pdf(<CleanSpecSheetPDF specData={specData} warrantyPricing={warrantyPricing} />).toBlob();
       
       // Create download link
       const url = URL.createObjectURL(blob);
@@ -307,6 +307,34 @@ export default function MotorDetailsSheet({
 
   // Find matching Mercury specs - Full specs available for AI assistant
   const motorSpecs = motor ? findMotorSpecs(typeof hp === 'string' ? parseInt(hp) : hp || 0, title) : undefined;
+
+  // Fetch warranty pricing for PDF generation
+  useEffect(() => {
+    const fetchWarrantyPricing = async () => {
+      const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
+      try {
+        const { data } = await supabase
+          .from('warranty_pricing')
+          .select('*')
+          .lte('hp_min', hpValue)
+          .gte('hp_max', hpValue)
+          .single();
+        
+        setWarrantyPricing(data);
+      } catch (error) {
+        console.error('Error fetching warranty pricing:', error);
+        // Set fallback pricing if database fails
+        setWarrantyPricing({
+          year_4_price: Math.round(hpValue <= 15 ? 247 : hpValue <= 50 ? 576 : 1149),
+          year_5_price: Math.round(hpValue <= 15 ? 293 : hpValue <= 50 ? 684 : 1365),
+        });
+      }
+    };
+    
+    if (motor?.id) {
+      fetchWarrantyPricing();
+    }
+  }, [hp, motor?.id]);
   if (!open) return null;
   const displayFeatures = Array.isArray(features) ? features : [];
   const cleanedDescription = String(description || '').replace(/Can't find what you're looking for\?[\s\S]*/i, '').replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '').trim();

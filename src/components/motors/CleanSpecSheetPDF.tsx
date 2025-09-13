@@ -1,5 +1,4 @@
-import { supabase } from "@/integrations/supabase/client";
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption } from '@/lib/motor-helpers';
@@ -124,9 +123,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   section: {
-    marginBottom: 6,
+    marginBottom: 4,
     backgroundColor: '#f9fafb',
-    padding: 5,
+    padding: 4,
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#e5e7eb',
@@ -344,11 +343,11 @@ const styles = StyleSheet.create({
   },
   // Customer Review Styles
   reviewSection: {
-    marginTop: 8,
-    padding: 8,
+    marginTop: 6,
+    padding: 6,
     backgroundColor: '#f8f9fa',
     borderRadius: 4,
-    marginBottom: 6,
+    marginBottom: 4,
   },
   stars: {
     fontSize: 12,
@@ -373,15 +372,15 @@ const styles = StyleSheet.create({
   availabilityRow: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginBottom: 6,
+    marginBottom: 4,
   },
   inStock: {
-    fontSize: 9,
+    fontSize: 8,
     color: '#28a745',
     fontWeight: 'bold',
   },
   specialOrder: {
-    fontSize: 9,
+    fontSize: 8,
     color: '#ffc107',
   },
   // Accessories Styles
@@ -425,10 +424,10 @@ export interface CleanSpecSheetData {
 
 interface CleanSpecSheetPDFProps {
   specData: CleanSpecSheetData;
+  warrantyPricing?: any;
 }
 
-const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
-  const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
+const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrantyPricing }) => {
   
   const currentDate = new Date().toLocaleDateString('en-US', { 
     year: 'numeric', 
@@ -442,30 +441,6 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
   // Get actual Mercury motor specifications 
   const mercurySpecs = findMercurySpecs(hpNumber, specData.motorModel);
 
-  // Fetch warranty pricing from database
-  useEffect(() => {
-    const fetchWarrantyPricing = async () => {
-      try {
-        const { data } = await supabase
-          .from('warranty_pricing')
-          .select('*')
-          .lte('hp_min', hpNumber)
-          .gte('hp_max', hpNumber)
-          .single();
-        
-        setWarrantyPricing(data);
-      } catch (error) {
-        console.error('Error fetching warranty pricing:', error);
-        // Set fallback pricing if database fails
-        setWarrantyPricing({
-          year_4_price: Math.round(hpNumber <= 15 ? 247 : hpNumber <= 50 ? 576 : 1149),
-          year_5_price: Math.round(hpNumber <= 15 ? 293 : hpNumber <= 50 ? 684 : 1365),
-        });
-      }
-    };
-    
-    fetchWarrantyPricing();
-  }, [hpNumber]);
 
   // Helper Functions for Enhancements
   const getCategoryReview = (hp: number) => {
@@ -485,15 +460,17 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
     return review ? `${review.reviewer}, ${review.location}` : getCategoryReview(hp).author;
   };
 
-  const getRequiredTransom = (modelCode: string) => {
-    if (modelCode.includes('XL')) return '25" (Extra Long)';
-    if (modelCode.includes('L') && !modelCode.includes('XL')) return '20" (Long)';
-    if (modelCode.includes('S')) return '15" (Short)';
-    return '20" (Standard)';
-  };
 
   const getWarrantyPrice = (years: number) => {
-    if (!warrantyPricing) return 'Loading...';
+    if (!warrantyPricing) {
+      // Fallback pricing if not provided
+      const fallbackPrices = {
+        4: hpNumber <= 15 ? 247 : hpNumber <= 50 ? 576 : 1149,
+        5: hpNumber <= 15 ? 293 : hpNumber <= 50 ? 684 : 1365,
+        6: hpNumber <= 15 ? 352 : hpNumber <= 50 ? 821 : 1638
+      };
+      return fallbackPrices[years as keyof typeof fallbackPrices] || 'N/A';
+    }
     
     // Get price from database based on year
     switch (years) {
@@ -648,8 +625,18 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
     return selectedMotorSpecs;
   };
    
-  // Get shaft length from model code
+  // Get shaft length from model code and Mercury specs
   const getShaftLength = (model: string) => {
+    // First, try to get shaft length from Mercury specs database
+    if (mercurySpecs?.transom_heights && mercurySpecs.transom_heights.length > 0) {
+      const primaryHeight = mercurySpecs.transom_heights[0]; // Use primary/first height
+      if (primaryHeight === 'S') return '15" (Short)';
+      if (primaryHeight === 'L') return '20" (Long)';
+      if (primaryHeight === 'XL') return '25" (X-Long)';
+      if (primaryHeight === 'XXL') return '30" (XX-Long)';
+    }
+    
+    // Fallback to model code parsing if no Mercury specs available
     const decoded = decodeModelName(model);
     const shaftInfo = decoded.find(item => item.code === 'XL' || item.code === 'L' || item.code === 'S' || item.code === 'XX');
     
@@ -933,7 +920,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
                 {mercurySpecs?.weight_kg && (
                   <Text style={styles.bulletItem}>• Dry Weight: {mercurySpecs.weight_kg} kg ({Math.round(mercurySpecs.weight_kg * 2.20462)} lbs)</Text>
                 )}
-                <Text style={styles.bulletItem}>• Required Transom Height: {getRequiredTransom(specData.motorModel)}</Text>
+                <Text style={styles.bulletItem}>• Required Transom Height: {getShaftLength(specData.motorModel)}</Text>
                 <Text style={styles.bulletItem}>• Mercury controls & cables: $800-1,000 (depending on configuration)</Text>
                 <Text style={styles.bulletItem}>• 12V marine battery: $180</Text>
               </View>
@@ -944,13 +931,6 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           {/* Right Column */}
           <View style={styles.rightColumn}>
 
-            {/* Popular Add-Ons Section */}
-            <View style={styles.accessoriesSection}>
-              <Text style={styles.sectionTitle}>Popular Add-Ons</Text>
-              <Text style={styles.accessoryItem}>• Stainless prop upgrade: $295</Text>
-              <Text style={styles.accessoryItem}>• Digital gauges: $495</Text>
-              <Text style={styles.accessoryItem}>• Extended warranty: See options above</Text>
-            </View>
 
             {/* Warranty & Service - Enhanced */}
             <View style={styles.warrantyBox}>
