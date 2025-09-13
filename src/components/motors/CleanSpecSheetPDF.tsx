@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   page: {
     flexDirection: 'column',
     backgroundColor: '#ffffff',
-    padding: 20,
+    padding: 12,
     fontFamily: 'Helvetica',
     fontSize: 9,
     color: '#374151',
@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: 20,
-    paddingBottom: 12,
+    marginBottom: 10,
+    paddingBottom: 8,
     borderBottomWidth: 1,
     borderBottomColor: '#e5e7eb',
   },
@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
   },
   motorHeader: {
     backgroundColor: '#f8fafc',
-    padding: 12,
-    marginBottom: 15,
+    padding: 8,
+    marginBottom: 8,
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#e2e8f0',
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   overviewBoxes: {
     flexDirection: 'row',
     gap: 8,
-    marginBottom: 15,
+    marginBottom: 8,
   },
   overviewBox: {
     flex: 1,
@@ -122,9 +122,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   section: {
-    marginBottom: 12,
+    marginBottom: 8,
     backgroundColor: '#f9fafb',
-    padding: 8,
+    padding: 6,
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#e5e7eb',
@@ -170,11 +170,11 @@ const styles = StyleSheet.create({
   },
   warrantyBox: {
     backgroundColor: '#f0fdf4',
-    padding: 8,
+    padding: 6,
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#bbf7d0',
-    marginBottom: 12,
+    marginBottom: 8,
   },
   warrantyTitle: {
     fontSize: 10,
@@ -190,11 +190,11 @@ const styles = StyleSheet.create({
   },
   financingSection: {
     backgroundColor: '#f8fafc',
-    padding: 8,
+    padding: 6,
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#e2e8f0',
-    marginBottom: 12,
+    marginBottom: 8,
   },
   financingTitle: {
     fontSize: 10,
@@ -209,11 +209,11 @@ const styles = StyleSheet.create({
   },
   modelCodeBox: {
     backgroundColor: '#f0f9ff',
-    padding: 8,
+    padding: 6,
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#0ea5e9',
-    marginBottom: 15,
+    marginBottom: 8,
   },
   modelCodeTitle: {
     fontSize: 9,
@@ -273,8 +273,8 @@ const styles = StyleSheet.create({
     color: '#374151',
   },
   contactFooter: {
-    marginTop: 20,
-    paddingTop: 15,
+    marginTop: 8,
+    paddingTop: 8,
     borderTopWidth: 1,
     borderTopColor: '#e5e7eb',
   },
@@ -669,26 +669,18 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
             </View>
 
 
-            {/* Professional Financing Section */}
+            {/* Dynamic Motor-Specific Financing Section */}
             <View style={styles.financingSection}>
               <Text style={styles.financingTitle}>Financing Available</Text>
               {specData.motorPrice && specData.motorPrice > 1000 ? (
                 <>
-                  {(() => {
-                    const priceWithHST = specData.motorPrice * 1.13;
-                    const { payment } = calculateMonthlyPayment(priceWithHST, specData.currentPromotion?.rate || null);
-                    return (
-                      <>
-                        <Text style={styles.financingItem}>From ~${payment}/month</Text>
-                        {specData.currentPromotion?.rate === 0 ? (
-                          <Text style={styles.financingItem}>0% interest for 12 months OAC</Text>
-                        ) : (
-                          <Text style={styles.financingItem}>Low rates available OAC</Text>
-                        )}
-                        <Text style={styles.financingItem}>*Price plus HST • OAC</Text>
-                      </>
-                    );
-                  })()}
+                  <Text style={styles.financingItem}>From ${Math.round(specData.motorPrice * 0.027)}/month</Text>
+                  {specData.currentPromotion?.rate === 0 ? (
+                    <Text style={styles.financingItem}>0% interest promo available OAC</Text>
+                  ) : (
+                    <Text style={styles.financingItem}>Low rates available OAC</Text>
+                  )}
+                  <Text style={styles.financingItem}>*Price plus HST • OAC</Text>
                 </>
               ) : (
                 <Text style={styles.financingItem}>Contact for pricing and financing options</Text>
