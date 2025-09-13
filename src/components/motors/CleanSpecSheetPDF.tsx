@@ -488,15 +488,26 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
     // Start with selectedMotor specifications as primary source
     const selectedMotorSpecs = { ...specData.specifications };
     
-    // Add Mercury specs as secondary source only if data missing
+    // Debug logging
+    console.log('🔍 PDF Spec Debug:', {
+      selectedMotorSpecs,
+      mercurySpecs,
+      hpNumber,
+      motorModel: specData.motorModel
+    });
+    
+    // Force populate critical specs from Mercury data if available
     if (mercurySpecs) {
-      if (!selectedMotorSpecs['Weight']) {
+      // Always populate weight if mercury specs available
+      if (mercurySpecs.weight_kg) {
         selectedMotorSpecs['Weight'] = `${Math.round(mercurySpecs.weight_kg * 2.20462)} lbs (${mercurySpecs.weight_kg} kg)`;
       }
-      if (!selectedMotorSpecs['Displacement']) {
+      // Always populate displacement if available
+      if (mercurySpecs.displacement) {
         selectedMotorSpecs['Displacement'] = mercurySpecs.displacement;
       }
-      if (!selectedMotorSpecs['Gear Ratio']) {
+      // Always populate gear ratio if available
+      if (mercurySpecs.gear_ratio) {
         selectedMotorSpecs['Gear Ratio'] = mercurySpecs.gear_ratio;
       }
       if (!selectedMotorSpecs['Cylinders']) {
@@ -526,7 +537,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
     
     return selectedMotorSpecs;
   };
-  
+   
   // Get shaft length from model code
   const getShaftLength = (model: string) => {
     const decoded = decodeModelName(model);
@@ -551,6 +562,10 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
   };
 
   const enhancedSpecs = getEnhancedSpecs();
+  
+  // Debug final specs
+  console.log('✅ Final Enhanced Specs:', enhancedSpecs);
+  console.log('📊 First 8 specs for display:', Object.entries(enhancedSpecs).slice(0, 8));
 
   const features = specData.features || [];
   const accessories = specData.includedAccessories || [];
