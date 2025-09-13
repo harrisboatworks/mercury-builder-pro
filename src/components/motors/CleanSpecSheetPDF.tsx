@@ -370,9 +370,10 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   trustBadgeIcon: {
-    fontSize: 12,
+    fontSize: 10,
     color: '#ffffff',
     marginBottom: 2,
+    fontWeight: 'bold',
   },
   trustBadgeText: {
     fontSize: 8,
@@ -635,7 +636,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           <View style={styles.motorImageContainer}>
             {specData.image_url ? (
               <Image 
-                style={{ width: 180, height: 120, objectFit: 'contain' }}
+                style={{ width: 180, height: 120 }}
                 src={specData.image_url}
               />
             ) : (
@@ -846,12 +847,12 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           {/* Trust Badges */}
           <View style={styles.trustBadgesRow}>
             <View style={styles.trustBadge}>
-              <Text style={styles.trustBadgeIcon}>🏆</Text>
-              <Text style={styles.trustBadgeText}>Award-Winning Service</Text>
+              <Text style={styles.trustBadgeIcon}>AWARD</Text>
+              <Text style={styles.trustBadgeText}>Service Excellence</Text>
             </View>
             <View style={styles.trustBadge}>
-              <Text style={styles.trustBadgeIcon}>✓</Text>
-              <Text style={styles.trustBadgeText}>Certified Repower Center</Text>
+              <Text style={styles.trustBadgeIcon}>CERTIFIED</Text>
+              <Text style={styles.trustBadgeText}>Repower Center</Text>
             </View>
           </View>
           
