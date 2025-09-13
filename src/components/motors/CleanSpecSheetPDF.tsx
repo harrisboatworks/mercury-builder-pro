@@ -275,8 +275,8 @@ const styles = StyleSheet.create({
     color: '#374151',
   },
   contactFooter: {
-    marginTop: 8,
-    paddingTop: 8,
+    marginTop: 6,
+    paddingTop: 6,
     borderTopWidth: 1,
     borderTopColor: '#e5e7eb',
   },
@@ -344,11 +344,11 @@ const styles = StyleSheet.create({
   },
   // Customer Review Styles
   reviewSection: {
-    marginTop: 10,
+    marginTop: 8,
     padding: 8,
     backgroundColor: '#f8f9fa',
     borderRadius: 4,
-    marginBottom: 8,
+    marginBottom: 6,
   },
   stars: {
     fontSize: 12,
@@ -881,7 +881,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
             <View style={styles.reviewSection}>
               <Text style={styles.sectionTitle}>Customer Review</Text>
               <View>
-                <Text style={styles.stars}>⭐⭐⭐⭐⭐</Text>
+                <Text style={styles.stars}>★★★★★</Text>
                 <Text style={styles.reviewText}>
                   "{getReviewText(hpNumber)}"
                 </Text>
@@ -906,13 +906,6 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               </View>
             </View>
 
-            {/* Popular Accessories Section */}
-            <View style={styles.accessoriesSection}>
-              <Text style={styles.sectionTitle}>Popular Add-Ons</Text>
-              <Text style={styles.accessoryItem}>• Stainless prop upgrade: $295</Text>
-              <Text style={styles.accessoryItem}>• Digital gauges: $495</Text>
-              <Text style={styles.accessoryItem}>• Extended warranty: See options above</Text>
-            </View>
           </View>
 
           {/* Right Column */}
@@ -1010,39 +1003,41 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
             }
           </Text>
 
-          {/* Stock Status - Only if verifiable */}
-          {specData.stockStatus && (
-            <Text style={styles.stockStatus}>
-              {specData.stockStatus.toLowerCase().includes('stock') ? 
-                "✓ In stock - Ready for installation" :
-                specData.stockStatus.toLowerCase().includes('available') ?
-                "✓ Available to order - 2-3 weeks" : null
-              }
+          {/* Stock Status & Contact Footer */}
+          <View style={styles.contactFooter}>
+            {specData.stockStatus && (
+              <Text style={styles.stockStatus}>
+                {specData.stockStatus.toLowerCase().includes('stock') ? 
+                  "✓ In stock - Ready for installation" :
+                  specData.stockStatus.toLowerCase().includes('available') ?
+                  "✓ Available to order - 2-3 weeks" : null
+                }
+              </Text>
+            )}
+            
+            {/* Trust Badges */}
+            <View style={styles.trustBadgesRow}>
+              <Image 
+                src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png"
+                style={{ width: 80, height: 40 }}
+              />
+              <Image 
+                src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
+                style={{ width: 80, height: 40 }}
+              />
+            </View>
+            
+            <Text style={styles.companyName}>{COMPANY_INFO.name}</Text>
+            <Text style={styles.contactText}>{COMPANY_INFO.address.full}</Text>
+            <View style={styles.contactRow}>
+              <Text style={styles.contactText}>Phone: {COMPANY_INFO.contact.phone}</Text>
+              <Text style={styles.contactText}>Email: {COMPANY_INFO.contact.email}</Text>
+            </View>
+            <Text style={styles.contactText}>Web: {COMPANY_INFO.contact.website}</Text>
+            <Text style={styles.ctaText}>
+              Questions? Call {COMPANY_INFO.contact.phone} or visit {COMPANY_INFO.contact.website}
             </Text>
-          )}
-          
-          {/* Trust Badges */}
-          <View style={styles.trustBadgesRow}>
-            <Image 
-              src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png"
-              style={{ width: 80, height: 40 }}
-            />
-            <Image 
-              src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
-              style={{ width: 80, height: 40 }}
-            />
           </View>
-          
-          <Text style={styles.companyName}>{COMPANY_INFO.name}</Text>
-          <Text style={styles.contactText}>{COMPANY_INFO.address.full}</Text>
-          <View style={styles.contactRow}>
-            <Text style={styles.contactText}>Phone: {COMPANY_INFO.contact.phone}</Text>
-            <Text style={styles.contactText}>Email: {COMPANY_INFO.contact.email}</Text>
-          </View>
-          <Text style={styles.contactText}>Web: {COMPANY_INFO.contact.website}</Text>
-          <Text style={styles.ctaText}>
-            Questions? Call {COMPANY_INFO.contact.phone} or visit {COMPANY_INFO.contact.website}
-          </Text>
         </View>
       </Page>
     </Document>
