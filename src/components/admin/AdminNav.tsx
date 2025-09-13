@@ -9,6 +9,7 @@ const navItems = [
   { label: "Motor Images", to: "/admin/motor-images" },
   { label: "Security", to: "/admin/security" },
   { label: "Zapier Integration", to: "/admin/zapier" },
+  { label: "Email Management", to: "/admin/email" },
 ];
 
 export default function AdminNav() {
