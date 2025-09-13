@@ -325,6 +325,21 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 8,
   },
+  motorDescription: {
+    fontSize: 10,
+    color: '#374151',
+    textAlign: 'center',
+    marginBottom: 8,
+    paddingHorizontal: 20,
+    lineHeight: 1.4,
+  },
+  stockStatus: {
+    fontSize: 9,
+    fontWeight: 'bold',
+    color: '#059669',
+    textAlign: 'center',
+    marginBottom: 6,
+  },
 });
 
 export interface CleanSpecSheetData {
@@ -551,23 +566,23 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           </Text>
         )}
 
-        {/* Overview Boxes with Clean Labels */}
+        {/* Practical Info Boxes */}
         <View style={styles.overviewBoxes}>
           <View style={styles.overviewBox}>
-            <Text style={styles.overviewLabel}>HORSEPOWER</Text>
-            <Text style={styles.overviewValue}>{specData.horsepower}</Text>
+            <Text style={styles.overviewLabel}>MSRP</Text>
+            <Text style={styles.overviewValue}>${specData.motorPrice?.toLocaleString()}</Text>
           </View>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>WEIGHT</Text>
-            <Text style={styles.overviewValue}>{enhancedSpecs['Weight']}</Text>
+            <Text style={styles.overviewValue}>{enhancedSpecs['Weight'] ? enhancedSpecs['Weight'].split(' ')[0] + ' lbs' : 'TBD'}</Text>
           </View>
           <View style={styles.overviewBox}>
-            <Text style={styles.overviewLabel}>START TYPE</Text>
-            <Text style={styles.overviewValue}>{getStartType(specData.motorModel)}</Text>
+            <Text style={styles.overviewLabel}>SHAFT</Text>
+            <Text style={styles.overviewValue}>{getShaftLength(specData.motorModel)}</Text>
           </View>
           <View style={styles.overviewBox}>
-            <Text style={styles.overviewLabel}>WARRANTY</Text>
-            <Text style={styles.overviewValue}>5 Years*</Text>
+            <Text style={styles.overviewLabel}>CONTROLS</Text>
+            <Text style={styles.overviewValue}>{getControlType(specData.motorModel)}</Text>
           </View>
         </View>
 
@@ -625,26 +640,39 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               </View>
             )}
 
-            {/* Key Features - Motor Specific */}
+            {/* What's Included */}
             <View style={styles.section}>
               <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>Key Features</Text>
+                <Text style={styles.sectionTitle}>What's Included</Text>
               </View>
               <View style={styles.bulletList}>
-                <Text style={styles.bulletItem}>✓ Low Maintenance - Easy access service points</Text>
-                <Text style={styles.bulletItem}>✓ Advanced Protection - Corrosion resistant</Text>
-                {getStartType(specData.motorModel) === 'Electric' && (
-                  <Text style={styles.bulletItem}>✓ Electric Start - Push-button convenience</Text>
-                )}
-                {getControlType(specData.motorModel) === 'Tiller Handle' ? (
-                  <Text style={styles.bulletItem}>✓ Tiller Handle - Direct steering control</Text>
+                {hpNumber < 20 ? (
+                  <>
+                    <Text style={styles.bulletItem}>• Internal fuel tank</Text>
+                    <Text style={styles.bulletItem}>• Carrying handle</Text>
+                    <Text style={styles.bulletItem}>• Manual & tool kit</Text>
+                  </>
                 ) : (
-                  <Text style={styles.bulletItem}>✓ Remote Control - 360° steering</Text>
+                  <>
+                    <Text style={styles.bulletItem}>• Standard propeller</Text>
+                    <Text style={styles.bulletItem}>• Gauge harness</Text>
+                    <Text style={styles.bulletItem}>• Installation hardware</Text>
+                  </>
                 )}
-                <Text style={styles.bulletItem}>✓ Tilt & Lock - Multiple positions</Text>
-                {hpNumber >= 9.9 && (
-                  <Text style={styles.bulletItem}>✓ Fresh Water Flush - Built-in port</Text>
+              </View>
+            </View>
+
+            {/* Operating Costs */}
+            <View style={styles.section}>
+              <View style={styles.sectionHeader}>
+                <Text style={styles.sectionTitle}>Operating Costs</Text>
+              </View>
+              <View style={styles.bulletList}>
+                {performance.fuelConsumption && (
+                  <Text style={styles.bulletItem}>• Fuel consumption: {performance.fuelConsumption}</Text>
                 )}
+                <Text style={styles.bulletItem}>• Oil changes: Every 100 hrs or annually</Text>
+                <Text style={styles.bulletItem}>• Winterization recommended</Text>
               </View>
             </View>
           </View>
@@ -689,6 +717,27 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
 
         {/* Contact Footer with Trust Badges */}
         <View style={styles.contactFooter}>
+          {/* Motor Description */}
+          <Text style={styles.motorDescription}>
+            {hpNumber <= 5 ? 
+              "Reliable portable power for tenders and small boats. Light enough for easy transport and storage." :
+              hpNumber <= 15 ?
+              "Popular choice for kicker motors and primary power on boats up to 16ft. Command Thrust models available for extra pushing power." :
+              "Versatile mid-range power for aluminum fishing boats and runabouts. EFI models offer superior fuel economy."
+            }
+          </Text>
+
+          {/* Stock Status - Only if verifiable */}
+          {specData.stockStatus && (
+            <Text style={styles.stockStatus}>
+              {specData.stockStatus.toLowerCase().includes('stock') ? 
+                "✓ In stock - Ready for installation" :
+                specData.stockStatus.toLowerCase().includes('available') ?
+                "✓ Available to order - 2-3 weeks" : null
+              }
+            </Text>
+          )}
+          
           {/* Trust Badges */}
           <View style={styles.trustBadgesRow}>
             <Image 
