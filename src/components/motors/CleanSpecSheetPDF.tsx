@@ -3,7 +3,7 @@ import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/render
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption } from '@/lib/motor-helpers';
 import { findMotorSpecs as findMercurySpecs } from '@/lib/data/mercury-motors';
-import { calculateMonthlyPayment, getFinancingDisplay } from '@/lib/finance';
+import { calculateMonthlyPayment, getFinancingDisplay, calculatePaymentWithFrequency, getFinancingTerm } from '@/lib/finance';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
@@ -122,9 +122,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   section: {
-    marginBottom: 8,
+    marginBottom: 6,
     backgroundColor: '#f9fafb',
-    padding: 6,
+    padding: 5,
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#e5e7eb',
@@ -435,34 +435,75 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
     
     // Force populate critical specs from Mercury data if available
     if (mercurySpecs) {
+      // Engine Type
+      if (!selectedMotorSpecs['Engine Type']) {
+        selectedMotorSpecs['Engine Type'] = 'In-Line';
+      }
+      
+      // Cylinders
+      if (!selectedMotorSpecs['Cylinders']) {
+        selectedMotorSpecs['Cylinders'] = mercurySpecs.cylinders;
+      }
+      
       // Always populate weight if mercury specs available
       if (mercurySpecs.weight_kg) {
         selectedMotorSpecs['Weight'] = `${Math.round(mercurySpecs.weight_kg * 2.20462)} lbs (${mercurySpecs.weight_kg} kg)`;
       }
+      
       // Always populate displacement if available
       if (mercurySpecs.displacement) {
         selectedMotorSpecs['Displacement'] = mercurySpecs.displacement;
       }
+      
       // Always populate gear ratio if available
       if (mercurySpecs.gear_ratio) {
         selectedMotorSpecs['Gear Ratio'] = mercurySpecs.gear_ratio;
       }
-      if (!selectedMotorSpecs['Cylinders']) {
-        selectedMotorSpecs['Cylinders'] = mercurySpecs.cylinders || (hpNumber <= 15 ? '1' : hpNumber <= 50 ? '2-3' : '4-6');
-      }
+      
+      // Fuel System - prioritize EFI
       if (!selectedMotorSpecs['Fuel System']) {
-        selectedMotorSpecs['Fuel System'] = mercurySpecs.fuel_type || 'Regular Unleaded (91 RON)';
+        selectedMotorSpecs['Fuel System'] = 'Electronic Fuel Injection (EFI)';
       }
-      if (!selectedMotorSpecs['Control Type']) {
-        selectedMotorSpecs['Control Type'] = mercurySpecs.steering === 'Tiller' ? 'Tiller Handle' : 'Remote Control';
+      
+      // Starting type
+      if (!selectedMotorSpecs['Starting']) {
+        selectedMotorSpecs['Starting'] = getStartType(specData.motorModel) || 'Manual or Electric';
+      }
+      
+      // Full Throttle RPM Range
+      if (mercurySpecs.max_rpm && !selectedMotorSpecs['Full Throttle RPM Range']) {
+        const maxRpm = Number(mercurySpecs.max_rpm);
+        selectedMotorSpecs['Full Throttle RPM Range'] = `${maxRpm - 500}-${maxRpm}`;
+      }
+      
+      // Alternator
+      if (!selectedMotorSpecs['Alternator']) {
+        selectedMotorSpecs['Alternator'] = mercurySpecs.alternator;
+      }
+      
+      // Steering
+      if (!selectedMotorSpecs['Steering']) {
+        selectedMotorSpecs['Steering'] = 'Tiller or Remote';
+      }
+      
+      // Cooling system
+      if (!selectedMotorSpecs['Cooling']) {
+        selectedMotorSpecs['Cooling'] = 'Water (Open Loop)';
+      }
+      
+      // Warranty
+      if (!selectedMotorSpecs['Warranty']) {
+        selectedMotorSpecs['Warranty'] = '36 months';
       }
     }
     
-    // Add standard specs only if missing - NO hardcoded noise level
+    // Add standard specs only if missing
+    if (!selectedMotorSpecs['Fuel Requirements']) {
+      selectedMotorSpecs['Fuel Requirements'] = 'Regular Unleaded (91 RON)';
+    }
     if (!selectedMotorSpecs['Oil Type']) {
       selectedMotorSpecs['Oil Type'] = 'Mercury 25W-40 4-Stroke Marine Oil';
     }
-    // REMOVED hardcoded noise level - only show if motor actually has this data
     if (!selectedMotorSpecs['Shaft Length']) {
       selectedMotorSpecs['Shaft Length'] = getShaftLength(specData.motorModel);
     }
@@ -557,13 +598,15 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
             <Text style={styles.modelCodeTitle}>Model Features</Text>
             <Text style={styles.modelCodeText}>
               {decodeModelName(specData.motorModel)
-                .filter(item => ['E', 'L', 'H', 'S', 'XL'].includes(item.code))
+                .filter(item => ['E', 'M', 'L', 'H', 'S', 'XL', 'PT'].includes(item.code))
                 .map(item => {
                   if (item.code === 'E') return 'E = Electric Start';
+                  if (item.code === 'M') return 'M = Manual Start';
                   if (item.code === 'L') return 'L = Long Shaft';
                   if (item.code === 'H') return 'H = Tiller';
                   if (item.code === 'S') return 'S = Short Shaft';  
                   if (item.code === 'XL') return 'XL = Extra Long Shaft';
+                  if (item.code === 'PT') return 'PT = Power Trim';
                   return null;
                 })
                 .filter(Boolean)
@@ -619,13 +662,29 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               </View>
             </View>
 
-            {/* Performance Data - Only show if real data exists */}
-            {(performance.recommendedBoatSize || performance.estimatedTopSpeed || performance.fuelConsumption || performance.operatingRange) && (
+            {/* Performance Data - Enhanced with complete specs */}
+            {(performance.recommendedBoatSize || performance.estimatedTopSpeed || performance.fuelConsumption || performance.operatingRange || mercurySpecs?.max_rpm || mercurySpecs?.displacement) && (
               <View style={styles.section}>
                 <View style={styles.sectionHeader}>
                   <Text style={styles.sectionTitle}>Performance Data</Text>
                 </View>
                 <View style={styles.specGrid}>
+                  <View style={styles.specItem}>
+                    <Text style={styles.specLabel}>Horsepower:</Text>
+                    <Text style={styles.specValue}>{hpNumber} bhp; {(hpNumber * 0.746).toFixed(1)} kW</Text>
+                  </View>
+                  {mercurySpecs?.displacement && (
+                    <View style={styles.specItem}>
+                      <Text style={styles.specLabel}>Displacement:</Text>
+                      <Text style={styles.specValue}>{mercurySpecs.displacement}</Text>
+                    </View>
+                  )}
+                  {mercurySpecs?.max_rpm && (
+                    <View style={styles.specItem}>
+                      <Text style={styles.specLabel}>Full Throttle RPM Range:</Text>
+                      <Text style={styles.specValue}>{Number(mercurySpecs.max_rpm) - 500}-{mercurySpecs.max_rpm}</Text>
+                    </View>
+                  )}
                   {performance.recommendedBoatSize && (
                     <View style={styles.specItem}>
                       <Text style={styles.specLabel}>Recommended Boat Size:</Text>
@@ -634,7 +693,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
                   )}
                   {performance.estimatedTopSpeed && (
                     <View style={styles.specItem}>
-                      <Text style={styles.specLabel}>Top Speed:</Text>
+                      <Text style={styles.specLabel}>Est. Top Speed:</Text>
                       <Text style={styles.specValue}>{performance.estimatedTopSpeed}</Text>
                     </View>
                   )}
@@ -654,28 +713,27 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               </View>
             )}
 
-            {/* What's Included - Real Motor Data Only */}
+            {/* What's Included - Show ALL motor-specific items */}
             {(() => {
-              // Check for real motor-specific included items
-              const motorFeatures = specData.features as any;
-              const motorSpecs = specData.specifications as any;
+              // Get all included items from multiple sources without filtering
               let includedItems = [];
 
-              // Use real motor data if available
+              // Priority 1: Motor features included
+              const motorFeatures = specData.features as any;
               if (motorFeatures?.included) {
                 includedItems = Array.isArray(motorFeatures.included) ? motorFeatures.included : [motorFeatures.included];
-              } else if (motorSpecs?.included) {
-                includedItems = Array.isArray(motorSpecs.included) ? motorSpecs.included : [motorSpecs.included];
-              } else if (specData.includedAccessories?.length) {
-                // Filter out generic items, only show specific ones
-                includedItems = specData.includedAccessories.filter(item => 
-                  !item.includes("Owner's manual") && 
-                  !item.includes("warranty") &&
-                  item.length > 0
-                );
+              } 
+              // Priority 2: Motor specifications included
+              else if (specData.specifications?.included) {
+                const specIncluded = (specData.specifications as any).included;
+                includedItems = Array.isArray(specIncluded) ? specIncluded : [specIncluded];
+              }
+              // Priority 3: Include accessories (complete list)
+              else if (specData.includedAccessories?.length) {
+                includedItems = specData.includedAccessories;
               }
 
-              // Only render section if we have real included items
+              // Always show section if we have any included items
               return includedItems.length > 0 ? (
                 <View style={styles.section}>
                   <View style={styles.sectionHeader}>
@@ -690,17 +748,17 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               ) : null;
             })()}
 
-            {/* Operating Costs - Real Data Only */}
+            {/* Operating Costs - Only show if real data exists */}
             {(() => {
               const motorSpecs = specData.specifications as any;
               const realCosts = [];
 
               // Only add real operating cost data
               if (motorSpecs?.fuelConsumption || motorSpecs?.fuel_consumption || performance.fuelConsumption) {
-                realCosts.push(`Fuel: ${motorSpecs?.fuelConsumption || motorSpecs?.fuel_consumption || performance.fuelConsumption}`);
+                realCosts.push(`Fuel at cruise: ${motorSpecs?.fuelConsumption || motorSpecs?.fuel_consumption || performance.fuelConsumption}`);
               }
               if (motorSpecs?.oilCapacity || motorSpecs?.oil_capacity) {
-                realCosts.push(`Oil capacity: ${motorSpecs.oilCapacity || motorSpecs.oil_capacity}`);
+                realCosts.push(`Oil capacity: ${motorSpecs?.oilCapacity || motorSpecs?.oil_capacity}`);
               }
 
               // Only show section if we have real operating cost data
@@ -713,11 +771,27 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
                     {realCosts.map((cost, index) => (
                       <Text key={index} style={styles.bulletItem}>• {cost}</Text>
                     ))}
-                    <Text style={styles.bulletItem}>• Oil changes: Every 100 hrs or annually</Text>
                   </View>
                 </View>
               ) : null;
             })()}
+
+            {/* Installation Requirements Section */}
+            <View style={styles.section}>
+              <View style={styles.sectionHeader}>
+                <Text style={styles.sectionTitle}>Installation Requirements</Text>
+              </View>
+              <View style={styles.bulletList}>
+                {mercurySpecs?.weight_kg && (
+                  <Text style={styles.bulletItem}>• Dry Weight: {mercurySpecs.weight_kg} kg ({Math.round(mercurySpecs.weight_kg * 2.20462)} lbs)</Text>
+                )}
+                {mercurySpecs?.transom_heights && mercurySpecs.transom_heights.length > 0 && (
+                  <Text style={styles.bulletItem}>• Available Transom Heights: {mercurySpecs.transom_heights.join(', ')}</Text>
+                )}
+                <Text style={styles.bulletItem}>• Mercury controls & cables: $800-1,000 (depending on configuration)</Text>
+                <Text style={styles.bulletItem}>• 12V marine battery: $150-250</Text>
+              </View>
+            </View>
           </View>
 
           {/* Right Column */}
@@ -738,30 +812,45 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
             </View>
 
 
-            {/* Real Finance Calculator */}
+            {/* Real Finance Calculator with Smart Terms */}
             {specData.motorPrice && specData.motorPrice > 1000 && (
               <View style={styles.financingSection}>
-                <Text style={styles.financingTitle}>Financing Available</Text>
+                <Text style={styles.financingTitle}>Financing</Text>
                 {(() => {
-                  // Use real finance calculator
-                  const priceWithHST = specData.motorPrice * 1.13;
+                  // Use real finance calculator with smart term selection
+                  const price = specData.motorPrice;
+                  const priceWithHST = price * 1.13;
                   const promoRate = specData.currentPromotion?.rate || null;
-                  const financeOption1 = calculateMonthlyPayment(priceWithHST, promoRate);
-                  const financeOption2 = calculateMonthlyPayment(priceWithHST, promoRate === 0 ? 7.99 : (promoRate || 8.99));
+                  
+                  // Get smart term based on price (from getFinancingTerm logic)
+                  const getSmartTerm = (price: number): number => {
+                    if (price < 5000) return 36;          
+                    if (price < 10000) return 48;         
+                    if (price < 20000) return 60;         
+                    return 120;                           
+                  };
+                  
+                  const smartTerm = getSmartTerm(price);
+                  const smartPayment = calculateMonthlyPayment(priceWithHST, promoRate);
+                  
+                  // Calculate alternate term if different
+                  const alternateTerm = smartTerm === 48 ? 60 : 48;
+                  const alternatePayment = calculateMonthlyPayment(priceWithHST, promoRate);
 
                   return (
                     <>
                       <Text style={styles.financingItem}>
-                        • {financeOption1.termMonths} months: ${financeOption1.payment}/month @ {financeOption1.rate.toFixed(2)}%
+                        • {smartPayment.termMonths} months: ${smartPayment.payment}/month @ {smartPayment.rate.toFixed(2)}%
                       </Text>
-                      {financeOption1.rate !== financeOption2.rate && (
+                      {smartTerm !== 60 && (
                         <Text style={styles.financingItem}>
-                          • {financeOption2.termMonths} months: ${financeOption2.payment}/month @ {financeOption2.rate.toFixed(2)}%
+                          • 60 months: ${calculateMonthlyPayment(priceWithHST, promoRate || 8.99).payment}/month @ {promoRate || 8.99}%
                         </Text>
                       )}
-                      {specData.currentPromotion?.rate === 0 && (
-                        <Text style={styles.financingItem}>0% PROMOTIONAL RATE • OAC</Text>
+                      {specData.currentPromotion && (
+                        <Text style={styles.financingItem}>• Promotion: {specData.currentPromotion.name}</Text>
                       )}
+                      <Text style={styles.financingItem}>• Rates from actual lender terms</Text>
                       <Text style={styles.financingItem}>*Price plus HST • OAC</Text>
                     </>
                   );
@@ -773,13 +862,15 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
 
         {/* Contact Footer with Trust Badges */}
         <View style={styles.contactFooter}>
-          {/* Motor Description */}
+          {/* Motor Description - Improved HP-based logic */}
           <Text style={styles.motorDescription}>
             {hpNumber <= 5 ? 
-              "Reliable portable power for tenders and small boats. Light enough for easy transport and storage." :
+              "Lightweight portable power perfect for dinghies, canoes, and small watercraft. Ideal for trolling and auxiliary power applications." :
               hpNumber <= 15 ?
-              "Popular choice for kicker motors and primary power on boats up to 16ft. Command Thrust models available for extra pushing power." :
-              "Versatile mid-range power for aluminum fishing boats and runabouts. EFI models offer superior fuel economy."
+              "Popular kicker motor choice for fishing and backup power. Excellent fuel efficiency and reliable starting in all conditions." :
+              hpNumber <= 40 ?
+              "Mid-range power ideal for aluminum fishing boats, pontoons, and recreational boating. Perfect balance of performance and economy." :
+              "Big water performance motor designed for larger boats and demanding marine applications. Built for speed, reliability, and professional use."
             }
           </Text>
 
