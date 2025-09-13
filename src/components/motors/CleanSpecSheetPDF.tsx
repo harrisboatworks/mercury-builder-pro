@@ -787,10 +787,10 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
           </View>
         )}
 
-        {/* Subtle Promo Line */}
+        {/* Exciting Promo Line */}
         {specData.currentPromotion && (
           <Text style={styles.promoLine}>
-            CURRENT PROMO: {specData.currentPromotion.description} - Ends {specData.currentPromotion.endDate}
+            🎉 LIMITED TIME: {specData.currentPromotion.description} - Hurry, Ends {specData.currentPromotion.endDate}! 🚀
           </Text>
         )}
 
