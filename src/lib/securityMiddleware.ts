@@ -13,30 +13,37 @@ export class SecurityManager {
   private static readonly MAX_FAILED_ATTEMPTS = 5;
   private static readonly RATE_LIMIT_WINDOW = 15 * 60 * 1000; // 15 minutes
 
-  // Track session activity with enhanced security logging
-  static async trackSessionActivity(context: SecurityContext) {
+  // Enhanced session activity tracking with rate limiting
+  static async trackSessionActivity(context: SecurityContext): Promise<void> {
     try {
+      // Check rate limit before tracking
+      const canTrack = await this.checkRateLimit(context.userId, 'session_activity');
+      if (!canTrack) {
+        console.warn('Session activity rate limit exceeded');
+        return;
+      }
+
       const { error } = await supabase
         .from('user_sessions')
         .upsert({
           user_id: context.userId,
-          last_activity: new Date().toISOString(),
           ip_address: context.ipAddress,
           user_agent: context.userAgent,
+          last_activity: new Date().toISOString(),
           is_active: true
-        }, {
+        }, { 
           onConflict: 'user_id'
         });
-
+      
       if (error) {
         console.error('Failed to track session activity:', error);
-        // Log the security event for monitoring
+        // Log security event for failed session tracking
         await this.logSecurityEvent(
           context.userId,
-          'session_tracking_error',
+          'session_track_failed',
           'user_sessions',
           undefined,
-          { error: error.message, ...context }
+          { error: error.message, ip: context.ipAddress, userAgent: context.userAgent }
         );
       }
     } catch (error) {
@@ -44,48 +51,48 @@ export class SecurityManager {
     }
   }
 
-  // Enhanced session validation with automatic cleanup
-  static async invalidateExpiredSessions(): Promise<void> {
+  // Enhanced session cleanup using database function
+  static async invalidateExpiredSessions(): Promise<number> {
     try {
-      const expiryTime = new Date(Date.now() - this.SESSION_TIMEOUT);
+      const { data, error } = await supabase.rpc('cleanup_expired_sessions');
       
-      const { error } = await supabase
-        .from('user_sessions')
-        .update({ is_active: false })
-        .lt('last_activity', expiryTime.toISOString())
-        .eq('is_active', true);
-
       if (error) {
-        console.error('Failed to invalidate expired sessions:', error);
+        console.error('Failed to cleanup expired sessions:', error);
+        return 0;
       }
+      
+      console.log(`Cleaned up ${data} expired sessions`);
+      return data || 0;
     } catch (error) {
       console.error('Session cleanup error:', error);
+      return 0;
     }
   }
 
-  // Log security-related events
+  // Enhanced security event logging with input validation
   static async logSecurityEvent(
     userId: string,
     action: string,
     tableName: string,
     recordId?: string,
     metadata?: Record<string, any>
-  ) {
+  ): Promise<void> {
     try {
-      const { error } = await supabase
-        .from('security_audit_log')
-        .insert({
-          user_id: userId,
-          action,
-          table_name: tableName,
-          record_id: recordId,
-          ip_address: metadata?.ipAddress,
-          user_agent: metadata?.userAgent,
-          metadata: {
-            ...metadata,
-            identifier: userId // Store identifier for rate limiting lookups
-          }
-        });
+      // Validate inputs
+      if (!action || !tableName || action.length > 100 || tableName.length > 100) {
+        console.warn('Invalid security log parameters');
+        return;
+      }
+
+      // Use the enhanced logging function from database
+      const { error } = await supabase.rpc('log_security_event', {
+        _user_id: userId,
+        _action: action,
+        _table_name: tableName,
+        _record_id: recordId || null,
+        _ip_address: metadata?.ip || null,
+        _user_agent: metadata?.userAgent || null
+      });
 
       if (error) {
         console.error('Failed to log security event:', error);
@@ -119,104 +126,169 @@ export class SecurityManager {
     }
   }
 
-  // Rate limiting check - for login attempts, use identifier (email or user_id)
-  static async checkRateLimit(identifier: string, action: string): Promise<boolean> {
+  // Enhanced rate limiting using database function
+  static async checkRateLimit(
+    identifier: string, 
+    action: string, 
+    maxAttempts: number = 10,
+    windowMinutes: number = 15
+  ): Promise<boolean> {
     try {
-      const windowStart = new Date(Date.now() - this.RATE_LIMIT_WINDOW);
-
-      // Enhanced sanitization for identifier to prevent injection attacks
-      const sanitizedIdentifier = this.sanitizeInput(identifier);
-      
-      // Validate identifier format before querying
-      if (!sanitizedIdentifier || sanitizedIdentifier.length === 0) {
-        console.warn('Invalid identifier provided for rate limiting');
+      // Validate and sanitize inputs
+      if (!identifier || !action) {
+        console.warn('Invalid rate limit parameters');
         return false;
       }
-      
-      // For login attempts, check by identifier (could be email or user_id)
-      // Use safer query structure to avoid SQL injection
-      const { data, error } = await supabase
-        .from('security_audit_log')
-        .select('id')
-        .eq('action', action)
-        .gte('created_at', windowStart.toISOString())
-        .or(`user_id.eq.${sanitizedIdentifier}`);
+
+      const sanitizedIdentifier = this.sanitizeInput(identifier);
+      const sanitizedAction = this.sanitizeInput(action);
+
+      // Use the enhanced database function for rate limiting
+      const { data, error } = await supabase.rpc('check_rate_limit', {
+        _identifier: sanitizedIdentifier,
+        _action: sanitizedAction,
+        _max_attempts: maxAttempts,
+        _window_minutes: windowMinutes
+      });
 
       if (error) {
         console.error('Rate limit check error:', error);
-        // Fail closed for security - deny on error for rate limiting
-        return false;
+        return false; // Fail closed for security
       }
 
-      const attemptCount = data?.length || 0;
-      const isAllowed = attemptCount < this.MAX_FAILED_ATTEMPTS;
+      const isAllowed = data === true;
       
-      // Log rate limiting attempts for security monitoring
+      // Log rate limit violations for security monitoring
       if (!isAllowed) {
-        console.warn(`Rate limit exceeded for identifier: ${sanitizedIdentifier}, action: ${action}`);
+        console.warn(`Rate limit exceeded for identifier: ${sanitizedIdentifier}, action: ${sanitizedAction}`);
+        await this.logSecurityEvent(
+          identifier,
+          'rate_limit_exceeded',
+          'security_audit_log',
+          undefined,
+          { action: sanitizedAction, maxAttempts, windowMinutes }
+        );
       }
       
       return isAllowed;
     } catch (error) {
       console.error('Rate limiting error:', error);
-      // Fail closed for security - deny on error for rate limiting
-      return false;
+      return false; // Fail closed for security
     }
   }
 
-  // Enhanced input sanitization with additional security measures
+  // Enhanced input sanitization with comprehensive security checks
   static sanitizeInput(input: any): any {
     if (typeof input === 'string') {
       return input
-        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '') // Remove script tags
-        .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '') // Remove iframe tags
-        .replace(/javascript:|data:|vbscript:/gi, '') // Remove dangerous protocols
-        .replace(/on\w+\s*=/gi, '') // Remove event handlers
-        .replace(/[<>'"`;(){}]/g, '') // Enhanced character filtering for SQL injection prevention
-        .replace(/(\b(union|select|insert|update|delete|drop|create|alter|exec|execute|script|iframe)\b)/gi, '') // Expanded SQL keyword filtering
-        .replace(/(\-\-|\#|\/\*|\*\/)/g, '') // Remove SQL comment patterns
+        // Remove script tags and javascript protocols
+        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+        .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '')
+        .replace(/javascript:|data:text\/html|vbscript:/gi, '')
+        // Remove event handlers
+        .replace(/on\w+\s*=/gi, '')
+        // Remove potentially dangerous attributes
+        .replace(/srcdoc\s*=/gi, '')
+        .replace(/formaction\s*=/gi, '')
+        // Enhanced SQL injection prevention
+        .replace(/(\b(union|select|insert|update|delete|drop|create|alter|exec|execute|script|iframe)\b)/gi, '')
+        .replace(/(\-\-|\#|\/\*|\*\/|;)/g, '')
+        // Remove dangerous characters for XSS prevention
+        .replace(/[<>'"`;(){}]/g, '')
+        // Escape HTML entities
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;')
+        // Remove null bytes and control characters
+        .replace(/\0/g, '')
+        .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '')
         .trim()
-        .substring(0, 1000); // Limit input length
+        .slice(0, 1000); // Limit length
     }
-
+    
     if (Array.isArray(input)) {
-      return input.map(item => this.sanitizeInput(item));
+      return input.slice(0, 100).map(item => this.sanitizeInput(item)); // Limit array size
     }
-
+    
     if (typeof input === 'object' && input !== null) {
       const sanitized: any = {};
+      let count = 0;
       for (const [key, value] of Object.entries(input)) {
-        // Sanitize both keys and values
+        if (count >= 50) break; // Limit object size
         const sanitizedKey = this.sanitizeInput(key);
-        sanitized[sanitizedKey] = this.sanitizeInput(value);
+        if (typeof sanitizedKey === 'string' && sanitizedKey.length > 0) {
+          sanitized[sanitizedKey] = this.sanitizeInput(value);
+          count++;
+        }
       }
       return sanitized;
     }
-
+    
     return input;
   }
 
-  // Validate user data access permissions
+  // Enhanced data access validation with comprehensive security checks
   static async validateDataAccess(
     userId: string,
     tableName: string,
     recordId: string
   ): Promise<boolean> {
     try {
+      // Validate inputs first
+      if (!userId || !tableName || !recordId) {
+        console.warn('Invalid data access validation parameters');
+        return false;
+      }
+
+      // Check if user ID and record ID are valid UUIDs
+      const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+      if (!uuidRegex.test(userId) || !uuidRegex.test(recordId)) {
+        console.warn('Invalid UUID format in data access validation');
+        await this.logSecurityEvent(
+          userId,
+          'invalid_uuid_access_attempt',
+          tableName,
+          recordId,
+          { error: 'Invalid UUID format' }
+        );
+        return false;
+      }
+
+      // Use enhanced database function
       const { data, error } = await supabase
         .rpc('validate_user_data_access', {
-          _table_name: tableName,
+          _table_name: this.sanitizeInput(tableName),
           _record_id: recordId
         });
 
       if (error) {
         console.error('Data access validation error:', error);
+        // Log security event for failed validation
+        await this.logSecurityEvent(
+          userId,
+          'data_access_validation_failed',
+          tableName,
+          recordId,
+          { error: error.message }
+        );
         return false;
+      }
+
+      // Log successful validation for audit trail
+      if (data === true) {
+        await this.logSecurityEvent(
+          userId,
+          'data_access_validated',
+          tableName,
+          recordId
+        );
       }
 
       return data === true;
     } catch (error) {
-      console.error('Data access validation error:', error);
+      console.error('Data access validation failed:', error);
       return false;
     }
   }

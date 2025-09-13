@@ -127,11 +127,12 @@ export default async function handler(req, res) {
     res.status(200).json({ ok: true, created: data });
   } catch (e) {
     // Enhanced error logging with more context
-    await SecurityManager.logSecurityEvent(user?.id || 'unknown', 'error', 'quotes_seed', null, {
+    const errorUser = typeof user !== 'undefined' ? user?.id : 'unknown';
+    await SecurityManager.logSecurityEvent(errorUser, 'error', 'quotes_seed', null, {
       error: e.message,
       stack: e.stack?.substring(0, 500), // Limit stack trace length
-      ip_address: req.headers['x-forwarded-for'],
-      user_agent: req.headers['user-agent'],
+      ip: req.headers['x-forwarded-for'],
+      userAgent: req.headers['user-agent'],
       timestamp: new Date().toISOString()
     });
     

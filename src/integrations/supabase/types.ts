@@ -774,6 +774,19 @@ export type Database = {
           table_name: string
         }[]
       }
+      check_rate_limit: {
+        Args: {
+          _action: string
+          _identifier: string
+          _max_attempts?: number
+          _window_minutes?: number
+        }
+        Returns: boolean
+      }
+      cleanup_expired_sessions: {
+        Args: Record<PropertyKey, never>
+        Returns: number
+      }
       generate_session_id: {
         Args: Record<PropertyKey, never>
         Returns: string
@@ -784,6 +797,17 @@ export type Database = {
           _user_id: string
         }
         Returns: boolean
+      }
+      log_security_event: {
+        Args: {
+          _action: string
+          _ip_address?: unknown
+          _record_id?: string
+          _table_name: string
+          _user_agent?: string
+          _user_id: string
+        }
+        Returns: undefined
       }
       validate_user_data_access: {
         Args: { _record_id: string; _table_name: string }
