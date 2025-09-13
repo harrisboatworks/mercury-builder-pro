@@ -71,7 +71,7 @@ export const EmailDashboard = () => {
     try {
       const { data, error } = await supabase.functions.invoke('send-quote-email', {
         body: {
-          customerEmail: 'test@example.com',
+          customerEmail: 'harrisboatworks@hotmail.com', // Your verified Resend email
           customerName: 'Test Customer',
           quoteNumber: 'TEST-001',
           motorModel: 'Mercury 150HP Outboard',
@@ -84,7 +84,7 @@ export const EmailDashboard = () => {
 
       toast({
         title: "Test Email Sent",
-        description: "Check your email logs to verify the test email was processed",
+        description: "Test email sent to harrisboatworks@hotmail.com (your verified address)",
       });
     } catch (error) {
       console.error('Test email error:', error);
@@ -104,6 +104,12 @@ export const EmailDashboard = () => {
         <div>
           <h2 className="text-2xl font-bold">Email Management</h2>
           <p className="text-muted-foreground">Send transactional emails and manage email automation</p>
+          <div className="mt-2 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+            <p className="text-sm text-yellow-800">
+              <strong>Note:</strong> With Resend's free plan, emails can only be sent to your verified address (harrisboatworks@hotmail.com). 
+              To send to other recipients, verify a domain at <a href="https://resend.com/domains" target="_blank" className="underline">resend.com/domains</a>.
+            </p>
+          </div>
         </div>
         <Button onClick={handleTestEmail} disabled={isLoading} variant="outline">
           <Mail className="w-4 h-4 mr-2" />
