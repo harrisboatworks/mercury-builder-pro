@@ -464,6 +464,13 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
   };
 
 
+  // Helper function to convert number to ordinal
+  const getOrdinal = (num: number): string => {
+    const suffix = ['th', 'st', 'nd', 'rd'];
+    const value = num % 100;
+    return num + (suffix[(value - 20) % 10] || suffix[value] || suffix[0]);
+  };
+
   // Calculate warranty options based on current total coverage
   const getExtendedWarrantyOptions = () => {
     const BASE_WARRANTY_YEARS = 3;
@@ -492,7 +499,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
           totalYears,
           addYears,
           price,
-          label: `${totalYears} Year Total: +$${price}`
+          label: `Add ${getOrdinal(totalYears)} Year: +$${price}`
         });
       }
     }
