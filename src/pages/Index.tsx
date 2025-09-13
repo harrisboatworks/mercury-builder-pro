@@ -494,7 +494,7 @@ const Index = () => {
             )}
 
             {/* Action Cards */}
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={handleContinueQuote}>
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
@@ -525,6 +525,22 @@ const Index = () => {
                   </p>
                   <Button variant="outline" className="w-full">
                     New Quote
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/deposits')}>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <DollarSign className="w-8 h-8 text-green-600" />
+                    <span className="text-sm text-green-600">Secure Your Motor</span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Pay Deposit</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Reserve your Mercury motor with a secure deposit payment
+                  </p>
+                  <Button variant="outline" className="w-full border-green-600 text-green-600 hover:bg-green-50">
+                    Pay Deposit
                   </Button>
                 </CardContent>
               </Card>

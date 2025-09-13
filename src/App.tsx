@@ -40,6 +40,8 @@ import FinancingAdmin from "./components/admin/FinancingAdmin";
 import AdminSecurity from "./pages/AdminSecurity";
 import AdminZapier from "./pages/AdminZapier";
 import AdminEmail from "./pages/AdminEmail";
+import AdminPayments from "./pages/AdminPayments";
+import Deposits from "./pages/Deposits";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentCanceled from "./pages/PaymentCanceled";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
@@ -170,8 +172,17 @@ const App = () => (
                     </SecureRoute>
                   }
                 />
+                <Route
+                  path="/admin/payments"
+                  element={
+                    <SecureRoute requireAdmin={true}>
+                      <AdminPayments />
+                    </SecureRoute>
+                  }
+                />
                 
                 {/* Payment Routes */}
+                <Route path="/deposits" element={<Deposits />} />
                 <Route path="/payment-success" element={<PaymentSuccess />} />
                 <Route path="/payment-canceled" element={<PaymentCanceled />} />
                 

@@ -10,6 +10,7 @@ const navItems = [
   { label: "Security", to: "/admin/security" },
   { label: "Zapier Integration", to: "/admin/zapier" },
   { label: "Email Management", to: "/admin/email" },
+  { label: "Payments", to: "/admin/payments" },
 ];
 
 export default function AdminNav() {

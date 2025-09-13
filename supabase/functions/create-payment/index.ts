@@ -1,10 +1,17 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import Stripe from "https://esm.sh/stripe@14.21.0";
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+import Stripe from "https://esm.sh/stripe@18.5.0";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+};
+
+// Motor deposit price mapping
+const DEPOSIT_PRICES = {
+  "500": "price_1S71kJHhVKClVQCpoZsxgqar",    // $500 - Small motors (under 50HP)
+  "1000": "price_1S71kbHhVKClVQCpHM7Xg9FJ",   // $1000 - Mid-range motors (50-150HP)
+  "2500": "price_1S71kmHhVKClVQCp20TxHSET"    // $2500 - High-performance motors (150HP+)
 };
 
 const logStep = (step: string, details?: any) => {
@@ -31,32 +38,92 @@ serve(async (req) => {
       Deno.env.get("SUPABASE_ANON_KEY") ?? ""
     );
 
+    // Parse request body first to determine payment type
+    const requestBody = await req.json();
+    const { quoteData, depositAmount, customerInfo, paymentType } = requestBody;
+    
+    logStep("Request received", { paymentType: paymentType || "quote", depositAmount });
+
+    // Handle authentication - required for quote payments, optional for deposits
+    let user = null;
+    let userEmail = customerInfo?.email;
+    
     const authHeader = req.headers.get("Authorization");
-    if (!authHeader) throw new Error("No authorization header provided");
-    logStep("Authorization header found");
-
-    const token = authHeader.replace("Bearer ", "");
-    const { data: userData, error: userError } = await supabaseClient.auth.getUser(token);
-    if (userError) throw new Error(`Authentication error: ${userError.message}`);
-    const user = userData.user;
-    if (!user?.email) throw new Error("User not authenticated or email not available");
-    logStep("User authenticated", { userId: user.id, email: user.email });
-
-    const { quoteData } = await req.json();
-    if (!quoteData) throw new Error("Quote data is required");
-    logStep("Quote data received", { totalPrice: quoteData.totalPrice });
-
-    const stripe = new Stripe(stripeKey, { apiVersion: "2023-10-16" });
-
-    // Check if a Stripe customer record exists for this user
-    const customers = await stripe.customers.list({ email: user.email, limit: 1 });
-    let customerId;
-    if (customers.data.length > 0) {
-      customerId = customers.data[0].id;
-      logStep("Existing Stripe customer found", { customerId });
-    } else {
-      logStep("No existing customer found, will create new one");
+    if (authHeader) {
+      try {
+        const token = authHeader.replace("Bearer ", "");
+        const { data: userData, error: userError } = await supabaseClient.auth.getUser(token);
+        if (!userError && userData.user?.email) {
+          user = userData.user;
+          userEmail = user.email;
+          logStep("User authenticated", { userId: user.id, email: user.email });
+        }
+      } catch (error) {
+        logStep("Auth failed, proceeding as guest", { error: error.message });
+      }
     }
+
+    // For quote payments, require authentication
+    if (paymentType === "quote" && !user) {
+      throw new Error("Authentication required for quote payments");
+    }
+    const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
+
+    // Check if customer exists
+    let customerId;
+    if (userEmail) {
+      const customers = await stripe.customers.list({ email: userEmail, limit: 1 });
+      if (customers.data.length > 0) {
+        customerId = customers.data[0].id;
+        logStep("Existing Stripe customer found", { customerId });
+      } else {
+        logStep("No existing customer found, will create new one");
+      }
+    }
+
+    // Handle deposit payments vs quote payments
+    if (paymentType === "deposit" || depositAmount) {
+      // Deposit payment flow
+      if (!DEPOSIT_PRICES[depositAmount]) {
+        throw new Error(`Invalid deposit amount. Available: ${Object.keys(DEPOSIT_PRICES).join(", ")}`);
+      }
+
+      const priceId = DEPOSIT_PRICES[depositAmount];
+      logStep("Processing deposit payment", { depositAmount, priceId });
+
+      const sessionData: any = {
+        line_items: [{ price: priceId, quantity: 1 }],
+        mode: "payment",
+        success_url: `${req.headers.get("origin")}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${req.headers.get("origin")}/payment-canceled`,
+        metadata: {
+          deposit_amount: depositAmount,
+          payment_type: "motor_deposit"
+        }
+      };
+
+      if (customerId) {
+        sessionData.customer = customerId;
+      } else if (userEmail) {
+        sessionData.customer_email = userEmail;
+      }
+
+      if (customerInfo?.name) {
+        sessionData.metadata.customer_name = customerInfo.name;
+      }
+
+      const session = await stripe.checkout.sessions.create(sessionData);
+      logStep("Deposit payment session created", { sessionId: session.id });
+
+      return new Response(JSON.stringify({ url: session.url, sessionId: session.id }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+        status: 200,
+      });
+    }
+
+    // Quote payment flow (existing logic)
+    if (!quoteData) throw new Error("Quote data is required for quote payments");
+    logStep("Quote data received", { totalPrice: quoteData.totalPrice });
 
     // Create line items for the quote
     const lineItems = [];
@@ -126,14 +193,15 @@ serve(async (req) => {
     // Create a one-time payment session
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
-      customer_email: customerId ? undefined : user.email,
+      customer_email: customerId ? undefined : userEmail,
       line_items: lineItems,
       mode: "payment",
       success_url: `${req.headers.get("origin")}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${req.headers.get("origin")}/payment-canceled`,
       metadata: {
-        user_id: user.id,
-        quote_data: JSON.stringify(quoteData)
+        user_id: user?.id || "guest",
+        quote_data: JSON.stringify(quoteData),
+        payment_type: "quote"
       }
     });
 
@@ -147,8 +215,8 @@ serve(async (req) => {
     );
 
     const { data: quoteResult, error: quoteError } = await supabaseService.from("quotes").insert({
-      user_id: user.id,
-      customer_name: quoteData.customerName || user.email,
+      user_id: user?.id,
+      customer_name: quoteData.customerName || userEmail,
       customer_phone: quoteData.customerPhone,
       motor_model: quoteData.motorModel,
       motor_price: quoteData.motorPrice,
