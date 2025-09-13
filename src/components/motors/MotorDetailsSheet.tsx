@@ -76,44 +76,83 @@ export default function MotorDetailsSheet({
   const installationRef = useRef<HTMLDivElement>(null);
   const performanceRef = useRef<HTMLDivElement>(null);
 
-  // Body scroll lock effect with proper scroll restoration
+  // Enhanced body scroll lock effect with robust scroll restoration
   useEffect(() => {
-    let previousScrollY = 0;
+    let scrollPosition = 0;
+    let restoreInProgress = false;
     
     if (open) {
-      // Store current scroll position
-      previousScrollY = window.scrollY;
+      // Step 1: Store scroll position immediately and in multiple ways
+      scrollPosition = window.scrollY;
+      console.log('🔒 Modal opening - storing scroll position:', scrollPosition);
+      
+      // Store in multiple locations for redundancy
+      document.body.setAttribute('data-scroll-y', scrollPosition.toString());
+      sessionStorage.setItem('modal-scroll-y', scrollPosition.toString());
+      
+      // Apply body lock
       document.body.style.position = 'fixed';
-      document.body.style.top = `-${previousScrollY}px`;
+      document.body.style.top = `-${scrollPosition}px`;
       document.body.style.width = '100%';
       document.body.style.overflow = 'hidden';
       
-      // Store scroll position in a data attribute for restoration
-      document.body.setAttribute('data-scroll-y', previousScrollY.toString());
-    } else {
-      // Restore scroll position
-      const storedScrollY = document.body.getAttribute('data-scroll-y');
+    } else if (!restoreInProgress) {
+      // Step 2: Enhanced scroll restoration with proper timing
+      restoreInProgress = true;
+      console.log('🔓 Modal closing - initiating scroll restoration');
       
-      // Reset body styles
+      // Get stored scroll position from multiple sources
+      const storedScrollY = document.body.getAttribute('data-scroll-y') || 
+                           sessionStorage.getItem('modal-scroll-y') || 
+                           '0';
+      const targetScrollY = parseInt(storedScrollY, 10);
+      
+      console.log('📍 Restoring to scroll position:', targetScrollY);
+      
+      // Step 3: Reset body styles immediately
       document.body.style.position = '';
       document.body.style.top = '';
       document.body.style.width = '';
       document.body.style.overflow = '';
-      document.body.removeAttribute('data-scroll-y');
       
-      // Restore scroll position if we have one stored
-      if (storedScrollY) {
-        window.scrollTo(0, parseInt(storedScrollY, 10));
-      }
+      // Step 4: Delayed scroll restoration using requestAnimationFrame
+      requestAnimationFrame(() => {
+        // Additional delay to ensure DOM is fully updated
+        setTimeout(() => {
+          console.log('⚡ Executing scroll restoration to:', targetScrollY);
+          window.scrollTo({
+            top: targetScrollY,
+            behavior: 'instant' // Use instant to prevent interference
+          });
+          
+          // Verify restoration worked
+          setTimeout(() => {
+            const actualScrollY = window.scrollY;
+            console.log('✅ Scroll restoration result - Expected:', targetScrollY, 'Actual:', actualScrollY);
+            if (Math.abs(actualScrollY - targetScrollY) > 50) {
+              console.warn('⚠️ Scroll restoration may have failed - attempting backup restoration');
+              window.scrollTo(0, targetScrollY);
+            }
+            restoreInProgress = false;
+          }, 50);
+        }, 50);
+      });
+      
+      // Cleanup stored values
+      document.body.removeAttribute('data-scroll-y');
+      sessionStorage.removeItem('modal-scroll-y');
     }
     
     return () => {
-      // Cleanup function
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.overflow = '';
-      document.body.removeAttribute('data-scroll-y');
+      // Enhanced cleanup function
+      if (open) {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        document.body.removeAttribute('data-scroll-y');
+        sessionStorage.removeItem('modal-scroll-y');
+      }
     };
   }, [open]);
 
