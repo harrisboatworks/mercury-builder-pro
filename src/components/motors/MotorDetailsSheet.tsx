@@ -5,13 +5,13 @@ import { supabase } from "../../integrations/supabase/client";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { useIsMobile } from "../../hooks/use-mobile";
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 import { money } from "../../lib/money";
 import { MotorImageGallery } from './MotorImageGallery';
 import { MonthlyPaymentDisplay } from '../quote-builder/MonthlyPaymentDisplay';
 import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption, getRange, getTransomRequirement, getBatteryRequirement, getFuelRequirement, getOilRequirement, getIdealUses, getIncludedAccessories, getAdditionalRequirements, cleanSpecSheetUrl, requiresMercuryControls, isTillerMotor, type Motor } from "../../lib/motor-helpers";
 import { findMotorSpecs, getMotorSpecs, type MercuryMotor } from "../../lib/data/mercury-motors";
+import { pdf } from '@react-pdf/renderer';
+import CleanSpecSheetPDF, { type CleanSpecSheetData } from './CleanSpecSheetPDF';
 import { getReviewCount } from "../../lib/data/mercury-reviews";
 import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
 export default function MotorDetailsSheet({
@@ -141,80 +141,77 @@ export default function MotorDetailsSheet({
   const handleGenerateSpecSheet = async () => {
     if (!motor?.id) return;
     setSpecSheetLoading(true);
+    
     try {
-      const {
-        data,
-        error
-      } = await supabase.functions.invoke('generate-motor-spec-sheet', {
-        body: {
-          motorId: motor.id
+      // Transform motor data for the clean spec sheet
+      const specData: CleanSpecSheetData = {
+        motorModel: title || motor.model || 'Mercury Motor',
+        horsepower: `${hp || motor.hp || ''}HP`,
+        category: motor.category || 'FourStroke',
+        modelYear: motor.year || new Date().getFullYear(),
+        sku: motor.sku,
+        msrp: motor.msrp?.toLocaleString('en-CA', { minimumFractionDigits: 2 }),
+        specifications: {
+          ...motor.specifications,
+          'Engine Type': motor.category || 'FourStroke',
+          'Horsepower': `${hp || motor.hp || ''}HP`,
+          'Shaft Length': shaft || 'Standard',
+          'Weight': weightLbs ? `${weightLbs} lbs` : undefined,
+          'Starting': motor.starting_type || 'Electric',
+          'Fuel Induction': motor.fuel_induction,
+          'Displacement': motor.displacement,
+          'Cylinders': motor.cylinders,
+          'Full Throttle RPM': motor.full_throttle_rpm,
+          'Steering': motor.steering_type,
+          'Gear Ratio': motor.gear_ratio,
+          'Alternator': motor.alternator,
+        },
+        features: features,
+        includedAccessories: getIncludedAccessories(motor),
+        idealUses: getIdealUses(hp || motor.hp || 0),
+        performanceData: {
+          recommendedBoatSize: getRecommendedBoatSize(hp || motor.hp || 0),
+          estimatedTopSpeed: getEstimatedSpeed(hp || motor.hp || 0),
+          fuelConsumption: getFuelConsumption(hp || motor.hp || 0),
+          operatingRange: getRange(hp || motor.hp || 0),
         }
-      });
-      if (error) {
-        console.error('Error generating spec sheet:', error);
-        return;
+      };
+
+      // Remove undefined values from specifications
+      if (specData.specifications) {
+        Object.keys(specData.specifications).forEach(key => {
+          if (specData.specifications![key] === undefined || specData.specifications![key] === null) {
+            delete specData.specifications![key];
+          }
+        });
       }
-      if (data?.htmlContent) {
-        await generateClientSidePDF(data.htmlContent, data.motorModel || title);
-      }
+
+      // Generate PDF using React PDF
+      const blob = await pdf(<CleanSpecSheetPDF specData={specData} />).toBlob();
+      
+      // Create download link
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      
+      const modelName = title || motor.model || 'Mercury-Motor';
+      const fileName = `${modelName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}-specifications.pdf`;
+      link.download = fileName;
+      
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Clean up
+      URL.revokeObjectURL(url);
+      
+      console.log('✅ Clean Spec Sheet PDF Generated Successfully');
+      
     } catch (error) {
-      console.error('Error generating spec sheet:', error);
+      console.error('❌ Error generating clean spec sheet:', error);
+      alert('Unable to generate spec sheet at this time. Please try again or contact support.');
     } finally {
       setSpecSheetLoading(false);
-    }
-  };
-  const generateClientSidePDF = async (htmlContent: string, motorModel: string) => {
-    try {
-      const container = document.createElement('div');
-      container.innerHTML = htmlContent;
-      container.style.position = 'absolute';
-      container.style.left = '-9999px';
-      container.style.width = '794px';
-      container.style.height = 'auto';
-      container.style.backgroundColor = 'white';
-      container.style.fontFamily = 'Arial, sans-serif';
-      container.style.fontSize = '9pt';
-      container.style.lineHeight = '1.1';
-      document.body.appendChild(container);
-      await new Promise(resolve => setTimeout(resolve, 800));
-      const devicePixelRatio = window.devicePixelRatio || 1;
-      const canvas = await html2canvas(container, {
-        scale: Math.min(devicePixelRatio * 1.5, 3),
-        useCORS: true,
-        allowTaint: true,
-        backgroundColor: '#ffffff',
-        logging: false,
-        imageTimeout: 15000,
-        width: 794,
-        height: container.scrollHeight
-      });
-      document.body.removeChild(container);
-      const imgData = canvas.toDataURL('image/png', 0.95);
-      const pdf = new jsPDF('p', 'mm', 'a4');
-      const imgWidth = 210;
-      const pageHeight = 297;
-      const imgHeight = canvas.height * imgWidth / canvas.width;
-      let heightLeft = imgHeight;
-      let position = 0;
-      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
-      while (heightLeft >= 0) {
-        position = heightLeft - imgHeight;
-        pdf.addPage();
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
-      }
-      pdf.setProperties({
-        title: `${motorModel} - Technical Specifications`,
-        subject: 'Mercury Marine Motor Specifications',
-        author: 'Harris Boat Works - Authorized Mercury Marine Dealer',
-        creator: 'Harris Boat Works Quote System'
-      });
-      const fileName = `Mercury-${motorModel.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}-technical-specifications.pdf`;
-      pdf.save(fileName);
-    } catch (error) {
-      console.error('Error generating PDF:', error);
-      alert('Unable to generate PDF at this time. Please try again or contact support.');
     }
   };
   const cleanedSpecUrl = cleanSpecSheetUrl(specSheetUrl);
