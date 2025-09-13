@@ -56,6 +56,15 @@ export default function MotorCardPremium({
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
   const [motorBadge, setMotorBadge] = useState<string | null>(null);
   
+  // Get the best available image URL
+  const getImageUrl = (): string => {
+    // For now, just use the original img prop or fallback
+    // TODO: Update when motor.images schema is updated to support objects
+    return img ?? '/lovable-uploads/speedboat-transparent.png';
+  };
+
+  const imageUrl = getImageUrl();
+  
   // Smart financing calculation
   const financingInfo = useMotorMonthlyPayment({ 
     motorPrice: price || 0, 
@@ -113,9 +122,9 @@ export default function MotorCardPremium({
             onMouseEnter={handleTooltipMouseEnter}
             onMouseLeave={handleTooltipMouseLeave}
           >
-            {img && (
+            {imageUrl && (
               <img 
-                src={img} 
+                src={imageUrl} 
                 alt="" 
                 className="mb-3 h-40 w-full rounded-lg object-contain bg-white dark:bg-slate-900" 
               />
@@ -219,7 +228,7 @@ export default function MotorCardPremium({
           onSelect={onSelect}
           title={title}
           subtitle={hpNum ? `${hpNum} HP Mercury Outboard` : undefined}
-          img={img}
+          img={imageUrl}
           msrp={msrp}
           price={price}
           promoText={promoText}

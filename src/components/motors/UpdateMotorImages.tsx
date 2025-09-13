@@ -89,25 +89,73 @@ export default function UpdateMotorImages() {
     }
   };
 
+  const migrateMotorImages = async () => {
+    setLoading(true);
+    setResult(null);
+    
+    try {
+      toast({
+        title: "Starting image migration...",
+        description: "Downloading and storing motor images in Supabase Storage.",
+      });
+
+      const { data, error } = await supabase.functions.invoke('migrate-motor-images', {
+        body: { batchSize: 10, forceRedownload: false }
+      });
+      
+      if (error) {
+        throw error;
+      }
+      
+      setResult(data);
+      toast({
+        title: "Image migration completed!",
+        description: `Migrated ${data?.successful || 0} of ${data?.processed || 0} motor images.`,
+      });
+    } catch (error) {
+      console.error('Error migrating images:', error);
+      const errorMessage = (error as Error).message;
+      setResult({ error: errorMessage });
+      toast({
+        title: "Error migrating images",
+        description: errorMessage,
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="container mx-auto p-8 space-y-6">
       <Card className="max-w-2xl mx-auto">
         <CardHeader>
-          <CardTitle>Update Motor Images</CardTitle>
+          <CardTitle>Motor Image Management</CardTitle>
           <CardDescription>
-            Enhance motor listings with multiple high-quality images from manufacturer pages.
+            Manage motor images with migration to internal storage and enhanced scraping capabilities.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid gap-4">
             <Button 
-              onClick={updateMotorImages}
+              onClick={migrateMotorImages}
               disabled={loading}
               className="w-full"
             >
               {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               <RefreshCw className="mr-2 h-4 w-4" />
-              Update Motor Images
+              Migrate Images to Storage
+            </Button>
+            
+            <Button 
+              onClick={updateMotorImages}
+              disabled={loading}
+              variant="outline"
+              className="w-full"
+            >
+              {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+              <RefreshCw className="mr-2 h-4 w-4" />
+              Update External Image URLs
             </Button>
             
             <Button 
