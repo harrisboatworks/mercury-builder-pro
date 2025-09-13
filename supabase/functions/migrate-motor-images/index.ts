@@ -213,60 +213,59 @@ serve(async (req) => {
           await new Promise(resolve => setTimeout(resolve, 2000)) // Wait before retry
         }
       }
-    }
   }
 
-  // Generate alternative URLs helper function
-  function generateAlternativeUrls(originalUrl: string): string[] {
-    const alternatives = []
-    
-    try {
-      // Convert thumb to detail
-      if (originalUrl.includes('/thumb/')) {
-        alternatives.push(originalUrl.replace('/thumb/', '/detail/'))
-        alternatives.push(originalUrl.replace('/thumb/', '/large/'))
-      }
-      
-      // Try different size variations
-      if (originalUrl.includes('_thumb')) {
-        alternatives.push(originalUrl.replace('_thumb', '_large'))
-        alternatives.push(originalUrl.replace('_thumb', '_detail'))
-      }
-      
-      // Try HTTPS if HTTP
-      if (originalUrl.startsWith('http://')) {
-        alternatives.push(originalUrl.replace('http://', 'https://'))
-      }
-      
-    } catch (error) {
-      console.error('Error generating alternative URLs:', error)
-    }
-    
-    return alternatives
+  const summary = {
+    success: true,
+    processed: motors.length,
+    successful,
+    failed,
+    results
   }
 
-    const summary = {
-      success: true,
-      processed: motors.length,
-      successful,
-      failed,
-      results
-    }
+  console.log('Migration completed:', summary)
 
-    console.log('Migration completed:', summary)
+  return new Response(JSON.stringify(summary), {
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+  })
 
-    return new Response(JSON.stringify(summary), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    })
-
-  } catch (error) {
-    console.error('Migration error:', error)
-    return new Response(JSON.stringify({
-      success: false,
-      error: error.message
-    }), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      status: 500,
-    })
-  }
+} catch (error) {
+  console.error('Migration error:', error)
+  return new Response(JSON.stringify({
+    success: false,
+    error: error.message
+  }), {
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    status: 500,
+  })
+}
 })
+
+// Helper function to generate alternative URLs
+function generateAlternativeUrls(originalUrl: string): string[] {
+const alternatives = []
+
+try {
+  // Convert thumb to detail
+  if (originalUrl.includes('/thumb/')) {
+    alternatives.push(originalUrl.replace('/thumb/', '/detail/'))
+    alternatives.push(originalUrl.replace('/thumb/', '/large/'))
+  }
+  
+  // Try different size variations
+  if (originalUrl.includes('_thumb')) {
+    alternatives.push(originalUrl.replace('_thumb', '_large'))
+    alternatives.push(originalUrl.replace('_thumb', '_detail'))
+  }
+  
+  // Try HTTPS if HTTP
+  if (originalUrl.startsWith('http://')) {
+    alternatives.push(originalUrl.replace('http://', 'https://'))
+  }
+  
+} catch (error) {
+  console.error('Error generating alternative URLs:', error)
+}
+
+return alternatives
+}
