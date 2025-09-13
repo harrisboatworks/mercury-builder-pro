@@ -389,6 +389,7 @@ export interface CleanSpecSheetData {
   sku?: string;
   msrp?: string;
   motorPrice?: number; // Add motor price for financing calculations
+  image_url?: string; // Add motor image URL
   specifications?: Record<string, any>;
   features?: string[];
   includedAccessories?: string[];
@@ -425,13 +426,13 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
     // Decode in the order they appear (ELPT)
     if (model.includes('E')) codes.push('E = Electric Start');
     if (model.includes('L')) codes.push('L = Long Shaft');
-    if (model.includes('H') && !model.includes('T')) codes.push('H = High Output');
     if (model.includes('P')) codes.push('P = Power Trim');
     if (model.includes('T')) codes.push('T = Tiller Handle');
-    // Additional codes
+    // Additional specific codes (check more specific first)
     if (model.includes('CT')) codes.push('CT = Command Thrust');
     if (model.includes('XS')) codes.push('XS = Extra Short Shaft');
-    if (model.includes('M')) codes.push('M = Manual Start');
+    if (model.includes('H') && !model.includes('CT') && !model.includes('XS')) codes.push('H = High Output');
+    if (model.includes('M') && !model.includes('Command')) codes.push('M = Manual Start');
     if (model.includes('R')) codes.push('R = Remote Control');
     return codes.join(' | ');
   };
@@ -582,8 +583,17 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
             </Text>
           </View>
           <View style={styles.motorImageContainer}>
-            <Text style={styles.motorImagePlaceholder}>{specData.horsepower}HP Motor</Text>
-            <Text style={styles.motorImageText}>Mercury Marine</Text>
+            {specData.image_url ? (
+              <Image 
+                style={{ width: 180, height: 120, objectFit: 'contain' }}
+                src={specData.image_url}
+              />
+            ) : (
+              <>
+                <Text style={styles.motorImagePlaceholder}>{specData.horsepower} HP Motor</Text>
+                <Text style={styles.motorImageText}>Mercury Marine</Text>
+              </>
+            )}
           </View>
         </View>
 
@@ -598,26 +608,26 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
         {/* Subtle Promo Line */}
         {specData.currentPromotion && (
           <Text style={styles.promoLine}>
-            🎯 Current Promo: {specData.currentPromotion.description} - Ends {specData.currentPromotion.endDate}
+            CURRENT PROMO: {specData.currentPromotion.description} - Ends {specData.currentPromotion.endDate}
           </Text>
         )}
 
-        {/* Overview Boxes with Icons */}
+        {/* Overview Boxes with Clean Labels */}
         <View style={styles.overviewBoxes}>
           <View style={styles.overviewBox}>
-            <Text style={styles.overviewLabel}>⚡ HORSEPOWER</Text>
-            <Text style={styles.overviewValue}>{specData.horsepower}</Text>
+            <Text style={styles.overviewLabel}>HORSEPOWER</Text>
+            <Text style={styles.overviewValue}>{specData.horsepower} HP</Text>
           </View>
           <View style={styles.overviewBox}>
-            <Text style={styles.overviewLabel}>⚖️ WEIGHT</Text>
-            <Text style={styles.overviewValue}>{actualWeight.split(' ')[0]} {actualWeight.split(' ')[1]}</Text>
+            <Text style={styles.overviewLabel}>WEIGHT</Text>
+            <Text style={styles.overviewValue}>{actualWeight}</Text>
           </View>
           <View style={styles.overviewBox}>
-            <Text style={styles.overviewLabel}>🔧 START TYPE</Text>
+            <Text style={styles.overviewLabel}>START TYPE</Text>
             <Text style={styles.overviewValue}>{getStartType(specData.motorModel)}</Text>
           </View>
           <View style={styles.overviewBox}>
-            <Text style={styles.overviewLabel}>🛡️ WARRANTY</Text>
+            <Text style={styles.overviewLabel}>WARRANTY</Text>
             <Text style={styles.overviewValue}>5 Years*</Text>
           </View>
         </View>
@@ -644,7 +654,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
             {/* Performance Data - Dynamic */}
             <View style={styles.section}>
               <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>🚤 Performance Data</Text>
+                <Text style={styles.sectionTitle}>Performance Data</Text>
               </View>
               <View style={styles.specGrid}>
                 <View style={styles.specItem}>
@@ -669,7 +679,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
             {/* Key Features - Clean Format */}
             <View style={styles.section}>
               <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>⭐ Key Features</Text>
+                <Text style={styles.sectionTitle}>Key Features</Text>
               </View>
               <View style={styles.bulletList}>
                 <Text style={styles.bulletItem}>✓ Low Maintenance - Easy access service points</Text>
@@ -686,7 +696,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           <View style={styles.rightColumn}>
             {/* Competitive Advantages - Dynamic */}
             <View style={styles.comparisonBox}>
-              <Text style={styles.comparisonTitle}>🏆 Competitive Advantages</Text>
+              <Text style={styles.comparisonTitle}>Competitive Advantages</Text>
               <View style={styles.advantageGrid}>
                 {(() => {
                   // Dynamic advantages based on HP class
@@ -781,8 +791,14 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           </View>
         </View>
 
-        {/* Contact Footer */}
+        {/* Contact Footer with Trust Badges */}
         <View style={styles.contactFooter}>
+          {/* Trust Badges */}
+          <View style={styles.contactRow}>
+            <Text style={styles.contactText}>Award-Winning Service Team</Text>
+            <Text style={styles.contactText}>Certified Repower Center</Text>
+          </View>
+          
           <Text style={styles.companyName}>{COMPANY_INFO.name}</Text>
           <View style={styles.contactRow}>
             <Text style={styles.contactText}>{COMPANY_INFO.address.full}</Text>
