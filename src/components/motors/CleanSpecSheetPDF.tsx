@@ -483,6 +483,11 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
         selectedMotorSpecs['Alternator'] = mercurySpecs.alternator || '12amp';
       }
       
+      // Cylinders - provide default if not available
+      if (!selectedMotorSpecs['Cylinders']) {
+        selectedMotorSpecs['Cylinders'] = mercurySpecs.cylinders || '2';
+      }
+      
       // Steering
       if (!selectedMotorSpecs['Steering']) {
         selectedMotorSpecs['Steering'] = 'Tiller or Remote';
