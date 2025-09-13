@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   section: {
-    marginBottom: 12,
+    marginBottom: 20,
     backgroundColor: '#f9fafb',
     padding: 10,
     borderRadius: 4,
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#bfdbfe',
-    marginBottom: 12,
+    marginBottom: 20,
   },
   comparisonTitle: {
     fontSize: 10,
@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#bbf7d0',
-    marginBottom: 12,
+    marginBottom: 20,
   },
   warrantyTitle: {
     fontSize: 10,
@@ -245,6 +245,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#e2e8f0',
+    marginBottom: 40,
   },
   financingTitle: {
     fontSize: 10,
@@ -351,12 +352,32 @@ const styles = StyleSheet.create({
   },
   contactFooter: {
     position: 'absolute',
-    bottom: 20,
+    bottom: 30,
     left: 20,
     right: 20,
     paddingTop: 12,
     borderTopWidth: 1,
     borderTopColor: '#e5e7eb',
+  },
+  trustBadgesRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 15,
+    marginBottom: 8,
+  },
+  trustBadge: {
+    alignItems: 'center',
+  },
+  trustBadgeText: {
+    fontSize: 8,
+    fontWeight: 'bold',
+    color: '#1e40af',
+    backgroundColor: '#eff6ff',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: '#bfdbfe',
   },
   companyName: {
     fontSize: 10,
@@ -427,12 +448,26 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
   // Get actual Mercury motor specifications 
   const mercurySpecs = findMercurySpecs(hpNumber, specData.motorModel);
   
-  // Model code decoder using the correct function from motor-helpers
+  // Simplified Model code decoder
   const getModelCodeDecoding = (model: string) => {
     const decoded = decodeModelName(model);
     if (decoded.length === 0) return '';
     
-    return decoded.map(item => `${item.code} = ${item.meaning}`).join(' | ');
+    // Simplified mappings
+    const simplifiedCodes = decoded.map(item => {
+      switch(item.code) {
+        case 'E': return 'E = Electric Start';
+        case 'M': return 'M = Manual Start';
+        case 'H': return 'H = Tiller Handle';
+        case 'XL': return 'XL = Extra Long Shaft';
+        case 'L': return 'L = Long Shaft';
+        case 'S': return 'S = Short Shaft';
+        case 'PT': return 'PT = Power Trim';
+        default: return `${item.code} = ${item.meaning}`;
+      }
+    });
+    
+    return simplifiedCodes.join(' | ');
   };
 
   // Get correct start type based on model decoding
@@ -446,50 +481,45 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
     return 'Electric'; // Default for higher HP motors
   };
 
-  // Dynamic specifications using actual motor data
+  // Dynamic specifications using actual selectedMotor data FIRST
   const getEnhancedSpecs = () => {
-    const baseSpecs: Record<string, string> = {};
+    // Start with selectedMotor specifications as primary source
+    const selectedMotorSpecs = { ...specData.specifications };
     
-    // Use Mercury specs if available
+    // Add Mercury specs as secondary source only if data missing
     if (mercurySpecs) {
-      baseSpecs['Weight'] = `${Math.round(mercurySpecs.weight_kg * 2.20462)} lbs (${mercurySpecs.weight_kg} kg)`;
-      baseSpecs['Displacement'] = mercurySpecs.displacement;
-      baseSpecs['Gear Ratio'] = mercurySpecs.gear_ratio;
-      baseSpecs['Fuel System'] = mercurySpecs.fuel_type || 'Regular Unleaded (91 RON)';
-      baseSpecs['Oil Type'] = 'Mercury 25W-40 4-Stroke Marine Oil';
-      baseSpecs['Noise Level'] = '78 dB @ 1000 RPM';
-      baseSpecs['Control Type'] = mercurySpecs.steering === 'Tiller' ? 'Tiller Handle' : 'Remote Control';
-      baseSpecs['Shaft Length'] = getShaftLength(specData.motorModel);
-    } else {
-      // Fallback to HP-based estimates only if no Mercury specs
-      if (hpNumber <= 15) {
-        baseSpecs['Weight'] = hpNumber <= 5 ? '58 lbs (26.2 kg)' : '121 lbs (55 kg)';
-        baseSpecs['Displacement'] = hpNumber <= 5 ? '123cc' : '209.5cc';
-        baseSpecs['Gear Ratio'] = '2.15:1';
-        baseSpecs['Shaft Length'] = getShaftLength(specData.motorModel);
-      } else if (hpNumber <= 50) {
-        baseSpecs['Weight'] = '267 lbs (121 kg)';
-        baseSpecs['Displacement'] = '526cc';
-        baseSpecs['Gear Ratio'] = '2.38:1';
-        baseSpecs['Shaft Length'] = getShaftLength(specData.motorModel);
-      } else {
-        baseSpecs['Weight'] = '395 lbs (179 kg)';
-        baseSpecs['Displacement'] = '1350cc';
-        baseSpecs['Gear Ratio'] = '2.33:1';
-        baseSpecs['Shaft Length'] = getShaftLength(specData.motorModel);
+      if (!selectedMotorSpecs['Weight']) {
+        selectedMotorSpecs['Weight'] = `${Math.round(mercurySpecs.weight_kg * 2.20462)} lbs (${mercurySpecs.weight_kg} kg)`;
       }
-      
-      baseSpecs['Fuel System'] = 'Regular Unleaded (91 RON)';
-      baseSpecs['Oil Type'] = 'Mercury 25W-40 4-Stroke Marine Oil';
-      baseSpecs['Noise Level'] = '78 dB @ 1000 RPM';
-      baseSpecs['Control Type'] = getControlType(specData.motorModel);
+      if (!selectedMotorSpecs['Displacement']) {
+        selectedMotorSpecs['Displacement'] = mercurySpecs.displacement;
+      }
+      if (!selectedMotorSpecs['Gear Ratio']) {
+        selectedMotorSpecs['Gear Ratio'] = mercurySpecs.gear_ratio;
+      }
+      if (!selectedMotorSpecs['Fuel System']) {
+        selectedMotorSpecs['Fuel System'] = mercurySpecs.fuel_type || 'Regular Unleaded (91 RON)';
+      }
+      if (!selectedMotorSpecs['Control Type']) {
+        selectedMotorSpecs['Control Type'] = mercurySpecs.steering === 'Tiller' ? 'Tiller Handle' : 'Remote Control';
+      }
     }
     
-    // Override with actual specifications from database if available
-    return {
-      ...baseSpecs,
-      ...specData.specifications
-    };
+    // Add standard specs only if missing
+    if (!selectedMotorSpecs['Oil Type']) {
+      selectedMotorSpecs['Oil Type'] = 'Mercury 25W-40 4-Stroke Marine Oil';
+    }
+    if (!selectedMotorSpecs['Noise Level']) {
+      selectedMotorSpecs['Noise Level'] = '78 dB @ 1000 RPM';
+    }
+    if (!selectedMotorSpecs['Shaft Length']) {
+      selectedMotorSpecs['Shaft Length'] = getShaftLength(specData.motorModel);
+    }
+    if (!selectedMotorSpecs['Control Type']) {
+      selectedMotorSpecs['Control Type'] = getControlType(specData.motorModel);
+    }
+    
+    return selectedMotorSpecs;
   };
   
   // Get shaft length from model code
@@ -814,20 +844,22 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
         {/* Contact Footer with Trust Badges */}
         <View style={styles.contactFooter}>
           {/* Trust Badges */}
-          <View style={styles.contactRow}>
-            <Text style={styles.contactText}>Award-Winning Service Team</Text>
-            <Text style={styles.contactText}>Certified Repower Center</Text>
+          <View style={styles.trustBadgesRow}>
+            <View style={styles.trustBadge}>
+              <Text style={styles.trustBadgeText}>Award-Winning Service</Text>
+            </View>
+            <View style={styles.trustBadge}>
+              <Text style={styles.trustBadgeText}>Certified Repower Center</Text>
+            </View>
           </View>
           
           <Text style={styles.companyName}>{COMPANY_INFO.name}</Text>
+          <Text style={styles.contactText}>{COMPANY_INFO.address.full}</Text>
           <View style={styles.contactRow}>
-            <Text style={styles.contactText}>{COMPANY_INFO.address.full}</Text>
             <Text style={styles.contactText}>Phone: {COMPANY_INFO.contact.phone}</Text>
-          </View>
-          <View style={styles.contactRow}>
             <Text style={styles.contactText}>Email: {COMPANY_INFO.contact.email}</Text>
-            <Text style={styles.contactText}>Web: {COMPANY_INFO.contact.website}</Text>
           </View>
+          <Text style={styles.contactText}>Web: {COMPANY_INFO.contact.website}</Text>
           <Text style={styles.ctaText}>
             Questions? Call {COMPANY_INFO.contact.phone} or visit {COMPANY_INFO.contact.website}
           </Text>
