@@ -154,6 +154,7 @@ export default function MotorDetailsSheet({
         sku: motor.sku,
         msrp: typeof price === "number" ? price.toLocaleString('en-CA', { minimumFractionDigits: 0 }) : motor.msrp?.toLocaleString('en-CA', { minimumFractionDigits: 0 }),
         motorPrice: typeof price === "number" ? price : motor.msrp, // Add motor price for financing
+        image_url: motor?.image_url || img || motor?.images?.[0] || gallery?.[0] || undefined,
         specifications: {
           ...motor.specifications,
           'Weight': motorSpecs ? `${Math.round(motorSpecs.weight_kg * 2.20462)} lbs (${motorSpecs.weight_kg} kg)` : (weightLbs ? `${weightLbs} lbs` : undefined),
