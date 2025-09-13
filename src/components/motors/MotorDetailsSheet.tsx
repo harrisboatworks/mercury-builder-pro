@@ -5,6 +5,7 @@ import { supabase } from "../../integrations/supabase/client";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { useIsMobile } from "../../hooks/use-mobile";
+import { useScrollCoordination } from "../../hooks/useScrollCoordination";
 import { money } from "../../lib/money";
 import { MotorImageGallery } from './MotorImageGallery';
 import { MonthlyPaymentDisplay } from '../quote-builder/MonthlyPaymentDisplay';
@@ -62,6 +63,7 @@ export default function MotorDetailsSheet({
   const [generatedSpecUrl, setGeneratedSpecUrl] = useState<string | null>(null);
   const isMobile = useIsMobile();
   const { promo: activePromo } = useActiveFinancingPromo();
+  const { setScrollLock } = useScrollCoordination();
 
   // Get smart review for this motor with rotation logic
   const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
@@ -82,7 +84,10 @@ export default function MotorDetailsSheet({
     let restoreInProgress = false;
     
     if (open) {
-      // Step 1: Store scroll position immediately and in multiple ways
+      // Step 1: Lock scroll coordination to prevent interference
+      setScrollLock(true, 'modal-opening');
+      
+      // Step 2: Store scroll position immediately and in multiple ways
       scrollPosition = window.scrollY;
       console.log('🔒 Modal opening - storing scroll position:', scrollPosition);
       
@@ -115,27 +120,36 @@ export default function MotorDetailsSheet({
       document.body.style.width = '';
       document.body.style.overflow = '';
       
-      // Step 4: Delayed scroll restoration using requestAnimationFrame
+      // Step 4: Aggressive scroll restoration with coordination lock
       requestAnimationFrame(() => {
-        // Additional delay to ensure DOM is fully updated
+        // Keep scroll lock during restoration process
         setTimeout(() => {
           console.log('⚡ Executing scroll restoration to:', targetScrollY);
-          window.scrollTo({
-            top: targetScrollY,
-            behavior: 'instant' // Use instant to prevent interference
-          });
           
-          // Verify restoration worked
+          // Multiple restoration attempts with increasing delays
+          window.scrollTo(0, targetScrollY);
+          
           setTimeout(() => {
-            const actualScrollY = window.scrollY;
-            console.log('✅ Scroll restoration result - Expected:', targetScrollY, 'Actual:', actualScrollY);
-            if (Math.abs(actualScrollY - targetScrollY) > 50) {
-              console.warn('⚠️ Scroll restoration may have failed - attempting backup restoration');
-              window.scrollTo(0, targetScrollY);
-            }
-            restoreInProgress = false;
-          }, 50);
-        }, 50);
+            window.scrollTo({ top: targetScrollY, behavior: 'instant' });
+            
+            setTimeout(() => {
+              const actualScrollY = window.scrollY;
+              console.log('✅ Scroll restoration result - Expected:', targetScrollY, 'Actual:', actualScrollY);
+              
+              if (Math.abs(actualScrollY - targetScrollY) > 20) {
+                console.warn('⚠️ Final backup restoration attempt');
+                window.scrollTo(0, targetScrollY);
+              }
+              
+              // Release scroll lock after restoration is complete
+              setTimeout(() => {
+                setScrollLock(false, 'modal-closed');
+                restoreInProgress = false;
+              }, 100);
+              
+            }, 50);
+          }, 25);
+        }, 25);
       });
       
       // Cleanup stored values
@@ -152,6 +166,7 @@ export default function MotorDetailsSheet({
         document.body.style.overflow = '';
         document.body.removeAttribute('data-scroll-y');
         sessionStorage.removeItem('modal-scroll-y');
+        setScrollLock(false, 'cleanup');
       }
     };
   }, [open]);

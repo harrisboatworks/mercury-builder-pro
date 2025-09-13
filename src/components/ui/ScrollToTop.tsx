@@ -1,10 +1,17 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useScrollCoordination } from '../../hooks/useScrollCoordination';
 
 export function ScrollToTop() {
   const location = useLocation();
+  const { isScrollLocked, getScrollLockReason } = useScrollCoordination();
 
   useEffect(() => {
+    // Check if scroll is locked by modal or other components
+    if (isScrollLocked()) {
+      console.log('⏸️ ScrollToTop skipped - scroll locked by:', getScrollLockReason());
+      return;
+    }
     // Increase delay to ensure complex components are fully rendered
     const timer = setTimeout(() => {
       // Calculate dynamic header height with better element detection
