@@ -41,6 +41,7 @@ import AdminSecurity from "./pages/AdminSecurity";
 import AdminZapier from "./pages/AdminZapier";
 import AdminEmail from "./pages/AdminEmail";
 import AdminPayments from "./pages/AdminPayments";
+import AdminSMS from "./pages/AdminSMS";
 import Deposits from "./pages/Deposits";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentCanceled from "./pages/PaymentCanceled";
@@ -177,6 +178,14 @@ const App = () => (
                   element={
                     <SecureRoute requireAdmin={true}>
                       <AdminPayments />
+                    </SecureRoute>
+                  }
+                />
+                <Route
+                  path="/admin/sms"
+                  element={
+                    <SecureRoute requireAdmin={true}>
+                      <AdminSMS />
                     </SecureRoute>
                   }
                 />

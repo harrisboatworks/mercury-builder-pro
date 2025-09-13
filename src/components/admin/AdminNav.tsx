@@ -11,6 +11,7 @@ const navItems = [
   { label: "Zapier Integration", to: "/admin/zapier" },
   { label: "Email Management", to: "/admin/email" },
   { label: "Payments", to: "/admin/payments" },
+  { label: "SMS Alerts", to: "/admin/sms" },
 ];
 
 export default function AdminNav() {

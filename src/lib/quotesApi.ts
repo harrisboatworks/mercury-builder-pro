@@ -1,6 +1,7 @@
 // src/lib/quotesApi.ts
 import { supabase } from '@/integrations/supabase/client';
 import { triggerQuoteDeliveryWebhooks } from './webhooks';
+import { generateSMSMessage } from './smsTemplates';
 
 // --- Types ---
 export type QuoteOption = { name: string; price: number };
@@ -65,11 +66,50 @@ export async function createQuote(input: CreateQuoteInput) {
     console.log('Quote created successfully, triggering delivery webhooks...');
     try {
       await triggerQuoteDeliveryWebhooks(result.created);
-    } catch (webhookError) {
-      console.error('Error triggering quote delivery webhooks:', webhookError);
-      // Don't fail the quote creation if webhook fails
+      
+      // Send SMS notification for quote delivery
+      await triggerQuoteDeliverySMS(result.created);
+    } catch (error) {
+      console.error('Error triggering quote delivery notifications:', error);
+      // Don't fail the quote creation if notifications fail
     }
   }
   
   return result as Promise<{ ok: true; created: any }>;
+}
+
+// Add SMS notification function for quote delivery
+export async function triggerQuoteDeliverySMS(quoteData: any) {
+  try {
+    // Get admin SMS preferences (in a real app, this would be from database)
+    const smsPreferences = JSON.parse(localStorage.getItem('sms_preferences') || '{}');
+    
+    if (!smsPreferences.quoteDelivered || !smsPreferences.phoneNumber) {
+      console.log('Quote delivery SMS alerts disabled or no phone number configured');
+      return;
+    }
+
+    const message = generateSMSMessage('quote_confirmation', {
+      customerName: quoteData.customer_name,
+      quoteNumber: quoteData.quote_number,
+      totalPrice: quoteData.total_price,
+      motorModel: quoteData.motor_model || 'Mercury Motor',
+    });
+
+    const { data, error } = await supabase.functions.invoke('send-sms', {
+      body: {
+        to: smsPreferences.phoneNumber,
+        message: message,
+        messageType: 'quote_confirmation'
+      }
+    });
+
+    if (error) throw error;
+    
+    console.log('Quote delivery SMS sent successfully:', data);
+    return data;
+  } catch (error) {
+    console.error('Failed to send quote delivery SMS:', error);
+    throw error;
+  }
 }

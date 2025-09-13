@@ -1,5 +1,6 @@
 import { supabase } from '@/integrations/supabase/client';
 import { calculateEnhancedLeadScore, triggerHotLeadWebhooks } from './webhooks';
+import { generateSMSMessage } from './smsTemplates';
 
 export interface LeadData {
   motor_model?: string;
@@ -66,13 +67,67 @@ export async function saveLead(leadData: LeadData) {
     console.log('High-score lead detected, triggering webhooks...');
     try {
       await triggerHotLeadWebhooks({ ...data, lead_score: leadScore });
-    } catch (webhookError) {
-      console.error('Error triggering hot lead webhooks:', webhookError);
-      // Don't fail the lead save if webhook fails
+      
+      // Send SMS alert for hot leads
+      await triggerHotLeadSMS({
+        customerName: data.customer_name || 'Unknown',
+        leadScore: leadScore,
+        finalPrice: data.final_price || 0,
+        motorModel: leadData.motor_model || 'Mercury Motor',
+        phoneNumber: data.customer_phone,
+      });
+    } catch (error) {
+      console.error('Error triggering hot lead notifications:', error);
+      // Don't fail the lead save if notifications fail
     }
   }
 
   return data;
+}
+
+// Add SMS notification function
+export async function triggerHotLeadSMS(leadData: {
+  customerName: string;
+  leadScore: number;
+  finalPrice: number;
+  motorModel: string;
+  phoneNumber?: string;
+}) {
+  try {
+    // Get admin SMS preferences (in a real app, this would be from database)
+    const smsPreferences = JSON.parse(localStorage.getItem('sms_preferences') || '{}');
+    
+    if (!smsPreferences.hotLeads || !smsPreferences.phoneNumber) {
+      console.log('Hot lead SMS alerts disabled or no phone number configured');
+      return;
+    }
+
+    const message = generateSMSMessage('hot_lead', {
+      customerName: leadData.customerName,
+      leadScore: leadData.leadScore,
+      finalPrice: leadData.finalPrice,
+      motorModel: leadData.motorModel,
+    });
+
+    const { data, error } = await supabase.functions.invoke('send-sms', {
+      body: {
+        to: smsPreferences.phoneNumber,
+        message: message,
+        messageType: 'hot_lead',
+        customerName: leadData.customerName,
+        leadScore: leadData.leadScore,
+        quoteAmount: leadData.finalPrice
+      }
+    });
+
+    if (error) throw error;
+    
+    console.log('Hot lead SMS sent successfully:', data);
+    return data;
+  } catch (error) {
+    console.error('Failed to send hot lead SMS:', error);
+    throw error;
+  }
 }
 
 function calculateLeadScore(leadData: LeadData): number {
