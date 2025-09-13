@@ -6,6 +6,35 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
+// Helper function to generate alternative URLs
+function generateAlternativeUrls(originalUrl: string): string[] {
+  const alternatives = []
+  
+  try {
+    // Convert thumb to detail
+    if (originalUrl.includes('/thumb/')) {
+      alternatives.push(originalUrl.replace('/thumb/', '/detail/'))
+      alternatives.push(originalUrl.replace('/thumb/', '/large/'))
+    }
+    
+    // Try different size variations
+    if (originalUrl.includes('_thumb')) {
+      alternatives.push(originalUrl.replace('_thumb', '_large'))
+      alternatives.push(originalUrl.replace('_thumb', '_detail'))
+    }
+    
+    // Try HTTPS if HTTP
+    if (originalUrl.startsWith('http://')) {
+      alternatives.push(originalUrl.replace('http://', 'https://'))
+    }
+    
+  } catch (error) {
+    console.error('Error generating alternative URLs:', error)
+  }
+  
+  return alternatives
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
@@ -123,149 +152,110 @@ serve(async (req) => {
           
           const imageBuffer = await imageBlob.arrayBuffer()
 
-        // Generate a clean filename
-        const fileExtension = motor.image_url.split('.').pop()?.toLowerCase() || 'jpg'
-        const cleanModel = motor.model.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
-        const fileName = `${motor.make?.toLowerCase()}-${cleanModel}-${motor.horsepower}hp.${fileExtension}`
-        const filePath = `motors/${fileName}`
+          // Generate a clean filename
+          const fileExtension = motor.image_url.split('.').pop()?.toLowerCase() || 'jpg'
+          const cleanModel = motor.model.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
+          const fileName = `${motor.make?.toLowerCase()}-${cleanModel}-${motor.horsepower}hp.${fileExtension}`
+          const filePath = `motors/${fileName}`
 
-        // Upload to Supabase Storage
-        const { data: uploadData, error: uploadError } = await supabase.storage
-          .from('motor-images')
-          .upload(filePath, new Uint8Array(imageBuffer), {
-            contentType: imageBlob.type || 'image/jpeg',
-            upsert: true
-          })
+          // Upload to Supabase Storage
+          const { data: uploadData, error: uploadError } = await supabase.storage
+            .from('motor-images')
+            .upload(filePath, new Uint8Array(imageBuffer), {
+              contentType: imageBlob.type || 'image/jpeg',
+              upsert: true
+            })
 
-        if (uploadError) {
-          throw new Error(`Failed to upload image: ${uploadError.message}`)
-        }
+          if (uploadError) {
+            throw new Error(`Failed to upload image: ${uploadError.message}`)
+          }
 
-        // Get the public URL
-        const { data: { publicUrl } } = supabase.storage
-          .from('motor-images')
-          .getPublicUrl(filePath)
+          // Get the public URL
+          const { data: { publicUrl } } = supabase.storage
+            .from('motor-images')
+            .getPublicUrl(filePath)
 
-        // Update motor record with new image
-        const newImages = Array.isArray(motor.images) ? [...motor.images] : []
-        
-        // Add the new image if it's not already there
-        if (!newImages.some(img => img.url === publicUrl)) {
-          newImages.push({
-            url: publicUrl,
-            type: 'main',
-            source: 'migrated',
-            original_url: motor.image_url
-          })
-        }
+          // Update motor record with new image
+          const newImages = Array.isArray(motor.images) ? [...motor.images] : []
+          
+          // Add the new image if it's not already there
+          if (!newImages.some(img => img.url === publicUrl)) {
+            newImages.push({
+              url: publicUrl,
+              type: 'main',
+              source: 'migrated',
+              original_url: motor.image_url
+            })
+          }
 
-        const { error: updateError } = await supabase
-          .from('motor_models')
-          .update({
-            images: newImages,
-            // Keep the original image_url as fallback
-            updated_at: new Date().toISOString()
-          })
-          .eq('id', motor.id)
+          const { error: updateError } = await supabase
+            .from('motor_models')
+            .update({
+              images: newImages,
+              // Keep the original image_url as fallback
+              updated_at: new Date().toISOString()
+            })
+            .eq('id', motor.id)
 
-        if (updateError) {
-          throw new Error(`Failed to update motor record: ${updateError.message}`)
-        }
+          if (updateError) {
+            throw new Error(`Failed to update motor record: ${updateError.message}`)
+          }
 
-        successful++
-        results.push({
-          id: motor.id,
-          model: motor.model,
-          status: 'success',
-          new_url: publicUrl
-        })
-
-          break;
-        }
-
-        successful++
-        results.push({
-          id: motor.id,
-          model: motor.model,
-          status: 'success',
-          new_url: publicUrl,
-          attempt: attempts + 1
-        })
-
-        console.log(`✓ Successfully migrated image for ${motor.model}`)
-        break; // Success, exit retry loop
-
-      } catch (error) {
-        attempts++;
-        console.error(`✗ Attempt ${attempts} failed for ${motor.model}: ${error.message}`)
-        
-        if (attempts >= maxAttempts) {
-          failed++
+          successful++;
           results.push({
             id: motor.id,
             model: motor.model,
-            status: 'failed',
-            error: error.message,
-            attempts
+            status: 'success',
+            new_url: publicUrl,
+            attempt: attempts + 1
           })
-        } else {
-          console.log(`Retrying ${motor.model} (${attempts}/${maxAttempts})...`)
-          await new Promise(resolve => setTimeout(resolve, 2000)) // Wait before retry
+
+          console.log(`✓ Successfully migrated image for ${motor.model}`)
+          break; // Success, exit retry loop
+
+        } catch (error) {
+          attempts++;
+          console.error(`✗ Attempt ${attempts} failed for ${motor.model}: ${error.message}`)
+          
+          if (attempts >= maxAttempts) {
+            failed++;
+            results.push({
+              id: motor.id,
+              model: motor.model,
+              status: 'failed',
+              error: error.message,
+              attempts
+            })
+          } else {
+            console.log(`Retrying ${motor.model} (${attempts}/${maxAttempts})...`)
+            await new Promise(resolve => setTimeout(resolve, 2000)) // Wait before retry
+          }
         }
       }
+    }
+
+    const summary = {
+      success: true,
+      processed: motors.length,
+      successful,
+      failed,
+      results
+    }
+
+    console.log('Migration completed:', summary)
+
+    return new Response(JSON.stringify(summary), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    })
+
+  } catch (error) {
+    console.error('Migration error:', error)
+    return new Response(JSON.stringify({
+      success: false,
+      error: error.message
+    }), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      status: 500,
+    })
   }
-
-  const summary = {
-    success: true,
-    processed: motors.length,
-    successful,
-    failed,
-    results
-  }
-
-  console.log('Migration completed:', summary)
-
-  return new Response(JSON.stringify(summary), {
-    headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-  })
-
-} catch (error) {
-  console.error('Migration error:', error)
-  return new Response(JSON.stringify({
-    success: false,
-    error: error.message
-  }), {
-    headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    status: 500,
-  })
-}
 })
-
-// Helper function to generate alternative URLs
-function generateAlternativeUrls(originalUrl: string): string[] {
-const alternatives = []
-
-try {
-  // Convert thumb to detail
-  if (originalUrl.includes('/thumb/')) {
-    alternatives.push(originalUrl.replace('/thumb/', '/detail/'))
-    alternatives.push(originalUrl.replace('/thumb/', '/large/'))
-  }
-  
-  // Try different size variations
-  if (originalUrl.includes('_thumb')) {
-    alternatives.push(originalUrl.replace('_thumb', '_large'))
-    alternatives.push(originalUrl.replace('_thumb', '_detail'))
-  }
-  
-  // Try HTTPS if HTTP
-  if (originalUrl.startsWith('http://')) {
-    alternatives.push(originalUrl.replace('http://', 'https://'))
-  }
-  
-} catch (error) {
-  console.error('Error generating alternative URLs:', error)
-}
-
-return alternatives
-}
