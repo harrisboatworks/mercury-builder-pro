@@ -1,7 +1,8 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import { COMPANY_INFO } from '@/lib/companyInfo';
-import { getStartType } from '@/lib/motor-helpers';
+import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption } from '@/lib/motor-helpers';
+import { findMotorSpecs as findMercurySpecs } from '@/lib/data/mercury-motors';
 import { calculateMonthlyPayment, getFinancingDisplay } from '@/lib/finance';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
@@ -405,7 +406,7 @@ export interface CleanSpecSheetData {
     name: string;
     description: string;
     endDate: string;
-    rate?: number; // Add promo rate for financing
+    rate?: number; // Add promo rate for financing calculations
   };
 }
 
@@ -420,82 +421,101 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
     day: 'numeric' 
   });
 
-  // Model code decoder function - fixed order and no duplicates
-  const decodeModelCode = (model: string) => {
-    const codes = [];
-    // Decode in the order they appear (ELPT)
-    if (model.includes('E')) codes.push('E = Electric Start');
-    if (model.includes('L')) codes.push('L = Long Shaft');
-    if (model.includes('P')) codes.push('P = Power Trim');
-    if (model.includes('T')) codes.push('T = Tiller Handle');
-    // Additional specific codes (check more specific first)
-    if (model.includes('CT')) codes.push('CT = Command Thrust');
-    if (model.includes('XS')) codes.push('XS = Extra Short Shaft');
-    if (model.includes('H') && !model.includes('CT') && !model.includes('XS')) codes.push('H = High Output');
-    if (model.includes('M') && !model.includes('Command')) codes.push('M = Manual Start');
-    if (model.includes('R')) codes.push('R = Remote Control');
-    return codes.join(' | ');
+  // Get HP number for lookups
+  const hpNumber = parseInt(specData.horsepower.replace(/[^\d]/g, ''));
+  
+  // Get actual Mercury motor specifications 
+  const mercurySpecs = findMercurySpecs(hpNumber, specData.motorModel);
+  
+  // Model code decoder using the correct function from motor-helpers
+  const getModelCodeDecoding = (model: string) => {
+    const decoded = decodeModelName(model);
+    if (decoded.length === 0) return '';
+    
+    return decoded.map(item => `${item.code} = ${item.meaning}`).join(' | ');
   };
 
-  // Dynamic specifications based on motor HP
-  const hp = parseInt(specData.horsepower);
-  const getMotorSpecs = (horsepower: number) => {
-    if (horsepower <= 15) {
-      return {
-        weight: '121 lbs (55 kg)',
-        displacement: '209.5 cc',
-        gearRatio: '2.29:1',
-        fuelSystem: 'EFI (Electronic Fuel Injection)',
-        topSpeed: '22-28 mph',
-        boatSize: '12-16 ft',
-        fuelConsumption: '1.8 GPH @ cruise'
-      };
-    } else if (horsepower <= 50) {
-      return {
-        weight: '267 lbs (121 kg)',
-        displacement: '526 cc',
-        gearRatio: '2.38:1',
-        fuelSystem: 'EFI (Electronic Fuel Injection)',
-        topSpeed: '35-42 mph',
-        boatSize: '16-20 ft',
-        fuelConsumption: '3.2 GPH @ cruise'
-      };
-    } else if (horsepower <= 115) {
-      return {
-        weight: '395 lbs (179 kg)',
-        displacement: '1350 cc',
-        gearRatio: '2.33:1',
-        fuelSystem: 'EFI (Electronic Fuel Injection)',
-        topSpeed: '45-55 mph',
-        boatSize: '18-24 ft',
-        fuelConsumption: '5.8 GPH @ cruise'
-      };
+  // Get correct start type based on model decoding
+  const getStartType = (model: string) => {
+    const decoded = decodeModelName(model);
+    const manualStart = decoded.find(item => item.code === 'M');
+    const electricStart = decoded.find(item => item.code === 'E');
+    
+    if (manualStart) return 'Manual';
+    if (electricStart) return 'Electric';
+    return 'Electric'; // Default for higher HP motors
+  };
+
+  // Dynamic specifications using actual motor data
+  const getEnhancedSpecs = () => {
+    const baseSpecs: Record<string, string> = {};
+    
+    // Use Mercury specs if available
+    if (mercurySpecs) {
+      baseSpecs['Weight'] = `${Math.round(mercurySpecs.weight_kg * 2.20462)} lbs (${mercurySpecs.weight_kg} kg)`;
+      baseSpecs['Displacement'] = mercurySpecs.displacement;
+      baseSpecs['Gear Ratio'] = mercurySpecs.gear_ratio;
+      baseSpecs['Fuel System'] = mercurySpecs.fuel_type || 'Regular Unleaded (91 RON)';
+      baseSpecs['Oil Type'] = 'Mercury 25W-40 4-Stroke Marine Oil';
+      baseSpecs['Noise Level'] = '78 dB @ 1000 RPM';
+      baseSpecs['Control Type'] = mercurySpecs.steering === 'Tiller' ? 'Tiller Handle' : 'Remote Control';
+      baseSpecs['Shaft Length'] = getShaftLength(specData.motorModel);
     } else {
-      return {
-        weight: '635 lbs (288 kg)',
-        displacement: '2100 cc',
-        gearRatio: '2.07:1',
-        fuelSystem: 'Advanced EFI',
-        topSpeed: '65-75 mph',
-        boatSize: '22-28 ft',
-        fuelConsumption: '12.5 GPH @ cruise'
-      };
+      // Fallback to HP-based estimates only if no Mercury specs
+      if (hpNumber <= 15) {
+        baseSpecs['Weight'] = hpNumber <= 5 ? '58 lbs (26.2 kg)' : '121 lbs (55 kg)';
+        baseSpecs['Displacement'] = hpNumber <= 5 ? '123cc' : '209.5cc';
+        baseSpecs['Gear Ratio'] = '2.15:1';
+        baseSpecs['Shaft Length'] = getShaftLength(specData.motorModel);
+      } else if (hpNumber <= 50) {
+        baseSpecs['Weight'] = '267 lbs (121 kg)';
+        baseSpecs['Displacement'] = '526cc';
+        baseSpecs['Gear Ratio'] = '2.38:1';
+        baseSpecs['Shaft Length'] = getShaftLength(specData.motorModel);
+      } else {
+        baseSpecs['Weight'] = '395 lbs (179 kg)';
+        baseSpecs['Displacement'] = '1350cc';
+        baseSpecs['Gear Ratio'] = '2.33:1';
+        baseSpecs['Shaft Length'] = getShaftLength(specData.motorModel);
+      }
+      
+      baseSpecs['Fuel System'] = 'Regular Unleaded (91 RON)';
+      baseSpecs['Oil Type'] = 'Mercury 25W-40 4-Stroke Marine Oil';
+      baseSpecs['Noise Level'] = '78 dB @ 1000 RPM';
+      baseSpecs['Control Type'] = getControlType(specData.motorModel);
     }
+    
+    // Override with actual specifications from database if available
+    return {
+      ...baseSpecs,
+      ...specData.specifications
+    };
+  };
+  
+  // Get shaft length from model code
+  const getShaftLength = (model: string) => {
+    const decoded = decodeModelName(model);
+    const shaftInfo = decoded.find(item => item.code === 'XL' || item.code === 'L' || item.code === 'S' || item.code === 'XX');
+    
+    if (shaftInfo) {
+      if (shaftInfo.code === 'S') return '15" (Short)';
+      if (shaftInfo.code === 'L') return '20" (Long)';  
+      if (shaftInfo.code === 'XL') return '25" (X-Long)';
+      if (shaftInfo.code === 'XX') return '30" (XX-Long)';
+    }
+    
+    // Default based on HP if no shaft info in model
+    return hpNumber <= 5 ? '15" (Short)' : '20" (Long)';
+  };
+  
+  // Get control type from model code
+  const getControlType = (model: string) => {
+    const decoded = decodeModelName(model);
+    const tillerHandle = decoded.find(item => item.code === 'H');
+    return tillerHandle ? 'Tiller Handle' : 'Remote Control';
   };
 
-  const motorSpecs = getMotorSpecs(hp);
-  const actualWeight = specData.specifications?.weight || motorSpecs.weight;
-  const enhancedSpecs = {
-    'Weight': actualWeight,
-    'Displacement': specData.specifications?.displacement || motorSpecs.displacement,
-    'Gear Ratio': specData.specifications?.gear_ratio || motorSpecs.gearRatio,
-    'Fuel System': specData.specifications?.fuel_system || motorSpecs.fuelSystem,
-    'Oil Type': specData.specifications?.oil_type || '25W-40 4-Stroke Marine Oil',
-    'Noise Level': specData.specifications?.noise_level || '68 dB @ WOT',
-    'Control Type': specData.specifications?.control_type || 'Tiller Handle with Power Trim',
-    'Shaft Length': specData.specifications?.shaft_options || '25" (X-Long)',
-    ...specData.specifications
-  };
+  const enhancedSpecs = getEnhancedSpecs();
 
   const features = specData.features || [];
   const accessories = specData.includedAccessories || [];
@@ -590,7 +610,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               />
             ) : (
               <>
-                <Text style={styles.motorImagePlaceholder}>{specData.horsepower} HP Motor</Text>
+                <Text style={styles.motorImagePlaceholder}>{hpNumber}HP Motor</Text>
                 <Text style={styles.motorImageText}>Mercury Marine</Text>
               </>
             )}
@@ -598,10 +618,10 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
         </View>
 
         {/* Model Code Decoder */}
-        {decodeModelCode(specData.motorModel) && (
+        {getModelCodeDecoding(specData.motorModel) && (
           <View style={styles.modelCodeBox}>
             <Text style={styles.modelCodeTitle}>Model Code: {specData.motorModel}</Text>
-            <Text style={styles.modelCodeText}>{decodeModelCode(specData.motorModel)}</Text>
+            <Text style={styles.modelCodeText}>{getModelCodeDecoding(specData.motorModel)}</Text>
           </View>
         )}
 
@@ -616,11 +636,11 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
         <View style={styles.overviewBoxes}>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>HORSEPOWER</Text>
-            <Text style={styles.overviewValue}>{specData.horsepower} HP</Text>
+            <Text style={styles.overviewValue}>{specData.horsepower}</Text>
           </View>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>WEIGHT</Text>
-            <Text style={styles.overviewValue}>{actualWeight}</Text>
+            <Text style={styles.overviewValue}>{enhancedSpecs['Weight']}</Text>
           </View>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>START TYPE</Text>
@@ -659,15 +679,15 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               <View style={styles.specGrid}>
                 <View style={styles.specItem}>
                   <Text style={styles.specLabel}>Recommended Boat Size:</Text>
-                  <Text style={styles.specValue}>{performance.recommendedBoatSize || motorSpecs.boatSize}</Text>
+                  <Text style={styles.specValue}>{performance.recommendedBoatSize || getRecommendedBoatSize(hpNumber)}</Text>
                 </View>
                 <View style={styles.specItem}>
                   <Text style={styles.specLabel}>Estimated Top Speed:</Text>
-                  <Text style={styles.specValue}>{performance.estimatedTopSpeed || motorSpecs.topSpeed}</Text>
+                  <Text style={styles.specValue}>{performance.estimatedTopSpeed || getEstimatedSpeed(hpNumber)}</Text>
                 </View>
                 <View style={styles.specItem}>
                   <Text style={styles.specLabel}>Fuel Consumption:</Text>
-                  <Text style={styles.specValue}>{performance.fuelConsumption || motorSpecs.fuelConsumption}</Text>
+                  <Text style={styles.specValue}>{performance.fuelConsumption || getFuelConsumption(hpNumber)}</Text>
                 </View>
                 <View style={styles.specItem}>
                   <Text style={styles.specLabel}>Operating Range:</Text>
@@ -699,18 +719,18 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               <Text style={styles.comparisonTitle}>Competitive Advantages</Text>
               <View style={styles.advantageGrid}>
                 {(() => {
-                  // Dynamic advantages based on HP class
-                  const advantages = hp <= 15 ? [
+                  // Dynamic advantages based on HP class with realistic comparisons
+                  const advantages = hpNumber <= 15 ? [
                     { percent: '35%', text: 'Better Fuel Economy' },
                     { percent: '28%', text: 'Quieter Operation' },
                     { percent: '15%', text: 'Lighter Weight' },
                     { percent: '40%', text: 'Lower Emissions' }
-                  ] : hp <= 50 ? [
+                  ] : hpNumber <= 50 ? [
                     { percent: '25%', text: 'More Displacement' },
                     { percent: '30%', text: 'Better Fuel Economy' },
                     { percent: '20%', text: 'Quieter Operation' },
                     { percent: '18%', text: 'Faster Acceleration' }
-                  ] : hp <= 115 ? [
+                  ] : hpNumber <= 115 ? [
                     { percent: '22%', text: 'More Power/Weight' },
                     { percent: '35%', text: 'Better Fuel Economy' },
                     { percent: '15%', text: 'Quieter Operation' },
@@ -730,7 +750,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
                   ));
                 })()}
               </View>
-              <Text style={styles.comparisonNote}>*Compared to leading competitors in {specData.horsepower}HP class</Text>
+              <Text style={styles.comparisonNote}>*Compared to leading competitors in {specData.horsepower} class</Text>
             </View>
 
             {/* Warranty & Service */}
@@ -753,7 +773,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
                 <Text style={styles.sectionTitle}>Ideal Applications</Text>
               </View>
               <View style={styles.bulletList}>
-                {getIdealApplicationsByHP(parseInt(specData.horsepower)).map((app, index) => (
+                {getIdealApplicationsByHP(hpNumber).map((app, index) => (
                   <Text key={index} style={styles.bulletItem}>• {app}</Text>
                 ))}
               </View>
