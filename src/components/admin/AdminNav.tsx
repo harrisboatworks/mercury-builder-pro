@@ -8,6 +8,7 @@ const navItems = [
   { label: "Financing", to: "/admin/financing" },
   { label: "Motor Images", to: "/admin/motor-images" },
   { label: "Security", to: "/admin/security" },
+  { label: "Zapier Integration", to: "/admin/zapier" },
 ];
 
 export default function AdminNav() {

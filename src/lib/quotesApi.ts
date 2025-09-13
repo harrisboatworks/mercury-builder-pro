@@ -1,5 +1,6 @@
 // src/lib/quotesApi.ts
 import { supabase } from '@/integrations/supabase/client';
+import { triggerQuoteDeliveryWebhooks } from './webhooks';
 
 // --- Types ---
 export type QuoteOption = { name: string; price: number };
@@ -56,5 +57,19 @@ export async function createQuote(input: CreateQuoteInput) {
     const err = await res.json().catch(() => ({}));
     throw new Error(err?.error || `Create failed: ${res.status}`);
   }
-  return res.json() as Promise<{ ok: true; created: any }>;
+  
+  const result = await res.json();
+  
+  // Trigger quote delivery webhooks after successful quote creation
+  if (result.ok && result.created) {
+    console.log('Quote created successfully, triggering delivery webhooks...');
+    try {
+      await triggerQuoteDeliveryWebhooks(result.created);
+    } catch (webhookError) {
+      console.error('Error triggering quote delivery webhooks:', webhookError);
+      // Don't fail the quote creation if webhook fails
+    }
+  }
+  
+  return result as Promise<{ ok: true; created: any }>;
 }

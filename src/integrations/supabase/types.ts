@@ -762,6 +762,80 @@ export type Database = {
         }
         Relationships: []
       }
+      webhook_activity_logs: {
+        Row: {
+          error_message: string | null
+          id: string
+          payload: Json
+          response_details: Json | null
+          status: string
+          trigger_type: string
+          triggered_at: string
+          webhook_config_id: string | null
+        }
+        Insert: {
+          error_message?: string | null
+          id?: string
+          payload?: Json
+          response_details?: Json | null
+          status: string
+          trigger_type: string
+          triggered_at?: string
+          webhook_config_id?: string | null
+        }
+        Update: {
+          error_message?: string | null
+          id?: string
+          payload?: Json
+          response_details?: Json | null
+          status?: string
+          trigger_type?: string
+          triggered_at?: string
+          webhook_config_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "webhook_activity_logs_webhook_config_id_fkey"
+            columns: ["webhook_config_id"]
+            isOneToOne: false
+            referencedRelation: "webhook_configurations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      webhook_configurations: {
+        Row: {
+          created_at: string
+          id: string
+          is_active: boolean
+          name: string
+          test_payload: Json | null
+          updated_at: string
+          webhook_type: string
+          webhook_url: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          name: string
+          test_payload?: Json | null
+          updated_at?: string
+          webhook_type: string
+          webhook_url: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          name?: string
+          test_payload?: Json | null
+          updated_at?: string
+          webhook_type?: string
+          webhook_url?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

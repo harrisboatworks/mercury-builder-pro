@@ -1,4 +1,5 @@
 import { supabase } from '@/integrations/supabase/client';
+import { calculateEnhancedLeadScore, triggerHotLeadWebhooks } from './webhooks';
 
 export interface LeadData {
   motor_model?: string;
@@ -20,6 +21,9 @@ export async function saveLead(leadData: LeadData) {
   // Generate anonymous session ID if user not authenticated
   const sessionId = user ? undefined : `anon_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
   
+  // Calculate enhanced lead score
+  const leadScore = calculateEnhancedLeadScore(leadData);
+  
   const leadRecord = {
     user_id: user?.id || null,
     customer_name: leadData.customer_name || null,
@@ -36,11 +40,13 @@ export async function saveLead(leadData: LeadData) {
     lead_status: leadData.lead_status,
     lead_source: leadData.lead_source,
     anonymous_session_id: sessionId,
-    lead_score: calculateLeadScore(leadData),
+    lead_score: leadScore,
     // Temporarily set these required fields with default values
     discount_amount: 0,
     penalty_applied: false
   };
+
+  console.log('Saving lead with enhanced score:', leadScore, leadRecord);
 
   const { data, error } = await supabase
     .from('customer_quotes')
@@ -51,6 +57,19 @@ export async function saveLead(leadData: LeadData) {
   if (error) {
     console.error('Error saving lead:', error);
     throw error;
+  }
+
+  console.log('Lead saved successfully:', data);
+  
+  // Trigger hot lead webhooks if score is high
+  if (leadScore >= 70) {
+    console.log('High-score lead detected, triggering webhooks...');
+    try {
+      await triggerHotLeadWebhooks({ ...data, lead_score: leadScore });
+    } catch (webhookError) {
+      console.error('Error triggering hot lead webhooks:', webhookError);
+      // Don't fail the lead save if webhook fails
+    }
   }
 
   return data;

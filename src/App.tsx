@@ -38,6 +38,7 @@ import TestPriceScraping from "./pages/TestPriceScraping";
 import TestEnhancedPricing from "./pages/TestEnhancedPricing";
 import FinancingAdmin from "./components/admin/FinancingAdmin";
 import AdminSecurity from "./pages/AdminSecurity";
+import AdminZapier from "./pages/AdminZapier";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentCanceled from "./pages/PaymentCanceled";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
@@ -149,6 +150,14 @@ const App = () => (
                   element={
                     <SecureRoute requireAdmin={true}>
                       <AdminSecurity />
+                    </SecureRoute>
+                  }
+                />
+                <Route
+                  path="/admin/zapier"
+                  element={
+                    <SecureRoute requireAdmin={true}>
+                      <AdminZapier />
                     </SecureRoute>
                   }
                 />
