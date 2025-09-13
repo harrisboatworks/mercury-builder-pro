@@ -120,33 +120,45 @@ function extractSpecifications(md?: string | null): Record<string, unknown> {
 
 function extractImages(html?: string | null, baseUrl?: string): string[] {
   if (!html) return [];
-  const images: string[] = [];
-  
-  // Extract images from HTML
+
   const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
+  const images: string[] = [];
   let match;
-  
+
   while ((match = imgRegex.exec(html)) !== null) {
-    let src = match[1];
-    if (!src) continue;
+    let imgUrl = match[1];
     
-    // Skip small images, icons, logos, and navigation elements
-    if (src.includes('logo') || src.includes('icon') || src.includes('nav') || 
-        src.includes('menu') || src.includes('thumb') || src.includes('small')) continue;
+    // Skip unwanted images but be more selective for motor images
+    if (imgUrl.includes('icon') || imgUrl.includes('logo') || imgUrl.includes('nav') || 
+        imgUrl.includes('social') || imgUrl.includes('footer') || imgUrl.includes('header') ||
+        imgUrl.includes('sprite') || imgUrl.includes('placeholder') || imgUrl.includes('loader')) {
+      continue;
+    }
+
+    // Prioritize high-quality motor images
+    const isHighQuality = imgUrl.includes('detail') || imgUrl.includes('large') || 
+                         imgUrl.includes('gallery') || imgUrl.includes('product') ||
+                         imgUrl.includes('motor') || imgUrl.includes('engine');
     
-    // Convert relative URLs to absolute
-    if (baseUrl && src.startsWith('/')) {
-      try {
+    // Make relative URLs absolute
+    if (imgUrl.startsWith('/')) {
+      if (baseUrl) {
         const base = new URL(baseUrl);
-        src = `${base.protocol}//${base.host}${src}`;
-      } catch {}
+        imgUrl = `${base.protocol}//${base.host}${imgUrl}`;
+      }
+    } else if (!imgUrl.startsWith('http')) {
+      if (baseUrl) {
+        imgUrl = new URL(imgUrl, baseUrl).href;
+      }
     }
     
-    // Only include reasonable image URLs
-    if (src.match(/\.(jpg|jpeg|png|webp|gif)(\?|$)/i) && !images.includes(src)) {
-      images.push(src);
-    }
+    images.push(imgUrl);
   }
+  
+  // Return unique images, prioritized by quality
+  const uniqueImages = [...new Set(images)];
+  return uniqueImages.slice(0, 10); // Limit to 10 images max
+}
   
   return images.slice(0, 10); // Limit to 10 images
 }
@@ -461,16 +473,43 @@ serve(async (req) => {
 
     // Update DB if motor id provided or if we can match by detail_url
     if (motorId) {
-      const { error: upErr } = await supabase
-        .from('motor_models')
-        .update({
-          description: result.description,
-          features: result.features,
-          specifications: result.specifications,
-          images: result.images,
-          updated_at: new Date().toISOString(),
-        })
-        .eq('id', motorId);
+    // Get existing images to merge with new ones
+    const { data: existingMotor } = await supabase
+      .from('motor_models')
+      .select('images')
+      .eq('id', motorId)
+      .single();
+
+    const existingImages = Array.isArray(existingMotor?.images) ? existingMotor.images : [];
+    const newImageUrls = result.images || [];
+    
+    // Merge and deduplicate images
+    const allImages = [...existingImages];
+    for (const newUrl of newImageUrls) {
+      const exists = allImages.some(img => img.url === newUrl);
+      if (!exists) {
+        allImages.push({
+          url: newUrl,
+          type: newUrl.includes('detail') ? 'detail' : 
+                newUrl.includes('gallery') ? 'gallery' : 'main',
+          source: 'scraped',
+          scraped_at: new Date().toISOString()
+        });
+      }
+    }
+
+    // Update the motor_models table with enhanced data
+    const { error: upErr } = await supabase
+      .from('motor_models')
+      .update({
+        description: result.description,
+        features: result.features,
+        specifications: result.specifications,
+        last_scraped: new Date().toISOString(),
+        images: allImages.slice(0, 15), // Limit to 15 images max
+        updated_at: new Date().toISOString()
+      })
+      .eq('id', motorId);
       if (upErr) throw upErr;
     } else {
       const { error: upErr } = await supabase

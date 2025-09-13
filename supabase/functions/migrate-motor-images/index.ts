@@ -17,7 +17,13 @@ serve(async (req) => {
     
     const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
-    const { batchSize = 10, forceRedownload = false } = await req.json().catch(() => ({}))
+    const { 
+      batchSize = 10, 
+      forceRedownload = false, 
+      autoRetry = false,
+      qualityEnhancement = false,
+      selfHeal = false
+    } = await req.json().catch(() => ({}))
 
     console.log(`Starting image migration with batch size: ${batchSize}`)
 
@@ -55,22 +61,67 @@ serve(async (req) => {
     const results = []
 
     for (const motor of motors) {
-      try {
-        console.log(`Processing motor: ${motor.model} (${motor.id})`)
+      let attempts = 0;
+      const maxAttempts = autoRetry ? 3 : 1;
+      
+      while (attempts < maxAttempts) {
+        try {
+          console.log(`Processing motor: ${motor.model} (${motor.id}), attempt ${attempts + 1}`)
 
-        if (!motor.image_url) {
-          console.log(`Skipping motor ${motor.model} - no image URL`)
-          continue
-        }
+          if (!motor.image_url) {
+            console.log(`Skipping motor ${motor.model} - no image URL`)
+            break;
+          }
 
-        // Download the image
-        const imageResponse = await fetch(motor.image_url)
-        if (!imageResponse.ok) {
-          throw new Error(`Failed to download image: ${imageResponse.status}`)
-        }
+          // Self-healing: Check if image URL is still valid
+          if (selfHeal) {
+            const headResponse = await fetch(motor.image_url, { method: 'HEAD' });
+            if (!headResponse.ok) {
+              console.log(`Image URL broken for ${motor.model}, attempting auto-fix...`);
+              // Try to find alternative URL patterns
+              const altUrls = generateAlternativeUrls(motor.image_url);
+              let foundWorking = false;
+              
+              for (const altUrl of altUrls) {
+                const testResponse = await fetch(altUrl, { method: 'HEAD' });
+                if (testResponse.ok) {
+                  motor.image_url = altUrl;
+                  foundWorking = true;
+                  console.log(`✓ Found working alternative URL: ${altUrl}`);
+                  break;
+                }
+              }
+              
+              if (!foundWorking) {
+                throw new Error(`All image URLs failed for ${motor.model}`);
+              }
+            }
+          }
 
-        const imageBlob = await imageResponse.blob()
-        const imageBuffer = await imageBlob.arrayBuffer()
+          // Download the image with timeout
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 15000); // 15s timeout
+          
+          const imageResponse = await fetch(motor.image_url, {
+            signal: controller.signal,
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (compatible; ImageBot/1.0)'
+            }
+          });
+          clearTimeout(timeoutId);
+          
+          if (!imageResponse.ok) {
+            throw new Error(`Failed to download image: ${imageResponse.status}`)
+          }
+
+          const imageBlob = await imageResponse.blob()
+          
+          // Quality check
+          if (qualityEnhancement && imageBlob.size < 5000) {
+            throw new Error(`Image too small (${imageBlob.size} bytes), likely low quality`);
+          }
+          
+          const imageBuffer = await imageBlob.arrayBuffer()
 
         // Generate a clean filename
         const fileExtension = motor.image_url.split('.').pop()?.toLowerCase() || 'jpg'
@@ -129,19 +180,70 @@ serve(async (req) => {
           new_url: publicUrl
         })
 
-        console.log(`✓ Successfully migrated image for ${motor.model}`)
+          break;
+        }
 
-      } catch (error) {
-        failed++
-        console.error(`✗ Failed to migrate ${motor.model}: ${error.message}`)
+        successful++
         results.push({
           id: motor.id,
           model: motor.model,
-          status: 'failed',
-          error: error.message
+          status: 'success',
+          new_url: publicUrl,
+          attempt: attempts + 1
         })
+
+        console.log(`✓ Successfully migrated image for ${motor.model}`)
+        break; // Success, exit retry loop
+
+      } catch (error) {
+        attempts++;
+        console.error(`✗ Attempt ${attempts} failed for ${motor.model}: ${error.message}`)
+        
+        if (attempts >= maxAttempts) {
+          failed++
+          results.push({
+            id: motor.id,
+            model: motor.model,
+            status: 'failed',
+            error: error.message,
+            attempts
+          })
+        } else {
+          console.log(`Retrying ${motor.model} (${attempts}/${maxAttempts})...`)
+          await new Promise(resolve => setTimeout(resolve, 2000)) // Wait before retry
+        }
       }
     }
+  }
+
+  // Generate alternative URLs helper function
+  function generateAlternativeUrls(originalUrl: string): string[] {
+    const alternatives = []
+    
+    try {
+      // Convert thumb to detail
+      if (originalUrl.includes('/thumb/')) {
+        alternatives.push(originalUrl.replace('/thumb/', '/detail/'))
+        alternatives.push(originalUrl.replace('/thumb/', '/large/'))
+      }
+      
+      // Try different size variations
+      if (originalUrl.includes('_thumb')) {
+        alternatives.push(originalUrl.replace('_thumb', '_large'))
+        alternatives.push(originalUrl.replace('_thumb', '_detail'))
+      }
+      
+      // Try HTTPS if HTTP
+      if (originalUrl.startsWith('http://')) {
+        alternatives.push(originalUrl.replace('http://', 'https://'))
+      }
+      
+    } catch (error) {
+      console.error('Error generating alternative URLs:', error)
+    }
+    
+    return alternatives
+  }
 
     const summary = {
       success: true,

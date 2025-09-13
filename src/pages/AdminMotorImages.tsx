@@ -1,18 +1,17 @@
 import { useEffect } from 'react';
 import AdminNav from '@/components/admin/AdminNav';
-import UpdateMotorImages from '@/components/motors/UpdateMotorImages';
-import { ScrapeMotorSpecs } from '@/components/admin/ScrapeMotorSpecs';
+import { AutomationDashboard } from '@/components/admin/AutomationDashboard';
 
 const AdminMotorImages = () => {
   useEffect(() => {
-    document.title = 'Motor Images | Admin';
+    document.title = 'Motor Image Automation | Admin';
     let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (!desc) { 
       desc = document.createElement('meta'); 
       desc.name = 'description'; 
       document.head.appendChild(desc); 
     }
-    desc.content = 'Manage and update motor images database with high-quality images from manufacturer pages.';
+    desc.content = 'Fully automated motor image management with real-time monitoring and self-healing capabilities.';
     
     let canonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement | null;
     if (!canonical) { 
@@ -26,13 +25,7 @@ const AdminMotorImages = () => {
   return (
     <main className="container mx-auto px-4 py-8">
       <AdminNav />
-      <div className="flex items-center justify-between mb-4">
-        <h1 className="text-2xl font-bold">Motor Management</h1>
-      </div>
-      <div className="space-y-6">
-        <ScrapeMotorSpecs />
-        <UpdateMotorImages />
-      </div>
+      <AutomationDashboard />
     </main>
   );
 };

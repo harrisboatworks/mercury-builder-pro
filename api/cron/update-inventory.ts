@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
     const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
-    // First update inventory
+    // Step 1: Update inventory
     const { data: inventoryData, error: inventoryError } = await supabase.functions.invoke('scrape-inventory', {
       body: { trigger: 'vercel-cron', at: new Date().toISOString() },
     });
@@ -39,24 +39,56 @@ export default async function handler(req, res) {
       return res.status(500).json({ ok: false, error: inventoryError.message || 'Inventory scrape failed' });
     }
 
-    // Then trigger image scraping for motors without images
-    console.log('Triggering motor image scraping for new motors...');
-    const { data: imageData, error: imageError } = await supabase.functions.invoke('scrape-motor-details', {
+    // Step 2: Auto-migrate images to storage (high priority - prevents data loss)
+    console.log('Triggering automatic image migration...');
+    const { data: migrationData, error: migrationError } = await supabase.functions.invoke('migrate-motor-images', {
       body: { 
-        trigger: 'auto-inventory-update',
+        batchSize: 20,
+        forceRedownload: false,
+        autoRetry: true,
+        qualityEnhancement: true
+      },
+    });
+
+    if (migrationError) {
+      console.log('Image migration had issues:', migrationError.message);
+    }
+
+    // Step 3: Scrape motor details and collect multiple images
+    console.log('Triggering enhanced motor scraping...');
+    const { data: imageData, error: imageError } = await supabase.functions.invoke('scrape-motor-details-batch', {
+      body: { 
         prioritize_missing_images: true,
-        batch_size: 10
+        batch_size: 15,
+        background: true,
+        multi_image_collection: true
       },
     });
 
     if (imageError) {
-      console.log('Motor image scraping had issues:', imageError.message);
-      // Don't fail the whole job if image scraping fails
+      console.log('Motor detail scraping had issues:', imageError.message);
+    }
+
+    // Step 4: Run automated health checks and self-healing
+    console.log('Running automated health checks...');
+    const { data: healthData, error: healthError } = await supabase.functions.invoke('motor-health-monitor', {
+      body: { 
+        checkBrokenImages: true,
+        fixIssues: true,
+        generateReport: true
+      },
+    });
+
+    if (healthError) {
+      console.log('Health monitoring had issues:', healthError.message);
     }
 
     const result = {
       inventory: inventoryData,
-      images: imageData || { error: imageError?.message }
+      migration: migrationData || { error: migrationError?.message },
+      images: imageData || { error: imageError?.message },
+      health: healthData || { error: healthError?.message },
+      timestamp: new Date().toISOString()
     };
 
     return res.status(200).json({ ok: true, result });

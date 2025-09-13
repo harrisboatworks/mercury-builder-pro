@@ -18,11 +18,12 @@ serve(async (req) => {
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     )
 
-    const { 
-      prioritize_missing_images = false, 
-      batch_size = 5,
-      background = false 
-    } = await req.json()
+      const { 
+        prioritize_missing_images = false, 
+        batch_size = 5,
+        background = false,
+        multi_image_collection = true 
+      } = await req.json()
 
     console.log('Starting batch motor details scraping...', {
       prioritize_missing_images,
