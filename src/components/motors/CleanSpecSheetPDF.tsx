@@ -551,11 +551,25 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           </Text>
         </View>
 
-        {/* Model Code Decoder */}
+        {/* Model Code Decoder - Simplified */}
         {getModelCodeDecoding(specData.motorModel) && (
           <View style={styles.modelCodeBox}>
-            <Text style={styles.modelCodeTitle}>Model Code: {specData.motorModel}</Text>
-            <Text style={styles.modelCodeText}>{getModelCodeDecoding(specData.motorModel)}</Text>
+            <Text style={styles.modelCodeTitle}>Model Features</Text>
+            <Text style={styles.modelCodeText}>
+              {decodeModelName(specData.motorModel)
+                .filter(item => ['E', 'L', 'H', 'S', 'XL'].includes(item.code))
+                .map(item => {
+                  if (item.code === 'E') return 'E = Electric Start';
+                  if (item.code === 'L') return 'L = Long Shaft';
+                  if (item.code === 'H') return 'H = Tiller';
+                  if (item.code === 'S') return 'S = Short Shaft';  
+                  if (item.code === 'XL') return 'XL = Extra Long Shaft';
+                  return null;
+                })
+                .filter(Boolean)
+                .join(' | ') || 'Standard Configuration'
+              }
+            </Text>
           </View>
         )}
 
@@ -640,41 +654,70 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               </View>
             )}
 
-            {/* What's Included */}
-            <View style={styles.section}>
-              <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>What's Included</Text>
-              </View>
-              <View style={styles.bulletList}>
-                {hpNumber < 20 ? (
-                  <>
-                    <Text style={styles.bulletItem}>• Internal fuel tank</Text>
-                    <Text style={styles.bulletItem}>• Carrying handle</Text>
-                    <Text style={styles.bulletItem}>• Manual & tool kit</Text>
-                  </>
-                ) : (
-                  <>
-                    <Text style={styles.bulletItem}>• Standard propeller</Text>
-                    <Text style={styles.bulletItem}>• Gauge harness</Text>
-                    <Text style={styles.bulletItem}>• Installation hardware</Text>
-                  </>
-                )}
-              </View>
-            </View>
+            {/* What's Included - Real Motor Data Only */}
+            {(() => {
+              // Check for real motor-specific included items
+              const motorFeatures = specData.features as any;
+              const motorSpecs = specData.specifications as any;
+              let includedItems = [];
 
-            {/* Operating Costs */}
-            <View style={styles.section}>
-              <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>Operating Costs</Text>
-              </View>
-              <View style={styles.bulletList}>
-                {performance.fuelConsumption && (
-                  <Text style={styles.bulletItem}>• Fuel consumption: {performance.fuelConsumption}</Text>
-                )}
-                <Text style={styles.bulletItem}>• Oil changes: Every 100 hrs or annually</Text>
-                <Text style={styles.bulletItem}>• Winterization recommended</Text>
-              </View>
-            </View>
+              // Use real motor data if available
+              if (motorFeatures?.included) {
+                includedItems = Array.isArray(motorFeatures.included) ? motorFeatures.included : [motorFeatures.included];
+              } else if (motorSpecs?.included) {
+                includedItems = Array.isArray(motorSpecs.included) ? motorSpecs.included : [motorSpecs.included];
+              } else if (specData.includedAccessories?.length) {
+                // Filter out generic items, only show specific ones
+                includedItems = specData.includedAccessories.filter(item => 
+                  !item.includes("Owner's manual") && 
+                  !item.includes("warranty") &&
+                  item.length > 0
+                );
+              }
+
+              // Only render section if we have real included items
+              return includedItems.length > 0 ? (
+                <View style={styles.section}>
+                  <View style={styles.sectionHeader}>
+                    <Text style={styles.sectionTitle}>What's Included</Text>
+                  </View>
+                  <View style={styles.bulletList}>
+                    {includedItems.map((item, index) => (
+                      <Text key={index} style={styles.bulletItem}>• {item}</Text>
+                    ))}
+                  </View>
+                </View>
+              ) : null;
+            })()}
+
+            {/* Operating Costs - Real Data Only */}
+            {(() => {
+              const motorSpecs = specData.specifications as any;
+              const realCosts = [];
+
+              // Only add real operating cost data
+              if (motorSpecs?.fuelConsumption || motorSpecs?.fuel_consumption || performance.fuelConsumption) {
+                realCosts.push(`Fuel: ${motorSpecs?.fuelConsumption || motorSpecs?.fuel_consumption || performance.fuelConsumption}`);
+              }
+              if (motorSpecs?.oilCapacity || motorSpecs?.oil_capacity) {
+                realCosts.push(`Oil capacity: ${motorSpecs.oilCapacity || motorSpecs.oil_capacity}`);
+              }
+
+              // Only show section if we have real operating cost data
+              return realCosts.length > 0 ? (
+                <View style={styles.section}>
+                  <View style={styles.sectionHeader}>
+                    <Text style={styles.sectionTitle}>Operating Costs</Text>
+                  </View>
+                  <View style={styles.bulletList}>
+                    {realCosts.map((cost, index) => (
+                      <Text key={index} style={styles.bulletItem}>• {cost}</Text>
+                    ))}
+                    <Text style={styles.bulletItem}>• Oil changes: Every 100 hrs or annually</Text>
+                  </View>
+                </View>
+              ) : null;
+            })()}
           </View>
 
           {/* Right Column */}
@@ -695,23 +738,36 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
             </View>
 
 
-            {/* Dynamic Motor-Specific Financing Section */}
-            <View style={styles.financingSection}>
-              <Text style={styles.financingTitle}>Financing Available</Text>
-              {specData.motorPrice && specData.motorPrice > 1000 ? (
-                <>
-                  <Text style={styles.financingItem}>From ${Math.round(specData.motorPrice * 0.027)}/month</Text>
-                  {specData.currentPromotion?.rate === 0 ? (
-                    <Text style={styles.financingItem}>0% interest promo available OAC</Text>
-                  ) : (
-                    <Text style={styles.financingItem}>Low rates available OAC</Text>
-                  )}
-                  <Text style={styles.financingItem}>*Price plus HST • OAC</Text>
-                </>
-              ) : (
-                <Text style={styles.financingItem}>Contact for pricing and financing options</Text>
-              )}
-            </View>
+            {/* Real Finance Calculator */}
+            {specData.motorPrice && specData.motorPrice > 1000 && (
+              <View style={styles.financingSection}>
+                <Text style={styles.financingTitle}>Financing Available</Text>
+                {(() => {
+                  // Use real finance calculator
+                  const priceWithHST = specData.motorPrice * 1.13;
+                  const promoRate = specData.currentPromotion?.rate || null;
+                  const financeOption1 = calculateMonthlyPayment(priceWithHST, promoRate);
+                  const financeOption2 = calculateMonthlyPayment(priceWithHST, promoRate === 0 ? 7.99 : (promoRate || 8.99));
+
+                  return (
+                    <>
+                      <Text style={styles.financingItem}>
+                        • {financeOption1.termMonths} months: ${financeOption1.payment}/month @ {financeOption1.rate.toFixed(2)}%
+                      </Text>
+                      {financeOption1.rate !== financeOption2.rate && (
+                        <Text style={styles.financingItem}>
+                          • {financeOption2.termMonths} months: ${financeOption2.payment}/month @ {financeOption2.rate.toFixed(2)}%
+                        </Text>
+                      )}
+                      {specData.currentPromotion?.rate === 0 && (
+                        <Text style={styles.financingItem}>0% PROMOTIONAL RATE • OAC</Text>
+                      )}
+                      <Text style={styles.financingItem}>*Price plus HST • OAC</Text>
+                    </>
+                  );
+                })()}
+              </View>
+            )}
           </View>
         </View>
 
