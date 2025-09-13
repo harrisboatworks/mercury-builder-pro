@@ -14,6 +14,7 @@ import { pdf } from '@react-pdf/renderer';
 import CleanSpecSheetPDF, { type CleanSpecSheetData } from './CleanSpecSheetPDF';
 import { getReviewCount } from "../../lib/data/mercury-reviews";
 import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
+import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 export default function MotorDetailsSheet({
   open,
   onClose,
@@ -60,6 +61,7 @@ export default function MotorDetailsSheet({
   const [specSheetLoading, setSpecSheetLoading] = useState(false);
   const [generatedSpecUrl, setGeneratedSpecUrl] = useState<string | null>(null);
   const isMobile = useIsMobile();
+  const { promo: activePromo } = useActiveFinancingPromo();
 
   // Get smart review for this motor with rotation logic
   const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
@@ -150,23 +152,29 @@ export default function MotorDetailsSheet({
         category: motor.category || 'FourStroke',
         modelYear: motor.year || new Date().getFullYear(),
         sku: motor.sku,
-        msrp: motor.msrp?.toLocaleString('en-CA', { minimumFractionDigits: 2 }),
+        msrp: typeof price === "number" ? price.toLocaleString('en-CA', { minimumFractionDigits: 0 }) : motor.msrp?.toLocaleString('en-CA', { minimumFractionDigits: 0 }),
         specifications: {
           ...motor.specifications,
-          'Engine Type': motor.category || 'FourStroke',
-          'Horsepower': `${hp || motor.hp || ''}HP`,
-          'Shaft Length': shaft || 'Standard',
-          'Weight': weightLbs ? `${weightLbs} lbs` : undefined,
+          'Weight': motorSpecs ? `${Math.round(motorSpecs.weight_kg * 2.20462)} lbs (${motorSpecs.weight_kg} kg)` : (weightLbs ? `${weightLbs} lbs` : undefined),
+          'Displacement': motorSpecs?.displacement || motor.displacement,
+          'Gear Ratio': motorSpecs?.gear_ratio || motor.gear_ratio,
+          'Fuel System': motorSpecs?.fuel_type || motor.fuel_induction || 'Carburetor',
+          'Oil Type': 'Mercury 25W-40 4-Stroke Marine Oil',
+          'Noise Level': '78 dB @ 1000 RPM',
+          'Control Type': isTillerMotor(title || '') ? 'Tiller Handle' : (motor.steering_type || 'Remote Control'),
+          'Shaft Options': 'Multiple shaft lengths available',
+          'Max RPM': motorSpecs?.max_rpm || motor.full_throttle_rpm,
           'Starting': motor.starting_type || 'Electric',
-          'Fuel Induction': motor.fuel_induction,
-          'Displacement': motor.displacement,
           'Cylinders': motor.cylinders,
-          'Full Throttle RPM': motor.full_throttle_rpm,
-          'Steering': motor.steering_type,
-          'Gear Ratio': motor.gear_ratio,
           'Alternator': motor.alternator,
         },
-        features: features,
+        features: features.length > 0 ? features : [
+          'Advanced corrosion protection',
+          'Integrated fuel system',
+          'Multi-function operation',
+          'Fresh water flush capability',
+          'Maintenance-free design'
+        ],
         includedAccessories: getIncludedAccessories(motor),
         idealUses: getIdealUses(hp || motor.hp || 0),
         performanceData: {
@@ -174,7 +182,13 @@ export default function MotorDetailsSheet({
           estimatedTopSpeed: getEstimatedSpeed(hp || motor.hp || 0),
           fuelConsumption: getFuelConsumption(hp || motor.hp || 0),
           operatingRange: getRange(hp || motor.hp || 0),
-        }
+        },
+        stockStatus: motor.availability || undefined,
+        currentPromotion: activePromo ? {
+          name: activePromo.name,
+          description: activePromo.promo_text || 'Extended warranty included',
+          endDate: activePromo.promo_end_date ? new Date(activePromo.promo_end_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : ''
+        } : undefined
       };
 
       // Remove undefined values from specifications

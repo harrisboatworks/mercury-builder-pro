@@ -227,35 +227,74 @@ const styles = StyleSheet.create({
     color: '#92400e',
     marginBottom: 1,
   },
-  footer: {
+  modelCodeBox: {
+    backgroundColor: '#f0f9ff',
+    padding: 8,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: '#0ea5e9',
+    marginBottom: 15,
+  },
+  modelCodeTitle: {
+    fontSize: 9,
+    fontWeight: 'bold',
+    color: '#0c4a6e',
+    marginBottom: 3,
+  },
+  modelCodeText: {
+    fontSize: 8,
+    color: '#0c4a6e',
+  },
+  promoBanner: {
+    backgroundColor: '#fef3c7',
+    padding: 10,
+    borderRadius: 4,
+    borderWidth: 2,
+    borderColor: '#f59e0b',
+    marginBottom: 15,
+    alignItems: 'center',
+  },
+  promoTitle: {
+    fontSize: 11,
+    fontWeight: 'bold',
+    color: '#92400e',
+    marginBottom: 3,
+  },
+  promoText: {
+    fontSize: 9,
+    color: '#92400e',
+    textAlign: 'center',
+  },
+  contactFooter: {
     position: 'absolute',
     bottom: 20,
     left: 20,
     right: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingTop: 8,
+    paddingTop: 12,
     borderTopWidth: 1,
     borderTopColor: '#e5e7eb',
   },
-  stockStatus: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  stockIcon: {
-    fontSize: 8,
-    color: '#059669',
-    marginRight: 2,
-  },
-  stockText: {
-    fontSize: 8,
-    color: '#059669',
+  companyName: {
+    fontSize: 10,
     fontWeight: 'bold',
+    color: '#1f2937',
+    marginBottom: 4,
   },
-  websiteText: {
+  contactRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 2,
+  },
+  contactText: {
     fontSize: 8,
     color: '#6b7280',
+  },
+  ctaText: {
+    fontSize: 9,
+    fontWeight: 'bold',
+    color: '#1e40af',
+    textAlign: 'center',
+    marginTop: 8,
   },
 });
 
@@ -276,6 +315,12 @@ export interface CleanSpecSheetData {
     fuelConsumption?: string;
     operatingRange?: string;
   };
+  stockStatus?: string;
+  currentPromotion?: {
+    name: string;
+    description: string;
+    endDate: string;
+  };
 }
 
 interface CleanSpecSheetPDFProps {
@@ -289,16 +334,29 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
     day: 'numeric' 
   });
 
-  // Enhanced specifications with all required data
+  // Model code decoder function
+  const decodeModelCode = (model: string) => {
+    const codes = [];
+    if (model.includes('M')) codes.push('M = Manual Start');
+    if (model.includes('H')) codes.push('H = Tiller Handle');
+    if (model.includes('E')) codes.push('E = Electric Start');
+    if (model.includes('R')) codes.push('R = Remote Control');
+    if (model.includes('CT')) codes.push('CT = Command Thrust');
+    if (model.includes('XS')) codes.push('XS = Extra Short Shaft');
+    if (model.includes('L')) codes.push('L = Long Shaft');
+    return codes.join(' | ');
+  };
+
+  // Enhanced specifications with real data
   const enhancedSpecs = {
-    'Weight': '96 lbs (43 kg)',
-    'Displacement': '85 cc',
-    'Gear Ratio': '2.15:1',
-    'Fuel System': 'Carburetor',
-    'Oil Type': 'Mercury 25W-40 4-Stroke Marine Oil',
-    'Noise Level': '78 dB @ 1000 RPM',
-    'Control Type': 'Tiller Handle',
-    'Shaft Options': '15" (S), 20" (L) available',
+    'Weight': specData.specifications?.weight || '96 lbs (43 kg)',
+    'Displacement': specData.specifications?.displacement || '85 cc',
+    'Gear Ratio': specData.specifications?.gear_ratio || '2.15:1',
+    'Fuel System': specData.specifications?.fuel_system || 'Carburetor',
+    'Oil Type': specData.specifications?.oil_type || 'Mercury 25W-40 4-Stroke Marine Oil',
+    'Noise Level': specData.specifications?.noise_level || '78 dB @ 1000 RPM',
+    'Control Type': specData.specifications?.control_type || 'Tiller Handle',
+    'Shaft Options': specData.specifications?.shaft_options || '15" (S), 20" (L) available',
     ...specData.specifications
   };
 
@@ -342,6 +400,24 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
           </Text>
         </View>
 
+        {/* Model Code Decoder */}
+        {decodeModelCode(specData.motorModel) && (
+          <View style={styles.modelCodeBox}>
+            <Text style={styles.modelCodeTitle}>Model Code: {specData.motorModel}</Text>
+            <Text style={styles.modelCodeText}>{decodeModelCode(specData.motorModel)}</Text>
+          </View>
+        )}
+
+        {/* Promotion Banner */}
+        {specData.currentPromotion && (
+          <View style={styles.promoBanner}>
+            <Text style={styles.promoTitle}>{specData.currentPromotion.name}</Text>
+            <Text style={styles.promoText}>
+              {specData.currentPromotion.description} - Ends {specData.currentPromotion.endDate}
+            </Text>
+          </View>
+        )}
+
         {/* Overview Boxes */}
         <View style={styles.overviewBoxes}>
           <View style={styles.overviewBox}>
@@ -369,7 +445,6 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
             {/* Engine Specifications */}
             <View style={styles.section}>
               <View style={styles.sectionHeader}>
-                <Text style={styles.sectionIcon}>⚙️</Text>
                 <Text style={styles.sectionTitle}>Engine Specifications</Text>
               </View>
               <View style={styles.specGrid}>
@@ -385,7 +460,6 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
             {/* Performance Data */}
             <View style={styles.section}>
               <View style={styles.sectionHeader}>
-                <Text style={styles.sectionIcon}>⚡</Text>
                 <Text style={styles.sectionTitle}>Performance Data</Text>
               </View>
               <View style={styles.specGrid}>
@@ -408,11 +482,10 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               </View>
             </View>
 
-            {/* Key Features */}
+            {/* What's Included */}
             <View style={styles.section}>
               <View style={styles.sectionHeader}>
-                <Text style={styles.sectionIcon}>✓</Text>
-                <Text style={styles.sectionTitle}>Included Features</Text>
+                <Text style={styles.sectionTitle}>What's Included</Text>
               </View>
               <View style={styles.bulletList}>
                 <Text style={styles.bulletItem}>• Advanced corrosion protection</Text>
@@ -440,16 +513,19 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
             <View style={styles.warrantyBox}>
               <Text style={styles.warrantyTitle}>Warranty & Service</Text>
               <Text style={styles.warrantyItem}>• Standard: 3 years limited warranty</Text>
-              <Text style={styles.warrantyItem}>• Current Promo: +2 years free (5 years total)*</Text>
-              <Text style={styles.warrantyItem}>• *Expires October 31, 2025</Text>
+              {specData.currentPromotion ? (
+                <>
+                  <Text style={styles.warrantyItem}>• Current Promo: Extended warranty included</Text>
+                  <Text style={styles.warrantyItem}>• Expires {specData.currentPromotion.endDate}</Text>
+                </>
+              ) : null}
               <Text style={styles.warrantyItem}>• Service: Every 100 hrs or annually</Text>
-              <Text style={styles.warrantyItem}>• Local service at Harris Boat Works</Text>
+              <Text style={styles.warrantyItem}>• Local service at {COMPANY_INFO.name}</Text>
             </View>
 
             {/* Ideal Applications */}
             <View style={styles.section}>
               <View style={styles.sectionHeader}>
-                <Text style={styles.sectionIcon}>🎯</Text>
                 <Text style={styles.sectionTitle}>Ideal Applications</Text>
               </View>
               <View style={styles.bulletList}>
@@ -461,25 +537,30 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
               </View>
             </View>
 
-            {/* Financing Available */}
+            {/* Financing Options */}
             <View style={styles.financingBox}>
-              <Text style={styles.financingTitle}>Financing Available</Text>
-              <Text style={styles.financingItem}>From ~$35/month</Text>
-              <Text style={styles.financingItem}>0% for 12 months OAC</Text>
+              <Text style={styles.financingTitle}>Financing Options</Text>
+              <Text style={styles.financingItem}>Competitive rates available</Text>
               <Text style={styles.financingItem}>Contact for current rates</Text>
+              <Text style={styles.financingItem}>OAC - Terms vary</Text>
             </View>
           </View>
         </View>
 
-        {/* Footer */}
-        <View style={styles.footer}>
-          <View style={styles.stockStatus}>
-            <Text style={styles.stockIcon}>✅</Text>
-            <Text style={styles.stockText}>In Stock - Ready for installation</Text>
+        {/* Contact Footer */}
+        <View style={styles.contactFooter}>
+          <Text style={styles.companyName}>{COMPANY_INFO.name}</Text>
+          <View style={styles.contactRow}>
+            <Text style={styles.contactText}>{COMPANY_INFO.address.full}</Text>
+            <Text style={styles.contactText}>Phone: {COMPANY_INFO.contact.phone}</Text>
           </View>
-          <View>
-            <Text style={styles.websiteText}>See full details at quote.harrisboatworks.ca</Text>
+          <View style={styles.contactRow}>
+            <Text style={styles.contactText}>Email: {COMPANY_INFO.contact.email}</Text>
+            <Text style={styles.contactText}>Web: {COMPANY_INFO.contact.website}</Text>
           </View>
+          <Text style={styles.ctaText}>
+            Questions? Call {COMPANY_INFO.contact.phone} or visit {COMPANY_INFO.contact.website}
+          </Text>
         </View>
       </Page>
     </Document>
