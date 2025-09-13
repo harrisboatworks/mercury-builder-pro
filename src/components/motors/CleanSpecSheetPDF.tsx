@@ -460,9 +460,11 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
         selectedMotorSpecs['Gear Ratio'] = mercurySpecs.gear_ratio;
       }
       
-      // Fuel System - prioritize EFI
+      // Fuel System - enhanced EFI detection
       if (!selectedMotorSpecs['Fuel System']) {
-        selectedMotorSpecs['Fuel System'] = 'Electronic Fuel Injection (EFI)';
+        const fuelSystem = mercurySpecs.fuel_system || 
+          (specData.motorModel?.includes('EFI') ? 'Electronic Fuel Injection (EFI)' : 'Electronic Fuel Injection (EFI)');
+        selectedMotorSpecs['Fuel System'] = fuelSystem;
       }
       
       // Starting type
@@ -470,15 +472,15 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
         selectedMotorSpecs['Starting'] = getStartType(specData.motorModel) || 'Manual or Electric';
       }
       
-      // Full Throttle RPM Range
-      if (mercurySpecs.max_rpm && !selectedMotorSpecs['Full Throttle RPM Range']) {
+      // Full Throttle RPM Range - Fix NaN error
+      if (mercurySpecs.max_rpm && !selectedMotorSpecs['Full Throttle RPM Range'] && !isNaN(Number(mercurySpecs.max_rpm))) {
         const maxRpm = Number(mercurySpecs.max_rpm);
         selectedMotorSpecs['Full Throttle RPM Range'] = `${maxRpm - 500}-${maxRpm}`;
       }
       
-      // Alternator
+      // Alternator - provide default if not available
       if (!selectedMotorSpecs['Alternator']) {
-        selectedMotorSpecs['Alternator'] = mercurySpecs.alternator;
+        selectedMotorSpecs['Alternator'] = mercurySpecs.alternator || '12amp';
       }
       
       // Steering
@@ -679,7 +681,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
                       <Text style={styles.specValue}>{mercurySpecs.displacement}</Text>
                     </View>
                   )}
-                  {mercurySpecs?.max_rpm && (
+                  {mercurySpecs?.max_rpm && !isNaN(Number(mercurySpecs.max_rpm)) && (
                     <View style={styles.specItem}>
                       <Text style={styles.specLabel}>Full Throttle RPM Range:</Text>
                       <Text style={styles.specValue}>{Number(mercurySpecs.max_rpm) - 500}-{mercurySpecs.max_rpm}</Text>
@@ -833,18 +835,19 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData }) => {
                   const smartTerm = getSmartTerm(price);
                   const smartPayment = calculateMonthlyPayment(priceWithHST, promoRate);
                   
-                  // Calculate alternate term if different
-                  const alternateTerm = smartTerm === 48 ? 60 : 48;
-                  const alternatePayment = calculateMonthlyPayment(priceWithHST, promoRate);
+                  // Calculate alternate term with different rate for 60 months
+                  const alternateTerm = smartTerm === 36 ? 60 : 36;
+                  const alternateRate = alternateTerm === 60 ? (promoRate || 8.99) : (promoRate || 6.99);
+                  const alternatePayment = calculatePaymentWithFrequency(priceWithHST, 'monthly', alternateRate);
 
                   return (
                     <>
                       <Text style={styles.financingItem}>
                         • {smartPayment.termMonths} months: ${smartPayment.payment}/month @ {smartPayment.rate.toFixed(2)}%
                       </Text>
-                      {smartTerm !== 60 && (
+                      {smartTerm !== alternateTerm && (
                         <Text style={styles.financingItem}>
-                          • 60 months: ${calculateMonthlyPayment(priceWithHST, promoRate || 8.99).payment}/month @ {promoRate || 8.99}%
+                          • {alternateTerm} months: ${alternatePayment.payment}/month @ {alternateRate.toFixed(2)}%
                         </Text>
                       )}
                       {specData.currentPromotion && (
