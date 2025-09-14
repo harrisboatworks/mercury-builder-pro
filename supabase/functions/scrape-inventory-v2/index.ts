@@ -47,6 +47,41 @@ serve(async (req) => {
       const allMotors = [];
 
       console.log('🔍 Starting Harris Boat Works HTML scraping...');
+      
+      // DEBUG: Test basic connectivity first
+      console.log("🔬 DEBUG: About to fetch from harrisboatworks.ca");
+      try {
+        const testFetch = await fetch("https://www.harrisboatworks.ca/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low?resultsperpage=200");
+        console.log("🔬 DEBUG: Response status:", testFetch.status);
+        console.log("🔬 DEBUG: Response headers:", Object.fromEntries(testFetch.headers.entries()));
+        
+        if (testFetch.ok) {
+          const testHtml = await testFetch.text();
+          console.log("🔬 DEBUG: HTML length:", testHtml.length);
+          console.log("🔬 DEBUG: Contains 'mercury':", testHtml.toLowerCase().includes('mercury'));
+          console.log("🔬 DEBUG: Contains 'panel':", testHtml.includes('panel'));
+          console.log("🔬 DEBUG: Contains 'search-result':", testHtml.includes('search-result'));
+          
+          // Check for specific patterns
+          const panelCount = (testHtml.match(/class="[^"]*panel[^"]*search-result/g) || []).length;
+          console.log("🔬 DEBUG: Found panel.search-result elements:", panelCount);
+          
+          // Sample of HTML structure
+          const firstPanelMatch = testHtml.match(/<div[^>]*class="[^"]*panel[^"]*search-result[^"]*"[^>]*>.*?<\/div>/s);
+          if (firstPanelMatch) {
+            console.log("🔬 DEBUG: First panel HTML sample (first 500 chars):", firstPanelMatch[0].substring(0, 500));
+          } else {
+            console.log("🔬 DEBUG: No panel elements found with regex");
+          }
+          
+        } else {
+          console.log("🔬 DEBUG: Fetch failed with status:", testFetch.status);
+          const errorText = await testFetch.text();
+          console.log("🔬 DEBUG: Error response:", errorText.substring(0, 1000));
+        }
+      } catch (debugError) {
+        console.error("🔬 DEBUG: Fetch error:", debugError);
+      }
 
       while (hasMorePages && currentPage <= 5) { // Limit to 5 pages to prevent timeout
         const pageUrl = currentPage === 1 ? baseUrl : `${baseUrl}/page/${currentPage}`;
