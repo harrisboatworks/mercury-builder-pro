@@ -695,7 +695,7 @@ export default function MotorDetailsSheet({
                   
                   <Button onClick={() => navigate('/quote/schedule')} variant="outline" size="sm" className="justify-start">
                     <Calendar className="w-4 h-4 mr-2" />
-                    Schedule Demo
+                    Schedule Consultation
                   </Button>
                 </div>
               </div>
