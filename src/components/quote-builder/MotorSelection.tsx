@@ -1396,6 +1396,10 @@ export const MotorSelection = ({
           const callForPrice = state.callForPrice;
           const savingsAmount = state.savingsRounded;
           const savingsPct = state.percent;
+          
+          // Calculate display MSRP (inflated if artificial discount)
+          const displayMSRP = state.isArtificialDiscount && msrp ? Math.round(msrp * 1.1) : msrp;
+          const displaySalePrice = state.isArtificialDiscount ? msrp : (sale || msrp);
           if (sale != null && msrp != null && sale >= msrp) {
             console.warn('[pricing] sale_price not less than base_price', {
               id: motor.id,
@@ -1542,13 +1546,13 @@ export const MotorSelection = ({
                     <div className="motor-price space-y-1">
                       {callForPrice ? (
                         <div className="text-lg font-bold text-foreground">Call for Price</div>
-                      ) : msrp ? (
+                      ) : displayMSRP ? (
                         <div className="space-y-1">
                           <div className="text-sm text-muted-foreground line-through">
-                            MSRP ${msrp.toLocaleString()}
+                            MSRP ${displayMSRP?.toLocaleString()}
                           </div>
                           <div className="text-lg font-bold text-red-600">
-                            Our Price ${(sale || msrp).toLocaleString()}
+                            Our Price ${displaySalePrice?.toLocaleString()}
                           </div>
                           {hasSaleDisplay && (
                             <div className="inline-flex items-center px-2 py-1 rounded-md bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs font-medium">

@@ -16,18 +16,23 @@ export function getPriceDisplayState(base_price?: number | null, sale_price?: nu
     return { callForPrice: true, hasSale: false, savingsRounded: 0, percent: 0, isArtificialDiscount: false };
   }
 
-  // Inflate base price if it equals sale price and inflateEqualPrices is enabled
+  // Inflate base price if it equals sale price OR if sale is missing and inflateEqualPrices is enabled
   let adjustedBase = base as number;
+  let effectiveSale = sale || base as number; // Use base as sale if sale is missing
   let isArtificialDiscount = false;
   
-  if (inflateEqualPrices && typeof sale === 'number' && sale > 0 && base === sale) {
-    adjustedBase = base * 1.1; // Inflate by 10%
+  if (inflateEqualPrices && (
+    (typeof sale === 'number' && sale > 0 && base === sale) || // Explicit equal prices
+    ((!sale || sale <= 0) && typeof base === 'number' && base > 0) // Missing sale price
+  )) {
+    adjustedBase = (base as number) * 1.1; // Inflate by 10%
+    effectiveSale = base as number; // Use original base as the sale price
     isArtificialDiscount = true;
   }
 
-  const hasSale = typeof sale === 'number' && sale > 0 && sale < adjustedBase;
+  const hasSale = effectiveSale > 0 && effectiveSale < adjustedBase;
 
-  const rawSavings = hasSale ? adjustedBase - (sale as number) : 0;
+  const rawSavings = hasSale ? adjustedBase - effectiveSale : 0;
   const savingsRounded = Math.round(rawSavings);
   const percent = hasSale && adjustedBase > 0 ? Math.floor((savingsRounded / adjustedBase) * 100) : 0;
 

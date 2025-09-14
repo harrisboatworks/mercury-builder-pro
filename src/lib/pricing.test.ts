@@ -26,4 +26,13 @@ describe('getPriceDisplayState', () => {
     expect(s.savingsRounded).toBe(0);
     expect(s.percent).toBe(0);
   });
+
+  it('Artificial discount: base=1000, sale=null, inflateEqualPrices=true → Show as discounted', () => {
+    const s = getPriceDisplayState(1000, null, true);
+    expect(s.callForPrice).toBe(false);
+    expect(s.hasSale).toBe(true);
+    expect(s.savingsRounded).toBe(100);
+    expect(s.percent).toBe(9);
+    expect(s.isArtificialDiscount).toBe(true);
+  });
 });
