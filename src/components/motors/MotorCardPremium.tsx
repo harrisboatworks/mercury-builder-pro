@@ -9,6 +9,7 @@ import { getHPDescriptor, getPopularityIndicator, getBadgeColor, requiresMercury
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
 import { getFinancingDisplay } from '@/lib/finance';
+import { getPriceDisplayState } from '@/lib/pricing';
 
 export default function MotorCardPremium({ 
   img, 
@@ -166,24 +167,48 @@ export default function MotorCardPremium({
           </div>
           
           <div className="mt-2">
-            {typeof msrp === "number" && msrp > 0 && (
-              <div className="msrp text-sm">{fmt(msrp)}</div>
-            )}
-            {typeof price === "number" && price > 0 && (
-              <div className="text-lg font-semibold text-slate-900 dark:text-white">
-                {fmt(price)}
-              </div>
-            )}
-            {promoText && (
-              <div className="mt-1 text-xs text-emerald-700 dark:text-emerald-300">
-                {promoText}
-              </div>
-            )}
-            {financingInfo && price && price > 5000 && (
-              <div className="text-xs text-muted-foreground mt-1">
-                {getFinancingDisplay(price * 1.13, financingInfo.rate !== 7.99 ? financingInfo.rate : null)}*
-              </div>
-            )}
+            {(() => {
+              // Use the pricing display state logic with artificial pricing enabled
+              const priceState = getPriceDisplayState(msrp, price, true);
+              
+              if (priceState.callForPrice) {
+                return <div className="text-lg font-bold text-foreground">Call for Price</div>;
+              }
+              
+              // Calculate display prices
+              const displayMSRP = priceState.isArtificialDiscount && msrp ? Math.round(msrp * 1.1) : msrp;
+              const displaySalePrice = priceState.isArtificialDiscount ? msrp : (price || msrp);
+              
+              return (
+                <div className="space-y-1">
+                  {displayMSRP && priceState.hasSale && (
+                    <div className="text-sm text-muted-foreground line-through">
+                      MSRP ${displayMSRP.toLocaleString()}
+                    </div>
+                  )}
+                  {displaySalePrice && (
+                    <div className="text-lg font-bold text-red-600">
+                      {priceState.hasSale ? 'Our Price ' : ''}${displaySalePrice.toLocaleString()}
+                    </div>
+                  )}
+                  {priceState.hasSale && priceState.savingsRounded > 0 && (
+                    <div className="inline-flex items-center px-2 py-1 rounded-md bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs font-medium">
+                      SAVE ${priceState.savingsRounded.toLocaleString()}
+                    </div>
+                  )}
+                  {promoText && (
+                    <div className="mt-1 text-xs text-emerald-700 dark:text-emerald-300">
+                      {promoText}
+                    </div>
+                  )}
+                  {financingInfo && displaySalePrice && displaySalePrice > 5000 && (
+                    <div className="text-xs text-muted-foreground mt-1">
+                      {getFinancingDisplay(displaySalePrice * 1.13, financingInfo.rate !== 7.99 ? financingInfo.rate : null)}*
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
           </div>
         </button>
         
