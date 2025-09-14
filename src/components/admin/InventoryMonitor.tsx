@@ -127,7 +127,7 @@ export function InventoryMonitor() {
         console.warn('API endpoint failed, trying direct Supabase call:', apiError);
         
         // Fallback to direct Supabase edge function call
-        const { data, error } = await supabase.functions.invoke('scrape-inventory', {
+        const { data, error } = await supabase.functions.invoke('scrape-inventory-v2', {
           body: { 
             trigger: 'manual-admin',
             source: useXml ? 'xml' : 'html',
