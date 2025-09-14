@@ -499,7 +499,7 @@ function extractMercurySpecs(markdown: string): any {
 function extractMercuryImages(html: string, baseUrl: string): string[] {
   if (!html) return [];
   
-  const imageRegex = /<img[^>]+src=['"([^'"]+)['"][^>]*>/gi;
+  const imageRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
   const images: string[] = [];
   let match;
   
