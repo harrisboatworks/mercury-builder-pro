@@ -5,7 +5,8 @@ import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { useToast } from '@/components/ui/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import { Loader2, CheckCircle, AlertTriangle, RefreshCw, Bot, Image, Shield } from 'lucide-react';
+import { Loader2, CheckCircle, AlertTriangle, RefreshCw, Bot, Image, Shield, Eye, Wrench } from 'lucide-react';
+import { IssueDetailsModal } from './IssueDetailsModal';
 
 interface AutomationStatus {
   inventory: { running: boolean; lastRun: string; nextRun: string; status: string };
@@ -14,11 +15,32 @@ interface AutomationStatus {
   monitoring: { criticalIssues: number; warnings: number; lastCheck: string; overallHealth: string };
 }
 
+interface HealthData {
+  checks: Array<{
+    motorId: string;
+    model: string;
+    issues: string[];
+    fixed: boolean;
+    suggestions: string[];
+  }>;
+  criticalIssues: number;
+  issuesFound: number;
+  issuesFixed: number;
+  summary: {
+    brokenImages: number;
+    missingData: number;
+    outdatedInfo: number;
+    lowQualityImages: number;
+  };
+}
+
 export const AutomationDashboard = () => {
   const { toast } = useToast();
   const [status, setStatus] = useState<AutomationStatus | null>(null);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [healthData, setHealthData] = useState<HealthData | null>(null);
+  const [showIssueDetails, setShowIssueDetails] = useState(false);
 
   const loadStatus = async () => {
     try {
@@ -43,14 +65,19 @@ export const AutomationDashboard = () => {
         Array.isArray(m.images) && m.images.length > 0
       ).length || 0;
 
-      // Simulate health check (would call actual health monitoring function)
-      const { data: healthData } = await supabase.functions.invoke('motor-health-monitor', {
+      // Get detailed health check data
+      const { data: healthResponse } = await supabase.functions.invoke('motor-health-monitor', {
         body: { 
           checkBrokenImages: true,
           fixIssues: false,
           generateReport: true 
         }
       }).catch(() => ({ data: null }));
+
+      // Store detailed health data for the modal
+      if (healthResponse?.report) {
+        setHealthData(healthResponse.report);
+      }
 
       setStatus({
         inventory: {
@@ -62,20 +89,20 @@ export const AutomationDashboard = () => {
         images: {
           migrated: migratedMotors,
           total: totalMotors,
-          healthy: healthData?.report?.healthyMotors || 0,
-          broken: healthData?.report?.summary?.brokenImages || 0
+          healthy: healthResponse?.report?.healthyMotors || 0,
+          broken: healthResponse?.report?.summary?.brokenImages || 0
         },
         scraping: {
           queue: 0,
           processing: false,
-          successful: healthData?.report?.totalMotors - (healthData?.report?.issuesFound || 0) || 0,
-          failed: healthData?.report?.issuesFound || 0
+          successful: healthResponse?.report?.totalMotors - (healthResponse?.report?.issuesFound || 0) || 0,
+          failed: healthResponse?.report?.issuesFound || 0
         },
         monitoring: {
-          criticalIssues: healthData?.report?.criticalIssues || 0,
-          warnings: healthData?.report?.warnings || 0,
-          lastCheck: healthData?.report?.timestamp || 'Never',
-          overallHealth: healthData?.report?.summary?.overallHealth || '0%'
+          criticalIssues: healthResponse?.report?.criticalIssues || 0,
+          warnings: healthResponse?.report?.warnings || 0,
+          lastCheck: healthResponse?.report?.timestamp || 'Never',
+          overallHealth: healthResponse?.report?.summary?.overallHealth || '0%'
         }
       });
 
@@ -409,17 +436,47 @@ export const AutomationDashboard = () => {
           <CardHeader className="pb-2">
             <CardTitle className="text-sm">Next Actions</CardTitle>
           </CardHeader>
-          <CardContent className="text-xs space-y-1">
+          <CardContent className="text-xs space-y-2">
             {status?.monitoring.criticalIssues ? (
-              <div className="text-destructive">⚠️ {status.monitoring.criticalIssues} critical issues need attention</div>
+              <Button 
+                size="sm" 
+                variant="destructive" 
+                className="w-full text-xs h-7"
+                onClick={() => setShowIssueDetails(true)}
+              >
+                <AlertTriangle className="h-3 w-3 mr-1" />
+                {status.monitoring.criticalIssues} Critical Issues - View Details
+              </Button>
             ) : (
-              <div className="text-green-600">✅ System running optimally</div>
+              <div className="text-green-600 text-center py-1">✅ System running optimally</div>
             )}
+            
             {status?.images.broken ? (
-              <div className="text-yellow-600">🔧 {status.images.broken} images need repair</div>
+              <Button 
+                size="sm" 
+                variant="outline" 
+                className="w-full text-xs h-7"
+                onClick={() => setShowIssueDetails(true)}
+              >
+                <Wrench className="h-3 w-3 mr-1" />
+                Fix {status.images.broken} Broken Images
+              </Button>
             ) : null}
-            <div className="text-muted-foreground">
-              Next automated check: {new Date(Date.now() + 12 * 60 * 60 * 1000).toLocaleString()}
+            
+            {(status?.monitoring.criticalIssues || status?.images.broken) && (
+              <Button 
+                size="sm" 
+                variant="secondary" 
+                className="w-full text-xs h-7"
+                onClick={() => setShowIssueDetails(true)}
+              >
+                <Eye className="h-3 w-3 mr-1" />
+                View All Issues
+              </Button>
+            )}
+            
+            <div className="text-muted-foreground text-center">
+              Next check: {new Date(Date.now() + 12 * 60 * 60 * 1000).toLocaleString()}
             </div>
           </CardContent>
         </Card>
@@ -444,6 +501,14 @@ export const AutomationDashboard = () => {
           </CardContent>
         </Card>
       </div>
+
+      {/* Issue Details Modal */}
+      <IssueDetailsModal 
+        open={showIssueDetails}
+        onOpenChange={setShowIssueDetails}
+        healthData={healthData}
+        onRefresh={loadStatus}
+      />
     </div>
   );
 };
