@@ -395,8 +395,7 @@ serve(async (req) => {
                     sale_price: motor.sale_price,
                     availability: motor.availability,
                     stock_number: motor.stock_number,
-                    last_scraped: motor.last_scraped,
-                    source_url: motor.source_url
+                    last_scraped: motor.last_scraped
                   })
                   .eq('id', existing.id);
 
