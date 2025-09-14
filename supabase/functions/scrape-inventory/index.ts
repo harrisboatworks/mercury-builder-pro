@@ -788,17 +788,6 @@ function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
         specifications: {}, // Initialize as empty object
         last_scraped: new Date().toISOString()
       };
-        stock_number: stockNumber,
-        inventory_source: 'html',
-        last_stock_check: new Date().toISOString(),
-        detail_url: detailUrl,
-        images: imageUrl ? [{
-          url: imageUrl,
-          type: 'main',
-          source: 'scraped' as const,
-          scraped_at: new Date().toISOString()
-        }] : []
-      };
       
       motors.push(motorData);
       console.log(`✅ Added BROCHURE motor: ${title} - ${availability} (HP: ${horsepower}, Price: $${basePrice})`);
