@@ -73,9 +73,28 @@ export const BulkCustomSourceManager: React.FC = () => {
   }>>([]);
 
   useEffect(() => {
-    fetchStats();
-    fetchMotors();
-    fetchMotorsWithSources();
+    const loadInitialData = async () => {
+      try {
+        // Wait for all three operations to complete
+        await Promise.all([
+          fetchStats(),
+          fetchMotors(),
+          fetchMotorsWithSources()
+        ]);
+      } catch (error) {
+        console.error('Error loading initial data:', error);
+        toast({
+          title: 'Loading Error',
+          description: 'Some data failed to load. Please try refreshing the page.',
+          variant: 'destructive',
+        });
+      } finally {
+        // Always set loading to false, even if some operations failed
+        setIsLoading(false);
+      }
+    };
+
+    loadInitialData();
   }, []);
 
   useEffect(() => {
