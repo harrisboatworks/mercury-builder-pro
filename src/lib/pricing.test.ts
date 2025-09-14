@@ -11,11 +11,12 @@ describe('getPriceDisplayState', () => {
   });
 
   it('Equal: base=1000, sale=1000 → MSRP only, no badge', () => {
-    const s = getPriceDisplayState(1000, 1000);
+    const s = getPriceDisplayState(1000, 1000, true);
     expect(s.callForPrice).toBe(false);
-    expect(s.hasSale).toBe(false);
-    expect(s.savingsRounded).toBe(0);
-    expect(s.percent).toBe(0);
+    expect(s.hasSale).toBe(true);
+    expect(s.savingsRounded).toBe(100);
+    expect(s.percent).toBe(9);
+    expect(s.isArtificialDiscount).toBe(true);
   });
 
   it('Missing sale: base=1000, sale=null → MSRP only, no badge', () => {

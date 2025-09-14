@@ -1391,7 +1391,7 @@ export const MotorSelection = ({
             {filteredMotors.map(motor => {
           const msrp = motor.basePrice && motor.basePrice > 0 ? motor.basePrice : null;
           const sale = motor.salePrice && motor.salePrice > 0 ? motor.salePrice : null;
-          const state = getPriceDisplayState(msrp, sale);
+          const state = getPriceDisplayState(msrp, sale, true);
           const hasSaleDisplay = state.hasSale;
           const callForPrice = state.callForPrice;
           const savingsAmount = state.savingsRounded;
@@ -1552,7 +1552,7 @@ export const MotorSelection = ({
                           </div>
                           {hasSaleDisplay && (
                             <div className="inline-flex items-center px-2 py-1 rounded-md bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs font-medium">
-                              SAVE ${savingsAmount.toLocaleString()} ({savingsPct}%)
+                              SAVE ${savingsAmount.toLocaleString()}
                             </div>
                           )}
                         </div>
