@@ -93,12 +93,13 @@ export function enhanceImageUrls(images: (string | { url: string })[]): string[]
       return; // Skip invalid items
     }
     
-    // Skip obvious non-image URLs
+    // Skip obvious non-image URLs (less aggressive filtering)
     if (isInvalidImageUrl(url)) {
       return;
     }
     
     const enhancedUrl = enhanceImageUrl(url);
+    // Always include the enhanced URL (or original if enhancement failed)
     if (enhancedUrl && !enhancedUrls.includes(enhancedUrl)) {
       enhancedUrls.push(enhancedUrl);
     }
@@ -117,12 +118,9 @@ function isInvalidImageUrl(url: string): boolean {
   
   const lowerUrl = url.toLowerCase();
   
-  // Filter out tracking pixels and non-image URLs
+  // Filter out only obvious non-image URLs (be less aggressive)
   const invalidPatterns = [
     'facebook.com/tr',
-    'pixel',
-    'tracking',
-    'analytics',
     'googletagmanager',
     'gtm',
     'doubleclick',
@@ -132,7 +130,7 @@ function isInvalidImageUrl(url: string): boolean {
     'mailto:',
     'tel:',
     'javascript:',
-    'data:text'
+    'data:text/html'
   ];
   
   return invalidPatterns.some(pattern => lowerUrl.includes(pattern));

@@ -20,8 +20,8 @@ export function MotorImageGallery({ images, motorTitle }: MotorImageGalleryProps
     return null;
   }
 
-  // Filter out images that failed to load
-  const validImages = images.filter((_, index) => !imageLoadErrors.has(index));
+  // Filter out images that failed to load and ensure we have valid images
+  const validImages = images.filter((img, index) => img && typeof img === 'string' && !imageLoadErrors.has(index));
 
   const handleImageError = (index: number) => {
     setImageLoadErrors(prev => new Set([...prev, index]));

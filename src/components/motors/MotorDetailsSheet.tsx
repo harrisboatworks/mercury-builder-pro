@@ -417,23 +417,26 @@ export default function MotorDetailsSheet({
                   // Enhance all image URLs to get full-size versions
                   const enhancedImageUrls = enhanceImageUrls(allImages);
                   
-                  if (enhancedImageUrls.length > 0) {
+                  // Always show gallery if we have any images (enhanced or original)
+                  const imagesToUse = enhancedImageUrls.length > 0 ? 
+                    enhancedImageUrls : 
+                    allImages.map(img => typeof img === 'string' ? img : img.url).filter(Boolean);
+                  
+                  if (imagesToUse.length > 0) {
                     return (
                       <MotorImageGallery 
-                        images={enhancedImageUrls}
+                        images={imagesToUse}
                         motorTitle={title}
                       />
                     );
                   }
                   
-                  // Fallback to image prop if no enhanced images available
+                  // Final fallback to image prop
                   if (img) {
-                    const enhancedFallbackUrl = enhanceImageUrls([img]);
                     return (
-                      <img
-                        src={enhancedFallbackUrl[0] || img}
-                        alt={title}
-                        className="h-48 w-full object-contain rounded-lg"
+                      <MotorImageGallery 
+                        images={[img]}
+                        motorTitle={title}
                       />
                     );
                   }
