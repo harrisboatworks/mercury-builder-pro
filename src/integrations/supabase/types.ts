@@ -278,6 +278,7 @@ export type Database = {
       inventory_updates: {
         Row: {
           completed_at: string | null
+          data_source_errors: Json | null
           error_message: string | null
           id: string
           is_scheduled: boolean | null
@@ -287,6 +288,7 @@ export type Database = {
         }
         Insert: {
           completed_at?: string | null
+          data_source_errors?: Json | null
           error_message?: string | null
           id?: string
           is_scheduled?: boolean | null
@@ -296,6 +298,7 @@ export type Database = {
         }
         Update: {
           completed_at?: string | null
+          data_source_errors?: Json | null
           error_message?: string | null
           id?: string
           is_scheduled?: boolean | null
