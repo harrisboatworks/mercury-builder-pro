@@ -84,20 +84,53 @@ serve(async (req) => {
             break;
           }
 
-          // Find motor elements using proper DOM selectors
-          const motorElements = doc.querySelectorAll('.panel.search-result');
-          console.log(`🎯 Found ${motorElements.length} motor panels on page ${currentPage}`);
+          // DEBUG: First let's understand the HTML structure
+          if (currentPage === 1) {
+            console.log(`🔍 DEBUG: Analyzing HTML structure on first page...`);
+            const allDivs = doc.querySelectorAll('div');
+            console.log(`📋 Total div elements found: ${allDivs.length}`);
+            
+            // Look for common inventory patterns
+            const potentialMotorContainers = doc.querySelectorAll('[class*="result"], [class*="item"], [class*="product"], [class*="panel"], [class*="card"]');
+            console.log(`🎯 Potential motor containers: ${potentialMotorContainers.length}`);
+            
+            // Log first few container classes
+            for (let i = 0; i < Math.min(5, potentialMotorContainers.length); i++) {
+              const container = potentialMotorContainers[i];
+              console.log(`📦 Container ${i + 1} classes: "${container.className}"`);
+              const textSample = container.textContent?.substring(0, 100) || '';
+              console.log(`📝 Text sample: "${textSample}"`);
+            }
+          }
+          
+          // Try multiple selector strategies
+          let motorElements = doc.querySelectorAll('.panel.search-result');
+          console.log(`🎯 Strategy 1 (.panel.search-result): ${motorElements.length} elements`);
+          
+          if (motorElements.length === 0) {
+            motorElements = doc.querySelectorAll('.search-result');
+            console.log(`🎯 Strategy 2 (.search-result): ${motorElements.length} elements`);
+          }
+          
+          if (motorElements.length === 0) {
+            motorElements = doc.querySelectorAll('[class*="search-result"]');
+            console.log(`🎯 Strategy 3 ([class*="search-result"]): ${motorElements.length} elements`);
+          }
+          
+          if (motorElements.length === 0) {
+            motorElements = doc.querySelectorAll('.panel');
+            console.log(`🎯 Strategy 4 (.panel): ${motorElements.length} elements`);
+          }
+          
+          if (motorElements.length === 0) {
+            motorElements = doc.querySelectorAll('[class*="item"], [class*="product"]');
+            console.log(`🎯 Strategy 5 (item/product patterns): ${motorElements.length} elements`);
+          }
 
           if (motorElements.length === 0) {
-            // Try alternative selector patterns
-            const altMotorElements = doc.querySelectorAll('.search-result');
-            console.log(`🔍 Alternative search found ${altMotorElements.length} elements`);
-            
-            if (altMotorElements.length === 0) {
-              console.log(`📋 No motors found on page ${currentPage}, ending pagination`);
-              hasMorePages = false;
-              break;
-            }
+            console.log(`📋 No motors found on page ${currentPage} with any selector strategy, ending pagination`);
+            hasMorePages = false;
+            break;
           }
 
           summary.pages_scraped++;
@@ -106,10 +139,28 @@ serve(async (req) => {
             const motorElement = motorElements[i];
             
             try {
-              // Extract title from panel-title or similar
-              const titleElement = motorElement.querySelector('h4.panel-title a, .panel-title a, h4 a, .title a');
+              // DEBUG: Log motor element structure for first few motors
+              if (currentPage === 1 && i < 3) {
+                console.log(`🔍 DEBUG Motor ${i + 1} HTML sample:`, motorElement.outerHTML.substring(0, 500));
+                const allLinks = motorElement.querySelectorAll('a');
+                console.log(`🔗 Links found in motor ${i + 1}: ${allLinks.length}`);
+                allLinks.forEach((link, idx) => {
+                  console.log(`  Link ${idx + 1}: "${link.textContent?.trim()}" (href: ${link.href})`);
+                });
+              }
+              
+              // Try multiple selector strategies for title
+              let titleElement = motorElement.querySelector('h4.panel-title a, .panel-title a');
+              if (!titleElement) titleElement = motorElement.querySelector('h4 a, h3 a, h2 a');
+              if (!titleElement) titleElement = motorElement.querySelector('.title a, [class*="title"] a');
+              if (!titleElement) titleElement = motorElement.querySelector('a[href*="detail"], a[href*="inventory"]');
+              if (!titleElement) titleElement = motorElement.querySelector('a');
+              
               if (!titleElement) {
-                console.log(`⚠️ No title found for motor ${i + 1} on page ${currentPage}`);
+                console.log(`⚠️ No title element found for motor ${i + 1} on page ${currentPage}`);
+                if (currentPage === 1 && i < 3) {
+                  console.log(`🔍 Available text content:`, motorElement.textContent?.substring(0, 200));
+                }
                 continue;
               }
               
@@ -176,19 +227,19 @@ serve(async (req) => {
                 continue;
               }
 
-              // Determine availability status based on text analysis
-              let availabilityStatus = 'brochure'; // default
+              // Determine availability status based on text analysis (proper case for UI)
+              let availabilityStatus = 'Brochure'; // default
 
               const availLower = availability.toLowerCase();
               if (availLower.includes('in stock') || availLower.includes('available') || 
                   availLower.includes('ready') || availLower.includes('on hand')) {
-                availabilityStatus = 'in_stock';
+                availabilityStatus = 'In Stock';
               } else if (availLower.includes('sold') || availLower.includes('unavailable') || 
                         availLower.includes('not available') || availLower.includes('out of stock')) {
-                availabilityStatus = 'sold';
+                availabilityStatus = 'Sold';
               } else if (availLower.includes('special order') || availLower.includes('order') || 
                         availLower.includes('brochure') || availLower.includes('contact')) {
-                availabilityStatus = 'brochure';
+                availabilityStatus = 'Brochure';
               }
 
               // Default brand detection from title
@@ -251,10 +302,10 @@ serve(async (req) => {
       summary.motors_found = allMotors.length;
       console.log(`🎯 CORRECT v2 - Found ${allMotors.length} total motors from ${summary.pages_scraped} pages`);
 
-      // Log motor summary by availability
-      const inStockCount = allMotors.filter(m => m.availability === 'in_stock').length;
-      const brochureCount = allMotors.filter(m => m.availability === 'brochure').length;
-      const soldCount = allMotors.filter(m => m.availability === 'sold').length;
+          // Log motor summary by availability (updated for proper case)
+          const inStockCount = allMotors.filter(m => m.availability === 'In Stock').length;
+          const brochureCount = allMotors.filter(m => m.availability === 'Brochure').length;
+          const soldCount = allMotors.filter(m => m.availability === 'Sold').length;
       
       console.log(`📊 Motor breakdown: ${inStockCount} in stock, ${brochureCount} brochure, ${soldCount} sold`);
 
@@ -323,9 +374,9 @@ serve(async (req) => {
             }
           }
 
-          // Final counts
-          summary.in_stock_models_found = allMotors.filter(m => m.availability === 'in_stock').length;
-          summary.brochure_models_found = allMotors.filter(m => m.availability === 'brochure').length;
+          // Final counts (updated for proper case)
+          summary.in_stock_models_found = allMotors.filter(m => m.availability === 'In Stock').length;
+          summary.brochure_models_found = allMotors.filter(m => m.availability === 'Brochure').length;
           
           console.log(`💾 CORRECT v2 - Database operations complete: ${summary.motors_inserted} inserted, ${summary.motors_hydrated} updated`);
           
