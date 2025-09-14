@@ -4,8 +4,10 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { supabase } from '@/integrations/supabase/client';
 import { RefreshCw, AlertTriangle, CheckCircle, Search } from 'lucide-react';
+import { InventoryDiagnostics } from './InventoryDiagnostics';
 
 interface MotorInventoryData {
   id: string;
@@ -141,9 +143,15 @@ export function InventoryMonitor() {
   }
 
   return (
-    <div className="space-y-6">
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-7 gap-4">
+    <Tabs defaultValue="monitor" className="space-y-6">
+      <TabsList>
+        <TabsTrigger value="monitor">Monitor</TabsTrigger>
+        <TabsTrigger value="diagnostics">Diagnostics</TabsTrigger>
+      </TabsList>
+      
+      <TabsContent value="monitor" className="space-y-6">
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-7 gap-4">
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium">Total Motors</CardTitle>
@@ -313,6 +321,11 @@ export function InventoryMonitor() {
           </div>
         </CardContent>
       </Card>
-    </div>
+      </TabsContent>
+      
+      <TabsContent value="diagnostics">
+        <InventoryDiagnostics />
+      </TabsContent>
+    </Tabs>
   );
 }
