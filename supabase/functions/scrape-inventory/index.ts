@@ -156,17 +156,17 @@ serve(async (req) => {
       }
     }
 
-    // Fallback to HTML scraping if XML failed or wasn't attempted
+    // Fallback to HTML scraping if XML failed or wasn't attempted - BROCHURE ONLY
     if (!useXmlSuccess) {
-      console.log('🌐 Using HTML scraping as fallback...');
+      console.log('🌐 Using HTML scraping for BROCHURE models only...');
       let page = 1;
       const baseUrl = 'https://www.harrisboatworks.ca';
-      // Use the actual Mercury inventory URL instead of generic new-models
-      const inventoryUrl = `${baseUrl}/search/inventory/brand/Mercury?resultsperpage=50`;
+      // Updated URL to target outboard motors with proper filtering
+      const inventoryUrl = `${baseUrl}/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low?resultsperpage=50`;
 
       while (true) {
         const pageUrl = page === 1 ? inventoryUrl : `${inventoryUrl}&page=${page}`;
-        console.log(`📄 Fetching Mercury inventory page ${page}: ${pageUrl}`);
+        console.log(`📄 Fetching Mercury brochure models page ${page}: ${pageUrl}`);
 
         const pageData = await fetchWithRetry(pageUrl, 3);
         if (!pageData) {
@@ -174,8 +174,8 @@ serve(async (req) => {
           break;
         }
 
-        const motors = parseMotorData(pageData, baseUrl);
-        console.log(`⚙️ Found ${motors.length} motors on page ${page}`);
+        const motors = parseBrochureMotorData(pageData, baseUrl);
+        console.log(`⚙️ Found ${motors.length} brochure motors on page ${page}`);
 
         if (motors.length === 0) {
           console.log('📋 No more motors found, stopping pagination');
@@ -528,8 +528,8 @@ function toAbsoluteUrl(url: string, baseUrl: string): string {
   return baseUrl + '/' + url;
 }
 
-// HTML parsing fallback functions
-function parseMotorData(html: string, baseUrl: string): MotorData[] {
+// HTML parsing for BROCHURE motors only - fixed CSS selectors
+function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, 'text/html');
   
@@ -553,11 +553,20 @@ function parseMotorData(html: string, baseUrl: string): MotorData[] {
       
       // Skip if not a Mercury motor or if no title found
       if (!title || !title.toLowerCase().includes('mercury')) {
-        console.log(`⏭️ Skipping non-Mercury item: ${title}`);
         continue;
       }
 
       console.log(`🔍 Processing motor: ${title}`);
+      
+      // Get the detail URL and check if it's a brochure model
+      const linkElement = element.querySelector('a[href*="inventory"]');
+      const detailUrl = linkElement ? toAbsoluteUrl(linkElement.getAttribute('href') || '', baseUrl) : '';
+      
+      // CRITICAL FILTER: Only process /new-models/ URLs (brochure items)
+      if (!detailUrl.includes('/new-models/')) {
+        console.log(`⏭️ Skipping non-brochure URL: ${detailUrl}`);
+        continue;
+      }
       
       // Extract price from display price or JSON data
       let basePrice = 0;
@@ -582,9 +591,6 @@ function parseMotorData(html: string, baseUrl: string): MotorData[] {
         }
       }
       
-      const linkElement = element.querySelector('a[href*="inventory"]');
-      const detailUrl = linkElement ? toAbsoluteUrl(linkElement.getAttribute('href') || '', baseUrl) : '';
-      
       const imageElement = element.querySelector('img.primaryImage, .search-result-image img, img[alt*="2025"]');
       const imageUrl = imageElement ? toAbsoluteUrl(imageElement.getAttribute('src') || imageElement.getAttribute('data-srcset') || '', baseUrl) : '';
       
@@ -594,51 +600,86 @@ function parseMotorData(html: string, baseUrl: string): MotorData[] {
       
       if (horsepower === 0) {
         console.log(`⏭️ Skipping motor with no horsepower: ${title}`);
-        continue; // Skip if no horsepower found
+        continue;
       }
       
       // Extract year (default to current year)
       const yearMatch = title.match(/(\d{4})/);
       const year = yearMatch ? parseInt(yearMatch[1]) : new Date().getFullYear();
       
-      // Detect availability/stock status from the HTML content
-      let availability = 'Brochure'; // Default availability
-      let stockQuantity = 0;
+      // FIXED: Detect availability using proper DOM traversal instead of :contains()
+      let availability = 'Brochure'; // Default for brochure models
+      let availabilityText = '';
       
-      // Look for stock indicators in the label elements
+      // Look for status in label elements
       const statusLabel = element.querySelector('.label-success, .label-warning, .label-danger, .label');
       const statusText = statusLabel?.textContent?.trim().toLowerCase() || '';
       
-      // Also check table rows for availability
-      const availabilityRow = element.querySelector('table tr td:contains("Availability") + td, table tr:has(strong:contains("Availability")) td:last-child');
-      const availabilityText = availabilityRow?.textContent?.trim().toLowerCase() || '';
+      // FIXED: Find availability in table rows using proper DOM traversal
+      const tableRows = element.querySelectorAll('table tr');
+      for (const row of tableRows) {
+        const cells = row.querySelectorAll('td');
+        for (let i = 0; i < cells.length - 1; i++) {
+          const cellText = cells[i].textContent?.trim().toLowerCase() || '';
+          if (cellText.includes('availability')) {
+            availabilityText = cells[i + 1]?.textContent?.trim().toLowerCase() || '';
+            break;
+          }
+        }
+        if (availabilityText) break;
+        
+        // Also check for strong tags in cells
+        const strongElements = row.querySelectorAll('strong');
+        for (const strong of strongElements) {
+          if (strong.textContent?.trim().toLowerCase().includes('availability')) {
+            const parentCell = strong.closest('td');
+            if (parentCell && parentCell.nextElementSibling) {
+              availabilityText = parentCell.nextElementSibling.textContent?.trim().toLowerCase() || '';
+              break;
+            }
+          }
+        }
+        if (availabilityText) break;
+      }
       
-      // Combine status indicators
+      // Combine all status indicators
       const allStatusText = `${statusText} ${availabilityText}`.toLowerCase();
       
       console.log(`📊 Status text for ${title}: "${allStatusText}"`);
       
+      // CRITICAL FILTER: Skip any "In Stock" items - those come from XML
       if (allStatusText.includes('in stock')) {
-        availability = 'In Stock';
-        stockQuantity = 1; // Assume at least 1 if marked as in stock
-        console.log(`✅ Motor marked as IN STOCK: ${title}`);
-      } else if (allStatusText.includes('available') && !allStatusText.includes('brochure')) {
-        availability = 'Available';
-      } else if (allStatusText.includes('brochure') || allStatusText.includes('order') || allStatusText.includes('custom order')) {
+        console.log(`⏭️ Skipping IN STOCK item (handled by XML): ${title}`);
+        continue;
+      }
+      
+      // Set availability for brochure items
+      if (allStatusText.includes('brochure') || allStatusText.includes('order') || allStatusText.includes('custom order')) {
         availability = 'Brochure';
+      } else if (allStatusText.includes('available')) {
+        availability = 'Brochure'; // Treat as brochure since it's from /new-models/
       } else if (allStatusText.includes('sold') || allStatusText.includes('out of stock') || allStatusText.includes('unavailable')) {
         availability = 'Sold';
       }
 
-      // Extract stock number if available
+      // Extract stock number if available (usually null for brochure items)
       let stockNumber = null;
       if (jsonData && jsonData.stockNumber) {
         stockNumber = jsonData.stockNumber;
       } else {
-        // Try to find stock number in the table
-        const stockRow = element.querySelector('table tr:has(strong:contains("Stock")) td:last-child');
-        if (stockRow) {
-          stockNumber = stockRow.textContent?.trim() || null;
+        // FIXED: Find stock number using proper DOM traversal
+        for (const row of tableRows) {
+          const strongElements = row.querySelectorAll('strong');
+          for (const strong of strongElements) {
+            if (strong.textContent?.trim().toLowerCase().includes('stock')) {
+              const parentCell = strong.closest('td');
+              if (parentCell && parentCell.nextElementSibling) {
+                stockNumber = parentCell.nextElementSibling.textContent?.trim() || null;
+                break;
+              }
+            }
+          }
+          if (stockNumber) break;
         }
       }
       
@@ -652,7 +693,7 @@ function parseMotorData(html: string, baseUrl: string): MotorData[] {
         horsepower: horsepower,
         image_url: imageUrl,
         availability: availability,
-        stock_quantity: stockQuantity,
+        stock_quantity: 0, // Brochure items have no stock
         stock_number: stockNumber,
         inventory_source: 'html',
         last_stock_check: new Date().toISOString(),
@@ -666,7 +707,7 @@ function parseMotorData(html: string, baseUrl: string): MotorData[] {
       };
       
       motors.push(motorData);
-      console.log(`✅ Added motor: ${title} - ${availability} (HP: ${horsepower}, Price: $${basePrice})`);
+      console.log(`✅ Added BROCHURE motor: ${title} - ${availability} (HP: ${horsepower}, Price: $${basePrice})`);
     } catch (error) {
       console.warn('Error parsing motor element:', error);
     }
