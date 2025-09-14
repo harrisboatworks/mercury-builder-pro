@@ -69,14 +69,29 @@ export const AutomationDashboard = () => {
         Array.isArray(m.images) && m.images.length > 0
       ).length || 0;
 
-      // Get detailed health check data
-      const { data: healthResponse } = await supabase.functions.invoke('motor-health-monitor', {
-        body: { 
-          checkBrokenImages: true,
-          fixIssues: false,
-          generateReport: true 
-        }
-      }).catch(() => ({ data: null }));
+      // Get health check data with timeout protection
+      let healthResponse = null;
+      try {
+        const healthCheckPromise = supabase.functions.invoke('motor-health-monitor', {
+          body: { 
+            quickCheck: true, // Use fast-path mode
+            checkBrokenImages: false, // Skip expensive image validation for quick load
+            fixIssues: false,
+            generateReport: true 
+          }
+        });
+        
+        // 10-second timeout
+        const timeoutPromise = new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Health check timeout')), 10000)
+        );
+        
+        const result = await Promise.race([healthCheckPromise, timeoutPromise]);
+        healthResponse = result;
+      } catch (error) {
+        console.warn('Health check timed out, using cached data:', error);
+        // Continue with basic stats only
+      }
 
       // Store detailed health data for the modal
       if (healthResponse?.report) {
@@ -169,8 +184,15 @@ export const AutomationDashboard = () => {
     try {
       setRefreshing(true);
       
+      toast({
+        title: 'Starting Deep Health Check',
+        description: 'This may take up to 60 seconds...',
+        duration: 3000,
+      });
+      
       const { data, error } = await supabase.functions.invoke('motor-health-monitor', {
         body: { 
+          quickCheck: false, // Full deep check
           checkBrokenImages: true,
           fixIssues: true,
           generateReport: true,
@@ -192,9 +214,9 @@ export const AutomationDashboard = () => {
       console.error('Failed to run health check:', error);
       toast({
         title: 'Error',
-        description: 'Failed to run health check',
+        description: 'Health check failed or timed out. Try again or contact support.',
         variant: 'destructive',
-        duration: 3000,
+        duration: 5000,
       });
     } finally {
       setRefreshing(false);

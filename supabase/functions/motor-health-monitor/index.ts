@@ -26,6 +26,7 @@ serve(async (req) => {
     const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
     const { 
+      quickCheck = false,
       checkBrokenImages = true, 
       fixIssues = false,
       generateReport = true,
@@ -52,10 +53,11 @@ serve(async (req) => {
     }
 
     // Get all motors for health check
+    const batchSize = quickCheck ? 20 : 50; // Smaller batches for faster response
     const { data: motors, error: motorsError } = await supabase
       .from('motor_models')
       .select('id, model, image_url, images, description, features, specifications, last_scraped, updated_at')
-      .limit(100) // Process in batches
+      .limit(batchSize)
 
     if (motorsError) {
       throw new Error(`Failed to fetch motors: ${motorsError.message}`)
@@ -73,7 +75,7 @@ serve(async (req) => {
       })
     }
 
-    console.log(`Performing health checks on ${motors.length} motors`)
+    console.log(`Performing ${quickCheck ? 'quick' : 'full'} health checks on ${motors.length} motors`)
 
     for (const motor of motors) {
       const check: HealthCheck = {
@@ -86,11 +88,20 @@ serve(async (req) => {
 
       let hasIssues = false
 
-      // Check 1: Broken or missing images
-      if (checkBrokenImages) {
+      // Check 1: Broken or missing images (with timeout protection)
+      if (checkBrokenImages && !quickCheck) {
         if (motor.image_url) {
           try {
-            const response = await fetch(motor.image_url, { method: 'HEAD' })
+            // Add 2-second timeout for image checks
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 2000);
+            
+            const response = await fetch(motor.image_url, { 
+              method: 'HEAD',
+              signal: controller.signal
+            });
+            clearTimeout(timeoutId);
+            
             if (!response.ok) {
               check.issues.push(`Main image URL returns ${response.status}`)
               healthReport.summary.brokenImages++
@@ -108,17 +119,28 @@ serve(async (req) => {
                 if (similarMotors && similarMotors.length > 0) {
                   for (const similar of similarMotors) {
                     if (similar.image_url) {
-                      const testResponse = await fetch(similar.image_url, { method: 'HEAD' })
-                      if (testResponse.ok) {
-                        await supabase
-                          .from('motor_models')
-                          .update({ image_url: similar.image_url })
-                          .eq('id', motor.id)
+                      try {
+                        const testController = new AbortController();
+                        const testTimeoutId = setTimeout(() => testController.abort(), 2000);
+                        const testResponse = await fetch(similar.image_url, { 
+                          method: 'HEAD',
+                          signal: testController.signal
+                        });
+                        clearTimeout(testTimeoutId);
                         
-                        check.fixed = true
-                        healthReport.issuesFixed++
-                        console.log(`✓ Fixed broken image for ${motor.model}`)
-                        break
+                        if (testResponse.ok) {
+                          await supabase
+                            .from('motor_models')
+                            .update({ image_url: similar.image_url })
+                            .eq('id', motor.id)
+                          
+                          check.fixed = true
+                          healthReport.issuesFixed++
+                          console.log(`✓ Fixed broken image for ${motor.model}`)
+                          break
+                        }
+                      } catch {
+                        // Skip failed alternatives
                       }
                     }
                   }
@@ -126,18 +148,32 @@ serve(async (req) => {
               }
             }
           } catch (error) {
-            check.issues.push(`Image URL unreachable: ${error.message}`)
+            if (error.name === 'AbortError') {
+              check.issues.push(`Image URL check timed out`)
+            } else {
+              check.issues.push(`Image URL unreachable: ${error.message}`)
+            }
             healthReport.summary.brokenImages++
             hasIssues = true
           }
         }
 
-        // Check stored images
+        // Check stored images (sample only for performance)
         if (Array.isArray(motor.images) && motor.images.length > 0) {
           let brokenCount = 0
-          for (const img of motor.images) {
+          const sampleSize = Math.min(motor.images.length, 3); // Check max 3 images for performance
+          const imagesToCheck = motor.images.slice(0, sampleSize);
+          
+          for (const img of imagesToCheck) {
             try {
-              const response = await fetch(img.url, { method: 'HEAD' })
+              const controller = new AbortController();
+              const timeoutId = setTimeout(() => controller.abort(), 2000);
+              const response = await fetch(img.url, { 
+                method: 'HEAD',
+                signal: controller.signal
+              });
+              clearTimeout(timeoutId);
+              
               if (!response.ok) {
                 brokenCount++
               }
@@ -147,10 +183,17 @@ serve(async (req) => {
           }
           
           if (brokenCount > 0) {
-            check.issues.push(`${brokenCount} of ${motor.images.length} stored images are broken`)
+            check.issues.push(`${brokenCount} of ${sampleSize} sampled images are broken`)
             healthReport.summary.brokenImages += brokenCount
             hasIssues = true
           }
+        }
+      } else if (quickCheck) {
+        // Quick check - just verify image URLs exist without HTTP requests
+        if (!motor.image_url && (!Array.isArray(motor.images) || motor.images.length === 0)) {
+          check.issues.push('No image URLs available')
+          healthReport.summary.brokenImages++
+          hasIssues = true
         }
       }
 
@@ -218,8 +261,10 @@ serve(async (req) => {
 
       healthReport.checks.push(check)
 
-      // Rate limiting
-      await new Promise(resolve => setTimeout(resolve, 100))
+      // Rate limiting - less delay for quick checks
+      if (!quickCheck) {
+        await new Promise(resolve => setTimeout(resolve, 50))
+      }
     }
 
     // Generate summary report
