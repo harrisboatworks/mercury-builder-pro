@@ -23,6 +23,7 @@ interface InventoryStats {
   inStock: number;
   brochure: number;
   sold: number;
+  excluded: number;
   withStockNumbers: number;
   withoutStockNumbers: number;
   lastUpdate: string | null;
@@ -53,6 +54,7 @@ export function InventoryMonitor() {
       const inStock = motorsData?.filter(m => m.availability === 'In Stock').length || 0;
       const brochure = motorsData?.filter(m => m.availability === 'Brochure').length || 0;
       const sold = motorsData?.filter(m => m.availability === 'Sold').length || 0;
+      const excluded = motorsData?.filter(m => m.availability === 'Exclude').length || 0;
       const withStockNumbers = motorsData?.filter(m => m.stock_number).length || 0;
       const withoutStockNumbers = total - withStockNumbers;
       const lastUpdate = motorsData?.[0]?.last_scraped || null;
@@ -62,6 +64,7 @@ export function InventoryMonitor() {
         inStock,
         brochure,
         sold,
+        excluded,
         withStockNumbers,
         withoutStockNumbers,
         lastUpdate
@@ -123,6 +126,7 @@ export function InventoryMonitor() {
       case 'In Stock': return 'default';
       case 'Brochure': return 'secondary';
       case 'Sold': return 'destructive';
+      case 'Exclude': return 'outline';
       default: return 'outline';
     }
   };
@@ -139,7 +143,7 @@ export function InventoryMonitor() {
   return (
     <div className="space-y-6">
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-7 gap-4">
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium">Total Motors</CardTitle>
@@ -182,6 +186,15 @@ export function InventoryMonitor() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats?.withStockNumbers || 0}</div>
+          </CardContent>
+        </Card>
+        
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium">Excluded</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold text-gray-500">{stats?.excluded || 0}</div>
           </CardContent>
         </Card>
         
@@ -238,6 +251,7 @@ export function InventoryMonitor() {
               <option value="In Stock">In Stock</option>
               <option value="Brochure">Brochure</option>
               <option value="Sold">Sold</option>
+              <option value="Exclude">Exclude</option>
             </select>
           </div>
 
@@ -291,6 +305,7 @@ export function InventoryMonitor() {
                     <option value="In Stock">In Stock</option>
                     <option value="Brochure">Brochure</option>
                     <option value="Sold">Sold</option>
+                    <option value="Exclude">Exclude</option>
                   </select>
                 </div>
               </div>

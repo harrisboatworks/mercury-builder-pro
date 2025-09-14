@@ -106,10 +106,11 @@ export default function MotorSelectionPage() {
 
         if (motorsError) throw motorsError;
         
-        // Filter out Jet models (same as original)
+        // Filter out Jet models and excluded motors (same as original)
         const filteredMotors = motorsData?.filter(motor => 
           !motor.model?.toLowerCase().includes('jet') &&
-          motor.horsepower <= 600 // HP cap same as original
+          motor.horsepower <= 600 && // HP cap same as original
+          motor.availability !== 'Exclude' // Exclude motors marked as "Exclude"
         ) || [];
         
         setMotors(filteredMotors);

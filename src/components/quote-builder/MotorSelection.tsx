@@ -403,13 +403,15 @@ export const MotorSelection = ({
       setPromotionsState(activePromos);
       const promoRules: PromotionRule[] = rules as PromotionRule[] | null || [];
 
-      // Filter out Jet models and cap horsepower at 300
+      // Filter out Jet models, excluded motors, and cap horsepower at 300
       const filteredMotorRows = (motorRows as DbMotor[] | null || []).filter(m => {
         // Exclude Jet models (check model name for "Jet" case-insensitive)
         const isJetModel = m.model.toLowerCase().includes('jet');
         // Cap horsepower at 300
         const isOverHpLimit = m.horsepower > 300;
-        return !isJetModel && !isOverHpLimit;
+        // Exclude motors marked as "Exclude"
+        const isExcluded = m.availability === 'Exclude';
+        return !isJetModel && !isOverHpLimit && !isExcluded;
       });
 
       // Transform database data to Motor interface with effective pricing
