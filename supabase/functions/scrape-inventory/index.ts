@@ -674,14 +674,6 @@ function parseMotorData(html: string, baseUrl: string): MotorData[] {
   
   console.log(`🏁 Processed ${motors.length} motors from HTML`);
   return motors;
-      
-      motors.push(motorData);
-    } catch (error) {
-      console.warn('Error parsing motor element:', error);
-    }
-  }
-  
-  return motors;
 }
 
 async function hydrateWithDetails(motors: MotorData[]): Promise<MotorData[]> {
