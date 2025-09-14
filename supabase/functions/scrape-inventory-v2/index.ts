@@ -78,10 +78,55 @@ serve(async (req) => {
           const html = await response.text();
           console.log(`📄 Page ${currentPage} HTML length: ${html.length}`);
           
+          // DEBUG: Log what we actually received
+          console.log(`📄 First 2000 chars of HTML: ${html.substring(0, 2000)}`);
+          
+          // Check if we're being blocked
+          if (html.includes('cloudflare') || html.includes('captcha') || html.includes('Just a moment') || 
+              html.includes('Checking your browser') || html.includes('DDoS protection')) {
+            console.error('⚠️ Possible bot protection detected');
+          }
+          
+          // Check for common error pages
+          if (html.includes('404') || html.includes('Not Found') || html.includes('Access Denied')) {
+            console.error('⚠️ Possible 404 or access denied page');
+          }
+          
           const doc = parser.parseFromString(html, 'text/html');
           if (!doc) {
             console.error(`❌ Failed to parse HTML for page ${currentPage}`);
             break;
+          }
+
+          // DEBUG: Check what HTML structure we actually have
+          const allDivs = doc.querySelectorAll('div[class]');
+          console.log(`📊 Total divs with classes: ${allDivs.length}`);
+          
+          // Log first 10 class names to understand structure
+          const sampleClasses = Array.from(allDivs).slice(0, 10).map(d => d.className);
+          console.log(`📊 Sample classes: ${JSON.stringify(sampleClasses)}`);
+          
+          // Check for common inventory-related class patterns
+          const inventoryPatterns = ['inventory', 'product', 'item', 'result', 'motor', 'panel', 'card', 'listing'];
+          const matchingElements = inventoryPatterns.map(pattern => {
+            const elements = doc.querySelectorAll(`[class*="${pattern}"]`);
+            return { pattern, count: elements.length };
+          });
+          console.log(`📊 Inventory-related elements: ${JSON.stringify(matchingElements)}`);
+          
+          // Check page title and main content
+          const title = doc.querySelector('title')?.textContent || '';
+          console.log(`📄 Page title: "${title}"`);
+          
+          // Look for any text that mentions motors or Mercury
+          const bodyText = doc.body?.textContent || '';
+          const hasMotorText = bodyText.toLowerCase().includes('motor') || bodyText.toLowerCase().includes('mercury');
+          console.log(`🔍 Page contains motor/mercury text: ${hasMotorText}`);
+          
+          if (hasMotorText) {
+            // Find text snippets around "motor" or "mercury"
+            const motorMatches = bodyText.match(/.{0,50}(motor|mercury).{0,50}/gi) || [];
+            console.log(`🔍 Motor text samples: ${JSON.stringify(motorMatches.slice(0, 3))}`);
           }
 
           // DEBUG: First let's understand the HTML structure
