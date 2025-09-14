@@ -261,24 +261,33 @@ serve(async (req) => {
       throw deleteError;
     }
 
-    // Insert new data in batches
+    // Insert new data in batches with detailed error logging
     const batchSize = 10;
     let insertedCount = 0;
     
     for (let i = 0; i < hydratedMotors.length; i += batchSize) {
       const batch = hydratedMotors.slice(i, i + batchSize);
       
-      const { error: insertError } = await supabase
+      console.log(`🔄 Inserting batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(hydratedMotors.length/batchSize)}`);
+      console.log(`📦 Batch contains ${batch.length} motors:`, batch.map(m => `${m.model} (${m.horsepower}HP, $${m.base_price})`));
+      
+      const { data: insertResult, error: insertError } = await supabase
         .from('motor_models')
-        .insert(batch);
+        .insert(batch)
+        .select('id, model');
 
       if (insertError) {
         console.error(`❌ Error inserting batch ${Math.floor(i/batchSize) + 1}:`, insertError);
-        throw insertError;
+        console.error(`📋 Failed batch data sample:`, batch[0]);
+        scrapingStats.errors.push(`Batch ${Math.floor(i/batchSize) + 1} insert error: ${insertError.message}`);
+        
+        // Try to continue with remaining batches
+        continue;
       }
       
       insertedCount += batch.length;
-      console.log(`✅ Inserted batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(hydratedMotors.length/batchSize)} (${insertedCount}/${hydratedMotors.length} motors)`);
+      console.log(`✅ Successfully inserted batch ${Math.floor(i/batchSize) + 1}: ${insertResult?.length || batch.length} motors`);
+      console.log(`📊 Progress: ${insertedCount}/${hydratedMotors.length} motors inserted`);
     }
 
     // Trigger price scraping
@@ -553,14 +562,17 @@ function convertXMLToMotorData(item: XMLItem): MotorData | null {
   }
 }
 
-// Determine motor type from title
+// Determine motor type from title - FIXED to always return valid type
 function getMotorTypeFromTitle(title: string): string {
   const titleLower = title.toLowerCase();
   
   if (titleLower.includes('verado')) return 'Verado';
-  if (titleLower.includes('pro xs') || titleLower.includes('pro-xs')) return 'ProXS';
+  if (titleLower.includes('pro xs') || titleLower.includes('pro-xs') || titleLower.includes('proxs')) return 'ProXS';
   if (titleLower.includes('fourstroke') || titleLower.includes('four stroke')) return 'FourStroke';
+  if (titleLower.includes('racing')) return 'Racing';
+  if (titleLower.includes('command thrust')) return 'Command Thrust';
   
+  // Default fallback - never return empty
   return 'Outboard';
 }
 
@@ -633,6 +645,13 @@ function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
         } catch (e) {
           console.warn('Failed to parse JSON data:', e);
         }
+      }
+      
+      // CRITICAL FIX: Ensure base_price is never 0 (database might reject)
+      if (basePrice === 0) {
+        // For brochure models, set a placeholder price if no real price found
+        basePrice = 1.00; // Minimum valid price
+        console.log(`⚠️ Setting placeholder price for brochure model: ${title}`);
       }
       
       const imageElement = element.querySelector('img.primaryImage, .search-result-image img, img[alt*="2025"]');
@@ -727,17 +746,48 @@ function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
         }
       }
       
+      
+      // CRITICAL FIX: Validate all required fields before creating motor data
+      if (!title.trim()) {
+        console.log(`⏭️ Skipping motor with empty title`);
+        continue;
+      }
+      
+      const motorType = getMotorTypeFromTitle(title);
+      if (!motorType) {
+        console.log(`⏭️ Skipping motor with no motor type: ${title}`);
+        continue;
+      }
+      
+      console.log(`✅ Creating motor data for: ${title} (HP: ${horsepower}, Price: $${basePrice}, Type: ${motorType})`);
+      
       const motorData: MotorData = {
         id: crypto.randomUUID(),
         make: 'Mercury',
-        model: title,
+        model: title.trim(),
         year: year,
         base_price: basePrice,
-        motor_type: getMotorTypeFromTitle(title),
+        motor_type: motorType,
         horsepower: horsepower,
-        image_url: imageUrl,
+        image_url: imageUrl || null,
         availability: availability,
         stock_quantity: 0, // Brochure items have no stock
+        stock_number: stockNumber,
+        inventory_source: 'html',
+        last_stock_check: new Date().toISOString(),
+        detail_url: detailUrl || null,
+        description: title.substring(0, 500), // Add description
+        engine_type: motorType.includes('FourStroke') ? 'FourStroke' : null,
+        images: imageUrl ? [{
+          url: imageUrl,
+          type: 'main',
+          source: 'scraped' as const,
+          scraped_at: new Date().toISOString()
+        }] : [],
+        features: [], // Initialize as empty array
+        specifications: {}, // Initialize as empty object
+        last_scraped: new Date().toISOString()
+      };
         stock_number: stockNumber,
         inventory_source: 'html',
         last_stock_check: new Date().toISOString(),
