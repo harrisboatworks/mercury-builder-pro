@@ -93,6 +93,8 @@ export function InventoryMonitor() {
         description: "Using optimized single-operation endpoint",
       });
 
+      console.log('Making request to /api/cron/update-inventory...');
+
       // Use the new optimized inventory-only endpoint
       const response = await fetch('/api/cron/update-inventory', {
         method: 'POST',
@@ -100,6 +102,28 @@ export function InventoryMonitor() {
           'Content-Type': 'application/json',
         },
       });
+
+      console.log('Response status:', response.status);
+      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+
+      if (!response.ok) {
+        // If new endpoint fails, fallback to direct Supabase function call
+        console.log('New endpoint failed with status:', response.status, 'Falling back to direct function call...');
+        
+        const { data, error } = await supabase.functions.invoke('scrape-inventory', {
+          body: { trigger: 'manual-admin-fallback', force: true }
+        });
+
+        if (error) throw error;
+
+        toast({
+          title: "Inventory update completed (fallback)",
+          description: "Used direct function call due to endpoint issue",
+        });
+
+        await fetchInventoryData();
+        return;
+      }
 
       const result = await response.json();
 
