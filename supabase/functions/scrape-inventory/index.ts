@@ -571,6 +571,35 @@ function parseMotorData(html: string, baseUrl: string): MotorData[] {
       const yearMatch = title.match(/(\d{4})/);
       const year = yearMatch ? parseInt(yearMatch[1]) : new Date().getFullYear();
       
+      // Detect availability/stock status from the HTML content
+      let availability = 'Brochure'; // Default availability
+      let stockQuantity = 0;
+      
+      // Look for stock indicators in various places
+      const stockElement = element.querySelector('.stock-status, .availability, .status, .inventory-status');
+      const stockText = stockElement?.textContent?.trim().toLowerCase() || '';
+      
+      // Check the main element text for stock indicators
+      const elementText = element.textContent?.toLowerCase() || '';
+      
+      // Also check for badge or status indicators
+      const badgeElement = element.querySelector('.badge, .tag, .status-badge, .stock-badge');
+      const badgeText = badgeElement?.textContent?.trim().toLowerCase() || '';
+      
+      // Combine all text sources for availability detection
+      const allText = `${stockText} ${elementText} ${badgeText}`.toLowerCase();
+      
+      if (allText.includes('in stock') || allText.includes('available now') || allText.includes('ready to ship')) {
+        availability = 'In Stock';
+        stockQuantity = 1; // Assume at least 1 if marked as in stock
+      } else if (allText.includes('available') && !allText.includes('brochure')) {
+        availability = 'Available';
+      } else if (allText.includes('brochure') || allText.includes('order') || allText.includes('custom order')) {
+        availability = 'Brochure';
+      } else if (allText.includes('sold') || allText.includes('out of stock') || allText.includes('unavailable')) {
+        availability = 'Sold';
+      }
+      
       const motorData: MotorData = {
         id: crypto.randomUUID(),
         make: 'Mercury',
@@ -580,7 +609,10 @@ function parseMotorData(html: string, baseUrl: string): MotorData[] {
         motor_type: getMotorTypeFromTitle(title),
         horsepower: horsepower,
         image_url: imageUrl,
-        availability: 'Available',
+        availability: availability,
+        stock_quantity: stockQuantity,
+        inventory_source: 'html',
+        last_stock_check: new Date().toISOString(),
         detail_url: detailUrl,
         images: imageUrl ? [{
           url: imageUrl,
