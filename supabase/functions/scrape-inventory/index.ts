@@ -161,11 +161,12 @@ serve(async (req) => {
       console.log('🌐 Using HTML scraping as fallback...');
       let page = 1;
       const baseUrl = 'https://www.harrisboatworks.ca';
-      const inventoryUrl = `${baseUrl}/new-models/?resultsperpage=50`;
+      // Use the actual Mercury inventory URL instead of generic new-models
+      const inventoryUrl = `${baseUrl}/search/inventory/brand/Mercury?resultsperpage=50`;
 
       while (true) {
         const pageUrl = page === 1 ? inventoryUrl : `${inventoryUrl}&page=${page}`;
-        console.log(`📄 Fetching page ${page}: ${pageUrl}`);
+        console.log(`📄 Fetching Mercury inventory page ${page}: ${pageUrl}`);
 
         const pageData = await fetchWithRetry(pageUrl, 3);
         if (!pageData) {
@@ -539,33 +540,62 @@ function parseMotorData(html: string, baseUrl: string): MotorData[] {
 
   const motors: MotorData[] = [];
   
-  // Look for motor listings in the HTML
-  const motorElements = doc.querySelectorAll('.inventory-item, .product-item, .motor-listing');
+  // Look for motor listings in the HTML - updated selectors for actual website structure
+  const motorElements = doc.querySelectorAll('.panel.search-result, .search-result');
+  
+  console.log(`🔍 Found ${motorElements.length} potential motor elements`);
   
   for (const element of motorElements) {
     try {
-      const titleElement = element.querySelector('h2, h3, .title, .product-title');
+      // Look for the motor title in the results heading
+      const titleElement = element.querySelector('h3.results-heading a, .results-heading a');
       const title = titleElement?.textContent?.trim() || '';
       
-      // Skip if not a Mercury motor
-      if (!title.toLowerCase().includes('mercury')) continue;
+      // Skip if not a Mercury motor or if no title found
+      if (!title || !title.toLowerCase().includes('mercury')) {
+        console.log(`⏭️ Skipping non-Mercury item: ${title}`);
+        continue;
+      }
+
+      console.log(`🔍 Processing motor: ${title}`);
       
-      const priceElement = element.querySelector('.price, .cost, .amount');
-      const priceText = priceElement?.textContent?.trim() || '';
-      const priceMatch = priceText.match(/\$?([\d,]+\.?\d*)/);
-      const basePrice = priceMatch ? parseFloat(priceMatch[1].replace(/,/g, '')) : 0;
+      // Extract price from display price or JSON data
+      let basePrice = 0;
+      const priceElement = element.querySelector('[itemprop="price"], .display-price-box span');
+      if (priceElement) {
+        const priceText = priceElement.textContent?.trim() || '';
+        const priceMatch = priceText.match(/\$?([\d,]+\.?\d*)/);
+        basePrice = priceMatch ? parseFloat(priceMatch[1].replace(/,/g, '')) : 0;
+      }
+
+      // Try to get data from hidden JSON datasource
+      const datasourceElement = element.querySelector('.datasource.hidden');
+      let jsonData = null;
+      if (datasourceElement) {
+        try {
+          jsonData = JSON.parse(datasourceElement.textContent?.trim() || '{}');
+          if (jsonData.itemPrice && !basePrice) {
+            basePrice = jsonData.itemPrice;
+          }
+        } catch (e) {
+          console.warn('Failed to parse JSON data:', e);
+        }
+      }
       
-      const linkElement = element.querySelector('a[href]');
+      const linkElement = element.querySelector('a[href*="inventory"]');
       const detailUrl = linkElement ? toAbsoluteUrl(linkElement.getAttribute('href') || '', baseUrl) : '';
       
-      const imageElement = element.querySelector('img');
-      const imageUrl = imageElement ? toAbsoluteUrl(imageElement.getAttribute('src') || '', baseUrl) : '';
+      const imageElement = element.querySelector('img.primaryImage, .search-result-image img, img[alt*="2025"]');
+      const imageUrl = imageElement ? toAbsoluteUrl(imageElement.getAttribute('src') || imageElement.getAttribute('data-srcset') || '', baseUrl) : '';
       
-      // Extract horsepower from title
-      const hpMatch = title.match(/(\d+\.?\d*)\s*hp/i);
+      // Extract horsepower from title - look for various formats
+      const hpMatch = title.match(/(\d+\.?\d*)\s*hp/i) || title.match(/(\d+\.?\d*)\s*HP/i) || title.match(/(\d+\.?\d*)HP/);
       const horsepower = hpMatch ? parseFloat(hpMatch[1]) : 0;
       
-      if (horsepower === 0) continue; // Skip if no horsepower found
+      if (horsepower === 0) {
+        console.log(`⏭️ Skipping motor with no horsepower: ${title}`);
+        continue; // Skip if no horsepower found
+      }
       
       // Extract year (default to current year)
       const yearMatch = title.match(/(\d{4})/);
@@ -575,29 +605,41 @@ function parseMotorData(html: string, baseUrl: string): MotorData[] {
       let availability = 'Brochure'; // Default availability
       let stockQuantity = 0;
       
-      // Look for stock indicators in various places
-      const stockElement = element.querySelector('.stock-status, .availability, .status, .inventory-status');
-      const stockText = stockElement?.textContent?.trim().toLowerCase() || '';
+      // Look for stock indicators in the label elements
+      const statusLabel = element.querySelector('.label-success, .label-warning, .label-danger, .label');
+      const statusText = statusLabel?.textContent?.trim().toLowerCase() || '';
       
-      // Check the main element text for stock indicators
-      const elementText = element.textContent?.toLowerCase() || '';
+      // Also check table rows for availability
+      const availabilityRow = element.querySelector('table tr td:contains("Availability") + td, table tr:has(strong:contains("Availability")) td:last-child');
+      const availabilityText = availabilityRow?.textContent?.trim().toLowerCase() || '';
       
-      // Also check for badge or status indicators
-      const badgeElement = element.querySelector('.badge, .tag, .status-badge, .stock-badge');
-      const badgeText = badgeElement?.textContent?.trim().toLowerCase() || '';
+      // Combine status indicators
+      const allStatusText = `${statusText} ${availabilityText}`.toLowerCase();
       
-      // Combine all text sources for availability detection
-      const allText = `${stockText} ${elementText} ${badgeText}`.toLowerCase();
+      console.log(`📊 Status text for ${title}: "${allStatusText}"`);
       
-      if (allText.includes('in stock') || allText.includes('available now') || allText.includes('ready to ship')) {
+      if (allStatusText.includes('in stock')) {
         availability = 'In Stock';
         stockQuantity = 1; // Assume at least 1 if marked as in stock
-      } else if (allText.includes('available') && !allText.includes('brochure')) {
+        console.log(`✅ Motor marked as IN STOCK: ${title}`);
+      } else if (allStatusText.includes('available') && !allStatusText.includes('brochure')) {
         availability = 'Available';
-      } else if (allText.includes('brochure') || allText.includes('order') || allText.includes('custom order')) {
+      } else if (allStatusText.includes('brochure') || allStatusText.includes('order') || allStatusText.includes('custom order')) {
         availability = 'Brochure';
-      } else if (allText.includes('sold') || allText.includes('out of stock') || allText.includes('unavailable')) {
+      } else if (allStatusText.includes('sold') || allStatusText.includes('out of stock') || allStatusText.includes('unavailable')) {
         availability = 'Sold';
+      }
+
+      // Extract stock number if available
+      let stockNumber = null;
+      if (jsonData && jsonData.stockNumber) {
+        stockNumber = jsonData.stockNumber;
+      } else {
+        // Try to find stock number in the table
+        const stockRow = element.querySelector('table tr:has(strong:contains("Stock")) td:last-child');
+        if (stockRow) {
+          stockNumber = stockRow.textContent?.trim() || null;
+        }
       }
       
       const motorData: MotorData = {
@@ -611,6 +653,7 @@ function parseMotorData(html: string, baseUrl: string): MotorData[] {
         image_url: imageUrl,
         availability: availability,
         stock_quantity: stockQuantity,
+        stock_number: stockNumber,
         inventory_source: 'html',
         last_stock_check: new Date().toISOString(),
         detail_url: detailUrl,
@@ -621,6 +664,16 @@ function parseMotorData(html: string, baseUrl: string): MotorData[] {
           scraped_at: new Date().toISOString()
         }] : []
       };
+      
+      motors.push(motorData);
+      console.log(`✅ Added motor: ${title} - ${availability} (HP: ${horsepower}, Price: $${basePrice})`);
+    } catch (error) {
+      console.warn('Error parsing motor element:', error);
+    }
+  }
+  
+  console.log(`🏁 Processed ${motors.length} motors from HTML`);
+  return motors;
       
       motors.push(motorData);
     } catch (error) {
