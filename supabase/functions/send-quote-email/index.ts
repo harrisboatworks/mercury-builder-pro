@@ -19,6 +19,16 @@ interface QuoteEmailRequest {
   emailType: 'quote_delivery' | 'follow_up' | 'reminder';
 }
 
+// Replace template variables with actual data
+function replaceTemplateVariables(template: string, data: QuoteEmailRequest): string {
+  return template
+    .replace(/{{customerName}}/g, data.customerName)
+    .replace(/{{quoteNumber}}/g, data.quoteNumber)
+    .replace(/{{motorModel}}/g, data.motorModel)
+    .replace(/{{totalPrice}}/g, data.totalPrice.toLocaleString());
+}
+
+// Generate email content based on type (fallback for when templates aren't found)
 function generateQuoteDeliveryEmail(data: QuoteEmailRequest): string {
   return `
     <!DOCTYPE html>
@@ -172,24 +182,44 @@ serve(async (req) => {
       throw new Error('Missing required email data');
     }
 
-    let subject = '';
-    let htmlContent = '';
+    // Try to get template from database first
+    let subject: string;
+    let htmlContent: string;
+    
+    try {
+      const { data: template, error: templateError } = await supabase
+        .from('email_templates')
+        .select('subject, html_content')
+        .eq('type', emailData.emailType)
+        .eq('is_active', true)
+        .single();
 
-    switch (emailData.emailType) {
-      case 'quote_delivery':
-        subject = `Your Mercury Motor Quote #${emailData.quoteNumber} is Ready!`;
-        htmlContent = generateQuoteDeliveryEmail(emailData);
-        break;
-      case 'follow_up':
-        subject = `Following up on your Mercury Motor quote #${emailData.quoteNumber}`;
-        htmlContent = generateFollowUpEmail(emailData);
-        break;
-      case 'reminder':
-        subject = `Reminder: Your Mercury Motor Quote #${emailData.quoteNumber} expires soon`;
-        htmlContent = generateFollowUpEmail(emailData);
-        break;
-      default:
-        throw new Error('Invalid email type');
+      if (template && !templateError) {
+        // Use database template
+        subject = replaceTemplateVariables(template.subject, emailData);
+        htmlContent = replaceTemplateVariables(template.html_content, emailData);
+        console.log('Using database template for:', emailData.emailType);
+      } else {
+        throw new Error('Template not found, using fallback');
+      }
+    } catch (templateError) {
+      console.log('No database template found, using fallback for:', emailData.emailType);
+      
+      // Fallback to hardcoded templates
+      switch (emailData.emailType) {
+        case 'quote_delivery':
+          subject = `Your Mercury Motor Quote #${emailData.quoteNumber} from Harris Boat Works`;
+          htmlContent = generateQuoteDeliveryEmail(emailData);
+          break;
+        case 'follow_up':
+        case 'reminder':
+          subject = `Following up on your Mercury Motor quote #${emailData.quoteNumber}`;
+          htmlContent = generateFollowUpEmail(emailData);
+          break;
+        default:
+          subject = `Your Mercury Motor Quote #${emailData.quoteNumber} from Harris Boat Works`;
+          htmlContent = generateQuoteDeliveryEmail(emailData);
+      }
     }
 
     // Send email via Resend with Reply-To header
