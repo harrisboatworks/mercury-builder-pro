@@ -77,8 +77,8 @@ function generateQuoteDeliveryEmail(data: QuoteEmailRequest): string {
           </div>
           
           <div class="footer">
-            <p>This quote was generated automatically. Please don't reply to this email address.</p>
-            <p>For questions, contact us at support@resend.dev or (555) 123-4567</p>
+            <p>Have questions? Simply reply to this email and we'll get back to you!</p>
+            <p>Or call us directly at <strong>(555) 123-4567</strong></p>
           </div>
         </div>
       </body>
@@ -143,7 +143,7 @@ function generateFollowUpEmail(data: QuoteEmailRequest): string {
           </div>
           
            <div class="footer">
-             <p>Questions? Contact our team at support@resend.dev or (555) 123-4567</p>
+             <p>Questions? Simply reply to this email or call us at <strong>(555) 123-4567</strong></p>
            </div>
         </div>
       </body>
@@ -192,10 +192,11 @@ serve(async (req) => {
         throw new Error('Invalid email type');
     }
 
-    // Send email via Resend
+    // Send email via Resend with Reply-To header
     const emailResponse = await resend.emails.send({
       from: 'Mercury Motors <onboarding@resend.dev>',
       to: [emailData.customerEmail],
+      replyTo: 'harrisboatworks@hotmail.com', // Customer replies go to your business email
       subject: subject,
       html: htmlContent,
     });

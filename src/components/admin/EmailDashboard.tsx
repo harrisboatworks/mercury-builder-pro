@@ -104,10 +104,10 @@ export const EmailDashboard = () => {
         <div>
           <h2 className="text-2xl font-bold">Email Management</h2>
           <p className="text-muted-foreground">Send transactional emails and manage email automation</p>
-          <div className="mt-2 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
-            <p className="text-sm text-yellow-800">
-              <strong>Note:</strong> With Resend's free plan, emails can only be sent to your verified address (harrisboatworks@hotmail.com). 
-              To send to other recipients, verify a domain at <a href="https://resend.com/domains" target="_blank" className="underline">resend.com/domains</a>.
+          <div className="mt-2 p-3 bg-green-50 border border-green-200 rounded-lg">
+            <p className="text-sm text-green-800">
+              <strong>Email Setup:</strong> Emails are sent from onboarding@resend.dev with Reply-To set to harrisboatworks@hotmail.com. 
+              When customers reply, responses go directly to your business email.
             </p>
           </div>
         </div>
