@@ -313,7 +313,6 @@ serve(async (req) => {
                 sale_price: price,
                 availability: availabilityStatus,
                 stock_number: stockNumber,
-                source_url: pageUrl,
                 last_scraped: new Date().toISOString()
               };
 
