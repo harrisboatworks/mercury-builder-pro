@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { RefreshCw, AlertTriangle, CheckCircle, Search } from 'lucide-react';
 import { InventoryDiagnostics } from './InventoryDiagnostics';
@@ -35,8 +36,10 @@ export function InventoryMonitor() {
   const [motors, setMotors] = useState<MotorInventoryData[]>([]);
   const [stats, setStats] = useState<InventoryStats | null>(null);
   const [loading, setLoading] = useState(true);
+  const [updating, setUpdating] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedAvailability, setSelectedAvailability] = useState<string>('all');
+  const { toast } = useToast();
 
   const fetchInventoryData = async () => {
     setLoading(true);
@@ -84,16 +87,56 @@ export function InventoryMonitor() {
 
   const triggerInventoryUpdate = async () => {
     try {
-      const { error } = await supabase.functions.invoke('scrape-inventory', {
+      setUpdating(true);
+      console.log('Triggering inventory update...');
+      
+      const { data, error } = await supabase.functions.invoke('scrape-inventory', {
         body: { trigger: 'manual-admin', force: true }
       });
       
-      if (error) throw error;
+      if (error) {
+        console.error('Error triggering inventory update:', error);
+        toast({
+          title: "Update Failed",
+          description: error.message?.includes('Failed to send') 
+            ? "Network error - please check connection and try again"
+            : "Failed to trigger inventory update: " + (error.message || 'Unknown error'),
+          variant: "destructive",
+        });
+        return;
+      }
       
-      // Refresh data after update
-      setTimeout(fetchInventoryData, 3000);
+      console.log('Inventory update response:', data);
+      
+      if (data?.success === false) {
+        toast({
+          title: "Update Failed",
+          description: data.error || "Unknown error occurred during inventory update",
+          variant: "destructive",
+        });
+        return;
+      }
+      
+      toast({
+        title: "Success",
+        description: data?.count 
+          ? `Inventory update completed! Processed ${data.count} motors.`
+          : "Inventory update started successfully",
+      });
+      
+      // Refresh data after a delay to allow processing
+      setTimeout(() => {
+        fetchInventoryData();
+      }, 3000);
     } catch (error) {
       console.error('Error triggering inventory update:', error);
+      toast({
+        title: "Network Error", 
+        description: "Unable to connect to the inventory service. Please try again.",
+        variant: "destructive",
+      });
+    } finally {  
+      setUpdating(false);
     }
   };
 
@@ -106,10 +149,20 @@ export function InventoryMonitor() {
       
       if (error) throw error;
       
+      toast({
+        title: "Success",
+        description: "Motor availability updated successfully",
+      });
+      
       // Refresh data
       fetchInventoryData();
     } catch (error) {
       console.error('Error updating motor availability:', error);
+      toast({
+        title: "Error",
+        description: "Failed to update motor availability",
+        variant: "destructive",
+      });
     }
   };
 
@@ -231,9 +284,9 @@ export function InventoryMonitor() {
                 )}
               </CardDescription>
             </div>
-            <Button onClick={triggerInventoryUpdate} disabled={loading}>
-              <RefreshCw className="h-4 w-4 mr-2" />
-              Update Inventory
+            <Button onClick={triggerInventoryUpdate} disabled={loading || updating}>
+              <RefreshCw className={`h-4 w-4 mr-2 ${updating ? 'animate-spin' : ''}`} />
+              {updating ? 'Updating...' : 'Update Inventory'}
             </Button>
           </div>
         </CardHeader>
