@@ -9,6 +9,7 @@ import { Loader2, CheckCircle, AlertTriangle, RefreshCw, Bot, Image, Shield, Eye
 import { IssueDetailsModal } from './IssueDetailsModal';
 import { DataEnrichmentDashboard } from './DataEnrichmentDashboard';
 import { SourceManagement } from './SourceManagement';
+import { BulkCustomSourceManager } from './BulkCustomSourceManager';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 interface AutomationStatus {
@@ -220,10 +221,11 @@ export const AutomationDashboard = () => {
   return (
     <div className="space-y-6">
       <Tabs defaultValue="dashboard" className="w-full">
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="dashboard">Dashboard</TabsTrigger>  
           <TabsTrigger value="data-sources">Data Sources</TabsTrigger>
           <TabsTrigger value="source-config">Source Config</TabsTrigger>
+          <TabsTrigger value="custom-sources">Custom Sources</TabsTrigger>
         </TabsList>
 
         <TabsContent value="dashboard" className="space-y-6">
@@ -528,6 +530,10 @@ export const AutomationDashboard = () => {
 
         <TabsContent value="source-config" className="space-y-6">
           <SourceManagement />
+        </TabsContent>
+
+        <TabsContent value="custom-sources" className="space-y-6">
+          <BulkCustomSourceManager />
         </TabsContent>
       </Tabs>
     </div>

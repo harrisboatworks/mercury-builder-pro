@@ -12,6 +12,8 @@ interface ScrapeRequest {
   batch_size?: number;
   background?: boolean;
   custom_url?: string;
+  source_type?: string;
+  include_custom_sources?: boolean;
 }
 
 interface ScrapeResult {
@@ -51,6 +53,28 @@ serve(async (req) => {
     if (sourcesError) {
       console.error('Error fetching data sources:', sourcesError);
       throw sourcesError;
+    }
+
+    // Get custom sources for motors if enabled
+    let customSources = [];
+    if (body.include_custom_sources !== false) {
+      const customSourcesQuery = supabase
+        .from('motor_custom_sources')
+        .select('*')
+        .eq('is_active', true)
+        .order('priority', { ascending: true });
+
+      if (body.motor_id) {
+        customSourcesQuery.eq('motor_id', body.motor_id);
+      }
+
+      const { data: customSourcesData, error: customSourcesError } = await customSourcesQuery;
+      
+      if (customSourcesError) {
+        console.error('Error fetching custom sources:', customSourcesError);
+      } else {
+        customSources = customSourcesData || [];
+      }
     }
 
     // Get motors to scrape
@@ -127,6 +151,82 @@ serve(async (req) => {
           };
         }
       } else {
+        // Process motor-specific custom sources first
+        const motorCustomSources = customSources.filter(cs => cs.motor_id === motor.id);
+        
+        for (const customSource of motorCustomSources) {
+          console.log(`Processing custom source: ${customSource.source_name} (${customSource.source_type})`);
+          
+          try {
+            let sourceData: ScrapeResult = {};
+            
+            switch (customSource.source_type) {
+              case 'direct_url':
+              case 'gallery_url':
+              case 'dropbox':
+              case 'google_drive':
+              case 'pdf_url':
+              case 'api_endpoint':
+                sourceData = await scrapeCustomUrl(customSource.source_url, firecrawlApiKey);
+                break;
+            }
+
+            // Merge data from custom source
+            if (sourceData.description && !enrichedData.description) {
+              enrichedData.description = sourceData.description;
+            }
+            
+            if (sourceData.features?.length) {
+              enrichedData.features = [...new Set([...enrichedData.features, ...sourceData.features])];
+            }
+            
+            if (sourceData.specifications && Object.keys(sourceData.specifications).length) {
+              enrichedData.specifications = { ...enrichedData.specifications, ...sourceData.specifications };
+            }
+            
+            if (sourceData.images?.length) {
+              enrichedData.images = [...new Set([...enrichedData.images, ...sourceData.images])];
+            }
+
+            // Update custom source success tracking
+            await supabase
+              .from('motor_custom_sources')
+              .update({
+                success_rate: Math.min(100, (customSource.success_rate + 10)),
+                last_scraped: new Date().toISOString(),
+              })
+              .eq('id', customSource.id);
+
+            // Update data sources to include custom source
+            enrichedData.data_sources[`custom_${customSource.id}`] = {
+              scraped_at: new Date().toISOString(),
+              success: true,
+              source_name: customSource.source_name,
+              source_type: customSource.source_type,
+            };
+
+          } catch (error) {
+            console.error(`Error scraping from custom source ${customSource.source_name}:`, error);
+            
+            enrichedData.data_sources[`custom_${customSource.id}`] = {
+              scraped_at: new Date().toISOString(),
+              success: false,
+              error: error.message,
+              source_name: customSource.source_name,
+              source_type: customSource.source_type,
+            };
+
+            // Update custom source failure tracking
+            await supabase
+              .from('motor_custom_sources')
+              .update({
+                success_rate: Math.max(0, (customSource.success_rate - 5)),
+                last_scraped: new Date().toISOString(),
+              })
+              .eq('id', customSource.id);
+          }
+        }
+
         // Process each source in priority order
         for (const source of sources) {
         if (body.source_name && source.name !== body.source_name) {

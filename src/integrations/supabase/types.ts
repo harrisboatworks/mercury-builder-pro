@@ -305,6 +305,54 @@ export type Database = {
         }
         Relationships: []
       }
+      motor_custom_sources: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          id: string
+          is_active: boolean
+          last_scraped: string | null
+          motor_id: string
+          priority: number
+          scrape_config: Json | null
+          source_name: string
+          source_type: string
+          source_url: string
+          success_rate: number | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          is_active?: boolean
+          last_scraped?: string | null
+          motor_id: string
+          priority?: number
+          scrape_config?: Json | null
+          source_name: string
+          source_type: string
+          source_url: string
+          success_rate?: number | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          is_active?: boolean
+          last_scraped?: string | null
+          motor_id?: string
+          priority?: number
+          scrape_config?: Json | null
+          source_name?: string
+          source_type?: string
+          source_url?: string
+          success_rate?: number | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       motor_data_sources: {
         Row: {
           base_url: string

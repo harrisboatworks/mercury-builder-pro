@@ -12,6 +12,7 @@ import { Separator } from '@/components/ui/separator';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { Loader2, Save, Plus, X, Edit3, Database, Globe, User } from 'lucide-react';
+import { CustomSourceManager } from './CustomSourceManager';
 
 interface Motor {
   id: string;
@@ -217,11 +218,12 @@ export const MotorManualOverride: React.FC<ManualOverrideProps> = ({
 
       <CardContent>
         <Tabs defaultValue="basic" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-5">
             <TabsTrigger value="basic">Basic Info</TabsTrigger>
             <TabsTrigger value="features">Features</TabsTrigger>
             <TabsTrigger value="specs">Specifications</TabsTrigger>
             <TabsTrigger value="images">Images</TabsTrigger>
+            <TabsTrigger value="sources">Custom Sources</TabsTrigger>
           </TabsList>
 
           <TabsContent value="basic" className="space-y-4">
@@ -363,6 +365,10 @@ export const MotorManualOverride: React.FC<ManualOverrideProps> = ({
                 </div>
               )}
             </div>
+          </TabsContent>
+
+          <TabsContent value="sources" className="space-y-4">
+            <CustomSourceManager motorId={motor.id} motorModel={motor.model} />
           </TabsContent>
         </Tabs>
 
