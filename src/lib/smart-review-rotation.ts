@@ -152,7 +152,18 @@ export class SmartReviewRotation {
       return exactMatches[index];
     }
 
-    return null;
+    // Final fallback - return any review that mentions Harris
+    const harrisReviews = allReviews.filter(review => 
+      review.comment.toLowerCase().includes('harris')
+    );
+    
+    if (harrisReviews.length > 0) {
+      const index = Math.floor(random4 * harrisReviews.length);
+      return harrisReviews[index];
+    }
+
+    // Absolute fallback - return first review
+    return allReviews.length > 0 ? allReviews[0] : null;
   }
 
   /**

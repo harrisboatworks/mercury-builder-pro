@@ -72,6 +72,14 @@ export default function MotorDetailsSheet({
   const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
   const smartReview = useSmartReviewRotation(hpValue, title);
   const reviewCount = getReviewCount(hpValue, title);
+  
+  // Debug logging to help troubleshoot review display
+  console.log('Motor review debug:', { 
+    hpValue, 
+    title, 
+    smartReview: smartReview ? { reviewer: smartReview.reviewer, hp: smartReview.motorHP } : null,
+    reviewCount
+  });
 
   // Section refs for navigation
   const scrollContainerRef = useRef<HTMLDivElement>(null);
