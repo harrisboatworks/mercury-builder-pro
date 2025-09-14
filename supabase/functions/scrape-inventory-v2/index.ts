@@ -457,14 +457,16 @@ serve(async (req) => {
             const motor = allMotors[i];
             
             try {
-              // Check if motor exists (by model, horsepower, and make)
+              // For fresh import, use a unique identifier to avoid false duplicates
+              const uniqueKey = `${motor.model}-${motor.horsepower}-${motor.make}-${motor.motor_type}`;
               const { data: existing, error: selectError } = await supabase
                 .from('motor_models')
-                .select('id, model, horsepower, make')
+                .select('id, model, horsepower, make, motor_type')
                 .eq('model', motor.model)
-                .eq('horsepower', motor.horsepower)
+                .eq('horsepower', motor.horsepower) 
                 .eq('make', motor.make)
-                .maybeSingle();
+                .eq('motor_type', motor.motor_type)
+                .limit(1);
 
               if (selectError) {
                 console.error(`❌ Error checking existing motor ${i + 1}:`, selectError);
