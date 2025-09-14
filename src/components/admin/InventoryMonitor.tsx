@@ -458,7 +458,7 @@ export function InventoryMonitor() {
                 <div className="flex-1">
                   <div className="font-medium">{motor.model}</div>
                   <div className="text-sm text-muted-foreground">
-                    {motor.horsepower}HP | ${motor.base_price.toLocaleString()}
+                    {motor.horsepower}HP | {motor.base_price ? `$${motor.base_price.toLocaleString()}` : 'Price TBD'}
                     {motor.sale_price && (
                       <span className="text-green-600 ml-2">
                         Sale: ${motor.sale_price.toLocaleString()}
