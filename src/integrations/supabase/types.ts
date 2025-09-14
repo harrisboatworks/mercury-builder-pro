@@ -883,6 +883,10 @@ export type Database = {
         }
         Returns: undefined
       }
+      validate_customer_data_ownership: {
+        Args: { record_user_id: string; table_name: string }
+        Returns: boolean
+      }
       validate_customer_quote_access: {
         Args: { quote_id: string }
         Returns: boolean
