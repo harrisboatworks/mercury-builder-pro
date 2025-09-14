@@ -23,7 +23,7 @@ interface Motor {
   manual_overrides: any;
   data_sources: any;
   data_quality_score: number;
-  images: string[];
+  images: Array<{ url: string; source?: string; type?: string }>;
   base_price: number;
 }
 
@@ -327,15 +327,41 @@ export const MotorManualOverride: React.FC<ManualOverrideProps> = ({
 
           <TabsContent value="images" className="space-y-4">
             <div className="grid gap-4 md:grid-cols-3">
-              {motor.images?.map((image, index) => (
-                <div key={index} className="relative group">
-                  <img
-                    src={image}
-                    alt={`${motor.model} ${index + 1}`}
-                    className="w-full h-32 object-cover rounded border"
-                  />
+              {motor.images?.filter(image => {
+                const url = typeof image === 'string' ? image : image.url;
+                return url && 
+                       !url.includes('facebook.com') && 
+                       !url.includes('ThumbGenerator') &&
+                       !url.includes('template') &&
+                       !url.includes('tracking');
+              }).map((image, index) => {
+                const imageUrl = typeof image === 'string' ? image : image.url;
+                const imageSource = typeof image === 'string' ? 'Unknown' : image.source || 'Unknown';
+                
+                return (
+                  <div key={index} className="relative group space-y-2">
+                    <img
+                      src={imageUrl}
+                      alt={`${motor.model} ${index + 1}`}
+                      className="w-full h-32 object-cover rounded border"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = '/placeholder.svg';
+                        target.className = 'w-full h-32 object-cover rounded border opacity-50';
+                      }}
+                    />
+                    <div className="text-xs text-muted-foreground">
+                      <div>Source: {imageSource}</div>
+                      <div className="truncate" title={imageUrl}>URL: {imageUrl}</div>
+                    </div>
+                  </div>
+                );
+              })}
+              {(!motor.images || motor.images.length === 0) && (
+                <div className="col-span-3 text-center text-muted-foreground py-8">
+                  No images available for this motor
                 </div>
-              ))}
+              )}
             </div>
           </TabsContent>
         </Tabs>
