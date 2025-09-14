@@ -437,7 +437,7 @@ export type Database = {
       motor_models: {
         Row: {
           availability: string | null
-          base_price: number
+          base_price: number | null
           created_at: string | null
           data_quality_score: number | null
           data_sources: Json | null
@@ -468,7 +468,7 @@ export type Database = {
         }
         Insert: {
           availability?: string | null
-          base_price: number
+          base_price?: number | null
           created_at?: string | null
           data_quality_score?: number | null
           data_sources?: Json | null
@@ -499,7 +499,7 @@ export type Database = {
         }
         Update: {
           availability?: string | null
-          base_price?: number
+          base_price?: number | null
           created_at?: string | null
           data_quality_score?: number | null
           data_sources?: Json | null
