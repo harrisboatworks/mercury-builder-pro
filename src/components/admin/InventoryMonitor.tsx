@@ -90,35 +90,63 @@ export function InventoryMonitor() {
     try {
       toast({
         title: "Starting inventory update...",
-        description: "Using optimized single-operation endpoint",
+        description: "This may take up to 60 seconds",
       });
 
-      console.log('Making request to /api/cron/update-inventory...');
+      // Try API endpoint first, fallback to direct Supabase call
+      let result;
+      try {
+        console.log('Attempting API endpoint call...');
+        const response = await fetch('/api/cron/update-inventory', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
 
-      // Use the new optimized inventory-only endpoint
-      const response = await fetch('/api/cron/update-inventory', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+        console.log('API Response status:', response.status);
+        console.log('API Response headers:', Object.fromEntries(response.headers.entries()));
 
-      console.log('Response status:', response.status);
-      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+        if (!response.ok) {
+          throw new Error(`API endpoint failed: ${response.status} ${response.statusText}`);
+        }
 
-      if (!response.ok) {
-        throw new Error(`API endpoint failed with status ${response.status}. The new cron endpoints may not be deployed yet.`);
-      }
+        result = await response.json();
+        
+        if (!result.ok) {
+          throw new Error(result.error || 'API endpoint returned error');
+        }
+        
+        console.log('API endpoint succeeded');
+      } catch (apiError) {
+        console.warn('API endpoint failed, trying direct Supabase call:', apiError);
+        
+        // Fallback to direct Supabase edge function call
+        const { data, error } = await supabase.functions.invoke('scrape-inventory', {
+          body: { 
+            trigger: 'manual-admin', 
+            at: new Date().toISOString() 
+          },
+        });
 
-      const result = await response.json();
+        if (error) {
+          throw new Error(`Supabase function failed: ${error.message}`);
+        }
 
-      if (!result.ok) {
-        throw new Error(result.error || 'Inventory update failed');
+        result = {
+          ok: true,
+          result: {
+            inventory: data,
+            executionTime: 'N/A',
+            source: 'direct-supabase'
+          }
+        };
+        console.log('Direct Supabase call succeeded');
       }
 
       toast({
         title: "Inventory update completed",
-        description: `Completed in ${result.result.executionTime}ms`,
+        description: `Updated inventory successfully. Source: ${result.result?.source || 'api-endpoint'}`,
       });
 
       // Refresh the data
