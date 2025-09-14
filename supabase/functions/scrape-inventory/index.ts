@@ -12,9 +12,22 @@ const corsHeaders = {
 async function fetchWithRetry(url: string, maxRetries = 3): Promise<string | null> {
   for (let i = 0; i < maxRetries; i++) {
     try {
+      console.log(`🌐 Fetching (attempt ${i + 1}/${maxRetries}): ${url}`);
       const response = await fetch(url);
+      
+      // DEBUG: Log response details
+      console.log(`📄 HTTP Response Status: ${response.status} ${response.statusText}`);
+      console.log(`📄 Response Headers: ${JSON.stringify(Object.fromEntries(response.headers.entries()))}`);
+      
       if (response.ok) {
-        return await response.text();
+        const html = await response.text();
+        console.log(`📄 HTML Length: ${html.length} characters`);
+        console.log(`📄 First 500 chars: ${html.substring(0, 500)}`);
+        console.log(`📄 Contains 'mercury': ${html.toLowerCase().includes('mercury')}`);
+        console.log(`📄 Contains 'search-result': ${html.includes('search-result')}`);
+        return html;
+      } else {
+        console.warn(`❌ HTTP ${response.status}: ${response.statusText} for ${url}`);
       }
     } catch (error) {
       console.warn(`Fetch attempt ${i + 1} failed:`, error);
@@ -586,6 +599,14 @@ function toAbsoluteUrl(url: string, baseUrl: string): string {
 
 // HTML parsing for BROCHURE motors only - fixed CSS selectors
 function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
+  // DEBUG: Log raw HTML response details
+  console.log(`📄 Raw HTML Length: ${html.length} characters`);
+  console.log(`📄 First 500 chars of HTML: ${html.substring(0, 500)}`);
+  console.log(`📄 Contains 'mercury' (case insensitive): ${html.toLowerCase().includes('mercury')}`);
+  console.log(`📄 Contains 'search-result': ${html.includes('search-result')}`);
+  console.log(`📄 Contains 'panel': ${html.includes('panel')}`);
+  console.log(`📄 Contains 'new-models': ${html.includes('new-models')}`);
+  
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, 'text/html');
   
@@ -595,6 +616,32 @@ function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
   }
 
   const motors: MotorData[] = [];
+  
+  // DEBUG: Test multiple selector strategies
+  const motorElements1 = doc.querySelectorAll('.panel.search-result');
+  const motorElements2 = doc.querySelectorAll('.search-result');
+  const motorElements3 = doc.querySelectorAll('.panel');
+  const motorElements4 = doc.querySelectorAll('[class*="search"]');
+  const motorElements5 = doc.querySelectorAll('[class*="result"]');
+  const motorElements6 = doc.querySelectorAll('[class*="motor"]');
+  const motorElements7 = doc.querySelectorAll('[class*="inventory"]');
+  
+  console.log(`🔍 SELECTOR DEBUG:`);
+  console.log(`  .panel.search-result: ${motorElements1.length} elements`);
+  console.log(`  .search-result: ${motorElements2.length} elements`);
+  console.log(`  .panel: ${motorElements3.length} elements`);
+  console.log(`  [class*="search"]: ${motorElements4.length} elements`);
+  console.log(`  [class*="result"]: ${motorElements5.length} elements`);
+  console.log(`  [class*="motor"]: ${motorElements6.length} elements`);
+  console.log(`  [class*="inventory"]: ${motorElements7.length} elements`);
+  
+  // Try to find any elements with common inventory classes
+  const allDivs = doc.querySelectorAll('div[class]');
+  console.log(`📊 Total divs with classes: ${allDivs.length}`);
+  
+  // Sample some class names to understand page structure
+  const classNames = Array.from(allDivs).slice(0, 10).map(el => el.className).filter(cn => cn);
+  console.log(`📊 Sample class names: ${JSON.stringify(classNames)}`);
   
   // Look for motor listings in the HTML - updated selectors for actual website structure
   const motorElements = doc.querySelectorAll('.panel.search-result, .search-result');
