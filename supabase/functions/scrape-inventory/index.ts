@@ -604,13 +604,10 @@ function parseMotorData(html: string): MotorData[] {
           const hp = hpMatch ? parseFloat(hpMatch[1]) : 0
           
           if (hp > 0 && motorData.itemMake === 'Mercury') {
-            // Determine availability - check for sold status
-            let availability = 'Brochure'
-            if (motorData.stockNumber) {
-              availability = 'In Stock'
-            }
+            // Enhanced availability determination with multiple strategies
+            let availability = 'Brochure' // Default
             
-            // Check for sold indicators
+            // Check for sold indicators first
             const soldIndicators = [
               motorData.sold === true,
               motorData.itemAvailability === 'Sold',
@@ -621,6 +618,33 @@ function parseMotorData(html: string): MotorData[] {
             
             if (soldIndicators.some(Boolean)) {
               availability = 'Sold'
+            } else {
+              // Multi-strategy in-stock detection
+              const inStockIndicators = [
+                // Strategy 1: Has stock number
+                Boolean(motorData.stockNumber),
+                // Strategy 2: Availability field indicates in stock
+                motorData.itemAvailability === 'In Stock',
+                motorData.itemAvailability === 'Available',
+                motorData.availability === 'In Stock',
+                motorData.availability === 'Available',
+                // Strategy 3: Status field indicates availability
+                motorData.status === 'In Stock',
+                motorData.status === 'Available',
+                // Strategy 4: Text patterns in various fields
+                /in\s*stock|available|ready/i.test(motorData.itemAvailability || ''),
+                /in\s*stock|available|ready/i.test(motorData.availability || ''),
+                /in\s*stock|available|ready/i.test(motorData.status || ''),
+                /in\s*stock|available|ready/i.test(motorData.itemName || ''),
+                // Strategy 5: Has price and not explicitly brochure
+                (Boolean(motorData.itemPrice || motorData.unitPrice) && 
+                 !(/brochure|catalog/i.test(motorData.itemAvailability || ''))  &&
+                 !(/brochure|catalog/i.test(motorData.availability || '')))
+              ]
+              
+              if (inStockIndicators.some(Boolean)) {
+                availability = 'In Stock'
+              }
             }
             // Prefer detail images over thumbnails for better quality
             let imageUrl = getMotorImageUrl(motorName) // fallback
@@ -697,11 +721,29 @@ function parseMotorData(html: string): MotorData[] {
             ? (salePrice + parseFloat(saveMatch[1].replace(/,/g, '')))
             : basePriceCandidate
           
-          // Extract availability - check for sold, in stock, or default to brochure
+          // Enhanced availability extraction and determination
           const availabilityMatch = cardHtml.match(/<span class=\"label[^\"]*\"[^>]*>([^<]+)</i)
           let availability = availabilityMatch ? availabilityMatch[1].trim() : 'Brochure'
           
-          // Check for sold indicators in various places
+          // Extract stock numbers from multiple sources
+          let stockNumber = null
+          const stockNumberPatterns = [
+            /stock[^:]*:\s*([^<>\s]+)/i, // "Stock: 1178"
+            /stock\s*#[^:]*:\s*([^<>\s]+)/i, // "Stock #: 1178"
+            /item[^:]*:\s*([^<>\s]+)/i, // "Item: 1178"
+            /sku[^:]*:\s*([^<>\s]+)/i, // "SKU: 1178"
+            /id[^:]*:\s*([^<>\s]+)/i // "ID: 1178"
+          ]
+          
+          for (const pattern of stockNumberPatterns) {
+            const match = cardHtml.match(pattern)
+            if (match && match[1]) {
+              stockNumber = match[1].trim()
+              break
+            }
+          }
+          
+          // Check for sold indicators
           const soldIndicators = [
             /sold/i,
             /unavailable/i,
@@ -716,8 +758,22 @@ function parseMotorData(html: string): MotorData[] {
           
           if (isSold) {
             availability = 'Sold'
-          } else if (availability.toLowerCase().includes('stock')) {
-            availability = 'In Stock'
+          } else {
+            // Enhanced in-stock detection
+            const inStockIndicators = [
+              // Strategy 1: Has stock number
+              Boolean(stockNumber),
+              // Strategy 2: Availability label indicates in stock
+              /in\s*stock|available|ready/i.test(availability),
+              // Strategy 3: Card HTML contains stock indicators  
+              /in\s*stock|available|ready/i.test(cardHtml),
+              // Strategy 4: Has price and not explicitly brochure/catalog
+              (basePriceCandidate > 0 && !/brochure|catalog/i.test(availability) && !/brochure|catalog/i.test(cardHtml))
+            ]
+            
+            if (inStockIndicators.some(Boolean)) {
+              availability = 'In Stock'
+            }
           }
           
           // Extract image URL
@@ -739,7 +795,7 @@ function parseMotorData(html: string): MotorData[] {
             motor_type: getMotorType(fullTitle),
             image_url: imageUrl,
             availability: availability,
-            stock_number: null,
+            stock_number: stockNumber,
             detail_url: detailUrl,
           }
           motors.push(motor)

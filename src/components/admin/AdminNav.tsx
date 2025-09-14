@@ -7,6 +7,7 @@ const navItems = [
   { label: "Promotions", to: "/admin/promotions" },
   { label: "Financing", to: "/admin/financing" },
   { label: "Motor Images", to: "/admin/motor-images" },
+  { label: "Inventory", to: "/admin/inventory" },
   { label: "Security", to: "/admin/security" },
   { label: "Zapier Integration", to: "/admin/zapier" },
   { label: "Email Management", to: "/admin/email" },
