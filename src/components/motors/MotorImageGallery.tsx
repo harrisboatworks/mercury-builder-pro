@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { enhanceImageUrl, isThumbnailUrl } from '@/lib/image-utils';
 
 interface MotorImageGalleryProps {
   images: string[];
@@ -11,6 +12,8 @@ export function MotorImageGallery({ images, motorTitle }: MotorImageGalleryProps
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [showLightbox, setShowLightbox] = useState(false);
   const [imageLoadErrors, setImageLoadErrors] = useState<Set<number>>(new Set());
+  const [lightboxImageLoading, setLightboxImageLoading] = useState(false);
+  const [lightboxEnhancedUrls, setLightboxEnhancedUrls] = useState<string[]>([]);
 
   // Fallback to main image if no gallery images
   if (!images || images.length === 0) {
@@ -42,7 +45,12 @@ export function MotorImageGallery({ images, motorTitle }: MotorImageGalleryProps
   };
 
   const handleMainImageClick = () => {
+    setLightboxImageLoading(true);
+    // Pre-enhance images for lightbox (get full-size versions)
+    const enhanced = validImages.map(url => enhanceImageUrl(url));
+    setLightboxEnhancedUrls(enhanced);
     setShowLightbox(true);
+    setLightboxImageLoading(false);
   };
 
   // Keyboard navigation
@@ -88,10 +96,24 @@ export function MotorImageGallery({ images, motorTitle }: MotorImageGalleryProps
         
         {/* Click to expand hint */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200">
-          <div className="bg-white/90 text-slate-700 px-3 py-1 rounded-full text-sm font-medium">
-            Click to expand
+          <div className="bg-white/90 text-slate-700 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+            {lightboxImageLoading ? (
+              <>
+                <Loader2 className="h-3 w-3 animate-spin" />
+                Loading...
+              </>
+            ) : (
+              'Click to expand'
+            )}
           </div>
         </div>
+        
+        {/* Image quality indicator */}
+        {isThumbnailUrl(validImages[selectedIndex]) && (
+          <div className="absolute top-2 left-2 bg-orange-500/90 text-white text-xs px-2 py-1 rounded-full">
+            Thumbnail
+          </div>
+        )}
         
         {/* Navigation arrows for main image */}
         {validImages.length > 1 && (
@@ -167,7 +189,7 @@ export function MotorImageGallery({ images, motorTitle }: MotorImageGalleryProps
             </Button>
             
             <img
-              src={validImages[selectedIndex]}
+              src={lightboxEnhancedUrls[selectedIndex] || validImages[selectedIndex]}
               alt={`${motorTitle} - Full size`}
               className="max-w-full max-h-full object-contain"
               onError={() => handleImageError(selectedIndex)}

@@ -17,6 +17,7 @@ import { getReviewCount } from "../../lib/data/mercury-reviews";
 import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { enhanceImageUrls } from "@/lib/image-utils";
 
 export default function MotorDetailsSheet({
   open,
@@ -400,55 +401,48 @@ export default function MotorDetailsSheet({
               {/* Motor Image */}
               <div className="flex justify-center py-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
                 {(() => {
-                  // Extract image URLs from motor.images objects or use gallery prop
-                  const imageUrls: string[] = [];
+                  // Extract and enhance image URLs from motor.images objects or use gallery prop
+                  const allImages: (string | { url: string })[] = [];
                   
                   // Process motor.images (array of objects with url property)
                   if (motor?.images && Array.isArray(motor.images)) {
-                    motor.images.forEach((imageObj: any) => {
-                      if (typeof imageObj === 'string') {
-                        imageUrls.push(imageObj);
-                      } else if (imageObj?.url) {
-                        imageUrls.push(imageObj.url);
-                      }
-                    });
+                    allImages.push(...motor.images);
                   }
                   
                   // Add gallery URLs if provided
                   if (gallery && gallery.length > 0) {
-                    gallery.forEach(url => {
-                      if (url && !imageUrls.includes(url)) {
-                        imageUrls.push(url);
-                      }
-                    });
+                    allImages.push(...gallery);
                   }
                   
-                  // Add main image if not already included
-                  if (img && !imageUrls.includes(img)) {
-                    imageUrls.unshift(img); // Add to front
-                  }
+                  // Enhance all image URLs to get full-size versions
+                  const enhancedImageUrls = enhanceImageUrls(allImages);
                   
-                  // Filter out invalid URLs
-                  const validImageUrls = imageUrls.filter(url => 
-                    url && 
-                    typeof url === 'string' && 
-                    url.length > 5 &&
-                    !url.includes('facebook.com') &&
-                    !url.includes('tracking') &&
-                    !url.includes('pixel')
-                  );
-                  
-                  if (validImageUrls.length > 0) {
-                    return <MotorImageGallery images={validImageUrls} motorTitle={title} />;
-                  } else if (img) {
-                    return <img src={img} alt={title} className="h-40 sm:h-48 object-contain" />;
-                  } else {
+                  if (enhancedImageUrls.length > 0) {
                     return (
-                      <div className="h-40 sm:h-48 w-full bg-slate-200 dark:bg-slate-700 rounded-lg flex items-center justify-center">
-                        <span className="text-slate-500 dark:text-slate-400">No image available</span>
-                      </div>
+                      <MotorImageGallery 
+                        images={enhancedImageUrls}
+                        motorTitle={title}
+                      />
                     );
                   }
+                  
+                  // Fallback to image prop if no enhanced images available
+                  if (img) {
+                    const enhancedFallbackUrl = enhanceImageUrls([img]);
+                    return (
+                      <img
+                        src={enhancedFallbackUrl[0] || img}
+                        alt={title}
+                        className="h-48 w-full object-contain rounded-lg"
+                      />
+                    );
+                  }
+                  
+                  return (
+                    <div className="text-center text-slate-500 dark:text-slate-400 py-12">
+                      No images available
+                    </div>
+                  );
                 })()}
               </div>
               
