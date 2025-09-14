@@ -311,7 +311,7 @@ serve(async (req) => {
               // Validate motor data
               if (motor.model && motor.model.length > 1 && motor.horsepower && motor.horsepower > 0) {
                 allMotors.push(motor);
-                console.log(`✅ Found motor: ${motor.brand} ${motor.model} ${motor.horsepower}HP - ${motor.availability} - Stock: ${motor.stock_number || 'N/A'}`);
+                console.log(`✅ Found motor: ${motor.make} ${motor.model} ${motor.horsepower}HP - ${motor.availability} - Stock: ${motor.stock_number || 'N/A'}`);
               } else {
                 console.log(`❌ Invalid motor data: model="${motor.model}", hp=${motor.horsepower}`);
               }
@@ -363,13 +363,13 @@ serve(async (req) => {
             const motor = allMotors[i];
             
             try {
-              // Check if motor exists (by model, horsepower, and brand)
+              // Check if motor exists (by model, horsepower, and make)
               const { data: existing, error: selectError } = await supabase
                 .from('motor_models')
-                .select('id, model, horsepower, brand')
+                .select('id, model, horsepower, make')
                 .eq('model', motor.model)
                 .eq('horsepower', motor.horsepower)
-                .eq('brand', motor.brand)
+                .eq('make', motor.make)
                 .maybeSingle();
 
               if (selectError) {
@@ -397,7 +397,7 @@ serve(async (req) => {
                   summary.errors_count++;
                 } else {
                   summary.motors_hydrated++;
-                  console.log(`🔄 Updated: ${motor.brand} ${motor.model} ${motor.horsepower}HP`);
+                  console.log(`🔄 Updated: ${motor.make} ${motor.model} ${motor.horsepower}HP`);
                 }
               } else {
                 // Insert new motor
@@ -410,7 +410,7 @@ serve(async (req) => {
                   summary.errors_count++;
                 } else {
                   summary.motors_inserted++;
-                  console.log(`➕ Inserted: ${motor.brand} ${motor.model} ${motor.horsepower}HP`);
+                  console.log(`➕ Inserted: ${motor.make} ${motor.model} ${motor.horsepower}HP`);
                 }
               }
             } catch (motorDbError) {
