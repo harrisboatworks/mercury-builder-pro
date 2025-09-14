@@ -160,9 +160,12 @@ serve(async (req) => {
     if (!useXmlSuccess) {
       console.log('🌐 Using HTML scraping for BROCHURE models only...');
       let page = 1;
+      let totalBrochureModels = 0;
+      let totalInStockModels = 0;
+      let totalPagesScraped = 0;
       const baseUrl = 'https://www.harrisboatworks.ca';
-      // Updated URL to target outboard motors with proper filtering
-      const inventoryUrl = `${baseUrl}/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low?resultsperpage=50`;
+      // Updated URL with higher results per page to capture more models
+      const inventoryUrl = `${baseUrl}/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low?resultsperpage=200`;
 
       while (true) {
         const pageUrl = page === 1 ? inventoryUrl : `${inventoryUrl}&page=${page}`;
@@ -174,20 +177,26 @@ serve(async (req) => {
           break;
         }
 
-        const motors = parseBrochureMotorData(pageData, baseUrl);
-        console.log(`⚙️ Found ${motors.length} brochure motors on page ${page}`);
+        const pageMotors = parseBrochureMotorData(pageData, baseUrl);
+        const brochureCount = pageMotors.filter(m => m.availability === 'Brochure').length;
+        const inStockCount = pageMotors.filter(m => m.availability === 'In Stock').length;
+        
+        totalBrochureModels += brochureCount;
+        totalInStockModels += inStockCount;
+        totalPagesScraped++;
+        
+        console.log(`⚙️ Page ${page} results: ${pageMotors.length} total motors (${brochureCount} brochure, ${inStockCount} in-stock)`);
+        console.log(`📊 Running totals: ${totalBrochureModels} brochure, ${totalInStockModels} in-stock across ${totalPagesScraped} pages`);
 
-        if (motors.length === 0) {
+        if (pageMotors.length === 0) {
           console.log('📋 No more motors found, stopping pagination');
           break;
         }
 
-        allMotors = allMotors.concat(motors);
+        allMotors = allMotors.concat(pageMotors);
         
-        // Check if there's a next page
-        const hasNextPage = pageData.includes('Next Page') || 
-                           pageData.includes('aria-label="Next"') ||
-                           pageData.includes(`page=${page + 1}`);
+        // Enhanced pagination detection
+        const hasNextPage = checkForNextPage(pageData, page);
         
         if (!hasNextPage) {
           console.log('📄 No next page found, stopping pagination');
@@ -196,15 +205,22 @@ serve(async (req) => {
 
         page++;
         
-        // Safety check to prevent infinite loops
-        if (page > 20) {
-          console.log('⚠️ Reached page limit (20), stopping');
+        // Safety check to prevent infinite loops (increased limit for more models)
+        if (page > 50) {
+          console.log('⚠️ Reached page limit (50), stopping');
           break;
         }
 
         // Add delay between requests
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve, 1500));
       }
+      
+      // Final summary logging
+      console.log(`🎯 FINAL SCRAPING SUMMARY:`);
+      console.log(`   📑 Total Pages Scraped: ${totalPagesScraped}`);
+      console.log(`   📚 Brochure Models Found: ${totalBrochureModels}`);
+      console.log(`   📦 In-Stock Models Found: ${totalInStockModels}`);
+      console.log(`   🔢 Total Motors Collected: ${allMotors.length}`);
     }
 
     console.log(`🔍 Total motors found before hydration: ${allMotors.length}`);
@@ -776,4 +792,57 @@ async function hydrateWithDetails(motors: MotorData[]): Promise<MotorData[]> {
   }
   
   return hydratedMotors;
+}
+
+// Enhanced pagination detection function
+function checkForNextPage(html: string, currentPage: number): boolean {
+  // Multiple ways to detect if there's a next page
+  const nextPageIndicators = [
+    'Next Page',
+    'aria-label="Next"',
+    'class="next"',
+    'rel="next"',
+    `page=${currentPage + 1}`,
+    `>Next</`,
+    `>${currentPage + 1}</`,
+    'pagination-next',
+    'page-next'
+  ];
+  
+  // Check for "Showing X of Y results" pattern to determine total
+  const resultsPattern = /showing\s+\d+\s*-?\s*\d+\s+of\s+(\d+)/i;
+  const resultsMatch = html.match(resultsPattern);
+  if (resultsMatch) {
+    const totalResults = parseInt(resultsMatch[1]);
+    const resultsPerPage = 200; // Our current setting
+    const expectedPages = Math.ceil(totalResults / resultsPerPage);
+    console.log(`📊 Found ${totalResults} total results, expecting ${expectedPages} pages`);
+    
+    if (currentPage < expectedPages) {
+      console.log(`📄 Page ${currentPage} of ${expectedPages} - continuing`);
+      return true;
+    }
+  }
+  
+  // Check for any next page indicators
+  const hasNextIndicator = nextPageIndicators.some(indicator => 
+    html.toLowerCase().includes(indicator.toLowerCase())
+  );
+  
+  if (hasNextIndicator) {
+    console.log(`📄 Next page indicator found on page ${currentPage}`);
+    return true;
+  }
+  
+  // Check for numbered pagination links beyond current page
+  const pageNumberPattern = new RegExp(`page=(${currentPage + 1}|${currentPage + 2})`, 'g');
+  const hasNextPageNumber = pageNumberPattern.test(html);
+  
+  if (hasNextPageNumber) {
+    console.log(`📄 Next page number found after page ${currentPage}`);
+    return true;
+  }
+  
+  console.log(`📄 No next page indicators found for page ${currentPage}`);
+  return false;
 }
