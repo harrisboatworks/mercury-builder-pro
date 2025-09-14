@@ -665,11 +665,28 @@ function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
       const linkElement = element.querySelector('a[href*="inventory"]');
       const detailUrl = linkElement ? toAbsoluteUrl(linkElement.getAttribute('href') || '', baseUrl) : '';
       
-      // CRITICAL FILTER: Only process /new-models/ URLs (brochure items)
-      if (!detailUrl.includes('/new-models/')) {
-        console.log(`⏭️ Skipping non-brochure URL: ${detailUrl}`);
+      // Check availability text to determine if this is a brochure model
+      const availabilityElement = element.querySelector('.availability, .stock-status, .motor-availability, [class*="availability"], [class*="stock"]');
+      const availabilityText = availabilityElement?.textContent?.trim() || '';
+      
+      // Only process brochure models for HTML scraping (skip in-stock models)
+      if (availabilityText.toLowerCase().includes('in stock')) {
+        console.log(`⏭️ Skipping in-stock model: ${availabilityText}`);
         continue;
       }
+      
+      // If it contains "brochure" or doesn't have availability info, treat as brochure model
+      const isBrochureModel = availabilityText.toLowerCase().includes('brochure') || !availabilityText;
+      if (!isBrochureModel) {
+        console.log(`⏭️ Skipping non-brochure model: ${availabilityText}`);
+        continue;
+      }
+      
+      console.log(`✅ Processing brochure model with availability: ${availabilityText || 'No availability info'}`);
+      
+      // Extract brochure URL (optional for brochure models)
+      const brochureLinks = element.querySelectorAll('a[href*="brochure"], a[href*=".pdf"]');
+      const brochureUrl = brochureLinks.length > 0 ? brochureLinks[0].getAttribute('href') : '';
       
       // Extract price from display price or JSON data
       let basePrice = 0;
