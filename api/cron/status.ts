@@ -30,9 +30,9 @@ export default async function handler(req, res) {
 
     const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
-    // Get recent inventory update tracking records
+    // Get recent inventory update records
     const { data: trackingData } = await supabase
-      .from('inventory_update_tracking')
+      .from('inventory_updates')
       .select('*')
       .order('started_at', { ascending: false })
       .limit(10);
