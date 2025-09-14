@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X } from "lucide-react";
+import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings } from "lucide-react";
 import { supabase } from "../../integrations/supabase/client";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
@@ -17,6 +17,7 @@ import { getReviewCount } from "../../lib/data/mercury-reviews";
 import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+
 export default function MotorDetailsSheet({
   open,
   onClose,
@@ -194,6 +195,7 @@ export default function MotorDetailsSheet({
       document.removeEventListener('keydown', handleEscape);
     };
   }, [open, onClose]);
+
   const handleCalculatePayment = () => {
     onClose();
     navigate('/finance-calculator', {
@@ -206,6 +208,7 @@ export default function MotorDetailsSheet({
       }
     });
   };
+
   const handleSelectMotor = () => {
     if (onSelect) {
       onSelect();
@@ -220,6 +223,7 @@ export default function MotorDetailsSheet({
       });
     }
   };
+
   const handleGenerateSpecSheet = async () => {
     if (!motor?.id) return;
     setSpecSheetLoading(true);
@@ -311,6 +315,7 @@ export default function MotorDetailsSheet({
       setSpecSheetLoading(false);
     }
   };
+
   const cleanedSpecUrl = cleanSpecSheetUrl(specSheetUrl);
   const includedAccessories = motor ? getIncludedAccessories(motor) : [];
   const additionalRequirements = motor ? getAdditionalRequirements(motor) : [];
@@ -345,9 +350,12 @@ export default function MotorDetailsSheet({
       fetchWarrantyPricing();
     }
   }, [hp, motor?.id]);
+
   if (!open) return null;
+
   const displayFeatures = Array.isArray(features) ? features : [];
   const cleanedDescription = String(description || '').replace(/Can't find what you're looking for\?[\s\S]*/i, '').replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '').trim();
+
   return (
     <div className="fixed inset-0 z-50">
       {/* Backdrop */}
@@ -385,9 +393,8 @@ export default function MotorDetailsSheet({
             </div>
           </div>
 
-
           {/* Scrollable Content Area */}
-          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto overscroll-contain pt-20">
+          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto overscroll-contain">
             <div className="p-4 space-y-8">
               
               {/* Motor Image */}
@@ -443,7 +450,6 @@ export default function MotorDetailsSheet({
                     );
                   }
                 })()}
-              </div>
               </div>
               
               {/* Specifications Section */}
@@ -665,7 +671,7 @@ export default function MotorDetailsSheet({
                           <h3 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">
                             Mercury Controls & Cables Required
                           </h3>
-                          <p className="text-sm text-blue-800 dark:text-blue-200 mb-2">All remote control motors require Mercury throttle & shift controls and wiring harness for proper operation.  What is required for your individual boat will need to be determined by HBW techs.</p>
+                          <p className="text-sm text-blue-800 dark:text-blue-200 mb-2">All remote control motors require Mercury throttle & shift controls and wiring harness for proper operation.  What is required for your individual boat will need to be determined by HBW techs.</p>
                           <div className="text-sm text-blue-700 dark:text-blue-300">
                             <strong>Installation Requires:</strong>
                             <ul className="list-disc list-inside mt-1 space-y-1">
@@ -833,10 +839,10 @@ export default function MotorDetailsSheet({
               </Button>
               <Button onClick={handleSelectMotor} size="lg" className="flex-1">
                 Add to Quote →
-               </Button>
-             </div>
-           </div>
-         </div>
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
