@@ -135,6 +135,21 @@ serve(async (req) => {
 
   try {
     console.log('🚀 Starting inventory scrape...');
+    
+    // Performance metrics tracking
+    const scrapingStats = {
+      startTime: Date.now(),
+      endTime: null,
+      xmlMotorsFound: 0,
+      htmlMotorsFound: 0,
+      brochureModelsFound: 0,
+      inStockModelsFound: 0,
+      pagesScraped: 0,
+      errors: [],
+      duration: null,
+      source: 'unknown'
+    };
+    
     let allMotors: MotorData[] = [];
 
     // Try XML feed first, fallback to HTML scraping
@@ -147,12 +162,16 @@ serve(async (req) => {
         if (xmlMotors && xmlMotors.length > 0) {
           allMotors = xmlMotors;
           useXmlSuccess = true;
-          console.log(`✅ XML scraping successful: ${xmlMotors.length} Mercury motors found`);
+          scrapingStats.xmlMotorsFound = xmlMotors.length;
+          scrapingStats.inStockModelsFound = xmlMotors.filter(m => m.availability === 'In Stock' || m.availability === 'Available').length;
+          scrapingStats.source = 'xml';
+          console.log(`✅ XML scraping successful: ${xmlMotors.length} Mercury motors found (${scrapingStats.inStockModelsFound} in-stock)`);
         } else {
           console.log('⚠️ XML scraping returned no Mercury motors, falling back to HTML');
         }
       } catch (xmlError) {
         console.warn('⚠️ XML scraping failed, falling back to HTML:', xmlError);
+        scrapingStats.errors.push(`XML Error: ${xmlError.message}`);
       }
     }
 
@@ -297,6 +316,8 @@ serve(async (req) => {
     console.log(`   • Motors found: ${allMotors.length}`);
     console.log(`   • Motors hydrated: ${hydratedMotors.length}`);
     console.log(`   • Motors inserted: ${insertedCount}`);
+    console.log(`   • Duration: ${(scrapingStats.duration / 1000).toFixed(2)}s`);
+    console.log(`   • Success Rate: ${scrapingStats.errors.length === 0 ? '100%' : `${((allMotors.length / (allMotors.length + scrapingStats.errors.length)) * 100).toFixed(1)}%`}`);
 
     return new Response(JSON.stringify({
       success: true,
@@ -305,8 +326,15 @@ serve(async (req) => {
         motors_found: allMotors.length,
         motors_hydrated: hydratedMotors.length,
         motors_inserted: insertedCount,
+        brochure_models_found: scrapingStats.brochureModelsFound,
+        in_stock_models_found: scrapingStats.inStockModelsFound,
+        pages_scraped: scrapingStats.pagesScraped,
+        duration_seconds: (scrapingStats.duration / 1000).toFixed(2),
+        errors_count: scrapingStats.errors.length,
+        validation_passed: scrapingStats.brochureModelsFound >= 80 || useXmlSuccess,
         timestamp: new Date().toISOString()
-      }
+      },
+      performance: scrapingStats
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
