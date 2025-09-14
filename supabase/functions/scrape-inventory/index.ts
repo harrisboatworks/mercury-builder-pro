@@ -810,12 +810,40 @@ function parseMotorData(html: string): MotorData[] {
     console.error('Error parsing motor data:', error)
   }
 
-  // Remove duplicates based on model name and horsepower
-  const uniqueMotors = motors.filter((motor, index, self) => 
-    index === self.findIndex(m => m.model === motor.model && m.horsepower === motor.horsepower)
-  )
+  // Enhanced duplicate detection logic
+  const uniqueMotors = motors.filter((motor, index, self) => {
+    const firstIndex = self.findIndex(m => {
+      // For "In Stock" motors with stock numbers, use stock_number as unique identifier
+      if (motor.availability === 'In Stock' && motor.stock_number && m.availability === 'In Stock' && m.stock_number) {
+        return m.stock_number === motor.stock_number;
+      }
+      
+      // For "Brochure" motors or motors without stock numbers, use model + horsepower
+      return m.model === motor.model && m.horsepower === motor.horsepower;
+    });
+    
+    return index === firstIndex;
+  });
 
-  console.log(`Parsed ${uniqueMotors.length} unique motors from page`)
+  // Log detailed duplicate detection results
+  const inStockMotors = motors.filter(m => m.availability === 'In Stock');
+  const brochureMotors = motors.filter(m => m.availability === 'Brochure');
+  const uniqueInStock = uniqueMotors.filter(m => m.availability === 'In Stock');
+  const uniqueBrochure = uniqueMotors.filter(m => m.availability === 'Brochure');
+  
+  console.log(`Duplicate detection results:`)
+  console.log(`  Total parsed: ${motors.length} motors`)
+  console.log(`  In Stock (before dedup): ${inStockMotors.length}, after: ${uniqueInStock.length}`)
+  console.log(`  Brochure (before dedup): ${brochureMotors.length}, after: ${uniqueBrochure.length}`)
+  console.log(`  Final unique count: ${uniqueMotors.length}`)
+  
+  // Log motors with stock numbers for debugging
+  const motorsWithStockNumbers = uniqueMotors.filter(m => m.stock_number);
+  console.log(`Motors with stock numbers: ${motorsWithStockNumbers.length}`);
+  motorsWithStockNumbers.forEach(m => {
+    console.log(`  - ${m.model} (${m.horsepower}HP) - Stock: ${m.stock_number} - ${m.availability}`);
+  });
+
   return uniqueMotors
 }
 
