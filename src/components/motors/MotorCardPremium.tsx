@@ -57,14 +57,47 @@ export default function MotorCardPremium({
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
   const [motorBadge, setMotorBadge] = useState<string | null>(null);
   
-  // Get the best available image URL
-  const getImageUrl = (): string => {
-    // For now, just use the original img prop or fallback
-    // TODO: Update when motor.images schema is updated to support objects
-    return img ?? '/lovable-uploads/speedboat-transparent.png';
+  // Get the best available image URL and count total images
+  const getImageInfo = (): { url: string; count: number } => {
+    const imageUrls: string[] = [];
+    
+    // Process motor.images (array of objects with url property)
+    if (motor?.images && Array.isArray(motor.images)) {
+      motor.images.forEach((imageObj: any) => {
+        if (typeof imageObj === 'string') {
+          imageUrls.push(imageObj);
+        } else if (imageObj?.url) {
+          imageUrls.push(imageObj.url);
+        }
+      });
+    }
+    
+    // Add main image if not already included
+    if (img && !imageUrls.includes(img)) {
+      imageUrls.unshift(img); // Add to front
+    }
+    
+    // Filter out invalid URLs
+    const validImageUrls = imageUrls.filter(url => 
+      url && 
+      typeof url === 'string' && 
+      url.length > 5 &&
+      !url.includes('facebook.com') &&
+      !url.includes('tracking') &&
+      !url.includes('pixel')
+    );
+    
+    const primaryImage = validImageUrls[0] ?? '/lovable-uploads/speedboat-transparent.png';
+    
+    return {
+      url: primaryImage,
+      count: validImageUrls.length
+    };
   };
 
-  const imageUrl = getImageUrl();
+  const imageInfo = getImageInfo();
+  const imageUrl = imageInfo.url;
+  const imageCount = imageInfo.count;
   
   // Smart financing calculation
   const financingInfo = useMotorMonthlyPayment({ 
@@ -124,11 +157,19 @@ export default function MotorCardPremium({
             onMouseLeave={handleTooltipMouseLeave}
           >
             {imageUrl && (
-              <img 
-                src={imageUrl} 
-                alt="" 
-                className="mb-3 h-40 w-full rounded-lg object-contain bg-white dark:bg-slate-900" 
-              />
+              <div className="relative mb-3">
+                <img 
+                  src={imageUrl} 
+                  alt="" 
+                  className="h-40 w-full rounded-lg object-contain bg-white dark:bg-slate-900" 
+                />
+                {/* Gallery indicator */}
+                {imageCount > 1 && (
+                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">
+                    {imageCount} photos
+                  </div>
+                )}
+              </div>
             )}
             <div className="text-[15px] font-semibold text-slate-900 dark:text-white">
               {title}

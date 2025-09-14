@@ -348,7 +348,8 @@ export default function MotorDetailsSheet({
   if (!open) return null;
   const displayFeatures = Array.isArray(features) ? features : [];
   const cleanedDescription = String(description || '').replace(/Can't find what you're looking for\?[\s\S]*/i, '').replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '').trim();
-  return <div className="fixed inset-0 z-50">
+  return (
+    <div className="fixed inset-0 z-50">
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
       
@@ -391,9 +392,58 @@ export default function MotorDetailsSheet({
               
               {/* Motor Image */}
               <div className="flex justify-center py-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                {motor?.images && motor.images.length > 0 ? <MotorImageGallery images={motor.images} motorTitle={title} /> : img ? <img src={img} alt={title} className="h-40 sm:h-48 object-contain" /> : <div className="h-40 sm:h-48 w-full bg-slate-200 dark:bg-slate-700 rounded-lg flex items-center justify-center">
-                    <span className="text-slate-500 dark:text-slate-400">No image available</span>
-                  </div>}
+                {(() => {
+                  // Extract image URLs from motor.images objects or use gallery prop
+                  const imageUrls: string[] = [];
+                  
+                  // Process motor.images (array of objects with url property)
+                  if (motor?.images && Array.isArray(motor.images)) {
+                    motor.images.forEach((imageObj: any) => {
+                      if (typeof imageObj === 'string') {
+                        imageUrls.push(imageObj);
+                      } else if (imageObj?.url) {
+                        imageUrls.push(imageObj.url);
+                      }
+                    });
+                  }
+                  
+                  // Add gallery URLs if provided
+                  if (gallery && gallery.length > 0) {
+                    gallery.forEach(url => {
+                      if (url && !imageUrls.includes(url)) {
+                        imageUrls.push(url);
+                      }
+                    });
+                  }
+                  
+                  // Add main image if not already included
+                  if (img && !imageUrls.includes(img)) {
+                    imageUrls.unshift(img); // Add to front
+                  }
+                  
+                  // Filter out invalid URLs
+                  const validImageUrls = imageUrls.filter(url => 
+                    url && 
+                    typeof url === 'string' && 
+                    url.length > 5 &&
+                    !url.includes('facebook.com') &&
+                    !url.includes('tracking') &&
+                    !url.includes('pixel')
+                  );
+                  
+                  if (validImageUrls.length > 0) {
+                    return <MotorImageGallery images={validImageUrls} motorTitle={title} />;
+                  } else if (img) {
+                    return <img src={img} alt={title} className="h-40 sm:h-48 object-contain" />;
+                  } else {
+                    return (
+                      <div className="h-40 sm:h-48 w-full bg-slate-200 dark:bg-slate-700 rounded-lg flex items-center justify-center">
+                        <span className="text-slate-500 dark:text-slate-400">No image available</span>
+                      </div>
+                    );
+                  }
+                })()}
+              </div>
               </div>
               
               {/* Specifications Section */}
@@ -783,10 +833,11 @@ export default function MotorDetailsSheet({
               </Button>
               <Button onClick={handleSelectMotor} size="lg" className="flex-1">
                 Add to Quote →
-              </Button>
-            </div>
-          </div>
-        </div>
+               </Button>
+             </div>
+           </div>
+         </div>
       </div>
-    </div>;
+    </div>
+  );
 }

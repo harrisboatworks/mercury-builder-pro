@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -10,18 +10,31 @@ interface MotorImageGalleryProps {
 export function MotorImageGallery({ images, motorTitle }: MotorImageGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [showLightbox, setShowLightbox] = useState(false);
+  const [imageLoadErrors, setImageLoadErrors] = useState<Set<number>>(new Set());
 
   // Fallback to main image if no gallery images
   if (!images || images.length === 0) {
     return null;
   }
 
+  // Filter out images that failed to load
+  const validImages = images.filter((_, index) => !imageLoadErrors.has(index));
+
+  const handleImageError = (index: number) => {
+    setImageLoadErrors(prev => new Set([...prev, index]));
+    // If current selected image fails, move to next valid image
+    if (index === selectedIndex) {
+      const nextValidIndex = validImages.findIndex((_, i) => i > selectedIndex);
+      setSelectedIndex(nextValidIndex >= 0 ? nextValidIndex : 0);
+    }
+  };
+
   const handlePrevious = () => {
-    setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setSelectedIndex((prev) => (prev === 0 ? validImages.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setSelectedIndex((prev) => (prev === validImages.length - 1 ? 0 : prev + 1));
   };
 
   const handleThumbnailClick = (index: number) => {
@@ -32,18 +45,56 @@ export function MotorImageGallery({ images, motorTitle }: MotorImageGalleryProps
     setShowLightbox(true);
   };
 
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!showLightbox) return;
+      
+      switch (e.key) {
+        case 'ArrowLeft':
+          e.preventDefault();
+          handlePrevious();
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          handleNext();
+          break;
+        case 'Escape':
+          e.preventDefault();
+          setShowLightbox(false);
+          break;
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [showLightbox]);
+
+  // Early return if no valid images
+  if (validImages.length === 0) {
+    return null;
+  }
+
   return (
     <div className="space-y-3">
       {/* Main Image */}
       <div className="relative group cursor-pointer" onClick={handleMainImageClick}>
         <img
-          src={images[selectedIndex]}
+          src={validImages[selectedIndex]}
           alt={`${motorTitle} - Image ${selectedIndex + 1}`}
           className="h-48 w-full rounded-xl object-contain bg-slate-50 dark:bg-slate-800 transition-all duration-200 group-hover:scale-[1.02]"
+          onError={() => handleImageError(selectedIndex)}
         />
         
+        {/* Click to expand hint */}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200">
+          <div className="bg-white/90 text-slate-700 px-3 py-1 rounded-full text-sm font-medium">
+            Click to expand
+          </div>
+        </div>
+        
         {/* Navigation arrows for main image */}
-        {images.length > 1 && (
+        {validImages.length > 1 && (
           <>
             <Button
               variant="ghost"
@@ -71,17 +122,17 @@ export function MotorImageGallery({ images, motorTitle }: MotorImageGalleryProps
         )}
         
         {/* Image counter */}
-        {images.length > 1 && (
+        {validImages.length > 1 && (
           <div className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-            {selectedIndex + 1} / {images.length}
+            {selectedIndex + 1} / {validImages.length}
           </div>
         )}
       </div>
 
       {/* Thumbnail Navigation */}
-      {images.length > 1 && (
+      {validImages.length > 1 && (
         <div className="flex gap-2 overflow-x-auto pb-2">
-          {images.map((image, index) => (
+          {validImages.map((image, index) => (
             <button
               key={index}
               onClick={() => handleThumbnailClick(index)}
@@ -95,6 +146,7 @@ export function MotorImageGallery({ images, motorTitle }: MotorImageGalleryProps
                 src={image}
                 alt={`${motorTitle} thumbnail ${index + 1}`}
                 className="w-full h-full object-contain bg-slate-50 dark:bg-slate-800"
+                onError={() => handleImageError(index)}
               />
             </button>
           ))}
@@ -115,12 +167,20 @@ export function MotorImageGallery({ images, motorTitle }: MotorImageGalleryProps
             </Button>
             
             <img
-              src={images[selectedIndex]}
+              src={validImages[selectedIndex]}
               alt={`${motorTitle} - Full size`}
               className="max-w-full max-h-full object-contain"
+              onError={() => handleImageError(selectedIndex)}
             />
             
-            {images.length > 1 && (
+            {/* Image counter in lightbox */}
+            {validImages.length > 1 && (
+              <div className="absolute top-4 left-4 bg-black/60 text-white text-sm px-3 py-1 rounded-full">
+                {selectedIndex + 1} of {validImages.length}
+              </div>
+            )}
+            
+            {validImages.length > 1 && (
               <>
                 <Button
                   variant="ghost"
