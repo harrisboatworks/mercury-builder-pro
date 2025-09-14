@@ -36,9 +36,9 @@ export function getPriceDisplayState(base_price?: number | null, sale_price?: nu
   const savingsRounded = Math.round(rawSavings);
   const percent = hasSale && adjustedBase > 0 ? Math.floor((savingsRounded / adjustedBase) * 100) : 0;
 
-  // Structured warning when sale provided but not a discount
-  if (typeof sale === 'number' && typeof base === 'number' && sale >= base) {
-    console.warn('[pricing] sale_price is not less than base_price', { base_price: base, sale_price: sale });
+  // Only warn for significant price differences to reduce noise
+  if (typeof sale === 'number' && typeof base === 'number' && sale > base) {
+    console.warn('[pricing] sale_price is greater than base_price', { base_price: base, sale_price: sale });
   }
 
   return { callForPrice, hasSale, savingsRounded, percent, isArtificialDiscount };

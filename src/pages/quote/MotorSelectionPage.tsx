@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Motor } from '@/components/QuoteBuilder';
-import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
+import { FinancingProvider } from '@/contexts/FinancingContext';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
@@ -343,8 +343,9 @@ export default function MotorSelectionPage() {
   }
 
   return (
-    <QuoteLayout title="Select Mercury Outboard Motor">
-      <div className="space-y-6">
+    <FinancingProvider>
+      <QuoteLayout title="Select Mercury Outboard Motor">
+        <div className="space-y-6">
         {/* Clean Search with inline Filter */}
         <div>
           <div className="flex items-center">
@@ -439,7 +440,8 @@ export default function MotorSelectionPage() {
             </div>
           )}
         </div>
-      </div>
-    </QuoteLayout>
+        </div>
+      </QuoteLayout>
+    </FinancingProvider>
   );
 }

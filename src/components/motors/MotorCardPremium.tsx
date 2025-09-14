@@ -7,7 +7,7 @@ import MotorDetailsSheet from './MotorDetailsSheet';
 import type { Motor } from '../../lib/motor-helpers';
 import { getHPDescriptor, getPopularityIndicator, getBadgeColor, requiresMercuryControls, isTillerMotor } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
+import { useFinancing } from '@/contexts/FinancingContext';
 import { getFinancingDisplay } from '@/lib/finance';
 import { getPriceDisplayState } from '@/lib/pricing';
 
@@ -99,11 +99,9 @@ export default function MotorCardPremium({
   const imageUrl = imageInfo.url;
   const imageCount = imageInfo.count;
   
-  // Smart financing calculation
-  const financingInfo = useMotorMonthlyPayment({ 
-    motorPrice: price || 0, 
-    minimumThreshold: 1000 
-  });
+  // Smart financing calculation using context
+  const { calculateMonthlyPayment, promo } = useFinancing();
+  const financingInfo = calculateMonthlyPayment(price || 0, 1000);
   
   // Generate badge once when component mounts and optionally rotate
   useEffect(() => {
@@ -129,15 +127,12 @@ export default function MotorCardPremium({
   };
   
   const handleTooltipMouseEnter = () => {
-    console.log('Motor card hover enter:', { title, model: motor?.model, isMobile, hasHover });
-    // Simplified: show tooltip on desktop regardless of hasHover for debugging
     if (!isMobile) {
       setShowTooltip(true);
     }
   };
   
   const handleTooltipMouseLeave = () => {
-    console.log('Motor card hover leave');
     setShowTooltip(false);
   };
   
@@ -242,11 +237,11 @@ export default function MotorCardPremium({
                       {promoText}
                     </div>
                   )}
-                  {financingInfo && displaySalePrice && displaySalePrice > 5000 && (
-                    <div className="text-xs text-muted-foreground mt-1">
-                      {getFinancingDisplay(displaySalePrice * 1.13, financingInfo.rate !== 7.99 ? financingInfo.rate : null)}*
-                    </div>
-                  )}
+                   {financingInfo && displaySalePrice && displaySalePrice > 5000 && (
+                     <div className="text-xs text-muted-foreground mt-1">
+                       {getFinancingDisplay(displaySalePrice * 1.13, promo?.rate || null)}*
+                     </div>
+                   )}
                 </div>
               );
             })()}
