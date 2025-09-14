@@ -202,29 +202,43 @@ export const getTransomRequirement = (motor: Motor) => {
 
 export const getBatteryRequirement = (motor: Motor) => {
   const model = (motor.model || '').toUpperCase();
+  const n = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
   
-  // Manual start motors (containing 'M') don't require batteries
-  if (model.includes('M') && !model.includes('E')) {
+  // Check specifications.starting field first if available
+  if (motor.specifications?.starting) {
+    const startType = motor.specifications.starting.toLowerCase();
+    if (startType.includes('pull') || startType.includes('manual')) {
+      return 'Not required (manual start)';
+    }
+    if (startType.includes('electric')) {
+      if (n <= 30) return '24M7 1000CA Starting Battery';
+      if (n <= 115) return '12V marine cranking battery (min 800 CCA)';
+      return 'High-output 12V (or dual) marine battery';
+    }
+  }
+  
+  // Check for specific manual start suffixes
+  if (model.includes(' MH') || model.includes(' MLH') || model.endsWith('MH') || model.endsWith('MLH')) {
     return 'Not required (manual start)';
   }
   
-  // Electric start motors (containing 'E') require batteries
-  if (model.includes('E')) {
-    const n = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
+  // Check for specific electric start suffixes
+  if (model.includes(' EH') || model.includes(' ELPT') || model.includes(' EXLPT') || 
+      model.endsWith('EH') || model.endsWith('ELPT') || model.endsWith('EXLPT')) {
     if (n <= 30) return '24M7 1000CA Starting Battery';
     if (n <= 115) return '12V marine cranking battery (min 800 CCA)';
     return 'High-output 12V (or dual) marine battery';
   }
   
-  // Default for motors without clear start type indicators
-  const n = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
+  // Fall back to HP-based assumptions for motors without clear indicators
   if (n > 25) {
-    // Most motors over 25HP are electric start
+    // Most motors over 25HP are typically electric start
     if (n <= 30) return '24M7 1000CA Starting Battery';
     if (n <= 115) return '12V marine cranking battery (min 800 CCA)';
     return 'High-output 12V (or dual) marine battery';
   }
   
+  // Small motors without clear indicators are typically manual start
   return 'Not required (manual start)';
 };
 
