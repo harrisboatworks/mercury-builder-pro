@@ -85,11 +85,12 @@ export function InventoryMonitor() {
     fetchInventoryData();
   }, []);
 
-  const triggerInventoryUpdate = async () => {
+  const triggerInventoryUpdate = async (useXml = false) => {
     setUpdating(true);
+
     try {
       toast({
-        title: "Starting inventory update...",
+        title: `Starting ${useXml ? 'XML' : 'standard'} inventory update...`,
         description: "This may take up to 60 seconds",
       });
 
@@ -102,6 +103,10 @@ export function InventoryMonitor() {
           headers: {
             'Content-Type': 'application/json',
           },
+          body: JSON.stringify({ 
+            source: useXml ? 'xml' : 'html',
+            useXmlFeed: useXml 
+          }),
         });
 
         console.log('API Response status:', response.status);
@@ -124,7 +129,9 @@ export function InventoryMonitor() {
         // Fallback to direct Supabase edge function call
         const { data, error } = await supabase.functions.invoke('scrape-inventory', {
           body: { 
-            trigger: 'manual-admin', 
+            trigger: 'manual-admin',
+            source: useXml ? 'xml' : 'html',
+            useXmlFeed: useXml,
             at: new Date().toISOString() 
           },
         });
@@ -138,24 +145,28 @@ export function InventoryMonitor() {
           result: {
             inventory: data,
             executionTime: 'N/A',
-            source: 'direct-supabase'
+            source: data?.summary?.source || 'direct-supabase'
           }
         };
         console.log('Direct Supabase call succeeded');
       }
 
+      const sourceUsed = result.result?.inventory?.summary?.source || result.result?.source || 'unknown';
+      const motorsFound = result.result?.inventory?.summary?.motors_found || 0;
+      
       toast({
         title: "Inventory update completed",
-        description: `Updated inventory successfully. Source: ${result.result?.source || 'api-endpoint'}`,
+        description: `Found ${motorsFound} Mercury motors using ${sourceUsed.toUpperCase()} source`,
       });
 
       // Refresh the data
       await fetchInventoryData();
-    } catch (error) {
-      console.error('Error triggering inventory update:', error);
+
+    } catch (error: any) {
+      console.error('Inventory update failed:', error);
       toast({
         title: "Update failed",
-        description: error instanceof Error ? error.message : "Network error - please check connection and try again",
+        description: error.message,
         variant: "destructive",
       });
     } finally {
@@ -353,9 +364,17 @@ export function InventoryMonitor() {
               </CardDescription>
             </div>
             <div className="flex gap-2">
-              <Button onClick={triggerInventoryUpdate} disabled={loading || updating}>
+              <Button onClick={() => triggerInventoryUpdate(false)} disabled={loading || updating}>
                 <RefreshCw className={`h-4 w-4 mr-2 ${updating ? 'animate-spin' : ''}`} />
-                {updating ? 'Updating...' : 'Update Inventory'}
+                {updating ? 'Updating...' : 'HTML Update'}
+              </Button>
+              <Button 
+                onClick={() => triggerInventoryUpdate(true)} 
+                disabled={loading || updating}
+                variant="outline"
+              >
+                <RefreshCw className={`h-4 w-4 mr-2 ${updating ? 'animate-spin' : ''}`} />
+                {updating ? 'Updating...' : 'XML Update (New)'}
               </Button>
               <Button 
                 variant="outline" 
@@ -408,6 +427,12 @@ export function InventoryMonitor() {
               <option value="Sold">Sold</option>
               <option value="Exclude">Exclude</option>
             </select>
+          </div>
+
+          <div className="text-sm text-muted-foreground space-y-2 mb-4">
+            <p><strong>HTML Update:</strong> Uses the current HTML scraping method from individual product pages.</p>
+            <p><strong>XML Update (New):</strong> Uses the XML inventory feed to get only Mercury outboard motors, filtering out boats, pontoons, and accessories automatically.</p>
+            <p>The XML method is faster and more reliable as it processes the complete inventory feed and intelligently filters for Mercury motors only.</p>
           </div>
 
           {stats && stats.withoutStockNumbers > 0 && (
