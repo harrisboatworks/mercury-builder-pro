@@ -219,299 +219,317 @@ export const AutomationDashboard = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <Bot className="h-8 w-8 text-primary" />
-          <div>
-            <h2 className="text-2xl font-bold">Motor Image Automation</h2>
-            <p className="text-muted-foreground">Fully automated motor data and image management</p>
+      <Tabs defaultValue="dashboard" className="w-full">
+        <TabsList className="grid w-full grid-cols-3">
+          <TabsTrigger value="dashboard">Dashboard</TabsTrigger>  
+          <TabsTrigger value="data-sources">Data Sources</TabsTrigger>
+          <TabsTrigger value="source-config">Source Config</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="dashboard" className="space-y-6">
+          {/* Header */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <Bot className="h-8 w-8 text-primary" />
+              <div>
+                <h2 className="text-2xl font-bold">Motor Image Automation</h2>
+                <p className="text-muted-foreground">Fully automated motor data and image management</p>
+              </div>
+            </div>
+            <div className="flex space-x-2">
+              <Button 
+                onClick={runHealthCheck}
+                disabled={refreshing}
+                variant="outline"
+                size="sm"
+              >
+                {refreshing ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : <Shield className="h-4 w-4 mr-2" />}
+                Health Check
+              </Button>
+              <Button 
+                onClick={triggerManualUpdate}
+                disabled={refreshing}
+                size="sm"
+              >
+                {refreshing ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : <RefreshCw className="h-4 w-4 mr-2" />}
+                Trigger Update
+              </Button>
+            </div>
           </div>
-        </div>
-        <div className="flex space-x-2">
-          <Button 
-            onClick={runHealthCheck}
-            disabled={refreshing}
-            variant="outline"
-            size="sm"
-          >
-            {refreshing ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : <Shield className="h-4 w-4 mr-2" />}
-            Health Check
-          </Button>
-          <Button 
-            onClick={triggerManualUpdate}
-            disabled={refreshing}
-            size="sm"
-          >
-            {refreshing ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : <RefreshCw className="h-4 w-4 mr-2" />}
-            Trigger Update
-          </Button>
-        </div>
-      </div>
 
-      {/* Status Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {/* Inventory Automation */}
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium flex items-center">
-              <Bot className="h-4 w-4 mr-2" />
-              Inventory Sync
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-muted-foreground">Status</span>
-                <Badge variant={status?.inventory.running ? "default" : "secondary"}>
-                  {status?.inventory.running ? 'Running' : status?.inventory.status}
-                </Badge>
-              </div>
-              <div className="text-xs text-muted-foreground">
-                Last: {new Date(status?.inventory.lastRun || '').toLocaleString()}
-              </div>
-              <div className="text-xs text-muted-foreground">
-                Next: {status?.inventory.nextRun}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+          {/* Status Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Inventory Automation */}
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium flex items-center">
+                  <Bot className="h-4 w-4 mr-2" />
+                  Inventory Sync
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-muted-foreground">Status</span>
+                    <Badge variant={status?.inventory.running ? "default" : "secondary"}>
+                      {status?.inventory.running ? 'Running' : status?.inventory.status}
+                    </Badge>
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    Last: {new Date(status?.inventory.lastRun || '').toLocaleString()}
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    Next: {status?.inventory.nextRun}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-        {/* Image Management */}
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium flex items-center">
-              <Image className="h-4 w-4 mr-2" />
-              Image Migration
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold">
-                  {status?.images.migrated || 0}
-                </span>
-                <span className="text-xs text-muted-foreground">
-                  / {status?.images.total || 0}
-                </span>
-              </div>
-              <Progress 
-                value={status?.images.total ? (status.images.migrated / status.images.total) * 100 : 0} 
-                className="h-2"
-              />
-              <div className="text-xs text-muted-foreground">
-                {status?.images.broken ? `${status.images.broken} broken` : 'All healthy'}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+            {/* Image Management */}
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium flex items-center">
+                  <Image className="h-4 w-4 mr-2" />
+                  Image Migration
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold">
+                      {status?.images.migrated || 0}
+                    </span>
+                    <span className="text-xs text-muted-foreground">
+                      / {status?.images.total || 0}
+                    </span>
+                  </div>
+                  <Progress 
+                    value={status?.images.total ? (status.images.migrated / status.images.total) * 100 : 0} 
+                    className="h-2"
+                  />
+                  <div className="text-xs text-muted-foreground">
+                    {status?.images.broken ? `${status.images.broken} broken` : 'All healthy'}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-        {/* Scraping Status */}
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium flex items-center">
-              <RefreshCw className="h-4 w-4 mr-2" />
-              Auto Scraping
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-muted-foreground">Success Rate</span>
-                <Badge variant="outline">
-                  {status?.scraping.successful || 0} / {(status?.scraping.successful || 0) + (status?.scraping.failed || 0)}
-                </Badge>
-              </div>
-              <Progress 
-                value={status?.scraping.successful ? 
-                  (status.scraping.successful / (status.scraping.successful + (status.scraping.failed || 0))) * 100 : 100} 
-                className="h-2"
-              />
-              <div className="text-xs text-muted-foreground">
-                {status?.scraping.processing ? 'Processing...' : 'Idle'}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+            {/* Scraping Status */}
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium flex items-center">
+                  <RefreshCw className="h-4 w-4 mr-2" />
+                  Auto Scraping
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-muted-foreground">Success Rate</span>
+                    <Badge variant="outline">
+                      {status?.scraping.successful || 0} / {(status?.scraping.successful || 0) + (status?.scraping.failed || 0)}
+                    </Badge>
+                  </div>
+                  <Progress 
+                    value={status?.scraping.successful ? 
+                      (status.scraping.successful / (status.scraping.successful + (status.scraping.failed || 0))) * 100 : 100} 
+                    className="h-2"
+                  />
+                  <div className="text-xs text-muted-foreground">
+                    {status?.scraping.processing ? 'Processing...' : 'Idle'}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-        {/* Health Monitoring */}
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium flex items-center">
-              <Shield className="h-4 w-4 mr-2" />
-              System Health
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold">
-                  {status?.monitoring.overallHealth || '0%'}
-                </span>
+            {/* Health Monitoring */}
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium flex items-center">
+                  <Shield className="h-4 w-4 mr-2" />
+                  System Health
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold">
+                      {status?.monitoring.overallHealth || '0%'}
+                    </span>
+                    {status?.monitoring.criticalIssues ? (
+                      <AlertTriangle className="h-4 w-4 text-destructive" />
+                    ) : (
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                    )}
+                  </div>
+                  <div className="flex justify-between text-xs">
+                    <span className="text-destructive">
+                      {status?.monitoring.criticalIssues || 0} critical
+                    </span>
+                    <span className="text-yellow-500">
+                      {status?.monitoring.warnings || 0} warnings
+                    </span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Automation Features */}
+          <Card>
+            <CardHeader>
+              <CardTitle>🤖 Fully Automated Features</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-green-600">✅ Phase 1: Image Migration Automation</h4>
+                  <ul className="text-sm space-y-1 text-muted-foreground ml-4">
+                    <li>• Auto-trigger image migration every 12 hours</li>
+                    <li>• Progressive image quality enhancement</li>
+                    <li>• Automatic retry logic for failed downloads</li>
+                    <li>• Self-healing broken image detection</li>
+                  </ul>
+                  
+                  <h4 className="font-semibold text-green-600">✅ Phase 2: Multi-Image Collection</h4>
+                  <ul className="text-sm space-y-1 text-muted-foreground ml-4">
+                    <li>• Collects ALL available product images</li>
+                    <li>• Automatic image deduplication</li>
+                    <li>• Quality filtering and categorization</li>
+                    <li>• Automatic thumbnail generation</li>
+                  </ul>
+                </div>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-green-600">✅ Phase 3: Change Detection & Protection</h4>
+                  <ul className="text-sm space-y-1 text-muted-foreground ml-4">
+                    <li>• Motor change detection system</li>
+                    <li>• Automatic backup before data changes</li>
+                    <li>• Rollback capability for failed operations</li>
+                    <li>• Data integrity monitoring</li>
+                  </ul>
+                  
+                  <h4 className="font-semibold text-green-600">✅ Phase 4: Self-Healing Management</h4>
+                  <ul className="text-sm space-y-1 text-muted-foreground ml-4">
+                    <li>• Broken image auto-detection & fix</li>
+                    <li>• Automatic image optimization</li>
+                    <li>• Unused image cleanup</li>
+                    <li>• Performance monitoring & optimization</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Performance Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm">Automation Benefits</CardTitle>
+              </CardHeader>
+              <CardContent className="text-xs space-y-1">
+                <div className="flex justify-between">
+                  <span>Manual Work Eliminated:</span>
+                  <span className="font-semibold text-green-600">100%</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Image Quality Improvement:</span>
+                  <span className="font-semibold text-blue-600">3-5x</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>System Reliability:</span>
+                  <span className="font-semibold text-purple-600">{status?.monitoring.overallHealth || '95%'}</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm">Next Actions</CardTitle>
+              </CardHeader>
+              <CardContent className="text-xs space-y-2">
                 {status?.monitoring.criticalIssues ? (
-                  <AlertTriangle className="h-4 w-4 text-destructive" />
+                  <Button 
+                    size="sm" 
+                    variant="destructive" 
+                    className="w-full text-xs h-7"
+                    onClick={() => setShowIssueDetails(true)}
+                  >
+                    <AlertTriangle className="h-3 w-3 mr-1" />
+                    {status.monitoring.criticalIssues} Critical Issues - View Details
+                  </Button>
                 ) : (
-                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  <div className="text-green-600 text-center py-1">✅ System running optimally</div>
                 )}
-              </div>
-              <div className="flex justify-between text-xs">
-                <span className="text-destructive">
-                  {status?.monitoring.criticalIssues || 0} critical
-                </span>
-                <span className="text-yellow-500">
-                  {status?.monitoring.warnings || 0} warnings
-                </span>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+                
+                {status?.images.broken ? (
+                  <Button 
+                    size="sm" 
+                    variant="outline" 
+                    className="w-full text-xs h-7"
+                    onClick={() => setShowIssueDetails(true)}
+                  >
+                    <Wrench className="h-3 w-3 mr-1" />
+                    Fix {status.images.broken} Broken Images
+                  </Button>
+                ) : null}
+                
+                {(status?.monitoring.criticalIssues || status?.images.broken) && (
+                  <Button 
+                    size="sm" 
+                    variant="secondary" 
+                    className="w-full text-xs h-7"
+                    onClick={() => setShowIssueDetails(true)}
+                  >
+                    <Eye className="h-3 w-3 mr-1" />
+                    View All Issues
+                  </Button>
+                )}
+                
+                <div className="text-muted-foreground text-center">
+                  Next check: {new Date(Date.now() + 12 * 60 * 60 * 1000).toLocaleString()}
+                </div>
+              </CardContent>
+            </Card>
 
-      {/* Automation Features */}
-      <Card>
-        <CardHeader>
-          <CardTitle>🤖 Fully Automated Features</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-3">
-              <h4 className="font-semibold text-green-600">✅ Phase 1: Image Migration Automation</h4>
-              <ul className="text-sm space-y-1 text-muted-foreground ml-4">
-                <li>• Auto-trigger image migration every 12 hours</li>
-                <li>• Progressive image quality enhancement</li>
-                <li>• Automatic retry logic for failed downloads</li>
-                <li>• Self-healing broken image detection</li>
-              </ul>
-              
-              <h4 className="font-semibold text-green-600">✅ Phase 2: Multi-Image Collection</h4>
-              <ul className="text-sm space-y-1 text-muted-foreground ml-4">
-                <li>• Collects ALL available product images</li>
-                <li>• Automatic image deduplication</li>
-                <li>• Quality filtering and categorization</li>
-                <li>• Automatic thumbnail generation</li>
-              </ul>
-            </div>
-            
-            <div className="space-y-3">
-              <h4 className="font-semibold text-green-600">✅ Phase 3: Change Detection & Protection</h4>
-              <ul className="text-sm space-y-1 text-muted-foreground ml-4">
-                <li>• Motor change detection system</li>
-                <li>• Automatic backup before data changes</li>
-                <li>• Rollback capability for failed operations</li>
-                <li>• Data integrity monitoring</li>
-              </ul>
-              
-              <h4 className="font-semibold text-green-600">✅ Phase 4: Self-Healing Management</h4>
-              <ul className="text-sm space-y-1 text-muted-foreground ml-4">
-                <li>• Broken image auto-detection & fix</li>
-                <li>• Automatic image optimization</li>
-                <li>• Unused image cleanup</li>
-                <li>• Performance monitoring & optimization</li>
-              </ul>
-            </div>
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm">System Status</CardTitle>
+              </CardHeader>
+              <CardContent className="text-xs space-y-1">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Cron Jobs: Active</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Image Migration: Ready</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Health Monitor: Active</span>
+                </div>
+              </CardContent>
+            </Card>
           </div>
-        </CardContent>
-      </Card>
 
-      {/* Performance Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm">Automation Benefits</CardTitle>
-          </CardHeader>
-          <CardContent className="text-xs space-y-1">
-            <div className="flex justify-between">
-              <span>Manual Work Eliminated:</span>
-              <span className="font-semibold text-green-600">100%</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Image Quality Improvement:</span>
-              <span className="font-semibold text-blue-600">3-5x</span>
-            </div>
-            <div className="flex justify-between">
-              <span>System Reliability:</span>
-              <span className="font-semibold text-purple-600">{status?.monitoring.overallHealth || '95%'}</span>
-            </div>
-          </CardContent>
-        </Card>
+          {/* Issue Details Modal */}
+          <IssueDetailsModal 
+            open={showIssueDetails}
+            onOpenChange={setShowIssueDetails}
+            healthData={healthData}
+            onRefresh={loadStatus}
+          />
+        </TabsContent>
 
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm">Next Actions</CardTitle>
-          </CardHeader>
-          <CardContent className="text-xs space-y-2">
-            {status?.monitoring.criticalIssues ? (
-              <Button 
-                size="sm" 
-                variant="destructive" 
-                className="w-full text-xs h-7"
-                onClick={() => setShowIssueDetails(true)}
-              >
-                <AlertTriangle className="h-3 w-3 mr-1" />
-                {status.monitoring.criticalIssues} Critical Issues - View Details
-              </Button>
-            ) : (
-              <div className="text-green-600 text-center py-1">✅ System running optimally</div>
-            )}
-            
-            {status?.images.broken ? (
-              <Button 
-                size="sm" 
-                variant="outline" 
-                className="w-full text-xs h-7"
-                onClick={() => setShowIssueDetails(true)}
-              >
-                <Wrench className="h-3 w-3 mr-1" />
-                Fix {status.images.broken} Broken Images
-              </Button>
-            ) : null}
-            
-            {(status?.monitoring.criticalIssues || status?.images.broken) && (
-              <Button 
-                size="sm" 
-                variant="secondary" 
-                className="w-full text-xs h-7"
-                onClick={() => setShowIssueDetails(true)}
-              >
-                <Eye className="h-3 w-3 mr-1" />
-                View All Issues
-              </Button>
-            )}
-            
-            <div className="text-muted-foreground text-center">
-              Next check: {new Date(Date.now() + 12 * 60 * 60 * 1000).toLocaleString()}
-            </div>
-          </CardContent>
-        </Card>
+        <TabsContent value="data-sources" className="space-y-6">
+          <DataEnrichmentDashboard />
+        </TabsContent>
 
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm">System Status</CardTitle>
-          </CardHeader>
-          <CardContent className="text-xs space-y-1">
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span>Cron Jobs: Active</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span>Image Migration: Ready</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span>Health Monitor: Active</span>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Issue Details Modal */}
-      <IssueDetailsModal 
-        open={showIssueDetails}
-        onOpenChange={setShowIssueDetails}
-        healthData={healthData}
-        onRefresh={loadStatus}
-      />
+        <TabsContent value="source-config" className="space-y-6">
+          <SourceManagement />
+        </TabsContent>
+      </Tabs>
     </div>
   );
 };
