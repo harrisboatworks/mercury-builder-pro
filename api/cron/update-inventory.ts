@@ -41,6 +41,8 @@ export default async function handler(req, res) {
     const inventoryPromise = supabase.functions.invoke('scrape-inventory', {
       body: { 
         trigger: 'cron-inventory-only', 
+        source: 'html', // FIXED: Add source parameter
+        useXmlFeed: false, // FIXED: Add useXmlFeed parameter  
         at: new Date().toISOString(),
         timeout: 40000 // Internal timeout
       },
