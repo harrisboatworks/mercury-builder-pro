@@ -11,6 +11,7 @@ interface ScrapeRequest {
   source_name?: string;
   batch_size?: number;
   background?: boolean;
+  custom_url?: string;
 }
 
 interface ScrapeResult {
@@ -83,8 +84,51 @@ serve(async (req) => {
         data_sources: motor.data_sources || {},
       };
 
-      // Process each source in priority order
-      for (const source of sources) {
+      // Process each source in priority order (or custom URL if provided)
+      if (body.custom_url) {
+        // Handle custom URL scraping
+        console.log(`Scraping from custom URL: ${body.custom_url}`);
+        
+        try {
+          const sourceData = await scrapeCustomUrl(body.custom_url, firecrawlApiKey);
+          
+          // Merge data from custom URL
+          if (sourceData.description && !enrichedData.description) {
+            enrichedData.description = sourceData.description;
+          }
+          
+          if (sourceData.features?.length) {
+            enrichedData.features = [...new Set([...enrichedData.features, ...sourceData.features])];
+          }
+          
+          if (sourceData.specifications && Object.keys(sourceData.specifications).length) {
+            enrichedData.specifications = { ...enrichedData.specifications, ...sourceData.specifications };
+          }
+          
+          if (sourceData.images?.length) {
+            enrichedData.images = [...new Set([...enrichedData.images, ...sourceData.images])];
+          }
+
+          // Update data sources to include custom URL
+          enrichedData.data_sources.custom = {
+            scraped_at: new Date().toISOString(),
+            success: true,
+            url: body.custom_url,
+          };
+
+        } catch (error) {
+          console.error(`Error scraping from custom URL:`, error);
+          
+          enrichedData.data_sources.custom = {
+            scraped_at: new Date().toISOString(),
+            success: false,
+            error: error.message,
+            url: body.custom_url,
+          };
+        }
+      } else {
+        // Process each source in priority order
+        for (const source of sources) {
         if (body.source_name && source.name !== body.source_name) {
           continue;
         }
@@ -158,9 +202,10 @@ serve(async (req) => {
             action: 'scraped',
             success: false,
             error_message: error.message,
-          });
-        }
-      }
+           });
+         }
+       }
+      } // End of custom URL vs sources processing
 
       // Calculate data quality score
       const qualityScore = calculateQualityScore(enrichedData);
@@ -370,6 +415,168 @@ function extractMercuryImages(html: string, baseUrl: string): string[] {
   }
   
   return [...new Set(images)].slice(0, 5);
+}
+
+async function scrapeCustomUrl(url: string, apiKey: string): Promise<ScrapeResult> {
+  if (!apiKey) {
+    console.warn('Firecrawl API key not available for custom URL scraping');
+    return {};
+  }
+
+  try {
+    console.log(`Scraping custom URL with Firecrawl: ${url}`);
+    
+    // Use Firecrawl to scrape the custom URL
+    const response = await fetch('https://api.firecrawl.dev/v0/scrape', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        url: url,
+        formats: ['markdown', 'html'],
+        onlyMainContent: true,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Firecrawl API error: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    
+    if (!data.success) {
+      throw new Error('Firecrawl scraping failed');
+    }
+
+    const markdown = data.data?.markdown || '';
+    const html = data.data?.html || '';
+    
+    // Extract motor information from the scraped content
+    const result: ScrapeResult = {
+      description: extractGenericDescription(markdown),
+      features: extractGenericFeatures(markdown),
+      specifications: extractGenericSpecifications(markdown),
+      images: extractGenericImages(html, url),
+    };
+
+    console.log('Custom URL scraping result:', result);
+    return result;
+
+  } catch (error) {
+    console.error('Error scraping custom URL:', error);
+    throw error;
+  }
+}
+
+// Generic extraction functions for custom URLs
+function extractGenericDescription(markdown: string): string | null {
+  if (!markdown) return null;
+  
+  // Look for description patterns
+  const descPatterns = [
+    /(?:description|overview|about):\s*(.+?)(?:\n\n|\n#)/gis,
+    /^(.+?)(?:\n\s*\n|\n#)/s, // First paragraph
+  ];
+  
+  for (const pattern of descPatterns) {
+    const match = pattern.exec(markdown);
+    if (match && match[1]) {
+      const desc = match[1].trim();
+      if (desc.length > 50 && desc.length < 500) {
+        return desc;
+      }
+    }
+  }
+  
+  // Fallback: take first substantial paragraph
+  const paragraphs = markdown.split('\n').filter(line => line.trim().length > 50);
+  return paragraphs[0]?.trim() || null;
+}
+
+function extractGenericFeatures(markdown: string): string[] {
+  if (!markdown) return [];
+  
+  const features: string[] = [];
+  const featurePatterns = [
+    /•\s*(.+)/g,
+    /\*\s*(.+)/g,
+    /-\s*(.+)/g,
+    /features?:\s*(.+?)(?:\n\n|\n#)/gis,
+  ];
+  
+  for (const pattern of featurePatterns) {
+    let match;
+    while ((match = pattern.exec(markdown)) !== null) {
+      const feature = match[1].trim();
+      if (feature.length > 5 && feature.length < 150) {
+        features.push(feature);
+      }
+    }
+  }
+  
+  return [...new Set(features)].slice(0, 15);
+}
+
+function extractGenericSpecifications(markdown: string): any {
+  if (!markdown) return {};
+  
+  const specs: any = {};
+  const specPatterns = [
+    /(\w+(?:\s+\w+)*?):\s*([^\n]+)/g,
+    /(\w+)\s*-\s*([^\n]+)/g,
+    /(\w+)\s*=\s*([^\n]+)/g,
+  ];
+  
+  for (const pattern of specPatterns) {
+    let match;
+    while ((match = pattern.exec(markdown)) !== null) {
+      const key = match[1].trim().toLowerCase();
+      const value = match[2].trim();
+      
+      // Filter out common non-spec patterns
+      if (value.length < 100 && !specs[key] && 
+          !key.includes('http') && 
+          !value.includes('http') &&
+          !key.includes('click') &&
+          !key.includes('more')) {
+        specs[key] = value;
+      }
+    }
+  }
+  
+  return specs;
+}
+
+function extractGenericImages(html: string, baseUrl: string): string[] {
+  if (!html) return [];
+  
+  const images: string[] = [];
+  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
+  const base = new URL(baseUrl).origin;
+  
+  let match;
+  while ((match = imgRegex.exec(html)) !== null) {
+    let imgUrl = match[1];
+    
+    // Convert relative URLs to absolute
+    if (imgUrl.startsWith('/')) {
+      imgUrl = base + imgUrl;
+    } else if (!imgUrl.startsWith('http')) {
+      imgUrl = baseUrl + '/' + imgUrl;
+    }
+    
+    // Filter for likely motor images
+    if (imgUrl.includes('motor') || 
+        imgUrl.includes('engine') || 
+        imgUrl.includes('outboard') ||
+        imgUrl.match(/\.(jpg|jpeg|png|webp)/i)) {
+      images.push(imgUrl);
+    }
+  }
+  
+  return [...new Set(images)].slice(0, 10);
 }
 
 function calculateQualityScore(data: any): number {

@@ -48,6 +48,8 @@ export const SourceManagement: React.FC = () => {
     base_url: '',
     priority: 1,
   });
+  const [formErrors, setFormErrors] = useState<{[key: string]: string}>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     fetchSources();
@@ -98,9 +100,33 @@ export const SourceManagement: React.FC = () => {
     }
   };
 
-  const createSource = async () => {
-    if (!newSource.name || !newSource.base_url) return;
+  const validateForm = () => {
+    const errors: {[key: string]: string} = {};
     
+    if (!newSource.name.trim()) {
+      errors.name = 'Source name is required';
+    } else if (newSource.name.length < 2) {
+      errors.name = 'Source name must be at least 2 characters';
+    }
+    
+    if (!newSource.base_url.trim()) {
+      errors.base_url = 'Base URL is required';
+    } else {
+      try {
+        new URL(newSource.base_url);
+      } catch {
+        errors.base_url = 'Please enter a valid URL (e.g., https://example.com)';
+      }
+    }
+    
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const createSource = async () => {
+    if (!validateForm()) return;
+    
+    setIsSubmitting(true);
     try {
       const { error } = await supabase
         .from('motor_data_sources')
@@ -114,19 +140,22 @@ export const SourceManagement: React.FC = () => {
       
       setIsCreating(false);
       setNewSource({ name: '', base_url: '', priority: 1 });
+      setFormErrors({});
       await fetchSources();
       
       toast({
         title: 'Success',
         description: 'Data source created successfully',
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error creating source:', error);
       toast({
         title: 'Error',
-        description: 'Failed to create data source',
+        description: error.message || 'Failed to create data source',
         variant: 'destructive',
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -314,22 +343,43 @@ export const SourceManagement: React.FC = () => {
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <Label htmlFor="source-name">Source Name</Label>
+              <Label htmlFor="source-name">Source Name *</Label>
               <Input
                 id="source-name"
                 value={newSource.name}
-                onChange={(e) => setNewSource({ ...newSource, name: e.target.value })}
-                placeholder="e.g., boatingmag"
+                onChange={(e) => {
+                  setNewSource({ ...newSource, name: e.target.value });
+                  if (formErrors.name) {
+                    setFormErrors(prev => ({ ...prev, name: '' }));
+                  }
+                }}
+                placeholder="e.g., boatingmag, mercury-parts, dealer-website"
+                className={formErrors.name ? 'border-red-500' : ''}
               />
+              {formErrors.name && (
+                <p className="text-sm text-red-600 mt-1">{formErrors.name}</p>
+              )}
             </div>
             <div>
-              <Label htmlFor="source-url">Base URL</Label>
+              <Label htmlFor="source-url">Base URL *</Label>
               <Input
                 id="source-url"
                 value={newSource.base_url}
-                onChange={(e) => setNewSource({ ...newSource, base_url: e.target.value })}
+                onChange={(e) => {
+                  setNewSource({ ...newSource, base_url: e.target.value });
+                  if (formErrors.base_url) {
+                    setFormErrors(prev => ({ ...prev, base_url: '' }));
+                  }
+                }}
                 placeholder="https://example.com"
+                className={formErrors.base_url ? 'border-red-500' : ''}
               />
+              {formErrors.base_url && (
+                <p className="text-sm text-red-600 mt-1">{formErrors.base_url}</p>
+              )}
+              <p className="text-xs text-muted-foreground mt-1">
+                Supports: Product pages, PDF specs, image galleries, review sites
+              </p>
             </div>
             <div>
               <Label htmlFor="source-priority">Priority</Label>
@@ -350,10 +400,22 @@ export const SourceManagement: React.FC = () => {
               </Select>
             </div>
             <div className="flex gap-2">
-              <Button onClick={() => setIsCreating(false)} variant="outline">
+              <Button 
+                onClick={() => {
+                  setIsCreating(false);
+                  setNewSource({ name: '', base_url: '', priority: 1 });
+                  setFormErrors({});
+                }} 
+                variant="outline"
+                disabled={isSubmitting}
+              >
                 Cancel
               </Button>
-              <Button onClick={createSource}>
+              <Button 
+                onClick={createSource}
+                disabled={isSubmitting || !newSource.name.trim() || !newSource.base_url.trim()}
+              >
+                {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 Create Source
               </Button>
             </div>

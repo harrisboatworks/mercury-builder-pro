@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -20,7 +21,14 @@ import {
   Clock,
   BarChart3,
   Filter,
-  Eye
+  Eye,
+  Search,
+  ChevronLeft,
+  ChevronRight,
+  RefreshCw,
+  Link,
+  FileText,
+  Image
 } from 'lucide-react';
 
 interface Motor {
@@ -31,6 +39,9 @@ interface Motor {
   data_sources: any;
   last_enriched: string | null;
   manual_overrides: any;
+  make?: string;
+  motor_type?: string;
+  detail_url?: string;
 }
 
 interface EnrichmentLog {
@@ -52,18 +63,26 @@ export const DataEnrichmentDashboard: React.FC = () => {
   const [isEnriching, setIsEnriching] = useState(false);
   const [qualityFilter, setQualityFilter] = useState<string>('all');
   const [sourceFilter, setSourceFilter] = useState<string>('all');
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [motorsPerPage] = useState<number>(50);
+  const [showAllMotors, setShowAllMotors] = useState<boolean>(false);
 
   useEffect(() => {
     fetchData();
-  }, [qualityFilter, sourceFilter]);
+  }, [qualityFilter, sourceFilter, showAllMotors]);
+
+  useEffect(() => {
+    setCurrentPage(1); // Reset pagination when filters change
+  }, [qualityFilter, sourceFilter, searchTerm]);
 
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      // Fetch motors
+      // Fetch motors with enhanced query
       let motorsQuery = supabase
         .from('motor_models')
-        .select('id, model, horsepower, data_quality_score, data_sources, last_enriched, manual_overrides')
+        .select('id, model, horsepower, data_quality_score, data_sources, last_enriched, manual_overrides, make, motor_type, detail_url')
         .order('data_quality_score', { ascending: true });
 
       if (qualityFilter !== 'all') {
@@ -71,7 +90,12 @@ export const DataEnrichmentDashboard: React.FC = () => {
         motorsQuery = motorsQuery.gte('data_quality_score', min).lt('data_quality_score', max);
       }
 
-      const { data: motorsData, error: motorsError } = await motorsQuery.limit(50);
+      // Remove the hardcoded limit - fetch all motors if showAllMotors is true
+      if (!showAllMotors) {
+        motorsQuery = motorsQuery.limit(50);
+      }
+
+      const { data: motorsData, error: motorsError } = await motorsQuery;
       if (motorsError) throw motorsError;
 
       // Fetch enrichment logs
@@ -154,16 +178,86 @@ export const DataEnrichmentDashboard: React.FC = () => {
   };
 
   const filteredMotors = motors.filter(motor => {
-    if (sourceFilter === 'all') return true;
-    return motor.data_sources?.[sourceFilter]?.success === true;
+    let matches = true;
+    
+    // Source filter
+    if (sourceFilter !== 'all') {
+      matches = matches && motor.data_sources?.[sourceFilter]?.success === true;
+    }
+    
+    // Search term filter
+    if (searchTerm) {
+      const searchLower = searchTerm.toLowerCase();
+      matches = matches && (
+        motor.model.toLowerCase().includes(searchLower) ||
+        motor.horsepower.toString().includes(searchLower) ||
+        motor.make?.toLowerCase().includes(searchLower) ||
+        motor.motor_type?.toLowerCase().includes(searchLower)
+      );
+    }
+    
+    return matches;
   });
 
+  // Pagination
+  const totalPages = Math.ceil(filteredMotors.length / motorsPerPage);
+  const startIndex = (currentPage - 1) * motorsPerPage;
+  const paginatedMotors = filteredMotors.slice(startIndex, startIndex + motorsPerPage);
+
   const overallStats = {
-    total: motors.length,
-    excellent: motors.filter(m => m.data_quality_score >= 80).length,
-    good: motors.filter(m => m.data_quality_score >= 60 && m.data_quality_score < 80).length,
-    poor: motors.filter(m => m.data_quality_score < 60).length,
-    avgScore: motors.reduce((acc, m) => acc + m.data_quality_score, 0) / motors.length || 0,
+    total: filteredMotors.length,
+    totalInDb: motors.length,
+    excellent: filteredMotors.filter(m => m.data_quality_score >= 80).length,
+    good: filteredMotors.filter(m => m.data_quality_score >= 60 && m.data_quality_score < 80).length,
+    poor: filteredMotors.filter(m => m.data_quality_score < 60).length,
+    avgScore: filteredMotors.reduce((acc, m) => acc + m.data_quality_score, 0) / filteredMotors.length || 0,
+  };
+
+  const enrichAllQualityMotors = async () => {
+    const lowQualityMotors = filteredMotors.filter(m => m.data_quality_score < 60);
+    if (lowQualityMotors.length === 0) {
+      toast({
+        title: 'Info',
+        description: 'No low quality motors found to enrich',
+      });
+      return;
+    }
+    
+    await triggerEnrichment();
+  };
+
+  const enrichFromCustomUrl = async (motorId: string, customUrl: string) => {
+    if (!customUrl.trim()) return;
+    
+    setIsEnriching(true);
+    try {
+      const { error } = await supabase.functions.invoke('multi-source-scraper', {
+        body: {
+          motor_id: motorId,
+          custom_url: customUrl,
+          batch_size: 1,
+          background: false,
+        },
+      });
+
+      if (error) throw error;
+      
+      toast({
+        title: 'Success',
+        description: 'Custom URL enrichment started',
+      });
+      
+      setTimeout(fetchData, 2000);
+    } catch (error) {
+      console.error('Error enriching from custom URL:', error);
+      toast({
+        title: 'Error',
+        description: 'Failed to enrich from custom URL',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsEnriching(false);
+    }
   };
 
   if (selectedMotor) {
@@ -185,7 +279,9 @@ export const DataEnrichmentDashboard: React.FC = () => {
               <BarChart3 className="h-4 w-4 text-muted-foreground" />
               <div className="text-2xl font-bold">{overallStats.total}</div>
             </div>
-            <p className="text-xs text-muted-foreground">Total Motors</p>
+            <p className="text-xs text-muted-foreground">
+              Showing Motors {showAllMotors ? `(${overallStats.totalInDb} total)` : '(Limited View)'}
+            </p>
           </CardContent>
         </Card>
         <Card>
@@ -226,22 +322,49 @@ export const DataEnrichmentDashboard: React.FC = () => {
             </CardTitle>
             <div className="flex items-center gap-2">
               <Button
-                onClick={() => triggerEnrichment()}
+                variant="outline"
+                onClick={() => setShowAllMotors(!showAllMotors)}
+                className="flex items-center gap-2"
+              >
+                <Eye className="h-4 w-4" />
+                {showAllMotors ? 'Show Limited (50)' : 'Show All Motors'}
+              </Button>
+              <Button
+                onClick={enrichAllQualityMotors}
                 disabled={isEnriching}
                 className="flex items-center gap-2"
               >
                 {isEnriching && <Loader2 className="h-4 w-4 animate-spin" />}
                 <Zap className="h-4 w-4" />
-                Enrich All Low Quality
+                Enrich All Low Quality ({overallStats.poor})
+              </Button>
+              <Button
+                variant="outline"
+                onClick={fetchData}
+                disabled={isLoading}
+                className="flex items-center gap-2"
+              >
+                <RefreshCw className="h-4 w-4" />
+                Refresh
               </Button>
             </div>
           </div>
           
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="flex items-center gap-2">
+              <Search className="h-4 w-4" />
+              <Input
+                placeholder="Search motors..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-64"
+              />
+            </div>
+            
             <div className="flex items-center gap-2">
               <Filter className="h-4 w-4" />
               <Select value={qualityFilter} onValueChange={setQualityFilter}>
-                <SelectTrigger className="w-32">
+                <SelectTrigger className="w-40">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -255,7 +378,7 @@ export const DataEnrichmentDashboard: React.FC = () => {
             </div>
             
             <Select value={sourceFilter} onValueChange={setSourceFilter}>
-              <SelectTrigger className="w-32">
+              <SelectTrigger className="w-40">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -271,7 +394,14 @@ export const DataEnrichmentDashboard: React.FC = () => {
         <CardContent>
           <Tabs defaultValue="motors" className="space-y-6">
             <TabsList>
-              <TabsTrigger value="motors">Motors ({filteredMotors.length})</TabsTrigger>
+              <TabsTrigger value="motors">
+                Motors ({filteredMotors.length})
+                {totalPages > 1 && (
+                  <span className="ml-1 text-xs text-muted-foreground">
+                    • Page {currentPage}/{totalPages}
+                  </span>
+                )}
+              </TabsTrigger>
               <TabsTrigger value="logs">Activity Log ({logs.length})</TabsTrigger>
             </TabsList>
 
@@ -281,8 +411,39 @@ export const DataEnrichmentDashboard: React.FC = () => {
                   <Loader2 className="h-8 w-8 animate-spin" />
                 </div>
               ) : (
-                <div className="space-y-2">
-                  {filteredMotors.map((motor) => (
+                <div className="space-y-4">
+                  {/* Pagination Controls */}
+                  {totalPages > 1 && (
+                    <div className="flex items-center justify-between">
+                      <div className="text-sm text-muted-foreground">
+                        Showing {startIndex + 1}-{Math.min(startIndex + motorsPerPage, filteredMotors.length)} of {filteredMotors.length} motors
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                          disabled={currentPage === 1}
+                        >
+                          <ChevronLeft className="h-4 w-4" />
+                        </Button>
+                        <span className="text-sm">
+                          Page {currentPage} of {totalPages}
+                        </span>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                          disabled={currentPage === totalPages}
+                        >
+                          <ChevronRight className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="space-y-2">
+                    {paginatedMotors.map((motor) => (
                     <div key={motor.id} className="flex items-center justify-between p-4 border rounded-lg">
                       <div className="flex-1">
                         <div className="flex items-center gap-3">
@@ -337,12 +498,25 @@ export const DataEnrichmentDashboard: React.FC = () => {
                           variant="outline"
                           onClick={() => triggerEnrichment(motor.id)}
                           disabled={isEnriching}
+                          title="Enrich from all sources"
                         >
                           <Zap className="h-3 w-3" />
                         </Button>
+                        {motor.detail_url && (
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            onClick={() => enrichFromCustomUrl(motor.id, motor.detail_url)}
+                            disabled={isEnriching}
+                            title="Enrich from detail URL"
+                          >
+                            <Link className="h-3 w-3" />
+                          </Button>
+                        )}
                       </div>
                     </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               )}
             </TabsContent>
