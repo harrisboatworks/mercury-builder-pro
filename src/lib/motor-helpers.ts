@@ -202,11 +202,30 @@ export const getTransomRequirement = (motor: Motor) => {
 
 export const getBatteryRequirement = (motor: Motor) => {
   const model = (motor.model || '').toUpperCase();
-  if (/\bM\b/.test(model)) return 'Not required (manual start)';
+  
+  // Manual start motors (containing 'M') don't require batteries
+  if (model.includes('M') && !model.includes('E')) {
+    return 'Not required (manual start)';
+  }
+  
+  // Electric start motors (containing 'E') require batteries
+  if (model.includes('E')) {
+    const n = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
+    if (n <= 30) return '24M7 1000CA Starting Battery';
+    if (n <= 115) return '12V marine cranking battery (min 800 CCA)';
+    return 'High-output 12V (or dual) marine battery';
+  }
+  
+  // Default for motors without clear start type indicators
   const n = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
-  if (n <= 30) return '24M7 1000CA Starting Battery';
-  if (n <= 115) return '12V marine cranking battery (min 800 CCA)';
-  return 'High-output 12V (or dual) marine battery';
+  if (n > 25) {
+    // Most motors over 25HP are electric start
+    if (n <= 30) return '24M7 1000CA Starting Battery';
+    if (n <= 115) return '12V marine cranking battery (min 800 CCA)';
+    return 'High-output 12V (or dual) marine battery';
+  }
+  
+  return 'Not required (manual start)';
 };
 
 export const getFuelRequirement = (_motor: Motor) => {
@@ -220,12 +239,23 @@ export const getOilRequirement = (_motor: Motor) => {
 export const includesFuelTank = (motor: Motor) => {
   const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
   const model = (motor.model || '').toUpperCase();
+  const isTiller = isTillerMotor(model);
+  const isProKicker = model.includes('PROKICKER');
   
-  // Tiller motors have internal fuel tanks
-  if (isTillerMotor(model)) return true;
+  // ≤6HP: Internal fuel tank (built-in)
+  if (hp <= 6) return true;
   
-  // Small remote motors (9.9-20HP) typically include portable fuel tank
-  if (hp >= 9.9 && hp <= 20 && !isTillerMotor(model)) return true;
+  // 8-20HP: Include 12L fuel tank and hose (both tiller and remote)
+  if (hp >= 8 && hp <= 20) return true;
+  
+  // 25-30HP tiller: Include 25L fuel tank and hose
+  if (hp >= 25 && hp <= 30 && isTiller) return true;
+  
+  // 25-30HP remote/prokicker: No fuel tank included
+  if (hp >= 25 && hp <= 30 && (!isTiller || isProKicker)) return false;
+  
+  // >30HP: No fuel tank included
+  if (hp > 30) return false;
   
   return false;
 };
@@ -320,14 +350,18 @@ export const isTillerMotor = (model: string) => {
 
 export const getIncludedAccessories = (motor: Motor) => {
   const accessories = [];
+  const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
+  const model = (motor.model || '').toUpperCase();
+  const isTiller = isTillerMotor(model);
   
   // Check for fuel tank inclusion
   if (includesFuelTank(motor)) {
-    if (isTillerMotor(motor.model || '')) {
+    if (hp <= 6) {
       accessories.push('Internal fuel tank');
-    } else {
-      accessories.push('12L portable fuel tank');
-      accessories.push('Fuel line & primer bulb');
+    } else if (hp >= 8 && hp <= 20) {
+      accessories.push('12L fuel tank & hose');
+    } else if (hp >= 25 && hp <= 30 && isTiller) {
+      accessories.push('25L fuel tank & hose');
     }
   }
   
@@ -363,8 +397,9 @@ export const getAdditionalRequirements = (motor: Motor) => {
     }
   }
   
-  // Battery requirement for electric start
-  if (!model.includes('M') || model.includes('E')) {
+  // Battery requirement for electric start (only if not already included with motor)
+  const batteryReq = getBatteryRequirement(motor);
+  if (!batteryReq.includes('Not required')) {
     if (hp <= 30) {
       requirements.push({ item: '24M7 1000CA Starting Battery', cost: '$180' });
     } else if (hp <= 115) {
