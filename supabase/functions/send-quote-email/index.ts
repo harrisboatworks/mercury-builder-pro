@@ -194,7 +194,7 @@ serve(async (req) => {
 
     // Send email via Resend with Reply-To header
     const emailResponse = await resend.emails.send({
-      from: 'Mercury Motors <noreply@hbwsales.ca>',
+      from: 'Harris Boat Works - Mercury Marine <noreply@hbwsales.ca>',
       to: [emailData.customerEmail],
       replyTo: 'info@harrisboatworks.ca', // Customer replies go to your business email
       subject: subject,
