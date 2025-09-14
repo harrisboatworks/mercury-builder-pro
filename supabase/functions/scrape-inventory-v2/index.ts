@@ -392,14 +392,12 @@ serve(async (req) => {
                 last_scraped: new Date().toISOString()
               };
 
-              // Enhanced validation with required field checking
+              // Enhanced validation with required field checking (allow null prices now)
               const isValidMotor = (
                 motor.model && 
                 motor.model.length > 1 && 
                 motor.horsepower && 
                 motor.horsepower > 0 && 
-                motor.base_price && 
-                motor.base_price > 0 &&
                 motor.make &&
                 motor.motor_type
               );
