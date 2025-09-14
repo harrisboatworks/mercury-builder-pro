@@ -55,11 +55,19 @@
   "crons": [
     {
       "path": "/api/cron/update-inventory",
-      "schedule": "0 */12 * * *"
+      "schedule": "0 */6 * * *"
     },
     {
-      "path": "/api/cron/scrape-motor-details",
-      "schedule": "0 2 * * 0"
+      "path": "/api/cron/migrate-images", 
+      "schedule": "15 */8 * * *"
+    },
+    {
+      "path": "/api/cron/scrape-details",
+      "schedule": "30 */12 * * *"
+    },
+    {
+      "path": "/api/cron/health-check",
+      "schedule": "45 */4 * * *"
     }
   ]
 }

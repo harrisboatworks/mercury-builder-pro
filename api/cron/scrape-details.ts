@@ -1,8 +1,8 @@
-// api/cron/update-inventory.ts - Optimized inventory-only update
+// api/cron/scrape-details.ts - Separate motor detail scraping cron job
 import { createClient } from '@supabase/supabase-js';
 
 export const config = {
-  maxDuration: 50, // Reduced from 60 to allow buffer
+  maxDuration: 50,
 };
 
 export default async function handler(req, res) {
@@ -31,59 +31,59 @@ export default async function handler(req, res) {
 
     const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
-    console.log('Starting inventory-only update...');
+    console.log('Starting motor detail scraping...');
 
-    // Single operation: Update inventory with timeout protection
+    // Optimized detail scraping with smaller batch and timeout protection
     const timeoutPromise = new Promise((_, reject) => 
-      setTimeout(() => reject(new Error('Inventory update timeout')), 45000)
+      setTimeout(() => reject(new Error('Detail scraping timeout')), 45000)
     );
 
-    const inventoryPromise = supabase.functions.invoke('scrape-inventory', {
+    const detailPromise = supabase.functions.invoke('scrape-motor-details-batch', {
       body: { 
-        trigger: 'cron-inventory-only', 
-        at: new Date().toISOString(),
-        timeout: 40000 // Internal timeout
+        prioritize_missing_images: true,
+        batch_size: 8, // Reduced from 15
+        background: true,
+        multi_image_collection: false, // Simplified to save time
+        timeout: 40000
       },
     });
 
-    const { data: inventoryData, error: inventoryError } = await Promise.race([
-      inventoryPromise,
+    const { data: detailData, error: detailError } = await Promise.race([
+      detailPromise,
       timeoutPromise
     ]) as any;
 
     const executionTime = Date.now() - startTime;
-    
-    if (inventoryError) {
-      console.error('Inventory scrape error:', inventoryError);
-      return res.status(200).json({ 
-        ok: false, 
-        error: inventoryError.message || 'Inventory scrape failed',
-        executionTime,
-        partialSuccess: false
-      });
+
+    // Allow partial success for detail scraping
+    const result = {
+      details: detailData || { error: detailError?.message, partialSuccess: true },
+      executionTime,
+      timestamp: new Date().toISOString(),
+      operation: 'detail-scraping'
+    };
+
+    if (detailError) {
+      console.log('Motor detail scraping had issues:', detailError.message);
+    } else {
+      console.log(`Detail scraping completed successfully in ${executionTime}ms`);
     }
 
-    console.log(`Inventory update completed successfully in ${executionTime}ms`);
-    
     return res.status(200).json({ 
       ok: true, 
-      result: {
-        inventory: inventoryData,
-        executionTime,
-        timestamp: new Date().toISOString(),
-        operation: 'inventory-only'
-      }
+      result,
+      warning: detailError ? 'Detail scraping completed with warnings' : null
     });
 
   } catch (e) {
     const executionTime = Date.now() - startTime;
-    console.error('Inventory update error:', e);
+    console.error('Detail scraping error:', e);
     
     return res.status(200).json({ 
       ok: false, 
-      error: (e as Error)?.message || 'Unexpected error',
+      error: (e as Error)?.message || 'Detail scraping failed',
       executionTime,
-      partialSuccess: false
+      partialSuccess: true
     });
   }
 }

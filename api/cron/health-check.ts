@@ -1,8 +1,8 @@
-// api/cron/update-inventory.ts - Optimized inventory-only update
+// api/cron/health-check.ts - Separate health monitoring cron job
 import { createClient } from '@supabase/supabase-js';
 
 export const config = {
-  maxDuration: 50, // Reduced from 60 to allow buffer
+  maxDuration: 50,
 };
 
 export default async function handler(req, res) {
@@ -31,59 +31,58 @@ export default async function handler(req, res) {
 
     const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
-    console.log('Starting inventory-only update...');
+    console.log('Starting health monitoring...');
 
-    // Single operation: Update inventory with timeout protection
+    // Lightweight health check with timeout protection
     const timeoutPromise = new Promise((_, reject) => 
-      setTimeout(() => reject(new Error('Inventory update timeout')), 45000)
+      setTimeout(() => reject(new Error('Health check timeout')), 45000)
     );
 
-    const inventoryPromise = supabase.functions.invoke('scrape-inventory', {
+    const healthPromise = supabase.functions.invoke('motor-health-monitor', {
       body: { 
-        trigger: 'cron-inventory-only', 
-        at: new Date().toISOString(),
-        timeout: 40000 // Internal timeout
+        checkBrokenImages: true,
+        fixIssues: false, // Don't auto-fix during health check to save time
+        generateReport: true,
+        timeout: 40000
       },
     });
 
-    const { data: inventoryData, error: inventoryError } = await Promise.race([
-      inventoryPromise,
+    const { data: healthData, error: healthError } = await Promise.race([
+      healthPromise,
       timeoutPromise
     ]) as any;
 
     const executionTime = Date.now() - startTime;
-    
-    if (inventoryError) {
-      console.error('Inventory scrape error:', inventoryError);
-      return res.status(200).json({ 
-        ok: false, 
-        error: inventoryError.message || 'Inventory scrape failed',
-        executionTime,
-        partialSuccess: false
-      });
+
+    // Health monitoring is informational, so allow warnings
+    const result = {
+      health: healthData || { error: healthError?.message, partialSuccess: true },
+      executionTime,
+      timestamp: new Date().toISOString(),
+      operation: 'health-monitoring'
+    };
+
+    if (healthError) {
+      console.log('Health monitoring had issues:', healthError.message);
+    } else {
+      console.log(`Health monitoring completed successfully in ${executionTime}ms`);
     }
 
-    console.log(`Inventory update completed successfully in ${executionTime}ms`);
-    
     return res.status(200).json({ 
       ok: true, 
-      result: {
-        inventory: inventoryData,
-        executionTime,
-        timestamp: new Date().toISOString(),
-        operation: 'inventory-only'
-      }
+      result,
+      warning: healthError ? 'Health check completed with warnings' : null
     });
 
   } catch (e) {
     const executionTime = Date.now() - startTime;
-    console.error('Inventory update error:', e);
+    console.error('Health monitoring error:', e);
     
     return res.status(200).json({ 
       ok: false, 
-      error: (e as Error)?.message || 'Unexpected error',
+      error: (e as Error)?.message || 'Health monitoring failed',
       executionTime,
-      partialSuccess: false
+      partialSuccess: true
     });
   }
 }

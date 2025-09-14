@@ -86,57 +86,79 @@ export function InventoryMonitor() {
   }, []);
 
   const triggerInventoryUpdate = async () => {
+    setUpdating(true);
     try {
-      setUpdating(true);
-      console.log('Triggering inventory update...');
-      
-      const { data, error } = await supabase.functions.invoke('scrape-inventory', {
-        body: { trigger: 'manual-admin', force: true }
-      });
-      
-      if (error) {
-        console.error('Error triggering inventory update:', error);
-        toast({
-          title: "Update Failed",
-          description: error.message?.includes('Failed to send') 
-            ? "Network error - please check connection and try again"
-            : "Failed to trigger inventory update: " + (error.message || 'Unknown error'),
-          variant: "destructive",
-        });
-        return;
-      }
-      
-      console.log('Inventory update response:', data);
-      
-      if (data?.success === false) {
-        toast({
-          title: "Update Failed",
-          description: data.error || "Unknown error occurred during inventory update",
-          variant: "destructive",
-        });
-        return;
-      }
-      
       toast({
-        title: "Success",
-        description: data?.count 
-          ? `Inventory update completed! Processed ${data.count} motors.`
-          : "Inventory update started successfully",
+        title: "Starting inventory update...",
+        description: "Using optimized single-operation endpoint",
       });
-      
-      // Refresh data after a delay to allow processing
-      setTimeout(() => {
-        fetchInventoryData();
-      }, 3000);
+
+      // Use the new optimized inventory-only endpoint
+      const response = await fetch('/api/cron/update-inventory', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const result = await response.json();
+
+      if (!result.ok) {
+        throw new Error(result.error || 'Inventory update failed');
+      }
+
+      toast({
+        title: "Inventory update completed",
+        description: `Completed in ${result.result.executionTime}ms`,
+      });
+
+      // Refresh the data
+      await fetchInventoryData();
     } catch (error) {
       console.error('Error triggering inventory update:', error);
       toast({
-        title: "Network Error", 
-        description: "Unable to connect to the inventory service. Please try again.",
+        title: "Update failed",
+        description: error instanceof Error ? error.message : "Network error - please check connection and try again",
         variant: "destructive",
       });
-    } finally {  
+    } finally {
       setUpdating(false);
+    }
+  };
+
+  const triggerOperation = async (operation: 'migrate-images' | 'scrape-details' | 'health-check') => {
+    try {
+      toast({
+        title: `Starting ${operation.replace('-', ' ')}...`,
+        description: "This operation runs independently",
+      });
+
+      const response = await fetch(`/api/cron/${operation}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const result = await response.json();
+
+      if (!result.ok) {
+        throw new Error(result.error || `${operation} failed`);
+      }
+
+      toast({
+        title: `${operation.replace('-', ' ')} completed`,
+        description: result.warning || `Completed in ${result.result.executionTime}ms`,
+        variant: result.warning ? "default" : "default",
+      });
+
+    } catch (error) {
+      console.error(`Error triggering ${operation}:`, error);
+      toast({
+        title: `${operation} failed`,
+        description: error instanceof Error ? error.message : "Operation failed",
+        variant: "destructive",
+      });
     }
   };
 
@@ -203,6 +225,15 @@ export function InventoryMonitor() {
       </TabsList>
       
       <TabsContent value="monitor" className="space-y-6">
+        {/* Status Alert */}
+        <Alert>
+          <CheckCircle className="h-4 w-4" />
+          <AlertDescription>
+            <strong>Optimized Operations:</strong> Cron jobs are now separated for better reliability. 
+            Each operation runs independently with 50-second timeouts to prevent failures.
+          </AlertDescription>
+        </Alert>
+
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-7 gap-4">
         <Card>
@@ -284,10 +315,36 @@ export function InventoryMonitor() {
                 )}
               </CardDescription>
             </div>
-            <Button onClick={triggerInventoryUpdate} disabled={loading || updating}>
-              <RefreshCw className={`h-4 w-4 mr-2 ${updating ? 'animate-spin' : ''}`} />
-              {updating ? 'Updating...' : 'Update Inventory'}
-            </Button>
+            <div className="flex gap-2">
+              <Button onClick={triggerInventoryUpdate} disabled={loading || updating}>
+                <RefreshCw className={`h-4 w-4 mr-2 ${updating ? 'animate-spin' : ''}`} />
+                {updating ? 'Updating...' : 'Update Inventory'}
+              </Button>
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => triggerOperation('migrate-images')}
+                disabled={loading}
+              >
+                Migrate Images
+              </Button>
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => triggerOperation('scrape-details')}
+                disabled={loading}
+              >
+                Scrape Details
+              </Button>
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => triggerOperation('health-check')}
+                disabled={loading}
+              >
+                Health Check
+              </Button>
+            </div>
           </div>
         </CardHeader>
         <CardContent>
