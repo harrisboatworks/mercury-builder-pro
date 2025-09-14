@@ -107,22 +107,7 @@ export function InventoryMonitor() {
       console.log('Response headers:', Object.fromEntries(response.headers.entries()));
 
       if (!response.ok) {
-        // If new endpoint fails, fallback to direct Supabase function call
-        console.log('New endpoint failed with status:', response.status, 'Falling back to direct function call...');
-        
-        const { data, error } = await supabase.functions.invoke('scrape-inventory', {
-          body: { trigger: 'manual-admin-fallback', force: true }
-        });
-
-        if (error) throw error;
-
-        toast({
-          title: "Inventory update completed (fallback)",
-          description: "Used direct function call due to endpoint issue",
-        });
-
-        await fetchInventoryData();
-        return;
+        throw new Error(`API endpoint failed with status ${response.status}. The new cron endpoints may not be deployed yet.`);
       }
 
       const result = await response.json();
