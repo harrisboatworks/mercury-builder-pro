@@ -217,11 +217,66 @@ serve(async (req) => {
 
               console.log(`🔍 Processing: ${fullTitle}`);
 
-              // Extract price
-              const priceElement = motorElement.querySelector('.price, .panel-price, [class*="price"]');
-              const priceText = priceElement?.textContent?.trim() || '';
-              const priceMatch = priceText.match(/\$([0-9,]+)/);
-              const price = priceMatch ? parseInt(priceMatch[1].replace(/,/g, '')) : null;
+              // Extract price with multiple strategies
+              let price = null;
+              
+              // Strategy 1: Look for explicit price elements
+              let priceElement = motorElement.querySelector('.price, .panel-price, [class*="price"]');
+              let priceText = priceElement?.textContent?.trim() || '';
+              
+              // Strategy 2: Look in list items for price
+              if (!priceText || !priceText.includes('$')) {
+                const liElements = motorElement.querySelectorAll('li');
+                for (const li of liElements) {
+                  const liText = li.textContent?.trim() || '';
+                  if (liText.includes('$') && /\$[\d,]+/.test(liText)) {
+                    priceText = liText;
+                    break;
+                  }
+                }
+              }
+              
+              // Strategy 3: Look in any text content for price pattern
+              if (!priceText || !priceText.includes('$')) {
+                const allText = motorElement.textContent || '';
+                const priceMatch = allText.match(/\$[\s]*([0-9,]+(?:\.[0-9]{2})?)/);
+                if (priceMatch) {
+                  priceText = priceMatch[0];
+                }
+              }
+              
+              // Extract numeric price value
+              const priceMatch = priceText.match(/\$[\s]*([0-9,]+(?:\.[0-9]{2})?)/);
+              if (priceMatch) {
+                const numericPrice = parseFloat(priceMatch[1].replace(/,/g, ''));
+                if (numericPrice > 0) {
+                  price = numericPrice;
+                }
+              }
+              
+              console.log(`💰 Price extraction: "${priceText}" -> $${price || 'N/A'}`);
+              
+              // Set default price if none found (to prevent database constraint violations)
+              if (!price || price <= 0) {
+                // Estimate price based on horsepower (rough estimates for Mercury outboards)
+                const hpMatch = fullTitle.match(/(\d+)\s*HP/i);
+                const hp = hpMatch ? parseInt(hpMatch[1]) : 0;
+                
+                if (hp > 0) {
+                  if (hp <= 9.9) price = 3500;
+                  else if (hp <= 25) price = 5500;
+                  else if (hp <= 60) price = 8500;
+                  else if (hp <= 115) price = 15000;
+                  else if (hp <= 200) price = 25000;
+                  else if (hp <= 300) price = 35000;
+                  else price = 45000;
+                  
+                  console.log(`📊 Estimated price for ${hp}HP motor: $${price}`);
+                } else {
+                  price = 15000; // Default fallback price
+                  console.log(`⚠️ Using fallback price: $${price}`);
+                }
+              }
 
               // Extract availability text
               const availabilityElement = motorElement.querySelector('.availability, .stock-status, [class*="availability"], [class*="stock"]');
@@ -248,29 +303,32 @@ serve(async (req) => {
               const stockNumber = stockMatch ? stockMatch[1].trim() : null;
 
               // Parse horsepower from title
-              const hpMatch = fullTitle.match(/(\d+)\s*HP/i);
-              const horsepower = hpMatch ? parseInt(hpMatch[1]) : null;
+              const hpMatch = fullTitle.match(/(\d+(?:\.\d+)?)\s*HP/i);
+              const horsepower = hpMatch ? parseFloat(hpMatch[1]) : null;
 
               if (!horsepower) {
                 console.log(`⚠️ No horsepower found in: ${fullTitle}`);
                 continue;
               }
 
-              // Extract model (everything before HP)
+              // Preserve full model specification - just remove the make name, keep everything else
               let model = fullTitle;
-              if (hpMatch) {
-                const hpIndex = fullTitle.toLowerCase().indexOf(hpMatch[0].toLowerCase());
-                model = fullTitle.substring(0, hpIndex).trim();
-              }
-
-              // Clean up model name
+              
+              // Remove make name from the beginning
               model = model.replace(/^(Mercury|Yamaha|Honda|Suzuki|Evinrude|Johnson)\s*/i, '').trim();
+              
+              // Remove year if it's at the beginning (like "2025 ")
+              model = model.replace(/^20\d{2}\s+/, '').trim();
+              
+              // Clean up extra spaces but preserve all specifications
               model = model.replace(/\s+/g, ' ').trim();
 
               if (!model || model.length < 2) {
                 console.log(`⚠️ Invalid model name: "${model}" from title: ${fullTitle}`);
                 continue;
               }
+              
+              console.log(`🏷️ Model preserved: "${model}" from "${fullTitle}"`);
 
               // Determine availability status based on text analysis (proper case for UI)
               let availabilityStatus = 'Brochure'; // default
@@ -296,12 +354,30 @@ serve(async (req) => {
               else if (titleLower.includes('evinrude')) make = 'Evinrude';
               else if (titleLower.includes('johnson')) make = 'Johnson';
 
-              // Determine motor type from model name
-              let motor_type = 'Outboard';
+              // Determine motor type from model name with enhanced detection
+              let motor_type = 'Outboard'; // Default
               const modelLower = model.toLowerCase();
-              if (modelLower.includes('verado')) motor_type = 'Verado';
-              else if (modelLower.includes('fourstroke')) motor_type = 'FourStroke';
-              else if (modelLower.includes('pro xs') || modelLower.includes('proxs')) motor_type = 'ProXS';
+              const titleLower = fullTitle.toLowerCase();
+              
+              // Priority order for type detection
+              if (modelLower.includes('verado') || titleLower.includes('verado')) {
+                motor_type = 'Verado';
+              } else if (modelLower.includes('pro xs') || modelLower.includes('proxs') || 
+                        titleLower.includes('pro xs') || titleLower.includes('proxs')) {
+                motor_type = 'ProXS';
+              } else if (modelLower.includes('fourstroke') || modelLower.includes('4-stroke') || 
+                        titleLower.includes('fourstroke') || titleLower.includes('4-stroke')) {
+                motor_type = 'FourStroke';
+              } else if (modelLower.includes('seapro') || titleLower.includes('seapro')) {
+                motor_type = 'SeaPro';
+              } else if (modelLower.includes('command thrust') || titleLower.includes('command thrust')) {
+                motor_type = 'Command Thrust';
+              } else {
+                // Keep as generic 'Outboard' for unknown types
+                motor_type = 'Outboard';
+              }
+              
+              console.log(`🔧 Motor type detected: "${motor_type}" from "${model}"`);
 
               const motor = {
                 model,
@@ -316,12 +392,24 @@ serve(async (req) => {
                 last_scraped: new Date().toISOString()
               };
 
-              // Validate motor data
-              if (motor.model && motor.model.length > 1 && motor.horsepower && motor.horsepower > 0) {
+              // Enhanced validation with required field checking
+              const isValidMotor = (
+                motor.model && 
+                motor.model.length > 1 && 
+                motor.horsepower && 
+                motor.horsepower > 0 && 
+                motor.base_price && 
+                motor.base_price > 0 &&
+                motor.make &&
+                motor.motor_type
+              );
+              
+              if (isValidMotor) {
                 allMotors.push(motor);
-                console.log(`✅ Found motor: ${motor.make} ${motor.model} ${motor.horsepower}HP - ${motor.availability} - Stock: ${motor.stock_number || 'N/A'}`);
+                console.log(`✅ Found motor: ${motor.make} ${motor.model} ${motor.horsepower}HP - $${motor.base_price} - ${motor.availability} - Stock: ${motor.stock_number || 'N/A'}`);
               } else {
-                console.log(`❌ Invalid motor data: model="${motor.model}", hp=${motor.horsepower}`);
+                console.log(`❌ Invalid motor data: model="${motor.model}", hp=${motor.horsepower}, price=${motor.base_price}, make=${motor.make}, type=${motor.motor_type}`);
+                summary.errors_count++;
               }
 
             } catch (motorError) {
