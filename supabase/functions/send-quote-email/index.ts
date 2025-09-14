@@ -196,7 +196,7 @@ serve(async (req) => {
     const emailResponse = await resend.emails.send({
       from: 'Mercury Motors <onboarding@resend.dev>',
       to: [emailData.customerEmail],
-      replyTo: 'harrisboatworks@hotmail.com', // Customer replies go to your business email
+      replyTo: 'info@harrisboatworks.ca', // Customer replies go to your business email
       subject: subject,
       html: htmlContent,
     });

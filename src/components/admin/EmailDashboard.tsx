@@ -71,7 +71,7 @@ export const EmailDashboard = () => {
     try {
       const { data, error } = await supabase.functions.invoke('send-quote-email', {
         body: {
-          customerEmail: 'harrisboatworks@hotmail.com', // Your verified Resend email
+          customerEmail: 'harrisboatworks@hotmail.com', // Test email (your verified Resend email)
           customerName: 'Test Customer',
           quoteNumber: 'TEST-001',
           motorModel: 'Mercury 150HP Outboard',
@@ -106,7 +106,7 @@ export const EmailDashboard = () => {
           <p className="text-muted-foreground">Send transactional emails and manage email automation</p>
           <div className="mt-2 p-3 bg-green-50 border border-green-200 rounded-lg">
             <p className="text-sm text-green-800">
-              <strong>Email Setup:</strong> Emails are sent from onboarding@resend.dev with Reply-To set to harrisboatworks@hotmail.com. 
+              <strong>Email Setup:</strong> Emails are sent from onboarding@resend.dev with Reply-To set to info@harrisboatworks.ca. 
               When customers reply, responses go directly to your business email.
             </p>
           </div>
