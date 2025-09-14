@@ -287,19 +287,28 @@ serve(async (req) => {
                 availabilityStatus = 'Brochure';
               }
 
-              // Default brand detection from title
-              let brand = 'Mercury';
+              // Default brand detection from title - use 'make' to match database
+              let make = 'Mercury';
               const titleLower = fullTitle.toLowerCase();
-              if (titleLower.includes('yamaha')) brand = 'Yamaha';
-              else if (titleLower.includes('honda')) brand = 'Honda';
-              else if (titleLower.includes('suzuki')) brand = 'Suzuki';
-              else if (titleLower.includes('evinrude')) brand = 'Evinrude';
-              else if (titleLower.includes('johnson')) brand = 'Johnson';
+              if (titleLower.includes('yamaha')) make = 'Yamaha';
+              else if (titleLower.includes('honda')) make = 'Honda';
+              else if (titleLower.includes('suzuki')) make = 'Suzuki';
+              else if (titleLower.includes('evinrude')) make = 'Evinrude';
+              else if (titleLower.includes('johnson')) make = 'Johnson';
+
+              // Determine motor type from model name
+              let motor_type = 'Outboard';
+              const modelLower = model.toLowerCase();
+              if (modelLower.includes('verado')) motor_type = 'Verado';
+              else if (modelLower.includes('fourstroke')) motor_type = 'FourStroke';
+              else if (modelLower.includes('pro xs') || modelLower.includes('proxs')) motor_type = 'ProXS';
 
               const motor = {
                 model,
                 horsepower,
-                brand,
+                year: 2025, // Always set current year
+                make, // Use 'make' instead of 'brand' to match database
+                motor_type, // Add motor type based on model
                 base_price: price,
                 sale_price: price,
                 availability: availabilityStatus,

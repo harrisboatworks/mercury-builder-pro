@@ -449,8 +449,10 @@ export type Database = {
           id: string
           image_url: string | null
           images: Json | null
+          inventory_source: string | null
           last_enriched: string | null
           last_scraped: string | null
+          last_stock_check: string | null
           make: string
           manual_overrides: Json | null
           model: string
@@ -460,6 +462,7 @@ export type Database = {
           spec_sheet_file_id: string | null
           specifications: Json | null
           stock_number: string | null
+          stock_quantity: number | null
           updated_at: string | null
           year: number
         }
@@ -477,8 +480,10 @@ export type Database = {
           id?: string
           image_url?: string | null
           images?: Json | null
+          inventory_source?: string | null
           last_enriched?: string | null
           last_scraped?: string | null
+          last_stock_check?: string | null
           make?: string
           manual_overrides?: Json | null
           model: string
@@ -488,6 +493,7 @@ export type Database = {
           spec_sheet_file_id?: string | null
           specifications?: Json | null
           stock_number?: string | null
+          stock_quantity?: number | null
           updated_at?: string | null
           year?: number
         }
@@ -505,8 +511,10 @@ export type Database = {
           id?: string
           image_url?: string | null
           images?: Json | null
+          inventory_source?: string | null
           last_enriched?: string | null
           last_scraped?: string | null
+          last_stock_check?: string | null
           make?: string
           manual_overrides?: Json | null
           model?: string
@@ -516,6 +524,7 @@ export type Database = {
           spec_sheet_file_id?: string | null
           specifications?: Json | null
           stock_number?: string | null
+          stock_quantity?: number | null
           updated_at?: string | null
           year?: number
         }
