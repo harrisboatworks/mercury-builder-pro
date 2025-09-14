@@ -305,11 +305,91 @@ export type Database = {
         }
         Relationships: []
       }
+      motor_data_sources: {
+        Row: {
+          base_url: string
+          created_at: string
+          id: string
+          is_active: boolean
+          last_scraped: string | null
+          name: string
+          priority: number
+          scrape_config: Json | null
+          success_rate: number | null
+          updated_at: string
+        }
+        Insert: {
+          base_url: string
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          last_scraped?: string | null
+          name: string
+          priority?: number
+          scrape_config?: Json | null
+          success_rate?: number | null
+          updated_at?: string
+        }
+        Update: {
+          base_url?: string
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          last_scraped?: string | null
+          name?: string
+          priority?: number
+          scrape_config?: Json | null
+          success_rate?: number | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      motor_enrichment_log: {
+        Row: {
+          action: string
+          conflicts: Json | null
+          created_at: string
+          data_added: Json | null
+          error_message: string | null
+          id: string
+          motor_id: string
+          source_name: string
+          success: boolean
+          user_id: string | null
+        }
+        Insert: {
+          action: string
+          conflicts?: Json | null
+          created_at?: string
+          data_added?: Json | null
+          error_message?: string | null
+          id?: string
+          motor_id: string
+          source_name: string
+          success?: boolean
+          user_id?: string | null
+        }
+        Update: {
+          action?: string
+          conflicts?: Json | null
+          created_at?: string
+          data_added?: Json | null
+          error_message?: string | null
+          id?: string
+          motor_id?: string
+          source_name?: string
+          success?: boolean
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       motor_models: {
         Row: {
           availability: string | null
           base_price: number
           created_at: string | null
+          data_quality_score: number | null
+          data_sources: Json | null
           description: string | null
           detail_url: string | null
           engine_type: string | null
@@ -318,11 +398,14 @@ export type Database = {
           id: string
           image_url: string | null
           images: Json | null
+          last_enriched: string | null
           last_scraped: string | null
           make: string
+          manual_overrides: Json | null
           model: string
           motor_type: string
           sale_price: number | null
+          source_priority: string[] | null
           spec_sheet_file_id: string | null
           specifications: Json | null
           stock_number: string | null
@@ -333,6 +416,8 @@ export type Database = {
           availability?: string | null
           base_price: number
           created_at?: string | null
+          data_quality_score?: number | null
+          data_sources?: Json | null
           description?: string | null
           detail_url?: string | null
           engine_type?: string | null
@@ -341,11 +426,14 @@ export type Database = {
           id?: string
           image_url?: string | null
           images?: Json | null
+          last_enriched?: string | null
           last_scraped?: string | null
           make?: string
+          manual_overrides?: Json | null
           model: string
           motor_type: string
           sale_price?: number | null
+          source_priority?: string[] | null
           spec_sheet_file_id?: string | null
           specifications?: Json | null
           stock_number?: string | null
@@ -356,6 +444,8 @@ export type Database = {
           availability?: string | null
           base_price?: number
           created_at?: string | null
+          data_quality_score?: number | null
+          data_sources?: Json | null
           description?: string | null
           detail_url?: string | null
           engine_type?: string | null
@@ -364,11 +454,14 @@ export type Database = {
           id?: string
           image_url?: string | null
           images?: Json | null
+          last_enriched?: string | null
           last_scraped?: string | null
           make?: string
+          manual_overrides?: Json | null
           model?: string
           motor_type?: string
           sale_price?: number | null
+          source_priority?: string[] | null
           spec_sheet_file_id?: string | null
           specifications?: Json | null
           stock_number?: string | null

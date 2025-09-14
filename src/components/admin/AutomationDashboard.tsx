@@ -7,6 +7,9 @@ import { useToast } from '@/components/ui/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { Loader2, CheckCircle, AlertTriangle, RefreshCw, Bot, Image, Shield, Eye, Wrench } from 'lucide-react';
 import { IssueDetailsModal } from './IssueDetailsModal';
+import { DataEnrichmentDashboard } from './DataEnrichmentDashboard';
+import { SourceManagement } from './SourceManagement';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 interface AutomationStatus {
   inventory: { running: boolean; lastRun: string; nextRun: string; status: string };
