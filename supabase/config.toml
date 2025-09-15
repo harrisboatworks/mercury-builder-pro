@@ -1,5 +1,8 @@
 project_id = "eutsoqdpjurknjsshxes"
 
+[functions.multi-source-scraper]
+verify_jwt = false
+
 [functions.scrape-inventory-v2]
 verify_jwt = false
 
