@@ -9,7 +9,7 @@ const corsHeaders = {
 
 // Parse motors from HTML function
 async function parseMotorsFromHTML(html: string, markdown: string = '') {
-  console.log('🔍 Starting restrictive motor parsing...')
+  console.log('🔍 Starting balanced motor parsing (markdown-focused)...')
   
   const motors = []
   
@@ -20,68 +20,89 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
     console.log(`📊 Result count found: ${resultMatch[1]} - ${resultMatch[2]} of ${resultMatch[3]}`)
   }
   
-  // Focus on markdown for cleaner parsing (less HTML noise)
-  console.log('📝 Focusing on markdown parsing for cleaner results')
-  console.log('Markdown length:', markdown.length)
+  // Focus on markdown for cleaner parsing
+  console.log('📝 Markdown length:', markdown.length)
   
-  // Very restrictive pattern for motor titles in markdown
-  // Look for lines that start with year and end with Mercury
+  // Log sample markdown content to understand structure
   const lines = markdown.split('\n')
-  const motorLines = lines.filter(line => {
-    const cleanLine = line.trim()
-    // Must start with year, contain HP, and end with Mercury
-    return /^(20(24|25))\s+.*\d+HP.*-\s*Mercury\s*$/i.test(cleanLine)
+  const firstLines = lines.slice(0, 20).filter(line => line.trim().length > 0)
+  console.log('First 20 non-empty markdown lines:')
+  firstLines.forEach((line, i) => {
+    console.log(`  ${i + 1}: "${line.trim()}"`)
   })
   
-  console.log('Potential motor lines found:', motorLines.length)
+  // Look for lines with year, HP, and Mercury (more flexible)
+  const motorLines = lines.filter(line => {
+    const cleanLine = line.trim().toLowerCase()
+    return cleanLine.includes('2024') || cleanLine.includes('2025') && 
+           cleanLine.includes('hp') && 
+           cleanLine.includes('mercury')
+  })
   
-  // Log first few motor lines for debugging
+  console.log('Lines containing year + HP + Mercury:', motorLines.length)
+  
+  // Log sample motor lines
   if (motorLines.length > 0) {
     console.log('Sample motor lines:')
-    motorLines.slice(0, 5).forEach((line, i) => {
+    motorLines.slice(0, 10).forEach((line, i) => {
       console.log(`  ${i + 1}: "${line.trim()}"`)
     })
   }
   
-  // Parse each motor line
+  // Parse motor lines with flexible pattern
   for (const line of motorLines) {
     const cleanLine = line.trim()
     
-    // Extract year, model info, and HP from the line
-    const motorMatch = cleanLine.match(/^(20(24|25))\s+(.*?)\s+(\d+)HP\s+(.*?)\s*-\s*Mercury\s*$/i)
+    // Look for year and HP in the line (flexible matching)
+    const yearMatch = cleanLine.match(/(20(24|25))/i)
+    const hpMatch = cleanLine.match(/(\d+)HP/i)
     
-    if (motorMatch) {
-      const year = parseInt(motorMatch[1])
-      const modelPart1 = motorMatch[3].trim()
-      const horsepower = parseInt(motorMatch[4])
-      const modelPart2 = motorMatch[5].trim()
+    if (yearMatch && hpMatch) {
+      const year = parseInt(yearMatch[1])
+      const horsepower = parseInt(hpMatch[1])
       
-      // Validate horsepower range
-      if (horsepower < 5 || horsepower > 500) {
+      // Validate horsepower range (reasonable range for outboard motors)
+      if (horsepower < 15 || horsepower > 400) {
         continue
       }
       
-      // Combine model parts
-      let modelName = `${modelPart1} ${modelPart2}`.trim()
+      // Extract model name - everything between year and HP, or after year
+      let modelName = ''
+      
+      // Try to extract model between year and HP
+      const betweenMatch = cleanLine.match(new RegExp(`${year}\\s+(.*?)\\s+${horsepower}HP`, 'i'))
+      if (betweenMatch) {
+        modelName = betweenMatch[1].trim()
+      } else {
+        // Fallback: extract everything after year before HP
+        const afterYearMatch = cleanLine.match(new RegExp(`${year}\\s+(.*?)(?=\\s*${horsepower}HP)`, 'i'))
+        if (afterYearMatch) {
+          modelName = afterYearMatch[1].trim()
+        }
+      }
       
       // Clean up model name
       modelName = modelName
         .replace(/®/g, '')
         .replace(/™/g, '')
+        .replace(/^#+\s*/, '') // Remove markdown headers
         .replace(/\s+/g, ' ')
         .trim()
       
-      // Skip if model name is too short or generic
-      if (modelName.length < 2) {
+      // Default model name if extraction failed
+      if (!modelName || modelName.length < 2) {
         modelName = `${horsepower}HP FourStroke`
       }
       
       // Determine motor type from model name
       let motorType = 'FourStroke'
-      if (modelName.toLowerCase().includes('verado')) {
+      const lowerModel = modelName.toLowerCase()
+      if (lowerModel.includes('verado')) {
         motorType = 'Verado'
-      } else if (modelName.toLowerCase().includes('pro xs')) {
+      } else if (lowerModel.includes('pro xs')) {
         motorType = 'Pro XS'
+      } else if (lowerModel.includes('seapro')) {
+        motorType = 'SeaPro'
       }
       
       const motor = {
@@ -93,87 +114,56 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
         year: year
       }
       
-      console.log('🎯 Found valid motor:', `${motor.year} ${motor.make} ${motor.model} ${motor.horsepower}HP`)
+      console.log('🎯 Found motor:', `${motor.year} ${motor.make} ${motor.model} ${motor.horsepower}HP`)
       motors.push(motor)
     }
   }
   
-  // If markdown parsing found very few results, try HTML as fallback
-  if (motors.length < 10) {
-    console.log('⚠️ Low motor count from markdown, trying HTML fallback...')
+  // If still no results from markdown, try HTML with a simple pattern
+  if (motors.length === 0) {
+    console.log('⚠️ No motors found in markdown, trying HTML fallback...')
     
-    // More restrictive HTML pattern - look for motor titles in specific contexts
-    const htmlPattern = /(20(24|25))\s+[^<>\n]*?(\d+)HP[^<>\n]*?Mercury/gi
+    // Simple HTML pattern - look for year + text + HP + text + Mercury
+    const htmlPattern = /(20(24|25))[^<]*?(\d+)HP[^<]*?Mercury/gi
     const htmlMatches = Array.from(html.matchAll(htmlPattern))
     
-    console.log('HTML fallback matches:', htmlMatches.length)
+    console.log('HTML fallback matches found:', htmlMatches.length)
     
-    // Log sample HTML matches
+    // Sample HTML matches
     if (htmlMatches.length > 0) {
       console.log('Sample HTML matches:')
-      htmlMatches.slice(0, 3).forEach((match, i) => {
+      htmlMatches.slice(0, 5).forEach((match, i) => {
         console.log(`  ${i + 1}: "${match[0]}"`)
       })
     }
     
-    const existingHPs = new Set(motors.map(m => m.horsepower))
-    
     for (const match of htmlMatches) {
       const year = parseInt(match[1])
       const horsepower = parseInt(match[3])
-      const fullMatch = match[0]
       
-      // Skip duplicates and invalid values
-      if (existingHPs.has(horsepower) || horsepower < 5 || horsepower > 500) {
+      // Validate horsepower range
+      if (horsepower < 15 || horsepower > 400) {
         continue
-      }
-      
-      // Extract model from the match
-      const modelMatch = fullMatch.match(/(20(24|25))\s+(.*?)\s+(\d+)HP/i)
-      let modelName = modelMatch ? modelMatch[3].trim() : `${horsepower}HP`
-      
-      // Clean up model name
-      modelName = modelName
-        .replace(/®/g, '')
-        .replace(/™/g, '')
-        .replace(/\s+/g, ' ')
-        .trim()
-      
-      if (modelName.length < 2) {
-        modelName = `${horsepower}HP FourStroke`
       }
       
       const motor = {
         make: 'Mercury',
-        model: modelName,
+        model: `${horsepower}HP FourStroke`,
         horsepower: horsepower,
         motor_type: 'FourStroke',
         base_price: null,
         year: year
       }
       
-      console.log('🎯 Found motor (HTML fallback):', `${motor.year} ${motor.make} ${motor.model} ${motor.horsepower}HP`)
+      console.log('🎯 Found motor (HTML):', `${motor.year} ${motor.make} ${motor.model} ${motor.horsepower}HP`)
       motors.push(motor)
-      existingHPs.add(horsepower)
     }
   }
   
-  // Advanced deduplication - handle slight name variations
-  const uniqueMotors = []
-  const seenCombinations = new Set()
-  
-  for (const motor of motors) {
-    // Create a normalized key for deduplication
-    const normalizedModel = motor.model.toLowerCase()
-      .replace(/[®™\s-]/g, '')
-      .replace(/fourstroke/g, '')
-    const key = `${motor.horsepower}-${normalizedModel}`
-    
-    if (!seenCombinations.has(key)) {
-      seenCombinations.add(key)
-      uniqueMotors.push(motor)
-    }
-  }
+  // Simple deduplication by horsepower
+  const uniqueMotors = motors.filter((motor, index, self) => 
+    index === self.findIndex(m => m.horsepower === motor.horsepower)
+  )
   
   console.log(`🧹 Deduplication: ${motors.length} → ${uniqueMotors.length} unique motors`)
   
