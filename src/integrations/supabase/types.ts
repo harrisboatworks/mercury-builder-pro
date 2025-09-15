@@ -14,6 +14,24 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_sources: {
+        Row: {
+          key: string
+          updated_at: string
+          value: string | null
+        }
+        Insert: {
+          key: string
+          updated_at?: string
+          value?: string | null
+        }
+        Update: {
+          key?: string
+          updated_at?: string
+          value?: string | null
+        }
+        Relationships: []
+      }
       customer_quotes: {
         Row: {
           anonymous_session_id: string | null

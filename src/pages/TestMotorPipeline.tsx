@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Clock, AlertCircle, Play } from 'lucide-react';
+import { CheckCircle, Clock, AlertCircle, Play, Download, ExternalLink } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 
@@ -24,6 +24,71 @@ export default function TestMotorPipeline() {
     { step: 'Step 5: Sanity Check', status: 'pending', message: 'Ready to test' },
   ]);
   const [currentStep, setCurrentStep] = useState(0);
+  const [sourceSettings, setSourceSettings] = useState<any>(null);
+
+  // Load source settings on mount
+  useState(() => {
+    loadSourceSettings();
+  });
+
+  const loadSourceSettings = async () => {
+    try {
+      const { data } = await supabase
+        .from('admin_sources')
+        .select('*')
+        .in('key', ['pricelist_default_source', 'pricelist_default_url', 'pricelist_last_csv', 'pricelist_last_html']);
+      
+      if (data) {
+        const settings: any = {};
+        data.forEach(item => {
+          settings[item.key] = item.value;
+        });
+        setSourceSettings(settings);
+      }
+    } catch (error) {
+      console.error('Error loading source settings:', error);
+    }
+  };
+
+  const getSourceUrl = () => {
+    if (!sourceSettings) return 'https://www.harrisboatworks.ca/mercurypricelist';
+    
+    const defaultSource = sourceSettings.pricelist_default_source;
+    if (defaultSource === 'csv' && sourceSettings.pricelist_last_csv) {
+      return null; // Use CSV content instead
+    } else if (defaultSource === 'html' && sourceSettings.pricelist_last_html) {
+      return sourceSettings.pricelist_default_url || 'https://www.harrisboatworks.ca/mercurypricelist';
+    }
+    
+    return sourceSettings.pricelist_default_url || 'https://www.harrisboatworks.ca/mercurypricelist';
+  };
+
+  const getSourceContent = async () => {
+    if (!sourceSettings) return {};
+    
+    const defaultSource = sourceSettings.pricelist_default_source;
+    if (defaultSource === 'csv' && sourceSettings.pricelist_last_csv) {
+      try {
+        const response = await fetch(sourceSettings.pricelist_last_csv);
+        const csvContent = await response.text();
+        return { csv_content: csvContent };
+      } catch (error) {
+        console.error('Failed to fetch CSV content:', error);
+        return {};
+      }
+    } else if (defaultSource === 'html' && sourceSettings.pricelist_last_html) {
+      try {
+        const response = await fetch(sourceSettings.pricelist_last_html);
+        const htmlContent = await response.text();
+        return { html_content: htmlContent };
+      } catch (error) {
+        console.error('Failed to fetch HTML content:', error);
+        return {};
+      }
+    }
+    
+    return {};
+  };
 
   const updateResult = (index: number, status: TestResult['status'], message: string, data?: any) => {
     setResults(prev => prev.map((result, i) => 
@@ -41,10 +106,14 @@ export default function TestMotorPipeline() {
     updateResult(stepIndex, 'running', 'Testing price list dry run...');
     
     try {
+      const sourceUrl = getSourceUrl();
+      const sourceContent = await getSourceContent();
+      
       const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
         body: { 
-          url: 'https://www.harrisboatworks.ca/mercurypricelist',
-          dry_run: true
+          url: sourceUrl,
+          dry_run: true,
+          ...sourceContent
         }
       });
 
@@ -59,7 +128,7 @@ export default function TestMotorPipeline() {
       }
 
       const skipped = data.skipped_due_to_same_checksum ? 1 : 0;
-      const message = `parsed ${data.rows_parsed} • created ${data.rows_created} • updated ${data.rows_updated || 0} • errors ${data.errors || 0} • skipped ${skipped}`;
+      const message = `[${data.content_source?.toUpperCase() || 'URL'}] parsed ${data.rows_parsed_total || data.rows_parsed} • normalized ${data.rows_normalized || 0} • would create ${data.rows_created || 0} • would update ${data.rows_updated || 0} • errors ${data.rows_with_invalid_key + data.rows_with_invalid_price || 0} • skipped ${skipped}`;
       logCheckpoint(`DRY RUN → ${message}`);
       updateResult(stepIndex, 'success', message, data);
     } catch (error: any) {
@@ -72,11 +141,15 @@ export default function TestMotorPipeline() {
     updateResult(stepIndex, 'running', 'Ingesting price list with msrp_markup 1.10...');
     
     try {
+      const sourceUrl = getSourceUrl();
+      const sourceContent = await getSourceContent();
+      
       const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
         body: { 
-          url: 'https://www.harrisboatworks.ca/mercurypricelist',
+          url: sourceUrl,
           dry_run: false,
-          msrp_markup: 1.10
+          msrp_markup: 1.10,
+          ...sourceContent
         }
       });
 
@@ -91,7 +164,7 @@ export default function TestMotorPipeline() {
       }
 
       const skipped = data.skipped_due_to_same_checksum ? 1 : 0;
-      const message = `parsed ${data.rows_parsed} • created ${data.rows_created} • updated ${data.rows_updated || 0} • errors ${data.errors || 0} • skipped ${skipped}`;
+      const message = `[${data.content_source?.toUpperCase() || 'URL'}] parsed ${data.rows_parsed_total || data.rows_parsed} • normalized ${data.rows_normalized || 0} • created ${data.rows_created || 0} • updated ${data.rows_updated || 0} • errors ${data.rows_with_invalid_key + data.rows_with_invalid_price || 0} • skipped ${skipped}`;
       logCheckpoint(`INGEST → ${message}`);
       updateResult(stepIndex, 'success', message, data);
     } catch (error: any) {
@@ -308,8 +381,71 @@ export default function TestMotorPipeline() {
               <CardDescription className="text-sm">
                 {result.message}
               </CardDescription>
+              
+              {/* Source Information */}
+              {(index === 0 || index === 1) && sourceSettings && (
+                <div className="mt-2 text-xs text-muted-foreground">
+                  Using source: {sourceSettings.pricelist_default_source?.toUpperCase() || 'URL'} 
+                  {sourceSettings.pricelist_default_url && ` (${new URL(sourceSettings.pricelist_default_url).hostname})`}
+                </div>
+              )}
+              
               {result.data && (
                 <div className="mt-3 space-y-2">
+                  {/* Enhanced Results Display for Steps 1A/1B */}
+                  {(index === 0 || index === 1) && result.data.sample_models && (
+                    <div className="space-y-3">
+                      <div className="text-sm font-medium">Top 10 Parsed Models:</div>
+                      <div className="bg-muted rounded p-2 text-xs font-mono overflow-x-auto max-h-40 overflow-y-auto">
+                        <div className="grid grid-cols-6 gap-2 font-semibold border-b pb-1 mb-1 sticky top-0 bg-muted">
+                          <div>Model Number</div>
+                          <div>Model Key</div>
+                          <div>Family</div>
+                          <div>HP</div>
+                          <div>Dealer $</div>
+                          <div>MSRP $</div>
+                        </div>
+                        {result.data.sample_models.slice(0, 10).map((model: any, idx: number) => (
+                          <div key={idx} className="grid grid-cols-6 gap-2 py-1">
+                            <div className="truncate" title={model.model_number}>{model.model_number || '-'}</div>
+                            <div className="truncate text-blue-600">{model.model_key}</div>
+                            <div>{model.family || '-'}</div>
+                            <div>{model.horsepower || '-'}</div>
+                            <div>${model.dealer_price}</div>
+                            <div>${model.msrp}</div>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      {/* Enhanced counts display */}
+                      <div className="text-xs text-muted-foreground space-y-1">
+                        <div>Rows found: {result.data.rows_parsed_total || result.data.rows_parsed} • Valid: {result.data.rows_normalized} • Invalid keys: {result.data.rows_with_invalid_key} • Invalid prices: {result.data.rows_with_invalid_price}</div>
+                        <div>Blank rows skipped: {result.data.rows_skipped_blank} • Missing required: {result.data.rows_missing_required} • Duplicates: {result.data.duplicates_in_feed}</div>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Last Capture URLs */}
+                  {(index === 0 || index === 1) && sourceSettings && (
+                    <div className="space-y-2">
+                      <div className="text-sm font-medium">Open Last Capture:</div>
+                      <div className="flex gap-2">
+                        {sourceSettings.pricelist_last_html && (
+                          <Button size="sm" variant="outline" onClick={() => window.open(sourceSettings.pricelist_last_html, '_blank')}>
+                            <ExternalLink className="h-3 w-3 mr-1" />
+                            HTML
+                          </Button>
+                        )}
+                        {sourceSettings.pricelist_last_csv && (
+                          <Button size="sm" variant="outline" onClick={() => window.open(sourceSettings.pricelist_last_csv, '_blank')}>
+                            <ExternalLink className="h-3 w-3 mr-1" />
+                            CSV
+                          </Button>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
                   {/* Artifact downloads for steps 1A/1B */}
                   {(index === 0 || index === 1) && result.data.artifacts && (
                     <div className="flex gap-2">
@@ -319,6 +455,7 @@ export default function TestMotorPipeline() {
                           variant="outline"
                           onClick={() => window.open(result.data.artifacts.csv_url, '_blank')}
                         >
+                          <Download className="h-3 w-3 mr-1" />
                           Download CSV
                         </Button>
                       )}
@@ -328,6 +465,7 @@ export default function TestMotorPipeline() {
                           variant="outline"
                           onClick={() => window.open(result.data.artifacts.json_url, '_blank')}
                         >
+                          <Download className="h-3 w-3 mr-1" />
                           Download JSON
                         </Button>
                       )}
@@ -337,14 +475,16 @@ export default function TestMotorPipeline() {
                           variant="outline"
                           onClick={() => window.open(result.data.artifacts.html_url, '_blank')}
                         >
+                          <Download className="h-3 w-3 mr-1" />
                           Download HTML
                         </Button>
                       )}
                     </div>
                   )}
+                  
                   <details className="mt-2">
                     <summary className="text-sm text-muted-foreground cursor-pointer">
-                      View Details
+                      View Raw Details
                     </summary>
                     <pre className="mt-2 text-xs bg-muted p-2 rounded overflow-auto">
                       {JSON.stringify(result.data, null, 2)}

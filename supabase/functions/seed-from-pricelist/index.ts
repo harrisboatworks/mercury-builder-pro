@@ -109,13 +109,52 @@ async function saveArtifact(supabase: any, filename: string, content: string, co
   return signedUrl?.signedUrl || '';
 }
 
-// Parse HTML table(s) for Mercury models
-function parseHtml(html: string): Array<{model_display: string, dealer_price: number}> {
+// Enhanced CSV parser
+function parseCSV(csvContent: string): Array<{model_display: string, model_number?: string, horsepower?: number, family?: string, dealer_price?: number}> {
+  const lines = csvContent.split('\n').filter(line => line.trim());
+  if (lines.length < 2) return [];
+  
+  const header = lines[0].toLowerCase();
+  const results: any[] = [];
+  
+  // Try to identify column indices
+  const cols = header.split(',').map(h => cleanText(h.replace(/['"]/g, '')));
+  const modelCol = cols.findIndex(col => /model|name|description/i.test(col));
+  const numberCol = cols.findIndex(col => /number|code|sku/i.test(col));
+  const hpCol = cols.findIndex(col => /hp|horsepower|power/i.test(col));
+  const familyCol = cols.findIndex(col => /family|type|series/i.test(col));
+  const priceCol = cols.findIndex(col => /price|cost|dealer/i.test(col));
+  
+  console.log(`[PriceList] CSV columns detected: model=${modelCol}, number=${numberCol}, hp=${hpCol}, family=${familyCol}, price=${priceCol}`);
+  
+  for (let i = 1; i < lines.length; i++) {
+    const values = lines[i].split(',').map(v => cleanText(v.replace(/['"]/g, '')));
+    if (values.length < 2) continue;
+    
+    const row: any = {};
+    if (modelCol >= 0 && values[modelCol]) row.model_display = values[modelCol];
+    if (numberCol >= 0 && values[numberCol]) row.model_number = values[numberCol];
+    if (hpCol >= 0 && values[hpCol]) row.horsepower = parseFloat(values[hpCol]) || null;
+    if (familyCol >= 0 && values[familyCol]) row.family = values[familyCol];
+    if (priceCol >= 0 && values[priceCol]) row.dealer_price = parsePrice(values[priceCol]);
+    
+    if (row.model_display || row.model_number) {
+      results.push(row);
+    }
+  }
+  
+  return results;
+}
+
+// Enhanced HTML parser for Mercury models
+function parseHTML(html: string): Array<{model_display: string, model_number?: string, horsepower?: number, family?: string, dealer_price?: number}> {
   const $ = load(html);
-  const results: Array<{model_display: string, dealer_price: number}> = [];
+  const results: any[] = [];
+  
+  console.log(`[PriceList] Parsing HTML tables...`);
   
   // Find all tables and process them
-  $('table').each((_, table) => {
+  $('table').each((tableIdx, table) => {
     const $table = $(table);
     
     // Skip if doesn't look like a price table
@@ -124,42 +163,80 @@ function parseHtml(html: string): Array<{model_display: string, dealer_price: nu
       return;
     }
     
+    console.log(`[PriceList] Processing table ${tableIdx + 1}`);
+    
     // Process table rows
-    $table.find('tr').each((_, row) => {
+    $table.find('tr').each((rowIdx, row) => {
       const $row = $(row);
-      const cells = $row.find('td, th').toArray().map(cell => $(cell).text().trim());
+      const cells = $row.find('td, th').toArray().map(cell => cleanText($(cell).text()));
       
       if (cells.length < 2) return;
       
+      // Skip header rows
+      const cellsText = cells.join(' ').toLowerCase();
+      if (/model|name|description|price|hp/i.test(cellsText) && rowIdx < 3) return;
+      
       // Look for model and price in any combination of columns
       let model_display = '';
-      let dealer_price = 0;
+      let model_number = '';
+      let horsepower: number | null = null;
+      let family = '';
+      let dealer_price: number | null = null;
       
       for (const cell of cells) {
         // Check if this looks like a model name (contains HP or motor family)
-        if (!model_display && (/\d+\s*hp/i.test(cell) || /fourstroke|prox|verado|seapro/i.test(cell))) {
+        if (!model_display && (/\d+\s*hp/i.test(cell) || /fourstroke|prox|verado|seapro|racing/i.test(cell))) {
           model_display = cell;
+          
+          // Try to extract horsepower
+          const hpMatch = cell.match(/(\d+(?:\.\d+)?)\s*hp/i);
+          if (hpMatch) horsepower = parseFloat(hpMatch[1]);
+          
+          // Try to extract family
+          if (/fourstroke/i.test(cell)) family = 'FourStroke';
+          else if (/prox/i.test(cell)) family = 'ProXS';
+          else if (/seapro/i.test(cell)) family = 'SeaPro';
+          else if (/verado/i.test(cell)) family = 'Verado';
+          else if (/racing/i.test(cell)) family = 'Racing';
+        }
+        
+        // Check if this looks like a model number (Mercury format)
+        if (!model_number && /^[A-Z0-9]{4,12}$/.test(cell.replace(/\s/g, ''))) {
+          model_number = cell.replace(/\s/g, '');
         }
         
         // Check if this looks like a price
         if (!dealer_price) {
-          const priceMatch = cell.match(/\$?\s*(\d{1,6}(?:,\d{3})*(?:\.\d{2})?)/);
-          if (priceMatch) {
-            const price = Number(priceMatch[1].replace(/,/g, ''));
-            if (price > 100 && price < 1000000) { // Reasonable price range
-              dealer_price = price;
-            }
+          const price = parsePrice(cell);
+          if (price && price > 100 && price < 1000000) { // Reasonable price range
+            dealer_price = price;
           }
         }
       }
       
-      if (model_display && dealer_price > 0) {
-        results.push({ model_display: model_display.trim(), dealer_price });
+      if (model_display && dealer_price) {
+        results.push({ 
+          model_display: model_display.trim(),
+          model_number: model_number || undefined,
+          horsepower: horsepower || undefined,
+          family: family || undefined,
+          dealer_price 
+        });
       }
     });
   });
   
+  console.log(`[PriceList] HTML parsing found ${results.length} rows`);
   return results;
+}
+
+// Unified parser that handles both CSV and HTML
+function parseContent(content: string, contentType: 'csv' | 'html'): Array<{model_display: string, model_number?: string, horsepower?: number, family?: string, dealer_price?: number}> {
+  if (contentType === 'csv') {
+    return parseCSV(content);
+  } else {
+    return parseHTML(content);
+  }
 }
 
 // Helper function for consistent JSON responses
@@ -191,35 +268,53 @@ serve(async (req) => {
       dry_run = false, 
       msrp_markup = 1.10, 
       force = false,
-      create_missing_brochure = true
+      create_missing_brochure = true,
+      csv_content = null,
+      html_content = null
     } = await req.json();
     
-    console.log(`Starting price list ingest from: ${url}`);
+    console.log(`[PriceList] Starting price list ingest. dry_run=${dry_run}, create_brochure=${create_missing_brochure}, msrp_markup=${msrp_markup}`);
     
-    // STEP 1: Fetch HTML
+    let html = '';
+    let checksum = '';
+    let contentSource = 'url';
+    
+    // STEP 1: Get content (URL fetch, CSV, or HTML)
     currentStep = 'fetch';
-    console.log('Fetching HTML...');
-    const response = await fetch(url, {
-      headers: { 
-        'User-Agent': 'HBW-InventoryBot/1.0',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-      },
-      redirect: 'follow'
-    });
     
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    if (csv_content) {
+      console.log(`[PriceList] Using provided CSV content (${csv_content.length} chars)`);
+      html = csv_content;
+      contentSource = 'csv';
+      checksum = await generateChecksum(csv_content);
+    } else if (html_content) {
+      console.log(`[PriceList] Using provided HTML content (${html_content.length} chars)`);
+      html = html_content;
+      contentSource = 'html';
+      checksum = await generateChecksum(html_content);
+    } else {
+      console.log(`[PriceList] Fetching HTML from URL: ${url}`);
+      const response = await fetch(url, {
+        headers: { 
+          'User-Agent': 'HBW-InventoryBot/1.0',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+        },
+        redirect: 'follow'
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+      
+      html = await response.text();
+      contentSource = 'url';
+      checksum = await generateChecksum(html);
     }
     
-    const html = await response.text();
-    console.log(`Fetched ${html.length} chars of HTML`);
-    
-    // Generate checksum
-    const checksum = await generateChecksum(html);
-    console.log(`HTML checksum: ${checksum}`);
+    console.log(`[PriceList] Got content: ${html.length} chars, checksum: ${checksum.substring(0, 8)}`);
     
     // Check if content unchanged (unless force=true)
-    if (!force) {
+    if (!force && contentSource === 'url') {
       const { data: recentSnapshots } = await supabase.storage
         .from('sources')
         .list('pricelist', { limit: 10, sortBy: { column: 'created_at', order: 'desc' } });
@@ -227,29 +322,35 @@ serve(async (req) => {
       if (recentSnapshots) {
         for (const file of recentSnapshots) {
           if (file.name.includes(checksum.substring(0, 8))) {
-            console.log(`Skipping - content unchanged (checksum match)`);
+            console.log(`[PriceList] Skipping - content unchanged (checksum match)`);
             return json200({
               success: true,
               skipped_due_to_same_checksum: true,
               checksum,
               rows_parsed: 0,
+              rows_normalized: 0,
               rows_created: 0,
-              rows_updated: 0,
-              errors: 0
+              rows_updated: 0
             });
           }
         }
       }
     }
     
-    // STEP 2: Parse HTML tables
+    // STEP 2: Parse content
     currentStep = 'parse';
-    console.log('Parsing HTML tables...');
-    const rawData = parseHtml(html);
-    console.log(`Parsed ${rawData.length} raw entries`);
+    console.log(`[PriceList] Parsing content as ${contentSource}...`);
     
-    if (rawData.length === 0) {
-      throw new Error('No valid price data found in HTML tables');
+    const rawData = parseContent(html, contentSource === 'csv' ? 'csv' : 'html');
+    const rows_found = rawData.length;
+    
+    console.log(`[PriceList] source=${contentSource.toUpperCase()} rows_found=${rows_found}`);
+    if (rows_found > 0) {
+      console.log(`[PriceList] example_row=${JSON.stringify(rawData[0])}`);
+    }
+    
+    if (rows_found === 0) {
+      throw new Error('No valid price data found in content');
     }
     
     // STEP 3: Normalize data and build model objects
@@ -257,12 +358,31 @@ serve(async (req) => {
     const rows: any[] = [];
     const duplicatesInFeed: string[] = [];
     const seenModelKeys = new Set<string>();
+    let rows_skipped_blank = 0;
+    let rows_missing_required = 0;
     
     for (let i = 0; i < rawData.length; i++) {
       const r = rawData[i];
-      const cleaned_model_display = cleanText(r.model_display);
-      const attrs = parseModelFromText(cleaned_model_display);
-      const model_key = buildModelKey(cleaned_model_display);
+      
+      // Skip completely blank rows
+      if (!r.model_display && !r.model_number) {
+        rows_skipped_blank++;
+        continue;
+      }
+      
+      const cleaned_model_display = cleanText(r.model_display || '');
+      const model_number = cleanText(r.model_number || '');
+      
+      // Parse attributes from model display or use provided data
+      const attrs = r.family ? {
+        family: r.family,
+        horsepower: r.horsepower || null,
+        fuel: 'EFI',
+        rigging_code: ''
+      } : parseModelFromText(cleaned_model_display);
+      
+      // Build model_key using shared helper
+      const model_key = buildModelKey(cleaned_model_display || model_number);
       
       // Track detailed errors with line numbers
       if (!model_key || model_key.trim() === '') {
@@ -273,10 +393,11 @@ serve(async (req) => {
           dealer_price_raw: String(r.dealer_price),
           reason: 'invalid_key'
         });
+        rows_missing_required++;
         continue;
       }
       
-      const dealer_price = parsePrice(String(r.dealer_price));
+      const dealer_price = parsePrice(String(r.dealer_price || ''));
       if (!dealer_price || dealer_price <= 0) {
         rowErrors.push({ 
           line: i + 1,
@@ -285,6 +406,7 @@ serve(async (req) => {
           dealer_price_raw: String(r.dealer_price),
           reason: 'invalid_price'
         });
+        rows_missing_required++;
         continue;
       }
       
@@ -300,7 +422,7 @@ serve(async (req) => {
       // Build the row object for upsert
       const row: any = {
         make: 'Mercury',
-        model: cleaned_model_display,
+        model: cleaned_model_display || model_number,
         model_key,
         year: 2025,
         motor_type: attrs.family,
@@ -311,6 +433,11 @@ serve(async (req) => {
         last_scraped: new Date().toISOString(),
         inventory_source: 'pricelist'
       };
+      
+      // Add model_number if we have it
+      if (model_number) {
+        row.model_number = model_number;
+      }
       
       // Only create brochure entries if requested (default true)
       if (create_missing_brochure) {
@@ -332,7 +459,7 @@ serve(async (req) => {
     const rows_with_invalid_key = rowErrors.filter(e => e.reason === 'invalid_key').length;
     const rows_with_invalid_price = rowErrors.filter(e => e.reason === 'invalid_price').length;
     
-    console.log(`Processed ${rawData.length} raw entries into ${rows_normalized} valid rows, ${rowErrors.length} errors`);
+    console.log(`[PriceList] source=${contentSource.toUpperCase()} rows_found=${rows_found} rows_valid=${rows_normalized} created=TBD updated=TBD skipped_blank=${rows_skipped_blank} missing_required=${rows_missing_required}`);
     
     // Deduplication logic: Group by model_key and pick best row for each key
     const keyGroups = new Map<string, any[]>();
@@ -344,17 +471,20 @@ serve(async (req) => {
       keyGroups.get(model.model_key)!.push(model);
     }
     
-    // Pick best representative for each key (prefer higher HP, then more detailed model name)
+    // Pick best representative for each key (prefer model_number, then higher HP, then more detailed model name)
     const deduplicatedModels = Array.from(keyGroups.values()).map(group => {
       if (group.length === 1) return group[0];
       
       return group.sort((a, b) => {
+        // Prefer models with model_number
+        if (a.model_number && !b.model_number) return -1;
+        if (!a.model_number && b.model_number) return 1;
         if (a.horsepower !== b.horsepower) return (b.horsepower || 0) - (a.horsepower || 0);
         return b.model.length - a.model.length;
       })[0];
     });
     
-    console.log(`Deduplicated to ${deduplicatedModels.length} models`);
+    console.log(`[PriceList] Deduplicated to ${deduplicatedModels.length} models`);
     
     // STEP 4: Save artifacts (always, even on future failure)
     currentStep = 'snapshot';
@@ -364,41 +494,27 @@ serve(async (req) => {
     // Prepare artifacts
     const jsonContent = JSON.stringify(deduplicatedModels, null, 2);
     const csvRows = [
-      'model_display,model_key,family,horsepower,fuel,rigging_code,year,dealer_price,msrp,is_brochure,in_stock,price_source',
+      'model_display,model_number,model_key,family,horsepower,fuel,rigging_code,year,dealer_price,msrp,is_brochure,in_stock,price_source',
       ...deduplicatedModels.map(m => 
-        `"${m.model}","${m.model_key}","${m.family || ''}",${m.horsepower || ''},"${m.fuel_type || ''}","${m.rigging_code || ''}",${m.year},${m.dealer_price},${m.msrp},${m.is_brochure},${m.in_stock},"${m.price_source || ''}"`
+        `"${m.model}","${m.model_number || ''}","${m.model_key}","${m.family || ''}",${m.horsepower || ''},"${m.fuel_type || ''}","${m.rigging_code || ''}",${m.year},${m.dealer_price},${m.msrp},${m.is_brochure},${m.in_stock},"${m.price_source || ''}"`
       )
     ];
     const csvContent = csvRows.join('\n');
     
     // Save artifacts to storage
-    console.log('Saving artifacts to storage...');
+    console.log('[PriceList] Saving artifacts to storage...');
     const artifacts = {
       html_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.html`, html, 'text/html'),
       json_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.json`, jsonContent, 'application/json'),
       csv_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.csv`, csvContent, 'text/csv')
     };
     
-    // Prune old snapshots
-    try {
-      console.log('Pruning old pricelist snapshots...');
-      const { data: allFiles, error: listError } = await supabase.storage
-        .from('sources')
-        .list('pricelist', { limit: 1000, sortBy: { column: 'created_at', order: 'desc' } });
-        
-      if (listError) {
-        console.error('Error listing files for pruning:', listError);
-      } else if (allFiles && allFiles.length > 30) {
-        const filesToDelete = allFiles.slice(30);
-        const deletePromises = filesToDelete.map(file => 
-          supabase.storage.from('sources').remove([`pricelist/${file.name}`])
-        );
-        
-        await Promise.allSettled(deletePromises);
-        console.log(`Pruned ${filesToDelete.length} old pricelist files`);
-      }
-    } catch (pruneError) {
-      console.error('Error during snapshot pruning:', pruneError);
+    // Update admin_sources with the latest URLs
+    if (contentSource === 'csv' && artifacts.csv_url) {
+      await supabase.from('admin_sources').upsert({ key: 'pricelist_last_csv', value: artifacts.csv_url });
+    }
+    if (artifacts.html_url) {
+      await supabase.from('admin_sources').upsert({ key: 'pricelist_last_html', value: artifacts.html_url });
     }
     
     let rows_created = 0;
@@ -410,30 +526,56 @@ serve(async (req) => {
     // STEP 5: Database upsert (unless dry_run)
     if (!dry_run) {
       currentStep = 'upsert';
-      console.log(`Upserting ${deduplicatedModels.length} models to database...`);
+      console.log(`[PriceList] Upserting ${deduplicatedModels.length} models to database...`);
       
-      // Fetch existing records to preserve inventory data
+      // Fetch existing records to preserve inventory data - use both model_number and model_key lookups
+      const modelNumbers = deduplicatedModels.map(m => m.model_number).filter(Boolean);
       const modelKeys = deduplicatedModels.map(m => m.model_key);
-      const { data: existingRecords, error: fetchError } = await supabase
-        .from('motor_models')
-        .select('model_key, in_stock, image_url, stock_quantity, availability, last_stock_check, dealer_price, msrp')
-        .in('model_key', modelKeys);
-        
-      if (fetchError) {
-        throw new Error(`fetch_existing_failed: ${fetchError.message}`);
+      
+      let existingRecords: any[] = [];
+      
+      // Fetch by model_number first (preferred)
+      if (modelNumbers.length > 0) {
+        const { data: byNumber } = await supabase
+          .from('motor_models')
+          .select('model_number, model_key, in_stock, image_url, hero_image_url, stock_quantity, availability, last_stock_check, dealer_price, msrp')
+          .in('model_number', modelNumbers);
+        if (byNumber) existingRecords = existingRecords.concat(byNumber);
       }
       
-      // Create lookup map for existing records
-      const existingMap = new Map();
-      existingRecords?.forEach(record => {
-        existingMap.set(record.model_key, record);
+      // Fetch by model_key for any remaining
+      const { data: byKey } = await supabase
+        .from('motor_models')
+        .select('model_number, model_key, in_stock, image_url, hero_image_url, stock_quantity, availability, last_stock_check, dealer_price, msrp')
+        .in('model_key', modelKeys);
+      if (byKey) {
+        // Only add records not already found by model_number
+        const existingNumbers = new Set(existingRecords.map(r => r.model_number).filter(Boolean));
+        const existingKeys = new Set(existingRecords.map(r => r.model_key));
+        const newByKey = byKey.filter(r => 
+          (!r.model_number || !existingNumbers.has(r.model_number)) && 
+          !existingKeys.has(r.model_key)
+        );
+        existingRecords = existingRecords.concat(newByKey);
+      }
+      
+      // Create lookup maps
+      const existingByNumber = new Map();
+      const existingByKey = new Map();
+      existingRecords.forEach(record => {
+        if (record.model_number) existingByNumber.set(record.model_number, record);
+        existingByKey.set(record.model_key, record);
       });
       
-      rows_matched_existing = existingRecords?.length || 0;
+      rows_matched_existing = existingRecords.length;
       
       // Prepare models for upsert with preserved inventory data
       const modelsForUpsert = deduplicatedModels.map(newModel => {
-        const existing = existingMap.get(newModel.model_key);
+        // Prefer lookup by model_number, fallback to model_key
+        const existing = newModel.model_number 
+          ? existingByNumber.get(newModel.model_number) || existingByKey.get(newModel.model_key)
+          : existingByKey.get(newModel.model_key);
+          
         const changedFields: string[] = [];
         
         if (existing) {
@@ -443,8 +585,9 @@ serve(async (req) => {
           
           const updatedModel = {
             ...newModel,
-            in_stock: existing.in_stock, // Never flip this
+            in_stock: existing.in_stock, // Never flip this from XML inventory
             image_url: existing.image_url || newModel.image_url,
+            hero_image_url: existing.hero_image_url || newModel.hero_image_url,
             stock_quantity: existing.stock_quantity,
             availability: existing.availability || newModel.availability,
             last_stock_check: existing.last_stock_check,
@@ -452,6 +595,7 @@ serve(async (req) => {
           
           rowMatches.push({
             model_key: newModel.model_key,
+            model_number: newModel.model_number || '',
             action: changedFields.length > 0 ? 'updated' : 'unchanged',
             changed_fields: changedFields
           });
@@ -460,6 +604,7 @@ serve(async (req) => {
         } else {
           rowMatches.push({
             model_key: newModel.model_key,
+            model_number: newModel.model_number || '',
             action: 'created',
             changed_fields: ['*']
           });
@@ -468,51 +613,67 @@ serve(async (req) => {
         return newModel; // New record, use as-is
       });
       
+      // Use conflict resolution on model_number if available, else model_key
       const { error: upsertError } = await supabase
         .from('motor_models')
-        .upsert(modelsForUpsert, { onConflict: 'model_key' });
+        .upsert(modelsForUpsert, { onConflict: 'model_key' }); // We'll handle model_number conflicts in app logic
       
       if (upsertError) {
         throw new Error(`upsert_failed: ${upsertError.message}`);
       }
       
       // Count creates vs updates
-      rows_created = modelsForUpsert.filter(m => !existingMap.has(m.model_key)).length;
+      rows_created = rowMatches.filter(m => m.action === 'created').length;
       rows_updated = rowMatches.filter(m => m.action === 'updated').length;
       rows_skipped = rowMatches.filter(m => m.action === 'unchanged').length;
       
-      console.log(`Successfully processed ${rows_created} creates, ${rows_updated} updates`);
+      console.log(`[PriceList] source=${contentSource.toUpperCase()} rows_found=${rows_found} rows_valid=${rows_normalized} created=${rows_created} updated=${rows_updated} skipped_blank=${rows_skipped_blank} missing_required=${rows_missing_required}`);
     } else {
       // For dry run, simulate the matching logic
+      const modelNumbers = deduplicatedModels.map(m => m.model_number).filter(Boolean);
       const modelKeys = deduplicatedModels.map(m => m.model_key);
-      const { data: existingRecords } = await supabase
+      
+      let existingCount = 0;
+      if (modelNumbers.length > 0) {
+        const { data: byNumber } = await supabase
+          .from('motor_models')
+          .select('model_number, model_key', { count: 'exact' })
+          .in('model_number', modelNumbers);
+        existingCount += byNumber?.length || 0;
+      }
+      
+      const { data: byKey } = await supabase
         .from('motor_models')
-        .select('model_key')
+        .select('model_key', { count: 'exact' })
         .in('model_key', modelKeys);
-        
-      const existingKeys = new Set(existingRecords?.map(r => r.model_key) || []);
-      rows_matched_existing = existingKeys.size;
-      rows_created = deduplicatedModels.length - rows_matched_existing;
+      existingCount += byKey?.length || 0;
+      
+      rows_matched_existing = existingCount;
+      rows_created = Math.max(0, deduplicatedModels.length - existingCount);
     }
     
-    // Prepare sample data (first 3 items)
-    const sample = deduplicatedModels.slice(0, 3).map(m => ({
+    // Prepare sample data (first 10 items)
+    const sampleModels = deduplicatedModels.slice(0, 10).map(m => ({
       model_display: m.model,
+      model_number: m.model_number || '',
       model_key: m.model_key,
-      dealer_price: m.dealer_price,
-      msrp: m.msrp,
       family: m.family,
       horsepower: m.horsepower,
       fuel: m.fuel_type,
-      rigging_code: m.rigging_code
+      rigging_code: m.rigging_code,
+      dealer_price: m.dealer_price,
+      msrp: m.msrp
     }));
     
     return json200({
       success: true,
-      rows_parsed: rawData.length,
+      content_source: contentSource,
+      rows_parsed_total: rows_found,
       rows_normalized,
       rows_with_invalid_key,
       rows_with_invalid_price,
+      rows_skipped_blank,
+      rows_missing_required,
       duplicates_in_feed: duplicatesInFeed.length,
       rows_matched_existing,
       rows_created,
@@ -523,11 +684,11 @@ serve(async (req) => {
       checksum,
       skipped_due_to_same_checksum: false,
       artifacts,
-      sample
+      sample_models: sampleModels
     });
     
   } catch (error: any) {
-    console.error('seed-from-pricelist failed:', error);
+    console.error('[PriceList] seed-from-pricelist failed:', error);
     
     // Try to save artifacts even on failure for debugging
     let debugArtifacts = null;
@@ -554,7 +715,7 @@ serve(async (req) => {
         debugArtifacts = { error_log_url: errorLogUrl };
       }
     } catch (artifactError) {
-      console.error('Failed to save debug artifacts:', artifactError);
+      console.error('[PriceList] Failed to save debug artifacts:', artifactError);
     }
     
     return json200({
@@ -567,7 +728,7 @@ serve(async (req) => {
         cause: error?.cause,
       },
       artifacts: debugArtifacts,
-      row_errors: rowErrors.slice(0, 5)
+      rowErrors: rowErrors.slice(0, 5)
     });
   }
 });

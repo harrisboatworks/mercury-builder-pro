@@ -38,6 +38,7 @@ import StagingImageSizingFinal from "./pages/StagingImageSizingFinal";
 import TestPriceScraping from "./pages/TestPriceScraping";
 import TestEnhancedPricing from "./pages/TestEnhancedPricing";
 import TestMotorPipeline from "./pages/TestMotorPipeline";
+import AdminConnectors from "./pages/AdminConnectors";
 import FinancingAdmin from "./components/admin/FinancingAdmin";
 import AdminSecurity from "./pages/AdminSecurity";
 import AdminZapier from "./pages/AdminZapier";
@@ -190,6 +191,14 @@ const App = () => (
                   element={
                     <SecureRoute requireAdmin={true}>
                       <AdminInventory />
+                    </SecureRoute>
+                  }
+                />
+                <Route
+                  path="/admin/connectors"
+                  element={
+                    <SecureRoute requireAdmin={true}>
+                      <AdminConnectors />
                     </SecureRoute>
                   }
                 />
