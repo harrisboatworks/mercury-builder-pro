@@ -869,7 +869,7 @@ serve(async (req) => {
       } else {
         console.log(`⚠️ No motors found to save to database`);
       }
-    }
+    } // End of if (source === 'html') block
 
     const endTime = Date.now();
     summary.duration_seconds = ((endTime - startTime) / 1000).toFixed(2);
