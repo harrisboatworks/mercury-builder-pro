@@ -386,15 +386,30 @@ serve(async (req) => {
     const totalUniqueMotors = uniqueMotors.length
     const successfulPages = pageResults.filter(p => p.success).length
     
+    // Generate motors per page breakdown
+    const motorsPerPage = pageResults.map((result, index) => ({
+      page: index + 1,
+      motors_found: result.motors_found || 0
+    }));
+
+    // Get sample motors (first 3) for verification
+    const sampleMotors = uniqueMotors.slice(0, 3).map(motor => ({
+      make: motor.make,
+      model: motor.model,
+      horsepower: motor.horsepower,
+      base_price: motor.base_price
+    }));
+
     const result = {
       success: true,
       message: `Multi-page scrape completed! ${successfulPages}/${pagesToScrape} pages successful. Found ${totalMotorsFound} total motors (${totalUniqueMotors} unique), saved ${savedMotors} to database`,
       total_pages_scraped: pagesToScrape,
       successful_pages: successfulPages,
       failed_pages: pagesToScrape - successfulPages,
-      motors_found_total: totalMotorsFound,
-      motors_unique: totalUniqueMotors,
-      motors_saved: savedMotors,
+      combined_motors_found: totalMotorsFound,
+      combined_motors_saved: savedMotors,
+      motors_per_page: motorsPerPage,
+      sample_motors: sampleMotors,
       page_results: pageResults,
       errors: errors,
       base_url: baseUrl,
