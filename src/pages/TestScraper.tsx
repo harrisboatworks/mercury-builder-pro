@@ -229,20 +229,47 @@ export default function TestScraper() {
         <div className="p-4 border rounded-lg">
           <h2 className="font-semibold mb-3">Brochure Catalog</h2>
           <p className="text-sm text-gray-600 mb-4">
-            Seed the database with the complete Mercury model lineup (brochure models)
+            Seed the database with Mercury models from price list CSV
           </p>
           
-          <button
-            onClick={() => runScraper('seed_brochure' as any)}
-            disabled={loading}
-            className="px-5 py-2.5 bg-orange-600 text-white rounded-lg hover:bg-orange-700 disabled:opacity-50"
-          >
-            {loading ? 'Running…' : 'Seed Brochure Catalog'}
-          </button>
+          <div className="flex gap-3 flex-wrap">
+            <button
+              onClick={() => runScraper('seed_brochure' as any)}
+              disabled={loading}
+              className="px-5 py-2.5 bg-orange-600 text-white rounded-lg hover:bg-orange-700 disabled:opacity-50"
+            >
+              {loading ? 'Running…' : 'Seed Brochure Catalog'}
+            </button>
+            
+            <button
+              onClick={async () => {
+                setLoading(true);
+                setResults(null);
+                try {
+                  const { data, error } = await supabase.functions.invoke('scrape-inventory-v2', {
+                    body: { seed: 'brochure_csv_url' }
+                  });
+                  if (error) {
+                    setResults({ success: false, error: error.message });
+                  } else {
+                    setResults({ success: true, ...data });
+                  }
+                } catch (err: any) {
+                  setResults({ success: false, error: `Network Error: ${err?.message || String(err)}` });
+                } finally {
+                  setLoading(false);
+                }
+              }}
+              disabled={loading}
+              className="px-5 py-2.5 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50"
+            >
+              {loading ? 'Running…' : 'Seed From Price List (URL)'}
+            </button>
+          </div>
           
           <div className="mt-4 p-3 bg-orange-50 border border-orange-200 rounded">
             <p className="text-xs text-orange-900">
-              This adds ~35 Mercury models as brochure entries (is_brochure=true, in_stock=false)
+              Pulls CSV from <code>/mercurypricelist</code>, computes MSRP = price × 1.10, seeds brochure entries.
             </p>
           </div>
         </div>

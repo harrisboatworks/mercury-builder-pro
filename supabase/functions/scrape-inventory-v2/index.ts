@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { XMLParser } from "https://esm.sh/fast-xml-parser@4"
+import { parse } from "https://deno.land/std@0.203.0/csv/parse.ts"
 
 // CORS headers
 const corsHeaders = {
@@ -64,6 +65,46 @@ const ABS = (u?: string): string | undefined => {
   if (u.startsWith('/')) return 'https://www.harrisboatworks.ca' + u;
   return u;
 };
+
+// CSV seeding utilities
+const toNum = (v:any) => {
+  const s = String(v ?? "").replace(/[^0-9.]/g,"");
+  return s ? Number(s) : null;
+};
+const ceil10 = (n:number|null) => (n==null?null:Math.ceil(n*1.10));
+const slug = (s:string) => s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
+const norm = (s:any) => String(s ?? "").trim();
+
+function inferSeries(s: string) {
+  const v = s.toLowerCase();
+  if (v.includes("pro") && v.includes("xs")) return "ProXS";
+  if (v.includes("seapro")) return "SeaPro";
+  if (v.includes("verado")) return "Verado";
+  if (v.includes("racing")) return "Racing";
+  return "FourStroke";
+}
+
+/** Try to extract HP / series / code signals from description or model number */
+function deriveFromText(modelNum: string, desc: string) {
+  const txt = `${modelNum} ${desc}`.toUpperCase();
+
+  // HP: find e.g. 9.9, 15, 25, 60, 115, 150, 200, 300
+  const hpMatch = txt.match(/(?<!\d)(\d{1,3}(?:\.\d)?)\s*HP?/);
+  const horsepower = hpMatch ? Number(hpMatch[1]) : null;
+
+  // Series
+  let series = "FourStroke";
+  if (/PRO\s*XS/i.test(txt)) series = "ProXS";
+  else if (/SEAPRO/i.test(txt)) series = "SeaPro";
+  else if (/VERADO/i.test(txt)) series = "Verado";
+  else if (/RACING/i.test(txt)) series = "Racing";
+
+  // code: common strings like ELH, ELPT, EXLPT, XL, CT, DTS, JET, etc.
+  const codeMatch = txt.match(/\b(ELHPT|ELPT|EXLPT|XLPT|XL|L|XXL|ELH|EH|MLH|S(?=\s|$)|CT|DTS|JET|TILLER|REMOTE)\b/);
+  const model_code = codeMatch ? codeMatch[1] : "";
+
+  return { horsepower, series, model_code };
+}
 
 // Enhanced XML fetch with headers and retry
 async function fetchText(url: string, retries = 0): Promise<string> {
@@ -1016,6 +1057,90 @@ serve(async (req) => {
         return '';
       }
     };
+
+    // Seed brochure catalog directly from CSV URL
+    if (body?.seed === "brochure_csv_url") {
+      const CSV_URL = "https://www.harrisboatworks.ca/mercurypricelist";
+      const r = await fetch(CSV_URL, { headers: { "Accept": "text/csv,*/*" }});
+      if (!r.ok) return new Response(JSON.stringify({success:false, error:`HTTP ${r.status}`}), {status:200, headers:{'Content-Type':'application/json', ...corsHeaders}});
+      const csvText = await r.text();
+
+      // Parse CSV (auto header)
+      const rows = [...(await parse(csvText, { skipFirstRow: false }))] as any[];
+      if (!rows.length) return new Response(JSON.stringify({success:false, inserted:0, reason:"empty csv"}), {status:200, headers:{'Content-Type':'application/json', ...corsHeaders}});
+
+      // detect header
+      const headerRow = rows[0].map((v: any) => String(v ?? "").toLowerCase());
+      const hasHeader = headerRow.some(h => /(model|part|number|description|price|hp|horse)/i.test(h));
+      const data = hasHeader ? rows.slice(1) : rows;
+
+      // column getters (map many possible names)
+      const getIx = (keys: string[]) => (hasHeader ? headerRow.findIndex(h => keys.some(k => h.includes(k))) : -1);
+      const iModel   = getIx(["model","model #","model number","part","sku","p/n","pn","item"]);
+      const iDesc    = getIx(["desc","description","title","name"]);
+      const iHP      = getIx(["hp","horse","horsepower"]);
+      const iSeries  = getIx(["series","family","line"]);
+      const iPrice   = getIx(["price","our price","dealer","net","cost"]);
+      const iYear    = getIx(["year","yr"]);
+
+      const records = data.map((row:any[]) => {
+        const model_number = norm(iModel >= 0 ? row[iModel] : "");
+        const description  = norm(iDesc  >= 0 ? row[iDesc]  : "");
+        const hpExplicit   = toNum(iHP    >= 0 ? row[iHP]    : null);
+        const seriesRaw    = norm(iSeries >= 0 ? row[iSeries] : "");
+        const price        = toNum(iPrice >= 0 ? row[iPrice] : null) ?? 0;
+        const year         = toNum(iYear  >= 0 ? row[iYear]  : null) ?? 2025;
+
+        const inferred = deriveFromText(model_number, description);
+        const horsepower = hpExplicit ?? inferred.horsepower;
+        const series = seriesRaw ? inferSeries(seriesRaw) : inferred.series;
+        const model_code = inferred.model_code;
+
+        const hpLabel = horsepower ? `${horsepower}HP` : "";
+        const model = [year, series, hpLabel, model_code].filter(Boolean).join(" ").replace(/\s+/g," ").trim();
+        const msrp = ceil10(price);
+
+        const detail_slug = slug(`${year}-${series}-${horsepower ?? ""}-${model_code || model_number}`);
+        const detail_url = `https://brochure.hbw/mercury/${detail_slug}`;
+
+        return {
+          make: "Mercury",
+          model_number: model_number || null,
+          model,
+          year,
+          motor_type: series,
+          horsepower,
+          fuel_type: "",
+          model_code: model_code || "",
+          sale_price: price,
+          base_price: price,
+          msrp,
+          stock_number: null,
+          availability: "Brochure",
+          image_url: null,
+          images: [],
+          detail_url,
+          is_brochure: true,
+          in_stock: false,
+          inventory_source: "brochure_seed",
+          last_scraped: new Date().toISOString(),
+        };
+      }).filter(r => r.sale_price > 0 && (r.model_number || r.model));
+
+      const supabase = await getServiceClient();
+
+      // Optional: clear existing brochure seed to prevent duplicates
+      await supabase.from("motor_models").delete().eq("inventory_source", "brochure_seed");
+
+      const { error } = await supabase
+        .from("motor_models")
+        .upsert(records, { onConflict: "detail_url" });
+
+      if (error) {
+        return new Response(JSON.stringify({success:false, error}), {status:200, headers:{'Content-Type':'application/json', ...corsHeaders}});
+      }
+      return new Response(JSON.stringify({success:true, inserted: records.length}), {status:200, headers:{'Content-Type':'application/json', ...corsHeaders}});
+    }
 
     // Handle brochure seeding mode
     if (mode === 'seed_brochure') {

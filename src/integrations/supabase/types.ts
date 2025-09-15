@@ -459,7 +459,9 @@ export type Database = {
           make: string
           manual_overrides: Json | null
           model: string
+          model_number: string | null
           motor_type: string
+          msrp: number | null
           sale_price: number | null
           source_priority: string[] | null
           spec_sheet_file_id: string | null
@@ -493,7 +495,9 @@ export type Database = {
           make?: string
           manual_overrides?: Json | null
           model: string
+          model_number?: string | null
           motor_type: string
+          msrp?: number | null
           sale_price?: number | null
           source_priority?: string[] | null
           spec_sheet_file_id?: string | null
@@ -527,7 +531,9 @@ export type Database = {
           make?: string
           manual_overrides?: Json | null
           model?: string
+          model_number?: string | null
           motor_type?: string
+          msrp?: number | null
           sale_price?: number | null
           source_priority?: string[] | null
           spec_sheet_file_id?: string | null
