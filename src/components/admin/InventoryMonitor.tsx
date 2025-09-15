@@ -103,10 +103,7 @@ export function InventoryMonitor() {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ 
-            source: useXml ? 'xml' : 'html',
-            useXmlFeed: useXml 
-          }),
+          body: JSON.stringify({}),
         });
 
         console.log('API Response status:', response.status);
@@ -137,11 +134,9 @@ export function InventoryMonitor() {
         while (hasMore && page <= 4) { // Limit to 4 pages to prevent too long execution
           console.log(`Scraping page ${page}...`);
           
-          const { data, error } = await supabase.functions.invoke('scrape-inventory-v2', {
+          const { data, error } = await supabase.functions.invoke('scrape-inventory', {
             body: { 
               trigger: 'manual-admin',
-              source: useXml ? 'xml' : 'html',
-              useXmlFeed: useXml,
               page: page,
               at: new Date().toISOString() 
             },

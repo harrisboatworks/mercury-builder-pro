@@ -38,11 +38,9 @@ export default async function handler(req, res) {
       setTimeout(() => reject(new Error('Inventory update timeout')), 45000)
     );
 
-    const inventoryPromise = supabase.functions.invoke('scrape-inventory-v2', {
+    const inventoryPromise = supabase.functions.invoke('scrape-inventory', {
       body: { 
-        trigger: 'cron-inventory-only', 
-        source: 'html', // FIXED: Add source parameter
-        useXmlFeed: false, // FIXED: Add useXmlFeed parameter  
+        trigger: 'cron-inventory-only',
         at: new Date().toISOString(),
         timeout: 40000 // Internal timeout
       },
