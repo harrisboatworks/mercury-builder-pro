@@ -639,7 +639,7 @@ serve(async (req) => {
       
       // Debug logging for first 12 rows
       if (i < 12) {
-        console.log(`[PriceList] DEBUG Row ${i + 1}:`, {
+        const debugRow = {
           raw_cells: [r.model_display, r.model_number, String(r.dealer_price)],
           family: attrs.family,
           horsepower: attrs.horsepower,
@@ -648,7 +648,16 @@ serve(async (req) => {
           dealer_price_num: parsePrice(String(r.dealer_price || '')),
           msrp: msrpFromDealer(parsePrice(String(r.dealer_price || '')), msrp_markup),
           model_key
-        });
+        };
+        
+        // Highlight M-codes in debug output
+        const hasMCodes = attrs.code_tokens.some(c => c.match(/^M/));
+        if (hasMCodes) {
+          const mCodes = attrs.code_tokens.filter(c => c.match(/^M/));
+          console.log(`[PriceList] DEBUG Row ${i + 1} *** M-CODE DETECTED: ${mCodes.join(', ')} ***:`, debugRow);
+        } else {
+          console.log(`[PriceList] DEBUG Row ${i + 1}:`, debugRow);
+        }
       }
       
       // Track detailed errors with line numbers - but be more permissive

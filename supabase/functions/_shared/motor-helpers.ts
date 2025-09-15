@@ -25,12 +25,12 @@ export function extractHpAndCode(input: string): ParsedModel {
     .replace(/\s+/g, ' ')
     .trim();
 
-  const hpMatch = s.match(/\b(\d+(?:\.\d+)?)\s*hp\b/i);
+  const hpMatch = s.match(/\b(\d+(?:\.\d+)?)\s*hp\b/i) || s.match(/\b(\d+(?:\.\d+)?)(?:MH|MLH|MXLH|MXL|MXXL|M)\b/i);
   const hp = hpMatch ? Number(hpMatch[1]) : null;
   s = s.replace(/\b(\d+(?:\.\d+)?)\s*hp\b/ig, '').trim();
 
   const codeTokens: string[] = [];
-  const tokenRx = /\b(ELHPT|ELPT|ELO|ELH|EH|XL|XXL|EXLPT|L|CL|CT|DTS|TILLER|JPO|DIGITAL|POWER(?:\s+)?STEERING)\b/ig;
+  const tokenRx = /\b(ELHPT|ELPT|ELO|ELH|EH|XL|XXL|EXLPT|L|CL|CT|DTS|TILLER|JPO|DIGITAL|POWER(?:\s+)?STEERING|MXXL|MXLH|MXL|MLH|MH|M)\b/ig;
   let m: RegExpExecArray | null;
   while ((m = tokenRx.exec(s)) !== null) codeTokens.push(m[1].toUpperCase());
   const code = codeTokens.join('-');
