@@ -1065,7 +1065,45 @@ serve(async (req) => {
         const groupRes = await Promise.all(group.map(async (u) => {
           try {
             const html = await fetchPage(u);
-            if (!html) return null;
+
+            // --- if the page gave us nothing, build from XML only
+            if (!html) {
+              const prices = priceByUrl.get(u) || {};
+              const imgs = imageByUrl.get(u) || {};
+              const stock = stockByUrl.get(u) || null;
+              const title = titleByUrl.get(u) || 'Mercury Outboard';
+
+              const { model_raw, model, year, motor_type, horsepower, fuel_type, model_code } =
+                parseModelFields(title);
+
+              const motor: Motor = {
+                model_raw,
+                model: cleanText(model),
+                year: year ?? 2025,
+                motor_type: motor_type ?? 'FourStroke',
+                horsepower: horsepower ?? null,
+                fuel_type: fuel_type ?? '',
+                model_code: model_code ?? '',
+                sale_price: prices.sale ?? null,
+                msrp: prices.msrp ?? null,
+                price_status: (prices.sale ?? prices.msrp) ? 'listed' : 'unknown',
+                stock_number: stock,
+                availability: 'Available',
+                image_url: null,
+                original_image_url: imgs?.primary || null,
+                source_url: u,
+              };
+
+              // Upload primary image if present
+              if (motor.original_image_url) {
+                const imageName = motor.stock_number || `${motor.year||''}-${motor.model_code||'motor'}`;
+                const stored = await uploadToSupabaseImage(motor.original_image_url, imageName, supabase);
+                motor.image_url = stored || motor.original_image_url;
+              }
+
+              (motor as any).gallery = imgs?.gallery?.slice(0, 4) ?? [];
+              return motor;
+            }
             
             const motor = parseDetailPage(html, u);
             
@@ -1083,6 +1121,11 @@ serve(async (req) => {
             }
             if (motor.msrp == null && priceByUrl.get(u)?.msrp != null) {
               motor.msrp = priceByUrl.get(u)!.msrp!;
+            }
+            
+            // Normalize price_status
+            if ((motor.sale_price ?? motor.msrp) != null && motor.price_status !== 'call_for_price') {
+              motor.price_status = 'listed';
             }
             
             // Fill stock number from XML (helps dedupe and image naming)
