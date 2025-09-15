@@ -567,7 +567,67 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
   }
 }
 
-// Database save function
+// Download and store image in Supabase Storage
+async function downloadAndStoreImage(imageUrl: string, motor: any, supabase: any): Promise<string | null> {
+  if (!imageUrl) return null;
+  
+  try {
+    console.log(`📥 Downloading image for ${motor.make} ${motor.model} ${motor.horsepower}HP`);
+    
+    // Download the image
+    const response = await fetch(imageUrl);
+    if (!response.ok) {
+      console.warn(`Failed to download image: ${response.status} ${response.statusText} for ${imageUrl}`);
+      return imageUrl; // Return original URL as fallback
+    }
+    
+    const imageBlob = await response.blob();
+    
+    // Check if it's a reasonable size (avoid thumbnails)
+    if (imageBlob.size < 50000) { // Less than 50KB likely a thumbnail
+      console.warn(`Image might be thumbnail (${imageBlob.size} bytes) for ${motor.stock_number}`);
+    }
+    
+    // Create organized filename
+    const year = motor.year || 2025;
+    const stockNumber = motor.stock_number || `motor-${Date.now()}`;
+    const category = (motor.motor_type || 'outboard').toLowerCase().replace(/\s+/g, '-');
+    const hp = motor.horsepower || 0;
+    
+    const filename = `mercury/${year}/${stockNumber}-${category}-${hp}hp.jpg`
+      .replace(/[^a-zA-Z0-9\-\/\.]/g, '-')
+      .replace(/-+/g, '-')
+      .toLowerCase();
+    
+    // Upload to Supabase Storage
+    const { data, error } = await supabase.storage
+      .from('motor-images')
+      .upload(filename, imageBlob, {
+        contentType: imageBlob.type || 'image/jpeg',
+        upsert: true, // Replace if exists
+        cacheControl: '3600'
+      });
+    
+    if (error) {
+      console.error(`Failed to upload image for ${stockNumber}:`, error);
+      return imageUrl; // Return original URL as fallback
+    }
+    
+    // Get the public URL
+    const { data: { publicUrl } } = supabase.storage
+      .from('motor-images')
+      .getPublicUrl(filename);
+    
+    console.log(`✅ Stored image for ${motor.make} ${motor.model}: ${filename}`);
+    return publicUrl;
+    
+  } catch (error) {
+    console.error(`Error processing image for ${motor.stock_number}:`, error);
+    return imageUrl; // Return original URL as fallback
+  }
+}
+
+// Database save function with image storage
 async function saveMotorsToDatabase(motors: any[]) {
   console.log('💾 Attempting to save motors to database...')
   let savedCount = 0
@@ -593,6 +653,15 @@ async function saveMotorsToDatabase(motors: any[]) {
       // Clean the model name before saving
       const cleanModel = cleanMotorName(motor.model);
       
+      // Download and store image in Supabase Storage
+      const imageUrl = motor.primary_image || motor.images?.fullSize || motor.images?.large;
+      let storedImageUrl = imageUrl;
+      let originalImageUrl = imageUrl;
+      
+      if (imageUrl) {
+        storedImageUrl = await downloadAndStoreImage(imageUrl, motor, supabase);
+      }
+      
       // Check if motor already exists
       const existing = existingMotors?.find(existing => 
         existing.make === motor.make &&
@@ -601,16 +670,28 @@ async function saveMotorsToDatabase(motors: any[]) {
       )
 
       if (existing) {
-        // Update existing motor with clean data
+        // Update existing motor with clean data and new image
+        const updateData: any = {
+          model: cleanModel,
+          motor_type: motor.motor_type,
+          year: motor.year,
+          updated_at: new Date().toISOString(),
+          last_scraped: new Date().toISOString()
+        };
+        
+        // Update image URLs if we have them
+        if (storedImageUrl) {
+          updateData.image_url = storedImageUrl;
+          updateData.images = {
+            ...motor.images,
+            storage_url: storedImageUrl,
+            original_url: originalImageUrl
+          };
+        }
+        
         const { error: updateError } = await supabase
           .from('motor_models')
-          .update({
-            model: cleanModel,
-            motor_type: motor.motor_type,
-            year: motor.year,
-            updated_at: new Date().toISOString(),
-            last_scraped: new Date().toISOString()
-          })
+          .update(updateData)
           .eq('id', existing.id)
 
         if (updateError) {
@@ -620,25 +701,31 @@ async function saveMotorsToDatabase(motors: any[]) {
           console.log(`✅ Updated: ${motor.make} ${cleanModel} ${motor.horsepower}HP`)
         }
       } else {
-        // Insert new motor with clean data and images
+        // Insert new motor with clean data and stored images
+        const insertData = {
+          make: motor.make,
+          model: cleanModel,
+          horsepower: motor.horsepower,
+          motor_type: motor.motor_type,
+          base_price: motor.base_price || motor.sale_price,
+          sale_price: motor.sale_price,
+          stock_number: motor.stock_number,
+          availability: motor.availability || 'Available',
+          year: motor.year,
+          images: {
+            ...motor.images,
+            storage_url: storedImageUrl,
+            original_url: originalImageUrl
+          },
+          image_url: storedImageUrl || motor.primary_image,
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+          last_scraped: new Date().toISOString()
+        };
+        
         const { error: insertError } = await supabase
           .from('motor_models')
-          .insert({
-            make: motor.make,
-            model: cleanModel,
-            horsepower: motor.horsepower,
-            motor_type: motor.motor_type,
-            base_price: motor.base_price || motor.sale_price,
-            sale_price: motor.sale_price,
-            stock_number: motor.stock_number,
-            availability: motor.availability || 'Available',
-            year: motor.year,
-            images: motor.images || [],
-            image_url: motor.primary_image,
-            created_at: new Date().toISOString(),
-            updated_at: new Date().toISOString(),
-            last_scraped: new Date().toISOString()
-          })
+          .insert(insertData)
 
         if (insertError) {
           console.error('Error inserting motor:', insertError)
