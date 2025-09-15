@@ -146,24 +146,54 @@ function parseCSV(csvContent: string): Array<{model_display: string, model_numbe
   return results;
 }
 
-// Enhanced HTML parser for Mercury models
+// Enhanced HTML parser for Mercury models with auto table detection
 function parseHTML(html: string): Array<{model_display: string, model_number?: string, horsepower?: number, family?: string, dealer_price?: number}> {
   const $ = load(html);
-  const results: any[] = [];
+  let results: any[] = [];
   
   console.log(`[PriceList] Parsing HTML tables...`);
   
-  // Find all tables and process them
+  // Find all tables and rank them by size and content relevance
+  const tables: Array<{element: any, score: number, rows: number, cells: number}> = [];
+  
   $('table').each((tableIdx, table) => {
     const $table = $(table);
-    
-    // Skip if doesn't look like a price table
     const tableText = $table.text().toLowerCase();
-    if (!tableText.includes('mercury') && !tableText.includes('price') && !tableText.includes('hp')) {
-      return;
-    }
+    const rows = $table.find('tr').length;
+    const cells = $table.find('td, th').length;
     
-    console.log(`[PriceList] Processing table ${tableIdx + 1}`);
+    let score = 0;
+    
+    // Score based on content relevance
+    if (tableText.includes('mercury')) score += 10;
+    if (tableText.includes('price')) score += 10;
+    if (tableText.includes('hp')) score += 5;
+    if (tableText.includes('fourstroke') || tableText.includes('verado')) score += 5;
+    if (tableText.includes('dealer')) score += 3;
+    
+    // Score based on size (more rows = more likely to be the main table)
+    score += Math.min(rows * 0.5, 20);
+    score += Math.min(cells * 0.1, 10);
+    
+    // Penalty for very small tables
+    if (rows < 3) score -= 5;
+    if (cells < 6) score -= 3;
+    
+    tables.push({ element: table, score, rows, cells });
+  });
+  
+  // Sort by score (highest first)
+  tables.sort((a, b) => b.score - a.score);
+  
+  console.log(`[PriceList] Found ${tables.length} tables, top scores:`, 
+    tables.slice(0, 3).map(t => `${t.score} (${t.rows}r×${t.cells}c)`));
+  
+  // Process tables in score order until we find good data
+  for (const tableInfo of tables) {
+    const $table = $(tableInfo.element);
+    const tableResults: any[] = [];
+    
+    console.log(`[PriceList] Processing table with score ${tableInfo.score}`);
     
     // Process table rows
     $table.find('tr').each((rowIdx, row) => {
@@ -215,7 +245,7 @@ function parseHTML(html: string): Array<{model_display: string, model_number?: s
       }
       
       if (model_display && dealer_price) {
-        results.push({ 
+        tableResults.push({ 
           model_display: model_display.trim(),
           model_number: model_number || undefined,
           horsepower: horsepower || undefined,
@@ -224,9 +254,78 @@ function parseHTML(html: string): Array<{model_display: string, model_number?: s
         });
       }
     });
-  });
+    
+    // If this table produced good results, use them
+    if (tableResults.length > 0) {
+      results = results.concat(tableResults);
+      console.log(`[PriceList] Table produced ${tableResults.length} rows`);
+      
+      // If we found a substantial amount of data, we're probably done
+      if (results.length >= 10) break;
+    }
+  }
+  
+  // Fallback: try to parse as plain text if no tables worked
+  if (results.length === 0) {
+    console.log(`[PriceList] No table data found, trying text fallback...`);
+    results = parseTextFallback(html);
+  }
   
   console.log(`[PriceList] HTML parsing found ${results.length} rows`);
+  return results;
+}
+
+// Fallback parser for plain text content
+function parseTextFallback(html: string): Array<{model_display: string, model_number?: string, horsepower?: number, family?: string, dealer_price?: number}> {
+  const $ = load(html);
+  const results: any[] = [];
+  
+  // Extract text from <pre>, <code>, or plain text
+  let textContent = '';
+  if ($('pre').length > 0) {
+    textContent = $('pre').first().text();
+  } else if ($('code').length > 0) {
+    textContent = $('code').first().text();
+  } else {
+    textContent = $.text();
+  }
+  
+  // Split into lines and look for motor data
+  const lines = textContent.split('\n').map(line => cleanText(line)).filter(line => line.length > 10);
+  
+  for (const line of lines) {
+    // Skip obvious headers
+    if (/model|name|description|price|hp/i.test(line) && line.length < 50) continue;
+    
+    // Look for lines that contain both motor info and price
+    if (/\d+\s*hp/i.test(line) && /\$?\d+[\d,]*/.test(line)) {
+      const hpMatch = line.match(/(\d+(?:\.\d+)?)\s*hp/i);
+      const priceMatch = line.match(/\$?(\d+[\d,]*(?:\.\d{2})?)/);
+      
+      if (hpMatch && priceMatch) {
+        const horsepower = parseFloat(hpMatch[1]);
+        const dealer_price = parsePrice(priceMatch[1]);
+        
+        if (dealer_price && dealer_price > 100) {
+          let family = '';
+          if (/fourstroke/i.test(line)) family = 'FourStroke';
+          else if (/prox/i.test(line)) family = 'ProXS';
+          else if (/seapro/i.test(line)) family = 'SeaPro';
+          else if (/verado/i.test(line)) family = 'Verado';
+          else if (/racing/i.test(line)) family = 'Racing';
+          
+          results.push({
+            model_display: line.trim(),
+            horsepower,
+            family: family || undefined,
+            dealer_price
+          });
+        }
+      }
+    }
+  }
+  
+  console.log(`[PriceList] Text fallback found ${results.length} rows`);
   return results;
 }
 
@@ -270,14 +369,19 @@ serve(async (req) => {
       force = false,
       create_missing_brochure = true,
       csv_content = null,
-      html_content = null
+      html_content = null,
+      parse_mode = 'auto'
     } = await req.json();
     
-    console.log(`[PriceList] Starting price list ingest. dry_run=${dry_run}, create_brochure=${create_missing_brochure}, msrp_markup=${msrp_markup}`);
+    console.log(`[PriceList] Starting price list ingest. dry_run=${dry_run}, create_brochure=${create_missing_brochure}, msrp_markup=${msrp_markup}, parse_mode=${parse_mode}`);
     
     let html = '';
     let checksum = '';
     let contentSource = 'url';
+    let htmlSnapshot = '';
+    let tableRows = 0;
+    let tableCells = 0;
+    let sourceKind = 'raw_csv';
     
     // STEP 1: Get content (URL fetch, CSV, or HTML)
     currentStep = 'fetch';
@@ -286,11 +390,14 @@ serve(async (req) => {
       console.log(`[PriceList] Using provided CSV content (${csv_content.length} chars)`);
       html = csv_content;
       contentSource = 'csv';
+      sourceKind = 'raw_csv';
       checksum = await generateChecksum(csv_content);
     } else if (html_content) {
       console.log(`[PriceList] Using provided HTML content (${html_content.length} chars)`);
       html = html_content;
+      htmlSnapshot = html_content;
       contentSource = 'html';
+      sourceKind = 'html_table';
       checksum = await generateChecksum(html_content);
     } else {
       console.log(`[PriceList] Fetching HTML from URL: ${url}`);
@@ -307,8 +414,28 @@ serve(async (req) => {
       }
       
       html = await response.text();
+      htmlSnapshot = html;
       contentSource = 'url';
       checksum = await generateChecksum(html);
+      
+      // For URL fetching with parse_mode:'auto', determine source kind
+      if (parse_mode === 'auto') {
+        const $ = load(html);
+        const tables = $('table');
+        if (tables.length > 0) {
+          sourceKind = 'html_table';
+          // Count table statistics
+          tables.each((idx, table) => {
+            const $table = $(table);
+            tableRows += $table.find('tr').length;
+            tableCells += $table.find('td, th').length;
+          });
+        } else {
+          sourceKind = 'html_text';
+        }
+      } else {
+        sourceKind = 'html_table';
+      }
     }
     
     console.log(`[PriceList] Got content: ${html.length} chars, checksum: ${checksum.substring(0, 8)}`);
@@ -504,9 +631,10 @@ serve(async (req) => {
     // Save artifacts to storage
     console.log('[PriceList] Saving artifacts to storage...');
     const artifacts = {
-      html_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.html`, html, 'text/html'),
+      html_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.html`, htmlSnapshot || html, 'text/html'),
       json_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.json`, jsonContent, 'application/json'),
-      csv_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.csv`, csvContent, 'text/csv')
+      csv_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.csv`, csvContent, 'text/csv'),
+      html_snapshot_url: htmlSnapshot ? await saveArtifact(supabase, `pricelist/${timestamp}-snapshot.html`, htmlSnapshot, 'text/html') : null
     };
     
     // Update admin_sources with the latest URLs
@@ -665,19 +793,28 @@ serve(async (req) => {
       msrp: m.msrp
     }));
     
+    // Build detailed response
+    const rejectReasons = rowErrors.slice(0, 20).map(err => `Line ${err.line}: ${err.reason} (${err.raw_model})`);
+    
     return json200({
       success: true,
       content_source: contentSource,
+      source_kind: sourceKind,
+      table_rows: tableRows,
+      table_cells: tableCells,
+      html_snapshot_url: artifacts.html_snapshot_url,
       rows_parsed_total: rows_found,
       rows_normalized,
       rows_with_invalid_key,
       rows_with_invalid_price,
       rows_skipped_blank,
       rows_missing_required,
-      duplicates_in_feed: duplicatesInFeed.length,
-      rows_matched_existing,
       rows_created,
       rows_updated,
+      rows_rejected: rowErrors.length,
+      reject_reasons: rejectReasons,
+      duplicates_in_feed: duplicatesInFeed.length,
+      rows_matched_existing,
       rows_skipped,
       rowErrors: rowErrors.slice(0, 50),
       rowMatches: rowMatches.slice(0, 50),

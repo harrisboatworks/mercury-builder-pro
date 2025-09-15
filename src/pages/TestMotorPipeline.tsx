@@ -17,11 +17,12 @@ export default function TestMotorPipeline() {
   const { toast } = useToast();
   const [results, setResults] = useState<TestResult[]>([
     { step: 'Step 1: Price List Dry Run', status: 'pending', message: 'Ready to test' },
-    { step: 'Step 1: Price List Ingest', status: 'pending', message: 'Ready to test' },
-    { step: 'Step 2: Brochure PDF Attach', status: 'pending', message: 'Ready to test' },
-    { step: 'Step 3: Hero Images Upload', status: 'pending', message: 'Ready to test' },
-    { step: 'Step 4: XML Discovery', status: 'pending', message: 'Ready to test' },
-    { step: 'Step 5: Sanity Check', status: 'pending', message: 'Ready to test' },
+    { step: 'Step 1: Import from Price List URL', status: 'pending', message: 'Ready to test' },
+    { step: 'Step 2: Price List Ingest', status: 'pending', message: 'Ready to test' },
+    { step: 'Step 3: Brochure PDF Attach', status: 'pending', message: 'Ready to test' },
+    { step: 'Step 4: Hero Images Upload', status: 'pending', message: 'Ready to test' },
+    { step: 'Step 5: XML Discovery', status: 'pending', message: 'Ready to test' },
+    { step: 'Step 6: Sanity Check', status: 'pending', message: 'Ready to test' },
   ]);
   const [currentStep, setCurrentStep] = useState(0);
   const [sourceSettings, setSourceSettings] = useState<any>(null);
@@ -136,8 +137,53 @@ export default function TestMotorPipeline() {
     }
   };
 
-  const runStep1Ingest = async () => {
+  const runUrlImport = async () => {
     const stepIndex = 1;
+    updateResult(stepIndex, 'running', 'Importing from price list URL...');
+    
+    try {
+      const defaultUrl = 'https://www.harrisboatworks.ca/mercurypricelist';
+      
+      const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
+        body: { 
+          url: defaultUrl,
+          dry_run: false,
+          msrp_markup: 1.10,
+          parse_mode: 'auto'
+        }
+      });
+
+      if (error) {
+        console.error('Edge fn error', { 
+          status: error.status, 
+          name: error.name, 
+          message: error.message, 
+          context: (error as any)?.context 
+        });
+        throw new Error(`${error.status}: ${error.message}\n${JSON.stringify((error as any)?.context ?? {}, null, 2)}`);
+      }
+
+      const message = `[${data.source_kind?.toUpperCase() || 'AUTO'}] parsed ${data.rows_parsed_total} • created ${data.rows_created} • updated ${data.rows_updated} • rejected ${data.rows_rejected || 0}`;
+      logCheckpoint(`URL IMPORT → ${message}`);
+      
+      // Show reject reasons if less than 20 rows succeeded
+      if ((data.rows_created + data.rows_updated) < 20 && data.reject_reasons?.length > 0) {
+        console.log('Reject reasons:', data.reject_reasons);
+        toast({
+          title: "Low Success Rate",
+          description: `Only ${data.rows_created + data.rows_updated} rows succeeded. Check console for reject reasons.`,
+          variant: "destructive"
+        });
+      }
+      
+      updateResult(stepIndex, 'success', message, data);
+    } catch (error: any) {
+      updateResult(stepIndex, 'error', `Error: ${error.message}`);
+    }
+  };
+
+  const runStep2Ingest = async () => {
+    const stepIndex = 2;
     updateResult(stepIndex, 'running', 'Ingesting price list with msrp_markup 1.10...');
     
     try {
@@ -172,8 +218,8 @@ export default function TestMotorPipeline() {
     }
   };
 
-  const runStep2BrochurePDF = async () => {
-    const stepIndex = 2;
+  const runStep3BrochurePDF = async () => {
+    const stepIndex = 3;
     updateResult(stepIndex, 'running', 'Attaching brochure PDF...');
     
     try {
@@ -205,8 +251,8 @@ export default function TestMotorPipeline() {
     }
   };
 
-  const runStep3HeroImages = async () => {
-    const stepIndex = 3;
+  const runStep4HeroImages = async () => {
+    const stepIndex = 4;
     updateResult(stepIndex, 'running', 'Uploading hero images...');
     
     try {
@@ -242,8 +288,8 @@ export default function TestMotorPipeline() {
     }
   };
 
-  const runStep4XMLDiscovery = async () => {
-    const stepIndex = 4;
+  const runStep5XMLDiscovery = async () => {
+    const stepIndex = 5;
     updateResult(stepIndex, 'running', 'Running XML discovery...');
     
     try {
@@ -272,8 +318,8 @@ export default function TestMotorPipeline() {
     }
   };
 
-  const runStep5SanityCheck = async () => {
-    const stepIndex = 5;
+  const runStep6SanityCheck = async () => {
+    const stepIndex = 6;
     updateResult(stepIndex, 'running', 'Running sanity queries...');
     
     try {
@@ -305,11 +351,12 @@ export default function TestMotorPipeline() {
     
     switch (stepIndex) {
       case 0: await runStep1DryRun(); break;
-      case 1: await runStep1Ingest(); break;
-      case 2: await runStep2BrochurePDF(); break;
-      case 3: await runStep3HeroImages(); break;
-      case 4: await runStep4XMLDiscovery(); break;
-      case 5: await runStep5SanityCheck(); break;
+      case 1: await runUrlImport(); break;
+      case 2: await runStep2Ingest(); break;
+      case 3: await runStep3BrochurePDF(); break;
+      case 4: await runStep4HeroImages(); break;
+      case 5: await runStep5XMLDiscovery(); break;
+      case 6: await runStep6SanityCheck(); break;
     }
   };
 
