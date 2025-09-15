@@ -6,7 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
-import { AlertCircle, Upload, Link as LinkIcon, Image, FileText, DollarSign } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { AlertCircle, Upload, Link as LinkIcon, Image, FileText, DollarSign, Download, ExternalLink } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -22,37 +23,78 @@ export default function AdminSources() {
     images: null as Date | null,
   });
   const [pricelistUrl, setPricelistUrl] = useState("https://www.harrisboatworks.ca/mercurypricelist");
+  const [msrpMarkup, setMsrpMarkup] = useState(1.10);
+  const [forceIngest, setForceIngest] = useState(false);
+  const [pricelistResults, setPricelistResults] = useState<any>(null);
   const [brochureUrl, setBrochureUrl] = useState("");
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
   const [imageUrls, setImageUrls] = useState("");
   const [modelKeyMappings, setModelKeyMappings] = useState<Record<string, string>>({});
   const [bulkImportFile, setBulkImportFile] = useState<File | null>(null);
 
-  const handlePricelistIngest = async () => {
+  const handlePricelistIngest = async (isDryRun: boolean) => {
     setLoading({ ...loading, pricelist: true });
+    setPricelistResults(null);
+    
     try {
       const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
         body: { 
           url: pricelistUrl,
-          dry_run: dryRun
+          dry_run: isDryRun,
+          msrp_markup: msrpMarkup,
+          force: forceIngest
         }
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Edge function error:', error);
+        const errorMessage = error.message || 'Unknown error';
+        const errorContext = (error as any)?.context || data || {};
+        
+        setPricelistResults({
+          success: false,
+          error: errorMessage,
+          context: errorContext
+        });
+        
+        toast({
+          title: "Error",
+          description: `${errorMessage}\nStep: ${errorContext.step || 'unknown'}`,
+          variant: "destructive",
+        });
+        return;
+      }
 
-      toast({
-        title: dryRun ? "Price List Preview" : "Price List Ingested",
-        description: `${data.rows_parsed} rows parsed, ${data.rows_updated || 0} updated, ${data.rows_created} created`,
-      });
+      setPricelistResults(data);
 
-      if (!dryRun) {
-        setLastIngested({ ...lastIngested, pricelist: new Date() });
+      if (data.success) {
+        if (data.skipped_due_to_same_checksum) {
+          toast({
+            title: "Skipped - No Changes",
+            description: "Content unchanged since last run",
+          });
+        } else {
+          toast({
+            title: isDryRun ? "Price List Preview Complete" : "Price List Ingested",
+            description: `${data.rows_parsed} parsed, ${data.rows_created} created, ${data.rows_updated || 0} updated`,
+          });
+        }
+
+        if (!isDryRun && !data.skipped_due_to_same_checksum) {
+          setLastIngested({ ...lastIngested, pricelist: new Date() });
+        }
       }
     } catch (error) {
       console.error('Price list ingestion error:', error);
+      setPricelistResults({
+        success: false,
+        error: String(error),
+        context: { step: 'unknown' }
+      });
+      
       toast({
         title: "Error",
-        description: "Failed to ingest price list",
+        description: "Failed to process price list",
         variant: "destructive",
       });
     } finally {
@@ -269,25 +311,20 @@ export default function AdminSources() {
         )}
 
         <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3">
-          {/* Price List Card */}
-          <Card>
+          {/* Mercury Price List Card */}
+          <Card className="col-span-2">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <DollarSign className="h-5 w-5" />
-                Price List
+                Mercury Price List
               </CardTitle>
               <CardDescription>
-                Ingest pricing data from URL or uploaded file
+                Fetch and parse Mercury motor pricing data from Harris Boat Works
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <Tabs defaultValue="url" className="w-full">
-                <TabsList className="grid w-full grid-cols-2">
-                  <TabsTrigger value="url">URL</TabsTrigger>
-                  <TabsTrigger value="file">Upload</TabsTrigger>
-                </TabsList>
-                
-                <TabsContent value="url" className="space-y-3">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
                   <Label htmlFor="pricelist-url">Price List URL</Label>
                   <Input
                     id="pricelist-url"
@@ -295,25 +332,158 @@ export default function AdminSources() {
                     onChange={(e) => setPricelistUrl(e.target.value)}
                     placeholder="https://www.harrisboatworks.ca/mercurypricelist"
                   />
-                </TabsContent>
+                </div>
                 
-                <TabsContent value="file" className="space-y-3">
-                  <Label htmlFor="pricelist-file">Upload File</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="msrp-markup">MSRP Markup</Label>
                   <Input
-                    id="pricelist-file"
-                    type="file"
-                    accept=".csv,.xlsx,.pdf,.html"
+                    id="msrp-markup"
+                    type="number"
+                    step="0.01"
+                    min="1.00"
+                    max="2.00"
+                    value={msrpMarkup}
+                    onChange={(e) => setMsrpMarkup(Number(e.target.value))}
+                    placeholder="1.10"
                   />
-                </TabsContent>
-              </Tabs>
+                </div>
+              </div>
 
-              <Button 
-                onClick={handlePricelistIngest}
-                disabled={loading.pricelist}
-                className="w-full"
-              >
-                {loading.pricelist ? "Processing..." : "Ingest Price List"}
-              </Button>
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  id="force-ingest"
+                  checked={forceIngest}
+                  onCheckedChange={(checked) => setForceIngest(checked as boolean)}
+                />
+                <Label htmlFor="force-ingest" className="text-sm">
+                  Force ingest even if content is unchanged
+                </Label>
+              </div>
+
+              <div className="flex gap-3">
+                <Button 
+                  onClick={() => handlePricelistIngest(true)}
+                  disabled={loading.pricelist || !pricelistUrl.trim()}
+                  variant="outline"
+                  className="flex-1"
+                >
+                  {loading.pricelist ? "Processing..." : "Preview (Dry Run)"}
+                </Button>
+                
+                <Button 
+                  onClick={() => handlePricelistIngest(false)}
+                  disabled={loading.pricelist || !pricelistUrl.trim()}
+                  className="flex-1"
+                >
+                  {loading.pricelist ? "Processing..." : "Ingest"}
+                </Button>
+              </div>
+
+              {pricelistResults && (
+                <div className="mt-4 p-4 bg-muted rounded-lg">
+                  {pricelistResults.success ? (
+                    <div className="space-y-4">
+                      {/* Summary Badges */}
+                      <div className="flex flex-wrap gap-2">
+                        <Badge variant="secondary">
+                          {pricelistResults.rows_parsed} parsed
+                        </Badge>
+                        <Badge variant="default">
+                          {pricelistResults.rows_created} created
+                        </Badge>
+                        <Badge variant="outline">
+                          {pricelistResults.rows_updated || 0} updated
+                        </Badge>
+                        {pricelistResults.errors > 0 && (
+                          <Badge variant="destructive">
+                            {pricelistResults.errors} errors
+                          </Badge>
+                        )}
+                        {pricelistResults.skipped_due_to_same_checksum && (
+                          <Badge variant="secondary">
+                            Skipped - No changes
+                          </Badge>
+                        )}
+                      </div>
+
+                      {/* Artifacts */}
+                      {pricelistResults.artifacts && (
+                        <div className="space-y-2">
+                          <Label className="text-sm font-medium">Download Artifacts:</Label>
+                          <div className="flex flex-wrap gap-2">
+                            {pricelistResults.artifacts.html_url && (
+                              <Button size="sm" variant="outline" asChild>
+                                <a href={pricelistResults.artifacts.html_url} target="_blank" rel="noopener noreferrer">
+                                  <Download className="w-4 h-4 mr-1" />
+                                  HTML
+                                </a>
+                              </Button>
+                            )}
+                            {pricelistResults.artifacts.json_url && (
+                              <Button size="sm" variant="outline" asChild>
+                                <a href={pricelistResults.artifacts.json_url} target="_blank" rel="noopener noreferrer">
+                                  <Download className="w-4 h-4 mr-1" />
+                                  JSON
+                                </a>
+                              </Button>
+                            )}
+                            {pricelistResults.artifacts.csv_url && (
+                              <Button size="sm" variant="outline" asChild>
+                                <a href={pricelistResults.artifacts.csv_url} target="_blank" rel="noopener noreferrer">
+                                  <Download className="w-4 h-4 mr-1" />
+                                  CSV
+                                </a>
+                              </Button>
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Sample Data */}
+                      {pricelistResults.sample && pricelistResults.sample.length > 0 && (
+                        <div className="space-y-2">
+                          <Label className="text-sm font-medium">Sample Data (First 5 rows):</Label>
+                          <div className="bg-background rounded border p-3 text-sm font-mono overflow-x-auto">
+                            <div className="grid grid-cols-5 gap-2 font-semibold border-b pb-2 mb-2">
+                              <div>Model</div>
+                              <div>Key</div>
+                              <div>Dealer Price</div>
+                              <div>MSRP</div>
+                              <div>HP</div>
+                            </div>
+                            {pricelistResults.sample.slice(0, 5).map((row: any, index: number) => (
+                              <div key={index} className="grid grid-cols-5 gap-2 py-1">
+                                <div className="truncate" title={row.model_display}>{row.model_display}</div>
+                                <div className="text-muted-foreground">{row.model_key}</div>
+                                <div>${row.dealer_price}</div>
+                                <div>${row.msrp}</div>
+                                <div>{row.horsepower || '-'}</div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Alert variant="destructive">
+                      <AlertCircle className="h-4 w-4" />
+                      <AlertDescription>
+                        <strong>Error:</strong> {pricelistResults.error}
+                        {pricelistResults.context?.step && (
+                          <div className="mt-1 text-sm">
+                            <strong>Step:</strong> {pricelistResults.context.step}
+                          </div>
+                        )}
+                        {pricelistResults.context?.detail && (
+                          <div className="mt-1 text-sm">
+                            <strong>Detail:</strong> {pricelistResults.context.detail}
+                          </div>
+                        )}
+                      </AlertDescription>
+                    </Alert>
+                  )}
+                </div>
+              )}
 
               {lastIngested.pricelist && (
                 <div className="text-sm text-muted-foreground">
