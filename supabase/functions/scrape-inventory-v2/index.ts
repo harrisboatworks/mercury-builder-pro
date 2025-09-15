@@ -871,8 +871,7 @@ serve(async (req) => {
       }
     } // End of if (source === 'html') block
 
-    try {
-      const endTime = Date.now();
+    const endTime = Date.now();
     summary.duration_seconds = ((endTime - startTime) / 1000).toFixed(2);
     summary.validation_passed = summary.errors_count === 0;
 
