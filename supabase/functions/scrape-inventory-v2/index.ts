@@ -56,13 +56,21 @@ async function saveMotorsBatch(motors: any[], supabase: any) {
 
   // Save in smaller batches to avoid timeouts
   const batchSize = 10;
+  const totalBatches = Math.ceil(motors.length / batchSize);
+  
+  console.log(`💾 Starting to save ${motors.length} motors in ${totalBatches} batches of ${batchSize}`);
   
   for (let i = 0; i < motors.length; i += batchSize) {
     const batch = motors.slice(i, i + batchSize);
-    console.log(`Saving batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(motors.length/batchSize)}`);
+    const batchNum = Math.floor(i/batchSize) + 1;
     
-    for (const motor of batch) {
+    console.log(`📦 Processing batch ${batchNum}/${totalBatches} (motors ${i+1}-${Math.min(i+batchSize, motors.length)})`);
+    
+    for (const [motorIndex, motor] of batch.entries()) {
       try {
+        const globalIndex = i + motorIndex + 1;
+        console.log(`🔄 Saving motor ${globalIndex}/${motors.length}: ${motor.make} ${motor.model} ${motor.horsepower}HP`);
+        
         const validatedMotor = validateAndFixMotor(motor);
         
         const { error } = await supabase
@@ -73,20 +81,31 @@ async function saveMotorsBatch(motors: any[], supabase: any) {
           });
         
         if (error) {
-          results.failed.push({ motor: motor.model, error: error.message });
-          console.error(`❌ Failed to save ${motor.model}:`, error.message);
+          results.failed.push({ 
+            motor: motor.model, 
+            error: error.message,
+            position: globalIndex 
+          });
+          console.error(`❌ Failed to save motor ${globalIndex} (${motor.model}):`, error.message);
         } else {
           results.successful.push(motor.model);
-          console.log(`✅ Successfully saved: ${motor.model}`);
+          console.log(`✅ Successfully saved motor ${globalIndex}: ${motor.model}`);
         }
       } catch (e) {
-        results.failed.push({ motor: motor.model, error: (e as Error).message });
-        console.error(`Exception saving ${motor.model}:`, e);
+        const globalIndex = i + motorIndex + 1;
+        results.failed.push({ 
+          motor: motor.model, 
+          error: (e as Error).message,
+          position: globalIndex 
+        });
+        console.error(`💥 Exception saving motor ${globalIndex} (${motor.model}):`, e);
       }
     }
     
-    // Small delay between batches
-    await new Promise(resolve => setTimeout(resolve, 100));
+    console.log(`📊 Batch ${batchNum} complete: ${results.successful.length} saved, ${results.failed.length} failed so far`);
+    
+    // Small delay between batches to prevent overwhelming the database
+    await new Promise(resolve => setTimeout(resolve, 200));
   }
   
   console.log(`✅ Saved: ${results.successful.length}`);
@@ -139,6 +158,44 @@ serve(async (req) => {
       }), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
+    }
+
+    // Test scrape endpoint - scrapes only 1 page for debugging
+    if (url.pathname.endsWith('/test-scrape')) {
+      console.log('🧪 Test scrape endpoint accessed');
+      try {
+        const parser = new DOMParser();
+        const baseUrl = 'https://www.harrisboatworks.ca/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low?resultsperpage=50';
+        
+        console.log('🔍 Fetching single page:', baseUrl);
+        const response = await fetch(baseUrl);
+        const html = await response.text();
+        const doc = parser.parseFromString(html, 'text/html');
+        
+        const motorItems = doc.querySelectorAll('.srp-list-item');
+        console.log(`📦 Found ${motorItems.length} motor items on test page`);
+        
+        return new Response(JSON.stringify({
+          status: 'success',
+          message: 'Test scrape completed',
+          motorsFound: motorItems.length,
+          pageUrl: baseUrl,
+          timestamp: new Date().toISOString()
+        }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        });
+      } catch (error) {
+        console.error('❌ Test scrape error:', error);
+        return new Response(JSON.stringify({
+          status: 'error',
+          message: error.message,
+          stack: error.stack,
+          timestamp: new Date().toISOString()
+        }), {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        });
+      }
     }
 
     // Check authorization for actual scraping functionality
@@ -195,7 +252,7 @@ serve(async (req) => {
 
       console.log('🔍 Starting Harris Boat Works HTML scraping with DOMParser...');
 
-      while (hasMorePages && currentPage <= 5) { // Limit to 5 pages to prevent timeout
+      while (hasMorePages && currentPage <= 2) { // Reduce to 2 pages to prevent timeout (~60 motors max)
         const pageUrl = currentPage === 1 
           ? `${baseUrl}?resultsperpage=200`
           : `${baseUrl}/page/${currentPage}?resultsperpage=200`;
@@ -605,16 +662,43 @@ serve(async (req) => {
       if (allMotors.length > 0) {
         console.log(`💾 Starting database operations for ${allMotors.length} motors...`);
         
-        const results = await saveMotorsBatch(allMotors, supabase);
+        // Add timeout monitoring
+        const operationStart = Date.now();
+        const timeoutWarning = 45000; // Warn at 45 seconds
         
-        summary.motors_inserted = results.successful.length;
-        summary.errors_count += results.failed.length;
+        console.log(`⏱️ Starting motor save operation at ${operationStart}ms elapsed`);
+        
+        try {
+          const results = await saveMotorsBatch(allMotors, supabase);
+          
+          const operationEnd = Date.now();
+          const operationDuration = operationEnd - operationStart;
+          
+          console.log(`⏱️ Database operation completed in ${operationDuration}ms`);
+          
+          if (operationDuration > timeoutWarning) {
+            console.log(`⚠️ Database operation took ${operationDuration}ms - close to timeout limit`);
+          }
+          
+          summary.motors_inserted = results.successful.length;
+          summary.errors_count += results.failed.length;
+          
+          console.log(`💾 CORRECT v2 - Database operations complete: ${summary.motors_inserted} inserted, ${results.failed.length} failed`);
+          
+        } catch (dbError) {
+          console.error('❌ CRITICAL DATABASE ERROR:', dbError);
+          console.error('- Error name:', dbError.name);
+          console.error('- Error message:', dbError.message);
+          console.error('- Time elapsed when error occurred:', Date.now() - startTime, 'ms');
+          
+          // Still count what we found even if save failed
+          summary.errors_count++;
+          throw dbError; // Re-throw to be caught by outer try-catch
+        }
         
         // Final counts (updated for proper case)
         summary.in_stock_models_found = allMotors.filter(m => m.availability === 'In Stock').length;
         summary.brochure_models_found = allMotors.filter(m => m.availability === 'Brochure').length;
-        
-        console.log(`💾 CORRECT v2 - Database operations complete: ${summary.motors_inserted} inserted, ${results.failed.length} failed`);
         
       } else {
         console.log(`⚠️ No motors found to save to database`);
