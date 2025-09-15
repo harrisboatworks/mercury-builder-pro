@@ -19,10 +19,40 @@ function cleanMotorName(rawName: string): string {
     .trim();
 }
 
-// Parse motor title components exactly as they appear on harrisboatworks.ca
+// Parse motor title components with enhanced JSON and markdown support
 function parseMotorTitle(title: string) {
-  // First, ensure title is completely clean
-  const clean = title
+  // First, check if this is JSON data embedded in markdown
+  const jsonMatch = title.match(/\{[^}]*"item"[^}]*\}/);
+  if (jsonMatch) {
+    try {
+      const motorData = JSON.parse(jsonMatch[0]);
+      if (motorData.item && motorData.itemYear && motorData.itemModel) {
+        const hp = motorData.itemModel.match(/(\d+)HP/i)?.[1] || '0';
+        const category = motorData.itemModel.includes('Pro XS') ? 'ProXS' :
+                        motorData.itemModel.includes('FourStroke') ? 'FourStroke' :
+                        motorData.itemModel.includes('Verado') ? 'Verado' : 'FourStroke';
+        
+        return {
+          year: motorData.itemYear,
+          category: category,
+          horsepower: parseFloat(hp),
+          fuelType: motorData.itemModel.includes('EFI') ? 'EFI' : '',
+          modelCode: extractModelCode(motorData.itemModel),
+          fullTitle: motorData.item,
+          displayTitle: motorData.itemModel,
+          stockNumber: motorData.stockNumber,
+          salePrice: motorData.itemPrice,
+          isValid: true
+        };
+      }
+    } catch (e) {
+      console.log('Failed to parse JSON in title:', e.message);
+    }
+  }
+  
+  // Clean markdown links like [text](url)
+  let clean = title
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')  // Convert [text](url) to text
     .replace(/<[^>]*>/g, '')  // Remove any HTML
     .replace(' - Mercury', '')
     .replace(/[<>]/g, '')      // Remove stray brackets
@@ -32,6 +62,9 @@ function parseMotorTitle(title: string) {
     .replace(/&nbsp;/g, ' ')
     .replace(/\s+/g, ' ')      // Normalize whitespace
     .trim();
+  
+  // Remove JSON objects from the title
+  clean = clean.replace(/\{[^}]*\}/g, '').trim();
   
   console.log(`Parsing: "${clean}"`);
   
@@ -105,6 +138,23 @@ function parseMotorTitle(title: string) {
       `${year} ${category} ${horsepower} ${fuelType}`.replace(/\s+/g, ' ').trim(),
     isValid: true
   };
+}
+
+// Helper function to extract model code from motor model string
+function extractModelCode(model: string): string {
+  // Extract codes like ELHPT, XL, EXLPT, EH, etc.
+  const codeMatch = model.match(/\b([A-Z]{2,6})\b$/);
+  if (codeMatch) {
+    return codeMatch[1];
+  }
+  
+  // Handle cases where code is attached to HP like "25HPELHPT"
+  const hpCodeMatch = model.match(/HP\s*([A-Z]{2,6})/i);
+  if (hpCodeMatch) {
+    return hpCodeMatch[1];
+  }
+  
+  return '';
 }
 
 // Helper function to make URLs absolute
@@ -460,6 +510,11 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
   
   console.log(`🎯 Found ${motorSections.length} potential motor sections`);
   
+  // First try to extract motors from embedded JSON objects
+  const jsonMotors = await extractMotorsFromJSON(html, markdown);
+  motors.push(...jsonMotors);
+  console.log(`🔧 Extracted ${jsonMotors.length} motors from JSON data`);
+  
   // Process each motor section
   for (const section of motorSections) {
     const parsed = parseMotorTitle(section);
@@ -472,12 +527,12 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
           model: parsed.displayTitle, // Clean format: "2025 FourStroke 25HP EFI ELHPT"
           horsepower: parsed.horsepower,
           motor_type: parsed.category,
-          base_price: additionalData.salePrice,
-          sale_price: additionalData.salePrice,
+          base_price: parsed.salePrice || additionalData.salePrice,
+          sale_price: parsed.salePrice || additionalData.salePrice,
           msrp: additionalData.msrp || (additionalData.salePrice && additionalData.savings ? 
             additionalData.salePrice + additionalData.savings : null),
           savings: additionalData.savings,
-          stock_number: additionalData.stockNumber,
+          stock_number: parsed.stockNumber || additionalData.stockNumber,
           availability: additionalData.availability || 'Available',
           usage: additionalData.usage || 'New',
           year: parsed.year,
@@ -585,12 +640,75 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
       html_length: html.length,
       markdown_length: markdown.length,
       motor_sections_found: motorSections.length,
+      json_motors_found: jsonMotors.length,
       total_matches: motors.length,
       unique_motors: uniqueMotors.length,
       pagination_info: paginationInfo,
       deduplication_method: 'stock_number_primary'
     }
   }
+}
+
+// Extract motors from embedded JSON objects in HTML/markdown
+async function extractMotorsFromJSON(html: string, markdown: string): Promise<any[]> {
+  const motors = [];
+  const text = html + ' ' + markdown;
+  
+  // Find all JSON objects that look like motor data
+  const jsonMatches = text.match(/\{"item":"[^"]*Mercury[^"]*"[^}]*\}/g) || [];
+  console.log(`🔍 Found ${jsonMatches.length} JSON motor objects`);
+  
+  for (const jsonStr of jsonMatches) {
+    try {
+      const motorData = JSON.parse(jsonStr);
+      
+      // Validate this is actually motor data
+      if (motorData.item && motorData.itemYear && motorData.itemModel && 
+          motorData.itemModel.includes('HP') && 
+          (motorData.itemModel.includes('Mercury') || motorData.itemMake === 'Mercury')) {
+        
+        const hp = motorData.itemModel.match(/(\d+)HP/i)?.[1] || '0';
+        const category = motorData.itemModel.includes('Pro XS') ? 'ProXS' :
+                        motorData.itemModel.includes('FourStroke') ? 'FourStroke' :
+                        motorData.itemModel.includes('Verado') ? 'Verado' : 'FourStroke';
+        
+        const motor = {
+          make: 'Mercury',
+          model: motorData.itemModel,
+          horsepower: parseFloat(hp),
+          motor_type: category,
+          base_price: motorData.itemPrice || motorData.unitPrice,
+          sale_price: motorData.itemPrice,
+          msrp: motorData.unitPrice,
+          stock_number: motorData.stockNumber,
+          availability: motorData.usageStatus === 'New' ? 'In Stock' : motorData.usageStatus,
+          usage: motorData.usageStatus || 'New',
+          year: motorData.itemYear,
+          engine_type: motorData.itemModel.includes('EFI') ? 'EFI' : '',
+          full_title: motorData.item,
+          images: motorData.images || [],
+          image_url: motorData.itemThumbNailUrl,
+          source: 'json_extraction'
+        };
+        
+        console.log('🎯 Extracted from JSON:', `${motor.year} ${motor.model} (${motor.stock_number})`);
+        motors.push(motor);
+      }
+    } catch (e) {
+      // Ignore invalid JSON
+    }
+  }
+  
+  return motors;
+}
+
+// Generate content hash for duplicate detection
+async function generateContentHash(content: string): Promise<string> {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(content.substring(0, 10000)); // Use first 10k chars for performance
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').substring(0, 16);
 }
 
 // Download and store image in Supabase Storage
@@ -805,6 +923,7 @@ serve(async (req) => {
     const errors = []
     let detectedTotalPages = pages_to_scrape;
     let totalExpectedMotors = 0;
+    const pageContentHashes = new Set(); // Track unique page content
     
     // Test which pagination pattern works BEFORE the main loop
     console.log('Testing pagination patterns...');
@@ -855,6 +974,57 @@ serve(async (req) => {
     }
 
     console.log(`📍 Using pagination pattern: ${workingPattern}`);
+
+    // Try single page with large limit first (better strategy)
+    if (pages_to_scrape > 1) {
+      console.log('🚀 Attempting single-page strategy with large limit...');
+      const singlePageUrl = `${baseUrl}?limit=200`;
+      
+      try {
+        const singleResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${firecrawlApiKey}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            url: singlePageUrl,
+            formats: ['html', 'markdown'],
+            waitFor: 3000,
+            timeout: 45000
+          })
+        });
+        
+        if (singleResponse.ok) {
+          const singleData = await singleResponse.json();
+          const parseResult = await parseMotorsFromHTML(singleData.data?.html || '', singleData.data?.markdown || '');
+          
+          if (parseResult.motors.length > 100) {
+            console.log(`✅ Single-page strategy successful: ${parseResult.motors.length} motors found`);
+            
+            // Save all motors and return early
+            const savedMotors = await saveMotorsToDatabase(parseResult.motors);
+            
+            return new Response(JSON.stringify({
+              success: true,
+              message: `Successfully scraped ${parseResult.motors.length} motors using single-page strategy`,
+              motorsScraped: parseResult.motors.length,
+              motorsSaved: savedMotors.length,
+              strategy: 'single_page',
+              samples: parseResult.motors.slice(0, 5).map(m => ({
+                model: m.model,
+                stock: m.stock_number,
+                price: m.sale_price
+              }))
+            }), {
+              headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+            });
+          }
+        }
+      } catch (e) {
+        console.log('Single-page strategy failed, falling back to pagination');
+      }
+    }
 
     // Enhanced pagination loop with smart detection
     for (let pageNum = 1; pageNum <= Math.max(pages_to_scrape, detectedTotalPages); pageNum++) {
@@ -907,9 +1077,20 @@ serve(async (req) => {
           const htmlData = firecrawlData.data?.html || ''
           const markdownData = firecrawlData.data?.markdown || ''
           
+          // Content verification - check if this page is actually different
+          const contentHash = await generateContentHash(htmlData + markdownData);
+          if (pageContentHashes.has(contentHash)) {
+            console.log(`⚠️ Page ${pageNum} has identical content to previous page - pagination may not be working`);
+            if (pageNum > 2) {
+              console.log('🛑 Stopping pagination - identical content detected');
+              break;
+            }
+          }
+          pageContentHashes.add(contentHash);
+          
           // After navigation, verify we're on the right page
           const currentURL = firecrawlData.data?.metadata?.url || currentUrl;
-          console.log(`Actually scraped: ${currentURL}`);
+          console.log(`Actually scraped: ${currentURL} (Hash: ${contentHash.substring(0, 8)})`);
 
           // Check how many motors are on this page
           const motorMatches = htmlData.match(/mercury.*?\d+.*?hp/gi) || [];
