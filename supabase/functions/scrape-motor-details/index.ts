@@ -609,6 +609,33 @@ serve(async (req) => {
         updateData.in_stock = true;
       }
 
+      // Smart merge: check if this is a brochure record being updated with inventory data
+      const { data: existingRecord, error: selectError } = await supabase
+        .from('motor_models')
+        .select('*')
+        .eq('id', motorId)
+        .single();
+
+      if (selectError) {
+        console.error('Error fetching existing record:', selectError);
+      } else if (existingRecord && existingRecord.is_brochure && setInStock) {
+        // Smart merge for brochure records getting inventory updates
+        const smartMergeData = {
+          ...updateData,
+          // Keep brochure data
+          hero_image_url: existingRecord.hero_image_url,
+          dealer_price: existingRecord.dealer_price,
+          msrp: existingRecord.msrp,
+          // Only update price_source if we have explicit sale price
+          price_source: existingRecord.price_source,
+          msrp_source: existingRecord.msrp_source,
+          // Prefer inventory image but keep hero for gallery
+          image_url: updatedImages[0] || existingRecord.image_url,
+        };
+        updateData = smartMergeData;
+        console.log(`Smart merging brochure record ${motorId} with inventory data`);
+      }
+
       // Update the motor_models table with enhanced data
       const { error: upErr } = await supabase
         .from('motor_models')
@@ -619,17 +646,62 @@ serve(async (req) => {
       
       console.log(`Successfully updated motor ${motorId}${setInStock ? ' (marked as in-stock)' : ''}`);
     } else {
-      const { error: upErr } = await supabase
+      // Fallback: update by detail_url with smart merge logic
+      const modelKey = buildModelKey(detailUrl); // Generate from URL as fallback
+      
+      // Check for existing brochure record with same model_key
+      const { data: brochureRecords, error: brochureError } = await supabase
         .from('motor_models')
-        .update({
+        .select('*')
+        .eq('model_key', modelKey)
+        .eq('is_brochure', true);
+
+      if (!brochureError && brochureRecords && brochureRecords.length > 0) {
+        // Smart merge into existing brochure record
+        const existing = brochureRecords[0];
+        const smartMergeData = {
           description: result.description,
           features: result.features,
           specifications: result.specifications,
           images: result.images,
           updated_at: new Date().toISOString(),
-        })
-        .eq('detail_url', detailUrl);
-      if (upErr) console.warn('Update by detail_url warning:', upErr?.message);
+          detail_url: detailUrl,
+          in_stock: true,
+          last_scraped: new Date().toISOString(),
+          // Keep brochure pricing data
+          hero_image_url: existing.hero_image_url,
+          dealer_price: existing.dealer_price,
+          msrp: existing.msrp,
+          price_source: existing.price_source,
+          msrp_source: existing.msrp_source,
+          // Prefer inventory image
+          image_url: result.images && result.images.length > 0 ? result.images[0] : existing.image_url,
+        };
+
+        const { error: mergeError } = await supabase
+          .from('motor_models')
+          .update(smartMergeData)
+          .eq('id', existing.id);
+
+        if (!mergeError) {
+          console.log(`Smart merged brochure record for model_key: ${modelKey}`);
+        } else {
+          console.warn('Smart merge error:', mergeError.message);
+        }
+      } else {
+        // Standard update by detail_url
+        const { error: upErr } = await supabase
+          .from('motor_models')
+          .update({
+            description: result.description,
+            features: result.features,
+            specifications: result.specifications,
+            images: result.images,
+            updated_at: new Date().toISOString(),
+          })
+          .eq('detail_url', detailUrl);
+        if (upErr) console.warn('Update by detail_url warning:', upErr?.message);
+      }
     }
 
     console.log(JSON.stringify({ event: 'scrape_motor_details_done', motorId, featuresCount: result.features.length, specsKeys: Object.keys(result.specifications).length }));

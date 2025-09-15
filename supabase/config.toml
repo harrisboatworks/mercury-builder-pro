@@ -41,3 +41,9 @@ verify_jwt = false
 
 [functions.generate-motor-spec-sheet]
 verify_jwt = false
+
+[functions.mark-out-of-stock]
+verify_jwt = true
+
+[functions.seed-from-pricelist]
+verify_jwt = false

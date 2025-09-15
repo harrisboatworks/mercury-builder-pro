@@ -1659,38 +1659,118 @@ serve(async (req) => {
 
     console.log(`Filter: ${filtered.length}/${cleaned.length} records kept (new Mercury outboards only).`);
 
-    // Step 4: Upsert to database
-    console.log('💾 Step 4: Saving to database...');
-    const dbRecords = filtered.map(m => ({
-      make: 'Mercury',
-      model: m.model,
-      year: m.year || 2025,
-      motor_type: m.motor_type || 'FourStroke',
-      horsepower: m.horsepower || 0,
-      fuel_type: m.fuel_type || '',
-      model_code: m.model_code || '',
-      sale_price: m.sale_price,
-      base_price: m.msrp || m.sale_price,
-      stock_number: m.stock_number,
-      availability: m.availability || 'Available',
-      image_url: m.image_url,
-      images: m.image_url ? [m.image_url, ...((m as any).gallery || [])] : ((m as any).gallery || []),
-      detail_url: m.source_url,
-      last_scraped: new Date().toISOString(),
-      inventory_source: fromXML ? 'xml_inventory' : 'detail_pages',
-      in_stock: true,
-      is_brochure: false
-    }));
+    // Step 4: Smart merge with brochure data
+    console.log('💾 Step 4: Smart merging with brochure data...');
+    let created = 0;
+    let updated = 0;
+    let errors = 0;
 
-    const { error: upsertError } = await supabase
-      .from('motor_models')
-      .upsert(dbRecords, { onConflict: 'detail_url' });
+    for (const m of filtered) {
+      try {
+        const modelKey = buildModelKey(m.model);
+        
+        // Check if brochure record exists with same model_key
+        const { data: existingRecords, error: selectError } = await supabase
+          .from('motor_models')
+          .select('*')
+          .eq('model_key', modelKey)
+          .eq('is_brochure', true);
 
-    if (upsertError) {
-      console.error('Database upsert error:', upsertError);
-    } else {
-      console.log(`✅ Saved ${dbRecords.length} motors to database`);
+        if (selectError) {
+          console.error('Error checking existing records:', selectError);
+          errors++;
+          continue;
+        }
+
+        const inventoryImages = m.image_url ? [m.image_url, ...((m as any).gallery || [])] : ((m as any).gallery || []);
+
+        if (existingRecords && existingRecords.length > 0) {
+          // Smart merge: update existing brochure record
+          const existing = existingRecords[0];
+          
+          const mergedData = {
+            // Keep brochure data
+            hero_image_url: existing.hero_image_url,
+            dealer_price: existing.dealer_price,
+            msrp: existing.msrp,
+            price_source: existing.price_source,
+            msrp_source: existing.msrp_source,
+            
+            // Update with inventory data
+            in_stock: true,
+            stock_number: m.stock_number,
+            availability: m.availability || 'Available',
+            detail_url: m.source_url,
+            last_scraped: new Date().toISOString(),
+            inventory_source: fromXML ? 'xml_inventory' : 'detail_pages',
+            
+            // Prefer inventory image as primary, keep hero_image_url for gallery
+            image_url: m.image_url || existing.image_url,
+            images: inventoryImages.length > 0 ? inventoryImages : existing.images,
+            
+            // Update with explicit sale price if XML provides it
+            ...(m.sale_price && {
+              sale_price: m.sale_price,
+              price_source: 'xml'
+            })
+          };
+
+          const { error: updateError } = await supabase
+            .from('motor_models')
+            .update(mergedData)
+            .eq('id', existing.id);
+
+          if (updateError) {
+            console.error('Error updating record:', updateError);
+            errors++;
+          } else {
+            updated++;
+            console.log(`✅ Merged inventory data for ${existing.model} (${modelKey})`);
+          }
+        } else {
+          // No brochure record found, create new inventory record
+          const newRecord = {
+            make: 'Mercury',
+            model: m.model,
+            model_key: modelKey,
+            year: m.year || 2025,
+            motor_type: m.motor_type || 'FourStroke',
+            horsepower: m.horsepower || 0,
+            fuel_type: m.fuel_type || '',
+            model_code: m.model_code || '',
+            sale_price: m.sale_price,
+            base_price: m.msrp || m.sale_price,
+            stock_number: m.stock_number,
+            availability: m.availability || 'Available',
+            image_url: m.image_url,
+            images: inventoryImages,
+            detail_url: m.source_url,
+            last_scraped: new Date().toISOString(),
+            inventory_source: fromXML ? 'xml_inventory' : 'detail_pages',
+            in_stock: true,
+            is_brochure: false,
+            price_source: m.sale_price ? 'xml' : null
+          };
+
+          const { error: insertError } = await supabase
+            .from('motor_models')
+            .insert([newRecord]);
+
+          if (insertError) {
+            console.error('Error creating record:', insertError);
+            errors++;
+          } else {
+            created++;
+            console.log(`✅ Created new inventory record for ${m.model} (${modelKey})`);
+          }
+        }
+      } catch (error) {
+        console.error('Error processing motor:', error);
+        errors++;
+      }
     }
+
+    console.log(`✅ Database operations complete: ${created} created, ${updated} updated, ${errors} errors`);
 
     // Step 5: Generate report
     validateSummary(cleaned);
@@ -1700,8 +1780,10 @@ serve(async (req) => {
       urls_discovered: urls.length,
       motors_scraped: results.length,
       motors_unique: cleaned.length,
-      motors_saved: dbRecords.length,
-      note: 'Scraped from detail pages. Deduped by stock_number or (model|year). "Call for Price" handled.',
+      motors_created: created,
+      motors_updated: updated,
+      errors: errors,
+      note: 'Smart merged with brochure data. Preserved pricing, images, and availability.',
       sample_motors: cleaned.slice(0, 3).map(m => ({
         model: m.model,
         hp: m.horsepower,
