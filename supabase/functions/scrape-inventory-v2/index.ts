@@ -783,15 +783,6 @@ serve(async (req) => {
   }
 
   try {
-    const corsHeaders = {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-    }
-
-    // Handle CORS preflight requests
-    if (req.method === 'OPTIONS') {
-      return new Response('ok', { headers: corsHeaders });
-    }
     const startTime = Date.now()
     const requestBody = await req.json()
     const { pages_to_scrape = 6 } = requestBody // Increased default to capture all 145+ motors
@@ -1267,29 +1258,41 @@ serve(async (req) => {
       full_title: motor.full_title
     }))
 
+    // Add defensive null checks for response variables
+    const safeTotalMotorsFound = totalMotorsFound || 0;
+    const safeTotalUniqueMotors = totalUniqueMotors || 0;
+    const safeSavedMotors = savedMotors || 0;
+    const safeSuccessfulPages = successfulPages || 0;
+    const safeDetectedTotalPages = detectedTotalPages || 0;
+    const safeTotalExpectedMotors = totalExpectedMotors || 0;
+    const safeMotorsPerPage = motorsPerPage || 0;
+    const safeSampleMotors = sampleMotors || [];
+    const safePageResults = pageResults || [];
+    const safeErrors = errors || [];
+
     const result = {
       success: true,
-      message: `Enhanced Mercury-specific scrape completed! ${successfulPages}/${Math.max(pages_to_scrape, detectedTotalPages)} pages successful. Found ${totalMotorsFound} total motors (${totalUniqueMotors} unique), saved ${savedMotors} to database`,
-      total_pages_scraped: Math.max(pages_to_scrape, detectedTotalPages),
-      successful_pages: successfulPages,
-      failed_pages: Math.max(pages_to_scrape, detectedTotalPages) - successfulPages,
-      combined_motors_found: totalMotorsFound,
-      combined_motors_saved: savedMotors,
-      expected_motors: totalExpectedMotors,
-      capture_rate: totalExpectedMotors > 0 ? ((totalUniqueMotors / totalExpectedMotors) * 100).toFixed(1) + '%' : 'Unknown',
+      message: `Enhanced Mercury-specific scrape completed! ${safeSuccessfulPages}/${Math.max(pages_to_scrape, safeDetectedTotalPages)} pages successful. Found ${safeTotalMotorsFound} total motors (${safeTotalUniqueMotors} unique), saved ${safeSavedMotors} to database`,
+      total_pages_scraped: Math.max(pages_to_scrape, safeDetectedTotalPages),
+      successful_pages: safeSuccessfulPages,
+      failed_pages: Math.max(pages_to_scrape, safeDetectedTotalPages) - safeSuccessfulPages,
+      combined_motors_found: safeTotalMotorsFound,
+      combined_motors_saved: safeSavedMotors,
+      expected_motors: safeTotalExpectedMotors,
+      capture_rate: safeTotalExpectedMotors > 0 ? ((safeTotalUniqueMotors / safeTotalExpectedMotors) * 100).toFixed(1) + '%' : 'Unknown',
       deduplication_method: 'stock_number_enhanced',
-      motors_per_page: motorsPerPage,
-      sample_motors: sampleMotors,
-      page_results: pageResults,
-      errors: errors,
-      base_url: baseUrl,
+      motors_per_page: safeMotorsPerPage,
+      sample_motors: safeSampleMotors,
+      page_results: safePageResults,
+      errors: safeErrors,
+      base_url: baseUrl || 'https://www.harrisboatworks.ca',
       api_version: 'v2-enhanced-mercury',
       timestamp: new Date().toISOString(),
       validation: {
-        total_expected: totalExpectedMotors,
-        total_found: totalMotorsFound,
-        total_unique: totalUniqueMotors,
-        capture_success: totalExpectedMotors > 0 ? totalUniqueMotors >= (totalExpectedMotors * 0.8) : true
+        total_expected: safeTotalExpectedMotors,
+        total_found: safeTotalMotorsFound,
+        total_unique: safeTotalUniqueMotors,
+        capture_success: safeTotalExpectedMotors > 0 ? safeTotalUniqueMotors >= (safeTotalExpectedMotors * 0.8) : true
       }
     }
     
@@ -1306,14 +1309,17 @@ serve(async (req) => {
 
   } catch (error) {
     console.error('❌ Main function error:', error)
+    console.error('❌ Error stack:', error.stack)
+    
     return new Response(
       JSON.stringify({ 
         success: false, 
-        error: error.message,
+        error: error.message || 'Unknown error occurred',
+        details: error.stack,
         timestamp: new Date().toISOString()
       }),
       { 
-        status: 500,
+        status: 200, // Return 200 with error details in JSON
         headers: { 
           ...corsHeaders,
           'Content-Type': 'application/json' 
