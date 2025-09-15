@@ -13,8 +13,15 @@ export default function MotorQuickInfo({
         {hp && <div><span className="text-muted-foreground">Horsepower:</span> <span className="font-medium">{hp}</span></div>}
         {weightLbs && <div><span className="text-muted-foreground">Weight:</span> <span className="font-medium">{weightLbs} lbs</span></div>}
         {model && (() => {
-          const cleanedModel = cleanMotorName(model);
-          console.log('MotorQuickInfo - model:', model);
+          // Defensive cleaning for any HTML artifacts that might slip through
+          let cleanModel = model;
+          if (typeof model === 'string' && (model.includes('<') || model.includes('>'))) {
+            cleanModel = model.replace(/<[^>]*>/g, '').trim();
+            console.warn('MotorQuickInfo - cleaned HTML from model:', model, '->', cleanModel);
+          }
+          
+          const cleanedModel = cleanMotorName(cleanModel);
+          console.log('MotorQuickInfo - model:', cleanModel);
           console.log('MotorQuickInfo - cleaned:', cleanedModel);
           const decoded = decodeModelName(cleanedModel);
           console.log('MotorQuickInfo - decoded:', decoded);

@@ -21,29 +21,67 @@ function cleanMotorName(rawName: string): string {
 
 // Parse motor title components exactly as they appear on harrisboatworks.ca
 function parseMotorTitle(title: string) {
-  const clean = title.replace(' - Mercury', '').trim();
+  // First, ensure title is completely clean
+  const clean = title
+    .replace(/<[^>]*>/g, '')  // Remove any HTML
+    .replace(' - Mercury', '')
+    .replace(/[<>]/g, '')      // Remove stray brackets
+    .replace(/&lt;/g, '<')     // Decode HTML entities
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/\s+/g, ' ')      // Normalize whitespace
+    .trim();
+  
+  console.log(`Parsing: "${clean}"`);
+  
+  // Handle special cases like "FourStroke 2." or "FourStroke 3."
+  if (clean.match(/FourStroke\s+\d+\.?$/)) {
+    // This is likely a small HP motor like 2.5HP or 3.5HP
+    const hp = clean.match(/(\d+\.?\d*)/)[1];
+    return {
+      year: new Date().getFullYear(),
+      category: 'FourStroke',
+      horsepower: parseFloat(hp),
+      fuelType: '',
+      modelCode: '',
+      fullTitle: clean,
+      displayTitle: `${new Date().getFullYear()} FourStroke ${hp}HP`,
+      isValid: true
+    };
+  }
   
   // Split the title into parts
   const parts = clean.split(/\s+/);
   
   // Extract components
-  const year = parts[0];
-  const category = parts[1]; // FourStroke, ProXS, etc.
+  const year = parts.find(p => /^\d{4}$/.test(p)) || new Date().getFullYear().toString();
+  const category = parts.find(p => /^(FourStroke|ProXS|SeaPro|Verado|Racing)/i.test(p)) || '';
   
-  // Find horsepower (contains 'HP')
-  const hpIndex = parts.findIndex(p => p.includes('HP'));
-  const horsepower = parts[hpIndex] || '';
+  // Find HP (might be like "25HP" or just "25")
+  let horsepower = '';
+  let hpIndex = -1;
+  for (let i = 0; i < parts.length; i++) {
+    if (parts[i].match(/^\d+\.?\d*HP$/i)) {
+      horsepower = parts[i];
+      hpIndex = i;
+      break;
+    } else if (parts[i].match(/^\d+\.?\d*$/) && i + 1 < parts.length && parts[i + 1].toUpperCase() === 'HP') {
+      horsepower = parts[i] + 'HP';
+      hpIndex = i + 1;
+      break;
+    }
+  }
   
   // Check if EFI exists
   const fuelType = parts.includes('EFI') ? 'EFI' : '';
   
-  // CRITICAL: Model code is everything after HP that's not EFI/TM/Mercury
-  const hpIndex = parts.findIndex(p => p.toUpperCase().includes('HP'));
+  // CRITICAL: Model code is everything after HP that's not EFI
   let modelCode = '';
-  if (hpIndex !== -1 && hpIndex < parts.length - 1) {
-    const codesParts = parts.slice(hpIndex + 1);
-    modelCode = codesParts
-      .filter(p => p !== 'EFI' && p !== 'TM' && p !== '-' && p !== 'Mercury')
+  if (hpIndex !== -1) {
+    const afterHP = parts.slice(hpIndex + 1);
+    modelCode = afterHP
+      .filter(p => p !== 'EFI' && p !== 'TM' && p !== '-')
       .join(' ')
       .trim();
   }
@@ -384,13 +422,22 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
     
     // Look for motor title patterns
     if (line.match(/(20(?:24|25)).*?(FourStroke|Pro\s*XS|ProXS|SeaPro|Verado).*?\d+.*?HP/i)) {
+      // Filter out non-motor items early
+      if (line.toLowerCase().includes('ideal for') || 
+          line.toLowerCase().includes('perfect for') ||
+          line.toLowerCase().includes('controls required') ||
+          !line.match(/\d+/)) {  // Must have at least one number (HP or year)
+        console.log(`Skipping non-motor item: "${line}"`);
+        continue;
+      }
+      
       // Save previous section if it exists
       if (currentSection.length > 0) {
         motorSections.push(currentSection.join(' '));
         currentSection = [];
       }
       currentSection.push(line);
-    } 
+    }
     // Look for pricing and details in next few lines
     else if (currentSection.length > 0 && currentSection.length < 8) {
       if (line.match(/\$[\d,]+|stock|save|available|in stock|new/i)) {
@@ -1104,11 +1151,34 @@ serve(async (req) => {
       }
     }
     
-    // Save unique motors to database
+    // Clean and validate motors before saving
+    const cleanedMotors = uniqueMotors
+      .filter(motor => {
+        // Must have a title and it must look like a motor
+        return motor.model && 
+               !motor.model.toLowerCase().includes('ideal for') &&
+               (motor.model.match(/\d+HP/i) || motor.model.match(/FourStroke|ProXS|SeaPro/i));
+      })
+      .map(motor => {
+        // Final cleaning - remove any remaining HTML artifacts
+        let cleanedTitle = motor.model;
+        if (typeof motor.model === 'string' && (motor.model.includes('<') || motor.model.includes('>'))) {
+          cleanedTitle = motor.model.replace(/<[^>]*>/g, '').trim();
+          console.log(`Cleaned HTML from title: "${motor.model}" -> "${cleanedTitle}"`);
+        }
+        return {
+          ...motor,
+          model: cleanedTitle
+        };
+      });
+
+    console.log(`\nFiltered motors: ${cleanedMotors.length} valid motors (from ${uniqueMotors.length} total)`);
+
+    // Save filtered motors to database
     let savedMotors = 0
-    if (uniqueMotors.length > 0) {
-      console.log('💾 Attempting to save motors to database...')
-      savedMotors = await saveMotorsToDatabase(uniqueMotors)
+    if (cleanedMotors.length > 0) {
+      console.log('💾 Attempting to save cleaned motors to database...')
+      savedMotors = await saveMotorsToDatabase(cleanedMotors)
       console.log('💾 Saved motors to database:', savedMotors)
     }
     
