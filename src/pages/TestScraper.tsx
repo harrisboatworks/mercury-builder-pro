@@ -9,17 +9,14 @@ export default function TestScraper() {
     setLoading(true);
     setResults(null);
     try {
-      console.log('🚀 Triggering Mercury scraper with fixes...');
+      console.log('🧪 Testing simple function first...');
       
-      const { data, error } = await supabase.functions.invoke('scrape-inventory-v2', {
-        body: { 
-          batch_size: 5,  // Smaller batch for testing
-          debug: true 
-        }
+      const { data, error } = await supabase.functions.invoke('test-scraper-simple', {
+        body: { test: true }
       });
       
       if (error) {
-        console.error('❌ Scraper error:', error);
+        console.error('❌ Simple test error:', error);
         setResults({ 
           error: error.message,
           details: error 
