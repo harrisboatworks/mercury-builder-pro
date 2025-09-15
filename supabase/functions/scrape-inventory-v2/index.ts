@@ -1647,7 +1647,15 @@ serve(async (req) => {
 
     for (const m of filtered) {
       try {
-        const modelKey = buildModelKey(m.model);
+        // Use the imported Mercury model key builder with parsed motor attributes
+        const rig = parseMotorFromUnit({ Title: m.model, model: m.model }).rig_attrs;
+        const modelKey = buildMercuryModelKey({
+          family: m.motor_type,
+          hp: m.horsepower,
+          hasEFI: m.fuel_type === 'EFI',
+          rig: rig,
+          modelNo: m.model_code
+        });
         
         // Check if brochure record exists with same model_key
         const { data: existingRecords, error: selectError } = await supabase
