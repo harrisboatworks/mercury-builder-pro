@@ -82,7 +82,136 @@ function parseMotorTitle(title: string) {
   return null;
 }
 
-// Extract additional motor data from harrisboatworks.ca structure
+// Helper function to make URLs absolute
+function makeAbsoluteUrl(url: string): string | null {
+  if (!url) return null;
+  
+  // Already absolute
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return url;
+  }
+  
+  // Protocol-relative
+  if (url.startsWith('//')) {
+    return 'https:' + url;
+  }
+  
+  // Relative to domain
+  if (url.startsWith('/')) {
+    return 'https://www.harrisboatworks.ca' + url;
+  }
+  
+  // Relative to current path
+  return 'https://www.harrisboatworks.ca/search/inventory/brand/Mercury/' + url;
+}
+
+// Extract motor images from HTML elements
+function extractMotorImages(element: any): any {
+  const images = {
+    thumbnail: null,
+    medium: null,
+    large: null,
+    fullSize: null,
+    all: []
+  };
+  
+  if (!element || typeof element.querySelector !== 'function') {
+    return images;
+  }
+  
+  try {
+    // Strategy 1: Check data attributes for full-size images
+    const imgElement = element.querySelector('img');
+    if (imgElement) {
+      // Often full-size is in data attributes
+      images.fullSize = 
+        imgElement.dataset?.fullSize ||
+        imgElement.dataset?.largeImage ||
+        imgElement.dataset?.zoom ||
+        imgElement.dataset?.src ||
+        imgElement.getAttribute?.('data-full-size') ||
+        imgElement.getAttribute?.('data-large-image');
+      
+      // Get the displayed image (might be thumbnail)
+      images.thumbnail = imgElement.src;
+      
+      // Check srcset for larger versions
+      const srcset = imgElement.srcset;
+      if (srcset) {
+        const srcsetParts = srcset.split(',');
+        const largestImage = srcsetParts[srcsetParts.length - 1].trim().split(' ')[0];
+        images.large = largestImage;
+      }
+    }
+    
+    // Strategy 2: Check anchor links (often link to full-size)
+    const linkElement = element.querySelector('a[href*="image"], a[href*="jpg"], a[href*="png"], a.product-image, a.zoom');
+    if (linkElement?.href) {
+      images.fullSize = images.fullSize || linkElement.href;
+    }
+    
+    // Strategy 3: Check for gallery/slider images
+    const galleryImages = element.querySelectorAll?.('.gallery img, .slider img, [data-gallery] img') || [];
+    galleryImages.forEach((img: any) => {
+      const fullUrl = img.dataset?.fullSize || img.dataset?.large || img.src;
+      if (fullUrl) images.all.push(fullUrl);
+    });
+    
+    // Strategy 4: Common patterns for Mercury motor images
+    if (images.thumbnail && !images.fullSize) {
+      // Convert thumbnail to full-size URL
+      images.fullSize = images.thumbnail
+        .replace('/thumb/', '/full/')
+        .replace('/thumbnail/', '/large/')
+        .replace('_thumb', '')
+        .replace('_small', '_large')
+        .replace(/\d+x\d+/, '1920x1080') // Replace size dimensions
+        .replace(/w=\d+/, 'w=1920')
+        .replace(/h=\d+/, 'h=1080');
+    }
+    
+    // Clean up URLs - ensure they're absolute
+    Object.keys(images).forEach(key => {
+      if (images[key] && typeof images[key] === 'string') {
+        images[key] = makeAbsoluteUrl(images[key]);
+      }
+    });
+    
+    // Process all array
+    images.all = images.all.map((url: string) => makeAbsoluteUrl(url)).filter(Boolean);
+    
+  } catch (error) {
+    console.error('Error extracting images:', error);
+  }
+  
+  return images;
+}
+
+// Validate image URLs to ensure they're full-size
+async function validateImageUrl(imageUrl: string, motorTitle: string): Promise<string | null> {
+  if (!imageUrl) return null;
+  
+  try {
+    // Verify it's a full-size image (not thumbnail)
+    const response = await fetch(imageUrl, { method: 'HEAD' });
+    const contentLength = response.headers.get('content-length');
+    
+    // Full-size images should be > 50KB, thumbnails are usually < 20KB
+    if (contentLength && parseInt(contentLength) < 50000) {
+      console.warn(`Image might be thumbnail for ${motorTitle}: ${contentLength} bytes - ${imageUrl}`);
+    } else {
+      console.log(`Image validated for ${motorTitle}: ${imageUrl} (${contentLength} bytes)`);
+    }
+    
+    return imageUrl;
+    
+  } catch (error) {
+    console.error(`Failed to validate image for ${motorTitle}:`, error);
+    return imageUrl; // Return it anyway, validation failed doesn't mean image is bad
+  }
+}
+
+// Extract additional motor data from harrisboatworks.ca structure  
 function extractMotorData(text: string) {
   const data = {
     salePrice: null,
@@ -126,6 +255,105 @@ function extractMotorData(text: string) {
   }
   
   return data;
+}
+
+// Extract images from HTML and associate with motors
+async function extractImagesFromHTML(html: string, motors: any[]) {
+  try {
+    console.log('🔍 Starting HTML image extraction...');
+    
+    // Create a mock DOM parser for server-side HTML parsing
+    const imageMatches = html.match(/<img[^>]*src=['"](.*?)['"][^>]*>/gi) || [];
+    console.log(`Found ${imageMatches.length} img tags in HTML`);
+    
+    const extractedImages = [];
+    
+    for (const imgMatch of imageMatches) {
+      const srcMatch = imgMatch.match(/src=['"](.*?)['"]/i);
+      const altMatch = imgMatch.match(/alt=['"](.*?)['"]/i);
+      const dataFullMatch = imgMatch.match(/data-full-size=['"](.*?)['"]/i);
+      const dataLargeMatch = imgMatch.match(/data-large-image=['"](.*?)['"]/i);
+      
+      if (srcMatch) {
+        const imageData = {
+          src: makeAbsoluteUrl(srcMatch[1]),
+          alt: altMatch?.[1] || '',
+          fullSize: makeAbsoluteUrl(dataFullMatch?.[1]) || null,
+          large: makeAbsoluteUrl(dataLargeMatch?.[1]) || null,
+          context: imgMatch.substring(0, 200) // Store context for matching
+        };
+        
+        // Skip tiny tracking pixels and invalid images
+        if (imageData.src && 
+            !imageData.src.includes('1x1') && 
+            !imageData.src.includes('pixel') &&
+            !imageData.src.includes('tracking') &&
+            imageData.src.length > 20) {
+          extractedImages.push(imageData);
+        }
+      }
+    }
+    
+    console.log(`📊 Extracted ${extractedImages.length} valid images from HTML`);
+    
+    // Try to match images to motors
+    for (const motor of motors) {
+      const motorImages = [];
+      let primaryImage = null;
+      
+      // Look for images that might belong to this motor
+      for (const imageData of extractedImages) {
+        const shouldInclude = 
+          // Check if image alt text contains motor info
+          (imageData.alt && (
+            imageData.alt.toLowerCase().includes(motor.horsepower.toString()) ||
+            imageData.alt.toLowerCase().includes('mercury') ||
+            imageData.alt.toLowerCase().includes('outboard')
+          )) ||
+          // Check if stock number appears in image context
+          (motor.stock_number && imageData.context.includes(motor.stock_number)) ||
+          // For now, include all valid motor images since matching is difficult
+          (imageData.src.toLowerCase().includes('motor') || 
+           imageData.src.toLowerCase().includes('outboard') ||
+           imageData.src.toLowerCase().includes('mercury'));
+        
+        if (shouldInclude) {
+          // Prefer full-size images
+          const bestImage = imageData.fullSize || imageData.large || imageData.src;
+          if (bestImage && !motorImages.includes(bestImage)) {
+            motorImages.push(bestImage);
+            
+            // Set primary image to the first good one
+            if (!primaryImage) {
+              primaryImage = bestImage;
+            }
+          }
+        }
+      }
+      
+      // If no specific matches, assign first few general motor images
+      if (motorImages.length === 0 && extractedImages.length > 0) {
+        const fallbackImages = extractedImages
+          .slice(0, 3) // Take first 3 images as fallback
+          .map(img => img.fullSize || img.large || img.src)
+          .filter(Boolean);
+        
+        motorImages.push(...fallbackImages);
+        primaryImage = fallbackImages[0] || null;
+      }
+      
+      // Update motor with images
+      motor.images = motorImages;
+      motor.primary_image = primaryImage;
+      
+      if (motorImages.length > 0) {
+        console.log(`🖼️ Assigned ${motorImages.length} images to ${motor.model}`);
+      }
+    }
+    
+  } catch (error) {
+    console.error('❌ Error extracting images from HTML:', error);
+  }
 }
 
 // Detect total pages from pagination info
@@ -211,7 +439,7 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
     if (parsed && parsed.horsepower >= 15 && parsed.horsepower <= 400) {
       const additionalData = extractMotorData(section);
       
-      // Enhanced motor object with comprehensive data
+      // Enhanced motor object with comprehensive data including images
       const motor = {
         make: 'Mercury',
         model: parsed.displayTitle, // Clean format: "2025 FourStroke 25HP EFI ELHPT"
@@ -229,7 +457,9 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
         model_code: parsed.modelCode, // CRITICAL: EH, ELHPT, XL, EXLPT, etc.
         fuel_type: parsed.fuelType,
         full_title: parsed.fullTitle,
-        section_text: section.substring(0, 200) // Debug info
+        section_text: section.substring(0, 200), // Debug info
+        images: [], // Will be populated from HTML parsing
+        primary_image: null // Will be set from first valid image
       };
       
       console.log('🎯 Parsed Mercury motor:', `${motor.year} ${motor.model} (Stock: ${motor.stock_number})`);
@@ -275,13 +505,28 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
           model_code: parsed.modelCode,
           fuel_type: parsed.fuelType,
           full_title: parsed.fullTitle,
-          source: 'html_fallback'
+          source: 'html_fallback',
+          images: [], // Will be populated from HTML parsing
+          primary_image: null // Will be set from first valid image
         };
         
         console.log('🎯 Parsed Mercury motor (HTML):', `${motor.year} ${motor.model}`);
         motors.push(motor);
       }
     }
+  }
+  
+  // Extract images from HTML for all motors
+  console.log('🖼️ Extracting images from HTML...');
+  await extractImagesFromHTML(html, motors);
+  
+  // Validate image counts
+  const motorsWithImages = motors.filter(m => m.images && m.images.length > 0);
+  const motorsWithoutImages = motors.filter(m => !m.images || m.images.length === 0);
+  console.log(`📊 Image extraction: ${motorsWithImages.length} motors with images, ${motorsWithoutImages.length} without images`);
+  
+  if (motorsWithoutImages.length > 0) {
+    console.log('⚠️ Motors without images:', motorsWithoutImages.map(m => m.model).slice(0, 5));
   }
   
   // Enhanced deduplication using stock number, then model+HP
@@ -375,7 +620,7 @@ async function saveMotorsToDatabase(motors: any[]) {
           console.log(`✅ Updated: ${motor.make} ${cleanModel} ${motor.horsepower}HP`)
         }
       } else {
-        // Insert new motor with clean data
+        // Insert new motor with clean data and images
         const { error: insertError } = await supabase
           .from('motor_models')
           .insert({
@@ -388,6 +633,8 @@ async function saveMotorsToDatabase(motors: any[]) {
             stock_number: motor.stock_number,
             availability: motor.availability || 'Available',
             year: motor.year,
+            images: motor.images || [],
+            image_url: motor.primary_image,
             created_at: new Date().toISOString(),
             updated_at: new Date().toISOString(),
             last_scraped: new Date().toISOString()
@@ -470,6 +717,7 @@ serve(async (req) => {
             formats: ['html', 'markdown'],
             pageOptions: {
               waitFor: 2000, // Wait for content to load
+              waitForSelector: 'img[src]', // Wait for images to load
               screenshot: false,
               fullPageScreenshot: false,
               includeHtml: true
