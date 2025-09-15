@@ -58,8 +58,9 @@ export default function TestMotorPipeline() {
         throw new Error(`${error.status}: ${error.message}\n${JSON.stringify((error as any)?.context ?? {}, null, 2)}`);
       }
 
-      const message = `DRY RUN → parsed: ${data.rows_parsed}, would create: ${data.rows_created}, would update: ${data.rows_updated || 0}`;
-      logCheckpoint(message);
+      const skipped = data.skipped_due_to_same_checksum ? 1 : 0;
+      const message = `parsed ${data.rows_parsed} • created ${data.rows_created} • updated ${data.rows_updated || 0} • errors ${data.errors || 0} • skipped ${skipped}`;
+      logCheckpoint(`DRY RUN → ${message}`);
       updateResult(stepIndex, 'success', message, data);
     } catch (error: any) {
       updateResult(stepIndex, 'error', `Error: ${error.message}`);
@@ -89,8 +90,9 @@ export default function TestMotorPipeline() {
         throw new Error(`${error.status}: ${error.message}\n${JSON.stringify((error as any)?.context ?? {}, null, 2)}`);
       }
 
-      const message = `PriceList → parsed: ${data.rows_parsed}, upserts: ${data.rows_created} created, ${data.rows_updated || 0} updated, errors: ${data.errors || 0}`;
-      logCheckpoint(message);
+      const skipped = data.skipped_due_to_same_checksum ? 1 : 0;
+      const message = `parsed ${data.rows_parsed} • created ${data.rows_created} • updated ${data.rows_updated || 0} • errors ${data.errors || 0} • skipped ${skipped}`;
+      logCheckpoint(`INGEST → ${message}`);
       updateResult(stepIndex, 'success', message, data);
     } catch (error: any) {
       updateResult(stepIndex, 'error', `Error: ${error.message}`);
@@ -307,14 +309,48 @@ export default function TestMotorPipeline() {
                 {result.message}
               </CardDescription>
               {result.data && (
-                <details className="mt-2">
-                  <summary className="text-sm text-muted-foreground cursor-pointer">
-                    View Details
-                  </summary>
-                  <pre className="mt-2 text-xs bg-muted p-2 rounded overflow-auto">
-                    {JSON.stringify(result.data, null, 2)}
-                  </pre>
-                </details>
+                <div className="mt-3 space-y-2">
+                  {/* Artifact downloads for steps 1A/1B */}
+                  {(index === 0 || index === 1) && result.data.artifacts && (
+                    <div className="flex gap-2">
+                      {result.data.artifacts.csv_url && (
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          onClick={() => window.open(result.data.artifacts.csv_url, '_blank')}
+                        >
+                          Download CSV
+                        </Button>
+                      )}
+                      {result.data.artifacts.json_url && (
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          onClick={() => window.open(result.data.artifacts.json_url, '_blank')}
+                        >
+                          Download JSON
+                        </Button>
+                      )}
+                      {result.data.artifacts.html_url && (
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          onClick={() => window.open(result.data.artifacts.html_url, '_blank')}
+                        >
+                          Download HTML
+                        </Button>
+                      )}
+                    </div>
+                  )}
+                  <details className="mt-2">
+                    <summary className="text-sm text-muted-foreground cursor-pointer">
+                      View Details
+                    </summary>
+                    <pre className="mt-2 text-xs bg-muted p-2 rounded overflow-auto">
+                      {JSON.stringify(result.data, null, 2)}
+                    </pre>
+                  </details>
+                </div>
               )}
             </CardContent>
           </Card>
