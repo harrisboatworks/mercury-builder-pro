@@ -9,6 +9,7 @@ const navItems = [
   { label: "Motor Images", to: "/admin/motor-images" },
   { label: "Inventory", to: "/admin/inventory" },
   { label: "Sources", to: "/admin/sources" },
+  { label: "Brochure Test", to: "/admin/brochure-test" },
   { label: "Connectors", to: "/admin/connectors" },
   { label: "Security", to: "/admin/security" },
   { label: "Zapier Integration", to: "/admin/zapier" },
