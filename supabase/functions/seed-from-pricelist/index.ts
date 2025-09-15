@@ -485,8 +485,16 @@ serve(async (req) => {
     const rows: any[] = [];
     const duplicatesInFeed: string[] = [];
     const seenModelKeys = new Set<string>();
+    const skipReasons: Record<string, number> = {};
     let rows_skipped_blank = 0;
     let rows_missing_required = 0;
+    
+    console.log(`[PriceList] DEBUG: Starting normalization of ${rawData.length} raw rows`);
+    
+    // Show first 3 raw rows for debugging
+    if (rawData.length > 0) {
+      console.log(`[PriceList] DEBUG: First 3 raw rows:`, rawData.slice(0, 3));
+    }
     
     for (let i = 0; i < rawData.length; i++) {
       const r = rawData[i];
@@ -494,6 +502,7 @@ serve(async (req) => {
       // Skip completely blank rows
       if (!r.model_display && !r.model_number) {
         rows_skipped_blank++;
+        skipReasons['blank_row'] = (skipReasons['blank_row'] || 0) + 1;
         continue;
       }
       
@@ -511,8 +520,25 @@ serve(async (req) => {
       // Build model_key using shared helper
       const model_key = buildModelKey(cleaned_model_display || model_number);
       
-      // Track detailed errors with line numbers
+      // Debug logging for first 10 rows
+      if (i < 10) {
+        console.log(`[PriceList] DEBUG Row ${i + 1}:`, {
+          raw_model: r.model_display,
+          model_number: r.model_number,
+          family: attrs.family,
+          horsepower: attrs.horsepower,
+          fuel: attrs.fuel,
+          rigging_code: attrs.rigging_code,
+          dealer_price_raw: String(r.dealer_price),
+          dealer_price_parsed: parsePrice(String(r.dealer_price || '')),
+          model_key,
+          msrp_computed: msrpFromDealer(parsePrice(String(r.dealer_price || '')), msrp_markup)
+        });
+      }
+      
+      // Track detailed errors with line numbers - but be more permissive
       if (!model_key || model_key.trim() === '') {
+        console.log(`[PriceList] DEBUG: Skipping row ${i + 1} - invalid model_key. Raw: "${r.model_display}", cleaned: "${cleaned_model_display}"`);
         rowErrors.push({ 
           line: i + 1,
           raw_model: r.model_display,
@@ -521,11 +547,13 @@ serve(async (req) => {
           reason: 'invalid_key'
         });
         rows_missing_required++;
+        skipReasons['invalid_model_key'] = (skipReasons['invalid_model_key'] || 0) + 1;
         continue;
       }
       
       const dealer_price = parsePrice(String(r.dealer_price || ''));
       if (!dealer_price || dealer_price <= 0) {
+        console.log(`[PriceList] DEBUG: Skipping row ${i + 1} - invalid price. Raw: "${r.dealer_price}", parsed: ${dealer_price}`);
         rowErrors.push({ 
           line: i + 1,
           raw_model: r.model_display,
@@ -534,25 +562,28 @@ serve(async (req) => {
           reason: 'invalid_price'
         });
         rows_missing_required++;
+        skipReasons['invalid_price'] = (skipReasons['invalid_price'] || 0) + 1;
         continue;
       }
       
-      // Track duplicates within feed
+      // Track duplicates within feed but don't skip them yet
       if (seenModelKeys.has(model_key)) {
         duplicatesInFeed.push(model_key);
+        skipReasons['duplicate_model_key'] = (skipReasons['duplicate_model_key'] || 0) + 1;
+        console.log(`[PriceList] DEBUG: Duplicate model_key found: ${model_key} (will be deduplicated later)`);
       } else {
         seenModelKeys.add(model_key);
       }
       
       const msrp = msrpFromDealer(dealer_price, msrp_markup);
       
-      // Build the row object for upsert
+      // Build the row object for upsert - be more permissive with missing fields
       const row: any = {
         make: 'Mercury',
-        model: cleaned_model_display || model_number,
+        model: cleaned_model_display || model_number || 'Unknown Model',
         model_key,
         year: 2025,
-        motor_type: attrs.family,
+        motor_type: attrs.family || 'FourStroke', // Default family
         dealer_price,
         msrp,
         msrp_source: `derived:+${Math.round((msrp_markup - 1) * 100)}%`,
@@ -573,14 +604,17 @@ serve(async (req) => {
         row.availability = 'Brochure';
       }
       
-      // Include optional fields only if present
-      if (attrs.family) row.family = attrs.family;
-      if (attrs.horsepower) row.horsepower = attrs.horsepower;
-      if (attrs.fuel) row.fuel_type = attrs.fuel;
-      if (attrs.rigging_code) row.rigging_code = attrs.rigging_code;
+      // Include optional fields - use defaults if missing
+      row.family = attrs.family || 'FourStroke';
+      row.horsepower = attrs.horsepower || 0;
+      row.fuel_type = attrs.fuel || 'EFI';
+      row.rigging_code = attrs.rigging_code || '';
       
       rows.push(row);
     }
+    
+    console.log(`[PriceList] DEBUG: Parsed ${rows.length} valid rows from ${rawData.length} raw rows`);
+    console.log(`[PriceList] DEBUG: Skip reasons:`, skipReasons);
     
     const rows_normalized = rows.length;
     const rows_with_invalid_key = rowErrors.filter(e => e.reason === 'invalid_key').length;
@@ -598,17 +632,28 @@ serve(async (req) => {
       keyGroups.get(model.model_key)!.push(model);
     }
     
+    console.log(`[PriceList] DEBUG: Found ${keyGroups.size} unique model_keys from ${rows.length} rows`);
+    
+    // Show some examples of grouped keys
+    const keyExamples = Array.from(keyGroups.entries()).slice(0, 5);
+    for (const [key, group] of keyExamples) {
+      console.log(`[PriceList] DEBUG: Key "${key}" has ${group.length} rows:`, group.map(g => g.model));
+    }
+    
     // Pick best representative for each key (prefer model_number, then higher HP, then more detailed model name)
     const deduplicatedModels = Array.from(keyGroups.values()).map(group => {
       if (group.length === 1) return group[0];
       
-      return group.sort((a, b) => {
+      const sorted = group.sort((a, b) => {
         // Prefer models with model_number
         if (a.model_number && !b.model_number) return -1;
         if (!a.model_number && b.model_number) return 1;
         if (a.horsepower !== b.horsepower) return (b.horsepower || 0) - (a.horsepower || 0);
         return b.model.length - a.model.length;
-      })[0];
+      });
+      
+      console.log(`[PriceList] DEBUG: Deduplicating key "${group[0].model_key}": chose "${sorted[0].model}" from ${group.length} options`);
+      return sorted[0];
     });
     
     console.log(`[PriceList] Deduplicated to ${deduplicatedModels.length} models`);
@@ -793,8 +838,27 @@ serve(async (req) => {
       msrp: m.msrp
     }));
     
-    // Build detailed response
+    // Build detailed response with comprehensive debugging info
     const rejectReasons = rowErrors.slice(0, 20).map(err => `Line ${err.line}: ${err.reason} (${err.raw_model})`);
+    const topSkipReasons = Object.entries(skipReasons)
+      .sort(([,a], [,b]) => b - a)
+      .slice(0, 3)
+      .map(([reason, count]) => `${reason}: ${count}`);
+    
+    // Enhanced sample models with more debug info
+    const enhancedSamples = deduplicatedModels.slice(0, 10).map(m => ({
+      model: m.model,
+      model_number: m.model_number || '',
+      model_key: m.model_key,
+      family: m.family,
+      horsepower: m.horsepower,
+      fuel_type: m.fuel_type,
+      rigging_code: m.rigging_code,
+      dealer_price: m.dealer_price,
+      msrp: m.msrp,
+      is_brochure: m.is_brochure,
+      in_stock: m.in_stock
+    }));
     
     return json200({
       success: true,
@@ -803,25 +867,37 @@ serve(async (req) => {
       table_rows: tableRows,
       table_cells: tableCells,
       html_snapshot_url: artifacts.html_snapshot_url,
-      rows_parsed_total: rows_found,
+      
+      // Detailed counts
+      rows_found_raw: rows_found,
+      rows_parsed: rows.length,
       rows_normalized,
+      rows_created,
+      rows_updated,
+      rows_skipped_with_reason: Object.values(skipReasons).reduce((a, b) => a + b, 0),
+      top_skip_reasons: topSkipReasons,
+      
+      // Legacy fields for compatibility
+      rows_parsed_total: rows_found,
       rows_with_invalid_key,
       rows_with_invalid_price,
       rows_skipped_blank,
       rows_missing_required,
-      rows_created,
-      rows_updated,
       rows_rejected: rowErrors.length,
       reject_reasons: rejectReasons,
       duplicates_in_feed: duplicatesInFeed.length,
       rows_matched_existing,
       rows_skipped,
+      
+      // Debug info
+      skip_reasons_detail: skipReasons,
+      unique_model_keys: keyGroups.size,
       rowErrors: rowErrors.slice(0, 50),
       rowMatches: rowMatches.slice(0, 50),
       checksum,
       skipped_due_to_same_checksum: false,
       artifacts,
-      sample_models: sampleModels
+      sample_models: enhancedSamples
     });
     
   } catch (error: any) {
