@@ -7,6 +7,25 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+// Validation function to ensure all motors have required fields
+const validateAndFixMotor = (motor: any) => {
+  return {
+    ...motor,
+    // Ensure required fields are never null
+    make: motor.make || 'Mercury',
+    year: motor.year || 2025,
+    model: motor.model || 'Unknown Model',
+    horsepower: motor.horsepower || 0,
+    motor_type: motor.motor_type || 'Outboard',
+    availability: motor.availability || 'Brochure',
+    base_price: motor.base_price || 0,
+    sale_price: motor.sale_price || motor.base_price || 0,
+    stock_quantity: motor.stock_quantity || 0,
+    inventory_source: 'html',
+    last_scraped: new Date().toISOString()
+  };
+};
+
 // Initialize Supabase client
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
@@ -458,18 +477,22 @@ serve(async (req) => {
           try {
             console.log(`Attempting to save motor: ${motor.model}, HP: ${motor.horsepower}`);
             
+            // Validate and fix motor data before saving
+            const validatedMotor = validateAndFixMotor(motor);
+            
             // Log the exact data being saved
-            console.log('Motor data:', JSON.stringify(motor, null, 2));
+            console.log('Motor data before validation:', JSON.stringify(motor, null, 2));
+            console.log('Motor data after validation:', JSON.stringify(validatedMotor, null, 2));
             
             const { data, error } = await supabase
               .from('motor_models')
-              .insert(motor)
+              .insert(validatedMotor)
               .select();
             
             if (error) {
               console.error(`❌ Failed to save ${motor.model}:`, error.message);
               console.error('Error details:', error);
-              console.error('Motor data that failed:', motor);
+              console.error('Motor data that failed:', validatedMotor);
               summary.errors_count++;
             } else {
               console.log(`✅ Successfully saved: ${motor.model}`);
