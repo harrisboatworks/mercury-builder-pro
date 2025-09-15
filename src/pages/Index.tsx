@@ -11,6 +11,7 @@ import { ShoppingCart, RotateCcw, ArrowRight, User, FileText, LogOut, Trash2, Al
 import harrisLogo from '@/assets/harris-logo.png';
 import { money } from '@/lib/money';
 import { calculateMonthly } from '@/lib/finance';
+import TestFunctionButton from '@/components/TestFunctionButton';
 
 const Index = () => {
   const [showQuoteForm, setShowQuoteForm] = useState(false);
@@ -551,7 +552,7 @@ const Index = () => {
               <p className="text-sm text-muted-foreground mb-4">
                 Need help? Our service team is here to assist you.
               </p>
-              <div className="flex justify-center space-x-4">
+              <div className="flex justify-center space-x-4 mb-6">
                 <Button variant="ghost" size="sm" asChild>
                   <a href="tel:+16479522153">📞 Call Us</a>
                 </Button>
@@ -564,6 +565,11 @@ const Index = () => {
                 <Button variant="ghost" size="sm" asChild>
                   <a href="mailto:sales@harrisboatworks.com">✉️ Email Us</a>
                 </Button>
+              </div>
+              
+              {/* Test Function Button */}
+              <div className="pt-4 border-t border-border">
+                <TestFunctionButton />
               </div>
             </div>
           </div>
