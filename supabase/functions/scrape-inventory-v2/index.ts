@@ -224,12 +224,13 @@ serve(async (req) => {
       body = {};
     }
     
-    const { source = 'html', trigger = 'manual', useXmlFeed = false } = body;
+    const { source = 'html', trigger = 'manual', useXmlFeed = false, page = 1 } = body;
     
-    console.log(`📊 CORRECT v2 - Params: source=${source}, trigger=${trigger}, useXmlFeed=${useXmlFeed}`);
+    console.log(`📊 CORRECT v2 - Params: source=${source}, trigger=${trigger}, useXmlFeed=${useXmlFeed}, page=${page}`);
 
     const summary = {
       source: 'html',
+      page: page,
       motors_found: 0,
       motors_hydrated: 0,
       motors_inserted: 0,
@@ -243,16 +244,183 @@ serve(async (req) => {
     };
 
     if (source === 'html') {
-      // Harris Boat Works HTML scraping with DOM Parser
+      // Harris Boat Works HTML scraping with DOM Parser - Single Page Mode
       const baseUrl = 'https://www.harrisboatworks.ca/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low';
-      let currentPage = 1;
-      let hasMorePages = true;
       const allMotors = [];
       const parser = new DOMParser();
 
-      console.log('🔍 Starting Harris Boat Works HTML scraping with DOMParser...');
+      console.log(`🔍 Starting Harris Boat Works HTML scraping - Page ${page} only...`);
 
-      while (hasMorePages && currentPage <= 2) { // Reduce to 2 pages to prevent timeout (~60 motors max)
+      // Scrape only the requested page
+      const pageUrl = page === 1 
+        ? `${baseUrl}?resultsperpage=200`
+        : `${baseUrl}/page/${page}?resultsperpage=200`;
+        
+      console.log(`📄 Scraping page ${page}: ${pageUrl}`);
+
+      try {
+        const response = await fetch(pageUrl, {
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'DNT': '1',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1'
+          }
+        });
+
+        if (!response.ok) {
+          console.error(`❌ Failed to fetch page ${page}: ${response.status}`);
+          throw new Error(`Failed to fetch page ${page}: ${response.status}`);
+        }
+
+        const html = await response.text();
+        console.log(`📄 Page ${page} HTML length: ${html.length}`);
+        
+        // Check if we're being blocked
+        if (html.includes('cloudflare') || html.includes('captcha') || html.includes('Just a moment') || 
+            html.includes('Checking your browser') || html.includes('DDoS protection')) {
+          console.error('⚠️ Possible bot protection detected');
+        }
+        
+        const doc = parser.parseFromString(html, 'text/html');
+        if (!doc) {
+          throw new Error(`Failed to parse HTML for page ${page}`);
+        }
+
+        // Find motor items
+        const motorElements = doc.querySelectorAll('.srp-list-item');
+        console.log(`📦 Found ${motorElements.length} motor items on page ${page}`);
+        
+        summary.pages_scraped = 1;
+
+        // Process each motor on this page
+        for (let i = 0; i < motorElements.length; i++) {
+          try {
+            const element = motorElements[i];
+            
+            // Extract motor details (same extraction logic as before)
+            const titleElement = element.querySelector('.srp-title a') || element.querySelector('h3 a') || element.querySelector('.title a');
+            const title = titleElement?.textContent?.trim() || '';
+            
+            const priceElement = element.querySelector('.srp-price') || element.querySelector('.price');
+            const priceText = priceElement?.textContent?.trim() || '';
+            
+            const availabilityElement = element.querySelector('.srp-availability') || element.querySelector('.availability');
+            let availability = availabilityElement?.textContent?.trim() || 'Brochure';
+            
+            const imageElement = element.querySelector('img');
+            const imageUrl = imageElement?.src || imageElement?.getAttribute('data-src') || null;
+            
+            const linkElement = element.querySelector('a');
+            const detailUrl = linkElement?.href ? new URL(linkElement.href, 'https://www.harrisboatworks.ca').toString() : null;
+
+            // Parse title for motor details
+            let make = 'Mercury';
+            let model = 'Unknown Model';
+            let horsepower = 0;
+            let year = 2025;
+
+            if (title) {
+              const hpMatch = title.match(/(\d+(?:\.\d+)?)\s*hp/i);
+              if (hpMatch) {
+                horsepower = parseFloat(hpMatch[1]);
+              }
+              
+              const yearMatch = title.match(/\b(20\d{2})\b/);
+              if (yearMatch) {
+                year = parseInt(yearMatch[1]);
+              }
+              
+              let cleanTitle = title.replace(/\b(20\d{2})\b/g, '').replace(/\d+(?:\.\d+)?\s*hp/gi, '').trim();
+              cleanTitle = cleanTitle.replace(/^(Mercury|Yamaha|Honda|Suzuki|Evinrude)\s*/i, '').trim();
+              model = cleanTitle || 'Unknown Model';
+            }
+
+            // Parse price
+            let basePrice = null;
+            if (priceText) {
+              const priceMatch = priceText.match(/\$?([\d,]+)/);
+              if (priceMatch) {
+                basePrice = parseFloat(priceMatch[1].replace(/,/g, ''));
+              }
+            }
+
+            // Clean availability
+            if (availability.toLowerCase().includes('in stock')) {
+              availability = 'In Stock';
+            } else if (availability.toLowerCase().includes('sold')) {
+              availability = 'Sold';
+            } else {
+              availability = 'Brochure';
+            }
+
+            // Extract stock number from detail URL or other sources
+            let stockNumber = null;
+            if (detailUrl) {
+              const stockMatch = detailUrl.match(/\/(\d+)$/);
+              if (stockMatch) {
+                stockNumber = stockMatch[1];
+              }
+            }
+
+            const motor = {
+              make,
+              model,
+              year,
+              horsepower,
+              motor_type: 'Outboard',
+              base_price: basePrice,
+              sale_price: basePrice,
+              availability,
+              image_url: imageUrl,
+              detail_url: detailUrl,
+              description: title,
+              stock_number: stockNumber,
+            };
+
+            // Validate motor
+            const isValidMotor = (
+              motor.model && 
+              motor.model.length > 1 && 
+              motor.horsepower && 
+              motor.horsepower > 0 && 
+              motor.make &&
+              motor.motor_type
+            );
+            
+            if (isValidMotor) {
+              allMotors.push(motor);
+              console.log(`✅ Found motor: ${motor.make} ${motor.model} ${motor.horsepower}HP - $${motor.base_price} - ${motor.availability} - Stock: ${motor.stock_number || 'N/A'}`);
+            } else {
+              console.log(`❌ Invalid motor data: model="${motor.model}", hp=${motor.horsepower}, price=${motor.base_price}, make=${motor.make}, type=${motor.motor_type}`);
+              summary.errors_count++;
+            }
+
+          } catch (motorError) {
+            console.error(`❌ Error processing motor ${i + 1} on page ${page}:`, motorError);
+            summary.errors_count++;
+          }
+        }
+
+        // Check if there are more pages
+        const nextPageLink = doc.querySelector('a.next, a[rel="next"], .pagination a:last-child');
+        const hasNextPage = nextPageLink && !nextPageLink.classList.contains('disabled');
+        
+        console.log(`🔍 Next page check: hasNextPage=${hasNextPage}, currentPage=${page}`);
+        
+        summary.motors_found = allMotors.length;
+        summary.has_more_pages = hasNextPage;
+        
+        console.log(`🎯 CORRECT v2 - Found ${allMotors.length} motors on page ${page}`);
+
+      } catch (pageError) {
+        console.error(`❌ Error scraping page ${page}:`, pageError);
+        summary.errors_count++;
+        throw pageError;
+      }
         const pageUrl = currentPage === 1 
           ? `${baseUrl}?resultsperpage=200`
           : `${baseUrl}/page/${currentPage}?resultsperpage=200`;
@@ -648,15 +816,12 @@ serve(async (req) => {
         }
       }
 
-      summary.motors_found = allMotors.length;
-      console.log(`🎯 CORRECT v2 - Found ${allMotors.length} total motors from ${summary.pages_scraped} pages`);
-
-          // Log motor summary by availability (updated for proper case)
-          const inStockCount = allMotors.filter(m => m.availability === 'In Stock').length;
-          const brochureCount = allMotors.filter(m => m.availability === 'Brochure').length;
-          const soldCount = allMotors.filter(m => m.availability === 'Sold').length;
-      
-      console.log(`📊 Motor breakdown: ${inStockCount} in stock, ${brochureCount} brochure, ${soldCount} sold`);
+        // Log motor summary by availability (updated for proper case)
+        const inStockCount = allMotors.filter(m => m.availability === 'In Stock').length;
+        const brochureCount = allMotors.filter(m => m.availability === 'Brochure').length;
+        const soldCount = allMotors.filter(m => m.availability === 'Sold').length;
+    
+        console.log(`📊 Motor breakdown: ${inStockCount} in stock, ${brochureCount} brochure, ${soldCount} sold`);
 
       // Insert motors into database with batch saving
       if (allMotors.length > 0) {
@@ -712,6 +877,8 @@ serve(async (req) => {
     const response = {
       success: true,
       data: {
+        page: page,
+        hasMore: summary.has_more_pages || false,
         motors_found: summary.motors_found,
         motors_saved: summary.motors_inserted,
         motors_failed: summary.errors_count,

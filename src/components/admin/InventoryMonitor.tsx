@@ -126,37 +126,83 @@ export function InventoryMonitor() {
       } catch (apiError) {
         console.warn('API endpoint failed, trying direct Supabase call:', apiError);
         
-        // Fallback to direct Supabase edge function call
-        const { data, error } = await supabase.functions.invoke('scrape-inventory-v2', {
-          body: { 
-            trigger: 'manual-admin',
-            source: useXml ? 'xml' : 'html',
-            useXmlFeed: useXml,
-            at: new Date().toISOString() 
-          },
-        });
+        // Fallback to direct Supabase edge function call with pagination
+        console.log('Starting paginated inventory scrape...');
+        let totalMotorsFound = 0;
+        let totalMotorsSaved = 0;
+        let page = 1;
+        let hasMore = true;
+        let results = [];
 
-        if (error) {
-          throw new Error(`Supabase function failed: ${error.message}`);
+        while (hasMore && page <= 4) { // Limit to 4 pages to prevent too long execution
+          console.log(`Scraping page ${page}...`);
+          
+          const { data, error } = await supabase.functions.invoke('scrape-inventory-v2', {
+            body: { 
+              trigger: 'manual-admin',
+              source: useXml ? 'xml' : 'html',
+              useXmlFeed: useXml,
+              page: page,
+              at: new Date().toISOString() 
+            },
+          });
+
+          if (error) {
+            console.error(`Page ${page} failed:`, error.message);
+            break;
+          }
+
+          if (data) {
+            totalMotorsFound += data.motors_found || 0;
+            totalMotorsSaved += data.motors_saved || 0;
+            hasMore = data.hasMore && page < 4;
+            results.push(data);
+            
+            console.log(`Page ${page}: Found ${data.motors_found}, Saved ${data.motors_saved}, HasMore: ${data.hasMore}`);
+            
+            // Update toast with progress
+            toast({
+              title: `Page ${page} complete`,
+              description: `Found ${data.motors_found} motors (${totalMotorsFound} total so far)`,
+            });
+          }
+
+          page++;
+          
+          // Small delay between pages
+          if (hasMore) {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+          }
         }
 
         result = {
           ok: true,
           result: {
-            inventory: data,
+            inventory: {
+              motors_found: totalMotorsFound,
+              motors_saved: totalMotorsSaved,
+              pages_processed: page - 1,
+              summary: {
+                motors_found: totalMotorsFound,
+                motors_inserted: totalMotorsSaved,
+                source: 'html-paginated'
+              }
+            },
             executionTime: 'N/A',
-            source: data?.summary?.source || 'direct-supabase'
+            source: 'paginated-supabase'
           }
         };
         console.log('Direct Supabase call succeeded');
       }
 
       const sourceUsed = result.result?.inventory?.summary?.source || result.result?.source || 'unknown';
-      const motorsFound = result.result?.inventory?.summary?.motors_found || 0;
+      const motorsFound = result.result?.inventory?.summary?.motors_found || result.result?.inventory?.motors_found || 0;
+      const motorsSaved = result.result?.inventory?.summary?.motors_inserted || result.result?.inventory?.motors_saved || 0;
+      const pagesProcessed = result.result?.inventory?.pages_processed || 1;
       
       toast({
         title: "Inventory update completed",
-        description: `Found ${motorsFound} Mercury motors using ${sourceUsed.toUpperCase()} source`,
+        description: `Processed ${pagesProcessed} page(s), found ${motorsFound} motors, saved ${motorsSaved} to database using ${sourceUsed.toUpperCase()} source`,
       });
 
       // Refresh the data
