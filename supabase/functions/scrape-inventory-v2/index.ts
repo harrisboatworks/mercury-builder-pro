@@ -702,13 +702,11 @@ async function extractMotorsFromJSON(html: string, markdown: string): Promise<an
   return motors;
 }
 
-// Generate content hash for duplicate detection
-async function generateContentHash(content: string): Promise<string> {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(content.substring(0, 10000)); // Use first 10k chars for performance
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').substring(0, 16);
+// Generate simple content identifier for duplicate detection
+function generateContentIdentifier(content: string): string {
+  const contentLength = content.length;
+  const contentPreview = content.substring(0, 100).replace(/\s+/g, ' ').trim();
+  return `${contentLength}_${contentPreview}`;
 }
 
 // Download and store image in Supabase Storage
@@ -1078,19 +1076,19 @@ serve(async (req) => {
           const markdownData = firecrawlData.data?.markdown || ''
           
           // Content verification - check if this page is actually different
-          const contentHash = await generateContentHash(htmlData + markdownData);
-          if (pageContentHashes.has(contentHash)) {
+          const contentId = generateContentIdentifier(htmlData + markdownData);
+          if (pageContentHashes.has(contentId)) {
             console.log(`⚠️ Page ${pageNum} has identical content to previous page - pagination may not be working`);
             if (pageNum > 2) {
               console.log('🛑 Stopping pagination - identical content detected');
               break;
             }
           }
-          pageContentHashes.add(contentHash);
+          pageContentHashes.add(contentId);
           
-          // After navigation, verify we're on the right page
-          const currentURL = firecrawlData.data?.metadata?.url || currentUrl;
-          console.log(`Actually scraped: ${currentURL} (Hash: ${contentHash.substring(0, 8)})`);
+          // Simple debug logging
+          console.log(`Page ${pageNum}: ${pageUrl}`);
+          console.log(`Page ${pageNum}: Content length: ${htmlData.length + markdownData.length}`);
 
           // Check how many motors are on this page
           const motorMatches = htmlData.match(/mercury.*?\d+.*?hp/gi) || [];
