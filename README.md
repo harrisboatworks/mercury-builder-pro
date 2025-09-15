@@ -64,10 +64,23 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/bc5f0a45-f6d8-495a-8ac7-81047b4a4121) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
+# Manual Full Scrape Trigger
 
-Yes, you can!
+For manual full inventory scraping (server-side to avoid timeouts), use this curl command:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```bash
+# Replace PROJECT_REF with your Supabase project ID: eutsoqdpjurknjsshxes
+# Replace SERVICE_ROLE_KEY with your service role key from Supabase Dashboard → Settings → API
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+curl -X POST \
+  https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/scrape-inventory-v2 \
+  -H "Authorization: Bearer YOUR_SERVICE_ROLE_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"mode":"full","batch_size":20,"concurrency":4}'
+```
+
+**Note:** Service role key can be found in Supabase Dashboard → Settings → API → Service Role Key (secret)
+
+## Automated Scraping
+
+Full inventory scraping runs automatically daily at 5:00 AM EST via Supabase Edge Function schedule.
