@@ -3,120 +3,66 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { load } from 'https://esm.sh/cheerio@1.0.0-rc.12';
 
+// Import shared motor helpers for consistent model key generation
+import { buildModelKey, extractHpAndCode } from '../_shared/motor-helpers.ts';
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
   'Access-Control-Max-Age': '86400',
 };
 
-// Enhanced model key utility with better specificity
-function buildModelKey(modelDisplay: string, modelCode?: string, attrs?: any): string {
-  if (!modelDisplay && !modelCode) return '';
+// Enhanced text cleaning for messy HTML formatting
+function cleanText(text: string): string {
+  if (!text) return '';
   
-  const input = modelDisplay || modelCode || '';
-  let s = input
-    // strip HTML & odd chars
-    .replace(/<[^>]*>/g, ' ')
-    .replace(/[()]/g, ' ')
-    // remove year tokens
-    .replace(/\b20\d{2}\b/g, ' ')
-    // normalize family names
-    .replace(/\bfour[\s-]*stroke\b/ig, 'FourStroke')
-    .replace(/\bpro[\s-]*xs\b/ig, 'ProXS')
-    .replace(/\bsea[\s-]*pro\b/ig, 'SeaPro')
-    .replace(/\bverado\b/ig, 'Verado')
-    .replace(/\bracing\b/ig, 'Racing')
-    // normalize EFI
-    .replace(/\befi\b/ig, 'EFI')
-    // coalesce whitespace
+  return text
+    // Clean NBSP characters
+    .replace(/\u00a0/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    // Clean weird quotes and dashes  
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/[\u201c\u201d]/g, '"')
+    .replace(/[\u2013\u2014]/g, '-')
+    // Clean HTML entities
+    .replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    // Normalize whitespace
     .replace(/\s+/g, ' ')
     .trim();
-
-  // Extract components for more specific keys
-  const hpMatch = s.match(/\b(\d+(\.\d+)?)\s*hp\b/i);
-  const hp = hpMatch ? `${hpMatch[1]}HP` : '';
-  
-  // Extract family
-  const famMatch = s.match(/\b(FourStroke|ProXS|SeaPro|Verado|Racing)\b/i);
-  const family = famMatch ? famMatch[1] : (attrs?.family || 'FourStroke');
-  
-  // Extract shaft length with priority order
-  let shaft = '';
-  if (/XXXL/i.test(s)) shaft = 'XXXL';
-  else if (/XXL/i.test(s)) shaft = 'XXL'; 
-  else if (/\bXL\b/i.test(s)) shaft = 'XL';
-  else if (/\bL\b/i.test(s)) shaft = 'L';
-  else if (/\bS\b/i.test(s)) shaft = 'S';
-  else if (attrs?.shaft) shaft = attrs.shaft;
-  
-  // Extract control type
-  let control = '';
-  if (/TILLER/i.test(s)) control = 'TILLER';
-  else if (/DTS/i.test(s)) control = 'DTS';
-  else if (/ELHPT/i.test(s)) control = 'ELHPT';
-  else if (/ELPT/i.test(s)) control = 'ELPT';
-  else if (/ELH/i.test(s)) control = 'ELH';
-  else if (/ELO/i.test(s)) control = 'ELO';
-  else if (attrs?.control) control = attrs.control;
-  
-  // Extract special features
-  const ct = /\bCT\b/i.test(s) || attrs?.ct;
-  const jet = /JET/i.test(s) || attrs?.jet;
-  
-  // Build key components in priority order
-  const keyParts = [
-    family,
-    hp,
-    shaft,
-    control,
-    ct ? 'CT' : '',
-    jet ? 'JET' : '',
-    'EFI'
-  ].filter(Boolean);
-  
-  // If we still don't have enough specificity, append model code suffix
-  let key = keyParts.join('-');
-  if (modelCode && modelCode !== modelDisplay) {
-    // Take last 3-4 chars of model code for additional uniqueness
-    const codeSuffix = modelCode.slice(-4).replace(/[^A-Z0-9]/g, '');
-    if (codeSuffix) key += `-${codeSuffix}`;
-  }
-  
-  return key.toUpperCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
 }
 
-// Parse model attributes from display string
+// Enhanced price parsing for various formats
+function parsePrice(priceText: string): number | null {
+  if (!priceText) return null;
+  
+  const cleaned = cleanText(priceText)
+    .replace(/[$,\s]/g, '')  // Remove $ , and spaces
+    .replace(/[^\d.]/g, ''); // Keep only digits and dots
+    
+  if (!cleaned) return null;
+  
+  const price = Number(cleaned);
+  
+  // Reasonable price range validation
+  if (isNaN(price) || price <= 0 || price > 1000000) {
+    return null;
+  }
+  
+  return price;
+}
+
+// Parse model attributes from display string using shared helper
 function parseModelFromText(modelDisplay: string = '') {
-  const text = modelDisplay.toUpperCase();
-  
-  // Extract HP
-  const hpMatch = text.match(/(?<!\d)(\d{1,3}(?:\.\d)?)\s*HP?/);
-  const horsepower = hpMatch ? Number(hpMatch[1]) : null;
-  
-  // Determine family
-  let family = 'FourStroke';
-  if (/PRO\s*XS/i.test(text)) family = 'ProXS';
-  else if (/SEAPRO/i.test(text)) family = 'SeaPro';
-  else if (/VERADO/i.test(text)) family = 'Verado';
-  else if (/RACING/i.test(text)) family = 'Racing';
-  
-  // Extract fuel type
-  const fuel = /EFI/.test(text) ? 'EFI' : '';
-  
-  // Extract rigging code
-  let rigging_code = '';
-  if (/TILLER/i.test(text)) rigging_code = 'TILLER';
-  else if (/DTS/.test(text)) rigging_code = 'DTS';
-  else if (/ELHPT/.test(text)) rigging_code = 'ELHPT';
-  else if (/ELPT/.test(text)) rigging_code = 'ELPT';
-  else if (/ELH/.test(text)) rigging_code = 'ELH';
-  else if (/ELO/.test(text)) rigging_code = 'ELO';
+  const cleanedText = cleanText(modelDisplay);
+  const parsed = extractHpAndCode(cleanedText);
   
   return {
-    family,
-    horsepower,
-    fuel,
-    rigging_code
+    family: parsed.family || 'FourStroke',
+    horsepower: parsed.hp,
+    fuel: parsed.fuel || 'EFI',
+    rigging_code: parsed.code
   };
 }
 
@@ -224,14 +170,6 @@ function json200(body: any) {
   });
 }
 
-// Helper to safely convert strings to numbers
-function toNumber(value: any): number | null {
-  if (value === null || value === undefined || value === '') return null;
-  const cleaned = String(value).replace(/[^0-9.-]/g, '');
-  const num = Number(cleaned);
-  return isNaN(num) ? null : num;
-}
-
 // Helper to calculate MSRP from dealer price
 function msrpFromDealer(dealerPrice: number | null, markup: number): number | null {
   if (!dealerPrice || !markup) return null;
@@ -252,7 +190,8 @@ serve(async (req) => {
       url = 'https://www.harrisboatworks.ca/mercurypricelist',
       dry_run = false, 
       msrp_markup = 1.10, 
-      force = false 
+      force = false,
+      create_missing_brochure = true
     } = await req.json();
     
     console.log(`Starting price list ingest from: ${url}`);
@@ -316,35 +255,52 @@ serve(async (req) => {
     // STEP 3: Normalize data and build model objects
     currentStep = 'normalize';
     const rows: any[] = [];
+    const duplicatesInFeed: string[] = [];
+    const seenModelKeys = new Set<string>();
     
-    for (const r of rawData) {
-      const attrs = parseModelFromText(r.model_display);
-      const model_key = buildModelKey(r.model_display);
+    for (let i = 0; i < rawData.length; i++) {
+      const r = rawData[i];
+      const cleaned_model_display = cleanText(r.model_display);
+      const attrs = parseModelFromText(cleaned_model_display);
+      const model_key = buildModelKey(cleaned_model_display);
       
-      // Skip rows with invalid model_key
+      // Track detailed errors with line numbers
       if (!model_key || model_key.trim() === '') {
         rowErrors.push({ 
-          reason: 'missing_model_key', 
-          raw: { model_display: r.model_display, dealer_price: r.dealer_price }
+          line: i + 1,
+          raw_model: r.model_display,
+          model_key: '',
+          dealer_price_raw: String(r.dealer_price),
+          reason: 'invalid_key'
         });
         continue;
       }
       
-      const dealer_price = toNumber(r.dealer_price);
+      const dealer_price = parsePrice(String(r.dealer_price));
       if (!dealer_price || dealer_price <= 0) {
         rowErrors.push({ 
-          reason: 'invalid_price', 
-          raw: { model_display: r.model_display, dealer_price: r.dealer_price }
+          line: i + 1,
+          raw_model: r.model_display,
+          model_key,
+          dealer_price_raw: String(r.dealer_price),
+          reason: 'invalid_price'
         });
         continue;
+      }
+      
+      // Track duplicates within feed
+      if (seenModelKeys.has(model_key)) {
+        duplicatesInFeed.push(model_key);
+      } else {
+        seenModelKeys.add(model_key);
       }
       
       const msrp = msrpFromDealer(dealer_price, msrp_markup);
       
-      // Build the row object for upsert defensively
+      // Build the row object for upsert
       const row: any = {
         make: 'Mercury',
-        model: r.model_display,
+        model: cleaned_model_display,
         model_key,
         year: 2025,
         motor_type: attrs.family,
@@ -352,12 +308,16 @@ serve(async (req) => {
         msrp,
         msrp_source: `derived:+${Math.round((msrp_markup - 1) * 100)}%`,
         price_source: 'pricelist',
-        is_brochure: true,
-        in_stock: false,
-        availability: 'Brochure',
         last_scraped: new Date().toISOString(),
         inventory_source: 'pricelist'
       };
+      
+      // Only create brochure entries if requested (default true)
+      if (create_missing_brochure) {
+        row.is_brochure = true;
+        row.in_stock = false;
+        row.availability = 'Brochure';
+      }
       
       // Include optional fields only if present
       if (attrs.family) row.family = attrs.family;
@@ -368,7 +328,11 @@ serve(async (req) => {
       rows.push(row);
     }
     
-    console.log(`Processed ${rawData.length} raw entries into ${rows.length} valid rows, ${rowErrors.length} errors`);
+    const rows_normalized = rows.length;
+    const rows_with_invalid_key = rowErrors.filter(e => e.reason === 'invalid_key').length;
+    const rows_with_invalid_price = rowErrors.filter(e => e.reason === 'invalid_price').length;
+    
+    console.log(`Processed ${rawData.length} raw entries into ${rows_normalized} valid rows, ${rowErrors.length} errors`);
     
     // Deduplication logic: Group by model_key and pick best row for each key
     const keyGroups = new Map<string, any[]>();
@@ -439,6 +403,9 @@ serve(async (req) => {
     
     let rows_created = 0;
     let rows_updated = 0;
+    let rows_matched_existing = 0;
+    let rows_skipped = 0;
+    const rowMatches: any[] = [];
     
     // STEP 5: Database upsert (unless dry_run)
     if (!dry_run) {
@@ -449,7 +416,7 @@ serve(async (req) => {
       const modelKeys = deduplicatedModels.map(m => m.model_key);
       const { data: existingRecords, error: fetchError } = await supabase
         .from('motor_models')
-        .select('model_key, in_stock, image_url, stock_quantity, availability, last_stock_check')
+        .select('model_key, in_stock, image_url, stock_quantity, availability, last_stock_check, dealer_price, msrp')
         .in('model_key', modelKeys);
         
       if (fetchError) {
@@ -462,20 +429,42 @@ serve(async (req) => {
         existingMap.set(record.model_key, record);
       });
       
+      rows_matched_existing = existingRecords?.length || 0;
+      
       // Prepare models for upsert with preserved inventory data
       const modelsForUpsert = deduplicatedModels.map(newModel => {
         const existing = existingMap.get(newModel.model_key);
+        const changedFields: string[] = [];
+        
         if (existing) {
-          // Preserve inventory fields for existing records
-          return {
+          // Track what changed
+          if (existing.dealer_price !== newModel.dealer_price) changedFields.push('dealer_price');
+          if (existing.msrp !== newModel.msrp) changedFields.push('msrp');
+          
+          const updatedModel = {
             ...newModel,
             in_stock: existing.in_stock, // Never flip this
             image_url: existing.image_url || newModel.image_url,
             stock_quantity: existing.stock_quantity,
-            availability: existing.availability,
+            availability: existing.availability || newModel.availability,
             last_stock_check: existing.last_stock_check,
           };
+          
+          rowMatches.push({
+            model_key: newModel.model_key,
+            action: changedFields.length > 0 ? 'updated' : 'unchanged',
+            changed_fields: changedFields
+          });
+          
+          return updatedModel;
+        } else {
+          rowMatches.push({
+            model_key: newModel.model_key,
+            action: 'created',
+            changed_fields: ['*']
+          });
         }
+        
         return newModel; // New record, use as-is
       });
       
@@ -489,9 +478,21 @@ serve(async (req) => {
       
       // Count creates vs updates
       rows_created = modelsForUpsert.filter(m => !existingMap.has(m.model_key)).length;
-      rows_updated = modelsForUpsert.filter(m => existingMap.has(m.model_key)).length;
+      rows_updated = rowMatches.filter(m => m.action === 'updated').length;
+      rows_skipped = rowMatches.filter(m => m.action === 'unchanged').length;
       
       console.log(`Successfully processed ${rows_created} creates, ${rows_updated} updates`);
+    } else {
+      // For dry run, simulate the matching logic
+      const modelKeys = deduplicatedModels.map(m => m.model_key);
+      const { data: existingRecords } = await supabase
+        .from('motor_models')
+        .select('model_key')
+        .in('model_key', modelKeys);
+        
+      const existingKeys = new Set(existingRecords?.map(r => r.model_key) || []);
+      rows_matched_existing = existingKeys.size;
+      rows_created = deduplicatedModels.length - rows_matched_existing;
     }
     
     // Prepare sample data (first 3 items)
@@ -509,10 +510,16 @@ serve(async (req) => {
     return json200({
       success: true,
       rows_parsed: rawData.length,
+      rows_normalized,
+      rows_with_invalid_key,
+      rows_with_invalid_price,
+      duplicates_in_feed: duplicatesInFeed.length,
+      rows_matched_existing,
       rows_created,
       rows_updated,
-      errors: rowErrors.length,
-      row_errors: rowErrors.slice(0, 5), // Show first 5 errors
+      rows_skipped,
+      rowErrors: rowErrors.slice(0, 50),
+      rowMatches: rowMatches.slice(0, 50),
       checksum,
       skipped_due_to_same_checksum: false,
       artifacts,

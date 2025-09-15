@@ -25,7 +25,9 @@ export default function AdminSources() {
   const [pricelistUrl, setPricelistUrl] = useState("https://www.harrisboatworks.ca/mercurypricelist");
   const [msrpMarkup, setMsrpMarkup] = useState(1.10);
   const [forceIngest, setForceIngest] = useState(false);
+  const [createBrochureRows, setCreateBrochureRows] = useState(true);
   const [pricelistResults, setPricelistResults] = useState<any>(null);
+  const [sanityResults, setSanityResults] = useState<any>(null);
   const [brochureUrl, setBrochureUrl] = useState("");
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
   const [imageUrls, setImageUrls] = useState("");
@@ -54,7 +56,8 @@ export default function AdminSources() {
           url: pricelistUrl,
           dry_run: isDryRun,
           msrp_markup: msrpMarkup,
-          force: forceIngest
+          force: forceIngest,
+          create_missing_brochure: createBrochureRows
         }
       });
 
@@ -106,7 +109,7 @@ export default function AdminSources() {
         } else {
           toast({
             title: isDryRun ? "Price List Preview Complete" : "Price List Ingested",
-            description: `${data.rows_parsed} parsed, ${data.rows_created} created, ${data.rows_updated || 0} updated`,
+            description: `${data.rows_parsed} parsed, ${data.rows_created || 0} created, ${data.rows_updated || 0} updated`,
           });
         }
 
@@ -310,6 +313,54 @@ export default function AdminSources() {
     setModelKeyMappings(newMappings);
   };
 
+  const runSanityQueries = async () => {
+    try {
+      // Count by brochure/in_stock
+      const { data: counts } = await supabase
+        .from('motor_models')
+        .select('is_brochure, in_stock')
+        .then(({ data }) => {
+          const brochure = data?.filter(row => row.is_brochure).length || 0;
+          const in_stock = data?.filter(row => row.in_stock).length || 0;
+          const total = data?.length || 0;
+          return { data: { brochure, in_stock, total } };
+        });
+
+      // Updated today from pricelist
+      const today = new Date().toISOString().split('T')[0];
+      const { data: updatedToday, error: updatedError } = await supabase
+        .from('motor_models')
+        .select('id', { count: 'exact' })
+        .eq('price_source', 'pricelist')
+        .gte('updated_at', today);
+
+      // Last 20 updated
+      const { data: recentlyUpdated, error: recentError } = await supabase
+        .from('motor_models')
+        .select('model_key, dealer_price, msrp, price_source, is_brochure, in_stock, updated_at')
+        .order('updated_at', { ascending: false })
+        .limit(20);
+
+      setSanityResults({
+        counts: counts || { brochure: 0, in_stock: 0, total: 0 },
+        updated_today: updatedToday?.length || 0,
+        recently_updated: recentlyUpdated || []
+      });
+
+      toast({
+        title: "Sanity Check Complete",
+        description: "Database stats retrieved successfully"
+      });
+    } catch (error) {
+      console.error('Sanity check error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to run sanity queries",
+        variant: "destructive"
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <AdminNav />
@@ -381,15 +432,28 @@ export default function AdminSources() {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-2">
-                <Checkbox
-                  id="force-ingest"
-                  checked={forceIngest}
-                  onCheckedChange={(checked) => setForceIngest(checked as boolean)}
-                />
-                <Label htmlFor="force-ingest" className="text-sm">
-                  Force ingest even if content is unchanged
-                </Label>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="create-brochure-rows"
+                    checked={createBrochureRows}
+                    onCheckedChange={(checked) => setCreateBrochureRows(checked as boolean)}
+                  />
+                  <Label htmlFor="create-brochure-rows" className="text-sm">
+                    Create brochure rows for missing models (default)
+                  </Label>
+                </div>
+                
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="force-ingest"
+                    checked={forceIngest}
+                    onCheckedChange={(checked) => setForceIngest(checked as boolean)}
+                  />
+                  <Label htmlFor="force-ingest" className="text-sm">
+                    Force ingest even if content is unchanged
+                  </Label>
+                </div>
               </div>
 
               <div className="flex gap-3">
@@ -415,20 +479,40 @@ export default function AdminSources() {
                 <div className="mt-4 p-4 bg-muted rounded-lg">
                   {pricelistResults.success ? (
                     <div className="space-y-4">
-                      {/* Summary Badges */}
+                      {/* Enhanced Summary Badges */}
                       <div className="flex flex-wrap gap-2">
                         <Badge variant="secondary">
                           {pricelistResults.rows_parsed} parsed
                         </Badge>
+                        {pricelistResults.rows_normalized && (
+                          <Badge variant="outline">
+                            {pricelistResults.rows_normalized} normalized
+                          </Badge>
+                        )}
                         <Badge variant="default">
-                          {pricelistResults.rows_created} created
+                          {pricelistResults.rows_created || 0} created
                         </Badge>
                         <Badge variant="outline">
                           {pricelistResults.rows_updated || 0} updated
                         </Badge>
-                        {pricelistResults.errors > 0 && (
+                        {pricelistResults.rows_skipped > 0 && (
+                          <Badge variant="secondary">
+                            {pricelistResults.rows_skipped} unchanged
+                          </Badge>
+                        )}
+                        {pricelistResults.rows_with_invalid_key > 0 && (
                           <Badge variant="destructive">
-                            {pricelistResults.errors} errors
+                            {pricelistResults.rows_with_invalid_key} invalid keys
+                          </Badge>
+                        )}
+                        {pricelistResults.rows_with_invalid_price > 0 && (
+                          <Badge variant="destructive">
+                            {pricelistResults.rows_with_invalid_price} invalid prices
+                          </Badge>
+                        )}
+                        {pricelistResults.duplicates_in_feed > 0 && (
+                          <Badge variant="outline">
+                            {pricelistResults.duplicates_in_feed} duplicates
                           </Badge>
                         )}
                         {pricelistResults.skipped_due_to_same_checksum && (
@@ -471,6 +555,65 @@ export default function AdminSources() {
                         </div>
                       )}
 
+                      {/* Collapsible Error Table */}
+                      {pricelistResults.rowErrors && pricelistResults.rowErrors.length > 0 && (
+                        <details className="space-y-2">
+                          <summary className="cursor-pointer text-sm font-medium text-destructive">
+                            Row Errors ({pricelistResults.rowErrors.length} total) - Click to expand
+                          </summary>
+                          <div className="bg-background rounded border p-3 text-sm font-mono overflow-x-auto max-h-60 overflow-y-auto">
+                            <div className="grid grid-cols-5 gap-2 font-semibold border-b pb-2 mb-2 sticky top-0 bg-background">
+                              <div>Line</div>
+                              <div>Model</div>
+                              <div>Key</div>
+                              <div>Price</div>
+                              <div>Reason</div>
+                            </div>
+                            {pricelistResults.rowErrors.slice(0, 50).map((error: any, index: number) => (
+                              <div key={index} className="grid grid-cols-5 gap-2 py-1 text-xs">
+                                <div>{error.line || '-'}</div>
+                                <div className="truncate" title={error.raw_model}>{error.raw_model}</div>
+                                <div className="text-muted-foreground">{error.model_key || '-'}</div>
+                                <div>{error.dealer_price_raw}</div>
+                                <div className="text-destructive">{error.reason}</div>
+                              </div>
+                            ))}
+                          </div>
+                        </details>
+                      )}
+
+                      {/* Collapsible Matches Table */}
+                      {pricelistResults.rowMatches && pricelistResults.rowMatches.length > 0 && (
+                        <details className="space-y-2">
+                          <summary className="cursor-pointer text-sm font-medium">
+                            Row Actions ({pricelistResults.rowMatches.length} total) - Click to expand
+                          </summary>
+                          <div className="bg-background rounded border p-3 text-sm font-mono overflow-x-auto max-h-60 overflow-y-auto">
+                            <div className="grid grid-cols-3 gap-2 font-semibold border-b pb-2 mb-2 sticky top-0 bg-background">
+                              <div>Model Key</div>
+                              <div>Action</div>
+                              <div>Changed Fields</div>
+                            </div>
+                            {pricelistResults.rowMatches.slice(0, 50).map((match: any, index: number) => (
+                              <div key={index} className="grid grid-cols-3 gap-2 py-1 text-xs">
+                                <div className="truncate font-mono">{match.model_key}</div>
+                                <div>
+                                  <Badge 
+                                    variant={match.action === 'created' ? 'default' : match.action === 'updated' ? 'secondary' : 'outline'}
+                                    className="text-xs"
+                                  >
+                                    {match.action}
+                                  </Badge>
+                                </div>
+                                <div className="text-muted-foreground text-xs">
+                                  {match.changed_fields?.join(', ') || '-'}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </details>
+                      )}
+
                       {/* Sample Data */}
                       {pricelistResults.sample && pricelistResults.sample.length > 0 && (
                         <div className="space-y-2">
@@ -495,6 +638,36 @@ export default function AdminSources() {
                           </div>
                         </div>
                       )}
+
+                      {/* Sanity Check Button */}
+                      <div className="pt-4 border-t">
+                        <Button onClick={runSanityQueries} variant="outline" size="sm">
+                          Run Sanity Queries
+                        </Button>
+                        
+                        {sanityResults && (
+                          <div className="mt-3 p-3 bg-muted rounded-lg space-y-2">
+                            <div className="text-sm font-medium">Database Stats:</div>
+                            <div className="grid grid-cols-3 gap-4 text-sm">
+                              <div>
+                                <div className="font-medium">{sanityResults.counts.brochure}</div>
+                                <div className="text-muted-foreground text-xs">Brochure</div>
+                              </div>
+                              <div>
+                                <div className="font-medium">{sanityResults.counts.in_stock}</div>
+                                <div className="text-muted-foreground text-xs">In Stock</div>
+                              </div>
+                              <div>
+                                <div className="font-medium">{sanityResults.counts.total}</div>
+                                <div className="text-muted-foreground text-xs">Total</div>
+                              </div>
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              Updated today: {sanityResults.updated_today} • Recent updates: {sanityResults.recently_updated.length}
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   ) : (
                     <Alert variant="destructive">
