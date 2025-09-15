@@ -85,12 +85,12 @@ export function InventoryMonitor() {
     fetchInventoryData();
   }, []);
 
-  const triggerInventoryUpdate = async (useXml = false) => {
+  const triggerInventoryUpdate = async () => {
     setUpdating(true);
 
     try {
       toast({
-        title: `Starting ${useXml ? 'XML' : 'standard'} inventory update...`,
+        title: "Starting inventory update...",
         description: "This may take up to 60 seconds",
       });
 
@@ -405,17 +405,9 @@ export function InventoryMonitor() {
               </CardDescription>
             </div>
             <div className="flex gap-2">
-              <Button onClick={() => triggerInventoryUpdate(false)} disabled={loading || updating}>
+              <Button onClick={() => triggerInventoryUpdate()} disabled={loading || updating}>
                 <RefreshCw className={`h-4 w-4 mr-2 ${updating ? 'animate-spin' : ''}`} />
-                {updating ? 'Updating...' : 'HTML Update'}
-              </Button>
-              <Button 
-                onClick={() => triggerInventoryUpdate(true)} 
-                disabled={loading || updating}
-                variant="outline"
-              >
-                <RefreshCw className={`h-4 w-4 mr-2 ${updating ? 'animate-spin' : ''}`} />
-                {updating ? 'Updating...' : 'XML Update (New)'}
+                {updating ? 'Updating...' : 'Update Inventory'}
               </Button>
               <Button 
                 variant="outline" 
@@ -471,9 +463,8 @@ export function InventoryMonitor() {
           </div>
 
           <div className="text-sm text-muted-foreground space-y-2 mb-4">
-            <p><strong>HTML Update:</strong> Uses the current HTML scraping method from individual product pages.</p>
-            <p><strong>XML Update (New):</strong> Uses the XML inventory feed to get only Mercury outboard motors, filtering out boats, pontoons, and accessories automatically.</p>
-            <p>The XML method is faster and more reliable as it processes the complete inventory feed and intelligently filters for Mercury motors only.</p>
+            <p><strong>Inventory Update:</strong> Automatically scrapes and updates motor inventory data from the dealer's system.</p>
+            <p>The system uses the most reliable data source available and handles filtering for Mercury outboard motors automatically.</p>
           </div>
 
           {stats && stats.withoutStockNumbers > 0 && (
