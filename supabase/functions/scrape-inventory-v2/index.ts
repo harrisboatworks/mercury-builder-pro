@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
+import { XMLParser } from "https://esm.sh/fast-xml-parser@4"
 
 // CORS headers
 const corsHeaders = {
@@ -49,6 +50,49 @@ function cleanText(s?: string | null): string {
     .replace(/&nbsp;|&amp;|&lt;|&gt;/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+// ---------- Inventory filter helpers ----------
+const norm = (v?: any) => (v == null ? "" : String(v).trim());
+const lower = (v?: any) => norm(v).toLowerCase();
+
+// True if the XML unit is a Mercury outboard motor (not boat/trailer/etc.)
+function isOutboardMotor(u: any): boolean {
+  const title = lower(u.Title ?? u.title ?? u.Model ?? u.model ?? u.Name);
+  const category = lower(u.Category ?? u.category ?? u.Type ?? u.type ?? u.VehicleType ?? u.vehicle_type ?? u.UnitType);
+  const subcat = lower(u.SubCategory ?? u.subcategory ?? u.BodyStyle ?? u.body_style);
+  const cls = lower(u.Class ?? u.class ?? u.VehicleClass ?? u.vehicle_class);
+  const engineType = lower(u.EngineType ?? u.engine_type ?? u.EngineModel ?? u.engine_model ?? "");
+  const dept = lower(u.Department ?? u.department);
+
+  const fields = [title, category, subcat, cls, engineType, dept];
+
+  const motorHints = ["outboard","engine","motor","fourstroke","four-stroke","pro xs","proxs","seapro","verado","racing"];
+  const hasMotorHint = fields.some(s => motorHints.some(h => s.includes(h)));
+  const explicitOutboard = engineType.includes("outboard");
+
+  const negatives = [
+    "boat","pwc","trailer","atv","utv","snow","sled","rv",
+    "part","accessor","propeller","prop","controls","rigging","tiller",
+    "tester","display","demo boat","pkg","package","combo","kit"
+  ];
+  const isNegative = fields.some(s => negatives.some(n => s.includes(n)));
+
+  return (explicitOutboard || hasMotorHint) && !isNegative;
+}
+
+function isNew(u: any): boolean {
+  const cond = lower(u.Condition ?? u.condition ?? u.Status ?? u.status ?? u.InventoryStatus ?? "");
+  if (cond.includes("used") || cond.includes("pre-owned") || cond.includes("preowned")) return false;
+  if (cond.includes("new")) return true;
+  // If missing, assume new unless explicitly "used"
+  return cond.length === 0;
+}
+
+function isMercury(u: any): boolean {
+  const make = lower(u.Make ?? u.make ?? u.Brand ?? u.brand ?? u.Manufacturer ?? u.manufacturer ?? "");
+  const title = lower(u.Title ?? u.title ?? u.Model ?? u.model ?? "");
+  return make.includes("mercury") || title.includes("mercury");
 }
 
 // Enhanced URL extraction with multiple strategies
@@ -386,6 +430,57 @@ async function enhancedDiscover(fetchPage: (u: string) => Promise<string>, opts?
   };
 }
 
+// ---------- DealerSpike XML discovery ----------
+async function discoverFromXmlFeed(fetchPage: (u: string) => Promise<string>) {
+  const FEED_URL = "https://www.harrisboatworks.ca/unitinventory_univ.xml";
+  try {
+    const xml = await fetchPage(FEED_URL);
+    if (!xml || xml.length < 100) {
+      console.log("XML feed returned empty/short response.");
+      return { urls: [] as string[], items: [] as any[] };
+    }
+    const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: "" });
+    const data = parser.parse(xml);
+
+    // DealerSpike feeds commonly have <Units><Unit>…</Unit></Units>
+    const units: any[] =
+      data?.Units?.Unit ??
+      data?.units?.unit ??
+      [];
+
+    const filtered = units.filter(u => isMercury(u) && isNew(u) && isOutboardMotor(u));
+
+    // Build canonical detail URLs if present; fall back to something stable
+    const items = filtered.map(u => {
+      const rawUrl =
+        u.DetailUrl ?? u.detailUrl ?? u.URL ?? u.Url ?? u.url ?? u.itemUrl ?? "";
+      const stock = norm(u.StockNumber ?? u.stockNumber ?? u.Stock ?? u.stock ?? "");
+      const id = norm(u.Id ?? u.id ?? "");
+      const title = norm(u.Title ?? u.title ?? u.Model ?? u.model ?? "Mercury");
+
+      // Absolutize if needed
+      let detail_url = rawUrl;
+      if (detail_url && detail_url.startsWith("//")) detail_url = "https:" + detail_url;
+      if (detail_url && detail_url.startsWith("/")) detail_url = "https://www.harrisboatworks.ca" + detail_url;
+
+      // Fallback detail_url if feed row lacks URL
+      if (!detail_url) {
+        const safe = encodeURIComponent(`${title}-${stock || id}`.replace(/\s+/g,"-").toLowerCase());
+        detail_url = `https://www.harrisboatworks.ca/inventory/${safe}`;
+      }
+
+      return { u, detail_url };
+    });
+
+    const urls = [...new Set(items.map(i => i.detail_url))];
+    console.log(`XML feed: ${units.length} total, ${filtered.length} after filters, ${urls.length} unique URLs.`);
+    return { urls, items };
+  } catch (e) {
+    console.error("XML discovery failed:", e);
+    return { urls: [] as string[], items: [] as any[] };
+  }
+}
+
 // Legacy function for backward compatibility - now uses enhanced discovery
 async function collectAllDetailUrls(fetchPage: (u: string) => Promise<string>) {
   console.log('📄 Using enhanced discovery for URL collection...');
@@ -715,46 +810,69 @@ serve(async (req) => {
       }
     };
 
-    // EARLY RETURN: enhanced discovery mode
+    // EARLY RETURN: discovery mode (prefer XML feed, fallback to enhanced)
     if (mode === "discovery") {
-      console.log('🚀 Running enhanced discovery mode...');
+      console.log("🚀 Discovery mode: trying XML feed first...");
+      const xml = await discoverFromXmlFeed(fetchPage);
+
+      if (xml.urls.length > 0) {
+        return new Response(JSON.stringify({
+          success: true,
+          mode,
+          source: "xml",
+          urls_discovered: xml.urls.length,
+          samples: xml.urls.slice(0, 10)
+        }), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json', ...corsHeaders }
+        });
+      }
+
+      console.log("XML feed empty or blocked. Falling back to enhanced page discovery...");
       const result = await enhancedDiscover(fetchPage, {
-        maxPages: Math.min(3, Number(body.max_pages ?? 3) || 3), // increased default
-        includeAlts: body.include_alts !== false,  // default true for enhanced
-        doProbe: body.do_probe !== false,          // default true
-        mode: 'discovery'
+        maxPages: Math.min(3, Number(body.max_pages ?? 3) || 3),
+        includeAlts: body.include_alts !== false,
+        doProbe: body.do_probe !== false,
+        mode: "discovery"
       });
-      
+
       return new Response(JSON.stringify({
-        success: true,  
+        success: true,
         mode,
+        source: "pages",
         urls_discovered: result.urls.length,
-        samples: result.diagnostics.samples,
+        samples: result.urls.slice(0, 10),
         diagnostics: {
           routesCrawled: result.diagnostics.routesCrawled,
           pagesProcessed: result.diagnostics.pagesProcessed,
           xhrEndpoints: result.diagnostics.xhrEndpoints.length,
           extractionMethods: result.diagnostics.extractionMethods,
-          suspectedJsPages: result.diagnostics.pageDetails.filter(d => d.suspectedJsOnly).length
-        },
-        first_10_urls: result.urls.slice(0, 10)
-      }), { 
-        status: 200, 
-        headers: { 
-          'Content-Type': 'application/json', 
-          ...corsHeaders 
+          suspectedJsPages: result.diagnostics.pageDetails.filter((d: any) => d.suspectedJsOnly).length
         }
+      }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json', ...corsHeaders }
       });
     }
 
     // FULL MODE continues below
-    // Step 1: Collect all detail URLs
-    console.log('📄 Step 1: Collecting detail URLs...');
-    const urls = await collectAllDetailUrls(fetchPage);
-    console.log(`✅ Discovered ${urls.length} detail URLs`);
+    // Step 1: Collect all detail URLs (prefer XML, fallback to pages)
+    console.log("📄 Step 1: Collecting URLs (prefer XML, fallback to pages)...");
+    const xmlResult = await discoverFromXmlFeed(fetchPage);
+    let urls: string[] = [];
+
+    if (xmlResult.urls.length > 0) {
+      urls = xmlResult.urls;
+      console.log(`✅ Using XML feed URLs: ${urls.length}`);
+    } else {
+      console.log("XML feed empty or blocked. Falling back to enhanced page discovery...");
+      const pageResult = await enhancedDiscover(fetchPage, { maxPages: 5, includeAlts: true, doProbe: true, mode: "full" });
+      urls = pageResult.urls;
+      console.log(`✅ Using page-discovered URLs: ${urls.length}`);
+    }
 
     if (urls.length === 0) {
-      throw new Error('No detail URLs found - check pagination detection');
+      throw new Error("No detail URLs found (XML + pages).");
     }
 
     // Step 2: Process detail pages in batches (full mode only)
@@ -810,9 +928,21 @@ serve(async (req) => {
         .map(m => ({ ...m, model: cleanText(m.model) }))
     );
 
+    // Final safety filter: only new Mercury outboard motors
+    const filtered = cleaned.filter(m => {
+      const title = (m.model_raw || m.model || "").toLowerCase();
+      const isMerc = title.includes("mercury");
+      const motorHints = ["outboard","fourstroke","four-stroke","pro xs","proxs","seapro","verado","racing"];
+      const hasMotorHint = motorHints.some(h => title.includes(h));
+      const negative = ["boat","pwc","trailer","parts","accessor","kit","package","demo boat"].some(n => title.includes(n));
+      return isMerc && hasMotorHint && !negative;
+    });
+
+    console.log(`Filter: ${filtered.length}/${cleaned.length} records kept (new Mercury outboards only).`);
+
     // Step 4: Upsert to database
     console.log('💾 Step 4: Saving to database...');
-    const dbRecords = cleaned.map(m => ({
+    const dbRecords = filtered.map(m => ({
       make: 'Mercury',
       model: m.model,
       year: m.year || 2025,
