@@ -438,6 +438,14 @@ const Index = () => {
               </p>
             </div>
 
+            {/* Test Function Button - Prominent Position */}
+            <div className="mb-8 text-center">
+              <div className="inline-block p-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg shadow-lg">
+                <h3 className="text-white font-semibold mb-2 text-sm">🧪 Edge Function Testing</h3>
+                <TestFunctionButton />
+              </div>
+            </div>
+
             {/* Current Quote Card */}
             {quoteSummary && (
               <Card className="mb-8 border-2 border-primary/20 shadow-lg">
@@ -565,11 +573,6 @@ const Index = () => {
                 <Button variant="ghost" size="sm" asChild>
                   <a href="mailto:sales@harrisboatworks.com">✉️ Email Us</a>
                 </Button>
-              </div>
-              
-              {/* Test Function Button */}
-              <div className="pt-4 border-t border-border">
-                <TestFunctionButton />
               </div>
             </div>
           </div>
