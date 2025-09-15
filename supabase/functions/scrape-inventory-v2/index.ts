@@ -24,32 +24,73 @@ interface MotorData {
   last_scraped: string;
 }
 
-// Helper function to fetch with retry
-async function fetchWithRetry(url: string, maxRetries: number = 3): Promise<string | null> {
+// Firecrawl scraping function
+async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: string; markdown?: string }> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 45000); // 45s timeout for inventory pages
+  
+  try {
+    console.log(`🔥 Scraping with Firecrawl: ${url}`);
+    const res = await fetch('https://api.firecrawl.dev/v1/scrape', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ 
+        url, 
+        formats: ['html', 'markdown'], 
+        onlyMainContent: false, // We want full page for inventory
+        waitFor: 3000 // Wait for JavaScript to load
+      }),
+      signal: controller.signal,
+    });
+    
+    clearTimeout(timeoutId);
+    
+    if (!res.ok) {
+      const errorText = await res.text();
+      throw new Error(`Firecrawl scrape failed: ${res.status} ${errorText}`);
+    }
+    
+    const data = await res.json();
+    console.log(`✅ Firecrawl scraped successfully`);
+    
+    // Support multiple possible response shapes
+    const html = data?.data?.html || data?.html || null;
+    const markdown = data?.data?.markdown || data?.markdown || null;
+    
+    return { html: html || undefined, markdown: markdown || undefined };
+  } catch (error) {
+    clearTimeout(timeoutId);
+    if (error.name === 'AbortError') {
+      throw new Error('Firecrawl request timed out');
+    }
+    throw error;
+  }
+}
+
+// Helper function with Firecrawl retry logic
+async function fetchWithFirecrawl(url: string, apiKey: string, maxRetries: number = 2): Promise<string | null> {
   for (let i = 0; i < maxRetries; i++) {
     try {
-      console.log(`🌐 Fetching: ${url} (attempt ${i + 1})`);
-      const response = await fetch(url, {
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        }
-      });
+      console.log(`🌐 Firecrawl attempt ${i + 1} for: ${url}`);
+      const result = await firecrawlScrape(url, apiKey);
       
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      if (result.html) {
+        console.log(`✅ Firecrawl fetched ${result.html.length} characters from ${url}`);
+        return result.html;
+      } else {
+        throw new Error('No HTML content returned from Firecrawl');
       }
-      
-      const html = await response.text();
-      console.log(`✅ Fetched ${html.length} characters from ${url}`);
-      return html;
     } catch (error) {
-      console.error(`❌ Fetch attempt ${i + 1} failed:`, error.message);
+      console.error(`❌ Firecrawl attempt ${i + 1} failed:`, error.message);
       if (i === maxRetries - 1) {
-        console.error(`💥 All ${maxRetries} attempts failed for ${url}`);
+        console.error(`💥 All ${maxRetries} Firecrawl attempts failed for ${url}`);
         return null;
       }
       // Wait before retry
-      await new Promise(resolve => setTimeout(resolve, 1000 * (i + 1)));
+      await new Promise(resolve => setTimeout(resolve, 5000 * (i + 1)));
     }
   }
   return null;
@@ -161,21 +202,24 @@ function hasNextPage(html: string): boolean {
   return nextButton !== null && !nextButton.classList.contains('disabled');
 }
 
-// Main scraping function
-async function scrapeInventory(): Promise<MotorData[]> {
+// Main scraping function with Firecrawl
+async function scrapeInventory(firecrawlApiKey: string): Promise<MotorData[]> {
   const baseUrl = 'https://www.harrisboatworks.ca';
-  const inventoryUrl = `${baseUrl}/search/inventory/type/Outboard%20Motors/usage/New`;
+  // Use the specific URL provided by the user for Mercury outboard motors
+  const inventoryUrl = `${baseUrl}/search/inventory/brand/Mercury/type/Outboard%20Motors/usage/New`;
   let allMotors: MotorData[] = [];
   let currentPage = 1;
-  let maxPages = 10; // Safety limit
+  let maxPages = 20; // Increased limit since we expect more motors with JS rendering
+
+  console.log(`🚀 Starting Firecrawl-powered scraping from: ${inventoryUrl}`);
 
   while (currentPage <= maxPages) {
     const pageUrl = currentPage === 1 ? inventoryUrl : `${inventoryUrl}?page=${currentPage}`;
     console.log(`🔄 Scraping page ${currentPage}: ${pageUrl}`);
     
-    const html = await fetchWithRetry(pageUrl);
+    const html = await fetchWithFirecrawl(pageUrl, firecrawlApiKey);
     if (!html) {
-      console.error(`❌ Failed to fetch page ${currentPage}`);
+      console.error(`❌ Failed to fetch page ${currentPage} with Firecrawl`);
       break;
     }
 
@@ -197,17 +241,18 @@ async function scrapeInventory(): Promise<MotorData[]> {
 
     currentPage++;
     
-    // Rate limiting
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    // Rate limiting - longer delay for Firecrawl
+    await new Promise(resolve => setTimeout(resolve, 8000));
   }
 
-  console.log(`🎉 Total motors scraped: ${allMotors.length}`);
+  console.log(`🎉 Total motors scraped with Firecrawl: ${allMotors.length}`);
   return allMotors;
 }
 
 // Initialize Supabase client
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+const firecrawlApiKey = Deno.env.get('FIRECRAWL_API_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 serve(async (req) => {
@@ -216,10 +261,14 @@ serve(async (req) => {
   }
 
   try {
-    console.log('🚀 Starting inventory scraping...');
+    console.log('🚀 Starting Firecrawl-powered inventory scraping...');
     
-    // Scrape motors from website
-    const scrapedMotors = await scrapeInventory();
+    if (!firecrawlApiKey) {
+      throw new Error('FIRECRAWL_API_KEY is required but not found in environment variables');
+    }
+    
+    // Scrape motors from website using Firecrawl
+    const scrapedMotors = await scrapeInventory(firecrawlApiKey);
     
     if (scrapedMotors.length === 0) {
       throw new Error('No motors were scraped from the website');
@@ -252,9 +301,10 @@ serve(async (req) => {
             inventory_source: motor.inventory_source,
             last_scraped: motor.last_scraped,
             data_sources: {
-              harris: {
+              harris_firecrawl: {
                 success: true,
-                scraped_at: motor.last_scraped
+                scraped_at: motor.last_scraped,
+                method: 'firecrawl'
               }
             }
           }, { 
