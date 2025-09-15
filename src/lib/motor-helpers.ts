@@ -482,6 +482,82 @@ export const getIdealUses = (hp: number | string) => {
   return ['High-performance boats', 'Commercial use', 'Offshore racing', 'Heavy loads'];
 };
 
+// Image selection priority logic
+export const getMotorImageByPriority = (motor: any): { url: string; isInventory: boolean } => {
+  const fallbackImage = '/lovable-uploads/speedboat-transparent.png';
+  
+  // Priority 1: If in_stock=true and we have inventory images, use that
+  if (motor?.in_stock === true && motor?.images && Array.isArray(motor.images)) {
+    const inventoryImages = motor.images.filter((img: any) => {
+      const url = typeof img === 'string' ? img : img?.url;
+      return url && url.includes('/mercury/inventory/');
+    });
+    
+    if (inventoryImages.length > 0) {
+      const bestImage = inventoryImages[0];
+      const imageUrl = typeof bestImage === 'string' ? bestImage : bestImage?.url;
+      return { url: imageUrl || fallbackImage, isInventory: true };
+    }
+  }
+  
+  // Priority 2: Use hero_image_url if exists
+  if (motor?.hero_image_url) {
+    return { url: motor.hero_image_url, isInventory: false };
+  }
+  
+  // Priority 3: Use any available image from images array
+  if (motor?.images && Array.isArray(motor.images) && motor.images.length > 0) {
+    const bestImage = motor.images[0];
+    const imageUrl = typeof bestImage === 'string' ? bestImage : bestImage?.url;
+    if (imageUrl) {
+      return { url: imageUrl, isInventory: false };
+    }
+  }
+  
+  // Priority 4: Use image_url if available
+  if (motor?.image_url || motor?.image) {
+    return { url: motor.image_url || motor.image, isInventory: false };
+  }
+  
+  // Priority 5: Fallback to Mercury placeholder
+  return { url: fallbackImage, isInventory: false };
+};
+
+// Get all images for gallery, maintaining brochure hero in array
+export const getMotorImageGallery = (motor: any): string[] => {
+  const allImages: string[] = [];
+  
+  // Add hero image first if exists
+  if (motor?.hero_image_url) {
+    allImages.push(motor.hero_image_url);
+  }
+  
+  // Add images from images array
+  if (motor?.images && Array.isArray(motor.images)) {
+    motor.images.forEach((img: any) => {
+      const url = typeof img === 'string' ? img : img?.url;
+      if (url && !allImages.includes(url)) {
+        allImages.push(url);
+      }
+    });
+  }
+  
+  // Add main image_url if not already included
+  if ((motor?.image_url || motor?.image) && !allImages.includes(motor.image_url || motor.image)) {
+    allImages.push(motor.image_url || motor.image);
+  }
+  
+  // Filter out invalid URLs
+  return allImages.filter(url => 
+    url && 
+    typeof url === 'string' && 
+    url.length > 5 &&
+    !url.includes('facebook.com') &&
+    !url.includes('tracking') &&
+    !url.includes('pixel')
+  );
+};
+
 export const getHPDescriptor = (hp: number | string) => {
   const horsepower = typeof hp === 'string' ? parseFloat(hp) : hp;
   

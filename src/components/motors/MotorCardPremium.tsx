@@ -5,7 +5,7 @@ import { Info } from "lucide-react";
 import MotorQuickInfo from "./MotorQuickInfo";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import type { Motor } from '../../lib/motor-helpers';
-import { getHPDescriptor, getPopularityIndicator, getBadgeColor, requiresMercuryControls, isTillerMotor } from '../../lib/motor-helpers';
+import { getHPDescriptor, getPopularityIndicator, getBadgeColor, requiresMercuryControls, isTillerMotor, getMotorImageByPriority, getMotorImageGallery } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useFinancing } from '@/contexts/FinancingContext';
 import { getFinancingDisplay } from '@/lib/finance';
@@ -57,47 +57,27 @@ export default function MotorCardPremium({
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
   const [motorBadge, setMotorBadge] = useState<string | null>(null);
   
-  // Get the best available image URL and count total images
-  const getImageInfo = (): { url: string; count: number } => {
-    const imageUrls: string[] = [];
+  // Get the best available image URL and count total images using priority logic
+  const getImageInfo = (): { url: string; count: number; isInventory: boolean } => {
+    const { url: primaryImageUrl, isInventory } = getMotorImageByPriority(motor);
+    const allImages = getMotorImageGallery(motor);
     
-    // Process motor.images (array of objects with url property)
-    if (motor?.images && Array.isArray(motor.images)) {
-      motor.images.forEach((imageObj: any) => {
-        if (typeof imageObj === 'string') {
-          imageUrls.push(imageObj);
-        } else if (imageObj?.url) {
-          imageUrls.push(imageObj.url);
-        }
-      });
-    }
-    
-    // Add main image if not already included
-    if (img && !imageUrls.includes(img)) {
-      imageUrls.unshift(img); // Add to front
-    }
-    
-    // Filter out invalid URLs
-    const validImageUrls = imageUrls.filter(url => 
-      url && 
-      typeof url === 'string' && 
-      url.length > 5 &&
-      !url.includes('facebook.com') &&
-      !url.includes('tracking') &&
-      !url.includes('pixel')
-    );
-    
-    const primaryImage = validImageUrls[0] ?? '/lovable-uploads/speedboat-transparent.png';
+    // Use img prop as fallback if motor priority didn't find anything good
+    const finalUrl = primaryImageUrl !== '/lovable-uploads/speedboat-transparent.png' 
+      ? primaryImageUrl 
+      : (img || '/lovable-uploads/speedboat-transparent.png');
     
     return {
-      url: primaryImage,
-      count: validImageUrls.length
+      url: finalUrl,
+      count: Math.max(allImages.length, img ? 1 : 0),
+      isInventory
     };
   };
 
   const imageInfo = getImageInfo();
   const imageUrl = imageInfo.url;
   const imageCount = imageInfo.count;
+  const isInventoryImage = imageInfo.isInventory;
   
   // Smart financing calculation using context
   const { calculateMonthlyPayment, promo } = useFinancing();
@@ -158,12 +138,19 @@ export default function MotorCardPremium({
                   alt="" 
                   className="h-40 w-full rounded-lg object-contain bg-white dark:bg-slate-900" 
                 />
-                {/* Gallery indicator */}
-                {imageCount > 1 && (
-                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">
-                    {imageCount} photos
-                  </div>
-                )}
+                {/* Gallery indicator and stock status */}
+                <div className="absolute bottom-2 right-2 flex items-center gap-2">
+                  {isInventoryImage && inStock && (
+                    <div className="bg-green-600/90 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm font-medium">
+                      In Stock
+                    </div>
+                  )}
+                  {imageCount > 1 && (
+                    <div className="bg-black/70 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">
+                      {imageCount} photos
+                    </div>
+                  )}
+                </div>
               </div>
             )}
             <div className="text-[15px] font-semibold text-slate-900 dark:text-white">

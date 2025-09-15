@@ -179,6 +179,53 @@ function normalizeDetailUrl(input: string): string {
   }
 }
 
+// Upload inventory image to storage and return URL
+async function uploadInventoryImage(imageUrl: string, modelKey: string, supabase: any): Promise<string | null> {
+  try {
+    console.log(`Uploading inventory image for ${modelKey}:`, imageUrl);
+    
+    // Download the image
+    const response = await fetch(imageUrl);
+    if (!response.ok) {
+      throw new Error(`Failed to download image: ${response.status}`);
+    }
+    
+    const imageBlob = await response.blob();
+    
+    // Determine file extension
+    let fileExtension = 'jpg';
+    const contentType = response.headers.get('content-type');
+    if (contentType?.includes('png')) fileExtension = 'png';
+    if (contentType?.includes('webp')) fileExtension = 'webp';
+    
+    // Upload to mercury/inventory/ path
+    const fileName = `mercury/inventory/${modelKey}_${Date.now()}.${fileExtension}`;
+    
+    const { data: uploadData, error: uploadError } = await supabase.storage
+      .from('motor-images')
+      .upload(fileName, imageBlob, {
+        upsert: true,
+        contentType: imageBlob.type
+      });
+    
+    if (uploadError) {
+      console.error('Storage upload error:', uploadError);
+      return null;
+    }
+    
+    // Get public URL
+    const { data: { publicUrl } } = supabase.storage
+      .from('motor-images')
+      .getPublicUrl(fileName);
+    
+    console.log(`Inventory image uploaded: ${publicUrl}`);
+    return publicUrl;
+  } catch (error) {
+    console.error('Failed to upload inventory image:', error);
+    return null;
+  }
+}
+
 async function scrapeDetails(url: string, apiKey: string, modelName?: string): Promise<ScrapeResult> {
   let html: string | undefined;
   let markdown: string | undefined;
@@ -470,44 +517,82 @@ serve(async (req) => {
 
     // Update DB if motor id provided or if we can match by detail_url
     if (motorId) {
-    // Get existing images to merge with new ones
-    const { data: existingMotor } = await supabase
-      .from('motor_models')
-      .select('images')
-      .eq('id', motorId)
-      .single();
+      // Get existing motor data to determine if this is an in-stock page
+      const { data: existingMotor } = await supabase
+        .from('motor_models')
+        .select('*')
+        .eq('id', motorId)
+        .single();
 
-    const existingImages = Array.isArray(existingMotor?.images) ? existingMotor.images : [];
-    const newImageUrls = result.images || [];
-    
-    // Merge and deduplicate images
-    const allImages = [...existingImages];
-    for (const newUrl of newImageUrls) {
-      const exists = allImages.some(img => img.url === newUrl);
-      if (!exists) {
-        allImages.push({
-          url: newUrl,
-          type: newUrl.includes('detail') ? 'detail' : 
-                newUrl.includes('gallery') ? 'gallery' : 'main',
-          source: 'scraped',
-          scraped_at: new Date().toISOString()
-        });
+      const existingImages = Array.isArray(existingMotor?.images) ? existingMotor.images : [];
+      const newImageUrls = result.images || [];
+      
+      // Determine if this is an in-stock page (contains inventory/stock info)
+      const isInStockPage = detailUrl.includes('inventory') || 
+                           detailUrl.includes('stock') || 
+                           result.description?.toLowerCase().includes('in stock');
+      
+      let updatedImages = existingImages;
+      let setInStock = false;
+      
+      // If this is an in-stock page and we have a good main image, upload it to inventory
+      if (isInStockPage && newImageUrls.length > 0) {
+        const mainImage = newImageUrls[0];
+        const modelKey = existingMotor?.model_key || 
+          existingMotor?.model.replace(/[^a-zA-Z0-9]/g, '').toLowerCase() || 'unknown';
+        
+        const inventoryImageUrl = await uploadInventoryImage(mainImage, modelKey, supabase);
+        
+        if (inventoryImageUrl) {
+          // Add the inventory image to the beginning of the images array
+          updatedImages = [{
+            url: inventoryImageUrl,
+            type: 'inventory',
+            source: 'scraped_inventory',
+            scraped_at: new Date().toISOString()
+          }, ...existingImages];
+          setInStock = true;
+        }
       }
-    }
+      
+      // Merge and deduplicate regular images
+      for (const newUrl of newImageUrls) {
+        const exists = updatedImages.some(img => img.url === newUrl);
+        if (!exists) {
+          updatedImages.push({
+            url: newUrl,
+            type: newUrl.includes('detail') ? 'detail' : 
+                  newUrl.includes('gallery') ? 'gallery' : 'main',
+            source: 'scraped',
+            scraped_at: new Date().toISOString()
+          });
+        }
+      }
 
-    // Update the motor_models table with enhanced data
-    const { error: upErr } = await supabase
-      .from('motor_models')
-      .update({
+      // Prepare update data
+      const updateData: any = {
         description: result.description,
         features: result.features,
         specifications: result.specifications,
         last_scraped: new Date().toISOString(),
-        images: allImages.slice(0, 15), // Limit to 15 images max
+        images: updatedImages.slice(0, 15), // Limit to 15 images max
         updated_at: new Date().toISOString()
-      })
-      .eq('id', motorId);
+      };
+      
+      // Set in_stock=true if we processed an inventory image
+      if (setInStock) {
+        updateData.in_stock = true;
+      }
+
+      // Update the motor_models table with enhanced data
+      const { error: upErr } = await supabase
+        .from('motor_models')
+        .update(updateData)
+        .eq('id', motorId);
+      
       if (upErr) throw upErr;
+      
+      console.log(`Successfully updated motor ${motorId}${setInStock ? ' (marked as in-stock)' : ''}`);
     } else {
       const { error: upErr } = await supabase
         .from('motor_models')
