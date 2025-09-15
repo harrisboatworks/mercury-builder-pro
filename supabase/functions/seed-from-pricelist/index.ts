@@ -3,8 +3,8 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { load } from 'https://esm.sh/cheerio@1.0.0-rc.12';
 
-// Import shared motor helpers for consistent model key generation
-import { buildModelKey, extractHpAndCode } from '../_shared/motor-helpers.ts';
+// Import shared Mercury codes system
+import { parseMercuryRigCodes, buildMercuryModelKey, type RigAttrs } from '../_shared/mercury-codes.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -53,7 +53,7 @@ function parsePrice(priceText: string): number | null {
   return price;
 }
 
-// Enhanced model parsing with more specific key generation
+// Mercury model parsing using shared system
 function parseModelFromText(modelDisplay: string = '', modelNumber: string = '') {
   const cleanedText = cleanText(modelDisplay + ' ' + modelNumber);
   
@@ -69,72 +69,32 @@ function parseModelFromText(modelDisplay: string = '', modelNumber: string = '')
   else if (/verado/i.test(cleanedText)) family = 'Verado';
   else if (/racing/i.test(cleanedText)) family = 'Racing';
   
-  // Extract rigging/control codes with comprehensive pattern
-  const codeTokens: string[] = [];
-  const codePattern = /\b(ELHPT|ELPT|ELO|ELH|EH|XL|XXL|EXLPT|L|CL|CT|DTS|TILLER|JPO|DIGITAL|POWER\s*STEERING)\b/gi;
-  let match;
-  while ((match = codePattern.exec(cleanedText)) !== null) {
-    const token = match[1].replace(/\s+/g, '').toUpperCase();
-    if (!codeTokens.includes(token)) {
-      codeTokens.push(token);
-    }
-  }
+  // Parse Mercury rigging codes using shared system
+  const rig = parseMercuryRigCodes(cleanedText);
   
   // Check for EFI presence
-  const hasEFI = /\befi\b/i.test(cleanedText);
+  const hasEFI = /\befi\b/i.test(cleanedText) || (horsepower && horsepower >= 15); // assume EFI for larger motors
   
   return {
     family: family || 'FourStroke', // Default family
     horsepower: horsepower || 0,
     fuel: hasEFI ? 'EFI' : '',
-    rigging_code: codeTokens.join(' '),
-    code_tokens: codeTokens
+    rigging_code: rig.tokens.join(' '),
+    code_tokens: rig.tokens,
+    rig_attrs: rig
   };
 }
 
-// Improved model key builder with more specific logic
+// Enhanced model key builder using shared Mercury system
 function buildEnhancedModelKey(modelDisplay: string, modelNumber: string, attrs: any): string {
-  const parts: string[] = [];
-  
-  // Add family (required)
-  if (attrs.family) {
-    parts.push(attrs.family.toUpperCase());
-  }
-  
-  // Add horsepower (required if > 0)
-  if (attrs.horsepower && attrs.horsepower > 0) {
-    parts.push(`${attrs.horsepower}HP`);
-  }
-  
-  // Add fuel type if explicitly mentioned
-  if (attrs.fuel) {
-    parts.push(attrs.fuel.toUpperCase());
-  }
-  
-  // Add code tokens (if any)
-  if (attrs.code_tokens && attrs.code_tokens.length > 0) {
-    parts.push(...attrs.code_tokens);
-  }
-  
-  // Add model number suffix for uniqueness if available
-  if (modelNumber && modelNumber.length > 0) {
-    parts.push(modelNumber.toUpperCase());
-  }
-  
-  const key = parts.join('-');
-  
-  // Fallback if key generation failed
-  if (!key || key === '') {
-    const fallback = cleanText(modelDisplay + ' ' + modelNumber)
-      .toUpperCase()
-      .replace(/[^A-Z0-9\s]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .replace(/^-|-$/g, '');
-    return fallback || 'UNKNOWN-MODEL';
-  }
-  
-  return key;
+  // Use shared Mercury model key builder
+  return buildMercuryModelKey({
+    family: attrs.family,
+    hp: attrs.horsepower || null,
+    hasEFI: !!attrs.fuel,
+    rig: attrs.rig_attrs || { tokens: attrs.code_tokens || [], shaft_code: 'S', shaft_inches: 15, start_type: 'Unknown', control_type: 'Unknown', has_power_trim: false, has_command_thrust: false },
+    modelNo: modelNumber || undefined
+  });
 }
 
 // Generate SHA-256 checksum
@@ -721,7 +681,14 @@ serve(async (req) => {
         last_scraped: new Date().toISOString(),
         inventory_source: 'pricelist',
         catalog_source_url: url,
-        catalog_snapshot_url: html_snapshot_url
+        catalog_snapshot_url: html_snapshot_url,
+        // Add new Mercury rigging attributes
+        shaft_code: attrs.rig_attrs?.shaft_code || null,
+        shaft_inches: attrs.rig_attrs?.shaft_inches || null,
+        start_type: attrs.rig_attrs?.start_type || null,
+        control_type: attrs.rig_attrs?.control_type || null,
+        has_power_trim: attrs.rig_attrs?.has_power_trim || false,
+        has_command_thrust: attrs.rig_attrs?.has_command_thrust || false
       };
       
       // Only create brochure entries if requested (default true)

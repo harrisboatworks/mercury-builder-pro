@@ -459,6 +459,7 @@ export type Database = {
           catalog_snapshot_url: string | null
           catalog_source_url: string | null
           control: string | null
+          control_type: string | null
           created_at: string | null
           data_quality_score: number | null
           data_sources: Json | null
@@ -469,6 +470,8 @@ export type Database = {
           family: string | null
           features: Json | null
           fuel_type: string | null
+          has_command_thrust: boolean | null
+          has_power_trim: boolean | null
           hero_image_url: string | null
           horsepower: number | null
           id: string
@@ -495,11 +498,14 @@ export type Database = {
           rigging_code: string | null
           sale_price: number | null
           shaft: string | null
+          shaft_code: string | null
+          shaft_inches: number | null
           source_doc_urls: string[] | null
           source_priority: string[] | null
           spec_json: Json | null
           spec_sheet_file_id: string | null
           specifications: Json | null
+          start_type: string | null
           stock_number: string | null
           stock_quantity: number | null
           updated_at: string | null
@@ -511,6 +517,7 @@ export type Database = {
           catalog_snapshot_url?: string | null
           catalog_source_url?: string | null
           control?: string | null
+          control_type?: string | null
           created_at?: string | null
           data_quality_score?: number | null
           data_sources?: Json | null
@@ -521,6 +528,8 @@ export type Database = {
           family?: string | null
           features?: Json | null
           fuel_type?: string | null
+          has_command_thrust?: boolean | null
+          has_power_trim?: boolean | null
           hero_image_url?: string | null
           horsepower?: number | null
           id?: string
@@ -547,11 +556,14 @@ export type Database = {
           rigging_code?: string | null
           sale_price?: number | null
           shaft?: string | null
+          shaft_code?: string | null
+          shaft_inches?: number | null
           source_doc_urls?: string[] | null
           source_priority?: string[] | null
           spec_json?: Json | null
           spec_sheet_file_id?: string | null
           specifications?: Json | null
+          start_type?: string | null
           stock_number?: string | null
           stock_quantity?: number | null
           updated_at?: string | null
@@ -563,6 +575,7 @@ export type Database = {
           catalog_snapshot_url?: string | null
           catalog_source_url?: string | null
           control?: string | null
+          control_type?: string | null
           created_at?: string | null
           data_quality_score?: number | null
           data_sources?: Json | null
@@ -573,6 +586,8 @@ export type Database = {
           family?: string | null
           features?: Json | null
           fuel_type?: string | null
+          has_command_thrust?: boolean | null
+          has_power_trim?: boolean | null
           hero_image_url?: string | null
           horsepower?: number | null
           id?: string
@@ -599,11 +614,14 @@ export type Database = {
           rigging_code?: string | null
           sale_price?: number | null
           shaft?: string | null
+          shaft_code?: string | null
+          shaft_inches?: number | null
           source_doc_urls?: string[] | null
           source_priority?: string[] | null
           spec_json?: Json | null
           spec_sheet_file_id?: string | null
           specifications?: Json | null
+          start_type?: string | null
           stock_number?: string | null
           stock_quantity?: number | null
           updated_at?: string | null

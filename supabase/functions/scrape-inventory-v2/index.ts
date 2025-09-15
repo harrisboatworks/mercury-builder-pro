@@ -1,97 +1,69 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { XMLParser } from "https://esm.sh/fast-xml-parser@4"
 import { parse } from "https://deno.land/std@0.203.0/csv/parse.ts"
-import { buildModelKey, extractHpAndCode } from '../_shared/motor-helpers.ts';
+// Import shared Mercury codes system
+import { parseMercuryRigCodes, buildMercuryModelKey, type RigAttrs } from '../_shared/mercury-codes.ts';
 
-// Shared model key utilities (copied to avoid cross-function imports)
-function extractHpAndCode(modelText: string): { hp: number | null; code: string | null; fuel: string | null; family: string | null } {
-  if (!modelText) return { hp: null, code: null, fuel: null, family: null };
+// Enhanced Mercury model parsing using shared system
+function parseMotorFromUnit(u: any): Motor {
+  const title = cleanText(u.Title || u.title || u.Model || u.model || u.Name || u.UnitName || "");
+  const modelNumber = cleanText(u.Model || u.model || u.ModelNumber || u.ModelNo || u.MercuryModelNo || "");
+  const category = cleanText(u.Category || u.category || u.Type || u.type || "");
   
-  const text = modelText.toUpperCase();
+  // Combine title and model number for parsing
+  const fullText = `${title} ${modelNumber}`.trim();
+  
+  // Extract basic info
+  let horsepower: number | null = null;
+  let motor_type = "FourStroke";
+  let fuel_type = "";
+  let model_code = "";
+  
+  // Use shared Mercury parsing system
+  const rig = parseMercuryRigCodes(fullText);
   
   // Extract HP
-  const hpMatch = text.match(/(?<!\d)(\d{1,3}(?:\.\d)?)\s*HP?/);
-  const hp = hpMatch ? Number(hpMatch[1]) : null;
-  
-  // Extract fuel type
-  const fuel = /EFI/.test(text) ? 'EFI' : null;
+  const hpMatch = fullText.match(/(\d+(?:\.\d+)?)\s*hp/i);
+  horsepower = hpMatch ? Number(hpMatch[1]) : null;
   
   // Extract family
-  let family = null;
-  if (/FOUR\s*STROKE|FOURSTROKE/i.test(text)) family = 'FOURSTROKE';
-  else if (/PRO\s*XS|PROXS/i.test(text)) family = 'PROXS';
-  else if (/SEAPRO/i.test(text)) family = 'SEAPRO';
-  else if (/VERADO/i.test(text)) family = 'VERADO';
-  else if (/RACING/i.test(text)) family = 'RACING';
-  else if (hp) family = 'FOURSTROKE'; // Default for motors with HP
+  if (/four\s*stroke|fourstroke/i.test(fullText)) motor_type = 'FourStroke';
+  else if (/pro\s*xs|proxs/i.test(fullText)) motor_type = 'ProXS';
+  else if (/sea\s*pro|seapro/i.test(fullText)) motor_type = 'SeaPro';
+  else if (/verado/i.test(fullText)) motor_type = 'Verado';
+  else if (/racing/i.test(fullText)) motor_type = 'Racing';
   
-  // Extract code (most specific patterns first)
-  let code = null;
-  const codePatterns = [
-    'EXLHPT', 'ELHPT', 'EXLPT', 'ELPT', 'XLPT', 'LPT',
-    'EXLH', 'ELH', 'MLH', 'XLH',
-    'EH', 'MH',
-    'XXL', 'XL', 'CT', 'DTS', 'JET', 'TILLER', 'REMOTE'
-  ];
+  // Check for EFI
+  const hasEFI = /\befi\b/i.test(fullText) || (horsepower && horsepower >= 15);
+  if (hasEFI) fuel_type = 'EFI';
   
-  for (const pattern of codePatterns) {
-    if (new RegExp(`\\b${pattern}\\b`).test(text)) {
-      code = pattern;
-      break;
-    }
-  }
+  // Build model key using shared system
+  const model_key = buildMercuryModelKey({
+    family: motor_type,
+    hp: horsepower,
+    hasEFI: hasEFI,
+    rig: rig,
+    modelNo: modelNumber || undefined
+  });
   
-  // Check for L or S as shaft indicators (but not when part of other codes)
-  if (!code) {
-    if (/\bL\b/.test(text) && !/EL|XL|XXL/.test(text)) code = 'L';
-    else if (/\bS\b/.test(text)) code = 'S';
-  }
-  
-  return { hp, code, fuel, family };
-}
-
-function buildModelKey(input: string): string {
-  if (!input) return '';
-  let s = input
-    // strip HTML & odd chars
-    .replace(/<[^>]*>/g, ' ')
-    .replace(/[()]/g, ' ')
-    // remove year tokens
-    .replace(/\b20\d{2}\b/g, ' ')
-    // normalize family names
-    .replace(/\bfour[\s-]*stroke\b/ig, 'FourStroke')
-    .replace(/\bpro[\s-]*xs\b/ig, 'ProXS')
-    .replace(/\bsea[\s-]*pro\b/ig, 'SeaPro')
-    .replace(/\bverado\b/ig, 'Verado')
-    .replace(/\bracing\b/ig, 'Racing')
-    // normalize EFI
-    .replace(/\befi\b/ig, 'EFI')
-    // coalesce whitespace
-    .replace(/\s+/g, ' ')
-    .trim();
-
-  // pull HP and trailing rigging code
-  // ex: "25HP EFI ELHPT", "90 HP ELPT", "150 ProXS XL"
-  const hpMatch = s.match(/\b(\d+(\.\d+)?)\s*hp\b/i);
-  const hp = hpMatch ? `${hpMatch[1]}HP` : '';
-  s = s.replace(/\b(\d+(\.\d+)?)\s*hp\b/ig, '').trim();
-
-  // rigging/code tokens: ELHPT, ELPT, XL, EXLPT, CT, DTS, etc.
-  const codeTokens: string[] = [];
-  const tokenRx = /\b(ELHPT|ELPT|ELO|ELH|EH|XL|XXL|EXLPT|L|CL|CT|DTS|TILLER|JPO|DIGITAL|POWER STEERING)\b/ig;
-  let m;
-  while ((m = tokenRx.exec(s)) !== null) codeTokens.push(m[1].toUpperCase());
-
-  // family tokens (one of)
-  const fam = (s.match(/\b(FourStroke|ProXS|SeaPro|Verado|Racing)\b/i)?.[1]) || '';
-
-  // rebuild normalized display to then key it
-  const parts = [fam, hp, 'EFI'].filter(Boolean).concat(codeTokens);
-  const normalized = parts.join('-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
-
-  return normalized.toUpperCase();
+  return {
+    model_raw: title,
+    model: title,
+    year: 2025,
+    motor_type,
+    horsepower,
+    fuel_type,
+    model_code: rig.tokens.join(' '),
+    model_key,
+    sale_price: parsePrice(u.Price || u.price || u.ListPrice || u.MSRP),
+    msrp: parsePrice(u.MSRP || u.msrp || u.ListPrice),
+    price_status: determinePriceStatus(u),
+    stock_number: cleanText(u.StockNumber || u.stock_number || u.VIN || u.vin || ""),
+    availability: cleanText(u.Availability || u.availability || u.Status || u.status || "In Stock"),
+    original_image_url: extractImageUrl(u),
+    source_url: cleanText(u.DetailsUrl || u.DetailsURL || u.UnitURL || u.Url || ""),
+    rig_attrs: rig
+  };
 }
 
 // CORS headers
@@ -1720,6 +1692,16 @@ serve(async (req) => {
             ...(m.sale_price && {
               sale_price: m.sale_price,
               price_source: 'xml'
+            }),
+            
+            // Add Mercury rigging attributes if available
+            ...(m.rig_attrs && {
+              shaft_code: m.rig_attrs.shaft_code,
+              shaft_inches: m.rig_attrs.shaft_inches,
+              start_type: m.rig_attrs.start_type,
+              control_type: m.rig_attrs.control_type,
+              has_power_trim: m.rig_attrs.has_power_trim,
+              has_command_thrust: m.rig_attrs.has_command_thrust
             })
           };
 
@@ -1757,7 +1739,16 @@ serve(async (req) => {
             ...(m.model_code && { model_code: m.model_code }),
             ...(m.stock_number && { stock_number: m.stock_number }),
             ...(m.image_url && { image_url: m.image_url }),
-            ...(inventoryImages.length > 0 && { images: inventoryImages })
+            ...(inventoryImages.length > 0 && { images: inventoryImages }),
+            // Add Mercury rigging attributes if available
+            ...(m.rig_attrs && {
+              shaft_code: m.rig_attrs.shaft_code,
+              shaft_inches: m.rig_attrs.shaft_inches,
+              start_type: m.rig_attrs.start_type,
+              control_type: m.rig_attrs.control_type,
+              has_power_trim: m.rig_attrs.has_power_trim,
+              has_command_thrust: m.rig_attrs.has_command_thrust
+            })
           };
 
           const { error: insertError } = await supabase
