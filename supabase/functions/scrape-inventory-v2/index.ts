@@ -344,12 +344,11 @@ Call price:   ${call}/${total}
 
 // Main serve function
 serve(async (req) => {
-  // Handle CORS preflight requests
-  if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders });
-  }
-
   try {
+    // Handle CORS preflight requests
+    if (req.method === 'OPTIONS') {
+      return new Response('ok', { headers: corsHeaders });
+    }
     const body = await req.json().catch(() => ({}));
     const batch = Number(body.batch_size ?? 30);
     const concurrency = Number(body.concurrency ?? 4);
@@ -509,5 +508,13 @@ serve(async (req) => {
         ...corsHeaders 
       }
     });
+  }
+}, { 
+  onError: (err) => {
+    console.error('Unhandled error:', err);
+    return new Response(
+      JSON.stringify({ success: false, error: String(err) }),
+      { status: 500, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+    );
   }
 });
