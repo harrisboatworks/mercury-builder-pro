@@ -108,6 +108,17 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Test endpoint to verify function is reachable
+  if (req.url.endsWith('/test')) {
+    return new Response(JSON.stringify({ 
+      status: 'ok', 
+      message: 'Function is reachable',
+      timestamp: new Date().toISOString()
+    }), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
   try {
     console.log('🚀 CORRECT FUNCTION v2: Full DOM scraping started');
     const startTime = Date.now();
