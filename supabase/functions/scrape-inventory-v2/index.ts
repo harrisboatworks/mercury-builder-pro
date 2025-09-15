@@ -1349,9 +1349,8 @@ serve(async (req) => {
           ...(model_number && { model_number }),
           ...(horsepower && { horsepower }),
           ...(model_code && { model_code }),
-          ...(series && { fuel_type: "" }) // Empty fuel_type when series is present
-        };
-          last_scraped: new Date().toISOString(),
+          ...(series && { fuel_type: "" }), // Empty fuel_type when series is present
+          last_scraped: new Date().toISOString()
         };
       }).filter(r => r.sale_price > 0 && (r.model_number || r.model));
 
