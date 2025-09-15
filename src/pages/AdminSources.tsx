@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Textarea } from "@/components/ui/textarea";
 import { AlertCircle, Upload, Link as LinkIcon, Image, FileText, DollarSign, Download, ExternalLink } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { supabase } from "@/integrations/supabase/client";
@@ -33,6 +34,8 @@ export default function AdminSources() {
   const [imageUrls, setImageUrls] = useState("");
   const [modelKeyMappings, setModelKeyMappings] = useState<Record<string, string>>({});
   const [bulkImportFile, setBulkImportFile] = useState<File | null>(null);
+  const [bulkJsonText, setBulkJsonText] = useState("");
+  const [bulkResults, setBulkResults] = useState<{ success: number; total: number; errors: string[] } | null>(null);
 
   const handlePricelistIngest = async (isDryRun: boolean) => {
     setLoading({ ...loading, pricelist: true });
@@ -292,6 +295,63 @@ export default function AdminSources() {
       toast({
         title: "Error",
         description: "Failed to process bulk import file",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading({ ...loading, images: false });
+    }
+  };
+
+  const handleBulkJsonUpload = async () => {
+    if (!bulkJsonText.trim()) return;
+    
+    setLoading({ ...loading, images: true });
+    setBulkResults(null);
+    
+    try {
+      const heroData = JSON.parse(bulkJsonText) as Array<{ model_key: string; url: string }>;
+      let successCount = 0;
+      const errors: string[] = [];
+
+      for (const item of heroData) {
+        try {
+          const { data, error } = await supabase.functions.invoke('upload-hero-image', {
+            body: { 
+              model_key: item.model_key,
+              url: item.url,
+              dry_run: dryRun
+            }
+          });
+
+          if (error) {
+            errors.push(`${item.model_key}: ${error.message || 'Unknown error'}`);
+          } else if (data?.stored) {
+            successCount++;
+          }
+        } catch (error) {
+          errors.push(`${item.model_key}: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        }
+      }
+
+      setBulkResults({
+        success: successCount,
+        total: heroData.length,
+        errors
+      });
+
+      toast({
+        title: dryRun ? "Bulk JSON Preview" : "Bulk JSON Complete",
+        description: `${successCount}/${heroData.length} hero images processed successfully`,
+      });
+
+      if (!dryRun && successCount > 0) {
+        setLastIngested({ ...lastIngested, images: new Date() });
+      }
+    } catch (error) {
+      console.error('Bulk JSON upload error:', error);
+      toast({
+        title: "Error",
+        description: "Invalid JSON format or processing error",
         variant: "destructive",
       });
     } finally {
@@ -793,10 +853,11 @@ export default function AdminSources() {
             </CardHeader>
             <CardContent className="space-y-4">
               <Tabs defaultValue="upload" className="w-full">
-                <TabsList className="grid w-full grid-cols-3">
+                <TabsList className="grid w-full grid-cols-4">
                   <TabsTrigger value="upload">Upload</TabsTrigger>
                   <TabsTrigger value="urls">URLs</TabsTrigger>
-                  <TabsTrigger value="bulk">Bulk Import</TabsTrigger>
+                  <TabsTrigger value="bulk">File</TabsTrigger>
+                  <TabsTrigger value="json">JSON</TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="upload" className="space-y-3">
@@ -858,6 +919,54 @@ export default function AdminSources() {
                     </Badge>
                   )}
                 </TabsContent>
+
+                <TabsContent value="json" className="space-y-3">
+                  <Label htmlFor="bulk-json">Paste JSON Array</Label>
+                  <Textarea
+                    id="bulk-json"
+                    className="font-mono text-sm h-32 resize-y"
+                    value={bulkJsonText}
+                    onChange={(e) => setBulkJsonText(e.target.value)}
+                    placeholder='[{"model_key":"FOURSTROKE-25HP-EFI-L-E-PT","url":"https://example.com/image1.jpg"},{"model_key":"FOURSTROKE-30HP-EFI-L-E-PT","url":"https://example.com/image2.jpg"}]'
+                  />
+                  <div className="text-sm text-muted-foreground">
+                    Paste JSON array directly. Each object needs model_key and url properties.
+                  </div>
+
+                  <Button 
+                    onClick={handleBulkJsonUpload}
+                    disabled={loading.images || !bulkJsonText.trim()}
+                    className="w-full"
+                  >
+                    {loading.images ? "Processing..." : "Upload from JSON"}
+                  </Button>
+
+                  {bulkResults && (
+                    <div className="mt-3 p-3 bg-muted rounded-lg space-y-2">
+                      <div className="flex justify-between items-center text-sm">
+                        <span className="font-medium">Success Rate:</span>
+                        <span className="text-green-600 dark:text-green-400">
+                          {bulkResults.success}/{bulkResults.total}
+                        </span>
+                      </div>
+                      
+                      {bulkResults.errors.length > 0 && (
+                        <details className="space-y-2">
+                          <summary className="cursor-pointer text-sm font-medium text-destructive">
+                            Errors ({bulkResults.errors.length}) - Click to expand
+                          </summary>
+                          <div className="bg-background rounded border p-2 max-h-32 overflow-y-auto">
+                            {bulkResults.errors.map((error, index) => (
+                              <div key={index} className="text-xs text-destructive py-1 border-b border-border last:border-b-0">
+                                {error}
+                              </div>
+                            ))}
+                          </div>
+                        </details>
+                      )}
+                    </div>
+                  )}
+                </TabsContent>
               </Tabs>
 
               <Button 
@@ -865,7 +974,7 @@ export default function AdminSources() {
                 disabled={loading.images || (!bulkImportFile && selectedImages.length === 0 && !imageUrls.trim())}
                 className="w-full"
               >
-                {loading.images ? "Processing..." : bulkImportFile ? "Import Hero Images" : "Upload Hero Images"}
+                {loading.images ? "Processing..." : bulkImportFile ? "Import from File" : "Upload Hero Images"}
               </Button>
 
               {lastIngested.images && (
