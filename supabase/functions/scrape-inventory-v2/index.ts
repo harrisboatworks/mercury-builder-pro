@@ -7,25 +7,88 @@ const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 // Motor parsing function
-async function parseMotorsFromHTML(html: string) {
+async function parseMotorsFromHTML(html: string, markdown: string = '') {
   console.log('🔍 Starting motor parsing...')
+  console.log('🔍 HTML Sample:', html.substring(0, 2000))
+  console.log('📝 Markdown Sample:', markdown.substring(0, 1000))
+  
   const motors = []
+  const debugInfo = {
+    html_length: html.length,
+    markdown_length: markdown.length,
+    patterns_found: [],
+    search_results: {}
+  }
   
-  // Horsepower patterns to look for
-  const hpPatterns = [
-    '15 HP', '20 HP', '25 HP', '30 HP', '40 HP', '50 HP',
-    '60 HP', '75 HP', '90 HP', '115 HP', '150 HP', '175 HP',
-    '200 HP', '225 HP', '250 HP', '300 HP', '350 HP', '400 HP'
-  ]
+  // Search for common motor-related terms (case insensitive)
+  const searchTerms = ['mercury', 'hp', 'horsepower', 'outboard', 'engine', 'motor']
   
-  // Create a more flexible regex to find motor information
-  const motorRegex = /(?:Mercury|MERCURY).*?(\d+)\s*(?:HP|hp|Hp).*?(?:\$([0-9,]+))?/gi
-  const matches = html.matchAll(motorRegex)
+  searchTerms.forEach(term => {
+    const regex = new RegExp(term, 'gi')
+    const matches = html.match(regex) || []
+    debugInfo.search_results[term] = matches.length
+    console.log(`🔍 Found "${term}": ${matches.length} occurrences`)
+  })
   
-  for (const match of matches) {
+  // Try multiple parsing approaches
+  console.log('🎯 Trying different parsing patterns...')
+  
+  // Pattern 1: Original Mercury + HP pattern
+  const pattern1 = /(?:Mercury|MERCURY).*?(\d+)\s*(?:HP|hp|Hp).*?(?:\$([0-9,]+))?/gi
+  const matches1 = Array.from(html.matchAll(pattern1))
+  console.log('🎯 Pattern 1 (Mercury + HP):', matches1.length, 'matches')
+  
+  // Pattern 2: Just HP numbers
+  const pattern2 = /(\d+)\s*(?:HP|hp|Hp)/gi
+  const matches2 = Array.from(html.matchAll(pattern2))
+  console.log('🎯 Pattern 2 (Just HP):', matches2.length, 'matches')
+  
+  // Pattern 3: Horsepower spelled out
+  const pattern3 = /(\d+)\s*(?:horsepower|Horsepower|HORSEPOWER)/gi
+  const matches3 = Array.from(html.matchAll(pattern3))
+  console.log('🎯 Pattern 3 (Horsepower):', matches3.length, 'matches')
+  
+  // Pattern 4: Mercury in markdown
+  const pattern4 = /(?:Mercury|MERCURY).*?(\d+)\s*(?:HP|hp|Hp)/gi
+  const matches4 = Array.from(markdown.matchAll(pattern4))
+  console.log('🎯 Pattern 4 (Mercury in markdown):', matches4.length, 'matches')
+  
+  // Try to find any motor-related content
+  const motorKeywords = ['outboard', 'engine', 'motor', 'marine']
+  motorKeywords.forEach(keyword => {
+    const regex = new RegExp(`${keyword}[^.]{0,100}`, 'gi')
+    const matches = html.match(regex) || []
+    if (matches.length > 0) {
+      console.log(`🔍 ${keyword} context:`, matches.slice(0, 3))
+      debugInfo.patterns_found.push(`${keyword}: ${matches.length} matches`)
+    }
+  })
+  
+  // Look for price patterns
+  const pricePattern = /\$[\d,]+(?:\.\d{2})?/g
+  const priceMatches = html.match(pricePattern) || []
+  console.log('💰 Price patterns found:', priceMatches.length)
+  if (priceMatches.length > 0) {
+    console.log('💰 Sample prices:', priceMatches.slice(0, 5))
+  }
+  
+  // Use the most promising pattern for actual parsing
+  let bestMatches = matches1
+  if (matches2.length > bestMatches.length) bestMatches = matches2
+  if (matches4.length > bestMatches.length) bestMatches = matches4
+  
+  console.log('🏆 Using best pattern with', bestMatches.length, 'matches')
+  
+  for (const match of bestMatches) {
     const fullMatch = match[0]
     const horsepower = parseInt(match[1])
     const priceStr = match[2]
+    
+    // Skip invalid horsepower values
+    if (horsepower < 5 || horsepower > 500) {
+      console.log('⚠️ Skipping invalid HP:', horsepower)
+      continue
+    }
     
     // Parse price if found
     let price = null
@@ -37,11 +100,13 @@ async function parseMotorsFromHTML(html: string) {
     let model = `Mercury ${horsepower}HP`
     let motorType = 'Outboard'
     
-    // Try to get more context around the match
+    // Try to get more context around the match  
     const matchIndex = html.indexOf(fullMatch)
     const contextStart = Math.max(0, matchIndex - 200)
     const contextEnd = Math.min(html.length, matchIndex + 200)
     const context = html.substring(contextStart, contextEnd)
+    
+    console.log(`🔍 Context for ${horsepower}HP:`, context.substring(0, 150))
     
     // Look for common Mercury model names in context
     const modelPatterns = [
@@ -100,7 +165,8 @@ async function parseMotorsFromHTML(html: string) {
   )
   
   console.log('🧹 Unique motors after deduplication:', uniqueMotors.length)
-  return uniqueMotors
+  
+  return { motors: uniqueMotors, debugInfo }
 }
 
 // Database save function
@@ -231,8 +297,13 @@ serve(async (req) => {
         
         // Parse motors from HTML
         const htmlData = firecrawlData.data?.html || ''
-        const parsedMotors = await parseMotorsFromHTML(htmlData)
+        const markdownData = firecrawlData.data?.markdown || ''
+        const parseResult = await parseMotorsFromHTML(htmlData, markdownData)
+        const parsedMotors = parseResult.motors
+        const debugInfo = parseResult.debugInfo
+        
         console.log('🏗️ Parsed motors count:', parsedMotors.length)
+        console.log('🔍 Debug info:', JSON.stringify(debugInfo, null, 2))
         
         // Save motors to database if any found
         let savedMotors = 0
@@ -249,6 +320,9 @@ serve(async (req) => {
           markdown_length: firecrawlData.data?.markdown?.length || 0,
           motors_found: parsedMotors.length,
           motors_saved: savedMotors,
+          debug_info: debugInfo,
+          html_sample: firecrawlData.data?.html?.substring(0, 500) || '',
+          markdown_sample: firecrawlData.data?.markdown?.substring(0, 300) || '',
           api_version: 'v1',
           timestamp: new Date().toISOString()
         }
