@@ -432,6 +432,63 @@ export default function AdminSources() {
     }
   };
 
+  const runSanityCheck = async () => {
+    setSanityLoading(true);
+    try {
+      // A) Counts
+      const { data: brochureCount } = await supabase
+        .from('motor_models')
+        .select('*', { count: 'exact', head: true })
+        .eq('is_brochure', true);
+
+      const { data: inStockCount } = await supabase
+        .from('motor_models')
+        .select('*', { count: 'exact', head: true })
+        .eq('in_stock', true);
+
+      // B) Recent sample
+      const { data: recentSample } = await supabase
+        .from('motor_models')
+        .select('model, model_key, family, horsepower, shaft_code, start_type, control_type, has_power_trim, has_command_thrust, dealer_price, msrp, hero_image_url, in_stock, stock_number')
+        .order('updated_at', { ascending: false, nullsFirst: false })
+        .limit(20);
+
+      // C) Missing images (brochure)
+      const { data: missingImages } = await supabase
+        .from('motor_models')
+        .select('model_key, model')
+        .eq('is_brochure', true)
+        .or('hero_image_url.is.null,hero_image_url.eq.');
+
+      // D) Key collisions (should be 0 for brochure)
+      const { data: keyCollisions } = await supabase
+        .rpc('get_duplicate_brochure_keys');
+
+      setSanityData({
+        counts: {
+          brochure: brochureCount?.length || 0,
+          inStock: inStockCount?.length || 0
+        },
+        recentSample: recentSample || [],
+        missingImages: missingImages || [],
+        keyCollisions: keyCollisions || []
+      });
+
+      toast.success('Sanity check completed');
+    } catch (error) {
+      console.error('Sanity check failed:', error);
+      toast.error('Sanity check failed');
+    } finally {
+      setSanityLoading(false);
+    }
+  };
+
+  const copyToClipboard = (data: any[], title: string) => {
+    const text = JSON.stringify(data, null, 2);
+    navigator.clipboard.writeText(text);
+    toast.success(`${title} copied to clipboard`);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <AdminNav />
