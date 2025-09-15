@@ -51,111 +51,356 @@ function cleanText(s?: string | null): string {
     .trim();
 }
 
-// Extract detail URLs from listing page HTML
-function extractDetailUrls(listHtml: string): string[] {
+// Enhanced URL extraction with multiple strategies
+function extractDetailUrls(listHtml: string): { urls: string[], method: string, diagnostics: any } {
   const urls = new Set<string>();
+  const methods: string[] = [];
+  const diagnostics = {
+    htmlLength: listHtml.length,
+    extractionMethods: {} as Record<string, number>
+  };
 
-  // 1) Anchor tags like: <a href="/inventory/...">
+  // 1) Traditional anchor tags: <a href="/inventory/...">
   const hrefRx = /href=["'](\/inventory\/[^"'?#]+)["']/gi;
+  let hrefCount = 0;
   for (let m; (m = hrefRx.exec(listHtml)); ) {
     urls.add(`https://www.harrisboatworks.ca${m[1]}`);
+    hrefCount++;
+  }
+  if (hrefCount > 0) {
+    methods.push('href');
+    diagnostics.extractionMethods.href = hrefCount;
   }
 
-  // 2) JSON blobs like: "itemUrl":"//www.harrisboatworks.ca/inventory/..."
-  const jsonUrlRx = /"itemUrl"\s*:\s*"((?:https?:)?\/\/www\.harrisboatworks\.ca\/inventory\/[^"']+)"/gi;
-  for (let m; (m = jsonUrlRx.exec(listHtml)); ) {
-    const u = m[1].startsWith('//') ? `https:${m[1]}` : m[1];
+  // 2) JSON-LD structured data: <script type="application/ld+json">
+  const jsonLdRx = /<script[^>]*type=["']application\/ld\+json["'][^>]*>(.*?)<\/script>/gis;
+  let jsonLdCount = 0;
+  for (let m; (m = jsonLdRx.exec(listHtml)); ) {
+    try {
+      const data = JSON.parse(m[1]);
+      const extractFromJsonLd = (obj: any) => {
+        if (typeof obj === 'object' && obj) {
+          if (obj.url && typeof obj.url === 'string' && obj.url.includes('/inventory/')) {
+            const absUrl = obj.url.startsWith('http') ? obj.url : `https://www.harrisboatworks.ca${obj.url}`;
+            urls.add(absUrl);
+            jsonLdCount++;
+          }
+          if (obj['@graph'] || obj.itemListElement) {
+            const items = obj['@graph'] || obj.itemListElement || [];
+            items.forEach(extractFromJsonLd);
+          }
+          Object.values(obj).forEach(extractFromJsonLd);
+        }
+      };
+      extractFromJsonLd(data);
+    } catch (e) {
+      // Invalid JSON-LD, skip
+    }
+  }
+  if (jsonLdCount > 0) {
+    methods.push('json-ld');
+    diagnostics.extractionMethods['json-ld'] = jsonLdCount;
+  }
+
+  // 3) Data attributes: data-url, data-href, data-link, etc.
+  const dataAttrRx = /data-(?:url|href|link|item-?url|product-?url)=["']([^"']*\/inventory\/[^"']*)["']/gi;
+  let dataAttrCount = 0;
+  for (let m; (m = dataAttrRx.exec(listHtml)); ) {
+    const u = m[1].startsWith('http') ? m[1] : 
+              m[1].startsWith('//') ? `https:${m[1]}` :
+              `https://www.harrisboatworks.ca${m[1]}`;
     urls.add(u);
+    dataAttrCount++;
+  }
+  if (dataAttrCount > 0) {
+    methods.push('data-attr');
+    diagnostics.extractionMethods['data-attr'] = dataAttrCount;
   }
 
-  // 3) Protocol-relative fallbacks: "//www.harrisboatworks.ca/inventory/..."
-  const protoRelRx = /["'](\/\/www\.harrisboatworks\.ca\/inventory\/[^"']+)["']/gi;
-  for (let m; (m = protoRelRx.exec(listHtml)); ) {
-    urls.add(`https:${m[1]}`);
+  // 4) JSON API responses: "itemUrl", "url", "link" fields
+  const jsonUrlRx = /"(?:itemUrl|url|link|href)"\s*:\s*"((?:https?:)?\/\/[^"]*\/inventory\/[^"']+|\/inventory\/[^"']+)"/gi;
+  let jsonUrlCount = 0;
+  for (let m; (m = jsonUrlRx.exec(listHtml)); ) {
+    const u = m[1].startsWith('//') ? `https:${m[1]}` : 
+              m[1].startsWith('/') ? `https://www.harrisboatworks.ca${m[1]}` : m[1];
+    urls.add(u);
+    jsonUrlCount++;
+  }
+  if (jsonUrlCount > 0) {
+    methods.push('json-api');
+    diagnostics.extractionMethods['json-api'] = jsonUrlCount;
   }
 
-  return [...urls];
+  // 5) Generic inventory URL regex (catch-all)
+  const genericRx = /(?:https?:)?\/\/[^"'\s]*\/inventory\/[^"'\s?#]*/gi;
+  let genericCount = 0;
+  for (let m; (m = genericRx.exec(listHtml)); ) {
+    const u = m[0].startsWith('//') ? `https:${m[0]}` : 
+              m[0].startsWith('/') ? `https://www.harrisboatworks.ca${m[0]}` : m[0];
+    if (u.includes('harrisboatworks.ca')) {
+      urls.add(u);
+      genericCount++;
+    }
+  }
+  if (genericCount > 0) {
+    methods.push('generic');
+    diagnostics.extractionMethods.generic = genericCount;
+  }
+
+  // 6) XHR/API endpoint detection
+  const xhrEndpoints: string[] = [];
+  const apiRx = /(?:fetch|ajax|xhr)\s*\(\s*["']([^"']*(?:inventory|search|api)[^"']*)["']/gi;
+  for (let m; (m = apiRx.exec(listHtml)); ) {
+    xhrEndpoints.push(m[1]);
+  }
+  diagnostics.xhrEndpoints = xhrEndpoints;
+
+  return {
+    urls: [...urls],
+    method: methods.join('+') || 'none',
+    diagnostics
+  };
 }
 
-// Quick discovery for fast URL probing
-async function quickDiscover(fetchPage: (u: string) => Promise<string>, opts?: {
-  maxPages?: number;        // default 1
-  includeAlts?: boolean;    // default false
-  doProbe?: boolean;        // default true
+// Enhanced discovery with multiple entry routes, sitemap crawling, and diagnostics
+async function enhancedDiscover(fetchPage: (u: string) => Promise<string>, opts?: {
+  maxPages?: number;
+  includeAlts?: boolean;
+  doProbe?: boolean;
+  mode?: 'discovery' | 'full';
 }) {
-  const BASE = "https://www.harrisboatworks.ca/search/inventory/brand/Mercury";
-  const maxPages = Math.max(1, opts?.maxPages ?? 1);
-  const includeAlts = !!opts?.includeAlts;     // default off
-  const doProbe = opts?.doProbe !== false;     // default on
+  const maxPages = Math.max(1, opts?.maxPages ?? 5);
+  const includeAlts = opts?.includeAlts !== false; // default on for enhanced
+  const doProbe = opts?.doProbe !== false;
+  const mode = opts?.mode || 'full';
   const all = new Set<string>();
+  const diagnostics: any[] = [];
 
-  // page 1..maxPages only
-  for (let p = 1; p <= maxPages; p++) {
-    const url = p === 1 ? BASE : `${BASE}?page=${p}`;
-    const html = await fetchPage(url);
-    extractDetailUrls(html).forEach(u => all.add(u));
-  }
+  console.log(`🔍 Enhanced discovery starting: maxPages=${maxPages}, includeAlts=${includeAlts}, doProbe=${doProbe}`);
 
-  if (doProbe) {
-    const probeHtml = await fetchPage(`${BASE}?limit=200`);
-    extractDetailUrls(probeHtml).forEach(u => all.add(u));
-  }
-
-  if (includeAlts) {
-    const ALT = "https://www.harrisboatworks.ca/search/inventory/availability/In%20Stock/brand/Mercury";
-    const html = await fetchPage(ALT);
-    extractDetailUrls(html).forEach(u => all.add(u));
-  }
-
-  return [...all];
-}
-
-// Collect all detail URLs from all pages
-async function collectAllDetailUrls(fetchPage: (u: string) => Promise<string>) {
-  const BASE = "https://www.harrisboatworks.ca/search/inventory/brand/Mercury";
-  const all = new Set<string>();
-
-  // crawl first 5 pages
-  for (let p = 1; p <= 5; p++) {
-    const url = p === 1 ? BASE : `${BASE}?page=${p}`;
-    const html = await fetchPage(url);
-    const pageUrls = extractDetailUrls(html);
-    console.log(`Page ${p}/5: found ${pageUrls.length} detail URLs (total ${all.size + pageUrls.length})`);
-    pageUrls.forEach((u, i) => { if (i < 3) console.log(`  • ${u}`); }); // sample first 3
-    pageUrls.forEach(u => all.add(u));
-  }
-
-  // high-limit probe (to grab everything in one shot if supported)
-  const probeHtml = await fetchPage(`${BASE}?limit=200`);
-  const probeUrls = extractDetailUrls(probeHtml);
-  probeUrls.forEach(u => all.add(u));
-  console.log(`Limit=200 probe: found ${probeUrls.length} additional URLs, final total ${all.size}`);
-
-  // Try alternate endpoints that may surface different inventory subsets
-  const ALT_BASES = [
+  // Enhanced entry routes
+  const ENTRY_ROUTES = [
+    "https://www.harrisboatworks.ca/search/inventory/brand/Mercury",
+    "https://www.harrisboatworks.ca/search/inventory/unit-engine-make/Mercury", 
+    "https://www.harrisboatworks.ca/search/inventory/brand/Mercury?view=grid",
+    "https://www.harrisboatworks.ca/search/inventory/?q=Mercury",
     "https://www.harrisboatworks.ca/search/inventory/availability/In%20Stock/brand/Mercury",
     "https://www.harrisboatworks.ca/search/inventory/sort/price-low/unit-engine-make/Mercury"
   ];
 
-  for (const ALT of ALT_BASES) {
-    for (let p = 1; p <= Math.min(5, 7); p++) {
-      const url = p === 1 ? ALT : `${ALT}?page=${p}`;
-      const html = await fetchPage(url);
-      const pageUrls = extractDetailUrls(html);
-      console.log(`[ALT] ${url} → ${pageUrls.length} URLs`);
-      pageUrls.forEach(u => all.add(u));
+  // 1) Crawl multiple entry routes
+  for (const baseRoute of ENTRY_ROUTES) {
+    console.log(`📂 Crawling route: ${baseRoute}`);
+    let routeUrls = 0;
+    
+    // Crawl first N pages of each route  
+    for (let p = 1; p <= maxPages; p++) {
+      const url = p === 1 ? baseRoute : `${baseRoute}${baseRoute.includes('?') ? '&' : '?'}page=${p}`;
+      try {
+        const html = await fetchPage(url);
+        const extraction = extractDetailUrls(html);
+        
+        const pageUrls = extraction.urls.length;
+        routeUrls += pageUrls;
+        extraction.urls.forEach(u => all.add(u));
+        
+        console.log(`  Page ${p}: ${pageUrls} URLs (${extraction.method}) [HTML: ${extraction.diagnostics.htmlLength} chars]`);
+        
+        // Log diagnostics for each page
+        diagnostics.push({
+          url,
+          page: p,
+          route: baseRoute,
+          found: pageUrls,
+          method: extraction.method,
+          htmlLength: extraction.diagnostics.htmlLength,
+          suspectedJsOnly: extraction.diagnostics.htmlLength < 10000,
+          samples: extraction.urls.slice(0, 3),
+          extractionMethods: extraction.diagnostics.extractionMethods,
+          xhrEndpoints: extraction.diagnostics.xhrEndpoints || []
+        });
+        
+        // Early exit if suspected JS-only page
+        if (extraction.diagnostics.htmlLength < 10000) {
+          console.log(`  ⚠️  Suspected JS-only page (HTML: ${extraction.diagnostics.htmlLength} chars)`);
+        }
+        
+      } catch (error) {
+        console.error(`  ❌ Error on page ${p}: ${error}`);
+      }
     }
-    const probeHtml = await fetchPage(ALT + (ALT.includes('?') ? '&' : '?') + 'limit=200');
-    const altProbeUrls = extractDetailUrls(probeHtml);
-    altProbeUrls.forEach(u => all.add(u));
-    console.log(`[ALT] ${ALT} limit=200 probe → ${altProbeUrls.length} URLs`);
+
+    // High-limit probe for each route
+    if (doProbe) {
+      try {
+        const probeUrl = `${baseRoute}${baseRoute.includes('?') ? '&' : '?'}limit=200`;
+        const probeHtml = await fetchPage(probeUrl);
+        const probeExtraction = extractDetailUrls(probeHtml);
+        const probeUrls = probeExtraction.urls.length;
+        
+        probeExtraction.urls.forEach(u => all.add(u));
+        console.log(`  Probe (limit=200): ${probeUrls} URLs (${probeExtraction.method})`);
+        
+        diagnostics.push({
+          url: probeUrl,
+          type: 'probe',
+          route: baseRoute,
+          found: probeUrls,
+          method: probeExtraction.method,
+          htmlLength: probeExtraction.diagnostics.htmlLength,
+          samples: probeExtraction.urls.slice(0, 3)
+        });
+        
+      } catch (error) {
+        console.error(`  ❌ Probe error: ${error}`);
+      }
+    }
+    
+    console.log(`✅ Route total: ${routeUrls} URLs from ${baseRoute}`);
   }
 
-  const urls = [...all];
-  if (urls.length === 0) {
-    throw new Error("No detail URLs found – check selectors/regex");
+  // 2) Sitemap crawling
+  try {
+    console.log(`📋 Checking sitemap for inventory URLs...`);
+    const sitemapHtml = await fetchPage('https://www.harrisboatworks.ca/sitemap.xml');
+    
+    // Extract child sitemap URLs
+    const childSitemaps: string[] = [];
+    const sitemapRx = /<loc>(https?:\/\/[^<]*sitemap[^<]*\.xml)<\/loc>/gi;
+    for (let m; (m = sitemapRx.exec(sitemapHtml)); ) {
+      childSitemaps.push(m[1]);
+    }
+    
+    // Also check main sitemap for direct inventory links
+    const inventoryRx = /<loc>(https?:\/\/[^<]*\/inventory\/[^<]*)<\/loc>/gi;
+    let sitemapInventoryCount = 0;
+    for (let m; (m = inventoryRx.exec(sitemapHtml)); ) {
+      all.add(m[1]);
+      sitemapInventoryCount++;
+    }
+    
+    console.log(`  Main sitemap: ${sitemapInventoryCount} inventory links, ${childSitemaps.length} child sitemaps`);
+    
+    // Crawl child sitemaps for inventory URLs  
+    for (const childUrl of childSitemaps.slice(0, 10)) { // limit to 10 child sitemaps
+      try {
+        const childXml = await fetchPage(childUrl);
+        let childInventoryCount = 0;
+        for (let m; (m = inventoryRx.exec(childXml)); ) {
+          all.add(m[1]);
+          childInventoryCount++;
+        }
+        if (childInventoryCount > 0) {
+          console.log(`  Child sitemap ${childUrl}: ${childInventoryCount} inventory links`);
+        }
+      } catch (error) {
+        console.error(`  ❌ Child sitemap error (${childUrl}): ${error}`);
+      }
+    }
+    
+  } catch (error) {
+    console.error(`❌ Sitemap crawling failed: ${error}`);
   }
-  return urls;
+
+  // 3) XHR/API endpoint detection and direct calls
+  const xhrEndpoints = diagnostics.flatMap(d => d.xhrEndpoints || []);
+  const uniqueXhrEndpoints = [...new Set(xhrEndpoints)];
+  
+  if (uniqueXhrEndpoints.length > 0) {
+    console.log(`🔗 Detected ${uniqueXhrEndpoints.length} potential XHR endpoints`);
+    
+    for (const endpoint of uniqueXhrEndpoints.slice(0, 5)) { // limit to 5 endpoints
+      try {
+        // Try to call the endpoint directly
+        const fullEndpoint = endpoint.startsWith('http') ? endpoint : 
+                             endpoint.startsWith('/') ? `https://www.harrisboatworks.ca${endpoint}` : 
+                             `https://www.harrisboatworks.ca/${endpoint}`;
+        
+        console.log(`  🔍 Calling XHR endpoint: ${fullEndpoint}`);
+        const apiResponse = await fetch(fullEndpoint);
+        const apiData = await apiResponse.text();
+        
+        // Try to parse as JSON first
+        try {
+          const json = JSON.parse(apiData);
+          let apiUrls = 0;
+          
+          // Extract URLs from JSON response
+          const extractFromJson = (obj: any) => {
+            if (typeof obj === 'object' && obj) {
+              Object.entries(obj).forEach(([key, value]) => {
+                if (typeof value === 'string' && value.includes('/inventory/')) {
+                  const absUrl = value.startsWith('http') ? value : `https://www.harrisboatworks.ca${value}`;
+                  all.add(absUrl);
+                  apiUrls++;
+                } else if (typeof value === 'object') {
+                  extractFromJson(value);
+                }
+              });
+            } else if (Array.isArray(obj)) {
+              obj.forEach(extractFromJson);
+            }
+          };
+          
+          extractFromJson(json);
+          console.log(`    📦 JSON response: ${apiUrls} inventory URLs extracted`);
+          
+        } catch {
+          // Not JSON, try HTML extraction
+          const htmlExtraction = extractDetailUrls(apiData);
+          htmlExtraction.urls.forEach(u => all.add(u));
+          console.log(`    📄 HTML response: ${htmlExtraction.urls.length} URLs extracted`);
+        }
+        
+      } catch (error) {
+        console.log(`    ❌ XHR endpoint failed: ${error}`);
+      }
+    }
+  }
+
+  const finalUrls = [...all];
+  
+  // Summary diagnostics
+  console.log(`
+📊 Enhanced Discovery Summary:
+   Total URLs found: ${finalUrls.length}
+   Routes crawled: ${ENTRY_ROUTES.length}
+   Pages processed: ${diagnostics.filter(d => d.type !== 'probe').length}
+   Probes executed: ${diagnostics.filter(d => d.type === 'probe').length}
+   XHR endpoints detected: ${uniqueXhrEndpoints.length}
+   Extraction methods used: ${[...new Set(diagnostics.map(d => d.method))].join(', ')}
+  `);
+
+  // Return sample URLs and diagnostics
+  return {
+    urls: finalUrls,
+    diagnostics: {
+      totalFound: finalUrls.length,
+      routesCrawled: ENTRY_ROUTES.length,
+      pagesProcessed: diagnostics.length,
+      xhrEndpoints: uniqueXhrEndpoints,
+      samples: finalUrls.slice(0, 10),
+      pageDetails: diagnostics,
+      extractionMethods: [...new Set(diagnostics.map(d => d.method))]
+    }
+  };
+}
+
+// Legacy function for backward compatibility - now uses enhanced discovery
+async function collectAllDetailUrls(fetchPage: (u: string) => Promise<string>) {
+  console.log('📄 Using enhanced discovery for URL collection...');
+  const result = await enhancedDiscover(fetchPage, {
+    maxPages: 5,
+    includeAlts: true,
+    doProbe: true,
+    mode: 'full'
+  });
+  
+  if (result.urls.length === 0) {
+    throw new Error("No detail URLs found – check selectors/regex or site structure");
+  }
+  
+  return result.urls;
 }
 
 // Parse price information from HTML
@@ -399,8 +644,11 @@ serve(async (req) => {
     
     console.log(`🚀 Mercury scraper start: mode=${mode} batch=${batch} conc=${concurrency}`);
 
-    // Fetch page function using Firecrawl
-    const fetchPage = async (url: string) => {
+    // Enhanced fetch function with retries and improved Firecrawl configuration
+    const fetchPage = async (url: string, retries = 0): Promise<string> => {
+      const maxRetries = 2;
+      const isListingPage = url.includes('/search/') || url.includes('/inventory/?') || url.includes('sitemap');
+      
       try {
         const apiKey = Deno.env.get('FIRECRAWL_API_KEY');
         if (!apiKey) {
@@ -408,41 +656,88 @@ serve(async (req) => {
           return '';
         }
 
+        // Enhanced Firecrawl configuration
+        const firecrawlConfig = {
+          url,
+          formats: ['html'],
+          // Enhanced timing for listing pages
+          waitFor: isListingPage ? 4000 : (mode === 'discovery' ? 1500 : 2500),
+          timeout: isListingPage ? 45000 : (mode === 'discovery' ? 15000 : 35000),
+          // Additional options for better scraping
+          onlyMainContent: false,
+          includeHtml: true,
+          screenshot: false,
+          // Mobile viewport for better mobile-first sites
+          mobile: false,
+          // Follow redirects
+          followRedirects: true
+        };
+
         const r = await fetch('https://api.firecrawl.dev/v1/scrape', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${apiKey}`,
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({
-            url,
-            formats: ['html'],
-            waitFor: mode === 'discovery' ? 500 : 1500,  // faster in discovery
-            timeout: mode === 'discovery' ? 10000 : 30000
-          })
+          body: JSON.stringify(firecrawlConfig)
         });
+        
+        if (!r.ok) {
+          throw new Error(`Firecrawl API error: ${r.status} ${r.statusText}`);
+        }
         
         const j = await r.json();
         const html = j?.data?.html || j?.html || j?.content || '';
-        return typeof html === 'string' ? html : '';
+        
+        if (typeof html !== 'string') {
+          throw new Error('Invalid response format from Firecrawl');
+        }
+        
+        // Log diagnostics for listing pages
+        if (isListingPage) {
+          console.log(`📄 Fetched ${url}: ${html.length} chars, waitFor: ${firecrawlConfig.waitFor}ms`);
+        }
+        
+        return html;
+        
       } catch (error) {
-        console.error(`Failed to fetch ${url}:`, error);
+        console.error(`Failed to fetch ${url} (attempt ${retries + 1}/${maxRetries + 1}):`, error);
+        
+        // Retry with exponential backoff
+        if (retries < maxRetries) {
+          const delay = Math.pow(2, retries) * 1000; // 1s, 2s, 4s...
+          console.log(`  Retrying in ${delay}ms...`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+          return fetchPage(url, retries + 1);
+        }
+        
         return '';
       }
     };
 
-    // EARLY RETURN: lightweight discovery (no alts, 1 page + probe)
+    // EARLY RETURN: enhanced discovery mode
     if (mode === "discovery") {
-      const urls = await quickDiscover(fetchPage, {
-        maxPages: Math.min(1, Number(body.max_pages ?? 1) || 1),
-        includeAlts: !!body.include_alts, // default false
-        doProbe: body.do_probe !== false  // default true
+      console.log('🚀 Running enhanced discovery mode...');
+      const result = await enhancedDiscover(fetchPage, {
+        maxPages: Math.min(3, Number(body.max_pages ?? 3) || 3), // increased default
+        includeAlts: body.include_alts !== false,  // default true for enhanced
+        doProbe: body.do_probe !== false,          // default true
+        mode: 'discovery'
       });
+      
       return new Response(JSON.stringify({
-        success: true,
+        success: true,  
         mode,
-        urls_discovered: urls.length,
-        samples: urls.slice(0, 8)
+        urls_discovered: result.urls.length,
+        samples: result.diagnostics.samples,
+        diagnostics: {
+          routesCrawled: result.diagnostics.routesCrawled,
+          pagesProcessed: result.diagnostics.pagesProcessed,
+          xhrEndpoints: result.diagnostics.xhrEndpoints.length,
+          extractionMethods: result.diagnostics.extractionMethods,
+          suspectedJsPages: result.diagnostics.pageDetails.filter(d => d.suspectedJsOnly).length
+        },
+        first_10_urls: result.urls.slice(0, 10)
       }), { 
         status: 200, 
         headers: { 
