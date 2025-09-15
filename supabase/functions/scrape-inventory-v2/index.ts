@@ -26,6 +26,57 @@ const validateAndFixMotor = (motor: any) => {
   };
 };
 
+// Batch saving function that continues even if some motors fail
+async function saveMotorsBatch(motors: any[], supabase: any) {
+  const results = {
+    successful: [],
+    failed: []
+  };
+
+  // Save in smaller batches to avoid timeouts
+  const batchSize = 10;
+  
+  for (let i = 0; i < motors.length; i += batchSize) {
+    const batch = motors.slice(i, i + batchSize);
+    console.log(`Saving batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(motors.length/batchSize)}`);
+    
+    for (const motor of batch) {
+      try {
+        const validatedMotor = validateAndFixMotor(motor);
+        
+        const { error } = await supabase
+          .from('motor_models')
+          .upsert(validatedMotor, {
+            onConflict: 'model,year,horsepower',
+            ignoreDuplicates: false
+          });
+        
+        if (error) {
+          results.failed.push({ motor: motor.model, error: error.message });
+          console.error(`❌ Failed to save ${motor.model}:`, error.message);
+        } else {
+          results.successful.push(motor.model);
+          console.log(`✅ Successfully saved: ${motor.model}`);
+        }
+      } catch (e) {
+        results.failed.push({ motor: motor.model, error: (e as Error).message });
+        console.error(`Exception saving ${motor.model}:`, e);
+      }
+    }
+    
+    // Small delay between batches
+    await new Promise(resolve => setTimeout(resolve, 100));
+  }
+  
+  console.log(`✅ Saved: ${results.successful.length}`);
+  console.log(`❌ Failed: ${results.failed.length}`);
+  if (results.failed.length > 0) {
+    console.log('Failed motors:', results.failed);
+  }
+  
+  return results;
+}
+
 // Initialize Supabase client
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
@@ -467,51 +518,20 @@ serve(async (req) => {
       
       console.log(`📊 Motor breakdown: ${inStockCount} in stock, ${brochureCount} brochure, ${soldCount} sold`);
 
-      // Insert motors into database with detailed logging
-      let successCount = 0;
-      
+      // Insert motors into database with batch saving
       if (allMotors.length > 0) {
         console.log(`💾 Starting database operations for ${allMotors.length} motors...`);
         
-        for (const motor of allMotors) {
-          try {
-            console.log(`Attempting to save motor: ${motor.model}, HP: ${motor.horsepower}`);
-            
-            // Validate and fix motor data before saving
-            const validatedMotor = validateAndFixMotor(motor);
-            
-            // Log the exact data being saved
-            console.log('Motor data before validation:', JSON.stringify(motor, null, 2));
-            console.log('Motor data after validation:', JSON.stringify(validatedMotor, null, 2));
-            
-            const { data, error } = await supabase
-              .from('motor_models')
-              .insert(validatedMotor)
-              .select();
-            
-            if (error) {
-              console.error(`❌ Failed to save ${motor.model}:`, error.message);
-              console.error('Error details:', error);
-              console.error('Motor data that failed:', validatedMotor);
-              summary.errors_count++;
-            } else {
-              console.log(`✅ Successfully saved: ${motor.model}`);
-              successCount++;
-              summary.motors_inserted++;
-            }
-          } catch (e) {
-            console.error(`Exception saving ${motor.model}:`, e);
-            summary.errors_count++;
-          }
-        }
-
-        console.log(`Final: ${successCount}/${allMotors.length} motors saved successfully`);
+        const results = await saveMotorsBatch(allMotors, supabase);
+        
+        summary.motors_inserted = results.successful.length;
+        summary.errors_count += results.failed.length;
         
         // Final counts (updated for proper case)
         summary.in_stock_models_found = allMotors.filter(m => m.availability === 'In Stock').length;
         summary.brochure_models_found = allMotors.filter(m => m.availability === 'Brochure').length;
         
-        console.log(`💾 CORRECT v2 - Database operations complete: ${summary.motors_inserted} inserted, ${summary.motors_hydrated} updated`);
+        console.log(`💾 CORRECT v2 - Database operations complete: ${summary.motors_inserted} inserted, ${results.failed.length} failed`);
         
       } else {
         console.log(`⚠️ No motors found to save to database`);
