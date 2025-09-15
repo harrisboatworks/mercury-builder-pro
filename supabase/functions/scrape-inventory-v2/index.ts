@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { DOMParser } from "https://deno.land/x/deno_dom@v0.1.45/deno-dom-wasm.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -115,17 +116,83 @@ serve(async (req) => {
     };
 
     if (source === 'html') {
-      // Step 1: Just test the fetch functionality
       console.log(`🔍 Testing fetch to Harris Boat Works...`);
       
       try {
-        const html = await fetch('https://www.harrisboatworks.ca/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low');
-        const text = await html.text();
+        const response = await fetch('https://www.harrisboatworks.ca/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low');
+        const text = await response.text();
         
         console.log(`✅ Fetch successful - HTML length: ${text.length} characters`);
         
-        summary.motors_found = 1; // Fake data for testing
-        summary.motors_inserted = 1;
+        // Parse HTML for debugging
+        const doc = new DOMParser().parseFromString(text, 'text/html');
+        
+        // Test different selectors to find what exists
+        const selectors = [
+          '.panel.search-result',
+          '.search-result',
+          '.panel',
+          '.inventory-item',
+          '.motor-item',
+          '.product-item',
+          'div[class*="result"]',
+          'div[class*="motor"]',
+          'div[class*="product"]',
+          'div[class*="inventory"]',
+          '.listing',
+          '.item',
+          '[data-inventory]',
+          '.vehicle',
+          '.unit'
+        ];
+
+        const selectorResults = {};
+        for (const selector of selectors) {
+          const elements = doc.querySelectorAll(selector);
+          if (elements.length > 0) {
+            selectorResults[selector] = elements.length;
+            console.log(`🎯 Found ${elements.length} elements with selector: ${selector}`);
+          }
+        }
+
+        // Get sample class names from divs
+        const allDivs = doc.querySelectorAll('div[class]');
+        const sampleClasses = Array.from(allDivs)
+          .slice(0, 20)
+          .map(div => div.className)
+          .filter(className => className.length > 0);
+
+        // Look for any elements that might contain motor data
+        const potentialMotorElements = doc.querySelectorAll('div, article, section');
+        const elementsWithText = Array.from(potentialMotorElements)
+          .filter(el => el.textContent?.toLowerCase().includes('mercury') || 
+                       el.textContent?.toLowerCase().includes('hp') ||
+                       el.textContent?.toLowerCase().includes('outboard'))
+          .slice(0, 5)
+          .map(el => ({
+            tagName: el.tagName,
+            className: el.className,
+            textSnippet: el.textContent?.substring(0, 100)
+          }));
+
+        console.log('🔧 Debugging results:', {
+          selectorResults,
+          totalDivs: allDivs.length,
+          sampleClasses: sampleClasses.slice(0, 10),
+          elementsWithMotorText: elementsWithText.length
+        });
+        
+        summary.motors_found = Object.keys(selectorResults).length;
+        summary.motors_inserted = 0;
+        
+        // Add debugging info to summary
+        summary.debug_info = {
+          html_length: text.length,
+          selector_results: selectorResults,
+          sample_classes: sampleClasses.slice(0, 10),
+          total_divs: allDivs.length,
+          elements_with_motor_text: elementsWithText
+        };
         
       } catch (fetchError) {
         console.error('❌ Error fetching page:', fetchError);
