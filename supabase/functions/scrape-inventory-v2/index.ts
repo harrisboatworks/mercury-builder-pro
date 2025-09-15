@@ -1087,7 +1087,7 @@ serve(async (req) => {
           pageContentHashes.add(contentId);
           
           // Simple debug logging
-          console.log(`Page ${pageNum}: ${pageUrl}`);
+          console.log(`Page ${pageNum}: ${currentUrl}`);
           console.log(`Page ${pageNum}: Content length: ${htmlData.length + markdownData.length}`);
 
           // Check how many motors are on this page
