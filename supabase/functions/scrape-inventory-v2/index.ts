@@ -21,96 +21,41 @@ function cleanMotorName(rawName: string): string {
 
 // Parse motor title components exactly as they appear on harrisboatworks.ca
 function parseMotorTitle(title: string) {
-  // Remove " - Mercury" suffix and clean HTML
-  const clean = cleanMotorName(title).replace(/\s*-\s*Mercury\s*$/i, '').trim();
-  console.log(`🔍 Parsing harrisboatworks.ca title: "${title}" -> "${clean}"`);
+  const clean = title.replace(' - Mercury', '').trim();
   
-  // Pattern: Year Category HP FuelType ModelCode
-  // Examples: "2025 FourStroke 25HP EFI ELHPT", "2024 ProXS 225HP XL", "2025 Verado 350HP"
-  // Enhanced pattern to capture all model codes properly
-  const pattern = /(\d{4})\s+([\w\s]+?)\s+(\d+\.?\d*)\s*HP\s*(EFI|TM)?\s*([A-Z]+.*)?$/i;
-  const match = clean.match(pattern);
+  // Split the title into parts
+  const parts = clean.split(/\s+/);
   
-  // Alternative: Split-based parsing for better model code capture
-  if (!match) {
-    const parts = clean.split(/\s+/);
-    const yearPart = parts.find(p => /^20(24|25)$/.test(p));
-    const hpPart = parts.find(p => /^\d+\.?\d*HP?$/i.test(p));
-    const hpIndex = parts.findIndex(p => /^\d+\.?\d*HP?$/i.test(p));
-    
-    if (yearPart && hpPart && hpIndex >= 0) {
-      const year = parseInt(yearPart);
-      const horsepower = parseFloat(hpPart.replace(/HP?$/i, ''));
-      const category = parts.slice(1, hpIndex).filter(p => p !== yearPart).join(' ') || 'FourStroke';
-      const fuelType = parts.includes('EFI') ? 'EFI' : (parts.includes('TM') ? 'TM' : '');
-      const modelCodeParts = parts.slice(hpIndex + 1).filter(p => !['EFI', 'TM'].includes(p));
-      const modelCode = modelCodeParts.join(' ').trim();
-      
-      console.log(`✅ Split-parsed: Year=${year}, Category=${category}, HP=${horsepower}, FuelType=${fuelType}, Code="${modelCode}"`);
-      
-      return {
-        year: year,
-        category: category,
-        horsepower: horsepower,
-        fuelType: fuelType,
-        modelCode: modelCode,
-        fullTitle: clean,
-        displayTitle: `${year} ${category} ${horsepower}HP ${fuelType} ${modelCode}`.replace(/\s+/g, ' ').trim(),
-        isValid: true
-      };
-    }
+  // Extract components
+  const year = parts[0];
+  const category = parts[1]; // FourStroke, ProXS, etc.
+  
+  // Find horsepower (contains 'HP')
+  const hpIndex = parts.findIndex(p => p.includes('HP'));
+  const horsepower = parts[hpIndex] || '';
+  
+  // Check if EFI exists
+  const fuelType = parts.includes('EFI') ? 'EFI' : '';
+  
+  // CRITICAL: Everything after HP (except EFI) is the model code
+  let modelCode = '';
+  if (hpIndex !== -1) {
+    const afterHP = parts.slice(hpIndex + 1);
+    modelCode = afterHP.filter(p => p !== 'EFI').join(' ');
   }
   
-  if (match) {
-    const category = match[2]?.replace(/\s/g, '') || 'FourStroke';
-    const horsepower = parseFloat(match[3]) || 0;
-    const fuelType = match[4] || '';
-    const modelCode = match[5] || '';
-    
-    console.log(`✅ Parsed harrisboatworks.ca: Year=${match[1]}, Category=${category}, HP=${horsepower}, FuelType=${fuelType}, Code=${modelCode}`);
-    
-    return {
-      year: parseInt(match[1]) || 2025,
-      category: category,
-      horsepower: horsepower,
-      fuelType: fuelType,
-      modelCode: modelCode, // CRITICAL: EH, ELHPT, XL, EXLPT, etc.
-      fullTitle: clean,
-      displayTitle: `${match[1]} ${category} ${horsepower}HP ${fuelType} ${modelCode}`.replace(/\s+/g, ' ').trim(),
-      isValid: true
-    };
-  }
+  console.log(`Parsed: ${clean} -> Year:${year}, Cat:${category}, HP:${horsepower}, Fuel:${fuelType}, Model:${modelCode}`);
   
-  // Enhanced fallback parsing for partial matches
-  const hpMatch = clean.match(/(\d+\.?\d*)\s*HP/i);
-  const yearMatch = clean.match(/(20(?:24|25))/);
-  const categoryMatch = clean.match(/(FourStroke|Pro\s*XS|ProXS|SeaPro|Verado|Racing)/i);
-  const fuelMatch = clean.match(/(EFI|TM)/i);
-  const codeMatch = clean.match(/\s([A-Z][A-Z0-9]{1,5})\s*$/i); // Model codes at end
-  
-  if (hpMatch) {
-    const category = categoryMatch?.[1]?.replace(/\s/g, '') || 'FourStroke';
-    const horsepower = parseFloat(hpMatch[1]);
-    const year = parseInt(yearMatch?.[1] || '2025');
-    const fuelType = fuelMatch?.[1] || '';
-    const modelCode = codeMatch?.[1] || '';
-    
-    console.log(`⚠️ Partial harrisboatworks.ca match: HP=${horsepower}, Year=${year}, Category=${category}, Code=${modelCode}`);
-    
-    return {
-      year: year,
-      category: category,
-      horsepower: horsepower,
-      fuelType: fuelType,
-      modelCode: modelCode,
-      fullTitle: clean,
-      displayTitle: `${year} ${category} ${horsepower}HP ${fuelType} ${modelCode}`.replace(/\s+/g, ' ').trim(),
-      isValid: false
-    };
-  }
-  
-  console.log(`❌ No harrisboatworks.ca match found for: "${clean}"`);
-  return null;
+  return {
+    year: parseInt(year) || 2025,
+    category: category || 'FourStroke',
+    horsepower: parseFloat(horsepower.replace('HP', '')) || 0,
+    fuelType: fuelType || '',
+    modelCode: modelCode || '', // THIS MUST NOT BE EMPTY for motors like "ELHPT", "XL", etc.
+    fullTitle: clean,
+    displayTitle: `${year} ${category} ${horsepower} ${fuelType} ${modelCode}`.replace(/\s+/g, ' ').trim(),
+    isValid: true
+  };
 }
 
 // Helper function to make URLs absolute
@@ -137,87 +82,40 @@ function makeAbsoluteUrl(url: string): string | null {
 }
 
 // Extract motor images from HTML elements with enhanced debugging
-function extractMotorImages(element: any): any {
-  console.log('🖼️ Extracting image from element:', element?.outerHTML?.substring(0, 200) || 'No element');
-  
-  const images = {
-    thumbnail: null,
-    medium: null,
-    large: null,
-    fullSize: null,
-    all: []
-  };
-  
-  if (!element || typeof element.querySelector !== 'function') {
-    return images;
-  }
+async function extractMotorImages(element: any): Promise<any> {
+  console.log('Extracting image from element:', element.outerHTML?.substring(0, 200) || 'No HTML available');
   
   try {
-    // Strategy 1: Check data attributes for full-size images
-    const imgElement = element.querySelector('img');
-    if (imgElement) {
-      // Often full-size is in data attributes
-      images.fullSize = 
-        imgElement.dataset?.fullSize ||
-        imgElement.dataset?.largeImage ||
-        imgElement.dataset?.zoom ||
-        imgElement.dataset?.src ||
-        imgElement.getAttribute?.('data-full-size') ||
-        imgElement.getAttribute?.('data-large-image');
-      
-      // Get the displayed image (might be thumbnail)
-      images.thumbnail = imgElement.src;
-      
-      // Check srcset for larger versions
-      const srcset = imgElement.srcset;
-      if (srcset) {
-        const srcsetParts = srcset.split(',');
-        const largestImage = srcsetParts[srcsetParts.length - 1].trim().split(' ')[0];
-        images.large = largestImage;
-      }
+    // Try multiple selectors
+    const imgElement = await element.$('img') || 
+                       await element.$('.product-image img') ||
+                       await element.$('[data-image]') ||
+                       await element.$('picture img');
+    
+    if (!imgElement) {
+      console.error('No image element found');
+      return null;
     }
     
-    // Strategy 2: Check anchor links (often link to full-size)
-    const linkElement = element.querySelector('a[href*="image"], a[href*="jpg"], a[href*="png"], a.product-image, a.zoom');
-    if (linkElement?.href) {
-      images.fullSize = images.fullSize || linkElement.href;
-    }
+    // Get all possible image sources
+    const src = await imgElement.getAttribute('src');
+    const dataSrc = await imgElement.getAttribute('data-src');
+    const dataLarge = await imgElement.getAttribute('data-large-image');
+    const dataOriginal = await imgElement.getAttribute('data-original');
+    const dataFull = await imgElement.getAttribute('data-full');
     
-    // Strategy 3: Check for gallery/slider images
-    const galleryImages = element.querySelectorAll?.('.gallery img, .slider img, [data-gallery] img') || [];
-    galleryImages.forEach((img: any) => {
-      const fullUrl = img.dataset?.fullSize || img.dataset?.large || img.src;
-      if (fullUrl) images.all.push(fullUrl);
-    });
+    console.log('Found image sources:', { src, dataSrc, dataLarge, dataOriginal, dataFull });
     
-    // Strategy 4: Common patterns for Mercury motor images
-    if (images.thumbnail && !images.fullSize) {
-      // Convert thumbnail to full-size URL
-      images.fullSize = images.thumbnail
-        .replace('/thumb/', '/full/')
-        .replace('/thumbnail/', '/large/')
-        .replace('_thumb', '')
-        .replace('_small', '_large')
-        .replace(/\d+x\d+/, '1920x1080') // Replace size dimensions
-        .replace(/w=\d+/, 'w=1920')
-        .replace(/h=\d+/, 'h=1080');
-    }
-    
-    // Clean up URLs - ensure they're absolute
-    Object.keys(images).forEach(key => {
-      if (images[key] && typeof images[key] === 'string') {
-        images[key] = makeAbsoluteUrl(images[key]);
-      }
-    });
-    
-    // Process all array
-    images.all = images.all.map((url: string) => makeAbsoluteUrl(url)).filter(Boolean);
-    
+    // Return the best available image (prioritize full-size)
+    return {
+      fullSize: dataLarge || dataFull || dataOriginal || null,
+      medium: dataSrc || src || null,
+      thumbnail: src || null
+    };
   } catch (error) {
-    console.error('Error extracting images:', error);
+    console.error('Error extracting motor images:', error);
+    return null;
   }
-  
-  return images;
 }
 
 // Validate image URLs to ensure they're full-size
@@ -843,6 +741,55 @@ serve(async (req) => {
     let detectedTotalPages = pages_to_scrape;
     let totalExpectedMotors = 0;
     
+    // Test which pagination pattern works BEFORE the main loop
+    console.log('Testing pagination patterns...');
+    let workingPattern = '?page=';
+    
+    const testUrls = [
+      `${baseUrl}?page=2`,
+      `${baseUrl}&page=2`, 
+      `${baseUrl}/page/2`,
+      `${baseUrl}#page=2`
+    ];
+
+    // Quick test of pagination patterns (only for page 2)
+    for (const testUrl of testUrls) {
+      try {
+        const testResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${firecrawlApiKey}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            url: testUrl,
+            formats: ['html'],
+            pageOptions: { waitFor: 1000 }
+          })
+        });
+        
+        if (testResponse.ok) {
+          const testData = await testResponse.json();
+          const hasProducts = testData.data?.html?.includes('Mercury') && testData.data?.html?.includes('HP');
+          console.log(`${testUrl}: ${hasProducts ? '✓ WORKS' : '✗ FAILS'}`);
+          
+          if (hasProducts) {
+            if (testUrl.includes('?page=')) workingPattern = '?page=';
+            else if (testUrl.includes('&page=')) workingPattern = '&page=';
+            else if (testUrl.includes('/page/')) workingPattern = '/page/';
+            break; // Found working pattern, stop testing
+          }
+        }
+      } catch (e) {
+        console.log(`${testUrl}: ✗ ERROR - ${e.message}`);
+      }
+      
+      // Small delay between tests
+      await new Promise(resolve => setTimeout(resolve, 500));
+    }
+
+    console.log(`📍 Using pagination pattern: ${workingPattern}`);
+
     // Enhanced pagination loop with smart detection
     for (let pageNum = 1; pageNum <= Math.max(pages_to_scrape, detectedTotalPages); pageNum++) {
       try {
@@ -851,14 +798,14 @@ serve(async (req) => {
           await new Promise(resolve => setTimeout(resolve, 1000))
         }
         
-        // Construct URL for current page - FIXED: Use ?page= for first param, &page= for subsequent
-        const currentUrl = pageNum === 1 ? baseUrl : `${baseUrl}?page=${pageNum}`
-        console.log(`🔄 Scraping page ${pageNum}: ${currentUrl}`)
+        // Construct URL using the working pattern
+        const currentUrl = pageNum === 1 ? baseUrl : `${baseUrl}${workingPattern}${pageNum}`;
         
-        // Debug pagination pattern
-        if (pageNum === 2) {
-          console.log(`🔍 Pagination check: URL="${currentUrl}", Expected pattern: "?page=2"`);
-        }
+        console.log(`\n=== SCRAPING PAGE ${pageNum} ===`);
+        console.log(`URL: ${currentUrl}`);
+        
+        // Verify we're on the right page would happen after Firecrawl response
+        console.log(`Using pagination pattern: ${workingPattern}`);
         
         // Enhanced Firecrawl API call with wait conditions
         const firecrawlResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
@@ -893,10 +840,17 @@ serve(async (req) => {
           const htmlData = firecrawlData.data?.html || ''
           const markdownData = firecrawlData.data?.markdown || ''
           
+          // After navigation, verify we're on the right page
+          const currentURL = firecrawlData.data?.metadata?.url || currentUrl;
+          console.log(`Actually scraped: ${currentURL}`);
+
+          // Check how many motors are on this page
+          const motorMatches = htmlData.match(/mercury.*?\d+.*?hp/gi) || [];
+          console.log(`Motors found on page ${pageNum}: ${motorMatches.length}`);
+          
           // Enhanced debugging
           console.log('HTML length:', htmlData.length)
           console.log('Contains Mercury?', htmlData.toLowerCase().includes('mercury'))
-          console.log('Mercury HP matches:', htmlData.match(/mercury.*?\d+.*?hp/gi)?.length || 0)
           
           // Debug pagination on first page
           if (pageNum === 1) {
@@ -970,24 +924,37 @@ serve(async (req) => {
     console.log('🔍 All pages scraped. Total motors found:', allMotors.length)
     console.log(`📊 Expected vs Found: ${totalExpectedMotors} expected, ${allMotors.length} found`)
     
-    // CRITICAL VERIFICATION: Check if we got all 145+ motors
-    console.log(`
-      SCRAPING COMPLETE:
-      - Total motors found: ${allMotors.length}
-      - Expected: 145+
-      - Status: ${allMotors.length >= 145 ? '✅ SUCCESS' : '❌ FAILED - MISSING MOTORS'}
-    `);
-    
+    // Validation Report
+    console.log('\n' + '='.repeat(50));
+    console.log('SCRAPING COMPLETE - VALIDATION REPORT:');
+    console.log('='.repeat(50));
+    console.log(`Total Motors Scraped: ${allMotors.length} / 145 expected`);
+    console.log(`Motors with Images: ${allMotors.filter(m => m.primary_image || (m.images && m.images.length > 0)).length}`);
+    console.log(`Motors with Prices: ${allMotors.filter(m => m.sale_price || m.base_price).length}`);
+    console.log(`Motors with Model Codes: ${allMotors.filter(m => m.model_code).length}`);
+
+    // Show sample of motors missing model codes
+    const missingModelCode = allMotors.filter(m => !m.model_code);
+    if (missingModelCode.length > 0) {
+      console.log('\nWARNING - Motors missing model codes:');
+      missingModelCode.slice(0, 5).forEach(m => {
+        console.log(`  - ${m.model || m.full_title}`);
+      });
+    }
+
+    // Check if we got all pages
     if (allMotors.length < 145) {
-      console.error('❌ NOT ALL MOTORS SCRAPED! Check pagination URLs.');
-      console.error('Page results:', pageResults.map(p => `Page ${p.page}: ${p.motors_found} motors`));
+      console.error('\n❌ CRITICAL: Not all motors scraped! Check pagination.');
+      console.log('Hint: The site might use ?page=2 or &page=2 or different pagination');
+    } else {
+      console.log('\n✅ SUCCESS: Motor count meets expectations');
     }
     
     // Log sample motor to verify data quality
     if (allMotors.length > 0) {
-      console.log('📋 Sample motor data:');
-      console.log('- Title:', allMotors[0].fullTitle);
-      console.log('- Model Code:', allMotors[0].modelCode || 'MISSING');
+      console.log('\n📋 Sample motor data:');
+      console.log('- Title:', allMotors[0].full_title || allMotors[0].model);
+      console.log('- Model Code:', allMotors[0].model_code || 'MISSING');
       console.log('- Primary Image:', allMotors[0].primary_image || 'MISSING');
       console.log('- Stock Number:', allMotors[0].stock_number || 'MISSING');
     }
