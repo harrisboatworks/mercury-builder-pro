@@ -36,6 +36,18 @@ export default function AdminSources() {
     setLoading({ ...loading, pricelist: true });
     setPricelistResults(null);
     
+    // Helper to pretty-print errors
+    const pretty = (e: any) => {
+      try { 
+        if (typeof e === 'string') return e;
+        if (e?.message) return e.message;
+        if (e?.error?.message) return e.error.message;
+        return JSON.stringify(e, null, 2);
+      } catch { 
+        return String(e); 
+      }
+    };
+    
     try {
       const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
         body: { 
@@ -48,32 +60,36 @@ export default function AdminSources() {
 
       if (error) {
         console.error('Edge function error:', error);
-        const errorMessage = error.message || 'Unknown error';
-        const errorContext = (error as any)?.context || data || {};
-        
         setPricelistResults({
           success: false,
-          error: errorMessage,
-          stack: (error as any)?.stack,
-          context: errorContext
+          title: 'Edge Function Error',
+          step: error?.step || 'unknown',
+          detail: pretty(error),
+          artifacts: null
         });
         
         toast({
           title: "Error",
-          description: `${errorMessage}\nStep: ${errorContext.step || 'unknown'}`,
+          description: `${pretty(error)}\nStep: ${error?.step || 'unknown'}`,
           variant: "destructive",
         });
         return;
       }
 
       // Check if data has error (when function returns status 200 but with error)
-      if (data && !data.success && data.error) {
+      if (data && !data.success) {
         console.error('Function returned error:', data);
-        setPricelistResults(data);
+        setPricelistResults({
+          success: false,
+          title: 'Ingest Error',
+          step: data.step || 'unknown',
+          detail: pretty(data.error),
+          artifacts: data.artifacts || null
+        });
         
         toast({
           title: "Ingest Error",
-          description: `${data.error}\nStep: ${data.context?.step || 'unknown'}`,
+          description: `${pretty(data.error)}\nStep: ${data.step || 'unknown'}`,
           variant: "destructive",
         });
         return;
@@ -102,13 +118,15 @@ export default function AdminSources() {
       console.error('Price list ingestion error:', error);
       setPricelistResults({
         success: false,
-        error: String(error),
-        context: { step: 'unknown' }
+        title: 'Network Error',
+        step: 'request',
+        detail: pretty(error),
+        artifacts: null
       });
       
       toast({
         title: "Error",
-        description: "Failed to process price list",
+        description: pretty(error),
         variant: "destructive",
       });
     } finally {
@@ -482,27 +500,45 @@ export default function AdminSources() {
                     <Alert variant="destructive">
                       <AlertCircle className="h-4 w-4" />
                       <AlertDescription>
-                        <strong>Error:</strong> {pricelistResults.error}
-                        {pricelistResults.context?.step && (
-                          <div className="mt-1 text-sm">
-                            <strong>Step:</strong> {pricelistResults.context.step}
-                          </div>
-                        )}
-                        {pricelistResults.context?.detail && (
-                          <div className="mt-1 text-sm">
-                            <strong>Detail:</strong> {pricelistResults.context.detail}
-                          </div>
-                        )}
-                        {pricelistResults.stack && (
-                          <details className="mt-2">
-                            <summary className="text-sm cursor-pointer hover:text-foreground/80">
-                              Show Stack Trace
-                            </summary>
+                        <div className="space-y-2">
+                          <div><strong>Error:</strong> {pricelistResults.title}</div>
+                          <div><strong>Step:</strong> {pricelistResults.step}</div>
+                          <div>
+                            <strong>Detail:</strong>
                             <pre className="mt-1 text-xs bg-muted p-2 rounded overflow-x-auto whitespace-pre-wrap">
-                              {pricelistResults.stack}
+                              {pricelistResults.detail}
                             </pre>
-                          </details>
-                        )}
+                          </div>
+                          {/* Show artifact download buttons even on error */}
+                          {pricelistResults.artifacts && (
+                            <div className="mt-3">
+                              <div className="text-sm font-medium mb-2">Debug Artifacts:</div>
+                              <div className="flex gap-2">
+                                {pricelistResults.artifacts.html_url && (
+                                  <Button size="sm" variant="outline" asChild>
+                                    <a href={pricelistResults.artifacts.html_url} target="_blank" rel="noopener noreferrer">
+                                      HTML
+                                    </a>
+                                  </Button>
+                                )}
+                                {pricelistResults.artifacts.json_url && (
+                                  <Button size="sm" variant="outline" asChild>
+                                    <a href={pricelistResults.artifacts.json_url} target="_blank" rel="noopener noreferrer">
+                                      JSON
+                                    </a>
+                                  </Button>
+                                )}
+                                {pricelistResults.artifacts.csv_url && (
+                                  <Button size="sm" variant="outline" asChild>
+                                    <a href={pricelistResults.artifacts.csv_url} target="_blank" rel="noopener noreferrer">
+                                      CSV
+                                    </a>
+                                  </Button>
+                                )}
+                              </div>
+                            </div>
+                          )}
+                        </div>
                       </AlertDescription>
                     </Alert>
                   )}

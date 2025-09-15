@@ -2,7 +2,6 @@ import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { load } from 'https://esm.sh/cheerio@1.0.0-rc.12';
-import { buildModelKey, extractHpAndCode } from '../_shared/motor-helpers.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -10,10 +9,7 @@ const corsHeaders = {
   'Access-Control-Max-Age': '86400',
 };
 
-// Import shared helper functions (using Deno's dynamic import approach)
-const SHARED_HELPERS_BASE_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/_shared/';
-
-// Enhanced model key utility with better specificity - Shared version
+// Enhanced model key utility with better specificity
 function buildModelKey(modelDisplay: string, modelCode?: string, attrs?: any): string {
   if (!modelDisplay && !modelCode) return '';
   
@@ -219,10 +215,36 @@ function parseHtml(html: string): Array<{model_display: string, dealer_price: nu
   return results;
 }
 
+// Helper function for consistent JSON responses
+function json200(body: any) {
+  return new Response(JSON.stringify(body), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json', ...corsHeaders }
+  });
+}
+
+// Helper to safely convert strings to numbers
+function toNumber(value: any): number | null {
+  if (value === null || value === undefined || value === '') return null;
+  const cleaned = String(value).replace(/[^0-9.-]/g, '');
+  const num = Number(cleaned);
+  return isNaN(num) ? null : num;
+}
+
+// Helper to calculate MSRP from dealer price
+function msrpFromDealer(dealerPrice: number | null, markup: number): number | null {
+  if (!dealerPrice || !markup) return null;
+  return Math.round(dealerPrice * markup * 100) / 100;
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
+  
+  let currentStep = 'init';
+  const rowErrors: any[] = [];
+  const supabase = getSupabaseClient();
   
   try {
     const { 
@@ -234,7 +256,8 @@ serve(async (req) => {
     
     console.log(`Starting price list ingest from: ${url}`);
     
-    // Fetch HTML
+    // STEP 1: Fetch HTML
+    currentStep = 'fetch';
     console.log('Fetching HTML...');
     const response = await fetch(url, {
       headers: { 
@@ -255,11 +278,8 @@ serve(async (req) => {
     const checksum = await generateChecksum(html);
     console.log(`HTML checksum: ${checksum}`);
     
-    const supabase = getSupabaseClient();
-    
     // Check if content unchanged (unless force=true)
     if (!force) {
-      // Look for most recent snapshot with same checksum
       const { data: recentSnapshots } = await supabase.storage
         .from('sources')
         .list('pricelist', { limit: 10, sortBy: { column: 'created_at', order: 'desc' } });
@@ -268,7 +288,7 @@ serve(async (req) => {
         for (const file of recentSnapshots) {
           if (file.name.includes(checksum.substring(0, 8))) {
             console.log(`Skipping - content unchanged (checksum match)`);
-            return new Response(JSON.stringify({
+            return json200({
               success: true,
               skipped_due_to_same_checksum: true,
               checksum,
@@ -276,15 +296,14 @@ serve(async (req) => {
               rows_created: 0,
               rows_updated: 0,
               errors: 0
-            }), {
-              headers: { ...corsHeaders, 'Content-Type': 'application/json' }
             });
           }
         }
       }
     }
     
-    // Parse HTML tables
+    // STEP 2: Parse HTML tables
+    currentStep = 'parse';
     console.log('Parsing HTML tables...');
     const rawData = parseHtml(html);
     console.log(`Parsed ${rawData.length} raw entries`);
@@ -293,18 +312,38 @@ serve(async (req) => {
       throw new Error('No valid price data found in HTML tables');
     }
     
-    // Transform to motor models format
-    const motorModels = rawData.map(item => {
-      const attrs = parseModelFromText(item.model_display);
-      const dealer_price = item.dealer_price;
-      const msrp = Math.round((dealer_price * msrp_markup) * 100) / 100;
+    // STEP 3: Normalize data and build model objects
+    currentStep = 'normalize';
+    const rows: any[] = [];
+    
+    for (const r of rawData) {
+      const attrs = parseModelFromText(r.model_display);
+      const model_key = buildModelKey(r.model_display);
       
-      const model_key = buildModelKey(item.model_display);
+      // Skip rows with invalid model_key
+      if (!model_key || model_key.trim() === '') {
+        rowErrors.push({ 
+          reason: 'missing_model_key', 
+          raw: { model_display: r.model_display, dealer_price: r.dealer_price }
+        });
+        continue;
+      }
       
-      return {
+      const dealer_price = toNumber(r.dealer_price);
+      if (!dealer_price || dealer_price <= 0) {
+        rowErrors.push({ 
+          reason: 'invalid_price', 
+          raw: { model_display: r.model_display, dealer_price: r.dealer_price }
+        });
+        continue;
+      }
+      
+      const msrp = msrpFromDealer(dealer_price, msrp_markup);
+      
+      rows.push({
         make: 'Mercury',
         family: attrs.family,
-        model: item.model_display,
+        model: r.model_display,
         model_key,
         year: 2025,
         horsepower: attrs.horsepower,
@@ -320,49 +359,35 @@ serve(async (req) => {
         availability: 'Brochure',
         last_scraped: new Date().toISOString(),
         inventory_source: 'pricelist'
-      };
-    });
+      });
+    }
+    
+    console.log(`Processed ${rawData.length} raw entries into ${rows.length} valid rows, ${rowErrors.length} errors`);
     
     // Deduplication logic: Group by model_key and pick best row for each key
     const keyGroups = new Map<string, any[]>();
-    const duplicateKeys: string[] = [];
     
-    for (const model of motorModels) {
+    for (const model of rows) {
       if (!keyGroups.has(model.model_key)) {
         keyGroups.set(model.model_key, []);
       }
       keyGroups.get(model.model_key)!.push(model);
     }
     
-    // Log duplicates for debugging
-    for (const [key, models] of keyGroups) {
-      if (models.length > 1) {
-        duplicateKeys.push(key);
-        console.log(`Duplicate model_key "${key}" found for:`, models.map(m => ({
-          model: m.model,
-          hp: m.horsepower,
-          rigging: m.rigging_code
-        })));
-      }
-    }
-    
     // Pick best representative for each key (prefer higher HP, then more detailed model name)
     const deduplicatedModels = Array.from(keyGroups.values()).map(group => {
       if (group.length === 1) return group[0];
       
-      // Sort by: higher HP first, then more detailed model name
       return group.sort((a, b) => {
         if (a.horsepower !== b.horsepower) return (b.horsepower || 0) - (a.horsepower || 0);
         return b.model.length - a.model.length;
       })[0];
     });
     
-    console.log(`Processed ${motorModels.length} models, deduplicated to ${deduplicatedModels.length}`);
-    if (duplicateKeys.length > 0) {
-      console.log(`Resolved ${duplicateKeys.length} duplicate model_keys`);
-    }
+    console.log(`Deduplicated to ${deduplicatedModels.length} models`);
     
-    // Create timestamp for artifacts
+    // STEP 4: Save artifacts (always, even on future failure)
+    currentStep = 'snapshot';
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
     const checksumPrefix = checksum.substring(0, 8);
     
@@ -384,7 +409,7 @@ serve(async (req) => {
       csv_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.csv`, csvContent, 'text/csv')
     };
     
-    // Prune old snapshots - keep only last 10
+    // Prune old snapshots
     try {
       console.log('Pruning old pricelist snapshots...');
       const { data: allFiles, error: listError } = await supabase.storage
@@ -393,8 +418,8 @@ serve(async (req) => {
         
       if (listError) {
         console.error('Error listing files for pruning:', listError);
-      } else if (allFiles && allFiles.length > 30) { // Keep 10 sets of 3 files (html, json, csv)
-        const filesToDelete = allFiles.slice(30); // Delete everything beyond the 30 most recent
+      } else if (allFiles && allFiles.length > 30) {
+        const filesToDelete = allFiles.slice(30);
         const deletePromises = filesToDelete.map(file => 
           supabase.storage.from('sources').remove([`pricelist/${file.name}`])
         );
@@ -404,78 +429,63 @@ serve(async (req) => {
       }
     } catch (pruneError) {
       console.error('Error during snapshot pruning:', pruneError);
-      // Don't fail the entire operation for pruning errors
     }
     
     let rows_created = 0;
     let rows_updated = 0;
-    let errors = 0;
     
-    // Upsert to database (unless dry_run)
+    // STEP 5: Database upsert (unless dry_run)
     if (!dry_run) {
+      currentStep = 'upsert';
       console.log(`Upserting ${deduplicatedModels.length} models to database...`);
       
-      try {
-        // First, fetch existing records to preserve inventory data
-        const modelKeys = deduplicatedModels.map(m => m.model_key);
-        const { data: existingRecords, error: fetchError } = await supabase
-          .from('motor_models')
-          .select('model_key, in_stock, image_url, stock_quantity, availability, last_stock_check')
-          .in('model_key', modelKeys);
-          
-        if (fetchError) {
-          console.error('Error fetching existing records:', fetchError);
-          throw fetchError;
-        }
+      // Fetch existing records to preserve inventory data
+      const modelKeys = deduplicatedModels.map(m => m.model_key);
+      const { data: existingRecords, error: fetchError } = await supabase
+        .from('motor_models')
+        .select('model_key, in_stock, image_url, stock_quantity, availability, last_stock_check')
+        .in('model_key', modelKeys);
         
-        // Create lookup map for existing records
-        const existingMap = new Map();
-        existingRecords?.forEach(record => {
-          existingMap.set(record.model_key, record);
-        });
-        
-        // Prepare models for upsert with preserved inventory data
-        const modelsForUpsert = deduplicatedModels.map(newModel => {
-          const existing = existingMap.get(newModel.model_key);
-          if (existing) {
-            // Preserve inventory fields for existing records
-            return {
-              ...newModel,
-              in_stock: existing.in_stock, // Never flip this
-              image_url: existing.image_url || newModel.image_url, // Preserve if exists
-              stock_quantity: existing.stock_quantity,
-              availability: existing.availability,
-              last_stock_check: existing.last_stock_check,
-              // Only update these fields for existing records:
-              dealer_price: newModel.dealer_price,
-              msrp: newModel.msrp,
-              price_source: newModel.price_source,
-              year: newModel.year
-            };
-          }
-          return newModel; // New record, use as-is
-        });
-        
-        const { data, error } = await supabase
-          .from('motor_models')
-          .upsert(modelsForUpsert, { onConflict: 'model_key' });
-        
-        if (error) {
-          console.error('Database upsert error:', error);
-          throw error;
-        }
-        
-        // Count creates vs updates
-        rows_created = modelsForUpsert.filter(m => !existingMap.has(m.model_key)).length;
-        rows_updated = modelsForUpsert.filter(m => existingMap.has(m.model_key)).length;
-        
-        console.log(`Successfully processed ${rows_created} creates, ${rows_updated} updates`);
-        
-      } catch (error) {
-        console.error('Upsert failed:', error);
-        errors = 1;
-        throw error;
+      if (fetchError) {
+        throw new Error(`fetch_existing_failed: ${fetchError.message}`);
       }
+      
+      // Create lookup map for existing records
+      const existingMap = new Map();
+      existingRecords?.forEach(record => {
+        existingMap.set(record.model_key, record);
+      });
+      
+      // Prepare models for upsert with preserved inventory data
+      const modelsForUpsert = deduplicatedModels.map(newModel => {
+        const existing = existingMap.get(newModel.model_key);
+        if (existing) {
+          // Preserve inventory fields for existing records
+          return {
+            ...newModel,
+            in_stock: existing.in_stock, // Never flip this
+            image_url: existing.image_url || newModel.image_url,
+            stock_quantity: existing.stock_quantity,
+            availability: existing.availability,
+            last_stock_check: existing.last_stock_check,
+          };
+        }
+        return newModel; // New record, use as-is
+      });
+      
+      const { error: upsertError } = await supabase
+        .from('motor_models')
+        .upsert(modelsForUpsert, { onConflict: 'model_key' });
+      
+      if (upsertError) {
+        throw new Error(`upsert_failed: ${upsertError.message}`);
+      }
+      
+      // Count creates vs updates
+      rows_created = modelsForUpsert.filter(m => !existingMap.has(m.model_key)).length;
+      rows_updated = modelsForUpsert.filter(m => existingMap.has(m.model_key)).length;
+      
+      console.log(`Successfully processed ${rows_created} creates, ${rows_updated} updates`);
     }
     
     // Prepare sample data (first 3 items)
@@ -490,51 +500,61 @@ serve(async (req) => {
       rigging_code: m.rigging_code
     }));
     
-    return new Response(JSON.stringify({
+    return json200({
       success: true,
       rows_parsed: rawData.length,
       rows_created,
       rows_updated,
-      errors,
+      errors: rowErrors.length,
+      row_errors: rowErrors.slice(0, 5), // Show first 5 errors
       checksum,
       skipped_due_to_same_checksum: false,
       artifacts,
       sample
-    }), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
     
-  } catch (error) {
-    console.error('Error in seed-from-pricelist:', error);
+  } catch (error: any) {
+    console.error('seed-from-pricelist failed:', error);
     
-    const errorResponse = {
-      success: false,
-      error: error.message,
-      context: {
-        step: 'unknown',
-        detail: String(error)
+    // Try to save artifacts even on failure for debugging
+    let debugArtifacts = null;
+    try {
+      if (currentStep !== 'init') {
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const errorLog = {
+          step: currentStep,
+          error: {
+            message: error?.message || String(error),
+            stack: error?.stack,
+            name: error?.name
+          },
+          rowErrors: rowErrors.slice(0, 10)
+        };
+        
+        const errorLogUrl = await saveArtifact(
+          supabase, 
+          `pricelist/${timestamp}-ERROR.json`, 
+          JSON.stringify(errorLog, null, 2), 
+          'application/json'
+        );
+        
+        debugArtifacts = { error_log_url: errorLogUrl };
       }
-    };
-    
-    // Determine which step failed
-    if (error.message.includes('HTTP')) {
-      errorResponse.context.step = 'fetch';
-    } else if (error.message.includes('parse') || error.message.includes('HTML')) {
-      errorResponse.context.step = 'parse';
-    } else if (error.message.includes('upsert') || error.message.includes('database')) {
-      errorResponse.context.step = 'upsert';
-    } else if (error.message.includes('storage') || error.message.includes('artifact')) {
-      errorResponse.context.step = 'storage';
+    } catch (artifactError) {
+      console.error('Failed to save debug artifacts:', artifactError);
     }
     
-    return new Response(JSON.stringify({
-      success: false, 
-      error: String(error), 
-      stack: (error as any)?.stack,
-      context: errorResponse.context
-    }), {
-      status: 200,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    return json200({
+      success: false,
+      step: currentStep,
+      error: {
+        message: error?.message || String(error),
+        stack: error?.stack,
+        name: error?.name,
+        cause: error?.cause,
+      },
+      artifacts: debugArtifacts,
+      row_errors: rowErrors.slice(0, 5)
     });
   }
 });
