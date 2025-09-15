@@ -37,6 +37,7 @@ import StagingImageSizingV2 from "./pages/StagingImageSizingV2";
 import StagingImageSizingFinal from "./pages/StagingImageSizingFinal";
 import TestPriceScraping from "./pages/TestPriceScraping";
 import TestEnhancedPricing from "./pages/TestEnhancedPricing";
+import TestMotorPipeline from "./pages/TestMotorPipeline";
 import FinancingAdmin from "./components/admin/FinancingAdmin";
 import AdminSecurity from "./pages/AdminSecurity";
 import AdminZapier from "./pages/AdminZapier";
@@ -218,6 +219,7 @@ const App = () => (
                 <Route path="/finance-calculator" element={<FinanceCalculator />} />
                 <Route path="/dev" element={<Dev />} />
                 <Route path="/test/scraper" element={<TestScraper />} />
+                <Route path="/test/motor-pipeline" element={<TestMotorPipeline />} />
                 <Route path="/staging/pricing-spacing" element={<StagingPricingTweaks />} />
                 <Route path="/quotes/new" element={<NewQuote />} />
                 <Route path="/staging/image-sizing" element={<StagingImageSizing />} />

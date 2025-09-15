@@ -606,44 +606,49 @@ export const extractHpAndCode = (modelText: string): { hp: number | null; code: 
 };
 
 // Build consistent model key from model text
-export const buildModelKey = (modelText: string): string => {
-  if (!modelText) return '';
-  
-  let text = modelText
-    .toUpperCase()
-    .trim()
-    // Remove year tokens
-    .replace(/\b20\d{2}\b/g, '')
-    // Standardize FOUR STROKE → FOURSTROKE
-    .replace(/FOUR\s*STROKE/g, 'FOURSTROKE')
-    .replace(/FOUR-STROKE/g, 'FOURSTROKE')
-    // Standardize PRO XS → PROXS
-    .replace(/PRO\s*XS/g, 'PROXS')
-    // Clean up spaces and punctuation
-    .replace(/[^\w\s-]/g, ' ')
+export function buildModelKey(input: string): string {
+  if (!input) return '';
+  let s = input
+    // strip HTML & odd chars
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/[()]/g, ' ')
+    // remove year tokens
+    .replace(/\b20\d{2}\b/g, ' ')
+    // normalize family names
+    .replace(/\bfour[\s-]*stroke\b/ig, 'FourStroke')
+    .replace(/\bpro[\s-]*xs\b/ig, 'ProXS')
+    .replace(/\bsea[\s-]*pro\b/ig, 'SeaPro')
+    .replace(/\bverado\b/ig, 'Verado')
+    .replace(/\bracing\b/ig, 'Racing')
+    // normalize EFI
+    .replace(/\befi\b/ig, 'EFI')
+    // coalesce whitespace
     .replace(/\s+/g, ' ')
     .trim();
-  
-  const { hp, code, fuel, family } = extractHpAndCode(text);
-  
-  // Build key parts in order: FAMILY-HP-FUEL-CODE
-  const keyParts: string[] = [];
-  
-  if (family) keyParts.push(family);
-  if (hp) keyParts.push(`${hp}HP`);
-  if (fuel) keyParts.push(fuel);
-  if (code) keyParts.push(code);
-  
-  // If we couldn't parse structured data, fall back to normalized text
-  if (keyParts.length === 0) {
-    return text
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .replace(/^-|-$/g, '');
-  }
-  
-  return keyParts.join('-');
-};
+
+  // pull HP and trailing rigging code
+  // ex: "25HP EFI ELHPT", "90 HP ELPT", "150 ProXS XL"
+  const hpMatch = s.match(/\b(\d+(\.\d+)?)\s*hp\b/i);
+  const hp = hpMatch ? `${hpMatch[1]}HP` : '';
+  s = s.replace(/\b(\d+(\.\d+)?)\s*hp\b/ig, '').trim();
+
+  // rigging/code tokens: ELHPT, ELPT, XL, EXLPT, CT, DTS, etc.
+  const codeTokens: string[] = [];
+  const tokenRx = /\b(ELHPT|ELPT|ELO|ELH|EH|XL|XXL|EXLPT|L|CL|CT|DTS|TILLER|JPO|DIGITAL|POWER STEERING)\b/ig;
+  let m;
+  while ((m = tokenRx.exec(s)) !== null) codeTokens.push(m[1].toUpperCase());
+
+  // family tokens (one of)
+  const fam = (s.match(/\b(FourStroke|ProXS|SeaPro|Verado|Racing)\b/i)?.[1]) || '';
+
+  // rebuild normalized display to then key it
+  const parts = [fam, hp, 'EFI'].filter(Boolean).concat(codeTokens);
+  const normalized = parts.join('-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+
+  return normalized.toUpperCase();
+}
 
 export const getHPDescriptor = (hp: number | string) => {
   const horsepower = typeof hp === 'string' ? parseFloat(hp) : hp;
