@@ -24,45 +24,94 @@ interface MotorData {
   last_scraped: string;
 }
 
-// Firecrawl scraping function - matches pattern from scrape-motor-details
+// Enhanced Firecrawl scraping function with robust configuration
 async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: string; markdown?: string }> {
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 30000); // 30s timeout
+  const timeoutId = setTimeout(() => controller.abort(), 45000); // 45s timeout for complex pages
   
-  console.log(`🔥 Scraping with Firecrawl: ${url}`);
+  console.log(`🔥 Scraping with enhanced Firecrawl: ${url}`);
   console.log(`🔑 Using API key: ${apiKey.substring(0, 8)}...`);
   
-  const res = await fetch('https://api.firecrawl.dev/v1/scrape', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ 
+  try {
+    const requestBody = { 
       url, 
-      formats: ['html', 'markdown'], 
-      onlyMainContent: false, // We want full page for inventory
-      waitFor: 3000 // Wait for JavaScript to load
-    }),
-    signal: controller.signal,
-  });
-  
-  clearTimeout(timeoutId);
-  
-  if (!res.ok) {
-    throw new Error(`Firecrawl scrape failed: ${res.status} ${await res.text()}`);
+      formats: ['html', 'markdown'],
+      onlyMainContent: false, // Need full page for inventory parsing
+      waitFor: 8000, // Longer wait for JavaScript rendering
+      includeHtml: true,
+      extractorOptions: {
+        mode: 'llm-extraction-from-raw-html',
+        extractionPrompt: 'Extract all Mercury outboard motor inventory data including stock numbers, models, prices, and specifications'
+      },
+      pageOptions: {
+        waitForSelector: '.panel.panel-default.search-result',
+        waitForTimeout: 8000,
+        includeLinks: true,
+        screenshot: false
+      }
+    };
+    
+    console.log(`📋 Firecrawl request config:`, JSON.stringify(requestBody, null, 2));
+    
+    const res = await fetch('https://api.firecrawl.dev/v1/scrape', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
+      signal: controller.signal,
+    });
+    
+    clearTimeout(timeoutId);
+    
+    console.log(`📊 Firecrawl response status: ${res.status} ${res.statusText}`);
+    console.log(`📊 Response headers:`, Object.fromEntries(res.headers.entries()));
+    
+    if (!res.ok) {
+      const errorText = await res.text();
+      console.error(`❌ Firecrawl API error response:`, errorText);
+      throw new Error(`Firecrawl scrape failed: ${res.status} ${errorText}`);
+    }
+    
+    const data = await res.json();
+    console.log(`✅ Firecrawl response keys:`, Object.keys(data));
+    console.log(`📋 Full response structure:`, JSON.stringify(data, null, 2).substring(0, 1000) + '...');
+    
+    // Support multiple possible response shapes
+    const html = data?.data?.html || data?.html || null;
+    const markdown = data?.data?.markdown || data?.markdown || null;
+    
+    console.log(`📏 Content lengths - HTML: ${html?.length || 0}, Markdown: ${markdown?.length || 0}`);
+    
+    // Validate content contains expected elements
+    if (html) {
+      const hasMotorPanels = html.includes('panel panel-default search-result');
+      const hasSearchResults = html.includes('search-result');
+      const hasInventoryData = html.includes('itemMake') || html.includes('Mercury');
+      
+      console.log(`🔍 Content validation - Motor panels: ${hasMotorPanels}, Search results: ${hasSearchResults}, Inventory data: ${hasInventoryData}`);
+      
+      if (!hasSearchResults && !hasInventoryData) {
+        console.warn(`⚠️ HTML content may not contain expected inventory data`);
+      }
+    }
+    
+    return { html: html || undefined, markdown: markdown || undefined };
+    
+  } catch (error) {
+    clearTimeout(timeoutId);
+    console.error(`💥 Firecrawl error details:`, {
+      name: error.name,
+      message: error.message,
+      stack: error.stack?.substring(0, 500)
+    });
+    
+    if (error.name === 'AbortError') {
+      throw new Error('Firecrawl request timed out after 45 seconds');
+    }
+    throw error;
   }
-  
-  const data = await res.json();
-  console.log(`✅ Firecrawl scraped successfully`);
-  
-  // Support multiple possible response shapes
-  const html = data?.data?.html || data?.html || null;
-  const markdown = data?.data?.markdown || data?.markdown || null;
-  
-  console.log(`📏 Content lengths - HTML: ${html?.length || 0}, Markdown: ${markdown?.length || 0}`);
-  
-  return { html: html || undefined, markdown: markdown || undefined };
 }
 
 // Helper function with Firecrawl retry logic and fallback
@@ -102,7 +151,7 @@ async function fetchWithFirecrawl(url: string, apiKey: string, maxRetries: numbe
   return null;
 }
 
-// Parse motors from HTML page
+// Enhanced parsing with content validation
 function parseMotorsFromHTML(html: string, baseUrl: string): MotorData[] {
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, 'text/html');
@@ -113,9 +162,24 @@ function parseMotorsFromHTML(html: string, baseUrl: string): MotorData[] {
     return motors;
   }
 
-  // Find all motor result panels
-  const motorPanels = doc.querySelectorAll('.panel.panel-default.search-result');
-  console.log(`🔍 Found ${motorPanels.length} motor panels`);
+  // Enhanced content validation
+  console.log(`📄 HTML content preview (first 500 chars):`, html.substring(0, 500));
+  console.log(`🔍 Searching for motor panels in ${html.length} character HTML document`);
+  
+  // Try multiple selectors for motor panels
+  let motorPanels = doc.querySelectorAll('.panel.panel-default.search-result');
+  if (motorPanels.length === 0) {
+    console.log(`⚠️ No panels found with primary selector, trying alternatives...`);
+    motorPanels = doc.querySelectorAll('.search-result');
+  }
+  if (motorPanels.length === 0) {
+    motorPanels = doc.querySelectorAll('[class*="search-result"]');
+  }
+  if (motorPanels.length === 0) {
+    motorPanels = doc.querySelectorAll('.panel');
+  }
+  
+  console.log(`🔍 Found ${motorPanels.length} motor panels with enhanced selectors`);
 
   motorPanels.forEach((panel, index) => {
     try {
@@ -208,50 +272,109 @@ function hasNextPage(html: string): boolean {
   return nextButton !== null && !nextButton.classList.contains('disabled');
 }
 
-// Main scraping function with Firecrawl
+// Enhanced scraping function with better pagination and validation
 async function scrapeInventory(firecrawlApiKey: string): Promise<MotorData[]> {
   const baseUrl = 'https://www.harrisboatworks.ca';
-  // Use the specific URL provided by the user for Mercury outboard motors
+  // Optimized URL for Firecrawl - ensure proper encoding and parameters
   const inventoryUrl = `${baseUrl}/search/inventory/brand/Mercury/type/Outboard%20Motors/usage/New`;
   let allMotors: MotorData[] = [];
   let currentPage = 1;
-  let maxPages = 20; // Increased limit since we expect more motors with JS rendering
+  let maxPages = 25; // Increased for comprehensive scraping
+  let consecutiveEmptyPages = 0;
 
-  console.log(`🚀 Starting Firecrawl-powered scraping from: ${inventoryUrl}`);
+  console.log(`🚀 Starting enhanced Firecrawl scraping from: ${inventoryUrl}`);
+  console.log(`🎯 Target: Mercury outboard motors, max ${maxPages} pages`);
 
   while (currentPage <= maxPages) {
     const pageUrl = currentPage === 1 ? inventoryUrl : `${inventoryUrl}?page=${currentPage}`;
-    console.log(`🔄 Scraping page ${currentPage}: ${pageUrl}`);
+    console.log(`🔄 Scraping page ${currentPage}/${maxPages}: ${pageUrl}`);
     
-    const html = await fetchWithFirecrawl(pageUrl, firecrawlApiKey);
-    if (!html) {
-      console.error(`❌ Failed to fetch page ${currentPage} with Firecrawl`);
-      break;
+    try {
+      const html = await fetchWithFirecrawl(pageUrl, firecrawlApiKey);
+      if (!html) {
+        console.error(`❌ Failed to fetch page ${currentPage} with Firecrawl`);
+        consecutiveEmptyPages++;
+        if (consecutiveEmptyPages >= 3) {
+          console.log(`⏹️ Stopping after ${consecutiveEmptyPages} consecutive failed pages`);
+          break;
+        }
+        currentPage++;
+        continue;
+      }
+
+      // Enhanced content validation before parsing
+      if (html.length < 1000) {
+        console.warn(`⚠️ Page ${currentPage} has suspiciously short content (${html.length} chars)`);
+      }
+      
+      const hasExpectedContent = html.includes('Mercury') || html.includes('search-result') || html.includes('panel');
+      if (!hasExpectedContent) {
+        console.warn(`⚠️ Page ${currentPage} doesn't contain expected inventory content`);
+      }
+
+      const pageMotors = parseMotorsFromHTML(html, baseUrl);
+      console.log(`📦 Found ${pageMotors.length} motors on page ${currentPage}`);
+      
+      if (pageMotors.length === 0) {
+        consecutiveEmptyPages++;
+        console.log(`ℹ️ No motors found on page ${currentPage} (${consecutiveEmptyPages} consecutive empty)`);
+        
+        if (consecutiveEmptyPages >= 3) {
+          console.log(`⏹️ Stopping after ${consecutiveEmptyPages} consecutive pages with no motors`);
+          break;
+        }
+      } else {
+        consecutiveEmptyPages = 0; // Reset counter on successful page
+        allMotors = allMotors.concat(pageMotors);
+        console.log(`✅ Total motors collected so far: ${allMotors.length}`);
+      }
+
+      // Check for next page with enhanced validation
+      const hasNext = hasNextPage(html);
+      console.log(`🔄 Page ${currentPage} has next page: ${hasNext}`);
+      
+      if (!hasNext) {
+        console.log(`🏁 Reached last page at page ${currentPage}`);
+        break;
+      }
+
+      currentPage++;
+      
+      // Enhanced rate limiting for Firecrawl - longer delays to avoid timeouts
+      const delay = Math.min(10000 + (currentPage * 1000), 15000); // 10-15s delay, increasing per page
+      console.log(`⏳ Waiting ${delay/1000}s before next page...`);
+      await new Promise(resolve => setTimeout(resolve, delay));
+      
+    } catch (pageError) {
+      console.error(`❌ Error processing page ${currentPage}:`, pageError.message);
+      consecutiveEmptyPages++;
+      
+      if (consecutiveEmptyPages >= 3) {
+        console.log(`⏹️ Too many consecutive errors, stopping`);
+        break;
+      }
+      
+      currentPage++;
+      // Longer delay after errors
+      await new Promise(resolve => setTimeout(resolve, 15000));
     }
-
-    const pageMotors = parseMotorsFromHTML(html, baseUrl);
-    console.log(`📦 Found ${pageMotors.length} motors on page ${currentPage}`);
-    
-    if (pageMotors.length === 0) {
-      console.log(`ℹ️ No motors found on page ${currentPage}, stopping`);
-      break;
-    }
-
-    allMotors = allMotors.concat(pageMotors);
-
-    // Check for next page
-    if (!hasNextPage(html)) {
-      console.log(`ℹ️ No more pages after page ${currentPage}`);
-      break;
-    }
-
-    currentPage++;
-    
-    // Rate limiting - longer delay for Firecrawl
-    await new Promise(resolve => setTimeout(resolve, 8000));
   }
 
-  console.log(`🎉 Total motors scraped with Firecrawl: ${allMotors.length}`);
+  console.log(`🎉 Enhanced Firecrawl scraping completed!`);
+  console.log(`📊 Scraping summary:`);
+  console.log(`   • Total motors found: ${allMotors.length}`);
+  console.log(`   • Pages processed: ${currentPage - 1}`);
+  console.log(`   • Max pages limit: ${maxPages}`);
+  console.log(`   • Consecutive empty pages: ${consecutiveEmptyPages}`);
+  
+  if (allMotors.length === 0) {
+    console.error(`❌ No motors were found. This could indicate:`);
+    console.error(`   • Website structure changed`);
+    console.error(`   • Firecrawl not rendering JavaScript properly`);
+    console.error(`   • Inventory temporarily empty`);
+    console.error(`   • Access restrictions or rate limiting`);
+  }
+  
   return allMotors;
 }
 
