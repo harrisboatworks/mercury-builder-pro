@@ -9,7 +9,7 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 // Motor parsing function
 async function parseMotorsFromHTML(html: string, markdown: string = '') {
   console.log('🔍 Starting motor parsing...')
-  console.log('🔍 HTML Sample:', html.substring(0, 2000))
+  console.log('🔍 HTML Sample (first 500):', html.substring(0, 500))
   console.log('📝 Markdown Sample:', markdown.substring(0, 1000))
   
   const motors = []
@@ -21,7 +21,7 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
   }
   
   // Search for common motor-related terms (case insensitive)
-  const searchTerms = ['mercury', 'hp', 'horsepower', 'outboard', 'engine', 'motor']
+  const searchTerms = ['mercury', 'hp', 'horsepower', 'outboard', 'engine', 'motor', 'fourstroke', '4-stroke']
   
   searchTerms.forEach(term => {
     const regex = new RegExp(term, 'gi')
@@ -30,7 +30,27 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
     console.log(`🔍 Found "${term}": ${matches.length} occurrences`)
   })
   
-  // Try multiple parsing approaches
+  // Look for HTML structural patterns that might contain motor data
+  console.log('🏗️ Checking HTML structure patterns...')
+  
+  // Check for common inventory page structures
+  const structureChecks = [
+    { name: 'product-card', regex: /class=["\'].*product.*["\'][^>]*>/gi },
+    { name: 'inventory-item', regex: /class=["\'].*(?:inventory|item).*["\'][^>]*>/gi },
+    { name: 'motor-listing', regex: /class=["\'].*(?:motor|outboard).*["\'][^>]*>/gi },
+    { name: 'table-row', regex: /<tr[^>]*>[\s\S]*?<\/tr>/gi },
+    { name: 'div-container', regex: /<div[^>]*class=["\'][^"\']*(?:motor|product|inventory)[^"\']*["\'][^>]*>/gi }
+  ]
+  
+  structureChecks.forEach(check => {
+    const matches = html.match(check.regex) || []
+    console.log(`🏗️ ${check.name}: ${matches.length} elements`)
+    if (matches.length > 0 && matches.length < 10) {
+      console.log(`🏗️ ${check.name} sample:`, matches[0].substring(0, 200))
+    }
+  })
+  
+  // Try multiple parsing approaches with more flexible patterns
   console.log('🎯 Trying different parsing patterns...')
   
   // Pattern 1: Original Mercury + HP pattern
@@ -38,8 +58,8 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
   const matches1 = Array.from(html.matchAll(pattern1))
   console.log('🎯 Pattern 1 (Mercury + HP):', matches1.length, 'matches')
   
-  // Pattern 2: Just HP numbers
-  const pattern2 = /(\d+)\s*(?:HP|hp|Hp)/gi
+  // Pattern 2: Just HP numbers (more flexible)
+  const pattern2 = /(?:^|[>\s])(\d+)\s*(?:HP|hp|Hp)(?:[<\s]|$)/gi
   const matches2 = Array.from(html.matchAll(pattern2))
   console.log('🎯 Pattern 2 (Just HP):', matches2.length, 'matches')
   
@@ -52,6 +72,21 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
   const pattern4 = /(?:Mercury|MERCURY).*?(\d+)\s*(?:HP|hp|Hp)/gi
   const matches4 = Array.from(markdown.matchAll(pattern4))
   console.log('🎯 Pattern 4 (Mercury in markdown):', matches4.length, 'matches')
+  
+  // Pattern 5: Look for FourStroke patterns (common in Mercury inventory)
+  const pattern5 = /(?:FourStroke|fourstroke|4-stroke)\s+(\d+)\s*(?:HP|hp)/gi
+  const matches5 = Array.from(html.matchAll(pattern5))
+  console.log('🎯 Pattern 5 (FourStroke + HP):', matches5.length, 'matches')
+  
+  // Pattern 6: Look for title/alt text patterns
+  const pattern6 = /(?:title|alt)=["\'][^"\']*?(\d+)\s*(?:HP|hp)[^"\']*?["\']/gi
+  const matches6 = Array.from(html.matchAll(pattern6))
+  console.log('🎯 Pattern 6 (Title/Alt text):', matches6.length, 'matches')
+  
+  // Pattern 7: Look for JSON-like data structures
+  const pattern7 = /"[^"]*(?:Mercury|mercury)[^"]*?(\d+)\s*(?:HP|hp|Hp)[^"]*"/gi
+  const matches7 = Array.from(html.matchAll(pattern7))
+  console.log('🎯 Pattern 7 (JSON strings):', matches7.length, 'matches')
   
   // Try to find any motor-related content
   const motorKeywords = ['outboard', 'engine', 'motor', 'marine']
@@ -72,12 +107,44 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
     console.log('💰 Sample prices:', priceMatches.slice(0, 5))
   }
   
-  // Use the most promising pattern for actual parsing
+  // Use the most promising pattern for actual parsing - check all patterns
   let bestMatches = matches1
-  if (matches2.length > bestMatches.length) bestMatches = matches2
-  if (matches4.length > bestMatches.length) bestMatches = matches4
+  let bestPatternName = 'Pattern 1 (Mercury + HP)'
   
-  console.log('🏆 Using best pattern with', bestMatches.length, 'matches')
+  if (matches2.length > bestMatches.length) {
+    bestMatches = matches2
+    bestPatternName = 'Pattern 2 (Just HP)'
+  }
+  if (matches3.length > bestMatches.length) {
+    bestMatches = matches3
+    bestPatternName = 'Pattern 3 (Horsepower)'
+  }
+  if (matches4.length > bestMatches.length) {
+    bestMatches = matches4
+    bestPatternName = 'Pattern 4 (Mercury in markdown)'
+  }
+  if (matches5.length > bestMatches.length) {
+    bestMatches = matches5
+    bestPatternName = 'Pattern 5 (FourStroke + HP)'
+  }
+  if (matches6.length > bestMatches.length) {
+    bestMatches = matches6
+    bestPatternName = 'Pattern 6 (Title/Alt text)'
+  }
+  if (matches7.length > bestMatches.length) {
+    bestMatches = matches7
+    bestPatternName = 'Pattern 7 (JSON strings)'
+  }
+  
+  console.log(`🏆 Using best pattern: ${bestPatternName} with ${bestMatches.length} matches`)
+  
+  // Also try to combine unique results from multiple patterns if none are dominant
+  const allMatches = [...matches1, ...matches2, ...matches4, ...matches5, ...matches6, ...matches7]
+  if (bestMatches.length < 5 && allMatches.length > bestMatches.length) {
+    console.log(`🔄 Low match count, trying combined patterns: ${allMatches.length} total matches`)
+    bestMatches = allMatches
+    bestPatternName = 'Combined patterns'
+  }
   
   for (const match of bestMatches) {
     const fullMatch = match[0]
@@ -309,6 +376,12 @@ serve(async (req) => {
           // Parse motors from current page
           const htmlData = firecrawlData.data?.html || ''
           const markdownData = firecrawlData.data?.markdown || ''
+          
+          // Log HTML sample for debugging
+          console.log(`📋 Page ${pageNum} HTML sample (first 1000 chars):`, htmlData.substring(0, 1000))
+          console.log(`📋 Page ${pageNum} contains "Mercury":`, htmlData.includes('Mercury') || htmlData.includes('mercury'))
+          console.log(`📋 Page ${pageNum} contains "HP":`, htmlData.includes('HP') || htmlData.includes('hp'))
+          
           const parseResult = await parseMotorsFromHTML(htmlData, markdownData)
           const pageMotors = parseResult.motors
           const debugInfo = parseResult.debugInfo
