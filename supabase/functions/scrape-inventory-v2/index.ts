@@ -27,8 +27,39 @@ function parseMotorTitle(title: string) {
   
   // Pattern: Year Category HP FuelType ModelCode
   // Examples: "2025 FourStroke 25HP EFI ELHPT", "2024 ProXS 225HP XL", "2025 Verado 350HP"
-  const pattern = /(\d{4})\s+(FourStroke|Pro\s*XS|ProXS|SeaPro|Verado|Racing)\s*®?\s*(\d+\.?\d*)\s*HP\s*(EFI|TM)?\s*([A-Z][A-Z0-9]*)?/i;
+  // Enhanced pattern to capture all model codes properly
+  const pattern = /(\d{4})\s+([\w\s]+?)\s+(\d+\.?\d*)\s*HP\s*(EFI|TM)?\s*([A-Z]+.*)?$/i;
   const match = clean.match(pattern);
+  
+  // Alternative: Split-based parsing for better model code capture
+  if (!match) {
+    const parts = clean.split(/\s+/);
+    const yearPart = parts.find(p => /^20(24|25)$/.test(p));
+    const hpPart = parts.find(p => /^\d+\.?\d*HP?$/i.test(p));
+    const hpIndex = parts.findIndex(p => /^\d+\.?\d*HP?$/i.test(p));
+    
+    if (yearPart && hpPart && hpIndex >= 0) {
+      const year = parseInt(yearPart);
+      const horsepower = parseFloat(hpPart.replace(/HP?$/i, ''));
+      const category = parts.slice(1, hpIndex).filter(p => p !== yearPart).join(' ') || 'FourStroke';
+      const fuelType = parts.includes('EFI') ? 'EFI' : (parts.includes('TM') ? 'TM' : '');
+      const modelCodeParts = parts.slice(hpIndex + 1).filter(p => !['EFI', 'TM'].includes(p));
+      const modelCode = modelCodeParts.join(' ').trim();
+      
+      console.log(`✅ Split-parsed: Year=${year}, Category=${category}, HP=${horsepower}, FuelType=${fuelType}, Code="${modelCode}"`);
+      
+      return {
+        year: year,
+        category: category,
+        horsepower: horsepower,
+        fuelType: fuelType,
+        modelCode: modelCode,
+        fullTitle: clean,
+        displayTitle: `${year} ${category} ${horsepower}HP ${fuelType} ${modelCode}`.replace(/\s+/g, ' ').trim(),
+        isValid: true
+      };
+    }
+  }
   
   if (match) {
     const category = match[2]?.replace(/\s/g, '') || 'FourStroke';
@@ -105,8 +136,10 @@ function makeAbsoluteUrl(url: string): string | null {
   return 'https://www.harrisboatworks.ca/search/inventory/brand/Mercury/' + url;
 }
 
-// Extract motor images from HTML elements
+// Extract motor images from HTML elements with enhanced debugging
 function extractMotorImages(element: any): any {
+  console.log('🖼️ Extracting image from element:', element?.outerHTML?.substring(0, 200) || 'No element');
+  
   const images = {
     thumbnail: null,
     medium: null,
@@ -211,7 +244,7 @@ async function validateImageUrl(imageUrl: string, motorTitle: string): Promise<s
   }
 }
 
-// Extract additional motor data from harrisboatworks.ca structure  
+// Extract additional motor data from harrisboatworks.ca structure with enhanced price extraction
 function extractMotorData(text: string) {
   const data = {
     salePrice: null,
@@ -222,10 +255,40 @@ function extractMotorData(text: string) {
     usage: null
   };
   
-  // Extract pricing information
-  const salePriceMatch = text.match(/\$([0-9,]+\.?[0-9]*)/);
-  if (salePriceMatch) {
-    data.salePrice = parseFloat(salePriceMatch[1].replace(/,/g, ''));
+  // Enhanced pricing extraction with multiple selectors and patterns
+  const pricePatterns = [
+    /\$([0-9,]+\.?[0-9]*)/,              // Basic $12,345 or $12,345.99
+    /sale[:\s]*\$([0-9,]+\.?[0-9]*)/i,   // Sale: $12,345
+    /price[:\s]*\$([0-9,]+\.?[0-9]*)/i,  // Price: $12,345
+    /now[:\s]*\$([0-9,]+\.?[0-9]*)/i,    // Now: $12,345
+    /special[:\s]*\$([0-9,]+\.?[0-9]*)/i // Special: $12,345
+  ];
+  
+  for (const pattern of pricePatterns) {
+    const match = text.match(pattern);
+    if (match && !data.salePrice) {
+      data.salePrice = parseFloat(match[1].replace(/,/g, ''));
+      console.log(`💰 Found sale price: $${data.salePrice} using pattern: ${pattern.source}`);
+      break;
+    }
+  }
+  
+  // Enhanced MSRP extraction
+  const msrpPatterns = [
+    /msrp[:\s]*\$([0-9,]+\.?[0-9]*)/i,      // MSRP: $12,345
+    /was[:\s]*\$([0-9,]+\.?[0-9]*)/i,       // Was: $12,345
+    /list[:\s]*\$([0-9,]+\.?[0-9]*)/i,      // List: $12,345
+    /original[:\s]*\$([0-9,]+\.?[0-9]*)/i,  // Original: $12,345
+    /regular[:\s]*\$([0-9,]+\.?[0-9]*)/i    // Regular: $12,345
+  ];
+  
+  for (const pattern of msrpPatterns) {
+    const match = text.match(pattern);
+    if (match) {
+      data.msrp = parseFloat(match[1].replace(/,/g, ''));
+      console.log(`🏷️ Found MSRP: $${data.msrp} using pattern: ${pattern.source}`);
+      break;
+    }
   }
   
   // Extract savings
@@ -788,9 +851,14 @@ serve(async (req) => {
           await new Promise(resolve => setTimeout(resolve, 1000))
         }
         
-        // Construct URL for current page
-        const currentUrl = pageNum === 1 ? baseUrl : `${baseUrl}&page=${pageNum}`
+        // Construct URL for current page - FIXED: Use ?page= for first param, &page= for subsequent
+        const currentUrl = pageNum === 1 ? baseUrl : `${baseUrl}?page=${pageNum}`
         console.log(`🔄 Scraping page ${pageNum}: ${currentUrl}`)
+        
+        // Debug pagination pattern
+        if (pageNum === 2) {
+          console.log(`🔍 Pagination check: URL="${currentUrl}", Expected pattern: "?page=2"`);
+        }
         
         // Enhanced Firecrawl API call with wait conditions
         const firecrawlResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
@@ -825,10 +893,17 @@ serve(async (req) => {
           const htmlData = firecrawlData.data?.html || ''
           const markdownData = firecrawlData.data?.markdown || ''
           
-          // Simple debugging
+          // Enhanced debugging
           console.log('HTML length:', htmlData.length)
           console.log('Contains Mercury?', htmlData.toLowerCase().includes('mercury'))
           console.log('Mercury HP matches:', htmlData.match(/mercury.*?\d+.*?hp/gi)?.length || 0)
+          
+          // Debug pagination on first page
+          if (pageNum === 1) {
+            const hasPageLinks = htmlData.includes('page=2') || htmlData.includes('/page/2');
+            const paginationLinks = htmlData.match(/href="[^"]*page[=\/](\d+)/g) || [];
+            console.log('🔍 Pagination debug:', { hasPageLinks, paginationLinks: paginationLinks.slice(0, 5) });
+          }
           
           const parseResult = await parseMotorsFromHTML(htmlData, markdownData)
           const pageMotors = parseResult.motors
@@ -894,6 +969,28 @@ serve(async (req) => {
     
     console.log('🔍 All pages scraped. Total motors found:', allMotors.length)
     console.log(`📊 Expected vs Found: ${totalExpectedMotors} expected, ${allMotors.length} found`)
+    
+    // CRITICAL VERIFICATION: Check if we got all 145+ motors
+    console.log(`
+      SCRAPING COMPLETE:
+      - Total motors found: ${allMotors.length}
+      - Expected: 145+
+      - Status: ${allMotors.length >= 145 ? '✅ SUCCESS' : '❌ FAILED - MISSING MOTORS'}
+    `);
+    
+    if (allMotors.length < 145) {
+      console.error('❌ NOT ALL MOTORS SCRAPED! Check pagination URLs.');
+      console.error('Page results:', pageResults.map(p => `Page ${p.page}: ${p.motors_found} motors`));
+    }
+    
+    // Log sample motor to verify data quality
+    if (allMotors.length > 0) {
+      console.log('📋 Sample motor data:');
+      console.log('- Title:', allMotors[0].fullTitle);
+      console.log('- Model Code:', allMotors[0].modelCode || 'MISSING');
+      console.log('- Primary Image:', allMotors[0].primary_image || 'MISSING');
+      console.log('- Stock Number:', allMotors[0].stock_number || 'MISSING');
+    }
     
     // Enhanced cross-page deduplication using stock numbers
     const uniqueMotors = [];
