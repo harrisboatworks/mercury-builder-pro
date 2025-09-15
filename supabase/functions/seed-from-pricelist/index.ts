@@ -369,9 +369,9 @@ serve(async (req) => {
     // Prepare artifacts
     const jsonContent = JSON.stringify(deduplicatedModels, null, 2);
     const csvRows = [
-      'model_display,model_key,family,horsepower,dealer_price,msrp,rigging_code',
+      'model_display,model_key,family,horsepower,fuel,rigging_code,year,dealer_price,msrp,is_brochure,in_stock,price_source',
       ...deduplicatedModels.map(m => 
-        `"${m.model}","${m.model_key}","${m.family}",${m.horsepower || ''},${m.dealer_price},${m.msrp},"${m.rigging_code || ''}"`
+        `"${m.model}","${m.model_key}","${m.family || ''}",${m.horsepower || ''},"${m.fuel_type || ''}","${m.rigging_code || ''}",${m.year},${m.dealer_price},${m.msrp},${m.is_brochure},${m.in_stock},"${m.price_source || ''}"`
       )
     ];
     const csvContent = csvRows.join('\n');
