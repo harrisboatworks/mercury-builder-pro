@@ -438,12 +438,15 @@ export type Database = {
         Row: {
           availability: string | null
           base_price: number | null
+          control: string | null
           created_at: string | null
           data_quality_score: number | null
           data_sources: Json | null
+          dealer_price: number | null
           description: string | null
           detail_url: string | null
           engine_type: string | null
+          family: string | null
           features: Json | null
           fuel_type: string | null
           horsepower: number | null
@@ -459,11 +462,15 @@ export type Database = {
           make: string
           manual_overrides: Json | null
           model: string
+          model_code: string | null
           model_number: string | null
           motor_type: string
           msrp: number | null
+          msrp_source: string | null
           sale_price: number | null
+          shaft: string | null
           source_priority: string[] | null
+          spec_json: Json | null
           spec_sheet_file_id: string | null
           specifications: Json | null
           stock_number: string | null
@@ -474,12 +481,15 @@ export type Database = {
         Insert: {
           availability?: string | null
           base_price?: number | null
+          control?: string | null
           created_at?: string | null
           data_quality_score?: number | null
           data_sources?: Json | null
+          dealer_price?: number | null
           description?: string | null
           detail_url?: string | null
           engine_type?: string | null
+          family?: string | null
           features?: Json | null
           fuel_type?: string | null
           horsepower?: number | null
@@ -495,11 +505,15 @@ export type Database = {
           make?: string
           manual_overrides?: Json | null
           model: string
+          model_code?: string | null
           model_number?: string | null
           motor_type: string
           msrp?: number | null
+          msrp_source?: string | null
           sale_price?: number | null
+          shaft?: string | null
           source_priority?: string[] | null
+          spec_json?: Json | null
           spec_sheet_file_id?: string | null
           specifications?: Json | null
           stock_number?: string | null
@@ -510,12 +524,15 @@ export type Database = {
         Update: {
           availability?: string | null
           base_price?: number | null
+          control?: string | null
           created_at?: string | null
           data_quality_score?: number | null
           data_sources?: Json | null
+          dealer_price?: number | null
           description?: string | null
           detail_url?: string | null
           engine_type?: string | null
+          family?: string | null
           features?: Json | null
           fuel_type?: string | null
           horsepower?: number | null
@@ -531,11 +548,15 @@ export type Database = {
           make?: string
           manual_overrides?: Json | null
           model?: string
+          model_code?: string | null
           model_number?: string | null
           motor_type?: string
           msrp?: number | null
+          msrp_source?: string | null
           sale_price?: number | null
+          shaft?: string | null
           source_priority?: string[] | null
+          spec_json?: Json | null
           spec_sheet_file_id?: string | null
           specifications?: Json | null
           stock_number?: string | null

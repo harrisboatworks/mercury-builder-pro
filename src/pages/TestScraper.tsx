@@ -247,7 +247,7 @@ export default function TestScraper() {
                 setResults(null);
                 try {
                   const { data, error } = await supabase.functions.invoke('scrape-inventory-v2', {
-                    body: { seed: 'brochure_csv_url' }
+                    body: { seed: 'brochure' }
                   });
                   if (error) {
                     setResults({ success: false, error: error.message });
@@ -261,9 +261,9 @@ export default function TestScraper() {
                 }
               }}
               disabled={loading}
-              className="px-5 py-2.5 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50"
+              className="px-5 py-2.5 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50"
             >
-              {loading ? 'Running…' : 'Seed From Price List (URL)'}
+              {loading ? 'Running…' : 'Seed Brochure Catalog (from Price List)'}
             </button>
           </div>
           

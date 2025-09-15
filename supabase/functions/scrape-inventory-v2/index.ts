@@ -106,6 +106,135 @@ function deriveFromText(modelNum: string, desc: string) {
   return { horsepower, series, model_code };
 }
 
+// -------- Price list import + brochure seeding --------
+async function fetchPriceList(): Promise<Array<{model_number:string, description?:string, price:number}>> {
+  const url = 'https://www.harrisboatworks.ca/mercurypricelist';
+  const r = await fetch(url, { headers: { 'User-Agent': 'HBW-InventoryBot/1.0' }});
+  if (!r.ok) throw new Error(`price list HTTP ${r.status}`);
+  const text = await r.text();
+
+  // Try CSV/TSV first
+  const looksCSV = /[,;\t]\s*\d/.test(text) || /^"?[A-Za-z0-9-]+/.test(text);
+  if (looksCSV) {
+    const lines = text.split(/\r?\n/).filter(Boolean);
+   const rows = lines.map(l => l.split(/,\s*|\t|;\s*/));
+    // Heuristic: pick columns by best guess
+    const out: any[] = [];
+    for (const cols of rows) {
+      const joined = cols.join(' ');
+      const price = Number(joined.replace(/.*\s(\$?\d[\d,]*\.?\d*)\s*$/,'$1').replace(/[^\d.]/g,''));
+      const code  = (cols[0] || '').trim();
+      const desc  = (cols[1] || '').trim();
+      if (code && price > 0) out.push({ model_number: code, description: desc, price });
+    }
+    if (out.length) return out;
+  }
+
+  // Fallback: parse HTML table
+  // Lightweight parse to rows
+  const table = text.match(/<table[\s\S]*?<\/table>/i)?.[0] || '';
+  const trs = [...table.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)].map(m => m[1]);
+  const rows: any[] = [];
+  for (const tr of trs) {
+    const tds = [...tr.matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(m => cleanText(m[1]));
+    if (tds.length >= 2) {
+      const code = tds[0];
+      const desc = tds[1];
+      const priceStr = (tds[2] || desc).match(/\$?\s*\d[\d,]*\.?\d*/) ? (tds[2] || desc) : '';
+      const price = priceStr ? Number(priceStr.replace(/[^\d.]/g,'')) : NaN;
+      if (code && !isNaN(price)) rows.push({ model_number: code, description: desc, price });
+    }
+  }
+  return rows;
+}
+
+// Parse Mercury model number into attributes (best-effort)
+function parseModelFromCode(code: string) {
+  const c = code.toUpperCase().replace(/\s+/g,'');
+  const hp = Number((c.match(/(\d{2,3})HP/)?.[1]) || (c.match(/(^|[^A-Z])(\d{2,3})(?!\d)/)?.[2])) || null;
+  const CT = /(^|[^A-Z])CT/.test(c) ? true : false;
+  const JET = /JET/.test(c);
+  const TILLER = /T(LR|ILLER|ILL)/.test(c);
+  const DTS = /(DTS|CXL)/.test(c) || /V8/.test(c); // DTS common on larger
+  const MECH = /ELPT|ELH|E|M|R|W/.test(c) && !DTS;
+  // shaft length markers: S=15, L=20, XL=25, XXL=30, XXXL=35 (heuristic)
+  const shaft =
+    /XXXL/.test(c) ? 'XXXL' :
+    /XXL/.test(c)  ? 'XXL'  :
+    /XL/.test(c)   ? 'XL'   :
+    /L/.test(c)    ? 'L'    :
+    /S/.test(c)    ? 'S'    : null;
+  // fuel/injection hints
+  const EFI = /EFI/.test(c);
+  const FOUR = /4S|FOURSTROKE|FOUR-STROKE|4-STROKE|4STROKE|FS/.test(c);
+  return {
+    hp,
+    shaft,
+    control: TILLER ? 'Tiller' : (DTS ? 'DTS' : (MECH ? 'Mech' : null)),
+    ct: CT,
+    jet: JET,
+    fuel: EFI ? 'EFI' : null,
+    family_hint: FOUR ? 'FourStroke' : undefined
+  };
+}
+
+// Build brochure "base models" quickly from brochure families already detected elsewhere.
+// If you already have a brochure spec map, reuse it; otherwise, create minimal bases keyed by HP + family.
+function brochureBaseFor(codeAttrs: any) {
+  // pick family by hp ranges if no hint
+  let family = codeAttrs.family_hint || 'FourStroke';
+  if ((codeAttrs.hp||0) >= 250) family = 'Verado';
+  else if ((codeAttrs.hp||0) >= 115 && /XS|PROXS/.test(codeAttrs.code||'')) family = 'ProXS';
+  return family;
+}
+
+async function seedBrochureCatalog(supabase: any) {
+  const rows = await fetchPriceList(); // {model_number, description, price}
+  if (!rows.length) throw new Error('No price list rows parsed');
+
+  const toUpsert = rows.map(r => {
+    const attrs = parseModelFromCode(r.model_number);
+    const family = brochureBaseFor({ ...attrs, code: r.model_number });
+    const msrp = Math.round((r.price * 1.10) * 100) / 100;
+
+    const modelDisplay = [
+      attrs.hp ? `${attrs.hp}HP` : '',
+      attrs.fuel || '',
+      attrs.ct ? 'CT' : '',
+      attrs.shaft || '',
+      attrs.control || ''
+    ].filter(Boolean).join(' ');
+
+    return {
+      make: 'Mercury',
+      family,
+      model: modelDisplay || (r.description || r.model_number),
+      model_code: r.model_number,
+      horsepower: attrs.hp,
+      fuel_type: attrs.fuel || '',
+      motor_type: family,
+      shaft: attrs.shaft,
+      control: attrs.control,
+      sale_price: r.price,
+      dealer_price: r.price,
+      msrp,
+      msrp_source: 'derived:+10%',
+      is_brochure: true,
+      in_stock: false,
+      availability: 'Brochure',
+      detail_url: null,
+      images: [],
+      spec_json: { ct: !!attrs.ct, jet: !!attrs.jet },
+      last_scraped: new Date().toISOString(),
+      inventory_source: 'brochure+pricelist'
+    };
+  });
+
+  const { error } = await supabase.from('motor_models').upsert(toUpsert, { onConflict: 'model_code' });
+  if (error) throw error;
+  return { seeded: toUpsert.length };
+}
+
 // Enhanced XML fetch with headers and retry
 async function fetchText(url: string, retries = 0): Promise<string> {
   const maxRetries = 2;
@@ -1140,6 +1269,15 @@ serve(async (req) => {
         return new Response(JSON.stringify({success:false, error}), {status:200, headers:{'Content-Type':'application/json', ...corsHeaders}});
       }
       return new Response(JSON.stringify({success:true, inserted: records.length}), {status:200, headers:{'Content-Type':'application/json', ...corsHeaders}});
+    }
+
+    // Handle brochure seeding from price list
+    if (body?.seed === 'brochure') {
+      const supabase = await getServiceClient();
+      const res = await seedBrochureCatalog(supabase);
+      return new Response(JSON.stringify({ success: true, ...res }), {
+        status: 200, headers: { 'Content-Type':'application/json', ...corsHeaders }
+      });
     }
 
     // Handle brochure seeding mode
