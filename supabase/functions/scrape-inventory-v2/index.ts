@@ -384,8 +384,15 @@ serve(async (req) => {
           body: JSON.stringify({ 
             url, 
             formats: ['html'], 
-            waitFor: 1500, 
-            timeout: 30000 
+            waitFor: 2000, 
+            timeout: 30000,
+            // Add browser headers to avoid bot detection
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
+              'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+              'Accept-Language': 'en-CA,en;q=0.9',
+              'Referer': 'https://www.harrisboatworks.ca/search/inventory/brand/Mercury'
+            }
           })
         });
         

@@ -445,6 +445,7 @@ export type Database = {
           detail_url: string | null
           engine_type: string | null
           features: Json | null
+          fuel_type: string | null
           horsepower: number
           id: string
           image_url: string | null
@@ -476,6 +477,7 @@ export type Database = {
           detail_url?: string | null
           engine_type?: string | null
           features?: Json | null
+          fuel_type?: string | null
           horsepower: number
           id?: string
           image_url?: string | null
@@ -507,6 +509,7 @@ export type Database = {
           detail_url?: string | null
           engine_type?: string | null
           features?: Json | null
+          fuel_type?: string | null
           horsepower?: number
           id?: string
           image_url?: string | null
