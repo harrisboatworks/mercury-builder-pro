@@ -737,7 +737,7 @@ function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
       
       // FIXED: Detect availability using proper DOM traversal instead of :contains()
       let availability = 'Brochure'; // Default for brochure models
-      let availabilityText = '';
+      let statusAvailabilityText = '';
       
       // Look for status in label elements
       const statusLabel = element.querySelector('.label-success, .label-warning, .label-danger, .label');
@@ -750,11 +750,11 @@ function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
         for (let i = 0; i < cells.length - 1; i++) {
           const cellText = cells[i].textContent?.trim().toLowerCase() || '';
           if (cellText.includes('availability')) {
-            availabilityText = cells[i + 1]?.textContent?.trim().toLowerCase() || '';
+            statusAvailabilityText = cells[i + 1]?.textContent?.trim().toLowerCase() || '';
             break;
           }
         }
-        if (availabilityText) break;
+        if (statusAvailabilityText) break;
         
         // Also check for strong tags in cells
         const strongElements = row.querySelectorAll('strong');
@@ -762,16 +762,16 @@ function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
           if (strong.textContent?.trim().toLowerCase().includes('availability')) {
             const parentCell = strong.closest('td');
             if (parentCell && parentCell.nextElementSibling) {
-              availabilityText = parentCell.nextElementSibling.textContent?.trim().toLowerCase() || '';
+              statusAvailabilityText = parentCell.nextElementSibling.textContent?.trim().toLowerCase() || '';
               break;
             }
           }
         }
-        if (availabilityText) break;
+        if (statusAvailabilityText) break;
       }
       
       // Combine all status indicators
-      const allStatusText = `${statusText} ${availabilityText}`.toLowerCase();
+      const allStatusText = `${statusText} ${statusAvailabilityText}`.toLowerCase();
       
       console.log(`📊 Status text for ${title}: "${allStatusText}"`);
       
