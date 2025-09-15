@@ -214,6 +214,7 @@ serve(async (req) => {
         model: modelDisplay || (item.description || item.model_number),
         model_code: item.model_number,
         model_key,
+        year: 2025,
         horsepower: attrs.horsepower,
         fuel_type: attrs.fuel_type,
         motor_type: attrs.family,

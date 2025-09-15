@@ -48,7 +48,15 @@ export default function TestMotorPipeline() {
         }
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Edge fn error', { 
+          status: error.status, 
+          name: error.name, 
+          message: error.message, 
+          context: (error as any)?.context 
+        });
+        throw new Error(`${error.status}: ${error.message}\n${JSON.stringify((error as any)?.context ?? {}, null, 2)}`);
+      }
 
       const message = `DRY RUN → parsed: ${data.rows_parsed}, would create: ${data.rows_created}, would update: ${data.rows_updated || 0}`;
       logCheckpoint(message);
@@ -71,7 +79,15 @@ export default function TestMotorPipeline() {
         }
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Edge fn error', { 
+          status: error.status, 
+          name: error.name, 
+          message: error.message, 
+          context: (error as any)?.context 
+        });
+        throw new Error(`${error.status}: ${error.message}\n${JSON.stringify((error as any)?.context ?? {}, null, 2)}`);
+      }
 
       const message = `PriceList → parsed: ${data.rows_parsed}, upserts: ${data.rows_created} created, ${data.rows_updated || 0} updated, errors: ${data.errors || 0}`;
       logCheckpoint(message);
@@ -96,7 +112,15 @@ export default function TestMotorPipeline() {
         }
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Edge fn error', { 
+          status: error.status, 
+          name: error.name, 
+          message: error.message, 
+          context: (error as any)?.context 
+        });
+        throw new Error(`${error.status}: ${error.message}\n${JSON.stringify((error as any)?.context ?? {}, null, 2)}`);
+      }
 
       const message = `BrochurePDF → attached to ${data.models_matched} models`;
       logCheckpoint(message);
@@ -128,7 +152,11 @@ export default function TestMotorPipeline() {
           }
         });
 
-        if (!error) uploadedCount++;
+        if (error) {
+          console.error(`Hero upload error for ${item.model_key}:`, error);
+        } else {
+          uploadedCount++;
+        }
       }
 
       const message = `Heroes → uploaded ${uploadedCount}, updated rows: ${uploadedCount}`;
@@ -151,7 +179,15 @@ export default function TestMotorPipeline() {
         }
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('XML discovery error', { 
+          status: error.status, 
+          name: error.name, 
+          message: error.message, 
+          context: (error as any)?.context 
+        });
+        throw new Error(`${error.status}: ${error.message}\n${JSON.stringify((error as any)?.context ?? {}, null, 2)}`);
+      }
 
       const message = `XML → in_stock merged: ${data.motors_updated || 0}, new created: ${data.motors_created || 0}, images stored: ${data.images_processed || 0}`;
       logCheckpoint(message);
