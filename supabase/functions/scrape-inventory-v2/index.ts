@@ -214,7 +214,8 @@ serve(async (req) => {
     console.log('🚀 CORRECT FUNCTION v2: Full DOM scraping started');
     const startTime = Date.now();
     
-    // Parse request body with enhanced error handling
+    try {
+      // Parse request body with enhanced error handling
     let body;
     try {
       body = await req.json();
