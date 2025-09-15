@@ -431,6 +431,43 @@ async function enhancedDiscover(fetchPage: (u: string) => Promise<string>, opts?
 }
 
 // ---------- DealerSpike XML discovery ----------
+function absolutize(u?: string) {
+  if (!u) return undefined as any;
+  if (/^https?:\/\//i.test(u)) return u;
+  if (u.startsWith('//')) return 'https:' + u;
+  if (u.startsWith('/')) return 'https://www.harrisboatworks.ca' + u;
+  return u;
+}
+
+function extractImagesFromUnit(u: any) {
+  // common primary fields
+  const primaryCandidates = [
+    u.PrimaryImageUrl, u.primaryImageUrl, u.PrimaryImageURL, u.ImageURL, u.ImageUrl, u.imageUrl, u.LargeImageURL, u.ThumbnailURL
+  ];
+  const primary = absolutize(primaryCandidates.find(Boolean));
+
+  // gallery collections often live under Photos/Photo, Media/MediaFile, Images/Image
+  const gallery: string[] = [];
+
+  const pushIf = (v?: string) => { const a = absolutize(String(v||'').trim()); if (a) gallery.push(a); };
+
+  const photos = u.Photos?.Photo ?? u.photos?.photo ?? u.Images?.Image ?? [];
+  (Array.isArray(photos) ? photos : [photos]).forEach((p: any) => pushIf(p?.URL ?? p?.Url ?? p?.url));
+
+  const media = u.Media ?? u.media ?? [];
+  (Array.isArray(media) ? media : [media]).forEach((m: any) => pushIf(m?.URL ?? m?.Url ?? m?.url));
+
+  // also consider additional image fields sometimes present on the unit
+  [u.Image1, u.Image2, u.Image3, u.Image4, u.Image5].forEach(pushIf);
+
+  // ensure unique, keep primary first if present
+  const uniq = Array.from(new Set([primary, ...gallery].filter(Boolean)));
+  const finalPrimary = uniq[0] || undefined;
+  const finalGallery = uniq.slice(1);
+
+  return { primary: finalPrimary, gallery: finalGallery };
+}
+
 async function discoverFromXmlFeed(fetchPage: (u: string) => Promise<string>) {
   const FEED_URL = "https://www.harrisboatworks.ca/unitinventory_univ.xml";
   try {
@@ -469,15 +506,18 @@ async function discoverFromXmlFeed(fetchPage: (u: string) => Promise<string>) {
         detail_url = `https://www.harrisboatworks.ca/inventory/${safe}`;
       }
 
-      return { u, detail_url };
+      const imgs = extractImagesFromUnit(u);
+      return { u, detail_url, images: imgs };
     });
 
     const urls = [...new Set(items.map(i => i.detail_url))];
+    // Build a map by detail_url so full mode can use it
+    const imageByUrl = new Map(items.map(i => [i.detail_url, i.images]));
     console.log(`XML feed: ${units.length} total, ${filtered.length} after filters, ${urls.length} unique URLs.`);
-    return { urls, items };
+    return { urls, items, imageByUrl };
   } catch (e) {
     console.error("XML discovery failed:", e);
-    return { urls: [] as string[], items: [] as any[] };
+    return { urls: [] as string[], items: [] as any[], imageByUrl: new Map() };
   }
 }
 
@@ -860,9 +900,11 @@ serve(async (req) => {
     console.log("📄 Step 1: Collecting URLs (prefer XML, fallback to pages)...");
     const xmlResult = await discoverFromXmlFeed(fetchPage);
     let urls: string[] = [];
+    let imageByUrl = new Map<string, {primary?: string, gallery?: string[]}>();
 
     if (xmlResult.urls.length > 0) {
       urls = xmlResult.urls;
+      imageByUrl = xmlResult.imageByUrl ?? imageByUrl;
       console.log(`✅ Using XML feed URLs: ${urls.length}`);
     } else {
       console.log("XML feed empty or blocked. Falling back to enhanced page discovery...");
@@ -899,13 +941,28 @@ serve(async (req) => {
             
             const motor = parseDetailPage(html, u);
             
-            // Upload image if available (only in full mode)
+            // If page had no image, use XML primary
+            if (!motor.original_image_url) {
+              const fromFeed = imageByUrl.get(u);
+              if (fromFeed?.primary) motor.original_image_url = fromFeed.primary;
+            }
+
+            // Optional: capture gallery (first few) from feed for DB `images`
+            let gallery: string[] = [];
+            {
+              const fromFeed = imageByUrl.get(u);
+              if (fromFeed?.gallery?.length) gallery = fromFeed.gallery.slice(0, 4); // keep it small
+            }
+
+            // Upload primary image; keep gallery as external links for now
             if (motor.original_image_url) {
               const imageName = motor.stock_number || `${motor.year||''}-${motor.model_code||'motor'}`;
               const stored = await uploadToSupabaseImage(motor.original_image_url, imageName, supabase);
               motor.image_url = stored || motor.original_image_url;
             }
-            
+
+            // attach gallery (don't upload gallery to save time/cost)
+            (motor as any).gallery = gallery;
             return motor;
           } catch (error) {
             console.error(`Error processing ${u}:`, error);
@@ -955,10 +1012,10 @@ serve(async (req) => {
       stock_number: m.stock_number,
       availability: m.availability || 'Available',
       image_url: m.image_url,
-      images: m.image_url ? [m.image_url] : [],
+      images: m.image_url ? [m.image_url, ...((m as any).gallery || [])] : ((m as any).gallery || []),
       detail_url: m.source_url,
       last_scraped: new Date().toISOString(),
-      inventory_source: 'detail_pages'
+      inventory_source: 'detail_pages_or_xml'
     }));
 
     const { error: upsertError } = await supabase
