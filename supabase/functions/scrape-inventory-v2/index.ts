@@ -104,41 +104,69 @@ const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 serve(async (req) => {
-  const url = new URL(req.url);
-  
-  // Handle CORS preflight requests
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
-  }
-
-  // Test endpoint - no auth required
-  if (url.pathname.endsWith('/test')) {
-    return new Response(JSON.stringify({ 
-      status: 'ok', 
-      message: 'Function is reachable',
-      timestamp: new Date().toISOString()
-    }), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-    });
-  }
-
-  // Check authorization for actual scraping functionality
-  const authHeader = req.headers.get('Authorization');
-  if (!authHeader) {
-    return new Response(JSON.stringify({ 
-      code: 401, 
-      message: 'Missing authorization header' 
-    }), {
-      status: 401,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-    });
-  }
-
   try {
+    // Enhanced logging for debugging
+    console.log('🔍 Request Details:');
+    console.log('- URL:', req.url);
+    console.log('- Method:', req.method);
+    console.log('- Headers:', Object.fromEntries(req.headers.entries()));
+    
+    // Check environment variables
+    console.log('🔧 Environment Check:');
+    console.log('- SUPABASE_URL exists:', !!Deno.env.get('SUPABASE_URL'));
+    console.log('- SUPABASE_SERVICE_ROLE_KEY exists:', !!Deno.env.get('SUPABASE_SERVICE_ROLE_KEY'));
+    
+    const url = new URL(req.url);
+    console.log('- Parsed URL pathname:', url.pathname);
+    
+    // Handle CORS preflight requests
+    if (req.method === 'OPTIONS') {
+      console.log('✅ Handling CORS preflight request');
+      return new Response(null, { headers: corsHeaders });
+    }
+
+    // Test endpoint - no auth required
+    if (url.pathname.endsWith('/test')) {
+      console.log('✅ Test endpoint accessed successfully');
+      return new Response(JSON.stringify({ 
+        status: 'ok', 
+        message: 'Function is reachable',
+        timestamp: new Date().toISOString(),
+        environment: {
+          supabaseUrlExists: !!Deno.env.get('SUPABASE_URL'),
+          serviceKeyExists: !!Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
+        }
+      }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
+    // Check authorization for actual scraping functionality
+    const authHeader = req.headers.get('Authorization');
+    if (!authHeader) {
+      console.log('❌ Missing authorization header');
+      return new Response(JSON.stringify({ 
+        code: 401, 
+        message: 'Missing authorization header' 
+      }), {
+        status: 401,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
     console.log('🚀 CORRECT FUNCTION v2: Full DOM scraping started');
     const startTime = Date.now();
     
-    const body = await req.json().catch(() => ({}));
+    // Parse request body with enhanced error handling
+    let body;
+    try {
+      body = await req.json();
+      console.log('📝 Request body parsed:', body);
+    } catch (jsonError) {
+      console.log('📝 No JSON body or invalid JSON, using defaults:', jsonError.message);
+      body = {};
+    }
+    
     const { source = 'html', trigger = 'manual', useXmlFeed = false } = body;
     
     console.log(`📊 CORRECT v2 - Params: source=${source}, trigger=${trigger}, useXmlFeed=${useXmlFeed}`);
@@ -615,10 +643,33 @@ serve(async (req) => {
     });
 
   } catch (error) {
-    console.error('❌ CORRECT v2 - Function error:', error);
+    console.error('❌ CRITICAL ERROR in scrape-inventory-v2:');
+    console.error('- Error name:', error.name);
+    console.error('- Error message:', error.message);
+    console.error('- Error stack:', error.stack);
+    console.error('- Error cause:', error.cause);
+    console.error('- Full error object:', JSON.stringify(error, Object.getOwnPropertyNames(error)));
+    
+    // Check if it's a specific type of error
+    if (error.name === 'TypeError') {
+      console.error('🔍 TypeError detected - likely missing import or undefined variable');
+    }
+    if (error.name === 'SyntaxError') {
+      console.error('🔍 SyntaxError detected - likely JSON parsing issue');
+    }
+    if (error.name === 'ReferenceError') {
+      console.error('🔍 ReferenceError detected - likely undefined variable or function');
+    }
     
     const errorResponse = {
       success: false,
+      error: {
+        name: error.name,
+        message: error.message,
+        stack: error.stack,
+        cause: error.cause,
+        timestamp: new Date().toISOString()
+      },
       data: {
         motors_found: 0,
         motors_saved: 0,
