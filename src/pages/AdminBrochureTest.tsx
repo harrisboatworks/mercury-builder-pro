@@ -57,6 +57,7 @@ export default function AdminBrochureTest() {
   const [ingestResult, setIngestResult] = useState<ParseResult | null>(null);
   const [summary, setSummary] = useState<BrochureSummary | null>(null);
   const [isRunning, setIsRunning] = useState(false);
+  const [testResult, setTestResult] = useState<string>('');
 
   // Load brochure summary on page load
   useEffect(() => {
@@ -458,6 +459,35 @@ export default function AdminBrochureTest() {
         </div>
       </div>
 
+      {/* Mercury Codes Test Section */}
+      <div className="bg-secondary/10 p-4 rounded-lg">
+        <h3 className="font-medium mb-3 flex items-center gap-2">
+          🧪 Test Mercury Codes Parser
+          <Button
+            onClick={() => {
+              // Import and run test
+              import('../lib/mercury-codes-test').then(({ runMercuryCodesTests }) => {
+                const passed = runMercuryCodesTests();
+                setTestResult(passed ? "✅ All tests passed!" : "❌ Some tests failed - check console");
+              }).catch(err => {
+                console.error('Failed to load tests:', err);
+                setTestResult("❌ Failed to load test module");
+              });
+            }}
+            variant="outline"
+            size="sm"
+            disabled={isRunning}
+          >
+            Run Tests
+          </Button>
+        </h3>
+        {testResult && (
+          <div className={`text-sm p-2 rounded ${testResult.includes('✅') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+            {testResult}
+          </div>
+        )}
+      </div>
+
       {/* Current Brochure Summary */}
       {summary && (
         <Card>
@@ -489,6 +519,7 @@ export default function AdminBrochureTest() {
                   onClick={loadBrochureSummary}
                   variant="outline"
                   size="sm"
+                  disabled={isRunning}
                 >
                   Refresh Summary
                 </Button>
@@ -496,11 +527,27 @@ export default function AdminBrochureTest() {
                   onClick={exportBrochureCsv}
                   variant="outline"
                   size="sm"
-                  disabled={summary.total_brochure_count === 0}
+                  disabled={isRunning || summary.total_brochure_count === 0}
                 >
                   <Download className="h-4 w-4 mr-2" />
                   Export CSV
                 </Button>
+                <Button
+                  onClick={() => document.getElementById('csv-file-input')?.click()}
+                  variant="outline"
+                  size="sm"
+                  disabled={isRunning}
+                >
+                  <Upload className="h-4 w-4 mr-2" />
+                  Import CSV
+                </Button>
+                <input
+                  id="csv-file-input"
+                  type="file"
+                  accept=".csv"
+                  onChange={handleCsvImport}
+                  style={{ display: 'none' }}
+                />
               </div>
             </div>
 
