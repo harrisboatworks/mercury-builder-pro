@@ -26,6 +26,7 @@ export default function AdminSources() {
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
   const [imageUrls, setImageUrls] = useState("");
   const [modelKeyMappings, setModelKeyMappings] = useState<Record<string, string>>({});
+  const [bulkImportFile, setBulkImportFile] = useState<File | null>(null);
 
   const handlePricelistIngest = async () => {
     setLoading({ ...loading, pricelist: true });
@@ -162,6 +163,58 @@ export default function AdminSources() {
       toast({
         title: "Error",
         description: "Failed to upload hero images",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading({ ...loading, images: false });
+    }
+  };
+
+  const handleBulkImport = async () => {
+    if (!bulkImportFile) return;
+    
+    setLoading({ ...loading, images: true });
+    try {
+      const fileContent = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result as string);
+        reader.onerror = reject;
+        reader.readAsText(bulkImportFile);
+      });
+
+      const heroData = JSON.parse(fileContent) as Array<{ model_key: string; url: string }>;
+      let uploadedCount = 0;
+
+      for (const item of heroData) {
+        const { data, error } = await supabase.functions.invoke('upload-hero-image', {
+          body: { 
+            model_key: item.model_key,
+            url: item.url,
+            dry_run: dryRun
+          }
+        });
+
+        if (error) {
+          console.error(`Error uploading ${item.model_key}:`, error);
+        } else {
+          uploadedCount++;
+        }
+      }
+
+      toast({
+        title: dryRun ? "Bulk Import Preview" : "Bulk Import Complete",
+        description: `${uploadedCount}/${heroData.length} hero images processed successfully`,
+      });
+
+      if (!dryRun) {
+        setLastIngested({ ...lastIngested, images: new Date() });
+        setBulkImportFile(null);
+      }
+    } catch (error) {
+      console.error('Bulk import error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to process bulk import file",
         variant: "destructive",
       });
     } finally {
@@ -337,9 +390,10 @@ export default function AdminSources() {
             </CardHeader>
             <CardContent className="space-y-4">
               <Tabs defaultValue="upload" className="w-full">
-                <TabsList className="grid w-full grid-cols-2">
+                <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="upload">Upload</TabsTrigger>
                   <TabsTrigger value="urls">URLs</TabsTrigger>
+                  <TabsTrigger value="bulk">Bulk Import</TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="upload" className="space-y-3">
@@ -383,14 +437,32 @@ export default function AdminSources() {
                     placeholder="https://example.com/image1.jpg"
                   />
                 </TabsContent>
+                
+                <TabsContent value="bulk" className="space-y-3">
+                  <Label htmlFor="bulk-import">JSON File</Label>
+                  <Input
+                    id="bulk-import"
+                    type="file"
+                    accept=".json"
+                    onChange={(e) => setBulkImportFile(e.target.files?.[0] || null)}
+                  />
+                  <div className="text-sm text-muted-foreground">
+                    Upload a JSON file with format: [{"{"}"model_key": "...", "url": "..."{"}"}]
+                  </div>
+                  {bulkImportFile && (
+                    <Badge variant="secondary" className="text-xs">
+                      {bulkImportFile.name}
+                    </Badge>
+                  )}
+                </TabsContent>
               </Tabs>
 
               <Button 
-                onClick={handleImageUpload}
-                disabled={loading.images || (selectedImages.length === 0 && !imageUrls.trim())}
+                onClick={bulkImportFile ? handleBulkImport : handleImageUpload}
+                disabled={loading.images || (!bulkImportFile && selectedImages.length === 0 && !imageUrls.trim())}
                 className="w-full"
               >
-                {loading.images ? "Processing..." : "Upload Hero Images"}
+                {loading.images ? "Processing..." : bulkImportFile ? "Import Hero Images" : "Upload Hero Images"}
               </Button>
 
               {lastIngested.images && (
