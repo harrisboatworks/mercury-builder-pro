@@ -390,7 +390,7 @@ async function scrapeMercuryOfficial(model: string, horsepower: number, apiKey: 
     // Search Mercury Marine website
     const searchUrl = `https://www.mercurymarine.com/en/us/engines/outboard/?q=${encodeURIComponent(model + ' ' + horsepower)}`;
     
-    const firecrawlResponse = await fetch('https://api.firecrawl.dev/v0/scrape', {
+    const firecrawlResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
@@ -527,7 +527,7 @@ async function scrapeCustomUrl(url: string, apiKey: string): Promise<ScrapeResul
     console.log(`Scraping custom URL with Firecrawl: ${url}`);
     
     // Use Firecrawl to scrape the custom URL
-    const response = await fetch('https://api.firecrawl.dev/v0/scrape', {
+    const response = await fetch('https://api.firecrawl.dev/v1/scrape', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
@@ -536,7 +536,9 @@ async function scrapeCustomUrl(url: string, apiKey: string): Promise<ScrapeResul
       body: JSON.stringify({
         url: url,
         formats: ['markdown', 'html'],
-        onlyMainContent: true,
+        scrapeOptions: {
+          waitFor: 1000
+        }
       }),
     });
 
