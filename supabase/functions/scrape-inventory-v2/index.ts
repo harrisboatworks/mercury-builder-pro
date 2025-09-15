@@ -24,34 +24,23 @@ interface MotorData {
   last_scraped: string;
 }
 
-// Enhanced Firecrawl scraping function with robust configuration
+// Fixed Firecrawl scraping function with v1 API compatibility
 async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: string; markdown?: string }> {
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 45000); // 45s timeout for complex pages
+  const timeoutId = setTimeout(() => controller.abort(), 30000); // 30s timeout
   
-  console.log(`🔥 Scraping with enhanced Firecrawl: ${url}`);
+  console.log(`🔥 Scraping with Firecrawl v1 API: ${url}`);
   console.log(`🔑 Using API key: ${apiKey.substring(0, 8)}...`);
   
   try {
+    // Use simple v1 API configuration - same as scrape-motor-details
     const requestBody = { 
       url, 
       formats: ['html', 'markdown'],
-      onlyMainContent: false, // Need full page for inventory parsing
-      waitFor: 8000, // Longer wait for JavaScript rendering
-      includeHtml: true,
-      extractorOptions: {
-        mode: 'llm-extraction-from-raw-html',
-        extractionPrompt: 'Extract all Mercury outboard motor inventory data including stock numbers, models, prices, and specifications'
-      },
-      pageOptions: {
-        waitForSelector: '.panel.panel-default.search-result',
-        waitForTimeout: 8000,
-        includeLinks: true,
-        screenshot: false
-      }
+      onlyMainContent: false // Need full page for inventory parsing
     };
     
-    console.log(`📋 Firecrawl request config:`, JSON.stringify(requestBody, null, 2));
+    console.log(`📋 Firecrawl v1 request config:`, JSON.stringify(requestBody, null, 2));
     
     const res = await fetch('https://api.firecrawl.dev/v1/scrape', {
       method: 'POST',
@@ -66,7 +55,6 @@ async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: st
     clearTimeout(timeoutId);
     
     console.log(`📊 Firecrawl response status: ${res.status} ${res.statusText}`);
-    console.log(`📊 Response headers:`, Object.fromEntries(res.headers.entries()));
     
     if (!res.ok) {
       const errorText = await res.text();
@@ -75,22 +63,26 @@ async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: st
     }
     
     const data = await res.json();
-    console.log(`✅ Firecrawl response keys:`, Object.keys(data));
-    console.log(`📋 Full response structure:`, JSON.stringify(data, null, 2).substring(0, 1000) + '...');
+    console.log(`✅ Firecrawl response received, keys:`, Object.keys(data));
     
-    // Support multiple possible response shapes
+    // Support multiple possible response shapes (same as scrape-motor-details)
     const html = data?.data?.html || data?.html || null;
     const markdown = data?.data?.markdown || data?.markdown || null;
     
     console.log(`📏 Content lengths - HTML: ${html?.length || 0}, Markdown: ${markdown?.length || 0}`);
     
-    // Validate content contains expected elements
+    // Enhanced content validation
     if (html) {
       const hasMotorPanels = html.includes('panel panel-default search-result');
       const hasSearchResults = html.includes('search-result');
       const hasInventoryData = html.includes('itemMake') || html.includes('Mercury');
+      const hasJsonData = html.includes('datasource');
       
-      console.log(`🔍 Content validation - Motor panels: ${hasMotorPanels}, Search results: ${hasSearchResults}, Inventory data: ${hasInventoryData}`);
+      console.log(`🔍 Content validation:`);
+      console.log(`   • Motor panels: ${hasMotorPanels}`);
+      console.log(`   • Search results: ${hasSearchResults}`);
+      console.log(`   • Inventory data: ${hasInventoryData}`);
+      console.log(`   • JSON data source: ${hasJsonData}`);
       
       if (!hasSearchResults && !hasInventoryData) {
         console.warn(`⚠️ HTML content may not contain expected inventory data`);
@@ -108,7 +100,7 @@ async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: st
     });
     
     if (error.name === 'AbortError') {
-      throw new Error('Firecrawl request timed out after 45 seconds');
+      throw new Error('Firecrawl request timed out after 30 seconds');
     }
     throw error;
   }
@@ -272,17 +264,16 @@ function hasNextPage(html: string): boolean {
   return nextButton !== null && !nextButton.classList.contains('disabled');
 }
 
-// Enhanced scraping function with better pagination and validation
+// Enhanced scraping function with better error handling and rate limiting
 async function scrapeInventory(firecrawlApiKey: string): Promise<MotorData[]> {
   const baseUrl = 'https://www.harrisboatworks.ca';
-  // Optimized URL for Firecrawl - ensure proper encoding and parameters
   const inventoryUrl = `${baseUrl}/search/inventory/brand/Mercury/type/Outboard%20Motors/usage/New`;
   let allMotors: MotorData[] = [];
   let currentPage = 1;
-  let maxPages = 25; // Increased for comprehensive scraping
+  let maxPages = 25;
   let consecutiveEmptyPages = 0;
 
-  console.log(`🚀 Starting enhanced Firecrawl scraping from: ${inventoryUrl}`);
+  console.log(`🚀 Starting Firecrawl v1 scraping from: ${inventoryUrl}`);
   console.log(`🎯 Target: Mercury outboard motors, max ${maxPages} pages`);
 
   while (currentPage <= maxPages) {
@@ -340,8 +331,8 @@ async function scrapeInventory(firecrawlApiKey: string): Promise<MotorData[]> {
 
       currentPage++;
       
-      // Enhanced rate limiting for Firecrawl - longer delays to avoid timeouts
-      const delay = Math.min(10000 + (currentPage * 1000), 15000); // 10-15s delay, increasing per page
+      // Reduced rate limiting for v1 API - more reasonable delays
+      const delay = Math.min(8000 + (currentPage * 500), 12000); // 8-12s delay, increasing per page
       console.log(`⏳ Waiting ${delay/1000}s before next page...`);
       await new Promise(resolve => setTimeout(resolve, delay));
       
@@ -355,12 +346,12 @@ async function scrapeInventory(firecrawlApiKey: string): Promise<MotorData[]> {
       }
       
       currentPage++;
-      // Longer delay after errors
-      await new Promise(resolve => setTimeout(resolve, 15000));
+      // Moderate delay after errors
+      await new Promise(resolve => setTimeout(resolve, 10000));
     }
   }
 
-  console.log(`🎉 Enhanced Firecrawl scraping completed!`);
+  console.log(`🎉 Firecrawl v1 scraping completed!`);
   console.log(`📊 Scraping summary:`);
   console.log(`   • Total motors found: ${allMotors.length}`);
   console.log(`   • Pages processed: ${currentPage - 1}`);
@@ -370,9 +361,9 @@ async function scrapeInventory(firecrawlApiKey: string): Promise<MotorData[]> {
   if (allMotors.length === 0) {
     console.error(`❌ No motors were found. This could indicate:`);
     console.error(`   • Website structure changed`);
-    console.error(`   • Firecrawl not rendering JavaScript properly`);
+    console.error(`   • Firecrawl not rendering content properly`);
     console.error(`   • Inventory temporarily empty`);
-    console.error(`   • Access restrictions or rate limiting`);
+    console.error(`   • Rate limiting or access restrictions`);
   }
   
   return allMotors;
@@ -425,7 +416,7 @@ serve(async (req) => {
       }
 
       try {
-        console.log('🏠 Testing Firecrawl with homepage...');
+        console.log('🧪 Testing Firecrawl v1 API with homepage...');
         const testUrl = 'https://www.harrisboatworks.ca';
         const result = await firecrawlScrape(testUrl, firecrawlApiKey);
         
@@ -436,16 +427,18 @@ serve(async (req) => {
           markdown_length: result.markdown?.length || 0,
           has_html: !!result.html,
           has_markdown: !!result.markdown,
+          api_version: 'v1',
           timestamp: new Date().toISOString()
         }), {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         });
       } catch (testError) {
-        console.error('❌ Firecrawl test failed:', testError);
+        console.error('❌ Firecrawl v1 API test failed:', testError);
         return new Response(JSON.stringify({
           success: false,
           error: testError.message,
           error_type: testError.constructor.name,
+          api_version: 'v1',
           timestamp: new Date().toISOString()
         }), {
           status: 500,
