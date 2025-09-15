@@ -147,7 +147,8 @@ async function saveArtifact(supabase: any, filename: string, content: string, co
     .from('sources')
     .upload(filename, content, {
       contentType,
-      upsert: true
+      upsert: true,
+      cacheControl: 'public, max-age=86400'
     });
     
   if (uploadError) {
@@ -157,7 +158,7 @@ async function saveArtifact(supabase: any, filename: string, content: string, co
   
   const { data: signedUrl } = await supabase.storage
     .from('sources')
-    .createSignedUrl(filename, 60 * 60 * 24); // 24 hours
+    .createSignedUrl(filename, 60 * 60 * 24 * 7, { download: true }); // 7 days, download by default
     
   return signedUrl?.signedUrl || '';
 }
