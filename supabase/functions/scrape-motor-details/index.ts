@@ -1,6 +1,31 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.53.1'
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
+// Shared model key utility (copied to avoid cross-function imports)
+function buildModelKey(modelText: string): string {
+  if (!modelText) return '';
+  
+  let text = modelText
+    .toUpperCase()
+    .trim()
+    // Remove year tokens
+    .replace(/\b20\d{2}\b/g, '')
+    // Standardize FOUR STROKE → FOURSTROKE
+    .replace(/FOUR\s*STROKE/g, 'FOURSTROKE')
+    .replace(/FOUR-STROKE/g, 'FOURSTROKE')
+    // Standardize PRO XS → PROXS
+    .replace(/PRO\s*XS/g, 'PROXS')
+    // Clean up spaces and punctuation
+    .replace(/[^\w\s-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+  
+  return text;
+}
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
@@ -178,8 +203,6 @@ function normalizeDetailUrl(input: string): string {
     return input.startsWith('/') ? `${base}${input}` : `${base}/${input}`;
   }
 }
-
-import { buildModelKey } from '../shared/model-key-utils.ts';
 
 // Upload inventory image to storage and return URL
 async function uploadInventoryImage(imageUrl: string, modelKey: string, supabase: any): Promise<string | null> {

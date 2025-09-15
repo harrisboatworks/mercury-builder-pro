@@ -1,6 +1,31 @@
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
+// Shared model key utility (copied to avoid cross-function imports)
+function buildModelKey(modelText: string): string {
+  if (!modelText) return '';
+  
+  let text = modelText
+    .toUpperCase()
+    .trim()
+    // Remove year tokens
+    .replace(/\b20\d{2}\b/g, '')
+    // Standardize FOUR STROKE → FOURSTROKE
+    .replace(/FOUR\s*STROKE/g, 'FOURSTROKE')
+    .replace(/FOUR-STROKE/g, 'FOURSTROKE')
+    // Standardize PRO XS → PROXS
+    .replace(/PRO\s*XS/g, 'PROXS')
+    // Clean up spaces and punctuation
+    .replace(/[^\w\s-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+  
+  return text;
+}
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
@@ -29,8 +54,6 @@ function cleanText(s?: string | null): string {
     .replace(/\s+/g, ' ')
     .trim();
 }
-
-import { buildModelKey } from '../shared/model-key-utils.ts';
 
 // Parse model attributes from code/description
 function parseModelFromText(code: string, description: string = '') {
