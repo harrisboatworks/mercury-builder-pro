@@ -77,6 +77,39 @@ function extractDetailUrls(listHtml: string): string[] {
   return [...urls];
 }
 
+// Quick discovery for fast URL probing
+async function quickDiscover(fetchPage: (u: string) => Promise<string>, opts?: {
+  maxPages?: number;        // default 1
+  includeAlts?: boolean;    // default false
+  doProbe?: boolean;        // default true
+}) {
+  const BASE = "https://www.harrisboatworks.ca/search/inventory/brand/Mercury";
+  const maxPages = Math.max(1, opts?.maxPages ?? 1);
+  const includeAlts = !!opts?.includeAlts;     // default off
+  const doProbe = opts?.doProbe !== false;     // default on
+  const all = new Set<string>();
+
+  // page 1..maxPages only
+  for (let p = 1; p <= maxPages; p++) {
+    const url = p === 1 ? BASE : `${BASE}?page=${p}`;
+    const html = await fetchPage(url);
+    extractDetailUrls(html).forEach(u => all.add(u));
+  }
+
+  if (doProbe) {
+    const probeHtml = await fetchPage(`${BASE}?limit=200`);
+    extractDetailUrls(probeHtml).forEach(u => all.add(u));
+  }
+
+  if (includeAlts) {
+    const ALT = "https://www.harrisboatworks.ca/search/inventory/availability/In%20Stock/brand/Mercury";
+    const html = await fetchPage(ALT);
+    extractDetailUrls(html).forEach(u => all.add(u));
+  }
+
+  return [...all];
+}
+
 // Collect all detail URLs from all pages
 async function collectAllDetailUrls(fetchPage: (u: string) => Promise<string>) {
   const BASE = "https://www.harrisboatworks.ca/search/inventory/brand/Mercury";
@@ -381,18 +414,11 @@ serve(async (req) => {
             'Authorization': `Bearer ${apiKey}`,
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ 
-            url, 
-            formats: ['html'], 
-            waitFor: 2000, 
-            timeout: 30000,
-            // Add browser headers to avoid bot detection
-            headers: {
-              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
-              'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-              'Accept-Language': 'en-CA,en;q=0.9',
-              'Referer': 'https://www.harrisboatworks.ca/search/inventory/brand/Mercury'
-            }
+          body: JSON.stringify({
+            url,
+            formats: ['html'],
+            waitFor: mode === 'discovery' ? 500 : 1500,  // faster in discovery
+            timeout: mode === 'discovery' ? 10000 : 30000
           })
         });
         
@@ -405,6 +431,28 @@ serve(async (req) => {
       }
     };
 
+    // EARLY RETURN: lightweight discovery (no alts, 1 page + probe)
+    if (mode === "discovery") {
+      const urls = await quickDiscover(fetchPage, {
+        maxPages: Math.min(1, Number(body.max_pages ?? 1) || 1),
+        includeAlts: !!body.include_alts, // default false
+        doProbe: body.do_probe !== false  // default true
+      });
+      return new Response(JSON.stringify({
+        success: true,
+        mode,
+        urls_discovered: urls.length,
+        samples: urls.slice(0, 8)
+      }), { 
+        status: 200, 
+        headers: { 
+          'Content-Type': 'application/json', 
+          ...corsHeaders 
+        }
+      });
+    }
+
+    // FULL MODE continues below
     // Step 1: Collect all detail URLs
     console.log('📄 Step 1: Collecting detail URLs...');
     const urls = await collectAllDetailUrls(fetchPage);
@@ -412,25 +460,6 @@ serve(async (req) => {
 
     if (urls.length === 0) {
       throw new Error('No detail URLs found - check pagination detection');
-    }
-
-    // Discovery mode: return quickly with URL count and samples
-    if (mode === "discovery") {
-      return new Response(
-        JSON.stringify({ 
-          success: true, 
-          mode, 
-          urls_discovered: urls.length, 
-          samples: urls.slice(0, 5) 
-        }),
-        { 
-          status: 200, 
-          headers: { 
-            'Content-Type': 'application/json', 
-            ...corsHeaders 
-          } 
-        }
-      );
     }
 
     // Step 2: Process detail pages in batches (full mode only)
