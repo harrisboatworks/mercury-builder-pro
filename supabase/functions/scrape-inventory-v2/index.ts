@@ -188,6 +188,17 @@ function brochureBaseFor(codeAttrs: any) {
   return family;
 }
 
+// Normalize model key for consistent lookup
+// Example: "2025 FourStroke 25HP EFI ELHPT" → "FOURSTROKE-25HP-EFI-ELHPT"
+function normalizeModelKey(modelText: string): string {
+  return modelText
+    .toUpperCase()
+    .replace(/\b\d{4}\b/g, '') // remove year
+    .replace(/\s+/g, '-')      // spaces to dashes
+    .replace(/-+/g, '-')       // collapse multiple dashes
+    .replace(/^-|-$/g, '');    // trim leading/trailing dashes
+}
+
 async function seedBrochureCatalog(supabase: any) {
   const rows = await fetchPriceList(); // {model_number, description, price}
   if (!rows.length) throw new Error('No price list rows parsed');
@@ -205,11 +216,14 @@ async function seedBrochureCatalog(supabase: any) {
       attrs.control || ''
     ].filter(Boolean).join(' ');
 
+    const modelKey = normalizeModelKey(modelDisplay || r.model_number);
+
     return {
       make: 'Mercury',
       family,
       model: modelDisplay || (r.description || r.model_number),
       model_code: r.model_number,
+      model_key: modelKey,
       horsepower: attrs.hp,
       fuel_type: attrs.fuel || '',
       motor_type: family,
@@ -219,6 +233,7 @@ async function seedBrochureCatalog(supabase: any) {
       dealer_price: r.price,
       msrp,
       msrp_source: 'derived:+10%',
+      price_source: 'pricelist',
       is_brochure: true,
       in_stock: false,
       availability: 'Brochure',
@@ -1278,6 +1293,48 @@ serve(async (req) => {
       return new Response(JSON.stringify({ success: true, ...res }), {
         status: 200, headers: { 'Content-Type':'application/json', ...corsHeaders }
       });
+    }
+
+    // Handle admin sources actions
+    if (body?.action === 'ingest_pricelist') {
+      try {
+        const supabase = await getServiceClient();
+        const res = await seedBrochureCatalog(supabase);
+        return new Response(JSON.stringify({ 
+          success: true, 
+          rows_parsed: res.seeded,
+          rows_updated: 0,
+          rows_created: res.seeded
+        }), {
+          status: 200, 
+          headers: { 'Content-Type': 'application/json', ...corsHeaders }
+        });
+      } catch (error) {
+        console.error('Price list ingestion error:', error);
+        return new Response(JSON.stringify({ error: error.message }), {
+          status: 500,
+          headers: { 'Content-Type': 'application/json', ...corsHeaders }
+        });
+      }
+    }
+
+    if (body?.action === 'link_brochure_pdf') {
+      try {
+        // For now, return mock response
+        return new Response(JSON.stringify({ 
+          success: true, 
+          models_matched: 0
+        }), {
+          status: 200, 
+          headers: { 'Content-Type': 'application/json', ...corsHeaders }
+        });
+      } catch (error) {
+        console.error('Brochure linking error:', error);
+        return new Response(JSON.stringify({ error: error.message }), {
+          status: 500,
+          headers: { 'Content-Type': 'application/json', ...corsHeaders }
+        });
+      }
     }
 
     // Handle brochure seeding mode
