@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { ExternalLink, Play, FileText, Download } from 'lucide-react';
+import { ExternalLink, Play, FileText, Download, Upload } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 
@@ -198,35 +198,21 @@ export default function AdminBrochureTest() {
 
   const exportBrochureCsv = async () => {
     try {
-      const { data } = await supabase
-        .from('motor_models')
-        .select('model, model_key, family, horsepower, fuel_type, model_code, dealer_price, msrp')
-        .eq('is_brochure', true)
-        .order('family', { ascending: true })
-        .order('horsepower', { ascending: true });
+      setIsRunning(true);
+      
+      // Call the export-brochure-csv edge function
+      const { data, error } = await supabase.functions.invoke('export-brochure-csv');
 
-      if (!data || data.length === 0) {
-        toast({
-          title: "No Data",
-          description: "No brochure models found to export",
-          variant: "destructive"
-        });
-        return;
+      if (error) {
+        throw new Error(error.message);
       }
 
-      // Create CSV content
-      const headers = ['model', 'model_key', 'family', 'horsepower', 'fuel_type', 'model_code', 'dealer_price', 'msrp'];
-      const csvContent = [
-        headers.join(','),
-        ...data.map(row => headers.map(header => `"${row[header as keyof typeof row] || ''}"`).join(','))
-      ].join('\n');
-
-      // Download the CSV
-      const blob = new Blob([csvContent], { type: 'text/csv' });
+      // Create and download the CSV file
+      const blob = new Blob([data], { type: 'text/csv' });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `brochure-models-${new Date().toISOString().split('T')[0]}.csv`;
+      a.download = `brochure-catalog-${new Date().toISOString().split('T')[0]}.csv`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -234,15 +220,58 @@ export default function AdminBrochureTest() {
 
       toast({
         title: "Export Complete",
-        description: `Exported ${data.length} brochure models to CSV`
+        description: "Brochure catalog exported successfully"
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Export error:', error);
       toast({
         title: "Export Failed",
-        description: "Failed to export brochure models",
+        description: error.message,
         variant: "destructive"
       });
+    } finally {
+      setIsRunning(false);
+    }
+  };
+
+  const handleCsvImport = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    try {
+      setIsRunning(true);
+      
+      // Read the CSV file
+      const csvContent = await file.text();
+      
+      // Call the bulk-upsert-brochure edge function
+      const { data, error } = await supabase.functions.invoke('bulk-upsert-brochure', {
+        body: { csv: csvContent }
+      });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      toast({
+        title: "Import Complete",
+        description: `Parsed ${data.rows_parsed} rows → Created ${data.rows_created}, Updated ${data.rows_updated}, Skipped ${data.rows_skipped}`,
+        variant: data.rows_created > 0 || data.rows_updated > 0 ? "default" : "destructive"
+      });
+
+      // Clear the file input and refresh summary
+      event.target.value = '';
+      await loadBrochureSummary();
+
+    } catch (error: any) {
+      console.error('Import error:', error);
+      toast({
+        title: "Import Failed",
+        description: error.message,
+        variant: "destructive"
+      });
+    } finally {
+      setIsRunning(false);
     }
   };
 
