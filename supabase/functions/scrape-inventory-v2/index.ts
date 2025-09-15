@@ -545,9 +545,13 @@ serve(async (req) => {
 
     const response = {
       success: true,
-      message: `CORRECT v2 - Found ${summary.motors_found} Mercury motors using ${source.toUpperCase()} source with DOMParser`,
-      timestamp: new Date().toISOString(),
-      summary
+      data: {
+        motors_found: summary.motors_found,
+        motors_saved: summary.motors_inserted,
+        motors_failed: summary.errors_count,
+        errors: summary.errors_count > 0 ? ['Check function logs for detailed error information'] : [],
+        summary: summary
+      }
     };
 
     console.log('✅ CORRECT v2 - Scraping completed:', JSON.stringify(summary, null, 2));
@@ -561,20 +565,11 @@ serve(async (req) => {
     
     const errorResponse = {
       success: false,
-      error: error.message || 'Unknown error',
-      timestamp: new Date().toISOString(),
-      summary: {
-        source: 'error',
+      data: {
         motors_found: 0,
-        motors_hydrated: 0,
-        motors_inserted: 0,
-        brochure_models_found: 0,
-        in_stock_models_found: 0,
-        pages_scraped: 0,
-        duration_seconds: '0.00',
-        errors_count: 1,
-        validation_passed: false,
-        timestamp: new Date().toISOString()
+        motors_saved: 0,
+        motors_failed: 1,
+        errors: [error.message || 'Unknown error']
       }
     };
     
