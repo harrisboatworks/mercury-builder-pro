@@ -7,22 +7,66 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
-// Clean HTML tags from motor names
+// Clean motor name function to strip HTML tags and normalize text
 function cleanMotorName(rawName: string): string {
   if (!rawName) return '';
   
   return rawName
     .replace(/<[^>]*>/g, '') // Remove all HTML tags
     .replace(/&lt;|&gt;/g, '') // Remove escaped brackets
-    .replace(/&amp;/g, '&') // Replace encoded ampersands
-    .replace(/&nbsp;/g, ' ') // Replace non-breaking spaces
+    .replace(/&[^;]+;/g, '') // Remove HTML entities
     .replace(/\s+/g, ' ') // Normalize whitespace
     .trim();
 }
 
+// Parse motor details from cleaned title
+function parseMotorDetails(title: string) {
+  const clean = cleanMotorName(title);
+  console.log(`🔍 Parsing title: "${title}" -> "${clean}"`);
+  
+  // Pattern: Year Category Horsepower FuelType ModelCode
+  // Examples: "2025 FourStroke 25HP EFI EH", "2024 Pro XS 225HP XL", "2025 Verado 350HP"
+  const pattern = /(\d{4})\s+(FourStroke|Pro\s*XS|SeaPro|Verado)\s*®?\s*(\d+\.?\d*)\s*HP\s*(EFI|TM)?\s*([A-Z]+[A-Z0-9]*)?/i;
+  const match = clean.match(pattern);
+  
+  if (match) {
+    console.log(`✅ Parsed: Year=${match[1]}, Category=${match[2]}, HP=${match[3]}, FuelType=${match[4] || ''}, Code=${match[5] || ''}`);
+    return {
+      year: parseInt(match[1]) || 2025,
+      category: match[2]?.replace(/\s/g, '') || 'FourStroke',
+      horsepower: parseFloat(match[3]) || 0,
+      fuelType: match[4] || '',
+      modelCode: match[5] || '',
+      fullTitle: clean,
+      isValid: true
+    };
+  }
+  
+  // Fallback for partial matches - look for HP and year separately
+  const hpMatch = clean.match(/(\d+\.?\d*)\s*HP/i);
+  const yearMatch = clean.match(/(20(?:24|25))/);
+  const categoryMatch = clean.match(/(FourStroke|Pro\s*XS|SeaPro|Verado)/i);
+  
+  if (hpMatch) {
+    console.log(`⚠️ Partial match: HP=${hpMatch[1]}, Year=${yearMatch?.[1] || '2025'}, Category=${categoryMatch?.[1] || 'FourStroke'}`);
+    return {
+      year: parseInt(yearMatch?.[1] || '2025'),
+      category: categoryMatch?.[1]?.replace(/\s/g, '') || 'FourStroke',
+      horsepower: parseFloat(hpMatch[1]),
+      fuelType: '',
+      modelCode: '',
+      fullTitle: clean,
+      isValid: false
+    };
+  }
+  
+  console.log(`❌ No match found for: "${clean}"`);
+  return null;
+}
+
 // Parse motors from HTML function
 async function parseMotorsFromHTML(html: string, markdown: string = '') {
-  console.log('🔍 Starting balanced motor parsing (markdown-focused)...')
+  console.log('🔍 Starting enhanced motor parsing with clean text extraction...')
   
   const motors = []
   
@@ -33,143 +77,102 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
     console.log(`📊 Result count found: ${resultMatch[1]} - ${resultMatch[2]} of ${resultMatch[3]}`)
   }
   
-  // Focus on markdown for cleaner parsing
-  console.log('📝 Markdown length:', markdown.length)
+  // Process each line of markdown for motor information
+  const lines = markdown.split('\n').filter(line => line.trim().length > 0);
+  console.log('📄 Processing markdown lines:', lines.length);
   
-  // Log sample markdown content to understand structure
-  const lines = markdown.split('\n')
-  const firstLines = lines.slice(0, 20).filter(line => line.trim().length > 0)
-  console.log('First 20 non-empty markdown lines:')
-  firstLines.forEach((line, i) => {
-    console.log(`  ${i + 1}: "${line.trim()}"`)
-  })
-  
-  // Look for lines with year, HP, and Mercury (more flexible)
-  const motorLines = lines.filter(line => {
-    const cleanLine = line.trim().toLowerCase()
-    return cleanLine.includes('2024') || cleanLine.includes('2025') && 
-           cleanLine.includes('hp') && 
-           cleanLine.includes('mercury')
-  })
-  
-  console.log('Lines containing year + HP + Mercury:', motorLines.length)
-  
-  // Log sample motor lines
-  if (motorLines.length > 0) {
-    console.log('Sample motor lines:')
-    motorLines.slice(0, 10).forEach((line, i) => {
-      console.log(`  ${i + 1}: "${line.trim()}"`)
-    })
-  }
-  
-  // Parse motor lines with flexible pattern
-  for (const line of motorLines) {
-    const cleanLine = line.trim()
+  // Log first 20 non-empty lines for debugging
+  console.log('Sample markdown lines:');
+  lines.slice(0, 20).forEach((line, i) => {
+    console.log(`  ${i + 1}: "${line}"`);
+  });
+
+  // Look for motor patterns in markdown using enhanced parsing
+  for (const line of lines) {
+    // Skip lines that don't contain basic motor indicators
+    if (!line.includes('HP') || !line.match(/(20(?:24|25)|FourStroke|Pro.*XS|SeaPro|Verado)/i)) {
+      continue;
+    }
     
-    // Look for year and HP in the line (flexible matching)
-    const yearMatch = cleanLine.match(/(20(24|25))/i)
-    const hpMatch = cleanLine.match(/(\d+)HP/i)
-    
-    if (yearMatch && hpMatch) {
-      const year = parseInt(yearMatch[1])
-      const horsepower = parseInt(hpMatch[1])
-      
-      // Validate horsepower range (reasonable range for outboard motors)
-      if (horsepower < 15 || horsepower > 400) {
-        continue
-      }
-      
-      // Extract model name - everything between year and HP, or after year
-      let modelName = ''
-      
-      // Try to extract model between year and HP
-      const betweenMatch = cleanLine.match(new RegExp(`${year}\\s+(.*?)\\s+${horsepower}HP`, 'i'))
-      if (betweenMatch) {
-        modelName = betweenMatch[1].trim()
+    // Try to parse this line as a motor listing
+    const parsed = parseMotorDetails(line);
+    if (parsed && parsed.horsepower >= 15 && parsed.horsepower <= 400) {
+      // Format the model name properly
+      let modelName = '';
+      if (parsed.category && parsed.horsepower) {
+        modelName = `${parsed.category} ${parsed.horsepower}HP`;
+        if (parsed.fuelType) modelName += ` ${parsed.fuelType}`;
+        if (parsed.modelCode) modelName += ` ${parsed.modelCode}`;
       } else {
-        // Fallback: extract everything after year before HP
-        const afterYearMatch = cleanLine.match(new RegExp(`${year}\\s+(.*?)(?=\\s*${horsepower}HP)`, 'i'))
-        if (afterYearMatch) {
-          modelName = afterYearMatch[1].trim()
-        }
-      }
-      
-      // Clean up model name and remove HTML tags
-      modelName = cleanMotorName(modelName)
-        .replace(/®/g, '')
-        .replace(/™/g, '')
-        .replace(/^#+\s*/, '') // Remove markdown headers
-        .replace(/\s+/g, ' ')
-        .trim()
-      
-      // Default model name if extraction failed
-      if (!modelName || modelName.length < 2) {
-        modelName = `${horsepower}HP FourStroke`
-      }
-      
-      // Determine motor type from model name
-      let motorType = 'FourStroke'
-      const lowerModel = modelName.toLowerCase()
-      if (lowerModel.includes('verado')) {
-        motorType = 'Verado'
-      } else if (lowerModel.includes('pro xs')) {
-        motorType = 'Pro XS'
-      } else if (lowerModel.includes('seapro')) {
-        motorType = 'SeaPro'
+        modelName = parsed.fullTitle.replace(/mercury/gi, '').trim();
       }
       
       const motor = {
         make: 'Mercury',
         model: modelName,
-        horsepower: horsepower,
-        motor_type: motorType,
+        horsepower: parsed.horsepower,
+        motor_type: parsed.category,
         base_price: null,
-        year: year
-      }
+        year: parsed.year,
+        model_code: parsed.modelCode,
+        fuel_type: parsed.fuelType
+      };
       
-      console.log('🎯 Found motor:', `${motor.year} ${motor.make} ${motor.model} ${motor.horsepower}HP`)
-      motors.push(motor)
+      console.log('🎯 Found motor:', `${motor.year} ${motor.make} ${motor.model} ${motor.horsepower}HP`);
+      motors.push(motor);
     }
   }
   
-  // If still no results from markdown, try HTML with a simple pattern
+  // If still no results from markdown, try HTML with enhanced parsing
   if (motors.length === 0) {
-    console.log('⚠️ No motors found in markdown, trying HTML fallback...')
+    console.log('⚠️ No motors found in markdown, trying HTML fallback...');
     
-    // Simple HTML pattern - look for year + text + HP + text + Mercury
-    const htmlPattern = /(20(24|25))[^<]*?(\d+)HP[^<]*?Mercury/gi
-    const htmlMatches = Array.from(html.matchAll(htmlPattern))
+    // Extract text content from HTML first
+    const tempDiv = html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+                       .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
+    const htmlLines = tempDiv.split(/[<>]/).filter(line => 
+      line.trim().length > 0 && 
+      line.includes('HP') && 
+      line.match(/(20(?:24|25)|FourStroke|Pro.*XS|SeaPro|Verado)/i)
+    );
     
-    console.log('HTML fallback matches found:', htmlMatches.length)
+    console.log('HTML text lines found:', htmlLines.length);
     
-    // Sample HTML matches
-    if (htmlMatches.length > 0) {
-      console.log('Sample HTML matches:')
-      htmlMatches.slice(0, 5).forEach((match, i) => {
-        console.log(`  ${i + 1}: "${match[0]}"`)
-      })
+    // Sample HTML lines
+    if (htmlLines.length > 0) {
+      console.log('Sample HTML lines:');
+      htmlLines.slice(0, 5).forEach((line, i) => {
+        console.log(`  ${i + 1}: "${line}"`);
+      });
     }
     
-    for (const match of htmlMatches) {
-      const year = parseInt(match[1])
-      const horsepower = parseInt(match[3])
-      
-      // Validate horsepower range
-      if (horsepower < 15 || horsepower > 400) {
-        continue
+    for (const line of htmlLines) {
+      const parsed = parseMotorDetails(line);
+      if (parsed && parsed.horsepower >= 15 && parsed.horsepower <= 400) {
+        // Format the model name properly
+        let modelName = '';
+        if (parsed.category && parsed.horsepower) {
+          modelName = `${parsed.category} ${parsed.horsepower}HP`;
+          if (parsed.fuelType) modelName += ` ${parsed.fuelType}`;
+          if (parsed.modelCode) modelName += ` ${parsed.modelCode}`;
+        } else {
+          modelName = parsed.fullTitle.replace(/mercury/gi, '').trim();
+        }
+        
+        const motor = {
+          make: 'Mercury',
+          model: modelName,
+          horsepower: parsed.horsepower,
+          motor_type: parsed.category,
+          base_price: null,
+          year: parsed.year,
+          model_code: parsed.modelCode,
+          fuel_type: parsed.fuelType
+        };
+        
+        console.log('🎯 Found motor (HTML):', `${motor.year} ${motor.make} ${motor.model} ${motor.horsepower}HP`);
+        motors.push(motor);
       }
-      
-      const motor = {
-        make: 'Mercury',
-        model: cleanMotorName(`${horsepower}HP FourStroke`),
-        horsepower: horsepower,
-        motor_type: 'FourStroke',
-        base_price: null,
-        year: year
-      }
-      
-      console.log('🎯 Found motor (HTML):', `${motor.year} ${motor.make} ${motor.model} ${motor.horsepower}HP`)
-      motors.push(motor)
     }
   }
   
@@ -185,7 +188,7 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
     debugInfo: {
       html_length: html.length,
       markdown_length: markdown.length,
-      motor_lines_found: motorLines?.length || 0,
+      motor_lines_found: motors.length,
       total_matches: motors.length,
       unique_motors: uniqueMotors.length,
       result_count: resultMatch ? resultMatch[3] : null
@@ -203,45 +206,69 @@ async function saveMotorsToDatabase(motors: any[]) {
     Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
   )
   
+  // Check for existing motors and update or insert
+  const { data: existingMotors, error: fetchError } = await supabase
+    .from('motor_models')
+    .select('id, make, model, horsepower')
+    .eq('make', 'Mercury')
+
+  if (fetchError) {
+    console.error('Error fetching existing motors:', fetchError)
+    return 0
+  }
+
   for (const motor of motors) {
     try {
-      // Check if motor already exists
-      const { data: existing } = await supabase
-        .from('motor_models')
-        .select('id')
-        .eq('make', motor.make)
-        .eq('model', motor.model)
-        .eq('horsepower', motor.horsepower)
-        .maybeSingle()
+      // Clean the model name before saving
+      const cleanModel = cleanMotorName(motor.model);
       
+      // Check if motor already exists
+      const existing = existingMotors?.find(existing => 
+        existing.make === motor.make &&
+        existing.model === cleanModel &&
+        Math.abs(existing.horsepower - motor.horsepower) < 0.1
+      )
+
       if (existing) {
-        // Update existing motor
+        // Update existing motor with clean data
         const { error: updateError } = await supabase
           .from('motor_models')
           .update({
-            base_price: motor.base_price,
-            last_scraped: new Date().toISOString(),
-            updated_at: new Date().toISOString()
+            model: cleanModel,
+            motor_type: motor.motor_type,
+            year: motor.year,
+            updated_at: new Date().toISOString(),
+            last_scraped: new Date().toISOString()
           })
           .eq('id', existing.id)
-        
+
         if (updateError) {
-          console.error('❌ Error updating motor:', updateError)
+          console.error('Error updating motor:', updateError)
         } else {
-          console.log('🔄 Updated existing motor:', motor.model)
           savedCount++
+          console.log(`✅ Updated: ${motor.make} ${cleanModel} ${motor.horsepower}HP`)
         }
       } else {
-        // Insert new motor
+        // Insert new motor with clean data
         const { error: insertError } = await supabase
           .from('motor_models')
-          .insert(motor)
-        
+          .insert({
+            make: motor.make,
+            model: cleanModel,
+            horsepower: motor.horsepower,
+            motor_type: motor.motor_type,
+            base_price: motor.base_price,
+            year: motor.year,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
+            last_scraped: new Date().toISOString()
+          })
+
         if (insertError) {
-          console.error('❌ Error inserting motor:', insertError)
+          console.error('Error inserting motor:', insertError)
         } else {
-          console.log('✅ Inserted new motor:', motor.model)
           savedCount++
+          console.log(`✅ Inserted: ${motor.make} ${cleanModel} ${motor.horsepower}HP`)
         }
       }
     } catch (error) {
@@ -277,7 +304,7 @@ serve(async (req) => {
       throw new Error('FIRECRAWL_API_KEY is required')
     }
 
-    console.log('🚀 Starting multi-page inventory scrape...')
+    console.log('🚀 Starting multi-page inventory scrape with enhanced parsing...')
     console.log('📄 Pages to scrape:', pages_to_scrape)
 
     // Base URL for inventory search
@@ -410,17 +437,20 @@ serve(async (req) => {
       motors_found: result.motors_found || 0
     }))
 
-    // Get sample motors (first 3) for verification
+    // Get sample motors (first 3) for verification with clean data
     const sampleMotors = uniqueMotors.slice(0, 3).map(motor => ({
       make: motor.make,
-      model: motor.model,
+      model: cleanMotorName(motor.model),
       horsepower: motor.horsepower,
-      base_price: motor.base_price
+      motor_type: motor.motor_type,
+      year: motor.year,
+      model_code: motor.model_code || '',
+      fuel_type: motor.fuel_type || ''
     }))
 
     const result = {
       success: true,
-      message: `Multi-page scrape completed! ${successfulPages}/${pages_to_scrape} pages successful. Found ${totalMotorsFound} total motors (${totalUniqueMotors} unique), saved ${savedMotors} to database`,
+      message: `Enhanced multi-page scrape completed! ${successfulPages}/${pages_to_scrape} pages successful. Found ${totalMotorsFound} total motors (${totalUniqueMotors} unique), saved ${savedMotors} to database with clean formatting`,
       total_pages_scraped: pages_to_scrape,
       successful_pages: successfulPages,
       failed_pages: pages_to_scrape - successfulPages,
@@ -431,7 +461,7 @@ serve(async (req) => {
       page_results: pageResults,
       errors: errors,
       base_url: baseUrl,
-      api_version: 'v1',
+      api_version: 'v2-enhanced',
       timestamp: new Date().toISOString()
     }
     
