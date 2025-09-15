@@ -31,10 +31,6 @@ type Motor = {
   source_url: string;
 }
 
-// Constants
-const BASE = 'https://www.harrisboatworks.ca/search/inventory/brand/Mercury';
-const PAGE_PARAM = (n: number) => (n === 1 ? BASE : `${BASE}?page=${n}`);
-
 // Clean text function
 function cleanText(s?: string | null): string {
   if (!s) return '';
@@ -46,66 +42,57 @@ function cleanText(s?: string | null): string {
     .trim();
 }
 
-// Get total pages by probing page 1
-async function getTotalPages(fetchPage: (url: string) => Promise<string>): Promise<number> {
-  try {
-    const html = await fetchPage(PAGE_PARAM(1));
-    // Try multiple patterns
-    const m = html.match(/(\d+)\s*-\s*\d+\s*of\s*(\d+)\s*results/i) || 
-              html.match(/of\s*(\d+)\s*results/i) ||
-              html.match(/showing.*of\s*(\d+)/i);
-    const total = m ? parseInt(m[m.length-1], 10) : 145;
-    console.log(`📊 Detected ${total} total motors`);
-    return Math.max(1, Math.ceil(total / 30));
-  } catch (error) {
-    console.error('Error detecting total pages:', error);
-    return 6; // fallback to 6 pages
-  }
-}
-
 // Extract detail URLs from listing page HTML
 function extractDetailUrls(listHtml: string): string[] {
   const urls = new Set<string>();
-  const rx = /href="(\/inventory\/[^"#?]+)"/gi;
-  let match;
-  while ((match = rx.exec(listHtml))) {
-    urls.add(`https://www.harrisboatworks.ca${match[1]}`);
+
+  // 1) Anchor tags like: <a href="/inventory/...">
+  const hrefRx = /href=["'](\/inventory\/[^"'?#]+)["']/gi;
+  for (let m; (m = hrefRx.exec(listHtml)); ) {
+    urls.add(`https://www.harrisboatworks.ca${m[1]}`);
   }
+
+  // 2) JSON blobs like: "itemUrl":"//www.harrisboatworks.ca/inventory/..."
+  const jsonUrlRx = /"itemUrl"\s*:\s*"((?:https?:)?\/\/www\.harrisboatworks\.ca\/inventory\/[^"']+)"/gi;
+  for (let m; (m = jsonUrlRx.exec(listHtml)); ) {
+    const u = m[1].startsWith('//') ? `https:${m[1]}` : m[1];
+    urls.add(u);
+  }
+
+  // 3) Protocol-relative fallbacks: "//www.harrisboatworks.ca/inventory/..."
+  const protoRelRx = /["'](\/\/www\.harrisboatworks\.ca\/inventory\/[^"']+)["']/gi;
+  for (let m; (m = protoRelRx.exec(listHtml)); ) {
+    urls.add(`https:${m[1]}`);
+  }
+
   return [...urls];
 }
 
 // Collect all detail URLs from all pages
-async function collectAllDetailUrls(fetchPage: (url: string) => Promise<string>) {
-  const totalPages = await getTotalPages(fetchPage);
+async function collectAllDetailUrls(fetchPage: (u: string) => Promise<string>) {
+  const BASE = "https://www.harrisboatworks.ca/search/inventory/brand/Mercury";
   const all = new Set<string>();
-  
-  console.log(`📄 Collecting URLs from ${totalPages} pages...`);
-  
-  for (let p = 1; p <= totalPages; p++) {
-    try {
-      const url = PAGE_PARAM(p);
-      const html = await fetchPage(url);
-      const pageUrls = extractDetailUrls(html);
-      pageUrls.forEach(u => all.add(u));
-      console.log(`Page ${p}/${totalPages}: found ${pageUrls.length} detail URLs (total ${all.size})`);
-    } catch (error) {
-      console.error(`Error on page ${p}:`, error);
-    }
+
+  // crawl first 5 pages
+  for (let p = 1; p <= 5; p++) {
+    const url = p === 1 ? BASE : `${BASE}?page=${p}`;
+    const html = await fetchPage(url);
+    const pageUrls = extractDetailUrls(html);
+    pageUrls.forEach(u => all.add(u));
+    console.log(`Page ${p}: found ${pageUrls.length} detail URLs, running total ${all.size}`);
   }
-  
-  // Safety probe: try a "limit=200" page if we're still under 120
-  if (all.size < 120) {
-    try {
-      console.log('🔍 Running safety probe with limit=200...');
-      const html = await fetchPage(`${BASE}?limit=200`);
-      extractDetailUrls(html).forEach(u => all.add(u));
-      console.log(`After limit=200 probe: ${all.size} detail URLs`);
-    } catch (error) {
-      console.error('Safety probe failed:', error);
-    }
+
+  // high-limit probe (to grab everything in one shot if supported)
+  const probeHtml = await fetchPage(`${BASE}?limit=200`);
+  const probeUrls = extractDetailUrls(probeHtml);
+  probeUrls.forEach(u => all.add(u));
+  console.log(`Limit=200 probe: found ${probeUrls.length} additional URLs, final total ${all.size}`);
+
+  const urls = [...all];
+  if (urls.length === 0) {
+    throw new Error("No detail URLs found – check selectors/regex");
   }
-  
-  return [...all];
+  return urls;
 }
 
 // Parse price information from HTML
