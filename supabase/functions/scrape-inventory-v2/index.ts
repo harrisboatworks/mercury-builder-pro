@@ -301,17 +301,11 @@ async function seedBrochureCatalog(supabase: any) {
 
     return {
       make: 'Mercury',
-      family,
       model: modelDisplay || (r.description || r.model_number),
-      model_code: r.model_number,
       model_key: modelKey,
-      horsepower: attrs.hp,
-      fuel_type: attrs.fuel || '',
       motor_type: family,
-      shaft: attrs.shaft,
-      control: attrs.control,
       sale_price: r.price,
-      dealer_price: r.price,
+      dealer_price: r.price, 
       msrp,
       msrp_source: 'derived:+10%',
       price_source: 'pricelist',
@@ -322,7 +316,14 @@ async function seedBrochureCatalog(supabase: any) {
       images: [],
       spec_json: { ct: !!attrs.ct, jet: !!attrs.jet },
       last_scraped: new Date().toISOString(),
-      inventory_source: 'brochure+pricelist'
+      inventory_source: 'brochure+pricelist',
+      // Optional fields - only include if present
+      ...(family && { family }),
+      ...(r.model_number && { model_code: r.model_number }),
+      ...(attrs.hp && { horsepower: attrs.hp }),
+      ...(attrs.fuel && { fuel_type: attrs.fuel }),
+      ...(attrs.shaft && { shaft: attrs.shaft }),
+      ...(attrs.control && { control: attrs.control })
     };
   });
 
@@ -1330,13 +1331,9 @@ serve(async (req) => {
 
         return {
           make: "Mercury",
-          model_number: model_number || null,
           model,
           year,
           motor_type: series,
-          horsepower,
-          fuel_type: "",
-          model_code: model_code || "",
           sale_price: price,
           base_price: price,
           msrp,
@@ -1348,6 +1345,12 @@ serve(async (req) => {
           is_brochure: true,
           in_stock: false,
           inventory_source: "brochure_seed",
+          // Optional fields - only include if present
+          ...(model_number && { model_number }),
+          ...(horsepower && { horsepower }),
+          ...(model_code && { model_code }),
+          ...(series && { fuel_type: "" }) // Empty fuel_type when series is present
+        };
           last_scraped: new Date().toISOString(),
         };
       }).filter(r => r.sale_price > 0 && (r.model_number || r.model));
@@ -1741,18 +1744,22 @@ serve(async (req) => {
             model_key: modelKey,
             year: m.year || 2025,
             motor_type: m.motor_type || 'FourStroke',
-            horsepower: m.horsepower || 0,
-            fuel_type: m.fuel_type || '',
-            model_code: m.model_code || '',
             sale_price: m.sale_price,
             base_price: m.msrp || m.sale_price,
-            stock_number: m.stock_number,
             availability: m.availability || 'Available',
-            image_url: m.image_url,
-            images: inventoryImages,
             detail_url: m.source_url,
             last_scraped: new Date().toISOString(),
             inventory_source: fromXML ? 'xml_inventory' : 'detail_pages',
+            in_stock: true,
+            is_brochure: false,
+            // Optional fields - only include if present
+            ...(m.horsepower && { horsepower: m.horsepower }),
+            ...(m.fuel_type && { fuel_type: m.fuel_type }),
+            ...(m.model_code && { model_code: m.model_code }),
+            ...(m.stock_number && { stock_number: m.stock_number }),
+            ...(m.image_url && { image_url: m.image_url }),
+            ...(inventoryImages.length > 0 && { images: inventoryImages })
+          };
             in_stock: true,
             is_brochure: false,
             price_source: m.sale_price ? 'xml' : null

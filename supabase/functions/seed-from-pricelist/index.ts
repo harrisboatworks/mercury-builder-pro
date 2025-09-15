@@ -340,16 +340,13 @@ serve(async (req) => {
       
       const msrp = msrpFromDealer(dealer_price, msrp_markup);
       
-      rows.push({
+      // Build the row object for upsert defensively
+      const row: any = {
         make: 'Mercury',
-        family: attrs.family,
         model: r.model_display,
         model_key,
         year: 2025,
-        horsepower: attrs.horsepower,
-        fuel_type: attrs.fuel,
         motor_type: attrs.family,
-        rigging_code: attrs.rigging_code,
         dealer_price,
         msrp,
         msrp_source: `derived:+${Math.round((msrp_markup - 1) * 100)}%`,
@@ -359,7 +356,15 @@ serve(async (req) => {
         availability: 'Brochure',
         last_scraped: new Date().toISOString(),
         inventory_source: 'pricelist'
-      });
+      };
+      
+      // Include optional fields only if present
+      if (attrs.family) row.family = attrs.family;
+      if (attrs.horsepower) row.horsepower = attrs.horsepower;
+      if (attrs.fuel) row.fuel_type = attrs.fuel;
+      if (attrs.rigging_code) row.rigging_code = attrs.rigging_code;
+      
+      rows.push(row);
     }
     
     console.log(`Processed ${rawData.length} raw entries into ${rows.length} valid rows, ${rowErrors.length} errors`);

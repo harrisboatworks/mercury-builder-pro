@@ -470,6 +470,7 @@ export type Database = {
           msrp: number | null
           msrp_source: string | null
           price_source: string | null
+          rigging_code: string | null
           sale_price: number | null
           shaft: string | null
           source_doc_urls: string[] | null
@@ -517,6 +518,7 @@ export type Database = {
           msrp?: number | null
           msrp_source?: string | null
           price_source?: string | null
+          rigging_code?: string | null
           sale_price?: number | null
           shaft?: string | null
           source_doc_urls?: string[] | null
@@ -564,6 +566,7 @@ export type Database = {
           msrp?: number | null
           msrp_source?: string | null
           price_source?: string | null
+          rigging_code?: string | null
           sale_price?: number | null
           shaft?: string | null
           source_doc_urls?: string[] | null
