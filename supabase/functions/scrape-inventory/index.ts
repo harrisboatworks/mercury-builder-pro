@@ -668,22 +668,22 @@ function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
       
       // Check availability text to determine if this is a brochure model
       const availabilityElement = element.querySelector('.availability, .stock-status, .motor-availability, [class*="availability"], [class*="stock"]');
-      const availabilityText = availabilityElement?.textContent?.trim() || '';
+      const initialAvailabilityText = availabilityElement?.textContent?.trim() || '';
       
       // Only process brochure models for HTML scraping (skip in-stock models)
-      if (availabilityText.toLowerCase().includes('in stock')) {
-        console.log(`⏭️ Skipping in-stock model: ${availabilityText}`);
+      if (initialAvailabilityText.toLowerCase().includes('in stock')) {
+        console.log(`⏭️ Skipping in-stock model: ${initialAvailabilityText}`);
         continue;
       }
       
       // If it contains "brochure" or doesn't have availability info, treat as brochure model
-      const isBrochureModel = availabilityText.toLowerCase().includes('brochure') || !availabilityText;
+      const isBrochureModel = initialAvailabilityText.toLowerCase().includes('brochure') || !initialAvailabilityText;
       if (!isBrochureModel) {
-        console.log(`⏭️ Skipping non-brochure model: ${availabilityText}`);
+        console.log(`⏭️ Skipping non-brochure model: ${initialAvailabilityText}`);
         continue;
       }
       
-      console.log(`✅ Processing brochure model with availability: ${availabilityText || 'No availability info'}`);
+      console.log(`✅ Processing brochure model with availability: ${initialAvailabilityText || 'No availability info'}`);
       
       // Extract brochure URL (optional for brochure models)
       const brochureLinks = element.querySelectorAll('a[href*="brochure"], a[href*=".pdf"]');
@@ -694,40 +694,25 @@ function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
       const priceElement = element.querySelector('[itemprop="price"], .display-price-box span');
       if (priceElement) {
         const priceText = priceElement.textContent?.trim() || '';
-        const priceMatch = priceText.match(/\$?([\d,]+\.?\d*)/);
-        basePrice = priceMatch ? parseFloat(priceMatch[1].replace(/,/g, '')) : 0;
-      }
-
-      // Try to get data from hidden JSON datasource
-      const datasourceElement = element.querySelector('.datasource.hidden');
-      let jsonData = null;
-      if (datasourceElement) {
-        try {
-          jsonData = JSON.parse(datasourceElement.textContent?.trim() || '{}');
-          if (jsonData.itemPrice && !basePrice) {
-            basePrice = jsonData.itemPrice;
-          }
-        } catch (e) {
-          console.warn('Failed to parse JSON data:', e);
+        console.log(`💰 Raw price text: "${priceText}"`);
+        
+        // Clean and extract numeric price
+        const numericMatch = priceText.match(/\$?(\d{1,3}(?:,\d{3})*(?:\.\d{2})?)/);
+        if (numericMatch) {
+          basePrice = parseFloat(numericMatch[1].replace(',', ''));
+          console.log(`💰 Parsed price: $${basePrice}`);
         }
       }
       
-      // CRITICAL FIX: Ensure base_price is never 0 (database might reject)
+      // Skip if no price is found for brochure models
       if (basePrice === 0) {
-        // For brochure models, set a placeholder price if no real price found
-        basePrice = 1.00; // Minimum valid price
-        console.log(`⚠️ Setting placeholder price for brochure model: ${title}`);
+        console.log(`⏭️ Skipping motor with no price: ${title}`);
+        continue;
       }
       
-      const imageElement = element.querySelector('img.primaryImage, .search-result-image img, img[alt*="2025"]');
-      const imageUrl = imageElement ? toAbsoluteUrl(imageElement.getAttribute('src') || imageElement.getAttribute('data-srcset') || '', baseUrl) : '';
-      
-      // Extract horsepower from title - look for various formats
-      const hpMatch = title.match(/(\d+\.?\d*)\s*hp/i) || title.match(/(\d+\.?\d*)\s*HP/i) || title.match(/(\d+\.?\d*)HP/);
-      const horsepower = hpMatch ? parseFloat(hpMatch[1]) : 0;
-      
-      if (horsepower === 0) {
-        console.log(`⏭️ Skipping motor with no horsepower: ${title}`);
+      // Skip empty or invalid titles
+      if (!title || title.length < 3) {
+        console.log(`⏭️ Skipping invalid title: "${title}"`);
         continue;
       }
       
@@ -737,7 +722,7 @@ function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
       
       // FIXED: Detect availability using proper DOM traversal instead of :contains()
       let availability = 'Brochure'; // Default for brochure models
-      let statusAvailabilityText = '';
+      let availabilityText = '';
       
       // Look for status in label elements
       const statusLabel = element.querySelector('.label-success, .label-warning, .label-danger, .label');
@@ -750,11 +735,11 @@ function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
         for (let i = 0; i < cells.length - 1; i++) {
           const cellText = cells[i].textContent?.trim().toLowerCase() || '';
           if (cellText.includes('availability')) {
-            statusAvailabilityText = cells[i + 1]?.textContent?.trim().toLowerCase() || '';
+            availabilityText = cells[i + 1]?.textContent?.trim().toLowerCase() || '';
             break;
           }
         }
-        if (statusAvailabilityText) break;
+        if (availabilityText) break;
         
         // Also check for strong tags in cells
         const strongElements = row.querySelectorAll('strong');
@@ -762,16 +747,16 @@ function parseBrochureMotorData(html: string, baseUrl: string): MotorData[] {
           if (strong.textContent?.trim().toLowerCase().includes('availability')) {
             const parentCell = strong.closest('td');
             if (parentCell && parentCell.nextElementSibling) {
-              statusAvailabilityText = parentCell.nextElementSibling.textContent?.trim().toLowerCase() || '';
+              availabilityText = parentCell.nextElementSibling.textContent?.trim().toLowerCase() || '';
               break;
             }
           }
         }
-        if (statusAvailabilityText) break;
+        if (availabilityText) break;
       }
       
       // Combine all status indicators
-      const allStatusText = `${statusText} ${statusAvailabilityText}`.toLowerCase();
+      const allStatusText = `${statusText} ${availabilityText}`.toLowerCase();
       
       console.log(`📊 Status text for ${title}: "${allStatusText}"`);
       
