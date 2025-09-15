@@ -1521,7 +1521,10 @@ export const MotorSelection = ({
                     {/* Model Name - Clamped to 2 lines for consistency */}
                     <div className="motor-model text-xl font-bold text-gray-900 leading-tight line-clamp-2">
                       {(() => {
-                        const title = formatMotorTitle(motor.year, cleanMotorName(motor.model));
+                        // Display in harrisboatworks.ca format: "2025 FourStroke 25HP EFI ELHPT"
+                        // Remove any "Mercury" prefix and use clean title
+                        const cleanTitle = cleanMotorName(motor.model).replace(/^Mercury\s*/i, '');
+                        const title = formatMotorTitle(motor.year, cleanTitle);
                         return title;
                       })()}
                     </div>
@@ -1601,7 +1604,7 @@ export const MotorSelection = ({
 
         {selectedMotor && !showStickyBar && (selectedMotor as any).stockStatus !== 'Sold' && <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
             <Button onClick={() => onStepComplete(selectedMotor)} className="btn-primary px-8 animate-pulse">
-              Continue with {cleanMotorName(selectedMotor.model)}
+              Continue with {cleanMotorName(selectedMotor.model).replace(/^Mercury\s*/i, '')}
               <Zap className="w-5 h-5 ml-2" />
             </Button>
           </div>}
@@ -1617,7 +1620,7 @@ export const MotorSelection = ({
                   </div>
                   <div>
                     <p className="font-bold text-lg">
-                      {cleanMotorName(selectedMotor.model)} - ${selectedMotor.price.toLocaleString()}
+                      {cleanMotorName(selectedMotor.model).replace(/^Mercury\s*/i, '')} - ${selectedMotor.price.toLocaleString()}
                     </p>
                       <div className="flex items-center gap-2 mt-1">
                         {selectedMotor.stockStatus === 'In Stock' && selectedMotor.salePrice != null && selectedMotor.basePrice != null && selectedMotor.salePrice as number < (selectedMotor.basePrice as number) && <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in">

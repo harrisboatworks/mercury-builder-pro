@@ -19,49 +19,113 @@ function cleanMotorName(rawName: string): string {
     .trim();
 }
 
-// Parse motor details from cleaned title
-function parseMotorDetails(title: string) {
-  const clean = cleanMotorName(title);
-  console.log(`🔍 Parsing title: "${title}" -> "${clean}"`);
+// Parse motor title components exactly as they appear on harrisboatworks.ca
+function parseMotorTitle(title: string) {
+  // Remove " - Mercury" suffix and clean HTML
+  const clean = cleanMotorName(title).replace(/\s*-\s*Mercury\s*$/i, '').trim();
+  console.log(`🔍 Parsing harrisboatworks.ca title: "${title}" -> "${clean}"`);
   
-  // Pattern: Year Category Horsepower FuelType ModelCode
-  // Examples: "2025 FourStroke 25HP EFI EH", "2024 Pro XS 225HP XL", "2025 Verado 350HP"
-  const pattern = /(\d{4})\s+(FourStroke|Pro\s*XS|SeaPro|Verado)\s*®?\s*(\d+\.?\d*)\s*HP\s*(EFI|TM)?\s*([A-Z]+[A-Z0-9]*)?/i;
+  // Pattern: Year Category HP FuelType ModelCode
+  // Examples: "2025 FourStroke 25HP EFI ELHPT", "2024 ProXS 225HP XL", "2025 Verado 350HP"
+  const pattern = /(\d{4})\s+(FourStroke|Pro\s*XS|ProXS|SeaPro|Verado|Racing)\s*®?\s*(\d+\.?\d*)\s*HP\s*(EFI|TM)?\s*([A-Z][A-Z0-9]*)?/i;
   const match = clean.match(pattern);
   
   if (match) {
-    console.log(`✅ Parsed: Year=${match[1]}, Category=${match[2]}, HP=${match[3]}, FuelType=${match[4] || ''}, Code=${match[5] || ''}`);
+    const category = match[2]?.replace(/\s/g, '') || 'FourStroke';
+    const horsepower = parseFloat(match[3]) || 0;
+    const fuelType = match[4] || '';
+    const modelCode = match[5] || '';
+    
+    console.log(`✅ Parsed harrisboatworks.ca: Year=${match[1]}, Category=${category}, HP=${horsepower}, FuelType=${fuelType}, Code=${modelCode}`);
+    
     return {
       year: parseInt(match[1]) || 2025,
-      category: match[2]?.replace(/\s/g, '') || 'FourStroke',
-      horsepower: parseFloat(match[3]) || 0,
-      fuelType: match[4] || '',
-      modelCode: match[5] || '',
+      category: category,
+      horsepower: horsepower,
+      fuelType: fuelType,
+      modelCode: modelCode, // CRITICAL: EH, ELHPT, XL, EXLPT, etc.
       fullTitle: clean,
+      displayTitle: `${match[1]} ${category} ${horsepower}HP ${fuelType} ${modelCode}`.replace(/\s+/g, ' ').trim(),
       isValid: true
     };
   }
   
-  // Fallback for partial matches - look for HP and year separately
+  // Enhanced fallback parsing for partial matches
   const hpMatch = clean.match(/(\d+\.?\d*)\s*HP/i);
   const yearMatch = clean.match(/(20(?:24|25))/);
-  const categoryMatch = clean.match(/(FourStroke|Pro\s*XS|SeaPro|Verado)/i);
+  const categoryMatch = clean.match(/(FourStroke|Pro\s*XS|ProXS|SeaPro|Verado|Racing)/i);
+  const fuelMatch = clean.match(/(EFI|TM)/i);
+  const codeMatch = clean.match(/\s([A-Z][A-Z0-9]{1,5})\s*$/i); // Model codes at end
   
   if (hpMatch) {
-    console.log(`⚠️ Partial match: HP=${hpMatch[1]}, Year=${yearMatch?.[1] || '2025'}, Category=${categoryMatch?.[1] || 'FourStroke'}`);
+    const category = categoryMatch?.[1]?.replace(/\s/g, '') || 'FourStroke';
+    const horsepower = parseFloat(hpMatch[1]);
+    const year = parseInt(yearMatch?.[1] || '2025');
+    const fuelType = fuelMatch?.[1] || '';
+    const modelCode = codeMatch?.[1] || '';
+    
+    console.log(`⚠️ Partial harrisboatworks.ca match: HP=${horsepower}, Year=${year}, Category=${category}, Code=${modelCode}`);
+    
     return {
-      year: parseInt(yearMatch?.[1] || '2025'),
-      category: categoryMatch?.[1]?.replace(/\s/g, '') || 'FourStroke',
-      horsepower: parseFloat(hpMatch[1]),
-      fuelType: '',
-      modelCode: '',
+      year: year,
+      category: category,
+      horsepower: horsepower,
+      fuelType: fuelType,
+      modelCode: modelCode,
       fullTitle: clean,
+      displayTitle: `${year} ${category} ${horsepower}HP ${fuelType} ${modelCode}`.replace(/\s+/g, ' ').trim(),
       isValid: false
     };
   }
   
-  console.log(`❌ No match found for: "${clean}"`);
+  console.log(`❌ No harrisboatworks.ca match found for: "${clean}"`);
   return null;
+}
+
+// Extract additional motor data from harrisboatworks.ca structure
+function extractMotorData(text: string) {
+  const data = {
+    salePrice: null,
+    msrp: null,
+    savings: null,
+    stockNumber: null,
+    availability: null,
+    usage: null
+  };
+  
+  // Extract pricing information
+  const salePriceMatch = text.match(/\$([0-9,]+\.?[0-9]*)/);
+  if (salePriceMatch) {
+    data.salePrice = parseFloat(salePriceMatch[1].replace(/,/g, ''));
+  }
+  
+  // Extract savings
+  const savingsMatch = text.match(/You Save \$([0-9,]+\.?[0-9]*)/i);
+  if (savingsMatch) {
+    data.savings = parseFloat(savingsMatch[1].replace(/,/g, ''));
+  }
+  
+  // Extract stock number
+  const stockMatch = text.match(/Stock.*?#?:?\s*([0-9A-Z]+)/i);
+  if (stockMatch) {
+    data.stockNumber = stockMatch[1];
+  }
+  
+  // Extract availability
+  if (text.includes('In Stock')) {
+    data.availability = 'In Stock';
+  } else if (text.includes('Available')) {
+    data.availability = 'Available';
+  } else if (text.includes('Special Order')) {
+    data.availability = 'Special Order';
+  }
+  
+  // Extract usage
+  if (text.includes('New')) {
+    data.usage = 'New';
+  }
+  
+  return data;
 }
 
 // Parse motors from HTML function
@@ -87,38 +151,41 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
     console.log(`  ${i + 1}: "${line}"`);
   });
 
-  // Look for motor patterns in markdown using enhanced parsing
+  // Look for harrisboatworks.ca motor patterns in markdown
   for (const line of lines) {
     // Skip lines that don't contain basic motor indicators
     if (!line.includes('HP') || !line.match(/(20(?:24|25)|FourStroke|Pro.*XS|SeaPro|Verado)/i)) {
       continue;
     }
     
-    // Try to parse this line as a motor listing
-    const parsed = parseMotorDetails(line);
+    // Try to parse this line as a harrisboatworks.ca motor listing
+    const parsed = parseMotorTitle(line);
     if (parsed && parsed.horsepower >= 15 && parsed.horsepower <= 400) {
-      // Format the model name properly
-      let modelName = '';
-      if (parsed.category && parsed.horsepower) {
-        modelName = `${parsed.category} ${parsed.horsepower}HP`;
-        if (parsed.fuelType) modelName += ` ${parsed.fuelType}`;
-        if (parsed.modelCode) modelName += ` ${parsed.modelCode}`;
-      } else {
-        modelName = parsed.fullTitle.replace(/mercury/gi, '').trim();
-      }
+      // Extract additional data from the line context
+      const additionalData = extractMotorData(line);
+      
+      // Use the clean display title format (no "Mercury" prefix)
+      const modelName = parsed.displayTitle;
       
       const motor = {
         make: 'Mercury',
         model: modelName,
         horsepower: parsed.horsepower,
         motor_type: parsed.category,
-        base_price: null,
+        base_price: additionalData.salePrice,
+        sale_price: additionalData.salePrice,
+        msrp: additionalData.msrp,
+        savings: additionalData.savings,
+        stock_number: additionalData.stockNumber,
+        availability: additionalData.availability,
+        usage: additionalData.usage,
         year: parsed.year,
-        model_code: parsed.modelCode,
-        fuel_type: parsed.fuelType
+        model_code: parsed.modelCode, // CRITICAL: Preserve model codes
+        fuel_type: parsed.fuelType,
+        full_title: parsed.fullTitle
       };
       
-      console.log('🎯 Found motor:', `${motor.year} ${motor.make} ${motor.model} ${motor.horsepower}HP`);
+      console.log('🎯 Found harrisboatworks.ca motor:', `${motor.year} ${motor.model} (${motor.stock_number})`);
       motors.push(motor);
     }
   }
@@ -147,30 +214,33 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
     }
     
     for (const line of htmlLines) {
-      const parsed = parseMotorDetails(line);
+      const parsed = parseMotorTitle(line);
       if (parsed && parsed.horsepower >= 15 && parsed.horsepower <= 400) {
-        // Format the model name properly
-        let modelName = '';
-        if (parsed.category && parsed.horsepower) {
-          modelName = `${parsed.category} ${parsed.horsepower}HP`;
-          if (parsed.fuelType) modelName += ` ${parsed.fuelType}`;
-          if (parsed.modelCode) modelName += ` ${parsed.modelCode}`;
-        } else {
-          modelName = parsed.fullTitle.replace(/mercury/gi, '').trim();
-        }
+        // Extract additional data from HTML context
+        const additionalData = extractMotorData(line);
+        
+        // Use the clean display title format
+        const modelName = parsed.displayTitle;
         
         const motor = {
           make: 'Mercury',
           model: modelName,
           horsepower: parsed.horsepower,
           motor_type: parsed.category,
-          base_price: null,
+          base_price: additionalData.salePrice,
+          sale_price: additionalData.salePrice,
+          msrp: additionalData.msrp,
+          savings: additionalData.savings,
+          stock_number: additionalData.stockNumber,
+          availability: additionalData.availability,
+          usage: additionalData.usage,
           year: parsed.year,
-          model_code: parsed.modelCode,
-          fuel_type: parsed.fuelType
+          model_code: parsed.modelCode, // CRITICAL: Preserve model codes
+          fuel_type: parsed.fuelType,
+          full_title: parsed.fullTitle
         };
         
-        console.log('🎯 Found motor (HTML):', `${motor.year} ${motor.make} ${motor.model} ${motor.horsepower}HP`);
+        console.log('🎯 Found harrisboatworks.ca motor (HTML):', `${motor.year} ${motor.model} (${motor.stock_number})`);
         motors.push(motor);
       }
     }
@@ -257,7 +327,10 @@ async function saveMotorsToDatabase(motors: any[]) {
             model: cleanModel,
             horsepower: motor.horsepower,
             motor_type: motor.motor_type,
-            base_price: motor.base_price,
+            base_price: motor.base_price || motor.sale_price,
+            sale_price: motor.sale_price,
+            stock_number: motor.stock_number,
+            availability: motor.availability || 'Available',
             year: motor.year,
             created_at: new Date().toISOString(),
             updated_at: new Date().toISOString(),
@@ -437,15 +510,20 @@ serve(async (req) => {
       motors_found: result.motors_found || 0
     }))
 
-    // Get sample motors (first 3) for verification with clean data
+    // Get sample motors (first 3) for verification with harrisboatworks.ca format
     const sampleMotors = uniqueMotors.slice(0, 3).map(motor => ({
       make: motor.make,
-      model: cleanMotorName(motor.model),
+      model: cleanMotorName(motor.model), // Clean display format: "2025 FourStroke 25HP EFI ELHPT"
       horsepower: motor.horsepower,
       motor_type: motor.motor_type,
+      base_price: motor.base_price,
+      sale_price: motor.sale_price,
+      stock_number: motor.stock_number,
+      availability: motor.availability,
       year: motor.year,
-      model_code: motor.model_code || '',
-      fuel_type: motor.fuel_type || ''
+      model_code: motor.model_code || '', // CRITICAL: EH, ELHPT, XL, etc.
+      fuel_type: motor.fuel_type || '',
+      full_title: motor.full_title
     }))
 
     const result = {

@@ -31,8 +31,10 @@ export const CONTROL_TRIM_CODES = [
 
 export const START_SHAFT_TRIM_BUNDLES = [
   'MH',
-  'MLH',
+  'MLH', 
+  'EH',
   'ELH',
+  'ELHPT',
   'ELPT',
   'EXLPT',
 ] as const;
@@ -44,7 +46,7 @@ const PRIORITY_LIST: string[][] = [
   [...START_SHAFT_TRIM_BUNDLES],
 ];
 
-export const BRAND_REGEX = /\bmercury(?:\s+marine)?\b|mercury®|^merc\.\b/gi;
+export const BRAND_REGEX = /\bmercury(?:\s+marine)?\b|mercury®|^merc\.\b|^mercury\s*/gi;
 
 const normalize = (s: string) => ` ${s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()} `;
 
@@ -56,17 +58,24 @@ const tokenPresent = (haystackNorm: string, token: string) => {
 const toTitleCaseWord = (s: string) => s.replace(/\w\S*/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
 
 // Build the final display title: `${year} ${cleanModel}` with deduped leading years and brand tokens removed
+// Format matches harrisboatworks.ca: "2025 FourStroke 25HP EFI ELHPT" (no Mercury prefix)
 export function formatMotorTitle(year: number, model: string): string {
   let s = model ?? '';
   const yr = String(year).trim();
+  
   // Strip ALL leading year tokens (this year or any 20xx), including punctuation between repeats
   const reYear = new RegExp(`^\\s*(?:${yr}|20\\d{2})(?:\\s|[-:–—·.:])*\\s*`, 'i');
   while (reYear.test(s)) {
     s = s.replace(reYear, '');
   }
-  // Brand dedupe (keep product lines like Verado/Pro XS/SeaPro)
+  
+  // Brand dedupe - remove "Mercury" but keep product lines (Verado/Pro XS/SeaPro/FourStroke)
   s = s.replace(BRAND_REGEX, ' ');
+  
+  // Clean up spacing and ensure model codes (EH, ELHPT, XL, etc.) are preserved
   const cleanModel = s.replace(/\s+/g, ' ').trim();
+  
+  // Return harrisboatworks.ca format: Year + clean model (no Mercury prefix)
   return `${yr} ${cleanModel}`.replace(/\s+/g, ' ').trim();
 }
 
