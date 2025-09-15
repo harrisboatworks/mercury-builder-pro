@@ -527,8 +527,13 @@ serve(async (req) => {
       errorResponse.context.step = 'storage';
     }
     
-    return new Response(JSON.stringify(errorResponse), {
-      status: 400,
+    return new Response(JSON.stringify({
+      success: false, 
+      error: String(error), 
+      stack: (error as any)?.stack,
+      context: errorResponse.context
+    }), {
+      status: 200,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
   }
