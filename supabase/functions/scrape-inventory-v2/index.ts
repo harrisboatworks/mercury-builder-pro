@@ -104,17 +104,32 @@ const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 serve(async (req) => {
+  const url = new URL(req.url);
+  
+  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
-  // Test endpoint to verify function is reachable
-  if (req.url.endsWith('/test')) {
+  // Test endpoint - no auth required
+  if (url.pathname.endsWith('/test')) {
     return new Response(JSON.stringify({ 
       status: 'ok', 
       message: 'Function is reachable',
       timestamp: new Date().toISOString()
     }), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  // Check authorization for actual scraping functionality
+  const authHeader = req.headers.get('Authorization');
+  if (!authHeader) {
+    return new Response(JSON.stringify({ 
+      code: 401, 
+      message: 'Missing authorization header' 
+    }), {
+      status: 401,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
   }
