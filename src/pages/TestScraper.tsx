@@ -4,18 +4,22 @@ import { supabase } from '@/integrations/supabase/client';
 export default function TestScraper() {
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState<any>(null);
-  const runScraper = async (mode: 'discovery') => {
+  const runScraper = async (mode: 'discovery' | 'full', options?: { batch_size?: number; concurrency?: number }) => {
     setLoading(true);
     setResults(null);
     try {
-      console.log('🚀 Running Mercury discovery scraper...');
+      console.log(`🚀 Running Mercury ${mode} scraper...`);
+      
+      const body = mode === 'discovery' 
+        ? { mode: 'discovery' }
+        : { 
+            mode: 'full',
+            batch_size: options?.batch_size || 12,
+            concurrency: options?.concurrency || 3
+          };
       
       const { data, error } = await supabase.functions.invoke('scrape-inventory-v2', {
-        body: { 
-          mode: 'discovery',
-          batch_size: 5,   // Small batch for discovery
-          concurrency: 2   // Light concurrency for discovery
-        }
+        body
       });
       
       if (error) {
@@ -47,13 +51,29 @@ export default function TestScraper() {
       <h1 className="text-2xl font-bold mb-6">Mercury Scraper Test</h1>
       
       <div className="space-y-4">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-wrap">
           <button 
             onClick={() => runScraper('discovery')}
             disabled={loading}
             className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
           >
-            {loading ? 'Running Discovery...' : 'Run Discovery (Fast)'}
+            {loading ? 'Running Discovery...' : 'Run Discovery (XML-first)'}
+          </button>
+          
+          <button 
+            onClick={() => runScraper('full', { batch_size: 12, concurrency: 3 })}
+            disabled={loading}
+            className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50"
+          >
+            {loading ? 'Running Full...' : 'Run Small Full (12/3)'}
+          </button>
+          
+          <button 
+            onClick={() => runScraper('full', { batch_size: 20, concurrency: 4 })}
+            disabled={loading}
+            className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50"
+          >
+            {loading ? 'Running Full...' : 'Run Full (20/4)'}
           </button>
         </div>
         
