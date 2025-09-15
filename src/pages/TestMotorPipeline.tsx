@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Clock, AlertCircle, Play, Download, ExternalLink } from 'lucide-react';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { CheckCircle, Clock, AlertCircle, Play, ChevronDown, RotateCcw } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 
@@ -13,24 +14,41 @@ interface TestResult {
   data?: any;
 }
 
+const STORAGE_KEY = 'motor-pipeline-results';
+
 export default function TestMotorPipeline() {
   const { toast } = useToast();
-  const [results, setResults] = useState<TestResult[]>([
-    { step: 'Step 1: Price List Dry Run', status: 'pending', message: 'Ready to test' },
-    { step: 'Step 1: Import from Price List URL', status: 'pending', message: 'Ready to test' },
-    { step: 'Step 2: Price List Ingest', status: 'pending', message: 'Ready to test' },
-    { step: 'Step 3: Brochure PDF Attach', status: 'pending', message: 'Ready to test' },
-    { step: 'Step 4: Hero Images Upload', status: 'pending', message: 'Ready to test' },
-    { step: 'Step 5: XML Discovery', status: 'pending', message: 'Ready to test' },
-    { step: 'Step 6: Sanity Check', status: 'pending', message: 'Ready to test' },
-  ]);
-  const [currentStep, setCurrentStep] = useState(0);
+  const [results, setResults] = useState<TestResult[]>(() => {
+    // Load from localStorage on init
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch (e) {
+        console.error('Failed to parse saved results:', e);
+      }
+    }
+    return [
+      { step: '1. Price List Dry Run', status: 'pending', message: 'Ready to test dry run with parse validation' },
+      { step: '2. Price List Ingest', status: 'pending', message: 'Ready to ingest with msrp_markup: 1.10' },
+      { step: '3. Attach Brochure PDFs', status: 'pending', message: 'Ready to attach brochure documentation' },
+      { step: '4. Hero Images Upload', status: 'pending', message: 'Ready to upload and store hero images' },
+      { step: '5. XML Discovery', status: 'pending', message: 'Ready to discover and merge inventory' },
+      { step: '6. Sanity Queries', status: 'pending', message: 'Ready to run database health checks' },
+    ];
+  });
+  const [currentStep, setCurrentStep] = useState(-1);
   const [sourceSettings, setSourceSettings] = useState<any>(null);
 
+  // Save to localStorage whenever results change
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(results));
+  }, [results]);
+
   // Load source settings on mount
-  useState(() => {
+  useEffect(() => {
     loadSourceSettings();
-  });
+  }, []);
 
   const loadSourceSettings = async () => {
     try {
@@ -114,6 +132,8 @@ export default function TestMotorPipeline() {
         body: { 
           url: sourceUrl,
           dry_run: true,
+          msrp_markup: 1.10,
+          parse_mode: 'auto',
           ...sourceContent
         }
       });
@@ -137,53 +157,8 @@ export default function TestMotorPipeline() {
     }
   };
 
-  const runUrlImport = async () => {
-    const stepIndex = 1;
-    updateResult(stepIndex, 'running', 'Importing from price list URL...');
-    
-    try {
-      const defaultUrl = 'https://www.harrisboatworks.ca/mercurypricelist';
-      
-      const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
-        body: { 
-          url: defaultUrl,
-          dry_run: false,
-          msrp_markup: 1.10,
-          parse_mode: 'auto'
-        }
-      });
-
-      if (error) {
-        console.error('Edge fn error', { 
-          status: error.status, 
-          name: error.name, 
-          message: error.message, 
-          context: (error as any)?.context 
-        });
-        throw new Error(`${error.status}: ${error.message}\n${JSON.stringify((error as any)?.context ?? {}, null, 2)}`);
-      }
-
-      const message = `[${data.source_kind?.toUpperCase() || 'AUTO'}] parsed ${data.rows_parsed_total} • created ${data.rows_created} • updated ${data.rows_updated} • rejected ${data.rows_rejected || 0}`;
-      logCheckpoint(`URL IMPORT → ${message}`);
-      
-      // Show reject reasons if less than 20 rows succeeded
-      if ((data.rows_created + data.rows_updated) < 20 && data.reject_reasons?.length > 0) {
-        console.log('Reject reasons:', data.reject_reasons);
-        toast({
-          title: "Low Success Rate",
-          description: `Only ${data.rows_created + data.rows_updated} rows succeeded. Check console for reject reasons.`,
-          variant: "destructive"
-        });
-      }
-      
-      updateResult(stepIndex, 'success', message, data);
-    } catch (error: any) {
-      updateResult(stepIndex, 'error', `Error: ${error.message}`);
-    }
-  };
-
   const runStep2Ingest = async () => {
-    const stepIndex = 2;
+    const stepIndex = 1;
     updateResult(stepIndex, 'running', 'Ingesting price list with msrp_markup 1.10...');
     
     try {
@@ -195,6 +170,7 @@ export default function TestMotorPipeline() {
           url: sourceUrl,
           dry_run: false,
           msrp_markup: 1.10,
+          parse_mode: 'auto',
           ...sourceContent
         }
       });
@@ -219,7 +195,7 @@ export default function TestMotorPipeline() {
   };
 
   const runStep3BrochurePDF = async () => {
-    const stepIndex = 3;
+    const stepIndex = 2;
     updateResult(stepIndex, 'running', 'Attaching brochure PDF...');
     
     try {
@@ -229,6 +205,7 @@ export default function TestMotorPipeline() {
       const { data, error } = await supabase.functions.invoke('attach-brochure-pdf', {
         body: { 
           url: brochureUrl,
+          apply_to: 'all',
           dry_run: false
         }
       });
@@ -243,7 +220,7 @@ export default function TestMotorPipeline() {
         throw new Error(`${error.status}: ${error.message}\n${JSON.stringify((error as any)?.context ?? {}, null, 2)}`);
       }
 
-      const message = `BrochurePDF → attached to ${data.models_matched} models`;
+      const message = `BrochurePDF → attached to ${data.models_matched || data.models_updated} models`;
       logCheckpoint(message);
       updateResult(stepIndex, 'success', message, data);
     } catch (error: any) {
@@ -252,95 +229,139 @@ export default function TestMotorPipeline() {
   };
 
   const runStep4HeroImages = async () => {
-    const stepIndex = 4;
+    const stepIndex = 3;
     updateResult(stepIndex, 'running', 'Uploading hero images...');
     
     try {
-      // Test with sample hero images
+      // Test with sample hero images - using more realistic model keys
       const heroSamples = [
-        { "model_key": "FOURSTROKE-25HP-EFI-ELHPT", "url": "https://assets.mercurymarine.com/motors/fourstroke-25-elhpt.jpg" },
-        { "model_key": "FOURSTROKE-90HP-ELPT", "url": "https://assets.mercurymarine.com/motors/fourstroke-90-elpt.jpg" },
-        { "model_key": "PROXS-150HP-XL", "url": "https://assets.mercurymarine.com/motors/proxs-150-xl.jpg" }
+        { "model_key": "FOURSTROKE-25HP-EFI-L-E-PT", "url": "https://www.mercurymarine.com/content/dam/mercury-marine/engines/outboard/fourstroke/25-60-hp/25-fourStroke-main.png" },
+        { "model_key": "FOURSTROKE-90HP-EFI-L-PT-CT", "url": "https://www.mercurymarine.com/content/dam/mercury-marine/engines/outboard/fourstroke/75-150-hp/90-fourStroke-main.png" },
+        { "model_key": "PROXS-150HP-EFI-XL-CT", "url": "https://www.mercurymarine.com/content/dam/mercury-marine/engines/outboard/proxs/150-pro-xs-main.png" }
       ];
 
       let uploadedCount = 0;
+      const results = [];
+      
       for (const item of heroSamples) {
-        const { data, error } = await supabase.functions.invoke('upload-hero-image', {
-          body: { 
-            model_key: item.model_key,
-            url: item.url,
-            dry_run: false
-          }
-        });
+        try {
+          const { data, error } = await supabase.functions.invoke('upload-hero-image', {
+            body: { 
+              model_key: item.model_key,
+              url: item.url,
+              dry_run: false
+            }
+          });
 
-        if (error) {
-          console.error(`Hero upload error for ${item.model_key}:`, error);
-        } else {
-          uploadedCount++;
+          if (error) {
+            console.error(`Hero upload error for ${item.model_key}:`, error);
+            results.push({ model_key: item.model_key, success: false, error: error.message });
+          } else if (data.stored) {
+            uploadedCount++;
+            results.push({ model_key: item.model_key, success: true, public_url: data.public_url });
+          }
+        } catch (err) {
+          console.error(`Hero upload exception for ${item.model_key}:`, err);
+          results.push({ model_key: item.model_key, success: false, error: err.message });
         }
       }
 
-      const message = `Heroes → uploaded ${uploadedCount}, updated rows: ${uploadedCount}`;
+      const message = `Heroes → uploaded ${uploadedCount}/${heroSamples.length} images successfully`;
       logCheckpoint(message);
-      updateResult(stepIndex, 'success', message, { uploaded: uploadedCount });
+      updateResult(stepIndex, 'success', message, { uploaded: uploadedCount, total: heroSamples.length, results });
     } catch (error: any) {
       updateResult(stepIndex, 'error', `Error: ${error.message}`);
     }
   };
 
   const runStep5XMLDiscovery = async () => {
-    const stepIndex = 5;
-    updateResult(stepIndex, 'running', 'Running XML discovery...');
+    const stepIndex = 4;
+    updateResult(stepIndex, 'running', 'Running XML discovery and full inventory scrape...');
     
     try {
-      const { data, error } = await supabase.functions.invoke('scrape-inventory-v2', {
+      // First run discovery mode
+      const { data: discoveryData, error: discoveryError } = await supabase.functions.invoke('scrape-inventory-v2', {
         body: { 
-          source: 'harris',
-          dry_run: false
+          mode: 'discovery',
+          source: 'harris'
         }
       });
 
-      if (error) {
-        console.error('XML discovery error', { 
-          status: error.status, 
-          name: error.name, 
-          message: error.message, 
-          context: (error as any)?.context 
+      if (discoveryError) throw discoveryError;
+
+      // Then run full mode with specified parameters
+      const { data: fullData, error: fullError } = await supabase.functions.invoke('scrape-inventory-v2', {
+        body: { 
+          mode: 'full',
+          batch_size: 12,
+          concurrency: 3,
+          source: 'harris'
+        }
+      });
+
+      if (fullError) {
+        console.error('XML full scrape error', { 
+          status: fullError.status, 
+          name: fullError.name, 
+          message: fullError.message, 
+          context: (fullError as any)?.context 
         });
-        throw new Error(`${error.status}: ${error.message}\n${JSON.stringify((error as any)?.context ?? {}, null, 2)}`);
+        throw new Error(`${fullError.status}: ${fullError.message}\n${JSON.stringify((fullError as any)?.context ?? {}, null, 2)}`);
       }
 
-      const message = `XML → in_stock merged: ${data.motors_updated || 0}, new created: ${data.motors_created || 0}, images stored: ${data.images_processed || 0}`;
+      const message = `XML → discovered: ${discoveryData?.discovered || 0}, full scrape: ${fullData.motors_updated || 0} updated, ${fullData.motors_created || 0} new`;
       logCheckpoint(message);
-      updateResult(stepIndex, 'success', message, data);
+      updateResult(stepIndex, 'success', message, { discovery: discoveryData, full: fullData });
     } catch (error: any) {
       updateResult(stepIndex, 'error', `Error: ${error.message}`);
     }
   };
 
   const runStep6SanityCheck = async () => {
-    const stepIndex = 6;
+    const stepIndex = 5;
     updateResult(stepIndex, 'running', 'Running sanity queries...');
     
     try {
-      // Query 1: Breakdown by brochure/stock status
-      const { data: breakdown, error: breakdownError } = await supabase
+      // Query 1: Counts by type
+      const { count: brochureCount } = await supabase
         .from('motor_models')
-        .select('is_brochure, in_stock, count(*)', { count: 'exact' });
+        .select('*', { count: 'exact', head: true })
+        .eq('is_brochure', true);
 
-      if (breakdownError) throw breakdownError;
+      const { count: inStockCount } = await supabase
+        .from('motor_models')
+        .select('*', { count: 'exact', head: true })
+        .eq('in_stock', true);
 
-      // Query 2: Sample of recent motors
+      // Query 2: Recent sample with decoded fields
       const { data: samples, error: samplesError } = await supabase
         .from('motor_models')
-        .select('model, model_key, dealer_price, msrp, price_source, in_stock, hero_image_url, image_url')
+        .select(`
+          model, model_key, family, horsepower, shaft_code, 
+          start_type, control_type, has_power_trim, has_command_thrust,
+          dealer_price, msrp, hero_image_url, in_stock, stock_number
+        `)
         .order('updated_at', { ascending: false, nullsFirst: false })
-        .limit(10);
+        .limit(20);
 
       if (samplesError) throw samplesError;
 
-      logCheckpoint(`Sanity Check → Database queries completed`);
-      updateResult(stepIndex, 'success', `Completed database sanity check`, { breakdown, samples });
+      // Query 3: Missing images (brochure)
+      const { count: missingImagesCount } = await supabase
+        .from('motor_models')
+        .select('*', { count: 'exact', head: true })
+        .eq('is_brochure', true)
+        .or('hero_image_url.is.null,hero_image_url.eq.');
+
+      const counts = {
+        brochure_total: brochureCount || 0,
+        in_stock_total: inStockCount || 0,
+        missing_images: missingImagesCount || 0
+      };
+
+      const message = `Sanity → Brochure: ${counts.brochure_total}, In-Stock: ${counts.in_stock_total}, Missing Images: ${counts.missing_images}`;
+      logCheckpoint(message);
+      updateResult(stepIndex, 'success', message, { counts, samples });
     } catch (error: any) {
       updateResult(stepIndex, 'error', `Error: ${error.message}`);
     }
@@ -351,21 +372,23 @@ export default function TestMotorPipeline() {
     
     switch (stepIndex) {
       case 0: await runStep1DryRun(); break;
-      case 1: await runUrlImport(); break;
-      case 2: await runStep2Ingest(); break;
-      case 3: await runStep3BrochurePDF(); break;
-      case 4: await runStep4HeroImages(); break;
-      case 5: await runStep5XMLDiscovery(); break;
-      case 6: await runStep6SanityCheck(); break;
+      case 1: await runStep2Ingest(); break;
+      case 2: await runStep3BrochurePDF(); break;
+      case 3: await runStep4HeroImages(); break;
+      case 4: await runStep5XMLDiscovery(); break;
+      case 5: await runStep6SanityCheck(); break;
     }
+    
+    setCurrentStep(-1);
   };
 
   const runAllSteps = async () => {
     for (let i = 0; i < results.length; i++) {
       await runSingleStep(i);
       // Small delay between steps
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 1000));
     }
+    toast({ title: "Pipeline Complete", description: "All steps have been executed" });
   };
 
   const getStatusIcon = (status: TestResult['status']) => {
@@ -394,9 +417,9 @@ export default function TestMotorPipeline() {
       </div>
 
       <div className="flex gap-4 mb-6">
-        <Button onClick={runAllSteps} disabled={currentStep >= 0}>
+        <Button onClick={runAllSteps} disabled={currentStep >= 0} size="lg">
           <Play className="h-4 w-4 mr-2" />
-          Run All Tests
+          Run All Steps
         </Button>
       </div>
 
@@ -417,15 +440,24 @@ export default function TestMotorPipeline() {
                     size="sm" 
                     variant="outline"
                     onClick={() => runSingleStep(index)}
-                    disabled={result.status === 'running'}
+                    disabled={result.status === 'running' || currentStep >= 0}
                   >
                     Run
+                  </Button>
+                  <Button 
+                    size="sm" 
+                    variant="ghost"
+                    onClick={() => runSingleStep(index)}
+                    disabled={result.status === 'running' || currentStep >= 0}
+                    title="Retry step"
+                  >
+                    <RotateCcw className="h-4 w-4" />
                   </Button>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <CardDescription className="text-sm">
+              <CardDescription className="text-sm mb-2">
                 {result.message}
               </CardDescription>
               
@@ -438,106 +470,47 @@ export default function TestMotorPipeline() {
               )}
               
               {result.data && (
-                <div className="mt-3 space-y-2">
-                  {/* Enhanced Results Display for Steps 1A/1B */}
-                  {(index === 0 || index === 1) && result.data.sample_models && (
-                    <div className="space-y-3">
-                      <div className="text-sm font-medium">Top 10 Parsed Models:</div>
-                      <div className="bg-muted rounded p-2 text-xs font-mono overflow-x-auto max-h-40 overflow-y-auto">
-                        <div className="grid grid-cols-6 gap-2 font-semibold border-b pb-1 mb-1 sticky top-0 bg-muted">
-                          <div>Model Number</div>
-                          <div>Model Key</div>
-                          <div>Family</div>
-                          <div>HP</div>
-                          <div>Dealer $</div>
-                          <div>MSRP $</div>
-                        </div>
-                        {result.data.sample_models.slice(0, 10).map((model: any, idx: number) => (
-                          <div key={idx} className="grid grid-cols-6 gap-2 py-1">
-                            <div className="truncate" title={model.model_number}>{model.model_number || '-'}</div>
-                            <div className="truncate text-blue-600">{model.model_key}</div>
-                            <div>{model.family || '-'}</div>
-                            <div>{model.horsepower || '-'}</div>
-                            <div>${model.dealer_price}</div>
-                            <div>${model.msrp}</div>
+                <Collapsible>
+                  <CollapsibleTrigger asChild>
+                    <Button variant="ghost" size="sm" className="h-auto p-2 font-mono text-xs">
+                      <ChevronDown className="h-3 w-3 mr-1" />
+                      View Details
+                    </Button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-2 space-y-2">
+                    {/* Enhanced Results Display for Steps 1 and 2 */}
+                    {(index === 0 || index === 1) && result.data.sample_models && (
+                      <div className="space-y-3">
+                        <div className="text-sm font-medium">Top 10 Parsed Models:</div>
+                        <div className="bg-muted rounded p-2 text-xs font-mono overflow-x-auto max-h-40 overflow-y-auto">
+                          <div className="grid grid-cols-6 gap-2 font-semibold border-b pb-1 mb-1 sticky top-0 bg-muted">
+                            <div>Model Number</div>
+                            <div>Model Key</div>
+                            <div>Family</div>
+                            <div>HP</div>
+                            <div>Dealer $</div>
+                            <div>MSRP $</div>
                           </div>
-                        ))}
+                          {result.data.sample_models.slice(0, 10).map((model: any, idx: number) => (
+                            <div key={idx} className="grid grid-cols-6 gap-2 py-1 border-b border-muted-foreground/20">
+                              <div className="truncate">{model.mercury_model_no || model.model_number || 'N/A'}</div>
+                              <div className="truncate font-medium">{model.model_key || 'N/A'}</div>
+                              <div className="truncate">{model.family || 'N/A'}</div>
+                              <div>{model.horsepower || 'N/A'}</div>
+                              <div className="text-green-600">${model.dealer_price || 'N/A'}</div>
+                              <div className="text-blue-600">${model.msrp || 'N/A'}</div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                      
-                      {/* Enhanced counts display */}
-                      <div className="text-xs text-muted-foreground space-y-1">
-                        <div>Rows found: {result.data.rows_parsed_total || result.data.rows_parsed} • Valid: {result.data.rows_normalized} • Invalid keys: {result.data.rows_with_invalid_key} • Invalid prices: {result.data.rows_with_invalid_price}</div>
-                        <div>Blank rows skipped: {result.data.rows_skipped_blank} • Missing required: {result.data.rows_missing_required} • Duplicates: {result.data.duplicates_in_feed}</div>
-                      </div>
-                    </div>
-                  )}
-                  
-                  {/* Last Capture URLs */}
-                  {(index === 0 || index === 1) && sourceSettings && (
-                    <div className="space-y-2">
-                      <div className="text-sm font-medium">Open Last Capture:</div>
-                      <div className="flex gap-2">
-                        {sourceSettings.pricelist_last_html && (
-                          <Button size="sm" variant="outline" onClick={() => window.open(sourceSettings.pricelist_last_html, '_blank')}>
-                            <ExternalLink className="h-3 w-3 mr-1" />
-                            HTML
-                          </Button>
-                        )}
-                        {sourceSettings.pricelist_last_csv && (
-                          <Button size="sm" variant="outline" onClick={() => window.open(sourceSettings.pricelist_last_csv, '_blank')}>
-                            <ExternalLink className="h-3 w-3 mr-1" />
-                            CSV
-                          </Button>
-                        )}
-                      </div>
-                    </div>
-                  )}
+                    )}
 
-                  {/* Artifact downloads for steps 1A/1B */}
-                  {(index === 0 || index === 1) && result.data.artifacts && (
-                    <div className="flex gap-2">
-                      {result.data.artifacts.csv_url && (
-                        <Button 
-                          size="sm" 
-                          variant="outline"
-                          onClick={() => window.open(result.data.artifacts.csv_url, '_blank')}
-                        >
-                          <Download className="h-3 w-3 mr-1" />
-                          Download CSV
-                        </Button>
-                      )}
-                      {result.data.artifacts.json_url && (
-                        <Button 
-                          size="sm" 
-                          variant="outline"
-                          onClick={() => window.open(result.data.artifacts.json_url, '_blank')}
-                        >
-                          <Download className="h-3 w-3 mr-1" />
-                          Download JSON
-                        </Button>
-                      )}
-                      {result.data.artifacts.html_url && (
-                        <Button 
-                          size="sm" 
-                          variant="outline"
-                          onClick={() => window.open(result.data.artifacts.html_url, '_blank')}
-                        >
-                          <Download className="h-3 w-3 mr-1" />
-                          Download HTML
-                        </Button>
-                      )}
+                    {/* Raw JSON for all steps */}
+                    <div className="bg-muted rounded p-2 text-xs font-mono overflow-auto max-h-64">
+                      <pre>{JSON.stringify(result.data, null, 2)}</pre>
                     </div>
-                  )}
-                  
-                  <details className="mt-2">
-                    <summary className="text-sm text-muted-foreground cursor-pointer">
-                      View Raw Details
-                    </summary>
-                    <pre className="mt-2 text-xs bg-muted p-2 rounded overflow-auto">
-                      {JSON.stringify(result.data, null, 2)}
-                    </pre>
-                  </details>
-                </div>
+                  </CollapsibleContent>
+                </Collapsible>
               )}
             </CardContent>
           </Card>

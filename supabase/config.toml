@@ -53,3 +53,9 @@ verify_jwt = false
 
 [functions.bulk-upsert-brochure]
 verify_jwt = false
+
+[functions.attach-brochure-pdf]
+verify_jwt = false
+
+[functions.upload-hero-image]
+verify_jwt = false
