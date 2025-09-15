@@ -2,6 +2,7 @@ import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { load } from 'https://esm.sh/cheerio@1.0.0-rc.12';
+import { buildModelKey, extractHpAndCode } from '../_shared/motor-helpers.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -298,7 +299,7 @@ serve(async (req) => {
       const dealer_price = item.dealer_price;
       const msrp = Math.round((dealer_price * msrp_markup) * 100) / 100;
       
-      const model_key = buildModelKey(item.model_display, undefined, attrs);
+      const model_key = buildModelKey(item.model_display);
       
       return {
         make: 'Mercury',

@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { XMLParser } from "https://esm.sh/fast-xml-parser@4"
 import { parse } from "https://deno.land/std@0.203.0/csv/parse.ts"
+import { buildModelKey, extractHpAndCode } from '../_shared/motor-helpers.ts';
 
 // Shared model key utilities (copied to avoid cross-function imports)
 function extractHpAndCode(modelText: string): { hp: number | null; code: string | null; fuel: string | null; family: string | null } {
