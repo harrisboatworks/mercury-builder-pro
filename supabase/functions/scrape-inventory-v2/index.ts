@@ -87,18 +87,63 @@ async function fetchText(url: string, retries = 0): Promise<string> {
   }
 }
 
-// Enhanced XML parsing with better error handling
-async function parseXmlUnits(xml: string): Promise<any[]> {
-  if (!xml) return [];
+// Deep XML parsing that finds Unit anywhere in the document
+async function parseXmlUnits(xml: string): Promise<{units:any[], meta:any}> {
+  if (!xml) return { units: [], meta: { reason: 'empty_xml' } };
+
   try {
     const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: '' });
     const j = parser.parse(xml);
-    // DealerSpike feeds typically look like Inventory/Units/Unit or just Units/Unit
-    const units = j?.Inventory?.Units?.Unit ?? j?.Units?.Unit ?? [];
-    return Array.isArray(units) ? units : [units];
+
+    const topKeys = j ? Object.keys(j) : [];
+
+    // Known common shapes
+    let candidates: any[] = [];
+    const push = (v:any) => { if (Array.isArray(v)) candidates.push(...v); else if (v) candidates.push(v); };
+
+    // Known paths
+    push(j?.Inventory?.Units?.Unit);
+    push(j?.Inventory?.Unit);
+    push(j?.Units?.Unit);
+    push(j?.UnitInventory?.Unit);
+    push(j?.InventoryFeed?.Units?.Unit);
+    push(j?.UniversalInventory?.Units?.Unit);
+    push(j?.UniversalInventory?.Unit);
+
+    // Deep scan for keys named Unit / Vehicle / Item
+    const found: any[] = [];
+    const scan = (obj:any) => {
+      if (!obj || typeof obj !== 'object') return;
+      for (const [k,v] of Object.entries(obj)) {
+        if (/^(Unit|Units|Vehicle|Vehicles|Item|Items)$/i.test(k)) {
+          if (Array.isArray(v)) found.push(...v);
+          else found.push(v);
+        }
+        if (v && typeof v === 'object') scan(v);
+      }
+    };
+    scan(j);
+
+    // Merge & normalize
+    let units = [...candidates, ...found].filter(Boolean);
+    if (units.length === 1 && !Array.isArray(units[0])) units = [units[0]];
+
+    // Make sure they're objects
+    units = units.filter(u => u && typeof u === 'object');
+
+    // Sample fields for logs
+    const sample = units.slice(0, 2).map(u => ({
+      Make: u.Make ?? u.make,
+      Title: u.Title ?? u.UnitName ?? u.Model,
+      Condition: u.Condition ?? u.UnitCondition,
+      Category: u.Category ?? u.Type ?? u.VehicleType,
+      DetailsUrl: u.DetailsUrl ?? u.DetailsURL ?? u.UnitURL ?? u.Url
+    }));
+
+    return { units, meta: { topKeys, sampleCount: sample.length, sample } };
   } catch (e) {
     console.error('XML parsing failed:', e);
-    return [];
+    return { units: [], meta: { reason: 'parse_error', error: String(e) } };
   }
 }
 
@@ -106,19 +151,23 @@ async function parseXmlUnits(xml: string): Promise<any[]> {
 const norm = (v?: any) => (v == null ? "" : String(v).trim());
 const lower = (v?: any) => norm(v).toLowerCase();
 
-// Combined filter: Mercury NEW outboards only (replaces separate filters)
+// More permissive filter: Mercury NEW outboards only
 function isNewMercuryOutboard(u: any): boolean {
-  const make = T(u.Make || u.make);
-  const cond = T(u.Condition || u.condition || u.UnitCondition);
-  const cat = T(u.Category || u.category || u.Type || u.type || u.VehicleType);
+  const make  = T(u.Make || u.make);
+  const cond  = T(u.Condition || u.condition || u.UnitCondition);
+  const cat   = T(u.Category || u.category || u.Type || u.type || u.VehicleType);
   const title = T(u.Title || u.title || u.Model || u.model || u.UnitName);
 
   const isMercury = /mercury/i.test(make) || /mercury/i.test(title);
-  const isNew = cond ? /new/i.test(cond) : true; // assume new if not specified
-  const isOutboard = /(outboard|engine|motor)/i.test(cat) || /(outboard|motor|engine)/i.test(title);
+  const isNew = cond ? !/used|pre[-\s]?owned/i.test(cond) : true;
+
+  const looksOutboard =
+    /(outboard|engine|motor)/i.test(cat) ||
+    /(four\s*stroke|fourstroke|pro\s*xs|proxs|seapro|verado|racing|outboard|engine|motor)/i.test(title);
+
   const isExcluded = /(boat|trailer|pwc|snow|atv|utv|side\s*by\s*side|sled)/i.test(cat);
-  
-  return isMercury && isNew && isOutboard && !isExcluded;
+
+  return isMercury && isNew && looksOutboard && !isExcluded;
 }
 
 // Legacy individual filters (kept for compatibility)
@@ -542,114 +591,95 @@ function extractImagesFromUnit(u: any) {
   return { primary: finalPrimary, gallery: finalGallery };
 }
 
-// Enhanced XML discovery with additional data maps
+// Enhanced XML discovery with fallback URLs and debug info
 async function discoverFromXmlFeed() {
-  const FEED_URL = "https://www.harrisboatworks.ca/unitinventory_univ.xml";
-  try {
-    console.log('🔗 Fetching XML feed from DealerSpike...');
-    const xml = await fetchText(FEED_URL);
-    const units = await parseXmlUnits(xml);
-    
-    if (units.length === 0) {
-      console.log("XML feed returned no units.");
-      return { 
-        urls: [] as string[], 
-        items: [] as any[], 
-        imageByUrl: new Map(),
-        priceByUrl: new Map(),
-        stockByUrl: new Map(),
-        titleByUrl: new Map(),
-        count: 0,
-        totalUnits: 0
-      };
-    }
-    
-    // Use enhanced combined filter
-    const filtered = units.filter(isNewMercuryOutboard);
-    
-    console.log(`XML feed: units total = ${units.length}, filtered new Mercury outboards = ${filtered.length}`);
-    
-    // Add debug logs for XML sample fields
-    console.log('XML sample fields:', {
-      total: units.length,
-      sample: (Array.isArray(units) ? units.slice(0,2) : [units]).map(u => ({
-        Make: u.Make, 
-        Title: u.Title ?? u.UnitName ?? u.Model, 
-        Condition: u.Condition ?? u.UnitCondition, 
-        Category: u.Category ?? u.Type ?? u.VehicleType,
-        DetailsUrl: u.DetailsUrl ?? u.DetailsURL ?? u.UnitURL ?? u.Url
-      }))
-    });
+  const FEEDS = [
+    'https://www.harrisboatworks.ca/unitinventory_univ.xml',
+    'http://www.harrisboatworks.ca/unitinventory_univ.xml',
+    'https://harrisboatworks.ca/unitinventory_univ.xml',
+    'http://harrisboatworks.ca/unitinventory_univ.xml'
+  ];
 
-    // Build items with enhanced data extraction
-    const items = filtered.map((u: any) => {
-      // Extract detail URL
-      const detail = ABS(
-        u.DetailsUrl || u.DetailsURL || u.VehicleUrl || u.VehicleURL ||
-        u.UnitDetailUrl || u.UnitURL || u.Url || u.URL || u.DetailUrl || u.detailUrl
-      );
-      
-      // Extract images
-      const images = extractImagesFromUnit(u);
-      
-      // Extract additional data for fallback use
-      const stock = T(u.StockNumber || u.StockNum || u.Stock || u.UnitStockNumber);
-      const priceStr = T(u.Price || u.SalePrice || u.Sale || u.BasePrice);
-      const msrpStr = T(u.MSRP || u.Msrp || u.RetailPrice || u.ListPrice);
-      const sale = priceStr ? Number(priceStr.replace(/[^\d.]/g, '')) || null : null;
-      const msrp = msrpStr ? Number(msrpStr.replace(/[^\d.]/g, '')) || null : null;
-      const title = T(u.Title || u.UnitName || u.Model || u.model || u.Name);
-      
-      // Fallback detail_url if missing
-      let detail_url = detail;
-      if (!detail_url && (stock || title)) {
-        const safe = encodeURIComponent(`${title}-${stock}`.replace(/\s+/g, "-").toLowerCase());
-        detail_url = `https://www.harrisboatworks.ca/inventory/${safe}`;
+  const attempts: any[] = [];
+
+  for (const url of FEEDS) {
+    try {
+      console.log('🔗 Trying XML feed:', url);
+      const r = await fetch(url, {
+        headers: {
+          'User-Agent': 'HBW-InventoryBot/1.0',
+          'Accept': 'application/xml,text/xml,application/rss+xml,text/plain,*/*',
+        }
+      });
+
+      const status = r.status;
+      const ok = r.ok;
+      const text = ok ? await r.text() : '';
+      const size = text.length;
+      const head = text.slice(0, 500);
+
+      attempts.push({ url, status, ok, size, headPreview: head.replace(/\s+/g,' ').slice(0,200) });
+
+      if (!ok || !text) continue;
+
+      const parsed = await parseXmlUnits(text);
+      const units = parsed.units;
+      console.log(`🧾 Feed ${url} → parsed units: ${units.length}; topKeys=${(parsed.meta?.topKeys||[]).join(',')}`);
+
+      if (units.length > 0) {
+        // Filter
+        const filtered = units.filter(isNewMercuryOutboard);
+        console.log(`XML feed filtered to new Mercury outboards: ${filtered.length}`);
+
+        // Build items
+        const items = filtered.map((u: any) => {
+          const detail = ABS(
+            u.DetailsUrl || u.DetailsURL || u.VehicleUrl || u.VehicleURL ||
+            u.UnitDetailUrl || u.UnitURL || u.Url || u.URL || u.DetailUrl || u.detailUrl
+          );
+
+          const images = extractImagesFromUnit(u);
+          const stock = T(u.StockNumber || u.StockNum || u.Stock || u.UnitStockNumber);
+          const priceStr = T(u.Price || u.SalePrice || u.Sale || u.BasePrice);
+          const msrpStr  = T(u.MSRP || u.Msrp || u.RetailPrice || u.ListPrice);
+          const sale = priceStr ? Number(priceStr.replace(/[^\d.]/g, '')) || null : null;
+          const msrp = msrpStr  ? Number(msrpStr.replace(/[^\d.]/g, '')) || null : null;
+          const title = T(u.Title || u.UnitName || u.Model || u.model || u.Name);
+
+          let detail_url = detail;
+          if (!detail_url && (stock || title)) {
+            const safe = encodeURIComponent(`${title}-${stock}`.replace(/\s+/g, "-").toLowerCase());
+            detail_url = `https://www.harrisboatworks.ca/inventory/${safe}`;
+          }
+
+          return { detail_url, images, stock, sale, msrp, title, raw: u };
+        }).filter(i => !!i.detail_url);
+
+        const urls = [...new Set(items.map(i => i.detail_url))];
+        const imageByUrl = new Map(items.map(i => [i.detail_url, i.images]));
+        const priceByUrl = new Map(items.map(i => [i.detail_url, { sale: i.sale, msrp: i.msrp }]));
+        const stockByUrl = new Map(items.map(i => [i.detail_url, i.stock]));
+        const titleByUrl = new Map(items.map(i => [i.detail_url, i.title]));
+
+        return {
+          urls, items, imageByUrl, priceByUrl, stockByUrl, titleByUrl,
+          count: urls.length, totalUnits: units.length,
+          debug: { chosenUrl: url, attempts, parsedMeta: parsed.meta }
+        };
       }
-      
-      return { 
-        detail_url, 
-        images, 
-        stock, 
-        sale, 
-        msrp, 
-        title, 
-        raw: u 
-      };
-    }).filter(i => !!i.detail_url);
-
-    // Build maps for fallback data during full mode processing
-    const urls = [...new Set(items.map(i => i.detail_url))];
-    const imageByUrl = new Map(items.map(i => [i.detail_url, i.images]));
-    const priceByUrl = new Map(items.map(i => [i.detail_url, { sale: i.sale, msrp: i.msrp }]));
-    const stockByUrl = new Map(items.map(i => [i.detail_url, i.stock]));
-    const titleByUrl = new Map(items.map(i => [i.detail_url, i.title]));
-
-    console.log(`✅ XML discovery: ${urls.length} unique URLs with fallback data`);
-    
-    return { 
-      urls, 
-      items, 
-      imageByUrl, 
-      priceByUrl, 
-      stockByUrl, 
-      titleByUrl, 
-      count: urls.length, 
-      totalUnits: units.length 
-    };
-  } catch (e) {
-    console.error("❌ XML discovery failed:", e);
-    return { 
-      urls: [] as string[], 
-      items: [] as any[], 
-      imageByUrl: new Map(),
-      priceByUrl: new Map(), 
-      stockByUrl: new Map(),
-      titleByUrl: new Map(),
-      count: 0,
-      totalUnits: 0
-    };
+    } catch (e) {
+      attempts.push({ url, error: String(e) });
+      console.error('❌ Feed error', url, e);
+    }
   }
+
+  // All attempts failed or no units found
+  return {
+    urls: [], items: [], imageByUrl: new Map(), priceByUrl: new Map(),
+    stockByUrl: new Map(), titleByUrl: new Map(),
+    count: 0, totalUnits: 0,
+    debug: { attempts, reason: 'no_units_found' }
+  };
 }
 
 // Legacy function for backward compatibility - now uses enhanced discovery
@@ -996,7 +1026,8 @@ serve(async (req) => {
             urls_discovered: xml.count,
             samples: xml.urls.slice(0, 8),
             total_units: xml.totalUnits,
-            filtered_units: xml.count
+            filtered_units: xml.count,
+            debug: xml.debug   // include feed attempts & meta
           }), {
             status: 200,
             headers: { 'Content-Type': 'application/json', ...corsHeaders }
