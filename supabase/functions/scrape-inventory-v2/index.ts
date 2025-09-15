@@ -61,191 +61,34 @@ const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 serve(async (req) => {
-  // Handle CORS preflight requests
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
-  }
+  const corsHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  };
 
   try {
-    const url = new URL(req.url);
-    const source = url.searchParams.get('source') || 'html';
-    const page = parseInt(url.searchParams.get('page') ?? '1');
-    const startTime = Date.now();
-
-    console.log(`🚀 Starting scrape-inventory-v2 function`);
-    console.log(`- Source: ${source}`);
-    console.log(`- Page: ${page}`);
-
-    // Test endpoints
-    if (url.pathname.includes('/test')) {
-      return new Response(
-        JSON.stringify({ 
-          success: true, 
-          message: "Function is working",
-          timestamp: new Date().toISOString()
-        }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
-
-    if (url.pathname.includes('/test-scrape')) {
-      return new Response(
-        JSON.stringify({ 
-          success: true, 
-          message: "Test scrape endpoint working",
-          motors_found: 0,
-          test_mode: true
-        }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
-
-    // Initialize summary
-    const summary = {
-      motors_found: 0,
-      motors_inserted: 0,
-      motors_failed: 0,
-      has_more_pages: false,
-      in_stock_models_found: 0,
-      brochure_models_found: 0,
-      pages_scraped: 1,
-      duration_seconds: '0.00',
-      errors_count: 0,
-      validation_passed: true,
-      timestamp: new Date().toISOString()
-    };
-
-    if (source === 'html') {
-      console.log(`🔍 Testing fetch to Harris Boat Works...`);
-      
-      try {
-        const response = await fetch('https://www.harrisboatworks.ca/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low');
-        const text = await response.text();
-        
-        console.log(`✅ Fetch successful - HTML length: ${text.length} characters`);
-        
-        // Parse HTML for debugging
-        const doc = new DOMParser().parseFromString(text, 'text/html');
-        
-        // Test different selectors to find what exists
-        const selectors = [
-          '.panel.search-result',
-          '.search-result',
-          '.panel',
-          '.inventory-item',
-          '.motor-item',
-          '.product-item',
-          'div[class*="result"]',
-          'div[class*="motor"]',
-          'div[class*="product"]',
-          'div[class*="inventory"]',
-          '.listing',
-          '.item',
-          '[data-inventory]',
-          '.vehicle',
-          '.unit'
-        ];
-
-        const selectorResults = {};
-        for (const selector of selectors) {
-          const elements = doc.querySelectorAll(selector);
-          if (elements.length > 0) {
-            selectorResults[selector] = elements.length;
-            console.log(`🎯 Found ${elements.length} elements with selector: ${selector}`);
-          }
-        }
-
-        // Get sample class names from divs
-        const allDivs = doc.querySelectorAll('div[class]');
-        const sampleClasses = Array.from(allDivs)
-          .slice(0, 20)
-          .map(div => div.className)
-          .filter(className => className.length > 0);
-
-        // Look for any elements that might contain motor data
-        const potentialMotorElements = doc.querySelectorAll('div, article, section');
-        const elementsWithText = Array.from(potentialMotorElements)
-          .filter(el => el.textContent?.toLowerCase().includes('mercury') || 
-                       el.textContent?.toLowerCase().includes('hp') ||
-                       el.textContent?.toLowerCase().includes('outboard'))
-          .slice(0, 5)
-          .map(el => ({
-            tagName: el.tagName,
-            className: el.className,
-            textSnippet: el.textContent?.substring(0, 100)
-          }));
-
-        console.log('🔧 Debugging results:', {
-          selectorResults,
-          totalDivs: allDivs.length,
-          sampleClasses: sampleClasses.slice(0, 10),
-          elementsWithMotorText: elementsWithText.length
-        });
-        
-        summary.motors_found = Object.keys(selectorResults).length;
-        summary.motors_inserted = 0;
-        
-        // Add debugging info to summary
-        summary.debug_info = {
-          html_length: text.length,
-          selector_results: selectorResults,
-          sample_classes: sampleClasses.slice(0, 10),
-          total_divs: allDivs.length,
-          elements_with_motor_text: elementsWithText
-        };
-        
-      } catch (fetchError) {
-        console.error('❌ Error fetching page:', fetchError);
-        summary.errors_count++;
-        throw fetchError;
-      }
-    }
-
-    // Calculate final metrics
-    const endTime = Date.now();
-    summary.duration_seconds = ((endTime - startTime) / 1000).toFixed(2);
-    summary.validation_passed = summary.errors_count === 0;
-
-    const response = {
-      success: true,
-      data: {
-        page: page,
-        hasMore: summary.has_more_pages || false,
-        motors_found: summary.motors_found,
-        motors_saved: summary.motors_inserted,
-        motors_failed: summary.errors_count,
-        errors: summary.errors_count > 0 ? ['Check function logs for detailed error information'] : [],
-        summary: summary
-      }
-    };
-
-    console.log('✅ Scraping completed successfully:', JSON.stringify(summary, null, 2));
+    // Test 1: Can we even respond?
+    console.log('Function started');
     
-    return new Response(JSON.stringify(response), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    });
-
+    // Test 2: Can we fetch?
+    const response = await fetch('https://www.harrisboatworks.ca/robots.txt');
+    const robotsTxt = await response.text();
+    
+    return new Response(
+      JSON.stringify({ 
+        test: 'basic',
+        robots_fetched: robotsTxt.length > 0,
+        robots_length: robotsTxt.length
+      }),
+      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    );
   } catch (error) {
-    console.error('❌ Critical error in scrape-inventory-v2:', error);
-    
-    const errorResponse = {
-      success: false,
-      error: {
-        name: error.name,
-        message: error.message,
-        timestamp: new Date().toISOString()
-      },
-      data: {
-        motors_found: 0,
-        motors_saved: 0,
-        motors_failed: 1,
-        errors: [error.message || 'Unknown error']
-      }
-    };
-    
-    return new Response(JSON.stringify(errorResponse), {
-      status: 500,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    });
+    return new Response(
+      JSON.stringify({ 
+        error: error.message,
+        type: 'fetch_failed'
+      }),
+      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    );
   }
 });
