@@ -30,9 +30,8 @@ export default function AdminSources() {
   const handlePricelistIngest = async () => {
     setLoading({ ...loading, pricelist: true });
     try {
-      const { data, error } = await supabase.functions.invoke('scrape-inventory-v2', {
+      const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
         body: { 
-          action: 'ingest_pricelist',
           url: pricelistUrl,
           dry_run: dryRun
         }
@@ -42,7 +41,7 @@ export default function AdminSources() {
 
       toast({
         title: dryRun ? "Price List Preview" : "Price List Ingested",
-        description: `${data.rows_parsed} rows parsed, ${data.rows_updated} updated, ${data.rows_created} created`,
+        description: `${data.rows_parsed} rows parsed, ${data.rows_updated || 0} updated, ${data.rows_created} created`,
       });
 
       if (!dryRun) {
@@ -63,9 +62,8 @@ export default function AdminSources() {
   const handleBrochureIngest = async () => {
     setLoading({ ...loading, brochure: true });
     try {
-      const { data, error } = await supabase.functions.invoke('scrape-inventory-v2', {
+      const { data, error } = await supabase.functions.invoke('attach-brochure-pdf', {
         body: { 
-          action: 'link_brochure_pdf',
           url: brochureUrl,
           dry_run: dryRun
         }
@@ -75,7 +73,7 @@ export default function AdminSources() {
 
       toast({
         title: dryRun ? "Brochure Link Preview" : "Brochure PDF Linked",
-        description: `${data.models_matched} models matched and linked`,
+        description: `${data.models_matched} models matched, ${data.models_updated || 0} updated`,
       });
 
       if (!dryRun) {
@@ -96,60 +94,61 @@ export default function AdminSources() {
   const handleImageUpload = async () => {
     setLoading({ ...loading, images: true });
     try {
-      let imageData = [];
+      let uploadedCount = 0;
 
       // Handle file uploads
       for (const file of selectedImages) {
-        const fileExt = file.name.split('.').pop();
-        const fileName = `mercury/heroes/${modelKeyMappings[file.name] || 'unknown'}.${fileExt}`;
-        
-        const { error: uploadError } = await supabase.storage
-          .from('motor-images')
-          .upload(fileName, file, { upsert: true });
+        const modelKey = modelKeyMappings[file.name];
+        if (!modelKey) continue;
 
-        if (uploadError) throw uploadError;
-
-        const { data: { publicUrl } } = supabase.storage
-          .from('motor-images')
-          .getPublicUrl(fileName);
-
-        imageData.push({
-          model_key: modelKeyMappings[file.name],
-          hero_image_url: publicUrl
+        // Convert file to base64
+        const reader = new FileReader();
+        const fileData = await new Promise<string>((resolve) => {
+          reader.onload = () => resolve(reader.result as string);
+          reader.readAsDataURL(file);
         });
+
+        const { data, error } = await supabase.functions.invoke('upload-hero-image', {
+          body: { 
+            model_key: modelKey,
+            file_data: fileData,
+            dry_run: dryRun
+          }
+        });
+
+        if (error) {
+          console.error(`Error uploading ${file.name}:`, error);
+        } else {
+          uploadedCount++;
+        }
       }
 
       // Handle URL inputs
       if (imageUrls.trim()) {
         const urls = imageUrls.split('\n').filter(url => url.trim());
         for (const url of urls) {
-          const modelKey = modelKeyMappings[url] || 'unknown';
-          imageData.push({
-            model_key: modelKey,
-            hero_image_url: url.trim()
-          });
-        }
-      }
+          const modelKey = modelKeyMappings[url];
+          if (!modelKey) continue;
 
-      if (!dryRun && imageData.length > 0) {
-        // Update motor models with hero images
-        for (const item of imageData) {
-          const { error } = await supabase
-            .from('motor_models')
-            .update({ hero_image_url: item.hero_image_url })
-            .eq('model_key', item.model_key)
-            .eq('is_brochure', true)
-            .is('hero_image_url', null);
+          const { data, error } = await supabase.functions.invoke('upload-hero-image', {
+            body: { 
+              model_key: modelKey,
+              url: url.trim(),
+              dry_run: dryRun
+            }
+          });
 
           if (error) {
-            console.error('Error updating hero image:', error);
+            console.error(`Error uploading ${url}:`, error);
+          } else {
+            uploadedCount++;
           }
         }
       }
 
       toast({
         title: dryRun ? "Hero Images Preview" : "Hero Images Uploaded",
-        description: `${imageData.length} images processed`,
+        description: `${uploadedCount} images processed successfully`,
       });
 
       if (!dryRun) {
