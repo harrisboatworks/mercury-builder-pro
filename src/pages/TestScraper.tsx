@@ -41,13 +41,10 @@ export default function TestScraper() {
         mode === 'discovery'
           ? {
               mode: 'discovery',
-              max_pages: overrides?.max_pages ?? disc.max_pages,
-              include_alts: overrides?.include_alts ?? disc.include_alts,
-              do_probe: overrides?.do_probe ?? disc.do_probe,
-              // pass only if set (so server stays default when undefined)
-              ...(overrides?.force_source || disc.force_source
-                ? { force_source: overrides?.force_source ?? disc.force_source }
-                : {})
+              max_pages: overrides?.max_pages ?? disc.max_pages ?? 3,
+              include_alts: overrides?.include_alts ?? disc.include_alts ?? true,
+              do_probe: overrides?.do_probe ?? disc.do_probe ?? true,
+              force_source: overrides?.force_source ?? disc.force_source ?? 'auto'
             }
           : {
               mode: 'full',

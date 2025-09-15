@@ -568,6 +568,18 @@ async function discoverFromXmlFeed() {
     const filtered = units.filter(isNewMercuryOutboard);
     
     console.log(`XML feed: units total = ${units.length}, filtered new Mercury outboards = ${filtered.length}`);
+    
+    // Add debug logs for XML sample fields
+    console.log('XML sample fields:', {
+      total: units.length,
+      sample: (Array.isArray(units) ? units.slice(0,2) : [units]).map(u => ({
+        Make: u.Make, 
+        Title: u.Title ?? u.UnitName ?? u.Model, 
+        Condition: u.Condition ?? u.UnitCondition, 
+        Category: u.Category ?? u.Type ?? u.VehicleType,
+        DetailsUrl: u.DetailsUrl ?? u.DetailsURL ?? u.UnitURL ?? u.Url
+      }))
+    });
 
     // Build items with enhanced data extraction
     const items = filtered.map((u: any) => {
@@ -969,27 +981,31 @@ serve(async (req) => {
       }
     };
 
-    // EARLY RETURN: discovery mode (prefer XML feed, fallback to enhanced)
+    // EARLY RETURN: discovery mode
     if (mode === "discovery") {
-      console.log("🚀 Discovery mode: trying XML feed first...");
-      const xml = await discoverFromXmlFeed();
+      const force = (body.force_source ?? 'auto') as 'auto' | 'xml' | 'pages';
+      console.log(`🚀 Discovery mode with force_source: ${force}`);
 
-      if (xml.count > 0) {
-        return new Response(JSON.stringify({
-          success: true,
-          mode,
-          source: "xml",
-          urls_discovered: xml.count,
-          samples: xml.urls.slice(0, 8),
-          total_units: xml.totalUnits,
-          filtered_units: xml.count
-        }), {
-          status: 200,
-          headers: { 'Content-Type': 'application/json', ...corsHeaders }
-        });
+      if (force !== 'pages') {
+        const xml = await discoverFromXmlFeed();
+        if (xml.count > 0 || force === 'xml') {
+          return new Response(JSON.stringify({
+            success: true,
+            mode,
+            source: "xml",
+            urls_discovered: xml.count,
+            samples: xml.urls.slice(0, 8),
+            total_units: xml.totalUnits,
+            filtered_units: xml.count
+          }), {
+            status: 200,
+            headers: { 'Content-Type': 'application/json', ...corsHeaders }
+          });
+        }
       }
 
-      console.log("XML feed empty or blocked. Falling back to enhanced page discovery...");
+      // fallback or forced pages
+      console.log("XML feed empty/blocked or forced pages. Using enhanced page discovery...");
       const result = await enhancedDiscover(fetchPage, {
         maxPages: Math.min(3, Number(body.max_pages ?? 3) || 3),
         includeAlts: body.include_alts !== false,
