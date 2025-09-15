@@ -446,7 +446,7 @@ export type Database = {
           engine_type: string | null
           features: Json | null
           fuel_type: string | null
-          horsepower: number
+          horsepower: number | null
           id: string
           image_url: string | null
           images: Json | null
@@ -478,7 +478,7 @@ export type Database = {
           engine_type?: string | null
           features?: Json | null
           fuel_type?: string | null
-          horsepower: number
+          horsepower?: number | null
           id?: string
           image_url?: string | null
           images?: Json | null
@@ -510,7 +510,7 @@ export type Database = {
           engine_type?: string | null
           features?: Json | null
           fuel_type?: string | null
-          horsepower?: number
+          horsepower?: number | null
           id?: string
           image_url?: string | null
           images?: Json | null
