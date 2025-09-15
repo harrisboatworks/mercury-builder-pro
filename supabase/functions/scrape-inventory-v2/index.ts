@@ -9,28 +9,69 @@ const corsHeaders = {
 
 // Parse motors from HTML function
 async function parseMotorsFromHTML(html: string, markdown: string = '') {
-  console.log('🔍 Starting simple motor parsing...')
+  console.log('🔍 Starting motor parsing with new pattern...')
   
   const motors = []
+  const combinedText = html + ' ' + markdown
   
-  // Simple pattern: Mercury + any text + number + HP
-  const simplePattern = /mercury.*?(\d+).*?hp/gi
-  const matches = Array.from(html.matchAll(simplePattern))
+  // Check for result count to verify we're on the right page
+  const resultCountPattern = /(\d+)\s*-\s*(\d+)\s*of\s*(\d+)/i
+  const resultMatch = combinedText.match(resultCountPattern)
+  if (resultMatch) {
+    console.log(`📊 Result count found: ${resultMatch[1]} - ${resultMatch[2]} of ${resultMatch[3]}`)
+  }
   
-  console.log('Simple Mercury HP pattern matches:', matches.length)
+  // Primary pattern: YEAR + MODEL + HP + TYPE - Mercury
+  const primaryPattern = /(\d{4}).*?(\d+)HP.*?Mercury/gi
+  const primaryMatches = Array.from(combinedText.matchAll(primaryPattern))
+  console.log('Primary pattern matches (YEAR...HP...Mercury):', primaryMatches.length)
   
-  // Also check markdown
-  const markdownMatches = Array.from(markdown.matchAll(simplePattern))
-  console.log('Markdown Mercury HP matches:', markdownMatches.length)
+  // Fallback pattern: Mercury + any text + number + HP (original format)
+  const fallbackPattern = /mercury.*?(\d+).*?hp/gi
+  const fallbackMatches = Array.from(combinedText.matchAll(fallbackPattern))
+  console.log('Fallback pattern matches (Mercury...HP):', fallbackMatches.length)
   
-  // Combine matches
-  const allMatches = [...matches, ...markdownMatches]
+  // Process primary matches first (preferred format)
+  for (const match of primaryMatches) {
+    const year = parseInt(match[1])
+    const horsepower = parseInt(match[2])
+    const fullMatch = match[0]
+    
+    // Skip invalid values
+    if (year < 2020 || year > 2030 || horsepower < 5 || horsepower > 500) {
+      continue
+    }
+    
+    // Extract model name (text between year and HP)
+    const modelMatch = fullMatch.match(/\d{4}\s*(.*?)\s*\d+HP/i)
+    let modelName = modelMatch ? modelMatch[1].trim() : `${horsepower}HP`
+    
+    // Clean up model name
+    modelName = modelName.replace(/®/g, '').replace(/™/g, '').trim()
+    if (!modelName || modelName.length < 2) {
+      modelName = `${horsepower}HP FourStroke`
+    }
+    
+    const motor = {
+      make: 'Mercury',
+      model: modelName,
+      horsepower: horsepower,
+      motor_type: 'FourStroke',
+      base_price: null,
+      year: year
+    }
+    
+    console.log('🎯 Found motor (primary):', `${motor.year} ${motor.make} ${motor.model} ${motor.horsepower}HP`)
+    motors.push(motor)
+  }
   
-  for (const match of allMatches) {
+  // Process fallback matches (avoid duplicates)
+  const existingHPs = new Set(motors.map(m => m.horsepower))
+  for (const match of fallbackMatches) {
     const horsepower = parseInt(match[1])
     
-    // Skip invalid horsepower values
-    if (horsepower < 5 || horsepower > 500) {
+    // Skip if already found by primary pattern or invalid
+    if (existingHPs.has(horsepower) || horsepower < 5 || horsepower > 500) {
       continue
     }
     
@@ -43,8 +84,17 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
       year: 2025
     }
     
-    console.log('🎯 Found motor:', motor.make, motor.model, motor.horsepower + 'HP', motor.base_price ? '$' + motor.base_price : 'No price')
+    console.log('🎯 Found motor (fallback):', motor.make, motor.model, motor.horsepower + 'HP')
     motors.push(motor)
+    existingHPs.add(horsepower)
+  }
+  
+  // Log some sample matches for debugging
+  if (primaryMatches.length > 0) {
+    console.log('Sample primary matches:')
+    primaryMatches.slice(0, 3).forEach((match, i) => {
+      console.log(`  ${i + 1}: "${match[0]}"`)
+    })
   }
   
   return {
@@ -52,7 +102,10 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
     debugInfo: {
       html_length: html.length,
       markdown_length: markdown.length,
-      total_matches: allMatches.length
+      primary_matches: primaryMatches.length,
+      fallback_matches: fallbackMatches.length,
+      total_matches: primaryMatches.length + fallbackMatches.length,
+      result_count: resultMatch ? resultMatch[3] : null
     }
   }
 }
