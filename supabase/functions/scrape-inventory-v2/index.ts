@@ -8,23 +8,43 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE',
 };
 
-// Validation function to ensure all motors have required fields
+// Validation function to ensure all motors match database schema exactly
 const validateAndFixMotor = (motor: any) => {
-  return {
-    ...motor,
-    // Ensure required fields are never null
+  // Create a clean object with ONLY database fields and correct data types
+  const motorForDB = {
+    // Required fields - these MUST have values and correct types
     make: motor.make || 'Mercury',
-    year: motor.year || 2025,
     model: motor.model || 'Unknown Model',
-    horsepower: motor.horsepower || 0,
+    year: parseInt(motor.year) || 2025,
+    horsepower: parseFloat(motor.horsepower) || 0,
     motor_type: motor.motor_type || 'Outboard',
+    
+    // Optional numeric fields - parse properly or set to null
+    base_price: motor.base_price ? parseFloat(motor.base_price) : null,
+    sale_price: motor.sale_price ? parseFloat(motor.sale_price) : null,
+    
+    // Optional text fields
     availability: motor.availability || 'Brochure',
-    base_price: motor.base_price || 0,
-    sale_price: motor.sale_price || motor.base_price || 0,
-    stock_quantity: motor.stock_quantity || 0,
+    stock_number: motor.stock_number || null,
+    image_url: motor.image_url || null,
+    detail_url: motor.detail_url || null,
+    description: motor.description || null,
+    engine_type: motor.engine_type || null,
+    
+    // Default values for required fields
+    stock_quantity: parseInt(motor.stock_quantity) || 0,
     inventory_source: 'html',
-    last_scraped: new Date().toISOString()
+    last_scraped: new Date().toISOString(),
+    
+    // JSONB fields with defaults
+    features: motor.features || null,
+    specifications: motor.specifications || null,
+    images: motor.images || null,
+    
+    // System fields will be auto-generated: id, created_at, updated_at, data_sources, etc.
   };
+  
+  return motorForDB;
 };
 
 // Batch saving function that continues even if some motors fail
@@ -450,20 +470,28 @@ serve(async (req) => {
               
               console.log(`🔧 Motor type detected: "${motor_type}" from "${model}"`);
 
+              // Create motor object with proper data types matching database schema
               const motor = {
+                // Required fields with proper data types
+                make: 'Mercury', // Always Mercury for this scraper
                 model,
-                horsepower,
-                year: 2025, // Always set current year
-                make, // Use 'make' instead of 'brand' to match database
-                motor_type, // Add motor type based on model
-                base_price: price,
-                sale_price: price,
+                year: 2025,
+                horsepower: parseFloat(horsepower), // Ensure numeric type
+                motor_type,
+                
+                // Optional numeric fields - parse properly
+                base_price: price ? parseFloat(price) : null,
+                sale_price: price ? parseFloat(price) : null,
+                
+                // Optional text fields
                 availability: availabilityStatus,
                 stock_number: stockNumber,
-                last_scraped: new Date().toISOString()
+                
+                // Fields that will be added/validated by validateAndFixMotor:
+                // stock_quantity, inventory_source, last_scraped
               };
 
-              // Enhanced validation with required field checking (allow null prices now)
+              // Enhanced validation - check for required database fields
               const isValidMotor = (
                 motor.model && 
                 motor.model.length > 1 && 
