@@ -456,6 +456,8 @@ export type Database = {
         Row: {
           availability: string | null
           base_price: number | null
+          catalog_snapshot_url: string | null
+          catalog_source_url: string | null
           control: string | null
           created_at: string | null
           data_quality_score: number | null
@@ -480,12 +482,14 @@ export type Database = {
           last_stock_check: string | null
           make: string
           manual_overrides: Json | null
+          mercury_model_no: string | null
           model: string
           model_code: string | null
           model_key: string | null
           model_number: string | null
           motor_type: string
           msrp: number | null
+          msrp_calc_source: string | null
           msrp_source: string | null
           price_source: string | null
           rigging_code: string | null
@@ -504,6 +508,8 @@ export type Database = {
         Insert: {
           availability?: string | null
           base_price?: number | null
+          catalog_snapshot_url?: string | null
+          catalog_source_url?: string | null
           control?: string | null
           created_at?: string | null
           data_quality_score?: number | null
@@ -528,12 +534,14 @@ export type Database = {
           last_stock_check?: string | null
           make?: string
           manual_overrides?: Json | null
+          mercury_model_no?: string | null
           model: string
           model_code?: string | null
           model_key?: string | null
           model_number?: string | null
           motor_type: string
           msrp?: number | null
+          msrp_calc_source?: string | null
           msrp_source?: string | null
           price_source?: string | null
           rigging_code?: string | null
@@ -552,6 +560,8 @@ export type Database = {
         Update: {
           availability?: string | null
           base_price?: number | null
+          catalog_snapshot_url?: string | null
+          catalog_source_url?: string | null
           control?: string | null
           created_at?: string | null
           data_quality_score?: number | null
@@ -576,12 +586,14 @@ export type Database = {
           last_stock_check?: string | null
           make?: string
           manual_overrides?: Json | null
+          mercury_model_no?: string | null
           model?: string
           model_code?: string | null
           model_key?: string | null
           model_number?: string | null
           motor_type?: string
           msrp?: number | null
+          msrp_calc_source?: string | null
           msrp_source?: string | null
           price_source?: string | null
           rigging_code?: string | null

@@ -9,18 +9,30 @@ import { useToast } from '@/hooks/use-toast';
 
 interface ParseResult {
   success: boolean;
+  rows_found_raw: number;
+  rows_parsed: number;
   rows_parsed_total: number;
   rows_created: number;
   rows_updated: number;
   rows_rejected: number;
+  rows_skipped_total: number;
+  rows_skipped_by_reason: Record<string, number>;
+  top_skip_reasons: string[];
   reject_reasons?: string[];
-  preview_first_10?: Array<{
+  sample_created?: Array<{
     model: string;
     model_key: string;
     family: string;
     horsepower: number;
     dealer_price: number;
     msrp: number;
+  }>;
+  sample_skipped?: Array<{
+    line: number;
+    reason: string;
+    raw_model: string;
+    model_key: string;
+    dealer_price_raw: string;
   }>;
   html_saved_url?: string;
   source_kind?: string;
@@ -119,12 +131,18 @@ export default function AdminBrochureTest() {
 
       const result: ParseResult = {
         success: data.success,
+        rows_found_raw: data.rows_found_raw || 0,
+        rows_parsed: data.rows_parsed || 0,
         rows_parsed_total: data.rows_parsed_total || 0,
         rows_created: data.rows_created || 0,
         rows_updated: data.rows_updated || 0,
         rows_rejected: data.rows_rejected || 0,
+        rows_skipped_total: data.rows_skipped_total || 0,
+        rows_skipped_by_reason: data.rows_skipped_by_reason || {},
+        top_skip_reasons: data.top_skip_reasons || [],
         reject_reasons: data.reject_reasons || [],
-        preview_first_10: data.sample_models || [],
+        sample_created: data.sample_created || data.sample_models || [],
+        sample_skipped: data.sample_skipped || [],
         html_saved_url: data.artifacts?.html_url,
         source_kind: data.source_kind
       };
@@ -133,13 +151,13 @@ export default function AdminBrochureTest() {
         setDryRunResult(result);
         toast({
           title: "Dry Run Complete",
-          description: `Parsed ${result.rows_parsed_total} rows (would create ${result.rows_created}, update ${result.rows_updated})`
+          description: `Found ${result.rows_found_raw} raw, parsed ${result.rows_parsed} (would create ${result.rows_created}, update ${result.rows_updated})`
         });
       } else {
         setIngestResult(result);
         toast({
           title: "Ingest Complete", 
-          description: `Created ${result.rows_created} and updated ${result.rows_updated} brochure models`,
+          description: `Parsed ${result.rows_parsed} rows → Created ${result.rows_created} and updated ${result.rows_updated} brochure models`,
           variant: result.rows_created > 0 ? "default" : "destructive"
         });
         // Reload summary after successful ingest
@@ -150,10 +168,15 @@ export default function AdminBrochureTest() {
       console.error('Price list parser error:', error);
       const errorResult: ParseResult = {
         success: false,
+        rows_found_raw: 0,
+        rows_parsed: 0,
         rows_parsed_total: 0,
         rows_created: 0,
         rows_updated: 0,
         rows_rejected: 0,
+        rows_skipped_total: 0,
+        rows_skipped_by_reason: {},
+        top_skip_reasons: [],
         error: error.message
       };
       
@@ -239,10 +262,14 @@ export default function AdminBrochureTest() {
           <div className="space-y-4">
             {result.success ? (
               <>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">{result.rows_parsed_total}</div>
-                    <div className="text-sm text-muted-foreground">Rows Parsed</div>
+                    <div className="text-2xl font-bold text-primary">{result.rows_found_raw || result.rows_parsed_total || 0}</div>
+                    <div className="text-sm text-muted-foreground">Raw Found</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-600">{result.rows_parsed || 0}</div>
+                    <div className="text-sm text-muted-foreground">Parsed</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-green-600">{result.rows_created}</div>
@@ -253,8 +280,8 @@ export default function AdminBrochureTest() {
                     <div className="text-sm text-muted-foreground">Updated</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-red-600">{result.rows_rejected}</div>
-                    <div className="text-sm text-muted-foreground">Rejected</div>
+                    <div className="text-2xl font-bold text-red-600">{result.rows_skipped_total || result.rows_rejected}</div>
+                    <div className="text-sm text-muted-foreground">Skipped</div>
                   </div>
                 </div>
 
@@ -272,6 +299,17 @@ export default function AdminBrochureTest() {
                   </div>
                 )}
 
+                {result.top_skip_reasons && result.top_skip_reasons.length > 0 && (
+                  <div className="mt-4">
+                    <h4 className="font-semibold text-sm mb-2">Top Skip Reasons:</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {result.top_skip_reasons.map((reason, idx) => (
+                        <li key={idx}>• {reason}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 {result.reject_reasons && result.reject_reasons.length > 0 && (
                   <div className="mt-4">
                     <h4 className="font-semibold text-sm mb-2">Reject Reasons:</h4>
@@ -283,9 +321,9 @@ export default function AdminBrochureTest() {
                   </div>
                 )}
 
-                {result.preview_first_10 && result.preview_first_10.length > 0 && (
+                {result.sample_created && result.sample_created.length > 0 && (
                   <div className="mt-4">
-                    <h4 className="font-semibold text-sm mb-2">Preview (First 10):</h4>
+                    <h4 className="font-semibold text-sm mb-2">Sample Created (First 10):</h4>
                     <div className="rounded-md border overflow-hidden">
                       <Table>
                         <TableHeader>
@@ -299,7 +337,7 @@ export default function AdminBrochureTest() {
                           </TableRow>
                         </TableHeader>
                         <TableBody>
-                          {result.preview_first_10.map((item, idx) => (
+                          {result.sample_created.map((item, idx) => (
                             <TableRow key={idx}>
                               <TableCell className="font-medium">{item.model}</TableCell>
                               <TableCell className="font-mono text-xs">{item.model_key}</TableCell>
@@ -309,6 +347,38 @@ export default function AdminBrochureTest() {
                               <TableCell>{item.horsepower}</TableCell>
                               <TableCell>${item.dealer_price?.toLocaleString()}</TableCell>
                               <TableCell>${item.msrp?.toLocaleString()}</TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    </div>
+                  </div>
+                )}
+
+                {result.sample_skipped && result.sample_skipped.length > 0 && (
+                  <div className="mt-4">
+                    <h4 className="font-semibold text-sm mb-2">Sample Skipped (First 10):</h4>
+                    <div className="rounded-md border overflow-hidden">
+                      <Table>
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead>Line</TableHead>
+                            <TableHead>Reason</TableHead>
+                            <TableHead>Raw Model</TableHead>
+                            <TableHead>Model Key</TableHead>
+                            <TableHead>Price Raw</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {result.sample_skipped.map((item, idx) => (
+                            <TableRow key={idx}>
+                              <TableCell>{item.line}</TableCell>
+                              <TableCell>
+                                <Badge variant="destructive">{item.reason}</Badge>
+                              </TableCell>
+                              <TableCell className="font-medium">{item.raw_model}</TableCell>
+                              <TableCell className="font-mono text-xs">{item.model_key}</TableCell>
+                              <TableCell>{item.dealer_price_raw}</TableCell>
                             </TableRow>
                           ))}
                         </TableBody>

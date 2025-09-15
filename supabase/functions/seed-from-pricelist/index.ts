@@ -53,17 +53,88 @@ function parsePrice(priceText: string): number | null {
   return price;
 }
 
-// Parse model attributes from display string using shared helper
-function parseModelFromText(modelDisplay: string = '') {
-  const cleanedText = cleanText(modelDisplay);
-  const parsed = extractHpAndCode(cleanedText);
+// Enhanced model parsing with more specific key generation
+function parseModelFromText(modelDisplay: string = '', modelNumber: string = '') {
+  const cleanedText = cleanText(modelDisplay + ' ' + modelNumber);
+  
+  // Extract horsepower with more precision
+  const hpMatch = cleanedText.match(/(\d+(?:\.\d+)?)\s*hp/i);
+  const horsepower = hpMatch ? Number(hpMatch[1]) : null;
+  
+  // Extract family with better pattern matching
+  let family = '';
+  if (/four\s*stroke|fourstroke/i.test(cleanedText)) family = 'FourStroke';
+  else if (/pro\s*xs|proxs/i.test(cleanedText)) family = 'ProXS';
+  else if (/sea\s*pro|seapro/i.test(cleanedText)) family = 'SeaPro';
+  else if (/verado/i.test(cleanedText)) family = 'Verado';
+  else if (/racing/i.test(cleanedText)) family = 'Racing';
+  
+  // Extract rigging/control codes with comprehensive pattern
+  const codeTokens: string[] = [];
+  const codePattern = /\b(ELHPT|ELPT|ELO|ELH|EH|XL|XXL|EXLPT|L|CL|CT|DTS|TILLER|JPO|DIGITAL|POWER\s*STEERING)\b/gi;
+  let match;
+  while ((match = codePattern.exec(cleanedText)) !== null) {
+    const token = match[1].replace(/\s+/g, '').toUpperCase();
+    if (!codeTokens.includes(token)) {
+      codeTokens.push(token);
+    }
+  }
+  
+  // Check for EFI presence
+  const hasEFI = /\befi\b/i.test(cleanedText);
   
   return {
-    family: parsed.family || 'FourStroke',
-    horsepower: parsed.hp,
-    fuel: parsed.fuel || 'EFI',
-    rigging_code: parsed.code
+    family: family || 'FourStroke', // Default family
+    horsepower: horsepower || 0,
+    fuel: hasEFI ? 'EFI' : '',
+    rigging_code: codeTokens.join(' '),
+    code_tokens: codeTokens
   };
+}
+
+// Improved model key builder with more specific logic
+function buildEnhancedModelKey(modelDisplay: string, modelNumber: string, attrs: any): string {
+  const parts: string[] = [];
+  
+  // Add family (required)
+  if (attrs.family) {
+    parts.push(attrs.family.toUpperCase());
+  }
+  
+  // Add horsepower (required if > 0)
+  if (attrs.horsepower && attrs.horsepower > 0) {
+    parts.push(`${attrs.horsepower}HP`);
+  }
+  
+  // Add fuel type if explicitly mentioned
+  if (attrs.fuel) {
+    parts.push(attrs.fuel.toUpperCase());
+  }
+  
+  // Add code tokens (if any)
+  if (attrs.code_tokens && attrs.code_tokens.length > 0) {
+    parts.push(...attrs.code_tokens);
+  }
+  
+  // Add model number suffix for uniqueness if available
+  if (modelNumber && modelNumber.length > 0) {
+    parts.push(modelNumber.toUpperCase());
+  }
+  
+  const key = parts.join('-');
+  
+  // Fallback if key generation failed
+  if (!key || key === '') {
+    const fallback = cleanText(modelDisplay + ' ' + modelNumber)
+      .toUpperCase()
+      .replace(/[^A-Z0-9\s]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+    return fallback || 'UNKNOWN-MODEL';
+  }
+  
+  return key;
 }
 
 // Generate SHA-256 checksum
@@ -146,7 +217,7 @@ function parseCSV(csvContent: string): Array<{model_display: string, model_numbe
   return results;
 }
 
-// Enhanced HTML parser for Mercury models with auto table detection
+// Enhanced HTML parser with better column detection and flexibility
 function parseHTML(html: string): Array<{model_display: string, model_number?: string, horsepower?: number, family?: string, dealer_price?: number}> {
   const $ = load(html);
   let results: any[] = [];
@@ -195,56 +266,95 @@ function parseHTML(html: string): Array<{model_display: string, model_number?: s
     
     console.log(`[PriceList] Processing table with score ${tableInfo.score}`);
     
-    // Process table rows
-    $table.find('tr').each((rowIdx, row) => {
+    // Try to detect column headers first
+    const headerRow = $table.find('tr').first();
+    const headerCells = headerRow.find('th, td').toArray().map(cell => cleanText($(cell).text()).toLowerCase());
+    
+    console.log(`[PriceList] Detected headers:`, headerCells);
+    
+    // Map column indices based on header content or patterns
+    const colMap: Record<string, number> = {};
+    headerCells.forEach((header, idx) => {
+      if (/model|description|name/.test(header)) colMap.model = idx;
+      if (/number|code|sku|part/.test(header)) colMap.model_number = idx;
+      if (/hp|horsepower|power/.test(header)) colMap.horsepower = idx;
+      if (/family|series|type/.test(header)) colMap.family = idx;
+      if (/price|cost|dealer|retail/.test(header)) colMap.price = idx;
+    });
+    
+    console.log(`[PriceList] Column mapping:`, colMap);
+    
+    // Process table rows (skip header if detected)
+    const dataRows = $table.find('tr').slice(headerCells.some(h => /model|price|hp/.test(h)) ? 1 : 0);
+    
+    dataRows.each((rowIdx, row) => {
       const $row = $(row);
       const cells = $row.find('td, th').toArray().map(cell => cleanText($(cell).text()));
       
       if (cells.length < 2) return;
       
-      // Skip header rows
+      // Skip obvious header rows even in data
       const cellsText = cells.join(' ').toLowerCase();
-      if (/model|name|description|price|hp/i.test(cellsText) && rowIdx < 3) return;
+      if (/model|description|price|hp|family/.test(cellsText) && cells.every(c => !/\d+/.test(c))) return;
       
-      // Look for model and price in any combination of columns
       let model_display = '';
       let model_number = '';
       let horsepower: number | null = null;
       let family = '';
       let dealer_price: number | null = null;
       
-      for (const cell of cells) {
-        // Check if this looks like a model name (contains HP or motor family)
-        if (!model_display && (/\d+\s*hp/i.test(cell) || /fourstroke|prox|verado|seapro|racing/i.test(cell))) {
-          model_display = cell;
-          
-          // Try to extract horsepower
-          const hpMatch = cell.match(/(\d+(?:\.\d+)?)\s*hp/i);
-          if (hpMatch) horsepower = parseFloat(hpMatch[1]);
-          
-          // Try to extract family
-          if (/fourstroke/i.test(cell)) family = 'FourStroke';
-          else if (/prox/i.test(cell)) family = 'ProXS';
-          else if (/seapro/i.test(cell)) family = 'SeaPro';
-          else if (/verado/i.test(cell)) family = 'Verado';
-          else if (/racing/i.test(cell)) family = 'Racing';
+      // Use column mapping if available, otherwise use pattern detection
+      if (Object.keys(colMap).length > 0) {
+        if (colMap.model !== undefined && cells[colMap.model]) model_display = cells[colMap.model];
+        if (colMap.model_number !== undefined && cells[colMap.model_number]) model_number = cells[colMap.model_number];
+        if (colMap.horsepower !== undefined && cells[colMap.horsepower]) {
+          const hp = parseFloat(cells[colMap.horsepower]);
+          if (!isNaN(hp)) horsepower = hp;
         }
-        
-        // Check if this looks like a model number (Mercury format)
-        if (!model_number && /^[A-Z0-9]{4,12}$/.test(cell.replace(/\s/g, ''))) {
-          model_number = cell.replace(/\s/g, '');
-        }
-        
-        // Check if this looks like a price
-        if (!dealer_price) {
-          const price = parsePrice(cell);
-          if (price && price > 100 && price < 1000000) { // Reasonable price range
-            dealer_price = price;
+        if (colMap.family !== undefined && cells[colMap.family]) family = cells[colMap.family];
+        if (colMap.price !== undefined && cells[colMap.price]) dealer_price = parsePrice(cells[colMap.price]);
+      } else {
+        // Fallback: pattern-based detection for each cell
+        for (const cell of cells) {
+          // Pattern: HP detection
+          if (!horsepower && /^\d+(\.\d+)?\s*hp$/i.test(cell)) {
+            const hp = parseFloat(cell.replace(/hp/i, ''));
+            if (!isNaN(hp)) horsepower = hp;
+            continue;
+          }
+          
+          // Pattern: Price detection
+          if (!dealer_price && /^\$?\s*\d[\d,]*(\.\d{2})?$/.test(cell)) {
+            dealer_price = parsePrice(cell);
+            continue;
+          }
+          
+          // Pattern: Model number detection (Mercury format: alphanumeric, 4-12 chars)
+          if (!model_number && /^[A-Z0-9]{4,12}$/i.test(cell.replace(/\s/g, ''))) {
+            model_number = cell.replace(/\s/g, '');
+            continue;
+          }
+          
+          // Pattern: Family detection
+          if (!family && /\b(Four\s*Stroke|FourStroke|Pro\s*XS|ProXS|Sea\s*Pro|SeaPro|Verado|Racing)\b/i.test(cell)) {
+            if (/fourstroke|four\s*stroke/i.test(cell)) family = 'FourStroke';
+            else if (/prox|pro\s*xs/i.test(cell)) family = 'ProXS';
+            else if (/seapro|sea\s*pro/i.test(cell)) family = 'SeaPro';
+            else if (/verado/i.test(cell)) family = 'Verado';
+            else if (/racing/i.test(cell)) family = 'Racing';
+            continue;
+          }
+          
+          // Pattern: Model description (contains HP and/or motor family terms)
+          if (!model_display && (/\d+\s*hp/i.test(cell) || /fourstroke|prox|verado|seapro|racing/i.test(cell))) {
+            model_display = cell;
+            continue;
           }
         }
       }
       
-      if (model_display && dealer_price) {
+      // Must have at least model description and price to be valid
+      if (model_display && dealer_price && dealer_price > 0) {
         tableResults.push({ 
           model_display: model_display.trim(),
           model_number: model_number || undefined,
@@ -364,6 +474,7 @@ serve(async (req) => {
   try {
     const { 
       url = 'https://www.harrisboatworks.ca/mercurypricelist',
+      html_snapshot_url = null,
       dry_run = false, 
       msrp_markup = 1.10, 
       force = false,
@@ -383,10 +494,21 @@ serve(async (req) => {
     let tableCells = 0;
     let sourceKind = 'raw_csv';
     
-    // STEP 1: Get content (URL fetch, CSV, or HTML)
+    // STEP 1: Get content (URL fetch, CSV, HTML, or snapshot)
     currentStep = 'fetch';
     
-    if (csv_content) {
+    if (html_snapshot_url) {
+      console.log(`[PriceList] Using HTML snapshot from: ${html_snapshot_url}`);
+      const response = await fetch(html_snapshot_url);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch snapshot: ${response.status}`);
+      }
+      html = await response.text();
+      htmlSnapshot = html;
+      contentSource = 'snapshot';
+      sourceKind = 'html_table';
+      checksum = await generateChecksum(html);
+    } else if (csv_content) {
       console.log(`[PriceList] Using provided CSV content (${csv_content.length} chars)`);
       html = csv_content;
       contentSource = 'csv';
@@ -509,30 +631,23 @@ serve(async (req) => {
       const cleaned_model_display = cleanText(r.model_display || '');
       const model_number = cleanText(r.model_number || '');
       
-      // Parse attributes from model display or use provided data
-      const attrs = r.family ? {
-        family: r.family,
-        horsepower: r.horsepower || null,
-        fuel: 'EFI',
-        rigging_code: ''
-      } : parseModelFromText(cleaned_model_display);
+      // Parse attributes with enhanced logic
+      const attrs = parseModelFromText(cleaned_model_display, model_number);
       
-      // Build model_key using shared helper
-      const model_key = buildModelKey(cleaned_model_display || model_number);
+      // Build enhanced model_key for better uniqueness
+      const model_key = buildEnhancedModelKey(cleaned_model_display, model_number, attrs);
       
-      // Debug logging for first 10 rows
-      if (i < 10) {
+      // Debug logging for first 12 rows
+      if (i < 12) {
         console.log(`[PriceList] DEBUG Row ${i + 1}:`, {
-          raw_model: r.model_display,
-          model_number: r.model_number,
+          raw_cells: [r.model_display, r.model_number, String(r.dealer_price)],
           family: attrs.family,
           horsepower: attrs.horsepower,
-          fuel: attrs.fuel,
-          rigging_code: attrs.rigging_code,
+          code_tokens: attrs.code_tokens,
           dealer_price_raw: String(r.dealer_price),
-          dealer_price_parsed: parsePrice(String(r.dealer_price || '')),
-          model_key,
-          msrp_computed: msrpFromDealer(parsePrice(String(r.dealer_price || '')), msrp_markup)
+          dealer_price_num: parsePrice(String(r.dealer_price || '')),
+          msrp: msrpFromDealer(parsePrice(String(r.dealer_price || '')), msrp_markup),
+          model_key
         });
       }
       
@@ -577,25 +692,28 @@ serve(async (req) => {
       
       const msrp = msrpFromDealer(dealer_price, msrp_markup);
       
-      // Build the row object for upsert - be more permissive with missing fields
+      // Build the row object for upsert - comprehensive model data
       const row: any = {
         make: 'Mercury',
-        model: cleaned_model_display || model_number || 'Unknown Model',
+        model: cleaned_model_display || `${attrs.family} ${attrs.horsepower}HP ${attrs.fuel} ${attrs.rigging_code}`.trim(),
         model_key,
+        mercury_model_no: model_number || null,
         year: 2025,
-        motor_type: attrs.family || 'FourStroke', // Default family
+        motor_type: attrs.family,
+        family: attrs.family,
+        horsepower: attrs.horsepower,
+        fuel_type: attrs.fuel,
+        model_code: attrs.rigging_code,
         dealer_price,
         msrp,
-        msrp_source: `derived:+${Math.round((msrp_markup - 1) * 100)}%`,
         price_source: 'pricelist',
+        msrp_calc_source: 'markup',
+        msrp_source: `derived:+${Math.round((msrp_markup - 1) * 100)}%`,
         last_scraped: new Date().toISOString(),
-        inventory_source: 'pricelist'
+        inventory_source: 'pricelist',
+        catalog_source_url: url,
+        catalog_snapshot_url: html_snapshot_url
       };
-      
-      // Add model_number if we have it
-      if (model_number) {
-        row.model_number = model_number;
-      }
       
       // Only create brochure entries if requested (default true)
       if (create_missing_brochure) {
@@ -603,12 +721,6 @@ serve(async (req) => {
         row.in_stock = false;
         row.availability = 'Brochure';
       }
-      
-      // Include optional fields - use defaults if missing
-      row.family = attrs.family || 'FourStroke';
-      row.horsepower = attrs.horsepower || 0;
-      row.fuel_type = attrs.fuel || 'EFI';
-      row.rigging_code = attrs.rigging_code || '';
       
       rows.push(row);
     }
@@ -845,19 +957,28 @@ serve(async (req) => {
       .slice(0, 3)
       .map(([reason, count]) => `${reason}: ${count}`);
     
-    // Enhanced sample models with more debug info
+    // Enhanced sample models with comprehensive debug info  
     const enhancedSamples = deduplicatedModels.slice(0, 10).map(m => ({
       model: m.model,
-      model_number: m.model_number || '',
+      model_number: m.mercury_model_no || '',
       model_key: m.model_key,
       family: m.family,
       horsepower: m.horsepower,
       fuel_type: m.fuel_type,
-      rigging_code: m.rigging_code,
+      model_code: m.model_code,
       dealer_price: m.dealer_price,
       msrp: m.msrp,
       is_brochure: m.is_brochure,
       in_stock: m.in_stock
+    }));
+    
+    // Create sample skipped rows for debugging
+    const sampleSkipped = rowErrors.slice(0, 10).map(err => ({
+      line: err.line,
+      reason: err.reason,
+      raw_model: err.raw_model,
+      model_key: err.model_key,
+      dealer_price_raw: err.dealer_price_raw
     }));
     
     return json200({
@@ -874,7 +995,8 @@ serve(async (req) => {
       rows_normalized,
       rows_created,
       rows_updated,
-      rows_skipped_with_reason: Object.values(skipReasons).reduce((a, b) => a + b, 0),
+      rows_skipped_total: Object.values(skipReasons).reduce((a, b) => a + b, 0),
+      rows_skipped_by_reason: skipReasons,
       top_skip_reasons: topSkipReasons,
       
       // Legacy fields for compatibility
@@ -890,14 +1012,15 @@ serve(async (req) => {
       rows_skipped,
       
       // Debug info
-      skip_reasons_detail: skipReasons,
       unique_model_keys: keyGroups.size,
       rowErrors: rowErrors.slice(0, 50),
       rowMatches: rowMatches.slice(0, 50),
       checksum,
       skipped_due_to_same_checksum: false,
       artifacts,
-      sample_models: enhancedSamples
+      sample_models: enhancedSamples,
+      sample_created: enhancedSamples,
+      sample_skipped: sampleSkipped
     });
     
   } catch (error: any) {
