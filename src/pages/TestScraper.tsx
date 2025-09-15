@@ -4,6 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 export default function TestScraper() {
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState<any>(null);
+  const [mode, setMode] = useState<'discovery' | 'full'>('discovery');
 
   const runScraper = async () => {
     setLoading(true);
@@ -13,6 +14,7 @@ export default function TestScraper() {
       
       const { data, error } = await supabase.functions.invoke('scrape-inventory-v2', {
         body: { 
+          mode,
           batch_size: 20,  // Process 20 at a time
           concurrency: 3   // 3 concurrent requests
         }
@@ -47,12 +49,26 @@ export default function TestScraper() {
       <h1 className="text-2xl font-bold mb-6">Mercury Scraper Test</h1>
       
       <div className="space-y-4">
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <label className="text-sm font-medium">Mode:</label>
+            <select 
+              value={mode} 
+              onChange={(e) => setMode(e.target.value as 'discovery' | 'full')}
+              className="px-3 py-1 border rounded"
+            >
+              <option value="discovery">Discovery (Fast)</option>
+              <option value="full">Full Scrape (Slow)</option>
+            </select>
+          </div>
+        </div>
+        
         <button 
           onClick={runScraper}
           disabled={loading}
           className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
         >
-          {loading ? 'Running Scraper...' : 'Run Mercury Scraper'}
+          {loading ? `Running ${mode} mode...` : `Run ${mode === 'discovery' ? 'Discovery' : 'Full Scrape'}`}
         </button>
 
         {results && (

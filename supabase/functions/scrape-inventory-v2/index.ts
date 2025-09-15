@@ -4,7 +4,9 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 // CORS headers
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Max-Age': '86400',
 }
 
 // Initialize Supabase client
@@ -350,10 +352,11 @@ serve(async (req) => {
       return new Response('ok', { headers: corsHeaders });
     }
     const body = await req.json().catch(() => ({}));
+    const mode = (body.mode ?? "full") as "full" | "discovery";
     const batch = Number(body.batch_size ?? 30);
     const concurrency = Number(body.concurrency ?? 4);
     
-    console.log(`🚀 Starting Mercury scraper - batch:${batch}, concurrency:${concurrency}`);
+    console.log(`🚀 Mercury scraper start: mode=${mode} batch=${batch} conc=${concurrency}`);
 
     // Fetch page function using Firecrawl
     const fetchPage = async (url: string) => {
@@ -384,10 +387,29 @@ serve(async (req) => {
     // Step 1: Collect all detail URLs
     console.log('📄 Step 1: Collecting detail URLs...');
     const urls = await collectAllDetailUrls(fetchPage);
-    console.log(`✅ Found ${urls.length} detail URLs`);
+    console.log(`✅ Discovered ${urls.length} detail URLs`);
 
     if (urls.length === 0) {
       throw new Error('No detail URLs found - check pagination detection');
+    }
+
+    // Discovery mode: return quickly with URL count and samples
+    if (mode === "discovery") {
+      return new Response(
+        JSON.stringify({ 
+          success: true, 
+          mode, 
+          urls_discovered: urls.length, 
+          samples: urls.slice(0, 5) 
+        }),
+        { 
+          status: 200, 
+          headers: { 
+            'Content-Type': 'application/json', 
+            ...corsHeaders 
+          } 
+        }
+      );
     }
 
     // Step 2: Process detail pages in batches
