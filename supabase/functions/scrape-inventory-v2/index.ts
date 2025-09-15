@@ -1759,10 +1759,6 @@ serve(async (req) => {
             ...(m.image_url && { image_url: m.image_url }),
             ...(inventoryImages.length > 0 && { images: inventoryImages })
           };
-            in_stock: true,
-            is_brochure: false,
-            price_source: m.sale_price ? 'xml' : null
-          };
 
           const { error: insertError } = await supabase
             .from('motor_models')
