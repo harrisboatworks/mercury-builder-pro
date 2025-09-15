@@ -8,6 +8,7 @@ import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { AlertCircle, Upload, Link as LinkIcon, Image, FileText, DollarSign, Download, ExternalLink } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { supabase } from "@/integrations/supabase/client";
@@ -30,6 +31,9 @@ export default function AdminSources() {
   const [pricelistResults, setPricelistResults] = useState<any>(null);
   const [sanityResults, setSanityResults] = useState<any>(null);
   const [brochureUrl, setBrochureUrl] = useState("");
+  const [brochureApplyTo, setBrochureApplyTo] = useState<"all" | "family" | "keys">("all");
+  const [brochureFamily, setBrochureFamily] = useState("");
+  const [brochureKeys, setBrochureKeys] = useState("");
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
   const [imageUrls, setImageUrls] = useState("");
   const [modelKeyMappings, setModelKeyMappings] = useState<Record<string, string>>({});
@@ -143,12 +147,19 @@ export default function AdminSources() {
   const handleBrochureIngest = async () => {
     setLoading({ ...loading, brochure: true });
     try {
-      const { data, error } = await supabase.functions.invoke('attach-brochure-pdf', {
-        body: { 
-          url: brochureUrl,
-          dry_run: dryRun
-        }
-      });
+      const body: any = { 
+        url: brochureUrl,
+        apply_to: brochureApplyTo,
+        dry_run: dryRun
+      };
+
+      if (brochureApplyTo === 'family' && brochureFamily) {
+        body.family = brochureFamily;
+      } else if (brochureApplyTo === 'keys' && brochureKeys.trim()) {
+        body.keys = brochureKeys.split('\n').map(k => k.trim()).filter(k => k);
+      }
+
+      const { data, error } = await supabase.functions.invoke('attach-brochure-pdf', { body });
 
       if (error) throw error;
 
@@ -798,35 +809,66 @@ export default function AdminSources() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <Tabs defaultValue="url" className="w-full">
-                <TabsList className="grid w-full grid-cols-2">
-                  <TabsTrigger value="url">URL</TabsTrigger>
-                  <TabsTrigger value="file">Upload</TabsTrigger>
-                </TabsList>
+              <div className="space-y-3">
+                <Label htmlFor="brochure-url">Brochure PDF URL</Label>
+                <Input
+                  id="brochure-url"
+                  value={brochureUrl}
+                  onChange={(e) => setBrochureUrl(e.target.value)}
+                  placeholder="https://example.com/brochure.pdf"
+                />
                 
-                <TabsContent value="url" className="space-y-3">
-                  <Label htmlFor="brochure-url">Brochure PDF URL</Label>
-                  <Input
-                    id="brochure-url"
-                    value={brochureUrl}
-                    onChange={(e) => setBrochureUrl(e.target.value)}
-                    placeholder="https://example.com/brochure.pdf"
-                  />
-                </TabsContent>
-                
-                <TabsContent value="file" className="space-y-3">
-                  <Label htmlFor="brochure-file">Upload PDF</Label>
-                  <Input
-                    id="brochure-file"
-                    type="file"
-                    accept=".pdf"
-                  />
-                </TabsContent>
-              </Tabs>
+                <div className="space-y-2">
+                  <Label htmlFor="apply-to">Apply To</Label>
+                  <Select value={brochureApplyTo} onValueChange={(value: "all" | "family" | "keys") => setBrochureApplyTo(value)}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Choose target" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">All Brochure Models</SelectItem>
+                      <SelectItem value="family">Specific Family</SelectItem>
+                      <SelectItem value="keys">Specific Model Keys</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {brochureApplyTo === 'family' && (
+                  <div className="space-y-2">
+                    <Label htmlFor="brochure-family">Motor Family</Label>
+                    <Select value={brochureFamily} onValueChange={setBrochureFamily}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select family" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="FourStroke">FourStroke</SelectItem>
+                        <SelectItem value="ProXS">ProXS</SelectItem>
+                        <SelectItem value="SeaPro">SeaPro</SelectItem>
+                        <SelectItem value="Verado">Verado</SelectItem>
+                        <SelectItem value="Racing">Racing</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                )}
+
+                {brochureApplyTo === 'keys' && (
+                  <div className="space-y-2">
+                    <Label htmlFor="brochure-keys">Model Keys (one per line)</Label>
+                    <Textarea
+                      id="brochure-keys"
+                      className="font-mono text-sm h-24 resize-y"
+                      value={brochureKeys}
+                      onChange={(e) => setBrochureKeys(e.target.value)}
+                      placeholder="FOURSTROKE-25HP-EFI-L-E-PT&#10;FOURSTROKE-30HP-EFI-L-E-PT&#10;..."
+                    />
+                  </div>
+                )}
+              </div>
 
               <Button 
                 onClick={handleBrochureIngest}
-                disabled={loading.brochure || !brochureUrl.trim()}
+                disabled={loading.brochure || !brochureUrl.trim() || 
+                  (brochureApplyTo === 'family' && !brochureFamily) ||
+                  (brochureApplyTo === 'keys' && !brochureKeys.trim())}
                 className="w-full"
               >
                 {loading.brochure ? "Processing..." : "Link Brochure PDF"}
