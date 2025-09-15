@@ -8,163 +8,53 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 
 // Motor parsing function
 async function parseMotorsFromHTML(html: string, markdown: string = '') {
-  console.log('🔍 Starting motor parsing...')
-  console.log('🔍 HTML Sample (first 500):', html.substring(0, 500))
-  console.log('📝 Markdown Sample:', markdown.substring(0, 1000))
+  console.log('🔍 Starting simple motor parsing...')
   
   const motors = []
-  const debugInfo = {
-    html_length: html.length,
-    markdown_length: markdown.length,
-    patterns_found: [],
-    search_results: {}
-  }
   
-  // Search for common motor-related terms (case insensitive)
-  const searchTerms = ['mercury', 'hp', 'horsepower', 'outboard', 'engine', 'motor', 'fourstroke', '4-stroke']
+  // Simple pattern: Mercury + any text + number + HP
+  const simplePattern = /mercury.*?(\d+).*?hp/gi
+  const matches = Array.from(html.matchAll(simplePattern))
   
-  searchTerms.forEach(term => {
-    const regex = new RegExp(term, 'gi')
-    const matches = html.match(regex) || []
-    debugInfo.search_results[term] = matches.length
-    console.log(`🔍 Found "${term}": ${matches.length} occurrences`)
-  })
+  console.log('Simple Mercury HP pattern matches:', matches.length)
   
-  // Look for HTML structural patterns that might contain motor data
-  console.log('🏗️ Checking HTML structure patterns...')
+  // Also check markdown
+  const markdownMatches = Array.from(markdown.matchAll(simplePattern))
+  console.log('Markdown Mercury HP matches:', markdownMatches.length)
   
-  // Check for common inventory page structures
-  const structureChecks = [
-    { name: 'product-card', regex: /class=["\'].*product.*["\'][^>]*>/gi },
-    { name: 'inventory-item', regex: /class=["\'].*(?:inventory|item).*["\'][^>]*>/gi },
-    { name: 'motor-listing', regex: /class=["\'].*(?:motor|outboard).*["\'][^>]*>/gi },
-    { name: 'table-row', regex: /<tr[^>]*>[\s\S]*?<\/tr>/gi },
-    { name: 'div-container', regex: /<div[^>]*class=["\'][^"\']*(?:motor|product|inventory)[^"\']*["\'][^>]*>/gi }
-  ]
+  // Combine matches
+  const allMatches = [...matches, ...markdownMatches]
   
-  structureChecks.forEach(check => {
-    const matches = html.match(check.regex) || []
-    console.log(`🏗️ ${check.name}: ${matches.length} elements`)
-    if (matches.length > 0 && matches.length < 10) {
-      console.log(`🏗️ ${check.name} sample:`, matches[0].substring(0, 200))
-    }
-  })
-  
-  // Try multiple parsing approaches with more flexible patterns
-  console.log('🎯 Trying different parsing patterns...')
-  
-  // Pattern 1: Original Mercury + HP pattern
-  const pattern1 = /(?:Mercury|MERCURY).*?(\d+)\s*(?:HP|hp|Hp).*?(?:\$([0-9,]+))?/gi
-  const matches1 = Array.from(html.matchAll(pattern1))
-  console.log('🎯 Pattern 1 (Mercury + HP):', matches1.length, 'matches')
-  
-  // Pattern 2: Just HP numbers (more flexible)
-  const pattern2 = /(?:^|[>\s])(\d+)\s*(?:HP|hp|Hp)(?:[<\s]|$)/gi
-  const matches2 = Array.from(html.matchAll(pattern2))
-  console.log('🎯 Pattern 2 (Just HP):', matches2.length, 'matches')
-  
-  // Pattern 3: Horsepower spelled out
-  const pattern3 = /(\d+)\s*(?:horsepower|Horsepower|HORSEPOWER)/gi
-  const matches3 = Array.from(html.matchAll(pattern3))
-  console.log('🎯 Pattern 3 (Horsepower):', matches3.length, 'matches')
-  
-  // Pattern 4: Mercury in markdown
-  const pattern4 = /(?:Mercury|MERCURY).*?(\d+)\s*(?:HP|hp|Hp)/gi
-  const matches4 = Array.from(markdown.matchAll(pattern4))
-  console.log('🎯 Pattern 4 (Mercury in markdown):', matches4.length, 'matches')
-  
-  // Pattern 5: Look for FourStroke patterns (common in Mercury inventory)
-  const pattern5 = /(?:FourStroke|fourstroke|4-stroke)\s+(\d+)\s*(?:HP|hp)/gi
-  const matches5 = Array.from(html.matchAll(pattern5))
-  console.log('🎯 Pattern 5 (FourStroke + HP):', matches5.length, 'matches')
-  
-  // Pattern 6: Look for title/alt text patterns
-  const pattern6 = /(?:title|alt)=["\'][^"\']*?(\d+)\s*(?:HP|hp)[^"\']*?["\']/gi
-  const matches6 = Array.from(html.matchAll(pattern6))
-  console.log('🎯 Pattern 6 (Title/Alt text):', matches6.length, 'matches')
-  
-  // Pattern 7: Look for JSON-like data structures
-  const pattern7 = /"[^"]*(?:Mercury|mercury)[^"]*?(\d+)\s*(?:HP|hp|Hp)[^"]*"/gi
-  const matches7 = Array.from(html.matchAll(pattern7))
-  console.log('🎯 Pattern 7 (JSON strings):', matches7.length, 'matches')
-  
-  // Try to find any motor-related content
-  const motorKeywords = ['outboard', 'engine', 'motor', 'marine']
-  motorKeywords.forEach(keyword => {
-    const regex = new RegExp(`${keyword}[^.]{0,100}`, 'gi')
-    const matches = html.match(regex) || []
-    if (matches.length > 0) {
-      console.log(`🔍 ${keyword} context:`, matches.slice(0, 3))
-      debugInfo.patterns_found.push(`${keyword}: ${matches.length} matches`)
-    }
-  })
-  
-  // Look for price patterns
-  const pricePattern = /\$[\d,]+(?:\.\d{2})?/g
-  const priceMatches = html.match(pricePattern) || []
-  console.log('💰 Price patterns found:', priceMatches.length)
-  if (priceMatches.length > 0) {
-    console.log('💰 Sample prices:', priceMatches.slice(0, 5))
-  }
-  
-  // Use the most promising pattern for actual parsing - check all patterns
-  let bestMatches = matches1
-  let bestPatternName = 'Pattern 1 (Mercury + HP)'
-  
-  if (matches2.length > bestMatches.length) {
-    bestMatches = matches2
-    bestPatternName = 'Pattern 2 (Just HP)'
-  }
-  if (matches3.length > bestMatches.length) {
-    bestMatches = matches3
-    bestPatternName = 'Pattern 3 (Horsepower)'
-  }
-  if (matches4.length > bestMatches.length) {
-    bestMatches = matches4
-    bestPatternName = 'Pattern 4 (Mercury in markdown)'
-  }
-  if (matches5.length > bestMatches.length) {
-    bestMatches = matches5
-    bestPatternName = 'Pattern 5 (FourStroke + HP)'
-  }
-  if (matches6.length > bestMatches.length) {
-    bestMatches = matches6
-    bestPatternName = 'Pattern 6 (Title/Alt text)'
-  }
-  if (matches7.length > bestMatches.length) {
-    bestMatches = matches7
-    bestPatternName = 'Pattern 7 (JSON strings)'
-  }
-  
-  console.log(`🏆 Using best pattern: ${bestPatternName} with ${bestMatches.length} matches`)
-  
-  // Also try to combine unique results from multiple patterns if none are dominant
-  const allMatches = [...matches1, ...matches2, ...matches4, ...matches5, ...matches6, ...matches7]
-  if (bestMatches.length < 5 && allMatches.length > bestMatches.length) {
-    console.log(`🔄 Low match count, trying combined patterns: ${allMatches.length} total matches`)
-    bestMatches = allMatches
-    bestPatternName = 'Combined patterns'
-  }
-  
-  for (const match of bestMatches) {
-    const fullMatch = match[0]
+  for (const match of allMatches) {
     const horsepower = parseInt(match[1])
-    const priceStr = match[2]
     
     // Skip invalid horsepower values
     if (horsepower < 5 || horsepower > 500) {
-      console.log('⚠️ Skipping invalid HP:', horsepower)
       continue
     }
     
-    // Parse price if found
-    let price = null
-    if (priceStr) {
-      price = parseFloat(priceStr.replace(/,/g, ''))
+    const motor = {
+      make: 'Mercury',
+      model: `${horsepower}HP FourStroke`,
+      horsepower: horsepower,
+      motor_type: 'FourStroke',
+      base_price: null,
+      year: 2025
     }
     
-    // Extract model information from the surrounding context
-    let model = `Mercury ${horsepower}HP`
+    console.log('🎯 Found motor:', motor.make, motor.model, motor.horsepower + 'HP', motor.base_price ? '$' + motor.base_price : 'No price')
+    motors.push(motor)
+  }
+  
+  return {
+    motors: motors,
+    debugInfo: {
+      html_length: html.length,
+      markdown_length: markdown.length,
+      total_matches: allMatches.length
+    }
+  }
+}
     let motorType = 'Outboard'
     
     // Try to get more context around the match  
@@ -368,26 +258,19 @@ serve(async (req) => {
         
         console.log(`📊 Page ${pageNum} Firecrawl response status:`, firecrawlResponse.status)
         
+        console.log('Firecrawl status:', firecrawlResponse.status)
+        
         if (firecrawlResponse.ok) {
           const firecrawlData = await firecrawlResponse.json()
-          console.log(`✅ Page ${pageNum} HTML length:`, firecrawlData.data?.html?.length || 0)
-          console.log(`📄 Page ${pageNum} Markdown length:`, firecrawlData.data?.markdown?.length || 0)
           
           // Parse motors from current page
           const htmlData = firecrawlData.data?.html || ''
           const markdownData = firecrawlData.data?.markdown || ''
           
-          // PROMINENT HTML DEBUGGING
-          console.log('🔍 RAW HTML LENGTH:', htmlData.length)
-          console.log('🔍 HTML FIRST 500 CHARS:', htmlData.substring(0, 500))
-          console.log('🔍 HTML SEARCH FOR MOTOR:', htmlData.includes('Mercury') ? 'FOUND Mercury' : 'NO Mercury found')
-          console.log('🔍 HTML SEARCH FOR HP:', htmlData.includes('HP') || htmlData.includes('hp') ? 'FOUND HP' : 'NO HP found')
-          console.log('🔍 HTML SEARCH FOR FOURSTROKE:', htmlData.includes('FourStroke') || htmlData.includes('fourstroke') ? 'FOUND FourStroke' : 'NO FourStroke found')
-          
-          // Log HTML sample for debugging
-          console.log(`📋 Page ${pageNum} HTML sample (first 1000 chars):`, htmlData.substring(0, 1000))
-          console.log(`📋 Page ${pageNum} contains "Mercury":`, htmlData.includes('Mercury') || htmlData.includes('mercury'))
-          console.log(`📋 Page ${pageNum} contains "HP":`, htmlData.includes('HP') || htmlData.includes('hp'))
+          // Simple debugging
+          console.log('HTML length:', htmlData.length)
+          console.log('Contains Mercury?', htmlData.toLowerCase().includes('mercury'))
+          console.log('Mercury HP matches:', htmlData.match(/mercury.*?\d+.*?hp/gi)?.length || 0)
           
           const parseResult = await parseMotorsFromHTML(htmlData, markdownData)
           const pageMotors = parseResult.motors
