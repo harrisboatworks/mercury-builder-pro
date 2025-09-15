@@ -1,12 +1,13 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
-// Initialize Supabase client
-const supabaseUrl = Deno.env.get('SUPABASE_URL')!
-const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
-const supabase = createClient(supabaseUrl, supabaseKey)
+// CORS headers
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+}
 
-// Motor parsing function
+// Parse motors from HTML function
 async function parseMotorsFromHTML(html: string, markdown: string = '') {
   console.log('🔍 Starting simple motor parsing...')
   
@@ -55,81 +56,16 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
     }
   }
 }
-    let motorType = 'Outboard'
-    
-    // Try to get more context around the match  
-    const matchIndex = html.indexOf(fullMatch)
-    const contextStart = Math.max(0, matchIndex - 200)
-    const contextEnd = Math.min(html.length, matchIndex + 200)
-    const context = html.substring(contextStart, contextEnd)
-    
-    console.log(`🔍 Context for ${horsepower}HP:`, context.substring(0, 150))
-    
-    // Look for common Mercury model names in context
-    const modelPatterns = [
-      /FourStroke/i,
-      /SeaPro/i,
-      /Pro XS/i,
-      /Verado/i,
-      /OptiMax/i,
-      /EFI/i
-    ]
-    
-    for (const pattern of modelPatterns) {
-      if (pattern.test(context)) {
-        const modelMatch = context.match(pattern)
-        if (modelMatch) {
-          model = `Mercury ${horsepower}HP ${modelMatch[0]}`
-          break
-        }
-      }
-    }
-    
-    // Determine motor type based on HP
-    if (horsepower >= 200) {
-      motorType = 'High Performance Outboard'
-    } else if (horsepower >= 75) {  
-      motorType = 'Mid Range Outboard'
-    } else {
-      motorType = 'Portable Outboard'
-    }
-    
-    const motor = {
-      make: 'Mercury',
-      model: model,
-      horsepower: horsepower,
-      motor_type: motorType,
-      base_price: price,
-      year: 2025,
-      availability: 'Available',
-      inventory_source: 'firecrawl_v2',
-      last_scraped: new Date().toISOString(),
-      data_sources: {
-        harris: {
-          success: true,
-          scraped_at: new Date().toISOString()
-        }
-      }
-    }
-    
-    motors.push(motor)
-    console.log('🎯 Found motor:', model, `${horsepower}HP`, price ? `$${price}` : 'No price')
-  }
-  
-  // Remove duplicates based on model and horsepower
-  const uniqueMotors = motors.filter((motor, index, self) => 
-    index === self.findIndex(m => m.model === motor.model && m.horsepower === motor.horsepower)
-  )
-  
-  console.log('🧹 Unique motors after deduplication:', uniqueMotors.length)
-  
-  return { motors: uniqueMotors, debugInfo }
-}
 
 // Database save function
 async function saveMotorsToDatabase(motors: any[]) {
   console.log('💾 Attempting to save motors to database...')
   let savedCount = 0
+  
+  const supabase = createClient(
+    Deno.env.get('SUPABASE_URL') ?? '',
+    Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+  )
   
   for (const motor of motors) {
     try {
@@ -148,8 +84,7 @@ async function saveMotorsToDatabase(motors: any[]) {
           .from('motor_models')
           .update({
             base_price: motor.base_price,
-            last_scraped: motor.last_scraped,
-            data_sources: motor.data_sources,
+            last_scraped: new Date().toISOString(),
             updated_at: new Date().toISOString()
           })
           .eq('id', existing.id)
@@ -164,7 +99,7 @@ async function saveMotorsToDatabase(motors: any[]) {
         // Insert new motor
         const { error: insertError } = await supabase
           .from('motor_models')
-          .insert([motor])
+          .insert(motor)
         
         if (insertError) {
           console.error('❌ Error inserting motor:', insertError)
@@ -181,64 +116,50 @@ async function saveMotorsToDatabase(motors: any[]) {
   return savedCount
 }
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': 'https://quote.harrisboatworks.ca',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-}
-
+// Main serve function
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders })
+    return new Response(null, { headers: corsHeaders })
   }
 
-  const url = new URL(req.url)
-  
   // Health check endpoint
-  if (url.pathname.endsWith('/health')) {
-    return new Response(
-      JSON.stringify({ 
-        status: 'healthy', 
-        timestamp: new Date().toISOString(),
-        message: 'Function is running correctly'
-      }),
-      { 
-        status: 200,
-        headers: { 
-          ...corsHeaders,
-          'Content-Type': 'application/json' 
-        } 
-      }
-    )
+  if (req.method === 'GET' && new URL(req.url).pathname === '/health') {
+    return new Response(JSON.stringify({ status: 'healthy' }), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    })
   }
 
   try {
-    // Get request body for POST requests
-    const body = req.method === 'POST' ? await req.json() : {}
-    const pagesToScrape = body.pages_to_scrape || 3
+    const startTime = Date.now()
+    const requestBody = await req.json()
+    const { pages_to_scrape = 3 } = requestBody
+    
+    // Get environment variables
+    const firecrawlApiKey = Deno.env.get('FIRECRAWL_API_KEY')
+    if (!firecrawlApiKey) {
+      throw new Error('FIRECRAWL_API_KEY is required')
+    }
 
-    console.log('🔥 Starting multi-page scrape with pages:', pagesToScrape)
+    console.log('🚀 Starting multi-page inventory scrape...')
+    console.log('📄 Pages to scrape:', pages_to_scrape)
 
-    // Initialize pagination variables
+    // Base URL for inventory search
     const baseUrl = 'https://www.harrisboatworks.ca/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low'
+    
+    // Arrays to collect data from all pages
     const allMotors = []
     const pageResults = []
     const errors = []
-
-    // Test Firecrawl API
-    const firecrawlApiKey = Deno.env.get('FIRECRAWL_API_KEY')
-    console.log('🔑 FIRECRAWL_API_KEY exists:', !!firecrawlApiKey)
     
-    if (!firecrawlApiKey) {
-      throw new Error('FIRECRAWL_API_KEY not found in environment variables')
-    }
-
-    console.log('🔑 API key starts with:', firecrawlApiKey.substring(0, 8) + '...')
-      
     // Loop through pages
-    for (let pageNum = 1; pageNum <= pagesToScrape; pageNum++) {
+    for (let pageNum = 1; pageNum <= pages_to_scrape; pageNum++) {
       try {
+        // Small delay between requests to be respectful
+        if (pageNum > 1) {
+          await new Promise(resolve => setTimeout(resolve, 1000))
+        }
+        
         // Construct URL for current page
         const currentUrl = pageNum === 1 ? baseUrl : `${baseUrl}&page=${pageNum}`
         console.log(`🔄 Scraping page ${pageNum}: ${currentUrl}`)
@@ -255,8 +176,6 @@ serve(async (req) => {
             formats: ['html', 'markdown']
           })
         })
-        
-        console.log(`📊 Page ${pageNum} Firecrawl response status:`, firecrawlResponse.status)
         
         console.log('Firecrawl status:', firecrawlResponse.status)
         
@@ -285,52 +204,51 @@ serve(async (req) => {
           pageResults.push({
             page: pageNum,
             url: currentUrl,
-            motors_found: pageMotors.length,
-            html_length: firecrawlData.data?.html?.length || 0,
-            markdown_length: firecrawlData.data?.markdown?.length || 0,
             success: true,
-            debug_info: debugInfo
+            motors_found: pageMotors.length,
+            html_length: htmlData.length,
+            markdown_length: markdownData.length
           })
           
         } else {
           const errorText = await firecrawlResponse.text()
-          const errorMsg = `Page ${pageNum} failed: ${firecrawlResponse.status} - ${errorText}`
-          console.error('❌', errorMsg)
+          console.error(`❌ Page ${pageNum} failed: ${firecrawlResponse.status} - ${errorText}`)
           
-          errors.push(errorMsg)
+          errors.push({
+            page: pageNum,
+            url: currentUrl,
+            status: firecrawlResponse.status,
+            error: errorText
+          })
+          
           pageResults.push({
             page: pageNum,
             url: currentUrl,
-            motors_found: 0,
             success: false,
-            error: errorMsg
+            error: errorText,
+            motors_found: 0
           })
         }
-        
-        // Add small delay between requests to avoid overwhelming the server
-        if (pageNum < pagesToScrape) {
-          console.log('⏳ Waiting 2 seconds before next page...')
-          await new Promise(resolve => setTimeout(resolve, 2000))
-        }
-        
       } catch (pageError) {
-        const errorMsg = `Page ${pageNum} error: ${pageError.message}`
-        console.error('❌', errorMsg)
-        errors.push(errorMsg)
+        console.error(`❌ Page ${pageNum} error:`, pageError.message)
+        errors.push({
+          page: pageNum,
+          error: pageError.message
+        })
         
         pageResults.push({
           page: pageNum,
-          url: pageNum === 1 ? baseUrl : `${baseUrl}&page=${pageNum}`,
-          motors_found: 0,
+          url: currentUrl,
           success: false,
-          error: errorMsg
+          error: pageError.message,
+          motors_found: 0
         })
       }
     }
     
     console.log('🔍 All pages scraped. Total motors found:', allMotors.length)
     
-    // Remove duplicates across all pages
+    // Remove duplicates across all pages based on model and horsepower
     const uniqueMotors = allMotors.filter((motor, index, self) => 
       index === self.findIndex(m => m.model === motor.model && m.horsepower === motor.horsepower)
     )
@@ -340,6 +258,7 @@ serve(async (req) => {
     // Save unique motors to database
     let savedMotors = 0
     if (uniqueMotors.length > 0) {
+      console.log('💾 Attempting to save motors to database...')
       savedMotors = await saveMotorsToDatabase(uniqueMotors)
       console.log('💾 Saved motors to database:', savedMotors)
     }
@@ -353,7 +272,7 @@ serve(async (req) => {
     const motorsPerPage = pageResults.map((result, index) => ({
       page: index + 1,
       motors_found: result.motors_found || 0
-    }));
+    }))
 
     // Get sample motors (first 3) for verification
     const sampleMotors = uniqueMotors.slice(0, 3).map(motor => ({
@@ -361,14 +280,14 @@ serve(async (req) => {
       model: motor.model,
       horsepower: motor.horsepower,
       base_price: motor.base_price
-    }));
+    }))
 
     const result = {
       success: true,
-      message: `Multi-page scrape completed! ${successfulPages}/${pagesToScrape} pages successful. Found ${totalMotorsFound} total motors (${totalUniqueMotors} unique), saved ${savedMotors} to database`,
-      total_pages_scraped: pagesToScrape,
+      message: `Multi-page scrape completed! ${successfulPages}/${pages_to_scrape} pages successful. Found ${totalMotorsFound} total motors (${totalUniqueMotors} unique), saved ${savedMotors} to database`,
+      total_pages_scraped: pages_to_scrape,
       successful_pages: successfulPages,
-      failed_pages: pagesToScrape - successfulPages,
+      failed_pages: pages_to_scrape - successfulPages,
       combined_motors_found: totalMotorsFound,
       combined_motors_saved: savedMotors,
       motors_per_page: motorsPerPage,
@@ -387,16 +306,15 @@ serve(async (req) => {
         headers: { 
           ...corsHeaders,
           'Content-Type': 'application/json' 
-        } 
+        }
       }
     )
 
   } catch (error) {
-    console.error('💥 Function error:', error)
-    
+    console.error('❌ Main function error:', error)
     return new Response(
       JSON.stringify({ 
-        success: false,
+        success: false, 
         error: error.message,
         timestamp: new Date().toISOString()
       }),
@@ -405,7 +323,7 @@ serve(async (req) => {
         headers: { 
           ...corsHeaders,
           'Content-Type': 'application/json' 
-        } 
+        }
       }
     )
   }
