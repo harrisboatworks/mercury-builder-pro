@@ -1,5 +1,6 @@
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { buildModelKey } from './shared/model-key-utils.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -48,7 +49,12 @@ serve(async (req) => {
   }
   
   try {
-    const { model_key, url, file_data, dry_run = false } = await req.json();
+    let { model_key, url, file_data, dry_run = false } = await req.json();
+    
+    // Normalize model_key using shared utility if provided as raw text
+    if (model_key) {
+      model_key = buildModelKey(model_key);
+    }
     
     if (!model_key) {
       throw new Error('model_key is required');

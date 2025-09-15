@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { XMLParser } from "https://esm.sh/fast-xml-parser@4"
 import { parse } from "https://deno.land/std@0.203.0/csv/parse.ts"
+import { buildModelKey } from './shared/model-key-utils.ts';
 
 // CORS headers
 const corsHeaders = {
@@ -188,17 +189,6 @@ function brochureBaseFor(codeAttrs: any) {
   return family;
 }
 
-// Normalize model key for consistent lookup
-// Example: "2025 FourStroke 25HP EFI ELHPT" → "FOURSTROKE-25HP-EFI-ELHPT"
-function normalizeModelKey(modelText: string): string {
-  return modelText
-    .toUpperCase()
-    .replace(/\b\d{4}\b/g, '') // remove year
-    .replace(/\s+/g, '-')      // spaces to dashes
-    .replace(/-+/g, '-')       // collapse multiple dashes
-    .replace(/^-|-$/g, '');    // trim leading/trailing dashes
-}
-
 async function seedBrochureCatalog(supabase: any) {
   const rows = await fetchPriceList(); // {model_number, description, price}
   if (!rows.length) throw new Error('No price list rows parsed');
@@ -216,7 +206,7 @@ async function seedBrochureCatalog(supabase: any) {
       attrs.control || ''
     ].filter(Boolean).join(' ');
 
-    const modelKey = normalizeModelKey(modelDisplay || r.model_number);
+    const modelKey = buildModelKey(modelDisplay || r.model_number);
 
     return {
       make: 'Mercury',

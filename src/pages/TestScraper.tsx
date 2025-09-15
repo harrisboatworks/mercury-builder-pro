@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { Button } from '@/components/ui/button';
+import { buildModelKey, extractHpAndCode } from '@/lib/motor-helpers';
+import '@/utils/model-key-tests';
 
 type DiscoveryOptions = {
   max_pages?: number;
@@ -85,7 +88,36 @@ export default function TestScraper() {
 
   return (
     <div className="p-8 max-w-5xl mx-auto">
-      <h1 className="text-2xl font-bold mb-6">Mercury Scraper Test</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-2xl font-bold">Mercury Scraper Test</h1>
+        
+        {/* Model Key Test Button */}
+        <Button 
+          variant="outline" 
+          onClick={() => {
+            console.clear();
+            console.log('🔧 Testing model key utilities...');
+            
+            const testInputs = [
+              '2025 FourStroke 25HP EFI ELHPT',
+              'Pro XS 115HP DTS',
+              'SeaPro 9.9HP EH',
+              'Verado 250HP XL'
+            ];
+            
+            testInputs.forEach(input => {
+              const key = buildModelKey(input);
+              const parts = extractHpAndCode(input);
+              console.log(`Input: "${input}"`);
+              console.log(`Key: "${key}"`);
+              console.log(`Parts:`, parts);
+              console.log('---');
+            });
+          }}
+        >
+          Test Model Keys
+        </Button>
+      </div>
 
       {/* Controls */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

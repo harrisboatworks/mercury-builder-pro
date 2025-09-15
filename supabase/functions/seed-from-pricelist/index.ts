@@ -30,15 +30,7 @@ function cleanText(s?: string | null): string {
     .trim();
 }
 
-// Normalize model key
-function normalizeModelKey(modelText: string): string {
-  return modelText
-    .toUpperCase()
-    .replace(/\b\d{4}\b/g, '') // remove year
-    .replace(/\s+/g, '-')      // spaces to dashes
-    .replace(/-+/g, '-')       // collapse multiple dashes
-    .replace(/^-|-$/g, '');    // trim leading/trailing dashes
-}
+import { buildModelKey } from '../shared/model-key-utils.ts';
 
 // Parse model attributes from code/description
 function parseModelFromText(code: string, description: string = '') {
@@ -171,7 +163,7 @@ serve(async (req) => {
         attrs.control || ''
       ].filter(Boolean).join(' ');
       
-      const model_key = normalizeModelKey(modelDisplay || item.model_number);
+      const model_key = buildModelKey(modelDisplay || item.model_number);
       
       return {
         make: 'Mercury',

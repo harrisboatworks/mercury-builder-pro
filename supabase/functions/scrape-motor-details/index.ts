@@ -179,6 +179,8 @@ function normalizeDetailUrl(input: string): string {
   }
 }
 
+import { buildModelKey } from '../shared/model-key-utils.ts';
+
 // Upload inventory image to storage and return URL
 async function uploadInventoryImage(imageUrl: string, modelKey: string, supabase: any): Promise<string | null> {
   try {
@@ -539,7 +541,7 @@ serve(async (req) => {
       if (isInStockPage && newImageUrls.length > 0) {
         const mainImage = newImageUrls[0];
         const modelKey = existingMotor?.model_key || 
-          existingMotor?.model.replace(/[^a-zA-Z0-9]/g, '').toLowerCase() || 'unknown';
+          buildModelKey(existingMotor?.model || 'unknown');
         
         const inventoryImageUrl = await uploadInventoryImage(mainImage, modelKey, supabase);
         

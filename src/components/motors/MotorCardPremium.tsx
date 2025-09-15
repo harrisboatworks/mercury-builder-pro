@@ -5,7 +5,7 @@ import { Info } from "lucide-react";
 import MotorQuickInfo from "./MotorQuickInfo";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import type { Motor } from '../../lib/motor-helpers';
-import { getHPDescriptor, getPopularityIndicator, getBadgeColor, requiresMercuryControls, isTillerMotor, getMotorImageByPriority, getMotorImageGallery } from '../../lib/motor-helpers';
+import { getHPDescriptor, getPopularityIndicator, getBadgeColor, requiresMercuryControls, isTillerMotor, getMotorImageByPriority, getMotorImageGallery, buildModelKey, extractHpAndCode } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useFinancing } from '@/contexts/FinancingContext';
 import { getFinancingDisplay } from '@/lib/finance';
