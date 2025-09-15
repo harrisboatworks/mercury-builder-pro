@@ -1,5 +1,4 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
 // CORS headers
 const corsHeaders = {
@@ -9,10 +8,18 @@ const corsHeaders = {
   'Access-Control-Max-Age': '86400',
 }
 
-// Initialize Supabase client
-const supabaseUrl = Deno.env.get('SUPABASE_URL')!
-const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
-const supabase = createClient(supabaseUrl, supabaseServiceKey)
+// Lazy initialize Supabase client only when needed for database operations
+async function getServiceClient() {
+  const url = Deno.env.get('SUPABASE_URL');
+  const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+  
+  if (!url || !serviceKey) {
+    throw new Error('Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY in Edge Function environment');
+  }
+  
+  const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
+  return createClient(url, serviceKey);
+}
 
 // Motor data type
 type Motor = {
@@ -280,8 +287,8 @@ function parseDetailPage(detailHtml: string, url: string): Motor {
   };
 }
 
-// Upload image to Supabase storage
-async function uploadToSupabaseImage(url: string, name: string): Promise<string | null> {
+// Upload image to Supabase storage (only used in full mode)
+async function uploadToSupabaseImage(url: string, name: string, supabase: any): Promise<string | null> {
   try {
     const resp = await fetch(url);
     if (!resp.ok) return null;
@@ -344,13 +351,14 @@ Call price:   ${call}/${total}
 `);
 }
 
-// Main serve function
+// Main serve function with guaranteed CORS on all responses
 serve(async (req) => {
+  // Handle CORS preflight requests
+  if (req.method === 'OPTIONS') {
+    return new Response('ok', { headers: corsHeaders });
+  }
+  
   try {
-    // Handle CORS preflight requests
-    if (req.method === 'OPTIONS') {
-      return new Response('ok', { headers: corsHeaders });
-    }
     const body = await req.json().catch(() => ({}));
     const mode = (body.mode ?? "full") as "full" | "discovery";
     const batch = Number(body.batch_size ?? 30);
@@ -361,10 +369,16 @@ serve(async (req) => {
     // Fetch page function using Firecrawl
     const fetchPage = async (url: string) => {
       try {
+        const apiKey = Deno.env.get('FIRECRAWL_API_KEY');
+        if (!apiKey) {
+          console.warn('FIRECRAWL_API_KEY not set, returning empty HTML');
+          return '';
+        }
+
         const r = await fetch('https://api.firecrawl.dev/v1/scrape', {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${Deno.env.get('FIRECRAWL_API_KEY')}`,
+            'Authorization': `Bearer ${apiKey}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ 
@@ -412,8 +426,12 @@ serve(async (req) => {
       );
     }
 
-    // Step 2: Process detail pages in batches
+    // Step 2: Process detail pages in batches (full mode only)
     console.log('🔍 Step 2: Processing detail pages...');
+    
+    // Get service client only when we need to write to database or upload images
+    const supabase = await getServiceClient();
+    
     const results: Motor[] = [];
     let processed = 0;
     
@@ -432,10 +450,10 @@ serve(async (req) => {
             
             const motor = parseDetailPage(html, u);
             
-            // Upload image if available
+            // Upload image if available (only in full mode)
             if (motor.original_image_url) {
               const imageName = motor.stock_number || `${motor.year||''}-${motor.model_code||'motor'}`;
-              const stored = await uploadToSupabaseImage(motor.original_image_url, imageName);
+              const stored = await uploadToSupabaseImage(motor.original_image_url, imageName, supabase);
               motor.image_url = stored || motor.original_image_url;
             }
             
@@ -522,21 +540,28 @@ serve(async (req) => {
     return new Response(JSON.stringify({ 
       success: false, 
       error: String(error),
-      stack: error.stack 
+      mode: 'error'
     }), {
       status: 200,
-      headers: { 
-        'Content-Type': 'application/json', 
-        ...corsHeaders 
+      headers: {
+        'Content-Type': 'application/json',
+        ...corsHeaders
       }
     });
   }
-}, { 
-  onError: (err) => {
-    console.error('Unhandled error:', err);
-    return new Response(
-      JSON.stringify({ success: false, error: String(err) }),
-      { status: 500, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
-    );
+}, {
+  onError(error) {
+    console.error("❌ Unhandled error:", error);
+    return new Response(JSON.stringify({ 
+      success: false, 
+      error: String(error),
+      mode: 'unhandled_error' 
+    }), {
+      status: 500,
+      headers: {
+        'Content-Type': 'application/json',
+        ...corsHeaders
+      }
+    });
   }
 });
