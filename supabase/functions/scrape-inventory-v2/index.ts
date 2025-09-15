@@ -259,92 +259,159 @@ serve(async (req) => {
   try {
     // Get request body for POST requests
     const body = req.method === 'POST' ? await req.json() : {}
-    const pagesToScrape = body.pages_to_scrape || 1
+    const pagesToScrape = body.pages_to_scrape || 3
 
-    console.log('🔥 Starting scrape with pages:', pagesToScrape)
+    console.log('🔥 Starting multi-page scrape with pages:', pagesToScrape)
+
+    // Initialize pagination variables
+    const baseUrl = 'https://www.harrisboatworks.ca/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low'
+    const allMotors = []
+    const pageResults = []
+    const errors = []
 
     // Test Firecrawl API
     const firecrawlApiKey = Deno.env.get('FIRECRAWL_API_KEY')
     console.log('🔑 FIRECRAWL_API_KEY exists:', !!firecrawlApiKey)
     
-    if (firecrawlApiKey) {
-      console.log('🔑 API key starts with:', firecrawlApiKey.substring(0, 8) + '...')
-      
-      // Test Firecrawl v1 API
-      const testUrl = 'https://www.harrisboatworks.ca'
-      console.log('🌐 Testing Firecrawl v1 with URL:', testUrl)
-      
-      const firecrawlResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${firecrawlApiKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          url: testUrl,
-          formats: ['html', 'markdown']
-        })
-      })
-      
-      console.log('📊 Firecrawl response status:', firecrawlResponse.status)
-      
-      if (firecrawlResponse.ok) {
-        const firecrawlData = await firecrawlResponse.json()
-        console.log('✅ Firecrawl raw response keys:', Object.keys(firecrawlData))
-        console.log('📄 HTML length:', firecrawlData.data?.html?.length || 0)
-        console.log('📄 Markdown length:', firecrawlData.data?.markdown?.length || 0)
-        console.log('🔍 HTML preview:', firecrawlData.data?.html?.substring(0, 200) || 'No HTML')
-        
-        // Parse motors from HTML
-        const htmlData = firecrawlData.data?.html || ''
-        const markdownData = firecrawlData.data?.markdown || ''
-        const parseResult = await parseMotorsFromHTML(htmlData, markdownData)
-        const parsedMotors = parseResult.motors
-        const debugInfo = parseResult.debugInfo
-        
-        console.log('🏗️ Parsed motors count:', parsedMotors.length)
-        console.log('🔍 Debug info:', JSON.stringify(debugInfo, null, 2))
-        
-        // Save motors to database if any found
-        let savedMotors = 0
-        if (parsedMotors.length > 0) {
-          savedMotors = await saveMotorsToDatabase(parsedMotors)
-          console.log('💾 Saved motors to database:', savedMotors)
-        }
-        
-        const result = {
-          success: true,
-          message: `Firecrawl v1 successful! Found ${parsedMotors.length} motors, saved ${savedMotors} to database`,
-          firecrawl_status: firecrawlResponse.status,
-          html_length: firecrawlData.data?.html?.length || 0,
-          markdown_length: firecrawlData.data?.markdown?.length || 0,
-          motors_found: parsedMotors.length,
-          motors_saved: savedMotors,
-          debug_info: debugInfo,
-          html_sample: firecrawlData.data?.html?.substring(0, 500) || '',
-          markdown_sample: firecrawlData.data?.markdown?.substring(0, 300) || '',
-          api_version: 'v1',
-          timestamp: new Date().toISOString()
-        }
-        
-        return new Response(
-          JSON.stringify(result),
-          { 
-            status: 200,
-            headers: { 
-              ...corsHeaders,
-              'Content-Type': 'application/json' 
-            } 
-          }
-        )
-      } else {
-        const errorText = await firecrawlResponse.text()
-        console.error('❌ Firecrawl error:', errorText)
-        throw new Error(`Firecrawl API error: ${firecrawlResponse.status} - ${errorText}`)
-      }
-    } else {
+    if (!firecrawlApiKey) {
       throw new Error('FIRECRAWL_API_KEY not found in environment variables')
     }
+
+    console.log('🔑 API key starts with:', firecrawlApiKey.substring(0, 8) + '...')
+      
+    // Loop through pages
+    for (let pageNum = 1; pageNum <= pagesToScrape; pageNum++) {
+      try {
+        // Construct URL for current page
+        const currentUrl = pageNum === 1 ? baseUrl : `${baseUrl}&page=${pageNum}`
+        console.log(`🔄 Scraping page ${pageNum}: ${currentUrl}`)
+        
+        // Make Firecrawl API call for current page
+        const firecrawlResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${firecrawlApiKey}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            url: currentUrl,
+            formats: ['html', 'markdown']
+          })
+        })
+        
+        console.log(`📊 Page ${pageNum} Firecrawl response status:`, firecrawlResponse.status)
+        
+        if (firecrawlResponse.ok) {
+          const firecrawlData = await firecrawlResponse.json()
+          console.log(`✅ Page ${pageNum} HTML length:`, firecrawlData.data?.html?.length || 0)
+          console.log(`📄 Page ${pageNum} Markdown length:`, firecrawlData.data?.markdown?.length || 0)
+          
+          // Parse motors from current page
+          const htmlData = firecrawlData.data?.html || ''
+          const markdownData = firecrawlData.data?.markdown || ''
+          const parseResult = await parseMotorsFromHTML(htmlData, markdownData)
+          const pageMotors = parseResult.motors
+          const debugInfo = parseResult.debugInfo
+          
+          console.log(`🏗️ Page ${pageNum} parsed motors:`, pageMotors.length)
+          
+          // Add motors from this page to the total
+          allMotors.push(...pageMotors)
+          
+          // Record page result
+          pageResults.push({
+            page: pageNum,
+            url: currentUrl,
+            motors_found: pageMotors.length,
+            html_length: firecrawlData.data?.html?.length || 0,
+            markdown_length: firecrawlData.data?.markdown?.length || 0,
+            success: true,
+            debug_info: debugInfo
+          })
+          
+        } else {
+          const errorText = await firecrawlResponse.text()
+          const errorMsg = `Page ${pageNum} failed: ${firecrawlResponse.status} - ${errorText}`
+          console.error('❌', errorMsg)
+          
+          errors.push(errorMsg)
+          pageResults.push({
+            page: pageNum,
+            url: currentUrl,
+            motors_found: 0,
+            success: false,
+            error: errorMsg
+          })
+        }
+        
+        // Add small delay between requests to avoid overwhelming the server
+        if (pageNum < pagesToScrape) {
+          console.log('⏳ Waiting 2 seconds before next page...')
+          await new Promise(resolve => setTimeout(resolve, 2000))
+        }
+        
+      } catch (pageError) {
+        const errorMsg = `Page ${pageNum} error: ${pageError.message}`
+        console.error('❌', errorMsg)
+        errors.push(errorMsg)
+        
+        pageResults.push({
+          page: pageNum,
+          url: pageNum === 1 ? baseUrl : `${baseUrl}&page=${pageNum}`,
+          motors_found: 0,
+          success: false,
+          error: errorMsg
+        })
+      }
+    }
+    
+    console.log('🔍 All pages scraped. Total motors found:', allMotors.length)
+    
+    // Remove duplicates across all pages
+    const uniqueMotors = allMotors.filter((motor, index, self) => 
+      index === self.findIndex(m => m.model === motor.model && m.horsepower === motor.horsepower)
+    )
+    
+    console.log('🧹 Unique motors after cross-page deduplication:', uniqueMotors.length)
+    
+    // Save unique motors to database
+    let savedMotors = 0
+    if (uniqueMotors.length > 0) {
+      savedMotors = await saveMotorsToDatabase(uniqueMotors)
+      console.log('💾 Saved motors to database:', savedMotors)
+    }
+    
+    // Calculate totals for response
+    const totalMotorsFound = allMotors.length
+    const totalUniqueMotors = uniqueMotors.length
+    const successfulPages = pageResults.filter(p => p.success).length
+    
+    const result = {
+      success: true,
+      message: `Multi-page scrape completed! ${successfulPages}/${pagesToScrape} pages successful. Found ${totalMotorsFound} total motors (${totalUniqueMotors} unique), saved ${savedMotors} to database`,
+      total_pages_scraped: pagesToScrape,
+      successful_pages: successfulPages,
+      failed_pages: pagesToScrape - successfulPages,
+      motors_found_total: totalMotorsFound,
+      motors_unique: totalUniqueMotors,
+      motors_saved: savedMotors,
+      page_results: pageResults,
+      errors: errors,
+      base_url: baseUrl,
+      api_version: 'v1',
+      timestamp: new Date().toISOString()
+    }
+    
+    return new Response(
+      JSON.stringify(result),
+      { 
+        status: 200,
+        headers: { 
+          ...corsHeaders,
+          'Content-Type': 'application/json' 
+        } 
+      }
+    )
 
   } catch (error) {
     console.error('💥 Function error:', error)
