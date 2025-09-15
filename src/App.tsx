@@ -1,4 +1,5 @@
 import Dev from "./pages/Dev";
+import TestScraper from "./pages/TestScraper";
 import { useEffect } from "react";
 import { SITE_URL } from "./lib/site";
 import { Toaster } from "@/components/ui/toaster";
@@ -207,6 +208,7 @@ const App = () => (
                 {/* Other Routes */}
                 <Route path="/finance-calculator" element={<FinanceCalculator />} />
                 <Route path="/dev" element={<Dev />} />
+                <Route path="/test/scraper" element={<TestScraper />} />
                 <Route path="/staging/pricing-spacing" element={<StagingPricingTweaks />} />
                 <Route path="/quotes/new" element={<NewQuote />} />
                 <Route path="/staging/image-sizing" element={<StagingImageSizing />} />

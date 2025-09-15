@@ -100,7 +100,9 @@ function parseMotorTitle(title: string) {
     fuelType: fuelType || '',
     modelCode: modelCode || '', // THIS MUST NOT BE EMPTY for motors like "ELHPT", "XL", etc.
     fullTitle: clean,
-    displayTitle: `${year} ${category} ${horsepower} ${fuelType} ${modelCode}`.replace(/\s+/g, ' ').trim(),
+    displayTitle: modelCode ? 
+      `${year} ${category} ${horsepower} ${fuelType} ${modelCode}`.replace(/\s+/g, ' ').trim() :
+      `${year} ${category} ${horsepower} ${fuelType}`.replace(/\s+/g, ' ').trim(),
     isValid: true
   };
 }
@@ -352,7 +354,7 @@ async function extractImagesFromHTML(html: string, motors: any[]) {
       
       // Update motor with images
       motor.images = motorImages;
-      motor.primary_image = primaryImage;
+      motor.image_url = primaryImage;
       
       if (motorImages.length > 0) {
         console.log(`🖼️ Assigned ${motorImages.length} images to ${motor.model}`);
@@ -465,27 +467,26 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
       const additionalData = extractMotorData(section);
       
       // Enhanced motor object with comprehensive data including images
-      const motor = {
-        make: 'Mercury',
-        model: parsed.displayTitle, // Clean format: "2025 FourStroke 25HP EFI ELHPT"
-        horsepower: parsed.horsepower,
-        motor_type: parsed.category,
-        base_price: additionalData.salePrice,
-        sale_price: additionalData.salePrice,
-        msrp: additionalData.msrp || (additionalData.salePrice && additionalData.savings ? 
-          additionalData.salePrice + additionalData.savings : null),
-        savings: additionalData.savings,
-        stock_number: additionalData.stockNumber,
-        availability: additionalData.availability || 'Available',
-        usage: additionalData.usage || 'New',
-        year: parsed.year,
-        model_code: parsed.modelCode, // CRITICAL: EH, ELHPT, XL, EXLPT, etc.
-        fuel_type: parsed.fuelType,
-        full_title: parsed.fullTitle,
-        section_text: section.substring(0, 200), // Debug info
-        images: [], // Will be populated from HTML parsing
-        primary_image: null // Will be set from first valid image
-      };
+        const motor = {
+          make: 'Mercury',
+          model: parsed.displayTitle, // Clean format: "2025 FourStroke 25HP EFI ELHPT"
+          horsepower: parsed.horsepower,
+          motor_type: parsed.category,
+          base_price: additionalData.salePrice,
+          sale_price: additionalData.salePrice,
+          msrp: additionalData.msrp || (additionalData.salePrice && additionalData.savings ? 
+            additionalData.salePrice + additionalData.savings : null),
+          savings: additionalData.savings,
+          stock_number: additionalData.stockNumber,
+          availability: additionalData.availability || 'Available',
+          usage: additionalData.usage || 'New',
+          year: parsed.year,
+          engine_type: parsed.fuelType, // Map fuel_type to engine_type column
+          full_title: parsed.fullTitle,
+          section_text: section.substring(0, 200), // Debug info
+          images: [], // Will be populated from HTML parsing
+          image_url: null // Will be set from first valid image
+        };
       
       console.log('🎯 Parsed Mercury motor:', `${motor.year} ${motor.model} (Stock: ${motor.stock_number})`);
       motors.push(motor);
@@ -1173,6 +1174,54 @@ serve(async (req) => {
       });
 
     console.log(`\nFiltered motors: ${cleanedMotors.length} valid motors (from ${uniqueMotors.length} total)`);
+
+    // Debug: Show what we actually scraped
+    console.log('\n' + '='.repeat(60));
+    console.log('SAMPLE OF SCRAPED MOTORS (First 10):');
+    console.log('='.repeat(60));
+
+    cleanedMotors.slice(0, 10).forEach((motor, index) => {
+      console.log(`\n${index + 1}. RAW TITLE: "${motor.model}"`);
+      console.log(`   PARSED:`);
+      console.log(`   - Year: "${motor.year}"`);
+      console.log(`   - Category: "${motor.motor_type}"`);
+      console.log(`   - HP: "${motor.horsepower}"`);
+      console.log(`   - Engine Type: "${motor.engine_type}"`);
+      console.log(`   - Has Image: ${motor.image_url ? 'Yes' : 'No'}`);
+      console.log(`   - Price: ${motor.sale_price || 'Call for Price'}`);
+      console.log(`   - Stock: ${motor.stock_number || 'N/A'}`);
+    });
+
+    // Check for common issues
+    const htmlInTitles = cleanedMotors.filter(m => 
+      m.model && (m.model.includes('<') || 
+      m.model.includes('>') || 
+      m.model.includes('data-'))
+    );
+
+    const noModelCode = cleanedMotors.filter(m => 
+      !m.engine_type && 
+      m.model && (m.model.includes('ELHPT') || 
+       m.model.includes('XL') || 
+       m.model.includes('EH') ||
+       m.model.includes('EXLPT'))
+    );
+
+    const missingPrices = cleanedMotors.filter(m => !m.sale_price);
+
+    if (htmlInTitles.length > 0) {
+      console.log('\n⚠️ WARNING: Some titles still have HTML:');
+      htmlInTitles.slice(0, 3).forEach(m => console.log(`  - "${m.model}"`));
+    }
+
+    if (noModelCode.length > 0) {
+      console.log('\n⚠️ WARNING: Model codes not extracted properly:');
+      noModelCode.slice(0, 5).forEach(m => console.log(`  - "${m.model}" (should have model code)`));
+    }
+
+    if (missingPrices.length > 0) {
+      console.log(`\n💰 INFO: ${missingPrices.length} motors missing prices (normal for "Call for Price")`);
+    }
 
     // Save filtered motors to database
     let savedMotors = 0
