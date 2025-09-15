@@ -47,3 +47,9 @@ verify_jwt = true
 
 [functions.seed-from-pricelist]
 verify_jwt = false
+
+[functions.export-brochure-csv]
+verify_jwt = false
+
+[functions.bulk-upsert-brochure]
+verify_jwt = false
