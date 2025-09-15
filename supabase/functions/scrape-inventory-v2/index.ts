@@ -829,7 +829,8 @@ serve(async (req) => {
           body: JSON.stringify({
             url: testUrl,
             formats: ['html'],
-            pageOptions: { waitFor: 1000 }
+            waitFor: 1000,
+            timeout: 30000
           })
         });
         
@@ -892,17 +893,8 @@ serve(async (req) => {
           body: JSON.stringify({
             url: currentUrl,
             formats: ['html', 'markdown'],
-            pageOptions: {
-              waitFor: 2000, // Wait for content to load
-              waitForSelector: 'img[src]', // Wait for images to load
-              screenshot: false,
-              fullPageScreenshot: false,
-              includeHtml: true
-            },
-            extractorOptions: {
-              mode: 'llm-extraction',
-              extractionPrompt: 'Extract all Mercury outboard motor listings with titles, prices, stock numbers, and specifications'
-            }
+            waitFor: 2000,
+            timeout: 30000
           })
         })
         
@@ -1021,7 +1013,12 @@ serve(async (req) => {
               'Authorization': `Bearer ${firecrawlApiKey}`,
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ url: extraUrl, formats: ['html', 'markdown'] })
+            body: JSON.stringify({ 
+              url: extraUrl, 
+              formats: ['html', 'markdown'],
+              waitFor: 2000,
+              timeout: 30000
+            })
           });
           
           if (extraResponse.ok) {
