@@ -384,6 +384,29 @@ serve(async (req) => {
       csv_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.csv`, csvContent, 'text/csv')
     };
     
+    // Prune old snapshots - keep only last 10
+    try {
+      console.log('Pruning old pricelist snapshots...');
+      const { data: allFiles, error: listError } = await supabase.storage
+        .from('sources')
+        .list('pricelist', { limit: 1000, sortBy: { column: 'created_at', order: 'desc' } });
+        
+      if (listError) {
+        console.error('Error listing files for pruning:', listError);
+      } else if (allFiles && allFiles.length > 30) { // Keep 10 sets of 3 files (html, json, csv)
+        const filesToDelete = allFiles.slice(30); // Delete everything beyond the 30 most recent
+        const deletePromises = filesToDelete.map(file => 
+          supabase.storage.from('sources').remove([`pricelist/${file.name}`])
+        );
+        
+        await Promise.allSettled(deletePromises);
+        console.log(`Pruned ${filesToDelete.length} old pricelist files`);
+      }
+    } catch (pruneError) {
+      console.error('Error during snapshot pruning:', pruneError);
+      // Don't fail the entire operation for pruning errors
+    }
+    
     let rows_created = 0;
     let rows_updated = 0;
     let errors = 0;
@@ -393,17 +416,60 @@ serve(async (req) => {
       console.log(`Upserting ${deduplicatedModels.length} models to database...`);
       
       try {
+        // First, fetch existing records to preserve inventory data
+        const modelKeys = deduplicatedModels.map(m => m.model_key);
+        const { data: existingRecords, error: fetchError } = await supabase
+          .from('motor_models')
+          .select('model_key, in_stock, image_url, stock_quantity, availability, last_stock_check')
+          .in('model_key', modelKeys);
+          
+        if (fetchError) {
+          console.error('Error fetching existing records:', fetchError);
+          throw fetchError;
+        }
+        
+        // Create lookup map for existing records
+        const existingMap = new Map();
+        existingRecords?.forEach(record => {
+          existingMap.set(record.model_key, record);
+        });
+        
+        // Prepare models for upsert with preserved inventory data
+        const modelsForUpsert = deduplicatedModels.map(newModel => {
+          const existing = existingMap.get(newModel.model_key);
+          if (existing) {
+            // Preserve inventory fields for existing records
+            return {
+              ...newModel,
+              in_stock: existing.in_stock, // Never flip this
+              image_url: existing.image_url || newModel.image_url, // Preserve if exists
+              stock_quantity: existing.stock_quantity,
+              availability: existing.availability,
+              last_stock_check: existing.last_stock_check,
+              // Only update these fields for existing records:
+              dealer_price: newModel.dealer_price,
+              msrp: newModel.msrp,
+              price_source: newModel.price_source,
+              year: newModel.year
+            };
+          }
+          return newModel; // New record, use as-is
+        });
+        
         const { data, error } = await supabase
           .from('motor_models')
-          .upsert(deduplicatedModels, { onConflict: 'model_key' });
+          .upsert(modelsForUpsert, { onConflict: 'model_key' });
         
         if (error) {
           console.error('Database upsert error:', error);
           throw error;
         }
         
-        rows_created = deduplicatedModels.length;
-        console.log(`Successfully upserted ${rows_created} motor models`);
+        // Count creates vs updates
+        rows_created = modelsForUpsert.filter(m => !existingMap.has(m.model_key)).length;
+        rows_updated = modelsForUpsert.filter(m => existingMap.has(m.model_key)).length;
+        
+        console.log(`Successfully processed ${rows_created} creates, ${rows_updated} updates`);
         
       } catch (error) {
         console.error('Upsert failed:', error);
