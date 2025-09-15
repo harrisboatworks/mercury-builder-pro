@@ -448,82 +448,48 @@ serve(async (req) => {
       
       console.log(`📊 Motor breakdown: ${inStockCount} in stock, ${brochureCount} brochure, ${soldCount} sold`);
 
-      // Insert motors into database
+      // Insert motors into database with detailed logging
+      let successCount = 0;
+      
       if (allMotors.length > 0) {
-        try {
-          console.log(`💾 Starting database operations for ${allMotors.length} motors...`);
-          
-          for (let i = 0; i < allMotors.length; i++) {
-            const motor = allMotors[i];
+        console.log(`💾 Starting database operations for ${allMotors.length} motors...`);
+        
+        for (const motor of allMotors) {
+          try {
+            console.log(`Attempting to save motor: ${motor.model}, HP: ${motor.horsepower}`);
             
-            try {
-              // For fresh import, use a unique identifier to avoid false duplicates
-              const uniqueKey = `${motor.model}-${motor.horsepower}-${motor.make}-${motor.motor_type}`;
-              const { data: existing, error: selectError } = await supabase
-                .from('motor_models')
-                .select('id, model, horsepower, make, motor_type')
-                .eq('model', motor.model)
-                .eq('horsepower', motor.horsepower) 
-                .eq('make', motor.make)
-                .eq('motor_type', motor.motor_type)
-                .limit(1);
-
-              if (selectError) {
-                console.error(`❌ Error checking existing motor ${i + 1}:`, selectError);
-                summary.errors_count++;
-                continue;
-              }
-
-              if (existing) {
-                // Update existing motor
-                const { error: updateError } = await supabase
-                  .from('motor_models')
-                  .update({
-                    base_price: motor.base_price,
-                    sale_price: motor.sale_price,
-                    availability: motor.availability,
-                    stock_number: motor.stock_number,
-                    last_scraped: motor.last_scraped
-                  })
-                  .eq('id', existing.id);
-
-                if (updateError) {
-                  console.error(`❌ Error updating motor ${i + 1}:`, updateError);
-                  summary.errors_count++;
-                } else {
-                  summary.motors_hydrated++;
-                  console.log(`🔄 Updated: ${motor.make} ${motor.model} ${motor.horsepower}HP`);
-                }
-              } else {
-                // Insert new motor
-                const { error: insertError } = await supabase
-                  .from('motor_models')
-                  .insert([motor]);
-
-                if (insertError) {
-                  console.error(`❌ Error inserting motor ${i + 1}:`, insertError);
-                  summary.errors_count++;
-                } else {
-                  summary.motors_inserted++;
-                  console.log(`➕ Inserted: ${motor.make} ${motor.model} ${motor.horsepower}HP`);
-                }
-              }
-            } catch (motorDbError) {
-              console.error(`❌ Database error for motor ${i + 1}:`, motorDbError);
+            // Log the exact data being saved
+            console.log('Motor data:', JSON.stringify(motor, null, 2));
+            
+            const { data, error } = await supabase
+              .from('motor_models')
+              .insert(motor)
+              .select();
+            
+            if (error) {
+              console.error(`❌ Failed to save ${motor.model}:`, error.message);
+              console.error('Error details:', error);
+              console.error('Motor data that failed:', motor);
               summary.errors_count++;
+            } else {
+              console.log(`✅ Successfully saved: ${motor.model}`);
+              successCount++;
+              summary.motors_inserted++;
             }
+          } catch (e) {
+            console.error(`Exception saving ${motor.model}:`, e);
+            summary.errors_count++;
           }
-
-          // Final counts (updated for proper case)
-          summary.in_stock_models_found = allMotors.filter(m => m.availability === 'In Stock').length;
-          summary.brochure_models_found = allMotors.filter(m => m.availability === 'Brochure').length;
-          
-          console.log(`💾 CORRECT v2 - Database operations complete: ${summary.motors_inserted} inserted, ${summary.motors_hydrated} updated`);
-          
-        } catch (dbError) {
-          console.error('❌ Database error:', dbError);
-          summary.errors_count++;
         }
+
+        console.log(`Final: ${successCount}/${allMotors.length} motors saved successfully`);
+        
+        // Final counts (updated for proper case)
+        summary.in_stock_models_found = allMotors.filter(m => m.availability === 'In Stock').length;
+        summary.brochure_models_found = allMotors.filter(m => m.availability === 'Brochure').length;
+        
+        console.log(`💾 CORRECT v2 - Database operations complete: ${summary.motors_inserted} inserted, ${summary.motors_hydrated} updated`);
+        
       } else {
         console.log(`⚠️ No motors found to save to database`);
       }
