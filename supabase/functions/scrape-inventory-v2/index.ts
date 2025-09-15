@@ -377,6 +377,13 @@ serve(async (req) => {
           const htmlData = firecrawlData.data?.html || ''
           const markdownData = firecrawlData.data?.markdown || ''
           
+          // PROMINENT HTML DEBUGGING
+          console.log('🔍 RAW HTML LENGTH:', htmlData.length)
+          console.log('🔍 HTML FIRST 500 CHARS:', htmlData.substring(0, 500))
+          console.log('🔍 HTML SEARCH FOR MOTOR:', htmlData.includes('Mercury') ? 'FOUND Mercury' : 'NO Mercury found')
+          console.log('🔍 HTML SEARCH FOR HP:', htmlData.includes('HP') || htmlData.includes('hp') ? 'FOUND HP' : 'NO HP found')
+          console.log('🔍 HTML SEARCH FOR FOURSTROKE:', htmlData.includes('FourStroke') || htmlData.includes('fourstroke') ? 'FOUND FourStroke' : 'NO FourStroke found')
+          
           // Log HTML sample for debugging
           console.log(`📋 Page ${pageNum} HTML sample (first 1000 chars):`, htmlData.substring(0, 1000))
           console.log(`📋 Page ${pageNum} contains "Mercury":`, htmlData.includes('Mercury') || htmlData.includes('mercury'))
