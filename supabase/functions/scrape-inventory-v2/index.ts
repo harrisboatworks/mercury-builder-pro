@@ -9,102 +9,182 @@ const corsHeaders = {
 
 // Parse motors from HTML function
 async function parseMotorsFromHTML(html: string, markdown: string = '') {
-  console.log('🔍 Starting motor parsing with new pattern...')
+  console.log('🔍 Starting restrictive motor parsing...')
   
   const motors = []
-  const combinedText = html + ' ' + markdown
   
   // Check for result count to verify we're on the right page
   const resultCountPattern = /(\d+)\s*-\s*(\d+)\s*of\s*(\d+)/i
-  const resultMatch = combinedText.match(resultCountPattern)
+  const resultMatch = (html + markdown).match(resultCountPattern)
   if (resultMatch) {
     console.log(`📊 Result count found: ${resultMatch[1]} - ${resultMatch[2]} of ${resultMatch[3]}`)
   }
   
-  // Primary pattern: YEAR + MODEL + HP + TYPE - Mercury
-  const primaryPattern = /(\d{4}).*?(\d+)HP.*?Mercury/gi
-  const primaryMatches = Array.from(combinedText.matchAll(primaryPattern))
-  console.log('Primary pattern matches (YEAR...HP...Mercury):', primaryMatches.length)
+  // Focus on markdown for cleaner parsing (less HTML noise)
+  console.log('📝 Focusing on markdown parsing for cleaner results')
+  console.log('Markdown length:', markdown.length)
   
-  // Fallback pattern: Mercury + any text + number + HP (original format)
-  const fallbackPattern = /mercury.*?(\d+).*?hp/gi
-  const fallbackMatches = Array.from(combinedText.matchAll(fallbackPattern))
-  console.log('Fallback pattern matches (Mercury...HP):', fallbackMatches.length)
+  // Very restrictive pattern for motor titles in markdown
+  // Look for lines that start with year and end with Mercury
+  const lines = markdown.split('\n')
+  const motorLines = lines.filter(line => {
+    const cleanLine = line.trim()
+    // Must start with year, contain HP, and end with Mercury
+    return /^(20(24|25))\s+.*\d+HP.*-\s*Mercury\s*$/i.test(cleanLine)
+  })
   
-  // Process primary matches first (preferred format)
-  for (const match of primaryMatches) {
-    const year = parseInt(match[1])
-    const horsepower = parseInt(match[2])
-    const fullMatch = match[0]
-    
-    // Skip invalid values
-    if (year < 2020 || year > 2030 || horsepower < 5 || horsepower > 500) {
-      continue
-    }
-    
-    // Extract model name (text between year and HP)
-    const modelMatch = fullMatch.match(/\d{4}\s*(.*?)\s*\d+HP/i)
-    let modelName = modelMatch ? modelMatch[1].trim() : `${horsepower}HP`
-    
-    // Clean up model name
-    modelName = modelName.replace(/®/g, '').replace(/™/g, '').trim()
-    if (!modelName || modelName.length < 2) {
-      modelName = `${horsepower}HP FourStroke`
-    }
-    
-    const motor = {
-      make: 'Mercury',
-      model: modelName,
-      horsepower: horsepower,
-      motor_type: 'FourStroke',
-      base_price: null,
-      year: year
-    }
-    
-    console.log('🎯 Found motor (primary):', `${motor.year} ${motor.make} ${motor.model} ${motor.horsepower}HP`)
-    motors.push(motor)
-  }
+  console.log('Potential motor lines found:', motorLines.length)
   
-  // Process fallback matches (avoid duplicates)
-  const existingHPs = new Set(motors.map(m => m.horsepower))
-  for (const match of fallbackMatches) {
-    const horsepower = parseInt(match[1])
-    
-    // Skip if already found by primary pattern or invalid
-    if (existingHPs.has(horsepower) || horsepower < 5 || horsepower > 500) {
-      continue
-    }
-    
-    const motor = {
-      make: 'Mercury',
-      model: `${horsepower}HP FourStroke`,
-      horsepower: horsepower,
-      motor_type: 'FourStroke',
-      base_price: null,
-      year: 2025
-    }
-    
-    console.log('🎯 Found motor (fallback):', motor.make, motor.model, motor.horsepower + 'HP')
-    motors.push(motor)
-    existingHPs.add(horsepower)
-  }
-  
-  // Log some sample matches for debugging
-  if (primaryMatches.length > 0) {
-    console.log('Sample primary matches:')
-    primaryMatches.slice(0, 3).forEach((match, i) => {
-      console.log(`  ${i + 1}: "${match[0]}"`)
+  // Log first few motor lines for debugging
+  if (motorLines.length > 0) {
+    console.log('Sample motor lines:')
+    motorLines.slice(0, 5).forEach((line, i) => {
+      console.log(`  ${i + 1}: "${line.trim()}"`)
     })
   }
   
+  // Parse each motor line
+  for (const line of motorLines) {
+    const cleanLine = line.trim()
+    
+    // Extract year, model info, and HP from the line
+    const motorMatch = cleanLine.match(/^(20(24|25))\s+(.*?)\s+(\d+)HP\s+(.*?)\s*-\s*Mercury\s*$/i)
+    
+    if (motorMatch) {
+      const year = parseInt(motorMatch[1])
+      const modelPart1 = motorMatch[3].trim()
+      const horsepower = parseInt(motorMatch[4])
+      const modelPart2 = motorMatch[5].trim()
+      
+      // Validate horsepower range
+      if (horsepower < 5 || horsepower > 500) {
+        continue
+      }
+      
+      // Combine model parts
+      let modelName = `${modelPart1} ${modelPart2}`.trim()
+      
+      // Clean up model name
+      modelName = modelName
+        .replace(/®/g, '')
+        .replace(/™/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+      
+      // Skip if model name is too short or generic
+      if (modelName.length < 2) {
+        modelName = `${horsepower}HP FourStroke`
+      }
+      
+      // Determine motor type from model name
+      let motorType = 'FourStroke'
+      if (modelName.toLowerCase().includes('verado')) {
+        motorType = 'Verado'
+      } else if (modelName.toLowerCase().includes('pro xs')) {
+        motorType = 'Pro XS'
+      }
+      
+      const motor = {
+        make: 'Mercury',
+        model: modelName,
+        horsepower: horsepower,
+        motor_type: motorType,
+        base_price: null,
+        year: year
+      }
+      
+      console.log('🎯 Found valid motor:', `${motor.year} ${motor.make} ${motor.model} ${motor.horsepower}HP`)
+      motors.push(motor)
+    }
+  }
+  
+  // If markdown parsing found very few results, try HTML as fallback
+  if (motors.length < 10) {
+    console.log('⚠️ Low motor count from markdown, trying HTML fallback...')
+    
+    // More restrictive HTML pattern - look for motor titles in specific contexts
+    const htmlPattern = /(20(24|25))\s+[^<>\n]*?(\d+)HP[^<>\n]*?Mercury/gi
+    const htmlMatches = Array.from(html.matchAll(htmlPattern))
+    
+    console.log('HTML fallback matches:', htmlMatches.length)
+    
+    // Log sample HTML matches
+    if (htmlMatches.length > 0) {
+      console.log('Sample HTML matches:')
+      htmlMatches.slice(0, 3).forEach((match, i) => {
+        console.log(`  ${i + 1}: "${match[0]}"`)
+      })
+    }
+    
+    const existingHPs = new Set(motors.map(m => m.horsepower))
+    
+    for (const match of htmlMatches) {
+      const year = parseInt(match[1])
+      const horsepower = parseInt(match[3])
+      const fullMatch = match[0]
+      
+      // Skip duplicates and invalid values
+      if (existingHPs.has(horsepower) || horsepower < 5 || horsepower > 500) {
+        continue
+      }
+      
+      // Extract model from the match
+      const modelMatch = fullMatch.match(/(20(24|25))\s+(.*?)\s+(\d+)HP/i)
+      let modelName = modelMatch ? modelMatch[3].trim() : `${horsepower}HP`
+      
+      // Clean up model name
+      modelName = modelName
+        .replace(/®/g, '')
+        .replace(/™/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+      
+      if (modelName.length < 2) {
+        modelName = `${horsepower}HP FourStroke`
+      }
+      
+      const motor = {
+        make: 'Mercury',
+        model: modelName,
+        horsepower: horsepower,
+        motor_type: 'FourStroke',
+        base_price: null,
+        year: year
+      }
+      
+      console.log('🎯 Found motor (HTML fallback):', `${motor.year} ${motor.make} ${motor.model} ${motor.horsepower}HP`)
+      motors.push(motor)
+      existingHPs.add(horsepower)
+    }
+  }
+  
+  // Advanced deduplication - handle slight name variations
+  const uniqueMotors = []
+  const seenCombinations = new Set()
+  
+  for (const motor of motors) {
+    // Create a normalized key for deduplication
+    const normalizedModel = motor.model.toLowerCase()
+      .replace(/[®™\s-]/g, '')
+      .replace(/fourstroke/g, '')
+    const key = `${motor.horsepower}-${normalizedModel}`
+    
+    if (!seenCombinations.has(key)) {
+      seenCombinations.add(key)
+      uniqueMotors.push(motor)
+    }
+  }
+  
+  console.log(`🧹 Deduplication: ${motors.length} → ${uniqueMotors.length} unique motors`)
+  
   return {
-    motors: motors,
+    motors: uniqueMotors,
     debugInfo: {
       html_length: html.length,
       markdown_length: markdown.length,
-      primary_matches: primaryMatches.length,
-      fallback_matches: fallbackMatches.length,
-      total_matches: primaryMatches.length + fallbackMatches.length,
+      motor_lines_found: motorLines?.length || 0,
+      total_matches: motors.length,
+      unique_motors: uniqueMotors.length,
       result_count: resultMatch ? resultMatch[3] : null
     }
   }
