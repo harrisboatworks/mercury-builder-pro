@@ -7,26 +7,36 @@ export default function TestScraper() {
 
   const runScraper = async () => {
     setLoading(true);
+    setResults(null);
     try {
-      console.log('Triggering Mercury scraper...');
+      console.log('🚀 Triggering Mercury scraper with fixes...');
       
       const { data, error } = await supabase.functions.invoke('scrape-inventory-v2', {
         body: { 
-          batch_size: 10,
+          batch_size: 5,  // Smaller batch for testing
           debug: true 
         }
       });
       
       if (error) {
-        console.error('Scraper error:', error);
-        setResults({ error: error.message });
+        console.error('❌ Scraper error:', error);
+        setResults({ 
+          error: error.message,
+          details: error 
+        });
       } else {
-        console.log('Scraper success:', data);
-        setResults(data);
+        console.log('✅ Scraper success:', data);
+        setResults({
+          success: true,
+          ...data
+        });
       }
     } catch (err) {
-      console.error('Failed to run scraper:', err);
-      setResults({ error: err.message });
+      console.error('💥 Failed to run scraper:', err);
+      setResults({ 
+        error: `Network Error: ${err.message}`,
+        type: 'network_error'
+      });
     } finally {
       setLoading(false);
     }

@@ -783,6 +783,15 @@ serve(async (req) => {
   }
 
   try {
+    const corsHeaders = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+    }
+
+    // Handle CORS preflight requests
+    if (req.method === 'OPTIONS') {
+      return new Response('ok', { headers: corsHeaders });
+    }
     const startTime = Date.now()
     const requestBody = await req.json()
     const { pages_to_scrape = 6 } = requestBody // Increased default to capture all 145+ motors
@@ -1199,7 +1208,7 @@ serve(async (req) => {
       m.model.includes('data-'))
     );
 
-    const noModelCode = cleanedMotors.filter(m => 
+    const noEngineType = cleanedMotors.filter(m => 
       !m.engine_type && 
       m.model && (m.model.includes('ELHPT') || 
        m.model.includes('XL') || 
@@ -1214,9 +1223,9 @@ serve(async (req) => {
       htmlInTitles.slice(0, 3).forEach(m => console.log(`  - "${m.model}"`));
     }
 
-    if (noModelCode.length > 0) {
+    if (noEngineType.length > 0) {
       console.log('\n⚠️ WARNING: Model codes not extracted properly:');
-      noModelCode.slice(0, 5).forEach(m => console.log(`  - "${m.model}" (should have model code)`));
+      noEngineType.slice(0, 5).forEach(m => console.log(`  - "${m.model}" (should have model code)`));
     }
 
     if (missingPrices.length > 0) {
