@@ -450,7 +450,9 @@ export type Database = {
           id: string
           image_url: string | null
           images: Json | null
+          in_stock: boolean | null
           inventory_source: string | null
+          is_brochure: boolean | null
           last_enriched: string | null
           last_scraped: string | null
           last_stock_check: string | null
@@ -482,7 +484,9 @@ export type Database = {
           id?: string
           image_url?: string | null
           images?: Json | null
+          in_stock?: boolean | null
           inventory_source?: string | null
+          is_brochure?: boolean | null
           last_enriched?: string | null
           last_scraped?: string | null
           last_stock_check?: string | null
@@ -514,7 +518,9 @@ export type Database = {
           id?: string
           image_url?: string | null
           images?: Json | null
+          in_stock?: boolean | null
           inventory_source?: string | null
+          is_brochure?: boolean | null
           last_enriched?: string | null
           last_scraped?: string | null
           last_stock_check?: string | null

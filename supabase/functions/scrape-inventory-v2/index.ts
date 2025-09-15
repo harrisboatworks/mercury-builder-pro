@@ -646,13 +646,18 @@ async function discoverFromXmlFeed() {
           const msrp = msrpStr  ? Number(msrpStr.replace(/[^\d.]/g, '')) || null : null;
           const title = T(u.Title || u.UnitName || u.Model || u.model || u.Name);
 
+          // Check stock status
+          const availabilityText = T(u.Availability || u.InventoryStatus || u.Status || u.InStock || '');
+          const in_stock = availabilityText ? /in\s*stock|available/i.test(availabilityText) : true;
+          const is_brochure = availabilityText ? /brochure|template|not\s*in\s*stock/i.test(availabilityText) : false;
+
           let detail_url = detail;
           if (!detail_url && (stock || title)) {
             const safe = encodeURIComponent(`${title}-${stock}`.replace(/\s+/g, "-").toLowerCase());
             detail_url = `https://www.harrisboatworks.ca/inventory/${safe}`;
           }
 
-          return { detail_url, images, stock, sale, msrp, title, raw: u };
+          return { detail_url, images, stock, sale, msrp, title, in_stock, is_brochure, raw: u };
         }).filter(i => !!i.detail_url);
 
         const urls = [...new Set(items.map(i => i.detail_url))];
@@ -660,9 +665,10 @@ async function discoverFromXmlFeed() {
         const priceByUrl = new Map(items.map(i => [i.detail_url, { sale: i.sale, msrp: i.msrp }]));
         const stockByUrl = new Map(items.map(i => [i.detail_url, i.stock]));
         const titleByUrl = new Map(items.map(i => [i.detail_url, i.title]));
+        const stockFlagsByUrl = new Map(items.map(i => [i.detail_url, { in_stock: i.in_stock, is_brochure: i.is_brochure }]));
 
         return {
-          urls, items, imageByUrl, priceByUrl, stockByUrl, titleByUrl,
+          urls, items, imageByUrl, priceByUrl, stockByUrl, titleByUrl, stockFlagsByUrl,
           count: urls.length, totalUnits: units.length,
           debug: { chosenUrl: url, attempts, parsedMeta: parsed.meta }
         };
@@ -676,7 +682,7 @@ async function discoverFromXmlFeed() {
   // All attempts failed or no units found
   return {
     urls: [], items: [], imageByUrl: new Map(), priceByUrl: new Map(),
-    stockByUrl: new Map(), titleByUrl: new Map(),
+    stockByUrl: new Map(), titleByUrl: new Map(), stockFlagsByUrl: new Map(),
     count: 0, totalUnits: 0,
     debug: { attempts, reason: 'no_units_found' }
   };
@@ -934,7 +940,7 @@ serve(async (req) => {
   
   try {
     const body = await req.json().catch(() => ({}));
-    const mode = (body.mode ?? "full") as "full" | "discovery";
+    const mode = (body.mode ?? "full") as "full" | "discovery" | "seed_brochure";
     const batch = Number(body.batch_size ?? 30);
     const concurrency = Number(body.concurrency ?? 4);
     
@@ -1011,6 +1017,25 @@ serve(async (req) => {
       }
     };
 
+    // Handle brochure seeding mode
+    if (mode === 'seed_brochure') {
+      const supabase = await getServiceClient();
+      const rows = await seedBrochureCatalog();
+
+      const { error } = await supabase
+        .from('motor_models')
+        .upsert(rows, {
+          onConflict: 'make,model,year,is_brochure',
+        });
+
+      return new Response(JSON.stringify({
+        success: !error,
+        seeded: rows.length,
+        source: 'brochure_catalog',
+        error
+      }), { status: 200, headers: { 'Content-Type': 'application/json', ...corsHeaders }});
+    }
+
     // EARLY RETURN: discovery mode
     if (mode === "discovery") {
       const force = (body.force_source ?? 'auto') as 'auto' | 'xml' | 'pages';
@@ -1072,6 +1097,8 @@ serve(async (req) => {
     let priceByUrl = xml.priceByUrl;
     let stockByUrl = xml.stockByUrl;
     let titleByUrl = xml.titleByUrl;
+    let stockFlagsByUrl = xml.stockFlagsByUrl;
+    const fromXML = xml.count > 0;
 
     if (xml.count > 0) {
       urls = xml.urls;
@@ -1086,6 +1113,7 @@ serve(async (req) => {
       priceByUrl = new Map();
       stockByUrl = new Map();
       titleByUrl = new Map();
+      stockFlagsByUrl = new Map();
     }
 
     if (urls.length === 0) {
@@ -1254,7 +1282,9 @@ serve(async (req) => {
       images: m.image_url ? [m.image_url, ...((m as any).gallery || [])] : ((m as any).gallery || []),
       detail_url: m.source_url,
       last_scraped: new Date().toISOString(),
-      inventory_source: 'detail_pages_or_xml'
+      inventory_source: fromXML ? 'xml_inventory' : 'detail_pages',
+      in_stock: true,
+      is_brochure: false
     }));
 
     const { error: upsertError } = await supabase

@@ -29,7 +29,7 @@ export default function TestScraper() {
   const [full, setFull] = useState<FullOptions>({ batch_size: 12, concurrency: 3 });
 
   const runScraper = async (
-    mode: 'discovery' | 'full',
+    mode: 'discovery' | 'full' | 'seed_brochure',
     overrides?: Partial<DiscoveryOptions & FullOptions>
   ) => {
     setLoading(true);
@@ -46,6 +46,8 @@ export default function TestScraper() {
               do_probe: overrides?.do_probe ?? disc.do_probe ?? true,
               force_source: overrides?.force_source ?? disc.force_source ?? 'auto'
             }
+          : mode === 'seed_brochure'
+          ? { mode: 'seed_brochure' }
           : {
               mode: 'full',
               batch_size: overrides?.batch_size ?? full.batch_size ?? 12,
@@ -219,6 +221,28 @@ export default function TestScraper() {
           <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded">
             <p className="text-xs text-yellow-900">
               Daily server-side run at 5:00 AM (EST). Manual triggers available here and via curl in the README.
+            </p>
+          </div>
+        </div>
+
+        {/* Brochure Seeding */}
+        <div className="p-4 border rounded-lg">
+          <h2 className="font-semibold mb-3">Brochure Catalog</h2>
+          <p className="text-sm text-gray-600 mb-4">
+            Seed the database with the complete Mercury model lineup (brochure models)
+          </p>
+          
+          <button
+            onClick={() => runScraper('seed_brochure' as any)}
+            disabled={loading}
+            className="px-5 py-2.5 bg-orange-600 text-white rounded-lg hover:bg-orange-700 disabled:opacity-50"
+          >
+            {loading ? 'Running…' : 'Seed Brochure Catalog'}
+          </button>
+          
+          <div className="mt-4 p-3 bg-orange-50 border border-orange-200 rounded">
+            <p className="text-xs text-orange-900">
+              This adds ~35 Mercury models as brochure entries (is_brochure=true, in_stock=false)
             </p>
           </div>
         </div>
