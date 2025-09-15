@@ -37,11 +37,20 @@ function parseMotorTitle(title: string) {
   // Check if EFI exists
   const fuelType = parts.includes('EFI') ? 'EFI' : '';
   
-  // CRITICAL: Everything after HP (except EFI) is the model code
+  // CRITICAL: Model code is everything after HP that's not EFI/TM/Mercury
+  const hpIndex = parts.findIndex(p => p.toUpperCase().includes('HP'));
   let modelCode = '';
-  if (hpIndex !== -1) {
-    const afterHP = parts.slice(hpIndex + 1);
-    modelCode = afterHP.filter(p => p !== 'EFI').join(' ');
+  if (hpIndex !== -1 && hpIndex < parts.length - 1) {
+    const codesParts = parts.slice(hpIndex + 1);
+    modelCode = codesParts
+      .filter(p => p !== 'EFI' && p !== 'TM' && p !== '-' && p !== 'Mercury')
+      .join(' ')
+      .trim();
+  }
+
+  // Special case: Some motors have code right after HP without space (like "25HPELHPT")
+  if (!modelCode && horsepower.match(/HP([A-Z]+)/i)) {
+    modelCode = horsepower.match(/HP([A-Z]+)/i)[1];
   }
   
   console.log(`Parsed: ${clean} -> Year:${year}, Cat:${category}, HP:${horsepower}, Fuel:${fuelType}, Model:${modelCode}`);
@@ -329,10 +338,18 @@ function detectTotalPages(html: string, markdown: string = '') {
   
   const text = html + ' ' + markdown;
   
+  // Extract the actual total from the page
+  const totalMatch = html.match(/(\d+)\s*of\s*(\d+)\s*results/i) || 
+                     html.match(/(\d+)\s*results found/i) ||
+                     html.match(/showing.*of\s*(\d+)/i);
+
+  const actualTotal = totalMatch ? parseInt(totalMatch[totalMatch.length - 1]) : 145;
+  console.log(`Website shows ${actualTotal} total motors`);
+
   for (const pattern of patterns) {
     const match = text.match(pattern);
     if (match) {
-      const totalResults = parseInt(match[3] || match[1]);
+      const totalResults = actualTotal || parseInt(match[3] || match[1]);
       const itemsPerPage = 30; // Standard for harrisboatworks.ca
       const totalPages = Math.ceil(totalResults / itemsPerPage);
       
@@ -798,8 +815,18 @@ serve(async (req) => {
           await new Promise(resolve => setTimeout(resolve, 1000))
         }
         
-        // Construct URL using the working pattern
-        const currentUrl = pageNum === 1 ? baseUrl : `${baseUrl}${workingPattern}${pageNum}`;
+        // Better pagination URL pattern
+        let currentUrl;
+        if (pageNum === 1) {
+          currentUrl = baseUrl;
+        } else {
+          // Check if base URL already has parameters
+          if (baseUrl.includes('?')) {
+            currentUrl = `${baseUrl}&page=${pageNum}`;
+          } else {
+            currentUrl = `${baseUrl}?page=${pageNum}`;
+          }
+        }
         
         console.log(`\n=== SCRAPING PAGE ${pageNum} ===`);
         console.log(`URL: ${currentUrl}`);
@@ -859,11 +886,17 @@ serve(async (req) => {
             console.log('🔍 Pagination debug:', { hasPageLinks, paginationLinks: paginationLinks.slice(0, 5) });
           }
           
-          const parseResult = await parseMotorsFromHTML(htmlData, markdownData)
-          const pageMotors = parseResult.motors
-          const debugInfo = parseResult.debugInfo
-          
-          console.log(`🏗️ Page ${pageNum} parsed motors:`, pageMotors.length)
+           const parseResult = await parseMotorsFromHTML(htmlData, markdownData)
+           const pageMotors = parseResult.motors
+           const debugInfo = parseResult.debugInfo
+           
+           console.log(`🏗️ Page ${pageNum} parsed motors:`, pageMotors.length)
+           
+           // Add debug to find missing motors
+           console.log(`Page ${pageNum} motor titles:`);
+           pageMotors.forEach((m, i) => {
+             console.log(`  ${i+1}. ${m.full_title || m.model} | Model: "${m.model_code || 'MISSING'}"`);
+           });
           
           // Update pagination detection on first page
           if (pageNum === 1 && debugInfo.pagination_info) {
@@ -924,17 +957,84 @@ serve(async (req) => {
     console.log('🔍 All pages scraped. Total motors found:', allMotors.length)
     console.log(`📊 Expected vs Found: ${totalExpectedMotors} expected, ${allMotors.length} found`)
     
-    // Validation Report
-    console.log('\n' + '='.repeat(50));
-    console.log('SCRAPING COMPLETE - VALIDATION REPORT:');
-    console.log('='.repeat(50));
-    console.log(`Total Motors Scraped: ${allMotors.length} / 145 expected`);
-    console.log(`Motors with Images: ${allMotors.filter(m => m.primary_image || (m.images && m.images.length > 0)).length}`);
-    console.log(`Motors with Prices: ${allMotors.filter(m => m.sale_price || m.base_price).length}`);
-    console.log(`Motors with Model Codes: ${allMotors.filter(m => m.model_code).length}`);
+    // Check if there are more pages if we're missing motors
+    if (allMotors.length < 145) {
+      console.log('\n⚠️ Still missing motors, checking for more pages...');
+      
+      // Try page 6, 7, etc.
+      for (let extraPage = detectedTotalPages + 1; extraPage <= detectedTotalPages + 3; extraPage++) {
+        const extraUrl = baseUrl.includes('?') ? `${baseUrl}&page=${extraPage}` : `${baseUrl}?page=${extraPage}`;
+        console.log(`Checking extra page ${extraPage}: ${extraUrl}`);
+        
+        try {
+          const extraResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${firecrawlApiKey}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ url: extraUrl, formats: ['html', 'markdown'] })
+          });
+          
+          if (extraResponse.ok) {
+            const extraData = await extraResponse.json();
+            const extraHtml = extraData.data?.html || '';
+            const extraMarkdown = extraData.data?.markdown || '';
+            const extraResult = await parseMotorsFromHTML(extraHtml, extraMarkdown);
+            const extraMotors = extraResult.motors;
+            
+            if (extraMotors.length > 0) {
+              console.log(`✓ Found ${extraMotors.length} more motors on page ${extraPage}!`);
+              allMotors.push(...extraMotors);
+            } else {
+              console.log(`No motors on page ${extraPage}, stopping.`);
+              break;
+            }
+          }
+        } catch (error) {
+          console.log(`Error checking extra page ${extraPage}:`, error.message);
+          break;
+        }
+      }
+    }
+    
+    // Enhanced Validation Report
+    console.log('\n' + '='.repeat(60));
+    console.log('CRITICAL VALIDATION REPORT');
+    console.log('='.repeat(60));
 
-    // Show sample of motors missing model codes
-    const missingModelCode = allMotors.filter(m => !m.model_code);
+    // Group motors by category to see distribution
+    const categories = {};
+    allMotors.forEach(m => {
+      const cat = m.category || 'Unknown';
+      categories[cat] = (categories[cat] || 0) + 1;
+    });
+
+    const validation = {
+      withImages: allMotors.filter(m => m.primary_image || (m.images && m.images.length > 0)).length,
+      withPrices: allMotors.filter(m => m.sale_price || m.base_price).length,
+      withModelCodes: allMotors.filter(m => m.model_code).length,
+      callForPrice: allMotors.filter(m => m.sale_price === 'Call for Price' || m.base_price === 'Call for Price').length
+    };
+
+    console.log(`\n📊 FINAL COUNTS:`);
+    console.log(`Total Motors: ${allMotors.length}/145 ${allMotors.length >= 145 ? '✅' : '❌ MISSING ' + (145 - allMotors.length)}`);
+    console.log(`With Model Codes: ${validation.withModelCodes}`);
+    console.log(`With Images: ${validation.withImages}`);
+    console.log(`With Prices: ${validation.withPrices}`);
+    console.log(`"Call for Price": ${validation.callForPrice}`);
+
+    console.log(`\n📊 BY CATEGORY:`);
+    Object.entries(categories).forEach(([cat, count]) => {
+      console.log(`  ${cat}: ${count} motors`);
+    });
+
+    // List some motors without model codes as examples
+    const noModelCode = allMotors.filter(m => !m.model_code).slice(0, 5);
+    if (noModelCode.length > 0) {
+      console.log(`\n⚠️ Examples without model codes:`);
+      noModelCode.forEach(m => console.log(`  - "${m.full_title || m.model}"`));
+    }
     if (missingModelCode.length > 0) {
       console.log('\nWARNING - Motors missing model codes:');
       missingModelCode.slice(0, 5).forEach(m => {
