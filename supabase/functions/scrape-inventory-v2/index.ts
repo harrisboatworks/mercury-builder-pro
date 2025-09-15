@@ -1083,9 +1083,9 @@ serve(async (req) => {
       console.log(`\n⚠️ Examples without model codes:`);
       noModelCode.forEach(m => console.log(`  - "${m.full_title || m.model}"`));
     }
-    if (missingModelCode.length > 0) {
+    if (noModelCode.length > 0) {
       console.log('\nWARNING - Motors missing model codes:');
-      missingModelCode.slice(0, 5).forEach(m => {
+      noModelCode.slice(0, 5).forEach(m => {
         console.log(`  - ${m.model || m.full_title}`);
       });
     }
