@@ -54,12 +54,26 @@ export default function AdminSources() {
         setPricelistResults({
           success: false,
           error: errorMessage,
+          stack: (error as any)?.stack,
           context: errorContext
         });
         
         toast({
           title: "Error",
           description: `${errorMessage}\nStep: ${errorContext.step || 'unknown'}`,
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Check if data has error (when function returns status 200 but with error)
+      if (data && !data.success && data.error) {
+        console.error('Function returned error:', data);
+        setPricelistResults(data);
+        
+        toast({
+          title: "Ingest Error",
+          description: `${data.error}\nStep: ${data.context?.step || 'unknown'}`,
           variant: "destructive",
         });
         return;
@@ -478,6 +492,16 @@ export default function AdminSources() {
                           <div className="mt-1 text-sm">
                             <strong>Detail:</strong> {pricelistResults.context.detail}
                           </div>
+                        )}
+                        {pricelistResults.stack && (
+                          <details className="mt-2">
+                            <summary className="text-sm cursor-pointer hover:text-foreground/80">
+                              Show Stack Trace
+                            </summary>
+                            <pre className="mt-1 text-xs bg-muted p-2 rounded overflow-x-auto whitespace-pre-wrap">
+                              {pricelistResults.stack}
+                            </pre>
+                          </details>
                         )}
                       </AlertDescription>
                     </Alert>
