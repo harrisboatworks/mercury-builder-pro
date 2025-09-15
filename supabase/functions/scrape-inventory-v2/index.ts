@@ -24,67 +24,48 @@ interface MotorData {
   last_scraped: string;
 }
 
-// Firecrawl scraping function
+// Firecrawl scraping function - matches pattern from scrape-motor-details
 async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: string; markdown?: string }> {
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 45000); // 45s timeout for inventory pages
+  const timeoutId = setTimeout(() => controller.abort(), 30000); // 30s timeout
   
-  try {
-    console.log(`🔥 Scraping with Firecrawl: ${url}`);
-    console.log(`🔑 Using API key: ${apiKey.substring(0, 8)}...`);
-    
-    const res = await fetch('https://api.firecrawl.dev/v1/scrape', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ 
-        url, 
-        formats: ['html', 'markdown'], 
-        onlyMainContent: false, // We want full page for inventory
-        waitFor: 3000 // Wait for JavaScript to load
-      }),
-      signal: controller.signal,
-    });
-    
-    clearTimeout(timeoutId);
-    
-    console.log(`📊 Firecrawl response status: ${res.status} ${res.statusText}`);
-    console.log(`📊 Firecrawl response headers:`, Object.fromEntries(res.headers.entries()));
-    
-    if (!res.ok) {
-      const errorText = await res.text();
-      console.error(`❌ Firecrawl API error response:`, errorText);
-      throw new Error(`Firecrawl scrape failed: ${res.status} ${errorText}`);
-    }
-    
-    const data = await res.json();
-    console.log(`✅ Firecrawl scraped successfully, response keys:`, Object.keys(data));
-    
-    // Support multiple possible response shapes
-    const html = data?.data?.html || data?.html || null;
-    const markdown = data?.data?.markdown || data?.markdown || null;
-    
-    console.log(`📏 Content lengths - HTML: ${html?.length || 0}, Markdown: ${markdown?.length || 0}`);
-    
-    return { html: html || undefined, markdown: markdown || undefined };
-  } catch (error) {
-    clearTimeout(timeoutId);
-    console.error(`💥 Firecrawl error details:`, {
-      name: error.name,
-      message: error.message,
-      stack: error.stack?.substring(0, 500)
-    });
-    
-    if (error.name === 'AbortError') {
-      throw new Error('Firecrawl request timed out');
-    }
-    throw error;
+  console.log(`🔥 Scraping with Firecrawl: ${url}`);
+  console.log(`🔑 Using API key: ${apiKey.substring(0, 8)}...`);
+  
+  const res = await fetch('https://api.firecrawl.dev/v1/scrape', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ 
+      url, 
+      formats: ['html', 'markdown'], 
+      onlyMainContent: false, // We want full page for inventory
+      waitFor: 3000 // Wait for JavaScript to load
+    }),
+    signal: controller.signal,
+  });
+  
+  clearTimeout(timeoutId);
+  
+  if (!res.ok) {
+    throw new Error(`Firecrawl scrape failed: ${res.status} ${await res.text()}`);
   }
+  
+  const data = await res.json();
+  console.log(`✅ Firecrawl scraped successfully`);
+  
+  // Support multiple possible response shapes
+  const html = data?.data?.html || data?.html || null;
+  const markdown = data?.data?.markdown || data?.markdown || null;
+  
+  console.log(`📏 Content lengths - HTML: ${html?.length || 0}, Markdown: ${markdown?.length || 0}`);
+  
+  return { html: html || undefined, markdown: markdown || undefined };
 }
 
-// Helper function with Firecrawl retry logic
+// Helper function with Firecrawl retry logic and fallback
 async function fetchWithFirecrawl(url: string, apiKey: string, maxRetries: number = 2): Promise<string | null> {
   for (let i = 0; i < maxRetries; i++) {
     try {
@@ -100,7 +81,18 @@ async function fetchWithFirecrawl(url: string, apiKey: string, maxRetries: numbe
     } catch (error) {
       console.error(`❌ Firecrawl attempt ${i + 1} failed:`, error.message);
       if (i === maxRetries - 1) {
-        console.error(`💥 All ${maxRetries} Firecrawl attempts failed for ${url}`);
+        console.log(`⚠️ Firecrawl failed, trying direct fetch as fallback...`);
+        try {
+          const resp = await fetch(url);
+          if (resp.ok) {
+            const html = await resp.text();
+            console.log(`✅ Direct fetch successful, got ${html.length} characters`);
+            return html;
+          }
+        } catch (fallbackError) {
+          console.error(`❌ Direct fetch also failed:`, fallbackError.message);
+        }
+        console.error(`💥 All ${maxRetries} Firecrawl attempts and fallback failed for ${url}`);
         return null;
       }
       // Wait before retry
