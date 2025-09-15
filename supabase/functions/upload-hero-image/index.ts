@@ -1,9 +1,11 @@
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
-// Shared model key utilities (copied to avoid cross-function imports)
-function buildModelKey(input: string): string {
-  if (!input) return '';
+// Enhanced model key utility - Shared consistent version
+function buildModelKey(modelDisplay: string, modelCode?: string, attrs?: any): string {
+  if (!modelDisplay && !modelCode) return '';
+  
+  const input = modelDisplay || modelCode || '';
   let s = input
     // strip HTML & odd chars
     .replace(/<[^>]*>/g, ' ')
@@ -22,28 +24,57 @@ function buildModelKey(input: string): string {
     .replace(/\s+/g, ' ')
     .trim();
 
-  // pull HP and trailing rigging code
-  // ex: "25HP EFI ELHPT", "90 HP ELPT", "150 ProXS XL"
+  // Extract components for more specific keys
   const hpMatch = s.match(/\b(\d+(\.\d+)?)\s*hp\b/i);
   const hp = hpMatch ? `${hpMatch[1]}HP` : '';
-  s = s.replace(/\b(\d+(\.\d+)?)\s*hp\b/ig, '').trim();
-
-  // rigging/code tokens: ELHPT, ELPT, XL, EXLPT, CT, DTS, etc.
-  const codeTokens: string[] = [];
-  const tokenRx = /\b(ELHPT|ELPT|ELO|ELH|EH|XL|XXL|EXLPT|L|CL|CT|DTS|TILLER|JPO|DIGITAL|POWER STEERING)\b/ig;
-  let m;
-  while ((m = tokenRx.exec(s)) !== null) codeTokens.push(m[1].toUpperCase());
-
-  // family tokens (one of)
-  const fam = (s.match(/\b(FourStroke|ProXS|SeaPro|Verado|Racing)\b/i)?.[1]) || '';
-
-  // rebuild normalized display to then key it
-  const parts = [fam, hp, 'EFI'].filter(Boolean).concat(codeTokens);
-  const normalized = parts.join('-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
-
-  return normalized.toUpperCase();
+  
+  // Extract family
+  const famMatch = s.match(/\b(FourStroke|ProXS|SeaPro|Verado|Racing)\b/i);
+  const family = famMatch ? famMatch[1] : (attrs?.family || 'FourStroke');
+  
+  // Extract shaft length with priority order
+  let shaft = '';
+  if (/XXXL/i.test(s)) shaft = 'XXXL';
+  else if (/XXL/i.test(s)) shaft = 'XXL'; 
+  else if (/\bXL\b/i.test(s)) shaft = 'XL';
+  else if (/\bL\b/i.test(s)) shaft = 'L';
+  else if (/\bS\b/i.test(s)) shaft = 'S';
+  else if (attrs?.shaft) shaft = attrs.shaft;
+  
+  // Extract control type
+  let control = '';
+  if (/TILLER/i.test(s)) control = 'TILLER';
+  else if (/DTS/i.test(s)) control = 'DTS';
+  else if (/ELHPT/i.test(s)) control = 'ELHPT';
+  else if (/ELPT/i.test(s)) control = 'ELPT';
+  else if (/ELH/i.test(s)) control = 'ELH';
+  else if (/ELO/i.test(s)) control = 'ELO';
+  else if (attrs?.control) control = attrs.control;
+  
+  // Extract special features
+  const ct = /\bCT\b/i.test(s) || attrs?.ct;
+  const jet = /JET/i.test(s) || attrs?.jet;
+  
+  // Build key components in priority order
+  const keyParts = [
+    family,
+    hp,
+    shaft,
+    control,
+    ct ? 'CT' : '',
+    jet ? 'JET' : '',
+    'EFI'
+  ].filter(Boolean);
+  
+  // If we still don't have enough specificity, append model code suffix
+  let key = keyParts.join('-');
+  if (modelCode && modelCode !== modelDisplay) {
+    // Take last 3-4 chars of model code for additional uniqueness
+    const codeSuffix = modelCode.slice(-4).replace(/[^A-Z0-9]/g, '');
+    if (codeSuffix) key += `-${codeSuffix}`;
+  }
+  
+  return key.toUpperCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
 }
 
 const corsHeaders = {

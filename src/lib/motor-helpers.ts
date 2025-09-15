@@ -558,7 +558,7 @@ export const getMotorImageGallery = (motor: any): string[] => {
   );
 };
 
-// Extract HP and code from model text
+// Extract HP and code from model text - Enhanced version for consistent key building
 export const extractHpAndCode = (modelText: string): { hp: number | null; code: string | null; fuel: string | null; family: string | null } => {
   if (!modelText) return { hp: null, code: null, fuel: null, family: null };
   
@@ -571,14 +571,14 @@ export const extractHpAndCode = (modelText: string): { hp: number | null; code: 
   // Extract fuel type
   const fuel = /EFI/.test(text) ? 'EFI' : null;
   
-  // Extract family
+  // Extract family - enhanced detection
   let family = null;
-  if (/FOUR\s*STROKE|FOURSTROKE/i.test(text)) family = 'FOURSTROKE';
-  else if (/PRO\s*XS|PROXS/i.test(text)) family = 'PROXS';
-  else if (/SEAPRO/i.test(text)) family = 'SEAPRO';
-  else if (/VERADO/i.test(text)) family = 'VERADO';
-  else if (/RACING/i.test(text)) family = 'RACING';
-  else if (hp) family = 'FOURSTROKE'; // Default for motors with HP
+  if (/FOUR\s*STROKE|FOURSTROKE/i.test(text)) family = 'FourStroke';
+  else if (/PRO\s*XS|PROXS/i.test(text)) family = 'ProXS';
+  else if (/SEAPRO/i.test(text)) family = 'SeaPro';
+  else if (/VERADO/i.test(text)) family = 'Verado';
+  else if (/RACING/i.test(text)) family = 'Racing';
+  else if (hp) family = 'FourStroke'; // Default for motors with HP
   
   // Extract code (most specific patterns first)
   let code = null;
@@ -605,9 +605,11 @@ export const extractHpAndCode = (modelText: string): { hp: number | null; code: 
   return { hp, code, fuel, family };
 };
 
-// Build consistent model key from model text
-export function buildModelKey(input: string): string {
-  if (!input) return '';
+// Build consistent model key from model text - Enhanced for better specificity
+export function buildModelKey(modelDisplay: string, modelCode?: string, attrs?: any): string {
+  if (!modelDisplay && !modelCode) return '';
+  
+  const input = modelDisplay || modelCode || '';
   let s = input
     // strip HTML & odd chars
     .replace(/<[^>]*>/g, ' ')
@@ -626,28 +628,57 @@ export function buildModelKey(input: string): string {
     .replace(/\s+/g, ' ')
     .trim();
 
-  // pull HP and trailing rigging code
-  // ex: "25HP EFI ELHPT", "90 HP ELPT", "150 ProXS XL"
+  // Extract components for more specific keys
   const hpMatch = s.match(/\b(\d+(\.\d+)?)\s*hp\b/i);
   const hp = hpMatch ? `${hpMatch[1]}HP` : '';
-  s = s.replace(/\b(\d+(\.\d+)?)\s*hp\b/ig, '').trim();
-
-  // rigging/code tokens: ELHPT, ELPT, XL, EXLPT, CT, DTS, etc.
-  const codeTokens: string[] = [];
-  const tokenRx = /\b(ELHPT|ELPT|ELO|ELH|EH|XL|XXL|EXLPT|L|CL|CT|DTS|TILLER|JPO|DIGITAL|POWER STEERING)\b/ig;
-  let m;
-  while ((m = tokenRx.exec(s)) !== null) codeTokens.push(m[1].toUpperCase());
-
-  // family tokens (one of)
-  const fam = (s.match(/\b(FourStroke|ProXS|SeaPro|Verado|Racing)\b/i)?.[1]) || '';
-
-  // rebuild normalized display to then key it
-  const parts = [fam, hp, 'EFI'].filter(Boolean).concat(codeTokens);
-  const normalized = parts.join('-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
-
-  return normalized.toUpperCase();
+  
+  // Extract family
+  const famMatch = s.match(/\b(FourStroke|ProXS|SeaPro|Verado|Racing)\b/i);
+  const family = famMatch ? famMatch[1] : (attrs?.family || 'FourStroke');
+  
+  // Extract shaft length with priority order
+  let shaft = '';
+  if (/XXXL/i.test(s)) shaft = 'XXXL';
+  else if (/XXL/i.test(s)) shaft = 'XXL'; 
+  else if (/\bXL\b/i.test(s)) shaft = 'XL';
+  else if (/\bL\b/i.test(s)) shaft = 'L';
+  else if (/\bS\b/i.test(s)) shaft = 'S';
+  else if (attrs?.shaft) shaft = attrs.shaft;
+  
+  // Extract control type
+  let control = '';
+  if (/TILLER/i.test(s)) control = 'TILLER';
+  else if (/DTS/i.test(s)) control = 'DTS';
+  else if (/ELHPT/i.test(s)) control = 'ELHPT';
+  else if (/ELPT/i.test(s)) control = 'ELPT';
+  else if (/ELH/i.test(s)) control = 'ELH';
+  else if (/ELO/i.test(s)) control = 'ELO';
+  else if (attrs?.control) control = attrs.control;
+  
+  // Extract special features
+  const ct = /\bCT\b/i.test(s) || attrs?.ct;
+  const jet = /JET/i.test(s) || attrs?.jet;
+  
+  // Build key components in priority order
+  const keyParts = [
+    family,
+    hp,
+    shaft,
+    control,
+    ct ? 'CT' : '',
+    jet ? 'JET' : '',
+    'EFI'
+  ].filter(Boolean);
+  
+  // If we still don't have enough specificity, append model code suffix
+  let key = keyParts.join('-');
+  if (modelCode && modelCode !== modelDisplay) {
+    // Take last 3-4 chars of model code for additional uniqueness
+    const codeSuffix = modelCode.slice(-4).replace(/[^A-Z0-9]/g, '');
+    if (codeSuffix) key += `-${codeSuffix}`;
+  }
+  
+  return key.toUpperCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
 }
 
 export const getHPDescriptor = (hp: number | string) => {
@@ -912,3 +943,47 @@ export const getBadgeColor = (badgeText: string | null): string => {
   // Everything else = blue
   return 'text-blue-600 dark:text-blue-400';
 };
+
+// Unit tests for buildModelKey function
+export const testBuildModelKey = () => {
+  const tests = [
+    {
+      input: "2025 Mercury FourStroke 25 HP EFI ELHPT",
+      expected: "FOURSTROKE-25HP-ELHPT-EFI"
+    },
+    {
+      input: "150 Pro XS XL",
+      expected: "PROXS-150HP-XL-EFI"
+    },
+    {
+      input: "SeaPro 200 HP EXLPT",
+      expected: "SEAPRO-200HP-XL-ELPT-EFI"
+    },
+    {
+      input: "Mercury Verado 300 HP DTS",
+      expected: "VERADO-300HP-DTS-EFI"
+    },
+    {
+      input: "FourStroke 9.9 HP EFI ELH",
+      expected: "FOURSTROKE-9.9HP-ELH-EFI"
+    }
+  ];
+
+  console.log('Running buildModelKey tests...');
+  const results = tests.map(test => {
+    const result = buildModelKey(test.input);
+    const passed = result === test.expected;
+    console.log(`Input: "${test.input}" → Expected: "${test.expected}" → Got: "${result}" → ${passed ? '✓' : '✗'}`);
+    return passed;
+  });
+
+  const allPassed = results.every(r => r);
+  console.log(`Tests ${allPassed ? 'PASSED' : 'FAILED'}: ${results.filter(r => r).length}/${results.length}`);
+  return allPassed;
+};
+
+// Run tests in development
+if (typeof window !== 'undefined' && window.location?.hostname === 'localhost') {
+  // Only run tests in development
+  setTimeout(() => testBuildModelKey(), 1000);
+}

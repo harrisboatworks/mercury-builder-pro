@@ -9,7 +9,10 @@ const corsHeaders = {
   'Access-Control-Max-Age': '86400',
 };
 
-// Enhanced model key utility with better specificity
+// Import shared helper functions (using Deno's dynamic import approach)
+const SHARED_HELPERS_BASE_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/_shared/';
+
+// Enhanced model key utility with better specificity - Shared version
 function buildModelKey(modelDisplay: string, modelCode?: string, attrs?: any): string {
   if (!modelDisplay && !modelCode) return '';
   
