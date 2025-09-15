@@ -54,7 +54,8 @@ async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: st
     
     clearTimeout(timeoutId);
     
-    console.log(`📊 Firecrawl response status: ${res.status} ${res.statusText}`);
+    // Add debug logging as requested
+    console.log('Firecrawl response status:', res.status);
     
     if (!res.ok) {
       const errorText = await res.text();
@@ -63,6 +64,11 @@ async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: st
     }
     
     const data = await res.json();
+    
+    // Add comprehensive debug logs as requested
+    console.log('Firecrawl raw response:', JSON.stringify(data).substring(0, 1000));
+    console.log('Firecrawl markdown content:', data.data?.markdown?.substring(0, 500));
+    console.log('Firecrawl HTML content:', data.data?.html?.substring(0, 500));
     console.log(`✅ Firecrawl response received, keys:`, Object.keys(data));
     
     // Support multiple possible response shapes (same as scrape-motor-details)
@@ -110,6 +116,7 @@ async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: st
 async function fetchWithFirecrawl(url: string, apiKey: string, maxRetries: number = 2): Promise<string | null> {
   for (let i = 0; i < maxRetries; i++) {
     try {
+      console.log('Scraping URL:', url);
       console.log(`🌐 Firecrawl attempt ${i + 1} for: ${url}`);
       const result = await firecrawlScrape(url, apiKey);
       
