@@ -31,6 +31,8 @@ async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: st
   
   try {
     console.log(`🔥 Scraping with Firecrawl: ${url}`);
+    console.log(`🔑 Using API key: ${apiKey.substring(0, 8)}...`);
+    
     const res = await fetch('https://api.firecrawl.dev/v1/scrape', {
       method: 'POST',
       headers: {
@@ -48,21 +50,33 @@ async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: st
     
     clearTimeout(timeoutId);
     
+    console.log(`📊 Firecrawl response status: ${res.status} ${res.statusText}`);
+    console.log(`📊 Firecrawl response headers:`, Object.fromEntries(res.headers.entries()));
+    
     if (!res.ok) {
       const errorText = await res.text();
+      console.error(`❌ Firecrawl API error response:`, errorText);
       throw new Error(`Firecrawl scrape failed: ${res.status} ${errorText}`);
     }
     
     const data = await res.json();
-    console.log(`✅ Firecrawl scraped successfully`);
+    console.log(`✅ Firecrawl scraped successfully, response keys:`, Object.keys(data));
     
     // Support multiple possible response shapes
     const html = data?.data?.html || data?.html || null;
     const markdown = data?.data?.markdown || data?.markdown || null;
     
+    console.log(`📏 Content lengths - HTML: ${html?.length || 0}, Markdown: ${markdown?.length || 0}`);
+    
     return { html: html || undefined, markdown: markdown || undefined };
   } catch (error) {
     clearTimeout(timeoutId);
+    console.error(`💥 Firecrawl error details:`, {
+      name: error.name,
+      message: error.message,
+      stack: error.stack?.substring(0, 500)
+    });
+    
     if (error.name === 'AbortError') {
       throw new Error('Firecrawl request timed out');
     }
@@ -261,9 +275,78 @@ serve(async (req) => {
   }
 
   try {
+    const url = new URL(req.url);
+    const pathname = url.pathname;
+
+    // Health endpoint
+    if (pathname.endsWith('/health')) {
+      console.log('🏥 Health check endpoint called');
+      return new Response(JSON.stringify({ 
+        status: 'ok', 
+        timestamp: new Date().toISOString(),
+        function: 'scrape-inventory-v2'
+      }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
+    // Test Firecrawl endpoint
+    if (pathname.endsWith('/test-firecrawl')) {
+      console.log('🧪 Testing Firecrawl endpoint called');
+      
+      // Check API key
+      console.log(`🔑 FIRECRAWL_API_KEY exists: ${!!firecrawlApiKey}`);
+      if (firecrawlApiKey) {
+        console.log(`🔑 FIRECRAWL_API_KEY starts with: ${firecrawlApiKey.substring(0, 8)}...`);
+      } else {
+        return new Response(JSON.stringify({
+          success: false,
+          error: 'FIRECRAWL_API_KEY not found in environment variables',
+          timestamp: new Date().toISOString()
+        }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        });
+      }
+
+      try {
+        console.log('🏠 Testing Firecrawl with homepage...');
+        const testUrl = 'https://www.harrisboatworks.ca';
+        const result = await firecrawlScrape(testUrl, firecrawlApiKey);
+        
+        return new Response(JSON.stringify({
+          success: true,
+          url: testUrl,
+          html_length: result.html?.length || 0,
+          markdown_length: result.markdown?.length || 0,
+          has_html: !!result.html,
+          has_markdown: !!result.markdown,
+          timestamp: new Date().toISOString()
+        }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        });
+      } catch (testError) {
+        console.error('❌ Firecrawl test failed:', testError);
+        return new Response(JSON.stringify({
+          success: false,
+          error: testError.message,
+          error_type: testError.constructor.name,
+          timestamp: new Date().toISOString()
+        }), {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        });
+      }
+    }
+
+    // Main inventory scraping (default behavior)
     console.log('🚀 Starting Firecrawl-powered inventory scraping...');
     
-    if (!firecrawlApiKey) {
+    // Enhanced API key logging
+    console.log(`🔑 FIRECRAWL_API_KEY exists: ${!!firecrawlApiKey}`);
+    if (firecrawlApiKey) {
+      console.log(`🔑 FIRECRAWL_API_KEY starts with: ${firecrawlApiKey.substring(0, 8)}...`);
+    } else {
       throw new Error('FIRECRAWL_API_KEY is required but not found in environment variables');
     }
     
@@ -349,22 +432,34 @@ serve(async (req) => {
     });
 
   } catch (error) {
-    console.error('💥 Scraping failed:', error);
+    console.error('💥 Scraping failed with detailed error info:', {
+      name: error.name,
+      message: error.message,
+      stack: error.stack?.substring(0, 1000),
+      cause: error.cause,
+      timestamp: new Date().toISOString()
+    });
     
-    // Log failed update
-    await supabase
-      .from('inventory_updates')
-      .insert({
-        status: 'failed',
-        error_message: error.message,
-        motors_updated: 0,
-        completed_at: new Date().toISOString(),
-        is_scheduled: false
-      });
+    // Try to log to database even if main process failed
+    try {
+      await supabase
+        .from('inventory_updates')
+        .insert({
+          status: 'failed',
+          error_message: `${error.name}: ${error.message}`,
+          motors_updated: 0,
+          completed_at: new Date().toISOString(),
+          is_scheduled: false
+        });
+    } catch (dbError) {
+      console.error('📊 Failed to log error to database:', dbError);
+    }
     
     return new Response(JSON.stringify({
       success: false,
       error: error.message,
+      error_name: error.name,
+      error_details: error.stack?.substring(0, 500),
       timestamp: new Date().toISOString()
     }), {
       status: 500,
