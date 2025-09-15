@@ -128,103 +128,140 @@ function extractMotorData(text: string) {
   return data;
 }
 
-// Parse motors from HTML function
+// Detect total pages from pagination info
+function detectTotalPages(html: string, markdown: string = '') {
+  // Look for various pagination patterns
+  const patterns = [
+    /(\d+)\s*-\s*(\d+)\s*of\s*(\d+)/i, // "1 - 30 of 145"
+    /showing\s+(\d+)\s*-\s*(\d+)\s*of\s*(\d+)/i, // "Showing 1 - 30 of 145"
+    /page\s+\d+\s+of\s+(\d+)/i, // "Page 1 of 5"
+    /(\d+)\s+results/i // "145 results"
+  ];
+  
+  const text = html + ' ' + markdown;
+  
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (match) {
+      const totalResults = parseInt(match[3] || match[1]);
+      const itemsPerPage = 30; // Standard for harrisboatworks.ca
+      const totalPages = Math.ceil(totalResults / itemsPerPage);
+      
+      console.log(`📊 Pagination detected: ${totalResults} total results, ${totalPages} pages needed`);
+      return { totalResults, totalPages, itemsPerPage };
+    }
+  }
+  
+  console.log('⚠️ No pagination info found, using default page count');
+  return null;
+}
+
+// Enhanced motor parsing with comprehensive extraction
 async function parseMotorsFromHTML(html: string, markdown: string = '') {
-  console.log('🔍 Starting enhanced motor parsing with clean text extraction...')
+  console.log('🔍 Starting enhanced Mercury motor parsing for harrisboatworks.ca...')
   
   const motors = []
   
-  // Check for result count to verify we're on the right page
-  const resultCountPattern = /(\d+)\s*-\s*(\d+)\s*of\s*(\d+)/i
-  const resultMatch = (html + markdown).match(resultCountPattern)
-  if (resultMatch) {
-    console.log(`📊 Result count found: ${resultMatch[1]} - ${resultMatch[2]} of ${resultMatch[3]}`)
-  }
+  // Detect total available results and pages
+  const paginationInfo = detectTotalPages(html, markdown);
   
-  // Process each line of markdown for motor information
+  // Process markdown first - more reliable for structured data
   const lines = markdown.split('\n').filter(line => line.trim().length > 0);
   console.log('📄 Processing markdown lines:', lines.length);
   
-  // Log first 20 non-empty lines for debugging
-  console.log('Sample markdown lines:');
-  lines.slice(0, 20).forEach((line, i) => {
-    console.log(`  ${i + 1}: "${line}"`);
-  });
-
-  // Look for harrisboatworks.ca motor patterns in markdown
-  for (const line of lines) {
-    // Skip lines that don't contain basic motor indicators
-    if (!line.includes('HP') || !line.match(/(20(?:24|25)|FourStroke|Pro.*XS|SeaPro|Verado)/i)) {
-      continue;
-    }
+  // Enhanced motor extraction with multiple selector attempts
+  const motorSections = [];
+  let currentSection = [];
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
     
-    // Try to parse this line as a harrisboatworks.ca motor listing
-    const parsed = parseMotorTitle(line);
+    // Look for motor title patterns
+    if (line.match(/(20(?:24|25)).*?(FourStroke|Pro\s*XS|ProXS|SeaPro|Verado).*?\d+.*?HP/i)) {
+      // Save previous section if it exists
+      if (currentSection.length > 0) {
+        motorSections.push(currentSection.join(' '));
+        currentSection = [];
+      }
+      currentSection.push(line);
+    } 
+    // Look for pricing and details in next few lines
+    else if (currentSection.length > 0 && currentSection.length < 8) {
+      if (line.match(/\$[\d,]+|stock|save|available|in stock|new/i)) {
+        currentSection.push(line);
+      }
+    }
+    // Section complete after 8 lines or when hitting new motor
+    else if (currentSection.length >= 8) {
+      motorSections.push(currentSection.join(' '));
+      currentSection = [];
+    }
+  }
+  
+  // Don't forget the last section
+  if (currentSection.length > 0) {
+    motorSections.push(currentSection.join(' '));
+  }
+  
+  console.log(`🎯 Found ${motorSections.length} potential motor sections`);
+  
+  // Process each motor section
+  for (const section of motorSections) {
+    const parsed = parseMotorTitle(section);
     if (parsed && parsed.horsepower >= 15 && parsed.horsepower <= 400) {
-      // Extract additional data from the line context
-      const additionalData = extractMotorData(line);
+      const additionalData = extractMotorData(section);
       
-      // Use the clean display title format (no "Mercury" prefix)
-      const modelName = parsed.displayTitle;
-      
+      // Enhanced motor object with comprehensive data
       const motor = {
         make: 'Mercury',
-        model: modelName,
+        model: parsed.displayTitle, // Clean format: "2025 FourStroke 25HP EFI ELHPT"
         horsepower: parsed.horsepower,
         motor_type: parsed.category,
         base_price: additionalData.salePrice,
         sale_price: additionalData.salePrice,
-        msrp: additionalData.msrp,
+        msrp: additionalData.msrp || (additionalData.salePrice && additionalData.savings ? 
+          additionalData.salePrice + additionalData.savings : null),
         savings: additionalData.savings,
         stock_number: additionalData.stockNumber,
-        availability: additionalData.availability,
-        usage: additionalData.usage,
+        availability: additionalData.availability || 'Available',
+        usage: additionalData.usage || 'New',
         year: parsed.year,
-        model_code: parsed.modelCode, // CRITICAL: Preserve model codes
+        model_code: parsed.modelCode, // CRITICAL: EH, ELHPT, XL, EXLPT, etc.
         fuel_type: parsed.fuelType,
-        full_title: parsed.fullTitle
+        full_title: parsed.fullTitle,
+        section_text: section.substring(0, 200) // Debug info
       };
       
-      console.log('🎯 Found harrisboatworks.ca motor:', `${motor.year} ${motor.model} (${motor.stock_number})`);
+      console.log('🎯 Parsed Mercury motor:', `${motor.year} ${motor.model} (Stock: ${motor.stock_number})`);
       motors.push(motor);
     }
   }
   
-  // If still no results from markdown, try HTML with enhanced parsing
+  // If markdown parsing failed, try HTML fallback with enhanced extraction
   if (motors.length === 0) {
-    console.log('⚠️ No motors found in markdown, trying HTML fallback...');
+    console.log('⚠️ No motors found in markdown, trying enhanced HTML parsing...');
     
-    // Extract text content from HTML first
-    const tempDiv = html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
-                       .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
-    const htmlLines = tempDiv.split(/[<>]/).filter(line => 
-      line.trim().length > 0 && 
-      line.includes('HP') && 
-      line.match(/(20(?:24|25)|FourStroke|Pro.*XS|SeaPro|Verado)/i)
-    );
+    // Remove scripts and styles, extract text content
+    const cleanHtml = html
+      .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+      .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ');
     
-    console.log('HTML text lines found:', htmlLines.length);
+    // Look for Mercury motor patterns in clean text
+    const htmlSections = cleanHtml.split(/mercury|outboard|motor/i)
+      .filter(section => section.match(/\d+.*?HP/i) && section.length < 500);
     
-    // Sample HTML lines
-    if (htmlLines.length > 0) {
-      console.log('Sample HTML lines:');
-      htmlLines.slice(0, 5).forEach((line, i) => {
-        console.log(`  ${i + 1}: "${line}"`);
-      });
-    }
+    console.log(`🔍 Found ${htmlSections.length} HTML motor sections`);
     
-    for (const line of htmlLines) {
-      const parsed = parseMotorTitle(line);
+    for (const section of htmlSections) {
+      const parsed = parseMotorTitle(section);
       if (parsed && parsed.horsepower >= 15 && parsed.horsepower <= 400) {
-        // Extract additional data from HTML context
-        const additionalData = extractMotorData(line);
-        
-        // Use the clean display title format
-        const modelName = parsed.displayTitle;
+        const additionalData = extractMotorData(section);
         
         const motor = {
           make: 'Mercury',
-          model: modelName,
+          model: parsed.displayTitle,
           horsepower: parsed.horsepower,
           motor_type: parsed.category,
           base_price: additionalData.salePrice,
@@ -232,36 +269,55 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
           msrp: additionalData.msrp,
           savings: additionalData.savings,
           stock_number: additionalData.stockNumber,
-          availability: additionalData.availability,
-          usage: additionalData.usage,
+          availability: additionalData.availability || 'Available',
+          usage: additionalData.usage || 'New',
           year: parsed.year,
-          model_code: parsed.modelCode, // CRITICAL: Preserve model codes
+          model_code: parsed.modelCode,
           fuel_type: parsed.fuelType,
-          full_title: parsed.fullTitle
+          full_title: parsed.fullTitle,
+          source: 'html_fallback'
         };
         
-        console.log('🎯 Found harrisboatworks.ca motor (HTML):', `${motor.year} ${motor.model} (${motor.stock_number})`);
+        console.log('🎯 Parsed Mercury motor (HTML):', `${motor.year} ${motor.model}`);
         motors.push(motor);
       }
     }
   }
   
-  // Simple deduplication by horsepower
-  const uniqueMotors = motors.filter((motor, index, self) => 
-    index === self.findIndex(m => m.horsepower === motor.horsepower)
-  )
+  // Enhanced deduplication using stock number, then model+HP
+  const uniqueMotors = [];
+  const seen = new Set();
   
-  console.log(`🧹 Deduplication: ${motors.length} → ${uniqueMotors.length} unique motors`)
+  for (const motor of motors) {
+    let uniqueKey;
+    
+    // Use stock number if available, otherwise model + HP
+    if (motor.stock_number && motor.stock_number.length > 0) {
+      uniqueKey = motor.stock_number;
+    } else {
+      uniqueKey = `${motor.model}_${motor.horsepower}`;
+    }
+    
+    if (!seen.has(uniqueKey)) {
+      seen.add(uniqueKey);
+      uniqueMotors.push(motor);
+    } else {
+      console.log(`🔄 Duplicate removed: ${motor.model} (${uniqueKey})`);
+    }
+  }
+  
+  console.log(`🧹 Enhanced deduplication: ${motors.length} → ${uniqueMotors.length} unique motors`);
   
   return {
     motors: uniqueMotors,
     debugInfo: {
       html_length: html.length,
       markdown_length: markdown.length,
-      motor_lines_found: motors.length,
+      motor_sections_found: motorSections.length,
       total_matches: motors.length,
       unique_motors: uniqueMotors.length,
-      result_count: resultMatch ? resultMatch[3] : null
+      pagination_info: paginationInfo,
+      deduplication_method: 'stock_number_primary'
     }
   }
 }
@@ -369,7 +425,7 @@ serve(async (req) => {
   try {
     const startTime = Date.now()
     const requestBody = await req.json()
-    const { pages_to_scrape = 3 } = requestBody
+    const { pages_to_scrape = 6 } = requestBody // Increased default to capture all 145+ motors
     
     // Get environment variables
     const firecrawlApiKey = Deno.env.get('FIRECRAWL_API_KEY')
@@ -377,19 +433,21 @@ serve(async (req) => {
       throw new Error('FIRECRAWL_API_KEY is required')
     }
 
-    console.log('🚀 Starting multi-page inventory scrape with enhanced parsing...')
+    console.log('🚀 Starting enhanced Mercury motor scrape for harrisboatworks.ca...')
     console.log('📄 Pages to scrape:', pages_to_scrape)
 
-    // Base URL for inventory search
-    const baseUrl = 'https://www.harrisboatworks.ca/search/inventory/type/Outboard%20Motors/usage/New/sort/price-low'
+    // Mercury-specific URL for harrisboatworks.ca inventory
+    const baseUrl = 'https://www.harrisboatworks.ca/search/inventory/brand/Mercury'
     
     // Arrays to collect data from all pages
     const allMotors = []
     const pageResults = []
     const errors = []
+    let detectedTotalPages = pages_to_scrape;
+    let totalExpectedMotors = 0;
     
-    // Loop through pages
-    for (let pageNum = 1; pageNum <= pages_to_scrape; pageNum++) {
+    // Enhanced pagination loop with smart detection
+    for (let pageNum = 1; pageNum <= Math.max(pages_to_scrape, detectedTotalPages); pageNum++) {
       try {
         // Small delay between requests to be respectful
         if (pageNum > 1) {
@@ -400,7 +458,7 @@ serve(async (req) => {
         const currentUrl = pageNum === 1 ? baseUrl : `${baseUrl}&page=${pageNum}`
         console.log(`🔄 Scraping page ${pageNum}: ${currentUrl}`)
         
-        // Make Firecrawl API call for current page
+        // Enhanced Firecrawl API call with wait conditions
         const firecrawlResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
           method: 'POST',
           headers: {
@@ -409,7 +467,17 @@ serve(async (req) => {
           },
           body: JSON.stringify({
             url: currentUrl,
-            formats: ['html', 'markdown']
+            formats: ['html', 'markdown'],
+            pageOptions: {
+              waitFor: 2000, // Wait for content to load
+              screenshot: false,
+              fullPageScreenshot: false,
+              includeHtml: true
+            },
+            extractorOptions: {
+              mode: 'llm-extraction',
+              extractionPrompt: 'Extract all Mercury outboard motor listings with titles, prices, stock numbers, and specifications'
+            }
           })
         })
         
@@ -432,6 +500,13 @@ serve(async (req) => {
           const debugInfo = parseResult.debugInfo
           
           console.log(`🏗️ Page ${pageNum} parsed motors:`, pageMotors.length)
+          
+          // Update pagination detection on first page
+          if (pageNum === 1 && debugInfo.pagination_info) {
+            detectedTotalPages = Math.min(debugInfo.pagination_info.totalPages, 10); // Safety cap
+            totalExpectedMotors = debugInfo.pagination_info.totalResults;
+            console.log(`📊 Auto-detected: ${totalExpectedMotors} total motors across ${detectedTotalPages} pages`);
+          }
           
           // Add motors from this page to the total
           allMotors.push(...pageMotors)
@@ -483,13 +558,52 @@ serve(async (req) => {
     }
     
     console.log('🔍 All pages scraped. Total motors found:', allMotors.length)
+    console.log(`📊 Expected vs Found: ${totalExpectedMotors} expected, ${allMotors.length} found`)
     
-    // Remove duplicates across all pages based on model and horsepower
-    const uniqueMotors = allMotors.filter((motor, index, self) => 
-      index === self.findIndex(m => m.model === motor.model && m.horsepower === motor.horsepower)
-    )
+    // Enhanced cross-page deduplication using stock numbers
+    const uniqueMotors = [];
+    const seenStockNumbers = new Set();
+    const seenModelHp = new Set();
     
-    console.log('🧹 Unique motors after cross-page deduplication:', uniqueMotors.length)
+    for (const motor of allMotors) {
+      let isUnique = false;
+      
+      // Primary: Use stock number if available
+      if (motor.stock_number && motor.stock_number.length > 0) {
+        if (!seenStockNumbers.has(motor.stock_number)) {
+          seenStockNumbers.add(motor.stock_number);
+          isUnique = true;
+        }
+      }
+      // Fallback: Use model + horsepower
+      else {
+        const modelHpKey = `${motor.model}_${motor.horsepower}`;
+        if (!seenModelHp.has(modelHpKey)) {
+          seenModelHp.add(modelHpKey);
+          isUnique = true;
+        }
+      }
+      
+      if (isUnique) {
+        uniqueMotors.push(motor);
+      } else {
+        console.log(`🔄 Cross-page duplicate removed: ${motor.model} (Stock: ${motor.stock_number})`);
+      }
+    }
+    
+    console.log('🧹 Unique motors after enhanced cross-page deduplication:', uniqueMotors.length)
+    
+    // Validate motor count expectations
+    if (totalExpectedMotors > 0) {
+      const captureRate = (uniqueMotors.length / totalExpectedMotors) * 100;
+      console.log(`📈 Capture rate: ${captureRate.toFixed(1)}% (${uniqueMotors.length}/${totalExpectedMotors})`);
+      
+      if (captureRate < 80) {
+        console.log('⚠️ LOW CAPTURE RATE - May need more pages or different scraping approach');
+      } else if (captureRate >= 95) {
+        console.log('✅ EXCELLENT CAPTURE RATE - Successfully captured most/all motors');
+      }
+    }
     
     // Save unique motors to database
     let savedMotors = 0
@@ -528,19 +642,28 @@ serve(async (req) => {
 
     const result = {
       success: true,
-      message: `Enhanced multi-page scrape completed! ${successfulPages}/${pages_to_scrape} pages successful. Found ${totalMotorsFound} total motors (${totalUniqueMotors} unique), saved ${savedMotors} to database with clean formatting`,
-      total_pages_scraped: pages_to_scrape,
+      message: `Enhanced Mercury-specific scrape completed! ${successfulPages}/${Math.max(pages_to_scrape, detectedTotalPages)} pages successful. Found ${totalMotorsFound} total motors (${totalUniqueMotors} unique), saved ${savedMotors} to database`,
+      total_pages_scraped: Math.max(pages_to_scrape, detectedTotalPages),
       successful_pages: successfulPages,
-      failed_pages: pages_to_scrape - successfulPages,
+      failed_pages: Math.max(pages_to_scrape, detectedTotalPages) - successfulPages,
       combined_motors_found: totalMotorsFound,
       combined_motors_saved: savedMotors,
+      expected_motors: totalExpectedMotors,
+      capture_rate: totalExpectedMotors > 0 ? ((totalUniqueMotors / totalExpectedMotors) * 100).toFixed(1) + '%' : 'Unknown',
+      deduplication_method: 'stock_number_enhanced',
       motors_per_page: motorsPerPage,
       sample_motors: sampleMotors,
       page_results: pageResults,
       errors: errors,
       base_url: baseUrl,
-      api_version: 'v2-enhanced',
-      timestamp: new Date().toISOString()
+      api_version: 'v2-enhanced-mercury',
+      timestamp: new Date().toISOString(),
+      validation: {
+        total_expected: totalExpectedMotors,
+        total_found: totalMotorsFound,
+        total_unique: totalUniqueMotors,
+        capture_success: totalExpectedMotors > 0 ? totalUniqueMotors >= (totalExpectedMotors * 0.8) : true
+      }
     }
     
     return new Response(
