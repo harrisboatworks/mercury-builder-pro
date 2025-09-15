@@ -449,6 +449,7 @@ export type Database = {
           family: string | null
           features: Json | null
           fuel_type: string | null
+          hero_image_url: string | null
           horsepower: number | null
           id: string
           image_url: string | null
@@ -463,12 +464,15 @@ export type Database = {
           manual_overrides: Json | null
           model: string
           model_code: string | null
+          model_key: string | null
           model_number: string | null
           motor_type: string
           msrp: number | null
           msrp_source: string | null
+          price_source: string | null
           sale_price: number | null
           shaft: string | null
+          source_doc_urls: string[] | null
           source_priority: string[] | null
           spec_json: Json | null
           spec_sheet_file_id: string | null
@@ -492,6 +496,7 @@ export type Database = {
           family?: string | null
           features?: Json | null
           fuel_type?: string | null
+          hero_image_url?: string | null
           horsepower?: number | null
           id?: string
           image_url?: string | null
@@ -506,12 +511,15 @@ export type Database = {
           manual_overrides?: Json | null
           model: string
           model_code?: string | null
+          model_key?: string | null
           model_number?: string | null
           motor_type: string
           msrp?: number | null
           msrp_source?: string | null
+          price_source?: string | null
           sale_price?: number | null
           shaft?: string | null
+          source_doc_urls?: string[] | null
           source_priority?: string[] | null
           spec_json?: Json | null
           spec_sheet_file_id?: string | null
@@ -535,6 +543,7 @@ export type Database = {
           family?: string | null
           features?: Json | null
           fuel_type?: string | null
+          hero_image_url?: string | null
           horsepower?: number | null
           id?: string
           image_url?: string | null
@@ -549,12 +558,15 @@ export type Database = {
           manual_overrides?: Json | null
           model?: string
           model_code?: string | null
+          model_key?: string | null
           model_number?: string | null
           motor_type?: string
           msrp?: number | null
           msrp_source?: string | null
+          price_source?: string | null
           sale_price?: number | null
           shaft?: string | null
+          source_doc_urls?: string[] | null
           source_priority?: string[] | null
           spec_json?: Json | null
           spec_sheet_file_id?: string | null
