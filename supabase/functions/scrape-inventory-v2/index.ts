@@ -7,6 +7,19 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
+// Clean HTML tags from motor names
+function cleanMotorName(rawName: string): string {
+  if (!rawName) return '';
+  
+  return rawName
+    .replace(/<[^>]*>/g, '') // Remove all HTML tags
+    .replace(/&lt;|&gt;/g, '') // Remove escaped brackets
+    .replace(/&amp;/g, '&') // Replace encoded ampersands
+    .replace(/&nbsp;/g, ' ') // Replace non-breaking spaces
+    .replace(/\s+/g, ' ') // Normalize whitespace
+    .trim();
+}
+
 // Parse motors from HTML function
 async function parseMotorsFromHTML(html: string, markdown: string = '') {
   console.log('🔍 Starting balanced motor parsing (markdown-focused)...')
@@ -81,8 +94,8 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
         }
       }
       
-      // Clean up model name
-      modelName = modelName
+      // Clean up model name and remove HTML tags
+      modelName = cleanMotorName(modelName)
         .replace(/®/g, '')
         .replace(/™/g, '')
         .replace(/^#+\s*/, '') // Remove markdown headers
@@ -148,7 +161,7 @@ async function parseMotorsFromHTML(html: string, markdown: string = '') {
       
       const motor = {
         make: 'Mercury',
-        model: `${horsepower}HP FourStroke`,
+        model: cleanMotorName(`${horsepower}HP FourStroke`),
         horsepower: horsepower,
         motor_type: 'FourStroke',
         base_price: null,

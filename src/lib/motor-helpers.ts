@@ -1,5 +1,18 @@
 // Helper functions for motor calculations and display logic
 
+// Clean HTML tags from motor names
+export function cleanMotorName(rawName: string): string {
+  if (!rawName) return '';
+  
+  return rawName
+    .replace(/<[^>]*>/g, '') // Remove all HTML tags
+    .replace(/&lt;|&gt;/g, '') // Remove escaped brackets
+    .replace(/&amp;/g, '&') // Replace encoded ampersands
+    .replace(/&nbsp;/g, ' ') // Replace non-breaking spaces
+    .replace(/\s+/g, ' ') // Normalize whitespace
+    .trim();
+}
+
 export interface Motor {
   id: string;
   model: string;

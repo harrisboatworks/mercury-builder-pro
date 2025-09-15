@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { decodeModelName } from "@/lib/motor-helpers";
+import { decodeModelName, cleanMotorName } from "@/lib/motor-helpers";
 
 export default function MotorQuickInfo({
   hp, shaft, weightLbs, altOutput, steering, model
@@ -13,8 +13,10 @@ export default function MotorQuickInfo({
         {hp && <div><span className="text-muted-foreground">Horsepower:</span> <span className="font-medium">{hp}</span></div>}
         {weightLbs && <div><span className="text-muted-foreground">Weight:</span> <span className="font-medium">{weightLbs} lbs</span></div>}
         {model && (() => {
+          const cleanedModel = cleanMotorName(model);
           console.log('MotorQuickInfo - model:', model);
-          const decoded = decodeModelName(model);
+          console.log('MotorQuickInfo - cleaned:', cleanedModel);
+          const decoded = decodeModelName(cleanedModel);
           console.log('MotorQuickInfo - decoded:', decoded);
           return decoded.length > 0 ? (
             <div className="mt-1 rounded bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground">

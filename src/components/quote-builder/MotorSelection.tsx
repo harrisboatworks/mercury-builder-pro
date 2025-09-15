@@ -17,6 +17,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { getPriceDisplayState } from '@/lib/pricing';
 import { formatVariantSubtitle, formatMotorTitle } from '@/lib/card-title';
+import { cleanMotorName } from '@/lib/motor-helpers';
 import { useSocialProofNotifications } from '@/hooks/useSocialProofNotifications';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { useNavigate } from 'react-router-dom';
@@ -1520,7 +1521,7 @@ export const MotorSelection = ({
                     {/* Model Name - Clamped to 2 lines for consistency */}
                     <div className="motor-model text-xl font-bold text-gray-900 leading-tight line-clamp-2">
                       {(() => {
-                        const title = formatMotorTitle(motor.year, motor.model);
+                        const title = formatMotorTitle(motor.year, cleanMotorName(motor.model));
                         return title;
                       })()}
                     </div>
@@ -1534,7 +1535,7 @@ export const MotorSelection = ({
                       
                       {/* Popularity indicator - only show if exists */}
                       {(() => {
-                        const badge = getPopularityIndicator(motor.model, null);
+                        const badge = getPopularityIndicator(cleanMotorName(motor.model), null);
                         return badge ? (
                           <p className={`text-xs font-medium ${getBadgeColor(badge)}`}>
                             {badge}
@@ -1600,7 +1601,7 @@ export const MotorSelection = ({
 
         {selectedMotor && !showStickyBar && (selectedMotor as any).stockStatus !== 'Sold' && <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
             <Button onClick={() => onStepComplete(selectedMotor)} className="btn-primary px-8 animate-pulse">
-              Continue with {selectedMotor.model}
+              Continue with {cleanMotorName(selectedMotor.model)}
               <Zap className="w-5 h-5 ml-2" />
             </Button>
           </div>}
@@ -1616,7 +1617,7 @@ export const MotorSelection = ({
                   </div>
                   <div>
                     <p className="font-bold text-lg">
-                      {selectedMotor.model} - ${selectedMotor.price.toLocaleString()}
+                      {cleanMotorName(selectedMotor.model)} - ${selectedMotor.price.toLocaleString()}
                     </p>
                       <div className="flex items-center gap-2 mt-1">
                         {selectedMotor.stockStatus === 'In Stock' && selectedMotor.salePrice != null && selectedMotor.basePrice != null && selectedMotor.salePrice as number < (selectedMotor.basePrice as number) && <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 text-primary px-2 py-0.5 text-xs font-semibold animate-fade-in">
@@ -1683,7 +1684,7 @@ export const MotorSelection = ({
     }}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle>{(quickViewMotor?.model || '').replace(/ - \d+(\.\d+)?HP$/i, '')}</DialogTitle>
+            <DialogTitle>{cleanMotorName(quickViewMotor?.model || '').replace(/ - \d+(\.\d+)?HP$/i, '')}</DialogTitle>
             <DialogDescription className="sr-only">
               Quick view details for {(quickViewMotor?.model || '').replace(/ - \d+(\.\d+)?HP$/i, '')}
             </DialogDescription>
