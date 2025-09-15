@@ -78,8 +78,9 @@ async function collectAllDetailUrls(fetchPage: (u: string) => Promise<string>) {
     const url = p === 1 ? BASE : `${BASE}?page=${p}`;
     const html = await fetchPage(url);
     const pageUrls = extractDetailUrls(html);
+    console.log(`Page ${p}/5: found ${pageUrls.length} detail URLs (total ${all.size + pageUrls.length})`);
+    pageUrls.forEach((u, i) => { if (i < 3) console.log(`  • ${u}`); }); // sample first 3
     pageUrls.forEach(u => all.add(u));
-    console.log(`Page ${p}: found ${pageUrls.length} detail URLs, running total ${all.size}`);
   }
 
   // high-limit probe (to grab everything in one shot if supported)
@@ -87,6 +88,26 @@ async function collectAllDetailUrls(fetchPage: (u: string) => Promise<string>) {
   const probeUrls = extractDetailUrls(probeHtml);
   probeUrls.forEach(u => all.add(u));
   console.log(`Limit=200 probe: found ${probeUrls.length} additional URLs, final total ${all.size}`);
+
+  // Try alternate endpoints that may surface different inventory subsets
+  const ALT_BASES = [
+    "https://www.harrisboatworks.ca/search/inventory/availability/In%20Stock/brand/Mercury",
+    "https://www.harrisboatworks.ca/search/inventory/sort/price-low/unit-engine-make/Mercury"
+  ];
+
+  for (const ALT of ALT_BASES) {
+    for (let p = 1; p <= Math.min(5, 7); p++) {
+      const url = p === 1 ? ALT : `${ALT}?page=${p}`;
+      const html = await fetchPage(url);
+      const pageUrls = extractDetailUrls(html);
+      console.log(`[ALT] ${url} → ${pageUrls.length} URLs`);
+      pageUrls.forEach(u => all.add(u));
+    }
+    const probeHtml = await fetchPage(ALT + (ALT.includes('?') ? '&' : '?') + 'limit=200');
+    const altProbeUrls = extractDetailUrls(probeHtml);
+    altProbeUrls.forEach(u => all.add(u));
+    console.log(`[ALT] ${ALT} limit=200 probe → ${altProbeUrls.length} URLs`);
+  }
 
   const urls = [...all];
   if (urls.length === 0) {
@@ -435,14 +456,14 @@ serve(async (req) => {
       availability: m.availability || 'Available',
       image_url: m.image_url,
       images: m.image_url ? [m.image_url] : [],
-      source_url: m.source_url,
+      detail_url: m.source_url,
       last_scraped: new Date().toISOString(),
       inventory_source: 'detail_pages'
     }));
 
     const { error: upsertError } = await supabase
       .from('motor_models')
-      .upsert(dbRecords, { onConflict: 'stock_number' });
+      .upsert(dbRecords, { onConflict: 'detail_url' });
 
     if (upsertError) {
       console.error('Database upsert error:', upsertError);
