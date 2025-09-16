@@ -277,13 +277,13 @@ export default function AdminBrochureTest() {
         setDryRunResult(result);
         toast({
           title: "Dry Run Complete",
-          description: `Found ${result.rows_found_raw} raw, parsed ${result.rows_parsed} (would create ${result.rows_created}, update ${result.rows_updated})`
+          description: `Found ${result.rows_found_raw} raw, parsed ${result.rows_parsed} → would create ${result.rows_created}, update ${result.rows_updated}`
         });
       } else {
         setIngestResult(result);
         toast({
           title: "Ingest Complete", 
-          description: `Parsed ${result.rows_parsed} rows → Created ${result.rows_created} and updated ${result.rows_updated} brochure models (${result.rows_failed || 0} failed)`,
+          description: `Parsed ${result.rows_parsed} rows → Created ${result.rows_created}, Updated ${result.rows_updated} (${result.rows_failed || 0} failed)`,
           variant: result.rows_created > 0 || result.rows_updated > 0 ? "default" : "destructive"
         });
         // Reload summary after successful ingest

@@ -224,36 +224,10 @@ Deno.serve(async (req) => {
         msrp: m.msrp
       }));
       
-      if (dry_run) {
-        console.log(`[PriceList] Dry run complete - no database changes made`);
-        return ok({
-          success: true,
-          step: 'dry_run_complete',
-          dry_run: true,
-          rows_found_raw: rawRows.length,
-          rows_parsed: normalizedMotors.length,
-          rows_created: deduplicatedMotors.length, // This is "would create" in dry run
-          rows_updated: 0,
-          sample_created: debugInfo.samples,
-          rows_skipped_by_reason: Object.fromEntries(allSkipReasons),
-          top_skip_reasons: Array.from(allSkipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
-          rowErrors: debugInfo.rowErrors,
-          snapshot_url: `View Saved HTML: ${jsonPath}`,
-          echo
-        });
-      }
-      
-      // Step 4: Upsert to database with batch processing
-      currentStep = 'upsert';
-      console.log(`[PriceList] Upserting ${deduplicatedMotors.length} motors to database...`);
-      
-      // Process in batches and track results
-      let totalCreated = 0, totalUpdated = 0;
-      const batchErrors: Array<{batchNum: number, error: string}> = [];
+      // Pre-validate rows before processing
+      const validMotors = [];
       const rowErrors: Array<{row_index: number, reason: string}> = [];
       
-      // Pre-validate rows before upsert
-      const validMotors = [];
       for (let i = 0; i < deduplicatedMotors.length; i++) {
         const motor = deduplicatedMotors[i];
         
@@ -280,84 +254,154 @@ Deno.serve(async (req) => {
       
       console.log(`[PriceList] Pre-validation: ${validMotors.length} valid, ${rowErrors.length} rejected`);
       
-      // Process in batches of 50 for better performance
-      for (let i = 0; i < validMotors.length; i += 50) {
-        const batch = validMotors.slice(i, i + 50);
-        const batchNum = Math.floor(i/50) + 1;
+      // Step 4A: Two-phase approach - query existing brochure model_numbers
+      currentStep = 'detect_existing';
+      const incomingNumbers = validMotors.map(m => m.model_number).filter(Boolean);
+      console.log(`[PriceList] Querying existing brochure model_numbers...`);
+      
+      const { data: existingRecords, error: queryError } = await supabase
+        .from('motor_models')
+        .select('model_number')
+        .eq('is_brochure', true)
+        .in('model_number', incomingNumbers);
         
-        console.log(`[Upsert] B${batchNum}: processing ${batch.length} records...`);
+      if (queryError) {
+        console.log(`[PriceList] Error querying existing records: ${queryError.message}`);
+        throw new Error(`Failed to query existing records: ${queryError.message}`);
+      }
+      
+      const existingNumbers = new Set(existingRecords?.map(r => r.model_number) || []);
+      
+      // Split into create vs update arrays
+      const to_create = validMotors.filter(m => !existingNumbers.has(m.model_number));
+      const to_update = validMotors.filter(m => existingNumbers.has(m.model_number));
+      
+      console.log(`[PriceList] Phase split: ${to_create.length} to create, ${to_update.length} to update`);
+      
+      if (dry_run) {
+        console.log(`[PriceList] Dry run complete - no database changes made`);
+        return ok({
+          success: true,
+          step: 'dry_run_complete',
+          dry_run: true,
+          rows_found_raw: rawRows.length,
+          rows_parsed: normalizedMotors.length,
+          rows_created: to_create.length, // Accurate would-create count
+          rows_updated: to_update.length, // Accurate would-update count
+          sample_created: debugInfo.samples,
+          rows_skipped_by_reason: Object.fromEntries(allSkipReasons),
+          top_skip_reasons: Array.from(allSkipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
+          rowErrors: debugInfo.rowErrors,
+          snapshot_url: `View Saved HTML: ${jsonPath}`,
+          echo
+        });
+      }
+      
+      // Step 4B: Execute the two-phase writes
+      currentStep = 'upsert';
+      console.log(`[PriceList] Executing database writes...`);
+      
+      let totalCreated = 0, totalUpdated = 0;
+      const batchErrors: Array<{phase: string, batchNum: number, error: string}> = [];
+      
+      // Phase B1: Insert new records
+      if (to_create.length > 0) {
+        console.log(`[PriceList] Inserting ${to_create.length} new brochure records...`);
         
-        try {
-          // First attempt: try using model_number conflict (if that constraint exists)
-          let result;
+        for (let i = 0; i < to_create.length; i += 50) {
+          const batch = to_create.slice(i, i + 50);
+          const batchNum = Math.floor(i/50) + 1;
+          
           try {
-            result = await supabase
+            const { data, error } = await supabase
+              .from('motor_models')
+              .insert(batch)
+              .select('id');
+              
+            if (error) {
+              console.log(`[Insert] B${batchNum}: ERROR - ${error.message}`);
+              batchErrors.push({phase: 'insert', batchNum, error: error.message});
+              continue;
+            }
+            
+            const insertedCount = data?.length || 0;
+            totalCreated += insertedCount;
+            console.log(`[Insert] B${batchNum}: inserted ${insertedCount} records`);
+            
+          } catch (err: any) {
+            console.log(`[Insert] B${batchNum}: EXCEPTION - ${err.message}`);
+            batchErrors.push({phase: 'insert', batchNum, error: err.message});
+          }
+        }
+      }
+      
+      // Phase B2: Update existing records  
+      if (to_update.length > 0) {
+        console.log(`[PriceList] Updating ${to_update.length} existing brochure records...`);
+        
+        for (let i = 0; i < to_update.length; i += 50) {
+          const batch = to_update.slice(i, i + 50);
+          const batchNum = Math.floor(i/50) + 1;
+          
+          try {
+            const { data, error } = await supabase
               .from('motor_models')
               .upsert(batch, {
                 onConflict: 'model_number',
                 ignoreDuplicates: false
               })
-              .select('id, created_at, updated_at');
+              .select('id');
               
-            if (result.error && result.error.message.includes('constraint') && result.error.message.includes('model_number')) {
-              throw new Error('model_number constraint not found, trying model_key');
+            if (error) {
+              console.log(`[Update] B${batchNum}: ERROR - ${error.message}`);
+              batchErrors.push({phase: 'update', batchNum, error: error.message});
+              continue;
             }
-          } catch (modelNumberError: any) {
-            console.log(`[Upsert] B${batchNum}: model_number conflict failed, trying model_key: ${modelNumberError.message}`);
             
-            // Fallback: use model_key as conflict target
-            result = await supabase
-              .from('motor_models')
-              .upsert(batch, {
-                onConflict: 'model_key',
-                ignoreDuplicates: false
-              })
-              .select('id, created_at, updated_at');
+            const updatedCount = data?.length || 0;
+            totalUpdated += updatedCount;
+            console.log(`[Update] B${batchNum}: updated ${updatedCount} records`);
+            
+          } catch (err: any) {
+            console.log(`[Update] B${batchNum}: EXCEPTION - ${err.message}`);
+            batchErrors.push({phase: 'update', batchNum, error: err.message});
           }
-          
-          const { data, error } = result;
-          
-          if (error) {
-            console.log(`[Upsert] B${batchNum}: ERROR - ${error.message}`);
-            console.log(`[Upsert] B${batchNum}: ERROR details - ${JSON.stringify(error)}`);
-            console.log(`[Upsert] B${batchNum}: Sample row that failed - ${JSON.stringify(batch[0])}`);
-            batchErrors.push({batchNum, error: error.message});
-            continue;
-          }
-          
-          // Count created vs updated based on timestamps
-          const createdNow = data?.filter(r => r.created_at === r.updated_at).length || 0;
-          const updatedNow = (data?.length || 0) - createdNow;
-          
-          totalCreated += createdNow;
-          totalUpdated += updatedNow;
-          
-          console.log(`[Upsert] B${batchNum}: sending ${batch.length}, got rows=${data?.length || 0}, created=${createdNow}, updated=${updatedNow}`);
-          
-        } catch (err: any) {
-          console.log(`[Upsert] B${batchNum}: EXCEPTION - ${err.message}`);
-          console.log(`[Upsert] B${batchNum}: EXCEPTION stack - ${err.stack}`);
-          batchErrors.push({batchNum, error: err.message});
         }
       }
       
-      console.log(`[PriceList] Upsert complete: ${totalCreated} created, ${totalUpdated} updated, ${batchErrors.length} batch errors`);
+      console.log(`[PriceList] Database writes complete: ${totalCreated} created, ${totalUpdated} updated, ${batchErrors.length} batch errors`);
       
       // Log sample payload for debugging
       if (validMotors.length >= 2) {
         console.log(`[PriceList] Sample batch payload (first 2 rows):`, JSON.stringify(validMotors.slice(0, 2), null, 2));
       }
       
-      // Return clear final payload
+      // Return final results with proper structure
       return ok({
-        success: batchErrors.length === 0,
-        step: 'complete',
+        success: true,
+        step: 'ingest_complete',
+        dry_run: false,
         rows_found_raw: rawRows.length,
         rows_parsed: normalizedMotors.length,
         rows_created: totalCreated,
         rows_updated: totalUpdated,
-        rowErrors: rowErrors.slice(0, 10), // First few row errors
-        batchErrors: batchErrors.slice(0, 5), // First few batch errors
+        rows_failed: batchErrors.length,
+        sample_created: to_create.slice(0, 3).map(m => ({
+          model_number: m.model_number,
+          model_display: m.model_display,
+          dealer_price: m.dealer_price,
+          msrp: m.msrp
+        })),
+        sample_updated: to_update.slice(0, 3).map(m => ({
+          model_number: m.model_number,
+          model_display: m.model_display,
+          dealer_price: m.dealer_price,
+          msrp: m.msrp
+        })),
+        batch_errors: batchErrors,
+        rows_skipped_by_reason: Object.fromEntries(allSkipReasons),
+        top_skip_reasons: Array.from(allSkipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
+        snapshot_url: `View Saved HTML: ${jsonPath}`,
         echo
       });
       
