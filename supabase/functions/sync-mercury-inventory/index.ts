@@ -47,6 +47,16 @@ serve(async (req) => {
     const itemMatches = xmlText.match(/<item>[\s\S]*?<\/item>/g) || [];
     console.log(`📦 Found ${itemMatches.length} total items in XML`);
     
+    // Add enhanced debugging for XML structure
+    console.log('XML length:', xmlText.length);
+    console.log('First 1000 chars:', xmlText.substring(0, 1000));
+    console.log('Total items found:', itemMatches.length);
+    
+    // Check first item to see structure
+    if (itemMatches.length > 0) {
+      console.log('First item sample:', itemMatches[0].substring(0, 500));
+    }
+    
     // Log first few items for debugging with full structure
     if (itemMatches.length > 0) {
       console.log('📋 Sample item structures:');
@@ -110,42 +120,98 @@ serve(async (req) => {
       // Also check title and description for motor indicators
       const titleMatch = item.match(/<title>(.*?)<\/title>/i);
       const descMatch = item.match(/<description><!\[CDATA\[(.*?)\]\]><\/description>/i);
-      const title = titleMatch?.[1]?.trim().toLowerCase() || '';
-      const description = descMatch?.[1]?.trim().toLowerCase() || '';
+      const title = titleMatch?.[1]?.trim() || '';
+      const description = descMatch?.[1]?.trim() || '';
       
       // Mercury matching (flexible)
       const isMercury = manufacturer.includes('mercury') || 
-                       title.includes('mercury') || 
-                       description.includes('mercury');
+                       title.toLowerCase().includes('mercury') || 
+                       description.toLowerCase().includes('mercury');
       
-      // Motor/Outboard detection
-      const isMotor = category.includes('motor') || 
-                     category.includes('outboard') || 
-                     category.includes('engine') ||
-                     title.includes('motor') || 
-                     title.includes('outboard') || 
-                     title.includes('hp') ||
-                     description.includes('outboard') ||
-                     description.includes('motor');
+      // Enhanced HP detection - look for various HP patterns
+      const hpPatterns = [
+        /(\d+)\s*hp\b/i,           // "25hp", "25 hp"
+        /(\d+)\s*HP\b/,            // "25HP", "25 HP"
+        /(\d+)hp\b/i,              // "25hp" (no space)
+        /\b(\d+)\s*horsepower\b/i  // "25 horsepower"
+      ];
+      
+      let hasHP = false;
+      let detectedHP = null;
+      for (const pattern of hpPatterns) {
+        const match = title.match(pattern);
+        if (match) {
+          hasHP = true;
+          detectedHP = parseInt(match[1]);
+          break;
+        }
+      }
+      
+      // Enhanced motor detection - look for Mercury-specific indicators
+      const mercuryMotorIndicators = [
+        'fourstroke', 'fourStroke', 'four stroke',
+        'proxs', 'pro xs', 'prxos', 
+        'seapro', 'sea pro',
+        'verado',
+        'outboard',
+        'engine',
+        'motor'
+      ];
+      
+      const mercuryRiggingCodes = [
+        'elpt', 'elhpt', 'exlpt', 'eh', 'mh', 'xl', 'xxl',
+        'ct', 'command thrust', 'efi', 'dts', 'tiller'
+      ];
+      
+      // Check for motor indicators in title and description
+      const hasMotorIndicator = mercuryMotorIndicators.some(indicator => 
+        title.toLowerCase().includes(indicator) || 
+        description.toLowerCase().includes(indicator)
+      );
+      
+      const hasRiggingCode = mercuryRiggingCodes.some(code =>
+        title.toLowerCase().includes(code) || 
+        description.toLowerCase().includes(code)
+      );
+      
+      // Motor detection logic - enhanced for Mercury products
+      const isMotor = 
+        // Traditional category-based detection
+        category.includes('motor') || 
+        category.includes('outboard') || 
+        category.includes('engine') ||
+        // Enhanced title/description detection
+        hasHP || 
+        hasMotorIndicator ||
+        hasRiggingCode ||
+        // Fallback patterns
+        (title.toLowerCase().includes('mercury') && (
+          title.toLowerCase().includes('motor') ||
+          title.toLowerCase().includes('outboard')
+        ));
       
       // Condition matching (more flexible - include excellent, good, new, etc.)
       const validConditions = ['new', 'excellent', 'good', 'like new', 'used', 'pre-owned'];
       const isValidCondition = validConditions.some(cond => condition.includes(cond)) || condition.length === 0;
       
       // Log detailed debug info for first few Mercury items
-      if (isMercury && debugCounter < 5) {
+      if (isMercury && debugCounter < 10) {
         console.log(`🔍 Mercury unit found (#${debugCounter + 1}):
           Manufacturer: "${manufacturer}"
           Condition: "${condition}" 
           Category: "${category}"
           Title: "${title.substring(0, 100)}"
+          Detected HP: ${detectedHP || 'none'}
+          Has HP Pattern: ${hasHP}
+          Has Motor Indicator: ${hasMotorIndicator}
+          Has Rigging Code: ${hasRiggingCode}
           Is Motor: ${isMotor}
           Valid Condition: ${isValidCondition}`);
         debugCounter++;
       }
       
       if (isMercury && !isMotor) {
-        console.log(`⚠️ Mercury unit but not motor: category="${category}", title="${title.substring(0, 50)}"`);
+        console.log(`⚠️ Mercury unit but not motor: category="${category}", title="${title.substring(0, 50)}", hasHP=${hasHP}, hasMotorIndicator=${hasMotorIndicator}, hasRiggingCode=${hasRiggingCode}`);
       }
       
       if (isMercury && isMotor && !isValidCondition) {
@@ -277,9 +343,22 @@ serve(async (req) => {
         .replace(/\s+/g, ' ') // Clean up spacing
         .trim();
 
-      // Extract HP
-      const hpMatch = normalized.match(/(\d+)\s*hp/i);
-      const hp = hpMatch ? parseInt(hpMatch[1]) : null;
+      // Enhanced HP extraction using multiple patterns
+      const hpPatterns = [
+        /(\d+)\s*hp\b/i,           // "25hp", "25 hp"
+        /(\d+)\s*HP\b/,            // "25HP", "25 HP"
+        /(\d+)hp\b/i,              // "25hp" (no space)
+        /\b(\d+)\s*horsepower\b/i  // "25 horsepower"
+      ];
+      
+      let hp = null;
+      for (const pattern of hpPatterns) {
+        const match = normalized.match(pattern);
+        if (match) {
+          hp = parseInt(match[1]);
+          break;
+        }
+      }
 
       // Extract important codes (shaft, trim, etc.)
       const codes = [];
@@ -297,8 +376,14 @@ serve(async (req) => {
         .replace(/\s+/g, ' ')
         .trim();
 
-      // Extract HP from various formats
-      const hpPatterns = [/(\d+)\s*hp/i, /(\d+)\s*HP/g, /^(\d+)\s/];
+      // Enhanced HP extraction using multiple patterns (same as XML normalization)
+      const hpPatterns = [
+        /(\d+)\s*hp\b/i,           // "25hp", "25 hp"
+        /(\d+)\s*HP\b/,            // "25HP", "25 HP"
+        /(\d+)hp\b/i,              // "25hp" (no space)
+        /\b(\d+)\s*horsepower\b/i, // "25 horsepower"
+        /^(\d+)\s/                 // "25 ECXLPT" (number at start)
+      ];
       let hp = null;
       for (const pattern of hpPatterns) {
         const match = normalized.match(pattern);
