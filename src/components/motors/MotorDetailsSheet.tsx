@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings } from "lucide-react";
+import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings, Video } from "lucide-react";
 import { supabase } from "../../integrations/supabase/client";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
@@ -18,6 +18,8 @@ import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { enhanceImageUrls } from "@/lib/image-utils";
+import MotorDocumentsSection from './MotorDocumentsSection';
+import MotorVideosSection from './MotorVideosSection';
 
 export default function MotorDetailsSheet({
   open,
@@ -743,23 +745,128 @@ export default function MotorDetailsSheet({
                 </div>
               </div>
 
-              {/* Resources Section */}
-              <div className="space-y-4">
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
-                  Resources
-                </h2>
-                <div className="grid gap-2">
-                  <Button onClick={handleGenerateSpecSheet} disabled={specSheetLoading} variant="outline" size="sm" className="justify-start">
-                    {specSheetLoading ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Download className="w-4 h-4 mr-2" />}
-                    Download Spec Sheet
-                  </Button>
-                  
-                  <Button onClick={() => navigate('/quote/schedule')} variant="outline" size="sm" className="justify-start">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    Schedule Consultation
-                  </Button>
+              {/* Documents & Resources Section */}
+              <div className="space-y-6">
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-primary" />
+                  Documents & Resources
+                </h3>
+
+                <div className="grid gap-6">
+                  {/* Motor-specific Documents */}
+                  {motor?.id && (
+                    <div>
+                      <h4 className="text-md font-medium text-slate-900 dark:text-white mb-4">
+                        Motor Documentation
+                      </h4>
+                      <MotorDocumentsSection 
+                        motorId={motor.id} 
+                        motorFamily={motor.family || motor.model} 
+                      />
+                    </div>
+                  )}
+
+                  {/* Default Resources */}
+                  <div>
+                    <h4 className="text-md font-medium text-slate-900 dark:text-white mb-4">
+                      Quick Actions
+                    </h4>
+                    <div className="grid gap-4">
+                      {/* Official Mercury Spec Sheet */}
+                      {cleanedSpecUrl && (
+                        <a
+                          href={cleanedSpecUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group p-4 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary/30 hover:shadow-md transition-all bg-white dark:bg-slate-800/50 flex items-center gap-3"
+                        >
+                          <div className="p-2 bg-primary/10 rounded-lg">
+                            <ExternalLink className="w-5 h-5 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <h5 className="font-medium text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                              Official Mercury Spec Sheet
+                            </h5>
+                            <p className="text-sm text-slate-600 dark:text-slate-400">
+                              Detailed specifications from Mercury Marine
+                            </p>
+                          </div>
+                        </a>
+                      )}
+
+                      {/* Generated Clean Spec Sheet */}
+                      <div className="group p-4 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary/30 hover:shadow-md transition-all bg-white dark:bg-slate-800/50">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 bg-green-100 dark:bg-green-900/20 rounded-lg">
+                            <Download className="w-5 h-5 text-green-600 dark:text-green-400" />
+                          </div>
+                          <div className="flex-1">
+                            <h5 className="font-medium text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                              Download Spec Sheet PDF
+                            </h5>
+                            <p className="text-sm text-slate-600 dark:text-slate-400">
+                              Clean, professional specification sheet
+                            </p>
+                          </div>
+                          <Button 
+                            variant="outline"
+                            size="sm"
+                            onClick={handleGenerateSpecSheet}
+                            disabled={specSheetLoading}
+                          >
+                            {specSheetLoading ? (
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                            ) : (
+                              <Download className="w-4 h-4" />
+                            )}
+                          </Button>
+                        </div>
+                      </div>
+
+                      {/* Schedule Consultation */}
+                      <div className="group p-4 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary/30 hover:shadow-md transition-all bg-white dark:bg-slate-800/50">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 bg-blue-100 dark:bg-blue-900/20 rounded-lg">
+                            <Calendar className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                          </div>
+                          <div className="flex-1">
+                            <h5 className="font-medium text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                              Schedule a Consultation
+                            </h5>
+                            <p className="text-sm text-slate-600 dark:text-slate-400">
+                              Get expert advice on motor selection
+                            </p>
+                          </div>
+                          <Button 
+                            variant="outline"
+                            size="sm"
+                            onClick={() => {
+                              onClose();
+                              navigate('/schedule');
+                            }}
+                          >
+                            Schedule
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              {/* Videos Section */}
+              {motor?.id && (
+                <div className="space-y-6">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                    <Video className="w-5 h-5 text-primary" />
+                    Videos & Demonstrations
+                  </h3>
+                  <MotorVideosSection 
+                    motorId={motor.id} 
+                    motorFamily={motor.family || motor.model} 
+                  />
+                </div>
+              )}
 
               {/* Customer Reviews Section */}
               <div className="space-y-4">
