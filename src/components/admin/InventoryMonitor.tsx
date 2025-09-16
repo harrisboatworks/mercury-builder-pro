@@ -13,11 +13,14 @@ import { InventoryDiagnostics } from './InventoryDiagnostics';
 interface MotorInventoryData {
   id: string;
   model: string;
+  model_display: string;
+  model_number: string | null;
   horsepower: number;
   availability: string;
   stock_number: string | null;
   last_scraped: string | null;
-  base_price: number;
+  dealer_price: number | null;
+  msrp: number | null;
   sale_price: number | null;
 }
 
@@ -47,7 +50,7 @@ export function InventoryMonitor() {
       // Fetch motors with inventory data
       const { data: motorsData, error: motorsError } = await supabase
         .from('motor_models')
-        .select('id, model, horsepower, availability, stock_number, last_scraped, base_price, sale_price')
+        .select('id, model, model_display, model_number, horsepower, availability, stock_number, last_scraped, dealer_price, msrp, sale_price')
         .order('last_scraped', { ascending: false });
 
       if (motorsError) throw motorsError;
@@ -278,8 +281,10 @@ export function InventoryMonitor() {
   };
 
   const filteredMotors = motors.filter(motor => {
-    const matchesSearch = motor.model.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    const matchesSearch = motor.model_display.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         motor.model.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          motor.horsepower.toString().includes(searchTerm) ||
+                         (motor.model_number && motor.model_number.toLowerCase().includes(searchTerm.toLowerCase())) ||
                          (motor.stock_number && motor.stock_number.toLowerCase().includes(searchTerm.toLowerCase()));
     
     const matchesAvailability = selectedAvailability === 'all' || motor.availability === selectedAvailability;
@@ -442,7 +447,7 @@ export function InventoryMonitor() {
               <div className="relative">
                 <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input
-                  placeholder="Search motors, HP, or stock number..."
+                  placeholder="Search by name, model number, HP, or stock number..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-8"
@@ -488,9 +493,10 @@ export function InventoryMonitor() {
             {filteredMotors.map((motor) => (
               <div key={motor.id} className="flex items-center justify-between p-3 border rounded-lg">
                 <div className="flex-1">
-                  <div className="font-medium">{motor.model}</div>
+                  <div className="font-medium">{motor.model_display || motor.model}</div>
                   <div className="text-sm text-muted-foreground">
-                    {motor.horsepower}HP | {motor.base_price ? `$${motor.base_price.toLocaleString()}` : 'Price TBD'}
+                    {motor.horsepower}HP | {motor.dealer_price ? `$${motor.dealer_price.toLocaleString()}` : 'Price TBD'}
+                    {motor.model_number && <span className="ml-2">• {motor.model_number}</span>}
                     {motor.sale_price && (
                       <span className="text-green-600 ml-2">
                         Sale: ${motor.sale_price.toLocaleString()}
