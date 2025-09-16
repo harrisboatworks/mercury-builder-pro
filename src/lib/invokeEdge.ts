@@ -13,22 +13,38 @@ export async function invokePricelist(body: any) {
     
     if (error) {
       console.error('Supabase function error:', error);
-      // Bubble up useful fields
+      // Enhanced error handling with status and step information
       return { 
-        success: false, 
+        success: false,
+        ok: false,
         step: error?.context?.step || 'invoke', 
         error: error.message || 'invoke_failed', 
-        detail: `Supabase error: ${JSON.stringify(error)}` 
+        status: error.status || 500,
+        details: {
+          supabase_error: error,
+          raw_response: data
+        }
       };
     }
     
-    // Ensure we return a consistent response structure
+    // Handle non-2xx responses with detailed error information
+    if (data && !data.ok && !data.success) {
+      console.error('Function returned error response:', data);
+      return {
+        ...data, // includes ok: false, step, error, stack, details
+        status: data.status || 500
+      };
+    }
+    
+    // Ensure we return a consistent response structure for successful calls
     if (!data) {
       return {
         success: false,
+        ok: false,
         step: 'response',
         error: 'Empty response from function',
-        detail: 'Function returned null/undefined data'
+        status: 500,
+        details: { raw_response: null }
       };
     }
     
@@ -36,10 +52,15 @@ export async function invokePricelist(body: any) {
   } catch (e: any) {
     console.error('Network/client error:', e);
     return { 
-      success: false, 
+      success: false,
+      ok: false, 
       step: 'network', 
       error: e?.message || 'network_failed',
-      detail: `Client error: ${e?.stack || e}`
+      status: 0,
+      details: {
+        client_error: e,
+        stack: e?.stack
+      }
     };
   }
 }

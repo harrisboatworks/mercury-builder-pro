@@ -212,7 +212,8 @@ export default function AdminBrochureTest() {
           dry_run: dryRun, 
           msrp_markup: markup,
           force: false,
-          create_missing_brochures: true
+          create_missing_brochures: true,
+          price_list_url: 'https://www.harrisboatworks.ca/mercurypricelist'
         }
       });
 
@@ -225,7 +226,57 @@ export default function AdminBrochureTest() {
 
       if (error) {
         console.error('Edge function error:', error);
-        throw new Error(`${error.status}: ${error.message}`);
+        // Show detailed error with status and step
+        const errorBody = error.context || error;
+        setDryRunResult({
+          success: false,
+          rows_found_raw: 0,
+          rows_parsed: 0,
+          rows_parsed_total: 0,
+          rows_created: 0,
+          rows_updated: 0,
+          rows_rejected: 0,
+          rows_skipped_total: 0,
+          rows_skipped_by_reason: {},
+          top_skip_reasons: [],
+          sample_created: [],
+          sample_rejected: [],
+          error_detail: `Status ${error.status}: ${error.message}`,
+          response_body: errorBody
+        });
+        toast({
+          title: "Function Error",
+          description: `${error.status}: ${error.message}`,
+          variant: "destructive"
+        });
+        return;
+      }
+
+      // Handle function-returned errors (non-2xx responses)
+      if (!data || (!data.ok && !data.success)) {
+        console.error('Function returned error response:', data);
+        setDryRunResult({
+          success: false,
+          rows_found_raw: 0,
+          rows_parsed: 0,
+          rows_parsed_total: 0,
+          rows_created: 0,
+          rows_updated: 0,
+          rows_rejected: 0,
+          rows_skipped_total: 0,
+          rows_skipped_by_reason: {},
+          top_skip_reasons: [],
+          sample_created: [],
+          sample_rejected: [],
+          error_detail: `Step: ${data?.step || 'unknown'} - ${data?.error || 'Unknown error'}`,
+          response_body: data
+        });
+        toast({
+          title: "Function Error",
+          description: `${data?.step}: ${data?.error}`,
+          variant: "destructive"
+        });
+        return;
       }
 
       // Check for echo mismatch with robust validation
@@ -246,8 +297,9 @@ export default function AdminBrochureTest() {
         });
       }
 
+      // Map the new response format to our interface
       const result: ParseResult = {
-        success: data.success,
+        success: data.success || data.ok,
         rows_found_raw: data.rows_found_raw || 0,
         rows_parsed: data.rows_parsed || 0,
         rows_parsed_total: data.rows_parsed || 0,

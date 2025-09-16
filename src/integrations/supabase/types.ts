@@ -1190,6 +1190,10 @@ export type Database = {
         }
         Returns: undefined
       }
+      update_brochure_models_bulk: {
+        Args: { p_fields: Json[]; p_model_numbers: string[] }
+        Returns: number
+      }
       validate_customer_data_ownership: {
         Args: { record_user_id: string; table_name: string }
         Returns: boolean

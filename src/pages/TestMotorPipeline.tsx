@@ -131,10 +131,11 @@ export default function TestMotorPipeline() {
       
       const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
         body: { 
-          url: sourceUrl,
+          price_list_url: sourceUrl,
           dry_run: true,
           msrp_markup: markupToSend,
-          parse_mode: 'auto',
+          force: false,
+          create_missing_brochures: true,
           ...sourceContent
         }
       });
@@ -146,11 +147,18 @@ export default function TestMotorPipeline() {
           message: error.message, 
           context: (error as any)?.context 
         });
-        throw new Error(`${error.status}: ${error.message}\n${JSON.stringify((error as any)?.context ?? {}, null, 2)}`);
+        throw new Error(`Status ${error.status}: ${error.message}\nStep: ${(error as any)?.context?.step || 'unknown'}`);
       }
 
-      const skipped = data.skipped_due_to_same_checksum ? 1 : 0;
-      const message = `[${data.content_source?.toUpperCase() || 'URL'}] parsed ${data.rows_parsed_total || data.rows_parsed} • normalized ${data.rows_normalized || 0} • would create ${data.rows_created || 0} • would update ${data.rows_updated || 0} • errors ${data.rows_with_invalid_key + data.rows_with_invalid_price || 0} • skipped ${skipped}`;
+      // Handle function-returned errors
+      if (!data || (!data.ok && !data.success)) {
+        const errorMsg = `Step: ${data?.step || 'unknown'} - ${data?.error || 'Unknown error'}`;
+        console.error('Function returned error:', data);
+        throw new Error(errorMsg);
+      }
+
+      const skipCount = Object.values(data.skip_reasons || {}).reduce((sum: number, count: any) => sum + Number(count), 0);
+      const message = `Found ${data.raw_found || 0} • Parsed ${data.parsed || 0} • Would Create ${data.would_create || 0} • Would Update ${data.would_update || 0} • Skipped ${skipCount}`;
       logCheckpoint(`DRY RUN → ${message}`);
       updateResult(stepIndex, 'success', message, data);
     } catch (error: any) {
@@ -169,10 +177,11 @@ export default function TestMotorPipeline() {
       
       const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
         body: { 
-          url: sourceUrl,
+          price_list_url: sourceUrl,
           dry_run: false,
           msrp_markup: markupToSend,
-          parse_mode: 'auto',
+          force: false,
+          create_missing_brochures: true,
           ...sourceContent
         }
       });
@@ -184,11 +193,18 @@ export default function TestMotorPipeline() {
           message: error.message, 
           context: (error as any)?.context 
         });
-        throw new Error(`${error.status}: ${error.message}\n${JSON.stringify((error as any)?.context ?? {}, null, 2)}`);
+        throw new Error(`Status ${error.status}: ${error.message}\nStep: ${(error as any)?.context?.step || 'unknown'}`);
       }
 
-      const skipped = data.skipped_due_to_same_checksum ? 1 : 0;
-      const message = `[${data.content_source?.toUpperCase() || 'URL'}] parsed ${data.rows_parsed_total || data.rows_parsed} • normalized ${data.rows_normalized || 0} • created ${data.rows_created || 0} • updated ${data.rows_updated || 0} • errors ${data.rows_with_invalid_key + data.rows_with_invalid_price || 0} • skipped ${skipped}`;
+      // Handle function-returned errors
+      if (!data || (!data.ok && !data.success)) {
+        const errorMsg = `Step: ${data?.step || 'unknown'} - ${data?.error || 'Unknown error'}`;
+        console.error('Function returned error:', data);
+        throw new Error(errorMsg);
+      }
+
+      const skipCount = Object.values(data.skip_reasons || {}).reduce((sum: number, count: any) => sum + Number(count), 0);
+      const message = `Found ${data.raw_found || 0} • Parsed ${data.parsed || 0} • Created ${data.rows_created || 0} • Updated ${data.rows_updated || 0} • Skipped ${skipCount}`;
       logCheckpoint(`INGEST → ${message}`);
       updateResult(stepIndex, 'success', message, data);
     } catch (error: any) {
