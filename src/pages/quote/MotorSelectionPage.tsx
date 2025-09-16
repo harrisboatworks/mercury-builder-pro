@@ -23,6 +23,8 @@ interface DbMotor {
   horsepower: number;
   base_price: number;
   sale_price?: number | null;
+  msrp?: number | null;
+  dealer_price?: number | null;
   motor_type: string;
   engine_type?: string | null;
   image_url?: string | null;
@@ -152,8 +154,12 @@ export default function MotorSelectionPage() {
   // Convert DB motor to Motor type and apply promotions (same logic as original)
   const processedMotors = useMemo(() => {
     return motors.map(dbMotor => {
-      // Apply promotions (same logic as original MotorSelection)
-      let effectivePrice = dbMotor.sale_price || dbMotor.base_price;
+      // Apply promotions (same logic as original MotorSelection) 
+      // Use msrp and dealer_price as fallbacks if base_price/sale_price are missing
+      const basePrice = dbMotor.base_price || dbMotor.msrp || 0;
+      const salePrice = dbMotor.sale_price || 
+                       (dbMotor.dealer_price && dbMotor.dealer_price < (dbMotor.msrp || basePrice) ? dbMotor.dealer_price : null);
+      let effectivePrice = salePrice || basePrice;
       let promoTexts: string[] = [];
       
       // Find applicable promotions
@@ -208,8 +214,8 @@ export default function MotorSelectionPage() {
                  dbMotor.horsepower <= 150 ? 'high-performance' : 'v8-racing',
         type: dbMotor.motor_type || 'FourStroke',
         specs: `${dbMotor.horsepower}HP ${dbMotor.motor_type || 'FourStroke'}`,
-        basePrice: dbMotor.base_price,
-        salePrice: dbMotor.sale_price,
+        basePrice: basePrice,
+        salePrice: salePrice,
         originalPrice: dbMotor.sale_price || dbMotor.base_price,
         savings: (dbMotor.sale_price || dbMotor.base_price) - effectivePrice,
         appliedPromotions: promoTexts,

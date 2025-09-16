@@ -57,6 +57,8 @@ interface DbMotor {
   horsepower: number;
   base_price: number;
   sale_price?: number | null;
+  msrp?: number | null;
+  dealer_price?: number | null;
   motor_type: string;
   engine_type?: string | null;
   image_url?: string | null;
@@ -418,8 +420,10 @@ export const MotorSelection = ({
 
       // Transform database data to Motor interface with effective pricing
       const transformedMotors: Motor[] = filteredMotorRows.map(m => {
-        const basePrice = Number(m.base_price || 0);
-        const salePrice = m.sale_price != null ? Number(m.sale_price) : null;
+        // Use msrp and dealer_price as fallbacks if base_price/sale_price are missing
+        const basePrice = Number(m.base_price || m.msrp || 0);
+        const salePrice = m.sale_price != null ? Number(m.sale_price) : 
+                         (m.dealer_price != null && m.dealer_price < (m.msrp || basePrice)) ? Number(m.dealer_price) : null;
         const original = salePrice && salePrice > 0 && salePrice < basePrice ? salePrice : basePrice;
         const {
           effectivePrice,
