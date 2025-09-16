@@ -14,7 +14,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { invokePricelist } from "@/lib/invokeEdge";
+import { invokeEdge, pingEdge } from "@/lib/invokeEdge";
 import AdminNav from "@/components/admin/AdminNav";
 
 export default function AdminSources() {
@@ -52,71 +52,57 @@ export default function AdminSources() {
 
   const runPricelist = async ({ dryRun }: { dryRun: boolean }) => {
     setLoading({ ...loading, pricelist: true });
-    setPricelistResults(null);
-    
-    const body = {
-      dry_run: dryRun,
-      msrp_markup: Number(msrpMarkup || 1.1),
-      url: pricelistUrl?.trim() || 'https://www.harrisboatworks.ca/mercurypricelist',
-    };
-    
-    console.log('Starting pricelist with:', body);
-    const result = await invokePricelist(body);
-    console.log('Pricelist result:', result);
-    
-    setLoading({ ...loading, pricelist: false });
-
-    // Handle errors and success consistently
-    if (!result) {
-      toast({
-        title: 'Error',
-        description: 'No response received from edge function',
-        variant: 'destructive',
-      });
-      setPricelistResults({
-        success: false,
-        step: 'response',
-        error: 'No response received',
-        detail: 'Edge function returned empty response'
-      });
-      return;
-    }
-
-    if (!result.success) {
-      const errorMsg = `Step: ${result.step || 'unknown'} — ${result.error || 'Unknown error'}`;
-      toast({
-        title: 'Error',
-        description: errorMsg + (result.detail ? ` — ${result.detail}` : ''),
-        variant: 'destructive',
-      });
-    } else {
+    try {
+      const payload = {
+        action: 'brochure',
+        dry_run: dryRun,
+        msrp_markup: Number(msrpMarkup || 1.1),
+        price_list_url: pricelistUrl?.trim() || 'https://www.harrisboatworks.ca/mercurypricelist',
+      };
+      
+      const result = await invokeEdge(payload);
+      
+      if (!result?.ok) {
+        toast({
+          title: 'Error',
+          description: `Error (status ${result.status}, step ${result.step}): ${result.error}`,
+          variant: 'destructive',
+        });
+        setPricelistResults(result);
+        return;
+      }
+      
+      setPricelistResults(result);
       toast({
         title: dryRun ? "Price List Preview Complete" : "Price List Ingested",
-        description: `${result.rows_parsed || 0} parsed, ${result.rows_created || 0} created, ${result.rows_updated || 0} updated`,
+        description: `${result.parsed || 0} parsed, ${result.rows_created || result.would_create || 0} created, ${result.rows_updated || result.would_update || 0} updated`,
       });
       
       if (!dryRun) {
         setLastIngested({ ...lastIngested, pricelist: new Date() });
       }
+    } finally {
+      setLoading({ ...loading, pricelist: false });
     }
-    
-    setPricelistResults(result);
   };
 
   const pingEdgeFunction = async () => {
     setLoading({ ...loading, ping: true });
-    console.log('Pinging edge function...');
-    
-    const result = await invokePricelist({ ping: true });
-    console.log('Ping result:', result);
-    
-    setLoading({ ...loading, ping: false });
-    
-    toast({
-      title: result?.success ? "Ping Successful" : "Ping Failed",
-      description: result?.message || result?.error || "Connection test complete",
-      variant: result?.success ? "default" : "destructive",
-    });
+    try {
+      const result = await pingEdge();
+      toast({
+        title: "Ping Successful",
+        description: `Edge OK (${result.step})`,
+      });
+    } catch (e: any) {
+      toast({
+        title: "Ping Failed",
+        description: `Edge ping failed: ${e?.message || String(e)}`,
+        variant: "destructive",
+      });
+    } finally {
+      setLoading({ ...loading, ping: false });
+    }
   };
 
   const handleBrochureIngest = async () => {

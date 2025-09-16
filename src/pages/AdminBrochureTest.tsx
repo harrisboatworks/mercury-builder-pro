@@ -6,7 +6,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { ExternalLink, Play, FileText, Download, Upload, CheckCircle, AlertCircle, ChevronDown } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import { invokePricelist } from '@/lib/invokeEdge';
+import { invokeEdge, pingEdge } from '@/lib/invokeEdge';
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
 
 interface ParseResult {
@@ -115,41 +115,46 @@ export default function AdminBrochureTest() {
   const runPriceListParser = async (isDryRun: boolean, markup = 1.0) => {
     setRunning(true);
     try {
-      const result = await invokePricelist({
+      const payload = {
+        action: 'brochure',
         price_list_url: "https://www.mercurymarine.com/en-us/outboards/",
         dry_run: isDryRun,
         msrp_markup: markup,
         create_missing_brochures: true
-      });
+      };
+      
+      const result = await invokeEdge(payload);
+
+      if (!result?.ok) {
+        toast({
+          title: "Operation Failed",
+          description: `Error (status ${result.status}, step ${result.step}): ${result.error}`,
+          variant: "destructive",
+        });
+        
+        if (isDryRun) {
+          setDryRunResults(result);
+        } else {
+          setIngestResults(result);
+        }
+        return;
+      }
 
       if (isDryRun) {
         setDryRunResults(result);
         toast({
           title: "Dry Run Complete",
-          description: `Found ${result.raw_found} raw items, parsed ${result.parsed}. Would create ${result.would_create}, would update ${result.would_update}.`,
+          description: `Found ${result.raw_found || 0} raw items, parsed ${result.parsed || 0}. Would create ${result.would_create || 0}, would update ${result.would_update || 0}.`,
         });
       } else {
         setIngestResults(result);
         toast({
           title: "Ingest Complete",
-          description: `Created ${result.rows_created} new records, updated ${result.rows_updated} existing records.`,
+          description: `Created ${result.rows_created || 0} new records, updated ${result.rows_updated || 0} existing records.`,
         });
       }
       
       await loadBrochureSummary();
-    } catch (error: any) {
-      console.error('Price list operation failed:', error);
-      toast({
-        title: "Operation Failed",
-        description: error.message || 'Unknown error occurred',
-        variant: "destructive",
-      });
-      
-      if (isDryRun) {
-        setDryRunResults({ error: error.message, step: 'failed' });
-      } else {
-        setIngestResults({ error: error.message, step: 'failed' });
-      }
     } finally {
       setRunning(false);
     }

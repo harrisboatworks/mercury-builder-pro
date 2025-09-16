@@ -236,212 +236,217 @@ async function parsePriceList(url: string, msrpMarkup: number) {
 }
 
 Deno.serve(async (req) => {
-  if (req.method === 'OPTIONS') return ok({ ok: true }, 204);
-
-  const url = new URL(req.url);
-  const path = url.pathname;
-  const supabase = createClient(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!);
-
-  // Health check
-  if (path.endsWith('/ping')) {
-    return ok({ ok: true, service: 'seed-from-pricelist', time: new Date().toISOString() });
-  }
-
-  if (req.method !== 'POST') return fail(405, 'route', new Error('Method not allowed'));
-
-  let body: any;
   try {
-    body = await req.json();
-  } catch (e) {
-    return fail(400, 'parse_body', e);
-  }
+    if (req.method === 'OPTIONS') return new Response('ok', { headers: corsHeaders });
 
-  // ---- Normalize inputs and echo ----
-  const norm = normalizeInputs(body);
-  if (!norm.price_list_url) {
-    norm.price_list_url = 'https://www.harrisboatworks.ca/mercurypricelist';
-  }
+    const url = new URL(req.url);
+    if (req.method === 'GET' && url.searchParams.get('ping') === '1') {
+      return ok({ ok: true, step: 'ping' });
+    }
 
-  // ---- Parse the price list ----
-  let parsedRows: any[] = [];
-  try {
-    parsedRows = await parsePriceList(norm.price_list_url, norm.msrp_markup);
-  } catch (e) {
-    return fail(500, 'parse_pricelist', e, { echo: norm });
-  }
+    if (req.method !== 'POST') {
+      return fail(405, 'method', new Error('Method not allowed'));
+    }
 
-  // ---- Clean and validate rows ----
-  const cleaned = [];
-  const skipReasons: Record<string, number> = {};
-  function skip(reason: string) { skipReasons[reason] = (skipReasons[reason] || 0) + 1; }
+    const supabase = createClient(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!);
 
-  for (const r of parsedRows) {
-    const model_number = String(r.model_number ?? '').trim();
-    const model_display = decodeEntities(String(r.model_display ?? '').trim());
-    const model_key = String(r.model_key ?? '').trim();
-    const mercury_model_no = String(r.mercury_model_no ?? '').trim();
+    let body: any;
+    try {
+      body = await req.json();
+    } catch (e) {
+      return fail(400, 'parse_body', e);
+    }
 
-    if (!model_number) { skip('missing_model_number'); continue; }
-    if (!PART_RE.test(model_number)) { skip('not_part_style_model_number'); continue; }
-    if (!model_key) { skip('missing_model_key'); continue; }
+    // ---- Normalize inputs and echo ----
+    const norm = normalizeInputs(body);
+    if (!norm.price_list_url) {
+      norm.price_list_url = 'https://www.harrisboatworks.ca/mercurypricelist';
+    }
 
-    const dealer_price = parseNumber(r.dealer_price, NaN);
-    const msrp = parseNumber(r.msrp, NaN);
-    if (!Number.isFinite(dealer_price)) { skip('invalid_dealer_price'); continue; }
-    if (!Number.isFinite(msrp)) { skip('invalid_msrp'); continue; }
+    // ---- Parse the price list ----
+    let parsedRows: any[] = [];
+    try {
+      parsedRows = await parsePriceList(norm.price_list_url, norm.msrp_markup);
+    } catch (e) {
+      return fail(500, 'parse_pricelist', e, { echo: norm });
+    }
 
-    cleaned.push({
-      is_brochure: true,
-      availability: 'Brochure',
-      make: 'Mercury',
-      motor_type: r.family || 'FourStroke', // Ensure motor_type is not null
-      year: 2025,
-      model_number,
-      model_display,
-      model_key,
-      mercury_model_no,
-      dealer_price,
-      msrp,
-      // keep pass-throughs
-      horsepower: r.hp ?? null,
-      rigging_code: r.rigging_code ?? null,
-      accessories_included: r.accessories ?? [],
-      family: r.family ?? 'FourStroke',
-      engine_type: 'EFI',
-      fuel_type: 'Gas',
-      shaft: 'Short Shaft 15"',
-      control: 'Tiller Handle',
-      start_type: 'Manual Start',
-      price_source: 'harris_pricelist',
-      msrp_source: 'dealer_price * 1.1',
-      msrp_calc_source: 'calculated',
-      in_stock: false,
-      stock_quantity: 0,
-      images: [],
-      data_sources: {
-        manual: { user_id: null, added_at: null },
-        mercury_official: { success: true, scraped_at: new Date().toISOString() },
-        harris: { success: true, scraped_at: new Date().toISOString() },
-        reviews: { success: false, scraped_at: null }
-      },
-      last_scraped: new Date().toISOString(),
-      updated_at: new Date().toISOString()
-    });
-  }
+    // ---- Clean and validate rows ----
+    const cleaned = [];
+    const skipReasons: Record<string, number> = {};
+    function skip(reason: string) { skipReasons[reason] = (skipReasons[reason] || 0) + 1; }
 
-  // ---- If dry run: compute would-create/update by looking at DB and return diagnostics ----
-  let existingNumbers = new Set<string>();
-  try {
-    const { data, error } = await supabase
-      .from('motor_models')
-      .select('model_number')
-      .eq('is_brochure', true)
-      .not('model_number', 'is', null);
-    if (error) throw error;
-    for (const row of data ?? []) existingNumbers.add((row.model_number || '').toString());
-  } catch (e) {
-    return fail(500, 'fetch_existing_for_predict', e, { echo: norm });
-  }
+    for (const r of parsedRows) {
+      const model_number = String(r.model_number ?? '').trim();
+      const model_display = decodeEntities(String(r.model_display ?? '').trim());
+      const model_key = String(r.model_key ?? '').trim();
+      const mercury_model_no = String(r.mercury_model_no ?? '').trim();
 
-  const toInsert = cleaned.filter(r => !existingNumbers.has(r.model_number));
-  const toUpdate = cleaned.filter(r => existingNumbers.has(r.model_number));
+      if (!model_number) { skip('missing_model_number'); continue; }
+      if (!PART_RE.test(model_number)) { skip('not_part_style_model_number'); continue; }
+      if (!model_key) { skip('missing_model_key'); continue; }
 
-  const diagnostics = {
-    step: norm.dry_run ? 'dry_run_complete' : 'ingest_complete',
-    echo: norm,
-    raw_found: parsedRows.length,
-    parsed: cleaned.length,
-    would_create: toInsert.length,
-    would_update: toUpdate.length,
-    skip_reasons: skipReasons,
-    sample_created: cleaned.slice(0, 10).map(r => ({ 
-      model_display: r.model_display, 
-      model_number: r.model_number, 
-      dealer_price: r.dealer_price, 
-      msrp: r.msrp 
-    })),
-  };
+      const dealer_price = parseNumber(r.dealer_price, NaN);
+      const msrp = parseNumber(r.msrp, NaN);
+      if (!Number.isFinite(dealer_price)) { skip('invalid_dealer_price'); continue; }
+      if (!Number.isFinite(msrp)) { skip('invalid_msrp'); continue; }
 
-  if (norm.dry_run) {
-    return ok({ ok: true, success: true, ...diagnostics });
-  }
+      cleaned.push({
+        is_brochure: true,
+        availability: 'Brochure',
+        make: 'Mercury',
+        motor_type: r.family || 'FourStroke', // Ensure motor_type is not null
+        year: 2025,
+        model_number,
+        model_display,
+        model_key,
+        mercury_model_no,
+        dealer_price,
+        msrp,
+        // keep pass-throughs
+        horsepower: r.hp ?? null,
+        rigging_code: r.rigging_code ?? null,
+        accessories_included: r.accessories ?? [],
+        family: r.family ?? 'FourStroke',
+        engine_type: 'EFI',
+        fuel_type: 'Gas',
+        shaft: 'Short Shaft 15"',
+        control: 'Tiller Handle',
+        start_type: 'Manual Start',
+        price_source: 'harris_pricelist',
+        msrp_source: 'dealer_price * 1.1',
+        msrp_calc_source: 'calculated',
+        in_stock: false,
+        stock_quantity: 0,
+        images: [],
+        data_sources: {
+          manual: { user_id: null, added_at: null },
+          mercury_official: { success: true, scraped_at: new Date().toISOString() },
+          harris: { success: true, scraped_at: new Date().toISOString() },
+          reviews: { success: false, scraped_at: null }
+        },
+        last_scraped: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+      });
+    }
 
-  // ---- INGEST: two-phase write with accurate counts ----
-  let rows_created = 0;
-  let rows_updated = 0;
-
-  // Phase A: INSERT only new rows
-  try {
-    if (toInsert.length) {
-      console.log(`[PriceList] Inserting ${toInsert.length} new brochure records...`);
+    // ---- If dry run: compute would-create/update by looking at DB and return diagnostics ----
+    let existingNumbers = new Set<string>();
+    try {
       const { data, error } = await supabase
         .from('motor_models')
-        .insert(toInsert)
-        .select('id');
-      if (error) {
-        console.error(`[PriceList] Failed at insert_brochures: ${JSON.stringify(error)}`);
-        throw error;
-      }
-      rows_created = data?.length ?? 0;
+        .select('model_number')
+        .eq('is_brochure', true)
+        .not('model_number', 'is', null);
+      if (error) throw error;
+      for (const row of data ?? []) existingNumbers.add((row.model_number || '').toString());
+    } catch (e) {
+      return fail(500, 'fetch_existing_for_predict', e, { echo: norm });
     }
-  } catch (e) {
-    console.error(`[PriceList] Insert error: ${(e as any)?.message}`);
-    return fail(500, 'insert_new', e, { echo: norm, to_insert: toInsert.length });
-  }
 
-  // Phase B: UPDATE only existing rows, by model_number + is_brochure=true  
-  try {
-    for (const chunk of chunkBy(toUpdate, 200)) {
-      const { data: updCount, error: rpcErr } = await supabase.rpc(
-        'update_brochure_models_bulk',
-        { p_rows: chunk }
-      );
-      if (rpcErr) throw rpcErr;
-      rows_updated += (typeof updCount === 'number' ? updCount : 0);
+    const toInsert = cleaned.filter(r => !existingNumbers.has(r.model_number));
+    const toUpdate = cleaned.filter(r => existingNumbers.has(r.model_number));
+
+    const diagnostics = {
+      step: norm.dry_run ? 'dry_run_complete' : 'ingest_complete',
+      echo: norm,
+      raw_found: parsedRows.length,
+      parsed: cleaned.length,
+      would_create: toInsert.length,
+      would_update: toUpdate.length,
+      skip_reasons: skipReasons,
+      sample_created: cleaned.slice(0, 10).map(r => ({ 
+        model_display: r.model_display, 
+        model_number: r.model_number, 
+        dealer_price: r.dealer_price, 
+        msrp: r.msrp 
+      })),
+    };
+
+    if (norm.dry_run) {
+      return ok({ ok: true, success: true, ...diagnostics });
     }
-  } catch (e) {
-    if (String(e).toLowerCase().includes('function') && String(e).toLowerCase().includes('not found')) {
-      // Fallback to individual updates if RPC not available
-      try {
-        for (const r of toUpdate) {
-          const { error } = await supabase
-            .from('motor_models')
-            .update({
-              model_display: r.model_display,
-              model_key: r.model_key,
-              mercury_model_no: r.mercury_model_no,
-              dealer_price: r.dealer_price,
-              msrp: r.msrp,
-              year: r.year,
-              updated_at: new Date().toISOString(),
-            })
-            .eq('is_brochure', true)
-            .eq('model_number', r.model_number);
-          if (!error) rows_updated += 1;
+
+    // ---- INGEST: two-phase write with accurate counts ----
+    let rows_created = 0;
+    let rows_updated = 0;
+
+    // Phase A: INSERT only new rows
+    try {
+      if (toInsert.length) {
+        console.log(`[PriceList] Inserting ${toInsert.length} new brochure records...`);
+        const { data, error } = await supabase
+          .from('motor_models')
+          .insert(toInsert)
+          .select('id');
+        if (error) {
+          console.error(`[PriceList] Failed at insert_brochures: ${JSON.stringify(error)}`);
+          throw error;
         }
-      } catch (e2) {
-        return fail(500, 'update_existing_fallback', e2, { echo: norm, to_update: toUpdate.length });
+        rows_created = data?.length ?? 0;
       }
-    } else {
-      return fail(500, 'update_existing_rpc', e, { echo: norm, to_update: toUpdate.length });
+    } catch (e) {
+      console.error(`[PriceList] Insert error: ${(e as any)?.message}`);
+      return fail(500, 'insert_new', e, { echo: norm, to_insert: toInsert.length });
     }
-  }
 
-  return ok({
-    ok: true,
-    success: true,
-    step: 'ingest_complete',
-    echo: norm,
-    raw_found: parsedRows.length,
-    parsed: cleaned.length,
-    rows_created,
-    rows_updated,
-    skip_reasons: skipReasons,
-    sample_created: toInsert.slice(0, 10).map(r => ({ 
-      model_display: r.model_display, 
-      model_number: r.model_number, 
-      dealer_price: r.dealer_price, 
-      msrp: r.msrp 
-    })),
-  });
+    // Phase B: UPDATE only existing rows, by model_number + is_brochure=true  
+    try {
+      for (const chunk of chunkBy(toUpdate, 200)) {
+        const { data: updCount, error: rpcErr } = await supabase.rpc(
+          'update_brochure_models_bulk',
+          { p_rows: chunk }
+        );
+        if (rpcErr) throw rpcErr;
+        rows_updated += (typeof updCount === 'number' ? updCount : 0);
+      }
+    } catch (e) {
+      if (String(e).toLowerCase().includes('function') && String(e).toLowerCase().includes('not found')) {
+        // Fallback to individual updates if RPC not available
+        try {
+          for (const r of toUpdate) {
+            const { error } = await supabase
+              .from('motor_models')
+              .update({
+                model_display: r.model_display,
+                model_key: r.model_key,
+                mercury_model_no: r.mercury_model_no,
+                dealer_price: r.dealer_price,
+                msrp: r.msrp,
+                year: r.year,
+                updated_at: new Date().toISOString(),
+              })
+              .eq('is_brochure', true)
+              .eq('model_number', r.model_number);
+            if (!error) rows_updated += 1;
+          }
+        } catch (e2) {
+          return fail(500, 'update_existing_fallback', e2, { echo: norm, to_update: toUpdate.length });
+        }
+      } else {
+        return fail(500, 'update_existing_rpc', e, { echo: norm, to_update: toUpdate.length });
+      }
+    }
+
+    return ok({
+      ok: true,
+      success: true,
+      step: 'ingest_complete',
+      echo: norm,
+      raw_found: parsedRows.length,
+      parsed: cleaned.length,
+      rows_created,
+      rows_updated,
+      skip_reasons: skipReasons,
+      sample_created: toInsert.slice(0, 10).map(r => ({ 
+        model_display: r.model_display, 
+        model_number: r.model_number, 
+        dealer_price: r.dealer_price, 
+        msrp: r.msrp 
+      })),
+    });
+
+  } catch (e) {
+    return fail(500, 'top-level', e);
+  }
 });

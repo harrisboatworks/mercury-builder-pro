@@ -1,81 +1,75 @@
-import { supabase } from '@/integrations/supabase/client';
+// src/lib/invokeEdge.ts
+const SUPABASE_URL =
+  (import.meta as any)?.env?.VITE_SUPABASE_URL ||
+  (globalThis as any)?.process?.env?.NEXT_PUBLIC_SUPABASE_URL ||
+  'https://eutsoqdpjurknjsshxes.supabase.co';
 
-export async function invokePricelist(body: any) {
-  // Construct the edge function URL
-  const supabaseUrl = 'https://eutsoqdpjurknjsshxes.supabase.co';
-  const functionUrl = `${supabaseUrl}/functions/v1/seed-from-pricelist`;
-  const anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
+const SUPABASE_ANON_KEY =
+  (import.meta as any)?.env?.VITE_SUPABASE_ANON_KEY ||
+  (globalThis as any)?.process?.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
 
+export const EDGE_URL = `${SUPABASE_URL}/functions/v1/seed-from-pricelist`;
+
+function buildHeaders(json = true) {
+  const h: Record<string, string> = {
+    apikey: SUPABASE_ANON_KEY,
+    Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+    'x-client-info': 'admin-ui',
+  };
+  if (json) h['Content-Type'] = 'application/json';
+  return h;
+}
+
+export async function invokeEdge(payload: any, timeoutMs = 30000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+
+  let res: Response;
   try {
-    console.log(`Invoking edge function at: ${functionUrl}`);
-    console.log('Request payload:', body);
-    
-    const response = await fetch(functionUrl, {
+    res = await fetch(EDGE_URL, {
       method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${anonKey}`,
-        'Content-Type': 'application/json',
-        'apikey': anonKey,
-      },
-      body: JSON.stringify(body),
+      mode: 'cors',
+      cache: 'no-store',
+      headers: buildHeaders(true),
+      body: JSON.stringify(payload ?? {}),
+      signal: controller.signal,
     });
-
-    console.log(`Function response status: ${response.status} ${response.statusText}`);
-    
-    let data: any;
-    try {
-      const responseText = await response.text();
-      console.log('Raw response:', responseText);
-      
-      if (responseText) {
-        data = JSON.parse(responseText);
-      } else {
-        data = null;
-      }
-    } catch (parseError) {
-      console.error('Failed to parse response as JSON:', parseError);
-      throw new Error(`(status ${response.status}, step parse_response) Invalid JSON response from edge function`);
-    }
-
-    // Handle non-2xx HTTP responses
-    if (!response.ok) {
-      console.error('HTTP error response:', { status: response.status, statusText: response.statusText, data });
-      const errorMsg = data?.error || data?.message || response.statusText || 'HTTP request failed';
-      const step = data?.step || 'http_response';
-      throw new Error(`(status ${response.status}, step ${step}) ${errorMsg}`);
-    }
-    
-    // Handle function-level errors (successful HTTP but function returned error)
-    if (data && !data.ok && !data.success) {
-      console.error('Function returned error response:', data);
-      const msg = data.error || data.message || 'Function returned error';
-      const step = data.step || 'function_error';
-      const status = data.status || response.status;
-      throw new Error(`(status ${status}, step ${step}) ${msg}`);
-    }
-    
-    // Ensure we return a consistent response structure for successful calls
-    if (!data) {
-      throw new Error(`(status ${response.status}, step response) Empty response from edge function`);
-    }
-    
-    console.log('Successfully received function response:', data);
-    return data;
-    
-  } catch (e: any) {
-    console.error('Edge function invocation failed:', e);
-    
-    // Re-throw with consistent format if not already formatted
-    if (e.message && e.message.includes('(status')) {
-      throw e;
-    }
-    
-    // Network/fetch errors
-    if (e.name === 'TypeError' && e.message.includes('fetch')) {
-      throw new Error(`(status 0, step network) Failed to reach edge function at ${functionUrl}: ${e.message}`);
-    }
-    
-    // Other errors
-    throw new Error(`(status 0, step network) ${e?.message || 'network_failed'}`);
+  } catch (err: any) {
+    clearTimeout(timer);
+    return { ok: false, step: 'invoke', status: 0, error: `Network error: ${err?.message || String(err)}` };
   }
+  clearTimeout(timer);
+
+  const raw = await res.text();
+  let json: any = null; try { json = raw ? JSON.parse(raw) : null; } catch {}
+  if (!res.ok) {
+    return {
+      ok: false,
+      step: json?.step || 'invoke',
+      status: res.status,
+      error: json?.error || json?.message || raw || 'Unknown error',
+      details: json ?? raw,
+    };
+  }
+  return json ?? { ok: true, step: 'invoke', note: 'No body' };
+}
+
+export async function pingEdge() {
+  const url = `${EDGE_URL}?ping=1`;
+  const res = await fetch(url, {
+    method: 'GET',
+    mode: 'cors',
+    cache: 'no-store',
+    headers: buildHeaders(false),
+  });
+  const raw = await res.text();
+  let json: any = null; try { json = raw ? JSON.parse(raw) : null; } catch {}
+  if (!res.ok) throw new Error(json?.error || raw || `HTTP ${res.status}`);
+  return json ?? { ok: true, step: 'ping' };
+}
+
+// Legacy function for backward compatibility
+export async function invokePricelist(body: any) {
+  return invokeEdge(body);
 }
