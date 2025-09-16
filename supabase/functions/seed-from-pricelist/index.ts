@@ -353,8 +353,15 @@ function buildMercuryModelKey(params: {
 }): string {
   const parts: string[] = [];
   
+  // Always include Mercury model number first if available - this ensures uniqueness
+  if (params.modelNo) {
+    parts.push(params.modelNo.toUpperCase().replace(/[^A-Z0-9]/g, ''));
+  }
+  
   // Family
-  parts.push(params.family.toUpperCase());
+  if (params.family) {
+    parts.push(params.family.toUpperCase());
+  }
   
   // HP
   if (params.hp) {
@@ -366,9 +373,11 @@ function buildMercuryModelKey(params: {
     parts.push('EFI');
   }
   
-  // Rigging tokens
-  if (params.rig?.tokens) {
-    parts.push(...params.rig.tokens);
+  // Rigging tokens - ensure they're properly ordered and distinct
+  if (params.rig?.tokens && params.rig.tokens.length > 0) {
+    // Remove duplicates and sort for consistency
+    const uniqueTokens = [...new Set(params.rig.tokens)].sort();
+    parts.push(...uniqueTokens);
   }
   
   return parts.join('-');
