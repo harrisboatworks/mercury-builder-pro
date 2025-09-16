@@ -288,11 +288,11 @@ Deno.serve(async (req) => {
         console.log(`[Upsert] B${batchNum}: processing ${batch.length} records...`);
         
         try {
-          // Use upsert with the correct constraint name
+          // Use upsert with model_number as conflict target for brochure rows
           const { data, error } = await supabase
             .from('motor_models')
             .upsert(batch, {
-              onConflict: 'motor_models_model_number_brochure_uniq',
+              onConflict: 'model_number',
               ignoreDuplicates: false
             })
             .select('id, created_at, updated_at');
@@ -419,6 +419,21 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
         }
       }
       
+      // Validate model_number - must be real Mercury part number format
+      const isValidMercuryPartNumber = modelNumber && 
+        /^[0-9][A-Z0-9]{6,9}[A-Z]{2}$/i.test(modelNumber.trim()) && 
+        !modelNumber.includes('-') && 
+        !modelNumber.includes('FOURSTROKE') && 
+        !modelNumber.includes('PROX') &&
+        !modelNumber.includes('SEAPRO') &&
+        !modelNumber.includes('VERADO');
+      
+      if (!isValidMercuryPartNumber) {
+        skipReasons.set('invalid_mercury_part_number', (skipReasons.get('invalid_mercury_part_number') || 0) + 1);
+        errors.push({ row_index: i, error: `Invalid Mercury part number: ${modelNumber}`, data: row });
+        continue;
+      }
+      
       // Parse rigging codes from Mercury model number
       let riggingDescription = '';
       let riggingCodes = '';
@@ -464,13 +479,14 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
         ].filter(Boolean).join('-').replace(/[^a-z0-9.-]/g, '');
       
         const result = {
-          // Mercury identifiers
-          model_number: modelNumber, // Official Mercury model number (1F02201KK, etc.)
-          mercury_model_no: mercuryModelNo, // Parsed model (25MH, etc.)
+          // Mercury identifiers - ALWAYS from first column for brochure rows
+          model_number: modelNumber.trim(), // Official Mercury model number (1F02201KK, etc.)
+          mercury_model_no: mercuryModelNo || '', // Parsed model (25MH, etc.)
           
           // Display and description
-          display_name: modelDisplay,
-          model: family || 'FourStroke', // Required field - default to FourStroke if family not found
+          display_name: modelDisplay || description,
+          model_display: description,
+          model: family || 'Outboard', // Required field - fallback to Outboard
           model_key: modelKey,
           
           // Technical specs
@@ -479,28 +495,33 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
           rigging_code: riggingDescription,
           accessories_included: accessories,
           
-          // Pricing
+          // Pricing - ensure numeric values
           dealer_price: dealerPrice,
           base_price: dealerPrice,
           sale_price: dealerPrice,
-          msrp: Math.round(dealerPrice * msrp_markup),
+          msrp: msrp,
           
           // Source tracking
           price_source: 'harris_pricelist',
           msrp_source: 'calculated',
           msrp_calc_source: `dealer_price * ${msrp_markup}`,
           
-          // Database required fields
+          // Database required fields - ALWAYS SET FOR BROCHURE ROWS
           make: 'Mercury',
-          motor_type: family || 'FourStroke', // Required field - default to FourStroke
+          motor_type: family || 'FourStroke', // Required field
           year: 2025,
-          is_brochure: true,
+          is_brochure: true, // CRITICAL: Must be true for all brochure rows
           in_stock: false,
-          availability: 'Brochure',
-          fuel_type: '',
+          availability: 'Brochure', // CRITICAL: Must be 'Brochure' 
+          fuel_type: 'EFI',
           
           // Required jsonb fields with defaults
           accessory_notes: [],
+          features: [],
+          specifications: {},
+          
+          // Timestamps - let database handle created_at, only update updated_at on conflict
+          updated_at: new Date().toISOString(),
           
           // Debug info
           raw_cells: [row.model_number, row.model_display, row.dealer_price]
