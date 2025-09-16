@@ -389,30 +389,42 @@ Deno.serve(async (req) => {
     return fail(500, 'insert_new', e, { echo: norm, to_insert: toInsert.length });
   }
 
-  // Phase B: UPDATE only existing rows, by model_number + is_brochure=true
+  // Phase B: UPDATE only existing rows, by model_number + is_brochure=true  
   try {
-    for (const chunk of chunkBy(toUpdate, 50)) {
-      const nums = chunk.map(r => r.model_number);
-      const fields = chunk.map(r => ({
-        model_number: r.model_number,
-        model_display: r.model_display,
-        model_key: r.model_key,
-        mercury_model_no: r.mercury_model_no,
-        dealer_price: r.dealer_price,
-        msrp: r.msrp,
-        year: r.year,
-      }));
-      
-      const { data, error } = await supabase.rpc('update_brochure_models_bulk', {
-        p_model_numbers: nums,
-        p_fields: fields,
-      });
-      
-      if (error) throw error;
-      rows_updated += (data as number) || 0;
+    for (const chunk of chunkBy(toUpdate, 200)) {
+      const { data: updCount, error: rpcErr } = await supabase.rpc(
+        'update_brochure_models_bulk',
+        { p_rows: chunk }
+      );
+      if (rpcErr) throw rpcErr;
+      rows_updated += (typeof updCount === 'number' ? updCount : 0);
     }
   } catch (e) {
-    return fail(500, 'update_existing', e, { echo: norm, to_update: toUpdate.length });
+    if (String(e).toLowerCase().includes('function') && String(e).toLowerCase().includes('not found')) {
+      // Fallback to individual updates if RPC not available
+      try {
+        for (const r of toUpdate) {
+          const { error } = await supabase
+            .from('motor_models')
+            .update({
+              model_display: r.model_display,
+              model_key: r.model_key,
+              mercury_model_no: r.mercury_model_no,
+              dealer_price: r.dealer_price,
+              msrp: r.msrp,
+              year: r.year,
+              updated_at: new Date().toISOString(),
+            })
+            .eq('is_brochure', true)
+            .eq('model_number', r.model_number);
+          if (!error) rows_updated += 1;
+        }
+      } catch (e2) {
+        return fail(500, 'update_existing_fallback', e2, { echo: norm, to_update: toUpdate.length });
+      }
+    } else {
+      return fail(500, 'update_existing_rpc', e, { echo: norm, to_update: toUpdate.length });
+    }
   }
 
   return ok({

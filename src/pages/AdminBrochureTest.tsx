@@ -3,54 +3,35 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { ExternalLink, Play, FileText, Download, Upload } from 'lucide-react';
+import { ExternalLink, Play, FileText, Download, Upload, CheckCircle, AlertCircle, ChevronDown } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { invokePricelist } from '@/lib/invokeEdge';
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
 
 interface ParseResult {
-  success: boolean;
-  rows_found_raw: number;
-  rows_parsed: number;
-  rows_parsed_total: number;
-  rows_created: number;
-  rows_updated: number;
-  rows_rejected: number;
-  rows_failed?: number;
-  rows_skipped_total: number;
-  rows_skipped_by_reason: Record<string, number>;
-  top_skip_reasons: string[];
-  reject_reasons?: string[];
+  ok?: boolean;
+  success?: boolean;
+  step?: string;
+  raw_found?: number;
+  parsed?: number;
+  would_create?: number;
+  would_update?: number;
+  rows_created?: number;
+  rows_updated?: number;
+  message?: string;
+  echo?: {
+    price_list_url?: string;
+    msrp_markup?: number;
+    create_missing_brochures?: boolean;
+  };
+  skip_reasons?: Record<string, number>;
   sample_created?: Array<{
-    model_display?: string; // Human-readable brochure text
-    model: string;
-    model_key: string;
-    model_number?: string; // Mercury's actual model number
-    mercury_model_no?: string;
-    family: string;
-    horsepower: number;
-    rigging_code?: string;
-    accessories_included?: string[];
-    dealer_price: number;
-    msrp: number;
+    model_display?: string;
+    model_number?: string;
+    dealer_price?: number;
+    msrp?: number;
   }>;
-  sample_rejected?: Array<{
-    line: number;
-    reason: string;
-    raw_model: string;
-    model_key: string;
-    dealer_price_raw: string;
-  }>;
-  sample_skipped?: Array<{
-    line: number;
-    reason: string;
-    raw_model: string;
-    model_key: string;
-    dealer_price_raw: string;
-  }>;
-  html_saved_url?: string;
-  error_detail?: string;
-  response_body?: any;
-  source_kind?: string;
   error?: any;
 }
 
@@ -59,7 +40,7 @@ interface BrochureSummary {
   families: Array<{ family: string; count: number }>;
   latest_samples: Array<{
     id: string;
-    model_display?: string; // Human-readable brochure text
+    model_display?: string;
     model: string;
     model_number?: string;
     mercury_model_no?: string;
@@ -75,29 +56,23 @@ interface BrochureSummary {
 
 export default function AdminBrochureTest() {
   const { toast } = useToast();
-  const [dryRunResult, setDryRunResult] = useState<ParseResult | null>(null);
-  const [ingestResult, setIngestResult] = useState<ParseResult | null>(null);
+  const [dryRunResults, setDryRunResults] = useState<ParseResult | null>(null);
+  const [ingestResults, setIngestResults] = useState<ParseResult | null>(null);
   const [summary, setSummary] = useState<BrochureSummary | null>(null);
-  const [isRunning, setIsRunning] = useState(false);
-  const [testResult, setTestResult] = useState<string>('');
-  const [sanityResult, setSanityResult] = useState<any>(null);
-  const [showSanityResults, setShowSanityResults] = useState(false);
-  const [result, setResult] = useState<any>(null);
+  const [running, setRunning] = useState(false);
+  const [sanityResults, setSanityResults] = useState<any>(null);
 
-  // Load brochure summary on page load
   useEffect(() => {
     loadBrochureSummary();
   }, []);
 
   const loadBrochureSummary = async () => {
     try {
-      // Get total brochure count
       const { count: totalCount } = await supabase
         .from('motor_models')
         .select('*', { count: 'exact', head: true })
         .eq('is_brochure', true);
 
-      // Get family counts
       const { data: familyData } = await supabase
         .from('motor_models')
         .select('family')
@@ -114,25 +89,13 @@ export default function AdminBrochureTest() {
         count: count as number
       }));
 
-      // Get latest 10 samples  
-      const { data: samples, error: samplesError } = await supabase
+      const { data: samples } = await supabase
         .from('motor_models')
         .select('id, model_display, model_number, model, mercury_model_no, model_key, family, horsepower, rigging_code, dealer_price, msrp, created_at')
         .eq('is_brochure', true)
         .eq('make', 'Mercury')
         .order('created_at', { ascending: false })
         .limit(10);
-
-      if (samplesError) {
-        console.error('Error fetching samples:', samplesError);
-      }
-
-      // Debug log to check what data we're getting
-      console.log('Latest samples data with model_numbers:', samples?.map(s => ({
-        id: s.id,
-        model_number: s.model_number,
-        mercury_model_no: s.mercury_model_no
-      })));
 
       setSummary({
         total_brochure_count: totalCount || 0,
@@ -149,292 +112,86 @@ export default function AdminBrochureTest() {
     }
   };
 
-  const pingEdge = async () => {
+  const runPriceListParser = async (isDryRun: boolean, markup = 1.0) => {
+    setRunning(true);
     try {
-      const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
-        method: 'GET',
-        headers: { 'x-debug': '1' }
-      });
-      setResult({ ping: data ?? null, pingError: error ?? null });
-    } catch (e: any) {
-      setResult({ pingError: { name: e?.name, message: e?.message } });
-    }
-  };
-
-  const runPricelist = async (dryRun = true, markupStr = '1.1') => {
-    const payload = {
-      dry_run: !!dryRun,
-      msrp_markup: Number(markupStr) > 0 ? Number(markupStr) : 1.1
-    };
-    setResult({ sending: payload });
-    try {
-      const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
-        body: payload,
-        headers: { 'x-debug': '1' }
+      const result = await invokePricelist({
+        price_list_url: "https://www.mercurymarine.com/en-us/outboards/",
+        dry_run: isDryRun,
+        msrp_markup: markup,
+        create_missing_brochures: true
       });
 
-      if (error) {
-        setResult({
-          sending: payload,
-          errorName: error.name,
-          errorMessage: error.message,
-          data
-        });
-        return;
-      }
-
-      if (!data?.success) {
-        setResult({
-          sending: payload,
-          response: data,
-          mismatch:
-            data?.echo &&
-            (data.echo.dry_run !== payload.dry_run || data.echo.msrp_markup !== payload.msrp_markup)
-        });
-        return;
-      }
-
-      setResult({
-        sending: payload,
-        response: data,
-        mismatch:
-          data?.echo &&
-          (data.echo.dry_run !== payload.dry_run || data.echo.msrp_markup !== payload.msrp_markup)
-      });
-    } catch (e: any) {
-      setResult({
-        sending: payload,
-        fetchError: { name: e?.name, message: e?.message }
-      });
-    }
-  };
-
-  const runPriceListParser = async (dryRun: boolean) => {
-    setIsRunning(true);
-    
-    try {
-      const markup = 1.1;
-      
-      // Use the exact body format with normalized inputs
-      const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
-        body: { 
-          dry_run: dryRun, 
-          msrp_markup: markup,
-          force: false,
-          create_missing_brochures: true,
-          price_list_url: 'https://www.harrisboatworks.ca/mercurypricelist'
-        }
-      });
-
-      // Show what we sent for sanity
-      toast({
-        title: `${dryRun ? 'Dry Run' : 'Live Ingest'} Started`,
-        description: `Sent: dry_run=${dryRun}, markup=${markup}`,
-        duration: 2000
-      });
-
-      if (error) {
-        console.error('Edge function error:', error);
-        // Show detailed error with status and step
-        const errorBody = error.context || error;
-        setDryRunResult({
-          success: false,
-          rows_found_raw: 0,
-          rows_parsed: 0,
-          rows_parsed_total: 0,
-          rows_created: 0,
-          rows_updated: 0,
-          rows_rejected: 0,
-          rows_skipped_total: 0,
-          rows_skipped_by_reason: {},
-          top_skip_reasons: [],
-          sample_created: [],
-          sample_rejected: [],
-          error_detail: `Status ${error.status}: ${error.message}`,
-          response_body: errorBody
-        });
-        toast({
-          title: "Function Error",
-          description: `${error.status}: ${error.message}`,
-          variant: "destructive"
-        });
-        return;
-      }
-
-      // Handle function-returned errors (non-2xx responses)
-      if (!data || (!data.ok && !data.success)) {
-        console.error('Function returned error response:', data);
-        setDryRunResult({
-          success: false,
-          rows_found_raw: 0,
-          rows_parsed: 0,
-          rows_parsed_total: 0,
-          rows_created: 0,
-          rows_updated: 0,
-          rows_rejected: 0,
-          rows_skipped_total: 0,
-          rows_skipped_by_reason: {},
-          top_skip_reasons: [],
-          sample_created: [],
-          sample_rejected: [],
-          error_detail: `Step: ${data?.step || 'unknown'} - ${data?.error || 'Unknown error'}`,
-          response_body: data
-        });
-        toast({
-          title: "Function Error",
-          description: `${data?.step}: ${data?.error}`,
-          variant: "destructive"
-        });
-        return;
-      }
-
-      // Check for echo mismatch with robust validation
-      const echo = data.echo || {};
-      const mismatch = echo.dry_run !== dryRun || Math.abs((echo.msrp_markup || 1.1) - markup) > 0.01;
-      
-      if (mismatch) {
-        toast({
-          title: "Input normalization mismatch detected",
-          description: `Echo: dry_run=${echo.dry_run}, markup=${echo.msrp_markup}`,
-          variant: "destructive"
-        });
-      } else {
-        toast({
-          title: "Input validation passed",
-          description: `Echo: dry_run=${echo.dry_run}, markup=${echo.msrp_markup}`,
-          duration: 1500
-        });
-      }
-
-      // Map the new response format to our interface
-      const result: ParseResult = {
-        success: data.success || data.ok,
-        rows_found_raw: data.rows_found_raw || 0,
-        rows_parsed: data.rows_parsed || 0,
-        rows_parsed_total: data.rows_parsed || 0,
-        rows_created: data.rows_created || 0,
-        rows_updated: data.rows_updated || 0,
-        rows_rejected: data.rows_rejected || 0,
-        rows_failed: data.rows_failed || 0,
-        rows_skipped_total: data.rows_skipped_total || 0,
-        rows_skipped_by_reason: data.rows_skipped_by_reason || {},
-        top_skip_reasons: data.top_skip_reasons || [],
-        reject_reasons: data.reject_reasons || [],
-        sample_created: data.sample_created || [],
-        sample_skipped: data.sample_skipped || [],
-        html_saved_url: data.snapshot_url,
-        source_kind: 'pricelist'
-      };
-
-      // Show function's echoed values for debugging  
-      const echoInfo = data.echo ? `dry_run=${data.echo.dry_run}, msrp_markup=${data.echo.msrp_markup}` : 'No echo';
-      console.log('Function echo:', echoInfo);
-
-      // Check for zero counts warning and provide diagnostics
-      if (!dryRun && result.rows_parsed > 0 && result.rows_created === 0 && result.rows_updated === 0) {
-        toast({
-          title: "⚠️ No DB changes recorded",
-          description: `Parsed ${result.rows_parsed} records but wrote 0. Check function logs for write errors.`,
-          variant: "destructive"
-        });
-      }
-
-      if (dryRun) {
-        setDryRunResult(result);
+      if (isDryRun) {
+        setDryRunResults(result);
         toast({
           title: "Dry Run Complete",
-          description: `Found ${result.rows_found_raw} raw, parsed ${result.rows_parsed} → would create ${result.rows_created}, would update ${result.rows_updated}`
+          description: `Found ${result.raw_found} raw items, parsed ${result.parsed}. Would create ${result.would_create}, would update ${result.would_update}.`,
         });
       } else {
-        setIngestResult(result);
+        setIngestResults(result);
         toast({
-          title: "Ingest Complete", 
-          description: `Parsed ${result.rows_parsed} rows → Created ${result.rows_created}, Updated ${result.rows_updated} (${result.rows_failed || 0} failed)`,
-          variant: result.rows_created > 0 || result.rows_updated > 0 ? "default" : "destructive"
+          title: "Ingest Complete",
+          description: `Created ${result.rows_created} new records, updated ${result.rows_updated} existing records.`,
         });
-        // Reload summary after successful ingest
-        await loadBrochureSummary();
       }
-
+      
+      await loadBrochureSummary();
     } catch (error: any) {
-      console.error('Price list parser error:', error);
-      const errorResult: ParseResult = {
-        success: false,
-        rows_found_raw: 0,
-        rows_parsed: 0,
-        rows_parsed_total: 0,
-        rows_created: 0,
-        rows_updated: 0,
-        rows_rejected: 0,
-        rows_skipped_total: 0,
-        rows_skipped_by_reason: {},
-        top_skip_reasons: [],
-        error: error.message
-      };
-      
-      if (dryRun) {
-        setDryRunResult(errorResult);
-      } else {
-        setIngestResult(errorResult);
-      }
-      
+      console.error('Price list operation failed:', error);
       toast({
-        title: "Error",
-        description: error.message,
-        variant: "destructive"
+        title: "Operation Failed",
+        description: error.message || 'Unknown error occurred',
+        variant: "destructive",
       });
+      
+      if (isDryRun) {
+        setDryRunResults({ error: error.message, step: 'failed' });
+      } else {
+        setIngestResults({ error: error.message, step: 'failed' });
+      }
     } finally {
-      setIsRunning(false);
+      setRunning(false);
     }
   };
 
   const exportBrochureCsv = async () => {
     try {
-      setIsRunning(true);
+      setRunning(true);
       
-        // Get all brochure models with the required fields
-        const { data: models, error } = await supabase
-          .from('motor_models')
-          .select('model_display, model_number, mercury_model_no, model, model_key, family, horsepower, rigging_code, accessories_included, dealer_price, msrp, created_at')
-          .eq('is_brochure', true)
-          .eq('make', 'Mercury')
-          .order('created_at', { ascending: false });
+      const { data: models, error } = await supabase
+        .from('motor_models')
+        .select('model_display, model_number, mercury_model_no, model, model_key, family, horsepower, rigging_code, accessories_included, dealer_price, msrp, created_at')
+        .eq('is_brochure', true)
+        .eq('make', 'Mercury')
+        .order('created_at', { ascending: false });
 
-        if (error) {
-          throw new Error(error.message);
-        }
+      if (error) {
+        throw new Error(error.message);
+      }
 
-        if (!models || models.length === 0) {
-          throw new Error('No brochure models found to export');
-        }
+      if (!models || models.length === 0) {
+        throw new Error('No brochure models found to export');
+      }
 
-        // Log model numbers to help debug display issues
-        console.log('Export sample model numbers:', models.slice(0, 3).map(m => m.model_number));
-
-      // Convert to CSV
       const headers = ['model_display', 'model_number', 'mercury_model_no', 'model', 'model_key', 'family', 'horsepower', 'rigging_code', 'accessories_included', 'dealer_price', 'msrp', 'created_at'];
       const csvRows = [
         headers.join(','),
         ...models.map(row => 
           headers.map(header => {
             let value = row[header as keyof typeof row];
-            // Handle accessories_included array
             if (header === 'accessories_included' && Array.isArray(value)) {
               value = value.join('; ');
             }
-            // Handle null/undefined values
             if (value === null || value === undefined) {
               value = '';
             }
-            // Escape commas and quotes in CSV
             return `"${String(value).replace(/"/g, '""')}"`;
           }).join(',')
         )
       ];
 
       const csvContent = csvRows.join('\n');
-
-      // Create and download the CSV file
       const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -457,34 +214,66 @@ export default function AdminBrochureTest() {
         variant: "destructive"
       });
     } finally {
-      setIsRunning(false);
+      setRunning(false);
+    }
+  };
+
+  const handleCsvImport = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    try {
+      setRunning(true);
+      
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const { data, error } = await supabase.functions.invoke('bulk-upsert-brochure', {
+        body: formData
+      });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      toast({
+        title: "Import Complete",
+        description: `Successfully imported ${data?.rows_processed || 0} rows`
+      });
+
+      await loadBrochureSummary();
+    } catch (error: any) {
+      console.error('Import error:', error);
+      toast({
+        title: "Import Failed", 
+        description: error.message,
+        variant: "destructive"
+      });
+    } finally {
+      setRunning(false);
     }
   };
 
   const runSanityQueries = async () => {
     try {
-      setIsRunning(true);
+      setRunning(true);
       
-      // A) COUNT(*) FROM motor_models WHERE is_brochure = true
       const { count: totalCount } = await supabase
         .from('motor_models')
         .select('*', { count: 'exact', head: true })
         .eq('is_brochure', true);
 
-      // B) SELECT model_number, created_at FROM motor_models ORDER BY created_at DESC LIMIT 5  
       const { data: latestData } = await supabase
         .from('motor_models')
         .select('model_number, created_at')
         .order('created_at', { ascending: false })
         .limit(5);
 
-      setSanityResult({
+      setSanityResults({
         totalBrochureRows: totalCount || 0,
         latestRecords: latestData || [],
         executedAt: new Date().toLocaleString()
       });
-      
-      setShowSanityResults(true);
       
       toast({
         title: "Sanity Check Complete",
@@ -498,425 +287,330 @@ export default function AdminBrochureTest() {
         variant: "destructive"
       });
     } finally {
-      setIsRunning(false);
+      setRunning(false);
     }
   };
 
-  const handleCsvImport = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
+const ResultCard = ({ title, result, type }: { 
+  title: string; 
+  result: ParseResult | null; 
+  type: 'dry-run' | 'ingest' 
+}) => {
+  if (!result) return null;
 
-    try {
-      setIsRunning(true);
-      
-      // Read the CSV file
-      const csvContent = await file.text();
-      
-      // Call the bulk-upsert-brochure edge function
-      const { data, error } = await supabase.functions.invoke('bulk-upsert-brochure', {
-        body: { csv: csvContent }
-      });
+  const isSuccess = result.ok || result.success;
+  const isDryRun = type === 'dry-run';
 
-      if (error) {
-        throw new Error(error.message);
-      }
-
-      toast({
-        title: "Import Complete",
-        description: `Parsed ${data.rows_parsed} rows → Created ${data.rows_created}, Updated ${data.rows_updated}, Skipped ${data.rows_skipped}`,
-        variant: data.rows_created > 0 || data.rows_updated > 0 ? "default" : "destructive"
-      });
-
-      // Clear the file input and refresh summary
-      event.target.value = '';
-      await loadBrochureSummary();
-
-    } catch (error: any) {
-      console.error('Import error:', error);
-      toast({
-        title: "Import Failed",
-        description: error.message,
-        variant: "destructive"
-      });
-    } finally {
-      setIsRunning(false);
-    }
-  };
-
-  const ResultCard = ({ title, result, variant }: { title: string; result: ParseResult | null; variant: 'dry-run' | 'ingest' }) => (
-    <Card className="mb-6">
+  return (
+    <Card className="mt-4">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          {variant === 'dry-run' ? <FileText className="h-5 w-5" /> : <Play className="h-5 w-5" />}
+          {isSuccess ? (
+            <CheckCircle className="h-5 w-5 text-green-500" />
+          ) : (
+            <AlertCircle className="h-5 w-5 text-red-500" />
+          )}
           {title}
         </CardTitle>
-        <CardDescription>
-          {variant === 'dry-run' ? 'Preview parsing without writing to database' : 'Parse and write brochure models to database'}
-        </CardDescription>
       </CardHeader>
       <CardContent>
-        {result ? (
+        {isSuccess ? (
           <div className="space-y-4">
-            {result.success ? (
-              <>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">{result.rows_found_raw || result.rows_parsed_total || 0}</div>
-                    <div className="text-sm text-muted-foreground">Raw Found</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">{result.rows_parsed || 0}</div>
-                    <div className="text-sm text-muted-foreground">Parsed</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-green-600">{result.rows_created || 0}</div>
-                    <div className="text-sm text-muted-foreground">Created</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-orange-600">{result.rows_updated || 0}</div>
-                    <div className="text-sm text-muted-foreground">Updated</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-red-600">{result.rows_skipped_total || result.rows_rejected}</div>
-                    <div className="text-sm text-muted-foreground">Skipped</div>
-                  </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+              {result.raw_found !== undefined && (
+                <div>
+                  <div className="font-medium text-muted-foreground">Raw Found</div>
+                  <div className="text-lg font-bold">{result.raw_found}</div>
                 </div>
-
-                {result.html_saved_url && (
-                  <div className="flex items-center gap-2">
-                    <Badge variant="outline">{result.source_kind}</Badge>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => window.open(result.html_saved_url, '_blank')}
-                    >
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      View Saved HTML
-                    </Button>
-                  </div>
-                )}
-
-                {result.top_skip_reasons && result.top_skip_reasons.length > 0 && (
-                  <div className="mt-4">
-                    <h4 className="font-semibold text-sm mb-2">Top Skip Reasons:</h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      {result.top_skip_reasons.map((reason, idx) => (
-                        <li key={idx}>• {reason}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {result.reject_reasons && result.reject_reasons.length > 0 && (
-                  <div className="mt-4">
-                    <h4 className="font-semibold text-sm mb-2">Reject Reasons:</h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      {result.reject_reasons.slice(0, 5).map((reason, idx) => (
-                        <li key={idx}>• {reason}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {result.sample_created && result.sample_created.length > 0 && (
-                  <div className="mt-4">
-                    <h4 className="font-semibold text-sm mb-2">Sample Created (First 10):</h4>
-                    <div className="rounded-md border overflow-hidden">
-                      <Table>
-                        <TableHeader>
-                          <TableRow>
-                            <TableHead>Model Display</TableHead>
-                            <TableHead>Model Number</TableHead>
-                            <TableHead>Mercury Code</TableHead>
-                            <TableHead>Rigging Code</TableHead>
-                            <TableHead>Accessories</TableHead>
-                            <TableHead>HP</TableHead>
-                            <TableHead>Dealer Price</TableHead>
-                            <TableHead>MSRP</TableHead>
-                          </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                    {result.sample_created.map((item, idx) => {
-                      console.log('Dry run sample item:', item); // Debug log
-                      return (
-                        <TableRow key={idx}>
-                          <TableCell className="font-medium text-foreground">{item.model_display || item.model || '—'}</TableCell>
-                          <TableCell className="font-mono text-xs bg-emerald-500/10 text-emerald-700 border">
-                            {item.model_number || item.model_key || 'Empty'}
-                          </TableCell>
-                          <TableCell className="font-mono text-xs">{item.mercury_model_no || 'N/A'}</TableCell>
-                          <TableCell className="text-sm">{item.rigging_code || 'N/A'}</TableCell>
-                          <TableCell className="text-sm">
-                            {Array.isArray(item.accessories_included) && item.accessories_included.length > 0 
-                              ? item.accessories_included.join(', ')
-                              : 'None'
-                            }
-                          </TableCell>
-                          <TableCell>{item.horsepower}</TableCell>
-                          <TableCell>${item.dealer_price?.toLocaleString()}</TableCell>
-                          <TableCell>${item.msrp?.toLocaleString()}</TableCell>
-                        </TableRow>
-                      );
-                    })}
-                        </TableBody>
-                      </Table>
+              )}
+              {result.parsed !== undefined && (
+                <div>
+                  <div className="font-medium text-muted-foreground">Parsed</div>
+                  <div className="text-lg font-bold">{result.parsed}</div>
+                </div>
+              )}
+              {isDryRun ? (
+                <>
+                  {result.would_create !== undefined && (
+                    <div>
+                      <div className="font-medium text-muted-foreground">Would Create</div>
+                      <div className="text-lg font-bold text-green-600">{result.would_create}</div>
                     </div>
-                  </div>
-                )}
-
-                {result.sample_skipped && result.sample_skipped.length > 0 && (
-                  <div className="mt-4">
-                    <h4 className="font-semibold text-sm mb-2">Sample Skipped (First 10):</h4>
-                    <div className="rounded-md border overflow-hidden">
-                      <Table>
-                        <TableHeader>
-                          <TableRow>
-                            <TableHead>Line</TableHead>
-                            <TableHead>Reason</TableHead>
-                            <TableHead>Raw Model</TableHead>
-                            <TableHead>Model Key</TableHead>
-                            <TableHead>Price Raw</TableHead>
-                          </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                          {result.sample_skipped.map((item, idx) => (
-                            <TableRow key={idx}>
-                              <TableCell>{item.line}</TableCell>
-                              <TableCell>
-                                <Badge variant="destructive">{item.reason}</Badge>
-                              </TableCell>
-                              <TableCell className="font-medium">{item.raw_model}</TableCell>
-                              <TableCell className="font-mono text-xs">{item.model_key}</TableCell>
-                              <TableCell>{item.dealer_price_raw}</TableCell>
-                            </TableRow>
-                          ))}
-                        </TableBody>
-                      </Table>
+                  )}
+                  {result.would_update !== undefined && (
+                    <div>
+                      <div className="font-medium text-muted-foreground">Would Update</div>
+                      <div className="text-lg font-bold text-blue-600">{result.would_update}</div>
                     </div>
+                  )}
+                </>
+              ) : (
+                <>
+                  {result.rows_created !== undefined && (
+                    <div>
+                      <div className="font-medium text-muted-foreground">Created</div>
+                      <div className="text-lg font-bold text-green-600">{result.rows_created}</div>
+                    </div>
+                  )}
+                  {result.rows_updated !== undefined && (
+                    <div>
+                      <div className="font-medium text-muted-foreground">Updated</div>
+                      <div className="text-lg font-bold text-blue-600">{result.rows_updated}</div>
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+
+            {result.echo && (
+              <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-md text-sm">
+                <div className="font-medium text-blue-800 dark:text-blue-200 mb-1">Configuration Used:</div>
+                <div className="text-blue-700 dark:text-blue-300 space-y-1">
+                  <div>URL: {result.echo.price_list_url}</div>
+                  <div>MSRP Markup: {result.echo.msrp_markup}x</div>
+                  <div>Create Missing: {result.echo.create_missing_brochures ? 'Yes' : 'No'}</div>
+                </div>
+              </div>
+            )}
+
+            {result.message && (
+              <div className="p-3 bg-green-50 dark:bg-green-900/20 rounded-md text-sm text-green-800 dark:text-green-200">
+                {result.message}
+              </div>
+            )}
+
+            {result.sample_created && result.sample_created.length > 0 && (
+              <Collapsible>
+                <CollapsibleTrigger className="flex items-center gap-2 text-sm font-medium">
+                  View Sample Data ({result.sample_created.length} items) <ChevronDown className="h-4 w-4" />
+                </CollapsibleTrigger>
+                <CollapsibleContent className="mt-2">
+                  <div className="overflow-x-auto">
+                    <table className="min-w-full text-xs border border-border rounded">
+                      <thead>
+                        <tr className="bg-muted">
+                          <th className="p-2 text-left border-b">Model Number</th>
+                          <th className="p-2 text-left border-b">Display</th>
+                          <th className="p-2 text-left border-b">Dealer Price</th>
+                          <th className="p-2 text-left border-b">MSRP</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {result.sample_created.slice(0, 10).map((item, idx) => (
+                          <tr key={idx} className="border-b">
+                            <td className="p-2 font-mono">{item.model_number || 'N/A'}</td>
+                            <td className="p-2">{item.model_display || 'N/A'}</td>
+                            <td className="p-2">{item.dealer_price ? `$${item.dealer_price}` : 'N/A'}</td>
+                            <td className="p-2">{item.msrp ? `$${item.msrp}` : 'N/A'}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
-                )}
-              </>
-            ) : (
-              <div className="text-red-600">
-                <h4 className="font-semibold">Error:</h4>
-                <p>{result.error}</p>
+                </CollapsibleContent>
+              </Collapsible>
+            )}
+
+            {result.skip_reasons && Object.keys(result.skip_reasons).length > 0 && (
+              <div className="mt-4">
+                <h4 className="text-sm font-medium text-amber-600 mb-2">Skip Reasons:</h4>
+                <div className="text-xs space-y-1">
+                  {Object.entries(result.skip_reasons).map(([reason, count]) => (
+                    <div key={reason} className="flex justify-between">
+                      <span>{reason}</span>
+                      <Badge variant="outline" className="text-xs">{count}</Badge>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
           </div>
         ) : (
-          <p className="text-muted-foreground">No results yet. Click the button above to run.</p>
+          <div className="space-y-2">
+            <div className="text-red-600 font-medium">Operation Failed</div>
+            {result.step && (
+              <div className="text-sm text-muted-foreground">Step: {result.step}</div>
+            )}
+            {result.error && (
+              <div className="text-sm text-red-700 dark:text-red-300 bg-red-50 dark:bg-red-900/20 p-3 rounded-md">
+                {typeof result.error === 'string' ? result.error : JSON.stringify(result.error)}
+              </div>
+            )}
+          </div>
         )}
       </CardContent>
     </Card>
   );
+};
 
   return (
-    <div className="container mx-auto p-6 space-y-6">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-3xl font-bold">Brochure Test</h1>
-          <p className="text-muted-foreground">
-            Test the price list parser to create brochure models from https://www.harrisboatworks.ca/mercurypricelist
-          </p>
-        </div>
-        <div className="flex gap-2">
-          <Button
-            onClick={() => runPriceListParser(true)}
-            disabled={isRunning}
-            variant="outline"
-          >
-            <FileText className="h-4 w-4 mr-2" />
-            Dry Run Price List
-          </Button>
-          <Button
-            onClick={() => runPriceListParser(false)}
-            disabled={isRunning}
-          >
-            <Play className="h-4 w-4 mr-2" />
-            Ingest Price List
-          </Button>
-          <Button
-            onClick={runSanityQueries}
-            disabled={isRunning}
-            variant="secondary"
-          >
-            Run Sanity Queries
-          </Button>
-        </div>
-      </div>
+    <div className="container mx-auto py-6 space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <FileText className="h-6 w-6" />
+            Brochure Test & Management
+          </CardTitle>
+          <CardDescription>
+            Test and manage the Mercury brochure data pipeline. Run dry runs to preview changes or perform live ingests to update the database.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+            <Button
+              onClick={() => runPriceListParser(true, 1.1)}
+              disabled={running}
+              variant="outline"
+              className="flex items-center gap-2"
+            >
+              <Play className="h-4 w-4" />
+              Dry Run (1.1x)
+            </Button>
+            
+            <Button
+              onClick={() => runPriceListParser(false, 1.1)}
+              disabled={running}
+              className="flex items-center gap-2"
+            >
+              <Play className="h-4 w-4" />
+              Live Ingest (1.1x)
+            </Button>
 
-      {/* Mercury Codes Test Section */}
-      <div className="bg-secondary/10 p-4 rounded-lg">
-        <h3 className="font-medium mb-3 flex items-center gap-2">
-          🧪 Test Mercury Codes Parser
-          <Button
-            onClick={() => {
-              // Import and run test
-              import('../lib/mercury-codes-test').then(({ runMercuryCodesTests }) => {
-                const passed = runMercuryCodesTests();
-                setTestResult(passed ? "✅ All tests passed!" : "❌ Some tests failed - check console");
-              }).catch(err => {
-                console.error('Failed to load tests:', err);
-                setTestResult("❌ Failed to load test module");
-              });
-            }}
-            variant="outline"
-            size="sm"
-            disabled={isRunning}
-          >
-            Run Tests
-          </Button>
-        </h3>
-        {testResult && (
-          <div className={`text-sm p-2 rounded ${testResult.includes('✅') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
-            {testResult}
+            <Button
+              onClick={runSanityQueries}
+              disabled={running}
+              variant="secondary"
+              className="flex items-center gap-2"
+            >
+              <FileText className="h-4 w-4" />
+              Sanity Check
+            </Button>
+
+            <Button
+              onClick={exportBrochureCsv}
+              disabled={running}
+              variant="outline"
+              className="flex items-center gap-2"
+            >
+              <Download className="h-4 w-4" />
+              Export CSV
+            </Button>
           </div>
-        )}
-      </div>
+
+          <div className="flex items-center gap-4">
+            <label className="flex items-center gap-2 cursor-pointer">
+              <Upload className="h-4 w-4" />
+              Import CSV
+              <input
+                type="file"
+                accept=".csv"
+                onChange={handleCsvImport}
+                className="hidden"
+              />
+            </label>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Current Brochure Summary */}
       {summary && (
         <Card>
           <CardHeader>
             <CardTitle>Current Brochure Summary</CardTitle>
-            <CardDescription>Overview of existing brochure models in database</CardDescription>
+            <CardDescription>Overview of brochure models in the database</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">{summary.total_brochure_count}</div>
+                <div className="text-2xl font-bold text-primary">{summary.total_brochure_count}</div>
                 <div className="text-sm text-muted-foreground">Total Brochure Models</div>
               </div>
-              
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue-600">{summary.families.length}</div>
+                <div className="text-sm text-muted-foreground">Motor Families</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-green-600">{summary.latest_samples.length}</div>
+                <div className="text-sm text-muted-foreground">Latest Samples</div>
+              </div>
+            </div>
+
+            <div className="space-y-4">
               <div>
-                <h4 className="font-semibold mb-2">Families:</h4>
-                <div className="space-y-1">
+                <h4 className="font-semibold text-sm mb-2">Family Breakdown:</h4>
+                <div className="flex flex-wrap gap-2">
                   {summary.families.map(({ family, count }) => (
-                    <div key={family} className="flex justify-between items-center">
-                      <Badge variant="outline">{family}</Badge>
-                      <span className="text-sm font-medium">{count}</span>
-                    </div>
+                    <Badge key={family} variant="secondary">
+                      {family}: {count}
+                    </Badge>
                   ))}
                 </div>
               </div>
 
-              <div className="flex flex-col gap-2">
-                <Button
-                  onClick={loadBrochureSummary}
-                  variant="outline"
-                  size="sm"
-                  disabled={isRunning}
-                >
-                  Refresh Summary
-                </Button>
-                <Button
-                  onClick={exportBrochureCsv}
-                  variant="outline"
-                  size="sm"
-                  disabled={isRunning || summary.total_brochure_count === 0}
-                >
-                  <Download className="h-4 w-4 mr-2" />
-                  Export CSV
-                </Button>
-                <Button
-                  onClick={() => document.getElementById('csv-file-input')?.click()}
-                  variant="outline"
-                  size="sm"
-                  disabled={isRunning}
-                >
-                  <Upload className="h-4 w-4 mr-2" />
-                  Import CSV
-                </Button>
-                <input
-                  id="csv-file-input"
-                  type="file"
-                  accept=".csv"
-                  onChange={handleCsvImport}
-                  style={{ display: 'none' }}
-                />
-              </div>
-            </div>
-
-            {summary.latest_samples.length > 0 && (
-              <div className="mt-6">
-                <h4 className="font-semibold mb-2">Latest 10 Brochure Models:</h4>
-                <div className="rounded-md border overflow-hidden">
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Latest 10 Samples:</h4>
+                <div className="overflow-x-auto">
                   <Table>
                     <TableHeader>
                       <TableRow>
                         <TableHead>Model Display</TableHead>
                         <TableHead>Model Number</TableHead>
-                        <TableHead>Mercury Code</TableHead>
-                        <TableHead>Model Key</TableHead>
+                        <TableHead>Family</TableHead>
+                        <TableHead>HP</TableHead>
                         <TableHead>Dealer Price</TableHead>
                         <TableHead>MSRP</TableHead>
-                        <TableHead>Created</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {summary.latest_samples.map((sample, idx) => (
-                        <TableRow key={sample.id || idx}>
-                          <TableCell className="font-medium text-foreground">{sample.model_display || sample.model || '—'}</TableCell>
-                          <TableCell className="font-mono text-xs bg-blue-500/10 text-blue-700 border">
-                            {sample.model_number || 'Empty'}
-                          </TableCell>
-                          <TableCell className="font-mono text-xs">{sample.mercury_model_no || 'N/A'}</TableCell>
-                          <TableCell className="font-mono text-xs">{sample.model_key || 'N/A'}</TableCell>
-                          <TableCell>${(sample.dealer_price || 0).toLocaleString()}</TableCell>
-                          <TableCell>${(sample.msrp || 0).toLocaleString()}</TableCell>
-                          <TableCell>{new Date(sample.created_at).toLocaleDateString()}</TableCell>
+                      {summary.latest_samples.map((sample) => (
+                        <TableRow key={sample.id}>
+                          <TableCell className="font-medium">{sample.model_display || sample.model}</TableCell>
+                          <TableCell className="font-mono text-xs">{sample.model_number || 'N/A'}</TableCell>
+                          <TableCell>{sample.family || 'N/A'}</TableCell>
+                          <TableCell>{sample.horsepower || 'N/A'}</TableCell>
+                          <TableCell>${sample.dealer_price?.toLocaleString()}</TableCell>
+                          <TableCell>${sample.msrp?.toLocaleString()}</TableCell>
                         </TableRow>
                       ))}
                     </TableBody>
                   </Table>
                 </div>
               </div>
-            )}
+            </div>
           </CardContent>
         </Card>
       )}
 
       {/* Results */}
-      <ResultCard title="Dry Run Results" result={dryRunResult} variant="dry-run" />
-      <ResultCard title="Ingest Results" result={ingestResult} variant="ingest" />
-      
+      <ResultCard title="Dry Run Results" result={dryRunResults} type="dry-run" />
+      <ResultCard title="Ingest Results" result={ingestResults} type="ingest" />
+
       {/* Sanity Check Results */}
-      {showSanityResults && sanityResult && (
+      {sanityResults && (
         <Card>
           <CardHeader>
             <CardTitle>Sanity Check Results</CardTitle>
-            <CardDescription>Database diagnostic queries executed at {sanityResult.executedAt}</CardDescription>
+            <CardDescription>Database validation queries</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-4">
-                <div className="text-center p-4 border rounded">
-                  <div className="text-3xl font-bold text-primary">{sanityResult.totalBrochureRows}</div>
-                  <div className="text-sm text-muted-foreground">Total Brochure Models (≈ 130 expected)</div>
-                </div>
+            <div className="space-y-4">
+              <div>
+                <div className="text-lg font-bold">Total Brochure Rows: {sanityResults.totalBrochureRows}</div>
+                <div className="text-sm text-muted-foreground">Executed at: {sanityResults.executedAt}</div>
               </div>
               
-              <div>
-                <h4 className="font-semibold mb-2">Latest Records (ORDER BY created_at DESC LIMIT 5):</h4>
-                <div className="rounded-md border overflow-hidden">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>Model Number</TableHead>
-                        <TableHead>Created At</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {sanityResult.latestRecords.map((item: any, idx: number) => (
-                        <TableRow key={idx}>
-                          <TableCell className="font-mono text-xs text-foreground">{item.model_number || 'N/A'}</TableCell>
-                          <TableCell>{new Date(item.created_at).toLocaleString()}</TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
+              {sanityResults.latestRecords?.length > 0 && (
+                <div>
+                  <h4 className="font-semibold text-sm mb-2">Latest 5 Records:</h4>
+                  <div className="space-y-1 text-sm font-mono">
+                    {sanityResults.latestRecords.map((record: any, idx: number) => (
+                      <div key={idx}>
+                        {record.model_number} - {new Date(record.created_at).toLocaleString()}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </CardContent>
         </Card>
