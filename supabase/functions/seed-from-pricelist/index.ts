@@ -11,13 +11,55 @@ function ok(payload: Record<string, unknown>) {
   return new Response(JSON.stringify(payload), { status: 200, headers: corsHeaders });
 }
 
-function fail(step: string, err: unknown, extra: Record<string, unknown> = {}) {
+function fail(status: number, step: string, err: unknown, extra: Record<string, unknown> = {}) {
   const msg = (err && (err as any).message) ? (err as any).message : String(err);
   const stack = (err && (err as any).stack) ? (err as any).stack : undefined;
-  return new Response(JSON.stringify({ success: false, step, error: msg, stack, ...extra }), {
-    status: 200,
+  console.error(`[PriceList] Failed at ${step}:`, err);
+  return new Response(JSON.stringify({ 
+    ok: false,
+    success: false, 
+    step, 
+    error: msg, 
+    stack, 
+    details: { ...extra, error_type: err?.constructor?.name }
+  }), {
+    status,
     headers: corsHeaders
   });
+}
+
+function parseBool(v: any, def = false) {
+  if (typeof v === 'boolean') return v;
+  if (typeof v === 'string') {
+    const s = v.trim().toLowerCase();
+    if (s === 'true' || s === '1' || s === 'yes' ) return true;
+    if (s === 'false'|| s === '0' || s === 'no'  ) return false;
+  }
+  return def;
+}
+
+function parseNumber(v: any, def = 0) {
+  if (typeof v === 'number' && Number.isFinite(v)) return v;
+  if (typeof v === 'string' && v.trim() !== '' && !isNaN(Number(v))) return Number(v);
+  return def;
+}
+
+function normalizeInputs(body: any) {
+  return {
+    dry_run: parseBool(body?.dry_run, false),   // **default false for ingest**
+    msrp_markup: parseNumber(body?.msrp_markup, 1), // default 1.0 (no change)
+    force: parseBool(body?.force, false),
+    create_missing_brochures: parseBool(body?.create_missing_brochures, true),
+    price_list_url: String(body?.price_list_url || '').trim(),
+  };
+}
+
+function chunk<T>(array: T[], size: number): T[][] {
+  const result = [];
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
+  }
+  return result;
 }
 
 Deno.serve(async (req) => {
@@ -37,21 +79,13 @@ Deno.serve(async (req) => {
       try { raw = await req.json(); } catch { raw = {}; }
     }
 
-    // Normalize inputs (NEVER crash here)
-    const dry_run =
-      typeof raw.dry_run === 'string'
-        ? !['false', '0', 'no'].includes(raw.dry_run.trim().toLowerCase())
-        : (raw.dry_run === undefined ? true : !!raw.dry_run);
+    // Normalize inputs with robust helpers
+    const normalizedInputs = normalizeInputs(raw);
+    const { dry_run, msrp_markup, force, create_missing_brochures, price_list_url } = normalizedInputs;
+    
+    console.log(`[PriceList] Normalized inputs:`, normalizedInputs);
 
-    const msrp_markup =
-      Number.isFinite(Number(raw.msrp_markup)) && Number(raw.msrp_markup) > 0
-        ? Number(raw.msrp_markup)
-        : 1.1;
-
-    // Echo what we'll use (helps catch UI/body mismatches)
-    const echo = { dry_run, msrp_markup };
-
-    // Supabase client
+    // Supabase client (use service role for RLS-safe writes)
     const supabase = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
@@ -59,10 +93,44 @@ Deno.serve(async (req) => {
 
     // Quick smoke test (optional)
     if (raw && raw.quick === true) {
-      return ok({ success: true, step: 'quick', echo });
+      return ok({ success: true, step: 'quick', echo: normalizedInputs });
     }
 
-    console.log(`[PriceList] Resolved flags: dry_run=${dry_run}, msrp_markup=${msrp_markup}`);
+    console.log(`[PriceList] Starting process: dry_run=${dry_run}, msrp_markup=${msrp_markup}`);
+    
+    try {
+      let currentStep = 'init';
+      let debugInfo = {
+        rows_found: 0,
+        rows_parsed: 0,
+        rowErrors: [],
+        first_bad_row: null,
+        samples: []
+      };
+
+      const priceListUrl = price_list_url || raw.url?.trim() || 'https://www.harrisboatworks.ca/mercurypricelist';
+      
+      console.log(`[PriceList] Starting seed process: dry_run=${dry_run}, msrp_markup=${msrp_markup}, url=${priceListUrl}`);
+      
+      // Step 1: Fetch from URL
+      currentStep = 'fetch';
+      console.log(`[PriceList] Fetching from URL: ${priceListUrl}`);
+      
+      const response = await fetch(priceListUrl);
+      if (!response.ok) {
+        return fail(response.status, 'fetch', `HTTP ${response.status}: ${response.statusText}`, { url: priceListUrl });
+      }
+      
+      const html = await response.text();
+      
+      // Create a simple checksum for content
+      const contentChecksum = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(html));
+      const checksumHex = Array.from(new Uint8Array(contentChecksum))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('')
+        .substring(0, 8);
+      
+      console.log(`[PriceList] Content checksum: ${checksumHex}...`);
     
     try {
       let currentStep = 'init';
@@ -254,46 +322,111 @@ Deno.serve(async (req) => {
       
       console.log(`[PriceList] Pre-validation: ${validMotors.length} valid, ${rowErrors.length} rejected`);
       
-      // Step 4A: Two-phase approach - query existing brochure model_numbers
+      // Step 4A: Query existing brochure model_numbers to determine create vs update
       currentStep = 'detect_existing';
       const incomingNumbers = validMotors.map(m => m.model_number).filter(Boolean);
-      console.log(`[PriceList] Querying existing brochure model_numbers...`);
+      console.log(`[PriceList] Querying existing brochure model_numbers for ${incomingNumbers.length} incoming records...`);
       
       const { data: existingRecords, error: queryError } = await supabase
         .from('motor_models')
         .select('model_number')
-        .eq('is_brochure', true)
-        .in('model_number', incomingNumbers);
+        .eq('is_brochure', true);
         
       if (queryError) {
-        console.log(`[PriceList] Error querying existing records: ${queryError.message}`);
-        throw new Error(`Failed to query existing records: ${queryError.message}`);
+        console.error(`[PriceList] Error querying existing records: ${queryError.message}`);
+        return fail(500, 'read_existing', queryError, { tried_to_query: incomingNumbers.length });
       }
       
-      const existingNumbers = new Set(existingRecords?.map(r => r.model_number) || []);
+      const existingNumbers = new Set((existingRecords || []).map(r => (r.model_number || '').toLowerCase()));
+      console.log(`[PriceList] Found ${existingNumbers.size} existing brochure model_numbers in DB`);
       
       // Split into create vs update arrays
-      const to_create = validMotors.filter(m => !existingNumbers.has(m.model_number));
-      const to_update = validMotors.filter(m => existingNumbers.has(m.model_number));
+      const toInsert: any[] = [];
+      const toUpdate: any[] = [];
       
-      console.log(`[PriceList] Phase split: ${to_create.length} to create, ${to_update.length} to update`);
+      for (const motor of validMotors) {
+        // Build required brochure record with all fields
+        const record = {
+          is_brochure: true,
+          availability: 'Brochure',
+          make: 'Mercury',
+          model: motor.model || motor.family || 'Outboard',
+          year: 2025,
+          model_number: motor.model_number,       // e.g. "1F02201KK"
+          model_key: motor.model_key,             // existing logic
+          mercury_model_no: motor.mercury_model_no, // parsed like "25MH", "90ELPT"
+          model_display: motor.model_display,     // human title
+          dealer_price: motor.dealer_price,       // numeric
+          base_price: motor.dealer_price,
+          sale_price: motor.dealer_price,
+          msrp: Math.round((motor.dealer_price || 0) * msrp_markup * 100) / 100,
+          
+          // Copy all other fields from original motor
+          family: motor.family,
+          horsepower: motor.horsepower,
+          fuel_type: motor.fuel_type,
+          shaft: motor.shaft,
+          control: motor.control,
+          rigging_code: motor.rigging_code,
+          engine_type: motor.engine_type,
+          accessories_included: motor.accessories_included,
+          accessory_notes: motor.accessory_notes,
+          features: motor.features,
+          specifications: motor.specifications,
+          price_source: motor.price_source,
+          msrp_source: motor.msrp_source,
+          msrp_calc_source: motor.msrp_calc_source,
+          in_stock: motor.in_stock,
+          stock_quantity: motor.stock_quantity,
+          stock_number: motor.stock_number,
+          image_url: motor.image_url,
+          images: motor.images,
+          hero_image_url: motor.hero_image_url,
+          detail_url: motor.detail_url,
+          spec_sheet_file_id: motor.spec_sheet_file_id,
+          last_scraped: motor.last_scraped,
+          data_sources: motor.data_sources,
+          updated_at: new Date().toISOString()
+        };
+
+        // Skip if no model_number
+        if (!record.model_number) continue;
+
+        if (existingNumbers.has(record.model_number.toLowerCase())) {
+          toUpdate.push(record);
+        } else {
+          toInsert.push(record);
+        }
+      }
+      
+      console.log(`[PriceList] Phase split: ${toInsert.length} to create, ${toUpdate.length} to update`);
       
       if (dry_run) {
         console.log(`[PriceList] Dry run complete - no database changes made`);
         return ok({
           success: true,
           step: 'dry_run_complete',
-          dry_run: true,
           rows_found_raw: rawRows.length,
           rows_parsed: normalizedMotors.length,
-          rows_created: to_create.length, // Accurate would-create count
-          rows_updated: to_update.length, // Accurate would-update count
-          sample_created: debugInfo.samples,
+          rows_created: toInsert.length, // Accurate would-create count
+          rows_updated: toUpdate.length, // Accurate would-update count
+          sample_created: toInsert.slice(0, 3).map(m => ({
+            model_number: m.model_number,
+            model_display: m.model_display,
+            dealer_price: m.dealer_price,
+            msrp: m.msrp
+          })),
+          sample_updated: toUpdate.slice(0, 3).map(m => ({
+            model_number: m.model_number,
+            model_display: m.model_display,
+            dealer_price: m.dealer_price,
+            msrp: m.msrp
+          })),
           rows_skipped_by_reason: Object.fromEntries(allSkipReasons),
           top_skip_reasons: Array.from(allSkipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
           rowErrors: debugInfo.rowErrors,
           snapshot_url: `View Saved HTML: ${jsonPath}`,
-          echo
+          echo: normalizedInputs
         });
       }
       
@@ -301,116 +434,108 @@ Deno.serve(async (req) => {
       currentStep = 'upsert';
       console.log(`[PriceList] Executing database writes...`);
       
-      let totalCreated = 0, totalUpdated = 0;
-      const batchErrors: Array<{phase: string, batchNum: number, error: string}> = [];
+      let rows_created = 0;
+      let rows_updated = 0;
       
       // Phase B1: Insert new records
-      if (to_create.length > 0) {
-        console.log(`[PriceList] Inserting ${to_create.length} new brochure records...`);
+      if (toInsert.length > 0) {
+        console.log(`[PriceList] Inserting ${toInsert.length} new brochure records...`);
         
-        for (let i = 0; i < to_create.length; i += 50) {
-          const batch = to_create.slice(i, i + 50);
-          const batchNum = Math.floor(i/50) + 1;
-          
-          try {
-            const { data, error } = await supabase
-              .from('motor_models')
-              .insert(batch)
-              .select('id');
-              
-            if (error) {
-              console.log(`[Insert] B${batchNum}: ERROR - ${error.message}`);
-              batchErrors.push({phase: 'insert', batchNum, error: error.message});
-              continue;
-            }
-            
-            const insertedCount = data?.length || 0;
-            totalCreated += insertedCount;
-            console.log(`[Insert] B${batchNum}: inserted ${insertedCount} records`);
-            
-          } catch (err: any) {
-            console.log(`[Insert] B${batchNum}: EXCEPTION - ${err.message}`);
-            batchErrors.push({phase: 'insert', batchNum, error: err.message});
-          }
+        const { error: insErr, count: insCount } = await supabase
+          .from('motor_models')
+          .insert(toInsert, { count: 'exact' });  // service client; RLS off
+        
+        if (insErr) {
+          console.error(`[PriceList] Insert error: ${insErr.message}`);
+          return fail(500, 'insert_brochures', insErr, { tried: toInsert.length });
         }
+        
+        rows_created = insCount ?? toInsert.length; // fall back if count missing
+        console.log(`[PriceList] Insert phase complete: ${rows_created} records created`);
       }
       
-      // Phase B2: Update existing records  
-      if (to_update.length > 0) {
-        console.log(`[PriceList] Updating ${to_update.length} existing brochure records...`);
+      // Phase B2: Update existing records by model_number
+      if (toUpdate.length > 0) {
+        console.log(`[PriceList] Updating ${toUpdate.length} existing brochure records...`);
         
-        for (let i = 0; i < to_update.length; i += 50) {
-          const batch = to_update.slice(i, i + 50);
-          const batchNum = Math.floor(i/50) + 1;
-          
-          try {
-            const { data, error } = await supabase
+        for (const batch of chunk(toUpdate, 50)) {
+          for (const rec of batch) {
+            const { error: updErr, data } = await supabase
               .from('motor_models')
-              .upsert(batch, {
-                onConflict: 'model_number',
-                ignoreDuplicates: false
+              .update({
+                availability: rec.availability,
+                make: rec.make,
+                model: rec.model,
+                year: rec.year,
+                model_key: rec.model_key,
+                mercury_model_no: rec.mercury_model_no,
+                model_display: rec.model_display,
+                dealer_price: rec.dealer_price,
+                base_price: rec.base_price,
+                sale_price: rec.sale_price,
+                msrp: rec.msrp,
+                family: rec.family,
+                horsepower: rec.horsepower,
+                fuel_type: rec.fuel_type,
+                rigging_code: rec.rigging_code,
+                accessories_included: rec.accessories_included,
+                price_source: rec.price_source,
+                msrp_source: rec.msrp_source,
+                msrp_calc_source: rec.msrp_calc_source,
+                last_scraped: rec.last_scraped,
+                data_sources: rec.data_sources,
+                updated_at: rec.updated_at
               })
-              .select('id');
+              .eq('is_brochure', true)
+              .eq('model_number', rec.model_number)
+              .select('id'); // returns rows updated
               
-            if (error) {
-              console.log(`[Update] B${batchNum}: ERROR - ${error.message}`);
-              batchErrors.push({phase: 'update', batchNum, error: error.message});
-              continue;
+            if (updErr) {
+              console.error(`[PriceList] Update error for ${rec.model_number}: ${updErr.message}`);
+              return fail(500, 'update_brochures', updErr, { model_number: rec.model_number });
             }
             
-            const updatedCount = data?.length || 0;
-            totalUpdated += updatedCount;
-            console.log(`[Update] B${batchNum}: updated ${updatedCount} records`);
-            
-          } catch (err: any) {
-            console.log(`[Update] B${batchNum}: EXCEPTION - ${err.message}`);
-            batchErrors.push({phase: 'update', batchNum, error: err.message});
+            rows_updated += (data?.length ?? 0);
           }
         }
+        console.log(`[PriceList] Update phase complete: ${rows_updated} records updated`);
       }
       
-      console.log(`[PriceList] Database writes complete: ${totalCreated} created, ${totalUpdated} updated, ${batchErrors.length} batch errors`);
-      
-      // Log sample payload for debugging
-      if (validMotors.length >= 2) {
-        console.log(`[PriceList] Sample batch payload (first 2 rows):`, JSON.stringify(validMotors.slice(0, 2), null, 2));
-      }
+      console.log(`[PriceList] Database writes complete: ${rows_created} created, ${rows_updated} updated`);
       
       // Return final results with proper structure
       return ok({
         success: true,
         step: 'ingest_complete',
-        dry_run: false,
         rows_found_raw: rawRows.length,
         rows_parsed: normalizedMotors.length,
-        rows_created: totalCreated,
-        rows_updated: totalUpdated,
-        rows_failed: batchErrors.length,
-        sample_created: to_create.slice(0, 3).map(m => ({
+        rows_created,
+        rows_updated,
+        sample_created: toInsert.slice(0, 3).map(m => ({
           model_number: m.model_number,
           model_display: m.model_display,
           dealer_price: m.dealer_price,
           msrp: m.msrp
         })),
-        sample_updated: to_update.slice(0, 3).map(m => ({
+        sample_updated: toUpdate.slice(0, 3).map(m => ({
           model_number: m.model_number,
           model_display: m.model_display,
           dealer_price: m.dealer_price,
           msrp: m.msrp
         })),
-        batch_errors: batchErrors,
         rows_skipped_by_reason: Object.fromEntries(allSkipReasons),
         top_skip_reasons: Array.from(allSkipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
         snapshot_url: `View Saved HTML: ${jsonPath}`,
-        echo
+        echo: normalizedInputs
       });
-      
     } catch (innerErr) {
-      return fail('normalize_or_ingest', innerErr, { echo });
+      console.error(`[PriceList] Inner error:`, innerErr);
+      return fail(500, 'normalize_or_ingest', innerErr, { echo: normalizedInputs });
     }
 
   } catch (bootErr) {
-    return fail('boot', bootErr);
+    console.error(`[PriceList] Boot error:`, bootErr);
+    return fail(500, 'boot', bootErr);
   }
 });
 

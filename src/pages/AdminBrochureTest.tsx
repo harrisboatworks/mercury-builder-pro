@@ -204,12 +204,16 @@ export default function AdminBrochureTest() {
     setIsRunning(true);
     
     try {
-      await runPricelist(dryRun, '1.1');
-      const markup = Number(1.1);
+      const markup = 1.1;
       
-      // Use the exact body format requested
+      // Use the exact body format with normalized inputs
       const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
-        body: { dry_run: dryRun, msrp_markup: markup }
+        body: { 
+          dry_run: dryRun, 
+          msrp_markup: markup,
+          force: false,
+          create_missing_brochures: true
+        }
       });
 
       // Show what we sent for sanity
@@ -224,20 +228,20 @@ export default function AdminBrochureTest() {
         throw new Error(`${error.status}: ${error.message}`);
       }
 
-      // Check for echo mismatch
+      // Check for echo mismatch with robust validation
       const echo = data.echo || {};
-      const mismatch = echo.dry_run !== dryRun || echo.markup !== markup;
+      const mismatch = echo.dry_run !== dryRun || Math.abs((echo.msrp_markup || 1.1) - markup) > 0.01;
       
       if (mismatch) {
         toast({
-          title: "Global dry-run override detected (UI/param leak)",
-          description: `Echo: dry_run=${echo.dry_run}, markup=${echo.markup}`,
+          title: "Input normalization mismatch detected",
+          description: `Echo: dry_run=${echo.dry_run}, markup=${echo.msrp_markup}`,
           variant: "destructive"
         });
       } else {
         toast({
-          title: "Echo Validation Passed",
-          description: `Echo: dry_run=${echo.dry_run}, markup=${echo.markup}`,
+          title: "Input validation passed",
+          description: `Echo: dry_run=${echo.dry_run}, markup=${echo.msrp_markup}`,
           duration: 1500
         });
       }
@@ -246,29 +250,30 @@ export default function AdminBrochureTest() {
         success: data.success,
         rows_found_raw: data.rows_found_raw || 0,
         rows_parsed: data.rows_parsed || 0,
-        rows_parsed_total: data.rows_parsed_total || 0,
+        rows_parsed_total: data.rows_parsed || 0,
         rows_created: data.rows_created || 0,
         rows_updated: data.rows_updated || 0,
         rows_rejected: data.rows_rejected || 0,
+        rows_failed: data.rows_failed || 0,
         rows_skipped_total: data.rows_skipped_total || 0,
         rows_skipped_by_reason: data.rows_skipped_by_reason || {},
         top_skip_reasons: data.top_skip_reasons || [],
         reject_reasons: data.reject_reasons || [],
-        sample_created: data.sample_created || data.sample_models || [],
+        sample_created: data.sample_created || [],
         sample_skipped: data.sample_skipped || [],
-        html_saved_url: data.artifacts?.html_url,
-        source_kind: data.source_kind
+        html_saved_url: data.snapshot_url,
+        source_kind: 'pricelist'
       };
 
-      // Show function's echoed values  
+      // Show function's echoed values for debugging  
       const echoInfo = data.echo ? `dry_run=${data.echo.dry_run}, msrp_markup=${data.echo.msrp_markup}` : 'No echo';
       console.log('Function echo:', echoInfo);
 
-      // Check for zero counts warning
+      // Check for zero counts warning and provide diagnostics
       if (!dryRun && result.rows_parsed > 0 && result.rows_created === 0 && result.rows_updated === 0) {
         toast({
           title: "⚠️ No DB changes recorded",
-          description: "Parsed records but wrote 0. Check SQL sanity queries to verify data integrity.",
+          description: `Parsed ${result.rows_parsed} records but wrote 0. Check function logs for write errors.`,
           variant: "destructive"
         });
       }
@@ -277,7 +282,7 @@ export default function AdminBrochureTest() {
         setDryRunResult(result);
         toast({
           title: "Dry Run Complete",
-          description: `Found ${result.rows_found_raw} raw, parsed ${result.rows_parsed} → would create ${result.rows_created}, update ${result.rows_updated}`
+          description: `Found ${result.rows_found_raw} raw, parsed ${result.rows_parsed} → would create ${result.rows_created}, would update ${result.rows_updated}`
         });
       } else {
         setIngestResult(result);
