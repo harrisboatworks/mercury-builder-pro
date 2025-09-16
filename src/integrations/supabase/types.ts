@@ -1191,7 +1191,7 @@ export type Database = {
         Returns: undefined
       }
       update_brochure_models_bulk: {
-        Args: { p_fields: Json[]; p_model_numbers: string[] } | { p_rows: Json }
+        Args: { p_rows: Json }
         Returns: number
       }
       validate_customer_data_ownership: {
