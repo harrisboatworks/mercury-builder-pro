@@ -332,6 +332,28 @@ serve(async (req) => {
 
     console.log(`📊 Built stock map with ${stockMap.size} unique models`);
 
+    // Helper function for fallback HP extraction from original title
+    function extractHpFromOriginal(originalTitle: string): number | null {
+      // Try more aggressive patterns on the original title
+      const patterns = [
+        /Mercury\s+(\d+(?:\.\d+)?)\s+[A-Z]/i,  // "Mercury 9.9 EH"
+        /Mercury\s+FourStroke\s+(\d+(?:\.\d+)?)HP/i, // "Mercury FourStroke 25HP"
+        /Mercury\s+(\d+(?:\.\d+)?)\s+[A-Z]/i,  // "Mercury 115 L"
+        /(\d+(?:\.\d+)?)\s+[A-Z][A-Z]/,       // "9.9 EH", "115 ELPT"
+      ];
+      
+      for (const pattern of patterns) {
+        const match = originalTitle.match(pattern);
+        if (match) {
+          const hpValue = parseFloat(match[1]);
+          if (hpValue > 0 && hpValue <= 1000) {
+            return hpValue;
+          }
+        }
+      }
+      return null;
+    }
+
     // Enhanced title normalization functions
     function normalizeXmlTitle(title: string): { normalized: string, hp: number | null, codes: string[] } {
       // Remove year, brand, common words
@@ -345,12 +367,13 @@ serve(async (req) => {
 
       // Enhanced HP extraction using multiple patterns
       const hpPatterns = [
-        /(\d+(?:\.\d+)?)\s*hp\b/i,     // "25hp", "25 hp", "9.9 hp"
-        /(\d+(?:\.\d+)?)\s*HP\b/,      // "25HP", "25 HP", "9.9 HP"
-        /(\d+(?:\.\d+)?)hp\b/i,        // "25hp", "9.9hp" (no space)
+        /^(\d+(?:\.\d+)?)\s+[A-Z]/,       // "9.9 EH", "115 L", "25 ELPT" - number at start followed by space and letters
+        /(\d+(?:\.\d+)?)\s*hp\b/i,        // "25hp", "25 hp", "9.9 hp"
+        /(\d+(?:\.\d+)?)\s*HP\b/,         // "25HP", "25 HP", "9.9 HP" 
+        /(\d+(?:\.\d+)?)hp\b/i,           // "25hp", "9.9hp" (no space)
         /\b(\d+(?:\.\d+)?)\s*horsepower\b/i, // "25 horsepower", "9.9 horsepower"
-        /(\d+(?:\.\d+)?)\s+[A-Z]/,     // "9.9 EH", "115 ELPT", "25 EH"
-        /^(\d+(?:\.\d+)?)\s/           // number at start "9.9 EH", "115 L"
+        /FS\s+(\d+(?:\.\d+)?)HP/i,        // "FS 25HP EFI"
+        /ProXS\s+(\d+(?:\.\d+)?)HP/i      // "ProXS 115HP"
       ];
       
       let hp = null;
@@ -381,14 +404,15 @@ serve(async (req) => {
         .replace(/\s+/g, ' ')
         .trim();
 
-      // Enhanced HP extraction using multiple patterns (same as XML normalization)
+      // Enhanced HP extraction using multiple patterns (consistent with XML normalization)
       const hpPatterns = [
-        /(\d+(?:\.\d+)?)\s*hp\b/i,     // "25hp", "25 hp", "9.9 hp"
-        /(\d+(?:\.\d+)?)\s*HP\b/,      // "25HP", "25 HP", "9.9 HP"
-        /(\d+(?:\.\d+)?)hp\b/i,        // "25hp", "9.9hp" (no space)
+        /^(\d+(?:\.\d+)?)\s+[A-Z]/,       // "9.9 EH", "115 L", "25 ELPT" - number at start followed by space and letters
+        /(\d+(?:\.\d+)?)\s*hp\b/i,        // "25hp", "25 hp", "9.9 hp"
+        /(\d+(?:\.\d+)?)\s*HP\b/,         // "25HP", "25 HP", "9.9 HP" 
+        /(\d+(?:\.\d+)?)hp\b/i,           // "25hp", "9.9hp" (no space)
         /\b(\d+(?:\.\d+)?)\s*horsepower\b/i, // "25 horsepower", "9.9 horsepower"
-        /(\d+(?:\.\d+)?)\s+[A-Z]/,     // "9.9 EH", "115 ELPT", "25 EH"
-        /^(\d+(?:\.\d+)?)\s/           // "25 ECXLPT" (number at start)
+        /FS\s+(\d+(?:\.\d+)?)HP/i,        // "FS 25HP EFI"
+        /ProXS\s+(\d+(?:\.\d+)?)HP/i      // "ProXS 115HP"
       ];
       let hp = null;
       for (const pattern of hpPatterns) {
@@ -464,17 +488,33 @@ serve(async (req) => {
       // Debug HP extraction if missing
       if (!xmlData.hp) {
         console.log(`   🔍 HP extraction debug for "${title}": trying different patterns...`);
+        console.log(`   📋 Testing against normalized: "${xmlData.normalized}"`);
+        
         const debugPatterns = [
           { name: "basic hp", pattern: /(\d+(?:\.\d+)?)\s*hp\b/i },
           { name: "number space code", pattern: /(\d+(?:\.\d+)?)\s+[A-Z]/ },
-          { name: "start number", pattern: /^(\d+(?:\.\d+)?)\s/ }
+          { name: "start number", pattern: /^(\d+(?:\.\d+)?)\s/ },
+          { name: "number before letters", pattern: /(\d+(?:\.\d+)?)\s+[A-Z][A-Z]/ }
         ];
+        
+        // Test patterns against both original and normalized titles
         debugPatterns.forEach(({ name, pattern }) => {
-          const match = title.match(pattern);
-          if (match) {
-            console.log(`     ✓ ${name}: found ${match[1]}`);
+          const originalMatch = title.match(pattern);
+          const normalizedMatch = xmlData.normalized.match(pattern);
+          if (originalMatch) {
+            console.log(`     ✓ ${name} (original): found ${originalMatch[1]}`);
+          }
+          if (normalizedMatch) {
+            console.log(`     ✓ ${name} (normalized): found ${normalizedMatch[1]}`);
           }
         });
+        
+        // Try fallback extraction from original title
+        const fallbackHp = extractHpFromOriginal(title);
+        if (fallbackHp) {
+          console.log(`     ✓ fallback extraction: found ${fallbackHp}`);
+          xmlData.hp = fallbackHp;
+        }
       }
 
       let bestMatch = null;
