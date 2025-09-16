@@ -15,6 +15,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { invokeEdge, pingEdge } from "@/lib/invokeEdge";
 import AdminNav from "@/components/admin/AdminNav";
+import { parsePriceListFromHtml } from "@/lib/html-parser-helpers";
 
 interface ParsedMotor {
   model_number: string;
@@ -191,45 +192,21 @@ export default function AdminSources() {
       const response = await fetch('/motor-pricing-printable.html');
       const htmlContent = await response.text();
       
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(htmlContent, 'text/html');
+      console.log('[AdminSources] Using advanced HTML parsing logic');
+      const parsedData = parsePriceListFromHtml(htmlContent, 1.4);
       
-      const motors: ParsedMotor[] = [];
-      const tables = doc.querySelectorAll('table');
-      
-      tables.forEach((table) => {
-        let sectionElement = table.previousElementSibling;
-        while (sectionElement && !sectionElement.classList.contains('section-header')) {
-          sectionElement = sectionElement.previousElementSibling;
-        }
-        
-        const section = sectionElement?.textContent?.trim() || 'Unknown';
-        const rows = table.querySelectorAll('tbody tr');
-        
-        rows.forEach((row) => {
-          const cells = row.querySelectorAll('td');
-          if (cells.length >= 3) {
-            const modelNumber = cells[0].textContent?.trim() || '';
-            const description = cells[1].textContent?.trim() || '';
-            const priceText = cells[2].textContent?.trim() || '';
-            const price = parseFloat(priceText.replace(/[$,]/g, '')) || 0;
-            
-            if (modelNumber && description && price > 0) {
-              motors.push({
-                model_number: modelNumber,
-                description,
-                price,
-                section
-              });
-            }
-          }
-        });
-      });
+      // Convert to the format expected by the component
+      const motors: ParsedMotor[] = parsedData.map(motor => ({
+        model_number: motor.model_number,
+        description: motor.model_display,
+        price: motor.dealer_price,
+        section: motor.family || 'Unknown'
+      }));
       
       setParsedHtmlData(motors);
       toast({
-        title: "HTML Parsed",
-        description: `Parsed ${motors.length} motors from HTML file`
+        title: "HTML Parsed with Advanced Logic",
+        description: `Parsed ${motors.length} motors from HTML file using same logic as URL pricelist`
       });
       
     } catch (error) {
@@ -244,26 +221,6 @@ export default function AdminSources() {
     }
   };
 
-  const extractHorsepowerFromDescription = (description: string): number => {
-    // Extract HP from descriptions like "2.5MH FourStroke ††", "15ELH FourStroke", etc.
-    const hpMatch = description.match(/(\d+(?:\.\d+)?)/);
-    return hpMatch ? parseFloat(hpMatch[1]) : 0;
-  };
-
-  const extractFamilyFromDescription = (description: string): string => {
-    if (description.includes('Verado')) return 'Verado';
-    if (description.includes('ProXS') || description.includes('Pro XS')) return 'ProXS';
-    if (description.includes('SeaPro')) return 'SeaPro';
-    if (description.includes('FourStroke')) return 'FourStroke';
-    if (description.includes('Racing')) return 'Racing';
-    return '';
-  };
-
-  const extractRiggingFromDescription = (description: string): string => {
-    // Extract rigging codes like "ELH", "MH", etc.
-    const riggingMatch = description.match(/\d+([A-Z]+)/);
-    return riggingMatch ? riggingMatch[1] : '';
-  };
 
   const importHtmlToDatabase = async () => {
     if (parsedHtmlData.length === 0) {
@@ -277,34 +234,37 @@ export default function AdminSources() {
 
     setLoading({ ...loading, htmlImport: true });
     try {
-      const rows = parsedHtmlData.map(motor => {
-        const horsepower = extractHorsepowerFromDescription(motor.description);
-        const family = extractFamilyFromDescription(motor.description);
-        const riggingCode = extractRiggingFromDescription(motor.description);
-        
-        // Clean up the description for use as model name
-        const cleanModelName = motor.description
+      // Re-parse the HTML with full data to get proper model keys and family detection
+      const response = await fetch('/motor-pricing-printable.html');
+      const htmlContent = await response.text();
+      const fullParsedData = parsePriceListFromHtml(htmlContent, 1.4);
+      
+      console.log('[AdminSources] Converting parsed data for database import');
+      
+      const rows = fullParsedData.map(motor => {
+        // Use the advanced parsing results directly
+        const cleanModelName = motor.model_display
           .replace(/††|‡|†/g, '') // Remove HTML artifacts
           .replace(/\s+/g, ' ')    // Normalize whitespace
           .trim();
         
         return {
           model_number: motor.model_number,
-          model: cleanModelName, // Use actual motor description instead of hardcoded 'Outboard'
-          model_display: motor.description,
-          dealer_price: motor.price,
-          msrp: motor.price * 1.4,
-          horsepower: horsepower, // Required for model key generation
-          family: family, // Required for model key generation
+          model_key: motor.model_key, // Use the proper model key from advanced parsing
+          mercury_model_no: motor.mercury_model_no,
+          model: cleanModelName,
+          model_display: motor.model_display,
+          dealer_price: motor.dealer_price,
+          msrp: motor.msrp,
+          horsepower: motor.horsepower,
+          family: motor.family, // Use detected family from section headers
           motor_type: 'Outboard',
-          rigging_code: riggingCode,
-          year: 2025,
-          is_brochure: true,
-          mercury_model_no: motor.model_number
+          year: motor.year,
+          is_brochure: true
         };
       });
 
-      console.log('Sending rows to bulk-upsert-brochure:', rows.slice(0, 3)); // Log first 3 for debugging
+      console.log('Sending rows to bulk-upsert-brochure with advanced parsing:', rows.slice(0, 3));
 
       const { data, error } = await supabase.functions.invoke('bulk-upsert-brochure', {
         body: { rows }
@@ -313,8 +273,8 @@ export default function AdminSources() {
       if (error) throw error;
 
       toast({
-        title: "Import Complete",
-        description: `Imported ${data?.created || 0} new, updated ${data?.updated || 0} existing motors`
+        title: "Import Complete with Advanced Parsing",
+        description: `Imported ${data?.created || 0} new, updated ${data?.updated || 0} existing motors using same logic as URL pricelist`
       });
 
       await loadBrochureSummary();
