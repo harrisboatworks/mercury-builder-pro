@@ -14,6 +14,7 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import MotorFilterMenu from '@/components/quote-builder/MotorFilterMenu';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
+import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
 
 // Database types
 interface DbMotor {
@@ -212,7 +213,7 @@ export default function MotorSelectionPage() {
         category: dbMotor.horsepower <= 20 ? 'portable' : 
                  dbMotor.horsepower <= 60 ? 'mid-range' : 
                  dbMotor.horsepower <= 150 ? 'high-performance' : 'v8-racing',
-        type: dbMotor.motor_type || 'FourStroke',
+        type: getMotorFamilyDisplay(classifyMotorFamily(dbMotor.horsepower, dbMotor.model_display || dbMotor.model, dbMotor.features)),
         specs: `${dbMotor.horsepower}HP ${dbMotor.motor_type || 'FourStroke'}`,
         basePrice: basePrice,
         salePrice: salePrice,

@@ -48,6 +48,7 @@ import {
   getPopularityIndicator,
   getBadgeColor
 } from '@/lib/motor-helpers';
+import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
 
 // Database types
 interface DbMotor {
@@ -444,7 +445,7 @@ export const MotorSelection = ({
                       m.availability === 'On Order' ? 'On Order' : 'Order Now',
           stockNumber: m.stock_number,
           category: categorizeMotor(Number(m.horsepower)),
-          type: m.motor_type,
+          type: getMotorFamilyDisplay(classifyMotorFamily(Number(m.horsepower), m.model_display || m.model, m.features)),
           specs: `${m.engine_type || ''} ${m.year} ${m.make} ${m.model_display || m.model}`.trim(),
           basePrice,
           salePrice,
