@@ -43,10 +43,19 @@ Deno.serve(async (req) => {
 
     const { dry_run: dryRunIn = true, msrp_markup: msrpMarkupIn, url: urlIn } = requestBody;
     const dry_run = Boolean(dryRunIn);
-    const effectiveMarkup = Number(msrpMarkupIn ?? 1.1);
+    
+    // Defensive fallback for markup - ensure it's a valid positive number
+    const msrpFromReq = msrpMarkupIn;
+    const msrp_markup = Number(msrpFromReq);
+    const markup = Number.isFinite(msrp_markup) && msrp_markup > 0 ? msrp_markup : 1.1;
+    
+    if (markup === 1.1 && msrpFromReq !== undefined) {
+      console.log('[PriceList] Invalid msrp_markup received:', msrpFromReq, '- using default 1.1');
+    }
+    
     const priceListUrl = urlIn?.trim() || 'https://www.harrisboatworks.ca/mercurypricelist';
     
-    console.log(`[PriceList] Starting seed process: dry_run=${dry_run}, msrpMarkup=${effectiveMarkup}, url=${priceListUrl}`);
+    console.log(`[PriceList] Starting seed process: dry_run=${dry_run}, msrp_markup=${markup}, url=${priceListUrl}`);
     
     // Step 1: Fetch from URL
     currentStep = 'fetch';
@@ -120,7 +129,7 @@ Deno.serve(async (req) => {
     console.log(`[PriceList] HTML parsing found ${rawRows.length} rows`);
     console.log(`[PriceList] DEBUG: Starting normalization of ${rawRows.length} raw rows`);
     
-    const { normalizedMotors, errors, skipReasons } = normalizeMotorData(rawRows, effectiveMarkup);
+    const { normalizedMotors, errors, skipReasons } = normalizeMotorData(rawRows, markup);
     debugInfo.rows_parsed = normalizedMotors.length;
     debugInfo.rowErrors = errors.slice(0, 10); // Limit to first 10 errors
     if (errors.length > 0) {
@@ -344,7 +353,7 @@ Deno.serve(async (req) => {
       success: false,
       step: currentStep,
       error: error.message,
-      detail: `Exception during ${currentStep}`,
+      detail: `Exception during ${currentStep} (markup=${markup})`,
       stack: error.stack,
       debugInfo
     }), { 
@@ -355,8 +364,8 @@ Deno.serve(async (req) => {
 });
 
 // Parse Mercury model codes and descriptions with error handling
-function normalizeMotorData(rawRows: any[], msrpMarkup: number) {
-  const markup = Number(msrpMarkup) > 0 ? Number(msrpMarkup) : 1.1;
+function normalizeMotorData(rawRows: any[], msrp_markup: number) {
+  const markup = Number(msrp_markup) > 0 ? Number(msrp_markup) : 1.1;
   const results = [];
   const errors = [];
   const skipReasons = new Map();

@@ -142,7 +142,7 @@ export default function AdminBrochureTest() {
         body: {
           url: 'https://www.harrisboatworks.ca/mercurypricelist',
           dry_run: dryRun,
-          msrp_markup: markupToSend,
+          msrp_markup: Number(markupToSend ?? 1.1),
           parse_mode: 'auto'
         }
       });
