@@ -263,16 +263,27 @@ function extractTableData(table: any, columnMapping: Record<string, number>) {
   }));
 }
 
-// Generate model key from mercury model number
-function generateModelKey(mercuryModelNo: string, hp?: number, shaft?: string) {
-  if (!mercuryModelNo) return '';
-  
-  const baseKey = mercuryModelNo.toLowerCase()
+// Generate model key from mercury model number and model number for uniqueness
+function generateModelKey(mercuryModelNo: string, modelNumber: string, hp?: number, shaft?: string) {
+  // Always include model_number for guaranteed uniqueness
+  const modelNumKey = modelNumber.toLowerCase()
     .replace(/[^a-z0-9]/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');
   
-  const parts = [baseKey];
+  const parts = [modelNumKey];
+  
+  // Add mercury model number if different from model number
+  if (mercuryModelNo && mercuryModelNo !== modelNumber) {
+    const baseKey = mercuryModelNo.toLowerCase()
+      .replace(/[^a-z0-9]/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+    if (baseKey && baseKey !== modelNumKey) {
+      parts.push(baseKey);
+    }
+  }
+  
   if (hp) parts.push(hp.toString());
   if (shaft) parts.push(shaft.toLowerCase());
   
@@ -341,7 +352,7 @@ async function parsePriceList(url: string, msrpMarkup: number) {
     
     const mercuryModelNo = parseMercuryModelNo(modelDescription);
     const horsepower = parseHorsepower(modelDescription);
-    const modelKey = generateModelKey(mercuryModelNo, horsepower);
+    const modelKey = generateModelKey(mercuryModelNo, modelNumber, horsepower);
     
     console.log(`[PriceList] Row ${index + 1} model_display: "${modelDescription}" (dealer: ${dealerPrice}, hp: ${horsepower})`);
     
@@ -404,6 +415,7 @@ Deno.serve(async (req) => {
     // ---- Clean and validate rows ----
     const cleaned = [];
     const skipReasons: Record<string, number> = {};
+    const seenModelKeys = new Set<string>();
     function skip(reason: string) { skipReasons[reason] = (skipReasons[reason] || 0) + 1; }
 
     for (const r of parsedRows) {
@@ -415,6 +427,14 @@ Deno.serve(async (req) => {
       if (!model_number) { skip('missing_model_number'); continue; }
       if (!PART_RE.test(model_number)) { skip('not_part_style_model_number'); continue; }
       if (!model_key) { skip('missing_model_key'); continue; }
+
+      // Check for duplicate model_key within the batch
+      if (seenModelKeys.has(model_key)) {
+        console.log(`[PriceList] DUPLICATE model_key detected in batch: ${model_key} (model_number: ${model_number})`);
+        skip('duplicate_model_key_in_batch');
+        continue;
+      }
+      seenModelKeys.add(model_key);
 
       const dealer_price = parseNumber(r.dealer_price);
       if (dealer_price == null) { skip('invalid_dealer_price'); continue; }
@@ -497,6 +517,30 @@ Deno.serve(async (req) => {
         console.log(`[PriceList] PHASE A: Inserting ${insertRows.length} new brochure records...`);
         console.log(`[PriceList] Sample insert data:`, JSON.stringify(insertRows.slice(0, 2), null, 2));
         
+        // Pre-validate model_key uniqueness against database
+        const modelKeysToInsert = insertRows.map(r => r.model_key).filter(Boolean);
+        console.log(`[PriceList] Checking for existing model_key conflicts...`);
+        
+        try {
+          const { data: existingKeys } = await supabase
+            .from('motor_models')
+            .select('model_key')
+            .in('model_key', modelKeysToInsert);
+          
+          if (existingKeys && existingKeys.length > 0) {
+            console.error(`[PriceList] PHASE A PRE-CHECK FAILED: Found ${existingKeys.length} existing model_key conflicts:`, existingKeys.map(k => k.model_key));
+            return fail(409, 'model_key_conflicts', new Error(`Found ${existingKeys.length} model_key conflicts in database`), { 
+              echo: norm, 
+              conflicting_keys: existingKeys.map(k => k.model_key),
+              to_insert: insertRows.length 
+            });
+          }
+          
+          console.log(`[PriceList] Pre-check passed: No existing model_key conflicts found`);
+        } catch (e) {
+          return fail(500, 'pre_check_model_keys', e, { echo: norm, to_insert: insertRows.length });
+        }
+        
         const { data, error } = await supabase
           .from('motor_models')
           .insert(insertRows)
@@ -504,6 +548,20 @@ Deno.serve(async (req) => {
         
         if (error) {
           console.error(`[PriceList] PHASE A FAILED: ${JSON.stringify(error)}`);
+          console.error(`[PriceList] PHASE A ERROR: ${error.message}`);
+          
+          // Provide detailed error info for constraint violations
+          if (error.code === '23505' && error.message.includes('model_key')) {
+            const duplicateKey = error.details?.match(/Key \(model_key\)=\(([^)]+)\)/)?.[1];
+            console.error(`[PriceList] DUPLICATE KEY DETECTED: ${duplicateKey}`);
+            return fail(409, 'duplicate_model_key', error, { 
+              echo: norm, 
+              duplicate_key: duplicateKey,
+              to_insert: insertRows.length,
+              suggestion: 'This should not happen after pre-check - there may be a race condition or logic error'
+            });
+          }
+          
           throw error;
         }
         
