@@ -63,6 +63,71 @@ function decodeEntities(s: string) {
     .replace(/&Dagger;/g, '‡');
 }
 
+function titleCase(s?: string | null) {
+  if (!s) return '';
+  return s
+    .toLowerCase()
+    .replace(/(^|\s+|-)([a-z])/g, (_m, p1, p2) => `${p1}${p2.toUpperCase()}`)
+    .trim();
+}
+
+/**
+ * Best-effort family -> model resolver:
+ * - Prefer parsed "family" if present (e.g., "FourStroke")
+ * - Else infer from the model_key prefix before the first hyphen
+ * - Else return "Outboard" (safe default to satisfy NOT NULL)
+ */
+function resolveModel(rec: any): string {
+  // Prefer explicit family
+  const family = rec.family || rec.engine_family || rec.series || rec.category;
+  if (family && String(family).trim()) return titleCase(String(family));
+
+  // Try from model_key like "FOURSTROKE-ELPT-EFI"
+  const key: string = rec.model_key || rec.modelNumberKey || rec.model_number || '';
+  const prefix = key.split('-')[0] || '';
+
+  // Normalize common families
+  const normalized = prefix.toLowerCase();
+  if (['fourstroke', 'four-stroke', '4-stroke', '4stroke'].includes(normalized)) return 'FourStroke';
+  if (['verado'].includes(normalized)) return 'Verado';
+  if (['proxs','pro-xs','proxs®','pro-xs®'].includes(normalized)) return 'Pro XS';
+  if (['seapro','sea-pro'].includes(normalized)) return 'SeaPro';
+
+  // Fallback: title-case whatever we found, or "Outboard"
+  const tc = titleCase(prefix);
+  return tc || 'Outboard';
+}
+
+/**
+ * Ensure all required brochure fields are present.
+ * IMPORTANT: model is NOT NULL in motor_models, so we must populate it.
+ */
+function toDbRow(rec: any) {
+  return {
+    // identity / flags
+    is_brochure: true,
+    availability: 'Brochure',
+    make: 'Mercury',
+
+    // required identifiers
+    model_number: rec.model_number,    // e.g., "1F02201KK"
+    model_key: rec.model_key,          // e.g., "FOURSTROKE-ELPT-EFI"
+    mercury_model_no: rec.mercury_model_no ?? rec.mercury_code ?? null,
+
+    // NOT NULL field: brochure family/category (e.g., "FourStroke")
+    model: resolveModel(rec),
+
+    // display / pricing
+    model_display: rec.model_display ?? rec.display ?? null,
+    dealer_price: rec.dealer_price ?? rec.dealer ?? null,
+    msrp: rec.msrp ?? rec.price ?? null,
+
+    // metadata
+    year: rec.year ?? 2025,
+    updated_at: new Date().toISOString(),
+  };
+}
+
 // Mercury part number: tolerate letters+digits, typically 8–12 chars, ends with KK often.
 // Relaxed enough to keep "real" parts; filter obvious descriptors.
 const PART_RE = /^[A-Z0-9]{6,14}$/i;
@@ -291,43 +356,17 @@ Deno.serve(async (req) => {
       if (!Number.isFinite(dealer_price)) { skip('invalid_dealer_price'); continue; }
       if (!Number.isFinite(msrp)) { skip('invalid_msrp'); continue; }
 
-      cleaned.push({
-        is_brochure: true,
-        availability: 'Brochure',
-        make: 'Mercury',
-        motor_type: r.family || 'FourStroke', // Ensure motor_type is not null
-        year: 2025,
+      cleaned.push(toDbRow({
         model_number,
         model_display,
         model_key,
         mercury_model_no,
         dealer_price,
         msrp,
-        // keep pass-throughs
-        horsepower: r.hp ?? null,
-        rigging_code: r.rigging_code ?? null,
-        accessories_included: r.accessories ?? [],
-        family: r.family ?? 'FourStroke',
-        engine_type: 'EFI',
-        fuel_type: 'Gas',
-        shaft: 'Short Shaft 15"',
-        control: 'Tiller Handle',
-        start_type: 'Manual Start',
-        price_source: 'harris_pricelist',
-        msrp_source: 'dealer_price * 1.1',
-        msrp_calc_source: 'calculated',
-        in_stock: false,
-        stock_quantity: 0,
-        images: [],
-        data_sources: {
-          manual: { user_id: null, added_at: null },
-          mercury_official: { success: true, scraped_at: new Date().toISOString() },
-          harris: { success: true, scraped_at: new Date().toISOString() },
-          reviews: { success: false, scraped_at: null }
-        },
-        last_scraped: new Date().toISOString(),
-        updated_at: new Date().toISOString()
-      });
+        hp: r.hp,
+        family: r.family || 'FourStroke',
+        year: 2025,
+      }));
     }
 
     // ---- If dry run: compute would-create/update by looking at DB and return diagnostics ----
@@ -346,6 +385,10 @@ Deno.serve(async (req) => {
 
     const toInsert = cleaned.filter(r => !existingNumbers.has(r.model_number));
     const toUpdate = cleaned.filter(r => existingNumbers.has(r.model_number));
+
+    // Map both arrays through toDbRow to ensure model field is populated
+    const insertRows = toInsert.map(toDbRow);
+    const updateRows = toUpdate.map(toDbRow);
 
     const diagnostics = {
       step: norm.dry_run ? 'dry_run_complete' : 'ingest_complete',
@@ -373,11 +416,11 @@ Deno.serve(async (req) => {
 
     // Phase A: INSERT only new rows
     try {
-      if (toInsert.length) {
-        console.log(`[PriceList] Inserting ${toInsert.length} new brochure records...`);
+      if (insertRows.length) {
+        console.log(`[PriceList] Inserting ${insertRows.length} new brochure records...`);
         const { data, error } = await supabase
           .from('motor_models')
-          .insert(toInsert)
+          .insert(insertRows)
           .select('id');
         if (error) {
           console.error(`[PriceList] Failed at insert_brochures: ${JSON.stringify(error)}`);
@@ -387,12 +430,12 @@ Deno.serve(async (req) => {
       }
     } catch (e) {
       console.error(`[PriceList] Insert error: ${(e as any)?.message}`);
-      return fail(500, 'insert_new', e, { echo: norm, to_insert: toInsert.length });
+      return fail(500, 'insert_new', e, { echo: norm, to_insert: insertRows.length });
     }
 
     // Phase B: UPDATE only existing rows, by model_number + is_brochure=true  
     try {
-      for (const chunk of chunkBy(toUpdate, 200)) {
+      for (const chunk of chunkBy(updateRows, 200)) {
         const { data: updCount, error: rpcErr } = await supabase.rpc(
           'update_brochure_models_bulk',
           { p_rows: chunk }
@@ -404,10 +447,11 @@ Deno.serve(async (req) => {
       if (String(e).toLowerCase().includes('function') && String(e).toLowerCase().includes('not found')) {
         // Fallback to individual updates if RPC not available
         try {
-          for (const r of toUpdate) {
+          for (const r of updateRows) {
             const { error } = await supabase
               .from('motor_models')
               .update({
+                model: r.model,
                 model_display: r.model_display,
                 model_key: r.model_key,
                 mercury_model_no: r.mercury_model_no,
@@ -421,10 +465,10 @@ Deno.serve(async (req) => {
             if (!error) rows_updated += 1;
           }
         } catch (e2) {
-          return fail(500, 'update_existing_fallback', e2, { echo: norm, to_update: toUpdate.length });
+          return fail(500, 'update_existing_fallback', e2, { echo: norm, to_update: updateRows.length });
         }
       } else {
-        return fail(500, 'update_existing_rpc', e, { echo: norm, to_update: toUpdate.length });
+        return fail(500, 'update_existing_rpc', e, { echo: norm, to_update: updateRows.length });
       }
     }
 
