@@ -528,8 +528,9 @@ Deno.serve(async (req) => {
         snapshot_url: `View Saved HTML: ${jsonPath}`,
         echo: normalizedInputs
       });
-      
-    } catch (innerErr) {
+    }
+    
+  } catch (innerErr) {
       console.error(`[PriceList] Inner error:`, innerErr);
       return fail(500, 'normalize_or_ingest', innerErr, { echo: normalizedInputs });
     }
