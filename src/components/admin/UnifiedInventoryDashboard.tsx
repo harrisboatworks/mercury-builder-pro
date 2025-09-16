@@ -37,8 +37,9 @@ import { MotorManualOverride } from './MotorManualOverride';
 interface MotorInventoryData {
   id: string;
   model: string;
-  model_display: string;
+  model_display: string | null;
   model_number: string | null;
+  family: string | null;
   horsepower: number;
   availability: string;
   stock_number: string | null;
@@ -140,7 +141,7 @@ export function UnifiedInventoryDashboard() {
     try {
       const { data: motorsData, error: motorsError } = await supabase
         .from('motor_models')
-        .select('id, model, model_display, model_number, horsepower, availability, stock_number, last_scraped, dealer_price, msrp, sale_price')
+        .select('id, model, model_display, model_number, family, horsepower, availability, stock_number, last_scraped, dealer_price, msrp, sale_price')
         .order('last_scraped', { ascending: false });
 
       if (motorsError) throw motorsError;
@@ -635,8 +636,19 @@ export function UnifiedInventoryDashboard() {
   }, []);
 
   // Helper Functions
+  const getDisplayName = (motor: MotorInventoryData) => {
+    if (motor.model_display && motor.model_display.trim()) {
+      return motor.model_display;
+    }
+    if (motor.family && motor.horsepower) {
+      return `${motor.horsepower}HP ${motor.family}`;
+    }
+    return motor.model || 'Unknown Motor';
+  };
+
   const filteredMotors = motors.filter(motor => {
-    const matchesSearch = motor.model_display.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    const displayName = getDisplayName(motor);
+    const matchesSearch = displayName.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          motor.model.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          motor.horsepower.toString().includes(searchTerm) ||
                          (motor.model_number && motor.model_number.toLowerCase().includes(searchTerm.toLowerCase())) ||
@@ -933,7 +945,7 @@ export function UnifiedInventoryDashboard() {
                   />
                   
                   <div className="flex-1">
-                    <div className="font-medium">{motor.model_display || motor.model}</div>
+                    <div className="font-medium">{getDisplayName(motor)}</div>
                     <div className="text-sm text-muted-foreground">
                       {motor.horsepower}HP • Model: {motor.model_number || 'N/A'} • Stock: {motor.stock_number || 'N/A'}
                     </div>
@@ -1049,7 +1061,7 @@ export function UnifiedInventoryDashboard() {
                           <AlertDialogHeader>
                             <AlertDialogTitle>Delete Motor</AlertDialogTitle>
                             <AlertDialogDescription>
-                              Are you sure you want to delete "{motor.model_display || motor.model}"? This action cannot be undone.
+                              Are you sure you want to delete "{getDisplayName(motor)}"? This action cannot be undone.
                             </AlertDialogDescription>
                           </AlertDialogHeader>
                           <AlertDialogFooter>
