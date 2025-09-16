@@ -136,6 +136,17 @@ function resolveMotorType(rec: any): string {
 }
 
 /**
+ * Add space between HP number and model code (e.g., "250CXL" → "250 CXL")
+ */
+function formatHPSpacing(displayName: string): string {
+  if (!displayName) return displayName;
+  
+  // Match HP number at start followed by letters (no space)
+  // Handles both whole numbers (250) and decimals (9.9)
+  return displayName.replace(/^(\d+(?:\.\d+)?)([A-Z])/i, '$1 $2');
+}
+
+/**
  * Detect and strip accessory symbols from motor display names
  * † = fuel tank included, †† = fuel tank + propeller included
  */
@@ -155,6 +166,9 @@ function detectAndStripAccessorySymbols(displayName: string): { cleanName: strin
     accessories.push('fuel_tank');
     cleanName = cleanName.replace(/†+/g, '').trim();
   }
+  
+  // Apply HP spacing after symbol cleanup
+  cleanName = formatHPSpacing(cleanName);
   
   return { cleanName, accessories };
 }
