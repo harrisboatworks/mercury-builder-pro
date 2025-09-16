@@ -818,10 +818,7 @@ export function UnifiedInventoryDashboard() {
                 </CardDescription>
               </div>
               <div className="flex gap-2">
-                <Button onClick={triggerInventoryUpdate} disabled={inventoryLoading || updating}>
-                  <RefreshCw className={`h-4 w-4 mr-2 ${updating ? 'animate-spin' : ''}`} />
-                  {updating ? 'Updating...' : 'Update Inventory'}
-                </Button>
+                {/* Removed dangerous "Update Inventory" button - use XML sync or Sources page instead */}
               </div>
             </div>
           </CardHeader>
