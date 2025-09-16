@@ -56,6 +56,7 @@ serve(async (req) => {
     }
     
     // Extract Mercury units using flexible field matching
+    let debugCounter = 0;
     const mercuryUnits = itemMatches.filter(item => {
       // Try multiple field name variations
       const manufacturerPatterns = [
@@ -132,14 +133,15 @@ serve(async (req) => {
       const isValidCondition = validConditions.some(cond => condition.includes(cond)) || condition.length === 0;
       
       // Log detailed debug info for first few Mercury items
-      if (isMercury && mercuryUnits.length < 5) {
-        console.log(`🔍 Mercury unit found:
+      if (isMercury && debugCounter < 5) {
+        console.log(`🔍 Mercury unit found (#${debugCounter + 1}):
           Manufacturer: "${manufacturer}"
           Condition: "${condition}" 
           Category: "${category}"
           Title: "${title.substring(0, 100)}"
           Is Motor: ${isMotor}
           Valid Condition: ${isValidCondition}`);
+        debugCounter++;
       }
       
       if (isMercury && !isMotor) {
@@ -153,7 +155,18 @@ serve(async (req) => {
       return isMercury && isMotor && isValidCondition;
     });
 
-    console.log(`🎯 Filtered to ${mercuryUnits.length} Mercury new units`);
+    console.log(`🎯 Filtered to ${mercuryUnits.length} Mercury units from ${itemMatches.length} total items`);
+
+    // Show additional filtering stats
+    if (mercuryUnits.length > 0) {
+      console.log(`📊 Mercury units found - showing first 3 samples:`);
+      for (let i = 0; i < Math.min(3, mercuryUnits.length); i++) {
+        const unit = mercuryUnits[i];
+        const titleMatch = unit.match(/<title>(.*?)<\/title>/i);
+        const title = titleMatch?.[1]?.trim() || 'No title';
+        console.log(`  ${i + 1}. ${title.substring(0, 80)}`);
+      }
+    }
 
     // Reset all motors to out of stock first
     console.log('🔄 Resetting all motors to out of stock...');
