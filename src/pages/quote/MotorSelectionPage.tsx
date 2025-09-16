@@ -19,6 +19,7 @@ import '@/styles/sticky-quote-mobile.css';
 interface DbMotor {
   id: string;
   model: string;
+  model_display?: string | null;
   horsepower: number;
   base_price: number;
   sale_price?: number | null;
@@ -195,7 +196,7 @@ export default function MotorSelectionPage() {
       // Convert to Motor type (same as original)
       const convertedMotor: Motor = {
         id: dbMotor.id,
-        model: dbMotor.model,
+        model: dbMotor.model_display || dbMotor.model, // Use model_display for proper names like "6 MH FourStroke"
         year: dbMotor.year,
         hp: dbMotor.horsepower,
         price: Math.round(effectivePrice),

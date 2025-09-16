@@ -53,6 +53,7 @@ import {
 interface DbMotor {
   id: string;
   model: string;
+  model_display?: string | null;
   horsepower: number;
   base_price: number;
   sale_price?: number | null;
@@ -429,7 +430,7 @@ export const MotorSelection = ({
         const savings = Math.max(0, original - effectivePrice);
         return {
           id: m.id,
-          model: m.model,
+          model: m.model_display || m.model, // Use model_display for proper names like "6 MH FourStroke"
           year: m.year,
           hp: Number(m.horsepower),
           price: effectivePrice,
@@ -440,7 +441,7 @@ export const MotorSelection = ({
           stockNumber: m.stock_number,
           category: categorizeMotor(Number(m.horsepower)),
           type: m.motor_type,
-          specs: `${m.engine_type || ''} ${m.year} ${m.make} ${m.model}`.trim(),
+          specs: `${m.engine_type || ''} ${m.year} ${m.make} ${m.model_display || m.model}`.trim(),
           basePrice,
           salePrice,
           originalPrice: original,
