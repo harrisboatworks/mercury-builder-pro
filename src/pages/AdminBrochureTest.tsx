@@ -22,6 +22,7 @@ interface ParseResult {
   sample_created?: Array<{
     model: string;
     model_key: string;
+    model_number?: string; // Mercury's actual model number
     mercury_model_no?: string;
     family: string;
     horsepower: number;
@@ -362,8 +363,8 @@ export default function AdminBrochureTest() {
                         <TableHeader>
                           <TableRow>
                             <TableHead>Model Display</TableHead>
-                            <TableHead>Model Key</TableHead>
-                            <TableHead>Mercury Model No</TableHead>
+                            <TableHead>Model Number</TableHead>
+                            <TableHead>Mercury Code</TableHead>
                             <TableHead>Rigging Code</TableHead>
                             <TableHead>Accessories</TableHead>
                             <TableHead>HP</TableHead>
@@ -375,7 +376,7 @@ export default function AdminBrochureTest() {
                           {result.sample_created.map((item, idx) => (
                             <TableRow key={idx}>
                               <TableCell className="font-medium">{item.model}</TableCell>
-                              <TableCell className="font-mono text-xs">{item.model_key}</TableCell>
+                              <TableCell className="font-mono text-xs">{item.model_number || 'N/A'}</TableCell>
                               <TableCell className="font-mono text-xs">{item.mercury_model_no || 'N/A'}</TableCell>
                               <TableCell className="text-sm">{item.rigging_code || 'N/A'}</TableCell>
                               <TableCell className="text-sm">

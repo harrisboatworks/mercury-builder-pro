@@ -234,8 +234,8 @@ function cleanModelText(text: string): string {
   return cleaned.trim().replace(/\s+/g, ' ');
 }
 
-// Parse Mercury model from text and extract all relevant attributes
-function parseMotorDetails(modelText: string, modelNumber?: string): {
+// Parse Mercury model from price list data and extract all relevant attributes
+function parseMotorDetails(modelDescription: string, mercuryModelNumber?: string): {
   mercury_model_no: string;
   family: string;
   horsepower: number | null;
@@ -245,114 +245,96 @@ function parseMotorDetails(modelText: string, modelNumber?: string): {
   model_display: string;
   model_key: string;
 } {
-  const originalText = modelText || '';
-  const cleanedText = cleanModelText(originalText);
-  const fullText = `${cleanedText} ${modelNumber || ''}`.trim();
+  const originalDescription = modelDescription || '';
+  const cleanedDescription = cleanModelText(originalDescription);
   
-  // Extract Mercury model number (the alphanumeric code like "9.9MLH", "25ELPT")
-  let mercuryModelNo = modelNumber || '';
-  if (!mercuryModelNo) {
-    // Try to extract from the model text (pattern: number + letters)
-    const modelMatch = cleanedText.match(/(\d+(?:\.\d+)?[A-Z]+)/);
-    if (modelMatch) {
-      mercuryModelNo = modelMatch[1];
-    }
+  // Use the actual Mercury model number (from first column) as authoritative identifier
+  const modelNumber = mercuryModelNumber || '';
+  
+  // Extract Mercury code from description (like "25MH", "90ELPT" from "25MH FourStroke")
+  let mercuryCode = '';
+  const codeMatch = cleanedDescription.match(/^([A-Z0-9.]+)\s/);
+  if (codeMatch) {
+    mercuryCode = codeMatch[1];
   }
   
-  // Parse horsepower - look for number followed by HP or at start of model
+  // Parse horsepower from Mercury code
   let horsepower: number | null = null;
-  const hpMatches = [
-    fullText.match(/(\d+(?:\.\d+)?)\s*HP/i),
-    fullText.match(/^(\d+(?:\.\d+)?)[A-Z]/),  // e.g., "9.9MLH"
-    fullText.match(/(\d+(?:\.\d+)?)(?=\s|$)/),
-  ];
-  
-  for (const match of hpMatches) {
-    if (match) {
-      const hp = parseFloat(match[1]);
-      if (hp > 0 && hp <= 600) { // Reasonable range
-        horsepower = hp;
-        break;
-      }
+  const hpMatch = mercuryCode.match(/^(\d+(?:\.\d+)?)/);
+  if (hpMatch) {
+    const hp = parseFloat(hpMatch[1]);
+    if (hp > 0 && hp <= 600) {
+      horsepower = hp;
     }
   }
   
-  // Detect family
-  const upperText = fullText.toUpperCase();
+  // Extract rigging codes from Mercury code (everything after the horsepower)
+  const riggingPart = mercuryCode.replace(/^\d+(?:\.\d+)?/, '');
+  
+  // Detect family from description
+  const upperDescription = cleanedDescription.toUpperCase();
   let family = 'FourStroke'; // Default
   
-  if (upperText.includes('FOURSTROKE') || upperText.includes('4-STROKE') || upperText.includes('4 STROKE')) {
+  if (upperDescription.includes('FOURSTROKE') || upperDescription.includes('4-STROKE')) {
     family = 'FourStroke';
-  } else if (upperText.includes('PROXS') || upperText.includes('PRO XS')) {
+  } else if (upperDescription.includes('PROXS') || upperDescription.includes('PRO XS')) {
     family = 'ProXS';
-  } else if (upperText.includes('SEAPRO') || upperText.includes('SEA PRO')) {
+  } else if (upperDescription.includes('SEAPRO') || upperDescription.includes('SEA PRO')) {
     family = 'SeaPro';
-  } else if (upperText.includes('VERADO')) {
+  } else if (upperDescription.includes('VERADO')) {
     family = 'Verado';
-  } else if (upperText.includes('RACING')) {
+  } else if (upperDescription.includes('RACING')) {
     family = 'Racing';
   }
   
-  // Parse rigging codes
-  const riggingData = parseMercuryRigCodes(fullText);
+  // Parse rigging codes from Mercury code
+  const riggingData = parseMercuryRigCodes(mercuryCode);
   
-  // Detect fuel type - EFI for 15HP+ or explicitly mentioned
+  // Detect fuel type - EFI if explicitly mentioned
   let fuelType = '';
-  if (upperText.includes('EFI') || (horsepower && horsepower >= 15)) {
+  if (upperDescription.includes('EFI')) {
     fuelType = 'EFI';
   }
   
+  // Detect Command Thrust
+  const hasCommandThrust = upperDescription.includes('CT') || upperDescription.includes('COMMAND THRUST');
+  
   // Detect accessories from original text (before cleaning)
-  const accessories = detectAccessories(originalText);
+  const accessories = detectAccessories(originalDescription);
   
-  // Build clean model display
-  let modelDisplay = '';
+  // Build model display according to new format: [Horsepower] [Rigging Codes] [EFI if present] [Family]
+  const displayParts: string[] = [];
+  
+  // 1. Horsepower (plain number, no "HP" suffix)
   if (horsepower) {
-    modelDisplay += `${horsepower} HP`;
+    displayParts.push(horsepower.toString());
   }
-  if (family && family !== 'FourStroke') {
-    modelDisplay += ` ${family}`;
-  } else if (family === 'FourStroke') {
-    modelDisplay += ' FourStroke';
+  
+  // 2. Rigging codes exactly as they appear in Mercury code
+  if (riggingPart) {
+    displayParts.push(riggingPart);
   }
+  
+  // 3. EFI if present
   if (fuelType) {
-    modelDisplay += ` ${fuelType}`;
-  }
-  if (riggingData.rigging_description) {
-    modelDisplay += ` ${riggingData.rigging_description}`;
-  }
-  modelDisplay = modelDisplay.trim();
-  
-  // Build unique model key - ALWAYS include Mercury model number first for uniqueness
-  const keyParts: string[] = [];
-  
-  // 1. Mercury model number (cleaned) - CRITICAL for uniqueness
-  if (mercuryModelNo) {
-    keyParts.push(mercuryModelNo.toUpperCase().replace(/[^A-Z0-9]/g, ''));
+    displayParts.push(fuelType);
   }
   
-  // 2. Family
-  keyParts.push(family.toUpperCase());
+  // 4. Family (always last)
+  displayParts.push(family);
   
-  // 3. HP
-  if (horsepower) {
-    keyParts.push(`${horsepower}HP`);
+  // 5. CT if present (always at the very end)
+  if (hasCommandThrust) {
+    displayParts.push('CT');
   }
   
-  // 4. EFI
-  if (fuelType) {
-    keyParts.push(fuelType);
-  }
+  const modelDisplay = displayParts.join(' ');
   
-  // 5. Rigging tokens (sorted for consistency)
-  if (riggingData.tokens.length > 0) {
-    keyParts.push(...riggingData.tokens);
-  }
-  
-  const modelKey = keyParts.join('-');
+  // Use Mercury model number as the primary key for uniqueness
+  const modelKey = modelNumber || mercuryCode || `UNKNOWN-${Date.now()}`;
   
   return {
-    mercury_model_no: mercuryModelNo,
+    mercury_model_no: mercuryCode,
     family,
     horsepower,
     fuel_type: fuelType,
@@ -571,7 +553,7 @@ function parseHTML(html: string): Array<{model_display: string, model_number?: s
   
   console.log(`[PriceList] Column mapping: ${JSON.stringify(columnMapping)}`);
   
-  // Process data rows
+  // Process data rows - Mercury price list format: [Model Number] [Description] [Price]
   for (let i = headerRowIdx + 1; i < $rows.length; i++) {
     const $row = $($rows[i]);
     const cells = $row.find('td, th').map((_, cell) => cleanText($(cell).text())).get();
@@ -579,15 +561,35 @@ function parseHTML(html: string): Array<{model_display: string, model_number?: s
     if (cells.length < 2) continue;
     
     const row: any = {};
-    if (columnMapping.model >= 0 && cells[columnMapping.model]) {
-      row.model_display = cells[columnMapping.model];
+    
+    // For Mercury price lists, first column is typically the model number (1F02201KK, etc.)
+    if (cells[0]) {
+      // If first column looks like a Mercury model number, use it as model_number
+      if (cells[0].match(/^[A-Z0-9]+$/)) {
+        row.model_number = cells[0];
+        // Second column would be the description
+        if (cells[1]) {
+          row.model_display = cells[1];
+        }
+        // Third column would be price
+        if (cells[2]) {
+          row.dealer_price = parsePrice(cells[2]);
+        }
+      } else {
+        // Fallback to column mapping logic
+        if (columnMapping.model >= 0 && cells[columnMapping.model]) {
+          row.model_display = cells[columnMapping.model];
+        }
+        if (columnMapping.number >= 0 && cells[columnMapping.number]) {
+          row.model_number = cells[columnMapping.number];
+        }
+        if (columnMapping.price >= 0 && cells[columnMapping.price]) {
+          row.dealer_price = parsePrice(cells[columnMapping.price]);
+        }
+      }
     }
-    if (columnMapping.number >= 0 && cells[columnMapping.number]) {
-      row.model_number = cells[columnMapping.number];
-    }
-    if (columnMapping.price >= 0 && cells[columnMapping.price]) {
-      row.dealer_price = parsePrice(cells[columnMapping.price]);
-    }
+    
+    // Additional column mappings if available
     if (columnMapping.hp >= 0 && cells[columnMapping.hp]) {
       row.horsepower = parseFloat(cells[columnMapping.hp]) || null;
     }
@@ -624,7 +626,7 @@ function normalizeMotorData(rawData: any[], url: string, msrp_markup: number, ht
       continue;
     }
     
-    // Parse motor details using enhanced parser
+    // Parse motor details using enhanced parser - pass description and Mercury model number
     const motorDetails = parseMotorDetails(rawRow.model_display || '', rawRow.model_number || '');
     
     // Parse dealer price
@@ -633,8 +635,9 @@ function normalizeMotorData(rawData: any[], url: string, msrp_markup: number, ht
     // Debug logging for first 12 rows
     if (i < 12) {
       const debugRow = {
-        raw_cells: [rawRow.model_display, rawRow.model_number, String(rawRow.dealer_price)],
-        mercury_model_no: motorDetails.mercury_model_no,
+        raw_cells: [rawRow.model_number, rawRow.model_display, String(rawRow.dealer_price)],
+        model_number_mercury: rawRow.model_number, // Mercury's actual model number
+        mercury_model_no: motorDetails.mercury_model_no, // Parsed Mercury code
         family: motorDetails.family,
         horsepower: motorDetails.horsepower,
         fuel_type: motorDetails.fuel_type,
@@ -667,8 +670,9 @@ function normalizeMotorData(rawData: any[], url: string, msrp_markup: number, ht
     const dbRow: any = {
       make: 'Mercury',
       model: motorDetails.model_display,
+      model_number: rawRow.model_number || null, // Mercury's actual model number (1F02201KK, etc.)
       model_key: motorDetails.model_key,
-      mercury_model_no: motorDetails.mercury_model_no || null,
+      mercury_model_no: motorDetails.mercury_model_no || null, // Parsed Mercury code (25MH, etc.)
       year: 2025,
       motor_type: motorDetails.family,
       family: motorDetails.family,
@@ -769,9 +773,9 @@ async function saveAndProcessData(supabase: any, motors: any[], checksum: string
   // Prepare artifacts with enhanced fields
   const jsonContent = JSON.stringify(motors, null, 2);
   const csvRows = [
-    'model_display,mercury_model_no,model_key,family,horsepower,fuel_type,rigging_code,accessories_included,year,dealer_price,msrp,is_brochure,in_stock,price_source',
+    'model_display,model_number,mercury_model_no,model_key,family,horsepower,fuel_type,rigging_code,accessories_included,year,dealer_price,msrp,is_brochure,in_stock,price_source',
     ...motors.map(m => 
-      `"${m.model}","${m.mercury_model_no || ''}","${m.model_key}","${m.family || ''}",${m.horsepower || ''},"${m.fuel_type || ''}","${m.rigging_code || ''}","${Array.isArray(m.accessories_included) ? m.accessories_included.join('; ') : ''}",${m.year},${m.dealer_price},${m.msrp},${m.is_brochure},${m.in_stock},"${m.price_source || ''}"`
+      `"${m.model}","${m.model_number || ''}","${m.mercury_model_no || ''}","${m.model_key}","${m.family || ''}",${m.horsepower || ''},"${m.fuel_type || ''}","${m.rigging_code || ''}","${Array.isArray(m.accessories_included) ? m.accessories_included.join('; ') : ''}",${m.year},${m.dealer_price},${m.msrp},${m.is_brochure},${m.in_stock},"${m.price_source || ''}"`
     )
   ];
   const csvContent = csvRows.join('\n');
