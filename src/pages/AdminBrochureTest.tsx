@@ -103,7 +103,7 @@ export default function AdminBrochureTest() {
         count: count as number
       }));
 
-      // Get latest 10 samples
+      // Get latest 10 samples  
       const { data: samples, error: samplesError } = await supabase
         .from('motor_models')
         .select('id, model_number, model, mercury_model_no, model_key, family, horsepower, rigging_code, dealer_price, msrp, created_at')
@@ -117,7 +117,11 @@ export default function AdminBrochureTest() {
       }
 
       // Debug log to check what data we're getting
-      console.log('Latest samples data:', samples);
+      console.log('Latest samples data with model_numbers:', samples?.map(s => ({
+        id: s.id,
+        model_number: s.model_number,
+        mercury_model_no: s.mercury_model_no
+      })));
 
       setSummary({
         total_brochure_count: totalCount || 0,
@@ -316,24 +320,27 @@ export default function AdminBrochureTest() {
     try {
       setIsRunning(true);
       
-      // Get all brochure models with the required fields
-      const { data: models, error } = await supabase
-        .from('motor_models')
-        .select('model_number, mercury_model_no, model as model_display, model_key, family, horsepower, rigging_code, accessories_included, dealer_price, msrp, created_at')
-        .eq('is_brochure', true)
-        .eq('make', 'Mercury')
-        .order('created_at', { ascending: false });
+        // Get all brochure models with the required fields
+        const { data: models, error } = await supabase
+          .from('motor_models')
+          .select('model_number, mercury_model_no, model, model_key, family, horsepower, rigging_code, accessories_included, dealer_price, msrp, created_at')
+          .eq('is_brochure', true)
+          .eq('make', 'Mercury')
+          .order('created_at', { ascending: false });
 
-      if (error) {
-        throw new Error(error.message);
-      }
+        if (error) {
+          throw new Error(error.message);
+        }
 
-      if (!models || models.length === 0) {
-        throw new Error('No brochure models found to export');
-      }
+        if (!models || models.length === 0) {
+          throw new Error('No brochure models found to export');
+        }
+
+        // Log model numbers to help debug display issues
+        console.log('Export sample model numbers:', models.slice(0, 3).map(m => m.model_number));
 
       // Convert to CSV
-      const headers = ['model_number', 'mercury_model_no', 'model_display', 'model_key', 'family', 'horsepower', 'rigging_code', 'accessories_included', 'dealer_price', 'msrp', 'created_at'];
+      const headers = ['model_number', 'mercury_model_no', 'model', 'model_key', 'family', 'horsepower', 'rigging_code', 'accessories_included', 'dealer_price', 'msrp', 'created_at'];
       const csvRows = [
         headers.join(','),
         ...models.map(row => 

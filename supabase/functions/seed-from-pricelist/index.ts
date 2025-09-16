@@ -247,7 +247,35 @@ Deno.serve(async (req) => {
       currentStep = 'upsert';
       console.log(`[PriceList] Upserting ${deduplicatedMotors.length} motors to database...`);
       
-      const keys = deduplicatedMotors.map(m => m.model_number);
+      // Test insert with first record to identify any schema issues
+      if (deduplicatedMotors.length > 0) {
+        console.log(`[PriceList] Testing single insert to identify schema issues...`);
+        const testRecord = deduplicatedMotors[0];
+        console.log(`[PriceList] Test record structure:`, JSON.stringify(testRecord, null, 2));
+        
+        const { data: testData, error: testError } = await supabase
+          .from('motor_models')
+          .insert([testRecord])
+          .select('id, model_number');
+        
+        if (testError) {
+          console.error(`[PriceList] Test insert failed:`, testError);
+          console.error(`[PriceList] Test record was:`, JSON.stringify(testRecord, null, 2));
+          return fail('test_insert', testError, { 
+            test_record: testRecord,
+            echo 
+          });
+        } else {
+          console.log(`[PriceList] Test insert successful:`, testData);
+          // Delete the test record to avoid duplicates
+          await supabase
+            .from('motor_models')
+            .delete()
+            .eq('id', testData[0].id);
+        }
+      }
+      
+      const keys = deduplicatedMotors.map(m => m.model_number).filter(Boolean);
 
       const { data: existingRows } = await supabase
         .from('motor_models')
@@ -255,32 +283,53 @@ Deno.serve(async (req) => {
         .in('model_number', keys);
 
       const existing = new Set((existingRows || []).map(r => r.model_number));
-      const toInsert = deduplicatedMotors.filter(m => !existing.has(m.model_number));
-      const toUpdate = deduplicatedMotors.filter(m => existing.has(m.model_number));
+      const toInsert = deduplicatedMotors.filter(m => m.model_number && !existing.has(m.model_number));
+      const toUpdate = deduplicatedMotors.filter(m => m.model_number && existing.has(m.model_number));
+
+      console.log(`[PriceList] Planned operations: ${toInsert.length} inserts, ${toUpdate.length} updates`);
 
       let created = 0, updated = 0, failed = 0;
 
       // inserts
       for (let i = 0; i < toInsert.length; i += 100) {
+        const chunk = toInsert.slice(i, i + 100);
+        console.log(`[PriceList] Inserting batch ${Math.floor(i/100) + 1}: ${chunk.length} motors`);
+        
         const { data, error } = await supabase
           .from('motor_models')
-          .insert(toInsert.slice(i, i + 100))
+          .insert(chunk)
           .select('id');
-        if (error) failed += Math.min(100, toInsert.length - i);
-        else created += (data?.length || 0);
+        
+        if (error) {
+          console.error(`[PriceList] Insert error for batch ${Math.floor(i/100) + 1}:`, error);
+          console.error(`[PriceList] Sample failed record:`, JSON.stringify(chunk[0], null, 2));
+          failed += Math.min(100, toInsert.length - i);
+        } else {
+          console.log(`[PriceList] Successfully inserted ${data?.length || 0} motors in batch ${Math.floor(i/100) + 1}`);
+          created += (data?.length || 0);
+        }
       }
 
-      // updates
+      // updates  
       for (let i = 0; i < toUpdate.length; i += 100) {
         const chunk = toUpdate.slice(i, i + 100);
-        const modelNos = chunk.map(r => r.model_number);
-        const { data, error } = await supabase
-          .from('motor_models')
-          .update(chunk)
-          .in('model_number', modelNos)
-          .select('id');
-        if (error) failed += Math.min(100, toUpdate.length - i);
-        else updated += (data?.length || 0);
+        console.log(`[PriceList] Updating batch ${Math.floor(i/100) + 1}: ${chunk.length} motors`);
+        
+        // Use proper update with individual record updates since we can't bulk update with different values
+        for (const motor of chunk) {
+          const { data, error } = await supabase
+            .from('motor_models')
+            .update(motor)
+            .eq('model_number', motor.model_number)
+            .select('id');
+          
+          if (error) {
+            console.error(`[PriceList] Update error for ${motor.model_number}:`, error);
+            failed += 1;
+          } else if (data && data.length > 0) {
+            updated += 1;
+          }
+        }
       }
 
       console.log(`[PriceList] Database upsert complete: ${created} created, ${updated} updated, ${failed} failed`);
