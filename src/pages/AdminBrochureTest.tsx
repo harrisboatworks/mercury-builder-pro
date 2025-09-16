@@ -48,6 +48,8 @@ interface ParseResult {
     dealer_price_raw: string;
   }>;
   html_saved_url?: string;
+  error_detail?: string;
+  response_body?: any;
   source_kind?: string;
   error?: any;
 }
