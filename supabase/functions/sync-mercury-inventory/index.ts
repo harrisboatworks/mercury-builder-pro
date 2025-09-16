@@ -266,92 +266,190 @@ serve(async (req) => {
 
     console.log(`📊 Built stock map with ${stockMap.size} unique models`);
 
+    // Enhanced title normalization functions
+    function normalizeXmlTitle(title: string): { normalized: string, hp: number | null, codes: string[] } {
+      // Remove year, brand, common words
+      let normalized = title
+        .replace(/^\d{4}\s+/i, '') // Remove year at start
+        .replace(/mercury\s+/i, '') // Remove Mercury brand
+        .replace(/fourstroke\s+/i, 'FS ') // Normalize FourStroke
+        .replace(/pro\s+xs®?\s+/i, 'ProXS ') // Normalize Pro XS
+        .replace(/\s+/g, ' ') // Clean up spacing
+        .trim();
+
+      // Extract HP
+      const hpMatch = normalized.match(/(\d+)\s*hp/i);
+      const hp = hpMatch ? parseInt(hpMatch[1]) : null;
+
+      // Extract important codes (shaft, trim, etc.)
+      const codes = [];
+      const codeMatches = normalized.match(/\b(ELPT|ELHPT|EXLPT|EXLPT|EH|MH|XL|Command Thrust|CT|EFI)\b/gi);
+      if (codeMatches) {
+        codes.push(...codeMatches.map(c => c.toUpperCase()));
+      }
+
+      return { normalized, hp, codes };
+    }
+
+    function normalizeDbTitle(title: string): { normalized: string, hp: number | null, codes: string[] } {
+      // Clean database title
+      let normalized = title
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      // Extract HP from various formats
+      const hpPatterns = [/(\d+)\s*hp/i, /(\d+)\s*HP/g, /^(\d+)\s/];
+      let hp = null;
+      for (const pattern of hpPatterns) {
+        const match = normalized.match(pattern);
+        if (match) {
+          hp = parseInt(match[1]);
+          break;
+        }
+      }
+
+      // Extract codes
+      const codes = [];
+      const codeMatches = normalized.match(/\b(ELPT|ELHPT|EXLPT|EH|MH|XL|CT|EFI|Command|Thrust)\b/gi);
+      if (codeMatches) {
+        codes.push(...codeMatches.map(c => c.toUpperCase()));
+      }
+
+      return { normalized, hp, codes };
+    }
+
+    function calculateMatchScore(xmlData: any, dbData: any): number {
+      let score = 0;
+      
+      // HP match is most important (50 points)
+      if (xmlData.hp && dbData.hp && xmlData.hp === dbData.hp) {
+        score += 50;
+      } else if (xmlData.hp && dbData.hp && Math.abs(xmlData.hp - dbData.hp) <= 5) {
+        score += 25; // Close HP match
+      }
+
+      // Code matching (30 points total)
+      const commonCodes = xmlData.codes.filter((code: string) => 
+        dbData.codes.some((dbCode: string) => dbCode.includes(code) || code.includes(dbCode))
+      );
+      score += commonCodes.length * 10;
+
+      // Text similarity (20 points)
+      const xmlWords = xmlData.normalized.toLowerCase().split(/\s+/);
+      const dbWords = dbData.normalized.toLowerCase().split(/\s+/);
+      const commonWords = xmlWords.filter((word: string) => 
+        dbWords.some((dbWord: string) => dbWord.includes(word) || word.includes(dbWord))
+      );
+      score += Math.min(commonWords.length * 3, 20);
+
+      return score;
+    }
+
+    // Get all brochure motors for enhanced matching
+    const { data: allMotors } = await supabase
+      .from('motor_models')
+      .select('id, model_display, stock_number, horsepower')
+      .eq('is_brochure', true);
+
+    console.log(`🎯 Processing ${stockMap.size} XML units against ${allMotors?.length || 0} database motors`);
+
     let motorsUpdated = 0;
     const updateResults = [];
 
-    // Update matching motors using fuzzy matching
+    // Enhanced matching logic
     for (const [title, quantity] of stockMap.entries()) {
       const price = priceMap.get(title) || 0;
       const stockNumber = stockNumberMap.get(title) || '';
       
       console.log(`🔍 Processing: "${title}" (qty: ${quantity}, price: $${price})`);
       
-      // Try multiple matching strategies
-      const matchingStrategies = [
-        // Exact stock number match
-        stockNumber ? { stock_number: { eq: stockNumber } } : null,
-        // Exact model_display match
-        { model_display: { eq: title } },
-        // Case-insensitive model_display match
-        { model_display: { ilike: title } },
-        // Partial model_display match (contains)
-        { model_display: { ilike: `%${title}%` } },
-        // Try without HP spacing
-        title.includes(' ') ? { model_display: { ilike: `%${title.replace(' ', '')}%` } } : null,
-      ].filter(Boolean);
+      // Normalize XML title
+      const xmlData = normalizeXmlTitle(title);
+      console.log(`   📝 Normalized XML: "${xmlData.normalized}" (HP: ${xmlData.hp}, Codes: [${xmlData.codes.join(', ')}])`);
 
-      let updated = false;
-      
-      for (const strategy of matchingStrategies) {
-        if (updated) break;
-        
-        try {
-          const { data: matchedMotors, error } = await supabase
-            .from('motor_models')
-            .select('id, model_display, stock_number')
-            .eq('is_brochure', true)
-            .match(strategy!)
-            .limit(5);
+      let bestMatch = null;
+      let bestScore = 0;
+      const candidateMatches = [];
 
-          if (error) {
-            console.error(`❌ Query error for "${title}":`, error);
-            continue;
-          }
-
-          if (matchedMotors && matchedMotors.length > 0) {
-            console.log(`✅ Found ${matchedMotors.length} matches for "${title}" using strategy:`, strategy);
-            
-            // Update all matched motors
-            const motorIds = matchedMotors.map(m => m.id);
-            
-            const { error: updateError } = await supabase
-              .from('motor_models')
-              .update({
-                in_stock: true,
-                stock_quantity: quantity,
-                stock_number: stockNumber || undefined,
-                dealer_price_live: price > 0 ? price : undefined,
-                last_stock_check: new Date().toISOString()
-              })
-              .in('id', motorIds);
-
-            if (updateError) {
-              console.error(`❌ Update error for "${title}":`, updateError);
-            } else {
-              motorsUpdated += matchedMotors.length;
-              updateResults.push({
-                xml_title: title,
-                matched_motors: matchedMotors.length,
-                stock_quantity: quantity,
-                price: price,
-                strategy: Object.keys(strategy!)[0]
-              });
-              updated = true;
-            }
-          }
-        } catch (err) {
-          console.error(`❌ Strategy error for "${title}":`, err);
+      // Try exact stock number match first
+      if (stockNumber && allMotors) {
+        const stockMatch = allMotors.find(m => m.stock_number === stockNumber);
+        if (stockMatch) {
+          bestMatch = stockMatch;
+          bestScore = 100;
+          console.log(`   ✅ Exact stock number match: ${stockMatch.model_display}`);
         }
       }
-      
-      if (!updated) {
-        console.warn(`⚠️ No matches found for: "${title}"`);
+
+      // If no stock match, try fuzzy matching
+      if (!bestMatch && allMotors) {
+        for (const motor of allMotors) {
+          const dbData = normalizeDbTitle(motor.model_display || '');
+          const score = calculateMatchScore(xmlData, dbData);
+          
+          if (score > 30) { // Minimum threshold
+            candidateMatches.push({ motor, score, dbData });
+            if (score > bestScore) {
+              bestScore = score;
+              bestMatch = motor;
+            }
+          }
+        }
+
+        // Log candidate matches for debugging
+        if (candidateMatches.length > 0) {
+          console.log(`   🎯 Found ${candidateMatches.length} candidate matches:`);
+          candidateMatches
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 3)
+            .forEach(({ motor, score, dbData }) => {
+              console.log(`      ${score} pts: "${motor.model_display}" (HP: ${dbData.hp}, Codes: [${dbData.codes.join(', ')}])`);
+            });
+        }
+      }
+
+      // Update best match if found
+      if (bestMatch && bestScore >= 40) {
+        try {
+          const { error: updateError } = await supabase
+            .from('motor_models')
+            .update({
+              in_stock: true,
+              stock_quantity: quantity,
+              stock_number: stockNumber || undefined,
+              dealer_price_live: price > 0 ? price : undefined,
+              last_stock_check: new Date().toISOString()
+            })
+            .eq('id', bestMatch.id);
+
+          if (updateError) {
+            console.error(`❌ Update error for "${title}":`, updateError);
+          } else {
+            motorsUpdated++;
+            updateResults.push({
+              xml_title: title,
+              matched_motors: 1,
+              stock_quantity: quantity,
+              price: price,
+              strategy: `fuzzy_match_score_${bestScore}`,
+              matched_model: bestMatch.model_display
+            });
+            console.log(`   ✅ Updated: "${bestMatch.model_display}" (Score: ${bestScore})`);
+          }
+        } catch (err) {
+          console.error(`❌ Update error for "${title}":`, err);
+        }
+      } else {
+        console.warn(`   ⚠️ No suitable matches found (best score: ${bestScore})`);
         updateResults.push({
           xml_title: title,
           matched_motors: 0,
           stock_quantity: quantity,
           price: price,
-          strategy: 'no_match'
+          strategy: `no_match_best_score_${bestScore}`,
+          xml_normalized: xmlData.normalized,
+          xml_hp: xmlData.hp,
+          xml_codes: xmlData.codes
         });
       }
     }
