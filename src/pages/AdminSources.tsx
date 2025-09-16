@@ -14,11 +14,12 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { invokePricelist } from "@/lib/invokeEdge";
 import AdminNav from "@/components/admin/AdminNav";
 
 export default function AdminSources() {
   const { toast } = useToast();
-  const [loading, setLoading] = useState({ pricelist: false, brochure: false, images: false });
+  const [loading, setLoading] = useState({ pricelist: false, brochure: false, images: false, ping: false });
   const [dryRun, setDryRun] = useState(true);
   const [lastIngested, setLastIngested] = useState({
     pricelist: null as Date | null,
@@ -49,108 +50,52 @@ export default function AdminSources() {
     keyCollisions: any[];
   } | null>(null);
 
-  const handlePricelistIngest = async (isDryRun: boolean) => {
+  const runPricelist = async ({ dryRun }: { dryRun: boolean }) => {
     setLoading({ ...loading, pricelist: true });
     setPricelistResults(null);
     
-    // Helper to pretty-print errors
-    const pretty = (e: any) => {
-      try { 
-        if (typeof e === 'string') return e;
-        if (e?.message) return e.message;
-        if (e?.error?.message) return e.error.message;
-        return JSON.stringify(e, null, 2);
-      } catch { 
-        return String(e); 
-      }
+    const body = {
+      dry_run: dryRun,
+      msrp_markup: Number(msrpMarkup || 1.1),
+      url: pricelistUrl?.trim() || 'https://www.harrisboatworks.ca/mercurypricelist',
     };
     
-    try {
-      const markupToSend = Number(msrpMarkup || 1.1);
-      const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
-        body: { 
-          url: pricelistUrl,
-          dry_run: isDryRun,
-          msrp_markup: markupToSend,
-          force: forceIngest,
-          create_missing_brochure: createBrochureRows
-        }
+    const result = await invokePricelist(body);
+    setLoading({ ...loading, pricelist: false });
+
+    // Render results consistently
+    if (!result?.success && result?.error) {
+      toast({
+        title: 'Error',
+        description: `Step: ${result.step || 'unknown'} — ${result.error}${result.detail ? ` — ${result.detail}` : ''}`,
+        variant: 'destructive',
       });
+    }
+    
+    setPricelistResults(result);
 
-      if (error) {
-        console.error('Edge function error:', error);
-        setPricelistResults({
-          success: false,
-          title: 'Edge Function Error',
-          step: error?.step || 'unknown',
-          detail: pretty(error),
-          artifacts: null
-        });
-        
-        toast({
-          title: "Error",
-          description: `${pretty(error)}\nStep: ${error?.step || 'unknown'}`,
-          variant: "destructive",
-        });
-        return;
-      }
-
-      // Check if data has error (when function returns status 200 but with error)
-      if (data && !data.success) {
-        console.error('Function returned error:', data);
-        setPricelistResults({
-          success: false,
-          title: 'Ingest Error',
-          step: data.step || 'unknown',
-          detail: pretty(data.error),
-          artifacts: data.artifacts || null
-        });
-        
-        toast({
-          title: "Ingest Error",
-          description: `${pretty(data.error)}\nStep: ${data.step || 'unknown'}`,
-          variant: "destructive",
-        });
-        return;
-      }
-
-      setPricelistResults(data);
-
-      if (data.success) {
-        if (data.skipped_due_to_same_checksum) {
-          toast({
-            title: "Skipped - No Changes",
-            description: "Content unchanged since last run",
-          });
-        } else {
-          toast({
-            title: isDryRun ? "Price List Preview Complete" : "Price List Ingested",
-            description: `${data.rows_parsed} parsed, ${data.rows_created || 0} created, ${data.rows_updated || 0} updated`,
-          });
-        }
-
-        if (!isDryRun && !data.skipped_due_to_same_checksum) {
-          setLastIngested({ ...lastIngested, pricelist: new Date() });
-        }
-      }
-    } catch (error) {
-      console.error('Price list ingestion error:', error);
-      setPricelistResults({
-        success: false,
-        title: 'Network Error',
-        step: 'request',
-        detail: pretty(error),
-        artifacts: null
+    if (result?.success) {
+      toast({
+        title: dryRun ? "Price List Preview Complete" : "Price List Ingested",
+        description: `${result.rows_parsed || 0} parsed, ${result.rows_created || 0} created, ${result.rows_updated || 0} updated`,
       });
       
-      toast({
-        title: "Error",
-        description: pretty(error),
-        variant: "destructive",
-      });
-    } finally {
-      setLoading({ ...loading, pricelist: false });
+      if (!dryRun) {
+        setLastIngested({ ...lastIngested, pricelist: new Date() });
+      }
     }
+  };
+
+  const pingEdgeFunction = async () => {
+    setLoading({ ...loading, ping: true });
+    const result = await invokePricelist({ ping: true });
+    setLoading({ ...loading, ping: false });
+    
+    toast({
+      title: result?.success ? "Ping Successful" : "Ping Failed",
+      description: result?.message || result?.error || "Connection test complete",
+      variant: result?.success ? "default" : "destructive",
+    });
   };
 
   const handleBrochureIngest = async () => {
@@ -605,7 +550,18 @@ export default function AdminSources() {
 
               <div className="flex gap-3">
                 <Button 
-                  onClick={() => handlePricelistIngest(true)}
+                  onClick={pingEdgeFunction}
+                  disabled={loading.ping}
+                  variant="secondary"
+                  size="sm"
+                >
+                  {loading.ping ? "Pinging..." : "Ping Edge"}
+                </Button>
+              </div>
+
+              <div className="flex gap-3">
+                <Button 
+                  onClick={() => runPricelist({ dryRun: true })}
                   disabled={loading.pricelist || !pricelistUrl.trim()}
                   variant="outline"
                   className="flex-1"
@@ -614,7 +570,7 @@ export default function AdminSources() {
                 </Button>
                 
                 <Button 
-                  onClick={() => handlePricelistIngest(false)}
+                  onClick={() => runPricelist({ dryRun: false })}
                   disabled={loading.pricelist || !pricelistUrl.trim()}
                   className="flex-1"
                 >
@@ -638,20 +594,34 @@ export default function AdminSources() {
                       <div className="font-medium">{pricelistResults.step || 'unknown'}</div>
                     </div>
                     <div className="bg-muted p-3 rounded">
-                      <div className="text-sm text-muted-foreground">Raw Rows Found</div>
-                      <div className="font-medium">{pricelistResults.rows_found_raw || 0}</div>
+                      <div className="text-sm text-muted-foreground">Raw Found</div>
+                      <div className="font-medium">{pricelistResults.rows_found_raw ?? pricelistResults.found ?? 0}</div>
                     </div>
                     <div className="bg-muted p-3 rounded">
-                      <div className="text-sm text-muted-foreground">Rows Parsed</div>
-                      <div className="font-medium">{pricelistResults.rows_parsed || 0}</div>
+                      <div className="text-sm text-muted-foreground">Parsed</div>
+                      <div className="font-medium">{pricelistResults.rows_parsed ?? pricelistResults.parsed ?? 0}</div>
                     </div>
                     <div className="bg-muted p-3 rounded">
-                      <div className="text-sm text-muted-foreground">Created/Updated</div>
-                      <div className="font-medium">
-                        {(pricelistResults.rows_created || 0)} / {(pricelistResults.rows_updated || 0)}
-                      </div>
+                      <div className="text-sm text-muted-foreground">Created</div>
+                      <div className="font-medium">{pricelistResults.rows_created ?? pricelistResults.created ?? 0}</div>
+                    </div>
+                    <div className="bg-muted p-3 rounded">
+                      <div className="text-sm text-muted-foreground">Updated</div>
+                      <div className="font-medium">{pricelistResults.rows_updated ?? pricelistResults.updated ?? 0}</div>
                     </div>
                   </div>
+
+                  {/* Snapshot URL */}
+                  {pricelistResults.snapshot_url && (
+                    <div className="pt-2">
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={pricelistResults.snapshot_url} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          View Saved HTML/JSON
+                        </a>
+                      </Button>
+                    </div>
+                  )}
 
                   {/* Skip Reasons */}
                   {pricelistResults.rows_skipped_by_reason && Object.keys(pricelistResults.rows_skipped_by_reason).length > 0 && (

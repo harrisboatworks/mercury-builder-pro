@@ -26,6 +26,21 @@ Deno.serve(async (req) => {
   };
 
   try {
+    // Quick connectivity sanity route (temporary)
+    if (req.method === 'POST') {
+      const j = await req.json().catch(() => ({}));
+      if (j && j.ping === true) {
+        return new Response(JSON.stringify({ 
+          success: true, 
+          step: 'ping', 
+          message: 'pong' 
+        }), { 
+          status: 200, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        });
+      }
+    }
+
     const { dry_run: dryRunIn = true, msrp_markup: msrpMarkupIn } = await req.json().catch(() => ({} as any));
     const dry_run = Boolean(dryRunIn);
     const effectiveMarkup = Number(msrpMarkupIn ?? 1.1);
