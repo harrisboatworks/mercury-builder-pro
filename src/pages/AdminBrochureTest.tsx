@@ -47,8 +47,14 @@ interface BrochureSummary {
   total_brochure_count: number;
   families: Array<{ family: string; count: number }>;
   latest_samples: Array<{
+    id: string;
     model: string;
+    model_number?: string;
+    mercury_model_no?: string;
     model_key: string;
+    family?: string;
+    horsepower?: number;
+    rigging_code?: string;
     dealer_price: number;
     msrp: number;
     created_at: string;
@@ -96,8 +102,9 @@ export default function AdminBrochureTest() {
       // Get latest 10 samples
       const { data: samples } = await supabase
         .from('motor_models')
-        .select('model, model_key, dealer_price, msrp, created_at')
+        .select('id, model_number, model, mercury_model_no, model_key, family, horsepower, rigging_code, dealer_price, msrp, created_at')
         .eq('is_brochure', true)
+        .eq('make', 'Mercury')
         .order('created_at', { ascending: false })
         .limit(10);
 
@@ -206,19 +213,51 @@ export default function AdminBrochureTest() {
     try {
       setIsRunning(true);
       
-      // Call the export-brochure-csv edge function
-      const { data, error } = await supabase.functions.invoke('export-brochure-csv');
+      // Get all brochure models with the required fields
+      const { data: models, error } = await supabase
+        .from('motor_models')
+        .select('model_number, mercury_model_no, model as model_display, model_key, family, horsepower, rigging_code, accessories_included, dealer_price, msrp, created_at')
+        .eq('is_brochure', true)
+        .eq('make', 'Mercury')
+        .order('created_at', { ascending: false });
 
       if (error) {
         throw new Error(error.message);
       }
 
+      if (!models || models.length === 0) {
+        throw new Error('No brochure models found to export');
+      }
+
+      // Convert to CSV
+      const headers = ['model_number', 'mercury_model_no', 'model_display', 'model_key', 'family', 'horsepower', 'rigging_code', 'accessories_included', 'dealer_price', 'msrp', 'created_at'];
+      const csvRows = [
+        headers.join(','),
+        ...models.map(row => 
+          headers.map(header => {
+            let value = row[header as keyof typeof row];
+            // Handle accessories_included array
+            if (header === 'accessories_included' && Array.isArray(value)) {
+              value = value.join('; ');
+            }
+            // Handle null/undefined values
+            if (value === null || value === undefined) {
+              value = '';
+            }
+            // Escape commas and quotes in CSV
+            return `"${String(value).replace(/"/g, '""')}"`;
+          }).join(',')
+        )
+      ];
+
+      const csvContent = csvRows.join('\n');
+
       // Create and download the CSV file
-      const blob = new Blob([data], { type: 'text/csv' });
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `brochure-catalog-${new Date().toISOString().split('T')[0]}.csv`;
+      a.download = `mercury_brochure_models.csv`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -226,7 +265,7 @@ export default function AdminBrochureTest() {
 
       toast({
         title: "Export Complete",
-        description: "Brochure catalog exported successfully"
+        description: `Exported ${models.length} brochure models successfully`
       });
     } catch (error: any) {
       console.error('Export error:', error);
@@ -570,7 +609,9 @@ export default function AdminBrochureTest() {
                   <Table>
                     <TableHeader>
                       <TableRow>
-                        <TableHead>Model</TableHead>
+                        <TableHead>Model Display</TableHead>
+                        <TableHead>Model Number</TableHead>
+                        <TableHead>Mercury Code</TableHead>
                         <TableHead>Model Key</TableHead>
                         <TableHead>Dealer Price</TableHead>
                         <TableHead>MSRP</TableHead>
@@ -579,11 +620,13 @@ export default function AdminBrochureTest() {
                     </TableHeader>
                     <TableBody>
                       {summary.latest_samples.map((sample, idx) => (
-                        <TableRow key={idx}>
-                          <TableCell className="font-medium">{sample.model}</TableCell>
-                          <TableCell className="font-mono text-xs">{sample.model_key}</TableCell>
-                          <TableCell>${sample.dealer_price?.toLocaleString()}</TableCell>
-                          <TableCell>${sample.msrp?.toLocaleString()}</TableCell>
+                        <TableRow key={sample.id || idx}>
+                          <TableCell className="font-medium">{sample.model || 'N/A'}</TableCell>
+                          <TableCell className="font-mono text-xs">{sample.model_number || 'N/A'}</TableCell>
+                          <TableCell className="font-mono text-xs">{sample.mercury_model_no || 'N/A'}</TableCell>
+                          <TableCell className="font-mono text-xs">{sample.model_key || 'N/A'}</TableCell>
+                          <TableCell>${(sample.dealer_price || 0).toLocaleString()}</TableCell>
+                          <TableCell>${(sample.msrp || 0).toLocaleString()}</TableCell>
                           <TableCell>{new Date(sample.created_at).toLocaleDateString()}</TableCell>
                         </TableRow>
                       ))}
