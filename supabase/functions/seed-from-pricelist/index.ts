@@ -1,6 +1,5 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 import { load } from 'https://esm.sh/cheerio@1.0.0-rc.12'
-import { parseMercuryRigCodes, buildMercuryModelKey } from '../shared/mercury-parser.ts'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -282,6 +281,97 @@ function parsePrice(priceText: string): number | null {
   }
   
   return price;
+}
+
+// Mercury rigging code parsing
+function parseMercuryRigCodes(text: string) {
+  const upperText = text.toUpperCase();
+  const tokens: string[] = [];
+  
+  // Parse shaft length
+  let shaft_code = 'S';
+  let shaft_inches = 15;
+  if (upperText.includes('XXL')) {
+    shaft_code = 'XXL';
+    shaft_inches = 30;
+    tokens.push('XXL');
+  } else if (upperText.includes('XL')) {
+    shaft_code = 'XL';
+    shaft_inches = 25;
+    tokens.push('XL');
+  } else if (upperText.includes('L')) {
+    shaft_code = 'L';
+    shaft_inches = 20;
+    tokens.push('L');
+  }
+  
+  // Parse start type
+  let start_type = 'Unknown';
+  if (upperText.includes('E')) {
+    start_type = 'Electric';
+    tokens.push('E');
+  } else if (upperText.includes('M')) {
+    start_type = 'Manual';
+    tokens.push('M');
+  }
+  
+  // Parse control type
+  let control_type = 'Remote';
+  if (upperText.includes('H') || upperText.includes('TILLER')) {
+    control_type = 'Tiller';
+    tokens.push('H');
+  }
+  
+  // Parse features
+  const has_power_trim = upperText.includes('PT');
+  if (has_power_trim) tokens.push('PT');
+  
+  const has_command_thrust = upperText.includes('CT');
+  if (has_command_thrust) tokens.push('CT');
+  
+  if (upperText.includes('DTS')) tokens.push('DTS');
+  if (upperText.includes('JPO')) tokens.push('JPO');
+  
+  return {
+    tokens,
+    shaft_code,
+    shaft_inches,
+    start_type,
+    control_type,
+    has_power_trim,
+    has_command_thrust
+  };
+}
+
+// Mercury model key builder
+function buildMercuryModelKey(params: {
+  family: string;
+  hp: number | null;
+  hasEFI: boolean;
+  rig: any;
+  modelNo?: string;
+}): string {
+  const parts: string[] = [];
+  
+  // Family
+  parts.push(params.family.toUpperCase());
+  
+  // HP
+  if (params.hp) {
+    parts.push(`${params.hp}HP`);
+  }
+  
+  // EFI
+  if (params.hasEFI) {
+    parts.push('EFI');
+  }
+  
+  // Rigging tokens
+  if (params.rig?.tokens) {
+    parts.push(...params.rig.tokens);
+  }
+  
+  return parts.join('-');
 }
 
 // Mercury model parsing using shared system
