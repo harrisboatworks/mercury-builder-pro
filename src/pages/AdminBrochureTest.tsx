@@ -137,26 +137,41 @@ export default function AdminBrochureTest() {
     setIsRunning(true);
     
     try {
-      const markupToSend = Number(1.10);
+      const markup = Number(1.1);
+      
+      // Use the exact body format requested
       const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
-        body: {
-          url: 'https://www.harrisboatworks.ca/mercurypricelist',
-          dry_run: dryRun, // Send boolean directly
-          msrp_markup: Number(markupToSend ?? 1.1),
-          parse_mode: 'auto'
-        }
+        body: { dry_run: dryRun, msrp_markup: markup }
       });
 
       // Show what we sent for sanity
       toast({
         title: `${dryRun ? 'Dry Run' : 'Live Ingest'} Started`,
-        description: `dry_run=${dryRun}, markup=${markupToSend}`,
+        description: `Sent: dry_run=${dryRun}, markup=${markup}`,
         duration: 2000
       });
 
       if (error) {
         console.error('Edge function error:', error);
         throw new Error(`${error.status}: ${error.message}`);
+      }
+
+      // Check for echo mismatch
+      const echo = data.echo || {};
+      const mismatch = echo.dry_run !== dryRun || echo.markup !== markup;
+      
+      if (mismatch) {
+        toast({
+          title: "Global dry-run override detected (UI/param leak)",
+          description: `Echo: dry_run=${echo.dry_run}, markup=${echo.markup}`,
+          variant: "destructive"
+        });
+      } else {
+        toast({
+          title: "Echo Validation Passed",
+          description: `Echo: dry_run=${echo.dry_run}, markup=${echo.markup}`,
+          duration: 1500
+        });
       }
 
       const result: ParseResult = {
@@ -176,6 +191,15 @@ export default function AdminBrochureTest() {
         html_saved_url: data.artifacts?.html_url,
         source_kind: data.source_kind
       };
+
+      // Check for zero counts warning
+      if (!dryRun && result.rows_parsed > 0 && result.rows_created === 0 && result.rows_updated === 0) {
+        toast({
+          title: "No DB changes recorded",
+          description: "If you already ingested these rows earlier, counts can be 0. Run Sanity Queries to verify.",
+          variant: "default"
+        });
+      }
 
       if (dryRun) {
         setDryRunResult(result);
@@ -300,33 +324,22 @@ export default function AdminBrochureTest() {
     try {
       setIsRunning(true);
       
-      // A) Total brochure rows
+      // A) COUNT(*) FROM motor_models WHERE is_brochure = true
       const { count: totalCount } = await supabase
         .from('motor_models')
         .select('*', { count: 'exact', head: true })
         .eq('is_brochure', true);
 
-      // B) Distinct Mercury model numbers
-      const { data: distinctData } = await supabase
+      // B) SELECT model_number, created_at FROM motor_models ORDER BY created_at DESC LIMIT 5  
+      const { data: latestData } = await supabase
         .from('motor_models')
-        .select('model_number')
-        .eq('is_brochure', true)
-        .not('model_number', 'is', null);
-      
-      const distinctCount = new Set(distinctData?.map(d => d.model_number) || []).size;
-
-      // C) Sample of 10
-      const { data: sampleData } = await supabase
-        .from('motor_models')
-        .select('model_number, model_display, dealer_price, msrp, created_at')
-        .eq('is_brochure', true)
-        .order('model_number')
-        .limit(10);
+        .select('model_number, created_at')
+        .order('created_at', { ascending: false })
+        .limit(5);
 
       setSanityResult({
         totalBrochureRows: totalCount || 0,
-        distinctModelNumbers: distinctCount,
-        sampleData: sampleData || [],
+        latestRecords: latestData || [],
         executedAt: new Date().toLocaleString()
       });
       
@@ -334,7 +347,7 @@ export default function AdminBrochureTest() {
       
       toast({
         title: "Sanity Check Complete",
-        description: `Found ${totalCount} brochure models with ${distinctCount} distinct model numbers`
+        description: `Found ${totalCount} brochure models. Latest 5 records retrieved.`
       });
     } catch (error: any) {
       console.error('Sanity check error:', error);
@@ -738,33 +751,25 @@ export default function AdminBrochureTest() {
               <div className="space-y-4">
                 <div className="text-center p-4 border rounded">
                   <div className="text-3xl font-bold text-primary">{sanityResult.totalBrochureRows}</div>
-                  <div className="text-sm text-muted-foreground">Total Brochure Models</div>
-                </div>
-                <div className="text-center p-4 border rounded">
-                  <div className="text-3xl font-bold text-blue-600">{sanityResult.distinctModelNumbers}</div>
-                  <div className="text-sm text-muted-foreground">Distinct Model Numbers</div>
+                  <div className="text-sm text-muted-foreground">Total Brochure Models (≈ 130 expected)</div>
                 </div>
               </div>
               
               <div>
-                <h4 className="font-semibold mb-2">Sample Records (First 10):</h4>
+                <h4 className="font-semibold mb-2">Latest Records (ORDER BY created_at DESC LIMIT 5):</h4>
                 <div className="rounded-md border overflow-hidden">
                   <Table>
                     <TableHeader>
                       <TableRow>
                         <TableHead>Model Number</TableHead>
-                        <TableHead>Display</TableHead>
-                        <TableHead>Dealer Price</TableHead>
-                        <TableHead>MSRP</TableHead>
+                        <TableHead>Created At</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {sanityResult.sampleData.map((item: any, idx: number) => (
+                      {sanityResult.latestRecords.map((item: any, idx: number) => (
                         <TableRow key={idx}>
                           <TableCell className="font-mono text-xs">{item.model_number || 'N/A'}</TableCell>
-                          <TableCell className="text-sm">{item.model_display || 'N/A'}</TableCell>
-                          <TableCell>${(item.dealer_price || 0).toLocaleString()}</TableCell>
-                          <TableCell>${(item.msrp || 0).toLocaleString()}</TableCell>
+                          <TableCell>{new Date(item.created_at).toLocaleString()}</TableCell>
                         </TableRow>
                       ))}
                     </TableBody>
