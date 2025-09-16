@@ -71,6 +71,7 @@ export default function AdminBrochureTest() {
   const [testResult, setTestResult] = useState<string>('');
   const [sanityResult, setSanityResult] = useState<any>(null);
   const [showSanityResults, setShowSanityResults] = useState(false);
+  const [result, setResult] = useState<any>(null);
 
   // Load brochure summary on page load
   useEffect(() => {
@@ -133,10 +134,71 @@ export default function AdminBrochureTest() {
     }
   };
 
+  const pingEdge = async () => {
+    try {
+      const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
+        method: 'GET',
+        headers: { 'x-debug': '1' }
+      });
+      setResult({ ping: data ?? null, pingError: error ?? null });
+    } catch (e: any) {
+      setResult({ pingError: { name: e?.name, message: e?.message } });
+    }
+  };
+
+  const runPricelist = async (dryRun = true, markupStr = '1.1') => {
+    const payload = {
+      dry_run: !!dryRun,
+      msrp_markup: Number(markupStr) > 0 ? Number(markupStr) : 1.1
+    };
+    setResult({ sending: payload });
+    try {
+      const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
+        body: payload,
+        headers: { 'x-debug': '1' }
+      });
+
+      if (error) {
+        setResult({
+          sending: payload,
+          errorName: error.name,
+          errorMessage: error.message,
+          data
+        });
+        return;
+      }
+
+      if (!data?.success) {
+        setResult({
+          sending: payload,
+          response: data,
+          mismatch:
+            data?.echo &&
+            (data.echo.dry_run !== payload.dry_run || data.echo.msrp_markup !== payload.msrp_markup)
+        });
+        return;
+      }
+
+      setResult({
+        sending: payload,
+        response: data,
+        mismatch:
+          data?.echo &&
+          (data.echo.dry_run !== payload.dry_run || data.echo.msrp_markup !== payload.msrp_markup)
+      });
+    } catch (e: any) {
+      setResult({
+        sending: payload,
+        fetchError: { name: e?.name, message: e?.message }
+      });
+    }
+  };
+
   const runPriceListParser = async (dryRun: boolean) => {
     setIsRunning(true);
     
     try {
+      await runPricelist(dryRun, '1.1');
       const markup = Number(1.1);
       
       // Use the exact body format requested

@@ -2,319 +2,312 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-debug',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Content-Type': 'application/json'
+};
+
+function ok(payload: Record<string, unknown>) {
+  return new Response(JSON.stringify(payload), { status: 200, headers: corsHeaders });
+}
+
+function fail(step: string, err: unknown, extra: Record<string, unknown> = {}) {
+  const msg = (err && (err as any).message) ? (err as any).message : String(err);
+  const stack = (err && (err as any).stack) ? (err as any).stack : undefined;
+  return new Response(JSON.stringify({ success: false, step, error: msg, stack, ...extra }), {
+    status: 200,
+    headers: corsHeaders
+  });
 }
 
 Deno.serve(async (req) => {
-  // Handle CORS preflight requests
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
-  }
-
-  const supabase = createClient(
-    Deno.env.get('SUPABASE_URL') ?? '',
-    Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
-  )
-
-  let currentStep = 'init';
-  let debugInfo = {
-    rows_found: 0,
-    rows_parsed: 0,
-    rowErrors: [],
-    first_bad_row: null,
-    samples: []
-  };
-
   try {
-    const raw = await req.json().catch(() => ({}));
-    
-    if (raw && raw.ping === true) {
-      console.log('[PriceList] Ping request received');
-      return new Response(JSON.stringify({ 
-        success: true, 
-        step: 'ping', 
-        message: 'pong' 
-      }), { 
-        status: 200, 
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-      });
+    // CORS preflight
+    if (req.method === 'OPTIONS') return new Response(null, { headers: corsHeaders });
+
+    // Lightweight reachability check
+    const url = new URL(req.url);
+    if (req.method === 'GET' && (url.searchParams.get('ping') === '1' || url.pathname.endsWith('/ping'))) {
+      return ok({ success: true, step: 'ping', message: 'seed-from-pricelist alive' });
     }
 
-    let dry_run: boolean;
-    if (raw.dry_run === undefined) {
-      dry_run = true; // default preview
-    } else if (typeof raw.dry_run === 'string') {
-      dry_run = raw.dry_run.trim().toLowerCase() === 'true';
-    } else {
-      dry_run = !!raw.dry_run;
+    // Safely parse JSON body (POST expected)
+    let raw: any = {};
+    if (req.method === 'POST') {
+      try { raw = await req.json(); } catch { raw = {}; }
     }
 
-    const markup = Number.isFinite(Number(raw.msrp_markup)) && Number(raw.msrp_markup) > 0
-      ? Number(raw.msrp_markup)
-      : 1.1;
+    // Normalize inputs (NEVER crash here)
+    const dry_run =
+      typeof raw.dry_run === 'string'
+        ? raw.dry_run.trim().toLowerCase() === 'true'
+        : (raw.dry_run === undefined ? true : !!raw.dry_run);
 
-    console.log(`[PriceList] Resolved flags: dry_run=${dry_run}, markup=${markup}`);
-    
-    const priceListUrl = raw.url?.trim() || 'https://www.harrisboatworks.ca/mercurypricelist';
-    
-    console.log(`[PriceList] Starting seed process: dry_run=${dry_run}, markup=${markup}, url=${priceListUrl}`);
-    
-    // Step 1: Fetch from URL
-    currentStep = 'fetch';
-    console.log(`[PriceList] Fetching from URL: ${priceListUrl}`);
-    
-    const response = await fetch(priceListUrl);
-    const html = await response.text();
-    
-    // Create a simple checksum for content
-    const contentChecksum = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(html));
-    const checksumHex = Array.from(new Uint8Array(contentChecksum))
-      .map(b => b.toString(16).padStart(2, '0'))
-      .join('')
-      .substring(0, 8);
-    
-    console.log(`[PriceList] Content checksum: ${checksumHex}...`);
-    
-    // Step 2: Parse HTML tables
-    currentStep = 'parse';
-    console.log(`[PriceList] Parsing HTML tables...`);
-    const tables = parseHTMLTables(html);
-    
-    if (tables.length === 0) {
-      return new Response(JSON.stringify({
-        success: false,
-        step: currentStep,
-        error: 'No tables found in HTML',
-        detail: 'HTML parsing found no table elements',
-        debugInfo
-      }), { 
-        status: 200,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-      });
-    }
-    
-    // Find the best table (highest score)
-    const bestTable = tables.reduce((prev, current) => 
-      current.score > prev.score ? current : prev
+    const msrp_markup =
+      Number.isFinite(Number(raw.msrp_markup)) && Number(raw.msrp_markup) > 0
+        ? Number(raw.msrp_markup)
+        : 1.1;
+
+    // Echo what we'll use (helps catch UI/body mismatches)
+    const echo = { dry_run, msrp_markup };
+
+    // Supabase client
+    const supabase = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     );
-    
-    console.log(`[PriceList] Found ${tables.length} tables, top scores: ${tables.map(t => `${t.score} (${t.rows}r×${t.cols}c)`).join(',')}`);
-    console.log(`[PriceList] Processing table with score ${bestTable.score}`);
-    console.log(`[PriceList] Detected headers: ${JSON.stringify(bestTable.headers)}`);
-    
-    // Column mapping with safety fallbacks
-    const columnMapping = getColumnMapping(bestTable.headers);
-    console.log(`[PriceList] Headers detected: ${JSON.stringify(bestTable.headers)}`);
-    console.log(`[PriceList] Column mapping applied: ${JSON.stringify(columnMapping)}`);
-    
-    // Extract and normalize data
-    const rawRows = extractTableData(bestTable, columnMapping);
-    debugInfo.rows_found = rawRows.length;
-    console.log(`[PriceList] Table produced ${rawRows.length} rows`);
-    console.log(`[PriceList] example_row=${JSON.stringify(rawRows[0])}`);
-    
-    if (rawRows.length === 0) {
-      return new Response(JSON.stringify({
-        success: false,
-        step: currentStep,
-        error: 'No data rows extracted from table',
-        detail: 'Table parsing found no data rows after header detection',
-        debugInfo
-      }), { 
-        status: 200,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-      });
+
+    // Quick smoke test (optional)
+    if (raw && raw.quick === true) {
+      return ok({ success: true, step: 'quick', echo });
     }
+
+    console.log(`[PriceList] Resolved flags: dry_run=${dry_run}, msrp_markup=${msrp_markup}`);
     
-    // Step 3: Normalize data
-    currentStep = 'normalize';
-    console.log(`[PriceList] HTML parsing found ${rawRows.length} rows`);
-    console.log(`[PriceList] DEBUG: Starting normalization of ${rawRows.length} raw rows`);
-    
-    const { normalizedMotors, errors, skipReasons } = normalizeMotorData(rawRows, markup);
-    debugInfo.rows_parsed = normalizedMotors.length;
-    debugInfo.rowErrors = errors.slice(0, 10); // Limit to first 10 errors
-    if (errors.length > 0) {
-      debugInfo.first_bad_row = errors[0];
-    }
-    
-    // Debug the first few rows
-    for (let i = 0; i < Math.min(5, normalizedMotors.length); i++) {
-      console.log(`[PriceList] DEBUG Row ${i + 1}: ${JSON.stringify(normalizedMotors[i])}`);
-    }
-    
-    // Deduplicate by model_number (primary) then model_key (fallback)
-    const uniqueKeys = new Map();
-    const deduplicatedMotors = [];
-    const deduplicationSkips = new Map();
-    
-    for (const motor of normalizedMotors) {
-      const primaryKey = motor.model_number || motor.model_key;
+    try {
+      let currentStep = 'init';
+      let debugInfo = {
+        rows_found: 0,
+        rows_parsed: 0,
+        rowErrors: [],
+        first_bad_row: null,
+        samples: []
+      };
+
+      const priceListUrl = raw.url?.trim() || 'https://www.harrisboatworks.ca/mercurypricelist';
       
-      if (!uniqueKeys.has(primaryKey)) {
-        uniqueKeys.set(primaryKey, motor);
-        deduplicatedMotors.push(motor);
-      } else {
-        const reason = motor.model_number ? `duplicate_model_number:${motor.model_number}` : `duplicate_model_key:${motor.model_key}`;
-        deduplicationSkips.set(reason, (deduplicationSkips.get(reason) || 0) + 1);
+      console.log(`[PriceList] Starting seed process: dry_run=${dry_run}, msrp_markup=${msrp_markup}, url=${priceListUrl}`);
+      
+      // Step 1: Fetch from URL
+      currentStep = 'fetch';
+      console.log(`[PriceList] Fetching from URL: ${priceListUrl}`);
+      
+      const response = await fetch(priceListUrl);
+      const html = await response.text();
+      
+      // Create a simple checksum for content
+      const contentChecksum = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(html));
+      const checksumHex = Array.from(new Uint8Array(contentChecksum))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('')
+        .substring(0, 8);
+      
+      console.log(`[PriceList] Content checksum: ${checksumHex}...`);
+      
+      // Step 2: Parse HTML tables
+      currentStep = 'parse';
+      console.log(`[PriceList] Parsing HTML tables...`);
+      const tables = parseHTMLTables(html);
+      
+      if (tables.length === 0) {
+        return fail('parse', 'No tables found in HTML', { 
+          detail: 'HTML parsing found no table elements',
+          debugInfo,
+          echo
+        });
       }
-    }
-    
-    // Merge skip reasons
-    const allSkipReasons = new Map([...skipReasons, ...deduplicationSkips]);
-    
-    console.log(`[PriceList] Deduplicated to ${deduplicatedMotors.length} motors`);
-    console.log(`[PriceList] ingest params: dry_run=${dry_run}, markup=${markup}`);
-    console.log(`[PriceList] source=${priceListUrl.toUpperCase()} rows_found=${rawRows.length} rows_normalized=${normalizedMotors.length} rows_deduplicated=${deduplicatedMotors.length}`);
-    
-    // Safety check for empty deduplication
-    if (deduplicatedMotors.length === 0) {
-      console.log(`[PriceList] WARNING: No motors survived deduplication - possible data issue`);
-    }
-    // Save snapshot to storage
-    currentStep = 'snapshot';
-    console.log(`[PriceList] Saving artifacts to storage...`);
-    const artifacts = {
-      source_url: priceListUrl,
-      content_checksum: checksumHex,
-      scraped_at: new Date().toISOString(),
-      tables_found: tables.length,
-      best_table_score: bestTable.score,
-      column_mapping: columnMapping,
-      raw_rows: rawRows.length,
-      normalized_motors: normalizedMotors.length,
-      deduplicated_motors: deduplicatedMotors.length,
-      sample_motors: deduplicatedMotors.slice(0, 10),
-      skip_reasons: Object.fromEntries(allSkipReasons),
-      parse_errors: errors.slice(0, 10)
-    };
-    
-    const artifactPath = `pricelist-artifacts/${new Date().toISOString().split('T')[0]}-${checksumHex}.html`;
-    await supabase.storage
-      .from('sources')
-      .upload(artifactPath, html, {
-        contentType: 'text/html',
-        upsert: true
-      });
-    
-    const jsonPath = `pricelist-artifacts/${new Date().toISOString().split('T')[0]}-${checksumHex}.json`;
-    await supabase.storage
-      .from('sources')
-      .upload(jsonPath, JSON.stringify(artifacts, null, 2), {
-        contentType: 'application/json',
-        upsert: true
-      });
-    
-    debugInfo.samples = deduplicatedMotors.slice(0, 10).map(m => ({
-      model_number: m.model_number,
-      model_display: m.model_display,
-      rigging_code: m.rigging_code,
-      accessories_included: m.accessories_included,
-      dealer_price: m.dealer_price,
-      msrp: m.msrp
-    }));
-    
-    if (dry_run) {
-      console.log(`[PriceList] Dry run complete - no database changes made`);
-      return new Response(JSON.stringify({
-        success: true,
-        step: 'dry_run_complete',
-        dry_run: true,
+      
+      // Find the best table (highest score)
+      const bestTable = tables.reduce((prev, current) => 
+        current.score > prev.score ? current : prev
+      );
+      
+      console.log(`[PriceList] Found ${tables.length} tables, top scores: ${tables.map(t => `${t.score} (${t.rows}r×${t.cols}c)`).join(',')}`);
+      console.log(`[PriceList] Processing table with score ${bestTable.score}`);
+      console.log(`[PriceList] Detected headers: ${JSON.stringify(bestTable.headers)}`);
+      
+      // Column mapping with safety fallbacks
+      const columnMapping = getColumnMapping(bestTable.headers);
+      console.log(`[PriceList] Headers detected: ${JSON.stringify(bestTable.headers)}`);
+      console.log(`[PriceList] Column mapping applied: ${JSON.stringify(columnMapping)}`);
+      
+      // Extract and normalize data
+      const rawRows = extractTableData(bestTable, columnMapping);
+      debugInfo.rows_found = rawRows.length;
+      console.log(`[PriceList] Table produced ${rawRows.length} rows`);
+      console.log(`[PriceList] example_row=${JSON.stringify(rawRows[0])}`);
+      
+      if (rawRows.length === 0) {
+        return fail('parse', 'No data rows extracted from table', {
+          detail: 'Table parsing found no data rows after header detection',
+          debugInfo,
+          echo
+        });
+      }
+      
+      // Step 3: Normalize data
+      currentStep = 'normalize';
+      console.log(`[PriceList] HTML parsing found ${rawRows.length} rows`);
+      console.log(`[PriceList] DEBUG: Starting normalization of ${rawRows.length} raw rows`);
+      
+      const { normalizedMotors, errors, skipReasons } = normalizeMotorData(rawRows, msrp_markup);
+      debugInfo.rows_parsed = normalizedMotors.length;
+      debugInfo.rowErrors = errors.slice(0, 10); // Limit to first 10 errors
+      if (errors.length > 0) {
+        debugInfo.first_bad_row = errors[0];
+      }
+      
+      // Debug the first few rows
+      for (let i = 0; i < Math.min(5, normalizedMotors.length); i++) {
+        console.log(`[PriceList] DEBUG Row ${i + 1}: ${JSON.stringify(normalizedMotors[i])}`);
+      }
+      
+      // Deduplicate by model_number (primary) then model_key (fallback)
+      const uniqueKeys = new Map();
+      const deduplicatedMotors = [];
+      const deduplicationSkips = new Map();
+      
+      for (const motor of normalizedMotors) {
+        const primaryKey = motor.model_number || motor.model_key;
+        
+        if (!uniqueKeys.has(primaryKey)) {
+          uniqueKeys.set(primaryKey, motor);
+          deduplicatedMotors.push(motor);
+        } else {
+          const reason = motor.model_number ? `duplicate_model_number:${motor.model_number}` : `duplicate_model_key:${motor.model_key}`;
+          deduplicationSkips.set(reason, (deduplicationSkips.get(reason) || 0) + 1);
+        }
+      }
+      
+      // Merge skip reasons
+      const allSkipReasons = new Map([...skipReasons, ...deduplicationSkips]);
+      
+      console.log(`[PriceList] Deduplicated to ${deduplicatedMotors.length} motors`);
+      console.log(`[PriceList] ingest params: dry_run=${dry_run}, msrp_markup=${msrp_markup}`);
+      console.log(`[PriceList] source=${priceListUrl.toUpperCase()} rows_found=${rawRows.length} rows_normalized=${normalizedMotors.length} rows_deduplicated=${deduplicatedMotors.length}`);
+      
+      // Safety check for empty deduplication
+      if (deduplicatedMotors.length === 0) {
+        console.log(`[PriceList] WARNING: No motors survived deduplication - possible data issue`);
+      }
+      
+      // Save snapshot to storage
+      currentStep = 'snapshot';
+      console.log(`[PriceList] Saving artifacts to storage...`);
+      const artifacts = {
+        source_url: priceListUrl,
+        content_checksum: checksumHex,
+        scraped_at: new Date().toISOString(),
+        tables_found: tables.length,
+        best_table_score: bestTable.score,
+        column_mapping: columnMapping,
+        raw_rows: rawRows.length,
+        normalized_motors: normalizedMotors.length,
+        deduplicated_motors: deduplicatedMotors.length,
+        sample_motors: deduplicatedMotors.slice(0, 10),
+        skip_reasons: Object.fromEntries(allSkipReasons),
+        parse_errors: errors.slice(0, 10)
+      };
+      
+      const artifactPath = `pricelist-artifacts/${new Date().toISOString().split('T')[0]}-${checksumHex}.html`;
+      await supabase.storage
+        .from('sources')
+        .upload(artifactPath, html, {
+          contentType: 'text/html',
+          upsert: true
+        });
+      
+      const jsonPath = `pricelist-artifacts/${new Date().toISOString().split('T')[0]}-${checksumHex}.json`;
+      await supabase.storage
+        .from('sources')
+        .upload(jsonPath, JSON.stringify(artifacts, null, 2), {
+          contentType: 'application/json',
+          upsert: true
+        });
+      
+      debugInfo.samples = deduplicatedMotors.slice(0, 10).map(m => ({
+        model_number: m.model_number,
+        model_display: m.model_display,
+        rigging_code: m.rigging_code,
+        accessories_included: m.accessories_included,
+        dealer_price: m.dealer_price,
+        msrp: m.msrp
+      }));
+      
+      if (dry_run) {
+        console.log(`[PriceList] Dry run complete - no database changes made`);
+        return ok({
+          success: true,
+          step: 'dry_run_complete',
+          dry_run: true,
+          rows_found_raw: rawRows.length,
+          rows_parsed: normalizedMotors.length,
+          rows_created: deduplicatedMotors.length, // This is "would create" in dry run
+          rows_updated: 0,
+          sample_created: debugInfo.samples,
+          rows_skipped_by_reason: Object.fromEntries(allSkipReasons),
+          top_skip_reasons: Array.from(allSkipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
+          rowErrors: debugInfo.rowErrors,
+          snapshot_url: `View Saved HTML: ${jsonPath}`,
+          echo
+        });
+      }
+      
+      // Step 4: Upsert to database
+      currentStep = 'upsert';
+      console.log(`[PriceList] Upserting ${deduplicatedMotors.length} motors to database...`);
+      
+      const keys = deduplicatedMotors.map(m => m.model_number);
+
+      const { data: existingRows } = await supabase
+        .from('motor_models')
+        .select('model_number')
+        .in('model_number', keys);
+
+      const existing = new Set((existingRows || []).map(r => r.model_number));
+      const toInsert = deduplicatedMotors.filter(m => !existing.has(m.model_number));
+      const toUpdate = deduplicatedMotors.filter(m => existing.has(m.model_number));
+
+      let created = 0, updated = 0, failed = 0;
+
+      // inserts
+      for (let i = 0; i < toInsert.length; i += 100) {
+        const { data, error } = await supabase
+          .from('motor_models')
+          .insert(toInsert.slice(i, i + 100))
+          .select('id');
+        if (error) failed += Math.min(100, toInsert.length - i);
+        else created += (data?.length || 0);
+      }
+
+      // updates
+      for (let i = 0; i < toUpdate.length; i += 100) {
+        const chunk = toUpdate.slice(i, i + 100);
+        const modelNos = chunk.map(r => r.model_number);
+        const { data, error } = await supabase
+          .from('motor_models')
+          .update(chunk)
+          .in('model_number', modelNos)
+          .select('id');
+        if (error) failed += Math.min(100, toUpdate.length - i);
+        else updated += (data?.length || 0);
+      }
+
+      console.log(`[PriceList] Database upsert complete: ${created} created, ${updated} updated, ${failed} failed`);
+      console.log(`[PriceList] Process complete: { success: ${failed === 0}, found: ${rawRows.length}, parsed: ${normalizedMotors.length}, created: ${created}, updated: ${updated} }`);
+      
+      return ok({
+        success: failed === 0,
+        step: dry_run ? 'dry_run_complete' : 'complete',
         rows_found_raw: rawRows.length,
         rows_parsed: normalizedMotors.length,
-        rows_created: deduplicatedMotors.length, // This is "would create" in dry run
-        rows_updated: 0,
-        sample_created: debugInfo.samples,
-        rows_skipped_by_reason: Object.fromEntries(allSkipReasons),
-        top_skip_reasons: Array.from(allSkipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
-        rowErrors: debugInfo.rowErrors,
-        snapshot_url: `View Saved HTML: ${jsonPath}`,
-        echo: { dry_run, markup }
-      }), { 
-        status: 200,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        rows_created: created,
+        rows_updated: updated,
+        rows_failed: failed,
+        echo
       });
-    }
-    
-    // Step 4: Upsert to database
-    currentStep = 'upsert';
-    console.log(`[PriceList] Upserting ${deduplicatedMotors.length} motors to database...`);
-    
-    const keys = deduplicatedMotors.map(m => m.model_number);
-
-    const { data: existingRows } = await supabase
-      .from('motor_models')
-      .select('model_number')
-      .in('model_number', keys);
-
-    const existing = new Set((existingRows || []).map(r => r.model_number));
-    const toInsert = deduplicatedMotors.filter(m => !existing.has(m.model_number));
-    const toUpdate = deduplicatedMotors.filter(m => existing.has(m.model_number));
-
-    let created = 0, updated = 0, failed = 0;
-
-    // inserts
-    for (let i = 0; i < toInsert.length; i += 100) {
-      const { data, error } = await supabase
-        .from('motor_models')
-        .insert(toInsert.slice(i, i + 100))
-        .select('id');
-      if (error) failed += Math.min(100, toInsert.length - i);
-      else created += (data?.length || 0);
+      
+    } catch (innerErr) {
+      return fail('normalize_or_ingest', innerErr, { echo });
     }
 
-    // updates
-    for (let i = 0; i < toUpdate.length; i += 100) {
-      const chunk = toUpdate.slice(i, i + 100);
-      const modelNos = chunk.map(r => r.model_number);
-      const { data, error } = await supabase
-        .from('motor_models')
-        .update(chunk)
-        .in('model_number', modelNos)
-        .select('id');
-      if (error) failed += Math.min(100, toUpdate.length - i);
-      else updated += (data?.length || 0);
-    }
-
-    console.log(`[PriceList] Database upsert complete: ${created} created, ${updated} updated, ${failed} failed`);
-    console.log(`[PriceList] Process complete: { success: ${failed === 0}, found: ${rawRows.length}, parsed: ${normalizedMotors.length}, created: ${created}, updated: ${updated} }`);
-    
-    if (batchErrors.length > 0) {
-      console.error(`[PriceList] Batch errors encountered:`, batchErrors);
-    }
-    
-    return new Response(JSON.stringify({
-      success: failed === 0,
-      step: dry_run ? 'dry_run_complete' : 'complete',
-      rows_found_raw: rawRows.length,
-      rows_parsed: normalizedMotors.length,
-      rows_created: created,
-      rows_updated: updated,
-      rows_failed: failed,
-      echo: { dry_run, markup }
-    }), { 
-      status: 200,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-    });
-    
-  } catch (error) {
-    console.error(`[PriceList] Error at step ${currentStep}:`, error);
-    return new Response(JSON.stringify({
-      success: false,
-      step: currentStep,
-      error: error.message,
-      detail: `Exception during ${currentStep} (markup=${markup})`,
-      stack: error.stack,
-      debugInfo
-    }), { 
-      status: 200,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-    });
+  } catch (bootErr) {
+    return fail('boot', bootErr);
   }
 });
 
 // Parse Mercury model codes and descriptions with error handling
-function normalizeMotorData(rawRows: any[], markup: number) {
+function normalizeMotorData(rawRows: any[], msrp_markup: number) {
   const results = [];
   const errors = [];
   const skipReasons = new Map();
@@ -444,12 +437,12 @@ function normalizeMotorData(rawRows: any[], markup: number) {
         dealer_price: dealerPrice,
         base_price: dealerPrice,
         sale_price: dealerPrice,
-        msrp: Math.round(dealerPrice * markup),
+        msrp: Math.round(dealerPrice * msrp_markup),
         
         // Source tracking
         price_source: 'harris_pricelist',
         msrp_source: 'calculated',
-        msrp_calc_source: `dealer_price * ${markup}`,
+        msrp_calc_source: `dealer_price * ${msrp_markup}`,
         
         // Database required fields
         make: 'Mercury',
