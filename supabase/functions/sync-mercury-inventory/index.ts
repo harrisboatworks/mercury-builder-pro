@@ -1,5 +1,6 @@
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { XMLParser } from 'https://esm.sh/fast-xml-parser@4.2.5';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -41,22 +42,64 @@ serve(async (req) => {
     console.log(`📄 Fetched XML feed (${xmlText.length} chars)`);
     
     // Parse XML for Mercury new units only
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(xmlText, 'text/xml');
+    const parser = new XMLParser({
+      ignoreAttributes: false,
+      parseAttributeValue: false,
+      parseNodeValue: true,
+      parseTrueNumberOnly: false,
+      arrayMode: false,
+      alwaysCreateTextNode: false,
+      isArray: (name, jpath, isLeafNode, isAttribute) => {
+        // Always treat 'item' as an array to handle multiple items
+        return name === 'item';
+      }
+    });
     
-    // Check for XML parsing errors
-    const parserError = doc.querySelector('parsererror');
-    if (parserError) {
-      throw new Error(`XML parsing failed: ${parserError.textContent}`);
+    const xmlData = parser.parse(xmlText);
+    
+    // Navigate to items - adjust path based on actual XML structure
+    let items = [];
+    
+    // Try different possible paths to find items
+    if (xmlData?.unitinventory?.item) {
+      items = Array.isArray(xmlData.unitinventory.item) 
+        ? xmlData.unitinventory.item 
+        : [xmlData.unitinventory.item];
+    } else if (xmlData?.inventory?.item) {
+      items = Array.isArray(xmlData.inventory.item) 
+        ? xmlData.inventory.item 
+        : [xmlData.inventory.item];
+    } else if (xmlData?.item) {
+      items = Array.isArray(xmlData.item) ? xmlData.item : [xmlData.item];
+    } else {
+      // Fallback: search for any items in the parsed data
+      const findItems = (obj: any): any[] => {
+        if (!obj || typeof obj !== 'object') return [];
+        
+        let found: any[] = [];
+        for (const [key, value] of Object.entries(obj)) {
+          if (key === 'item') {
+            if (Array.isArray(value)) {
+              found = found.concat(value);
+            } else {
+              found.push(value);
+            }
+          } else if (typeof value === 'object') {
+            found = found.concat(findItems(value));
+          }
+        }
+        return found;
+      };
+      
+      items = findItems(xmlData);
     }
-
-    const allItems = Array.from(doc.querySelectorAll('item'));
-    console.log(`📦 Found ${allItems.length} total items in XML`);
+    
+    console.log(`📦 Found ${items.length} total items in XML`);
 
     // Filter for Mercury new units only
-    const mercuryUnits = allItems.filter(item => {
-      const manufacturer = item.querySelector('manufacturer')?.textContent?.trim();
-      const condition = item.querySelector('condition')?.textContent?.trim();
+    const mercuryUnits = items.filter(item => {
+      const manufacturer = item?.manufacturer || '';
+      const condition = item?.condition || '';
       
       return manufacturer === 'Mercury' && condition === 'New';
     });
@@ -81,10 +124,10 @@ serve(async (req) => {
     
     // Process units to build stock counts
     for (const unit of mercuryUnits) {
-      const title = unit.querySelector('title')?.textContent?.trim() || '';
-      const stockNumber = unit.querySelector('stocknumber')?.textContent?.trim() || '';
-      const priceText = unit.querySelector('price')?.textContent?.trim() || '0';
-      const price = parseFloat(priceText.replace(/[,$]/g, '')) || 0;
+      const title = unit?.title || '';
+      const stockNumber = unit?.stocknumber || '';
+      const priceText = unit?.price || '0';
+      const price = parseFloat(String(priceText).replace(/[,$]/g, '')) || 0;
       
       if (title) {
         // Increment stock count
