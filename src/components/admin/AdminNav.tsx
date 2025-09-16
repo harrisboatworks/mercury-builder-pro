@@ -16,7 +16,6 @@ const navItems = [
   { label: "Email Management", to: "/admin/email" },
   { label: "Payments", to: "/admin/payments" },
   { label: "SMS Alerts", to: "/admin/sms" },
-  { label: "Sync Management", to: "/admin/sync" },
 ];
 
 export default function AdminNav() {
