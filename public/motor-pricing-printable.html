@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercury Marine Motor Pricing - Harris Boat Works</title>
+    <style>
+        @media print {
+            @page {
+                size: letter;
+                margin: 0.5in;
+            }
+            
+            .no-break {
+                page-break-inside: avoid;
+            }
+            
+            .page-break {
+                page-break-after: always;
+            }
+            
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #2c3e50;
+            background: white;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.25in;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #1e3a8a;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .company-name {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 5px;
+        }
+        
+        .document-title {
+            font-size: 18pt;
+            color: #3b82f6;
+            margin-bottom: 10px;
+        }
+        
+        .date {
+            font-size: 10pt;
+            color: #6b7280;
+        }
+        
+        /* Info Boxes */
+        .info-section {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .legend-box {
+            flex: 1;
+            background: #f0f4f8;
+            border: 1px solid #cbd5e1;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        
+        .legend-title {
+            font-weight: bold;
+            font-size: 12pt;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+        
+        .legend-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            font-size: 10pt;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .legend-code {
+            background: #1e3a8a;
+            color: white;
+            padding: 2px 6px;
+            margin-right: 8px;
+            font-weight: bold;
+            font-size: 9pt;
+            min-width: 25px;
+            text-align: center;
+        }
+        
+        .estimate-box {
+            background: #fef3c7;
+            border-left: 3px solid #f59e0b;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .estimate-title {
+            font-weight: bold;
+            font-size: 11pt;
+            color: #92400e;
+            margin-bottom: 8px;
+        }
+        
+        .estimate-item {
+            font-size: 10pt;
+            color: #92400e;
+            margin: 4px 0;
+        }
+        
+        .note-text {
+            font-size: 9pt;
+            font-style: italic;
+            margin-top: 8px;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px 15px;
+            font-size: 14pt;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 0;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 10pt;
+        }
+        
+        thead {
+            background: #34495e;
+            color: white;
+        }
+        
+        th {
+            padding: 8px 10px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 10pt;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        td {
+            padding: 6px 10px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        tbody tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        
+        .model-col {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #2c3e50;
+            width: 25%;
+        }
+        
+        .desc-col {
+            width: 50%;
+        }
+        
+        .price-col {
+            font-weight: bold;
+            color: #059669;
+            text-align: right;
+            width: 25%;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e5e7eb;
+            font-size: 9pt;
+            color: #6b7280;
+            text-align: center;
+        }
+        
+        .footer-note {
+            margin: 5px 0;
+        }
+        
+        /* Contact info */
+        .contact-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f4f8;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 10pt;
+        }
+        
+        .contact-title {
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header no-break">
+            <div class="company-name">HARRIS BOAT WORKS</div>
+            <div class="document-title">Mercury Marine Motor Pricing</div>
+            <div class="date">Effective Date: 2024-2025 Season</div>
+        </div>
+        
+        <!-- Legend and Estimates -->
+        <div class="info-section no-break">
+            <div class="legend-box">
+                <div class="legend-title">Motor Code Legend</div>
+                <div class="legend-items">
+                    <div class="legend-item"><span class="legend-code">E</span> Electric Start</div>
+                    <div class="legend-item"><span class="legend-code">L</span> Longshaft 20"</div>
+                    <div class="legend-item"><span class="legend-code">XL</span> Extra Longshaft 25"</div>
+                    <div class="legend-item"><span class="legend-code">H</span> Tiller Handle</div>
+                    <div class="legend-item"><span class="legend-code">PT</span> Power Trim</div>
+                </div>
+                <div style="margin-top: 10px; font-size: 9pt;">
+                    † Includes Fuel Tank &nbsp;&nbsp; ‡ Includes Propeller
+                </div>
+            </div>
+            
+            <div class="legend-box">
+                <div class="legend-title">Installation Estimates*</div>
+                <div class="estimate-item">• Motor Swap Labour & Prop: $750</div>
+                <div class="estimate-item">• New Controls & Cables: $1,200</div>
+                <div class="note-text">* Estimates subject to boat inspection</div>
+            </div>
+        </div>
+        
+        <!-- FourStroke Section -->
+        <div class="section-header no-break">Mercury FourStroke Motors</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Model #</th>
+                    <th>Description</th>
+                    <th style="text-align: right;">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="model-col">1F02201KK</td><td class="desc-col">2.5MH FourStroke †‡</td><td class="price-col">$1,270</td></tr>
+                <tr><td class="model-col">1F03201KK</td><td class="desc-col">3.5MH FourStroke †‡</td><td class="price-col">$1,524</td></tr>
+                <tr><td class="model-col">1F03211KK</td><td class="desc-col">3.5MLH FourStroke †‡</td><td class="price-col">$1,557</td></tr>
+                <tr><td class="model-col">1F04201KK</td><td class="desc-col">4MH FourStroke †‡</td><td class="price-col">$1,815</td></tr>
+                <tr><td class="model-col">1F04211KK</td><td class="desc-col">4MLH FourStroke †‡</td><td class="price-col">$1,854</td></tr>
+                <tr><td class="model-col">1FX5201KK</td><td class="desc-col">5MH FourStroke †‡</td><td class="price-col">$2,019</td></tr>
+                <tr><td class="model-col">1F05221KK</td><td class="desc-col">5MXLH FourStroke †‡</td><td class="price-col">$2,090</td></tr>
+                <tr><td class="model-col">1F05216KK</td><td class="desc-col">5MLHA Sail Power FourStroke †‡</td><td class="price-col">$2,057</td></tr>
+                <tr><td class="model-col">1FX6201KK</td><td class="desc-col">6MH FourStroke †‡</td><td class="price-col">$2,084</td></tr>
+                <tr><td class="model-col">1FX6211KK</td><td class="desc-col">6MLH FourStroke †‡</td><td class="price-col">$2,118</td></tr>
+                <tr><td class="model-col">1A08201LK</td><td class="desc-col">8MH FourStroke †‡</td><td class="price-col">$3,036</td></tr>
+                <tr><td class="model-col">1A08211LK</td><td class="desc-col">8MLH FourStroke †‡</td><td class="price-col">$3,075</td></tr>
+                <tr><td class="model-col">1A08301LK</td><td class="desc-col">8EH FourStroke †‡</td><td class="price-col">$3,344</td></tr>
+                <tr><td class="model-col">1A08311LK</td><td class="desc-col">8ELH FourStroke †‡</td><td class="price-col">$3,383</td></tr>
+                <tr><td class="model-col">1A10204LV</td><td class="desc-col">9.9MRC FourStroke †‡</td><td class="price-col">$3,548</td></tr>
+                <tr><td class="model-col">1A10201LK</td><td class="desc-col">9.9MH FourStroke †‡</td><td class="price-col">$3,553</td></tr>
+                <tr><td class="model-col">1A10211LK</td><td class="desc-col">9.9MLH FourStroke †‡</td><td class="price-col">$3,597</td></tr>
+                <tr><td class="model-col">1A10301LK</td><td class="desc-col">9.9EH FourStroke †‡</td><td class="price-col">$3,878</td></tr>
+                <tr><td class="model-col">1A10312LK</td><td class="desc-col">9.9EL FourStroke †‡</td><td class="price-col">$3,966</td></tr>
+                <tr><td class="model-col">1A10311LK</td><td class="desc-col">9.9ELH FourStroke †‡</td><td class="price-col">$4,065</td></tr>
+                <tr><td class="model-col">1A10402LK</td><td class="desc-col">9.9EPT FourStroke †‡</td><td class="price-col">$4,494</td></tr>
+                <tr><td class="model-col">1A10251LK</td><td class="desc-col">9.9MLH Command Thrust FourStroke †‡</td><td class="price-col">$3,894</td></tr>
+                <tr><td class="model-col">1A10261LK</td><td class="desc-col">9.9MXLH Command Thrust FourStroke †‡</td><td class="price-col">$4,010</td></tr>
+                <tr><td class="model-col">1A10351LK</td><td class="desc-col">9.9ELH Command Thrust FourStroke †‡</td><td class="price-col">$4,389</td></tr>
+                <tr><td class="model-col">1A10361LK</td><td class="desc-col">9.9EXLH Command Thrust FourStroke †‡</td><td class="price-col">$4,466</td></tr>
+                <tr><td class="model-col">1A10452LK</td><td class="desc-col">9.9ELPT Command Thrust ProKicker EFI FourStroke †‡</td><td class="price-col">$4,900</td></tr>
+                <tr><td class="model-col">1A10462LK</td><td class="desc-col">9.9EXLPT Command Thrust ProKicker EFI FourStroke †‡</td><td class="price-col">$4,983</td></tr>
+                <tr><td class="model-col">1A10451LK</td><td class="desc-col">9.9ELHPT Command Thrust ProKicker EFI FourStroke †‡</td><td class="price-col">$5,000</td></tr>
+                <tr><td class="model-col">1A10461LK</td><td class="desc-col">9.9EXLHPT Command Thrust ProKicker EFI FourStroke †‡</td><td class="price-col">$5,093</td></tr>
+                <tr><td class="model-col">1A15204LK</td><td class="desc-col">15MRC FourStroke †‡</td><td class="price-col">$3,834</td></tr>
+                <tr><td class="model-col">1A15201LK</td><td class="desc-col">15MH FourStroke †‡</td><td class="price-col">$3,872</td></tr>
+                <tr><td class="model-col">1A15211LK</td><td class="desc-col">15MLH FourStroke †‡</td><td class="price-col">$3,922</td></tr>
+                <tr><td class="model-col">1A15302LK</td><td class="desc-col">15E FourStroke †‡</td><td class="price-col">$4,191</td></tr>
+                <tr><td class="model-col">1A15312LK</td><td class="desc-col">15EL FourStroke †‡</td><td class="price-col">$4,218</td></tr>
+                <tr><td class="model-col">1A15301LK</td><td class="desc-col">15EH FourStroke †‡</td><td class="price-col">$4,218</td></tr>
+                <tr><td class="model-col">1A15311LK</td><td class="desc-col">15ELH FourStroke †‡</td><td class="price-col">$4,274</td></tr>
+                <tr><td class="model-col">1A15402LK</td><td class="desc-col">15EPT FourStroke †‡</td><td class="price-col">$4,758</td></tr>
+                <tr><td class="model-col">1A15401LK</td><td class="desc-col">15EHPT FourStroke †‡</td><td class="price-col">$4,785</td></tr>
+                <tr><td class="model-col">1A15412LK</td><td class="desc-col">15ELPT FourStroke †‡</td><td class="price-col">$4,686</td></tr>
+                <tr><td class="model-col">1A15452BK</td><td class="desc-col">15ELPT ProKicker FourStroke †‡</td><td class="price-col">$5,368</td></tr>
+                <tr><td class="model-col">1A15462BK</td><td class="desc-col">15EXLPT ProKicker FourStroke †‡</td><td class="price-col">$5,456</td></tr>
+                <tr><td class="model-col">1A15451BK</td><td class="desc-col">15ELHPT ProKicker FourStroke †‡</td><td class="price-col">$5,462</td></tr>
+                <tr><td class="model-col">1A15461BK</td><td class="desc-col">15EXLHPT ProKicker FourStroke †‡</td><td class="price-col">$5,572</td></tr>
+                <tr><td class="model-col">1A20204LK</td><td class="desc-col">20MRC FourStroke †‡</td><td class="price-col">$4,186</td></tr>
+                <tr><td class="model-col">1A20201LK</td><td class="desc-col">20MH FourStroke †‡</td><td class="price-col">$4,230</td></tr>
+                <tr><td class="model-col">1A20211LK</td><td class="desc-col">20MLH FourStroke †‡</td><td class="price-col">$4,268</td></tr>
+                <tr><td class="model-col">1A20301LK</td><td class="desc-col">20EH FourStroke †‡</td><td class="price-col">$4,686</td></tr>
+                <tr><td class="model-col">1A20302LK</td><td class="desc-col">20E FourStroke †‡</td><td class="price-col">$4,675</td></tr>
+                <tr><td class="model-col">1A20311LK</td><td class="desc-col">20ELH FourStroke †‡</td><td class="price-col">$4,752</td></tr>
+                <tr><td class="model-col">1A20312LK</td><td class="desc-col">20EL FourStroke †‡</td><td class="price-col">$4,664</td></tr>
+                <tr><td class="model-col">1A20402LK</td><td class="desc-col">20EPT FourStroke †‡</td><td class="price-col">$5,264</td></tr>
+                <tr><td class="model-col">1A20411LK</td><td class="desc-col">20ELHPT FourStroke †‡</td><td class="price-col">$5,390</td></tr>
+                <tr><td class="model-col">1A20412LK</td><td class="desc-col">20ELPT FourStroke †‡</td><td class="price-col">$5,264</td></tr>
+                <tr><td class="model-col">1A25203BK</td><td class="desc-col">25MH FourStroke †‡</td><td class="price-col">$4,878</td></tr>
+                <tr><td class="model-col">1A25213BK</td><td class="desc-col">25MLH FourStroke †‡</td><td class="price-col">$4,966</td></tr>
+            </tbody>
+        </table>
+        
+        <!-- Page break for better printing -->
+        <div class="page-break"></div>
+        
+        <!-- Continue FourStroke Motors -->
+        <div class="section-header no-break">Mercury FourStroke Motors (Continued)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Model #</th>
+                    <th>Description</th>
+                    <th style="text-align: right;">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="model-col">1A25301BK</td><td class="desc-col">25EH FourStroke †‡</td><td class="price-col">$5,252</td></tr>
+                <tr><td class="model-col">1A25311BK</td><td class="desc-col">25ELH FourStroke †‡</td><td class="price-col">$5,440</td></tr>
+                <tr><td class="model-col">1A25312BK</td><td class="desc-col">25EL FourStroke †‡</td><td class="price-col">$5,203</td></tr>
+                <tr><td class="model-col">1A25403BK</td><td class="desc-col">25EPT FourStroke</td><td class="price-col">$5,913</td></tr>
+                <tr><td class="model-col">1A25411BK</td><td class="desc-col">25ELHPT FourStroke</td><td class="price-col">$6,111</td></tr>
+                <tr><td class="model-col">1A25413BK</td><td class="desc-col">25ELPT FourStroke</td><td class="price-col">$5,995</td></tr>
+                <tr><td class="model-col">1A25452BK</td><td class="desc-col">25ELPT ProKicker FourStroke</td><td class="price-col">$6,287</td></tr>
+                <tr><td class="model-col">1A25462BK</td><td class="desc-col">25EXLPT ProKicker FourStroke</td><td class="price-col">$6,441</td></tr>
+                <tr><td class="model-col">1A3G203BK</td><td class="desc-col">30MHGA FourStroke †‡</td><td class="price-col">$6,787</td></tr>
+                <tr><td class="model-col">1A3G213BK</td><td class="desc-col">30MLHGA FourStroke †‡</td><td class="price-col">$6,842</td></tr>
+                <tr><td class="model-col">1A3G313BK</td><td class="desc-col">30ELGA FourStroke †‡</td><td class="price-col">$7,359</td></tr>
+                <tr><td class="model-col">1A3G311BK</td><td class="desc-col">30ELHGA FourStroke †‡</td><td class="price-col">$7,480</td></tr>
+                <tr><td class="model-col">1A30403BK</td><td class="desc-col">30EPT FourStroke</td><td class="price-col">$7,524</td></tr>
+                <tr><td class="model-col">1A30413BK</td><td class="desc-col">30ELPT FourStroke</td><td class="price-col">$7,805</td></tr>
+                <tr><td class="model-col">1A30411BK</td><td class="desc-col">30ELHPT FourStroke</td><td class="price-col">$7,926</td></tr>
+                <tr><td class="model-col">1F40403GZ</td><td class="desc-col">40EPT FourStroke</td><td class="price-col">$9,460</td></tr>
+                <tr><td class="model-col">1F40413GZ</td><td class="desc-col">40ELPT FourStroke</td><td class="price-col">$9,532</td></tr>
+                <tr><td class="model-col">1F4041TJZ</td><td class="desc-col">40ELHPT FourStroke Tiller</td><td class="price-col">$10,054</td></tr>
+                <tr><td class="model-col">1F41453GZ</td><td class="desc-col">40ELPT Command Thrust (Four-Cylinder) FourStroke</td><td class="price-col">$9,900</td></tr>
+                <tr><td class="model-col">1F51413GZ</td><td class="desc-col">50ELPT FourStroke</td><td class="price-col">$10,703</td></tr>
+                <tr><td class="model-col">1F5141TJZ</td><td class="desc-col">50ELHPT FourStroke Tiller</td><td class="price-col">$11,358</td></tr>
+                <tr><td class="model-col">1F51453GZ</td><td class="desc-col">50ELPT Command Thrust FourStroke</td><td class="price-col">$11,126</td></tr>
+                <tr><td class="model-col">1F5145TJZ</td><td class="desc-col">50ELHPT Command Thrust FourStroke Tiller</td><td class="price-col">$11,600</td></tr>
+                <tr><td class="model-col">1F60413GZ</td><td class="desc-col">60ELPT FourStroke</td><td class="price-col">$12,161</td></tr>
+                <tr><td class="model-col">1F6041TJZ</td><td class="desc-col">60ELHPT FourStroke Tiller</td><td class="price-col">$12,826</td></tr>
+                <tr><td class="model-col">1F60453GZ</td><td class="desc-col">60ELPT Command Thrust FourStroke</td><td class="price-col">$12,469</td></tr>
+                <tr><td class="model-col">1F60463GZ</td><td class="desc-col">60EXLPT Command Thrust FourStroke</td><td class="price-col">$12,815</td></tr>
+                <tr><td class="model-col">1F6045TJZ</td><td class="desc-col">60ELHPT Command Thrust FourStroke Tiller</td><td class="price-col">$13,189</td></tr>
+                <tr><td class="model-col">1F754132D</td><td class="desc-col">75ELPT FourStroke</td><td class="price-col">$14,190</td></tr>
+                <tr><td class="model-col">1F904132D</td><td class="desc-col">90ELPT FourStroke</td><td class="price-col">$14,812</td></tr>
+                <tr><td class="model-col">1F904232D</td><td class="desc-col">90EXLPT FourStroke</td><td class="price-col">$15,191</td></tr>
+                <tr><td class="model-col">1F904532D</td><td class="desc-col">90ELPT Command Thrust FourStroke</td><td class="price-col">$15,274</td></tr>
+                <tr><td class="model-col">1F904632D</td><td class="desc-col">90EXLPT Command Thrust FourStroke</td><td class="price-col">$15,323</td></tr>
+                <tr><td class="model-col">1115F132D</td><td class="desc-col">115ELPT FourStroke</td><td class="price-col">$16,912</td></tr>
+                <tr><td class="model-col">1115F232D</td><td class="desc-col">115EXLPT FourStroke</td><td class="price-col">$17,270</td></tr>
+                <tr><td class="model-col">1115F532D</td><td class="desc-col">115ELPT Command Thrust FourStroke</td><td class="price-col">$17,364</td></tr>
+                <tr><td class="model-col">1115F632D</td><td class="desc-col">115EXLPT Command Thrust FourStroke</td><td class="price-col">$17,716</td></tr>
+                <tr><td class="model-col">1115F642D</td><td class="desc-col">115ECXLPT Command Thrust FourStroke</td><td class="price-col">$17,716</td></tr>
+                <tr><td class="model-col">1150F13ED</td><td class="desc-col">150L FourStroke</td><td class="price-col">$22,022</td></tr>
+                <tr><td class="model-col">1150F23ED</td><td class="desc-col">150XL FourStroke</td><td class="price-col">$22,143</td></tr>
+                <tr><td class="model-col">1150F24ED</td><td class="desc-col">150CXL FourStroke</td><td class="price-col">$22,919</td></tr>
+                <tr><td class="model-col">11750005A</td><td class="desc-col">175L FourStroke DTS</td><td class="price-col">$27,269</td></tr>
+                <tr><td class="model-col">11750006A</td><td class="desc-col">175XL FourStroke DTS</td><td class="price-col">$27,401</td></tr>
+                <tr><td class="model-col">11750007A</td><td class="desc-col">175CXL FourStroke DTS</td><td class="price-col">$28,111</td></tr>
+                <tr><td class="model-col">12000001A</td><td class="desc-col">200L FourStroke</td><td class="price-col">$26,912</td></tr>
+                <tr><td class="model-col">12000009A</td><td class="desc-col">200XL FourStroke</td><td class="price-col">$27,044</td></tr>
+                <tr><td class="model-col">12000029A</td><td class="desc-col">200CXL FourStroke</td><td class="price-col">$27,731</td></tr>
+                <tr><td class="model-col">12000005A</td><td class="desc-col">200L FourStroke DTS</td><td class="price-col">$28,760</td></tr>
+                <tr><td class="model-col">12000013A</td><td class="desc-col">200XL FourStroke DTS</td><td class="price-col">$28,892</td></tr>
+                <tr><td class="model-col">12000017A</td><td class="desc-col">200CXL FourStroke DTS</td><td class="price-col">$29,601</td></tr>
+                <tr><td class="model-col">12250001A</td><td class="desc-col">225L FourStroke</td><td class="price-col">$32,307</td></tr>
+                <tr><td class="model-col">12250009A</td><td class="desc-col">225XL FourStroke</td><td class="price-col">$32,423</td></tr>
+                <tr><td class="model-col">12250047A</td><td class="desc-col">225CXL FourStroke</td><td class="price-col">$33,126</td></tr>
+                <tr><td class="model-col">12250021A</td><td class="desc-col">225XXL FourStroke</td><td class="price-col">$33,094</td></tr>
+                <tr><td class="model-col">12250005A</td><td class="desc-col">225L FourStroke DTS</td><td class="price-col">$34,194</td></tr>
+                <tr><td class="model-col">12250013A</td><td class="desc-col">225XL FourStroke DTS</td><td class="price-col">$34,314</td></tr>
+                <tr><td class="model-col">12250017A</td><td class="desc-col">225CXL FourStroke DTS</td><td class="price-col">$35,040</td></tr>
+                <tr><td class="model-col">12250025A</td><td class="desc-col">225XXL FourStroke DTS</td><td class="price-col">$35,002</td></tr>
+                <tr><td class="model-col">12250029A</td><td class="desc-col">225CXXL FourStroke DTS</td><td class="price-col">$35,728</td></tr>
+                <tr><td class="model-col">12500001A</td><td class="desc-col">250L FourStroke</td><td class="price-col">$34,111</td></tr>
+                <tr><td class="model-col">12500009A</td><td class="desc-col">250XL FourStroke</td><td class="price-col">$34,226</td></tr>
+                <tr><td class="model-col">12500083A</td><td class="desc-col">250CXL FourStroke</td><td class="price-col">$34,903</td></tr>
+                <tr><td class="model-col">12500021A</td><td class="desc-col">250XXL FourStroke</td><td class="price-col">$35,040</td></tr>
+                <tr><td class="model-col">12500087A</td><td class="desc-col">250CXXL FourStroke</td><td class="price-col">$35,722</td></tr>
+                <tr><td class="model-col">12500005A</td><td class="desc-col">250L FourStroke DTS</td><td class="price-col">$36,130</td></tr>
+                <tr><td class="model-col">12500013A</td><td class="desc-col">250XL FourStroke DTS</td><td class="price-col">$36,256</td></tr>
+                <tr><td class="model-col">12500017A</td><td class="desc-col">250CXL FourStroke DTS</td><td class="price-col">$36,954</td></tr>
+                <tr><td class="model-col">12500025A</td><td class="desc-col">250XXL FourStroke DTS</td><td class="price-col">$37,098</td></tr>
+                <tr><td class="model-col">12500029A</td><td class="desc-col">250CXXL FourStroke DTS</td><td class="price-col">$37,802</td></tr>
+                <tr><td class="model-col">13000002A</td><td class="desc-col">300L FourStroke</td><td class="price-col">$36,058</td></tr>
+                <tr><td class="model-col">13000010A</td><td class="desc-col">300XL FourStroke</td><td class="price-col">$36,168</td></tr>
+                <tr><td class="model-col">13000111A</td><td class="desc-col">300CXL FourStroke</td><td class="price-col">$36,839</td></tr>
+                <tr><td class="model-col">13000006A</td><td class="desc-col">300L FourStroke DTS</td><td class="price-col">$38,032</td></tr>
+                <tr><td class="model-col">13000014A</td><td class="desc-col">300XL FourStroke DTS</td><td class="price-col">$38,159</td></tr>
+                <tr><td class="model-col">13000018A</td><td class="desc-col">300CXL FourStroke DTS</td><td class="price-col">$38,852</td></tr>
+            </tbody>
+        </table>
+        
+        <!-- ProXS Section -->
+        <div class="section-header no-break">Mercury ProXS Motors</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Model #</th>
+                    <th>Description</th>
+                    <th style="text-align: right;">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="model-col">1117F131D</td><td class="desc-col">115ELPT Pro XS</td><td class="price-col">$17,320</td></tr>
+                <tr><td class="model-col">1117F231D</td><td class="desc-col">115EXLPT Pro XS</td><td class="price-col">$17,666</td></tr>
+                <tr><td class="model-col">1117F531D</td><td class="desc-col">115ELPT Pro XS Command Thrust</td><td class="price-col">$17,765</td></tr>
+                <tr><td class="model-col">1117F631D</td><td class="desc-col">115EXLPT Pro XS Command Thrust</td><td class="price-col">$18,117</td></tr>
+                <tr><td class="model-col">1152F131D</td><td class="desc-col">150L Pro XS</td><td class="price-col">$24,107</td></tr>
+                <tr><td class="model-col">1152F231D</td><td class="desc-col">150XL Pro XS</td><td class="price-col">$24,233</td></tr>
+                <tr><td class="model-col">11750001A</td><td class="desc-col">175L Pro XS</td><td class="price-col">$27,616</td></tr>
+                <tr><td class="model-col">11750002A</td><td class="desc-col">175XL Pro XS</td><td class="price-col">$28,006</td></tr>
+                <tr><td class="model-col">12000027A</td><td class="desc-col">200L Pro XS TorqueMaster</td><td class="price-col">$28,122</td></tr>
+                <tr><td class="model-col">12000039A</td><td class="desc-col">200L Pro XS</td><td class="price-col">$28,122</td></tr>
+                <tr><td class="model-col">12000041A</td><td class="desc-col">200XL Pro XS</td><td class="price-col">$28,479</td></tr>
+                <tr><td class="model-col">12000035A</td><td class="desc-col">200L Pro XS DTS TorqueMaster</td><td class="price-col">$29,992</td></tr>
+                <tr><td class="model-col">12000040A</td><td class="desc-col">200XL Pro XS DTS</td><td class="price-col">$30,399</td></tr>
+                <tr><td class="model-col">12250033A</td><td class="desc-col">225L Pro XS TorqueMaster</td><td class="price-col">$33,038</td></tr>
+                <tr><td class="model-col">12250034A</td><td class="desc-col">225XL Pro XS</td><td class="price-col">$33,429</td></tr>
+                <tr><td class="model-col">12250053A</td><td class="desc-col">225L Pro XS DTS TorqueMaster</td><td class="price-col">$34,612</td></tr>
+                <tr><td class="model-col">12250055A</td><td class="desc-col">225XL Pro XS DTS</td><td class="price-col">$35,244</td></tr>
+                <tr><td class="model-col">12500033A</td><td class="desc-col">250L Pro XS TorqueMaster</td><td class="price-col">$34,502</td></tr>
+                <tr><td class="model-col">12500034A</td><td class="desc-col">250XL Pro XS</td><td class="price-col">$35,294</td></tr>
+                <tr><td class="model-col">12500094A</td><td class="desc-col">250L Pro XS DTS TorqueMaster</td><td class="price-col">$36,542</td></tr>
+                <tr><td class="model-col">12500096A</td><td class="desc-col">250XL Pro XS DTS</td><td class="price-col">$37,367</td></tr>
+                <tr><td class="model-col">13000022A</td><td class="desc-col">300L Pro XS TorqueMaster</td><td class="price-col">$36,179</td></tr>
+                <tr><td class="model-col">13000023A</td><td class="desc-col">300XL Pro XS</td><td class="price-col">$36,988</td></tr>
+                <tr><td class="model-col">13000177A</td><td class="desc-col">300L Pro XS DTS TorqueMaster</td><td class="price-col">$38,170</td></tr>
+                <tr><td class="model-col">13000179A</td><td class="desc-col">300XL Pro XS DTS</td><td class="price-col">$39,012</td></tr>
+                <tr><td class="model-col">13000181A</td><td class="desc-col">300CXL Pro XS DTS</td><td class="price-col">$39,716</td></tr>
+            </tbody>
+        </table>
+        
+        <!-- Contact Information -->
+        <div class="contact-info no-break">
+            <div class="contact-title">For Orders and Inquiries</div>
+            <div>Harris Boat Works | harrisboatworks.ca</div>
+            <div>Authorized Mercury Marine Dealer</div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer no-break">
+            <div class="footer-note">Prices subject to change without notice</div>
+            <div class="footer-note">All prices in Canadian Dollars</div>
+            <div class="footer-note">© 2024 Harris Boat Works - Mercury Marine Authorized Dealer</div>
+        </div>
+    </div>
+</body>
+</html>
