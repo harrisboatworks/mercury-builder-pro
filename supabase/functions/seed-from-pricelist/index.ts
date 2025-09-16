@@ -356,7 +356,7 @@ async function parsePriceList(url: string, msrpMarkup: number) {
       hp: horsepower,
       rigging_code: null,
       accessories: null,
-      family: 'FourStroke',
+      family: null,
       images: [],
       year: 2025,
     };
