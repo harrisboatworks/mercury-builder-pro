@@ -40,7 +40,7 @@ Deno.serve(async (req) => {
     // Normalize inputs (NEVER crash here)
     const dry_run =
       typeof raw.dry_run === 'string'
-        ? raw.dry_run.trim().toLowerCase() === 'true'
+        ? !['false', '0', 'no'].includes(raw.dry_run.trim().toLowerCase())
         : (raw.dry_run === undefined ? true : !!raw.dry_run);
 
     const msrp_markup =
@@ -243,115 +243,98 @@ Deno.serve(async (req) => {
         });
       }
       
-      // Step 4: Upsert to database
+      // Step 4: Upsert to database with batch processing
       currentStep = 'upsert';
       console.log(`[PriceList] Upserting ${deduplicatedMotors.length} motors to database...`);
       
-      // Test insert with first record to identify any schema issues
-      if (deduplicatedMotors.length > 0) {
-        console.log(`[PriceList] Testing single insert to identify schema issues...`);
-        const testRecord = deduplicatedMotors[0];
-        console.log(`[PriceList] Test record structure:`, JSON.stringify(testRecord, null, 2));
+      // Process in batches and track results
+      let totalCreated = 0, totalUpdated = 0;
+      const batchErrors: Array<{batchNum: number, error: string}> = [];
+      const rowErrors: Array<{row_index: number, reason: string}> = [];
+      
+      // Pre-validate rows before upsert
+      const validMotors = [];
+      for (let i = 0; i < deduplicatedMotors.length; i++) {
+        const motor = deduplicatedMotors[i];
         
-        const { data: testData, error: testError } = await supabase
-          .from('motor_models')
-          .insert([testRecord])
-          .select('id, model_number');
-        
-        if (testError) {
-          console.error(`[PriceList] Test insert failed:`, testError);
-          console.error(`[PriceList] Test record was:`, JSON.stringify(testRecord, null, 2));
-          return fail('test_insert', testError, { 
-            test_record: testRecord,
-            echo 
-          });
-        } else {
-          console.log(`[PriceList] Test insert successful:`, testData);
-          // Delete the test record to avoid duplicates
-          await supabase
-            .from('motor_models')
-            .delete()
-            .eq('id', testData[0].id);
+        // Fail fast if required fields missing
+        if (!motor.model_number?.trim()) {
+          rowErrors.push({row_index: i, reason: 'missing_model_number'});
+          continue;
         }
+        if (motor.is_brochure !== true) {
+          rowErrors.push({row_index: i, reason: 'missing_is_brochure'});
+          continue;
+        }
+        if (typeof motor.dealer_price !== 'number' || motor.dealer_price < 0) {
+          rowErrors.push({row_index: i, reason: 'invalid_dealer_price'});
+          continue;
+        }
+        if (typeof motor.msrp !== 'number' || motor.msrp < 0) {
+          rowErrors.push({row_index: i, reason: 'invalid_msrp'});
+          continue;
+        }
+        
+        validMotors.push(motor);
       }
       
-      const keys = deduplicatedMotors.map(m => m.model_number).filter(Boolean);
-
-      const { data: existingRows } = await supabase
-        .from('motor_models')
-        .select('model_number')
-        .in('model_number', keys);
-
-      const existing = new Set((existingRows || []).map(r => r.model_number));
-      const toInsert = deduplicatedMotors.filter(m => m.model_number && !existing.has(m.model_number));
-      const toUpdate = deduplicatedMotors.filter(m => m.model_number && existing.has(m.model_number));
-
-      console.log(`[PriceList] Planned operations: ${toInsert.length} inserts, ${toUpdate.length} updates`);
-
-      let created = 0, updated = 0, failed = 0;
-
-      // inserts
-      for (let i = 0; i < toInsert.length; i += 100) {
-        const chunk = toInsert.slice(i, i + 100);
-        console.log(`[PriceList] Inserting batch ${Math.floor(i/100) + 1}: ${chunk.length} motors`);
-        console.log(`[PriceList] Sample insert record:`, JSON.stringify(chunk[0], null, 2));
+      console.log(`[PriceList] Pre-validation: ${validMotors.length} valid, ${rowErrors.length} rejected`);
+      
+      // Process in batches of 50 for better performance
+      for (let i = 0; i < validMotors.length; i += 50) {
+        const batch = validMotors.slice(i, i + 50);
+        const batchNum = Math.floor(i/50) + 1;
         
-        const { data, error } = await supabase
-          .from('motor_models')
-          .insert(chunk)
-          .select('id, model_number');
+        console.log(`[Upsert] B${batchNum}: processing ${batch.length} records...`);
         
-        if (error) {
-          console.error(`[PriceList] Insert error for batch ${Math.floor(i/100) + 1}:`, error);
-          console.error(`[PriceList] Error details:`, JSON.stringify(error, null, 2));
-          console.error(`[PriceList] Sample failed record:`, JSON.stringify(chunk[0], null, 2));
-          failed += Math.min(100, toInsert.length - i);
-        } else {
-          console.log(`[PriceList] Successfully inserted ${data?.length || 0} motors in batch ${Math.floor(i/100) + 1}`);
-          console.log(`[PriceList] Inserted model_numbers:`, data?.map(d => d.model_number).join(', '));
-          created += (data?.length || 0);
-        }
-      }
-
-      // updates  
-      for (let i = 0; i < toUpdate.length; i += 100) {
-        const chunk = toUpdate.slice(i, i + 100);
-        console.log(`[PriceList] Updating batch ${Math.floor(i/100) + 1}: ${chunk.length} motors`);
-        
-        // Use proper update with individual record updates since we can't bulk update with different values
-        for (const motor of chunk) {
-          console.log(`[PriceList] Updating motor: ${motor.model_number}`);
-          
+        try {
+          // Use upsert with the correct constraint name
           const { data, error } = await supabase
             .from('motor_models')
-            .update(motor)
-            .eq('model_number', motor.model_number)
-            .select('id, model_number');
+            .upsert(batch, {
+              onConflict: 'motor_models_model_number_brochure_uniq',
+              ignoreDuplicates: false
+            })
+            .select('id, created_at, updated_at');
           
           if (error) {
-            console.error(`[PriceList] Update error for ${motor.model_number}:`, error);
-            console.error(`[PriceList] Update error details:`, JSON.stringify(error, null, 2));
-            failed += 1;
-          } else if (data && data.length > 0) {
-            console.log(`[PriceList] Successfully updated motor: ${motor.model_number}`);
-            updated += 1;
-          } else {
-            console.log(`[PriceList] No rows updated for: ${motor.model_number} (may not exist)`);
+            console.log(`[Upsert] B${batchNum}: ERROR - ${error.message}`);
+            batchErrors.push({batchNum, error: error.message});
+            continue;
           }
+          
+          // Count created vs updated based on timestamps
+          const createdNow = data?.filter(r => r.created_at === r.updated_at).length || 0;
+          const updatedNow = (data?.length || 0) - createdNow;
+          
+          totalCreated += createdNow;
+          totalUpdated += updatedNow;
+          
+          console.log(`[Upsert] B${batchNum}: sending ${batch.length}, got rows=${data?.length || 0}, created=${createdNow}, updated=${updatedNow}`);
+          
+        } catch (err: any) {
+          console.log(`[Upsert] B${batchNum}: EXCEPTION - ${err.message}`);
+          batchErrors.push({batchNum, error: err.message});
         }
       }
-
-      console.log(`[PriceList] Database upsert complete: ${created} created, ${updated} updated, ${failed} failed`);
-      console.log(`[PriceList] Process complete: { success: ${failed === 0}, found: ${rawRows.length}, parsed: ${normalizedMotors.length}, created: ${created}, updated: ${updated} }`);
       
+      console.log(`[PriceList] Upsert complete: ${totalCreated} created, ${totalUpdated} updated, ${batchErrors.length} batch errors`);
+      
+      // Log sample payload for debugging
+      if (validMotors.length >= 2) {
+        console.log(`[PriceList] Sample batch payload (first 2 rows):`, JSON.stringify(validMotors.slice(0, 2), null, 2));
+      }
+      
+      // Return clear final payload
       return ok({
-        success: failed === 0,
-        step: dry_run ? 'dry_run_complete' : 'complete',
+        success: batchErrors.length === 0,
+        step: 'complete',
         rows_found_raw: rawRows.length,
         rows_parsed: normalizedMotors.length,
-        rows_created: created,
-        rows_updated: updated,
-        rows_failed: failed,
+        rows_created: totalCreated,
+        rows_updated: totalUpdated,
+        rowErrors: rowErrors.slice(0, 10), // First few row errors
+        batchErrors: batchErrors.slice(0, 5), // First few batch errors
         echo
       });
       
@@ -376,11 +359,11 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
       const modelNumber = (row.model_number || '').trim();
       const description = (row.model_display || '').trim();
       
-      // Parse dealer price - remove $, commas, and convert to number
-      const priceStr = (row.dealer_price || '').toString().replace(/[$,]/g, '').trim();
-      const dealerPrice = parseFloat(priceStr) || 0;
+      // Defensive coercion for prices
+      const dealerPrice = Number(String(row.dealer_price).replace(/[^0-9.]/g, '')) || 0;
+      const msrp = Math.round(dealerPrice * Number(msrp_markup || 1.1));
       
-      // Enhanced validation with skip tracking
+      // Fail fast validation - required fields
       if (!modelNumber) {
         skipReasons.set('empty_model_number', (skipReasons.get('empty_model_number') || 0) + 1);
         errors.push({ row_index: i, error: 'Empty model number', data: row });
@@ -393,7 +376,12 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
       }
       if (dealerPrice <= 0) {
         skipReasons.set('invalid_price', (skipReasons.get('invalid_price') || 0) + 1);
-        errors.push({ row_index: i, error: `Invalid price: ${priceStr} -> ${dealerPrice}`, data: row });
+        errors.push({ row_index: i, error: `Invalid dealer_price: ${dealerPrice}`, data: row });
+        continue;
+      }
+      if (msrp <= 0) {
+        skipReasons.set('invalid_msrp', (skipReasons.get('invalid_msrp') || 0) + 1);
+        errors.push({ row_index: i, error: `Invalid msrp: ${msrp}`, data: row });
         continue;
       }
       

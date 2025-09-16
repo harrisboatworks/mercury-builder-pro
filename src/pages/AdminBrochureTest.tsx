@@ -258,12 +258,16 @@ export default function AdminBrochureTest() {
         source_kind: data.source_kind
       };
 
+      // Show function's echoed values  
+      const echoInfo = data.echo ? `dry_run=${data.echo.dry_run}, msrp_markup=${data.echo.msrp_markup}` : 'No echo';
+      console.log('Function echo:', echoInfo);
+
       // Check for zero counts warning
       if (!dryRun && result.rows_parsed > 0 && result.rows_created === 0 && result.rows_updated === 0) {
         toast({
-          title: "No DB changes recorded",
-          description: "If you already ingested these rows earlier, counts can be 0. Run Sanity Queries to verify.",
-          variant: "default"
+          title: "⚠️ No DB changes recorded",
+          description: "Parsed records but wrote 0. Check SQL sanity queries to verify data integrity.",
+          variant: "destructive"
         });
       }
 
@@ -497,11 +501,11 @@ export default function AdminBrochureTest() {
                     <div className="text-sm text-muted-foreground">Parsed</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-green-600">{result.rows_created}</div>
+                    <div className="text-2xl font-bold text-green-600">{result.rows_created || 0}</div>
                     <div className="text-sm text-muted-foreground">Created</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">{result.rows_updated}</div>
+                    <div className="text-2xl font-bold text-orange-600">{result.rows_updated || 0}</div>
                     <div className="text-sm text-muted-foreground">Updated</div>
                   </div>
                   <div className="text-center">
