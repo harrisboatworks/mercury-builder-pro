@@ -244,6 +244,27 @@ export default function AdminSources() {
     }
   };
 
+  const extractHorsepowerFromDescription = (description: string): number => {
+    // Extract HP from descriptions like "2.5MH FourStroke ††", "15ELH FourStroke", etc.
+    const hpMatch = description.match(/(\d+(?:\.\d+)?)/);
+    return hpMatch ? parseFloat(hpMatch[1]) : 0;
+  };
+
+  const extractFamilyFromDescription = (description: string): string => {
+    if (description.includes('Verado')) return 'Verado';
+    if (description.includes('ProXS') || description.includes('Pro XS')) return 'ProXS';
+    if (description.includes('SeaPro')) return 'SeaPro';
+    if (description.includes('FourStroke')) return 'FourStroke';
+    if (description.includes('Racing')) return 'Racing';
+    return '';
+  };
+
+  const extractRiggingFromDescription = (description: string): string => {
+    // Extract rigging codes like "ELH", "MH", etc.
+    const riggingMatch = description.match(/\d+([A-Z]+)/);
+    return riggingMatch ? riggingMatch[1] : '';
+  };
+
   const importHtmlToDatabase = async () => {
     if (parsedHtmlData.length === 0) {
       toast({
@@ -256,15 +277,28 @@ export default function AdminSources() {
 
     setLoading({ ...loading, htmlImport: true });
     try {
-      const rows = parsedHtmlData.map(motor => ({
-        model_number: motor.model_number,
-        model_display: motor.description,
-        dealer_price: motor.price,
-        msrp: motor.price * 1.4,
-        motor_type: 'Outboard',
-        year: 2025,
-        is_brochure: true
-      }));
+      const rows = parsedHtmlData.map(motor => {
+        const horsepower = extractHorsepowerFromDescription(motor.description);
+        const family = extractFamilyFromDescription(motor.description);
+        const riggingCode = extractRiggingFromDescription(motor.description);
+        
+        return {
+          model_number: motor.model_number,
+          model: 'Outboard', // Fixed: send 'model' not 'model_number'
+          model_display: motor.description,
+          dealer_price: motor.price,
+          msrp: motor.price * 1.4,
+          horsepower: horsepower, // Required for model key generation
+          family: family, // Required for model key generation
+          motor_type: 'Outboard',
+          rigging_code: riggingCode,
+          year: 2025,
+          is_brochure: true,
+          mercury_model_no: motor.model_number
+        };
+      });
+
+      console.log('Sending rows to bulk-upsert-brochure:', rows.slice(0, 3)); // Log first 3 for debugging
 
       const { data, error } = await supabase.functions.invoke('bulk-upsert-brochure', {
         body: { rows }
