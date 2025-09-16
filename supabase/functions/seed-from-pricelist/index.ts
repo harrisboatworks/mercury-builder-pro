@@ -357,7 +357,14 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
     try {
       const row = rawRows[i];
       const modelNumber = (row.model_number || '').trim();
-      const base = (row.model_display_raw || '').replace(/\s+/g, ' ').replace(/[†‡]/g, '').trim();
+      
+      // Build model_display from brochure description with proper cleaning
+      const rawDesc = (row.model_display_raw || row.description || row.model || row.title || '').toString();
+      const cleaned = rawDesc
+        .replace(/[†*+]+$/g, '')      // trailing markers
+        .replace(/\s{2,}/g, ' ')      // collapse spaces
+        .trim();
+      const model_display = cleaned.length ? cleaned.slice(0, 160) : null;
       
       // Defensive coercion for prices
       const dealerPrice = Number(String(row.dealer_price).replace(/[^0-9.]/g, '')) || 0;
@@ -369,9 +376,9 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
         errors.push({ row_index: i, error: 'Empty model number', data: row });
         continue;
       }
-      if (!base) {
-        skipReasons.set('empty_description', (skipReasons.get('empty_description') || 0) + 1);
-        errors.push({ row_index: i, error: 'Empty description', data: row });
+      if (!model_display) {
+        skipReasons.set('missing_description_for_model_display', (skipReasons.get('missing_description_for_model_display') || 0) + 1);
+        errors.push({ row_index: i, error: 'Missing description for model_display', data: row });
         continue;
       }
       if (dealerPrice <= 0) {
@@ -386,12 +393,12 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
       }
       
       // Parse Mercury model from description (e.g., "25MH FourStroke †‡")
-      const descriptionClean = base;
+      const descriptionClean = model_display;
       
-      // Extract accessories from symbols
+      // Extract accessories from symbols in original raw description
       const accessories = [];
-      if (row.model_display_raw && row.model_display_raw.includes('†')) accessories.push('Propeller Included');
-      if (row.model_display_raw && row.model_display_raw.includes('‡')) accessories.push('Fuel Tank Included');
+      if (rawDesc.includes('†')) accessories.push('Propeller Included');
+      if (rawDesc.includes('‡')) accessories.push('Fuel Tank Included');
       
       // Parse model components
       const parts = descriptionClean.split(/\s+/);
@@ -464,7 +471,8 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
         family
       ].filter(Boolean).join(' ').trim();
       
-      const model_display = base || canonicalDisplay || 'Mercury Outboard';
+      // Use cleaned model_display as the primary display name
+      const finalModelDisplay = model_display || canonicalDisplay || 'Mercury Outboard';
       
         // Generate unique model_key with model_number as primary identifier
         const modelKey = [
@@ -479,9 +487,9 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
           model_number: modelNumber.trim(), // Official Mercury model number (1F02201KK, etc.)
           mercury_model_no: mercuryModelNo || '', // Parsed model (25MH, etc.)
           
-          // Display and description
-          model_display: model_display, // Human-readable brochure text
-          display_name: model_display,
+          // Display and description - CRITICAL: include model_display for human-readable names
+          model_display: finalModelDisplay, // Human-readable brochure text
+          display_name: finalModelDisplay,
           model: family || 'Outboard', // Required field - fallback to Outboard
           model_key: modelKey,
           
@@ -520,11 +528,11 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
           updated_at: new Date().toISOString(),
           
           // Debug info
-          raw_cells: [row.model_number, row.model_display_raw, row.dealer_price]
+          raw_cells: [row.model_number, rawDesc, row.dealer_price]
         };
         
-        // Debug log for required fields
-        console.log(`[PriceList] Row ${i + 1} required fields: model="${result.model}", motor_type="${result.motor_type}", make="${result.make}"`);
+        // Debug log for model_display
+        console.log(`[PriceList] Row ${i + 1} model_display: "${result.model_display}" (from: "${rawDesc}")`);
         
         results.push(result);
       
@@ -541,6 +549,7 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
   
   console.log(`[PriceList] Normalization skip reasons: ${JSON.stringify(Object.fromEntries(skipReasons))}`);
   console.log(`[PriceList] Normalization completed: ${results.length} successful, ${errors.length} errors`);
+  console.log(`[PriceList] Model display stats: ${results.filter(r => r.model_display).length} with display, ${results.filter(r => !r.model_display).length} without`);
   
   return { normalizedMotors: results, errors, skipReasons };
 }
