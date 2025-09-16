@@ -409,8 +409,8 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
       
       // Extract horsepower and model codes from first part that looks like Mercury model
       for (const part of parts) {
-        if (part.match(/^\d+(\.\d+)?\w*$/)) {
-          mercuryModelNo = part;
+        if (/^\d+(?:\.\d+)?[A-Z]+[A-Z0-9]*$/i.test(part)) {
+          mercuryModelNo = part.toUpperCase();
           const hpMatch = part.match(/^(\d+(?:\.\d+)?)/);
           if (hpMatch) {
             horsepower = parseFloat(hpMatch[1]);
