@@ -1153,6 +1153,13 @@ export type Database = {
         Args: Record<PropertyKey, never>
         Returns: string
       }
+      get_duplicate_brochure_keys: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          count: number
+          model_key: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

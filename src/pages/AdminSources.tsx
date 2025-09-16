@@ -40,6 +40,13 @@ export default function AdminSources() {
   const [bulkImportFile, setBulkImportFile] = useState<File | null>(null);
   const [bulkJsonText, setBulkJsonText] = useState("");
   const [bulkResults, setBulkResults] = useState<{ success: number; total: number; errors: string[] } | null>(null);
+  const [sanityLoading, setSanityLoading] = useState(false);
+  const [sanityData, setSanityData] = useState<{
+    counts: { brochure: number; inStock: number };
+    recentSample: any[];
+    missingImages: any[];
+    keyCollisions: any[];
+  } | null>(null);
 
   const handlePricelistIngest = async (isDryRun: boolean) => {
     setLoading({ ...loading, pricelist: true });
@@ -474,10 +481,17 @@ export default function AdminSources() {
         keyCollisions: keyCollisions || []
       });
 
-      toast.success('Sanity check completed');
+      toast({
+        title: "Sanity check completed",
+        description: "Database stats retrieved successfully"
+      });
     } catch (error) {
       console.error('Sanity check failed:', error);
-      toast.error('Sanity check failed');
+      toast({
+        title: "Error",
+        description: "Sanity check failed",
+        variant: "destructive"
+      });
     } finally {
       setSanityLoading(false);
     }
@@ -486,7 +500,10 @@ export default function AdminSources() {
   const copyToClipboard = (data: any[], title: string) => {
     const text = JSON.stringify(data, null, 2);
     navigator.clipboard.writeText(text);
-    toast.success(`${title} copied to clipboard`);
+    toast({
+      title: "Copied to clipboard",
+      description: `${title} data copied successfully`
+    });
   };
 
   return (
@@ -1084,6 +1101,147 @@ export default function AdminSources() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Sanity Check Panel */}
+        <Card className="mt-6">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div>
+                <CardTitle className="flex items-center gap-2">
+                  <AlertCircle className="h-5 w-5" />
+                  Sanity Check
+                </CardTitle>
+                <CardDescription>
+                  Quick database health checks for motor inventory and brochure data
+                </CardDescription>
+              </div>
+              <Button 
+                onClick={runSanityCheck} 
+                disabled={sanityLoading}
+                variant="outline"
+              >
+                {sanityLoading ? "Running..." : "Run Checks"}
+              </Button>
+            </div>
+          </CardHeader>
+          {sanityData && (
+            <CardContent className="space-y-6">
+              {/* A) Counts */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="text-center p-4 bg-muted rounded-lg">
+                  <div className="text-2xl font-bold text-primary">{sanityData.counts.brochure}</div>
+                  <div className="text-sm text-muted-foreground">Brochure Models</div>
+                </div>
+                <div className="text-center p-4 bg-muted rounded-lg">
+                  <div className="text-2xl font-bold text-primary">{sanityData.counts.inStock}</div>
+                  <div className="text-sm text-muted-foreground">In-Stock Units</div>
+                </div>
+              </div>
+
+              {/* B) Recent Sample */}
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="font-semibold">Recent Sample (20 latest)</h4>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => copyToClipboard(sanityData.recentSample, "Recent Sample")}
+                  >
+                    Copy JSON
+                  </Button>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border rounded">
+                    <thead>
+                      <tr className="border-b bg-muted/50">
+                        <th className="p-2 text-left">Model</th>
+                        <th className="p-2 text-left">Key</th>
+                        <th className="p-2 text-left">HP</th>
+                        <th className="p-2 text-left">Price</th>
+                        <th className="p-2 text-left">Stock</th>
+                        <th className="p-2 text-left">Image</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {sanityData.recentSample.slice(0, 10).map((row, idx) => (
+                        <tr key={idx} className="border-b">
+                          <td className="p-2">{row.model || '-'}</td>
+                          <td className="p-2 text-xs font-mono">{row.model_key || '-'}</td>
+                          <td className="p-2">{row.horsepower || '-'}</td>
+                          <td className="p-2">${row.dealer_price || row.msrp || '-'}</td>
+                          <td className="p-2">
+                            <Badge variant={row.in_stock ? "default" : "secondary"}>
+                              {row.in_stock ? "Stock" : "Brochure"}
+                            </Badge>
+                          </td>
+                          <td className="p-2">
+                            {row.hero_image_url ? "✓" : "✗"}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* C) Missing Images */}
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="font-semibold">Missing Images ({sanityData.missingImages.length})</h4>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => copyToClipboard(sanityData.missingImages, "Missing Images")}
+                  >
+                    Copy JSON
+                  </Button>
+                </div>
+                {sanityData.missingImages.length > 0 ? (
+                  <div className="max-h-40 overflow-y-auto text-xs font-mono bg-muted p-3 rounded">
+                    {sanityData.missingImages.slice(0, 20).map((row, idx) => (
+                      <div key={idx}>
+                        {row.model_key}: {row.model}
+                      </div>
+                    ))}
+                    {sanityData.missingImages.length > 20 && (
+                      <div className="text-muted-foreground">
+                        ... and {sanityData.missingImages.length - 20} more
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div className="text-green-600 font-medium">All brochure models have images!</div>
+                )}
+              </div>
+
+              {/* D) Key Collisions */}
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="font-semibold">Key Collisions ({sanityData.keyCollisions.length})</h4>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => copyToClipboard(sanityData.keyCollisions, "Key Collisions")}
+                  >
+                    Copy JSON
+                  </Button>
+                </div>
+                {sanityData.keyCollisions.length > 0 ? (
+                  <div className="space-y-2">
+                    {sanityData.keyCollisions.map((collision, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-2 bg-destructive/10 rounded border-l-4 border-destructive">
+                        <span className="font-mono text-sm">{collision.model_key}</span>
+                        <Badge variant="destructive">{collision.count} duplicates</Badge>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-green-600 font-medium">No key collisions found!</div>
+                )}
+              </div>
+            </CardContent>
+          )}
+        </Card>
       </div>
     </div>
   );
