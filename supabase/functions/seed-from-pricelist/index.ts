@@ -136,6 +136,30 @@ function resolveMotorType(rec: any): string {
 }
 
 /**
+ * Detect and strip accessory symbols from motor display names
+ * † = fuel tank included, †† = fuel tank + propeller included
+ */
+function detectAndStripAccessorySymbols(displayName: string): { cleanName: string; accessories: string[] } {
+  if (!displayName) return { cleanName: '', accessories: [] };
+  
+  const accessories: string[] = [];
+  let cleanName = displayName;
+  
+  // Detect double dagger (fuel tank + propeller)
+  if (cleanName.includes('††')) {
+    accessories.push('fuel_tank', 'propeller');
+    cleanName = cleanName.replace(/††+/g, '').trim();
+  }
+  // Detect single dagger (fuel tank only)
+  else if (cleanName.includes('†')) {
+    accessories.push('fuel_tank');
+    cleanName = cleanName.replace(/†+/g, '').trim();
+  }
+  
+  return { cleanName, accessories };
+}
+
+/**
  * Ensure all required brochure fields are present with proper field mapping and markup application.
  * NOTE: model and motor_type are NOT NULL in motor_models.
  */
@@ -149,10 +173,14 @@ function toDbRow(rec: any, opts: { msrp_markup?: number } = {}) {
     msrp = Math.round(dealer * Number(opts.msrp_markup) * 100) / 100;
   }
   
-  // Extract HP from description or existing field
+  // Process model display name to strip accessory symbols
+  const rawDisplayName = rec.model_display ?? rec.display ?? '';
+  const { cleanName, accessories } = detectAndStripAccessorySymbols(rawDisplayName);
+  
+  // Extract HP from clean description or existing field
   let hp = parseNumber(rec.hp ?? rec.horsepower);
-  if (hp == null && rec.model_display) {
-    const hpMatch = String(rec.model_display).match(/\b(\d+(?:\.\d+)?)\s*HP\b/i);
+  if (hp == null && cleanName) {
+    const hpMatch = String(cleanName).match(/\b(\d+(?:\.\d+)?)\s*HP\b/i);
     if (hpMatch) {
       hp = parseNumber(hpMatch[1]);
     }
@@ -170,14 +198,17 @@ function toDbRow(rec: any, opts: { msrp_markup?: number } = {}) {
     mercury_model_no: rec.mercury_model_no ?? rec.mercury_code ?? null,
 
     // NOT NULLs
-    model: resolveModel(rec),                    // brochure family/category ("FourStroke", etc.)
+    model: resolveModel({ ...rec, model_display: cleanName }),  // use clean name for better family detection
     motor_type: resolveMotorType(rec),           // "Outboard" | "Electric" | "Jet" | "Diesel"
 
     // display / pricing (properly mapped)
-    model_display: rec.model_display ?? rec.display ?? null,
+    model_display: cleanName || null,           // cleaned display name without symbols
     dealer_price: dealer,
     msrp: msrp,
     horsepower: hp,
+
+    // accessory information
+    accessory_notes: accessories.length > 0 ? accessories : [],
 
     // misc
     year: rec.year ?? 2025,

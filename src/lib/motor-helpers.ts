@@ -381,6 +381,32 @@ export const getIncludedAccessories = (motor: Motor) => {
   const model = (motor.model || '').toUpperCase();
   const isTiller = isTillerMotor(model);
   
+  // First check for accessory_notes from price list symbols (highest priority)
+  const accessoryNotes = (motor as any).accessory_notes;
+  if (accessoryNotes && Array.isArray(accessoryNotes)) {
+    if (accessoryNotes.includes('fuel_tank')) {
+      if (hp <= 6) {
+        accessories.push('Internal fuel tank');
+      } else if (hp >= 8 && hp <= 20) {
+        accessories.push('12L fuel tank & hose');
+      } else if (hp >= 25 && hp <= 30 && isTiller) {
+        accessories.push('25L fuel tank & hose');
+      } else {
+        accessories.push('Fuel tank & hose');
+      }
+    }
+    
+    if (accessoryNotes.includes('propeller')) {
+      accessories.push('Standard propeller');
+    }
+    
+    // Standard documentation
+    accessories.push('Owner\'s manual & warranty');
+    
+    return accessories;
+  }
+  
+  // Fallback to legacy logic if no accessory_notes available
   // Check for fuel tank inclusion
   if (includesFuelTank(motor)) {
     if (hp <= 6) {
