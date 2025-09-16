@@ -33,9 +33,11 @@ function parseBool(v: any, d = false) {
   return d;
 }
 
-function parseNumber(v: any, d = 0) {
-  if (typeof v === 'number' && Number.isFinite(v)) return v;
-  const n = Number(String(v ?? '').trim());
+function parseNumber(v: any, d: number | null = null) {
+  if (v == null) return d;
+  const s = String(v).replace(/[\$,]/g, '').trim();
+  if (s === '') return d;
+  const n = Number(s);
   return Number.isFinite(n) ? n : d;
 }
 
@@ -126,10 +128,28 @@ function resolveMotorType(rec: any): string {
 }
 
 /**
- * Ensure all required brochure fields are present.
+ * Ensure all required brochure fields are present with proper field mapping and markup application.
  * NOTE: model and motor_type are NOT NULL in motor_models.
  */
-function toDbRow(rec: any) {
+function toDbRow(rec: any, opts: { msrp_markup?: number } = {}) {
+  // Parse numeric fields properly
+  const dealer = parseNumber(rec.dealer_price ?? rec.dealer ?? rec.price);
+  let msrp = parseNumber(rec.msrp ?? rec.msrp_price);
+  
+  // Apply markup only to MSRP when missing (not double-apply)
+  if (msrp == null && dealer != null && opts.msrp_markup) {
+    msrp = Math.round(dealer * Number(opts.msrp_markup) * 100) / 100;
+  }
+  
+  // Extract HP from description or existing field
+  let hp = parseNumber(rec.hp ?? rec.horsepower);
+  if (hp == null && rec.model_display) {
+    const hpMatch = String(rec.model_display).match(/\b(\d+(?:\.\d+)?)\s*HP\b/i);
+    if (hpMatch) {
+      hp = parseNumber(hpMatch[1]);
+    }
+  }
+
   return {
     // identity / flags
     is_brochure: true,
@@ -145,10 +165,11 @@ function toDbRow(rec: any) {
     model: resolveModel(rec),                    // brochure family/category ("FourStroke", etc.)
     motor_type: resolveMotorType(rec),           // "Outboard" | "Electric" | "Jet" | "Diesel"
 
-    // display / pricing
+    // display / pricing (properly mapped)
     model_display: rec.model_display ?? rec.display ?? null,
-    dealer_price: rec.dealer_price ?? rec.dealer ?? null,
-    msrp: rec.msrp ?? rec.price ?? null,
+    dealer_price: dealer,
+    msrp: msrp,
+    horsepower: hp,
 
     // misc
     year: rec.year ?? 2025,
@@ -259,12 +280,19 @@ function parseMercuryModelNo(description: string): string {
   return match ? match[1] : '';
 }
 
-// Parse horsepower from description
-function parseHorsepower(description: string): number {
-  if (!description) return 0;
+// Parse horsepower from description using improved patterns
+function parseHorsepower(description: string): number | null {
+  if (!description) return null;
   
-  const match = description.match(/(\d+(?:\.\d+)?)/);
-  return match ? parseFloat(match[1]) : 0;
+  // Look for HP patterns first (most specific)
+  const hpMatch = description.match(/\b(\d+(?:\.\d+)?)\s*HP\b/i);
+  if (hpMatch) return parseFloat(hpMatch[1]);
+  
+  // Look for leading numbers (common in Mercury model descriptions)
+  const numMatch = description.match(/^(\d+(?:\.\d+)?)/);
+  if (numMatch) return parseFloat(numMatch[1]);
+  
+  return null;
 }
 
 // Parse price list and return structured data
@@ -301,13 +329,13 @@ async function parsePriceList(url: string, msrpMarkup: number) {
   const parsedRows = rawRows.map((row, index) => {
     const modelNumber = String(row.model_number || '').trim();
     const modelDescription = decodeEntities(String(row.model_description || '').trim());
-    const dealerPrice = parseNumber(row.dealer_price, 0);
+    const dealerPrice = parseNumber(row.dealer_price);
     
     const mercuryModelNo = parseMercuryModelNo(modelDescription);
     const horsepower = parseHorsepower(modelDescription);
     const modelKey = generateModelKey(modelNumber.toLowerCase(), horsepower);
     
-    console.log(`[PriceList] Row ${index + 1} model_display: "${modelDescription}" (from: "${modelDescription}")`);
+    console.log(`[PriceList] Row ${index + 1} model_display: "${modelDescription}" (dealer: ${dealerPrice}, hp: ${horsepower})`);
     
     return {
       model_number: modelNumber,
@@ -315,7 +343,8 @@ async function parsePriceList(url: string, msrpMarkup: number) {
       model_key: modelKey,
       mercury_model_no: mercuryModelNo,
       dealer_price: dealerPrice,
-      msrp: Math.round(dealerPrice * msrpMarkup * 100) / 100,
+      // Don't apply markup here - let toDbRow handle it
+      msrp: null,
       hp: horsepower,
       rigging_code: null,
       accessories: null,
@@ -379,10 +408,8 @@ Deno.serve(async (req) => {
       if (!PART_RE.test(model_number)) { skip('not_part_style_model_number'); continue; }
       if (!model_key) { skip('missing_model_key'); continue; }
 
-      const dealer_price = parseNumber(r.dealer_price, NaN);
-      const msrp = parseNumber(r.msrp, NaN);
-      if (!Number.isFinite(dealer_price)) { skip('invalid_dealer_price'); continue; }
-      if (!Number.isFinite(msrp)) { skip('invalid_msrp'); continue; }
+      const dealer_price = parseNumber(r.dealer_price);
+      if (dealer_price == null) { skip('invalid_dealer_price'); continue; }
 
       cleaned.push(toDbRow({
         model_number,
@@ -390,11 +417,12 @@ Deno.serve(async (req) => {
         model_key,
         mercury_model_no,
         dealer_price,
-        msrp,
+        msrp: r.msrp, // Let toDbRow handle MSRP calculation
         hp: r.hp,
+        horsepower: r.hp, // Include both for compatibility
         family: r.family || 'FourStroke',
         year: 2025,
-      }));
+      }, { msrp_markup: norm.msrp_markup }));
     }
 
     // ---- If dry run: compute would-create/update by looking at DB and return diagnostics ----
@@ -414,9 +442,9 @@ Deno.serve(async (req) => {
     const toInsert = cleaned.filter(r => !existingNumbers.has(r.model_number));
     const toUpdate = cleaned.filter(r => existingNumbers.has(r.model_number));
 
-    // Map both arrays through toDbRow to ensure model field is populated
-    const insertRows = toInsert.map(toDbRow);
-    const updateRows = toUpdate.map(toDbRow);
+    // insertRows and updateRows are already processed through toDbRow
+    const insertRows = toInsert;
+    const updateRows = toUpdate;
 
     const diagnostics = {
       step: norm.dry_run ? 'dry_run_complete' : 'ingest_complete',
