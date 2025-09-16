@@ -27,9 +27,9 @@ Deno.serve(async (req) => {
 
   try {
     // Quick connectivity sanity route (temporary)
-    const requestBody = await req.json().catch(() => ({}));
+    const raw = await req.json().catch(() => ({}));
     
-    if (requestBody && requestBody.ping === true) {
+    if (raw && raw.ping === true) {
       console.log('[PriceList] Ping request received');
       return new Response(JSON.stringify({ 
         success: true, 
@@ -41,11 +41,26 @@ Deno.serve(async (req) => {
       });
     }
 
-    const { dry_run = true, msrp_markup: reqMarkup, url: urlIn } = requestBody;
+    /**
+     * Accept dry_run as:
+     *   true/false (boolean) OR "true"/"false" (string)
+     * Default to true ONLY if raw.dry_run is strictly undefined.
+     */
+    let dry_run: boolean;
+    if (raw.dry_run === undefined) {
+      dry_run = true;
+    } else if (typeof raw.dry_run === 'string') {
+      dry_run = raw.dry_run.trim().toLowerCase() === 'true';
+    } else {
+      dry_run = !!raw.dry_run;
+    }
+
+    const reqMarkup = raw.msrp_markup;
     const markup = Number.isFinite(Number(reqMarkup)) && Number(reqMarkup) > 0 ? Number(reqMarkup) : 1.1;
-    console.log('[PriceList] Using markup:', markup);
+
+    console.log(`[PriceList] Start: dry_run=${dry_run}, markup=${markup}`);
     
-    const priceListUrl = urlIn?.trim() || 'https://www.harrisboatworks.ca/mercurypricelist';
+    const priceListUrl = raw.url?.trim() || 'https://www.harrisboatworks.ca/mercurypricelist';
     
     console.log(`[PriceList] Starting seed process: dry_run=${dry_run}, markup=${markup}, url=${priceListUrl}`);
     
@@ -218,7 +233,8 @@ Deno.serve(async (req) => {
         rows_skipped_by_reason: Object.fromEntries(allSkipReasons),
         top_skip_reasons: Array.from(allSkipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
         rowErrors: debugInfo.rowErrors,
-        snapshot_url: `View Saved HTML: ${jsonPath}`
+        snapshot_url: `View Saved HTML: ${jsonPath}`,
+        echo: { dry_run, markup }
       }), { 
         status: 200,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -333,7 +349,8 @@ Deno.serve(async (req) => {
       top_skip_reasons: Array.from(allSkipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
       rowErrors: debugInfo.rowErrors,
       batchErrors: batchErrors.slice(0, 5), // First 5 batch errors for debugging
-      snapshot_url: `View Saved HTML: ${jsonPath}`
+      snapshot_url: `View Saved HTML: ${jsonPath}`,
+      echo: { dry_run, markup }
     }), { 
       status: 200,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }

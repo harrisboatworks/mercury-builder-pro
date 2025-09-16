@@ -141,10 +141,17 @@ export default function AdminBrochureTest() {
       const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
         body: {
           url: 'https://www.harrisboatworks.ca/mercurypricelist',
-          dry_run: dryRun,
+          dry_run: dryRun, // Send boolean directly
           msrp_markup: Number(markupToSend ?? 1.1),
           parse_mode: 'auto'
         }
+      });
+
+      // Show what we sent for sanity
+      toast({
+        title: `${dryRun ? 'Dry Run' : 'Live Ingest'} Started`,
+        description: `dry_run=${dryRun}, markup=${markupToSend}`,
+        duration: 2000
       });
 
       if (error) {
