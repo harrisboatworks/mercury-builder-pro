@@ -47,28 +47,110 @@ serve(async (req) => {
     const itemMatches = xmlText.match(/<item>[\s\S]*?<\/item>/g) || [];
     console.log(`📦 Found ${itemMatches.length} total items in XML`);
     
-    // Log first item for debugging
+    // Log first few items for debugging with full structure
     if (itemMatches.length > 0) {
-      console.log('📋 Sample item structure:', itemMatches[0].substring(0, 500) + '...');
+      console.log('📋 Sample item structures:');
+      for (let i = 0; i < Math.min(3, itemMatches.length); i++) {
+        console.log(`Item ${i + 1}:`, itemMatches[i].substring(0, 800) + '...');
+      }
     }
     
-    // Extract Mercury new units using regex
+    // Extract Mercury units using flexible field matching
     const mercuryUnits = itemMatches.filter(item => {
-      const manufacturerMatch = item.match(/<manufacturer>(.*?)<\/manufacturer>/i);
-      const conditionMatch = item.match(/<condition>(.*?)<\/condition>/i);
+      // Try multiple field name variations
+      const manufacturerPatterns = [
+        /<manufacturer>(.*?)<\/manufacturer>/i,
+        /<make>(.*?)<\/make>/i,
+        /<brand>(.*?)<\/brand>/i
+      ];
       
-      const manufacturer = manufacturerMatch?.[1]?.trim().toLowerCase() || '';
-      const condition = conditionMatch?.[1]?.trim().toLowerCase() || '';
+      const conditionPatterns = [
+        /<condition>(.*?)<\/condition>/i,
+        /<status>(.*?)<\/status>/i,
+        /<state>(.*?)<\/state>/i
+      ];
       
-      // Case-insensitive matching for Mercury (including partial matches like "Mercury Marine")
-      const isMercury = manufacturer.includes('mercury');
-      const isNew = condition === 'new';
+      const categoryPatterns = [
+        /<category>(.*?)<\/category>/i,
+        /<type>(.*?)<\/type>/i,
+        /<producttype>(.*?)<\/producttype>/i
+      ];
       
-      if (isMercury && !isNew) {
-        console.log(`⚠️ Mercury unit but not new: manufacturer="${manufacturer}", condition="${condition}"`);
+      // Extract manufacturer
+      let manufacturer = '';
+      for (const pattern of manufacturerPatterns) {
+        const match = item.match(pattern);
+        if (match) {
+          manufacturer = match[1]?.trim().toLowerCase() || '';
+          break;
+        }
       }
       
-      return isMercury && isNew;
+      // Extract condition
+      let condition = '';
+      for (const pattern of conditionPatterns) {
+        const match = item.match(pattern);
+        if (match) {
+          condition = match[1]?.trim().toLowerCase() || '';
+          break;
+        }
+      }
+      
+      // Extract category to filter for motors
+      let category = '';
+      for (const pattern of categoryPatterns) {
+        const match = item.match(pattern);
+        if (match) {
+          category = match[1]?.trim().toLowerCase() || '';
+          break;
+        }
+      }
+      
+      // Also check title and description for motor indicators
+      const titleMatch = item.match(/<title>(.*?)<\/title>/i);
+      const descMatch = item.match(/<description><!\[CDATA\[(.*?)\]\]><\/description>/i);
+      const title = titleMatch?.[1]?.trim().toLowerCase() || '';
+      const description = descMatch?.[1]?.trim().toLowerCase() || '';
+      
+      // Mercury matching (flexible)
+      const isMercury = manufacturer.includes('mercury') || 
+                       title.includes('mercury') || 
+                       description.includes('mercury');
+      
+      // Motor/Outboard detection
+      const isMotor = category.includes('motor') || 
+                     category.includes('outboard') || 
+                     category.includes('engine') ||
+                     title.includes('motor') || 
+                     title.includes('outboard') || 
+                     title.includes('hp') ||
+                     description.includes('outboard') ||
+                     description.includes('motor');
+      
+      // Condition matching (more flexible - include excellent, good, new, etc.)
+      const validConditions = ['new', 'excellent', 'good', 'like new', 'used', 'pre-owned'];
+      const isValidCondition = validConditions.some(cond => condition.includes(cond)) || condition.length === 0;
+      
+      // Log detailed debug info for first few Mercury items
+      if (isMercury && mercuryUnits.length < 5) {
+        console.log(`🔍 Mercury unit found:
+          Manufacturer: "${manufacturer}"
+          Condition: "${condition}" 
+          Category: "${category}"
+          Title: "${title.substring(0, 100)}"
+          Is Motor: ${isMotor}
+          Valid Condition: ${isValidCondition}`);
+      }
+      
+      if (isMercury && !isMotor) {
+        console.log(`⚠️ Mercury unit but not motor: category="${category}", title="${title.substring(0, 50)}"`);
+      }
+      
+      if (isMercury && isMotor && !isValidCondition) {
+        console.log(`⚠️ Mercury motor but invalid condition: condition="${condition}"`);
+      }
+      
+      return isMercury && isMotor && isValidCondition;
     });
 
     console.log(`🎯 Filtered to ${mercuryUnits.length} Mercury new units`);
@@ -90,21 +172,67 @@ serve(async (req) => {
     const stockNumberMap = new Map<string, string>();
     
     
-    // Process units to build stock counts using regex extraction
+    // Process units to build stock counts using flexible regex extraction
     for (const unit of mercuryUnits) {
-      // Extract data using regex patterns
-      const titleMatch = unit.match(/<title>(.*?)<\/title>/i);
-      const stockNumberMatch = unit.match(/<stocknumber>(.*?)<\/stocknumber>/i);
-      const priceMatch = unit.match(/<price>(.*?)<\/price>/i);
+      // Extract data using multiple field name patterns
+      const titlePatterns = [
+        /<title>(.*?)<\/title>/i,
+        /<name>(.*?)<\/name>/i,
+        /<model>(.*?)<\/model>/i
+      ];
       
-      const title = titleMatch?.[1]?.trim() || '';
-      const stockNumber = stockNumberMatch?.[1]?.trim() || '';
-      const priceText = priceMatch?.[1]?.trim() || '0';
+      const stockNumberPatterns = [
+        /<stocknumber>(.*?)<\/stocknumber>/i,
+        /<stock_number>(.*?)<\/stock_number>/i,
+        /<vin>(.*?)<\/vin>/i,
+        /<id>(.*?)<\/id>/i
+      ];
+      
+      const pricePatterns = [
+        /<price>(.*?)<\/price>/i,
+        /<cost>(.*?)<\/cost>/i,
+        /<msrp>(.*?)<\/msrp>/i
+      ];
+      
+      // Extract title
+      let title = '';
+      for (const pattern of titlePatterns) {
+        const match = unit.match(pattern);
+        if (match) {
+          title = match[1]?.trim() || '';
+          break;
+        }
+      }
+      
+      // Extract stock number
+      let stockNumber = '';
+      for (const pattern of stockNumberPatterns) {
+        const match = unit.match(pattern);
+        if (match) {
+          stockNumber = match[1]?.trim() || '';
+          break;
+        }
+      }
+      
+      // Extract price
+      let priceText = '0';
+      for (const pattern of pricePatterns) {
+        const match = unit.match(pattern);
+        if (match) {
+          priceText = match[1]?.trim() || '0';
+          break;
+        }
+      }
+      
       const price = parseFloat(priceText.replace(/[,$]/g, '')) || 0;
       
-      // Log sample unit data for debugging (first 3 units only)
-      if (stockMap.size < 3) {
-        console.log(`📊 Unit data - Title: "${title}", Stock#: "${stockNumber}", Price: $${price}`);
+      // Log sample unit data for debugging (first 5 units only)
+      if (stockMap.size < 5) {
+        console.log(`📊 Unit data:
+          Title: "${title}"
+          Stock#: "${stockNumber}" 
+          Price: $${price}
+          Raw Price Text: "${priceText}"`);
       }
       
       if (title) {

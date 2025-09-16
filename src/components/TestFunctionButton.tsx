@@ -3,14 +3,14 @@ import { Button } from "@/components/ui/button";
 const TestFunctionButton = () => {
   const testFunction = async () => {
     try {
-      console.log("🧪 Testing scrape function...");
+      console.log("🧪 Testing Mercury sync function...");
       
-      const response = await fetch('https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/scrape-inventory-v2', {
+      const response = await fetch('https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/sync-mercury-inventory', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ pages_to_scrape: 1 })
+        body: JSON.stringify({})
       });
       
       const data = await response.json();
@@ -25,7 +25,7 @@ const TestFunctionButton = () => {
 
   return (
     <Button onClick={testFunction} className="bg-blue-500 hover:bg-blue-600 text-white">
-      Test Scrape Function
+      Test Mercury Sync
     </Button>
   );
 };
