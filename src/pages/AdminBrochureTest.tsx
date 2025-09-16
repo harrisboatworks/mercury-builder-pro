@@ -2,12 +2,17 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Switch } from '@/components/ui/switch';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { ExternalLink, Play, FileText, Download, Upload, CheckCircle, AlertCircle, ChevronDown } from 'lucide-react';
+import { ExternalLink, Play, FileText, Download, Upload, CheckCircle, AlertCircle, ChevronDown, Link as LinkIcon } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { invokeEdge, pingEdge } from '@/lib/invokeEdge';
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
+import AdminNav from '@/components/admin/AdminNav';
 
 interface ParseResult {
   ok?: boolean;
@@ -59,8 +64,11 @@ export default function AdminBrochureTest() {
   const [dryRunResults, setDryRunResults] = useState<ParseResult | null>(null);
   const [ingestResults, setIngestResults] = useState<ParseResult | null>(null);
   const [summary, setSummary] = useState<BrochureSummary | null>(null);
-  const [running, setRunning] = useState(false);
   const [sanityResults, setSanityResults] = useState<any>(null);
+  const [dryRun, setDryRun] = useState(true);
+  const [pricelistUrl, setPricelistUrl] = useState("https://www.harrisboatworks.ca/mercurypricelist");
+  const [msrpMarkup, setMsrpMarkup] = useState(1.10);
+  const [loading, setLoading] = useState({ pricelist: false, ping: false });
 
   useEffect(() => {
     loadBrochureSummary();
@@ -112,14 +120,14 @@ export default function AdminBrochureTest() {
     }
   };
 
-  const runPriceListParser = async (isDryRun: boolean, markup = 1.0) => {
-    setRunning(true);
+  const runPriceListParser = async () => {
+    setLoading({ ...loading, pricelist: true });
     try {
       const payload = {
         action: 'brochure',
-        price_list_url: "https://www.harrisboatworks.ca/mercurypricelist",
-        dry_run: isDryRun,
-        msrp_markup: markup,
+        price_list_url: pricelistUrl?.trim() || 'https://www.harrisboatworks.ca/mercurypricelist',
+        dry_run: dryRun,
+        msrp_markup: Number(msrpMarkup || 1.1),
         create_missing_brochures: true
       };
       
@@ -127,12 +135,12 @@ export default function AdminBrochureTest() {
 
       if (!result?.ok) {
         toast({
-          title: "Operation Failed",
+          title: 'Error',
           description: `Error (status ${result.status}, step ${result.step}): ${result.error}`,
-          variant: "destructive",
+          variant: 'destructive',
         });
         
-        if (isDryRun) {
+        if (dryRun) {
           setDryRunResults(result);
         } else {
           setIngestResults(result);
@@ -140,29 +148,48 @@ export default function AdminBrochureTest() {
         return;
       }
 
-      if (isDryRun) {
+      if (dryRun) {
         setDryRunResults(result);
         toast({
-          title: "Dry Run Complete",
-          description: `Found ${result.raw_found || 0} raw items, parsed ${result.parsed || 0}. Would create ${result.would_create || 0}, would update ${result.would_update || 0}.`,
+          title: "Price List Preview Complete",
+          description: `${result.parsed || 0} parsed, ${result.would_create || 0} would create, ${result.would_update || 0} would update`,
         });
       } else {
         setIngestResults(result);
         toast({
-          title: "Ingest Complete",
-          description: `Created ${result.rows_created || 0} new records, updated ${result.rows_updated || 0} existing records.`,
+          title: "Price List Ingested",
+          description: `${result.parsed || 0} parsed, ${result.rows_created || 0} created, ${result.rows_updated || 0} updated`,
         });
       }
       
       await loadBrochureSummary();
     } finally {
-      setRunning(false);
+      setLoading({ ...loading, pricelist: false });
+    }
+  };
+
+  const pingEdgeFunction = async () => {
+    setLoading({ ...loading, ping: true });
+    try {
+      const result = await pingEdge();
+      toast({
+        title: "Ping Successful",
+        description: `Edge OK (${result.step})`,
+      });
+    } catch (e: any) {
+      toast({
+        title: "Ping Failed",
+        description: `Edge ping failed: ${e?.message || String(e)}`,
+        variant: "destructive",
+      });
+    } finally {
+      setLoading({ ...loading, ping: false });
     }
   };
 
   const exportBrochureCsv = async () => {
     try {
-      setRunning(true);
+      setLoading({ ...loading, pricelist: true });
       
       const { data: models, error } = await supabase
         .from('motor_models')
@@ -219,7 +246,7 @@ export default function AdminBrochureTest() {
         variant: "destructive"
       });
     } finally {
-      setRunning(false);
+      setLoading({ ...loading, pricelist: false });
     }
   };
 
@@ -228,7 +255,7 @@ export default function AdminBrochureTest() {
     if (!file) return;
 
     try {
-      setRunning(true);
+      setLoading({ ...loading, pricelist: true });
       
       const formData = new FormData();
       formData.append('file', file);
@@ -255,13 +282,13 @@ export default function AdminBrochureTest() {
         variant: "destructive"
       });
     } finally {
-      setRunning(false);
+      setLoading({ ...loading, pricelist: false });
     }
   };
 
   const runSanityQueries = async () => {
     try {
-      setRunning(true);
+      setLoading({ ...loading, pricelist: true });
       
       const { count: totalCount } = await supabase
         .from('motor_models')
@@ -292,7 +319,7 @@ export default function AdminBrochureTest() {
         variant: "destructive"
       });
     } finally {
-      setRunning(false);
+      setLoading({ ...loading, pricelist: false });
     }
   };
 
@@ -449,177 +476,271 @@ const ResultCard = ({ title, result, type }: {
 };
 
   return (
-    <div className="container mx-auto py-6 space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <FileText className="h-6 w-6" />
-            Brochure Test & Management
-          </CardTitle>
-          <CardDescription>
-            Test and manage the Mercury brochure data pipeline. Run dry runs to preview changes or perform live ingests to update the database.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
-            <Button
-              onClick={() => runPriceListParser(true, 1.1)}
-              disabled={running}
-              variant="outline"
-              className="flex items-center gap-2"
-            >
-              <Play className="h-4 w-4" />
-              Dry Run (1.1x)
-            </Button>
-            
-            <Button
-              onClick={() => runPriceListParser(false, 1.1)}
-              disabled={running}
-              className="flex items-center gap-2"
-            >
-              <Play className="h-4 w-4" />
-              Live Ingest (1.1x)
-            </Button>
-
-            <Button
-              onClick={runSanityQueries}
-              disabled={running}
-              variant="secondary"
-              className="flex items-center gap-2"
-            >
-              <FileText className="h-4 w-4" />
-              Sanity Check
-            </Button>
-
-            <Button
-              onClick={exportBrochureCsv}
-              disabled={running}
-              variant="outline"
-              className="flex items-center gap-2"
-            >
-              <Download className="h-4 w-4" />
-              Export CSV
-            </Button>
+    <div className="min-h-screen bg-background">
+      <AdminNav />
+      
+      <div className="container mx-auto p-6">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h1 className="text-3xl font-bold">Brochure Test & Management</h1>
+            <p className="text-muted-foreground">Test and manage the Mercury brochure data pipeline</p>
           </div>
-
+          
           <div className="flex items-center gap-4">
-            <label className="flex items-center gap-2 cursor-pointer">
-              <Upload className="h-4 w-4" />
-              Import CSV
-              <input
-                type="file"
-                accept=".csv"
-                onChange={handleCsvImport}
-                className="hidden"
+            <div className="flex items-center space-x-2">
+              <Switch
+                id="dry-run"
+                checked={dryRun}
+                onCheckedChange={setDryRun}
               />
-            </label>
+              <Label htmlFor="dry-run">Dry Run (Preview Only)</Label>
+            </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
 
-      {/* Current Brochure Summary */}
-      {summary && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Current Brochure Summary</CardTitle>
-            <CardDescription>Overview of brochure models in the database</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">{summary.total_brochure_count}</div>
-                <div className="text-sm text-muted-foreground">Total Brochure Models</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">{summary.families.length}</div>
-                <div className="text-sm text-muted-foreground">Motor Families</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-green-600">{summary.latest_samples.length}</div>
-                <div className="text-sm text-muted-foreground">Latest Samples</div>
-              </div>
-            </div>
+        {dryRun && (
+          <Alert className="mb-6">
+            <AlertCircle className="h-4 w-4" />
+            <AlertDescription>
+              Dry run mode is enabled. Changes will be previewed but not saved to the database.
+            </AlertDescription>
+          </Alert>
+        )}
 
-            <div className="space-y-4">
-              <div>
-                <h4 className="font-semibold text-sm mb-2">Family Breakdown:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {summary.families.map(({ family, count }) => (
-                    <Badge key={family} variant="secondary">
-                      {family}: {count}
-                    </Badge>
-                  ))}
+        <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3">
+          <Card className="col-span-2">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <FileText className="h-5 w-5" />
+                Mercury Price List Ingestion
+              </CardTitle>
+              <CardDescription>
+                Parse and ingest Mercury motor data from the price list
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="grid gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="pricelist-url">Price List URL</Label>
+                  <Input
+                    id="pricelist-url"
+                    value={pricelistUrl}
+                    onChange={(e) => setPricelistUrl(e.target.value)}
+                    placeholder="https://www.harrisboatworks.ca/mercurypricelist"
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="msrp-markup">MSRP Markup Multiplier</Label>
+                  <Input
+                    id="msrp-markup"
+                    type="number"
+                    step="0.01"
+                    min="1"
+                    max="2"
+                    value={msrpMarkup}
+                    onChange={(e) => setMsrpMarkup(parseFloat(e.target.value) || 1.1)}
+                  />
                 </div>
               </div>
 
-              <div>
-                <h4 className="font-semibold text-sm mb-2">Latest 10 Samples:</h4>
-                <div className="overflow-x-auto">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>Model Display</TableHead>
-                        <TableHead>Model Number</TableHead>
-                        <TableHead>Family</TableHead>
-                        <TableHead>HP</TableHead>
-                        <TableHead>Dealer Price</TableHead>
-                        <TableHead>MSRP</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {summary.latest_samples.map((sample) => (
-                        <TableRow key={sample.id}>
-                          <TableCell className="font-medium">{sample.model_display || sample.model}</TableCell>
-                          <TableCell className="font-mono text-xs">{sample.model_number || 'N/A'}</TableCell>
-                          <TableCell>{sample.family || 'N/A'}</TableCell>
-                          <TableCell>{sample.horsepower || 'N/A'}</TableCell>
-                          <TableCell>${sample.dealer_price?.toLocaleString()}</TableCell>
-                          <TableCell>${sample.msrp?.toLocaleString()}</TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
+              <div className="flex gap-2">
+                <Button
+                  onClick={pingEdgeFunction}
+                  disabled={loading.ping}
+                  variant="outline"
+                  size="sm"
+                  className="flex items-center gap-2"
+                >
+                  <LinkIcon className="h-4 w-4" />
+                  {loading.ping ? "Pinging..." : "Ping Edge"}
+                </Button>
+                
+                <Button
+                  onClick={runPriceListParser}
+                  disabled={loading.pricelist}
+                  className="flex items-center gap-2 flex-1"
+                >
+                  <Play className="h-4 w-4" />
+                  {loading.pricelist 
+                    ? "Processing..." 
+                    : dryRun 
+                      ? "Dry Run Preview" 
+                      : "Run Ingest"
+                  }
+                </Button>
               </div>
-            </div>
-          </CardContent>
-        </Card>
-      )}
+            </CardContent>
+          </Card>
 
-      {/* Results */}
-      <ResultCard title="Dry Run Results" result={dryRunResults} type="dry-run" />
-      <ResultCard title="Ingest Results" result={ingestResults} type="ingest" />
+          <Card>
+            <CardHeader>
+              <CardTitle>Tools & Utilities</CardTitle>
+              <CardDescription>
+                Additional brochure management tools
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <Button
+                onClick={runSanityQueries}
+                disabled={loading.pricelist}
+                variant="secondary"
+                className="w-full flex items-center gap-2"
+              >
+                <FileText className="h-4 w-4" />
+                Sanity Check
+              </Button>
 
-      {/* Sanity Check Results */}
-      {sanityResults && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Sanity Check Results</CardTitle>
-            <CardDescription>Database validation queries</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div>
-                <div className="text-lg font-bold">Total Brochure Rows: {sanityResults.totalBrochureRows}</div>
-                <div className="text-sm text-muted-foreground">Executed at: {sanityResults.executedAt}</div>
-              </div>
+              <Button
+                onClick={exportBrochureCsv}
+                disabled={loading.pricelist}
+                variant="outline"
+                className="w-full flex items-center gap-2"
+              >
+                <Download className="h-4 w-4" />
+                Export CSV
+              </Button>
               
-              {sanityResults.latestRecords?.length > 0 && (
-                <div>
-                  <h4 className="font-semibold text-sm mb-2">Latest 5 Records:</h4>
-                  <div className="space-y-1 text-sm font-mono">
-                    {sanityResults.latestRecords.map((record: any, idx: number) => (
-                      <div key={idx}>
-                        {record.model_number} - {new Date(record.created_at).toLocaleString()}
+              <div className="space-y-2">
+                <Label htmlFor="csv-import" className="text-sm">Import CSV</Label>
+                <input
+                  id="csv-import"
+                  type="file"
+                  accept=".csv"
+                  onChange={handleCsvImport}
+                  className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      
+        {/* Current Summary */}
+        {summary && (
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Current Brochure Summary</CardTitle>
+              <CardDescription>Overview of Mercury brochure data in the database</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                  <div className="text-2xl font-bold text-blue-600">{summary.total_brochure_count}</div>
+                  <div className="text-sm text-muted-foreground">Total Brochure Models</div>
+                </div>
+                <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                  <div className="text-2xl font-bold text-green-600">{summary.families.length}</div>
+                  <div className="text-sm text-muted-foreground">Motor Families</div>
+                </div>
+                <div className="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                  <div className="text-2xl font-bold text-purple-600">{summary.latest_samples.length}</div>
+                  <div className="text-sm text-muted-foreground">Latest Samples</div>
+                </div>
+              </div>
+
+              {/* Family Distribution */}
+              {summary.families.length > 0 && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold mb-3">Family Distribution</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                    {summary.families.slice(0, 8).map((family) => (
+                      <div key={family.family} className="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-800 rounded text-sm">
+                        <span className="font-medium">{family.family}</span>
+                        <Badge variant="secondary">{family.count}</Badge>
                       </div>
                     ))}
                   </div>
                 </div>
               )}
-            </div>
-          </CardContent>
-        </Card>
-      )}
+
+              {/* Latest Samples */}
+              {summary.latest_samples.length > 0 && (
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">Latest Brochure Models</h3>
+                  <div className="overflow-x-auto">
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          <TableHead>Model</TableHead>
+                          <TableHead>Family</TableHead>
+                          <TableHead>HP</TableHead>
+                          <TableHead>Dealer Price</TableHead>
+                          <TableHead>MSRP</TableHead>
+                          <TableHead>Created</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        {summary.latest_samples.slice(0, 10).map((sample) => (
+                          <TableRow key={sample.id}>
+                            <TableCell className="font-medium">
+                              {sample.model_display || sample.model}
+                            </TableCell>
+                            <TableCell>{sample.family || 'N/A'}</TableCell>
+                            <TableCell>{sample.horsepower || 'N/A'}</TableCell>
+                            <TableCell>{sample.dealer_price ? `$${sample.dealer_price.toLocaleString()}` : 'N/A'}</TableCell>
+                            <TableCell>{sample.msrp ? `$${sample.msrp.toLocaleString()}` : 'N/A'}</TableCell>
+                            <TableCell>{new Date(sample.created_at).toLocaleDateString()}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </div>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Sanity Check Results */}
+        {sanityResults && (
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Sanity Check Results</CardTitle>
+              <CardDescription>Executed at {sanityResults.executedAt}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                    <div className="text-2xl font-bold text-blue-600">{sanityResults.totalBrochureRows}</div>
+                    <div className="text-sm text-muted-foreground">Total Brochure Rows</div>
+                  </div>
+                </div>
+                
+                {sanityResults.latestRecords && sanityResults.latestRecords.length > 0 && (
+                  <div>
+                    <h4 className="font-medium mb-2">Latest 5 Records</h4>
+                    <div className="space-y-1 text-sm font-mono bg-gray-50 dark:bg-gray-800 p-3 rounded">
+                      {sanityResults.latestRecords.map((record: any, idx: number) => (
+                        <div key={idx}>
+                          {record.model_number} - {new Date(record.created_at).toLocaleString()}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Results Display */}
+        {dryRunResults && (
+          <ResultCard 
+            title="Dry Run Results" 
+            result={dryRunResults} 
+            type="dry-run" 
+          />
+        )}
+
+        {ingestResults && (
+          <ResultCard 
+            title="Ingest Results" 
+            result={ingestResults} 
+            type="ingest" 
+          />
+        )}
+      </div>
     </div>
   );
 }
