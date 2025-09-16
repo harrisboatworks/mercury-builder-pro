@@ -40,78 +40,113 @@ interface SeededResult {
   unique_model_keys?: string[];
 }
 
-// Rigging code tokenization
-const RIGGING_TOKENS = {
+// Enhanced Mercury rigging code parsing
+const RIGGING_CODE_MAP = {
   'E': 'Electric Start',
-  'M': 'Manual Start', 
+  'M': 'Manual Start',
   'H': 'Tiller Handle',
   'L': 'Long Shaft 20"',
-  'XL': 'Extra Long 25"',
-  'XXL': 'Extra Extra Long 30"',
+  'XL': 'Extra Long Shaft 25"',
+  'XXL': 'Extra Extra Long Shaft 30"',
   'PT': 'Power Trim',
   'CT': 'Command Thrust',
   'DTS': 'Digital Throttle & Shift',
-  'JPO': 'Jet Pump Option',
-  'TILLER': 'Tiller',
-  'EL': 'Electric Long',
-  'ELH': 'Electric Long Handle',
-  'ELPT': 'Electric Long Power Trim',
-  'EXLPT': 'Electric Extra Long Power Trim',
-  'EH': 'Electric Handle',
-  'ELO': 'Electric Long Option',
-  'MH': 'Manual Handle'
+  'JPO': 'Jet Pump Option'
 };
 
-const TOKEN_ORDER = ['E', 'M', 'H', 'L', 'XL', 'XXL', 'PT', 'CT', 'DTS', 'JPO', 'TILLER'];
-
-function tokenizeRigging(text: string): string[] {
-  const upperText = text.toUpperCase();
+// Parse Mercury rigging codes from model strings like "9.9ELPT", "25MH", etc.
+function parseMercuryRigCodes(modelText: string): {
+  tokens: string[];
+  shaft_code: 'S' | 'L' | 'XL' | 'XXL';
+  shaft_inches: 15 | 20 | 25 | 30;
+  start_type: 'Electric' | 'Manual' | 'Unknown';
+  control_type: 'Tiller' | 'Remote' | 'Unknown';
+  has_power_trim: boolean;
+  has_command_thrust: boolean;
+  rigging_description: string;
+} {
+  const upperText = modelText.toUpperCase();
   const foundTokens: string[] = [];
   
-  // Handle composite tokens first
-  const composites = ['EXLPT', 'ELPT', 'ELH', 'ELO'];
-  for (const comp of composites) {
-    if (upperText.includes(comp)) {
-      // Split composite into component tokens
-      if (comp === 'EXLPT') {
+  // Parse complex patterns first (order matters)
+  const patterns = ['EXLPT', 'ELPT', 'ELH', 'MLH', 'MH', 'EH'];
+  let remainingText = upperText;
+  
+  for (const pattern of patterns) {
+    if (remainingText.includes(pattern)) {
+      // Break down complex patterns
+      if (pattern === 'EXLPT') {
         foundTokens.push('E', 'XL', 'PT');
-      } else if (comp === 'ELPT') {
-        foundTokens.push('E', 'L', 'PT');
-      } else if (comp === 'ELH') {
+      } else if (pattern === 'ELPT') {
+        foundTokens.push('E', 'L', 'PT');  
+      } else if (pattern === 'ELH') {
         foundTokens.push('E', 'L', 'H');
-      } else if (comp === 'ELO') {
-        foundTokens.push('E', 'L');
+      } else if (pattern === 'MLH') {
+        foundTokens.push('M', 'L', 'H');
+      } else if (pattern === 'MH') {
+        foundTokens.push('M', 'H');
+      } else if (pattern === 'EH') {
+        foundTokens.push('E', 'H');
       }
+      remainingText = remainingText.replace(pattern, '');
+      break;
     }
   }
   
-  // Handle individual tokens if no composites found
+  // Parse remaining individual tokens if no complex pattern found
   if (foundTokens.length === 0) {
-    for (const token of Object.keys(RIGGING_TOKENS)) {
-      if (token.length > 1) { // Multi-letter tokens first
-        if (upperText.includes(token)) {
-          foundTokens.push(token);
-        }
-      }
-    }
-    
-    // Single letter tokens
-    for (const token of ['E', 'M', 'H']) {
-      if (upperText.includes(token) && !foundTokens.some(t => t.includes(token))) {
+    const individualTokens = ['XXL', 'XL', 'PT', 'CT', 'DTS', 'JPO', 'E', 'M', 'L', 'H'];
+    for (const token of individualTokens) {
+      if (remainingText.includes(token)) {
         foundTokens.push(token);
+        remainingText = remainingText.replace(token, '');
       }
     }
   }
   
-  // Order tokens according to canonical order
-  const orderedTokens: string[] = [];
-  for (const token of TOKEN_ORDER) {
-    if (foundTokens.includes(token)) {
-      orderedTokens.push(token);
-    }
+  // Remove duplicates and sort by canonical order
+  const uniqueTokens = [...new Set(foundTokens)];
+  const sortedTokens = uniqueTokens.sort((a, b) => {
+    const order = ['E', 'M', 'H', 'L', 'XL', 'XXL', 'PT', 'CT', 'DTS', 'JPO'];
+    return order.indexOf(a) - order.indexOf(b);
+  });
+  
+  // Determine shaft configuration
+  let shaft_code: 'S' | 'L' | 'XL' | 'XXL' = 'S';  // Default to Short
+  let shaft_inches: 15 | 20 | 25 | 30 = 15;
+  
+  if (sortedTokens.includes('XXL')) {
+    shaft_code = 'XXL';
+    shaft_inches = 30;
+  } else if (sortedTokens.includes('XL')) {
+    shaft_code = 'XL';
+    shaft_inches = 25;
+  } else if (sortedTokens.includes('L')) {
+    shaft_code = 'L';
+    shaft_inches = 20;
   }
   
-  return orderedTokens;
+  // Determine other attributes
+  const start_type = sortedTokens.includes('E') ? 'Electric' : 
+                     sortedTokens.includes('M') ? 'Manual' : 'Unknown';
+  const control_type = sortedTokens.includes('H') ? 'Tiller' : 'Remote';
+  const has_power_trim = sortedTokens.includes('PT');
+  const has_command_thrust = sortedTokens.includes('CT');
+  
+  // Build description
+  const descriptions = sortedTokens.map(token => RIGGING_CODE_MAP[token] || token).filter(Boolean);
+  const rigging_description = descriptions.join(', ');
+  
+  return {
+    tokens: sortedTokens,
+    shaft_code,
+    shaft_inches,
+    start_type,
+    control_type,
+    has_power_trim,
+    has_command_thrust,
+    rigging_description
+  };
 }
 
 function detectFamily(text: string): string | undefined {
@@ -145,101 +180,187 @@ function parseHorsepower(text: string): number | undefined {
   return undefined;
 }
 
-function detectAccessoryNotes(text: string): string[] {
-  const notes: string[] = [];
+// Enhanced accessory detection for Mercury price lists
+function detectAccessories(text: string): string[] {
+  const accessories: string[] = [];
   
-  // Detect symbols
+  // Symbol mapping
   if (text.includes('†') || text.includes('&#8224;')) {
-    notes.push('Propeller Included');
+    accessories.push('Propeller Included');
   }
   if (text.includes('‡') || text.includes('&#8225;')) {
-    notes.push('Fuel Tank Included');
+    accessories.push('Fuel Tank Included');
   }
   
-  // Detect phrases
-  if (text.toLowerCase().includes('propeller included')) {
-    if (!notes.includes('Propeller Included')) {
-      notes.push('Propeller Included');
-    }
-  }
-  if (text.toLowerCase().includes('fuel tank included')) {
-    if (!notes.includes('Fuel Tank Included')) {
-      notes.push('Fuel Tank Included');
+  // Text-based detection (case insensitive)
+  const lowerText = text.toLowerCase();
+  
+  if (lowerText.includes('propeller included') || lowerText.includes('prop included')) {
+    if (!accessories.includes('Propeller Included')) {
+      accessories.push('Propeller Included');
     }
   }
   
-  return notes;
+  if (lowerText.includes('fuel tank included') || lowerText.includes('tank included')) {
+    if (!accessories.includes('Fuel Tank Included')) {
+      accessories.push('Fuel Tank Included');
+    }
+  }
+  
+  if (lowerText.includes('sail power')) {
+    accessories.push('Sail Power Configuration');
+  }
+  
+  return accessories;
 }
 
+// Clean model text by removing accessory symbols and formatting
 function cleanModelText(text: string): string {
+  if (!text) return '';
+  
   // Remove HTML tags
   let cleaned = text.replace(/<[^>]*>/g, '');
   
-  // Remove accessory symbols and phrases
+  // Remove accessory symbols but preserve them for later detection
   cleaned = cleaned.replace(/[†‡]/g, '');
   cleaned = cleaned.replace(/&#822[45];/g, '');
-  cleaned = cleaned.replace(/\(propeller included\)/gi, '');
-  cleaned = cleaned.replace(/\(fuel tank included\)/gi, '');
-  cleaned = cleaned.replace(/propeller included/gi, '');
-  cleaned = cleaned.replace(/fuel tank included/gi, '');
   
-  // Clean whitespace
+  // Remove accessory phrases
+  cleaned = cleaned.replace(/\s*\(?\s*(propeller|prop)\s+included\s*\)?\s*/gi, '');
+  cleaned = cleaned.replace(/\s*\(?\s*(fuel\s+)?tank\s+included\s*\)?\s*/gi, '');
+  cleaned = cleaned.replace(/\s*sail\s+power\s*/gi, '');
+  
+  // Clean whitespace and normalize
   return cleaned.trim().replace(/\s+/g, ' ');
 }
 
-function buildModelDisplay(motor: Partial<ParsedMotor>): string {
-  let display = '';
+// Parse Mercury model from text and extract all relevant attributes
+function parseMotorDetails(modelText: string, modelNumber?: string): {
+  mercury_model_no: string;
+  family: string;
+  horsepower: number | null;
+  fuel_type: string;
+  rigging_data: any;
+  accessories: string[];
+  model_display: string;
+  model_key: string;
+} {
+  const originalText = modelText || '';
+  const cleanedText = cleanModelText(originalText);
+  const fullText = `${cleanedText} ${modelNumber || ''}`.trim();
   
-  // Add HP with space
-  if (motor.horsepower) {
-    display += `${motor.horsepower} HP`;
+  // Extract Mercury model number (the alphanumeric code like "9.9MLH", "25ELPT")
+  let mercuryModelNo = modelNumber || '';
+  if (!mercuryModelNo) {
+    // Try to extract from the model text (pattern: number + letters)
+    const modelMatch = cleanedText.match(/(\d+(?:\.\d+)?[A-Z]+)/);
+    if (modelMatch) {
+      mercuryModelNo = modelMatch[1];
+    }
   }
   
-  // Add EFI if present
-  if (motor.fuel_type === 'EFI') {
-    display += ' EFI';
+  // Parse horsepower - look for number followed by HP or at start of model
+  let horsepower: number | null = null;
+  const hpMatches = [
+    fullText.match(/(\d+(?:\.\d+)?)\s*HP/i),
+    fullText.match(/^(\d+(?:\.\d+)?)[A-Z]/),  // e.g., "9.9MLH"
+    fullText.match(/(\d+(?:\.\d+)?)(?=\s|$)/),
+  ];
+  
+  for (const match of hpMatches) {
+    if (match) {
+      const hp = parseFloat(match[1]);
+      if (hp > 0 && hp <= 600) { // Reasonable range
+        horsepower = hp;
+        break;
+      }
+    }
   }
   
-  // Add family if not FourStroke
-  if (motor.family && motor.family !== 'FourStroke') {
-    display += ` ${motor.family}`;
+  // Detect family
+  const upperText = fullText.toUpperCase();
+  let family = 'FourStroke'; // Default
+  
+  if (upperText.includes('FOURSTROKE') || upperText.includes('4-STROKE') || upperText.includes('4 STROKE')) {
+    family = 'FourStroke';
+  } else if (upperText.includes('PROXS') || upperText.includes('PRO XS')) {
+    family = 'ProXS';
+  } else if (upperText.includes('SEAPRO') || upperText.includes('SEA PRO')) {
+    family = 'SeaPro';
+  } else if (upperText.includes('VERADO')) {
+    family = 'Verado';
+  } else if (upperText.includes('RACING')) {
+    family = 'Racing';
   }
   
-  // Add rigging codes
-  if (motor.model_code) {
-    display += ` ${motor.model_code}`;
+  // Parse rigging codes
+  const riggingData = parseMercuryRigCodes(fullText);
+  
+  // Detect fuel type - EFI for 15HP+ or explicitly mentioned
+  let fuelType = '';
+  if (upperText.includes('EFI') || (horsepower && horsepower >= 15)) {
+    fuelType = 'EFI';
   }
   
-  return display.trim();
-}
-
-function buildModelKey(motor: Partial<ParsedMotor>): string {
-  const parts: string[] = [];
+  // Detect accessories from original text (before cleaning)
+  const accessories = detectAccessories(originalText);
   
-  // Family (uppercase)
-  if (motor.family) {
-    parts.push(motor.family.toUpperCase());
-  } else {
-    parts.push('FOURSTROKE');
+  // Build clean model display
+  let modelDisplay = '';
+  if (horsepower) {
+    modelDisplay += `${horsepower} HP`;
+  }
+  if (family && family !== 'FourStroke') {
+    modelDisplay += ` ${family}`;
+  } else if (family === 'FourStroke') {
+    modelDisplay += ' FourStroke';
+  }
+  if (fuelType) {
+    modelDisplay += ` ${fuelType}`;
+  }
+  if (riggingData.rigging_description) {
+    modelDisplay += ` ${riggingData.rigging_description}`;
+  }
+  modelDisplay = modelDisplay.trim();
+  
+  // Build unique model key - ALWAYS include Mercury model number first for uniqueness
+  const keyParts: string[] = [];
+  
+  // 1. Mercury model number (cleaned) - CRITICAL for uniqueness
+  if (mercuryModelNo) {
+    keyParts.push(mercuryModelNo.toUpperCase().replace(/[^A-Z0-9]/g, ''));
   }
   
-  // HP (no space)
-  if (motor.horsepower) {
-    parts.push(`${motor.horsepower}HP`);
+  // 2. Family
+  keyParts.push(family.toUpperCase());
+  
+  // 3. HP
+  if (horsepower) {
+    keyParts.push(`${horsepower}HP`);
   }
   
-  // EFI if present
-  if (motor.fuel_type === 'EFI') {
-    parts.push('EFI');
+  // 4. EFI
+  if (fuelType) {
+    keyParts.push(fuelType);
   }
   
-  // Rigging codes (individual tokens)
-  if (motor.model_code) {
-    const tokens = tokenizeRigging(motor.model_code);
-    parts.push(...tokens);
+  // 5. Rigging tokens (sorted for consistency)
+  if (riggingData.tokens.length > 0) {
+    keyParts.push(...riggingData.tokens);
   }
   
-  return parts.join('-').toUpperCase();
+  const modelKey = keyParts.join('-');
+  
+  return {
+    mercury_model_no: mercuryModelNo,
+    family,
+    horsepower,
+    fuel_type: fuelType,
+    rigging_data: riggingData,
+    accessories,
+    model_display: modelDisplay,
+    model_key: modelKey
+  };
 }
 
 // Enhanced text cleaning for messy HTML formatting
@@ -283,148 +404,8 @@ function parsePrice(priceText: string): number | null {
   return price;
 }
 
-// Mercury rigging code parsing
-function parseMercuryRigCodes(text: string) {
-  const upperText = text.toUpperCase();
-  const tokens: string[] = [];
-  
-  // Parse shaft length
-  let shaft_code = 'S';
-  let shaft_inches = 15;
-  if (upperText.includes('XXL')) {
-    shaft_code = 'XXL';
-    shaft_inches = 30;
-    tokens.push('XXL');
-  } else if (upperText.includes('XL')) {
-    shaft_code = 'XL';
-    shaft_inches = 25;
-    tokens.push('XL');
-  } else if (upperText.includes('L')) {
-    shaft_code = 'L';
-    shaft_inches = 20;
-    tokens.push('L');
-  }
-  
-  // Parse start type
-  let start_type = 'Unknown';
-  if (upperText.includes('E')) {
-    start_type = 'Electric';
-    tokens.push('E');
-  } else if (upperText.includes('M')) {
-    start_type = 'Manual';
-    tokens.push('M');
-  }
-  
-  // Parse control type
-  let control_type = 'Remote';
-  if (upperText.includes('H') || upperText.includes('TILLER')) {
-    control_type = 'Tiller';
-    tokens.push('H');
-  }
-  
-  // Parse features
-  const has_power_trim = upperText.includes('PT');
-  if (has_power_trim) tokens.push('PT');
-  
-  const has_command_thrust = upperText.includes('CT');
-  if (has_command_thrust) tokens.push('CT');
-  
-  if (upperText.includes('DTS')) tokens.push('DTS');
-  if (upperText.includes('JPO')) tokens.push('JPO');
-  
-  return {
-    tokens,
-    shaft_code,
-    shaft_inches,
-    start_type,
-    control_type,
-    has_power_trim,
-    has_command_thrust
-  };
-}
-
-// Mercury model key builder
-function buildMercuryModelKey(params: {
-  family: string;
-  hp: number | null;
-  hasEFI: boolean;
-  rig: any;
-  modelNo?: string;
-}): string {
-  const parts: string[] = [];
-  
-  // Always include Mercury model number first if available - this ensures uniqueness
-  if (params.modelNo) {
-    parts.push(params.modelNo.toUpperCase().replace(/[^A-Z0-9]/g, ''));
-  }
-  
-  // Family
-  if (params.family) {
-    parts.push(params.family.toUpperCase());
-  }
-  
-  // HP
-  if (params.hp) {
-    parts.push(`${params.hp}HP`);
-  }
-  
-  // EFI
-  if (params.hasEFI) {
-    parts.push('EFI');
-  }
-  
-  // Rigging tokens - ensure they're properly ordered and distinct
-  if (params.rig?.tokens && params.rig.tokens.length > 0) {
-    // Remove duplicates and sort for consistency
-    const uniqueTokens = [...new Set(params.rig.tokens)].sort();
-    parts.push(...uniqueTokens);
-  }
-  
-  return parts.join('-');
-}
-
-// Mercury model parsing using shared system
-function parseModelFromText(modelDisplay: string = '', modelNumber: string = '') {
-  const cleanedText = cleanText(modelDisplay + ' ' + modelNumber);
-  
-  // Extract horsepower with more precision
-  const hpMatch = cleanedText.match(/(\d+(?:\.\d+)?)\s*hp/i);
-  const horsepower = hpMatch ? Number(hpMatch[1]) : null;
-  
-  // Extract family with better pattern matching
-  let family = '';
-  if (/four\s*stroke|fourstroke/i.test(cleanedText)) family = 'FourStroke';
-  else if (/pro\s*xs|proxs/i.test(cleanedText)) family = 'ProXS';
-  else if (/sea\s*pro|seapro/i.test(cleanedText)) family = 'SeaPro';
-  else if (/verado/i.test(cleanedText)) family = 'Verado';
-  else if (/racing/i.test(cleanedText)) family = 'Racing';
-  
-  // Parse Mercury rigging codes using shared system
-  const rig = parseMercuryRigCodes(cleanedText);
-  
-  // Check for EFI presence
-  const hasEFI = /\befi\b/i.test(cleanedText) || (horsepower && horsepower >= 15); // assume EFI for larger motors
-  
-  return {
-    family: family || 'FourStroke', // Default family
-    horsepower: horsepower || 0,
-    fuel: hasEFI ? 'EFI' : '',
-    rigging_code: rig.tokens.join(' '),
-    code_tokens: rig.tokens,
-    rig_attrs: rig
-  };
-}
-
-// Enhanced model key builder using shared Mercury system
-function buildEnhancedModelKey(modelDisplay: string, modelNumber: string, attrs: any): string {
-  // Use shared Mercury model key builder
-  return buildMercuryModelKey({
-    family: attrs.family,
-    hp: attrs.horsepower || null,
-    hasEFI: !!attrs.fuel,
-    rig: attrs.rig_attrs || { tokens: attrs.code_tokens || [], shaft_code: 'S', shaft_inches: 15, start_type: 'Unknown', control_type: 'Unknown', has_power_trim: false, has_command_thrust: false },
-    modelNo: modelNumber || undefined
-  });
+function msrpFromDealer(dealerPrice: number, markup: number): number {
+  return Math.round(dealerPrice * markup * 100) / 100;
 }
 
 // Generate SHA-256 checksum
@@ -519,858 +500,465 @@ function parseHTML(html: string): Array<{model_display: string, model_number?: s
   
   $('table').each((tableIdx, table) => {
     const $table = $(table);
-    const tableText = $table.text().toLowerCase();
     const rows = $table.find('tr').length;
     const cells = $table.find('td, th').length;
     
-    let score = 0;
+    if (rows < 3 || cells < 6) return; // Skip tiny tables
     
-    // Score based on content relevance
-    if (tableText.includes('mercury')) score += 10;
-    if (tableText.includes('price')) score += 10;
-    if (tableText.includes('hp')) score += 5;
-    if (tableText.includes('fourstroke') || tableText.includes('verado')) score += 5;
-    if (tableText.includes('dealer')) score += 3;
+    // Score based on size and content indicators
+    let score = rows * 2 + cells; // Base score
     
-    // Score based on size (more rows = more likely to be the main table)
-    score += Math.min(rows * 0.5, 20);
-    score += Math.min(cells * 0.1, 10);
-    
-    // Penalty for very small tables
-    if (rows < 3) score -= 5;
-    if (cells < 6) score -= 3;
+    const tableText = $table.text().toLowerCase();
+    if (tableText.includes('mercury') || tableText.includes('fourstroke')) score += 20;
+    if (tableText.includes('price') || tableText.includes('msrp')) score += 15;
+    if (tableText.includes('hp') || tableText.includes('horsepower')) score += 10;
+    if (tableText.includes('model')) score += 10;
     
     tables.push({ element: table, score, rows, cells });
   });
   
-  // Sort by score (highest first)
+  // Sort tables by score (best first)
   tables.sort((a, b) => b.score - a.score);
   
-  console.log(`[PriceList] Found ${tables.length} tables, top scores:`, 
-    tables.slice(0, 3).map(t => `${t.score} (${t.rows}r×${t.cells}c)`));
+  console.log(`[PriceList] Found ${tables.length} tables, top scores: ${tables.slice(0, 3).map(t => `${t.score} (${t.rows}r×${t.cells}c)`)}`);
   
-  // Process tables in score order until we find good data
-  for (const tableInfo of tables) {
-    const $table = $(tableInfo.element);
-    const tableResults: any[] = [];
+  // Process the best table
+  if (tables.length === 0) {
+    console.log('[PriceList] No suitable tables found');
+    return [];
+  }
+  
+  const bestTable = tables[0];
+  console.log(`[PriceList] Processing table with score ${bestTable.score}`);
+  
+  const $table = $(bestTable.element);
+  const $rows = $table.find('tr');
+  
+  // Try to detect header row
+  let headerRowIdx = 0;
+  let headers: string[] = [];
+  
+  // Check first few rows for headers
+  for (let i = 0; i < Math.min(3, $rows.length); i++) {
+    const $row = $($rows[i]);
+    const cells = $row.find('th, td').map((_, cell) => cleanText($(cell).text())).get();
     
-    console.log(`[PriceList] Processing table with score ${tableInfo.score}`);
-    
-    // Try to detect column headers first
-    const headerRow = $table.find('tr').first();
-    const headerCells = headerRow.find('th, td').toArray().map(cell => cleanText($(cell).text()).toLowerCase());
-    
-    console.log(`[PriceList] Detected headers:`, headerCells);
-    
-    // Map column indices based on header content or patterns
-    const colMap: Record<string, number> = {};
-    headerCells.forEach((header, idx) => {
-      if (/model|description|name/.test(header)) colMap.model = idx;
-      if (/number|code|sku|part/.test(header)) colMap.model_number = idx;
-      if (/hp|horsepower|power/.test(header)) colMap.horsepower = idx;
-      if (/family|series|type/.test(header)) colMap.family = idx;
-      if (/price|cost|dealer|retail/.test(header)) colMap.price = idx;
-    });
-    
-    console.log(`[PriceList] Column mapping:`, colMap);
-    
-    // Process table rows (skip header if detected)
-    const dataRows = $table.find('tr').slice(headerCells.some(h => /model|price|hp/.test(h)) ? 1 : 0);
-    
-    dataRows.each((rowIdx, row) => {
-      const $row = $(row);
-      const cells = $row.find('td, th').toArray().map(cell => cleanText($(cell).text()));
-      
-      if (cells.length < 2) return;
-      
-      // Skip obvious header rows even in data
-      const cellsText = cells.join(' ').toLowerCase();
-      if (/model|description|price|hp|family/.test(cellsText) && cells.every(c => !/\d+/.test(c))) return;
-      
-      let model_display = '';
-      let model_number = '';
-      let horsepower: number | null = null;
-      let family = '';
-      let dealer_price: number | null = null;
-      
-      // Use column mapping if available, otherwise use pattern detection
-      if (Object.keys(colMap).length > 0) {
-        if (colMap.model !== undefined && cells[colMap.model]) model_display = cells[colMap.model];
-        if (colMap.model_number !== undefined && cells[colMap.model_number]) model_number = cells[colMap.model_number];
-        if (colMap.horsepower !== undefined && cells[colMap.horsepower]) {
-          const hp = parseFloat(cells[colMap.horsepower]);
-          if (!isNaN(hp)) horsepower = hp;
-        }
-        if (colMap.family !== undefined && cells[colMap.family]) family = cells[colMap.family];
-        if (colMap.price !== undefined && cells[colMap.price]) dealer_price = parsePrice(cells[colMap.price]);
-      } else {
-        // Fallback: pattern-based detection for each cell
-        for (const cell of cells) {
-          // Pattern: HP detection
-          if (!horsepower && /^\d+(\.\d+)?\s*hp$/i.test(cell)) {
-            const hp = parseFloat(cell.replace(/hp/i, ''));
-            if (!isNaN(hp)) horsepower = hp;
-            continue;
-          }
-          
-          // Pattern: Price detection
-          if (!dealer_price && /^\$?\s*\d[\d,]*(\.\d{2})?$/.test(cell)) {
-            dealer_price = parsePrice(cell);
-            continue;
-          }
-          
-          // Pattern: Model number detection (Mercury format: alphanumeric, 4-12 chars)
-          if (!model_number && /^[A-Z0-9]{4,12}$/i.test(cell.replace(/\s/g, ''))) {
-            model_number = cell.replace(/\s/g, '');
-            continue;
-          }
-          
-          // Pattern: Family detection
-          if (!family && /\b(Four\s*Stroke|FourStroke|Pro\s*XS|ProXS|Sea\s*Pro|SeaPro|Verado|Racing)\b/i.test(cell)) {
-            if (/fourstroke|four\s*stroke/i.test(cell)) family = 'FourStroke';
-            else if (/prox|pro\s*xs/i.test(cell)) family = 'ProXS';
-            else if (/seapro|sea\s*pro/i.test(cell)) family = 'SeaPro';
-            else if (/verado/i.test(cell)) family = 'Verado';
-            else if (/racing/i.test(cell)) family = 'Racing';
-            continue;
-          }
-          
-          // Pattern: Model description (contains HP and/or motor family terms)
-          if (!model_display && (/\d+\s*hp/i.test(cell) || /fourstroke|prox|verado|seapro|racing/i.test(cell))) {
-            model_display = cell;
-            continue;
-          }
-        }
-      }
-      
-      // Must have at least model description and price to be valid
-      if (model_display && dealer_price && dealer_price > 0) {
-        tableResults.push({ 
-          model_display: model_display.trim(),
-          model_number: model_number || undefined,
-          horsepower: horsepower || undefined,
-          family: family || undefined,
-          dealer_price 
-        });
-      }
-    });
-    
-    // If this table produced good results, use them
-    if (tableResults.length > 0) {
-      results = results.concat(tableResults);
-      console.log(`[PriceList] Table produced ${tableResults.length} rows`);
-      
-      // If we found a substantial amount of data, we're probably done
-      if (results.length >= 10) break;
+    if (cells.some(cell => /model|description|price|hp/i.test(cell))) {
+      headers = cells;
+      headerRowIdx = i;
+      break;
     }
   }
   
-  // Fallback: try to parse as plain text if no tables worked
-  if (results.length === 0) {
-    console.log(`[PriceList] No table data found, trying text fallback...`);
-    results = parseTextFallback(html);
-  }
+  console.log(`[PriceList] Detected headers: ${JSON.stringify(headers)}`);
   
-  console.log(`[PriceList] HTML parsing found ${results.length} rows`);
-  return results;
-}
-
-// Fallback parser for plain text content
-function parseTextFallback(html: string): Array<{model_display: string, model_number?: string, horsepower?: number, family?: string, dealer_price?: number}> {
-  const $ = load(html);
-  const results: any[] = [];
-  
-  // Extract text from <pre>, <code>, or plain text
-  let textContent = '';
-  if ($('pre').length > 0) {
-    textContent = $('pre').first().text();
-  } else if ($('code').length > 0) {
-    textContent = $('code').first().text();
-  } else {
-    textContent = $.text();
-  }
-  
-  // Split into lines and look for motor data
-  const lines = textContent.split('\n').map(line => cleanText(line)).filter(line => line.length > 10);
-  
-  for (const line of lines) {
-    // Skip obvious headers
-    if (/model|name|description|price|hp/i.test(line) && line.length < 50) continue;
-    
-    // Look for lines that contain both motor info and price
-    if (/\d+\s*hp/i.test(line) && /\$?\d+[\d,]*/.test(line)) {
-      const hpMatch = line.match(/(\d+(?:\.\d+)?)\s*hp/i);
-      const priceMatch = line.match(/\$?(\d+[\d,]*(?:\.\d{2})?)/);
-      
-      if (hpMatch && priceMatch) {
-        const horsepower = parseFloat(hpMatch[1]);
-        const dealer_price = parsePrice(priceMatch[1]);
-        
-        if (dealer_price && dealer_price > 100) {
-          let family = '';
-          if (/fourstroke/i.test(line)) family = 'FourStroke';
-          else if (/prox/i.test(line)) family = 'ProXS';
-          else if (/seapro/i.test(line)) family = 'SeaPro';
-          else if (/verado/i.test(line)) family = 'Verado';
-          else if (/racing/i.test(line)) family = 'Racing';
-          
-          results.push({
-            model_display: line.trim(),
-            horsepower,
-            family: family || undefined,
-            dealer_price
-          });
-        }
-      }
+  // Map column indices
+  const columnMapping: any = {};
+  headers.forEach((header, idx) => {
+    const lowerHeader = header.toLowerCase();
+    if (/model|description|name/i.test(lowerHeader) && !columnMapping.model) {
+      columnMapping.model = idx;
+    } else if (/number|code|sku/i.test(lowerHeader) && !columnMapping.number) {
+      columnMapping.number = idx;
+    } else if (/price|cost|dealer/i.test(lowerHeader) && !columnMapping.price) {
+      columnMapping.price = idx;
+    } else if (/hp|horsepower|power/i.test(lowerHeader) && !columnMapping.hp) {
+      columnMapping.hp = idx;
+    } else if (/family|type|series/i.test(lowerHeader) && !columnMapping.family) {
+      columnMapping.family = idx;
     }
-  }
-  
-  console.log(`[PriceList] Text fallback found ${results.length} rows`);
-  return results;
-}
-
-// Unified parser that handles both CSV and HTML
-function parseContent(content: string, contentType: 'csv' | 'html'): Array<{model_display: string, model_number?: string, horsepower?: number, family?: string, dealer_price?: number}> {
-  if (contentType === 'csv') {
-    return parseCSV(content);
-  } else {
-    return parseHTML(content);
-  }
-}
-
-// Helper function for consistent JSON responses
-function json200(body: any) {
-  return new Response(JSON.stringify(body), {
-    status: 200,
-    headers: { 'Content-Type': 'application/json', ...corsHeaders }
   });
+  
+  console.log(`[PriceList] Column mapping: ${JSON.stringify(columnMapping)}`);
+  
+  // Process data rows
+  for (let i = headerRowIdx + 1; i < $rows.length; i++) {
+    const $row = $($rows[i]);
+    const cells = $row.find('td, th').map((_, cell) => cleanText($(cell).text())).get();
+    
+    if (cells.length < 2) continue;
+    
+    const row: any = {};
+    if (columnMapping.model >= 0 && cells[columnMapping.model]) {
+      row.model_display = cells[columnMapping.model];
+    }
+    if (columnMapping.number >= 0 && cells[columnMapping.number]) {
+      row.model_number = cells[columnMapping.number];
+    }
+    if (columnMapping.price >= 0 && cells[columnMapping.price]) {
+      row.dealer_price = parsePrice(cells[columnMapping.price]);
+    }
+    if (columnMapping.hp >= 0 && cells[columnMapping.hp]) {
+      row.horsepower = parseFloat(cells[columnMapping.hp]) || null;
+    }
+    if (columnMapping.family >= 0 && cells[columnMapping.family]) {
+      row.family = cells[columnMapping.family];
+    }
+    
+    if (row.model_display || row.model_number) {
+      results.push(row);
+    }
+  }
+  
+  console.log(`[PriceList] Table produced ${results.length} rows`);
+  
+  if (results.length > 0) {
+    console.log(`[PriceList] example_row=${JSON.stringify({
+      model_display: results[0].model_display,
+      dealer_price: results[0].dealer_price
+    })}`);
+  }
+  
+  return results;
 }
 
-// Helper to calculate MSRP from dealer price
-function msrpFromDealer(dealerPrice: number | null, markup: number): number | null {
-  if (!dealerPrice || !markup) return null;
-  return Math.round(dealerPrice * markup * 100) / 100;
+// Process motors with enhanced parsing
+function normalizeMotorData(rawData: any[], url: string, msrp_markup: number, html_snapshot_url?: string): any[] {
+  const processedMotors: any[] = [];
+  
+  for (let i = 0; i < rawData.length; i++) {
+    const rawRow = rawData[i];
+    
+    // Skip completely blank rows
+    if (!rawRow.model_display && !rawRow.model_number) {
+      continue;
+    }
+    
+    // Parse motor details using enhanced parser
+    const motorDetails = parseMotorDetails(rawRow.model_display || '', rawRow.model_number || '');
+    
+    // Parse dealer price
+    const dealer_price = parsePrice(String(rawRow.dealer_price || ''));
+    
+    // Debug logging for first 12 rows
+    if (i < 12) {
+      const debugRow = {
+        raw_cells: [rawRow.model_display, rawRow.model_number, String(rawRow.dealer_price)],
+        mercury_model_no: motorDetails.mercury_model_no,
+        family: motorDetails.family,
+        horsepower: motorDetails.horsepower,
+        fuel_type: motorDetails.fuel_type,
+        rigging_description: motorDetails.rigging_data.rigging_description,
+        accessories: motorDetails.accessories,
+        model_display: motorDetails.model_display,
+        model_key: motorDetails.model_key,
+        dealer_price_raw: String(rawRow.dealer_price),
+        dealer_price_num: dealer_price,
+        msrp: msrpFromDealer(dealer_price || 0, msrp_markup)
+      };
+      
+      console.log(`[PriceList] DEBUG Row ${i + 1}:`, debugRow);
+    }
+    
+    // Validate required fields
+    if (!motorDetails.model_key || motorDetails.model_key.trim() === '') {
+      console.log(`[PriceList] DEBUG: Skipping row ${i + 1} - invalid model_key. Raw: "${rawRow.model_display}"`);
+      continue;
+    }
+    
+    if (!dealer_price || dealer_price <= 0) {
+      console.log(`[PriceList] DEBUG: Skipping row ${i + 1} - invalid price. Raw: "${rawRow.dealer_price}", parsed: ${dealer_price}`);
+      continue;
+    }
+    
+    const msrp = msrpFromDealer(dealer_price, msrp_markup);
+    
+    // Build the database row with enhanced fields
+    const dbRow: any = {
+      make: 'Mercury',
+      model: motorDetails.model_display,
+      model_key: motorDetails.model_key,
+      mercury_model_no: motorDetails.mercury_model_no || null,
+      year: 2025,
+      motor_type: motorDetails.family,
+      family: motorDetails.family,
+      horsepower: motorDetails.horsepower,
+      fuel_type: motorDetails.fuel_type || null,
+      rigging_code: motorDetails.rigging_data.rigging_description || null,
+      accessories_included: motorDetails.accessories.length > 0 ? motorDetails.accessories : null,
+      dealer_price,
+      msrp,
+      price_source: 'pricelist',
+      msrp_calc_source: 'markup',
+      msrp_source: `derived:+${Math.round((msrp_markup - 1) * 100)}%`,
+      last_scraped: new Date().toISOString(),
+      inventory_source: 'pricelist',
+      catalog_source_url: url,
+      catalog_snapshot_url: html_snapshot_url,
+      // Enhanced Mercury rigging attributes
+      shaft_code: motorDetails.rigging_data.shaft_code,
+      shaft_inches: motorDetails.rigging_data.shaft_inches,
+      start_type: motorDetails.rigging_data.start_type,
+      control_type: motorDetails.rigging_data.control_type,
+      has_power_trim: motorDetails.rigging_data.has_power_trim,
+      has_command_thrust: motorDetails.rigging_data.has_command_thrust,
+      // Brochure flags
+      is_brochure: true,
+      in_stock: false,
+      availability: 'Brochure'
+    };
+    
+    processedMotors.push(dbRow);
+  }
+  
+  return processedMotors;
+}
+
+// Main normalization function  
+function normalizeData(rawData: any[], contentSource: string, url: string, msrp_markup: number, html_snapshot_url?: string, create_missing_brochure = true) {
+  console.log(`[PriceList] DEBUG: Starting normalization of ${rawData.length} raw rows`);
+  
+  // Show first 3 raw rows for debugging
+  if (rawData.length > 0) {
+    console.log(`[PriceList] DEBUG: First 3 raw rows:`, rawData.slice(0, 3));
+  }
+  
+  // Process motors with enhanced parsing
+  const processedMotors = normalizeMotorData(rawData, url, msrp_markup, html_snapshot_url);
+  
+  // Deduplication logic: Group by model_key and pick best row for each key
+  const keyGroups = new Map<string, any[]>();
+  
+  for (const motor of processedMotors) {
+    if (!keyGroups.has(motor.model_key)) {
+      keyGroups.set(motor.model_key, []);
+    }
+    keyGroups.get(motor.model_key)!.push(motor);
+  }
+  
+  console.log(`[PriceList] DEBUG: Found ${keyGroups.size} unique model_keys from ${processedMotors.length} processed motors`);
+  
+  // Show some examples of grouped keys
+  const keyExamples = Array.from(keyGroups.entries()).slice(0, 5);
+  for (const [key, group] of keyExamples) {
+    console.log(`[PriceList] DEBUG: Key "${key}" has ${group.length} motors:`, group.map(g => g.model));
+  }
+  
+  // Pick best representative for each key (prefer mercury_model_no, then higher HP, then more detailed model name)
+  const deduplicatedMotors = Array.from(keyGroups.values()).map(group => {
+    if (group.length === 1) return group[0];
+    
+    const sorted = group.sort((a, b) => {
+      // Prefer motors with mercury_model_no
+      if (a.mercury_model_no && !b.mercury_model_no) return -1;
+      if (!a.mercury_model_no && b.mercury_model_no) return 1;
+      if (a.horsepower !== b.horsepower) return (b.horsepower || 0) - (a.horsepower || 0);
+      return b.model.length - a.model.length;
+    });
+    
+    console.log(`[PriceList] DEBUG: Deduplicating key "${group[0].model_key}": chose "${sorted[0].model}" from ${group.length} options`);
+    return sorted[0];
+  });
+  
+  console.log(`[PriceList] Deduplicated to ${deduplicatedMotors.length} motors`);
+  
+  const rows_found = rawData.length;
+  const rows_normalized = processedMotors.length;
+  const rows_deduplicated = deduplicatedMotors.length;
+  
+  console.log(`[PriceList] source=${contentSource.toUpperCase()} rows_found=${rows_found} rows_normalized=${rows_normalized} rows_deduplicated=${rows_deduplicated}`);
+  
+  return deduplicatedMotors;
+}
+
+async function saveAndProcessData(supabase: any, motors: any[], checksum: string, dryRun: boolean) {
+  // STEP 4: Save artifacts (always, even on future failure)
+  const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+  const checksumPrefix = checksum.substring(0, 8);
+  
+  // Prepare artifacts with enhanced fields
+  const jsonContent = JSON.stringify(motors, null, 2);
+  const csvRows = [
+    'model_display,mercury_model_no,model_key,family,horsepower,fuel_type,rigging_code,accessories_included,year,dealer_price,msrp,is_brochure,in_stock,price_source',
+    ...motors.map(m => 
+      `"${m.model}","${m.mercury_model_no || ''}","${m.model_key}","${m.family || ''}",${m.horsepower || ''},"${m.fuel_type || ''}","${m.rigging_code || ''}","${Array.isArray(m.accessories_included) ? m.accessories_included.join('; ') : ''}",${m.year},${m.dealer_price},${m.msrp},${m.is_brochure},${m.in_stock},"${m.price_source || ''}"`
+    )
+  ];
+  const csvContent = csvRows.join('\n');
+  
+  // Save artifacts to storage
+  console.log('[PriceList] Saving artifacts to storage...');
+  const artifacts = {
+    json_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.json`, jsonContent, 'application/json'),
+    csv_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.csv`, csvContent, 'text/csv')
+  };
+  
+  if (dryRun) {
+    console.log('[PriceList] Dry run complete - no database changes made');
+    return {
+      success: true,
+      rows_created: motors.length,
+      rows_updated: 0,
+      rows_skipped_total: 0,
+      sample_created: motors.slice(0, 10),
+      artifacts
+    };
+  }
+  
+  // STEP 5: Database operations (upsert)
+  console.log(`[PriceList] Upserting ${motors.length} motors to database...`);
+  
+  let rows_created = 0;
+  let rows_updated = 0;
+  let rows_failed = 0;
+  
+  const BATCH_SIZE = 50;
+  for (let i = 0; i < motors.length; i += BATCH_SIZE) {
+    const batch = motors.slice(i, i + BATCH_SIZE);
+    
+    try {
+      const { data, error } = await supabase
+        .from('motor_models')
+        .upsert(batch, { 
+          onConflict: 'model_key',
+          ignoreDuplicates: false 
+        })
+        .select('id, model_key');
+      
+      if (error) {
+        console.error(`[PriceList] Batch ${Math.floor(i/BATCH_SIZE) + 1} error:`, error);
+        rows_failed += batch.length;
+      } else {
+        rows_created += data?.length || batch.length;
+        console.log(`[PriceList] Batch ${Math.floor(i/BATCH_SIZE) + 1}: processed ${batch.length} motors`);
+      }
+    } catch (err) {
+      console.error(`[PriceList] Batch ${Math.floor(i/BATCH_SIZE) + 1} exception:`, err);
+      rows_failed += batch.length;
+    }
+  }
+  
+  console.log(`[PriceList] Database upsert complete: ${rows_created} created, ${rows_updated} updated, ${rows_failed} failed`);
+  
+  return {
+    success: rows_failed === 0,
+    rows_created,
+    rows_updated,
+    rows_skipped_total: rows_failed,
+    sample_created: motors.slice(0, 10),
+    artifacts
+  };
 }
 
 Deno.serve(async (req) => {
+  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
-  
-  let currentStep = 'init';
-  const rowErrors: any[] = [];
-  const supabase = getSupabaseClient();
-  
+
   try {
-    const { 
-      url = 'https://www.harrisboatworks.ca/mercurypricelist',
-      html_snapshot_url = null,
-      dry_run = false, 
-      msrp_markup = 1.10, 
-      force = false,
-      create_missing_brochure = true,
-      csv_content = null,
-      html_content = null,
-      parse_mode = 'auto'
-    } = await req.json();
+    const supabase = getSupabaseClient();
+    const { url, html, csv, dry_run = false, msrp_markup = 1.10, parse_mode = 'auto' } = await req.json();
+
+    console.log(`[PriceList] Starting seed process: dry_run=${dry_run}, msrp_markup=${msrp_markup}`);
     
-    console.log(`[PriceList] Starting price list ingest. dry_run=${dry_run}, create_brochure=${create_missing_brochure}, msrp_markup=${msrp_markup}, parse_mode=${parse_mode}`);
+    // STEP 1: Get content
+    let content = '';
+    let contentSource: 'url' | 'html' | 'csv' = 'url';
     
-    let html = '';
-    let checksum = '';
-    let contentSource = 'url';
-    let htmlSnapshot = '';
-    let tableRows = 0;
-    let tableCells = 0;
-    let sourceKind = 'raw_csv';
-    
-    // STEP 1: Get content (URL fetch, CSV, HTML, or snapshot)
-    currentStep = 'fetch';
-    
-    if (html_snapshot_url) {
-      console.log(`[PriceList] Using HTML snapshot from: ${html_snapshot_url}`);
-      const response = await fetch(html_snapshot_url);
-      if (!response.ok) {
-        throw new Error(`Failed to fetch snapshot: ${response.status}`);
-      }
-      html = await response.text();
-      htmlSnapshot = html;
-      contentSource = 'snapshot';
-      sourceKind = 'html_table';
-      checksum = await generateChecksum(html);
-    } else if (csv_content) {
-      console.log(`[PriceList] Using provided CSV content (${csv_content.length} chars)`);
-      html = csv_content;
+    if (csv) {
+      content = csv;
       contentSource = 'csv';
-      sourceKind = 'raw_csv';
-      checksum = await generateChecksum(csv_content);
-    } else if (html_content) {
-      console.log(`[PriceList] Using provided HTML content (${html_content.length} chars)`);
-      html = html_content;
-      htmlSnapshot = html_content;
+      console.log('[PriceList] Using provided CSV content');
+    } else if (html) {
+      content = html;
       contentSource = 'html';
-      sourceKind = 'html_table';
-      checksum = await generateChecksum(html_content);
-    } else {
-      console.log(`[PriceList] Fetching HTML from URL: ${url}`);
-      const response = await fetch(url, {
-        headers: { 
-          'User-Agent': 'HBW-InventoryBot/1.0',
-          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-        },
-        redirect: 'follow'
-      });
-      
+      console.log('[PriceList] Using provided HTML content');
+    } else if (url) {
+      console.log(`[PriceList] Fetching from URL: ${url}`);
+      const response = await fetch(url);
       if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
       }
-      
-      html = await response.text();
-      htmlSnapshot = html;
+      content = await response.text();
       contentSource = 'url';
-      checksum = await generateChecksum(html);
-      
-      // For URL fetching with parse_mode:'auto', determine source kind
-      if (parse_mode === 'auto') {
-        const $ = load(html);
-        const tables = $('table');
-        if (tables.length > 0) {
-          sourceKind = 'html_table';
-          // Count table statistics
-          tables.each((idx, table) => {
-            const $table = $(table);
-            tableRows += $table.find('tr').length;
-            tableCells += $table.find('td, th').length;
-          });
-        } else {
-          sourceKind = 'html_text';
-        }
-      } else {
-        sourceKind = 'html_table';
-      }
-    }
-    
-    console.log(`[PriceList] Got content: ${html.length} chars, checksum: ${checksum.substring(0, 8)}`);
-    
-    // Check if content unchanged (unless force=true)
-    if (!force && contentSource === 'url') {
-      const { data: recentSnapshots } = await supabase.storage
-        .from('sources')
-        .list('pricelist', { limit: 10, sortBy: { column: 'created_at', order: 'desc' } });
-        
-      if (recentSnapshots) {
-        for (const file of recentSnapshots) {
-          if (file.name.includes(checksum.substring(0, 8))) {
-            console.log(`[PriceList] Skipping - content unchanged (checksum match)`);
-            return json200({
-              success: true,
-              skipped_due_to_same_checksum: true,
-              checksum,
-              rows_parsed: 0,
-              rows_normalized: 0,
-              rows_created: 0,
-              rows_updated: 0
-            });
-          }
-        }
-      }
-    }
-    
-    // STEP 2: Parse content
-    currentStep = 'parse';
-    console.log(`[PriceList] Parsing content as ${contentSource}...`);
-    
-    const rawData = parseContent(html, contentSource === 'csv' ? 'csv' : 'html');
-    const rows_found = rawData.length;
-    
-    console.log(`[PriceList] source=${contentSource.toUpperCase()} rows_found=${rows_found}`);
-    if (rows_found > 0) {
-      console.log(`[PriceList] example_row=${JSON.stringify(rawData[0])}`);
-    }
-    
-    if (rows_found === 0) {
-      throw new Error('No valid price data found in content');
-    }
-    
-    // STEP 3: Normalize data and build model objects
-    currentStep = 'normalize';
-    const rows: any[] = [];
-    const duplicatesInFeed: string[] = [];
-    const seenModelKeys = new Set<string>();
-    const skipReasons: Record<string, number> = {};
-    let rows_skipped_blank = 0;
-    let rows_missing_required = 0;
-    
-    console.log(`[PriceList] DEBUG: Starting normalization of ${rawData.length} raw rows`);
-    
-    // Show first 3 raw rows for debugging
-    if (rawData.length > 0) {
-      console.log(`[PriceList] DEBUG: First 3 raw rows:`, rawData.slice(0, 3));
-    }
-    
-    for (let i = 0; i < rawData.length; i++) {
-      const r = rawData[i];
-      
-      // Skip completely blank rows
-      if (!r.model_display && !r.model_number) {
-        rows_skipped_blank++;
-        skipReasons['blank_row'] = (skipReasons['blank_row'] || 0) + 1;
-        continue;
-      }
-      
-      const cleaned_model_display = cleanText(r.model_display || '');
-      const model_number = cleanText(r.model_number || '');
-      
-      // Parse attributes with enhanced logic
-      const attrs = parseModelFromText(cleaned_model_display, model_number);
-      
-      // Build enhanced model_key for better uniqueness
-      const model_key = buildEnhancedModelKey(cleaned_model_display, model_number, attrs);
-      
-      // Debug logging for first 12 rows
-      if (i < 12) {
-        const debugRow = {
-          raw_cells: [r.model_display, r.model_number, String(r.dealer_price)],
-          family: attrs.family,
-          horsepower: attrs.horsepower,
-          code_tokens: attrs.code_tokens,
-          dealer_price_raw: String(r.dealer_price),
-          dealer_price_num: parsePrice(String(r.dealer_price || '')),
-          msrp: msrpFromDealer(parsePrice(String(r.dealer_price || '')), msrp_markup),
-          model_key
-        };
-        
-        // Highlight M-codes in debug output
-        const hasMCodes = attrs.code_tokens.some(c => c.match(/^M/));
-        if (hasMCodes) {
-          const mCodes = attrs.code_tokens.filter(c => c.match(/^M/));
-          console.log(`[PriceList] DEBUG Row ${i + 1} *** M-CODE DETECTED: ${mCodes.join(', ')} ***:`, debugRow);
-        } else {
-          console.log(`[PriceList] DEBUG Row ${i + 1}:`, debugRow);
-        }
-      }
-      
-      // Track detailed errors with line numbers - but be more permissive
-      if (!model_key || model_key.trim() === '') {
-        console.log(`[PriceList] DEBUG: Skipping row ${i + 1} - invalid model_key. Raw: "${r.model_display}", cleaned: "${cleaned_model_display}"`);
-        rowErrors.push({ 
-          line: i + 1,
-          raw_model: r.model_display,
-          model_key: '',
-          dealer_price_raw: String(r.dealer_price),
-          reason: 'invalid_key'
-        });
-        rows_missing_required++;
-        skipReasons['invalid_model_key'] = (skipReasons['invalid_model_key'] || 0) + 1;
-        continue;
-      }
-      
-      const dealer_price = parsePrice(String(r.dealer_price || ''));
-      if (!dealer_price || dealer_price <= 0) {
-        console.log(`[PriceList] DEBUG: Skipping row ${i + 1} - invalid price. Raw: "${r.dealer_price}", parsed: ${dealer_price}`);
-        rowErrors.push({ 
-          line: i + 1,
-          raw_model: r.model_display,
-          model_key,
-          dealer_price_raw: String(r.dealer_price),
-          reason: 'invalid_price'
-        });
-        rows_missing_required++;
-        skipReasons['invalid_price'] = (skipReasons['invalid_price'] || 0) + 1;
-        continue;
-      }
-      
-      // Track duplicates within feed but don't skip them yet
-      if (seenModelKeys.has(model_key)) {
-        duplicatesInFeed.push(model_key);
-        skipReasons['duplicate_model_key'] = (skipReasons['duplicate_model_key'] || 0) + 1;
-        console.log(`[PriceList] DEBUG: Duplicate model_key found: ${model_key} (will be deduplicated later)`);
-      } else {
-        seenModelKeys.add(model_key);
-      }
-      
-      const msrp = msrpFromDealer(dealer_price, msrp_markup);
-      
-      // Build the row object for upsert - comprehensive model data
-      const row: any = {
-        make: 'Mercury',
-        model: cleaned_model_display || `${attrs.family} ${attrs.horsepower}HP ${attrs.fuel} ${attrs.rigging_code}`.trim(),
-        model_key,
-        mercury_model_no: model_number || null,
-        year: 2025,
-        motor_type: attrs.family,
-        family: attrs.family,
-        horsepower: attrs.horsepower,
-        fuel_type: attrs.fuel,
-        model_code: attrs.rigging_code,
-        dealer_price,
-        msrp,
-        price_source: 'pricelist',
-        msrp_calc_source: 'markup',
-        msrp_source: `derived:+${Math.round((msrp_markup - 1) * 100)}%`,
-        last_scraped: new Date().toISOString(),
-        inventory_source: 'pricelist',
-        catalog_source_url: url,
-        catalog_snapshot_url: html_snapshot_url,
-        // Add new Mercury rigging attributes
-        shaft_code: attrs.rig_attrs?.shaft_code || null,
-        shaft_inches: attrs.rig_attrs?.shaft_inches || null,
-        start_type: attrs.rig_attrs?.start_type || null,
-        control_type: attrs.rig_attrs?.control_type || null,
-        has_power_trim: attrs.rig_attrs?.has_power_trim || false,
-        has_command_thrust: attrs.rig_attrs?.has_command_thrust || false
-      };
-      
-      // Only create brochure entries if requested (default true)
-      if (create_missing_brochure) {
-        row.is_brochure = true;
-        row.in_stock = false;
-        row.availability = 'Brochure';
-      }
-      
-      rows.push(row);
-    }
-    
-    console.log(`[PriceList] DEBUG: Parsed ${rows.length} valid rows from ${rawData.length} raw rows`);
-    console.log(`[PriceList] DEBUG: Skip reasons:`, skipReasons);
-    
-    const rows_normalized = rows.length;
-    const rows_with_invalid_key = rowErrors.filter(e => e.reason === 'invalid_key').length;
-    const rows_with_invalid_price = rowErrors.filter(e => e.reason === 'invalid_price').length;
-    
-    console.log(`[PriceList] source=${contentSource.toUpperCase()} rows_found=${rows_found} rows_valid=${rows_normalized} created=TBD updated=TBD skipped_blank=${rows_skipped_blank} missing_required=${rows_missing_required}`);
-    
-    // Deduplication logic: Group by model_key and pick best row for each key
-    const keyGroups = new Map<string, any[]>();
-    
-    for (const model of rows) {
-      if (!keyGroups.has(model.model_key)) {
-        keyGroups.set(model.model_key, []);
-      }
-      keyGroups.get(model.model_key)!.push(model);
-    }
-    
-    console.log(`[PriceList] DEBUG: Found ${keyGroups.size} unique model_keys from ${rows.length} rows`);
-    
-    // Show some examples of grouped keys
-    const keyExamples = Array.from(keyGroups.entries()).slice(0, 5);
-    for (const [key, group] of keyExamples) {
-      console.log(`[PriceList] DEBUG: Key "${key}" has ${group.length} rows:`, group.map(g => g.model));
-    }
-    
-    // Pick best representative for each key (prefer model_number, then higher HP, then more detailed model name)
-    const deduplicatedModels = Array.from(keyGroups.values()).map(group => {
-      if (group.length === 1) return group[0];
-      
-      const sorted = group.sort((a, b) => {
-        // Prefer models with model_number
-        if (a.model_number && !b.model_number) return -1;
-        if (!a.model_number && b.model_number) return 1;
-        if (a.horsepower !== b.horsepower) return (b.horsepower || 0) - (a.horsepower || 0);
-        return b.model.length - a.model.length;
-      });
-      
-      console.log(`[PriceList] DEBUG: Deduplicating key "${group[0].model_key}": chose "${sorted[0].model}" from ${group.length} options`);
-      return sorted[0];
-    });
-    
-    console.log(`[PriceList] Deduplicated to ${deduplicatedModels.length} models`);
-    
-    // STEP 4: Save artifacts (always, even on future failure)
-    currentStep = 'snapshot';
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const checksumPrefix = checksum.substring(0, 8);
-    
-    // Prepare artifacts
-    const jsonContent = JSON.stringify(deduplicatedModels, null, 2);
-    const csvRows = [
-      'model_display,model_number,model_key,family,horsepower,fuel,rigging_code,year,dealer_price,msrp,is_brochure,in_stock,price_source',
-      ...deduplicatedModels.map(m => 
-        `"${m.model}","${m.model_number || ''}","${m.model_key}","${m.family || ''}",${m.horsepower || ''},"${m.fuel_type || ''}","${m.rigging_code || ''}",${m.year},${m.dealer_price},${m.msrp},${m.is_brochure},${m.in_stock},"${m.price_source || ''}"`
-      )
-    ];
-    const csvContent = csvRows.join('\n');
-    
-    // Save artifacts to storage
-    console.log('[PriceList] Saving artifacts to storage...');
-    const artifacts = {
-      html_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.html`, htmlSnapshot || html, 'text/html'),
-      json_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.json`, jsonContent, 'application/json'),
-      csv_url: await saveArtifact(supabase, `pricelist/${timestamp}-${checksumPrefix}.csv`, csvContent, 'text/csv'),
-      html_snapshot_url: htmlSnapshot ? await saveArtifact(supabase, `pricelist/${timestamp}-snapshot.html`, htmlSnapshot, 'text/html') : null
-    };
-    
-    // Update admin_sources with the latest URLs
-    if (contentSource === 'csv' && artifacts.csv_url) {
-      await supabase.from('admin_sources').upsert({ key: 'pricelist_last_csv', value: artifacts.csv_url });
-    }
-    if (artifacts.html_url) {
-      await supabase.from('admin_sources').upsert({ key: 'pricelist_last_html', value: artifacts.html_url });
-    }
-    
-    let rows_created = 0;
-    let rows_updated = 0;
-    let rows_matched_existing = 0;
-    let rows_skipped = 0;
-    const rowMatches: any[] = [];
-    
-    // STEP 5: Database upsert (unless dry_run)
-    if (!dry_run) {
-      currentStep = 'upsert';
-      console.log(`[PriceList] Upserting ${deduplicatedModels.length} models to database...`);
-      
-      // Fetch existing records to preserve inventory data - use both model_number and model_key lookups
-      const modelNumbers = deduplicatedModels.map(m => m.model_number).filter(Boolean);
-      const modelKeys = deduplicatedModels.map(m => m.model_key);
-      
-      let existingRecords: any[] = [];
-      
-      // Fetch by model_number first (preferred)
-      if (modelNumbers.length > 0) {
-        const { data: byNumber } = await supabase
-          .from('motor_models')
-          .select('model_number, model_key, in_stock, image_url, hero_image_url, stock_quantity, availability, last_stock_check, dealer_price, msrp')
-          .in('model_number', modelNumbers);
-        if (byNumber) existingRecords = existingRecords.concat(byNumber);
-      }
-      
-      // Fetch by model_key for any remaining
-      const { data: byKey } = await supabase
-        .from('motor_models')
-        .select('model_number, model_key, in_stock, image_url, hero_image_url, stock_quantity, availability, last_stock_check, dealer_price, msrp')
-        .in('model_key', modelKeys);
-      if (byKey) {
-        // Only add records not already found by model_number
-        const existingNumbers = new Set(existingRecords.map(r => r.model_number).filter(Boolean));
-        const existingKeys = new Set(existingRecords.map(r => r.model_key));
-        const newByKey = byKey.filter(r => 
-          (!r.model_number || !existingNumbers.has(r.model_number)) && 
-          !existingKeys.has(r.model_key)
-        );
-        existingRecords = existingRecords.concat(newByKey);
-      }
-      
-      // Create lookup maps
-      const existingByNumber = new Map();
-      const existingByKey = new Map();
-      existingRecords.forEach(record => {
-        if (record.model_number) existingByNumber.set(record.model_number, record);
-        existingByKey.set(record.model_key, record);
-      });
-      
-      rows_matched_existing = existingRecords.length;
-      
-      // Prepare models for upsert with preserved inventory data
-      const modelsForUpsert = deduplicatedModels.map(newModel => {
-        // Prefer lookup by model_number, fallback to model_key
-        const existing = newModel.model_number 
-          ? existingByNumber.get(newModel.model_number) || existingByKey.get(newModel.model_key)
-          : existingByKey.get(newModel.model_key);
-          
-        const changedFields: string[] = [];
-        
-        if (existing) {
-          // Track what changed
-          if (existing.dealer_price !== newModel.dealer_price) changedFields.push('dealer_price');
-          if (existing.msrp !== newModel.msrp) changedFields.push('msrp');
-          
-          const updatedModel = {
-            ...newModel,
-            in_stock: existing.in_stock, // Never flip this from XML inventory
-            image_url: existing.image_url || newModel.image_url,
-            hero_image_url: existing.hero_image_url || newModel.hero_image_url,
-            stock_quantity: existing.stock_quantity,
-            availability: existing.availability || newModel.availability,
-            last_stock_check: existing.last_stock_check,
-          };
-          
-          rowMatches.push({
-            model_key: newModel.model_key,
-            model_number: newModel.model_number || '',
-            action: changedFields.length > 0 ? 'updated' : 'unchanged',
-            changed_fields: changedFields
-          });
-          
-          return updatedModel;
-        } else {
-          rowMatches.push({
-            model_key: newModel.model_key,
-            model_number: newModel.model_number || '',
-            action: 'created',
-            changed_fields: ['*']
-          });
-        }
-        
-        return newModel; // New record, use as-is
-      });
-      
-      // Use conflict resolution on model_number if available, else model_key
-      const { error: upsertError } = await supabase
-        .from('motor_models')
-        .upsert(modelsForUpsert, { onConflict: 'model_key' }); // We'll handle model_number conflicts in app logic
-      
-      if (upsertError) {
-        throw new Error(`upsert_failed: ${upsertError.message}`);
-      }
-      
-      // Count creates vs updates
-      rows_created = rowMatches.filter(m => m.action === 'created').length;
-      rows_updated = rowMatches.filter(m => m.action === 'updated').length;
-      rows_skipped = rowMatches.filter(m => m.action === 'unchanged').length;
-      
-      console.log(`[PriceList] source=${contentSource.toUpperCase()} rows_found=${rows_found} rows_valid=${rows_normalized} created=${rows_created} updated=${rows_updated} skipped_blank=${rows_skipped_blank} missing_required=${rows_missing_required}`);
     } else {
-      // For dry run, simulate the matching logic
-      const modelNumbers = deduplicatedModels.map(m => m.model_number).filter(Boolean);
-      const modelKeys = deduplicatedModels.map(m => m.model_key);
-      
-      let existingCount = 0;
-      if (modelNumbers.length > 0) {
-        const { data: byNumber } = await supabase
-          .from('motor_models')
-          .select('model_number, model_key', { count: 'exact' })
-          .in('model_number', modelNumbers);
-        existingCount += byNumber?.length || 0;
-      }
-      
-      const { data: byKey } = await supabase
-        .from('motor_models')
-        .select('model_key', { count: 'exact' })
-        .in('model_key', modelKeys);
-      existingCount += byKey?.length || 0;
-      
-      rows_matched_existing = existingCount;
-      rows_created = Math.max(0, deduplicatedModels.length - existingCount);
+      throw new Error('Must provide url, html, or csv parameter');
     }
+
+    // STEP 2: Generate checksum
+    const checksum = await generateChecksum(content.substring(0, 10000)); // First 10k chars
+    console.log(`[PriceList] Content checksum: ${checksum.substring(0, 8)}...`);
+
+    // STEP 3: Parse content based on type
+    let rowData: any[] = [];
+    let source_kind = 'unknown';
     
-    // Prepare sample data (first 10 items)
-    const sampleModels = deduplicatedModels.slice(0, 10).map(m => ({
-      model_display: m.model,
-      model_number: m.model_number || '',
-      model_key: m.model_key,
-      family: m.family,
-      horsepower: m.horsepower,
-      fuel: m.fuel_type,
-      rigging_code: m.rigging_code,
-      dealer_price: m.dealer_price,
-      msrp: m.msrp
-    }));
+    if (contentSource === 'csv') {
+      rowData = parseCSV(content);
+      source_kind = 'raw_csv';
+    } else {
+      // Try HTML parsing first
+      const htmlResults = parseHTML(content);
+      if (htmlResults.length > 0) {
+        rowData = htmlResults;
+        source_kind = 'html_table';
+      } else {
+        console.log('[PriceList] HTML parsing failed, no suitable data found');
+        throw new Error('No parseable data found in content');
+      }
+    }
+
+    console.log(`[PriceList] HTML parsing found ${rowData.length} rows`);
+
+    // STEP 4: Normalize and process the data with enhanced parsing
+    const deduplicatedMotors = normalizeData(rowData, url || 'provided', msrp_markup || 1.10);
     
-    // Build detailed response with comprehensive debugging info
-    const rejectReasons = rowErrors.slice(0, 20).map(err => `Line ${err.line}: ${err.reason} (${err.raw_model})`);
-    const topSkipReasons = Object.entries(skipReasons)
-      .sort(([,a], [,b]) => b - a)
-      .slice(0, 3)
-      .map(([reason, count]) => `${reason}: ${count}`);
-    
-    // Enhanced sample models with comprehensive debug info  
-    const enhancedSamples = deduplicatedModels.slice(0, 10).map(m => ({
-      model: m.model,
-      model_number: m.mercury_model_no || '',
-      model_key: m.model_key,
-      family: m.family,
-      horsepower: m.horsepower,
-      fuel_type: m.fuel_type,
-      model_code: m.model_code,
-      dealer_price: m.dealer_price,
-      msrp: m.msrp,
-      is_brochure: m.is_brochure,
-      in_stock: m.in_stock
-    }));
-    
-    // Create sample skipped rows for debugging
-    const sampleSkipped = rowErrors.slice(0, 10).map(err => ({
-      line: err.line,
-      reason: err.reason,
-      raw_model: err.raw_model,
-      model_key: err.model_key,
-      dealer_price_raw: err.dealer_price_raw
-    }));
-    
-    return json200({
-      success: true,
+    // STEP 5: Save artifacts and process data
+    const processResult = await saveAndProcessData(supabase, deduplicatedMotors, checksum, dry_run);
+
+    // Final result
+    const result: SeededResult = {
+      success: processResult.success,
       content_source: contentSource,
-      source_kind: sourceKind,
-      table_rows: tableRows,
-      table_cells: tableCells,
-      html_snapshot_url: artifacts.html_snapshot_url,
-      
-      // Detailed counts
-      rows_found_raw: rows_found,
-      rows_parsed: rows.length,
-      rows_normalized,
-      rows_created,
-      rows_updated,
-      rows_skipped_total: Object.values(skipReasons).reduce((a, b) => a + b, 0),
-      rows_skipped_by_reason: skipReasons,
-      top_skip_reasons: topSkipReasons,
-      
-      // Legacy fields for compatibility
-      rows_parsed_total: rows_found,
-      rows_with_invalid_key,
-      rows_with_invalid_price,
-      rows_skipped_blank,
-      rows_missing_required,
-      rows_rejected: rowErrors.length,
-      reject_reasons: rejectReasons,
-      duplicates_in_feed: duplicatesInFeed.length,
-      rows_matched_existing,
-      rows_skipped,
-      
-      // Debug info
-      unique_model_keys: keyGroups.size,
-      rowErrors: rowErrors.slice(0, 50),
-      rowMatches: rowMatches.slice(0, 50),
-      checksum,
-      skipped_due_to_same_checksum: false,
-      artifacts,
-      sample_models: enhancedSamples,
-      sample_created: enhancedSamples,
-      sample_skipped: sampleSkipped
+      source_kind: source_kind as any,
+      rows_found_raw: rowData.length,
+      rows_parsed: deduplicatedMotors.length,
+      rows_created: processResult.rows_created,
+      rows_updated: processResult.rows_updated,
+      rows_skipped_total: processResult.rows_skipped_total,
+      rows_skipped_by_reason: {},
+      top_skip_reasons: [],
+      sample_created: processResult.sample_created,
+      sample_skipped: [],
+      checksum: checksum.substring(0, 16),
+      artifacts: processResult.artifacts
+    };
+
+    console.log(`[PriceList] Process complete:`, {
+      success: result.success,
+      found: result.rows_found_raw,
+      parsed: result.rows_parsed,
+      created: result.rows_created,
+      updated: result.rows_updated
     });
-    
+
+    return new Response(JSON.stringify(result), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      status: 200
+    });
+
   } catch (error: any) {
-    console.error('[PriceList] seed-from-pricelist failed:', error);
+    console.error('[PriceList] Fatal error:', error);
     
-    // Try to save artifacts even on failure for debugging
-    let debugArtifacts = null;
-    try {
-      if (currentStep !== 'init') {
-        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const errorLog = {
-          step: currentStep,
-          error: {
-            message: error?.message || String(error),
-            stack: error?.stack,
-            name: error?.name
-          },
-          rowErrors: rowErrors.slice(0, 10)
-        };
-        
-        const errorLogUrl = await saveArtifact(
-          supabase, 
-          `pricelist/${timestamp}-ERROR.json`, 
-          JSON.stringify(errorLog, null, 2), 
-          'application/json'
-        );
-        
-        debugArtifacts = { error_log_url: errorLogUrl };
-      }
-    } catch (artifactError) {
-      console.error('[PriceList] Failed to save debug artifacts:', artifactError);
-    }
-    
-    return json200({
+    const errorResult: SeededResult = {
       success: false,
-      step: currentStep,
-      error: {
-        message: error?.message || String(error),
-        stack: error?.stack,
-        name: error?.name,
-        cause: error?.cause,
-      },
-      artifacts: debugArtifacts,
-      rowErrors: rowErrors.slice(0, 5)
+      content_source: 'url',
+      source_kind: 'html_table',
+      rows_found_raw: 0,
+      rows_parsed: 0,
+      rows_created: 0,
+      rows_updated: 0,
+      rows_skipped_total: 0,
+      rows_skipped_by_reason: { 'fatal_error': 1 },
+      top_skip_reasons: [error.message],
+      sample_created: [],
+      sample_skipped: []
+    };
+
+    return new Response(JSON.stringify(errorResult), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      status: 500
     });
   }
 });

@@ -22,8 +22,11 @@ interface ParseResult {
   sample_created?: Array<{
     model: string;
     model_key: string;
+    mercury_model_no?: string;
     family: string;
     horsepower: number;
+    rigging_code?: string;
+    accessories_included?: string[];
     dealer_price: number;
     msrp: number;
   }>;
@@ -358,9 +361,11 @@ export default function AdminBrochureTest() {
                       <Table>
                         <TableHeader>
                           <TableRow>
-                            <TableHead>Model</TableHead>
+                            <TableHead>Model Display</TableHead>
                             <TableHead>Model Key</TableHead>
-                            <TableHead>Family</TableHead>
+                            <TableHead>Mercury Model No</TableHead>
+                            <TableHead>Rigging Code</TableHead>
+                            <TableHead>Accessories</TableHead>
                             <TableHead>HP</TableHead>
                             <TableHead>Dealer Price</TableHead>
                             <TableHead>MSRP</TableHead>
@@ -371,8 +376,13 @@ export default function AdminBrochureTest() {
                             <TableRow key={idx}>
                               <TableCell className="font-medium">{item.model}</TableCell>
                               <TableCell className="font-mono text-xs">{item.model_key}</TableCell>
-                              <TableCell>
-                                <Badge variant="secondary">{item.family}</Badge>
+                              <TableCell className="font-mono text-xs">{item.mercury_model_no || 'N/A'}</TableCell>
+                              <TableCell className="text-sm">{item.rigging_code || 'N/A'}</TableCell>
+                              <TableCell className="text-sm">
+                                {Array.isArray(item.accessories_included) && item.accessories_included.length > 0 
+                                  ? item.accessories_included.join(', ')
+                                  : 'None'
+                                }
                               </TableCell>
                               <TableCell>{item.horsepower}</TableCell>
                               <TableCell>${item.dealer_price?.toLocaleString()}</TableCell>
