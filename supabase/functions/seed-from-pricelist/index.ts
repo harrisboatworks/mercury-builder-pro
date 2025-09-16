@@ -153,8 +153,13 @@ Deno.serve(async (req) => {
     const allSkipReasons = new Map([...skipReasons, ...deduplicationSkips]);
     
     console.log(`[PriceList] Deduplicated to ${deduplicatedMotors.length} motors`);
+    console.log(`[PriceList] ingest params: dry_run=${dry_run}, msrp_markup=${msrpMarkup}`);
     console.log(`[PriceList] source=${priceListUrl.toUpperCase()} rows_found=${rawRows.length} rows_normalized=${normalizedMotors.length} rows_deduplicated=${deduplicatedMotors.length}`);
     
+    // Safety check for empty deduplication
+    if (deduplicatedMotors.length === 0) {
+      console.log(`[PriceList] WARNING: No motors survived deduplication - possible data issue`);
+    }
     // Save snapshot to storage
     currentStep = 'snapshot';
     console.log(`[PriceList] Saving artifacts to storage...`);
@@ -203,9 +208,10 @@ Deno.serve(async (req) => {
       return new Response(JSON.stringify({
         success: true,
         step: 'dry_run_complete',
+        dry_run: true,
         rows_found_raw: rawRows.length,
         rows_parsed: normalizedMotors.length,
-        rows_created: deduplicatedMotors.length,
+        rows_created: deduplicatedMotors.length, // This is "would create" in dry run
         rows_updated: 0,
         sample_created: debugInfo.samples,
         rows_skipped_by_reason: Object.fromEntries(allSkipReasons),
@@ -222,12 +228,25 @@ Deno.serve(async (req) => {
     currentStep = 'upsert';
     console.log(`[PriceList] Upserting ${deduplicatedMotors.length} motors to database...`);
     
-    const batchSize = 25; // Smaller batches for better error isolation
-    let created = 0;
-    let updated = 0;
+    const batchSize = 50; // Larger batches for better performance
+    let totalAffected = 0;
     let failed = 0;
     const batchErrors = [];
     
+    // First, get existing model_numbers to calculate actual created vs updated
+    const existingNumbers = new Set();
+    const { data: existingModels } = await supabase
+      .from('motor_models')
+      .select('model_number')
+      .eq('is_brochure', true)
+      .in('model_number', deduplicatedMotors.map(m => m.model_number));
+    
+    if (existingModels) {
+      existingModels.forEach(m => existingNumbers.add(m.model_number));
+    }
+    
+    console.log(`[PriceList] Found ${existingNumbers.size} existing brochure models to update`);
+
     for (let i = 0; i < deduplicatedMotors.length; i += batchSize) {
       const batch = deduplicatedMotors.slice(i, i + batchSize);
       const batchNum = Math.floor(i / batchSize) + 1;
@@ -273,7 +292,7 @@ Deno.serve(async (req) => {
           failed += batch.length;
         } else {
           console.log(`[PriceList] Batch ${batchNum} success: ${data?.length || 0} records upserted`);
-          created += data?.length || 0;
+          totalAffected += data?.length || 0;
         }
       } catch (batchError) {
         console.error(`[PriceList] Batch ${batchNum} exception:`, batchError);
@@ -286,8 +305,14 @@ Deno.serve(async (req) => {
       }
     }
     
-    console.log(`[PriceList] Database upsert complete: ${created} created, ${updated} updated, ${failed} failed`);
-    console.log(`[PriceList] Process complete: { success: ${failed === 0}, found: ${rawRows.length}, parsed: ${normalizedMotors.length}, created: ${created}, updated: ${updated} }`);
+    // Calculate created vs updated (approximate)
+    const wouldBeNew = deduplicatedMotors.filter(m => !existingNumbers.has(m.model_number)).length;
+    const wouldBeUpdated = deduplicatedMotors.length - wouldBeNew;
+    const actualCreated = Math.min(totalAffected, wouldBeNew);
+    const actualUpdated = totalAffected - actualCreated;
+    
+    console.log(`[PriceList] Database upsert complete: ${actualCreated} created, ${actualUpdated} updated, ${failed} failed`);
+    console.log(`[PriceList] Process complete: { success: ${failed === 0}, found: ${rawRows.length}, parsed: ${normalizedMotors.length}, created: ${actualCreated}, updated: ${actualUpdated} }`);
     
     if (batchErrors.length > 0) {
       console.error(`[PriceList] Batch errors encountered:`, batchErrors);
@@ -296,10 +321,11 @@ Deno.serve(async (req) => {
     return new Response(JSON.stringify({
       success: failed === 0,
       step: failed === 0 ? 'complete' : 'upsert_failed',
+      dry_run: false,
       rows_found_raw: rawRows.length,
       rows_parsed: normalizedMotors.length,
-      rows_created: created,
-      rows_updated: updated,
+      rows_created: actualCreated,
+      rows_updated: actualUpdated,
       rows_failed: failed,
       sample_created: debugInfo.samples,
       rows_skipped_by_reason: Object.fromEntries(allSkipReasons),

@@ -491,6 +491,7 @@ export type Database = {
           mercury_model_no: string | null
           model: string
           model_code: string | null
+          model_display: string | null
           model_key: string | null
           model_number: string | null
           motor_type: string
@@ -552,6 +553,7 @@ export type Database = {
           mercury_model_no?: string | null
           model: string
           model_code?: string | null
+          model_display?: string | null
           model_key?: string | null
           model_number?: string | null
           motor_type: string
@@ -613,6 +615,7 @@ export type Database = {
           mercury_model_no?: string | null
           model?: string
           model_code?: string | null
+          model_display?: string | null
           model_key?: string | null
           model_number?: string | null
           motor_type?: string

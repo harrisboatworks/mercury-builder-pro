@@ -15,6 +15,7 @@ interface ParseResult {
   rows_created: number;
   rows_updated: number;
   rows_rejected: number;
+  rows_failed?: number;
   rows_skipped_total: number;
   rows_skipped_by_reason: Record<string, number>;
   top_skip_reasons: string[];
@@ -68,6 +69,8 @@ export default function AdminBrochureTest() {
   const [summary, setSummary] = useState<BrochureSummary | null>(null);
   const [isRunning, setIsRunning] = useState(false);
   const [testResult, setTestResult] = useState<string>('');
+  const [sanityResult, setSanityResult] = useState<any>(null);
+  const [showSanityResults, setShowSanityResults] = useState(false);
 
   // Load brochure summary on page load
   useEffect(() => {
@@ -177,8 +180,8 @@ export default function AdminBrochureTest() {
         setIngestResult(result);
         toast({
           title: "Ingest Complete", 
-          description: `Parsed ${result.rows_parsed} rows → Created ${result.rows_created} and updated ${result.rows_updated} brochure models`,
-          variant: result.rows_created > 0 ? "default" : "destructive"
+          description: `Parsed ${result.rows_parsed} rows → Created ${result.rows_created} and updated ${result.rows_updated} brochure models (${result.rows_failed || 0} failed)`,
+          variant: result.rows_created > 0 || result.rows_updated > 0 ? "default" : "destructive"
         });
         // Reload summary after successful ingest
         await loadBrochureSummary();
@@ -278,6 +281,58 @@ export default function AdminBrochureTest() {
       console.error('Export error:', error);
       toast({
         title: "Export Failed",
+        description: error.message,
+        variant: "destructive"
+      });
+    } finally {
+      setIsRunning(false);
+    }
+  };
+
+  const runSanityQueries = async () => {
+    try {
+      setIsRunning(true);
+      
+      // A) Total brochure rows
+      const { count: totalCount } = await supabase
+        .from('motor_models')
+        .select('*', { count: 'exact', head: true })
+        .eq('is_brochure', true);
+
+      // B) Distinct Mercury model numbers
+      const { data: distinctData } = await supabase
+        .from('motor_models')
+        .select('model_number')
+        .eq('is_brochure', true)
+        .not('model_number', 'is', null);
+      
+      const distinctCount = new Set(distinctData?.map(d => d.model_number) || []).size;
+
+      // C) Sample of 10
+      const { data: sampleData } = await supabase
+        .from('motor_models')
+        .select('model_number, model_display, dealer_price, msrp, created_at')
+        .eq('is_brochure', true)
+        .order('model_number')
+        .limit(10);
+
+      setSanityResult({
+        totalBrochureRows: totalCount || 0,
+        distinctModelNumbers: distinctCount,
+        sampleData: sampleData || [],
+        executedAt: new Date().toLocaleString()
+      });
+      
+      setShowSanityResults(true);
+      
+      toast({
+        title: "Sanity Check Complete",
+        description: `Found ${totalCount} brochure models with ${distinctCount} distinct model numbers`
+      });
+    } catch (error: any) {
+      console.error('Sanity check error:', error);
+      toast({
+        title: "Sanity Check Failed",
         description: error.message,
         variant: "destructive"
       });
@@ -420,28 +475,28 @@ export default function AdminBrochureTest() {
                           </TableRow>
                         </TableHeader>
                         <TableBody>
-                           {result.sample_created.map((item, idx) => {
-                             console.log('Dry run sample item:', item); // Debug log
-                             return (
-                               <TableRow key={idx}>
-                                 <TableCell className="font-medium">{item.model}</TableCell>
-                                 <TableCell className="font-mono text-xs bg-green-50 border border-green-200">
-                                   {item.model_number || item.model_key || 'Empty'}
-                                 </TableCell>
-                                 <TableCell className="font-mono text-xs">{item.mercury_model_no || 'N/A'}</TableCell>
-                                 <TableCell className="text-sm">{item.rigging_code || 'N/A'}</TableCell>
-                                 <TableCell className="text-sm">
-                                   {Array.isArray(item.accessories_included) && item.accessories_included.length > 0 
-                                     ? item.accessories_included.join(', ')
-                                     : 'None'
-                                   }
-                                 </TableCell>
-                                 <TableCell>{item.horsepower}</TableCell>
-                                 <TableCell>${item.dealer_price?.toLocaleString()}</TableCell>
-                                 <TableCell>${item.msrp?.toLocaleString()}</TableCell>
-                               </TableRow>
-                             );
-                           })}
+                          {result.sample_created.map((item, idx) => {
+                            console.log('Dry run sample item:', item); // Debug log
+                            return (
+                              <TableRow key={idx}>
+                                <TableCell className="font-medium">{item.model}</TableCell>
+                                <TableCell className="font-mono text-xs bg-green-50 border border-green-200">
+                                  {item.model_number || item.model_key || 'Empty'}
+                                </TableCell>
+                                <TableCell className="font-mono text-xs">{item.mercury_model_no || 'N/A'}</TableCell>
+                                <TableCell className="text-sm">{item.rigging_code || 'N/A'}</TableCell>
+                                <TableCell className="text-sm">
+                                  {Array.isArray(item.accessories_included) && item.accessories_included.length > 0 
+                                    ? item.accessories_included.join(', ')
+                                    : 'None'
+                                  }
+                                </TableCell>
+                                <TableCell>{item.horsepower}</TableCell>
+                                <TableCell>${item.dealer_price?.toLocaleString()}</TableCell>
+                                <TableCell>${item.msrp?.toLocaleString()}</TableCell>
+                              </TableRow>
+                            );
+                          })}
                         </TableBody>
                       </Table>
                     </div>
@@ -518,6 +573,13 @@ export default function AdminBrochureTest() {
           >
             <Play className="h-4 w-4 mr-2" />
             Ingest Price List
+          </Button>
+          <Button
+            onClick={runSanityQueries}
+            disabled={isRunning}
+            variant="secondary"
+          >
+            Run Sanity Queries
           </Button>
         </div>
       </div>
@@ -656,6 +718,56 @@ export default function AdminBrochureTest() {
       {/* Results */}
       <ResultCard title="Dry Run Results" result={dryRunResult} variant="dry-run" />
       <ResultCard title="Ingest Results" result={ingestResult} variant="ingest" />
+      
+      {/* Sanity Check Results */}
+      {showSanityResults && sanityResult && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Sanity Check Results</CardTitle>
+            <CardDescription>Database diagnostic queries executed at {sanityResult.executedAt}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <div className="text-center p-4 border rounded">
+                  <div className="text-3xl font-bold text-primary">{sanityResult.totalBrochureRows}</div>
+                  <div className="text-sm text-muted-foreground">Total Brochure Models</div>
+                </div>
+                <div className="text-center p-4 border rounded">
+                  <div className="text-3xl font-bold text-blue-600">{sanityResult.distinctModelNumbers}</div>
+                  <div className="text-sm text-muted-foreground">Distinct Model Numbers</div>
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">Sample Records (First 10):</h4>
+                <div className="rounded-md border overflow-hidden">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Model Number</TableHead>
+                        <TableHead>Display</TableHead>
+                        <TableHead>Dealer Price</TableHead>
+                        <TableHead>MSRP</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {sanityResult.sampleData.map((item: any, idx: number) => (
+                        <TableRow key={idx}>
+                          <TableCell className="font-mono text-xs">{item.model_number || 'N/A'}</TableCell>
+                          <TableCell className="text-sm">{item.model_display || 'N/A'}</TableCell>
+                          <TableCell>${(item.dealer_price || 0).toLocaleString()}</TableCell>
+                          <TableCell>${(item.msrp || 0).toLocaleString()}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 }
