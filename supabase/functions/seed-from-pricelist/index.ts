@@ -288,17 +288,39 @@ Deno.serve(async (req) => {
         console.log(`[Upsert] B${batchNum}: processing ${batch.length} records...`);
         
         try {
-          // Use upsert with model_number as conflict target for brochure rows
-          const { data, error } = await supabase
-            .from('motor_models')
-            .upsert(batch, {
-              onConflict: 'model_number',
-              ignoreDuplicates: false
-            })
-            .select('id, created_at, updated_at');
+          // First attempt: try using model_number conflict (if that constraint exists)
+          let result;
+          try {
+            result = await supabase
+              .from('motor_models')
+              .upsert(batch, {
+                onConflict: 'model_number',
+                ignoreDuplicates: false
+              })
+              .select('id, created_at, updated_at');
+              
+            if (result.error && result.error.message.includes('constraint') && result.error.message.includes('model_number')) {
+              throw new Error('model_number constraint not found, trying model_key');
+            }
+          } catch (modelNumberError: any) {
+            console.log(`[Upsert] B${batchNum}: model_number conflict failed, trying model_key: ${modelNumberError.message}`);
+            
+            // Fallback: use model_key as conflict target
+            result = await supabase
+              .from('motor_models')
+              .upsert(batch, {
+                onConflict: 'model_key',
+                ignoreDuplicates: false
+              })
+              .select('id, created_at, updated_at');
+          }
+          
+          const { data, error } = result;
           
           if (error) {
             console.log(`[Upsert] B${batchNum}: ERROR - ${error.message}`);
+            console.log(`[Upsert] B${batchNum}: ERROR details - ${JSON.stringify(error)}`);
+            console.log(`[Upsert] B${batchNum}: Sample row that failed - ${JSON.stringify(batch[0])}`);
             batchErrors.push({batchNum, error: error.message});
             continue;
           }
@@ -314,6 +336,7 @@ Deno.serve(async (req) => {
           
         } catch (err: any) {
           console.log(`[Upsert] B${batchNum}: EXCEPTION - ${err.message}`);
+          console.log(`[Upsert] B${batchNum}: EXCEPTION stack - ${err.stack}`);
           batchErrors.push({batchNum, error: err.message});
         }
       }
@@ -483,48 +506,70 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
         ].filter(Boolean).join('-').replace(/[^a-z0-9.-]/g, '');
       
         const result = {
-          // Mercury identifiers - ALWAYS from first column for brochure rows
+          // CRITICAL IDENTITY FIELDS - Always include these for brochure upserts
           model_number: modelNumber.trim(), // Official Mercury model number (1F02201KK, etc.)
           mercury_model_no: mercuryModelNo || '', // Parsed model (25MH, etc.)
+          model_key: modelKey, // Generated unique key for fallback conflicts
           
-          // Display and description - CRITICAL: include model_display for human-readable names
+          // CRITICAL DISPLAY FIELDS - Always include model_display for human-readable names
           model_display: finalModelDisplay, // Human-readable brochure text
           display_name: finalModelDisplay,
-          model: family || 'Outboard', // Required field - fallback to Outboard
-          model_key: modelKey,
           
-          // Technical specs
+          // CRITICAL BROCHURE CLASSIFICATION - Always include these exact values
+          is_brochure: true, // Brochure flag - REQUIRED
+          availability: 'Brochure', // Always brochure for these imports - REQUIRED
+          make: 'Mercury', // Always Mercury for these imports - REQUIRED
+          model: family || 'Outboard', // Required field - fallback to Outboard
+          motor_type: family || 'Outboard', // Mercury family or fallback - REQUIRED
+          year: 2025, // Current catalog year - REQUIRED
+          
+          // CRITICAL PRICING FIELDS - Always include numeric values
+          dealer_price: dealerPrice, // Numeric dealer price - REQUIRED
+          base_price: dealerPrice, // Same as dealer_price for brochure
+          sale_price: dealerPrice, // No special sales for brochure
+          msrp: msrp, // Calculated MSRP - REQUIRED
+          
+          // Parsed motor details
           family: family || 'FourStroke', // Default to FourStroke if not detected
           horsepower: horsepower,
-          rigging_code: riggingDescription,
-          accessories_included: accessories,
-          
-          // Pricing - ensure numeric values
-          dealer_price: dealerPrice,
-          base_price: dealerPrice,
-          sale_price: dealerPrice,
-          msrp: msrp,
-          
-          // Source tracking
-          price_source: 'harris_pricelist',
-          msrp_source: 'calculated',
-          msrp_calc_source: `dealer_price * ${msrp_markup}`,
-          
-          // Database required fields - ALWAYS SET FOR BROCHURE ROWS
-          make: 'Mercury',
-          motor_type: family || 'FourStroke', // Required field
-          year: 2025,
-          is_brochure: true, // CRITICAL: Must be true for all brochure rows
-          in_stock: false,
-          availability: 'Brochure', // CRITICAL: Must be 'Brochure' 
           fuel_type: 'EFI',
+          shaft: '', 
+          control: '',
+          rigging_code: riggingDescription,
+          engine_type: '',
           
-          // Required jsonb fields with defaults
+          // Accessories and features
+          accessories_included: accessories,
           accessory_notes: [],
           features: [],
           specifications: {},
           
-          // Timestamps - let database handle created_at, only update updated_at on conflict
+          // Pricing metadata
+          price_source: 'harris_pricelist',
+          msrp_source: 'calculated',
+          msrp_calc_source: `dealer_price * ${msrp_markup}`,
+          
+          // Stock and availability (consistent with brochure status)
+          in_stock: false, // Brochure items not in physical stock
+          stock_quantity: 0,
+          stock_number: '',
+          
+          // Images and documentation (empty for brochure imports)
+          image_url: '',
+          images: [],
+          hero_image_url: '',
+          detail_url: '',
+          spec_sheet_file_id: '',
+          
+          // Data tracking
+          last_scraped: new Date().toISOString(),
+          data_sources: {
+            harris: { success: true, scraped_at: new Date().toISOString() },
+            manual: { user_id: null, added_at: null },
+            mercury_official: { success: false, scraped_at: null }
+          },
+          
+          // Timestamps - let DB handle created_at, always update updated_at
           updated_at: new Date().toISOString(),
           
           // Debug info
