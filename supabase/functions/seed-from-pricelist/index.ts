@@ -67,7 +67,7 @@ function titleCase(s?: string | null) {
   if (!s) return '';
   return s
     .toLowerCase()
-    .replace(/(^|\s+|-)([a-z])/g, (_m, p1, p2) => `${p1}${p2.toUpperCase()}`)
+    .replace(/(^|\s+|-|_)([a-z])/g, (_m, p1, p2) => `${p1}${p2.toUpperCase()}`)
     .trim();
 }
 
@@ -98,9 +98,36 @@ function resolveModel(rec: any): string {
   return tc || 'Outboard';
 }
 
+// Prefer explicit type; else infer from family/model_key; else default.
+function resolveMotorType(rec: any): string {
+  // 1) explicit fields from parse
+  const explicit =
+    rec.motor_type ||
+    rec.engine_type ||
+    rec.power_type ||
+    rec.fuel_type; // sometimes "Gas" / "Electric"
+  if (explicit && String(explicit).trim()) {
+    const v = String(explicit).toLowerCase();
+    if (/(electric|ev)/.test(v)) return 'Electric';
+    if (/(jet)/.test(v)) return 'Jet';
+    if (/(diesel)/.test(v)) return 'Diesel';
+    return 'Outboard'; // anything else from Mercury is still an outboard
+  }
+
+  // 2) infer from family / key
+  const fam = (rec.family || rec.engine_family || rec.series || '').toString().toLowerCase();
+  const key = (rec.model_key || rec.model_number || '').toString().toLowerCase();
+
+  if (/(electric|ev)/.test(fam) || /(electric|ev)/.test(key)) return 'Electric';
+  if (/jet/.test(fam) || /jet/.test(key)) return 'Jet';
+
+  // 3) safe default to satisfy NOT NULL
+  return 'Outboard';
+}
+
 /**
  * Ensure all required brochure fields are present.
- * IMPORTANT: model is NOT NULL in motor_models, so we must populate it.
+ * NOTE: model and motor_type are NOT NULL in motor_models.
  */
 function toDbRow(rec: any) {
   return {
@@ -109,20 +136,21 @@ function toDbRow(rec: any) {
     availability: 'Brochure',
     make: 'Mercury',
 
-    // required identifiers
-    model_number: rec.model_number,    // e.g., "1F02201KK"
-    model_key: rec.model_key,          // e.g., "FOURSTROKE-ELPT-EFI"
+    // identifiers
+    model_number: rec.model_number,              // e.g., "1F02201KK"
+    model_key: rec.model_key,                    // e.g., "FOURSTROKE-ELPT-EFI"
     mercury_model_no: rec.mercury_model_no ?? rec.mercury_code ?? null,
 
-    // NOT NULL field: brochure family/category (e.g., "FourStroke")
-    model: resolveModel(rec),
+    // NOT NULLs
+    model: resolveModel(rec),                    // brochure family/category ("FourStroke", etc.)
+    motor_type: resolveMotorType(rec),           // "Outboard" | "Electric" | "Jet" | "Diesel"
 
     // display / pricing
     model_display: rec.model_display ?? rec.display ?? null,
     dealer_price: rec.dealer_price ?? rec.dealer ?? null,
     msrp: rec.msrp ?? rec.price ?? null,
 
-    // metadata
+    // misc
     year: rec.year ?? 2025,
     updated_at: new Date().toISOString(),
   };
