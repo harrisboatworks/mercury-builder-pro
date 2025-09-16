@@ -562,7 +562,7 @@ export default function AdminBrochureTest() {
                             return (
                               <TableRow key={idx}>
                                 <TableCell className="font-medium">{item.model}</TableCell>
-                                <TableCell className="font-mono text-xs bg-green-50 border border-green-200">
+                                <TableCell className="font-mono text-xs bg-emerald-500/10 text-emerald-700">
                                   {item.model_number || item.model_key || 'Empty'}
                                 </TableCell>
                                 <TableCell className="font-mono text-xs">{item.mercury_model_no || 'N/A'}</TableCell>
@@ -778,7 +778,7 @@ export default function AdminBrochureTest() {
                       {summary.latest_samples.map((sample, idx) => (
                         <TableRow key={sample.id || idx}>
                           <TableCell className="font-medium">{sample.model || 'N/A'}</TableCell>
-                          <TableCell className="font-mono text-xs bg-blue-50 border border-blue-200">
+                          <TableCell className="font-mono text-xs bg-blue-500/10 text-blue-700">
                             {sample.model_number || 'Empty'}
                           </TableCell>
                           <TableCell className="font-mono text-xs">{sample.mercury_model_no || 'N/A'}</TableCell>
@@ -830,7 +830,7 @@ export default function AdminBrochureTest() {
                     <TableBody>
                       {sanityResult.latestRecords.map((item: any, idx: number) => (
                         <TableRow key={idx}>
-                          <TableCell className="font-mono text-xs">{item.model_number || 'N/A'}</TableCell>
+                          <TableCell className="font-mono text-xs text-foreground">{item.model_number || 'N/A'}</TableCell>
                           <TableCell>{new Date(item.created_at).toLocaleString()}</TableCell>
                         </TableRow>
                       ))}
