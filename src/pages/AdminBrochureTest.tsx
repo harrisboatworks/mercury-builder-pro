@@ -117,7 +117,7 @@ export default function AdminBrochureTest() {
     try {
       const payload = {
         action: 'brochure',
-        price_list_url: "https://www.mercurymarine.com/en-us/outboards/",
+        price_list_url: "https://www.harrisboatworks.ca/mercurypricelist",
         dry_run: isDryRun,
         msrp_markup: markup,
         create_missing_brochures: true
