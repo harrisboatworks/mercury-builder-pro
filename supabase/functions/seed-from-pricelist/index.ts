@@ -41,21 +41,13 @@ Deno.serve(async (req) => {
       });
     }
 
-    const { dry_run: dryRunIn = true, msrp_markup: msrpMarkupIn, url: urlIn } = requestBody;
-    const dry_run = Boolean(dryRunIn);
-    
-    // Defensive fallback for markup - ensure it's a valid positive number
-    const msrpFromReq = msrpMarkupIn;
-    const msrp_markup = Number(msrpFromReq);
-    const markup = Number.isFinite(msrp_markup) && msrp_markup > 0 ? msrp_markup : 1.1;
-    
-    if (markup === 1.1 && msrpFromReq !== undefined) {
-      console.log('[PriceList] Invalid msrp_markup received:', msrpFromReq, '- using default 1.1');
-    }
+    const { dry_run = true, msrp_markup: reqMarkup, url: urlIn } = requestBody;
+    const markup = Number.isFinite(Number(reqMarkup)) && Number(reqMarkup) > 0 ? Number(reqMarkup) : 1.1;
+    console.log('[PriceList] Using markup:', markup);
     
     const priceListUrl = urlIn?.trim() || 'https://www.harrisboatworks.ca/mercurypricelist';
     
-    console.log(`[PriceList] Starting seed process: dry_run=${dry_run}, msrp_markup=${markup}, url=${priceListUrl}`);
+    console.log(`[PriceList] Starting seed process: dry_run=${dry_run}, markup=${markup}, url=${priceListUrl}`);
     
     // Step 1: Fetch from URL
     currentStep = 'fetch';
@@ -162,7 +154,7 @@ Deno.serve(async (req) => {
     const allSkipReasons = new Map([...skipReasons, ...deduplicationSkips]);
     
     console.log(`[PriceList] Deduplicated to ${deduplicatedMotors.length} motors`);
-    console.log(`[PriceList] ingest params: dry_run=${dry_run}, msrp_markup=${msrpMarkup}`);
+    console.log(`[PriceList] ingest params: dry_run=${dry_run}, markup=${markup}`);
     console.log(`[PriceList] source=${priceListUrl.toUpperCase()} rows_found=${rawRows.length} rows_normalized=${normalizedMotors.length} rows_deduplicated=${deduplicatedMotors.length}`);
     
     // Safety check for empty deduplication
@@ -364,8 +356,7 @@ Deno.serve(async (req) => {
 });
 
 // Parse Mercury model codes and descriptions with error handling
-function normalizeMotorData(rawRows: any[], msrp_markup: number) {
-  const markup = Number(msrp_markup) > 0 ? Number(msrp_markup) : 1.1;
+function normalizeMotorData(rawRows: any[], markup: number) {
   const results = [];
   const errors = [];
   const skipReasons = new Map();
