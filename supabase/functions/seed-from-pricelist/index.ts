@@ -74,23 +74,41 @@ function titleCase(s?: string | null) {
 }
 
 /**
- * Best-effort family -> model resolver:
- * - Prefer parsed "family" if present (e.g., "FourStroke")
- * - Else infer from the model_key prefix before the first hyphen
- * - Else return "Outboard" (safe default to satisfy NOT NULL)
+ * Enhanced family -> model resolver with ProXS detection:
+ * - Prefer parsed "family" if present (e.g., "Pro XS" from section detection)
+ * - Enhanced detection patterns for ProXS models
+ * - Fallback to model_key analysis
  */
 function resolveModel(rec: any): string {
   // Prefer explicit family field first (highest priority)
   const family = rec.family || rec.engine_family || rec.series || rec.category;
   if (family && String(family).trim()) return titleCase(String(family));
 
-  // Try to extract from mercury model number or model description
+  // Enhanced mercury model number and description analysis
   const mercuryModelNo = rec.mercury_model_no || rec.model_display || '';
   if (mercuryModelNo) {
     const description = String(mercuryModelNo).toLowerCase();
-    if (description.includes('fourstroke') || description.includes('four stroke')) return 'FourStroke';
+    
+    // ProXS detection patterns (case insensitive)
+    if (description.includes('pro xs') || 
+        description.includes('proxs') || 
+        description.match(/\bpro\s*xs\b/) ||
+        description.match(/\bproxs\b/)) {
+      return 'Pro XS';
+    }
+    
+    // Verado detection
     if (description.includes('verado')) return 'Verado';
-    if (description.includes('pro xs') || description.includes('proxs')) return 'Pro XS';
+    
+    // FourStroke detection  
+    if (description.includes('fourstroke') || 
+        description.includes('four stroke') ||
+        description.includes('4stroke') ||
+        description.includes('4 stroke')) {
+      return 'FourStroke';
+    }
+    
+    // SeaPro detection
     if (description.includes('seapro') || description.includes('sea pro')) return 'SeaPro';
   }
 
@@ -98,9 +116,10 @@ function resolveModel(rec: any): string {
   const key: string = rec.model_key || rec.modelNumberKey || '';
   const prefix = key.split('-')[0] || '';
   const normalized = prefix.toLowerCase();
+  
+  if (['proxs','pro-xs','proxs®','pro-xs®'].includes(normalized)) return 'Pro XS';
   if (['fourstroke', 'four-stroke', '4-stroke', '4stroke'].includes(normalized)) return 'FourStroke';
   if (['verado'].includes(normalized)) return 'Verado';
-  if (['proxs','pro-xs','proxs®','pro-xs®'].includes(normalized)) return 'Pro XS';
   if (['seapro','sea-pro'].includes(normalized)) return 'SeaPro';
 
   // Fallback: title-case whatever we found, or "Outboard"
@@ -241,40 +260,66 @@ function chunkBy<T>(arr: T[], size: number) {
   return out;
 }
 
-// Parse HTML tables from the price list
+// Parse HTML tables from the price list - Enhanced to detect multiple sections
 function parseHTMLTables(html: string) {
   const tables: Array<{
     headers: string[];
     rows: string[][];
     score: number;
     cols: number;
+    section?: string; // Track which section this table comes from
   }> = [];
 
-  // Simple regex-based HTML table parsing
-  const tableMatches = html.match(/<table[^>]*>[\s\S]*?<\/table>/gi);
-  if (!tableMatches) return tables;
+  console.log(`[ParseTables] Analyzing HTML content (${html.length} chars)`);
+  
+  // Look for section headers before tables to identify ProXS vs FourStroke
+  const sections = html.split(/(?=<h[1-6][^>]*>.*?(?:pro\s*xs|fourstroke|mercury).*?<\/h[1-6]>)/i);
+  console.log(`[ParseTables] Found ${sections.length} potential sections`);
 
-  for (const tableHtml of tableMatches) {
-    const headerMatch = tableHtml.match(/<tr[^>]*>\s*(<th[^>]*>[\s\S]*?<\/th>\s*)+<\/tr>/i);
-    if (!headerMatch) continue;
+  for (let i = 0; i < sections.length; i++) {
+    const section = sections[i];
+    
+    // Identify section type from headers
+    let sectionType = 'unknown';
+    const headerMatch = section.match(/<h[1-6][^>]*>(.*?)<\/h[1-6]>/i);
+    if (headerMatch) {
+      const headerText = headerMatch[1].toLowerCase();
+      if (headerText.includes('pro xs') || headerText.includes('proxs')) {
+        sectionType = 'proxs';
+      } else if (headerText.includes('fourstroke') || headerText.includes('four stroke')) {
+        sectionType = 'fourstroke';
+      }
+      console.log(`[ParseTables] Section ${i}: "${headerText}" -> ${sectionType}`);
+    }
 
-    const headers = Array.from(headerMatch[0].matchAll(/<th[^>]*>([\s\S]*?)<\/th>/gi))
-      .map(match => match[1].replace(/<[^>]*>/g, '').trim());
+    // Find tables in this section
+    const tableMatches = section.match(/<table[^>]*>[\s\S]*?<\/table>/gi);
+    if (!tableMatches) continue;
 
-    const rowMatches = Array.from(tableHtml.matchAll(/<tr[^>]*>(?:\s*<td[^>]*>[\s\S]*?<\/td>\s*)+<\/tr>/gi));
-    const rows = rowMatches.map(rowMatch => 
-      Array.from(rowMatch[0].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi))
-        .map(cellMatch => cellMatch[1].replace(/<[^>]*>/g, '').trim())
-    );
+    for (const tableHtml of tableMatches) {
+      const headerMatch = tableHtml.match(/<tr[^>]*>\s*(<th[^>]*>[\s\S]*?<\/th>\s*)+<\/tr>/i);
+      if (!headerMatch) continue;
 
-    if (headers.length >= 3 && rows.length > 0) {
-      const score = headers.length * rows.length;
-      tables.push({
-        headers,
-        rows,
-        score,
-        cols: headers.length
-      });
+      const headers = Array.from(headerMatch[0].matchAll(/<th[^>]*>([\s\S]*?)<\/th>/gi))
+        .map(match => match[1].replace(/<[^>]*>/g, '').trim());
+
+      const rowMatches = Array.from(tableHtml.matchAll(/<tr[^>]*>(?:\s*<td[^>]*>[\s\S]*?<\/td>\s*)+<\/tr>/gi));
+      const rows = rowMatches.map(rowMatch => 
+        Array.from(rowMatch[0].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi))
+          .map(cellMatch => cellMatch[1].replace(/<[^>]*>/g, '').trim())
+      );
+
+      if (headers.length >= 3 && rows.length > 0) {
+        const score = headers.length * rows.length;
+        tables.push({
+          headers,
+          rows,
+          score,
+          cols: headers.length,
+          section: sectionType
+        });
+        console.log(`[ParseTables] Added table: ${rows.length} rows, section: ${sectionType}`);
+      }
     }
   }
 
@@ -359,7 +404,7 @@ function parseHorsepower(description: string): number | null {
   return null;
 }
 
-// Parse price list and return structured data
+// Parse price list and return structured data - Enhanced for ProXS detection
 async function parsePriceList(url: string, msrpMarkup: number) {
   console.log(`[PriceList] Fetching from URL: ${url}`);
   
@@ -372,53 +417,72 @@ async function parsePriceList(url: string, msrpMarkup: number) {
   console.log(`[PriceList] HTML parsing found ${html.length} characters`);
   
   const tables = parseHTMLTables(html);
-  console.log(`[PriceList] Found ${tables.length} tables, top scores: ${tables.map(t => `${t.score} (${t.rows.length}r×${t.cols}c)`).join(',')}`);
+  console.log(`[PriceList] Found ${tables.length} tables, sections: ${tables.map(t => `${t.section || 'unknown'}(${t.rows.length}r×${t.cols}c)`).join(',')}`);
   
   if (tables.length === 0) {
     throw new Error('No tables found in HTML');
   }
   
-  const bestTable = tables[0];
-  console.log(`[PriceList] Detected headers: ${JSON.stringify(bestTable.headers)}`);
+  const allParsedRows: any[] = [];
   
-  const columnMapping = getColumnMapping(bestTable.headers);
-  console.log(`[PriceList] Column mapping: model_number=${columnMapping.model_number}, model_description=${columnMapping.model_description}, dealer_price=${columnMapping.dealer_price}`);
-  
-  const rawRows = extractTableData(bestTable, columnMapping);
-  console.log(`[PriceList] Column mapping applied: ${JSON.stringify(columnMapping)}`);
-  console.log(`[PriceList] Processing table with score ${bestTable.score}`);
-  console.log(`[PriceList] Extraction skip reasons: {}`);
-  console.log(`[PriceList] DEBUG: Starting normalization of ${rawRows.length} raw rows`);
-  
-  const parsedRows = rawRows.map((row, index) => {
-    const modelNumber = String(row.model_number || '').trim();
-    const modelDescription = decodeEntities(String(row.model_description || '').trim());
-    const dealerPrice = parseNumber(row.dealer_price);
+  // Process all tables, not just the first one
+  for (const table of tables) {
+    console.log(`[PriceList] Processing table from section: ${table.section}, headers: ${JSON.stringify(table.headers)}`);
     
-    const mercuryModelNo = parseMercuryModelNo(modelDescription);
-    const horsepower = parseHorsepower(modelDescription);
-    const modelKey = generateModelKey(mercuryModelNo, modelNumber, horsepower);
+    const columnMapping = getColumnMapping(table.headers);
+    console.log(`[PriceList] Column mapping: model_number=${columnMapping.model_number}, model_description=${columnMapping.model_description}, dealer_price=${columnMapping.dealer_price}`);
     
-    console.log(`[PriceList] Row ${index + 1} model_display: "${modelDescription}" (dealer: ${dealerPrice}, hp: ${horsepower})`);
+    const rawRows = extractTableData(table, columnMapping);
+    console.log(`[PriceList] Extracted ${rawRows.length} rows from ${table.section} section`);
     
-    return {
-      model_number: modelNumber,
-      model_display: modelDescription,
-      model_key: modelKey,
-      mercury_model_no: mercuryModelNo,
-      dealer_price: dealerPrice,
-      // Don't apply markup here - let toDbRow handle it
-      msrp: null,
-      hp: horsepower,
-      rigging_code: null,
-      accessories: null,
-      family: null,
-      images: [],
-      year: 2025,
-    };
-  });
+    const parsedRows = rawRows.map((row, index) => {
+      const modelNumber = String(row.model_number || '').trim();
+      const modelDescription = decodeEntities(String(row.model_description || '').trim());
+      const dealerPrice = parseNumber(row.dealer_price);
+      
+      const mercuryModelNo = parseMercuryModelNo(modelDescription);
+      const horsepower = parseHorsepower(modelDescription);
+      const modelKey = generateModelKey(mercuryModelNo, modelNumber, horsepower);
+      
+      // Determine family based on section and model description
+      let family = null;
+      if (table.section === 'proxs') {
+        family = 'Pro XS';
+      } else if (table.section === 'fourstroke') {
+        family = 'FourStroke';
+      } else {
+        // Auto-detect from model description
+        const desc = modelDescription.toLowerCase();
+        if (desc.includes('pro xs') || desc.includes('proxs')) {
+          family = 'Pro XS';
+        } else if (desc.includes('fourstroke') || desc.includes('four stroke')) {
+          family = 'FourStroke';
+        }
+      }
+      
+      console.log(`[PriceList] Row ${index + 1} from ${table.section}: "${modelDescription}" -> family: ${family} (dealer: ${dealerPrice}, hp: ${horsepower})`);
+      
+      return {
+        model_number: modelNumber,
+        model_display: modelDescription,
+        model_key: modelKey,
+        mercury_model_no: mercuryModelNo,
+        dealer_price: dealerPrice,
+        msrp: null,
+        hp: horsepower,
+        rigging_code: null,
+        accessories: null,
+        family: family,
+        images: [],
+        year: 2025,
+      };
+    });
+    
+    allParsedRows.push(...parsedRows);
+  }
   
-  return parsedRows;
+  console.log(`[PriceList] Total processed rows from all sections: ${allParsedRows.length}`);
+  return allParsedRows;
 }
 
 Deno.serve(async (req) => {
