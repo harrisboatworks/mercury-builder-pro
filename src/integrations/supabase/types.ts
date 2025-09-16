@@ -466,6 +466,7 @@ export type Database = {
           data_quality_score: number | null
           data_sources: Json | null
           dealer_price: number | null
+          dealer_price_live: number | null
           description: string | null
           detail_url: string | null
           display_name: string | null
@@ -528,6 +529,7 @@ export type Database = {
           data_quality_score?: number | null
           data_sources?: Json | null
           dealer_price?: number | null
+          dealer_price_live?: number | null
           description?: string | null
           detail_url?: string | null
           display_name?: string | null
@@ -590,6 +592,7 @@ export type Database = {
           data_quality_score?: number | null
           data_sources?: Json | null
           dealer_price?: number | null
+          dealer_price_live?: number | null
           description?: string | null
           detail_url?: string | null
           display_name?: string | null
@@ -968,6 +971,45 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      sync_logs: {
+        Row: {
+          completed_at: string | null
+          created_at: string
+          details: Json | null
+          error_message: string | null
+          id: string
+          motors_in_stock: number | null
+          motors_processed: number | null
+          started_at: string
+          status: string
+          sync_type: string
+        }
+        Insert: {
+          completed_at?: string | null
+          created_at?: string
+          details?: Json | null
+          error_message?: string | null
+          id?: string
+          motors_in_stock?: number | null
+          motors_processed?: number | null
+          started_at?: string
+          status?: string
+          sync_type?: string
+        }
+        Update: {
+          completed_at?: string | null
+          created_at?: string
+          details?: Json | null
+          error_message?: string | null
+          id?: string
+          motors_in_stock?: number | null
+          motors_processed?: number | null
+          started_at?: string
+          status?: string
+          sync_type?: string
+        }
+        Relationships: []
       }
       user_roles: {
         Row: {
