@@ -390,23 +390,78 @@ async function parseXmlUnits(xml: string): Promise<{units:any[], meta:any}> {
 const norm = (v?: any) => (v == null ? "" : String(v).trim());
 const lower = (v?: any) => norm(v).toLowerCase();
 
-// More permissive filter: Mercury NEW outboards only
+// STRICT filter: Mercury NEW outboards only - enhanced to exclude boats
 function isNewMercuryOutboard(u: any): boolean {
   const make  = T(u.Make || u.make);
   const cond  = T(u.Condition || u.condition || u.UnitCondition);
   const cat   = T(u.Category || u.category || u.Type || u.type || u.VehicleType);
   const title = T(u.Title || u.title || u.Model || u.model || u.UnitName);
+  const desc  = T(u.Description || u.description || '');
 
-  const isMercury = /mercury/i.test(make) || /mercury/i.test(title);
-  const isNew = cond ? !/used|pre[-\s]?owned/i.test(cond) : true;
+  // STRICT Mercury detection - must have "Mercury" explicitly
+  const titleLower = title.toLowerCase();
+  const descLower = desc.toLowerCase();
+  const isMercury = /mercury/i.test(make) || 
+                   (titleLower.includes('mercury') && !titleLower.includes('legend'));
 
-  const looksOutboard =
-    /(outboard|engine|motor)/i.test(cat) ||
-    /(four\s*stroke|fourstroke|pro\s*xs|proxs|seapro|verado|racing|outboard|engine|motor)/i.test(title);
+  // STRICT condition filtering - exclude used/pre-owned
+  const isNew = !cond || !/used|pre[-\s]?owned/i.test(cond);
 
-  const isExcluded = /(boat|trailer|pwc|snow|atv|utv|side\s*by\s*side|sled)/i.test(cat);
+  // STRICT boat exclusion - exclude anything that looks like a boat
+  const boatExclusions = [
+    // Boat brands and models  
+    'legend', 'uttern', 'pontoon', 'deck boat', 'fishing boat',
+    'bass boat', 'jon boat', 'aluminum boat', 'fiberglass boat',
+    // Boat categories
+    'boat', 'vessel', 'watercraft', 'hull',
+    // Years that indicate used boats
+    '200[0-9]', '201[0-9]', '202[0-3]',
+    // Other exclusions
+    'trailer', 'pwc', 'jet ski', 'atv', 'utv', 'snowmobile',
+    'parts', 'accessories', 'propeller', 'prop', 'controls'
+  ];
+  
+  const isBoatOrOther = boatExclusions.some(exclusion => 
+    new RegExp(exclusion, 'i').test(titleLower) || 
+    new RegExp(exclusion, 'i').test(descLower) || 
+    new RegExp(exclusion, 'i').test(cat.toLowerCase())
+  );
 
-  return isMercury && isNew && looksOutboard && !isExcluded;
+  // STRICT motor detection - require Mercury outboard motor indicators
+  const mercuryMotorRequired = [
+    'fourstroke', 'four stroke', 'four-stroke',
+    'proxs', 'pro xs', 'pro-xs', 
+    'seapro', 'sea pro', 'sea-pro',
+    'verado', 'racing',
+    'outboard'
+  ];
+  
+  const mercuryRiggingCodes = [
+    'elpt', 'elhpt', 'exlpt', 'eh', 'mh', 'lh',
+    'xl', 'xxl', 'xxxl',
+    'ct', 'command thrust', 
+    'efi', 'dts', 'tiller'
+  ];
+
+  // HP detection with reasonable ranges
+  const hpMatch = titleLower.match(/(\d+(?:\.\d+)?)\s*hp/);
+  const hasValidHP = hpMatch && parseFloat(hpMatch[1]) >= 2.5 && parseFloat(hpMatch[1]) <= 600;
+
+  const hasMotorIndicator = mercuryMotorRequired.some(indicator => 
+    new RegExp(indicator, 'i').test(titleLower) || 
+    new RegExp(indicator, 'i').test(descLower) ||
+    new RegExp(indicator, 'i').test(cat)
+  );
+  
+  const hasRiggingCode = mercuryRiggingCodes.some(code =>
+    new RegExp(code, 'i').test(titleLower) || 
+    new RegExp(code, 'i').test(descLower)
+  );
+
+  // Motor must have HP OR motor indicator OR rigging code
+  const isMotor = hasValidHP || hasMotorIndicator || hasRiggingCode;
+
+  return isMercury && isNew && !isBoatOrOther && isMotor;
 }
 
 // Legacy individual filters (kept for compatibility)

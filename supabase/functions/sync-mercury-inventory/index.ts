@@ -65,160 +65,145 @@ serve(async (req) => {
       }
     }
     
-    // Extract Mercury units using flexible field matching
+    // Enhanced Mercury filtering with strict boat exclusion
     let debugCounter = 0;
     const mercuryUnits = itemMatches.filter(item => {
-      // Try multiple field name variations
-      const manufacturerPatterns = [
-        /<manufacturer>(.*?)<\/manufacturer>/i,
-        /<make>(.*?)<\/make>/i,
-        /<brand>(.*?)<\/brand>/i
-      ];
-      
-      const conditionPatterns = [
-        /<condition>(.*?)<\/condition>/i,
-        /<status>(.*?)<\/status>/i,
-        /<state>(.*?)<\/state>/i
-      ];
-      
-      const categoryPatterns = [
-        /<category>(.*?)<\/category>/i,
-        /<type>(.*?)<\/type>/i,
-        /<producttype>(.*?)<\/producttype>/i
-      ];
-      
-      // Extract manufacturer
-      let manufacturer = '';
-      for (const pattern of manufacturerPatterns) {
-        const match = item.match(pattern);
-        if (match) {
-          manufacturer = match[1]?.trim().toLowerCase() || '';
-          break;
+      // XML field extraction with debug logging
+      const extractField = (patterns: string[], fieldType: string) => {
+        for (const pattern of patterns) {
+          const regex = new RegExp(pattern, 'i');
+          const match = item.match(regex);
+          if (match) {
+            const value = match[1]?.trim() || '';
+            if (debugCounter < 3) {
+              console.log(`🔍 Found ${fieldType}: "${value}" using pattern: ${pattern}`);
+            }
+            return value;
+          }
         }
-      }
+        return '';
+      };
+
+      // Try multiple XML field variations
+      const manufacturer = extractField([
+        '<manufacturer>(.*?)</manufacturer>',
+        '<make>(.*?)</make>',
+        '<brand>(.*?)</brand>',
+        '<mfg>(.*?)</mfg>'
+      ], 'manufacturer').toLowerCase();
       
-      // Extract condition
-      let condition = '';
-      for (const pattern of conditionPatterns) {
-        const match = item.match(pattern);
-        if (match) {
-          condition = match[1]?.trim().toLowerCase() || '';
-          break;
-        }
-      }
+      const condition = extractField([
+        '<condition>(.*?)</condition>',
+        '<status>(.*?)</status>',
+        '<state>(.*?)</state>',
+        '<unitcondition>(.*?)</unitcondition>'
+      ], 'condition').toLowerCase();
       
-      // Extract category to filter for motors
-      let category = '';
-      for (const pattern of categoryPatterns) {
-        const match = item.match(pattern);
-        if (match) {
-          category = match[1]?.trim().toLowerCase() || '';
-          break;
-        }
-      }
+      const category = extractField([
+        '<category>(.*?)</category>',
+        '<type>(.*?)</type>',
+        '<producttype>(.*?)</producttype>',
+        '<vehicletype>(.*?)</vehicletype>',
+        '<unittype>(.*?)</unittype>'
+      ], 'category').toLowerCase();
       
-      // Also check title and description for motor indicators
-      const titleMatch = item.match(/<title>(.*?)<\/title>/i);
-      const descMatch = item.match(/<description><!\[CDATA\[(.*?)\]\]><\/description>/i);
-      const title = titleMatch?.[1]?.trim() || '';
-      const description = descMatch?.[1]?.trim() || '';
+      const title = extractField([
+        '<title>(.*?)</title>',
+        '<name>(.*?)</name>',
+        '<model>(.*?)</model>',
+        '<unitname>(.*?)</unitname>'
+      ], 'title');
       
-      // Mercury matching (flexible)
+      const description = extractField([
+        '<description><!\\[CDATA\\[(.*?)\\]\\]></description>',
+        '<description>(.*?)</description>',
+        '<desc>(.*?)</desc>'
+      ], 'description');
+
+      // STRICT Mercury detection - must have "Mercury" explicitly
+      const titleLower = title.toLowerCase();
+      const descLower = description.toLowerCase();
       const isMercury = manufacturer.includes('mercury') || 
-                       title.toLowerCase().includes('mercury') || 
-                       description.toLowerCase().includes('mercury');
+                       (titleLower.includes('mercury') && !titleLower.includes('legend'));
       
-      // Enhanced HP detection - look for various HP patterns
-      const hpPatterns = [
-        /(\d+)\s*hp\b/i,           // "25hp", "25 hp"
-        /(\d+)\s*HP\b/,            // "25HP", "25 HP"
-        /(\d+)hp\b/i,              // "25hp" (no space)
-        /\b(\d+)\s*horsepower\b/i  // "25 horsepower"
+      // STRICT condition filtering - exclude used/pre-owned
+      const isNew = !condition.includes('used') && 
+                   !condition.includes('pre-owned') && 
+                   !condition.includes('preowned');
+      
+      // STRICT boat exclusion - exclude anything that looks like a boat
+      const boatExclusions = [
+        // Boat brands and models
+        'legend', 'uttern', 'pontoon', 'deck boat', 'fishing boat',
+        'bass boat', 'jon boat', 'aluminum boat', 'fiberglass boat',
+        // Boat categories
+        'boat', 'vessel', 'watercraft', 'hull',
+        // Other exclusions
+        'trailer', 'pwc', 'jet ski', 'atv', 'utv', 'snowmobile',
+        'parts', 'accessories', 'propeller', 'prop', 'controls'
       ];
       
-      let hasHP = false;
-      let detectedHP = null;
-      for (const pattern of hpPatterns) {
-        const match = title.match(pattern);
-        if (match) {
-          hasHP = true;
-          detectedHP = parseInt(match[1]);
-          break;
-        }
-      }
+      const isBoatOrOther = boatExclusions.some(exclusion => 
+        titleLower.includes(exclusion) || 
+        descLower.includes(exclusion) || 
+        category.includes(exclusion)
+      );
       
-      // Enhanced motor detection - look for Mercury-specific indicators
-      const mercuryMotorIndicators = [
-        'fourstroke', 'fourStroke', 'four stroke',
-        'proxs', 'pro xs', 'prxos', 
-        'seapro', 'sea pro',
-        'verado',
-        'outboard',
-        'engine',
-        'motor'
+      // STRICT motor detection - require Mercury outboard motor indicators
+      const mercuryMotorRequired = [
+        'fourstroke', 'four stroke', 'four-stroke',
+        'proxs', 'pro xs', 'pro-xs',
+        'seapro', 'sea pro', 'sea-pro',
+        'verado', 'racing',
+        'outboard'
       ];
       
       const mercuryRiggingCodes = [
-        'elpt', 'elhpt', 'exlpt', 'eh', 'mh', 'xl', 'xxl',
-        'ct', 'command thrust', 'efi', 'dts', 'tiller'
+        'elpt', 'elhpt', 'exlpt', 'eh', 'mh', 'lh',
+        'xl', 'xxl', 'xxxl',
+        'ct', 'command thrust',
+        'efi', 'dts', 'tiller'
       ];
       
-      // Check for motor indicators in title and description
-      const hasMotorIndicator = mercuryMotorIndicators.some(indicator => 
-        title.toLowerCase().includes(indicator) || 
-        description.toLowerCase().includes(indicator)
+      // HP detection with reasonable ranges
+      const hpMatch = titleLower.match(/(\d+(?:\.\d+)?)\s*hp/);
+      const hasValidHP = hpMatch && parseFloat(hpMatch[1]) >= 2.5 && parseFloat(hpMatch[1]) <= 600;
+      
+      const hasMotorIndicator = mercuryMotorRequired.some(indicator => 
+        titleLower.includes(indicator) || descLower.includes(indicator)
       );
       
       const hasRiggingCode = mercuryRiggingCodes.some(code =>
-        title.toLowerCase().includes(code) || 
-        description.toLowerCase().includes(code)
+        titleLower.includes(code) || descLower.includes(code)
       );
       
-      // Motor detection logic - enhanced for Mercury products
-      const isMotor = 
-        // Traditional category-based detection
-        category.includes('motor') || 
-        category.includes('outboard') || 
-        category.includes('engine') ||
-        // Enhanced title/description detection
-        hasHP || 
-        hasMotorIndicator ||
-        hasRiggingCode ||
-        // Fallback patterns
-        (title.toLowerCase().includes('mercury') && (
-          title.toLowerCase().includes('motor') ||
-          title.toLowerCase().includes('outboard')
-        ));
+      // Motor must have HP OR motor indicator OR rigging code
+      const isMotor = hasValidHP || hasMotorIndicator || hasRiggingCode;
       
-      // Condition matching (more flexible - include excellent, good, new, etc.)
-      const validConditions = ['new', 'excellent', 'good', 'like new', 'used', 'pre-owned'];
-      const isValidCondition = validConditions.some(cond => condition.includes(cond)) || condition.length === 0;
+      // Final filtering logic - all must be true
+      const isValid = isMercury && isNew && !isBoatOrOther && isMotor;
       
-      // Log detailed debug info for first few Mercury items
-      if (isMercury && debugCounter < 10) {
-        console.log(`🔍 Mercury unit found (#${debugCounter + 1}):
+      // Debug logging for first few items
+      if ((isMercury || debugCounter < 5) && debugCounter < 15) {
+        console.log(`🔍 Item analysis (#${debugCounter + 1}):
           Manufacturer: "${manufacturer}"
-          Condition: "${condition}" 
           Category: "${category}"
-          Title: "${title.substring(0, 100)}"
-          Detected HP: ${detectedHP || 'none'}
-          Has HP Pattern: ${hasHP}
-          Has Motor Indicator: ${hasMotorIndicator}
-          Has Rigging Code: ${hasRiggingCode}
-          Is Motor: ${isMotor}
-          Valid Condition: ${isValidCondition}`);
+          Condition: "${condition}"
+          Title: "${title.substring(0, 80)}"
+          Is Mercury: ${isMercury}
+          Is New: ${isNew}
+          Is Boat/Other: ${isBoatOrOther}
+          Is Motor: ${isMotor} (HP: ${hasValidHP}, Indicator: ${hasMotorIndicator}, Rigging: ${hasRiggingCode})
+          VALID: ${isValid}`);
         debugCounter++;
       }
       
-      if (isMercury && !isMotor) {
-        console.log(`⚠️ Mercury unit but not motor: category="${category}", title="${title.substring(0, 50)}", hasHP=${hasHP}, hasMotorIndicator=${hasMotorIndicator}, hasRiggingCode=${hasRiggingCode}`);
+      // Log rejections for debugging
+      if (isMercury && !isValid) {
+        console.log(`❌ Rejected Mercury item: "${title.substring(0, 50)}" - New: ${isNew}, Boat: ${isBoatOrOther}, Motor: ${isMotor}`);
       }
       
-      if (isMercury && isMotor && !isValidCondition) {
-        console.log(`⚠️ Mercury motor but invalid condition: condition="${condition}"`);
-      }
-      
-      return isMercury && isMotor && isValidCondition;
+      return isValid;
     });
 
     console.log(`🎯 Filtered to ${mercuryUnits.length} Mercury units from ${itemMatches.length} total items`);
