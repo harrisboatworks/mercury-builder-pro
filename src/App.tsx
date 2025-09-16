@@ -48,6 +48,7 @@ import AdminSMS from "./pages/AdminSMS";
 import AdminInventory from "./pages/AdminInventory";
 import AdminSources from "./pages/AdminSources";
 import AdminBrochureTest from "./pages/AdminBrochureTest";
+import AdminSync from "./pages/AdminSync";
 import Deposits from "./pages/Deposits";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentCanceled from "./pages/PaymentCanceled";
@@ -224,6 +225,14 @@ const App = () => (
                   element={
                     <SecureRoute requireAdmin={true}>
                       <AdminBrochureTest />
+                    </SecureRoute>
+                  }
+                />
+                <Route
+                  path="/admin/sync"
+                  element={
+                    <SecureRoute requireAdmin={true}>
+                      <AdminSync />
                     </SecureRoute>
                   }
                 />
