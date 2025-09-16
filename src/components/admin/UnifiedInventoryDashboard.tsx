@@ -384,6 +384,55 @@ export function UnifiedInventoryDashboard() {
     }
   };
 
+  const syncStockStatus = async () => {
+    setBulkUpdating(true);
+    try {
+      // Update motors that have real stock numbers but wrong availability
+      const { data: motorsToSync, error: fetchError } = await supabase
+        .from('motor_models')
+        .select('id, stock_number, availability')
+        .neq('stock_number', 'N/A')
+        .not('stock_number', 'is', null)
+        .neq('stock_number', '')
+        .neq('availability', 'In Stock');
+
+      if (fetchError) throw fetchError;
+
+      if (motorsToSync && motorsToSync.length > 0) {
+        const { error: updateError } = await supabase
+          .from('motor_models')
+          .update({ 
+            availability: 'In Stock',
+            in_stock: true 
+          })
+          .in('id', motorsToSync.map(m => m.id));
+
+        if (updateError) throw updateError;
+
+        uiToast({
+          title: "Success",
+          description: `Synced ${motorsToSync.length} motors with real stock numbers to "In Stock" status`,
+        });
+      } else {
+        uiToast({
+          title: "Info",
+          description: "All motors with stock numbers are already marked as In Stock",
+        });
+      }
+      
+      fetchInventoryData();
+    } catch (error) {
+      console.error('Error syncing stock status:', error);
+      uiToast({
+        title: "Error",
+        description: "Failed to sync stock status",
+        variant: "destructive",
+      });
+    } finally {
+      setBulkUpdating(false);
+    }
+  };
+
   const handleDeleteMotor = async (motorId: string) => {
     setMotorActions(prev => ({ ...prev, [motorId]: true }));
     try {
@@ -593,7 +642,14 @@ export function UnifiedInventoryDashboard() {
                          (motor.model_number && motor.model_number.toLowerCase().includes(searchTerm.toLowerCase())) ||
                          (motor.stock_number && motor.stock_number.toLowerCase().includes(searchTerm.toLowerCase()));
     
-    const matchesAvailability = selectedAvailability === 'all' || motor.availability === selectedAvailability;
+    let matchesAvailability = true;
+    if (selectedAvailability !== 'all') {
+      if (selectedAvailability === 'has_stock_number') {
+        matchesAvailability = motor.stock_number && motor.stock_number !== 'N/A' && motor.stock_number.trim() !== '';
+      } else {
+        matchesAvailability = motor.availability === selectedAvailability;
+      }
+    }
     
     return matchesSearch && matchesAvailability;
   });
@@ -780,8 +836,19 @@ export function UnifiedInventoryDashboard() {
                   <SelectItem value="Brochure">Brochure</SelectItem>
                   <SelectItem value="Sold">Sold</SelectItem>
                   <SelectItem value="Exclude">Exclude</SelectItem>
+                  <SelectItem value="has_stock_number">Has Stock Number</SelectItem>
                 </SelectContent>
               </Select>
+              
+              <Button 
+                onClick={syncStockStatus} 
+                disabled={bulkUpdating}
+                variant="outline"
+                size="sm"
+                className="bg-green-50 border-green-200 text-green-700 hover:bg-green-100"
+              >
+                {bulkUpdating ? "Syncing..." : "Sync Stock Status"}
+              </Button>
             </div>
 
             {/* Bulk Actions */}

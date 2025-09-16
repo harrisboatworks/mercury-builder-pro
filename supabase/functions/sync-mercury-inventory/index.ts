@@ -561,16 +561,17 @@ serve(async (req) => {
       // Update best match if found (lowered threshold to catch more matches)
       if (bestMatch && bestScore >= 35) {
         try {
-          const { error: updateError } = await supabase
-            .from('motor_models')
-            .update({
-              in_stock: true,
-              stock_quantity: quantity,
-              stock_number: stockNumber || undefined,
-              dealer_price_live: price > 0 ? price : undefined,
-              last_stock_check: new Date().toISOString()
-            })
-            .eq('id', bestMatch.id);
+            const { error: updateError } = await supabase
+              .from('motor_models')
+              .update({
+                in_stock: true,
+                stock_quantity: quantity,
+                stock_number: stockNumber || undefined,
+                dealer_price_live: price > 0 ? price : undefined,
+                availability: 'In Stock',
+                last_stock_check: new Date().toISOString()
+              })
+              .eq('id', bestMatch.id);
 
           if (updateError) {
             console.error(`❌ Update error for "${title}":`, updateError);

@@ -1538,7 +1538,7 @@ serve(async (req) => {
                 msrp: prices.msrp ?? null,
                 price_status: (prices.sale ?? prices.msrp) ? 'listed' : 'unknown',
                 stock_number: stock,
-                availability: 'Available',
+                availability: stock ? 'In Stock' : 'Brochure',
                 image_url: null,
                 original_image_url: imgs?.primary || null,
                 source_url: u,

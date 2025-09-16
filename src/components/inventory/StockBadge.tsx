@@ -7,13 +7,16 @@ interface StockBadgeProps {
     in_stock?: boolean;
     stock_quantity?: number;
     availability?: string;
+    stock_number?: string;
   };
   variant?: 'default' | 'compact';
   className?: string;
 }
 
 export function StockBadge({ motor, variant = 'default', className }: StockBadgeProps) {
-  const isInStock = motor.in_stock === true;
+  const hasRealStock = motor.stock_quantity && motor.stock_quantity > 0 && 
+                       motor.stock_number && motor.stock_number !== 'N/A' && motor.stock_number.trim() !== '';
+  const isInStock = motor.in_stock === true || hasRealStock;
   const quantity = motor.stock_quantity || 0;
   const isCompact = variant === 'compact';
 
