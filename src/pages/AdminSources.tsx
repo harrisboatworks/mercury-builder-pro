@@ -282,9 +282,15 @@ export default function AdminSources() {
         const family = extractFamilyFromDescription(motor.description);
         const riggingCode = extractRiggingFromDescription(motor.description);
         
+        // Clean up the description for use as model name
+        const cleanModelName = motor.description
+          .replace(/††|‡|†/g, '') // Remove HTML artifacts
+          .replace(/\s+/g, ' ')    // Normalize whitespace
+          .trim();
+        
         return {
           model_number: motor.model_number,
-          model: 'Outboard', // Fixed: send 'model' not 'model_number'
+          model: cleanModelName, // Use actual motor description instead of hardcoded 'Outboard'
           model_display: motor.description,
           dealer_price: motor.price,
           msrp: motor.price * 1.4,
