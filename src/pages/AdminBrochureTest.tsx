@@ -100,13 +100,20 @@ export default function AdminBrochureTest() {
       }));
 
       // Get latest 10 samples
-      const { data: samples } = await supabase
+      const { data: samples, error: samplesError } = await supabase
         .from('motor_models')
         .select('id, model_number, model, mercury_model_no, model_key, family, horsepower, rigging_code, dealer_price, msrp, created_at')
         .eq('is_brochure', true)
         .eq('make', 'Mercury')
         .order('created_at', { ascending: false })
         .limit(10);
+
+      if (samplesError) {
+        console.error('Error fetching samples:', samplesError);
+      }
+
+      // Debug log to check what data we're getting
+      console.log('Latest samples data:', samples);
 
       setSummary({
         total_brochure_count: totalCount || 0,
@@ -413,23 +420,28 @@ export default function AdminBrochureTest() {
                           </TableRow>
                         </TableHeader>
                         <TableBody>
-                          {result.sample_created.map((item, idx) => (
-                            <TableRow key={idx}>
-                              <TableCell className="font-medium">{item.model}</TableCell>
-                              <TableCell className="font-mono text-xs">{item.model_number || 'N/A'}</TableCell>
-                              <TableCell className="font-mono text-xs">{item.mercury_model_no || 'N/A'}</TableCell>
-                              <TableCell className="text-sm">{item.rigging_code || 'N/A'}</TableCell>
-                              <TableCell className="text-sm">
-                                {Array.isArray(item.accessories_included) && item.accessories_included.length > 0 
-                                  ? item.accessories_included.join(', ')
-                                  : 'None'
-                                }
-                              </TableCell>
-                              <TableCell>{item.horsepower}</TableCell>
-                              <TableCell>${item.dealer_price?.toLocaleString()}</TableCell>
-                              <TableCell>${item.msrp?.toLocaleString()}</TableCell>
-                            </TableRow>
-                          ))}
+                           {result.sample_created.map((item, idx) => {
+                             console.log('Dry run sample item:', item); // Debug log
+                             return (
+                               <TableRow key={idx}>
+                                 <TableCell className="font-medium">{item.model}</TableCell>
+                                 <TableCell className="font-mono text-xs bg-green-50 border border-green-200">
+                                   {item.model_number || item.model_key || 'Empty'}
+                                 </TableCell>
+                                 <TableCell className="font-mono text-xs">{item.mercury_model_no || 'N/A'}</TableCell>
+                                 <TableCell className="text-sm">{item.rigging_code || 'N/A'}</TableCell>
+                                 <TableCell className="text-sm">
+                                   {Array.isArray(item.accessories_included) && item.accessories_included.length > 0 
+                                     ? item.accessories_included.join(', ')
+                                     : 'None'
+                                   }
+                                 </TableCell>
+                                 <TableCell>{item.horsepower}</TableCell>
+                                 <TableCell>${item.dealer_price?.toLocaleString()}</TableCell>
+                                 <TableCell>${item.msrp?.toLocaleString()}</TableCell>
+                               </TableRow>
+                             );
+                           })}
                         </TableBody>
                       </Table>
                     </div>
@@ -622,7 +634,9 @@ export default function AdminBrochureTest() {
                       {summary.latest_samples.map((sample, idx) => (
                         <TableRow key={sample.id || idx}>
                           <TableCell className="font-medium">{sample.model || 'N/A'}</TableCell>
-                          <TableCell className="font-mono text-xs">{sample.model_number || 'N/A'}</TableCell>
+                          <TableCell className="font-mono text-xs bg-blue-50 border border-blue-200">
+                            {sample.model_number || 'Empty'}
+                          </TableCell>
                           <TableCell className="font-mono text-xs">{sample.mercury_model_no || 'N/A'}</TableCell>
                           <TableCell className="font-mono text-xs">{sample.model_key || 'N/A'}</TableCell>
                           <TableCell>${(sample.dealer_price || 0).toLocaleString()}</TableCell>
