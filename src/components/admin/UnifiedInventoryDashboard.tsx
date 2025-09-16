@@ -5,6 +5,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { 
@@ -17,10 +22,16 @@ import {
   Clock, 
   TrendingUp, 
   XCircle,
-  Activity
+  Activity,
+  Edit,
+  Trash2,
+  ChevronDown,
+  Eye,
+  MoreHorizontal
 } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 import { toast } from 'sonner';
+import { MotorManualOverride } from './MotorManualOverride';
 
 // Interfaces
 interface MotorInventoryData {
@@ -95,6 +106,12 @@ export function UnifiedInventoryDashboard() {
   const [updating, setUpdating] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedAvailability, setSelectedAvailability] = useState<string>('all');
+  
+  // Enhanced Motor Management State
+  const [selectedMotors, setSelectedMotors] = useState<Set<string>>(new Set());
+  const [bulkUpdating, setBulkUpdating] = useState(false);
+  const [editingMotor, setEditingMotor] = useState<string | null>(null);
+  const [motorActions, setMotorActions] = useState<{ [key: string]: boolean }>({});
 
   // Sync Status State
   const [syncLogs, setSyncLogs] = useState<SyncLog[]>([]);
@@ -259,6 +276,7 @@ export function UnifiedInventoryDashboard() {
   };
 
   const updateMotorAvailability = async (motorId: string, availability: string) => {
+    setMotorActions(prev => ({ ...prev, [motorId]: true }));
     try {
       const { error } = await supabase
         .from('motor_models')
@@ -280,6 +298,117 @@ export function UnifiedInventoryDashboard() {
         description: "Failed to update motor availability",
         variant: "destructive",
       });
+    } finally {
+      setMotorActions(prev => ({ ...prev, [motorId]: false }));
+    }
+  };
+
+  // Enhanced Motor Management Functions
+  const handleSelectAll = (checked: boolean) => {
+    if (checked) {
+      setSelectedMotors(new Set(filteredMotors.map(m => m.id)));
+    } else {
+      setSelectedMotors(new Set());
+    }
+  };
+
+  const handleSelectMotor = (motorId: string, checked: boolean) => {
+    const updated = new Set(selectedMotors);
+    if (checked) {
+      updated.add(motorId);
+    } else {
+      updated.delete(motorId);
+    }
+    setSelectedMotors(updated);
+  };
+
+  const handleBulkStatusChange = async (newStatus: string) => {
+    if (selectedMotors.size === 0) return;
+    
+    setBulkUpdating(true);
+    try {
+      const { error } = await supabase
+        .from('motor_models')
+        .update({ availability: newStatus })
+        .in('id', Array.from(selectedMotors));
+      
+      if (error) throw error;
+      
+      uiToast({
+        title: "Success",
+        description: `Updated ${selectedMotors.size} motors to ${newStatus}`,
+      });
+      
+      setSelectedMotors(new Set());
+      fetchInventoryData();
+    } catch (error) {
+      console.error('Error updating motors:', error);
+      uiToast({
+        title: "Error",
+        description: "Failed to update motors",
+        variant: "destructive",
+      });
+    } finally {
+      setBulkUpdating(false);
+    }
+  };
+
+  const handleBulkDelete = async () => {
+    if (selectedMotors.size === 0) return;
+    
+    setBulkUpdating(true);
+    try {
+      const { error } = await supabase
+        .from('motor_models')
+        .delete()
+        .in('id', Array.from(selectedMotors));
+      
+      if (error) throw error;
+      
+      uiToast({
+        title: "Success",
+        description: `Deleted ${selectedMotors.size} motors`,
+      });
+      
+      setSelectedMotors(new Set());
+      fetchInventoryData();
+    } catch (error) {
+      console.error('Error deleting motors:', error);
+      uiToast({
+        title: "Error",
+        description: "Failed to delete motors",
+        variant: "destructive",
+      });
+    } finally {
+      setBulkUpdating(false);
+    }
+  };
+
+  const handleDeleteMotor = async (motorId: string) => {
+    setMotorActions(prev => ({ ...prev, [motorId]: true }));
+    try {
+      const { error } = await supabase
+        .from('motor_models')
+        .delete()
+        .eq('id', motorId);
+      
+      if (error) throw error;
+      
+      uiToast({
+        title: "Success",
+        description: "Motor deleted successfully",
+      });
+      
+      fetchInventoryData();
+    } catch (error) {
+      console.error('Error deleting motor:', error);
+      uiToast({
+        title: "Error",
+        description: "Failed to delete motor",
+        variant: "destructive",
+      });
+    } finally {
+      setMotorActions(prev => ({ ...prev, [motorId]: false }));
     }
   };
 
@@ -641,18 +770,66 @@ export function UnifiedInventoryDashboard() {
                   />
                 </div>
               </div>
-              <select
-                value={selectedAvailability}
-                onChange={(e) => setSelectedAvailability(e.target.value)}
-                className="px-3 py-2 border rounded-md"
-              >
-                <option value="all">All Status</option>
-                <option value="In Stock">In Stock</option>
-                <option value="Brochure">Brochure</option>
-                <option value="Sold">Sold</option>
-                <option value="Exclude">Exclude</option>
-              </select>
+              <Select value={selectedAvailability} onValueChange={setSelectedAvailability}>
+                <SelectTrigger className="w-40">
+                  <SelectValue placeholder="All Status" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Status</SelectItem>
+                  <SelectItem value="In Stock">In Stock</SelectItem>
+                  <SelectItem value="Brochure">Brochure</SelectItem>
+                  <SelectItem value="Sold">Sold</SelectItem>
+                  <SelectItem value="Exclude">Exclude</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
+
+            {/* Bulk Actions */}
+            {selectedMotors.size > 0 && (
+              <div className="flex items-center gap-2 mb-4 p-3 bg-muted rounded-lg">
+                <span className="text-sm font-medium">
+                  {selectedMotors.size} motor{selectedMotors.size !== 1 ? 's' : ''} selected
+                </span>
+                <div className="flex gap-2 ml-auto">
+                  <Select onValueChange={handleBulkStatusChange}>
+                    <SelectTrigger className="w-32" disabled={bulkUpdating}>
+                      <SelectValue placeholder="Set Status" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="In Stock">In Stock</SelectItem>
+                      <SelectItem value="Brochure">Brochure</SelectItem>
+                      <SelectItem value="Sold">Sold</SelectItem>
+                      <SelectItem value="Exclude">Exclude</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <AlertDialog>
+                    <AlertDialogTrigger asChild>
+                      <Button variant="destructive" size="sm" disabled={bulkUpdating}>
+                        <Trash2 className="h-4 w-4 mr-1" />
+                        Delete
+                      </Button>
+                    </AlertDialogTrigger>
+                    <AlertDialogContent>
+                      <AlertDialogHeader>
+                        <AlertDialogTitle>Delete Motors</AlertDialogTitle>
+                        <AlertDialogDescription>
+                          Are you sure you want to delete {selectedMotors.size} motor{selectedMotors.size !== 1 ? 's' : ''}? This action cannot be undone.
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel>Cancel</AlertDialogCancel>
+                        <AlertDialogAction onClick={handleBulkDelete} className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
+                          Delete
+                        </AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
+                  <Button variant="outline" onClick={() => setSelectedMotors(new Set())}>
+                    Clear Selection
+                  </Button>
+                </div>
+              </div>
+            )}
 
             {inventoryStats && inventoryStats.withoutStockNumbers > 0 && (
               <Alert className="mb-4">
@@ -668,12 +845,26 @@ export function UnifiedInventoryDashboard() {
         {/* Motors List */}
         <Card>
           <CardHeader>
-            <CardTitle>Motors ({filteredMotors.length})</CardTitle>
+            <div className="flex items-center justify-between">
+              <CardTitle>Motors ({filteredMotors.length})</CardTitle>
+              <div className="flex items-center gap-2">
+                <Checkbox
+                  checked={selectedMotors.size === filteredMotors.length && filteredMotors.length > 0}
+                  onCheckedChange={handleSelectAll}
+                />
+                <span className="text-sm text-muted-foreground">Select All</span>
+              </div>
+            </div>
           </CardHeader>
           <CardContent>
             <div className="space-y-2 max-h-96 overflow-y-auto">
               {filteredMotors.map((motor) => (
-                <div key={motor.id} className="flex items-center justify-between p-3 border rounded-lg">
+                <div key={motor.id} className="flex items-center gap-3 p-3 border rounded-lg hover:bg-muted/50 transition-colors">
+                  <Checkbox
+                    checked={selectedMotors.has(motor.id)}
+                    onCheckedChange={(checked) => handleSelectMotor(motor.id, checked as boolean)}
+                  />
+                  
                   <div className="flex-1">
                     <div className="font-medium">{motor.model_display || motor.model}</div>
                     <div className="text-sm text-muted-foreground">
@@ -684,12 +875,140 @@ export function UnifiedInventoryDashboard() {
                         Last scraped: {new Date(motor.last_scraped).toLocaleString()}
                       </div>
                     )}
+                    {(motor.dealer_price || motor.msrp || motor.sale_price) && (
+                      <div className="text-xs text-muted-foreground">
+                        {motor.dealer_price && `Dealer: $${motor.dealer_price.toLocaleString()}`}
+                        {motor.msrp && ` • MSRP: $${motor.msrp.toLocaleString()}`}
+                        {motor.sale_price && ` • Sale: $${motor.sale_price.toLocaleString()}`}
+                      </div>
+                    )}
                   </div>
-                  <Badge variant={getAvailabilityBadgeVariant(motor.availability)}>
-                    {motor.availability}
-                  </Badge>
+
+                  <div className="flex items-center gap-2">
+                    {/* Status Dropdown */}
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button 
+                          variant="ghost" 
+                          size="sm" 
+                          className="h-8 px-2"
+                          disabled={motorActions[motor.id]}
+                        >
+                          <Badge variant={getAvailabilityBadgeVariant(motor.availability)} className="mr-1">
+                            {motor.availability}
+                          </Badge>
+                          <ChevronDown className="h-3 w-3" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuItem onClick={() => updateMotorAvailability(motor.id, 'In Stock')}>
+                          <div className="flex items-center gap-2">
+                            <Badge variant="default" className="h-4 text-xs">In Stock</Badge>
+                          </div>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => updateMotorAvailability(motor.id, 'Brochure')}>
+                          <div className="flex items-center gap-2">
+                            <Badge variant="secondary" className="h-4 text-xs">Brochure</Badge>
+                          </div>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => updateMotorAvailability(motor.id, 'Sold')}>
+                          <div className="flex items-center gap-2">
+                            <Badge variant="destructive" className="h-4 text-xs">Sold</Badge>
+                          </div>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => updateMotorAvailability(motor.id, 'Exclude')}>
+                          <div className="flex items-center gap-2">
+                            <Badge variant="outline" className="h-4 text-xs">Exclude</Badge>
+                          </div>
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+
+                    {/* Action Buttons */}
+                    <div className="flex gap-1">
+                      <Dialog open={editingMotor === motor.id} onOpenChange={(open) => setEditingMotor(open ? motor.id : null)}>
+                        <DialogTrigger asChild>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            className="h-8 w-8 p-0"
+                            title="Edit Motor"
+                          >
+                            <Edit className="h-3 w-3" />
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden">
+                          <DialogHeader>
+                            <DialogTitle>Edit Motor Details</DialogTitle>
+                            <DialogDescription>
+                              Modify motor specifications, features, and pricing
+                            </DialogDescription>
+                          </DialogHeader>
+                          <div className="overflow-y-auto max-h-[calc(90vh-120px)]">
+                            {editingMotor && (
+                              <MotorManualOverride 
+                                motorId={editingMotor} 
+                                onClose={() => setEditingMotor(null)}
+                              />
+                            )}
+                          </div>
+                        </DialogContent>
+                      </Dialog>
+
+                      <Button 
+                        variant="ghost" 
+                        size="sm" 
+                        className="h-8 w-8 p-0 text-orange-600 hover:text-orange-700"
+                        onClick={() => updateMotorAvailability(motor.id, 'Exclude')}
+                        disabled={motorActions[motor.id] || motor.availability === 'Exclude'}
+                        title="Exclude Motor"
+                      >
+                        <Eye className="h-3 w-3" />
+                      </Button>
+
+                      <AlertDialog>
+                        <AlertDialogTrigger asChild>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            className="h-8 w-8 p-0 text-destructive hover:text-destructive/80"
+                            disabled={motorActions[motor.id]}
+                            title="Delete Motor"
+                          >
+                            <Trash2 className="h-3 w-3" />
+                          </Button>
+                        </AlertDialogTrigger>
+                        <AlertDialogContent>
+                          <AlertDialogHeader>
+                            <AlertDialogTitle>Delete Motor</AlertDialogTitle>
+                            <AlertDialogDescription>
+                              Are you sure you want to delete "{motor.model_display || motor.model}"? This action cannot be undone.
+                            </AlertDialogDescription>
+                          </AlertDialogHeader>
+                          <AlertDialogFooter>
+                            <AlertDialogCancel>Cancel</AlertDialogCancel>
+                            <AlertDialogAction 
+                              onClick={() => handleDeleteMotor(motor.id)}
+                              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                            >
+                              Delete
+                            </AlertDialogAction>
+                          </AlertDialogFooter>
+                        </AlertDialogContent>
+                      </AlertDialog>
+                    </div>
+
+                    {motorActions[motor.id] && (
+                      <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
+                    )}
+                  </div>
                 </div>
               ))}
+              {filteredMotors.length === 0 && (
+                <div className="text-center py-8 text-muted-foreground">
+                  No motors found matching current filters
+                </div>
+              )}
             </div>
           </CardContent>
         </Card>
