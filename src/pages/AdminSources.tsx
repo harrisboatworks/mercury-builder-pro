@@ -60,21 +60,36 @@ export default function AdminSources() {
       url: pricelistUrl?.trim() || 'https://www.harrisboatworks.ca/mercurypricelist',
     };
     
+    console.log('Starting pricelist with:', body);
     const result = await invokePricelist(body);
+    console.log('Pricelist result:', result);
+    
     setLoading({ ...loading, pricelist: false });
 
-    // Render results consistently
-    if (!result?.success && result?.error) {
+    // Handle errors and success consistently
+    if (!result) {
       toast({
         title: 'Error',
-        description: `Step: ${result.step || 'unknown'} — ${result.error}${result.detail ? ` — ${result.detail}` : ''}`,
+        description: 'No response received from edge function',
         variant: 'destructive',
       });
+      setPricelistResults({
+        success: false,
+        step: 'response',
+        error: 'No response received',
+        detail: 'Edge function returned empty response'
+      });
+      return;
     }
-    
-    setPricelistResults(result);
 
-    if (result?.success) {
+    if (!result.success) {
+      const errorMsg = `Step: ${result.step || 'unknown'} — ${result.error || 'Unknown error'}`;
+      toast({
+        title: 'Error',
+        description: errorMsg + (result.detail ? ` — ${result.detail}` : ''),
+        variant: 'destructive',
+      });
+    } else {
       toast({
         title: dryRun ? "Price List Preview Complete" : "Price List Ingested",
         description: `${result.rows_parsed || 0} parsed, ${result.rows_created || 0} created, ${result.rows_updated || 0} updated`,
@@ -84,11 +99,17 @@ export default function AdminSources() {
         setLastIngested({ ...lastIngested, pricelist: new Date() });
       }
     }
+    
+    setPricelistResults(result);
   };
 
   const pingEdgeFunction = async () => {
     setLoading({ ...loading, ping: true });
+    console.log('Pinging edge function...');
+    
     const result = await invokePricelist({ ping: true });
+    console.log('Ping result:', result);
+    
     setLoading({ ...loading, ping: false });
     
     toast({
@@ -692,17 +713,30 @@ export default function AdminSources() {
                   {!pricelistResults.success && (
                     <Collapsible>
                       <CollapsibleTrigger className="flex items-center justify-between w-full p-3 bg-destructive/10 rounded hover:bg-destructive/20">
-                        <span className="font-medium text-destructive">Error Details</span>
+                        <span className="font-medium text-destructive">
+                          Error Details - Step: {pricelistResults.step || 'unknown'}
+                        </span>
                         <ChevronDown className="h-4 w-4" />
                       </CollapsibleTrigger>
                       <CollapsibleContent className="p-3 border rounded-b bg-background">
                         <div className="space-y-2">
-                          <div><strong>Step:</strong> {pricelistResults.step}</div>
-                          <div><strong>Error:</strong> {pricelistResults.error || pricelistResults.detail}</div>
+                          <div><strong>Step:</strong> {pricelistResults.step || 'unknown'}</div>
+                          <div><strong>Error:</strong> {pricelistResults.error || 'Unknown error'}</div>
+                          {pricelistResults.detail && (
+                            <div>
+                              <strong>Detail:</strong>
+                              <pre className="text-xs bg-muted p-2 rounded mt-1 overflow-auto whitespace-pre-wrap">
+                                {pricelistResults.detail}
+                              </pre>
+                            </div>
+                          )}
                           {pricelistResults.stack && (
-                            <pre className="text-xs bg-muted p-2 rounded overflow-auto">
-                              {pricelistResults.stack}
-                            </pre>
+                            <div>
+                              <strong>Stack Trace:</strong>
+                              <pre className="text-xs bg-muted p-2 rounded mt-1 overflow-auto">
+                                {pricelistResults.stack}
+                              </pre>
+                            </div>
                           )}
                         </div>
                       </CollapsibleContent>

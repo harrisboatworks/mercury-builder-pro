@@ -27,29 +27,29 @@ Deno.serve(async (req) => {
 
   try {
     // Quick connectivity sanity route (temporary)
-    if (req.method === 'POST') {
-      const j = await req.json().catch(() => ({}));
-      if (j && j.ping === true) {
-        return new Response(JSON.stringify({ 
-          success: true, 
-          step: 'ping', 
-          message: 'pong' 
-        }), { 
-          status: 200, 
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-        });
-      }
+    const requestBody = await req.json().catch(() => ({}));
+    
+    if (requestBody && requestBody.ping === true) {
+      console.log('[PriceList] Ping request received');
+      return new Response(JSON.stringify({ 
+        success: true, 
+        step: 'ping', 
+        message: 'pong' 
+      }), { 
+        status: 200, 
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
     }
 
-    const { dry_run: dryRunIn = true, msrp_markup: msrpMarkupIn } = await req.json().catch(() => ({} as any));
+    const { dry_run: dryRunIn = true, msrp_markup: msrpMarkupIn, url: urlIn } = requestBody;
     const dry_run = Boolean(dryRunIn);
     const effectiveMarkup = Number(msrpMarkupIn ?? 1.1);
+    const priceListUrl = urlIn?.trim() || 'https://www.harrisboatworks.ca/mercurypricelist';
     
-    console.log(`[PriceList] Starting seed process: dry_run=${dry_run}, msrpMarkup=${effectiveMarkup}`);
+    console.log(`[PriceList] Starting seed process: dry_run=${dry_run}, msrpMarkup=${effectiveMarkup}, url=${priceListUrl}`);
     
     // Step 1: Fetch from URL
     currentStep = 'fetch';
-    const priceListUrl = 'https://www.harrisboatworks.ca/mercurypricelist';
     console.log(`[PriceList] Fetching from URL: ${priceListUrl}`);
     
     const response = await fetch(priceListUrl);
@@ -135,7 +135,7 @@ Deno.serve(async (req) => {
     // Deduplicate by model_number (primary) then model_key (fallback)
     const uniqueKeys = new Map();
     const deduplicatedMotors = [];
-    const skipReasons = new Map();
+    const deduplicationSkips = new Map();
     
     for (const motor of normalizedMotors) {
       const primaryKey = motor.model_number || motor.model_key;
@@ -145,9 +145,12 @@ Deno.serve(async (req) => {
         deduplicatedMotors.push(motor);
       } else {
         const reason = motor.model_number ? `duplicate_model_number:${motor.model_number}` : `duplicate_model_key:${motor.model_key}`;
-        skipReasons.set(reason, (skipReasons.get(reason) || 0) + 1);
+        deduplicationSkips.set(reason, (deduplicationSkips.get(reason) || 0) + 1);
       }
     }
+    
+    // Merge skip reasons
+    const allSkipReasons = new Map([...skipReasons, ...deduplicationSkips]);
     
     console.log(`[PriceList] Deduplicated to ${deduplicatedMotors.length} motors`);
     console.log(`[PriceList] source=${priceListUrl.toUpperCase()} rows_found=${rawRows.length} rows_normalized=${normalizedMotors.length} rows_deduplicated=${deduplicatedMotors.length}`);
@@ -166,7 +169,7 @@ Deno.serve(async (req) => {
       normalized_motors: normalizedMotors.length,
       deduplicated_motors: deduplicatedMotors.length,
       sample_motors: deduplicatedMotors.slice(0, 10),
-      skip_reasons: Object.fromEntries(skipReasons),
+      skip_reasons: Object.fromEntries(allSkipReasons),
       parse_errors: errors.slice(0, 10)
     };
     
@@ -205,8 +208,8 @@ Deno.serve(async (req) => {
         rows_created: deduplicatedMotors.length,
         rows_updated: 0,
         sample_created: debugInfo.samples,
-        rows_skipped_by_reason: Object.fromEntries(skipReasons),
-        top_skip_reasons: Array.from(skipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
+        rows_skipped_by_reason: Object.fromEntries(allSkipReasons),
+        top_skip_reasons: Array.from(allSkipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
         rowErrors: debugInfo.rowErrors,
         snapshot_url: `View Saved HTML: ${jsonPath}`
       }), { 
@@ -261,8 +264,8 @@ Deno.serve(async (req) => {
       rows_created: created,
       rows_updated: updated,
       sample_created: debugInfo.samples,
-      rows_skipped_by_reason: Object.fromEntries(skipReasons),
-      top_skip_reasons: Array.from(skipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
+      rows_skipped_by_reason: Object.fromEntries(allSkipReasons),
+      top_skip_reasons: Array.from(allSkipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
       rowErrors: debugInfo.rowErrors,
       snapshot_url: `View Saved HTML: ${jsonPath}`
     }), { 
