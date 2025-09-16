@@ -474,7 +474,7 @@ function normalizeMotorData(rawRows: any[], msrpMarkup: number) {
         is_brochure: true,
         in_stock: false,
         availability: 'Brochure',
-        fuel_type: ''
+        fuel_type: '',
         
         // Debug info
         raw_cells: [row.model_number, row.model_display, row.dealer_price]
