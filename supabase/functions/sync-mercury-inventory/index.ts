@@ -345,26 +345,31 @@ serve(async (req) => {
 
       // Enhanced HP extraction using multiple patterns
       const hpPatterns = [
-        /(\d+)\s*hp\b/i,           // "25hp", "25 hp"
-        /(\d+)\s*HP\b/,            // "25HP", "25 HP"
-        /(\d+)hp\b/i,              // "25hp" (no space)
-        /\b(\d+)\s*horsepower\b/i  // "25 horsepower"
+        /(\d+(?:\.\d+)?)\s*hp\b/i,     // "25hp", "25 hp", "9.9 hp"
+        /(\d+(?:\.\d+)?)\s*HP\b/,      // "25HP", "25 HP", "9.9 HP"
+        /(\d+(?:\.\d+)?)hp\b/i,        // "25hp", "9.9hp" (no space)
+        /\b(\d+(?:\.\d+)?)\s*horsepower\b/i, // "25 horsepower", "9.9 horsepower"
+        /(\d+(?:\.\d+)?)\s+[A-Z]/,     // "9.9 EH", "115 ELPT", "25 EH"
+        /^(\d+(?:\.\d+)?)\s/           // number at start "9.9 EH", "115 L"
       ];
       
       let hp = null;
       for (const pattern of hpPatterns) {
         const match = normalized.match(pattern);
         if (match) {
-          hp = parseInt(match[1]);
-          break;
+          const hpValue = parseFloat(match[1]);
+          if (hpValue > 0 && hpValue <= 1000) { // Reasonable HP range
+            hp = hpValue;
+            break;
+          }
         }
       }
 
       // Extract important codes (shaft, trim, etc.)
       const codes = [];
-      const codeMatches = normalized.match(/\b(ELPT|ELHPT|EXLPT|EXLPT|EH|MH|XL|Command Thrust|CT|EFI)\b/gi);
+      const codeMatches = normalized.match(/\b(ELPT|ELHPT|EXLPT|EH|MH|XL|XXL|Command Thrust|CT|EFI|PROXS|ProXS|Pro XS|L)\b/gi);
       if (codeMatches) {
-        codes.push(...codeMatches.map(c => c.toUpperCase()));
+        codes.push(...codeMatches.map(c => c.toUpperCase().replace(/PRO\s*XS/i, 'PROXS')));
       }
 
       return { normalized, hp, codes };
@@ -378,26 +383,30 @@ serve(async (req) => {
 
       // Enhanced HP extraction using multiple patterns (same as XML normalization)
       const hpPatterns = [
-        /(\d+)\s*hp\b/i,           // "25hp", "25 hp"
-        /(\d+)\s*HP\b/,            // "25HP", "25 HP"
-        /(\d+)hp\b/i,              // "25hp" (no space)
-        /\b(\d+)\s*horsepower\b/i, // "25 horsepower"
-        /^(\d+)\s/                 // "25 ECXLPT" (number at start)
+        /(\d+(?:\.\d+)?)\s*hp\b/i,     // "25hp", "25 hp", "9.9 hp"
+        /(\d+(?:\.\d+)?)\s*HP\b/,      // "25HP", "25 HP", "9.9 HP"
+        /(\d+(?:\.\d+)?)hp\b/i,        // "25hp", "9.9hp" (no space)
+        /\b(\d+(?:\.\d+)?)\s*horsepower\b/i, // "25 horsepower", "9.9 horsepower"
+        /(\d+(?:\.\d+)?)\s+[A-Z]/,     // "9.9 EH", "115 ELPT", "25 EH"
+        /^(\d+(?:\.\d+)?)\s/           // "25 ECXLPT" (number at start)
       ];
       let hp = null;
       for (const pattern of hpPatterns) {
         const match = normalized.match(pattern);
         if (match) {
-          hp = parseInt(match[1]);
-          break;
+          const hpValue = parseFloat(match[1]);
+          if (hpValue > 0 && hpValue <= 1000) { // Reasonable HP range
+            hp = hpValue;
+            break;
+          }
         }
       }
 
       // Extract codes
       const codes = [];
-      const codeMatches = normalized.match(/\b(ELPT|ELHPT|EXLPT|EH|MH|XL|CT|EFI|Command|Thrust)\b/gi);
+      const codeMatches = normalized.match(/\b(ELPT|ELHPT|EXLPT|EH|MH|XL|XXL|CT|EFI|Command|Thrust|PROXS|ProXS|Pro XS|L)\b/gi);
       if (codeMatches) {
-        codes.push(...codeMatches.map(c => c.toUpperCase()));
+        codes.push(...codeMatches.map(c => c.toUpperCase().replace(/PRO\s*XS/i, 'PROXS')));
       }
 
       return { normalized, hp, codes };
@@ -451,6 +460,22 @@ serve(async (req) => {
       // Normalize XML title
       const xmlData = normalizeXmlTitle(title);
       console.log(`   📝 Normalized XML: "${xmlData.normalized}" (HP: ${xmlData.hp}, Codes: [${xmlData.codes.join(', ')}])`);
+      
+      // Debug HP extraction if missing
+      if (!xmlData.hp) {
+        console.log(`   🔍 HP extraction debug for "${title}": trying different patterns...`);
+        const debugPatterns = [
+          { name: "basic hp", pattern: /(\d+(?:\.\d+)?)\s*hp\b/i },
+          { name: "number space code", pattern: /(\d+(?:\.\d+)?)\s+[A-Z]/ },
+          { name: "start number", pattern: /^(\d+(?:\.\d+)?)\s/ }
+        ];
+        debugPatterns.forEach(({ name, pattern }) => {
+          const match = title.match(pattern);
+          if (match) {
+            console.log(`     ✓ ${name}: found ${match[1]}`);
+          }
+        });
+      }
 
       let bestMatch = null;
       let bestScore = 0;
@@ -493,8 +518,8 @@ serve(async (req) => {
         }
       }
 
-      // Update best match if found
-      if (bestMatch && bestScore >= 40) {
+      // Update best match if found (lowered threshold to catch more matches)
+      if (bestMatch && bestScore >= 35) {
         try {
           const { error: updateError } = await supabase
             .from('motor_models')
