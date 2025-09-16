@@ -454,6 +454,7 @@ export type Database = {
       }
       motor_models: {
         Row: {
+          accessory_notes: Json
           availability: string | null
           base_price: number | null
           catalog_snapshot_url: string | null
@@ -512,6 +513,7 @@ export type Database = {
           year: number
         }
         Insert: {
+          accessory_notes?: Json
           availability?: string | null
           base_price?: number | null
           catalog_snapshot_url?: string | null
@@ -570,6 +572,7 @@ export type Database = {
           year?: number
         }
         Update: {
+          accessory_notes?: Json
           availability?: string | null
           base_price?: number | null
           catalog_snapshot_url?: string | null

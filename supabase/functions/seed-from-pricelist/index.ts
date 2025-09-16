@@ -1,16 +1,247 @@
-import "https://deno.land/x/xhr@0.1.0/mod.ts";
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { load } from 'https://esm.sh/cheerio@1.0.0-rc.12';
-
-// Import shared Mercury codes system
-import { parseMercuryRigCodes, buildMercuryModelKey, type RigAttrs } from '../_shared/mercury-codes.ts';
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+import { load } from 'https://esm.sh/cheerio@1.0.0-rc.12'
+import { parseMercuryRigCodes, buildMercuryModelKey } from '../shared/mercury-parser.ts'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-  'Access-Control-Max-Age': '86400',
+}
+
+interface ParsedMotor {
+  model_display: string;
+  model_key: string;
+  mercury_model_no?: string;
+  family?: string;
+  horsepower?: number;
+  fuel_type?: string;
+  model_code?: string;
+  dealer_price?: number;
+  accessory_notes: string[];
+  raw_text?: string;
+}
+
+interface SeededResult {
+  success: boolean;
+  content_source: 'url' | 'html' | 'csv';
+  source_kind: 'html_table' | 'html_text' | 'raw_csv';
+  html_snapshot_url?: string;
+  rows_found_raw: number;
+  rows_parsed: number;
+  rows_created: number;
+  rows_updated: number;
+  rows_skipped_total: number;
+  rows_skipped_by_reason: Record<string, number>;
+  top_skip_reasons: string[];
+  sample_created: any[];
+  sample_skipped: any[];
+  checksum?: string;
+  artifacts?: any;
+  rowErrors?: string[];
+  rowMatches?: string[];
+  unique_model_keys?: string[];
+}
+
+// Rigging code tokenization
+const RIGGING_TOKENS = {
+  'E': 'Electric Start',
+  'M': 'Manual Start', 
+  'H': 'Tiller Handle',
+  'L': 'Long Shaft 20"',
+  'XL': 'Extra Long 25"',
+  'XXL': 'Extra Extra Long 30"',
+  'PT': 'Power Trim',
+  'CT': 'Command Thrust',
+  'DTS': 'Digital Throttle & Shift',
+  'JPO': 'Jet Pump Option',
+  'TILLER': 'Tiller',
+  'EL': 'Electric Long',
+  'ELH': 'Electric Long Handle',
+  'ELPT': 'Electric Long Power Trim',
+  'EXLPT': 'Electric Extra Long Power Trim',
+  'EH': 'Electric Handle',
+  'ELO': 'Electric Long Option',
+  'MH': 'Manual Handle'
 };
+
+const TOKEN_ORDER = ['E', 'M', 'H', 'L', 'XL', 'XXL', 'PT', 'CT', 'DTS', 'JPO', 'TILLER'];
+
+function tokenizeRigging(text: string): string[] {
+  const upperText = text.toUpperCase();
+  const foundTokens: string[] = [];
+  
+  // Handle composite tokens first
+  const composites = ['EXLPT', 'ELPT', 'ELH', 'ELO'];
+  for (const comp of composites) {
+    if (upperText.includes(comp)) {
+      // Split composite into component tokens
+      if (comp === 'EXLPT') {
+        foundTokens.push('E', 'XL', 'PT');
+      } else if (comp === 'ELPT') {
+        foundTokens.push('E', 'L', 'PT');
+      } else if (comp === 'ELH') {
+        foundTokens.push('E', 'L', 'H');
+      } else if (comp === 'ELO') {
+        foundTokens.push('E', 'L');
+      }
+    }
+  }
+  
+  // Handle individual tokens if no composites found
+  if (foundTokens.length === 0) {
+    for (const token of Object.keys(RIGGING_TOKENS)) {
+      if (token.length > 1) { // Multi-letter tokens first
+        if (upperText.includes(token)) {
+          foundTokens.push(token);
+        }
+      }
+    }
+    
+    // Single letter tokens
+    for (const token of ['E', 'M', 'H']) {
+      if (upperText.includes(token) && !foundTokens.some(t => t.includes(token))) {
+        foundTokens.push(token);
+      }
+    }
+  }
+  
+  // Order tokens according to canonical order
+  const orderedTokens: string[] = [];
+  for (const token of TOKEN_ORDER) {
+    if (foundTokens.includes(token)) {
+      orderedTokens.push(token);
+    }
+  }
+  
+  return orderedTokens;
+}
+
+function detectFamily(text: string): string | undefined {
+  const upperText = text.toUpperCase();
+  const families = ['FOURSTROKE', 'PROXS', 'SEAPRO', 'VERADO', 'RACING'];
+  
+  for (const family of families) {
+    if (upperText.includes(family) || upperText.includes(family.replace('FOURSTROKE', '4-STROKE'))) {
+      return family === 'FOURSTROKE' ? 'FourStroke' : 
+             family === 'PROXS' ? 'ProXS' :
+             family === 'SEAPRO' ? 'SeaPro' : family;
+    }
+  }
+  
+  // Default to FourStroke if none detected
+  return 'FourStroke';
+}
+
+function parseHorsepower(text: string): number | undefined {
+  const hpMatch = text.match(/(\d+(?:\.\d+)?)\s*HP/i);
+  if (hpMatch) {
+    return parseFloat(hpMatch[1]);
+  }
+  
+  // Try without HP suffix
+  const numMatch = text.match(/^(\d+(?:\.\d+)?)/);
+  if (numMatch && parseFloat(numMatch[1]) <= 600) {
+    return parseFloat(numMatch[1]);
+  }
+  
+  return undefined;
+}
+
+function detectAccessoryNotes(text: string): string[] {
+  const notes: string[] = [];
+  
+  // Detect symbols
+  if (text.includes('†') || text.includes('&#8224;')) {
+    notes.push('Propeller Included');
+  }
+  if (text.includes('‡') || text.includes('&#8225;')) {
+    notes.push('Fuel Tank Included');
+  }
+  
+  // Detect phrases
+  if (text.toLowerCase().includes('propeller included')) {
+    if (!notes.includes('Propeller Included')) {
+      notes.push('Propeller Included');
+    }
+  }
+  if (text.toLowerCase().includes('fuel tank included')) {
+    if (!notes.includes('Fuel Tank Included')) {
+      notes.push('Fuel Tank Included');
+    }
+  }
+  
+  return notes;
+}
+
+function cleanModelText(text: string): string {
+  // Remove HTML tags
+  let cleaned = text.replace(/<[^>]*>/g, '');
+  
+  // Remove accessory symbols and phrases
+  cleaned = cleaned.replace(/[†‡]/g, '');
+  cleaned = cleaned.replace(/&#822[45];/g, '');
+  cleaned = cleaned.replace(/\(propeller included\)/gi, '');
+  cleaned = cleaned.replace(/\(fuel tank included\)/gi, '');
+  cleaned = cleaned.replace(/propeller included/gi, '');
+  cleaned = cleaned.replace(/fuel tank included/gi, '');
+  
+  // Clean whitespace
+  return cleaned.trim().replace(/\s+/g, ' ');
+}
+
+function buildModelDisplay(motor: Partial<ParsedMotor>): string {
+  let display = '';
+  
+  // Add HP with space
+  if (motor.horsepower) {
+    display += `${motor.horsepower} HP`;
+  }
+  
+  // Add EFI if present
+  if (motor.fuel_type === 'EFI') {
+    display += ' EFI';
+  }
+  
+  // Add family if not FourStroke
+  if (motor.family && motor.family !== 'FourStroke') {
+    display += ` ${motor.family}`;
+  }
+  
+  // Add rigging codes
+  if (motor.model_code) {
+    display += ` ${motor.model_code}`;
+  }
+  
+  return display.trim();
+}
+
+function buildModelKey(motor: Partial<ParsedMotor>): string {
+  const parts: string[] = [];
+  
+  // Family (uppercase)
+  if (motor.family) {
+    parts.push(motor.family.toUpperCase());
+  } else {
+    parts.push('FOURSTROKE');
+  }
+  
+  // HP (no space)
+  if (motor.horsepower) {
+    parts.push(`${motor.horsepower}HP`);
+  }
+  
+  // EFI if present
+  if (motor.fuel_type === 'EFI') {
+    parts.push('EFI');
+  }
+  
+  // Rigging codes (individual tokens)
+  if (motor.model_code) {
+    const tokens = tokenizeRigging(motor.model_code);
+    parts.push(...tokens);
+  }
+  
+  return parts.join('-').toUpperCase();
+}
 
 // Enhanced text cleaning for messy HTML formatting
 function cleanText(text: string): string {
@@ -422,7 +653,7 @@ function msrpFromDealer(dealerPrice: number | null, markup: number): number | nu
   return Math.round(dealerPrice * markup * 100) / 100;
 }
 
-serve(async (req) => {
+Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
