@@ -217,7 +217,7 @@ Deno.serve(async (req) => {
       
       debugInfo.samples = deduplicatedMotors.slice(0, 10).map(m => ({
         model_number: m.model_number,
-        model_display: m.model_display,
+        model_display: m.model_display, // Include human-readable display
         rigging_code: m.rigging_code,
         accessories_included: m.accessories_included,
         dealer_price: m.dealer_price,
@@ -357,7 +357,7 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
     try {
       const row = rawRows[i];
       const modelNumber = (row.model_number || '').trim();
-      const description = (row.model_display || '').trim();
+      const base = (row.model_display_raw || '').replace(/\s+/g, ' ').replace(/[†‡]/g, '').trim();
       
       // Defensive coercion for prices
       const dealerPrice = Number(String(row.dealer_price).replace(/[^0-9.]/g, '')) || 0;
@@ -369,7 +369,7 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
         errors.push({ row_index: i, error: 'Empty model number', data: row });
         continue;
       }
-      if (!description) {
+      if (!base) {
         skipReasons.set('empty_description', (skipReasons.get('empty_description') || 0) + 1);
         errors.push({ row_index: i, error: 'Empty description', data: row });
         continue;
@@ -386,12 +386,12 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
       }
       
       // Parse Mercury model from description (e.g., "25MH FourStroke †‡")
-      const descriptionClean = description.replace(/[†‡]/g, '').trim();
+      const descriptionClean = base;
       
       // Extract accessories from symbols
       const accessories = [];
-      if (description.includes('†')) accessories.push('Propeller Included');
-      if (description.includes('‡')) accessories.push('Fuel Tank Included');
+      if (row.model_display_raw && row.model_display_raw.includes('†')) accessories.push('Propeller Included');
+      if (row.model_display_raw && row.model_display_raw.includes('‡')) accessories.push('Fuel Tank Included');
       
       // Parse model components
       const parts = descriptionClean.split(/\s+/);
@@ -457,18 +457,14 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
         riggingDescription = riggingParts.join(', ');
       }
       
-      // Generate clean model display: [Horsepower] [Rigging Codes] [Family]
-      let modelDisplay = '';
-      if (horsepower) {
-        modelDisplay += `${horsepower} `;
-      }
-      if (riggingCodes) {
-        modelDisplay += riggingCodes + ' ';
-      }
-      if (family) {
-        modelDisplay += family;
-      }
-      modelDisplay = modelDisplay.trim();
+      // Generate clean model display: prefer original brochure text, fallback to canonical display
+      const canonicalDisplay = [
+        horsepower && `${horsepower}`,
+        mercuryModelNo && mercuryModelNo.replace(/^\d+(?:\.\d+)?/, ''), // rigging codes only
+        family
+      ].filter(Boolean).join(' ').trim();
+      
+      const model_display = base || canonicalDisplay || 'Mercury Outboard';
       
         // Generate unique model_key with model_number as primary identifier
         const modelKey = [
@@ -484,8 +480,8 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
           mercury_model_no: mercuryModelNo || '', // Parsed model (25MH, etc.)
           
           // Display and description
-          display_name: modelDisplay || description,
-          model_display: description,
+          model_display: model_display, // Human-readable brochure text
+          display_name: model_display,
           model: family || 'Outboard', // Required field - fallback to Outboard
           model_key: modelKey,
           
@@ -524,7 +520,7 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
           updated_at: new Date().toISOString(),
           
           // Debug info
-          raw_cells: [row.model_number, row.model_display, row.dealer_price]
+          raw_cells: [row.model_number, row.model_display_raw, row.dealer_price]
         };
         
         // Debug log for required fields
@@ -613,7 +609,7 @@ function parseHTMLTables(html: string) {
 function getColumnMapping(headers: string[]) {
   const mapping = {
     model_number: 0,  // Default to first column
-    model_display: 1, // Default to second column  
+    model_description: 1, // Default to second column (raw description)
     dealer_price: 2   // Default to third column
   };
   
@@ -622,14 +618,15 @@ function getColumnMapping(headers: string[]) {
     
     if (lowerHeader.includes('model') && lowerHeader.includes('#')) {
       mapping.model_number = index; // Model # column
-    } else if (lowerHeader.includes('description') || lowerHeader.includes('model')) {
-      mapping.model_display = index; // Description/Model column
+    } else if (lowerHeader.includes('description') || lowerHeader.includes('model name') || 
+               (lowerHeader.includes('model') && !lowerHeader.includes('#'))) {
+      mapping.model_description = index; // Description/Model column
     } else if (lowerHeader.includes('price') || lowerHeader.includes('our price')) {
       mapping.dealer_price = index; // Price column
     }
   });
   
-  console.log(`[PriceList] Column mapping: model_number=${mapping.model_number}, model_display=${mapping.model_display}, dealer_price=${mapping.dealer_price}`);
+  console.log(`[PriceList] Column mapping: model_number=${mapping.model_number}, model_description=${mapping.model_description}, dealer_price=${mapping.dealer_price}`);
   return mapping;
 }
 
@@ -649,15 +646,15 @@ function extractTableData(table: any, columnMapping: any) {
     
     const dataRow = {
       model_number: (row[columnMapping.model_number] || '').trim(),
-      model_display: (row[columnMapping.model_display] || '').trim(), 
+      model_display_raw: (row[columnMapping.model_description] || '').trim(), 
       dealer_price: (row[columnMapping.dealer_price] || '').trim()
     };
     
     // Only include rows with meaningful data
     if (!dataRow.model_number) {
       skipReasons.set('missing_model_number', (skipReasons.get('missing_model_number') || 0) + 1);
-    } else if (!dataRow.model_display) {
-      skipReasons.set('missing_model_display', (skipReasons.get('missing_model_display') || 0) + 1);
+    } else if (!dataRow.model_display_raw) {
+      skipReasons.set('missing_model_display_raw', (skipReasons.get('missing_model_display_raw') || 0) + 1);
     } else if (!dataRow.dealer_price) {
       skipReasons.set('missing_dealer_price', (skipReasons.get('missing_dealer_price') || 0) + 1);
     } else {

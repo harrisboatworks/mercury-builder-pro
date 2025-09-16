@@ -21,6 +21,7 @@ interface ParseResult {
   top_skip_reasons: string[];
   reject_reasons?: string[];
   sample_created?: Array<{
+    model_display?: string; // Human-readable brochure text
     model: string;
     model_key: string;
     model_number?: string; // Mercury's actual model number
@@ -49,6 +50,7 @@ interface BrochureSummary {
   families: Array<{ family: string; count: number }>;
   latest_samples: Array<{
     id: string;
+    model_display?: string; // Human-readable brochure text
     model: string;
     model_number?: string;
     mercury_model_no?: string;
@@ -106,7 +108,7 @@ export default function AdminBrochureTest() {
       // Get latest 10 samples  
       const { data: samples, error: samplesError } = await supabase
         .from('motor_models')
-        .select('id, model_number, model, mercury_model_no, model_key, family, horsepower, rigging_code, dealer_price, msrp, created_at')
+        .select('id, model_display, model_number, model, mercury_model_no, model_key, family, horsepower, rigging_code, dealer_price, msrp, created_at')
         .eq('is_brochure', true)
         .eq('make', 'Mercury')
         .order('created_at', { ascending: false })
@@ -327,7 +329,7 @@ export default function AdminBrochureTest() {
         // Get all brochure models with the required fields
         const { data: models, error } = await supabase
           .from('motor_models')
-          .select('model_number, mercury_model_no, model, model_key, family, horsepower, rigging_code, accessories_included, dealer_price, msrp, created_at')
+          .select('model_display, model_number, mercury_model_no, model, model_key, family, horsepower, rigging_code, accessories_included, dealer_price, msrp, created_at')
           .eq('is_brochure', true)
           .eq('make', 'Mercury')
           .order('created_at', { ascending: false });
@@ -344,7 +346,7 @@ export default function AdminBrochureTest() {
         console.log('Export sample model numbers:', models.slice(0, 3).map(m => m.model_number));
 
       // Convert to CSV
-      const headers = ['model_number', 'mercury_model_no', 'model', 'model_key', 'family', 'horsepower', 'rigging_code', 'accessories_included', 'dealer_price', 'msrp', 'created_at'];
+      const headers = ['model_display', 'model_number', 'mercury_model_no', 'model', 'model_key', 'family', 'horsepower', 'rigging_code', 'accessories_included', 'dealer_price', 'msrp', 'created_at'];
       const csvRows = [
         headers.join(','),
         ...models.map(row => 
@@ -572,7 +574,7 @@ export default function AdminBrochureTest() {
                       console.log('Dry run sample item:', item); // Debug log
                       return (
                         <TableRow key={idx}>
-                          <TableCell className="font-medium">{item.model}</TableCell>
+                          <TableCell className="font-medium text-foreground">{item.model_display || item.model || '—'}</TableCell>
                           <TableCell className="font-mono text-xs bg-emerald-500/10 text-emerald-700 border">
                             {item.model_number || item.model_key || 'Empty'}
                           </TableCell>
@@ -788,7 +790,7 @@ export default function AdminBrochureTest() {
                     <TableBody>
                       {summary.latest_samples.map((sample, idx) => (
                         <TableRow key={sample.id || idx}>
-                          <TableCell className="font-medium">{sample.model || 'N/A'}</TableCell>
+                          <TableCell className="font-medium text-foreground">{sample.model_display || sample.model || '—'}</TableCell>
                           <TableCell className="font-mono text-xs bg-blue-500/10 text-blue-700 border">
                             {sample.model_number || 'Empty'}
                           </TableCell>
