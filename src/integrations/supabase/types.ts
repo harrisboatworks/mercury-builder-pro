@@ -167,6 +167,48 @@ export type Database = {
         }
         Relationships: []
       }
+      dropbox_sync_config: {
+        Row: {
+          auto_categorize: boolean | null
+          created_at: string
+          error_message: string | null
+          files_synced: number | null
+          folder_path: string
+          id: string
+          last_sync_at: string | null
+          motor_assignment_rule: string | null
+          sync_enabled: boolean | null
+          sync_status: string | null
+          updated_at: string
+        }
+        Insert: {
+          auto_categorize?: boolean | null
+          created_at?: string
+          error_message?: string | null
+          files_synced?: number | null
+          folder_path: string
+          id?: string
+          last_sync_at?: string | null
+          motor_assignment_rule?: string | null
+          sync_enabled?: boolean | null
+          sync_status?: string | null
+          updated_at?: string
+        }
+        Update: {
+          auto_categorize?: boolean | null
+          created_at?: string
+          error_message?: string | null
+          files_synced?: number | null
+          folder_path?: string
+          id?: string
+          last_sync_at?: string | null
+          motor_assignment_rule?: string | null
+          sync_enabled?: boolean | null
+          sync_status?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       email_templates: {
         Row: {
           created_at: string
@@ -452,6 +494,125 @@ export type Database = {
         }
         Relationships: []
       }
+      motor_media: {
+        Row: {
+          alt_text: string | null
+          assignment_rules: Json | null
+          assignment_type: string
+          created_at: string
+          created_by: string | null
+          description: string | null
+          display_order: number | null
+          dropbox_path: string | null
+          dropbox_sync_status: string | null
+          file_size: number | null
+          id: string
+          is_active: boolean
+          media_category: string
+          media_type: string
+          media_url: string
+          metadata: Json | null
+          mime_type: string | null
+          motor_id: string | null
+          original_filename: string | null
+          title: string | null
+          updated_at: string
+        }
+        Insert: {
+          alt_text?: string | null
+          assignment_rules?: Json | null
+          assignment_type?: string
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          display_order?: number | null
+          dropbox_path?: string | null
+          dropbox_sync_status?: string | null
+          file_size?: number | null
+          id?: string
+          is_active?: boolean
+          media_category?: string
+          media_type: string
+          media_url: string
+          metadata?: Json | null
+          mime_type?: string | null
+          motor_id?: string | null
+          original_filename?: string | null
+          title?: string | null
+          updated_at?: string
+        }
+        Update: {
+          alt_text?: string | null
+          assignment_rules?: Json | null
+          assignment_type?: string
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          display_order?: number | null
+          dropbox_path?: string | null
+          dropbox_sync_status?: string | null
+          file_size?: number | null
+          id?: string
+          is_active?: boolean
+          media_category?: string
+          media_type?: string
+          media_url?: string
+          metadata?: Json | null
+          mime_type?: string | null
+          motor_id?: string | null
+          original_filename?: string | null
+          title?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "motor_media_motor_id_fkey"
+            columns: ["motor_id"]
+            isOneToOne: false
+            referencedRelation: "motor_models"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      motor_media_assignment_rules: {
+        Row: {
+          conditions: Json
+          created_at: string
+          created_by: string | null
+          description: string | null
+          id: string
+          is_active: boolean
+          media_assignments: Json
+          priority: number
+          rule_name: string
+          updated_at: string
+        }
+        Insert: {
+          conditions?: Json
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          id?: string
+          is_active?: boolean
+          media_assignments?: Json
+          priority?: number
+          rule_name: string
+          updated_at?: string
+        }
+        Update: {
+          conditions?: Json
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          id?: string
+          is_active?: boolean
+          media_assignments?: Json
+          priority?: number
+          rule_name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       motor_models: {
         Row: {
           accessories_included: Json | null
@@ -477,6 +638,7 @@ export type Database = {
           has_command_thrust: boolean | null
           has_power_trim: boolean | null
           hero_image_url: string | null
+          hero_media_id: string | null
           horsepower: number | null
           id: string
           image_url: string | null
@@ -489,6 +651,8 @@ export type Database = {
           last_stock_check: string | null
           make: string
           manual_overrides: Json | null
+          media_last_updated: string | null
+          media_summary: Json | null
           mercury_model_no: string | null
           model: string
           model_code: string | null
@@ -540,6 +704,7 @@ export type Database = {
           has_command_thrust?: boolean | null
           has_power_trim?: boolean | null
           hero_image_url?: string | null
+          hero_media_id?: string | null
           horsepower?: number | null
           id?: string
           image_url?: string | null
@@ -552,6 +717,8 @@ export type Database = {
           last_stock_check?: string | null
           make?: string
           manual_overrides?: Json | null
+          media_last_updated?: string | null
+          media_summary?: Json | null
           mercury_model_no?: string | null
           model: string
           model_code?: string | null
@@ -603,6 +770,7 @@ export type Database = {
           has_command_thrust?: boolean | null
           has_power_trim?: boolean | null
           hero_image_url?: string | null
+          hero_media_id?: string | null
           horsepower?: number | null
           id?: string
           image_url?: string | null
@@ -615,6 +783,8 @@ export type Database = {
           last_stock_check?: string | null
           make?: string
           manual_overrides?: Json | null
+          media_last_updated?: string | null
+          media_summary?: Json | null
           mercury_model_no?: string | null
           model?: string
           model_code?: string | null
@@ -642,7 +812,15 @@ export type Database = {
           updated_at?: string | null
           year?: number
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "motor_models_hero_media_id_fkey"
+            columns: ["hero_media_id"]
+            isOneToOne: false
+            referencedRelation: "motor_media"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       notifications: {
         Row: {
