@@ -564,28 +564,28 @@ export default function AdminBrochureTest() {
                           </TableRow>
                         </TableHeader>
                         <TableBody>
-                          {result.sample_created.map((item, idx) => {
-                            console.log('Dry run sample item:', item); // Debug log
-                            return (
-                              <TableRow key={idx}>
-                                <TableCell className="font-medium">{item.model}</TableCell>
-                                <TableCell className="font-mono text-xs bg-emerald-500/10 text-emerald-700">
-                                  {item.model_number || item.model_key || 'Empty'}
-                                </TableCell>
-                                <TableCell className="font-mono text-xs">{item.mercury_model_no || 'N/A'}</TableCell>
-                                <TableCell className="text-sm">{item.rigging_code || 'N/A'}</TableCell>
-                                <TableCell className="text-sm">
-                                  {Array.isArray(item.accessories_included) && item.accessories_included.length > 0 
-                                    ? item.accessories_included.join(', ')
-                                    : 'None'
-                                  }
-                                </TableCell>
-                                <TableCell>{item.horsepower}</TableCell>
-                                <TableCell>${item.dealer_price?.toLocaleString()}</TableCell>
-                                <TableCell>${item.msrp?.toLocaleString()}</TableCell>
-                              </TableRow>
-                            );
-                          })}
+                    {result.sample_created.map((item, idx) => {
+                      console.log('Dry run sample item:', item); // Debug log
+                      return (
+                        <TableRow key={idx}>
+                          <TableCell className="font-medium">{item.model}</TableCell>
+                          <TableCell className="font-mono text-xs bg-emerald-500/10 text-emerald-700 border">
+                            {item.model_number || item.model_key || 'Empty'}
+                          </TableCell>
+                          <TableCell className="font-mono text-xs">{item.mercury_model_no || 'N/A'}</TableCell>
+                          <TableCell className="text-sm">{item.rigging_code || 'N/A'}</TableCell>
+                          <TableCell className="text-sm">
+                            {Array.isArray(item.accessories_included) && item.accessories_included.length > 0 
+                              ? item.accessories_included.join(', ')
+                              : 'None'
+                            }
+                          </TableCell>
+                          <TableCell>{item.horsepower}</TableCell>
+                          <TableCell>${item.dealer_price?.toLocaleString()}</TableCell>
+                          <TableCell>${item.msrp?.toLocaleString()}</TableCell>
+                        </TableRow>
+                      );
+                    })}
                         </TableBody>
                       </Table>
                     </div>
@@ -785,7 +785,7 @@ export default function AdminBrochureTest() {
                       {summary.latest_samples.map((sample, idx) => (
                         <TableRow key={sample.id || idx}>
                           <TableCell className="font-medium">{sample.model || 'N/A'}</TableCell>
-                          <TableCell className="font-mono text-xs bg-blue-500/10 text-blue-700">
+                          <TableCell className="font-mono text-xs bg-blue-500/10 text-blue-700 border">
                             {sample.model_number || 'Empty'}
                           </TableCell>
                           <TableCell className="font-mono text-xs">{sample.mercury_model_no || 'N/A'}</TableCell>

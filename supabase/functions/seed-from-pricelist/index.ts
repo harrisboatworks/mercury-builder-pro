@@ -294,18 +294,21 @@ Deno.serve(async (req) => {
       for (let i = 0; i < toInsert.length; i += 100) {
         const chunk = toInsert.slice(i, i + 100);
         console.log(`[PriceList] Inserting batch ${Math.floor(i/100) + 1}: ${chunk.length} motors`);
+        console.log(`[PriceList] Sample insert record:`, JSON.stringify(chunk[0], null, 2));
         
         const { data, error } = await supabase
           .from('motor_models')
           .insert(chunk)
-          .select('id');
+          .select('id, model_number');
         
         if (error) {
           console.error(`[PriceList] Insert error for batch ${Math.floor(i/100) + 1}:`, error);
+          console.error(`[PriceList] Error details:`, JSON.stringify(error, null, 2));
           console.error(`[PriceList] Sample failed record:`, JSON.stringify(chunk[0], null, 2));
           failed += Math.min(100, toInsert.length - i);
         } else {
           console.log(`[PriceList] Successfully inserted ${data?.length || 0} motors in batch ${Math.floor(i/100) + 1}`);
+          console.log(`[PriceList] Inserted model_numbers:`, data?.map(d => d.model_number).join(', '));
           created += (data?.length || 0);
         }
       }
@@ -317,17 +320,23 @@ Deno.serve(async (req) => {
         
         // Use proper update with individual record updates since we can't bulk update with different values
         for (const motor of chunk) {
+          console.log(`[PriceList] Updating motor: ${motor.model_number}`);
+          
           const { data, error } = await supabase
             .from('motor_models')
             .update(motor)
             .eq('model_number', motor.model_number)
-            .select('id');
+            .select('id, model_number');
           
           if (error) {
             console.error(`[PriceList] Update error for ${motor.model_number}:`, error);
+            console.error(`[PriceList] Update error details:`, JSON.stringify(error, null, 2));
             failed += 1;
           } else if (data && data.length > 0) {
+            console.log(`[PriceList] Successfully updated motor: ${motor.model_number}`);
             updated += 1;
+          } else {
+            console.log(`[PriceList] No rows updated for: ${motor.model_number} (may not exist)`);
           }
         }
       }
@@ -458,55 +467,61 @@ function normalizeMotorData(rawRows: any[], msrp_markup: number) {
       }
       modelDisplay = modelDisplay.trim();
       
-      // Generate unique model_key with model_number as primary identifier
-      const modelKey = [
-        modelNumber,
-        horsepower || '',
-        riggingCodes || '',
-        family || ''
-      ].filter(Boolean).join('-').toLowerCase().replace(/[^a-z0-9.-]/g, '');
+        // Generate unique model_key with model_number as primary identifier
+        const modelKey = [
+          modelNumber.toLowerCase(),
+          horsepower || '',
+          riggingCodes.toLowerCase() || '',
+          family.toLowerCase() || ''
+        ].filter(Boolean).join('-').replace(/[^a-z0-9.-]/g, '');
       
-      const result = {
-        // Mercury identifiers
-        model_number: modelNumber, // Official Mercury model number (1F02201KK, etc.)
-        mercury_model_no: mercuryModelNo, // Parsed model (25MH, etc.)
+        const result = {
+          // Mercury identifiers
+          model_number: modelNumber, // Official Mercury model number (1F02201KK, etc.)
+          mercury_model_no: mercuryModelNo, // Parsed model (25MH, etc.)
+          
+          // Display and description
+          display_name: modelDisplay,
+          model: family || 'FourStroke', // Required field - default to FourStroke if family not found
+          model_key: modelKey,
+          
+          // Technical specs
+          family: family || 'FourStroke', // Default to FourStroke if not detected
+          horsepower: horsepower,
+          rigging_code: riggingDescription,
+          accessories_included: accessories,
+          
+          // Pricing
+          dealer_price: dealerPrice,
+          base_price: dealerPrice,
+          sale_price: dealerPrice,
+          msrp: Math.round(dealerPrice * msrp_markup),
+          
+          // Source tracking
+          price_source: 'harris_pricelist',
+          msrp_source: 'calculated',
+          msrp_calc_source: `dealer_price * ${msrp_markup}`,
+          
+          // Database required fields
+          make: 'Mercury',
+          motor_type: family || 'FourStroke', // Required field - default to FourStroke
+          year: 2025,
+          is_brochure: true,
+          in_stock: false,
+          availability: 'Brochure',
+          fuel_type: '',
+          
+          // Required jsonb fields with defaults
+          accessory_notes: [],
+          
+          // Debug info
+          raw_cells: [row.model_number, row.model_display, row.dealer_price]
+        };
         
-        // Display and description
-        display_name: modelDisplay,
-        model: family || 'Outboard', 
-        model_key: modelKey,
+        // Debug log for required fields
+        console.log(`[PriceList] Row ${i + 1} required fields: model="${result.model}", motor_type="${result.motor_type}", make="${result.make}"`);
         
-        // Technical specs
-        family: family,
-        horsepower: horsepower,
-        rigging_code: riggingDescription,
-        accessories_included: accessories,
-        
-        // Pricing
-        dealer_price: dealerPrice,
-        base_price: dealerPrice,
-        sale_price: dealerPrice,
-        msrp: Math.round(dealerPrice * msrp_markup),
-        
-        // Source tracking
-        price_source: 'harris_pricelist',
-        msrp_source: 'calculated',
-        msrp_calc_source: `dealer_price * ${msrp_markup}`,
-        
-        // Database required fields
-        make: 'Mercury',
-        motor_type: family || 'Outboard',
-        year: 2025,
-        is_brochure: true,
-        in_stock: false,
-        availability: 'Brochure',
-        fuel_type: '',
-        
-        // Debug info
-        raw_cells: [row.model_number, row.model_display, row.dealer_price]
-      };
-      
-      results.push(result);
+        results.push(result);
       
     } catch (rowError) {
       skipReasons.set('processing_error', (skipReasons.get('processing_error') || 0) + 1);
