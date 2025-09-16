@@ -9,8 +9,9 @@ import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { AlertCircle, Upload, Link as LinkIcon, Image, FileText, DollarSign, Download, ExternalLink } from "lucide-react";
+import { AlertCircle, Upload, Link as LinkIcon, Image, FileText, DollarSign, Download, ExternalLink, ChevronDown } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import AdminNav from "@/components/admin/AdminNav";
@@ -622,245 +623,151 @@ export default function AdminSources() {
               </div>
 
               {pricelistResults && (
-                <div className="mt-4 p-4 bg-muted rounded-lg">
-                  {pricelistResults.success ? (
-                    <div className="space-y-4">
-                      {/* Enhanced Summary Badges */}
-                      <div className="flex flex-wrap gap-2">
-                        <Badge variant="secondary">
-                          {pricelistResults.rows_parsed} parsed
-                        </Badge>
-                        {pricelistResults.rows_normalized && (
-                          <Badge variant="outline">
-                            {pricelistResults.rows_normalized} normalized
-                          </Badge>
-                        )}
-                        <Badge variant="default">
-                          {pricelistResults.rows_created || 0} created
-                        </Badge>
-                        <Badge variant="outline">
-                          {pricelistResults.rows_updated || 0} updated
-                        </Badge>
-                        {pricelistResults.rows_skipped > 0 && (
-                          <Badge variant="secondary">
-                            {pricelistResults.rows_skipped} unchanged
-                          </Badge>
-                        )}
-                        {pricelistResults.rows_with_invalid_key > 0 && (
-                          <Badge variant="destructive">
-                            {pricelistResults.rows_with_invalid_key} invalid keys
-                          </Badge>
-                        )}
-                        {pricelistResults.rows_with_invalid_price > 0 && (
-                          <Badge variant="destructive">
-                            {pricelistResults.rows_with_invalid_price} invalid prices
-                          </Badge>
-                        )}
-                        {pricelistResults.duplicates_in_feed > 0 && (
-                          <Badge variant="outline">
-                            {pricelistResults.duplicates_in_feed} duplicates
-                          </Badge>
-                        )}
-                        {pricelistResults.skipped_due_to_same_checksum && (
-                          <Badge variant="secondary">
-                            Skipped - No changes
-                          </Badge>
-                        )}
-                      </div>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-medium">Price List Results</h3>
+                    <Badge variant={pricelistResults.success ? "default" : "destructive"}>
+                      {pricelistResults.success ? "Success" : "Error"}
+                    </Badge>
+                  </div>
 
-                      {/* Artifacts */}
-                      {pricelistResults.artifacts && (
-                        <div className="space-y-2">
-                          <Label className="text-sm font-medium">Download Artifacts:</Label>
-                          <div className="flex flex-wrap gap-2">
-                            {pricelistResults.artifacts.html_url && (
-                              <Button size="sm" variant="outline" asChild>
-                                <a href={pricelistResults.artifacts.html_url} target="_blank" rel="noopener noreferrer">
-                                  <Download className="w-4 h-4 mr-1" />
-                                  HTML
-                                </a>
-                              </Button>
-                            )}
-                            {pricelistResults.artifacts.json_url && (
-                              <Button size="sm" variant="outline" asChild>
-                                <a href={pricelistResults.artifacts.json_url} target="_blank" rel="noopener noreferrer">
-                                  <Download className="w-4 h-4 mr-1" />
-                                  JSON
-                                </a>
-                              </Button>
-                            )}
-                            {pricelistResults.artifacts.csv_url && (
-                              <Button size="sm" variant="outline" asChild>
-                                <a href={pricelistResults.artifacts.csv_url} target="_blank" rel="noopener noreferrer">
-                                  <Download className="w-4 h-4 mr-1" />
-                                  CSV
-                                </a>
-                              </Button>
-                            )}
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Collapsible Error Table */}
-                      {pricelistResults.rowErrors && pricelistResults.rowErrors.length > 0 && (
-                        <details className="space-y-2">
-                          <summary className="cursor-pointer text-sm font-medium text-destructive">
-                            Row Errors ({pricelistResults.rowErrors.length} total) - Click to expand
-                          </summary>
-                          <div className="bg-background rounded border p-3 text-sm font-mono overflow-x-auto max-h-60 overflow-y-auto">
-                            <div className="grid grid-cols-5 gap-2 font-semibold border-b pb-2 mb-2 sticky top-0 bg-background">
-                              <div>Line</div>
-                              <div>Model</div>
-                              <div>Key</div>
-                              <div>Price</div>
-                              <div>Reason</div>
-                            </div>
-                            {pricelistResults.rowErrors.slice(0, 50).map((error: any, index: number) => (
-                              <div key={index} className="grid grid-cols-5 gap-2 py-1 text-xs">
-                                <div>{error.line || '-'}</div>
-                                <div className="truncate" title={error.raw_model}>{error.raw_model}</div>
-                                <div className="text-muted-foreground">{error.model_key || '-'}</div>
-                                <div>{error.dealer_price_raw}</div>
-                                <div className="text-destructive">{error.reason}</div>
-                              </div>
-                            ))}
-                          </div>
-                        </details>
-                      )}
-
-                      {/* Collapsible Matches Table */}
-                      {pricelistResults.rowMatches && pricelistResults.rowMatches.length > 0 && (
-                        <details className="space-y-2">
-                          <summary className="cursor-pointer text-sm font-medium">
-                            Row Actions ({pricelistResults.rowMatches.length} total) - Click to expand
-                          </summary>
-                          <div className="bg-background rounded border p-3 text-sm font-mono overflow-x-auto max-h-60 overflow-y-auto">
-                            <div className="grid grid-cols-3 gap-2 font-semibold border-b pb-2 mb-2 sticky top-0 bg-background">
-                              <div>Model Key</div>
-                              <div>Action</div>
-                              <div>Changed Fields</div>
-                            </div>
-                            {pricelistResults.rowMatches.slice(0, 50).map((match: any, index: number) => (
-                              <div key={index} className="grid grid-cols-3 gap-2 py-1 text-xs">
-                                <div className="truncate font-mono">{match.model_key}</div>
-                                <div>
-                                  <Badge 
-                                    variant={match.action === 'created' ? 'default' : match.action === 'updated' ? 'secondary' : 'outline'}
-                                    className="text-xs"
-                                  >
-                                    {match.action}
-                                  </Badge>
-                                </div>
-                                <div className="text-muted-foreground text-xs">
-                                  {match.changed_fields?.join(', ') || '-'}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </details>
-                      )}
-
-                      {/* Sample Data */}
-                      {pricelistResults.sample && pricelistResults.sample.length > 0 && (
-                        <div className="space-y-2">
-                          <Label className="text-sm font-medium">Sample Data (First 5 rows):</Label>
-                          <div className="bg-background rounded border p-3 text-sm font-mono overflow-x-auto">
-                            <div className="grid grid-cols-5 gap-2 font-semibold border-b pb-2 mb-2">
-                              <div>Model</div>
-                              <div>Key</div>
-                              <div>Dealer Price</div>
-                              <div>MSRP</div>
-                              <div>HP</div>
-                            </div>
-                            {pricelistResults.sample.slice(0, 5).map((row: any, index: number) => (
-                              <div key={index} className="grid grid-cols-5 gap-2 py-1">
-                                <div className="truncate" title={row.model_display}>{row.model_display}</div>
-                                <div className="text-muted-foreground">{row.model_key}</div>
-                                <div>${row.dealer_price}</div>
-                                <div>${row.msrp}</div>
-                                <div>{row.horsepower || '-'}</div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Sanity Check Button */}
-                      <div className="pt-4 border-t">
-                        <Button onClick={runSanityQueries} variant="outline" size="sm">
-                          Run Sanity Queries
-                        </Button>
-                        
-                        {sanityResults && (
-                          <div className="mt-3 p-3 bg-muted rounded-lg space-y-2">
-                            <div className="text-sm font-medium">Database Stats:</div>
-                            <div className="grid grid-cols-3 gap-4 text-sm">
-                              <div>
-                                <div className="font-medium">{sanityResults.counts.brochure}</div>
-                                <div className="text-muted-foreground text-xs">Brochure</div>
-                              </div>
-                              <div>
-                                <div className="font-medium">{sanityResults.counts.in_stock}</div>
-                                <div className="text-muted-foreground text-xs">In Stock</div>
-                              </div>
-                              <div>
-                                <div className="font-medium">{sanityResults.counts.total}</div>
-                                <div className="text-muted-foreground text-xs">Total</div>
-                              </div>
-                            </div>
-                            <div className="text-xs text-muted-foreground">
-                              Updated today: {sanityResults.updated_today} • Recent updates: {sanityResults.recently_updated.length}
-                            </div>
-                          </div>
-                        )}
+                  {/* Summary Stats */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="bg-muted p-3 rounded">
+                      <div className="text-sm text-muted-foreground">Step</div>
+                      <div className="font-medium">{pricelistResults.step || 'unknown'}</div>
+                    </div>
+                    <div className="bg-muted p-3 rounded">
+                      <div className="text-sm text-muted-foreground">Raw Rows Found</div>
+                      <div className="font-medium">{pricelistResults.rows_found_raw || 0}</div>
+                    </div>
+                    <div className="bg-muted p-3 rounded">
+                      <div className="text-sm text-muted-foreground">Rows Parsed</div>
+                      <div className="font-medium">{pricelistResults.rows_parsed || 0}</div>
+                    </div>
+                    <div className="bg-muted p-3 rounded">
+                      <div className="text-sm text-muted-foreground">Created/Updated</div>
+                      <div className="font-medium">
+                        {(pricelistResults.rows_created || 0)} / {(pricelistResults.rows_updated || 0)}
                       </div>
                     </div>
-                  ) : (
-                    <Alert variant="destructive">
-                      <AlertCircle className="h-4 w-4" />
-                      <AlertDescription>
+                  </div>
+
+                  {/* Skip Reasons */}
+                  {pricelistResults.rows_skipped_by_reason && Object.keys(pricelistResults.rows_skipped_by_reason).length > 0 && (
+                    <Collapsible>
+                      <CollapsibleTrigger className="flex items-center justify-between w-full p-3 bg-muted rounded hover:bg-muted/80">
+                        <span className="font-medium">Skip Reasons</span>
+                        <ChevronDown className="h-4 w-4" />
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="p-3 border rounded-b bg-background">
                         <div className="space-y-2">
-                          <div><strong>Error:</strong> {pricelistResults.title}</div>
-                          <div><strong>Step:</strong> {pricelistResults.step}</div>
-                          <div>
-                            <strong>Detail:</strong>
-                            <pre className="mt-1 text-xs bg-muted p-2 rounded overflow-x-auto whitespace-pre-wrap">
-                              {pricelistResults.detail}
-                            </pre>
-                          </div>
-                          {/* Show artifact download buttons even on error */}
-                          {pricelistResults.artifacts && (
-                            <div className="mt-3">
-                              <div className="text-sm font-medium mb-2">Debug Artifacts:</div>
-                              <div className="flex gap-2">
-                                {pricelistResults.artifacts.html_url && (
-                                  <Button size="sm" variant="outline" asChild>
-                                    <a href={pricelistResults.artifacts.html_url} target="_blank" rel="noopener noreferrer">
-                                      HTML
-                                    </a>
-                                  </Button>
-                                )}
-                                {pricelistResults.artifacts.json_url && (
-                                  <Button size="sm" variant="outline" asChild>
-                                    <a href={pricelistResults.artifacts.json_url} target="_blank" rel="noopener noreferrer">
-                                      JSON
-                                    </a>
-                                  </Button>
-                                )}
-                                {pricelistResults.artifacts.csv_url && (
-                                  <Button size="sm" variant="outline" asChild>
-                                    <a href={pricelistResults.artifacts.csv_url} target="_blank" rel="noopener noreferrer">
-                                      CSV
-                                    </a>
-                                  </Button>
-                                )}
+                          {Object.entries(pricelistResults.rows_skipped_by_reason).map(([reason, count]) => (
+                            <div key={reason} className="flex justify-between">
+                              <span className="text-sm">{reason.replace(/_/g, ' ')}</span>
+                              <Badge variant="outline">{String(count)}</Badge>
+                            </div>
+                          ))}
+                        </div>
+                      </CollapsibleContent>
+                    </Collapsible>
+                  )}
+
+                  {/* Row Errors */}
+                  {pricelistResults.rowErrors && pricelistResults.rowErrors.length > 0 && (
+                    <Collapsible>
+                      <CollapsibleTrigger className="flex items-center justify-between w-full p-3 bg-destructive/10 rounded hover:bg-destructive/20">
+                        <span className="font-medium text-destructive">Row Errors ({pricelistResults.rowErrors.length})</span>
+                        <ChevronDown className="h-4 w-4" />
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="p-3 border rounded-b bg-background">
+                        <div className="space-y-3">
+                          {pricelistResults.rowErrors.slice(0, 10).map((error, idx) => (
+                            <div key={idx} className="border-l-2 border-destructive pl-3">
+                              <div className="text-sm font-medium text-destructive">Row {error.row_index}: {error.error}</div>
+                              <pre className="text-xs bg-muted p-2 rounded mt-1 overflow-auto">
+                                {JSON.stringify(error.data, null, 2)}
+                              </pre>
+                            </div>
+                          ))}
+                        </div>
+                      </CollapsibleContent>
+                    </Collapsible>
+                  )}
+
+                  {/* Sample Created Motors */}
+                  {pricelistResults.sample_created && pricelistResults.sample_created.length > 0 && (
+                    <Collapsible>
+                      <CollapsibleTrigger className="flex items-center justify-between w-full p-3 bg-green-50 rounded hover:bg-green-100 dark:bg-green-950 dark:hover:bg-green-900">
+                        <span className="font-medium text-green-700 dark:text-green-300">Sample Created Motors ({pricelistResults.sample_created.length})</span>
+                        <ChevronDown className="h-4 w-4" />
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="p-3 border rounded-b bg-background">
+                        <div className="space-y-3">
+                          {pricelistResults.sample_created.map((motor, idx) => (
+                            <div key={idx} className="border-l-2 border-green-500 pl-3">
+                              <div className="text-sm font-medium">{motor.model_display}</div>
+                              <div className="text-xs text-muted-foreground">
+                                Model #: {motor.model_number} | Rigging: {motor.rigging_code || 'N/A'} | 
+                                Price: ${motor.dealer_price} → MSRP: ${motor.msrp}
                               </div>
                             </div>
+                          ))}
+                        </div>
+                      </CollapsibleContent>
+                    </Collapsible>
+                  )}
+
+                  {/* Error Details */}
+                  {!pricelistResults.success && (
+                    <Collapsible>
+                      <CollapsibleTrigger className="flex items-center justify-between w-full p-3 bg-destructive/10 rounded hover:bg-destructive/20">
+                        <span className="font-medium text-destructive">Error Details</span>
+                        <ChevronDown className="h-4 w-4" />
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="p-3 border rounded-b bg-background">
+                        <div className="space-y-2">
+                          <div><strong>Step:</strong> {pricelistResults.step}</div>
+                          <div><strong>Error:</strong> {pricelistResults.error || pricelistResults.detail}</div>
+                          {pricelistResults.stack && (
+                            <pre className="text-xs bg-muted p-2 rounded overflow-auto">
+                              {pricelistResults.stack}
+                            </pre>
                           )}
                         </div>
-                      </AlertDescription>
-                    </Alert>
+                      </CollapsibleContent>
+                    </Collapsible>
                   )}
+
+                  {/* Sanity Check Button */}
+                  <div className="pt-4 border-t">
+                    <Button onClick={runSanityQueries} variant="outline" size="sm">
+                      Run Sanity Queries
+                    </Button>
+                    
+                    {sanityResults && (
+                      <div className="mt-3 p-3 bg-muted rounded-lg space-y-2">
+                        <div className="text-sm font-medium">Database Stats:</div>
+                        <div className="grid grid-cols-3 gap-4 text-sm">
+                          <div>
+                            <div className="font-medium">{sanityResults.counts.brochure}</div>
+                            <div className="text-muted-foreground text-xs">Brochure</div>
+                          </div>
+                          <div>
+                            <div className="font-medium">{sanityResults.counts.in_stock}</div>
+                            <div className="text-muted-foreground text-xs">In Stock</div>
+                          </div>
+                          <div>
+                            <div className="font-medium">{sanityResults.counts.total}</div>
+                            <div className="text-muted-foreground text-xs">Total</div>
+                          </div>
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          Updated today: {sanityResults.updated_today} • Recent updates: {sanityResults.recently_updated.length}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
 

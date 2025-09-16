@@ -76,22 +76,10 @@ Deno.serve(async (req) => {
     console.log(`[PriceList] Processing table with score ${bestTable.score}`);
     console.log(`[PriceList] Detected headers: ${JSON.stringify(bestTable.headers)}`);
     
-    // Column mapping
+    // Column mapping with safety fallbacks
     const columnMapping = getColumnMapping(bestTable.headers);
-    console.log(`[PriceList] Column mapping: ${JSON.stringify(columnMapping)}`);
-    
-    if (!columnMapping.model || !columnMapping.price) {
-      return new Response(JSON.stringify({
-        success: false,
-        step: currentStep,
-        error: 'Could not find required columns (model, price)',
-        detail: `Headers: ${JSON.stringify(bestTable.headers)}, Mapping: ${JSON.stringify(columnMapping)}`,
-        debugInfo
-      }), { 
-        status: 200,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-      });
-    }
+    console.log(`[PriceList] Headers detected: ${JSON.stringify(bestTable.headers)}`);
+    console.log(`[PriceList] Column mapping applied: ${JSON.stringify(columnMapping)}`);
     
     // Extract and normalize data
     const rawRows = extractTableData(bestTable, columnMapping);
@@ -117,9 +105,9 @@ Deno.serve(async (req) => {
     console.log(`[PriceList] HTML parsing found ${rawRows.length} rows`);
     console.log(`[PriceList] DEBUG: Starting normalization of ${rawRows.length} raw rows`);
     
-    const { normalizedMotors, errors } = normalizeMotorData(rawRows, effectiveMarkup);
+    const { normalizedMotors, errors, skipReasons } = normalizeMotorData(rawRows, effectiveMarkup);
     debugInfo.rows_parsed = normalizedMotors.length;
-    debugInfo.rowErrors = errors;
+    debugInfo.rowErrors = errors.slice(0, 10); // Limit to first 10 errors
     if (errors.length > 0) {
       debugInfo.first_bad_row = errors[0];
     }
@@ -204,7 +192,7 @@ Deno.serve(async (req) => {
         sample_created: debugInfo.samples,
         rows_skipped_by_reason: Object.fromEntries(skipReasons),
         top_skip_reasons: Array.from(skipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
-        rowErrors: errors.slice(0, 5),
+        rowErrors: debugInfo.rowErrors,
         snapshot_url: `View Saved HTML: ${jsonPath}`
       }), { 
         status: 200,
@@ -260,7 +248,7 @@ Deno.serve(async (req) => {
       sample_created: debugInfo.samples,
       rows_skipped_by_reason: Object.fromEntries(skipReasons),
       top_skip_reasons: Array.from(skipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
-      rowErrors: errors.slice(0, 5),
+      rowErrors: debugInfo.rowErrors,
       snapshot_url: `View Saved HTML: ${jsonPath}`
     }), { 
       status: 200,
@@ -288,20 +276,32 @@ function normalizeMotorData(rawRows: any[], msrpMarkup: number) {
   const markup = Number(msrpMarkup) > 0 ? Number(msrpMarkup) : 1.1;
   const results = [];
   const errors = [];
+  const skipReasons = new Map();
   
   for (let i = 0; i < rawRows.length; i++) {
     try {
       const row = rawRows[i];
-      const modelNumber = row.model_number || ''; // First column - Mercury's official model number
-      const description = row.model_display || '';
-      const dealerPrice = parseFloat(row.dealer_price) || 0;
+      const modelNumber = (row.model_number || '').trim();
+      const description = (row.model_display || '').trim();
       
-      if (!modelNumber || !description || dealerPrice <= 0) {
-        errors.push({
-          row_index: i,
-          error: 'Missing required fields',
-          data: row
-        });
+      // Parse dealer price - remove $, commas, and convert to number
+      const priceStr = (row.dealer_price || '').toString().replace(/[$,]/g, '').trim();
+      const dealerPrice = parseFloat(priceStr) || 0;
+      
+      // Enhanced validation with skip tracking
+      if (!modelNumber) {
+        skipReasons.set('empty_model_number', (skipReasons.get('empty_model_number') || 0) + 1);
+        errors.push({ row_index: i, error: 'Empty model number', data: row });
+        continue;
+      }
+      if (!description) {
+        skipReasons.set('empty_description', (skipReasons.get('empty_description') || 0) + 1);
+        errors.push({ row_index: i, error: 'Empty description', data: row });
+        continue;
+      }
+      if (dealerPrice <= 0) {
+        skipReasons.set('invalid_price', (skipReasons.get('invalid_price') || 0) + 1);
+        errors.push({ row_index: i, error: `Invalid price: ${priceStr} -> ${dealerPrice}`, data: row });
         continue;
       }
       
@@ -426,15 +426,20 @@ function normalizeMotorData(rawRows: any[], msrpMarkup: number) {
       results.push(result);
       
     } catch (rowError) {
+      skipReasons.set('processing_error', (skipReasons.get('processing_error') || 0) + 1);
       errors.push({
         row_index: i,
         error: rowError.message,
-        data: rawRows[i]
+        data: rawRows[i],
+        stack: rowError.stack
       });
     }
   }
   
-  return { normalizedMotors: results, errors };
+  console.log(`[PriceList] Normalization skip reasons: ${JSON.stringify(Object.fromEntries(skipReasons))}`);
+  console.log(`[PriceList] Normalization completed: ${results.length} successful, ${errors.length} errors`);
+  
+  return { normalizedMotors: results, errors, skipReasons };
 }
 
 // Simple HTML table parser focused on Mercury price list format
@@ -497,46 +502,62 @@ function parseHTMLTables(html: string) {
   return tables.sort((a, b) => b.score - a.score);
 }
 
-// Column mapping for Mercury price list
+// Column mapping for Mercury price list with safety fallbacks
 function getColumnMapping(headers: string[]) {
-  const mapping = {};
+  const mapping = {
+    model_number: 0,  // Default to first column
+    model_display: 1, // Default to second column  
+    dealer_price: 2   // Default to third column
+  };
   
   headers.forEach((header, index) => {
     const lowerHeader = header.toLowerCase();
     
     if (lowerHeader.includes('model') && lowerHeader.includes('#')) {
-      mapping.number = index; // Model # column
+      mapping.model_number = index; // Model # column
     } else if (lowerHeader.includes('description') || lowerHeader.includes('model')) {
-      mapping.model = index; // Description/Model column
+      mapping.model_display = index; // Description/Model column
     } else if (lowerHeader.includes('price') || lowerHeader.includes('our price')) {
-      mapping.price = index; // Price column
+      mapping.dealer_price = index; // Price column
     }
   });
   
+  console.log(`[PriceList] Column mapping: model_number=${mapping.model_number}, model_display=${mapping.model_display}, dealer_price=${mapping.dealer_price}`);
   return mapping;
 }
 
-// Extract data from table using column mapping
+// Extract data from table using column mapping with safety
 function extractTableData(table: any, columnMapping: any) {
   const results = [];
+  const skipReasons = new Map();
   
   // Skip header row
   for (let i = 1; i < table.data.length; i++) {
     const row = table.data[i];
     
-    if (row.length < 2) continue;
+    if (row.length < 2) {
+      skipReasons.set('insufficient_columns', (skipReasons.get('insufficient_columns') || 0) + 1);
+      continue;
+    }
     
     const dataRow = {
-      model_number: columnMapping.number !== undefined ? row[columnMapping.number] : row[0], // First column as fallback
-      model_display: columnMapping.model !== undefined ? row[columnMapping.model] : row[1], // Second column as fallback
-      dealer_price: columnMapping.price !== undefined ? row[columnMapping.price] : row[2] // Third column as fallback
+      model_number: (row[columnMapping.model_number] || '').trim(),
+      model_display: (row[columnMapping.model_display] || '').trim(), 
+      dealer_price: (row[columnMapping.dealer_price] || '').trim()
     };
     
     // Only include rows with meaningful data
-    if (dataRow.model_number && dataRow.model_display && dataRow.dealer_price) {
+    if (!dataRow.model_number) {
+      skipReasons.set('missing_model_number', (skipReasons.get('missing_model_number') || 0) + 1);
+    } else if (!dataRow.model_display) {
+      skipReasons.set('missing_model_display', (skipReasons.get('missing_model_display') || 0) + 1);
+    } else if (!dataRow.dealer_price) {
+      skipReasons.set('missing_dealer_price', (skipReasons.get('missing_dealer_price') || 0) + 1);
+    } else {
       results.push(dataRow);
     }
   }
   
+  console.log(`[PriceList] Extraction skip reasons: ${JSON.stringify(Object.fromEntries(skipReasons))}`);
   return results;
 }
