@@ -1,6 +1,5 @@
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { XMLParser } from 'https://esm.sh/fast-xml-parser@4.2.5';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -41,67 +40,35 @@ serve(async (req) => {
     const xmlText = await response.text();
     console.log(`📄 Fetched XML feed (${xmlText.length} chars)`);
     
-    // Parse XML for Mercury new units only
-    const parser = new XMLParser({
-      ignoreAttributes: false,
-      parseAttributeValue: false,
-      parseNodeValue: true,
-      parseTrueNumberOnly: false,
-      arrayMode: false,
-      alwaysCreateTextNode: false,
-      isArray: (name, jpath, isLeafNode, isAttribute) => {
-        // Always treat 'item' as an array to handle multiple items
-        return name === 'item';
-      }
-    });
+    // Parse XML using regex approach (Deno-compatible)
+    console.log('🔍 Parsing XML with regex approach...');
     
-    const xmlData = parser.parse(xmlText);
+    // Extract all items using regex
+    const itemMatches = xmlText.match(/<item>[\s\S]*?<\/item>/g) || [];
+    console.log(`📦 Found ${itemMatches.length} total items in XML`);
     
-    // Navigate to items - adjust path based on actual XML structure
-    let items = [];
-    
-    // Try different possible paths to find items
-    if (xmlData?.unitinventory?.item) {
-      items = Array.isArray(xmlData.unitinventory.item) 
-        ? xmlData.unitinventory.item 
-        : [xmlData.unitinventory.item];
-    } else if (xmlData?.inventory?.item) {
-      items = Array.isArray(xmlData.inventory.item) 
-        ? xmlData.inventory.item 
-        : [xmlData.inventory.item];
-    } else if (xmlData?.item) {
-      items = Array.isArray(xmlData.item) ? xmlData.item : [xmlData.item];
-    } else {
-      // Fallback: search for any items in the parsed data
-      const findItems = (obj: any): any[] => {
-        if (!obj || typeof obj !== 'object') return [];
-        
-        let found: any[] = [];
-        for (const [key, value] of Object.entries(obj)) {
-          if (key === 'item') {
-            if (Array.isArray(value)) {
-              found = found.concat(value);
-            } else {
-              found.push(value);
-            }
-          } else if (typeof value === 'object') {
-            found = found.concat(findItems(value));
-          }
-        }
-        return found;
-      };
-      
-      items = findItems(xmlData);
+    // Log first item for debugging
+    if (itemMatches.length > 0) {
+      console.log('📋 Sample item structure:', itemMatches[0].substring(0, 500) + '...');
     }
     
-    console.log(`📦 Found ${items.length} total items in XML`);
-
-    // Filter for Mercury new units only
-    const mercuryUnits = items.filter(item => {
-      const manufacturer = item?.manufacturer || '';
-      const condition = item?.condition || '';
+    // Extract Mercury new units using regex
+    const mercuryUnits = itemMatches.filter(item => {
+      const manufacturerMatch = item.match(/<manufacturer>(.*?)<\/manufacturer>/i);
+      const conditionMatch = item.match(/<condition>(.*?)<\/condition>/i);
       
-      return manufacturer === 'Mercury' && condition === 'New';
+      const manufacturer = manufacturerMatch?.[1]?.trim().toLowerCase() || '';
+      const condition = conditionMatch?.[1]?.trim().toLowerCase() || '';
+      
+      // Case-insensitive matching for Mercury (including partial matches like "Mercury Marine")
+      const isMercury = manufacturer.includes('mercury');
+      const isNew = condition === 'new';
+      
+      if (isMercury && !isNew) {
+        console.log(`⚠️ Mercury unit but not new: manufacturer="${manufacturer}", condition="${condition}"`);
+      }
+      
+      return isMercury && isNew;
     });
 
     console.log(`🎯 Filtered to ${mercuryUnits.length} Mercury new units`);
@@ -122,12 +89,23 @@ serve(async (req) => {
     const priceMap = new Map<string, number>();
     const stockNumberMap = new Map<string, string>();
     
-    // Process units to build stock counts
+    
+    // Process units to build stock counts using regex extraction
     for (const unit of mercuryUnits) {
-      const title = unit?.title || '';
-      const stockNumber = unit?.stocknumber || '';
-      const priceText = unit?.price || '0';
-      const price = parseFloat(String(priceText).replace(/[,$]/g, '')) || 0;
+      // Extract data using regex patterns
+      const titleMatch = unit.match(/<title>(.*?)<\/title>/i);
+      const stockNumberMatch = unit.match(/<stocknumber>(.*?)<\/stocknumber>/i);
+      const priceMatch = unit.match(/<price>(.*?)<\/price>/i);
+      
+      const title = titleMatch?.[1]?.trim() || '';
+      const stockNumber = stockNumberMatch?.[1]?.trim() || '';
+      const priceText = priceMatch?.[1]?.trim() || '0';
+      const price = parseFloat(priceText.replace(/[,$]/g, '')) || 0;
+      
+      // Log sample unit data for debugging (first 3 units only)
+      if (stockMap.size < 3) {
+        console.log(`📊 Unit data - Title: "${title}", Stock#: "${stockNumber}", Price: $${price}`);
+      }
       
       if (title) {
         // Increment stock count
