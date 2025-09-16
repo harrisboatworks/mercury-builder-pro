@@ -26,9 +26,11 @@ Deno.serve(async (req) => {
   };
 
   try {
-    const { dry_run = true, msrp_markup = 1.1 } = await req.json();
+    const { dry_run: dryRunIn = true, msrp_markup: msrpMarkupIn } = await req.json().catch(() => ({} as any));
+    const dry_run = Boolean(dryRunIn);
+    const effectiveMarkup = Number(msrpMarkupIn ?? 1.1);
     
-    console.log(`[PriceList] Starting seed process: dry_run=${dry_run}, msrp_markup=${msrp_markup}`);
+    console.log(`[PriceList] Starting seed process: dry_run=${dry_run}, msrpMarkup=${effectiveMarkup}`);
     
     // Step 1: Fetch from URL
     currentStep = 'fetch';
@@ -115,7 +117,7 @@ Deno.serve(async (req) => {
     console.log(`[PriceList] HTML parsing found ${rawRows.length} rows`);
     console.log(`[PriceList] DEBUG: Starting normalization of ${rawRows.length} raw rows`);
     
-    const { normalizedMotors, errors } = normalizeMotorData(rawRows, msrpMarkup);
+    const { normalizedMotors, errors } = normalizeMotorData(rawRows, effectiveMarkup);
     debugInfo.rows_parsed = normalizedMotors.length;
     debugInfo.rowErrors = errors;
     if (errors.length > 0) {
@@ -283,6 +285,7 @@ Deno.serve(async (req) => {
 
 // Parse Mercury model codes and descriptions with error handling
 function normalizeMotorData(rawRows: any[], msrpMarkup: number) {
+  const markup = Number(msrpMarkup) > 0 ? Number(msrpMarkup) : 1.1;
   const results = [];
   const errors = [];
   
@@ -399,12 +402,12 @@ function normalizeMotorData(rawRows: any[], msrpMarkup: number) {
         dealer_price: dealerPrice,
         base_price: dealerPrice,
         sale_price: dealerPrice,
-        msrp: Math.round(dealerPrice * msrpMarkup),
+        msrp: Math.round(dealerPrice * markup),
         
         // Source tracking
         price_source: 'harris_pricelist',
         msrp_source: 'calculated',
-        msrp_calc_source: `harris_dealer_price * ${msrpMarkup}`,
+        msrp_calc_source: `dealer_price * ${markup}`,
         
         // Database required fields
         make: 'Mercury',

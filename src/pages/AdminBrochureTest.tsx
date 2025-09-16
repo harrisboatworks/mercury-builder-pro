@@ -120,11 +120,12 @@ export default function AdminBrochureTest() {
     setIsRunning(true);
     
     try {
+      const markupToSend = Number(1.10);
       const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
         body: {
           url: 'https://www.harrisboatworks.ca/mercurypricelist',
           dry_run: dryRun,
-          msrp_markup: 1.10,
+          msrp_markup: markupToSend,
           parse_mode: 'auto'
         }
       });

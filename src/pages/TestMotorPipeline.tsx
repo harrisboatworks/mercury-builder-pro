@@ -127,12 +127,13 @@ export default function TestMotorPipeline() {
     try {
       const sourceUrl = getSourceUrl();
       const sourceContent = await getSourceContent();
+      const markupToSend = Number(1.10);
       
       const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
         body: { 
           url: sourceUrl,
           dry_run: true,
-          msrp_markup: 1.10,
+          msrp_markup: markupToSend,
           parse_mode: 'auto',
           ...sourceContent
         }
@@ -164,12 +165,13 @@ export default function TestMotorPipeline() {
     try {
       const sourceUrl = getSourceUrl();
       const sourceContent = await getSourceContent();
+      const markupToSend = Number(1.10);
       
       const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
         body: { 
           url: sourceUrl,
           dry_run: false,
-          msrp_markup: 1.10,
+          msrp_markup: markupToSend,
           parse_mode: 'auto',
           ...sourceContent
         }

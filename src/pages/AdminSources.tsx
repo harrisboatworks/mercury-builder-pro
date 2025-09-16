@@ -65,11 +65,12 @@ export default function AdminSources() {
     };
     
     try {
+      const markupToSend = Number(msrpMarkup || 1.1);
       const { data, error } = await supabase.functions.invoke('seed-from-pricelist', {
         body: { 
           url: pricelistUrl,
           dry_run: isDryRun,
-          msrp_markup: msrpMarkup,
+          msrp_markup: markupToSend,
           force: forceIngest,
           create_missing_brochure: createBrochureRows
         }
