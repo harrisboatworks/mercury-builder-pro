@@ -80,15 +80,23 @@ function titleCase(s?: string | null) {
  * - Else return "Outboard" (safe default to satisfy NOT NULL)
  */
 function resolveModel(rec: any): string {
-  // Prefer explicit family
+  // Prefer explicit family field first (highest priority)
   const family = rec.family || rec.engine_family || rec.series || rec.category;
   if (family && String(family).trim()) return titleCase(String(family));
 
-  // Try from model_key like "FOURSTROKE-ELPT-EFI"
-  const key: string = rec.model_key || rec.modelNumberKey || rec.model_number || '';
-  const prefix = key.split('-')[0] || '';
+  // Try to extract from mercury model number or model description
+  const mercuryModelNo = rec.mercury_model_no || rec.model_display || '';
+  if (mercuryModelNo) {
+    const description = String(mercuryModelNo).toLowerCase();
+    if (description.includes('fourstroke') || description.includes('four stroke')) return 'FourStroke';
+    if (description.includes('verado')) return 'Verado';
+    if (description.includes('pro xs') || description.includes('proxs')) return 'Pro XS';
+    if (description.includes('seapro') || description.includes('sea pro')) return 'SeaPro';
+  }
 
-  // Normalize common families
+  // Try from model_key as fallback
+  const key: string = rec.model_key || rec.modelNumberKey || '';
+  const prefix = key.split('-')[0] || '';
   const normalized = prefix.toLowerCase();
   if (['fourstroke', 'four-stroke', '4-stroke', '4stroke'].includes(normalized)) return 'FourStroke';
   if (['verado'].includes(normalized)) return 'Verado';
@@ -333,7 +341,7 @@ async function parsePriceList(url: string, msrpMarkup: number) {
     
     const mercuryModelNo = parseMercuryModelNo(modelDescription);
     const horsepower = parseHorsepower(modelDescription);
-    const modelKey = generateModelKey(modelNumber.toLowerCase(), horsepower);
+    const modelKey = generateModelKey(mercuryModelNo, horsepower);
     
     console.log(`[PriceList] Row ${index + 1} model_display: "${modelDescription}" (dealer: ${dealerPrice}, hp: ${horsepower})`);
     
