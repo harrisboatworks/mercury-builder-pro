@@ -175,7 +175,7 @@ serve(async (req) => {
           family: family,
           horsepower: horsepower,
           fuel_type: fuel_type || null,
-          model_code: rigging_code || null,
+          model_code: String(row.mercury_model_no || '').trim() || null,
           shaft_code: rig.shaft_code,
           shaft_inches: rig.shaft_inches,
           start_type: rig.start_type,
