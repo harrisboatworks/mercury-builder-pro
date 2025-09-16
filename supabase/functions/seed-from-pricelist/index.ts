@@ -222,33 +222,66 @@ Deno.serve(async (req) => {
     currentStep = 'upsert';
     console.log(`[PriceList] Upserting ${deduplicatedMotors.length} motors to database...`);
     
-    const batchSize = 50;
+    const batchSize = 25; // Smaller batches for better error isolation
     let created = 0;
     let updated = 0;
     let failed = 0;
+    const batchErrors = [];
     
     for (let i = 0; i < deduplicatedMotors.length; i += batchSize) {
       const batch = deduplicatedMotors.slice(i, i + batchSize);
       const batchNum = Math.floor(i / batchSize) + 1;
       
       try {
+        // Clean batch data - remove any undefined values
+        const cleanBatch = batch.map(motor => {
+          const cleaned = { ...motor };
+          // Remove undefined values and ensure numeric fields are proper types
+          Object.keys(cleaned).forEach(key => {
+            if (cleaned[key] === undefined) {
+              delete cleaned[key];
+            }
+            // Ensure numeric fields are numbers
+            if (['horsepower', 'dealer_price', 'base_price', 'sale_price', 'msrp', 'year'].includes(key)) {
+              if (cleaned[key] !== null && cleaned[key] !== undefined) {
+                cleaned[key] = Number(cleaned[key]) || null;
+              }
+            }
+          });
+          return cleaned;
+        });
+        
+        console.log(`[PriceList] Batch ${batchNum} sample record: ${JSON.stringify(cleanBatch[0], null, 2)}`);
+        
         const { data, error } = await supabase
           .from('motor_models')
-          .upsert(batch, {
+          .upsert(cleanBatch, {
             onConflict: 'model_number',
             ignoreDuplicates: false
           })
-          .select('id');
+          .select('id, model_number');
         
         if (error) {
-          console.log(`[PriceList] Batch ${batchNum} error: ${JSON.stringify(error)}`);
+          console.error(`[PriceList] Batch ${batchNum} error:`, error);
+          batchErrors.push({
+            batch: batchNum,
+            error: error.message,
+            code: error.code,
+            details: error.details,
+            sample_record: cleanBatch[0]
+          });
           failed += batch.length;
         } else {
-          console.log(`[PriceList] Batch ${batchNum} success: ${data?.length || 0} records`);
+          console.log(`[PriceList] Batch ${batchNum} success: ${data?.length || 0} records upserted`);
           created += data?.length || 0;
         }
       } catch (batchError) {
-        console.log(`[PriceList] Batch ${batchNum} exception: ${batchError}`);
+        console.error(`[PriceList] Batch ${batchNum} exception:`, batchError);
+        batchErrors.push({
+          batch: batchNum,
+          error: batchError.message,
+          sample_record: batch[0]
+        });
         failed += batch.length;
       }
     }
@@ -256,17 +289,23 @@ Deno.serve(async (req) => {
     console.log(`[PriceList] Database upsert complete: ${created} created, ${updated} updated, ${failed} failed`);
     console.log(`[PriceList] Process complete: { success: ${failed === 0}, found: ${rawRows.length}, parsed: ${normalizedMotors.length}, created: ${created}, updated: ${updated} }`);
     
+    if (batchErrors.length > 0) {
+      console.error(`[PriceList] Batch errors encountered:`, batchErrors);
+    }
+    
     return new Response(JSON.stringify({
       success: failed === 0,
-      step: 'complete',
+      step: failed === 0 ? 'complete' : 'upsert_failed',
       rows_found_raw: rawRows.length,
       rows_parsed: normalizedMotors.length,
       rows_created: created,
       rows_updated: updated,
+      rows_failed: failed,
       sample_created: debugInfo.samples,
       rows_skipped_by_reason: Object.fromEntries(allSkipReasons),
       top_skip_reasons: Array.from(allSkipReasons.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5),
       rowErrors: debugInfo.rowErrors,
+      batchErrors: batchErrors.slice(0, 5), // First 5 batch errors for debugging
       snapshot_url: `View Saved HTML: ${jsonPath}`
     }), { 
       status: 200,
@@ -407,7 +446,8 @@ function normalizeMotorData(rawRows: any[], msrpMarkup: number) {
         mercury_model_no: mercuryModelNo, // Parsed model (25MH, etc.)
         
         // Display and description
-        model_display: modelDisplay,
+        display_name: modelDisplay,
+        model: family || 'Outboard', 
         model_key: modelKey,
         
         // Technical specs
@@ -429,13 +469,12 @@ function normalizeMotorData(rawRows: any[], msrpMarkup: number) {
         
         // Database required fields
         make: 'Mercury',
-        model: family || 'Outboard',
         motor_type: family || 'Outboard',
         year: 2025,
         is_brochure: true,
         in_stock: false,
         availability: 'Brochure',
-        fuel_type: '',
+        fuel_type: ''
         
         // Debug info
         raw_cells: [row.model_number, row.model_display, row.dealer_price]

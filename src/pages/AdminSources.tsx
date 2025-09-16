@@ -743,6 +743,50 @@ export default function AdminSources() {
                     </Collapsible>
                   )}
 
+                  {/* Database Batch Errors */}
+                  {pricelistResults.batchErrors && pricelistResults.batchErrors.length > 0 && (
+                    <Collapsible>
+                      <CollapsibleTrigger className="flex items-center justify-between w-full p-3 bg-destructive/10 rounded hover:bg-destructive/20">
+                        <span className="font-medium text-destructive">
+                          Database Errors ({pricelistResults.batchErrors.length})
+                        </span>
+                        <ChevronDown className="h-4 w-4" />
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="p-3 border rounded-b bg-background">
+                        <div className="space-y-3 text-sm max-h-60 overflow-y-auto">
+                          {pricelistResults.batchErrors.map((error: any, i: number) => (
+                            <div key={i} className="border-b pb-2 last:border-b-0">
+                              <div className="font-medium text-destructive">Batch {error.batch}:</div>
+                              <div className="text-destructive font-mono text-xs bg-destructive/5 p-1 rounded mt-1">{error.error}</div>
+                              {error.code && <div className="text-muted-foreground text-xs">Code: {error.code}</div>}
+                              {error.details && <div className="text-muted-foreground text-xs">Details: {error.details}</div>}
+                              {error.sample_record && (
+                                <Collapsible>
+                                  <CollapsibleTrigger className="text-xs text-primary hover:underline mt-1">
+                                    Show Sample Record
+                                  </CollapsibleTrigger>
+                                  <CollapsibleContent>
+                                    <pre className="text-xs mt-1 p-2 bg-muted rounded overflow-x-auto border">
+                                      {JSON.stringify(error.sample_record, null, 2)}
+                                    </pre>
+                                  </CollapsibleContent>
+                                </Collapsible>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </CollapsibleContent>
+                    </Collapsible>
+                  )}
+
+                  {/* Failed Rows Summary */}
+                  {pricelistResults.rows_failed && pricelistResults.rows_failed > 0 && (
+                    <div className="p-3 bg-destructive/10 border border-destructive/20 rounded">
+                      <div className="text-destructive font-medium">❌ {pricelistResults.rows_failed} rows failed to insert</div>
+                      <div className="text-destructive/80 text-sm mt-1">Check the database errors above for details</div>
+                    </div>
+                  )}
+
                   {/* Sanity Check Button */}
                   <div className="pt-4 border-t">
                     <Button onClick={runSanityQueries} variant="outline" size="sm">

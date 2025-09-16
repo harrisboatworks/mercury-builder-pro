@@ -468,6 +468,7 @@ export type Database = {
           dealer_price: number | null
           description: string | null
           detail_url: string | null
+          display_name: string | null
           engine_type: string | null
           family: string | null
           features: Json | null
@@ -528,6 +529,7 @@ export type Database = {
           dealer_price?: number | null
           description?: string | null
           detail_url?: string | null
+          display_name?: string | null
           engine_type?: string | null
           family?: string | null
           features?: Json | null
@@ -588,6 +590,7 @@ export type Database = {
           dealer_price?: number | null
           description?: string | null
           detail_url?: string | null
+          display_name?: string | null
           engine_type?: string | null
           family?: string | null
           features?: Json | null
