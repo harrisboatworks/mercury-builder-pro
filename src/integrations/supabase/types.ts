@@ -1190,6 +1190,14 @@ export type Database = {
         }
         Returns: undefined
       }
+      test_single_motor_insert: {
+        Args: {
+          p_dealer_price: number
+          p_model_display: string
+          p_model_number: string
+        }
+        Returns: string
+      }
       update_brochure_models_bulk: {
         Args: { p_rows: Json }
         Returns: number

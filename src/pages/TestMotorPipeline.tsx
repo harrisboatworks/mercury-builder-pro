@@ -35,6 +35,8 @@ export default function TestMotorPipeline() {
       { step: '4. Hero Images Upload', status: 'pending', message: 'Ready to upload and store hero images' },
       { step: '5. XML Discovery', status: 'pending', message: 'Ready to discover and merge inventory' },
       { step: '6. Sanity Queries', status: 'pending', message: 'Ready to run database health checks' },
+      { step: '🔧 Test Single Insert', status: 'pending', message: 'Debug: Test inserting one record' },
+      { step: '📊 Check Table Status', status: 'pending', message: 'Debug: Check motor_models table' },
     ];
   });
   const [currentStep, setCurrentStep] = useState(-1);
@@ -385,6 +387,74 @@ export default function TestMotorPipeline() {
     }
   };
 
+  // Debug function to test single record insertion
+  const testSingleInsert = async () => {
+    const stepIndex = 6; // Step 7 (0-indexed)
+    updateResult(stepIndex, 'running', 'Testing single record insertion...');
+    
+    try {
+      const { data, error } = await supabase.rpc('test_single_motor_insert', {
+        p_model_number: 'TEST-12345',
+        p_model_display: 'Test Motor 15HP',
+        p_dealer_price: 3500
+      });
+      
+      if (error) {
+        updateResult(stepIndex, 'error', `Single insert test failed: ${error.message}`);
+        return;
+      }
+      
+      // Verify the record exists
+      const { data: verifyData, error: verifyError } = await supabase
+        .from('motor_models')
+        .select('*')
+        .eq('model_number', 'TEST-12345')
+        .single();
+      
+      if (verifyError) {
+        updateResult(stepIndex, 'error', `Verification failed: ${verifyError.message}`);
+        return;
+      }
+      
+      updateResult(stepIndex, 'success', `✅ Single insert successful! Created record ID: ${data}`, {
+        inserted_id: data,
+        verified_record: verifyData
+      });
+      
+    } catch (error) {
+      updateResult(stepIndex, 'error', `Single insert test error: ${error}`);
+    }
+  };
+
+  // Check motor_models table status
+  const checkTableStatus = async () => {
+    const stepIndex = 7; // Step 8 (0-indexed)
+    updateResult(stepIndex, 'running', 'Checking motor_models table status...');
+    
+    try {
+      const { data, error } = await supabase
+        .from('motor_models')
+        .select('id, model_number, model_display, is_brochure, created_at')
+        .eq('is_brochure', true)
+        .order('created_at', { ascending: false })
+        .limit(10);
+      
+      if (error) {
+        updateResult(stepIndex, 'error', `Table check failed: ${error.message}`);
+        return;
+      }
+      
+      const totalCount = data?.length || 0;
+      updateResult(stepIndex, 'success', `📊 Found ${totalCount} brochure records in motor_models table`, {
+        total_brochure_records: totalCount,
+        sample_records: data?.slice(0, 5)
+      });
+      
+    } catch (error) {
+      updateResult(stepIndex, 'error', `Table check error: ${error}`);
+    }
+  };
+
   const runSingleStep = async (stepIndex: number) => {
     setCurrentStep(stepIndex);
     
@@ -395,6 +465,8 @@ export default function TestMotorPipeline() {
       case 3: await runStep4HeroImages(); break;
       case 4: await runStep5XMLDiscovery(); break;
       case 5: await runStep6SanityCheck(); break;
+      case 6: await testSingleInsert(); break;
+      case 7: await checkTableStatus(); break;
     }
     
     setCurrentStep(-1);

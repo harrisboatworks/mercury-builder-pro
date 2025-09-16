@@ -442,13 +442,26 @@ Deno.serve(async (req) => {
         .eq('is_brochure', true)
         .not('model_number', 'is', null);
       if (error) throw error;
-      for (const row of data ?? []) existingNumbers.add((row.model_number || '').toString());
+      
+      console.log(`[PriceList] CRITICAL DEBUG: Found ${data?.length || 0} existing brochure records in motor_models table`);
+      
+      for (const row of data ?? []) {
+        const modelNum = (row.model_number || '').toString();
+        existingNumbers.add(modelNum);
+        console.log(`[PriceList] EXISTING: ${modelNum}`);
+      }
+      
+      console.log(`[PriceList] Total existing model numbers: ${existingNumbers.size}`);
     } catch (e) {
       return fail(500, 'fetch_existing_for_predict', e, { echo: norm });
     }
 
     const toInsert = cleaned.filter(r => !existingNumbers.has(r.model_number));
     const toUpdate = cleaned.filter(r => existingNumbers.has(r.model_number));
+
+    console.log(`[PriceList] ROUTING DECISION: ${toInsert.length} to INSERT (Phase A), ${toUpdate.length} to UPDATE (Phase B)`);
+    console.log(`[PriceList] First 5 for INSERT:`, toInsert.slice(0, 5).map(r => r.model_number));
+    console.log(`[PriceList] First 5 for UPDATE:`, toUpdate.slice(0, 5).map(r => r.model_number));
 
     // insertRows and updateRows are already processed through toDbRow
     const insertRows = toInsert;
@@ -481,31 +494,77 @@ Deno.serve(async (req) => {
     // Phase A: INSERT only new rows
     try {
       if (insertRows.length) {
-        console.log(`[PriceList] Inserting ${insertRows.length} new brochure records...`);
+        console.log(`[PriceList] PHASE A: Inserting ${insertRows.length} new brochure records...`);
+        console.log(`[PriceList] Sample insert data:`, JSON.stringify(insertRows.slice(0, 2), null, 2));
+        
         const { data, error } = await supabase
           .from('motor_models')
           .insert(insertRows)
-          .select('id');
+          .select('id, model_number, model_key');
+        
         if (error) {
-          console.error(`[PriceList] Failed at insert_brochures: ${JSON.stringify(error)}`);
+          console.error(`[PriceList] PHASE A FAILED: ${JSON.stringify(error)}`);
           throw error;
         }
+        
         rows_created = data?.length ?? 0;
+        console.log(`[PriceList] PHASE A SUCCESS: Created ${rows_created} records`);
+        console.log(`[PriceList] First 3 created:`, data?.slice(0, 3));
+        
+        // CRITICAL: Verify records actually exist in table
+        const { data: verifyData, error: verifyError } = await supabase
+          .from('motor_models')
+          .select('id')
+          .eq('is_brochure', true);
+        
+        if (!verifyError) {
+          console.log(`[PriceList] VERIFICATION: motor_models table now has ${verifyData?.length || 0} brochure records`);
+        }
+      } else {
+        console.log(`[PriceList] PHASE A: No records to insert`);
       }
     } catch (e) {
-      console.error(`[PriceList] Insert error: ${(e as any)?.message}`);
+      console.error(`[PriceList] PHASE A ERROR: ${(e as any)?.message}`);
       return fail(500, 'insert_new', e, { echo: norm, to_insert: insertRows.length });
     }
 
     // Phase B: UPDATE only existing rows, by model_number + is_brochure=true  
     try {
-      for (const chunk of chunkBy(updateRows, 200)) {
-        const { data: updCount, error: rpcErr } = await supabase.rpc(
-          'update_brochure_models_bulk',
-          { p_rows: chunk }
-        );
-        if (rpcErr) throw rpcErr;
-        rows_updated += (typeof updCount === 'number' ? updCount : 0);
+      if (updateRows.length) {
+        console.log(`[PriceList] PHASE B: Updating ${updateRows.length} existing brochure records...`);
+        console.log(`[PriceList] Sample update data:`, JSON.stringify(updateRows.slice(0, 2), null, 2));
+        
+        for (const chunk of chunkBy(updateRows, 200)) {
+          console.log(`[PriceList] PHASE B: Processing chunk of ${chunk.length} records via RPC...`);
+          
+          const { data: updCount, error: rpcErr } = await supabase.rpc(
+            'update_brochure_models_bulk',
+            { p_rows: chunk }
+          );
+          
+          if (rpcErr) {
+            console.error(`[PriceList] PHASE B RPC ERROR: ${JSON.stringify(rpcErr)}`);
+            throw rpcErr;
+          }
+          
+          const chunkUpdated = (typeof updCount === 'number' ? updCount : 0);
+          rows_updated += chunkUpdated;
+          console.log(`[PriceList] PHASE B: Chunk completed, updated ${chunkUpdated} records`);
+        }
+        
+        console.log(`[PriceList] PHASE B SUCCESS: Total updated ${rows_updated} records`);
+        
+        // CRITICAL: Verify total records in table after update
+        const { data: finalVerifyData, error: finalVerifyError } = await supabase
+          .from('motor_models')
+          .select('id')
+          .eq('is_brochure', true);
+        
+        if (!finalVerifyError) {
+          console.log(`[PriceList] FINAL VERIFICATION: motor_models table has ${finalVerifyData?.length || 0} brochure records after update`);
+        }
+      } else {
+        console.log(`[PriceList] PHASE B: No records to update`);
       }
     } catch (e) {
       if (String(e).toLowerCase().includes('function') && String(e).toLowerCase().includes('not found')) {
