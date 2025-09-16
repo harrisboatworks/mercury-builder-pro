@@ -532,8 +532,13 @@ Deno.serve(async (req) => {
     } catch (innerErr) {
       console.error(`[PriceList] Inner error:`, innerErr);
       return fail(500, 'normalize_or_ingest', innerErr, { echo: normalizedInputs });
+     }
+
+    } catch (innerErr) {
+      console.error(`[PriceList] Inner error:`, innerErr);
+      return fail(500, 'normalize_or_ingest', innerErr, { echo: normalizedInputs });
     }
-  
+
   } catch (bootErr) {
     console.error(`[PriceList] Boot error:`, bootErr);
     return fail(500, 'boot', bootErr);
