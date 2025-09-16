@@ -686,7 +686,7 @@ export default function AdminSources() {
                               <div className="text-sm font-medium">{motor.model_display}</div>
                               <div className="text-xs text-muted-foreground">
                                 Model #: {motor.model_number} | Rigging: {motor.rigging_code || 'N/A'} | 
-                                Price: ${motor.dealer_price} → MSRP: ${motor.msrp}
+                                Price: {(motor.dealer_price && motor.dealer_price > 0) ? `$${motor.dealer_price}` : '—'} → MSRP: {(motor.msrp && motor.msrp > 0) ? `$${motor.msrp}` : '—'}
                               </div>
                             </div>
                           ))}
@@ -1110,7 +1110,7 @@ export default function AdminSources() {
                           <td className="p-2">{row.model || '-'}</td>
                           <td className="p-2 text-xs font-mono">{row.model_key || '-'}</td>
                           <td className="p-2">{row.horsepower || '-'}</td>
-                          <td className="p-2">${row.dealer_price || row.msrp || '-'}</td>
+                          <td className="p-2">{(row.dealer_price && row.dealer_price > 0) ? `$${row.dealer_price}` : (row.msrp && row.msrp > 0) ? `$${row.msrp}` : '—'}</td>
                           <td className="p-2">
                             <Badge variant={row.in_stock ? "default" : "secondary"}>
                               {row.in_stock ? "Stock" : "Brochure"}

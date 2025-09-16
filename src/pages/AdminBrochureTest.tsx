@@ -432,8 +432,8 @@ const ResultCard = ({ title, result, type }: {
                           <tr key={idx} className="border-b">
                             <td className="p-2 font-mono">{item.model_number || 'N/A'}</td>
                             <td className="p-2">{item.model_display || 'N/A'}</td>
-                            <td className="p-2">{item.dealer_price ? `$${item.dealer_price}` : 'N/A'}</td>
-                            <td className="p-2">{item.msrp ? `$${item.msrp}` : 'N/A'}</td>
+                            <td className="p-2">{(item.dealer_price && item.dealer_price > 0) ? `$${item.dealer_price}` : '—'}</td>
+                            <td className="p-2">{(item.msrp && item.msrp > 0) ? `$${item.msrp}` : '—'}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -676,9 +676,9 @@ const ResultCard = ({ title, result, type }: {
                               {sample.model_display || sample.model}
                             </TableCell>
                             <TableCell>{sample.family || 'N/A'}</TableCell>
-                            <TableCell>{sample.horsepower || 'N/A'}</TableCell>
-                            <TableCell>{sample.dealer_price ? `$${sample.dealer_price.toLocaleString()}` : 'N/A'}</TableCell>
-                            <TableCell>{sample.msrp ? `$${sample.msrp.toLocaleString()}` : 'N/A'}</TableCell>
+                            <TableCell>{sample.horsepower || '—'}</TableCell>
+                            <TableCell>{(sample.dealer_price && sample.dealer_price > 0) ? `$${sample.dealer_price.toLocaleString()}` : '—'}</TableCell>
+                            <TableCell>{(sample.msrp && sample.msrp > 0) ? `$${sample.msrp.toLocaleString()}` : '—'}</TableCell>
                             <TableCell>{new Date(sample.created_at).toLocaleDateString()}</TableCell>
                           </TableRow>
                         ))}
