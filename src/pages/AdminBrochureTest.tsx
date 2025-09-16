@@ -33,6 +33,13 @@ interface ParseResult {
     dealer_price: number;
     msrp: number;
   }>;
+  sample_rejected?: Array<{
+    line: number;
+    reason: string;
+    raw_model: string;
+    model_key: string;
+    dealer_price_raw: string;
+  }>;
   sample_skipped?: Array<{
     line: number;
     reason: string;
