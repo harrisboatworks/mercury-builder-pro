@@ -273,8 +273,12 @@ export default function AdminSources() {
         const riggingCode = extractRiggingCode(motor.description);
         const cleanModelName = cleanModel(motor.description, horsepower);
         
+        // Generate unique model key using model number (guaranteed unique)
+        const modelKey = `${motor.model_number.toLowerCase().replace(/[^a-z0-9]/g, '-')}-${cleanModelName.toLowerCase().replace(/[^a-z0-9]/g, '-')}`.replace(/-+/g, '-').replace(/^-|-$/g, '');
+        
         return {
           model_number: motor.model_number,
+          model_key: modelKey, // Provide unique key from HTML parser
           mercury_model_no: '', // Not available in simple interface
           model: cleanModelName,
           rigging_code: riggingCode,

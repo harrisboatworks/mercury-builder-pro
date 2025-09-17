@@ -137,16 +137,21 @@ serve(async (req) => {
         const rigInput = `${model} ${rigging_code}`.trim();
         const rig = parseMercuryRigCodes(rigInput);
         
-        // Build model key using shared system - NEVER trust incoming model_key
-        const calculatedModelKey = buildMercuryModelKey({
-          family: family,
-          hp: horsepower,
-          hasEFI: fuel_type.toLowerCase().includes('efi') || (horsepower && horsepower >= 15),
-          rig: rig,
-          modelNo: String(row.mercury_model_no || '').trim() || undefined
-        });
+        // Use provided model_key if available (from HTML parser), otherwise calculate
+        let finalModelKey = String(row.model_key || '').trim();
+        
+        if (!finalModelKey) {
+          // Calculate model key using shared Mercury system when not provided
+          finalModelKey = buildMercuryModelKey({
+            family: family,
+            hp: horsepower,
+            hasEFI: fuel_type.toLowerCase().includes('efi') || (horsepower && horsepower >= 15),
+            rig: rig,
+            modelNo: String(row.mercury_model_no || '').trim() || undefined
+          });
+        }
 
-        if (!calculatedModelKey) {
+        if (!finalModelKey) {
           skipReasons['invalid_model_key'] = (skipReasons['invalid_model_key'] || 0) + 1;
           continue;
         }
@@ -175,7 +180,7 @@ serve(async (req) => {
         const upsertRow = {
           make: 'Mercury',
           model: model,
-          model_key: calculatedModelKey,
+          model_key: finalModelKey,
           mercury_model_no: String(row.mercury_model_no || '').trim() || null,
           year: 2025,
           motor_type: family,
