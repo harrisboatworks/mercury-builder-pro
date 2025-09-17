@@ -29,6 +29,7 @@ export interface Motor {
   image: string;
   stockStatus: 'In Stock' | 'On Order' | 'Order Now' | 'Sold';
   stockNumber?: string | null; // subtle stock number display
+  model_number?: string | null; // Mercury model number display
   category: 'portable' | 'mid-range' | 'high-performance' | 'v8-racing';
   type: string;
   specs: string;

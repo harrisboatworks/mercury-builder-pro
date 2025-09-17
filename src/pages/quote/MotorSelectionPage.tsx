@@ -211,7 +211,8 @@ export default function MotorSelectionPage() {
         image: dbMotor.image_url || '',
         stockStatus: dbMotor.availability === 'In Stock' ? 'In Stock' : 'On Order',
         stockNumber: dbMotor.stock_number,
-        category: dbMotor.horsepower <= 20 ? 'portable' : 
+        model_number: dbMotor.model_number,
+        category: dbMotor.horsepower <= 20 ? 'portable' :
                  dbMotor.horsepower <= 60 ? 'mid-range' : 
                  dbMotor.horsepower <= 150 ? 'high-performance' : 'v8-racing',
         type: getMotorFamilyDisplay(classifyMotorFamily(dbMotor.horsepower, dbMotor.model_display || dbMotor.model, dbMotor.features)),
