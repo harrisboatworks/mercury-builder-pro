@@ -241,40 +241,48 @@ export default function AdminSources() {
     try {
       console.log('[AdminSources] Converting parsed data for database import');
       
-      const rows = parsedHtmlData.map(motor => {
+        const rows = parsedHtmlData.map(motor => {
+        // Extract horsepower from description (e.g., "25EH FourStroke" -> 25)
+        const extractHorsepower = (description: string) => {
+          const hpMatch = description.match(/^(\d+(?:\.\d+)?)/);
+          return hpMatch ? parseFloat(hpMatch[1]) : null;
+        };
+        
         // Extract rigging codes from description
         const extractRiggingCode = (description: string) => {
-          // Common rigging patterns: ELPT, CT, XL, XXL, L, H, M, E, PT
+          // Common rigging patterns: EH, ELPT, CT, XL, XXL, L, H, M, E, PT, etc.
           const riggingPattern = /\b((?:E|M)?(?:L|XL|XXL)?(?:H)?(?:PT)?(?:CT)?)\b/g;
           const matches = description.match(riggingPattern) || [];
           return matches.join(' ').trim();
         };
         
-        // Clean model name by removing rigging codes and HP
-        const cleanModel = (description: string, horsepower: number) => {
-          let cleaned = description
+        // Clean model name (horsepower for Mercury)
+        const cleanModel = (description: string, horsepower: number | null) => {
+          if (horsepower) {
+            return horsepower.toString();
+          }
+          // Fallback to cleaned description
+          return description
             .replace(/††|‡|†/g, '') // Remove HTML artifacts
             .replace(/\b(?:E|M)?(?:L|XL|XXL)?(?:H)?(?:PT)?(?:CT)?\b/g, '') // Remove rigging codes
             .replace(/\s+/g, ' ')    // Normalize whitespace
             .trim();
-          
-          // If we have horsepower, use it as the model name, otherwise use cleaned string
-          return horsepower ? horsepower.toString() : cleaned;
         };
         
+        const horsepower = extractHorsepower(motor.description);
         const riggingCode = extractRiggingCode(motor.description);
-        const cleanModelName = cleanModel(motor.description, 0); // No HP available in simple interface
+        const cleanModelName = cleanModel(motor.description, horsepower);
         
         return {
           model_number: motor.model_number,
           mercury_model_no: '', // Not available in simple interface
-          model: cleanModelName, // Clean model without rigging codes
-          rigging_code: riggingCode, // Separate rigging codes field
+          model: cleanModelName,
+          rigging_code: riggingCode,
           model_display: motor.description,
           dealer_price: motor.price,
           msrp: null, // Let bulk-upsert-brochure calculate MSRP with markup
-          horsepower: 0, // Not available in simple interface
-          family: motor.section || 'FourStroke', // Use detected family from section headers
+          horsepower: horsepower || 0, // Extract from description
+          family: motor.section || 'FourStroke',
           fuel_type: '', // Not available in simple interface
           motor_type: 'Outboard',
           year: 2025,
