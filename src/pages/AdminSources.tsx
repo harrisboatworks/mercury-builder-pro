@@ -272,7 +272,7 @@ export default function AdminSources() {
           rigging_code: riggingCode, // Separate rigging codes field
           model_display: motor.description,
           dealer_price: motor.price,
-          msrp: motor.price * msrpMarkup,
+          msrp: null, // Let bulk-upsert-brochure calculate MSRP with markup
           horsepower: 0, // Not available in simple interface
           family: motor.section || 'FourStroke', // Use detected family from section headers
           fuel_type: '', // Not available in simple interface
@@ -285,7 +285,10 @@ export default function AdminSources() {
       console.log('Sending rows to bulk-upsert-brochure with rigging codes extracted:', rows.slice(0, 3));
 
       const { data, error } = await supabase.functions.invoke('bulk-upsert-brochure', {
-        body: { rows }
+        body: { 
+          rows,
+          msrp_markup: Number(msrpMarkup || 1.1)
+        }
       });
 
       if (error) throw error;

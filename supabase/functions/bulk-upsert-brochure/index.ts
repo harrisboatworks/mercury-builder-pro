@@ -72,7 +72,7 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { csv, url, rows } = body;
+    const { csv, url, rows, msrp_markup } = body;
     
     let parsedRows: any[] = [];
     
@@ -153,7 +153,14 @@ serve(async (req) => {
 
         // Parse numeric fields
         const dealer_price = row.dealer_price ? Number(String(row.dealer_price).replace(/[^0-9.]/g, '')) : null;
-        const msrp = row.msrp ? Number(String(row.msrp).replace(/[^0-9.]/g, '')) : null;
+        let msrp = row.msrp ? Number(String(row.msrp).replace(/[^0-9.]/g, '')) : null;
+        
+        // Apply markup to MSRP if not provided and we have dealer_price and msrp_markup
+        if (!msrp && dealer_price && msrp_markup) {
+          const markup = Number(msrp_markup) || 1.1; // Default to 10% markup
+          msrp = Math.round(dealer_price * markup);
+          console.log(`[BulkUpsertBrochure] Applied ${markup}x markup to dealer_price ${dealer_price} = ${msrp}`);
+        }
         
         // Parse boolean fields
         const has_power_trim = String(row.has_power_trim || 'false').toLowerCase() === 'true';
