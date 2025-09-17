@@ -125,6 +125,13 @@ export default function MotorCardPremium({
             (hpNum === 15 || hpNum === 75) ? 'opacity-90' : ''
           }`}
         >
+          {/* HP indicator in top-right corner */}
+          {hpNum && (
+            <div className="absolute top-2 left-2 bg-slate-100/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-300 text-xs px-2 py-1 rounded-md backdrop-blur-sm font-medium">
+              {hpNum} HP
+            </div>
+          )}
+          
           {/* Image and title area - hover for tooltip */}
           <div 
             className="relative"
@@ -156,11 +163,16 @@ export default function MotorCardPremium({
             <div className="text-[15px] font-semibold text-slate-900 dark:text-white">
               {title}
             </div>
-            {hpNum && (
+            {/* Show Mercury model number on second line if available, otherwise show HP */}
+            {motor?.model_number ? (
+              <div className="mt-0.5 text-sm font-medium text-slate-600 dark:text-slate-300">
+                Model: {motor.model_number}
+              </div>
+            ) : hpNum ? (
               <div className="mt-0.5 text-sm text-slate-600 dark:text-slate-300">
                 {hpNum} HP
               </div>
-            )}
+            ) : null}
             
             {/* HP-based descriptor and popularity indicators */}
             {hpNum && (
