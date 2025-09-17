@@ -152,9 +152,15 @@ export default function MotorCardPremium({
                       In Stock
                     </div>
                   )}
-                  {imageCount > 1 && (
+                 {imageCount > 1 && (
                     <div className="bg-black/70 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">
                       {imageCount} photos
+                    </div>
+                  )}
+                  {/* HP display moved to bottom-right corner */}
+                  {hpNum && (
+                    <div className="bg-blue-600/90 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm font-medium">
+                      {hpNum} HP
                     </div>
                   )}
                 </div>
@@ -163,16 +169,12 @@ export default function MotorCardPremium({
             <div className="text-[15px] font-semibold text-slate-900 dark:text-white">
               {title}
             </div>
-            {/* Show Mercury model number on second line if available, otherwise show HP */}
-            {motor?.model_number ? (
-              <div className="mt-0.5 text-sm font-medium text-slate-600 dark:text-slate-300">
-                Model: {motor.model_number}
+            {/* Mercury Model Number - prominently displayed on second line */}
+            {motor?.model_number && (
+              <div className="mt-0.5 text-sm font-mono font-medium text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-800 px-2 py-1 rounded text-center">
+                {motor.model_number}
               </div>
-            ) : hpNum ? (
-              <div className="mt-0.5 text-sm text-slate-600 dark:text-slate-300">
-                {hpNum} HP
-              </div>
-            ) : null}
+            )}
             
             {/* HP-based descriptor and popularity indicators */}
             {hpNum && (
