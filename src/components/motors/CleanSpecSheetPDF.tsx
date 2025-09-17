@@ -402,6 +402,7 @@ export interface CleanSpecSheetData {
   modelYear: string | number;
   sku?: string;
   msrp?: string;
+  modelNumber?: string;
   motorPrice?: number; // Add motor price for financing calculations
   image_url?: string; // Add motor image URL
   specifications?: Record<string, any>;
@@ -761,6 +762,11 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
           <Text style={styles.motorSubtitle}>
             {specData.modelYear} Mercury Marine {specData.category}
           </Text>
+          {specData.modelNumber && (
+            <Text style={[styles.motorSubtitle, { fontSize: 12, color: '#666', fontFamily: 'Helvetica', marginTop: 4 }]}>
+              Model Number: {specData.modelNumber}
+            </Text>
+          )}
         </View>
 
         {/* Model Code Decoder - Simplified */}

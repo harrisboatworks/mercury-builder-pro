@@ -240,6 +240,7 @@ export default function MotorDetailsSheet({
         modelYear: motor.year || new Date().getFullYear(),
         sku: motor.sku,
         msrp: typeof price === "number" ? price.toLocaleString('en-CA', { minimumFractionDigits: 0 }) : motor.msrp?.toLocaleString('en-CA', { minimumFractionDigits: 0 }),
+        modelNumber: motor.model_number,
         motorPrice: typeof price === "number" ? price : motor.msrp, // Add motor price for financing
         image_url: motor?.image_url || img || motor?.images?.[0] || gallery?.[0] || undefined,
         specifications: {
