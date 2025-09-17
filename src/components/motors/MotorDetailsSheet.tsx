@@ -370,28 +370,77 @@ export default function MotorDetailsSheet({
         <div className="relative bg-white dark:bg-slate-900 w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-2xl sm:rounded-xl md:max-w-3xl lg:max-w-4xl flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-300">
           
           {/* Modal Header */}
-          <div className="sticky top-0 z-40 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-sm sm:rounded-t-xl">
-            {/* Header Bar */}
-            <div className="flex items-start justify-between p-4 sm:p-6 gap-3">
-              <div className="flex-1 min-w-0">
-                <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight mb-1">
-                  {title}
-                </h2>
-                {/* Removed redundant shaft display - shown in specifications */}
+          <div className="sticky top-0 z-40 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-sm sm:rounded-t-xl relative">
+            {/* Close Button - Absolute positioning for tablet/desktop */}
+            <button 
+              onClick={onClose} 
+              className="absolute top-4 right-4 z-50 p-2 bg-white dark:bg-slate-800 shadow-md hover:shadow-lg dark:shadow-slate-900/50 rounded-full transition-all border border-slate-200 dark:border-slate-700" 
+              aria-label="Close"
+            >
+              <X className="w-5 h-5 text-slate-700 dark:text-slate-300" />
+            </button>
+
+            {/* Header Content */}
+            <div className="p-4 sm:p-6 pr-16">
+              <div className="flex flex-col space-y-2">
+                {/* Title Row */}
+                <div className="flex-1 min-w-0">
+                  <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight">
+                    {title}
+                  </h2>
+                </div>
+                
+                {/* Tablet Price & Promo Row */}
+                <div className="hidden md:flex md:items-center md:justify-between md:gap-4 lg:hidden">
+                  <div className="flex items-center gap-4">
+                    {/* Price */}
+                    <div className="text-right">
+                      <p className="text-xl font-bold text-slate-900 dark:text-white">
+                        {typeof price === "number" ? money(price) : 'Call for Price'}
+                      </p>
+                    </div>
+                    
+                    {/* Warranty Badge */}
+                    <div className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded-full text-xs font-medium">
+                      +2Y Warranty
+                    </div>
+                  </div>
+                  
+                  {/* Promotional Content */}
+                  <div className="flex items-center gap-2">
+                    {promoText && (
+                      <div className="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-2 py-1 rounded-full text-xs font-medium">
+                        {promoText}
+                      </div>
+                    )}
+                    {activePromo && (
+                      <div className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-2 py-1 rounded-full text-xs font-medium">
+                        {activePromo.rate}% Financing
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Desktop Price Badge - visible on large screens and up */}
+                <div className="hidden lg:block absolute top-4 right-16 text-right">
+                  <p className="text-2xl font-bold text-slate-900 dark:text-white">
+                    {typeof price === "number" ? money(price) : 'Call for Price'}
+                  </p>
+                  <div className="flex items-center gap-2 justify-end mt-1">
+                    <span className="text-xs text-green-600 dark:text-green-400">+2Y Warranty</span>
+                    {promoText && (
+                      <span className="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-2 py-1 rounded-full text-xs font-medium">
+                        {promoText}
+                      </span>
+                    )}
+                    {activePromo && (
+                      <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-2 py-1 rounded-full text-xs font-medium">
+                        {activePromo.rate}% Financing
+                      </span>
+                    )}
+                  </div>
+                </div>
               </div>
-              
-              {/* Price Badge - visible on larger screens */}
-              <div className="hidden sm:block text-right">
-                <p className="text-2xl font-bold text-slate-900 dark:text-white">
-                  {typeof price === "number" ? money(price) : 'Call for Price'}
-                </p>
-                <p className="text-xs text-green-600 dark:text-green-400">+2Y Warranty</p>
-              </div>
-              
-              {/* Close Button - More Visible */}
-              <button onClick={onClose} className="p-2 bg-white dark:bg-slate-800 shadow-md hover:shadow-lg dark:shadow-slate-900/50 rounded-full transition-all border border-slate-200 dark:border-slate-700" aria-label="Close">
-                <X className="w-5 h-5 text-slate-700 dark:text-slate-300" />
-              </button>
             </div>
           </div>
 
