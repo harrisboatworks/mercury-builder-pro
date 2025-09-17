@@ -187,38 +187,43 @@ export default function AdminSources() {
   };
 
   const parseHtmlFile = async () => {
-    setLoading({ ...loading, htmlParse: true });
-    try {
-      const response = await fetch('/motor-pricing-printable.html');
-      const htmlContent = await response.text();
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.html,.htm';
+    input.onchange = async (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0];
+      if (!file) return;
       
-      console.log('[AdminSources] Using advanced HTML parsing logic');
-      const parsedData = parsePriceListFromHtml(htmlContent, 1.4);
-      
-      // Convert to the format expected by the component
-      const motors: ParsedMotor[] = parsedData.map(motor => ({
-        model_number: motor.model_number,
-        description: motor.model_display,
-        price: motor.dealer_price,
-        section: motor.family || 'Unknown'
-      }));
-      
-      setParsedHtmlData(motors);
-      toast({
-        title: "HTML Parsed with Advanced Logic",
-        description: `Parsed ${motors.length} motors from HTML file using same logic as URL pricelist`
-      });
-      
-    } catch (error) {
-      console.error('Error parsing HTML:', error);
-      toast({
-        title: "Parse Error",
-        description: "Failed to parse HTML file",
-        variant: "destructive"
-      });
-    } finally {
-      setLoading({ ...loading, htmlParse: false });
-    }
+      setLoading({ ...loading, htmlParse: true });
+      try {
+        const htmlContent = await file.text();
+        const parsedData = parsePriceListFromHtml(htmlContent, msrpMarkup);
+        
+        // Convert to the format expected by the component
+        const motors: ParsedMotor[] = parsedData.map(motor => ({
+          model_number: motor.model_number,
+          description: motor.model_display,
+          price: motor.dealer_price,
+          section: motor.family || 'Unknown'
+        }));
+        
+        setParsedHtmlData(motors);
+        toast({
+          title: "HTML Parsed",
+          description: `Found ${motors.length} motors from ${file.name}`
+        });
+      } catch (error) {
+        console.error('HTML parse error:', error);
+        toast({
+          title: "Parse Error",
+          description: "Failed to parse HTML file",
+          variant: "destructive"
+        });
+      } finally {
+        setLoading({ ...loading, htmlParse: false });
+      }
+    };
+    input.click();
   };
 
 
@@ -226,7 +231,7 @@ export default function AdminSources() {
     if (parsedHtmlData.length === 0) {
       toast({
         title: "No Data",
-        description: "Parse the HTML file first",
+        description: "Parse an HTML file first",
         variant: "destructive"
       });
       return;
@@ -234,25 +239,20 @@ export default function AdminSources() {
 
     setLoading({ ...loading, htmlImport: true });
     try {
-      // Re-parse the HTML with full data to get proper model keys and family detection
-      const response = await fetch('/motor-pricing-printable.html');
-      const htmlContent = await response.text();
-      const fullParsedData = parsePriceListFromHtml(htmlContent, 1.4);
-      
       console.log('[AdminSources] Converting parsed data for database import');
       
-      const rows = fullParsedData.map(motor => {
-        // Extract rigging codes from model_display
-        const extractRiggingCode = (modelDisplay: string) => {
+      const rows = parsedHtmlData.map(motor => {
+        // Extract rigging codes from description
+        const extractRiggingCode = (description: string) => {
           // Common rigging patterns: ELPT, CT, XL, XXL, L, H, M, E, PT
           const riggingPattern = /\b((?:E|M)?(?:L|XL|XXL)?(?:H)?(?:PT)?(?:CT)?)\b/g;
-          const matches = modelDisplay.match(riggingPattern) || [];
+          const matches = description.match(riggingPattern) || [];
           return matches.join(' ').trim();
         };
         
         // Clean model name by removing rigging codes and HP
-        const cleanModel = (modelDisplay: string, horsepower: number) => {
-          let cleaned = modelDisplay
+        const cleanModel = (description: string, horsepower: number) => {
+          let cleaned = description
             .replace(/††|‡|†/g, '') // Remove HTML artifacts
             .replace(/\b(?:E|M)?(?:L|XL|XXL)?(?:H)?(?:PT)?(?:CT)?\b/g, '') // Remove rigging codes
             .replace(/\s+/g, ' ')    // Normalize whitespace
@@ -262,22 +262,22 @@ export default function AdminSources() {
           return horsepower ? horsepower.toString() : cleaned;
         };
         
-        const riggingCode = extractRiggingCode(motor.model_display);
-        const cleanModelName = cleanModel(motor.model_display, motor.horsepower);
+        const riggingCode = extractRiggingCode(motor.description);
+        const cleanModelName = cleanModel(motor.description, 0); // No HP available in simple interface
         
         return {
           model_number: motor.model_number,
-          mercury_model_no: motor.mercury_model_no,
+          mercury_model_no: '', // Not available in simple interface
           model: cleanModelName, // Clean model without rigging codes
           rigging_code: riggingCode, // Separate rigging codes field
-          model_display: motor.model_display,
-          dealer_price: motor.dealer_price,
-          msrp: motor.msrp,
-          horsepower: motor.horsepower,
-          family: motor.family, // Use detected family from section headers
-          fuel_type: motor.horsepower && motor.horsepower >= 15 ? 'EFI' : '', // Add fuel type
+          model_display: motor.description,
+          dealer_price: motor.price,
+          msrp: motor.price * msrpMarkup,
+          horsepower: 0, // Not available in simple interface
+          family: motor.section || 'FourStroke', // Use detected family from section headers
+          fuel_type: '', // Not available in simple interface
           motor_type: 'Outboard',
-          year: motor.year,
+          year: 2025,
           is_brochure: true
         };
       });
