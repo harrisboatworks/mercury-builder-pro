@@ -21,6 +21,7 @@ interface DbMotor {
   id: string;
   model: string;
   model_display?: string | null;
+  model_number?: string | null;
   horsepower: number;
   base_price: number;
   sale_price?: number | null;
