@@ -1,4 +1,6 @@
 // src/lib/mercury-codes.ts
+import { getCorrectModelNumber, isValidModelNumber } from "./mercury-model-number-mapping";
+
 export type RigAttrs = {
   tokens: string[];               // ordered tokens for key (e.g. ["S","E","H","PT","CT"])
   shaft_code: "S"|"L"|"XL"|"XXL";
@@ -88,14 +90,30 @@ export function parseMercuryRigCodes(input: string): RigAttrs {
   return { tokens: ordered, shaft_code, shaft_inches, start_type, control_type, has_power_trim, has_command_thrust };
 }
 
-/** Stable key composer */
+/** 
+ * Build Mercury model key using correct model number as primary identifier
+ * This ensures model keys are based on official Mercury model numbers
+ */
 export function buildMercuryModelKey(params: {
   family?: string;       // FourStroke | ProXS | SeaPro | Verado | Racing
   hp?: number | null;
   hasEFI?: boolean;
   rig: RigAttrs;
+  modelDisplay?: string; // motor display name to get correct model number
   modelNo?: string;      // optional mercury model number to disambiguate
 }): string {
+  // Try to get correct model number from display name first
+  let correctModelNo = params.modelNo;
+  if (params.modelDisplay && !correctModelNo) {
+    correctModelNo = getCorrectModelNumber(params.modelDisplay);
+  }
+  
+  // Build key with correct model number as primary identifier
+  if (correctModelNo && isValidModelNumber(correctModelNo)) {
+    return correctModelNo; // Use official Mercury model number as the key
+  }
+  
+  // Fallback to old system if no correct model number available
   const parts: string[] = [];
   if (params.family) parts.push(params.family.toUpperCase());
   if (params.hp && params.hp > 0) parts.push(`${params.hp}HP`);
@@ -103,4 +121,11 @@ export function buildMercuryModelKey(params: {
   parts.push(...params.rig.tokens); // ["S","E","H","PT","CT"] etc.
   if (params.modelNo) parts.push(params.modelNo.toUpperCase());
   return parts.join("-").replace(/-+/g,"-").replace(/^-|-$/g,"");
+}
+
+/**
+ * Validate if a motor display name has a correct Mercury model number mapping
+ */
+export function hasCorrectModelNumber(modelDisplay: string): boolean {
+  return getCorrectModelNumber(modelDisplay) !== null;
 }
