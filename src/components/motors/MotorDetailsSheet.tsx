@@ -376,9 +376,7 @@ export default function MotorDetailsSheet({
                 <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight mb-1">
                   {title}
                 </h2>
-                <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                  <span>{shaft}</span>
-                </div>
+                {/* Removed redundant shaft display - shown in specifications */}
               </div>
               
               {/* Price Badge - visible on larger screens */}
@@ -457,6 +455,13 @@ export default function MotorDetailsSheet({
                   Specifications
                 </h2>
                 <h3 className="font-semibold text-lg text-slate-900 dark:text-white">About This Motor</h3>
+                {motor?.model_number && (
+                  <div className="mb-3 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                    <div className="text-sm font-medium text-blue-900 dark:text-blue-100">
+                      Model Number: <span className="font-mono">{motor.model_number}</span>
+                    </div>
+                  </div>
+                )}
                 <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
                   {hp && (() => {
                   const decoded = decodeModelName(title);
