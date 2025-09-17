@@ -273,8 +273,8 @@ export default function AdminSources() {
         const riggingCode = extractRiggingCode(motor.description);
         const cleanModelName = cleanModel(motor.description, horsepower);
         
-        // Generate unique model key using model number (guaranteed unique)
-        const modelKey = `${motor.model_number.toLowerCase().replace(/[^a-z0-9]/g, '-')}-${cleanModelName.toLowerCase().replace(/[^a-z0-9]/g, '-')}`.replace(/-+/g, '-').replace(/^-|-$/g, '');
+        // Generate unique model key using only model number (guaranteed unique)
+        const modelKey = motor.model_number.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
         
         return {
           model_number: motor.model_number,
