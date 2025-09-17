@@ -25,14 +25,8 @@ const MOTOR_SPECIFIC_MESSAGES = [
     icon: 'trending-up',
     condition: (motor: any) => motor.hp >= 60 && motor.hp <= 150
   },
-  // In Stock items
-  { 
-    message: "In Stock Now!", 
-    variant: 'notice' as const, 
-    color: 'text-green-600 bg-green-50 border-green-200',
-    icon: 'check-circle',
-    condition: (motor: any) => motor.stockStatus === 'In Stock'
-  },
+  // NOTE: Removed "In Stock Now!" to prevent misleading customers
+  // Only show stock status when we have verified inventory data
   // Sale items
   { 
     message: "On Sale!", 
@@ -97,7 +91,6 @@ export function useSocialProofNotifications(motors: any[]) {
         const shouldShow = 
           index % 4 === 0 || // Every 4th motor for less crowding
           motor.salePrice || // Always show for sale items
-          (motor.stockStatus === 'In Stock' && motor.hp >= 40) || // In-stock popular sizes
           (motor.model?.includes('EFI') && Math.random() > 0.5) || // EFI motors
           interactionCount > 0; // Previously viewed items
 

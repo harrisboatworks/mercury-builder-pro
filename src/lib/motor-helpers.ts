@@ -796,19 +796,10 @@ export const getPopularityIndicator = (motorModel: string, isInStock: boolean | 
     // Otherwise show performance/feature badges (not stock-related)
   }
   
-  // If we KNOW it's in stock, prioritize showing that
+  // NOTE: Stock status badges removed to prevent misleading customers
+  // Only show stock badges when we have verified inventory data
   if (isInStock === true) {
-    // 60% chance to show in-stock status
-    if (Math.random() < 0.6) {
-      const inStockBadges = [
-        '✅ In Stock - Rice Lake',
-        '📦 Available Now',
-        '✓ Ready for Pickup',
-        '🏪 On Display in Store'
-      ];
-      return inStockBadges[Math.floor(Math.random() * inStockBadges.length)];
-    }
-    // Otherwise continue to other badges
+    // Continue to other promotional badges instead of fake stock status
   }
   
   // CORRECTED BEST SELLERS - No 15HP pontoon nonsense!
@@ -926,15 +917,8 @@ export const getPopularityIndicator = (motorModel: string, isInStock: boolean | 
     return awardBadges[Math.floor(Math.random() * awardBadges.length)];
   }
   
-  // STOCK STATUS for remaining motors (30% show stock status) - only if not already handled above
-  if (isInStock === null && Math.random() < 0.30) {
-    const stockBadges = [
-      '✅ In Stock - Rice Lake',
-      '📦 Available Now',
-      '⚡ Limited Stock'
-    ];
-    return stockBadges[Math.floor(Math.random() * stockBadges.length)];
-  }
+  // NOTE: Removed misleading stock status badges to ensure customer accuracy
+  // Stock status will only be shown via StockBadge component using real inventory data
   
   // 50% of motors show a badge, 50% don't (to avoid clutter)
   return null;
