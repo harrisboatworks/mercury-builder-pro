@@ -16,6 +16,7 @@ import { useToast } from "@/hooks/use-toast";
 import { invokeEdge, pingEdge } from "@/lib/invokeEdge";
 import AdminNav from "@/components/admin/AdminNav";
 import { parsePriceListFromHtml } from "@/lib/html-parser-helpers";
+import { formatMotorDisplayName } from "@/lib/motor-display-formatter";
 
 interface ParsedMotor {
   model_number: string;
@@ -256,10 +257,20 @@ export default function AdminSources() {
           return matches.join(' ').trim();
         };
         
-        // Clean model name (horsepower for Mercury)
-        const cleanModel = (description: string, horsepower: number | null) => {
+        // Generate proper model name combining HP, family, and rigging codes
+        const cleanModel = (description: string, horsepower: number | null, family: string, riggingCode: string) => {
           if (horsepower) {
-            return horsepower.toString();
+            // Create proper model name like "25 HP FourStroke ELH"
+            let modelName = `${horsepower} HP`;
+            if (family && family !== 'FourStroke') {
+              modelName += ` ${family}`;
+            } else {
+              modelName += ' FourStroke';
+            }
+            if (riggingCode) {
+              modelName += ` ${riggingCode}`;
+            }
+            return modelName;
           }
           // Fallback to cleaned description
           return description
@@ -271,10 +282,14 @@ export default function AdminSources() {
         
         const horsepower = extractHorsepower(motor.description);
         const riggingCode = extractRiggingCode(motor.description);
-        const cleanModelName = cleanModel(motor.description, horsepower);
+        const family = motor.section || 'FourStroke';
+        const cleanModelName = cleanModel(motor.description, horsepower, family, riggingCode);
         
         // Generate unique model key using only model number (guaranteed unique)
         const modelKey = motor.model_number.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+        
+        // Create properly formatted display name
+        const displayName = formatMotorDisplayName(cleanModelName);
         
         return {
           model_number: motor.model_number,
@@ -282,7 +297,7 @@ export default function AdminSources() {
           mercury_model_no: '', // Not available in simple interface
           model: cleanModelName,
           rigging_code: riggingCode,
-          model_display: motor.description,
+          model_display: displayName,
           dealer_price: motor.price,
           msrp: null, // Let bulk-upsert-brochure calculate MSRP with markup
           horsepower: horsepower || 0, // Extract from description
