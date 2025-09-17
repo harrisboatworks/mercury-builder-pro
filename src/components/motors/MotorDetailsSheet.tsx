@@ -372,7 +372,12 @@ export default function MotorDetailsSheet({
           {/* Modal Header */}
           <div className="sticky top-0 z-40 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-sm sm:rounded-t-xl">
             {/* Header Bar */}
-            <div className="flex items-start justify-between p-4 sm:p-6 gap-3">
+            <div className="flex items-start gap-3 p-4 sm:p-6">
+              {/* Close Button - Left positioned for better tablet accessibility */}
+              <button onClick={onClose} className="p-2 bg-white dark:bg-slate-800 shadow-md hover:shadow-lg dark:shadow-slate-900/50 rounded-full transition-all border border-slate-200 dark:border-slate-700" aria-label="Close">
+                <X className="w-5 h-5 text-slate-700 dark:text-slate-300" />
+              </button>
+              
               <div className="flex-1 min-w-0">
                 <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight mb-1">
                   {title}
@@ -387,11 +392,6 @@ export default function MotorDetailsSheet({
                 </p>
                 <p className="text-xs text-green-600 dark:text-green-400">+2Y Warranty</p>
               </div>
-              
-              {/* Close Button - More Visible */}
-              <button onClick={onClose} className="p-2 bg-white dark:bg-slate-800 shadow-md hover:shadow-lg dark:shadow-slate-900/50 rounded-full transition-all border border-slate-200 dark:border-slate-700" aria-label="Close">
-                <X className="w-5 h-5 text-slate-700 dark:text-slate-300" />
-              </button>
             </div>
           </div>
 
