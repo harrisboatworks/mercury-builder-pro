@@ -242,29 +242,47 @@ export default function AdminSources() {
       console.log('[AdminSources] Converting parsed data for database import');
       
       const rows = fullParsedData.map(motor => {
-        // Use the advanced parsing results directly
-        const cleanModelName = motor.model_display
-          .replace(/††|‡|†/g, '') // Remove HTML artifacts
-          .replace(/\s+/g, ' ')    // Normalize whitespace
-          .trim();
+        // Extract rigging codes from model_display
+        const extractRiggingCode = (modelDisplay: string) => {
+          // Common rigging patterns: ELPT, CT, XL, XXL, L, H, M, E, PT
+          const riggingPattern = /\b((?:E|M)?(?:L|XL|XXL)?(?:H)?(?:PT)?(?:CT)?)\b/g;
+          const matches = modelDisplay.match(riggingPattern) || [];
+          return matches.join(' ').trim();
+        };
+        
+        // Clean model name by removing rigging codes and HP
+        const cleanModel = (modelDisplay: string, horsepower: number) => {
+          let cleaned = modelDisplay
+            .replace(/††|‡|†/g, '') // Remove HTML artifacts
+            .replace(/\b(?:E|M)?(?:L|XL|XXL)?(?:H)?(?:PT)?(?:CT)?\b/g, '') // Remove rigging codes
+            .replace(/\s+/g, ' ')    // Normalize whitespace
+            .trim();
+          
+          // If we have horsepower, use it as the model name, otherwise use cleaned string
+          return horsepower ? horsepower.toString() : cleaned;
+        };
+        
+        const riggingCode = extractRiggingCode(motor.model_display);
+        const cleanModelName = cleanModel(motor.model_display, motor.horsepower);
         
         return {
           model_number: motor.model_number,
-          model_key: motor.model_key, // Use the proper model key from advanced parsing
           mercury_model_no: motor.mercury_model_no,
-          model: cleanModelName,
+          model: cleanModelName, // Clean model without rigging codes
+          rigging_code: riggingCode, // Separate rigging codes field
           model_display: motor.model_display,
           dealer_price: motor.dealer_price,
           msrp: motor.msrp,
           horsepower: motor.horsepower,
           family: motor.family, // Use detected family from section headers
+          fuel_type: motor.horsepower && motor.horsepower >= 15 ? 'EFI' : '', // Add fuel type
           motor_type: 'Outboard',
           year: motor.year,
           is_brochure: true
         };
       });
 
-      console.log('Sending rows to bulk-upsert-brochure with advanced parsing:', rows.slice(0, 3));
+      console.log('Sending rows to bulk-upsert-brochure with rigging codes extracted:', rows.slice(0, 3));
 
       const { data, error } = await supabase.functions.invoke('bulk-upsert-brochure', {
         body: { rows }
@@ -273,8 +291,8 @@ export default function AdminSources() {
       if (error) throw error;
 
       toast({
-        title: "Import Complete with Advanced Parsing",
-        description: `Imported ${data?.created || 0} new, updated ${data?.updated || 0} existing motors using same logic as URL pricelist`
+        title: "Import Complete",
+        description: `Imported ${data?.created || 0} new, updated ${data?.updated || 0} existing motors with proper rigging code extraction`
       });
 
       await loadBrochureSummary();
