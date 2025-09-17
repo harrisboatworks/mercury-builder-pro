@@ -1381,6 +1381,13 @@ export type Database = {
         Args: Record<PropertyKey, never>
         Returns: number
       }
+      fix_auto_generated_model_numbers_comprehensive: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          details: Json
+          updated_count: number
+        }[]
+      }
       fix_auto_generated_model_numbers_safe: {
         Args: Record<PropertyKey, never>
         Returns: {
