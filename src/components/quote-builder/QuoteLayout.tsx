@@ -10,6 +10,7 @@ import { HamburgerMenu } from '@/components/ui/hamburger-menu';
 import { useState } from 'react';
 import { CartHeader } from '@/components/ui/cart-header';
 import { ChatWidget } from '@/components/chat/ChatWidget';
+import { CurrentStepIndicator } from './CurrentStepIndicator';
 interface QuoteLayoutProps {
   children: React.ReactNode;
   showProgress?: boolean;
@@ -172,6 +173,15 @@ export const QuoteLayout = ({
         </div>
       </header>
 
+
+      {/* Current Step Indicator */}
+      {showProgress && (
+        <CurrentStepIndicator
+          currentStep={visibleSteps.findIndex(step => step.path === location.pathname) + 1 || 1}
+          totalSteps={visibleSteps.length}
+          stepTitle={visibleSteps.find(step => step.path === location.pathname)?.title}
+        />
+      )}
 
       {/* Trust Bar */}
       <div className="bg-muted/40 border-b border-border mt-[88px]">
