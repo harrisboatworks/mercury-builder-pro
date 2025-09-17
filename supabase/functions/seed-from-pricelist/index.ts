@@ -1,4 +1,5 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { formatMotorDisplayName } from '../_shared/motor-helpers.ts';
 
 // ---------- CORS + helpers ----------
 const corsHeaders = {
@@ -529,7 +530,13 @@ Deno.serve(async (req) => {
 
     for (const r of parsedRows) {
       const model_number = String(r.model_number ?? '').trim();
-      const model_display = decodeEntities(String(r.model_display ?? '').trim());
+      let model_display = decodeEntities(String(r.model_display ?? '').trim());
+      
+      // If no model_display provided, use formatted model name instead
+      if (!model_display && r.model) {
+        model_display = formatMotorDisplayName(String(r.model).trim());
+      }
+      
       const model_key = String(r.model_key ?? '').trim();
       const mercury_model_no = String(r.mercury_model_no ?? '').trim();
 

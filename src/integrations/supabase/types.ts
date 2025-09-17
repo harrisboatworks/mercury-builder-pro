@@ -1381,6 +1381,10 @@ export type Database = {
         Args: Record<PropertyKey, never>
         Returns: number
       }
+      format_motor_display_name: {
+        Args: { model_name: string }
+        Returns: string
+      }
       generate_session_id: {
         Args: Record<PropertyKey, never>
         Returns: string

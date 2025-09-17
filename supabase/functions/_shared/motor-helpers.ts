@@ -8,6 +8,25 @@ export type ParsedModel = {
   code: string; // e.g. ELHPT, ELPT, XL, EXLPT, CT, DTS...
 };
 
+// Motor display name formatter function - ensures proper spacing like "8 MH FourStroke"
+export function formatMotorDisplayName(modelName: string): string {
+  if (!modelName) return '';
+  
+  let formatted = modelName.trim();
+  
+  // Add space after HP numbers followed by rigging codes
+  // Matches patterns like: 8MH, 9.9ELH, 25ELHPT, 40EXLPT, etc.
+  formatted = formatted.replace(
+    /(\d+(?:\.\d+)?)(MH|MLH|MXLH|MXL|MXXL|ELH|ELPT|ELHPT|EXLPT|EH|XL|XXL|CT|DTS|L|CL|M|JPO)\b/g, 
+    '$1 $2'
+  );
+  
+  // Clean up any double spaces
+  formatted = formatted.replace(/\s+/g, ' ').trim();
+  
+  return formatted;
+}
+
 // Extracts family / hp / fuel / rigging code from a freeform model string
 export function extractHpAndCode(input: string): ParsedModel {
   if (!input) return { family: '', hp: null, fuel: '', code: '' };
