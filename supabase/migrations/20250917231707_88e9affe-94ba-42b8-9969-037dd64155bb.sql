@@ -1,0 +1,192 @@
+-- Fix Mercury Model Numbers Migration
+-- Updates all motor_models records to use correct Mercury model numbers
+-- based on their model_display names using official Mercury reference
+
+-- First, let's create a temporary function to help with the mapping
+CREATE OR REPLACE FUNCTION fix_mercury_model_number(display_name text)
+RETURNS text AS $$
+BEGIN
+  -- Direct mapping from model_display to correct Mercury model numbers
+  CASE display_name
+    -- FourStroke Motors
+    WHEN '2.5 MH FourStroke' THEN RETURN '1F02201KK';
+    WHEN '3.5 MH FourStroke' THEN RETURN '1F03201KK';
+    WHEN '3.5 MLH FourStroke' THEN RETURN '1F03211KK';
+    WHEN '4 MH FourStroke' THEN RETURN '1F04201KK';
+    WHEN '4 MLH FourStroke' THEN RETURN '1F04211KK';
+    WHEN '5 MH FourStroke' THEN RETURN '1FX5201KK';
+    WHEN '5 MXLH FourStroke' THEN RETURN '1F05221KK';
+    WHEN '5 MLHA Sail Power FourStroke' THEN RETURN '1F05216KK';
+    WHEN '6 MH FourStroke' THEN RETURN '1FX6201KK';
+    WHEN '6 MLH FourStroke' THEN RETURN '1FX6211KK';
+    WHEN '8 MH FourStroke' THEN RETURN '1A08201LK';
+    WHEN '8 MLH FourStroke' THEN RETURN '1A08211LK';
+    WHEN '8 EH FourStroke' THEN RETURN '1A08301LK';
+    WHEN '8 ELH FourStroke' THEN RETURN '1A08311LK';
+    WHEN '9.9 MRC FourStroke' THEN RETURN '1A10204LV';
+    WHEN '9.9 MH FourStroke' THEN RETURN '1A10201LK';
+    WHEN '9.9 MLH FourStroke' THEN RETURN '1A10211LK';
+    WHEN '9.9 EH FourStroke' THEN RETURN '1A10301LK';
+    WHEN '9.9 EL FourStroke' THEN RETURN '1A10312LK';
+    WHEN '9.9 ELH FourStroke' THEN RETURN '1A10311LK';
+    WHEN '9.9 EPT FourStroke' THEN RETURN '1A10402LK';
+    WHEN '9.9 MLH Command Thrust FourStroke' THEN RETURN '1A10251LK';
+    WHEN '9.9 MXLH Command Thrust FourStroke' THEN RETURN '1A10261LK';
+    WHEN '9.9 ELH Command Thrust FourStroke' THEN RETURN '1A10351LK';
+    WHEN '9.9 EXLH Command Thrust FourStroke' THEN RETURN '1A10361LK';
+    WHEN '9.9 ELPT Command Thrust ProKicker EFI FourStroke' THEN RETURN '1A10452LK';
+    WHEN '9.9 EXLPT Command Thrust ProKicker EFI FourStroke' THEN RETURN '1A10462LK';
+    WHEN '9.9 ELHPT Command Thrust ProKicker EFI FourStroke' THEN RETURN '1A10451LK';
+    WHEN '9.9 EXLHPT Command Thrust ProKicker EFI FourStroke' THEN RETURN '1A10461LK';
+    WHEN '15 MRC FourStroke' THEN RETURN '1A15204LK';
+    WHEN '15 MH FourStroke' THEN RETURN '1A15201LK';
+    WHEN '15 MLH FourStroke' THEN RETURN '1A15211LK';
+    WHEN '15 E FourStroke' THEN RETURN '1A15302LK';
+    WHEN '15 EL FourStroke' THEN RETURN '1A15312LK';
+    WHEN '15 EH FourStroke' THEN RETURN '1A15301LK';
+    WHEN '15 ELH FourStroke' THEN RETURN '1A15311LK';
+    WHEN '15 EPT FourStroke' THEN RETURN '1A15402LK';
+    WHEN '15 EHPT FourStroke' THEN RETURN '1A15401LK';
+    WHEN '15 ELPT FourStroke' THEN RETURN '1A15412LK';
+    WHEN '15 ELPT ProKicker FourStroke' THEN RETURN '1A15452BK';
+    WHEN '15 EXLPT ProKicker FourStroke' THEN RETURN '1A15462BK';
+    WHEN '15 ELHPT ProKicker FourStroke' THEN RETURN '1A15451BK';
+    WHEN '15 EXLHPT ProKicker FourStroke' THEN RETURN '1A15461BK';
+    WHEN '20 MRC FourStroke' THEN RETURN '1A20204LK';
+    WHEN '20 MH FourStroke' THEN RETURN '1A20201LK';
+    WHEN '20 MLH FourStroke' THEN RETURN '1A20211LK';
+    WHEN '20 EH FourStroke' THEN RETURN '1A20301LK';
+    WHEN '20 E FourStroke' THEN RETURN '1A20302LK';
+    WHEN '20 ELH FourStroke' THEN RETURN '1A20311LK';
+    WHEN '20 EL FourStroke' THEN RETURN '1A20312LK';
+    WHEN '20 EPT FourStroke' THEN RETURN '1A20402LK';
+    WHEN '20 ELHPT FourStroke' THEN RETURN '1A20411LK';
+    WHEN '20 ELPT FourStroke' THEN RETURN '1A20412LK';
+    WHEN '25 MH FourStroke' THEN RETURN '1A25203BK';
+    WHEN '25 MLH FourStroke' THEN RETURN '1A25213BK';
+    WHEN '25 EH FourStroke' THEN RETURN '1A25301BK';
+    WHEN '25 ELH FourStroke' THEN RETURN '1A25311BK';
+    WHEN '25 EL FourStroke' THEN RETURN '1A25312BK';
+    WHEN '25 EPT FourStroke' THEN RETURN '1A25403BK';
+    WHEN '25 ELHPT FourStroke' THEN RETURN '1A25411BK';
+    WHEN '25 ELPT FourStroke' THEN RETURN '1A25413BK';
+    WHEN '25 ELPT ProKicker FourStroke' THEN RETURN '1A25452BK';
+    WHEN '25 EXLPT ProKicker FourStroke' THEN RETURN '1A25462BK';
+    WHEN '30 MHGA FourStroke' THEN RETURN '1A3G203BK';
+    WHEN '30 MLHGA FourStroke' THEN RETURN '1A3G213BK';
+    WHEN '30 ELGA FourStroke' THEN RETURN '1A3G313BK';
+    WHEN '30 ELHGA FourStroke' THEN RETURN '1A3G311BK';
+    WHEN '30 EPT FourStroke' THEN RETURN '1A30403BK';
+    WHEN '30 ELPT FourStroke' THEN RETURN '1A30413BK';
+    WHEN '30 ELHPT FourStroke' THEN RETURN '1A30411BK';
+    WHEN '40 EPT FourStroke' THEN RETURN '1F40403GZ';
+    WHEN '40 ELPT FourStroke' THEN RETURN '1F40413GZ';
+    WHEN '40 ELHPT FourStroke Tiller' THEN RETURN '1F4041TJZ';
+    WHEN '40 ELPT Command Thrust (Four-Cylinder) FourStroke' THEN RETURN '1F41453GZ';
+    WHEN '50 ELPT FourStroke' THEN RETURN '1F51413GZ';
+    WHEN '50 ELHPT FourStroke Tiller' THEN RETURN '1F5141TJZ';
+    WHEN '50 ELPT Command Thrust FourStroke' THEN RETURN '1F51453GZ';
+    WHEN '50 ELHPT Command Thrust FourStroke Tiller' THEN RETURN '1F5145TJZ';
+    WHEN '60 ELPT FourStroke' THEN RETURN '1F60413GZ';
+    WHEN '60 ELHPT FourStroke Tiller' THEN RETURN '1F6041TJZ';
+    WHEN '60 ELPT Command Thrust FourStroke' THEN RETURN '1F60453GZ';
+    WHEN '60 EXLPT Command Thrust FourStroke' THEN RETURN '1F60463GZ';
+    WHEN '60 ELHPT Command Thrust FourStroke Tiller' THEN RETURN '1F6045TJZ';
+    WHEN '75 ELPT FourStroke' THEN RETURN '1F754132D';
+    WHEN '90 ELPT FourStroke' THEN RETURN '1F904132D';
+    WHEN '90 EXLPT FourStroke' THEN RETURN '1F904232D';
+    WHEN '90 ELPT Command Thrust FourStroke' THEN RETURN '1F904532D';
+    WHEN '90 EXLPT Command Thrust FourStroke' THEN RETURN '1F904632D';
+    WHEN '115 ELPT FourStroke' THEN RETURN '1115F132D';
+    WHEN '115 EXLPT FourStroke' THEN RETURN '1115F232D';
+    WHEN '115 ELPT Command Thrust FourStroke' THEN RETURN '1115F532D';
+    WHEN '115 EXLPT Command Thrust FourStroke' THEN RETURN '1115F632D';
+    WHEN '115 ECXLPT Command Thrust FourStroke' THEN RETURN '1115F642D';
+    WHEN '150 L FourStroke' THEN RETURN '1150F13ED';
+    WHEN '150 XL FourStroke' THEN RETURN '1150F23ED';
+    WHEN '150 CXL FourStroke' THEN RETURN '1150F24ED';
+    WHEN '175 L FourStroke DTS' THEN RETURN '11750005A';
+    WHEN '175 XL FourStroke DTS' THEN RETURN '11750006A';
+    WHEN '175 CXL FourStroke DTS' THEN RETURN '11750007A';
+    WHEN '200 L FourStroke' THEN RETURN '12000001A';
+    WHEN '200 XL FourStroke' THEN RETURN '12000009A';
+    WHEN '200 CXL FourStroke' THEN RETURN '12000029A';
+    WHEN '200 L FourStroke DTS' THEN RETURN '12000005A';
+    WHEN '200 XL FourStroke DTS' THEN RETURN '12000013A';
+    WHEN '200 CXL FourStroke DTS' THEN RETURN '12000017A';
+    WHEN '225 L FourStroke' THEN RETURN '12250001A';
+    WHEN '225 XL FourStroke' THEN RETURN '12250009A';
+    WHEN '225 CXL FourStroke' THEN RETURN '12250047A';
+    WHEN '225 XXL FourStroke' THEN RETURN '12250021A';
+    WHEN '225 L FourStroke DTS' THEN RETURN '12250005A';
+    WHEN '225 XL FourStroke DTS' THEN RETURN '12250013A';
+    WHEN '225 CXL FourStroke DTS' THEN RETURN '12250017A';
+    WHEN '225 XXL FourStroke DTS' THEN RETURN '12250025A';
+    WHEN '225 CXXL FourStroke DTS' THEN RETURN '12250029A';
+    WHEN '250 L FourStroke' THEN RETURN '12500001A';
+    WHEN '250 XL FourStroke' THEN RETURN '12500009A';
+    WHEN '250 CXL FourStroke' THEN RETURN '12500083A';
+    WHEN '250 XXL FourStroke' THEN RETURN '12500021A';
+    WHEN '250 CXXL FourStroke' THEN RETURN '12500087A';
+    WHEN '250 L FourStroke DTS' THEN RETURN '12500005A';
+    WHEN '250 XL FourStroke DTS' THEN RETURN '12500013A';
+    WHEN '250 CXL FourStroke DTS' THEN RETURN '12500017A';
+    WHEN '250 XXL FourStroke DTS' THEN RETURN '12500025A';
+    WHEN '250 CXXL FourStroke DTS' THEN RETURN '12500029A';
+    WHEN '300 L FourStroke' THEN RETURN '13000002A';
+    WHEN '300 XL FourStroke' THEN RETURN '13000010A';
+    WHEN '300 CXL FourStroke' THEN RETURN '13000111A';
+    WHEN '300 L FourStroke DTS' THEN RETURN '13000006A';
+    WHEN '300 XL FourStroke DTS' THEN RETURN '13000014A';
+    WHEN '300 CXL FourStroke DTS' THEN RETURN '13000018A';
+    -- ProXS Motors
+    WHEN '115 ELPT Pro XS' THEN RETURN '1117F131D';
+    WHEN '115 EXLPT Pro XS' THEN RETURN '1117F231D';
+    WHEN '115 ELPT Pro XS Command Thrust' THEN RETURN '1117F531D';
+    WHEN '115 EXLPT Pro XS Command Thrust' THEN RETURN '1117F631D';
+    WHEN '150 L Pro XS' THEN RETURN '1152F131D';
+    WHEN '150 XL Pro XS' THEN RETURN '1152F231D';
+    WHEN '175 L Pro XS' THEN RETURN '11750001A';
+    WHEN '175 XL Pro XS' THEN RETURN '11750002A';
+    WHEN '200 L Pro XS TorqueMaster' THEN RETURN '12000027A';
+    WHEN '200 L Pro XS' THEN RETURN '12000039A';
+    WHEN '200 XL Pro XS' THEN RETURN '12000041A';
+    WHEN '200 L Pro XS DTS TorqueMaster' THEN RETURN '12000035A';
+    WHEN '200 XL Pro XS DTS' THEN RETURN '12000040A';
+    WHEN '225 L Pro XS TorqueMaster' THEN RETURN '12250033A';
+    WHEN '225 XL Pro XS' THEN RETURN '12250034A';
+    WHEN '225 L Pro XS DTS TorqueMaster' THEN RETURN '12250053A';
+    WHEN '225 XL Pro XS DTS' THEN RETURN '12250055A';
+    WHEN '250 L Pro XS TorqueMaster' THEN RETURN '12500033A';
+    WHEN '250 XL Pro XS' THEN RETURN '12500034A';
+    WHEN '250 L Pro XS DTS TorqueMaster' THEN RETURN '12500094A';
+    WHEN '250 XL Pro XS DTS' THEN RETURN '12500096A';
+    WHEN '300 L Pro XS TorqueMaster' THEN RETURN '13000022A';
+    WHEN '300 XL Pro XS' THEN RETURN '13000023A';
+    WHEN '300 L Pro XS DTS TorqueMaster' THEN RETURN '13000177A';
+    WHEN '300 XL Pro XS DTS' THEN RETURN '13000179A';
+    WHEN '300 CXL Pro XS DTS' THEN RETURN '13000181A';
+    -- Return original if no match found
+    ELSE RETURN NULL;
+  END CASE;
+END;
+$$ LANGUAGE plpgsql IMMUTABLE;
+
+-- Update model numbers where we have a mapping
+UPDATE motor_models 
+SET 
+  model_number = fix_mercury_model_number(model_display),
+  updated_at = now()
+WHERE 
+  fix_mercury_model_number(model_display) IS NOT NULL
+  AND (model_number != fix_mercury_model_number(model_display) OR model_number IS NULL);
+
+-- Clean up the temporary function
+DROP FUNCTION fix_mercury_model_number(text);
+
+-- Log the results
+SELECT 
+  COUNT(*) as total_motors,
+  COUNT(CASE WHEN model_number ~ '^[0-9A-Z]+$' AND length(model_number) BETWEEN 8 AND 10 THEN 1 END) as correct_format_count,
+  COUNT(CASE WHEN model_number IS NULL THEN 1 END) as null_count
+FROM motor_models;
