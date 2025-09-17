@@ -166,7 +166,7 @@ export default function MotorCardPremium({
                 </div>
               </div>
             )}
-            <div className="text-[15px] font-semibold text-slate-900 dark:text-white">
+            <div className="text-lg font-semibold text-slate-900 dark:text-white">
               {title}
             </div>
             {/* Mercury Model Number - prominently displayed on second line */}
