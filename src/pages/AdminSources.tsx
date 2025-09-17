@@ -257,18 +257,18 @@ export default function AdminSources() {
           return matches.join(' ').trim();
         };
         
-        // Generate proper model name combining HP, family, and rigging codes
+        // Generate proper model name combining HP, rigging codes, and family
         const cleanModel = (description: string, horsepower: number | null, family: string, riggingCode: string) => {
           if (horsepower) {
-            // Create proper model name like "25 HP FourStroke ELH"
-            let modelName = `${horsepower} HP`;
+            // Create format like "30ELH FourStroke" - HP + rigging code + family (no "HP" text)
+            let modelName = horsepower.toString();
+            if (riggingCode) {
+              modelName += riggingCode; // e.g., "30ELH"
+            }
             if (family && family !== 'FourStroke') {
               modelName += ` ${family}`;
             } else {
               modelName += ' FourStroke';
-            }
-            if (riggingCode) {
-              modelName += ` ${riggingCode}`;
             }
             return modelName;
           }
