@@ -27,11 +27,16 @@ import {
   Trash2,
   ChevronDown,
   Eye,
-  MoreHorizontal
+  MoreHorizontal,
+  Image,
+  FileText,
+  Video,
+  Settings
 } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 import { toast } from 'sonner';
 import { MotorManualOverride } from './MotorManualOverride';
+import { MotorMediaDialog } from './MotorMediaDialog';
 
 // Interfaces
 interface MotorInventoryData {
@@ -47,6 +52,14 @@ interface MotorInventoryData {
   dealer_price: number | null;
   msrp: number | null;
   sale_price: number | null;
+  media_summary: {
+    images: number;
+    pdfs: number;
+    videos: number;
+    urls: number;
+    documents: number;
+  } | null;
+  hero_media_id: string | null;
 }
 
 interface InventoryStats {
@@ -113,6 +126,10 @@ export function UnifiedInventoryDashboard() {
   const [bulkUpdating, setBulkUpdating] = useState(false);
   const [editingMotor, setEditingMotor] = useState<string | null>(null);
   const [motorActions, setMotorActions] = useState<{ [key: string]: boolean }>({});
+  
+  // Media Management State
+  const [selectedMotorForMedia, setSelectedMotorForMedia] = useState<MotorInventoryData | null>(null);
+  const [mediaDialogOpen, setMediaDialogOpen] = useState(false);
 
   // Sync Status State
   const [syncLogs, setSyncLogs] = useState<SyncLog[]>([]);
@@ -141,7 +158,7 @@ export function UnifiedInventoryDashboard() {
     try {
       const { data: motorsData, error: motorsError } = await supabase
         .from('motor_models')
-        .select('id, model, model_display, model_number, family, horsepower, availability, stock_number, last_scraped, dealer_price, msrp, sale_price')
+        .select('id, model, model_display, model_number, family, horsepower, availability, stock_number, last_scraped, dealer_price, msrp, sale_price, media_summary, hero_media_id')
         .order('last_scraped', { ascending: false });
 
       if (motorsError) throw motorsError;
@@ -434,7 +451,34 @@ export function UnifiedInventoryDashboard() {
     }
   };
 
-  const handleDeleteMotor = async (motorId: string) => {
+  // Media Management Functions
+  const openMediaDialog = (motor: MotorInventoryData) => {
+    setSelectedMotorForMedia(motor);
+    setMediaDialogOpen(true);
+  };
+
+  const closeMediaDialog = () => {
+    setSelectedMotorForMedia(null);
+    setMediaDialogOpen(false);
+  };
+
+  const handleMediaUpdated = () => {
+    // Refresh inventory data to show updated media counts
+    fetchInventoryData();
+  };
+
+  const getMediaSummaryDisplay = (mediaSummary: MotorInventoryData['media_summary']) => {
+    if (!mediaSummary) return null;
+    
+    const counts = [];
+    if (mediaSummary.images > 0) counts.push(`📷 ${mediaSummary.images}`);
+    if (mediaSummary.pdfs > 0) counts.push(`📄 ${mediaSummary.pdfs}`);
+    if (mediaSummary.videos > 0) counts.push(`🎥 ${mediaSummary.videos}`);
+    if (mediaSummary.urls > 0) counts.push(`🔗 ${mediaSummary.urls}`);
+    if (mediaSummary.documents > 0) counts.push(`📋 ${mediaSummary.documents}`);
+    
+    return counts.length > 0 ? counts.join(' ') : 'No media';
+  };
     setMotorActions(prev => ({ ...prev, [motorId]: true }));
     try {
       const { error } = await supabase
@@ -710,21 +754,22 @@ export function UnifiedInventoryDashboard() {
   };
 
   return (
-    <Tabs defaultValue="inventory" className="space-y-6">
-      <TabsList>
-        <TabsTrigger value="inventory">
-          <Activity className="w-4 h-4 mr-2" />
-          Live Inventory
-        </TabsTrigger>
-        <TabsTrigger value="sync">
-          <Zap className="w-4 h-4 mr-2" />
-          Sync Status
-        </TabsTrigger>
-        <TabsTrigger value="diagnostics">
-          <AlertTriangle className="w-4 h-4 mr-2" />
-          Diagnostics
-        </TabsTrigger>
-      </TabsList>
+    <div>
+      <Tabs defaultValue="inventory" className="space-y-6">
+        <TabsList>
+          <TabsTrigger value="inventory">
+            <Activity className="w-4 h-4 mr-2" />
+            Live Inventory
+          </TabsTrigger>
+          <TabsTrigger value="sync">
+            <Zap className="w-4 h-4 mr-2" />
+            Sync Status
+          </TabsTrigger>
+          <TabsTrigger value="diagnostics">
+            <AlertTriangle className="w-4 h-4 mr-2" />
+            Diagnostics
+          </TabsTrigger>
+        </TabsList>
 
       {/* Live Inventory Tab */}
       <TabsContent value="inventory" className="space-y-6">
@@ -946,6 +991,10 @@ export function UnifiedInventoryDashboard() {
                     <div className="text-sm text-muted-foreground">
                       {motor.horsepower}HP • Model: {motor.model_number || 'N/A'} • Stock: {motor.stock_number || 'N/A'}
                     </div>
+                    <div className="text-xs text-muted-foreground">
+                      Media: {getMediaSummaryDisplay(motor.media_summary)}
+                      {motor.hero_media_id && ' • 🌟 Has Hero'}
+                    </div>
                     {motor.last_scraped && (
                       <div className="text-xs text-muted-foreground">
                         Last scraped: {new Date(motor.last_scraped).toLocaleString()}
@@ -1002,6 +1051,17 @@ export function UnifiedInventoryDashboard() {
 
                     {/* Action Buttons */}
                     <div className="flex gap-1">
+                      {/* Media Management Button */}
+                      <Button 
+                        variant="ghost" 
+                        size="sm" 
+                        className="h-8 w-8 p-0 text-blue-600 hover:text-blue-700"
+                        onClick={() => openMediaDialog(motor)}
+                        title="Manage Media"
+                      >
+                        <Settings className="h-3 w-3" />
+                      </Button>
+
                       <Dialog open={editingMotor === motor.id} onOpenChange={(open) => setEditingMotor(open ? motor.id : null)}>
                         <DialogTrigger asChild>
                           <Button 
@@ -1331,5 +1391,14 @@ export function UnifiedInventoryDashboard() {
         )}
       </TabsContent>
     </Tabs>
+
+    {/* Motor Media Dialog */}
+    <MotorMediaDialog 
+      isOpen={mediaDialogOpen}
+      onClose={closeMediaDialog}
+      motor={selectedMotorForMedia}
+      onMediaUpdated={handleMediaUpdated}
+    />
+  </div>
   );
 }
