@@ -68,55 +68,57 @@ serve(async (req) => {
       console.log('[STOCK-SYNC] XML sample:', xmlText.substring(0, 1000));
     }
     
-    // Step 2: Filter to Mercury outboards only using regex field extraction
-    const mercuryMotors = itemMatches.filter(item => {
-      // XML field extraction with multiple patterns (from working sync function)
-      const extractField = (patterns: string[], fieldType: string) => {
-        for (const pattern of patterns) {
-          const regex = new RegExp(pattern, 'i');
-          const match = item.match(regex);
-          if (match) {
-            return match[1]?.trim() || '';
-          }
+    // Step 2: Process and filter Mercury motors
+    const mercuryMotors = [];
+    
+    // XML field extraction helper
+    const extractField = (item: string, patterns: string[]) => {
+      for (const pattern of patterns) {
+        const regex = new RegExp(pattern, 'i');
+        const match = item.match(regex);
+        if (match) {
+          return match[1]?.trim() || '';
         }
-        return '';
-      };
-
-      // Try multiple XML field variations
-      const manufacturer = extractField([
+      }
+      return '';
+    };
+    
+    for (const item of itemMatches) {
+      // Extract basic fields
+      const manufacturer = extractField(item, [
         '<manufacturer>(.*?)</manufacturer>',
         '<make>(.*?)</make>',
         '<brand>(.*?)</brand>',
         '<mfg>(.*?)</mfg>'
-      ], 'manufacturer').toLowerCase();
+      ]).toLowerCase();
       
-      const condition = extractField([
+      const condition = extractField(item, [
         '<condition>(.*?)</condition>',
         '<status>(.*?)</status>',
         '<state>(.*?)</state>',
         '<unitcondition>(.*?)</unitcondition>'
-      ], 'condition').toLowerCase();
+      ]).toLowerCase();
       
-      const category = extractField([
+      const category = extractField(item, [
         '<category>(.*?)</category>',
         '<type>(.*?)</type>',
         '<producttype>(.*?)</producttype>',
         '<vehicletype>(.*?)</vehicletype>',
         '<unittype>(.*?)</unittype>'
-      ], 'category').toLowerCase();
+      ]).toLowerCase();
       
-      const title = extractField([
+      const title = extractField(item, [
         '<title>(.*?)</title>',
         '<name>(.*?)</name>',
         '<model>(.*?)</model>',
         '<unitname>(.*?)</unitname>'
-      ], 'title');
+      ]);
       
-      const description = extractField([
+      const description = extractField(item, [
         '<description><!\\[CDATA\\[(.*?)\\]\\]></description>',
         '<description>(.*?)</description>',
         '<desc>(.*?)</desc>'
-      ], 'description');
+      ]);
 
       // STRICT Mercury detection
       const titleLower = title.toLowerCase();
@@ -177,35 +179,36 @@ serve(async (req) => {
       // Final filtering logic - all must be true
       const isValid = isMercury && isNew && !isBoatOrOther && isMotor;
       
-      // Store extracted data for matching
+      // Create motor object if valid
       if (isValid) {
-        (item as any).extractedData = {
-          title,
-          description,
-          manufacturer,
-          condition,
-          category,
-          stockNumber: extractField([
-            '<stocknumber>(.*?)</stocknumber>',
-            '<stock_number>(.*?)</stock_number>',
-            '<vin>(.*?)</vin>',
-            '<id>(.*?)</id>'
-          ], 'stockNumber'),
-          price: extractField([
-            '<price>(.*?)</price>',
-            '<cost>(.*?)</cost>',
-            '<msrp>(.*?)</msrp>'
-          ], 'price'),
-          quantity: extractField([
-            '<quantity>(.*?)</quantity>',
-            '<qty>(.*?)</qty>',
-            '<stock>(.*?)</stock>'
-          ], 'quantity') || '1'
-        };
+        mercuryMotors.push({
+          xmlData: item,
+          extractedData: {
+            title,
+            description,
+            manufacturer,
+            condition,
+            category,
+            stockNumber: extractField(item, [
+              '<stocknumber>(.*?)</stocknumber>',
+              '<stock_number>(.*?)</stock_number>',
+              '<vin>(.*?)</vin>',
+              '<id>(.*?)</id>'
+            ]),
+            price: extractField(item, [
+              '<price>(.*?)</price>',
+              '<cost>(.*?)</cost>',
+              '<msrp>(.*?)</msrp>'
+            ]),
+            quantity: extractField(item, [
+              '<quantity>(.*?)</quantity>',
+              '<qty>(.*?)</qty>',
+              '<stock>(.*?)</stock>'
+            ]) || '1'
+          }
+        });
       }
-      
-      return isValid;
-    });
+    }
     
     console.log(`[STOCK-SYNC] Filtered to ${mercuryMotors.length} Mercury outboard motors`);
     
@@ -296,10 +299,8 @@ serve(async (req) => {
       return score;
     }
     
-    for (const xmlMotor of mercuryMotors) {
-      const extractedData = (xmlMotor as any).extractedData;
-      if (!extractedData) continue;
-      
+    for (const mercuryMotor of mercuryMotors) {
+      const extractedData = mercuryMotor.extractedData;
       const xmlData = normalizeTitle(extractedData.title);
       console.log(`[MATCH] Processing XML: "${extractedData.title}" (HP: ${xmlData.hp}, Codes: [${xmlData.codes.join(',')}])`);
       
@@ -321,7 +322,7 @@ serve(async (req) => {
       if (bestMatch) {
         console.log(`[MATCH] Found match: ${bestReason}`);
         matches.push({
-          xmlMotor,
+          xmlMotor: mercuryMotor,
           dbMotor: bestMatch,
           score: bestScore,
           reason: bestReason
@@ -338,7 +339,7 @@ serve(async (req) => {
     const matchedDbMotorIds = new Set();
     
     for (const match of matches) {
-      const extractedData = (match.xmlMotor as any).extractedData;
+      const extractedData = match.xmlMotor.extractedData;
       const stockQuantity = parseInt(cleanText(extractedData.quantity || '1')) || 1;
       const stockNumber = cleanText(extractedData.stockNumber || '');
       const price = parseFloat(cleanText(extractedData.price || '0').replace(/[,$]/g, '')) || 0;
