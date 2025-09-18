@@ -249,3 +249,75 @@ export function getMappingStats() {
     }
   };
 }
+
+/**
+ * Get the correct Mercury model number for display based on motor details
+ * This function looks up the official Mercury model number from our mapping
+ * instead of using the potentially incorrect database model_number field
+ */
+export function getCorrectModelNumberForDisplay(motor: {
+  model?: string;
+  model_display?: string;
+  horsepower?: number;
+  family?: string;
+  rigging_code?: string;
+  model_number?: string;
+}): string | null {
+  if (!motor) return null;
+
+  // Try to find a match in our official mappings
+  const displayName = motor.model_display || motor.model || '';
+  const hp = motor.horsepower || 0;
+  
+  // First try exact description match
+  const exactMatch = MERCURY_MODEL_MAPPINGS.find(mapping => 
+    mapping.description.toLowerCase() === displayName.toLowerCase() &&
+    mapping.hp === hp
+  );
+  
+  if (exactMatch) {
+    return exactMatch.modelNumber;
+  }
+  
+  // Try partial description match with HP
+  const partialMatch = MERCURY_MODEL_MAPPINGS.find(mapping => {
+    const displayLower = displayName.toLowerCase();
+    const descriptionLower = mapping.description.toLowerCase();
+    
+    // Check if the display name contains key parts of the description
+    const hasHP = displayLower.includes(mapping.hp.toString());
+    const hasFamily = motor.family ? descriptionLower.includes(motor.family.toLowerCase()) : true;
+    const hasRigging = motor.rigging_code ? descriptionLower.includes(motor.rigging_code.toLowerCase()) : 
+                      displayLower.includes('elpt') || displayLower.includes('xlpt') || displayLower.includes('mh') || displayLower.includes('mlh');
+    
+    return mapping.hp === hp && hasHP && hasFamily && hasRigging;
+  });
+  
+  if (partialMatch) {
+    return partialMatch.modelNumber;
+  }
+  
+  // Try HP-based matching for common patterns
+  const hpMatch = MERCURY_MODEL_MAPPINGS.find(mapping => {
+    if (mapping.hp !== hp) return false;
+    
+    const displayLower = displayName.toLowerCase();
+    const descriptionLower = mapping.description.toLowerCase();
+    
+    // Look for common rigging codes in the display name
+    if (displayLower.includes('elpt') && descriptionLower.includes('elpt')) return true;
+    if (displayLower.includes('exlpt') && descriptionLower.includes('exlpt')) return true;
+    if (displayLower.includes('mh') && descriptionLower.includes('mh')) return true;
+    if (displayLower.includes('mlh') && descriptionLower.includes('mlh')) return true;
+    if (displayLower.includes('xl') && descriptionLower.includes('xl')) return true;
+    
+    return false;
+  });
+  
+  if (hpMatch) {
+    return hpMatch.modelNumber;
+  }
+  
+  // Fallback to database model number if no mapping found
+  return motor.model_number || null;
+}

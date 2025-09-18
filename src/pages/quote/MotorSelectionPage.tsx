@@ -15,6 +15,7 @@ import MotorFilterMenu from '@/components/quote-builder/MotorFilterMenu';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
+import { getCorrectModelNumberForDisplay } from '@/lib/mercury-model-number-mapping';
 
 // Database types
 interface DbMotor {
@@ -201,7 +202,14 @@ export default function MotorSelectionPage() {
         }
       });
 
-      // Convert to Motor type (same as original)
+      // Convert to Motor type with corrected model number display
+      const correctedModelNumber = getCorrectModelNumberForDisplay({
+        model: dbMotor.model,
+        model_display: dbMotor.model_display,
+        horsepower: dbMotor.horsepower,
+        model_number: dbMotor.model_number
+      });
+      
       const convertedMotor: Motor = {
         id: dbMotor.id,
         model: dbMotor.model_display || dbMotor.model, // Use model_display for proper names like "6 MH FourStroke"
@@ -211,7 +219,7 @@ export default function MotorSelectionPage() {
         image: dbMotor.image_url || '',
         stockStatus: dbMotor.availability === 'In Stock' ? 'In Stock' : 'On Order',
         stockNumber: dbMotor.stock_number,
-        model_number: dbMotor.model_number,
+        model_number: correctedModelNumber || dbMotor.model_number,
         category: dbMotor.horsepower <= 20 ? 'portable' :
                  dbMotor.horsepower <= 60 ? 'mid-range' : 
                  dbMotor.horsepower <= 150 ? 'high-performance' : 'v8-racing',

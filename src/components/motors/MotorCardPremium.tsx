@@ -6,6 +6,7 @@ import MotorQuickInfo from "./MotorQuickInfo";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import type { Motor } from '../../lib/motor-helpers';
 import { getHPDescriptor, getPopularityIndicator, getBadgeColor, requiresMercuryControls, isTillerMotor, getMotorImageByPriority, getMotorImageGallery, buildModelKey, extractHpAndCode } from '../../lib/motor-helpers';
+import { getCorrectModelNumberForDisplay } from '../../lib/mercury-model-number-mapping';
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useFinancing } from '@/contexts/FinancingContext';
 import { getFinancingDisplay } from '@/lib/finance';
@@ -170,11 +171,20 @@ export default function MotorCardPremium({
               {title}
             </div>
             {/* Mercury Model Number - prominently displayed on second line */}
-            {motor?.model_number && (
-              <div className="mt-0.5 text-sm font-mono font-medium text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-800 px-2 py-1 rounded text-center">
-                {motor.model_number}
-              </div>
-            )}
+            {(() => {
+              const correctedModelNumber = getCorrectModelNumberForDisplay({
+                model: motor?.model,
+                model_display: title,
+                horsepower: hpNum,
+                model_number: motor?.model_number
+              });
+              
+              return correctedModelNumber && (
+                <div className="mt-0.5 text-sm font-mono font-medium text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-800 px-2 py-1 rounded text-center">
+                  {correctedModelNumber}
+                </div>
+              );
+            })()}
             
             {/* HP-based descriptor and popularity indicators */}
             {hpNum && (
