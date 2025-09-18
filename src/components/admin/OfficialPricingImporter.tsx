@@ -232,7 +232,7 @@ export const OfficialPricingImporter = () => {
             id: motor.id,
             model_number: exactMatch.modelNumber,
             dealer_price: exactMatch.price,
-            msrp: Math.round(exactMatch.price * 1.4), // Estimate MSRP at 40% markup
+            msrp: Math.round(exactMatch.price * 1.1), // Estimate MSRP at 10% markup
             price_source: 'official_mercury_catalog',
             model_display: exactMatch.description
           });
@@ -277,7 +277,7 @@ export const OfficialPricingImporter = () => {
               id: motor.id,
               model_number: candidate.modelNumber,
               dealer_price: candidate.price,
-              msrp: Math.round(candidate.price * 1.4),
+              msrp: Math.round(candidate.price * 1.1),
               price_source: 'official_mercury_catalog',
               model_display: candidate.description
             });
@@ -355,7 +355,7 @@ export const OfficialPricingImporter = () => {
           <ul className="text-sm text-muted-foreground space-y-1">
             <li>• Match existing motors with official Mercury model numbers</li>
             <li>• Update dealer prices with official Mercury pricing (CAD)</li>
-            <li>• Calculate MSRP with standard 40% markup</li>
+            <li>• Calculate MSRP with standard 10% markup</li>
             <li>• Update model descriptions to match official Mercury naming</li>
             <li>• Use fuzzy matching for motors with similar descriptions</li>
           </ul>
