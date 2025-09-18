@@ -15,7 +15,7 @@ import MotorFilterMenu from '@/components/quote-builder/MotorFilterMenu';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
-import { OfficialPricingImporter } from '@/components/admin/OfficialPricingImporter';
+// Removed obsolete pricing importer import
 
 // Database types
 interface DbMotor {
@@ -357,10 +357,7 @@ export default function MotorSelectionPage() {
     <FinancingProvider>
       <QuoteLayout title="Select Mercury Outboard Motor">
         <div className="space-y-6">
-          {/* Show pricing importer if many motors are missing prices */}
-          {motors.filter(m => !m.dealer_price && !m.base_price && !m.msrp).length > 50 && (
-            <OfficialPricingImporter />
-          )}
+          {/* Removed obsolete pricing importer - use admin 2026 pricing import instead */}
         {/* Clean Search with inline Filter */}
         <div>
           <div className="flex items-center">

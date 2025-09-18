@@ -1,6 +1,6 @@
 import Dev from "./pages/Dev";
 import TestScraper from "./pages/TestScraper";
-import TestProXSImport from "./pages/TestProXSImport";
+// Removed obsolete test import
 import { useEffect } from "react";
 import { SITE_URL } from "./lib/site";
 import { Toaster } from "@/components/ui/toaster";
@@ -32,13 +32,12 @@ import AdminQuotes from "./pages/AdminQuotes";
 import AdminQuoteDetail from "./pages/AdminQuoteDetail";
 import AdminMotorImages from "./pages/AdminMotorImages";
 import FinanceCalculator from "./pages/FinanceCalculator";
-import StagingPricingTweaks from "./pages/StagingPricingTweaks";
+// Removed obsolete staging and test imports
 import StagingImageSizing from "./pages/StagingImageSizing";
 import StagingImageSizingV2 from "./pages/StagingImageSizingV2";
 import StagingImageSizingFinal from "./pages/StagingImageSizingFinal";
-import TestPriceScraping from "./pages/TestPriceScraping";
-import TestEnhancedPricing from "./pages/TestEnhancedPricing";
-import TestMotorPipeline from "./pages/TestMotorPipeline";
+// Removed obsolete test pricing imports
+// Removed more obsolete test imports
 import AdminConnectors from "./pages/AdminConnectors";
 import FinancingAdmin from "./components/admin/FinancingAdmin";
 import AdminSecurity from "./pages/AdminSecurity";
@@ -231,15 +230,12 @@ const App = () => (
                 <Route path="/finance-calculator" element={<FinanceCalculator />} />
                 <Route path="/dev" element={<Dev />} />
                 <Route path="/test/scraper" element={<TestScraper />} />
-                <Route path="/test/proxs-import" element={<TestProXSImport />} />
-                <Route path="/test/motor-pipeline" element={<TestMotorPipeline />} />
-                <Route path="/staging/pricing-spacing" element={<StagingPricingTweaks />} />
+                {/* Removed obsolete test routes */}
                 <Route path="/quotes/new" element={<NewQuote />} />
                 <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
                 <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
                 <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
-                <Route path="/test/price-scraping" element={<TestPriceScraping />} />
-                <Route path="/test/enhanced-pricing" element={<TestEnhancedPricing />} />
+                {/* Removed obsolete test pricing routes */}
                 
                 {/* Admin Import Routes */}
                 <Route

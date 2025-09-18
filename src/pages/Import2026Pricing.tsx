@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, CheckCircle, AlertCircle, TrendingUp, Plus } from "lucide-react";
+import { Loader2, CheckCircle, AlertCircle, TrendingUp, Plus, Lock, Shield } from "lucide-react";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
+import AdminNav from "@/components/admin/AdminNav";
 
 interface ImportResult {
   success: boolean;
@@ -20,12 +22,6 @@ export default function Import2026Pricing() {
   const [isImporting, setIsImporting] = useState(false);
   const [importResult, setImportResult] = useState<ImportResult | null>(null);
   const { toast } = useToast();
-
-  useEffect(() => {
-    // Auto-execute import on page load
-    console.log('🚀 Auto-executing 2026 pricing import on page load...');
-    handleImport();
-  }, []); // Empty dependency array means this runs once when component mounts
 
   const handleImport = async () => {
     setIsImporting(true);
@@ -81,15 +77,21 @@ export default function Import2026Pricing() {
   };
 
   return (
-    <div className="container mx-auto p-6 max-w-4xl">
-      <div className="space-y-6">
-        <div className="text-center space-y-3">
-          <h1 className="text-3xl font-bold text-foreground">Mercury 2026 Pricing Import</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Import the official Mercury 2026 dealer pricing list to update existing models and add new variants 
-            including DTS, color options, ProXS, and ProKicker models.
-          </p>
-        </div>
+    <>
+      <AdminNav />
+      <div className="container mx-auto p-6 max-w-4xl">
+        <div className="space-y-6">
+          <div className="text-center space-y-3">
+            <div className="flex items-center justify-center gap-2">
+              <Shield className="h-8 w-8 text-blue-600" />
+              <h1 className="text-3xl font-bold text-foreground">Mercury 2026 Pricing Import</h1>
+              <Lock className="h-6 w-6 text-amber-600" />
+            </div>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              🚨 <strong>CRITICAL SYSTEM FUNCTION</strong> - Import official Mercury 2026 dealer pricing to update existing models and add new variants.
+              This will permanently update all motor pricing data.
+            </p>
+          </div>
 
         <Card>
           <CardHeader>
@@ -117,25 +119,54 @@ export default function Import2026Pricing() {
               </div>
             </div>
 
-            <div className="flex gap-3">
-              <Button 
-                onClick={handleImport} 
-                disabled={isImporting}
-                className="flex items-center gap-2"
-              >
-                {isImporting ? (
-                  <>
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    Importing...
-                  </>
-                ) : (
-                  <>
-                    <TrendingUp className="h-4 w-4" />
-                    Import 2026 Pricing
-                  </>
-                )}
-              </Button>
-            </div>
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button 
+                  disabled={isImporting}
+                  className="flex items-center gap-2"
+                  variant="destructive"
+                >
+                  {isImporting ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      Importing...
+                    </>
+                  ) : (
+                    <>
+                      <Shield className="h-4 w-4" />
+                      Import 2026 Pricing
+                    </>
+                  )}
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle className="flex items-center gap-2">
+                    <Lock className="h-5 w-5 text-amber-600" />
+                    Confirm Pricing Import
+                  </AlertDialogTitle>
+                  <AlertDialogDescription>
+                    <strong>⚠️ WARNING: This will permanently update all motor pricing data.</strong>
+                    <br /><br />
+                    This action will:
+                    <ul className="mt-2 space-y-1">
+                      <li>• Update MSRP and dealer prices for existing models</li>
+                      <li>• Add new 2026 model variants</li>
+                      <li>• Affect all quotes, spec sheets, and pricing displays</li>
+                      <li>• Cannot be undone without a database restore</li>
+                    </ul>
+                    <br />
+                    Are you absolutely sure you want to proceed?
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction onClick={handleImport} className="bg-destructive hover:bg-destructive/90">
+                    Yes, Import Pricing Data
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
           </CardContent>
         </Card>
 
@@ -233,5 +264,6 @@ export default function Import2026Pricing() {
         </Card>
       </div>
     </div>
+    </>
   );
 }
