@@ -1,5 +1,4 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
-import { XMLParser } from "https://esm.sh/fast-xml-parser@4"
 
 // CORS headers
 const corsHeaders = {
@@ -27,159 +26,6 @@ function cleanText(text: string): string {
   return text?.toString()?.trim()?.replace(/\s+/g, ' ') || '';
 }
 
-// Extract HP from motor title
-function extractHP(title: string): number | null {
-  const hpMatch = title.match(/(\d+(?:\.\d+)?)\s*hp/i);
-  return hpMatch ? Number(hpMatch[1]) : null;
-}
-
-// Extract motor family
-function extractFamily(title: string): string {
-  if (/four\s*stroke|fourstroke/i.test(title)) return 'FourStroke';
-  if (/pro\s*xs|proxs/i.test(title)) return 'ProXS';
-  if (/sea\s*pro|seapro/i.test(title)) return 'SeaPro';
-  if (/verado/i.test(title)) return 'Verado';
-  if (/racing/i.test(title)) return 'Racing';
-  return 'FourStroke'; // Default
-}
-
-// Extract rigging codes
-function extractRiggingCodes(title: string): string[] {
-  const codes: string[] = [];
-  const upperTitle = title.toUpperCase();
-  
-  // Multi-character codes first
-  if (upperTitle.includes('ELHPT')) codes.push('ELHPT');
-  else if (upperTitle.includes('ELPT')) codes.push('ELPT');
-  else if (upperTitle.includes('EXLPT')) codes.push('EXLPT');
-  else if (upperTitle.includes('ELH')) codes.push('ELH');
-  else if (upperTitle.includes('MLH')) codes.push('MLH');
-  else if (upperTitle.includes('EH')) codes.push('EH');
-  else if (upperTitle.includes('MH')) codes.push('MH');
-  
-  // Single character codes
-  if (!codes.length) {
-    if (upperTitle.includes('XL')) codes.push('XL');
-    else if (upperTitle.includes('L')) codes.push('L');
-    else if (upperTitle.includes('S')) codes.push('S');
-  }
-  
-  return codes;
-}
-
-// Calculate text similarity (simple Levenshtein-based)
-function calculateSimilarity(text1: string, text2: string): number {
-  const normalize = (text: string) => text.toLowerCase().replace(/[^a-z0-9]/g, '');
-  const s1 = normalize(text1);
-  const s2 = normalize(text2);
-  
-  if (s1 === s2) return 1.0;
-  
-  const longer = s1.length > s2.length ? s1 : s2;
-  const shorter = s1.length > s2.length ? s2 : s1;
-  
-  if (longer.length === 0) return 1.0;
-  
-  const editDistance = levenshteinDistance(longer, shorter);
-  return (longer.length - editDistance) / longer.length;
-}
-
-function levenshteinDistance(str1: string, str2: string): number {
-  const matrix = [];
-  
-  for (let i = 0; i <= str2.length; i++) {
-    matrix[i] = [i];
-  }
-  
-  for (let j = 0; j <= str1.length; j++) {
-    matrix[0][j] = j;
-  }
-  
-  for (let i = 1; i <= str2.length; i++) {
-    for (let j = 1; j <= str1.length; j++) {
-      if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
-        matrix[i][j] = matrix[i - 1][j - 1];
-      } else {
-        matrix[i][j] = Math.min(
-          matrix[i - 1][j - 1] + 1,
-          matrix[i][j - 1] + 1,
-          matrix[i - 1][j] + 1
-        );
-      }
-    }
-  }
-  
-  return matrix[str2.length][str1.length];
-}
-
-// Match XML motor to database motor
-function findBestMatch(xmlMotor: any, dbMotors: any[]): { motor: any; score: number; reason: string } | null {
-  let bestMatch = null;
-  let bestScore = 0;
-  let bestReason = '';
-  
-  const xmlTitle = cleanText(xmlMotor.title || '');
-  const xmlHP = extractHP(xmlTitle);
-  const xmlFamily = extractFamily(xmlTitle);
-  const xmlRigging = extractRiggingCodes(xmlTitle);
-  
-  console.log(`[MATCH] XML Motor: "${xmlTitle}" (${xmlHP}HP, ${xmlFamily}, [${xmlRigging.join(',')}])`);
-  
-  for (const dbMotor of dbMotors) {
-    const dbDisplay = cleanText(dbMotor.model_display || '');
-    const dbHP = dbMotor.horsepower;
-    const dbFamily = dbMotor.family || 'FourStroke';
-    
-    let score = 0;
-    let reason = '';
-    
-    // Exact model_display match (highest score)
-    const textSimilarity = calculateSimilarity(xmlTitle, dbDisplay);
-    if (textSimilarity > 0.9) {
-      score = 1.0;
-      reason = `Exact match: "${xmlTitle}" → "${dbDisplay}"`;
-    }
-    // HP + Family + Rigging match
-    else if (xmlHP === dbHP && xmlFamily === dbFamily) {
-      score = 0.8;
-      reason = `HP+Family match: ${xmlHP}HP ${xmlFamily}`;
-      
-      // Bonus for rigging code overlap
-      const dbRigging = extractRiggingCodes(dbDisplay);
-      const rigOverlap = xmlRigging.filter(code => dbRigging.includes(code)).length;
-      if (rigOverlap > 0) {
-        score += 0.15;
-        reason += ` + rigging (${rigOverlap} codes)`;
-      }
-    }
-    // HP + Family match only
-    else if (xmlHP === dbHP && xmlFamily === dbFamily) {
-      score = 0.6;
-      reason = `HP+Family only: ${xmlHP}HP ${xmlFamily}`;
-    }
-    // Text similarity fallback
-    else if (textSimilarity > 0.7) {
-      score = textSimilarity * 0.5;
-      reason = `Text similarity: ${Math.round(textSimilarity * 100)}%`;
-    }
-    
-    if (score > bestScore) {
-      bestScore = score;
-      bestMatch = dbMotor;
-      bestReason = reason;
-    }
-  }
-  
-  // Only return matches with reasonable confidence
-  if (bestScore >= 0.6) {
-    console.log(`[MATCH] Best: ${bestReason} (score: ${bestScore.toFixed(2)})`);
-    return { motor: bestMatch, score: bestScore, reason: bestReason };
-  }
-  
-  console.log(`[MATCH] No good match found (best score: ${bestScore.toFixed(2)})`);
-  return null;
-}
-
 serve(async (req) => {
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
@@ -205,38 +51,160 @@ serve(async (req) => {
     }
     
     const xmlText = await xmlResponse.text();
-    const parser = new XMLParser();
-    const xmlData = parser.parse(xmlText);
+    console.log(`[STOCK-SYNC] Fetched XML feed (${xmlText.length} chars)`);
     
-    // Extract units from XML
-    const units = xmlData?.inventory?.unit || [];
-    const unitArray = Array.isArray(units) ? units : [units];
+    // Parse XML using regex approach (like working sync function)
+    console.log('[STOCK-SYNC] Parsing XML with regex approach...');
     
-    console.log(`[STOCK-SYNC] Found ${unitArray.length} total units in XML`);
+    // Extract all items using regex
+    const itemMatches = xmlText.match(/<item>[\s\S]*?<\/item>/g) || [];
+    console.log(`[STOCK-SYNC] Found ${itemMatches.length} total items in XML`);
     
-    // Step 2: Filter to Mercury outboards only
-    const mercuryMotors = unitArray.filter(unit => {
-      const title = cleanText(unit.Title || unit.title || '');
-      const category = cleanText(unit.Category || unit.category || '');
-      const condition = cleanText(unit.Condition || unit.condition || '');
+    // Add debugging for XML structure
+    if (itemMatches.length > 0) {
+      console.log('[STOCK-SYNC] First item sample:', itemMatches[0].substring(0, 500));
+    } else {
+      console.log('[STOCK-SYNC] WARNING: No <item> tags found in XML');
+      console.log('[STOCK-SYNC] XML sample:', xmlText.substring(0, 1000));
+    }
+    
+    // Step 2: Filter to Mercury outboards only using regex field extraction
+    const mercuryMotors = itemMatches.filter(item => {
+      // XML field extraction with multiple patterns (from working sync function)
+      const extractField = (patterns: string[], fieldType: string) => {
+        for (const pattern of patterns) {
+          const regex = new RegExp(pattern, 'i');
+          const match = item.match(regex);
+          if (match) {
+            return match[1]?.trim() || '';
+          }
+        }
+        return '';
+      };
+
+      // Try multiple XML field variations
+      const manufacturer = extractField([
+        '<manufacturer>(.*?)</manufacturer>',
+        '<make>(.*?)</make>',
+        '<brand>(.*?)</brand>',
+        '<mfg>(.*?)</mfg>'
+      ], 'manufacturer').toLowerCase();
       
-      // Must be Mercury brand
-      if (!/mercury/i.test(title)) return false;
+      const condition = extractField([
+        '<condition>(.*?)</condition>',
+        '<status>(.*?)</status>',
+        '<state>(.*?)</state>',
+        '<unitcondition>(.*?)</unitcondition>'
+      ], 'condition').toLowerCase();
       
-      // Must be new condition
-      if (!/new/i.test(condition)) return false;
+      const category = extractField([
+        '<category>(.*?)</category>',
+        '<type>(.*?)</type>',
+        '<producttype>(.*?)</producttype>',
+        '<vehicletype>(.*?)</vehicletype>',
+        '<unittype>(.*?)</unittype>'
+      ], 'category').toLowerCase();
       
-      // Must be outboard motor (exclude boats, trailers, parts)
-      if (!/outboard|motor|engine/i.test(category) && !/outboard|motor|engine/i.test(title)) {
-        return false;
+      const title = extractField([
+        '<title>(.*?)</title>',
+        '<name>(.*?)</name>',
+        '<model>(.*?)</model>',
+        '<unitname>(.*?)</unitname>'
+      ], 'title');
+      
+      const description = extractField([
+        '<description><!\\[CDATA\\[(.*?)\\]\\]></description>',
+        '<description>(.*?)</description>',
+        '<desc>(.*?)</desc>'
+      ], 'description');
+
+      // STRICT Mercury detection
+      const titleLower = title.toLowerCase();
+      const descLower = description.toLowerCase();
+      const isMercury = manufacturer.includes('mercury') || 
+                       (titleLower.includes('mercury') && !titleLower.includes('legend'));
+      
+      // STRICT condition filtering - exclude used/pre-owned
+      const isNew = !condition.includes('used') && 
+                   !condition.includes('pre-owned') && 
+                   !condition.includes('preowned');
+      
+      // STRICT boat exclusion
+      const boatExclusions = [
+        'legend', 'uttern', 'pontoon', 'deck boat', 'fishing boat',
+        'bass boat', 'jon boat', 'aluminum boat', 'fiberglass boat',
+        'boat', 'vessel', 'watercraft', 'hull',
+        'trailer', 'pwc', 'jet ski', 'atv', 'utv', 'snowmobile',
+        'parts', 'accessories', 'propeller', 'prop', 'controls'
+      ];
+      
+      const isBoatOrOther = boatExclusions.some(exclusion => 
+        titleLower.includes(exclusion) || 
+        descLower.includes(exclusion) || 
+        category.includes(exclusion)
+      );
+      
+      // STRICT motor detection - require Mercury outboard motor indicators
+      const mercuryMotorRequired = [
+        'fourstroke', 'four stroke', 'four-stroke',
+        'proxs', 'pro xs', 'pro-xs',
+        'seapro', 'sea pro', 'sea-pro',
+        'verado', 'racing', 'outboard'
+      ];
+      
+      const mercuryRiggingCodes = [
+        'elpt', 'elhpt', 'exlpt', 'eh', 'mh', 'lh',
+        'xl', 'xxl', 'xxxl',
+        'ct', 'command thrust',
+        'efi', 'dts', 'tiller'
+      ];
+      
+      // HP detection with reasonable ranges
+      const hpMatch = titleLower.match(/(\d+(?:\.\d+)?)\s*hp/);
+      const hasValidHP = hpMatch && parseFloat(hpMatch[1]) >= 2.5 && parseFloat(hpMatch[1]) <= 600;
+      
+      const hasMotorIndicator = mercuryMotorRequired.some(indicator => 
+        titleLower.includes(indicator) || descLower.includes(indicator)
+      );
+      
+      const hasRiggingCode = mercuryRiggingCodes.some(code =>
+        titleLower.includes(code) || descLower.includes(code)
+      );
+      
+      // Motor must have HP OR motor indicator OR rigging code
+      const isMotor = hasValidHP || hasMotorIndicator || hasRiggingCode;
+      
+      // Final filtering logic - all must be true
+      const isValid = isMercury && isNew && !isBoatOrOther && isMotor;
+      
+      // Store extracted data for matching
+      if (isValid) {
+        (item as any).extractedData = {
+          title,
+          description,
+          manufacturer,
+          condition,
+          category,
+          stockNumber: extractField([
+            '<stocknumber>(.*?)</stocknumber>',
+            '<stock_number>(.*?)</stock_number>',
+            '<vin>(.*?)</vin>',
+            '<id>(.*?)</id>'
+          ], 'stockNumber'),
+          price: extractField([
+            '<price>(.*?)</price>',
+            '<cost>(.*?)</cost>',
+            '<msrp>(.*?)</msrp>'
+          ], 'price'),
+          quantity: extractField([
+            '<quantity>(.*?)</quantity>',
+            '<qty>(.*?)</qty>',
+            '<stock>(.*?)</stock>'
+          ], 'quantity') || '1'
+        };
       }
       
-      // Exclude obvious non-motors
-      if (/(boat|trailer|pwc|jet\s*ski|parts|accessory|prop)/i.test(title)) {
-        return false;
-      }
-      
-      return true;
+      return isValid;
     });
     
     console.log(`[STOCK-SYNC] Filtered to ${mercuryMotors.length} Mercury outboard motors`);
@@ -253,7 +221,7 @@ serve(async (req) => {
     
     console.log(`[STOCK-SYNC] Found ${dbMotors.length} motors in database`);
     
-    // Step 4: Match XML motors to database motors
+    // Step 4: Match XML motors to database motors using improved algorithm
     const matches: Array<{
       xmlMotor: any;
       dbMotor: any;
@@ -261,27 +229,119 @@ serve(async (req) => {
       reason: string;
     }> = [];
     
+    // Enhanced normalization functions (from working sync)
+    function normalizeTitle(title: string): { normalized: string, hp: number | null, codes: string[] } {
+      let normalized = title
+        .replace(/^\d{4}\s+/i, '') // Remove year at start
+        .replace(/mercury\s+/i, '') // Remove Mercury brand
+        .replace(/fourstroke\s+/i, 'FS ') // Normalize FourStroke
+        .replace(/pro\s+xs®?\s+/i, 'ProXS ') // Normalize Pro XS
+        .replace(/\s+/g, ' ') // Clean up spacing
+        .trim();
+
+      // Enhanced HP extraction
+      const hpPatterns = [
+        /^(\d+(?:\.\d+)?)\s+[A-Z]/,       // "9.9 EH", "115 L"
+        /(\d+(?:\.\d+)?)\s*hp\b/i,        // "25hp", "25 hp"
+        /(\d+(?:\.\d+)?)\s*HP\b/,         // "25HP", "25 HP"
+        /\b(\d+(?:\.\d+)?)\s*horsepower\b/i, // "25 horsepower"
+      ];
+      
+      let hp = null;
+      for (const pattern of hpPatterns) {
+        const match = normalized.match(pattern);
+        if (match) {
+          const hpValue = parseFloat(match[1]);
+          if (hpValue > 0 && hpValue <= 1000) {
+            hp = hpValue;
+            break;
+          }
+        }
+      }
+
+      // Extract rigging codes
+      const codes = [];
+      const codeMatches = normalized.match(/\b(ELPT|ELHPT|EXLPT|EH|MH|XL|XXL|Command Thrust|CT|EFI|PROXS|ProXS|Pro XS|L)\b/gi);
+      if (codeMatches) {
+        codes.push(...codeMatches.map(c => c.toUpperCase().replace(/PRO\s*XS/i, 'PROXS')));
+      }
+
+      return { normalized, hp, codes };
+    }
+
+    function calculateMatchScore(xmlData: any, dbData: any): number {
+      let score = 0;
+      
+      // HP match is most important (50 points)
+      if (xmlData.hp && dbData.hp && xmlData.hp === dbData.hp) {
+        score += 50;
+      } else if (xmlData.hp && dbData.hp && Math.abs(xmlData.hp - dbData.hp) <= 5) {
+        score += 25; // Close HP match
+      }
+
+      // Code matching (30 points total)
+      const commonCodes = xmlData.codes.filter((code: string) => 
+        dbData.codes.some((dbCode: string) => dbCode.includes(code) || code.includes(dbCode))
+      );
+      score += commonCodes.length * 10;
+
+      // Text similarity (20 points)
+      const xmlWords = xmlData.normalized.toLowerCase().split(/\s+/);
+      const dbWords = dbData.normalized.toLowerCase().split(/\s+/);
+      const commonWords = xmlWords.filter((word: string) => 
+        dbWords.some((dbWord: string) => dbWord.includes(word) || word.includes(dbWord))
+      );
+      score += Math.min(commonWords.length * 3, 20);
+
+      return score;
+    }
+    
     for (const xmlMotor of mercuryMotors) {
-      const match = findBestMatch(xmlMotor, dbMotors);
-      if (match) {
+      const extractedData = (xmlMotor as any).extractedData;
+      if (!extractedData) continue;
+      
+      const xmlData = normalizeTitle(extractedData.title);
+      console.log(`[MATCH] Processing XML: "${extractedData.title}" (HP: ${xmlData.hp}, Codes: [${xmlData.codes.join(',')}])`);
+      
+      let bestMatch = null;
+      let bestScore = 0;
+      let bestReason = '';
+      
+      for (const dbMotor of dbMotors) {
+        const dbData = normalizeTitle(dbMotor.model_display || '');
+        const score = calculateMatchScore(xmlData, dbData);
+        
+        if (score > bestScore && score >= 40) { // Minimum score threshold
+          bestScore = score;
+          bestMatch = dbMotor;
+          bestReason = `Score ${score}: HP=${xmlData.hp}→${dbData.hp}, Codes=[${xmlData.codes.join(',')}]→[${dbData.codes.join(',')}]`;
+        }
+      }
+      
+      if (bestMatch) {
+        console.log(`[MATCH] Found match: ${bestReason}`);
         matches.push({
           xmlMotor,
-          dbMotor: match.motor,
-          score: match.score,
-          reason: match.reason
+          dbMotor: bestMatch,
+          score: bestScore,
+          reason: bestReason
         });
+      } else {
+        console.log(`[MATCH] No match for: "${extractedData.title}"`);
       }
     }
     
     console.log(`[STOCK-SYNC] Found ${matches.length} matches`);
     
-    // Step 5: Prepare stock updates
+    // Step 5: Prepare stock updates using extracted data
     const stockUpdates = [];
     const matchedDbMotorIds = new Set();
     
     for (const match of matches) {
-      const stockQuantity = parseInt(cleanText(match.xmlMotor.Quantity || '1')) || 1;
-      const stockNumber = cleanText(match.xmlMotor.StockNumber || match.xmlMotor.VIN || '');
+      const extractedData = (match.xmlMotor as any).extractedData;
+      const stockQuantity = parseInt(cleanText(extractedData.quantity || '1')) || 1;
+      const stockNumber = cleanText(extractedData.stockNumber || '');
+      const price = parseFloat(cleanText(extractedData.price || '0').replace(/[,$]/g, '')) || 0;
       
       stockUpdates.push({
         id: match.dbMotor.id,
@@ -290,8 +350,9 @@ serve(async (req) => {
         stock_number: stockNumber,
         availability: 'In Stock',
         last_stock_check: new Date().toISOString(),
+        ...(price > 0 && { dealer_price_live: price }), // Update price if available
         match_info: {
-          xml_title: match.xmlMotor.title,
+          xml_title: extractedData.title,
           match_reason: match.reason,
           match_score: match.score
         }
