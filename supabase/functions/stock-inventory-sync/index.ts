@@ -68,8 +68,28 @@ serve(async (req) => {
       console.log('[STOCK-SYNC] XML sample:', xmlText.substring(0, 1000));
     }
     
-    // Step 2: Process and filter Mercury motors
+    // Step 2: Process and filter Mercury motors with comprehensive debugging
     const mercuryMotors = [];
+    const debugStats = {
+      total_items: itemMatches.length,
+      mercury_pass: 0,
+      mercury_fail: 0,
+      condition_pass: 0,
+      condition_fail: 0,
+      boat_exclusion_pass: 0,
+      boat_exclusion_fail: 0,
+      motor_detection_pass: 0,
+      motor_detection_fail: 0,
+      final_valid: 0,
+      sample_failures: {
+        mercury_detection: [],
+        condition_filtering: [],
+        boat_exclusions: [],
+        motor_detection: []
+      }
+    };
+    
+    console.log(`[DEBUG] Starting to process ${itemMatches.length} XML items`);
     
     // XML field extraction helper
     const extractField = (item: string, patterns: string[]) => {
@@ -83,8 +103,9 @@ serve(async (req) => {
       return '';
     };
     
-    for (const item of itemMatches) {
-      // Extract basic fields
+    for (let i = 0; i < itemMatches.length; i++) {
+      const item = itemMatches[i];
+      // Extract basic fields with debug logging
       const manufacturer = extractField(item, [
         '<manufacturer>(.*?)</manufacturer>',
         '<make>(.*?)</make>',
@@ -120,18 +141,61 @@ serve(async (req) => {
         '<desc>(.*?)</desc>'
       ]);
 
-      // STRICT Mercury detection
+      // Debug log every 10th item in detail
+      if (i % 10 === 0 || i < 5) {
+        console.log(`[DEBUG-ITEM-${i}] Title: "${title}"`);
+        console.log(`[DEBUG-ITEM-${i}] Manufacturer: "${manufacturer}"`);
+        console.log(`[DEBUG-ITEM-${i}] Condition: "${condition}"`);
+        console.log(`[DEBUG-ITEM-${i}] Category: "${category}"`);
+        console.log(`[DEBUG-ITEM-${i}] Description preview: "${description.substring(0, 100)}..."`);
+      }
+
+      // STEP 1: Mercury detection with detailed logging
       const titleLower = title.toLowerCase();
       const descLower = description.toLowerCase();
       const isMercury = manufacturer.includes('mercury') || 
                        (titleLower.includes('mercury') && !titleLower.includes('legend'));
       
-      // STRICT condition filtering - exclude used/pre-owned
+      if (isMercury) {
+        debugStats.mercury_pass++;
+      } else {
+        debugStats.mercury_fail++;
+        if (debugStats.sample_failures.mercury_detection.length < 5) {
+          debugStats.sample_failures.mercury_detection.push({
+            title,
+            manufacturer,
+            reason: `No Mercury found in manufacturer:"${manufacturer}" or title:"${title}"`
+          });
+        }
+        if (i < 20) { // Debug first 20 failures in detail
+          console.log(`[DEBUG-MERCURY-FAIL-${i}] Title: "${title}" | Manufacturer: "${manufacturer}"`);
+        }
+        continue; // Skip non-Mercury items
+      }
+      
+      // STEP 2: Condition filtering with detailed logging
       const isNew = !condition.includes('used') && 
                    !condition.includes('pre-owned') && 
                    !condition.includes('preowned');
       
-      // STRICT boat exclusion
+      if (isNew) {
+        debugStats.condition_pass++;
+      } else {
+        debugStats.condition_fail++;
+        if (debugStats.sample_failures.condition_filtering.length < 5) {
+          debugStats.sample_failures.condition_filtering.push({
+            title,
+            condition,
+            reason: `Condition "${condition}" indicates used/pre-owned`
+          });
+        }
+        if (i < 20) {
+          console.log(`[DEBUG-CONDITION-FAIL-${i}] Title: "${title}" | Condition: "${condition}"`);
+        }
+        continue; // Skip used items
+      }
+      
+      // STEP 3: Boat exclusion filtering with detailed logging
       const boatExclusions = [
         'legend', 'uttern', 'pontoon', 'deck boat', 'fishing boat',
         'bass boat', 'jon boat', 'aluminum boat', 'fiberglass boat',
@@ -140,13 +204,33 @@ serve(async (req) => {
         'parts', 'accessories', 'propeller', 'prop', 'controls'
       ];
       
-      const isBoatOrOther = boatExclusions.some(exclusion => 
+      const matchedExclusions = boatExclusions.filter(exclusion => 
         titleLower.includes(exclusion) || 
         descLower.includes(exclusion) || 
         category.includes(exclusion)
       );
       
-      // STRICT motor detection - require Mercury outboard motor indicators
+      const isBoatOrOther = matchedExclusions.length > 0;
+      
+      if (!isBoatOrOther) {
+        debugStats.boat_exclusion_pass++;
+      } else {
+        debugStats.boat_exclusion_fail++;
+        if (debugStats.sample_failures.boat_exclusions.length < 5) {
+          debugStats.sample_failures.boat_exclusions.push({
+            title,
+            category,
+            matched_exclusions: matchedExclusions,
+            reason: `Contains exclusion terms: ${matchedExclusions.join(', ')}`
+          });
+        }
+        if (i < 20) {
+          console.log(`[DEBUG-BOAT-FAIL-${i}] Title: "${title}" | Matched exclusions: [${matchedExclusions.join(', ')}]`);
+        }
+        continue; // Skip boats and other excluded items
+      }
+      
+      // STEP 4: Motor detection with detailed logging
       const mercuryMotorRequired = [
         'fourstroke', 'four stroke', 'four-stroke',
         'proxs', 'pro xs', 'pro-xs',
@@ -165,49 +249,109 @@ serve(async (req) => {
       const hpMatch = titleLower.match(/(\d+(?:\.\d+)?)\s*hp/);
       const hasValidHP = hpMatch && parseFloat(hpMatch[1]) >= 2.5 && parseFloat(hpMatch[1]) <= 600;
       
-      const hasMotorIndicator = mercuryMotorRequired.some(indicator => 
+      const matchedMotorIndicators = mercuryMotorRequired.filter(indicator => 
         titleLower.includes(indicator) || descLower.includes(indicator)
       );
+      const hasMotorIndicator = matchedMotorIndicators.length > 0;
       
-      const hasRiggingCode = mercuryRiggingCodes.some(code =>
+      const matchedRiggingCodes = mercuryRiggingCodes.filter(code =>
         titleLower.includes(code) || descLower.includes(code)
       );
+      const hasRiggingCode = matchedRiggingCodes.length > 0;
       
       // Motor must have HP OR motor indicator OR rigging code
       const isMotor = hasValidHP || hasMotorIndicator || hasRiggingCode;
       
-      // Final filtering logic - all must be true
-      const isValid = isMercury && isNew && !isBoatOrOther && isMotor;
-      
-      // Create motor object if valid
-      if (isValid) {
-        mercuryMotors.push({
-          xmlData: item,
-          extractedData: {
+      if (isMotor) {
+        debugStats.motor_detection_pass++;
+        console.log(`[DEBUG-MOTOR-PASS-${i}] "${title}" | HP: ${hpMatch ? hpMatch[1] : 'none'} | Indicators: [${matchedMotorIndicators.join(',')}] | Rigging: [${matchedRiggingCodes.join(',')}]`);
+      } else {
+        debugStats.motor_detection_fail++;
+        if (debugStats.sample_failures.motor_detection.length < 5) {
+          debugStats.sample_failures.motor_detection.push({
             title,
-            description,
-            manufacturer,
-            condition,
-            category,
-            stockNumber: extractField(item, [
-              '<stocknumber>(.*?)</stocknumber>',
-              '<stock_number>(.*?)</stock_number>',
-              '<vin>(.*?)</vin>',
-              '<id>(.*?)</id>'
-            ]),
-            price: extractField(item, [
-              '<price>(.*?)</price>',
-              '<cost>(.*?)</cost>',
-              '<msrp>(.*?)</msrp>'
-            ]),
-            quantity: extractField(item, [
-              '<quantity>(.*?)</quantity>',
-              '<qty>(.*?)</qty>',
-              '<stock>(.*?)</stock>'
-            ]) || '1'
-          }
-        });
+            hp_match: hpMatch ? hpMatch[1] : null,
+            motor_indicators: matchedMotorIndicators,
+            rigging_codes: matchedRiggingCodes,
+            reason: 'No HP, motor indicators, or rigging codes found'
+          });
+        }
+        if (i < 20) {
+          console.log(`[DEBUG-MOTOR-FAIL-${i}] "${title}" | HP: ${hpMatch ? hpMatch[1] : 'none'} | Indicators: [${matchedMotorIndicators.join(',')}] | Rigging: [${matchedRiggingCodes.join(',')}]`);
+        }
+        continue; // Skip non-motor items
       }
+      
+      // FINAL: All checks passed - this is a valid Mercury motor
+      debugStats.final_valid++;
+      console.log(`[DEBUG-VALID-${debugStats.final_valid}] PASSED ALL FILTERS: "${title}"`);
+
+      // Create motor object if valid
+      mercuryMotors.push({
+        xmlData: item,
+        extractedData: {
+          title,
+          description,
+          manufacturer,
+          condition,
+          category,
+          stockNumber: extractField(item, [
+            '<stocknumber>(.*?)</stocknumber>',
+            '<stock_number>(.*?)</stock_number>',
+            '<vin>(.*?)</vin>',
+            '<id>(.*?)</id>'
+          ]),
+          price: extractField(item, [
+            '<price>(.*?)</price>',
+            '<cost>(.*?)</cost>',
+            '<msrp>(.*?)</msrp>'
+          ]),
+          quantity: extractField(item, [
+            '<quantity>(.*?)</quantity>',
+            '<qty>(.*?)</qty>',
+            '<stock>(.*?)</stock>'
+          ]) || '1'
+        }
+      });
+    }
+    
+    // COMPREHENSIVE DEBUG SUMMARY
+    console.log(`[DEBUG-SUMMARY] ======= FILTERING RESULTS =======`);
+    console.log(`[DEBUG-SUMMARY] Total XML items processed: ${debugStats.total_items}`);
+    console.log(`[DEBUG-SUMMARY] Mercury detection - Pass: ${debugStats.mercury_pass}, Fail: ${debugStats.mercury_fail}`);
+    console.log(`[DEBUG-SUMMARY] Condition filtering - Pass: ${debugStats.condition_pass}, Fail: ${debugStats.condition_fail}`);
+    console.log(`[DEBUG-SUMMARY] Boat exclusion - Pass: ${debugStats.boat_exclusion_pass}, Fail: ${debugStats.boat_exclusion_fail}`);
+    console.log(`[DEBUG-SUMMARY] Motor detection - Pass: ${debugStats.motor_detection_pass}, Fail: ${debugStats.motor_detection_fail}`);
+    console.log(`[DEBUG-SUMMARY] Final valid Mercury motors: ${debugStats.final_valid}`);
+    
+    // Log sample failures for analysis
+    console.log(`[DEBUG-SUMMARY] ======= SAMPLE FAILURES =======`);
+    if (debugStats.sample_failures.mercury_detection.length > 0) {
+      console.log(`[DEBUG-SAMPLE-MERCURY-FAILS]`);
+      debugStats.sample_failures.mercury_detection.forEach((failure, i) => {
+        console.log(`  ${i + 1}. "${failure.title}" - ${failure.reason}`);
+      });
+    }
+    
+    if (debugStats.sample_failures.condition_filtering.length > 0) {
+      console.log(`[DEBUG-SAMPLE-CONDITION-FAILS]`);
+      debugStats.sample_failures.condition_filtering.forEach((failure, i) => {
+        console.log(`  ${i + 1}. "${failure.title}" - ${failure.reason}`);
+      });
+    }
+    
+    if (debugStats.sample_failures.boat_exclusions.length > 0) {
+      console.log(`[DEBUG-SAMPLE-BOAT-FAILS]`);
+      debugStats.sample_failures.boat_exclusions.forEach((failure, i) => {
+        console.log(`  ${i + 1}. "${failure.title}" - ${failure.reason}`);
+      });
+    }
+    
+    if (debugStats.sample_failures.motor_detection.length > 0) {
+      console.log(`[DEBUG-SAMPLE-MOTOR-FAILS]`);
+      debugStats.sample_failures.motor_detection.forEach((failure, i) => {
+        console.log(`  ${i + 1}. "${failure.title}" - HP:${failure.hp_match}, Indicators:[${failure.motor_indicators.join(',')}], Rigging:[${failure.rigging_codes.join(',')}]`);
+      });
     }
     
     console.log(`[STOCK-SYNC] Filtered to ${mercuryMotors.length} Mercury outboard motors`);
