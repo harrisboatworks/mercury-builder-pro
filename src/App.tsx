@@ -54,6 +54,7 @@ import PaymentCanceled from "./pages/PaymentCanceled";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import Settings from "./pages/Settings";
 import { NotificationToast } from "@/components/notifications/NotificationToast";
+import Import2026Pricing from "./pages/Import2026Pricing";
 
 function Canonical() {
   useEffect(() => {
@@ -239,6 +240,17 @@ const App = () => (
                 <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
                 <Route path="/test/price-scraping" element={<TestPriceScraping />} />
                 <Route path="/test/enhanced-pricing" element={<TestEnhancedPricing />} />
+                
+                {/* Admin Import Routes */}
+                <Route
+                  path="/admin/import-2026-pricing"
+                  element={
+                    <SecureRoute requireAdmin={true}>
+                      <Import2026Pricing />
+                    </SecureRoute>
+                  }
+                />
+                
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
