@@ -151,14 +151,17 @@ export default function QuoteSummaryPage() {
   const batteryCost = !isManualStart ? 179.99 : 0;
   const baseAccessoryCost = controlsCost + batteryCost;
   
-  // Pricing calculation with conditional accessories
+  // Add warranty price if selected
+  const warrantyPrice = state.warrantyConfig?.warrantyPrice || 0;
+  
+  // Pricing calculation with conditional accessories and warranty
   const data = {
-    msrp: motorPrice + baseAccessoryCost,
+    msrp: motorPrice + baseAccessoryCost + warrantyPrice,
     discount: 546,
     promoValue: 400,
-    subtotal: motorPrice + baseAccessoryCost - 546 - 400,
-    tax: (motorPrice + baseAccessoryCost - 546 - 400) * 0.13,
-    total: (motorPrice + baseAccessoryCost - 546 - 400) * 1.13,
+    subtotal: motorPrice + baseAccessoryCost + warrantyPrice - 546 - 400,
+    tax: (motorPrice + baseAccessoryCost + warrantyPrice - 546 - 400) * 0.13,
+    total: (motorPrice + baseAccessoryCost + warrantyPrice - 546 - 400) * 1.13,
   };
   
   const totals = computeTotals(data);
@@ -273,7 +276,7 @@ export default function QuoteSummaryPage() {
     { 
       id: "best", 
       label: "Premium • Max coverage", 
-      priceBeforeTax: data.subtotal + 179.99 + 500, 
+      priceBeforeTax: data.subtotal + 179.99, 
       savings: totals.savings + 150, 
       features: ["Max coverage", "Priority install", "Premium prop", "Extended warranty", "White-glove installation"],
       coverageYears: maxCoverageYears,
@@ -302,11 +305,13 @@ export default function QuoteSummaryPage() {
     });
   }
   
-  if (selectedPackage === 'best') {
+  // Add selected warranty as line item
+  if (warrantyPrice > 0 && state.warrantyConfig?.totalYears) {
+    const extendedYears = state.warrantyConfig.totalYears - currentCoverageYears;
     accessoryBreakdown.push({
-      name: 'Extended Warranty',
-      price: 500,
-      description: 'Additional coverage and peace of mind'
+      name: `Extended Warranty (${extendedYears} additional year${extendedYears > 1 ? 's' : ''})`,
+      price: warrantyPrice,
+      description: `Total coverage: ${state.warrantyConfig.totalYears} years`
     });
   }
 
@@ -327,7 +332,7 @@ export default function QuoteSummaryPage() {
       
       // Calculate pricing breakdown (same as in component)
       const motorPrice = quoteData.motor?.salePrice || quoteData.motor?.basePrice || quoteData.motor?.price || 0;
-      const msrp = motorPrice + baseAccessoryCost; // Motor + required accessories only
+      const msrp = motorPrice + baseAccessoryCost + warrantyPrice; // Motor + required accessories + warranty
       const discount = 546;
       const promoValue = 400;
       const subtotal = msrp - discount - promoValue;
