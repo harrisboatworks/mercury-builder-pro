@@ -187,7 +187,7 @@ serve(async (req) => {
   }
   
   try {
-    console.log('[STOCK-SYNC] Starting stock inventory sync...');
+    console.log('[STOCK-SYNC] Starting stock inventory sync v2.0...');
     
     const supabase = await getServiceClient();
     const body = await req.json().catch(() => ({}));
