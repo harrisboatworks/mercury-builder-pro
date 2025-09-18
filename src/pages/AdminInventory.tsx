@@ -1,6 +1,5 @@
 import React from 'react';
 import { UnifiedInventoryDashboard } from '@/components/admin/UnifiedInventoryDashboard';
-import { EmergencyModelCorrection } from '@/components/admin/EmergencyModelCorrection';
 import AdminNav from '@/components/admin/AdminNav';
 
 export default function AdminInventory() {
@@ -15,9 +14,6 @@ export default function AdminInventory() {
               Monitor motor inventory, sync status, and diagnostics
             </p>
           </div>
-          
-          {/* Emergency Model Correction - Critical Priority */}
-          <EmergencyModelCorrection />
           
           <UnifiedInventoryDashboard />
         </div>
