@@ -25,6 +25,14 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
   });
   const { toast } = useToast();
 
+  // Debug logging
+  console.log('InstallationConfig Debug:', {
+    selectedMotor: selectedMotor,
+    motorModel: selectedMotor?.model,
+    isTiller: isTiller,
+    tillerMountingChoices: tillerMountingChoices
+  });
+
   const totalSteps = isTiller ? 1 : 4;
 
   const handleOptionSelect = (field: string, value: string) => {
@@ -72,6 +80,15 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
             : `Select your rigging options for the ${selectedMotor?.model}`
           }
         </p>
+
+        {/* DEBUG INFO - Remove after fixing */}
+        <div className="bg-yellow-100 border border-yellow-400 p-4 mb-4 rounded text-sm">
+          <strong>Debug Info:</strong><br/>
+          Motor Model: {selectedMotor?.model || 'undefined'}<br/>
+          Is Tiller: {isTiller ? 'YES' : 'NO'}<br/>
+          Tiller Choices Length: {tillerMountingChoices?.length || 0}<br/>
+          Config Mounting: {config.mounting || 'empty'}
+        </div>
 
         {/* Tiller Motor Flow - Mounting Options */}
         {isTiller && (
