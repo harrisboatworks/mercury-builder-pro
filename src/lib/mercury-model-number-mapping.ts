@@ -281,6 +281,16 @@ export function getCorrectModelNumberForDisplay(motor: {
       return exactMatch;
     }
     
+    // Try with "ProKicker" added for ELHPT/ELPT motors
+    if (motor.model.includes('ELHPT') || motor.model.includes('ELPT')) {
+      const withProKicker = motor.model.replace(' FourStroke', ' ProKicker FourStroke');
+      const proKickerMatch = getCorrectModelNumber(withProKicker);
+      if (proKickerMatch) {
+        console.log('✅ Found ProKicker match for model:', withProKicker, '->', proKickerMatch);
+        return proKickerMatch;
+      }
+    }
+    
     // Try normalized variations of the model string
     const normalized = motor.model.replace(/\s+/g, ' ').trim();
     const normalizedMatch = getCorrectModelNumber(normalized);
@@ -296,6 +306,16 @@ export function getCorrectModelNumberForDisplay(motor: {
     if (exactMatch) {
       console.log('✅ Found exact match for model_display:', motor.model_display, '->', exactMatch);
       return exactMatch;
+    }
+    
+    // Try with "ProKicker" added for ELHPT/ELPT motors
+    if (motor.model_display.includes('ELHPT') || motor.model_display.includes('ELPT')) {
+      const withProKicker = motor.model_display.replace(' FourStroke', ' ProKicker FourStroke');
+      const proKickerMatch = getCorrectModelNumber(withProKicker);
+      if (proKickerMatch) {
+        console.log('✅ Found ProKicker match for model_display:', withProKicker, '->', proKickerMatch);
+        return proKickerMatch;
+      }
     }
   }
 
