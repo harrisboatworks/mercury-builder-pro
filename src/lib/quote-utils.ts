@@ -163,9 +163,8 @@ export const PACKAGE_CONFIGS: PackageConfig[] = [
       'Premium controls & rigging',
       'Marine starting battery',
       'Performance propeller upgrade',
-      'Extended warranty',
       'White-glove installation'
     ],
-    additionalCost: 179.99 + 500 // Battery + extended warranty
+    additionalCost: 179.99 + 299.99 // Battery + propeller upgrade
   }
 ];
