@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import NewQuote from "./pages/NewQuote";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { QuoteProvider } from "@/contexts/QuoteContext";
 
 // Quote builder pages
@@ -98,7 +98,8 @@ const App = () => (
                     </ProtectedRoute>
                   } 
                 />
-                <Route path="/" element={<Index />} />
+        <Route path="/" element={<Navigate to="/quote/motor-selection" replace />} />
+        <Route path="/index" element={<Index />} />
                 
                 {/* Quote Builder Routes */}
                 <Route path="/quote" element={<MotorSelectionPage />} />
