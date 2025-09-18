@@ -6,13 +6,15 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, AlertTriangle, CheckCircle, Trash2, Edit } from 'lucide-react';
-import { emergencyModelCorrection, CorrectionResult } from '@/lib/emergency-model-correction';
+import { Loader2, AlertTriangle, CheckCircle, XCircle, Trash2, Edit } from 'lucide-react';
+import { emergencyModelCorrection, validateAllMotors, CorrectionResult } from '@/lib/emergency-model-correction';
 import { useToast } from '@/hooks/use-toast';
 
 export function EmergencyModelCorrection() {
   const [isRunning, setIsRunning] = useState(false);
+  const [isValidating, setIsValidating] = useState(false);
   const [result, setResult] = useState<CorrectionResult | null>(null);
+  const [validationResult, setValidationResult] = useState<{ valid: number; invalid: number; issues: string[] } | null>(null);
   const { toast } = useToast();
 
   const handleRunCorrection = async () => {
@@ -47,6 +49,30 @@ export function EmergencyModelCorrection() {
     }
   };
 
+  const handleValidateAll = async () => {
+    setIsValidating(true);
+    setValidationResult(null);
+    
+    try {
+      const validation = await validateAllMotors();
+      setValidationResult(validation);
+      
+      toast({
+        title: "Validation complete",
+        description: `${validation.valid} valid, ${validation.invalid} invalid motors`,
+        variant: validation.invalid > 0 ? "destructive" : "default"
+      });
+    } catch (error) {
+      console.error('Validation failed:', error);
+      toast({
+        title: "Validation failed",
+        description: error instanceof Error ? error.message : 'Unknown error',
+        variant: "destructive"
+      });
+    } finally {
+      setIsValidating(false);
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -63,66 +89,130 @@ export function EmergencyModelCorrection() {
         </AlertDescription>
       </Alert>
 
-      {/* Emergency Correction Card */}
-      <Card className="border-destructive max-w-md">
-        <CardHeader>
-          <CardTitle className="flex items-center space-x-2 text-destructive">
-            <AlertTriangle className="h-5 w-5" />
-            <span>Emergency Correction</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-sm text-muted-foreground">
-            Fix model number inaccuracies and remove duplicate motors. This action cannot be undone.
-          </p>
-          
-          <Button 
-            onClick={handleRunCorrection}
-            disabled={isRunning}
-            className="w-full"
-            variant="destructive"
-          >
-            {isRunning ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Running Correction...
-              </>
-            ) : (
-              'Run Emergency Correction'
-            )}
-          </Button>
-
-          {result && (
-            <div className="space-y-2">
-              <div className="flex justify-between">
-                <span className="text-sm font-medium">Motors Processed:</span>
-                <Badge variant="secondary">{result.motorsProcessed}</Badge>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-sm font-medium">Motors Corrected:</span>
-                <Badge variant="secondary" className="bg-green-100 text-green-800">
-                  {result.motorsCorrected}
-                </Badge>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-sm font-medium">Duplicates Deleted:</span>
-                <Badge variant="destructive">{result.motorsDeleted}</Badge>
-              </div>
-              
-              {result.errors.length > 0 && (
-                <div className="mt-4 p-3 bg-destructive/10 rounded text-xs">
-                  <p className="font-medium mb-2 text-destructive">Errors:</p>
-                  <ul className="space-y-1">
-                    {result.errors.map((error, index) => (
-                      <li key={index} className="text-destructive">• {error}</li>
-                    ))}
-                  </ul>
-                </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Validation Card */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center space-x-2">
+              <CheckCircle className="h-5 w-5" />
+              <span>Validate Model Numbers</span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-sm text-muted-foreground">
+              Check all brochure motors against the official Mercury reference to identify issues.
+            </p>
+            
+            <Button 
+              onClick={handleValidateAll}
+              disabled={isValidating || isRunning}
+              className="w-full"
+              variant="outline"
+            >
+              {isValidating ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Validating...
+                </>
+              ) : (
+                'Validate All Motors'
               )}
-            </div>
-          )}
-        </CardContent>
-      </Card>
+            </Button>
+
+            {validationResult && (
+              <div className="space-y-2">
+                <div className="flex justify-between">
+                  <span className="text-sm font-medium">Valid Motors:</span>
+                  <Badge variant="secondary" className="bg-green-100 text-green-800">
+                    {validationResult.valid}
+                  </Badge>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm font-medium">Invalid Motors:</span>
+                  <Badge variant="destructive">
+                    {validationResult.invalid}
+                  </Badge>
+                </div>
+                
+                {validationResult.issues.length > 0 && (
+                  <div className="mt-4 p-3 bg-muted rounded text-xs">
+                    <p className="font-medium mb-2">Issues Found:</p>
+                    <ul className="space-y-1">
+                      {validationResult.issues.slice(0, 10).map((issue, index) => (
+                        <li key={index} className="text-muted-foreground">• {issue}</li>
+                      ))}
+                      {validationResult.issues.length > 10 && (
+                        <li className="text-muted-foreground">• ... and {validationResult.issues.length - 10} more</li>
+                      )}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Emergency Correction Card */}
+        <Card className="border-destructive">
+          <CardHeader>
+            <CardTitle className="flex items-center space-x-2 text-destructive">
+              <AlertTriangle className="h-5 w-5" />
+              <span>Emergency Correction</span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-sm text-muted-foreground">
+              Fix all model number inaccuracies and remove duplicate motors. This action cannot be undone.
+            </p>
+            
+            <Button 
+              onClick={handleRunCorrection}
+              disabled={isRunning || isValidating}
+              className="w-full"
+              variant="destructive"
+            >
+              {isRunning ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Running Correction...
+                </>
+              ) : (
+                'Run Emergency Correction'
+              )}
+            </Button>
+
+            {result && (
+              <div className="space-y-2">
+                <div className="flex justify-between">
+                  <span className="text-sm font-medium">Motors Processed:</span>
+                  <Badge variant="secondary">{result.motorsProcessed}</Badge>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm font-medium">Motors Corrected:</span>
+                  <Badge variant="secondary" className="bg-green-100 text-green-800">
+                    {result.motorsCorrected}
+                  </Badge>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm font-medium">Duplicates Deleted:</span>
+                  <Badge variant="destructive">{result.motorsDeleted}</Badge>
+                </div>
+                
+                {result.errors.length > 0 && (
+                  <div className="mt-4 p-3 bg-destructive/10 rounded text-xs">
+                    <p className="font-medium mb-2 text-destructive">Errors:</p>
+                    <ul className="space-y-1">
+                      {result.errors.map((error, index) => (
+                        <li key={index} className="text-destructive">• {error}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      </div>
 
       {/* Results Details */}
       {result && result.details.length > 0 && (
