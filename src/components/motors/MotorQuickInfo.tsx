@@ -20,14 +20,13 @@ export default function MotorQuickInfo({
             console.warn('MotorQuickInfo - cleaned HTML from model:', model, '->', cleanModel);
           }
           
+          // Add automatic Power Trim for motors 40 HP and above
+          const motorHP = typeof hp === 'string' ? parseInt(hp) : hp;
+          
           const cleanedModel = cleanMotorName(cleanModel);
           console.log('MotorQuickInfo - model:', cleanModel);
           console.log('MotorQuickInfo - cleaned:', cleanedModel);
-          const decoded = decodeModelName(cleanedModel);
-          console.log('MotorQuickInfo - decoded:', decoded);
-          
-          // Add automatic Power Trim for motors 40 HP and above
-          const motorHP = typeof hp === 'string' ? parseInt(hp) : hp;
+          const decoded = decodeModelName(cleanedModel, motorHP);
           const enhancedDecoded = [...decoded];
           if (motorHP && motorHP >= 40 && !decoded.some(item => item.code === 'PT')) {
             enhancedDecoded.unshift({

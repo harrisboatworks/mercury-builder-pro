@@ -25,7 +25,7 @@ export interface Motor {
   [key: string]: any;
 }
 
-export const decodeModelName = (modelName: string) => {
+export const decodeModelName = (modelName: string, actualHP?: number) => {
   type Item = {
     code: string;
     meaning: string;
@@ -46,8 +46,11 @@ export const decodeModelName = (modelName: string) => {
     }
   };
   const hasWord = (w: string) => new RegExp(`\\b${w}\\b`).test(upper);
+  // Use actual HP if provided, otherwise extract from model name
   const hpMatch = upper.match(/(\d+(?:\.\d+)?)HP/);
-  const hp = hpMatch ? parseFloat(hpMatch[1]) : 0;
+  const hp = actualHP || (hpMatch ? parseFloat(hpMatch[1]) : 0);
+  
+  console.log(`decodeModelName: actualHP=${actualHP}, extracted HP=${hpMatch ? parseFloat(hpMatch[1]) : 0}, using HP=${hp} for model: ${modelName}`);
 
   // Special handling for 115+ HP motors with shaft codes in model name
   const isHighHPMotor = hp >= 115;
