@@ -185,15 +185,12 @@ export default function QuoteSummaryPage() {
     for (let i = 1; i <= availableYears; i++) {
       const targetYears = currentCoverageYears + i;
       
-      // Calculate cumulative price for additional years
-      let cumulativePrice = 0;
-      for (let j = 1; j <= i; j++) {
-        const yearKey = `year_${j}_price` as keyof typeof warrantyPricing;
-        cumulativePrice += warrantyPricing[yearKey] || 0;
-      }
+      // Get direct price for this duration (each year_x_price is the total for x additional years)
+      const yearKey = `year_${i}_price` as keyof typeof warrantyPricing;
+      const warrantyPrice = warrantyPricing[yearKey] || 0;
 
       // Add HST (13%) to warranty price
-      const priceWithTax = cumulativePrice * 1.13;
+      const priceWithTax = warrantyPrice * 1.13;
       
       // Calculate monthly payment delta
       const termMonths = getFinancingTerm(priceWithTax);
@@ -201,7 +198,7 @@ export default function QuoteSummaryPage() {
       
       options.push({
         years: targetYears,
-        price: Math.round(cumulativePrice),
+        price: Math.round(warrantyPrice),
         priceWithTax: Math.round(priceWithTax),
         monthlyDelta: Math.round(monthlyPayment)
       });
