@@ -51,6 +51,7 @@ export const decodeModelName = (modelName: string) => {
 
   // Special handling for 115+ HP motors with shaft codes in model name
   const isHighHPMotor = hp >= 115;
+  let highHPShaftDetected = false;
   
   // Enhanced shaft code detection for high HP motors (115+)
   if (isHighHPMotor) {
@@ -58,6 +59,9 @@ export const decodeModelName = (modelName: string) => {
     const highHPShaftMatch = upper.match(/(\d{2,3})(XXL|XL|L)\b/);
     if (highHPShaftMatch) {
       const shaftCode = highHPShaftMatch[2];
+      highHPShaftDetected = true;
+      console.log(`High HP motor detected: ${hp}HP with shaft code: ${shaftCode} from model: ${name}`);
+      
       switch (shaftCode) {
         case 'L':
           add('L', 'Long Shaft 20"', 'Perfect for most boat applications with standard transoms');
@@ -142,8 +146,8 @@ export const decodeModelName = (modelName: string) => {
   // Command Thrust
   if (hasWord('CT') || /COMMAND\s*THRUST/i.test(name)) add('CT', 'Command Thrust', 'Larger gearcase & prop for superior control');
 
-  // Shaft length (check longer tokens first, skip if already handled in combos)
-  if (!added.has('XX') && !added.has('XL') && !added.has('L') && !added.has('S')) {
+  // Shaft length (check longer tokens first, skip if already handled in combos or high HP detection)
+  if (!highHPShaftDetected && !added.has('XX') && !added.has('XL') && !added.has('L') && !added.has('S')) {
     if (hasWord('XXL') || hasWord('XX')) {
       add('XX', 'Ultra Long Shaft (30")', 'For 30" transom boats');
     } else if (hasWord('XL') || (hasWord('X') && !hasWord('XX'))) {
@@ -153,8 +157,13 @@ export const decodeModelName = (modelName: string) => {
     } else if (hasWord('S')) {
       add('S', 'Short Shaft (15")', 'For 15" transom boats');
     } else {
-      // Default: No shaft indicators means Short Shaft (15")
-      add('S', 'Short Shaft (15")', 'For 15" transom boats');
+      // Default: No shaft indicators means Short Shaft (15") for lower HP motors
+      if (hp <= 30) {
+        add('S', 'Short Shaft (15")', 'For 15" transom boats');
+      } else {
+        // For higher HP motors without explicit shaft info, assume long shaft
+        add('L', 'Long Shaft (20")', 'Standard for most boats');
+      }
     }
   }
 
