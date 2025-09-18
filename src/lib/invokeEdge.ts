@@ -9,7 +9,7 @@ const SUPABASE_ANON_KEY =
   (globalThis as any)?.process?.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
 
-export const EDGE_URL = `${SUPABASE_URL}/functions/v1/seed-from-pricelist`;
+export const EDGE_URL = `${SUPABASE_URL}/functions/v1/universal-pricing-import`;
 
 function buildHeaders(json = true) {
   const h: Record<string, string> = {

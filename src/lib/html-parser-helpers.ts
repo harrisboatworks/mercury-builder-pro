@@ -1,5 +1,5 @@
-// Shared HTML parsing helpers - extracted from seed-from-pricelist edge function
-// Used for consistent parsing between URL pricelist and HTML file import
+// Shared HTML parsing helpers for pricing import functionality
+// Used for consistent parsing across different import sources
 
 // HTML entity decoder
 function decodeEntities(str: string): string {

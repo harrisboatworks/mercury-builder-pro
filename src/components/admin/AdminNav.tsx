@@ -8,7 +8,7 @@ const navItems = [
   { label: "Financing", to: "/admin/financing" },
   { label: "Motor Images", to: "/admin/motor-images" },
   { label: "Inventory", to: "/admin/inventory" },
-  { label: "Pricing Management", to: "/admin/import-2026-pricing" },
+  { label: "Pricing Import", to: "/admin/pricing-import" },
   { label: "Sources", to: "/admin/sources" },
   { label: "Connectors", to: "/admin/connectors" },
   { label: "Security", to: "/admin/security" },

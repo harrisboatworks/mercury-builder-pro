@@ -299,7 +299,7 @@ export default function AdminSources() {
           rigging_code: riggingCode,
           model_display: displayName,
           dealer_price: motor.price,
-          msrp: null, // Let bulk-upsert-brochure calculate MSRP with markup
+          msrp: null, // Will be calculated by universal pricing import with markup
           horsepower: horsepower || 0, // Extract from description
           family: motor.section || 'FourStroke',
           fuel_type: '', // Not available in simple interface
@@ -309,12 +309,13 @@ export default function AdminSources() {
         };
       });
 
-      console.log('Sending rows to bulk-upsert-brochure with rigging codes extracted:', rows.slice(0, 3));
+      console.log('Sending rows to universal pricing import with rigging codes extracted:', rows.slice(0, 3));
 
-      const { data, error } = await supabase.functions.invoke('bulk-upsert-brochure', {
+      const { data, error } = await supabase.functions.invoke('universal-pricing-import', {
         body: { 
-          rows,
-          msrp_markup: Number(msrpMarkup || 1.1)
+          content: JSON.stringify(rows),
+          filename: 'admin-sources.json',
+          preview_only: false
         }
       });
 

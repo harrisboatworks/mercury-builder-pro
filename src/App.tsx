@@ -53,7 +53,7 @@ import PaymentCanceled from "./pages/PaymentCanceled";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import Settings from "./pages/Settings";
 import { NotificationToast } from "@/components/notifications/NotificationToast";
-import Import2026Pricing from "./pages/Import2026Pricing";
+import AdminPricingImport from "./pages/AdminPricingImport";
 
 function Canonical() {
   useEffect(() => {
@@ -239,10 +239,10 @@ const App = () => (
                 
                 {/* Admin Import Routes */}
                 <Route
-                  path="/admin/import-2026-pricing"
+                  path="/admin/pricing-import"
                   element={
                     <SecureRoute requireAdmin={true}>
-                      <Import2026Pricing />
+                      <AdminPricingImport />
                     </SecureRoute>
                   }
                 />
