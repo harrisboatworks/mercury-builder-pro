@@ -169,12 +169,6 @@ export default function MotorCardPremium({
             <div className="text-lg font-semibold text-slate-900 dark:text-white">
               {title}
             </div>
-            {/* Mercury Model Number - prominently displayed on second line */}
-            {motor?.model_number && (
-              <div className="mt-0.5 text-sm font-mono font-medium text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-800 px-2 py-1 rounded text-center">
-                {motor.model_number}
-              </div>
-            )}
             
             {/* HP-based descriptor and popularity indicators */}
             {hpNum && (
