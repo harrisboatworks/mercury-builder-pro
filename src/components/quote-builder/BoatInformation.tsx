@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { ExpandableImage } from '@/components/ui/expandable-image';
 import { ArrowLeft, Ship, Info, CheckCircle2, ChevronDown, HelpCircle } from 'lucide-react';
 import { Motor, BoatInfo } from '../QuoteBuilder';
 import { TradeInValuation } from './TradeInValuation';
@@ -712,7 +713,11 @@ export const BoatInformation = ({
                     </CollapsibleTrigger>
                     <CollapsibleContent className="mt-3">
                       <div className="bg-muted/30 rounded-lg p-4">
-                        <img src="/lovable-uploads/cb45570a-2b96-4b08-af3d-412c7607a66e.png" alt="Transom height measurement guide showing how to measure from top of transom to bottom of hull" className="w-full h-auto max-w-lg mx-auto rounded-lg shadow-sm" loading="lazy" />
+                        <ExpandableImage 
+                          src="/lovable-uploads/cb45570a-2b96-4b08-af3d-412c7607a66e.png" 
+                          alt="Transom height measurement guide showing how to measure from top of transom to bottom of hull"
+                          className="max-w-lg mx-auto"
+                        />
                       </div>
                     </CollapsibleContent>
                   </Collapsible>
