@@ -16,11 +16,10 @@ import { isTillerMotor, requiresMercuryControls } from '@/lib/motor-helpers';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
-import { computeTotals } from '@/lib/finance';
+import { computeTotals, calculateMonthlyPayment, getFinancingTerm } from '@/lib/finance';
+import { supabase } from '@/integrations/supabase/client';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
-import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
-import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
 import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
@@ -33,6 +32,8 @@ export default function QuoteSummaryPage() {
   const { toast } = useToast();
   const [selectedPackage, setSelectedPackage] = useState<string>('better');
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
+  const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
+  const [warrantyLoading, setWarrantyLoading] = useState(true);
 
   useEffect(() => {
     // Add delay and loading check to prevent navigation during state updates
@@ -136,16 +137,51 @@ export default function QuoteSummaryPage() {
   const currentCoverageYears = Math.min(baseYears + promoYears, 8);
   const maxCoverageYears = 8;
 
-  // Mock warranty pricing data - in real app this would come from state.warrantyOptions
-  const mockWarrantyPricing = [
-    { years: 6, price: 899, monthlyDelta: 15 },
-    { years: 7, price: 1199, monthlyDelta: 20 },
-    { years: 8, price: 1499, monthlyDelta: 25 },
-  ];
+  // Calculate real warranty pricing based on HP and database data
+  const calculateWarrantyPricing = () => {
+    if (!warrantyPricing || warrantyLoading) return [];
 
-  const targets: WarrantyTarget[] = mockWarrantyPricing
+    const options = [];
+    const availableYears = Math.min(maxCoverageYears - currentCoverageYears, 3); // Max 3 additional years
+
+    for (let i = 1; i <= availableYears; i++) {
+      const targetYears = currentCoverageYears + i;
+      
+      // Calculate cumulative price for additional years
+      let cumulativePrice = 0;
+      for (let j = 1; j <= i; j++) {
+        const yearKey = `year_${j}_price` as keyof typeof warrantyPricing;
+        cumulativePrice += warrantyPricing[yearKey] || 0;
+      }
+
+      // Add HST (13%) to warranty price
+      const priceWithTax = cumulativePrice * 1.13;
+      
+      // Calculate monthly payment delta
+      const termMonths = getFinancingTerm(priceWithTax);
+      const { payment: monthlyPayment } = calculateMonthlyPayment(priceWithTax, financingRate);
+      
+      options.push({
+        years: targetYears,
+        price: Math.round(cumulativePrice),
+        priceWithTax: Math.round(priceWithTax),
+        monthlyDelta: Math.round(monthlyPayment)
+      });
+    }
+
+    return options;
+  };
+
+  const warrantyOptions = calculateWarrantyPricing();
+  
+  const targets: WarrantyTarget[] = warrantyOptions
     .filter(o => o.years > currentCoverageYears && o.years <= maxCoverageYears)
-    .map(o => ({ targetYears: o.years, oneTimePrice: o.price, monthlyDelta: o.monthlyDelta }));
+    .map(o => ({ 
+      targetYears: o.years, 
+      oneTimePrice: o.price, 
+      monthlyDelta: o.monthlyDelta,
+      label: `${o.years} Year Total Coverage`
+    }));
 
   // Currently selected target years (total), or null
   const selectedTargetYears =
@@ -162,7 +198,7 @@ export default function QuoteSummaryPage() {
     if (targetYears === null) {
       dispatch({ type: "SET_WARRANTY_CONFIG", payload: { extendedYears: 0, warrantyPrice: 0, totalYears: currentCoverageYears } });
     } else {
-      const opt = mockWarrantyPricing.find(o => o.years === targetYears);
+      const opt = warrantyOptions.find(o => o.years === targetYears);
       const extendedYears = Math.max(0, targetYears - currentCoverageYears);
       dispatch({
         type: "SET_WARRANTY_CONFIG",
@@ -279,6 +315,7 @@ export default function QuoteSummaryPage() {
           coverageYears: selectedTargetYears ?? currentCoverageYears,
           features: selectedPkg.features
         },
+        warrantyTargets: targets, // Add warranty targets for PDF
         // Use computed pricing values
         pricing: {
           msrp,

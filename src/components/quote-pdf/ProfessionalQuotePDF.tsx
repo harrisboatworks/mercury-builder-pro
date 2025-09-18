@@ -295,6 +295,12 @@ export interface QuotePDFProps {
       coverageYears: number;
       features: string[];
     };
+    warrantyTargets?: Array<{
+      targetYears: number;
+      oneTimePrice: number;
+      monthlyDelta: number;
+      label?: string;
+    }>;
   };
 }
 
@@ -390,24 +396,28 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               </Text>
             </View>
 
-            {/* Extended Warranty Options */}
-            <View style={styles.warrantySection}>
-              <Text style={styles.warrantyTitle}>EXTENDED WARRANTY OPTIONS</Text>
-              <Text style={{ fontSize: 8, color: colors.lightText, marginBottom: 6 }}>
-                Current coverage: {quoteData.selectedPackage?.coverageYears || 5} years 
-                {quoteData.selectedPackage?.id === 'best' ? ' (Premium Max Coverage)' : ' (base + promo)'}
-              </Text>
-              
-              <View style={styles.warrantyOption}>
-                <Text style={styles.warrantyText}>6 yrs total • +$899 • +$15/mo</Text>
+              {/* Extended Warranty Options */}
+              <View style={styles.warrantySection}>
+                <Text style={styles.warrantyTitle}>EXTENDED WARRANTY OPTIONS</Text>
+                <Text style={{ fontSize: 8, color: colors.lightText, marginBottom: 6 }}>
+                  Current coverage: {quoteData.selectedPackage?.coverageYears || 5} years 
+                  {quoteData.selectedPackage?.id === 'best' ? ' (Premium Max Coverage)' : ' (base + promo)'}
+                </Text>
+                
+                {quoteData.warrantyTargets && quoteData.warrantyTargets.length > 0 ? (
+                  quoteData.warrantyTargets.map((target: any, index: number) => (
+                    <View key={index} style={styles.warrantyOption}>
+                      <Text style={styles.warrantyText}>
+                        {target.targetYears} yrs total • +${target.oneTimePrice.toLocaleString()} • +${target.monthlyDelta}/mo
+                      </Text>
+                    </View>
+                  ))
+                ) : (
+                  <View style={styles.warrantyOption}>
+                    <Text style={styles.warrantyText}>Maximum coverage already included</Text>
+                  </View>
+                )}
               </View>
-              <View style={styles.warrantyOption}>
-                <Text style={styles.warrantyText}>7 yrs total • +$1,199 • +$20/mo</Text>
-              </View>
-              <View style={styles.warrantyOption}>
-                <Text style={styles.warrantyText}>8 yrs total • +$1,499 • +$25/mo</Text>
-              </View>
-            </View>
           </View>
 
           {/* Right Column */}
