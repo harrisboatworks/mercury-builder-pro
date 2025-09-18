@@ -1451,6 +1451,10 @@ export type Database = {
         Args: { p_rows: Json }
         Returns: number
       }
+      update_brochure_models_bulk_v2: {
+        Args: { p_rows: Json }
+        Returns: number
+      }
       validate_customer_data_ownership: {
         Args: { record_user_id: string; table_name: string }
         Returns: boolean
