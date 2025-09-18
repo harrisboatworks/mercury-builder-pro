@@ -127,9 +127,15 @@ serve(async (req) => {
         const horsepower = row.horsepower ? Number(row.horsepower) : null;
         const fuel_type = String(row.fuel_type || '').trim();
         const rigging_code = String(row.rigging_code || '').trim();
+        const mercury_model_no = String(row.mercury_model_no || row.model_number || '').trim();
         
         if (!model) {
           skipReasons['missing_model'] = (skipReasons['missing_model'] || 0) + 1;
+          continue;
+        }
+
+        if (!mercury_model_no) {
+          skipReasons['missing_mercury_model_no'] = (skipReasons['missing_mercury_model_no'] || 0) + 1;
           continue;
         }
 
@@ -181,13 +187,14 @@ serve(async (req) => {
           make: 'Mercury',
           model: model,
           model_key: finalModelKey,
-          mercury_model_no: String(row.mercury_model_no || '').trim() || null,
+          mercury_model_no: mercury_model_no,
+          model_number: mercury_model_no, // Use mercury_model_no as the stable model_number
           year: 2025,
           motor_type: family,
           family: family,
           horsepower: horsepower,
           fuel_type: fuel_type || null,
-          model_code: String(row.mercury_model_no || row.model_number || '').trim() || null,
+          model_code: mercury_model_no,
           shaft_code: rig.shaft_code,
           shaft_inches: rig.shaft_inches,
           start_type: rig.start_type,
@@ -231,20 +238,20 @@ serve(async (req) => {
     }
 
     // Get existing records to determine creates vs updates
-    const existingKeys = upsertRows.map(r => r.model_key);
+    const existingModelNumbers = upsertRows.map(r => r.model_number);
     const { data: existingRecords } = await supabase
       .from('motor_models')
-      .select('model_key')
-      .in('model_key', existingKeys)
+      .select('model_number')
+      .in('model_number', existingModelNumbers)
       .eq('is_brochure', true);
 
-    const existingKeySet = new Set((existingRecords || []).map(r => r.model_key));
+    const existingModelNumberSet = new Set((existingRecords || []).map(r => r.model_number));
     
-    // Perform upsert
+    // Perform upsert using model_number as conflict resolution
     const { error: upsertError } = await supabase
       .from('motor_models')
       .upsert(upsertRows, { 
-        onConflict: 'model_key',
+        onConflict: 'model_number',
         ignoreDuplicates: false 
       });
 
@@ -257,8 +264,8 @@ serve(async (req) => {
     }
 
     // Calculate counts
-    const rows_created = upsertRows.filter(r => !existingKeySet.has(r.model_key)).length;
-    const rows_updated = upsertRows.filter(r => existingKeySet.has(r.model_key)).length;
+    const rows_created = upsertRows.filter(r => !existingModelNumberSet.has(r.model_number)).length;
+    const rows_updated = upsertRows.filter(r => existingModelNumberSet.has(r.model_number)).length;
     const rows_skipped = parsedRows.length - upsertRows.length;
 
     console.log(`[BulkUpsertBrochure] Success: ${rows_created} created, ${rows_updated} updated, ${rows_skipped} skipped`);
