@@ -27,7 +27,7 @@ const Index = () => {
   const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
   
   const { state, isQuoteComplete, getQuoteCompletionStatus, clearQuote } = useQuote();
-  const { user, signOut } = useAuth();
+  const { user, signOut, isAdmin } = useAuth();
 
   // Memoize the completion status function to prevent unnecessary re-renders
   const getCompletionStatus = useCallback(() => {
@@ -438,13 +438,15 @@ const Index = () => {
               </p>
             </div>
 
-            {/* Test Function Button - Prominent Position */}
-            <div className="mb-8 text-center">
-              <div className="inline-block p-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg shadow-lg">
-                <h3 className="text-white font-semibold mb-2 text-sm">🧪 Edge Function Testing</h3>
-                <TestFunctionButton />
+            {/* Test Function Button - Admin Only */}
+            {isAdmin && (
+              <div className="mb-8 text-center">
+                <div className="inline-block p-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg shadow-lg">
+                  <h3 className="text-white font-semibold mb-2 text-sm">🧪 Edge Function Testing</h3>
+                  <TestFunctionButton />
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Current Quote Card */}
             {quoteSummary && (
