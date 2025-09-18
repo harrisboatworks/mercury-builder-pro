@@ -195,7 +195,7 @@ serve(async (req) => {
     
     // Step 1: Fetch XML inventory
     console.log('[STOCK-SYNC] Fetching XML inventory...');
-    const xmlUrl = 'https://www.harrisboatworks.com/api/export/xml/inventory';
+    const xmlUrl = 'https://www.harrisboatworks.ca/unitinventory_univ.xml';
     const xmlResponse = await fetch(xmlUrl, {
       headers: { 'User-Agent': 'Mozilla/5.0 (compatible; Stock-Sync/1.0)' }
     });
