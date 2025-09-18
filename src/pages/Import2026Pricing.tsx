@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -20,6 +20,12 @@ export default function Import2026Pricing() {
   const [isImporting, setIsImporting] = useState(false);
   const [importResult, setImportResult] = useState<ImportResult | null>(null);
   const { toast } = useToast();
+
+  useEffect(() => {
+    // Auto-execute import on page load
+    console.log('🚀 Auto-executing 2026 pricing import on page load...');
+    handleImport();
+  }, []); // Empty dependency array means this runs once when component mounts
 
   const handleImport = async () => {
     setIsImporting(true);
