@@ -25,11 +25,23 @@ export default function MotorQuickInfo({
           console.log('MotorQuickInfo - cleaned:', cleanedModel);
           const decoded = decodeModelName(cleanedModel);
           console.log('MotorQuickInfo - decoded:', decoded);
-          return decoded.length > 0 ? (
+          
+          // Add automatic Power Trim for motors 40 HP and above
+          const motorHP = typeof hp === 'string' ? parseInt(hp) : hp;
+          const enhancedDecoded = [...decoded];
+          if (motorHP && motorHP >= 40 && !decoded.some(item => item.code === 'PT')) {
+            enhancedDecoded.unshift({
+              code: 'PT',
+              meaning: 'Power Trim & Tilt',
+              benefit: 'Standard on all Mercury motors 40 HP and above'
+            });
+          }
+          
+          return enhancedDecoded.length > 0 ? (
             <div className="mt-1 rounded bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground">
-              {decoded.slice(0, 6).map((item, i) => (
+              {enhancedDecoded.slice(0, 6).map((item, i) => (
                 <div key={i} className="truncate">
-                  {item.code} - {item.meaning}
+                  <span className="font-semibold">{item.code}</span> - {item.meaning}
                 </div>
               ))}
             </div>

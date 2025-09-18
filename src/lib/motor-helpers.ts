@@ -49,6 +49,34 @@ export const decodeModelName = (modelName: string) => {
   const hpMatch = upper.match(/(\d+(?:\.\d+)?)HP/);
   const hp = hpMatch ? parseFloat(hpMatch[1]) : 0;
 
+  // Special handling for 115+ HP motors with shaft codes in model name
+  const isHighHPMotor = hp >= 115;
+  
+  // Enhanced shaft code detection for high HP motors (115+)
+  if (isHighHPMotor) {
+    // Look for shaft codes directly after HP number (e.g., "150L", "250XL", "350XXL")
+    const highHPShaftMatch = upper.match(/(\d{2,3})(XXL|XL|L)\b/);
+    if (highHPShaftMatch) {
+      const shaftCode = highHPShaftMatch[2];
+      switch (shaftCode) {
+        case 'L':
+          add('L', 'Long Shaft 20"', 'Perfect for most boat applications with standard transoms');
+          break;
+        case 'XL':
+          add('XL', 'Extra Long Shaft 25"', 'Ideal for boats with deeper transoms or performance applications');
+          break;
+        case 'XXL':
+          add('XXL', 'Extra Extra Long Shaft 30"', 'Required for boats with very deep transoms or special hull designs');
+          break;
+      }
+    }
+  }
+
+  // Automatic Power Trim for motors 40 HP and above
+  if (hp >= 40) {
+    add('PT', 'Power Trim & Tilt', 'Effortless motor positioning for optimal performance and easy trailering');
+  }
+
   // Engine family & special designations
   if (/FOUR\s*STROKE|FOURSTROKE/i.test(name)) add('FourStroke', '4-Stroke Engine', 'Quiet, fuel-efficient, no oil mixing');
   if (/SEAPRO/i.test(name)) add('SeaPro', 'Commercial Grade', 'Built for heavy use & durability');
@@ -619,6 +647,15 @@ export const extractHpAndCode = (modelText: string): { hp: number | null; code: 
     if (new RegExp(`\\b${pattern}\\b`).test(text)) {
       code = pattern;
       break;
+    }
+  }
+  
+  // Enhanced shaft code detection for high HP motors (115+)
+  if (!code && hp && hp >= 115) {
+    // Look for direct HP+shaft patterns like "150L", "250XL", "350XXL"
+    const hpShaftMatch = text.match(new RegExp(`${hp}\\s*(XXL|XL|L)\\b`));
+    if (hpShaftMatch) {
+      code = hpShaftMatch[1];
     }
   }
   

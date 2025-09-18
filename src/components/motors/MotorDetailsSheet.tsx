@@ -562,14 +562,56 @@ export default function MotorDetailsSheet({
                               </span>
                             </div>
                           )}
-                          {startInfo && (
-                            <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
-                              <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Starting</span>
-                              <span className="text-sm text-slate-900 dark:text-white font-medium">
-                                {startInfo.code === 'M' ? 'Manual' : 'Electric'}
-                              </span>
-                            </div>
-                          )}
+                         {startInfo && (
+                             <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
+                               <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Starting</span>
+                               <span className="text-sm text-slate-900 dark:text-white font-medium">
+                                 {startInfo.code === 'M' ? 'Manual' : 'Electric'}
+                               </span>
+                             </div>
+                           )}
+                           
+                           {/* Enhanced Power Trim Display for 40+ HP motors */}
+                           {(() => {
+                             const motorHP = typeof hp === 'string' ? parseInt(hp) : hp || 0;
+                             return motorHP >= 40 ? (
+                               <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
+                                 <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Power Trim & Tilt</span>
+                                 <span className="text-sm text-slate-900 dark:text-white font-medium">
+                                   Standard
+                                 </span>
+                               </div>
+                             ) : null;
+                           })()}
+                           
+                           {/* Enhanced Shaft Length Display for High HP Motors */}
+                           {(() => {
+                             const motorHP = typeof hp === 'string' ? parseInt(hp) : hp || 0;
+                             const titleUpper = (title || '').toUpperCase();
+                             let shaftDisplay = '';
+                             
+                             if (motorHP >= 115) {
+                               // Check for shaft codes in high HP motor names  
+                               if (titleUpper.includes('XXL')) {
+                                 shaftDisplay = 'Extra Extra Long (30")';
+                               } else if (titleUpper.includes('XL')) {
+                                 shaftDisplay = 'Extra Long (25")';
+                               } else if (titleUpper.includes('L') || titleUpper.match(/\d+L\b/)) {
+                                 shaftDisplay = 'Long (20")';
+                               }
+                             } else if (shaftInfo) {
+                               shaftDisplay = shaftInfo.meaning;
+                             }
+                             
+                             return shaftDisplay ? (
+                               <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
+                                 <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Shaft Length</span>
+                                 <span className="text-sm text-slate-900 dark:text-white font-medium">
+                                   {shaftDisplay}
+                                 </span>
+                               </div>
+                             ) : null;
+                           })()}
                         </>
                       );
                     })()}
@@ -619,25 +661,62 @@ export default function MotorDetailsSheet({
                 </h2>
                 <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
                   <ul className="text-sm grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
-                    {/* Technical specifications moved from "What's Included" */}
-                    {motorSpecs && <>
-                      <li className="flex items-start">
-                        <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
-                        <span className="text-slate-700 dark:text-slate-300">Fuel System: {motorSpecs.fuel_system}</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
-                        <span className="text-slate-700 dark:text-slate-300">Alternator: {motorSpecs.alternator}</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
-                        <span className="text-slate-700 dark:text-slate-300">Starting: {motorSpecs.starting}</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
-                        <span className="text-slate-700 dark:text-slate-300">Steering: {motorSpecs.steering}</span>
-                      </li>
-                    </>}
+                     {/* Technical specifications with enhanced high HP motor logic */}
+                     {motorSpecs && <>
+                       <li className="flex items-start">
+                         <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
+                         <span className="text-slate-700 dark:text-slate-300">Fuel System: {motorSpecs.fuel_system}</span>
+                       </li>
+                       <li className="flex items-start">
+                         <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
+                         <span className="text-slate-700 dark:text-slate-300">Alternator: {motorSpecs.alternator}</span>
+                       </li>
+                       <li className="flex items-start">
+                         <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
+                         <span className="text-slate-700 dark:text-slate-300">Starting: {motorSpecs.starting}</span>
+                       </li>
+                       <li className="flex items-start">
+                         <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
+                         <span className="text-slate-700 dark:text-slate-300">Steering: {motorSpecs.steering}</span>
+                       </li>
+                       {/* Enhanced shaft length display for high HP motors */}
+                       {(() => {
+                         const motorHP = typeof hp === 'string' ? parseInt(hp) : hp || 0;
+                         const titleUpper = (title || '').toUpperCase();
+                         let shaftInfo = '';
+                         
+                         if (motorHP >= 115) {
+                           // Check for shaft codes in high HP motor names
+                           if (titleUpper.includes('XXL')) {
+                             shaftInfo = 'Extra Extra Long Shaft 30"';
+                           } else if (titleUpper.includes('XL')) {
+                             shaftInfo = 'Extra Long Shaft 25"';
+                           } else if (titleUpper.includes('L') || titleUpper.match(/\d+L\b/)) {
+                             shaftInfo = 'Long Shaft 20"';
+                           }
+                         } else if (shaft) {
+                           shaftInfo = shaft;
+                         }
+                         
+                         return shaftInfo ? (
+                           <li className="flex items-start">
+                             <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
+                             <span className="text-slate-700 dark:text-slate-300">Shaft Length: {shaftInfo}</span>
+                           </li>
+                         ) : null;
+                       })()}
+                     </>}
+                     
+                     {/* Automatic Power Trim for motors 40 HP and above */}
+                     {(() => {
+                       const motorHP = typeof hp === 'string' ? parseInt(hp) : hp || 0;
+                       return motorHP >= 40 ? (
+                         <li className="flex items-start">
+                           <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
+                           <span className="text-slate-700 dark:text-slate-300">Power Trim & Tilt: Standard on all Mercury motors 40 HP+</span>
+                         </li>
+                       ) : null;
+                     })()}
                     {/* Original features */}
                     {displayFeatures.slice(0, 8).map((feature, i) => <li key={`${feature}-${i}`} className="flex items-start">
                         <span className="text-green-500 mr-2 flex-shrink-0">✓</span>

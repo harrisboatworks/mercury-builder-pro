@@ -45,6 +45,22 @@ export function parseMercuryRigCodes(input: string): RigAttrs {
     .split(/\s+/);
 
   const out: string[] = [];
+  
+  // Extract HP for special logic
+  const hpMatch = input.match(/(\d{2,3})\s*HP?/i);
+  const hp = hpMatch ? parseInt(hpMatch[1]) : 0;
+
+  // Special handling for high HP motors (115+) with shaft codes
+  // Look for patterns like "150L", "250XL", "350XXL" in the input
+  if (hp >= 115) {
+    const highHPShaftMatch = input.toUpperCase().match(new RegExp(`${hp}\\s*(XXL|XL|L)\\b`));
+    if (highHPShaftMatch) {
+      const shaftCode = highHPShaftMatch[1];
+      if (!out.includes(shaftCode)) {
+        out.push(shaftCode);
+      }
+    }
+  }
 
   // peel sub-tokens in priority order so "EXLPT" splits correctly
   const SUB_ORDER = ["XXL","XL","PT","CT","ELECTRIC","ELEC","E","MANUAL","M","TILLER","H","L"];
@@ -66,6 +82,11 @@ export function parseMercuryRigCodes(input: string): RigAttrs {
   }
 
   for (const c of chunks) peel(c);
+  
+  // Automatic Power Trim for motors 40 HP and above
+  if (hp >= 40 && !out.includes("PT")) {
+    out.push("PT");
+  }
 
   // normalize + dedupe preserving order
   const norm: string[] = [];
