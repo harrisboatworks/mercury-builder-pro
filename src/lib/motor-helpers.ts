@@ -548,6 +548,35 @@ export const getIdealUses = (hp: number | string) => {
   return ['High-performance boats', 'Commercial use', 'Offshore racing', 'Heavy loads'];
 };
 
+// Counter Rotating motor detection
+export const isCounterRotatingMotor = (model: string): boolean => {
+  if (!model) return false;
+  
+  const modelUpper = model.toUpperCase();
+  
+  // Check for Counter Rotating rigging codes
+  const counterRotatingPatterns = [
+    /\bCXL\b/,        // CXL pattern
+    /\bCXXL\b/,       // CXXL pattern  
+    /\bECXLPT\b/,     // Electric Counter Rotating XL Power Trim
+    /\bECXL\b/,       // Electric Counter Rotating XL
+    /\bCL\b/,         // Counter Long (less common)
+    // Pattern for HP followed by C and shaft code
+    /\d{2,3}C(XXL|XL|L)\b/,
+    // Look for "C" prefix in rigging combinations
+    /\bC[A-Z]{2,}\b/   // Any rigging code starting with C
+  ];
+  
+  // Check if any Counter Rotating pattern matches
+  const isCounterRotating = counterRotatingPatterns.some(pattern => pattern.test(modelUpper));
+  
+  if (isCounterRotating) {
+    console.log(`Counter Rotating motor detected: ${model}`);
+  }
+  
+  return isCounterRotating;
+};
+
 // Image selection priority logic
 export const getMotorImageByPriority = (motor: any): { url: string; isInventory: boolean } => {
   const fallbackImage = '/lovable-uploads/speedboat-transparent.png';

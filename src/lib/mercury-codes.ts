@@ -9,6 +9,7 @@ export type RigAttrs = {
   control_type: "Tiller"|"Remote"|"Unknown";
   has_power_trim: boolean;
   has_command_thrust: boolean;
+  is_counter_rotating: boolean;   // Counter Rotating designation
 };
 
 const CODE_CANON: Record<string,string> = {
@@ -62,8 +63,28 @@ export function parseMercuryRigCodes(input: string): RigAttrs {
     }
   }
 
+  // Check for Counter Rotating designation first
+  let is_counter_rotating = false;
+  const counterRotatingMatch = input.toUpperCase().match(/\b(CXXL|CXL|ECXLPT|ECXL|CL)\b/);
+  if (counterRotatingMatch) {
+    is_counter_rotating = true;
+    // Extract the shaft part from Counter Rotating codes
+    const crCode = counterRotatingMatch[1];
+    if (crCode === 'CXXL') {
+      out.push('XXL');
+    } else if (crCode === 'CXL') {
+      out.push('XL');
+    } else if (crCode === 'ECXLPT') {
+      out.push('E', 'XL', 'PT');
+    } else if (crCode === 'ECXL') {
+      out.push('E', 'XL');
+    } else if (crCode === 'CL') {
+      out.push('L');
+    }
+  }
+
   // peel sub-tokens in priority order so "EXLPT" splits correctly
-  const SUB_ORDER = ["XXL","XL","PT","CT","ELECTRIC","ELEC","E","MANUAL","M","TILLER","H","L"];
+  const SUB_ORDER = ["CXXL","CXL","ECXLPT","ECXL","XXL","XL","PT","CT","ELECTRIC","ELEC","E","MANUAL","M","TILLER","H","L"];
   function peel(chunk: string) {
     let s = chunk.toUpperCase();
     let progressed = true;
@@ -71,6 +92,12 @@ export function parseMercuryRigCodes(input: string): RigAttrs {
       progressed = false;
       for (const pat of SUB_ORDER) {
         if (s.startsWith(pat)) {
+          // Skip Counter Rotating codes as we handled them above
+          if (pat.startsWith('C') && (pat === 'CXXL' || pat === 'CXL' || pat === 'ECXLPT' || pat === 'ECXL')) {
+            s = s.slice(pat.length);
+            progressed = true;
+            break;
+          }
           const canon = toCanon(pat);
           if (canon) out.push(canon);
           s = s.slice(pat.length);
@@ -108,7 +135,7 @@ export function parseMercuryRigCodes(input: string): RigAttrs {
     ...(norm.filter(t => t !== "L" && t !== "XL" && t !== "XXL")),
   ];
 
-  return { tokens: ordered, shaft_code, shaft_inches, start_type, control_type, has_power_trim, has_command_thrust };
+  return { tokens: ordered, shaft_code, shaft_inches, start_type, control_type, has_power_trim, has_command_thrust, is_counter_rotating };
 }
 
 /** 

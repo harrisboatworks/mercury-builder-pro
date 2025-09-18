@@ -46,7 +46,8 @@ import {
   getIdealUses,
   getHPDescriptor,
   getPopularityIndicator,
-  getBadgeColor
+  getBadgeColor,
+  isCounterRotatingMotor
 } from '@/lib/motor-helpers';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
 
@@ -408,15 +409,22 @@ export const MotorSelection = ({
       setPromotionsState(activePromos);
       const promoRules: PromotionRule[] = rules as PromotionRule[] | null || [];
 
-      // Filter out Jet models, excluded motors, and cap horsepower at 300
+      // Filter out Jet models, Counter Rotating motors, excluded motors, and cap horsepower at 300
       const filteredMotorRows = (motorRows as DbMotor[] | null || []).filter(m => {
         // Exclude Jet models (check model name for "Jet" case-insensitive)
         const isJetModel = m.model.toLowerCase().includes('jet');
+        // Exclude Counter Rotating motors (CXL, CXXL, etc.)
+        const isCounterRotating = isCounterRotatingMotor(m.model || m.model_display || '');
         // Cap horsepower at 300
         const isOverHpLimit = m.horsepower > 300;
         // Exclude motors marked as "Exclude"
         const isExcluded = m.availability === 'Exclude';
-        return !isJetModel && !isOverHpLimit && !isExcluded;
+        
+        if (isCounterRotating) {
+          console.log(`Excluding Counter Rotating motor: ${m.model || m.model_display}`);
+        }
+        
+        return !isJetModel && !isCounterRotating && !isOverHpLimit && !isExcluded;
       });
 
       // Transform database data to Motor interface with effective pricing
