@@ -264,16 +264,38 @@ serve(async (req) => {
     
     console.log(`💧 Hydration complete. Processing ${hydratedMotors.length} motors`);
 
-    // Clear existing data and insert new data
+    // EMERGENCY PROTECTION: Only delete inventory motors, preserve brochure motors
+    // Count existing motors before deletion
+    const { data: existingMotors, error: countError } = await supabase
+      .from('motor_models')
+      .select('id, is_brochure')
+      .eq('is_brochure', false); // Only inventory motors
+
+    if (countError) {
+      console.error('❌ Error checking existing inventory motors:', countError);
+      throw countError;
+    }
+
+    const inventoryCount = existingMotors?.length || 0;
+    console.log(`🔒 PROTECTION: Found ${inventoryCount} inventory motors to replace (preserving brochure motors)`);
+
+    // Safety check: Prevent deletion if we have no new motors to insert
+    if (hydratedMotors.length === 0 && inventoryCount > 0) {
+      throw new Error(`SAFETY ABORT: Cannot delete ${inventoryCount} existing inventory motors when no new motors were scraped`);
+    }
+
+    // Only delete inventory motors (is_brochure = false), preserve brochure motors
     const { error: deleteError } = await supabase
       .from('motor_models')
       .delete()
-      .neq('id', '00000000-0000-0000-0000-000000000000'); // Delete all
+      .eq('is_brochure', false); // Only delete inventory motors
 
     if (deleteError) {
-      console.error('❌ Error clearing existing data:', deleteError);
+      console.error('❌ Error clearing existing inventory data:', deleteError);
       throw deleteError;
     }
+
+    console.log(`✅ PROTECTION: Deleted ${inventoryCount} inventory motors, preserved all brochure motors`);
 
     // Insert new data in batches with detailed error logging
     const batchSize = 10;

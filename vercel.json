@@ -53,10 +53,11 @@
     }
   ],
   "crons": [
-    {
-      "path": "/api/cron/update-inventory",
-      "schedule": "0 */6 * * *"
-    },
+    // EMERGENCY: Disabled destructive inventory cron to prevent motor deletion
+    // {
+    //   "path": "/api/cron/update-inventory",
+    //   "schedule": "0 */6 * * *"
+    // },
     {
       "path": "/api/cron/migrate-images", 
       "schedule": "15 */8 * * *"
