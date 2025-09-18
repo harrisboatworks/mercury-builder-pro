@@ -170,6 +170,13 @@ export default function MotorCardPremium({
               {title}
             </div>
             
+            {/* Mercury Model Number */}
+            {motor?.model_number && (
+              <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-mono">
+                Model: {motor.model_number}
+              </div>
+            )}
+            
             {/* HP-based descriptor and popularity indicators */}
             {hpNum && (
               <div className="mt-1 space-y-1">
