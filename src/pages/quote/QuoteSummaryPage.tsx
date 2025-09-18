@@ -60,6 +60,41 @@ export default function QuoteSummaryPage() {
     return () => clearTimeout(timeoutId);
   }, [state.isLoading, isStepAccessible, isNavigationBlocked, navigate]);
 
+  // Fetch warranty pricing from database based on motor HP
+  useEffect(() => {
+    const motorHP = state.motor ? (typeof state.motor.hp === 'string' ? parseFloat(state.motor.hp) : state.motor.hp) : 0;
+    
+    if (!state.motor || !motorHP) {
+      setWarrantyLoading(false);
+      return;
+    }
+
+    async function fetchWarrantyPricing() {
+      try {
+        setWarrantyLoading(true);
+        const { data, error } = await supabase
+          .from('warranty_pricing')
+          .select('*')
+          .lte('hp_min', motorHP)
+          .gte('hp_max', motorHP)
+          .single();
+
+        if (error) {
+          console.error('Error fetching warranty pricing:', error);
+          return;
+        }
+
+        setWarrantyPricing(data);
+      } catch (error) {
+        console.error('Unexpected error fetching warranty pricing:', error);
+      } finally {
+        setWarrantyLoading(false);
+      }
+    }
+
+    fetchWarrantyPricing();
+  }, [state.motor]);
+
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });
     navigate('/quote/schedule');
