@@ -6,15 +6,17 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, AlertTriangle, CheckCircle, XCircle, Trash2, Edit } from 'lucide-react';
-import { emergencyModelCorrection, validateAllMotors, CorrectionResult } from '@/lib/emergency-model-correction';
+import { Loader2, AlertTriangle, CheckCircle, XCircle, Trash2, Edit, Bomb } from 'lucide-react';
+import { emergencyModelCorrection, validateAllMotors, nuclearRebuildFromOfficial, CorrectionResult } from '@/lib/emergency-model-correction';
 import { useToast } from '@/hooks/use-toast';
 
 export function EmergencyModelCorrection() {
   const [isRunning, setIsRunning] = useState(false);
   const [isValidating, setIsValidating] = useState(false);
+  const [isNuking, setIsNuking] = useState(false);
   const [result, setResult] = useState<CorrectionResult | null>(null);
   const [validationResult, setValidationResult] = useState<{ valid: number; invalid: number; issues: string[] } | null>(null);
+  const [nuclearResult, setNuclearResult] = useState<CorrectionResult | null>(null);
   const { toast } = useToast();
 
   const handleRunCorrection = async () => {
@@ -74,6 +76,39 @@ export function EmergencyModelCorrection() {
     }
   };
 
+  const handleNuclearRebuild = async () => {
+    setIsNuking(true);
+    setNuclearResult(null);
+    
+    try {
+      const rebuild = await nuclearRebuildFromOfficial();
+      setNuclearResult(rebuild);
+      
+      if (rebuild.errors.length === 0) {
+        toast({
+          title: "Nuclear Rebuild Complete! 💥",
+          description: `Deleted ${rebuild.motorsDeleted} old motors, inserted ${rebuild.motorsCorrected} official models`,
+          variant: "default"
+        });
+      } else {
+        toast({
+          title: "Nuclear Rebuild Completed with Issues",
+          description: `${rebuild.errors.length} errors occurred during rebuild`,
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      console.error('Nuclear rebuild failed:', error);
+      toast({
+        title: "Nuclear Rebuild Failed",
+        description: "A critical error occurred during the rebuild process",
+        variant: "destructive"
+      });
+    } finally {
+      setIsNuking(false);
+    }
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex items-center space-x-2">
@@ -89,7 +124,7 @@ export function EmergencyModelCorrection() {
         </AlertDescription>
       </Alert>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Validation Card */}
         <Card>
           <CardHeader>
@@ -105,7 +140,7 @@ export function EmergencyModelCorrection() {
             
             <Button 
               onClick={handleValidateAll}
-              disabled={isValidating || isRunning}
+              disabled={isValidating || isRunning || isNuking}
               className="w-full"
               variant="outline"
             >
@@ -167,7 +202,7 @@ export function EmergencyModelCorrection() {
             
             <Button 
               onClick={handleRunCorrection}
-              disabled={isRunning || isValidating}
+              disabled={isRunning || isValidating || isNuking}
               className="w-full"
               variant="destructive"
             >
@@ -204,6 +239,71 @@ export function EmergencyModelCorrection() {
                     <ul className="space-y-1">
                       {result.errors.map((error, index) => (
                         <li key={index} className="text-destructive">• {error}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Nuclear Option Card */}
+        <Card className="border-red-600 bg-red-50/30">
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <Bomb className="h-5 w-5 text-red-600" />
+              <CardTitle className="text-red-800">Nuclear Option</CardTitle>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <Alert className="border-red-200">
+              <AlertTriangle className="h-4 w-4" />
+              <AlertDescription className="text-red-800">
+                <strong>Complete database wipe and rebuild</strong> - Delete ALL brochure motors 
+                and rebuild with exactly 167 official Mercury models.
+              </AlertDescription>
+            </Alert>
+            
+            <Button 
+              onClick={handleNuclearRebuild}
+              disabled={isNuking || isRunning || isValidating}
+              className="w-full bg-red-600 hover:bg-red-700 text-white"
+            >
+              {isNuking ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Nuclear Rebuild...
+                </>
+              ) : (
+                <>
+                  <Bomb className="mr-2 h-4 w-4" />
+                  Execute Nuclear Rebuild
+                </>
+              )}
+            </Button>
+
+            {nuclearResult && (
+              <div className="space-y-2">
+                <div className="flex justify-between">
+                  <span className="text-sm font-medium">Motors Deleted:</span>
+                  <Badge className="bg-red-100 text-red-800">{nuclearResult.motorsDeleted}</Badge>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm font-medium">Motors Inserted:</span>
+                  <Badge className="bg-green-100 text-green-800">{nuclearResult.motorsCorrected}</Badge>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm font-medium">Expected:</span>
+                  <Badge variant="secondary">167</Badge>
+                </div>
+                
+                {nuclearResult.errors.length > 0 && (
+                  <div className="mt-4 p-3 bg-red-100 rounded text-xs">
+                    <p className="font-medium mb-2 text-red-800">Errors:</p>
+                    <ul className="space-y-1">
+                      {nuclearResult.errors.slice(0, 5).map((error, index) => (
+                        <li key={index} className="text-red-700">• {error}</li>
                       ))}
                     </ul>
                   </div>
