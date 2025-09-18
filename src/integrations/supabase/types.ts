@@ -1381,6 +1381,13 @@ export type Database = {
         Args: Record<PropertyKey, never>
         Returns: number
       }
+      cleanup_motor_duplicates_by_display: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          cleanup_details: Json
+          total_duplicates_removed: number
+        }[]
+      }
       fix_auto_generated_model_numbers_comprehensive: {
         Args: Record<PropertyKey, never>
         Returns: {
