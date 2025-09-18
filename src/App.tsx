@@ -46,6 +46,7 @@ import AdminEmail from "./pages/AdminEmail";
 import AdminPayments from "./pages/AdminPayments";
 import AdminSMS from "./pages/AdminSMS";
 import AdminInventory from "./pages/AdminInventory";
+import AdminStockSync from "./pages/AdminStockSync";
 import AdminSources from "./pages/AdminSources";
 import Deposits from "./pages/Deposits";
 import PaymentSuccess from "./pages/PaymentSuccess";
@@ -193,6 +194,14 @@ const App = () => (
                   element={
                     <SecureRoute requireAdmin={true}>
                       <AdminInventory />
+                    </SecureRoute>
+                  }
+                />
+                <Route
+                  path="/admin/stock-sync"
+                  element={
+                    <SecureRoute requireAdmin={true}>
+                      <AdminStockSync />
                     </SecureRoute>
                   }
                 />

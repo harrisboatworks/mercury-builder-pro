@@ -54,6 +54,10 @@
   ],
   "crons": [
     {
+      "path": "/api/cron/stock-sync",
+      "schedule": "0 5 * * *"
+    },
+    {
       "path": "/api/cron/migrate-images", 
       "schedule": "15 */8 * * *"
     },
