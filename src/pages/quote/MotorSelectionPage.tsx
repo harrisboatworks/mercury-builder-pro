@@ -6,6 +6,7 @@ import { FinancingProvider } from '@/contexts/FinancingContext';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
+import { PriceUpdater } from '@/components/admin/PriceUpdater';
 import MotorCardPremium from '@/components/motors/MotorCardPremium';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -356,6 +357,12 @@ export default function MotorSelectionPage() {
     <FinancingProvider>
       <QuoteLayout title="Select Mercury Outboard Motor">
         <div className="space-y-6">
+        {/* Show price updater if motors need pricing */}
+        {processedMotors.length > 0 && 
+          processedMotors.every(motor => !motor.basePrice || motor.basePrice === 0) && (
+          <PriceUpdater />
+        )}
+        
         {/* Clean Search with inline Filter */}
         <div>
           <div className="flex items-center">
