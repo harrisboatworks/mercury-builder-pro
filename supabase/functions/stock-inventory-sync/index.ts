@@ -33,11 +33,25 @@ serve(async (req) => {
   }
   
   try {
-    console.log('[STOCK-SYNC] Starting stock inventory sync v2.0...');
+    const DEBUG_VERSION = 'v3.1-debug-' + new Date().toISOString().substring(0,16);
+    console.log(`[STOCK-SYNC] Starting stock inventory sync ${DEBUG_VERSION}...`);
     
     const supabase = await getServiceClient();
     const body = await req.json().catch(() => ({}));
     const { preview = false } = body;
+    
+    // Create sync log entry with version tracking
+    const { data: syncLog, error: logError } = await supabase
+      .from('sync_logs')
+      .insert({ 
+        sync_type: 'stock',
+        status: 'running',
+        details: { version: DEBUG_VERSION, preview }
+      })
+      .select()
+      .single();
+    
+    if (logError) console.log(`[SYNC-LOG] Error creating log: ${logError.message}`);
     
     // Step 1: Fetch XML inventory from Harris Boat Works
     console.log('[STOCK-SYNC] Fetching XML inventory from Harris...');
@@ -195,22 +209,25 @@ serve(async (req) => {
         continue; // Skip used items
       }
       
-      // STEP 3: Boat exclusion filtering with detailed logging
-      const boatExclusions = [
+      // STEP 3: Smart exclusion filtering - only exclude clear non-motors
+      const hardExclusions = [
         'legend', 'uttern', 'pontoon', 'deck boat', 'fishing boat',
-        'bass boat', 'jon boat', 'aluminum boat', 'fiberglass boat',
-        'boat', 'vessel', 'watercraft', 'hull',
-        'trailer', 'pwc', 'jet ski', 'atv', 'utv', 'snowmobile',
-        'parts', 'accessories', 'propeller', 'prop', 'controls'
+        'bass boat', 'jon boat', 'aluminum boat', 'fiberglass boat', 
+        'trailer', 'pwc', 'jet ski', 'atv', 'utv', 'snowmobile'
       ];
       
-      const matchedExclusions = boatExclusions.filter(exclusion => 
-        titleLower.includes(exclusion) || 
-        descLower.includes(exclusion) || 
-        category.includes(exclusion)
+      // Only exclude if title contains hard exclusions (not description)
+      const titleMatchedExclusions = hardExclusions.filter(exclusion => 
+        titleLower.includes(exclusion)
       );
       
-      const isBoatOrOther = matchedExclusions.length > 0;
+      // Special case: If title contains "mercury" + motor terms, don't exclude
+      const hasMotorTermsInTitle = titleLower.includes('fourstroke') || 
+        titleLower.includes('pro xs') || titleLower.includes('proxs') ||
+        titleLower.includes('seapro') || titleLower.includes('verado') ||
+        /\d+\s*hp/.test(titleLower);
+      
+      const isBoatOrOther = titleMatchedExclusions.length > 0 && !hasMotorTermsInTitle;
       
       if (!isBoatOrOther) {
         debugStats.boat_exclusion_pass++;
@@ -220,12 +237,12 @@ serve(async (req) => {
           debugStats.sample_failures.boat_exclusions.push({
             title,
             category,
-            matched_exclusions: matchedExclusions,
-            reason: `Contains exclusion terms: ${matchedExclusions.join(', ')}`
+            matched_exclusions: titleMatchedExclusions,
+            reason: `Contains exclusion terms in title: ${titleMatchedExclusions.join(', ')}`
           });
         }
         if (i < 20) {
-          console.log(`[DEBUG-BOAT-FAIL-${i}] Title: "${title}" | Matched exclusions: [${matchedExclusions.join(', ')}]`);
+          console.log(`[DEBUG-BOAT-FAIL-${i}] Title: "${title}" | Matched exclusions: [${titleMatchedExclusions.join(', ')}]`);
         }
         continue; // Skip boats and other excluded items
       }
@@ -355,6 +372,23 @@ serve(async (req) => {
     }
     
     console.log(`[STOCK-SYNC] Filtered to ${mercuryMotors.length} Mercury outboard motors`);
+    
+    // Store debug stats in database for analysis
+    try {
+      await supabase
+        .from('sync_logs')
+        .update({ 
+          details: { 
+            version: DEBUG_VERSION, 
+            debug_stats: debugStats,
+            xml_items_count: itemMatches.length,
+            mercury_motors_found: mercuryMotors.length
+          }
+        })
+        .eq('id', syncLog?.id);
+    } catch (e) {
+      console.log('[DEBUG] Could not store debug stats:', e.message);
+    }
     
     // Step 3: Fetch existing database motors
     const { data: dbMotors, error: dbError } = await supabase
