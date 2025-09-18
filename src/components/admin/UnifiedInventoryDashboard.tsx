@@ -479,6 +479,8 @@ export function UnifiedInventoryDashboard() {
     
     return counts.length > 0 ? counts.join(' ') : 'No media';
   };
+
+  const handleDeleteMotor = async (motorId: string) => {
     setMotorActions(prev => ({ ...prev, [motorId]: true }));
     try {
       const { error } = await supabase
@@ -1399,6 +1401,6 @@ export function UnifiedInventoryDashboard() {
       motor={selectedMotorForMedia}
       onMediaUpdated={handleMediaUpdated}
     />
-  </div>
+    </div>
   );
 }
