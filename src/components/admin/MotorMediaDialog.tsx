@@ -8,6 +8,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { Image, FileText, Video, Link as LinkIcon, Plus, Trash2, Star, StarOff, Upload, Sparkles } from 'lucide-react';
 import { MotorFeaturesManager } from './MotorFeaturesManager';
+import { QuickMediaUpload } from './QuickMediaUpload';
 
 interface MediaItem {
   id: string;
@@ -293,7 +294,7 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
                 <div className="text-muted-foreground">Loading media...</div>
               </div>
             ) : (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 overflow-hidden">
                 {/* Assigned Media */}
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
@@ -342,6 +343,14 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
                       )}
                     </div>
                   </ScrollArea>
+                </div>
+
+                {/* Quick Upload */}
+                <div className="space-y-4">
+                  <QuickMediaUpload 
+                    motorId={motor.id}
+                    onUploadComplete={loadMediaData}
+                  />
                 </div>
               </div>
             )}
