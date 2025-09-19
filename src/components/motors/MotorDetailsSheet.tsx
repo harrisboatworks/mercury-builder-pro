@@ -659,7 +659,59 @@ export default function MotorDetailsSheet({
                 <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
                   Key Features
                 </h2>
+                
+                {/* Custom Features */}
+                {motor?.features && Array.isArray(motor.features) && motor.features.length > 0 && (
+                  <div className="space-y-4">
+                    {['Performance', 'Technology', 'Design', 'Convenience', 'Durability', 'Fuel Economy'].map(category => {
+                      const categoryFeatures = motor.features.filter((f: any) => f.category === category);
+                      if (categoryFeatures.length === 0) return null;
+                      
+                      return (
+                        <div key={category} className="bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-750 p-4 rounded-lg border border-slate-200 dark:border-slate-700">
+                          <h3 className="font-semibold text-slate-900 dark:text-white mb-3 text-sm uppercase tracking-wide">
+                            {category}
+                          </h3>
+                          <div className="space-y-3">
+                            {categoryFeatures.map((feature: any, index: number) => {
+                              const getFeatureIcon = (icon?: string) => {
+                                switch (icon) {
+                                  case 'zap': return '⚡';
+                                  case 'cog': return '⚙️';
+                                  case 'star': return '⭐';
+                                  case 'sparkles':
+                                  default: return '✨';
+                                }
+                              };
+                              
+                              return (
+                                <div key={index} className="bg-white dark:bg-slate-800 p-3 rounded-md border border-slate-200 dark:border-slate-600">
+                                  <div className="flex items-start gap-3">
+                                    <span className="text-lg flex-shrink-0">{getFeatureIcon(feature.icon)}</span>
+                                    <div>
+                                      <h4 className="font-medium text-slate-900 dark:text-white text-sm mb-1">
+                                        {feature.title}
+                                      </h4>
+                                      <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                        {feature.description}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* Technical Specifications */}
                 <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
+                  <h3 className="font-semibold text-slate-900 dark:text-white mb-3 text-sm uppercase tracking-wide">
+                    Technical Specifications
+                  </h3>
                   <ul className="text-sm grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
                      {/* Technical specifications with enhanced high HP motor logic */}
                      {motorSpecs && <>
