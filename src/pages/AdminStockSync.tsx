@@ -71,7 +71,7 @@ export default function AdminStockSync() {
       const { data, error } = await supabase
         .from('sync_logs')
         .select('*')
-        .eq('sync_type', 'stock_only')
+        .eq('sync_type', 'stock')
         .order('started_at', { ascending: false })
         .limit(10);
 
