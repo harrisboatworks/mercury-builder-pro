@@ -527,7 +527,7 @@ serve(async (req) => {
         in_stock: true,
         stock_quantity: stockQuantity,
         stock_number: stockNumber,
-        availability: match.dbMotor.availability === 'Exclude' ? 'Exclude' : 'In Stock', // Preserve manual exclusions
+        availability: 'In Stock',
         last_stock_check: new Date().toISOString(),
         ...(price > 0 && { dealer_price_live: price }), // Update price if available
         match_info: {
@@ -546,13 +546,12 @@ serve(async (req) => {
     );
     
     for (const motor of unmatchedMotors) {
-      // Only update availability to 'Brochure' if not manually excluded
       stockUpdates.push({
         id: motor.id,
         in_stock: false,
         stock_quantity: 0,
         stock_number: null,
-        availability: motor.availability === 'Exclude' ? 'Exclude' : 'Brochure', // Preserve manual exclusions
+        availability: 'Brochure',
         last_stock_check: new Date().toISOString(),
         match_info: {
           xml_title: null,

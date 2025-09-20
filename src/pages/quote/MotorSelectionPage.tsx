@@ -340,16 +340,14 @@ export default function MotorSelectionPage() {
     desc.content = 'Choose from our selection of Mercury outboard motors with live pricing and current promotions.';
   }, []);
 
-  // Ensure portal mount point exists
+  // Cleanup sticky search mount point
   useEffect(() => {
-    const ensureMountPoint = () => {
+    return () => {
       const mountPoint = document.getElementById('sticky-search-mount');
-      if (!mountPoint) {
-        console.log('Mount point not found, will retry...');
-        setTimeout(ensureMountPoint, 100);
+      if (mountPoint) {
+        mountPoint.innerHTML = '';
       }
     };
-    ensureMountPoint();
   }, []);
 
   if (loading) {
@@ -369,34 +367,19 @@ export default function MotorSelectionPage() {
     <FinancingProvider>
       <QuoteLayout title="Select Mercury Outboard Motor">
         {/* Portal for sticky search */}
-        {typeof document !== 'undefined' && (
-          <>
-            {document.getElementById('sticky-search-mount') ? 
-              createPortal(
-                <StickySearch
-                  searchTerm={searchTerm}
-                  selectedHpRange={selectedHpRange}
-                  inStockOnly={inStockOnly}
-                  onSearchChange={setSearchTerm}
-                  onHpRangeChange={setSelectedHpRange}
-                  onInStockChange={setInStockOnly}
-                />,
-                document.getElementById('sticky-search-mount')!
-              ) :
-              // Fallback: render search inline if portal mount point not available
-              <div className="mb-6">
-                <StickySearch
-                  searchTerm={searchTerm}
-                  selectedHpRange={selectedHpRange}
-                  inStockOnly={inStockOnly}
-                  onSearchChange={setSearchTerm}
-                  onHpRangeChange={setSelectedHpRange}
-                  onInStockChange={setInStockOnly}
-                />
-              </div>
-            }
-          </>
-        )}
+        {typeof document !== 'undefined' && document.getElementById('sticky-search-mount') && 
+          createPortal(
+            <StickySearch
+              searchTerm={searchTerm}
+              selectedHpRange={selectedHpRange}
+              inStockOnly={inStockOnly}
+              onSearchChange={setSearchTerm}
+              onHpRangeChange={setSelectedHpRange}
+              onInStockChange={setInStockOnly}
+            />,
+            document.getElementById('sticky-search-mount')!
+          )
+        }
 
         <div className="space-y-6 pt-4">
         
