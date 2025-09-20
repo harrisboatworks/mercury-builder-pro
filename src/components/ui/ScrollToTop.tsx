@@ -13,11 +13,29 @@ export function ScrollToTop() {
       return;
     }
 
-    // DOM-based modal detection as additional safeguard
-    const activeModals = document.querySelectorAll('[role="dialog"], .fixed.inset-0, [data-state="open"]');
+    // Enhanced DOM-based modal detection for MotorDetailsSheet and other modals
+    const modalSelectors = [
+      '[role="dialog"]',
+      '.fixed.inset-0.z-50',  // MotorDetailsSheet specific
+      'div.fixed.inset-0[class*="z-"]',  // Any fixed overlay with z-index
+      '[data-state="open"]'
+    ];
+    
+    const activeModals = document.querySelectorAll(modalSelectors.join(', '));
     if (activeModals.length > 0) {
       console.log('⏸️ ScrollToTop skipped - active modals found:', activeModals.length);
       return;
+    }
+
+    // Z-index based modal detection - check for high z-index elements (modals)
+    const allElements = document.querySelectorAll('*');
+    for (let element of allElements) {
+      const computedStyle = window.getComputedStyle(element);
+      const zIndex = parseInt(computedStyle.zIndex);
+      if (zIndex >= 50 && computedStyle.position === 'fixed') {
+        console.log('⏸️ ScrollToTop skipped - high z-index modal detected:', zIndex);
+        return;
+      }
     }
 
     // Check for body position fixed (modal scroll lock indicator)
@@ -27,7 +45,7 @@ export function ScrollToTop() {
       return;
     }
 
-    // Increased delay to ensure modal transitions complete
+    // Extended delay to ensure modal transitions complete (300ms > 200ms modal restoration)
     const timer = setTimeout(() => {
       // Calculate dynamic header height with better element detection
       const header = document.querySelector('header') as HTMLElement;
@@ -104,7 +122,7 @@ export function ScrollToTop() {
           mainContent.removeAttribute('tabindex');
         }, 100);
       }
-    }, 100);
+    }, 300);
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
