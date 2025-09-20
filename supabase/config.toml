@@ -1,5 +1,8 @@
 project_id = "eutsoqdpjurknjsshxes"
 
+[functions.test-scraper-simple]
+verify_jwt = false
+
 [functions.multi-source-scraper]
 verify_jwt = false
 
