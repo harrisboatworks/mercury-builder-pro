@@ -408,10 +408,10 @@ const styles = StyleSheet.create({
     marginBottom: 1,
   },
   customerQuote: {
-    fontSize: 8,
-    fontStyle: 'italic',
-    color: '#666666',
-    marginVertical: 2
+    fontSize: 9,
+    color: '#333333',
+    marginVertical: 1,
+    maxWidth: '100%'
   },
   dealerTestimonial: {
     fontSize: 10,
@@ -1043,9 +1043,9 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               </View>
             </View>
 
-            {/* Customer Quote - Ultra Minimal */}
+            {/* Customer Quote - TESTING NEW VERSION */}
             <Text style={styles.customerQuote}>
-              "{getCustomerHighlight(hpNumber)}" - Customer Review
+              ⭐ {getCustomerHighlight(hpNumber)}
             </Text>
 
             {/* What's Included - Show ALL motor-specific items */}

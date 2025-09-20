@@ -1,13 +1,15 @@
 export const getCustomerHighlight = (hp: number) => {
+  console.log('getCustomerHighlight called with HP:', hp);
+  
   const portableHighlights = [
-    'Reliable & Quiet Operation',
+    'Reliable & Quiet',
     'Starts Every Time',
-    'Perfect Kicker Motor',
-    'Fuel Efficient Choice'
+    'Perfect Kicker',
+    'Fuel Efficient'
   ];
   
   const midRangeHighlights = [
-    'Great Fuel Economy',
+    'Great Economy',
     'Smooth & Dependable',
     'Family Favorite',
     'Clean & Quiet'
@@ -23,7 +25,9 @@ export const getCustomerHighlight = (hp: number) => {
                     hp <= 50 ? midRangeHighlights : 
                     highPowerHighlights;
   
-  return highlights[Math.floor(Math.random() * highlights.length)];
+  const selected = highlights[Math.floor(Math.random() * highlights.length)];
+  console.log('Selected highlight:', selected);
+  return selected;
 };
 
 export const harrisTestimonials = [
