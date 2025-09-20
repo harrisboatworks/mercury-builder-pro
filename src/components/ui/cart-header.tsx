@@ -74,7 +74,7 @@ export const CartHeader = () => {
         console.log('CartHeader: Button clicked');
         handleCartClick();
       }}
-      className="relative flex items-center gap-2 p-2 ml-3 text-muted-foreground hover:text-primary min-w-0 transition-colors"
+      className="relative flex items-center gap-2 p-2 text-muted-foreground hover:text-primary min-w-0 transition-colors"
       aria-label={`View quote - ${motorDisplayName} - ${money(totalPrice)}`}
     >
       <ShoppingCart className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
