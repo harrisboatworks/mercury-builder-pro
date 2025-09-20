@@ -327,6 +327,7 @@ export default function MotorSelectionPage() {
     return baseYears + extendedYears;
   };
 
+  // Set page metadata
   useEffect(() => {
     document.title = 'Select Mercury Outboard Motor | Harris Boat Works';
     
@@ -337,6 +338,16 @@ export default function MotorSelectionPage() {
       document.head.appendChild(desc);
     }
     desc.content = 'Choose from our selection of Mercury outboard motors with live pricing and current promotions.';
+  }, []);
+
+  // Cleanup sticky search mount point
+  useEffect(() => {
+    return () => {
+      const mountPoint = document.getElementById('sticky-search-mount');
+      if (mountPoint) {
+        mountPoint.innerHTML = '';
+      }
+    };
   }, []);
 
   if (loading) {
@@ -351,17 +362,6 @@ export default function MotorSelectionPage() {
       </QuoteLayout>
     );
   }
-
-  // Render sticky search using React Portal
-  useEffect(() => {
-    const mountPoint = document.getElementById('sticky-search-mount');
-    return () => {
-      // Cleanup on unmount
-      if (mountPoint) {
-        mountPoint.innerHTML = '';
-      }
-    };
-  }, []);
 
   return (
     <FinancingProvider>
