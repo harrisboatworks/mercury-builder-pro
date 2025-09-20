@@ -304,15 +304,14 @@ serve(async (req) => {
           // Motor listings
           motorListings: {
             count: motorListings.length,
-            sampleMotors: motorListings.slice(0, 5),
-            motorSectionsFound: motorSections.length
+            sampleMotors: motorListings.slice(0, 5)
           },
           
           // Debugging samples
           sampleData: {
-            mercuryHPMatches: enhancedPatterns.mercuryHP.slice(0, 5),
-            stockNumbers: enhancedPatterns.stockNumbers.slice(0, 5),
-            prices: enhancedPatterns.prices.slice(0, 5),
+            mercuryHPMatches: legacyPatterns.mercuryHP.slice(0, 5),
+            stockNumbers: legacyPatterns.stockNumbers.slice(0, 5),
+            prices: legacyPatterns.prices.slice(0, 5),
             inventoryUrls: inventoryUrls.slice(0, 3)
           }
         },

@@ -1,5 +1,6 @@
 import React from 'react';
 import { UnifiedInventoryDashboard } from '@/components/admin/UnifiedInventoryDashboard';
+import { RawHTMLViewer } from '@/components/admin/RawHTMLViewer';
 import AdminNav from '@/components/admin/AdminNav';
 
 export default function AdminInventory() {
@@ -15,6 +16,7 @@ export default function AdminInventory() {
             </p>
           </div>
           
+          <RawHTMLViewer />
           <UnifiedInventoryDashboard />
         </div>
       </main>
