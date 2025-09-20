@@ -1,7 +1,7 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import { COMPANY_INFO } from '@/lib/companyInfo';
-import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption, getSoundLevel, getMaxBoatWeight, getInstallationRequirements, isTillerMotor } from '@/lib/motor-helpers';
+import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption, getSoundLevel, getMaxBoatWeight, getInstallationRequirements, isTillerMotor, includesFuelTank } from '@/lib/motor-helpers';
 import { findMotorSpecs as findMercurySpecs } from '@/lib/data/mercury-motors';
 import { calculateMonthlyPayment, getFinancingDisplay, calculatePaymentWithFrequency, getFinancingTerm } from '@/lib/finance';
 import { getRandomReview, getAllMercuryReviews } from '@/lib/data/mercury-reviews';
@@ -237,7 +237,8 @@ const styles = StyleSheet.create({
   },
   modelCodeText: {
     fontSize: 8,
-    color: '#0c4a6e',
+    color: '#0066cc', // Darker blue for better print visibility
+    colorAdjust: 'exact',
   },
   promoLine: {
     fontSize: 9,
@@ -465,12 +466,12 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
   const mercurySpecs = findMercurySpecs(hpNumber, specData.motorModel);
 
 
-  // Helper Functions for Enhancements
+  // Helper Functions for Enhancements - Fixed HP Range Logic
   const getCategoryReview = (hp: number) => {
-    if (hp <= 5) return { text: "Perfect for my dinghy. Lightweight and reliable.", author: "Tom Wilson, Kawartha Lakes" };
-    if (hp <= 15) return { text: "Great kicker motor. Quiet and fuel efficient.", author: "Sarah Chen, Peterborough" };
-    if (hp <= 40) return { text: "Plenty of power for my aluminum boat. Very smooth.", author: "Mike Thompson, Rice Lake" };
-    return { text: "Impressive performance. Gets on plane quickly.", author: "Dave Miller, Port Hope" };
+    // Use HP ranges as specified: ≤10HP, 11-50HP, >50HP
+    if (hp <= 10) return { text: "Perfect portable power. Lightweight and ultra-reliable for small boats.", author: "Tom Wilson, Kawartha Lakes" };
+    if (hp > 10 && hp <= 50) return { text: "Great mid-range motor. Perfect balance of power and fuel efficiency.", author: "Sarah Chen, Peterborough" };
+    return { text: "Impressive big-water performance. Gets on plane quickly with authority.", author: "Dave Miller, Port Hope" };
   };
 
   const getReviewText = (hp: number) => {
@@ -573,15 +574,25 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
     return Array.from(uniqueCodes.values()).join(' | ');
   };
 
-  // Get correct start type based on model decoding
+  // Get correct start type based on model decoding - Enhanced Logic
   const getStartType = (model: string) => {
+    const upperModel = model.toUpperCase();
+    
+    // Enhanced logic: if model contains 'M', it's Manual; if contains 'E', it's Electric
+    if (upperModel.includes('M') && (upperModel.includes('H') || upperModel.includes('L'))) return 'Manual';
+    if (upperModel.includes('E') && (upperModel.includes('H') || upperModel.includes('L') || upperModel.includes('PT'))) return 'Electric';
+    
+    // Fallback to decoded model approach
     const decoded = decodeModelName(model);
     const manualStart = decoded.find(item => item.code === 'M');
     const electricStart = decoded.find(item => item.code === 'E');
     
     if (manualStart) return 'Manual';
     if (electricStart) return 'Electric';
-    return 'Manual'; // Default fallback
+    
+    // Default: most motors over 25HP are electric, under are manual
+    const hp = parseInt(model.match(/\d+/)?.[0] || '0');
+    return hp > 25 ? 'Electric' : 'Manual';
   };
 
   // Dynamic specifications using actual selectedMotor data FIRST
@@ -716,8 +727,15 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
     return hpNumber <= 5 ? '15" (Short)' : '20" (Long)';
   };
   
-  // Get control type from model code
+  // Get control type from model code - Enhanced Logic
   const getControlType = (model: string) => {
+    const upperModel = model.toUpperCase();
+    
+    // Enhanced logic: check for tiller indicators first
+    if (upperModel.includes('H') && !upperModel.includes('HP')) return 'Tiller Handle';
+    if (upperModel.includes('TILLER')) return 'Tiller Handle';
+    
+    // Fallback to decoded model approach
     const decoded = decodeModelName(model);
     const tillerHandle = decoded.find(item => item.code === 'H');
     return tillerHandle ? 'Tiller Handle' : 'Remote Control';
@@ -915,9 +933,19 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
                   <Text style={styles.specValue}>{performance.soundLevel || getSoundLevel(hpNumber)}</Text>
                 </View>
                 <View style={styles.specItem}>
+                  <Text style={styles.specLabel}>Recommended Boat Size:</Text>
+                  <Text style={styles.specValue}>{performance.recommendedBoatSize || getRecommendedBoatSize(hpNumber)}</Text>
+                </View>
+                <View style={styles.specItem}>
                   <Text style={styles.specLabel}>Max Boat Weight:</Text>
                   <Text style={styles.specValue}>{performance.maxBoatWeight || getMaxBoatWeight(hpNumber)}</Text>
                 </View>
+                {hpNumber <= 30 && isTillerMotor(specData.motorModel) && (
+                  <View style={styles.specItem}>
+                    <Text style={styles.specLabel}>Carrying Handle:</Text>
+                    <Text style={styles.specValue}>Yes - Built-in</Text>
+                  </View>
+                )}
               </View>
             </View>
 
@@ -933,6 +961,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
                   <Text style={styles.bulletItem}>• 30% lighter than comparable competitors</Text>
                   <Text style={styles.bulletItem}>• Perfect for car-topping and small boat storage</Text>
                   <Text style={styles.bulletItem}>• No trailer modifications required</Text>
+                  <Text style={styles.bulletItem}>• {includesFuelTank({ hp: hpNumber, model: specData.motorModel } as any) ? 'Built-in fuel tank included' : 'External fuel tank compatible'}</Text>
                 </View>
               </View>
             )}
