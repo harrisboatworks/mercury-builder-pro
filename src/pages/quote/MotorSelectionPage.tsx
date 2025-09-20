@@ -12,6 +12,7 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { StickySearch } from '@/components/ui/sticky-search';
 import { createPortal } from 'react-dom';
 import '@/styles/premium-motor.css';
+import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
 // Removed obsolete pricing importer import
 
@@ -87,8 +88,7 @@ export default function MotorSelectionPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedHpRange, setSelectedHpRange] = useState<{ min: number; max: number }>({ min: 0, max: Infinity });
   const [inStockOnly, setInStockOnly] = useState(false);
-  const [mountPointReady, setMountPointReady] = useState(false);
-  
+  // Remove selectedMotor state since we're not doing inline selection anymore
 
   // Auto-trigger background image scraping for motors without images
   const imageScrapeStatus = useAutoImageScraping(motors.map(motor => ({
@@ -340,22 +340,17 @@ export default function MotorSelectionPage() {
     desc.content = 'Choose from our selection of Mercury outboard motors with live pricing and current promotions.';
   }, []);
 
-  // Detect when portal mount point becomes available
+  // Ensure portal mount point exists
   useEffect(() => {
-    const checkMountPoint = () => {
+    const ensureMountPoint = () => {
       const mountPoint = document.getElementById('sticky-search-mount');
-      if (mountPoint) {
-        setMountPointReady(true);
+      if (!mountPoint) {
+        console.log('Mount point not found, will retry...');
+        setTimeout(ensureMountPoint, 100);
       }
     };
-    
-    // Check immediately and set up a timeout for fallback
-    checkMountPoint();
-    const timeout = setTimeout(checkMountPoint, 100);
-    
-    return () => clearTimeout(timeout);
+    ensureMountPoint();
   }, []);
-
 
   if (loading) {
     return (
@@ -374,19 +369,34 @@ export default function MotorSelectionPage() {
     <FinancingProvider>
       <QuoteLayout title="Select Mercury Outboard Motor">
         {/* Portal for sticky search */}
-        {mountPointReady &&
-          createPortal(
-            <StickySearch
-              searchTerm={searchTerm}
-              selectedHpRange={selectedHpRange}
-              inStockOnly={inStockOnly}
-              onSearchChange={setSearchTerm}
-              onHpRangeChange={setSelectedHpRange}
-              onInStockChange={setInStockOnly}
-            />,
-            document.getElementById('sticky-search-mount')!
-          )
-        }
+        {typeof document !== 'undefined' && (
+          <>
+            {document.getElementById('sticky-search-mount') ? 
+              createPortal(
+                <StickySearch
+                  searchTerm={searchTerm}
+                  selectedHpRange={selectedHpRange}
+                  inStockOnly={inStockOnly}
+                  onSearchChange={setSearchTerm}
+                  onHpRangeChange={setSelectedHpRange}
+                  onInStockChange={setInStockOnly}
+                />,
+                document.getElementById('sticky-search-mount')!
+              ) :
+              // Fallback: render search inline if portal mount point not available
+              <div className="mb-6">
+                <StickySearch
+                  searchTerm={searchTerm}
+                  selectedHpRange={selectedHpRange}
+                  inStockOnly={inStockOnly}
+                  onSearchChange={setSearchTerm}
+                  onHpRangeChange={setSelectedHpRange}
+                  onInStockChange={setInStockOnly}
+                />
+              </div>
+            }
+          </>
+        )}
 
         <div className="space-y-6 pt-4">
         
