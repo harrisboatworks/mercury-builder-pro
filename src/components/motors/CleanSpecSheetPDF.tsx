@@ -797,7 +797,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
         {/* Exciting Promo Line */}
         {specData.currentPromotion && (
           <Text style={styles.promoLine}>
-            ⚡ LIMITED TIME OFFER: {specData.currentPromotion.description} - Ends {specData.currentPromotion.endDate}!
+            *** LIMITED TIME OFFER: {specData.currentPromotion.description} - Ends {specData.currentPromotion.endDate}! ***
           </Text>
         )}
 
@@ -920,7 +920,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
                   }
 
                   return includedItems.map((item, index) => (
-                    <Text key={index} style={styles.bulletItem}>◆ {item}</Text>
+                    <Text key={index} style={styles.bulletItem}>• {item}</Text>
                   ));
                 })()}
               </View>
