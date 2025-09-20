@@ -383,11 +383,39 @@ export default function MotorDetailsSheet({
             {/* Header Content */}
             <div className="p-4 sm:p-6 pr-16">
               <div className="flex flex-col space-y-2">
-                {/* Title Row */}
+                 {/* Title Row */}
                 <div className="flex-1 min-w-0">
                   <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight">
                     {title}
                   </h2>
+                </div>
+                
+                {/* Mobile Price & Badges - visible on small screens only */}
+                <div className="block md:hidden mt-3 space-y-2">
+                  <div className="text-center">
+                    <p className="text-2xl font-bold text-slate-900 dark:text-white">
+                      {typeof price === "number" ? money(price) : 'Call for Price'}
+                    </p>
+                  </div>
+                  
+                  <div className="flex flex-wrap items-center justify-center gap-2">
+                    {/* Warranty Badge */}
+                    <div className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-3 py-1 rounded-full text-sm font-medium">
+                      +2Y Warranty
+                    </div>
+                    
+                    {/* Promotional Content */}
+                    {promoText && (
+                      <div className="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-3 py-1 rounded-full text-sm font-medium">
+                        {promoText}
+                      </div>
+                    )}
+                    {activePromo && (
+                      <div className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium">
+                        {activePromo.rate}% Financing
+                      </div>
+                    )}
+                  </div>
                 </div>
                 
                 {/* Tablet Price & Promo Row */}
