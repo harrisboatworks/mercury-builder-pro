@@ -55,7 +55,6 @@ import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import Settings from "./pages/Settings";
 import { NotificationToast } from "@/components/notifications/NotificationToast";
 import AdminPricingImport from "./pages/AdminPricingImport";
-import AdminMotorManagement from "./pages/AdminMotorManagement";
 
 function Canonical() {
   useEffect(() => {
@@ -195,14 +194,6 @@ const App = () => (
                   element={
                     <SecureRoute requireAdmin={true}>
                       <AdminInventory />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/inventory/motor/:motorId"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminMotorManagement />
                     </SecureRoute>
                   }
                 />
