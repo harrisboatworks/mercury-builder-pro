@@ -432,6 +432,7 @@ export interface CleanSpecSheetData {
   modelNumber?: string;
   motorPrice?: number; // Add motor price for financing calculations
   image_url?: string; // Add motor image URL
+  controls?: string; // Add controls field for tiller/remote detection
   specifications?: Record<string, any>;
   features?: string[];
   includedAccessories?: string[];
@@ -629,8 +630,13 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
 
   // Get correct start type based on model number - EMERGENCY FIX
   const getStartType = (model: string) => {
-    // Simple model number check as requested in emergency fix
-    return model?.charAt(1) === 'M' ? 'Manual' : 'Electric';
+    console.log('🔧 Start Type Debug:', { model, char1: model?.charAt(1), hasM: /\d+\.?\d*M/i.test(model || '') });
+    
+    // Fix for models like "3.5MLH" - look for M after HP number
+    if (/\d+\.?\d*M/i.test(model || '')) {
+      return 'Manual';
+    }
+    return 'Electric';
   };
 
   // Dynamic specifications using actual selectedMotor data FIRST
@@ -733,7 +739,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
       selectedMotorSpecs['Shaft Length'] = getShaftLength(specData.motorModel);
     }
     if (!selectedMotorSpecs['Control Type']) {
-      selectedMotorSpecs['Control Type'] = getControlType(specData.motorModel, enhancedSpecs.controls);
+      selectedMotorSpecs['Control Type'] = getControlType(specData.motorModel, specData.controls);
     }
     
     return selectedMotorSpecs;
@@ -767,18 +773,25 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
   
   // Get control type from model code - EMERGENCY FIX
   const getControlType = (model: string, controls?: string) => {
+    console.log('🔧 Control Type Debug:', { 
+      model, 
+      controls, 
+      isTiller: isTillerMotor(model),
+      hasH: /\d+\.?\d*H(?!\w|P)/i.test(model || '')
+    });
+    
     // Use actual controls data if available - FIXED
     if (controls && controls.includes('Tiller')) {
       return 'Tiller';
     }
-    if (controls) {
+    if (controls && controls.includes('Remote')) {
       return 'Remote Control';
     }
     
-    // Fallback to model-based detection
-    const upperModel = model.toUpperCase();
-    if (upperModel.includes('H') && !upperModel.includes('HP')) return 'Tiller';
-    if (upperModel.includes('TILLER')) return 'Tiller';
+    // Use our improved tiller detection from motor-helpers
+    if (isTillerMotor(model)) {
+      return 'Tiller';
+    }
     
     // Default fallback
     return 'Remote Control';
@@ -891,7 +904,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
           </View>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>CONTROLS</Text>
-            <Text style={styles.overviewValue}>{getControlType(specData.motorModel, enhancedSpecs.controls)}</Text>
+            <Text style={styles.overviewValue}>{getControlType(specData.motorModel, specData.controls)}</Text>
           </View>
         </View>
 
