@@ -13,9 +13,9 @@ const styles = StyleSheet.create({
   page: {
     flexDirection: 'column',
     backgroundColor: '#ffffff',
-    padding: 12,
+    padding: 8,
     fontFamily: 'Helvetica',
-    fontSize: 9,
+    fontSize: 8,
     color: '#1a1a1a', // Primary text - print optimized
   },
   
@@ -135,9 +135,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   section: {
-    marginBottom: 4,
+    marginBottom: 2,
     backgroundColor: '#f9fafb',
-    padding: 4,
+    padding: 3,
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#e5e7eb',
@@ -287,8 +287,8 @@ const styles = StyleSheet.create({
     color: '#1a1a1a', // Primary text
   },
   contactFooter: {
-    marginTop: 4,
-    paddingTop: 4,
+    marginTop: 2,
+    paddingTop: 2,
     borderTopWidth: 1,
     borderTopColor: '#e5e7eb',
   },
@@ -597,10 +597,8 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
         selectedMotorSpecs['Fuel System'] = 'Electronic Fuel Injection (EFI)';
       }
       
-      // Starting type
-      if (!selectedMotorSpecs['Starting']) {
-        selectedMotorSpecs['Starting'] = getStartType(specData.motorModel) || 'Manual or Electric';
-      }
+      // Starting type - FORCE override database data
+      selectedMotorSpecs['Starting'] = getStartType(specData.motorModel) || 'Manual or Electric';
       
       // Full Throttle RPM Range - Fix NaN error
       if (mercurySpecs.max_rpm && !selectedMotorSpecs['Full Throttle RPM Range'] && !isNaN(Number(mercurySpecs.max_rpm))) {
@@ -872,82 +870,9 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               </View>
             )}
 
-            {/* NEW: Operating Specs Section */}
-            <View style={styles.section}>
-              <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>Operating Specifications</Text>
-              </View>
-              <View style={styles.specGrid}>
-                <View style={styles.specItem}>
-                  <Text style={styles.specLabel}>Fuel Consumption:</Text>
-                  <Text style={styles.specValue}>{performance.fuelConsumption || getFuelConsumption(hpNumber)}</Text>
-                </View>
-                <View style={styles.specItem}>
-                  <Text style={styles.specLabel}>Sound Level:</Text>
-                  <Text style={styles.specValue}>{performance.soundLevel || getSoundLevel(hpNumber)}</Text>
-                </View>
-                <View style={styles.specItem}>
-                  <Text style={styles.specLabel}>Recommended Boat Size:</Text>
-                  <Text style={styles.specValue}>{performance.recommendedBoatSize || getRecommendedBoatSize(hpNumber)}</Text>
-                </View>
-                <View style={styles.specItem}>
-                  <Text style={styles.specLabel}>Max Boat Weight:</Text>
-                  <Text style={styles.specValue}>{performance.maxBoatWeight || getMaxBoatWeight(hpNumber)}</Text>
-                </View>
-                {hpNumber <= 30 && isTillerMotor(specData.motorModel) && (
-                  <View style={styles.specItem}>
-                    <Text style={styles.specLabel}>Carrying Handle:</Text>
-                    <Text style={styles.specValue}>Yes - Built-in</Text>
-                  </View>
-                )}
-              </View>
-            </View>
 
-            {/* Conditional Section: Portable Motors (≤30HP with tiller) */}
-            {hpNumber <= 30 && isTillerMotor(specData.motorModel) && (
-              <View style={styles.section}>
-                <View style={styles.sectionHeader}>
-                  <Text style={styles.sectionTitle}>Portable Features</Text>
-                </View>
-                <View style={styles.bulletList}>
-                  <Text style={styles.bulletItem}>• Built-in carrying handle for easy transport</Text>
-                  <Text style={styles.bulletItem}>• Lightweight at {enhancedSpecs['Weight'] ? enhancedSpecs['Weight'].split(' ')[0] + ' lbs' : 'Contact dealer'}</Text>
-                  <Text style={styles.bulletItem}>• 30% lighter than comparable competitors</Text>
-                  <Text style={styles.bulletItem}>• Perfect for car-topping and small boat storage</Text>
-                  <Text style={styles.bulletItem}>• No trailer modifications required</Text>
-                  <Text style={styles.bulletItem}>• {includesFuelTank({ hp: hpNumber, model: specData.motorModel } as any) ? 'Built-in fuel tank included' : 'External fuel tank compatible'}</Text>
-                </View>
-              </View>
-            )}
 
-            {/* Conditional Section: High-Power Motors (≥115HP) */}
-            {hpNumber >= 115 && (
-              <View style={styles.section}>
-                <View style={styles.sectionHeader}>
-                  <Text style={styles.sectionTitle}>High-Performance Features</Text>
-                </View>
-                <View style={styles.bulletList}>
-                  <Text style={styles.bulletItem}>• Multiple propeller options available</Text>
-                  <Text style={styles.bulletItem}>• Advanced trim system for optimal performance</Text>
-                  <Text style={styles.bulletItem}>• Performance tuning available</Text>
-                  <Text style={styles.bulletItem}>• Enhanced cooling system for extended WOT</Text>
-                  <Text style={styles.bulletItem}>• Professional marine application ready</Text>
-                </View>
-              </View>
-            )}
 
-            {/* Key Advantages Section */}
-            <View style={styles.section}>
-              <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>Key Advantages</Text>
-              </View>
-              <View style={styles.bulletList}>
-                <Text style={styles.bulletItem}>• Fuel efficient - Up to 30% better than carbureted</Text>
-                <Text style={styles.bulletItem}>• Quiet operation - Won't spook fish</Text>
-                <Text style={styles.bulletItem}>• Reliable {specData.motorModel?.includes('EFI') ? 'EFI' : ''} starting in all conditions</Text>
-                <Text style={styles.bulletItem}>• Mercury-backed warranty & service</Text>
-              </View>
-            </View>
 
 
             {/* What's Included - Show ALL motor-specific items */}
