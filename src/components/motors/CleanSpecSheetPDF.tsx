@@ -474,13 +474,52 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
     return { text: "Impressive big-water performance. Gets on plane quickly with authority.", author: "Dave Miller, Port Hope" };
   };
 
+  // Bug 3 Fix: Enhanced HP-based review matching
+  const getMatchingReview = (hp: number) => {
+    const allReviews = getAllMercuryReviews();
+    
+    // For motors 10hp and under - portable/kicker reviews
+    if (hp <= 10) {
+      const portableReviews = allReviews.filter(r => 
+        r.comment.toLowerCase().includes('portable') || 
+        r.comment.toLowerCase().includes('kicker') ||
+        r.comment.toLowerCase().includes('dinghy') ||
+        r.comment.toLowerCase().includes('small') ||
+        r.motorHP <= 10
+      );
+      return portableReviews.length > 0 ? portableReviews[Math.floor(Math.random() * portableReviews.length)] : null;
+    }
+    
+    // For motors 11-50hp - midrange reviews  
+    if (hp > 10 && hp <= 50) {
+      const midrangeReviews = allReviews.filter(r => 
+        r.comment.toLowerCase().includes('fishing') ||
+        r.comment.toLowerCase().includes('aluminum') ||
+        r.comment.toLowerCase().includes('pontoon') ||
+        (r.motorHP > 10 && r.motorHP <= 50)
+      );
+      return midrangeReviews.length > 0 ? midrangeReviews[Math.floor(Math.random() * midrangeReviews.length)] : null;
+    }
+    
+    // For motors >50hp - high power reviews
+    const highPowerReviews = allReviews.filter(r => 
+      r.comment.toLowerCase().includes('performance') ||
+      r.comment.toLowerCase().includes('power') ||
+      r.comment.toLowerCase().includes('fast') ||
+      r.motorHP > 50
+    );
+    return highPowerReviews.length > 0 ? highPowerReviews[Math.floor(Math.random() * highPowerReviews.length)] : null;
+  };
+
   const getReviewText = (hp: number) => {
-    const review = getRandomReview(hp);
+    const matchingReview = getMatchingReview(hp);
+    const review = matchingReview || getRandomReview(hp);
     return review ? review.comment : getCategoryReview(hp).text;
   };
 
   const getReviewAuthor = (hp: number) => {
-    const review = getRandomReview(hp);
+    const matchingReview = getMatchingReview(hp);
+    const review = matchingReview || getRandomReview(hp);
     return review ? `${review.reviewer}, ${review.location}` : getCategoryReview(hp).author;
   };
 
@@ -574,11 +613,11 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
     return Array.from(uniqueCodes.values()).join(' | ');
   };
 
-  // Get correct start type based on model decoding - Enhanced Logic
+  // Get correct start type based on model decoding - Fixed Bug 1
   const getStartType = (model: string) => {
     const upperModel = model.toUpperCase();
     
-    // Enhanced logic: if model contains 'M', it's Manual; if contains 'E', it's Electric
+    // Bug 1 Fix: Direct model number check as requested
     if (upperModel.includes('M') && (upperModel.includes('H') || upperModel.includes('L'))) return 'Manual';
     if (upperModel.includes('E') && (upperModel.includes('H') || upperModel.includes('L') || upperModel.includes('PT'))) return 'Electric';
     
@@ -727,10 +766,11 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
     return hpNumber <= 5 ? '15" (Short)' : '20" (Long)';
   };
   
-  // Get control type from model code - Enhanced Logic
+  // Get control type from model code - Fixed Bug 2
   const getControlType = (model: string) => {
     const upperModel = model.toUpperCase();
     
+    // Bug 2 Fix: Enhanced logic using model code detection
     // Enhanced logic: check for tiller indicators first
     if (upperModel.includes('H') && !upperModel.includes('HP')) return 'Tiller Handle';
     if (upperModel.includes('TILLER')) return 'Tiller Handle';
