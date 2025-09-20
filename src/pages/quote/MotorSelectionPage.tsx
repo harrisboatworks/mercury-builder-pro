@@ -340,14 +340,16 @@ export default function MotorSelectionPage() {
     desc.content = 'Choose from our selection of Mercury outboard motors with live pricing and current promotions.';
   }, []);
 
-  // Cleanup sticky search mount point
+  // Ensure portal mount point exists
   useEffect(() => {
-    return () => {
+    const ensureMountPoint = () => {
       const mountPoint = document.getElementById('sticky-search-mount');
-      if (mountPoint) {
-        mountPoint.innerHTML = '';
+      if (!mountPoint) {
+        console.log('Mount point not found, will retry...');
+        setTimeout(ensureMountPoint, 100);
       }
     };
+    ensureMountPoint();
   }, []);
 
   if (loading) {
@@ -367,19 +369,34 @@ export default function MotorSelectionPage() {
     <FinancingProvider>
       <QuoteLayout title="Select Mercury Outboard Motor">
         {/* Portal for sticky search */}
-        {typeof document !== 'undefined' && document.getElementById('sticky-search-mount') && 
-          createPortal(
-            <StickySearch
-              searchTerm={searchTerm}
-              selectedHpRange={selectedHpRange}
-              inStockOnly={inStockOnly}
-              onSearchChange={setSearchTerm}
-              onHpRangeChange={setSelectedHpRange}
-              onInStockChange={setInStockOnly}
-            />,
-            document.getElementById('sticky-search-mount')!
-          )
-        }
+        {typeof document !== 'undefined' && (
+          <>
+            {document.getElementById('sticky-search-mount') ? 
+              createPortal(
+                <StickySearch
+                  searchTerm={searchTerm}
+                  selectedHpRange={selectedHpRange}
+                  inStockOnly={inStockOnly}
+                  onSearchChange={setSearchTerm}
+                  onHpRangeChange={setSelectedHpRange}
+                  onInStockChange={setInStockOnly}
+                />,
+                document.getElementById('sticky-search-mount')!
+              ) :
+              // Fallback: render search inline if portal mount point not available
+              <div className="mb-6">
+                <StickySearch
+                  searchTerm={searchTerm}
+                  selectedHpRange={selectedHpRange}
+                  inStockOnly={inStockOnly}
+                  onSearchChange={setSearchTerm}
+                  onHpRangeChange={setSelectedHpRange}
+                  onInStockChange={setInStockOnly}
+                />
+              </div>
+            }
+          </>
+        )}
 
         <div className="space-y-6 pt-4">
         
