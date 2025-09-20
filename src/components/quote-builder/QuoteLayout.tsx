@@ -110,7 +110,36 @@ export const QuoteLayout = ({
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
+          {/* Mobile Grid Layout */}
+          <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 md:hidden">
+            {/* Left: Hamburger Menu */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsMenuOpen(true)}
+              className="p-2"
+            >
+              <Menu className="w-5 h-5" />
+            </Button>
+            
+            {/* Center: Logos */}
+            <Link to="/" className="flex items-center justify-center gap-2">
+              <img src={harrisLogo} alt="Harris Boat Works" className="h-6 w-auto max-w-[80px]" />
+              <div className="h-4 w-px bg-border"></div>
+              <img src={mercuryLogo} alt="Mercury Marine" className="h-4 w-auto max-w-[100px]" />
+            </Link>
+            
+            {/* Right: Cart + Chat */}
+            <div className="flex items-center gap-2">
+              <CartHeader />
+              <div className="flex-shrink-0">
+                <ChatWidget />
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Flex Layout */}
+          <div className="hidden md:flex items-center justify-between">
             <div className="flex items-center space-x-6">
               {/* Hamburger Menu Button */}
               <Button
@@ -124,7 +153,7 @@ export const QuoteLayout = ({
               <Link to="/" className="flex items-center space-x-4">
                 <img src={harrisLogo} alt="Harris Boat Works" className="h-6 w-auto sm:h-8 md:h-10 lg:h-12" />
                 <div className="h-4 sm:h-6 md:h-8 lg:h-10 w-px bg-border"></div>
-                <img src={mercuryLogo} alt="Mercury Marine" className="h-4 w-auto sm:h-6 md:h-8 lg:h-10 mr-3 sm:mr-4" />
+                <img src={mercuryLogo} alt="Mercury Marine" className="h-4 w-auto sm:h-6 md:h-8 lg:h-10" />
               </Link>
               <div className="hidden lg:block">
                 <h1 className="text-2xl font-bold text-foreground">
@@ -134,7 +163,7 @@ export const QuoteLayout = ({
               </div>
             </div>
             
-            <div className="flex items-center space-x-3 sm:space-x-3 md:space-x-4 pr-2">
+            <div className="flex items-center space-x-3 sm:space-x-3 md:space-x-4">
               <CartHeader />
               <div className="flex-shrink-0">
                 <ChatWidget />
