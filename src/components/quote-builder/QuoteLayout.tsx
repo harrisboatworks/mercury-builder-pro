@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { LogOut, User, DollarSign, Menu } from 'lucide-react';
+import { LogOut, User, DollarSign, Menu, Settings } from 'lucide-react';
 import { useAuth } from '@/components/auth/AuthProvider';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
@@ -146,16 +146,10 @@ export const QuoteLayout = ({
                   </div>
                   <div className="flex items-center space-x-1 md:space-x-2">
                     <Button variant="secondary" size="sm" className="hidden md:inline-flex" asChild>
-                      <Link to="/admin/promotions">Promotions</Link>
-                    </Button>
-                    <Button variant="secondary" size="sm" className="hidden md:inline-flex" asChild>
-                      <Link to="/admin/financing">
-                        <DollarSign className="w-4 h-4 mr-2" />
-                        Financing
+                      <Link to="/admin/quotes">
+                        <Settings className="w-4 h-4 mr-2" />
+                        Admin
                       </Link>
-                    </Button>
-                    <Button variant="secondary" size="sm" className="hidden md:inline-flex" asChild>
-                      <Link to="/admin/quotes">Quotes</Link>
                     </Button>
                     <Button variant="outline" size="sm" onClick={() => signOut()}>
                       <LogOut className="w-4 h-4 md:mr-2" />
