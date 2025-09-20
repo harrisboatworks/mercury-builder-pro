@@ -31,12 +31,13 @@ import {
   Image,
   FileText,
   Video,
-  Settings
+  Settings,
+  ExternalLink
 } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 import { toast } from 'sonner';
 import { MotorManualOverride } from './MotorManualOverride';
-import { MotorMediaDialog } from './MotorMediaDialog';
+import { useNavigate } from 'react-router-dom';
 
 // Interfaces
 interface MotorInventoryData {
@@ -113,6 +114,7 @@ interface InventoryComparison {
 }
 
 export function UnifiedInventoryDashboard() {
+  const navigate = useNavigate();
   // Live Inventory State
   const [motors, setMotors] = useState<MotorInventoryData[]>([]);
   const [inventoryStats, setInventoryStats] = useState<InventoryStats | null>(null);
@@ -127,9 +129,6 @@ export function UnifiedInventoryDashboard() {
   const [editingMotor, setEditingMotor] = useState<string | null>(null);
   const [motorActions, setMotorActions] = useState<{ [key: string]: boolean }>({});
   
-  // Media Management State
-  const [selectedMotorForMedia, setSelectedMotorForMedia] = useState<MotorInventoryData | null>(null);
-  const [mediaDialogOpen, setMediaDialogOpen] = useState(false);
 
   // Sync Status State
   const [syncLogs, setSyncLogs] = useState<SyncLog[]>([]);
@@ -451,20 +450,9 @@ export function UnifiedInventoryDashboard() {
     }
   };
 
-  // Media Management Functions
-  const openMediaDialog = (motor: MotorInventoryData) => {
-    setSelectedMotorForMedia(motor);
-    setMediaDialogOpen(true);
-  };
-
-  const closeMediaDialog = () => {
-    setSelectedMotorForMedia(null);
-    setMediaDialogOpen(false);
-  };
-
-  const handleMediaUpdated = () => {
-    // Refresh inventory data to show updated media counts
-    fetchInventoryData();
+  // Navigation Functions
+  const navigateToMotorManagement = (motorId: string) => {
+    navigate(`/admin/inventory/motor/${motorId}`);
   };
 
   const getMediaSummaryDisplay = (mediaSummary: MotorInventoryData['media_summary']) => {
@@ -1058,10 +1046,10 @@ export function UnifiedInventoryDashboard() {
                         variant="ghost" 
                         size="sm" 
                         className="h-8 w-8 p-0 text-blue-600 hover:text-blue-700"
-                        onClick={() => openMediaDialog(motor)}
-                        title="Manage Media"
+                        onClick={() => navigateToMotorManagement(motor.id)}
+                        title="Manage Motor"
                       >
-                        <Settings className="h-3 w-3" />
+                        <ExternalLink className="h-3 w-3" />
                       </Button>
 
                       <Dialog open={editingMotor === motor.id} onOpenChange={(open) => setEditingMotor(open ? motor.id : null)}>
@@ -1393,14 +1381,6 @@ export function UnifiedInventoryDashboard() {
         )}
       </TabsContent>
     </Tabs>
-
-    {/* Motor Media Dialog */}
-    <MotorMediaDialog 
-      isOpen={mediaDialogOpen}
-      onClose={closeMediaDialog}
-      motor={selectedMotorForMedia}
-      onMediaUpdated={handleMediaUpdated}
-    />
     </div>
   );
 }
