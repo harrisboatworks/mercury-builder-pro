@@ -47,6 +47,7 @@ import AdminPayments from "./pages/AdminPayments";
 import AdminSMS from "./pages/AdminSMS";
 import AdminInventory from "./pages/AdminInventory";
 import AdminStockSync from "./pages/AdminStockSync";
+import AdminCronMonitor from "./pages/AdminCronMonitor";
 import AdminSources from "./pages/AdminSources";
 import Deposits from "./pages/Deposits";
 import PaymentSuccess from "./pages/PaymentSuccess";
@@ -202,6 +203,14 @@ const App = () => (
                   element={
                     <SecureRoute requireAdmin={true}>
                       <AdminStockSync />
+                    </SecureRoute>
+                  }
+                />
+                <Route
+                  path="/admin/cron-monitor"
+                  element={
+                    <SecureRoute requireAdmin={true}>
+                      <AdminCronMonitor />
                     </SecureRoute>
                   }
                 />

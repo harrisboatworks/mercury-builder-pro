@@ -32,6 +32,45 @@ export type Database = {
         }
         Relationships: []
       }
+      cron_job_logs: {
+        Row: {
+          completed_at: string | null
+          created_at: string
+          error_message: string | null
+          id: string
+          job_name: string
+          motors_found: number | null
+          motors_updated: number | null
+          result: Json | null
+          started_at: string
+          status: string
+        }
+        Insert: {
+          completed_at?: string | null
+          created_at?: string
+          error_message?: string | null
+          id?: string
+          job_name: string
+          motors_found?: number | null
+          motors_updated?: number | null
+          result?: Json | null
+          started_at?: string
+          status?: string
+        }
+        Update: {
+          completed_at?: string | null
+          created_at?: string
+          error_message?: string | null
+          id?: string
+          job_name?: string
+          motors_found?: number | null
+          motors_updated?: number | null
+          result?: Json | null
+          started_at?: string
+          status?: string
+        }
+        Relationships: []
+      }
       customer_quotes: {
         Row: {
           anonymous_session_id: string | null
@@ -1413,6 +1452,15 @@ export type Database = {
       generate_session_id: {
         Args: Record<PropertyKey, never>
         Returns: string
+      }
+      get_cron_job_status: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          active: boolean
+          jobname: string
+          last_run: string
+          schedule: string
+        }[]
       }
       get_duplicate_brochure_keys: {
         Args: Record<PropertyKey, never>

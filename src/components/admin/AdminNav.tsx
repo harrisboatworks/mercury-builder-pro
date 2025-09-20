@@ -9,6 +9,7 @@ const navItems = [
   { label: "Motor Images", to: "/admin/motor-images" },
   { label: "Inventory", to: "/admin/inventory" },
   { label: "Stock Sync", to: "/admin/stock-sync" },
+  { label: "Cron Jobs", to: "/admin/cron-monitor" },
   { label: "Pricing Import", to: "/admin/pricing-import" },
   { label: "Sources", to: "/admin/sources" },
   { label: "Connectors", to: "/admin/connectors" },

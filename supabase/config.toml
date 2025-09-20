@@ -45,7 +45,6 @@ verify_jwt = false
 [functions.mark-out-of-stock]
 verify_jwt = true
 
-
 [functions.attach-brochure-pdf]
 verify_jwt = false
 
@@ -53,4 +52,7 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.universal-pricing-import]
+verify_jwt = false
+
+[functions.cron-failure-notifications]
 verify_jwt = false
