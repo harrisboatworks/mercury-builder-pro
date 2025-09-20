@@ -4,9 +4,7 @@ import { COMPANY_INFO } from '@/lib/companyInfo';
 import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption, getSoundLevel, getMaxBoatWeight, getInstallationRequirements, isTillerMotor, includesFuelTank } from '@/lib/motor-helpers';
 import { findMotorSpecs as findMercurySpecs } from '@/lib/data/mercury-motors';
 import { calculateMonthlyPayment, getFinancingDisplay, calculatePaymentWithFrequency, getFinancingTerm } from '@/lib/finance';
-import { getRandomReview, getAllMercuryReviews } from '@/lib/data/mercury-reviews';
 import { type ActivePromotion } from '@/hooks/useActivePromotions';
-import { getCustomerHighlight, harrisTestimonials } from '@/utils/customer-features';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
@@ -356,27 +354,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 6,
   },
-  // Customer Review Styles
-  reviewSection: {
-    marginTop: 6,
-    padding: 6,
-    backgroundColor: '#f8f9fa',
-    borderRadius: 4,
-    marginBottom: 4,
-  },
-  stars: {
-    fontSize: 12,
-    marginBottom: 2,
-  },
-  reviewText: {
-    fontSize: 9,
-    fontStyle: 'italic',
-    marginBottom: 2,
-  },
-  reviewAuthor: {
-    fontSize: 8,
-    color: '#666',
-  },
   // Warranty Enhancement Styles
   warrantyOption: {
     fontSize: 8,
@@ -406,19 +383,6 @@ const styles = StyleSheet.create({
   accessoryItem: {
     fontSize: 8,
     marginBottom: 1,
-  },
-  customerQuote: {
-    fontSize: 9,
-    color: '#333333',
-    marginVertical: 1,
-    maxWidth: '100%'
-  },
-  dealerTestimonial: {
-    fontSize: 10,
-    lineHeight: 14,
-    color: '#333333',
-    borderTop: '1px solid #e5e5e5',
-    paddingTop: 8
   },
 });
 
@@ -479,64 +443,6 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
   
   // Get actual Mercury motor specifications 
   const mercurySpecs = findMercurySpecs(hpNumber, specData.motorModel);
-
-
-  // Helper Functions for Enhancements - Fixed HP Range Logic
-  const getCategoryReview = (hp: number) => {
-    // Use HP ranges as specified: ≤10HP, 11-50HP, >50HP
-    if (hp <= 10) return { text: "Perfect portable power. Lightweight and ultra-reliable for small boats.", author: "Tom Wilson, Kawartha Lakes" };
-    if (hp > 10 && hp <= 50) return { text: "Great mid-range motor. Perfect balance of power and fuel efficiency.", author: "Sarah Chen, Peterborough" };
-    return { text: "Impressive big-water performance. Gets on plane quickly with authority.", author: "Dave Miller, Port Hope" };
-  };
-
-  // Bug 3 Fix: Enhanced HP-based review matching
-  const getMatchingReview = (hp: number) => {
-    const allReviews = getAllMercuryReviews();
-    
-    // For motors 10hp and under - portable/kicker reviews
-    if (hp <= 10) {
-      const portableReviews = allReviews.filter(r => 
-        r.comment.toLowerCase().includes('portable') || 
-        r.comment.toLowerCase().includes('kicker') ||
-        r.comment.toLowerCase().includes('dinghy') ||
-        r.comment.toLowerCase().includes('small') ||
-        r.motorHP <= 10
-      );
-      return portableReviews.length > 0 ? portableReviews[Math.floor(Math.random() * portableReviews.length)] : null;
-    }
-    
-    // For motors 11-50hp - midrange reviews  
-    if (hp > 10 && hp <= 50) {
-      const midrangeReviews = allReviews.filter(r => 
-        r.comment.toLowerCase().includes('fishing') ||
-        r.comment.toLowerCase().includes('aluminum') ||
-        r.comment.toLowerCase().includes('pontoon') ||
-        (r.motorHP > 10 && r.motorHP <= 50)
-      );
-      return midrangeReviews.length > 0 ? midrangeReviews[Math.floor(Math.random() * midrangeReviews.length)] : null;
-    }
-    
-    // For motors >50hp - high power reviews
-    const highPowerReviews = allReviews.filter(r => 
-      r.comment.toLowerCase().includes('performance') ||
-      r.comment.toLowerCase().includes('power') ||
-      r.comment.toLowerCase().includes('fast') ||
-      r.motorHP > 50
-    );
-    return highPowerReviews.length > 0 ? highPowerReviews[Math.floor(Math.random() * highPowerReviews.length)] : null;
-  };
-
-  const getReviewText = (hp: number) => {
-    const matchingReview = getMatchingReview(hp);
-    const review = matchingReview || getRandomReview(hp);
-    return review ? review.comment : getCategoryReview(hp).text;
-  };
-
-  const getReviewAuthor = (hp: number) => {
-    const matchingReview = getMatchingReview(hp);
-    const review = matchingReview || getRandomReview(hp);
-    return review ? `${review.reviewer}, ${review.location}` : getCategoryReview(hp).author;
-  };
 
 
   // Helper function to convert number to ordinal
@@ -1043,10 +949,6 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               </View>
             </View>
 
-            {/* Customer Quote - TESTING NEW VERSION */}
-            <Text style={styles.customerQuote}>
-              ⭐ {getCustomerHighlight(hpNumber)}
-            </Text>
 
             {/* What's Included - Show ALL motor-specific items */}
             <View style={styles.section}>
