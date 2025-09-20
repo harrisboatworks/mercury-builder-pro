@@ -56,6 +56,7 @@ export default function MotorCardPremium({
   const [showTooltip, setShowTooltip] = useState(false);
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
   const [motorBadge, setMotorBadge] = useState<string | null>(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
   
   // Get the best available image URL and count total images using priority logic
   const getImageInfo = (): { url: string; count: number; isInventory: boolean } => {
@@ -103,7 +104,20 @@ export default function MotorCardPremium({
   
   const handleMoreInfoClick = (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent card selection
+    // Store current scroll position before opening modal
+    setScrollPosition(window.scrollY);
     setShowDetailsSheet(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowDetailsSheet(false);
+    // Restore scroll position after modal closes
+    setTimeout(() => {
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: 'instant' // Use 'instant' not 'smooth' for immediate return
+      });
+    }, 10); // Small delay to ensure DOM updates
   };
   
   const handleTooltipMouseEnter = () => {
@@ -287,7 +301,7 @@ export default function MotorCardPremium({
       {showDetailsSheet && createPortal(
         <MotorDetailsSheet
           open={showDetailsSheet}
-          onClose={() => setShowDetailsSheet(false)}
+          onClose={handleCloseModal}
           onSelect={onSelect}
           title={title}
           subtitle={hpNum ? `${hpNum} HP Mercury Outboard` : undefined}
