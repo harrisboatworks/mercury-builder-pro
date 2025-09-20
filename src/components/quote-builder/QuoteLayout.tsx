@@ -124,7 +124,7 @@ export const QuoteLayout = ({
               <Link to="/" className="flex items-center space-x-4">
                 <img src={harrisLogo} alt="Harris Boat Works" className="h-6 w-auto sm:h-8 md:h-10 lg:h-12" />
                 <div className="h-4 sm:h-6 md:h-8 lg:h-10 w-px bg-border"></div>
-                <img src={mercuryLogo} alt="Mercury Marine" className="h-4 w-auto sm:h-6 md:h-8 lg:h-10" />
+                <img src={mercuryLogo} alt="Mercury Marine" className="h-4 w-auto sm:h-6 md:h-8 lg:h-10 mr-3 sm:mr-4" />
               </Link>
               <div className="hidden lg:block">
                 <h1 className="text-2xl font-bold text-foreground">
@@ -134,7 +134,7 @@ export const QuoteLayout = ({
               </div>
             </div>
             
-            <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-4">
+            <div className="flex items-center space-x-3 sm:space-x-3 md:space-x-4 pr-2">
               <CartHeader />
               <div className="flex-shrink-0">
                 <ChatWidget />
@@ -197,6 +197,13 @@ export const QuoteLayout = ({
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
+        {/* Page Title - visible on mobile and tablet */}
+        <div className="lg:hidden mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
+            {title || 'Mercury Outboard Quote Builder'}
+          </h1>
+          <p className="text-muted-foreground mt-1">Mercury Marine Premier Dealer</p>
+        </div>
         {children}
       </main>
 
