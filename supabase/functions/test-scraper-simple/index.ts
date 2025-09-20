@@ -35,12 +35,13 @@ serve(async (req) => {
       body: JSON.stringify({
         url: targetUrl,
         formats: ['html'],
-        waitFor: 4000,           // Wait 4 seconds for JavaScript
+        waitFor: 5000,           // Wait 5 seconds for JavaScript
         timeout: 45000,          // 45 second timeout
         onlyMainContent: false,  // Get full page content
-        includeHtml: true,
         mobile: false,
-        followRedirects: true
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        }
       })
     })
 
