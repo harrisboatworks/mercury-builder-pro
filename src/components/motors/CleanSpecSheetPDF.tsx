@@ -1,7 +1,7 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import { COMPANY_INFO } from '@/lib/companyInfo';
-import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption } from '@/lib/motor-helpers';
+import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption, getSoundLevel, getMaxBoatWeight, getInstallationRequirements, isTillerMotor } from '@/lib/motor-helpers';
 import { findMotorSpecs as findMercurySpecs } from '@/lib/data/mercury-motors';
 import { calculateMonthlyPayment, getFinancingDisplay, calculatePaymentWithFrequency, getFinancingTerm } from '@/lib/finance';
 import { getRandomReview, getAllMercuryReviews } from '@/lib/data/mercury-reviews';
@@ -9,7 +9,7 @@ import { type ActivePromotion } from '@/hooks/useActivePromotions';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
-// Enhanced styles for professional spec sheet
+// Enhanced styles for professional spec sheet - Print Optimized Colors
 const styles = StyleSheet.create({
   page: {
     flexDirection: 'column',
@@ -17,7 +17,19 @@ const styles = StyleSheet.create({
     padding: 12,
     fontFamily: 'Helvetica',
     fontSize: 9,
-    color: '#374151',
+    color: '#1a1a1a', // Primary text - print optimized
+  },
+  
+  // Print-specific styles
+  '@media print': {
+    page: {
+      margin: '0.75in',
+      colorAdjust: 'exact',
+      webkitPrintColorAdjust: 'exact',
+    },
+    priceHighlight: {
+      backgroundColor: '#FFF3CD !important',
+    },
   },
   header: {
     flexDirection: 'row',
@@ -47,12 +59,12 @@ const styles = StyleSheet.create({
   docTitle: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: '#1f2937',
+    color: '#1a1a1a', // Primary text
     marginBottom: 4,
   },
   docDate: {
     fontSize: 9,
-    color: '#6b7280',
+    color: '#333333', // Secondary text
     marginBottom: 8,
   },
   msrpContainer: {
@@ -60,7 +72,7 @@ const styles = StyleSheet.create({
   },
   msrpLabel: {
     fontSize: 10,
-    color: '#6b7280',
+    color: '#333333', // Secondary text
   },
   msrpValue: {
     fontSize: 20,
@@ -86,7 +98,7 @@ const styles = StyleSheet.create({
   },
   motorSubtitle: {
     fontSize: 10,
-    color: '#64748b',
+    color: '#333333', // Secondary text
   },
   overviewBoxes: {
     flexDirection: 'row',
@@ -104,13 +116,13 @@ const styles = StyleSheet.create({
   },
   overviewLabel: {
     fontSize: 7,
-    color: '#6b7280',
+    color: '#333333', // Secondary text
     marginBottom: 2,
   },
   overviewValue: {
     fontSize: 9,
     fontWeight: 'bold',
-    color: '#1f2937',
+    color: '#1a1a1a', // Primary text
   },
   mainContent: {
     flexDirection: 'row',
@@ -143,7 +155,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 11,
     fontWeight: 'bold',
-    color: '#374151',
+    color: '#1a1a1a', // Primary text
   },
   specGrid: {
     gap: 3,
@@ -155,11 +167,11 @@ const styles = StyleSheet.create({
   },
   specLabel: {
     fontSize: 8,
-    color: '#6b7280',
+    color: '#333333', // Secondary text
   },
   specValue: {
     fontSize: 8,
-    color: '#1f2937',
+    color: '#1a1a1a', // Primary text
     fontWeight: 'bold',
   },
   bulletList: {
@@ -167,7 +179,7 @@ const styles = StyleSheet.create({
   },
   bulletItem: {
     fontSize: 7,
-    color: '#374151',
+    color: '#1a1a1a', // Primary text
     paddingLeft: 6,
   },
   warrantyBox: {
@@ -201,12 +213,12 @@ const styles = StyleSheet.create({
   financingTitle: {
     fontSize: 10,
     fontWeight: 'bold',
-    color: '#1f2937',
+    color: '#1a1a1a', // Primary text
     marginBottom: 4,
   },
   financingItem: {
     fontSize: 8,
-    color: '#4b5563',
+    color: '#333333', // Secondary text
     marginBottom: 2,
   },
   modelCodeBox: {
@@ -272,7 +284,7 @@ const styles = StyleSheet.create({
   },
   featureText: {
     fontSize: 8,
-    color: '#374151',
+    color: '#1a1a1a', // Primary text
   },
   contactFooter: {
     marginTop: 4,
@@ -308,7 +320,7 @@ const styles = StyleSheet.create({
   companyName: {
     fontSize: 10,
     fontWeight: 'bold',
-    color: '#1f2937',
+    color: '#1a1a1a', // Primary text
     marginBottom: 4,
   },
   contactRow: {
@@ -318,7 +330,7 @@ const styles = StyleSheet.create({
   },
   contactText: {
     fontSize: 8,
-    color: '#6b7280',
+    color: '#333333', // Secondary text
   },
   ctaText: {
     fontSize: 9,
@@ -329,7 +341,7 @@ const styles = StyleSheet.create({
   },
   motorDescription: {
     fontSize: 10,
-    color: '#374151',
+    color: '#1a1a1a', // Primary text
     textAlign: 'center',
     marginBottom: 8,
     paddingHorizontal: 20,
@@ -414,6 +426,8 @@ export interface CleanSpecSheetData {
     estimatedTopSpeed?: string;
     fuelConsumption?: string;
     operatingRange?: string;
+    soundLevel?: string;
+    maxBoatWeight?: string;
   };
   stockStatus?: string;
   currentPromotion?: {
@@ -833,8 +847,20 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
                 {Object.entries(enhancedSpecs).slice(0, 8).map(([key, value]) => (
                   <View key={key} style={styles.specItem}>
                     <Text style={styles.specLabel}>{key}:</Text>
-                    <Text style={styles.specValue}>{String(value)}</Text>
+                    <Text style={styles.specValue}>{String(value) || 'Contact dealer for specs'}</Text>
                   </View>
+                ))}
+              </View>
+            </View>
+
+            {/* Installation Requirements - MOVED UP for better customer value */}
+            <View style={styles.section}>
+              <View style={styles.sectionHeader}>
+                <Text style={styles.sectionTitle}>Installation Requirements</Text>
+              </View>
+              <View style={styles.bulletList}>
+                {getInstallationRequirements({ hp: hpNumber, model: specData.motorModel } as any).map((req, index) => (
+                  <Text key={index} style={styles.bulletItem}>• {req}</Text>
                 ))}
               </View>
             </View>
@@ -862,30 +888,67 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
                       <Text style={styles.specValue}>{Number(mercurySpecs.max_rpm) - 500}-{mercurySpecs.max_rpm}</Text>
                     </View>
                   )}
-                  {performance.recommendedBoatSize && (
-                    <View style={styles.specItem}>
-                      <Text style={styles.specLabel}>Recommended Boat Size:</Text>
-                      <Text style={styles.specValue}>{performance.recommendedBoatSize}</Text>
-                    </View>
-                  )}
-                  {performance.estimatedTopSpeed && (
-                    <View style={styles.specItem}>
-                      <Text style={styles.specLabel}>Est. Top Speed:</Text>
-                      <Text style={styles.specValue}>{performance.estimatedTopSpeed}</Text>
-                    </View>
-                  )}
-                  {performance.fuelConsumption && (
-                    <View style={styles.specItem}>
-                      <Text style={styles.specLabel}>Fuel Consumption:</Text>
-                      <Text style={styles.specValue}>{performance.fuelConsumption}</Text>
-                    </View>
-                  )}
-                  {performance.operatingRange && (
-                    <View style={styles.specItem}>
-                      <Text style={styles.specLabel}>Operating Range:</Text>
-                      <Text style={styles.specValue}>{performance.operatingRange}</Text>
-                    </View>
-                  )}
+                  <View style={styles.specItem}>
+                    <Text style={styles.specLabel}>Recommended Boat Size:</Text>
+                    <Text style={styles.specValue}>{performance.recommendedBoatSize || getRecommendedBoatSize(hpNumber)}</Text>
+                  </View>
+                  <View style={styles.specItem}>
+                    <Text style={styles.specLabel}>Est. Top Speed:</Text>
+                    <Text style={styles.specValue}>{performance.estimatedTopSpeed || getEstimatedSpeed(hpNumber)}</Text>
+                  </View>
+                </View>
+              </View>
+            )}
+
+            {/* NEW: Operating Specs Section */}
+            <View style={styles.section}>
+              <View style={styles.sectionHeader}>
+                <Text style={styles.sectionTitle}>Operating Specifications</Text>
+              </View>
+              <View style={styles.specGrid}>
+                <View style={styles.specItem}>
+                  <Text style={styles.specLabel}>Fuel Consumption:</Text>
+                  <Text style={styles.specValue}>{performance.fuelConsumption || getFuelConsumption(hpNumber)}</Text>
+                </View>
+                <View style={styles.specItem}>
+                  <Text style={styles.specLabel}>Sound Level:</Text>
+                  <Text style={styles.specValue}>{performance.soundLevel || getSoundLevel(hpNumber)}</Text>
+                </View>
+                <View style={styles.specItem}>
+                  <Text style={styles.specLabel}>Max Boat Weight:</Text>
+                  <Text style={styles.specValue}>{performance.maxBoatWeight || getMaxBoatWeight(hpNumber)}</Text>
+                </View>
+              </View>
+            </View>
+
+            {/* Conditional Section: Portable Motors (≤30HP with tiller) */}
+            {hpNumber <= 30 && isTillerMotor(specData.motorModel) && (
+              <View style={styles.section}>
+                <View style={styles.sectionHeader}>
+                  <Text style={styles.sectionTitle}>Portable Features</Text>
+                </View>
+                <View style={styles.bulletList}>
+                  <Text style={styles.bulletItem}>• Built-in carrying handle for easy transport</Text>
+                  <Text style={styles.bulletItem}>• Lightweight at {enhancedSpecs['Weight'] ? enhancedSpecs['Weight'].split(' ')[0] + ' lbs' : 'Contact dealer'}</Text>
+                  <Text style={styles.bulletItem}>• 30% lighter than comparable competitors</Text>
+                  <Text style={styles.bulletItem}>• Perfect for car-topping and small boat storage</Text>
+                  <Text style={styles.bulletItem}>• No trailer modifications required</Text>
+                </View>
+              </View>
+            )}
+
+            {/* Conditional Section: High-Power Motors (≥115HP) */}
+            {hpNumber >= 115 && (
+              <View style={styles.section}>
+                <View style={styles.sectionHeader}>
+                  <Text style={styles.sectionTitle}>High-Performance Features</Text>
+                </View>
+                <View style={styles.bulletList}>
+                  <Text style={styles.bulletItem}>• Multiple propeller options available</Text>
+                  <Text style={styles.bulletItem}>• Advanced trim system for optimal performance</Text>
+                  <Text style={styles.bulletItem}>• Performance tuning available</Text>
+                  <Text style={styles.bulletItem}>• Enhanced cooling system for extended WOT</Text>
+                  <Text style={styles.bulletItem}>• Professional marine application ready</Text>
                 </View>
               </View>
             )}
@@ -992,21 +1055,6 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               </View>
             </View>
 
-            {/* Installation Requirements Section - Moved from left column */}
-            <View style={styles.section}>
-              <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>Installation Requirements</Text>
-              </View>
-              <View style={styles.bulletList}>
-                {mercurySpecs?.weight_kg && (
-                  <Text style={[styles.bulletItem, { marginBottom: 0.5 }]}>• Dry Weight: {mercurySpecs.weight_kg} kg ({Math.round(mercurySpecs.weight_kg * 2.20462)} lbs)</Text>
-                )}
-                <Text style={[styles.bulletItem, { marginBottom: 0.5 }]}>• Required Transom Height: {getShaftLength(specData.motorModel)}</Text>
-                <Text style={[styles.bulletItem, { marginBottom: 0.5 }]}>• Mercury controls & cables: $800-1,000 (depending on configuration)</Text>
-                <Text style={[styles.bulletItem, { marginBottom: 0.5 }]}>• 24M7 1000CA Starting Battery: $180</Text>
-              </View>
-            </View>
-
             {/* Warranty & Service - Enhanced */}
             <View style={styles.warrantyBox}>
               <Text style={styles.warrantyTitle}>Warranty & Service</Text>
@@ -1030,7 +1078,72 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
                         ))}
                       </>
                     ) : (
-                      <Text style={styles.warrantyItem}>• {warrantyInfo.message}</Text>
+                      <Text style={styles.warrantyItem}>• {warrantyInfo.message || 'Contact dealer for extended warranty options'}</Text>
+                    )}
+                  </>
+                );
+              })()}
+              
+              <Text style={styles.warrantyItem}>• Service: Every 100 hrs or annually</Text>
+              <Text style={styles.warrantyItem}>• Local service at {COMPANY_INFO.name}</Text>
+            </View>
+
+            {/* Financing Options */}
+            {specData.motorPrice && specData.motorPrice > 1000 && (
+              <View style={styles.financingSection}>
+                <Text style={styles.financingTitle}>Financing Options</Text>
+                {(() => {
+                  const price = specData.motorPrice;
+                  const priceWithHST = price * 1.13;
+                  const promoRate = specData.currentPromotion?.rate || null;
+                  const rate = promoRate || 7.99;
+                  const termMonths = getFinancingTerm(price);
+                  
+                  // Calculate all three payment frequencies
+                  const weeklyPayment = calculatePaymentWithFrequency(priceWithHST, 'weekly', promoRate);
+                  const biweeklyPayment = calculatePaymentWithFrequency(priceWithHST, 'bi-weekly', promoRate);
+                  const monthlyPayment = calculatePaymentWithFrequency(priceWithHST, 'monthly', promoRate);
+                  
+                  return (
+                    <>
+                      <Text style={styles.financingItem}>
+                        • Weekly: ${weeklyPayment.payment}/week
+                      </Text>
+                      <Text style={styles.financingItem}>
+                        • Bi-weekly: ${biweeklyPayment.payment}/bi-weekly
+                      </Text>
+                      <Text style={styles.financingItem}>
+                        • Monthly: ${monthlyPayment.payment}/month
+                      </Text>
+                      <Text style={styles.financingItem}>
+                        • Term: {termMonths} months @ {rate.toFixed(2)}% APR
+                      </Text>
+                      {specData.currentPromotion && (
+                        <Text style={styles.financingItem}>• Promotion: {specData.currentPromotion.name}</Text>
+                      )}
+                      <Text style={styles.financingItem}>*Price plus HST • OAC</Text>
+                    </>
+                  );
+                })()}
+              </View>
+            )}
+                
+                return (
+                  <>
+                    {bonusYears > 0 && (
+                      <Text style={styles.warrantyItem}>• Current Promo: +{bonusYears} years bonus ({currentTotalYears} total)</Text>
+                    )}
+                    
+                    {/* Extended Warranty Options */}
+                    {options.length > 0 ? (
+                      <>
+                        <Text style={styles.warrantyTitle}>Extended Coverage Options:</Text>
+                        {options.map((option, index) => (
+                          <Text key={index} style={styles.warrantyOption}>• {option.label}</Text>
+                        ))}
+                      </>
+                    ) : (
+                      <Text style={styles.warrantyItem}>• {warrantyInfo.message || 'Contact dealer for extended warranty options'}</Text>
                     )}
                   </>
                 );

@@ -1421,6 +1421,10 @@ export type Database = {
           model_key: string
         }[]
       }
+      get_motor_operating_specs: {
+        Args: { hp: number; motor_type?: string; specifications?: Json }
+        Returns: Json
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

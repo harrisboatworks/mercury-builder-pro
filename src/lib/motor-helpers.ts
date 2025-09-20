@@ -212,14 +212,63 @@ export const getEstimatedSpeed = (hp: number | string) => {
 
 export const getFuelConsumption = (hp: number | string) => {
   const n = typeof hp === 'string' ? parseInt(hp) : hp;
-  if (n <= 6) return '0.5-1 gph';
-  if (n <= 15) return '1-2 gph';
-  if (n <= 30) return '2-3 gph';
-  if (n <= 60) return '4-6 gph';
-  if (n <= 90) return '7-9 gph';
-  if (n <= 115) return '9-11 gph';
-  if (n <= 150) return '12-15 gph';
-  return '15+ gph';
+  if (n <= 6) return '0.5-1.0 gal/hr @ cruise';
+  if (n <= 15) return '1.0-2.0 gal/hr @ cruise';
+  if (n <= 30) return '2.0-3.5 gal/hr @ cruise';
+  if (n <= 60) return '4.0-6.0 gal/hr @ cruise';
+  if (n <= 90) return '6.5-9.0 gal/hr @ cruise';
+  if (n <= 115) return '8.5-11.0 gal/hr @ cruise';
+  if (n <= 150) return '11.0-15.0 gal/hr @ cruise';
+  return '15+ gal/hr @ cruise';
+};
+
+export const getSoundLevel = (hp: number | string) => {
+  const n = typeof hp === 'string' ? parseInt(hp) : hp;
+  if (n <= 6) return '55 dB @ idle, 75 dB @ WOT';
+  if (n <= 15) return '58 dB @ idle, 78 dB @ WOT';
+  if (n <= 30) return '60 dB @ idle, 80 dB @ WOT';
+  if (n <= 60) return '62 dB @ idle, 82 dB @ WOT';
+  if (n <= 90) return '64 dB @ idle, 84 dB @ WOT';
+  if (n <= 115) return '66 dB @ idle, 86 dB @ WOT';
+  if (n <= 150) return '68 dB @ idle, 88 dB @ WOT';
+  return '70 dB @ idle, 90 dB @ WOT';
+};
+
+export const getMaxBoatWeight = (hp: number | string) => {
+  const n = typeof hp === 'string' ? parseInt(hp) : hp;
+  if (n <= 6) return '1,200 lbs';
+  if (n <= 15) return '2,500 lbs';
+  if (n <= 30) return '3,500 lbs';
+  if (n <= 60) return '5,000 lbs';
+  if (n <= 90) return '6,500 lbs';
+  if (n <= 115) return '8,000 lbs';
+  if (n <= 150) return '10,000 lbs';
+  if (n <= 200) return '12,000 lbs';
+  return '15,000+ lbs';
+};
+
+export const getInstallationRequirements = (motor: Motor): string[] => {
+  const requirements = [];
+  const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
+  
+  // Transom requirement
+  requirements.push(getTransomRequirement(motor));
+  
+  // Battery requirement
+  const batteryReq = getBatteryRequirement(motor);
+  if (batteryReq !== 'Not required (manual start)') {
+    requirements.push(batteryReq);
+  }
+  
+  // Fuel requirement
+  requirements.push(getFuelRequirement(motor));
+  
+  // Controls requirement for high HP motors
+  if (hp >= 40) {
+    requirements.push('Mercury steering system & controls');
+  }
+  
+  return requirements;
 };
 
 export const getRange = (hp: number | string) => {
