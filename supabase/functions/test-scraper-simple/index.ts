@@ -35,7 +35,7 @@ serve(async (req) => {
       body: JSON.stringify({
         url: targetUrl,
         formats: ['html'],
-        waitFor: 5000,           // Wait 5 seconds for JavaScript
+        waitFor: 10000,          // Wait 10 seconds for JavaScript to load inventory
         timeout: 45000,          // 45 second timeout
         onlyMainContent: false,  // Get full page content
         mobile: false,
@@ -57,42 +57,121 @@ serve(async (req) => {
     const data = await response.json()
     console.log('✅ Firecrawl response received')
     
-    // Analyze the HTML content
+    // Enhanced Motor Detection and Analysis
     const html = data.data?.html || ''
     const htmlLength = html.length
     
-    // Look for Mercury motor indicators
-    const mercuryCount = (html.match(/Mercury/gi) || []).length
-    const hpMatches = (html.match(/\d+\s*HP/gi) || []).length
-    const rigCodeMatches = (html.match(/EL[HP]PT|XL|L/gi) || []).length
+    console.log(`📄 HTML Length: ${htmlLength} characters`)
     
-    // Extract sample motor titles (first few)
-    const titleMatches = html.match(/<h[1-6][^>]*>([^<]*(?:Mercury|HP)[^<]*)<\/h[1-6]>/gi) || []
-    const sampleTitles = titleMatches.slice(0, 5).map(match => 
-      match.replace(/<[^>]*>/g, '').trim()
-    )
-
-    console.log(`📊 Analysis: ${htmlLength} chars, ${mercuryCount} "Mercury", ${hpMatches} HP, ${rigCodeMatches} rig codes`)
-    console.log('🏷️ Sample titles:', sampleTitles)
+    // 1. Look for motor-specific patterns
+    const motorPatterns = {
+      mercuryHP: html.match(/Mercury\s+\d+(?:\.\d+)?\s*HP/gi) || [],
+      mercuryModel: html.match(/Mercury\s+\d+(?:\.\d+)?\s*[A-Z]{2,6}(?:\s+[A-Za-z]+)?/gi) || [],
+      stockNumbers: html.match(/Stock\s*[#:]?\s*[A-Z0-9\-]+/gi) || [],
+      prices: html.match(/\$[\d,]+(?:\.\d{2})?/gi) || [],
+      rigCodes: html.match(/\b(EL[HP]PT|EXLPT|XL|XXL|MLH|MXLH|CT|DTS|MH)\b/gi) || []
+    }
+    
+    // 2. Look for inventory container elements
+    const containerPatterns = {
+      vehicleCards: html.match(/<div[^>]*class="[^"]*vehicle[^"]*"[^>]*>/gi) || [],
+      inventoryItems: html.match(/<div[^>]*class="[^"]*inventory[^"]*"[^>]*>/gi) || [],
+      productCards: html.match(/<div[^>]*class="[^"]*product[^"]*"[^>]*>/gi) || [],
+      motorCards: html.match(/<div[^>]*class="[^"]*motor[^"]*"[^>]*>/gi) || [],
+      inventoryLinks: html.match(/<a[^>]*href="[^"]*inventory[^"]*"[^>]*>/gi) || []
+    }
+    
+    // 3. Extract actual motor listings with more context
+    const motorListings = []
+    
+    // Try to find motor listing sections by looking for Mercury + HP combinations
+    const motorSections = html.split(/(?=Mercury\s+\d+)/gi).slice(1, 15) // Get up to 14 sections
+    
+    for (const section of motorSections) {
+      if (section.length > 50) { // Only process substantial sections
+        const motorMatch = section.match(/Mercury\s+(\d+(?:\.\d+)?)\s*([A-Z]{2,6})?(?:\s+([A-Za-z]+))?/i)
+        if (motorMatch) {
+          const stockMatch = section.match(/Stock\s*[#:]?\s*([A-Z0-9\-]+)/i)
+          const priceMatch = section.match(/\$[\d,]+(?:\.\d{2})?/)
+          const yearMatch = section.match(/20\d{2}/)
+          
+          motorListings.push({
+            fullMatch: motorMatch[0],
+            hp: motorMatch[1],
+            rigCode: motorMatch[2] || 'N/A',
+            series: motorMatch[3] || 'N/A',
+            stockNumber: stockMatch ? stockMatch[1] : 'N/A',
+            price: priceMatch ? priceMatch[0] : 'N/A',
+            year: yearMatch ? yearMatch[0] : 'N/A',
+            context: section.substring(0, 200).replace(/\s+/g, ' ').trim()
+          })
+        }
+      }
+    }
+    
+    // 4. Enhanced analysis
+    const totalContainers = Object.values(containerPatterns).reduce((sum, arr) => sum + arr.length, 0)
+    const distinctMotors = new Set(motorPatterns.mercuryModel.map(m => m.trim().toUpperCase())).size
+    
+    console.log(`🔍 Motor Patterns Found:`)
+    console.log(`  - Mercury HP: ${motorPatterns.mercuryHP.length}`)
+    console.log(`  - Mercury Models: ${motorPatterns.mercuryModel.length}`)
+    console.log(`  - Stock Numbers: ${motorPatterns.stockNumbers.length}`)
+    console.log(`  - Prices: ${motorPatterns.prices.length}`)
+    console.log(`  - Rig Codes: ${motorPatterns.rigCodes.length}`)
+    
+    console.log(`📦 Container Elements: ${totalContainers}`)
+    console.log(`🚤 Distinct Motor Listings: ${motorListings.length}`)
+    console.log(`🏷️ Sample Motors:`, motorListings.slice(0, 3))
     
     return new Response(
       JSON.stringify({ 
         success: true, 
-        message: 'Firecrawl test completed successfully',
+        message: 'Enhanced Firecrawl motor detection completed',
         timestamp: new Date().toISOString(),
         duration: `${duration}ms`,
         results: {
           url: targetUrl,
           htmlLength,
-          mercuryMentions: mercuryCount,
-          hpMatches,
-          rigCodeMatches,
-          sampleTitles,
-          hasContent: htmlLength > 10000,
-          likelySuccess: mercuryCount > 5 && hpMatches > 3
+          
+          // Enhanced motor detection
+          motorPatterns: {
+            mercuryHP: motorPatterns.mercuryHP.length,
+            mercuryModels: motorPatterns.mercuryModel.length,
+            stockNumbers: motorPatterns.stockNumbers.length,
+            prices: motorPatterns.prices.length,
+            rigCodes: motorPatterns.rigCodes.length
+          },
+          
+          // Container analysis
+          containers: {
+            total: totalContainers,
+            vehicleCards: containerPatterns.vehicleCards.length,
+            inventoryItems: containerPatterns.inventoryItems.length,
+            productCards: containerPatterns.productCards.length,
+            motorCards: containerPatterns.motorCards.length,
+            inventoryLinks: containerPatterns.inventoryLinks.length
+          },
+          
+          // Actual motor listings
+          motorListings: {
+            count: motorListings.length,
+            distinctMotors,
+            sampleMotors: motorListings.slice(0, 5),
+            expectedCount: 11,
+            foundExpectedCount: motorListings.length >= 10 && motorListings.length <= 15
+          },
+          
+          // Sample data for debugging
+          samplePatterns: {
+            mercuryHP: motorPatterns.mercuryHP.slice(0, 5),
+            stockNumbers: motorPatterns.stockNumbers.slice(0, 5),
+            prices: motorPatterns.prices.slice(0, 5)
+          }
         },
-        // Include first 2000 chars of HTML for inspection
-        htmlSample: html.substring(0, 2000)
+        
+        // Include HTML sample for debugging
+        htmlSample: html.substring(0, 3000)
       }),
       { 
         status: 200, 
