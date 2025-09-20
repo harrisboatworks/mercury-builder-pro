@@ -408,10 +408,15 @@ const styles = StyleSheet.create({
     marginBottom: 1,
   },
   customerQuote: {
-    fontSize: 11,
+    fontSize: 9,
     fontStyle: 'italic',
-    lineHeight: 16,
-    color: '#1a1a1a'
+    lineHeight: 12,
+    color: '#333333',
+    backgroundColor: '#f8f9fa',
+    padding: 3,
+    borderLeft: '2px solid #005587',
+    borderRadius: 2,
+    marginVertical: 3
   },
   dealerTestimonial: {
     fontSize: 10,
@@ -1043,6 +1048,16 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               </View>
             </View>
 
+            {/* Customer Quote Section - MOVED HERE for better layout */}
+            <View wrap={false} style={{marginTop: 3, marginBottom: 3}}>
+              <Text style={{fontSize: 9, fontWeight: 'bold', marginBottom: 2}}>
+                Why Customers Choose This
+              </Text>
+              <Text style={styles.customerQuote}>
+                💬 {getCustomerHighlight(hpNumber)}
+              </Text>
+            </View>
+
             {/* What's Included - Show ALL motor-specific items */}
             <View style={styles.section}>
               <View style={styles.sectionHeader}>
@@ -1117,22 +1132,6 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
 
           {/* Right Column */}
           <View style={styles.rightColumn}>
-
-            {/* Why Customers Choose This Motor Section - EMERGENCY FIX: wrap={false} */}
-            <View wrap={false} style={styles.section}>
-              <Text style={styles.sectionTitle}>Why Customers Choose This Motor</Text>
-              <Text style={styles.customerQuote}>{getCustomerHighlight(hpNumber)}</Text>
-              
-              {/* Show Harris testimonial 30% of the time */}
-              {Math.random() < 0.3 && (
-                <View wrap={false}>
-                  <View style={{height: 8}} />
-                  <Text style={styles.dealerTestimonial}>
-                    {harrisTestimonials[Math.floor(Math.random() * harrisTestimonials.length)]}
-                  </Text>
-                </View>
-              )}
-            </View>
 
             {/* Warranty & Service - Enhanced */}
             <View style={styles.warrantyBox}>
