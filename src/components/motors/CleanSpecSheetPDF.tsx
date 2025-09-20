@@ -6,6 +6,7 @@ import { findMotorSpecs as findMercurySpecs } from '@/lib/data/mercury-motors';
 import { calculateMonthlyPayment, getFinancingDisplay, calculatePaymentWithFrequency, getFinancingTerm } from '@/lib/finance';
 import { getRandomReview, getAllMercuryReviews } from '@/lib/data/mercury-reviews';
 import { type ActivePromotion } from '@/hooks/useActivePromotions';
+import { getCustomerHighlight, harrisTestimonials } from '@/utils/customer-features';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
@@ -237,7 +238,7 @@ const styles = StyleSheet.create({
   },
   modelCodeText: {
     fontSize: 8,
-    color: '#0066cc', // Darker blue for better print visibility
+    color: '#1a1a1a', // Changed from blue to dark gray for printing
     colorAdjust: 'exact',
   },
   promoLine: {
@@ -405,6 +406,19 @@ const styles = StyleSheet.create({
   accessoryItem: {
     fontSize: 8,
     marginBottom: 1,
+  },
+  customerQuote: {
+    fontSize: 11,
+    fontStyle: 'italic',
+    lineHeight: 16,
+    color: '#1a1a1a'
+  },
+  dealerTestimonial: {
+    fontSize: 10,
+    lineHeight: 14,
+    color: '#333333',
+    borderTop: '1px solid #e5e5e5',
+    paddingTop: 8
   },
 });
 
@@ -734,7 +748,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
       selectedMotorSpecs['Shaft Length'] = getShaftLength(specData.motorModel);
     }
     if (!selectedMotorSpecs['Control Type']) {
-      selectedMotorSpecs['Control Type'] = getControlType(specData.motorModel);
+      selectedMotorSpecs['Control Type'] = getControlType(specData.motorModel, enhancedSpecs.controls);
     }
     
     return selectedMotorSpecs;
@@ -767,11 +781,14 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
   };
   
   // Get control type from model code - Fixed Bug 2
-  const getControlType = (model: string) => {
-    const upperModel = model.toUpperCase();
+  const getControlType = (model: string, controls?: string) => {
+    // Use actual controls data if available
+    if (controls) {
+      return controls === 'Tiller Handle' ? 'Tiller' : 'Remote Control';
+    }
     
-    // Bug 2 Fix: Enhanced logic using model code detection
-    // Enhanced logic: check for tiller indicators first
+    // Fallback to model-based detection
+    const upperModel = model.toUpperCase();
     if (upperModel.includes('H') && !upperModel.includes('HP')) return 'Tiller Handle';
     if (upperModel.includes('TILLER')) return 'Tiller Handle';
     
@@ -888,7 +905,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
           </View>
           <View style={styles.overviewBox}>
             <Text style={styles.overviewLabel}>CONTROLS</Text>
-            <Text style={styles.overviewValue}>{getControlType(specData.motorModel)}</Text>
+            <Text style={styles.overviewValue}>{getControlType(specData.motorModel, enhancedSpecs.controls)}</Text>
           </View>
         </View>
 
@@ -1110,18 +1127,20 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
           {/* Right Column */}
           <View style={styles.rightColumn}>
 
-            {/* Customer Review Section - Moved from left column */}
-            <View style={styles.reviewSection}>
-              <Text style={styles.sectionTitle}>Customer Review</Text>
-              <View>
-                <Text style={styles.stars}>★★★★★</Text>
-                <Text style={styles.reviewText}>
-                  "{getReviewText(hpNumber)}"
-                </Text>
-                <Text style={styles.reviewAuthor}>
-                  — {getReviewAuthor(hpNumber)}
-                </Text>
-              </View>
+            {/* Why Customers Choose This Motor Section */}
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Why Customers Choose This Motor</Text>
+              <Text style={styles.customerQuote}>{getCustomerHighlight(hpNumber)}</Text>
+              
+              {/* Show Harris testimonial 30% of the time */}
+              {Math.random() < 0.3 && (
+                <>
+                  <View style={{height: 8}} />
+                  <Text style={styles.dealerTestimonial}>
+                    {harrisTestimonials[Math.floor(Math.random() * harrisTestimonials.length)]}
+                  </Text>
+                </>
+              )}
             </View>
 
             {/* Warranty & Service - Enhanced */}
@@ -1156,6 +1175,25 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               <Text style={styles.warrantyItem}>• Service: Every 100 hrs or annually</Text>
               <Text style={styles.warrantyItem}>• Local service at {COMPANY_INFO.name}</Text>
             </View>
+
+            {/* Operating Specifications - only show if data exists */}
+            {(enhancedSpecs.fuelConsumption || enhancedSpecs.soundLevel || enhancedSpecs.recommendedBoatSize || (hpNumber <= 30 && enhancedSpecs.controls === 'Tiller Handle')) && (
+              <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Operating Specifications</Text>
+                {enhancedSpecs.fuelConsumption && (
+                  <Text>• Fuel Consumption: {enhancedSpecs.fuelConsumption}</Text>
+                )}
+                {enhancedSpecs.soundLevel && (
+                  <Text>• Sound Level: {enhancedSpecs.soundLevel}</Text>
+                )}
+                {enhancedSpecs.recommendedBoatSize && (
+                  <Text>• Recommended Boat Size: {enhancedSpecs.recommendedBoatSize}</Text>
+                )}
+                {hpNumber <= 30 && enhancedSpecs.controls === 'Tiller Handle' && (
+                  <Text>• Portable with carrying handle</Text>
+                )}
+              </View>
+            )}
 
             {/* Financing Options */}
             {specData.motorPrice && specData.motorPrice > 1000 && (
