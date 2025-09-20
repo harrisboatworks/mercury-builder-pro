@@ -87,7 +87,7 @@ export default function MotorSelectionPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedHpRange, setSelectedHpRange] = useState<{ min: number; max: number }>({ min: 0, max: Infinity });
   const [inStockOnly, setInStockOnly] = useState(false);
-  const [mountPointReady, setMountPointReady] = useState(false);
+  
 
   // Auto-trigger background image scraping for motors without images
   const imageScrapeStatus = useAutoImageScraping(motors.map(motor => ({
@@ -339,23 +339,6 @@ export default function MotorSelectionPage() {
     desc.content = 'Choose from our selection of Mercury outboard motors with live pricing and current promotions.';
   }, []);
 
-  // Detect when portal mount point becomes available
-  useEffect(() => {
-    const checkMountPoint = () => {
-      const mountPoint = document.getElementById('sticky-search-mount');
-      if (mountPoint && !mountPointReady) {
-        setMountPointReady(true);
-      } else if (!mountPoint && mountPointReady) {
-        setMountPointReady(false);
-      }
-    };
-    
-    // Check immediately and then on interval
-    checkMountPoint();
-    const interval = setInterval(checkMountPoint, 100);
-    
-    return () => clearInterval(interval);
-  }, [mountPointReady]);
 
   if (loading) {
     return (
@@ -373,20 +356,8 @@ export default function MotorSelectionPage() {
   return (
     <FinancingProvider>
       <QuoteLayout title="Select Mercury Outboard Motor">
-        {/* Search Bar - Portal or Inline Fallback */}
-        <div className="mb-6">
-          <StickySearch
-            searchTerm={searchTerm}
-            selectedHpRange={selectedHpRange}
-            inStockOnly={inStockOnly}
-            onSearchChange={setSearchTerm}
-            onHpRangeChange={setSelectedHpRange}
-            onInStockChange={setInStockOnly}
-          />
-        </div>
-
-        {/* Portal for sticky search when mount point is ready */}
-        {mountPointReady && typeof document !== 'undefined' && 
+        {/* Portal for sticky search */}
+        {typeof document !== 'undefined' && document.getElementById('sticky-search-mount') &&
           createPortal(
             <StickySearch
               searchTerm={searchTerm}
