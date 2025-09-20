@@ -196,7 +196,7 @@ export const QuoteLayout = ({
 
       {/* Sticky Search Bar for Motor Selection */}
       {location.pathname === '/quote/motor-selection' && (
-        <div className="sticky top-[4rem] z-30 bg-background/95 backdrop-blur-sm border-b border-border">
+        <div className="sticky top-[8rem] z-30 bg-background/95 backdrop-blur-sm border-b border-border">
           <div className="container mx-auto px-4 py-3">
             <div id="sticky-search-mount"></div>
           </div>
