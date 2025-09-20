@@ -57,14 +57,53 @@ serve(async (req) => {
     const data = await response.json()
     console.log('✅ Firecrawl response received')
     
-    // Enhanced Motor Detection and Analysis
+    // Get HTML content
     const html = data.data?.html || ''
     const htmlLength = html.length
     
     console.log(`📄 HTML Length: ${htmlLength} characters`)
     
-    // 1. Look for motor-specific patterns
-    const motorPatterns = {
+    // ===== COMPREHENSIVE DEBUGGING =====
+    console.log('\n🔍 DEBUGGING HTML CONTENT:')
+    console.log(`📄 First 2000 characters:\n${html.substring(0, 2000)}`)
+    
+    // 1. BASIC CONTENT CHECKS
+    const hasMercury = html.includes("Mercury")
+    const hasStock = html.includes("Stock") 
+    const hasInventory = html.includes("inventory")
+    const hasError = html.includes("error") || html.includes("Error") || html.includes("404")
+    const hasLogin = html.includes("login") || html.includes("sign in") || html.includes("authenticate")
+    const simpleMercuryCount = (html.match(/Mercury/gi) || []).length
+    
+    console.log(`\n📊 BASIC CONTENT ANALYSIS:`)
+    console.log(`  - Contains "Mercury": ${hasMercury}`)
+    console.log(`  - Contains "Stock": ${hasStock}`)
+    console.log(`  - Contains "inventory": ${hasInventory}`)
+    console.log(`  - Has error indicators: ${hasError}`)
+    console.log(`  - Has login indicators: ${hasLogin}`)
+    console.log(`  - Simple Mercury count: ${simpleMercuryCount}`)
+    
+    // 2. URL ANALYSIS
+    const inventoryUrls = html.match(/href="[^"]*inventory[^"]*"/gi) || []
+    console.log(`  - Inventory URLs found: ${inventoryUrls.length}`)
+    if (inventoryUrls.length > 0) {
+      console.log(`  - Sample URLs: ${inventoryUrls.slice(0, 3)}`)
+    }
+    
+    // 3. PATTERN TESTING - SIMPLE VS ENHANCED
+    console.log(`\n🔍 PATTERN COMPARISON:`)
+    
+    // Simple string-based patterns
+    const simplePatterns = {
+      mercury: (html.match(/Mercury/gi) || []).length,
+      hp: (html.match(/\d+\s*HP/gi) || []).length,  
+      stock: (html.match(/Stock/gi) || []).length,
+      dollar: (html.match(/\$/g) || []).length,
+      outboard: (html.match(/outboard/gi) || []).length
+    }
+    
+    // Enhanced regex patterns (existing)
+    const enhancedPatterns = {
       mercuryHP: html.match(/Mercury\s+\d+(?:\.\d+)?\s*HP/gi) || [],
       mercuryModel: html.match(/Mercury\s+\d+(?:\.\d+)?\s*[A-Z]{2,6}(?:\s+[A-Za-z]+)?/gi) || [],
       stockNumbers: html.match(/Stock\s*[#:]?\s*[A-Z0-9\-]+/gi) || [],
@@ -72,7 +111,21 @@ serve(async (req) => {
       rigCodes: html.match(/\b(EL[HP]PT|EXLPT|XL|XXL|MLH|MXLH|CT|DTS|MH)\b/gi) || []
     }
     
-    // 2. Look for inventory container elements
+    console.log(`Simple patterns:`)
+    console.log(`  - Mercury mentions: ${simplePatterns.mercury}`)
+    console.log(`  - HP mentions: ${simplePatterns.hp}`)
+    console.log(`  - Stock mentions: ${simplePatterns.stock}`)
+    console.log(`  - Dollar signs: ${simplePatterns.dollar}`)
+    console.log(`  - Outboard mentions: ${simplePatterns.outboard}`)
+    
+    console.log(`Enhanced patterns:`)
+    console.log(`  - Mercury HP: ${enhancedPatterns.mercuryHP.length}`)
+    console.log(`  - Mercury Models: ${enhancedPatterns.mercuryModel.length}`)
+    console.log(`  - Stock Numbers: ${enhancedPatterns.stockNumbers.length}`)
+    console.log(`  - Prices: ${enhancedPatterns.prices.length}`)
+    console.log(`  - Rig Codes: ${enhancedPatterns.rigCodes.length}`)
+    
+    // 4. CONTAINER ANALYSIS
     const containerPatterns = {
       vehicleCards: html.match(/<div[^>]*class="[^"]*vehicle[^"]*"[^>]*>/gi) || [],
       inventoryItems: html.match(/<div[^>]*class="[^"]*inventory[^"]*"[^>]*>/gi) || [],
@@ -81,66 +134,85 @@ serve(async (req) => {
       inventoryLinks: html.match(/<a[^>]*href="[^"]*inventory[^"]*"[^>]*>/gi) || []
     }
     
-    // 3. Extract actual motor listings with more context
-    const motorListings = []
+    const totalContainers = Object.values(containerPatterns).reduce((sum, arr) => sum + arr.length, 0)
+    console.log(`\n📦 CONTAINER ELEMENTS: ${totalContainers}`)
+    Object.entries(containerPatterns).forEach(([key, arr]) => {
+      console.log(`  - ${key}: ${arr.length}`)
+    })
     
-    // Try to find motor listing sections by looking for Mercury + HP combinations
-    const motorSections = html.split(/(?=Mercury\s+\d+)/gi).slice(1, 15) // Get up to 14 sections
+    // 5. SHOW SAMPLES OF WHAT WE FOUND
+    if (enhancedPatterns.mercuryHP.length > 0) {
+      console.log(`\n🏷️ SAMPLE MERCURY HP MATCHES: ${enhancedPatterns.mercuryHP.slice(0, 5)}`)
+    }
+    if (enhancedPatterns.stockNumbers.length > 0) {
+      console.log(`📦 SAMPLE STOCK NUMBERS: ${enhancedPatterns.stockNumbers.slice(0, 5)}`)
+    }
+    if (enhancedPatterns.prices.length > 0) {
+      console.log(`💰 SAMPLE PRICES: ${enhancedPatterns.prices.slice(0, 5)}`)
+    }
+    
+    // 6. TRY TO EXTRACT MOTOR LISTINGS (keep existing logic but simplified)
+    const motorListings = []
+    const motorSections = html.split(/(?=Mercury\s+\d+)/gi).slice(1, 15)
     
     for (const section of motorSections) {
-      if (section.length > 50) { // Only process substantial sections
+      if (section.length > 50) {
         const motorMatch = section.match(/Mercury\s+(\d+(?:\.\d+)?)\s*([A-Z]{2,6})?(?:\s+([A-Za-z]+))?/i)
         if (motorMatch) {
           const stockMatch = section.match(/Stock\s*[#:]?\s*([A-Z0-9\-]+)/i)
           const priceMatch = section.match(/\$[\d,]+(?:\.\d{2})?/)
-          const yearMatch = section.match(/20\d{2}/)
           
           motorListings.push({
             fullMatch: motorMatch[0],
             hp: motorMatch[1],
             rigCode: motorMatch[2] || 'N/A',
-            series: motorMatch[3] || 'N/A',
             stockNumber: stockMatch ? stockMatch[1] : 'N/A',
             price: priceMatch ? priceMatch[0] : 'N/A',
-            year: yearMatch ? yearMatch[0] : 'N/A',
-            context: section.substring(0, 200).replace(/\s+/g, ' ').trim()
+            context: section.substring(0, 150).replace(/\s+/g, ' ').trim()
           })
         }
       }
     }
     
-    // 4. Enhanced analysis
-    const totalContainers = Object.values(containerPatterns).reduce((sum, arr) => sum + arr.length, 0)
-    const distinctMotors = new Set(motorPatterns.mercuryModel.map(m => m.trim().toUpperCase())).size
+    console.log(`\n🚤 FINAL ANALYSIS:`)
+    console.log(`  - Motor sections found: ${motorSections.length}`)
+    console.log(`  - Motor listings extracted: ${motorListings.length}`)
     
-    console.log(`🔍 Motor Patterns Found:`)
-    console.log(`  - Mercury HP: ${motorPatterns.mercuryHP.length}`)
-    console.log(`  - Mercury Models: ${motorPatterns.mercuryModel.length}`)
-    console.log(`  - Stock Numbers: ${motorPatterns.stockNumbers.length}`)
-    console.log(`  - Prices: ${motorPatterns.prices.length}`)
-    console.log(`  - Rig Codes: ${motorPatterns.rigCodes.length}`)
-    
-    console.log(`📦 Container Elements: ${totalContainers}`)
-    console.log(`🚤 Distinct Motor Listings: ${motorListings.length}`)
-    console.log(`🏷️ Sample Motors:`, motorListings.slice(0, 3))
+    if (motorListings.length > 0) {
+      console.log(`🏷️ Sample Motors: ${motorListings.slice(0, 3).map(m => m.fullMatch)}`)
+    } else {
+      console.log(`🏷️ Sample Motors: []`)
+    }
     
     return new Response(
       JSON.stringify({ 
         success: true, 
-        message: 'Enhanced Firecrawl motor detection completed',
+        message: 'Comprehensive debugging analysis completed',
         timestamp: new Date().toISOString(),
         duration: `${duration}ms`,
         results: {
           url: targetUrl,
           htmlLength,
           
-          // Enhanced motor detection
-          motorPatterns: {
-            mercuryHP: motorPatterns.mercuryHP.length,
-            mercuryModels: motorPatterns.mercuryModel.length,
-            stockNumbers: motorPatterns.stockNumbers.length,
-            prices: motorPatterns.prices.length,
-            rigCodes: motorPatterns.rigCodes.length
+          // Basic content analysis
+          basicAnalysis: {
+            hasMercury,
+            hasStock,
+            hasInventory,
+            hasError,
+            hasLogin,
+            simpleMercuryCount,
+            inventoryUrlsFound: inventoryUrls.length
+          },
+          
+          // Pattern comparison
+          simplePatterns,
+          enhancedPatterns: {
+            mercuryHP: enhancedPatterns.mercuryHP.length,
+            mercuryModel: enhancedPatterns.mercuryModel.length,
+            stockNumbers: enhancedPatterns.stockNumbers.length,
+            prices: enhancedPatterns.prices.length,
+            rigCodes: enhancedPatterns.rigCodes.length
           },
           
           // Container analysis
@@ -153,25 +225,34 @@ serve(async (req) => {
             inventoryLinks: containerPatterns.inventoryLinks.length
           },
           
-          // Actual motor listings
+          // Motor listings
           motorListings: {
             count: motorListings.length,
-            distinctMotors,
             sampleMotors: motorListings.slice(0, 5),
-            expectedCount: 11,
-            foundExpectedCount: motorListings.length >= 10 && motorListings.length <= 15
+            motorSectionsFound: motorSections.length
           },
           
-          // Sample data for debugging
-          samplePatterns: {
-            mercuryHP: motorPatterns.mercuryHP.slice(0, 5),
-            stockNumbers: motorPatterns.stockNumbers.slice(0, 5),
-            prices: motorPatterns.prices.slice(0, 5)
+          // Debugging samples
+          sampleData: {
+            mercuryHPMatches: enhancedPatterns.mercuryHP.slice(0, 5),
+            stockNumbers: enhancedPatterns.stockNumbers.slice(0, 5),
+            prices: enhancedPatterns.prices.slice(0, 5),
+            inventoryUrls: inventoryUrls.slice(0, 3)
           }
         },
         
-        // Include HTML sample for debugging
-        htmlSample: html.substring(0, 3000)
+        // Critical debugging info
+        htmlSample: html.substring(0, 2000),
+        troubleshootingNotes: [
+          hasMercury ? "✅ HTML contains 'Mercury'" : "❌ HTML does NOT contain 'Mercury'",
+          hasStock ? "✅ HTML contains 'Stock'" : "❌ HTML does NOT contain 'Stock'",
+          hasInventory ? "✅ HTML contains 'inventory'" : "❌ HTML does NOT contain 'inventory'",
+          hasError ? "⚠️ HTML may contain error content" : "✅ No error indicators found",
+          hasLogin ? "⚠️ HTML may require authentication" : "✅ No login requirements detected",
+          `📊 Simple Mercury count: ${simpleMercuryCount}`,
+          `📦 Total containers: ${totalContainers}`,
+          `🚤 Motor listings extracted: ${motorListings.length}`
+        ]
       }),
       { 
         status: 200, 
