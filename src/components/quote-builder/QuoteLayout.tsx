@@ -124,7 +124,7 @@ export const QuoteLayout = ({
               <Link to="/" className="flex items-center space-x-4">
                 <img src={harrisLogo} alt="Harris Boat Works" className="h-6 w-auto sm:h-8 md:h-10 lg:h-12" />
                 <div className="h-4 sm:h-6 md:h-8 lg:h-10 w-px bg-border"></div>
-                <img src={mercuryLogo} alt="Mercury Marine" className="h-4 w-auto sm:h-6 md:h-8 lg:h-10" />
+                <img src={mercuryLogo} alt="Mercury Marine" className="h-4 w-auto sm:h-6 md:h-8 lg:h-10 mr-3 sm:mr-4" />
               </Link>
               <div className="hidden lg:block">
                 <h1 className="text-2xl font-bold text-foreground">
@@ -134,7 +134,7 @@ export const QuoteLayout = ({
               </div>
             </div>
             
-            <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-4">
+            <div className="flex items-center space-x-3 sm:space-x-3 md:space-x-4 pr-2">
               <CartHeader />
               <div className="flex-shrink-0">
                 <ChatWidget />
