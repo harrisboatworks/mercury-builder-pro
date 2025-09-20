@@ -7,12 +7,27 @@ export function ScrollToTop() {
   const { isScrollLocked, getScrollLockReason } = useScrollCoordination();
 
   useEffect(() => {
-    // Check if scroll is locked by modal or other components
+    // Enhanced modal detection - check multiple sources
     if (isScrollLocked()) {
       console.log('⏸️ ScrollToTop skipped - scroll locked by:', getScrollLockReason());
       return;
     }
-    // Increase delay to ensure complex components are fully rendered
+
+    // DOM-based modal detection as additional safeguard
+    const activeModals = document.querySelectorAll('[role="dialog"], .fixed.inset-0, [data-state="open"]');
+    if (activeModals.length > 0) {
+      console.log('⏸️ ScrollToTop skipped - active modals found:', activeModals.length);
+      return;
+    }
+
+    // Check for body position fixed (modal scroll lock indicator)
+    const bodyStyle = window.getComputedStyle(document.body);
+    if (bodyStyle.position === 'fixed') {
+      console.log('⏸️ ScrollToTop skipped - body scroll locked');
+      return;
+    }
+
+    // Increased delay to ensure modal transitions complete
     const timer = setTimeout(() => {
       // Calculate dynamic header height with better element detection
       const header = document.querySelector('header') as HTMLElement;

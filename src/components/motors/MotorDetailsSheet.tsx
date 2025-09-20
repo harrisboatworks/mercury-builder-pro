@@ -157,10 +157,11 @@ export default function MotorDetailsSheet({
               }
               
               // Release scroll lock after restoration is complete
+              // Extended delay to prevent ScrollToTop interference
               setTimeout(() => {
                 setScrollLock(false, 'modal-closed');
                 restoreInProgress = false;
-              }, 100);
+              }, 200);
               
             }, 50);
           }, 25);
