@@ -390,34 +390,6 @@ export default function MotorDetailsSheet({
                   </h2>
                 </div>
                 
-                {/* Mobile Price & Badges - visible on small screens only */}
-                <div className="block md:hidden mt-3 space-y-2">
-                  <div className="text-center">
-                    <p className="text-2xl font-bold text-slate-900 dark:text-white">
-                      {typeof price === "number" ? money(price) : 'Call for Price'}
-                    </p>
-                  </div>
-                  
-                  <div className="flex flex-wrap items-center justify-center gap-2">
-                    {/* Warranty Badge */}
-                    <div className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-3 py-1 rounded-full text-sm font-medium">
-                      +2Y Warranty
-                    </div>
-                    
-                    {/* Promotional Content */}
-                    {promoText && (
-                      <div className="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-3 py-1 rounded-full text-sm font-medium">
-                        {promoText}
-                      </div>
-                    )}
-                    {activePromo && (
-                      <div className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium">
-                        {activePromo.rate}% Financing
-                      </div>
-                    )}
-                  </div>
-                </div>
-                
                 {/* Tablet Price & Promo Row */}
                 <div className="hidden md:flex md:items-center md:justify-between md:gap-4 lg:hidden">
                   <div className="flex items-center gap-4">
@@ -1130,10 +1102,17 @@ export default function MotorDetailsSheet({
                     <p className="text-base font-bold text-slate-900 dark:text-white">
                       {typeof price === "number" ? money(price) : 'Call for Price'}
                     </p>
-                    <p className="text-xs text-green-600 dark:text-green-400">+2Y Warranty</p>
+                    {promoText && (
+                      <p className="text-xs text-orange-600 dark:text-orange-400">{promoText}</p>
+                    )}
                   </div>
                   <div className="text-right">
                     {typeof price === "number" && <MonthlyPaymentDisplay motorPrice={price} />}
+                    {activePromo && (
+                      <p className="text-xs text-blue-600 dark:text-blue-400 mt-1">
+                        {activePromo.rate}% APR
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
