@@ -219,8 +219,22 @@ serve(async (req) => {
       }
     }
 
-    // Reset all motors to out of stock first
-    console.log('🔄 Resetting all motors to out of stock...');
+    // Reset all motors to out of stock first (preserve manually excluded motors)
+    console.log('🔄 Resetting all motors to out of stock (preserving excluded motors)...');
+    
+    // Check for motors that would be reset but are excluded
+    const { data: excludedMotors } = await supabase
+      .from('motor_models')
+      .select('id, model_display, availability')
+      .eq('is_brochure', true)
+      .eq('availability', 'Exclude');
+    
+    if (excludedMotors && excludedMotors.length > 0) {
+      console.log(`📌 Preserving ${excludedMotors.length} manually excluded motors:`, 
+        excludedMotors.map(m => m.model_display).slice(0, 5).join(', ') + 
+        (excludedMotors.length > 5 ? '...' : ''));
+    }
+    
     await supabase
       .from('motor_models')
       .update({ 
@@ -228,7 +242,8 @@ serve(async (req) => {
         stock_quantity: 0,
         last_stock_check: new Date().toISOString()
       })
-      .eq('is_brochure', true);
+      .eq('is_brochure', true)
+      .neq('availability', 'Exclude'); // Don't reset manually excluded motors
 
     // Track stock counts by title for duplicate handling
     const stockMap = new Map<string, number>();
