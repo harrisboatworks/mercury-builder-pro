@@ -141,20 +141,44 @@ serve(async (req) => {
       console.log(`  - Sample URLs: ${inventoryUrls.slice(0, 3)}`)
     }
     
-    // 3. PATTERN TESTING - SIMPLE VS ENHANCED
+    // 3. URL-BASED PATTERN EXTRACTION (Updated for Harris Boatworks)
     console.log(`\n🔍 PATTERN COMPARISON:`)
     
-    // Simple string-based patterns
-    const simplePatterns = {
-      mercury: (html.match(/Mercury/gi) || []).length,
-      hp: (html.match(/\d+\s*HP/gi) || []).length,  
-      stock: (html.match(/Stock/gi) || []).length,
-      dollar: (html.match(/\$/g) || []).length,
-      outboard: (html.match(/outboard/gi) || []).length
+    // Extract Mercury inventory URLs (the key discovery!)
+    const mercuryInventoryUrls = html.match(/href="[^"]*\/inventory\/[^"]*mercury[^"]*hp[^"]*"/gi) || []
+    console.log('🚤 Mercury Inventory URLs found:', mercuryInventoryUrls.length)
+    
+    // Parse motors from URLs
+    const urlBasedMotors = []
+    mercuryInventoryUrls.forEach(urlMatch => {
+      const url = urlMatch.match(/href="([^"]*)"/)?.[1] || ''
+      const urlPath = url.split('/').pop() || ''
+      
+      // Parse URL format: 2025-mercury-pro-xs-115hp-exlpt-gores-landing-on-k0k-2e0-12754476i
+      const motorMatch = urlPath.match(/(\d{4})-mercury-([^-]+(?:-[^-]+)*)-(\d+)hp-([^-]+)/)
+      if (motorMatch) {
+        const [, year, model, hp, rigCode] = motorMatch
+        urlBasedMotors.push({
+          year,
+          brand: 'Mercury', 
+          model: model.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+          hp: parseInt(hp),
+          rigCode: rigCode.toUpperCase(),
+          url: url,
+          stockId: urlPath.split('-').pop() // Last segment might be stock ID
+        })
+      }
+    })
+    
+    console.log('🎯 NEW URL-BASED EXTRACTION:', urlBasedMotors.length)
+    if (urlBasedMotors.length > 0) {
+      console.log('Sample parsed motors:', urlBasedMotors.slice(0, 3).map(m => 
+        `${m.brand} ${m.hp}HP ${m.model} ${m.rigCode}`
+      ))
     }
     
-    // Enhanced regex patterns (existing)
-    const enhancedPatterns = {
+    // Legacy patterns (for comparison)
+    const legacyPatterns = {
       mercuryHP: html.match(/Mercury\s+\d+(?:\.\d+)?\s*HP/gi) || [],
       mercuryModel: html.match(/Mercury\s+\d+(?:\.\d+)?\s*[A-Z]{2,6}(?:\s+[A-Za-z]+)?/gi) || [],
       stockNumbers: html.match(/Stock\s*[#:]?\s*[A-Z0-9\-]+/gi) || [],
@@ -162,19 +186,28 @@ serve(async (req) => {
       rigCodes: html.match(/\b(EL[HP]PT|EXLPT|XL|XXL|MLH|MXLH|CT|DTS|MH)\b/gi) || []
     }
     
-    console.log(`Simple patterns:`)
-    console.log(`  - Mercury mentions: ${simplePatterns.mercury}`)
-    console.log(`  - HP mentions: ${simplePatterns.hp}`)
-    console.log(`  - Stock mentions: ${simplePatterns.stock}`)
-    console.log(`  - Dollar signs: ${simplePatterns.dollar}`)
-    console.log(`  - Outboard mentions: ${simplePatterns.outboard}`)
+    // Basic counts
+    const basicCounts = {
+      mercury: (html.match(/Mercury/gi) || []).length,
+      hp: (html.match(/hp/gi) || []).length,
+      stock: (html.match(/Stock/gi) || []).length,
+      dollar: (html.match(/\$/g) || []).length,
+      outboard: (html.match(/outboard/gi) || []).length
+    }
     
-    console.log(`Enhanced patterns:`)
-    console.log(`  - Mercury HP: ${enhancedPatterns.mercuryHP.length}`)
-    console.log(`  - Mercury Models: ${enhancedPatterns.mercuryModel.length}`)
-    console.log(`  - Stock Numbers: ${enhancedPatterns.stockNumbers.length}`)
-    console.log(`  - Prices: ${enhancedPatterns.prices.length}`)
-    console.log(`  - Rig Codes: ${enhancedPatterns.rigCodes.length}`)
+    console.log(`Simple patterns:`)
+    console.log(`  - Mercury mentions: ${basicCounts.mercury}`)
+    console.log(`  - HP mentions: ${basicCounts.hp}`)
+    console.log(`  - Stock mentions: ${basicCounts.stock}`)
+    console.log(`  - Dollar signs: ${basicCounts.dollar}`)
+    console.log(`  - Outboard mentions: ${basicCounts.outboard}`)
+    
+    console.log(`Legacy text-based patterns:`)
+    console.log(`  - Mercury HP: ${legacyPatterns.mercuryHP.length}`)
+    console.log(`  - Mercury Models: ${legacyPatterns.mercuryModel.length}`)
+    console.log(`  - Stock Numbers: ${legacyPatterns.stockNumbers.length}`)
+    console.log(`  - Prices: ${legacyPatterns.prices.length}`)
+    console.log(`  - Rig Codes: ${legacyPatterns.rigCodes.length}`)
     
     // 4. CONTAINER ANALYSIS
     const containerPatterns = {
@@ -192,45 +225,29 @@ serve(async (req) => {
     })
     
     // 5. SHOW SAMPLES OF WHAT WE FOUND
-    if (enhancedPatterns.mercuryHP.length > 0) {
-      console.log(`\n🏷️ SAMPLE MERCURY HP MATCHES: ${enhancedPatterns.mercuryHP.slice(0, 5)}`)
+    if (urlBasedMotors.length > 0) {
+      console.log(`\n🏷️ SAMPLE URL-BASED MOTORS: ${urlBasedMotors.slice(0, 3).map(m => 
+        `${m.brand} ${m.hp}HP ${m.model} ${m.rigCode}`
+      )}`)
     }
-    if (enhancedPatterns.stockNumbers.length > 0) {
-      console.log(`📦 SAMPLE STOCK NUMBERS: ${enhancedPatterns.stockNumbers.slice(0, 5)}`)
+    if (legacyPatterns.stockNumbers.length > 0) {
+      console.log(`📦 SAMPLE STOCK NUMBERS: ${legacyPatterns.stockNumbers.slice(0, 5)}`)
     }
-    if (enhancedPatterns.prices.length > 0) {
-      console.log(`💰 SAMPLE PRICES: ${enhancedPatterns.prices.slice(0, 5)}`)
+    if (legacyPatterns.prices.length > 0) {
+      console.log(`💰 SAMPLE PRICES: ${legacyPatterns.prices.slice(0, 5)}`)
     }
     
-    // 6. TRY TO EXTRACT MOTOR LISTINGS (keep existing logic but simplified)
-    const motorListings = []
-    const motorSections = html.split(/(?=Mercury\s+\d+)/gi).slice(1, 15)
-    
-    for (const section of motorSections) {
-      if (section.length > 50) {
-        const motorMatch = section.match(/Mercury\s+(\d+(?:\.\d+)?)\s*([A-Z]{2,6})?(?:\s+([A-Za-z]+))?/i)
-        if (motorMatch) {
-          const stockMatch = section.match(/Stock\s*[#:]?\s*([A-Z0-9\-]+)/i)
-          const priceMatch = section.match(/\$[\d,]+(?:\.\d{2})?/)
-          
-          motorListings.push({
-            fullMatch: motorMatch[0],
-            hp: motorMatch[1],
-            rigCode: motorMatch[2] || 'N/A',
-            stockNumber: stockMatch ? stockMatch[1] : 'N/A',
-            price: priceMatch ? priceMatch[0] : 'N/A',
-            context: section.substring(0, 150).replace(/\s+/g, ' ').trim()
-          })
-        }
-      }
-    }
+    // 6. ENHANCED MOTOR EXTRACTION FROM URLs
+    const motorListings = urlBasedMotors // Use URL-based extraction instead
     
     console.log(`\n🚤 FINAL ANALYSIS:`)
-    console.log(`  - Motor sections found: ${motorSections.length}`)
+    console.log(`  - Motor sections found: ${mercuryInventoryUrls.length}`)
     console.log(`  - Motor listings extracted: ${motorListings.length}`)
     
     if (motorListings.length > 0) {
-      console.log(`🏷️ Sample Motors: ${motorListings.slice(0, 3).map(m => m.fullMatch)}`)
+      console.log(`🏷️ Sample Motors: ${motorListings.slice(0, 3).map(m => 
+        `${m.brand} ${m.hp}HP ${m.model} ${m.rigCode}`
+      )}`)
     } else {
       console.log(`🏷️ Sample Motors: []`)
     }
@@ -256,14 +273,22 @@ serve(async (req) => {
             inventoryUrlsFound: inventoryUrls.length
           },
           
-          // Pattern comparison
-          simplePatterns,
-          enhancedPatterns: {
-            mercuryHP: enhancedPatterns.mercuryHP.length,
-            mercuryModel: enhancedPatterns.mercuryModel.length,
-            stockNumbers: enhancedPatterns.stockNumbers.length,
-            prices: enhancedPatterns.prices.length,
-            rigCodes: enhancedPatterns.rigCodes.length
+          // Pattern comparison  
+          basicCounts,
+          legacyPatterns: {
+            mercuryHP: legacyPatterns.mercuryHP.length,
+            mercuryModel: legacyPatterns.mercuryModel.length,
+            stockNumbers: legacyPatterns.stockNumbers.length,
+            prices: legacyPatterns.prices.length,
+            rigCodes: legacyPatterns.rigCodes.length
+          },
+          
+          // NEW: URL-based extraction results
+          urlBasedExtraction: {
+            mercuryInventoryUrls: mercuryInventoryUrls.length,
+            parsedMotors: urlBasedMotors.length,
+            sampleUrls: mercuryInventoryUrls.slice(0, 3),
+            sampleMotors: urlBasedMotors.slice(0, 3)
           },
           
           // Container analysis
