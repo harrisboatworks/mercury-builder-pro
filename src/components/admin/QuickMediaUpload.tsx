@@ -160,23 +160,30 @@ export function QuickMediaUpload({ motorId, onUploadComplete }: QuickMediaUpload
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <h3 className="text-lg font-semibold">Quick Upload</h3>
+      <div className="flex items-center gap-2 mb-4">
+        <Upload className="h-5 w-5 text-primary" />
+        <h3 className="text-lg font-semibold text-primary">Upload New Media</h3>
       </div>
 
       {/* Upload Zone */}
       <div
-        className={`border-2 border-dashed rounded-lg p-6 text-center transition-colors ${
-          dragActive ? 'border-primary bg-primary/10' : 'border-muted-foreground/25'
+        className={`border-2 border-dashed rounded-lg p-8 text-center transition-all cursor-pointer ${
+          dragActive 
+            ? 'border-primary bg-primary/10 shadow-lg' 
+            : 'border-gray-300 hover:border-primary hover:bg-primary/5 hover:shadow-md'
         }`}
         onDragEnter={handleDrag}
         onDragLeave={handleDrag}
         onDragOver={handleDrag}
         onDrop={handleDrop}
+        onClick={() => document.getElementById('file-upload')?.click()}
       >
-        <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
-        <p className="text-sm text-muted-foreground mb-2">
-          Drag & drop files here, or click to select
+        <Upload className="h-12 w-12 mx-auto mb-3 text-primary" />
+        <p className="text-lg font-medium text-gray-700 mb-1">
+          Drop files here or click to browse
+        </p>
+        <p className="text-sm text-gray-500 mb-4">
+          Supports images, videos, PDFs, and documents
         </p>
         <input
           type="file"
@@ -186,14 +193,10 @@ export function QuickMediaUpload({ motorId, onUploadComplete }: QuickMediaUpload
           className="hidden"
           id="file-upload"
         />
-        <Label htmlFor="file-upload">
-          <Button variant="outline" size="sm" asChild>
-            <span>
-              <Plus className="h-4 w-4 mr-2" />
-              Select Files
-            </span>
-          </Button>
-        </Label>
+        <Button variant="outline" size="sm" className="pointer-events-none">
+          <Plus className="h-4 w-4 mr-2" />
+          Select Files
+        </Button>
       </div>
 
       {/* File List */}

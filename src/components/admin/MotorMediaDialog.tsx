@@ -294,65 +294,72 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
                 <div className="text-muted-foreground">Loading media...</div>
               </div>
             ) : (
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 overflow-hidden">
-                {/* Assigned Media */}
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">
-                      Assigned Media ({assignedMedia.length})
-                    </h3>
-                  </div>
+               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 overflow-hidden">
+                 {/* Quick Upload - First column for better visibility */}
+                 <div className="space-y-4">
+                   <div className="flex items-center justify-between">
+                     <h3 className="text-lg font-semibold text-primary">
+                       Quick Upload
+                     </h3>
+                   </div>
+                   <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
+                     <QuickMediaUpload 
+                       motorId={motor.id}
+                       onUploadComplete={loadMediaData}
+                     />
+                   </div>
+                 </div>
 
-                  <ScrollArea className="h-96">
-                    <div className="space-y-3">
-                      {assignedMedia.map((media) => (
-                        <MediaCard key={media.id} media={media} isAssigned={true} />
-                      ))}
-                      
-                      {assignedMedia.length === 0 && (
-                        <div className="text-center py-8 text-muted-foreground">
-                          <Upload className="h-8 w-8 mx-auto mb-2 opacity-50" />
-                          <p>No media assigned to this motor yet.</p>
-                          <p className="text-sm">Select media from the available list to assign.</p>
-                        </div>
-                      )}
-                    </div>
-                  </ScrollArea>
-                </div>
+                 {/* Assigned Media */}
+                 <div className="space-y-4">
+                   <div className="flex items-center justify-between">
+                     <h3 className="text-lg font-semibold">
+                       Assigned Media ({assignedMedia.length})
+                     </h3>
+                   </div>
 
-                {/* Available Media */}
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">
-                      Available Media ({availableMedia.length})
-                    </h3>
-                  </div>
+                   <ScrollArea className="h-96">
+                     <div className="space-y-3">
+                       {assignedMedia.map((media) => (
+                         <MediaCard key={media.id} media={media} isAssigned={true} />
+                       ))}
+                       
+                       {assignedMedia.length === 0 && (
+                         <div className="text-center py-8 text-muted-foreground">
+                           <Upload className="h-8 w-8 mx-auto mb-2 opacity-50" />
+                           <p>No media assigned to this motor yet.</p>
+                           <p className="text-sm">Select media from the available list to assign.</p>
+                         </div>
+                       )}
+                     </div>
+                   </ScrollArea>
+                 </div>
 
-                  <ScrollArea className="h-96">
-                    <div className="space-y-3">
-                      {availableMedia.map((media) => (
-                        <MediaCard key={media.id} media={media} isAssigned={false} />
-                      ))}
-                      
-                      {availableMedia.length === 0 && (
-                        <div className="text-center py-8 text-muted-foreground">
-                          <FileText className="h-8 w-8 mx-auto mb-2 opacity-50" />
-                          <p>No unassigned media available.</p>
-                          <p className="text-sm">Upload new media in the Motor Images section.</p>
-                        </div>
-                      )}
-                    </div>
-                  </ScrollArea>
-                </div>
+                 {/* Available Media */}
+                 <div className="space-y-4">
+                   <div className="flex items-center justify-between">
+                     <h3 className="text-lg font-semibold">
+                       Available Media ({availableMedia.length})
+                     </h3>
+                   </div>
 
-                {/* Quick Upload */}
-                <div className="space-y-4">
-                  <QuickMediaUpload 
-                    motorId={motor.id}
-                    onUploadComplete={loadMediaData}
-                  />
-                </div>
-              </div>
+                   <ScrollArea className="h-96">
+                     <div className="space-y-3">
+                       {availableMedia.map((media) => (
+                         <MediaCard key={media.id} media={media} isAssigned={false} />
+                       ))}
+                       
+                       {availableMedia.length === 0 && (
+                         <div className="text-center py-8 text-muted-foreground">
+                           <FileText className="h-8 w-8 mx-auto mb-2 opacity-50" />
+                           <p>No unassigned media available.</p>
+                           <p className="text-sm">Upload new media using Quick Upload.</p>
+                         </div>
+                       )}
+                     </div>
+                   </ScrollArea>
+                 </div>
+               </div>
             )}
           </TabsContent>
 
