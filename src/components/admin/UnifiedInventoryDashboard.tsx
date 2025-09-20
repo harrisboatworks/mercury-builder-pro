@@ -150,6 +150,10 @@ export function UnifiedInventoryDashboard() {
   const [comparison, setComparison] = useState<InventoryComparison[]>([]);
   const [syncStatus, setSyncStatus] = useState<string>('');
 
+  // Firecrawl Test State
+  const [firecrawlTesting, setFirecrawlTesting] = useState(false);
+  const [firecrawlResults, setFirecrawlResults] = useState<any>(null);
+
   const { toast: uiToast } = useToast();
 
   // Live Inventory Functions
@@ -657,6 +661,56 @@ export function UnifiedInventoryDashboard() {
       setComparison(comparisonData);
     } catch (err: any) {
       setSyncStatus(`Analysis error: ${err.message}`);
+    }
+  };
+
+  const testFirecrawl = async () => {
+    setFirecrawlTesting(true);
+    setFirecrawlResults(null);
+    
+    try {
+      uiToast({
+        title: "Testing Firecrawl",
+        description: "This may take 30-60 seconds...",
+      });
+
+      const response = await fetch('https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/test-scraper-simple', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({})
+      });
+
+      const data = await response.json();
+      
+      if (data.success) {
+        setFirecrawlResults(data);
+        uiToast({
+          title: "Firecrawl Test Complete",
+          description: `Found ${data.results?.mercuryMentions || 0} Mercury mentions, ${data.results?.hpMatches || 0} HP matches`,
+        });
+      } else {
+        setFirecrawlResults(data);
+        uiToast({
+          title: "Firecrawl Test Failed",
+          description: data.error || "Unknown error occurred",
+          variant: "destructive",
+        });
+      }
+    } catch (error: any) {
+      console.error('Firecrawl test error:', error);
+      setFirecrawlResults({
+        success: false,
+        error: error.message || 'Network error'
+      });
+      uiToast({
+        title: "Test Failed",
+        description: error.message || "Network error occurred",
+        variant: "destructive",
+      });
+    } finally {
+      setFirecrawlTesting(false);
     }
   };
 
@@ -1320,6 +1374,18 @@ export function UnifiedInventoryDashboard() {
               <Button onClick={analyzeInventory} variant="outline">
                 Analyze Current Data
               </Button>
+              <Button 
+                onClick={testFirecrawl} 
+                disabled={firecrawlTesting}
+                className="bg-orange-600 hover:bg-orange-700 text-white"
+              >
+                {firecrawlTesting ? (
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                ) : (
+                  <Zap className="w-4 h-4 mr-2" />
+                )}
+                Test Firecrawl
+              </Button>
             </div>
             
             {syncStatus && (
@@ -1359,6 +1425,72 @@ export function UnifiedInventoryDashboard() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Firecrawl Test Results */}
+        {firecrawlResults && (
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                {firecrawlResults.success ? (
+                  <CheckCircle className="w-5 h-5 text-green-600" />
+                ) : (
+                  <XCircle className="w-5 h-5 text-red-600" />
+                )}
+                Firecrawl Test Results
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <div className="text-lg font-bold">{firecrawlResults.results?.htmlLength || 0}</div>
+                    <div className="text-sm text-gray-600">HTML Length</div>
+                  </div>
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <div className="text-lg font-bold">{firecrawlResults.duration || 'N/A'}</div>
+                    <div className="text-sm text-gray-600">Response Time</div>
+                  </div>
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <div className="text-lg font-bold">{firecrawlResults.results?.mercuryMentions || 0}</div>
+                    <div className="text-sm text-gray-600">Mercury Mentions</div>
+                  </div>
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <div className="text-lg font-bold">{firecrawlResults.results?.hpMatches || 0}</div>
+                    <div className="text-sm text-gray-600">HP Matches</div>
+                  </div>
+                </div>
+                
+                {firecrawlResults.results?.sampleTitles && firecrawlResults.results.sampleTitles.length > 0 && (
+                  <div>
+                    <h4 className="font-medium mb-2">Sample Motor Titles Found:</h4>
+                    <div className="space-y-1">
+                      {firecrawlResults.results.sampleTitles.map((title: string, index: number) => (
+                        <div key={index} className="text-sm p-2 bg-blue-50 rounded border">
+                          {title}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="flex items-center gap-2">
+                  <Badge variant={firecrawlResults.results?.hasContent ? 'default' : 'secondary'}>
+                    {firecrawlResults.results?.hasContent ? 'Good Content' : 'Low Content'}
+                  </Badge>
+                  <Badge variant={firecrawlResults.results?.likelySuccess ? 'default' : 'secondary'}>
+                    {firecrawlResults.results?.likelySuccess ? 'Likely Success' : 'Needs Review'}
+                  </Badge>
+                </div>
+
+                {firecrawlResults.error && (
+                  <div className="p-3 bg-red-50 border border-red-200 rounded-md">
+                    <p className="text-sm text-red-700">Error: {firecrawlResults.error}</p>
+                  </div>
+                )}
               </div>
             </CardContent>
           </Card>
