@@ -408,15 +408,10 @@ const styles = StyleSheet.create({
     marginBottom: 1,
   },
   customerQuote: {
-    fontSize: 9,
+    fontSize: 8,
     fontStyle: 'italic',
-    lineHeight: 12,
-    color: '#333333',
-    backgroundColor: '#f8f9fa',
-    padding: 3,
-    borderLeft: '2px solid #005587',
-    borderRadius: 2,
-    marginVertical: 3
+    color: '#666666',
+    marginVertical: 2
   },
   dealerTestimonial: {
     fontSize: 10,
@@ -1048,15 +1043,10 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               </View>
             </View>
 
-            {/* Customer Quote Section - MOVED HERE for better layout */}
-            <View wrap={false} style={{marginTop: 3, marginBottom: 3}}>
-              <Text style={{fontSize: 9, fontWeight: 'bold', marginBottom: 2}}>
-                Why Customers Choose This
-              </Text>
-              <Text style={styles.customerQuote}>
-                💬 {getCustomerHighlight(hpNumber)}
-              </Text>
-            </View>
+            {/* Customer Quote - Ultra Minimal */}
+            <Text style={styles.customerQuote}>
+              "{getCustomerHighlight(hpNumber)}" - Customer Review
+            </Text>
 
             {/* What's Included - Show ALL motor-specific items */}
             <View style={styles.section}>

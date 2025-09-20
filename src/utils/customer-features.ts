@@ -1,22 +1,22 @@
 export const getCustomerHighlight = (hp: number) => {
   const portableHighlights = [
-    'Customers love: "Starts first pull every time, even after winter storage"',
-    'Top feedback: "Light enough to carry but powerful enough to move my boat"',
-    'Why they buy: "Dead quiet at trolling speed - doesn\'t spook fish"',
-    'Common praise: "Most reliable kicker motor I\'ve owned"'
+    'Reliable & Quiet Operation',
+    'Starts Every Time',
+    'Perfect Kicker Motor',
+    'Fuel Efficient Choice'
   ];
   
   const midRangeHighlights = [
-    'Customer favorite: "Uses half the fuel of my old 2-stroke"',
-    'Often heard: "Perfect power for family watersports"',
-    'Why they upgrade: "Smooth, smoke-free, and surprisingly quiet"',
-    'Top reason: "Mercury reliability with modern fuel efficiency"'
+    'Great Fuel Economy',
+    'Smooth & Dependable',
+    'Family Favorite',
+    'Clean & Quiet'
   ];
   
   const highPowerHighlights = [
-    'Performance feedback: "Jumps on plane with a full load of gear"',
-    'Why they choose it: "Power and fuel economy in perfect balance"',
-    'Customer comment: "Quietest motor in this HP range by far"'
+    'Power & Efficiency',
+    'Quick to Plane',
+    'Quiet Performance'
   ];
   
   const highlights = hp <= 10 ? portableHighlights : 
