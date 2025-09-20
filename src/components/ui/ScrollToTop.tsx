@@ -32,17 +32,19 @@ export function ScrollToTop() {
       if (trustBar) headerHeight += trustBar.offsetHeight;
       if (progressBar) headerHeight += progressBar.offsetHeight;
       
-      // Enhanced heading detection - look for main content headings
+      // Enhanced heading detection - prioritize page-level headings
       const mainContent = document.querySelector('main');
-      const stepHeading = mainContent?.querySelector(
-        'h1, h2, ' +
-        '[class*="text-3xl"], [class*="text-2xl"], ' +
-        '[class*="font-bold"]:not([class*="text-sm"]):not([class*="text-base"]), ' +
-        '.text-3xl, .text-2xl, ' +
-        // Specifically look for headings that might contain "Great Choice!" or similar
-        'div:has(> h1), div:has(> h2), ' +
-        'div[class*="text-3xl"]:first-of-type, div[class*="text-2xl"]:first-of-type'
+      
+      // First try to find page-level headings (not in cards or components)
+      const pageHeading = mainContent?.querySelector(
+        'main > div:first-child h1, ' +           // Direct child headings
+        'main > div > h1:first-child, ' +         // First heading in main sections
+        '.lg\\:hidden h1, ' +                     // Mobile page titles
+        'h1:not([class*="card"] *):not([class*="motor"] *):not([class*="grid"] *)' // H1s not inside cards
       );
+      
+      // Fallback to any heading if no page-level heading found
+      const stepHeading = pageHeading || mainContent?.querySelector('h1, h2');
       
       let scrollTarget = headerHeight + 60; // Default with reduced padding
       

@@ -197,6 +197,13 @@ export const QuoteLayout = ({
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
+        {/* Page Title - visible on mobile and tablet */}
+        <div className="lg:hidden mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
+            {title || 'Mercury Outboard Quote Builder'}
+          </h1>
+          <p className="text-muted-foreground mt-1">Mercury Marine Premier Dealer</p>
+        </div>
         {children}
       </main>
 
