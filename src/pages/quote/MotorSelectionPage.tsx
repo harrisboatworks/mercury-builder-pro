@@ -87,6 +87,7 @@ export default function MotorSelectionPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedHpRange, setSelectedHpRange] = useState<{ min: number; max: number }>({ min: 0, max: Infinity });
   const [inStockOnly, setInStockOnly] = useState(false);
+  const [mountPointReady, setMountPointReady] = useState(false);
   
 
   // Auto-trigger background image scraping for motors without images
@@ -339,6 +340,22 @@ export default function MotorSelectionPage() {
     desc.content = 'Choose from our selection of Mercury outboard motors with live pricing and current promotions.';
   }, []);
 
+  // Detect when portal mount point becomes available
+  useEffect(() => {
+    const checkMountPoint = () => {
+      const mountPoint = document.getElementById('sticky-search-mount');
+      if (mountPoint) {
+        setMountPointReady(true);
+      }
+    };
+    
+    // Check immediately and set up a timeout for fallback
+    checkMountPoint();
+    const timeout = setTimeout(checkMountPoint, 100);
+    
+    return () => clearTimeout(timeout);
+  }, []);
+
 
   if (loading) {
     return (
@@ -357,7 +374,7 @@ export default function MotorSelectionPage() {
     <FinancingProvider>
       <QuoteLayout title="Select Mercury Outboard Motor">
         {/* Portal for sticky search */}
-        {typeof document !== 'undefined' && document.getElementById('sticky-search-mount') &&
+        {mountPointReady &&
           createPortal(
             <StickySearch
               searchTerm={searchTerm}
