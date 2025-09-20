@@ -173,14 +173,6 @@ export const QuoteLayout = ({
         </div>
       </header>
 
-      {/* Sticky Search Bar for Motor Selection */}
-      {location.pathname === '/quote/motor-selection' && (
-        <div className="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
-          <div className="container mx-auto px-4 py-3">
-            <div id="sticky-search-mount"></div>
-          </div>
-        </div>
-      )}
 
       {/* Current Step Indicator */}
       {showProgress && (
