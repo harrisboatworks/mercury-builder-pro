@@ -177,9 +177,14 @@ const styles = StyleSheet.create({
     gap: 2,
   },
   bulletItem: {
-    fontSize: 7,
-    color: '#1a1a1a', // Primary text
+    fontSize: 8,
+    color: '#166534',
     paddingLeft: 6,
+    paddingVertical: 2,
+    backgroundColor: '#f0fdf4',
+    borderRadius: 2,
+    marginBottom: 1,
+    paddingHorizontal: 4,
   },
   warrantyBox: {
     backgroundColor: '#f0fdf4',
@@ -243,7 +248,11 @@ const styles = StyleSheet.create({
     fontSize: 9,
     color: '#ea580c',
     marginBottom: 12,
-    fontWeight: 'medium',
+    fontWeight: 'bold',
+    backgroundColor: '#fef3c7',
+    padding: 6,
+    borderRadius: 3,
+    textAlign: 'center',
   },
   priceSection: {
     alignItems: 'flex-end',
@@ -788,7 +797,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
         {/* Exciting Promo Line */}
         {specData.currentPromotion && (
           <Text style={styles.promoLine}>
-            🎉 LIMITED TIME: {specData.currentPromotion.description} - Hurry, Ends {specData.currentPromotion.endDate}! 🚀
+            ⚡ LIMITED TIME OFFER: {specData.currentPromotion.description} - Ends {specData.currentPromotion.endDate}!
           </Text>
         )}
 
@@ -911,7 +920,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
                   }
 
                   return includedItems.map((item, index) => (
-                    <Text key={index} style={styles.bulletItem}>✅ {item}</Text>
+                    <Text key={index} style={styles.bulletItem}>◆ {item}</Text>
                   ));
                 })()}
               </View>
