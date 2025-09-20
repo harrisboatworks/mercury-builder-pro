@@ -7,11 +7,10 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 import MotorCardPremium from '@/components/motors/MotorCardPremium';
-import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Search, ArrowLeft } from 'lucide-react';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
-import MotorFilterMenu from '@/components/quote-builder/MotorFilterMenu';
+import { StickySearch } from '@/components/ui/sticky-search';
+import { createPortal } from 'react-dom';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
@@ -353,36 +352,36 @@ export default function MotorSelectionPage() {
     );
   }
 
+  // Render sticky search using React Portal
+  useEffect(() => {
+    const mountPoint = document.getElementById('sticky-search-mount');
+    return () => {
+      // Cleanup on unmount
+      if (mountPoint) {
+        mountPoint.innerHTML = '';
+      }
+    };
+  }, []);
+
   return (
     <FinancingProvider>
       <QuoteLayout title="Select Mercury Outboard Motor">
-        <div className="space-y-6">
-          {/* Removed obsolete pricing importer - use admin 2026 pricing import instead */}
-        {/* Clean Search with inline Filter */}
-        <div>
-          <div className="flex items-center">
-            <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
-              <Input
-                placeholder="Search motors by HP, model, or keyword…"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-12 pr-4 h-12 rounded-l-full rounded-r-none border-gray-300 border-r-0 bg-white shadow-sm focus:border-gray-400 focus:ring-gray-400 text-base"
-                aria-label="Search motors by horsepower, model, or keyword"
-              />
-            </div>
-            <div className="flex-shrink-0">
-              <MotorFilterMenu
-                searchTerm={searchTerm}
-                selectedHpRange={selectedHpRange}
-                inStockOnly={inStockOnly}
-                onSearchChange={setSearchTerm}
-                onHpRangeChange={setSelectedHpRange}
-                onInStockChange={setInStockOnly}
-              />
-            </div>
-          </div>
-        </div>
+        {/* Portal for sticky search */}
+        {typeof document !== 'undefined' && document.getElementById('sticky-search-mount') && 
+          createPortal(
+            <StickySearch
+              searchTerm={searchTerm}
+              selectedHpRange={selectedHpRange}
+              inStockOnly={inStockOnly}
+              onSearchChange={setSearchTerm}
+              onHpRangeChange={setSelectedHpRange}
+              onInStockChange={setInStockOnly}
+            />,
+            document.getElementById('sticky-search-mount')!
+          )
+        }
+
+        <div className="space-y-6 pt-4">
         
         <div>
           {/* Motors Grid */}
