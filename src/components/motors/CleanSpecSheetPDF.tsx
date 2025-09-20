@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: 10,
-    paddingBottom: 8,
+    marginBottom: 6,
+    paddingBottom: 6,
     borderBottomWidth: 1,
     borderBottomColor: '#e5e7eb',
   },
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   motorHeader: {
     backgroundColor: '#f8fafc',
     padding: 8,
-    marginBottom: 8,
+    marginBottom: 6,
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#e2e8f0',
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   overviewBoxes: {
     flexDirection: 'row',
     gap: 8,
-    marginBottom: 8,
+    marginBottom: 6,
   },
   overviewBox: {
     flex: 1,
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#bbf7d0',
-    marginBottom: 8,
+    marginBottom: 6,
   },
   warrantyTitle: {
     fontSize: 10,
@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#e2e8f0',
-    marginBottom: 8,
+    marginBottom: 6,
   },
   financingTitle: {
     fontSize: 10,
@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#0ea5e9',
-    marginBottom: 8,
+    marginBottom: 6,
   },
   modelCodeTitle: {
     fontSize: 9,
@@ -627,25 +627,10 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
     return Array.from(uniqueCodes.values()).join(' | ');
   };
 
-  // Get correct start type based on model decoding - Fixed Bug 1
+  // Get correct start type based on model number - EMERGENCY FIX
   const getStartType = (model: string) => {
-    const upperModel = model.toUpperCase();
-    
-    // Bug 1 Fix: Direct model number check as requested
-    if (upperModel.includes('M') && (upperModel.includes('H') || upperModel.includes('L'))) return 'Manual';
-    if (upperModel.includes('E') && (upperModel.includes('H') || upperModel.includes('L') || upperModel.includes('PT'))) return 'Electric';
-    
-    // Fallback to decoded model approach
-    const decoded = decodeModelName(model);
-    const manualStart = decoded.find(item => item.code === 'M');
-    const electricStart = decoded.find(item => item.code === 'E');
-    
-    if (manualStart) return 'Manual';
-    if (electricStart) return 'Electric';
-    
-    // Default: most motors over 25HP are electric, under are manual
-    const hp = parseInt(model.match(/\d+/)?.[0] || '0');
-    return hp > 25 ? 'Electric' : 'Manual';
+    // Simple model number check as requested in emergency fix
+    return model?.charAt(1) === 'M' ? 'Manual' : 'Electric';
   };
 
   // Dynamic specifications using actual selectedMotor data FIRST
@@ -780,22 +765,23 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
     return hpNumber <= 5 ? '15" (Short)' : '20" (Long)';
   };
   
-  // Get control type from model code - Fixed Bug 2
+  // Get control type from model code - EMERGENCY FIX
   const getControlType = (model: string, controls?: string) => {
-    // Use actual controls data if available
+    // Use actual controls data if available - FIXED
+    if (controls && controls.includes('Tiller')) {
+      return 'Tiller';
+    }
     if (controls) {
-      return controls === 'Tiller Handle' ? 'Tiller' : 'Remote Control';
+      return 'Remote Control';
     }
     
     // Fallback to model-based detection
     const upperModel = model.toUpperCase();
-    if (upperModel.includes('H') && !upperModel.includes('HP')) return 'Tiller Handle';
-    if (upperModel.includes('TILLER')) return 'Tiller Handle';
+    if (upperModel.includes('H') && !upperModel.includes('HP')) return 'Tiller';
+    if (upperModel.includes('TILLER')) return 'Tiller';
     
-    // Fallback to decoded model approach
-    const decoded = decodeModelName(model);
-    const tillerHandle = decoded.find(item => item.code === 'H');
-    return tillerHandle ? 'Tiller Handle' : 'Remote Control';
+    // Default fallback
+    return 'Remote Control';
   };
 
   const enhancedSpecs = getEnhancedSpecs();
@@ -963,14 +949,6 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
                       <Text style={styles.specValue}>{Number(mercurySpecs.max_rpm) - 500}-{mercurySpecs.max_rpm}</Text>
                     </View>
                   )}
-                  <View style={styles.specItem}>
-                    <Text style={styles.specLabel}>Recommended Boat Size:</Text>
-                    <Text style={styles.specValue}>{performance.recommendedBoatSize || getRecommendedBoatSize(hpNumber)}</Text>
-                  </View>
-                  <View style={styles.specItem}>
-                    <Text style={styles.specLabel}>Est. Top Speed:</Text>
-                    <Text style={styles.specValue}>{performance.estimatedTopSpeed || getEstimatedSpeed(hpNumber)}</Text>
-                  </View>
                 </View>
               </View>
             )}
@@ -1127,19 +1105,19 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
           {/* Right Column */}
           <View style={styles.rightColumn}>
 
-            {/* Why Customers Choose This Motor Section */}
-            <View style={styles.section}>
+            {/* Why Customers Choose This Motor Section - EMERGENCY FIX: wrap={false} */}
+            <View wrap={false} style={styles.section}>
               <Text style={styles.sectionTitle}>Why Customers Choose This Motor</Text>
               <Text style={styles.customerQuote}>{getCustomerHighlight(hpNumber)}</Text>
               
               {/* Show Harris testimonial 30% of the time */}
               {Math.random() < 0.3 && (
-                <>
+                <View wrap={false}>
                   <View style={{height: 8}} />
                   <Text style={styles.dealerTestimonial}>
                     {harrisTestimonials[Math.floor(Math.random() * harrisTestimonials.length)]}
                   </Text>
-                </>
+                </View>
               )}
             </View>
 
@@ -1176,24 +1154,6 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               <Text style={styles.warrantyItem}>• Local service at {COMPANY_INFO.name}</Text>
             </View>
 
-            {/* Operating Specifications - only show if data exists */}
-            {(enhancedSpecs.fuelConsumption || enhancedSpecs.soundLevel || enhancedSpecs.recommendedBoatSize || (hpNumber <= 30 && enhancedSpecs.controls === 'Tiller Handle')) && (
-              <View style={styles.section}>
-                <Text style={styles.sectionTitle}>Operating Specifications</Text>
-                {enhancedSpecs.fuelConsumption && (
-                  <Text>• Fuel Consumption: {enhancedSpecs.fuelConsumption}</Text>
-                )}
-                {enhancedSpecs.soundLevel && (
-                  <Text>• Sound Level: {enhancedSpecs.soundLevel}</Text>
-                )}
-                {enhancedSpecs.recommendedBoatSize && (
-                  <Text>• Recommended Boat Size: {enhancedSpecs.recommendedBoatSize}</Text>
-                )}
-                {hpNumber <= 30 && enhancedSpecs.controls === 'Tiller Handle' && (
-                  <Text>• Portable with carrying handle</Text>
-                )}
-              </View>
-            )}
 
             {/* Financing Options */}
             {specData.motorPrice && specData.motorPrice > 1000 && (
