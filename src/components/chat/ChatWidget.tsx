@@ -120,7 +120,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
           onClick={handleOpen}
           variant="ghost"
           size="sm"
-          className="text-muted-foreground hover:text-foreground transition-colors p-2"
+          className="text-muted-foreground hover:text-primary transition-colors p-2"
           aria-label="Open Chat Support"
         >
           <HelpCircle className="w-5 h-5" />

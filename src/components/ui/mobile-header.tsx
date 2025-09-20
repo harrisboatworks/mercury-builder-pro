@@ -54,7 +54,7 @@ export default function MobileHeader({ title, onMenuClick, showMenu = false }: M
           </Link>
           
           {/* Right: Mercury Logo and Chat */}
-          <div className="flex items-center gap-2 min-w-[40px] justify-end -mt-1">
+          <div className="flex items-center gap-3 min-w-[40px] justify-end -mt-1 pr-1">
             <img 
               src={mercuryLogo} 
               alt="Mercury Marine" 
