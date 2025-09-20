@@ -1,12 +1,24 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useScrollCoordination } from '../../hooks/useScrollCoordination';
 
 export function ScrollToTop() {
   const location = useLocation();
   const { isScrollLocked, getScrollLockReason } = useScrollCoordination();
+  const previousPathname = useRef(location.pathname);
 
   useEffect(() => {
+    // Only run ScrollToTop on actual navigation changes, not React state changes
+    if (previousPathname.current === location.pathname) {
+      console.log('⏸️ ScrollToTop skipped - same pathname (React state change, not navigation)');
+      return;
+    }
+
+    // Update the previous pathname for next comparison
+    const oldPathname = previousPathname.current;
+    previousPathname.current = location.pathname;
+    
+    console.log('🧭 ScrollToTop triggered by navigation:', oldPathname, '→', location.pathname);
     // Enhanced modal detection - check multiple sources
     if (isScrollLocked()) {
       console.log('⏸️ ScrollToTop skipped - scroll locked by:', getScrollLockReason());
