@@ -419,45 +419,46 @@ export const isTillerMotor = (model: string) => {
     return true;
   }
   
-  // Check for tiller handle patterns - more comprehensive detection
-  // MH = Manual start + tiller Handle
-  if (/(^|\s|-)MH(\s|$|-)/i.test(upperModel)) {
-    return true;
-  }
-  
-  // EH = Electric start + tiller Handle  
-  if (/(^|\s|-)EH(\s|$|-)/i.test(upperModel)) {
-    return true;
-  }
+  // Mercury models format: "3.5MLH", "15EH", etc. - codes come directly after HP numbers
+  // Check for tiller handle codes that follow HP numbers (no separators needed)
   
   // MLH = Manual start + Long shaft + tiller Handle
-  if (/(^|\s|-)MLH(\s|$|-)/i.test(upperModel)) {
+  if (/\d+\.?\d*MLH/i.test(upperModel)) {
     return true;
   }
   
-  // ELH = Electric start + Long shaft + tiller Handle
-  if (/(^|\s|-)ELH(\s|$|-)/i.test(upperModel)) {
+  // ELH = Electric start + Long shaft + tiller Handle  
+  if (/\d+\.?\d*ELH/i.test(upperModel)) {
     return true;
   }
   
   // EXLH = Electric start + eXtra Long shaft + tiller Handle
-  if (/(^|\s|-)EXLH(\s|$|-)/i.test(upperModel)) {
+  if (/\d+\.?\d*EXLH/i.test(upperModel)) {
     return true;
   }
   
   // ELHPT = Electric start + Long shaft + tiller Handle + Power Tilt
-  if (/(^|\s|-)ELHPT(\s|$|-)/i.test(upperModel)) {
+  if (/\d+\.?\d*ELHPT/i.test(upperModel)) {
     return true;
   }
   
   // EXLHPT = Electric start + eXtra Long shaft + tiller Handle + Power Tilt
-  if (/(^|\s|-)EXLHPT(\s|$|-)/i.test(upperModel)) {
+  if (/\d+\.?\d*EXLHPT/i.test(upperModel)) {
     return true;
   }
   
-  // Check for standalone H pattern (tiller Handle) - but avoid HP, FH, etc.
-  // Must be a standalone H, not part of another code
-  if (/(^|\s|-)H(\s|$|-)/i.test(upperModel) && !upperModel.includes('HP')) {
+  // MH = Manual start + tiller Handle
+  if (/\d+\.?\d*MH(?!\w)/i.test(upperModel)) {
+    return true;
+  }
+  
+  // EH = Electric start + tiller Handle
+  if (/\d+\.?\d*EH(?!\w)/i.test(upperModel)) {
+    return true;
+  }
+  
+  // Check for standalone H pattern after numbers (but avoid HP, FH, etc.)
+  if (/\d+\.?\d*H(?!\w|P)/i.test(upperModel)) {
     return true;
   }
   
