@@ -65,7 +65,58 @@ serve(async (req) => {
     
     // ===== COMPREHENSIVE DEBUGGING =====
     console.log('\n🔍 DEBUGGING HTML CONTENT:')
-    console.log(`📄 First 2000 characters:\n${html.substring(0, 2000)}`)
+    console.log('📄 HTML Length:', html.length, 'characters');
+    console.log('📄 First 2000 characters:');
+    console.log(html.substring(0, 2000));
+
+    // Find and log actual Mercury motor HTML snippets
+    const mercuryIndex = html.indexOf('Mercury');
+    if (mercuryIndex > -1) {
+      console.log('\n🏷️ SAMPLE MERCURY HTML:');
+      console.log(html.substring(mercuryIndex - 100, mercuryIndex + 200));
+      
+      // Find additional Mercury instances
+      const allMercuryIndices = [];
+      let index = html.indexOf('Mercury', 0);
+      while (index !== -1 && allMercuryIndices.length < 5) {
+        allMercuryIndices.push(index);
+        index = html.indexOf('Mercury', index + 1);
+      }
+      
+      console.log('\n🔍 MULTIPLE MERCURY SAMPLES:');
+      allMercuryIndices.forEach((idx, i) => {
+        console.log(`Sample ${i + 1}:`, html.substring(idx - 50, idx + 100));
+      });
+    }
+    
+    // Find where HP appears near Mercury
+    const hpNearMercury = html.match(/.{0,50}Mercury.{0,50}HP.{0,50}/gi);
+    if (hpNearMercury) {
+      console.log('\n🔥 MERCURY+HP PATTERNS:', hpNearMercury.slice(0, 3));
+    } else {
+      console.log('\n❌ NO MERCURY+HP PATTERNS FOUND - checking separately...');
+      
+      // Check if HP appears anywhere
+      const hpMatches = html.match(/.{0,20}HP.{0,20}/gi);
+      if (hpMatches) {
+        console.log('🔧 HP PATTERNS (first 3):', hpMatches.slice(0, 3));
+      }
+      
+      // Check different HP formats
+      const hpFormats = [
+        /\d+\s*HP/gi,
+        /HP\s*\d+/gi,
+        /\d+HP/gi,
+        /HP:\s*\d+/gi
+      ];
+      
+      hpFormats.forEach((regex, i) => {
+        const matches = html.match(regex);
+        if (matches) {
+          console.log(`🎯 HP FORMAT ${i + 1}:`, matches.slice(0, 3));
+        }
+      });
+    }
     
     // 1. BASIC CONTENT CHECKS
     const hasMercury = html.includes("Mercury")
