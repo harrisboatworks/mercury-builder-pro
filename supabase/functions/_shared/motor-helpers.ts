@@ -41,6 +41,8 @@ export function extractHpAndCode(input: string): ParsedModel {
     .replace(/\bverado\b/ig, 'Verado')
     .replace(/\bracing\b/ig, 'Racing')
     .replace(/\befi\b/ig, 'EFI')
+    .replace(/\bcommand[\s-]*thrust\b/ig, 'CommandThrust')
+    .replace(/\bprokicker\b/ig, 'ProKicker')
     .replace(/\s+/g, ' ')
     .trim();
 
@@ -52,6 +54,11 @@ export function extractHpAndCode(input: string): ParsedModel {
   const tokenRx = /\b(ELHPT|ELPT|ELO|ELH|EH|XL|XXL|EXLPT|L|CL|CT|DTS|TILLER|JPO|DIGITAL|POWER(?:\s+)?STEERING|MXXL|MXLH|MXL|MLH|MH|M)\b/ig;
   let m: RegExpExecArray | null;
   while ((m = tokenRx.exec(s)) !== null) codeTokens.push(m[1].toUpperCase());
+  
+  // Check for Command Thrust and ProKicker designations
+  if (/\bCommandThrust\b/i.test(s)) codeTokens.push('CT');
+  if (/\bProKicker\b/i.test(s)) codeTokens.push('PK');
+  
   const code = codeTokens.join('-');
 
   const fam = (s.match(/\b(FourStroke|ProXS|SeaPro|Verado|Racing)\b/i)?.[1] || '') as ParsedModel['family'];
