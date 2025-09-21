@@ -521,11 +521,6 @@ serve(async (req) => {
       };
     }
     
-    // 2-TIER MATCHING SYSTEM: Auto-match high confidence, queue uncertain matches
-    const pendingReviews = [];
-    let autoMatched = 0;
-    let queuedForReview = 0;
-    let rejected = 0;
 
     // Check for existing historical mappings first
     const { data: historicalMappings } = await supabase
