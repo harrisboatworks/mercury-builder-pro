@@ -146,11 +146,38 @@ export function DropboxIntegration() {
   };
 
   const triggerSync = async (id: string) => {
-    await updateConfig(id, { sync_status: 'syncing' });
-    toast({
-      title: "Sync initiated",
-      description: "Dropbox folder sync has been triggered.",
-    });
+    try {
+      // Update UI to show sync is running
+      await updateConfig(id, { sync_status: 'syncing' });
+      
+      // Call the sync edge function
+      const { data, error } = await supabase.functions.invoke('sync-dropbox-folder', {
+        body: { config_id: id }
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Sync completed",
+        description: `Successfully synced ${data.synced_files} out of ${data.total_files} files.`,
+      });
+
+      // Refresh configurations to show updated status
+      loadConfigs();
+      
+    } catch (error) {
+      console.error('Sync failed:', error);
+      await updateConfig(id, { 
+        sync_status: 'error', 
+        error_message: error.message 
+      });
+      
+      toast({
+        title: "Sync failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    }
   };
 
   if (loading) {
