@@ -416,6 +416,12 @@ serve(async (req) => {
     const matches = [];
     const stockUpdates = [];
     
+    // 2-TIER MATCHING SYSTEM: Auto-match high confidence, queue uncertain matches
+    const pendingReviews = [];
+    let autoMatched = 0;
+    let queuedForReview = 0;
+    let rejected = 0;
+    
     // Helper function to extract HP from model name
     function extractHP(modelName: string): number | null {
       const hpMatch = modelName.match(/(\d+(?:\.\d+)?)\s*(?:hp|HP)/i);
