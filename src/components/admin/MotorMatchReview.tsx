@@ -136,6 +136,61 @@ export function MotorMatchReview({ isOpen, onClose, onReviewComplete }: MotorMat
               </CardHeader>
               <CardContent>
                 <p className="font-medium">{currentMatch.scraped_motor_data?.name || 'Unknown'}</p>
+                {currentMatch.scraped_motor_data?.hp && (
+                  <p className="text-sm text-muted-foreground">HP: {currentMatch.scraped_motor_data.hp}</p>
+                )}
+              </CardContent>
+            </Card>
+
+            <Separator />
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  Potential Matches ({currentMatch.potential_matches?.length || 0})
+                </CardTitle>
+                <CardDescription>
+                  Select the best matching brochure motor from the options below
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                {currentMatch.potential_matches?.length > 0 ? (
+                  <div className="space-y-2">
+                    {currentMatch.potential_matches.map((match: any, index: number) => (
+                      <div key={index} className="border rounded-lg p-3 hover:bg-accent/50 transition-colors">
+                        <div className="flex items-center justify-between">
+                          <div className="flex-1">
+                            <h4 className="font-medium">{match.model || match.display_name || 'Unknown Model'}</h4>
+                            <div className="flex gap-4 text-sm text-muted-foreground mt-1">
+                              {match.horsepower && <span>HP: {match.horsepower}</span>}
+                              {match.family && <span>Family: {match.family}</span>}
+                              {match.motor_type && <span>Type: {match.motor_type}</span>}
+                            </div>
+                            {match.confidence_score && (
+                              <div className="mt-2">
+                                <Badge variant={match.confidence_score > 0.8 ? "default" : match.confidence_score > 0.6 ? "secondary" : "outline"}>
+                                  Match: {Math.round(match.confidence_score * 100)}%
+                                </Badge>
+                              </div>
+                            )}
+                          </div>
+                          <Button
+                            onClick={() => handleMatchSelection(match.id)}
+                            disabled={submitting}
+                            size="sm"
+                          >
+                            Select Match
+                          </Button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-muted-foreground text-center py-4">
+                    No potential matches found for this motor
+                  </p>
+                )}
               </CardContent>
             </Card>
 
