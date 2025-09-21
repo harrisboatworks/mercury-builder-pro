@@ -31,6 +31,8 @@ interface DbMotor {
   image_url?: string | null;
   availability?: string | null;
   stock_number?: string | null;
+  stock_quantity?: number | null;
+  in_stock?: boolean | null;
   year: number;
   make: string;
   description?: string | null;

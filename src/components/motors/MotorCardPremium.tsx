@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 import { Info } from "lucide-react";
 import MotorQuickInfo from "./MotorQuickInfo";
 import MotorDetailsSheet from './MotorDetailsSheet';
+import { StockBadge } from '@/components/inventory/StockBadge';
 import type { Motor } from '../../lib/motor-helpers';
 import { getHPDescriptor, getPopularityIndicator, getBadgeColor, requiresMercuryControls, isTillerMotor, getMotorImageByPriority, getMotorImageGallery, buildModelKey, extractHpAndCode } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -161,10 +162,17 @@ export default function MotorCardPremium({
                 />
                 {/* Gallery indicator and stock status */}
                 <div className="absolute bottom-2 right-2 flex items-center gap-2">
-                  {isInventoryImage && inStock && (
-                    <div className="bg-green-600/90 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm font-medium">
-                      In Stock
-                    </div>
+                  {inStock && (
+                    <StockBadge 
+                      motor={{
+                        in_stock: inStock,
+                        stock_quantity: motor?.stock_quantity,
+                        stock_number: motor?.stock_number,
+                        availability: motor?.availability
+                      }}
+                      variant="compact"
+                      className="backdrop-blur-sm"
+                    />
                   )}
                  {imageCount > 1 && (
                     <div className="bg-black/70 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">

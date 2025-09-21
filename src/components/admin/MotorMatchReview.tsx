@@ -72,9 +72,16 @@ export function MotorMatchReview({ isOpen, onClose, onReviewComplete }: MotorMat
         .eq('id', currentMatch.id);
 
       if (selectedMotorId) {
+        // Transfer stock data from scraped motor to brochure motor
+        const scrapedData = currentMatch.scraped_motor_data;
         await supabase
           .from('motor_models')
-          .update({ in_stock: true, last_stock_check: new Date().toISOString() })
+          .update({ 
+            in_stock: true, 
+            last_stock_check: new Date().toISOString(),
+            stock_number: scrapedData?.stock || null,
+            stock_quantity: 1 // Default to 1, could be enhanced with actual quantity later
+          })
           .eq('id', selectedMotorId);
       }
 
