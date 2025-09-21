@@ -235,6 +235,13 @@ export default function AdminStockSync() {
             Preview Changes
           </Button>
           <Button
+            onClick={runSync}
+            disabled={loading}
+          >
+            <Play className="w-4 h-4 mr-2" />
+            Apply Sync
+          </Button>
+          <Button
             onClick={() => setShowMatchReview(true)}
             disabled={pendingMatchesCount === 0}
             variant="outline"
