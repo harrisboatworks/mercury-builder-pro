@@ -28,6 +28,8 @@ export function DropboxIntegration() {
   const [dropboxReady, setDropboxReady] = useState(false);
   const [configLoading, setConfigLoading] = useState(true);
   const [appKeyError, setAppKeyError] = useState<string | null>(null);
+  const [dropboxConfig, setDropboxConfig] = useState<any>(null);
+  const [accessToken, setAccessToken] = useState<string>('');
   const { toast } = useToast();
 
   useEffect(() => {
@@ -36,7 +38,7 @@ export function DropboxIntegration() {
         setConfigLoading(true);
         console.log('Loading Dropbox configuration...');
         
-        // Get the Dropbox app key from our edge function
+        // Get the Dropbox configuration (including OAuth capabilities)
         const { data, error } = await supabase.functions.invoke('get-dropbox-config');
         
         if (error) {
@@ -51,7 +53,38 @@ export function DropboxIntegration() {
           return;
         }
 
-        console.log('Successfully loaded Dropbox app key');
+        setDropboxConfig(data);
+        console.log('Successfully loaded Dropbox configuration');
+
+        // Check for OAuth callback in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const oauthCode = urlParams.get('code');
+        const oauthState = urlParams.get('state');
+        
+        if (oauthCode && oauthState) {
+          console.log('Processing OAuth callback...');
+          try {
+            const { data: oauthData, error: oauthError } = await supabase.functions.invoke('dropbox-oauth', {
+              body: { code: oauthCode, state: oauthState }
+            });
+            
+            if (oauthError || !oauthData?.access_token) {
+              console.error('OAuth exchange failed:', oauthError);
+              toast({
+                title: "OAuth failed",
+                description: "Failed to authenticate with Dropbox.",
+                variant: "destructive",
+              });
+            } else {
+              console.log('OAuth successful, got access token');
+              setAccessToken(oauthData.access_token);
+              // Clean up URL
+              window.history.replaceState({}, document.title, window.location.pathname);
+            }
+          } catch (error) {
+            console.error('Error processing OAuth:', error);
+          }
+        }
 
         // Load Dropbox Chooser script if not already loaded
         if (!document.getElementById('dropboxjs')) {
@@ -84,33 +117,30 @@ export function DropboxIntegration() {
     loadDropboxConfig();
   }, []);
 
-  const uploadFileToSupabase = async (fileUrl: string, fileName: string) => {
+  const startOAuthFlow = async () => {
     try {
-      // Download the file from Dropbox
-      const response = await fetch(fileUrl);
-      const blob = await response.blob();
+      const { data, error } = await supabase.functions.invoke('get-dropbox-config', {
+        body: { action: 'oauth-url' }
+      });
       
-      // Generate unique filename
-      const timestamp = Date.now();
-      const extension = fileName.split('.').pop();
-      const uniqueFileName = `dropbox_${timestamp}.${extension}`;
-      
-      // Upload to Supabase storage
-      const { data: uploadData, error: uploadError } = await supabase.storage
-        .from('motor-images')
-        .upload(uniqueFileName, blob);
+      if (error || !data?.oauthUrl) {
+        toast({
+          title: "OAuth unavailable",
+          description: "OAuth authentication is not configured.",
+          variant: "destructive",
+        });
+        return;
+      }
 
-      if (uploadError) throw uploadError;
-
-      // Get public URL
-      const { data: { publicUrl } } = supabase.storage
-        .from('motor-images')
-        .getPublicUrl(uniqueFileName);
-
-      return { storageKey: uniqueFileName, publicUrl };
+      // Redirect to Dropbox OAuth
+      window.location.href = data.oauthUrl;
     } catch (error) {
-      console.error('Failed to upload file to Supabase:', error);
-      throw error;
+      console.error('Error starting OAuth flow:', error);
+      toast({
+        title: "OAuth failed",
+        description: "Failed to start authentication flow.",
+        variant: "destructive",
+      });
     }
   };
 
@@ -133,33 +163,29 @@ export function DropboxIntegration() {
         try {
           for (const file of files) {
             try {
-              // Upload file to Supabase storage
-              const { storageKey, publicUrl } = await uploadFileToSupabase(file.link, file.name);
+              console.log(`Processing file: ${file.name}`);
               
-              // Determine media type and category
-              const extension = file.name.split('.').pop()?.toLowerCase() || '';
-              const mediaType = ['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(extension) 
-                ? 'image' : 'document';
-              
-              // Insert into motor_media table
-              const { error: insertError } = await supabase
-                .from('motor_media')
-                .insert({
-                  motor_id: motorId || null,
-                  media_type: mediaType,
-                  media_category: 'general',
-                  media_url: publicUrl,
-                  original_filename: file.name,
-                  file_size: file.bytes,
-                  title: file.name.replace(/\.[^/.]+$/, ''), // Remove extension
-                  dropbox_path: file.link,
-                  dropbox_sync_status: 'completed',
-                  assignment_type: motorId ? 'individual' : 'unassigned',
-                  chooser_imported: true,
-                  is_active: true
-                });
+              // Use the new enhanced dropbox-file-handler edge function
+              const { data: uploadData, error: uploadError } = await supabase.functions.invoke('dropbox-file-handler', {
+                body: {
+                  fileUrl: file.link,
+                  fileName: file.name,
+                  motorId: motorId || null,
+                  accessToken: accessToken || null // Include access token if available
+                }
+              });
 
-              if (insertError) throw insertError;
+              if (uploadError) {
+                console.error(`Failed to upload ${file.name}:`, uploadError);
+                throw new Error(uploadError.message || 'Upload failed');
+              }
+
+              if (!uploadData?.success) {
+                console.error(`Upload failed for ${file.name}:`, uploadData);
+                throw new Error(uploadData?.error || 'Upload failed');
+              }
+
+              console.log(`Successfully uploaded: ${file.name}`);
               successCount++;
               
             } catch (error) {
@@ -168,11 +194,20 @@ export function DropboxIntegration() {
             }
           }
 
-          toast({
-            title: "Files imported",
-            description: `Successfully imported ${successCount} files. ${errorCount > 0 ? `${errorCount} files failed.` : ''}`,
-            variant: errorCount > 0 ? "destructive" : "default",
-          });
+          // Show results
+          if (successCount > 0) {
+            toast({
+              title: "Files imported successfully",
+              description: `Successfully imported ${successCount} files${errorCount > 0 ? `. ${errorCount} files failed.` : '.'}`,
+              variant: errorCount > 0 ? "destructive" : "default",
+            });
+          } else {
+            toast({
+              title: "Import failed",
+              description: "No files were successfully imported.",
+              variant: "destructive",
+            });
+          }
 
         } catch (error) {
           console.error('Failed to import files:', error);
@@ -187,7 +222,7 @@ export function DropboxIntegration() {
       },
       linkType: 'direct',
       multiselect: true,
-      extensions: ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.pdf'],
+      extensions: ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.pdf', '.doc', '.docx', '.mp4', '.mov'],
       folderselect: false
     });
   };
@@ -225,6 +260,27 @@ export function DropboxIntegration() {
 
         {!appKeyError && !configLoading && (
           <div className="space-y-4">
+            {dropboxConfig?.hasOAuth && !accessToken && (
+              <Alert>
+                <Cloud className="h-4 w-4" />
+                <AlertDescription className="flex items-center justify-between">
+                  <span>Enhanced authentication available for better file access.</span>
+                  <Button onClick={startOAuthFlow} size="sm" variant="outline">
+                    Authenticate with Dropbox
+                  </Button>
+                </AlertDescription>
+              </Alert>
+            )}
+
+            {accessToken && (
+              <Alert>
+                <Cloud className="h-4 w-4 text-green-600" />
+                <AlertDescription className="text-green-700">
+                  ✓ Authenticated with Dropbox - Enhanced file access enabled
+                </AlertDescription>
+              </Alert>
+            )}
+
             <div>
               <Label htmlFor="motor-id">Assign to Motor (Optional)</Label>
               <Input
@@ -274,7 +330,8 @@ export function DropboxIntegration() {
               </Button>
 
               <p className="text-xs text-muted-foreground text-center max-w-md">
-                Supported formats: JPG, PNG, GIF, WebP, PDF. Files will be uploaded to your motor media library.
+                Supported formats: JPG, PNG, GIF, WebP, PDF, DOC, DOCX, MP4, MOV. 
+                {accessToken ? ' Enhanced authentication provides better file access.' : ' Authenticate for improved compatibility.'}
               </p>
             </div>
           </div>

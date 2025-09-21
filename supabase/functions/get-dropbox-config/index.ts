@@ -14,8 +14,13 @@ serve(async (req) => {
   try {
     console.log('Getting Dropbox configuration...');
     
-    // Get the Dropbox app key from environment variables (Supabase secrets)
+    const url = new URL(req.url);
+    const action = url.searchParams.get('action') || 'config';
+    
+    // Get Dropbox credentials from environment
     const dropboxAppKey = Deno.env.get('DROPBOX_APP_KEY');
+    const dropboxAppSecret = Deno.env.get('DROPBOX_APP_SECRET');
+    const dropboxAccessToken = Deno.env.get('DROPBOX_ACCESS_TOKEN');
     
     if (!dropboxAppKey) {
       console.error('DROPBOX_APP_KEY not found in environment variables');
@@ -31,12 +36,51 @@ serve(async (req) => {
       );
     }
 
-    console.log('Successfully retrieved Dropbox app key');
+    console.log('Successfully retrieved Dropbox configuration');
 
-    // Return the app key
+    if (action === 'oauth-url') {
+      // Generate OAuth authorization URL
+      if (!dropboxAppSecret) {
+        return new Response(
+          JSON.stringify({ 
+            error: 'Dropbox app secret not configured for OAuth',
+            appKey: dropboxAppKey,
+            hasOAuth: false
+          }),
+          { 
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+          }
+        );
+      }
+
+      const state = crypto.randomUUID();
+      const redirectUri = `${url.origin}/admin/motor-images`;
+      
+      const oauthUrl = `https://www.dropbox.com/oauth2/authorize?` +
+        `client_id=${dropboxAppKey}&` +
+        `response_type=code&` +
+        `redirect_uri=${encodeURIComponent(redirectUri)}&` +
+        `state=${state}`;
+
+      return new Response(
+        JSON.stringify({ 
+          oauthUrl,
+          state,
+          redirectUri,
+          hasOAuth: true
+        }),
+        { 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      );
+    }
+
+    // Return basic configuration
     return new Response(
       JSON.stringify({ 
         appKey: dropboxAppKey,
+        hasOAuth: !!dropboxAppSecret,
+        hasAccessToken: !!dropboxAccessToken,
         success: true 
       }),
       { 
