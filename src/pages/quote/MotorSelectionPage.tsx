@@ -216,7 +216,6 @@ export default function MotorSelectionPage() {
         // Add stock fields
         in_stock: dbMotor.in_stock,
         stock_quantity: dbMotor.stock_quantity,
-        stock_number: dbMotor.stock_number,
         availability: dbMotor.availability,
         category: dbMotor.horsepower <= 20 ? 'portable' :
                  dbMotor.horsepower <= 60 ? 'mid-range' : 

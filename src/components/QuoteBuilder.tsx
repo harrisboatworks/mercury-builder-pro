@@ -30,6 +30,10 @@ export interface Motor {
   stockStatus: 'In Stock' | 'On Order' | 'Order Now' | 'Sold';
   stockNumber?: string | null; // subtle stock number display
   model_number?: string | null; // Mercury model number display
+  // Additional stock fields
+  in_stock?: boolean;
+  stock_quantity?: number;
+  availability?: string;
   category: 'portable' | 'mid-range' | 'high-performance' | 'v8-racing';
   type: string;
   specs: string;

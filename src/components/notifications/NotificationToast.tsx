@@ -2,9 +2,18 @@ import React, { useEffect } from 'react'
 import { toast } from 'sonner'
 import { useNotifications } from '@/hooks/useNotifications'
 import { useAuth } from '@/components/auth/AuthProvider'
+import { supabase } from '@/integrations/supabase/client'
 
 export const NotificationToast = () => {
-  const { user } = useAuth()
+  // Safely handle auth context - return null if not available
+  let user;
+  try {
+    const authContext = useAuth();
+    user = authContext?.user;
+  } catch (error) {
+    // AuthProvider not available, skip notification toasts
+    return null;
+  }
 
   useEffect(() => {
     if (!user) return
@@ -41,6 +50,3 @@ export const NotificationToast = () => {
 
   return null
 }
-
-// Import statement needed for supabase
-import { supabase } from '@/integrations/supabase/client'
