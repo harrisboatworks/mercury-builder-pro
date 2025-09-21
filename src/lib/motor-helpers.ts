@@ -428,42 +428,42 @@ export const isTillerMotor = (model: string) => {
   // Check for tiller handle codes that follow HP numbers (no separators needed)
   
   // MLH = Manual start + Long shaft + tiller Handle
-  if (/\d+\.?\d*MLH/i.test(upperModel)) {
+  if (/\d+\.?\d*\s*MLH/i.test(upperModel)) {
     return true;
   }
   
   // ELH = Electric start + Long shaft + tiller Handle  
-  if (/\d+\.?\d*ELH/i.test(upperModel)) {
+  if (/\d+\.?\d*\s*ELH/i.test(upperModel)) {
     return true;
   }
   
   // EXLH = Electric start + eXtra Long shaft + tiller Handle
-  if (/\d+\.?\d*EXLH/i.test(upperModel)) {
+  if (/\d+\.?\d*\s*EXLH/i.test(upperModel)) {
     return true;
   }
   
   // ELHPT = Electric start + Long shaft + tiller Handle + Power Tilt
-  if (/\d+\.?\d*ELHPT/i.test(upperModel)) {
+  if (/\d+\.?\d*\s*ELHPT/i.test(upperModel)) {
     return true;
   }
   
   // EXLHPT = Electric start + eXtra Long shaft + tiller Handle + Power Tilt
-  if (/\d+\.?\d*EXLHPT/i.test(upperModel)) {
+  if (/\d+\.?\d*\s*EXLHPT/i.test(upperModel)) {
     return true;
   }
   
   // MH = Manual start + tiller Handle
-  if (/\d+\.?\d*MH(?!\w)/i.test(upperModel)) {
+  if (/\d+\.?\d*\s*MH(?!\w)/i.test(upperModel)) {
     return true;
   }
   
   // EH = Electric start + tiller Handle
-  if (/\d+\.?\d*EH(?!\w)/i.test(upperModel)) {
+  if (/\d+\.?\d*\s*EH(?!\w)/i.test(upperModel)) {
     return true;
   }
   
   // Check for standalone H pattern after numbers (but avoid HP, FH, etc.)
-  if (/\d+\.?\d*H(?!\w|P)/i.test(upperModel)) {
+  if (/\d+\.?\d*\s*H(?!\w|P)/i.test(upperModel)) {
     return true;
   }
   
