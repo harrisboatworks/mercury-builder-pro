@@ -14,27 +14,11 @@ interface StockBadgeProps {
 }
 
 export function StockBadge({ motor, variant = 'default', className }: StockBadgeProps) {
-  // Debug logging to see what data StockBadge receives
-  console.log('StockBadge received data:', {
-    motor: motor,
-    in_stock: motor.in_stock,
-    stock_quantity: motor.stock_quantity,
-    stock_number: motor.stock_number,
-    availability: motor.availability
-  });
-
   const hasRealStock = motor.stock_quantity && motor.stock_quantity > 0 && 
                        motor.stock_number && motor.stock_number !== 'N/A' && motor.stock_number.trim() !== '';
   const isInStock = motor.in_stock === true || hasRealStock;
   const quantity = motor.stock_quantity || 0;
   const isCompact = variant === 'compact';
-
-  console.log('StockBadge calculations:', {
-    hasRealStock,
-    isInStock,
-    quantity,
-    willRender: isInStock ? 'YES' : 'NO'
-  });
 
   if (!isInStock) {
     return (
@@ -56,7 +40,7 @@ export function StockBadge({ motor, variant = 'default', className }: StockBadge
     return (
       <Badge 
         className={cn(
-          "bg-primary text-primary-foreground",
+          "bg-green-600 text-white",
           isCompact ? "text-xs px-2 py-0" : "",
           className
         )}
@@ -70,13 +54,13 @@ export function StockBadge({ motor, variant = 'default', className }: StockBadge
   return (
     <Badge 
       className={cn(
-        "bg-primary text-primary-foreground",
+        "bg-green-600 text-white",
         isCompact ? "text-xs px-2 py-0" : "",
         className
       )}
     >
       <Check className={cn("mr-1", isCompact ? "w-2 h-2" : "w-3 h-3")} />
-      {isCompact ? "Stock" : "In Stock"}
+      In Stock
     </Badge>
   );
 }
