@@ -30,7 +30,7 @@ export function MotorMatchReview({ isOpen, onClose, onReviewComplete }: MotorMat
       const { data, error } = await supabase
         .from('pending_motor_matches')
         .select('*')
-        .eq('review_status', 'pending')
+        .in('review_status', ['pending', 'no_match'])
         .order('created_at', { ascending: true });
 
       if (error) throw error;
