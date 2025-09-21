@@ -132,13 +132,27 @@ export function MotorMatchReview({ isOpen, onClose, onReviewComplete }: MotorMat
                 <CardTitle className="flex items-center gap-2">
                   <AlertCircle className="w-5 h-5 text-amber-500" />
                   Scraped Motor Data
+                  {currentMatch.review_status === 'no_match' && (
+                    <Badge variant="outline" className="ml-2">Previously Rejected</Badge>
+                  )}
                 </CardTitle>
+                <CardDescription>
+                  Motor found in inventory feed
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="font-medium">{currentMatch.scraped_motor_data?.name || 'Unknown'}</p>
                 {currentMatch.scraped_motor_data?.hp && (
                   <p className="text-sm text-muted-foreground">HP: {currentMatch.scraped_motor_data.hp}</p>
                 )}
+                <div className="flex gap-2 items-center mt-2">
+                  <Badge variant="secondary">
+                    Confidence: {Math.round((currentMatch.confidence_score || 0) * 100)}%
+                  </Badge>
+                  {currentMatch.scraped_motor_data?.stock_number && (
+                    <Badge variant="outline">Stock: {currentMatch.scraped_motor_data.stock_number}</Badge>
+                  )}
+                </div>
               </CardContent>
             </Card>
 
