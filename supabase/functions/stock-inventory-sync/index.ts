@@ -238,7 +238,7 @@ serve(async (req) => {
   }
   
   try {
-    console.log('[STOCK-SYNC] Starting hybrid XML + HTML stock inventory sync...');
+    console.log('[STOCK-SYNC] Starting hybrid XML + HTML stock inventory sync... (v2025-09-21)');
     
     const supabase = await getServiceClient();
     const body = await req.json().catch(() => ({}));
