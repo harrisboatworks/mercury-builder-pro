@@ -113,7 +113,7 @@ serve(async (req) => {
       const modelName = extractField(item, ['<model_name>(.*?)</model_name>']) || title;
       
       // Filter 1: Mercury only (exact match)
-      const isMercury = manufacturer === 'mercury';
+      const isMercury = manufacturer.toLowerCase() === 'mercury';
       
       if (!isMercury) continue;
       processedCount.mercury++;
