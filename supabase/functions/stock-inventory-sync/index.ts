@@ -92,32 +92,39 @@ serve(async (req) => {
     for (const item of itemMatches) {
       processedCount.total++;
       
-      // Extract basic fields
+      // Extract basic fields using correct XML field names
       const manufacturer = extractField(item, [
         '<manufacturer>(.*?)</manufacturer>',
         '<make>(.*?)</make>'
       ]).toLowerCase();
       
-      const condition = extractField(item, [
-        '<condition>(.*?)</condition>',
+      const usage = extractField(item, [
         '<usage>(.*?)</usage>',
+        '<condition>(.*?)</condition>',
         '<new>(.*?)</new>'
+      ]).toLowerCase();
+      
+      const model_type = extractField(item, [
+        '<model_type>(.*?)</model_type>',
+        '<type>(.*?)</type>'
       ]).toLowerCase();
       
       const title = extractField(item, ['<title>(.*?)</title>']);
       const modelName = extractField(item, ['<model_name>(.*?)</model_name>']) || title;
       
-      // Filter 1: Mercury only
-      const isMercury = manufacturer.includes('mercury') || 
-                       title.toLowerCase().includes('mercury');
+      // Filter 1: Mercury only (exact match)
+      const isMercury = manufacturer === 'mercury';
       
       if (!isMercury) continue;
       processedCount.mercury++;
       
-      // Filter 2: New condition only
-      const isNew = condition.includes('new') || 
-                   condition.includes('true') || 
-                   !condition.includes('used');
+      // Filter 2: Must be outboard motor
+      const isOutboard = model_type.includes('outboard');
+      
+      if (!isOutboard) continue;
+      
+      // Filter 3: New condition only (exact match)
+      const isNew = usage === 'new';
       
       if (!isNew) continue;
       processedCount.new_condition++;
@@ -146,14 +153,15 @@ serve(async (req) => {
         stockNumber,
         price: price ? parseFloat(price.replace(/[^0-9.]/g, '')) : null,
         manufacturer,
-        condition,
+        usage,
+        model_type,
         xmlData: item
       });
       
       console.log(`[STOCK-SYNC] Found Mercury motor: "${modelName}" (Stock: ${stockNumber})`);
     }
     
-    console.log(`[STOCK-SYNC] Processed ${processedCount.total} items → ${processedCount.mercury} Mercury → ${processedCount.new_condition} New → ${processedCount.valid} Valid`);
+    console.log(`[STOCK-SYNC] Processed ${processedCount.total} items → ${processedCount.mercury} Mercury → ${processedCount.new_condition} New & Outboard → ${processedCount.valid} Valid`);
     console.log(`[STOCK-SYNC] Found ${mercuryMotors.length} Mercury motors in stock`);
     
     // Step 3: Fetch existing database motors
