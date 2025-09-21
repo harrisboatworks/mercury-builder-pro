@@ -969,7 +969,7 @@ export const getPopularityIndicator = (motorModel: string, isInStock: boolean | 
     const outOfStockBadges = [
       '📦 Order for Spring Delivery',
       '🔄 Available to Order',
-      '📅 Pre-Order for 2025',
+      '📅 Reserve for Spring Pickup',
       '⏰ 2-3 Week Lead Time'
     ];
     
