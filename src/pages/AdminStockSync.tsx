@@ -102,7 +102,7 @@ export default function AdminStockSync() {
       const { count, error } = await supabase
         .from('pending_motor_matches')
         .select('*', { count: 'exact', head: true })
-        .eq('review_status', 'pending');
+        .in('review_status', ['pending', 'no_match']);
 
       if (error) throw error;
       setPendingMatchesCount(count || 0);
@@ -143,6 +143,9 @@ export default function AdminStockSync() {
       
       setPreviewData(response.data);
       setShowPreview(true);
+      
+      // Refresh pending matches count after preview
+      await fetchPendingMatchesCount();
       
       toast({
         title: "Preview Complete",
