@@ -190,7 +190,7 @@ export default function MotorCardPremium({
                       motor={{
                         in_stock: inStock,
                         stock_quantity: motor?.stock_quantity,
-                        stock_number: motor?.stock_number,
+                        stock_number: motor?.stockNumber,
                         availability: motor?.availability
                       }}
                       variant="compact"
