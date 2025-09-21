@@ -57,15 +57,27 @@ Deno.serve(async (req) => {
       throw new Error('DROPBOX_ACCESS_TOKEN not configured')
     }
 
-    // Extract shared folder ID from Dropbox URL - support both old and new formats
-    const oldFormatMatch = config.folder_path.match(/\/s\/([a-zA-Z0-9]+)/)
-    const newFormatMatch = config.folder_path.match(/\/scl\/fo\/([a-zA-Z0-9_-]+)/)
+    // Normalize the Dropbox URL - handle both full URLs and partial paths
+    let sharedLinkUrl = config.folder_path.trim()
+    
+    // If it's a partial path, prepend the full Dropbox URL
+    if (sharedLinkUrl.startsWith('scl/fo/') || sharedLinkUrl.startsWith('/scl/fo/')) {
+      sharedLinkUrl = `https://www.dropbox.com/${sharedLinkUrl.replace(/^\//, '')}`
+    } else if (sharedLinkUrl.startsWith('s/') || sharedLinkUrl.startsWith('/s/')) {
+      sharedLinkUrl = `https://www.dropbox.com/${sharedLinkUrl.replace(/^\//, '')}`
+    } else if (!sharedLinkUrl.startsWith('https://')) {
+      throw new Error('Invalid Dropbox URL format. Please use a full Dropbox shared folder URL (e.g., https://www.dropbox.com/scl/fo/...)')
+    }
+    
+    console.log('Processing Dropbox URL:', sharedLinkUrl)
+    
+    // Extract shared folder ID from normalized URL - support both old and new formats
+    const oldFormatMatch = sharedLinkUrl.match(/\/s\/([a-zA-Z0-9]+)/)
+    const newFormatMatch = sharedLinkUrl.match(/\/scl\/fo\/([a-zA-Z0-9_-]+)/)
     
     if (!oldFormatMatch && !newFormatMatch) {
-      throw new Error('Invalid Dropbox folder URL format. Please use a valid Dropbox shared folder URL.')
+      throw new Error(`Invalid Dropbox folder URL format. URL: ${sharedLinkUrl}. Please use a valid Dropbox shared folder URL.`)
     }
-
-    const sharedLinkUrl = config.folder_path
     
     // Determine which API endpoint to use based on URL format
     let listResponse

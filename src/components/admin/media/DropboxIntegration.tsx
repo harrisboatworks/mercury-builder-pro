@@ -57,10 +57,22 @@ export function DropboxIntegration() {
   };
 
   const addConfig = async () => {
-    if (!newFolderPath.trim()) {
+    const folderPath = newFolderPath.trim()
+    
+    if (!folderPath) {
       toast({
-        title: "Folder path required",
-        description: "Please enter a valid Dropbox folder path.",
+        title: "Dropbox URL required",
+        description: "Please enter a valid Dropbox shared folder URL.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate URL format
+    if (!folderPath.includes('dropbox.com') && !folderPath.startsWith('scl/fo/') && !folderPath.startsWith('s/')) {
+      toast({
+        title: "Invalid URL format",
+        description: "Please use a valid Dropbox shared folder URL (e.g., https://www.dropbox.com/scl/fo/...)",
         variant: "destructive",
       });
       return;
@@ -71,7 +83,7 @@ export function DropboxIntegration() {
       const { error } = await supabase
         .from('dropbox_sync_config')
         .insert({
-          folder_path: newFolderPath.trim(),
+          folder_path: folderPath,
           motor_assignment_rule: newAssignmentRule.trim() || 'filename_pattern',
           auto_categorize: true,
           sync_enabled: true,
@@ -207,20 +219,24 @@ export function DropboxIntegration() {
           <Alert>
             <AlertCircle className="h-4 w-4" />
             <AlertDescription>
-              <strong>Note:</strong> This feature requires Dropbox API integration. 
+              <strong>How to get Dropbox URL:</strong> Go to your Dropbox folder → Click "Share" → Click "Copy link" → Paste the full URL here.
               Files will be automatically imported and assigned to motors based on your rules.
             </AlertDescription>
           </Alert>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <Label htmlFor="folder-path">Dropbox Folder Path</Label>
+              <Label htmlFor="folder-path">Dropbox Shared Folder URL</Label>
               <Input
                 id="folder-path"
-                placeholder="/Mercury Motors/Images"
+                placeholder="https://www.dropbox.com/scl/fo/abc123/xyz?rlkey=..."
                 value={newFolderPath}
                 onChange={(e) => setNewFolderPath(e.target.value)}
+                className="text-sm"
               />
+              <p className="text-xs text-muted-foreground mt-1">
+                Paste the full Dropbox shared folder URL from "Copy link"
+              </p>
             </div>
             <div>
               <Label htmlFor="assignment-rule">Assignment Rule</Label>
