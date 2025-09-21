@@ -1,0 +1,1 @@
+SELECT * FROM cleanup_motor_duplicates_by_display();
