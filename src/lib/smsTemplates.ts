@@ -1,5 +1,5 @@
 export interface SMSTemplate {
-  type: 'hot_lead' | 'quote_confirmation' | 'follow_up' | 'reminder' | 'manual';
+  type: 'hot_lead' | 'quote_confirmation' | 'follow_up' | 'reminder' | 'manual' | 'unmatched_motors';
   generateMessage: (data: any) => string;
 }
 
@@ -40,6 +40,17 @@ export const SMS_TEMPLATES: Record<string, SMSTemplate> = {
     type: 'manual',
     generateMessage: (data) => {
       return data.customMessage || 'Manual SMS notification from Mercury Motors team.';
+    }
+  },
+
+  unmatched_motors: {
+    type: 'unmatched_motors',
+    generateMessage: (data) => {
+      const { count, motors } = data;
+      const motorList = motors.slice(0, 3)
+        .map(m => `- ${m.model_display || m.name}`)
+        .join('\n');
+      return `🔧 Mercury Inventory Alert\n\n${count} motors need matching review:\n${motorList}${count > 3 ? '\n...' : ''}\n\nReview: quote.harrisboatworks.ca/admin/stock-sync\n\n- Harris Boat Works`;
     }
   }
 };

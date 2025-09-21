@@ -26,6 +26,78 @@ function cleanText(text: string): string {
   return text?.toString()?.trim()?.replace(/\s+/g, ' ') || '';
 }
 
+// SMS notification helper for unmatched motors
+async function sendUnmatchedMotorAlert(pendingReviews: any[]): Promise<void> {
+  try {
+    // Check if SMS alerts are enabled
+    const enableSmsAlerts = Deno.env.get('ENABLE_SMS_ALERTS');
+    const adminPhone = Deno.env.get('ADMIN_PHONE');
+    
+    if (enableSmsAlerts !== 'true' || !adminPhone) {
+      console.log('[SMS] SMS alerts disabled or no admin phone configured');
+      return;
+    }
+    
+    // Rate limiting: Check if we sent an alert in the last 4 hours
+    const supabase = await getServiceClient();
+    const fourHoursAgo = new Date();
+    fourHoursAgo.setHours(fourHoursAgo.getHours() - 4);
+    
+    const { data: recentAlerts } = await supabase
+      .from('sms_logs')
+      .select('created_at')
+      .eq('to_phone', adminPhone)
+      .like('message', '%motors need matching review%')
+      .gte('created_at', fourHoursAgo.toISOString())
+      .order('created_at', { ascending: false })
+      .limit(1);
+    
+    if (recentAlerts && recentAlerts.length > 0) {
+      console.log('[SMS] Rate limit: Unmatched motor alert sent in last 4 hours, skipping');
+      return;
+    }
+    
+    // Prepare SMS data
+    const motorData = pendingReviews.map(review => ({
+      name: review.scraped_motor_data?.name || 'Unknown Motor',
+      model_display: review.potential_matches?.[0]?.model_display || 'Unknown',
+      score: Math.round(review.confidence_score || 0)
+    }));
+    
+    // Call SMS service
+    const smsPayload = {
+      to: adminPhone,
+      message_type: 'unmatched_motors',
+      customer_details: {
+        count: pendingReviews.length,
+        motors: motorData
+      }
+    };
+    
+    const supabaseUrl = Deno.env.get('SUPABASE_URL');
+    const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+    
+    const smsResponse = await fetch(`${supabaseUrl}/functions/v1/send-sms`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${serviceKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(smsPayload)
+    });
+    
+    if (smsResponse.ok) {
+      console.log(`[SMS] Successfully sent unmatched motor alert for ${pendingReviews.length} motors`);
+    } else {
+      const errorText = await smsResponse.text();
+      console.error(`[SMS] Failed to send alert: ${smsResponse.status} - ${errorText}`);
+    }
+    
+  } catch (error) {
+    console.error('[SMS] Error sending unmatched motor alert:', error.message);
+  }
+}
+
 // Parse HTML page for motor data
 function parseHTMLMotors(htmlText: string): any[] {
   const motors = [];
@@ -444,7 +516,6 @@ serve(async (req) => {
     }
     
     // 2-TIER MATCHING SYSTEM: Auto-match high confidence, queue uncertain matches
-    const stockUpdates = [];
     const pendingReviews = [];
     let autoMatched = 0;
     let queuedForReview = 0;
@@ -712,6 +783,11 @@ serve(async (req) => {
     }
     
     console.log(`[STOCK-SYNC] Applied ${updatesApplied} of ${allUpdates.length} updates`);
+    
+    // Send SMS notification for unmatched motors (if enabled and new ones found)
+    if (pendingReviews.length > 0) {
+      await sendUnmatchedMotorAlert(pendingReviews);
+    }
     
     // Update sync log
     if (syncLog?.id) {
