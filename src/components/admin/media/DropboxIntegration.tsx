@@ -26,21 +26,62 @@ export function DropboxIntegration() {
   const [uploading, setUploading] = useState(false);
   const [motorId, setMotorId] = useState('');
   const [dropboxReady, setDropboxReady] = useState(false);
+  const [configLoading, setConfigLoading] = useState(true);
+  const [appKeyError, setAppKeyError] = useState<string | null>(null);
   const { toast } = useToast();
 
   useEffect(() => {
-    // Load Dropbox Chooser script if not already loaded
-    if (!document.getElementById('dropboxjs')) {
-      const script = document.createElement('script');
-      script.id = 'dropboxjs';
-      script.type = 'text/javascript';
-      script.src = 'https://www.dropbox.com/static/api/2/dropins.js';
-      script.setAttribute('data-app-key', 'demo'); // Demo mode - replace with actual Dropbox app key
-      script.onload = () => setDropboxReady(true);
-      document.head.appendChild(script);
-    } else {
-      setDropboxReady(true);
-    }
+    const loadDropboxConfig = async () => {
+      try {
+        setConfigLoading(true);
+        console.log('Loading Dropbox configuration...');
+        
+        // Get the Dropbox app key from our edge function
+        const { data, error } = await supabase.functions.invoke('get-dropbox-config');
+        
+        if (error) {
+          console.error('Failed to get Dropbox config:', error);
+          setAppKeyError('Failed to load Dropbox configuration');
+          return;
+        }
+
+        if (!data?.appKey) {
+          console.error('No app key returned from config');
+          setAppKeyError('Dropbox app key not configured');
+          return;
+        }
+
+        console.log('Successfully loaded Dropbox app key');
+
+        // Load Dropbox Chooser script if not already loaded
+        if (!document.getElementById('dropboxjs')) {
+          const script = document.createElement('script');
+          script.id = 'dropboxjs';
+          script.type = 'text/javascript';
+          script.src = 'https://www.dropbox.com/static/api/2/dropins.js';
+          script.setAttribute('data-app-key', data.appKey);
+          script.onload = () => {
+            console.log('Dropbox Chooser script loaded successfully');
+            setDropboxReady(true);
+          };
+          script.onerror = () => {
+            console.error('Failed to load Dropbox Chooser script');
+            setAppKeyError('Failed to load Dropbox Chooser');
+          };
+          document.head.appendChild(script);
+        } else {
+          setDropboxReady(true);
+        }
+        
+      } catch (error) {
+        console.error('Error loading Dropbox config:', error);
+        setAppKeyError('Failed to initialize Dropbox integration');
+      } finally {
+        setConfigLoading(false);
+      }
+    };
+
+    loadDropboxConfig();
   }, []);
 
   const uploadFileToSupabase = async (fileUrl: string, fileName: string) => {
@@ -114,6 +155,7 @@ export function DropboxIntegration() {
                   dropbox_path: file.link,
                   dropbox_sync_status: 'completed',
                   assignment_type: motorId ? 'individual' : 'unassigned',
+                  chooser_imported: true,
                   is_active: true
                 });
 
@@ -163,71 +205,82 @@ export function DropboxIntegration() {
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
-        <Alert>
-          <AlertCircle className="h-4 w-4" />
-          <AlertDescription>
-            <strong>Demo Mode:</strong> This is currently running in demo mode. To enable full Dropbox integration, 
-            create a Dropbox app at <a href="https://www.dropbox.com/developers/apps" target="_blank" className="underline">Dropbox Developers</a> 
-            and replace the app key in the component. The demo allows you to test the interface without a real Dropbox connection.
-          </AlertDescription>
-        </Alert>
+        {appKeyError && (
+          <Alert variant="destructive">
+            <AlertCircle className="h-4 w-4" />
+            <AlertDescription>
+              <strong>Configuration Error:</strong> {appKeyError}. Please check your Dropbox app configuration in the admin settings.
+            </AlertDescription>
+          </Alert>
+        )}
 
-        <div className="space-y-4">
-          <div>
-            <Label htmlFor="motor-id">Assign to Motor (Optional)</Label>
-            <Input
-              id="motor-id"
-              placeholder="Enter Motor ID to auto-assign files"
-              value={motorId}
-              onChange={(e) => setMotorId(e.target.value)}
-            />
-            <p className="text-xs text-muted-foreground mt-1">
-              Leave empty to import files without motor assignment
-            </p>
-          </div>
+        {configLoading && (
+          <Alert>
+            <Cloud className="h-4 w-4" />
+            <AlertDescription>
+              Loading Dropbox configuration...
+            </AlertDescription>
+          </Alert>
+        )}
 
-          <div className="flex flex-col items-center gap-4 p-8 border-2 border-dashed border-muted-foreground/25 rounded-lg">
-            <div className="flex items-center gap-3">
-              <FileImage className="h-8 w-8 text-muted-foreground" />
-              <div className="text-center">
-                <h3 className="font-semibold">Import from Dropbox</h3>
-                <p className="text-sm text-muted-foreground">
-                  Select images and documents from your Dropbox account
-                </p>
-              </div>
+        {!appKeyError && !configLoading && (
+          <div className="space-y-4">
+            <div>
+              <Label htmlFor="motor-id">Assign to Motor (Optional)</Label>
+              <Input
+                id="motor-id"
+                placeholder="Enter Motor ID to auto-assign files"
+                value={motorId}
+                onChange={(e) => setMotorId(e.target.value)}
+              />
+              <p className="text-xs text-muted-foreground mt-1">
+                Leave empty to import files without motor assignment
+              </p>
             </div>
 
-            <Button 
-              onClick={handleDropboxChooser}
-              disabled={!dropboxReady || uploading}
-              size="lg"
-              className="flex items-center gap-2"
-            >
-              {uploading ? (
-                <>
-                  <Upload className="h-4 w-4 animate-spin" />
-                  Importing Files...
-                </>
-              ) : !dropboxReady ? (
-                <>
-                  <Cloud className="h-4 w-4" />
-                  Loading Dropbox...
-                </>
-              ) : (
-                <>
-                  <Cloud className="h-4 w-4" />
-                  Choose Files from Dropbox
-                </>
-              )}
-            </Button>
+            <div className="flex flex-col items-center gap-4 p-8 border-2 border-dashed border-muted-foreground/25 rounded-lg">
+              <div className="flex items-center gap-3">
+                <FileImage className="h-8 w-8 text-muted-foreground" />
+                <div className="text-center">
+                  <h3 className="font-semibold">Import from Dropbox</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Select images and documents from your Dropbox account
+                  </p>
+                </div>
+              </div>
 
-            <p className="text-xs text-muted-foreground text-center max-w-md">
-              Supported formats: JPG, PNG, GIF, WebP, PDF. Files will be uploaded to your motor media library.
-            </p>
+              <Button 
+                onClick={handleDropboxChooser}
+                disabled={!dropboxReady || uploading || appKeyError !== null}
+                size="lg"
+                className="flex items-center gap-2"
+              >
+                {uploading ? (
+                  <>
+                    <Upload className="h-4 w-4 animate-spin" />
+                    Importing Files...
+                  </>
+                ) : !dropboxReady ? (
+                  <>
+                    <Cloud className="h-4 w-4" />
+                    Loading Dropbox...
+                  </>
+                ) : (
+                  <>
+                    <Cloud className="h-4 w-4" />
+                    Choose Files from Dropbox
+                  </>
+                )}
+              </Button>
+
+              <p className="text-xs text-muted-foreground text-center max-w-md">
+                Supported formats: JPG, PNG, GIF, WebP, PDF. Files will be uploaded to your motor media library.
+              </p>
+            </div>
           </div>
-        </div>
+        )}
 
-        {!dropboxReady && (
+        {!dropboxReady && !appKeyError && !configLoading && (
           <Alert>
             <AlertCircle className="h-4 w-4" />
             <AlertDescription>
