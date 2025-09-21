@@ -6,9 +6,10 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import { Image, FileText, Video, Link as LinkIcon, Plus, Trash2, Star, StarOff, Upload, Sparkles } from 'lucide-react';
+import { Image, FileText, Video, Link as LinkIcon, Plus, Trash2, Star, StarOff, Upload, Sparkles, Cloud } from 'lucide-react';
 import { MotorFeaturesManager } from './MotorFeaturesManager';
 import { QuickMediaUpload } from './QuickMediaUpload';
+import { CompactDropboxImport } from './media/CompactDropboxImport';
 
 interface MediaItem {
   id: string;
@@ -295,18 +296,33 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
               </div>
             ) : (
                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 overflow-hidden">
-                 {/* Quick Upload - First column for better visibility */}
+                 {/* Media Import - Enhanced with Dropbox */}
                  <div className="space-y-4">
                    <div className="flex items-center justify-between">
                      <h3 className="text-lg font-semibold text-primary">
-                       Quick Upload
+                       Import Media
                      </h3>
                    </div>
+                   
+                   {/* Quick Upload */}
                    <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
+                     <div className="flex items-center gap-2 mb-3">
+                       <Upload className="h-4 w-4" />
+                       <span className="text-sm font-medium">File Upload</span>
+                     </div>
                      <QuickMediaUpload 
                        motorId={motor.id}
                        onUploadComplete={loadMediaData}
                      />
+                   </div>
+
+                   {/* Dropbox Integration */}
+                   <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                     <div className="flex items-center gap-2 mb-3">
+                       <Cloud className="h-4 w-4 text-blue-600" />
+                       <span className="text-sm font-medium text-blue-700">Dropbox Import</span>
+                     </div>
+                     <CompactDropboxImport motorId={motor.id} onUploadComplete={loadMediaData} />
                    </div>
                  </div>
 

@@ -22,9 +22,14 @@ declare global {
   }
 }
 
-export function DropboxIntegration() {
+interface DropboxIntegrationProps {
+  motorId?: string;
+  onUploadComplete?: () => void;
+}
+
+export function DropboxIntegration({ motorId: propMotorId, onUploadComplete }: DropboxIntegrationProps = {}) {
   const [uploading, setUploading] = useState(false);
-  const [motorId, setMotorId] = useState('');
+  const [motorId, setMotorId] = useState(propMotorId || '');
   const [dropboxReady, setDropboxReady] = useState(false);
   const [configLoading, setConfigLoading] = useState(true);
   const [appKeyError, setAppKeyError] = useState<string | null>(null);
@@ -170,7 +175,7 @@ export function DropboxIntegration() {
                 body: {
                   fileUrl: file.link,
                   fileName: file.name,
-                  motorId: motorId || null,
+                  motorId: propMotorId || null,
                   accessToken: accessToken || null // Include access token if available
                 }
               });
@@ -207,6 +212,11 @@ export function DropboxIntegration() {
               description: "No files were successfully imported.",
               variant: "destructive",
             });
+          }
+
+          // Call onUploadComplete callback if provided
+          if (onUploadComplete) {
+            onUploadComplete();
           }
 
         } catch (error) {
