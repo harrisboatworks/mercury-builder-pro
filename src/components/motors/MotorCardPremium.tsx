@@ -131,6 +131,29 @@ export default function MotorCardPremium({
     setShowTooltip(false);
   };
   
+  // Debug logging
+  useEffect(() => {
+    console.log('Motor Debug - ALL DATA:', {
+      title: title,
+      inStock: inStock,
+      stockNumber: motor?.stockNumber,
+      stock_quantity: motor?.stock_quantity,
+      availability: motor?.availability,
+      fullMotorObject: motor
+    });
+    
+    if (inStock) {
+      console.log('RENDERING STOCK BADGE for:', title, {
+        in_stock: inStock,
+        stock_quantity: motor?.stock_quantity,
+        stock_number: motor?.stockNumber,
+        availability: motor?.availability
+      });
+    } else {
+      console.log('NOT IN STOCK:', title);
+    }
+  }, [title, inStock, motor]);
+
   return (
     <>
       <div className="relative">
@@ -163,20 +186,18 @@ export default function MotorCardPremium({
                 {/* Gallery indicator and stock status */}
                 <div className="absolute bottom-2 right-2 flex items-center gap-2">
                   {inStock && (
-                    <>
-                      {console.log('Stock Debug:', { inStock, motor: motor?.stockNumber, stock_quantity: motor?.stock_quantity })}
-                      <StockBadge 
-                        motor={{
-                          in_stock: inStock,
-                          stock_quantity: motor?.stock_quantity,
-                          stock_number: motor?.stockNumber,  // Use stockNumber from Motor interface
-                          availability: motor?.availability
-                        }}
-                        variant="compact"
-                        className="backdrop-blur-sm"
-                      />
-                    </>
+                    <StockBadge 
+                      motor={{
+                        in_stock: inStock,
+                        stock_quantity: motor?.stock_quantity,
+                        stock_number: motor?.stockNumber,
+                        availability: motor?.availability
+                      }}
+                      variant="compact"
+                      className="backdrop-blur-sm z-20 bg-primary/90"
+                    />
                   )}
+                  
                  {imageCount > 1 && (
                     <div className="bg-black/70 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">
                       {imageCount} photos
