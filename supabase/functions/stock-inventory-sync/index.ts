@@ -412,15 +412,42 @@ serve(async (req) => {
     
     console.log(`[STOCK-SYNC] Found ${dbMotors.length} motors in database`);
     
-    // Step 4: Fuzzy match XML motors to database motors
+    // Step 4: ENHANCED MATCHING: Model Number First, then Fuzzy Fallback
     const matches = [];
     const stockUpdates = [];
     
-    // 2-TIER MATCHING SYSTEM: Auto-match high confidence, queue uncertain matches
+    // 3-TIER MATCHING SYSTEM: Model Number → Fuzzy → Manual Review
     const pendingReviews = [];
+    let modelNumberMatched = 0;
     let autoMatched = 0;
     let queuedForReview = 0;
     let rejected = 0;
+
+    // Helper function to get Mercury model number from scraped motor name
+    function getOfficialModelNumber(modelName: string): string | null {
+      // Try direct mapping from display name to model number
+      const normalizedName = modelName.trim().replace(/\s+/g, ' ');
+      
+      // First try exact match
+      let exactMatch = descriptionToModelMap.get(normalizedName);
+      if (exactMatch) return exactMatch;
+
+      // Try normalized match (handle variations in spacing, case, etc.)
+      exactMatch = descriptionToModelMap.get(normalizedName);
+      if (exactMatch) return exactMatch;
+
+      // Try fuzzy matching for common variations
+      for (const [description, modelNumber] of descriptionToModelMap.entries()) {
+        if (description.replace(/\s+/g, ' ').toLowerCase() === normalizedName.toLowerCase()) {
+          return modelNumber;
+        }
+      }
+      
+      return null;
+    }
+
+    // Remove the placeholder function
+    // function getModelMappings() was here
     
     // Helper function to extract HP from model name
     function extractHP(modelName: string): number | null {
@@ -553,17 +580,49 @@ serve(async (req) => {
     for (const motor of allMotors) {
       const motorData = extractMotorData(motor);
       let bestMatches = [];
-      
-      // Check historical mappings first
+      let matched = false;
+
+      // TIER 1: Try official Mercury model number matching first
+      const officialModelNumber = getOfficialModelNumber(motorData.name);
+      if (officialModelNumber) {
+        const exactMatch = dbMotors.find(m => m.model_number === officialModelNumber);
+        if (exactMatch) {
+          modelNumberMatched++;
+          matched = true;
+          
+          const wasInStock = exactMatch.in_stock;
+          const nowInStock = true;
+          
+          if (!wasInStock && nowInStock) {
+            stockUpdates.push({
+              motor_id: exactMatch.id,
+              model_display: exactMatch.model_display,
+              new_stock_status: nowInStock,
+              new_quantity: 1,
+              new_stock_number: motor.stockNumber,
+              new_dealer_price: motor.price,
+              new_availability: 'In Stock',
+              match_score: 1.0,
+              match_reason: `Official model number match: "${motorData.name}" → "${exactMatch.model_display}" (${officialModelNumber})`
+            });
+          }
+          
+          console.log(`[MODEL NUMBER MATCH] "${motorData.name}" → "${exactMatch.model_display}" (${officialModelNumber})`);
+          continue;
+        }
+      }
+
+      // TIER 2: Check historical mappings
       const historicalMatch = historicalMappings?.find(mapping => 
         mapping.scraped_pattern === motorData.name
       );
       
-      if (historicalMatch) {
+      if (historicalMatch && !matched) {
         const dbMotor = dbMotors.find(m => m.id === historicalMatch.motor_model_id);
         if (dbMotor) {
           // Use historical mapping - auto-match
           autoMatched++;
+          matched = true;
           
           const wasInStock = dbMotor.in_stock;
           const nowInStock = true;
@@ -586,6 +645,9 @@ serve(async (req) => {
           continue;
         }
       }
+
+      // Skip fuzzy matching if we already found a match
+      if (matched) continue;
       
       // Calculate match scores for all database motors
       for (const dbMotor of dbMotors) {
@@ -652,7 +714,7 @@ serve(async (req) => {
       }
     }
     
-    console.log(`[STOCK-SYNC] Processing results: ${autoMatched} auto-matched, ${queuedForReview} queued for review, ${rejected} rejected`);
+    console.log(`[STOCK-SYNC] Processing results: ${modelNumberMatched} model number matched, ${autoMatched} fuzzy auto-matched, ${queuedForReview} queued for review, ${rejected} rejected`);
 
     // Store pending reviews in database (if any and not preview mode)
     if (pendingReviews.length > 0 && !preview) {
@@ -664,7 +726,7 @@ serve(async (req) => {
       console.log(`[STOCK-SYNC] Stored ${pendingReviews.length} matches for manual review`);
     }
     
-    console.log(`[STOCK-SYNC] Matched ${autoMatched} of ${allMotors.length} total motors to database (${autoMatched} auto, ${queuedForReview} review, ${rejected} rejected)`);
+    console.log(`[STOCK-SYNC] Matched ${modelNumberMatched + autoMatched} of ${allMotors.length} total motors to database (${modelNumberMatched} model number, ${autoMatched} fuzzy auto, ${queuedForReview} review, ${rejected} rejected)`);
     
     // Step 5: Prepare out-of-stock updates (mark unmatched motors as out of stock)
     const matchedMotorIds = new Set(stockUpdates.map(u => u.motor_id));
@@ -694,9 +756,10 @@ serve(async (req) => {
     
     console.log(`[STOCK-SYNC] Changes: ${changesSummary.newly_in_stock} newly in stock, ${changesSummary.newly_out_of_stock} newly out of stock`);
     
-    // Enhanced summary for 2-tier system
+    // Enhanced summary for 3-tier system
     const summary = {
       motors_processed: allMotors.length,
+      model_number_matched: modelNumberMatched,
       auto_matched: autoMatched,
       queued_for_review: queuedForReview,
       rejected: rejected,
