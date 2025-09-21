@@ -57,28 +57,50 @@ Deno.serve(async (req) => {
       throw new Error('DROPBOX_ACCESS_TOKEN not configured')
     }
 
-    // Extract shared folder ID from Dropbox URL
-    const folderIdMatch = config.folder_path.match(/\/s\/([a-zA-Z0-9]+)/)
-    if (!folderIdMatch) {
-      throw new Error('Invalid Dropbox folder URL format')
+    // Extract shared folder ID from Dropbox URL - support both old and new formats
+    const oldFormatMatch = config.folder_path.match(/\/s\/([a-zA-Z0-9]+)/)
+    const newFormatMatch = config.folder_path.match(/\/scl\/fo\/([a-zA-Z0-9_-]+)/)
+    
+    if (!oldFormatMatch && !newFormatMatch) {
+      throw new Error('Invalid Dropbox folder URL format. Please use a valid Dropbox shared folder URL.')
     }
 
     const sharedLinkUrl = config.folder_path
     
-    // List files in the Dropbox folder using the shared link
-    const listResponse = await fetch('https://api.dropboxapi.com/2/files/list_folder', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${dropboxToken}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        path: '',
-        shared_link: {
-          url: sharedLinkUrl
-        }
+    // Determine which API endpoint to use based on URL format
+    let listResponse
+    
+    if (newFormatMatch) {
+      // New format - use shared_link parameter
+      listResponse = await fetch('https://api.dropboxapi.com/2/sharing/list_folder', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${dropboxToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          shared_link: {
+            url: sharedLinkUrl
+          },
+          path: ''
+        })
       })
-    })
+    } else {
+      // Old format - use files/list_folder with shared_link
+      listResponse = await fetch('https://api.dropboxapi.com/2/files/list_folder', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${dropboxToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          path: '',
+          shared_link: {
+            url: sharedLinkUrl
+          }
+        })
+      })
+    }
 
     if (!listResponse.ok) {
       const error = await listResponse.text()
