@@ -13,6 +13,8 @@ import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { Loader2, Save, Plus, X, Edit3, Database, Globe, User } from 'lucide-react';
 import { CustomSourceManager } from './CustomSourceManager';
+import { QuickMediaUpload } from './QuickMediaUpload';
+import { DropboxIntegration } from './media/DropboxIntegration';
 
 interface Motor {
   id: string;
@@ -183,7 +185,7 @@ export const MotorManualOverride: React.FC<ManualOverrideProps> = ({
   const displaySpecs = { ...(motor.specifications || {}), ...(overrides.specifications || {}) };
 
   return (
-    <Card className="max-w-4xl">
+    <Card className="max-w-6xl">
       <CardHeader className="space-y-4">
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2">
@@ -327,48 +329,69 @@ export const MotorManualOverride: React.FC<ManualOverrideProps> = ({
             </div>
           </TabsContent>
 
-          <TabsContent value="images" className="space-y-4">
-            <div className="grid gap-4 md:grid-cols-3">
-              {motor.images?.filter(image => {
-                const url = typeof image === 'string' ? image : image.url;
-                return url && 
-                       !url.includes('facebook.com') && 
-                       !url.includes('ThumbGenerator') &&
-                       !url.includes('template') &&
-                       !url.includes('tracking');
-              }).map((image, index) => {
-                const imageUrl = typeof image === 'string' ? image : image.url;
-                const imageSource = typeof image === 'string' ? 'Unknown' : image.source || 'Unknown';
-                
-                return (
-                  <div key={index} className="relative group space-y-2">
-                    <img
-                      src={imageUrl}
-                      alt={`${motor.model} ${index + 1}`}
-                      className="w-full h-32 object-cover rounded border"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = '/placeholder.svg';
-                        target.className = 'w-full h-32 object-cover rounded border opacity-50';
-                      }}
-                    />
-                    <div className="text-xs text-muted-foreground">
-                      <div>Source: {imageSource}</div>
-                      <div className="truncate" title={imageUrl}>URL: {imageUrl}</div>
+          <TabsContent value="images" className="space-y-6">
+            {/* Upload Section */}
+            <QuickMediaUpload 
+              motorId={motor.id} 
+              onUploadComplete={fetchMotor}
+            />
+            
+            <Separator />
+            
+            {/* Existing Images Section */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-medium">Current Images</h4>
+              <div className="grid gap-4 md:grid-cols-3">
+                {motor.images?.filter(image => {
+                  const url = typeof image === 'string' ? image : image.url;
+                  return url && 
+                         !url.includes('facebook.com') && 
+                         !url.includes('ThumbGenerator') &&
+                         !url.includes('template') &&
+                         !url.includes('tracking');
+                }).map((image, index) => {
+                  const imageUrl = typeof image === 'string' ? image : image.url;
+                  const imageSource = typeof image === 'string' ? 'Unknown' : image.source || 'Unknown';
+                  
+                  return (
+                    <div key={index} className="relative group space-y-2">
+                      <img
+                        src={imageUrl}
+                        alt={`${motor.model} ${index + 1}`}
+                        className="w-full h-32 object-cover rounded border"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = '/placeholder.svg';
+                          target.className = 'w-full h-32 object-cover rounded border opacity-50';
+                        }}
+                      />
+                      <div className="text-xs text-muted-foreground">
+                        <div>Source: {imageSource}</div>
+                        <div className="truncate" title={imageUrl}>URL: {imageUrl}</div>
+                      </div>
                     </div>
+                  );
+                })}
+                {(!motor.images || motor.images.length === 0) && (
+                  <div className="col-span-3 text-center text-muted-foreground py-8">
+                    No images available for this motor
                   </div>
-                );
-              })}
-              {(!motor.images || motor.images.length === 0) && (
-                <div className="col-span-3 text-center text-muted-foreground py-8">
-                  No images available for this motor
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </TabsContent>
 
-          <TabsContent value="sources" className="space-y-4">
-            <CustomSourceManager motorId={motor.id} motorModel={motor.model} />
+          <TabsContent value="sources" className="space-y-6">
+            {/* Dropbox Integration Section */}
+            <DropboxIntegration />
+            
+            <Separator />
+            
+            {/* Custom Sources Section */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-medium">Custom Data Sources</h4>
+              <CustomSourceManager motorId={motor.id} motorModel={motor.model} />
+            </div>
           </TabsContent>
         </Tabs>
 
