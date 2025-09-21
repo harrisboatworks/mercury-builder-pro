@@ -32,6 +32,57 @@ export type Database = {
         }
         Relationships: []
       }
+      contact_inquiries: {
+        Row: {
+          admin_notes: string | null
+          created_at: string
+          email: string
+          id: string
+          inquiry_type: string
+          message: string
+          name: string
+          phone: string | null
+          preferred_contact_method: string
+          responded_at: string | null
+          status: string
+          updated_at: string
+          urgency_level: string
+          user_id: string | null
+        }
+        Insert: {
+          admin_notes?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          inquiry_type?: string
+          message: string
+          name: string
+          phone?: string | null
+          preferred_contact_method?: string
+          responded_at?: string | null
+          status?: string
+          updated_at?: string
+          urgency_level?: string
+          user_id?: string | null
+        }
+        Update: {
+          admin_notes?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          inquiry_type?: string
+          message?: string
+          name?: string
+          phone?: string | null
+          preferred_contact_method?: string
+          responded_at?: string | null
+          status?: string
+          updated_at?: string
+          urgency_level?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       cron_job_logs: {
         Row: {
           completed_at: string | null

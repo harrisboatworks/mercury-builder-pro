@@ -1,5 +1,6 @@
 import Dev from "./pages/Dev";
 import TestScraper from "./pages/TestScraper";
+import Contact from "./pages/Contact";
 // Removed obsolete test import
 import { useEffect } from "react";
 import { SITE_URL } from "./lib/site";
@@ -246,6 +247,7 @@ const App = () => (
                 
                 {/* Other Routes */}
                 <Route path="/finance-calculator" element={<FinanceCalculator />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="/dev" element={<Dev />} />
                 <Route path="/test/scraper" element={<TestScraper />} />
                 {/* Removed obsolete test routes */}
