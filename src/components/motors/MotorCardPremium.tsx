@@ -163,16 +163,19 @@ export default function MotorCardPremium({
                 {/* Gallery indicator and stock status */}
                 <div className="absolute bottom-2 right-2 flex items-center gap-2">
                   {inStock && (
-                    <StockBadge 
-                      motor={{
-                        in_stock: inStock,
-                        stock_quantity: motor?.stock_quantity,
-                        stock_number: motor?.stock_number,
-                        availability: motor?.availability
-                      }}
-                      variant="compact"
-                      className="backdrop-blur-sm"
-                    />
+                    <>
+                      {console.log('Stock Debug:', { inStock, motor: motor?.stockNumber, stock_quantity: motor?.stock_quantity })}
+                      <StockBadge 
+                        motor={{
+                          in_stock: inStock,
+                          stock_quantity: motor?.stock_quantity,
+                          stock_number: motor?.stockNumber,  // Use stockNumber from Motor interface
+                          availability: motor?.availability
+                        }}
+                        variant="compact"
+                        className="backdrop-blur-sm"
+                      />
+                    </>
                   )}
                  {imageCount > 1 && (
                     <div className="bg-black/70 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">
