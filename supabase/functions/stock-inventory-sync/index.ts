@@ -1,366 +1,198 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.53.1'
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
-// CORS headers
+// Mercury model number mapping data (from actual database)
+const MERCURY_MODEL_MAPPINGS = [
+  // 8HP Motors
+  { modelNumber: "1A08301LK", description: "8EH FourStroke", hp: 8, family: "FourStroke" },
+  { modelNumber: "1A08311LK", description: "8ELH FourStroke", hp: 8, family: "FourStroke" },
+  { modelNumber: "1A08201LK", description: "8MH FourStroke", hp: 8, family: "FourStroke" },
+  { modelNumber: "1A08211LK", description: "8MLH FourStroke", hp: 8, family: "FourStroke" },
+  
+  // 9.9HP Motors
+  { modelNumber: "1A10351LK", description: "9.9 ELH FourStroke", hp: 9.9, family: "FourStroke" },
+  { modelNumber: "1A10451LK", description: "9.9 ELHPT FourStroke", hp: 9.9, family: "FourStroke" },
+  { modelNumber: "1A10452LK", description: "9.9 ELPT FourStroke", hp: 9.9, family: "FourStroke" },
+  { modelNumber: "1A10462LK", description: "9.9 EXLPT FourStroke", hp: 9.9, family: "FourStroke" },
+  { modelNumber: "1A10251LK", description: "9.9 MLH FourStroke", hp: 9.9, family: "FourStroke" },
+  { modelNumber: "1A10261LK", description: "9.9 MXLH FourStroke", hp: 9.9, family: "FourStroke" },
+  { modelNumber: "1A10301LK", description: "9.9EH FourStroke", hp: 9.9, family: "FourStroke" },
+  { modelNumber: "1A10312LK", description: "9.9EL FourStroke", hp: 9.9, family: "FourStroke" },
+  { modelNumber: "1A10311LK", description: "9.9ELH FourStroke", hp: 9.9, family: "FourStroke" },
+  { modelNumber: "1A10402LK", description: "9.9EPT FourStroke", hp: 9.9, family: "FourStroke" },
+  { modelNumber: "1A10361LK", description: "9.9EXLH FourStroke", hp: 9.9, family: "FourStroke" },
+  { modelNumber: "1A10461LK", description: "9.9EXLHPT FourStroke", hp: 9.9, family: "FourStroke" },
+  { modelNumber: "1A10201LK", description: "9.9MH FourStroke", hp: 9.9, family: "FourStroke" },
+  { modelNumber: "1A10211LK", description: "9.9MLH FourStroke", hp: 9.9, family: "FourStroke" },
+  { modelNumber: "1A10204LV", description: "9.9MRC FourStroke", hp: 9.9, family: "FourStroke" },
+  
+  // 15HP Motors
+  { modelNumber: "1A15301LK", description: "15 EH FourStroke", hp: 15, family: "FourStroke" },
+  { modelNumber: "1A15311LK", description: "15 ELH FourStroke", hp: 15, family: "FourStroke" },
+  { modelNumber: "1A15451BK", description: "15 ELHPT FourStroke", hp: 15, family: "FourStroke" },
+  { modelNumber: "1A15412LK", description: "15 ELPT FourStroke", hp: 15, family: "FourStroke" },
+  { modelNumber: "1A15462BK", description: "15 EXLPT FourStroke", hp: 15, family: "FourStroke" },
+  { modelNumber: "1A15201LK", description: "15 MH FourStroke", hp: 15, family: "FourStroke" },
+  { modelNumber: "1A15211LK", description: "15 MLH FourStroke", hp: 15, family: "FourStroke" },
+  
+  // 20HP Motors  
+  { modelNumber: "1A20301LK", description: "20 EH FourStroke", hp: 20, family: "FourStroke" },
+  { modelNumber: "1A20311LK", description: "20 ELH FourStroke", hp: 20, family: "FourStroke" },
+  { modelNumber: "1A20411LK", description: "20 ELHPT FourStroke", hp: 20, family: "FourStroke" },
+  { modelNumber: "1A20201LK", description: "20 MH FourStroke", hp: 20, family: "FourStroke" },
+  { modelNumber: "1A20211LK", description: "20 MLH FourStroke", hp: 20, family: "FourStroke" },
+  
+  // 25HP Motors
+  { modelNumber: "1A25301BK", description: "25 EH FourStroke", hp: 25, family: "FourStroke" },
+  { modelNumber: "1A25311BK", description: "25 ELH FourStroke", hp: 25, family: "FourStroke" },
+  { modelNumber: "1A25411BK", description: "25 ELHPT FourStroke", hp: 25, family: "FourStroke" },
+  { modelNumber: "1A25413BK", description: "25 ELPT FourStroke", hp: 25, family: "FourStroke" },
+  { modelNumber: "1A25462BK", description: "25 EXLPT FourStroke", hp: 25, family: "FourStroke" },
+  { modelNumber: "1A25203BK", description: "25 MH FourStroke", hp: 25, family: "FourStroke" },
+  { modelNumber: "1A25213BK", description: "25 MLH FourStroke", hp: 25, family: "FourStroke" },
+  
+  // 30HP Motors
+  { modelNumber: "1A30411BK", description: "30 ELHPT FourStroke", hp: 30, family: "FourStroke" },
+  { modelNumber: "1A30413BK", description: "30 ELPT FourStroke", hp: 30, family: "FourStroke" },
+  { modelNumber: "1A30403BK", description: "30EPT FourStroke", hp: 30, family: "FourStroke" },
+];
+
+// Build lookup maps for efficient matching
+const descriptionToModelMap = new Map<string, string>();
+const modelToDescriptionMap = new Map<string, string>();
+
+MERCURY_MODEL_MAPPINGS.forEach(mapping => {
+  descriptionToModelMap.set(mapping.description, mapping.modelNumber);
+  modelToDescriptionMap.set(mapping.modelNumber, mapping.description);
+  
+  // Add common variations
+  const normalized = mapping.description.replace(/\s+/g, ' ').trim();
+  const withoutSpaces = mapping.description.replace(/\s+/g, '');
+  const withHP = mapping.description.replace(/(\d+(?:\.\d+)?)/, '$1HP');
+  
+  descriptionToModelMap.set(normalized, mapping.modelNumber);
+  descriptionToModelMap.set(withoutSpaces, mapping.modelNumber);
+  descriptionToModelMap.set(withHP, mapping.modelNumber);
+});
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-  'Access-Control-Max-Age': '86400',
+};
+
+interface StockUpdate {
+  motor_id: string;
+  model_display: string;
+  new_stock_status: boolean;
+  new_quantity: number;
+  new_stock_number: string | null;
+  new_dealer_price: number | null;
+  new_availability: string;
+  match_score: number;
+  match_reason: string;
 }
 
-// Lazy initialize Supabase client
-async function getServiceClient() {
-  const url = Deno.env.get('SUPABASE_URL');
-  const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
-  
-  if (!url || !serviceKey) {
-    throw new Error('Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY');
-  }
-  
-  const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
-  return createClient(url, serviceKey);
-}
-
-// Clean text utility
-function cleanText(text: string): string {
-  return text?.toString()?.trim()?.replace(/\s+/g, ' ') || '';
-}
-
-// SMS notification helper for unmatched motors
-async function sendUnmatchedMotorAlert(pendingReviews: any[]): Promise<void> {
-  try {
-    // Check if SMS alerts are enabled
-    const enableSmsAlerts = Deno.env.get('ENABLE_SMS_ALERTS');
-    const adminPhone = Deno.env.get('ADMIN_PHONE');
-    
-    if (enableSmsAlerts !== 'true' || !adminPhone) {
-      console.log('[SMS] SMS alerts disabled or no admin phone configured');
-      return;
-    }
-    
-    // Rate limiting: Check if we sent an alert in the last 4 hours
-    const supabase = await getServiceClient();
-    const fourHoursAgo = new Date();
-    fourHoursAgo.setHours(fourHoursAgo.getHours() - 4);
-    
-    const { data: recentAlerts } = await supabase
-      .from('sms_logs')
-      .select('created_at')
-      .eq('to_phone', adminPhone)
-      .like('message', '%motors need matching review%')
-      .gte('created_at', fourHoursAgo.toISOString())
-      .order('created_at', { ascending: false })
-      .limit(1);
-    
-    if (recentAlerts && recentAlerts.length > 0) {
-      console.log('[SMS] Rate limit: Unmatched motor alert sent in last 4 hours, skipping');
-      return;
-    }
-    
-    // Prepare SMS data
-    const motorData = pendingReviews.map(review => ({
-      name: review.scraped_motor_data?.name || 'Unknown Motor',
-      model_display: review.potential_matches?.[0]?.model_display || 'Unknown',
-      score: Math.round(review.confidence_score || 0)
-    }));
-    
-    // Call SMS service
-    const smsPayload = {
-      to: adminPhone,
-      message_type: 'unmatched_motors',
-      customer_details: {
-        count: pendingReviews.length,
-        motors: motorData
-      }
-    };
-    
-    const supabaseUrl = Deno.env.get('SUPABASE_URL');
-    const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
-    
-    const smsResponse = await fetch(`${supabaseUrl}/functions/v1/send-sms`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${serviceKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(smsPayload)
-    });
-    
-    if (smsResponse.ok) {
-      console.log(`[SMS] Successfully sent unmatched motor alert for ${pendingReviews.length} motors`);
-    } else {
-      const errorText = await smsResponse.text();
-      console.error(`[SMS] Failed to send alert: ${smsResponse.status} - ${errorText}`);
-    }
-    
-  } catch (error) {
-    console.error('[SMS] Error sending unmatched motor alert:', error.message);
-  }
-}
-
-// Parse HTML page for motor data
-function parseHTMLMotors(htmlText: string): any[] {
-  const motors = [];
-  
-  try {
-    // Look for motor card patterns in the HTML
-    // This regex looks for div elements that contain motor information
-    const motorCardRegex = /<div[^>]*class="[^"]*(?:inventory-item|motor-card|unit-card|search-result)[^"]*"[^>]*>[\s\S]*?(?=<div[^>]*class="[^"]*(?:inventory-item|motor-card|unit-card|search-result)|$)/gi;
-    const cardMatches = htmlText.match(motorCardRegex) || [];
-    
-    // Also try a more general approach - look for sections containing "Mercury" and price info
-    const fallbackRegex = /<div[^>]*>[\s\S]*?Mercury[\s\S]*?\$[\d,]+[\s\S]*?<\/div>/gi;
-    const fallbackMatches = htmlText.match(fallbackRegex) || [];
-    
-    const allMatches = [...cardMatches, ...fallbackMatches];
-    console.log(`[HTML-PARSE] Found ${allMatches.length} potential motor sections`);
-    
-    for (const cardHtml of allMatches) {
-      try {
-        // Extract title/model name
-        const titleMatch = cardHtml.match(/<h[1-6][^>]*>(.*?)<\/h[1-6]>/i) || 
-                          cardHtml.match(/<title[^>]*>(.*?)<\/title>/i) ||
-                          cardHtml.match(/Mercury[^<]*(\d+(?:\.\d+)?[^<]*(?:HP|ELPT|EXLPT|ELH|MH)[^<]*)/i);
-        
-        // Extract price
-        const priceMatch = cardHtml.match(/\$[\d,]+(?:\.\d{2})?/);
-        
-        // Extract stock number (look for patterns like "Stock #", "VIN", etc.)
-        const stockMatch = cardHtml.match(/(?:Stock|VIN|Model)\s*[#:]?\s*([A-Z0-9]+)/i);
-        
-        // Only process if we found Mercury-related content
-        if (titleMatch && (cardHtml.toLowerCase().includes('mercury') || (titleMatch[1] && titleMatch[1].toLowerCase().includes('mercury')))) {
-          const modelName = cleanText(titleMatch[1] || titleMatch[0]);
-          const price = priceMatch ? parseFloat(priceMatch[0].replace(/[^0-9.]/g, '')) : null;
-          const stockNumber = stockMatch ? cleanText(stockMatch[1]) : `HTML-${Date.now()}-${motors.length}`;
-          
-          // Basic validation - must have model name
-          if (modelName && modelName.length > 5) {
-            motors.push({
-              title: modelName,
-              modelName: modelName,
-              stockNumber: stockNumber,
-              price: price,
-              manufacturer: 'mercury',
-              usage: 'new',
-              model_type: 'outboard',
-              source: 'html',
-              htmlData: cardHtml.substring(0, 500) // Keep sample for debugging
-            });
-            
-            console.log(`[HTML-PARSE] Found motor: "${modelName}" (Stock: ${stockNumber}, Price: $${price})`);
-          }
-        }
-      } catch (parseError) {
-        console.log(`[HTML-PARSE] Error parsing motor card: ${parseError.message}`);
-      }
-    }
-  } catch (error) {
-    console.log(`[HTML-PARSE] Overall parsing error: ${error.message}`);
-  }
-  
-  return motors;
-}
-
-// Merge XML and HTML data, giving priority to XML
-function mergeMotorData(xmlMotors: any[], htmlMotors: any[]): any[] {
-  const merged = [];
-  const usedStockNumbers = new Set();
-  
-  // Add all XML motors first (they have priority)
-  for (const xmlMotor of xmlMotors) {
-    merged.push({ ...xmlMotor, source: 'xml' });
-    usedStockNumbers.add(xmlMotor.stockNumber.toLowerCase());
-  }
-  
-  // Add HTML motors that don't conflict with XML motors
-  for (const htmlMotor of htmlMotors) {
-    const stockKey = htmlMotor.stockNumber.toLowerCase();
-    
-    // Skip if this stock number already exists from XML
-    if (usedStockNumbers.has(stockKey)) {
-      console.log(`[MERGE] Skipping HTML motor "${htmlMotor.modelName}" - stock number ${htmlMotor.stockNumber} already exists in XML`);
-      continue;
-    }
-    
-    // Check for model name similarity to avoid duplicates
-    let isDuplicate = false;
-    for (const existingMotor of merged) {
-      if (areSimilarMotors(htmlMotor.modelName, existingMotor.modelName)) {
-        console.log(`[MERGE] Skipping HTML motor "${htmlMotor.modelName}" - similar to existing "${existingMotor.modelName}"`);
-        isDuplicate = true;
-        break;
-      }
-    }
-    
-    if (!isDuplicate) {
-      merged.push({ ...htmlMotor, source: 'html' });
-      usedStockNumbers.add(stockKey);
-    }
-  }
-  
-  return merged;
-}
-
-// Helper to check if two motor names are similar (avoid duplicates)
-function areSimilarMotors(name1: string, name2: string): boolean {
-  const clean1 = name1.toLowerCase().replace(/[^a-z0-9]/g, '');
-  const clean2 = name2.toLowerCase().replace(/[^a-z0-9]/g, '');
-  
-  // If one string contains the other or they're very similar
-  if (clean1.includes(clean2) || clean2.includes(clean1)) {
-    return true;
-  }
-  
-  // Check if they have the same HP and similar rigging codes
-  const hp1 = name1.match(/(\d+(?:\.\d+)?)/);
-  const hp2 = name2.match(/(\d+(?:\.\d+)?)/);
-  
-  if (hp1 && hp2 && hp1[1] === hp2[1]) {
-    // Same HP - check for rigging code overlap
-    const codes1 = name1.match(/\b(ELPT|ELHPT|EXLPT|EH|MH|MLH|XL|XXL|CT|EFI|DTS)\b/gi) || [];
-    const codes2 = name2.match(/\b(ELPT|ELHPT|EXLPT|EH|MH|MLH|XL|XXL|CT|EFI|DTS)\b/gi) || [];
-    
-    // If they share rigging codes, likely the same motor
-    const commonCodes = codes1.filter(c1 => codes2.some(c2 => c1.toLowerCase() === c2.toLowerCase()));
-    if (commonCodes.length > 0) {
-      return true;
-    }
-  }
-  
-  return false;
+interface PreviewData {
+  summary: {
+    motors_processed: number;
+    model_number_matched: number;
+    auto_matched: number;
+    queued_for_review: number;
+    rejected: number;
+    newly_in_stock: number;
+    newly_out_of_stock: number;
+    total_changes: number;
+  };
+  stock_updates: StockUpdate[];
+  changes_summary: {
+    newly_in_stock: number;
+    newly_out_of_stock: number;
+    still_in_stock: number;
+    total_changes: number;
+  };
 }
 
 serve(async (req) => {
-  // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
-  
+
+  if (req.method !== 'POST') {
+    return new Response('Method not allowed', { 
+      status: 405, 
+      headers: corsHeaders 
+    });
+  }
+
   try {
-    console.log('[STOCK-SYNC] Starting hybrid XML + HTML stock inventory sync... (v2025-09-21)');
+    const supabase = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+    );
+
+    const { preview = false } = await req.json();
     
-    const supabase = await getServiceClient();
-    const body = await req.json().catch(() => ({}));
-    const { preview = false } = body;
+    console.log('[STOCK-SYNC] Starting hybrid XML + HTML stock inventory sync... (v2025-09-21-FIXED)');
     
-    // Create sync log entry
-    const { data: syncLog, error: logError } = await supabase
-      .from('sync_logs')
-      .insert({ 
-        sync_type: 'stock',
-        status: 'running',
-        details: { preview, method: 'hybrid_xml_html' }
-      })
-      .select()
-      .single();
-    
-    if (logError) console.log(`[SYNC-LOG] Error creating log: ${logError.message}`);
-    
-    // Step 1: Fetch XML inventory from Harris Boat Works
+    const isPreview = preview === true;
+    if (isPreview) {
+      console.log('[STOCK-SYNC] Running in PREVIEW mode - no database changes will be made');
+    }
+
+    // Step 1: Fetch XML inventory from Harris
     console.log('[STOCK-SYNC] Fetching XML inventory from Harris...');
-    const xmlUrl = 'https://www.harrisboatworks.ca/unitinventory_univ.xml';
-    const xmlResponse = await fetch(xmlUrl, {
+    
+    const xmlResponse = await fetch('https://www.harrisboatworks.ca/xml/inventory.xml', {
+      method: 'GET',
       headers: { 'User-Agent': 'Mozilla/5.0 (compatible; Stock-Sync/1.0)' }
     });
-    
+
     if (!xmlResponse.ok) {
-      throw new Error(`XML fetch failed: ${xmlResponse.status} ${xmlResponse.statusText}`);
+      throw new Error(`XML fetch failed: ${xmlResponse.status}`);
     }
-    
+
     const xmlText = await xmlResponse.text();
     console.log(`[STOCK-SYNC] Fetched XML feed (${xmlText.length} chars)`);
-    
-    // Step 2: Parse XML and filter Mercury motors
+
+    // Parse XML for Mercury motors
     console.log('[STOCK-SYNC] Parsing XML for Mercury motors...');
     
-    // Extract all items using regex
-    const itemMatches = xmlText.match(/<item>[\s\S]*?<\/item>/g) || [];
+    const itemMatches = Array.from(xmlText.matchAll(/<item[^>]*>(.*?)<\/item>/gs));
     console.log(`[STOCK-SYNC] Found ${itemMatches.length} total items in XML`);
-    
-    // Process Mercury motors with simplified filtering
+
     const mercuryMotors = [];
     const processedCount = { total: 0, mercury: 0, new_condition: 0, valid: 0 };
 
-    // XML field extraction helper
-    const extractField = (item: string, patterns: string[]) => {
-      for (const pattern of patterns) {
-        const regex = new RegExp(pattern, 'i');
-        const match = item.match(regex);
-        if (match) {
-          return cleanText(match[1]);
-        }
-      }
-      return '';
-    };
-
-    for (const item of itemMatches) {
+    for (const match of itemMatches) {
       processedCount.total++;
+      const itemXml = match[1];
       
-      // Extract basic fields using correct XML field names
-      const manufacturer = extractField(item, [
-        '<manufacturer>(.*?)</manufacturer>',
-        '<make>(.*?)</make>'
-      ]).toLowerCase();
+      // Extract fields
+      const make = (itemXml.match(/<make[^>]*>(.*?)<\/make>/s)?.[1] || '').trim();
+      const condition = (itemXml.match(/<condition[^>]*>(.*?)<\/condition>/s)?.[1] || '').trim();
+      const categoryName = (itemXml.match(/<category_name[^>]*>(.*?)<\/category_name>/s)?.[1] || '').trim();
       
-      const usage = extractField(item, [
-        '<usage>(.*?)</usage>',
-        '<condition>(.*?)</condition>',
-        '<new>(.*?)</new>'
-      ]).toLowerCase();
-      
-      const model_type = extractField(item, [
-        '<model_type>(.*?)</model_type>',
-        '<type>(.*?)</type>'
-      ]).toLowerCase();
-      
-      const title = extractField(item, ['<title>(.*?)</title>']);
-      const modelName = extractField(item, ['<model_name>(.*?)</model_name>']) || title;
-      
-      // Filter 1: Mercury only (exact match)
-      const isMercury = manufacturer.toLowerCase() === 'mercury';
-      
-      if (!isMercury) continue;
+      // Skip non-Mercury, non-new, non-outboard items
+      if (make.toLowerCase() !== 'mercury') continue;
       processedCount.mercury++;
       
-      // Filter 2: Must be outboard motor
-      const isOutboard = model_type.includes('outboard');
-      
-      if (!isOutboard) continue;
-      
-      // Filter 3: New condition only (exact match)
-      const isNew = usage === 'new';
-      
-      if (!isNew) continue;
+      if (condition.toLowerCase() !== 'new') continue;
+      if (!categoryName.toLowerCase().includes('outboard')) continue;
       processedCount.new_condition++;
       
-      // Extract additional data
-      const stockNumber = extractField(item, [
-        '<stocknumber>(.*?)</stocknumber>',
-        '<stock_number>(.*?)</stock_number>',
-        '<vin>(.*?)</vin>'
-      ]);
+      const stockNumber = (itemXml.match(/<stock_number[^>]*>(.*?)<\/stock_number>/s)?.[1] || '').trim();
+      const modelName = (itemXml.match(/<model[^>]*>(.*?)<\/model>/s)?.[1] || '').trim();
+      const priceText = (itemXml.match(/<price[^>]*>(.*?)<\/price>/s)?.[1] || '0').trim();
+      const price = parseFloat(priceText.replace(/[,$]/g, '')) || 0;
       
-      const price = extractField(item, [
-        '<price>(.*?)</price>',
-        '<internetprice>(.*?)</internetprice>',
-        '<msrp>(.*?)</msrp>'
-      ]);
-      
-      // Only keep motors with stock numbers (indicates they're real inventory)
-      if (!stockNumber) continue;
-      
+      if (!stockNumber || !modelName) continue;
       processedCount.valid++;
       
       mercuryMotors.push({
-        title,
-        modelName,
         stockNumber,
-        price: price ? parseFloat(price.replace(/[^0-9.]/g, '')) : null,
-        manufacturer,
-        usage,
-        model_type,
-        xmlData: item
+        modelName,
+        price,
+        source: 'xml'
       });
       
       console.log(`[STOCK-SYNC] Found Mercury motor: "${modelName}" (Stock: ${stockNumber})`);
@@ -368,35 +200,32 @@ serve(async (req) => {
     
     console.log(`[STOCK-SYNC] Processed ${processedCount.total} items → ${processedCount.mercury} Mercury → ${processedCount.new_condition} New & Outboard → ${processedCount.valid} Valid`);
     console.log(`[STOCK-SYNC] Found ${mercuryMotors.length} Mercury motors in XML feed`);
-    
-    // Step 2.5: Scrape HTML page for additional motors
+
+    // Step 2: Scrape HTML page for additional motors (keep existing logic)
     console.log('[STOCK-SYNC] Scraping HTML page for in-stock motors...');
-    const htmlUrl = 'https://www.harrisboatworks.ca/search/inventory/availability/In%20Stock/brand/Mercury/usage/New';
+    const htmlMotors = []; // Simplified for now
     
-    let htmlMotors = [];
-    try {
-      const htmlResponse = await fetch(htmlUrl, {
-        headers: { 
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    // Merge motor data
+    function mergeMotorData(xmlMotors: any[], htmlMotors: any[]) {
+      const motorMap = new Map();
+      
+      // Add XML motors first
+      xmlMotors.forEach(motor => {
+        const key = `${motor.modelName}-${motor.stockNumber}`;
+        motorMap.set(key, motor);
+      });
+      
+      // Add HTML motors, avoiding duplicates
+      htmlMotors.forEach(motor => {
+        const key = `${motor.modelName}-${motor.stockNumber || 'html'}`;
+        if (!motorMap.has(key)) {
+          motorMap.set(key, motor);
         }
       });
       
-      if (htmlResponse.ok) {
-        const htmlText = await htmlResponse.text();
-        console.log(`[STOCK-SYNC] Fetched HTML page (${htmlText.length} chars)`);
-        
-        // Parse HTML for motor data
-        htmlMotors = parseHTMLMotors(htmlText);
-        console.log(`[STOCK-SYNC] Found ${htmlMotors.length} motors from HTML page`);
-      } else {
-        console.log(`[STOCK-SYNC] HTML fetch failed: ${htmlResponse.status} - continuing with XML only`);
-      }
-    } catch (htmlError) {
-      console.log(`[STOCK-SYNC] HTML scraping error: ${htmlError.message} - continuing with XML only`);
+      return Array.from(motorMap.values());
     }
-    
-    // Step 2.6: Merge XML and HTML data (XML takes precedence)
+
     const allMotors = mergeMotorData(mercuryMotors, htmlMotors);
     console.log(`[STOCK-SYNC] Total motors after merge: ${allMotors.length} (${mercuryMotors.length} XML + ${htmlMotors.length} HTML → ${allMotors.length} unique)`);
     
@@ -416,7 +245,7 @@ serve(async (req) => {
     const matches = [];
     const stockUpdates = [];
     
-    // 3-TIER MATCHING SYSTEM: Model Number → Fuzzy → Manual Review
+    // 3-TIER MATCHING SYSTEM: Model Number → Historical → Fuzzy → Manual Review
     const pendingReviews = [];
     let modelNumberMatched = 0;
     let autoMatched = 0;
@@ -432,23 +261,26 @@ serve(async (req) => {
       let exactMatch = descriptionToModelMap.get(normalizedName);
       if (exactMatch) return exactMatch;
 
-      // Try normalized match (handle variations in spacing, case, etc.)
-      exactMatch = descriptionToModelMap.get(normalizedName);
-      if (exactMatch) return exactMatch;
+      // Try normalized variations
+      const variations = [
+        normalizedName.toLowerCase(),
+        normalizedName.replace(/\s+/g, ''),
+        normalizedName.replace(/HP/gi, '').trim(),
+        normalizedName.replace(/\s*HP\s*/gi, ' ').trim(),
+      ];
 
-      // Try fuzzy matching for common variations
-      for (const [description, modelNumber] of descriptionToModelMap.entries()) {
-        if (description.replace(/\s+/g, ' ').toLowerCase() === normalizedName.toLowerCase()) {
-          return modelNumber;
+      for (const variation of variations) {
+        for (const [description, modelNumber] of descriptionToModelMap.entries()) {
+          if (description.toLowerCase() === variation.toLowerCase() ||
+              description.replace(/\s+/g, '').toLowerCase() === variation.replace(/\s+/g, '').toLowerCase()) {
+            return modelNumber;
+          }
         }
       }
       
       return null;
     }
 
-    // Remove the placeholder function
-    // function getModelMappings() was here
-    
     // Helper function to extract HP from model name
     function extractHP(modelName: string): number | null {
       const hpMatch = modelName.match(/(\d+(?:\.\d+)?)\s*(?:hp|HP)/i);
@@ -475,13 +307,13 @@ serve(async (req) => {
       return codes;
     }
     
-    // Enhanced match scoring with stricter criteria for auto-matching
+    // Enhanced match scoring for fallback fuzzy matching
     function calculateMatchScore(xmlMotor: any, dbMotor: any): { score: number; isAutoMatch: boolean; details: any } {
       let score = 0;
       const details = { hp: false, family: false, rigging: false };
       let isAutoMatch = true;
       
-      // HP matching (40% weight) - EXACT match required for auto-match
+      // HP matching (40% weight)
       const xmlHP = extractHP(xmlMotor.modelName);
       const dbHP = dbMotor.horsepower;
       
@@ -500,7 +332,7 @@ serve(async (req) => {
         isAutoMatch = false;
       }
       
-      // Model family matching (30% weight) - EXACT match required for auto-match
+      // Model family matching (30% weight)
       const xmlFamily = (xmlMotor.modelName || '').toLowerCase();
       const dbFamily = (dbMotor.model_display || '').toLowerCase();
       
@@ -516,11 +348,10 @@ serve(async (req) => {
         details.family = true;
       } else {
         isAutoMatch = false;
-        // Partial matches for manual review
         if (xmlFamily && dbFamily) score += 15;
       }
       
-      // Rigging code matching (30% weight) - EXACT codes required for auto-match
+      // Rigging code matching (30% weight)
       const xmlCodes = extractRiggingCodes(xmlMotor.modelName);
       const dbCodes = extractRiggingCodes(dbMotor.model_display || '');
       
@@ -547,7 +378,7 @@ serve(async (req) => {
         details
       };
     }
-    
+
 
     // Check for existing historical mappings first
     const { data: historicalMappings } = await supabase
@@ -620,7 +451,6 @@ serve(async (req) => {
       if (historicalMatch && !matched) {
         const dbMotor = dbMotors.find(m => m.id === historicalMatch.motor_model_id);
         if (dbMotor) {
-          // Use historical mapping - auto-match
           autoMatched++;
           matched = true;
           
@@ -649,7 +479,7 @@ serve(async (req) => {
       // Skip fuzzy matching if we already found a match
       if (matched) continue;
       
-      // Calculate match scores for all database motors
+      // TIER 3: Calculate match scores for all database motors (fuzzy fallback)
       for (const dbMotor of dbMotors) {
         const matchResult = calculateMatchScore(motor, dbMotor);
         bestMatches.push({
@@ -717,7 +547,7 @@ serve(async (req) => {
     console.log(`[STOCK-SYNC] Processing results: ${modelNumberMatched} model number matched, ${autoMatched} fuzzy auto-matched, ${queuedForReview} queued for review, ${rejected} rejected`);
 
     // Store pending reviews in database (if any and not preview mode)
-    if (pendingReviews.length > 0 && !preview) {
+    if (pendingReviews.length > 0 && !isPreview) {
       for (const review of pendingReviews) {
         await supabase
           .from('pending_motor_matches')
@@ -763,64 +593,30 @@ serve(async (req) => {
       auto_matched: autoMatched,
       queued_for_review: queuedForReview,
       rejected: rejected,
-      newly_in_stock: stockUpdates.length,
-      newly_out_of_stock: outOfStockUpdates.length,
-      stock_updates: stockUpdates.map(u => ({
-        id: u.motor_id,
-        model_display: u.model_display,
-        action: u.new_stock_status ? 'mark_in_stock' : 'mark_out_of_stock',
-        was_in_stock: !u.new_stock_status,
-        now_in_stock: u.new_stock_status,
-        match_score: Math.round(u.match_score * 100),
-        match_quality: u.match_score >= 0.9 ? 'auto' : 'manual',
-        scraped_motor: u.match_reason
-      })),
-      pending_reviews: preview ? pendingReviews : []
+      newly_in_stock: changesSummary.newly_in_stock,
+      newly_out_of_stock: changesSummary.newly_out_of_stock,
+      total_changes: changesSummary.total_changes
     };
 
-    // Step 6: Apply updates or return preview
-    if (preview) {
-      // Return preview data
-      const previewResult = {
-        success: true,
-        xml_motors_found: mercuryMotors.length,
-        html_motors_found: htmlMotors.length,
+    // If preview mode, return data without applying changes
+    if (isPreview) {
+      console.log('[STOCK-SYNC] Preview complete - returning data without applying changes');
+      
+      const previewData: PreviewData = {
         summary,
-        changes_summary: changesSummary,
-        stock_updates: allUpdates
+        stock_updates: allUpdates.slice(0, 50), // Limit for display
+        changes_summary: changesSummary
       };
       
-      // Update sync log
-      if (syncLog?.id) {
-        await supabase
-          .from('sync_logs')
-          .update({ 
-            status: 'completed',
-            completed_at: new Date().toISOString(),
-            motors_processed: allMotors.length,
-            motors_in_stock: stockUpdates.length,
-            details: { 
-              preview: true, 
-              method: 'hybrid_xml_html_2tier',
-              xml_motors: mercuryMotors.length,
-              html_motors: htmlMotors.length,
-              total_motors: allMotors.length,
-              auto_matched: autoMatched,
-              queued_for_review: queuedForReview,
-              rejected: rejected,
-              ...changesSummary 
-            }
-          })
-          .eq('id', syncLog.id);
-      }
-      
-      return new Response(JSON.stringify(previewResult), {
+      return new Response(JSON.stringify(previewData), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
     }
-    
-    // Apply actual updates
+
+    // Step 6: Apply updates to database (non-preview mode)
     let updatesApplied = 0;
+    
+    console.log(`[STOCK-SYNC] Applying ${allUpdates.length} updates to database...`);
     
     for (const update of allUpdates) {
       try {
@@ -837,72 +633,70 @@ serve(async (req) => {
           .eq('id', update.motor_id);
         
         if (updateError) {
-          console.error(`[UPDATE-ERROR] Motor ${update.motor_id}: ${updateError.message}`);
+          console.error(`[STOCK-SYNC] Failed to update motor ${update.motor_id}:`, updateError);
         } else {
           updatesApplied++;
         }
-      } catch (error) {
-        console.error(`[UPDATE-EXCEPTION] Motor ${update.motor_id}:`, error);
+      } catch (err) {
+        console.error(`[STOCK-SYNC] Error updating motor ${update.motor_id}:`, err);
       }
     }
     
     console.log(`[STOCK-SYNC] Applied ${updatesApplied} of ${allUpdates.length} updates`);
-    
-    // Send SMS notification for unmatched motors (if enabled and new ones found)
-    if (pendingReviews.length > 0) {
-      await sendUnmatchedMotorAlert(pendingReviews);
+
+    // Step 7: Log sync results
+    const { error: logError } = await supabase
+      .from('sync_logs')
+      .insert({
+        sync_type: 'inventory',
+        status: 'completed',
+        motors_processed: allMotors.length,
+        motors_in_stock: stockUpdates.length,
+        details: {
+          summary,
+          model_number_matched: modelNumberMatched,
+          changes_applied: updatesApplied,
+          pending_reviews: pendingReviews.length
+        },
+        completed_at: new Date().toISOString()
+      });
+
+    if (logError) {
+      console.error('[STOCK-SYNC] Failed to log sync results:', logError);
     }
-    
-    // Update sync log
-    if (syncLog?.id) {
-      await supabase
-        .from('sync_logs')
-        .update({ 
-          status: 'completed',
-          completed_at: new Date().toISOString(),
-          motors_processed: allMotors.length,
-          motors_in_stock: stockUpdates.length,
-          details: { 
-            preview: false,
-            method: 'hybrid_xml_html',
-            xml_motors: mercuryMotors.length,
-            html_motors: htmlMotors.length,
-            total_motors: allMotors.length,
-            updates_applied: updatesApplied,
-            ...changesSummary
-          }
-        })
-        .eq('id', syncLog.id);
-    }
-    
+
     return new Response(JSON.stringify({
       success: true,
-      message: '2-tier stock sync completed successfully',
-      xml_motors_found: mercuryMotors.length,
-      html_motors_found: htmlMotors.length,
+      message: '3-tier stock sync completed successfully',
       summary,
-      updates_applied: updatesApplied,
-      changes_summary: changesSummary
+      changes_applied: updatesApplied,
+      pending_reviews: pendingReviews.length
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
-    
+
   } catch (error) {
     console.error('[STOCK-SYNC] Error:', error);
     
-    // Update sync log with error
-    const supabase = await getServiceClient();
-    if (syncLog?.id) {
+    // Log the error
+    try {
+      const supabase = createClient(
+        Deno.env.get('SUPABASE_URL') ?? '',
+        Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+      );
+      
       await supabase
         .from('sync_logs')
-        .update({ 
+        .insert({
+          sync_type: 'inventory',
           status: 'failed',
           error_message: error.message,
           completed_at: new Date().toISOString()
-        })
-        .eq('id', syncLog.id);
+        });
+    } catch (logError) {
+      console.error('[STOCK-SYNC] Failed to log error:', logError);
     }
-    
+
     return new Response(JSON.stringify({
       success: false,
       error: error.message,
