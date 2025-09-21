@@ -370,22 +370,52 @@ serve(async (req) => {
       return codes;
     }
     
-    // Helper function to calculate match score
-    function calculateMatchScore(xmlMotor: any, dbMotor: any): number {
+    // Enhanced match scoring with stricter criteria for auto-matching
+    function calculateMatchScore(xmlMotor: any, dbMotor: any): { score: number; isAutoMatch: boolean; details: any } {
       let score = 0;
+      const details = { hp: false, family: false, rigging: false };
+      let isAutoMatch = true;
       
-      // Extract HP from both
+      // HP matching (40% weight) - EXACT match required for auto-match
       const xmlHP = extractHP(xmlMotor.modelName);
       const dbHP = dbMotor.horsepower;
       
-      // HP match is crucial (60 points)
-      if (xmlHP && dbHP && xmlHP === dbHP) {
-        score += 60;
-      } else if (xmlHP && dbHP && Math.abs(xmlHP - dbHP) <= 0.1) {
-        score += 50; // Very close HP match
+      if (xmlHP && dbHP) {
+        const hpDiff = Math.abs(xmlHP - dbHP);
+        if (hpDiff === 0) {
+          score += 40;
+          details.hp = true;
+        } else {
+          isAutoMatch = false;
+          if (hpDiff <= 5) score += 30;
+          else if (hpDiff <= 10) score += 20;
+          else if (hpDiff <= 20) score += 10;
+        }
+      } else {
+        isAutoMatch = false;
       }
       
-      // Rigging code matches (30 points)
+      // Model family matching (30% weight) - EXACT match required for auto-match
+      const xmlFamily = (xmlMotor.modelName || '').toLowerCase();
+      const dbFamily = (dbMotor.model_display || '').toLowerCase();
+      
+      let familyMatch = false;
+      if (xmlFamily.includes('fourstroke') && dbFamily.includes('fourstroke')) familyMatch = true;
+      else if (xmlFamily.includes('proxs') && dbFamily.includes('proxs')) familyMatch = true;
+      else if (xmlFamily.includes('verado') && dbFamily.includes('verado')) familyMatch = true;
+      else if (xmlFamily.includes('seapro') && dbFamily.includes('seapro')) familyMatch = true;
+      else if (xmlFamily.includes('racing') && dbFamily.includes('racing')) familyMatch = true;
+      
+      if (familyMatch) {
+        score += 30;
+        details.family = true;
+      } else {
+        isAutoMatch = false;
+        // Partial matches for manual review
+        if (xmlFamily && dbFamily) score += 15;
+      }
+      
+      // Rigging code matching (30% weight) - EXACT codes required for auto-match
       const xmlCodes = extractRiggingCodes(xmlMotor.modelName);
       const dbCodes = extractRiggingCodes(dbMotor.model_display || '');
       
@@ -393,66 +423,179 @@ serve(async (req) => {
         dbCodes.some(dbCode => dbCode === code)
       );
       
-      if (commonCodes.length > 0) {
-        score += 30 * (commonCodes.length / Math.max(xmlCodes.length, dbCodes.length));
-      }
-      
-      // Family/series matches (10 points)
-      const xmlFamily = xmlMotor.modelName.toLowerCase();
-      const dbFamily = (dbMotor.model_display || '').toLowerCase();
-      
-      if (xmlFamily.includes('fourstroke') && dbFamily.includes('fourstroke')) score += 10;
-      if (xmlFamily.includes('proxs') && dbFamily.includes('proxs')) score += 10;
-      if (xmlFamily.includes('seapro') && dbFamily.includes('seapro')) score += 10;
-      if (xmlFamily.includes('verado') && dbFamily.includes('verado')) score += 10;
-      
-      return Math.min(score, 100); // Cap at 100
-    }
-    
-    // Match each merged motor to database motors
-    for (const motor of allMotors) {
-      let bestMatch = null;
-      let bestScore = 0;
-      
-      for (const dbMotor of dbMotors) {
-        const score = calculateMatchScore(motor, dbMotor);
-        if (score > bestScore && score >= 50) { // Minimum 50% match required
-          bestScore = score;
-          bestMatch = dbMotor;
+      if (xmlCodes.length > 0 && commonCodes.length === xmlCodes.length) {
+        score += 30;
+        details.rigging = true;
+      } else {
+        isAutoMatch = false;
+        if (commonCodes.length > 0) {
+          score += 20 * (commonCodes.length / Math.max(xmlCodes.length, 1));
         }
       }
       
-      if (bestMatch) {
-        matches.push({
-          motor: motor,
-          dbMotor: bestMatch,
-          score: bestScore,
-          reason: `HP: ${extractHP(motor.modelName)} → ${bestMatch.horsepower}, Codes: ${extractRiggingCodes(motor.modelName).join(',')}`
+      // Auto-match requires 90%+ score AND exact matches in all categories
+      isAutoMatch = isAutoMatch && score >= 90;
+      
+      return { 
+        score: Math.min(score, 100), 
+        isAutoMatch,
+        details
+      };
+    }
+    
+    // 2-TIER MATCHING SYSTEM: Auto-match high confidence, queue uncertain matches
+    const stockUpdates = [];
+    const pendingReviews = [];
+    let autoMatched = 0;
+    let queuedForReview = 0;
+    let rejected = 0;
+
+    // Check for existing historical mappings first
+    const { data: historicalMappings } = await supabase
+      .from('motor_match_mappings')
+      .select('*')
+      .eq('is_active', true);
+
+    // Helper to extract motor identification data
+    function extractMotorData(motor: any) {
+      return {
+        name: motor.modelName,
+        source: motor.source || 'xml',
+        hp: extractHP(motor.modelName),
+        family: getMotorFamily(motor.modelName),
+        code: extractRiggingCodes(motor.modelName).join('-'),
+        stock: motor.stockNumber
+      };
+    }
+
+    function getMotorFamily(modelName: string): string {
+      const name = modelName.toLowerCase();
+      if (name.includes('fourstroke')) return 'FourStroke';
+      if (name.includes('proxs')) return 'ProXS';
+      if (name.includes('verado')) return 'Verado';
+      if (name.includes('seapro')) return 'SeaPro';
+      if (name.includes('racing')) return 'Racing';
+      return '';
+    }
+
+    for (const motor of allMotors) {
+      const motorData = extractMotorData(motor);
+      let bestMatches = [];
+      
+      // Check historical mappings first
+      const historicalMatch = historicalMappings?.find(mapping => 
+        mapping.scraped_pattern === motorData.name
+      );
+      
+      if (historicalMatch) {
+        const dbMotor = dbMotors.find(m => m.id === historicalMatch.motor_model_id);
+        if (dbMotor) {
+          // Use historical mapping - auto-match
+          autoMatched++;
+          
+          const wasInStock = dbMotor.in_stock;
+          const nowInStock = true;
+          
+          if (!wasInStock && nowInStock) {
+            stockUpdates.push({
+              motor_id: dbMotor.id,
+              model_display: dbMotor.model_display,
+              new_stock_status: nowInStock,
+              new_quantity: 1,
+              new_stock_number: motor.stockNumber,
+              new_dealer_price: motor.price,
+              new_availability: 'In Stock',
+              match_score: 1.0,
+              match_reason: `Historical mapping: "${motorData.name}" → "${dbMotor.model_display}"`
+            });
+          }
+          
+          console.log(`[HISTORICAL MATCH] "${motorData.name}" (${motorData.source}) → "${dbMotor.model_display}" (100%)`);
+          continue;
+        }
+      }
+      
+      // Calculate match scores for all database motors
+      for (const dbMotor of dbMotors) {
+        const matchResult = calculateMatchScore(motor, dbMotor);
+        bestMatches.push({
+          motor: dbMotor,
+          ...matchResult
+        });
+      }
+      
+      // Sort by score descending
+      bestMatches.sort((a, b) => b.score - a.score);
+      
+      const topMatch = bestMatches[0];
+      
+      if (topMatch && topMatch.score >= 90 && topMatch.isAutoMatch) {
+        // AUTO-MATCH: High confidence (90%+) with exact criteria
+        autoMatched++;
+        
+        const wasInStock = topMatch.motor.in_stock;
+        const nowInStock = true;
+        
+        if (!wasInStock && nowInStock) {
+          stockUpdates.push({
+            motor_id: topMatch.motor.id,
+            model_display: topMatch.motor.model_display,
+            new_stock_status: nowInStock,
+            new_quantity: 1,
+            new_stock_number: motor.stockNumber,
+            new_dealer_price: motor.price,
+            new_availability: 'In Stock',
+            match_score: topMatch.score / 100,
+            match_reason: `Auto-match: "${motorData.name}" → "${topMatch.motor.model_display}" (${Math.round(topMatch.score)}%)`
+          });
+        }
+        
+        console.log(`[AUTO-MATCH] "${motorData.name}" (${motorData.source}) → "${topMatch.motor.model_display}" (${topMatch.score}%)`);
+        
+      } else if (topMatch && topMatch.score >= 60) {
+        // MANUAL REVIEW: Medium confidence (60-89%)
+        queuedForReview++;
+        
+        const top3Matches = bestMatches.slice(0, 3).map(match => ({
+          motor_id: match.motor.id,
+          model_display: match.motor.model_display,
+          horsepower: match.motor.horsepower,
+          match_score: match.score,
+          match_details: match.details,
+          current_stock_status: match.motor.in_stock
+        }));
+        
+        pendingReviews.push({
+          scraped_motor_data: motorData,
+          potential_matches: top3Matches,
+          confidence_score: topMatch.score
         });
         
-        // Prepare stock update
-        stockUpdates.push({
-          motor_id: bestMatch.id,
-          model_display: bestMatch.model_display,
-          new_stock_status: true,
-          new_quantity: 1,
-          new_stock_number: motor.stockNumber,
-          new_dealer_price: motor.price,
-          new_availability: 'In Stock',
-          match_score: bestScore / 100,
-          match_reason: `Matched ${motor.source.toUpperCase()} "${motor.modelName}" to DB "${bestMatch.model_display}"`
-        });
+        console.log(`[REVIEW QUEUE] "${motorData.name}" (${motorData.source}) → Top match: "${topMatch.motor.model_display}" (${topMatch.score}%)`);
         
-        console.log(`[MATCH] "${motor.modelName}" (${motor.source.toUpperCase()}) → "${bestMatch.model_display}" (${Math.round(bestScore)}%)`);
       } else {
-        console.log(`[NO-MATCH] "${motor.modelName}" (${motor.source.toUpperCase()}) - no suitable database match found`);
+        // REJECT: Low confidence (<60%)
+        rejected++;
+        console.log(`[REJECTED] "${motorData.name}" (${motorData.source}) → No suitable match (${topMatch ? topMatch.score : 0}%)`);
       }
     }
     
-    console.log(`[STOCK-SYNC] Matched ${matches.length} of ${allMotors.length} total motors to database`);
+    console.log(`[STOCK-SYNC] Processing results: ${autoMatched} auto-matched, ${queuedForReview} queued for review, ${rejected} rejected`);
+
+    // Store pending reviews in database (if any and not preview mode)
+    if (pendingReviews.length > 0 && !preview) {
+      for (const review of pendingReviews) {
+        await supabase
+          .from('pending_motor_matches')
+          .insert(review);
+      }
+      console.log(`[STOCK-SYNC] Stored ${pendingReviews.length} matches for manual review`);
+    }
+    
+    console.log(`[STOCK-SYNC] Matched ${autoMatched} of ${allMotors.length} total motors to database (${autoMatched} auto, ${queuedForReview} review, ${rejected} rejected)`);
     
     // Step 5: Prepare out-of-stock updates (mark unmatched motors as out of stock)
-    const matchedMotorIds = new Set(matches.map(m => m.dbMotor.id));
+    const matchedMotorIds = new Set(stockUpdates.map(u => u.motor_id));
     const outOfStockUpdates = dbMotors
       .filter(motor => motor.in_stock && !matchedMotorIds.has(motor.id))
       .map(motor => ({
@@ -473,12 +616,33 @@ serve(async (req) => {
     const changesSummary = {
       newly_in_stock: stockUpdates.length,
       newly_out_of_stock: outOfStockUpdates.length,
-      still_in_stock: 0, // Could calculate this if needed
+      still_in_stock: 0,
       total_changes: allUpdates.length
     };
     
     console.log(`[STOCK-SYNC] Changes: ${changesSummary.newly_in_stock} newly in stock, ${changesSummary.newly_out_of_stock} newly out of stock`);
     
+    // Enhanced summary for 2-tier system
+    const summary = {
+      motors_processed: allMotors.length,
+      auto_matched: autoMatched,
+      queued_for_review: queuedForReview,
+      rejected: rejected,
+      newly_in_stock: stockUpdates.length,
+      newly_out_of_stock: outOfStockUpdates.length,
+      stock_updates: stockUpdates.map(u => ({
+        id: u.motor_id,
+        model_display: u.model_display,
+        action: u.new_stock_status ? 'mark_in_stock' : 'mark_out_of_stock',
+        was_in_stock: !u.new_stock_status,
+        now_in_stock: u.new_stock_status,
+        match_score: Math.round(u.match_score * 100),
+        match_quality: u.match_score >= 0.9 ? 'auto' : 'manual',
+        scraped_motor: u.match_reason
+      })),
+      pending_reviews: preview ? pendingReviews : []
+    };
+
     // Step 6: Apply updates or return preview
     if (preview) {
       // Return preview data
@@ -486,11 +650,9 @@ serve(async (req) => {
         success: true,
         xml_motors_found: mercuryMotors.length,
         html_motors_found: htmlMotors.length,
-        total_motors_found: allMotors.length,
-        db_motors_total: dbMotors.length,
-        matches_found: matches.length,
-        stock_updates: allUpdates,
-        changes_summary: changesSummary
+        summary,
+        changes_summary: changesSummary,
+        stock_updates: allUpdates
       };
       
       // Update sync log
@@ -504,10 +666,13 @@ serve(async (req) => {
             motors_in_stock: stockUpdates.length,
             details: { 
               preview: true, 
-              method: 'hybrid_xml_html',
+              method: 'hybrid_xml_html_2tier',
               xml_motors: mercuryMotors.length,
               html_motors: htmlMotors.length,
               total_motors: allMotors.length,
+              auto_matched: autoMatched,
+              queued_for_review: queuedForReview,
+              rejected: rejected,
               ...changesSummary 
             }
           })
@@ -572,11 +737,10 @@ serve(async (req) => {
     
     return new Response(JSON.stringify({
       success: true,
-      message: 'Hybrid stock sync completed successfully',
+      message: '2-tier stock sync completed successfully',
       xml_motors_found: mercuryMotors.length,
       html_motors_found: htmlMotors.length,
-      total_motors_found: allMotors.length,
-      matches_found: matches.length,
+      summary,
       updates_applied: updatesApplied,
       changes_summary: changesSummary
     }), {
