@@ -14,11 +14,27 @@ interface StockBadgeProps {
 }
 
 export function StockBadge({ motor, variant = 'default', className }: StockBadgeProps) {
+  // Debug logging to see what data StockBadge receives
+  console.log('StockBadge received data:', {
+    motor: motor,
+    in_stock: motor.in_stock,
+    stock_quantity: motor.stock_quantity,
+    stock_number: motor.stock_number,
+    availability: motor.availability
+  });
+
   const hasRealStock = motor.stock_quantity && motor.stock_quantity > 0 && 
                        motor.stock_number && motor.stock_number !== 'N/A' && motor.stock_number.trim() !== '';
   const isInStock = motor.in_stock === true || hasRealStock;
   const quantity = motor.stock_quantity || 0;
   const isCompact = variant === 'compact';
+
+  console.log('StockBadge calculations:', {
+    hasRealStock,
+    isInStock,
+    quantity,
+    willRender: isInStock ? 'YES' : 'NO'
+  });
 
   if (!isInStock) {
     return (
