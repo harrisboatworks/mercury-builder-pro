@@ -26,6 +26,139 @@ function cleanText(text: string): string {
   return text?.toString()?.trim()?.replace(/\s+/g, ' ') || '';
 }
 
+// Parse HTML page for motor data
+function parseHTMLMotors(htmlText: string): any[] {
+  const motors = [];
+  
+  try {
+    // Look for motor card patterns in the HTML
+    // This regex looks for div elements that contain motor information
+    const motorCardRegex = /<div[^>]*class="[^"]*(?:inventory-item|motor-card|unit-card|search-result)[^"]*"[^>]*>[\s\S]*?(?=<div[^>]*class="[^"]*(?:inventory-item|motor-card|unit-card|search-result)|$)/gi;
+    const cardMatches = htmlText.match(motorCardRegex) || [];
+    
+    // Also try a more general approach - look for sections containing "Mercury" and price info
+    const fallbackRegex = /<div[^>]*>[\s\S]*?Mercury[\s\S]*?\$[\d,]+[\s\S]*?<\/div>/gi;
+    const fallbackMatches = htmlText.match(fallbackRegex) || [];
+    
+    const allMatches = [...cardMatches, ...fallbackMatches];
+    console.log(`[HTML-PARSE] Found ${allMatches.length} potential motor sections`);
+    
+    for (const cardHtml of allMatches) {
+      try {
+        // Extract title/model name
+        const titleMatch = cardHtml.match(/<h[1-6][^>]*>(.*?)<\/h[1-6]>/i) || 
+                          cardHtml.match(/<title[^>]*>(.*?)<\/title>/i) ||
+                          cardHtml.match(/Mercury[^<]*(\d+(?:\.\d+)?[^<]*(?:HP|ELPT|EXLPT|ELH|MH)[^<]*)/i);
+        
+        // Extract price
+        const priceMatch = cardHtml.match(/\$[\d,]+(?:\.\d{2})?/);
+        
+        // Extract stock number (look for patterns like "Stock #", "VIN", etc.)
+        const stockMatch = cardHtml.match(/(?:Stock|VIN|Model)\s*[#:]?\s*([A-Z0-9]+)/i);
+        
+        // Only process if we found Mercury-related content
+        if (titleMatch && (cardHtml.toLowerCase().includes('mercury') || (titleMatch[1] && titleMatch[1].toLowerCase().includes('mercury')))) {
+          const modelName = cleanText(titleMatch[1] || titleMatch[0]);
+          const price = priceMatch ? parseFloat(priceMatch[0].replace(/[^0-9.]/g, '')) : null;
+          const stockNumber = stockMatch ? cleanText(stockMatch[1]) : `HTML-${Date.now()}-${motors.length}`;
+          
+          // Basic validation - must have model name
+          if (modelName && modelName.length > 5) {
+            motors.push({
+              title: modelName,
+              modelName: modelName,
+              stockNumber: stockNumber,
+              price: price,
+              manufacturer: 'mercury',
+              usage: 'new',
+              model_type: 'outboard',
+              source: 'html',
+              htmlData: cardHtml.substring(0, 500) // Keep sample for debugging
+            });
+            
+            console.log(`[HTML-PARSE] Found motor: "${modelName}" (Stock: ${stockNumber}, Price: $${price})`);
+          }
+        }
+      } catch (parseError) {
+        console.log(`[HTML-PARSE] Error parsing motor card: ${parseError.message}`);
+      }
+    }
+  } catch (error) {
+    console.log(`[HTML-PARSE] Overall parsing error: ${error.message}`);
+  }
+  
+  return motors;
+}
+
+// Merge XML and HTML data, giving priority to XML
+function mergeMotorData(xmlMotors: any[], htmlMotors: any[]): any[] {
+  const merged = [];
+  const usedStockNumbers = new Set();
+  
+  // Add all XML motors first (they have priority)
+  for (const xmlMotor of xmlMotors) {
+    merged.push({ ...xmlMotor, source: 'xml' });
+    usedStockNumbers.add(xmlMotor.stockNumber.toLowerCase());
+  }
+  
+  // Add HTML motors that don't conflict with XML motors
+  for (const htmlMotor of htmlMotors) {
+    const stockKey = htmlMotor.stockNumber.toLowerCase();
+    
+    // Skip if this stock number already exists from XML
+    if (usedStockNumbers.has(stockKey)) {
+      console.log(`[MERGE] Skipping HTML motor "${htmlMotor.modelName}" - stock number ${htmlMotor.stockNumber} already exists in XML`);
+      continue;
+    }
+    
+    // Check for model name similarity to avoid duplicates
+    let isDuplicate = false;
+    for (const existingMotor of merged) {
+      if (areSimilarMotors(htmlMotor.modelName, existingMotor.modelName)) {
+        console.log(`[MERGE] Skipping HTML motor "${htmlMotor.modelName}" - similar to existing "${existingMotor.modelName}"`);
+        isDuplicate = true;
+        break;
+      }
+    }
+    
+    if (!isDuplicate) {
+      merged.push({ ...htmlMotor, source: 'html' });
+      usedStockNumbers.add(stockKey);
+    }
+  }
+  
+  return merged;
+}
+
+// Helper to check if two motor names are similar (avoid duplicates)
+function areSimilarMotors(name1: string, name2: string): boolean {
+  const clean1 = name1.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const clean2 = name2.toLowerCase().replace(/[^a-z0-9]/g, '');
+  
+  // If one string contains the other or they're very similar
+  if (clean1.includes(clean2) || clean2.includes(clean1)) {
+    return true;
+  }
+  
+  // Check if they have the same HP and similar rigging codes
+  const hp1 = name1.match(/(\d+(?:\.\d+)?)/);
+  const hp2 = name2.match(/(\d+(?:\.\d+)?)/);
+  
+  if (hp1 && hp2 && hp1[1] === hp2[1]) {
+    // Same HP - check for rigging code overlap
+    const codes1 = name1.match(/\b(ELPT|ELHPT|EXLPT|EH|MH|MLH|XL|XXL|CT|EFI|DTS)\b/gi) || [];
+    const codes2 = name2.match(/\b(ELPT|ELHPT|EXLPT|EH|MH|MLH|XL|XXL|CT|EFI|DTS)\b/gi) || [];
+    
+    // If they share rigging codes, likely the same motor
+    const commonCodes = codes1.filter(c1 => codes2.some(c2 => c1.toLowerCase() === c2.toLowerCase()));
+    if (commonCodes.length > 0) {
+      return true;
+    }
+  }
+  
+  return false;
+}
+
 serve(async (req) => {
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
@@ -33,7 +166,7 @@ serve(async (req) => {
   }
   
   try {
-    console.log('[STOCK-SYNC] Starting XML-based stock inventory sync...');
+    console.log('[STOCK-SYNC] Starting hybrid XML + HTML stock inventory sync...');
     
     const supabase = await getServiceClient();
     const body = await req.json().catch(() => ({}));
@@ -45,7 +178,7 @@ serve(async (req) => {
       .insert({ 
         sync_type: 'stock',
         status: 'running',
-        details: { preview, method: 'xml_direct' }
+        details: { preview, method: 'hybrid_xml_html' }
       })
       .select()
       .single();
@@ -162,7 +295,38 @@ serve(async (req) => {
     }
     
     console.log(`[STOCK-SYNC] Processed ${processedCount.total} items → ${processedCount.mercury} Mercury → ${processedCount.new_condition} New & Outboard → ${processedCount.valid} Valid`);
-    console.log(`[STOCK-SYNC] Found ${mercuryMotors.length} Mercury motors in stock`);
+    console.log(`[STOCK-SYNC] Found ${mercuryMotors.length} Mercury motors in XML feed`);
+    
+    // Step 2.5: Scrape HTML page for additional motors
+    console.log('[STOCK-SYNC] Scraping HTML page for in-stock motors...');
+    const htmlUrl = 'https://www.harrisboatworks.ca/search/inventory/availability/In%20Stock/brand/Mercury/usage/New';
+    
+    let htmlMotors = [];
+    try {
+      const htmlResponse = await fetch(htmlUrl, {
+        headers: { 
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+        }
+      });
+      
+      if (htmlResponse.ok) {
+        const htmlText = await htmlResponse.text();
+        console.log(`[STOCK-SYNC] Fetched HTML page (${htmlText.length} chars)`);
+        
+        // Parse HTML for motor data
+        htmlMotors = parseHTMLMotors(htmlText);
+        console.log(`[STOCK-SYNC] Found ${htmlMotors.length} motors from HTML page`);
+      } else {
+        console.log(`[STOCK-SYNC] HTML fetch failed: ${htmlResponse.status} - continuing with XML only`);
+      }
+    } catch (htmlError) {
+      console.log(`[STOCK-SYNC] HTML scraping error: ${htmlError.message} - continuing with XML only`);
+    }
+    
+    // Step 2.6: Merge XML and HTML data (XML takes precedence)
+    const allMotors = mergeMotorData(mercuryMotors, htmlMotors);
+    console.log(`[STOCK-SYNC] Total motors after merge: ${allMotors.length} (${mercuryMotors.length} XML + ${htmlMotors.length} HTML → ${allMotors.length} unique)`);
     
     // Step 3: Fetch existing database motors
     const { data: dbMotors, error: dbError } = await supabase
@@ -245,13 +409,13 @@ serve(async (req) => {
       return Math.min(score, 100); // Cap at 100
     }
     
-    // Match each XML motor to database motors
-    for (const xmlMotor of mercuryMotors) {
+    // Match each merged motor to database motors
+    for (const motor of allMotors) {
       let bestMatch = null;
       let bestScore = 0;
       
       for (const dbMotor of dbMotors) {
-        const score = calculateMatchScore(xmlMotor, dbMotor);
+        const score = calculateMatchScore(motor, dbMotor);
         if (score > bestScore && score >= 50) { // Minimum 50% match required
           bestScore = score;
           bestMatch = dbMotor;
@@ -260,10 +424,10 @@ serve(async (req) => {
       
       if (bestMatch) {
         matches.push({
-          xmlMotor,
+          motor: motor,
           dbMotor: bestMatch,
           score: bestScore,
-          reason: `HP: ${extractHP(xmlMotor.modelName)} → ${bestMatch.horsepower}, Codes: ${extractRiggingCodes(xmlMotor.modelName).join(',')}`
+          reason: `HP: ${extractHP(motor.modelName)} → ${bestMatch.horsepower}, Codes: ${extractRiggingCodes(motor.modelName).join(',')}`
         });
         
         // Prepare stock update
@@ -272,20 +436,20 @@ serve(async (req) => {
           model_display: bestMatch.model_display,
           new_stock_status: true,
           new_quantity: 1,
-          new_stock_number: xmlMotor.stockNumber,
-          new_dealer_price: xmlMotor.price,
+          new_stock_number: motor.stockNumber,
+          new_dealer_price: motor.price,
           new_availability: 'In Stock',
           match_score: bestScore / 100,
-          match_reason: `Matched XML "${xmlMotor.modelName}" to DB "${bestMatch.model_display}"`
+          match_reason: `Matched ${motor.source.toUpperCase()} "${motor.modelName}" to DB "${bestMatch.model_display}"`
         });
         
-        console.log(`[MATCH] "${xmlMotor.modelName}" → "${bestMatch.model_display}" (${Math.round(bestScore)}%)`);
+        console.log(`[MATCH] "${motor.modelName}" (${motor.source.toUpperCase()}) → "${bestMatch.model_display}" (${Math.round(bestScore)}%)`);
       } else {
-        console.log(`[NO-MATCH] "${xmlMotor.modelName}" - no suitable database match found`);
+        console.log(`[NO-MATCH] "${motor.modelName}" (${motor.source.toUpperCase()}) - no suitable database match found`);
       }
     }
     
-    console.log(`[STOCK-SYNC] Matched ${matches.length} of ${mercuryMotors.length} XML motors to database`);
+    console.log(`[STOCK-SYNC] Matched ${matches.length} of ${allMotors.length} total motors to database`);
     
     // Step 5: Prepare out-of-stock updates (mark unmatched motors as out of stock)
     const matchedMotorIds = new Set(matches.map(m => m.dbMotor.id));
@@ -321,6 +485,8 @@ serve(async (req) => {
       const previewResult = {
         success: true,
         xml_motors_found: mercuryMotors.length,
+        html_motors_found: htmlMotors.length,
+        total_motors_found: allMotors.length,
         db_motors_total: dbMotors.length,
         matches_found: matches.length,
         stock_updates: allUpdates,
@@ -334,11 +500,14 @@ serve(async (req) => {
           .update({ 
             status: 'completed',
             completed_at: new Date().toISOString(),
-            motors_processed: mercuryMotors.length,
+            motors_processed: allMotors.length,
             motors_in_stock: stockUpdates.length,
             details: { 
               preview: true, 
-              method: 'xml_direct',
+              method: 'hybrid_xml_html',
+              xml_motors: mercuryMotors.length,
+              html_motors: htmlMotors.length,
+              total_motors: allMotors.length,
               ...changesSummary 
             }
           })
@@ -386,11 +555,14 @@ serve(async (req) => {
         .update({ 
           status: 'completed',
           completed_at: new Date().toISOString(),
-          motors_processed: mercuryMotors.length,
+          motors_processed: allMotors.length,
           motors_in_stock: stockUpdates.length,
           details: { 
             preview: false,
-            method: 'xml_direct',
+            method: 'hybrid_xml_html',
+            xml_motors: mercuryMotors.length,
+            html_motors: htmlMotors.length,
+            total_motors: allMotors.length,
             updates_applied: updatesApplied,
             ...changesSummary
           }
@@ -400,8 +572,10 @@ serve(async (req) => {
     
     return new Response(JSON.stringify({
       success: true,
-      message: 'Stock sync completed successfully',
+      message: 'Hybrid stock sync completed successfully',
       xml_motors_found: mercuryMotors.length,
+      html_motors_found: htmlMotors.length,
+      total_motors_found: allMotors.length,
       matches_found: matches.length,
       updates_applied: updatesApplied,
       changes_summary: changesSummary
