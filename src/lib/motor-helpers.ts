@@ -417,54 +417,84 @@ export const getStartType = (model: string): string => {
 };
 
 export const isTillerMotor = (model: string) => {
-  const upperModel = model.toUpperCase();
+  if (!model) {
+    console.log('🔧 isTillerMotor: Empty model provided');
+    return false;
+  }
+
+  const upperModel = model.toUpperCase().trim();
+  console.log('🔧 isTillerMotor: Checking model:', model, '→ upperModel:', upperModel);
+  
+  // Test cases for validation
+  const testCases = [
+    { input: '3.5MLH FourStroke', expected: true },
+    { input: '4 MH FourStroke', expected: true },
+    { input: '15 MLH FourStroke', expected: true },
+    { input: '9.9 ELHPT Command Thrust ProKicker EFI FourStroke', expected: true },
+    { input: '25 EXLPT FourStroke', expected: false }
+  ];
+  
+  // Run test if this is a test case
+  const isTestCase = testCases.find(tc => tc.input === model);
+  if (isTestCase) {
+    console.log('🧪 Running test case for:', model);
+  }
   
   // Check for explicit tiller indicators
   if (upperModel.includes('BIG TILLER') || upperModel.includes('TILLER')) {
+    console.log('✅ isTillerMotor: Found explicit TILLER in model');
     return true;
   }
   
-  // Mercury models format: "3.5MLH", "15EH", etc. - codes come directly after HP numbers
-  // Check for tiller handle codes that follow HP numbers (no separators needed)
+  // Enhanced regex patterns with more flexibility
+  // Allow for optional spaces, punctuation, and case variations
+  const tillerPatterns = [
+    // MLH = Manual start + Long shaft + tiller Handle
+    { pattern: /\b(\d+\.?\d*)\s*MLH\b/i, name: 'MLH' },
+    
+    // ELH = Electric start + Long shaft + tiller Handle  
+    { pattern: /\b(\d+\.?\d*)\s*ELH\b/i, name: 'ELH' },
+    
+    // EXLH = Electric start + eXtra Long shaft + tiller Handle
+    { pattern: /\b(\d+\.?\d*)\s*EXLH\b/i, name: 'EXLH' },
+    
+    // ELHPT = Electric start + Long shaft + tiller Handle + Power Tilt
+    { pattern: /\b(\d+\.?\d*)\s*ELHPT\b/i, name: 'ELHPT' },
+    
+    // EXLHPT = Electric start + eXtra Long shaft + tiller Handle + Power Tilt
+    { pattern: /\b(\d+\.?\d*)\s*EXLHPT\b/i, name: 'EXLHPT' },
+    
+    // MH = Manual start + tiller Handle
+    { pattern: /\b(\d+\.?\d*)\s*MH(?!\w)/i, name: 'MH' },
+    
+    // EH = Electric start + tiller Handle
+    { pattern: /\b(\d+\.?\d*)\s*EH(?!\w)/i, name: 'EH' },
+    
+    // Check for standalone H pattern after numbers (but avoid HP, FH, etc.)
+    { pattern: /\b(\d+\.?\d*)\s*H(?!\w|P)/i, name: 'H' }
+  ];
   
-  // MLH = Manual start + Long shaft + tiller Handle
-  if (/\d+\.?\d*\s*MLH/i.test(upperModel)) {
-    return true;
+  // Test each pattern
+  for (const { pattern, name } of tillerPatterns) {
+    const match = pattern.exec(upperModel);
+    if (match) {
+      console.log(`✅ isTillerMotor: Found tiller pattern '${name}' in model:`, model);
+      console.log(`   → Matched: '${match[0]}' with HP: '${match[1]}'`);
+      
+      // Validate test case result
+      if (isTestCase && !isTestCase.expected) {
+        console.error(`❌ TEST FAILED: Expected '${model}' to NOT be tiller, but detected '${name}' pattern`);
+      }
+      
+      return true;
+    }
   }
   
-  // ELH = Electric start + Long shaft + tiller Handle  
-  if (/\d+\.?\d*\s*ELH/i.test(upperModel)) {
-    return true;
-  }
+  console.log('❌ isTillerMotor: No tiller patterns found in model:', model);
   
-  // EXLH = Electric start + eXtra Long shaft + tiller Handle
-  if (/\d+\.?\d*\s*EXLH/i.test(upperModel)) {
-    return true;
-  }
-  
-  // ELHPT = Electric start + Long shaft + tiller Handle + Power Tilt
-  if (/\d+\.?\d*\s*ELHPT/i.test(upperModel)) {
-    return true;
-  }
-  
-  // EXLHPT = Electric start + eXtra Long shaft + tiller Handle + Power Tilt
-  if (/\d+\.?\d*\s*EXLHPT/i.test(upperModel)) {
-    return true;
-  }
-  
-  // MH = Manual start + tiller Handle
-  if (/\d+\.?\d*\s*MH(?!\w)/i.test(upperModel)) {
-    return true;
-  }
-  
-  // EH = Electric start + tiller Handle
-  if (/\d+\.?\d*\s*EH(?!\w)/i.test(upperModel)) {
-    return true;
-  }
-  
-  // Check for standalone H pattern after numbers (but avoid HP, FH, etc.)
-  if (/\d+\.?\d*\s*H(?!\w|P)/i.test(upperModel)) {
-    return true;
+  // Validate test case result
+  if (isTestCase && isTestCase.expected) {
+    console.error(`❌ TEST FAILED: Expected '${model}' to be tiller, but no patterns matched`);
   }
   
   return false;
@@ -525,8 +555,29 @@ export const getIncludedAccessories = (motor: Motor) => {
 };
 
 export const requiresMercuryControls = (motor: Motor) => {
-  const model = (motor.model_display || '').toUpperCase();
-  return !isTillerMotor(model);
+  const modelDisplay = motor.model_display || motor.model || '';
+  console.log('🔧 requiresMercuryControls: Checking motor:', {
+    model_display: motor.model_display,
+    model: motor.model,
+    hp: motor.hp,
+    id: motor.id
+  });
+  
+  if (!modelDisplay) {
+    console.log('❌ requiresMercuryControls: No model found, defaulting to requires controls');
+    return true;
+  }
+  
+  const isTiller = isTillerMotor(modelDisplay);
+  const requiresControls = !isTiller;
+  
+  console.log('🔧 requiresMercuryControls: Result:', {
+    modelDisplay,
+    isTiller,
+    requiresControls
+  });
+  
+  return requiresControls;
 };
 
 export const getAdditionalRequirements = (motor: Motor) => {
