@@ -533,6 +533,47 @@ export type Database = {
         }
         Relationships: []
       }
+      motor_match_mappings: {
+        Row: {
+          confidence_score: number
+          created_at: string
+          created_by: string | null
+          id: string
+          is_active: boolean
+          motor_model_id: string | null
+          notes: string | null
+          scraped_pattern: string
+        }
+        Insert: {
+          confidence_score?: number
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          is_active?: boolean
+          motor_model_id?: string | null
+          notes?: string | null
+          scraped_pattern: string
+        }
+        Update: {
+          confidence_score?: number
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          is_active?: boolean
+          motor_model_id?: string | null
+          notes?: string | null
+          scraped_pattern?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "motor_match_mappings_motor_model_id_fkey"
+            columns: ["motor_model_id"]
+            isOneToOne: false
+            referencedRelation: "motor_models"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       motor_media: {
         Row: {
           alt_text: string | null
@@ -894,6 +935,48 @@ export type Database = {
           title?: string | null
           type?: string | null
           user_id?: string
+        }
+        Relationships: []
+      }
+      pending_motor_matches: {
+        Row: {
+          confidence_score: number | null
+          created_at: string
+          id: string
+          potential_matches: Json
+          review_status: string
+          reviewed_at: string | null
+          reviewed_by: string | null
+          scraped_motor_data: Json
+          selected_match_id: string | null
+          sync_run_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          confidence_score?: number | null
+          created_at?: string
+          id?: string
+          potential_matches?: Json
+          review_status?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          scraped_motor_data?: Json
+          selected_match_id?: string | null
+          sync_run_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          confidence_score?: number | null
+          created_at?: string
+          id?: string
+          potential_matches?: Json
+          review_status?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          scraped_motor_data?: Json
+          selected_match_id?: string | null
+          sync_run_id?: string | null
+          updated_at?: string
         }
         Relationships: []
       }

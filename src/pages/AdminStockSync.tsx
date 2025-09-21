@@ -3,7 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { AlertCircle, CheckCircle, Clock, RefreshCw, Eye, Play } from 'lucide-react';
+import { AlertCircle, CheckCircle, Clock, RefreshCw, Eye, Play, Users } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
 import {
@@ -22,49 +22,94 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { MotorMatchReview } from "@/components/admin/MotorMatchReview";
 
 interface SyncLog {
   id: string;
   sync_type: string;
   status: string;
+  started_at: string;
+  completed_at?: string;
   motors_processed: number;
   motors_in_stock: number;
-  details: any;
-  started_at: string;
-  completed_at: string;
+  error_message?: string;
+  details?: any;
 }
 
 interface StockUpdate {
-  motor_id: string;
+  id: string;
   model_display: string;
-  new_stock_status: boolean;
-  new_quantity: number;
-  match_reason: string;
+  action: string;
+  was_in_stock: boolean;
+  now_in_stock: boolean;
   match_score: number;
+  match_quality?: string;
+  scraped_motor: string;
+  new_stock_status?: boolean;
+  new_quantity?: number;
+  match_reason?: string;
+}
+
+interface PendingReview {
+  scraped_motor_data: {
+    name: string;
+    source: string;
+    hp?: number;
+    family?: string;
+    code?: string;
+  };
+  potential_matches: any[];
+  confidence_score: number;
 }
 
 interface PreviewData {
+  summary: {
+    motors_processed: number;
+    auto_matched: number;
+    queued_for_review: number;
+    rejected: number;
+    newly_in_stock: number;
+    newly_out_of_stock: number;
+    stock_updates: StockUpdate[];
+    pending_reviews: PendingReview[];
+  };
   xml_motors_found: number;
-  db_motors_total: number;
-  matches_found: number;
-  stock_updates: StockUpdate[];
+  html_motors_found: number;
   changes_summary: {
     newly_in_stock: number;
     newly_out_of_stock: number;
     still_in_stock: number;
   };
+  stock_updates: StockUpdate[];
 }
 
 export default function AdminStockSync() {
   const [loading, setLoading] = useState(false);
   const [previewData, setPreviewData] = useState<PreviewData | null>(null);
-  const [syncLogs, setSyncLogs] = useState<SyncLog[]>([]);
   const [showPreview, setShowPreview] = useState(false);
+  const [showMatchReview, setShowMatchReview] = useState(false);
+  const [pendingMatchesCount, setPendingMatchesCount] = useState(0);
+  const [syncLogs, setSyncLogs] = useState<SyncLog[]>([]);
   const { toast } = useToast();
 
   useEffect(() => {
     fetchSyncLogs();
+    fetchPendingMatchesCount();
   }, []);
+
+  const fetchPendingMatchesCount = async () => {
+    try {
+      const { count, error } = await supabase
+        .from('pending_motor_matches')
+        .select('*', { count: 'exact', head: true })
+        .eq('review_status', 'pending');
+
+      if (error) throw error;
+      setPendingMatchesCount(count || 0);
+    } catch (error) {
+      console.error('Error fetching pending matches count:', error);
+    }
+  };
 
   const fetchSyncLogs = async () => {
     try {
@@ -187,12 +232,17 @@ export default function AdminStockSync() {
             Preview Changes
           </Button>
           <Button
-            onClick={runSync}
-            disabled={loading}
+            onClick={() => setShowMatchReview(true)}
+            disabled={pendingMatchesCount === 0}
+            variant="outline"
           >
-            <Play className="w-4 h-4 mr-2" />
-            {loading && <RefreshCw className="w-4 h-4 mr-2 animate-spin" />}
-            Run Sync
+            <Users className="w-4 h-4 mr-2" />
+            Review Matches
+            {pendingMatchesCount > 0 && (
+              <Badge className="ml-2 bg-amber-100 text-amber-800">
+                {pendingMatchesCount}
+              </Badge>
+            )}
           </Button>
         </div>
       </div>
@@ -337,6 +387,14 @@ export default function AdminStockSync() {
           )}
         </CardContent>
       </Card>
+      <MotorMatchReview
+        isOpen={showMatchReview}
+        onClose={() => setShowMatchReview(false)}
+        onReviewComplete={() => {
+          fetchPendingMatchesCount();
+          fetchSyncLogs();
+        }}
+      />
     </div>
   );
 }
