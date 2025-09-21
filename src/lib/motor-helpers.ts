@@ -22,6 +22,11 @@ export interface Motor {
   features?: string[];
   description?: string;
   images?: string[];
+  // Stock fields
+  in_stock?: boolean;
+  stock_quantity?: number;
+  stock_number?: string;
+  availability?: string;
   [key: string]: any;
 }
 

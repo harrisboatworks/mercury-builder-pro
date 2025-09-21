@@ -210,9 +210,14 @@ export default function MotorSelectionPage() {
         hp: dbMotor.horsepower,
         price: Math.round(effectivePrice),
         image: dbMotor.image_url || '',
-        stockStatus: dbMotor.availability === 'In Stock' ? 'In Stock' : 'On Order',
+        stockStatus: dbMotor.in_stock ? 'In Stock' : 'On Order',
         stockNumber: dbMotor.stock_number,
         model_number: dbMotor.model_number,
+        // Add stock fields
+        in_stock: dbMotor.in_stock,
+        stock_quantity: dbMotor.stock_quantity,
+        stock_number: dbMotor.stock_number,
+        availability: dbMotor.availability,
         category: dbMotor.horsepower <= 20 ? 'portable' :
                  dbMotor.horsepower <= 60 ? 'mid-range' : 
                  dbMotor.horsepower <= 150 ? 'high-performance' : 'v8-racing',
@@ -284,7 +289,7 @@ export default function MotorSelectionPage() {
 
     // Stock filter
     if (inStockOnly) {
-      filtered = filtered.filter(motor => motor.stockStatus === 'In Stock');
+      filtered = filtered.filter(motor => motor.in_stock === true);
     }
 
     return filtered;
@@ -419,6 +424,7 @@ export default function MotorSelectionPage() {
                     promoText={motor.appliedPromotions?.join(' • ') || null}
                     selected={state.motor?.id === motor.id}
                     onSelect={() => handleMotorSelect(motor)}
+                    inStock={motor.in_stock}
                     // New specification props
                     shaft={shaft}
                     weightLbs={weightLbs}
