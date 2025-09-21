@@ -630,6 +630,7 @@ export type Database = {
           alt_text: string | null
           assignment_rules: Json | null
           assignment_type: string
+          chooser_imported: boolean | null
           created_at: string
           created_by: string | null
           description: string | null
@@ -653,6 +654,7 @@ export type Database = {
           alt_text?: string | null
           assignment_rules?: Json | null
           assignment_type?: string
+          chooser_imported?: boolean | null
           created_at?: string
           created_by?: string | null
           description?: string | null
@@ -676,6 +678,7 @@ export type Database = {
           alt_text?: string | null
           assignment_rules?: Json | null
           assignment_type?: string
+          chooser_imported?: boolean | null
           created_at?: string
           created_by?: string | null
           description?: string | null
