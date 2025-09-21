@@ -525,7 +525,7 @@ export const getIncludedAccessories = (motor: Motor) => {
 };
 
 export const requiresMercuryControls = (motor: Motor) => {
-  const model = (motor.model || '').toUpperCase();
+  const model = (motor.model_display || '').toUpperCase();
   return !isTillerMotor(model);
 };
 
