@@ -149,8 +149,8 @@ export function MotorMatchReview({ isOpen, onClose, onReviewComplete }: MotorMat
                   <Badge variant="secondary">
                     Confidence: {Math.round((currentMatch.confidence_score || 0) * 100)}%
                   </Badge>
-                  {currentMatch.scraped_motor_data?.stock_number && (
-                    <Badge variant="outline">Stock: {currentMatch.scraped_motor_data.stock_number}</Badge>
+                  {currentMatch.scraped_motor_data?.stock && (
+                    <Badge variant="outline">Stock: {currentMatch.scraped_motor_data.stock}</Badge>
                   )}
                 </div>
               </CardContent>
@@ -175,16 +175,17 @@ export function MotorMatchReview({ isOpen, onClose, onReviewComplete }: MotorMat
                       <div key={index} className="border rounded-lg p-3 hover:bg-accent/50 transition-colors">
                         <div className="flex items-center justify-between">
                           <div className="flex-1">
-                            <h4 className="font-medium">{match.model || match.display_name || 'Unknown Model'}</h4>
+                            <h4 className="font-medium">{match.model_display || match.model || match.display_name || 'Unknown Model'}</h4>
                             <div className="flex gap-4 text-sm text-muted-foreground mt-1">
                               {match.horsepower && <span>HP: {match.horsepower}</span>}
                               {match.family && <span>Family: {match.family}</span>}
                               {match.motor_type && <span>Type: {match.motor_type}</span>}
+                              {match.shaft && <span>Shaft: {match.shaft}</span>}
                             </div>
-                            {match.confidence_score && (
+                            {(match.match_score || match.confidence_score) && (
                               <div className="mt-2">
-                                <Badge variant={match.confidence_score > 0.8 ? "default" : match.confidence_score > 0.6 ? "secondary" : "outline"}>
-                                  Match: {Math.round(match.confidence_score * 100)}%
+                                <Badge variant={(match.match_score || match.confidence_score) > 0.8 ? "default" : (match.match_score || match.confidence_score) > 0.6 ? "secondary" : "outline"}>
+                                  Match: {Math.round((match.match_score || match.confidence_score) * 100)}%
                                 </Badge>
                               </div>
                             )}
