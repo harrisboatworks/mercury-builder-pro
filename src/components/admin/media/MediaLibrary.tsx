@@ -48,7 +48,7 @@ export function MediaLibrary() {
         .from('motor_media')
         .select(`
           *,
-          motor_models!inner(model_display)
+          motor_models!motor_media_motor_id_fkey(model_display)
         `)
         .order('created_at', { ascending: false });
 
