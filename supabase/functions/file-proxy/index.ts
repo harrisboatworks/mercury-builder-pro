@@ -62,20 +62,52 @@ serve(async (req) => {
       }
     };
 
+    // Sanitize and ensure proper filename with extension
+    const sanitizeFilename = (name: string, path: string): string => {
+      // Get extension from path if filename doesn't have one
+      const pathExt = path.toLowerCase().split('.').pop();
+      const hasExtension = name.includes('.');
+      
+      // Clean filename: remove/replace invalid characters
+      let cleanName = name
+        .replace(/[^\w\s.-]/g, '') // Remove special chars except dash, dot, space
+        .replace(/\s+/g, '_') // Replace spaces with underscores
+        .replace(/_{2,}/g, '_') // Replace multiple underscores with single
+        .replace(/^_+|_+$/g, ''); // Trim underscores from start/end
+      
+      // Add extension if missing and we can determine it
+      if (!hasExtension && pathExt && pathExt !== name.toLowerCase()) {
+        cleanName += '.' + pathExt;
+      }
+      
+      return cleanName || 'document.pdf'; // Fallback name
+    };
+
     const contentType = getContentType(filePath);
     
     // Set up response headers
-    const responseHeaders = {
+    const responseHeaders: Record<string, string> = {
       ...corsHeaders,
       'Content-Type': contentType,
       'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
+      'Content-Length': data.size.toString(),
     };
 
-    // Add download headers if requested
+    // Handle Content-Disposition header properly
     if (download && filename) {
-      responseHeaders['Content-Disposition'] = `attachment; filename="${filename}"`;
+      const sanitizedFilename = sanitizeFilename(filename, filePath);
+      
+      // Use RFC 5987 encoding for filename with special characters
+      const encodedFilename = encodeURIComponent(sanitizedFilename);
+      responseHeaders['Content-Disposition'] = 
+        `attachment; filename="${sanitizedFilename}"; filename*=UTF-8''${encodedFilename}`;
     } else {
-      responseHeaders['Content-Disposition'] = 'inline';
+      // For inline viewing, still provide a filename for browsers
+      const defaultFilename = filePath.split('/').pop() || 'document';
+      const sanitizedFilename = sanitizeFilename(defaultFilename, filePath);
+      const encodedFilename = encodeURIComponent(sanitizedFilename);
+      responseHeaders['Content-Disposition'] = 
+        `inline; filename="${sanitizedFilename}"; filename*=UTF-8''${encodedFilename}`;
     }
 
     return new Response(data, {

@@ -116,19 +116,32 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
     
     try {
       if (document.media_type === 'pdf' || document.media_type === 'document') {
-        const fileName = document.title || `document-${document.id}`;
-        const fileExtension = document.media_type === 'pdf' ? '.pdf' : '.doc';
-        const finalFileName = fileName.includes('.') ? fileName : fileName + fileExtension;
+        // Create a proper filename with extension
+        let fileName = document.title || `${document.media_category || 'document'}-${document.id}`;
+        
+        // Ensure proper file extension
+        const expectedExt = document.media_type === 'pdf' ? '.pdf' : '.doc';
+        if (!fileName.toLowerCase().endsWith(expectedExt)) {
+          // Remove any existing extension and add the correct one
+          fileName = fileName.replace(/\.[^/.]+$/, '') + expectedExt;
+        }
         
         // Use proxy URL for download
-        const proxyUrl = getProxyUrl(document.media_url, true, finalFileName);
-        window.open(proxyUrl, '_blank');
+        const proxyUrl = getProxyUrl(document.media_url, true, fileName);
+        
+        // Create a proper download link
+        const link = window.document.createElement('a');
+        link.href = proxyUrl;
+        link.download = fileName;
+        window.document.body.appendChild(link);
+        link.click();
+        window.document.body.removeChild(link);
       } else if (document.media_type === 'url') {
         window.open(document.media_url, '_blank');
       }
     } catch (error) {
       console.error('Error downloading document:', error);
-      // Fallback to original URL
+      // Fallback to opening in new tab
       window.open(document.media_url, '_blank');
     } finally {
       setDownloadingId(null);
@@ -259,11 +272,15 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
             </DialogHeader>
             <div className="flex-1 min-h-0">
               <iframe
-                src={`${getProxyUrl(previewDocument.media_url)}#toolbar=1&navpanes=1&scrollbar=1`}
+                src={`${getProxyUrl(previewDocument.media_url)}#view=FitH&toolbar=1&navpanes=1&scrollbar=1&page=1&zoom=85`}
                 className="w-full h-full min-h-[500px] rounded-md border"
                 title={previewDocument.title || 'Document Preview'}
-                onError={() => {
-                  // If iframe fails, open in new tab as fallback
+                allow="fullscreen"
+                onLoad={(e) => {
+                  console.log('PDF loaded successfully');
+                }}
+                onError={(e) => {
+                  console.error('PDF preview failed, opening in new tab');
                   window.open(getProxyUrl(previewDocument.media_url), '_blank');
                   setPreviewDocument(null);
                 }}
