@@ -12,6 +12,7 @@ import { MediaUploadHub } from './media/MediaUploadHub';
 import { DropboxIntegration } from './media/DropboxIntegration';
 import { BulkAssignmentRules } from './media/BulkAssignmentRules';
 import { MediaThumbnail } from './media/MediaThumbnail';
+import { MediaCategoryFixer } from './media/MediaCategoryFixer';
 
 interface MediaItem {
   id: string;
@@ -295,7 +296,7 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
         </DialogHeader>
 
         <Tabs defaultValue="media" className="flex-1 flex flex-col overflow-hidden">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="media" className="flex items-center gap-2">
               <Image className="w-4 h-4" />
               Media
@@ -307,6 +308,10 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
             <TabsTrigger value="features" className="flex items-center gap-2">
               <Sparkles className="w-4 h-4" />
               Features
+            </TabsTrigger>
+            <TabsTrigger value="maintenance" className="flex items-center gap-2">
+              <Settings className="w-4 h-4" />
+              Maintenance
             </TabsTrigger>
           </TabsList>
 
@@ -417,6 +422,12 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
               motor={motor} 
               onFeaturesUpdated={onMediaUpdated}
             />
+          </TabsContent>
+          
+          <TabsContent value="maintenance" className="flex-1 overflow-hidden">
+            <div className="p-6 space-y-6">
+              <MediaCategoryFixer />
+            </div>
           </TabsContent>
         </Tabs>
 

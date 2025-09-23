@@ -32,10 +32,16 @@ export function MediaUploadHub({ motorId, onUploadComplete }: MediaUploadHubProp
   const { toast } = useToast();
 
   const addMediaFile = useCallback((type: MediaFile['type']) => {
+    // Set appropriate default category based on media type
+    const defaultCategory = type === 'image' ? 'gallery' :
+                           type === 'pdf' ? 'specs' :
+                           type === 'video' ? 'video' :
+                           'general';
+    
     const newFile: MediaFile = {
       id: Math.random().toString(36).substr(2, 9),
       type,
-      category: 'general',
+      category: defaultCategory,
       title: '',
       description: '',
       altText: type === 'image' ? '' : undefined,
@@ -54,12 +60,21 @@ export function MediaUploadHub({ motorId, onUploadComplete }: MediaUploadHubProp
   }, []);
 
   const handleFileSelect = useCallback((id: string, file: File) => {
+    const fileType = file.type.startsWith('image/') ? 'image' : 
+                    file.type === 'application/pdf' ? 'pdf' : 
+                    file.type.startsWith('video/') ? 'video' : 'document';
+    
+    // Set appropriate default category based on file type
+    const defaultCategory = fileType === 'image' ? 'gallery' :
+                           fileType === 'pdf' ? 'specs' :
+                           fileType === 'video' ? 'video' :
+                           'general';
+    
     updateMediaFile(id, { 
       file, 
       title: file.name.replace(/\.[^/.]+$/, ''),
-      type: file.type.startsWith('image/') ? 'image' : 
-            file.type === 'application/pdf' ? 'pdf' : 
-            file.type.startsWith('video/') ? 'video' : 'document'
+      type: fileType,
+      category: defaultCategory
     });
   }, [updateMediaFile]);
 
@@ -279,7 +294,7 @@ export function MediaUploadHub({ motorId, onUploadComplete }: MediaUploadHubProp
                             </SelectTrigger>
                             <SelectContent>
                               <SelectItem value="hero">Hero Image</SelectItem>
-                              <SelectItem value="gallery">Gallery</SelectItem>
+                              {mediaFile.type === 'image' && <SelectItem value="gallery">Gallery</SelectItem>}
                               <SelectItem value="specs">Specifications</SelectItem>
                               <SelectItem value="manual">Manual</SelectItem>
                               <SelectItem value="brochure">Brochure</SelectItem>
