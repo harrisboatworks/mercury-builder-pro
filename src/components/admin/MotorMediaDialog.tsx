@@ -284,8 +284,8 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-7xl max-h-[85vh] flex flex-col">
-        <DialogHeader>
+      <DialogContent className="max-w-7xl h-[90vh] flex flex-col">
+        <DialogHeader className="flex-shrink-0">
           <DialogTitle className="flex items-center gap-2">
             <Image className="h-5 w-5 text-blue-600" />
             Motor Media Manager - {motor.model_display} ({motor.horsepower}HP)
@@ -295,8 +295,8 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
           </DialogDescription>
         </DialogHeader>
 
-        <Tabs defaultValue="media" className="flex-1 flex flex-col overflow-hidden">
-          <TabsList className="grid w-full grid-cols-4">
+        <Tabs defaultValue="media" className="flex-1 flex flex-col min-h-0">
+          <TabsList className="grid w-full grid-cols-4 flex-shrink-0">
             <TabsTrigger value="media" className="flex items-center gap-2">
               <Image className="w-4 h-4" />
               Media
@@ -315,21 +315,22 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="media" className="flex-1 overflow-hidden">
+          <TabsContent value="media" className="flex-1 min-h-0">
             {loading ? (
               <div className="flex items-center justify-center py-8">
                 <div className="text-muted-foreground">Loading media...</div>
               </div>
             ) : (
-               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 overflow-hidden">
-                 {/* Media Import - Enhanced with Dropbox */}
-                 <div className="space-y-4">
-                   <div className="flex items-center justify-between">
-                     <h3 className="text-lg font-semibold text-primary">
-                       Import Media
-                     </h3>
-                   </div>
-                   
+              <ScrollArea className="h-full">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-1">
+                  {/* Media Import - Enhanced with Dropbox */}
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-lg font-semibold text-primary">
+                        Import Media
+                      </h3>
+                    </div>
+                    
                     {/* Full Media Upload Hub */}
                     <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
                       <div className="flex items-center gap-2 mb-3">
@@ -350,7 +351,7 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
                       </div>
                       <DropboxIntegration motorId={motor.id} onUploadComplete={loadMediaData} />
                     </div>
-                 </div>
+                  </div>
 
                   {/* Assigned Media */}
                   <div className="space-y-4">
@@ -366,72 +367,79 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
                       )}
                     </div>
 
-                    <ScrollArea className="h-96">
-                      <div className="space-y-3">
-                        {assignedMedia.map((media) => (
-                          <MediaCard key={media.id} media={media} isAssigned={true} />
-                        ))}
-                        
-                        {assignedMedia.length === 0 && (
-                          <div className="text-center py-12 text-muted-foreground">
-                            <div className="bg-primary/5 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                              <Image className="h-8 w-8 opacity-50" />
-                            </div>
-                            <p className="text-base font-medium">No media assigned yet</p>
-                            <p className="text-sm">Upload new media or assign from available library</p>
+                    <div className="space-y-3 max-h-[600px] overflow-y-auto">
+                      {assignedMedia.map((media) => (
+                        <MediaCard key={media.id} media={media} isAssigned={true} />
+                      ))}
+                      
+                      {assignedMedia.length === 0 && (
+                        <div className="text-center py-12 text-muted-foreground">
+                          <div className="bg-primary/5 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                            <Image className="h-8 w-8 opacity-50" />
                           </div>
-                        )}
-                      </div>
-                    </ScrollArea>
+                          <p className="text-base font-medium">No media assigned yet</p>
+                          <p className="text-sm">Upload new media or assign from available library</p>
+                        </div>
+                      )}
+                    </div>
                   </div>
 
-                 {/* Available Media */}
-                 <div className="space-y-4">
-                   <div className="flex items-center justify-between">
-                     <h3 className="text-lg font-semibold">
-                       Available Media ({availableMedia.length})
-                     </h3>
-                   </div>
+                  {/* Available Media */}
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-lg font-semibold">
+                        Available Media ({availableMedia.length})
+                      </h3>
+                    </div>
 
-                   <ScrollArea className="h-96">
-                     <div className="space-y-3">
-                       {availableMedia.map((media) => (
-                         <MediaCard key={media.id} media={media} isAssigned={false} />
-                       ))}
-                       
-                       {availableMedia.length === 0 && (
-                         <div className="text-center py-8 text-muted-foreground">
-                           <FileText className="h-8 w-8 mx-auto mb-2 opacity-50" />
-                           <p>No unassigned media available.</p>
-                           <p className="text-sm">Upload new media using Quick Upload.</p>
-                         </div>
-                       )}
-                     </div>
-                   </ScrollArea>
-                 </div>
-               </div>
+                    <div className="space-y-3 max-h-[600px] overflow-y-auto">
+                      {availableMedia.map((media) => (
+                        <MediaCard key={media.id} media={media} isAssigned={false} />
+                      ))}
+                      
+                      {availableMedia.length === 0 && (
+                        <div className="text-center py-8 text-muted-foreground">
+                          <FileText className="h-8 w-8 mx-auto mb-2 opacity-50" />
+                          <p>No unassigned media available.</p>
+                          <p className="text-sm">Upload new media using Quick Upload.</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </ScrollArea>
             )}
           </TabsContent>
 
-          <TabsContent value="rules" className="flex-1 overflow-hidden">
-            <BulkAssignmentRules />
+          <TabsContent value="rules" className="flex-1 min-h-0">
+            <ScrollArea className="h-full">
+              <div className="p-4">
+                <BulkAssignmentRules />
+              </div>
+            </ScrollArea>
           </TabsContent>
 
-          <TabsContent value="features" className="flex-1 overflow-hidden">
-            <MotorFeaturesManager 
-              motor={motor} 
-              onFeaturesUpdated={onMediaUpdated}
-            />
+          <TabsContent value="features" className="flex-1 min-h-0">
+            <ScrollArea className="h-full">
+              <div className="p-4">
+                <MotorFeaturesManager 
+                  motor={motor} 
+                  onFeaturesUpdated={onMediaUpdated}
+                />
+              </div>
+            </ScrollArea>
           </TabsContent>
           
-          <TabsContent value="maintenance" className="flex-1 overflow-hidden">
-            <div className="p-6 space-y-6">
-              <MediaCategoryFixer />
-            </div>
+          <TabsContent value="maintenance" className="flex-1 min-h-0">
+            <ScrollArea className="h-full">
+              <div className="p-6 space-y-6">
+                <MediaCategoryFixer />
+              </div>
+            </ScrollArea>
           </TabsContent>
         </Tabs>
 
-        <div className="flex justify-end pt-4 border-t">
+        <div className="flex justify-end pt-4 border-t flex-shrink-0">
           <Button onClick={onClose}>Close</Button>
         </div>
       </DialogContent>
