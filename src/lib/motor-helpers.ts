@@ -1,4 +1,5 @@
 // Helper functions for motor calculations and display logic
+import { supabase } from "@/integrations/supabase/client";
 
 // Clean HTML tags from motor names
 export function cleanMotorName(rawName: string): string {
@@ -683,8 +684,8 @@ export const isCounterRotatingMotor = (model: string): boolean => {
   return isCounterRotating;
 };
 
-// Image selection priority logic
-export const getMotorImageByPriority = (motor: any): { url: string; isInventory: boolean } => {
+// Image selection priority logic with motor_media fallback
+export const getMotorImageByPriority = async (motor: any): Promise<{ url: string; isInventory: boolean }> => {
   const fallbackImage = '/lovable-uploads/speedboat-transparent.png';
   
   // Priority 1: If in_stock=true and we have inventory images, use that
@@ -720,12 +721,31 @@ export const getMotorImageByPriority = (motor: any): { url: string; isInventory:
     return { url: motor.image_url || motor.image, isInventory: false };
   }
   
-  // Priority 5: Fallback to Mercury placeholder
+  // Priority 5: Query motor_media table for assigned images
+  if (motor?.id) {
+    try {
+      const { data: mediaData, error } = await supabase
+        .from('motor_media')
+        .select('media_url, media_type')
+        .eq('motor_id', motor.id)
+        .eq('is_active', true)
+        .eq('media_type', 'image')
+        .order('display_order', { ascending: true });
+      
+      if (!error && mediaData && mediaData.length > 0) {
+        return { url: mediaData[0].media_url, isInventory: false };
+      }
+    } catch (err) {
+      console.warn('Failed to fetch motor media:', err);
+    }
+  }
+  
+  // Priority 6: Fallback to Mercury placeholder
   return { url: fallbackImage, isInventory: false };
 };
 
-// Get all images for gallery, maintaining brochure hero in array
-export const getMotorImageGallery = (motor: any): string[] => {
+// Get all images for gallery with motor_media fallback
+export const getMotorImageGallery = async (motor: any): Promise<string[]> => {
   const allImages: string[] = [];
   
   // Add hero image first if exists
@@ -746,6 +766,29 @@ export const getMotorImageGallery = (motor: any): string[] => {
   // Add main image_url if not already included
   if ((motor?.image_url || motor?.image) && !allImages.includes(motor.image_url || motor.image)) {
     allImages.push(motor.image_url || motor.image);
+  }
+  
+  // Query motor_media table for additional images
+  if (motor?.id) {
+    try {
+      const { data: mediaData, error } = await supabase
+        .from('motor_media')
+        .select('media_url')
+        .eq('motor_id', motor.id)
+        .eq('is_active', true)
+        .eq('media_type', 'image')
+        .order('display_order', { ascending: true });
+      
+      if (!error && mediaData && mediaData.length > 0) {
+        mediaData.forEach(media => {
+          if (media.media_url && !allImages.includes(media.media_url)) {
+            allImages.push(media.media_url);
+          }
+        });
+      }
+    } catch (err) {
+      console.warn('Failed to fetch motor media gallery:', err);
+    }
   }
   
   // Filter out invalid URLs

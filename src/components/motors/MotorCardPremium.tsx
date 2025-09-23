@@ -60,23 +60,36 @@ export default function MotorCardPremium({
   const [scrollPosition, setScrollPosition] = useState(0);
   
   // Get the best available image URL and count total images using priority logic
-  const getImageInfo = (): { url: string; count: number; isInventory: boolean } => {
-    const { url: primaryImageUrl, isInventory } = getMotorImageByPriority(motor);
-    const allImages = getMotorImageGallery(motor);
-    
-    // Use img prop as fallback if motor priority didn't find anything good
-    const finalUrl = primaryImageUrl !== '/lovable-uploads/speedboat-transparent.png' 
-      ? primaryImageUrl 
-      : (img || '/lovable-uploads/speedboat-transparent.png');
-    
-    return {
-      url: finalUrl,
-      count: Math.max(allImages.length, img ? 1 : 0),
-      isInventory
-    };
-  };
+  const [imageInfo, setImageInfo] = useState<{ url: string; count: number; isInventory: boolean }>({
+    url: img || '/lovable-uploads/speedboat-transparent.png',
+    count: img ? 1 : 0,
+    isInventory: false
+  });
 
-  const imageInfo = getImageInfo();
+  useEffect(() => {
+    const loadImageInfo = async () => {
+      try {
+        const { url: primaryImageUrl, isInventory } = await getMotorImageByPriority(motor);
+        const allImages = await getMotorImageGallery(motor);
+        
+        // Use img prop as fallback if motor priority didn't find anything good
+        const finalUrl = primaryImageUrl !== '/lovable-uploads/speedboat-transparent.png' 
+          ? primaryImageUrl 
+          : (img || '/lovable-uploads/speedboat-transparent.png');
+        
+        setImageInfo({
+          url: finalUrl,
+          count: Math.max(allImages.length, img ? 1 : 0),
+          isInventory
+        });
+      } catch (error) {
+        console.warn('Failed to load motor image info:', error);
+        // Keep fallback values on error
+      }
+    };
+
+    loadImageInfo();
+  }, [motor, img]);
   const imageUrl = imageInfo.url;
   const imageCount = imageInfo.count;
   const isInventoryImage = imageInfo.isInventory;

@@ -9,7 +9,8 @@ import { useScrollCoordination } from "../../hooks/useScrollCoordination";
 import { money } from "../../lib/money";
 import { MotorImageGallery } from './MotorImageGallery';
 import { MonthlyPaymentDisplay } from '../quote-builder/MonthlyPaymentDisplay';
-import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption, getRange, getTransomRequirement, getBatteryRequirement, getFuelRequirement, getOilRequirement, getIdealUses, getIncludedAccessories, getAdditionalRequirements, cleanSpecSheetUrl, requiresMercuryControls, isTillerMotor, type Motor } from "../../lib/motor-helpers";
+import { decodeModelName, getRecommendedBoatSize, getEstimatedSpeed, getFuelConsumption, getRange, getTransomRequirement, getBatteryRequirement, getFuelRequirement, getOilRequirement, getIdealUses, getIncludedAccessories, getAdditionalRequirements, cleanSpecSheetUrl, requiresMercuryControls, isTillerMotor, getMotorImageGallery, type Motor } from "../../lib/motor-helpers";
+import { MotorDetailsImageSection } from './MotorDetailsImageSection';
 import { findMotorSpecs, getMotorSpecs, type MercuryMotor } from "../../lib/data/mercury-motors";
 import { pdf } from '@react-pdf/renderer';
 import CleanSpecSheetPDF, { type CleanSpecSheetData } from './CleanSpecSheetPDF';
@@ -451,53 +452,7 @@ export default function MotorDetailsSheet({
               
               {/* Motor Image */}
               <div className="flex justify-center py-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                {(() => {
-                  // Extract and enhance image URLs from motor.images objects or use gallery prop
-                  const allImages: (string | { url: string })[] = [];
-                  
-                  // Process motor.images (array of objects with url property)
-                  if (motor?.images && Array.isArray(motor.images)) {
-                    allImages.push(...motor.images);
-                  }
-                  
-                  // Add gallery URLs if provided
-                  if (gallery && gallery.length > 0) {
-                    allImages.push(...gallery);
-                  }
-                  
-                  // Enhance all image URLs to get full-size versions
-                  const enhancedImageUrls = enhanceImageUrls(allImages);
-                  
-                  // Always show gallery if we have any images (enhanced or original)
-                  const imagesToUse = enhancedImageUrls.length > 0 ? 
-                    enhancedImageUrls : 
-                    allImages.map(img => typeof img === 'string' ? img : img.url).filter(Boolean);
-                  
-                  if (imagesToUse.length > 0) {
-                    return (
-                      <MotorImageGallery 
-                        images={imagesToUse}
-                        motorTitle={title}
-                      />
-                    );
-                  }
-                  
-                  // Final fallback to image prop
-                  if (img) {
-                    return (
-                      <MotorImageGallery 
-                        images={[img]}
-                        motorTitle={title}
-                      />
-                    );
-                  }
-                  
-                  return (
-                    <div className="text-center text-slate-500 dark:text-slate-400 py-12">
-                      No images available
-                    </div>
-                  );
-                })()}
+                <MotorDetailsImageSection motor={motor} gallery={gallery} img={img} title={title} />
               </div>
               
               {/* Specifications Section */}
