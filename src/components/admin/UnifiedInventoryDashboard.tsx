@@ -1111,11 +1111,11 @@ export function UnifiedInventoryDashboard() {
                       <Button 
                         variant="ghost" 
                         size="sm" 
-                        className="h-8 w-8 p-0 text-blue-600 hover:text-blue-700"
+                        className="h-8 w-8 p-0 text-blue-600 hover:text-blue-700 hover:bg-blue-50"
                         onClick={() => openMediaDialog(motor)}
-                        title="Manage Media"
+                        title={`Manage Images & Media for ${getDisplayName(motor)}`}
                       >
-                        <Settings className="h-3 w-3" />
+                        <Image className="h-4 w-4" />
                       </Button>
 
                       <Dialog open={editingMotor === motor.id} onOpenChange={(open) => setEditingMotor(open ? motor.id : null)}>

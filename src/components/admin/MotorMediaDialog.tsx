@@ -271,9 +271,12 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-6xl max-h-[80vh] flex flex-col">
         <DialogHeader>
-          <DialogTitle>Motor Management</DialogTitle>
+          <DialogTitle className="flex items-center gap-2">
+            <Image className="h-5 w-5 text-blue-600" />
+            Images & Media - {motor.model_display} ({motor.horsepower}HP)
+          </DialogTitle>
           <DialogDescription>
-            Manage media and features for {motor.model_display} ({motor.horsepower}HP)
+            Upload, assign, and manage images, documents, and media for this motor model
           </DialogDescription>
         </DialogHeader>
 
