@@ -31,7 +31,7 @@ import NotFound from "./pages/NotFound";
 import AdminPromotions from "./pages/AdminPromotions";
 import AdminQuotes from "./pages/AdminQuotes";
 import AdminQuoteDetail from "./pages/AdminQuoteDetail";
-import AdminMotorImages from "./pages/AdminMotorImages";
+
 import FinanceCalculator from "./pages/FinanceCalculator";
 // Removed obsolete staging and test imports
 import StagingImageSizing from "./pages/StagingImageSizing";
@@ -148,14 +148,6 @@ const App = () => (
                   element={
                     <SecureRoute requireAdmin={true}>
                       <FinancingAdmin />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/motor-images"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminMotorImages />
                     </SecureRoute>
                   }
                 />

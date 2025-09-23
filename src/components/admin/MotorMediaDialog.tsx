@@ -6,10 +6,11 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import { Image, FileText, Video, Link as LinkIcon, Plus, Trash2, Star, StarOff, Upload, Sparkles, Cloud } from 'lucide-react';
+import { Image, FileText, Video, Link as LinkIcon, Plus, Trash2, Star, StarOff, Upload, Sparkles, Cloud, Settings } from 'lucide-react';
 import { MotorFeaturesManager } from './MotorFeaturesManager';
-import { QuickMediaUpload } from './QuickMediaUpload';
-import { CompactDropboxImport } from './media/CompactDropboxImport';
+import { MediaUploadHub } from './media/MediaUploadHub';
+import { DropboxIntegration } from './media/DropboxIntegration';
+import { BulkAssignmentRules } from './media/BulkAssignmentRules';
 import { MediaThumbnail } from './media/MediaThumbnail';
 
 interface MediaItem {
@@ -294,10 +295,14 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
         </DialogHeader>
 
         <Tabs defaultValue="media" className="flex-1 flex flex-col overflow-hidden">
-          <TabsList className="grid w-full grid-cols-2">
+          <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="media" className="flex items-center gap-2">
               <Image className="w-4 h-4" />
               Media
+            </TabsTrigger>
+            <TabsTrigger value="rules" className="flex items-center gap-2">
+              <Settings className="w-4 h-4" />
+              Rules
             </TabsTrigger>
             <TabsTrigger value="features" className="flex items-center gap-2">
               <Sparkles className="w-4 h-4" />
@@ -320,26 +325,26 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
                      </h3>
                    </div>
                    
-                   {/* Quick Upload */}
-                   <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
-                     <div className="flex items-center gap-2 mb-3">
-                       <Upload className="h-4 w-4" />
-                       <span className="text-sm font-medium">File Upload</span>
-                     </div>
-                     <QuickMediaUpload 
-                       motorId={motor.id}
-                       onUploadComplete={loadMediaData}
-                     />
-                   </div>
+                    {/* Full Media Upload Hub */}
+                    <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
+                      <div className="flex items-center gap-2 mb-3">
+                        <Upload className="h-4 w-4" />
+                        <span className="text-sm font-medium">Multi-Media Upload</span>
+                      </div>
+                      <MediaUploadHub 
+                        motorId={motor.id}
+                        onUploadComplete={loadMediaData}
+                      />
+                    </div>
 
-                   {/* Dropbox Integration */}
-                   <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                     <div className="flex items-center gap-2 mb-3">
-                       <Cloud className="h-4 w-4 text-blue-600" />
-                       <span className="text-sm font-medium text-blue-700">Dropbox Import</span>
-                     </div>
-                     <CompactDropboxImport motorId={motor.id} onUploadComplete={loadMediaData} />
-                   </div>
+                    {/* Dropbox Integration */}
+                    <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                      <div className="flex items-center gap-2 mb-3">
+                        <Cloud className="h-4 w-4 text-blue-600" />
+                        <span className="text-sm font-medium text-blue-700">Dropbox Import</span>
+                      </div>
+                      <DropboxIntegration motorId={motor.id} onUploadComplete={loadMediaData} />
+                    </div>
                  </div>
 
                   {/* Assigned Media */}
@@ -401,6 +406,10 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
                  </div>
                </div>
             )}
+          </TabsContent>
+
+          <TabsContent value="rules" className="flex-1 overflow-hidden">
+            <BulkAssignmentRules />
           </TabsContent>
 
           <TabsContent value="features" className="flex-1 overflow-hidden">

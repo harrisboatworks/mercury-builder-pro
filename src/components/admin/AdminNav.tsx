@@ -6,7 +6,7 @@ const navItems = [
   { label: "Quotes", to: "/admin/quotes" },
   { label: "Promotions", to: "/admin/promotions" },
   { label: "Financing", to: "/admin/financing" },
-  { label: "Motor Images", to: "/admin/motor-images" },
+  
   { label: "Inventory", to: "/admin/inventory" },
   { label: "Stock Sync", to: "/admin/stock-sync" },
   { label: "Cron Jobs", to: "/admin/cron-monitor" },

@@ -21,7 +21,12 @@ interface MediaFile {
   altText?: string;
 }
 
-export function MediaUploadHub() {
+interface MediaUploadHubProps {
+  motorId?: string;
+  onUploadComplete?: () => void;
+}
+
+export function MediaUploadHub({ motorId, onUploadComplete }: MediaUploadHubProps) {
   const [mediaFiles, setMediaFiles] = useState<MediaFile[]>([]);
   const [uploading, setUploading] = useState(false);
   const { toast } = useToast();
@@ -109,6 +114,7 @@ export function MediaUploadHub() {
           const { error } = await supabase
             .from('motor_media')
             .insert({
+              motor_id: motorId || undefined, // Auto-assign to motor if provided
               media_type: mediaFile.type,
               media_category: mediaFile.category,
               media_url: mediaUrl,
@@ -129,14 +135,24 @@ export function MediaUploadHub() {
         }
       }
 
-      toast({
-        title: "Upload complete",
-        description: `${successCount} files uploaded successfully${errorCount > 0 ? `, ${errorCount} failed` : ''}.`,
-        variant: successCount > 0 ? "default" : "destructive",
-      });
-
       if (successCount > 0) {
+        toast({
+          title: "Upload successful",
+          description: `Successfully uploaded ${successCount} media files.`,
+        });
+
         setMediaFiles([]);
+        
+        // Call onUploadComplete callback if provided
+        if (onUploadComplete) {
+          onUploadComplete();
+        }
+      } else {
+        toast({
+          title: "Upload failed",
+          description: `${errorCount} files failed to upload.`,
+          variant: "destructive",
+        });
       }
     } catch (error) {
       console.error('Upload error:', error);
