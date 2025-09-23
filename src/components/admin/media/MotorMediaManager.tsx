@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { Settings2, Search, Image, FileText, Video, Link as LinkIcon, Plus, Trash2 } from 'lucide-react';
+import { MediaThumbnail } from './MediaThumbnail';
 
 interface Motor {
   id: string;
@@ -348,20 +349,20 @@ export function MotorMediaManager() {
                   <h4 className="font-medium mb-2">Current Media ({motorMedia.length})</h4>
                   <div className="space-y-2">
                     {motorMedia.map((media) => (
-                      <div key={media.id} className="flex items-center justify-between p-2 border rounded">
-                        <div className="flex items-center gap-2">
-                          {getMediaIcon(media.media_type)}
-                          <div>
-                            <div className="text-sm font-medium">
+                      <div key={media.id} className="flex items-center justify-between p-3 border rounded-lg hover:bg-muted/50 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <MediaThumbnail media={media} size="md" />
+                          <div className="flex-1">
+                            <div className="text-sm font-medium flex items-center gap-2">
                               {media.title || 'Untitled'}
+                              {selectedMotor.hero_media_id === media.id && (
+                                <Badge variant="default" className="text-xs">Hero</Badge>
+                              )}
                             </div>
                             <div className="text-xs text-muted-foreground">
                               {media.media_category} • {media.media_type}
                             </div>
                           </div>
-                          {selectedMotor.hero_media_id === media.id && (
-                            <Badge variant="default" className="text-xs">Hero</Badge>
-                          )}
                         </div>
                         <div className="flex gap-1">
                           {media.media_type === 'image' && (
@@ -400,10 +401,10 @@ export function MotorMediaManager() {
                   <h4 className="font-medium mb-2">Available Media ({availableMedia.length})</h4>
                   <div className="space-y-2 max-h-48 overflow-y-auto">
                     {availableMedia.map((media) => (
-                      <div key={media.id} className="flex items-center justify-between p-2 border rounded">
-                        <div className="flex items-center gap-2">
-                          {getMediaIcon(media.media_type)}
-                          <div>
+                      <div key={media.id} className="flex items-center justify-between p-3 border rounded-lg hover:bg-muted/50 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <MediaThumbnail media={media} size="md" />
+                          <div className="flex-1">
                             <div className="text-sm font-medium">
                               {media.title || 'Untitled'}
                             </div>
