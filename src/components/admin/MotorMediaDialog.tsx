@@ -10,6 +10,7 @@ import { Image, FileText, Video, Link as LinkIcon, Plus, Trash2, Star, StarOff, 
 import { MotorFeaturesManager } from './MotorFeaturesManager';
 import { QuickMediaUpload } from './QuickMediaUpload';
 import { CompactDropboxImport } from './media/CompactDropboxImport';
+import { MediaThumbnail } from './media/MediaThumbnail';
 
 interface MediaItem {
   id: string;
@@ -191,92 +192,104 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
     return `${Math.round(bytes / (1024 * 1024))} MB`;
   };
 
-  const MediaCard = ({ media, isAssigned }: { media: MediaItem; isAssigned: boolean }) => (
-    <div className="flex items-center justify-between p-3 border rounded-lg bg-card">
-      <div className="flex items-center gap-3 min-w-0 flex-1">
-        {getMediaIcon(media.media_type)}
-        <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2">
-            <p className="text-sm font-medium truncate">
-              {media.title || 'Untitled'}
-            </p>
-            {isAssigned && motor?.hero_media_id === media.id && (
-              <Badge variant="default" className="text-xs">
-                <Star className="h-3 w-3 mr-1" />
+  const MediaCard = ({ media, isAssigned }: { media: MediaItem; isAssigned: boolean }) => {
+    const isHero = motor?.hero_media_id === media.id;
+    
+    return (
+      <div className="flex items-start gap-3 p-3 border rounded-lg bg-card hover:bg-accent/50 transition-colors">
+        {/* Thumbnail */}
+        <MediaThumbnail 
+          media={media} 
+          size="lg" 
+          className="flex-shrink-0"
+        />
+        
+        {/* Content */}
+        <div className="min-w-0 flex-1 space-y-2">
+          <div className="flex items-start justify-between gap-2">
+            <div className="min-w-0 flex-1">
+              <p className="text-sm font-medium truncate">
+                {media.title || 'Untitled'}
+              </p>
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <span className="capitalize">{media.media_category}</span>
+                <span>•</span>
+                <span className="uppercase">{media.media_type}</span>
+                {media.file_size && (
+                  <>
+                    <span>•</span>
+                    <span>{formatFileSize(media.file_size)}</span>
+                  </>
+                )}
+              </div>
+              {media.description && (
+                <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                  {media.description}
+                </p>
+              )}
+            </div>
+            
+            {/* Hero Badge */}
+            {isAssigned && isHero && (
+              <Badge className="bg-yellow-100 text-yellow-800 border-yellow-300 text-xs">
+                <Star className="h-3 w-3 mr-1 fill-current" />
                 Hero
               </Badge>
             )}
           </div>
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            <span className="capitalize">{media.media_category}</span>
-            <span>•</span>
-            <span className="uppercase">{media.media_type}</span>
-            {media.file_size && (
+          
+          {/* Actions */}
+          <div className="flex items-center gap-2">
+            {isAssigned ? (
               <>
-                <span>•</span>
-                <span>{formatFileSize(media.file_size)}</span>
+                {media.media_type === 'image' && (
+                  <Button
+                    size="sm"
+                    variant={isHero ? "secondary" : "default"}
+                    className={isHero ? "bg-yellow-100 text-yellow-800 hover:bg-yellow-200" : "bg-blue-600 hover:bg-blue-700 text-white"}
+                    onClick={() => setHeroMedia(isHero ? null : media.id)}
+                  >
+                    {isHero ? "Remove Hero" : "Set Hero"}
+                  </Button>
+                )}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => unassignMedia(media.id)}
+                  className="text-red-600 border-red-300 hover:bg-red-50"
+                >
+                  <Trash2 className="h-4 w-4" />
+                </Button>
               </>
-            )}
-          </div>
-          {media.description && (
-            <p className="text-xs text-muted-foreground mt-1 truncate">
-              {media.description}
-            </p>
-          )}
-        </div>
-      </div>
-      
-      <div className="flex items-center gap-2 ml-2">
-        {isAssigned ? (
-          <>
-            {media.media_type === 'image' && (
+            ) : (
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => setHeroMedia(
-                  motor?.hero_media_id === media.id ? null : media.id
-                )}
+                onClick={() => assignMedia(media.id)}
+                className="text-blue-600 border-blue-300 hover:bg-blue-50"
               >
-                {motor?.hero_media_id === media.id ? (
-                  <StarOff className="h-4 w-4" />
-                ) : (
-                  <Star className="h-4 w-4" />
-                )}
+                <Plus className="h-4 w-4 mr-1" />
+                Assign
               </Button>
             )}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => unassignMedia(media.id)}
-            >
-              <Trash2 className="h-4 w-4" />
-            </Button>
-          </>
-        ) : (
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => assignMedia(media.id)}
-          >
-            <Plus className="h-4 w-4" />
-          </Button>
-        )}
+          </div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   if (!motor) return null;
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-6xl max-h-[80vh] flex flex-col">
+      <DialogContent className="max-w-7xl max-h-[85vh] flex flex-col">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Image className="h-5 w-5 text-blue-600" />
-            Images & Media - {motor.model_display} ({motor.horsepower}HP)
+            Motor Media Manager - {motor.model_display} ({motor.horsepower}HP)
           </DialogTitle>
           <DialogDescription>
-            Upload, assign, and manage images, documents, and media for this motor model
+            Comprehensive media management for this motor model - upload, assign, and organize images, PDFs, videos, and documents
           </DialogDescription>
         </DialogHeader>
 
@@ -329,30 +342,38 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
                    </div>
                  </div>
 
-                 {/* Assigned Media */}
-                 <div className="space-y-4">
-                   <div className="flex items-center justify-between">
-                     <h3 className="text-lg font-semibold">
-                       Assigned Media ({assignedMedia.length})
-                     </h3>
-                   </div>
+                  {/* Assigned Media */}
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-lg font-semibold text-primary">
+                        Current Media ({assignedMedia.length})
+                      </h3>
+                      {motor?.hero_media_id && (
+                        <Badge variant="outline" className="text-xs bg-yellow-50 border-yellow-300 text-yellow-700">
+                          <Star className="h-3 w-3 mr-1 fill-current" />
+                          Hero Set
+                        </Badge>
+                      )}
+                    </div>
 
-                   <ScrollArea className="h-96">
-                     <div className="space-y-3">
-                       {assignedMedia.map((media) => (
-                         <MediaCard key={media.id} media={media} isAssigned={true} />
-                       ))}
-                       
-                       {assignedMedia.length === 0 && (
-                         <div className="text-center py-8 text-muted-foreground">
-                           <Upload className="h-8 w-8 mx-auto mb-2 opacity-50" />
-                           <p>No media assigned to this motor yet.</p>
-                           <p className="text-sm">Select media from the available list to assign.</p>
-                         </div>
-                       )}
-                     </div>
-                   </ScrollArea>
-                 </div>
+                    <ScrollArea className="h-96">
+                      <div className="space-y-3">
+                        {assignedMedia.map((media) => (
+                          <MediaCard key={media.id} media={media} isAssigned={true} />
+                        ))}
+                        
+                        {assignedMedia.length === 0 && (
+                          <div className="text-center py-12 text-muted-foreground">
+                            <div className="bg-primary/5 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                              <Image className="h-8 w-8 opacity-50" />
+                            </div>
+                            <p className="text-base font-medium">No media assigned yet</p>
+                            <p className="text-sm">Upload new media or assign from available library</p>
+                          </div>
+                        )}
+                      </div>
+                    </ScrollArea>
+                  </div>
 
                  {/* Available Media */}
                  <div className="space-y-4">
