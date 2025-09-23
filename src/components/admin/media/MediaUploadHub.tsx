@@ -8,7 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import { Upload, Image, FileText, Video, Link as LinkIcon, Plus, X } from 'lucide-react';
+import { Upload, Image, FileText, Video, Link as LinkIcon, Plus, X, CheckCircle } from 'lucide-react';
 
 interface MediaFile {
   id: string;
@@ -58,6 +58,33 @@ export function MediaUploadHub({ motorId, onUploadComplete }: MediaUploadHubProp
   const removeMediaFile = useCallback((id: string) => {
     setMediaFiles(prev => prev.filter(file => file.id !== id));
   }, []);
+
+  // Function to detect if URL is a video URL
+  const isVideoUrl = useCallback((url: string): boolean => {
+    const videoPatterns = [
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)/i,
+      /(?:vimeo\.com\/)/i,
+      /(?:dailymotion\.com\/video\/)/i,
+      /(?:twitch\.tv\/videos\/)/i,
+      /(?:facebook\.com\/.*\/videos\/)/i,
+      /(?:instagram\.com\/p\/.*\/)/i,
+      /\.(?:mp4|webm|ogg|mov|avi|mkv)$/i
+    ];
+    return videoPatterns.some(pattern => pattern.test(url));
+  }, []);
+
+  // Handle URL input with auto-detection
+  const handleUrlChange = useCallback((id: string, url: string) => {
+    const updates: Partial<MediaFile> = { url };
+    
+    // Auto-detect video URLs and set category
+    if (url && isVideoUrl(url)) {
+      updates.category = 'video';
+      updates.type = 'url'; // Keep as URL type but set video category
+    }
+    
+    updateMediaFile(id, updates);
+  }, [updateMediaFile, isVideoUrl]);
 
   const handleFileSelect = useCallback((id: string, file: File) => {
     const fileType = file.type.startsWith('image/') ? 'image' : 
@@ -260,12 +287,22 @@ export function MediaUploadHub({ motorId, onUploadComplete }: MediaUploadHubProp
                         {mediaFile.type === 'url' && (
                           <div>
                             <Label htmlFor={`url-${mediaFile.id}`}>URL</Label>
-                            <Input
-                              id={`url-${mediaFile.id}`}
-                              placeholder="https://example.com/media"
-                              value={mediaFile.url || ''}
-                              onChange={(e) => updateMediaFile(mediaFile.id, { url: e.target.value })}
-                            />
+                            <div className="relative">
+                              <Input
+                                id={`url-${mediaFile.id}`}
+                                placeholder="https://youtube.com/watch?v=... or other media URL"
+                                value={mediaFile.url || ''}
+                                onChange={(e) => handleUrlChange(mediaFile.id, e.target.value)}
+                              />
+                              {mediaFile.url && isVideoUrl(mediaFile.url) && (
+                                <CheckCircle className="absolute right-2 top-2.5 h-4 w-4 text-green-500" />
+                              )}
+                            </div>
+                            {mediaFile.url && isVideoUrl(mediaFile.url) && (
+                              <p className="text-xs text-green-600 mt-1">
+                                ✓ Video URL detected - category set to Video
+                              </p>
+                            )}
                           </div>
                         )}
 
