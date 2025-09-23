@@ -194,7 +194,7 @@ export default function MotorCardPremium({
                 <img 
                   src={imageUrl} 
                   alt="" 
-                  className="h-40 w-full rounded-lg object-contain bg-white dark:bg-slate-900" 
+                  className="h-48 w-full rounded-lg object-contain bg-white dark:bg-slate-900" 
                 />
                 {/* Gallery indicator and stock status */}
                 <div className="absolute bottom-2 right-2 flex items-center gap-2">
