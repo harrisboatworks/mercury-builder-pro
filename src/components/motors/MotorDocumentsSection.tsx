@@ -92,21 +92,26 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
     setDownloadingId(document.id);
     
     try {
-      // For PDFs and documents, trigger download
       if (document.media_type === 'pdf' || document.media_type === 'document') {
-        const link = window.document.createElement('a');
-        link.href = document.media_url;
-        link.download = document.title || `document-${document.id}`;
-        link.target = '_blank';
-        window.document.body.appendChild(link);
-        link.click();
-        window.document.body.removeChild(link);
+        // Use window.open to force download - works better with Supabase Storage
+        const fileName = document.title || `document-${document.id}`;
+        const fileExtension = document.media_type === 'pdf' ? '.pdf' : '.doc';
+        const finalFileName = fileName.includes('.') ? fileName : fileName + fileExtension;
+        
+        // Try to trigger download by opening in new window
+        const newWindow = window.open(document.media_url, '_blank');
+        
+        // If popup blocked or other issues, fallback to direct navigation
+        if (!newWindow) {
+          window.location.href = document.media_url;
+        }
       } else if (document.media_type === 'url') {
-        // For URLs, open in new tab
         window.open(document.media_url, '_blank');
       }
     } catch (error) {
       console.error('Error downloading document:', error);
+      // Fallback: direct navigation
+      window.open(document.media_url, '_blank');
     } finally {
       setDownloadingId(null);
     }
@@ -234,9 +239,14 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
             </DialogHeader>
             <div className="flex-1 min-h-0">
               <iframe
-                src={previewDocument.media_url}
-                className="w-full h-full min-h-[500px] rounded-md"
+                src={`${previewDocument.media_url}#toolbar=1&navpanes=1&scrollbar=1`}
+                className="w-full h-full min-h-[500px] rounded-md border"
                 title={previewDocument.title || 'Document Preview'}
+                onError={() => {
+                  // If iframe fails, open in new tab as fallback
+                  window.open(previewDocument.media_url, '_blank');
+                  setPreviewDocument(null);
+                }}
               />
             </div>
             <div className="flex justify-end gap-2 pt-4">
