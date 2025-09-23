@@ -88,29 +88,47 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
     }
   };
 
+  const getProxyUrl = (mediaUrl: string, download = false, filename?: string) => {
+    // Extract path from Supabase storage URL
+    const url = new URL(mediaUrl);
+    const pathParts = url.pathname.split('/');
+    const bucketIndex = pathParts.findIndex(part => part === 'object');
+    if (bucketIndex === -1) return mediaUrl; // Fallback to original URL
+    
+    const bucket = pathParts[bucketIndex + 1];
+    const filePath = pathParts.slice(bucketIndex + 2).join('/');
+    
+    const proxyUrl = new URL('https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/file-proxy');
+    proxyUrl.searchParams.set('bucket', bucket);
+    proxyUrl.searchParams.set('path', filePath);
+    if (download) {
+      proxyUrl.searchParams.set('download', 'true');
+      if (filename) {
+        proxyUrl.searchParams.set('filename', filename);
+      }
+    }
+    
+    return proxyUrl.toString();
+  };
+
   const handleDownload = async (document: MediaItem) => {
     setDownloadingId(document.id);
     
     try {
       if (document.media_type === 'pdf' || document.media_type === 'document') {
-        // Use window.open to force download - works better with Supabase Storage
         const fileName = document.title || `document-${document.id}`;
         const fileExtension = document.media_type === 'pdf' ? '.pdf' : '.doc';
         const finalFileName = fileName.includes('.') ? fileName : fileName + fileExtension;
         
-        // Try to trigger download by opening in new window
-        const newWindow = window.open(document.media_url, '_blank');
-        
-        // If popup blocked or other issues, fallback to direct navigation
-        if (!newWindow) {
-          window.location.href = document.media_url;
-        }
+        // Use proxy URL for download
+        const proxyUrl = getProxyUrl(document.media_url, true, finalFileName);
+        window.open(proxyUrl, '_blank');
       } else if (document.media_type === 'url') {
         window.open(document.media_url, '_blank');
       }
     } catch (error) {
       console.error('Error downloading document:', error);
-      // Fallback: direct navigation
+      // Fallback to original URL
       window.open(document.media_url, '_blank');
     } finally {
       setDownloadingId(null);
@@ -120,8 +138,10 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
   const handlePreview = (document: MediaItem) => {
     if (document.media_type === 'pdf') {
       setPreviewDocument(document);
-    } else if (document.media_type === 'url') {
-      window.open(document.media_url, '_blank');
+    } else {
+      // For non-PDF documents, use proxy URL
+      const proxyUrl = getProxyUrl(document.media_url);
+      window.open(proxyUrl, '_blank');
     }
   };
 
@@ -239,12 +259,12 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
             </DialogHeader>
             <div className="flex-1 min-h-0">
               <iframe
-                src={`${previewDocument.media_url}#toolbar=1&navpanes=1&scrollbar=1`}
+                src={`${getProxyUrl(previewDocument.media_url)}#toolbar=1&navpanes=1&scrollbar=1`}
                 className="w-full h-full min-h-[500px] rounded-md border"
                 title={previewDocument.title || 'Document Preview'}
                 onError={() => {
                   // If iframe fails, open in new tab as fallback
-                  window.open(previewDocument.media_url, '_blank');
+                  window.open(getProxyUrl(previewDocument.media_url), '_blank');
                   setPreviewDocument(null);
                 }}
               />

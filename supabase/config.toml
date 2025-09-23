@@ -1,5 +1,8 @@
 project_id = "eutsoqdpjurknjsshxes"
 
+[functions.file-proxy]
+verify_jwt = false
+
 [functions.test-scraper-simple]
 verify_jwt = false
 
