@@ -60,6 +60,8 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
   const [loading, setLoading] = useState(true);
   const [previewDocument, setPreviewDocument] = useState<MediaItem | null>(null);
   const [downloadingId, setDownloadingId] = useState<string | null>(null);
+  const [pdfLoading, setPdfLoading] = useState(false);
+  const [pdfLoadError, setPdfLoadError] = useState(false);
 
   useEffect(() => {
     loadDocuments();
@@ -151,6 +153,18 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
   const handlePreview = (document: MediaItem) => {
     if (document.media_type === 'pdf') {
       setPreviewDocument(document);
+      setPdfLoading(true);
+      setPdfLoadError(false);
+      
+      // Set timeout fallback in case iframe doesn't load
+      setTimeout(() => {
+        if (pdfLoading) {
+          console.warn('PDF preview timeout, opening in new tab');
+          window.open(getProxyUrl(document.media_url), '_blank');
+          setPreviewDocument(null);
+          setPdfLoading(false);
+        }
+      }, 8000); // 8 second timeout
     } else {
       // For non-PDF documents, use proxy URL
       const proxyUrl = getProxyUrl(document.media_url);
@@ -265,12 +279,75 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
 
       {/* PDF Preview Dialog */}
       {previewDocument && previewDocument.media_type === 'pdf' && (
-        <Dialog open={!!previewDocument} onOpenChange={() => setPreviewDocument(null)}>
+        <Dialog open={!!previewDocument} onOpenChange={() => {
+          setPreviewDocument(null);
+          setPdfLoading(false);
+          setPdfLoadError(false);
+        }}>
           <DialogContent className="max-w-4xl max-h-[90vh] flex flex-col">
             <DialogHeader>
               <DialogTitle>{previewDocument.title || 'Document Preview'}</DialogTitle>
             </DialogHeader>
-            <div className="flex-1 min-h-0">
+            <div className="flex-1 min-h-0 relative">
+              {pdfLoading && !pdfLoadError && (
+                <div className="absolute inset-0 flex items-center justify-center bg-background/80 z-10">
+                  <div className="flex flex-col items-center gap-2">
+                    <Loader2 className="w-8 h-8 animate-spin text-primary" />
+                    <p className="text-sm text-muted-foreground">Loading PDF preview...</p>
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      onClick={() => {
+                        window.open(getProxyUrl(previewDocument.media_url), '_blank');
+                        setPreviewDocument(null);
+                        setPdfLoading(false);
+                      }}
+                    >
+                      Open in New Tab Instead
+                    </Button>
+                  </div>
+                </div>
+              )}
+              
+              {pdfLoadError && (
+                <div className="absolute inset-0 flex items-center justify-center bg-background/80 z-10">
+                  <div className="flex flex-col items-center gap-3 text-center">
+                    <FileText className="w-12 h-12 text-muted-foreground" />
+                    <div>
+                      <p className="font-medium text-sm mb-1">PDF Preview Not Available</p>
+                      <p className="text-xs text-muted-foreground mb-3">
+                        This PDF cannot be previewed in the browser. You can download it or open it in a new tab.
+                      </p>
+                    </div>
+                    <div className="flex gap-2">
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => {
+                          window.open(getProxyUrl(previewDocument.media_url), '_blank');
+                          setPreviewDocument(null);
+                          setPdfLoadError(false);
+                        }}
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Open in New Tab
+                      </Button>
+                      <Button 
+                        size="sm"
+                        onClick={() => {
+                          handleDownload(previewDocument);
+                          setPreviewDocument(null);
+                          setPdfLoadError(false);
+                        }}
+                      >
+                        <Download className="w-4 h-4 mr-2" />
+                        Download
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
               <iframe
                 src={`${getProxyUrl(previewDocument.media_url)}#view=FitH&toolbar=1&navpanes=1&scrollbar=1&page=1&zoom=85`}
                 className="w-full h-full min-h-[500px] rounded-md border"
@@ -278,16 +355,40 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
                 allow="fullscreen"
                 onLoad={(e) => {
                   console.log('PDF loaded successfully');
+                  setPdfLoading(false);
+                  setPdfLoadError(false);
+                  
+                  // Additional check to see if the iframe actually contains a PDF
+                  setTimeout(() => {
+                    try {
+                      const iframe = e.currentTarget as HTMLIFrameElement;
+                      if (iframe.contentWindow) {
+                        // If we can't access content due to CORS, assume it's working
+                        // Only flag as error if we get a clear error page
+                        const doc = iframe.contentDocument || iframe.contentWindow.document;
+                        if (doc && doc.title && doc.title.toLowerCase().includes('error')) {
+                          setPdfLoadError(true);
+                        }
+                      }
+                    } catch (error) {
+                      // CORS error is expected for cross-origin PDFs, so this is actually good
+                      console.log('PDF loaded (CORS restriction is expected)');
+                    }
+                  }, 1000);
                 }}
                 onError={(e) => {
-                  console.error('PDF preview failed, opening in new tab');
-                  window.open(getProxyUrl(previewDocument.media_url), '_blank');
-                  setPreviewDocument(null);
+                  console.error('PDF preview failed');
+                  setPdfLoading(false);
+                  setPdfLoadError(true);
                 }}
               />
             </div>
             <div className="flex justify-end gap-2 pt-4">
-              <Button variant="outline" onClick={() => setPreviewDocument(null)}>
+              <Button variant="outline" onClick={() => {
+                setPreviewDocument(null);
+                setPdfLoading(false);
+                setPdfLoadError(false);
+              }}>
                 Close
               </Button>
               <Button onClick={() => handleDownload(previewDocument)}>
