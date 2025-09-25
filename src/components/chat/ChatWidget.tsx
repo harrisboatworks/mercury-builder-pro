@@ -116,7 +116,6 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
   };
 
   const isMobile = useIsMobile();
-  console.log('ChatWidget - isMobile:', isMobile, 'isOpen:', isOpen);
 
   // Mobile version with Drawer
   if (isMobile) {
@@ -127,14 +126,14 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
             <Button
               onClick={handleOpen}
               size="lg"
-              className="fixed bottom-6 right-6 z-50 h-12 w-12 rounded-full bg-primary hover:bg-primary/90 shadow-lg border-2 border-background"
+              className="fixed bottom-6 right-6 z-50 h-10 w-10 rounded-full bg-primary hover:bg-primary/90 shadow-lg border-2 border-background"
               aria-label="Open Chat Support"
             >
-              <MessageCircle className="w-6 h-6" />
+              <MessageCircle className="w-5 h-5" />
             </Button>
           </DrawerTrigger>
           
-          <DrawerContent className="h-[85vh] flex flex-col bg-background">
+          <DrawerContent className="h-[85vh] flex flex-col bg-background z-[100]">
             <DrawerHeader className="bg-primary text-primary-foreground px-6 py-4 border-b">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
