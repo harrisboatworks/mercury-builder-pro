@@ -116,6 +116,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
   };
 
   const isMobile = useIsMobile();
+  console.log('ChatWidget - isMobile:', isMobile, 'isOpen:', isOpen);
 
   // Mobile version with Drawer
   if (isMobile) {
