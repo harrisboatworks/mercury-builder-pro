@@ -311,19 +311,6 @@
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
     }
     
-    /* MOBILE MOTOR THUMBNAILS FIX */
-    .motor-thumbnails-mobile-fix {
-      display: flex !important;
-      flex-direction: row !important;
-      flex-wrap: nowrap !important;
-      overflow-x: auto !important;
-      -webkit-overflow-scrolling: touch !important;
-    }
-    
-    .motor-thumbnails-mobile-fix > * {
-      flex-shrink: 0 !important;
-    }
-    
     /* Grid improvements for mobile - force single column */
     .grid-cols-2 {
       grid-template-columns: 1fr !important;
