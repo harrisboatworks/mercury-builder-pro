@@ -151,42 +151,6 @@ export function MotorImageGallery({ images, motorTitle }: MotorImageGalleryProps
         )}
       </div>
 
-      {/* Thumbnail Navigation */}
-      {validImages.length > 1 && (
-        <div className="w-full pb-2">
-          <div 
-            className="grid gap-2 w-full"
-            style={{
-              gridTemplateColumns: `repeat(${Math.min(validImages.length, 5)}, 1fr)`,
-              minHeight: '48px'
-            }}
-          >
-            {validImages.slice(0, 5).map((image, index) => (
-              <button
-                key={index}
-                onClick={() => handleThumbnailClick(index)}
-                className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all duration-200 min-h-[48px] ${
-                  index === selectedIndex
-                    ? 'border-primary shadow-lg'
-                    : 'border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600'
-                }`}
-              >
-                <img
-                  src={image}
-                  alt={`${motorTitle} thumbnail ${index + 1}`}
-                  className="w-full h-full object-contain bg-slate-50 dark:bg-slate-800"
-                  onError={() => handleImageError(index)}
-                />
-              </button>
-            ))}
-            {validImages.length > 5 && (
-              <div className="flex items-center justify-center aspect-square min-h-[48px] bg-slate-100 dark:bg-slate-800 rounded-lg border-2 border-dashed border-slate-300 dark:border-slate-600">
-                <span className="text-xs text-slate-500 dark:text-slate-400">+{validImages.length - 5}</span>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
 
       {/* Lightbox Modal */}
       {showLightbox && (
