@@ -162,8 +162,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
 
         {!isMinimized && (
           <CardContent 
-            className="p-0 flex flex-col h-[calc(100%-60px)] sm:h-80 bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 shadow-2xl" 
-            style={{backgroundColor: '#ffffff', borderColor: '#e5e7eb'}}
+            className="p-0 flex flex-col h-[calc(100%-60px)] sm:h-80 chat-mobile-fix" 
           >
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-3">

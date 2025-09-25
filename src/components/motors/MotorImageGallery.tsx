@@ -153,7 +153,12 @@ export function MotorImageGallery({ images, motorTitle }: MotorImageGalleryProps
 
       {/* Thumbnail Navigation */}
       {validImages.length > 1 && (
-        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide" style={{minHeight: '68px'}}>
+        <div 
+          className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide motor-thumbnails-mobile-fix" 
+          style={{
+            minHeight: '68px'
+          }}
+        >
           {validImages.map((image, index) => (
             <button
               key={index}
