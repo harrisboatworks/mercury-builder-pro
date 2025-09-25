@@ -161,7 +161,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
         </div>
 
         {!isMinimized && (
-          <CardContent className="p-0 flex flex-col h-[calc(100%-60px)] sm:h-80">
+          <CardContent className="p-0 flex flex-col h-[calc(100%-60px)] sm:h-80 bg-card">
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-3">
               {messages.map((message) => (
