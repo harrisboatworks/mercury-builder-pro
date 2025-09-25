@@ -126,15 +126,15 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
             <Button
               onClick={handleOpen}
               size="lg"
-              className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-primary hover:bg-primary/90 shadow-lg border-2 border-background"
+              className="fixed bottom-6 right-6 z-50 h-12 w-12 rounded-full bg-primary hover:bg-primary/90 shadow-lg border-2 border-background"
               aria-label="Open Chat Support"
             >
               <MessageCircle className="w-6 h-6" />
             </Button>
           </DrawerTrigger>
           
-          <DrawerContent className="h-[85vh] flex flex-col">
-            <DrawerHeader className="bg-primary text-primary-foreground px-6 py-4">
+          <DrawerContent className="h-[85vh] flex flex-col bg-background">
+            <DrawerHeader className="bg-primary text-primary-foreground px-6 py-4 border-b">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <MessageCircle className="w-6 h-6" />
@@ -151,9 +151,9 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
               </div>
             </DrawerHeader>
 
-            <div className="flex-1 flex flex-col bg-background">
+            <div className="flex-1 flex flex-col">
               {/* Messages */}
-              <div className="flex-1 overflow-y-auto px-4 py-6 space-y-4">
+              <div className="flex-1 overflow-y-auto px-4 py-6 space-y-4 bg-background">
                 {messages.map((message) => (
                   <ChatBubble key={message.id} message={message} />
                 ))}
