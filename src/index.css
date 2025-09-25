@@ -311,6 +311,17 @@
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
     }
     
+    /* Additional mobile chat card fixes */
+    .mobile-chat-card {
+      background-color: #ffffff !important;
+      border: 2px solid #e5e7eb !important;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    }
+    
+    .mobile-chat-card .bg-muted {
+      background-color: #f8fafc !important;
+    }
+    
     /* Grid improvements for mobile - force single column */
     .grid-cols-2 {
       grid-template-columns: 1fr !important;

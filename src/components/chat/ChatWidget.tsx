@@ -133,7 +133,10 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
   // Responsive chat card for both mobile and desktop
   return (
     <div className="fixed top-4 right-4 bottom-4 left-4 sm:top-20 sm:right-6 sm:left-auto sm:bottom-auto z-50 sm:z-60">
-      <Card className={`w-full h-full sm:w-80 md:w-96 sm:h-auto transition-all duration-200 ${isMinimized ? 'sm:h-14' : 'sm:h-96'} shadow-xl border`}>
+      <Card 
+        className={`w-full h-full sm:w-80 md:w-96 sm:h-auto transition-all duration-200 ${isMinimized ? 'sm:h-14' : 'sm:h-96'} shadow-xl border mobile-chat-card`}
+        style={{ backgroundColor: '#ffffff', borderColor: '#e5e7eb' }}
+      >
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b bg-primary text-primary-foreground rounded-t-lg">
           <div className="flex items-center space-x-2">
@@ -163,6 +166,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
         {!isMinimized && (
           <CardContent 
             className="p-0 flex flex-col h-[calc(100%-60px)] sm:h-80 chat-mobile-fix" 
+            style={{ backgroundColor: '#ffffff' }}
           >
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-3">
