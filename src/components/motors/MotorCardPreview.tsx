@@ -12,6 +12,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useFinancing } from '@/contexts/FinancingContext';
 import { getFinancingDisplay } from '@/lib/finance';
 import { getPriceDisplayState } from '@/lib/pricing';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
 
 // Helper function to extract weight from motor specifications
 const parseMotorWeight = (motor?: Motor): string | null => {
@@ -82,6 +83,7 @@ export default function MotorCardPreview({
   const hpNum = typeof hp === "string" ? parseFloat(hp) : (typeof hp === "number" ? hp : undefined);
   const parsedWeight = parseMotorWeight(motor);
   const isMobile = useIsMobile();
+  const { promotions } = useActivePromotions();
   const [showTooltip, setShowTooltip] = useState(false);
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
   const [motorBadge, setMotorBadge] = useState<string | null>(null);
@@ -317,7 +319,7 @@ export default function MotorCardPreview({
             <div className="mb-3">
               <div className="inline-flex items-center gap-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">
                 <Shield className="w-4 h-4" />
-                {promoText || "Mercury Certified"}
+                {promoText || promotions[0]?.bonus_title || promotions[0]?.name || "Special Offers Available"}
               </div>
             </div>
             
