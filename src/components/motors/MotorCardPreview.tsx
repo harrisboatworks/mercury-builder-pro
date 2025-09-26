@@ -256,7 +256,7 @@ export default function MotorCardPreview({
               <img 
                 src={imageUrl} 
                 alt={title} 
-                className="h-64 sm:h-80 w-full object-contain bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 filter drop-shadow-lg" 
+                className="h-40 sm:h-64 w-full object-contain bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 filter drop-shadow-lg" 
               />
               
               {/* HP Badge - Enhanced luxury styling */}
@@ -278,7 +278,7 @@ export default function MotorCardPreview({
           )}
           
           {/* Content Section - Enhanced luxury spacing with mobile optimization */}
-          <div className="p-4 sm:p-8 space-y-4 sm:space-y-6">
+          <div className="p-3 sm:p-6 space-y-2.5 sm:space-y-4">
             {/* Product Title - Premium typography */}
             <div className="space-y-1 sm:space-y-2">
               <h3 className="text-lg sm:text-2xl font-bold text-card-foreground leading-tight tracking-tight">
@@ -292,29 +292,29 @@ export default function MotorCardPreview({
             </div>
             
             {/* Quick Specs Strip - Mobile-optimized layout */}
-            <div className="bg-gradient-to-r from-muted/40 to-muted/60 rounded-xl p-3 sm:p-4 border border-border/30">
-              <div className="grid grid-cols-2 sm:flex sm:justify-between items-center gap-2 sm:gap-0 text-xs sm:text-sm">
+            <div className="bg-gradient-to-r from-muted/40 to-muted/60 rounded-xl p-2.5 sm:p-4 border border-border/30">
+              <div className="grid grid-cols-3 sm:flex sm:justify-between items-center gap-1.5 sm:gap-0 text-xs sm:text-sm">
                 {getShaftLength() && (
-                  <div className="flex items-center gap-1.5 sm:gap-2">
+                  <div className="flex items-center justify-center sm:justify-start gap-1 sm:gap-2">
                     <div className="p-1 rounded-full bg-primary/10">
                       <Ruler className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
                     </div>
-                    <span className="font-semibold text-foreground">{getShaftLength()}</span>
+                    <span className="font-semibold text-foreground text-center sm:text-left">{getShaftLength()}</span>
                   </div>
                 )}
                 
-                <div className="flex items-center gap-1.5 sm:gap-2">
+                <div className="flex items-center justify-center sm:justify-start gap-1 sm:gap-2">
                   <div className="p-1 rounded-full bg-primary/10">
                     <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
                   </div>
-                  <span className="font-semibold text-foreground">{getStartType()}</span>
+                  <span className="font-semibold text-foreground text-center sm:text-left">{getStartType()}</span>
                 </div>
                 
-                <div className="flex items-center gap-1.5 sm:gap-2 col-span-2 sm:col-span-1 justify-center sm:justify-start">
+                <div className="flex items-center justify-center sm:justify-start gap-1 sm:gap-2">
                   <div className="p-1 rounded-full bg-primary/10">
                     <Gamepad2 className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
                   </div>
-                  <span className="font-semibold text-foreground">{getControlType()}</span>
+                  <span className="font-semibold text-foreground text-center sm:text-left">{getControlType()}</span>
                 </div>
               </div>
             </div>
