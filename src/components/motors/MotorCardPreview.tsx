@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Info, Shield, Zap, Weight } from "lucide-react";
+import { Info, Shield } from "lucide-react";
 import MotorQuickInfo from "./MotorQuickInfo";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import { StockBadge } from '@/components/inventory/StockBadge';
@@ -159,7 +159,7 @@ export default function MotorCardPreview({
 
   return (
     <>
-      <Card className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 border-t-2 border-[hsl(var(--primary))] overflow-hidden">
+      <Card className="rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.01] transition-all duration-200 cursor-pointer border-t-2 border-[hsl(var(--primary))] overflow-hidden">
         <button 
           onClick={handleMoreInfoClick} 
           className="text-left w-full transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800/50 p-0"
@@ -197,12 +197,6 @@ export default function MotorCardPreview({
                   </div>
                 )}
                 
-                {/* Photo Count - Bottom Left */}
-                {imageCount > 1 && (
-                  <div className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">
-                    {imageCount} photos
-                  </div>
-                )}
               </div>
             )}
           </div>
@@ -302,26 +296,24 @@ export default function MotorCardPreview({
               </div>
             )}
             
-            {/* Quick Specs Row */}
-            <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 pt-3 border-t border-gray-200 dark:border-gray-700">
-              {hpNum && (
-                <span className="flex items-center gap-1">
-                  <Zap className="w-4 h-4" />
-                  {hpNum} HP
-                </span>
-              )}
-              {weightLbs && (
-                <span className="flex items-center gap-1">
-                  <Weight className="w-4 h-4" />
-                  {weightLbs} lbs
-                </span>
-              )}
-              {shaft && (
-                <span className="text-xs">
-                  {shaft}" Shaft
-                </span>
-              )}
-            </div>
+            {/* Bottom Specs Section */}
+            {(weightLbs || shaft || motor?.start_type) && (
+              <div className="flex items-center justify-around text-xs text-gray-600 mt-3 pt-3 border-t">
+                {weightLbs && (
+                  <>
+                    <span className="font-medium">{weightLbs} lbs</span>
+                    <span className="text-gray-400">•</span>
+                  </>
+                )}
+                {shaft && (
+                  <>
+                    <span className="font-medium">{shaft}" Shaft</span>
+                    <span className="text-gray-400">•</span>
+                  </>
+                )}
+                <span className="font-medium">{motor?.start_type || 'Manual Start'}</span>
+              </div>
+            )}
             
           </div>
         </button>
