@@ -217,80 +217,115 @@ export default function MotorCardPreview({
 
   const stockInfo = getStockStatus();
 
+  // Get dynamic promo information
+  const activePromos = promotions.filter(promo => 
+    promo.warranty_extra_years && promo.warranty_extra_years > 0 ||
+    promo.bonus_title ||
+    promo.discount_percentage > 0 ||
+    promo.discount_fixed_amount > 0
+  );
+
+  const getPromoContent = () => {
+    if (activePromos.length === 0) return null;
+    
+    const promo = activePromos[0]; // Use first active promo
+    
+    if (promo.warranty_extra_years && promo.warranty_extra_years > 0) {
+      return `🎁 +${promo.warranty_extra_years} Years Extended Warranty`;
+    }
+    
+    if (promo.bonus_title) {
+      return `🎁 ${promo.bonus_title}`;
+    }
+    
+    if (promo.discount_percentage > 0) {
+      return `🎁 ${promo.discount_percentage}% Off Promotion`;
+    }
+    
+    return `🎁 ${promo.name}`;
+  };
+
   return (
     <>
-      <Card className="rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden bg-card border border-border">
+      <Card className="rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden bg-card border border-border/50 hover:border-primary/20">
         <div className="relative">
-          {/* Image Section with overlays */}
+          {/* Image Section with luxury enhancements */}
           {imageUrl && (
-            <div className="relative">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent z-10 pointer-events-none" />
               <img 
                 src={imageUrl} 
                 alt={title} 
-                className="h-80 w-full object-contain bg-white dark:bg-slate-900" 
+                className="h-80 w-full object-contain bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 filter drop-shadow-lg" 
               />
               
-              {/* HP Badge - Top Right */}
+              {/* HP Badge - Enhanced luxury styling */}
               {hpNum && (
-                <div className="absolute top-3 right-3 bg-primary text-primary-foreground px-3 py-1.5 rounded-lg text-sm font-bold shadow-lg">
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground px-4 py-2 rounded-full text-sm font-bold shadow-2xl border border-white/20">
                   {hpNum} HP
                 </div>
               )}
               
-              {/* Mercury Logo - Bottom Right */}
-              <div className="absolute bottom-3 right-3 opacity-60">
+              {/* Mercury Logo - Enhanced with subtle glow */}
+              <div className="absolute bottom-4 right-4 opacity-70 group-hover:opacity-90 transition-opacity duration-300">
                 <img 
                   src={mercuryLogo}
                   alt="Mercury Marine"
-                  className="h-5 w-auto"
+                  className="h-6 w-auto filter drop-shadow-md"
                 />
               </div>
             </div>
           )}
           
-          {/* Content Section */}
-          <div className="p-6 space-y-4">
-            {/* Product Title - Bold and prominent */}
-            <div>
-              <h3 className="text-xl font-bold text-card-foreground leading-tight">
+          {/* Content Section - Enhanced luxury spacing */}
+          <div className="p-8 space-y-6">
+            {/* Product Title - Premium typography */}
+            <div className="space-y-2">
+              <h3 className="text-2xl font-bold text-card-foreground leading-tight tracking-tight">
                 {title}
               </h3>
               {motor?.model_number && (
-                <p className="text-sm text-muted-foreground mt-1 font-mono">
+                <p className="text-sm text-muted-foreground font-mono bg-muted/30 px-2 py-1 rounded inline-block">
                   Model: {motor.model_number}
                 </p>
               )}
             </div>
             
-            {/* Quick Specs Strip */}
-            <div className="bg-muted/50 rounded-lg p-3">
+            {/* Quick Specs Strip - Luxury treatment */}
+            <div className="bg-gradient-to-r from-muted/40 to-muted/60 rounded-xl p-4 border border-border/30">
               <div className="flex justify-between items-center text-sm">
                 {getShaftLength() && (
-                  <div className="flex items-center gap-1">
-                    <Ruler className="w-4 h-4 text-muted-foreground" />
-                    <span className="font-medium text-muted-foreground">{getShaftLength()}</span>
+                  <div className="flex items-center gap-2">
+                    <div className="p-1 rounded-full bg-primary/10">
+                      <Ruler className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="font-semibold text-foreground">{getShaftLength()}</span>
                   </div>
                 )}
                 
-                <div className="flex items-center gap-1">
-                  <Zap className="w-4 h-4 text-muted-foreground" />
-                  <span className="font-medium text-muted-foreground">{getStartType()}</span>
+                <div className="flex items-center gap-2">
+                  <div className="p-1 rounded-full bg-primary/10">
+                    <Zap className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="font-semibold text-foreground">{getStartType()}</span>
                 </div>
                 
-                <div className="flex items-center gap-1">
-                  <Gamepad2 className="w-4 h-4 text-muted-foreground" />
-                  <span className="font-medium text-muted-foreground">{getControlType()}</span>
+                <div className="flex items-center gap-2">
+                  <div className="p-1 rounded-full bg-primary/10">
+                    <Gamepad2 className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="font-semibold text-foreground">{getControlType()}</span>
                 </div>
               </div>
             </div>
             
-            {/* Redesigned Pricing Section */}
-            <div className="space-y-2">
+            {/* Premium Pricing Section */}
+            <div className="space-y-3 bg-gradient-to-br from-background to-muted/20 p-6 rounded-xl border border-border/20">
               {(() => {
                 const priceState = getPriceDisplayState(msrp, price, true);
                 
                 if (priceState.callForPrice) {
-                  return <div className="text-2xl font-bold text-card-foreground">Call for Price</div>;
+                  return <div className="text-3xl font-bold text-card-foreground">Call for Price</div>;
                 }
                 
                 const displayMSRP = priceState.isArtificialDiscount && msrp ? Math.round(msrp * 1.1) : msrp;
@@ -299,18 +334,18 @@ export default function MotorCardPreview({
                 return (
                   <div className="space-y-2">
                     {displayMSRP && priceState.hasSale && (
-                      <div className="text-sm text-muted-foreground line-through">
+                      <div className="text-sm text-muted-foreground line-through font-medium tracking-wide">
                         MSRP ${displayMSRP.toLocaleString()}
                       </div>
                     )}
                     {displaySalePrice && (
-                      <div className="text-3xl font-bold text-red-600">
+                      <div className="text-4xl font-bold text-red-600 tracking-tight">
                         ${displaySalePrice.toLocaleString()}
                       </div>
                     )}
                     {priceState.hasSale && priceState.savingsRounded > 0 && (
-                      <div className="text-lg font-bold text-green-600 uppercase">
-                        SAVE ${priceState.savingsRounded.toLocaleString()}
+                      <div className="text-xl font-bold text-green-600 tracking-wide">
+                        You Save ${priceState.savingsRounded.toLocaleString()}
                       </div>
                     )}
                   </div>
@@ -318,17 +353,19 @@ export default function MotorCardPreview({
               })()}
             </div>
             
-            {/* Stock Status Badge */}
-            <div className="flex flex-col items-center space-y-2">
-              <Badge className={`${stockInfo.className} px-3 py-1 text-xs font-semibold`}>
-                <stockInfo.icon className="w-3 h-3 mr-1" />
-                {stockInfo.status}
+            {/* Luxury Availability Badge */}
+            <div className="flex flex-col items-center space-y-3">
+              <Badge className={`${stockInfo.className} px-4 py-2 text-sm font-semibold rounded-full shadow-lg border border-white/20`}>
+                <stockInfo.icon className="w-4 h-4 mr-2" />
+                {stockInfo.status === "In Stock" ? "In Stock Today" : "Factory Order – 2-3 Weeks"}
               </Badge>
               
-              {/* Warranty Text - Subtle under availability */}
-              <div className="text-xs text-muted-foreground text-center">
-                Includes +2 Years Extended Warranty.
-              </div>
+              {/* Dynamic Promo Badge System */}
+              {getPromoContent() && (
+                <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg border border-blue-500/20">
+                  {getPromoContent()}
+                </div>
+              )}
             </div>
             
             {/* Financing Info */}
@@ -346,13 +383,14 @@ export default function MotorCardPreview({
               return null;
             })()}
             
-            {/* CTA Button */}
+            {/* Premium CTA Button */}
             <Button 
               onClick={handleMoreInfoClick}
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3"
+              variant="luxury"
+              className="w-full font-bold py-4 text-lg rounded-xl"
               size="lg"
             >
-              View Details
+              Request a Quote
             </Button>
           </div>
         </div>
