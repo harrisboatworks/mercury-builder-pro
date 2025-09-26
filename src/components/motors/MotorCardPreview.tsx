@@ -157,7 +157,7 @@ export default function MotorCardPreview({
     return inStock ? "bg-green-500" : "bg-[hsl(var(--luxury-medium-gray))]";
   };
 
-  // Build specs array for single-line display using rigging code breakdown
+  // Build specs array showing all rigging code breakdown
   const getSpecsDisplay = () => {
     if (!motor?.model && !title) return "";
     
@@ -165,20 +165,10 @@ export default function MotorCardPreview({
     const decodedItems = decodeModelName(motor?.model || title, hpNum);
     
     if (decodedItems && decodedItems.length > 0) {
-      // Take the first 3-4 most important items for single-line display
-      const topSpecs = decodedItems.slice(0, 4).map(item => item.meaning);
+      // Show all decoded rigging information - don't limit to just 4 items
+      const allSpecs = decodedItems.map(item => item.meaning);
       
-      // Add Power Trim & Tilt for motors 40 HP and above if not already included
-      if (hpNum && hpNum >= 40) {
-        const hasPowerTrim = topSpecs.some(spec => 
-          spec.toLowerCase().includes('power') || spec.toLowerCase().includes('trim')
-        );
-        if (!hasPowerTrim) {
-          topSpecs.push("Power Trim & Tilt");
-        }
-      }
-      
-      return topSpecs.join(" • ");
+      return allSpecs.join(" • ");
     }
     
     // Fallback to current logic if decoding fails
