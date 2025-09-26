@@ -7,6 +7,7 @@ import type { Motor } from '../../lib/motor-helpers';
 import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery } from '../../lib/motor-helpers';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 export default function MotorCardPreview({ 
@@ -125,14 +126,7 @@ export default function MotorCardPreview({
 
   // Utility functions for display
   const formatTitle = (title: string) => {
-    // Use proper motor display formatting that preserves rigging code capitalization
-    const formatted = title.toLowerCase().replace(/\b\w/g, l => l.toUpperCase());
-    
-    // Ensure rigging codes are always uppercase
-    return formatted.replace(
-      /\b(Mh|Mlh|Mxlh|Mxl|Mxxl|Elh|Elpt|Elhpt|Exlpt|Eh|Xl|Xxl|Ct|Dts|L|Cl|M|Jpo)\b/g,
-      (match) => match.toUpperCase()
-    );
+    return formatMotorDisplayName(title);
   };
 
   const getAvailabilityText = () => {

@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { RefreshCw, AlertTriangle, CheckCircle, Search } from 'lucide-react';
+import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
 import { InventoryDiagnostics } from './InventoryDiagnostics';
 
 interface MotorInventoryData {
@@ -493,7 +494,7 @@ export function InventoryMonitor() {
             {filteredMotors.map((motor) => (
               <div key={motor.id} className="flex items-center justify-between p-3 border rounded-lg">
                 <div className="flex-1">
-                  <div className="font-medium">{motor.model_display || motor.model}</div>
+                  <div className="font-medium">{formatMotorDisplayName(motor.model_display || motor.model)}</div>
                   <div className="text-sm text-muted-foreground">
                     {motor.horsepower}HP | {motor.dealer_price ? `$${motor.dealer_price.toLocaleString()}` : 'Price TBD'}
                     {motor.model_number && <span className="ml-2">• {motor.model_number}</span>}

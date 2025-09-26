@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import MotorCardPremium from '@/components/motors/MotorCardPremium';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { FinancingProvider } from '@/contexts/FinancingContext';
+import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
 import { supabase } from '@/integrations/supabase/client';
 
 export default function AdminInventory() {
@@ -43,7 +44,7 @@ export default function AdminInventory() {
         const formattedMotors = motors?.map(motor => ({
           ...motor,
           inStock: motor.in_stock || false,
-          title: motor.model_display || motor.model || `${motor.horsepower}HP Mercury`,
+          title: formatMotorDisplayName(motor.model_display || motor.model || `${motor.horsepower}HP Mercury`),
           img: motor.hero_image_url || motor.image_url,
           price: motor.dealer_price || motor.msrp,
           msrp: motor.msrp,
