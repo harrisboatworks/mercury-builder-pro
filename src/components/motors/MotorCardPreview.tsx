@@ -13,6 +13,7 @@ import { useFinancing } from '@/contexts/FinancingContext';
 import { getFinancingDisplay } from '@/lib/finance';
 import { getPriceDisplayState } from '@/lib/pricing';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import mercuryLogo from '@/assets/mercury-logo.png';
 
 // Helper function to extract weight from motor specifications
 const parseMotorWeight = (motor?: Motor): string | null => {
@@ -200,19 +201,19 @@ export default function MotorCardPreview({
                 <img 
                   src={imageUrl} 
                   alt="" 
-                  className="h-48 w-full object-contain bg-white dark:bg-slate-900" 
+                  className="h-62 w-full object-cover bg-white dark:bg-slate-900" 
                 />
                 
                 {/* HP Badge Overlay - Top Right */}
                 {hpNum && (
-                  <div className="absolute top-2 right-2 bg-gradient-to-r from-gray-900 to-gray-700 text-white px-3 py-1 rounded-md text-sm font-bold shadow-lg">
+                  <div className="absolute top-3 right-3 bg-gradient-to-r from-gray-900 to-gray-700 text-white px-3 py-1 rounded-md text-sm font-bold shadow-lg">
                     {hpNum} HP
                   </div>
                 )}
                 
                 {/* Stock Badge - Top Left */}
                 {inStock && (
-                  <div className="absolute top-2 left-2">
+                  <div className="absolute top-3 left-3">
                     <StockBadge 
                       motor={{
                         in_stock: inStock,
@@ -225,6 +226,15 @@ export default function MotorCardPreview({
                     />
                   </div>
                 )}
+                
+                {/* Mercury Logo - Bottom Right */}
+                <div className="absolute bottom-3 right-3 opacity-70">
+                  <img 
+                    src={mercuryLogo}
+                    alt="Mercury Marine"
+                    className="h-6 w-auto"
+                  />
+                </div>
                 
               </div>
             )}
@@ -323,18 +333,12 @@ export default function MotorCardPreview({
               </div>
             </div>
             
-            {/* Specs footer with proper styling */}
-            <div className="mt-3 pt-3 border-t border-gray-200">
-              <div className="flex items-center justify-around text-xs">
-                {/* HP with icon */}
-                <div className="flex items-center gap-1 text-gray-700">
-                  <Zap className="w-3 h-3 text-yellow-500" />
-                  <span className="font-semibold">{motor?.horsepower || motor?.hp || hpNum} HP</span>
-                </div>
-                
+            {/* Specs footer with key info (no redundant HP) */}
+            <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+              <div className="flex items-center justify-center gap-6 text-xs">
                 {/* Weight if available */}
                 {parsedWeight && (
-                  <div className="flex items-center gap-1 text-gray-700">
+                  <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
                     <Weight className="w-3 h-3 text-gray-400" />
                     <span className="font-semibold">{parsedWeight} lbs</span>
                   </div>
@@ -342,9 +346,9 @@ export default function MotorCardPreview({
                 
                 {/* Shaft if available */}
                 {motor?.shaft_inches && (
-                  <div className="flex items-center gap-1 text-gray-700">
+                  <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
                     <Ruler className="w-3 h-3 text-gray-400" />
-                    <span className="font-semibold">{motor.shaft_inches}"</span>
+                    <span className="font-semibold">{motor.shaft_inches}" Shaft</span>
                   </div>
                 )}
               </div>
