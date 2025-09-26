@@ -230,19 +230,38 @@ export default function MotorCardPreview({
     
     const promo = activePromos[0]; // Use first active promo
     
+    // Get elegant end date formatting
+    const getTimeFrame = () => {
+      if (!promo.end_date) return null;
+      const endDate = new Date(promo.end_date);
+      const month = endDate.toLocaleDateString('en-US', { month: 'long' });
+      const day = endDate.getDate();
+      return `Available Until ${month} ${day}`;
+    };
+    
+    const timeFrame = getTimeFrame();
+    
+    // Premium warranty language
     if (promo.warranty_extra_years && promo.warranty_extra_years > 0) {
-      return `🎁 +${promo.warranty_extra_years} Years Extended Warranty`;
+      const baseText = `Extended Coverage Included (+${promo.warranty_extra_years} Years)`;
+      return timeFrame ? `${baseText} • ${timeFrame}` : baseText;
     }
     
+    // Premium bonus language
     if (promo.bonus_title) {
-      return `🎁 ${promo.bonus_title}`;
+      const baseText = promo.bonus_title.includes('Mercury') ? promo.bonus_title : `Special Mercury Promotion`;
+      return timeFrame ? `${baseText} • ${timeFrame}` : baseText;
     }
     
+    // Premium discount language
     if (promo.discount_percentage > 0) {
-      return `🎁 ${promo.discount_percentage}% Off Promotion`;
+      const baseText = `Seasonal Bonus Promotion (${promo.discount_percentage}% Off)`;
+      return timeFrame ? `${baseText} • ${timeFrame}` : baseText;
     }
     
-    return `🎁 ${promo.name}`;
+    // Fallback premium language
+    const baseText = promo.name.includes('Mercury') ? promo.name : `Mercury Dealer Exclusive`;
+    return timeFrame ? `${baseText} • ${timeFrame}` : baseText;
   };
 
   return (
@@ -382,12 +401,12 @@ export default function MotorCardPreview({
               return null;
             })()}
 
-            {/* Promo Banner - Distinct ribbon/strip style positioned above CTA */}
+            {/* Premium Promo Banner - Elegant thin strip above CTA */}
             {getPromoContent() && (
-              <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 border border-blue-200 dark:border-blue-700 rounded-xl p-3 sm:p-4 mx-2 mb-2">
-                <div className="flex items-center justify-center gap-2 text-blue-800 dark:text-blue-100">
-                  <span className="text-sm sm:text-base font-semibold">
-                    🎁 {getPromoContent()?.replace('🎁 ', '')} • Limited Time Offer
+              <div className="bg-slate-50/80 dark:bg-slate-800/50 border border-slate-200/50 dark:border-slate-700/50 rounded-lg px-3 py-2 mb-3">
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400">
+                    <span className="text-blue-600 dark:text-blue-400">◆</span> {getPromoContent()}
                   </span>
                 </div>
               </div>
