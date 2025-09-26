@@ -125,7 +125,14 @@ export default function MotorCardPreview({
 
   // Utility functions for display
   const formatTitle = (title: string) => {
-    return title.toLowerCase().replace(/\b\w/g, l => l.toUpperCase());
+    // Use proper motor display formatting that preserves rigging code capitalization
+    const formatted = title.toLowerCase().replace(/\b\w/g, l => l.toUpperCase());
+    
+    // Ensure rigging codes are always uppercase
+    return formatted.replace(
+      /\b(Mh|Mlh|Mxlh|Mxl|Mxxl|Elh|Elpt|Elhpt|Exlpt|Eh|Xl|Xxl|Ct|Dts|L|Cl|M|Jpo)\b/g,
+      (match) => match.toUpperCase()
+    );
   };
 
   const getAvailabilityText = () => {
