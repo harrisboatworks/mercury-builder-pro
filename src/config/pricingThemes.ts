@@ -39,19 +39,19 @@ export const PRICE_THEMES: Record<PriceStyle, PriceThemeConfig> = {
     priceAmount: {
       color: "hsl(0 0% 7%)", // #111111
       fontSize: {
-        desktop: "1.875rem", // 30px
-        mobile: "1.5rem", // 24px (increased from 18px)
+        desktop: "1.5rem", // 24px
+        mobile: "1.125rem", // 18px
       },
       fontWeight: "600",
     },
     msrp: {
       color: "hsl(218 11% 42%)", // #6C757D
-      fontSize: "1rem", // 16px (increased from 13px)
+      fontSize: "0.8125rem", // 13px
       textDecoration: "line-through",
     },
     savings: {
       color: "hsl(218 11% 42%)", // #6C757D
-      fontSize: "1rem", // 16px (increased from 14px)
+      fontSize: "0.875rem", // 14px
       fontWeight: "400",
       format: (savings: number) => `You Save $${savings.toLocaleString()}`,
     },
@@ -66,19 +66,19 @@ export const PRICE_THEMES: Record<PriceStyle, PriceThemeConfig> = {
     priceAmount: {
       color: "hsl(0 75% 30%)", // #B71C1C
       fontSize: {
-        desktop: "1.875rem", // 30px
-        mobile: "1.5rem", // 24px (increased from 18px)
+        desktop: "1.5rem", // 24px
+        mobile: "1.125rem", // 18px
       },
       fontWeight: "600",
     },
     msrp: {
       color: "hsl(218 11% 42%)", // #6C757D
-      fontSize: "1rem", // 16px (increased from 13px)
+      fontSize: "0.8125rem", // 13px
       textDecoration: "line-through",
     },
     savings: {
       color: "hsl(218 11% 42%)", // #6C757D
-      fontSize: "1rem", // 16px (increased from 14px)
+      fontSize: "0.875rem", // 14px
       fontWeight: "400",
       format: (savings: number) => `You Save $${savings.toLocaleString()}`,
     },
@@ -93,19 +93,19 @@ export const PRICE_THEMES: Record<PriceStyle, PriceThemeConfig> = {
     priceAmount: {
       color: "hsl(0 0% 7%)", // #111111
       fontSize: {
-        desktop: "1.875rem", // 30px
-        mobile: "1.5rem", // 24px (increased from 18px)
+        desktop: "1.5rem", // 24px
+        mobile: "1.125rem", // 18px
       },
       fontWeight: "600",
     },
     msrp: {
       color: "hsl(218 11% 42%)", // #6C757D
-      fontSize: "1rem", // 16px (increased from 13px)
+      fontSize: "0.8125rem", // 13px
       textDecoration: "line-through",
     },
     savings: {
       color: "hsl(218 11% 42%)", // #6C757D
-      fontSize: "1rem", // 16px (increased from 14px)
+      fontSize: "0.875rem", // 14px
       fontWeight: "400",
       format: (savings: number) => `–$${savings.toLocaleString()} vs MSRP`,
     },

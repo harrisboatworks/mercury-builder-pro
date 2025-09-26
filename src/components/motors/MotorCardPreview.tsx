@@ -297,30 +297,30 @@ export default function MotorCardPreview({
           <div className="p-4 md:p-6 space-y-4 md:space-y-5">
             {/* Model Information */}
             <div className="space-y-1">
-              <h3 className="text-xl md:text-2xl font-light text-[hsl(var(--luxury-black))]">
+              <h3 className="text-lg md:text-xl font-light text-[hsl(var(--luxury-black))]">
                 {formatTitle(title)}
               </h3>
               {motor?.model_number && (
-                <p className="text-sm text-[hsl(var(--luxury-medium-gray))]">
+                <p className="text-xs text-[hsl(var(--luxury-medium-gray))]">
                   Model: {motor.model_number}
                 </p>
               )}
             </div>
             
             {/* Specifications - Single Line */}
-            <div className="text-base text-[hsl(var(--luxury-medium-gray))] pt-3 border-t border-[hsl(var(--luxury-light-gray))]">
+            <div className="text-xs text-[hsl(var(--luxury-medium-gray))] pt-3 border-t border-[hsl(var(--luxury-light-gray))]">
               <span className="whitespace-normal md:whitespace-nowrap">{getSpecsDisplay()}</span>
             </div>
             
             {/* Availability Badge */}
             <div className="inline-flex items-center gap-2 bg-[hsl(var(--luxury-light-gray))] px-3 py-2 rounded-full">
               <div className={`w-2 h-2 ${getAvailabilityDotColor()} rounded-full`}></div>
-              <span className="text-sm text-[hsl(var(--luxury-medium-gray))]">{getAvailabilityText()}</span>
+              <span className="text-xs text-[hsl(var(--luxury-medium-gray))]">{getAvailabilityText()}</span>
             </div>
 
             {/* Promo Line - Elegant Single Sentence */}
             {getPromoDisplay() && (
-              <div className="text-sm md:text-base text-[hsl(var(--luxury-promo-blue))] leading-relaxed">
+              <div className="text-xs md:text-sm text-[hsl(var(--luxury-promo-blue))] leading-relaxed">
                 {getPromoDisplay()}
               </div>
             )}
@@ -337,7 +337,7 @@ export default function MotorCardPreview({
             {/* CTA Button - Modern Style */}
             <Button 
               variant="luxuryModern"
-              className="w-full mt-6 text-base font-medium"
+              className="w-full mt-6"
               onClick={handleMoreInfoClick}
             >
               {ctaTextVariant}

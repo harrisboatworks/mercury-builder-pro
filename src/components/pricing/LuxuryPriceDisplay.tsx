@@ -74,12 +74,11 @@ export function LuxuryPriceDisplay({
       {/* Main Price */}
       {displayPrice && (
         <p 
+          className="md:text-[1.5rem] text-[1.125rem]"
           style={{
             color: themeConfig.priceAmount.color,
-            fontSize: themeConfig.priceAmount.fontSize.mobile,
             fontWeight: themeConfig.priceAmount.fontWeight,
           }}
-          className="md:text-[1.875rem]"
         >
           ${displayPrice.toLocaleString()}
         </p>
