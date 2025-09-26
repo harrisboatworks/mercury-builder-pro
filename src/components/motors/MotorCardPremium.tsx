@@ -12,6 +12,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useFinancing } from '@/contexts/FinancingContext';
 import { getFinancingDisplay } from '@/lib/finance';
 import { getPriceDisplayState } from '@/lib/pricing';
+import mercuryLogo from '@/assets/mercury-logo.png';
 
 export default function MotorCardPremium({ 
   img, 
@@ -208,7 +209,7 @@ export default function MotorCardPremium({
 
   return (
     <>
-      <div className="bg-white shadow-sm rounded-lg overflow-hidden">
+      <div className="group bg-white shadow-sm rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1">
         <div className="relative">
           {/* Image Section */}
           {imageUrl && (
@@ -226,14 +227,20 @@ export default function MotorCardPremium({
                 </div>
               )}
               
-              {/* Photo Count Overlay */}
-              {imageCount > 1 && (
-                <div className="absolute bottom-4 left-4 bg-black/70 text-white px-2 py-1.5 rounded-[10px] text-[10px] md:text-[12px] font-medium">
-                  +{imageCount} photos
-                </div>
-              )}
+              
+              {/* Mercury Logo - Enhanced interaction */}
+              <div className="absolute bottom-4 right-4 opacity-30 group-hover:opacity-50 transition-opacity duration-300">
+                <img 
+                  src={mercuryLogo}
+                  alt="Mercury Marine"
+                  className="h-6 w-auto"
+                />
+              </div>
             </div>
           )}
+          
+          {/* Mercury Brand Accent */}
+          <div className="h-0.5 bg-gradient-to-r from-[#003F7F] to-transparent"></div>
           
           {/* Content Section - Premium Mobile Layout */}
           <div className="p-4 space-y-4">

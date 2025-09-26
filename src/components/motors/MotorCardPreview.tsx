@@ -230,7 +230,7 @@ export default function MotorCardPreview({
 
   return (
     <>
-      <div className="bg-white shadow-sm rounded-lg overflow-hidden">
+      <div className="group bg-white shadow-sm rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1">
         <div className="relative">
           {/* Image Section */}
           {imageUrl && (
@@ -248,15 +248,9 @@ export default function MotorCardPreview({
                 </div>
               )}
               
-              {/* Photo Count Overlay */}
-              {photoCount > 1 && (
-                <div className="absolute bottom-4 left-4 bg-black/70 text-white px-2 py-1.5 rounded-[10px] text-[10px] md:text-[12px] font-medium">
-                  +{photoCount} photos
-                </div>
-              )}
               
-              {/* Mercury Logo - 50% opacity */}
-              <div className="absolute bottom-4 right-4 opacity-50">
+              {/* Mercury Logo - Enhanced interaction */}
+              <div className="absolute bottom-4 right-4 opacity-30 group-hover:opacity-50 transition-opacity duration-300">
                 <img 
                   src={mercuryLogo}
                   alt="Mercury Marine"
@@ -265,6 +259,9 @@ export default function MotorCardPreview({
               </div>
             </div>
           )}
+          
+          {/* Mercury Brand Accent */}
+          <div className="h-0.5 bg-gradient-to-r from-[#003F7F] to-transparent"></div>
           
           {/* Content Section - Premium Mobile Layout */}
           <div className="p-4 space-y-4">
