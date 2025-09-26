@@ -20,25 +20,47 @@ export function MotorDetailsImageSection({ motor, gallery, img, title }: MotorDe
         // Get images from motor_media table and motor object
         const motorMediaImages = await getMotorImageGallery(motor);
         
-        // Combine all image sources
+        // Combine all image sources with hero image prioritized first
         const combinedImages: (string | { url: string })[] = [];
         
-        // Add motor media images
-        combinedImages.push(...motorMediaImages);
-        
-        // Process motor.images (array of objects with url property)
-        if (motor?.images && Array.isArray(motor.images)) {
-          combinedImages.push(...motor.images);
-        }
-        
-        // Add gallery URLs if provided
-        if (gallery && gallery.length > 0) {
-          combinedImages.push(...gallery);
-        }
-        
-        // Add fallback image if no other images found
-        if (combinedImages.length === 0 && img) {
+        // PRIORITY 1: Add hero image first if provided
+        if (img && img !== '/lovable-uploads/speedboat-transparent.png') {
           combinedImages.push(img);
+        }
+        
+        // PRIORITY 2: Add motor media images (but avoid duplicating the hero image)
+        const motorMediaUrls = motorMediaImages.filter((mediaImg: any) => {
+          const mediaUrl = typeof mediaImg === 'string' ? mediaImg : mediaImg?.url;
+          return mediaUrl && mediaUrl !== img;
+        });
+        combinedImages.push(...motorMediaUrls);
+        
+        // PRIORITY 3: Process motor.images (array of objects with url property)
+        if (motor?.images && Array.isArray(motor.images)) {
+          const motorImageUrls = motor.images.filter((motorImg: any) => {
+            const motorUrl = typeof motorImg === 'string' ? motorImg : motorImg?.url;
+            return motorUrl && motorUrl !== img && !combinedImages.some((existing: any) => {
+              const existingUrl = typeof existing === 'string' ? existing : existing?.url;
+              return existingUrl === motorUrl;
+            });
+          });
+          combinedImages.push(...motorImageUrls);
+        }
+        
+        // PRIORITY 4: Add gallery URLs if provided (avoid duplicates)
+        if (gallery && gallery.length > 0) {
+          const uniqueGalleryImages = gallery.filter((galleryImg: string) => 
+            galleryImg !== img && !combinedImages.some((existing: any) => {
+              const existingUrl = typeof existing === 'string' ? existing : existing?.url;
+              return existingUrl === galleryImg;
+            })
+          );
+          combinedImages.push(...uniqueGalleryImages);
+        }
+        
+        // FALLBACK: Add default image if no images found
+        if (combinedImages.length === 0) {
+          combinedImages.push(img || '/lovable-uploads/speedboat-transparent.png');
         }
         
         // Enhance all image URLs to get full-size versions
