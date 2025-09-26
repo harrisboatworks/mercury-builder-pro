@@ -162,15 +162,40 @@ export default function MotorCardPreview({
   // Simplified specs display - single clean line
   const getSimplifiedSpecs = () => {
     const specs = [];
+    const modelName = title || motor?.model || '';
+    const decodedFeatures = decodeModelName(modelName, hpNum);
     
-    const startType = getStartType();
-    if (startType) specs.push(startType);
+    // 1. Start type (Manual Start / Electric Start)
+    const startFeature = decodedFeatures.find(f => 
+      f.meaning.includes('Manual Start') || f.meaning.includes('Electric Start')
+    );
+    if (startFeature) {
+      specs.push(startFeature.meaning.includes('Electric') ? 'Electric Start' : 'Manual Start');
+    }
     
-    const shaftLength = getShaftLength();
-    if (shaftLength) specs.push(`${shaftLength}" Shaft`);
-    
-    // Add engine type for 4-stroke motors
+    // 2. Engine type (4-Stroke)
     if (hpNum && hpNum >= 2.5) specs.push("4-Stroke");
+    
+    // 3. Tiller Handle (only show if present - most are remote control)
+    const tillerFeature = decodedFeatures.find(f => f.meaning.includes('Tiller Handle'));
+    if (tillerFeature) specs.push("Tiller Handle");
+    
+    // 4. Power Trim (important feature to highlight)
+    const ptFeature = decodedFeatures.find(f => 
+      f.meaning.includes('Power Trim') || f.meaning.includes('Power Tilt')
+    );
+    if (ptFeature) specs.push("Power Trim");
+    
+    // 5. Shaft designation with enhanced formatting
+    const shaftFeature = decodedFeatures.find(f => 
+      f.meaning.includes('Shaft') && f.meaning.includes('"')
+    );
+    if (shaftFeature) {
+      if (shaftFeature.meaning.includes('15"')) specs.push("Short Shaft - 15\"");
+      else if (shaftFeature.meaning.includes('20"')) specs.push("Long Shaft - 20\"");
+      else if (shaftFeature.meaning.includes('25"')) specs.push("Extra Long Shaft - 25\"");
+      else if (shaftFeature.meaning.includes('30"')) specs.push("Ultra Long Shaft - 30\"");
+    }
     
     return specs.join(" • ");
   };
