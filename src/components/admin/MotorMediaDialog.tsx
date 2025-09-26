@@ -149,13 +149,21 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
   };
 
   const setHeroMedia = async (mediaId: string | null) => {
-    if (!motor) return;
+    if (!motor) {
+      console.error('setHeroMedia: No motor provided');
+      return;
+    }
+
+    console.log('setHeroMedia called with:', { mediaId, motorId: motor.id, motorDisplay: motor.model_display });
 
     try {
-      const { error } = await supabase
+      const { data, error } = await supabase
         .from('motor_models')
         .update({ hero_media_id: mediaId })
-        .eq('id', motor.id);
+        .eq('id', motor.id)
+        .select('id, hero_media_id');
+
+      console.log('setHeroMedia database result:', { data, error });
 
       if (error) throw error;
 
@@ -163,6 +171,11 @@ export function MotorMediaDialog({ isOpen, onClose, motor, onMediaUpdated }: Mot
         title: "Hero media updated",
         description: mediaId ? "Hero media has been set." : "Hero media has been cleared.",
       });
+
+      // Update local state to reflect the change immediately
+      if (motor) {
+        motor.hero_media_id = mediaId;
+      }
 
       loadMediaData();
       onMediaUpdated?.();
