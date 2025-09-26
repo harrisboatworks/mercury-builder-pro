@@ -37,6 +37,8 @@ export interface Motor {
   category: 'portable' | 'mid-range' | 'high-performance' | 'v8-racing';
   type: string;
   specs: string;
+  // Hero image field for priority logic
+  hero_media_id?: string;
   // Optional pricing metadata
   basePrice?: number;
   salePrice?: number | null;

@@ -69,6 +69,17 @@ export default function MotorCardPremium({
   useEffect(() => {
     const loadImageInfo = async () => {
       try {
+        // If we have a valid hero image URL passed as img prop, prioritize it
+        if (img && img !== '/lovable-uploads/speedboat-transparent.png') {
+          const allImages = await getMotorImageGallery(motor);
+          setImageInfo({
+            url: img,
+            count: Math.max(allImages.length, 1),
+            isInventory: false
+          });
+          return;
+        }
+
         const { url: primaryImageUrl, isInventory } = await getMotorImageByPriority(motor);
         const allImages = await getMotorImageGallery(motor);
         

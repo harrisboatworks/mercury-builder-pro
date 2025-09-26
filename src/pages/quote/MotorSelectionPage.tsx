@@ -40,6 +40,13 @@ interface DbMotor {
   specifications?: Record<string, any> | null;
   detail_url?: string | null;
   images?: any[] | null;
+  hero_media_id?: string | null;
+  // Hero media joined data
+  hero_media?: {
+    id: string;
+    media_url: string;
+    media_type: string;
+  } | null;
 }
 
 interface Promotion {
@@ -222,6 +229,8 @@ export default function MotorSelectionPage() {
         in_stock: dbMotor.in_stock,
         stock_quantity: dbMotor.stock_quantity,
         availability: dbMotor.availability,
+        // Preserve hero_media_id for image priority logic
+        hero_media_id: dbMotor.hero_media_id,
         category: dbMotor.horsepower <= 20 ? 'portable' :
                  dbMotor.horsepower <= 60 ? 'mid-range' : 
                  dbMotor.horsepower <= 150 ? 'high-performance' : 'v8-racing',

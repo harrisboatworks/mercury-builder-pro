@@ -28,6 +28,8 @@ export interface Motor {
   stock_quantity?: number;
   stock_number?: string;
   availability?: string;
+  // Hero image field for priority logic
+  hero_media_id?: string;
   [key: string]: any;
 }
 
