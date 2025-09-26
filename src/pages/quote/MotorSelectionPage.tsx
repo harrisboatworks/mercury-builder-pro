@@ -104,10 +104,15 @@ export default function MotorSelectionPage() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        // Load motors (same query as original)
+        // Load motors with hero media data
         const { data: motorsData, error: motorsError } = await supabase
           .from('motor_models')
-          .select('*')
+          .select(`
+            *,
+            hero_media:motor_media!hero_media_id(
+              media_url
+            )
+          `)
           .order('horsepower', { ascending: true });
 
         if (motorsError) throw motorsError;

@@ -688,7 +688,25 @@ export const isCounterRotatingMotor = (model: string): boolean => {
 export const getMotorImageByPriority = async (motor: any): Promise<{ url: string; isInventory: boolean }> => {
   const fallbackImage = '/lovable-uploads/speedboat-transparent.png';
   
-  // Priority 1: If in_stock=true and we have inventory images, use that
+  // Priority 1: Check hero_media_id first (admin-set hero image)
+  if (motor?.hero_media_id) {
+    try {
+      const { data: heroMedia, error } = await supabase
+        .from('motor_media')
+        .select('media_url')
+        .eq('id', motor.hero_media_id)
+        .eq('is_active', true)
+        .single();
+
+      if (!error && heroMedia?.media_url) {
+        return { url: heroMedia.media_url, isInventory: false };
+      }
+    } catch (err) {
+      console.warn('Failed to fetch hero media:', err);
+    }
+  }
+  
+  // Priority 2: If in_stock=true and we have inventory images, use that
   if (motor?.in_stock === true && motor?.images && Array.isArray(motor.images)) {
     const inventoryImages = motor.images.filter((img: any) => {
       const url = typeof img === 'string' ? img : img?.url;
@@ -702,12 +720,12 @@ export const getMotorImageByPriority = async (motor: any): Promise<{ url: string
     }
   }
   
-  // Priority 2: Use hero_image_url if exists
+  // Priority 3: Use hero_image_url if exists
   if (motor?.hero_image_url) {
     return { url: motor.hero_image_url, isInventory: false };
   }
   
-  // Priority 3: Use any available image from images array
+  // Priority 4: Use any available image from images array
   if (motor?.images && Array.isArray(motor.images) && motor.images.length > 0) {
     const bestImage = motor.images[0];
     const imageUrl = typeof bestImage === 'string' ? bestImage : bestImage?.url;
@@ -716,12 +734,12 @@ export const getMotorImageByPriority = async (motor: any): Promise<{ url: string
     }
   }
   
-  // Priority 4: Use image_url if available
+  // Priority 5: Use image_url if available
   if (motor?.image_url || motor?.image) {
     return { url: motor.image_url || motor.image, isInventory: false };
   }
   
-  // Priority 5: Query motor_media table for assigned images
+  // Priority 6: Query motor_media table for assigned images
   if (motor?.id) {
     try {
       const { data: mediaData, error } = await supabase
@@ -740,7 +758,7 @@ export const getMotorImageByPriority = async (motor: any): Promise<{ url: string
     }
   }
   
-  // Priority 6: Fallback to Mercury placeholder
+  // Priority 7: Fallback to Mercury placeholder
   return { url: fallbackImage, isInventory: false };
 };
 
