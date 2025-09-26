@@ -309,9 +309,9 @@ export default function MotorCardPreview({
                       </div>
                     )}
                     {priceState.hasSale && priceState.savingsRounded > 0 && (
-                      <Badge className="bg-green-600 text-white text-sm">
+                      <div className="text-lg font-bold text-green-600 uppercase">
                         SAVE ${priceState.savingsRounded.toLocaleString()}
-                      </Badge>
+                      </div>
                     )}
                   </div>
                 );
@@ -352,7 +352,7 @@ export default function MotorCardPreview({
               className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3"
               size="lg"
             >
-              View Details & Add to Quote
+              View Details
             </Button>
           </div>
         </div>
