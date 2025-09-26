@@ -159,72 +159,42 @@ export default function MotorCardPreview({
     return inStock ? "bg-green-500" : "bg-[hsl(var(--luxury-medium-gray))]";
   };
 
-  // Build specs array showing all rigging code breakdown
-  const getSpecsDisplay = () => {
-    if (!motor?.model_display && !motor?.model && !title) return "";
-    
-    // Single source of truth for model decoding
-    const modelForDecode = motor?.model_display || motor?.model || title;
-    
-    // 🔧 DEBUG: Log all input values including model_display priority
-    console.log("🔧 MotorCardPreview getSpecsDisplay DEBUG:", {
-      modelDisplay: motor?.model_display,
-      motorModel: motor?.model,
-      title: title,
-      modelForDecode: modelForDecode,
-      hp: hp,
-      hpNum: hpNum,
-      motorId: motor?.id
-    });
-    
-    // Use decodeModelName to get accurate rigging code breakdown
-    const decodedItems = decodeModelName(modelForDecode, hpNum);
-    
-    // 🔧 DEBUG: Log decoded results
-    console.log("🔧 decodeModelName results:", {
-      inputModel: motor?.model || title,
-      inputHP: hpNum,
-      decodedItems: decodedItems,
-      decodedCount: decodedItems?.length || 0
-    });
-    
-    if (decodedItems && decodedItems.length > 0) {
-      // Sort decoded items for consistent display: Start Type → Control Type → Shaft → Engine Family
-      const sortedItems = [...decodedItems].sort((a, b) => {
-        const getOrder = (meaning: string) => {
-          if (meaning.includes('Manual Start') || meaning.includes('Electric Start')) return 0;
-          if (meaning.includes('Tiller') || meaning.includes('Remote Control')) return 1;
-          if (meaning.includes('Shaft')) return 2;
-          if (meaning.includes('Engine') || meaning.includes('4-Stroke')) return 3;
-          return 4; // Other items last
-        };
-        return getOrder(a.meaning) - getOrder(b.meaning);
-      });
-      
-      const allSpecs = sortedItems.map(item => item.meaning);
-      
-      // 🔧 DEBUG: Log final specs array
-      console.log("🔧 Final specs display:", {
-        allSpecs: allSpecs,
-        joinedSpecs: allSpecs.join(" • ")
-      });
-      
-      return allSpecs.join(" • ");
-    }
-    
-    // Fallback to current logic if decoding fails
+  // Simplified specs display - single clean line
+  const getSimplifiedSpecs = () => {
     const specs = [];
     
     const startType = getStartType();
     if (startType) specs.push(startType);
     
-    const controlType = getControlType();
-    if (controlType) specs.push(controlType);
-    
     const shaftLength = getShaftLength();
     if (shaftLength) specs.push(`${shaftLength}" Shaft`);
     
+    // Add engine type for 4-stroke motors
+    if (hpNum && hpNum >= 2.5) specs.push("4-Stroke");
+    
     return specs.join(" • ");
+  };
+
+  // Get delivery status with clean indicator
+  const getDeliveryStatus = () => {
+    if (inStock) {
+      return {
+        text: "In Stock Today",
+        dotColor: "bg-green-500"
+      };
+    }
+    return {
+      text: "2-3 Week Delivery",
+      dotColor: "bg-gray-400"
+    };
+  };
+
+  // Get warranty text if applicable
+  const getWarrantyText = () => {
+    if (hasWarrantyPromo && warrantyYears > 0) {
+      return `✓ ${warrantyYears} Year Extended Coverage`;
+    }
+    return null;
   };
 
   // Calculate savings for display
@@ -255,13 +225,16 @@ export default function MotorCardPreview({
     return null;
   };
 
+  const deliveryStatus = getDeliveryStatus();
+  const warrantyText = getWarrantyText();
+
   return (
     <>
-      <div className="bg-[hsl(var(--luxury-white))] rounded-none shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer hover:-translate-y-0.5 group">
+      <div className="bg-white shadow-sm rounded-lg overflow-hidden">
         <div className="relative">
           {/* Image Section */}
           {imageUrl && (
-            <div className="relative bg-[hsl(var(--luxury-light-gray))] p-4 md:p-8">
+            <div className="relative bg-gray-50 p-4">
               <img 
                 src={imageUrl} 
                 alt={title} 
@@ -270,14 +243,14 @@ export default function MotorCardPreview({
               
               {/* HP Badge */}
               {hpNum && (
-                <div className="absolute top-4 right-4 bg-[hsl(var(--luxury-black))] text-[hsl(var(--luxury-white))] px-3 py-1 text-xs font-light tracking-wider">
+                <div className="absolute top-4 right-4 bg-black text-white px-3 py-1 text-xs font-light tracking-wider">
                   {hpNum} HP
                 </div>
               )}
               
               {/* Photo Count Overlay */}
               {photoCount > 1 && (
-                <div className="absolute bottom-4 left-4 bg-[hsl(var(--luxury-photo-overlay))/70%] text-white px-2 py-1.5 rounded-[10px] text-[10px] md:text-[12px] font-medium">
+                <div className="absolute bottom-4 left-4 bg-black/70 text-white px-2 py-1.5 rounded-[10px] text-[10px] md:text-[12px] font-medium">
                   +{photoCount} photos
                 </div>
               )}
@@ -293,55 +266,55 @@ export default function MotorCardPreview({
             </div>
           )}
           
-          {/* Content Section - Optimized Padding */}
-          <div className="p-4 md:p-6 space-y-4 md:space-y-5">
-            {/* Model Information */}
-            <div className="space-y-1">
-              <h3 className="text-lg md:text-xl font-light text-[hsl(var(--luxury-black))]">
-                {formatTitle(title)}
-              </h3>
-              {motor?.model_number && (
-                <p className="text-xs text-[hsl(var(--luxury-medium-gray))]">
-                  Model: {motor.model_number}
-                </p>
-              )}
-            </div>
+          {/* Content Section - Premium Mobile Layout */}
+          <div className="p-4 space-y-4">
+            {/* Model Name - Prominent */}
+            <h3 className="text-2xl font-light tracking-wide text-black">
+              {formatTitle(title)}
+            </h3>
             
-            {/* Specifications - Single Line */}
-            <div className="text-xs text-[hsl(var(--luxury-medium-gray))] pt-3 border-t border-[hsl(var(--luxury-light-gray))]">
-              <span className="whitespace-normal md:whitespace-nowrap">{getSpecsDisplay()}</span>
-            </div>
-            
-            {/* Availability Badge */}
-            <div className="inline-flex items-center gap-2 bg-[hsl(var(--luxury-light-gray))] px-3 py-2 rounded-full">
-              <div className={`w-2 h-2 ${getAvailabilityDotColor()} rounded-full`}></div>
-              <span className="text-xs text-[hsl(var(--luxury-medium-gray))]">{getAvailabilityText()}</span>
-            </div>
-
-            {/* Promo Line - Elegant Single Sentence */}
-            {getPromoDisplay() && (
-              <div className="text-xs md:text-sm text-[hsl(var(--luxury-promo-blue))] leading-relaxed">
-                {getPromoDisplay()}
-              </div>
+            {/* Model Number - Subtle */}
+            {motor?.model_number && (
+              <p className="text-sm text-gray-500 mt-1">
+                Model: {motor.model_number}
+              </p>
             )}
             
-            {/* Luxury Pricing Display */}
-            <LuxuryPriceDisplay
-              msrp={msrp}
-              salePrice={price}
-              priceStyle="luxuryMinimal"
-              showSavings={showSavingsLine}
-              className="pt-4"
-            />
+            {/* Simplified Specs - Single Line */}
+            <p className="text-sm text-gray-600 mt-4 tracking-wide">
+              {getSimplifiedSpecs()}
+            </p>
             
-            {/* CTA Button - Modern Style */}
-            <Button 
-              variant="luxuryModern"
-              className="w-full mt-6"
+            {/* Pricing - Clean & Direct */}
+            <div className="mt-4">
+              {msrp && price && msrp > price && (
+                <p className="text-base text-gray-500 line-through font-light">${msrp.toLocaleString()}</p>
+              )}
+              <p className="text-3xl font-light text-black mt-1">
+                {price ? `$${price.toLocaleString()}` : 'Call for Price'}
+              </p>
+            </div>
+            
+            {/* Delivery Status - Subtle with Icon */}
+            <div className="flex items-center gap-2 mt-4 text-sm text-gray-600">
+              <div className={`w-1.5 h-1.5 ${deliveryStatus.dotColor} rounded-full`}></div>
+              <span>{deliveryStatus.text}</span>
+            </div>
+            
+            {/* Warranty - Clean Checkmark */}
+            {warrantyText && (
+              <p className="text-sm text-blue-600 mt-2">
+                {warrantyText}
+              </p>
+            )}
+            
+            {/* Premium Black Button */}
+            <button 
+              className="w-full bg-black text-white py-4 text-base font-light tracking-wider uppercase mt-6 rounded-none hover:bg-gray-900 transition-colors"
               onClick={handleMoreInfoClick}
             >
-              {ctaTextVariant}
-            </Button>
+              View Details
+            </button>
           </div>
         </div>
       </div>

@@ -156,182 +156,136 @@ export default function MotorCardPremium({
     setShowTooltip(false);
   };
   
-  // Debug logging
-  useEffect(() => {
-    console.log('Motor Debug - ALL DATA:', {
-      title: title,
-      inStock: inStock,
-      stockNumber: motor?.stockNumber,
-      stock_quantity: motor?.stock_quantity,
-      availability: motor?.availability,
-      fullMotorObject: motor
-    });
+  // Simplified specs display - single clean line
+  const getSimplifiedSpecs = () => {
+    const specs = [];
     
-    if (inStock) {
-      console.log('RENDERING STOCK BADGE for:', title, {
-        in_stock: inStock,
-        stock_quantity: motor?.stock_quantity,
-        stock_number: motor?.stockNumber,
-        availability: motor?.availability
-      });
+    // Add start type based on HP
+    if (hpNum && hpNum >= 40) {
+      specs.push("Electric Start");
     } else {
-      console.log('NOT IN STOCK:', title);
+      specs.push("Manual Start");
     }
-  }, [title, inStock, motor]);
+    
+    // Add shaft length if available
+    if (shaft) {
+      specs.push(`${shaft} Shaft`);
+    } else if (motor?.shaft_inches) {
+      specs.push(`${motor.shaft_inches}" Shaft`);
+    }
+    
+    // Add engine type for 4-stroke motors
+    if (hpNum && hpNum >= 2.5) {
+      specs.push("4-Stroke");
+    }
+    
+    return specs.join(" • ");
+  };
+
+  // Get delivery status with clean indicator
+  const getDeliveryStatus = () => {
+    if (inStock) {
+      return {
+        text: "In Stock Today",
+        dotColor: "bg-green-500"
+      };
+    }
+    return {
+      text: "2-3 Week Delivery",
+      dotColor: "bg-gray-400"
+    };
+  };
+
+  // Get warranty text if applicable (simplified for premium card)
+  const getWarrantyText = () => {
+    // Check if there are any warranty promotions
+    // This would need to be connected to actual promo data
+    return null; // Simplified for now
+  };
+
+  const deliveryStatus = getDeliveryStatus();
+  const warrantyText = getWarrantyText();
 
   return (
     <>
-      <div className="relative">
-        <button 
-          onClick={handleMoreInfoClick} 
-          className={`motor-card-premium text-left w-full transition-all duration-200 border-slate-200 hover:border-slate-300 dark:border-slate-700 dark:hover:border-slate-600 hover:shadow-md ${
-            (hpNum === 15 || hpNum === 75) ? 'opacity-90' : ''
-          }`}
-        >
-          {/* HP indicator in top-right corner */}
-          {hpNum && (
-            <div className="absolute top-2 left-2 bg-slate-100/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-300 text-xs px-2 py-1 rounded-md backdrop-blur-sm font-medium">
-              {hpNum} HP
+      <div className="bg-white shadow-sm rounded-lg overflow-hidden">
+        <div className="relative">
+          {/* Image Section */}
+          {imageUrl && (
+            <div className="relative bg-gray-50 p-4">
+              <img 
+                src={imageUrl} 
+                alt={title} 
+                className="h-32 md:h-48 w-full object-contain aspect-[4/3]" 
+              />
+              
+              {/* HP Badge */}
+              {hpNum && (
+                <div className="absolute top-4 right-4 bg-black text-white px-3 py-1 text-xs font-light tracking-wider">
+                  {hpNum} HP
+                </div>
+              )}
+              
+              {/* Photo Count Overlay */}
+              {imageCount > 1 && (
+                <div className="absolute bottom-4 left-4 bg-black/70 text-white px-2 py-1.5 rounded-[10px] text-[10px] md:text-[12px] font-medium">
+                  +{imageCount} photos
+                </div>
+              )}
             </div>
           )}
           
-          {/* Image and title area - hover for tooltip */}
-          <div 
-            className="relative"
-            onMouseEnter={handleTooltipMouseEnter}
-            onMouseLeave={handleTooltipMouseLeave}
-          >
-            {imageUrl && (
-              <div className="relative mb-3">
-                <img 
-                  src={imageUrl} 
-                  alt="" 
-                  className="h-48 w-full rounded-lg object-contain bg-white dark:bg-slate-900" 
-                />
-                {/* Gallery indicator and stock status */}
-                <div className="absolute bottom-2 right-2 flex items-center gap-2">
-                  {inStock && (
-                    <StockBadge 
-                      motor={{
-                        in_stock: inStock,
-                        stock_quantity: motor?.stock_quantity,
-                        stock_number: motor?.stock_number,
-                        availability: motor?.availability
-                      }}
-                      variant="compact"
-                      className="backdrop-blur-sm z-20 bg-primary/90"
-                    />
-                  )}
-                  
-                 {imageCount > 1 && (
-                    <div className="bg-black/70 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">
-                      {imageCount} photos
-                    </div>
-                  )}
-                  {/* HP display moved to bottom-right corner */}
-                  {hpNum && (
-                    <div className="bg-blue-600/90 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm font-medium">
-                      {hpNum} HP
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
-            <div className="text-lg font-semibold text-slate-900 dark:text-white">
+          {/* Content Section - Premium Mobile Layout */}
+          <div className="p-4 space-y-4">
+            {/* Model Name - Prominent */}
+            <h3 className="text-2xl font-light tracking-wide text-black">
               {title}
-            </div>
+            </h3>
             
-            {/* Mercury Model Number */}
+            {/* Model Number - Subtle */}
             {motor?.model_number && (
-              <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-mono">
+              <p className="text-sm text-gray-500 mt-1">
                 Model: {motor.model_number}
-              </div>
+              </p>
             )}
             
-            {/* HP-based descriptor and popularity indicators */}
-            {hpNum && (
-              <div className="mt-1 space-y-1">
-                {/* HP-based descriptor - always show */}
-                <p className="text-xs text-slate-600 dark:text-slate-400">
-                  {getHPDescriptor(hpNum)}
-                </p>
-                
-                {/* Controls required indicator for non-tiller motors */}
-                {motor && requiresMercuryControls(motor) && (
-                  <p className="text-xs text-blue-600 dark:text-blue-300 font-medium">
-                    + Controls Required
-                  </p>
-                )}
-                
-                {/* Badge container - ALWAYS rendered with minimum height to prevent layout shift */}
-                <div className="h-4 transition-opacity duration-300">
-                  {motorBadge && (
-                    <p className={`text-xs font-medium transition-all duration-300 ${getBadgeColor(motorBadge)}`}>
-                      {motorBadge}
-                    </p>
-                  )}
-                </div>
-              </div>
-            )}
-          </div>
-          
-          <div className="mt-2">
-            {/* Luxury Pricing Section */}
-            <div className="mt-auto">
-              <div className="flex flex-col gap-1 min-h-[60px]">
-                <LuxuryPriceDisplay
-                  msrp={msrp}
-                  salePrice={price || msrp}
-                  priceStyle="luxuryMinimal"
-                  showSavings={true}
-                  inflateEqualPrices={true}
-                />
-                {promoText && (
-                  <div className="mt-1 text-xs text-emerald-700 dark:text-emerald-300">
-                    {promoText}
-                  </div>
-                )}
-                {financingInfo && (price || msrp) && (price || msrp)! > 5000 && (
-                  <div className="text-xs text-muted-foreground mt-1">
-                    {getFinancingDisplay(((price || msrp)! * 1.13), promo?.rate || null)}*
-                  </div>
-                )}
-              </div>
+            {/* Simplified Specs - Single Line */}
+            <p className="text-sm text-gray-600 mt-4 tracking-wide">
+              {getSimplifiedSpecs()}
+            </p>
+            
+            {/* Pricing - Clean & Direct */}
+            <div className="mt-4">
+              {msrp && price && msrp > price && (
+                <p className="text-base text-gray-500 line-through font-light">${msrp.toLocaleString()}</p>
+              )}
+              <p className="text-3xl font-light text-black mt-1">
+                {price ? `$${price.toLocaleString()}` : 'Call for Price'}
+              </p>
             </div>
+            
+            {/* Delivery Status - Subtle with Icon */}
+            <div className="flex items-center gap-2 mt-4 text-sm text-gray-600">
+              <div className={`w-1.5 h-1.5 ${deliveryStatus.dotColor} rounded-full`}></div>
+              <span>{deliveryStatus.text}</span>
+            </div>
+            
+            {/* Warranty - Clean Checkmark */}
+            {warrantyText && (
+              <p className="text-sm text-blue-600 mt-2">
+                {warrantyText}
+              </p>
+            )}
+            
+            {/* Premium Black Button */}
+            <button 
+              className="w-full bg-black text-white py-4 text-base font-light tracking-wider uppercase mt-6 rounded-none hover:bg-gray-900 transition-colors"
+              onClick={handleMoreInfoClick}
+            >
+              View Details
+            </button>
           </div>
-        </button>
-        
-        {/* Special Order banner for less-preferred models */}
-        {(hpNum === 15 || hpNum === 75) && (
-          <div className="absolute top-2 left-2 bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-md shadow-sm dark:bg-amber-900/50 dark:text-amber-200">
-            Special Order
-          </div>
-        )}
-        
-        {/* More info button with hover tooltip */}
-        <button
-          onClick={handleMoreInfoClick}
-          onMouseEnter={handleTooltipMouseEnter}
-          onMouseLeave={handleTooltipMouseLeave}
-          className="absolute top-2 right-2 rounded-full bg-white/80 p-1.5 shadow-sm backdrop-blur-sm transition-all hover:bg-white hover:shadow-md dark:bg-slate-800/80 dark:hover:bg-slate-800"
-          aria-label="More details"
-        >
-          <Info className="h-5 w-5 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200" />
-        </button>
-        
-        {/* Desktop hover tooltip - improved positioning and simplified condition */}
-        {showTooltip && !isMobile && (
-          <div className="absolute left-1/2 top-full z-50 mt-2 -translate-x-1/2">
-            <MotorQuickInfo
-              hp={hpNum}
-              shaft={shaft}
-              weightLbs={weightLbs}
-              altOutput={altOutput}
-              steering={steering}
-              model={motor?.model || title}
-            />
-          </div>
-        )}
+        </div>
       </div>
       
       {/* Mobile/click details sheet - rendered via portal */}
