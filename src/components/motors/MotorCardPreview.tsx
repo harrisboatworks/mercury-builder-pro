@@ -1,8 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Info, Shield, Zap, Weight, Ruler } from "lucide-react";
-import MotorQuickInfo from "./MotorQuickInfo";
+import { Shield, Zap, Weight, Ruler } from "lucide-react";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import { StockBadge } from '@/components/inventory/StockBadge';
 import { Card } from '@/components/ui/card';
@@ -85,7 +84,6 @@ export default function MotorCardPreview({
   const parsedWeight = parseMotorWeight(motor);
   const isMobile = useIsMobile();
   const { promotions } = useActivePromotions();
-  const [showTooltip, setShowTooltip] = useState(false);
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
   const [motorBadge, setMotorBadge] = useState<string | null>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -175,16 +173,6 @@ export default function MotorCardPreview({
         behavior: 'instant' // Use 'instant' not 'smooth' for immediate return
       });
     }, 10); // Small delay to ensure DOM updates
-  };
-  
-  const handleTooltipMouseEnter = () => {
-    if (!isMobile) {
-      setShowTooltip(true);
-    }
-  };
-  
-  const handleTooltipMouseLeave = () => {
-    setShowTooltip(false);
   };
 
   return (
@@ -356,31 +344,6 @@ export default function MotorCardPreview({
             
           </div>
         </button>
-        
-        {/* More info button with hover tooltip */}
-        <button
-          onClick={handleMoreInfoClick}
-          onMouseEnter={handleTooltipMouseEnter}
-          onMouseLeave={handleTooltipMouseLeave}
-          className="absolute top-2 right-12 rounded-full bg-white/90 p-1.5 shadow-sm backdrop-blur-sm transition-all hover:bg-white hover:shadow-md dark:bg-slate-800/90 dark:hover:bg-slate-800"
-          aria-label="More details"
-        >
-          <Info className="h-4 w-4 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200" />
-        </button>
-        
-        {/* Desktop hover tooltip - improved positioning and simplified condition */}
-        {showTooltip && !isMobile && (
-          <div className="absolute left-1/2 top-full z-50 mt-2 -translate-x-1/2">
-            <MotorQuickInfo
-              hp={hpNum}
-              shaft={shaft}
-              weightLbs={weightLbs}
-              altOutput={altOutput}
-              steering={steering}
-              model={motor?.model || title}
-            />
-          </div>
-        )}
       </Card>
       
       {/* Mobile/click details sheet - rendered via portal */}
