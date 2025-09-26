@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Shield, Zap, Weight, Ruler, Settings, Gamepad2, Check, Clock, X } from "lucide-react";
+import { Shield, Zap, Weight, Ruler, Settings, Gamepad2, Check, Clock, X, Package } from "lucide-react";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import { StockBadge } from '@/components/inventory/StockBadge';
 import { Card } from '@/components/ui/card';
@@ -194,7 +194,7 @@ export default function MotorCardPreview({
     return "Remote";
   };
 
-  // Enhanced stock status with plain language
+  // Enhanced stock status for dealer experience
   const getStockStatus = () => {
     const hasRealStock = motor?.stock_quantity && motor.stock_quantity > 0 && 
                         motor?.stock_number && motor.stock_number !== 'N/A' && motor.stock_number.trim() !== '';
@@ -204,14 +204,13 @@ export default function MotorCardPreview({
       return {
         status: "In Stock",
         icon: Check,
-        className: "bg-in-stock text-in-stock-foreground"
+        className: "bg-green-600 text-white"
       };
     } else {
-      // Check if it's orderable vs truly out of stock
       return {
-        status: "Ships in 2–3 Weeks",
-        icon: Clock,
-        className: "bg-on-order text-on-order-foreground"
+        status: "Available to Order – 2-3 Week Lead Time",
+        icon: Package,
+        className: "bg-gray-500 text-white"
       };
     }
   };
@@ -320,22 +319,17 @@ export default function MotorCardPreview({
             </div>
             
             {/* Stock Status Badge */}
-            <div className="flex justify-center">
-              <Badge className={`${stockInfo.className} px-4 py-2 text-sm font-semibold`}>
-                <stockInfo.icon className="w-4 h-4 mr-2" />
+            <div className="flex flex-col items-center space-y-2">
+              <Badge className={`${stockInfo.className} px-3 py-1 text-xs font-semibold`}>
+                <stockInfo.icon className="w-3 h-3 mr-1" />
                 {stockInfo.status}
               </Badge>
-            </div>
-            
-            {/* Promo Badge */}
-            {(promoText || promotions[0]?.bonus_title || promotions[0]?.name) && (
-              <div className="flex justify-center">
-                <Badge variant="warranty" className="px-3 py-1">
-                  <Shield className="w-4 h-4 mr-1" />
-                  {promoText || promotions[0]?.bonus_title || promotions[0]?.name || "Special Offers Available"}
-                </Badge>
+              
+              {/* Warranty Text - Subtle under availability */}
+              <div className="text-xs text-muted-foreground text-center">
+                Includes +2 Years Extended Warranty.
               </div>
-            )}
+            </div>
             
             {/* Financing Info */}
             {(() => {
