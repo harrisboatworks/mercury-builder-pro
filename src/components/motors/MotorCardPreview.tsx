@@ -296,24 +296,36 @@ export default function MotorCardPreview({
               </div>
             )}
             
-            {/* Bottom Specs Section */}
-            {(weightLbs || shaft || motor?.start_type) && (
-              <div className="flex items-center justify-around text-xs text-gray-600 mt-3 pt-3 border-t">
-                {weightLbs && (
+            {/* Add specs row with divider */}
+            <div className="mt-3 pt-3 border-t border-gray-200">
+              <div className="flex items-center justify-around text-xs text-gray-600">
+                {/* Only show specs that exist */}
+                {motor?.horsepower && (
+                  <span className="flex items-center gap-1">
+                    <span className="font-medium">{motor.horsepower} HP</span>
+                  </span>
+                )}
+                
+                {motor?.specifications?.weight && (
                   <>
-                    <span className="font-medium">{weightLbs} lbs</span>
                     <span className="text-gray-400">•</span>
+                    <span className="font-medium">{motor.specifications.weight} lbs</span>
                   </>
                 )}
-                {shaft && (
+                
+                {motor?.shaft_inches && (
                   <>
-                    <span className="font-medium">{shaft}" Shaft</span>
                     <span className="text-gray-400">•</span>
+                    <span className="font-medium">{motor.shaft_inches}" Shaft</span>
                   </>
                 )}
-                <span className="font-medium">{motor?.start_type || 'Manual Start'}</span>
+                
+                {/* If no specs available, show a view details link */}
+                {!motor?.horsepower && !motor?.specifications?.weight && !motor?.shaft_inches && (
+                  <span className="text-blue-600 text-xs">View Full Specs →</span>
+                )}
               </div>
-            )}
+            </div>
             
           </div>
         </button>
