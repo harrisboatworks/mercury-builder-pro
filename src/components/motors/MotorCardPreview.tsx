@@ -130,9 +130,10 @@ export default function MotorCardPreview({
     return "Manual Start";
   };
 
-  // Get control type
+  // Get control type using consistent model source
   const getControlType = () => {
-    if (motor && isTillerMotor(motor.model || title)) return "Tiller Steering";
+    const modelForDecode = motor?.model_display || motor?.model || title;
+    if (motor && isTillerMotor(modelForDecode)) return "Tiller Steering";
     return "Remote Control";
   };
 
@@ -159,19 +160,24 @@ export default function MotorCardPreview({
 
   // Build specs array showing all rigging code breakdown
   const getSpecsDisplay = () => {
-    if (!motor?.model && !title) return "";
+    if (!motor?.model_display && !motor?.model && !title) return "";
     
-    // 🔧 DEBUG: Log all input values
+    // Single source of truth for model decoding
+    const modelForDecode = motor?.model_display || motor?.model || title;
+    
+    // 🔧 DEBUG: Log all input values including model_display priority
     console.log("🔧 MotorCardPreview getSpecsDisplay DEBUG:", {
+      modelDisplay: motor?.model_display,
       motorModel: motor?.model,
       title: title,
+      modelForDecode: modelForDecode,
       hp: hp,
       hpNum: hpNum,
       motorId: motor?.id
     });
     
     // Use decodeModelName to get accurate rigging code breakdown
-    const decodedItems = decodeModelName(motor?.model || title, hpNum);
+    const decodedItems = decodeModelName(modelForDecode, hpNum);
     
     // 🔧 DEBUG: Log decoded results
     console.log("🔧 decodeModelName results:", {
@@ -182,8 +188,19 @@ export default function MotorCardPreview({
     });
     
     if (decodedItems && decodedItems.length > 0) {
-      // Show all decoded rigging information - don't limit to just 4 items
-      const allSpecs = decodedItems.map(item => item.meaning);
+      // Sort decoded items for consistent display: Start Type → Control Type → Shaft → Engine Family
+      const sortedItems = [...decodedItems].sort((a, b) => {
+        const getOrder = (meaning: string) => {
+          if (meaning.includes('Manual Start') || meaning.includes('Electric Start')) return 0;
+          if (meaning.includes('Tiller') || meaning.includes('Remote Control')) return 1;
+          if (meaning.includes('Shaft')) return 2;
+          if (meaning.includes('Engine') || meaning.includes('4-Stroke')) return 3;
+          return 4; // Other items last
+        };
+        return getOrder(a.meaning) - getOrder(b.meaning);
+      });
+      
+      const allSpecs = sortedItems.map(item => item.meaning);
       
       // 🔧 DEBUG: Log final specs array
       console.log("🔧 Final specs display:", {

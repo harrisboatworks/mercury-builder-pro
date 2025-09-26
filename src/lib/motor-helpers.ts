@@ -292,7 +292,7 @@ export const getRange = (hp: number | string) => {
 };
 
 export const getTransomRequirement = (motor: Motor) => {
-  const model = (motor.model || '').toUpperCase();
+  const model = (motor.model_display || motor.model || '').toUpperCase();
   const shaft = (motor as any).specifications?.shaft_length as string | undefined;
   
   // Check specifications first
@@ -311,7 +311,7 @@ export const getTransomRequirement = (motor: Motor) => {
 };
 
 export const getBatteryRequirement = (motor: Motor) => {
-  const model = (motor.model || '').toUpperCase();
+  const model = (motor.model_display || motor.model || '').toUpperCase();
   const n = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
   
   // Check specifications.starting field first if available
@@ -362,7 +362,7 @@ export const getOilRequirement = (_motor: Motor) => {
 
 export const includesFuelTank = (motor: Motor) => {
   const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
-  const model = (motor.model || '').toUpperCase();
+  const model = (motor.model_display || motor.model || '').toUpperCase();
   const isTiller = isTillerMotor(model);
   const isProKicker = model.includes('PROKICKER');
   
@@ -385,7 +385,7 @@ export const includesFuelTank = (motor: Motor) => {
 };
 
 export const includesPropeller = (motor: Motor) => {
-  const model = (motor.model || '').toUpperCase();
+  const model = (motor.model_display || motor.model || '').toUpperCase();
   
   // Tiller motors typically include propeller
   if (isTillerMotor(model)) return true;
@@ -506,7 +506,7 @@ export const isTillerMotor = (model: string) => {
 export const getIncludedAccessories = (motor: Motor) => {
   const accessories = [];
   const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
-  const model = (motor.model || '').toUpperCase();
+  const model = (motor.model_display || motor.model || '').toUpperCase();
   const isTiller = isTillerMotor(model);
   
   // First check for accessory_notes from price list symbols (highest priority)
@@ -586,7 +586,7 @@ export const requiresMercuryControls = (motor: Motor) => {
 export const getAdditionalRequirements = (motor: Motor) => {
   const requirements = [];
   const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
-  const model = (motor.model || '').toUpperCase();
+  const model = (motor.model_display || motor.model || '').toUpperCase();
   
   // Mercury controls and cables for non-tiller motors
   if (requiresMercuryControls(motor)) {
