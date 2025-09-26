@@ -276,29 +276,28 @@ export default function MotorCardPremium({
           </div>
           
           <div className="mt-2">
-            {(() => {
-              {/* Luxury Pricing Section */}
-              <div className="mt-auto">
-                <div className="flex flex-col gap-1 min-h-[60px]">
-                  <LuxuryPriceDisplay
-                    msrp={msrp}
-                    salePrice={displaySalePrice}
-                    priceStyle="luxuryMinimal"
-                    showSavings={true}
-                  />
-                  {promoText && (
-                    <div className="mt-1 text-xs text-emerald-700 dark:text-emerald-300">
-                      {promoText}
-                    </div>
-                  )}
-                   {financingInfo && displaySalePrice && displaySalePrice > 5000 && (
-                     <div className="text-xs text-muted-foreground mt-1">
-                       {getFinancingDisplay(displaySalePrice * 1.13, promo?.rate || null)}*
-                     </div>
-                   )}
-                </div>
-              );
-            })()}
+            {/* Luxury Pricing Section */}
+            <div className="mt-auto">
+              <div className="flex flex-col gap-1 min-h-[60px]">
+                <LuxuryPriceDisplay
+                  msrp={msrp}
+                  salePrice={price || msrp}
+                  priceStyle="luxuryMinimal"
+                  showSavings={true}
+                  inflateEqualPrices={true}
+                />
+                {promoText && (
+                  <div className="mt-1 text-xs text-emerald-700 dark:text-emerald-300">
+                    {promoText}
+                  </div>
+                )}
+                {financingInfo && (price || msrp) && (price || msrp)! > 5000 && (
+                  <div className="text-xs text-muted-foreground mt-1">
+                    {getFinancingDisplay(((price || msrp)! * 1.13), promo?.rate || null)}*
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </button>
         
