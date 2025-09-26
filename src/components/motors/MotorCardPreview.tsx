@@ -338,15 +338,15 @@ export default function MotorCardPreview({
               </div>
             </div>
             
-            {/* Premium Pricing Section with Integrated Availability - Mobile-optimized */}
-            <div className="space-y-2 sm:space-y-3 bg-gradient-to-br from-background to-muted/20 p-4 sm:p-6 rounded-xl border border-border/20">
+            {/* Premium Pricing Section - Luxury Auto Configurator Style */}
+            <div className="space-y-3 bg-gradient-to-br from-background to-muted/20 p-4 sm:p-6 rounded-xl border border-border/20">
               {(() => {
                 const priceState = getPriceDisplayState(msrp, price, true);
                 
                 if (priceState.callForPrice) {
                   return (
-                    <div className="space-y-2">
-                      <div className="text-2xl sm:text-3xl font-bold text-card-foreground">Call for Price</div>
+                    <div className="space-y-3">
+                      <div className="text-2xl sm:text-3xl font-semibold text-card-foreground">Call for Price</div>
                       {/* Subtle availability badge integrated under call for price */}
                       <Badge className={`${stockInfo.className} px-2 py-1 text-xs font-medium rounded-full inline-flex items-center gap-1`}>
                         <stockInfo.icon className="w-3 h-3" />
@@ -360,23 +360,34 @@ export default function MotorCardPreview({
                 const displaySalePrice = priceState.isArtificialDiscount ? msrp : (price || msrp);
                 
                 return (
-                  <div className="space-y-1 sm:space-y-2">
+                  <div className="space-y-3">
+                    {/* MSRP */}
                     {displayMSRP && priceState.hasSale && (
-                      <div className="text-xs sm:text-sm text-muted-foreground line-through font-medium tracking-wide">
-                        MSRP ${displayMSRP.toLocaleString()}
+                      <div className="text-xs font-medium line-through tracking-wide" style={{ color: 'hsl(var(--pricing-msrp))' }}>
+                        MSRP: ${displayMSRP.toLocaleString()}
                       </div>
                     )}
+                    
+                    {/* Our Price */}
                     {displaySalePrice && (
-                      <div className="text-2xl sm:text-4xl font-bold text-red-600 tracking-tight">
-                        ${displaySalePrice.toLocaleString()}
+                      <div className="space-y-1">
+                        <div className="text-xs font-medium uppercase tracking-wide" style={{ color: 'hsl(var(--pricing-msrp))' }}>
+                          OUR PRICE
+                        </div>
+                        <div className="text-2xl sm:text-3xl font-semibold tracking-tight" style={{ color: 'hsl(var(--pricing-our-price))' }}>
+                          ${displaySalePrice.toLocaleString()}
+                        </div>
                       </div>
                     )}
+                    
+                    {/* Savings */}
                     {priceState.hasSale && priceState.savingsRounded > 0 && (
-                      <div className="text-lg sm:text-xl font-bold text-green-600 tracking-wide">
+                      <div className="text-base font-medium" style={{ color: 'hsl(var(--pricing-savings))' }}>
                         You Save ${priceState.savingsRounded.toLocaleString()}
                       </div>
                     )}
-                    {/* Subtle availability badge integrated under savings */}
+                    
+                    {/* Subtle availability badge */}
                     <Badge className={`${stockInfo.className} px-2 py-1 text-xs font-medium rounded-full inline-flex items-center gap-1 mt-2`}>
                       <stockInfo.icon className="w-3 h-3" />
                       {stockInfo.status === "In Stock" ? "✅ In Stock Today" : "⏳ Factory Order – 2-3 Weeks"}

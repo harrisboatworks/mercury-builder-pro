@@ -176,6 +176,11 @@
 
     --sidebar-ring: 217.2 91.2% 59.8%;
 
+    /* Premium Pricing Colors - Luxury Auto Configurator Style */
+    --pricing-msrp: 220 9% 46%; /* #6C757D - Medium Gray */
+    --pricing-our-price: 0 71% 42%; /* #B71C1C - Deep Refined Red */
+    --pricing-savings: 122 39% 33%; /* #2E7D32 - Elegant Green */
+
     /* Promo badge tokens */
     --promo-gold-1: 46 90% 55%;
     --promo-gold-2: 36 95% 50%;
