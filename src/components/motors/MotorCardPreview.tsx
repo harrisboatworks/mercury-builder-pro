@@ -201,7 +201,7 @@ export default function MotorCardPreview({
                 <img 
                   src={imageUrl} 
                   alt="" 
-                  className="h-48 w-full object-contain max-h-48 bg-white dark:bg-slate-900" 
+                  className="h-96 w-full object-contain max-h-96 bg-white dark:bg-slate-900" 
                 />
                 
                 {/* HP Badge Overlay - Top Right */}
