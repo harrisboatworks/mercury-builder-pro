@@ -185,6 +185,11 @@
     --cta-navy: 10 26 47; /* #0A1A2F - Deep Navy */
     --cta-navy-hover: 28 46 69; /* #1C2E45 - Navy Hover */
     --cta-navy-active: 0 8 20; /* #000814 - Navy Active */
+    
+    /* Luxury Card Enhancements */
+    --luxury-our-price-label: 218 11% 42%; /* #6C757D - OUR PRICE label */
+    --luxury-promo-blue: 210 60% 34%; /* #2F5DAA - Promo accent blue */
+    --luxury-photo-overlay: 210 24% 16%; /* #0A1A2F - Photo count overlay */
 
     /* Luxury Automotive Colors - Strict Monochrome Palette */
     --luxury-black: 0 0% 0%; /* #000000 - Pure Black */
