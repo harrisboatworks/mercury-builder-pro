@@ -11,20 +11,30 @@ import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { supabase } from '@/integrations/supabase/client';
 
 export default function AdminInventory() {
-  const [previewMode, setPreviewMode] = useState(false);
+  // Load preview mode from localStorage
+  const [previewMode, setPreviewMode] = useState(() => {
+    const saved = localStorage.getItem('admin-motor-card-preview-mode');
+    return saved ? JSON.parse(saved) : false;
+  });
   const [sampleMotors, setSampleMotors] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+
+  // Save preview mode to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('admin-motor-card-preview-mode', JSON.stringify(previewMode));
+  }, [previewMode]);
 
   // Fetch sample motors for A/B testing preview
   useEffect(() => {
     const fetchSampleMotors = async () => {
       try {
         const { data: motors, error } = await supabase
-          .from('mercury_motors')
+          .from('motor_models')
           .select('*')
           .not('msrp', 'is', null)
+          .not('dealer_price', 'is', null)
           .limit(3)
-          .order('hp', { ascending: true });
+          .order('horsepower', { ascending: true });
 
         if (error) throw error;
         
@@ -32,16 +42,19 @@ export default function AdminInventory() {
         const formattedMotors = motors?.map(motor => ({
           ...motor,
           inStock: motor.in_stock || false,
-          title: motor.display_name || motor.model || `${motor.hp}HP Mercury`,
-          img: motor.hero_image_url,
-          price: motor.msrp,
+          title: motor.model_display || motor.model || `${motor.horsepower}HP Mercury`,
+          img: motor.hero_image_url || motor.image_url,
+          price: motor.dealer_price || motor.msrp,
           msrp: motor.msrp,
+          hp: motor.horsepower,
           promoText: motor.promo_text
         })) || [];
         
         setSampleMotors(formattedMotors);
       } catch (error) {
         console.error('Error fetching sample motors:', error);
+        // Provide fallback data if query fails
+        setSampleMotors([]);
       } finally {
         setLoading(false);
       }
