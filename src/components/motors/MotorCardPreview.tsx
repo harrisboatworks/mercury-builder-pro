@@ -161,12 +161,35 @@ export default function MotorCardPreview({
   const getSpecsDisplay = () => {
     if (!motor?.model && !title) return "";
     
+    // 🔧 DEBUG: Log all input values
+    console.log("🔧 MotorCardPreview getSpecsDisplay DEBUG:", {
+      motorModel: motor?.model,
+      title: title,
+      hp: hp,
+      hpNum: hpNum,
+      motorId: motor?.id
+    });
+    
     // Use decodeModelName to get accurate rigging code breakdown
     const decodedItems = decodeModelName(motor?.model || title, hpNum);
+    
+    // 🔧 DEBUG: Log decoded results
+    console.log("🔧 decodeModelName results:", {
+      inputModel: motor?.model || title,
+      inputHP: hpNum,
+      decodedItems: decodedItems,
+      decodedCount: decodedItems?.length || 0
+    });
     
     if (decodedItems && decodedItems.length > 0) {
       // Show all decoded rigging information - don't limit to just 4 items
       const allSpecs = decodedItems.map(item => item.meaning);
+      
+      // 🔧 DEBUG: Log final specs array
+      console.log("🔧 Final specs display:", {
+        allSpecs: allSpecs,
+        joinedSpecs: allSpecs.join(" • ")
+      });
       
       return allSpecs.join(" • ");
     }
