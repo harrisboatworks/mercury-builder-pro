@@ -1,46 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Shield, Zap, Weight, Ruler, Settings, Gamepad2, Check, Clock, X, Package } from "lucide-react";
 import MotorDetailsSheet from './MotorDetailsSheet';
-import { StockBadge } from '@/components/inventory/StockBadge';
-import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import type { Motor } from '../../lib/motor-helpers';
-import { getHPDescriptor, getPopularityIndicator, getBadgeColor, requiresMercuryControls, isTillerMotor, getMotorImageByPriority, getMotorImageGallery, buildModelKey, extractHpAndCode } from '../../lib/motor-helpers';
-import { useIsMobile } from "@/hooks/use-mobile";
-import { useFinancing } from '@/contexts/FinancingContext';
-import { getFinancingDisplay } from '@/lib/finance';
-import { getPriceDisplayState } from '@/lib/pricing';
+import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery } from '../../lib/motor-helpers';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import mercuryLogo from '@/assets/mercury-logo.png';
-
-// Helper function to extract weight from motor specifications
-const parseMotorWeight = (motor?: Motor): string | null => {
-  if (!motor?.specifications) return null;
-  
-  // Try different weight field variations
-  const weightFields = [
-    'Dry Weight (lbs/kg)',
-    'weight',
-    'Weight',
-    'Dry Weight'
-  ];
-  
-  for (const field of weightFields) {
-    const weightValue = motor.specifications[field];
-    if (weightValue) {
-      // Parse numeric value from strings like "85lbs/38.5kg (MRC model)" or "85"
-      const match = String(weightValue).match(/(\d+(?:\.\d+)?)/);
-      if (match) {
-        return match[1];
-      }
-    }
-  }
-  
-  return null;
-};
 
 export default function MotorCardPreview({ 
   img, 
@@ -51,7 +17,6 @@ export default function MotorCardPreview({
   promoText, 
   selected, 
   onSelect,
-  // New specification props
   shaft,
   weightLbs,
   altOutput,
@@ -70,7 +35,6 @@ export default function MotorCardPreview({
   promoText?: string | null;
   selected?: boolean;
   onSelect: () => void;
-  // New specification props
   shaft?: string;
   weightLbs?: number | string;
   altOutput?: string;
@@ -81,52 +45,32 @@ export default function MotorCardPreview({
   motor?: Motor;
   inStock?: boolean | null;
 }) {
-  const fmt = (n?: number | null) => (typeof n === "number" ? `$${n.toLocaleString()}` : undefined);
   const hpNum = typeof hp === "string" ? parseFloat(hp) : (typeof hp === "number" ? hp : undefined);
-  const parsedWeight = parseMotorWeight(motor);
-  const isMobile = useIsMobile();
   const { promotions } = useActivePromotions();
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
-  const [motorBadge, setMotorBadge] = useState<string | null>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   
-  // Get the best available image URL and count total images using priority logic
-  const [imageInfo, setImageInfo] = useState<{ url: string; count: number; isInventory: boolean }>({
-    url: img || '/lovable-uploads/speedboat-transparent.png',
-    count: img ? 1 : 0,
-    isInventory: false
+  // Get the best available image URL using priority logic
+  const [imageInfo, setImageInfo] = useState<{ url: string }>({
+    url: img || '/lovable-uploads/speedboat-transparent.png'
   });
 
   useEffect(() => {
     const loadImageInfo = async () => {
       try {
-        // If we have a valid hero image URL passed as img prop, prioritize it
         if (img && img !== '/lovable-uploads/speedboat-transparent.png') {
-          const allImages = await getMotorImageGallery(motor);
-          setImageInfo({
-            url: img,
-            count: Math.max(allImages.length, 1),
-            isInventory: false
-          });
+          setImageInfo({ url: img });
           return;
         }
 
-        const { url: primaryImageUrl, isInventory } = await getMotorImageByPriority(motor);
-        const allImages = await getMotorImageGallery(motor);
-        
-        // Use img prop as fallback if motor priority didn't find anything good
+        const { url: primaryImageUrl } = await getMotorImageByPriority(motor);
         const finalUrl = primaryImageUrl !== '/lovable-uploads/speedboat-transparent.png' 
           ? primaryImageUrl 
           : (img || '/lovable-uploads/speedboat-transparent.png');
         
-        setImageInfo({
-          url: finalUrl,
-          count: Math.max(allImages.length, img ? 1 : 0),
-          isInventory
-        });
+        setImageInfo({ url: finalUrl });
       } catch (error) {
         console.warn('Failed to load motor image info:', error);
-        // Keep fallback values on error
       }
     };
 
@@ -134,308 +78,154 @@ export default function MotorCardPreview({
   }, [motor, img]);
   
   const imageUrl = imageInfo.url;
-  const imageCount = imageInfo.count;
-  const isInventoryImage = imageInfo.isInventory;
-  
-  // Smart financing calculation using context
-  const { calculateMonthlyPayment, promo } = useFinancing();
-  const financingInfo = calculateMonthlyPayment(price || 0, 1000);
-  
-  // Generate badge once when component mounts and optionally rotate
-  useEffect(() => {
-    // Generate badge once when component mounts
-    const badge = getPopularityIndicator(title, inStock);
-    setMotorBadge(badge);
-    
-    // Optional: Rotate badges every 30 seconds for fresh feel
-    const interval = setInterval(() => {
-      const newBadge = getPopularityIndicator(title, inStock);
-      setMotorBadge(newBadge);
-    }, 30000); // 30 seconds
-    
-    return () => clearInterval(interval);
-  }, [title, inStock]);
-  
-  // Check if device has fine pointer (mouse) for hover
-  const hasHover = typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches;
-  
+
   const handleMoreInfoClick = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent card selection
-    // Store current scroll position before opening modal
+    e.stopPropagation();
     setScrollPosition(window.scrollY);
     setShowDetailsSheet(true);
   };
 
   const handleCloseModal = () => {
     setShowDetailsSheet(false);
-    // Restore scroll position after modal closes
     setTimeout(() => {
       window.scrollTo({
         top: scrollPosition,
-        behavior: 'instant' // Use 'instant' not 'smooth' for immediate return
+        behavior: 'instant'
       });
-    }, 10); // Small delay to ensure DOM updates
+    }, 10);
   };
 
-  // Helper functions for Quick Specs
+  // Get shaft length for display
   const getShaftLength = () => {
     if (motor?.shaft_inches) return `${motor.shaft_inches}"`;
     if (shaft) return shaft;
     return null;
   };
 
+  // Get start type based on HP
   const getStartType = () => {
-    if (hpNum && hpNum >= 40) return "Electric";
-    return "Manual";
+    if (hpNum && hpNum >= 40) return "Electric Start";
+    return "Manual Start";
   };
 
+  // Get control type
   const getControlType = () => {
-    if (motor && isTillerMotor(motor.model || title)) return "Tiller";
-    return "Remote";
+    if (motor && isTillerMotor(motor.model || title)) return "Tiller Steering";
+    return "Remote Control";
   };
 
-  // Enhanced stock status for dealer experience
-  const getStockStatus = () => {
-    const hasRealStock = motor?.stock_quantity && motor.stock_quantity > 0 && 
-                        motor?.stock_number && motor.stock_number !== 'N/A' && motor.stock_number.trim() !== '';
-    const isInStock = motor?.in_stock === true || hasRealStock;
-    
-    if (isInStock) {
-      return {
-        status: "In Stock",
-        icon: Check,
-        className: "bg-green-600 text-white"
-      };
-    } else {
-      return {
-        status: "Available to Order – 2-3 Week Lead Time",
-        icon: Package,
-        className: "bg-gray-500 text-white"
-      };
-    }
-  };
-
-  const stockInfo = getStockStatus();
-
-  // Get dynamic promo information
-  const activePromos = promotions.filter(promo => 
-    promo.warranty_extra_years && promo.warranty_extra_years > 0 ||
-    promo.bonus_title ||
-    promo.discount_percentage > 0 ||
-    promo.discount_fixed_amount > 0
+  // Check for warranty promotion
+  const hasWarrantyPromo = promotions.some(promo => 
+    promo.warranty_extra_years && promo.warranty_extra_years > 0
   );
 
-  const getPromoContent = () => {
-    if (activePromos.length === 0) return null;
-    
-    const promo = activePromos[0]; // Use first active promo
-    
-    // Get elegant end date formatting
-    const getTimeFrame = () => {
-      if (!promo.end_date) return null;
-      const endDate = new Date(promo.end_date);
-      const month = endDate.toLocaleDateString('en-US', { month: 'long' });
-      const day = endDate.getDate();
-      return `Available Until ${month} ${day}`;
-    };
-    
-    const timeFrame = getTimeFrame();
-    
-    // Premium warranty language
-    if (promo.warranty_extra_years && promo.warranty_extra_years > 0) {
-      const baseText = `Extended Coverage Included (+${promo.warranty_extra_years} Years)`;
-      return timeFrame ? `${baseText} • ${timeFrame}` : baseText;
-    }
-    
-    // Premium bonus language
-    if (promo.bonus_title) {
-      const baseText = promo.bonus_title.includes('Mercury') ? promo.bonus_title : `Special Mercury Promotion`;
-      return timeFrame ? `${baseText} • ${timeFrame}` : baseText;
-    }
-    
-    // Premium discount language
-    if (promo.discount_percentage > 0) {
-      const baseText = `Seasonal Bonus Promotion (${promo.discount_percentage}% Off)`;
-      return timeFrame ? `${baseText} • ${timeFrame}` : baseText;
-    }
-    
-    // Fallback premium language
-    const baseText = promo.name.includes('Mercury') ? promo.name : `Mercury Dealer Exclusive`;
-    return timeFrame ? `${baseText} • ${timeFrame}` : baseText;
-  };
+  const warrantyYears = promotions.find(promo => promo.warranty_extra_years)?.warranty_extra_years || 0;
 
   return (
     <>
-      <Card className="rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden bg-card border border-border/50 hover:border-primary/20">
+      <div className="bg-[hsl(var(--luxury-white))] rounded-none shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer hover:-translate-y-0.5 group">
         <div className="relative">
-          {/* Image Section with luxury enhancements */}
+          {/* Image Section */}
           {imageUrl && (
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent z-10 pointer-events-none" />
+            <div className="relative bg-[hsl(var(--luxury-light-gray))] p-8">
               <img 
                 src={imageUrl} 
                 alt={title} 
-                className="h-40 sm:h-64 w-full object-contain bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 filter drop-shadow-lg" 
+                className="h-48 w-full object-contain" 
               />
               
-              {/* HP Badge - Enhanced luxury styling */}
+              {/* HP Badge */}
               {hpNum && (
-                <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold shadow-2xl border border-white/20">
+                <div className="absolute top-4 right-4 bg-[hsl(var(--luxury-black))] text-[hsl(var(--luxury-white))] px-3 py-1 text-xs font-light tracking-wider">
                   {hpNum} HP
                 </div>
               )}
               
-              {/* Mercury Logo - Enhanced with subtle glow */}
-              <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 opacity-70 group-hover:opacity-90 transition-opacity duration-300">
+              {/* Mercury Logo - 50% opacity */}
+              <div className="absolute bottom-4 right-4 opacity-50">
                 <img 
                   src={mercuryLogo}
                   alt="Mercury Marine"
-                  className="h-5 sm:h-6 w-auto filter drop-shadow-md"
+                  className="h-6 w-auto"
                 />
               </div>
             </div>
           )}
           
-          {/* Content Section - Enhanced luxury spacing with mobile optimization */}
-          <div className="p-3 sm:p-6 space-y-2.5 sm:space-y-4">
-            {/* Product Title - Premium typography */}
-            <div className="space-y-1 sm:space-y-2">
-              <h3 className="text-lg sm:text-2xl font-bold text-card-foreground leading-tight tracking-tight">
+          {/* Content Section */}
+          <div className="p-8 space-y-6">
+            {/* Model Information */}
+            <div className="space-y-2">
+              <h3 className="text-xl font-light tracking-wider text-[hsl(var(--luxury-black))] uppercase">
                 {title}
               </h3>
               {motor?.model_number && (
-                <p className="text-xs sm:text-sm text-muted-foreground font-mono bg-muted/30 px-2 py-1 rounded inline-block">
-                  Model: {motor.model_number}
+                <p className="text-xs text-[hsl(var(--luxury-medium-gray))] tracking-widest">
+                  MODEL {motor.model_number}
                 </p>
               )}
             </div>
             
-            {/* Quick Specs Strip - Mobile-optimized layout */}
-            <div className="bg-gradient-to-r from-muted/40 to-muted/60 rounded-xl p-2.5 sm:p-4 border border-border/30">
-              <div className="grid grid-cols-3 sm:flex sm:justify-between items-center gap-1.5 sm:gap-0 text-xs sm:text-sm">
-                {getShaftLength() && (
-                  <div className="flex items-center justify-center sm:justify-start gap-1 sm:gap-2">
-                    <div className="p-1 rounded-full bg-primary/10">
-                      <Ruler className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
-                    </div>
-                    <span className="font-semibold text-foreground text-center sm:text-left">{getShaftLength()}</span>
-                  </div>
-                )}
-                
-                <div className="flex items-center justify-center sm:justify-start gap-1 sm:gap-2">
-                  <div className="p-1 rounded-full bg-primary/10">
-                    <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
-                  </div>
-                  <span className="font-semibold text-foreground text-center sm:text-left">{getStartType()}</span>
-                </div>
-                
-                <div className="flex items-center justify-center sm:justify-start gap-1 sm:gap-2">
-                  <div className="p-1 rounded-full bg-primary/10">
-                    <Gamepad2 className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
-                  </div>
-                  <span className="font-semibold text-foreground text-center sm:text-left">{getControlType()}</span>
-                </div>
-              </div>
+            {/* Specifications */}
+            <div className="flex gap-4 text-xs text-[hsl(var(--luxury-medium-gray))] pt-4 border-t border-[hsl(var(--luxury-light-gray))]">
+              <span>{getStartType()}</span>
+              <span className="text-[hsl(var(--luxury-light-gray))]">|</span>
+              <span>{getControlType()}</span>
+              {getShaftLength() && (
+                <>
+                  <span className="text-[hsl(var(--luxury-light-gray))]">|</span>
+                  <span>{getShaftLength()} Shaft</span>
+                </>
+              )}
             </div>
             
-            {/* Premium Pricing Section - Luxury Auto Configurator Style */}
-            <div className="space-y-3 bg-gradient-to-br from-background to-muted/20 p-4 sm:p-6 rounded-xl border border-border/20">
-              {(() => {
-                const priceState = getPriceDisplayState(msrp, price, true);
-                
-                if (priceState.callForPrice) {
-                  return (
-                    <div className="space-y-3">
-                      <div className="text-2xl sm:text-3xl font-semibold text-card-foreground">Call for Price</div>
-                      {/* Subtle availability badge integrated under call for price */}
-                      <Badge className={`${stockInfo.className} px-2 py-1 text-xs font-medium rounded-full inline-flex items-center gap-1`}>
-                        <stockInfo.icon className="w-3 h-3" />
-                        {stockInfo.status === "In Stock" ? "✅ In Stock Today" : "⏳ Factory Order – 2-3 Weeks"}
-                      </Badge>
-                    </div>
-                  );
-                }
-                
-                const displayMSRP = priceState.isArtificialDiscount && msrp ? Math.round(msrp * 1.1) : msrp;
-                const displaySalePrice = priceState.isArtificialDiscount ? msrp : (price || msrp);
-                
-                return (
-                  <div className="space-y-3">
-                    {/* MSRP */}
-                    {displayMSRP && priceState.hasSale && (
-                      <div className="text-xs font-medium line-through tracking-wide" style={{ color: 'hsl(var(--pricing-msrp))' }}>
-                        MSRP: ${displayMSRP.toLocaleString()}
-                      </div>
-                    )}
-                    
-                    {/* Our Price */}
-                    {displaySalePrice && (
-                      <div className="space-y-1">
-                        <div className="text-xs font-medium uppercase tracking-wide" style={{ color: 'hsl(var(--pricing-msrp))' }}>
-                          OUR PRICE
-                        </div>
-                        <div className="text-2xl sm:text-3xl font-semibold tracking-tight" style={{ color: 'hsl(var(--pricing-our-price))' }}>
-                          ${displaySalePrice.toLocaleString()}
-                        </div>
-                      </div>
-                    )}
-                    
-                    {/* Savings */}
-                    {priceState.hasSale && priceState.savingsRounded > 0 && (
-                      <div className="text-base font-medium" style={{ color: 'hsl(var(--pricing-savings))' }}>
-                        You Save ${priceState.savingsRounded.toLocaleString()}
-                      </div>
-                    )}
-                    
-                    {/* Subtle availability badge */}
-                    <Badge className={`${stockInfo.className} px-2 py-1 text-xs font-medium rounded-full inline-flex items-center gap-1 mt-2`}>
-                      <stockInfo.icon className="w-3 h-3" />
-                      {stockInfo.status === "In Stock" ? "✅ In Stock Today" : "⏳ Factory Order – 2-3 Weeks"}
-                    </Badge>
-                  </div>
-                );
-              })()}
+            {/* Lead Time Badge */}
+            <div className="inline-flex items-center gap-2 bg-[hsl(var(--luxury-light-gray))] px-3 py-2 rounded-full">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span className="text-xs text-[hsl(var(--luxury-medium-gray))]">2-3 Weeks Delivery</span>
             </div>
-            
-            {/* Financing Info */}
-            {(() => {
-              const priceState = getPriceDisplayState(msrp, price, true);
-              const displaySalePrice = priceState.isArtificialDiscount ? msrp : (price || msrp);
-              
-              if (financingInfo && displaySalePrice && displaySalePrice > 5000) {
-                return (
-                  <div className="text-xs text-muted-foreground text-center">
-                    {getFinancingDisplay(displaySalePrice * 1.13, promo?.rate || null)}*
-                  </div>
-                );
-              }
-              return null;
-            })()}
 
-            {/* Premium Promo Banner - Elegant thin strip above CTA */}
-            {getPromoContent() && (
-              <div className="bg-slate-50/80 dark:bg-slate-800/50 border border-slate-200/50 dark:border-slate-700/50 rounded-lg px-3 py-2 mb-3">
-                <div className="flex items-center justify-center gap-2">
-                  <span className="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400">
-                    <span className="text-blue-600 dark:text-blue-400">◆</span> {getPromoContent()}
-                  </span>
-                </div>
+            {/* Warranty Badge */}
+            {hasWarrantyPromo && warrantyYears > 0 && (
+              <div className="text-xs text-[hsl(var(--luxury-mercury-blue))]">
+                ✓ Extended Coverage (+{warrantyYears} Years)
               </div>
             )}
             
-            {/* Premium CTA Button - Luxury Auto Configurator Style */}
+            {/* Pricing Section */}
+            <div className="space-y-2 pt-6">
+              {msrp && price && msrp !== price && (
+                <p className="text-xs text-[hsl(var(--luxury-medium-gray))] line-through">
+                  ${msrp.toLocaleString()}
+                </p>
+              )}
+              
+              {(price || msrp) && (
+                <p className="text-3xl font-light text-[hsl(var(--luxury-deep-red))]">
+                  ${(price || msrp)?.toLocaleString()}
+                </p>
+              )}
+              
+              {!price && !msrp && (
+                <p className="text-2xl font-light text-[hsl(var(--luxury-dark-gray))]">
+                  Call for Price
+                </p>
+              )}
+            </div>
+            
+            {/* CTA Button */}
             <Button 
-              variant="premiumCta"
-              className="w-full mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg py-3 px-6 sm:py-3.5 sm:px-7 lg:py-4 lg:px-8"
+              variant="luxuryConfigure"
+              className="w-full mt-8"
               onClick={handleMoreInfoClick}
             >
-              Request a Quote
+              Configure
             </Button>
           </div>
         </div>
-      </Card>
+      </div>
       
-      {/* Mobile/click details sheet - rendered via portal */}
+      {/* Details Sheet */}
       {showDetailsSheet && createPortal(
         <MotorDetailsSheet
           open={showDetailsSheet}

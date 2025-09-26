@@ -186,6 +186,15 @@
     --cta-navy-hover: 28 46 69; /* #1C2E45 - Navy Hover */
     --cta-navy-active: 0 8 20; /* #000814 - Navy Active */
 
+    /* Luxury Automotive Colors - Strict Monochrome Palette */
+    --luxury-black: 0 0% 0%; /* #000000 - Pure Black */
+    --luxury-white: 0 0% 100%; /* #FFFFFF - Pure White */
+    --luxury-light-gray: 0 0% 96%; /* #F5F5F5 - Light Gray Backgrounds */
+    --luxury-medium-gray: 218 11% 45%; /* #6B7280 - Secondary Text */
+    --luxury-dark-gray: 210 24% 16%; /* #111827 - Primary Text */
+    --luxury-deep-red: 0 75% 30%; /* #991B1B - Price Only */
+    --luxury-mercury-blue: 210 100% 25%; /* #003F7F - Single Accent */
+
     /* Promo badge tokens */
     --promo-gold-1: 46 90% 55%;
     --promo-gold-2: 36 95% 50%;
