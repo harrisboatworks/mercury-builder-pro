@@ -1,3 +1,5 @@
+import type { PriceStyle } from '@/config/pricingThemes';
+
 export type PriceDisplayState = {
   callForPrice: boolean;
   hasSale: boolean;
@@ -6,7 +8,12 @@ export type PriceDisplayState = {
   isArtificialDiscount?: boolean;
 };
 
-export function getPriceDisplayState(base_price?: number | null, sale_price?: number | null, inflateEqualPrices?: boolean): PriceDisplayState {
+export function getPriceDisplayState(
+  base_price?: number | null, 
+  sale_price?: number | null, 
+  inflateEqualPrices?: boolean,
+  priceStyle?: PriceStyle
+): PriceDisplayState {
   const base = typeof base_price === 'number' ? base_price : undefined;
   const sale = typeof sale_price === 'number' ? sale_price : undefined;
 

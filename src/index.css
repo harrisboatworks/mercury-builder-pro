@@ -226,6 +226,13 @@
     --mercury-blue: 207 100% 25%; /* Mercury official blue #003f7f */
     --mercury-red: 0 85% 55%; /* Mercury red accent */
     --mercury-silver: 210 11% 71%; /* Mercury silver/gray */
+    
+    /* Luxury Pricing Theme Tokens */
+    --luxury-price-label: 218 11% 42%; /* #6C757D - OUR PRICE labels */
+    --luxury-price-minimal: 0 0% 7%; /* #111111 - Minimal theme price */
+    --luxury-price-red-accent: 0 75% 30%; /* #B71C1C - Red accent theme price */
+    --luxury-msrp: 218 11% 42%; /* #6C757D - MSRP strikethrough */
+    --luxury-savings: 218 11% 42%; /* #6C757D - Savings text */
   }
 
   .dark {

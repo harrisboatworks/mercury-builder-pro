@@ -5,6 +5,7 @@ import { Info } from "lucide-react";
 import MotorQuickInfo from "./MotorQuickInfo";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import { StockBadge } from '@/components/inventory/StockBadge';
+import { LuxuryPriceDisplay } from '@/components/pricing/LuxuryPriceDisplay';
 import type { Motor } from '../../lib/motor-helpers';
 import { getHPDescriptor, getPopularityIndicator, getBadgeColor, requiresMercuryControls, isTillerMotor, getMotorImageByPriority, getMotorImageGallery, buildModelKey, extractHpAndCode } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -276,34 +277,15 @@ export default function MotorCardPremium({
           
           <div className="mt-2">
             {(() => {
-              // Use the pricing display state logic with artificial pricing enabled
-              const priceState = getPriceDisplayState(msrp, price, true);
-              
-              if (priceState.callForPrice) {
-                return <div className="text-lg font-bold text-foreground">Call for Price</div>;
-              }
-              
-              // Calculate display prices
-              const displayMSRP = priceState.isArtificialDiscount && msrp ? Math.round(msrp * 1.1) : msrp;
-              const displaySalePrice = priceState.isArtificialDiscount ? msrp : (price || msrp);
-              
-              return (
-                <div className="space-y-1">
-                  {displayMSRP && priceState.hasSale && (
-                    <div className="text-sm text-muted-foreground line-through">
-                      MSRP ${displayMSRP.toLocaleString()}
-                    </div>
-                  )}
-                  {displaySalePrice && (
-                    <div className="text-lg font-bold text-red-600">
-                      {priceState.hasSale ? 'Our Price ' : ''}${displaySalePrice.toLocaleString()}
-                    </div>
-                  )}
-                  {priceState.hasSale && priceState.savingsRounded > 0 && (
-                    <div className="inline-flex items-center px-2 py-1 rounded-md bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs font-medium">
-                      SAVE ${priceState.savingsRounded.toLocaleString()}
-                    </div>
-                  )}
+              {/* Luxury Pricing Section */}
+              <div className="mt-auto">
+                <div className="flex flex-col gap-1 min-h-[60px]">
+                  <LuxuryPriceDisplay
+                    msrp={msrp}
+                    salePrice={displaySalePrice}
+                    priceStyle="luxuryMinimal"
+                    showSavings={true}
+                  />
                   {promoText && (
                     <div className="mt-1 text-xs text-emerald-700 dark:text-emerald-300">
                       {promoText}

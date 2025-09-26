@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import { Button } from '@/components/ui/button';
+import { LuxuryPriceDisplay } from '@/components/pricing/LuxuryPriceDisplay';
 import type { Motor } from '../../lib/motor-helpers';
 import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery, decodeModelName, cleanMotorName } from '../../lib/motor-helpers';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -324,35 +325,14 @@ export default function MotorCardPreview({
               </div>
             )}
             
-            {/* Pricing Block - Premium but Unmistakable */}
-            <div className="space-y-1 pt-4">
-              {/* OUR PRICE Label */}
-              {(price || msrp) && (
-                <p className="text-xs text-[hsl(var(--luxury-our-price-label))] tracking-[0.02em] uppercase">
-                  Our Price
-                </p>
-              )}
-              
-              {/* Main Price - Responsive Font Sizing */}
-              {(price || msrp) && (
-                <p className="text-lg md:text-2xl font-semibold text-[hsl(var(--luxury-deep-red))]">
-                  ${(price || msrp)?.toLocaleString()}
-                </p>
-              )}
-              
-              {/* Savings Line */}
-              {showSavingsLine && calculateSavings() > 0 && (
-                <p className="text-xs text-[hsl(var(--pricing-savings))]">
-                  You Save ${calculateSavings().toLocaleString()}
-                </p>
-              )}
-              
-              {!price && !msrp && (
-                <p className="text-lg md:text-xl font-light text-[hsl(var(--luxury-dark-gray))]">
-                  Call for Price
-                </p>
-              )}
-            </div>
+            {/* Luxury Pricing Display */}
+            <LuxuryPriceDisplay
+              msrp={msrp}
+              salePrice={price}
+              priceStyle="luxuryMinimal"
+              showSavings={showSavingsLine}
+              className="pt-4"
+            />
             
             {/* CTA Button - Modern Style */}
             <Button 
