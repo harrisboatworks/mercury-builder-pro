@@ -93,7 +93,7 @@ export const decodeModelName = (modelName: string, actualHP?: number) => {
   }
 
   // Engine family & special designations
-  if (/FOUR\s*STROKE|FOURSTROKE/i.test(name)) add('FourStroke', '4-Stroke Engine', 'Quiet, fuel-efficient, no oil mixing');
+  if (/FOUR\s*STROKE|FOURSTROKE/i.test(name)) add('FourStroke', '4-Stroke', 'Quiet, fuel-efficient, no oil mixing');
   if (/SEAPRO/i.test(name)) add('SeaPro', 'Commercial Grade', 'Built for heavy use & durability');
   if (/PROKICKER/i.test(name)) add('ProKicker', 'Kicker Motor', 'Optimized for trolling & backup power');
   if (/JET\b/i.test(name)) add('Jet', 'Jet Drive', 'Great for shallow water operation');
