@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import type { Motor } from '../../lib/motor-helpers';
 import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery } from '../../lib/motor-helpers';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { useIsMobile } from '@/hooks/use-mobile';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 export default function MotorCardPreview({ 
@@ -49,6 +50,7 @@ export default function MotorCardPreview({
   const { promotions } = useActivePromotions();
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const isMobile = useIsMobile();
   
   // Get the best available image URL using priority logic
   const [imageInfo, setImageInfo] = useState<{ url: string }>({
@@ -121,17 +123,31 @@ export default function MotorCardPreview({
 
   const warrantyYears = promotions.find(promo => promo.warranty_extra_years)?.warranty_extra_years || 0;
 
+  // Utility functions for display
+  const formatTitle = (title: string) => {
+    return title.toLowerCase().replace(/\b\w/g, l => l.toUpperCase());
+  };
+
+  const getAvailabilityText = () => {
+    if (inStock) return "Ready for Pickup in 2–3 Weeks";
+    return "Factory Order — 2–3 Week Lead Time";
+  };
+
+  const getAvailabilityDotColor = () => {
+    return inStock ? "bg-green-500" : "bg-[hsl(var(--luxury-medium-gray))]";
+  };
+
   return (
     <>
       <div className="bg-[hsl(var(--luxury-white))] rounded-none shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer hover:-translate-y-0.5 group">
         <div className="relative">
           {/* Image Section */}
           {imageUrl && (
-            <div className="relative bg-[hsl(var(--luxury-light-gray))] p-8">
+            <div className="relative bg-[hsl(var(--luxury-light-gray))] p-4 md:p-8">
               <img 
                 src={imageUrl} 
                 alt={title} 
-                className="h-48 w-full object-contain" 
+                className="h-32 md:h-48 w-full object-contain aspect-[4/3]" 
               />
               
               {/* HP Badge */}
@@ -153,61 +169,61 @@ export default function MotorCardPreview({
           )}
           
           {/* Content Section */}
-          <div className="p-8 space-y-6">
+          <div className="p-4 md:p-8 space-y-3 md:space-y-6">
             {/* Model Information */}
-            <div className="space-y-2">
-              <h3 className="text-xl font-light tracking-wider text-[hsl(var(--luxury-black))] uppercase">
-                {title}
+            <div className="space-y-1 md:space-y-2">
+              <h3 className="text-lg md:text-xl font-light text-[hsl(var(--luxury-black))]">
+                {formatTitle(title)}
               </h3>
               {motor?.model_number && (
-                <p className="text-xs text-[hsl(var(--luxury-medium-gray))] tracking-widest">
-                  MODEL {motor.model_number}
+                <p className="text-xs text-[hsl(var(--luxury-medium-gray))]">
+                  Model: {motor.model_number}
                 </p>
               )}
             </div>
             
             {/* Specifications */}
-            <div className="flex gap-4 text-xs text-[hsl(var(--luxury-medium-gray))] pt-4 border-t border-[hsl(var(--luxury-light-gray))]">
+            <div className="flex flex-wrap gap-2 md:gap-4 text-xs text-[hsl(var(--luxury-medium-gray))] pt-3 md:pt-4 border-t border-[hsl(var(--luxury-light-gray))]">
               <span>{getStartType()}</span>
-              <span className="text-[hsl(var(--luxury-light-gray))]">|</span>
+              <span className="text-[hsl(var(--luxury-light-gray))]">•</span>
               <span>{getControlType()}</span>
               {getShaftLength() && (
                 <>
-                  <span className="text-[hsl(var(--luxury-light-gray))]">|</span>
-                  <span>{getShaftLength()} Shaft</span>
+                  <span className="text-[hsl(var(--luxury-light-gray))]">•</span>
+                  <span>{getShaftLength()}" Shaft</span>
                 </>
               )}
             </div>
             
-            {/* Lead Time Badge */}
+            {/* Availability Badge */}
             <div className="inline-flex items-center gap-2 bg-[hsl(var(--luxury-light-gray))] px-3 py-2 rounded-full">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span className="text-xs text-[hsl(var(--luxury-medium-gray))]">2-3 Weeks Delivery</span>
+              <div className={`w-2 h-2 ${getAvailabilityDotColor()} rounded-full`}></div>
+              <span className="text-xs text-[hsl(var(--luxury-medium-gray))]">{getAvailabilityText()}</span>
             </div>
 
-            {/* Warranty Badge */}
+            {/* Warranty Promotion */}
             {hasWarrantyPromo && warrantyYears > 0 && (
-              <div className="text-xs text-[hsl(var(--luxury-mercury-blue))]">
-                ✓ Extended Coverage (+{warrantyYears} Years)
+              <div className="text-xs md:text-sm text-[hsl(var(--luxury-mercury-blue))] leading-relaxed">
+                Mercury Promotion: {warrantyYears} Years Extended Coverage Included
               </div>
             )}
             
             {/* Pricing Section */}
-            <div className="space-y-2 pt-6">
+            <div className="space-y-1 md:space-y-2 pt-4 md:pt-6">
               {msrp && price && msrp !== price && (
-                <p className="text-xs text-[hsl(var(--luxury-medium-gray))] line-through">
+                <p className="text-xs md:text-sm text-[hsl(var(--luxury-medium-gray))] line-through">
                   ${msrp.toLocaleString()}
                 </p>
               )}
               
               {(price || msrp) && (
-                <p className="text-3xl font-light text-[hsl(var(--luxury-deep-red))]">
+                <p className="text-xl md:text-3xl font-light text-[hsl(var(--luxury-deep-red))]">
                   ${(price || msrp)?.toLocaleString()}
                 </p>
               )}
               
               {!price && !msrp && (
-                <p className="text-2xl font-light text-[hsl(var(--luxury-dark-gray))]">
+                <p className="text-lg md:text-2xl font-light text-[hsl(var(--luxury-dark-gray))]">
                   Call for Price
                 </p>
               )}
@@ -216,10 +232,10 @@ export default function MotorCardPreview({
             {/* CTA Button */}
             <Button 
               variant="luxuryConfigure"
-              className="w-full mt-8"
+              className="w-full mt-4 md:mt-8"
               onClick={handleMoreInfoClick}
             >
-              Configure
+              View Details
             </Button>
           </div>
         </div>

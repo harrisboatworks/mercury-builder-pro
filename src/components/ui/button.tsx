@@ -20,7 +20,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         luxury: "bg-slate-900 text-white hover:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300",
         premiumCta: "bg-[hsl(var(--cta-navy))] text-white font-medium rounded-lg shadow-sm transition-all duration-200 touch-manipulation min-h-[44px] hover:bg-[hsl(var(--cta-navy-hover))] active:bg-[hsl(var(--cta-navy-active))] focus-visible:ring-2 focus-visible:ring-[hsl(var(--cta-navy))] focus-visible:ring-offset-2 [@media(hover:hover)]:hover:shadow-md [@media(hover:none)]:hover:bg-[hsl(var(--cta-navy))]",
-        luxuryConfigure: "bg-[hsl(var(--luxury-black))] text-[hsl(var(--luxury-white))] font-light uppercase tracking-widest rounded-none shadow-sm hover:bg-gray-900 transition-all duration-300 py-4 text-sm min-h-[48px]",
+        luxuryConfigure: "bg-[hsl(var(--luxury-black))] text-[hsl(var(--luxury-white))] font-normal rounded-none shadow-sm hover:bg-gray-900 transition-all duration-300 text-[15px] md:text-sm py-3 md:py-4 px-4 min-h-[48px] tracking-normal",
       },
       size: {
         default: "h-10 px-4 py-2",
