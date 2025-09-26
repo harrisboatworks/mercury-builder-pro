@@ -417,8 +417,7 @@ export default function MotorSelectionPage() {
                    motor.model.includes('DTS') ? 'digital throttle & shift' : undefined);
                 
                  // Get hero image URL from joined data or fallback  
-                 const motorData = motor as any;
-                 const heroImageUrl = motorData.hero_media?.media_url || motorData.hero_image_url || motorData.image_url || null;
+                 const heroImageUrl = (dbMotor as any)?.hero_media?.media_url || dbMotor?.image_url || motor.image || null;
                  
                  return (
                   <div className="w-full max-w-sm mx-auto">
