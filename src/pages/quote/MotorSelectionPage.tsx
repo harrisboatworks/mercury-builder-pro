@@ -416,11 +416,15 @@ export default function MotorSelectionPage() {
                    motor.model.includes('ELPT') ? 'electric power tilt' :
                    motor.model.includes('DTS') ? 'digital throttle & shift' : undefined);
                 
+                 // Get hero image URL from joined data or fallback  
+                 const motorData = motor as any;
+                 const heroImageUrl = motorData.hero_media?.media_url || motorData.hero_image_url || motorData.image_url || null;
+                 
                  return (
                   <div className="w-full max-w-sm mx-auto">
                     <MotorCardPremium
                     key={motor.id}
-                    img={motor.image}
+                    img={heroImageUrl}
                     title={motor.model}
                     hp={motor.hp}
                     msrp={motor.basePrice}
