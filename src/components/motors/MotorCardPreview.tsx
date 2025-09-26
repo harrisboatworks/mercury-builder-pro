@@ -319,13 +319,22 @@ export default function MotorCardPreview({
               </div>
             </div>
             
-            {/* Premium Pricing Section - Mobile-optimized */}
+            {/* Premium Pricing Section with Integrated Availability - Mobile-optimized */}
             <div className="space-y-2 sm:space-y-3 bg-gradient-to-br from-background to-muted/20 p-4 sm:p-6 rounded-xl border border-border/20">
               {(() => {
                 const priceState = getPriceDisplayState(msrp, price, true);
                 
                 if (priceState.callForPrice) {
-                  return <div className="text-2xl sm:text-3xl font-bold text-card-foreground">Call for Price</div>;
+                  return (
+                    <div className="space-y-2">
+                      <div className="text-2xl sm:text-3xl font-bold text-card-foreground">Call for Price</div>
+                      {/* Subtle availability badge integrated under call for price */}
+                      <Badge className={`${stockInfo.className} px-2 py-1 text-xs font-medium rounded-full inline-flex items-center gap-1`}>
+                        <stockInfo.icon className="w-3 h-3" />
+                        {stockInfo.status === "In Stock" ? "✅ In Stock Today" : "⏳ Factory Order – 2-3 Weeks"}
+                      </Badge>
+                    </div>
+                  );
                 }
                 
                 const displayMSRP = priceState.isArtificialDiscount && msrp ? Math.round(msrp * 1.1) : msrp;
@@ -348,24 +357,14 @@ export default function MotorCardPreview({
                         You Save ${priceState.savingsRounded.toLocaleString()}
                       </div>
                     )}
+                    {/* Subtle availability badge integrated under savings */}
+                    <Badge className={`${stockInfo.className} px-2 py-1 text-xs font-medium rounded-full inline-flex items-center gap-1 mt-2`}>
+                      <stockInfo.icon className="w-3 h-3" />
+                      {stockInfo.status === "In Stock" ? "✅ In Stock Today" : "⏳ Factory Order – 2-3 Weeks"}
+                    </Badge>
                   </div>
                 );
               })()}
-            </div>
-            
-            {/* Luxury Availability Badge - Mobile-optimized */}
-            <div className="flex flex-col items-center space-y-2 sm:space-y-3">
-              <Badge className={`${stockInfo.className} px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-full shadow-lg border border-white/20`}>
-                <stockInfo.icon className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
-                {stockInfo.status === "In Stock" ? "In Stock Today" : "Factory Order – 2-3 Weeks"}
-              </Badge>
-              
-              {/* Dynamic Promo Badge System */}
-              {getPromoContent() && (
-                <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg border border-blue-500/20 text-center">
-                  {getPromoContent()}
-                </div>
-              )}
             </div>
             
             {/* Financing Info */}
@@ -382,6 +381,17 @@ export default function MotorCardPreview({
               }
               return null;
             })()}
+
+            {/* Promo Banner - Distinct ribbon/strip style positioned above CTA */}
+            {getPromoContent() && (
+              <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 border border-blue-200 dark:border-blue-700 rounded-xl p-3 sm:p-4 mx-2 mb-2">
+                <div className="flex items-center justify-center gap-2 text-blue-800 dark:text-blue-100">
+                  <span className="text-sm sm:text-base font-semibold">
+                    🎁 {getPromoContent()?.replace('🎁 ', '')} • Limited Time Offer
+                  </span>
+                </div>
+              </div>
+            )}
             
             {/* Premium CTA Button - Mobile-optimized */}
             <Button 
