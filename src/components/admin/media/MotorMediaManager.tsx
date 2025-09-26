@@ -190,29 +190,86 @@ export function MotorMediaManager() {
   };
 
   const setHeroMedia = async (mediaId: string | null, motorId: string) => {
+    console.log('🎯 setHeroMedia called with:', { 
+      mediaId, 
+      motorId, 
+      selectedMotor: selectedMotor?.model_display,
+      action: mediaId ? 'SET_HERO' : 'CLEAR_HERO'
+    });
+
+    if (!motorId) {
+      console.error('❌ setHeroMedia: No motorId provided');
+      return;
+    }
+
     try {
-      const { error } = await supabase
+      // First, let's check the current state before update
+      const { data: beforeUpdate, error: checkError } = await supabase
+        .from('motor_models')
+        .select('id, model_display, hero_media_id')
+        .eq('id', motorId)
+        .single();
+
+      if (checkError) {
+        console.error('❌ Error checking current state:', checkError);
+        throw checkError;
+      }
+
+      console.log('📋 Current state before update:', beforeUpdate);
+
+      // Perform the update
+      const { data, error } = await supabase
         .from('motor_models')
         .update({ hero_media_id: mediaId })
-        .eq('id', motorId);
+        .eq('id', motorId)
+        .select('id, model_display, hero_media_id');
 
-      if (error) throw error;
+      console.log('🔧 Database update result:', { data, error });
 
-      setMotors(prev => prev.map(motor => 
-        motor.id === motorId 
-          ? { ...motor, hero_media_id: mediaId }
-          : motor
-      ));
+      if (error) {
+        console.error('❌ Database update failed:', error);
+        throw error;
+      }
+
+      if (!data || data.length === 0) {
+        console.error('❌ No data returned from update - motor not found?');
+        throw new Error('Motor not found or update failed');
+      }
+
+      const updatedMotor = data[0];
+      console.log('✅ Motor updated successfully:', updatedMotor);
+
+      // Update local state to reflect the change immediately
+      setMotors(prev => {
+        const updated = prev.map(motor => 
+          motor.id === motorId 
+            ? { ...motor, hero_media_id: mediaId }
+            : motor
+        );
+        console.log('🔄 Local state updated for motor:', motorId);
+        return updated;
+      });
+
+      // Also update the selected motor if it matches
+      if (selectedMotor && selectedMotor.id === motorId) {
+        setSelectedMotor(prev => prev ? { ...prev, hero_media_id: mediaId } : prev);
+        console.log('🎯 Selected motor state updated');
+      }
+
+      // Reload motor data to ensure consistency
+      loadMotors();
+      
+      console.log('🎉 Hero media update completed successfully');
 
       toast({
         title: "Hero media updated",
-        description: mediaId ? "Hero media has been set." : "Hero media has been cleared.",
+        description: mediaId ? `Hero media set for ${updatedMotor.model_display}` : `Hero media cleared for ${updatedMotor.model_display}`,
       });
     } catch (error) {
-      console.error('Failed to update hero media:', error);
+      console.error('💥 setHeroMedia failed:', error);
       toast({
         title: "Failed to update hero media",
-        description: "Please try again.",
+        description: `Error: ${error instanceof Error ? error.message : 'Unknown error'}`,
         variant: "destructive",
       });
     }
