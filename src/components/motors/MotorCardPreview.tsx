@@ -1,10 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Shield, Zap, Weight, Ruler } from "lucide-react";
+import { Shield, Zap, Weight, Ruler, Settings, Gamepad2, Check, Clock, X } from "lucide-react";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import { StockBadge } from '@/components/inventory/StockBadge';
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import type { Motor } from '../../lib/motor-helpers';
 import { getHPDescriptor, getPopularityIndicator, getBadgeColor, requiresMercuryControls, isTillerMotor, getMotorImageByPriority, getMotorImageGallery, buildModelKey, extractHpAndCode } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -175,175 +177,191 @@ export default function MotorCardPreview({
     }, 10); // Small delay to ensure DOM updates
   };
 
+  // Helper functions for Quick Specs
+  const getShaftLength = () => {
+    if (motor?.shaft_inches) return `${motor.shaft_inches}"`;
+    if (shaft) return shaft;
+    return null;
+  };
+
+  const getStartType = () => {
+    if (hpNum && hpNum >= 40) return "Electric";
+    return "Manual";
+  };
+
+  const getControlType = () => {
+    if (motor && isTillerMotor(motor.model || title)) return "Tiller";
+    return "Remote";
+  };
+
+  // Enhanced stock status with plain language
+  const getStockStatus = () => {
+    const hasRealStock = motor?.stock_quantity && motor.stock_quantity > 0 && 
+                        motor?.stock_number && motor.stock_number !== 'N/A' && motor.stock_number.trim() !== '';
+    const isInStock = motor?.in_stock === true || hasRealStock;
+    
+    if (isInStock) {
+      return {
+        status: "In Stock",
+        icon: Check,
+        className: "bg-in-stock text-in-stock-foreground"
+      };
+    } else {
+      // Check if it's orderable vs truly out of stock
+      return {
+        status: "Ships in 2–3 Weeks",
+        icon: Clock,
+        className: "bg-on-order text-on-order-foreground"
+      };
+    }
+  };
+
+  const stockInfo = getStockStatus();
+
   return (
     <>
-      <Card className="rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.01] transition-all duration-200 cursor-pointer border-t-2 border-[hsl(var(--primary))] overflow-hidden">
-        <button 
-          onClick={handleMoreInfoClick} 
-          className="text-left w-full transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800/50 p-0"
-        >
-          {/* Image Section with HP Badge Overlay */}
-          <div className="relative">
-            {imageUrl && (
-              <div className="relative">
-                <img 
-                  src={imageUrl} 
-                  alt="" 
-                  className="h-96 w-full object-contain max-h-96 bg-white dark:bg-slate-900" 
-                />
-                
-                {/* HP Badge Overlay - Top Right */}
-                {hpNum && (
-                  <div className="absolute top-3 right-3 bg-gradient-to-r from-gray-900 to-gray-700 text-white px-3 py-1 rounded-md text-sm font-bold shadow-lg">
-                    {hpNum} HP
-                  </div>
-                )}
-                
-                {/* Stock Badge - Top Left */}
-                {inStock && (
-                  <div className="absolute top-3 left-3">
-                    <StockBadge 
-                      motor={{
-                        in_stock: inStock,
-                        stock_quantity: motor?.stock_quantity,
-                        stock_number: motor?.stock_number,
-                        availability: motor?.availability
-                      }}
-                      variant="compact"
-                      className="backdrop-blur-sm bg-primary/90"
-                    />
-                  </div>
-                )}
-                
-                {/* Mercury Logo - Bottom Right */}
-                <div className="absolute bottom-3 right-3 opacity-70">
-                  <img 
-                    src={mercuryLogo}
-                    alt="Mercury Marine"
-                    className="h-6 w-auto"
-                  />
+      <Card className="rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden bg-card border border-border">
+        <div className="relative">
+          {/* Image Section with overlays */}
+          {imageUrl && (
+            <div className="relative">
+              <img 
+                src={imageUrl} 
+                alt={title} 
+                className="h-80 w-full object-contain bg-white dark:bg-slate-900" 
+              />
+              
+              {/* HP Badge - Top Right */}
+              {hpNum && (
+                <div className="absolute top-3 right-3 bg-primary text-primary-foreground px-3 py-1.5 rounded-lg text-sm font-bold shadow-lg">
+                  {hpNum} HP
                 </div>
-                
+              )}
+              
+              {/* Mercury Logo - Bottom Right */}
+              <div className="absolute bottom-3 right-3 opacity-60">
+                <img 
+                  src={mercuryLogo}
+                  alt="Mercury Marine"
+                  className="h-5 w-auto"
+                />
               </div>
-            )}
-          </div>
+            </div>
+          )}
           
           {/* Content Section */}
-          <div className="p-4">
-            {/* Model Name - Enhanced Typography */}
-            <div className="text-xl font-bold text-gray-900 dark:text-white mb-1">
-              {title}
+          <div className="p-6 space-y-4">
+            {/* Product Title - Bold and prominent */}
+            <div>
+              <h3 className="text-xl font-bold text-card-foreground leading-tight">
+                {title}
+              </h3>
+              {motor?.model_number && (
+                <p className="text-sm text-muted-foreground mt-1 font-mono">
+                  Model: {motor.model_number}
+                </p>
+              )}
             </div>
             
-            {/* Mercury Model Number */}
-            {motor?.model_number && (
-              <div className="text-sm text-gray-600 dark:text-gray-400 mb-2 font-mono">
-                Model: {motor.model_number}
-              </div>
-            )}
-            
-            {/* HP-based descriptor and popularity indicators */}
-            {hpNum && (
-              <div className="mb-3 space-y-1">
-                {/* HP-based descriptor - always show */}
-                <p className="text-sm text-gray-600 dark:text-slate-400">
-                  {getHPDescriptor(hpNum)}
-                </p>
-                
-                {/* Controls required indicator for non-tiller motors */}
-                {motor && requiresMercuryControls(motor) && (
-                  <p className="text-sm text-blue-600 dark:text-blue-300 font-medium">
-                    + Controls Required
-                  </p>
+            {/* Quick Specs Strip */}
+            <div className="bg-muted/50 rounded-lg p-3">
+              <div className="flex justify-between items-center text-sm">
+                {getShaftLength() && (
+                  <div className="flex items-center gap-1">
+                    <Ruler className="w-4 h-4 text-muted-foreground" />
+                    <span className="font-medium text-muted-foreground">{getShaftLength()}</span>
+                  </div>
                 )}
                 
-                {/* Badge container - ALWAYS rendered with minimum height to prevent layout shift */}
-                <div className="h-4 transition-opacity duration-300">
-                  {motorBadge && (
-                    <p className={`text-sm font-medium transition-all duration-300 ${getBadgeColor(motorBadge)}`}>
-                      {motorBadge}
-                    </p>
-                  )}
+                <div className="flex items-center gap-1">
+                  <Zap className="w-4 h-4 text-muted-foreground" />
+                  <span className="font-medium text-muted-foreground">{getStartType()}</span>
+                </div>
+                
+                <div className="flex items-center gap-1">
+                  <Gamepad2 className="w-4 h-4 text-muted-foreground" />
+                  <span className="font-medium text-muted-foreground">{getControlType()}</span>
                 </div>
               </div>
-            )}
+            </div>
             
-            {/* Enhanced Pricing Section */}
-            <div className="mb-4">
+            {/* Redesigned Pricing Section */}
+            <div className="space-y-2">
               {(() => {
-                // Use the pricing display state logic with artificial pricing enabled
                 const priceState = getPriceDisplayState(msrp, price, true);
                 
                 if (priceState.callForPrice) {
-                  return <div className="text-lg font-bold text-foreground">Call for Price</div>;
+                  return <div className="text-2xl font-bold text-card-foreground">Call for Price</div>;
                 }
                 
-                // Calculate display prices
                 const displayMSRP = priceState.isArtificialDiscount && msrp ? Math.round(msrp * 1.1) : msrp;
                 const displaySalePrice = priceState.isArtificialDiscount ? msrp : (price || msrp);
                 
                 return (
-                  <>
-                    <div className="space-y-2">
-                      {displayMSRP && priceState.hasSale && (
-                        <div className="text-sm text-gray-500 line-through">
-                          MSRP ${displayMSRP.toLocaleString()}
-                        </div>
-                      )}
-                      {displaySalePrice && (
-                        <div className="text-2xl font-bold text-red-600 mt-2">
-                          {priceState.hasSale ? 'Your Price ' : ''}${displaySalePrice.toLocaleString()}
-                        </div>
-                      )}
-                      {priceState.hasSale && priceState.savingsRounded > 0 && (
-                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300 text-sm font-semibold">
-                          SAVE ${priceState.savingsRounded.toLocaleString()}
-                        </div>
-                      )}
-                    </div>
-                    
-                    {/* Financing Info - moved inside the closure to access displaySalePrice */}
-                    {financingInfo && displaySalePrice && displaySalePrice > 5000 && (
-                      <div className="text-xs text-muted-foreground mt-2">
-                        {getFinancingDisplay(displaySalePrice * 1.13, promo?.rate || null)}*
+                  <div className="space-y-2">
+                    {displayMSRP && priceState.hasSale && (
+                      <div className="text-sm text-muted-foreground line-through">
+                        MSRP ${displayMSRP.toLocaleString()}
                       </div>
                     )}
-                  </>
+                    {displaySalePrice && (
+                      <div className="text-3xl font-bold text-red-600">
+                        ${displaySalePrice.toLocaleString()}
+                      </div>
+                    )}
+                    {priceState.hasSale && priceState.savingsRounded > 0 && (
+                      <Badge className="bg-green-600 text-white text-sm">
+                        SAVE ${priceState.savingsRounded.toLocaleString()}
+                      </Badge>
+                    )}
+                  </div>
                 );
               })()}
             </div>
             
-            {/* Enhanced Promo Badge - Always Display */}
-            <div className="mb-3">
-              <div className="inline-flex items-center gap-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">
-                <Shield className="w-4 h-4" />
-                {promoText || promotions[0]?.bonus_title || promotions[0]?.name || "Special Offers Available"}
-              </div>
+            {/* Stock Status Badge */}
+            <div className="flex justify-center">
+              <Badge className={`${stockInfo.className} px-4 py-2 text-sm font-semibold`}>
+                <stockInfo.icon className="w-4 h-4 mr-2" />
+                {stockInfo.status}
+              </Badge>
             </div>
             
-            {/* Specs footer with key info (no redundant HP) */}
-            <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
-              <div className="flex items-center justify-center gap-6 text-xs">
-                {/* Weight if available */}
-                {parsedWeight && (
-                  <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
-                    <Weight className="w-3 h-3 text-gray-400" />
-                    <span className="font-semibold">{parsedWeight} lbs</span>
-                  </div>
-                )}
-                
-                {/* Shaft if available */}
-                {motor?.shaft_inches && (
-                  <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
-                    <Ruler className="w-3 h-3 text-gray-400" />
-                    <span className="font-semibold">{motor.shaft_inches}" Shaft</span>
-                  </div>
-                )}
+            {/* Promo Badge */}
+            {(promoText || promotions[0]?.bonus_title || promotions[0]?.name) && (
+              <div className="flex justify-center">
+                <Badge variant="warranty" className="px-3 py-1">
+                  <Shield className="w-4 h-4 mr-1" />
+                  {promoText || promotions[0]?.bonus_title || promotions[0]?.name || "Special Offers Available"}
+                </Badge>
               </div>
-            </div>
+            )}
             
+            {/* Financing Info */}
+            {(() => {
+              const priceState = getPriceDisplayState(msrp, price, true);
+              const displaySalePrice = priceState.isArtificialDiscount ? msrp : (price || msrp);
+              
+              if (financingInfo && displaySalePrice && displaySalePrice > 5000) {
+                return (
+                  <div className="text-xs text-muted-foreground text-center">
+                    {getFinancingDisplay(displaySalePrice * 1.13, promo?.rate || null)}*
+                  </div>
+                );
+              }
+              return null;
+            })()}
+            
+            {/* CTA Button */}
+            <Button 
+              onClick={handleMoreInfoClick}
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3"
+              size="lg"
+            >
+              View Details & Add to Quote
+            </Button>
           </div>
-        </button>
+        </div>
       </Card>
       
       {/* Mobile/click details sheet - rendered via portal */}
