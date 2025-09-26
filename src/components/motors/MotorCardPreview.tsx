@@ -13,6 +13,32 @@ import { useFinancing } from '@/contexts/FinancingContext';
 import { getFinancingDisplay } from '@/lib/finance';
 import { getPriceDisplayState } from '@/lib/pricing';
 
+// Helper function to extract weight from motor specifications
+const parseMotorWeight = (motor?: Motor): string | null => {
+  if (!motor?.specifications) return null;
+  
+  // Try different weight field variations
+  const weightFields = [
+    'Dry Weight (lbs/kg)',
+    'weight',
+    'Weight',
+    'Dry Weight'
+  ];
+  
+  for (const field of weightFields) {
+    const weightValue = motor.specifications[field];
+    if (weightValue) {
+      // Parse numeric value from strings like "85lbs/38.5kg (MRC model)" or "85"
+      const match = String(weightValue).match(/(\d+(?:\.\d+)?)/);
+      if (match) {
+        return match[1];
+      }
+    }
+  }
+  
+  return null;
+};
+
 export default function MotorCardPreview({ 
   img, 
   title, 
@@ -54,6 +80,7 @@ export default function MotorCardPreview({
 }) {
   const fmt = (n?: number | null) => (typeof n === "number" ? `$${n.toLocaleString()}` : undefined);
   const hpNum = typeof hp === "string" ? parseFloat(hp) : (typeof hp === "number" ? hp : undefined);
+  const parsedWeight = parseMotorWeight(motor);
   const isMobile = useIsMobile();
   const [showTooltip, setShowTooltip] = useState(false);
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
@@ -286,15 +313,13 @@ export default function MotorCardPreview({
               })()}
             </div>
             
-            {/* Enhanced Promo Badge */}
-            {promoText && (
-              <div className="mb-3">
-                <div className="inline-flex items-center gap-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">
-                  <Shield className="w-4 h-4" />
-                  {promoText}
-                </div>
+            {/* Enhanced Promo Badge - Always Display */}
+            <div className="mb-3">
+              <div className="inline-flex items-center gap-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">
+                <Shield className="w-4 h-4" />
+                {promoText || "Mercury Certified"}
               </div>
-            )}
+            </div>
             
             {/* Specs footer with proper styling */}
             <div className="mt-3 pt-3 border-t border-gray-200">
@@ -306,10 +331,10 @@ export default function MotorCardPreview({
                 </div>
                 
                 {/* Weight if available */}
-                {motor?.specifications?.weight && (
+                {parsedWeight && (
                   <div className="flex items-center gap-1 text-gray-700">
                     <Weight className="w-3 h-3 text-gray-400" />
-                    <span className="font-semibold">{motor.specifications.weight} lbs</span>
+                    <span className="font-semibold">{parsedWeight} lbs</span>
                   </div>
                 )}
                 
