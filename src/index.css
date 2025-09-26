@@ -197,6 +197,11 @@
     --badge-black-1: 220 15% 15%; /* Mercury Black - bottom badge */
     --badge-black-2: 220 15% 8%;
     --badge-black-border: 220 15% 5%;
+    
+    /* Mercury brand colors for preview components */
+    --mercury-blue: 207 100% 25%; /* Mercury official blue #003f7f */
+    --mercury-red: 0 85% 55%; /* Mercury red accent */
+    --mercury-silver: 210 11% 71%; /* Mercury silver/gray */
   }
 
   .dark {
