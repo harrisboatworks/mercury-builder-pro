@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import { Button } from '@/components/ui/button';
 import type { Motor } from '../../lib/motor-helpers';
-import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery } from '../../lib/motor-helpers';
+import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery, decodeModelName, cleanMotorName } from '../../lib/motor-helpers';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
@@ -157,8 +157,31 @@ export default function MotorCardPreview({
     return inStock ? "bg-green-500" : "bg-[hsl(var(--luxury-medium-gray))]";
   };
 
-  // Build specs array for single-line display
+  // Build specs array for single-line display using rigging code breakdown
   const getSpecsDisplay = () => {
+    if (!motor?.model && !title) return "";
+    
+    // Use decodeModelName to get accurate rigging code breakdown
+    const decodedItems = decodeModelName(motor?.model || title, hpNum);
+    
+    if (decodedItems && decodedItems.length > 0) {
+      // Take the first 3-4 most important items for single-line display
+      const topSpecs = decodedItems.slice(0, 4).map(item => item.meaning);
+      
+      // Add Power Trim & Tilt for motors 40 HP and above if not already included
+      if (hpNum && hpNum >= 40) {
+        const hasPowerTrim = topSpecs.some(spec => 
+          spec.toLowerCase().includes('power') || spec.toLowerCase().includes('trim')
+        );
+        if (!hasPowerTrim) {
+          topSpecs.push("Power Trim & Tilt");
+        }
+      }
+      
+      return topSpecs.join(" • ");
+    }
+    
+    // Fallback to current logic if decoding fails
     const specs = [];
     
     const startType = getStartType();
