@@ -237,13 +237,13 @@ export default function MotorCardPremium({
                 </div>
               </div>
             )}
-            <div className="text-lg font-semibold text-slate-900 dark:text-white">
+            <div className="text-xl md:text-2xl font-semibold text-slate-900 dark:text-white">
               {title}
             </div>
             
             {/* Mercury Model Number */}
             {motor?.model_number && (
-              <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-mono">
+              <div className="text-sm text-slate-500 dark:text-slate-400 mt-1 font-mono">
                 Model: {motor.model_number}
               </div>
             )}
@@ -252,13 +252,13 @@ export default function MotorCardPremium({
             {hpNum && (
               <div className="mt-1 space-y-1">
                 {/* HP-based descriptor - always show */}
-                <p className="text-xs text-slate-600 dark:text-slate-400">
+                <p className="text-base text-slate-600 dark:text-slate-400">
                   {getHPDescriptor(hpNum)}
                 </p>
                 
                 {/* Controls required indicator for non-tiller motors */}
                 {motor && requiresMercuryControls(motor) && (
-                  <p className="text-xs text-blue-600 dark:text-blue-300 font-medium">
+                  <p className="text-sm text-blue-600 dark:text-blue-300 font-medium">
                     + Controls Required
                   </p>
                 )}
@@ -266,7 +266,7 @@ export default function MotorCardPremium({
                 {/* Badge container - ALWAYS rendered with minimum height to prevent layout shift */}
                 <div className="h-4 transition-opacity duration-300">
                   {motorBadge && (
-                    <p className={`text-xs font-medium transition-all duration-300 ${getBadgeColor(motorBadge)}`}>
+                    <p className={`text-sm font-medium transition-all duration-300 ${getBadgeColor(motorBadge)}`}>
                       {motorBadge}
                     </p>
                   )}
@@ -287,12 +287,12 @@ export default function MotorCardPremium({
                   inflateEqualPrices={true}
                 />
                 {promoText && (
-                  <div className="mt-1 text-xs text-emerald-700 dark:text-emerald-300">
+                  <div className="mt-1 text-sm md:text-base text-emerald-700 dark:text-emerald-300">
                     {promoText}
                   </div>
                 )}
                 {financingInfo && (price || msrp) && (price || msrp)! > 5000 && (
-                  <div className="text-xs text-muted-foreground mt-1">
+                  <div className="text-sm text-muted-foreground mt-1">
                     {getFinancingDisplay(((price || msrp)! * 1.13), promo?.rate || null)}*
                   </div>
                 )}

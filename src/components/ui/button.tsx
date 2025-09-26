@@ -24,9 +24,9 @@ const buttonVariants = cva(
         luxuryModern: "bg-[hsl(var(--luxury-black))] text-[hsl(var(--luxury-white))] font-medium rounded-[10px] shadow-sm hover:bg-[#1C2E45] active:bg-[#000814] transition-all duration-200 min-h-[48px] px-4 py-3 text-[15px] md:text-[16px]",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
+        default: "h-10 px-4 py-2 text-base font-medium",
+        sm: "h-9 rounded-md px-3 text-base font-medium",
+        lg: "h-11 rounded-md px-8 text-base font-medium",
         icon: "h-10 w-10",
       },
     },
