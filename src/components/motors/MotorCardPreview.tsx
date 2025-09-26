@@ -423,12 +423,11 @@ export default function MotorCardPreview({
               </div>
             )}
             
-            {/* Premium CTA Button - Mobile-optimized */}
+            {/* Premium CTA Button - Luxury Auto Configurator Style */}
             <Button 
+              variant="premiumCta"
+              className="w-full mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg py-3 px-6 sm:py-3.5 sm:px-7 lg:py-4 lg:px-8"
               onClick={handleMoreInfoClick}
-              variant="luxury"
-              className="w-full font-bold py-3 sm:py-4 text-base sm:text-lg rounded-xl min-h-[44px] touch-manipulation"
-              size="lg"
             >
               Request a Quote
             </Button>

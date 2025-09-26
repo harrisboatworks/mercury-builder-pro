@@ -181,6 +181,11 @@
     --pricing-our-price: 0 71% 42%; /* #B71C1C - Deep Refined Red */
     --pricing-savings: 122 39% 33%; /* #2E7D32 - Elegant Green */
 
+    /* Premium CTA Button Colors - Luxury Auto Configurator Style */
+    --cta-navy: 10 26 47; /* #0A1A2F - Deep Navy */
+    --cta-navy-hover: 28 46 69; /* #1C2E45 - Navy Hover */
+    --cta-navy-active: 0 8 20; /* #000814 - Navy Active */
+
     /* Promo badge tokens */
     --promo-gold-1: 46 90% 55%;
     --promo-gold-2: 36 95% 50%;

@@ -19,6 +19,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         luxury: "bg-slate-900 text-white hover:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300",
+        premiumCta: "bg-[hsl(var(--cta-navy))] text-white font-medium rounded-lg shadow-sm transition-all duration-200 touch-manipulation min-h-[44px] hover:bg-[hsl(var(--cta-navy-hover))] active:bg-[hsl(var(--cta-navy-active))] focus-visible:ring-2 focus-visible:ring-[hsl(var(--cta-navy))] focus-visible:ring-offset-2 [@media(hover:hover)]:hover:shadow-md [@media(hover:none)]:hover:bg-[hsl(var(--cta-navy))]",
       },
       size: {
         default: "h-10 px-4 py-2",
