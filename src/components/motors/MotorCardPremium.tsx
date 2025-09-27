@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Info } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import MotorQuickInfo from "./MotorQuickInfo";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import { StockBadge } from '@/components/inventory/StockBadge';
@@ -56,6 +57,7 @@ export default function MotorCardPremium({
   const fmt = (n?: number | null) => (typeof n === "number" ? `$${n.toLocaleString()}` : undefined);
   const hpNum = typeof hp === "string" ? parseFloat(hp) : (typeof hp === "number" ? hp : undefined);
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
   const [showTooltip, setShowTooltip] = useState(false);
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
   const [motorBadge, setMotorBadge] = useState<string | null>(null);
@@ -129,11 +131,17 @@ export default function MotorCardPremium({
   // Check if device has fine pointer (mouse) for hover
   const hasHover = typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches;
   
+  const handleCardClick = () => {
+    if (motor?.id) {
+      navigate(`/motors/${motor.id}`);
+    }
+  };
+  
   const handleMoreInfoClick = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent card selection
-    // Store current scroll position before opening modal
-    setScrollPosition(window.scrollY);
-    setShowDetailsSheet(true);
+    e.stopPropagation();
+    if (motor?.id) {
+      navigate(`/motors/${motor.id}`);
+    }
   };
 
   const handleCloseModal = () => {
@@ -224,7 +232,10 @@ export default function MotorCardPremium({
 
   return (
     <>
-      <div className="group bg-white shadow-sm rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1">
+      <div 
+        className="group bg-white shadow-sm rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 cursor-pointer"
+        onClick={handleCardClick}
+      >
         <div className="relative">
           {/* Image Section */}
           {imageUrl && (
@@ -301,7 +312,7 @@ export default function MotorCardPremium({
             
             {/* Premium Black Button */}
             <button 
-              className="w-full bg-black text-white py-4 text-base font-light tracking-wider uppercase mt-6 rounded-none hover:bg-gray-900 transition-colors"
+              className="w-full bg-black text-white py-4 text-base font-light tracking-wider uppercase mt-6 rounded-none hover:bg-gray-900 transition-colors duration-200"
               onClick={handleMoreInfoClick}
             >
               View Details

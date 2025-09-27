@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useNavigate } from "react-router-dom";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import { Button } from '@/components/ui/button';
 import { LuxuryPriceDisplay } from '@/components/pricing/LuxuryPriceDisplay';
@@ -57,6 +58,7 @@ export default function MotorCardPreview({
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
   
   // Get the best available image URL using priority logic
   const [imageInfo, setImageInfo] = useState<{ url: string }>({
@@ -102,10 +104,17 @@ export default function MotorCardPreview({
   
   const imageUrl = imageInfo.url;
 
+  const handleCardClick = () => {
+    if (motor?.id) {
+      navigate(`/motors/${motor.id}`);
+    }
+  };
+
   const handleMoreInfoClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setScrollPosition(window.scrollY);
-    setShowDetailsSheet(true);
+    if (motor?.id) {
+      navigate(`/motors/${motor.id}`);
+    }
   };
 
   const handleCloseModal = () => {
@@ -255,7 +264,10 @@ export default function MotorCardPreview({
 
   return (
     <>
-      <div className="group bg-white shadow-sm rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1">
+      <div 
+        className="group bg-white shadow-sm rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 cursor-pointer"
+        onClick={handleCardClick}
+      >
         <div className="relative">
           {/* Image Section */}
           {imageUrl && (
@@ -332,7 +344,7 @@ export default function MotorCardPreview({
             
             {/* Premium Black Button */}
             <button 
-              className="w-full bg-black text-white py-4 text-base font-light tracking-wider uppercase mt-6 rounded-none hover:bg-gray-900 transition-colors"
+              className="w-full bg-black text-white py-4 text-base font-light tracking-wider uppercase mt-6 rounded-none hover:bg-gray-900 transition-colors duration-200"
               onClick={handleMoreInfoClick}
             >
               View Details
