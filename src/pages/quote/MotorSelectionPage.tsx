@@ -6,7 +6,7 @@ import { FinancingProvider } from '@/contexts/FinancingContext';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
-import MotorCardPremium from '@/components/motors/MotorCardPremium';
+import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { Button } from '@/components/ui/button';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import MotorFilterMenu from '@/components/quote-builder/MotorFilterMenu';
@@ -430,7 +430,7 @@ export default function MotorSelectionPage() {
                  
                  return (
                   <div className="w-full max-w-sm mx-auto">
-                    <MotorCardPremium
+                    <MotorCardPreview
                     key={motor.id}
                     img={heroImageUrl}
                     title={motor.model}
