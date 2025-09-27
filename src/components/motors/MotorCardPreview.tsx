@@ -105,16 +105,14 @@ export default function MotorCardPreview({
   const imageUrl = imageInfo.url;
 
   const handleCardClick = () => {
-    if (motor?.id) {
-      navigate(`/motors/${motor.id}`);
-    }
+    setScrollPosition(window.scrollY);
+    setShowDetailsSheet(true);
   };
 
   const handleMoreInfoClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (motor?.id) {
-      navigate(`/motors/${motor.id}`);
-    }
+    setScrollPosition(window.scrollY);
+    setShowDetailsSheet(true);
   };
 
   const handleCloseModal = () => {
