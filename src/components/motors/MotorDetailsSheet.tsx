@@ -376,10 +376,10 @@ export default function MotorDetailsSheet({
             {/* Close Button - Absolute positioning for tablet/desktop */}
             <button 
               onClick={onClose} 
-              className="absolute top-4 right-4 z-50 p-2 bg-white dark:bg-slate-800 shadow-md hover:shadow-lg dark:shadow-slate-900/50 rounded-full transition-all border border-slate-200 dark:border-slate-700" 
+              className="absolute top-4 right-4 z-50 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full" 
               aria-label="Close"
             >
-              <X className="w-5 h-5 text-slate-700 dark:text-slate-300" />
+              <X className="w-5 h-5" />
             </button>
 
             {/* Header Content */}
@@ -403,9 +403,9 @@ export default function MotorDetailsSheet({
                     </div>
                     
                     {/* Warranty Badge */}
-                    <div className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded-full text-xs font-medium">
-                      +2Y Warranty
-                    </div>
+                    <p className="text-sm text-blue-600 mt-2">
+                      ✓ 2 Year Extended Coverage
+                    </p>
                   </div>
                   
                   {/* Promotional Content */}
@@ -425,11 +425,16 @@ export default function MotorDetailsSheet({
 
                 {/* Desktop Price Badge - visible on large screens and up */}
                 <div className="hidden lg:block absolute top-4 right-16 text-right">
-                  <p className="text-2xl font-bold text-slate-900 dark:text-white">
+                  {msrp && typeof msrp === "number" && msrp !== price && (
+                    <p className="text-gray-500 line-through text-sm">MSRP {money(msrp)}</p>
+                  )}
+                  <p className="text-3xl font-light text-black">
                     {typeof price === "number" ? money(price) : 'Call for Price'}
                   </p>
                   <div className="flex items-center gap-2 justify-end mt-1">
-                    <span className="text-xs text-green-600 dark:text-green-400">+2Y Warranty</span>
+                    <p className="text-sm text-blue-600 mt-2">
+                      ✓ 2 Year Extended Coverage
+                    </p>
                     {promoText && (
                       <span className="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-2 py-1 rounded-full text-xs font-medium">
                         {promoText}
@@ -462,11 +467,9 @@ export default function MotorDetailsSheet({
                 </h2>
                 <h3 className="font-semibold text-lg text-slate-900 dark:text-white">About This Motor</h3>
                 {motor?.model_number && (
-                  <div className="mb-3 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-                    <div className="text-sm font-medium text-blue-900 dark:text-blue-100">
-                      Model Number: <span className="font-mono">{motor.model_number}</span>
-                    </div>
-                  </div>
+                  <p className="text-sm text-gray-500 mb-3">
+                    Model Number: {motor.model_number}
+                  </p>
                 )}
                 <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
                   {hp && (() => {
@@ -1055,7 +1058,10 @@ export default function MotorDetailsSheet({
               <div className="mb-2">
                 <div className="flex justify-between items-center">
                   <div>
-                    <p className="text-base font-bold text-slate-900 dark:text-white">
+                    {msrp && typeof msrp === "number" && msrp !== price && (
+                      <p className="text-gray-500 line-through text-xs">MSRP {money(msrp)}</p>
+                    )}
+                    <p className="text-base font-light text-black">
                       {typeof price === "number" ? money(price) : 'Call for Price'}
                     </p>
                     {promoText && (
@@ -1075,22 +1081,22 @@ export default function MotorDetailsSheet({
               
               {/* Buttons Side-by-Side */}
               <div className="flex gap-2 mt-2">
-                <button onClick={handleCalculatePayment} className="flex-1 py-2 px-3 text-sm bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-medium">
+                <button onClick={handleCalculatePayment} className="text-sm text-blue-600 hover:text-blue-700 underline">
                   Calculate
                 </button>
-                <Button onClick={handleSelectMotor} className="flex-1 py-2 px-3 text-sm font-medium">
+                <Button onClick={handleSelectMotor} className="flex-1 bg-black text-white py-4 text-sm uppercase tracking-wider font-light hover:bg-gray-900 transition-colors duration-200">
                   Add to Quote
                 </Button>
               </div>
             </div>
             
             {/* Desktop: Side by side */}
-            <div className="hidden sm:flex gap-3">
-              <Button onClick={handleCalculatePayment} variant="outline" size="lg" className="flex-1">
-                <Calculator className="w-4 h-4 mr-2" />
+            <div className="hidden sm:flex gap-3 items-center">
+              <button onClick={handleCalculatePayment} className="text-sm text-blue-600 hover:text-blue-700 underline flex items-center gap-2">
+                <Calculator className="w-4 h-4" />
                 Calculate Payment
-              </Button>
-              <Button onClick={handleSelectMotor} size="lg" className="flex-1">
+              </button>
+              <Button onClick={handleSelectMotor} className="flex-1 bg-black text-white py-4 text-sm uppercase tracking-wider font-light hover:bg-gray-900 transition-colors duration-200">
                 Add to Quote →
               </Button>
             </div>
