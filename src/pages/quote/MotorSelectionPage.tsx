@@ -8,9 +8,10 @@ import { useToast } from '@/hooks/use-toast';
 import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { Button } from '@/components/ui/button';
-import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
-import { LuxurySubheader } from '@/components/ui/luxury-subheader';
+import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { LuxurySubheader } from '@/components/ui/luxury-subheader';  
 import { TrustDisclosure } from '@/components/ui/trust-disclosure';
+import { UtilityBar } from '@/components/ui/utility-bar';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
@@ -363,22 +364,33 @@ export default function MotorSelectionPage() {
 
   if (loading) {
     return (
-      <QuoteLayout title="Select Mercury Outboard Motor">
+      <div className="min-h-screen bg-white">
+        <div className="hidden md:block">
+          <UtilityBar />
+        </div>
+        <LuxuryHeader showUtilityBar={false} />
         <div className="flex items-center justify-center py-20">
           <div className="text-center">
             <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
             <p className="text-muted-foreground">Loading Mercury motors...</p>
           </div>
         </div>
-      </QuoteLayout>
+      </div>
     );
   }
 
   return (
     <FinancingProvider>
-      <QuoteLayout title="Select Mercury Outboard Motor" showProgress={false}>
-        <LuxurySubheader
-          title=""
+      <div className="min-h-screen bg-white">
+        {/* Desktop Utility Bar */}
+        <div className="hidden md:block">
+          <UtilityBar />
+        </div>
+        
+        <LuxuryHeader showUtilityBar={false} />
+        
+        <LuxurySubheader 
+          title="Select Mercury Outboard Motor"
           searchTerm={searchTerm}
           selectedHpRange={selectedHpRange}
           inStockOnly={inStockOnly}
@@ -387,13 +399,13 @@ export default function MotorSelectionPage() {
           onInStockChange={setInStockOnly}
           showFilters={true}
         />
-
-        {/* Trust Disclosure - Mobile Only */}
+        
+        {/* Mobile Trust Disclosure */}
         <div className="md:hidden">
           <TrustDisclosure />
         </div>
 
-        <div className="main">
+        <main className="main">
           <div className="max-w-7xl mx-auto px-6 py-8">
             {/* Page Title - Desktop Only */}
             <div className="h1-page mb-6">
@@ -473,8 +485,8 @@ export default function MotorSelectionPage() {
             </div>
           )}
         </div>
-        </div>
-      </QuoteLayout>
+        </main>
+      </div>
     </FinancingProvider>
   );
 }
