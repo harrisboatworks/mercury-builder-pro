@@ -49,7 +49,7 @@ export function FilterChips({
 
   if (mobile) {
     return (
-      <div className="chips">
+      <div className="flex items-center gap-3 overflow-x-auto scrollbar-hide pb-2">
         {/* HP Range Chips */}
         {HP_RANGES.slice(0, 6).map(range => {
           const isSelected = selectedHpRange.min === range.min && selectedHpRange.max === range.max;
@@ -57,10 +57,10 @@ export function FilterChips({
             <button
               key={range.id}
               onClick={() => onHpRangeChange?.(range)}
-              className={`chip ${
+              className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 isSelected
-                  ? 'bg-luxury-ink text-white border-luxury-ink'
-                  : 'bg-white text-luxury-gray hover:bg-luxury-stage border-luxury-hairline'
+                  ? 'bg-luxury-ink text-white'
+                  : 'bg-luxury-stage text-luxury-gray hover:bg-luxury-hairline'
               }`}
             >
               {range.label}
@@ -71,10 +71,10 @@ export function FilterChips({
         {/* In Stock Chip */}
         <button
           onClick={() => onInStockChange?.(!inStockOnly)}
-          className={`chip ${
+          className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
             inStockOnly
-              ? 'bg-luxury-ink text-white border-luxury-ink'
-              : 'bg-white text-luxury-gray hover:bg-luxury-stage border-luxury-hairline'
+              ? 'bg-luxury-ink text-white'
+              : 'bg-luxury-stage text-luxury-gray hover:bg-luxury-hairline'
           }`}
         >
           In Stock
@@ -84,7 +84,7 @@ export function FilterChips({
         {hasActiveFilters() && (
           <button
             onClick={handleReset}
-            className="chip bg-transparent border-transparent text-luxury-gray hover:text-luxury-ink"
+            className="flex-shrink-0 px-3 py-2 text-sm text-luxury-gray hover:text-luxury-ink"
           >
             Reset
           </button>

@@ -10,7 +10,6 @@ import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { Button } from '@/components/ui/button';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { LuxurySubheader } from '@/components/ui/luxury-subheader';
-import { TrustDisclosure } from '@/components/ui/trust-disclosure';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
@@ -378,7 +377,7 @@ export default function MotorSelectionPage() {
     <FinancingProvider>
       <QuoteLayout title="Select Mercury Outboard Motor" showProgress={false}>
         <LuxurySubheader
-          title=""
+          title="Select Mercury Outboard Motor"
           searchTerm={searchTerm}
           selectedHpRange={selectedHpRange}
           inStockOnly={inStockOnly}
@@ -388,23 +387,12 @@ export default function MotorSelectionPage() {
           showFilters={true}
         />
 
-        {/* Trust Disclosure - Mobile Only */}
-        <div className="md:hidden">
-          <TrustDisclosure />
-        </div>
-
-        <div className="main">
-          <div className="max-w-7xl mx-auto px-6 py-8">
-            {/* Page Title - Desktop Only */}
-            <div className="h1-page mb-6">
-              <h1 className="text-xl font-light text-luxury-ink tracking-wide">
-                Select Mercury Outboard Motor
-              </h1>
-            </div>
-
-            {/* Motors Grid */}
-            {filteredMotors.length > 0 ? (
-              <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
+        <div className="space-y-6">
+        
+        <div>
+          {/* Motors Grid */}
+          {filteredMotors.length > 0 ? (
+            <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
               {filteredMotors.map(motor => {
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);

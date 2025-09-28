@@ -22,42 +22,70 @@ export function LuxurySubheader({
   onInStockChange,
   showFilters = true
 }: LuxurySubheaderProps) {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div className="subheader">
-      {/* Desktop Layout */}
-      <div className="hidden md:flex items-center justify-between w-full max-w-7xl mx-auto px-6">
-        <div>
-          <h1 className="text-lg font-light text-luxury-ink tracking-wide">
-            {title}
-          </h1>
+    <div className={`sticky z-40 bg-white border-b border-luxury-hairline transition-all duration-200 ${
+      isScrolled ? 'top-[56px]' : 'top-[72px]'
+    }`}>
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Desktop Layout */}
+        <div className="hidden md:flex items-center justify-between h-14">
+          {/* Left: Page Title */}
+          <div>
+            <h1 className="text-lg font-light text-luxury-ink tracking-wide">
+              {title}
+            </h1>
+          </div>
+
+          {/* Right: Filter Chips */}
+          {showFilters && (
+            <FilterChips
+              searchTerm={searchTerm}
+              selectedHpRange={selectedHpRange}
+              inStockOnly={inStockOnly}
+              onSearchChange={onSearchChange}
+              onHpRangeChange={onHpRangeChange}
+              onInStockChange={onInStockChange}
+            />
+          )}
         </div>
 
-        {showFilters && (
-          <FilterChips
-            searchTerm={searchTerm}
-            selectedHpRange={selectedHpRange}
-            inStockOnly={inStockOnly}
-            onSearchChange={onSearchChange}
-            onHpRangeChange={onHpRangeChange}
-            onInStockChange={onInStockChange}
-          />
-        )}
-      </div>
-
-      {/* Mobile Layout - Only Filter Chips */}
-      <div className="md:hidden w-full">
-        {showFilters && (
-          <FilterChips
-            searchTerm={searchTerm}
-            selectedHpRange={selectedHpRange}
-            inStockOnly={inStockOnly}
-            onSearchChange={onSearchChange}
-            onHpRangeChange={onHpRangeChange}
-            onInStockChange={onInStockChange}
-            mobile
-          />
-        )}
+        {/* Mobile Layout */}
+        <div className="md:hidden">
+          {/* Filter Chips - Horizontal Scroller */}
+          {showFilters && (
+            <div className="py-3 -mx-6">
+              <div className="px-6">
+                <FilterChips
+                  searchTerm={searchTerm}
+                  selectedHpRange={selectedHpRange}
+                  inStockOnly={inStockOnly}
+                  onSearchChange={onSearchChange}
+                  onHpRangeChange={onHpRangeChange}
+                  onInStockChange={onInStockChange}
+                  mobile
+                />
+              </div>
+            </div>
+          )}
+          
+          {/* Page Title - Above Content */}
+          <div className="py-4">
+            <h1 className="text-base font-light text-luxury-ink tracking-wide">
+              {title}
+            </h1>
+          </div>
+        </div>
       </div>
     </div>
   );
