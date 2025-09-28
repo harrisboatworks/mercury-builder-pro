@@ -10,6 +10,7 @@ import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { Button } from '@/components/ui/button';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { LuxurySubheader } from '@/components/ui/luxury-subheader';
+import { TrustDisclosure } from '@/components/ui/trust-disclosure';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
@@ -387,10 +388,15 @@ export default function MotorSelectionPage() {
           showFilters={true}
         />
 
+        {/* Trust Disclosure - Mobile Only */}
+        <div className="md:hidden">
+          <TrustDisclosure />
+        </div>
+
         <div className="main">
           <div className="max-w-7xl mx-auto px-6 py-8">
-            {/* Page Title - Below sticky headers on mobile */}
-            <div className="mb-6 md:hidden">
+            {/* Page Title - Desktop Only */}
+            <div className="h1-page mb-6">
               <h1 className="text-xl font-light text-luxury-ink tracking-wide">
                 Select Mercury Outboard Motor
               </h1>

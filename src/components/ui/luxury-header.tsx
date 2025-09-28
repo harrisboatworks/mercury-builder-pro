@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, ShoppingCart, HelpCircle, User, LogOut, Menu } from 'lucide-react';
+import { Search, ShoppingCart, HelpCircle, User, LogOut, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { LuxurySearch } from './luxury-search';
@@ -15,16 +15,44 @@ interface LuxuryHeaderProps {
 
 export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { state } = useQuote();
   const { user, signOut } = useAuth();
 
   // Get quote item count
   const quoteItemCount = state.motor ? 1 : 0;
 
+  // Compact header scroll behavior
+  useEffect(() => {
+    let lastScrollY = 0;
+    let isCompact = false;
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const header = document.querySelector('.site-header');
+      
+      if (!header) return;
+      
+      if (!isCompact && currentScrollY > 24 && currentScrollY > lastScrollY) {
+        header.classList.add('compact');
+        isCompact = true;
+      }
+      
+      if (isCompact && currentScrollY < 16) {
+        header.classList.remove('compact');
+        isCompact = false;
+      }
+      
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
-      {/* Top Utility Bar */}
+      {/* Top Utility Bar - Desktop Only */}
       {showUtilityBar && (
         <div className="utility-bar">
           <div className="max-w-7xl mx-auto px-6 h-full flex items-center">
@@ -35,17 +63,10 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
         </div>
       )}
 
-      {/* Main Header - Consistent 56px Height */}
-      <header 
-        className="site-header"
-        style={{ 
-          top: 'var(--safe-top)',
-          WebkitBackdropFilter: 'blur(8px)'
-        }}
-      >
-        {/* Left: Logos */}
+      {/* Compact Sticky Header */}
+      <header className="site-header">
+        {/* Left: Menu + Logo */}
         <div className="flex items-center gap-3">
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden icon text-luxury-ink hover:text-luxury-gray transition-colors"
             onClick={() => setIsMenuOpen(true)}
@@ -53,47 +74,32 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
           >
             <Menu className="h-5 w-5" />
           </button>
-
-          {/* Harris Logo */}
+          
           <img 
             src="/src/assets/harris-logo.png" 
             alt="Harris Boat Works" 
             className="h-8"
           />
-          
-          {/* Hairline Divider */}
-          <div className="hidden md:block w-px h-8 bg-luxury-hairline" />
-          
-          {/* Mercury Logo + Subtitle */}
-          <div className="hidden md:flex flex-col">
-            <img 
-              src="/src/assets/mercury-logo.png" 
-              alt="Mercury Marine" 
-              className="h-6"
-            />
-            <span className="text-xs text-luxury-gray uppercase tracking-wide font-medium mt-0.5">
-              Premier Dealer
-            </span>
-          </div>
         </div>
 
-        {/* Center: Search (Desktop) */}
-        <div className="hidden md:block flex-1 max-w-xl mx-8">
-          <LuxurySearch />
+        {/* Center: Search Pill (collapses to icon) */}
+        <div 
+          className="search-pill"
+          onClick={() => setIsSearchOpen(true)}
+        >
+          <Search className="h-4 w-4" />
+          <span className="text-sm">Search motors...</span>
         </div>
 
-        {/* Center: Search Icon (Mobile) */}
-        <button
-          className="md:hidden icon text-luxury-ink hover:text-luxury-gray transition-colors"
-          onClick={() => setIsMobileSearchOpen(true)}
-          aria-label="Open search"
+        <div 
+          className="search-icon"
+          onClick={() => setIsSearchOpen(true)}
         >
           <Search className="h-5 w-5" />
-        </button>
+        </div>
 
-        {/* Right: Actions */}
-        <div className="flex items-center gap-1">
-          {/* Quote/Cart Button */}
+        {/* Right: Quote/Cart */}
+        <div className="flex items-center">
           <Button
             variant="ghost"
             size="sm"
@@ -109,72 +115,35 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
               </Badge>
             )}
           </Button>
-
-          {/* Help Button (Desktop) */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="hidden md:flex btn text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
-            title="Help"
-          >
-            <HelpCircle className="h-5 w-5" />
-          </Button>
-
-          {/* User Menu (Desktop) */}
-          <div className="hidden md:flex items-center gap-2">
-            {user ? (
-              <div className="flex items-center gap-2">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="btn text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
-                >
-                  <User className="h-5 w-5" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => signOut()}
-                  className="btn text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
-                  title="Sign out"
-                >
-                  <LogOut className="h-5 w-5" />
-                </Button>
-              </div>
-            ) : (
-              <Button
-                variant="ghost"
-                size="sm"
-                className="px-3 py-2 text-sm text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
-              >
-                Sign In
-              </Button>
-            )}
-          </div>
         </div>
       </header>
 
       {/* Mobile Menu */}
       <HamburgerMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
 
-      {/* Mobile Search Sheet - TODO: Implement SearchSheet component */}
-      {isMobileSearchOpen && (
-        <div className="fixed inset-0 z-50 bg-white">
-          <div className="p-4">
-            <div className="flex items-center gap-3 mb-4">
-              <button
-                onClick={() => setIsMobileSearchOpen(false)}
-                className="p-2 text-luxury-gray hover:text-luxury-ink"
-              >
-                ←
-              </button>
-              <div className="flex-1">
-                <LuxurySearch autoFocus />
-              </div>
-            </div>
-          </div>
+      {/* Search Sheet - Full Screen Mobile */}
+      <div className={`search-sheet ${isSearchOpen ? 'open' : ''}`}>
+        <div className="search-sheet-header">
+          <input
+            type="text"
+            placeholder="Search Mercury motors..."
+            className="search-sheet-input"
+            autoFocus
+          />
+          <button
+            className="search-sheet-close"
+            onClick={() => setIsSearchOpen(false)}
+          >
+            <X className="h-5 w-5" />
+          </button>
         </div>
-      )}
+        
+        <div className="p-4">
+          <p className="text-sm text-luxury-gray">
+            Start typing to search motors by model, horsepower, or features...
+          </p>
+        </div>
+      </div>
     </>
   );
 }

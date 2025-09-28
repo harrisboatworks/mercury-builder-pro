@@ -2,14 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS Variables for Mobile-First Header System */
+/* CSS Variables for Ultra-Efficient Mobile Layout */
 :root {
   --safe-top: env(safe-area-inset-top, 0px);
-  --h-header: 56px;
-  --h-sub: 44px;
+  --h-header: 52px;
+  --h-sub: 38px;
   --hairline: #E9ECEF;
   --ink: #111;
   --gray: #6C757D;
+  --bg: #FFF;
+  --navy: #0A1A2F;
 }
 
 /* Kill horizontal scroll jank */
@@ -20,6 +22,223 @@ html, body {
 
 img, .grid {
   max-width: 100%;
+}
+
+/* Sticky Header - Always Present with Search Access */
+.site-header {
+  position: sticky;
+  top: var(--safe-top);
+  height: var(--h-header);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.site-header .search-pill {
+  flex: 1;
+  height: 34px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray);
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.site-header .search-pill:hover {
+  border-color: var(--ink);
+}
+
+.site-header.compact .search-pill {
+  display: none;
+}
+
+.site-header.compact .search-icon {
+  display: flex;
+}
+
+.search-icon {
+  display: none;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+/* Subheader - Filter Chips Only */
+.subheader {
+  position: sticky;
+  top: calc(var(--safe-top) + var(--h-header));
+  height: var(--h-sub);
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 12px;
+  scroll-snap-type: x proximity;
+}
+
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  scroll-snap-align: start;
+}
+
+.chip:hover, .chip.active {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* Remove redundant mobile title */
+.h1-page {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .h1-page {
+    display: block;
+  }
+}
+
+/* Dealer Trust - Collapsible Disclosure */
+.trust-line {
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--hairline);
+  background: #fff;
+  cursor: pointer;
+}
+
+.trust-toggle {
+  font-size: 12px;
+  color: var(--ink);
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.trust-content {
+  display: none;
+  color: var(--gray);
+  font-size: 12px;
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.trust-line.open .trust-content {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .trust-line {
+    padding: 8px 0;
+    text-align: center;
+  }
+  
+  .trust-content {
+    display: block;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+}
+
+/* Content offset for sticky headers */
+.main {
+  padding-top: calc(var(--safe-top) + var(--h-header) + var(--h-sub));
+}
+
+/* Search Sheet - Full Screen Mobile Overlay */
+.search-sheet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  background: #fff;
+  display: none;
+}
+
+.search-sheet.open {
+  display: block;
+}
+
+.search-sheet-header {
+  position: sticky;
+  top: var(--safe-top);
+  padding: 12px;
+  background: #fff;
+  border-bottom: 1px solid var(--hairline);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-sheet-input {
+  flex: 1;
+  height: 44px;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  padding: 0 16px;
+  font-size: 16px;
+  background: #fff;
+}
+
+.search-sheet-close {
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gray);
+}
+
+/* Icon and button base styles */
+.icon, .btn {
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Utility Bar - Hidden on mobile, shown on desktop */
@@ -39,76 +258,6 @@ img, .grid {
     border-bottom: 1px solid var(--hairline);
     background: #fff;
   }
-}
-
-/* Sticky Header - Mobile First */
-.site-header {
-  position: sticky;
-  top: var(--safe-top);
-  height: var(--h-header);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--hairline);
-  padding: 0 12px;
-}
-
-.icon, .btn {
-  min-width: 44px;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Subheader - Filter Chips Only */
-.subheader {
-  position: sticky;
-  top: calc(var(--safe-top) + var(--h-header));
-  height: var(--h-sub);
-  z-index: 90;
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.9);
-  border-bottom: 1px solid var(--hairline);
-}
-
-.subheader .chips {
-  display: flex;
-  gap: 8px;
-  flex-wrap: nowrap;
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 16px;
-  scroll-snap-type: x proximity;
-}
-
-.subheader .chips::-webkit-scrollbar {
-  display: none;
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  border: 1px solid var(--hairline);
-  border-radius: 999px;
-  background: #fff;
-  color: var(--ink);
-  white-space: nowrap;
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-}
-
-/* Content offset for sticky headers */
-.main {
-  padding-top: calc(var(--safe-top) + var(--h-header) + var(--h-sub));
 }
 
 /* Harris Boat Works Design System - Maritime Professional Theme */

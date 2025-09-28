@@ -22,35 +22,17 @@ export function LuxurySubheader({
   onInStockChange,
   showFilters = true
 }: LuxurySubheaderProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
-    <div 
-      className="subheader"
-      style={{ 
-        top: 'calc(var(--safe-top) + var(--h-header))',
-        WebkitBackdropFilter: 'blur(8px)'
-      }}
-    >
+    <div className="subheader">
       {/* Desktop Layout */}
       <div className="hidden md:flex items-center justify-between w-full max-w-7xl mx-auto px-6">
-        {/* Left: Page Title */}
         <div>
           <h1 className="text-lg font-light text-luxury-ink tracking-wide">
             {title}
           </h1>
         </div>
 
-        {/* Right: Filter Chips */}
         {showFilters && (
           <FilterChips
             searchTerm={searchTerm}
