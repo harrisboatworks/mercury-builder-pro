@@ -52,6 +52,17 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
 
   return (
     <>
+      {/* Top Utility Bar - Desktop Only */}
+      {showUtilityBar && (
+        <div className="utility-bar">
+          <div className="max-w-7xl mx-auto px-6 h-full flex items-center">
+            <p className="text-xs text-luxury-gray uppercase tracking-wide font-medium">
+              Mercury Premier Dealer • Award-Winning Service Team
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Compact Sticky Header */}
       <header className="site-header">
         {/* Left: Menu + Logo */}
