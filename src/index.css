@@ -233,6 +233,18 @@
     --luxury-price-red-accent: 0 75% 30%; /* #B71C1C - Red accent theme price */
     --luxury-msrp: 218 11% 42%; /* #6C757D - MSRP strikethrough */
     --luxury-savings: 218 11% 42%; /* #6C757D - Savings text */
+
+    /* Luxury Header System - Monochrome Configurator Style */
+    --luxury-near-black: 0 0% 4%; /* #0A0A0A */
+    --luxury-ink: 0 0% 7%; /* #111111 */
+    --luxury-gray: 218 11% 42%; /* #6C757D */
+    --luxury-hairline: 220 13% 91%; /* #E9ECEF */
+    --luxury-stage: 220 14% 96%; /* #F5F6F8 */
+    --luxury-action: 210 73% 12%; /* #0A1A2F */
+
+    /* Typography */
+    --font-primary: 'Inter', sans-serif;
+    --letter-spacing-caps: 0.04em; /* +4% for small caps */
   }
 
   .dark {

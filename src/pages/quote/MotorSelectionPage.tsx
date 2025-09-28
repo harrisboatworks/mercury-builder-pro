@@ -9,7 +9,7 @@ import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { Button } from '@/components/ui/button';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
-import MotorFilterMenu from '@/components/quote-builder/MotorFilterMenu';
+import { LuxurySubheader } from '@/components/ui/luxury-subheader';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
@@ -375,30 +375,19 @@ export default function MotorSelectionPage() {
 
   return (
     <FinancingProvider>
-      <QuoteLayout title="Select Mercury Outboard Motor">
-        {/* Direct Search Bar */}
-        <div className="mb-6 sticky top-16 z-30 bg-white border-b border-gray-200 py-4 -mx-4 px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-center gap-4">
-              <div className="flex-1">
-                <input
-                  type="text"
-                  placeholder="Search motors by HP, model, or keyword..."
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-              </div>
-              <MotorFilterMenu
-                searchTerm={searchTerm}
-                selectedHpRange={selectedHpRange}
-                inStockOnly={inStockOnly}
-                onSearchChange={setSearchTerm}
-                onHpRangeChange={setSelectedHpRange}
-                onInStockChange={setInStockOnly}
-              />
-            </div>
-          </div>
+      <QuoteLayout title="Select Mercury Outboard Motor" showProgress={false}>
+        {/* Luxury Subheader with Filters - Positioned outside main content */}
+        <div className="sticky top-[144px] z-30 -mx-6 -mt-8 mb-8">
+          <LuxurySubheader
+            title="Select Mercury Outboard Motor"
+            searchTerm={searchTerm}
+            selectedHpRange={selectedHpRange}
+            inStockOnly={inStockOnly}
+            onSearchChange={setSearchTerm}
+            onHpRangeChange={setSelectedHpRange}
+            onInStockChange={setInStockOnly}
+            showFilters={true}
+          />
         </div>
 
         <div className="space-y-6">
