@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { FilterChips } from './filter-chips';
 
 interface LuxurySubheaderProps {
@@ -21,8 +22,21 @@ export function LuxurySubheader({
   onInStockChange,
   showFilters = true
 }: LuxurySubheaderProps) {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="sticky top-[72px] z-40 bg-white border-b border-luxury-hairline">
+    <div className={`sticky z-40 bg-white border-b border-luxury-hairline transition-all duration-200 ${
+      isScrolled ? 'top-[56px]' : 'top-[72px]'
+    }`}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Desktop Layout */}
         <div className="hidden md:flex items-center justify-between h-14">

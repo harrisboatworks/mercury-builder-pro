@@ -376,19 +376,16 @@ export default function MotorSelectionPage() {
   return (
     <FinancingProvider>
       <QuoteLayout title="Select Mercury Outboard Motor" showProgress={false}>
-        {/* Luxury Subheader with Filters - Positioned outside main content */}
-        <div className="sticky top-[144px] z-30 -mx-6 -mt-8 mb-8">
-          <LuxurySubheader
-            title="Select Mercury Outboard Motor"
-            searchTerm={searchTerm}
-            selectedHpRange={selectedHpRange}
-            inStockOnly={inStockOnly}
-            onSearchChange={setSearchTerm}
-            onHpRangeChange={setSelectedHpRange}
-            onInStockChange={setInStockOnly}
-            showFilters={true}
-          />
-        </div>
+        <LuxurySubheader
+          title="Select Mercury Outboard Motor"
+          searchTerm={searchTerm}
+          selectedHpRange={selectedHpRange}
+          inStockOnly={inStockOnly}
+          onSearchChange={setSearchTerm}
+          onHpRangeChange={setSelectedHpRange}
+          onInStockChange={setInStockOnly}
+          showFilters={true}
+        />
 
         <div className="space-y-6">
         
