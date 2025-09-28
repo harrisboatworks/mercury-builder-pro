@@ -45,13 +45,17 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
         </div>
       )}
 
-      {/* Main Header */}
+      {/* Main Header - Mobile First */}
       <header 
-        className={`sticky top-0 z-50 transition-all duration-300 bg-white ${
+        className={`sticky z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-luxury-hairline ${
           isScrolled 
-            ? 'h-14 backdrop-blur-md shadow-sm border-b border-luxury-hairline' 
-            : 'h-18 border-b border-luxury-hairline'
+            ? 'h-14 shadow-sm' 
+            : 'h-18'
         }`}
+        style={{ 
+          top: 'calc(var(--safe-top) + 0px)',
+          WebkitBackdropFilter: 'blur(8px)'
+        }}
       >
         <div className="max-w-7xl mx-auto px-6 h-full">
           <div className="flex items-center justify-between h-full">

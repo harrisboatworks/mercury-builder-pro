@@ -49,7 +49,7 @@ export function FilterChips({
 
   if (mobile) {
     return (
-      <div className="flex items-center gap-3 overflow-x-auto scrollbar-hide pb-2">
+      <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pb-1 px-4 -webkit-overflow-scrolling-touch" style={{ scrollSnapType: 'x proximity' }}>
         {/* HP Range Chips */}
         {HP_RANGES.slice(0, 6).map(range => {
           const isSelected = selectedHpRange.min === range.min && selectedHpRange.max === range.max;
@@ -57,11 +57,12 @@ export function FilterChips({
             <button
               key={range.id}
               onClick={() => onHpRangeChange?.(range)}
-              className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              className={`flex-shrink-0 px-3 py-1.5 rounded-full text-sm font-medium transition-colors whitespace-nowrap border ${
                 isSelected
-                  ? 'bg-luxury-ink text-white'
-                  : 'bg-luxury-stage text-luxury-gray hover:bg-luxury-hairline'
+                  ? 'bg-luxury-ink text-white border-luxury-ink'
+                  : 'bg-white text-luxury-gray hover:bg-luxury-stage border-luxury-hairline'
               }`}
+              style={{ scrollSnapAlign: 'start' }}
             >
               {range.label}
             </button>
@@ -71,11 +72,12 @@ export function FilterChips({
         {/* In Stock Chip */}
         <button
           onClick={() => onInStockChange?.(!inStockOnly)}
-          className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+          className={`flex-shrink-0 px-3 py-1.5 rounded-full text-sm font-medium transition-colors whitespace-nowrap border ${
             inStockOnly
-              ? 'bg-luxury-ink text-white'
-              : 'bg-luxury-stage text-luxury-gray hover:bg-luxury-hairline'
+              ? 'bg-luxury-ink text-white border-luxury-ink'
+              : 'bg-white text-luxury-gray hover:bg-luxury-stage border-luxury-hairline'
           }`}
+          style={{ scrollSnapAlign: 'start' }}
         >
           In Stock
         </button>

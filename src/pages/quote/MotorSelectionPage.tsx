@@ -387,7 +387,14 @@ export default function MotorSelectionPage() {
           showFilters={true}
         />
 
-        <div className="space-y-6">
+        {/* Page Title - Mobile (below sticky headers) */}
+        <div className="md:hidden px-6 py-4">
+          <h1 className="text-lg font-light text-luxury-ink tracking-wide">
+            Select Mercury Outboard Motor
+          </h1>
+        </div>
+
+        <div className="space-y-6 md:pt-0" style={{ paddingTop: 'var(--safe-top, 0px)' }}>
         
         <div>
           {/* Motors Grid */}

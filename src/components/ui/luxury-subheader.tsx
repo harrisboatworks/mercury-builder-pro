@@ -34,9 +34,13 @@ export function LuxurySubheader({
   }, []);
 
   return (
-    <div className={`sticky z-40 bg-white border-b border-luxury-hairline transition-all duration-200 ${
-      isScrolled ? 'top-[56px]' : 'top-[72px]'
-    }`}>
+    <div 
+      className="sticky z-40 bg-white/90 backdrop-blur-md border-b border-luxury-hairline transition-all duration-200"
+      style={{ 
+        top: isScrolled ? 'calc(var(--safe-top) + 56px)' : 'calc(var(--safe-top) + 72px)',
+        WebkitBackdropFilter: 'blur(8px)'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6">
         {/* Desktop Layout */}
         <div className="hidden md:flex items-center justify-between h-14">
@@ -64,27 +68,18 @@ export function LuxurySubheader({
         <div className="md:hidden">
           {/* Filter Chips - Horizontal Scroller */}
           {showFilters && (
-            <div className="py-3 -mx-6">
-              <div className="px-6">
-                <FilterChips
-                  searchTerm={searchTerm}
-                  selectedHpRange={selectedHpRange}
-                  inStockOnly={inStockOnly}
-                  onSearchChange={onSearchChange}
-                  onHpRangeChange={onHpRangeChange}
-                  onInStockChange={onInStockChange}
-                  mobile
-                />
-              </div>
+            <div className="h-11 flex items-center">
+              <FilterChips
+                searchTerm={searchTerm}
+                selectedHpRange={selectedHpRange}
+                inStockOnly={inStockOnly}
+                onSearchChange={onSearchChange}
+                onHpRangeChange={onHpRangeChange}
+                onInStockChange={onInStockChange}
+                mobile
+              />
             </div>
           )}
-          
-          {/* Page Title - Above Content */}
-          <div className="py-4">
-            <h1 className="text-base font-light text-luxury-ink tracking-wide">
-              {title}
-            </h1>
-          </div>
         </div>
       </div>
     </div>

@@ -103,6 +103,11 @@
 
 @layer base {
   :root {
+    /* Mobile Safe Area & Layout Variables */
+    --safe-top: env(safe-area-inset-top, 0px);
+    --header-h: 56px;      /* mobile header height */
+    --subheader-h: 44px;   /* mobile chip band height */
+    
     /* Light Theme Colors - Harris Brand Blue Accent #2A4D69 */
     --background: 0 0% 100%;
     --foreground: 222 15% 13%;
@@ -432,7 +437,21 @@
   }
 }
 
-/* Motor Selection Animations */
+    /* Mobile Safe Area Support & Scroll Fixes */
+    html, body { 
+      max-width: 100%; 
+      overflow-x: hidden; 
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Safe area inset support for mobile */
+    @supports (padding-top: env(safe-area-inset-top)) {
+      .mobile-header-offset {
+        padding-top: calc(env(safe-area-inset-top) + var(--header-h) + var(--subheader-h));
+      }
+    }
+    
+    /* Motor Selection Animations */
 @layer components {
   .motor-selected {
     animation: motor-selection 0.5s ease-out;
