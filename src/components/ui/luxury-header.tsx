@@ -14,20 +14,10 @@ interface LuxuryHeaderProps {
 }
 
 export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHeaderProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
   const { state } = useQuote();
   const { user, signOut } = useAuth();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Get quote item count
   const quoteItemCount = state.motor ? 1 : 0;
@@ -36,7 +26,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
     <>
       {/* Top Utility Bar */}
       {showUtilityBar && (
-        <div className="hidden md:block h-8 bg-white border-b border-luxury-hairline">
+        <div className="utility-bar">
           <div className="max-w-7xl mx-auto px-6 h-full flex items-center">
             <p className="text-xs text-luxury-gray uppercase tracking-wide font-medium">
               Mercury Premier Dealer • Award-Winning Service Team
@@ -45,134 +35,121 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
         </div>
       )}
 
-      {/* Main Header - Mobile First */}
+      {/* Main Header - Consistent 56px Height */}
       <header 
-        className={`sticky z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-luxury-hairline ${
-          isScrolled 
-            ? 'h-14 shadow-sm' 
-            : 'h-18'
-        }`}
+        className="site-header"
         style={{ 
-          top: 'calc(var(--safe-top) + 0px)',
+          top: 'var(--safe-top)',
           WebkitBackdropFilter: 'blur(8px)'
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 h-full">
-          <div className="flex items-center justify-between h-full">
-            
-            {/* Left: Logos */}
-            <div className="flex items-center gap-3">
-              {/* Mobile Menu Button */}
-              <button
-                className="md:hidden p-2 -ml-2 text-luxury-ink hover:text-luxury-gray transition-colors"
-                onClick={() => setIsMenuOpen(true)}
-                aria-label="Open menu"
+        {/* Left: Logos */}
+        <div className="flex items-center gap-3">
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden icon text-luxury-ink hover:text-luxury-gray transition-colors"
+            onClick={() => setIsMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu className="h-5 w-5" />
+          </button>
+
+          {/* Harris Logo */}
+          <img 
+            src="/src/assets/harris-logo.png" 
+            alt="Harris Boat Works" 
+            className="h-8"
+          />
+          
+          {/* Hairline Divider */}
+          <div className="hidden md:block w-px h-8 bg-luxury-hairline" />
+          
+          {/* Mercury Logo + Subtitle */}
+          <div className="hidden md:flex flex-col">
+            <img 
+              src="/src/assets/mercury-logo.png" 
+              alt="Mercury Marine" 
+              className="h-6"
+            />
+            <span className="text-xs text-luxury-gray uppercase tracking-wide font-medium mt-0.5">
+              Premier Dealer
+            </span>
+          </div>
+        </div>
+
+        {/* Center: Search (Desktop) */}
+        <div className="hidden md:block flex-1 max-w-xl mx-8">
+          <LuxurySearch />
+        </div>
+
+        {/* Center: Search Icon (Mobile) */}
+        <button
+          className="md:hidden icon text-luxury-ink hover:text-luxury-gray transition-colors"
+          onClick={() => setIsMobileSearchOpen(true)}
+          aria-label="Open search"
+        >
+          <Search className="h-5 w-5" />
+        </button>
+
+        {/* Right: Actions */}
+        <div className="flex items-center gap-1">
+          {/* Quote/Cart Button */}
+          <Button
+            variant="ghost"
+            size="sm"
+            className="relative btn text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
+          >
+            <ShoppingCart className="h-5 w-5" />
+            {quoteItemCount > 0 && (
+              <Badge 
+                variant="secondary" 
+                className="absolute -top-1 -right-1 h-5 w-5 p-0 bg-luxury-ink text-white text-xs flex items-center justify-center"
               >
-                <Menu className="h-5 w-5" />
-              </button>
+                {quoteItemCount}
+              </Badge>
+            )}
+          </Button>
 
-              {/* Harris Logo */}
-              <img 
-                src="/src/assets/harris-logo.png" 
-                alt="Harris Boat Works" 
-                className={`transition-all duration-300 ${
-                  isScrolled ? 'h-8' : 'h-10'
-                }`}
-              />
-              
-              {/* Hairline Divider */}
-              <div className="hidden md:block w-px h-8 bg-luxury-hairline" />
-              
-              {/* Mercury Logo + Subtitle */}
-              <div className="hidden md:flex flex-col">
-                <img 
-                  src="/src/assets/mercury-logo.png" 
-                  alt="Mercury Marine" 
-                  className={`transition-all duration-300 ${
-                    isScrolled ? 'h-6' : 'h-7'
-                  }`}
-                />
-                <span className="text-xs text-luxury-gray uppercase tracking-wide font-medium mt-0.5">
-                  Premier Dealer
-                </span>
+          {/* Help Button (Desktop) */}
+          <Button
+            variant="ghost"
+            size="sm"
+            className="hidden md:flex btn text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
+            title="Help"
+          >
+            <HelpCircle className="h-5 w-5" />
+          </Button>
+
+          {/* User Menu (Desktop) */}
+          <div className="hidden md:flex items-center gap-2">
+            {user ? (
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="btn text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
+                >
+                  <User className="h-5 w-5" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => signOut()}
+                  className="btn text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
+                  title="Sign out"
+                >
+                  <LogOut className="h-5 w-5" />
+                </Button>
               </div>
-            </div>
-
-            {/* Center: Search (Desktop) */}
-            <div className="hidden md:block flex-1 max-w-xl mx-8">
-              <LuxurySearch />
-            </div>
-
-            {/* Center: Search Icon (Mobile) */}
-            <button
-              className="md:hidden p-2 text-luxury-ink hover:text-luxury-gray transition-colors"
-              onClick={() => setIsMobileSearchOpen(true)}
-              aria-label="Open search"
-            >
-              <Search className="h-5 w-5" />
-            </button>
-
-            {/* Right: Actions */}
-            <div className="flex items-center gap-1">
-              {/* Quote/Cart Button */}
+            ) : (
               <Button
                 variant="ghost"
                 size="sm"
-                className="relative p-2 text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
+                className="px-3 py-2 text-sm text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
               >
-                <ShoppingCart className="h-5 w-5" />
-                {quoteItemCount > 0 && (
-                  <Badge 
-                    variant="secondary" 
-                    className="absolute -top-1 -right-1 h-5 w-5 p-0 bg-luxury-ink text-white text-xs flex items-center justify-center"
-                  >
-                    {quoteItemCount}
-                  </Badge>
-                )}
+                Sign In
               </Button>
-
-              {/* Help Button (Desktop) */}
-              <Button
-                variant="ghost"
-                size="sm"
-                className="hidden md:flex p-2 text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
-                title="Help"
-              >
-                <HelpCircle className="h-5 w-5" />
-              </Button>
-
-              {/* User Menu (Desktop) */}
-              <div className="hidden md:flex items-center gap-2">
-                {user ? (
-                  <div className="flex items-center gap-2">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="p-2 text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
-                    >
-                      <User className="h-5 w-5" />
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => signOut()}
-                      className="p-2 text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
-                      title="Sign out"
-                    >
-                      <LogOut className="h-5 w-5" />
-                    </Button>
-                  </div>
-                ) : (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="px-3 py-2 text-sm text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
-                  >
-                    Sign In
-                  </Button>
-                )}
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </header>

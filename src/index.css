@@ -2,101 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Mobile-only fixes for header, logo, and search issues */
-@media (max-width: 768px) {
-  /* FIX 1: Harris logo getting cut off - make it larger */
-  .mobile-header {
-    padding-top: 12px !important;
-    min-height: 68px !important;
-  }
-  
-  .harris-logo {
-    height: 64px !important; /* Increased for better visibility */
-    margin-top: 2px !important;
+/* CSS Variables for Mobile-First Header System */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --h-header: 56px;
+  --h-sub: 44px;
+  --hairline: #E9ECEF;
+  --ink: #111;
+  --gray: #6C757D;
+}
+
+/* Kill horizontal scroll jank */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img, .grid {
+  max-width: 100%;
+}
+
+/* Utility Bar - Hidden on mobile, shown on desktop */
+.utility-bar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .utility-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    color: var(--gray);
+    font-variant: all-small-caps;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--hairline);
+    background: #fff;
   }
 }
 
-/* Tablet-specific logo constraints */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .harris-logo {
-    height: 60px !important;
-    max-width: 400px !important;
-  }
-  
-  /* FIX 2: Replace "Last updated" text with green pulsing dot */
-  .last-updated-text {
-    display: none !important;
-  }
-  
-  .last-updated {
-    position: relative;
-  }
-  
-  .last-updated::after {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background: #10b981;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-    position: absolute;
-    top: 8px;
-    right: 8px;
-  }
-  
-  /* Existing mobile optimizations */
-  .promo-badges .promo-badge-base:not(:first-child) {
-    display: none;
-  }
-  
-  /* Ensure 2-column mobile grid with proper spacing */
-  .motors-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-  
-  /* Optimize card content for mobile scanning */
-  .product-card .motor-image-container {
-    height: 140px;
-  }
-  
-  .product-card h3 {
-    font-size: 0.75rem;
-    line-height: 1.2;
-    -webkit-line-clamp: 2;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  
-  /* Reserve space for sticky CTA to avoid layout shift */
-  .mobile-cta-spacer {
-    height: 80px;
-  }
+/* Sticky Header - Mobile First */
+.site-header {
+  position: sticky;
+  top: var(--safe-top);
+  height: var(--h-header);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hairline);
+  padding: 0 12px;
 }
 
-/* Ensure motor grid is properly spaced on mobile */
-@media (max-width: 640px) {
-  .motors-grid {
-    gap: 0.5rem;
-  }
-  
-  .motor-image {
-    height: 160px !important;
-  }
-  
-  .product-card h3 {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
+.icon, .btn {
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Header height mobile optimization */
-@media (max-width: 1024px) {
-  .sticky.top-0 {
-    height: 56px;
-  }
+/* Subheader - Filter Chips Only */
+.subheader {
+  position: sticky;
+  top: calc(var(--safe-top) + var(--h-header));
+  height: var(--h-sub);
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.subheader .chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 16px;
+  scroll-snap-type: x proximity;
+}
+
+.subheader .chips::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  white-space: nowrap;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* Content offset for sticky headers */
+.main {
+  padding-top: calc(var(--safe-top) + var(--h-header) + var(--h-sub));
 }
 
 /* Harris Boat Works Design System - Maritime Professional Theme */

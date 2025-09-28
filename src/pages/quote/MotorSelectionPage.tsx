@@ -377,7 +377,7 @@ export default function MotorSelectionPage() {
     <FinancingProvider>
       <QuoteLayout title="Select Mercury Outboard Motor" showProgress={false}>
         <LuxurySubheader
-          title="Select Mercury Outboard Motor"
+          title=""
           searchTerm={searchTerm}
           selectedHpRange={selectedHpRange}
           inStockOnly={inStockOnly}
@@ -387,19 +387,18 @@ export default function MotorSelectionPage() {
           showFilters={true}
         />
 
-        {/* Page Title - Mobile (below sticky headers) */}
-        <div className="md:hidden px-6 py-4">
-          <h1 className="text-lg font-light text-luxury-ink tracking-wide">
-            Select Mercury Outboard Motor
-          </h1>
-        </div>
+        <div className="main">
+          <div className="max-w-7xl mx-auto px-6 py-8">
+            {/* Page Title - Below sticky headers on mobile */}
+            <div className="mb-6 md:hidden">
+              <h1 className="text-xl font-light text-luxury-ink tracking-wide">
+                Select Mercury Outboard Motor
+              </h1>
+            </div>
 
-        <div className="space-y-6 md:pt-0" style={{ paddingTop: 'var(--safe-top, 0px)' }}>
-        
-        <div>
-          {/* Motors Grid */}
-          {filteredMotors.length > 0 ? (
-            <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
+            {/* Motors Grid */}
+            {filteredMotors.length > 0 ? (
+              <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
               {filteredMotors.map(motor => {
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);
