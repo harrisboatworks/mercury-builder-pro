@@ -7,6 +7,8 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { HamburgerMenu } from './hamburger-menu';
 import { COMPANY_INFO } from '@/lib/companyInfo';
+import harrisLogo from '@/assets/harris-logo.png';
+import mercuryLogo from '@/assets/mercury-logo.png';
 
 interface LuxuryHeaderProps {
   onSearchFocus?: () => void;
@@ -69,7 +71,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
 
               {/* Harris Logo */}
               <img 
-                src="/src/assets/harris-logo.png" 
+                src={harrisLogo} 
                 alt="Harris Boat Works" 
                 className={`transition-all duration-300 ${
                   isScrolled ? 'h-8' : 'h-10'
@@ -82,7 +84,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
               {/* Mercury Logo + Subtitle */}
               <div className="hidden md:flex flex-col">
                 <img 
-                  src="/src/assets/mercury-logo.png" 
+                  src={mercuryLogo} 
                   alt="Mercury Marine" 
                   className={`transition-all duration-300 ${
                     isScrolled ? 'h-6' : 'h-7'
