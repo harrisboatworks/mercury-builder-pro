@@ -60,6 +60,10 @@ export function getBrandPenaltyFactor(brand?: string): number {
 const tradeValues = {
   'Mercury': {
     '2020-2024': {
+      '5': { excellent: 800, good: 650, fair: 500, poor: 300 },
+      '10': { excellent: 1400, good: 1150, fair: 900, poor: 550 },
+      '15': { excellent: 2000, good: 1650, fair: 1300, poor: 800 },
+      '20': { excellent: 2600, good: 2150, fair: 1700, poor: 1000 },
       '25': { excellent: 3200, good: 2600, fair: 2000, poor: 1200 },
       '40': { excellent: 4500, good: 3700, fair: 2900, poor: 1800 },
       '50': { excellent: 5200, good: 4300, fair: 3400, poor: 2100 },
@@ -73,6 +77,10 @@ const tradeValues = {
       '300': { excellent: 26000, good: 21000, fair: 16500, poor: 9900 }
     },
     '2015-2019': {
+      '5': { excellent: 700, good: 550, fair: 425, poor: 250 },
+      '10': { excellent: 1200, good: 950, fair: 750, poor: 450 },
+      '15': { excellent: 1700, good: 1350, fair: 1050, poor: 650 },
+      '20': { excellent: 2200, good: 1750, fair: 1400, poor: 850 },
       '25': { excellent: 2800, good: 2200, fair: 1700, poor: 1000 },
       '40': { excellent: 3900, good: 3100, fair: 2400, poor: 1500 },
       '50': { excellent: 4500, good: 3600, fair: 2800, poor: 1700 },
@@ -88,6 +96,10 @@ const tradeValues = {
   },
   'Yamaha': {
     '2020-2024': {
+      '5': { excellent: 750, good: 600, fair: 475, poor: 285 },
+      '10': { excellent: 1300, good: 1050, fair: 825, poor: 500 },
+      '15': { excellent: 1850, good: 1500, fair: 1175, poor: 725 },
+      '20': { excellent: 2400, good: 1950, fair: 1525, poor: 925 },
       '25': { excellent: 3000, good: 2400, fair: 1800, poor: 1100 },
       '40': { excellent: 4200, good: 3400, fair: 2600, poor: 1600 },
       '50': { excellent: 4800, good: 3900, fair: 3000, poor: 1800 },
@@ -101,6 +113,10 @@ const tradeValues = {
       '300': { excellent: 23600, good: 18900, fair: 14700, poor: 8800 }
     },
     '2015-2019': {
+      '5': { excellent: 650, good: 525, fair: 400, poor: 240 },
+      '10': { excellent: 1100, good: 900, fair: 700, poor: 425 },
+      '15': { excellent: 1575, good: 1275, fair: 1000, poor: 600 },
+      '20': { excellent: 2050, good: 1650, fair: 1300, poor: 800 },
       '25': { excellent: 2600, good: 2100, fair: 1600, poor: 950 },
       '40': { excellent: 3600, good: 2900, fair: 2200, poor: 1350 },
       '50': { excellent: 4100, good: 3300, fair: 2500, poor: 1500 },
@@ -116,6 +132,10 @@ const tradeValues = {
   },
   'Honda': {
     '2020-2024': {
+      '5': { excellent: 725, good: 575, fair: 450, poor: 275 },
+      '10': { excellent: 1250, good: 1000, fair: 800, poor: 475 },
+      '15': { excellent: 1775, good: 1425, fair: 1125, poor: 700 },
+      '20': { excellent: 2300, good: 1850, fair: 1475, poor: 900 },
       '25': { excellent: 2900, good: 2300, fair: 1800, poor: 1100 },
       '40': { excellent: 4000, good: 3200, fair: 2500, poor: 1500 },
       '50': { excellent: 4600, good: 3700, fair: 2900, poor: 1750 },
@@ -128,6 +148,10 @@ const tradeValues = {
       '250': { excellent: 19000, good: 15200, fair: 11800, poor: 7100 }
     },
     '2015-2019': {
+      '5': { excellent: 625, good: 500, fair: 375, poor: 225 },
+      '10': { excellent: 1075, good: 850, fair: 650, poor: 400 },
+      '15': { excellent: 1525, good: 1225, fair: 950, poor: 575 },
+      '20': { excellent: 1975, good: 1575, fair: 1225, poor: 750 },
       '25': { excellent: 2500, good: 2000, fair: 1500, poor: 900 },
       '40': { excellent: 3400, good: 2700, fair: 2100, poor: 1300 },
       '50': { excellent: 3900, good: 3100, fair: 2400, poor: 1450 },
@@ -142,6 +166,10 @@ const tradeValues = {
   },
   'Suzuki': {
     '2020-2024': {
+      '5': { excellent: 675, good: 550, fair: 425, poor: 250 },
+      '10': { excellent: 1150, good: 925, fair: 725, poor: 450 },
+      '15': { excellent: 1650, good: 1325, fair: 1050, poor: 650 },
+      '20': { excellent: 2150, good: 1750, fair: 1375, poor: 850 },
       '25': { excellent: 2700, good: 2200, fair: 1700, poor: 1000 },
       '40': { excellent: 3700, good: 3000, fair: 2300, poor: 1400 },
       '50': { excellent: 4200, good: 3400, fair: 2600, poor: 1600 },
@@ -156,6 +184,10 @@ const tradeValues = {
   },
   'Evinrude': {
     '2015-2019': {
+      '5': { excellent: 550, good: 450, fair: 350, poor: 210 },
+      '10': { excellent: 950, good: 775, fair: 600, poor: 375 },
+      '15': { excellent: 1350, good: 1100, fair: 875, poor: 525 },
+      '20': { excellent: 1750, good: 1425, fair: 1125, poor: 700 },
       '25': { excellent: 2200, good: 1800, fair: 1400, poor: 850 },
       '40': { excellent: 3000, good: 2400, fair: 1900, poor: 1150 },
       '50': { excellent: 3400, good: 2700, fair: 2100, poor: 1300 },
