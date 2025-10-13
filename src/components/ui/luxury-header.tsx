@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Search, ShoppingCart, HelpCircle, User, LogOut, Menu } from 'lucide-react';
+import { ShoppingCart, User, LogOut, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { LuxurySearch } from './luxury-search';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { HamburgerMenu } from './hamburger-menu';
@@ -19,7 +18,6 @@ interface LuxuryHeaderProps {
 export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
   const { state } = useQuote();
   const { user, signOut } = useAuth();
 
@@ -59,7 +57,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
         <div className="max-w-7xl mx-auto px-6 h-full">
           <div className="flex items-center justify-between h-full">
             
-            {/* Left: Logos */}
+            {/* Left: Mobile Menu + Logos */}
             <div className="flex items-center gap-3 sm:gap-4">
               {/* Mobile Menu Button */}
               <button
@@ -70,39 +68,26 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                 <Menu className="h-5 w-5" />
               </button>
 
-              {/* Harris Logo */}
-              <img 
-                src={harrisLogo} 
-                alt="Harris Boat Works" 
-                className="h-7 md:h-8 transition-all duration-300"
-              />
-              
-              {/* Hairline Divider */}
-              <div className="hidden md:block w-px h-8 bg-luxury-hairline" />
-              
-              {/* Mercury Logo */}
-              <div className="hidden md:block">
+              {/* Logos - Centered on Mobile, Left on Desktop */}
+              <div className="flex items-center gap-3 sm:gap-4">
+                {/* Harris Logo */}
+                <img 
+                  src={harrisLogo} 
+                  alt="Harris Boat Works" 
+                  className="h-6 md:h-7 transition-all duration-300"
+                />
+                
+                {/* Hairline Divider */}
+                <div className="hidden sm:block w-px h-6 md:h-8 bg-luxury-hairline" />
+                
+                {/* Mercury Logo - Show on all screens */}
                 <img 
                   src={mercuryLogo} 
                   alt="Mercury Marine" 
-                  className="h-7 md:h-8 transition-all duration-300"
+                  className="h-6 md:h-7 transition-all duration-300"
                 />
               </div>
             </div>
-
-            {/* Center: Search (Desktop) */}
-            <div className="hidden md:block flex-1 max-w-2xl mx-12">
-              <LuxurySearch />
-            </div>
-
-            {/* Center: Search Icon (Mobile) */}
-            <button
-              className="md:hidden p-2 text-luxury-ink hover:text-luxury-gray transition-colors"
-              onClick={() => setIsMobileSearchOpen(true)}
-              aria-label="Open search"
-            >
-              <Search className="h-5 w-5" />
-            </button>
 
             {/* Right: Actions */}
             <div className="flex items-center gap-1">
@@ -166,25 +151,6 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
 
       {/* Mobile Menu */}
       <HamburgerMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-
-      {/* Mobile Search Sheet - TODO: Implement SearchSheet component */}
-      {isMobileSearchOpen && (
-        <div className="fixed inset-0 z-50 bg-white">
-          <div className="p-4">
-            <div className="flex items-center gap-3 mb-4">
-              <button
-                onClick={() => setIsMobileSearchOpen(false)}
-                className="p-2 text-luxury-gray hover:text-luxury-ink"
-              >
-                ←
-              </button>
-              <div className="flex-1">
-                <LuxurySearch autoFocus />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }

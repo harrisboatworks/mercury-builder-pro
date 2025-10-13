@@ -380,7 +380,7 @@ export default function MotorSelectionPage() {
     <FinancingProvider>
       <QuoteLayout showProgress={false}>
         {/* Compact Search Bar */}
-        <div className="sticky top-[72px] z-40 -mx-6 px-6 mb-6 bg-white border-b border-luxury-hairline shadow-sm">
+        <div className="sticky top-[72px] z-40 -mx-6 px-6 bg-white border-b border-luxury-hairline shadow-sm">
           <div className="max-w-4xl mx-auto py-3">
             <div className="relative">
               <input
@@ -414,7 +414,7 @@ export default function MotorSelectionPage() {
         <div>
           {/* Motors Grid */}
           {filteredMotors.length > 0 ? (
-            <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+            <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 mt-6">
               {filteredMotors.map(motor => {
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);
