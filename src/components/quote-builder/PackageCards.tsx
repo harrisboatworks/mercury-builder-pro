@@ -56,11 +56,11 @@ export function PackageCards({
             )}
 
             <div className="pr-20">
-              <div className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
+              <div className="text-base font-bold uppercase tracking-[0.12em] text-slate-600 dark:text-slate-300">
                 {p.label.split(' • ')[0]}
               </div>
               {p.label.includes(' • ') && (
-                <div className="text-xs font-medium text-slate-400 dark:text-slate-500 mt-0.5">
+                <div className="text-sm font-medium text-slate-500 dark:text-slate-400 mt-0.5">
                   {p.label.split(' • ')[1]}
                 </div>
               )}
