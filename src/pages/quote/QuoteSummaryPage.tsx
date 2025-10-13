@@ -277,7 +277,7 @@ export default function QuoteSummaryPage() {
   const packages: PackageOption[] = [
     { 
       id: "good", 
-      label: "Essential", 
+      label: "Essential • Best Value", 
       priceBeforeTax: baseSubtotal, 
       savings: totals.savings, 
       features: [
@@ -291,7 +291,7 @@ export default function QuoteSummaryPage() {
     },
     { 
       id: "better", 
-      label: "Complete", 
+      label: "Complete • Extended Coverage", 
       priceBeforeTax: baseSubtotal + (isManualStart ? 0 : batteryCost) + completeWarrantyCost, 
       savings: totals.savings, 
       features: [
