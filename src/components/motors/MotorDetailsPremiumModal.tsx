@@ -211,8 +211,8 @@ export default function MotorDetailsPremiumModal({
           <div className="flex-1 overflow-hidden flex flex-col">
             <Tabs defaultValue="overview" className="w-full h-full flex flex-col">
               {/* Mobile/Tablet Header */}
-              <div className="lg:hidden sticky top-0 z-40 bg-white dark:bg-slate-900 border-b border-gray-200">
-                <div className="p-4 sm:p-6">
+              <div className="lg:hidden sticky top-0 z-40 bg-white dark:bg-slate-900 shadow-sm">
+                <div className="p-4 sm:p-6 border-b border-gray-200">
                   <button 
                     onClick={onClose} 
                     className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full" 
@@ -229,14 +229,14 @@ export default function MotorDetailsPremiumModal({
                     </div>
                     
                     {/* 2. Motor Name - full line with proper spacing */}
-                    <h2 className="text-lg font-light tracking-wide text-gray-900 leading-tight">
+                    <h2 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 leading-tight">
                       {title}
                     </h2>
                   </div>
                 </div>
                 
                 {/* 3. Tabs - separate section below name */}
-                <TabsList className="w-full justify-start border-b-0 rounded-none bg-transparent p-0 h-auto">
+                <TabsList className="w-full justify-start border-b border-gray-200 rounded-none bg-white dark:bg-slate-900 p-0 h-auto">
                   <TabsTrigger 
                     value="overview" 
                     className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-4 py-3"
@@ -265,8 +265,8 @@ export default function MotorDetailsPremiumModal({
               </div>
 
               {/* Desktop Header */}
-              <div className="hidden lg:block border-b border-gray-100">
-                <div className="p-6 pb-0">
+              <div className="hidden lg:block sticky top-0 z-40 bg-white dark:bg-slate-900 shadow-sm">
+                <div className="p-6 pb-0 border-b border-gray-100">
                   <button 
                     onClick={onClose} 
                     className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full z-50" 
@@ -283,14 +283,14 @@ export default function MotorDetailsPremiumModal({
                     </div>
                     
                     {/* 2. Motor Name - 20px margin below (space-y-5) */}
-                    <h2 className="text-2xl font-light tracking-wide text-gray-900 leading-tight">
+                    <h2 className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100 leading-tight">
                       {title}
                     </h2>
                   </div>
                 </div>
                 
                 {/* 3. Tabs - new line, clear separation */}
-                <TabsList className="w-full justify-start border-b-0 rounded-none bg-transparent p-0 h-auto mt-5">
+                <TabsList className="w-full justify-start border-b border-gray-100 rounded-none bg-white dark:bg-slate-900 p-0 h-auto mt-5">
                   <TabsTrigger 
                     value="overview" 
                     className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-6 py-4"
