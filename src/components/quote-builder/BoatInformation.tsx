@@ -532,7 +532,7 @@ export const BoatInformation = ({
                                src={type.image} 
                                alt={`${type.label} boat`} 
                                className={`w-full h-full transition-transform duration-200 group-hover:scale-[1.03] ${
-                                 type.id === 'inflatable' 
+                                 type.id === 'inflatable' || type.id === 'canoe'
                                    ? 'object-contain scale-110' 
                                    : 'object-cover'
                                }`}
