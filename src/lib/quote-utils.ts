@@ -105,6 +105,49 @@ export function computeTotals(data: {
 }
 
 /**
+ * Calculate complete quote pricing with proper MSRP, discounts, and accessories
+ */
+export function calculateQuotePricing(data: {
+  motorMSRP: number;
+  motorDiscount: number;
+  accessoryTotal: number;
+  warrantyPrice: number;
+  promotionalSavings: number;
+  tradeInValue: number;
+  taxRate?: number;
+}): PricingBreakdown {
+  const {
+    motorMSRP,
+    motorDiscount,
+    accessoryTotal,
+    warrantyPrice,
+    promotionalSavings,
+    tradeInValue,
+    taxRate = 0.13
+  } = data;
+
+  const msrp = motorMSRP;
+  const discount = motorDiscount;
+  const promoValue = promotionalSavings;
+  
+  // Motor after discount + accessories + warranty - trade-in - promos
+  const subtotal = (msrp - discount) + accessoryTotal + warrantyPrice - tradeInValue - promoValue;
+  const tax = subtotal * taxRate;
+  const total = subtotal + tax;
+  const savings = discount + promoValue + tradeInValue;
+  
+  return {
+    msrp,
+    discount,
+    promoValue,
+    subtotal,
+    tax,
+    total,
+    savings
+  };
+}
+
+/**
  * Format expiry countdown message
  */
 export function formatExpiry(endDate: Date | string): string {

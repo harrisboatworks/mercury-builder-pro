@@ -17,6 +17,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm } from '@/lib/finance';
+import { calculateQuotePricing } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -28,7 +29,7 @@ export default function QuoteSummaryPage() {
   const navigate = useNavigate();
   const { state, dispatch, isStepAccessible, getQuoteData, isNavigationBlocked } = useQuote();
   const { promo } = useActiveFinancingPromo();
-  const { getWarrantyPromotions, getTotalWarrantyBonusYears } = useActivePromotions();
+  const { getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings } = useActivePromotions();
   const { toast } = useToast();
   const [selectedPackage, setSelectedPackage] = useState<string>('better');
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
@@ -110,15 +111,12 @@ export default function QuoteSummaryPage() {
 
   const quoteData = getQuoteData();
 
-  // Calculate pricing breakdown
-  const motorPrice = quoteData.motor?.salePrice || quoteData.motor?.basePrice || quoteData.motor?.price || 0;
-  const hp = quoteData.motor?.hp || 0;
-
   // Motor details for header - use existing state only
   const motor = state?.motor ?? {} as any;
   const motorName = motor?.model ?? motor?.name ?? motor?.displayName ?? "Mercury Outboard";
   const modelYear = motor?.year ?? motor?.modelYear ?? undefined;
-  const motorHp = motor?.hp ?? motor?.horsepower ?? hp;
+  const hp = quoteData.motor?.hp || motor?.hp || motor?.horsepower || 0;
+  const motorHp = hp;
   const sku = motor?.sku ?? motor?.partNumber ?? null;
   const imageUrl = motor?.imageUrl ?? motor?.thumbnail ?? null;
 
@@ -154,17 +152,24 @@ export default function QuoteSummaryPage() {
   // Add warranty price if selected
   const warrantyPrice = state.warrantyConfig?.warrantyPrice || 0;
   
-  // Pricing calculation with conditional accessories and warranty
-  const data = {
-    msrp: motorPrice + baseAccessoryCost + warrantyPrice,
-    discount: 546,
-    promoValue: 400,
-    subtotal: motorPrice + baseAccessoryCost + warrantyPrice - 546 - 400,
-    tax: (motorPrice + baseAccessoryCost + warrantyPrice - 546 - 400) * 0.13,
-    total: (motorPrice + baseAccessoryCost + warrantyPrice - 546 - 400) * 1.13,
-  };
+  // Calculate proper MSRP and discount from motor data
+  const motorMSRP = quoteData.motor?.basePrice || 0;
+  const motorSalePrice = quoteData.motor?.salePrice || quoteData.motor?.price || motorMSRP;
+  const motorDiscount = motorMSRP - motorSalePrice;
   
-  const totals = computeTotals(data);
+  // Get promotional savings dynamically
+  const promoSavings = getTotalPromotionalSavings?.(motorMSRP) || 0;
+  
+  // Calculate complete pricing with proper structure
+  const totals = calculateQuotePricing({
+    motorMSRP,
+    motorDiscount,
+    accessoryTotal: baseAccessoryCost,
+    warrantyPrice,
+    promotionalSavings: promoSavings,
+    tradeInValue: state.tradeInInfo?.estimatedValue || 0,
+    taxRate: 0.13
+  });
 
   // Get financing rate
   const financingRate = promo?.rate || 7.99;
@@ -250,12 +255,15 @@ export default function QuoteSummaryPage() {
   const warrantyPromos = getWarrantyPromotions?.() ?? [];
   const promoWarrantyYears = warrantyPromos[0]?.warranty_extra_years ?? 0;
 
+  // Calculate base subtotal for packages (motor after all discounts + base accessories)
+  const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
+
   // Package options with coverage info
   const packages: PackageOption[] = [
     { 
       id: "good", 
       label: "Essential", 
-      priceBeforeTax: data.subtotal, 
+      priceBeforeTax: baseSubtotal, 
       savings: totals.savings, 
       features: ["Mercury motor", "Standard controls & rigging", "Basic installation"],
       coverageYears: currentCoverageYears
@@ -263,8 +271,8 @@ export default function QuoteSummaryPage() {
     { 
       id: "better", 
       label: "Complete", 
-      priceBeforeTax: data.subtotal + 179.99, 
-      savings: totals.savings + 50, 
+      priceBeforeTax: baseSubtotal + batteryCost, 
+      savings: totals.savings, 
       features: ["Mercury motor", "Premium controls & rigging", "Marine starting battery", "Standard propeller", "Priority installation"], 
       recommended: true,
       coverageYears: Math.max(currentCoverageYears, 6),
@@ -273,8 +281,8 @@ export default function QuoteSummaryPage() {
     { 
       id: "best", 
       label: "Premium • Max coverage", 
-      priceBeforeTax: data.subtotal + 179.99, 
-      savings: totals.savings + 150, 
+      priceBeforeTax: baseSubtotal + batteryCost + 299.99, 
+      savings: totals.savings, 
       features: ["Max coverage", "Priority install", "Premium prop", "Extended warranty", "White-glove installation"],
       coverageYears: maxCoverageYears,
       targetWarrantyYears: maxCoverageYears
@@ -491,18 +499,10 @@ export default function QuoteSummaryPage() {
 
             {/* Detailed Pricing Breakdown */}
             <PricingTable
-              pricing={{
-                msrp: totals.msrp,
-                discount: totals.discount,
-                promoValue: totals.promoValue,
-                subtotal: totals.subtotal,
-                tax: totals.tax,
-                total: totals.total,
-                savings: totals.savings
-              }}
+              pricing={totals}
               motorName={quoteData.motor?.model || 'Mercury Motor'}
               accessoryBreakdown={accessoryBreakdown}
-              tradeInValue={0}
+              tradeInValue={state.tradeInInfo?.estimatedValue || 0}
             />
             
             {/* New Warranty Add-on UI */}
