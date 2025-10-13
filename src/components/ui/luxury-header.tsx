@@ -6,6 +6,7 @@ import { LuxurySearch } from './luxury-search';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { HamburgerMenu } from './hamburger-menu';
+import { ChatWidget } from '@/components/chat/ChatWidget';
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
@@ -129,15 +130,10 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                 )}
               </Button>
 
-              {/* Help Button (Desktop) */}
-              <Button
-                variant="ghost"
-                size="sm"
-                className="hidden md:flex p-2 text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
-                title="Help"
-              >
-                <HelpCircle className="h-5 w-5" />
-              </Button>
+              {/* Chat Widget (Desktop) */}
+              <div className="hidden md:block">
+                <ChatWidget />
+              </div>
 
               {/* User Menu (Desktop) */}
               <div className="hidden md:flex items-center gap-2">
