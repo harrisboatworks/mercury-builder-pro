@@ -55,38 +55,45 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
         }`}
       >
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 h-full">
-          <div className="flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] h-full gap-2 sm:gap-3 md:gap-6">
+          <div className="grid grid-cols-[auto_1fr_auto] md:grid-cols-[1fr_auto_1fr] items-center h-full gap-2 md:gap-6">
             
-            {/* Left: Mobile Menu + Logos */}
-            <div className="flex items-center gap-3 sm:gap-4">
-              {/* Mobile Menu Button */}
-              <button
-                className="md:hidden p-1 -ml-1.5 text-luxury-ink hover:text-luxury-gray transition-colors"
-                onClick={() => setIsMenuOpen(true)}
-                aria-label="Open menu"
-              >
-                <Menu className="h-5 w-5" />
-              </button>
+            {/* Left: Mobile Menu Button */}
+            <button
+              className="md:hidden p-1.5 text-luxury-ink hover:text-luxury-gray transition-colors justify-self-start"
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
 
-              {/* Logos - Centered on Mobile, Left on Desktop */}
-              <div className="flex items-center gap-1.5 sm:gap-2 md:gap-4">
-                {/* Harris Logo */}
-                <img 
-                  src={harrisLogo} 
-                  alt="Harris Boat Works" 
-                  className="h-6 sm:h-7 md:h-8 lg:h-9 transition-all duration-300"
-                />
-                
-                {/* Hairline Divider */}
-                <div className="block w-px h-4 sm:h-5 md:h-8 bg-luxury-hairline" />
-                
-                {/* Mercury Logo - Show on all screens */}
-                <img 
-                  src={mercuryLogo} 
-                  alt="Mercury Marine" 
-                  className="h-6 sm:h-7 md:h-8 lg:h-9 transition-all duration-300"
-                />
-              </div>
+            {/* Left: Logos (Desktop Only) */}
+            <div className="hidden md:flex items-center gap-2 lg:gap-4 justify-self-start">
+              <img 
+                src={harrisLogo} 
+                alt="Harris Boat Works" 
+                className="h-7 md:h-8 lg:h-9 transition-all duration-300"
+              />
+              <div className="w-px h-5 md:h-8 bg-luxury-hairline" />
+              <img 
+                src={mercuryLogo} 
+                alt="Mercury Marine" 
+                className="h-7 md:h-8 lg:h-9 transition-all duration-300"
+              />
+            </div>
+
+            {/* Center: Logos (Mobile Only) */}
+            <div className="flex md:hidden items-center justify-center gap-1.5">
+              <img 
+                src={harrisLogo} 
+                alt="Harris Boat Works" 
+                className="h-6 sm:h-7 transition-all duration-300"
+              />
+              <div className="w-px h-4 sm:h-5 bg-luxury-hairline" />
+              <img 
+                src={mercuryLogo} 
+                alt="Mercury Marine" 
+                className="h-6 sm:h-7 transition-all duration-300"
+              />
             </div>
 
             {/* Center: Trust Badges - Desktop Only */}
