@@ -32,7 +32,7 @@ export default function OptionGallery({
   return (
     <section className="my-6">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-xl font-bold text-[#2A4D69]">{title}</h3>
+        <h3 className="text-xl font-light tracking-wide text-foreground">{title}</h3>
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -53,10 +53,10 @@ export default function OptionGallery({
                 onMouseLeave={() => setHover(null)}
                 onClick={() => handleSelect(choice)}
                 className={`
-                  relative text-left rounded-2xl overflow-hidden transition-all duration-300
+                  relative text-left rounded-xl overflow-hidden transition-all duration-300
                   ${selected 
-                    ? 'ring-4 ring-green-500 ring-offset-2 shadow-xl' 
-                    : 'border-2 border-gray-200 hover:border-blue-400 hover:shadow-lg'
+                    ? 'ring-2 ring-foreground ring-offset-2 shadow-lg' 
+                    : 'border border-border hover:border-foreground/30 hover:shadow-md'
                   }
                 `}
               >
@@ -77,7 +77,7 @@ export default function OptionGallery({
                   
                   {/* Badge */}
                   {choice.badge && (
-                    <div className="absolute top-2 left-2 bg-purple-600 text-white px-2 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                    <div className="absolute top-2 left-2 bg-foreground text-background px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
                       <Award className="w-3 h-3" />
                       {choice.badge}
                     </div>
@@ -88,7 +88,7 @@ export default function OptionGallery({
                     <motion.div
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      className="absolute bottom-2 right-2 bg-green-500 text-white rounded-full p-2"
+                      className="absolute bottom-2 right-2 bg-foreground text-background rounded-full p-2"
                     >
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -98,10 +98,10 @@ export default function OptionGallery({
                 </div>
                 
                 {/* Content */}
-                <div className="p-4 bg-white">
-                  <div className="font-bold text-gray-900">{choice.label}</div>
+                <div className="p-4 bg-card">
+                  <div className="font-medium tracking-wide text-foreground">{choice.label}</div>
                   {choice.helper && (
-                    <div className="text-sm text-gray-600 mt-1">{choice.helper}</div>
+                    <div className="text-sm text-muted-foreground font-light mt-1">{choice.helper}</div>
                   )}
                 </div>
               </motion.button>

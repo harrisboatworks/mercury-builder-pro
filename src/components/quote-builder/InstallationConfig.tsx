@@ -63,10 +63,10 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
         animate={{ opacity: 1 }}
         className="max-w-6xl mx-auto"
       >
-        <h2 className="text-3xl font-bold text-[#2A4D69] mb-2">
+        <h2 className="text-3xl font-light tracking-wide text-foreground mb-2">
           {isTiller ? 'Configure Your Tiller Installation' : 'Configure Your Installation'}
         </h2>
-        <p className="text-gray-600 mb-8">
+        <p className="text-muted-foreground font-light mb-8">
           {isTiller 
             ? `Select your mounting and service options for the ${selectedMotor?.model}`
             : `Select your rigging options for the ${selectedMotor?.model}`
@@ -139,13 +139,13 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 mt-6"
+            className="bg-card border border-border rounded-xl p-6 mt-6"
           >
-            <h3 className="text-xl font-bold mb-4">{isTiller ? 'Additional Services' : 'Step 4: Additional Services'}</h3>
+            <h3 className="text-xl font-light tracking-wide mb-4">{isTiller ? 'Additional Services' : 'Step 4: Additional Services'}</h3>
             <div className="space-y-3">
               <motion.label 
                 whileHover={{ x: 4 }}
-                className="flex items-center gap-3 p-3 bg-white rounded-lg cursor-pointer"
+                className="flex items-center gap-3 p-3 bg-background border border-border rounded-lg cursor-pointer hover:border-foreground/20 transition-colors"
               >
                 <input
                   type="checkbox"
@@ -156,14 +156,14 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
                   className="w-5 h-5"
                 />
                 <div className="flex-1">
-                  <span className="font-semibold">Remove & Dispose Old Motor</span>
-                  <span className="text-sm text-gray-600 ml-2">+2 hours labour</span>
+                  <span className="font-medium">Remove & Dispose Old Motor</span>
+                  <span className="text-sm text-muted-foreground ml-2">+2 hours labour</span>
                 </div>
               </motion.label>
               
               <motion.label 
                 whileHover={{ x: 4 }}
-                className="flex items-center gap-3 p-3 bg-white rounded-lg cursor-pointer"
+                className="flex items-center gap-3 p-3 bg-background border border-border rounded-lg cursor-pointer hover:border-foreground/20 transition-colors"
               >
                 <input
                   type="checkbox"
@@ -174,8 +174,8 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
                   className="w-5 h-5"
                 />
                 <div className="flex-1">
-                  <span className="font-semibold">Water Test & Prop Optimization</span>
-                  <span className="text-sm text-gray-600 ml-2">Recommended</span>
+                  <span className="font-medium">Water Test & Prop Optimization</span>
+                  <span className="text-sm text-muted-foreground ml-2">Recommended</span>
                 </div>
               </motion.label>
             </div>
@@ -191,7 +191,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
           >
             <button
               onClick={handleComplete}
-              className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg hover:shadow-xl transform hover:scale-[1.02] transition-all"
+              className="w-full py-4 bg-foreground text-background rounded-xl font-light tracking-wide text-lg hover:opacity-90 transition-opacity"
             >
               Complete Configuration & View Quote
             </button>
