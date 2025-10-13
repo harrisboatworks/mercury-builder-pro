@@ -125,7 +125,7 @@ export const QuoteLayout = ({
 
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 pb-8 pt-0">
+      <main className="bg-stone-50 min-h-screen">
         {children}
       </main>
 

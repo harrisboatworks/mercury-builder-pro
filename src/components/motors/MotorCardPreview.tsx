@@ -263,22 +263,22 @@ export default function MotorCardPreview({
   return (
     <>
       <div 
-        className="group bg-white shadow-sm rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 cursor-pointer"
+        className="group bg-white shadow-sm rounded-lg border border-gray-100 overflow-hidden transition-all duration-700 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
         onClick={handleCardClick}
       >
         <div className="relative">
           {/* Image Section */}
           {imageUrl && (
-            <div className="relative bg-gray-50 p-4">
+            <div className="relative bg-gradient-to-b from-stone-50 to-white p-12">
               <img 
                 src={imageUrl} 
                 alt={title} 
-                className="h-32 md:h-48 w-full object-contain aspect-[4/3]" 
+                className="h-48 md:h-72 w-full object-contain"
               />
               
               {/* HP Badge */}
               {hpNum && (
-                <div className="absolute top-4 right-4 bg-black text-white px-3 py-1 text-xs font-light tracking-wider">
+                <div className="absolute top-4 right-4 bg-black text-white px-3 py-1 text-xs tracking-widest font-light uppercase">
                   {hpNum} HP
                 </div>
               )}
@@ -299,53 +299,56 @@ export default function MotorCardPreview({
           <div className="h-0.5 bg-gradient-to-r from-[#003F7F] to-transparent"></div>
           
           {/* Content Section - Premium Mobile Layout */}
-          <div className="p-4 space-y-4">
+          <div className="p-8 space-y-6">
             {/* Model Name - Prominent */}
-            <h3 className="text-2xl font-light tracking-wide text-black">
+            <h3 className="text-2xl font-light tracking-wide text-gray-900">
               {formatTitle(title)}
             </h3>
             
             {/* Model Number - Subtle */}
             {motor?.model_number && (
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm font-light text-gray-600 mt-1">
                 Model: {motor.model_number}
               </p>
             )}
             
             {/* Simplified Specs - Single Line */}
-            <p className="text-sm text-gray-600 mt-4 tracking-wide">
+            <p className="text-base font-light text-gray-600 leading-relaxed mt-6">
               {getSimplifiedSpecs()}
             </p>
             
-            {/* Pricing - Clean & Direct */}
-            <div className="mt-4">
+            {/* Pricing - Luxury minimal */}
+            <div className="my-8">
+              <p className="text-sm text-gray-500 uppercase tracking-widest font-light">
+                from
+              </p>
               {msrp && price && msrp > price && (
-                <p className="text-base text-gray-500 line-through font-light">${msrp.toLocaleString()}</p>
+                <p className="text-lg text-gray-400 font-light line-through mt-2">${msrp.toLocaleString()}</p>
               )}
-              <p className="text-3xl font-light text-black mt-1">
+              <p className="text-4xl font-light tracking-tight text-gray-900 mt-1">
                 {price ? `$${price.toLocaleString()}` : 'Call for Price'}
               </p>
             </div>
             
             {/* Delivery Status - Subtle with Icon */}
-            <div className="flex items-center gap-2 mt-4 text-sm text-gray-600">
+            <div className="flex items-center gap-2 mt-4 text-sm font-light text-gray-600">
               <div className={`w-1.5 h-1.5 ${deliveryStatus.dotColor} rounded-full`}></div>
               <span>{deliveryStatus.text}</span>
             </div>
             
             {/* Warranty - Clean Checkmark */}
             {warrantyText && (
-              <p className="text-sm text-blue-600 mt-2">
+              <p className="text-sm font-light text-gray-600 mt-2">
                 {warrantyText}
               </p>
             )}
             
             {/* Premium Black Button */}
             <button 
-              className="w-full bg-black text-white py-4 text-base font-light tracking-wider uppercase mt-6 rounded-none hover:bg-gray-900 transition-colors duration-200"
+              className="w-full border-2 border-black text-black py-4 text-xs tracking-wider uppercase font-light rounded-sm hover:bg-black hover:text-white transition-all duration-500 ease-out mt-8"
               onClick={handleMoreInfoClick}
             >
-              View Details
+              View Specifications
             </button>
           </div>
         </div>

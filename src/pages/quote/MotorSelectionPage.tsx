@@ -366,10 +366,10 @@ export default function MotorSelectionPage() {
   if (loading) {
     return (
       <QuoteLayout>
-        <div className="flex items-center justify-center py-20">
+        <div className="bg-stone-50 min-h-screen flex items-center justify-center py-20">
           <div className="text-center">
-            <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
-            <p className="text-muted-foreground">Loading Mercury motors...</p>
+            <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-gray-900 border-t-transparent"></div>
+            <p className="text-gray-600 font-light tracking-wide">Loading Mercury motors...</p>
           </div>
         </div>
       </QuoteLayout>
@@ -379,16 +379,16 @@ export default function MotorSelectionPage() {
   return (
     <FinancingProvider>
       <QuoteLayout showProgress={false}>
-        {/* Search Bar - Sticks directly under header */}
-        <div className="sticky top-14 sm:top-16 md:top-[72px] z-40 bg-white border-b border-luxury-hairline">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3">
+        {/* Search Bar - Elegant minimal style */}
+        <div className="sticky top-14 sm:top-16 md:top-[72px] z-40 bg-stone-50 border-b border-gray-200">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search by HP, model, or keyword (e.g., 25, verado, hp:>100)..."
+                  placeholder="Find your perfect Mercury..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full h-10 sm:h-11 md:h-12 px-3 sm:px-4 pr-10 sm:pr-12 text-sm rounded-full border border-luxury-hairline bg-white text-luxury-ink placeholder:text-luxury-gray focus:outline-none focus:ring-2 focus:ring-luxury-ink/20 focus:border-luxury-ink transition-all"
+                  className="w-full h-16 px-6 pr-12 text-base font-light tracking-wide rounded-sm border border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-gray-400 transition-all duration-500"
                 />
                 {searchQuery && (
                   <button
@@ -409,12 +409,12 @@ export default function MotorSelectionPage() {
           </div>
         </div>
 
-        <div className="space-y-6 pt-4 sm:pt-6">
+        <div className="bg-stone-50 py-12">
         
-        <div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Motors Grid */}
           {filteredMotors.length > 0 ? (
-            <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 mt-6">
+            <div className="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
               {filteredMotors.map(motor => {
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);
