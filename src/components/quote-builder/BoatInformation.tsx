@@ -63,6 +63,12 @@ export const BoatInformation = ({
     recommendedHP: '',
     image: ''
   }, {
+    id: 'ultralite',
+    label: 'Ultralite',
+    description: 'Cartoppers & ultra-light boats',
+    recommendedHP: '2.5-6',
+    image: '/boat-types/ultralite.png'
+  }, {
     id: 'canoe',
     label: 'Canoe',
     description: 'Canoes & small rowboats',
@@ -531,11 +537,11 @@ export const BoatInformation = ({
                              <img 
                                src={type.image} 
                                alt={`${type.label} boat`} 
-                               className={`w-full h-full transition-transform duration-200 group-hover:scale-[1.03] ${
-                                 type.id === 'inflatable' || type.id === 'canoe'
-                                   ? 'object-contain scale-110' 
-                                   : 'object-cover'
-                               }`}
+                                className={`w-full h-full transition-transform duration-200 group-hover:scale-[1.03] ${
+                                 type.id === 'inflatable' || type.id === 'canoe' || type.id === 'ultralite'
+                                    ? 'object-contain scale-110' 
+                                    : 'object-cover'
+                                }`}
                                loading="lazy" 
                              />
                          </div>
