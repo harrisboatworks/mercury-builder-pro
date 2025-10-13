@@ -18,6 +18,12 @@ interface QuoteLayoutProps {
   children: React.ReactNode;
   showProgress?: boolean;
   title?: string;
+  searchTerm?: string;
+  selectedHpRange?: { min: number; max: number };
+  inStockOnly?: boolean;
+  onSearchChange?: (term: string) => void;
+  onHpRangeChange?: (range: { min: number; max: number }) => void;
+  onInStockChange?: (inStock: boolean) => void;
 }
 const steps = [{
   id: 1,
@@ -51,7 +57,13 @@ const steps = [{
 export const QuoteLayout = ({
   children,
   showProgress = true,
-  title
+  title,
+  searchTerm,
+  selectedHpRange,
+  inStockOnly,
+  onSearchChange,
+  onHpRangeChange,
+  onInStockChange
 }: QuoteLayoutProps) => {
   const {
     user,
@@ -117,7 +129,13 @@ export const QuoteLayout = ({
       {title && (
         <LuxurySubheader 
           title={title}
-          showFilters={false}
+          searchTerm={searchTerm}
+          selectedHpRange={selectedHpRange}
+          inStockOnly={inStockOnly}
+          onSearchChange={onSearchChange}
+          onHpRangeChange={onHpRangeChange}
+          onInStockChange={onInStockChange}
+          showFilters={!!(searchTerm !== undefined && onSearchChange)}
         />
       )}
 
