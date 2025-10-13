@@ -279,21 +279,21 @@ export default function QuoteSummaryPage() {
       savings: totals.savings, 
       features: [
         "Mercury motor", 
-        "Standard controls & rigging", 
+        isManualTiller ? "Tiller-handle operation" : "Standard controls & rigging", 
         `${currentCoverageYears} years coverage included`,
         "Basic installation",
-        "Customer supplies battery"
+        "Customer supplies battery (if needed)"
       ],
       coverageYears: currentCoverageYears
     },
     { 
       id: "better", 
       label: "Complete", 
-      priceBeforeTax: baseSubtotal + batteryCost + completeWarrantyCost, 
+      priceBeforeTax: baseSubtotal + (isManualStart ? 0 : batteryCost) + completeWarrantyCost, 
       savings: totals.savings, 
       features: [
         "Everything in Essential",
-        "Marine starting battery ($180 value)", 
+        ...(isManualStart ? [] : ["Marine starting battery ($180 value)"]), 
         `Extended to ${completeTargetYears} years total coverage`,
         completeWarrantyCost > 0 ? `(+${completeTargetYears - currentCoverageYears} years extension • $${completeWarrantyCost})` : null,
         "Priority installation"
@@ -305,7 +305,7 @@ export default function QuoteSummaryPage() {
     { 
       id: "best", 
       label: "Premium • Max Coverage", 
-      priceBeforeTax: baseSubtotal + batteryCost + premiumWarrantyCost + 299.99, 
+      priceBeforeTax: baseSubtotal + (isManualStart ? 0 : batteryCost) + premiumWarrantyCost + 299.99, 
       savings: totals.savings, 
       features: [
         "Everything in Complete",
@@ -319,7 +319,7 @@ export default function QuoteSummaryPage() {
     },
   ];
 
-  // Build accessory breakdown based on motor requirements
+  // Build accessory breakdown based on motor requirements and selected package
   const accessoryBreakdown = [];
   
   // Only add controls if the motor requires them (not for tiller motors)
@@ -331,12 +331,21 @@ export default function QuoteSummaryPage() {
     });
   }
   
-  // Only add battery for electric start motors or if package includes it
-  if (!isManualStart || selectedPackage !== 'good') {
+  // Only add battery for ELECTRIC START motors (manual start motors don't need batteries)
+  if (!isManualStart) {
     accessoryBreakdown.push({
       name: 'Marine Battery',
       price: batteryCost,
-      description: isManualStart ? 'Optional marine battery' : 'Marine starting battery (required)'
+      description: 'Marine starting battery (required for electric start)'
+    });
+  }
+  
+  // Add premium propeller for Premium package only
+  if (selectedPackage === 'best') {
+    accessoryBreakdown.push({
+      name: 'Premium Stainless Propeller',
+      price: 299.99,
+      description: 'High-performance stainless steel propeller'
     });
   }
   
