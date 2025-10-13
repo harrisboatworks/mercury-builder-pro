@@ -41,7 +41,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto items-stretch">
         <Card className="relative hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
               onClick={handleLooseMotorSelect}>
-          <Badge className="absolute -top-2 -right-2 bg-green-500 hover:bg-green-500 text-[10px] tracking-[0.15em] uppercase font-light">
+          <Badge className="absolute -top-2 -right-2 bg-gray-900 hover:bg-gray-900 text-white text-[10px] tracking-[0.15em] uppercase font-light">
             Quick & Easy
           </Badge>
           
@@ -100,7 +100,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
         
         <Card className="relative hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
               onClick={handleInstalledSelect}>
-          <Badge className="absolute -top-2 -right-2 bg-purple-600 hover:bg-purple-600 text-[10px] tracking-[0.15em] uppercase font-light">
+          <Badge className="absolute -top-2 -right-2 bg-black hover:bg-black text-white text-[10px] tracking-[0.15em] uppercase font-light">
             Full Service
           </Badge>
           
