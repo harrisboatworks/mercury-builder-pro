@@ -55,7 +55,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 h-full">
-          <div className="flex items-center justify-between h-full">
+          <div className="flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] h-full gap-6">
             
             {/* Left: Mobile Menu + Logos */}
             <div className="flex items-center gap-3 sm:gap-4">
@@ -89,8 +89,21 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
               </div>
             </div>
 
+            {/* Center: Trust Badges - Desktop Only */}
+            <div className="hidden md:flex items-center justify-center space-x-6 text-xs text-luxury-gray">
+              <div className="flex items-center gap-2">
+                <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-5 w-auto" />
+                <span className="font-medium">Award-Winning Service</span>
+              </div>
+              <div className="text-luxury-hairline">•</div>
+              <div className="flex items-center gap-2">
+                <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-5 w-auto" />
+                <span className="font-medium">Certified Repower Center</span>
+              </div>
+            </div>
+
             {/* Right: Actions */}
-            <div className="flex items-center gap-1">
+            <div className="flex items-center justify-end gap-1">
               {/* Quote/Cart Button */}
               <Button
                 variant="ghost"

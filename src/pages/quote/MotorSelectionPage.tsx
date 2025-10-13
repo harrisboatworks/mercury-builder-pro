@@ -379,25 +379,8 @@ export default function MotorSelectionPage() {
   return (
     <FinancingProvider>
       <QuoteLayout showProgress={false}>
-        {/* Combined Trust Badges + Search Bar */}
-        <div className="sticky top-[72px] z-40 bg-white border-b border-luxury-hairline shadow-sm">
-          {/* Trust Badges - Desktop Only */}
-          <div className="hidden sm:block bg-luxury-stage border-b border-luxury-hairline">
-            <div className="max-w-7xl mx-auto px-6 py-2">
-              <div className="flex items-center justify-center space-x-8 text-xs text-luxury-gray">
-                <div className="flex items-center gap-2">
-                  <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-5 w-auto" />
-                  <span className="font-medium">Award-Winning Service</span>
-                </div>
-                <div className="text-luxury-hairline">•</div>
-                <div className="flex items-center gap-2">
-                  <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-5 w-auto" />
-                  <span className="font-medium">Certified Repower Center</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
+        {/* Search Bar */}
+        <div className="sticky top-[80px] z-40 bg-white border-b border-luxury-hairline shadow-sm">
           {/* Search Bar */}
           <div className="max-w-4xl mx-auto px-6 py-2">
             <div className="relative">
