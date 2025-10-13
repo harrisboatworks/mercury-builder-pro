@@ -31,65 +31,68 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
       animate={{ opacity: 1, y: 0 }}
       className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
     >
-      <div className="text-center mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-light tracking-wide text-gray-900 dark:text-gray-100 mb-3">
           Great Choice! {selectedMotor?.model}
         </h2>
-        <p className="text-muted-foreground">How would you like to purchase this motor?</p>
+        <p className="text-gray-500 dark:text-gray-400 font-light">How would you like to purchase this motor?</p>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto items-stretch">
         <Card className="relative hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
               onClick={handleLooseMotorSelect}>
-          <Badge className="absolute -top-2 -right-2 bg-green-500 hover:bg-green-500 text-xs">
+          <Badge className="absolute -top-2 -right-2 bg-green-500 hover:bg-green-500 text-[10px] tracking-[0.15em] uppercase font-light">
             Quick & Easy
           </Badge>
           
-          <CardHeader className="pb-2">
-            <div className="flex items-center gap-3 mb-2">
+          <CardHeader className="pb-4">
+            <div className="flex items-center gap-3 mb-3">
               <Package className="w-8 h-8 text-primary" />
-              <CardTitle className="text-xl">Loose Motor</CardTitle>
+              <CardTitle className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">Loose Motor</CardTitle>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm font-light text-gray-500 dark:text-gray-400">
               In-store pickup only • No installation
             </p>
           </CardHeader>
           
-          <CardContent className="flex flex-col flex-1">
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm flex-1">
-              <div className="flex items-center gap-1.5">
+          <CardContent className="flex flex-col flex-1 pt-0">
+            <div className="flex flex-col gap-3 text-base font-light text-gray-600 dark:text-gray-300 flex-1 space-y-2 mb-6">
+              <div className="flex items-center gap-2">
                 <span className="text-green-600 text-sm">✓</span>
                 <span>Free Prep</span>
               </div>
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-2">
                 <span className="text-green-600 text-sm">✓</span>
                 <span>Shop Tank Tested</span>
               </div>
               {isTiller ? (
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-2">
                   <span className="text-green-600 text-sm">✓</span>
                   <span>Includes propeller & internal fuel tank</span>
                 </div>
               ) : includes12LTank ? (
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-2">
                   <span className="text-green-600 text-sm">✓</span>
                   <span>Includes 12L fuel tank & hose</span>
                 </div>
               ) : (
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-2">
                   <span className="text-green-600 text-sm">✓</span>
                   <span>Ready for rigging & accessories</span>
                 </div>
               )}
               {isTiller && isInStock && (
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-2">
                   <span className="text-green-600 text-sm">✓</span>
                   <span>Same-day pickup available</span>
                 </div>
               )}
             </div>
             
-            <Button className="max-w-xs mx-auto mt-auto block h-8 md:h-9 px-4 py-2 text-sm">
+            <Button 
+              variant="outline"
+              className="w-full border-2 border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100 py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-gray-900 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900 transition-all duration-500"
+            >
               Select Loose Motor
             </Button>
           </CardContent>
@@ -97,49 +100,52 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
         
         <Card className="relative hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
               onClick={handleInstalledSelect}>
-          <Badge className="absolute -top-2 -right-2 bg-purple-600 hover:bg-purple-600 text-xs">
+          <Badge className="absolute -top-2 -right-2 bg-purple-600 hover:bg-purple-600 text-[10px] tracking-[0.15em] uppercase font-light">
             Full Service
           </Badge>
           
-          <CardHeader className="pb-2">
-            <div className="flex items-center gap-3 mb-2">
+          <CardHeader className="pb-4">
+            <div className="flex items-center gap-3 mb-3">
               <Wrench className="w-8 h-8 text-primary" />
-              <CardTitle className="text-xl">Professional Installation</CardTitle>
+              <CardTitle className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">Professional Installation</CardTitle>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm font-light text-gray-500 dark:text-gray-400">
               {isTiller ? 'Complete motor prep & water test' : 'Complete rigging & water test'}
             </p>
           </CardHeader>
           
-          <CardContent className="flex flex-col flex-1">
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm flex-1">
+          <CardContent className="flex flex-col flex-1 pt-0">
+            <div className="flex flex-col gap-3 text-base font-light text-gray-600 dark:text-gray-300 flex-1 space-y-2 mb-6">
               {!isTiller && (
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-2">
                   <span className="text-green-600 text-sm">✓</span>
                   <span>Controls & gauges configured</span>
                 </div>
               )}
               {isTiller && (
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-2">
                   <span className="text-green-600 text-sm">✓</span>
                   <span>Securely bolted to transom (if requested)</span>
                 </div>
               )}
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-2">
                 <span className="text-green-600 text-sm">✓</span>
                 <span>Marine battery included ($180)</span>
               </div>
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-2">
                 <span className="text-green-600 text-sm">✓</span>
                 <span>Old motor removal available</span>
               </div>
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-2">
                 <span className="text-green-600 text-sm">✓</span>
                 <span>Water tested & prop optimized</span>
               </div>
             </div>
             
-            <Button className="max-w-xs mx-auto mt-auto block h-8 md:h-9 px-4 py-2 text-sm">
+            <Button 
+              variant="outline"
+              className="w-full border-2 border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100 py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-gray-900 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900 transition-all duration-500"
+            >
               Select Installation
             </Button>
           </CardContent>
