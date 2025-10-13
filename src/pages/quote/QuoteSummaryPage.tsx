@@ -472,6 +472,9 @@ export default function QuoteSummaryPage() {
     const pkg = packages.find(p => p.id === packageId);
     if (pkg?.targetWarrantyYears) {
       onSelectWarranty(pkg.targetWarrantyYears);
+    } else {
+      // Clear warranty if package doesn't include extended coverage
+      onSelectWarranty(null);
     }
   };
 
