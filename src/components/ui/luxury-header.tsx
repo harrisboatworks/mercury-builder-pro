@@ -60,10 +60,10 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
           <div className="flex items-center justify-between h-full">
             
             {/* Left: Logos */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-3 sm:gap-4">
               {/* Mobile Menu Button */}
               <button
-                className="md:hidden p-2 -ml-2 text-luxury-ink hover:text-luxury-gray transition-colors"
+                className="md:hidden p-2 -ml-3 text-luxury-ink hover:text-luxury-gray transition-colors"
                 onClick={() => setIsMenuOpen(true)}
                 aria-label="Open menu"
               >
@@ -75,7 +75,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                 src={harrisLogo} 
                 alt="Harris Boat Works" 
                 className={`transition-all duration-300 ${
-                  isScrolled ? 'h-7 sm:h-8' : 'h-9 sm:h-10'
+                  isScrolled ? 'h-6 sm:h-8' : 'h-7 sm:h-10'
                 }`}
               />
               

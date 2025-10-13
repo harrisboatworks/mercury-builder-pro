@@ -41,7 +41,7 @@ export function PackageCards({
             key={p.id}
             onClick={() => onSelect(p.id)}
             className={cn(
-              "group relative flex flex-col rounded-2xl border p-4 text-left transition",
+              "group relative flex flex-col rounded-2xl border p-6 text-left transition",
               "hover:shadow-md hover:scale-[1.02]",
               isSelected
                 ? "border-blue-600 ring-2 ring-blue-600/20 dark:border-blue-400 dark:ring-blue-400/30"
@@ -84,10 +84,20 @@ export function PackageCards({
               You save {money(p.savings)}
             </div>
 
-            <ul className="mt-3 space-y-1 text-sm text-slate-700 dark:text-slate-300">
+            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
               {p.features.slice(0, 4).map((f, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span aria-hidden className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400/80 dark:bg-slate-500" />
+                <li key={i} className="flex items-center gap-2.5">
+                  <svg 
+                    className="h-4 w-4 flex-shrink-0 text-blue-600 dark:text-blue-400" 
+                    fill="currentColor" 
+                    viewBox="0 0 20 20"
+                  >
+                    <path 
+                      fillRule="evenodd" 
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" 
+                      clipRule="evenodd" 
+                    />
+                  </svg>
                   <span>{f}</span>
                 </li>
               ))}
