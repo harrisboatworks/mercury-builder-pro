@@ -13,6 +13,7 @@ import { ChatWidget } from '@/components/chat/ChatWidget';
 import { CurrentStepIndicator } from './CurrentStepIndicator';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { LuxurySubheader } from '@/components/ui/luxury-subheader';
+import { MobileTrustAccordion } from '@/components/ui/mobile-trust-accordion';
 interface QuoteLayoutProps {
   children: React.ReactNode;
   showProgress?: boolean;
@@ -133,15 +134,21 @@ export const QuoteLayout = ({
         </div>
       )}
 
-      {/* Trust Bar */}
-      <div className="bg-luxury-stage border-b border-luxury-hairline">
+      {/* Trust Section - Responsive */}
+      {/* Mobile: Collapsible Accordion */}
+      <div className="sm:hidden">
+        <MobileTrustAccordion />
+      </div>
+
+      {/* Desktop: Horizontal Bar */}
+      <div className="hidden sm:block bg-luxury-stage border-b border-luxury-hairline">
         <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-sm text-luxury-gray">
+          <div className="flex items-center justify-center space-x-8 text-sm text-luxury-gray">
             <div className="flex items-center gap-3">
               <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-6 w-auto" />
               <span className="font-medium">Award-Winning Service Team</span>
             </div>
-            <div className="hidden sm:block text-luxury-hairline">•</div>
+            <div className="text-luxury-hairline">•</div>
             <div className="flex items-center gap-3">
               <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-6 w-auto" />
               <span className="font-medium">Certified Repower Center</span>
