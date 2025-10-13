@@ -42,7 +42,7 @@ export function PromoPanel({ motorHp }: PromoPanelProps) {
   }, 0);
 
   return (
-    <Card className="border-2 border-green-200 bg-green-50/50">
+    <Card className="border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900">
     </Card>
   );
 }

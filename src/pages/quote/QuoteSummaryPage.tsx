@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
-import HeroPrice from '@/components/quote-builder/HeroPrice';
 import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
 import StickySummary from '@/components/quote-builder/StickySummary';
 import { PromoPanel } from '@/components/quote-builder/PromoPanel';
 import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
-import BonusOffersBadge from '@/components/quote-builder/BonusOffersBadge';
+import CurrentPromotions from '@/components/quote-builder/BonusOffersBadge';
 import MotorHeader from '@/components/quote-builder/MotorHeader';
 import CoverageComparisonTooltip from '@/components/quote-builder/CoverageComparisonTooltip';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
@@ -418,18 +417,8 @@ export default function QuoteSummaryPage() {
               specSheetUrl={specSheetUrl}
             />
 
-            {/* Hero Price Section */}
-            <HeroPrice 
-              yourPriceBeforeTax={selectedPackageData.priceBeforeTax}
-              totalWithTax={selectedPackageData.priceBeforeTax * 1.13}
-              discount={totals.discount}
-              promoValue={totals.promoValue}
-              showMonthly={true}
-              rate={financingRate}
-            />
-
-            {/* Bonus offers badge directly under hero price */}
-            <BonusOffersBadge />
+            {/* Current Promotions */}
+            <CurrentPromotions />
 
             {/* Package Selection */}
             <PackageCards
