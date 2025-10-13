@@ -528,7 +528,16 @@ export const BoatInformation = ({
                    type: type.id
                  }))} className={`group relative rounded-2xl border-2 p-4 bg-gray-50 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-red-600 bg-red-50' : 'border-gray-200'}`} aria-pressed={boatInfo.type === type.id}>
                           <div className="mb-3 h-32 md:h-40 overflow-hidden rounded-md flex items-center justify-center bg-white">
-                             <img src={type.image} alt={`${type.label} boat`} className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-[1.03]" loading="lazy" />
+                             <img 
+                               src={type.image} 
+                               alt={`${type.label} boat`} 
+                               className={`w-full h-full transition-transform duration-200 group-hover:scale-[1.03] ${
+                                 type.id === 'inflatable' 
+                                   ? 'object-contain scale-110' 
+                                   : 'object-cover'
+                               }`}
+                               loading="lazy" 
+                             />
                          </div>
                         <h3 className="font-light tracking-wide text-base md:text-lg text-gray-900">{type.label}</h3>
                         <div className="boat-details mt-1 space-y-0.5">
