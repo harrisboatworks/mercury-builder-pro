@@ -365,17 +365,13 @@ export default function QuoteSummaryPage() {
       const quoteData = getQuoteData();
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
       
-      // Calculate pricing breakdown (same as in component)
-      const motorPrice = quoteData.motor?.salePrice || quoteData.motor?.basePrice || quoteData.motor?.price || 0;
-      const msrp = motorPrice + baseAccessoryCost + warrantyPrice; // Motor + required accessories + warranty
-      const discount = 546;
-      const promoValue = 400;
-      const subtotal = msrp - discount - promoValue;
-      const tax = subtotal * 0.13;
-      const total = subtotal + tax;
-      
-      // Get selected package info
+      // Get selected package info - it already has correct pricing
       const selectedPkg = packages.find(p => p.id === selectedPackage) || packages[1];
+      
+      // Use the package's correctly calculated pricing
+      const packageSubtotal = selectedPkg.priceBeforeTax;
+      const packageTax = packageSubtotal * 0.13;
+      const packageTotal = packageSubtotal + packageTax;
       
       // Transform quote data for React PDF
       const pdfData = {
@@ -391,15 +387,15 @@ export default function QuoteSummaryPage() {
           features: selectedPkg.features
         },
         warrantyTargets: targets, // Add warranty targets for PDF
-        // Use computed pricing values
+        // Use the selected package's pricing (already includes everything)
         pricing: {
-          msrp,
-          discount,
-          promoValue,
-          subtotal,
-          hst: tax,
-          totalCashPrice: total,
-          savings: discount + promoValue
+          msrp: motorMSRP,
+          discount: motorDiscount,
+          promoValue: promoSavings,
+          subtotal: packageSubtotal,
+          hst: packageTax,
+          totalCashPrice: packageTotal,
+          savings: motorDiscount + promoSavings
         }
       };
 
@@ -414,8 +410,8 @@ export default function QuoteSummaryPage() {
         await saveLead({
           motor_model: quoteData.motor?.model,
           motor_hp: quoteData.motor?.hp,
-          base_price: subtotal,
-          final_price: total,
+          base_price: packageSubtotal,
+          final_price: packageTotal,
           lead_status: 'downloaded',
           lead_source: 'pdf_download',
           quote_data: quoteData
