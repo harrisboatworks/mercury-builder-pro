@@ -380,7 +380,7 @@ export default function MotorSelectionPage() {
     <FinancingProvider>
       <QuoteLayout showProgress={false}>
         {/* Compact Search Bar */}
-        <div className="sticky top-[72px] z-30 -mx-6 px-6 -mt-8 mb-6 bg-white border-b border-luxury-hairline shadow-sm">
+        <div className="sticky top-[72px] z-30 -mx-6 px-6 mb-6 bg-white border-b border-luxury-hairline shadow-sm">
           <div className="max-w-4xl mx-auto py-3">
             <div className="relative">
               <input

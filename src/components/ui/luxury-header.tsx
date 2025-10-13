@@ -57,7 +57,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 h-full">
-          <div className="flex items-center justify-between h-full py-4">
+          <div className="flex items-center justify-between h-full">
             
             {/* Left: Logos */}
             <div className="flex items-center gap-3 sm:gap-4">
@@ -74,7 +74,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
               <img 
                 src={harrisLogo} 
                 alt="Harris Boat Works" 
-                className="h-8 md:h-10 transition-all duration-300"
+                className="h-7 md:h-8 transition-all duration-300"
               />
               
               {/* Hairline Divider */}
@@ -85,7 +85,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                 <img 
                   src={mercuryLogo} 
                   alt="Mercury Marine" 
-                  className="h-8 transition-all duration-300"
+                  className="h-7 md:h-8 transition-all duration-300"
                 />
               </div>
             </div>

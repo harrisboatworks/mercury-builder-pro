@@ -147,7 +147,7 @@ export const QuoteLayout = ({
       </div>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-8">
+      <main className="max-w-7xl mx-auto px-6 pb-8">
         {children}
       </main>
 
