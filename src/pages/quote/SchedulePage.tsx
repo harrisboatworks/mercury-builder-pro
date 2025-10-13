@@ -35,7 +35,7 @@ export default function SchedulePage() {
   const quoteData = getQuoteData();
 
   return (
-    <QuoteLayout title="Submit Your Quote">
+    <QuoteLayout>
       <div className="space-y-6">
         <div className="flex items-center gap-4">
           <Button variant="outline" size="sm" onClick={handleBack}>

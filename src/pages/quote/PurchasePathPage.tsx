@@ -61,7 +61,7 @@ export default function PurchasePathPage() {
   };
 
   return (
-    <QuoteLayout title="Choose Installation Option">
+    <QuoteLayout>
       <div className="space-y-6">
         <div className="flex items-center gap-4">
           <Button variant="outline" size="sm" onClick={handleBack}>

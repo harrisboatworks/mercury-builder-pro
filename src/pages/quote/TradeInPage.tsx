@@ -92,7 +92,7 @@ export default function TradeInPage() {
   };
 
   return (
-    <QuoteLayout title="Trade-In Valuation">
+    <QuoteLayout>
       <div className="space-y-6">
         <div className="flex items-center gap-4">
           <Button variant="outline" size="sm" onClick={handleBack}>

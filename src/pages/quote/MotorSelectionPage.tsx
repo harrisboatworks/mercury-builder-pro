@@ -9,7 +9,6 @@ import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { Button } from '@/components/ui/button';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
-import { LuxurySubheader } from '@/components/ui/luxury-subheader';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
@@ -93,9 +92,7 @@ export default function MotorSelectionPage() {
   const [promotions, setPromotions] = useState<Promotion[]>([]);
   const [promotionRules, setPromotionRules] = useState<PromotionRule[]>([]);
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedHpRange, setSelectedHpRange] = useState<{ min: number; max: number }>({ min: 0, max: Infinity });
-  const [inStockOnly, setInStockOnly] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   // Remove selectedMotor state since we're not doing inline selection anymore
 
   // Auto-trigger background image scraping for motors without images
@@ -280,33 +277,39 @@ export default function MotorSelectionPage() {
     return payments;
   }, [processedMotors]);
 
-  // Filter motors
+  // Filter motors with intelligent search
   const filteredMotors = useMemo(() => {
-    let filtered = processedMotors;
-
-    // Search filter
-    if (searchTerm) {
-      const term = searchTerm.toLowerCase();
-      filtered = filtered.filter(motor => 
-        motor.model.toLowerCase().includes(term) ||
-        motor.hp.toString().includes(term)
-      );
-    }
-
-    // HP range filter
-    if (selectedHpRange.min !== 0 || selectedHpRange.max !== Infinity) {
-      filtered = filtered.filter(motor => 
-        motor.hp >= selectedHpRange.min && motor.hp <= selectedHpRange.max
-      );
-    }
-
-    // Stock filter
-    if (inStockOnly) {
-      filtered = filtered.filter(motor => motor.in_stock === true);
-    }
-
-    return filtered;
-  }, [processedMotors, searchTerm, selectedHpRange, inStockOnly]);
+    if (!searchQuery) return processedMotors;
+    
+    const query = searchQuery.toLowerCase().trim();
+    
+    return processedMotors.filter(motor => {
+      // Parse advanced search syntax
+      if (query.includes('hp:')) {
+        const hpMatch = query.match(/hp:(\d+(?:\.\d+)?)/);
+        if (hpMatch) return motor.hp === Number(hpMatch[1]);
+      }
+      
+      if (query.includes('hp:>')) {
+        const hpMatch = query.match(/hp:>(\d+(?:\.\d+)?)/);
+        if (hpMatch) return motor.hp > Number(hpMatch[1]);
+      }
+      
+      if (query.includes('hp:<')) {
+        const hpMatch = query.match(/hp:<(\d+(?:\.\d+)?)/);
+        if (hpMatch) return motor.hp < Number(hpMatch[1]);
+      }
+      
+      if (query.includes('stock') || query.includes('instock')) {
+        return motor.in_stock === true;
+      }
+      
+      // Standard text search
+      return motor.model.toLowerCase().includes(query) ||
+             motor.hp.toString().includes(query) ||
+             motor.type?.toLowerCase().includes(query);
+    });
+  }, [processedMotors, searchQuery]);
 
   const handleMotorSelect = (motor: Motor) => {
     // Add motor to quote context
@@ -362,7 +365,7 @@ export default function MotorSelectionPage() {
 
   if (loading) {
     return (
-      <QuoteLayout title="Select Mercury Outboard Motor">
+      <QuoteLayout>
         <div className="flex items-center justify-center py-20">
           <div className="text-center">
             <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
@@ -375,16 +378,38 @@ export default function MotorSelectionPage() {
 
   return (
     <FinancingProvider>
-      <QuoteLayout 
-        title="Select Mercury Outboard Motor"
-        showProgress={false}
-        searchTerm={searchTerm}
-        selectedHpRange={selectedHpRange}
-        inStockOnly={inStockOnly}
-        onSearchChange={setSearchTerm}
-        onHpRangeChange={setSelectedHpRange}
-        onInStockChange={setInStockOnly}
-      >
+      <QuoteLayout showProgress={false}>
+        {/* Prominent Search Bar Section */}
+        <div className="sticky top-[72px] z-30 -mx-6 px-6 -mt-8 mb-8 bg-white border-b border-luxury-hairline shadow-sm">
+          <div className="max-w-4xl mx-auto py-6">
+            <h1 className="text-2xl font-light text-luxury-ink text-center mb-4">
+              Select Mercury Outboard Motor
+            </h1>
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search by HP, model, or keyword (e.g., 25, verado, hp:>100)..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full h-14 px-6 pr-12 text-base rounded-full border border-luxury-hairline bg-white text-luxury-ink placeholder:text-luxury-gray focus:outline-none focus:ring-2 focus:ring-luxury-ink/20 focus:border-luxury-ink transition-all"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-luxury-gray hover:text-luxury-ink transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
+            </div>
+            <div className="text-center mt-3 text-sm text-luxury-gray">
+              Showing {filteredMotors.length} of {processedMotors.length} motors
+            </div>
+          </div>
+        </div>
+
         <div className="space-y-6">
         
         <div>
@@ -446,13 +471,9 @@ export default function MotorSelectionPage() {
                 variant="outline"
                 size="sm"
                 className="rounded-lg border-gray-300 text-gray-700 hover:bg-gray-50"
-                onClick={() => {
-                  setSearchTerm('');
-                  setSelectedHpRange({ min: 0, max: Infinity });
-                  setInStockOnly(false);
-                }}
+                onClick={() => setSearchQuery('')}
               >
-                Clear filters
+                Clear search
               </Button>
             </div>
           )}

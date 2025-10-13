@@ -12,18 +12,10 @@ import { CartHeader } from '@/components/ui/cart-header';
 import { ChatWidget } from '@/components/chat/ChatWidget';
 import { CurrentStepIndicator } from './CurrentStepIndicator';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
-import { LuxurySubheader } from '@/components/ui/luxury-subheader';
 import { MobileTrustAccordion } from '@/components/ui/mobile-trust-accordion';
 interface QuoteLayoutProps {
   children: React.ReactNode;
   showProgress?: boolean;
-  title?: string;
-  searchTerm?: string;
-  selectedHpRange?: { min: number; max: number };
-  inStockOnly?: boolean;
-  onSearchChange?: (term: string) => void;
-  onHpRangeChange?: (range: { min: number; max: number }) => void;
-  onInStockChange?: (inStock: boolean) => void;
 }
 const steps = [{
   id: 1,
@@ -56,14 +48,7 @@ const steps = [{
 }];
 export const QuoteLayout = ({
   children,
-  showProgress = true,
-  title,
-  searchTerm,
-  selectedHpRange,
-  inStockOnly,
-  onSearchChange,
-  onHpRangeChange,
-  onInStockChange
+  showProgress = true
 }: QuoteLayoutProps) => {
   const {
     user,
@@ -124,22 +109,6 @@ export const QuoteLayout = ({
   return <div className="min-h-screen bg-white">
       {/* Luxury Header System */}
       <LuxuryHeader />
-      
-      {/* Luxury Subheader - only show when explicitly requested with title */}
-      {title && (
-        <div className="relative">
-          <LuxurySubheader 
-            title={title}
-            searchTerm={searchTerm}
-            selectedHpRange={selectedHpRange}
-            inStockOnly={inStockOnly}
-            onSearchChange={onSearchChange}
-            onHpRangeChange={onHpRangeChange}
-            onInStockChange={onInStockChange}
-            showFilters={!!(searchTerm !== undefined && onSearchChange)}
-          />
-        </div>
-      )}
 
       {/* Progress Indicator for Mobile */}
       {showProgress && (
