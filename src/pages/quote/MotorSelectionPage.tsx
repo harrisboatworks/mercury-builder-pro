@@ -380,15 +380,15 @@ export default function MotorSelectionPage() {
     <FinancingProvider>
       <QuoteLayout showProgress={false}>
         {/* Search Bar - Sticks directly under header */}
-        <div className="sticky top-[72px] z-[60] bg-white">
-          <div className="max-w-4xl mx-auto px-6 py-3">
+        <div className="sticky top-[60px] sm:top-[64px] md:top-[72px] z-[60] bg-white border-b border-luxury-hairline">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3">
               <div className="relative">
                 <input
                   type="text"
                   placeholder="Search by HP, model, or keyword (e.g., 25, verado, hp:>100)..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full h-10 px-4 pr-12 text-sm rounded-full border border-luxury-hairline bg-white text-luxury-ink placeholder:text-luxury-gray focus:outline-none focus:ring-2 focus:ring-luxury-ink/20 focus:border-luxury-ink transition-all"
+                  className="w-full h-10 sm:h-11 md:h-12 px-3 sm:px-4 pr-10 sm:pr-12 text-sm rounded-full border border-luxury-hairline bg-white text-luxury-ink placeholder:text-luxury-gray focus:outline-none focus:ring-2 focus:ring-luxury-ink/20 focus:border-luxury-ink transition-all"
                 />
                 {searchQuery && (
                   <button

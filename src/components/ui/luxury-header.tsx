@@ -55,7 +55,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 h-full">
-          <div className="flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] h-full gap-6">
+          <div className="flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] h-full gap-3 sm:gap-4 md:gap-6">
             
             {/* Left: Mobile Menu + Logos */}
             <div className="flex items-center gap-3 sm:gap-4">
@@ -69,22 +69,22 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
               </button>
 
               {/* Logos - Centered on Mobile, Left on Desktop */}
-              <div className="flex items-center gap-3 sm:gap-4">
+              <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
                 {/* Harris Logo */}
                 <img 
                   src={harrisLogo} 
                   alt="Harris Boat Works" 
-                  className="h-6 md:h-7 transition-all duration-300"
+                  className="h-5 sm:h-6 md:h-7 lg:h-8 transition-all duration-300"
                 />
                 
                 {/* Hairline Divider */}
-                <div className="hidden sm:block w-px h-6 md:h-8 bg-luxury-hairline" />
+                <div className="hidden md:block w-px h-6 md:h-8 bg-luxury-hairline" />
                 
                 {/* Mercury Logo - Show on all screens */}
                 <img 
                   src={mercuryLogo} 
                   alt="Mercury Marine" 
-                  className="h-6 md:h-7 transition-all duration-300"
+                  className="h-5 sm:h-6 md:h-7 lg:h-8 transition-all duration-300"
                 />
               </div>
             </div>
