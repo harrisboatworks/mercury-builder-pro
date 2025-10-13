@@ -50,14 +50,14 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
 
       {/* Main Header */}
       <header 
-        className={`sticky top-0 z-50 transition-all duration-300 bg-white border-b border-luxury-hairline ${
+        className={`sticky top-0 z-50 h-[72px] transition-all duration-300 bg-white border-b border-luxury-hairline ${
           isScrolled 
             ? 'shadow-sm backdrop-blur-md' 
             : ''
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 h-full">
-          <div className="flex items-center justify-between h-full">
+          <div className="flex items-center justify-between h-full py-4">
             
             {/* Left: Logos */}
             <div className="flex items-center gap-3 sm:gap-4">

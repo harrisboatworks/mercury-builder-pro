@@ -127,16 +127,18 @@ export const QuoteLayout = ({
       
       {/* Luxury Subheader - only show when explicitly requested with title */}
       {title && (
-        <LuxurySubheader 
-          title={title}
-          searchTerm={searchTerm}
-          selectedHpRange={selectedHpRange}
-          inStockOnly={inStockOnly}
-          onSearchChange={onSearchChange}
-          onHpRangeChange={onHpRangeChange}
-          onInStockChange={onInStockChange}
-          showFilters={!!(searchTerm !== undefined && onSearchChange)}
-        />
+        <div className="relative">
+          <LuxurySubheader 
+            title={title}
+            searchTerm={searchTerm}
+            selectedHpRange={selectedHpRange}
+            inStockOnly={inStockOnly}
+            onSearchChange={onSearchChange}
+            onHpRangeChange={onHpRangeChange}
+            onInStockChange={onInStockChange}
+            showFilters={!!(searchTerm !== undefined && onSearchChange)}
+          />
+        </div>
       )}
 
       {/* Progress Indicator for Mobile */}

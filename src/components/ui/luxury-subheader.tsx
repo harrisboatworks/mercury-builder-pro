@@ -34,7 +34,7 @@ export function LuxurySubheader({
   }, []);
 
   return (
-    <div className="sticky top-0 z-40 bg-white border-b border-luxury-hairline shadow-sm">
+    <div className="sticky top-[72px] z-30 bg-white border-b border-luxury-hairline shadow-sm">
       <div className="max-w-7xl mx-auto px-6">
         {/* Desktop Layout */}
         <div className="hidden md:flex items-center justify-between py-4">
@@ -47,14 +47,16 @@ export function LuxurySubheader({
 
           {/* Right: Filter Chips */}
           {showFilters && (
-            <FilterChips
-              searchTerm={searchTerm}
-              selectedHpRange={selectedHpRange}
-              inStockOnly={inStockOnly}
-              onSearchChange={onSearchChange}
-              onHpRangeChange={onHpRangeChange}
-              onInStockChange={onInStockChange}
-            />
+            <div className="relative">
+              <FilterChips
+                searchTerm={searchTerm}
+                selectedHpRange={selectedHpRange}
+                inStockOnly={inStockOnly}
+                onSearchChange={onSearchChange}
+                onHpRangeChange={onHpRangeChange}
+                onInStockChange={onInStockChange}
+              />
+            </div>
           )}
         </div>
 
@@ -62,7 +64,7 @@ export function LuxurySubheader({
         <div className="md:hidden">
           {/* Filter Chips - Horizontal Scroller */}
           {showFilters && (
-            <div className="py-3 -mx-6">
+            <div className="py-3 -mx-6 relative overflow-hidden">
               <div className="px-6">
                 <FilterChips
                   searchTerm={searchTerm}

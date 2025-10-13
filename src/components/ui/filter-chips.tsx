@@ -97,14 +97,14 @@ export function FilterChips({
   return (
     <div className="flex items-center gap-3">
       {/* HP Range Dropdown */}
-      <div className="relative">
+      <div className="relative z-10">
         <select
           value={`${selectedHpRange.min}-${selectedHpRange.max}`}
           onChange={(e) => {
             const [min, max] = e.target.value.split('-').map(v => v === 'Infinity' ? Infinity : Number(v));
             onHpRangeChange?.({ min, max });
           }}
-          className="appearance-none bg-luxury-stage text-luxury-ink border border-luxury-hairline rounded-full px-4 py-2.5 pr-8 text-sm font-medium hover:bg-luxury-hairline transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-luxury-gray/20 h-10 min-w-[140px]"
+          className="appearance-none bg-white text-luxury-ink border border-luxury-hairline rounded-full px-4 py-2.5 pr-8 text-sm font-medium hover:bg-luxury-hairline transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-luxury-gray/20 h-10 min-w-[140px] relative z-10"
         >
           {HP_RANGES.map(range => (
             <option key={range.id} value={`${range.min}-${range.max}`}>
@@ -112,7 +112,7 @@ export function FilterChips({
             </option>
           ))}
         </select>
-        <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+        <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none z-20">
           <svg className="w-3 h-3 text-luxury-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
@@ -121,11 +121,12 @@ export function FilterChips({
 
       {/* In Stock Toggle */}
       <button
+        type="button"
         onClick={() => onInStockChange?.(!inStockOnly)}
-        className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+        className={`px-4 py-2 rounded-full text-sm font-medium transition-colors relative z-10 ${
           inStockOnly
             ? 'bg-luxury-ink text-white'
-            : 'bg-luxury-stage text-luxury-gray hover:bg-luxury-hairline border border-luxury-hairline'
+            : 'bg-white text-luxury-gray hover:bg-luxury-hairline border border-luxury-hairline'
         }`}
       >
         In Stock Only
