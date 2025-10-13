@@ -113,8 +113,8 @@ export const QuoteLayout = ({
       {/* Luxury Header System */}
       <LuxuryHeader />
       
-      {/* Luxury Subheader with Progress */}
-      {showProgress && title && (
+      {/* Luxury Subheader - only show when explicitly requested with title */}
+      {title && (
         <LuxurySubheader 
           title={title}
           showFilters={false}
@@ -136,7 +136,7 @@ export const QuoteLayout = ({
 
       {/* Trust Section - Responsive */}
       {/* Mobile: Collapsible Accordion */}
-      <div className="sm:hidden">
+      <div className="sm:hidden border-b border-luxury-hairline">
         <MobileTrustAccordion />
       </div>
 

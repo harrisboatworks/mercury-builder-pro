@@ -50,10 +50,10 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
 
       {/* Main Header */}
       <header 
-        className={`sticky top-0 z-50 transition-all duration-300 bg-white ${
+        className={`sticky top-0 z-50 transition-all duration-300 bg-white border-b border-luxury-hairline ${
           isScrolled 
-            ? 'h-14 backdrop-blur-md shadow-sm border-b border-luxury-hairline' 
-            : 'h-18 border-b border-luxury-hairline'
+            ? 'shadow-sm backdrop-blur-md' 
+            : ''
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 h-full">
@@ -74,31 +74,24 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
               <img 
                 src={harrisLogo} 
                 alt="Harris Boat Works" 
-                className={`transition-all duration-300 ${
-                  isScrolled ? 'h-6 sm:h-8' : 'h-7 sm:h-10'
-                }`}
+                className="h-8 md:h-10 transition-all duration-300"
               />
               
               {/* Hairline Divider */}
               <div className="hidden md:block w-px h-8 bg-luxury-hairline" />
               
-              {/* Mercury Logo + Subtitle */}
-              <div className="hidden md:flex flex-col">
+              {/* Mercury Logo */}
+              <div className="hidden md:block">
                 <img 
                   src={mercuryLogo} 
                   alt="Mercury Marine" 
-                  className={`transition-all duration-300 ${
-                    isScrolled ? 'h-6' : 'h-7'
-                  }`}
+                  className="h-8 transition-all duration-300"
                 />
-                <span className="text-xs text-luxury-gray uppercase tracking-wide font-medium mt-0.5">
-                  Premier Dealer
-                </span>
               </div>
             </div>
 
             {/* Center: Search (Desktop) */}
-            <div className="hidden md:block flex-1 max-w-xl mx-8">
+            <div className="hidden md:block flex-1 max-w-2xl mx-12">
               <LuxurySearch />
             </div>
 

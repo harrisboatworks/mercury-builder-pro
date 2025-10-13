@@ -34,15 +34,13 @@ export function LuxurySubheader({
   }, []);
 
   return (
-    <div className={`sticky z-40 bg-white border-b border-luxury-hairline transition-all duration-200 ${
-      isScrolled ? 'top-[56px]' : 'top-[72px]'
-    }`}>
+    <div className="sticky top-0 z-40 bg-white border-b border-luxury-hairline shadow-sm">
       <div className="max-w-7xl mx-auto px-6">
         {/* Desktop Layout */}
-        <div className="hidden md:flex items-center justify-between h-14">
+        <div className="hidden md:flex items-center justify-between py-4">
           {/* Left: Page Title */}
           <div>
-            <h1 className="text-lg font-light text-luxury-ink tracking-wide">
+            <h1 className="text-xl font-light text-luxury-ink tracking-wide">
               {title}
             </h1>
           </div>

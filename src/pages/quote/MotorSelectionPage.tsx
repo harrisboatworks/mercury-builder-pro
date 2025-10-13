@@ -375,7 +375,7 @@ export default function MotorSelectionPage() {
 
   return (
     <FinancingProvider>
-      <QuoteLayout title="Select Mercury Outboard Motor" showProgress={false}>
+      <QuoteLayout showProgress={false}>
         <LuxurySubheader
           title="Select Mercury Outboard Motor"
           searchTerm={searchTerm}
@@ -392,7 +392,7 @@ export default function MotorSelectionPage() {
         <div>
           {/* Motors Grid */}
           {filteredMotors.length > 0 ? (
-            <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
+            <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
               {filteredMotors.map(motor => {
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);
@@ -415,7 +415,6 @@ export default function MotorSelectionPage() {
                  const heroImageUrl = (dbMotor as any)?.hero_media?.media_url || dbMotor?.image_url || motor.image || null;
                  
                  return (
-                  <div className="w-full max-w-sm mx-auto">
                     <MotorCardPreview
                     key={motor.id}
                     img={heroImageUrl}
@@ -437,7 +436,6 @@ export default function MotorSelectionPage() {
                     specSheetUrl={dbMotor?.detail_url}
                     motor={motor as any}
                     />
-                  </div>
                 );
               })}
             </div>
