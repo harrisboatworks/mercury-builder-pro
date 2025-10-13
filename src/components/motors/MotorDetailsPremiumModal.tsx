@@ -330,6 +330,18 @@ export default function MotorDetailsPremiumModal({
                       />
                     </div>
                     
+                    {/* What's Included - Simple Checklist */}
+                    {includedAccessories.length > 0 && (
+                      <ul className="space-y-2.5">
+                        {includedAccessories.map((item, idx) => (
+                          <li key={idx} className="flex items-center gap-3 text-base text-gray-700">
+                            <span className="text-green-600 text-lg leading-none">✓</span>
+                            <span className="font-light">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
                     {/* Key Features - Top 4 only */}
                     {features.length > 0 && (
                       <div className="space-y-4">
