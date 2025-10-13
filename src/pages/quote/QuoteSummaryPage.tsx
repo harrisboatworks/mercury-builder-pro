@@ -11,7 +11,7 @@ import WarrantyAddOnUI, { type WarrantyTarget } from '@/components/quote-builder
 import BonusOffersBadge from '@/components/quote-builder/BonusOffersBadge';
 import MotorHeader from '@/components/quote-builder/MotorHeader';
 import CoverageComparisonTooltip from '@/components/quote-builder/CoverageComparisonTooltip';
-import { isTillerMotor, requiresMercuryControls } from '@/lib/motor-helpers';
+import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
@@ -145,8 +145,11 @@ export default function QuoteSummaryPage() {
   const isManualStart = motorModel.includes('MH') || motorModel.includes('MLH');
   
   // Calculate base accessory costs
+  const motorHP = typeof motor.hp === 'string' ? parseFloat(motor.hp) : motor.hp;
   const controlsCost = needsControls ? 2500 : 0;
   const batteryCost = !isManualStart ? 179.99 : 0;
+  const includesProp = includesPropeller(motor);
+  const canAddFuelTank = canAddExternalFuelTank(motor);
   const baseAccessoryCost = controlsCost; // Battery separate from base
   
   // Add warranty price if selected
@@ -305,13 +308,14 @@ export default function QuoteSummaryPage() {
     { 
       id: "best", 
       label: "Premium • Max Coverage", 
-      priceBeforeTax: baseSubtotal + (isManualStart ? 0 : batteryCost) + premiumWarrantyCost + 299.99, 
+      priceBeforeTax: baseSubtotal + (isManualStart ? 0 : batteryCost) + premiumWarrantyCost + (!includesProp ? 299.99 : 0) + (canAddFuelTank ? 199 : 0), 
       savings: totals.savings, 
       features: [
         "Everything in Complete",
         `Maximum ${premiumTargetYears} years total coverage`,
         premiumWarrantyCost > 0 ? `(+${premiumTargetYears - currentCoverageYears} years extension • $${premiumWarrantyCost})` : null,
-        "Premium stainless propeller ($300 value)", 
+        !includesProp ? "Premium stainless propeller ($300 value)" : null,
+        canAddFuelTank ? "12L external fuel tank & hose ($199 value)" : null,
         "White-glove installation"
       ].filter(Boolean),
       coverageYears: premiumTargetYears,
@@ -340,12 +344,21 @@ export default function QuoteSummaryPage() {
     });
   }
   
-  // Add premium propeller for Premium package only
-  if (selectedPackage === 'best') {
+  // Add premium propeller for Premium package only (if motor doesn't already include one)
+  if (selectedPackage === 'best' && !includesProp) {
     accessoryBreakdown.push({
       name: 'Premium Stainless Propeller',
       price: 299.99,
       description: 'High-performance stainless steel propeller'
+    });
+  }
+  
+  // Add external fuel tank for Premium package only (if motor can benefit from it)
+  if (selectedPackage === 'best' && canAddFuelTank) {
+    accessoryBreakdown.push({
+      name: '12L External Fuel Tank & Hose',
+      price: 199,
+      description: 'Portable fuel tank for extended range'
     });
   }
   

@@ -385,12 +385,25 @@ export const includesFuelTank = (motor: Motor) => {
 };
 
 export const includesPropeller = (motor: Motor) => {
+  const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
   const model = (motor.model_display || motor.model || '').toUpperCase();
   
-  // Tiller motors typically include propeller
+  // Motors 20HP and under include propeller
+  if (hp <= 20) return true;
+  
+  // Tiller motors typically include propeller (backup check)
   if (isTillerMotor(model)) return true;
   
   return false;
+};
+
+// Check if motor could benefit from external fuel tank option
+export const canAddExternalFuelTank = (motor: Motor) => {
+  const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
+  
+  // Only motors ≤6HP (with internal tanks) benefit from external tank option
+  // Motors 8-20HP already include external tanks
+  return hp <= 6;
 };
 
 export const getStartType = (model: string): string => {
