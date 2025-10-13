@@ -394,18 +394,10 @@ export default function QuoteSummaryPage() {
   return (
     <QuoteLayout>
       <div className="max-w-7xl mx-auto space-y-8">
-        {/* Back Navigation */}
-        <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm" onClick={handleBack}>
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back
-          </Button>
-        </div>
-        
         <div className="grid lg:grid-cols-[1fr_360px] gap-8">
           {/* Main Content - Left Column */}
           <div className="space-y-6">
-            {/* Motor Header */}
+            {/* Motor Header with integrated back button */}
             <MotorHeader
               name={motorName}
               modelYear={modelYear}
@@ -415,6 +407,7 @@ export default function QuoteSummaryPage() {
               specs={specs}
               why={why}
               specSheetUrl={specSheetUrl}
+              onBack={handleBack}
             />
 
             {/* Current Promotions */}

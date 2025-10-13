@@ -1,5 +1,8 @@
 "use client";
 
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 type Props = {
   name: string;             // e.g., "Mercury FourStroke 25HP EFI"
   modelYear?: number;       // e.g., 2025
@@ -9,6 +12,7 @@ type Props = {
   specs?: Array<{ label: string; value: string }>;
   why?: string[];           // 2–3 bullets
   specSheetUrl?: string | null;
+  onBack?: () => void;      // Optional back navigation
 };
 
 export default function MotorHeader({
@@ -20,10 +24,22 @@ export default function MotorHeader({
   specs = [],
   why = [],
   specSheetUrl,
+  onBack,
 }: Props) {
   return (
     <section className="mb-6 rounded-2xl border border-slate-200/70 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
       <div className="flex items-start gap-4">
+        {onBack && (
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onBack}
+            className="h-9 w-9 flex-shrink-0"
+            aria-label="Back to motor selection"
+          >
+            <ArrowLeft className="h-4 w-4" />
+          </Button>
+        )}
         {imageUrl ? (
           <div className="relative h-20 w-20 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700">
             <img src={imageUrl} alt={name} className="h-full w-full object-contain" />
