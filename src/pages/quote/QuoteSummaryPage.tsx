@@ -314,7 +314,7 @@ export default function QuoteSummaryPage() {
         "Everything in Complete",
         `Maximum ${premiumTargetYears} years total coverage`,
         premiumWarrantyCost > 0 ? `(+${premiumTargetYears - currentCoverageYears} years extension • $${premiumWarrantyCost})` : null,
-        !includesProp ? "Premium stainless propeller ($300 value)" : null,
+        !includesProp ? "Premium aluminum 3-blade propeller ($300 value)" : null,
         canAddFuelTank ? "12L external fuel tank & hose ($199 value)" : null,
         "White-glove installation"
       ].filter(Boolean),
@@ -347,9 +347,9 @@ export default function QuoteSummaryPage() {
   // Add premium propeller for Premium package only (if motor doesn't already include one)
   if (selectedPackage === 'best' && !includesProp) {
     accessoryBreakdown.push({
-      name: 'Premium Stainless Propeller',
+      name: 'Premium Aluminum 3-Blade Propeller',
       price: 299.99,
-      description: 'High-performance stainless steel propeller'
+      description: 'High-performance aluminum 3-blade propeller'
     });
   }
   
