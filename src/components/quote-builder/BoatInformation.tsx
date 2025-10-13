@@ -107,6 +107,19 @@ export const BoatInformation = ({
     image: '/lovable-uploads/78ce4cb2-311a-44f3-88d3-36903efc2e7e.png'
   }];
 
+  // Parse HP range and check if motor fits
+  const isMotorCompatibleWithBoatType = (motorHP: number, recommendedHPRange: string): boolean => {
+    if (!recommendedHPRange) return true; // "Motor Only" has no range
+    
+    const rangeParts = recommendedHPRange.split('-');
+    if (rangeParts.length !== 2) return true; // Fallback to show if parsing fails
+    
+    const minHP = parseFloat(rangeParts[0]);
+    const maxHP = parseFloat(rangeParts[1]);
+    
+    return motorHP >= minHP && motorHP <= maxHP;
+  };
+
   // Progressive Wizard State
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [lengthFeet, setLengthFeet] = useState<number>(16);
@@ -480,8 +493,25 @@ export const BoatInformation = ({
                     <Label className="text-2xl font-light tracking-wide text-gray-900">What type of boat do you have?</Label>
                     <p className="font-light text-gray-500">Pick the closest match and enter your boat length.</p>
                   </div>
+                  
+                  {boatTypes
+                    .filter(t => t.id !== 'motor-only')
+                    .filter(type => !selectedMotor || isMotorCompatibleWithBoatType(selectedMotor.hp, type.recommendedHP))
+                    .length === 0 && selectedMotor && (
+                    <Alert className="mb-4">
+                      <Info className="h-4 w-4" />
+                      <AlertDescription className="font-light text-gray-600">
+                        No standard boat types match your {selectedMotor.hp} HP motor. Consider selecting "Motor Only" 
+                        if you're ordering a spare motor or contact us for custom applications.
+                      </AlertDescription>
+                    </Alert>
+                  )}
+                  
                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                     {boatTypes.filter(t => t.id !== 'motor-only').map(type => <button type="button" key={type.id} onClick={() => setBoatInfo(prev => ({
+                     {boatTypes
+                       .filter(t => t.id !== 'motor-only')
+                       .filter(type => !selectedMotor || isMotorCompatibleWithBoatType(selectedMotor.hp, type.recommendedHP))
+                       .map(type => <button type="button" key={type.id} onClick={() => setBoatInfo(prev => ({
                   ...prev,
                   type: type.id
                 }))} className={`group relative rounded-2xl border-2 p-4 bg-gray-50 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-red-600 bg-red-50' : 'border-gray-200'}`} aria-pressed={boatInfo.type === type.id}>
