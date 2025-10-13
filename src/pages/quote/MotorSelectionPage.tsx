@@ -380,7 +380,7 @@ export default function MotorSelectionPage() {
     <FinancingProvider>
       <QuoteLayout showProgress={false}>
         {/* Search Bar - Sticks directly under header */}
-        <div className="sticky top-[71px] z-50 bg-white border-b border-luxury-hairline">
+        <div className="sticky top-[72px] z-[60] bg-white">
           <div className="max-w-4xl mx-auto px-6 py-3">
               <div className="relative">
                 <input
