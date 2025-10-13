@@ -379,34 +379,35 @@ export default function MotorSelectionPage() {
   return (
     <FinancingProvider>
       <QuoteLayout showProgress={false}>
-        {/* Search Bar */}
-        <div className="sticky top-[72px] z-40 bg-white border-b border-luxury-hairline shadow-sm">
-          {/* Search Bar */}
-          <div className="max-w-4xl mx-auto px-6 py-3">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search by HP, model, or keyword (e.g., 25, verado, hp:>100)..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full h-10 px-4 pr-12 text-sm rounded-full border border-luxury-hairline bg-white text-luxury-ink placeholder:text-luxury-gray focus:outline-none focus:ring-2 focus:ring-luxury-ink/20 focus:border-luxury-ink transition-all"
-              />
+        {/* Search Bar - Sticks directly under header */}
+        <div className="sticky top-[72px] z-40 bg-white shadow-sm -mt-px">
+          <div className="border-b border-luxury-hairline">
+            <div className="max-w-4xl mx-auto px-6 py-3">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search by HP, model, or keyword (e.g., 25, verado, hp:>100)..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full h-10 px-4 pr-12 text-sm rounded-full border border-luxury-hairline bg-white text-luxury-ink placeholder:text-luxury-gray focus:outline-none focus:ring-2 focus:ring-luxury-ink/20 focus:border-luxury-ink transition-all"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-luxury-gray hover:text-luxury-ink transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                )}
+              </div>
               {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery('')}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-luxury-gray hover:text-luxury-ink transition-colors"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
+                <div className="text-center mt-2 text-xs text-luxury-gray">
+                  {filteredMotors.length} results
+                </div>
               )}
             </div>
-            {searchQuery && (
-              <div className="text-center mt-2 text-xs text-luxury-gray">
-                {filteredMotors.length} results
-              </div>
-            )}
           </div>
         </div>
 
