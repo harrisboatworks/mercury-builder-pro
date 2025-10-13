@@ -89,7 +89,7 @@ export const tillerMountingChoices = [
     id: "clamp_on",
     label: "Clamp-On Mount",
     value: "clamp_on", 
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc61?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/clamp-on-motor-installation.png",
     helper: "Removable clamp mounting",
     xpReward: 10
   }
