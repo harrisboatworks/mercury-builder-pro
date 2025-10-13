@@ -63,6 +63,18 @@ export const BoatInformation = ({
     recommendedHP: '',
     image: ''
   }, {
+    id: 'canoe',
+    label: 'Canoe',
+    description: 'Canoes & small rowboats',
+    recommendedHP: '2.5-6',
+    image: '/boat-types/jon-boat.svg'
+  }, {
+    id: 'inflatable',
+    label: 'Inflatable',
+    description: 'Dinghies, tenders & inflatables',
+    recommendedHP: '2.5-6',
+    image: '/boat-types/aluminum-fishing.svg'
+  }, {
     id: 'utility',
     label: 'Utility Boat',
     description: 'Small v-hull boats',
