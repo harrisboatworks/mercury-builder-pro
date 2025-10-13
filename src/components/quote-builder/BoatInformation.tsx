@@ -67,7 +67,7 @@ export const BoatInformation = ({
     label: 'Canoe',
     description: 'Canoes & small rowboats',
     recommendedHP: '2.5-6',
-    image: '/boat-types/jon-boat.svg'
+    image: '/boat-types/canoe.webp'
   }, {
     id: 'inflatable',
     label: 'Inflatable',
