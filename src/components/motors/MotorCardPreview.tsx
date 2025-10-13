@@ -295,8 +295,8 @@ export default function MotorCardPreview({
             </div>
           )}
           
-          {/* Mercury Brand Accent */}
-          <div className="h-0.5 bg-gradient-to-r from-[#003F7F] to-transparent"></div>
+          {/* Subtle Top Border */}
+          <div className="border-t border-gray-200"></div>
           
           {/* Content Section - Premium Mobile Layout */}
           <div className="p-8 space-y-6">
@@ -307,23 +307,23 @@ export default function MotorCardPreview({
             
             {/* Model Number - Subtle */}
             {motor?.model_number && (
-              <p className="text-sm font-light text-gray-600 mt-1">
+              <p className="text-sm font-light text-gray-400 mt-1">
                 Model: {motor.model_number}
               </p>
             )}
             
             {/* Simplified Specs - Single Line */}
-            <p className="text-base font-light text-gray-600 leading-relaxed mt-6">
+            <p className="text-base font-light text-gray-500 leading-relaxed mt-6">
               {getSimplifiedSpecs()}
             </p>
             
             {/* Pricing - Luxury minimal */}
             <div className="my-8">
-              <p className="text-sm text-gray-500 uppercase tracking-widest font-light">
+              <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] font-light">
                 from
               </p>
               {msrp && price && msrp > price && (
-                <p className="text-lg text-gray-400 font-light line-through mt-2">${msrp.toLocaleString()}</p>
+                <p className="text-base text-gray-400 font-light line-through mt-2">${msrp.toLocaleString()}</p>
               )}
               <p className="text-4xl font-light tracking-tight text-gray-900 mt-1">
                 {price ? `$${price.toLocaleString()}` : 'Call for Price'}
@@ -345,7 +345,7 @@ export default function MotorCardPreview({
             
             {/* Premium Black Button */}
             <button 
-              className="w-full border-2 border-black text-black py-4 text-xs tracking-wider uppercase font-light rounded-sm hover:bg-black hover:text-white transition-all duration-500 ease-out mt-8"
+              className="w-full border-2 border-black text-black py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-black hover:text-white transition-all duration-500 ease-out mt-8"
               onClick={handleMoreInfoClick}
             >
               View Specifications
