@@ -212,7 +212,7 @@ export default function MotorDetailsPremiumModal({
             <Tabs defaultValue="overview" className="w-full h-full flex flex-col">
               {/* Mobile/Tablet Header */}
               <div className="lg:hidden sticky top-0 z-40 bg-white dark:bg-slate-900 shadow-sm">
-                <div className="p-4 sm:p-6 border-b border-gray-200">
+                <div className="p-4 sm:p-6 border-b border-gray-200 bg-white dark:bg-slate-900">
                   <button 
                     onClick={onClose} 
                     className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full" 
@@ -266,7 +266,7 @@ export default function MotorDetailsPremiumModal({
 
               {/* Desktop Header */}
               <div className="hidden lg:block sticky top-0 z-40 bg-white dark:bg-slate-900 shadow-sm">
-                <div className="p-6 pb-0 border-b border-gray-100">
+                <div className="p-6 pb-0 border-b border-gray-100 bg-white dark:bg-slate-900">
                   <button 
                     onClick={onClose} 
                     className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full z-50" 
