@@ -7,7 +7,6 @@ import StickySummary from '@/components/quote-builder/StickySummary';
 import { PromoPanel } from '@/components/quote-builder/PromoPanel';
 import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
-import WarrantyAddOnUI, { type WarrantyTarget } from '@/components/quote-builder/WarrantyAddOnUI';
 import BonusOffersBadge from '@/components/quote-builder/BonusOffersBadge';
 import MotorHeader from '@/components/quote-builder/MotorHeader';
 import CoverageComparisonTooltip from '@/components/quote-builder/CoverageComparisonTooltip';
@@ -33,8 +32,6 @@ export default function QuoteSummaryPage() {
   const { toast } = useToast();
   const [selectedPackage, setSelectedPackage] = useState<string>('better');
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
-  const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
-  const [warrantyLoading, setWarrantyLoading] = useState(true);
 
   useEffect(() => {
     // Add delay and loading check to prevent navigation during state updates
@@ -60,41 +57,6 @@ export default function QuoteSummaryPage() {
 
     return () => clearTimeout(timeoutId);
   }, [state.isLoading, isStepAccessible, isNavigationBlocked, navigate]);
-
-  // Fetch warranty pricing from database based on motor HP
-  useEffect(() => {
-    const motorHP = state.motor ? (typeof state.motor.hp === 'string' ? parseFloat(state.motor.hp) : state.motor.hp) : 0;
-    
-    if (!state.motor || !motorHP) {
-      setWarrantyLoading(false);
-      return;
-    }
-
-    async function fetchWarrantyPricing() {
-      try {
-        setWarrantyLoading(true);
-        const { data, error } = await supabase
-          .from('warranty_pricing')
-          .select('*')
-          .lte('hp_min', motorHP)
-          .gte('hp_max', motorHP)
-          .single();
-
-        if (error) {
-          console.error('Error fetching warranty pricing:', error);
-          return;
-        }
-
-        setWarrantyPricing(data);
-      } catch (error) {
-        console.error('Unexpected error fetching warranty pricing:', error);
-      } finally {
-        setWarrantyLoading(false);
-      }
-    }
-
-    fetchWarrantyPricing();
-  }, [state.motor]);
 
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });
@@ -183,92 +145,17 @@ export default function QuoteSummaryPage() {
   const currentCoverageYears = Math.min(baseYears + promoYears, 8);
   const maxCoverageYears = 8;
 
-  // Calculate real warranty pricing based on HP and database data
-  const calculateWarrantyPricing = () => {
-    if (!warrantyPricing || warrantyLoading) return [];
-
-    const options = [];
-    const availableYears = Math.min(maxCoverageYears - currentCoverageYears, 3); // Max 3 additional years
-
-    for (let i = 1; i <= availableYears; i++) {
-      const targetYears = currentCoverageYears + i;
-      
-      // Get direct price for this duration (each year_x_price is the total for x additional years)
-      const yearKey = `year_${i}_price` as keyof typeof warrantyPricing;
-      const warrantyPrice = warrantyPricing[yearKey] || 0;
-
-      // Add HST (13%) to warranty price
-      const priceWithTax = warrantyPrice * 1.13;
-      
-      // Calculate monthly payment delta
-      const termMonths = getFinancingTerm(priceWithTax);
-      const { payment: monthlyPayment } = calculateMonthlyPayment(priceWithTax, financingRate);
-      
-      options.push({
-        years: targetYears,
-        price: Math.round(warrantyPrice),
-        priceWithTax: Math.round(priceWithTax),
-        monthlyDelta: Math.round(monthlyPayment)
-      });
-    }
-
-    return options;
-  };
-
-  const warrantyOptions = calculateWarrantyPricing();
-  
-  const targets: WarrantyTarget[] = warrantyOptions
-    .filter(o => o.years > currentCoverageYears && o.years <= maxCoverageYears)
-    .map(o => ({ 
-      targetYears: o.years, 
-      oneTimePrice: o.price, 
-      monthlyDelta: o.monthlyDelta,
-      label: `${o.years} Year Total Coverage`
-    }));
-
-  // Currently selected target years (total), or null
-  const selectedTargetYears =
-    state?.warrantyConfig?.totalYears && state.warrantyConfig.totalYears > currentCoverageYears
-      ? state.warrantyConfig.totalYears
-      : null;
-
-  // Precomputed "+$/mo" for the selected target (if any)
-  const selectedMonthlyDelta = selectedTargetYears
-    ? targets.find(t => t.targetYears === selectedTargetYears)?.monthlyDelta
-    : undefined;
-
-  const onSelectWarranty = (targetYears: number | null) => {
-    if (targetYears === null) {
-      dispatch({ type: "SET_WARRANTY_CONFIG", payload: { extendedYears: 0, warrantyPrice: 0, totalYears: currentCoverageYears } });
-    } else {
-      const opt = warrantyOptions.find(o => o.years === targetYears);
-      const extendedYears = Math.max(0, targetYears - currentCoverageYears);
-      dispatch({
-        type: "SET_WARRANTY_CONFIG",
-        payload: {
-          extendedYears,
-          warrantyPrice: opt?.price ?? 0,
-          totalYears: targetYears,
-        },
-      });
-    }
-  };
-
   // Promo warranty years for sticky summary
   const warrantyPromos = getWarrantyPromotions?.() ?? [];
   const promoWarrantyYears = warrantyPromos[0]?.warranty_extra_years ?? 0;
 
-  // Calculate warranty costs for package tiers
-  const completeTargetYears = Math.max(currentCoverageYears, 6);
-  const premiumTargetYears = maxCoverageYears;
+  // Package warranty years (coverage included in each tier)
+  const completeTargetYears = 7; // Complete: 7 years total
+  const premiumTargetYears = 8; // Premium: 8 years max
 
-  // Find the warranty option that matches each package's target
-  const completeWarrantyOption = warrantyOptions.find(o => o.years === completeTargetYears);
-  const premiumWarrantyOption = warrantyOptions.find(o => o.years === premiumTargetYears);
-
-  // Get the warranty cost (already calculated correctly in warrantyOptions)
-  const completeWarrantyCost = completeWarrantyOption?.price || 0;
-  const premiumWarrantyCost = premiumWarrantyOption?.price || 0;
+  // Estimated warranty costs for display (no dynamic pricing needed)
+  const completeWarrantyCost = 0; // Included in package pricing
+  const premiumWarrantyCost = 0; // Included in package pricing
 
   // Calculate base subtotal (motor + base accessories, NO battery)
   const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
@@ -405,10 +292,9 @@ export default function QuoteSummaryPage() {
         selectedPackage: {
           id: selectedPackage,
           label: selectedPkg.label,
-          coverageYears: selectedTargetYears ?? currentCoverageYears,
+          coverageYears: selectedPkg.coverageYears,
           features: selectedPkg.features
         },
-        warrantyTargets: targets, // Add warranty targets for PDF
         // Use the selected package's pricing (already includes everything)
         pricing: {
           msrp: motorMSRP,
@@ -486,14 +372,6 @@ export default function QuoteSummaryPage() {
 
   const handlePackageSelect = (packageId: string) => {
     setSelectedPackage(packageId);
-    // If package implies a target, apply it so engine reprices
-    const pkg = packages.find(p => p.id === packageId);
-    if (pkg?.targetWarrantyYears) {
-      onSelectWarranty(pkg.targetWarrantyYears);
-    } else {
-      // Clear warranty if package doesn't include extended coverage
-      onSelectWarranty(null);
-    }
   };
 
   const selectedPackageData = packages.find(p => p.id === selectedPackage) || packages[1];
@@ -570,15 +448,6 @@ export default function QuoteSummaryPage() {
               tradeInValue={state.tradeInInfo?.estimatedValue || 0}
               packageName={selectedPackageData.label}
             />
-            
-            {/* New Warranty Add-on UI */}
-            <WarrantyAddOnUI
-              currentCoverageYears={currentCoverageYears}
-              maxCoverageYears={maxCoverageYears}
-              targets={targets}
-              selectedTargetYears={selectedTargetYears}
-              onSelectWarranty={onSelectWarranty}
-            />
 
             {/* Legacy Components - Keep for compatibility */}
             <div className="grid md:grid-cols-2 gap-6">
@@ -617,8 +486,7 @@ export default function QuoteSummaryPage() {
               bullets={selectedPackageData.features}
               onReserve={handleReserveDeposit}
               depositAmount={200}
-              coverageYears={selectedTargetYears ?? currentCoverageYears}
-              monthlyDelta={selectedMonthlyDelta}
+              coverageYears={selectedPackageData.coverageYears}
               onDownloadPDF={handleDownloadPDF}
               isGeneratingPDF={isGeneratingPDF}
             />
