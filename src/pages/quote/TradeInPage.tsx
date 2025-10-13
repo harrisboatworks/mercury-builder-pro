@@ -93,24 +93,27 @@ export default function TradeInPage() {
 
   return (
     <QuoteLayout>
-      <div className="space-y-6">
+      <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
         <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm" onClick={handleBack}>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={handleBack}
+            className="border-gray-300 hover:border-gray-900 font-light"
+          >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back
           </Button>
         </div>
         
-        <div className="space-y-4">
-          <TradeInValuation 
-            tradeInInfo={tradeInInfo}
+        <TradeInValuation 
+          tradeInInfo={tradeInInfo}
           onTradeInChange={handleTradeInChange}
           onAutoAdvance={handleComplete}
           currentMotorBrand={state.boatInfo?.currentMotorBrand}
           currentHp={state.boatInfo?.currentHp}
           currentMotorYear={state.boatInfo?.currentMotorYear}
-          />
-        </div>
+        />
       </div>
     </QuoteLayout>
   );
