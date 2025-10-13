@@ -385,10 +385,10 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'gpt-5-2025-08-07', // GPT-5 flagship model - superior reasoning and safety recommendations
+        model: 'gpt-4o-mini', // Using gpt-4o-mini for reliability
         messages: messages,
-        max_completion_tokens: 500,
-        // temperature removed for newer model
+        max_tokens: 500,
+        temperature: 0.7,
       }),
     });
 
