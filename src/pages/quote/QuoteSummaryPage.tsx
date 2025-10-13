@@ -568,6 +568,7 @@ export default function QuoteSummaryPage() {
               motorName={quoteData.motor?.model || 'Mercury Motor'}
               accessoryBreakdown={accessoryBreakdown}
               tradeInValue={state.tradeInInfo?.estimatedValue || 0}
+              packageName={selectedPackageData.label}
             />
             
             {/* New Warranty Add-on UI */}

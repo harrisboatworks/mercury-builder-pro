@@ -11,13 +11,15 @@ interface PricingTableProps {
     description?: string;
   }>;
   tradeInValue?: number;
+  packageName?: string;
 }
 
 export function PricingTable({ 
   pricing, 
   motorName = "Mercury Motor",
   accessoryBreakdown = [],
-  tradeInValue = 0 
+  tradeInValue = 0,
+  packageName = "Accessories & Setup"
 }: PricingTableProps) {
   return (
     <Card className="p-6 space-y-1">
@@ -61,7 +63,7 @@ export function PricingTable({
         {accessoryBreakdown.length > 0 && (
           <div className="space-y-1 pt-2">
             <div className="text-sm font-medium text-primary py-1">
-              Accessories & Setup
+              {packageName}
             </div>
             {accessoryBreakdown.map((item, index) => (
               <LineItemRow
