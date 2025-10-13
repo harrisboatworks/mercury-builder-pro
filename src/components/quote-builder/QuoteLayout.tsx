@@ -131,7 +131,7 @@ export const QuoteLayout = ({
 
       {/* Desktop: Horizontal Bar */}
       <div className="hidden sm:block bg-luxury-stage border-b border-luxury-hairline">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto px-6 py-3">
           <div className="flex items-center justify-center space-x-8 text-sm text-luxury-gray">
             <div className="flex items-center gap-3">
               <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-6 w-auto" />
@@ -147,7 +147,7 @@ export const QuoteLayout = ({
       </div>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 pb-8">
+      <main className="max-w-7xl mx-auto px-6 pb-8 -mt-16">
         {children}
       </main>
 
