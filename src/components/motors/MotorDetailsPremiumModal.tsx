@@ -207,49 +207,88 @@ export default function MotorDetailsPremiumModal({
           
           {/* LEFT COLUMN: Tabbed Content (Desktop & Mobile) */}
           <div className="flex-1 overflow-hidden flex flex-col">
-            {/* Mobile/Tablet Header */}
-            <div className="lg:hidden sticky top-0 z-40 bg-white dark:bg-slate-900 border-b border-gray-200 p-4 sm:p-6">
-              <button 
-                onClick={onClose} 
-                className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full" 
-                aria-label="Close"
-              >
-                <X className="w-5 h-5" />
-              </button>
-              
-              <div className="pr-12">
-                <div className="mb-3 text-xs uppercase tracking-widest text-gray-500 font-light">
-                  Building Your Quote • Step 1 of 3: Select Motor
+            <Tabs defaultValue="overview" className="w-full h-full flex flex-col">
+              {/* Mobile/Tablet Header */}
+              <div className="lg:hidden sticky top-0 z-40 bg-white dark:bg-slate-900 border-b border-gray-200">
+                <div className="p-4 sm:p-6">
+                  <button 
+                    onClick={onClose} 
+                    className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full" 
+                    aria-label="Close"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                  
+                  {/* Flexbox Column Layout - prevents overlap */}
+                  <div className="flex flex-col space-y-4 pr-12">
+                    {/* 1. Step Indicator */}
+                    <div className="text-xs uppercase tracking-widest text-gray-500 font-light">
+                      Building Your Quote • Step 1 of 3: Select Motor
+                    </div>
+                    
+                    {/* 2. Motor Name - full line with proper spacing */}
+                    <h2 className="text-lg font-light tracking-wide text-gray-900 leading-tight">
+                      {title}
+                    </h2>
+                  </div>
                 </div>
-                <h2 className="text-lg font-light tracking-wide text-gray-900">
-                  {title}
-                </h2>
+                
+                {/* 3. Tabs - separate section below name */}
+                <TabsList className="w-full justify-start border-b-0 rounded-none bg-transparent p-0 h-auto">
+                  <TabsTrigger 
+                    value="overview" 
+                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-4 py-3"
+                  >
+                    Overview
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="specs"
+                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-4 py-3"
+                  >
+                    Specs
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="included"
+                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-4 py-3"
+                  >
+                    Included
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="resources"
+                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-4 py-3"
+                  >
+                    Resources
+                  </TabsTrigger>
+                </TabsList>
               </div>
-            </div>
 
-            {/* Desktop Header */}
-            <div className="hidden lg:block p-6 border-b border-gray-100">
-              <button 
-                onClick={onClose} 
-                className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full z-50" 
-                aria-label="Close"
-              >
-                <X className="w-5 h-5" />
-              </button>
-              
-              <div className="mb-3 text-xs uppercase tracking-widest text-gray-500 font-light">
-                Building Your Quote • Step 1 of 3: Select Motor
-              </div>
-              <h2 className="text-2xl font-light tracking-wide text-gray-900">
-                {title}
-              </h2>
-            </div>
-
-            {/* Tabbed Navigation */}
-            <div ref={scrollContainerRef} className="flex-1 overflow-y-auto">
-              <Tabs defaultValue="overview" className="w-full">
-                {/* Tab Headers */}
-                <TabsList className="w-full justify-start border-b border-gray-200 rounded-none bg-transparent p-0 h-auto sticky top-0 z-30 bg-white">
+              {/* Desktop Header */}
+              <div className="hidden lg:block border-b border-gray-100">
+                <div className="p-6 pb-0">
+                  <button 
+                    onClick={onClose} 
+                    className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full z-50" 
+                    aria-label="Close"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                  
+                  {/* Flexbox Column Layout - crystal clear hierarchy */}
+                  <div className="flex flex-col space-y-5 pr-12">
+                    {/* 1. Step Indicator - 16px margin below (space-y-5 = 20px) */}
+                    <div className="text-xs uppercase tracking-widest text-gray-500 font-light">
+                      Building Your Quote • Step 1 of 3: Select Motor
+                    </div>
+                    
+                    {/* 2. Motor Name - 20px margin below (space-y-5) */}
+                    <h2 className="text-2xl font-light tracking-wide text-gray-900 leading-tight">
+                      {title}
+                    </h2>
+                  </div>
+                </div>
+                
+                {/* 3. Tabs - new line, clear separation */}
+                <TabsList className="w-full justify-start border-b-0 rounded-none bg-transparent p-0 h-auto mt-5">
                   <TabsTrigger 
                     value="overview" 
                     className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-6 py-4"
@@ -275,8 +314,10 @@ export default function MotorDetailsPremiumModal({
                     Resources
                   </TabsTrigger>
                 </TabsList>
-                
-                {/* Tab Content */}
+              </div>
+              
+              {/* Scrollable Tab Content */}
+              <div ref={scrollContainerRef} className="flex-1 overflow-y-auto">
                 <div className="p-6 space-y-8">
                   {/* OVERVIEW TAB */}
                   <TabsContent value="overview" className="space-y-8 m-0">
@@ -485,8 +526,8 @@ export default function MotorDetailsPremiumModal({
                     )}
                   </TabsContent>
                 </div>
-              </Tabs>
-            </div>
+              </div>
+            </Tabs>
           </div>
 
           {/* RIGHT COLUMN: Sticky Pricing Card (Desktop Only) */}
