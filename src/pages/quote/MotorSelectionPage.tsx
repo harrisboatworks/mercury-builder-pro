@@ -379,19 +379,16 @@ export default function MotorSelectionPage() {
   return (
     <FinancingProvider>
       <QuoteLayout showProgress={false}>
-        {/* Prominent Search Bar Section */}
-        <div className="sticky top-[72px] z-30 -mx-6 px-6 -mt-8 mb-8 bg-white border-b border-luxury-hairline shadow-sm">
-          <div className="max-w-4xl mx-auto py-6">
-            <h1 className="text-2xl font-light text-luxury-ink text-center mb-4">
-              Select Mercury Outboard Motor
-            </h1>
+        {/* Compact Search Bar */}
+        <div className="sticky top-[72px] z-30 -mx-6 px-6 -mt-8 mb-6 bg-white border-b border-luxury-hairline shadow-sm">
+          <div className="max-w-4xl mx-auto py-3">
             <div className="relative">
               <input
                 type="text"
                 placeholder="Search by HP, model, or keyword (e.g., 25, verado, hp:>100)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full h-14 px-6 pr-12 text-base rounded-full border border-luxury-hairline bg-white text-luxury-ink placeholder:text-luxury-gray focus:outline-none focus:ring-2 focus:ring-luxury-ink/20 focus:border-luxury-ink transition-all"
+                className="w-full h-11 px-5 pr-12 text-sm rounded-full border border-luxury-hairline bg-white text-luxury-ink placeholder:text-luxury-gray focus:outline-none focus:ring-2 focus:ring-luxury-ink/20 focus:border-luxury-ink transition-all"
               />
               {searchQuery && (
                 <button
@@ -404,9 +401,11 @@ export default function MotorSelectionPage() {
                 </button>
               )}
             </div>
-            <div className="text-center mt-3 text-sm text-luxury-gray">
-              Showing {filteredMotors.length} of {processedMotors.length} motors
-            </div>
+            {searchQuery && (
+              <div className="text-center mt-2 text-xs text-luxury-gray">
+                {filteredMotors.length} results
+              </div>
+            )}
           </div>
         </div>
 
