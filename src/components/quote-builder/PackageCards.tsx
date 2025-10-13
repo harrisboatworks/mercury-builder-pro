@@ -55,7 +55,16 @@ export function PackageCards({
               </span>
             )}
 
-            <div className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">{p.label}</div>
+            <div className="pr-20">
+              <div className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
+                {p.label.split(' • ')[0]}
+              </div>
+              {p.label.includes(' • ') && (
+                <div className="text-xs font-medium text-slate-400 dark:text-slate-500 mt-0.5">
+                  {p.label.split(' • ')[1]}
+                </div>
+              )}
+            </div>
 
             <div className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
               {money(p.priceBeforeTax)}
