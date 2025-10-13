@@ -73,7 +73,7 @@ export const BoatInformation = ({
     label: 'Inflatable',
     description: 'Dinghies, tenders & inflatables',
     recommendedHP: '2.5-6',
-    image: '/boat-types/aluminum-fishing.svg'
+    image: '/boat-types/inflatable.png'
   }, {
     id: 'utility',
     label: 'Utility Boat',
