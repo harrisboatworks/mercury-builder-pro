@@ -12,7 +12,7 @@ import { CartHeader } from '@/components/ui/cart-header';
 import { ChatWidget } from '@/components/chat/ChatWidget';
 import { CurrentStepIndicator } from './CurrentStepIndicator';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
-import { MobileTrustAccordion } from '@/components/ui/mobile-trust-accordion';
+
 interface QuoteLayoutProps {
   children: React.ReactNode;
   showProgress?: boolean;
@@ -122,12 +122,6 @@ export const QuoteLayout = ({
           </div>
         </div>
       )}
-
-      {/* Trust Section - Responsive */}
-      {/* Mobile: Collapsible Accordion */}
-      <div className="sm:hidden border-b border-luxury-hairline">
-        <MobileTrustAccordion />
-      </div>
 
 
       {/* Main Content */}
