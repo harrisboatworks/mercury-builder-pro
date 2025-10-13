@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings, Video } from "lucide-react";
+import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings, Video, Gift } from "lucide-react";
 import { supabase } from "../../integrations/supabase/client";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { useIsMobile } from "../../hooks/use-mobile";
 import { useScrollCoordination } from "../../hooks/useScrollCoordination";
 import { money } from "../../lib/money";
@@ -68,6 +69,7 @@ export default function MotorDetailsSheet({
   const [specSheetLoading, setSpecSheetLoading] = useState(false);
   const [generatedSpecUrl, setGeneratedSpecUrl] = useState<string | null>(null);
   const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
+  const [showFullPricing, setShowFullPricing] = useState(false); // Mobile pricing expansion
   const isMobile = useIsMobile();
   const { promo: activePromo } = useActiveFinancingPromo();
   const { promotions: activePromotions } = useActivePromotions();
@@ -367,13 +369,15 @@ export default function MotorDetailsSheet({
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
       
-      {/* Modal - responsive sizing */}
+      {/* Modal - TWO COLUMN LAYOUT (60/40 split on desktop) */}
       <div className="absolute inset-0 flex items-end sm:items-center justify-center sm:p-4">
-        <div className="relative bg-white dark:bg-slate-900 w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-2xl sm:rounded-xl md:max-w-3xl lg:max-w-4xl flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-300">
+        <div className="relative bg-white dark:bg-slate-900 w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-xl 
+          lg:grid lg:grid-cols-[60fr_40fr] lg:max-w-6xl 
+          flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-300">
           
-          {/* Modal Header */}
-          <div className="sticky top-0 z-40 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-sm sm:rounded-t-xl relative">
-            {/* Close Button - Absolute positioning for tablet/desktop */}
+          {/* LEFT COLUMN: Scrollable Content with Tabs (Hidden on LG+ where it's in main content) */}
+          <div className="lg:hidden sticky top-0 z-40 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-sm sm:rounded-t-xl relative">
+            {/* Close Button */}
             <button 
               onClick={onClose} 
               className="absolute top-4 right-4 z-50 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full" 
@@ -382,72 +386,16 @@ export default function MotorDetailsSheet({
               <X className="w-5 h-5" />
             </button>
 
-            {/* Header Content */}
+            {/* Mobile/Tablet Header */}
             <div className="p-4 sm:p-6 pr-16">
-              <div className="flex flex-col space-y-2">
-                 {/* Title Row */}
-                <div className="flex-1 min-w-0">
-                  <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight">
-                    {title}
-                  </h2>
-                </div>
-                
-                {/* Tablet Price & Promo Row */}
-                <div className="hidden md:flex md:items-center md:justify-between md:gap-4 lg:hidden">
-                  <div className="flex items-center gap-4">
-                    {/* Price */}
-                    <div className="text-right">
-                      <p className="text-xl font-bold text-slate-900 dark:text-white">
-                        {typeof price === "number" ? money(price) : 'Call for Price'}
-                      </p>
-                    </div>
-                    
-                    {/* Warranty Badge */}
-                    <p className="text-sm text-blue-600 mt-2">
-                      ✓ 2 Year Extended Coverage
-                    </p>
-                  </div>
-                  
-                  {/* Promotional Content */}
-                  <div className="flex items-center gap-2">
-                    {promoText && (
-                      <div className="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-2 py-1 rounded-full text-xs font-medium">
-                        {promoText}
-                      </div>
-                    )}
-                    {activePromo && (
-                      <div className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-2 py-1 rounded-full text-xs font-medium">
-                        {activePromo.rate}% Financing
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* Desktop Price Badge - visible on large screens and up */}
-                <div className="hidden lg:block absolute top-4 right-16 text-right">
-                  {msrp && typeof msrp === "number" && msrp !== price && (
-                    <p className="text-gray-500 line-through text-sm">MSRP {money(msrp)}</p>
-                  )}
-                  <p className="text-3xl font-light text-black">
-                    {typeof price === "number" ? money(price) : 'Call for Price'}
-                  </p>
-                  <div className="flex items-center gap-2 justify-end mt-1">
-                    <p className="text-sm text-blue-600 mt-2">
-                      ✓ 2 Year Extended Coverage
-                    </p>
-                    {promoText && (
-                      <span className="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-2 py-1 rounded-full text-xs font-medium">
-                        {promoText}
-                      </span>
-                    )}
-                    {activePromo && (
-                      <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-2 py-1 rounded-full text-xs font-medium">
-                        {activePromo.rate}% Financing
-                      </span>
-                    )}
-                  </div>
-                </div>
+              {/* Quote Building Indicator */}
+              <div className="mb-3 text-xs uppercase tracking-widest text-gray-500 font-light">
+                Building Your Quote • Step 1 of 3: Select Motor
               </div>
+              
+              <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight">
+                {title}
+              </h2>
             </div>
           </div>
 

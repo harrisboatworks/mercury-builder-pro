@@ -6,9 +6,10 @@ import { enhanceImageUrl, isThumbnailUrl } from '@/lib/image-utils';
 interface MotorImageGalleryProps {
   images: string[];
   motorTitle: string;
+  enhanced?: boolean; // NEW: Enable larger gallery size for premium view
 }
 
-export function MotorImageGallery({ images, motorTitle }: MotorImageGalleryProps) {
+export function MotorImageGallery({ images, motorTitle, enhanced = false }: MotorImageGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [showLightbox, setShowLightbox] = useState(false);
   const [imageLoadErrors, setImageLoadErrors] = useState<Set<number>>(new Set());
@@ -90,7 +91,7 @@ export function MotorImageGallery({ images, motorTitle }: MotorImageGalleryProps
         <img
           src={validImages[selectedIndex]}
           alt={`${motorTitle} - Image ${selectedIndex + 1}`}
-          className="h-48 w-full rounded-xl object-contain bg-slate-50 dark:bg-slate-800 transition-all duration-200 group-hover:scale-[1.02]"
+          className={`${enhanced ? 'h-96' : 'h-48'} w-full rounded-xl object-contain bg-slate-50 dark:bg-slate-800 transition-all duration-200 group-hover:scale-[1.02]`}
           onError={() => handleImageError(selectedIndex)}
         />
         
