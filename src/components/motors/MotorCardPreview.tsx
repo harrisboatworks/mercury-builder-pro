@@ -319,7 +319,7 @@ export default function MotorCardPreview({
             
             {/* Pricing - Luxury minimal */}
             <div className="my-8">
-              <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] font-light">
+              <p className="text-[10px] tracking-[0.15em] uppercase text-gray-400 font-light">
                 from
               </p>
               {msrp && price && msrp > price && (
