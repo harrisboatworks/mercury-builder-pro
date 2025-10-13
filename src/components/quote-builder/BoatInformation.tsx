@@ -416,8 +416,8 @@ export const BoatInformation = ({
   return <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 md:space-y-8 py-4 md:py-6 lg:py-8 overflow-x-hidden">
       {/* Header */}
       <div className="text-center space-y-3 animate-fade-in">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">Boat Details Wizard</h2>
-        <p className="text-base md:text-lg text-muted-foreground">
+        <h2 className="text-3xl md:text-4xl font-light tracking-wide text-gray-900">Boat Details Wizard</h2>
+        <p className="text-base md:text-lg font-light text-gray-500">
           Let's match your {selectedMotor?.model || 'Mercury motor'} to your boat, step by step.
         </p>
       </div>
@@ -430,11 +430,11 @@ export const BoatInformation = ({
         {boatInfo.type === 'motor-only' ? <>
             {currentStep === 0 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-6">
-                  <h3 className="text-lg font-semibold">Motor Only</h3>
-                  <p className="text-sm text-muted-foreground">Buying a motor without a boat? We'll confirm specs at consultation.</p>
+                  <h3 className="text-2xl font-light tracking-wide text-gray-900">Motor Only</h3>
+                  <p className="text-sm font-light text-gray-500">Buying a motor without a boat? We'll confirm specs at consultation.</p>
 
                   <div className="space-y-2">
-                    <Label className="flex items-center gap-2">Shaft Length (if known)</Label>
+                    <Label className="flex items-center gap-2 font-light">Shaft Length (if known)</Label>
                     <Select value={boatInfo.shaftLength} onValueChange={value => setBoatInfo(prev => ({
                   ...prev,
                   shaftLength: value
@@ -462,23 +462,23 @@ export const BoatInformation = ({
 
             {showTradeIn && currentStep === 1 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">Trade-In Valuation (Optional)</h3>
+                  <h3 className="text-2xl font-light tracking-wide text-gray-900">Trade-In Valuation (Optional)</h3>
                   <TradeInValuation tradeInInfo={tradeInInfo} onTradeInChange={setTradeInInfo} currentMotorBrand={'No Current Motor'} currentHp={0} />
                 </div>
               </Card>}
 
             {currentStep === 2 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">Ready to Continue</h3>
-                  <p className="text-sm text-muted-foreground">We'll use typical settings and confirm any unknowns.</p>
+                  <h3 className="text-2xl font-light tracking-wide text-gray-900">Ready to Continue</h3>
+                  <p className="text-sm font-light text-gray-500">We'll use typical settings and confirm any unknowns.</p>
                 </div>
               </Card>}
           </> : <>
             {currentStep === 0 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-6">
                   <div className="text-center space-y-2">
-                    <Label className="text-2xl font-bold">What type of boat do you have?</Label>
-                    <p className="text-muted-foreground">Pick the closest match and enter your boat length.</p>
+                    <Label className="text-2xl font-light tracking-wide text-gray-900">What type of boat do you have?</Label>
+                    <p className="font-light text-gray-500">Pick the closest match and enter your boat length.</p>
                   </div>
                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                      {boatTypes.filter(t => t.id !== 'motor-only').map(type => <button type="button" key={type.id} onClick={() => setBoatInfo(prev => ({
@@ -488,9 +488,9 @@ export const BoatInformation = ({
                          <div className="mb-3 h-28 md:h-36 overflow-hidden rounded-md flex items-center justify-center">
                             <img src={type.image} alt={`${type.label} boat`} className="w-full h-auto object-contain transition-transform duration-200 group-hover:scale-[1.03]" loading="lazy" />
                          </div>
-                        <h3 className="font-semibold text-base md:text-lg">{type.label}</h3>
+                        <h3 className="font-light tracking-wide text-base md:text-lg text-gray-900">{type.label}</h3>
                         <div className="boat-details mt-1 space-y-0.5">
-                          <span className="block text-sm md:text-base text-muted-foreground">{type.description}</span>
+                          <span className="block text-sm md:text-base font-light text-muted-foreground">{type.description}</span>
                           {type.recommendedHP && <span className="block text-xs md:text-sm text-primary font-medium">Recommended: {type.recommendedHP} HP</span>}
                         </div>
                         <div className="selection-impact mt-2 text-xs text-muted-foreground">
@@ -516,14 +516,14 @@ export const BoatInformation = ({
                       <div className="mb-3 h-24 overflow-hidden rounded-md border-b border-border bg-gradient-to-b from-muted/40 to-background flex items-center justify-center">
                            <img src="/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076.png" alt="Not sure? We'll help you choose your boat type" className="h-20 w-full h-auto object-contain" loading="lazy" />
                       </div>
-                      <h3 className="font-semibold">Not Sure?</h3>
-                      <p className="text-sm text-muted-foreground">We'll help you figure it out</p>
+                      <h3 className="font-light tracking-wide text-gray-900">Not Sure?</h3>
+                      <p className="text-sm font-light text-gray-500">We'll help you figure it out</p>
                      </button>
                    </div>
 
                    {/* Help content for "Not Sure?" option */}
                    {showHelp && <div className="help-content animate-fade-in mt-4 p-4 bg-muted/30 rounded-lg border border-border">
-                       <h4 className="font-semibold mb-3">Let's figure out your boat type together!</h4>
+                       <h4 className="font-light tracking-wide text-gray-900 mb-3">Let's figure out your boat type together!</h4>
                        <div className="space-y-3 text-sm">
                          <p>Answer these quick questions to identify your boat:</p>
                          <div className="space-y-2">
@@ -612,21 +612,21 @@ export const BoatInformation = ({
                        <div className="space-y-6">
                          {/* Boat Make and Model */}
                          <div className="space-y-4">
-                           <div className="text-center space-y-2">
-                             <Label className="text-lg font-semibold">Tell us about your {boatTypes.find(t => t.id === boatInfo.type)?.label}</Label>
-                             <p className="text-sm text-muted-foreground">Boat details help us provide more accurate recommendations</p>
+                          <div className="text-center space-y-2">
+                            <Label className="text-xl font-light tracking-wide text-gray-900">Tell us about your {boatTypes.find(t => t.id === boatInfo.type)?.label}</Label>
+                            <p className="text-sm font-light text-gray-500">Boat details help us provide more accurate recommendations</p>
                            </div>
                            
-                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                             <div className="space-y-2">
-                               <Label>Boat Make</Label>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              <div className="space-y-2">
+                                <Label className="font-light">Boat Make</Label>
                                <Input value={boatInfo.make} onChange={e => setBoatInfo(prev => ({
                           ...prev,
                           make: e.target.value
                         }))} placeholder="e.g., Harris, Ranger, Boston Whaler" className="min-h-[44px] py-3 text-base w-full" />
-                             </div>
-                             <div className="space-y-2">
-                               <Label>Boat Model</Label>
+                              </div>
+                              <div className="space-y-2">
+                                <Label className="font-light">Boat Model</Label>
                                <Input value={boatInfo.model} onChange={e => setBoatInfo(prev => ({
                           ...prev,
                           model: e.target.value
@@ -636,10 +636,10 @@ export const BoatInformation = ({
                          </div>
 
                          {/* Length Input */}
-                         <div className="space-y-4">
-                           <div className="text-center space-y-2">
-                             <Label className="text-lg font-semibold">Boat Length</Label>
-                             <p className="text-sm text-muted-foreground">Use the slider to set your boat length</p>
+                          <div className="space-y-4">
+                            <div className="text-center space-y-2">
+                              <Label className="text-xl font-light tracking-wide text-gray-900">Boat Length</Label>
+                              <p className="text-sm font-light text-gray-500">Use the slider to set your boat length</p>
                            </div>
                            
                            <div className="slider-container">
@@ -661,8 +661,8 @@ export const BoatInformation = ({
             {currentStep === 1 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold">Transom Height Confirmation</h3>
-                    <p className="text-sm text-muted-foreground">Measure from top of transom to bottom of hull.</p>
+                    <h3 className="text-2xl font-light tracking-wide text-gray-900">Transom Height Confirmation</h3>
+                    <p className="text-sm font-light text-gray-500">Measure from top of transom to bottom of hull.</p>
                   </div>
 
                   <div className={`grid grid-cols-1 gap-3 ${hp >= 40 ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
@@ -728,7 +728,7 @@ export const BoatInformation = ({
                 <div className="space-y-6">
                   <div className="space-y-4">
                     <div className="space-y-2">
-                      <Label>Current Motor Brand</Label>
+                      <Label className="font-light">Current Motor Brand</Label>
                       <Select value={boatInfo.currentMotorBrand} onValueChange={value => setBoatInfo(prev => ({
                     ...prev,
                     currentMotorBrand: value,
@@ -752,7 +752,7 @@ export const BoatInformation = ({
 
                     {boatInfo.currentMotorBrand && boatInfo.currentMotorBrand !== 'No Current Motor' && <>
                         <div className="space-y-2">
-                          <Label>Current Motor Horsepower (HP)</Label>
+                          <Label className="font-light">Current Motor Horsepower (HP)</Label>
                           <Input type="number" inputMode="numeric" min={1} max={600} placeholder="e.g., 115" value={boatInfo.currentHp || ''} onChange={e => setBoatInfo(prev => ({
                       ...prev,
                       currentHp: parseInt(e.target.value || '0', 10) || 0
@@ -761,7 +761,7 @@ export const BoatInformation = ({
                        </div>
 
                        <div className="space-y-2">
-                         <Label>Current Motor Year</Label>
+                         <Label className="font-light">Current Motor Year</Label>
                          <Select value={boatInfo.currentMotorYear?.toString() || ''} onValueChange={value => setBoatInfo(prev => ({
                       ...prev,
                       currentMotorYear: parseInt(value)
@@ -795,7 +795,7 @@ export const BoatInformation = ({
                           <strong>Tiller Motor Selected:</strong> Your {selectedMotor?.model} is a tiller motor that's steered by hand. No remote controls are needed or applicable.
                         </AlertDescription>
                       </Alert> : <div className="space-y-2">
-                        <Label>Control Type</Label>
+                        <Label className="font-light">Control Type</Label>
                         <Select value={boatInfo.controlType} onValueChange={value => setBoatInfo(prev => ({
                     ...prev,
                     controlType: value
@@ -814,7 +814,7 @@ export const BoatInformation = ({
                       </div>}
 
                     {!isSelectedTillerMotor && selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && <div className="controls-section rounded-lg border border-border bg-muted/30 p-4">
-                        <h4 className="font-semibold mb-3">Steering Controls Required</h4>
+                        <h4 className="font-light tracking-wide text-gray-900 mb-3">Steering Controls Required</h4>
                         {isNonMercuryBrand && <Alert className="mb-3 border-blue-500 bg-blue-50 dark:bg-blue-950/20">
                             <div className="flex items-center gap-2">
                               <Info className="w-4 h-4" />
@@ -892,7 +892,7 @@ export const BoatInformation = ({
                   const model = (selectedMotor?.model || '').toUpperCase();
                   const isElectricStart = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
                   return <div className="accessories-check rounded-lg border border-border bg-muted/30 p-4 space-y-4">
-                          <h3 className="text-lg font-semibold">What do you already have?</h3>
+                          <h3 className="text-xl font-light tracking-wide text-gray-900">What do you already have?</h3>
                           {hp >= 40 && <div className="accessory-item">
                               <div className="text-sm text-muted-foreground mb-1">Controls</div>
                               {/* Control radio options already shown above */}
@@ -941,7 +941,7 @@ export const BoatInformation = ({
 
             {showTradeIn && currentStep === 3 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">Have a motor to trade?</h3>
+                  <h3 className="text-2xl font-light tracking-wide text-gray-900">Have a motor to trade?</h3>
                    <TradeInValuation tradeInInfo={tradeInInfo} onTradeInChange={setTradeInInfo} currentMotorBrand={boatInfo.currentMotorBrand} currentHp={boatInfo.currentHp} currentMotorYear={boatInfo.currentMotorYear} />
                 </div>
               </Card>}
@@ -949,7 +949,7 @@ export const BoatInformation = ({
             {currentStep === 4 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-6">
                   <div className="space-y-2">
-                    <h3 className="text-lg font-semibold">Compatibility Check</h3>
+                    <h3 className="text-2xl font-light tracking-wide text-gray-900">Compatibility Check</h3>
                     <div className="flex items-center gap-3">
                       <Progress value={computeCompatibilityScore()} className="h-3" />
                       <span className="text-sm text-muted-foreground">{computeCompatibilityScore()}% match</span>
@@ -979,19 +979,19 @@ export const BoatInformation = ({
 
         {/* Navigation */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between pt-6 border-t gap-3">
-          <Button type="button" variant="outline" onClick={handlePrev} className="flex items-center justify-center gap-2 min-h-[44px] order-2 sm:order-1">
+          <Button type="button" variant="outline" onClick={handlePrev} className="flex items-center justify-center gap-2 min-h-[44px] order-2 sm:order-1 border-2 border-black text-black font-light rounded-sm hover:bg-black hover:text-white transition-all duration-500">
             <ArrowLeft className="w-4 h-4" />
             {currentStep === 0 ? 'Back to Motor' : 'Previous'}
           </Button>
           
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 order-1 sm:order-2">
-            {currentStep < totalSteps - 1 && <Button type="button" variant="secondary" onClick={handleSkip} className="text-sm min-h-[44px]">
+            {currentStep < totalSteps - 1 && <Button type="button" variant="ghost" onClick={handleSkip} className="text-sm min-h-[44px] font-light text-gray-500">
                 Skip for now
               </Button>}
             
-            {currentStep === totalSteps - 1 ? <Button type="submit" className="bg-green-600 hover:bg-green-700 text-white px-8 min-h-[44px] text-base font-medium" disabled={!canNext()}>
+            {currentStep === totalSteps - 1 ? <Button type="submit" className="border-2 border-black bg-black text-white px-8 py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-white hover:text-black transition-all duration-500" disabled={!canNext()}>
                 Continue to Quote
-              </Button> : <Button type="button" onClick={handleNext} disabled={!canNext()} className="px-8 min-h-[44px] text-base font-medium">
+              </Button> : <Button type="button" onClick={handleNext} disabled={!canNext()} className="border-2 border-black bg-black text-white px-8 py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-white hover:text-black transition-all duration-500">
                 Next: {nextStepLabel}
               </Button>}
           </div>
