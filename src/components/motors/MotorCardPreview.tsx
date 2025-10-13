@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
-import MotorDetailsSheet from './MotorDetailsSheet';
+import MotorDetailsPremiumModal from './MotorDetailsPremiumModal';
 import { Button } from '@/components/ui/button';
 import { LuxuryPriceDisplay } from '@/components/pricing/LuxuryPriceDisplay';
 import type { Motor } from '../../lib/motor-helpers';
@@ -57,6 +57,7 @@ export default function MotorCardPreview({
   const { promotions } = useActivePromotions();
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [galleryImages, setGalleryImages] = useState<string[]>([]);
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   
@@ -74,10 +75,11 @@ export default function MotorCardPreview({
         if (img && img !== '/lovable-uploads/speedboat-transparent.png') {
           setImageInfo({ url: img });
           
-          // Get photo count if motor exists
+          // Get photo count and gallery images if motor exists
           if (motor) {
             const images = await getMotorImageGallery(motor);
             setPhotoCount(images.length);
+            setGalleryImages(images);
           }
           return;
         }
@@ -89,10 +91,11 @@ export default function MotorCardPreview({
         
         setImageInfo({ url: finalUrl });
         
-        // Get photo count
+        // Get photo count and gallery images
         if (motor) {
           const images = await getMotorImageGallery(motor);
           setPhotoCount(images.length);
+          setGalleryImages(images);
         }
       } catch (error) {
         console.warn('Failed to load motor image info:', error);
@@ -354,26 +357,21 @@ export default function MotorCardPreview({
         </div>
       </div>
       
-      {/* Details Sheet */}
+      {/* Premium Details Modal */}
       {showDetailsSheet && createPortal(
-        <MotorDetailsSheet
+        <MotorDetailsPremiumModal
           open={showDetailsSheet}
           onClose={handleCloseModal}
           onSelect={onSelect}
           title={title}
-          subtitle={hpNum ? `${hpNum} HP Mercury Outboard` : undefined}
           img={imageUrl}
+          gallery={galleryImages}
           msrp={msrp}
           price={price}
           promoText={promoText}
-          description={description}
           hp={hpNum}
           shaft={shaft}
-          weightLbs={weightLbs}
-          altOutput={altOutput}
-          steering={steering}
           features={features}
-          specSheetUrl={specSheetUrl}
           motor={motor}
         />,
         document.body
