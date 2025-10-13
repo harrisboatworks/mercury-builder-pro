@@ -358,6 +358,14 @@ export const BoatInformation = ({
     if (/\bL\b|ELPT|MLH|LPT/.test(model)) return '20';
     if (/\bS\b/.test(model)) return '15';
 
+    // Check if it's a tiller motor (MH, MLH patterns) - these are typically 15" Short
+    const motorModel = motor.model || '';
+    if (isTillerMotor(motorModel)) {
+      const hp = typeof motor.hp === 'string' ? parseInt(motor.hp) : motor.hp;
+      // Tiller motors under 25HP are typically 15" Short shaft
+      if (hp < 25) return '15';
+    }
+
     // Default assumption for most motors is 20" Long shaft if no specific indicator
     return '20';
   };
