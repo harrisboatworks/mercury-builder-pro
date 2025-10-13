@@ -81,7 +81,7 @@ export const tillerMountingChoices = [
     id: "transom_bolt",
     label: "Transom Bolt Mount",
     value: "transom_bolt",
-    image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/bolt-on-motor-installation.png",
     helper: "Permanent bolt-through mounting",
     xpReward: 15
   },
