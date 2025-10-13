@@ -147,7 +147,7 @@ export default function QuoteSummaryPage() {
   // Calculate base accessory costs
   const controlsCost = needsControls ? 2500 : 0;
   const batteryCost = !isManualStart ? 179.99 : 0;
-  const baseAccessoryCost = controlsCost + batteryCost;
+  const baseAccessoryCost = controlsCost; // Battery separate from base
   
   // Add warranty price if selected
   const warrantyPrice = state.warrantyConfig?.warrantyPrice || 0;
@@ -255,37 +255,67 @@ export default function QuoteSummaryPage() {
   const warrantyPromos = getWarrantyPromotions?.() ?? [];
   const promoWarrantyYears = warrantyPromos[0]?.warranty_extra_years ?? 0;
 
-  // Calculate base subtotal for packages (motor after all discounts + base accessories)
+  // Calculate warranty costs for package tiers
+  const completeTargetYears = Math.max(currentCoverageYears, 6);
+  const premiumTargetYears = maxCoverageYears;
+
+  // Find the warranty option that matches each package's target
+  const completeWarrantyOption = warrantyOptions.find(o => o.years === completeTargetYears);
+  const premiumWarrantyOption = warrantyOptions.find(o => o.years === premiumTargetYears);
+
+  // Get the warranty cost (already calculated correctly in warrantyOptions)
+  const completeWarrantyCost = completeWarrantyOption?.price || 0;
+  const premiumWarrantyCost = premiumWarrantyOption?.price || 0;
+
+  // Calculate base subtotal (motor + base accessories, NO battery)
   const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
 
-  // Package options with coverage info
+  // Package options with ACTUAL warranty costs included
   const packages: PackageOption[] = [
     { 
       id: "good", 
       label: "Essential", 
       priceBeforeTax: baseSubtotal, 
       savings: totals.savings, 
-      features: ["Mercury motor", "Standard controls & rigging", "Basic installation"],
+      features: [
+        "Mercury motor", 
+        "Standard controls & rigging", 
+        `${currentCoverageYears} years coverage included`,
+        "Basic installation",
+        "Customer supplies battery"
+      ],
       coverageYears: currentCoverageYears
     },
     { 
       id: "better", 
       label: "Complete", 
-      priceBeforeTax: baseSubtotal + batteryCost, 
+      priceBeforeTax: baseSubtotal + batteryCost + completeWarrantyCost, 
       savings: totals.savings, 
-      features: ["Mercury motor", "Premium controls & rigging", "Marine starting battery", "Standard propeller", "Priority installation"], 
+      features: [
+        "Everything in Essential",
+        "Marine starting battery ($180 value)", 
+        `Extended to ${completeTargetYears} years total coverage`,
+        completeWarrantyCost > 0 ? `(+${completeTargetYears - currentCoverageYears} years extension • $${completeWarrantyCost})` : null,
+        "Priority installation"
+      ].filter(Boolean), 
       recommended: true,
-      coverageYears: Math.max(currentCoverageYears, 6),
-      targetWarrantyYears: Math.max(currentCoverageYears, 6)
+      coverageYears: completeTargetYears,
+      targetWarrantyYears: completeTargetYears
     },
     { 
       id: "best", 
-      label: "Premium • Max coverage", 
-      priceBeforeTax: baseSubtotal + batteryCost + 299.99, 
+      label: "Premium • Max Coverage", 
+      priceBeforeTax: baseSubtotal + batteryCost + premiumWarrantyCost + 299.99, 
       savings: totals.savings, 
-      features: ["Max coverage", "Priority install", "Premium prop", "Extended warranty", "White-glove installation"],
-      coverageYears: maxCoverageYears,
-      targetWarrantyYears: maxCoverageYears
+      features: [
+        "Everything in Complete",
+        `Maximum ${premiumTargetYears} years total coverage`,
+        premiumWarrantyCost > 0 ? `(+${premiumTargetYears - currentCoverageYears} years extension • $${premiumWarrantyCost})` : null,
+        "Premium stainless propeller ($300 value)", 
+        "White-glove installation"
+      ].filter(Boolean),
+      coverageYears: premiumTargetYears,
+      targetWarrantyYears: premiumTargetYears
     },
   ];
 
