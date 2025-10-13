@@ -498,6 +498,20 @@ export default function QuoteSummaryPage() {
 
   const selectedPackageData = packages.find(p => p.id === selectedPackage) || packages[1];
 
+  // Calculate totals for the SELECTED PACKAGE (not just base motor)
+  const packageSpecificTotals = calculateQuotePricing({
+    motorMSRP,
+    motorDiscount,
+    accessoryTotal: baseAccessoryCost + 
+      (selectedPackage !== 'good' && !isManualStart ? batteryCost : 0) + // Battery in Complete/Premium
+      (selectedPackage === 'best' && !includesProp ? 299.99 : 0) + // Propeller in Premium
+      (selectedPackage === 'best' && canAddFuelTank ? 199 : 0), // Fuel tank in Premium
+    warrantyPrice: state.warrantyConfig?.warrantyPrice || 0, // Current selected warranty
+    promotionalSavings: promoSavings,
+    tradeInValue: state.tradeInInfo?.estimatedValue || 0,
+    taxRate: 0.13
+  });
+
   return (
     <QuoteLayout title="Your Mercury Motor Quote">
       <div className="max-w-7xl mx-auto space-y-8">
@@ -550,7 +564,7 @@ export default function QuoteSummaryPage() {
 
             {/* Detailed Pricing Breakdown */}
             <PricingTable
-              pricing={totals}
+              pricing={packageSpecificTotals}
               motorName={quoteData.motor?.model || 'Mercury Motor'}
               accessoryBreakdown={accessoryBreakdown}
               tradeInValue={state.tradeInInfo?.estimatedValue || 0}
