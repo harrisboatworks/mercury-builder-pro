@@ -48,20 +48,20 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
 
       {/* Main Header */}
       <header 
-        className={`sticky top-0 z-50 h-[72px] transition-all duration-300 bg-white border-b border-luxury-hairline ${
+        className={`sticky top-0 z-50 h-14 sm:h-16 md:h-[72px] transition-all duration-300 bg-white border-b border-luxury-hairline ${
           isScrolled 
             ? 'shadow-sm backdrop-blur-md' 
             : ''
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 h-full">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 h-full">
           <div className="flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] h-full gap-3 sm:gap-4 md:gap-6">
             
             {/* Left: Mobile Menu + Logos */}
             <div className="flex items-center gap-3 sm:gap-4">
               {/* Mobile Menu Button */}
               <button
-                className="md:hidden p-2 -ml-3 text-luxury-ink hover:text-luxury-gray transition-colors"
+                className="md:hidden p-1.5 -ml-2 text-luxury-ink hover:text-luxury-gray transition-colors"
                 onClick={() => setIsMenuOpen(true)}
                 aria-label="Open menu"
               >
@@ -74,7 +74,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                 <img 
                   src={harrisLogo} 
                   alt="Harris Boat Works" 
-                  className="h-5 sm:h-6 md:h-7 lg:h-8 transition-all duration-300"
+                  className="h-4 sm:h-5 md:h-6 lg:h-7 transition-all duration-300"
                 />
                 
                 {/* Hairline Divider */}
@@ -84,7 +84,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                 <img 
                   src={mercuryLogo} 
                   alt="Mercury Marine" 
-                  className="h-5 sm:h-6 md:h-7 lg:h-8 transition-all duration-300"
+                  className="h-4 sm:h-5 md:h-6 lg:h-7 transition-all duration-300"
                 />
               </div>
             </div>
@@ -103,7 +103,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
             </div>
 
             {/* Right: Actions */}
-            <div className="flex items-center justify-end gap-1">
+            <div className="flex items-center justify-end gap-0.5 sm:gap-1 min-w-[40px]">
               {/* Quote/Cart Button */}
               <Button
                 variant="ghost"

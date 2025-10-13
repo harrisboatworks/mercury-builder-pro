@@ -380,7 +380,7 @@ export default function MotorSelectionPage() {
     <FinancingProvider>
       <QuoteLayout showProgress={false}>
         {/* Search Bar - Sticks directly under header */}
-        <div className="sticky top-[60px] sm:top-[64px] md:top-[72px] z-[60] bg-white border-b border-luxury-hairline">
+        <div className="sticky top-14 sm:top-16 md:top-[72px] z-[60] bg-white border-b border-luxury-hairline">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3">
               <div className="relative">
                 <input
@@ -409,7 +409,7 @@ export default function MotorSelectionPage() {
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-6 pt-4 sm:pt-6">
         
         <div>
           {/* Motors Grid */}
