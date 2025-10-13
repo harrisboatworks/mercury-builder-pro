@@ -55,13 +55,13 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
         }`}
       >
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 h-full">
-          <div className="flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] h-full gap-3 sm:gap-4 md:gap-6">
+          <div className="flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] h-full gap-2 sm:gap-3 md:gap-6">
             
             {/* Left: Mobile Menu + Logos */}
             <div className="flex items-center gap-3 sm:gap-4">
               {/* Mobile Menu Button */}
               <button
-                className="md:hidden p-1.5 -ml-2 text-luxury-ink hover:text-luxury-gray transition-colors"
+                className="md:hidden p-1 -ml-1.5 text-luxury-ink hover:text-luxury-gray transition-colors"
                 onClick={() => setIsMenuOpen(true)}
                 aria-label="Open menu"
               >
@@ -69,22 +69,22 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
               </button>
 
               {/* Logos - Centered on Mobile, Left on Desktop */}
-              <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+              <div className="flex items-center gap-1.5 sm:gap-2 md:gap-4">
                 {/* Harris Logo */}
                 <img 
                   src={harrisLogo} 
                   alt="Harris Boat Works" 
-                  className="h-4 sm:h-5 md:h-6 lg:h-7 transition-all duration-300"
+                  className="h-6 sm:h-7 md:h-8 lg:h-9 transition-all duration-300"
                 />
                 
                 {/* Hairline Divider */}
-                <div className="hidden md:block w-px h-6 md:h-8 bg-luxury-hairline" />
+                <div className="block w-px h-4 sm:h-5 md:h-8 bg-luxury-hairline" />
                 
                 {/* Mercury Logo - Show on all screens */}
                 <img 
                   src={mercuryLogo} 
                   alt="Mercury Marine" 
-                  className="h-4 sm:h-5 md:h-6 lg:h-7 transition-all duration-300"
+                  className="h-6 sm:h-7 md:h-8 lg:h-9 transition-all duration-300"
                 />
               </div>
             </div>
@@ -103,7 +103,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
             </div>
 
             {/* Right: Actions */}
-            <div className="flex items-center justify-end gap-0.5 sm:gap-1 min-w-[40px]">
+            <div className="flex items-center justify-end gap-0 sm:gap-0.5 md:gap-1 min-w-[40px]">
               {/* Quote/Cart Button */}
               <Button
                 variant="ghost"
