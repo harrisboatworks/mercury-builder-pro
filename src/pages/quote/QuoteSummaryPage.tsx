@@ -505,8 +505,8 @@ export default function QuoteSummaryPage() {
 
             {/* Hero Price Section */}
             <HeroPrice 
-              yourPriceBeforeTax={totals.subtotal}
-              totalWithTax={totals.total}
+              yourPriceBeforeTax={selectedPackageData.priceBeforeTax}
+              totalWithTax={selectedPackageData.priceBeforeTax * 1.13}
               discount={totals.discount}
               promoValue={totals.promoValue}
               showMonthly={true}
