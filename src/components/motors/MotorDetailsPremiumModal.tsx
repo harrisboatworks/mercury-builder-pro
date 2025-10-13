@@ -63,35 +63,37 @@ export default function MotorDetailsPremiumModal({
   const smartReview = useSmartReviewRotation(hpValue, title);
   const motorSpecs = motor ? findMotorSpecs(hpValue, title) : undefined;
 
-  // Body scroll lock
+  // Body scroll lock with proper cleanup
   useEffect(() => {
-    let scrollPosition = 0;
-    
     if (open) {
+      // Store current scroll position
+      const scrollPosition = window.scrollY;
       setScrollLock(true, 'modal-opening');
-      scrollPosition = window.scrollY;
+      
       document.body.setAttribute('data-scroll-y', scrollPosition.toString());
       document.body.style.position = 'fixed';
       document.body.style.top = `-${scrollPosition}px`;
       document.body.style.width = '100%';
       document.body.style.overflow = 'hidden';
-    } else {
-      const storedScrollY = document.body.getAttribute('data-scroll-y') || '0';
-      const targetScrollY = parseInt(storedScrollY, 10);
       
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.overflow = '';
-      
-      requestAnimationFrame(() => {
-        setTimeout(() => {
-          window.scrollTo(0, targetScrollY);
-          setTimeout(() => setScrollLock(false, 'modal-closed'), 200);
-        }, 25);
-      });
-      
-      document.body.removeAttribute('data-scroll-y');
+      // Cleanup function - runs when modal closes OR component unmounts
+      return () => {
+        const storedScrollY = document.body.getAttribute('data-scroll-y') || '0';
+        const targetScrollY = parseInt(storedScrollY, 10);
+        
+        // Remove all body styles
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        document.body.removeAttribute('data-scroll-y');
+        
+        // Restore scroll position immediately
+        window.scrollTo(0, targetScrollY);
+        
+        // Release scroll lock
+        setScrollLock(false, 'modal-closed');
+      };
     }
   }, [open, setScrollLock]);
 
