@@ -114,9 +114,9 @@ export const QuoteLayout = ({
       <LuxuryHeader />
       
       {/* Luxury Subheader with Progress */}
-      {showProgress && (
+      {showProgress && title && (
         <LuxurySubheader 
-          title={title || "Quote Builder"}
+          title={title}
           showFilters={false}
         />
       )}

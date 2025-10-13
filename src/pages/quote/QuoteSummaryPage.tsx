@@ -153,9 +153,11 @@ export default function QuoteSummaryPage() {
   const completeTargetYears = 7; // Complete: 7 years total
   const premiumTargetYears = 8; // Premium: 8 years max
 
-  // Estimated warranty costs for display (no dynamic pricing needed)
-  const completeWarrantyCost = 0; // Included in package pricing
-  const premiumWarrantyCost = 0; // Included in package pricing
+  // Calculate real warranty extension costs
+  // Assuming ~$175 per additional year of coverage
+  const warrantyPricePerYear = 175;
+  const completeWarrantyCost = Math.max(0, (completeTargetYears - currentCoverageYears)) * warrantyPricePerYear;
+  const premiumWarrantyCost = Math.max(0, (premiumTargetYears - currentCoverageYears)) * warrantyPricePerYear;
 
   // Calculate base subtotal (motor + base accessories, NO battery)
   const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
@@ -185,9 +187,9 @@ export default function QuoteSummaryPage() {
         "Everything in Essential",
         ...(isManualStart ? [] : ["Marine starting battery ($180 value)"]), 
         `Extended to ${completeTargetYears} years total coverage`,
-        completeWarrantyCost > 0 ? `(+${completeTargetYears - currentCoverageYears} years extension • $${completeWarrantyCost})` : null,
+        completeWarrantyCost > 0 ? `Warranty extension: $${completeWarrantyCost}` : `Already includes ${completeTargetYears}yr coverage`,
         "Priority installation"
-      ].filter(Boolean), 
+      ].filter(Boolean),
       recommended: true,
       coverageYears: completeTargetYears,
       targetWarrantyYears: completeTargetYears
@@ -200,7 +202,7 @@ export default function QuoteSummaryPage() {
       features: [
         "Everything in Complete",
         `Maximum ${premiumTargetYears} years total coverage`,
-        premiumWarrantyCost > 0 ? `(+${premiumTargetYears - currentCoverageYears} years extension • $${premiumWarrantyCost})` : null,
+        premiumWarrantyCost > 0 ? `Warranty extension: $${premiumWarrantyCost}` : `Already includes ${premiumTargetYears}yr coverage`,
         !includesProp ? "Premium aluminum 3-blade propeller ($300 value)" : null,
         canAddFuelTank ? "12L external fuel tank & hose ($199 value)" : null,
         "White-glove installation"
