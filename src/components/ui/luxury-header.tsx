@@ -37,9 +37,9 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
     <>
       {/* Top Utility Bar */}
       {showUtilityBar && (
-        <div className="hidden md:block h-8 bg-white border-b border-luxury-hairline">
+        <div className="hidden md:block h-8 bg-white dark:bg-gray-900 border-b border-luxury-hairline dark:border-gray-800">
           <div className="max-w-7xl mx-auto px-6 h-full flex items-center">
-            <p className="text-xs text-luxury-gray uppercase tracking-wide font-medium">
+            <p className="text-xs text-luxury-gray dark:text-gray-300 uppercase tracking-wide font-medium">
               Mercury Premier Dealer • Award-Winning Service Team
             </p>
           </div>
@@ -48,9 +48,9 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
 
       {/* Main Header */}
       <header 
-        className={`sticky top-0 z-50 h-14 sm:h-16 md:h-[72px] transition-all duration-300 bg-white border-b border-luxury-hairline ${
+        className={`sticky top-0 z-50 h-14 sm:h-16 md:h-[72px] transition-all duration-300 bg-white dark:bg-gray-900 border-b border-luxury-hairline dark:border-gray-800 ${
           isScrolled 
-            ? 'shadow-sm backdrop-blur-md' 
+            ? 'shadow-sm backdrop-blur-md dark:shadow-gray-800/50' 
             : ''
         }`}
       >
@@ -59,7 +59,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
             
             {/* Left: Mobile Menu Button */}
             <button
-              className="md:hidden p-1.5 text-luxury-ink hover:text-luxury-gray transition-colors justify-self-start"
+              className="md:hidden p-1.5 text-luxury-ink dark:text-white hover:text-luxury-gray dark:hover:text-gray-300 transition-colors justify-self-start"
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open menu"
             >
@@ -73,7 +73,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                 alt="Harris Boat Works" 
                 className="h-7 md:h-8 lg:h-9 transition-all duration-300"
               />
-              <div className="w-px h-5 md:h-8 bg-luxury-hairline" />
+              <div className="w-px h-5 md:h-8 bg-luxury-hairline dark:bg-gray-700" />
               <img 
                 src={mercuryLogo} 
                 alt="Mercury Marine" 
@@ -88,7 +88,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                 alt="Harris Boat Works" 
                 className="h-6 sm:h-7 transition-all duration-300"
               />
-              <div className="w-px h-4 sm:h-5 bg-luxury-hairline" />
+              <div className="w-px h-4 sm:h-5 bg-luxury-hairline dark:bg-gray-700" />
               <img 
                 src={mercuryLogo} 
                 alt="Mercury Marine" 
@@ -97,12 +97,12 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
             </div>
 
             {/* Center: Trust Badges - Desktop Only */}
-            <div className="hidden md:flex items-center justify-center space-x-6 text-xs text-luxury-gray">
+            <div className="hidden md:flex items-center justify-center space-x-6 text-xs text-luxury-gray dark:text-gray-300">
               <div className="flex items-center gap-2">
                 <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-5 w-auto" />
                 <span className="font-medium">Award-Winning Service</span>
               </div>
-              <div className="text-luxury-hairline">•</div>
+              <div className="text-luxury-hairline dark:text-gray-600">•</div>
               <div className="flex items-center gap-2">
                 <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-5 w-auto" />
                 <span className="font-medium">Certified Repower Center</span>
@@ -115,13 +115,13 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
               <Button
                 variant="ghost"
                 size="sm"
-                className="relative p-2 text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
+                className="relative p-2 text-luxury-ink dark:text-white hover:text-luxury-gray dark:hover:text-gray-300 hover:bg-luxury-stage dark:hover:bg-gray-800"
               >
                 <ShoppingCart className="h-5 w-5" />
                 {quoteItemCount > 0 && (
                   <Badge 
                     variant="secondary" 
-                    className="absolute -top-1 -right-1 h-5 w-5 p-0 bg-luxury-ink text-white text-xs flex items-center justify-center"
+                    className="absolute -top-1 -right-1 h-5 w-5 p-0 bg-luxury-ink dark:bg-white text-white dark:text-gray-900 text-xs flex items-center justify-center"
                   >
                     {quoteItemCount}
                   </Badge>
@@ -140,7 +140,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="p-2 text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
+                      className="p-2 text-luxury-ink dark:text-white hover:text-luxury-gray dark:hover:text-gray-300 hover:bg-luxury-stage dark:hover:bg-gray-800"
                     >
                       <User className="h-5 w-5" />
                     </Button>
@@ -148,7 +148,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                       variant="ghost"
                       size="sm"
                       onClick={() => signOut()}
-                      className="p-2 text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
+                      className="p-2 text-luxury-ink dark:text-white hover:text-luxury-gray dark:hover:text-gray-300 hover:bg-luxury-stage dark:hover:bg-gray-800"
                       title="Sign out"
                     >
                       <LogOut className="h-5 w-5" />
@@ -158,7 +158,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="px-3 py-2 text-sm text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
+                    className="px-3 py-2 text-sm text-luxury-ink dark:text-white hover:text-luxury-gray dark:hover:text-gray-300 hover:bg-luxury-stage dark:hover:bg-gray-800"
                   >
                     Sign In
                   </Button>

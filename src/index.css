@@ -288,11 +288,7 @@
   }
 }
 
-/* Dark mode logo fixes */
-.dark img[alt="Harris Boat Works"],
-.dark img[alt="Mercury Marine"] {
-  filter: invert(1);
-}
+/* Dark mode logo fixes - handled in components with proper backgrounds */
 
 @layer base {
   * {
