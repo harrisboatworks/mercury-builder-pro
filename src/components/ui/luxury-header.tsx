@@ -71,13 +71,13 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
               <img 
                 src={harrisLogo} 
                 alt="Harris Boat Works" 
-                className="h-7 md:h-8 lg:h-9 transition-all duration-300"
+                className="h-7 md:h-8 lg:h-9 transition-all duration-300 dark:invert"
               />
               <div className="w-px h-5 md:h-8 bg-luxury-hairline dark:bg-gray-700" />
               <img 
                 src={mercuryLogo} 
                 alt="Mercury Marine" 
-                className="h-7 md:h-8 lg:h-9 transition-all duration-300"
+                className="h-7 md:h-8 lg:h-9 transition-all duration-300 dark:invert"
               />
             </div>
 
@@ -86,13 +86,13 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
               <img 
                 src={harrisLogo} 
                 alt="Harris Boat Works" 
-                className="h-6 sm:h-7 transition-all duration-300"
+                className="h-6 sm:h-7 transition-all duration-300 dark:invert"
               />
               <div className="w-px h-4 sm:h-5 bg-luxury-hairline dark:bg-gray-700" />
               <img 
                 src={mercuryLogo} 
                 alt="Mercury Marine" 
-                className="h-6 sm:h-7 transition-all duration-300"
+                className="h-6 sm:h-7 transition-all duration-300 dark:invert"
               />
             </div>
 

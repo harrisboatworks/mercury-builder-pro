@@ -49,7 +49,7 @@ export default function MobileHeader({ title, onMenuClick, showMenu = false }: M
             <img 
               src={harrisLogo} 
               alt="Harris Boat Works" 
-              className="w-auto h-6 md:h-8 lg:h-10"
+              className="w-auto h-6 md:h-8 lg:h-10 dark:invert"
             />
           </Link>
           
@@ -58,7 +58,7 @@ export default function MobileHeader({ title, onMenuClick, showMenu = false }: M
             <img 
               src={mercuryLogo} 
               alt="Mercury Marine" 
-              className="w-auto h-4 max-w-[80px] md:h-6 md:max-w-none lg:h-8"
+              className="w-auto h-4 max-w-[80px] md:h-6 md:max-w-none lg:h-8 dark:invert"
             />
             <ChatWidget />
           </div>
