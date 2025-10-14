@@ -446,6 +446,16 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   <li>✓ Up to $1,000 in Mercury rebates</li>
                 </ul>
               </div>
+
+              {/* Continue Button - shown after estimate */}
+              {estimate && (
+                <Button 
+                  onClick={onAutoAdvance}
+                  className="w-full min-h-[56px] border-2 rounded-sm font-light text-base tracking-widest uppercase transition-all border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 hover:bg-gray-900 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900"
+                >
+                  Continue to Next Step
+                </Button>
+              )}
             </motion.div>
           )}
         </div>
