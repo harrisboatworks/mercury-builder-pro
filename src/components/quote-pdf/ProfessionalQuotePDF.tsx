@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
   infoBox: {
     backgroundColor: colors.infoBg,
     border: `1 solid ${colors.border}`,
-    padding: 12,
+    padding: 14,
     marginBottom: 20,
   },
   
@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
     border: `2 solid ${colors.border}`,
     padding: 16,
     backgroundColor: 'transparent',
-    marginBottom: 20,
+    marginBottom: 15,
     textAlign: 'center',
   },
 
@@ -264,6 +264,21 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: colors.text,
     fontWeight: 'bold',
+  },
+
+  coverageTitle: {
+    fontSize: 13,
+    fontWeight: 'bold',
+    color: colors.text,
+    marginBottom: 8,
+    letterSpacing: 0.5,
+  },
+
+  promoUrgency: {
+    fontSize: 9,
+    color: colors.lightText,
+    fontStyle: 'italic',
+    marginTop: 2,
   },
   
   summaryTitle: {
@@ -433,9 +448,9 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             {/* Product Information */}
             <View style={styles.productSection}>
               <Text style={styles.productName}>{quoteData.productName}</Text>
-              <Text style={styles.productDetails}>✓ Quiet, low-vibration four-stroke performance</Text>
-              <Text style={styles.productDetails}>✓ Excellent fuel economy & range</Text>
-              <Text style={styles.productDetails}>✓ Factory-backed service at Harris Boat Works</Text>
+              <Text style={styles.productDetails}>• Quiet, low-vibration four-stroke performance</Text>
+              <Text style={styles.productDetails}>• Excellent fuel economy & range</Text>
+              <Text style={styles.productDetails}>• Factory-backed service at Harris Boat Works</Text>
             </View>
 
             {/* Pricing Breakdown */}
@@ -482,6 +497,11 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             <Text style={styles.savingsText}>
               Total savings of ${quoteData.totalSavings} vs MSRP
             </Text>
+            {parseFloat(quoteData.promoSavings || '0') > 0 && (
+              <Text style={styles.promoUrgency}>
+                Limited time offer - expires {validUntilString}
+              </Text>
+            )}
           </View>
 
           {/* Right Column */}
@@ -531,33 +551,33 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               </View>
             </View>
 
-            {/* COVERAGE BOX */}
-            <View style={styles.summaryBox}>
-              <Text style={styles.summaryTitle}>
-                {quoteData.selectedPackage?.label || 'COMPLETE COVERAGE'}
-              </Text>
-              <Text style={styles.summaryItem}>
-                Coverage: {quoteData.selectedPackage?.coverageYears || 5} years total
-              </Text>
-              <Text style={{ fontSize: 9, color: colors.text, marginTop: 6, marginBottom: 4 }}>
-                Includes:
-              </Text>
-              {quoteData.selectedPackage?.features?.map((feature, index) => (
-                <Text key={index} style={styles.summaryItem}>✓ {feature}</Text>
-              )) || (
-                <>
-                  <Text style={styles.summaryItem}>✓ Mercury motor</Text>
-                  <Text style={styles.summaryItem}>✓ Premium controls & rigging</Text>
-                  <Text style={styles.summaryItem}>✓ Marine starting battery</Text>
-                </>
-              )}
+          {/* COVERAGE BOX */}
+          <View style={styles.summaryBox}>
+            <Text style={styles.coverageTitle}>
+              {quoteData.selectedPackage?.label || 'COMPLETE COVERAGE'}
+            </Text>
+            <Text style={styles.summaryItem}>
+              Coverage: {quoteData.selectedPackage?.coverageYears || 5} years total
+            </Text>
+            <Text style={{ fontSize: 9, color: colors.text, marginTop: 6, marginBottom: 4 }}>
+              What's Included:
+            </Text>
+            {quoteData.selectedPackage?.features?.map((feature, index) => (
+              <Text key={index} style={styles.summaryItem}>• {feature}</Text>
+            )) || (
+              <>
+                <Text style={styles.summaryItem}>• Mercury motor</Text>
+                <Text style={styles.summaryItem}>• Premium controls & rigging</Text>
+                <Text style={styles.summaryItem}>• Marine starting battery</Text>
+              </>
+            )}
               
-              {/* BONUS OFFER (if promo warranty exists) */}
-              {quoteData.selectedPackage?.coverageYears && quoteData.selectedPackage.coverageYears > 3 && (
-                <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1 solid ${colors.border}` }}>
-                  <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 2 }}>
-                    🎁 BONUS OFFER
-                  </Text>
+            {/* BONUS OFFER (if promo warranty exists) */}
+            {quoteData.selectedPackage?.coverageYears && quoteData.selectedPackage.coverageYears > 3 && (
+              <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1 solid ${colors.border}` }}>
+                <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 2 }}>
+                  ★ BONUS OFFER
+                </Text>
                   <Text style={{ fontSize: 9, color: colors.text }}>
                     +2 Years Extended Warranty FREE
                   </Text>
