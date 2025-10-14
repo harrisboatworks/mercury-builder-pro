@@ -440,73 +440,61 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
     day: 'numeric' 
   });
 
-  // Generate motor code breakdown - only show codes that actually appear in the name
+  // Generate motor code breakdown - decode each letter/number in the model code
   const generateMotorCodeBreakdown = (productName: string): Array<{ code: string; meaning: string }> => {
     const breakdown: Array<{ code: string; meaning: string }> = [];
     const upperName = productName.toUpperCase();
     
-    // Extract HP
-    const hpMatch = productName.match(/(\d+\.?\d*)\s*HP?/i);
+    // Extract the model code part (before family name like FourStroke, SeaPro, etc.)
+    const codeMatch = productName.match(/^([\d.]+[A-Z]*)/i);
+    const modelCode = codeMatch ? codeMatch[1].toUpperCase() : '';
+    
+    // 1. Extract HP from the number at the start
+    const hpMatch = productName.match(/^(\d+\.?\d*)/);
     if (hpMatch) {
       breakdown.push({ code: hpMatch[1], meaning: `${hpMatch[1]} Horsepower` });
     }
     
-    // Parse rigging codes
+    // Parse rigging codes for shaft inference
     const rigAttrs = parseMercuryRigCodes(productName);
     
-    // Start type - only if letter is in the name
-    if (rigAttrs.start_type !== 'Unknown') {
-      const startCode = rigAttrs.start_type === 'Electric' ? 'E' : 'M';
-      if (upperName.includes(startCode)) {
-        breakdown.push({ 
-          code: startCode, 
-          meaning: `${rigAttrs.start_type} start` 
-        });
-      }
+    // 2. Manual vs Electric start (M or E)
+    if (modelCode.includes('M') && !modelCode.includes('MH')) {
+      breakdown.push({ code: 'M', meaning: 'Manual start' });
+    } else if (modelCode.includes('E')) {
+      breakdown.push({ code: 'E', meaning: 'Electric start' });
     }
     
-    // Control type - only if H is in the name
-    if (rigAttrs.control_type === 'Tiller' && upperName.includes('H')) {
-      breakdown.push({ 
-        code: 'H', 
-        meaning: `Tiller handle (${rigAttrs.shaft_inches}" shaft)` 
-      });
+    // 3. Control type - H (Tiller) or R (Remote)
+    if (modelCode.includes('H')) {
+      breakdown.push({ code: 'H', meaning: 'Tiller handle' });
+    } else if (modelCode.includes('R')) {
+      breakdown.push({ code: 'R', meaning: 'Remote control' });
     }
     
-    // Shaft code - only if explicitly present (L/XL/XXL)
-    const shaftMeanings: Record<string, string> = {
-      'L': 'Long shaft (20")',
-      'XL': 'Extra long shaft (25")',
-      'XXL': 'Extra extra long shaft (30")'
-    };
-    
-    if (rigAttrs.shaft_code !== 'S' && shaftMeanings[rigAttrs.shaft_code]) {
-      // Check if the shaft code letter(s) are in the name
-      if (upperName.includes(rigAttrs.shaft_code)) {
-        breakdown.push({ 
-          code: rigAttrs.shaft_code, 
-          meaning: shaftMeanings[rigAttrs.shaft_code] 
-        });
-      }
-    } else if (rigAttrs.shaft_code === 'S' && rigAttrs.control_type !== 'Tiller') {
-      // Only mention short shaft if it's not already covered by tiller description
-      breakdown.push({
-        code: '',
-        meaning: `Standard ${rigAttrs.shaft_inches}" shaft`
-      });
+    // 4. Shaft length codes (L, XL, XXL)
+    if (modelCode.includes('XXL')) {
+      breakdown.push({ code: 'XXL', meaning: 'Extra extra long shaft (30")' });
+    } else if (modelCode.includes('XL')) {
+      breakdown.push({ code: 'XL', meaning: 'Extra long shaft (25")' });
+    } else if (modelCode.includes('L') && !modelCode.includes('XL')) {
+      breakdown.push({ code: 'L', meaning: 'Long shaft (20")' });
+    } else {
+      // No L in code = standard shaft
+      breakdown.push({ code: '', meaning: `Standard ${rigAttrs.shaft_inches}" shaft` });
     }
     
-    // Power Trim - only if PT is in the name
-    if (rigAttrs.has_power_trim && upperName.includes('PT')) {
+    // 5. Power Trim (PT)
+    if (modelCode.includes('PT') || upperName.includes('PT')) {
       breakdown.push({ code: 'PT', meaning: 'Power Trim & Tilt' });
     }
     
-    // Command Thrust - only if CT is in the name
-    if (rigAttrs.has_command_thrust && upperName.includes('CT')) {
+    // 6. Command Thrust (CT)
+    if (modelCode.includes('CT') || upperName.includes('CT')) {
       breakdown.push({ code: 'CT', meaning: 'Command Thrust gearcase' });
     }
     
-    // EFI - only if EFI is in the name
+    // 7. EFI (Electronic Fuel Injection)
     if (upperName.includes('EFI')) {
       breakdown.push({ code: 'EFI', meaning: 'Electronic Fuel Injection' });
     }
