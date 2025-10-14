@@ -219,7 +219,7 @@ export default function MotorCardPreview({
       };
     }
     return {
-      text: "2-3 Week Delivery",
+      text: "Quick availability",
       dotColor: "bg-gray-400"
     };
   };
