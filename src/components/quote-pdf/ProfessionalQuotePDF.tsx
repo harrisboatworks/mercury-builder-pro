@@ -561,20 +561,13 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginTop: 6, marginBottom: 4 }}>
                 What's Included:
               </Text>
-            {quoteData.selectedPackage?.features?.filter(feature => 
-              !feature.includes('Everything in') && 
-              !feature.includes('Extended to')
-            ).map((feature, index) => (
-              <Text key={index} style={styles.summaryItem}>• {feature}</Text>
-            )) || (
               <>
-                <Text style={styles.summaryItem}>• 7-year comprehensive warranty</Text>
+                <Text style={styles.summaryItem}>• 7-year comprehensive warranty coverage</Text>
                 <Text style={styles.summaryItem}>• Mercury motor & all controls covered</Text>
                 <Text style={styles.summaryItem}>• Installation hardware included</Text>
                 <Text style={styles.summaryItem}>• Priority installation service</Text>
                 <Text style={styles.summaryItem}>• Extended coverage ($350 value)</Text>
               </>
-            )}
               
             {/* BONUS OFFER (if promo warranty exists) */}
             {quoteData.selectedPackage?.coverageYears && quoteData.selectedPackage.coverageYears > 3 && (
