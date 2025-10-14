@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
 export interface ActivePromotion {
@@ -74,32 +74,33 @@ export function useActivePromotions() {
     fetchPromotions();
   }, []);
 
-  // Memoize helper functions to prevent recreation on every render
-  const getTotalWarrantyBonusYears = useMemo(() => () => {
+  // Helper function to get total warranty bonus years from all applicable promotions
+  const getTotalWarrantyBonusYears = () => {
     return promotions.reduce((total, promo) => {
       return total + (promo.warranty_extra_years || 0);
     }, 0);
-  }, [promotions]);
+  };
 
-  const getWarrantyPromotions = useMemo(() => () => {
+  // Helper function to get promotions that include warranty bonuses
+  const getWarrantyPromotions = () => {
     return promotions.filter(promo => promo.warranty_extra_years && promo.warranty_extra_years > 0);
-  }, [promotions]);
+  };
 
-  const getTotalPromotionalSavings = useMemo(() => (basePrice: number = 0) => {
+  // Helper function to calculate total dollar savings from all promotions
+  const getTotalPromotionalSavings = (basePrice: number = 0) => {
     return promotions.reduce((total, promo) => {
       const fixedAmount = promo.discount_fixed_amount || 0;
       const percentAmount = promo.discount_percentage ? (basePrice * promo.discount_percentage / 100) : 0;
       return total + fixedAmount + percentAmount;
     }, 0);
-  }, [promotions]);
+  };
 
-  // Memoize the return object to maintain stable references
-  return useMemo(() => ({
+  return {
     promotions,
     loading,
     error,
     getTotalWarrantyBonusYears,
     getWarrantyPromotions,
     getTotalPromotionalSavings
-  }), [promotions, loading, error, getTotalWarrantyBonusYears, getWarrantyPromotions, getTotalPromotionalSavings]);
+  };
 }
