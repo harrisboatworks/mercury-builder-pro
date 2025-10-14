@@ -31,6 +31,8 @@ export default function QuoteSummaryPage() {
   const { toast } = useToast();
   const [selectedPackage, setSelectedPackage] = useState<string>('better');
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
+  const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
+  const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
 
   useEffect(() => {
     // Add delay and loading check to prevent navigation during state updates
@@ -152,11 +154,31 @@ export default function QuoteSummaryPage() {
   const completeTargetYears = 7; // Complete: 7 years total
   const premiumTargetYears = 8; // Premium: 8 years max
 
-  // Calculate real warranty extension costs
-  // Assuming ~$175 per additional year of coverage
-  const warrantyPricePerYear = 175;
-  const completeWarrantyCost = Math.max(0, (completeTargetYears - currentCoverageYears)) * warrantyPricePerYear;
-  const premiumWarrantyCost = Math.max(0, (premiumTargetYears - currentCoverageYears)) * warrantyPricePerYear;
+  // Fetch real warranty extension costs from database
+  useEffect(() => {
+    async function fetchWarrantyCosts() {
+      const { calculateWarrantyExtensionCost } = await import('@/lib/quote-utils');
+      
+      const completeCost = await calculateWarrantyExtensionCost(
+        motorHP,
+        currentCoverageYears,
+        completeTargetYears
+      );
+      
+      const premiumCost = await calculateWarrantyExtensionCost(
+        motorHP,
+        currentCoverageYears,
+        premiumTargetYears
+      );
+      
+      setCompleteWarrantyCost(completeCost);
+      setPremiumWarrantyCost(premiumCost);
+    }
+    
+    if (motorHP > 0) {
+      fetchWarrantyCosts();
+    }
+  }, [motorHP, currentCoverageYears, completeTargetYears, premiumTargetYears]);
 
   // Calculate base subtotal (motor + base accessories, NO battery)
   const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
