@@ -19,7 +19,7 @@ const colors = {
 const styles = StyleSheet.create({
   page: {
     backgroundColor: colors.white,
-    padding: 25,
+    padding: 15,
     fontFamily: 'Helvetica',
     fontSize: 10,
   },
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 15,
     paddingBottom: 15,
     borderBottom: `1.5 solid ${colors.border}`,
   },
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   
   // Product section
   productSection: {
-    marginBottom: 15,
+    marginBottom: 10,
   },
   
   productName: {
@@ -116,8 +116,8 @@ const styles = StyleSheet.create({
   // Pricing table
   pricingTableContainer: {
     border: `1 solid ${colors.border}`,
-    padding: 10,
-    marginBottom: 15,
+    padding: 8,
+    marginBottom: 10,
   },
   
   pricingSection: {
@@ -194,8 +194,8 @@ const styles = StyleSheet.create({
   infoBox: {
     backgroundColor: colors.infoBg,
     border: `1 solid ${colors.border}`,
-    padding: 10,
-    marginBottom: 12,
+    padding: 8,
+    marginBottom: 10,
   },
   
   infoRow: {
@@ -217,26 +217,26 @@ const styles = StyleSheet.create({
   
   // Summary box in right column
   summaryBox: {
-    padding: 12,
+    padding: 10,
     border: `1 solid ${colors.border}`,
     backgroundColor: 'transparent',
-    marginBottom: 15,
+    marginBottom: 12,
   },
   
   // Financing callout box (outline style)
   financingBox: {
-    padding: 12,
+    padding: 10,
     border: `1 solid ${colors.border}`,
     backgroundColor: 'transparent',
-    marginBottom: 15,
+    marginBottom: 12,
   },
 
   // Large savings callout box (right column top)
   savingsCalloutBox: {
     border: `2 solid ${colors.border}`,
-    padding: 16,
+    padding: 12,
     backgroundColor: 'transparent',
-    marginBottom: 12,
+    marginBottom: 10,
     textAlign: 'center',
   },
 
@@ -335,7 +335,7 @@ const styles = StyleSheet.create({
   
   // Terms section
   termsSection: {
-    marginTop: 18,
+    marginTop: 12,
     paddingTop: 12,
     borderTop: `1 solid ${colors.border}`,
   },
@@ -349,7 +349,7 @@ const styles = StyleSheet.create({
   // Footer
   footer: {
     position: 'absolute',
-    bottom: 20,
+    bottom: 15,
     left: 25,
     right: 25,
     paddingTop: 10,
@@ -568,17 +568,16 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               <Text key={index} style={styles.summaryItem}>• {feature}</Text>
             )) || (
               <>
-                <Text style={styles.summaryItem}>• Mercury motor</Text>
-                <Text style={styles.summaryItem}>• Controls & rigging</Text>
-                <Text style={styles.summaryItem}>• Extended to 7 years coverage</Text>
-                <Text style={styles.summaryItem}>• Priority installation</Text>
-                <Text style={styles.summaryItem}>• Warranty extension ($350 value)</Text>
+                <Text style={styles.summaryItem}>• 7-year comprehensive warranty</Text>
+                <Text style={styles.summaryItem}>• Mercury motor & all controls</Text>
+                <Text style={styles.summaryItem}>• Priority installation service</Text>
+                <Text style={styles.summaryItem}>• Extended coverage ($350 value)</Text>
               </>
             )}
               
             {/* BONUS OFFER (if promo warranty exists) */}
             {quoteData.selectedPackage?.coverageYears && quoteData.selectedPackage.coverageYears > 3 && (
-              <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1 solid ${colors.border}` }}>
+              <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
                 <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 2 }}>
                   BONUS OFFER
                 </Text>
