@@ -19,7 +19,7 @@ const colors = {
 const styles = StyleSheet.create({
   page: {
     backgroundColor: colors.white,
-    padding: 30,
+    padding: 25,
     fontFamily: 'Helvetica',
     fontSize: 10,
   },
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   
   // Product section
   productSection: {
-    marginBottom: 18,
+    marginBottom: 15,
   },
   
   productName: {
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   pricingTableContainer: {
     border: `1 solid ${colors.border}`,
     padding: 10,
-    marginBottom: 18,
+    marginBottom: 15,
   },
   
   pricingSection: {
@@ -194,8 +194,8 @@ const styles = StyleSheet.create({
   infoBox: {
     backgroundColor: colors.infoBg,
     border: `1 solid ${colors.border}`,
-    padding: 14,
-    marginBottom: 20,
+    padding: 10,
+    marginBottom: 12,
   },
   
   infoRow: {
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
     padding: 12,
     border: `1 solid ${colors.border}`,
     backgroundColor: 'transparent',
-    marginBottom: 20,
+    marginBottom: 15,
   },
   
   // Financing callout box (outline style)
@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
     padding: 12,
     border: `1 solid ${colors.border}`,
     backgroundColor: 'transparent',
-    marginBottom: 20,
+    marginBottom: 15,
   },
 
   // Large savings callout box (right column top)
@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
     border: `2 solid ${colors.border}`,
     padding: 16,
     backgroundColor: 'transparent',
-    marginBottom: 15,
+    marginBottom: 12,
     textAlign: 'center',
   },
 
@@ -349,9 +349,9 @@ const styles = StyleSheet.create({
   // Footer
   footer: {
     position: 'absolute',
-    bottom: 30,
-    left: 30,
-    right: 30,
+    bottom: 20,
+    left: 25,
+    right: 25,
     paddingTop: 10,
     borderTop: `1 solid ${colors.border}`,
     textAlign: 'center',
@@ -472,10 +472,12 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.dealerDiscount}</Text>
               </View>
               
-              <View style={styles.pricingRow}>
-                <Text style={styles.pricingLabel}>Promotional Savings</Text>
-                <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.promoSavings}</Text>
-              </View>
+              {parseFloat(quoteData.promoSavings) > 0 && (
+                <View style={styles.pricingRow}>
+                  <Text style={styles.pricingLabel}>Promotional Savings</Text>
+                  <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.promoSavings}</Text>
+                </View>
+              )}
               
               <View style={styles.pricingRow}>
                 <Text style={styles.pricingLabel}>Subtotal</Text>
@@ -559,16 +561,18 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             <Text style={styles.summaryItem}>
               Coverage: {quoteData.selectedPackage?.coverageYears || 5} years total
             </Text>
-            <Text style={{ fontSize: 9, color: colors.text, marginTop: 6, marginBottom: 4 }}>
-              What's Included:
-            </Text>
-            {quoteData.selectedPackage?.features?.map((feature, index) => (
+              <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginTop: 6, marginBottom: 4 }}>
+                What's Included:
+              </Text>
+            {quoteData.selectedPackage?.features?.filter(feature => !feature.includes('Everything in')).map((feature, index) => (
               <Text key={index} style={styles.summaryItem}>• {feature}</Text>
             )) || (
               <>
                 <Text style={styles.summaryItem}>• Mercury motor</Text>
-                <Text style={styles.summaryItem}>• Premium controls & rigging</Text>
-                <Text style={styles.summaryItem}>• Marine starting battery</Text>
+                <Text style={styles.summaryItem}>• Controls & rigging</Text>
+                <Text style={styles.summaryItem}>• Extended to 7 years coverage</Text>
+                <Text style={styles.summaryItem}>• Priority installation</Text>
+                <Text style={styles.summaryItem}>• Warranty extension ($350 value)</Text>
               </>
             )}
               
@@ -576,7 +580,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             {quoteData.selectedPackage?.coverageYears && quoteData.selectedPackage.coverageYears > 3 && (
               <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1 solid ${colors.border}` }}>
                 <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 2 }}>
-                  ★ BONUS OFFER
+                  BONUS OFFER
                 </Text>
                   <Text style={{ fontSize: 9, color: colors.text }}>
                     +2 Years Extended Warranty FREE

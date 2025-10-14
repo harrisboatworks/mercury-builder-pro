@@ -41,10 +41,12 @@ export const transformQuoteData = (quoteData: any): ReactPdfQuoteData => {
   const msrp = quoteData.pricing?.msrp || quoteData.motor?.msrp || 0;
   const discount = quoteData.pricing?.discount || 0;
   const promoValue = quoteData.pricing?.promoValue || 0;
-  const subtotal = quoteData.pricing?.subtotal || (msrp - discount - promoValue);
-  const hst = quoteData.pricing?.hst || (subtotal * 0.13);
-  const total = quoteData.pricing?.totalCashPrice || (subtotal + hst);
-  const savings = quoteData.pricing?.savings || (discount + promoValue);
+  
+  // ALWAYS calculate motor-only subtotal for PDF display (ignore pre-calculated subtotal with accessories)
+  const motorSubtotal = msrp - discount - promoValue;
+  const hst = motorSubtotal * 0.13;
+  const total = motorSubtotal + hst;
+  const savings = discount + promoValue;
 
   // Calculate actual financing based on total price with HST
   const financing = calculateMonthlyPayment(total, quoteData.financing?.rate || null);
@@ -67,7 +69,7 @@ export const transformQuoteData = (quoteData: any): ReactPdfQuoteData => {
     msrp: formatCurrency(msrp),
     dealerDiscount: formatCurrency(discount),
     promoSavings: formatCurrency(promoValue),
-    subtotal: formatCurrency(subtotal),
+    subtotal: formatCurrency(motorSubtotal),
     tax: formatCurrency(hst),
     total: formatCurrency(total),
     totalSavings: formatCurrency(savings),
