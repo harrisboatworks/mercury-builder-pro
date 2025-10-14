@@ -440,59 +440,74 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
     day: 'numeric' 
   });
 
-  // Generate motor code breakdown
+  // Generate motor code breakdown - only show codes that actually appear in the name
   const generateMotorCodeBreakdown = (productName: string): Array<{ code: string; meaning: string }> => {
     const breakdown: Array<{ code: string; meaning: string }> = [];
+    const upperName = productName.toUpperCase();
     
     // Extract HP
     const hpMatch = productName.match(/(\d+\.?\d*)\s*HP?/i);
     if (hpMatch) {
-      breakdown.push({ code: hpMatch[1], meaning: 'Horsepower' });
+      breakdown.push({ code: hpMatch[1], meaning: `${hpMatch[1]} Horsepower` });
     }
     
     // Parse rigging codes
     const rigAttrs = parseMercuryRigCodes(productName);
     
-    // Shaft code
+    // Start type - only if letter is in the name
+    if (rigAttrs.start_type !== 'Unknown') {
+      const startCode = rigAttrs.start_type === 'Electric' ? 'E' : 'M';
+      if (upperName.includes(startCode)) {
+        breakdown.push({ 
+          code: startCode, 
+          meaning: `${rigAttrs.start_type} start` 
+        });
+      }
+    }
+    
+    // Control type - only if H is in the name
+    if (rigAttrs.control_type === 'Tiller' && upperName.includes('H')) {
+      breakdown.push({ 
+        code: 'H', 
+        meaning: `Tiller handle (${rigAttrs.shaft_inches}" shaft)` 
+      });
+    }
+    
+    // Shaft code - only if explicitly present (L/XL/XXL)
     const shaftMeanings: Record<string, string> = {
-      'S': 'Short shaft (15")',
       'L': 'Long shaft (20")',
       'XL': 'Extra long shaft (25")',
       'XXL': 'Extra extra long shaft (30")'
     };
-    if (rigAttrs.shaft_code && shaftMeanings[rigAttrs.shaft_code]) {
-      breakdown.push({ 
-        code: rigAttrs.shaft_code, 
-        meaning: shaftMeanings[rigAttrs.shaft_code] 
+    
+    if (rigAttrs.shaft_code !== 'S' && shaftMeanings[rigAttrs.shaft_code]) {
+      // Check if the shaft code letter(s) are in the name
+      if (upperName.includes(rigAttrs.shaft_code)) {
+        breakdown.push({ 
+          code: rigAttrs.shaft_code, 
+          meaning: shaftMeanings[rigAttrs.shaft_code] 
+        });
+      }
+    } else if (rigAttrs.shaft_code === 'S' && rigAttrs.control_type !== 'Tiller') {
+      // Only mention short shaft if it's not already covered by tiller description
+      breakdown.push({
+        code: '',
+        meaning: `Standard ${rigAttrs.shaft_inches}" shaft`
       });
     }
     
-    // Start type
-    if (rigAttrs.start_type !== 'Unknown') {
-      const startCode = rigAttrs.start_type === 'Electric' ? 'E' : 'M';
-      breakdown.push({ 
-        code: startCode, 
-        meaning: `${rigAttrs.start_type} start` 
-      });
-    }
-    
-    // Control type
-    if (rigAttrs.control_type === 'Tiller') {
-      breakdown.push({ code: 'H', meaning: 'Tiller handle' });
-    }
-    
-    // Power Trim
-    if (rigAttrs.has_power_trim) {
+    // Power Trim - only if PT is in the name
+    if (rigAttrs.has_power_trim && upperName.includes('PT')) {
       breakdown.push({ code: 'PT', meaning: 'Power Trim & Tilt' });
     }
     
-    // Command Thrust
-    if (rigAttrs.has_command_thrust) {
+    // Command Thrust - only if CT is in the name
+    if (rigAttrs.has_command_thrust && upperName.includes('CT')) {
       breakdown.push({ code: 'CT', meaning: 'Command Thrust gearcase' });
     }
     
-    // EFI detection
-    if (productName.toUpperCase().includes('EFI')) {
+    // EFI - only if EFI is in the name
+    if (upperName.includes('EFI')) {
       breakdown.push({ code: 'EFI', meaning: 'Electronic Fuel Injection' });
     }
     
@@ -550,7 +565,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               </Text>
               {generateMotorCodeBreakdown(quoteData.productName).map((item, idx) => (
                 <Text key={idx} style={styles.motorCodeItem}>
-                  • {item.code} = {item.meaning}
+                  {item.code ? `• ${item.code} = ${item.meaning}` : `• ${item.meaning}`}
                 </Text>
               ))}
             </View>
