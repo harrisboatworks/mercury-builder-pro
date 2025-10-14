@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import MotorDetailsPremiumModal from './MotorDetailsPremiumModal';
@@ -69,6 +69,9 @@ export default function MotorCardPreview({
   // Get photo count for image overlay
   const [photoCount, setPhotoCount] = useState<number>(0);
 
+  // Memoize motor ID to prevent unnecessary re-renders
+  const motorId = useMemo(() => motor?.id, [motor?.id]);
+  
   useEffect(() => {
     const loadImageInfo = async () => {
       try {
@@ -103,7 +106,7 @@ export default function MotorCardPreview({
     };
 
     loadImageInfo();
-  }, [motor, img]);
+  }, [motorId, img]);
   
   const imageUrl = imageInfo.url;
 
@@ -148,12 +151,18 @@ export default function MotorCardPreview({
     return "Remote Control";
   };
 
-  // Check for warranty promotion
-  const hasWarrantyPromo = promotions.some(promo => 
-    promo.warranty_extra_years && promo.warranty_extra_years > 0
+  // Memoize warranty promotion calculations to prevent re-renders
+  const hasWarrantyPromo = useMemo(() => 
+    promotions.some(promo => 
+      promo.warranty_extra_years && promo.warranty_extra_years > 0
+    ),
+    [promotions]
   );
 
-  const warrantyYears = promotions.find(promo => promo.warranty_extra_years)?.warranty_extra_years || 0;
+  const warrantyYears = useMemo(() => 
+    promotions.find(promo => promo.warranty_extra_years)?.warranty_extra_years || 0,
+    [promotions]
+  );
 
   // Utility functions for display
   const formatTitle = (title: string) => {
@@ -224,13 +233,13 @@ export default function MotorCardPreview({
     };
   };
 
-  // Get warranty text if applicable
-  const getWarrantyText = () => {
+  // Memoize warranty text to prevent re-renders
+  const warrantyText = useMemo(() => {
     if (hasWarrantyPromo && warrantyYears > 0) {
       return `✓ ${warrantyYears} Year Extended Coverage`;
     }
     return null;
-  };
+  }, [hasWarrantyPromo, warrantyYears]);
 
   // Calculate savings for display
   const calculateSavings = () => {
@@ -261,7 +270,6 @@ export default function MotorCardPreview({
   };
 
   const deliveryStatus = getDeliveryStatus();
-  const warrantyText = getWarrantyText();
 
   return (
     <>
