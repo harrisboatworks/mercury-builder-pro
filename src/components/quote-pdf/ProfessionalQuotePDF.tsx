@@ -1,5 +1,6 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
+import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 
 // Import logos
 import harrisLogo from '@/assets/harris-logo.png';
@@ -333,9 +334,38 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   
+  // Motor code breakdown info box
+  motorCodeBox: {
+    backgroundColor: colors.tableBg,
+    border: `1 solid ${colors.border}`,
+    padding: 6,
+    marginTop: 8,
+    marginBottom: 8,
+  },
+
+  motorCodeTitle: {
+    fontSize: 9,
+    fontWeight: 'bold',
+    color: colors.text,
+    marginBottom: 4,
+  },
+
+  motorCodeContent: {
+    fontSize: 8,
+    color: colors.lightText,
+    lineHeight: 1.4,
+  },
+
+  motorCodeItem: {
+    fontSize: 8,
+    color: colors.lightText,
+    marginBottom: 1,
+  },
+  
   // Terms section
   termsSection: {
     marginTop: 8,
+    marginBottom: 80,
     paddingTop: 8,
     borderTop: `1 solid ${colors.border}`,
   },
@@ -346,9 +376,12 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   
-  // Footer
+  // Footer - absolute positioning to stick to bottom
   footer: {
-    marginTop: 8,
+    position: 'absolute',
+    bottom: 12,
+    left: 12,
+    right: 12,
     paddingTop: 6,
     borderTop: `1 solid ${colors.border}`,
     textAlign: 'center',
@@ -407,6 +440,65 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
     day: 'numeric' 
   });
 
+  // Generate motor code breakdown
+  const generateMotorCodeBreakdown = (productName: string): Array<{ code: string; meaning: string }> => {
+    const breakdown: Array<{ code: string; meaning: string }> = [];
+    
+    // Extract HP
+    const hpMatch = productName.match(/(\d+\.?\d*)\s*HP?/i);
+    if (hpMatch) {
+      breakdown.push({ code: hpMatch[1], meaning: 'Horsepower' });
+    }
+    
+    // Parse rigging codes
+    const rigAttrs = parseMercuryRigCodes(productName);
+    
+    // Shaft code
+    const shaftMeanings: Record<string, string> = {
+      'S': 'Short shaft (15")',
+      'L': 'Long shaft (20")',
+      'XL': 'Extra long shaft (25")',
+      'XXL': 'Extra extra long shaft (30")'
+    };
+    if (rigAttrs.shaft_code && shaftMeanings[rigAttrs.shaft_code]) {
+      breakdown.push({ 
+        code: rigAttrs.shaft_code, 
+        meaning: shaftMeanings[rigAttrs.shaft_code] 
+      });
+    }
+    
+    // Start type
+    if (rigAttrs.start_type !== 'Unknown') {
+      const startCode = rigAttrs.start_type === 'Electric' ? 'E' : 'M';
+      breakdown.push({ 
+        code: startCode, 
+        meaning: `${rigAttrs.start_type} start` 
+      });
+    }
+    
+    // Control type
+    if (rigAttrs.control_type === 'Tiller') {
+      breakdown.push({ code: 'H', meaning: 'Tiller handle' });
+    }
+    
+    // Power Trim
+    if (rigAttrs.has_power_trim) {
+      breakdown.push({ code: 'PT', meaning: 'Power Trim & Tilt' });
+    }
+    
+    // Command Thrust
+    if (rigAttrs.has_command_thrust) {
+      breakdown.push({ code: 'CT', meaning: 'Command Thrust gearcase' });
+    }
+    
+    // EFI detection
+    if (productName.toUpperCase().includes('EFI')) {
+      breakdown.push({ code: 'EFI', meaning: 'Electronic Fuel Injection' });
+    }
+    
+    return breakdown;
+  };
+
   return (
     <Document>
       <Page size="LETTER" style={styles.page}>
@@ -448,6 +540,19 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               <Text style={styles.productDetails}>• Quiet, low-vibration four-stroke performance</Text>
               <Text style={styles.productDetails}>• Excellent fuel economy & range</Text>
               <Text style={styles.productDetails}>• Factory-backed service at Harris Boat Works</Text>
+            </View>
+
+            {/* Motor Code Breakdown Box */}
+            <View style={styles.motorCodeBox}>
+              <Text style={styles.motorCodeTitle}>Motor Code Breakdown</Text>
+              <Text style={styles.motorCodeContent}>
+                {quoteData.productName}:
+              </Text>
+              {generateMotorCodeBreakdown(quoteData.productName).map((item, idx) => (
+                <Text key={idx} style={styles.motorCodeItem}>
+                  • {item.code} = {item.meaning}
+                </Text>
+              ))}
             </View>
 
             {/* Pricing Breakdown */}
