@@ -250,14 +250,18 @@ export default function QuoteSummaryPage() {
     });
   }
   
-  // Add selected warranty as line item
-  if (warrantyPrice > 0 && state.warrantyConfig?.totalYears) {
-    const extendedYears = state.warrantyConfig.totalYears - currentCoverageYears;
-    accessoryBreakdown.push({
-      name: `Extended Warranty (${extendedYears} additional year${extendedYears > 1 ? 's' : ''})`,
-      price: warrantyPrice,
-      description: `Total coverage: ${state.warrantyConfig.totalYears} years`
-    });
+  // Add warranty extension based on selected package
+  const selectedPkg = packages.find(p => p.id === selectedPackage);
+  if (selectedPkg && selectedPkg.targetWarrantyYears) {
+    const extensionYears = selectedPkg.targetWarrantyYears - currentCoverageYears;
+    if (extensionYears > 0) {
+      const extensionCost = selectedPackage === 'better' ? completeWarrantyCost : premiumWarrantyCost;
+      accessoryBreakdown.push({
+        name: `Extended Warranty (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
+        price: extensionCost,
+        description: `Total coverage: ${selectedPkg.targetWarrantyYears} years`
+      });
+    }
   }
 
   // CTA handlers
