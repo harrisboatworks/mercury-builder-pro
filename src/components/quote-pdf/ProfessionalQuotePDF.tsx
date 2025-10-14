@@ -459,7 +459,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
     const rigAttrs = parseMercuryRigCodes(productName);
     
     // 2. Manual vs Electric start (M or E)
-    if (modelCode.includes('M') && !modelCode.includes('MH')) {
+    if (modelCode.includes('M')) {
       breakdown.push({ code: 'M', meaning: 'Manual start' });
     } else if (modelCode.includes('E')) {
       breakdown.push({ code: 'E', meaning: 'Electric start' });
