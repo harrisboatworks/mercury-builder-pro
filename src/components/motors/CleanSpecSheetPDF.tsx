@@ -8,390 +8,399 @@ import { type ActivePromotion } from '@/hooks/useActivePromotions';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
-// Enhanced styles for professional spec sheet - Print Optimized Colors
+// Print-optimized professional color scheme matching Quote PDF
+const colors = {
+  text: '#111827',           // Black text
+  lightText: '#6b7280',      // Gray secondary text  
+  discount: '#059669',       // GREEN for savings/benefits
+  border: '#cccccc',         // Light gray borders
+  tableBg: '#f3f4f6',        // Light gray backgrounds
+  white: '#ffffff'
+};
+
 const styles = StyleSheet.create({
   page: {
-    flexDirection: 'column',
-    backgroundColor: '#ffffff',
-    padding: 8,
+    backgroundColor: colors.white,
+    padding: 12,
     fontFamily: 'Helvetica',
-    fontSize: 8,
-    color: '#1a1a1a', // Primary text - print optimized
+    fontSize: 10,
   },
   
-  // Print-specific styles
-  '@media print': {
-    page: {
-      margin: '0.75in',
-      colorAdjust: 'exact',
-      webkitPrintColorAdjust: 'exact',
-    },
-    priceHighlight: {
-      backgroundColor: '#FFF3CD !important',
-    },
-  },
+  // Header with logos
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    marginBottom: 6,
-    paddingBottom: 6,
-    borderBottomWidth: 1,
-    borderBottomColor: '#e5e7eb',
+    alignItems: 'center',
+    marginBottom: 10,
+    paddingBottom: 10,
+    borderBottom: `1.5 solid ${colors.border}`,
   },
-  headerLogos: {
+  
+  logoContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 15,
   },
+  
   harrisLogo: {
     width: 80,
     height: 'auto',
   },
+  
   mercuryLogo: {
     width: 100,
     height: 'auto',
   },
+  
   headerRight: {
     alignItems: 'flex-end',
   },
+  
   docTitle: {
     fontSize: 14,
-    fontWeight: 'bold',
-    color: '#1a1a1a', // Primary text
-    marginBottom: 4,
+    color: colors.text,
+    marginBottom: 1,
   },
+  
   docDate: {
     fontSize: 9,
-    color: '#333333', // Secondary text
-    marginBottom: 8,
+    color: colors.lightText,
   },
+  
+  // Motor title section
+  motorHeader: {
+    marginBottom: 8,
+    paddingBottom: 8,
+    borderBottom: `1 solid ${colors.border}`,
+  },
+  
+  motorTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: colors.text,
+    marginBottom: 4,
+  },
+  
+  motorSubtitle: {
+    fontSize: 10,
+    color: colors.lightText,
+  },
+  
+  // MSRP display
   msrpContainer: {
     alignItems: 'flex-end',
   },
+  
   msrpLabel: {
     fontSize: 10,
-    color: '#333333', // Secondary text
+    color: colors.lightText,
   },
+  
   msrpValue: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#0066cc',
+    color: colors.text,
   },
-  motorHeader: {
-    backgroundColor: '#f8fafc',
-    padding: 8,
-    marginBottom: 6,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#e2e8f0',
-  },
-  motorInfo: {
-    flex: 1,
-  },
-  motorTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#1e40af',
-    marginBottom: 4,
-  },
-  motorSubtitle: {
-    fontSize: 10,
-    color: '#333333', // Secondary text
-  },
+  
+  // Overview boxes (key specs at top)
   overviewBoxes: {
     flexDirection: 'row',
     gap: 8,
-    marginBottom: 6,
+    marginBottom: 12,
   },
+  
   overviewBox: {
     flex: 1,
-    backgroundColor: '#f9fafb',
+    backgroundColor: colors.tableBg,
     padding: 8,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#e5e7eb',
+    borderRadius: 2,
+    border: `1 solid ${colors.border}`,
     alignItems: 'center',
   },
+  
   overviewLabel: {
-    fontSize: 7,
-    color: '#333333', // Secondary text
+    fontSize: 9,
+    color: colors.lightText,
     marginBottom: 2,
   },
+  
   overviewValue: {
-    fontSize: 9,
+    fontSize: 10,
     fontWeight: 'bold',
-    color: '#1a1a1a', // Primary text
+    color: colors.text,
   },
+  
+  // Main content in two columns
   mainContent: {
     flexDirection: 'row',
-    gap: 15,
-    flex: 1,
+    gap: 18,
   },
+  
   leftColumn: {
-    flex: 1,
+    flex: 1.2,
   },
+  
   rightColumn: {
     flex: 1,
   },
+  
+  // Section styling
   section: {
-    marginBottom: 2,
-    backgroundColor: '#f9fafb',
-    padding: 3,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#e5e7eb',
+    marginBottom: 12,
   },
-  sectionHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
+  
+  sectionTitle: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: colors.text,
     marginBottom: 6,
   },
-  sectionIcon: {
-    fontSize: 10,
-    marginRight: 4,
-  },
-  sectionTitle: {
-    fontSize: 11,
-    fontWeight: 'bold',
-    color: '#1a1a1a', // Primary text
-  },
+  
+  // Spec grid/table
   specGrid: {
-    gap: 3,
+    border: `1 solid ${colors.border}`,
+    padding: 6,
   },
+  
   specItem: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 1,
+    paddingVertical: 3,
+    borderBottom: `0.5 solid ${colors.border}`,
   },
+  
   specLabel: {
-    fontSize: 8,
-    color: '#333333', // Secondary text
-  },
-  specValue: {
-    fontSize: 8,
-    color: '#1a1a1a', // Primary text
-    fontWeight: 'bold',
-  },
-  bulletList: {
-    gap: 2,
-  },
-  bulletItem: {
-    fontSize: 8,
-    color: '#166534',
-    paddingLeft: 6,
-    paddingVertical: 2,
-    backgroundColor: '#f0fdf4',
-    borderRadius: 2,
-    marginBottom: 1,
-    paddingHorizontal: 4,
-  },
-  warrantyBox: {
-    backgroundColor: '#f0fdf4',
-    padding: 6,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#bbf7d0',
-    marginBottom: 6,
-  },
-  warrantyTitle: {
-    fontSize: 10,
-    fontWeight: 'bold',
-    color: '#15803d',
-    marginBottom: 4,
-  },
-  warrantyItem: {
-    fontSize: 8,
-    color: '#15803d',
-    marginBottom: 2,
-    paddingLeft: 6,
-  },
-  financingSection: {
-    backgroundColor: '#f8fafc',
-    padding: 6,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#e2e8f0',
-    marginBottom: 6,
-  },
-  financingTitle: {
-    fontSize: 10,
-    fontWeight: 'bold',
-    color: '#1a1a1a', // Primary text
-    marginBottom: 4,
-  },
-  financingItem: {
-    fontSize: 8,
-    color: '#333333', // Secondary text
-    marginBottom: 2,
-  },
-  modelCodeBox: {
-    backgroundColor: '#f0f9ff',
-    padding: 6,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#0ea5e9',
-    marginBottom: 6,
-  },
-  modelCodeTitle: {
     fontSize: 9,
+    color: colors.lightText,
+  },
+  
+  specValue: {
+    fontSize: 9,
+    color: colors.text,
     fontWeight: 'bold',
-    color: '#0c4a6e',
+  },
+  
+  // Model code box - simplified
+  modelCodeBox: {
+    backgroundColor: colors.tableBg,
+    border: `1 solid ${colors.border}`,
+    padding: 8,
+    marginBottom: 12,
+  },
+  
+  modelCodeTitle: {
+    fontSize: 10,
+    fontWeight: 'bold',
+    color: colors.text,
+    marginBottom: 4,
+  },
+  
+  modelCodeText: {
+    fontSize: 9,
+    color: colors.lightText,
+    marginBottom: 1,
+  },
+  
+  // Promotional offers - green border accent
+  promoBox: {
+    border: `2 solid ${colors.discount}`,
+    padding: 10,
+    marginBottom: 12,
+    backgroundColor: 'transparent',
+  },
+  
+  promoTitle: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: colors.discount,
+    marginBottom: 4,
+  },
+  
+  promoText: {
+    fontSize: 9,
+    color: colors.text,
+    marginBottom: 2,
+  },
+  
+  // Warranty section - simple with green text
+  warrantyBox: {
+    border: `1 solid ${colors.border}`,
+    padding: 8,
+    marginBottom: 12,
+    backgroundColor: 'transparent',
+  },
+  
+  warrantyTitle: {
+    fontSize: 11,
+    fontWeight: 'bold',
+    color: colors.text,
+    marginBottom: 6,
+  },
+  
+  warrantyItem: {
+    fontSize: 9,
+    color: colors.discount,
+    marginBottom: 3,
+    paddingLeft: 8,
+  },
+  
+  // Bullet list items
+  bulletList: {
+    gap: 3,
+  },
+  
+  bulletItem: {
+    fontSize: 9,
+    color: colors.text,
+    paddingLeft: 8,
+    marginBottom: 2,
+  },
+  
+  // Financing section
+  financingSection: {
+    border: `1 solid ${colors.border}`,
+    padding: 8,
+    marginBottom: 12,
+    backgroundColor: 'transparent',
+  },
+  
+  financingTitle: {
+    fontSize: 11,
+    fontWeight: 'bold',
+    color: colors.text,
+    marginBottom: 6,
+  },
+  
+  financingItem: {
+    fontSize: 9,
+    color: colors.text,
     marginBottom: 3,
   },
-  modelCodeText: {
-    fontSize: 8,
-    color: '#1a1a1a', // Changed from blue to dark gray for printing
-    colorAdjust: 'exact',
-  },
-  promoLine: {
-    fontSize: 9,
-    color: '#ea580c',
-    marginBottom: 12,
+  
+  // Stock status
+  stockStatus: {
+    fontSize: 10,
     fontWeight: 'bold',
-    backgroundColor: '#fef3c7',
-    padding: 6,
-    borderRadius: 3,
+    color: colors.discount,
     textAlign: 'center',
+    marginBottom: 8,
   },
-  priceSection: {
-    alignItems: 'flex-end',
-  },
-  priceLabel: {
-    fontSize: 10,
-    color: '#6b7280',
-  },
-  priceValue: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#0066cc',
-  },
-  dealerPrice: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#059669',
-  },
-  savingsText: {
-    fontSize: 10,
-    color: '#dc2626',
-    fontWeight: 'bold',
-  },
-  featureGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 8,
-  },
-  featureItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    width: '48%',
-    marginBottom: 4,
-  },
-  featureIcon: {
-    fontSize: 10,
-    marginRight: 4,
-  },
-  featureText: {
-    fontSize: 8,
-    color: '#1a1a1a', // Primary text
-  },
-  contactFooter: {
-    marginTop: 2,
-    paddingTop: 2,
-    borderTopWidth: 1,
-    borderTopColor: '#e5e7eb',
-  },
+  
+  // Trust badges - simplified
   trustBadgesRow: {
     flexDirection: 'row',
     justifyContent: 'center',
-    gap: 15,
-    marginBottom: 8,
+    gap: 20,
+    marginBottom: 12,
+    paddingVertical: 8,
+    borderTop: `1 solid ${colors.border}`,
+    borderBottom: `1 solid ${colors.border}`,
   },
+  
   trustBadge: {
     alignItems: 'center',
-    backgroundColor: '#065f46',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 6,
   },
-  trustBadgeIcon: {
-    fontSize: 10,
-    color: '#ffffff',
-    marginBottom: 2,
-    fontWeight: 'bold',
-  },
+  
   trustBadgeText: {
-    fontSize: 8,
-    fontWeight: 'bold',
-    color: '#ffffff',
+    fontSize: 9,
+    color: colors.text,
     textAlign: 'center',
   },
+  
+  // Footer
+  contactFooter: {
+    marginTop: 12,
+    paddingTop: 8,
+    borderTop: `1 solid ${colors.border}`,
+  },
+  
   companyName: {
-    fontSize: 10,
+    fontSize: 11,
     fontWeight: 'bold',
-    color: '#1a1a1a', // Primary text
+    color: colors.text,
     marginBottom: 4,
   },
+  
   contactRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 2,
   },
+  
   contactText: {
-    fontSize: 8,
-    color: '#333333', // Secondary text
-  },
-  ctaText: {
     fontSize: 9,
-    fontWeight: 'bold',
-    color: '#1e40af',
-    textAlign: 'center',
-    marginTop: 8,
+    color: colors.lightText,
   },
+  
+  ctaText: {
+    fontSize: 10,
+    fontWeight: 'bold',
+    color: colors.text,
+    textAlign: 'center',
+    marginTop: 6,
+  },
+  
   motorDescription: {
     fontSize: 10,
-    color: '#1a1a1a', // Primary text
+    color: colors.text,
     textAlign: 'center',
-    marginBottom: 8,
+    marginBottom: 10,
     paddingHorizontal: 20,
-    lineHeight: 1.4,
+    lineHeight: 1.5,
   },
-  stockStatus: {
-    fontSize: 9,
+  
+  // Additional styles for compatibility
+  headerLogos: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 15,
+  },
+  
+  priceSection: {
+    alignItems: 'flex-end',
+  },
+  
+  priceLabel: {
+    fontSize: 10,
+    color: colors.lightText,
+  },
+  
+  priceValue: {
+    fontSize: 20,
     fontWeight: 'bold',
-    color: '#059669',
-    textAlign: 'center',
+    color: colors.text,
+  },
+  
+  dealerPrice: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: colors.discount,
+  },
+  
+  savingsText: {
+    fontSize: 10,
+    color: colors.discount,
+    fontWeight: 'bold',
+  },
+  
+  promoLine: {
+    fontSize: 10,
+    color: colors.text,
+    marginBottom: 8,
+    fontWeight: 'bold',
+  },
+  
+  sectionHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
     marginBottom: 6,
   },
-  // Warranty Enhancement Styles
+  
   warrantyOption: {
-    fontSize: 8,
+    fontSize: 9,
     marginLeft: 10,
-    marginBottom: 1,
-  },
-  // Availability Styles
-  availabilityRow: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginBottom: 4,
-  },
-  inStock: {
-    fontSize: 8,
-    color: '#28a745',
-    fontWeight: 'bold',
-  },
-  specialOrder: {
-    fontSize: 8,
-    color: '#ffc107',
-  },
-  // Accessories Styles
-  accessoriesSection: {
-    marginTop: 6,
-    padding: 6,
-  },
-  accessoryItem: {
-    fontSize: 8,
-    marginBottom: 1,
+    marginBottom: 2,
+    color: colors.text,
   },
 });
 
@@ -794,11 +803,13 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
           </View>
         )}
 
-        {/* Exciting Promo Line */}
+        {/* Promotional Offer - Clean Design */}
         {specData.currentPromotion && (
-          <Text style={styles.promoLine}>
-            *** LIMITED TIME OFFER: {specData.currentPromotion.description} - Ends {specData.currentPromotion.endDate}! ***
-          </Text>
+          <View style={styles.promoBox}>
+            <Text style={styles.promoTitle}>🎯 LIMITED TIME OFFER</Text>
+            <Text style={styles.promoText}>{specData.currentPromotion.description}</Text>
+            <Text style={styles.promoText}>Offer ends: {specData.currentPromotion.endDate}</Text>
+          </View>
         )}
 
         {/* Practical Info Boxes */}
@@ -1061,16 +1072,14 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
               </Text>
             )}
             
-            {/* Trust Badges */}
+            {/* Trust Badges - Simplified */}
             <View style={styles.trustBadgesRow}>
-              <Image 
-                src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png"
-                style={{ width: 80, height: 40 }}
-              />
-              <Image 
-                src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
-                style={{ width: 80, height: 40 }}
-              />
+              <View style={styles.trustBadge}>
+                <Text style={styles.trustBadgeText}>⭐ Mercury CSI Award Winner</Text>
+              </View>
+              <View style={styles.trustBadge}>
+                <Text style={styles.trustBadgeText}>✓ Certified Repower Center</Text>
+              </View>
             </View>
             
             <Text style={styles.companyName}>{COMPANY_INFO.name}</Text>
