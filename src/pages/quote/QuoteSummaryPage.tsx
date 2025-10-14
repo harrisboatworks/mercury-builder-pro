@@ -387,8 +387,10 @@ export default function QuoteSummaryPage() {
     motorDiscount,
     accessoryTotal: baseAccessoryCost + 
       (selectedPackage !== 'good' && !isManualStart ? batteryCost : 0) + // Battery in Complete/Premium
+      (selectedPackage === 'better' ? completeWarrantyCost : 0) + // Warranty extension for Complete
       (selectedPackage === 'best' && !includesProp ? 299.99 : 0) + // Propeller in Premium
-      (selectedPackage === 'best' && canAddFuelTank ? 199 : 0), // Fuel tank in Premium
+      (selectedPackage === 'best' && canAddFuelTank ? 199 : 0) + // Fuel tank in Premium
+      (selectedPackage === 'best' ? premiumWarrantyCost : 0), // Warranty extension for Premium
     warrantyPrice: state.warrantyConfig?.warrantyPrice || 0, // Current selected warranty
     promotionalSavings: promoSavings,
     tradeInValue: state.tradeInInfo?.estimatedValue || 0,
