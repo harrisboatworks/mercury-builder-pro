@@ -7,12 +7,12 @@ import mercuryLogo from '@/assets/mercury-logo.png';
 
 // Print-optimized professional color scheme
 const colors = {
-  text: '#111827',           // Very dark gray - prints well
-  lightText: '#6b7280',      // Medium gray for secondary text
-  discount: '#374151',       // Dark gray for discounts (prints clearly in B&W)
-  border: '#d1d5db',         // 20% gray for borders/dividers
-  tableBg: '#f3f4f6',        // 10% gray for subtle backgrounds
-  background: '#fafaf9',     // Stone-50 for boxes
+  text: '#111827',           // Black text
+  lightText: '#6b7280',      // Gray secondary text  
+  discount: '#059669',       // GREEN for discounts (prints well in B&W)
+  border: '#cccccc',         // Lighter gray borders (20%)
+  tableBg: '#f3f4f6',        // 10% gray backgrounds
+  infoBg: '#e5e7eb',         // 15% gray for customer info box
   white: '#ffffff'
 };
 
@@ -75,10 +75,10 @@ const styles = StyleSheet.create({
   },
   
   productName: {
-    fontSize: 14,
+    fontSize: 24,
     fontWeight: 'bold',
     color: colors.text,
-    marginBottom: 8,
+    marginBottom: 10,
   },
   
   productDetails: {
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
   },
   
   sectionTitle: {
-    fontSize: 10,
+    fontSize: 16,
     fontWeight: 'bold',
     color: colors.text,
     marginBottom: 8,
@@ -192,10 +192,10 @@ const styles = StyleSheet.create({
   
   // Customer info box
   infoBox: {
-    backgroundColor: colors.background,
-    padding: 10,
-    borderRadius: 4,
-    marginBottom: 15,
+    backgroundColor: colors.infoBg,
+    border: `1 solid ${colors.border}`,
+    padding: 12,
+    marginBottom: 20,
   },
   
   infoRow: {
@@ -220,15 +220,50 @@ const styles = StyleSheet.create({
     padding: 12,
     border: `1 solid ${colors.border}`,
     backgroundColor: 'transparent',
-    marginBottom: 15,
+    marginBottom: 20,
   },
   
   // Financing callout box (outline style)
   financingBox: {
     padding: 12,
-    border: `2 solid ${colors.discount}`,
+    border: `1 solid ${colors.border}`,
     backgroundColor: 'transparent',
-    marginBottom: 15,
+    marginBottom: 20,
+  },
+
+  // Large savings callout box (right column top)
+  savingsCalloutBox: {
+    border: `2 solid ${colors.border}`,
+    padding: 16,
+    backgroundColor: 'transparent',
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+
+  savingsCalloutSavings: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: colors.discount,
+    marginBottom: 10,
+  },
+
+  savingsCalloutLabel: {
+    fontSize: 11,
+    color: colors.lightText,
+    marginBottom: 4,
+  },
+
+  savingsCalloutPrice: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: colors.text,
+    marginBottom: 10,
+  },
+
+  savingsCalloutMonthly: {
+    fontSize: 18,
+    color: colors.text,
+    fontWeight: 'bold',
   },
   
   summaryTitle: {
@@ -245,17 +280,17 @@ const styles = StyleSheet.create({
   },
   
   savingsText: {
-    fontSize: 10,
+    fontSize: 12,
     color: colors.discount,
     fontWeight: 'bold',
-    marginTop: 4,
+    marginTop: 6,
   },
   
-  // Extended warranty section
+  // Extended warranty section (not currently used)
   warrantySection: {
     marginTop: 10,
     padding: 8,
-    backgroundColor: colors.background,
+    backgroundColor: colors.tableBg,
     borderRadius: 4,
   },
   
@@ -304,23 +339,12 @@ const styles = StyleSheet.create({
     right: 30,
     paddingTop: 10,
     borderTop: `1 solid ${colors.border}`,
+    textAlign: 'center',
   },
   
-  footerContent: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  
-  footerLeft: {
+  footerText: {
     fontSize: 8,
     color: colors.lightText,
-  },
-  
-  footerRight: {
-    fontSize: 8,
-    color: colors.lightText,
-    textAlign: 'right',
   },
 });
 
@@ -355,6 +379,9 @@ export interface QuotePDFProps {
       monthlyDelta: number;
       label?: string;
     }>;
+    monthlyPayment?: number;
+    financingTerm?: number;
+    financingRate?: number;
   };
 }
 
@@ -411,13 +438,6 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               <Text style={styles.productDetails}>✓ Factory-backed service at Harris Boat Works</Text>
             </View>
 
-            {/* Hero Pricing Callout */}
-            <View style={styles.heroBox}>
-              <Text style={styles.heroSavings}>SAVE ${quoteData.totalSavings} vs MSRP</Text>
-              <Text style={styles.heroPrice}>Total Price: ${quoteData.total}</Text>
-              <Text style={styles.heroMonthly}>or just $271/month*</Text>
-            </View>
-
             {/* Pricing Breakdown */}
             <View style={styles.pricingTableContainer}>
               <Text style={styles.sectionTitle}>Pricing Breakdown</Text>
@@ -458,33 +478,31 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               </View>
             </View>
 
-              {/* Extended Warranty Options */}
-              <View style={styles.warrantySection}>
-                <Text style={styles.warrantyTitle}>EXTENDED WARRANTY OPTIONS</Text>
-                <Text style={{ fontSize: 8, color: colors.lightText, marginBottom: 6 }}>
-                  Current coverage: {quoteData.selectedPackage?.coverageYears || 5} years 
-                  {quoteData.selectedPackage?.id === 'best' ? ' (Premium Max Coverage)' : ' (base + promo)'}
-                </Text>
-                
-                {quoteData.warrantyTargets && quoteData.warrantyTargets.length > 0 ? (
-                  quoteData.warrantyTargets.slice(0, 3).map((target: any, index: number) => (
-                    <View key={index} style={styles.warrantyOption}>
-                      <Text style={styles.warrantyText}>
-                        → {target.targetYears} yrs total • +${target.oneTimePrice.toLocaleString()} • +${target.monthlyDelta}/mo
-                      </Text>
-                    </View>
-                  ))
-                ) : (
-                  <View style={styles.warrantyOption}>
-                    <Text style={styles.warrantyText}>✓ Maximum coverage already included</Text>
-                  </View>
-                )}
-              </View>
+            {/* Total Savings Below Table */}
+            <Text style={styles.savingsText}>
+              Total savings of ${quoteData.totalSavings} vs MSRP
+            </Text>
           </View>
 
           {/* Right Column */}
           <View style={styles.rightColumn}>
-            {/* Customer Information */}
+            {/* SAVINGS CALLOUT BOX - TOP */}
+            <View style={styles.savingsCalloutBox}>
+              <Text style={styles.savingsCalloutSavings}>
+                YOU SAVE ${quoteData.totalSavings}
+              </Text>
+              <Text style={styles.savingsCalloutLabel}>Total Price</Text>
+              <Text style={styles.savingsCalloutPrice}>
+                ${quoteData.total}
+              </Text>
+              {quoteData.monthlyPayment && (
+                <Text style={styles.savingsCalloutMonthly}>
+                  or ${quoteData.monthlyPayment}/month*
+                </Text>
+              )}
+            </View>
+
+            {/* CUSTOMER INFO BOX */}
             <View style={styles.infoBox}>
               <Text style={styles.summaryTitle}>Customer Information</Text>
               <View style={styles.infoRow}>
@@ -513,13 +531,16 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               </View>
             </View>
 
-            {/* Coverage Summary */}
+            {/* COVERAGE BOX */}
             <View style={styles.summaryBox}>
               <Text style={styles.summaryTitle}>
                 {quoteData.selectedPackage?.label || 'COMPLETE COVERAGE'}
               </Text>
               <Text style={styles.summaryItem}>
                 Coverage: {quoteData.selectedPackage?.coverageYears || 5} years total
+              </Text>
+              <Text style={{ fontSize: 9, color: colors.text, marginTop: 6, marginBottom: 4 }}>
+                Includes:
               </Text>
               {quoteData.selectedPackage?.features?.map((feature, index) => (
                 <Text key={index} style={styles.summaryItem}>✓ {feature}</Text>
@@ -528,19 +549,37 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                   <Text style={styles.summaryItem}>✓ Mercury motor</Text>
                   <Text style={styles.summaryItem}>✓ Premium controls & rigging</Text>
                   <Text style={styles.summaryItem}>✓ Marine starting battery</Text>
-                  <Text style={styles.summaryItem}>✓ Premium marine controls and installation hardware</Text>
                 </>
+              )}
+              
+              {/* BONUS OFFER (if promo warranty exists) */}
+              {quoteData.selectedPackage?.coverageYears && quoteData.selectedPackage.coverageYears > 3 && (
+                <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1 solid ${colors.border}` }}>
+                  <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 2 }}>
+                    🎁 BONUS OFFER
+                  </Text>
+                  <Text style={{ fontSize: 9, color: colors.text }}>
+                    +2 Years Extended Warranty FREE
+                  </Text>
+                  <Text style={{ fontSize: 8, color: colors.lightText }}>
+                    (Limited time offer)
+                  </Text>
+                </View>
               )}
             </View>
 
-            {/* Financing Callout */}
-            <View style={styles.financingBox}>
-              <Text style={styles.summaryTitle}>MONTHLY FINANCING AVAILABLE</Text>
-              <Text style={styles.summaryItem}>Starting from $271/month*</Text>
-              <Text style={{ fontSize: 8, color: colors.lightText, marginTop: 2 }}>
-                *OAC. Final terms at checkout.
-              </Text>
-            </View>
+            {/* FINANCING BOX */}
+            {quoteData.monthlyPayment && (
+              <View style={styles.financingBox}>
+                <Text style={styles.summaryTitle}>Monthly Financing Available</Text>
+                <Text style={styles.summaryItem}>
+                  Starting from ${quoteData.monthlyPayment}/mo
+                </Text>
+                <Text style={{ fontSize: 8, color: colors.lightText, marginTop: 2 }}>
+                  OAC. Terms at checkout.
+                </Text>
+              </View>
+            )}
           </View>
         </View>
 
@@ -559,16 +598,9 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
 
         {/* Footer */}
         <View style={styles.footer}>
-          <View style={styles.footerContent}>
-            <View>
-              <Text style={styles.footerLeft}>Harris Boat Works</Text>
-              <Text style={styles.footerLeft}>5369 Harris Boat Works Rd, Gore's Landing, ON K0K 2E0</Text>
-            </View>
-            <View>
-              <Text style={styles.footerRight}>(905) 342-2153</Text>
-              <Text style={styles.footerRight}>www.harrisboatworks.com</Text>
-            </View>
-          </View>
+          <Text style={styles.footerText}>
+            Harris Boat Works • 5369 Harris Boat Works Rd, Gore's Landing, ON K0K 2E0 • (905) 342-2153 • www.harrisboatworks.com
+          </Text>
         </View>
       </Page>
     </Document>
