@@ -5,14 +5,14 @@ import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/render
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
-// Clean, professional color scheme matching the website
+// Print-optimized professional color scheme
 const colors = {
-  text: '#2c3142',           // Dark gray text
-  lightText: '#6b7280',      // Light gray for secondary text
-  primary: '#0066cc',         // Blue for accents only
-  success: '#10b981',         // Green for savings
-  border: '#e5e7eb',          // Light border
-  background: '#f9fafb',      // Very light gray background
+  text: '#111827',           // Very dark gray - prints well
+  lightText: '#6b7280',      // Medium gray for secondary text
+  discount: '#374151',       // Dark gray for discounts (prints clearly in B&W)
+  border: '#d1d5db',         // 20% gray for borders/dividers
+  tableBg: '#f3f4f6',        // 10% gray for subtle backgrounds
+  background: '#fafaf9',     // Stone-50 for boxes
   white: '#ffffff'
 };
 
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 20,
     paddingBottom: 15,
-    borderBottom: `1 solid ${colors.border}`,
+    borderBottom: `1.5 solid ${colors.border}`,
   },
   
   logoContainer: {
@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
   
   quoteTitle: {
     fontSize: 16,
-    fontWeight: 'bold',
     color: colors.text,
     marginBottom: 2,
   },
@@ -59,7 +58,7 @@ const styles = StyleSheet.create({
   // Main content in two columns
   mainContent: {
     flexDirection: 'row',
-    gap: 20,
+    gap: 24,
   },
   
   leftColumn: {
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
   
   // Product section
   productSection: {
-    marginBottom: 15,
+    marginBottom: 18,
   },
   
   productName: {
@@ -88,18 +87,62 @@ const styles = StyleSheet.create({
     marginBottom: 3,
   },
   
+  // Hero pricing callout box
+  heroBox: {
+    border: `2 solid ${colors.discount}`,
+    padding: 12,
+    marginBottom: 18,
+    backgroundColor: 'transparent',
+  },
+  
+  heroSavings: {
+    fontSize: 14,
+    color: colors.discount,
+    marginBottom: 4,
+  },
+  
+  heroPrice: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: colors.text,
+    marginBottom: 2,
+  },
+  
+  heroMonthly: {
+    fontSize: 12,
+    color: colors.lightText,
+  },
+  
   // Pricing table
+  pricingTableContainer: {
+    border: `1 solid ${colors.border}`,
+    padding: 10,
+    marginBottom: 18,
+  },
+  
   pricingSection: {
-    marginBottom: 15,
+    marginBottom: 18,
   },
   
   sectionTitle: {
-    fontSize: 11,
+    fontSize: 10,
     fontWeight: 'bold',
     color: colors.text,
     marginBottom: 8,
-    paddingBottom: 4,
-    borderBottom: `1 solid ${colors.border}`,
+  },
+  
+  pricingHeader: {
+    backgroundColor: colors.tableBg,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 6,
+    marginBottom: 6,
+  },
+  
+  pricingHeaderText: {
+    fontSize: 9,
+    fontWeight: 'bold',
+    color: colors.text,
   },
   
   pricingRow: {
@@ -117,11 +160,14 @@ const styles = StyleSheet.create({
   pricingValue: {
     fontSize: 9,
     color: colors.text,
-    fontWeight: 'bold',
+  },
+  
+  strikethrough: {
+    textDecoration: 'line-through',
   },
   
   discountValue: {
-    color: colors.success,
+    color: colors.discount,
   },
   
   totalRow: {
@@ -139,7 +185,7 @@ const styles = StyleSheet.create({
   },
   
   totalValue: {
-    fontSize: 14,
+    fontSize: 11,
     fontWeight: 'bold',
     color: colors.text,
   },
@@ -172,8 +218,16 @@ const styles = StyleSheet.create({
   // Summary box in right column
   summaryBox: {
     padding: 12,
-    backgroundColor: colors.background,
-    borderRadius: 4,
+    border: `1 solid ${colors.border}`,
+    backgroundColor: 'transparent',
+    marginBottom: 15,
+  },
+  
+  // Financing callout box (outline style)
+  financingBox: {
+    padding: 12,
+    border: `2 solid ${colors.discount}`,
+    backgroundColor: 'transparent',
     marginBottom: 15,
   },
   
@@ -192,7 +246,7 @@ const styles = StyleSheet.create({
   
   savingsText: {
     fontSize: 10,
-    color: colors.success,
+    color: colors.discount,
     fontWeight: 'bold',
     marginTop: 4,
   },
@@ -231,8 +285,8 @@ const styles = StyleSheet.create({
   
   // Terms section
   termsSection: {
-    marginTop: 15,
-    paddingTop: 10,
+    marginTop: 18,
+    paddingTop: 12,
     borderTop: `1 solid ${colors.border}`,
   },
   
@@ -352,18 +406,30 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             {/* Product Information */}
             <View style={styles.productSection}>
               <Text style={styles.productName}>{quoteData.productName}</Text>
-              <Text style={styles.productDetails}>• Quiet, low-vibration four-stroke performance</Text>
-              <Text style={styles.productDetails}>• Excellent fuel economy & range</Text>
-              <Text style={styles.productDetails}>• Factory-backed service at Harris Boat Works</Text>
+              <Text style={styles.productDetails}>✓ Quiet, low-vibration four-stroke performance</Text>
+              <Text style={styles.productDetails}>✓ Excellent fuel economy & range</Text>
+              <Text style={styles.productDetails}>✓ Factory-backed service at Harris Boat Works</Text>
+            </View>
+
+            {/* Hero Pricing Callout */}
+            <View style={styles.heroBox}>
+              <Text style={styles.heroSavings}>SAVE ${quoteData.totalSavings} vs MSRP</Text>
+              <Text style={styles.heroPrice}>Total Price: ${quoteData.total}</Text>
+              <Text style={styles.heroMonthly}>or just $271/month*</Text>
             </View>
 
             {/* Pricing Breakdown */}
-            <View style={styles.pricingSection}>
+            <View style={styles.pricingTableContainer}>
               <Text style={styles.sectionTitle}>Pricing Breakdown</Text>
+              
+              <View style={styles.pricingHeader}>
+                <Text style={styles.pricingHeaderText}>Item</Text>
+                <Text style={styles.pricingHeaderText}>Price</Text>
+              </View>
               
               <View style={styles.pricingRow}>
                 <Text style={styles.pricingLabel}>MSRP - {quoteData.productName}</Text>
-                <Text style={styles.pricingValue}>${quoteData.msrp}</Text>
+                <Text style={[styles.pricingValue, styles.strikethrough]}>${quoteData.msrp}</Text>
               </View>
               
               <View style={styles.pricingRow}>
@@ -390,10 +456,6 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <Text style={styles.totalLabel}>Total Price</Text>
                 <Text style={styles.totalValue}>${quoteData.total}</Text>
               </View>
-              
-              <Text style={styles.savingsText}>
-                Total savings of ${quoteData.totalSavings} vs MSRP
-              </Text>
             </View>
 
               {/* Extended Warranty Options */}
@@ -405,16 +467,16 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 </Text>
                 
                 {quoteData.warrantyTargets && quoteData.warrantyTargets.length > 0 ? (
-                  quoteData.warrantyTargets.map((target: any, index: number) => (
+                  quoteData.warrantyTargets.slice(0, 3).map((target: any, index: number) => (
                     <View key={index} style={styles.warrantyOption}>
                       <Text style={styles.warrantyText}>
-                        {target.targetYears} yrs total • +${target.oneTimePrice.toLocaleString()} • +${target.monthlyDelta}/mo
+                        → {target.targetYears} yrs total • +${target.oneTimePrice.toLocaleString()} • +${target.monthlyDelta}/mo
                       </Text>
                     </View>
                   ))
                 ) : (
                   <View style={styles.warrantyOption}>
-                    <Text style={styles.warrantyText}>Maximum coverage already included</Text>
+                    <Text style={styles.warrantyText}>✓ Maximum coverage already included</Text>
                   </View>
                 )}
               </View>
@@ -460,55 +522,23 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 Coverage: {quoteData.selectedPackage?.coverageYears || 5} years total
               </Text>
               {quoteData.selectedPackage?.features?.map((feature, index) => (
-                <Text key={index} style={styles.summaryItem}>• {feature}</Text>
+                <Text key={index} style={styles.summaryItem}>✓ {feature}</Text>
               )) || (
                 <>
-                  <Text style={styles.summaryItem}>• Mercury motor</Text>
-                  <Text style={styles.summaryItem}>• Premium controls & rigging</Text>
-                  <Text style={styles.summaryItem}>• Marine starting battery</Text>
-                  <Text style={styles.summaryItem}>• Premium marine controls and installation hardware</Text>
+                  <Text style={styles.summaryItem}>✓ Mercury motor</Text>
+                  <Text style={styles.summaryItem}>✓ Premium controls & rigging</Text>
+                  <Text style={styles.summaryItem}>✓ Marine starting battery</Text>
+                  <Text style={styles.summaryItem}>✓ Premium marine controls and installation hardware</Text>
                 </>
               )}
             </View>
 
-            {/* Bonus Offers */}
-            <View style={styles.summaryBox}>
-              <Text style={styles.summaryTitle}>
-                {quoteData.selectedPackage?.id === 'best' ? 'Premium Max Coverage Selected' : 'Bonus Offers Included'}
-              </Text>
-              {quoteData.selectedPackage?.id === 'best' ? (
-                <>
-                  <Text style={styles.summaryItem}>
-                    • Maximum 8-year warranty coverage
-                  </Text>
-                  <Text style={styles.summaryItem}>
-                    • White-glove installation service
-                  </Text>
-                  <Text style={styles.summaryItem}>
-                    • Premium propeller included
-                  </Text>
-                </>
-              ) : (
-                <>
-                  <Text style={styles.summaryItem}>
-                    • 2 Years Extended Warranty (+2 years warranty at no cost)
-                  </Text>
-                  <Text style={styles.summaryItem}>
-                    • Added Value for Free
-                  </Text>
-                </>
-              )}
-              <Text style={{ fontSize: 8, color: colors.lightText, marginTop: 4 }}>
-                {quoteData.selectedPackage?.id === 'best' ? 'Premium package benefits' : 'Limited time offer'}
-              </Text>
-            </View>
-
-            {/* Financing */}
-            <View style={styles.summaryBox}>
-              <Text style={styles.summaryTitle}>Monthly Financing Available</Text>
-              <Text style={styles.summaryItem}>Starting from $271/mo</Text>
+            {/* Financing Callout */}
+            <View style={styles.financingBox}>
+              <Text style={styles.summaryTitle}>MONTHLY FINANCING AVAILABLE</Text>
+              <Text style={styles.summaryItem}>Starting from $271/month*</Text>
               <Text style={{ fontSize: 8, color: colors.lightText, marginTop: 2 }}>
-                OAC. Final terms at checkout.
+                *OAC. Final terms at checkout.
               </Text>
             </View>
           </View>
