@@ -274,97 +274,97 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-6xl mx-auto space-y-8">
       {/* Header */}
       <div className="text-center space-y-4">
-        <h2 className="text-3xl font-bold text-foreground">Submit Your Quote</h2>
-        <p className="text-lg text-muted-foreground">
-          Complete your contact information and we'll reach out to finalize the details!
+        <h2 className="text-4xl md:text-5xl font-light tracking-wide text-foreground">Submit Your Quote</h2>
+        <p className="text-lg text-muted-foreground font-light">
+          Complete your contact information and we'll reach out to finalize the details
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[1fr_1.2fr] gap-8">
         {/* Quote Summary */}
-        <Card className="p-6">
+        <Card className="p-6 border-gray-200 rounded-sm hover:border-gray-300 transition-colors duration-300">
           <div className="space-y-6">
-            <h3 className="text-xl font-semibold">Quote Summary</h3>
+            <h3 className="text-xl font-light tracking-wide">Quote Summary</h3>
             
             <div className="space-y-4">
               <div className="space-y-2">
                 <div className="flex justify-between items-start">
                   <div>
-                    <h4 className="font-medium">{quoteData.motor?.model}</h4>
-                    <p className="text-sm text-muted-foreground">{quoteData.motor?.hp}HP</p>
+                    <h4 className="font-light tracking-wide">{quoteData.motor?.model}</h4>
+                    <p className="text-sm text-muted-foreground font-light">{quoteData.motor?.hp}HP</p>
                   </div>
                 </div>
               </div>
 
-              <div className="flex justify-between text-muted-foreground text-sm">
+              <div className="flex justify-between text-muted-foreground text-sm font-light">
                 <span>MSRP:</span>
                 <span className="line-through">${totals.msrp.toLocaleString()}</span>
               </div>
 
               {totals.discount > 0 && (
-                <div className="flex justify-between text-green-600 text-sm">
+                <div className="flex justify-between text-gray-700 text-sm font-light">
                   <span>Discount:</span>
                   <span>-${totals.discount.toLocaleString()}</span>
                 </div>
               )}
 
               {totals.promoValue > 0 && (
-                <div className="flex justify-between text-green-600 text-sm">
+                <div className="flex justify-between text-gray-700 text-sm font-light">
                   <span>Promo Value:</span>
                   <span>-${totals.promoValue.toLocaleString()}</span>
                 </div>
               )}
 
-              <div className="flex justify-between">
-                <span className="font-medium">Your Price:</span>
-                <span className="font-semibold">${totals.subtotal.toLocaleString()}</span>
+              <div className="flex justify-between font-light">
+                <span>Your Price:</span>
+                <span className="font-medium">${totals.subtotal.toLocaleString()}</span>
               </div>
 
               {hasTradeIn && (
-                <div className="flex justify-between text-green-600">
+                <div className="flex justify-between text-gray-700 font-light">
                   <span className="text-muted-foreground">Trade-in Credit</span>
                   <span>-${tradeInValue.toLocaleString()}</span>
                 </div>
               )}
 
-              <div className="flex justify-between">
+              <div className="flex justify-between font-light">
                 <span className="text-muted-foreground">Subtotal</span>
                 <span>${Math.round(subtotalAfterTrade).toLocaleString()}</span>
               </div>
 
-              <div className="flex justify-between">
+              <div className="flex justify-between font-light">
                 <span className="text-muted-foreground">HST (13%)</span>
                 <span>${Math.round(hst).toLocaleString()}</span>
               </div>
 
-              <div className="border-t pt-4">
-                <div className="flex justify-between font-semibold text-lg">
-                  <span>Total Price</span>
-                  <span>${Math.round(totalCashPrice).toLocaleString()}</span>
+              <div className="border-t border-gray-200 pt-4">
+                <div className="flex justify-between text-lg">
+                  <span className="font-light tracking-wide">Total Price</span>
+                  <span className="font-medium">${Math.round(totalCashPrice).toLocaleString()}</span>
                 </div>
               </div>
 
               {totals.savings > 0 && (
-                <div className="bg-green-50 dark:bg-green-950/20 p-3 rounded-lg">
-                  <div className="text-green-700 dark:text-green-300 text-sm font-medium">
-                    You Save ${totals.savings.toLocaleString()}!
+                <div className="bg-stone-50 dark:bg-stone-950/20 p-3 rounded-sm border border-gray-200">
+                  <div className="text-gray-700 dark:text-gray-300 text-sm font-light">
+                    You Save ${totals.savings.toLocaleString()}
                   </div>
                 </div>
               )}
 
               {hasTradeIn && (
-                <Alert className="border-orange-500 bg-orange-50 dark:bg-orange-950/20">
-                  <AlertDescription>
+                <Alert className="border-gray-300 bg-stone-50 dark:bg-stone-950/20 rounded-sm">
+                  <AlertDescription className="font-light text-muted-foreground">
                     Trade-in value will be assessed during consultation
                   </AlertDescription>
                 </Alert>
               )}
             </div>
 
-            <Button onClick={generatePDF} variant="outline" className="w-full">
+            <Button onClick={generatePDF} variant="outline" className="w-full border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide">
               <Download className="w-4 h-4 mr-2" />
               Download Quote PDF
             </Button>
@@ -372,66 +372,66 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         </Card>
 
         {/* Contact Form */}
-        <Card className="p-6">
+        <Card className="p-6 border-gray-200 rounded-sm hover:border-gray-300 transition-colors duration-300">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <h3 className="text-xl font-semibold">Contact Information</h3>
-              <p className="text-muted-foreground mt-2">We'll reach out as soon as possible to discuss your quote and schedule your consultation.</p>
+              <h3 className="text-xl font-light tracking-wide">Contact Information</h3>
+              <p className="text-muted-foreground font-light mt-2">We'll reach out as soon as possible to discuss your quote and schedule your consultation</p>
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="name">Full Name *</Label>
+              <Label htmlFor="name" className="font-light">Full Name *</Label>
               <Input
                 id="name"
                 value={contactInfo.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
                 placeholder="Enter your full name"
-                className={errors.name ? 'border-destructive' : ''}
+                className={`border-gray-200 focus:border-gray-400 rounded-sm transition-colors duration-300 ${errors.name ? 'border-destructive' : ''}`}
               />
               {errors.name && (
-                <p className="text-sm text-destructive">{errors.name}</p>
+                <p className="text-sm text-destructive font-light">{errors.name}</p>
               )}
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email Address *</Label>
+              <Label htmlFor="email" className="font-light">Email Address *</Label>
               <Input
                 id="email"
                 type="email"
                 value={contactInfo.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
                 placeholder="Enter your email"
-                className={errors.email ? 'border-destructive' : ''}
+                className={`border-gray-200 focus:border-gray-400 rounded-sm transition-colors duration-300 ${errors.email ? 'border-destructive' : ''}`}
               />
               {errors.email && (
-                <p className="text-sm text-destructive">{errors.email}</p>
+                <p className="text-sm text-destructive font-light">{errors.email}</p>
               )}
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number *</Label>
+              <Label htmlFor="phone" className="font-light">Phone Number *</Label>
               <Input
                 id="phone"
                 type="tel"
                 value={contactInfo.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
                 placeholder="(705) 555-1234"
-                className={errors.phone ? 'border-destructive' : ''}
+                className={`border-gray-200 focus:border-gray-400 rounded-sm transition-colors duration-300 ${errors.phone ? 'border-destructive' : ''}`}
                 maxLength={14}
               />
               {errors.phone && (
-                <p className="text-sm text-destructive">{errors.phone}</p>
+                <p className="text-sm text-destructive font-light">{errors.phone}</p>
               )}
-              <p className="text-xs text-muted-foreground">Enter 10 digits (with or without formatting)</p>
+              <p className="text-xs text-muted-foreground font-light">Enter 10 digits (with or without formatting)</p>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="contactMethod">Preferred Contact Method *</Label>
+              <Label htmlFor="contactMethod" className="font-light">Preferred Contact Method *</Label>
               <Select value={contactInfo.contactMethod} onValueChange={(value) => handleInputChange('contactMethod', value)}>
-                <SelectTrigger>
+                <SelectTrigger className="border-gray-200 rounded-sm">
                   <SelectValue placeholder="How would you like us to contact you?" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="rounded-sm">
                   <SelectItem value="email">Email</SelectItem>
                   <SelectItem value="phone">Phone Call</SelectItem>
                   <SelectItem value="text">Text Message</SelectItem>
@@ -440,7 +440,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="notes">Additional Comments (Optional)</Label>
+              <Label htmlFor="notes" className="font-light">Additional Comments (Optional)</Label>
               <Textarea
                 id="notes"
                 value={contactInfo.notes}
@@ -448,11 +448,12 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 placeholder="Any additional information about your boat or installation requirements"
                 rows={3}
                 maxLength={500}
+                className="border-gray-200 focus:border-gray-400 rounded-sm transition-colors duration-300"
               />
-              <p className="text-xs text-muted-foreground">{contactInfo.notes.length}/500 characters</p>
+              <p className="text-xs text-muted-foreground font-light">{contactInfo.notes.length}/500 characters</p>
             </div>
 
-            <Button type="submit" className="w-full bg-primary hover:bg-primary/90" disabled={isSubmitting}>
+            <Button type="submit" className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-sm border border-gray-900 font-light tracking-wide" disabled={isSubmitting}>
               <Calendar className="w-4 h-4 mr-2" />
               {isSubmitting ? 'Saving Quote...' : 'Generate Quote'}
             </Button>
@@ -462,38 +463,38 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
 
       {/* Contact Information */}
-      <Card className="p-6">
-        <h3 className="text-xl font-semibold mb-4">Harris Boat Works</h3>
+      <Card className="p-6 border-gray-200 rounded-sm">
+        <h3 className="text-xl font-light tracking-wide mb-4">Harris Boat Works</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="flex items-center gap-3">
-            <Phone className="w-5 h-5 text-primary" />
+            <Phone className="w-5 h-5 text-gray-700" />
             <div>
-              <p className="font-medium">Phone</p>
-              <p className="text-muted-foreground">(905) 342-2153</p>
+              <p className="font-light tracking-wide">Phone</p>
+              <p className="text-muted-foreground font-light">(905) 342-2153</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <Mail className="w-5 h-5 text-primary" />
+            <Mail className="w-5 h-5 text-gray-700" />
             <div>
-              <p className="font-medium">Email</p>
-              <p className="text-muted-foreground">info@harrisboatworks.ca</p>
+              <p className="font-light tracking-wide">Email</p>
+              <p className="text-muted-foreground font-light">info@harrisboatworks.ca</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <MapPin className="w-5 h-5 text-primary" />
+            <MapPin className="w-5 h-5 text-gray-700" />
             <div>
-              <p className="font-medium">Location</p>
-              <p className="text-muted-foreground">5369 Harris Boat Works Rd, Gores Landing, ON</p>
+              <p className="font-light tracking-wide">Location</p>
+              <p className="text-muted-foreground font-light">5369 Harris Boat Works Rd, Gores Landing, ON</p>
             </div>
           </div>
         </div>
         
-        <div className="mt-6 p-4 bg-muted/50 rounded-lg">
+        <div className="mt-6 p-4 bg-stone-50 rounded-sm border border-gray-200">
           <div className="flex items-start gap-3">
-            <Clock className="w-5 h-5 text-primary mt-0.5" />
+            <Clock className="w-5 h-5 text-gray-700 mt-0.5" />
             <div>
-              <p className="font-medium mb-2">What happens next?</p>
-              <ul className="text-sm text-muted-foreground space-y-1">
+              <p className="font-light tracking-wide mb-2">What happens next?</p>
+              <ul className="text-sm text-muted-foreground font-light space-y-1">
                 <li>• We'll contact you within 24 hours to schedule your consultation</li>
                 <li>• Our technician will inspect your boat and verify all specifications</li>
                 <li>• You'll receive a final quote including installation costs</li>
@@ -506,7 +507,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
       {/* Navigation */}
       <div className="flex justify-between">
-        <Button variant="outline" onClick={onBack}>
+        <Button variant="outline" onClick={onBack} className="border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Quote Review
         </Button>
