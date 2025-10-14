@@ -19,7 +19,7 @@ const colors = {
 const styles = StyleSheet.create({
   page: {
     backgroundColor: colors.white,
-    padding: 15,
+    padding: 12,
     fontFamily: 'Helvetica',
     fontSize: 10,
   },
@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 15,
-    paddingBottom: 15,
+    marginBottom: 10,
+    paddingBottom: 10,
     borderBottom: `1.5 solid ${colors.border}`,
   },
   
@@ -45,9 +45,9 @@ const styles = StyleSheet.create({
   },
   
   quoteTitle: {
-    fontSize: 16,
+    fontSize: 14,
     color: colors.text,
-    marginBottom: 2,
+    marginBottom: 1,
   },
   
   dealerText: {
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   // Main content in two columns
   mainContent: {
     flexDirection: 'row',
-    gap: 24,
+    gap: 18,
   },
   
   leftColumn: {
@@ -71,20 +71,20 @@ const styles = StyleSheet.create({
   
   // Product section
   productSection: {
-    marginBottom: 10,
+    marginBottom: 8,
   },
   
   productName: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
     color: colors.text,
-    marginBottom: 10,
+    marginBottom: 8,
   },
   
   productDetails: {
     fontSize: 9,
     color: colors.lightText,
-    marginBottom: 3,
+    marginBottom: 2,
   },
   
   // Hero pricing callout box
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   pricingTableContainer: {
     border: `1 solid ${colors.border}`,
     padding: 8,
-    marginBottom: 10,
+    marginBottom: 8,
   },
   
   pricingSection: {
@@ -125,18 +125,18 @@ const styles = StyleSheet.create({
   },
   
   sectionTitle: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
     color: colors.text,
-    marginBottom: 8,
+    marginBottom: 6,
   },
   
   pricingHeader: {
     backgroundColor: colors.tableBg,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: 6,
-    marginBottom: 6,
+    padding: 4,
+    marginBottom: 4,
   },
   
   pricingHeaderText: {
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
   pricingRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 4,
+    paddingVertical: 3,
     borderBottom: `0.5 solid ${colors.border}`,
   },
   
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
   totalRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 8,
+    paddingVertical: 6,
     marginTop: 4,
     borderTop: `2 solid ${colors.text}`,
   },
@@ -194,13 +194,13 @@ const styles = StyleSheet.create({
   infoBox: {
     backgroundColor: colors.infoBg,
     border: `1 solid ${colors.border}`,
-    padding: 8,
-    marginBottom: 10,
+    padding: 6,
+    marginBottom: 8,
   },
   
   infoRow: {
     flexDirection: 'row',
-    marginBottom: 4,
+    marginBottom: 3,
   },
   
   infoLabel: {
@@ -217,26 +217,26 @@ const styles = StyleSheet.create({
   
   // Summary box in right column
   summaryBox: {
-    padding: 10,
+    padding: 8,
     border: `1 solid ${colors.border}`,
     backgroundColor: 'transparent',
-    marginBottom: 12,
+    marginBottom: 8,
   },
   
   // Financing callout box (outline style)
   financingBox: {
-    padding: 10,
+    padding: 8,
     border: `1 solid ${colors.border}`,
     backgroundColor: 'transparent',
-    marginBottom: 12,
+    marginBottom: 8,
   },
 
   // Large savings callout box (right column top)
   savingsCalloutBox: {
     border: `2 solid ${colors.border}`,
-    padding: 12,
+    padding: 10,
     backgroundColor: 'transparent',
-    marginBottom: 10,
+    marginBottom: 8,
     textAlign: 'center',
   },
 
@@ -285,13 +285,13 @@ const styles = StyleSheet.create({
     fontSize: 11,
     fontWeight: 'bold',
     color: colors.text,
-    marginBottom: 8,
+    marginBottom: 6,
   },
   
   summaryItem: {
     fontSize: 9,
     color: colors.text,
-    marginBottom: 3,
+    marginBottom: 2,
   },
   
   savingsText: {
@@ -335,8 +335,8 @@ const styles = StyleSheet.create({
   
   // Terms section
   termsSection: {
-    marginTop: 12,
-    paddingTop: 12,
+    marginTop: 8,
+    paddingTop: 8,
     borderTop: `1 solid ${colors.border}`,
   },
   
@@ -348,11 +348,8 @@ const styles = StyleSheet.create({
   
   // Footer
   footer: {
-    position: 'absolute',
-    bottom: 15,
-    left: 25,
-    right: 25,
-    paddingTop: 10,
+    marginTop: 8,
+    paddingTop: 6,
     borderTop: `1 solid ${colors.border}`,
     textAlign: 'center',
   },
@@ -564,12 +561,16 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginTop: 6, marginBottom: 4 }}>
                 What's Included:
               </Text>
-            {quoteData.selectedPackage?.features?.filter(feature => !feature.includes('Everything in')).map((feature, index) => (
+            {quoteData.selectedPackage?.features?.filter(feature => 
+              !feature.includes('Everything in') && 
+              !feature.includes('Extended to')
+            ).map((feature, index) => (
               <Text key={index} style={styles.summaryItem}>• {feature}</Text>
             )) || (
               <>
                 <Text style={styles.summaryItem}>• 7-year comprehensive warranty</Text>
-                <Text style={styles.summaryItem}>• Mercury motor & all controls</Text>
+                <Text style={styles.summaryItem}>• Mercury motor & all controls covered</Text>
+                <Text style={styles.summaryItem}>• Installation hardware included</Text>
                 <Text style={styles.summaryItem}>• Priority installation service</Text>
                 <Text style={styles.summaryItem}>• Extended coverage ($350 value)</Text>
               </>
