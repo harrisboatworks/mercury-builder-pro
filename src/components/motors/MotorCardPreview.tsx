@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, memo } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import MotorDetailsPremiumModal from './MotorDetailsPremiumModal';
@@ -12,7 +12,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
-export default function MotorCardPreview({ 
+const MotorCardPreview = memo(function MotorCardPreview({
   img, 
   title, 
   hp, 
@@ -386,4 +386,6 @@ export default function MotorCardPreview({
       )}
     </>
   );
-}
+});
+
+export default MotorCardPreview;
