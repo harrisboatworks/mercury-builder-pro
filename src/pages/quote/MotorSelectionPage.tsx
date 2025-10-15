@@ -277,10 +277,24 @@ export default function MotorSelectionPage() {
     return payments;
   }, [processedMotors]);
 
+  // Critical models that should always be visible when in stock
+  const CRITICAL_MODELS = ['1A10201LK', '1C08201LK']; // 9.9MH, 8MH - popular portable models
+
   // Filter motors with intelligent search
   const filteredMotors = useMemo(() => {
-    if (!searchQuery) return processedMotors;
+    // Always include critical in-stock models
+    const criticalMotors = processedMotors.filter(motor => 
+      CRITICAL_MODELS.includes(motor.model_number || '') && motor.in_stock
+    );
     
+    if (!searchQuery) {
+      // When no search query, ensure critical motors are at the top
+      const nonCritical = processedMotors.filter(m => 
+        !criticalMotors.some(cm => cm.id === m.id)
+      );
+      return [...criticalMotors, ...nonCritical];
+    }
+
     const query = searchQuery.toLowerCase().trim();
     
     return processedMotors.filter(motor => {
@@ -305,11 +319,15 @@ export default function MotorSelectionPage() {
       }
       
       // Standard text search
-      return motor.model.toLowerCase().includes(query) ||
+      const matches = motor.model.toLowerCase().includes(query) ||
              motor.hp.toString().includes(query) ||
              motor.type?.toLowerCase().includes(query);
+      
+      // Always include critical motors if they loosely match
+      const isCritical = CRITICAL_MODELS.includes(motor.model_number || '');
+      return matches || (isCritical && motor.in_stock);
     });
-  }, [processedMotors, searchQuery]);
+  }, [processedMotors, searchQuery, CRITICAL_MODELS]);
 
   const handleMotorSelect = (motor: Motor) => {
     // Add motor to quote context
