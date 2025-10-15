@@ -530,12 +530,12 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
     }
   };
   
-  // Model code decoder with XL, L, H
+  // Model code decoder - ONLY show letters ACTUALLY in the model code
   const getModelCodeDecoding = (model: string) => {
     const decoded = decodeModelName(model);
     if (decoded.length === 0) return '';
     
-    // Clean, simple mappings - no duplicates
+    // Clean, simple mappings - ONLY for codes actually present in model
     const uniqueCodes = new Map();
     decoded.forEach(item => {
       switch(item.code) {
@@ -544,8 +544,10 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
         case 'H': uniqueCodes.set('H', 'H = Tiller Handle'); break;
         case 'L': uniqueCodes.set('L', 'L = Long Shaft'); break;
         case 'XL': uniqueCodes.set('XL', 'XL = Extra Long Shaft'); break;
-        case 'S': uniqueCodes.set('S', 'S = Short Shaft'); break;
+        case 'XXL': uniqueCodes.set('XXL', 'XXL = XX-Long Shaft'); break;
         case 'PT': uniqueCodes.set('PT', 'PT = Power Trim'); break;
+        case 'EFI': uniqueCodes.set('EFI', 'EFI = Electronic Fuel Injection'); break;
+        // NOTE: Do NOT add 'S' unless explicitly present in the model code
       }
     });
     
@@ -624,9 +626,11 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
         selectedMotorSpecs['Full Throttle RPM Range'] = `${maxRpm - 500}-${maxRpm}`;
       }
       
-      // Alternator - provide default if not available
+      // Alternator - provide default if not available (NO "(Electric Start)" appended)
       if (!selectedMotorSpecs['Alternator']) {
-        selectedMotorSpecs['Alternator'] = mercurySpecs.alternator || '12amp';
+        const alternatorValue = mercurySpecs.alternator || (hpNumber <= 15 ? '6amp' : '12amp');
+        // Clean value - ensure no "(Electric Start)" or other suffixes
+        selectedMotorSpecs['Alternator'] = alternatorValue.replace(/\s*\(.*\).*$/i, '').trim();
       }
       
       // Cylinders - provide default if not available
@@ -806,7 +810,7 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
         {/* Promotional Offer - Clean Design */}
         {specData.currentPromotion && (
           <View style={styles.promoBox}>
-            <Text style={styles.promoTitle}>🎯 LIMITED TIME OFFER</Text>
+            <Text style={styles.promoTitle}>🎁 LIMITED TIME OFFER</Text>
             <Text style={styles.promoText}>{specData.currentPromotion.description}</Text>
             <Text style={styles.promoText}>Offer ends: {specData.currentPromotion.endDate}</Text>
           </View>
@@ -1060,17 +1064,25 @@ const CleanSpecSheetPDF: React.FC<CleanSpecSheetPDFProps> = ({ specData, warrant
             }
           </Text>
 
-          {/* Stock Status & Contact Footer */}
+          {/* Stock Status & Contact Footer - DYNAMIC based on actual stock */}
           <View style={styles.contactFooter}>
-            {specData.stockStatus && (
-              <Text style={styles.stockStatus}>
-                {specData.stockStatus.toLowerCase().includes('stock') ? 
-                  "✓ In stock - Ready for installation" :
-                  specData.stockStatus.toLowerCase().includes('available') ?
-                  "✓ Available to order - 2-3 weeks" : null
+            <Text style={styles.stockStatus}>
+              {(() => {
+                // Check if we have actual stock data in specData
+                const motorData = specData as any;
+                
+                // Dynamic stock status based on actual data
+                if (motorData.in_stock === true && motorData.stock_quantity > 0) {
+                  return "✓ In stock - Ready for installation";
+                } else if (motorData.in_stock === false || motorData.stock_quantity === 0) {
+                  return "✓ Quick availability - Contact for details";
+                } else if (specData.stockStatus?.toLowerCase().includes('in stock')) {
+                  return "✓ In stock - Ready for installation";
+                } else {
+                  return "✓ Available - Contact for details";
                 }
-              </Text>
-            )}
+              })()}
+            </Text>
             
             {/* Trust Badges - Simplified */}
             <View style={styles.trustBadgesRow}>

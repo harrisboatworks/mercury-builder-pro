@@ -131,7 +131,7 @@ function generateSpecSheetHTML(motor: any, promotions: any[] = []): string {
     if (/JET\b/i.test(name)) add('Jet', 'Jet Drive', 'Great for shallow water')
     if (/BIGFOOT/i.test(name)) add('BigFoot', 'High Thrust', 'Ideal for pontoons')
 
-    // Handle combinations
+    // Handle combinations - ONLY add letters that are ACTUALLY in the model code
     if (upper.includes('MLH')) {
       add('M', 'Manual Start', 'Pull cord — simple & reliable')
       add('L', 'Long Shaft (20")', 'For 20" transom boats')
@@ -139,16 +139,28 @@ function generateSpecSheetHTML(motor: any, promotions: any[] = []): string {
     } else if (upper.includes('MH')) {
       add('M', 'Manual Start', 'Pull cord — simple & reliable')
       add('H', 'Tiller Handle', 'Steer directly from motor')
+      // NOTE: Shaft info will be shown separately if needed
     } else if (upper.includes('EH')) {
       add('E', 'Electric Start', 'Push-button convenience')
       add('H', 'Tiller Handle', 'Direct steering control')
+    } else if (upper.includes('ELH')) {
+      add('E', 'Electric Start', 'Push-button convenience')
+      add('L', 'Long Shaft (20")', 'For 20" transom boats')
+      add('H', 'Tiller Handle', 'Direct steering control')
     }
 
-    // Shaft length (if not handled in combos)
-    if (!added.has('L') && !added.has('S')) {
-      if (hasWord('L')) add('L', 'Long Shaft (20")', 'For 20" transom boats')
-      else add('S', 'Short Shaft (15")', 'For 15" transom boats')
+    // ONLY add explicit shaft codes if they exist in the model
+    if (!added.has('L') && hasWord('L')) {
+      add('L', 'Long Shaft (20")', 'For 20" transom boats')
     }
+    if (hasWord('XL')) {
+      add('XL', 'Extra Long Shaft (25")', 'For 25" transom boats')
+    }
+    if (hasWord('XXL')) {
+      add('XXL', 'XX-Long Shaft (30")', 'For 30" transom boats')
+    }
+
+    // DO NOT add default 'S' shaft - only show shaft info if explicitly in code
 
     return decoded
   }
@@ -773,7 +785,7 @@ function generateSpecSheetHTML(motor: any, promotions: any[] = []): string {
                 <!-- Current Promotions (Only if promotions exist) -->
                 ${relevantPromotions.length > 0 ? `
                 <div class="promotions-section">
-                    <div class="promotions-header">🎉 CURRENT PROMOTIONS</div>
+                    <div class="promotions-header">🎁 LIMITED TIME OFFER</div>
                     ${relevantPromotions.map(promo => {
                         const expiryText = promo.end_date ? ` - Expires ${new Date(promo.end_date).toLocaleDateString('en-US', {month: 'short', day: 'numeric'})}` : ' - Limited time';
                         let promoText = '';
@@ -922,10 +934,10 @@ function generateGearRatio(hp: number): string {
 }
 
 function generateAlternator(hp: number): string {
-  if (hp <= 15) return 'Not Available'
-  if (hp <= 60) return '12 Amp'
-  if (hp <= 150) return '20 Amp'
-  return '60 Amp'
+  if (hp <= 15) return '6amp'
+  if (hp <= 60) return '12amp'
+  if (hp <= 150) return '20amp'
+  return '60amp'
 }
 
 function generateShaftOptions(model: string): string {
