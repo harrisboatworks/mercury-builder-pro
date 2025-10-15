@@ -151,7 +151,17 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
   };
 
   const handlePreview = (document: MediaItem) => {
+    // Detect mobile device
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
+    
     if (document.media_type === 'pdf') {
+      // On mobile, always open in new tab instead of dialog preview
+      if (isMobile) {
+        window.open(getProxyUrl(document.media_url), '_blank');
+        return;
+      }
+      
+      // Desktop: Use dialog preview
       setPreviewDocument(document);
       setPdfLoading(true);
       setPdfLoadError(false);
@@ -164,7 +174,7 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
           setPreviewDocument(null);
           setPdfLoading(false);
         }
-      }, 8000); // 8 second timeout
+      }, 8000);
     } else {
       // For non-PDF documents, use proxy URL
       const proxyUrl = getProxyUrl(document.media_url);
