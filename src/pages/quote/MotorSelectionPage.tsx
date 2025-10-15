@@ -235,8 +235,8 @@ export default function MotorSelectionPage() {
         specs: `${dbMotor.horsepower}HP ${dbMotor.motor_type || 'FourStroke'}`,
         basePrice: basePrice,
         salePrice: salePrice,
-        originalPrice: dbMotor.sale_price || dbMotor.base_price,
-        savings: (dbMotor.sale_price || dbMotor.base_price) - effectivePrice,
+        originalPrice: basePrice, // Use calculated basePrice with msrp fallback
+        savings: Math.max(0, basePrice - effectivePrice), // Ensure savings is never negative
         appliedPromotions: promoTexts,
         bonusOffers: applicableRules.map(rule => {
           const promo = promotions.find(p => p.id === rule.promotion_id);
