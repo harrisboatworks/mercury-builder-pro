@@ -38,6 +38,7 @@ interface DbMotor {
   features?: string[] | null;
   specifications?: Record<string, any> | null;
   detail_url?: string | null;
+  manual_overrides?: Record<string, any> | null;
   images?: any[] | null;
   hero_media_id?: string | null;
   // Hero media joined data
@@ -166,10 +167,11 @@ export default function MotorSelectionPage() {
   // Convert DB motor to Motor type and apply promotions (same logic as original)
   const processedMotors = useMemo(() => {
     return motors.map(dbMotor => {
-      // Apply promotions (same logic as original MotorSelection) 
-      // Use msrp and dealer_price as fallbacks if base_price/sale_price are missing
-      const basePrice = dbMotor.base_price || dbMotor.msrp || 0;
-      const salePrice = dbMotor.sale_price || 
+      // Apply promotions - prioritize manual overrides
+      const manualOverrides = dbMotor.manual_overrides || {};
+      const basePrice = manualOverrides.base_price || dbMotor.base_price || dbMotor.msrp || 0;
+      const salePrice = manualOverrides.sale_price || 
+                       dbMotor.sale_price || 
                        (dbMotor.dealer_price && dbMotor.dealer_price < (dbMotor.msrp || basePrice) ? dbMotor.dealer_price : null);
       let effectivePrice = salePrice || basePrice;
       let promoTexts: string[] = [];

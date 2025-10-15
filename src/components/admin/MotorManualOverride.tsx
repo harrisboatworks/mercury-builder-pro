@@ -28,6 +28,9 @@ interface Motor {
   data_quality_score: number;
   images: Array<{ url: string; source?: string; type?: string }>;
   base_price: number;
+  sale_price?: number;
+  msrp?: number;
+  dealer_price?: number;
 }
 
 interface ManualOverrideProps {
@@ -247,16 +250,30 @@ export const MotorManualOverride: React.FC<ManualOverrideProps> = ({
               </div>
 
               <div>
-                <Label htmlFor="price">Price Override</Label>
+                <Label htmlFor="base-price">Base Price (MSRP) Override</Label>
                 <Input
-                  id="price"
+                  id="base-price"
                   type="number"
-                  placeholder="Enter price..."
+                  placeholder="Enter base price..."
                   value={overrides.base_price || ''}
-                  onChange={(e) => updateOverride('base_price', parseFloat(e.target.value) || 0)}
+                  onChange={(e) => updateOverride('base_price', parseFloat(e.target.value) || null)}
                 />
                 <p className="text-xs text-muted-foreground mt-1">
-                  Original: ${motor.base_price || 'Not set'}
+                  Original: ${motor.base_price || motor.msrp || 'Not set'}
+                </p>
+              </div>
+
+              <div>
+                <Label htmlFor="sale-price">Sale Price Override</Label>
+                <Input
+                  id="sale-price"
+                  type="number"
+                  placeholder="Enter sale price..."
+                  value={overrides.sale_price || ''}
+                  onChange={(e) => updateOverride('sale_price', parseFloat(e.target.value) || null)}
+                />
+                <p className="text-xs text-muted-foreground mt-1">
+                  Original: ${motor.sale_price || motor.dealer_price || 'Not set'}
                 </p>
               </div>
             </div>
