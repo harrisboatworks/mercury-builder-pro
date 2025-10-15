@@ -507,7 +507,7 @@ export default function MotorDetailsPremiumModal({
                     )}
                     
                     {/* Quick Actions */}
-                    <div className="space-y-3 border-t border-gray-100 pt-6">
+                    <div className="border-t border-gray-100 pt-6">
                       <button
                         onClick={handleGenerateSpecSheet}
                         disabled={specSheetLoading}
@@ -515,14 +515,6 @@ export default function MotorDetailsPremiumModal({
                       >
                         <Download className="w-4 h-4" />
                         {specSheetLoading ? 'Generating...' : 'Download Spec Sheet'}
-                      </button>
-                      
-                      <button
-                        onClick={() => { onClose(); navigate('/schedule'); }}
-                        className="w-full border border-gray-300 text-gray-700 py-3 px-4 text-sm font-light rounded-sm hover:bg-stone-50 transition-all duration-300 flex items-center justify-center gap-2"
-                      >
-                        <Calendar className="w-4 h-4" />
-                        Schedule Consultation
                       </button>
                     </div>
                     
