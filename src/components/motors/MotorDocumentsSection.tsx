@@ -155,9 +155,9 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
     
     if (document.media_type === 'pdf') {
-      // On mobile, always open in new tab instead of dialog preview
+      // On mobile, download instead of preview (avoids popup blockers)
       if (isMobile) {
-        window.open(getProxyUrl(document.media_url), '_blank');
+        handleDownload(document);
         return;
       }
       
