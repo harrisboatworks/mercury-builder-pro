@@ -322,7 +322,7 @@ export default function MotorDetailsPremiumModal({
               <div ref={scrollContainerRef} className="flex-1 overflow-y-auto">
                 <div className="p-6 pt-8 space-y-8">
                   {/* OVERVIEW TAB */}
-                  <TabsContent value="overview" className="space-y-8 m-0">
+                  <TabsContent value="overview" className="space-y-8 m-0 mt-4">
                     {/* Enhanced Image Gallery - 40% larger */}
                     <div className="py-6 bg-gradient-to-b from-stone-50 to-white rounded-lg">
                       <MotorImageGallery 
