@@ -149,7 +149,7 @@ export default function MotorVideosSection({ motorId, motorFamily }: MotorVideos
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pb-6">
       {sortedCategories.map(category => (
         <div key={category} className="space-y-3">
           <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
