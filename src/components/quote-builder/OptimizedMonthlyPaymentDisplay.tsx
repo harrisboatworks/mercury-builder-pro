@@ -7,9 +7,9 @@ interface OptimizedMonthlyPaymentDisplayProps {
 
 export function OptimizedMonthlyPaymentDisplay({ motorPrice }: OptimizedMonthlyPaymentDisplayProps) {
   const { calculateMonthlyPayment, promo } = useFinancing();
-  const monthlyPayment = calculateMonthlyPayment(motorPrice, 1000);
+  const monthlyPayment = calculateMonthlyPayment(motorPrice);
   
-  if (!monthlyPayment || motorPrice <= 5000) return null;
+  if (!monthlyPayment) return null;
   
   const displayText = getFinancingDisplay(motorPrice * 1.13, promo?.rate || null);
   

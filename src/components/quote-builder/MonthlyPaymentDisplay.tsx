@@ -8,10 +8,10 @@ interface MonthlyPaymentDisplayProps {
 }
 
 export function MonthlyPaymentDisplay({ motorPrice }: MonthlyPaymentDisplayProps) {
-  const monthlyPayment = useMotorMonthlyPayment({ motorPrice, minimumThreshold: 1000 });
+  const monthlyPayment = useMotorMonthlyPayment({ motorPrice });
   const { promo } = useActiveFinancingPromo();
   
-  if (!monthlyPayment || motorPrice <= 5000) return null;
+  if (!monthlyPayment) return null;
   
   const displayText = getFinancingDisplay(motorPrice * 1.13, promo?.rate || null);
   
