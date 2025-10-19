@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Play, ExternalLink, Loader2, Video, ChevronUp, ChevronDown } from 'lucide-react';
+import { Play, ExternalLink, Loader2, Video } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Badge } from '../ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../ui/dialog';
@@ -57,7 +57,6 @@ export default function MotorVideosSection({ motorId, motorFamily }: MotorVideos
   const [videos, setVideos] = useState<VideoItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [playingVideo, setPlayingVideo] = useState<VideoItem | null>(null);
-  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     loadVideos();
@@ -149,32 +148,15 @@ export default function MotorVideosSection({ motorId, motorFamily }: MotorVideos
     );
   }
 
-  const toggleCategory = (category: string) => {
-    setExpandedCategories(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(category)) {
-        newSet.delete(category);
-      } else {
-        newSet.add(category);
-      }
-      return newSet;
-    });
-  };
-
   return (
-    <div className="space-y-6">
-      {sortedCategories.map(category => {
-        const categoryVideos = groupedVideos[category];
-        const isExpanded = expandedCategories.has(category);
-        const visibleVideos = isExpanded ? categoryVideos : categoryVideos.slice(0, 2);
-        
-        return (
+    <div className="space-y-6 pb-6">
+      {sortedCategories.map(category => (
         <div key={category} className="space-y-3">
           <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
             {category.charAt(0).toUpperCase() + category.slice(1)}
           </h4>
           <div className="grid gap-4 sm:grid-cols-2">
-            {visibleVideos.map(video => (
+            {groupedVideos[category].map(video => (
               <div
                 key={video.id}
                 className="group cursor-pointer bg-muted/30 rounded-lg border hover:border-primary/20 transition-colors overflow-hidden"
@@ -217,30 +199,8 @@ export default function MotorVideosSection({ motorId, motorFamily }: MotorVideos
               </div>
             ))}
           </div>
-          
-          {categoryVideos.length > 2 && (
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => toggleCategory(category)}
-              className="w-full mt-2"
-            >
-              {isExpanded ? (
-                <>
-                  <ChevronUp className="w-4 h-4 mr-2" />
-                  Show Less
-                </>
-              ) : (
-                <>
-                  <ChevronDown className="w-4 h-4 mr-2" />
-                  Show All {categoryVideos.length} Videos
-                </>
-              )}
-            </Button>
-          )}
         </div>
-      )})}
-    
+      ))}
 
       {/* Video Player Dialog */}
       {playingVideo && (
