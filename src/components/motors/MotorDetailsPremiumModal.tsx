@@ -320,7 +320,7 @@ export default function MotorDetailsPremiumModal({
               
               {/* Scrollable Tab Content */}
               <div ref={scrollContainerRef} className="flex-1 overflow-y-auto">
-                <div className="p-6 pt-8 pb-12 space-y-8">
+                <div className="p-6 pt-8 space-y-8">
                   {/* OVERVIEW TAB */}
                   <TabsContent value="overview" className="space-y-8 mt-4">
                     {/* Enhanced Image Gallery - 40% larger */}
