@@ -214,12 +214,12 @@ export default function MotorCardPreview({
   const getDeliveryStatus = () => {
     if (inStock) {
       return {
-        text: "In Stock Today",
+        text: "🟢 In Stock Today",
         dotColor: "bg-green-500"
       };
     }
     return {
-      text: "Quick availability",
+      text: "○ Quick availability",
       dotColor: "bg-gray-400"
     };
   };
@@ -334,10 +334,9 @@ export default function MotorCardPreview({
             </div>
             
             {/* Delivery Status - Subtle with Icon */}
-            <div className="flex items-center gap-2 mt-4 text-sm font-light text-gray-600">
-              <div className={`w-1.5 h-1.5 ${deliveryStatus.dotColor} rounded-full`}></div>
-              <span>{deliveryStatus.text}</span>
-            </div>
+            <p className="mt-4 text-sm font-light text-gray-600">
+              {deliveryStatus.text}
+            </p>
             
             {/* Warranty - Clean Checkmark */}
             {warrantyText && (
