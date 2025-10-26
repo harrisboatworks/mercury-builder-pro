@@ -279,7 +279,7 @@ export default function QuoteSummaryPage() {
     if (extensionYears > 0) {
       const extensionCost = selectedPackage === 'better' ? completeWarrantyCost : premiumWarrantyCost;
       accessoryBreakdown.push({
-        name: `Extended Warranty (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
+        name: `${selectedPkg.label.split('•')[0].trim()} Package: Extended Warranty (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
         price: extensionCost,
         description: `Total coverage: ${selectedPkg.targetWarrantyYears} years`
       });
