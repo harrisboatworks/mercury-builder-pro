@@ -408,10 +408,17 @@ export interface QuotePDFProps {
     msrp: string;
     dealerDiscount: string;
     promoSavings: string;
+    motorSubtotal: string;
     subtotal: string;
     tax: string;
     total: string;
     totalSavings: string;
+    accessoryBreakdown?: Array<{
+      name: string;
+      price: number;
+      description?: string;
+    }>;
+    tradeInValue?: number;
     selectedPackage?: {
       id: string;
       label: string;
@@ -567,6 +574,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <Text style={styles.pricingHeaderText}>Price</Text>
               </View>
               
+              {/* Motor Pricing */}
               <View style={styles.pricingRow}>
                 <Text style={styles.pricingLabel}>MSRP - {quoteData.productName}</Text>
                 <Text style={[styles.pricingValue, styles.strikethrough]}>${quoteData.msrp}</Text>
@@ -584,16 +592,61 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 </View>
               )}
               
+              {/* Motor Subtotal */}
+              <View style={styles.pricingRow}>
+                <Text style={[styles.pricingLabel, { fontWeight: 'bold' }]}>Motor Price</Text>
+                <Text style={[styles.pricingValue, { fontWeight: 'bold' }]}>${quoteData.motorSubtotal}</Text>
+              </View>
+              
+              {/* Accessories Section */}
+              {quoteData.accessoryBreakdown && quoteData.accessoryBreakdown.length > 0 && (
+                <>
+                  <View style={{ marginTop: 8, marginBottom: 4 }}>
+                    <Text style={[styles.pricingLabel, { fontWeight: 'bold' }]}>
+                      Accessories & Setup
+                    </Text>
+                  </View>
+                  {quoteData.accessoryBreakdown.map((item, idx) => (
+                    <View key={idx} style={styles.pricingRow}>
+                      <View style={{ flex: 1 }}>
+                        <Text style={styles.pricingLabel}>{item.name}</Text>
+                        {item.description && (
+                          <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
+                            {item.description}
+                          </Text>
+                        )}
+                      </View>
+                      <Text style={styles.pricingValue}>
+                        ${item.price.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                      </Text>
+                    </View>
+                  ))}
+                </>
+              )}
+              
+              {/* Trade-In Credit */}
+              {quoteData.tradeInValue && quoteData.tradeInValue > 0 && (
+                <View style={styles.pricingRow}>
+                  <Text style={styles.pricingLabel}>Trade-In Credit</Text>
+                  <Text style={[styles.pricingValue, styles.discountValue]}>
+                    -${quoteData.tradeInValue.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  </Text>
+                </View>
+              )}
+              
+              {/* Subtotal */}
               <View style={styles.pricingRow}>
                 <Text style={styles.pricingLabel}>Subtotal</Text>
                 <Text style={styles.pricingValue}>${quoteData.subtotal}</Text>
               </View>
               
+              {/* HST */}
               <View style={styles.pricingRow}>
                 <Text style={styles.pricingLabel}>HST (13%)</Text>
                 <Text style={styles.pricingValue}>${quoteData.tax}</Text>
               </View>
               
+              {/* Total */}
               <View style={styles.totalRow}>
                 <Text style={styles.totalLabel}>Total Price</Text>
                 <Text style={styles.totalValue}>${quoteData.total}</Text>

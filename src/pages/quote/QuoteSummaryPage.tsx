@@ -310,6 +310,8 @@ export default function QuoteSummaryPage() {
       const packageTotal = packageSubtotal + packageTax;
       
       // Transform quote data for React PDF
+      const motorSubtotal = motorMSRP - motorDiscount - promoSavings;
+      
       const pdfData = {
         quoteNumber,
         customerName: 'Valued Customer',
@@ -322,11 +324,15 @@ export default function QuoteSummaryPage() {
           coverageYears: selectedPkg.coverageYears,
           features: selectedPkg.features
         },
+        // Add accessory breakdown and trade-in
+        accessoryBreakdown: accessoryBreakdown,
+        tradeInValue: state.tradeInInfo?.estimatedValue || 0,
         // Use the selected package's pricing (already includes everything)
         pricing: {
           msrp: motorMSRP,
           discount: motorDiscount,
           promoValue: promoSavings,
+          motorSubtotal: motorSubtotal,
           subtotal: packageSubtotal,
           hst: packageTax,
           totalCashPrice: packageTotal,

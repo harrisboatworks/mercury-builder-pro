@@ -17,10 +17,17 @@ export interface ReactPdfQuoteData {
   msrp: string;
   dealerDiscount: string;
   promoSavings: string;
+  motorSubtotal: string;
   subtotal: string;
   tax: string;
   total: string;
   totalSavings: string;
+  accessoryBreakdown?: Array<{
+    name: string;
+    price: number;
+    description?: string;
+  }>;
+  tradeInValue?: number;
   selectedPackage?: {
     id: string;
     label: string;
@@ -41,11 +48,12 @@ export const transformQuoteData = (quoteData: any): ReactPdfQuoteData => {
   const msrp = quoteData.pricing?.msrp || quoteData.motor?.msrp || 0;
   const discount = quoteData.pricing?.discount || 0;
   const promoValue = quoteData.pricing?.promoValue || 0;
+  const motorSubtotal = quoteData.pricing?.motorSubtotal || (msrp - discount - promoValue);
   
-  // ALWAYS calculate motor-only subtotal for PDF display (ignore pre-calculated subtotal with accessories)
-  const motorSubtotal = msrp - discount - promoValue;
-  const hst = motorSubtotal * 0.13;
-  const total = motorSubtotal + hst;
+  // Use package totals (includes accessories)
+  const subtotal = quoteData.pricing?.subtotal || motorSubtotal;
+  const hst = quoteData.pricing?.hst || (subtotal * 0.13);
+  const total = quoteData.pricing?.totalCashPrice || (subtotal + hst);
   const savings = discount + promoValue;
 
   // Calculate actual financing based on total price with HST
@@ -69,10 +77,13 @@ export const transformQuoteData = (quoteData: any): ReactPdfQuoteData => {
     msrp: formatCurrency(msrp),
     dealerDiscount: formatCurrency(discount),
     promoSavings: formatCurrency(promoValue),
-    subtotal: formatCurrency(motorSubtotal),
+    motorSubtotal: formatCurrency(motorSubtotal),
+    subtotal: formatCurrency(subtotal),
     tax: formatCurrency(hst),
     total: formatCurrency(total),
     totalSavings: formatCurrency(savings),
+    accessoryBreakdown: quoteData.accessoryBreakdown || [],
+    tradeInValue: quoteData.tradeInValue || 0,
     selectedPackage: quoteData.selectedPackage,
     monthlyPayment: Math.round(financing.payment),
     financingTerm: financing.termMonths,

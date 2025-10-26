@@ -24,6 +24,7 @@ const TestPDFButton: React.FC = () => {
     msrp: '7,632.00',
     dealerDiscount: '546.00',
     promoSavings: '400.00',
+    motorSubtotal: '6,686.00',
     subtotal: '6,686.00',
     tax: '869.18',
     total: '7,555.18',
