@@ -769,6 +769,11 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           <Text style={styles.termsText}>
             • Installation and PDI included where specified • All prices in Canadian dollars
           </Text>
+          {quoteData.tradeInValue && quoteData.tradeInValue > 0 && (
+            <Text style={styles.termsText}>
+              • *Trade-in values are estimates and subject to inspection
+            </Text>
+          )}
           <Text style={styles.termsText}>
             • Financing options available subject to credit approval • Ask your sales representative for details
           </Text>

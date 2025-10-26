@@ -122,6 +122,11 @@ export function PricingTable({
       <div className="pt-4 border-t border-border/50">
         <div className="text-xs text-muted-foreground">
           All prices in Canadian dollars. Installation and PDI included.
+          {tradeInValue > 0 && (
+            <span className="block mt-1">
+              *Trade-in value subject to inspection.
+            </span>
+          )}
           {pricing.savings > 0 && (
             <span className="block mt-1 text-green-600 font-medium">
               Total savings of ${pricing.savings.toLocaleString()} vs MSRP
