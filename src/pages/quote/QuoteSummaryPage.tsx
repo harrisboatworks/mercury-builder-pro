@@ -327,6 +327,7 @@ export default function QuoteSummaryPage() {
         // Add accessory breakdown and trade-in
         accessoryBreakdown: accessoryBreakdown,
         tradeInValue: state.tradeInInfo?.estimatedValue || 0,
+        includesInstallation: state.purchasePath === 'installed',
         // Use the selected package's pricing (already includes everything)
         pricing: {
           msrp: motorMSRP,
@@ -465,6 +466,7 @@ export default function QuoteSummaryPage() {
               accessoryBreakdown={accessoryBreakdown}
               tradeInValue={state.tradeInInfo?.estimatedValue || 0}
               packageName={selectedPackageData.label}
+              includesInstallation={state.purchasePath === 'installed'}
             />
 
             {/* Legacy Components - Keep for compatibility */}

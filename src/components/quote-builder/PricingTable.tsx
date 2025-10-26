@@ -12,6 +12,7 @@ interface PricingTableProps {
   }>;
   tradeInValue?: number;
   packageName?: string;
+  includesInstallation?: boolean;
 }
 
 export function PricingTable({ 
@@ -19,7 +20,8 @@ export function PricingTable({
   motorName = "Mercury Motor",
   accessoryBreakdown = [],
   tradeInValue = 0,
-  packageName = "Accessories & Setup"
+  packageName = "Accessories & Setup",
+  includesInstallation = false
 }: PricingTableProps) {
   return (
     <Card className="p-6 space-y-1">
@@ -121,7 +123,7 @@ export function PricingTable({
       {/* Summary Note */}
       <div className="pt-4 border-t border-border/50">
         <div className="text-xs text-muted-foreground">
-          All prices in Canadian dollars. Installation and PDI included.
+          All prices in Canadian dollars.{includesInstallation && ' Installation and PDI included.'}
           {tradeInValue > 0 && (
             <span className="block mt-1">
               *Trade-in value subject to inspection.

@@ -37,6 +37,7 @@ export interface ReactPdfQuoteData {
   monthlyPayment?: number;
   financingTerm?: number;
   financingRate?: number;
+  includesInstallation?: boolean;
 }
 
 // Transform existing quote data to React PDF format
@@ -87,7 +88,8 @@ export const transformQuoteData = (quoteData: any): ReactPdfQuoteData => {
     selectedPackage: quoteData.selectedPackage,
     monthlyPayment: Math.round(financing.payment),
     financingTerm: financing.termMonths,
-    financingRate: financing.rate
+    financingRate: financing.rate,
+    includesInstallation: quoteData.includesInstallation || false
   };
 };
 

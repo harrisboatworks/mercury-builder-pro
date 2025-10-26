@@ -434,6 +434,7 @@ export interface QuotePDFProps {
     monthlyPayment?: number;
     financingTerm?: number;
     financingRate?: number;
+    includesInstallation?: boolean;
   };
 }
 
@@ -767,7 +768,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             • This quote is valid for 30 days from date of issue • Prices subject to change without notice after expiry
           </Text>
           <Text style={styles.termsText}>
-            • Installation and PDI included where specified • All prices in Canadian dollars
+            • {quoteData.includesInstallation ? 'Installation and PDI included • ' : ''}All prices in Canadian dollars
           </Text>
           {quoteData.tradeInValue && quoteData.tradeInValue > 0 && (
             <Text style={styles.termsText}>
