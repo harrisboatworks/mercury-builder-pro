@@ -28,6 +28,12 @@ export interface ReactPdfQuoteData {
     description?: string;
   }>;
   tradeInValue?: number;
+  tradeInInfo?: {
+    brand: string;
+    year: number;
+    horsepower: number;
+    model?: string;
+  };
   selectedPackage?: {
     id: string;
     label: string;
@@ -85,6 +91,7 @@ export const transformQuoteData = (quoteData: any): ReactPdfQuoteData => {
     totalSavings: formatCurrency(savings),
     accessoryBreakdown: quoteData.accessoryBreakdown || [],
     tradeInValue: quoteData.tradeInValue || 0,
+    tradeInInfo: quoteData.tradeInInfo,
     selectedPackage: quoteData.selectedPackage,
     monthlyPayment: Math.round(financing.payment),
     financingTerm: financing.termMonths,

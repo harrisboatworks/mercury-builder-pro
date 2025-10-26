@@ -327,6 +327,12 @@ export default function QuoteSummaryPage() {
         // Add accessory breakdown and trade-in
         accessoryBreakdown: accessoryBreakdown,
         tradeInValue: state.tradeInInfo?.estimatedValue || 0,
+        tradeInInfo: state.tradeInInfo?.hasTradeIn ? {
+          brand: state.tradeInInfo.brand,
+          year: state.tradeInInfo.year,
+          horsepower: state.tradeInInfo.horsepower,
+          model: state.tradeInInfo.model
+        } : undefined,
         includesInstallation: state.purchasePath === 'installed',
         // Use the selected package's pricing (already includes everything)
         pricing: {
@@ -465,6 +471,12 @@ export default function QuoteSummaryPage() {
               motorName={quoteData.motor?.model || 'Mercury Motor'}
               accessoryBreakdown={accessoryBreakdown}
               tradeInValue={state.tradeInInfo?.estimatedValue || 0}
+              tradeInInfo={state.tradeInInfo?.hasTradeIn ? {
+                brand: state.tradeInInfo.brand,
+                year: state.tradeInInfo.year,
+                horsepower: state.tradeInInfo.horsepower,
+                model: state.tradeInInfo.model
+              } : undefined}
               packageName={selectedPackageData.label}
               includesInstallation={state.purchasePath === 'installed'}
             />

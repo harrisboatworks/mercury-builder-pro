@@ -2,6 +2,16 @@ import { Card } from '@/components/ui/card';
 import { LineItemRow } from './LineItemRow';
 import { type PricingBreakdown } from '@/lib/quote-utils';
 
+function formatTradeInLabel(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
+  if (!tradeInInfo) return "Trade-in Credit";
+  
+  const { brand, year, horsepower, model } = tradeInInfo;
+  const parts = [year.toString(), brand, `${horsepower} HP`];
+  if (model) parts.push(model);
+  
+  return `Trade-in Credit (${parts.join(' ')})`;
+}
+
 interface PricingTableProps {
   pricing: PricingBreakdown;
   motorName?: string;
@@ -11,6 +21,12 @@ interface PricingTableProps {
     description?: string;
   }>;
   tradeInValue?: number;
+  tradeInInfo?: {
+    brand: string;
+    year: number;
+    horsepower: number;
+    model?: string;
+  };
   packageName?: string;
   includesInstallation?: boolean;
 }
@@ -20,6 +36,7 @@ export function PricingTable({
   motorName = "Mercury Motor",
   accessoryBreakdown = [],
   tradeInValue = 0,
+  tradeInInfo,
   packageName = "Accessories & Setup",
   includesInstallation = false
 }: PricingTableProps) {
@@ -82,7 +99,7 @@ export function PricingTable({
         {/* Trade-in Credit */}
         {tradeInValue > 0 && (
           <LineItemRow
-            label="Trade-in Credit"
+            label={formatTradeInLabel(tradeInInfo)}
             amount={tradeInValue}
             isDiscount
             className="pt-2"

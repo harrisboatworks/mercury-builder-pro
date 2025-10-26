@@ -2,6 +2,16 @@ import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 
+function formatTradeInLabel(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
+  if (!tradeInInfo) return "Trade-In Credit";
+  
+  const { brand, year, horsepower, model } = tradeInInfo;
+  const parts = [year.toString(), brand, `${horsepower} HP`];
+  if (model) parts.push(model);
+  
+  return `Trade-in Credit (${parts.join(' ')})`;
+}
+
 // Import logos
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
@@ -419,6 +429,12 @@ export interface QuotePDFProps {
       description?: string;
     }>;
     tradeInValue?: number;
+    tradeInInfo?: {
+      brand: string;
+      year: number;
+      horsepower: number;
+      model?: string;
+    };
     selectedPackage?: {
       id: string;
       label: string;
@@ -628,7 +644,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               {/* Trade-In Credit */}
               {quoteData.tradeInValue && quoteData.tradeInValue > 0 && (
                 <View style={styles.pricingRow}>
-                  <Text style={styles.pricingLabel}>Trade-In Credit</Text>
+                  <Text style={styles.pricingLabel}>{formatTradeInLabel(quoteData.tradeInInfo)}</Text>
                   <Text style={[styles.pricingValue, styles.discountValue]}>
                     -${quoteData.tradeInValue.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                   </Text>
