@@ -11,12 +11,6 @@ export default function PurchasePathPage() {
   const { state, dispatch, isStepAccessible, isNavigationBlocked } = useQuote();
 
   useEffect(() => {
-    // Initial redirect check for direct URL access (without timeout to avoid race conditions)
-    if (!state.isLoading && !isNavigationBlocked && !isStepAccessible(2)) {
-      navigate('/quote/motor-selection');
-      return;
-    }
-
     document.title = 'Choose Installation Option | Harris Boat Works';
     
     let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
@@ -26,7 +20,14 @@ export default function PurchasePathPage() {
       document.head.appendChild(desc);
     }
     desc.content = 'Choose between professional installation or loose motor purchase for your Mercury outboard.';
-  }, [state.isLoading, isStepAccessible, isNavigationBlocked, navigate]);
+  }, []);
+
+  // Separate effect for access control check - only runs on mount
+  useEffect(() => {
+    if (!state.isLoading && !isNavigationBlocked && !isStepAccessible(2)) {
+      navigate('/quote/motor-selection');
+    }
+  }, []);
 
   const handleStepComplete = (path: 'loose' | 'installed') => {
     dispatch({ type: 'SET_PURCHASE_PATH', payload: path });
