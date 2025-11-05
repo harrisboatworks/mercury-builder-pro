@@ -37,6 +37,7 @@ import FinanceCalculator from "./pages/FinanceCalculator";
 import StagingImageSizing from "./pages/StagingImageSizing";
 import StagingImageSizingV2 from "./pages/StagingImageSizingV2";
 import StagingImageSizingFinal from "./pages/StagingImageSizingFinal";
+import TestEmail from "./pages/TestEmail";
 // Removed obsolete test pricing imports
 // Removed more obsolete test imports
 import AdminConnectors from "./pages/AdminConnectors";
@@ -245,8 +246,9 @@ const App = () => (
                 {/* Removed obsolete test routes */}
                 <Route path="/quotes/new" element={<NewQuote />} />
                 <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
-                <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
-                <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
+          <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
+          <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
+          <Route path="/test-email" element={<TestEmail />} />
                 {/* Removed obsolete test pricing routes */}
                 
                 {/* Admin Import Routes */}
