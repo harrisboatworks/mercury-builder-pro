@@ -1255,12 +1255,65 @@ export type Database = {
         }
         Relationships: []
       }
+      saved_quotes: {
+        Row: {
+          access_count: number | null
+          converted_to_quote_id: string | null
+          created_at: string | null
+          email: string
+          expires_at: string
+          id: string
+          is_completed: boolean | null
+          last_accessed: string | null
+          quote_state: Json
+          resume_token: string
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          access_count?: number | null
+          converted_to_quote_id?: string | null
+          created_at?: string | null
+          email: string
+          expires_at?: string
+          id?: string
+          is_completed?: boolean | null
+          last_accessed?: string | null
+          quote_state: Json
+          resume_token: string
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          access_count?: number | null
+          converted_to_quote_id?: string | null
+          created_at?: string | null
+          email?: string
+          expires_at?: string
+          id?: string
+          is_completed?: boolean | null
+          last_accessed?: string | null
+          quote_state?: Json
+          resume_token?: string
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "saved_quotes_converted_to_quote_id_fkey"
+            columns: ["converted_to_quote_id"]
+            isOneToOne: false
+            referencedRelation: "quotes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       security_audit_log: {
         Row: {
           action: string
           created_at: string
           id: string
-          ip_address: unknown | null
+          ip_address: unknown
           record_id: string | null
           table_name: string
           user_agent: string | null
@@ -1270,7 +1323,7 @@ export type Database = {
           action: string
           created_at?: string
           id?: string
-          ip_address?: unknown | null
+          ip_address?: unknown
           record_id?: string | null
           table_name: string
           user_agent?: string | null
@@ -1280,7 +1333,7 @@ export type Database = {
           action?: string
           created_at?: string
           id?: string
-          ip_address?: unknown | null
+          ip_address?: unknown
           record_id?: string | null
           table_name?: string
           user_agent?: string | null
@@ -1393,7 +1446,7 @@ export type Database = {
         Row: {
           created_at: string
           id: string
-          ip_address: unknown | null
+          ip_address: unknown
           is_active: boolean
           last_activity: string
           user_agent: string | null
@@ -1402,7 +1455,7 @@ export type Database = {
         Insert: {
           created_at?: string
           id?: string
-          ip_address?: unknown | null
+          ip_address?: unknown
           is_active?: boolean
           last_activity?: string
           user_agent?: string | null
@@ -1411,7 +1464,7 @@ export type Database = {
         Update: {
           created_at?: string
           id?: string
-          ip_address?: unknown | null
+          ip_address?: unknown
           is_active?: boolean
           last_activity?: string
           user_agent?: string | null
@@ -1538,7 +1591,7 @@ export type Database = {
     }
     Functions: {
       audit_orphaned_customer_data: {
-        Args: Record<PropertyKey, never>
+        Args: never
         Returns: {
           record_count: number
           table_name: string
@@ -1553,45 +1606,36 @@ export type Database = {
         }
         Returns: boolean
       }
-      cleanup_expired_sessions: {
-        Args: Record<PropertyKey, never>
-        Returns: number
-      }
+      cleanup_expired_sessions: { Args: never; Returns: number }
       cleanup_motor_duplicates_by_display: {
-        Args: Record<PropertyKey, never>
+        Args: never
         Returns: {
           cleanup_details: Json
           total_duplicates_removed: number
         }[]
       }
       fix_auto_generated_model_numbers_comprehensive: {
-        Args: Record<PropertyKey, never>
+        Args: never
         Returns: {
           details: Json
           updated_count: number
         }[]
       }
       fix_auto_generated_model_numbers_safe: {
-        Args: Record<PropertyKey, never>
+        Args: never
         Returns: {
           details: Json
           updated_count: number
         }[]
       }
-      format_horsepower: {
-        Args: { hp: number }
-        Returns: string
-      }
+      format_horsepower: { Args: { hp: number }; Returns: string }
       format_motor_display_name: {
         Args: { model_name: string }
         Returns: string
       }
-      generate_session_id: {
-        Args: Record<PropertyKey, never>
-        Returns: string
-      }
+      generate_session_id: { Args: never; Returns: string }
       get_cron_job_status: {
-        Args: Record<PropertyKey, never>
+        Args: never
         Returns: {
           active: boolean
           jobname: string
@@ -1600,7 +1644,7 @@ export type Database = {
         }[]
       }
       get_duplicate_brochure_keys: {
-        Args: Record<PropertyKey, never>
+        Args: never
         Returns: {
           count: number
           model_key: string
@@ -1636,10 +1680,7 @@ export type Database = {
         }
         Returns: string
       }
-      update_brochure_models_bulk: {
-        Args: { p_rows: Json }
-        Returns: number
-      }
+      update_brochure_models_bulk: { Args: { p_rows: Json }; Returns: number }
       update_brochure_models_bulk_v2: {
         Args: { p_rows: Json }
         Returns: number
