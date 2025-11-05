@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
@@ -22,6 +22,10 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
 import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
+
+// Package warranty year constants (module-level to prevent recreation on every render)
+const COMPLETE_TARGET_YEARS = 7; // Complete: 7 years total
+const PREMIUM_TARGET_YEARS = 8;  // Premium: 8 years max
 
 export default function QuoteSummaryPage() {
   const navigate = useNavigate();
@@ -98,7 +102,7 @@ export default function QuoteSummaryPage() {
     desc.content = 'Review your complete Mercury outboard motor quote with pricing, financing options, and bonus offers.';
 
     return () => clearTimeout(timeoutId);
-  }, [isMounted, state.isLoading, isStepAccessible, isNavigationBlocked, navigate, state.motor, state.purchasePath, state.boatInfo, state.hasTradein, state.tradeInInfo]);
+  }, [isMounted, state.isLoading, isNavigationBlocked, navigate, state.motor, state.purchasePath, state.boatInfo, state.hasTradein, state.tradeInInfo]);
 
   // Show loading state while component mounts
   if (!isMounted) {
@@ -195,19 +199,17 @@ export default function QuoteSummaryPage() {
   // Get financing rate
   const financingRate = promo?.rate || 7.99;
 
-  // Coverage years calculation (no math beyond reading promo years)
+  // Coverage years calculation (memoized to prevent infinite loops)
   const baseYears = 3;
   const promoYears = getTotalWarrantyBonusYears?.() ?? 0;
-  const currentCoverageYears = Math.min(baseYears + promoYears, 8);
+  const currentCoverageYears = useMemo(() => {
+    return Math.min(baseYears + promoYears, 8);
+  }, [promoYears]);
   const maxCoverageYears = 8;
 
   // Promo warranty years for sticky summary
   const warrantyPromos = getWarrantyPromotions?.() ?? [];
   const promoWarrantyYears = warrantyPromos[0]?.warranty_extra_years ?? 0;
-
-  // Package warranty years (coverage included in each tier)
-  const completeTargetYears = 7; // Complete: 7 years total
-  const premiumTargetYears = 8; // Premium: 8 years max
 
   // Fetch real warranty extension costs from database
   useEffect(() => {
@@ -217,13 +219,13 @@ export default function QuoteSummaryPage() {
       const completeCost = await calculateWarrantyExtensionCost(
         motorHP,
         currentCoverageYears,
-        completeTargetYears
+        COMPLETE_TARGET_YEARS
       );
       
       const premiumCost = await calculateWarrantyExtensionCost(
         motorHP,
         currentCoverageYears,
-        premiumTargetYears
+        PREMIUM_TARGET_YEARS
       );
       
       setCompleteWarrantyCost(completeCost);
@@ -233,7 +235,7 @@ export default function QuoteSummaryPage() {
     if (motorHP > 0) {
       fetchWarrantyCosts();
     }
-  }, [motorHP, currentCoverageYears, completeTargetYears, premiumTargetYears]);
+  }, [motorHP, currentCoverageYears]);
 
   // Calculate base subtotal (motor + base accessories, NO battery)
   const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
@@ -262,13 +264,13 @@ export default function QuoteSummaryPage() {
       features: [
         "Everything in Essential",
         ...(isManualStart ? [] : ["Marine starting battery ($180 value)"]), 
-        `Extended to ${completeTargetYears} years total coverage`,
-        completeWarrantyCost > 0 ? `Warranty extension: $${completeWarrantyCost}` : `Already includes ${completeTargetYears}yr coverage`,
+        `Extended to ${COMPLETE_TARGET_YEARS} years total coverage`,
+        completeWarrantyCost > 0 ? `Warranty extension: $${completeWarrantyCost}` : `Already includes ${COMPLETE_TARGET_YEARS}yr coverage`,
         "Priority installation"
       ].filter(Boolean),
       recommended: true,
-      coverageYears: completeTargetYears,
-      targetWarrantyYears: completeTargetYears
+      coverageYears: COMPLETE_TARGET_YEARS,
+      targetWarrantyYears: COMPLETE_TARGET_YEARS
     },
     { 
       id: "best", 
@@ -277,14 +279,14 @@ export default function QuoteSummaryPage() {
       savings: totals.savings, 
       features: [
         "Everything in Complete",
-        `Maximum ${premiumTargetYears} years total coverage`,
-        premiumWarrantyCost > 0 ? `Warranty extension: $${premiumWarrantyCost}` : `Already includes ${premiumTargetYears}yr coverage`,
+        `Maximum ${PREMIUM_TARGET_YEARS} years total coverage`,
+        premiumWarrantyCost > 0 ? `Warranty extension: $${premiumWarrantyCost}` : `Already includes ${PREMIUM_TARGET_YEARS}yr coverage`,
         !includesProp ? "Premium aluminum 3-blade propeller ($300 value)" : null,
         canAddFuelTank ? "12L external fuel tank & hose ($199 value)" : null,
         "White-glove installation"
       ].filter(Boolean),
-      coverageYears: premiumTargetYears,
-      targetWarrantyYears: premiumTargetYears
+      coverageYears: PREMIUM_TARGET_YEARS,
+      targetWarrantyYears: PREMIUM_TARGET_YEARS
     },
   ];
 
