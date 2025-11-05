@@ -236,17 +236,84 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       }
 
       // 2. Send quote email to customer
-      console.log('🔍 [NOTIFICATIONS] Step 2: Sending quote email to customer...');
+      console.log('🔍 [NOTIFICATIONS] Step 2: Preparing quote email...');
       try {
         const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
         console.log('🔍 [NOTIFICATIONS] Quote number:', quoteNumber);
         
+        // 2.1. Generate and upload PDF before sending email
+        let pdfUrl: string | null = null;
+        console.log('🔍 [PDF] Generating PDF quote...');
+        try {
+          // Import PDF generation utilities
+          const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
+          
+          // Prepare complete quote data for PDF
+          const pdfQuoteData = {
+            quoteNumber: quoteNumber,
+            customerName: sanitizedContactInfo.name,
+            customerEmail: sanitizedContactInfo.email,
+            customerPhone: sanitizedContactInfo.phone,
+            motor: quoteData.motor,
+            pricing: {
+              msrp: data.msrp,
+              discount: data.discount,
+              promoValue: data.promoValue,
+              motorSubtotal: motorPrice,
+              subtotal: subtotalAfterTrade,
+              hst: hst,
+              totalCashPrice: totalCashPrice
+            },
+            financing: quoteData.financing,
+            tradeInValue: hasTradeIn ? tradeInValue : undefined,
+            tradeInInfo: hasTradeIn ? quoteData.boatInfo?.tradeIn : undefined
+          };
+          
+          console.log('🔍 [PDF] Generating PDF blob...');
+          const pdfBlob = await generatePDFBlob(pdfQuoteData);
+          console.log('✅ [PDF] PDF generated, size:', pdfBlob.size, 'bytes');
+          
+          // Upload to Supabase Storage
+          const fileName = `quote-${quoteNumber}-${Date.now()}.pdf`;
+          const filePath = `${quoteId}/${fileName}`;
+          
+          console.log('🔍 [PDF] Uploading to Supabase Storage:', filePath);
+          const { data: uploadData, error: uploadError } = await supabase.storage
+            .from('spec-sheets')
+            .upload(filePath, pdfBlob, {
+              contentType: 'application/pdf',
+              upsert: false
+            });
+          
+          if (uploadError) {
+            console.error('❌ [PDF] Upload error:', uploadError);
+            throw uploadError;
+          }
+          
+          // Get public URL
+          const { data: { publicUrl } } = supabase.storage
+            .from('spec-sheets')
+            .getPublicUrl(filePath);
+          
+          console.log('✅ [PDF] PDF uploaded successfully. Public URL:', publicUrl);
+          pdfUrl = publicUrl;
+          
+        } catch (pdfError) {
+          console.error('❌ [PDF] PDF generation/upload error:', pdfError);
+          console.error('❌ [PDF] Error stack:', pdfError instanceof Error ? pdfError.stack : 'No stack trace');
+          // Don't fail the submission if PDF fails, but log it
+          pdfUrl = null;
+        }
+        
+        // 2.2. Send email with PDF attachment
+        console.log('🔍 [NOTIFICATIONS] Sending quote email with PDF...');
         const emailPayload = {
           customerEmail: sanitizedContactInfo.email,
           customerName: sanitizedContactInfo.name,
           quoteNumber: quoteNumber,
           motorModel: quoteData.motor?.model || 'Mercury Motor',
           totalPrice: Math.round(totalCashPrice),
+          pdfUrl: pdfUrl,
           emailType: 'quote_delivery'
         };
         console.log('🔍 [NOTIFICATIONS] Email payload:', emailPayload);

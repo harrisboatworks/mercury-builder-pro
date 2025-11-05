@@ -68,7 +68,10 @@ function generateQuoteDeliveryEmail(data: QuoteEmailRequest): string {
             </div>
             
             ${data.pdfUrl ? `
-              <p>Your detailed quote is attached as a PDF, or you can <a href="${data.pdfUrl}" class="btn">View Your Quote Online</a></p>
+              <p style="margin: 20px 0;">Your detailed quote is attached to this email as a PDF. You can also view it online:</p>
+              <p style="text-align: center; margin: 24px 0;">
+                <a href="${data.pdfUrl}" class="btn" style="background: #1e40af; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: 600;">Download Quote PDF</a>
+              </p>
             ` : ''}
             
             <p><strong>What's Next?</strong></p>
@@ -222,14 +225,44 @@ serve(async (req) => {
       }
     }
 
-    // Send email via Resend with Reply-To header
-    const emailResponse = await resend.emails.send({
+    // Prepare email options
+    const emailOptions: any = {
       from: 'Harris Boat Works - Mercury Marine <noreply@hbwsales.ca>',
       to: [emailData.customerEmail],
-      replyTo: 'info@harrisboatworks.ca', // Customer replies go to your business email
+      replyTo: 'info@harrisboatworks.ca',
       subject: subject,
       html: htmlContent,
-    });
+    };
+
+    // If PDF URL is provided, fetch and attach it
+    if (emailData.pdfUrl) {
+      try {
+        console.log('Fetching PDF from:', emailData.pdfUrl);
+        const pdfResponse = await fetch(emailData.pdfUrl);
+        
+        if (!pdfResponse.ok) {
+          throw new Error(`Failed to fetch PDF: ${pdfResponse.statusText}`);
+        }
+        
+        const pdfBuffer = await pdfResponse.arrayBuffer();
+        const pdfBase64 = btoa(
+          new Uint8Array(pdfBuffer).reduce((data, byte) => data + String.fromCharCode(byte), '')
+        );
+        
+        emailOptions.attachments = [{
+          filename: `Quote-${emailData.quoteNumber}.pdf`,
+          content: pdfBase64,
+        }];
+        
+        console.log('PDF attachment prepared, size:', pdfBuffer.byteLength, 'bytes');
+      } catch (pdfError) {
+        console.error('Error fetching/attaching PDF:', pdfError);
+        // Continue sending email without attachment
+      }
+    }
+
+    // Send email via Resend
+    const emailResponse = await resend.emails.send(emailOptions);
 
     console.log('Email sent successfully:', emailResponse);
 
