@@ -29,32 +29,44 @@ export default function PurchasePathPage() {
     }
   }, []);
 
+  // Navigate after purchase path is set (state has been committed)
+  useEffect(() => {
+    // Only proceed if we have a motor, purchase path is set, and step 2 is complete
+    if (!state.motor || !state.purchasePath || !state.completedSteps.includes(2)) {
+      return;
+    }
+
+    // Small delay to ensure state is fully committed and navigation isn't blocked
+    const navigationTimer = setTimeout(() => {
+      if (state.purchasePath === 'installed') {
+        // Check if it's a tiller motor
+        const model = (state.motor?.model || '').toUpperCase();
+        const hp = typeof state.motor?.hp === 'string' ? parseInt(state.motor.hp, 10) : state.motor?.hp;
+        const isTiller = model.includes('TILLER') || (hp && hp <= 30 && (model.includes('EH') || model.includes('MH') || /\bH\b/.test(model)));
+        
+        if (isTiller) {
+          navigate('/quote/trade-in');
+        } else {
+          navigate('/quote/boat-info');
+        }
+      } else {
+        // For loose path
+        const isSmallTillerMotor = state.motor && state.motor.hp <= 9.9 && state.motor.type?.toLowerCase().includes('tiller');
+        if (isSmallTillerMotor) {
+          navigate('/quote/fuel-tank');
+        } else {
+          navigate('/quote/trade-in');
+        }
+      }
+    }, 150);
+
+    return () => clearTimeout(navigationTimer);
+  }, [state.purchasePath, state.completedSteps, state.motor, navigate]);
+
   const handleStepComplete = (path: 'loose' | 'installed') => {
     dispatch({ type: 'SET_PURCHASE_PATH', payload: path });
     dispatch({ type: 'COMPLETE_STEP', payload: 2 });
-    
-    if (path === 'installed') {
-      // Check if it's a tiller motor (same logic as PurchasePath.tsx)
-      const model = (state.motor?.model || '').toUpperCase();
-      const hp = typeof state.motor?.hp === 'string' ? parseInt(state.motor.hp, 10) : state.motor?.hp;
-      const isTiller = model.includes('TILLER') || (hp && hp <= 30 && (model.includes('EH') || model.includes('MH') || /\bH\b/.test(model)));
-      
-      if (isTiller) {
-        // Tiller motors don't need installation configuration, skip to trade-in
-        navigate('/quote/trade-in');
-      } else {
-        // Non-tiller motors need installation configuration
-        navigate('/quote/boat-info');
-      }
-    } else {
-      // For loose path, check if it's a small tiller motor
-      const isSmallTillerMotor = state.motor && state.motor.hp <= 9.9 && state.motor.type?.toLowerCase().includes('tiller');
-      if (isSmallTillerMotor) {
-        navigate('/quote/fuel-tank');
-      } else {
-        navigate('/quote/trade-in');
-      }
-    }
+    // Navigation handled by useEffect above
   };
 
   const handleBack = () => {
