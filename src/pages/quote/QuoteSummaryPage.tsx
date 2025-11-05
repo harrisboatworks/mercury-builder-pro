@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo, useRef } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
@@ -38,7 +38,6 @@ export default function QuoteSummaryPage() {
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
   const [isMounted, setIsMounted] = useState(false);
-  const hasCheckedAccessibility = useRef(false);
 
   // Ensure minimum mount time before running accessibility checks
   useEffect(() => {
@@ -51,66 +50,8 @@ export default function QuoteSummaryPage() {
     return () => clearTimeout(mountTimer);
   }, []);
 
+  // Set document title and meta description
   useEffect(() => {
-    // Don't run checks until component is properly mounted
-    if (!isMounted) {
-      console.log('⏳ QuoteSummaryPage: Waiting for mount to complete...');
-      return;
-    }
-
-    // Only run accessibility check once to avoid race conditions
-    if (hasCheckedAccessibility.current) {
-      console.log('✅ QuoteSummaryPage: Accessibility check already completed, skipping');
-      return;
-    }
-
-    let retryCount = 0;
-    const MAX_RETRIES = 3;
-    
-    // Add delay and retry mechanism to prevent navigation during state updates
-    const checkAccessibility = () => {
-      // Check if state is fully ready before checking accessibility
-      if (state.hasTradein && !state.tradeInInfo) {
-        console.log('⏳ QuoteSummaryPage: State not ready yet (trade-in data missing), retrying...');
-        setTimeout(checkAccessibility, 300);
-        return;
-      }
-      
-      const isAccessible = isStepAccessible(6);
-      
-      if (!state.isLoading && !isNavigationBlocked && !isAccessible) {
-        retryCount++;
-        console.log(`❌ QuoteSummaryPage: Accessibility check failed (attempt ${retryCount}/${MAX_RETRIES})`, {
-          hasMotor: !!state.motor,
-          motorModel: state.motor?.model,
-          hasPurchasePath: !!state.purchasePath,
-          purchasePath: state.purchasePath,
-          hasBoatInfo: !!state.boatInfo,
-          boatType: state.boatInfo?.type,
-          hasTradein: state.hasTradein,
-          hasTradeInInfo: !!state.tradeInInfo,
-          stateIsLoading: state.isLoading
-        });
-        
-        // Only redirect after multiple failed checks to avoid race conditions
-        if (retryCount >= MAX_RETRIES) {
-          console.log('🔙 QuoteSummaryPage: Redirecting to motor selection after failed accessibility checks');
-          hasCheckedAccessibility.current = true; // Mark as checked before redirect
-          navigate('/quote/motor-selection');
-          return;
-        }
-        
-        // Retry after a short delay
-        setTimeout(checkAccessibility, 300);
-      } else {
-        console.log('✅ QuoteSummaryPage: Accessibility check passed', { isAccessible });
-        hasCheckedAccessibility.current = true; // Mark as checked after success
-      }
-    };
-
-    // Increased delay to ensure all state updates have settled and localStorage has loaded
-    const timeoutId = setTimeout(checkAccessibility, 1500);
-
     document.title = 'Your Mercury Motor Quote | Harris Boat Works';
     
     let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
@@ -120,9 +61,7 @@ export default function QuoteSummaryPage() {
       document.head.appendChild(desc);
     }
     desc.content = 'Review your complete Mercury outboard motor quote with pricing, financing options, and bonus offers.';
-
-    return () => clearTimeout(timeoutId);
-  }, [isMounted]);
+  }, []);
 
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });
