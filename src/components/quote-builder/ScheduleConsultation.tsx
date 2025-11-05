@@ -172,9 +172,96 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
       if (error) throw error;
 
+      // Get the inserted record with proper typing
+      const { data: insertedData } = await supabase
+        .from('customer_quotes')
+        .select('id')
+        .eq('customer_email', sanitizedContactInfo.email)
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .single();
+
+      const quoteId = insertedData?.id;
+
+      // 1. Trigger hot lead webhooks (score is 75, >= 70 threshold)
+      try {
+        const { triggerHotLeadWebhooks } = await import('@/lib/webhooks');
+        const { triggerHotLeadSMS } = await import('@/lib/leadCapture');
+        
+        const leadWebhookData = {
+          id: quoteId,
+          customer_name: sanitizedContactInfo.name,
+          customer_email: sanitizedContactInfo.email,
+          customer_phone: sanitizedContactInfo.phone,
+          lead_score: 75,
+          final_price: Math.round(totalCashPrice),
+          motor_model_id: quoteData.motor?.model || 'Mercury Motor',
+          created_at: new Date().toISOString(),
+          lead_source: 'consultation',
+          lead_status: 'scheduled'
+        };
+        
+        await triggerHotLeadWebhooks(leadWebhookData);
+        console.log('✅ Hot lead webhooks triggered');
+        
+        // Send SMS to admin about hot lead
+        await triggerHotLeadSMS({
+          customerName: sanitizedContactInfo.name,
+          leadScore: 75,
+          finalPrice: Math.round(totalCashPrice),
+          motorModel: quoteData.motor?.model || 'Mercury Motor',
+          phoneNumber: sanitizedContactInfo.phone,
+        });
+        console.log('✅ Hot lead SMS sent to admin');
+      } catch (error) {
+        console.error('Hot lead notification error:', error);
+        // Don't fail the submission if notifications fail
+      }
+
+      // 2. Send quote email to customer
+      try {
+        const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+        
+        const { error: emailError } = await supabase.functions.invoke('send-quote-email', {
+          body: {
+            customerEmail: sanitizedContactInfo.email,
+            customerName: sanitizedContactInfo.name,
+            quoteNumber: quoteNumber,
+            motorModel: quoteData.motor?.model || 'Mercury Motor',
+            totalPrice: Math.round(totalCashPrice),
+            emailType: 'quote_delivery'
+          }
+        });
+        
+        if (emailError) throw emailError;
+        console.log('✅ Quote email sent to customer');
+      } catch (error) {
+        console.error('Quote email error:', error);
+        // Don't fail the submission if email fails
+      }
+
+      // 3. Send SMS confirmation to customer (if they selected text as contact method)
+      if (sanitizedContactInfo.contactMethod === 'text') {
+        try {
+          const { error: smsError } = await supabase.functions.invoke('send-sms', {
+            body: {
+              to: sanitizedContactInfo.phone,
+              message: `Hi ${sanitizedContactInfo.name}! Thank you for requesting a Mercury motor quote. We've received your information and will contact you soon to discuss your ${quoteData.motor?.model} quote. - Harris Boat Works`,
+              messageType: 'quote_confirmation'
+            }
+          });
+          
+          if (smsError) throw smsError;
+          console.log('✅ SMS confirmation sent to customer');
+        } catch (error) {
+          console.error('Customer SMS error:', error);
+          // Don't fail the submission if SMS fails
+        }
+      }
+
       toast({
         title: "✅ Quote Submitted Successfully!",
-        description: `Thank you for your interest in the Mercury ${quoteData.motor?.model}. We'll contact you as soon as possible to review your quote details, schedule your boat inspection, discuss installation requirements, and finalize your trade-in value (if applicable). You should receive an email with your quote PDF shortly.`,
+        description: `Thank you for your interest in the Mercury ${quoteData.motor?.model}. We'll contact you via ${contactInfo.contactMethod} to review your quote details. Check your email for your quote confirmation.`,
       });
       
     } catch (error) {
