@@ -172,8 +172,11 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
       if (error) throw error;
 
+      console.log('🔍 [NOTIFICATIONS] Starting notification process...');
+
       // Get the inserted record with proper typing
-      const { data: insertedData } = await supabase
+      console.log('🔍 [NOTIFICATIONS] Fetching inserted quote ID...');
+      const { data: insertedData, error: fetchError } = await supabase
         .from('customer_quotes')
         .select('id')
         .eq('customer_email', sanitizedContactInfo.email)
@@ -181,12 +184,20 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         .limit(1)
         .single();
 
+      if (fetchError) {
+        console.error('❌ [NOTIFICATIONS] Failed to fetch quote ID:', fetchError);
+      }
+
       const quoteId = insertedData?.id;
+      console.log('🔍 [NOTIFICATIONS] Quote ID:', quoteId);
 
       // 1. Trigger hot lead webhooks (score is 75, >= 70 threshold)
+      console.log('🔍 [NOTIFICATIONS] Step 1: Triggering hot lead webhooks...');
       try {
+        console.log('🔍 [NOTIFICATIONS] Importing webhook functions...');
         const { triggerHotLeadWebhooks } = await import('@/lib/webhooks');
         const { triggerHotLeadSMS } = await import('@/lib/leadCapture');
+        console.log('✅ [NOTIFICATIONS] Webhook functions imported successfully');
         
         const leadWebhookData = {
           id: quoteId,
@@ -201,63 +212,94 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           lead_status: 'scheduled'
         };
         
-        await triggerHotLeadWebhooks(leadWebhookData);
-        console.log('✅ Hot lead webhooks triggered');
+        console.log('🔍 [NOTIFICATIONS] Lead webhook data:', leadWebhookData);
+        console.log('🔍 [NOTIFICATIONS] Calling triggerHotLeadWebhooks...');
+        const webhookResult = await triggerHotLeadWebhooks(leadWebhookData);
+        console.log('✅ [NOTIFICATIONS] Hot lead webhooks triggered. Result:', webhookResult);
         
         // Send SMS to admin about hot lead
-        await triggerHotLeadSMS({
+        console.log('🔍 [NOTIFICATIONS] Calling triggerHotLeadSMS...');
+        const smsData = {
           customerName: sanitizedContactInfo.name,
           leadScore: 75,
           finalPrice: Math.round(totalCashPrice),
           motorModel: quoteData.motor?.model || 'Mercury Motor',
           phoneNumber: sanitizedContactInfo.phone,
-        });
-        console.log('✅ Hot lead SMS sent to admin');
+        };
+        console.log('🔍 [NOTIFICATIONS] SMS data:', smsData);
+        const smsResult = await triggerHotLeadSMS(smsData);
+        console.log('✅ [NOTIFICATIONS] Hot lead SMS sent to admin. Result:', smsResult);
       } catch (error) {
-        console.error('Hot lead notification error:', error);
-        // Don't fail the submission if notifications fail
+        console.error('❌ [NOTIFICATIONS] Hot lead notification error:', error);
+        console.error('❌ [NOTIFICATIONS] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+        console.error('❌ [NOTIFICATIONS] Error message:', error instanceof Error ? error.message : String(error));
       }
 
       // 2. Send quote email to customer
+      console.log('🔍 [NOTIFICATIONS] Step 2: Sending quote email to customer...');
       try {
         const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+        console.log('🔍 [NOTIFICATIONS] Quote number:', quoteNumber);
         
-        const { error: emailError } = await supabase.functions.invoke('send-quote-email', {
-          body: {
-            customerEmail: sanitizedContactInfo.email,
-            customerName: sanitizedContactInfo.name,
-            quoteNumber: quoteNumber,
-            motorModel: quoteData.motor?.model || 'Mercury Motor',
-            totalPrice: Math.round(totalCashPrice),
-            emailType: 'quote_delivery'
-          }
+        const emailPayload = {
+          customerEmail: sanitizedContactInfo.email,
+          customerName: sanitizedContactInfo.name,
+          quoteNumber: quoteNumber,
+          motorModel: quoteData.motor?.model || 'Mercury Motor',
+          totalPrice: Math.round(totalCashPrice),
+          emailType: 'quote_delivery'
+        };
+        console.log('🔍 [NOTIFICATIONS] Email payload:', emailPayload);
+        console.log('🔍 [NOTIFICATIONS] Invoking send-quote-email edge function...');
+        
+        const { data: emailData, error: emailError } = await supabase.functions.invoke('send-quote-email', {
+          body: emailPayload
         });
         
-        if (emailError) throw emailError;
-        console.log('✅ Quote email sent to customer');
+        if (emailError) {
+          console.error('❌ [NOTIFICATIONS] Email error object:', emailError);
+          throw emailError;
+        }
+        console.log('✅ [NOTIFICATIONS] Quote email sent successfully. Response:', emailData);
       } catch (error) {
-        console.error('Quote email error:', error);
-        // Don't fail the submission if email fails
+        console.error('❌ [NOTIFICATIONS] Quote email error:', error);
+        console.error('❌ [NOTIFICATIONS] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+        console.error('❌ [NOTIFICATIONS] Error message:', error instanceof Error ? error.message : String(error));
       }
 
       // 3. Send SMS confirmation to customer (if they selected text as contact method)
+      console.log('🔍 [NOTIFICATIONS] Step 3: Checking SMS confirmation...');
+      console.log('🔍 [NOTIFICATIONS] Contact method:', sanitizedContactInfo.contactMethod);
       if (sanitizedContactInfo.contactMethod === 'text') {
+        console.log('🔍 [NOTIFICATIONS] Sending SMS to customer...');
         try {
-          const { error: smsError } = await supabase.functions.invoke('send-sms', {
-            body: {
-              to: sanitizedContactInfo.phone,
-              message: `Hi ${sanitizedContactInfo.name}! Thank you for requesting a Mercury motor quote. We've received your information and will contact you soon to discuss your ${quoteData.motor?.model} quote. - Harris Boat Works`,
-              messageType: 'quote_confirmation'
-            }
+          const smsPayload = {
+            to: sanitizedContactInfo.phone,
+            message: `Hi ${sanitizedContactInfo.name}! Thank you for requesting a Mercury motor quote. We've received your information and will contact you soon to discuss your ${quoteData.motor?.model} quote. - Harris Boat Works`,
+            messageType: 'quote_confirmation'
+          };
+          console.log('🔍 [NOTIFICATIONS] SMS payload:', smsPayload);
+          console.log('🔍 [NOTIFICATIONS] Invoking send-sms edge function...');
+          
+          const { data: smsData, error: smsError } = await supabase.functions.invoke('send-sms', {
+            body: smsPayload
           });
           
-          if (smsError) throw smsError;
-          console.log('✅ SMS confirmation sent to customer');
+          if (smsError) {
+            console.error('❌ [NOTIFICATIONS] SMS error object:', smsError);
+            throw smsError;
+          }
+          console.log('✅ [NOTIFICATIONS] SMS confirmation sent to customer. Response:', smsData);
         } catch (error) {
-          console.error('Customer SMS error:', error);
-          // Don't fail the submission if SMS fails
+          console.error('❌ [NOTIFICATIONS] Customer SMS error:', error);
+          console.error('❌ [NOTIFICATIONS] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+          console.error('❌ [NOTIFICATIONS] Error message:', error instanceof Error ? error.message : String(error));
         }
+      } else {
+        console.log('ℹ️ [NOTIFICATIONS] Skipping customer SMS - contact method is not text');
       }
+
+      console.log('✅ [NOTIFICATIONS] Notification process complete');
 
       toast({
         title: "✅ Quote Submitted Successfully!",
