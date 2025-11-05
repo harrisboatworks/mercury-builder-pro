@@ -2,6 +2,7 @@
 import { useQuote } from "@/contexts/QuoteContext";
 import { useActivePromotions } from "@/hooks/useActivePromotions";
 import { money } from "@/lib/money";
+import { calculateMonthlyPayment } from "@/lib/finance";
 
 const BASE_YEARS = 3;
 const MAX_YEARS = 8;
@@ -24,7 +25,7 @@ export default function CoverageComparisonTooltip() {
     ];
 
   // Find a target for 8y (or the highest available > current), to power the CTA
-  const currentTotal = Math.min(BASE_YEARS + promo, MAX_YEARS);
+  const currentTotal = Math.min(selectedTotal, MAX_YEARS);
   const maxTarget =
     rawOpts.find(o => o.years === MAX_YEARS) ??
     rawOpts
@@ -46,7 +47,11 @@ export default function CoverageComparisonTooltip() {
     });
   };
 
-  const monthlyDelta = maxTarget?.monthly ?? 0;
+  // Calculate monthly delta between current and target warranty costs
+  const currentOption = rawOpts.find(o => o.years === currentTotal);
+  const currentMonthly = currentOption ? calculateMonthlyPayment(currentOption.price).payment : 0;
+  const targetMonthly = maxTarget ? calculateMonthlyPayment(maxTarget.price).payment : 0;
+  const monthlyDelta = Math.max(0, targetMonthly - currentMonthly);
 
   return (
     <div className="inline-flex items-center gap-2">
