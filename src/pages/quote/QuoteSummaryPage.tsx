@@ -104,20 +104,6 @@ export default function QuoteSummaryPage() {
     return () => clearTimeout(timeoutId);
   }, [isMounted, state.isLoading, isNavigationBlocked, navigate, state.motor, state.purchasePath, state.boatInfo, state.hasTradein, state.tradeInInfo]);
 
-  // Show loading state while component mounts
-  if (!isMounted) {
-    return (
-      <QuoteLayout>
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="text-center space-y-4">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
-            <p className="text-muted-foreground">Loading your quote...</p>
-          </div>
-        </div>
-      </QuoteLayout>
-    );
-  }
-
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });
     navigate('/quote/schedule');
@@ -491,12 +477,20 @@ export default function QuoteSummaryPage() {
 
   return (
     <QuoteLayout>
-      <div className="max-w-7xl mx-auto space-y-8">
-        <div className="grid lg:grid-cols-[1fr_360px] gap-8">
-          {/* Main Content - Left Column */}
-          <div className="space-y-6">
-            {/* Motor Header with integrated back button */}
-            <MotorHeader
+      {!isMounted ? (
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center space-y-4">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+            <p className="text-muted-foreground">Loading your quote...</p>
+          </div>
+        </div>
+      ) : (
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="grid lg:grid-cols-[1fr_360px] gap-8">
+            {/* Main Content - Left Column */}
+            <div className="space-y-6">
+              {/* Motor Header with integrated back button */}
+              <MotorHeader
               name={motorName}
               modelYear={modelYear}
               hp={motorHp}
@@ -582,6 +576,7 @@ export default function QuoteSummaryPage() {
           </div>
         </div>
       </div>
+      )}
     </QuoteLayout>
   );
 }
