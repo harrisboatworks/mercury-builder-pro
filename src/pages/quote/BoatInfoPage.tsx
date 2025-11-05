@@ -18,30 +18,25 @@ export default function BoatInfoPage() {
   });
 
   useEffect(() => {
-    // Add delay to prevent navigation during state updates
-    const checkAccessibility = () => {
-      // Only navigate if we're not in loading state, not navigation blocked, and have a valid motor selected
-      if (!state.isLoading && !isNavigationBlocked && state.motor && !isStepAccessible(3)) {
-        navigate('/quote/motor-selection');
-        return;
+    // Don't redirect if we have the required state - trust the navigation
+    if (state.motor && state.purchasePath) {
+      document.title = 'Boat Information | Harris Boat Works';
+      
+      let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+      if (!desc) {
+        desc = document.createElement('meta');
+        desc.name = 'description';
+        document.head.appendChild(desc);
       }
-    };
-
-    // Standardized delay to 500ms to match other pages
-    const timeoutId = setTimeout(checkAccessibility, 500);
-
-    document.title = 'Boat Information | Harris Boat Works';
-    
-    let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!desc) {
-      desc = document.createElement('meta');
-      desc.name = 'description';
-      document.head.appendChild(desc);
+      desc.content = 'Provide your boat details for accurate motor compatibility and installation requirements.';
+      return;
     }
-    desc.content = 'Provide your boat details for accurate motor compatibility and installation requirements.';
 
-    return () => clearTimeout(timeoutId);
-  }, [state.isLoading, isStepAccessible, isNavigationBlocked, navigate]);
+    // Only redirect if clearly inaccessible (no motor selected at all)
+    if (!state.isLoading && !isNavigationBlocked && !state.motor) {
+      navigate('/quote/motor-selection');
+    }
+  }, [state.motor, state.purchasePath, state.isLoading, isNavigationBlocked, navigate]);
 
   const handleStepComplete = (boatInfo: BoatInfo) => {
     dispatch({ type: 'SET_BOAT_INFO', payload: boatInfo });
