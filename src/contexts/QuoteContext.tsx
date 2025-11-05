@@ -283,10 +283,35 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         if (state.purchasePath === 'installed') {
           const hasBoatInfo = !!state.boatInfo;
           const tradeInSatisfied = state.hasTradein ? !!state.tradeInInfo : true;
-          return hasMotor && hasPath && hasBoatInfo && tradeInSatisfied;
+          const isAccessible = hasMotor && hasPath && hasBoatInfo && tradeInSatisfied;
+          
+          if (!isAccessible) {
+            console.log('Step 6 accessibility check failed (installed path):', {
+              hasMotor,
+              hasPath,
+              hasBoatInfo,
+              hasTradein: state.hasTradein,
+              hasTradeInInfo: !!state.tradeInInfo,
+              tradeInSatisfied
+            });
+          }
+          
+          return isAccessible;
         } else {
           const tradeInSatisfied = state.hasTradein ? !!state.tradeInInfo : true;
-          return hasMotor && hasPath && tradeInSatisfied;
+          const isAccessible = hasMotor && hasPath && tradeInSatisfied;
+          
+          if (!isAccessible) {
+            console.log('Step 6 accessibility check failed (motor-only path):', {
+              hasMotor,
+              hasPath,
+              hasTradein: state.hasTradein,
+              hasTradeInInfo: !!state.tradeInInfo,
+              tradeInSatisfied
+            });
+          }
+          
+          return isAccessible;
         }
       case 7: // Schedule consultation
         return !!state.motor;

@@ -72,13 +72,18 @@ export default function TradeInPage() {
     dispatch({ type: 'SET_HAS_TRADEIN', payload: finalTradeInInfo.hasTradeIn });
     dispatch({ type: 'COMPLETE_STEP', payload: 4 });
     
-    console.log('Navigating to next step - purchasePath:', state.purchasePath);
+    console.log('TradeInPage: State updates dispatched, waiting for React to process before navigation');
     
-    if (state.purchasePath === 'installed') {
-      navigate('/quote/installation');
-    } else {
-      navigate('/quote/summary');
-    }
+    // Add small delay to ensure React processes state updates before navigation
+    setTimeout(() => {
+      console.log('TradeInPage: Navigating to next step - purchasePath:', state.purchasePath);
+      
+      if (state.purchasePath === 'installed') {
+        navigate('/quote/installation');
+      } else {
+        navigate('/quote/summary');
+      }
+    }, 100);
   };
 
   const handleBack = () => {

@@ -35,16 +35,39 @@ export default function QuoteSummaryPage() {
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
 
   useEffect(() => {
-    // Add delay and loading check to prevent navigation during state updates
+    let retryCount = 0;
+    const MAX_RETRIES = 2;
+    
+    // Add delay and retry mechanism to prevent navigation during state updates
     const checkAccessibility = () => {
-      if (!state.isLoading && !isNavigationBlocked && !isStepAccessible(6)) {
-        navigate('/quote/motor-selection');
-        return;
+      const isAccessible = isStepAccessible(6);
+      
+      if (!state.isLoading && !isNavigationBlocked && !isAccessible) {
+        retryCount++;
+        console.log(`QuoteSummaryPage: Accessibility check failed (attempt ${retryCount}/${MAX_RETRIES})`, {
+          hasMotor: !!state.motor,
+          hasPurchasePath: !!state.purchasePath,
+          hasBoatInfo: !!state.boatInfo,
+          hasTradein: state.hasTradein,
+          hasTradeInInfo: !!state.tradeInInfo
+        });
+        
+        // Only redirect after multiple failed checks to avoid race conditions
+        if (retryCount >= MAX_RETRIES) {
+          console.log('QuoteSummaryPage: Redirecting to motor selection after failed accessibility checks');
+          navigate('/quote/motor-selection');
+          return;
+        }
+        
+        // Retry after a short delay
+        setTimeout(checkAccessibility, 300);
+      } else {
+        console.log('QuoteSummaryPage: Accessibility check passed', { isAccessible });
       }
     };
 
-    // Standardized timeout to 500ms to match other pages
-    const timeoutId = setTimeout(checkAccessibility, 500);
+    // Increased initial timeout from 500ms to 1000ms to allow state updates to settle
+    const timeoutId = setTimeout(checkAccessibility, 1000);
 
     document.title = 'Your Mercury Motor Quote | Harris Boat Works';
     
@@ -57,7 +80,7 @@ export default function QuoteSummaryPage() {
     desc.content = 'Review your complete Mercury outboard motor quote with pricing, financing options, and bonus offers.';
 
     return () => clearTimeout(timeoutId);
-  }, [state.isLoading, isStepAccessible, isNavigationBlocked, navigate]);
+  }, [state.isLoading, isStepAccessible, isNavigationBlocked, navigate, state.motor, state.purchasePath, state.boatInfo, state.hasTradein, state.tradeInInfo]);
 
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });
