@@ -182,6 +182,23 @@ export default function QuoteSummaryPage() {
     }
   }, [motorHP, currentCoverageYears]);
 
+  // Initialize warranty config to match default selected package (Complete)
+  useEffect(() => {
+    if (isMounted && completeWarrantyCost > 0) {
+      const totalYears = COMPLETE_TARGET_YEARS;
+      const extendedYears = Math.max(0, totalYears - currentCoverageYears);
+      
+      dispatch({
+        type: 'SET_WARRANTY_CONFIG',
+        payload: {
+          totalYears,
+          extendedYears,
+          warrantyPrice: completeWarrantyCost
+        }
+      });
+    }
+  }, [isMounted, completeWarrantyCost, currentCoverageYears, dispatch]);
+
   // Calculate base subtotal (motor + base accessories, NO battery)
   const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
 
@@ -414,6 +431,30 @@ export default function QuoteSummaryPage() {
 
   const handlePackageSelect = (packageId: string) => {
     setSelectedPackage(packageId);
+    
+    // Update warranty config in context to match selected package
+    const selectedPkg = packages.find(p => p.id === packageId);
+    if (selectedPkg && selectedPkg.coverageYears) {
+      const totalYears = selectedPkg.coverageYears;
+      const extendedYears = Math.max(0, totalYears - currentCoverageYears);
+      
+      // Determine warranty price based on package
+      let warrantyPrice = 0;
+      if (packageId === 'better') {
+        warrantyPrice = completeWarrantyCost;
+      } else if (packageId === 'best') {
+        warrantyPrice = premiumWarrantyCost;
+      }
+      
+      dispatch({
+        type: 'SET_WARRANTY_CONFIG',
+        payload: {
+          totalYears,
+          extendedYears,
+          warrantyPrice
+        }
+      });
+    }
   };
 
   const selectedPackageData = packages.find(p => p.id === selectedPackage) || packages[1];
