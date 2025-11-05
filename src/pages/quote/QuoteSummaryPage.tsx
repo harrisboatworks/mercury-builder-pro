@@ -65,20 +65,31 @@ export default function QuoteSummaryPage() {
     }
 
     let retryCount = 0;
-    const MAX_RETRIES = 2;
+    const MAX_RETRIES = 3;
     
     // Add delay and retry mechanism to prevent navigation during state updates
     const checkAccessibility = () => {
+      // Check if state is fully ready before checking accessibility
+      if (state.hasTradein && !state.tradeInInfo) {
+        console.log('⏳ QuoteSummaryPage: State not ready yet (trade-in data missing), retrying...');
+        setTimeout(checkAccessibility, 300);
+        return;
+      }
+      
       const isAccessible = isStepAccessible(6);
       
       if (!state.isLoading && !isNavigationBlocked && !isAccessible) {
         retryCount++;
         console.log(`❌ QuoteSummaryPage: Accessibility check failed (attempt ${retryCount}/${MAX_RETRIES})`, {
           hasMotor: !!state.motor,
+          motorModel: state.motor?.model,
           hasPurchasePath: !!state.purchasePath,
+          purchasePath: state.purchasePath,
           hasBoatInfo: !!state.boatInfo,
+          boatType: state.boatInfo?.type,
           hasTradein: state.hasTradein,
-          hasTradeInInfo: !!state.tradeInInfo
+          hasTradeInInfo: !!state.tradeInInfo,
+          stateIsLoading: state.isLoading
         });
         
         // Only redirect after multiple failed checks to avoid race conditions
@@ -97,8 +108,8 @@ export default function QuoteSummaryPage() {
       }
     };
 
-    // Increased delay to ensure all state updates have settled
-    const timeoutId = setTimeout(checkAccessibility, 800);
+    // Increased delay to ensure all state updates have settled and localStorage has loaded
+    const timeoutId = setTimeout(checkAccessibility, 1500);
 
     document.title = 'Your Mercury Motor Quote | Harris Boat Works';
     

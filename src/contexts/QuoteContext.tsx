@@ -179,6 +179,12 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
               ageHours: Math.round(dataAge / (60 * 60 * 1000) * 10) / 10
             });
             dispatch({ type: 'LOAD_FROM_STORAGE', payload: parsedData.state });
+            // Add a small delay to ensure the reducer has finished processing
+            setTimeout(() => {
+              dispatch({ type: 'SET_LOADING', payload: false });
+            }, 100);
+            clearTimeout(loadingTimeout); // Clear the safety timeout
+            return; // Exit early so we don't set isLoading = false again below
           } else {
             console.log('⏰ QuoteContext: Data is stale or missing timestamp, removing', {
               hasTimestamp: !!parsedData.timestamp,
