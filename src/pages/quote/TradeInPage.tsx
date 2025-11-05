@@ -10,6 +10,8 @@ import type { TradeInInfo } from '@/lib/trade-valuation';
 export default function TradeInPage() {
   const navigate = useNavigate();
   const { state, dispatch, isStepAccessible } = useQuote();
+  const [isReadyToNavigate, setIsReadyToNavigate] = useState(false);
+  const [navigationTarget, setNavigationTarget] = useState<string | null>(null);
   const [tradeInInfo, setTradeInInfo] = useState<TradeInInfo>({
     hasTradeIn: false,
     brand: '',
@@ -21,6 +23,16 @@ export default function TradeInPage() {
     estimatedValue: 0,
     confidenceLevel: 'medium' as const
   });
+
+  // Watch for state updates completion and navigate when ready
+  useEffect(() => {
+    if (isReadyToNavigate && navigationTarget) {
+      console.log('✅ TradeInPage: State synchronized, navigating to:', navigationTarget);
+      navigate(navigationTarget);
+      setIsReadyToNavigate(false);
+      setNavigationTarget(null);
+    }
+  }, [isReadyToNavigate, navigationTarget, state.hasTradein, state.tradeInInfo, navigate]);
 
   useEffect(() => {
     // Trust navigation if we have required state
@@ -53,7 +65,7 @@ export default function TradeInPage() {
   };
 
   const handleComplete = () => {
-    console.log('TradeInPage handleComplete - tradeInInfo:', tradeInInfo);
+    console.log('🔄 TradeInPage handleComplete - tradeInInfo:', tradeInInfo);
     
     // If no trade-in, ensure clean state
     const finalTradeInInfo = tradeInInfo.hasTradeIn ? tradeInInfo : {
@@ -68,22 +80,25 @@ export default function TradeInPage() {
       confidenceLevel: 'medium' as const
     };
     
+    // Dispatch all state updates
     dispatch({ type: 'SET_TRADE_IN_INFO', payload: finalTradeInInfo });
     dispatch({ type: 'SET_HAS_TRADEIN', payload: finalTradeInInfo.hasTradeIn });
     dispatch({ type: 'COMPLETE_STEP', payload: 4 });
     
-    console.log('TradeInPage: State updates dispatched, waiting for React to process before navigation');
+    console.log('🚀 TradeInPage: State updates dispatched', {
+      hasTradeIn: finalTradeInInfo.hasTradeIn,
+      estimatedValue: finalTradeInInfo.estimatedValue
+    });
     
-    // Add small delay to ensure React processes state updates before navigation
-    setTimeout(() => {
-      console.log('TradeInPage: Navigating to next step - purchasePath:', state.purchasePath);
-      
-      if (state.purchasePath === 'installed') {
-        navigate('/quote/installation');
-      } else {
-        navigate('/quote/summary');
-      }
-    }, 100);
+    // Determine navigation target
+    const target = state.purchasePath === 'installed' ? '/quote/installation' : '/quote/summary';
+    setNavigationTarget(target);
+    
+    // Signal ready after dispatches (next render cycle)
+    requestAnimationFrame(() => {
+      console.log('✨ TradeInPage: Ready to navigate');
+      setIsReadyToNavigate(true);
+    });
   };
 
   const handleBack = () => {

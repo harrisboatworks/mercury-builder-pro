@@ -33,8 +33,26 @@ export default function QuoteSummaryPage() {
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Ensure minimum mount time before running accessibility checks
+  useEffect(() => {
+    console.log('🎬 QuoteSummaryPage: Component mounting...');
+    const mountTimer = setTimeout(() => {
+      console.log('✅ QuoteSummaryPage: Component fully mounted');
+      setIsMounted(true);
+    }, 500);
+    
+    return () => clearTimeout(mountTimer);
+  }, []);
 
   useEffect(() => {
+    // Don't run checks until component is properly mounted
+    if (!isMounted) {
+      console.log('⏳ QuoteSummaryPage: Waiting for mount to complete...');
+      return;
+    }
+
     let retryCount = 0;
     const MAX_RETRIES = 2;
     
@@ -44,7 +62,7 @@ export default function QuoteSummaryPage() {
       
       if (!state.isLoading && !isNavigationBlocked && !isAccessible) {
         retryCount++;
-        console.log(`QuoteSummaryPage: Accessibility check failed (attempt ${retryCount}/${MAX_RETRIES})`, {
+        console.log(`❌ QuoteSummaryPage: Accessibility check failed (attempt ${retryCount}/${MAX_RETRIES})`, {
           hasMotor: !!state.motor,
           hasPurchasePath: !!state.purchasePath,
           hasBoatInfo: !!state.boatInfo,
@@ -54,7 +72,7 @@ export default function QuoteSummaryPage() {
         
         // Only redirect after multiple failed checks to avoid race conditions
         if (retryCount >= MAX_RETRIES) {
-          console.log('QuoteSummaryPage: Redirecting to motor selection after failed accessibility checks');
+          console.log('🔙 QuoteSummaryPage: Redirecting to motor selection after failed accessibility checks');
           navigate('/quote/motor-selection');
           return;
         }
@@ -62,12 +80,12 @@ export default function QuoteSummaryPage() {
         // Retry after a short delay
         setTimeout(checkAccessibility, 300);
       } else {
-        console.log('QuoteSummaryPage: Accessibility check passed', { isAccessible });
+        console.log('✅ QuoteSummaryPage: Accessibility check passed', { isAccessible });
       }
     };
 
-    // Increased initial timeout from 500ms to 1000ms to allow state updates to settle
-    const timeoutId = setTimeout(checkAccessibility, 1000);
+    // Check accessibility after mount is complete
+    const timeoutId = setTimeout(checkAccessibility, 500);
 
     document.title = 'Your Mercury Motor Quote | Harris Boat Works';
     
@@ -80,7 +98,21 @@ export default function QuoteSummaryPage() {
     desc.content = 'Review your complete Mercury outboard motor quote with pricing, financing options, and bonus offers.';
 
     return () => clearTimeout(timeoutId);
-  }, [state.isLoading, isStepAccessible, isNavigationBlocked, navigate, state.motor, state.purchasePath, state.boatInfo, state.hasTradein, state.tradeInInfo]);
+  }, [isMounted, state.isLoading, isStepAccessible, isNavigationBlocked, navigate, state.motor, state.purchasePath, state.boatInfo, state.hasTradein, state.tradeInInfo]);
+
+  // Show loading state while component mounts
+  if (!isMounted) {
+    return (
+      <QuoteLayout>
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center space-y-4">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+            <p className="text-muted-foreground">Loading your quote...</p>
+          </div>
+        </div>
+      </QuoteLayout>
+    );
+  }
 
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });

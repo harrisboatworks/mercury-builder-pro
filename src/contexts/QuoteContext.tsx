@@ -282,7 +282,8 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         
         if (state.purchasePath === 'installed') {
           const hasBoatInfo = !!state.boatInfo;
-          const tradeInSatisfied = state.hasTradein ? !!state.tradeInInfo : true;
+          // More robust: if hasTradein is false OR if hasTradein is true AND tradeInInfo exists
+          const tradeInSatisfied = !state.hasTradein || (state.hasTradein && !!state.tradeInInfo);
           const isAccessible = hasMotor && hasPath && hasBoatInfo && tradeInSatisfied;
           
           if (!isAccessible) {
@@ -298,7 +299,8 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
           
           return isAccessible;
         } else {
-          const tradeInSatisfied = state.hasTradein ? !!state.tradeInInfo : true;
+          // More robust: if hasTradein is false OR if hasTradein is true AND tradeInInfo exists
+          const tradeInSatisfied = !state.hasTradein || (state.hasTradein && !!state.tradeInInfo);
           const isAccessible = hasMotor && hasPath && tradeInSatisfied;
           
           if (!isAccessible) {
