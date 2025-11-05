@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import PurchasePath from '@/components/quote-builder/PurchasePath';
@@ -9,6 +9,7 @@ import { ArrowLeft } from 'lucide-react';
 export default function PurchasePathPage() {
   const navigate = useNavigate();
   const { state, dispatch, isStepAccessible, isNavigationBlocked } = useQuote();
+  const pathSelectedOnThisPage = useRef(false);
 
   useEffect(() => {
     document.title = 'Choose Installation Option | Harris Boat Works';
@@ -31,8 +32,8 @@ export default function PurchasePathPage() {
 
   // Navigate after purchase path is set (state has been committed)
   useEffect(() => {
-    // Only proceed if we have a motor, purchase path is set, and step 2 is complete
-    if (!state.motor || !state.purchasePath || !state.completedSteps.includes(2)) {
+    // Only proceed if we have a motor, purchase path is set, step 2 is complete, AND user selected path on this page
+    if (!state.motor || !state.purchasePath || !state.completedSteps.includes(2) || !pathSelectedOnThisPage.current) {
       return;
     }
 
@@ -64,6 +65,7 @@ export default function PurchasePathPage() {
   }, [state.purchasePath, state.completedSteps, state.motor, navigate]);
 
   const handleStepComplete = (path: 'loose' | 'installed') => {
+    pathSelectedOnThisPage.current = true;
     dispatch({ type: 'SET_PURCHASE_PATH', payload: path });
     dispatch({ type: 'COMPLETE_STEP', payload: 2 });
     // Navigation handled by useEffect above
