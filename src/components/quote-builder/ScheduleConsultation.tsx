@@ -130,6 +130,10 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
     setIsSubmitting(true);
     
+    // Declare variables that need to be accessible throughout the function
+    let quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+    let pdfUrl: string | null = null;
+    
     try {
       const cleanPhone = contactInfo.phone.replace(/\D/g, '');
       const formattedPhone = `+1${cleanPhone}`;
@@ -238,11 +242,9 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       // 2. Send quote email to customer
       console.log('🔍 [NOTIFICATIONS] Step 2: Preparing quote email...');
       try {
-        const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
         console.log('🔍 [NOTIFICATIONS] Quote number:', quoteNumber);
         
         // 2.1. Generate and upload PDF before sending email
-        let pdfUrl: string | null = null;
         console.log('🔍 [PDF] Generating PDF quote...');
         try {
           // Import PDF generation utilities
@@ -364,6 +366,66 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         }
       } else {
         console.log('ℹ️ [NOTIFICATIONS] Skipping customer SMS - contact method is not text');
+      }
+
+      // 4. Send admin notification email
+      console.log('🔍 [NOTIFICATIONS] Step 4: Sending admin notification email...');
+      try {
+        const adminEmailPayload = {
+          customerEmail: 'info@harrisboatworks.ca',
+          customerName: 'Harris Boat Works Admin',
+          quoteNumber: quoteNumber,
+          motorModel: quoteData.motor?.model || 'Mercury Motor',
+          totalPrice: Math.round(totalCashPrice),
+          pdfUrl: pdfUrl,
+          emailType: 'admin_quote_notification',
+          leadData: {
+            customerName: sanitizedContactInfo.name,
+            customerEmail: sanitizedContactInfo.email,
+            customerPhone: sanitizedContactInfo.phone,
+            contactMethod: sanitizedContactInfo.contactMethod,
+            leadScore: 75,
+            quoteId: quoteId
+          }
+        };
+        
+        console.log('🔍 [NOTIFICATIONS] Admin email payload:', adminEmailPayload);
+        
+        const { data: adminEmailData, error: adminEmailError } = await supabase.functions.invoke('send-quote-email', {
+          body: adminEmailPayload
+        });
+        
+        if (adminEmailError) {
+          console.error('❌ [NOTIFICATIONS] Admin email error:', adminEmailError);
+          throw adminEmailError;
+        }
+        console.log('✅ [NOTIFICATIONS] Admin email sent successfully. Response:', adminEmailData);
+      } catch (error) {
+        console.error('❌ [NOTIFICATIONS] Admin email failed:', error);
+      }
+
+      // 5. Send admin SMS notification
+      console.log('🔍 [NOTIFICATIONS] Step 5: Sending admin SMS notification...');
+      try {
+        const adminSmsPayload = {
+          to: '+19053766208',
+          message: `🔥 NEW QUOTE SUBMITTED!\n\nCustomer: ${sanitizedContactInfo.name}\nMotor: ${quoteData.motor?.model || 'Mercury Motor'}\nQuote: $${Math.round(totalCashPrice).toLocaleString()}\nContact: ${sanitizedContactInfo.contactMethod}\n\nView: quote.harrisboatworks.ca/admin/quotes\n\n- Harris Boat Works`,
+          messageType: 'hot_lead'
+        };
+        
+        console.log('🔍 [NOTIFICATIONS] Admin SMS payload:', adminSmsPayload);
+        
+        const { data: adminSmsData, error: adminSmsError } = await supabase.functions.invoke('send-sms', {
+          body: adminSmsPayload
+        });
+        
+        if (adminSmsError) {
+          console.error('❌ [NOTIFICATIONS] Admin SMS error:', adminSmsError);
+          throw adminSmsError;
+        }
+        console.log('✅ [NOTIFICATIONS] Admin SMS sent successfully. Response:', adminSmsData);
+      } catch (error) {
+        console.error('❌ [NOTIFICATIONS] Admin SMS failed:', error);
       }
 
       console.log('✅ [NOTIFICATIONS] Notification process complete');

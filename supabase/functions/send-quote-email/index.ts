@@ -16,7 +16,15 @@ interface QuoteEmailRequest {
   motorModel: string;
   totalPrice: number;
   pdfUrl?: string;
-  emailType: 'quote_delivery' | 'follow_up' | 'reminder';
+  emailType: 'quote_delivery' | 'follow_up' | 'reminder' | 'admin_quote_notification';
+  leadData?: {
+    customerName?: string;
+    customerEmail?: string;
+    customerPhone?: string;
+    contactMethod?: string;
+    leadScore?: number;
+    quoteId?: string;
+  };
 }
 
 // Replace template variables with actual data
@@ -164,6 +172,101 @@ function generateFollowUpEmail(data: QuoteEmailRequest): string {
   `;
 }
 
+function generateAdminNotificationEmail(data: QuoteEmailRequest): string {
+  return `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Quote Submitted</title>
+        <style>
+          body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; padding: 30px 20px; border-radius: 8px 8px 0 0; text-align: center; }
+          .content { background: #f8fafc; padding: 30px 20px; border-radius: 0 0 8px 8px; }
+          .info-box { background: white; border-left: 4px solid #3b82f6; padding: 15px; margin: 15px 0; border-radius: 4px; }
+          .label { font-weight: 600; color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+          .value { color: #1e293b; font-size: 16px; margin-top: 5px; }
+          .btn { background: #1e40af; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin: 10px 0; }
+          .priority { background: #dc2626; color: white; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: bold; display: inline-block; }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <h1 style="margin: 0; font-size: 24px;">🔔 New Quote Submitted</h1>
+          <p style="margin: 10px 0 0 0; opacity: 0.9;">Immediate Action Required</p>
+        </div>
+        
+        <div class="content">
+          <div class="priority">HIGH PRIORITY LEAD</div>
+          
+          <h2 style="color: #1e40af; margin-top: 20px;">Quote Details</h2>
+          
+          <div class="info-box">
+            <div class="label">Quote Number</div>
+            <div class="value">${data.quoteNumber}</div>
+          </div>
+          
+          <div class="info-box">
+            <div class="label">Motor Model</div>
+            <div class="value">${data.motorModel}</div>
+          </div>
+          
+          <div class="info-box">
+            <div class="label">Total Quote Amount</div>
+            <div class="value">$${data.totalPrice?.toLocaleString()}</div>
+          </div>
+          
+          <h2 style="color: #1e40af; margin-top: 30px;">Customer Information</h2>
+          
+          <div class="info-box">
+            <div class="label">Name</div>
+            <div class="value">${data.leadData?.customerName || 'Not provided'}</div>
+          </div>
+          
+          <div class="info-box">
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:${data.leadData?.customerEmail}">${data.leadData?.customerEmail}</a></div>
+          </div>
+          
+          <div class="info-box">
+            <div class="label">Phone</div>
+            <div class="value"><a href="tel:${data.leadData?.customerPhone}">${data.leadData?.customerPhone || 'Not provided'}</a></div>
+          </div>
+          
+          <div class="info-box">
+            <div class="label">Preferred Contact Method</div>
+            <div class="value">${data.leadData?.contactMethod || 'email'}</div>
+          </div>
+          
+          <div class="info-box">
+            <div class="label">Lead Score</div>
+            <div class="value">${data.leadData?.leadScore || 0}/100</div>
+          </div>
+          
+          <div style="text-align: center; margin-top: 30px;">
+            <a href="https://quote.harrisboatworks.ca/admin/quotes/${data.leadData?.quoteId}" class="btn">View Full Quote in Admin Dashboard</a>
+          </div>
+          
+          ${data.pdfUrl ? `
+            <div style="text-align: center; margin-top: 10px;">
+              <a href="${data.pdfUrl}" class="btn" style="background: #059669;">Download Quote PDF</a>
+            </div>
+          ` : ''}
+          
+          <p style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0; color: #64748b; font-size: 14px;">
+            <strong>Next Steps:</strong><br>
+            1. Review the quote details in the admin dashboard<br>
+            2. Contact the customer via their preferred method within 24 hours<br>
+            3. Follow up on any special requests or questions<br>
+            4. Update the quote status in the admin panel
+          </p>
+        </div>
+      </body>
+    </html>
+  `;
+}
+
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
@@ -218,6 +321,10 @@ serve(async (req) => {
         case 'reminder':
           subject = `Following up on your Mercury Motor quote #${emailData.quoteNumber}`;
           htmlContent = generateFollowUpEmail(emailData);
+          break;
+        case 'admin_quote_notification':
+          subject = `🔔 New Quote: ${emailData.quoteNumber} - ${emailData.motorModel} ($${emailData.totalPrice?.toLocaleString()})`;
+          htmlContent = generateAdminNotificationEmail(emailData);
           break;
         default:
           subject = `Your Mercury Motor Quote #${emailData.quoteNumber} from Harris Boat Works`;
