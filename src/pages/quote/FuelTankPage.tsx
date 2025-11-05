@@ -11,23 +11,27 @@ export default function FuelTankPage() {
   const { state, dispatch, isStepAccessible } = useQuote();
 
   useEffect(() => {
-    // Only accessible for small tiller motors on loose path
     const isSmallTillerMotor = state.motor && state.motor.hp <= 9.9 && state.motor.type?.toLowerCase().includes('tiller');
-    if (!isStepAccessible(3) || state.purchasePath !== 'loose' || !isSmallTillerMotor) {
-      navigate('/quote/motor-selection');
+    
+    // Trust navigation if we have the right state for this optional step
+    if (state.motor && state.purchasePath === 'loose' && isSmallTillerMotor) {
+      document.title = 'Fuel Tank Options | Harris Boat Works';
+      
+      let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+      if (!desc) {
+        desc = document.createElement('meta');
+        desc.name = 'description';
+        document.head.appendChild(desc);
+      }
+      desc.content = 'Choose the right fuel tank configuration for your portable Mercury outboard motor.';
       return;
     }
 
-    document.title = 'Fuel Tank Options | Harris Boat Works';
-    
-    let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!desc) {
-      desc = document.createElement('meta');
-      desc.name = 'description';
-      document.head.appendChild(desc);
+    // Redirect if wrong path or wrong motor type
+    if (!state.motor || state.purchasePath !== 'loose' || !isSmallTillerMotor) {
+      navigate('/quote/motor-selection');
     }
-    desc.content = 'Choose the right fuel tank configuration for your portable Mercury outboard motor.';
-  }, [state.motor, state.purchasePath, isStepAccessible, navigate]);
+  }, [state.motor, state.purchasePath, navigate]);
 
   const handleStepComplete = (fuelTankConfig: any) => {
     dispatch({ type: 'SET_FUEL_TANK_CONFIG', payload: fuelTankConfig });

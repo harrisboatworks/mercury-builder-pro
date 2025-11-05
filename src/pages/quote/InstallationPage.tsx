@@ -22,28 +22,25 @@ export default function InstallationPage() {
   });
 
   useEffect(() => {
-    // Add defensive checks
-    if (!state || !state.motor) {
-      navigate('/quote/motor-selection');
-      return;
-    }
-    
-    // Only accessible for installed path
-    if (!isStepAccessible(5) || state.purchasePath !== 'installed') {
-      navigate('/quote/motor-selection');
+    // Trust navigation if we have required state for installed path
+    if (state.motor && state.purchasePath === 'installed') {
+      document.title = 'Installation Configuration | Harris Boat Works';
+      
+      let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+      if (!desc) {
+        desc = document.createElement('meta');
+        desc.name = 'description';
+        document.head.appendChild(desc);
+      }
+      desc.content = 'Configure your professional motor installation requirements and timeline.';
       return;
     }
 
-    document.title = 'Installation Configuration | Harris Boat Works';
-    
-    let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!desc) {
-      desc = document.createElement('meta');
-      desc.name = 'description';
-      document.head.appendChild(desc);
+    // Redirect if no motor or wrong path
+    if (!state.motor || state.purchasePath !== 'installed') {
+      navigate('/quote/motor-selection');
     }
-    desc.content = 'Configure your professional motor installation requirements and timeline.';
-  }, [state.purchasePath, isStepAccessible, navigate]);
+  }, [state.motor, state.purchasePath, navigate]);
 
   const handleStepComplete = (installConfig: any) => {
     dispatch({ type: 'SET_INSTALL_CONFIG', payload: installConfig });

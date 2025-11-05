@@ -23,27 +23,30 @@ export default function TradeInPage() {
   });
 
   useEffect(() => {
-    // Redirect if step not accessible
-    if (!isStepAccessible(4)) {
-      navigate('/quote/motor-selection');
+    // Trust navigation if we have required state
+    if (state.motor && state.purchasePath) {
+      // Load existing trade-in info if available
+      if (state.tradeInInfo) {
+        setTradeInInfo(state.tradeInInfo);
+      }
+
+      document.title = 'Trade-In Valuation | Harris Boat Works';
+      
+      let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+      if (!desc) {
+        desc = document.createElement('meta');
+        desc.name = 'description';
+        document.head.appendChild(desc);
+      }
+      desc.content = 'Get an instant trade-in valuation for your current outboard motor.';
       return;
     }
 
-    // Load existing trade-in info if available
-    if (state.tradeInInfo) {
-      setTradeInInfo(state.tradeInInfo);
+    // Only redirect if no motor selected
+    if (!state.motor) {
+      navigate('/quote/motor-selection');
     }
-
-    document.title = 'Trade-In Valuation | Harris Boat Works';
-    
-    let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!desc) {
-      desc = document.createElement('meta');
-      desc.name = 'description';
-      document.head.appendChild(desc);
-    }
-    desc.content = 'Get an instant trade-in valuation for your current outboard motor.';
-  }, [isStepAccessible, navigate, state.tradeInInfo]);
+  }, [state.motor, state.purchasePath, state.tradeInInfo, navigate]);
 
   const handleTradeInChange = (updatedTradeInInfo: TradeInInfo) => {
     setTradeInInfo(updatedTradeInInfo);
