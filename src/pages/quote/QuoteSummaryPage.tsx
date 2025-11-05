@@ -111,7 +111,7 @@ export default function QuoteSummaryPage() {
     desc.content = 'Review your complete Mercury outboard motor quote with pricing, financing options, and bonus offers.';
 
     return () => clearTimeout(timeoutId);
-  }, [isMounted, state.isLoading, isNavigationBlocked, navigate, isStepAccessible]);
+  }, [isMounted]);
 
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });
