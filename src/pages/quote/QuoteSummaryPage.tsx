@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
@@ -38,6 +38,7 @@ export default function QuoteSummaryPage() {
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
   const [isMounted, setIsMounted] = useState(false);
+  const hasCheckedAccessibility = useRef(false);
 
   // Ensure minimum mount time before running accessibility checks
   useEffect(() => {
@@ -54,6 +55,12 @@ export default function QuoteSummaryPage() {
     // Don't run checks until component is properly mounted
     if (!isMounted) {
       console.log('⏳ QuoteSummaryPage: Waiting for mount to complete...');
+      return;
+    }
+
+    // Only run accessibility check once to avoid race conditions
+    if (hasCheckedAccessibility.current) {
+      console.log('✅ QuoteSummaryPage: Accessibility check already completed, skipping');
       return;
     }
 
@@ -77,6 +84,7 @@ export default function QuoteSummaryPage() {
         // Only redirect after multiple failed checks to avoid race conditions
         if (retryCount >= MAX_RETRIES) {
           console.log('🔙 QuoteSummaryPage: Redirecting to motor selection after failed accessibility checks');
+          hasCheckedAccessibility.current = true; // Mark as checked before redirect
           navigate('/quote/motor-selection');
           return;
         }
@@ -85,11 +93,12 @@ export default function QuoteSummaryPage() {
         setTimeout(checkAccessibility, 300);
       } else {
         console.log('✅ QuoteSummaryPage: Accessibility check passed', { isAccessible });
+        hasCheckedAccessibility.current = true; // Mark as checked after success
       }
     };
 
-    // Check accessibility after mount is complete
-    const timeoutId = setTimeout(checkAccessibility, 500);
+    // Increased delay to ensure all state updates have settled
+    const timeoutId = setTimeout(checkAccessibility, 800);
 
     document.title = 'Your Mercury Motor Quote | Harris Boat Works';
     
@@ -102,7 +111,7 @@ export default function QuoteSummaryPage() {
     desc.content = 'Review your complete Mercury outboard motor quote with pricing, financing options, and bonus offers.';
 
     return () => clearTimeout(timeoutId);
-  }, [isMounted, state.isLoading, isNavigationBlocked, navigate, state.motor, state.purchasePath, state.boatInfo, state.hasTradein, state.tradeInInfo]);
+  }, [isMounted, state.isLoading, isNavigationBlocked, navigate, isStepAccessible]);
 
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });

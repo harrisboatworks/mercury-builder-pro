@@ -221,10 +221,6 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   useEffect(() => {
     if (state.isLoading) return; // Don't save during initial load
     
-    // Block navigation during state updates to prevent instability
-    setNavigationBlocked(true);
-    const unblockTimeout = setTimeout(() => setNavigationBlocked(false), 100);
-    
     if (saveTimeoutRef.current) {
       clearTimeout(saveTimeoutRef.current);
     }
@@ -251,7 +247,6 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       if (saveTimeoutRef.current) {
         clearTimeout(saveTimeoutRef.current);
       }
-      clearTimeout(unblockTimeout);
     };
   }, [state]);
 
