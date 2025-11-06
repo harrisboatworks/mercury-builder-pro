@@ -320,9 +320,14 @@ export default function MotorSelectionPage() {
         return motor.in_stock === true;
       }
       
-      // Standard text search
-      const matches = motor.model.toLowerCase().includes(query) ||
-             motor.hp.toString().includes(query) ||
+      // Standard text search - prioritize exact HP match for numeric queries
+      const isNumericQuery = /^\d+(\.\d+)?$/.test(query);
+      const hpMatches = isNumericQuery 
+        ? motor.hp === Number(query) 
+        : motor.hp.toString().includes(query);
+      
+      const matches = hpMatches ||
+             motor.model.toLowerCase().includes(query) ||
              motor.type?.toLowerCase().includes(query);
       
       // Always include critical motors if they loosely match
