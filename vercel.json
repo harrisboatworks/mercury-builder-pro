@@ -58,6 +58,10 @@
       "schedule": "0 5 * * *"
     },
     {
+      "path": "/api/cron/google-sheets-sync",
+      "schedule": "0 6 * * *"
+    },
+    {
       "path": "/api/cron/migrate-images", 
       "schedule": "15 */8 * * *"
     },

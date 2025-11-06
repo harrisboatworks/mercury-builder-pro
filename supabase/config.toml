@@ -72,5 +72,8 @@ verify_jwt = false
 [functions.send-contact-inquiry]
 verify_jwt = false
 
+[functions.sync-google-sheets-inventory]
+verify_jwt = false
+
 [functions.trigger-zapier-webhooks]
 verify_jwt = false

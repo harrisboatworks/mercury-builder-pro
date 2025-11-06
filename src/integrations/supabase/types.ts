@@ -410,6 +410,36 @@ export type Database = {
         }
         Relationships: []
       }
+      google_sheets_config: {
+        Row: {
+          auto_sync_enabled: boolean
+          created_at: string
+          id: string
+          last_sync: string | null
+          sheet_url: string
+          sync_frequency: string
+          updated_at: string
+        }
+        Insert: {
+          auto_sync_enabled?: boolean
+          created_at?: string
+          id?: string
+          last_sync?: string | null
+          sheet_url: string
+          sync_frequency?: string
+          updated_at?: string
+        }
+        Update: {
+          auto_sync_enabled?: boolean
+          created_at?: string
+          id?: string
+          last_sync?: string | null
+          sheet_url?: string
+          sync_frequency?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       heartbeat: {
         Row: {
           created_at: string
