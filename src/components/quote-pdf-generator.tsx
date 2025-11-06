@@ -403,10 +403,10 @@ export const QuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => {
             </View>
           )}
 
-          {/* Trade-in Row */}
+          {/* Estimated Trade Value Row */}
           {hasTradeIn && (
             <View style={[styles.tableRow, styles.tableRowAlt]}>
-              <Text style={styles.col1}>Trade-in Credit (Estimated)*</Text>
+              <Text style={styles.col1}>Estimated Trade Value*</Text>
               <Text style={styles.col2}>-${quoteData.tradeInValue!.toLocaleString()}</Text>
               <Text style={styles.col3}>-${quoteData.tradeInValue!.toLocaleString()}</Text>
             </View>
@@ -455,7 +455,7 @@ export const QuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => {
           <Text style={styles.termsList}>
             • This quote is valid for 30 days from the date above{'\n'}
             • All prices are in Canadian dollars and include applicable taxes{'\n'}
-            • *Trade-in values are estimates and subject to physical inspection{'\n'}
+            • *Estimated trade values subject to physical inspection{'\n'}
             • Installation and rigging services available at additional cost{'\n'}
             • Mercury factory warranty applies to all new motors{'\n'}
             • Financing options available (OAC) - contact us for details{'\n'}

@@ -3,13 +3,13 @@ import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/render
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 
 function formatTradeInLabel(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
-  if (!tradeInInfo) return "Trade-In Credit";
+  if (!tradeInInfo) return "Estimated Trade Value";
   
   const { brand, year, horsepower, model } = tradeInInfo;
   const parts = [year.toString(), brand, `${horsepower} HP`];
   if (model) parts.push(model);
   
-  return `Trade-in Credit (${parts.join(' ')})`;
+  return `Estimated Trade Value (${parts.join(' ')})`;
 }
 
 // Import logos
@@ -641,7 +641,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 </>
               )}
               
-              {/* Trade-In Credit */}
+              {/* Estimated Trade Value */}
               {quoteData.tradeInValue && quoteData.tradeInValue > 0 && (
                 <View style={styles.pricingRow}>
                   <Text style={styles.pricingLabel}>{formatTradeInLabel(quoteData.tradeInInfo)}</Text>
@@ -788,7 +788,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           </Text>
           {quoteData.tradeInValue && quoteData.tradeInValue > 0 && (
             <Text style={styles.termsText}>
-              • *Trade-in values are estimates and subject to inspection
+              • *Estimated trade values subject to physical inspection
             </Text>
           )}
           <Text style={styles.termsText}>

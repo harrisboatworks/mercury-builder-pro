@@ -490,10 +490,10 @@ export const ProfessionalQuotePDF: React.FC<ProfessionalQuotePDFProps> = ({ quot
               </View>
             )}
 
-            {/* Trade-in Value */}
+            {/* Estimated Trade Value */}
             {hasTradeIn && (
               <View style={[styles.tableRow, styles.tableRowAlt]}>
-                <Text style={styles.itemDescription}>Trade-in Credit (Estimated)*</Text>
+                <Text style={styles.itemDescription}>Estimated Trade Value*</Text>
                 <Text style={[styles.itemPrice, { color: '#059669' }]}>-${quoteData.tradeInValue!.toLocaleString()}</Text>
               </View>
             )}
@@ -551,7 +551,7 @@ export const ProfessionalQuotePDF: React.FC<ProfessionalQuotePDFProps> = ({ quot
             <Text style={styles.termsList}>
               • This quote is valid for 30 days from the date above and subject to motor availability{'\n'}
               • All prices are in Canadian dollars (CAD) and include applicable HST{'\n'}
-              • *Trade-in values are estimates only and subject to physical inspection and market conditions{'\n'}
+              • *Estimated trade values subject to physical inspection and market conditions{'\n'}
               • Professional installation and rigging services available at additional cost{'\n'}
               • All new Mercury motors include comprehensive factory warranty coverage{'\n'}
               • Financing options available to qualified buyers (O.A.C.) - contact us for complete terms{'\n'}

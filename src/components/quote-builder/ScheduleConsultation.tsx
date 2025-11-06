@@ -583,7 +583,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
               {hasTradeIn && (
                 <div className="flex justify-between text-gray-700 dark:text-gray-300 font-light">
-                  <span className="text-muted-foreground">Trade-in Credit</span>
+                  <span className="text-muted-foreground">Estimated Trade Value</span>
                   <span>-${tradeInValue.toLocaleString()}</span>
                 </div>
               )}
@@ -616,7 +616,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               {hasTradeIn && (
                 <Alert className="border-gray-300 bg-stone-50 dark:bg-stone-950/20 rounded-sm">
                   <AlertDescription className="font-light text-muted-foreground">
-                    Trade-in value will be assessed during consultation
+                    Estimated trade value subject to physical inspection during consultation
                   </AlertDescription>
                 </Alert>
               )}

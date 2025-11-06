@@ -3,13 +3,13 @@ import { LineItemRow } from './LineItemRow';
 import { type PricingBreakdown } from '@/lib/quote-utils';
 
 function formatTradeInLabel(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
-  if (!tradeInInfo) return "Trade-in Credit";
+  if (!tradeInInfo) return "Estimated Trade Value";
   
   const { brand, year, horsepower, model } = tradeInInfo;
   const parts = [year.toString(), brand, `${horsepower} HP`];
   if (model) parts.push(model);
   
-  return `Trade-in Credit (${parts.join(' ')})`;
+  return `Estimated Trade Value (${parts.join(' ')})`;
 }
 
 interface PricingTableProps {
@@ -96,7 +96,7 @@ export function PricingTable({
           </div>
         )}
 
-        {/* Trade-in Credit */}
+        {/* Estimated Trade Value */}
         {tradeInValue > 0 && (
           <LineItemRow
             label={formatTradeInLabel(tradeInInfo)}
@@ -143,7 +143,7 @@ export function PricingTable({
           All prices in Canadian dollars.{includesInstallation && ' Installation and PDI included.'}
           {tradeInValue > 0 && (
             <span className="block mt-1">
-              *Trade-in value subject to inspection.
+              *Estimated trade value subject to physical inspection.
             </span>
           )}
           {pricing.savings > 0 && (

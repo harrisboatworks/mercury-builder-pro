@@ -581,10 +581,10 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                 </div>
               )}
 
-              {/* Trade-in Credit */}
+              {/* Estimated Trade Value */}
               {hasTradeIn && (
                 <div className="flex justify-between text-green-600">
-                  <span>Trade-in Credit:</span>
+                  <span>Estimated Trade Value:</span>
                   <span>-{formatCurrency(tradeInValue)}</span>
                 </div>
               )}
