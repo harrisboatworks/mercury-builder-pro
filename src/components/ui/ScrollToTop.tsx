@@ -39,15 +39,28 @@ export function ScrollToTop() {
       return;
     }
 
-    // Z-index based modal detection - check for high z-index elements (modals)
-    const allElements = document.querySelectorAll('*');
-    for (let element of allElements) {
-      const computedStyle = window.getComputedStyle(element);
+    // More specific modal detection - only check for full-screen modal overlays
+    const modalOverlays = document.querySelectorAll('.fixed.inset-0[class*="z-"], [role="dialog"][class*="fixed"]');
+    const visibleModals = Array.from(modalOverlays).filter(el => {
+      const computedStyle = window.getComputedStyle(el);
       const zIndex = parseInt(computedStyle.zIndex);
-      if (zIndex >= 50 && computedStyle.position === 'fixed') {
-        console.log('⏸️ ScrollToTop skipped - high z-index modal detected:', zIndex);
-        return;
-      }
+      // Only consider it a modal if it's:
+      // 1. High z-index (50+)
+      // 2. Fixed position
+      // 3. Full-screen overlay (inset-0) OR has dialog role
+      // 4. Actually visible (not display:none or opacity:0)
+      return (
+        zIndex >= 50 && 
+        computedStyle.position === 'fixed' &&
+        computedStyle.display !== 'none' &&
+        computedStyle.visibility !== 'hidden' &&
+        parseFloat(computedStyle.opacity) > 0
+      );
+    });
+
+    if (visibleModals.length > 0) {
+      console.log('⏸️ ScrollToTop skipped - visible modal overlays detected:', visibleModals.length);
+      return;
     }
 
     // Check for body position fixed (modal scroll lock indicator)
