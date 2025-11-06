@@ -334,12 +334,10 @@ export default function MotorSelectionPage() {
         : motor.hp.toString().includes(query);
       
       const matches = hpMatches ||
-             motor.model.toLowerCase().includes(query) ||
-             motor.type?.toLowerCase().includes(query);
+        motor.model.toLowerCase().includes(query) ||
+        motor.type?.toLowerCase().includes(query);
       
-      // Always include critical motors if they loosely match
-      const isCritical = CRITICAL_MODELS.includes(motor.model_number || '');
-      return matches || (isCritical && motor.in_stock);
+      return matches;
     });
   }, [processedMotors, searchQuery]);
 
