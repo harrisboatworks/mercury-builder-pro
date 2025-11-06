@@ -412,7 +412,7 @@ export default function MotorDetailsPremiumModal({
                   </TabsContent>
                   
                   {/* SPECS TAB */}
-                  <TabsContent value="specs" className="space-y-6 m-0">
+                  <TabsContent value="specs" className="space-y-6 mt-0 pt-6">
                     <div>
                       <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4">
                         Technical Specifications
@@ -455,7 +455,7 @@ export default function MotorDetailsPremiumModal({
                   </TabsContent>
                   
                   {/* INCLUDED TAB */}
-                  <TabsContent value="included" className="space-y-6 m-0">
+                  <TabsContent value="included" className="space-y-6 mt-0 pt-6">
                     <div>
                       <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4">
                         What's Included
@@ -495,7 +495,7 @@ export default function MotorDetailsPremiumModal({
                   </TabsContent>
                   
                   {/* RESOURCES TAB */}
-                  <TabsContent value="resources" className="space-y-6 m-0">
+                  <TabsContent value="resources" className="space-y-6 mt-0 pt-6">
                     {/* Documents Section */}
                     {motor?.id && (
                       <div>
