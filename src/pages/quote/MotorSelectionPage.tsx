@@ -85,6 +85,8 @@ interface PromotionRule {
   discount_fixed_amount: number;
 }
 
+// Critical models that should always be visible when in stock
+const CRITICAL_MODELS = ['1A10201LK', '1C08201LK']; // 9.9MH, 8MH - popular portable models
 
 export default function MotorSelectionPage() {
   const navigate = useNavigate();
@@ -223,7 +225,7 @@ export default function MotorSelectionPage() {
         id: dbMotor.id,
         model: dbMotor.model_display || dbMotor.model, // Use model_display for proper names like "6 MH FourStroke"
         year: dbMotor.year,
-        hp: dbMotor.horsepower,
+        hp: Number(dbMotor.horsepower),
         price: Math.round(effectivePrice),
         image: dbMotor.image_url || '',
         stockStatus: dbMotor.in_stock ? 'In Stock' : 'On Order',
@@ -287,9 +289,6 @@ export default function MotorSelectionPage() {
     return payments;
   }, [processedMotors]);
 
-  // Critical models that should always be visible when in stock
-  const CRITICAL_MODELS = ['1A10201LK', '1C08201LK']; // 9.9MH, 8MH - popular portable models
-
   // Filter motors with intelligent search
   const filteredMotors = useMemo(() => {
     // Always include critical in-stock models
@@ -331,7 +330,7 @@ export default function MotorSelectionPage() {
       // Standard text search - prioritize exact HP match for numeric queries
       const isNumericQuery = /^\d+(\.\d+)?$/.test(query);
       const hpMatches = isNumericQuery 
-        ? motor.hp === Number(query) 
+        ? Number(motor.hp) === Number(query) 
         : motor.hp.toString().includes(query);
       
       const matches = hpMatches ||
@@ -342,7 +341,7 @@ export default function MotorSelectionPage() {
       const isCritical = CRITICAL_MODELS.includes(motor.model_number || '');
       return matches || (isCritical && motor.in_stock);
     });
-  }, [processedMotors, searchQuery, CRITICAL_MODELS]);
+  }, [processedMotors, searchQuery]);
 
   const handleMotorSelect = (motor: Motor) => {
     // Add motor to quote context
