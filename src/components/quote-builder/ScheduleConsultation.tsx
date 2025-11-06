@@ -622,7 +622,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               )}
             </div>
 
-            <Button onClick={generatePDF} variant="outline" className="w-full border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide">
+            <Button onClick={generatePDF} variant="outline" className="w-full border-gray-900 dark:border-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-sm font-light tracking-wide">
               <Download className="w-4 h-4 mr-2" />
               Download Quote PDF
             </Button>
