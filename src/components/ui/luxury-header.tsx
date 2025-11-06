@@ -9,6 +9,7 @@ import { ChatWidget } from '@/components/chat/ChatWidget';
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
+import { useNavigate } from 'react-router-dom';
 
 interface LuxuryHeaderProps {
   onSearchFocus?: () => void;
@@ -20,6 +21,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { state } = useQuote();
   const { user, signOut } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -140,7 +142,9 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                     <Button
                       variant="ghost"
                       size="sm"
+                      onClick={() => navigate('/dashboard')}
                       className="p-2 text-luxury-ink dark:text-white hover:text-luxury-gray dark:hover:text-gray-300 hover:bg-luxury-stage dark:hover:bg-gray-800"
+                      title="View Dashboard"
                     >
                       <User className="h-5 w-5" />
                     </Button>
@@ -158,6 +162,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                   <Button
                     variant="ghost"
                     size="sm"
+                    onClick={() => navigate('/auth')}
                     className="px-3 py-2 text-sm text-luxury-ink dark:text-white hover:text-luxury-gray dark:hover:text-gray-300 hover:bg-luxury-stage dark:hover:bg-gray-800"
                   >
                     Sign In
@@ -170,7 +175,12 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
       </header>
 
       {/* Mobile Menu */}
-      <HamburgerMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+      <HamburgerMenu 
+        isOpen={isMenuOpen} 
+        onClose={() => setIsMenuOpen(false)}
+        user={user}
+        signOut={signOut}
+      />
     </>
   );
 }
