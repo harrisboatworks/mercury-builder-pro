@@ -101,17 +101,81 @@ Deno.serve(async (req) => {
       console.error('Error resetting stock:', resetError);
     }
 
+    // Helper function to parse motor name and extract components
+    function parseMotorName(name: string): {
+      hp: number | null;
+      riggingCode: string | null;
+      family: string | null;
+      hasCommandThrust: boolean;
+    } {
+      // Normalize text
+      let normalized = name
+        .replace(/®/g, '') // Remove ®
+        .replace(/\s*HP\s*/gi, ' ') // Remove "HP"
+        .replace(/\s*EFI\s*/gi, ' ') // Remove "EFI"
+        .replace(/Pro\s*XS/gi, 'ProXS') // Normalize Pro XS
+        .trim();
+
+      // Extract horsepower (look for number patterns)
+      const hpMatch = normalized.match(/(\d+(?:\.\d+)?)\s*HP|\b(\d+(?:\.\d+)?)\b/i);
+      const hp = hpMatch ? parseFloat(hpMatch[1] || hpMatch[2]) : null;
+
+      // Extract rigging codes (common patterns)
+      const riggingMatch = normalized.match(/\b(EXLPT|ELHPT|ELPT|ELH|MXXL|MXL|MLH|MH|XXL|XL|CT)\b/i);
+      const riggingCode = riggingMatch ? riggingMatch[1].toUpperCase() : null;
+
+      // Check for Command Thrust
+      const hasCommandThrust = /\bCT\b/i.test(normalized);
+
+      // Extract family
+      let family: string | null = null;
+      if (/verado/i.test(normalized)) {
+        family = 'Verado';
+      } else if (/pro\s*xs|proxs/i.test(normalized)) {
+        family = 'ProXS';
+      } else if (/sea\s*pro|seapro/i.test(normalized)) {
+        family = 'SeaPro';
+      } else if (/four\s*stroke|fourstroke/i.test(normalized)) {
+        family = 'FourStroke';
+      }
+
+      return { hp, riggingCode, family, hasCommandThrust };
+    }
+
     // Match and update motors from the sheet
     const matchedMotors: string[] = [];
     const unmatchedModels: string[] = [];
 
     for (const modelName of motorNames) {
-      // Try to match by model_display (case-insensitive, partial match)
-      const { data: motors, error: searchError } = await supabase
+      const parsed = parseMotorName(modelName);
+      console.log(`🔍 Parsing "${modelName}":`, JSON.stringify(parsed));
+
+      // Build query with multiple criteria for better matching
+      let query = supabase
         .from('motor_models')
-        .select('id, model_display')
-        .ilike('model_display', `%${modelName}%`)
-        .limit(1);
+        .select('id, model_display, horsepower');
+
+      // Apply filters based on what we extracted
+      if (parsed.hp !== null) {
+        query = query.eq('horsepower', parsed.hp);
+      }
+
+      if (parsed.riggingCode) {
+        query = query.ilike('model_display', `%${parsed.riggingCode}%`);
+      }
+
+      if (parsed.family) {
+        query = query.ilike('model_display', `%${parsed.family}%`);
+      }
+
+      // For Command Thrust, check both "CT" and "Command Thrust"
+      if (parsed.hasCommandThrust) {
+        query = query.or('model_display.ilike.%Command Thrust%,model_display.ilike.%CT%');
+      }
+
+      query = query.limit(1);
+
+      const { data: motors, error: searchError } = await query;
 
       if (searchError) {
         console.error(`Error searching for ${modelName}:`, searchError);
