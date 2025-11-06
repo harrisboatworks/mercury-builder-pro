@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Motor } from '@/components/QuoteBuilder';
@@ -6,6 +6,8 @@ import { FinancingProvider } from '@/contexts/FinancingContext';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
+import { useHpSuggestions } from '@/hooks/useHpSuggestions';
+import { HpSuggestionsDropdown } from '@/components/motors/HpSuggestionsDropdown';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { Button } from '@/components/ui/button';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
@@ -94,6 +96,9 @@ export default function MotorSelectionPage() {
   const [promotionRules, setPromotionRules] = useState<PromotionRule[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
+  const [showHpSuggestions, setShowHpSuggestions] = useState(false);
+  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0);
+  const searchInputRef = useRef<HTMLInputElement>(null);
   // Remove selectedMotor state since we're not doing inline selection anymore
 
   // Auto-trigger background image scraping for motors without images
@@ -259,6 +264,9 @@ export default function MotorSelectionPage() {
   }, [motors, promotions, promotionRules]);
 
   // Calculate monthly payments for each motor
+  // HP suggestions for autocomplete
+  const hpSuggestions = useHpSuggestions(searchQuery, processedMotors);
+  
   const monthlyPayments = useMemo(() => {
     const payments: Record<string, number | null> = {};
     
@@ -358,6 +366,40 @@ export default function MotorSelectionPage() {
     navigate('/quote/purchase-path');
   };
 
+  const handleHpSuggestionSelect = (hp: number) => {
+    setSearchQuery(hp.toString());
+    setShowHpSuggestions(false);
+    setSelectedSuggestionIndex(0);
+    searchInputRef.current?.focus();
+  };
+
+  const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!showHpSuggestions || hpSuggestions.length === 0) return;
+
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        setSelectedSuggestionIndex(prev => 
+          prev < hpSuggestions.length - 1 ? prev + 1 : prev
+        );
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        setSelectedSuggestionIndex(prev => prev > 0 ? prev - 1 : 0);
+        break;
+      case 'Enter':
+        e.preventDefault();
+        if (hpSuggestions[selectedSuggestionIndex]) {
+          handleHpSuggestionSelect(hpSuggestions[selectedSuggestionIndex].hp);
+        }
+        break;
+      case 'Escape':
+        setShowHpSuggestions(false);
+        setSelectedSuggestionIndex(0);
+        break;
+    }
+  };
+
   const getModelString = () => {
     if (!state.motor) return undefined;
     return state.motor.model;
@@ -409,21 +451,40 @@ export default function MotorSelectionPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
               <div className="relative">
                 <input
+                  ref={searchInputRef}
                   type="text"
                   placeholder="Find your perfect Mercury..."
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setShowHpSuggestions(true);
+                    setSelectedSuggestionIndex(0);
+                  }}
+                  onFocus={() => setShowHpSuggestions(true)}
+                  onKeyDown={handleSearchKeyDown}
                   className="w-full h-16 px-6 pr-12 text-base font-light tracking-wide rounded-sm border border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-gray-400 transition-all duration-500"
                 />
                 {searchQuery && (
                   <button
-                    onClick={() => setSearchQuery('')}
+                    onClick={() => {
+                      setSearchQuery('');
+                      setShowHpSuggestions(false);
+                    }}
                     className="absolute right-4 top-1/2 -translate-y-1/2 text-luxury-gray hover:text-luxury-ink transition-colors"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
+                )}
+                
+                {showHpSuggestions && hpSuggestions.length > 0 && (
+                  <HpSuggestionsDropdown
+                    suggestions={hpSuggestions}
+                    onSelect={handleHpSuggestionSelect}
+                    onClose={() => setShowHpSuggestions(false)}
+                    selectedIndex={selectedSuggestionIndex}
+                  />
                 )}
               </div>
               {searchQuery && (
