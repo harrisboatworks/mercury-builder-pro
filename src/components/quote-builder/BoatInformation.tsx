@@ -450,8 +450,8 @@ export const BoatInformation = ({
   return <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 md:space-y-8 py-4 md:py-6 lg:py-8 overflow-x-hidden">
       {/* Header */}
       <div className="text-center space-y-3 animate-fade-in">
-        <h2 className="text-3xl md:text-4xl font-light tracking-wide text-gray-900">Boat Details Wizard</h2>
-        <p className="text-base md:text-lg font-light text-gray-500">
+        <h2 className="text-3xl md:text-4xl font-light tracking-wide text-gray-900 dark:text-gray-100">Boat Details Wizard</h2>
+        <p className="text-base md:text-lg font-light text-gray-500 dark:text-gray-400">
           Let's match your {selectedMotor?.model || 'Mercury motor'} to your boat, step by step.
         </p>
       </div>
@@ -464,7 +464,7 @@ export const BoatInformation = ({
         {boatInfo.type === 'motor-only' ? <>
             {currentStep === 0 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-light tracking-wide text-gray-900">Motor Only</h3>
+                  <h3 className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">Motor Only</h3>
                   <p className="text-sm font-light text-gray-500">Buying a motor without a boat? We'll confirm specs at consultation.</p>
 
                   <div className="space-y-2">
@@ -496,14 +496,14 @@ export const BoatInformation = ({
 
             {showTradeIn && currentStep === 1 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-light tracking-wide text-gray-900">Trade-In Valuation (Optional)</h3>
+                  <h3 className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">Trade-In Valuation (Optional)</h3>
                   <TradeInValuation tradeInInfo={tradeInInfo} onTradeInChange={setTradeInInfo} currentMotorBrand={'No Current Motor'} currentHp={0} />
                 </div>
               </Card>}
 
             {currentStep === 2 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-light tracking-wide text-gray-900">Ready to Continue</h3>
+                  <h3 className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">Ready to Continue</h3>
                   <p className="text-sm font-light text-gray-500">We'll use typical settings and confirm any unknowns.</p>
                 </div>
               </Card>}
@@ -511,7 +511,7 @@ export const BoatInformation = ({
             {currentStep === 0 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-6">
                   <div className="text-center space-y-2">
-                    <Label className="text-2xl font-light tracking-wide text-gray-900">What type of boat do you have?</Label>
+                    <Label className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">What type of boat do you have?</Label>
                     <p className="font-light text-gray-500">Pick the closest match and enter your boat length.</p>
                   </div>
                   
@@ -521,7 +521,7 @@ export const BoatInformation = ({
                     .length === 0 && selectedMotor && (
                     <Alert className="mb-4">
                       <Info className="h-4 w-4" />
-                      <AlertDescription className="font-light text-gray-600">
+                      <AlertDescription className="font-light text-gray-600 dark:text-gray-300">
                         No standard boat types match your {selectedMotor.hp} HP motor. Consider selecting "Motor Only" 
                         if you're ordering a spare motor or contact us for custom applications.
                       </AlertDescription>
@@ -616,7 +616,7 @@ export const BoatInformation = ({
                    {/* Why this matters */}
                   <div className="why-this-matters">
                     <details className="text-sm">
-                      <summary className="cursor-pointer text-primary">Why do we need to know your boat type?</summary>
+                      <summary className="cursor-pointer text-primary hover:text-primary/80 dark:text-blue-400 dark:hover:text-blue-300">Why do we need to know your boat type?</summary>
                       <div className="mt-2 rounded-md bg-muted/30 p-3">
                         <p>Different boats need different motor features:</p>
                         <ul className="mt-2 space-y-1">
@@ -662,7 +662,7 @@ export const BoatInformation = ({
 
                   {/* Quick Skip */}
                   <div className="skip-option">
-                    <Button type="button" variant="ghost" size="sm" onClick={handleSkip} className="text-muted-foreground">
+                    <Button type="button" variant="ghost" size="sm" onClick={handleSkip} className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">
                       Skip this step - Use typical settings for {hp || selectedMotor?.hp || '--'}HP
                     </Button>
                   </div>
@@ -673,7 +673,7 @@ export const BoatInformation = ({
                          {/* Boat Make and Model */}
                          <div className="space-y-4">
                           <div className="text-center space-y-2">
-                            <Label className="text-xl font-light tracking-wide text-gray-900">Tell us about your {boatTypes.find(t => t.id === boatInfo.type)?.label}</Label>
+                            <Label className="text-xl font-light tracking-wide text-gray-900 dark:text-gray-100">Tell us about your {boatTypes.find(t => t.id === boatInfo.type)?.label}</Label>
                             <p className="text-sm font-light text-gray-500">Boat details help us provide more accurate recommendations</p>
                            </div>
                            
@@ -698,7 +698,7 @@ export const BoatInformation = ({
                          {/* Length Input */}
                           <div className="space-y-4">
                             <div className="text-center space-y-2">
-                              <Label className="text-xl font-light tracking-wide text-gray-900">Boat Length</Label>
+                              <Label className="text-xl font-light tracking-wide text-gray-900 dark:text-gray-100">Boat Length</Label>
                               <p className="text-sm font-light text-gray-500">Use the slider to set your boat length</p>
                            </div>
                            
@@ -721,7 +721,7 @@ export const BoatInformation = ({
             {currentStep === 1 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-2xl font-light tracking-wide text-gray-900">Transom Height Confirmation</h3>
+                    <h3 className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">Transom Height Confirmation</h3>
                     <p className="text-sm font-light text-gray-500">Measure from top of transom to bottom of hull.</p>
                   </div>
 
@@ -874,7 +874,7 @@ export const BoatInformation = ({
                       </div>}
 
                     {!isSelectedTillerMotor && selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && <div className="controls-section rounded-lg border border-border bg-muted/30 p-4">
-                        <h4 className="font-light tracking-wide text-gray-900 mb-3">Steering Controls Required</h4>
+                        <h4 className="font-light tracking-wide text-gray-900 dark:text-gray-100 mb-3">Steering Controls Required</h4>
                         {isNonMercuryBrand && <Alert className="mb-3 border-blue-500 bg-blue-50 dark:bg-blue-950/20">
                             <div className="flex items-center gap-2">
                               <Info className="w-4 h-4" />
@@ -952,7 +952,7 @@ export const BoatInformation = ({
                   const model = (selectedMotor?.model || '').toUpperCase();
                   const isElectricStart = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
                   return <div className="accessories-check rounded-lg border border-border bg-muted/30 p-4 space-y-4">
-                          <h3 className="text-xl font-light tracking-wide text-gray-900">What do you already have?</h3>
+                          <h3 className="text-xl font-light tracking-wide text-gray-900 dark:text-gray-100">What do you already have?</h3>
                           {hp >= 40 && <div className="accessory-item">
                               <div className="text-sm text-muted-foreground mb-1">Controls</div>
                               {/* Control radio options already shown above */}
@@ -1001,7 +1001,7 @@ export const BoatInformation = ({
 
             {showTradeIn && currentStep === 3 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-light tracking-wide text-gray-900">Have a motor to trade?</h3>
+                  <h3 className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">Have a motor to trade?</h3>
                    <TradeInValuation tradeInInfo={tradeInInfo} onTradeInChange={setTradeInInfo} currentMotorBrand={boatInfo.currentMotorBrand} currentHp={boatInfo.currentHp} currentMotorYear={boatInfo.currentMotorYear} />
                 </div>
               </Card>}
@@ -1009,7 +1009,7 @@ export const BoatInformation = ({
             {currentStep === 4 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-6">
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-light tracking-wide text-gray-900">Compatibility Check</h3>
+                    <h3 className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">Compatibility Check</h3>
                     <div className="flex items-center gap-3">
                       <Progress value={computeCompatibilityScore()} className="h-3" />
                       <span className="text-sm text-muted-foreground">{computeCompatibilityScore()}% match</span>
@@ -1039,19 +1039,19 @@ export const BoatInformation = ({
 
         {/* Navigation */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between pt-6 border-t gap-3">
-          <Button type="button" variant="outline" onClick={handlePrev} className="flex items-center justify-center gap-2 min-h-[44px] order-2 sm:order-1 border-2 border-black text-black font-light rounded-sm hover:bg-black hover:text-white transition-all duration-500">
+          <Button type="button" variant="outline" onClick={handlePrev} className="flex items-center justify-center gap-2 min-h-[44px] order-2 sm:order-1 border-2 border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100 font-light rounded-sm hover:bg-gray-900 hover:text-white dark:hover:bg-gray-100 dark:hover:text-gray-900 transition-all duration-500">
             <ArrowLeft className="w-4 h-4" />
             {currentStep === 0 ? 'Back to Motor' : 'Previous'}
           </Button>
           
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 order-1 sm:order-2">
-            {currentStep < totalSteps - 1 && <Button type="button" variant="ghost" onClick={handleSkip} className="text-sm min-h-[44px] font-light text-gray-500">
+            {currentStep < totalSteps - 1 && <Button type="button" variant="ghost" onClick={handleSkip} className="text-sm min-h-[44px] font-light text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">
                 Skip for now
               </Button>}
             
-            {currentStep === totalSteps - 1 ? <Button type="submit" className="border-2 border-black bg-black text-white px-8 py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-white hover:text-black transition-all duration-500" disabled={!canNext()}>
+            {currentStep === totalSteps - 1 ? <Button type="submit" className="border-2 border-gray-900 dark:border-gray-100 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-8 py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-white hover:text-gray-900 dark:hover:bg-gray-900 dark:hover:text-gray-100 transition-all duration-500" disabled={!canNext()}>
                 Continue to Quote
-              </Button> : <Button type="button" onClick={handleNext} disabled={!canNext()} className="border-2 border-black bg-black text-white px-8 py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-white hover:text-black transition-all duration-500">
+              </Button> : <Button type="button" onClick={handleNext} disabled={!canNext()} className="border-2 border-gray-900 dark:border-gray-100 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-8 py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-white hover:text-gray-900 dark:hover:bg-gray-900 dark:hover:text-gray-100 transition-all duration-500">
                 Next: {nextStepLabel}
               </Button>}
           </div>
@@ -1061,7 +1061,7 @@ export const BoatInformation = ({
 
       {/* Mobile chat style hint */}
       {isMobile && <div className="rounded-lg border border-border bg-muted/30 p-4">
-          <div className="text-sm text-muted-foreground">Tip: You can tap a preset above to speed things up.</div>
+          <div className="text-sm text-gray-600 dark:text-gray-300">Tip: You can tap a preset above to speed things up.</div>
         </div>}
     </div>;
 };
