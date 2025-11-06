@@ -451,9 +451,9 @@ export const BoatInformation = ({
       {/* Header */}
       <div className="text-center space-y-3 animate-fade-in">
         <h2 className="text-3xl md:text-4xl font-light tracking-wide text-gray-900 dark:text-gray-100">Boat Details Wizard</h2>
-        <p className="text-base md:text-lg font-light text-gray-500 dark:text-gray-400">
-          Let's match your {selectedMotor?.model || 'Mercury motor'} to your boat, step by step.
-        </p>
+              <p className="text-base md:text-lg font-light text-gray-600 dark:text-gray-300">
+                Let's match your {selectedMotor?.model || 'Mercury motor'} to your boat, step by step.
+              </p>
       </div>
 
 
