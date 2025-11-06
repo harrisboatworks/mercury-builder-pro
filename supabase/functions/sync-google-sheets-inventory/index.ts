@@ -68,7 +68,7 @@ Deno.serve(async (req) => {
     const csvText = await csvResponse.text();
     console.log('📄 CSV content length:', csvText.length);
 
-    // Parse CSV to extract motor names from Column A
+    // Parse CSV to extract motor names from Column B (index 1)
     const lines = csvText.split('\n');
     const motorNames: string[] = [];
 
@@ -77,9 +77,10 @@ Deno.serve(async (req) => {
       
       // Split by comma, handle quoted values
       const columns = lines[i].split(',').map(col => col.trim().replace(/^["']|["']$/g, ''));
-      const modelName = columns[0];
+      const modelName = columns[1]; // Column B has the motor model names
       
-      if (modelName && modelName.length > 2 && !modelName.match(/^\d+$/)) {
+      // Filter out years, empty values, and non-motor entries
+      if (modelName && modelName.length > 2 && !modelName.match(/^\d{4}$/) && modelName !== 'Model') {
         motorNames.push(modelName);
       }
     }
