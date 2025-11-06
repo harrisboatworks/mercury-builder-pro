@@ -158,10 +158,10 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
         )}
 
         <div className="flex items-center justify-between">
-          <Button variant="outline" onClick={onBack}>
+          <Button variant="outline" onClick={onBack} className="dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-800">
             Back
           </Button>
-          <Button onClick={handleComplete}>
+          <Button onClick={handleComplete} className="dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90">
             Continue to Quote
           </Button>
         </div>

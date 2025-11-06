@@ -47,7 +47,7 @@ export default function FuelTankPage() {
     <QuoteLayout>
       <div className="space-y-6">
         <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm" onClick={handleBack}>
+          <Button variant="outline" size="sm" onClick={handleBack} className="dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-800">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Purchase Path
           </Button>

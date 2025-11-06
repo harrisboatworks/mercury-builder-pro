@@ -122,7 +122,7 @@ export default function TradeInPage() {
             variant="outline" 
             size="sm" 
             onClick={handleBack}
-            className="border-gray-300 hover:border-gray-900 font-light"
+            className="border-gray-300 dark:border-gray-600 hover:border-gray-900 dark:hover:border-gray-100 dark:text-gray-100 dark:hover:bg-gray-800 font-light"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back
