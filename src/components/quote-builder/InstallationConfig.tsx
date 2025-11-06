@@ -66,7 +66,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
         <h2 className="text-3xl font-light tracking-wide text-foreground mb-2">
           {isTiller ? 'Configure Your Tiller Installation' : 'Configure Your Installation'}
         </h2>
-        <p className="text-muted-foreground font-light mb-8">
+        <p className="text-gray-600 dark:text-gray-300 font-light mb-8">
           {isTiller 
             ? `Select your mounting and service options for the ${selectedMotor?.model}`
             : `Select your rigging options for the ${selectedMotor?.model}`
@@ -156,8 +156,8 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
                   className="w-5 h-5"
                 />
                 <div className="flex-1">
-                  <span className="font-medium">Remove & Dispose Old Motor</span>
-                  <span className="text-sm text-muted-foreground ml-2">+2 hours labour</span>
+                  <span className="font-medium text-gray-900 dark:text-gray-100">Remove & Dispose Old Motor</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300 ml-2">+2 hours labour</span>
                 </div>
               </motion.label>
               
@@ -174,8 +174,8 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
                   className="w-5 h-5"
                 />
                 <div className="flex-1">
-                  <span className="font-medium">Water Test & Prop Optimization</span>
-                  <span className="text-sm text-muted-foreground ml-2">Recommended</span>
+                  <span className="font-medium text-gray-900 dark:text-gray-100">Water Test & Prop Optimization</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300 ml-2">Recommended</span>
                 </div>
               </motion.label>
             </div>

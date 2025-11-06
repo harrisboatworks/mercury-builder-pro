@@ -550,10 +550,10 @@ export const BoatInformation = ({
                          </div>
                         <h3 className="font-light tracking-wide text-base md:text-lg text-gray-900">{type.label}</h3>
                         <div className="boat-details mt-1 space-y-0.5">
-                          <span className="block text-sm md:text-base font-light text-muted-foreground">{type.description}</span>
+                          <span className="block text-sm md:text-base font-light text-gray-600 dark:text-gray-300">{type.description}</span>
                           {type.recommendedHP && <span className="block text-xs md:text-sm text-primary font-medium">Recommended: {type.recommendedHP} HP</span>}
                         </div>
-                        <div className="selection-impact mt-2 text-xs text-muted-foreground">
+                        <div className="selection-impact mt-2 text-xs text-gray-600 dark:text-gray-300">
                           {type.id === 'pontoon' && <span className="inline-flex items-center gap-1">
                               Needs Command Thrust motor
                               <TooltipProvider delayDuration={150}>
@@ -705,11 +705,11 @@ export const BoatInformation = ({
                            <div className="slider-container">
                              <Slider value={[lengthFeet]} min={14} max={30} step={1} onValueChange={handleLengthChange} className="w-full" />
                              <div className="flex justify-between items-center mt-3">
-                               <span className="text-sm text-muted-foreground">14 ft</span>
+                               <span className="text-sm text-gray-600 dark:text-gray-300">14 ft</span>
                                <span className="text-2xl font-bold text-primary">
                                  {lengthFeet} ft
                                </span>
-                               <span className="text-sm text-muted-foreground">30 ft</span>
+                               <span className="text-sm text-gray-600 dark:text-gray-300">30 ft</span>
                              </div>
                            </div>
                          </div>
@@ -817,7 +817,7 @@ export const BoatInformation = ({
                       ...prev,
                       currentHp: parseInt(e.target.value || '0', 10) || 0
                     }))} />
-                         <p className="text-xs text-muted-foreground">Helps us provide more accurate rigging and trade-in estimates if needed.</p>
+                         <p className="text-xs text-gray-600 dark:text-gray-300">Helps us provide more accurate rigging and trade-in estimates if needed.</p>
                        </div>
 
                        <div className="space-y-2">
@@ -835,7 +835,7 @@ export const BoatInformation = ({
                         }, (_, i) => new Date().getFullYear() - i).map(year => <SelectItem key={year} value={year.toString()}>{year}</SelectItem>)}
                            </SelectContent>
                          </Select>
-                         <p className="text-xs text-muted-foreground">Helps us provide more accurate trade-in estimates.</p>
+                         <p className="text-xs text-gray-600 dark:text-gray-300">Helps us provide more accurate trade-in estimates.</p>
                        </div>
                       </>}
 
@@ -887,8 +887,8 @@ export const BoatInformation = ({
                           {isNonMercuryBrand ? <div className="rounded-lg border-2 border-primary bg-primary/5 p-4">
                               <div className="text-left">
                                 <strong className="block">I need new controls</strong>
-                                <span className="text-sm text-muted-foreground">+$1,200</span>
-                                <small className="block text-xs text-muted-foreground">Required for non‑Mercury controls</small>
+                                <span className="text-sm text-gray-600 dark:text-gray-300">+$1,200</span>
+                                <small className="block text-xs text-gray-500 dark:text-gray-400">Required for non‑Mercury controls</small>
                               </div>
                             </div> : <>
                               <Button type="button" variant={boatInfo.controlsOption === 'none' ? 'default' : 'outline'} className="h-auto p-4 text-left justify-start flex-col items-start" onClick={() => setBoatInfo(prev => ({
@@ -925,7 +925,7 @@ export const BoatInformation = ({
                             <p className="text-sm">
                               Your existing Mercury controls can work with your new motor using our control harness adapter. This saves you over $1,000!
                             </p>
-                            <small className="text-xs text-muted-foreground">
+                            <small className="text-xs text-gray-600 dark:text-gray-300">
                               Compatible with most Mercury controls from 2004-present. We'll confirm compatibility during installation.
                             </small>
                           </div>}
@@ -954,7 +954,7 @@ export const BoatInformation = ({
                   return <div className="accessories-check rounded-lg border border-border bg-muted/30 p-4 space-y-4">
                           <h3 className="text-xl font-light tracking-wide text-gray-900 dark:text-gray-100">What do you already have?</h3>
                           {hp >= 40 && <div className="accessory-item">
-                              <div className="text-sm text-muted-foreground mb-1">Controls</div>
+                              <div className="text-sm text-gray-600 dark:text-gray-300 mb-1">Controls</div>
                               {/* Control radio options already shown above */}
                               <div className="text-xs text-muted-foreground">We’ll confirm compatibility during installation.</div>
                             </div>}
@@ -968,7 +968,7 @@ export const BoatInformation = ({
                               </label>
                               {!boatInfo.hasBattery && <div className="cost-note text-sm text-primary">
                                   +$179.99 for battery
-                                  <small className="block text-xs text-muted-foreground">Marine cranking battery</small>
+                                  <small className="block text-xs text-gray-500 dark:text-gray-400">Marine cranking battery</small>
                                 </div>}
                             </div>}
                           {hp >= 25 && boatInfo.currentMotorBrand === 'Mercury' && <div className="accessory-item">
@@ -981,7 +981,7 @@ export const BoatInformation = ({
                               </label>
                               {!boatInfo.hasCompatibleProp && <div className="cost-note text-sm text-primary">
                                   +${hp >= 150 ? '950 (Stainless Steel)' : '350 (Aluminum)'}
-                                  <small className="block text-xs text-muted-foreground">Fit and Size determined to be confirmed at inspection</small>
+                                  <small className="block text-xs text-gray-500 dark:text-gray-400">Fit and Size determined to be confirmed at inspection</small>
                                 </div>}
                             </div>}
 
@@ -1012,7 +1012,7 @@ export const BoatInformation = ({
                     <h3 className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">Compatibility Check</h3>
                     <div className="flex items-center gap-3">
                       <Progress value={computeCompatibilityScore()} className="h-3" />
-                      <span className="text-sm text-muted-foreground">{computeCompatibilityScore()}% match</span>
+                      <span className="text-sm text-gray-600 dark:text-gray-300">{computeCompatibilityScore()}% match</span>
                     </div>
                   </div>
                   <div className="rounded-lg border border-border bg-muted/30 p-4">
@@ -1024,7 +1024,7 @@ export const BoatInformation = ({
                       <div className="md:w-1/3 space-y-2">
                         <div className="text-sm">Estimated Speed</div>
                         <div className="text-2xl font-bold">{selectedMotor ? Math.max(15, Math.round(selectedMotor.hp / Math.max(12, lengthFeet) * 2)) : '--'} mph</div>
-                        <div className="text-sm text-muted-foreground">We'll fine-tune during consultation.</div>
+                        <div className="text-sm text-gray-600 dark:text-gray-300">We'll fine-tune during consultation.</div>
                       </div>
                     </div>
                   </div>
