@@ -106,13 +106,13 @@ export const QuoteLayout = ({
     }
   };
   const visibleSteps = getVisibleSteps();
-  return <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white dark:bg-gray-950">
       {/* Luxury Header System */}
       <LuxuryHeader />
 
       {/* Progress Indicator for Mobile */}
       {showProgress && (
-        <div className="md:hidden bg-white border-b border-luxury-hairline py-4">
+        <div className="md:hidden bg-white dark:bg-gray-950 border-b border-luxury-hairline dark:border-gray-800 py-4">
           <div className="max-w-7xl mx-auto px-6">
             <CurrentStepIndicator
               currentStep={visibleSteps.findIndex(step => step.path === location.pathname) + 1 || 1}
@@ -125,7 +125,7 @@ export const QuoteLayout = ({
 
 
       {/* Main Content */}
-      <main className="bg-stone-50 min-h-screen">
+      <main className="bg-stone-50 dark:bg-gray-900 min-h-screen">
         {children}
       </main>
 
