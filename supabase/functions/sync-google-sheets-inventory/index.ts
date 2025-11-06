@@ -13,7 +13,6 @@ Deno.serve(async (req) => {
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-    const firecrawlKey = Deno.env.get('FIRECRAWL_API_KEY')!;
     
     const supabase = createClient(supabaseUrl, supabaseKey);
 
@@ -42,51 +41,50 @@ Deno.serve(async (req) => {
 
     console.log('🔄 Starting Google Sheets sync:', sheetUrl);
 
-    // Scrape the published Google Sheet using Firecrawl
-    const scrapeResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${firecrawlKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        url: sheetUrl,
-        formats: ['markdown'],
-      }),
-    });
-
-    if (!scrapeResponse.ok) {
-      throw new Error(`Firecrawl API error: ${scrapeResponse.statusText}`);
+    // Convert pubhtml URL to CSV format for direct parsing
+    let csvUrl = sheetUrl;
+    if (sheetUrl.includes('/pubhtml')) {
+      csvUrl = sheetUrl.replace('/pubhtml', '/pub');
+      // Replace any existing parameters with output=csv
+      if (csvUrl.includes('?')) {
+        const baseUrl = csvUrl.split('?')[0];
+        const urlParams = new URLSearchParams(csvUrl.split('?')[1]);
+        const gid = urlParams.get('gid') || '0';
+        csvUrl = `${baseUrl}?gid=${gid}&output=csv`;
+      } else {
+        csvUrl = `${csvUrl}?output=csv`;
+      }
     }
 
-    const scrapeData = await scrapeResponse.json();
-    const markdown = scrapeData.data?.markdown || '';
+    console.log('📄 Fetching CSV from:', csvUrl);
 
-    console.log('📄 Scraped sheet content length:', markdown.length);
+    // Fetch CSV directly from Google Sheets
+    const csvResponse = await fetch(csvUrl);
 
-    // Extract motor model names from Column A (markdown format)
-    // Google Sheets markdown typically has tables with | separators
-    const lines = markdown.split('\n');
+    if (!csvResponse.ok) {
+      throw new Error(`Failed to fetch Google Sheet: ${csvResponse.statusText}`);
+    }
+
+    const csvText = await csvResponse.text();
+    console.log('📄 CSV content length:', csvText.length);
+
+    // Parse CSV to extract motor names from Column A
+    const lines = csvText.split('\n');
     const motorNames: string[] = [];
 
-    for (const line of lines) {
-      // Skip header rows and empty lines
-      if (!line.trim() || line.includes('---') || line.toLowerCase().includes('model')) {
-        continue;
-      }
-
-      // Extract first column value (between | and |)
-      const match = line.match(/\|\s*([^|]+?)\s*\|/);
-      if (match && match[1] && match[1].trim()) {
-        const modelName = match[1].trim();
-        // Filter out obvious non-motor entries
-        if (modelName.length > 2 && !modelName.match(/^\d+$/)) {
-          motorNames.push(modelName);
-        }
+    for (let i = 1; i < lines.length; i++) { // Skip header row (i=0)
+      if (!lines[i].trim()) continue; // Skip empty lines
+      
+      // Split by comma, handle quoted values
+      const columns = lines[i].split(',').map(col => col.trim().replace(/^["']|["']$/g, ''));
+      const modelName = columns[0];
+      
+      if (modelName && modelName.length > 2 && !modelName.match(/^\d+$/)) {
+        motorNames.push(modelName);
       }
     }
 
-    console.log('📋 Extracted motor names:', motorNames.length);
+    console.log('📋 Extracted motor names:', motorNames.length, motorNames.slice(0, 5));
 
     // Reset all motors to out of stock first
     const { error: resetError } = await supabase
