@@ -563,14 +563,14 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               </div>
 
               {totals.discount > 0 && (
-                <div className="flex justify-between text-gray-700 text-sm font-light">
+                <div className="flex justify-between text-gray-700 dark:text-gray-300 text-sm font-light">
                   <span>Discount:</span>
                   <span>-${totals.discount.toLocaleString()}</span>
                 </div>
               )}
 
               {totals.promoValue > 0 && (
-                <div className="flex justify-between text-gray-700 text-sm font-light">
+                <div className="flex justify-between text-gray-700 dark:text-gray-300 text-sm font-light">
                   <span>Promo Value:</span>
                   <span>-${totals.promoValue.toLocaleString()}</span>
                 </div>
@@ -582,7 +582,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               </div>
 
               {hasTradeIn && (
-                <div className="flex justify-between text-gray-700 font-light">
+                <div className="flex justify-between text-gray-700 dark:text-gray-300 font-light">
                   <span className="text-muted-foreground">Trade-in Credit</span>
                   <span>-${tradeInValue.toLocaleString()}</span>
                 </div>
@@ -606,7 +606,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               </div>
 
               {totals.savings > 0 && (
-                <div className="bg-stone-50 dark:bg-stone-950/20 p-3 rounded-sm border border-gray-200">
+                <div className="bg-stone-50 dark:bg-stone-950/20 p-3 rounded-sm border border-gray-200 dark:border-gray-700">
                   <div className="text-gray-700 dark:text-gray-300 text-sm font-light">
                     You Save ${totals.savings.toLocaleString()}
                   </div>
@@ -634,7 +634,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <h3 className="text-xl font-light tracking-wide">Contact Information</h3>
-              <p className="text-muted-foreground font-light mt-2">We'll reach out as soon as possible to discuss your quote and schedule your consultation</p>
+              <p className="text-muted-foreground dark:text-gray-400 font-light mt-2">We'll reach out as soon as possible to discuss your quote and schedule your consultation</p>
             </div>
             
             <div className="space-y-2">
@@ -680,7 +680,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               {errors.phone && (
                 <p className="text-sm text-destructive font-light">{errors.phone}</p>
               )}
-              <p className="text-xs text-muted-foreground font-light">Enter 10 digits (with or without formatting)</p>
+              <p className="text-xs text-muted-foreground dark:text-gray-400 font-light">Enter 10 digits (with or without formatting)</p>
             </div>
 
             <div className="space-y-2">
@@ -708,7 +708,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 maxLength={500}
                 className="border-gray-200 focus:border-gray-400 rounded-sm transition-colors duration-300"
               />
-              <p className="text-xs text-muted-foreground font-light">{contactInfo.notes.length}/500 characters</p>
+              <p className="text-xs text-muted-foreground dark:text-gray-400 font-light">{contactInfo.notes.length}/500 characters</p>
             </div>
 
             <Button type="submit" className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-sm border border-gray-900 font-light tracking-wide" disabled={isSubmitting}>
@@ -728,21 +728,21 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             <Phone className="w-5 h-5 text-gray-700" />
             <div>
               <p className="font-light tracking-wide">Phone</p>
-              <p className="text-muted-foreground font-light">(905) 342-2153</p>
+              <p className="text-muted-foreground dark:text-gray-400 font-light">(905) 342-2153</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
             <Mail className="w-5 h-5 text-gray-700" />
             <div>
               <p className="font-light tracking-wide">Email</p>
-              <p className="text-muted-foreground font-light">info@harrisboatworks.ca</p>
+              <p className="text-muted-foreground dark:text-gray-400 font-light">info@harrisboatworks.ca</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
             <MapPin className="w-5 h-5 text-gray-700" />
             <div>
               <p className="font-light tracking-wide">Location</p>
-              <p className="text-muted-foreground font-light">5369 Harris Boat Works Rd, Gores Landing, ON</p>
+              <p className="text-muted-foreground dark:text-gray-400 font-light">5369 Harris Boat Works Rd, Gores Landing, ON</p>
             </div>
           </div>
         </div>
@@ -752,7 +752,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             <Clock className="w-5 h-5 text-gray-700 mt-0.5" />
             <div>
               <p className="font-light tracking-wide mb-2">What happens next?</p>
-              <ul className="text-sm text-muted-foreground font-light space-y-1">
+              <ul className="text-sm text-muted-foreground dark:text-gray-400 font-light space-y-1">
                 <li>• We'll contact you within 24 hours to schedule your consultation</li>
                 <li>• Our technician will inspect your boat and verify all specifications</li>
                 <li>• You'll receive a final quote including installation costs</li>

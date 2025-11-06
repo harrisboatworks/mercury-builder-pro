@@ -289,7 +289,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       </div>
                       <div className="font-light text-base tracking-wide text-gray-900 dark:text-gray-100">{option.label}</div>
                       <div className="text-sm font-light text-gray-600 dark:text-gray-400 mt-1">{option.description}</div>
-                      <div className="text-xs font-light text-gray-500 dark:text-gray-500 mt-1">
+                      <div className="text-xs font-light text-gray-500 dark:text-gray-400 mt-1">
                         {option.value === 'excellent' && '<100 hours'}
                         {option.value === 'good' && '100-500 hours'}
                         {option.value === 'fair' && '500-1000 hours'}

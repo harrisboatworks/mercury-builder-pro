@@ -433,7 +433,7 @@ export default function MotorSelectionPage() {
         <div className="bg-stone-50 min-h-screen flex items-center justify-center py-20">
           <div className="text-center">
             <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-gray-900 border-t-transparent"></div>
-            <p className="text-gray-600 font-light tracking-wide">Loading Mercury motors...</p>
+            <p className="text-gray-600 dark:text-gray-300 font-light tracking-wide">Loading Mercury motors...</p>
           </div>
         </div>
       </QuoteLayout>
@@ -459,7 +459,7 @@ export default function MotorSelectionPage() {
                   }}
                   onFocus={() => setShowHpSuggestions(true)}
                   onKeyDown={handleSearchKeyDown}
-                  className="w-full h-16 px-6 pr-12 text-base font-light tracking-wide rounded-sm border border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-gray-400 transition-all duration-500"
+                  className="w-full h-16 px-6 pr-12 text-base font-light tracking-wide rounded-sm border border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:border-gray-400 transition-all duration-500"
                 />
                 {searchQuery && (
                   <button
