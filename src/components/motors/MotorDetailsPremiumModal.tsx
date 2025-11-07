@@ -624,9 +624,13 @@ export default function MotorDetailsPremiumModal({
                   {typeof price === "number" ? money(price) : 'Call'}
                 </p>
                 {typeof price === "number" && (
-                  <p className="text-xs text-gray-500 dark:text-gray-400 font-light">
+                  <button
+                    onClick={handleCalculatePayment}
+                    className="text-xs text-gray-500 dark:text-gray-400 font-light hover:text-gray-700 dark:hover:text-gray-300 underline decoration-dotted cursor-pointer flex items-center gap-1"
+                  >
                     <MonthlyPaymentDisplay motorPrice={price} />
-                  </p>
+                    <Calculator className="w-3 h-3 opacity-60" />
+                  </button>
                 )}
               </div>
               
@@ -638,38 +642,6 @@ export default function MotorDetailsPremiumModal({
                 Add to Quote
               </button>
             </div>
-            
-            {/* Tap to expand full details */}
-            <button 
-              onClick={() => setShowFullPricing(!showFullPricing)}
-              className="w-full text-center text-xs text-gray-500 dark:text-gray-400 mt-2 font-light"
-            >
-              {showFullPricing ? '▼ Show Less' : '▲ View Full Details'}
-            </button>
-            
-            {/* Expandable Pricing Details */}
-            {showFullPricing && (
-              <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700 space-y-3">
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-stone-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-light rounded-full">
-                    {hp} HP
-                  </span>
-                  {shaft && (
-                    <span className="px-3 py-1 bg-stone-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-light rounded-full">
-                      {shaft}
-                    </span>
-                  )}
-                </div>
-                
-                <button
-                  onClick={handleCalculatePayment}
-                  className="w-full flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-gray-200 font-light"
-                >
-                  <Calculator className="w-4 h-4" />
-                  Calculate Payment
-                </button>
-              </div>
-            )}
           </div>
         </div>
       </div>
