@@ -617,29 +617,20 @@ export default function MotorDetailsPremiumModal({
 
           {/* Mobile: Fixed Bottom Pricing Bar */}
           <div className="lg:hidden sticky bottom-0 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-800 p-4">
-            {/* Compact Price & Payment Info */}
-            <div className="mb-3">
-              <div className="flex justify-between items-center">
+            <div className="flex items-center justify-between gap-4">
+              {/* Compact Price Display */}
+              <div>
                 <p className="text-lg font-light text-gray-900 dark:text-gray-100">
                   {typeof price === "number" ? money(price) : 'Call'}
                 </p>
                 {typeof price === "number" && (
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                  <p className="text-xs text-gray-500 dark:text-gray-400 font-light">
                     <MonthlyPaymentDisplay motorPrice={price} />
                   </p>
                 )}
               </div>
-            </div>
-            
-            {/* Action Buttons - Always Visible */}
-            <div className="flex gap-2">
-              <button
-                onClick={handleCalculatePayment}
-                className="flex items-center justify-center gap-2 px-4 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-light rounded-sm hover:bg-gray-50 dark:hover:bg-slate-700"
-              >
-                <Calculator className="w-4 h-4" />
-                Calculate
-              </button>
+              
+              {/* ADD TO QUOTE Button */}
               <button
                 onClick={handleSelectMotor}
                 className="flex-1 bg-black text-white py-3 text-xs tracking-widest uppercase font-light rounded-sm"
@@ -648,17 +639,17 @@ export default function MotorDetailsPremiumModal({
               </button>
             </div>
             
-            {/* Optional: Specs toggle */}
+            {/* Tap to expand full details */}
             <button 
               onClick={() => setShowFullPricing(!showFullPricing)}
-              className="w-full text-center text-xs text-gray-500 dark:text-gray-400 mt-3 font-light"
+              className="w-full text-center text-xs text-gray-500 dark:text-gray-400 mt-2 font-light"
             >
-              {showFullPricing ? '▼ Hide Specs' : '▲ View Specs'}
+              {showFullPricing ? '▼ Show Less' : '▲ View Full Details'}
             </button>
             
-            {/* Expandable Specs */}
+            {/* Expandable Pricing Details */}
             {showFullPricing && (
-              <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-700">
+              <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700 space-y-3">
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-stone-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-light rounded-full">
                     {hp} HP
@@ -669,6 +660,14 @@ export default function MotorDetailsPremiumModal({
                     </span>
                   )}
                 </div>
+                
+                <button
+                  onClick={handleCalculatePayment}
+                  className="w-full flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-gray-200 font-light"
+                >
+                  <Calculator className="w-4 h-4" />
+                  Calculate Payment
+                </button>
               </div>
             )}
           </div>
