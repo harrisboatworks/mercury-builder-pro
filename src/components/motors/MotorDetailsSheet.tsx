@@ -22,6 +22,7 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { enhanceImageUrls } from "@/lib/image-utils";
 import MotorDocumentsSection from './MotorDocumentsSection';
 import MotorVideosSection from './MotorVideosSection';
+import { FinanceCalculatorDrawer } from './FinanceCalculatorDrawer';
 
 export default function MotorDetailsSheet({
   open,
@@ -203,17 +204,10 @@ export default function MotorDetailsSheet({
     };
   }, [open, onClose]);
 
+  const [calculatorOpen, setCalculatorOpen] = useState(false);
+
   const handleCalculatePayment = () => {
-    onClose();
-    navigate('/finance-calculator', {
-      state: {
-        motorPrice: price || 0,
-        motorModel: title,
-        motorId: motor?.id || `${title}-${hp}`,
-        motorHp: typeof hp === 'string' ? parseInt(hp) : hp,
-        fromModal: true
-      }
-    });
+    setCalculatorOpen(true);
   };
 
   const handleSelectMotor = () => {
@@ -1051,6 +1045,18 @@ export default function MotorDetailsSheet({
           </div>
         </div>
       </div>
+
+      <FinanceCalculatorDrawer
+        open={calculatorOpen}
+        onOpenChange={setCalculatorOpen}
+        motor={{
+          id: motor?.id || `${title}-${hp}`,
+          model: title,
+          year: new Date().getFullYear(),
+          price: price || 0,
+          hp: typeof hp === 'string' ? parseInt(hp) : hp
+        }}
+      />
     </div>
   );
 }

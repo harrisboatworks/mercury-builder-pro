@@ -17,6 +17,7 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import MotorDocumentsSection from './MotorDocumentsSection';
 import MotorVideosSection from './MotorVideosSection';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { FinanceCalculatorDrawer } from './FinanceCalculatorDrawer';
 
 interface MotorDetailsPremiumModalProps {
   open: boolean;
@@ -128,17 +129,10 @@ export default function MotorDetailsPremiumModal({
     if (motor?.id) fetchWarrantyPricing();
   }, [hpValue, motor?.id]);
 
+  const [calculatorOpen, setCalculatorOpen] = useState(false);
+
   const handleCalculatePayment = () => {
-    onClose();
-    navigate('/finance-calculator', {
-      state: {
-        motorPrice: price || 0,
-        motorModel: title,
-        motorId: motor?.id || `${title}-${hp}`,
-        motorHp: hpValue,
-        fromModal: true
-      }
-    });
+    setCalculatorOpen(true);
   };
 
   const handleSelectMotor = () => {
@@ -679,6 +673,18 @@ export default function MotorDetailsPremiumModal({
           </div>
         </div>
       </div>
+
+      <FinanceCalculatorDrawer
+        open={calculatorOpen}
+        onOpenChange={setCalculatorOpen}
+        motor={{
+          id: motor?.id || `${title}-${hp}`,
+          model: title,
+          year: new Date().getFullYear(),
+          price: price || 0,
+          hp: hpValue
+        }}
+      />
     </div>
   );
 }
