@@ -175,7 +175,38 @@ Deno.serve(async (req) => {
 
       query = query.limit(1);
 
-      const { data: motors, error: searchError } = await query;
+      let { data: motors, error: searchError } = await query;
+
+      // Fallback: If no match found with CT filter, retry without CT requirement
+      if (parsed.hasCommandThrust && (!motors || motors.length === 0) && !searchError) {
+        console.log(`⚠️ No match with CT filter for "${modelName}", retrying without CT...`);
+        
+        let fallbackQuery = supabase
+          .from('motor_models')
+          .select('id, model_display, horsepower');
+
+        if (parsed.hp !== null) {
+          fallbackQuery = fallbackQuery.eq('horsepower', parsed.hp);
+        }
+
+        if (parsed.riggingCode) {
+          fallbackQuery = fallbackQuery.ilike('model_display', `%${parsed.riggingCode}%`);
+        }
+
+        if (parsed.family) {
+          fallbackQuery = fallbackQuery.ilike('model_display', `%${parsed.family}%`);
+        }
+
+        fallbackQuery = fallbackQuery.limit(1);
+
+        const fallbackResult = await fallbackQuery;
+        motors = fallbackResult.data;
+        searchError = fallbackResult.error;
+        
+        if (motors && motors.length > 0) {
+          console.log(`✅ Fallback match found: "${motors[0].model_display}"`);
+        }
+      }
 
       if (searchError) {
         console.error(`Error searching for ${modelName}:`, searchError);
