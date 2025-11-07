@@ -626,10 +626,10 @@ export default function MotorDetailsPremiumModal({
                 {typeof price === "number" && (
                   <button
                     onClick={handleCalculatePayment}
-                    className="text-xs text-gray-500 dark:text-gray-400 font-light hover:text-gray-700 dark:hover:text-gray-300 underline decoration-dotted cursor-pointer flex items-center gap-1"
+                    className="mt-1 flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-400 font-light hover:text-gray-900 dark:hover:text-gray-200 underline decoration-dotted cursor-pointer transition-colors"
                   >
                     <MonthlyPaymentDisplay motorPrice={price} />
-                    <Calculator className="w-3 h-3 opacity-60" />
+                    <Calculator className="w-4 h-4 opacity-70" />
                   </button>
                 )}
               </div>
