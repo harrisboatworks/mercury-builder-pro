@@ -77,7 +77,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
 
   return (
     <Drawer open={open} onOpenChange={onOpenChange} shouldScaleBackground={false}>
-      <DrawerContent className="max-h-[90vh]">
+      <DrawerContent className="max-h-[90vh] z-[60]">
         <DrawerHeader className="text-left">
           <DrawerTitle className="flex items-center gap-2">
             <Calculator className="w-5 h-5" />
