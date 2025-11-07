@@ -217,13 +217,22 @@ Deno.serve(async (req) => {
       if (motors && motors.length > 0) {
         const motor = motors[0];
         
-        // Update this motor to in stock
+        // Fetch current stock quantity to properly increment
+        const { data: currentMotor } = await supabase
+          .from('motor_models')
+          .select('stock_quantity')
+          .eq('id', motor.id)
+          .single();
+
+        const newQuantity = (currentMotor?.stock_quantity || 0) + 1;
+        
+        // Update this motor with incremented stock quantity
         const { error: updateError } = await supabase
           .from('motor_models')
           .update({
             in_stock: true,
             availability: 'In Stock',
-            stock_quantity: 1,
+            stock_quantity: newQuantity,
             last_stock_check: new Date().toISOString(),
           })
           .eq('id', motor.id);
@@ -233,7 +242,7 @@ Deno.serve(async (req) => {
           unmatchedModels.push(modelName);
         } else {
           matchedMotors.push(motor.model_display);
-          console.log(`✅ Matched: ${modelName} → ${motor.model_display}`);
+          console.log(`✅ Matched: ${modelName} → ${motor.model_display} (qty: ${newQuantity})`);
         }
       } else {
         unmatchedModels.push(modelName);
