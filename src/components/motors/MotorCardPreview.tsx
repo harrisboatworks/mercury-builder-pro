@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import MotorDetailsPremiumModal from './MotorDetailsPremiumModal';
 import { Button } from '@/components/ui/button';
 import { LuxuryPriceDisplay } from '@/components/pricing/LuxuryPriceDisplay';
+import { StockBadge } from '@/components/inventory/StockBadge';
 import type { Motor } from '../../lib/motor-helpers';
 import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery, decodeModelName, cleanMotorName } from '../../lib/motor-helpers';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -278,6 +279,18 @@ export default function MotorCardPreview({
                 alt={title} 
                 className="h-48 md:h-72 w-full object-contain"
               />
+              
+              {/* Stock Badge - Top Left */}
+              <div className="absolute top-4 left-4">
+                <StockBadge 
+                  motor={{
+                    in_stock: inStock,
+                    stock_quantity: motor?.stockQuantity,
+                    stock_number: motor?.stockNumber
+                  }}
+                  variant="default"
+                />
+              </div>
               
               {/* HP Badge */}
               {hpNum && (

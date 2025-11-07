@@ -246,6 +246,18 @@ export default function MotorCardPremium({
                 className="h-32 md:h-48 w-full object-contain aspect-[4/3]" 
               />
               
+              {/* Stock Badge - Top Left */}
+              <div className="absolute top-4 left-4">
+                <StockBadge 
+                  motor={{
+                    in_stock: inStock,
+                    stock_quantity: motor?.stockQuantity,
+                    stock_number: motor?.stockNumber
+                  }}
+                  variant="default"
+                />
+              </div>
+              
               {/* HP Badge */}
               {hpNum && (
                 <div className="absolute top-4 right-4 bg-black text-white px-3 py-1 text-xs font-light tracking-wider">
