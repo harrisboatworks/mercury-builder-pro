@@ -158,20 +158,27 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
               <RadioGroup
                 value={frequency}
                 onValueChange={(value: PaymentFrequency) => setFrequency(value)}
-                className="flex flex-col sm:flex-row gap-3 mt-2"
+                className="grid grid-cols-3 gap-2 mt-2"
               >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="monthly" id="monthly-drawer" />
-                  <Label htmlFor="monthly-drawer" className="cursor-pointer">Monthly</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="bi-weekly" id="bi-weekly-drawer" />
-                  <Label htmlFor="bi-weekly-drawer" className="cursor-pointer">Bi-weekly</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="weekly" id="weekly-drawer" />
-                  <Label htmlFor="weekly-drawer" className="cursor-pointer">Weekly</Label>
-                </div>
+                {[
+                  { value: 'monthly' as PaymentFrequency, label: 'Monthly', id: 'monthly-drawer' },
+                  { value: 'bi-weekly' as PaymentFrequency, label: 'Bi-weekly', id: 'bi-weekly-drawer' },
+                  { value: 'weekly' as PaymentFrequency, label: 'Weekly', id: 'weekly-drawer' }
+                ].map(({ value, label, id }) => (
+                  <div key={value} className="relative">
+                    <RadioGroupItem 
+                      value={value} 
+                      id={id}
+                      className="peer sr-only"
+                    />
+                    <Label 
+                      htmlFor={id}
+                      className="flex items-center justify-center px-3 py-2.5 text-sm border-2 border-border rounded-md cursor-pointer transition-all peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground peer-data-[state=checked]:border-primary hover:bg-accent"
+                    >
+                      {label}
+                    </Label>
+                  </div>
+                ))}
               </RadioGroup>
             </div>
 
