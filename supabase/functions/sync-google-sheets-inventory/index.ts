@@ -297,6 +297,59 @@ Deno.serve(async (req) => {
       .update({ last_sync: new Date().toISOString() })
       .eq('sheet_url', sheetUrl);
 
+    // Send email notification if there are unmatched motors
+    if (unmatchedModels.length > 0) {
+      const resendApiKey = Deno.env.get('RESEND_API_KEY');
+      const adminEmail = Deno.env.get('ADMIN_EMAIL');
+      
+      if (resendApiKey && adminEmail) {
+        try {
+          const emailHtml = `
+            <h2>🔍 Google Sheets Sync - Unmatched Motors Detected</h2>
+            <p>The following <strong>${unmatchedModels.length}</strong> motor(s) from your Google Sheet could not be matched to motors in the database:</p>
+            <ul>
+              ${unmatchedModels.map(motor => `<li><strong>${motor}</strong></li>`).join('')}
+            </ul>
+            <hr />
+            <p><strong>Summary:</strong></p>
+            <ul>
+              <li>Total motors in sheet: ${motorNames.length}</li>
+              <li>Successfully matched: ${matchedMotors.length}</li>
+              <li>Unmatched: ${unmatchedModels.length}</li>
+            </ul>
+            <p>Please review these motors and ensure they exist in your motor_models database with the correct model_display names.</p>
+            <p style="color: #666; font-size: 12px; margin-top: 20px;">Synced from: ${sheetUrl}</p>
+          `;
+
+          const response = await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${resendApiKey}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              from: 'Motor Inventory Sync <onboarding@resend.dev>',
+              to: [adminEmail],
+              subject: `⚠️ ${unmatchedModels.length} Unmatched Motors in Sync`,
+              html: emailHtml,
+            }),
+          });
+
+          if (response.ok) {
+            console.log('✅ Email notification sent successfully to', adminEmail);
+          } else {
+            const error = await response.text();
+            console.error('❌ Failed to send email:', error);
+          }
+        } catch (emailError) {
+          console.error('❌ Error sending email notification:', emailError);
+          // Don't fail the sync if email fails
+        }
+      } else {
+        console.log('⚠️ Email notification skipped: Missing RESEND_API_KEY or ADMIN_EMAIL');
+      }
+    }
+
     console.log('✅ Sync completed successfully');
 
     return new Response(
