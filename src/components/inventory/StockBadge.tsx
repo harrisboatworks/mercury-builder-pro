@@ -21,19 +21,7 @@ export function StockBadge({ motor, variant = 'default', className }: StockBadge
   const isCompact = variant === 'compact';
 
   if (!isInStock) {
-    return (
-      <Badge 
-        variant="outline" 
-        className={cn(
-          "bg-muted text-muted-foreground border-border",
-          isCompact ? "text-xs px-2 py-0" : "",
-          className
-        )}
-      >
-        <X className={cn("mr-1", isCompact ? "w-2 h-2" : "w-3 h-3")} />
-        {isCompact ? "Out" : "Out of Stock"}
-      </Badge>
-    );
+    return null;
   }
 
   if (quantity > 1) {
