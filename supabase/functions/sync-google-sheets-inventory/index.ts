@@ -82,10 +82,12 @@ Deno.serve(async (req) => {
       // Filter out years, empty values, and non-motor entries
       if (modelName && modelName.length > 2 && !modelName.match(/^\d{4}$/) && modelName !== 'Model') {
         motorNames.push(modelName);
+        console.log(`📄 Raw Column B [row ${i}]:`, modelName); // Better logging
       }
     }
 
-    console.log('📋 Extracted motor names:', motorNames.length, motorNames.slice(0, 5));
+    console.log('📋 Total extracted motor names:', motorNames.length);
+    console.log('📋 Sample motor names:', motorNames.slice(0, 5));
 
     // Reset all motors to out of stock first
     const { error: resetError } = await supabase
@@ -120,8 +122,8 @@ Deno.serve(async (req) => {
       const hpMatch = normalized.match(/(\d+(?:\.\d+)?)\s*HP|\b(\d+(?:\.\d+)?)\b/i);
       const hp = hpMatch ? parseFloat(hpMatch[1] || hpMatch[2]) : null;
 
-      // Extract rigging codes (common patterns)
-      const riggingMatch = normalized.match(/\b(EXLPT|ELHPT|ELPT|ELH|MXXL|MXL|MLH|MH|XXL|XL|CT)\b/i);
+      // Extract rigging codes (common patterns) - Added MRC
+      const riggingMatch = normalized.match(/\b(EXLPT|ELHPT|ELPT|ELH|MRC|MXXL|MXL|MLH|MH|XXL|XL|CT)\b/i);
       const riggingCode = riggingMatch ? riggingMatch[1].toUpperCase() : null;
 
       // Check for Command Thrust
@@ -160,6 +162,7 @@ Deno.serve(async (req) => {
         query = query.eq('horsepower', parsed.hp);
       }
 
+      // STRICT MATCHING: If rigging code detected, it MUST match exactly
       if (parsed.riggingCode) {
         query = query.ilike('model_display', `%${parsed.riggingCode}%`);
       }
@@ -176,6 +179,17 @@ Deno.serve(async (req) => {
       query = query.limit(1);
 
       let { data: motors, error: searchError } = await query;
+
+      // ADDITIONAL VALIDATION: If rigging code was detected in sheet, verify exact match
+      if (motors && motors.length > 0 && parsed.riggingCode) {
+        const motor = motors[0];
+        const motorHasRiggingCode = motor.model_display.toUpperCase().includes(parsed.riggingCode);
+        
+        if (!motorHasRiggingCode) {
+          console.log(`⚠️ Rigging code mismatch: "${modelName}" (wants ${parsed.riggingCode}) vs "${motor.model_display}" - skipping`);
+          motors = []; // Clear match to prevent false positive
+        }
+      }
 
       // Fallback: If no match found with CT filter, retry without CT requirement
       if (parsed.hasCommandThrust && (!motors || motors.length === 0) && !searchError) {
@@ -203,7 +217,18 @@ Deno.serve(async (req) => {
         motors = fallbackResult.data;
         searchError = fallbackResult.error;
         
-        if (motors && motors.length > 0) {
+        // ADDITIONAL VALIDATION for fallback too
+        if (motors && motors.length > 0 && parsed.riggingCode) {
+          const motor = motors[0];
+          const motorHasRiggingCode = motor.model_display.toUpperCase().includes(parsed.riggingCode);
+          
+          if (!motorHasRiggingCode) {
+            console.log(`⚠️ Fallback rigging code mismatch: "${modelName}" vs "${motor.model_display}" - skipping`);
+            motors = [];
+          } else {
+            console.log(`✅ Fallback match found: "${motors[0].model_display}"`);
+          }
+        } else if (motors && motors.length > 0) {
           console.log(`✅ Fallback match found: "${motors[0].model_display}"`);
         }
       }
