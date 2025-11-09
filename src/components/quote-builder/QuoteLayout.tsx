@@ -89,7 +89,9 @@ export const QuoteLayout = ({
         // Replace boat info with fuel tank
         steps[3],
         // Trade-in
-        steps[5] // Quote (skip installation)
+        steps[5],
+        // Quote (skip installation)
+        steps[6] // Schedule
         ];
       } else {
         return [steps[0],
@@ -98,7 +100,9 @@ export const QuoteLayout = ({
         // Purchase path
         steps[3],
         // Trade-in
-        steps[5] // Quote
+        steps[5],
+        // Quote
+        steps[6] // Schedule
         ];
       }
     } else {
