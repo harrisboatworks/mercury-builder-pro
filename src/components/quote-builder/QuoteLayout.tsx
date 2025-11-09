@@ -72,7 +72,7 @@ export const QuoteLayout = ({
 
   // Filter steps based on purchase path
   const getVisibleSteps = () => {
-    if (!state.purchasePath) return steps.slice(0, 2);
+    if (!state.purchasePath) return steps;
     if (state.purchasePath === 'loose') {
       // For tiller motors, skip boat info and installation
       const isSmallTillerMotor = state.motor && state.motor.hp <= 9.9 && state.motor.type?.toLowerCase().includes('tiller');
