@@ -86,24 +86,58 @@ export function MediaUploadHub({ motorId, onUploadComplete }: MediaUploadHubProp
     updateMediaFile(id, updates);
   }, [updateMediaFile, isVideoUrl]);
 
-  const handleFileSelect = useCallback((id: string, file: File) => {
-    const fileType = file.type.startsWith('image/') ? 'image' : 
-                    file.type === 'application/pdf' ? 'pdf' : 
-                    file.type.startsWith('video/') ? 'video' : 'document';
+  const handleFileSelect = useCallback((id: string, files: FileList | File) => {
+    // Convert FileList to Array, or wrap single File in array
+    const fileArray = files instanceof FileList ? Array.from(files) : [files];
     
-    // Set appropriate default category based on file type
-    const defaultCategory = fileType === 'image' ? 'gallery' :
-                           fileType === 'pdf' ? 'specs' :
-                           fileType === 'video' ? 'video' :
-                           'general';
-    
-    updateMediaFile(id, { 
-      file, 
-      title: file.name.replace(/\.[^/.]+$/, ''),
-      type: fileType,
-      category: defaultCategory
-    });
-  }, [updateMediaFile]);
+    // If multiple files, remove the placeholder and add individual entries
+    if (fileArray.length > 1) {
+      // Remove the placeholder entry
+      removeMediaFile(id);
+      
+      // Add each file as a separate media entry
+      fileArray.forEach(file => {
+        const fileType = file.type.startsWith('image/') ? 'image' : 
+                        file.type === 'application/pdf' ? 'pdf' : 
+                        file.type.startsWith('video/') ? 'video' : 'document';
+        
+        const defaultCategory = fileType === 'image' ? 'gallery' :
+                               fileType === 'pdf' ? 'specs' :
+                               fileType === 'video' ? 'video' :
+                               'general';
+        
+        const newFile: MediaFile = {
+          id: Math.random().toString(36).substr(2, 9),
+          type: fileType,
+          category: defaultCategory,
+          title: file.name.replace(/\.[^/.]+$/, ''),
+          description: '',
+          altText: fileType === 'image' ? '' : undefined,
+          file: file
+        };
+        
+        setMediaFiles(prev => [...prev, newFile]);
+      });
+    } else {
+      // Single file - update existing entry
+      const file = fileArray[0];
+      const fileType = file.type.startsWith('image/') ? 'image' : 
+                      file.type === 'application/pdf' ? 'pdf' : 
+                      file.type.startsWith('video/') ? 'video' : 'document';
+      
+      const defaultCategory = fileType === 'image' ? 'gallery' :
+                             fileType === 'pdf' ? 'specs' :
+                             fileType === 'video' ? 'video' :
+                             'general';
+      
+      updateMediaFile(id, { 
+        file, 
+        title: file.name.replace(/\.[^/.]+$/, ''),
+        type: fileType,
+        category: defaultCategory
+      });
+    }
+  }, [updateMediaFile, removeMediaFile]);
 
   const uploadToStorage = async (file: File, path: string) => {
     const { data, error } = await supabase.storage
@@ -270,6 +304,7 @@ export function MediaUploadHub({ motorId, onUploadComplete }: MediaUploadHubProp
                             <Input
                               id={`file-${mediaFile.id}`}
                               type="file"
+                              multiple={mediaFile.type === 'image'}
                               accept={
                                 mediaFile.type === 'image' ? 'image/*' :
                                 mediaFile.type === 'pdf' ? '.pdf' :
@@ -277,8 +312,10 @@ export function MediaUploadHub({ motorId, onUploadComplete }: MediaUploadHubProp
                                 '*/*'
                               }
                               onChange={(e) => {
-                                const file = e.target.files?.[0];
-                                if (file) handleFileSelect(mediaFile.id, file);
+                                const files = e.target.files;
+                                if (files && files.length > 0) {
+                                  handleFileSelect(mediaFile.id, files);
+                                }
                               }}
                             />
                           </div>
