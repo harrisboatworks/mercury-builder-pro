@@ -4,6 +4,8 @@ import { useFinancing } from '@/contexts/FinancingContext';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Progress } from '@/components/ui/progress';
 import { Card } from '@/components/ui/card';
+import { PurchaseDetailsStep } from '@/components/financing/PurchaseDetailsStep';
+import { ApplicantStep } from '@/components/financing/ApplicantStep';
 
 const stepTitles = {
   1: "Purchase Details",
@@ -13,6 +15,16 @@ const stepTitles = {
   5: "Co-Applicant",
   6: "References",
   7: "Review & Submit",
+};
+
+const stepComponents = {
+  1: PurchaseDetailsStep,
+  2: ApplicantStep,
+  3: null, // Phase 2 continuation
+  4: null,
+  5: null,
+  6: null,
+  7: null,
 };
 
 export default function FinancingApplication() {
@@ -45,6 +57,7 @@ export default function FinancingApplication() {
   }, [searchParams, quoteState, financingDispatch]);
 
   const progress = (financingState.completedSteps.length / 7) * 100;
+  const CurrentStepComponent = stepComponents[financingState.currentStep as keyof typeof stepComponents];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted py-8 px-4">
@@ -66,19 +79,23 @@ export default function FinancingApplication() {
         </div>
 
         {/* Step Content */}
-        <Card className="p-6">
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">Step components coming in Phase 2</p>
-            <p className="text-sm text-muted-foreground mt-2">
-              Foundation complete - ready for form implementation
-            </p>
-          </div>
+        <Card className="p-6 sm:p-8">
+          {CurrentStepComponent ? (
+            <CurrentStepComponent />
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">Step {financingState.currentStep} coming soon</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Steps 1-2 are now complete
+              </p>
+            </div>
+          )}
         </Card>
 
         {/* Save & Continue Later Link */}
         <div className="mt-6 text-center">
           <button
-            className="text-sm text-primary hover:text-primary/80 underline"
+            className="text-sm text-primary hover:text-primary/80 underline transition-colors"
             onClick={() => {
               console.log('Save & continue later - Phase 4');
             }}
