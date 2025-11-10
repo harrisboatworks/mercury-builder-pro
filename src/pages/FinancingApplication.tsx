@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useFinancing } from '@/contexts/FinancingContext';
 import { useQuote } from '@/contexts/QuoteContext';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
 import { SaveForLaterDialog } from '@/components/financing/SaveForLaterDialog';
@@ -113,9 +113,6 @@ export default function FinancingApplication() {
           ) : (
             <div className="text-center py-12">
               <p className="text-muted-foreground">Step {financingState.currentStep} coming soon</p>
-              <p className="text-sm text-muted-foreground mt-2">
-                Steps 1-2 are now complete
-              </p>
             </div>
           )}
         </Card>

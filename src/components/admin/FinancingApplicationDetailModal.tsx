@@ -21,7 +21,8 @@ import {
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { toast } from 'sonner';
-import { Loader2, Mail, FileText, CheckCircle, XCircle } from 'lucide-react';
+import { Loader2, Mail, FileText, CheckCircle, XCircle, Download } from 'lucide-react';
+import { StatusHistorySection } from '@/components/financing/StatusHistorySection';
 
 interface FinancingApplicationDetailModalProps {
   applicationId: string;
@@ -207,6 +208,14 @@ export function FinancingApplicationDetailModal({
           </TabsContent>
 
           <TabsContent value="actions" className="space-y-4">
+            {/* Status History */}
+            <Card>
+              <CardContent className="pt-6">
+                <StatusHistorySection applicationId={applicationId} />
+              </CardContent>
+            </Card>
+            
+            {/* Actions */}
             <Card>
               <CardContent className="pt-6 space-y-4">
                 <div>
@@ -259,12 +268,25 @@ export function FinancingApplicationDetailModal({
                       'Update Status'
                     )}
                   </Button>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-2">
                   <Button
                     variant="outline"
                     onClick={handleEmailApplicant}
                   >
                     <Mail className="mr-2 h-4 w-4" />
                     Email Applicant
+                  </Button>
+                  
+                  {/* Export PDF - Future enhancement */}
+                  <Button
+                    variant="outline"
+                    disabled
+                    title="Export functionality coming soon"
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Export PDF
                   </Button>
                 </div>
 

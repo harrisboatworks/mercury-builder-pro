@@ -164,7 +164,7 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     }
   }, []);
 
-  // Auto-save to localStorage (debounced)
+  // Auto-save to localStorage (debounced 1 second)
   useEffect(() => {
     if (state.isLoading) return;
 
@@ -199,6 +199,34 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       }
     };
   }, [state]);
+  
+  // Auto-save to database (debounced 2 seconds to reduce writes)
+  useEffect(() => {
+    if (state.isLoading || !state.applicationId) return;
+    
+    const dbSaveTimeout = setTimeout(async () => {
+      try {
+        await supabase
+          .from('financing_applications')
+          .update({
+            current_step: state.currentStep,
+            completed_steps: state.completedSteps,
+            purchase_data: state.purchaseDetails || {},
+            applicant_data: state.applicant || {},
+            employment_data: state.employment || {},
+            financial_data: state.financial || {},
+            co_applicant_data: state.coApplicant || null,
+            references_data: state.references || {},
+            updated_at: new Date().toISOString(),
+          })
+          .eq('id', state.applicationId);
+      } catch (error) {
+        console.error('Auto-save to database failed:', error);
+      }
+    }, 2000); // Debounce 2 seconds
+    
+    return () => clearTimeout(dbSaveTimeout);
+  }, [state, state.applicationId]);
 
   // Save to database
   const saveToDatabase = useCallback(async () => {

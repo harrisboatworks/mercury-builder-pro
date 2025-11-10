@@ -359,6 +359,44 @@ export type Database = {
         }
         Relationships: []
       }
+      financing_application_status_history: {
+        Row: {
+          application_id: string
+          changed_by: string | null
+          created_at: string | null
+          id: string
+          new_status: string
+          notes: string | null
+          old_status: string | null
+        }
+        Insert: {
+          application_id: string
+          changed_by?: string | null
+          created_at?: string | null
+          id?: string
+          new_status: string
+          notes?: string | null
+          old_status?: string | null
+        }
+        Update: {
+          application_id?: string
+          changed_by?: string | null
+          created_at?: string | null
+          id?: string
+          new_status?: string
+          notes?: string | null
+          old_status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "financing_application_status_history_application_id_fkey"
+            columns: ["application_id"]
+            isOneToOne: false
+            referencedRelation: "financing_applications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       financing_applications: {
         Row: {
           applicant_data: Json
@@ -1733,6 +1771,8 @@ export type Database = {
           total_duplicates_removed: number
         }[]
       }
+      decrypt_sin: { Args: { sin_encrypted: string }; Returns: string }
+      encrypt_sin: { Args: { sin_plaintext: string }; Returns: string }
       fix_auto_generated_model_numbers_comprehensive: {
         Args: never
         Returns: {
@@ -1773,6 +1813,7 @@ export type Database = {
         Args: { hp: number; motor_type?: string; specifications?: Json }
         Returns: Json
       }
+      get_sin_encryption_key: { Args: never; Returns: string }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
