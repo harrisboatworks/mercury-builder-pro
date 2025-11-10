@@ -9,6 +9,7 @@ import { BonusOffers } from '@/components/quote-builder/BonusOffers';
 import CurrentPromotions from '@/components/quote-builder/BonusOffersBadge';
 import MotorHeader from '@/components/quote-builder/MotorHeader';
 import CoverageComparisonTooltip from '@/components/quote-builder/CoverageComparisonTooltip';
+import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 
 import { useQuote } from '@/contexts/QuoteContext';
@@ -38,6 +39,7 @@ export default function QuoteSummaryPage() {
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
   const [isMounted, setIsMounted] = useState(false);
+  const [showSaveDialog, setShowSaveDialog] = useState(false);
 
   // Ensure minimum mount time before running accessibility checks
   useEffect(() => {
@@ -566,16 +568,27 @@ export default function QuoteSummaryPage() {
 
             {/* Mobile CTA Section */}
             <div className="lg:hidden space-y-4">
-              <Button 
-                onClick={handleDownloadPDF}
-                variant="outline"
-                className="w-full"
-                size="lg"
-                disabled={isGeneratingPDF}
-              >
-                <Download className="w-4 h-4 mr-2" />
-                {isGeneratingPDF ? 'Generating PDF...' : 'Download PDF Quote'}
-              </Button>
+              <div className="grid grid-cols-2 gap-3">
+                <Button 
+                  onClick={() => setShowSaveDialog(true)}
+                  variant="outline"
+                  className="w-full"
+                  size="lg"
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Save for Later
+                </Button>
+                <Button 
+                  onClick={handleDownloadPDF}
+                  variant="outline"
+                  className="w-full"
+                  size="lg"
+                  disabled={isGeneratingPDF}
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  {isGeneratingPDF ? 'PDF' : 'Download PDF'}
+                </Button>
+              </div>
               <Button 
                 onClick={handleStepComplete}
                 className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
@@ -598,12 +611,21 @@ export default function QuoteSummaryPage() {
               depositAmount={200}
               coverageYears={selectedPackageData.coverageYears}
               onDownloadPDF={handleDownloadPDF}
+              onSaveForLater={() => setShowSaveDialog(true)}
               isGeneratingPDF={isGeneratingPDF}
             />
           </div>
         </div>
       </div>
       )}
+      
+      <SaveQuoteDialog 
+        open={showSaveDialog}
+        onOpenChange={setShowSaveDialog}
+        quoteData={state}
+        motorModel={motorName}
+        finalPrice={packageSpecificTotals.total}
+      />
     </QuoteLayout>
   );
 }

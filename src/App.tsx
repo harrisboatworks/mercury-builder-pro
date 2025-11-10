@@ -20,6 +20,7 @@ import TradeInPage from "@/pages/quote/TradeInPage";
 import InstallationPage from "@/pages/quote/InstallationPage";
 import QuoteSummaryPage from "@/pages/quote/QuoteSummaryPage";
 import SchedulePage from "@/pages/quote/SchedulePage";
+import SavedQuotePage from "@/pages/quote/SavedQuotePage";
 import MyQuotes from "@/pages/MyQuotes";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { SecureRoute } from "@/components/auth/SecureRoute";
@@ -115,6 +116,7 @@ const App = () => (
                 <Route path="/quote/installation" element={<InstallationPage />} />
                 <Route path="/quote/summary" element={<QuoteSummaryPage />} />
                 <Route path="/quote/schedule" element={<SchedulePage />} />
+                <Route path="/quote/saved/:quoteId" element={<SavedQuotePage />} />
                 
                 {/* User Account Routes */}
                 <Route path="/my-quotes" element={<MyQuotes />} />
