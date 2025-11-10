@@ -83,7 +83,9 @@ export const tillerMountingChoices = [
     value: "transom_bolt",
     image: "/lovable-uploads/bolt-on-motor-installation.png",
     helper: "Permanent bolt-through mounting",
-    xpReward: 15
+    xpReward: 15,
+    price: 99,
+    recommendedPackage: "better"
   },
   {
     id: "clamp_on",
@@ -91,7 +93,9 @@ export const tillerMountingChoices = [
     value: "clamp_on", 
     image: "/lovable-uploads/clamp-on-motor-installation.png",
     helper: "Removable clamp mounting",
-    xpReward: 10
+    xpReward: 10,
+    price: 0,
+    recommendedPackage: "good"
   }
 ];
 

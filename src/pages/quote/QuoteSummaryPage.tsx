@@ -119,6 +119,9 @@ export default function QuoteSummaryPage() {
   const canAddFuelTank = canAddExternalFuelTank(motor);
   const baseAccessoryCost = controlsCost; // Battery separate from base
   
+  // Calculate installation cost for tiller motors
+  const tillerInstallCost = isManualTiller ? (state.installConfig?.installationCost || 0) : 0;
+  
   // Add warranty price if selected
   const warrantyPrice = state.warrantyConfig?.warrantyPrice || 0;
   
@@ -207,13 +210,13 @@ export default function QuoteSummaryPage() {
     { 
       id: "good", 
       label: "Essential • Best Value", 
-      priceBeforeTax: baseSubtotal, 
+      priceBeforeTax: baseSubtotal + tillerInstallCost, 
       savings: totals.savings, 
       features: [
         "Mercury motor", 
         isManualTiller ? "Tiller-handle operation" : "Standard controls & rigging", 
         `${currentCoverageYears} years coverage included`,
-        "Basic installation",
+        isManualTiller && tillerInstallCost === 0 ? "DIY clamp-on mounting" : "Basic installation",
         "Customer supplies battery (if needed)"
       ],
       coverageYears: currentCoverageYears
@@ -221,7 +224,7 @@ export default function QuoteSummaryPage() {
     { 
       id: "better", 
       label: "Complete • Extended Coverage", 
-      priceBeforeTax: baseSubtotal + (isManualStart ? 0 : batteryCost) + completeWarrantyCost, 
+      priceBeforeTax: baseSubtotal + tillerInstallCost + (isManualStart ? 0 : batteryCost) + completeWarrantyCost, 
       savings: totals.savings, 
       features: [
         "Everything in Essential",
@@ -237,7 +240,7 @@ export default function QuoteSummaryPage() {
     { 
       id: "best", 
       label: "Premium • Max Coverage", 
-      priceBeforeTax: baseSubtotal + (isManualStart ? 0 : batteryCost) + premiumWarrantyCost + (!includesProp ? 299.99 : 0) + (canAddFuelTank ? 199 : 0), 
+      priceBeforeTax: baseSubtotal + tillerInstallCost + (isManualStart ? 0 : batteryCost) + premiumWarrantyCost + (!includesProp ? 299.99 : 0) + (canAddFuelTank ? 199 : 0), 
       savings: totals.savings, 
       features: [
         "Everything in Complete",
@@ -251,9 +254,32 @@ export default function QuoteSummaryPage() {
       targetWarrantyYears: PREMIUM_TARGET_YEARS
     },
   ];
+  
+  // Auto-select package based on tiller mounting type
+  useEffect(() => {
+    if (isManualTiller && state.installConfig?.recommendedPackage && isMounted) {
+      setSelectedPackage(state.installConfig.recommendedPackage);
+    }
+  }, [isManualTiller, state.installConfig?.recommendedPackage, isMounted]);
 
   // Build accessory breakdown based on motor requirements and selected package
   const accessoryBreakdown = [];
+  
+  // Add tiller installation cost if applicable
+  if (isManualTiller && tillerInstallCost > 0) {
+    const mountingType = state.installConfig?.mounting === 'transom_bolt' ? 'Bolt-On Transom' : 'Installation';
+    accessoryBreakdown.push({
+      name: `${mountingType} Installation`,
+      price: tillerInstallCost,
+      description: 'Professional mounting and setup'
+    });
+  } else if (isManualTiller && tillerInstallCost === 0) {
+    accessoryBreakdown.push({
+      name: 'Clamp-On Installation',
+      price: 0,
+      description: 'DIY-friendly mounting system (no installation labor required)'
+    });
+  }
   
   // Only add controls if the motor requires them (not for tiller motors)
   if (needsControls) {
@@ -464,6 +490,7 @@ export default function QuoteSummaryPage() {
     motorMSRP,
     motorDiscount,
     accessoryTotal: baseAccessoryCost + 
+      tillerInstallCost + // Tiller installation cost
       (selectedPackage !== 'good' && !isManualStart ? batteryCost : 0) + // Battery in Complete/Premium
       (selectedPackage === 'better' ? completeWarrantyCost : 0) + // Warranty extension for Complete
       (selectedPackage === 'best' && !includesProp ? 299.99 : 0) + // Propeller in Premium

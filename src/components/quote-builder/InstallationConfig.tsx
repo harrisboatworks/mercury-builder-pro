@@ -41,6 +41,11 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
   };
 
   const handleComplete = () => {
+    // Get selected mounting option details for tiller motors
+    const selectedMounting = tillerMountingChoices.find(choice => choice.value === config.mounting);
+    const installationCost = selectedMounting?.price || 0;
+    const recommendedPackage = selectedMounting?.recommendedPackage || 'good';
+    
     // Celebration!
     confetti({
       particleCount: 100,
@@ -50,10 +55,15 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
     
     toast({
       title: "🎉 Configuration Complete!",
-      description: "Your installation configuration is ready!",
+      description: `Your ${selectedMounting?.label || 'installation'} is configured!`,
     });
     
-    onComplete(config);
+    // Pass installation cost and recommended package to parent
+    onComplete({
+      ...config,
+      installationCost,
+      recommendedPackage
+    });
   };
 
   return (
