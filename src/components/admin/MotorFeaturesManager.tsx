@@ -10,7 +10,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import { Plus, Edit2, Trash2, GripVertical, Sparkles, Zap, Cog, Star } from 'lucide-react';
+import { Plus, Edit2, Trash2, GripVertical, Sparkles, Zap, Cog, Star, Gauge, Flame, Bolt, Rocket, Activity, Cpu, Settings, Wrench, Monitor, Wifi, Droplet, Wind, Leaf, Battery, Shield, Award, CheckCircle, Target, Layers, CircuitBoard } from 'lucide-react';
 
 interface CustomFeature {
   id: string;
@@ -18,7 +18,7 @@ interface CustomFeature {
   description: string;
   category: 'Performance' | 'Design' | 'Convenience' | 'Technology' | 'Durability' | 'Fuel Economy';
   order: number;
-  icon?: 'sparkles' | 'zap' | 'cog' | 'star';
+  icon?: 'sparkles' | 'zap' | 'cog' | 'star' | 'gauge' | 'flame' | 'bolt' | 'rocket' | 'activity' | 'cpu' | 'settings' | 'wrench' | 'monitor' | 'wifi' | 'droplet' | 'wind' | 'leaf' | 'battery' | 'shield' | 'award' | 'checkCircle' | 'target' | 'layers' | 'circuitBoard';
 }
 
 interface MotorFeaturesManagerProps {
@@ -44,7 +44,27 @@ const featureIcons = {
   sparkles: Sparkles,
   zap: Zap,
   cog: Cog,
-  star: Star
+  star: Star,
+  gauge: Gauge,
+  flame: Flame,
+  bolt: Bolt,
+  rocket: Rocket,
+  activity: Activity,
+  cpu: Cpu,
+  settings: Settings,
+  wrench: Wrench,
+  monitor: Monitor,
+  wifi: Wifi,
+  droplet: Droplet,
+  wind: Wind,
+  leaf: Leaf,
+  battery: Battery,
+  shield: Shield,
+  award: Award,
+  checkCircle: CheckCircle,
+  target: Target,
+  layers: Layers,
+  circuitBoard: CircuitBoard
 };
 
 const featureTemplates = {
