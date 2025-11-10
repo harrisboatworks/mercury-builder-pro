@@ -340,7 +340,7 @@ export function MotorFeaturesManager({ motor, onFeaturesUpdated }: MotorFeatures
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="z-[100]">
                     {Object.keys(categoryColors).map((category) => (
                       <SelectItem key={category} value={category}>
                         {category}
@@ -358,7 +358,7 @@ export function MotorFeaturesManager({ motor, onFeaturesUpdated }: MotorFeatures
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="z-[100]">
                     {Object.entries(featureIcons).map(([key, Icon]) => (
                       <SelectItem key={key} value={key}>
                         <div className="flex items-center gap-2">
@@ -418,13 +418,13 @@ export function MotorFeaturesManager({ motor, onFeaturesUpdated }: MotorFeatures
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
-                    <SelectContent>
-                      {Object.keys(categoryColors).map((category) => (
-                        <SelectItem key={category} value={category}>
-                          {category}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
+                  <SelectContent className="z-[100]">
+                    {Object.keys(categoryColors).map((category) => (
+                      <SelectItem key={category} value={category}>
+                        {category}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
                   </Select>
                 </div>
                 <div>
@@ -436,16 +436,16 @@ export function MotorFeaturesManager({ motor, onFeaturesUpdated }: MotorFeatures
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
-                    <SelectContent>
-                      {Object.entries(featureIcons).map(([key, Icon]) => (
-                        <SelectItem key={key} value={key}>
-                          <div className="flex items-center gap-2">
-                            <Icon className="w-4 h-4" />
-                            {key}
-                          </div>
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
+                  <SelectContent className="z-[100]">
+                    {Object.entries(featureIcons).map(([key, Icon]) => (
+                      <SelectItem key={key} value={key}>
+                        <div className="flex items-center gap-2">
+                          <Icon className="w-4 h-4" />
+                          {key}
+                        </div>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
                   </Select>
                 </div>
               </div>
