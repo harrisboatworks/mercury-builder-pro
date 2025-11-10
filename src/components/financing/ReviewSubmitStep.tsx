@@ -88,7 +88,22 @@ export function ReviewSubmitStep() {
         .select()
         .single();
 
-      if (error) throw error;
+      // Send confirmation emails
+      try {
+        await supabase.functions.invoke('send-financing-confirmation-email', {
+          body: {
+            applicationId: application.id,
+            applicantEmail: validated.applicant.email,
+            applicantName: `${validated.applicant.firstName} ${validated.applicant.lastName}`,
+            motorModel: validated.purchaseDetails.motorModel,
+            amountToFinance: validated.purchaseDetails.amountToFinance,
+            sendAdminNotification: true,
+          },
+        });
+      } catch (emailError) {
+        console.error('Failed to send confirmation emails:', emailError);
+        // Don't block submission on email failure
+      }
 
       // Clear localStorage
       localStorage.removeItem('financing_application');

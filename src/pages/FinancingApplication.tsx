@@ -1,9 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useFinancing } from '@/contexts/FinancingContext';
 import { useQuote } from '@/contexts/QuoteContext';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { SaveForLaterDialog } from '@/components/financing/SaveForLaterDialog';
+import { Mail } from 'lucide-react';
 import { PurchaseDetailsStep } from '@/components/financing/PurchaseDetailsStep';
 import { ApplicantStep } from '@/components/financing/ApplicantStep';
 import { EmploymentStep } from '@/components/financing/EmploymentStep';
@@ -36,6 +39,7 @@ export default function FinancingApplication() {
   const [searchParams] = useSearchParams();
   const { state: financingState, dispatch: financingDispatch } = useFinancing();
   const { state: quoteState } = useQuote();
+  const [showSaveDialog, setShowSaveDialog] = useState(false);
 
   // Pre-fill from quote if available (URL params or localStorage)
   useEffect(() => {
@@ -118,21 +122,20 @@ export default function FinancingApplication() {
 
         {/* Save & Continue Later Link */}
         <div className="mt-6 text-center">
-          <button
-            className="text-sm text-primary hover:text-primary/80 underline transition-colors"
-            onClick={async () => {
-              // Save progress is handled automatically by FinancingContext
-              // Just show a confirmation
-              const { toast } = await import('@/hooks/use-toast');
-              toast({
-                title: "Progress Saved",
-                description: "Your application progress has been saved. You can continue later.",
-              });
-            }}
+          <Button
+            variant="outline"
+            onClick={() => setShowSaveDialog(true)}
+            className="gap-2"
           >
+            <Mail className="h-4 w-4" />
             Save & Continue Later
-          </button>
+          </Button>
         </div>
+
+        <SaveForLaterDialog
+          open={showSaveDialog}
+          onOpenChange={setShowSaveDialog}
+        />
       </div>
     </div>
   );

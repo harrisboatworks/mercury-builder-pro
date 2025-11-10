@@ -63,6 +63,7 @@ import AdminPricingImport from "./pages/AdminPricingImport";
 import FinancingApplication from "./pages/FinancingApplication";
 import FinancingResume from "./pages/FinancingResume";
 import FinancingSuccess from "./pages/FinancingSuccess";
+import AdminFinancingApplications from "./pages/AdminFinancingApplications";
 
 function Canonical() {
   useEffect(() => {

@@ -1,0 +1,170 @@
+import { serve } from 'https://deno.land/std@0.190.0/http/server.ts';
+import { Resend } from 'npm:resend@2.0.0';
+import { createEmailTemplate, createButtonHtml } from '../_shared/email-template.ts';
+
+const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
+
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+};
+
+interface ConfirmationEmailRequest {
+  applicationId: string;
+  applicantEmail: string;
+  applicantName: string;
+  motorModel: string;
+  amountToFinance: number;
+  sendAdminNotification?: boolean;
+}
+
+const handler = async (req: Request): Promise<Response> => {
+  // Handle CORS preflight
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { headers: corsHeaders });
+  }
+
+  try {
+    const {
+      applicationId,
+      applicantEmail,
+      applicantName,
+      motorModel,
+      amountToFinance,
+      sendAdminNotification = true,
+    }: ConfirmationEmailRequest = await req.json();
+
+    console.log('Sending confirmation emails:', { applicationId, applicantEmail });
+
+    // Generate reference number (first 8 chars of UUID)
+    const referenceNumber = applicationId.substring(0, 8).toUpperCase();
+    const submittedDate = new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+
+    // --- Send Applicant Confirmation Email ---
+    const applicantContent = `
+      <h1>Application Received!</h1>
+      <p>Hi ${applicantName},</p>
+      <p>Thank you for submitting your financing application. We've received your information and our team will review it shortly.</p>
+      
+      <div class="reference-number">
+        #${referenceNumber}
+      </div>
+      
+      <div class="info-box">
+        <strong>Application Details:</strong><br>
+        Motor: ${motorModel}<br>
+        Amount to Finance: $${amountToFinance.toLocaleString()}<br>
+        Submitted: ${submittedDate}
+      </div>
+      
+      <h2>What Happens Next?</h2>
+      <ol style="padding-left: 20px;">
+        <li style="margin-bottom: 8px;">Our financing team will review your application within 1-2 business days</li>
+        <li style="margin-bottom: 8px;">We may contact you if we need additional information</li>
+        <li style="margin-bottom: 8px;">You'll receive a decision via email and phone</li>
+        <li style="margin-bottom: 8px;">If approved, we'll guide you through the final steps to complete your purchase</li>
+      </ol>
+      
+      <div class="divider"></div>
+      
+      <p><strong>Questions?</strong> Reply to this email or call us at <a href="tel:1-800-555-0123">1-800-555-0123</a></p>
+      
+      <p>
+        Best regards,<br>
+        <strong>The Harris Boat Works Financing Team</strong>
+      </p>
+    `;
+
+    const applicantHtml = createEmailTemplate(
+      applicantContent,
+      `Application #${referenceNumber} received`
+    );
+
+    const applicantEmailResponse = await resend.emails.send({
+      from: 'Harris Boat Works Financing <financing@harrisboatworks.com>',
+      to: [applicantEmail],
+      subject: `Financing Application Received - Ref #${referenceNumber}`,
+      html: applicantHtml,
+    });
+
+    console.log('Applicant confirmation sent:', applicantEmailResponse);
+
+    // --- Send Admin Notification Email ---
+    let adminEmailResponse;
+    if (sendAdminNotification) {
+      const adminEmail = Deno.env.get('ADMIN_EMAIL') || 'admin@harrisboatworks.com';
+      const siteUrl = Deno.env.get('APP_URL') || 'https://harrisboatworks.com';
+      const reviewUrl = `${siteUrl}/admin/financing-applications?id=${applicationId}`;
+
+      const adminContent = `
+        <h1>New Financing Application</h1>
+        <p>A new financing application has been submitted and is ready for review.</p>
+        
+        <div class="reference-number">
+          #${referenceNumber}
+        </div>
+        
+        <div class="info-box">
+          <strong>Applicant:</strong> ${applicantName}<br>
+          <strong>Email:</strong> ${applicantEmail}<br>
+          <strong>Motor:</strong> ${motorModel}<br>
+          <strong>Amount:</strong> $${amountToFinance.toLocaleString()}<br>
+          <strong>Submitted:</strong> ${submittedDate}
+        </div>
+        
+        <div style="text-align: center;">
+          ${createButtonHtml(reviewUrl, 'Review Application in Admin Dashboard')}
+        </div>
+        
+        <p style="font-size: 14px; color: #6b7280;">
+          Or copy and paste this link:<br>
+          <a href="${reviewUrl}" style="color: #3b82f6; word-break: break-all;">${reviewUrl}</a>
+        </p>
+      `;
+
+      const adminHtml = createEmailTemplate(
+        adminContent,
+        `New application from ${applicantName} - $${amountToFinance.toLocaleString()}`
+      );
+
+      adminEmailResponse = await resend.emails.send({
+        from: 'Harris Boat Works System <noreply@harrisboatworks.com>',
+        to: [adminEmail],
+        subject: `New Financing Application - ${applicantName} - $${amountToFinance.toLocaleString()}`,
+        html: adminHtml,
+      });
+
+      console.log('Admin notification sent:', adminEmailResponse);
+    }
+
+    return new Response(
+      JSON.stringify({
+        success: true,
+        applicantEmailId: applicantEmailResponse.id,
+        adminEmailId: adminEmailResponse?.id,
+      }),
+      {
+        status: 200,
+        headers: { 'Content-Type': 'application/json', ...corsHeaders },
+      }
+    );
+
+  } catch (error: any) {
+    console.error('Error sending confirmation emails:', error);
+    return new Response(
+      JSON.stringify({ error: error.message }),
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json', ...corsHeaders },
+      }
+    );
+  }
+};
+
+serve(handler);
