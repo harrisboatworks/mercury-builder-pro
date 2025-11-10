@@ -37,29 +37,48 @@ export default function FinancingApplication() {
   const { state: financingState, dispatch: financingDispatch } = useFinancing();
   const { state: quoteState } = useQuote();
 
-  // Pre-fill from quote if quote_id is provided
+  // Pre-fill from quote if available (URL params or localStorage)
   useEffect(() => {
+    // Check URL params first
     const quoteId = searchParams.get('quote');
-    if (quoteId && quoteState.motor) {
-      financingDispatch({ type: 'SET_QUOTE_ID', payload: quoteId });
+    
+    // Try to get quote data from localStorage (saved from quote summary)
+    const savedQuoteState = localStorage.getItem('quote_state');
+    let quoteData = quoteState;
+    
+    if (savedQuoteState) {
+      try {
+        quoteData = JSON.parse(savedQuoteState);
+        // Clear it after reading to prevent stale data
+        localStorage.removeItem('quote_state');
+      } catch (e) {
+        console.error('Failed to parse quote state:', e);
+      }
+    }
+    
+    // Pre-fill if we have motor data
+    if (quoteData?.motor && !financingState.purchaseDetails?.motorModel) {
+      if (quoteId) {
+        financingDispatch({ type: 'SET_QUOTE_ID', payload: quoteId });
+      }
       
-      // Pre-fill purchase details from quote
-      const motorPrice = (quoteState.motor.price || 0);
+      // Calculate pricing
+      const motorPrice = quoteData.motor.salePrice || quoteData.motor.price || 0;
+      const tradeInValue = quoteData.tradeInInfo?.estimatedValue || 0;
       const downPayment = 0; // Will be set by user
-      const tradeInValue = quoteState.tradeInInfo?.estimatedValue || 0;
       
       financingDispatch({
         type: 'SET_PURCHASE_DETAILS',
         payload: {
-          motorModel: quoteState.motor.model || '',
+          motorModel: quoteData.motor.model || '',
           motorPrice: motorPrice,
           downPayment: downPayment,
           tradeInValue: tradeInValue,
-          amountToFinance: motorPrice - downPayment - tradeInValue,
+          amountToFinance: Math.max(0, motorPrice - downPayment - tradeInValue),
         },
       });
     }
-  }, [searchParams, quoteState, financingDispatch]);
+  }, [searchParams, financingDispatch]);
 
   const progress = (financingState.completedSteps.length / 7) * 100;
   const CurrentStepComponent = stepComponents[financingState.currentStep as keyof typeof stepComponents];
@@ -101,8 +120,14 @@ export default function FinancingApplication() {
         <div className="mt-6 text-center">
           <button
             className="text-sm text-primary hover:text-primary/80 underline transition-colors"
-            onClick={() => {
-              console.log('Save & continue later - Phase 4');
+            onClick={async () => {
+              // Save progress is handled automatically by FinancingContext
+              // Just show a confirmation
+              const { toast } = await import('@/hooks/use-toast');
+              toast({
+                title: "Progress Saved",
+                description: "Your application progress has been saved. You can continue later.",
+              });
             }}
           >
             Save & Continue Later
