@@ -28,58 +28,70 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
   const [resumeUrl, setResumeUrl] = useState('');
 
   const handleSendEmail = async () => {
-    if (!email || !email.includes('@')) {
+    if (!email) {
       toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
+        title: "Email required",
+        description: "Please enter your email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address",
         variant: "destructive",
       });
       return;
     }
 
     setIsSending(true);
+    
     try {
       // Make sure application is saved to database first
-      if (!state.applicationId) {
+      if (!state.applicationId || !state.resumeToken) {
         toast({
           title: "Error",
-          description: "Application ID not found. Please try again.",
+          description: "Application not found. Please try again.",
           variant: "destructive",
         });
         return;
       }
 
-      // Get applicant name
-      const applicantName = state.applicant 
-        ? `${state.applicant.firstName} ${state.applicant.lastName}`
-        : undefined;
+      // Generate resume URL
+      const resumeLink = `${window.location.origin}/financing/resume?token=${state.resumeToken}`;
+      setResumeUrl(resumeLink);
+      
+      // Send the resume email (non-blocking - don't fail if email fails)
+      try {
+        await supabase.functions.invoke('send-financing-resume-email', {
+          body: {
+            applicationId: state.applicationId,
+            email: email,
+            applicantName: state.applicant 
+              ? `${state.applicant.firstName} ${state.applicant.lastName}`
+              : undefined,
+            completedSteps: state.completedSteps.length,
+          }
+        });
+      } catch (emailError) {
+        console.error('Email send failed (non-critical):', emailError);
+        // Continue anyway - user can still copy the link
+      }
 
-      // Call edge function to send email
-      const { error } = await supabase.functions.invoke('send-financing-resume-email', {
-        body: {
-          applicationId: state.applicationId,
-          email: email,
-          applicantName: applicantName,
-          completedSteps: state.completedSteps.length,
-        },
-      });
-
-      if (error) throw error;
-
-      // Generate resume URL for display
-      const url = `${window.location.origin}/financing/resume?token=${state.applicationId}`;
-      setResumeUrl(url);
       setEmailSent(true);
-
+      
       toast({
-        title: "Email Sent!",
-        description: "Check your inbox for a link to resume your application.",
+        title: "Application saved!",
+        description: "Check your email for the resume link, or copy it below.",
       });
-
     } catch (error) {
-      console.error('Error sending resume email:', error);
+      console.error('Error saving application:', error);
       toast({
-        title: "Failed to Send Email",
+        title: "Failed to save application",
         description: "Please try again or contact support.",
         variant: "destructive",
       });

@@ -88,21 +88,21 @@ export function ReviewSubmitStep() {
         .select()
         .single();
 
-      // Send confirmation emails
+      // Send confirmation emails (non-blocking - don't fail submission if email fails)
       try {
         await supabase.functions.invoke('send-financing-confirmation-email', {
           body: {
             applicationId: application.id,
-            applicantEmail: validated.applicant.email,
+            email: validated.applicant.email,
             applicantName: `${validated.applicant.firstName} ${validated.applicant.lastName}`,
-            motorModel: validated.purchaseDetails.motorModel,
-            amountToFinance: validated.purchaseDetails.amountToFinance,
+            motorInfo: validated.purchaseDetails.motorModel || 'Selected Motor',
+            financingAmount: validated.purchaseDetails.amountToFinance,
             sendAdminNotification: true,
-          },
+          }
         });
       } catch (emailError) {
-        console.error('Failed to send confirmation emails:', emailError);
-        // Don't block submission on email failure
+        console.error('Failed to send confirmation email (non-critical):', emailError);
+        // Don't show error to user - submission was successful
       }
 
       // Clear localStorage

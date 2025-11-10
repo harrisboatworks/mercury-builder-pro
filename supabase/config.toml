@@ -80,3 +80,9 @@ verify_jwt = false
 
 [functions.trigger-zapier-webhooks]
 verify_jwt = false
+
+[functions.send-financing-resume-email]
+verify_jwt = false
+
+[functions.send-financing-confirmation-email]
+verify_jwt = false

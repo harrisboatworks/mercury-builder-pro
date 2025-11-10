@@ -27,16 +27,32 @@ export default function FinancingResume() {
           .from('financing_applications')
           .select('*')
           .eq('resume_token', token)
-          .gt('resume_expires_at', new Date().toISOString())
           .is('deleted_at', null)
           .single();
 
         if (fetchError || !data) {
-          setError('Application not found or expired');
+          setError('Invalid or expired resume link. Please start a new application.');
           setLoading(false);
           return;
         }
 
+        // Check if application was already submitted
+        if (data.status === 'submitted' || data.status === 'pending') {
+          setError('This application has already been submitted. Please start a new application if needed.');
+          setLoading(false);
+          return;
+        }
+
+        // Check if resume token is expired (30 days)
+        const expiresAt = new Date(data.resume_expires_at);
+        const now = new Date();
+        
+        if (now > expiresAt) {
+          setError('This resume link has expired (30 days). Please start a new application.');
+          setLoading(false);
+          return;
+        }
+        
         // Load application into context
         dispatch({ type: 'LOAD_FROM_DATABASE', payload: data });
         
@@ -44,7 +60,7 @@ export default function FinancingResume() {
         navigate('/financing/apply', { replace: true });
       } catch (err) {
         console.error('Failed to load application:', err);
-        setError('Failed to load application');
+        setError('Failed to load your application. Please try again or contact support.');
         setLoading(false);
       }
     };

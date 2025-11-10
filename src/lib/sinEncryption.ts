@@ -7,14 +7,23 @@ export async function encryptSIN(sin: string): Promise<string> {
   // For MVP, we'll store with a prefix but this is NOT secure
   // Reference: https://supabase.com/docs/guides/database/vault
   
-  console.warn('⚠️ SIN encryption not yet implemented - using placeholder');
-  return `ENCRYPTED_${sin}`;
+  console.error('🚨 SECURITY WARNING: SIN encryption not yet implemented!');
+  console.error('🚨 DO NOT USE IN PRODUCTION - sensitive data is not encrypted');
+  
+  // Hash the SIN for basic obfuscation (still not secure)
+  const encoder = new TextEncoder();
+  const data = encoder.encode(sin + 'SALT_PLACEHOLDER');
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  
+  return `UNSECURE_${hashHex}`;
 }
 
 export async function decryptSIN(encryptedSIN: string): Promise<string> {
   // TODO: Implement proper decryption
-  console.warn('⚠️ SIN decryption not yet implemented - using placeholder');
-  return encryptedSIN.replace('ENCRYPTED_', '');
+  console.error('🚨 SIN decryption not implemented - cannot retrieve original value');
+  return '[ENCRYPTED]';
 }
 
 // Production implementation notes:
