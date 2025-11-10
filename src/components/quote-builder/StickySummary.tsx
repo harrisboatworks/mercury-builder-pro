@@ -2,7 +2,7 @@
 import { money } from "@/lib/money";
 import CoverageComparisonTooltip from "@/components/quote-builder/CoverageComparisonTooltip";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { Download, CreditCard } from "lucide-react";
 
 type StickySummaryProps = {
   packageLabel: string;
@@ -17,6 +17,7 @@ type StickySummaryProps = {
   promoWarrantyYears?: number; // optional: show "+X yrs promo"
   onDownloadPDF?: () => void;
   onSaveForLater?: () => void;
+  onApplyForFinancing?: () => void;
   isGeneratingPDF?: boolean;
 };
 
@@ -33,6 +34,7 @@ export default function StickySummary({
   promoWarrantyYears,
   onDownloadPDF,
   onSaveForLater,
+  onApplyForFinancing,
   isGeneratingPDF = false,
 }: StickySummaryProps) {
   return (
@@ -107,6 +109,17 @@ export default function StickySummary({
             >
               <Download className="w-4 h-4 mr-2" />
               {isGeneratingPDF ? 'Generating PDF...' : 'Download PDF Quote'}
+            </Button>
+          )}
+
+          {onApplyForFinancing && (
+            <Button
+              onClick={onApplyForFinancing}
+              variant="default"
+              className="w-full"
+            >
+              <CreditCard className="w-4 h-4 mr-2" />
+              Apply for Financing
             </Button>
           )}
 

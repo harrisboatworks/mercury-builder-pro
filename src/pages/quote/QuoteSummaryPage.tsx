@@ -14,7 +14,7 @@ import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExtern
 
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, CreditCard } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm } from '@/lib/finance';
 import { calculateQuotePricing } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
@@ -457,6 +457,14 @@ export default function QuoteSummaryPage() {
     navigate('/quote/schedule');
   };
 
+  const handleApplyForFinancing = () => {
+    // Save current state to localStorage for pre-filling
+    localStorage.setItem('quote_state', JSON.stringify(state));
+    
+    // Navigate to financing application with quote data
+    navigate('/financing/apply');
+  };
+
   const handlePackageSelect = (packageId: string) => {
     setSelectedPackage(packageId);
     
@@ -590,6 +598,15 @@ export default function QuoteSummaryPage() {
                 </Button>
               </div>
               <Button 
+                onClick={handleApplyForFinancing}
+                variant="default"
+                className="w-full"
+                size="lg"
+              >
+                <CreditCard className="w-4 h-4 mr-2" />
+                Apply for Financing
+              </Button>
+              <Button 
                 onClick={handleStepComplete}
                 className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                 size="lg"
@@ -612,6 +629,7 @@ export default function QuoteSummaryPage() {
               coverageYears={selectedPackageData.coverageYears}
               onDownloadPDF={handleDownloadPDF}
               onSaveForLater={() => setShowSaveDialog(true)}
+              onApplyForFinancing={handleApplyForFinancing}
               isGeneratingPDF={isGeneratingPDF}
             />
           </div>
