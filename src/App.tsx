@@ -10,6 +10,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { QuoteProvider } from "@/contexts/QuoteContext";
+import { FinancingProvider } from "@/contexts/FinancingContext";
 
 // Quote builder pages
 import MotorSelectionPage from "@/pages/quote/MotorSelectionPage";
@@ -59,6 +60,9 @@ import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import Settings from "./pages/Settings";
 import { NotificationToast } from "@/components/notifications/NotificationToast";
 import AdminPricingImport from "./pages/AdminPricingImport";
+import FinancingApplication from "./pages/FinancingApplication";
+import FinancingResume from "./pages/FinancingResume";
+import FinancingSuccess from "./pages/FinancingSuccess";
 
 function Canonical() {
   useEffect(() => {
@@ -76,8 +80,9 @@ function Canonical() {
 
 const App = () => (
   <AuthProvider>
-    <QuoteProvider>
-      <TooltipProvider>
+    <FinancingProvider>
+      <QuoteProvider>
+        <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
@@ -263,6 +268,11 @@ const App = () => (
                   }
                 />
                 
+                {/* Financing Application Routes */}
+                <Route path="/financing/apply" element={<FinancingApplication />} />
+                <Route path="/financing/resume" element={<FinancingResume />} />
+                <Route path="/financing/success" element={<FinancingSuccess />} />
+                
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
@@ -276,8 +286,9 @@ const App = () => (
               </footer>
             </>
         </BrowserRouter>
-      </TooltipProvider>
-    </QuoteProvider>
+        </TooltipProvider>
+      </QuoteProvider>
+    </FinancingProvider>
   </AuthProvider>
 );
 

@@ -1,4 +1,4 @@
-import { useFinancing } from '@/contexts/FinancingContext';
+import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { getFinancingDisplay } from '@/lib/finance';
 
 interface OptimizedMonthlyPaymentDisplayProps {
@@ -6,10 +6,9 @@ interface OptimizedMonthlyPaymentDisplayProps {
 }
 
 export function OptimizedMonthlyPaymentDisplay({ motorPrice }: OptimizedMonthlyPaymentDisplayProps) {
-  const { calculateMonthlyPayment, promo } = useFinancing();
-  const monthlyPayment = calculateMonthlyPayment(motorPrice);
+  const { promo } = useActiveFinancingPromo();
   
-  if (!monthlyPayment) return null;
+  if (motorPrice <= 0) return null;
   
   const displayText = getFinancingDisplay(motorPrice * 1.13, promo?.rate || null);
   

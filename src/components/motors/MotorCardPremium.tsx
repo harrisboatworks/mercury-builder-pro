@@ -10,7 +10,7 @@ import { LuxuryPriceDisplay } from '@/components/pricing/LuxuryPriceDisplay';
 import type { Motor } from '../../lib/motor-helpers';
 import { getHPDescriptor, getPopularityIndicator, getBadgeColor, requiresMercuryControls, isTillerMotor, getMotorImageByPriority, getMotorImageGallery, buildModelKey, extractHpAndCode, decodeModelName } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useFinancing } from '@/contexts/FinancingContext';
+import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { getFinancingDisplay } from '@/lib/finance';
 import { getPriceDisplayState } from '@/lib/pricing';
 import mercuryLogo from '@/assets/mercury-logo.png';
@@ -109,9 +109,9 @@ export default function MotorCardPremium({
   const imageCount = imageInfo.count;
   const isInventoryImage = imageInfo.isInventory;
   
-  // Smart financing calculation using context
-  const { calculateMonthlyPayment, promo } = useFinancing();
-  const financingInfo = calculateMonthlyPayment(price || 0, 1000);
+  // Smart financing calculation
+  const { promo } = useActiveFinancingPromo();
+  const financingDisplay = getFinancingDisplay(price || 0, promo?.rate || null);
   
   // Generate badge once when component mounts and optionally rotate
   useEffect(() => {

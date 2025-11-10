@@ -359,6 +359,95 @@ export type Database = {
         }
         Relationships: []
       }
+      financing_applications: {
+        Row: {
+          applicant_data: Json
+          applicant_sin_encrypted: string | null
+          co_applicant_data: Json | null
+          co_applicant_sin_encrypted: string | null
+          completed_steps: number[]
+          created_at: string
+          current_step: number
+          deleted_at: string | null
+          employment_data: Json
+          financial_data: Json
+          id: string
+          lead_source: string | null
+          notes: string | null
+          processed_at: string | null
+          processed_by: string | null
+          purchase_data: Json
+          quote_id: string | null
+          references_data: Json
+          resume_expires_at: string | null
+          resume_token: string | null
+          source_url: string | null
+          status: Database["public"]["Enums"]["financing_application_status"]
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          applicant_data?: Json
+          applicant_sin_encrypted?: string | null
+          co_applicant_data?: Json | null
+          co_applicant_sin_encrypted?: string | null
+          completed_steps?: number[]
+          created_at?: string
+          current_step?: number
+          deleted_at?: string | null
+          employment_data?: Json
+          financial_data?: Json
+          id?: string
+          lead_source?: string | null
+          notes?: string | null
+          processed_at?: string | null
+          processed_by?: string | null
+          purchase_data?: Json
+          quote_id?: string | null
+          references_data?: Json
+          resume_expires_at?: string | null
+          resume_token?: string | null
+          source_url?: string | null
+          status?: Database["public"]["Enums"]["financing_application_status"]
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          applicant_data?: Json
+          applicant_sin_encrypted?: string | null
+          co_applicant_data?: Json | null
+          co_applicant_sin_encrypted?: string | null
+          completed_steps?: number[]
+          created_at?: string
+          current_step?: number
+          deleted_at?: string | null
+          employment_data?: Json
+          financial_data?: Json
+          id?: string
+          lead_source?: string | null
+          notes?: string | null
+          processed_at?: string | null
+          processed_by?: string | null
+          purchase_data?: Json
+          quote_id?: string | null
+          references_data?: Json
+          resume_expires_at?: string | null
+          resume_token?: string | null
+          source_url?: string | null
+          status?: Database["public"]["Enums"]["financing_application_status"]
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "financing_applications_quote_id_fkey"
+            columns: ["quote_id"]
+            isOneToOne: false
+            referencedRelation: "customer_quotes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       financing_options: {
         Row: {
           created_at: string
@@ -1734,6 +1823,13 @@ export type Database = {
     }
     Enums: {
       app_role: "admin" | "user"
+      financing_application_status:
+        | "draft"
+        | "pending"
+        | "approved"
+        | "declined"
+        | "more_info_needed"
+        | "withdrawn"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -1862,6 +1958,14 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "user"],
+      financing_application_status: [
+        "draft",
+        "pending",
+        "approved",
+        "declined",
+        "more_info_needed",
+        "withdrawn",
+      ],
     },
   },
 } as const
