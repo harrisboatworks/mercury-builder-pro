@@ -8,6 +8,9 @@ import { PurchaseDetailsStep } from '@/components/financing/PurchaseDetailsStep'
 import { ApplicantStep } from '@/components/financing/ApplicantStep';
 import { EmploymentStep } from '@/components/financing/EmploymentStep';
 import { FinancialStep } from '@/components/financing/FinancialStep';
+import { CoApplicantStep } from '@/components/financing/CoApplicantStep';
+import { ReferencesStep } from '@/components/financing/ReferencesStep';
+import { ReviewSubmitStep } from '@/components/financing/ReviewSubmitStep';
 
 const stepTitles = {
   1: "Purchase Details",
@@ -24,9 +27,9 @@ const stepComponents = {
   2: ApplicantStep,
   3: EmploymentStep,
   4: FinancialStep,
-  5: null,
-  6: null,
-  7: null,
+  5: CoApplicantStep,
+  6: ReferencesStep,
+  7: ReviewSubmitStep,
 };
 
 export default function FinancingApplication() {
