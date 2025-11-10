@@ -6,6 +6,8 @@ import { Progress } from '@/components/ui/progress';
 import { Card } from '@/components/ui/card';
 import { PurchaseDetailsStep } from '@/components/financing/PurchaseDetailsStep';
 import { ApplicantStep } from '@/components/financing/ApplicantStep';
+import { EmploymentStep } from '@/components/financing/EmploymentStep';
+import { FinancialStep } from '@/components/financing/FinancialStep';
 
 const stepTitles = {
   1: "Purchase Details",
@@ -20,8 +22,8 @@ const stepTitles = {
 const stepComponents = {
   1: PurchaseDetailsStep,
   2: ApplicantStep,
-  3: null, // Phase 2 continuation
-  4: null,
+  3: EmploymentStep,
+  4: FinancialStep,
   5: null,
   6: null,
   7: null,
