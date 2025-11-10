@@ -1,6 +1,10 @@
 import { NavLink, Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { useEffect } from "react";
 
 const navItems = [
   { label: "Quotes", to: "/admin/quotes" },
@@ -22,6 +26,43 @@ const navItems = [
 ];
 
 export default function AdminNav() {
+  // Query for pending financing applications count
+  const { data: pendingCount = 0, refetch } = useQuery({
+    queryKey: ['pending-financing-count'],
+    queryFn: async () => {
+      const { count, error } = await supabase
+        .from('financing_applications')
+        .select('*', { count: 'exact', head: true })
+        .eq('status', 'pending');
+      
+      if (error) throw error;
+      return count || 0;
+    },
+    refetchInterval: 30000, // Refetch every 30 seconds
+  });
+
+  // Set up real-time subscription for financing applications
+  useEffect(() => {
+    const channel = supabase
+      .channel('financing-applications-changes')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'financing_applications',
+        },
+        () => {
+          refetch();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [refetch]);
+
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto px-4 h-12 flex items-center justify-between">
@@ -40,7 +81,14 @@ export default function AdminNav() {
                 )
               }
             >
-              {item.label}
+              <span className="flex items-center gap-1.5">
+                {item.label}
+                {item.label === "Financing Apps" && pendingCount > 0 && (
+                  <Badge variant="destructive" className="ml-1 px-1.5 py-0.5 text-xs">
+                    {pendingCount}
+                  </Badge>
+                )}
+              </span>
             </NavLink>
           ))}
         </div>

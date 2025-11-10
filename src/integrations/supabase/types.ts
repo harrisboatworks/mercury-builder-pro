@@ -412,6 +412,7 @@ export type Database = {
           id: string
           lead_source: string | null
           notes: string | null
+          notes_history: Json | null
           processed_at: string | null
           processed_by: string | null
           purchase_data: Json
@@ -438,6 +439,7 @@ export type Database = {
           id?: string
           lead_source?: string | null
           notes?: string | null
+          notes_history?: Json | null
           processed_at?: string | null
           processed_by?: string | null
           purchase_data?: Json
@@ -464,6 +466,7 @@ export type Database = {
           id?: string
           lead_source?: string | null
           notes?: string | null
+          notes_history?: Json | null
           processed_at?: string | null
           processed_by?: string | null
           purchase_data?: Json

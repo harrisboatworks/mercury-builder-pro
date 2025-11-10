@@ -23,6 +23,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { toast } from 'sonner';
 import { Loader2, Mail, FileText, CheckCircle, XCircle, Download } from 'lucide-react';
 import { StatusHistorySection } from '@/components/financing/StatusHistorySection';
+import { NotesTimeline } from './NotesTimeline';
+import { FinancingApplicationPDF } from './FinancingApplicationPDF';
+import { pdf } from '@react-pdf/renderer';
 
 interface FinancingApplicationDetailModalProps {
   applicationId: string;
@@ -39,6 +42,7 @@ export function FinancingApplicationDetailModal({
   const [status, setStatus] = useState<string>('');
   const [notes, setNotes] = useState('');
   const [isSaving, setIsSaving] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
 
   const { data: application, isLoading } = useQuery({
     queryKey: ['financing_application', applicationId],
@@ -87,6 +91,35 @@ export function FinancingApplicationDetailModal({
     if (email) {
       window.location.href = `mailto:${email}`;
     }
+  };
+
+  const handleExportPDF = async () => {
+    if (!application) return;
+    
+    setIsExporting(true);
+    try {
+      const blob = await pdf(
+        <FinancingApplicationPDF application={application} refNumber={refNumber} />
+      ).toBlob();
+      
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `financing-application-${refNumber}.pdf`;
+      link.click();
+      URL.revokeObjectURL(url);
+      
+      toast.success('PDF exported successfully');
+    } catch (error) {
+      console.error('Error exporting PDF:', error);
+      toast.error('Failed to export PDF');
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
+  const handleNotesUpdate = () => {
+    queryClient.invalidateQueries({ queryKey: ['financing_application', applicationId] });
   };
 
   if (isLoading) {
@@ -232,17 +265,6 @@ export function FinancingApplicationDetailModal({
                   </Select>
                 </div>
 
-                <div>
-                  <Label htmlFor="notes">Admin Notes</Label>
-                  <Textarea
-                    id="notes"
-                    placeholder="Add internal notes about this application..."
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                    rows={4}
-                  />
-                </div>
-
                 <div className="flex gap-2">
                   <Button
                     onClick={handleStatusUpdate}
@@ -279,23 +301,33 @@ export function FinancingApplicationDetailModal({
                     Email Applicant
                   </Button>
                   
-                  {/* Export PDF - Future enhancement */}
                   <Button
                     variant="outline"
-                    disabled
-                    title="Export functionality coming soon"
+                    onClick={handleExportPDF}
+                    disabled={isExporting}
                   >
-                    <Download className="mr-2 h-4 w-4" />
-                    Export PDF
+                    {isExporting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Exporting...
+                      </>
+                    ) : (
+                      <>
+                        <Download className="mr-2 h-4 w-4" />
+                        Export PDF
+                      </>
+                    )}
                   </Button>
                 </div>
 
-                {application.notes && (
-                  <div className="border-t pt-4">
-                    <Label>Previous Notes</Label>
-                    <p className="text-sm text-muted-foreground mt-1">{application.notes}</p>
-                  </div>
-                )}
+                {/* Notes Timeline */}
+                <div className="border-t pt-4">
+                  <NotesTimeline
+                    applicationId={applicationId}
+                    notesHistory={(application.notes_history as any[]) || []}
+                    onNotesUpdate={handleNotesUpdate}
+                  />
+                </div>
               </CardContent>
             </Card>
           </TabsContent>
