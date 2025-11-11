@@ -1,5 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
 import StickySummary from '@/components/quote-builder/StickySummary';
@@ -27,6 +28,43 @@ import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 // Package warranty year constants (module-level to prevent recreation on every render)
 const COMPLETE_TARGET_YEARS = 7; // Complete: 7 years total
 const PREMIUM_TARGET_YEARS = 8;  // Premium: 8 years max
+
+// Animation variants
+const packageContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const pricingTableVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+      delay: 0.5
+    }
+  }
+};
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut"
+    }
+  }
+};
 
 export default function QuoteSummaryPage() {
   const navigate = useNavigate();
@@ -605,52 +643,115 @@ export default function QuoteSummaryPage() {
             {/* Main Content - Left Column */}
             <div className="space-y-6">
               {/* Motor Header with integrated back button */}
-              <MotorHeader
-              name={motorName}
-              modelYear={modelYear}
-              hp={motorHp}
-              sku={sku}
-              imageUrl={imageUrl}
-              specs={specs}
-              why={why}
-              specSheetUrl={specSheetUrl}
-              onBack={handleBack}
-            />
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={sectionVariants}
+              >
+                <MotorHeader
+                  name={motorName}
+                  modelYear={modelYear}
+                  hp={motorHp}
+                  sku={sku}
+                  imageUrl={imageUrl}
+                  specs={specs}
+                  why={why}
+                  specSheetUrl={specSheetUrl}
+                  onBack={handleBack}
+                />
+              </motion.div>
 
-            {/* Current Promotions */}
-            <CurrentPromotions />
+              {/* Current Promotions */}
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  ...sectionVariants,
+                  visible: {
+                    ...sectionVariants.visible,
+                    transition: {
+                      ...sectionVariants.visible.transition,
+                      delay: 0.1
+                    }
+                  }
+                }}
+              >
+                <CurrentPromotions />
+              </motion.div>
 
-            {/* Package Selection */}
-            <PackageCards
-              options={packages}
-              selectedId={selectedPackage}
-              onSelect={handlePackageSelect}
-              rate={financingRate}
-            />
+              {/* Package Selection */}
+              <motion.div
+                variants={packageContainerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <PackageCards
+                  options={packages}
+                  selectedId={selectedPackage}
+                  onSelect={handlePackageSelect}
+                  rate={financingRate}
+                />
+              </motion.div>
 
-            {/* Active Promotions */}
-            <PromoPanel motorHp={hp} />
+              {/* Detailed Pricing Breakdown */}
+              <motion.div
+                variants={pricingTableVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <PricingTable
+                  pricing={packageSpecificTotals}
+                  motorName={quoteData.motor?.model || 'Mercury Motor'}
+                  accessoryBreakdown={accessoryBreakdown}
+                  tradeInValue={state.tradeInInfo?.estimatedValue || 0}
+                  tradeInInfo={state.tradeInInfo?.hasTradeIn ? {
+                    brand: state.tradeInInfo.brand,
+                    year: state.tradeInInfo.year,
+                    horsepower: state.tradeInInfo.horsepower,
+                    model: state.tradeInInfo.model
+                  } : undefined}
+                  packageName={selectedPackageData.label}
+                  includesInstallation={state.purchasePath === 'installed'}
+                />
+              </motion.div>
 
-            {/* Detailed Pricing Breakdown */}
-            <PricingTable
-              pricing={packageSpecificTotals}
-              motorName={quoteData.motor?.model || 'Mercury Motor'}
-              accessoryBreakdown={accessoryBreakdown}
-              tradeInValue={state.tradeInInfo?.estimatedValue || 0}
-              tradeInInfo={state.tradeInInfo?.hasTradeIn ? {
-                brand: state.tradeInInfo.brand,
-                year: state.tradeInInfo.year,
-                horsepower: state.tradeInInfo.horsepower,
-                model: state.tradeInInfo.model
-              } : undefined}
-              packageName={selectedPackageData.label}
-              includesInstallation={state.purchasePath === 'installed'}
-            />
+              {/* Active Promotions */}
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  ...sectionVariants,
+                  visible: {
+                    ...sectionVariants.visible,
+                    transition: {
+                      ...sectionVariants.visible.transition,
+                      delay: 0.6
+                    }
+                  }
+                }}
+              >
+                <PromoPanel motorHp={hp} />
+              </motion.div>
 
-            {/* Legacy Components - Keep for compatibility */}
-            <div className="grid md:grid-cols-2 gap-6">
-              <BonusOffers motor={quoteData.motor} />
-            </div>
+              {/* Legacy Components - Keep for compatibility */}
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  ...sectionVariants,
+                  visible: {
+                    ...sectionVariants.visible,
+                    transition: {
+                      ...sectionVariants.visible.transition,
+                      delay: 0.7
+                    }
+                  }
+                }}
+              >
+                <div className="grid md:grid-cols-2 gap-6">
+                  <BonusOffers motor={quoteData.motor} />
+                </div>
+              </motion.div>
 
             {/* Mobile CTA Section */}
             <div className="lg:hidden space-y-4">

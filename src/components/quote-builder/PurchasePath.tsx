@@ -25,10 +25,35 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
   const handleInstalledSelect = () => {
     onSelectPath('installed');
   };
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    }
+  };
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
       className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
     >
       <div className="text-center mb-12">
@@ -39,8 +64,9 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto items-stretch">
-        <Card className="relative hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
-              onClick={handleLooseMotorSelect}>
+        <motion.div variants={cardVariants}>
+          <Card className="relative hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
+                onClick={handleLooseMotorSelect}>
           <Badge className="absolute -top-2 -right-2 bg-gray-900 hover:bg-gray-900 text-white text-[10px] tracking-[0.15em] uppercase font-light">
             Quick & Easy
           </Badge>
@@ -97,9 +123,11 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             </Button>
           </CardContent>
         </Card>
+        </motion.div>
         
-        <Card className="relative hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
-              onClick={handleInstalledSelect}>
+        <motion.div variants={cardVariants}>
+          <Card className="relative hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
+                onClick={handleInstalledSelect}>
           <Badge className="absolute -top-2 -right-2 bg-black hover:bg-black text-white text-[10px] tracking-[0.15em] uppercase font-light">
             Full Service
           </Badge>
@@ -150,6 +178,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             </Button>
           </CardContent>
         </Card>
+        </motion.div>
       </div>
     </motion.div>
   );

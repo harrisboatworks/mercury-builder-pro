@@ -1,7 +1,20 @@
 "use client";
+import { motion } from 'framer-motion';
 import { money } from "@/lib/money";
 import { calculateMonthly } from "@/lib/finance";
 import { cn } from "@/lib/utils";
+
+const packageItemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut"
+    }
+  }
+};
 
 export type PackageOption = {
   id: "good" | "better" | "best" | string;
@@ -37,8 +50,9 @@ export function PackageCards({
         const isSelected = selectedId === p.id;
 
         return (
-          <button
+          <motion.button
             key={p.id}
+            variants={packageItemVariants}
             onClick={() => onSelect(p.id)}
             className={cn(
               "group relative flex flex-col rounded-2xl border p-6 text-left transition",
@@ -102,7 +116,7 @@ export function PackageCards({
                 </li>
               ))}
             </ul>
-          </button>
+          </motion.button>
         );
       })}
     </section>
