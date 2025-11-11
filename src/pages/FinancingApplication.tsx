@@ -6,6 +6,8 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { SaveForLaterDialog } from '@/components/financing/SaveForLaterDialog';
 import { FormProgressIndicator } from '@/components/financing/FormProgressIndicator';
+import { FinancingApplicationSkeleton } from '@/components/financing/FinancingApplicationSkeleton';
+import { AccessibleFormWrapper } from '@/components/financing/AccessibleFormWrapper';
 import { Mail } from 'lucide-react';
 import { PurchaseDetailsStep } from '@/components/financing/PurchaseDetailsStep';
 import { ApplicantStep } from '@/components/financing/ApplicantStep';
@@ -41,6 +43,7 @@ export default function FinancingApplication() {
   const { state: financingState, dispatch: financingDispatch } = useFinancing();
   const { state: quoteState } = useQuote();
   const [showSaveDialog, setShowSaveDialog] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Pre-fill from quote if available (URL params or localStorage)
   useEffect(() => {
@@ -83,7 +86,15 @@ export default function FinancingApplication() {
         },
       });
     }
+    
+    // Simulate loading state for better UX
+    const timer = setTimeout(() => setIsLoading(false), 800);
+    return () => clearTimeout(timer);
   }, [searchParams, financingDispatch]);
+
+  if (isLoading) {
+    return <FinancingApplicationSkeleton />;
+  }
 
   const CurrentStepComponent = stepComponents[financingState.currentStep as keyof typeof stepComponents];
 
@@ -101,9 +112,15 @@ export default function FinancingApplication() {
         {/* Step Content */}
         <Card className="p-4 sm:p-6 md:p-8">
           {CurrentStepComponent ? (
-            <CurrentStepComponent />
+            <AccessibleFormWrapper
+              stepNumber={financingState.currentStep}
+              stepTitle={stepTitles[financingState.currentStep as keyof typeof stepTitles]}
+              totalSteps={7}
+            >
+              <CurrentStepComponent />
+            </AccessibleFormWrapper>
           ) : (
-            <div className="text-center py-12">
+            <div className="text-center py-12" role="status">
               <p className="text-muted-foreground">Step {financingState.currentStep} coming soon</p>
             </div>
           )}
@@ -115,8 +132,9 @@ export default function FinancingApplication() {
             variant="outline"
             onClick={() => setShowSaveDialog(true)}
             className="gap-2"
+            aria-label="Save application and continue later"
           >
-            <Mail className="h-4 w-4" />
+            <Mail className="h-4 w-4" aria-hidden="true" />
             Save & Continue Later
           </Button>
         </div>

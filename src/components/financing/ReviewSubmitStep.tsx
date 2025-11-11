@@ -16,12 +16,14 @@ import { useNavigate } from 'react-router-dom';
 import { Loader2, Check, Edit, ShieldCheck, FileText, CalendarCheck } from 'lucide-react';
 import { useState } from 'react';
 import { formatPhoneNumber } from '@/lib/validation';
+import { SuccessConfetti } from './SuccessConfetti';
 
 export function ReviewSubmitStep() {
   const { state, dispatch } = useFinancing();
   const { toast } = useToast();
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const { register, handleSubmit, watch, setValue, formState: { errors, isValid } } = useForm<Consent>({
     resolver: zodResolver(consentSchema),
@@ -108,14 +110,19 @@ export function ReviewSubmitStep() {
       // Clear localStorage
       localStorage.removeItem('financing_application');
 
+      // Trigger success confetti
+      setShowConfetti(true);
+
       // Show success message
       toast({
         title: "Application Submitted!",
         description: "Your financing application has been submitted successfully.",
       });
 
-      // Redirect to success page
-      navigate(`/financing/success?id=${application.id}`);
+      // Redirect to success page after a brief delay to show confetti
+      setTimeout(() => {
+        navigate(`/financing/success?id=${application.id}`);
+      }, 1500);
 
     } catch (error) {
       console.error('Submission error:', error);
@@ -131,8 +138,10 @@ export function ReviewSubmitStep() {
 
   return (
     <div className="space-y-6">
-      <Alert>
-        <ShieldCheck className="h-4 w-4" />
+      {showConfetti && <SuccessConfetti />}
+      
+      <Alert role="status">
+        <ShieldCheck className="h-4 w-4" aria-hidden="true" />
         <AlertDescription>
           Please review your application carefully before submitting. You can edit any section by clicking the Edit button.
         </AlertDescription>

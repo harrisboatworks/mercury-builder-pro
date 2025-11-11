@@ -5,6 +5,8 @@ import { useToast } from "@/hooks/use-toast";
 import { Plus, Edit, Trash, TrendingUp, Calendar, Upload, X } from "lucide-react";
 import { format } from "date-fns";
 import AdminNav from "@/components/admin/AdminNav";
+import { EmptyState } from "@/components/admin/EmptyState";
+import { Button } from "@/components/ui/button";
 
 
 interface FinancingOption {
@@ -459,18 +461,52 @@ onClick={() => {
 
       {/* Financing Options List */}
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-        <table className="w-full">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="px-4 py-3 text-left">Name</th>
-              <th className="px-4 py-3 text-left">Rate</th>
-              <th className="px-4 py-3 text-left">Term</th>
-              <th className="px-4 py-3 text-left">Min Amount</th>
-              <th className="px-4 py-3 text-left">Type</th>
-              <th className="px-4 py-3 text-left">Status</th>
-              <th className="px-4 py-3 text-right">Actions</th>
-            </tr>
-          </thead>
+        {options.length === 0 && !isAddingNew ? (
+          <EmptyState
+            icon={<TrendingUp className="w-16 h-16" />}
+            title="No Financing Options Yet"
+            description="Create your first financing option to get started. You can add promotional rates, standard financing, and more."
+            action={
+              <Button
+                onClick={() => {
+                  setIsAddingNew(true);
+                  setEditingId(null);
+                  setImageFile(null);
+                  setImagePreview('');
+                  setFormData({
+                    name: '',
+                    rate: 7.99,
+                    term_months: 60,
+                    min_amount: 5000,
+                    is_promo: false,
+                    promo_text: '',
+                    promo_end_date: '',
+                    is_active: true,
+                    display_order: 0,
+                    image_url: '',
+                    image_alt_text: ''
+                  });
+                }}
+                className="gap-2"
+              >
+                <Plus className="w-4 h-4" />
+                Add Your First Option
+              </Button>
+            }
+          />
+        ) : (
+          <table className="w-full">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-4 py-3 text-left">Name</th>
+                <th className="px-4 py-3 text-left">Rate</th>
+                <th className="px-4 py-3 text-left">Term</th>
+                <th className="px-4 py-3 text-left">Min Amount</th>
+                <th className="px-4 py-3 text-left">Type</th>
+                <th className="px-4 py-3 text-left">Status</th>
+                <th className="px-4 py-3 text-right">Actions</th>
+              </tr>
+            </thead>
           <tbody>
             {options.map((option) => (
               <tr key={option.id} className="border-t hover:bg-gray-50">
@@ -538,6 +574,7 @@ onClick={() => {
             ))}
           </tbody>
         </table>
+        )}
       </div>
     </div>
   );
