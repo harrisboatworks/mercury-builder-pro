@@ -112,11 +112,11 @@ const TestFinancingEmails = () => {
     try {
       const { data, error } = await supabase.functions.invoke('send-financing-confirmation-email', {
         body: {
-          email: email,
+          applicationId: 'test-app-id-123',
+          applicantEmail: email,
           applicantName: 'Test Applicant',
-          referenceNumber: 'FIN-TEST-123456',
-          motorDetails: 'Mercury 115HP FourStroke',
-          amountFinanced: 12500,
+          motorModel: 'Mercury 115HP FourStroke',
+          amountToFinance: 12500,
           sendAdminNotification: true,
         }
       });
