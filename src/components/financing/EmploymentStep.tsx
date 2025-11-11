@@ -1,4 +1,4 @@
-import { useForm, useFieldArray } from 'react-hook-form';
+import { useForm, useFieldArray, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFinancing } from '@/contexts/FinancingContext';
 import { employmentSchema } from '@/lib/financingValidation';
@@ -133,13 +133,22 @@ export function EmploymentStep() {
                   Employer Phone
                 </Label>
                 <div className="relative">
-                  <MaskedInput
-                    id="employerPhone"
-                    {...register('employerPhone')}
-                    maskType="phone"
-                    inputMode="tel"
-                    autoComplete="tel-national"
-                    className="pr-10"
+                  <Controller
+                    name="employerPhone"
+                    control={control}
+                    render={({ field }) => (
+                      <MaskedInput
+                        id="employerPhone"
+                        maskType="phone"
+                        inputMode="tel"
+                        autoComplete="tel-national"
+                        value={field.value}
+                        onChange={field.onChange}
+                        onBlur={field.onBlur}
+                        name={field.name}
+                        className="pr-10"
+                      />
+                    )}
                   />
                   <FieldValidationIndicator 
                     isValid={isFieldValid('employerPhone')} 
