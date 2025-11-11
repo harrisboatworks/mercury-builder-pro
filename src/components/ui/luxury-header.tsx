@@ -69,7 +69,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
             </button>
 
             {/* Left: Logos (Desktop Only) */}
-            <div className="hidden md:flex items-center gap-2 lg:gap-4 justify-self-start">
+            <Link to="/" className="hidden md:flex items-center gap-2 lg:gap-4 justify-self-start">
               <img 
                 src={harrisLogo} 
                 alt="Harris Boat Works" 
@@ -81,10 +81,10 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                 alt="Mercury Marine" 
                 className="h-7 md:h-8 lg:h-9 transition-all duration-300 dark:invert"
               />
-            </div>
+            </Link>
 
             {/* Center: Logos (Mobile Only) */}
-            <div className="flex md:hidden items-center justify-center gap-1.5">
+            <Link to="/" className="flex md:hidden items-center justify-center gap-1.5">
               <img 
                 src={harrisLogo} 
                 alt="Harris Boat Works" 
@@ -96,7 +96,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                 alt="Mercury Marine" 
                 className="h-6 sm:h-7 transition-all duration-300 dark:invert"
               />
-            </div>
+            </Link>
 
             {/* Center: Trust Badges - Compact on Tablet, Full on Desktop */}
             <div className="hidden md:flex items-center justify-center space-x-3 lg:space-x-6 text-sm lg:text-base lg:font-semibold text-luxury-gray dark:text-gray-300">
