@@ -45,17 +45,10 @@ export const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(
     const rawValue = e.target.value;
     const unformatted = unformatters[maskType](rawValue);
     
-    // Call onChange with the unformatted value
-    // React Hook Form will handle updating the form state
+    // Call onChange with just the unformatted value
+    // React Hook Form's Controller will handle the rest
     if (onChange) {
-      onChange({
-        ...e,
-        target: {
-          ...e.target,
-          name: props.name || '',
-          value: unformatted,
-        },
-      } as any);
+      (onChange as any)(unformatted);
     }
   };
 

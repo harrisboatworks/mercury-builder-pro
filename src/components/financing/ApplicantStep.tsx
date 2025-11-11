@@ -1,4 +1,4 @@
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { applicantSchema, type Applicant } from '@/lib/financingValidation';
 import { useFinancing } from '@/contexts/FinancingContext';
@@ -27,6 +27,7 @@ export function ApplicantStep() {
     handleSubmit,
     watch,
     setValue,
+    control,
     formState: { errors, isValid, touchedFields },
   } = useForm<Applicant>({
     resolver: zodResolver(applicantSchema),
@@ -175,12 +176,21 @@ export function ApplicantStep() {
           </TooltipProvider>
           <FieldValidationIndicator isValid={isFieldValid('sin')} isTouched={!!touchedFields.sin} />
         </Label>
-        <MaskedInput
-          id="sin"
-          maskType="sin"
-          inputMode="numeric"
-          {...register('sin')}
-          className={isFieldValid('sin') ? 'border-green-500' : ''}
+        <Controller
+          name="sin"
+          control={control}
+          render={({ field }) => (
+            <MaskedInput
+              id="sin"
+              maskType="sin"
+              inputMode="numeric"
+              value={field.value}
+              onChange={field.onChange}
+              onBlur={field.onBlur}
+              name={field.name}
+              className={isFieldValid('sin') ? 'border-green-500' : ''}
+            />
+          )}
         />
         {errors.sin && (
           <p className="text-sm text-destructive">{errors.sin.message}</p>
@@ -212,13 +222,22 @@ export function ApplicantStep() {
             Primary Phone *
             <FieldValidationIndicator isValid={isFieldValid('primaryPhone')} isTouched={!!touchedFields.primaryPhone} />
           </Label>
-          <MaskedInput
-            id="primaryPhone"
-            maskType="phone"
-            inputMode="tel"
-            autoComplete="tel"
-            {...register('primaryPhone')}
-            className={isFieldValid('primaryPhone') ? 'border-green-500' : ''}
+          <Controller
+            name="primaryPhone"
+            control={control}
+            render={({ field }) => (
+              <MaskedInput
+                id="primaryPhone"
+                maskType="phone"
+                inputMode="tel"
+                autoComplete="tel"
+                value={field.value}
+                onChange={field.onChange}
+                onBlur={field.onBlur}
+                name={field.name}
+                className={isFieldValid('primaryPhone') ? 'border-green-500' : ''}
+              />
+            )}
           />
           {errors.primaryPhone && (
             <p className="text-sm text-destructive">{errors.primaryPhone.message}</p>
@@ -282,12 +301,21 @@ export function ApplicantStep() {
               Postal Code *
               <FieldValidationIndicator isValid={isFieldValid('currentAddress.postalCode')} isTouched={!!touchedFields.currentAddress?.postalCode} />
             </Label>
-            <MaskedInput
-              id="postalCode"
-              maskType="postal"
-              autoComplete="postal-code"
-              {...register('currentAddress.postalCode')}
-              className={isFieldValid('currentAddress.postalCode') ? 'border-green-500' : ''}
+            <Controller
+              name="currentAddress.postalCode"
+              control={control}
+              render={({ field }) => (
+                <MaskedInput
+                  id="postalCode"
+                  maskType="postal"
+                  autoComplete="postal-code"
+                  value={field.value}
+                  onChange={field.onChange}
+                  onBlur={field.onBlur}
+                  name={field.name}
+                  className={isFieldValid('currentAddress.postalCode') ? 'border-green-500' : ''}
+                />
+              )}
             />
             {errors.currentAddress?.postalCode && (
               <p className="text-sm text-destructive">{errors.currentAddress.postalCode.message}</p>
