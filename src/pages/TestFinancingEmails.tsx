@@ -10,7 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 const TestFinancingEmails = () => {
   const [isSendingResume, setIsSendingResume] = useState(false);
   const [isSendingConfirmation, setIsSendingConfirmation] = useState(false);
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("harrisboatworks@hotmail.com");
   const { toast } = useToast();
 
   const handleTestResumeEmail = async () => {
