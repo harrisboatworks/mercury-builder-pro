@@ -114,6 +114,7 @@ export function calculateQuotePricing(data: {
   warrantyPrice: number;
   promotionalSavings: number;
   tradeInValue: number;
+  financingFee?: number;
   taxRate?: number;
 }): PricingBreakdown {
   const {
@@ -123,6 +124,7 @@ export function calculateQuotePricing(data: {
     warrantyPrice,
     promotionalSavings,
     tradeInValue,
+    financingFee = 0,
     taxRate = 0.13
   } = data;
 
@@ -130,8 +132,8 @@ export function calculateQuotePricing(data: {
   const discount = motorDiscount;
   const promoValue = promotionalSavings;
   
-  // Motor after discount + accessories + warranty - trade-in - promos
-  const subtotal = (msrp - discount) + accessoryTotal + warrantyPrice - tradeInValue - promoValue;
+  // Motor after discount + accessories + warranty + financing fee - trade-in - promos
+  const subtotal = (msrp - discount) + accessoryTotal + warrantyPrice + financingFee - tradeInValue - promoValue;
   const tax = subtotal * taxRate;
   const total = subtotal + tax;
   const savings = discount + promoValue + tradeInValue;

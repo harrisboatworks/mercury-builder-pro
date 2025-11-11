@@ -58,13 +58,13 @@ export function PurchaseDetailsStep() {
   const downPaymentPercentage = motorPrice > 0 ? Math.round((downPayment / motorPrice) * 100) : 0;
 
   // Calculate monthly payment estimates for specific terms
-  const amountWithTax = amountToFinance * 1.13;
+  // Motor price already includes HST and Dealerplan fee, so no need to add tax again
   const rate = 7.99; // Standard rate
 
   // Use calculateMonthly which accepts specific term months
-  const payment36 = calculateMonthly(amountWithTax, rate, 36);
-  const payment48 = calculateMonthly(amountWithTax, rate, 48);
-  const payment60 = calculateMonthly(amountWithTax, rate, 60);
+  const payment36 = calculateMonthly(amountToFinance, rate, 36);
+  const payment48 = calculateMonthly(amountToFinance, rate, 48);
+  const payment60 = calculateMonthly(amountToFinance, rate, 60);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 animate-fade-in">
@@ -106,7 +106,7 @@ export function PurchaseDetailsStep() {
 
       {/* Motor Price */}
       <div className="space-y-2">
-        <Label htmlFor="motorPrice">Motor Price</Label>
+        <Label htmlFor="motorPrice">Total Purchase Price</Label>
         <div className="relative">
           <Input
             id="motorPrice"
@@ -123,9 +123,9 @@ export function PurchaseDetailsStep() {
             className="absolute right-3 top-1/2 -translate-y-1/2"
           />
         </div>
-        <FormErrorMessage error={errors.motorPrice?.message} field="Motor price" />
+        <FormErrorMessage error={errors.motorPrice?.message} field="Total purchase price" />
         <p className="text-sm text-muted-foreground font-light">
-          {money(motorPrice)}
+          {money(motorPrice)} (includes HST and $299 processing fee)
         </p>
       </div>
 
@@ -204,7 +204,7 @@ export function PurchaseDetailsStep() {
           </span>
         </div>
         <p className="text-xs text-muted-foreground font-light">
-          Including 13% HST: {money(amountToFinance * 1.13)}
+          Includes 13% HST and $299 Dealerplan processing fee
         </p>
       </div>
 

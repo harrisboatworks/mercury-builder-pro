@@ -1,4 +1,9 @@
 /**
+ * Dealerplan processing fee (mandatory for all financed purchases)
+ */
+export const DEALERPLAN_FEE = 299;
+
+/**
  * Get smart financing term based on price
  */
 export const getFinancingTerm = (price: number): number => {

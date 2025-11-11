@@ -15,7 +15,7 @@ import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExtern
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, CreditCard } from 'lucide-react';
-import { computeTotals, calculateMonthlyPayment, getFinancingTerm } from '@/lib/finance';
+import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE } from '@/lib/finance';
 import { calculateQuotePricing } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
@@ -143,6 +143,7 @@ export default function QuoteSummaryPage() {
     warrantyPrice,
     promotionalSavings: promoSavings,
     tradeInValue: state.tradeInInfo?.estimatedValue || 0,
+    financingFee: DEALERPLAN_FEE,
     taxRate: 0.13
   });
 
@@ -460,14 +461,22 @@ export default function QuoteSummaryPage() {
   const handleApplyForFinancing = () => {
     // Calculate the complete package subtotal (before trade-in)
     const completePackageSubtotal = packageSpecificTotals.subtotal;
+    const packageName = selectedPackageData.label.split('•')[0].trim();
+    
+    // Calculate total with HST and Dealerplan fee for financing
+    const subtotalWithTax = completePackageSubtotal * 1.13;
+    const totalWithFees = subtotalWithTax + DEALERPLAN_FEE;
     
     // Save complete pricing data for financing
     const financingData = {
       ...state,
       financingAmount: {
         packageSubtotal: completePackageSubtotal,
+        hst: completePackageSubtotal * 0.13,
+        financingFee: DEALERPLAN_FEE,
+        totalWithFees: totalWithFees,
         motorModel: quoteData.motor?.model || motorName,
-        packageName: selectedPackageData.label,
+        packageName: packageName,
         tradeInValue: state.tradeInInfo?.estimatedValue || 0
       }
     };

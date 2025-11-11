@@ -139,9 +139,9 @@ export default function FinancingApplication() {
         financingDispatch({ type: 'SET_QUOTE_ID', payload: quoteId });
       }
       
-      // Use complete package subtotal if available, otherwise fall back to motor price
-      const packageSubtotal = (quoteData as any).financingAmount?.packageSubtotal;
-      const motorPrice = packageSubtotal || quoteData.motor.salePrice || quoteData.motor.price || 0;
+      // Use totalWithFees (includes package subtotal + HST + Dealerplan fee)
+      const totalWithFees = (quoteData as any).financingAmount?.totalWithFees;
+      const motorPrice = totalWithFees || quoteData.motor.salePrice || quoteData.motor.price || 0;
       const tradeInValue = (quoteData as any).financingAmount?.tradeInValue || quoteData.tradeInInfo?.estimatedValue || 0;
       const downPayment = 0; // Will be set by user
       
@@ -201,8 +201,8 @@ export default function FinancingApplication() {
       try {
         const quoteData = JSON.parse(savedQuoteState);
         if (quoteData?.motor) {
-          const packageSubtotal = quoteData.financingAmount?.packageSubtotal;
-          const motorPrice = packageSubtotal || quoteData.motor.salePrice || quoteData.motor.price || 0;
+          const totalWithFees = quoteData.financingAmount?.totalWithFees;
+          const motorPrice = totalWithFees || quoteData.motor.salePrice || quoteData.motor.price || 0;
           const tradeInValue = quoteData.financingAmount?.tradeInValue || quoteData.tradeInInfo?.estimatedValue || 0;
           const downPayment = 0;
           
