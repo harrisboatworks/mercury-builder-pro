@@ -52,8 +52,8 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
       <header 
         className={`sticky top-0 z-50 h-14 sm:h-16 md:h-[72px] transition-all duration-300 bg-white dark:bg-gray-900 border-b border-luxury-hairline dark:border-gray-800 ${
           isScrolled 
-            ? 'shadow-sm backdrop-blur-md dark:shadow-gray-800/50' 
-            : ''
+            ? 'shadow-sm backdrop-blur-md dark:shadow-gray-800/50 opacity-100' 
+            : 'opacity-95'
         }`}
       >
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 h-full">
