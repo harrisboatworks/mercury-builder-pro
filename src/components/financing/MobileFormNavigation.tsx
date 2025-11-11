@@ -43,26 +43,24 @@ export function MobileFormNavigation({
           </Button>
         )}
         
-        {onNext && (
-          <Button
-            type="submit"
-            onClick={onNext}
-            disabled={isNextDisabled || isLoading}
-            className="flex-1 touch-manipulation h-11 text-base font-semibold"
-          >
-            {isLoading ? (
-              <>
-                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                Processing...
-              </>
-            ) : (
-              <>
-                {nextLabel}
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </>
-            )}
-          </Button>
-        )}
+        <Button
+          type="submit"
+          onClick={onNext}
+          disabled={isNextDisabled || isLoading}
+          className="flex-1 touch-manipulation h-11 text-base font-semibold"
+        >
+          {isLoading ? (
+            <>
+              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              Processing...
+            </>
+          ) : (
+            <>
+              {nextLabel}
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </>
+          )}
+        </Button>
       </div>
     </div>
   );
