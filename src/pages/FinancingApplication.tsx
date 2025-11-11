@@ -188,44 +188,13 @@ export default function FinancingApplication() {
   };
 
   const handleStartFresh = () => {
-    // Clear all saved drafts
+    // Clear all saved drafts and quote data
     localStorage.removeItem('financing_draft');
     localStorage.removeItem('financingApplication');
+    localStorage.removeItem('quote_state');
     
     // Reset context to initial state
     financingDispatch({ type: 'RESET_APPLICATION' });
-    
-    // Pre-fill from quote if available
-    const savedQuoteState = localStorage.getItem('quote_state');
-    if (savedQuoteState) {
-      try {
-        const quoteData = JSON.parse(savedQuoteState);
-        if (quoteData?.motor) {
-          const totalWithFees = quoteData.financingAmount?.totalWithFees;
-          const motorPrice = totalWithFees || quoteData.motor.salePrice || quoteData.motor.price || 0;
-          const tradeInValue = quoteData.financingAmount?.tradeInValue || quoteData.tradeInInfo?.estimatedValue || 0;
-          const downPayment = 0;
-          
-          const motorModel = quoteData.financingAmount?.packageName 
-            ? `${quoteData.motor.model || ''} (${quoteData.financingAmount.packageName})`
-            : quoteData.motor.model || '';
-          
-          financingDispatch({
-            type: 'SET_PURCHASE_DETAILS',
-            payload: {
-              motorModel: motorModel,
-              motorPrice: motorPrice,
-              downPayment: downPayment,
-              tradeInValue: tradeInValue,
-              amountToFinance: Math.max(0, motorPrice - downPayment - tradeInValue),
-            },
-          });
-        }
-        localStorage.removeItem('quote_state');
-      } catch (e) {
-        console.error('Failed to parse quote state:', e);
-      }
-    }
     
     setShowResumeDialog(false);
   };
