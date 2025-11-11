@@ -278,6 +278,8 @@ export default function MotorCardPreview({
                 src={imageUrl} 
                 alt={title} 
                 className="h-48 md:h-72 w-full object-contain"
+                loading="lazy"
+                decoding="async"
               />
               
               {/* Stock Badge - Top Left */}
