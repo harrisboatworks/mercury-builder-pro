@@ -497,7 +497,7 @@ export default function MotorSelectionPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Motors Grid */}
           {filteredMotors.length > 0 ? (
-            <div className="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+            <div className="grid gap-6 sm:gap-8 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
               {filteredMotors.map(motor => {
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);
