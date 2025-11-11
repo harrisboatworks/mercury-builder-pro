@@ -180,25 +180,25 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
           <div className="flex items-center justify-center gap-8 h-12">
             <a 
               href="#engines" 
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
             >
               Engines
             </a>
             <a 
               href="#accessories" 
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
             >
               Accessories
             </a>
             <Link 
               to="/finance-calculator" 
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
             >
               Financing
             </Link>
             <Link 
               to="/contact" 
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
             >
               Contact Us
             </Link>
