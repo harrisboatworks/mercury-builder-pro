@@ -8,7 +8,7 @@ import { Slider } from '@/components/ui/slider';
 
 import { motion } from 'framer-motion';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, DollarSign, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { Loader2, DollarSign, AlertTriangle, CheckCircle2, Sparkles, CircleCheck, AlertCircle, Wrench } from 'lucide-react';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, type TradeValueEstimate, type TradeInInfo } from '@/lib/trade-valuation';
 
 interface TradeInValuationProps {
@@ -280,12 +280,12 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       }`}
                       onClick={() => onTradeInChange({ ...tradeInInfo, condition: option.value as any })}
                     >
-                      {/* Emoji based on condition */}
-                      <div className="text-3xl mb-2">
-                        {option.value === 'excellent' && '😍'}
-                        {option.value === 'good' && '😊'}
-                        {option.value === 'fair' && '😐'}
-                        {option.value === 'poor' && '😟'}
+                      {/* Icon based on condition */}
+                      <div className="mb-3 flex justify-center">
+                        {option.value === 'excellent' && <Sparkles className="w-8 h-8 text-gray-900 dark:text-gray-100" strokeWidth={1.5} />}
+                        {option.value === 'good' && <CircleCheck className="w-8 h-8 text-gray-900 dark:text-gray-100" strokeWidth={1.5} />}
+                        {option.value === 'fair' && <AlertCircle className="w-8 h-8 text-gray-900 dark:text-gray-100" strokeWidth={1.5} />}
+                        {option.value === 'poor' && <Wrench className="w-8 h-8 text-gray-900 dark:text-gray-100" strokeWidth={1.5} />}
                       </div>
                       <div className="font-light text-base tracking-wide text-gray-900 dark:text-gray-100">{option.label}</div>
                       <div className="text-sm font-light text-gray-600 dark:text-gray-400 mt-1">{option.description}</div>
