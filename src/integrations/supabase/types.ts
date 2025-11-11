@@ -257,6 +257,39 @@ export type Database = {
         }
         Relationships: []
       }
+      data_retention_policies: {
+        Row: {
+          created_at: string
+          description: string | null
+          enabled: boolean
+          id: string
+          last_cleanup_at: string | null
+          retention_days: number
+          table_name: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          enabled?: boolean
+          id?: string
+          last_cleanup_at?: string | null
+          retention_days: number
+          table_name: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          enabled?: boolean
+          id?: string
+          last_cleanup_at?: string | null
+          retention_days?: number
+          table_name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       dropbox_sync_config: {
         Row: {
           auto_categorize: boolean | null
@@ -1501,6 +1534,36 @@ export type Database = {
         }
         Relationships: []
       }
+      sin_audit_log: {
+        Row: {
+          action: string
+          application_id: string | null
+          created_at: string
+          id: string
+          ip_address: unknown
+          user_agent: string | null
+          user_id: string
+        }
+        Insert: {
+          action: string
+          application_id?: string | null
+          created_at?: string
+          id?: string
+          ip_address?: unknown
+          user_agent?: string | null
+          user_id: string
+        }
+        Update: {
+          action?: string
+          application_id?: string | null
+          created_at?: string
+          id?: string
+          ip_address?: unknown
+          user_agent?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       sms_logs: {
         Row: {
           created_at: string | null
@@ -1772,6 +1835,13 @@ export type Database = {
         Returns: {
           cleanup_details: Json
           total_duplicates_removed: number
+        }[]
+      }
+      cleanup_old_data: {
+        Args: never
+        Returns: {
+          records_deleted: number
+          table_name: string
         }[]
       }
       decrypt_sin: { Args: { sin_encrypted: string }; Returns: string }

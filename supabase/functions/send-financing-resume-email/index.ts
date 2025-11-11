@@ -25,12 +25,48 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const { applicationId, email, applicantName, completedSteps }: ResumeEmailRequest = await req.json();
 
-    console.log('Sending resume email:', { applicationId, email, completedSteps });
-
-    // Fetch the resume token from database
+    // Rate limiting: Check if user has exceeded email sending limit
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     
+    const rateLimitResponse = await fetch(
+      `${supabaseUrl}/rest/v1/rpc/check_rate_limit`,
+      {
+        method: 'POST',
+        headers: {
+          'apikey': supabaseKey,
+          'Authorization': `Bearer ${supabaseKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          _identifier: email,
+          _action: 'resume_email_send',
+          _max_attempts: 5,
+          _window_minutes: 60
+        })
+      }
+    );
+
+    if (!rateLimitResponse.ok) {
+      throw new Error('Rate limit check failed');
+    }
+
+    const rateLimitData = await rateLimitResponse.json();
+    
+    if (rateLimitData === false) {
+      console.warn(`Rate limit exceeded for email: ${email}`);
+      return new Response(
+        JSON.stringify({ error: 'Too many email requests. Please try again later.' }),
+        {
+          status: 429,
+          headers: { 'Content-Type': 'application/json', ...corsHeaders },
+        }
+      );
+    }
+
+    console.log('Sending resume email:', { applicationId, email, completedSteps });
+
+    // Fetch the resume token from database
     const dbResponse = await fetch(
       `${supabaseUrl}/rest/v1/financing_applications?id=eq.${applicationId}&select=resume_token`,
       {

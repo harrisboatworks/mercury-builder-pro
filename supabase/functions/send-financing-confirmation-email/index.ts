@@ -34,6 +34,45 @@ const handler = async (req: Request): Promise<Response> => {
       sendAdminNotification = true,
     }: ConfirmationEmailRequest = await req.json();
 
+    // Rate limiting: Check if user has exceeded email sending limit
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    
+    const rateLimitResponse = await fetch(
+      `${supabaseUrl}/rest/v1/rpc/check_rate_limit`,
+      {
+        method: 'POST',
+        headers: {
+          'apikey': supabaseKey,
+          'Authorization': `Bearer ${supabaseKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          _identifier: applicantEmail,
+          _action: 'confirmation_email_send',
+          _max_attempts: 3,
+          _window_minutes: 60
+        })
+      }
+    );
+
+    if (!rateLimitResponse.ok) {
+      throw new Error('Rate limit check failed');
+    }
+
+    const rateLimitData = await rateLimitResponse.json();
+    
+    if (rateLimitData === false) {
+      console.warn(`Rate limit exceeded for email: ${applicantEmail}`);
+      return new Response(
+        JSON.stringify({ error: 'Too many email requests. Please try again later.' }),
+        {
+          status: 429,
+          headers: { 'Content-Type': 'application/json', ...corsHeaders },
+        }
+      );
+    }
+
     console.log('Sending confirmation emails:', { applicationId, applicantEmail });
 
     // Generate reference number (first 8 chars of UUID)
