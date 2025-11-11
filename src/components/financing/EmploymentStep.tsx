@@ -122,9 +122,9 @@ export function EmploymentStep() {
                     className="absolute right-3 top-1/2 -translate-y-1/2"
                   />
                 </div>
-                {errors.employerName && (
-                  <p className="text-sm text-destructive">{errors.employerName.message}</p>
-                )}
+                  {errors.employerName && (
+                    <p className="text-sm text-destructive font-light">{errors.employerName.message}</p>
+                  )}
               </div>
 
               <div className="space-y-2">
@@ -157,7 +157,7 @@ export function EmploymentStep() {
                   />
                 </div>
                 {errors.employerPhone && (
-                  <p className="text-sm text-destructive">{errors.employerPhone.message}</p>
+                  <p className="text-sm text-destructive font-light">{errors.employerPhone.message}</p>
                 )}
               </div>
 
@@ -176,9 +176,9 @@ export function EmploymentStep() {
                     className="absolute right-3 top-1/2 -translate-y-1/2"
                   />
                 </div>
-                {errors.jobTitle && (
-                  <p className="text-sm text-destructive">{errors.jobTitle.message}</p>
-                )}
+                  {errors.jobTitle && (
+                    <p className="text-sm text-destructive font-light">{errors.jobTitle.message}</p>
+                  )}
               </div>
 
               <div className="space-y-2">
@@ -199,7 +199,7 @@ export function EmploymentStep() {
                   </SelectContent>
                 </Select>
                 {errors.timeAtJob && (
-                  <p className="text-sm text-destructive">{errors.timeAtJob.message}</p>
+                  <p className="text-sm text-destructive font-light">{errors.timeAtJob.message}</p>
                 )}
               </div>
             </div>
@@ -215,9 +215,9 @@ export function EmploymentStep() {
                 <TooltipTrigger>
                   <Info className="h-4 w-4 text-muted-foreground" />
                 </TooltipTrigger>
-                <TooltipContent>
-                  <p>Required for credit assessment</p>
-                </TooltipContent>
+                  <TooltipContent>
+                    <p className="font-light">Required for credit assessment</p>
+                  </TooltipContent>
               </Tooltip>
             </div>
             <div className="relative">
@@ -244,7 +244,7 @@ export function EmploymentStep() {
                 step={5000}
                 className="w-full"
               />
-              <div className="flex justify-between text-xs text-muted-foreground">
+              <div className="flex justify-between text-xs text-muted-foreground font-light">
                 {incomeRanges.map((range) => (
                   <span key={range.value}>{range.label}</span>
                 ))}
@@ -255,9 +255,9 @@ export function EmploymentStep() {
                 </p>
               )}
             </div>
-            {errors.annualIncome && (
-              <p className="text-sm text-destructive">{errors.annualIncome.message}</p>
-            )}
+                  {errors.annualIncome && (
+                    <p className="text-sm text-destructive font-light">{errors.annualIncome.message}</p>
+                  )}
           </div>
 
           {showPreviousEmployer && (
@@ -271,7 +271,7 @@ export function EmploymentStep() {
                   placeholder="Previous company name"
                 />
                 {errors.previousEmployer?.name && (
-                  <p className="text-sm text-destructive">{errors.previousEmployer.name.message}</p>
+                  <p className="text-sm text-destructive font-light">{errors.previousEmployer.name.message}</p>
                 )}
               </div>
 
@@ -293,7 +293,7 @@ export function EmploymentStep() {
                   </SelectContent>
                 </Select>
                 {errors.previousEmployer?.timeAtJob && (
-                  <p className="text-sm text-destructive">{errors.previousEmployer.timeAtJob.message}</p>
+                  <p className="text-sm text-destructive font-light">{errors.previousEmployer.timeAtJob.message}</p>
                 )}
               </div>
             </Card>

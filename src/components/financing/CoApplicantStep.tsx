@@ -370,7 +370,7 @@ export function CoApplicantStep() {
                           className={`pl-10 ${errors.employerName ? 'border-destructive' : ''}`}
                         />
                       </div>
-                      {errors.employerName && <p className="text-sm text-destructive">{errors.employerName.message}</p>}
+                      {errors.employerName && <p className="text-sm text-destructive font-light">{errors.employerName.message}</p>}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="employerPhone">Employer Phone *</Label>
@@ -381,7 +381,7 @@ export function CoApplicantStep() {
                         {...register('employerPhone')}
                         className={errors.employerPhone ? 'border-destructive' : ''}
                       />
-                      {errors.employerPhone && <p className="text-sm text-destructive">{errors.employerPhone.message}</p>}
+                      {errors.employerPhone && <p className="text-sm text-destructive font-light">{errors.employerPhone.message}</p>}
                     </div>
                   </div>
 
@@ -393,7 +393,7 @@ export function CoApplicantStep() {
                         {...register('jobTitle')}
                         className={errors.jobTitle ? 'border-destructive' : ''}
                       />
-                      {errors.jobTitle && <p className="text-sm text-destructive">{errors.jobTitle.message}</p>}
+                      {errors.jobTitle && <p className="text-sm text-destructive font-light">{errors.jobTitle.message}</p>}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="timeAtJob">Time at Job *</Label>
@@ -409,7 +409,7 @@ export function CoApplicantStep() {
                           <SelectItem value="5+">5+ years</SelectItem>
                         </SelectContent>
                       </Select>
-                      {errors.timeAtJob && <p className="text-sm text-destructive">{errors.timeAtJob.message}</p>}
+                      {errors.timeAtJob && <p className="text-sm text-destructive font-light">{errors.timeAtJob.message}</p>}
                     </div>
                   </div>
                 </div>
@@ -423,7 +423,7 @@ export function CoApplicantStep() {
                       <TooltipTrigger>
                         <InfoIcon className="h-4 w-4 text-muted-foreground" />
                       </TooltipTrigger>
-                      <TooltipContent>Required for credit assessment</TooltipContent>
+                      <TooltipContent className="font-light">Required for credit assessment</TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
                 </div>
@@ -449,13 +449,13 @@ export function CoApplicantStep() {
                     step={5000}
                     className="w-full"
                   />
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>$20k</span>
-                    <span>${incomeValue[0].toLocaleString()}</span>
-                    <span>$200k+</span>
-                  </div>
-                </div>
-                {errors.annualIncome && <p className="text-sm text-destructive">{errors.annualIncome.message}</p>}
+                   <div className="flex justify-between text-xs text-muted-foreground font-light">
+                     <span>$20k</span>
+                     <span>${incomeValue[0].toLocaleString()}</span>
+                     <span>$200k+</span>
+                   </div>
+                 </div>
+                 {errors.annualIncome && <p className="text-sm text-destructive font-light">{errors.annualIncome.message}</p>}
               </div>
 
               {showPreviousEmployer && (
@@ -514,7 +514,7 @@ export function CoApplicantStep() {
                     ))}
                   </div>
                 </RadioGroup>
-                {errors.creditScoreEstimate && <p className="text-sm text-destructive">{errors.creditScoreEstimate.message}</p>}
+                {errors.creditScoreEstimate && <p className="text-sm text-destructive font-light">{errors.creditScoreEstimate.message}</p>}
               </div>
 
               <div className="space-y-4">
@@ -566,7 +566,7 @@ export function CoApplicantStep() {
                       {...register('bankName')}
                       className={errors.bankName ? 'border-destructive' : ''}
                     />
-                    {errors.bankName && <p className="text-sm text-destructive">{errors.bankName.message}</p>}
+                    {errors.bankName && <p className="text-sm text-destructive font-light">{errors.bankName.message}</p>}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="accountType">Account Type *</Label>
@@ -579,7 +579,7 @@ export function CoApplicantStep() {
                         <SelectItem value="savings">Savings</SelectItem>
                       </SelectContent>
                     </Select>
-                    {errors.accountType && <p className="text-sm text-destructive">{errors.accountType.message}</p>}
+                    {errors.accountType && <p className="text-sm text-destructive font-light">{errors.accountType.message}</p>}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="timeWithBank">Time with Bank *</Label>
@@ -594,7 +594,7 @@ export function CoApplicantStep() {
                         <SelectItem value="5+">5+ years</SelectItem>
                       </SelectContent>
                     </Select>
-                    {errors.timeWithBank && <p className="text-sm text-destructive">{errors.timeWithBank.message}</p>}
+                    {errors.timeWithBank && <p className="text-sm text-destructive font-light">{errors.timeWithBank.message}</p>}
                   </div>
                 </div>
               </div>
@@ -607,7 +607,7 @@ export function CoApplicantStep() {
                       <TooltipTrigger>
                         <InfoIcon className="h-4 w-4 text-muted-foreground" />
                       </TooltipTrigger>
-                      <TooltipContent>Required disclosure - won't automatically disqualify you</TooltipContent>
+                      <TooltipContent className="font-light">Required disclosure - won't automatically disqualify you</TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
                 </div>
@@ -627,7 +627,7 @@ export function CoApplicantStep() {
                     </Card>
                   </div>
                 </RadioGroup>
-                {errors.hasBankruptcy && <p className="text-sm text-destructive">{errors.hasBankruptcy.message}</p>}
+                {errors.hasBankruptcy && <p className="text-sm text-destructive font-light">{errors.hasBankruptcy.message}</p>}
               </div>
 
               {showBankruptcyDetails && (

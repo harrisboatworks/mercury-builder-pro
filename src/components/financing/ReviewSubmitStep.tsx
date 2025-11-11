@@ -393,7 +393,7 @@ export function ReviewSubmitStep() {
                 <Label htmlFor="creditCheckConsent" className="font-medium cursor-pointer">
                   Credit Check Authorization *
                 </Label>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground font-light">
                   I authorize the company to obtain my credit report and verify information provided in this application.
                 </p>
               </div>
@@ -410,7 +410,7 @@ export function ReviewSubmitStep() {
                 <Label htmlFor="accuracyConfirmation" className="font-medium cursor-pointer">
                   Accuracy Confirmation *
                 </Label>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground font-light">
                   I confirm that all information provided is true and accurate to the best of my knowledge.
                 </p>
               </div>
@@ -427,15 +427,15 @@ export function ReviewSubmitStep() {
                 <Label htmlFor="termsAndPrivacy" className="font-medium cursor-pointer">
                   Terms & Privacy Policy *
                 </Label>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground font-light">
                   I have read and agree to the Terms of Service and Privacy Policy.
                 </p>
               </div>
             </div>
 
-            {errors.creditCheckConsent && <p className="text-sm text-destructive">{errors.creditCheckConsent.message}</p>}
-            {errors.accuracyConfirmation && <p className="text-sm text-destructive">{errors.accuracyConfirmation.message}</p>}
-            {errors.termsAgreement && <p className="text-sm text-destructive">{errors.termsAgreement.message}</p>}
+            {errors.creditCheckConsent && <p className="text-sm text-destructive font-light">{errors.creditCheckConsent.message}</p>}
+            {errors.accuracyConfirmation && <p className="text-sm text-destructive font-light">{errors.accuracyConfirmation.message}</p>}
+            {errors.termsAgreement && <p className="text-sm text-destructive font-light">{errors.termsAgreement.message}</p>}
           </CardContent>
         </Card>
 
@@ -448,7 +448,7 @@ export function ReviewSubmitStep() {
             </h3>
 
             <Alert>
-              <AlertDescription>
+              <AlertDescription className="font-light">
                 By typing your full name below, you electronically sign this application.
               </AlertDescription>
             </Alert>
@@ -466,13 +466,13 @@ export function ReviewSubmitStep() {
                   <Check className="absolute right-3 top-3 h-4 w-4 text-green-500" />
                 )}
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground font-light">
                 Must match: <span className="font-medium">{applicantFullName}</span>
               </p>
               {signature && !signatureMatches && (
-                <p className="text-sm text-destructive">Signature must match your name</p>
+                <p className="text-sm text-destructive font-light">Signature must match your name</p>
               )}
-              {errors.signature && <p className="text-sm text-destructive">{errors.signature.message}</p>}
+              {errors.signature && <p className="text-sm text-destructive font-light">{errors.signature.message}</p>}
             </div>
 
             <div className="space-y-2">

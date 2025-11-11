@@ -38,7 +38,7 @@ export function ReferencesStep() {
     <div className="space-y-6">
       <Alert>
         <InfoIcon className="h-4 w-4" />
-        <AlertDescription>
+        <AlertDescription className="font-light">
           Please provide 2 personal references who have known you for at least 1 year (cannot be relatives or co-applicant).
         </AlertDescription>
       </Alert>
