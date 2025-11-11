@@ -28,7 +28,7 @@ export function PurchaseDetailsStep() {
     mode: 'onChange',
     defaultValues: {
       motorModel: state.purchaseDetails?.motorModel || '',
-      motorPrice: state.purchaseDetails?.motorPrice || 0,
+      motorPrice: state.purchaseDetails?.motorPrice ? Number(state.purchaseDetails.motorPrice.toFixed(2)) : 0,
       downPayment: state.purchaseDetails?.downPayment || 0,
       tradeInValue: state.purchaseDetails?.tradeInValue || 0,
       amountToFinance: state.purchaseDetails?.amountToFinance || 0,
@@ -112,10 +112,19 @@ export function PurchaseDetailsStep() {
             id="motorPrice"
             type="number"
             inputMode="decimal"
-            step="0.01"
-            {...register('motorPrice', { valueAsNumber: true })}
+            step="1"
+            {...register('motorPrice', { 
+              valueAsNumber: true,
+              setValueAs: (v) => Number(Number(v).toFixed(2))
+            })}
             autoComplete="off"
             className="pr-10"
+            onBlur={(e) => {
+              const value = Number(e.target.value);
+              if (!isNaN(value)) {
+                setValue('motorPrice', Number(value.toFixed(2)));
+              }
+            }}
           />
           <FieldValidationIndicator 
             isValid={!errors.motorPrice && motorPrice > 0}
