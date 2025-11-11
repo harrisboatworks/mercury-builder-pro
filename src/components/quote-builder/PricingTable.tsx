@@ -1,5 +1,6 @@
 import { Card } from '@/components/ui/card';
 import { LineItemRow } from './LineItemRow';
+import { FinancingCallout } from './FinancingCallout';
 import { type PricingBreakdown } from '@/lib/quote-utils';
 
 function formatTradeInLabel(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
@@ -29,6 +30,7 @@ interface PricingTableProps {
   };
   packageName?: string;
   includesInstallation?: boolean;
+  onApplyForFinancing?: () => void;
 }
 
 export function PricingTable({ 
@@ -38,7 +40,8 @@ export function PricingTable({
   tradeInValue = 0,
   tradeInInfo,
   packageName = "Accessories & Setup",
-  includesInstallation = false
+  includesInstallation = false,
+  onApplyForFinancing
 }: PricingTableProps) {
   return (
     <Card className="p-6 space-y-1">
@@ -140,6 +143,22 @@ export function PricingTable({
           amount={pricing.total}
           isTotal
         />
+      </div>
+
+      {/* Financing Callout - Subtle and Minimal */}
+      <div className="mt-6 mb-4 pt-6 border-t border-gray-200 dark:border-gray-700 space-y-2">
+        <div className="text-sm text-gray-600 dark:text-gray-400 font-normal">
+          Flexible financing available
+        </div>
+        
+        <FinancingCallout 
+          totalPrice={pricing.total}
+          onApplyForFinancing={onApplyForFinancing}
+        />
+        
+        <div className="text-xs text-gray-500 dark:text-gray-400 italic mt-1">
+          *Based on default financing terms, subject to approval
+        </div>
       </div>
 
       {/* Summary Note */}

@@ -712,6 +712,7 @@ export default function QuoteSummaryPage() {
                   } : undefined}
                   packageName={selectedPackageData.label}
                   includesInstallation={state.purchasePath === 'installed'}
+                  onApplyForFinancing={handleApplyForFinancing}
                 />
               </motion.div>
 
