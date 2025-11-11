@@ -35,7 +35,7 @@ export function FinancingCallout({ totalPrice, onApplyForFinancing }: FinancingC
       {onApplyForFinancing && (
         <button
           onClick={onApplyForFinancing}
-          className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline transition-colors min-h-[44px] px-2"
+          className="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 transition-all duration-200 ease hover:translate-x-0.5 min-h-[44px] px-2"
         >
           Apply for Financing →
         </button>
