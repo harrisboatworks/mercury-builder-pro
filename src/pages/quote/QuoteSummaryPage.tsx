@@ -458,10 +458,23 @@ export default function QuoteSummaryPage() {
   };
 
   const handleApplyForFinancing = () => {
-    // Save current state to localStorage for pre-filling
-    localStorage.setItem('quote_state', JSON.stringify(state));
+    // Calculate the complete package subtotal (before trade-in)
+    const completePackageSubtotal = packageSpecificTotals.subtotal;
     
-    // Navigate to financing application with quote data
+    // Save complete pricing data for financing
+    const financingData = {
+      ...state,
+      financingAmount: {
+        packageSubtotal: completePackageSubtotal,
+        motorModel: quoteData.motor?.model || motorName,
+        packageName: selectedPackageData.label,
+        tradeInValue: state.tradeInInfo?.estimatedValue || 0
+      }
+    };
+    
+    localStorage.setItem('quote_state', JSON.stringify(financingData));
+    
+    // Navigate to financing application
     navigate('/financing/apply');
   };
 

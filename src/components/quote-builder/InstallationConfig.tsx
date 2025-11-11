@@ -56,6 +56,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
     toast({
       title: "🎉 Configuration Complete!",
       description: `Your ${selectedMounting?.label || 'installation'} is configured!`,
+      duration: 3000,
     });
     
     // Pass installation cost and recommended package to parent

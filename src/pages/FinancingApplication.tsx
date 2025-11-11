@@ -71,15 +71,21 @@ export default function FinancingApplication() {
         financingDispatch({ type: 'SET_QUOTE_ID', payload: quoteId });
       }
       
-      // Calculate pricing
-      const motorPrice = quoteData.motor.salePrice || quoteData.motor.price || 0;
-      const tradeInValue = quoteData.tradeInInfo?.estimatedValue || 0;
+      // Use complete package subtotal if available, otherwise fall back to motor price
+      const packageSubtotal = (quoteData as any).financingAmount?.packageSubtotal;
+      const motorPrice = packageSubtotal || quoteData.motor.salePrice || quoteData.motor.price || 0;
+      const tradeInValue = (quoteData as any).financingAmount?.tradeInValue || quoteData.tradeInInfo?.estimatedValue || 0;
       const downPayment = 0; // Will be set by user
+      
+      // Build motor model display with package info
+      const motorModel = (quoteData as any).financingAmount?.packageName 
+        ? `${quoteData.motor.model || ''} (${(quoteData as any).financingAmount.packageName})`
+        : quoteData.motor.model || '';
       
       financingDispatch({
         type: 'SET_PURCHASE_DETAILS',
         payload: {
-          motorModel: quoteData.motor.model || '',
+          motorModel: motorModel,
           motorPrice: motorPrice,
           downPayment: downPayment,
           tradeInValue: tradeInValue,

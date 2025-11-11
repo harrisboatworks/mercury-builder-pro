@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Pencil } from 'lucide-react';
 import { useState } from 'react';
 import { money } from '@/lib/money';
-import { calculateMonthlyPayment } from '@/lib/finance';
+import { calculateMonthlyPayment, calculateMonthly } from '@/lib/finance';
 import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
 import { MobileFormNavigation } from './MobileFormNavigation';
 
@@ -57,10 +57,14 @@ export function PurchaseDetailsStep() {
   const maxDownPayment = Math.floor(motorPrice * 0.5);
   const downPaymentPercentage = motorPrice > 0 ? Math.round((downPayment / motorPrice) * 100) : 0;
 
-  // Calculate monthly payment estimates
-  const payment36 = calculateMonthlyPayment(amountToFinance * 1.13, null);
-  const payment48 = calculateMonthlyPayment(amountToFinance * 1.13, null);
-  const payment60 = calculateMonthlyPayment(amountToFinance * 1.13, null);
+  // Calculate monthly payment estimates for specific terms
+  const amountWithTax = amountToFinance * 1.13;
+  const rate = 7.99; // Standard rate
+
+  // Use calculateMonthly which accepts specific term months
+  const payment36 = calculateMonthly(amountWithTax, rate, 36);
+  const payment48 = calculateMonthly(amountWithTax, rate, 48);
+  const payment60 = calculateMonthly(amountWithTax, rate, 60);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 animate-fade-in">
@@ -212,21 +216,21 @@ export function PurchaseDetailsStep() {
             <div className="rounded-lg border border-border bg-background p-4 text-center min-h-[80px] flex flex-col justify-center">
               <p className="text-xs text-muted-foreground font-light mb-1">36 months</p>
               <p className="text-lg font-bold text-foreground">
-                ${Math.round(payment36.payment)}
+                ${Math.round(payment36)}
               </p>
               <p className="text-xs text-muted-foreground font-light">/month</p>
             </div>
             <div className="rounded-lg border-2 border-primary bg-primary/5 p-4 text-center min-h-[80px] flex flex-col justify-center">
               <p className="text-xs text-muted-foreground font-light mb-1">48 months</p>
               <p className="text-lg font-bold text-foreground">
-                ${Math.round(payment48.payment)}
+                ${Math.round(payment48)}
               </p>
               <p className="text-xs text-muted-foreground font-light">/month</p>
             </div>
             <div className="rounded-lg border border-border bg-background p-4 text-center min-h-[80px] flex flex-col justify-center">
               <p className="text-xs text-muted-foreground font-light mb-1">60 months</p>
               <p className="text-lg font-bold text-foreground">
-                ${Math.round(payment60.payment)}
+                ${Math.round(payment60)}
               </p>
               <p className="text-xs text-muted-foreground font-light">/month</p>
             </div>
