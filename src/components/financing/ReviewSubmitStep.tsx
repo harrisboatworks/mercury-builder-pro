@@ -37,7 +37,14 @@ export function ReviewSubmitStep() {
   const signature = watch('signature');
 
   const applicantFullName = state.applicant 
-    ? `${state.applicant.firstName} ${state.applicant.middleName || ''} ${state.applicant.lastName}`.trim()
+    ? [
+        state.applicant.firstName,
+        state.applicant.middleName,
+        state.applicant.lastName
+      ]
+        .filter(Boolean) // Remove undefined/empty values
+        .join(' ')       // Join with single spaces
+        .trim()
     : '';
 
   const signatureMatches = signature?.toLowerCase().trim() === applicantFullName.toLowerCase().trim();
