@@ -1,5 +1,6 @@
 import { useEffect, useState, useMemo, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Motor } from '@/components/QuoteBuilder';
 import { FinancingProvider } from '@/contexts/FinancingContext';
@@ -9,6 +10,7 @@ import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 import { useHpSuggestions } from '@/hooks/useHpSuggestions';
 import { HpSuggestionsDropdown } from '@/components/motors/HpSuggestionsDropdown';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
+import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
 import { Button } from '@/components/ui/button';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import '@/styles/premium-motor.css';
@@ -430,10 +432,13 @@ export default function MotorSelectionPage() {
   if (loading) {
     return (
       <QuoteLayout>
-        <div className="bg-stone-50 min-h-screen flex items-center justify-center py-20">
-          <div className="text-center">
-            <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-gray-900 border-t-transparent"></div>
-            <p className="text-gray-600 dark:text-gray-300 font-light tracking-wide">Loading Mercury motors...</p>
+        <div className="bg-stone-50 py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="grid gap-6 sm:gap-8 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <MotorCardSkeleton key={i} index={i} />
+              ))}
+            </div>
           </div>
         </div>
       </QuoteLayout>
@@ -495,9 +500,23 @@ export default function MotorSelectionPage() {
         <div className="bg-stone-50 py-12">
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Motors Grid */}
+          {/* Motors Grid with Staggered Animation */}
           {filteredMotors.length > 0 ? (
-            <div className="grid gap-6 sm:gap-8 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+            <motion.div 
+              className="grid gap-6 sm:gap-8 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.08,
+                    delayChildren: 0.1
+                  }
+                }
+              }}
+            >
               {filteredMotors.map(motor => {
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);
@@ -515,35 +534,49 @@ export default function MotorSelectionPage() {
                   (motor.model.includes('MLH') ? 'manual' :
                    motor.model.includes('ELPT') ? 'electric power tilt' :
                    motor.model.includes('DTS') ? 'digital throttle & shift' : undefined);
-                
+                 
                  // Get hero image URL from joined data or fallback  
                  const heroImageUrl = (dbMotor as any)?.hero_media?.media_url || dbMotor?.image_url || motor.image || null;
                  
                  return (
-                    <MotorCardPreview
-                    key={motor.id}
-                    img={heroImageUrl}
-                    title={motor.model}
-                    hp={motor.hp}
-                    msrp={motor.basePrice}
-                    price={motor.price}
-                    promoText={motor.appliedPromotions?.join(' • ') || null}
-                    selected={state.motor?.id === motor.id}
-                    onSelect={() => handleMotorSelect(motor)}
-                    inStock={motor.in_stock}
-                    // New specification props
-                    shaft={shaft}
-                    weightLbs={weightLbs}
-                    altOutput={altOutput}
-                    steering={steering}
-                    features={dbMotor?.features || []}
-                    description={dbMotor?.description}
-                    specSheetUrl={dbMotor?.detail_url}
-                    motor={motor as any}
-                    />
-                );
-              })}
-            </div>
+                   <motion.div
+                     key={motor.id}
+                     variants={{
+                       hidden: { opacity: 0, y: 20 },
+                       visible: {
+                         opacity: 1,
+                         y: 0,
+                         transition: {
+                           duration: 0.4,
+                           ease: "easeOut"
+                         }
+                       }
+                     }}
+                   >
+                   <MotorCardPreview
+                   img={heroImageUrl}
+                   title={motor.model}
+                   hp={motor.hp}
+                   msrp={motor.basePrice}
+                   price={motor.price}
+                   promoText={motor.appliedPromotions?.join(' • ') || null}
+                   selected={state.motor?.id === motor.id}
+                   onSelect={() => handleMotorSelect(motor)}
+                   inStock={motor.in_stock}
+                   // New specification props
+                   shaft={shaft}
+                   weightLbs={weightLbs}
+                   altOutput={altOutput}
+                   steering={steering}
+                   features={dbMotor?.features || []}
+                   description={dbMotor?.description}
+                   specSheetUrl={dbMotor?.detail_url}
+                   motor={motor as any}
+                   />
+                   </motion.div>
+               );
+             })}
+           </motion.div>
           ) : (
             <div className="bg-white rounded-xl border border-gray-200 p-6 text-center">
               <p className="text-gray-600 mb-3">

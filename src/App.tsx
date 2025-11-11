@@ -8,7 +8,8 @@ import { Toaster } from "@/components/ui/toaster";
 import NewQuote from "./pages/NewQuote";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import { QuoteProvider } from "@/contexts/QuoteContext";
 import { FinancingProvider } from "@/contexts/FinancingContext";
 
@@ -82,6 +83,220 @@ function Canonical() {
   return null;
 }
 
+function AnimatedRoutes() {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/auth" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route 
+          path="/dashboard" 
+          element={
+            <SecureRoute>
+              <Dashboard />
+            </SecureRoute>
+          } 
+        />
+        <Route 
+          path="/settings" 
+          element={
+            <ProtectedRoute>
+              <Settings />
+            </ProtectedRoute>
+          } 
+        />
+        <Route path="/" element={<Navigate to="/quote/motor-selection" replace />} />
+        <Route path="/index" element={<Index />} />
+                
+        {/* Quote Builder Routes */}
+        <Route path="/quote" element={<MotorSelectionPage />} />
+        <Route path="/quote/motor-selection" element={<MotorSelectionPage />} />
+        <Route path="/quote/purchase-path" element={<PurchasePathPage />} />
+        <Route path="/quote/boat-info" element={<BoatInfoPage />} />
+        <Route path="/quote/fuel-tank" element={<FuelTankPage />} />
+        <Route path="/quote/trade-in" element={<TradeInPage />} />
+        <Route path="/quote/installation" element={<InstallationPage />} />
+        <Route path="/quote/summary" element={<QuoteSummaryPage />} />
+        <Route path="/quote/schedule" element={<SchedulePage />} />
+        <Route path="/quote/saved/:quoteId" element={<SavedQuotePage />} />
+        
+        {/* User Account Routes */}
+        <Route path="/my-quotes" element={<MyQuotes />} />
+        
+        {/* Admin Routes */}
+        <Route
+          path="/admin/promotions"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminPromotions />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/quotes"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminQuotes />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/quotes/:id"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminQuoteDetail />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/financing"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <FinancingAdmin />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/financing-applications"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminFinancingApplications />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/security"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminSecurity />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/sin-encryption-test"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminSINEncryptionTest />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/zapier"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminZapier />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/email"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminEmail />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/payments"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminPayments />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/inventory"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminInventory />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/stock-sync"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminStockSync />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/cron-monitor"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminCronMonitor />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/connectors"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminConnectors />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/sms"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminSMS />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/sources"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminSources />
+            </SecureRoute>
+          }
+        />
+        
+        {/* Payment Routes */}
+        <Route path="/deposits" element={<Deposits />} />
+        <Route path="/payment-success" element={<PaymentSuccess />} />
+        <Route path="/payment-canceled" element={<PaymentCanceled />} />
+        
+        {/* Other Routes */}
+        <Route path="/finance-calculator" element={<FinanceCalculator />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/dev" element={<Dev />} />
+        <Route path="/test/scraper" element={<TestScraper />} />
+        {/* Removed obsolete test routes */}
+        <Route path="/quotes/new" element={<NewQuote />} />
+        <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
+        <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
+        <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
+        <Route path="/test-email" element={<TestEmail />} />
+        <Route path="/test-financing-emails" element={<TestFinancingEmails />} />
+        {/* Removed obsolete test pricing routes */}
+        
+        {/* Admin Import Routes */}
+        <Route
+          path="/admin/pricing-import"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminPricingImport />
+            </SecureRoute>
+          }
+        />
+        
+        {/* Financing Application Routes */}
+        <Route path="/financing-application" element={<FinancingApplication />} />
+        <Route path="/financing/apply" element={<FinancingApplication />} />
+        <Route path="/financing/resume" element={<FinancingResume />} />
+        <Route path="/financing/success" element={<FinancingSuccess />} />
+        
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
 const App = () => (
   <AuthProvider>
     <FinancingProvider>
@@ -94,211 +309,7 @@ const App = () => (
               <ScrollToTop />
               <NotificationToast />
               <ContactButton />
-              <Routes>
-                <Route path="/auth" element={<Login />} />
-                <Route path="/login" element={<Login />} />
-                <Route 
-                  path="/dashboard" 
-                  element={
-                    <SecureRoute>
-                      <Dashboard />
-                    </SecureRoute>
-                  } 
-                />
-                <Route 
-                  path="/settings" 
-                  element={
-                    <ProtectedRoute>
-                      <Settings />
-                    </ProtectedRoute>
-                  } 
-                />
-        <Route path="/" element={<Navigate to="/quote/motor-selection" replace />} />
-        <Route path="/index" element={<Index />} />
-                
-                {/* Quote Builder Routes */}
-                <Route path="/quote" element={<MotorSelectionPage />} />
-                <Route path="/quote/motor-selection" element={<MotorSelectionPage />} />
-                <Route path="/quote/purchase-path" element={<PurchasePathPage />} />
-                <Route path="/quote/boat-info" element={<BoatInfoPage />} />
-                <Route path="/quote/fuel-tank" element={<FuelTankPage />} />
-                <Route path="/quote/trade-in" element={<TradeInPage />} />
-                <Route path="/quote/installation" element={<InstallationPage />} />
-                <Route path="/quote/summary" element={<QuoteSummaryPage />} />
-                <Route path="/quote/schedule" element={<SchedulePage />} />
-                <Route path="/quote/saved/:quoteId" element={<SavedQuotePage />} />
-                
-                {/* User Account Routes */}
-                <Route path="/my-quotes" element={<MyQuotes />} />
-                
-                {/* Admin Routes */}
-                <Route
-                  path="/admin/promotions"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminPromotions />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/quotes"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminQuotes />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/quotes/:id"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminQuoteDetail />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/financing"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <FinancingAdmin />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/financing-applications"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminFinancingApplications />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/security"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminSecurity />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/sin-encryption-test"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminSINEncryptionTest />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/zapier"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminZapier />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/email"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminEmail />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/payments"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminPayments />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/inventory"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminInventory />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/stock-sync"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminStockSync />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/cron-monitor"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminCronMonitor />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/connectors"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminConnectors />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/sms"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminSMS />
-                    </SecureRoute>
-                  }
-                />
-                <Route
-                  path="/admin/sources"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminSources />
-                    </SecureRoute>
-                  }
-                />
-                
-                {/* Payment Routes */}
-                <Route path="/deposits" element={<Deposits />} />
-                <Route path="/payment-success" element={<PaymentSuccess />} />
-                <Route path="/payment-canceled" element={<PaymentCanceled />} />
-                
-                {/* Other Routes */}
-                <Route path="/finance-calculator" element={<FinanceCalculator />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/dev" element={<Dev />} />
-                <Route path="/test/scraper" element={<TestScraper />} />
-                {/* Removed obsolete test routes */}
-                <Route path="/quotes/new" element={<NewQuote />} />
-                <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
-          <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
-          <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
-          <Route path="/test-email" element={<TestEmail />} />
-          <Route path="/test-financing-emails" element={<TestFinancingEmails />} />
-                {/* Removed obsolete test pricing routes */}
-                
-                {/* Admin Import Routes */}
-                <Route
-                  path="/admin/pricing-import"
-                  element={
-                    <SecureRoute requireAdmin={true}>
-                      <AdminPricingImport />
-                    </SecureRoute>
-                  }
-                />
-                
-                {/* Financing Application Routes */}
-                <Route path="/financing-application" element={<FinancingApplication />} />
-                <Route path="/financing/apply" element={<FinancingApplication />} />
-                <Route path="/financing/resume" element={<FinancingResume />} />
-                <Route path="/financing/success" element={<FinancingSuccess />} />
-                
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <AnimatedRoutes />
               <Canonical />
 
               <footer className="mt-12 border-t border-border bg-muted/30">
