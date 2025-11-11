@@ -74,7 +74,7 @@ export default function StickyQuoteBar({
             </button>
           )}
           {onPrimary && (
-            <button onClick={onPrimary} className="rounded-lg bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-white shadow-sm transition hover:scale-[1.01] hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500">
+            <button onClick={onPrimary} className="rounded-lg bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-white shadow-sm transition hover:scale-[1.01] hover:opacity-90 focus-visible:ring-2 focus-visible:ring-blue-500">
               {primaryLabel}
             </button>
           )}

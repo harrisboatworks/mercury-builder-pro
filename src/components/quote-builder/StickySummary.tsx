@@ -125,7 +125,7 @@ export default function StickySummary({
 
           <button
             onClick={onReserve}
-            className="w-full rounded-xl bg-blue-600 px-4 py-3 text-center text-white shadow-sm transition hover:scale-[1.01] hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            className="w-full rounded-xl bg-blue-600 px-4 py-3 text-center text-white shadow-sm transition hover:scale-[1.01] hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           >
             Reserve with {money(depositAmount)} refundable deposit
           </button>
@@ -144,7 +144,7 @@ export default function StickySummary({
           </div>
           <button
             onClick={onReserve}
-            className="rounded-xl bg-blue-600 px-4 py-2.5 text-white shadow-sm transition hover:scale-[1.02] hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500"
+            className="rounded-xl bg-blue-600 px-4 py-2.5 text-white shadow-sm transition hover:scale-[1.02] hover:opacity-90 focus-visible:ring-2 focus-visible:ring-blue-500"
           >
             Reserve
           </button>

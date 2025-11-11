@@ -686,7 +686,7 @@ export default function QuoteSummaryPage() {
               </Button>
               <Button 
                 onClick={handleStepComplete}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                className="w-full bg-primary hover:opacity-90 text-primary-foreground"
                 size="lg"
               >
                 Continue to Schedule

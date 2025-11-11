@@ -9,19 +9,19 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:opacity-90",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-destructive text-destructive-foreground hover:opacity-90",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border border-input bg-background hover:opacity-90",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+          "bg-secondary text-secondary-foreground hover:opacity-90",
+        ghost: "hover:opacity-80",
         link: "text-primary underline-offset-4 hover:underline",
-        luxury: "bg-slate-900 text-white hover:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300",
-        premiumCta: "bg-[hsl(var(--cta-navy))] text-white font-medium rounded-lg shadow-sm transition-all duration-200 touch-manipulation min-h-[44px] hover:bg-[hsl(var(--cta-navy-hover))] active:bg-[hsl(var(--cta-navy-active))] focus-visible:ring-2 focus-visible:ring-[hsl(var(--cta-navy))] focus-visible:ring-offset-2 [@media(hover:hover)]:hover:shadow-md [@media(hover:none)]:hover:bg-[hsl(var(--cta-navy))]",
-        luxuryConfigure: "bg-[hsl(var(--luxury-black))] text-[hsl(var(--luxury-white))] font-normal rounded-none shadow-sm hover:bg-gray-900 transition-all duration-300 text-[15px] md:text-sm py-3 md:py-4 px-4 min-h-[48px] tracking-normal",
-        luxuryModern: "bg-[hsl(var(--luxury-black))] text-[hsl(var(--luxury-white))] font-medium rounded-[10px] shadow-sm hover:bg-[#1C2E45] active:bg-[#000814] transition-all duration-200 min-h-[48px] px-4 py-3 text-[15px] md:text-[16px]",
+        luxury: "bg-slate-900 text-white hover:opacity-90 shadow-lg hover:shadow-xl transition-all duration-300",
+        premiumCta: "bg-[hsl(var(--cta-navy))] text-white font-medium rounded-lg shadow-sm transition-all duration-200 touch-manipulation min-h-[44px] hover:opacity-90 active:bg-[hsl(var(--cta-navy-active))] focus-visible:ring-2 focus-visible:ring-[hsl(var(--cta-navy))] focus-visible:ring-offset-2",
+        luxuryConfigure: "bg-[hsl(var(--luxury-black))] text-[hsl(var(--luxury-white))] font-normal rounded-none shadow-sm hover:opacity-90 transition-all duration-300 text-[15px] md:text-sm py-3 md:py-4 px-4 min-h-[48px] tracking-normal",
+        luxuryModern: "bg-[hsl(var(--luxury-black))] text-[hsl(var(--luxury-white))] font-medium rounded-[10px] shadow-sm hover:opacity-90 active:bg-[#000814] transition-all duration-200 min-h-[48px] px-4 py-3 text-[15px] md:text-[16px]",
       },
       size: {
         default: "h-10 px-4 py-2",

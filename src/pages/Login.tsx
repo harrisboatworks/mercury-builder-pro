@@ -176,7 +176,7 @@ const Login = () => {
               <Button
                 type="submit"
                 disabled={isLoading || !email || !password}
-                className="w-full h-12 bg-primary hover:bg-primary/90 text-white transition-all duration-200"
+                className="w-full h-12 bg-primary hover:opacity-90 text-white transition-all duration-200"
               >
                 {isLoading ? (
                   <motion.div

@@ -754,7 +754,7 @@ export const BoatInformation = ({
                             <p>
                               Heads up: your selected motor ({selectedMotor.model}) is {shaftLabel(motorShaft)}, but you chose {shaftLabel(chosenShaft)}. Mercury model must match the boat's transom height.
                             </p>
-                            {onShowCompatibleMotors && <Button variant="outline" size="sm" onClick={onShowCompatibleMotors} className="text-blue-700 border-blue-300 hover:bg-blue-50">
+                            {onShowCompatibleMotors && <Button variant="outline" size="sm" onClick={onShowCompatibleMotors} className="text-blue-700 border-blue-300 hover:border-blue-400 hover:opacity-90">
                                 Show compatible motors
                               </Button>}
                           </div>}

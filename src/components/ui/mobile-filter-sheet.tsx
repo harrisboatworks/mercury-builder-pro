@@ -130,7 +130,7 @@ export const MobileFilterSheet = ({ filters, onFiltersChange }: MobileFilterShee
             <Button variant="outline" className="flex-1" onClick={handleClearFilters}>
               Clear
             </Button>
-            <Button className="flex-1 bg-blue-600 hover:bg-blue-700" onClick={handleApplyFilters}>
+            <Button className="flex-1 bg-blue-600 hover:opacity-90" onClick={handleApplyFilters}>
               Apply
             </Button>
           </div>
