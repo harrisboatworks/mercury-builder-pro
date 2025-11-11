@@ -1,4 +1,4 @@
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFinancing } from '@/contexts/FinancingContext';
 import { referencesSchema, type References } from '@/lib/financingValidation';
@@ -15,7 +15,7 @@ import { MobileFormNavigation } from './MobileFormNavigation';
 export function ReferencesStep() {
   const { state, dispatch } = useFinancing();
 
-  const { register, handleSubmit, watch, setValue, formState: { errors, isValid, touchedFields } } = useForm<References>({
+  const { register, handleSubmit, watch, setValue, control, formState: { errors, isValid, touchedFields } } = useForm<References>({
     resolver: zodResolver(referencesSchema),
     mode: 'onChange',
     defaultValues: state.references || {},
@@ -93,14 +93,22 @@ export function ReferencesStep() {
             <div className="space-y-2">
               <Label htmlFor="ref1-phone">Phone Number *</Label>
               <div className="relative">
-                <MaskedInput
-                  id="ref1-phone"
-                  maskType="phone"
-                  {...register('reference1.phone')}
-                  value={watch('reference1.phone')}
-                  onChange={(e) => setValue('reference1.phone', e.target.value, { shouldValidate: true })}
-                  autoComplete="tel"
-                  className="pr-10"
+                <Controller
+                  name="reference1.phone"
+                  control={control}
+                  render={({ field }) => (
+                    <MaskedInput
+                      id="ref1-phone"
+                      maskType="phone"
+                      inputMode="tel"
+                      autoComplete="tel"
+                      value={field.value}
+                      onChange={field.onChange}
+                      onBlur={field.onBlur}
+                      name={field.name}
+                      className="pr-10"
+                    />
+                  )}
                 />
                 <FieldValidationIndicator 
                   isValid={!errors.reference1?.phone && !!watch('reference1.phone')}
@@ -181,14 +189,22 @@ export function ReferencesStep() {
             <div className="space-y-2">
               <Label htmlFor="ref2-phone">Phone Number *</Label>
               <div className="relative">
-                <MaskedInput
-                  id="ref2-phone"
-                  maskType="phone"
-                  {...register('reference2.phone')}
-                  value={watch('reference2.phone')}
-                  onChange={(e) => setValue('reference2.phone', e.target.value, { shouldValidate: true })}
-                  autoComplete="tel"
-                  className="pr-10"
+                <Controller
+                  name="reference2.phone"
+                  control={control}
+                  render={({ field }) => (
+                    <MaskedInput
+                      id="ref2-phone"
+                      maskType="phone"
+                      inputMode="tel"
+                      autoComplete="tel"
+                      value={field.value}
+                      onChange={field.onChange}
+                      onBlur={field.onBlur}
+                      name={field.name}
+                      className="pr-10"
+                    />
+                  )}
                 />
                 <FieldValidationIndicator 
                   isValid={!errors.reference2?.phone && !!watch('reference2.phone')}
