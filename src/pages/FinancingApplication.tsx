@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useFinancing } from '@/contexts/FinancingContext';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Card } from '@/components/ui/card';
@@ -8,7 +8,7 @@ import { SaveForLaterDialog } from '@/components/financing/SaveForLaterDialog';
 import { FormProgressIndicator } from '@/components/financing/FormProgressIndicator';
 import { FinancingApplicationSkeleton } from '@/components/financing/FinancingApplicationSkeleton';
 import { AccessibleFormWrapper } from '@/components/financing/AccessibleFormWrapper';
-import { Mail } from 'lucide-react';
+import { Mail, ArrowLeft } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo.png';
 import { PurchaseDetailsStep } from '@/components/financing/PurchaseDetailsStep';
 import { ApplicantStep } from '@/components/financing/ApplicantStep';
@@ -41,6 +41,7 @@ const stepComponents = {
 
 export default function FinancingApplication() {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const { state: financingState, dispatch: financingDispatch } = useFinancing();
   const { state: quoteState } = useQuote();
   const [showSaveDialog, setShowSaveDialog] = useState(false);
@@ -99,6 +100,16 @@ export default function FinancingApplication() {
     return () => clearTimeout(timer);
   }, [searchParams, financingDispatch]);
 
+  const handleBackToQuote = () => {
+    // Only save if user has made progress (not on step 1)
+    if (financingState.currentStep > 1 || Object.keys(financingState.purchaseDetails || {}).length > 1) {
+      localStorage.setItem('financing_draft', JSON.stringify(financingState));
+    }
+    
+    // Navigate back to quote summary
+    navigate('/quote/summary');
+  };
+
   if (isLoading) {
     return <FinancingApplicationSkeleton />;
   }
@@ -109,11 +120,23 @@ export default function FinancingApplication() {
     <div className="min-h-screen bg-white py-4 md:py-8 px-4 financing-form">
       {/* Minimal Luxury Header */}
       <div className="max-w-2xl mx-auto mb-8">
-        <img 
-          src={harrisLogo} 
-          alt="Harris Boat Works" 
-          className="h-10 md:h-12 w-auto"
-        />
+        <div className="flex items-center justify-between">
+          <img 
+            src={harrisLogo} 
+            alt="Harris Boat Works" 
+            className="h-10 md:h-12 w-auto"
+          />
+          
+          <Button
+            variant="ghost"
+            onClick={handleBackToQuote}
+            className="gap-2 text-sm font-light text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Return to quote summary"
+          >
+            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+            Back to Quote
+          </Button>
+        </div>
       </div>
       
       <div className="max-w-2xl mx-auto pb-24 md:pb-8">
