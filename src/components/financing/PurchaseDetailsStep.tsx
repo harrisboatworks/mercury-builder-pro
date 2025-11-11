@@ -2,14 +2,16 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { purchaseDetailsSchema, type PurchaseDetails } from '@/lib/financingValidation';
 import { useFinancing } from '@/contexts/FinancingContext';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
-import { CheckCircle2, Pencil } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Pencil } from 'lucide-react';
 import { useState } from 'react';
 import { money } from '@/lib/money';
 import { calculateMonthlyPayment } from '@/lib/finance';
+import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
+import { MobileFormNavigation } from './MobileFormNavigation';
 
 export function PurchaseDetailsStep() {
   const { state, dispatch } = useFinancing();
@@ -20,7 +22,7 @@ export function PurchaseDetailsStep() {
     handleSubmit,
     watch,
     setValue,
-    formState: { errors, isValid },
+    formState: { errors, isValid, touchedFields },
   } = useForm<PurchaseDetails>({
     resolver: zodResolver(purchaseDetailsSchema),
     mode: 'onChange',
@@ -69,52 +71,55 @@ export function PurchaseDetailsStep() {
 
       {/* Motor Model - Read-only with edit option */}
       <div className="space-y-2">
-        <Label htmlFor="motorModel" className="flex items-center gap-2">
-          Motor Model
-          {!errors.motorModel && watch('motorModel') && (
-            <CheckCircle2 className="w-4 h-4 text-green-500" />
-          )}
-        </Label>
+        <Label htmlFor="motorModel">Motor Model</Label>
         <div className="flex gap-2">
-          <Input
-            id="motorModel"
-            {...register('motorModel')}
-            readOnly={!isEditingMotor}
-            className={`${!isEditingMotor ? 'bg-muted' : ''} ${!errors.motorModel && watch('motorModel') ? 'border-green-500' : ''}`}
-          />
+          <div className="relative flex-1">
+            <Input
+              id="motorModel"
+              {...register('motorModel')}
+              readOnly={!isEditingMotor}
+              autoComplete="off"
+              className={`${!isEditingMotor ? 'bg-muted' : ''} pr-10`}
+            />
+            <FieldValidationIndicator 
+              isValid={!errors.motorModel && !!watch('motorModel')}
+              isTouched={touchedFields.motorModel}
+              className="absolute right-3 top-1/2 -translate-y-1/2"
+            />
+          </div>
           <Button
             type="button"
             variant="outline"
             size="icon"
             onClick={() => setIsEditingMotor(!isEditingMotor)}
+            className="min-h-[44px] min-w-[44px]"
           >
             <Pencil className="w-4 h-4" />
           </Button>
         </div>
-        {errors.motorModel && (
-          <p className="text-sm text-destructive">{errors.motorModel.message}</p>
-        )}
+        <FormErrorMessage error={errors.motorModel?.message} field="Motor model" />
       </div>
 
       {/* Motor Price */}
       <div className="space-y-2">
-        <Label htmlFor="motorPrice" className="flex items-center gap-2">
-          Motor Price
-          {!errors.motorPrice && motorPrice > 0 && (
-            <CheckCircle2 className="w-4 h-4 text-green-500" />
-          )}
-        </Label>
-        <Input
-          id="motorPrice"
-          type="number"
-          inputMode="decimal"
-          step="0.01"
-          {...register('motorPrice', { valueAsNumber: true })}
-          className={!errors.motorPrice && motorPrice > 0 ? 'border-green-500' : ''}
-        />
-        {errors.motorPrice && (
-          <p className="text-sm text-destructive">{errors.motorPrice.message}</p>
-        )}
+        <Label htmlFor="motorPrice">Motor Price</Label>
+        <div className="relative">
+          <Input
+            id="motorPrice"
+            type="number"
+            inputMode="decimal"
+            step="0.01"
+            {...register('motorPrice', { valueAsNumber: true })}
+            autoComplete="off"
+            className="pr-10"
+          />
+          <FieldValidationIndicator 
+            isValid={!errors.motorPrice && motorPrice > 0}
+            isTouched={touchedFields.motorPrice}
+            className="absolute right-3 top-1/2 -translate-y-1/2"
+          />
+        </div>
+        <FormErrorMessage error={errors.motorPrice?.message} field="Motor price" />
         <p className="text-sm text-muted-foreground">
           {money(motorPrice)}
         </p>
@@ -122,12 +127,7 @@ export function PurchaseDetailsStep() {
 
       {/* Down Payment Slider */}
       <div className="space-y-4">
-        <Label className="flex items-center gap-2">
-          Down Payment
-          {!errors.downPayment && downPayment >= 0 && (
-            <CheckCircle2 className="w-4 h-4 text-green-500" />
-          )}
-        </Label>
+        <Label>Down Payment</Label>
         
         <div className="space-y-2">
           <Slider
@@ -135,7 +135,7 @@ export function PurchaseDetailsStep() {
             onValueChange={handleDownPaymentChange}
             max={maxDownPayment}
             step={100}
-            className="w-full"
+            className="w-full min-h-[44px] cursor-pointer"
           />
           <div className="flex justify-between text-sm text-muted-foreground">
             <span>$0</span>
@@ -146,39 +146,46 @@ export function PurchaseDetailsStep() {
           </div>
         </div>
 
-        <Input
-          type="number"
-          inputMode="decimal"
-          step="100"
-          value={downPayment}
-          onChange={(e) => setValue('downPayment', Number(e.target.value), { shouldValidate: true })}
-          className={!errors.downPayment ? 'border-green-500' : ''}
-        />
-        {errors.downPayment && (
-          <p className="text-sm text-destructive">{errors.downPayment.message}</p>
-        )}
+        <div className="relative">
+          <Input
+            type="number"
+            inputMode="decimal"
+            step="100"
+            value={downPayment}
+            onChange={(e) => setValue('downPayment', Number(e.target.value), { shouldValidate: true })}
+            autoComplete="off"
+            className="pr-10"
+          />
+          <FieldValidationIndicator 
+            isValid={!errors.downPayment && downPayment >= 0}
+            isTouched={true}
+            className="absolute right-3 top-1/2 -translate-y-1/2"
+          />
+        </div>
+        <FormErrorMessage error={errors.downPayment?.message} field="Down payment" />
       </div>
 
       {/* Trade-In Value */}
       {tradeInValue > 0 && (
         <div className="space-y-2 animate-fade-in">
-          <Label htmlFor="tradeInValue" className="flex items-center gap-2">
-            Trade-In Value (Optional)
-            {!errors.tradeInValue && tradeInValue > 0 && (
-              <CheckCircle2 className="w-4 h-4 text-green-500" />
-            )}
-          </Label>
-          <Input
-            id="tradeInValue"
-            type="number"
-            inputMode="decimal"
-            step="100"
-            {...register('tradeInValue', { valueAsNumber: true })}
-            className={!errors.tradeInValue && tradeInValue > 0 ? 'border-green-500' : ''}
-          />
-          {errors.tradeInValue && (
-            <p className="text-sm text-destructive">{errors.tradeInValue.message}</p>
-          )}
+          <Label htmlFor="tradeInValue">Trade-In Value (Optional)</Label>
+          <div className="relative">
+            <Input
+              id="tradeInValue"
+              type="number"
+              inputMode="decimal"
+              step="100"
+              {...register('tradeInValue', { valueAsNumber: true })}
+              autoComplete="off"
+              className="pr-10"
+            />
+            <FieldValidationIndicator 
+              isValid={!errors.tradeInValue && tradeInValue > 0}
+              isTouched={touchedFields.tradeInValue}
+              className="absolute right-3 top-1/2 -translate-y-1/2"
+            />
+          </div>
+          <FormErrorMessage error={errors.tradeInValue?.message} field="Trade-in value" />
           <p className="text-sm text-muted-foreground">
             {money(tradeInValue)} credit applied
           </p>
@@ -202,21 +209,21 @@ export function PurchaseDetailsStep() {
         <div className="space-y-3 animate-fade-in">
           <Label className="text-sm font-medium">Estimated Monthly Payment</Label>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div className="rounded-lg border border-border bg-background p-3 text-center">
+            <div className="rounded-lg border border-border bg-background p-4 text-center min-h-[80px] flex flex-col justify-center">
               <p className="text-xs text-muted-foreground mb-1">36 months</p>
               <p className="text-lg font-bold text-foreground">
                 ${Math.round(payment36.payment)}
               </p>
               <p className="text-xs text-muted-foreground">/month</p>
             </div>
-            <div className="rounded-lg border-2 border-primary bg-primary/5 p-3 text-center">
+            <div className="rounded-lg border-2 border-primary bg-primary/5 p-4 text-center min-h-[80px] flex flex-col justify-center">
               <p className="text-xs text-muted-foreground mb-1">48 months</p>
               <p className="text-lg font-bold text-foreground">
                 ${Math.round(payment48.payment)}
               </p>
               <p className="text-xs text-muted-foreground">/month</p>
             </div>
-            <div className="rounded-lg border border-border bg-background p-3 text-center">
+            <div className="rounded-lg border border-border bg-background p-4 text-center min-h-[80px] flex flex-col justify-center">
               <p className="text-xs text-muted-foreground mb-1">60 months</p>
               <p className="text-lg font-bold text-foreground">
                 ${Math.round(payment60.payment)}
@@ -230,14 +237,12 @@ export function PurchaseDetailsStep() {
         </div>
       )}
 
-      {/* Continue Button */}
-      <Button
-        type="submit"
-        disabled={!isValid || amountToFinance <= 0}
-        className="w-full py-6 text-lg"
-      >
-        Continue to Application
-      </Button>
+      <MobileFormNavigation
+        onNext={handleSubmit(onSubmit)}
+        nextLabel="Continue to Application"
+        isNextDisabled={!isValid || amountToFinance <= 0}
+        showBack={false}
+      />
     </form>
   );
 }

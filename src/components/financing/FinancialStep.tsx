@@ -10,12 +10,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card } from '@/components/ui/card';
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { Star, CheckCircle, BarChart3, AlertTriangle, HelpCircle, Info, Building2, Lock, Unlock, Check, CalendarIcon } from 'lucide-react';
+import { Star, CheckCircle, BarChart3, AlertTriangle, HelpCircle, Info, Building2, Lock, Unlock, CalendarIcon } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { useMemo, useState } from 'react';
 import { money } from '@/lib/money';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
+import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
+import { MobileFormNavigation } from './MobileFormNavigation';
 
 const creditScoreOptions = [
   { value: 'excellent', label: 'Excellent', subtitle: '750+', icon: Star, bgColor: 'bg-green-50 dark:bg-green-950', borderColor: 'border-green-300 dark:border-green-700', textColor: 'text-green-700 dark:text-green-300' },
@@ -169,12 +171,16 @@ export function FinancialStep() {
                   inputMode="numeric"
                   placeholder="1500"
                   disabled={housingLocked}
+                  autoComplete="off"
                   className="pr-10"
                 />
-                {isFieldValid('monthlyHousingPayment') && (
-                  <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
-                )}
+                <FieldValidationIndicator 
+                  isValid={isFieldValid('monthlyHousingPayment')} 
+                  isTouched={touchedFields.monthlyHousingPayment}
+                  className="absolute right-3 top-1/2 -translate-y-1/2"
+                />
               </div>
+              <FormErrorMessage error={errors.monthlyHousingPayment?.message} field="Monthly housing payment" />
               {housingPaymentFromStep2 && housingLocked && (
                 <p className="text-xs text-muted-foreground">Pre-filled from your application</p>
               )}
@@ -189,11 +195,14 @@ export function FinancialStep() {
                   type="number"
                   inputMode="numeric"
                   placeholder="0"
+                  autoComplete="off"
                   className="pr-10"
                 />
-                {isFieldValid('monthlyCarPayment') && (
-                  <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
-                )}
+                <FieldValidationIndicator 
+                  isValid={isFieldValid('monthlyCarPayment')} 
+                  isTouched={touchedFields.monthlyCarPayment}
+                  className="absolute right-3 top-1/2 -translate-y-1/2"
+                />
               </div>
             </div>
 
@@ -206,11 +215,14 @@ export function FinancialStep() {
                   type="number"
                   inputMode="numeric"
                   placeholder="0"
+                  autoComplete="off"
                   className="pr-10"
                 />
-                {isFieldValid('monthlyCreditCardPayments') && (
-                  <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
-                )}
+                <FieldValidationIndicator 
+                  isValid={isFieldValid('monthlyCreditCardPayments')} 
+                  isTouched={touchedFields.monthlyCreditCardPayments}
+                  className="absolute right-3 top-1/2 -translate-y-1/2"
+                />
               </div>
             </div>
 
@@ -223,11 +235,14 @@ export function FinancialStep() {
                   type="number"
                   inputMode="numeric"
                   placeholder="0"
+                  autoComplete="off"
                   className="pr-10"
                 />
-                {isFieldValid('otherMonthlyDebt') && (
-                  <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
-                )}
+                <FieldValidationIndicator 
+                  isValid={isFieldValid('otherMonthlyDebt')} 
+                  isTouched={touchedFields.otherMonthlyDebt}
+                  className="absolute right-3 top-1/2 -translate-y-1/2"
+                />
               </div>
             </div>
 
@@ -279,9 +294,7 @@ export function FinancialStep() {
                   ))}
                 </SelectContent>
               </Select>
-              {errors.bankName && (
-                <p className="text-sm text-destructive">{errors.bankName.message}</p>
-              )}
+              <FormErrorMessage error={errors.bankName?.message} field="Bank name" />
             </div>
 
             <div className="space-y-2">
@@ -298,9 +311,7 @@ export function FinancialStep() {
                   <SelectItem value="savings">Savings</SelectItem>
                 </SelectContent>
               </Select>
-              {errors.accountType && (
-                <p className="text-sm text-destructive">{errors.accountType.message}</p>
-              )}
+              <FormErrorMessage error={errors.accountType?.message} field="Account type" />
             </div>
 
             <div className="space-y-2">
@@ -329,9 +340,7 @@ export function FinancialStep() {
                   <SelectItem value="5+">5+ years</SelectItem>
                 </SelectContent>
               </Select>
-              {errors.timeWithBank && (
-                <p className="text-sm text-destructive">{errors.timeWithBank.message}</p>
-              )}
+              <FormErrorMessage error={errors.timeWithBank?.message} field="Time with bank" />
             </div>
           </div>
 
@@ -392,8 +401,9 @@ export function FinancialStep() {
                         onSelect={setBankruptcyDate}
                         disabled={(date) => date > new Date()}
                         initialFocus
+                        className={cn("p-3 pointer-events-auto")}
                       />
-                      </PopoverContent>
+                    </PopoverContent>
                     </Popover>
                   </div>
 
@@ -420,14 +430,12 @@ export function FinancialStep() {
           </div>
         </div>
 
-        <div className="flex gap-4 pt-4 sticky bottom-0 bg-background pb-4 border-t">
-          <Button type="button" variant="outline" onClick={handleBack} className="flex-1">
-            Back
-          </Button>
-          <Button type="submit" disabled={!isValid} className="flex-1">
-            Continue
-          </Button>
-        </div>
+        <MobileFormNavigation
+          onBack={handleBack}
+          onNext={handleSubmit(onSubmit)}
+          nextLabel="Continue"
+          isNextDisabled={!isValid}
+        />
       </form>
     </TooltipProvider>
   );

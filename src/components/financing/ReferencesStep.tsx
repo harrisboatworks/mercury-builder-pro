@@ -2,34 +2,33 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFinancing } from '@/contexts/FinancingContext';
 import { referencesSchema, type References } from '@/lib/financingValidation';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { InfoIcon, UserCheck, Users, Check } from 'lucide-react';
+import { InfoIcon, UserCheck, Users } from 'lucide-react';
+import { MaskedInput } from './MaskedInput';
+import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
+import { MobileFormNavigation } from './MobileFormNavigation';
 
 export function ReferencesStep() {
   const { state, dispatch } = useFinancing();
 
-  const { register, handleSubmit, watch, setValue, formState: { errors, isValid } } = useForm<References>({
+  const { register, handleSubmit, watch, setValue, formState: { errors, isValid, touchedFields } } = useForm<References>({
     resolver: zodResolver(referencesSchema),
     mode: 'onChange',
     defaultValues: state.references || {},
   });
 
-  const formatPhone = (value: string) => {
-    const cleaned = value.replace(/\D/g, '');
-    if (cleaned.length <= 3) return cleaned;
-    if (cleaned.length <= 6) return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3)}`;
-    return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6, 10)}`;
-  };
-
   const onSubmit = (data: References) => {
     dispatch({ type: 'SET_REFERENCES', payload: data });
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });
     dispatch({ type: 'SET_CURRENT_STEP', payload: 7 });
+  };
+
+  const handleBack = () => {
+    dispatch({ type: 'SET_CURRENT_STEP', payload: 5 });
   };
 
   const reference1Phone = watch('reference1.phone');
@@ -59,24 +58,25 @@ export function ReferencesStep() {
                 <Input
                   id="ref1-fullName"
                   {...register('reference1.fullName')}
-                  className={errors.reference1?.fullName ? 'border-destructive' : ''}
+                  autoComplete="name"
+                  className="pr-10"
                 />
-                {watch('reference1.fullName') && !errors.reference1?.fullName && (
-                  <Check className="absolute right-3 top-3 h-4 w-4 text-green-500" />
-                )}
+                <FieldValidationIndicator 
+                  isValid={!errors.reference1?.fullName && !!watch('reference1.fullName')}
+                  isTouched={touchedFields.reference1?.fullName}
+                  className="absolute right-3 top-1/2 -translate-y-1/2"
+                />
               </div>
-              {errors.reference1?.fullName && (
-                <p className="text-sm text-destructive">{errors.reference1.fullName.message}</p>
-              )}
+              <FormErrorMessage error={errors.reference1?.fullName?.message} field="Full name" />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="ref1-relationship">Relationship *</Label>
               <Select
-                {...register('reference1.relationship')}
-                onValueChange={(value) => setValue('reference1.relationship', value)}
+                value={watch('reference1.relationship')}
+                onValueChange={(value) => setValue('reference1.relationship', value, { shouldValidate: true })}
               >
-                <SelectTrigger className={errors.reference1?.relationship ? 'border-destructive' : ''}>
+                <SelectTrigger>
                   <SelectValue placeholder="Select relationship" />
                 </SelectTrigger>
                 <SelectContent>
@@ -87,43 +87,37 @@ export function ReferencesStep() {
                   <SelectItem value="Other">Other</SelectItem>
                 </SelectContent>
               </Select>
-              {errors.reference1?.relationship && (
-                <p className="text-sm text-destructive">{errors.reference1.relationship.message}</p>
-              )}
+              <FormErrorMessage error={errors.reference1?.relationship?.message} field="Relationship" />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="ref1-phone">Phone Number *</Label>
               <div className="relative">
-                <Input
+                <MaskedInput
                   id="ref1-phone"
-                  type="tel"
-                  inputMode="tel"
+                  maskType="phone"
                   {...register('reference1.phone')}
-                  onChange={(e) => {
-                    const formatted = formatPhone(e.target.value);
-                    setValue('reference1.phone', formatted);
-                  }}
-                  placeholder="(XXX) XXX-XXXX"
-                  maxLength={14}
-                  className={errors.reference1?.phone ? 'border-destructive' : ''}
+                  value={watch('reference1.phone')}
+                  onChange={(e) => setValue('reference1.phone', e.target.value, { shouldValidate: true })}
+                  autoComplete="tel"
+                  className="pr-10"
                 />
-                {watch('reference1.phone') && !errors.reference1?.phone && (
-                  <Check className="absolute right-3 top-3 h-4 w-4 text-green-500" />
-                )}
+                <FieldValidationIndicator 
+                  isValid={!errors.reference1?.phone && !!watch('reference1.phone')}
+                  isTouched={touchedFields.reference1?.phone}
+                  className="absolute right-3 top-1/2 -translate-y-1/2"
+                />
               </div>
-              {errors.reference1?.phone && (
-                <p className="text-sm text-destructive">{errors.reference1.phone.message}</p>
-              )}
+              <FormErrorMessage error={errors.reference1?.phone?.message} field="Phone number" />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="ref1-howLongKnown">How long have you known them? *</Label>
               <Select
-                {...register('reference1.howLongKnown')}
-                onValueChange={(value) => setValue('reference1.howLongKnown', value as any)}
+                value={watch('reference1.howLongKnown')}
+                onValueChange={(value) => setValue('reference1.howLongKnown', value as any, { shouldValidate: true })}
               >
-                <SelectTrigger className={errors.reference1?.howLongKnown ? 'border-destructive' : ''}>
+                <SelectTrigger>
                   <SelectValue placeholder="Select duration" />
                 </SelectTrigger>
                 <SelectContent>
@@ -133,9 +127,7 @@ export function ReferencesStep() {
                   <SelectItem value="10+">10+ years</SelectItem>
                 </SelectContent>
               </Select>
-              {errors.reference1?.howLongKnown && (
-                <p className="text-sm text-destructive">{errors.reference1.howLongKnown.message}</p>
-              )}
+              <FormErrorMessage error={errors.reference1?.howLongKnown?.message} field="Duration" />
             </div>
           </CardContent>
         </Card>
@@ -154,24 +146,25 @@ export function ReferencesStep() {
                 <Input
                   id="ref2-fullName"
                   {...register('reference2.fullName')}
-                  className={errors.reference2?.fullName ? 'border-destructive' : ''}
+                  autoComplete="name"
+                  className="pr-10"
                 />
-                {watch('reference2.fullName') && !errors.reference2?.fullName && (
-                  <Check className="absolute right-3 top-3 h-4 w-4 text-green-500" />
-                )}
+                <FieldValidationIndicator 
+                  isValid={!errors.reference2?.fullName && !!watch('reference2.fullName')}
+                  isTouched={touchedFields.reference2?.fullName}
+                  className="absolute right-3 top-1/2 -translate-y-1/2"
+                />
               </div>
-              {errors.reference2?.fullName && (
-                <p className="text-sm text-destructive">{errors.reference2.fullName.message}</p>
-              )}
+              <FormErrorMessage error={errors.reference2?.fullName?.message} field="Full name" />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="ref2-relationship">Relationship *</Label>
               <Select
-                {...register('reference2.relationship')}
-                onValueChange={(value) => setValue('reference2.relationship', value)}
+                value={watch('reference2.relationship')}
+                onValueChange={(value) => setValue('reference2.relationship', value, { shouldValidate: true })}
               >
-                <SelectTrigger className={errors.reference2?.relationship ? 'border-destructive' : ''}>
+                <SelectTrigger>
                   <SelectValue placeholder="Select relationship" />
                 </SelectTrigger>
                 <SelectContent>
@@ -182,46 +175,40 @@ export function ReferencesStep() {
                   <SelectItem value="Other">Other</SelectItem>
                 </SelectContent>
               </Select>
-              {errors.reference2?.relationship && (
-                <p className="text-sm text-destructive">{errors.reference2.relationship.message}</p>
-              )}
+              <FormErrorMessage error={errors.reference2?.relationship?.message} field="Relationship" />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="ref2-phone">Phone Number *</Label>
               <div className="relative">
-                <Input
+                <MaskedInput
                   id="ref2-phone"
-                  type="tel"
-                  inputMode="tel"
+                  maskType="phone"
                   {...register('reference2.phone')}
-                  onChange={(e) => {
-                    const formatted = formatPhone(e.target.value);
-                    setValue('reference2.phone', formatted);
-                  }}
-                  placeholder="(XXX) XXX-XXXX"
-                  maxLength={14}
-                  className={errors.reference2?.phone ? 'border-destructive' : ''}
+                  value={watch('reference2.phone')}
+                  onChange={(e) => setValue('reference2.phone', e.target.value, { shouldValidate: true })}
+                  autoComplete="tel"
+                  className="pr-10"
                 />
-                {watch('reference2.phone') && !errors.reference2?.phone && (
-                  <Check className="absolute right-3 top-3 h-4 w-4 text-green-500" />
-                )}
+                <FieldValidationIndicator 
+                  isValid={!errors.reference2?.phone && !!watch('reference2.phone')}
+                  isTouched={touchedFields.reference2?.phone}
+                  className="absolute right-3 top-1/2 -translate-y-1/2"
+                />
               </div>
-              {errors.reference2?.phone && (
-                <p className="text-sm text-destructive">{errors.reference2.phone.message}</p>
-              )}
+              <FormErrorMessage error={errors.reference2?.phone?.message} field="Phone number" />
               {reference1Phone && reference2Phone && reference1Phone === reference2Phone && (
-                <p className="text-sm text-destructive">References must be different people</p>
+                <FormErrorMessage error="References must be different people" />
               )}
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="ref2-howLongKnown">How long have you known them? *</Label>
               <Select
-                {...register('reference2.howLongKnown')}
-                onValueChange={(value) => setValue('reference2.howLongKnown', value as any)}
+                value={watch('reference2.howLongKnown')}
+                onValueChange={(value) => setValue('reference2.howLongKnown', value as any, { shouldValidate: true })}
               >
-                <SelectTrigger className={errors.reference2?.howLongKnown ? 'border-destructive' : ''}>
+                <SelectTrigger>
                   <SelectValue placeholder="Select duration" />
                 </SelectTrigger>
                 <SelectContent>
@@ -231,26 +218,17 @@ export function ReferencesStep() {
                   <SelectItem value="10+">10+ years</SelectItem>
                 </SelectContent>
               </Select>
-              {errors.reference2?.howLongKnown && (
-                <p className="text-sm text-destructive">{errors.reference2.howLongKnown.message}</p>
-              )}
+              <FormErrorMessage error={errors.reference2?.howLongKnown?.message} field="Duration" />
             </div>
           </CardContent>
         </Card>
 
-        {/* Navigation */}
-        <div className="flex justify-between pt-4">
-          <Button
-            type="button"
-            variant="outline"
-            onClick={() => dispatch({ type: 'SET_CURRENT_STEP', payload: 5 })}
-          >
-            ← Back
-          </Button>
-          <Button type="submit" disabled={!isValid}>
-            Continue to Review →
-          </Button>
-        </div>
+        <MobileFormNavigation
+          onBack={handleBack}
+          onNext={handleSubmit(onSubmit)}
+          nextLabel="Continue to Review"
+          isNextDisabled={!isValid}
+        />
       </form>
     </div>
   );

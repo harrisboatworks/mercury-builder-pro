@@ -11,9 +11,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Checkbox } from '@/components/ui/checkbox';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Slider } from '@/components/ui/slider';
-import { InfoIcon, UserPlus, UserX, Check, Building2, Briefcase, DollarSign, CreditCard, Landmark } from 'lucide-react';
+import { InfoIcon, UserPlus, UserX, Building2, Briefcase, DollarSign, CreditCard, Landmark } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { MaskedInput } from './MaskedInput';
+import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
+import { MobileFormNavigation } from './MobileFormNavigation';
 
 export function CoApplicantStep() {
   const { state, dispatch } = useFinancing();
@@ -23,7 +26,7 @@ export function CoApplicantStep() {
   const [showBankruptcyDetails, setShowBankruptcyDetails] = useState(false);
   const [incomeValue, setIncomeValue] = useState([50000]);
 
-  const { register, handleSubmit, watch, setValue, formState: { errors, isValid } } = useForm<CoApplicant>({
+  const { register, handleSubmit, watch, setValue, formState: { errors, isValid, touchedFields } } = useForm<CoApplicant>({
     resolver: zodResolver(coApplicantSchema),
     mode: 'onChange',
     defaultValues: state.coApplicant || {},
@@ -59,13 +62,6 @@ export function CoApplicantStep() {
     }
   }, [sameAddress, state.applicant, setValue]);
 
-  const formatSIN = (value: string) => {
-    const cleaned = value.replace(/\D/g, '');
-    if (cleaned.length <= 3) return cleaned;
-    if (cleaned.length <= 6) return `${cleaned.slice(0, 3)}-${cleaned.slice(3)}`;
-    return `${cleaned.slice(0, 3)}-${cleaned.slice(3, 6)}-${cleaned.slice(6, 9)}`;
-  };
-
   const onSubmit = (data: CoApplicant) => {
     dispatch({ type: 'SET_CO_APPLICANT', payload: data });
     dispatch({ type: 'COMPLETE_STEP', payload: 5 });
@@ -76,6 +72,10 @@ export function CoApplicantStep() {
     dispatch({ type: 'SET_HAS_CO_APPLICANT', payload: false });
     dispatch({ type: 'COMPLETE_STEP', payload: 5 });
     dispatch({ type: 'SET_CURRENT_STEP', payload: 6 });
+  };
+
+  const handleBack = () => {
+    dispatch({ type: 'SET_CURRENT_STEP', payload: 4 });
   };
 
   return (
@@ -168,18 +168,23 @@ export function CoApplicantStep() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="sin">Social Insurance Number *</Label>
-                  <Input
-                    id="sin"
-                    {...register('sin')}
-                    onChange={(e) => {
-                      const formatted = formatSIN(e.target.value);
-                      setValue('sin', formatted);
-                    }}
-                    placeholder="XXX-XXX-XXX"
-                    maxLength={11}
-                    className={errors.sin ? 'border-destructive' : ''}
-                  />
-                  {errors.sin && <p className="text-sm text-destructive">{errors.sin.message}</p>}
+                  <div className="relative">
+                    <MaskedInput
+                      id="sin"
+                      maskType="sin"
+                      {...register('sin')}
+                      value={watch('sin')}
+                      onChange={(e) => setValue('sin', e.target.value, { shouldValidate: true })}
+                      autoComplete="off"
+                      className="pr-10"
+                    />
+                    <FieldValidationIndicator 
+                      isValid={!errors.sin && !!watch('sin')}
+                      isTouched={touchedFields.sin}
+                      className="absolute right-3 top-1/2 -translate-y-1/2"
+                    />
+                  </div>
+                  <FormErrorMessage error={errors.sin?.message} field="SIN" />
                 </div>
               </div>
 
@@ -196,14 +201,23 @@ export function CoApplicantStep() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="primaryPhone">Phone *</Label>
-                  <Input
-                    id="primaryPhone"
-                    type="tel"
-                    inputMode="tel"
-                    {...register('primaryPhone')}
-                    className={errors.primaryPhone ? 'border-destructive' : ''}
-                  />
-                  {errors.primaryPhone && <p className="text-sm text-destructive">{errors.primaryPhone.message}</p>}
+                  <div className="relative">
+                    <MaskedInput
+                      id="primaryPhone"
+                      maskType="phone"
+                      {...register('primaryPhone')}
+                      value={watch('primaryPhone')}
+                      onChange={(e) => setValue('primaryPhone', e.target.value, { shouldValidate: true })}
+                      autoComplete="tel"
+                      className="pr-10"
+                    />
+                    <FieldValidationIndicator 
+                      isValid={!errors.primaryPhone && !!watch('primaryPhone')}
+                      isTouched={touchedFields.primaryPhone}
+                      className="absolute right-3 top-1/2 -translate-y-1/2"
+                    />
+                  </div>
+                  <FormErrorMessage error={errors.primaryPhone?.message} field="Phone number" />
                 </div>
               </div>
             </CardContent>
@@ -273,14 +287,24 @@ export function CoApplicantStep() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="currentAddress.postalCode">Postal Code *</Label>
-                  <Input
-                    id="currentAddress.postalCode"
-                    {...register('currentAddress.postalCode')}
-                    disabled={sameAddress}
-                    placeholder="A1A 1A1"
-                    className={errors.currentAddress?.postalCode ? 'border-destructive' : ''}
-                  />
-                  {errors.currentAddress?.postalCode && <p className="text-sm text-destructive">{errors.currentAddress.postalCode.message}</p>}
+                  <div className="relative">
+                    <MaskedInput
+                      id="currentAddress.postalCode"
+                      maskType="postal"
+                      {...register('currentAddress.postalCode')}
+                      value={watch('currentAddress.postalCode')}
+                      onChange={(e) => setValue('currentAddress.postalCode', e.target.value, { shouldValidate: true })}
+                      disabled={sameAddress}
+                      autoComplete="postal-code"
+                      className="pr-10"
+                    />
+                    <FieldValidationIndicator 
+                      isValid={!errors.currentAddress?.postalCode && !!watch('currentAddress.postalCode')}
+                      isTouched={touchedFields.currentAddress?.postalCode}
+                      className="absolute right-3 top-1/2 -translate-y-1/2"
+                    />
+                  </div>
+                  <FormErrorMessage error={errors.currentAddress?.postalCode?.message} field="Postal code" />
                 </div>
               </div>
 
@@ -637,33 +661,21 @@ export function CoApplicantStep() {
           </Card>
 
           {/* Navigation */}
-          <div className="flex justify-between pt-4">
-            <Button
-              type="button"
-              variant="outline"
-              onClick={() => dispatch({ type: 'SET_CURRENT_STEP', payload: 4 })}
-            >
-              ← Back
-            </Button>
-            <Button type="submit" disabled={!isValid}>
-              Continue →
-            </Button>
-          </div>
+          <MobileFormNavigation
+            onBack={handleBack}
+            onNext={handleSubmit(onSubmit)}
+            nextLabel="Continue"
+            isNextDisabled={!isValid}
+          />
         </form>
       )}
 
       {!hasCoApplicant && (
-        <div className="flex justify-between pt-4">
-          <Button
-            variant="outline"
-            onClick={() => dispatch({ type: 'SET_CURRENT_STEP', payload: 4 })}
-          >
-            ← Back
-          </Button>
-          <Button onClick={handleSkip}>
-            Skip & Continue →
-          </Button>
-        </div>
+        <MobileFormNavigation
+          onBack={handleBack}
+          onNext={handleSkip}
+          nextLabel="Skip & Continue"
+        />
       )}
     </div>
   );
