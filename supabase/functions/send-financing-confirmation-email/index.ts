@@ -126,13 +126,23 @@ const handler = async (req: Request): Promise<Response> => {
     );
 
     const applicantEmailResponse = await resend.emails.send({
-      from: 'Harris Boat Works Financing <financing@harrisboatworks.com>',
+      from: 'Harris Boat Works Financing <onboarding@resend.dev>',
       to: [applicantEmail],
       subject: `Financing Application Received - Ref #${referenceNumber}`,
       html: applicantHtml,
     });
 
-    console.log('Applicant confirmation sent:', applicantEmailResponse);
+    console.log('Applicant email response:', applicantEmailResponse);
+
+    // Check for applicant email error
+    if (applicantEmailResponse.error) {
+      console.error('Applicant email error:', applicantEmailResponse.error);
+      throw new Error(`Applicant email failed: ${applicantEmailResponse.error.message}`);
+    }
+
+    if (!applicantEmailResponse.data?.id) {
+      throw new Error('Applicant email failed: No email ID returned');
+    }
 
     // --- Send Admin Notification Email ---
     let adminEmailResponse;
@@ -173,20 +183,30 @@ const handler = async (req: Request): Promise<Response> => {
       );
 
       adminEmailResponse = await resend.emails.send({
-        from: 'Harris Boat Works System <noreply@harrisboatworks.com>',
+        from: 'Harris Boat Works System <onboarding@resend.dev>',
         to: [adminEmail],
         subject: `New Financing Application - ${applicantName} - $${amountToFinance.toLocaleString()}`,
         html: adminHtml,
       });
 
-      console.log('Admin notification sent:', adminEmailResponse);
+      console.log('Admin email response:', adminEmailResponse);
+
+      // Check for admin email error
+      if (adminEmailResponse.error) {
+        console.error('Admin email error:', adminEmailResponse.error);
+        throw new Error(`Admin email failed: ${adminEmailResponse.error.message}`);
+      }
+
+      if (!adminEmailResponse.data?.id) {
+        throw new Error('Admin email failed: No email ID returned');
+      }
     }
 
     return new Response(
       JSON.stringify({
         success: true,
-        applicantEmailId: applicantEmailResponse.id,
-        adminEmailId: adminEmailResponse?.id,
+        applicantEmailId: applicantEmailResponse.data.id,
+        adminEmailId: adminEmailResponse?.data?.id,
       }),
       {
         status: 200,

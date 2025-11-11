@@ -133,16 +133,27 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email
     const emailResponse = await resend.emails.send({
-      from: 'Harris Boat Works <financing@harrisboatworks.com>',
+      from: 'Harris Boat Works <onboarding@resend.dev>',
       to: [email],
       subject: 'Resume Your Financing Application',
       html,
     });
 
-    console.log('Resume email sent successfully:', emailResponse);
+    console.log('Resend API response:', emailResponse);
+
+    // Check if Resend returned an error
+    if (emailResponse.error) {
+      console.error('Resend API error:', emailResponse.error);
+      throw new Error(`Email delivery failed: ${emailResponse.error.message}`);
+    }
+
+    // Only return success if we have a valid email ID
+    if (!emailResponse.data?.id) {
+      throw new Error('Email delivery failed: No email ID returned');
+    }
 
     return new Response(
-      JSON.stringify({ success: true, emailId: emailResponse.id }),
+      JSON.stringify({ success: true, emailId: emailResponse.data.id }),
       {
         status: 200,
         headers: { 'Content-Type': 'application/json', ...corsHeaders },
