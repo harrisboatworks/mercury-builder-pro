@@ -459,25 +459,33 @@ export default function QuoteSummaryPage() {
   };
 
   const handleApplyForFinancing = () => {
-    // Calculate the complete package subtotal (before trade-in)
-    const completePackageSubtotal = packageSpecificTotals.subtotal;
+    // CRITICAL: packageSpecificTotals.subtotal already has trade-in subtracted.
+    // We need to add it back so it's only subtracted once in the financing application.
+    const tradeInValue = state.tradeInInfo?.estimatedValue || 0;
+    const promoValue = packageSpecificTotals.promoValue || 0;
+    
+    // Reconstruct the subtotal BEFORE trade-in and promos were applied
+    const packageSubtotalBeforeTradeIn = packageSpecificTotals.subtotal + tradeInValue + promoValue;
+    
     const packageName = selectedPackageData.label.split('•')[0].trim();
     
-    // Calculate total with HST and Dealerplan fee for financing
-    const subtotalWithTax = completePackageSubtotal * 1.13;
+    // Calculate the complete financing amount:
+    // (Motor + Accessories - Promos) + HST + Dealerplan Fee
+    // Trade-in will be subtracted in the financing application
+    const subtotalWithTax = packageSubtotalBeforeTradeIn * 1.13;
     const totalWithFees = subtotalWithTax + DEALERPLAN_FEE;
     
     // Save complete pricing data for financing
     const financingData = {
       ...state,
       financingAmount: {
-        packageSubtotal: completePackageSubtotal,
-        hst: completePackageSubtotal * 0.13,
+        packageSubtotal: packageSubtotalBeforeTradeIn,  // BEFORE trade-in
+        hst: packageSubtotalBeforeTradeIn * 0.13,
         financingFee: DEALERPLAN_FEE,
-        totalWithFees: totalWithFees,
+        totalWithFees: totalWithFees,  // Full price: (motor + accessories - promos) + tax + $299
         motorModel: quoteData.motor?.model || motorName,
         packageName: packageName,
-        tradeInValue: state.tradeInInfo?.estimatedValue || 0
+        tradeInValue: tradeInValue  // Saved separately to be subtracted in financing app
       }
     };
     
