@@ -147,7 +147,9 @@ const handler = async (req: Request): Promise<Response> => {
     // --- Send Admin Notification Email ---
     let adminEmailResponse;
     if (sendAdminNotification) {
-      const adminEmail = Deno.env.get('ADMIN_EMAIL') || 'admin@harrisboatworks.com';
+      // TEMPORARY: Using verified email for testing. Change back to actual admin email after domain verification.
+      const adminEmail = Deno.env.get('ADMIN_EMAIL') || 'harrisboatworks@hotmail.com';
+      console.log('Admin notification will be sent to:', adminEmail);
       const siteUrl = Deno.env.get('APP_URL') || 'https://harrisboatworks.com';
       const reviewUrl = `${siteUrl}/admin/financing-applications?id=${applicationId}`;
 
