@@ -26,6 +26,7 @@ export const purchaseDetailsSchema = z.object({
   downPayment: z.number().min(0, 'Down payment cannot be negative'),
   tradeInValue: z.number().min(0, 'Trade-in value cannot be negative').optional(),
   amountToFinance: z.number().min(1, 'Amount to finance must be at least $1'),
+  preferredTerm: z.enum(['36', '48', '60']).default('48'),
 });
 
 // Step 2: Primary Applicant

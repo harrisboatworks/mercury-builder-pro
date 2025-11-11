@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Button } from '@/components/ui/button';
 import { Pencil } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { money } from '@/lib/money';
 import { calculateMonthlyPayment, calculateMonthly } from '@/lib/finance';
 import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
@@ -16,6 +16,7 @@ import { MobileFormNavigation } from './MobileFormNavigation';
 export function PurchaseDetailsStep() {
   const { state, dispatch } = useFinancing();
   const [isEditingMotor, setIsEditingMotor] = useState(false);
+  const [selectedTerm, setSelectedTerm] = useState<'36' | '48' | '60'>('48');
   
   const {
     register,
@@ -32,13 +33,22 @@ export function PurchaseDetailsStep() {
       downPayment: state.purchaseDetails?.downPayment || 0,
       tradeInValue: state.purchaseDetails?.tradeInValue || 0,
       amountToFinance: state.purchaseDetails?.amountToFinance || 0,
+      preferredTerm: state.purchaseDetails?.preferredTerm || '48',
     },
   });
 
   const motorPrice = watch('motorPrice');
   const downPayment = watch('downPayment');
   const tradeInValue = watch('tradeInValue') || 0;
+  const preferredTerm = watch('preferredTerm');
   const amountToFinance = Math.max(0, motorPrice - downPayment - tradeInValue);
+
+  // Sync local state with form
+  useEffect(() => {
+    if (preferredTerm) {
+      setSelectedTerm(preferredTerm);
+    }
+  }, [preferredTerm]);
 
   // Update amount to finance when values change
   const handleDownPaymentChange = (value: number[]) => {
@@ -217,35 +227,73 @@ export function PurchaseDetailsStep() {
         </p>
       </div>
 
-      {/* Monthly Payment Options */}
+      {/* Preferred Term Selection */}
       {amountToFinance > 0 && (
         <div className="space-y-3 animate-fade-in">
-          <Label className="text-sm font-medium">Estimated Monthly Payment</Label>
+          <Label className="text-sm font-medium">Choose Your Preferred Term</Label>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div className="rounded-lg border border-border bg-background p-4 text-center min-h-[80px] flex flex-col justify-center">
+            {/* 36 months */}
+            <button
+              type="button"
+              onClick={() => {
+                setSelectedTerm('36');
+                setValue('preferredTerm', '36', { shouldValidate: true });
+              }}
+              className={`rounded-lg p-4 text-center min-h-[80px] flex flex-col justify-center transition-all duration-200 cursor-pointer hover:shadow-md ${
+                selectedTerm === '36'
+                  ? 'border-2 border-primary bg-primary/5'
+                  : 'border border-border bg-background hover:border-gray-300'
+              }`}
+            >
               <p className="text-xs text-muted-foreground font-light mb-1">36 months</p>
               <p className="text-lg font-bold text-foreground">
                 ${Math.round(payment36)}
               </p>
               <p className="text-xs text-muted-foreground font-light">/month</p>
-            </div>
-            <div className="rounded-lg border-2 border-primary bg-primary/5 p-4 text-center min-h-[80px] flex flex-col justify-center">
+            </button>
+
+            {/* 48 months */}
+            <button
+              type="button"
+              onClick={() => {
+                setSelectedTerm('48');
+                setValue('preferredTerm', '48', { shouldValidate: true });
+              }}
+              className={`rounded-lg p-4 text-center min-h-[80px] flex flex-col justify-center transition-all duration-200 cursor-pointer hover:shadow-md ${
+                selectedTerm === '48'
+                  ? 'border-2 border-primary bg-primary/5'
+                  : 'border border-border bg-background hover:border-gray-300'
+              }`}
+            >
               <p className="text-xs text-muted-foreground font-light mb-1">48 months</p>
               <p className="text-lg font-bold text-foreground">
                 ${Math.round(payment48)}
               </p>
               <p className="text-xs text-muted-foreground font-light">/month</p>
-            </div>
-            <div className="rounded-lg border border-border bg-background p-4 text-center min-h-[80px] flex flex-col justify-center">
+            </button>
+
+            {/* 60 months */}
+            <button
+              type="button"
+              onClick={() => {
+                setSelectedTerm('60');
+                setValue('preferredTerm', '60', { shouldValidate: true });
+              }}
+              className={`rounded-lg p-4 text-center min-h-[80px] flex flex-col justify-center transition-all duration-200 cursor-pointer hover:shadow-md ${
+                selectedTerm === '60'
+                  ? 'border-2 border-primary bg-primary/5'
+                  : 'border border-border bg-background hover:border-gray-300'
+              }`}
+            >
               <p className="text-xs text-muted-foreground font-light mb-1">60 months</p>
               <p className="text-lg font-bold text-foreground">
                 ${Math.round(payment60)}
               </p>
               <p className="text-xs text-muted-foreground font-light">/month</p>
-            </div>
+            </button>
           </div>
           <p className="text-xs text-muted-foreground font-light text-center">
-            Rates vary by credit score and term length
+            Your broker will review and confirm the best rate and term for your situation
           </p>
         </div>
       )}
