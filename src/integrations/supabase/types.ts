@@ -1886,7 +1886,6 @@ export type Database = {
         Args: { hp: number; motor_type?: string; specifications?: Json }
         Returns: Json
       }
-      get_sin_encryption_key: { Args: never; Returns: string }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
