@@ -387,7 +387,6 @@ export function ApplicantStep() {
       {/* Navigation Buttons */}
       <MobileFormNavigation
         onBack={handleBack}
-        nextLabel="Continue to Employment"
         isNextDisabled={!isValid}
         className="sm:relative sm:bottom-auto sm:py-0 sm:px-0 sm:border-0 sm:shadow-none"
       />
