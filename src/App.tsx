@@ -65,6 +65,7 @@ import FinancingApplication from "./pages/FinancingApplication";
 import FinancingResume from "./pages/FinancingResume";
 import FinancingSuccess from "./pages/FinancingSuccess";
 import AdminFinancingApplications from "./pages/AdminFinancingApplications";
+import AdminSINEncryptionTest from "./pages/AdminSINEncryptionTest";
 
 function Canonical() {
   useEffect(() => {
@@ -166,6 +167,14 @@ const App = () => (
                   element={
                     <SecureRoute requireAdmin={true}>
                       <AdminSecurity />
+                    </SecureRoute>
+                  }
+                />
+                <Route
+                  path="/admin/sin-encryption-test"
+                  element={
+                    <SecureRoute requireAdmin={true}>
+                      <AdminSINEncryptionTest />
                     </SecureRoute>
                   }
                 />
