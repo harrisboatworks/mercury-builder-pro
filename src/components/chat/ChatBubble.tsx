@@ -47,16 +47,11 @@ export const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
     <div className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}>
       <div className={`max-w-xs lg:max-w-sm px-3 py-2 rounded-lg ${
         message.isUser 
-          ? 'bg-red-600 text-white' 
-          : 'bg-gray-100 text-gray-900 border'
+          ? 'bg-red-600 text-white font-light' 
+          : 'bg-gray-50 text-gray-900 border border-gray-200 font-light'
       }`}>
         <p className="text-sm whitespace-pre-wrap">
           {renderParsedText(parseMessageText(message.text))}
-        </p>
-        <p className={`text-xs mt-1 ${
-          message.isUser ? 'text-red-100' : 'text-gray-500'
-        }`}>
-          {formatTime(message.timestamp)}
         </p>
       </div>
     </div>

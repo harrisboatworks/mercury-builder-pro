@@ -144,17 +144,17 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
         }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b bg-primary text-primary-foreground rounded-t-lg">
+        <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-white dark:bg-gray-950 rounded-t-lg">
           <div className="flex items-center space-x-2">
-            <HelpCircle className="w-5 h-5" />
-            <h3 className="font-semibold">Harris Support</h3>
+            <HelpCircle className="w-5 h-5 text-gray-400" />
+            <h3 className="font-light text-gray-600 dark:text-gray-300">Harris Support</h3>
           </div>
           <div className="flex items-center space-x-2">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsMinimized(!isMinimized)}
-              className="text-primary-foreground hover:bg-primary/90 h-8 w-8 p-0 hidden sm:flex"
+              className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 h-8 w-8 p-0 hidden sm:flex"
             >
               <Minimize2 className="w-4 h-4" />
             </Button>
@@ -162,7 +162,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(false)}
-              className="text-primary-foreground hover:bg-primary/90 h-8 w-8 p-0"
+              className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 h-8 w-8 p-0"
             >
               <X className="w-4 h-4" />
             </Button>
@@ -194,7 +194,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
             )}
 
             {/* Input */}
-            <div className="p-4 border-t bg-muted/30">
+            <div className="p-4 border-t border-gray-200 bg-white dark:bg-gray-950">
               <div className="flex space-x-2">
                 <input
                   ref={inputRef}
@@ -202,14 +202,14 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Ask about motors, pricing, or technical specs..."
-                  className="flex-1 px-3 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm"
+                  placeholder="Ask us anything..."
+                  className="flex-1 px-3 py-2 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300 text-sm font-light placeholder:text-gray-400"
                   disabled={isLoading}
                 />
                 <Button
                   onClick={() => handleSend()}
                   disabled={!inputText.trim() || isLoading}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground h-10 w-10 p-0"
+                  className="bg-blue-500 hover:bg-blue-600 text-white h-10 w-10 p-0 rounded-md"
                 >
                   <Send className="w-4 h-4" />
                 </Button>

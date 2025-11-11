@@ -17,15 +17,15 @@ export const SuggestedQuestions: React.FC<SuggestedQuestionsProps> = ({
 
   return (
     <div className="px-4 pb-2">
-      <p className="text-xs text-gray-600 mb-2">Quick questions:</p>
+      <p className="text-xs text-gray-500 font-light mb-2">Quick questions:</p>
       <div className="flex flex-wrap gap-2">
         {questions.map((question, index) => (
           <Button
             key={index}
-            variant="outline"
+            variant="ghost"
             size="sm"
             onClick={() => onQuestionSelect(question)}
-            className="text-xs h-7 text-gray-700 hover:bg-red-50 hover:border-red-200 hover:text-red-700"
+            className="text-xs h-8 px-3 font-light text-gray-600 bg-gray-100 hover:bg-gray-200 hover:text-gray-900 border-0 rounded-full"
           >
             {question}
           </Button>

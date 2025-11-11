@@ -60,6 +60,7 @@ import PaymentCanceled from "./pages/PaymentCanceled";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import Settings from "./pages/Settings";
 import { NotificationToast } from "@/components/notifications/NotificationToast";
+import { ContactButton } from "@/components/ui/contact-button";
 import AdminPricingImport from "./pages/AdminPricingImport";
 import FinancingApplication from "./pages/FinancingApplication";
 import FinancingResume from "./pages/FinancingResume";
@@ -92,6 +93,7 @@ const App = () => (
             <>
               <ScrollToTop />
               <NotificationToast />
+              <ContactButton />
               <Routes>
                 <Route path="/auth" element={<Login />} />
                 <Route path="/login" element={<Login />} />
