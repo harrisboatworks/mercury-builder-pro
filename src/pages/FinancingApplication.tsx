@@ -5,6 +5,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { SaveForLaterDialog } from '@/components/financing/SaveForLaterDialog';
+import { FinancingResumeDialog } from '@/components/financing/FinancingResumeDialog';
 import { FormProgressIndicator } from '@/components/financing/FormProgressIndicator';
 import { FinancingApplicationSkeleton } from '@/components/financing/FinancingApplicationSkeleton';
 import { AccessibleFormWrapper } from '@/components/financing/AccessibleFormWrapper';
@@ -39,17 +40,83 @@ const stepComponents = {
   7: ReviewSubmitStep,
 };
 
+interface SavedDraft {
+  data: any;
+  currentStep: number;
+  lastSaved: string;
+  motorModel?: string;
+  amountToFinance?: number;
+}
+
 export default function FinancingApplication() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { state: financingState, dispatch: financingDispatch } = useFinancing();
   const { state: quoteState } = useQuote();
   const [showSaveDialog, setShowSaveDialog] = useState(false);
+  const [showResumeDialog, setShowResumeDialog] = useState(false);
+  const [savedDraft, setSavedDraft] = useState<SavedDraft | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Pre-fill from quote if available (URL params or localStorage)
+  // Detect saved drafts and handle auto-resume
   useEffect(() => {
-    // Check URL params first
+    const detectSavedDraft = (): SavedDraft | null => {
+      // Priority 1: Check 'financing_draft' (from Back to Quote)
+      const backToQuoteDraft = localStorage.getItem('financing_draft');
+      
+      // Priority 2: Check 'financingApplication' (auto-save)
+      const autoSavedDraft = localStorage.getItem('financingApplication');
+      
+      // Use most recent or most complete draft
+      const draftStr = backToQuoteDraft || autoSavedDraft;
+      
+      if (!draftStr) return null;
+      
+      try {
+        const parsed = JSON.parse(draftStr);
+        
+        // Filter: Only show dialog if meaningful progress exists
+        const hasMeaningfulProgress = 
+          parsed.currentStep > 1 || 
+          (parsed.purchaseDetails && Object.keys(parsed.purchaseDetails).length > 2);
+        
+        if (!hasMeaningfulProgress) return null;
+        
+        // Filter: Ignore drafts older than 7 days
+        const lastSaved = parsed.lastSaved || Date.now();
+        const daysSince = (Date.now() - lastSaved) / (1000 * 60 * 60 * 24);
+        
+        if (daysSince > 7) {
+          localStorage.removeItem('financing_draft');
+          localStorage.removeItem('financingApplication');
+          return null;
+        }
+        
+        return {
+          data: parsed,
+          currentStep: parsed.currentStep,
+          lastSaved: new Date(lastSaved).toISOString(),
+          motorModel: parsed.purchaseDetails?.motorModel,
+          amountToFinance: parsed.purchaseDetails?.amountToFinance,
+        };
+      } catch (e) {
+        console.error('Failed to parse saved draft:', e);
+        return null;
+      }
+    };
+
+    // Check for saved draft first
+    const draft = detectSavedDraft();
+    
+    if (draft) {
+      // Show resume dialog
+      setSavedDraft(draft);
+      setShowResumeDialog(true);
+      setIsLoading(false);
+      return;
+    }
+
+    // No draft found - proceed with quote pre-fill
     const quoteId = searchParams.get('quote');
     
     // Try to get quote data from localStorage (saved from quote summary)
@@ -108,6 +175,59 @@ export default function FinancingApplication() {
     
     // Navigate back to quote summary
     navigate('/quote/summary');
+  };
+
+  const handleContinue = () => {
+    if (savedDraft) {
+      financingDispatch({ 
+        type: 'LOAD_FROM_DATABASE', 
+        payload: savedDraft.data 
+      });
+    }
+    setShowResumeDialog(false);
+  };
+
+  const handleStartFresh = () => {
+    // Clear all saved drafts
+    localStorage.removeItem('financing_draft');
+    localStorage.removeItem('financingApplication');
+    
+    // Reset context to initial state
+    financingDispatch({ type: 'RESET_APPLICATION' });
+    
+    // Pre-fill from quote if available
+    const savedQuoteState = localStorage.getItem('quote_state');
+    if (savedQuoteState) {
+      try {
+        const quoteData = JSON.parse(savedQuoteState);
+        if (quoteData?.motor) {
+          const packageSubtotal = quoteData.financingAmount?.packageSubtotal;
+          const motorPrice = packageSubtotal || quoteData.motor.salePrice || quoteData.motor.price || 0;
+          const tradeInValue = quoteData.financingAmount?.tradeInValue || quoteData.tradeInInfo?.estimatedValue || 0;
+          const downPayment = 0;
+          
+          const motorModel = quoteData.financingAmount?.packageName 
+            ? `${quoteData.motor.model || ''} (${quoteData.financingAmount.packageName})`
+            : quoteData.motor.model || '';
+          
+          financingDispatch({
+            type: 'SET_PURCHASE_DETAILS',
+            payload: {
+              motorModel: motorModel,
+              motorPrice: motorPrice,
+              downPayment: downPayment,
+              tradeInValue: tradeInValue,
+              amountToFinance: Math.max(0, motorPrice - downPayment - tradeInValue),
+            },
+          });
+        }
+        localStorage.removeItem('quote_state');
+      } catch (e) {
+        console.error('Failed to parse quote state:', e);
+      }
+    }
+    
+    setShowResumeDialog(false);
   };
 
   if (isLoading) {
@@ -186,6 +306,13 @@ export default function FinancingApplication() {
         <SaveForLaterDialog
           open={showSaveDialog}
           onOpenChange={setShowSaveDialog}
+        />
+        
+        <FinancingResumeDialog
+          open={showResumeDialog}
+          draftData={savedDraft}
+          onContinue={handleContinue}
+          onStartFresh={handleStartFresh}
         />
       </div>
     </div>
