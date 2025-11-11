@@ -260,6 +260,20 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     className="min-h-[48px] rounded-sm border-gray-300 dark:border-gray-700 font-light"
                   />
                 </div>
+
+                {/* Serial Number */}
+                <div className="space-y-2">
+                  <Label htmlFor="trade-serial" className="text-sm font-light tracking-wide text-gray-900 dark:text-gray-100">
+                    Serial Number (Optional)
+                  </Label>
+                  <Input
+                    id="trade-serial"
+                    value={tradeInInfo.serialNumber}
+                    onChange={(e) => onTradeInChange({ ...tradeInInfo, serialNumber: e.target.value })}
+                    placeholder="Motor serial number"
+                    className="min-h-[48px] rounded-sm border-gray-300 dark:border-gray-700 font-light"
+                  />
+                </div>
               </div>
 
               {/* Enhanced Condition Selection */}
@@ -305,20 +319,6 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </motion.div>
                   ))}
                 </div>
-              </div>
-
-              {/* Serial Number */}
-              <div className="space-y-2">
-                <Label htmlFor="trade-serial" className="text-sm font-light tracking-wide text-gray-900 dark:text-gray-100">
-                  Serial Number (Optional)
-                </Label>
-                <Input
-                  id="trade-serial"
-                  value={tradeInInfo.serialNumber}
-                  onChange={(e) => onTradeInChange({ ...tradeInInfo, serialNumber: e.target.value })}
-                  placeholder="Motor serial number"
-                  className="min-h-[48px] rounded-sm border-gray-300 dark:border-gray-700 font-light"
-                />
               </div>
 
               {/* Get Estimate Button */}
