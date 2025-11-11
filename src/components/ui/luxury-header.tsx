@@ -99,15 +99,15 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
             </div>
 
             {/* Center: Trust Badges - Compact on Tablet, Full on Desktop */}
-            <div className="hidden md:flex items-center justify-center space-x-3 lg:space-x-6 text-sm lg:text-base text-luxury-gray dark:text-gray-300">
-              <div className="flex items-center gap-2 lg:gap-3">
-                <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-6 lg:h-9 w-auto dark:bg-white dark:p-1 dark:rounded" />
-                <span className="hidden lg:inline font-medium">Award-Winning Service</span>
+            <div className="hidden md:flex items-center justify-center space-x-3 lg:space-x-6 text-sm lg:text-lg lg:font-semibold text-luxury-gray dark:text-gray-300">
+              <div className="flex items-center gap-2 lg:gap-4">
+                <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-6 lg:h-12 w-auto dark:bg-white dark:p-1 dark:rounded" />
+                <span className="hidden lg:inline font-semibold">Award-Winning Service</span>
               </div>
               <div className="hidden lg:block text-luxury-hairline dark:text-gray-600">•</div>
-              <div className="flex items-center gap-2 lg:gap-3">
-                <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-6 lg:h-9 w-auto dark:bg-white dark:p-1 dark:rounded" />
-                <span className="hidden lg:inline font-medium">Certified Repower Center</span>
+              <div className="flex items-center gap-2 lg:gap-4">
+                <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-6 lg:h-12 w-auto dark:bg-white dark:p-1 dark:rounded" />
+                <span className="hidden lg:inline font-semibold">Certified Repower Center</span>
               </div>
             </div>
 
