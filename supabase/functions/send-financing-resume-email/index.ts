@@ -121,7 +121,7 @@ const handler = async (req: Request): Promise<Response> => {
         <strong>Important:</strong> This link will remain active for 30 days. After that, you'll need to start a new application.
       </p>
       
-      <p>Need help? Contact us at <a href="tel:1-800-555-0123">1-800-555-0123</a> or reply to this email.</p>
+      <p>Need help? Contact us at <a href="tel:905-342-2153">(905) 342-2153</a> or reply to this email.</p>
       
       <p>
         Best regards,<br>
@@ -132,12 +132,13 @@ const handler = async (req: Request): Promise<Response> => {
     const html = createEmailTemplate(emailContent, 'Resume your financing application');
 
     // Send email
-    const emailResponse = await resend.emails.send({
-      from: 'Harris Boat Works <onboarding@resend.dev>',
-      to: [email],
-      subject: 'Resume Your Financing Application',
-      html,
-    });
+      const emailResponse = await resend.emails.send({
+        from: 'Harris Boat Works <onboarding@resend.dev>',
+        reply_to: ['info@harrisboatworks.ca'],
+        to: [email],
+        subject: 'Resume Your Financing Application',
+        html,
+      });
 
     console.log('Resend API response:', emailResponse);
 

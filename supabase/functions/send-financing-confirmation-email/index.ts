@@ -112,7 +112,7 @@ const handler = async (req: Request): Promise<Response> => {
       
       <div class="divider"></div>
       
-      <p><strong>Questions?</strong> Reply to this email or call us at <a href="tel:1-800-555-0123">1-800-555-0123</a></p>
+      <p><strong>Questions?</strong> Reply to this email or call us at <a href="tel:905-342-2153">(905) 342-2153</a></p>
       
       <p>
         Best regards,<br>
@@ -125,12 +125,13 @@ const handler = async (req: Request): Promise<Response> => {
       `Application #${referenceNumber} received`
     );
 
-    const applicantEmailResponse = await resend.emails.send({
-      from: 'Harris Boat Works Financing <onboarding@resend.dev>',
-      to: [applicantEmail],
-      subject: `Financing Application Received - Ref #${referenceNumber}`,
-      html: applicantHtml,
-    });
+      const applicantEmailResponse = await resend.emails.send({
+        from: 'Harris Boat Works Financing <onboarding@resend.dev>',
+        reply_to: ['info@harrisboatworks.ca'],
+        to: [applicantEmail],
+        subject: `Financing Application Received - Ref #${referenceNumber}`,
+        html: applicantHtml,
+      });
 
     console.log('Applicant email response:', applicantEmailResponse);
 
@@ -186,6 +187,7 @@ const handler = async (req: Request): Promise<Response> => {
 
       adminEmailResponse = await resend.emails.send({
         from: 'Harris Boat Works System <onboarding@resend.dev>',
+        reply_to: ['info@harrisboatworks.ca'],
         to: [adminEmail],
         subject: `New Financing Application - ${applicantName} - $${amountToFinance.toLocaleString()}`,
         html: adminHtml,

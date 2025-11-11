@@ -117,8 +117,8 @@ export function createEmailTemplate(content: string, previewText?: string): stri
       <p>
         <strong>Harris Boat Works</strong><br>
         Quality Marine Engines & Service<br>
-        Phone: <a href="tel:1-800-555-0123">1-800-555-0123</a><br>
-        Email: <a href="mailto:info@harrisboatworks.com">info@harrisboatworks.com</a>
+        Phone: <a href="tel:905-342-2153">(905) 342-2153</a><br>
+        Email: <a href="mailto:info@harrisboatworks.ca">info@harrisboatworks.ca</a>
       </p>
       <div class="divider"></div>
       <p style="font-size: 12px; color: #9ca3af;">
