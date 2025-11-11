@@ -31,19 +31,24 @@ const TestFinancingEmails = () => {
       const { data: appData, error: appError } = await supabase
         .from('financing_applications')
         .insert({
-          email: email,
-          first_name: 'Test',
-          last_name: 'Applicant',
-          phone: '555-0123',
-          status: 'in_progress',
-          step: 3,
+          applicant_data: {
+            email: email,
+            firstName: 'Test',
+            lastName: 'Applicant',
+            phone: '555-0123'
+          },
+          purchase_data: {
+            motorModel: 'Mercury 115HP FourStroke',
+            estimatedPrice: 12500
+          },
+          employment_data: {},
+          financial_data: {},
+          references_data: {},
+          current_step: 3,
+          completed_steps: [1, 2, 3],
+          status: 'draft',
           resume_token: testResumeToken,
-          application_data: {
-            purchaseDetails: {
-              motorModel: 'Mercury 115HP FourStroke',
-              estimatedPrice: 12500
-            }
-          }
+          resume_expires_at: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString()
         })
         .select('id')
         .single();
