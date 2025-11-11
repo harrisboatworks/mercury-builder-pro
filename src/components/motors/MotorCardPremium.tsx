@@ -111,7 +111,7 @@ export default function MotorCardPremium({
   
   // Smart financing calculation
   const { promo } = useActiveFinancingPromo();
-  const financingDisplay = getFinancingDisplay(price || 0, promo?.rate || null);
+  const financingDisplay = getFinancingDisplay((price || 0) * 1.13, promo?.rate || null);
   
   // Generate badge once when component mounts and optionally rotate
   useEffect(() => {

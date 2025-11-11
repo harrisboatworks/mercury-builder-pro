@@ -1,7 +1,7 @@
 import React from 'react';
 import { pdf } from '@react-pdf/renderer';
 import ProfessionalQuotePDF from '@/components/quote-pdf/ProfessionalQuotePDF';
-import { calculateMonthlyPayment, getFinancingTerm } from '@/lib/finance';
+import { calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE } from '@/lib/finance';
 
 export interface ReactPdfQuoteData {
   quoteNumber: string | number;
@@ -63,8 +63,8 @@ export const transformQuoteData = (quoteData: any): ReactPdfQuoteData => {
   const total = quoteData.pricing?.totalCashPrice || (subtotal + hst);
   const savings = discount + promoValue;
 
-  // Calculate actual financing based on total price with HST
-  const financing = calculateMonthlyPayment(total, quoteData.financing?.rate || null);
+  // Calculate actual financing based on total price with HST + mandatory Dealerplan fee
+  const financing = calculateMonthlyPayment(total + DEALERPLAN_FEE, quoteData.financing?.rate || null);
 
   return {
     quoteNumber: quoteData.quoteNumber || `HBW-${Date.now()}`,
