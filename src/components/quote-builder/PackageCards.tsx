@@ -1,7 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import { money } from "@/lib/money";
-import { calculateMonthly } from "@/lib/finance";
+import { calculateMonthly, DEALERPLAN_FEE } from "@/lib/finance";
 import { cn } from "@/lib/utils";
 
 const packageItemVariants = {
@@ -46,7 +46,7 @@ export function PackageCards({
   return (
     <section aria-label="Packages" className="grid gap-3 sm:grid-cols-3">
       {options.map((p) => {
-        const monthly = p.monthly ?? calculateMonthly(p.priceBeforeTax, rate, termMonths);
+        const monthly = p.monthly ?? calculateMonthly((p.priceBeforeTax * 1.13) + DEALERPLAN_FEE, rate, termMonths);
         const isSelected = selectedId === p.id;
 
         return (
