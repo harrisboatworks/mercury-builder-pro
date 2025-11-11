@@ -25,9 +25,40 @@ const TestFinancingEmails = () => {
 
     setIsSendingResume(true);
     try {
+      // Step 1: Create a test application in the database with a resume token
+      const testResumeToken = `test-${Date.now()}-${Math.random().toString(36).substring(7)}`;
+      
+      const { data: appData, error: appError } = await supabase
+        .from('financing_applications')
+        .insert({
+          email: email,
+          first_name: 'Test',
+          last_name: 'Applicant',
+          phone: '555-0123',
+          status: 'in_progress',
+          step: 3,
+          resume_token: testResumeToken,
+          application_data: {
+            purchaseDetails: {
+              motorModel: 'Mercury 115HP FourStroke',
+              estimatedPrice: 12500
+            }
+          }
+        })
+        .select('id')
+        .single();
+
+      if (appError) {
+        console.error('Error creating test application:', appError);
+        throw new Error('Failed to create test application: ' + appError.message);
+      }
+
+      console.log('Test application created:', appData);
+
+      // Step 2: Send the resume email using the real application ID
       const { data, error } = await supabase.functions.invoke('send-financing-resume-email', {
         body: {
-          applicationId: 'test-app-123',
+          applicationId: appData.id,
           email: email,
           applicantName: 'Test Applicant',
           completedSteps: 3,
@@ -38,8 +69,18 @@ const TestFinancingEmails = () => {
 
       toast({
         title: "Resume Email Sent!",
-        description: `Check ${email} for the resume link email`,
+        description: `Check ${email} for the resume link email. Test application ID: ${appData.id}`,
       });
+
+      // Step 3: Clean up - delete the test application after a delay
+      setTimeout(async () => {
+        await supabase
+          .from('financing_applications')
+          .delete()
+          .eq('id', appData.id);
+        console.log('Test application cleaned up');
+      }, 5000);
+
     } catch (error: any) {
       console.error('Error sending resume email:', error);
       toast({
