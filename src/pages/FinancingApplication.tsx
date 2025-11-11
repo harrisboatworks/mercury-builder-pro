@@ -3,9 +3,9 @@ import { useSearchParams } from 'react-router-dom';
 import { useFinancing } from '@/contexts/FinancingContext';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Card } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
 import { SaveForLaterDialog } from '@/components/financing/SaveForLaterDialog';
+import { FormProgressIndicator } from '@/components/financing/FormProgressIndicator';
 import { Mail } from 'lucide-react';
 import { PurchaseDetailsStep } from '@/components/financing/PurchaseDetailsStep';
 import { ApplicantStep } from '@/components/financing/ApplicantStep';
@@ -14,6 +14,7 @@ import { FinancialStep } from '@/components/financing/FinancialStep';
 import { CoApplicantStep } from '@/components/financing/CoApplicantStep';
 import { ReferencesStep } from '@/components/financing/ReferencesStep';
 import { ReviewSubmitStep } from '@/components/financing/ReviewSubmitStep';
+import '@/styles/financing-mobile.css';
 
 const stepTitles = {
   1: "Purchase Details",
@@ -84,30 +85,21 @@ export default function FinancingApplication() {
     }
   }, [searchParams, financingDispatch]);
 
-  const progress = (financingState.completedSteps.length / 7) * 100;
   const CurrentStepComponent = stepComponents[financingState.currentStep as keyof typeof stepComponents];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted py-8 px-4">
-      <div className="max-w-2xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted py-4 md:py-8 px-4 financing-form">
+      <div className="max-w-2xl mx-auto pb-24 md:pb-8">
         {/* Progress Header */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <h1 className="text-3xl font-bold text-foreground">Financing Application</h1>
-            <span className="text-sm text-muted-foreground">
-              Step {financingState.currentStep} of 7
-            </span>
-          </div>
-          
-          <Progress value={progress} className="h-2 mb-2" />
-          
-          <p className="text-sm text-muted-foreground">
-            {stepTitles[financingState.currentStep as keyof typeof stepTitles]}
-          </p>
-        </div>
+        <FormProgressIndicator
+          currentStep={financingState.currentStep}
+          totalSteps={7}
+          stepTitles={stepTitles}
+          completedSteps={financingState.completedSteps}
+        />
 
         {/* Step Content */}
-        <Card className="p-6 sm:p-8">
+        <Card className="p-4 sm:p-6 md:p-8">
           {CurrentStepComponent ? (
             <CurrentStepComponent />
           ) : (

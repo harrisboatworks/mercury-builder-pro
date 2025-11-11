@@ -8,9 +8,12 @@ import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card } from '@/components/ui/card';
-import { Briefcase, Building2, Phone, DollarSign, Plus, X, Check, Info } from 'lucide-react';
+import { Briefcase, Building2, Phone, DollarSign, Plus, X, Info } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Slider } from '@/components/ui/slider';
+import { MaskedInput } from './MaskedInput';
+import { FieldValidationIndicator } from './FormErrorMessage';
+import { MobileFormNavigation } from './MobileFormNavigation';
 import { useState } from 'react';
 import { money } from '@/lib/money';
 
@@ -113,9 +116,11 @@ export function EmploymentStep() {
                     placeholder="Company name"
                     className="pr-10"
                   />
-                  {isFieldValid('employerName') && (
-                    <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
-                  )}
+                  <FieldValidationIndicator 
+                    isValid={isFieldValid('employerName')} 
+                    isTouched={!!touchedFields.employerName}
+                    className="absolute right-3 top-1/2 -translate-y-1/2"
+                  />
                 </div>
                 {errors.employerName && (
                   <p className="text-sm text-destructive">{errors.employerName.message}</p>
@@ -128,17 +133,19 @@ export function EmploymentStep() {
                   Employer Phone
                 </Label>
                 <div className="relative">
-                  <Input
+                  <MaskedInput
                     id="employerPhone"
                     {...register('employerPhone')}
-                    type="tel"
+                    maskType="phone"
                     inputMode="tel"
-                    placeholder="(555) 123-4567"
+                    autoComplete="tel-national"
                     className="pr-10"
                   />
-                  {isFieldValid('employerPhone') && (
-                    <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
-                  )}
+                  <FieldValidationIndicator 
+                    isValid={isFieldValid('employerPhone')} 
+                    isTouched={!!touchedFields.employerPhone}
+                    className="absolute right-3 top-1/2 -translate-y-1/2"
+                  />
                 </div>
                 {errors.employerPhone && (
                   <p className="text-sm text-destructive">{errors.employerPhone.message}</p>
@@ -154,9 +161,11 @@ export function EmploymentStep() {
                     placeholder="Your position"
                     className="pr-10"
                   />
-                  {isFieldValid('jobTitle') && (
-                    <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
-                  )}
+                  <FieldValidationIndicator 
+                    isValid={isFieldValid('jobTitle')} 
+                    isTouched={!!touchedFields.jobTitle}
+                    className="absolute right-3 top-1/2 -translate-y-1/2"
+                  />
                 </div>
                 {errors.jobTitle && (
                   <p className="text-sm text-destructive">{errors.jobTitle.message}</p>
@@ -211,9 +220,11 @@ export function EmploymentStep() {
                 placeholder="50000"
                 className="pr-10"
               />
-              {isFieldValid('annualIncome') && (
-                <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
-              )}
+              <FieldValidationIndicator 
+                isValid={isFieldValid('annualIncome')} 
+                isTouched={!!touchedFields.annualIncome}
+                className="absolute right-3 top-1/2 -translate-y-1/2"
+              />
             </div>
             <div className="space-y-2 pt-2">
               <Slider
@@ -370,13 +381,13 @@ export function EmploymentStep() {
           </div>
         </div>
 
-        <div className="flex gap-4 pt-4 sticky bottom-0 bg-background pb-4 border-t">
-          <Button type="button" variant="outline" onClick={handleBack} className="flex-1">
-            Back
-          </Button>
-          <Button type="submit" disabled={!isValid} className="flex-1">
-            Continue
-          </Button>
+        <div className="flex gap-4 pt-4 sticky bottom-0 bg-background pb-4 border-t md:relative md:border-t-0">
+          <MobileFormNavigation
+            onBack={handleBack}
+            nextLabel="Continue"
+            isNextDisabled={!isValid}
+            className="sm:relative sm:bottom-auto sm:py-0 sm:px-0 sm:border-0 sm:shadow-none w-full"
+          />
         </div>
       </form>
     </TooltipProvider>

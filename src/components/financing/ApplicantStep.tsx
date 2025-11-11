@@ -2,13 +2,15 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { applicantSchema, type Applicant } from '@/lib/financingValidation';
 import { useFinancing } from '@/contexts/FinancingContext';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { CheckCircle2, ArrowLeft, Info } from 'lucide-react';
+import { Info } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { MaskedInput } from './MaskedInput';
+import { FieldValidationIndicator } from './FormErrorMessage';
+import { MobileFormNavigation } from './MobileFormNavigation';
 import { useEffect } from 'react';
 
 const provinces = [
@@ -84,11 +86,12 @@ export function ApplicantStep() {
         <div className="space-y-2">
           <Label htmlFor="firstName" className="flex items-center gap-2">
             First Name *
-            {isFieldValid('firstName') && <CheckCircle2 className="w-4 h-4 text-green-500" />}
+            <FieldValidationIndicator isValid={isFieldValid('firstName')} isTouched={!!touchedFields.firstName} />
           </Label>
           <Input
             id="firstName"
             {...register('firstName')}
+            autoComplete="given-name"
             className={isFieldValid('firstName') ? 'border-green-500' : ''}
           />
           {errors.firstName && (
@@ -98,17 +101,18 @@ export function ApplicantStep() {
 
         <div className="space-y-2">
           <Label htmlFor="middleName">Middle Name</Label>
-          <Input id="middleName" {...register('middleName')} />
+          <Input id="middleName" {...register('middleName')} autoComplete="additional-name" />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="lastName" className="flex items-center gap-2">
             Last Name *
-            {isFieldValid('lastName') && <CheckCircle2 className="w-4 h-4 text-green-500" />}
+            <FieldValidationIndicator isValid={isFieldValid('lastName')} isTouched={!!touchedFields.lastName} />
           </Label>
           <Input
             id="lastName"
             {...register('lastName')}
+            autoComplete="family-name"
             className={isFieldValid('lastName') ? 'border-green-500' : ''}
           />
           {errors.lastName && (
@@ -138,11 +142,12 @@ export function ApplicantStep() {
       <div className="space-y-2">
         <Label htmlFor="dateOfBirth" className="flex items-center gap-2">
           Date of Birth *
-          {isFieldValid('dateOfBirth') && <CheckCircle2 className="w-4 h-4 text-green-500" />}
+          <FieldValidationIndicator isValid={isFieldValid('dateOfBirth')} isTouched={!!touchedFields.dateOfBirth} />
         </Label>
         <Input
           id="dateOfBirth"
           type="date"
+          autoComplete="bday"
           {...register('dateOfBirth', { valueAsDate: true })}
           max={new Date(new Date().setFullYear(new Date().getFullYear() - 18)).toISOString().split('T')[0]}
           className={isFieldValid('dateOfBirth') ? 'border-green-500' : ''}
@@ -169,15 +174,13 @@ export function ApplicantStep() {
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
-          {isFieldValid('sin') && <CheckCircle2 className="w-4 h-4 text-green-500" />}
+          <FieldValidationIndicator isValid={isFieldValid('sin')} isTouched={!!touchedFields.sin} />
         </Label>
-        <Input
+        <MaskedInput
           id="sin"
-          type="text"
+          maskType="sin"
           inputMode="numeric"
-          placeholder="XXX-XXX-XXX"
           {...register('sin')}
-          maxLength={11}
           className={isFieldValid('sin') ? 'border-green-500' : ''}
         />
         {errors.sin && (
@@ -190,12 +193,13 @@ export function ApplicantStep() {
         <div className="space-y-2">
           <Label htmlFor="email" className="flex items-center gap-2">
             Email *
-            {isFieldValid('email') && <CheckCircle2 className="w-4 h-4 text-green-500" />}
+            <FieldValidationIndicator isValid={isFieldValid('email')} isTouched={!!touchedFields.email} />
           </Label>
           <Input
             id="email"
             type="email"
             inputMode="email"
+            autoComplete="email"
             {...register('email')}
             className={isFieldValid('email') ? 'border-green-500' : ''}
           />
@@ -207,13 +211,13 @@ export function ApplicantStep() {
         <div className="space-y-2">
           <Label htmlFor="primaryPhone" className="flex items-center gap-2">
             Primary Phone *
-            {isFieldValid('primaryPhone') && <CheckCircle2 className="w-4 h-4 text-green-500" />}
+            <FieldValidationIndicator isValid={isFieldValid('primaryPhone')} isTouched={!!touchedFields.primaryPhone} />
           </Label>
-          <Input
+          <MaskedInput
             id="primaryPhone"
-            type="tel"
+            maskType="phone"
             inputMode="tel"
-            placeholder="(XXX) XXX-XXXX"
+            autoComplete="tel"
             {...register('primaryPhone')}
             className={isFieldValid('primaryPhone') ? 'border-green-500' : ''}
           />
@@ -230,10 +234,11 @@ export function ApplicantStep() {
         <div className="space-y-2">
           <Label htmlFor="street" className="flex items-center gap-2">
             Street Address *
-            {isFieldValid('currentAddress.street') && <CheckCircle2 className="w-4 h-4 text-green-500" />}
+            <FieldValidationIndicator isValid={isFieldValid('currentAddress.street')} isTouched={!!touchedFields.currentAddress?.street} />
           </Label>
           <Input
             id="street"
+            autoComplete="street-address"
             {...register('currentAddress.street')}
             className={isFieldValid('currentAddress.street') ? 'border-green-500' : ''}
           />
@@ -246,10 +251,11 @@ export function ApplicantStep() {
           <div className="space-y-2">
             <Label htmlFor="city" className="flex items-center gap-2">
               City *
-              {isFieldValid('currentAddress.city') && <CheckCircle2 className="w-4 h-4 text-green-500" />}
+              <FieldValidationIndicator isValid={isFieldValid('currentAddress.city')} isTouched={!!touchedFields.currentAddress?.city} />
             </Label>
             <Input
               id="city"
+              autoComplete="address-level2"
               {...register('currentAddress.city')}
               className={isFieldValid('currentAddress.city') ? 'border-green-500' : ''}
             />
@@ -275,11 +281,12 @@ export function ApplicantStep() {
           <div className="space-y-2">
             <Label htmlFor="postalCode" className="flex items-center gap-2">
               Postal Code *
-              {isFieldValid('currentAddress.postalCode') && <CheckCircle2 className="w-4 h-4 text-green-500" />}
+              <FieldValidationIndicator isValid={isFieldValid('currentAddress.postalCode')} isTouched={!!touchedFields.currentAddress?.postalCode} />
             </Label>
-            <Input
+            <MaskedInput
               id="postalCode"
-              placeholder="A1A 1A1"
+              maskType="postal"
+              autoComplete="postal-code"
               {...register('currentAddress.postalCode')}
               className={isFieldValid('currentAddress.postalCode') ? 'border-green-500' : ''}
             />
@@ -351,24 +358,12 @@ export function ApplicantStep() {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="flex gap-3 pt-4">
-        <Button
-          type="button"
-          variant="outline"
-          onClick={handleBack}
-          className="w-full sm:w-auto"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back
-        </Button>
-        <Button
-          type="submit"
-          disabled={!isValid}
-          className="flex-1"
-        >
-          Continue to Employment
-        </Button>
-      </div>
+      <MobileFormNavigation
+        onBack={handleBack}
+        nextLabel="Continue to Employment"
+        isNextDisabled={!isValid}
+        className="sm:relative sm:bottom-auto sm:py-0 sm:px-0 sm:border-0 sm:shadow-none"
+      />
     </form>
   );
 }

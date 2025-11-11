@@ -1,0 +1,96 @@
+/* Mobile-optimized styles for financing application */
+
+/* Enhanced touch targets for mobile */
+@media (max-width: 768px) {
+  .financing-form input,
+  .financing-form select,
+  .financing-form textarea,
+  .financing-form button {
+    @apply min-h-[44px] text-base;
+  }
+
+  /* Larger tap targets for radio and checkbox inputs */
+  .financing-form input[type="radio"],
+  .financing-form input[type="checkbox"] {
+    @apply min-w-[24px] min-h-[24px];
+  }
+
+  /* Better spacing for form fields on mobile */
+  .financing-form .space-y-2 {
+    @apply space-y-3;
+  }
+
+  .financing-form .space-y-4 {
+    @apply space-y-5;
+  }
+
+  /* Sticky form navigation */
+  .financing-mobile-nav {
+    @apply sticky bottom-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-t border-border py-3 px-4 z-10 shadow-lg;
+  }
+
+  /* Prevent zoom on input focus (iOS) */
+  .financing-form input[type="text"],
+  .financing-form input[type="email"],
+  .financing-form input[type="tel"],
+  .financing-form input[type="number"],
+  .financing-form input[type="date"],
+  .financing-form select,
+  .financing-form textarea {
+    font-size: 16px !important;
+  }
+
+  /* Better card spacing on mobile */
+  .financing-form .card {
+    @apply p-4;
+  }
+
+  /* Larger icons for better visibility */
+  .financing-form .lucide {
+    @apply w-5 h-5;
+  }
+
+  /* Better label spacing */
+  .financing-form label {
+    @apply mb-2 text-base;
+  }
+
+  /* Optimize grid layouts for mobile */
+  .financing-form .grid {
+    @apply grid-cols-1;
+  }
+}
+
+/* Animation for form field validation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.financing-form input.error {
+  @apply border-destructive;
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Focus styles for accessibility */
+.financing-form input:focus,
+.financing-form select:focus,
+.financing-form textarea:focus {
+  @apply ring-2 ring-primary ring-offset-2;
+}
+
+/* Loading state styles */
+.financing-form .loading-field {
+  @apply opacity-50 pointer-events-none;
+}
+
+/* Success state animation */
+@keyframes success-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.financing-form .success-indicator {
+  animation: success-pulse 1s ease-in-out;
+}
