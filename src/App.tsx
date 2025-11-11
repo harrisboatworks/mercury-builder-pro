@@ -163,6 +163,14 @@ const App = () => (
                   }
                 />
                 <Route
+                  path="/admin/financing-applications"
+                  element={
+                    <SecureRoute requireAdmin={true}>
+                      <AdminFinancingApplications />
+                    </SecureRoute>
+                  }
+                />
+                <Route
                   path="/admin/security"
                   element={
                     <SecureRoute requireAdmin={true}>
@@ -281,6 +289,7 @@ const App = () => (
                 />
                 
                 {/* Financing Application Routes */}
+                <Route path="/financing-application" element={<FinancingApplication />} />
                 <Route path="/financing/apply" element={<FinancingApplication />} />
                 <Route path="/financing/resume" element={<FinancingResume />} />
                 <Route path="/financing/success" element={<FinancingSuccess />} />
