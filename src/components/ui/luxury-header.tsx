@@ -9,7 +9,7 @@ import { ChatWidget } from '@/components/chat/ChatWidget';
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 interface LuxuryHeaderProps {
   onSearchFocus?: () => void;
@@ -173,6 +173,38 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
           </div>
         </div>
       </header>
+
+      {/* Desktop Navigation Bar */}
+      <nav className="hidden md:block bg-background border-b border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-center gap-8 h-12">
+            <a 
+              href="#engines" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Engines
+            </a>
+            <a 
+              href="#accessories" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Accessories
+            </a>
+            <Link 
+              to="/finance-calculator" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Financing
+            </Link>
+            <Link 
+              to="/contact" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </nav>
 
       {/* Mobile Menu */}
       <HamburgerMenu 
