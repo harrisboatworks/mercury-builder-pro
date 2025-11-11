@@ -40,6 +40,7 @@ import StagingImageSizing from "./pages/StagingImageSizing";
 import StagingImageSizingV2 from "./pages/StagingImageSizingV2";
 import StagingImageSizingFinal from "./pages/StagingImageSizingFinal";
 import TestEmail from "./pages/TestEmail";
+import TestFinancingEmails from "./pages/TestFinancingEmails";
 // Removed obsolete test pricing imports
 // Removed more obsolete test imports
 import AdminConnectors from "./pages/AdminConnectors";
@@ -257,6 +258,7 @@ const App = () => (
           <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
           <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
           <Route path="/test-email" element={<TestEmail />} />
+          <Route path="/test-financing-emails" element={<TestFinancingEmails />} />
                 {/* Removed obsolete test pricing routes */}
                 
                 {/* Admin Import Routes */}
