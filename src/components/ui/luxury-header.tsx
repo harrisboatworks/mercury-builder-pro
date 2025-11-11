@@ -99,7 +99,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
             </div>
 
             {/* Center: Trust Badges - Desktop Only */}
-            <div className="hidden md:flex items-center justify-center space-x-6 text-sm text-luxury-gray dark:text-gray-300">
+            <div className="hidden lg:flex items-center justify-center space-x-6 text-sm text-luxury-gray dark:text-gray-300">
               <div className="flex items-center gap-3">
                 <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-7 w-auto dark:bg-white dark:p-1 dark:rounded" />
                 <span className="font-medium">Award-Winning Service</span>
