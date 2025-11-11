@@ -9,6 +9,7 @@ import { FormProgressIndicator } from '@/components/financing/FormProgressIndica
 import { FinancingApplicationSkeleton } from '@/components/financing/FinancingApplicationSkeleton';
 import { AccessibleFormWrapper } from '@/components/financing/AccessibleFormWrapper';
 import { Mail } from 'lucide-react';
+import harrisLogo from '@/assets/harris-logo.png';
 import { PurchaseDetailsStep } from '@/components/financing/PurchaseDetailsStep';
 import { ApplicantStep } from '@/components/financing/ApplicantStep';
 import { EmploymentStep } from '@/components/financing/EmploymentStep';
@@ -99,7 +100,16 @@ export default function FinancingApplication() {
   const CurrentStepComponent = stepComponents[financingState.currentStep as keyof typeof stepComponents];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted py-4 md:py-8 px-4 financing-form">
+    <div className="min-h-screen bg-white py-4 md:py-8 px-4 financing-form">
+      {/* Minimal Luxury Header */}
+      <div className="max-w-2xl mx-auto mb-8">
+        <img 
+          src={harrisLogo} 
+          alt="Harris Boat Works" 
+          className="h-10 md:h-12 w-auto"
+        />
+      </div>
+      
       <div className="max-w-2xl mx-auto pb-24 md:pb-8">
         {/* Progress Header */}
         <FormProgressIndicator
@@ -127,7 +137,7 @@ export default function FinancingApplication() {
         </Card>
 
         {/* Save & Continue Later Link */}
-        <div className="mt-6 text-center">
+        <div className="mt-6 space-y-3 text-center">
           <Button
             variant="outline"
             onClick={() => setShowSaveDialog(true)}
@@ -137,6 +147,11 @@ export default function FinancingApplication() {
             <Mail className="h-4 w-4" aria-hidden="true" />
             Save & Continue Later
           </Button>
+          
+          {/* Security Message */}
+          <p className="text-xs text-gray-400 font-light">
+            All information encrypted and secure
+          </p>
         </div>
 
         <SaveForLaterDialog

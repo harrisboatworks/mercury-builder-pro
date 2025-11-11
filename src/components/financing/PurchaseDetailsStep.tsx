@@ -66,7 +66,7 @@ export function PurchaseDetailsStep() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 animate-fade-in">
       <div className="space-y-2">
         <h2 className="text-2xl font-bold text-foreground">Let's Get You Financed</h2>
-        <p className="text-muted-foreground">First, confirm your motor selection</p>
+        <p className="text-muted-foreground font-light">First, confirm your motor selection</p>
       </div>
 
       {/* Motor Model - Read-only with edit option */}
@@ -120,7 +120,7 @@ export function PurchaseDetailsStep() {
           />
         </div>
         <FormErrorMessage error={errors.motorPrice?.message} field="Motor price" />
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-muted-foreground font-light">
           {money(motorPrice)}
         </p>
       </div>
@@ -137,7 +137,7 @@ export function PurchaseDetailsStep() {
             step={100}
             className="w-full min-h-[44px] cursor-pointer"
           />
-          <div className="flex justify-between text-sm text-muted-foreground">
+          <div className="flex justify-between text-sm text-muted-foreground font-light">
             <span>$0</span>
             <span className="font-semibold text-foreground">
               {money(downPayment)} ({downPaymentPercentage}%)
@@ -186,7 +186,7 @@ export function PurchaseDetailsStep() {
             />
           </div>
           <FormErrorMessage error={errors.tradeInValue?.message} field="Trade-in value" />
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground font-light">
             {money(tradeInValue)} credit applied
           </p>
         </div>
@@ -199,7 +199,7 @@ export function PurchaseDetailsStep() {
             {money(amountToFinance)}
           </span>
         </div>
-        <p className="text-xs text-muted-foreground">
+        <p className="text-xs text-muted-foreground font-light">
           Including 13% HST: {money(amountToFinance * 1.13)}
         </p>
       </div>
@@ -210,28 +210,28 @@ export function PurchaseDetailsStep() {
           <Label className="text-sm font-medium">Estimated Monthly Payment</Label>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div className="rounded-lg border border-border bg-background p-4 text-center min-h-[80px] flex flex-col justify-center">
-              <p className="text-xs text-muted-foreground mb-1">36 months</p>
+              <p className="text-xs text-muted-foreground font-light mb-1">36 months</p>
               <p className="text-lg font-bold text-foreground">
                 ${Math.round(payment36.payment)}
               </p>
-              <p className="text-xs text-muted-foreground">/month</p>
+              <p className="text-xs text-muted-foreground font-light">/month</p>
             </div>
             <div className="rounded-lg border-2 border-primary bg-primary/5 p-4 text-center min-h-[80px] flex flex-col justify-center">
-              <p className="text-xs text-muted-foreground mb-1">48 months</p>
+              <p className="text-xs text-muted-foreground font-light mb-1">48 months</p>
               <p className="text-lg font-bold text-foreground">
                 ${Math.round(payment48.payment)}
               </p>
-              <p className="text-xs text-muted-foreground">/month</p>
+              <p className="text-xs text-muted-foreground font-light">/month</p>
             </div>
             <div className="rounded-lg border border-border bg-background p-4 text-center min-h-[80px] flex flex-col justify-center">
-              <p className="text-xs text-muted-foreground mb-1">60 months</p>
+              <p className="text-xs text-muted-foreground font-light mb-1">60 months</p>
               <p className="text-lg font-bold text-foreground">
                 ${Math.round(payment60.payment)}
               </p>
-              <p className="text-xs text-muted-foreground">/month</p>
+              <p className="text-xs text-muted-foreground font-light">/month</p>
             </div>
           </div>
-          <p className="text-xs text-muted-foreground text-center">
+          <p className="text-xs text-muted-foreground font-light text-center">
             Rates vary by credit score and term length
           </p>
         </div>
@@ -239,7 +239,7 @@ export function PurchaseDetailsStep() {
 
       <MobileFormNavigation
         onNext={handleSubmit(onSubmit)}
-        nextLabel="Continue to Application"
+        nextLabel="Continue"
         isNextDisabled={!isValid || amountToFinance <= 0}
         showBack={false}
       />
