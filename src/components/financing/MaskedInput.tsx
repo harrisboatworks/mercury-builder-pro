@@ -41,23 +41,28 @@ const placeholders: Record<MaskType, string> = {
 
 export const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(
   ({ maskType, onChange, value, ...props }, ref) => {
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      const formatted = formatters[maskType](e.target.value);
-      const unformatted = unformatters[maskType](formatted);
-      
-      // Create a new event with the unformatted value for form handling
-      const newEvent = {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const rawValue = e.target.value;
+    const unformatted = unformatters[maskType](rawValue);
+    
+    // Call onChange with the unformatted value
+    // React Hook Form will handle updating the form state
+    if (onChange) {
+      onChange({
         ...e,
         target: {
           ...e.target,
+          name: props.name || '',
           value: unformatted,
         },
-      };
-      
-      onChange?.(newEvent as any);
-    };
+      } as any);
+    }
+  };
 
-    const displayValue = value ? formatters[maskType](String(value)) : '';
+  // Format the value for display, handling empty values correctly
+  const displayValue = value !== undefined && value !== null && value !== '' 
+    ? formatters[maskType](String(value)) 
+    : '';
 
     return (
       <Input
