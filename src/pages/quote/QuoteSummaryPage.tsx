@@ -115,11 +115,34 @@ export default function QuoteSummaryPage() {
   
   // Calculate base accessory costs
   const motorHP = typeof motor.hp === 'string' ? parseFloat(motor.hp) : motor.hp;
-  const controlsCost = needsControls ? 2500 : 0;
+  
+  // Dynamic controls cost based on boat-info selection
+  const getControlsCostFromSelection = (): number => {
+    if (!needsControls) return 0;
+    
+    const controlsOption = state.boatInfo?.controlsOption;
+    
+    switch (controlsOption) {
+      case 'none':
+        return 1200;  // "I need new controls"
+      case 'adapter':
+        return 125;   // "I have Mercury controls (2004+)"
+      case 'compatible':
+        return 0;     // "I have compatible controls ready"
+      default:
+        return 0;
+    }
+  };
+  
+  const controlsCost = getControlsCostFromSelection();
+  
+  // Add flat installation labor for remote motors
+  const installationLaborCost = !isManualTiller ? 450 : 0;
+  
   const batteryCost = !isManualStart ? 179.99 : 0;
   const includesProp = includesPropeller(motor);
   const canAddFuelTank = canAddExternalFuelTank(motor);
-  const baseAccessoryCost = controlsCost; // Battery separate from base
+  const baseAccessoryCost = controlsCost + installationLaborCost; // Battery separate from base
   
   // Calculate installation cost for tiller motors
   const tillerInstallCost = isManualTiller ? (state.installConfig?.installationCost || 0) : 0;
@@ -265,6 +288,22 @@ export default function QuoteSummaryPage() {
     }
   }, [isManualTiller, state.installConfig?.recommendedPackage, isMounted]);
 
+  // Helper function for controls description
+  const getControlsDescription = (): string => {
+    const controlsOption = state.boatInfo?.controlsOption;
+    
+    switch (controlsOption) {
+      case 'none':
+        return 'Complete Mercury remote control kit with cables';
+      case 'adapter':
+        return 'Control harness adapter for existing Mercury controls';
+      case 'compatible':
+        return 'Using existing compatible controls (no additional charge)';
+      default:
+        return 'Premium marine controls and installation hardware';
+    }
+  };
+
   // Build accessory breakdown based on motor requirements and selected package
   const accessoryBreakdown = [];
   
@@ -285,11 +324,20 @@ export default function QuoteSummaryPage() {
   }
   
   // Only add controls if the motor requires them (not for tiller motors)
-  if (needsControls) {
+  if (needsControls && controlsCost > 0) {
     accessoryBreakdown.push({
       name: 'Controls & Rigging',
       price: controlsCost,
-      description: 'Premium marine controls and installation hardware'
+      description: getControlsDescription()
+    });
+  }
+  
+  // Add professional installation labor for remote motors
+  if (!isManualTiller) {
+    accessoryBreakdown.push({
+      name: 'Professional Installation',
+      price: installationLaborCost,
+      description: 'Expert rigging, mounting, and commissioning by certified technicians'
     });
   }
   

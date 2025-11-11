@@ -47,9 +47,9 @@ export default function MotorHeader({
         ) : null}
 
         <div className="min-w-0 flex-1">
-          <h1 className="text-lg font-semibold leading-tight text-slate-900 dark:text-white">
+          <h1 className="text-xl lg:text-2xl font-bold leading-tight text-slate-900 dark:text-white mb-1">
             {name}
-            {modelYear ? <span className="ml-2 text-slate-500 dark:text-slate-400">({modelYear})</span> : null}
+            {modelYear ? <span className="ml-2 text-base lg:text-lg text-slate-500 dark:text-slate-400 font-normal">({modelYear})</span> : null}
           </h1>
           <div className="mt-2 flex flex-wrap gap-2">
             {specs.map((s, i) => (

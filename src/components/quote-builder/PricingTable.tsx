@@ -42,10 +42,15 @@ export function PricingTable({
 }: PricingTableProps) {
   return (
     <Card className="p-6 space-y-1">
-      <div className="mb-4">
-        <h3 className="text-lg font-semibold text-primary mb-1">
+      <div className="mb-4 space-y-1">
+        <h3 className="text-lg font-semibold text-primary">
           Pricing Breakdown
         </h3>
+        {motorName && (
+          <p className="text-base font-semibold text-slate-900 dark:text-white">
+            {motorName}
+          </p>
+        )}
         <p className="text-sm text-muted-foreground">
           Complete cost breakdown for your quote
         </p>
