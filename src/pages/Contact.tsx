@@ -15,6 +15,7 @@ import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { COMPANY_INFO } from '@/lib/companyInfo';
+import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { 
   Mail, 
   Phone, 
@@ -107,7 +108,9 @@ export default function Contact() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <>
+        <LuxuryHeader />
+        <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-2xl mx-auto text-center">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -123,11 +126,14 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      </>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <>
+      <LuxuryHeader />
+      <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -435,5 +441,6 @@ export default function Contact() {
         </div>
       </div>
     </div>
+    </>
   );
 }
