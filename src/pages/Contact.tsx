@@ -354,7 +354,7 @@ export default function Contact() {
                   <Phone className="w-5 h-5 text-primary mt-0.5" />
                   <div>
                     <p className="font-medium">{COMPANY_INFO.contact.phone}</p>
-                    <p className="text-sm text-muted-foreground">Monday - Friday, 8 AM - 6 PM</p>
+                    <p className="text-sm text-muted-foreground">Monday - Saturday, 8 AM - 5 PM</p>
                   </div>
                 </div>
                 
@@ -370,13 +370,19 @@ export default function Contact() {
                 
                 <Separator />
                 
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-primary mt-0.5" />
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=5369+Harris+Boat+Works+Rd,+Gores+Landing,+ON+K0K+2E0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 hover:bg-muted/50 rounded-lg p-2 -m-2 transition-colors cursor-pointer group"
+                >
+                  <MapPin className="w-5 h-5 text-primary mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
-                    <p className="font-medium">Visit Our Location</p>
+                    <p className="font-medium group-hover:text-primary transition-colors">Visit Our Location</p>
                     <p className="text-sm text-muted-foreground">{COMPANY_INFO.address.full}</p>
+                    <p className="text-xs text-primary mt-1">Get Directions →</p>
                   </div>
-                </div>
+                </a>
               </CardContent>
             </Card>
 
@@ -396,10 +402,19 @@ export default function Contact() {
                   <span className="text-sm">Urgent Requests</span>
                   <Badge variant="destructive">2-4 hours</Badge>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm">Service Emergencies</span>
-                  <Badge variant="destructive">Same day</Badge>
-                </div>
+                
+                <Separator className="my-4" />
+                
+                <a 
+                  href="http://hbw.wiki/service" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Button className="w-full" variant="default">
+                    Schedule Service
+                  </Button>
+                </a>
               </CardContent>
             </Card>
 
