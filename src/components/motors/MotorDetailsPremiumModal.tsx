@@ -1,13 +1,37 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench } from "lucide-react";
+import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle } from "lucide-react";
 import { supabase } from "../../integrations/supabase/client";
 import { useIsMobile } from "../../hooks/use-mobile";
 import { useScrollCoordination } from "../../hooks/useScrollCoordination";
 import { money } from "../../lib/money";
 import { MotorImageGallery } from './MotorImageGallery';
 import { MonthlyPaymentDisplay } from '../quote-builder/MonthlyPaymentDisplay';
-import { decodeModelName, requiresMercuryControls, getIncludedAccessories, getAdditionalRequirements, type Motor } from "../../lib/motor-helpers";
+import { 
+  decodeModelName, 
+  requiresMercuryControls, 
+  getIncludedAccessories, 
+  getAdditionalRequirements, 
+  getRecommendedBoatSize,
+  getEstimatedSpeed,
+  getFuelConsumption,
+  getSoundLevel,
+  getBatteryRequirement,
+  getFuelRequirement,
+  getOilRequirement,
+  getStartType,
+  type Motor 
+} from "../../lib/motor-helpers";
+import {
+  generateDisplacement,
+  generateCylinders,
+  generateBoreStroke,
+  generateRPMRange,
+  generateFuelSystem,
+  generateWeight,
+  generateGearRatio,
+  generateAlternator,
+} from "../../lib/motor-spec-generators";
 import { findMotorSpecs } from "../../lib/data/mercury-motors";
 import { pdf } from '@react-pdf/renderer';
 import CleanSpecSheetPDF, { type CleanSpecSheetData } from './CleanSpecSheetPDF';
@@ -65,6 +89,15 @@ export default function MotorDetailsPremiumModal({
   const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
   const smartReview = useSmartReviewRotation(hpValue, title);
   const motorSpecs = motor ? findMotorSpecs(hpValue, title) : undefined;
+  const decoded = decodeModelName(motor?.model || title, hpValue);
+
+  // Component for consistent spec row formatting
+  const SpecRow = ({ label, value }: { label: string; value: string }) => (
+    <div className="flex justify-between items-center py-3 px-4">
+      <span className="text-sm font-light text-gray-600 dark:text-gray-400">{label}</span>
+      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{value}</span>
+    </div>
+  );
 
   // Body scroll lock with proper cleanup
   useEffect(() => {
@@ -406,43 +439,67 @@ export default function MotorDetailsPremiumModal({
                   
                   {/* SPECS TAB */}
                   <TabsContent value="specs" className="space-y-6 mt-0 pt-6">
+                    {/* Engine Specifications */}
                     <div>
-                      <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4">
-                        Technical Specifications
+                      <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+                        <Settings className="w-5 h-5 text-primary" />
+                        Engine Specifications
                       </h3>
-                      <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4 space-y-2">
-                        {motorSpecs && (
-                          <>
-                            <div className="flex justify-between py-2 border-b border-gray-200 dark:border-gray-600">
-                              <span className="text-sm font-light text-gray-600 dark:text-gray-400">Engine Type</span>
-                              <span className="text-sm text-gray-900 dark:text-gray-100 font-medium">
-                                {motorSpecs.cylinders} {motorSpecs.displacement}
-                              </span>
-                            </div>
-                            <div className="flex justify-between py-2 border-b border-gray-200 dark:border-gray-600">
-                              <span className="text-sm font-light text-gray-600 dark:text-gray-400">Max RPM</span>
-                              <span className="text-sm text-gray-900 dark:text-gray-100 font-medium">{motorSpecs.max_rpm}</span>
-                            </div>
-                            <div className="flex justify-between py-2 border-b border-gray-200 dark:border-gray-600">
-                              <span className="text-sm font-light text-gray-600 dark:text-gray-400">Gear Ratio</span>
-                              <span className="text-sm text-gray-900 dark:text-gray-100 font-medium">{motorSpecs.gear_ratio}</span>
-                            </div>
-                            {motorSpecs.weight_kg && (
-                              <div className="flex justify-between py-2 border-b border-gray-200 dark:border-gray-600">
-                                <span className="text-sm font-light text-gray-600 dark:text-gray-400">Weight</span>
-                                <span className="text-sm text-gray-900 dark:text-gray-100 font-medium">
-                                  {Math.round(motorSpecs.weight_kg * 2.20462)} lbs
-                                </span>
-                              </div>
-                            )}
-                          </>
-                        )}
-                        {shaft && (
-                          <div className="flex justify-between py-2">
-                            <span className="text-sm font-light text-gray-600 dark:text-gray-400">Shaft Length</span>
-                            <span className="text-sm text-gray-900 dark:text-gray-100 font-medium">{shaft}</span>
-                          </div>
-                        )}
+                      <div className="bg-slate-50 dark:bg-slate-700 rounded-lg divide-y divide-gray-200 dark:divide-gray-600">
+                        <SpecRow label="Engine Type" value={generateCylinders(hpValue)} />
+                        <SpecRow label="Displacement" value={generateDisplacement(hpValue)} />
+                        <SpecRow label="Bore & Stroke" value={generateBoreStroke(hpValue)} />
+                        <SpecRow label="Fuel System" value={generateFuelSystem(hpValue)} />
+                        <SpecRow label="Max RPM Range" value={`${motorSpecs?.max_rpm || generateRPMRange(hpValue)} RPM`} />
+                        <SpecRow label="Starting System" value={getStartType(motor.model)} />
+                      </div>
+                    </div>
+
+                    {/* Physical Specifications */}
+                    <div>
+                      <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+                        <Package className="w-5 h-5 text-primary" />
+                        Physical Specifications
+                      </h3>
+                      <div className="bg-slate-50 dark:bg-slate-700 rounded-lg divide-y divide-gray-200 dark:divide-gray-600">
+                        <SpecRow 
+                          label="Dry Weight" 
+                          value={motorSpecs?.weight_kg ? `${Math.round(motorSpecs.weight_kg * 2.20462)} lbs` : generateWeight(hpValue)} 
+                        />
+                        <SpecRow label="Shaft Length" value={shaft || "Multiple options available"} />
+                        <SpecRow label="Gear Ratio" value={motorSpecs?.gear_ratio || generateGearRatio(hpValue)} />
+                        <SpecRow label="Alternator Output" value={generateAlternator(hpValue)} />
+                        <SpecRow 
+                          label="Trim System" 
+                          value={decoded.find(d => d.code === 'PT') ? "Power Trim & Tilt" : "Manual Tilt"} 
+                        />
+                      </div>
+                    </div>
+
+                    {/* Performance Data */}
+                    <div>
+                      <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+                        <Gauge className="w-5 h-5 text-primary" />
+                        Performance Estimates
+                      </h3>
+                      <div className="bg-slate-50 dark:bg-slate-700 rounded-lg divide-y divide-gray-200 dark:divide-gray-600">
+                        <SpecRow label="Recommended Boat Size" value={getRecommendedBoatSize(hpValue)} />
+                        <SpecRow label="Estimated Top Speed" value={getEstimatedSpeed(hpValue)} />
+                        <SpecRow label="Fuel Consumption" value={getFuelConsumption(hpValue)} />
+                        <SpecRow label="Sound Level" value={getSoundLevel(hpValue)} />
+                      </div>
+                    </div>
+
+                    {/* Requirements */}
+                    <div>
+                      <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+                        <AlertCircle className="w-5 h-5 text-primary" />
+                        Requirements
+                      </h3>
+                      <div className="bg-slate-50 dark:bg-slate-700 rounded-lg divide-y divide-gray-200 dark:divide-gray-600">
+                        <SpecRow label="Battery" value={getBatteryRequirement(motor)} />
+                        <SpecRow label="Recommended Fuel" value={getFuelRequirement(motor)} />
+                        <SpecRow label="Oil Type" value={getOilRequirement(motor)} />
                       </div>
                     </div>
                   </TabsContent>
