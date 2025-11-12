@@ -42,25 +42,25 @@ export default function StickyQuoteBar({
     <div
       role="region"
       aria-label="Quote summary"
-      className="sticky bottom-0 z-50 border-t border-slate-200/70 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/75 dark:border-slate-700 dark:bg-slate-900/85"
+      className="sticky bottom-0 z-30 border-t border-slate-200/70 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/75"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-1 p-2 sm:gap-2 sm:p-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0 flex-1">
-          {model && <div className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white leading-tight">{model}</div>}
-          <div className="mt-0.5 flex flex-wrap items-center gap-1 sm:gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+          {model && <div className="text-sm sm:text-base font-semibold text-slate-900 leading-tight">{model}</div>}
+          <div className="mt-0.5 flex flex-wrap items-center gap-1 sm:gap-2 text-xs sm:text-sm text-slate-700 font-light">
             {typeof total === "number" && <span><span className="hidden sm:inline">Total: </span><span className="font-semibold">{money(total)}</span></span>}
             {typeof monthly === "number" && monthly > 0 && <span>≈ {money(Math.round(monthly))}/mo<span className="hidden sm:inline"> OAC</span></span>}
             {typeof coverageYears === "number" && coverageYears > 0 && <span className="sm:hidden">{coverageYears}yr</span>}
             {typeof coverageYears === "number" && coverageYears > 0 && <span className="hidden sm:inline">{coverageYears} yrs coverage</span>}
             {promos.map(p => (
-              <span key={p.id} className="hidden sm:inline rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:bg-emerald-900/25 dark:text-emerald-300">
+              <span key={p.id} className="hidden sm:inline rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
                 {p.bonus_title || `+${p.warranty_extra_years} yrs warranty`}
               </span>
             ))}
             {stepLabel && <span className="hidden sm:inline text-slate-500">{stepLabel}</span>}
             {showDelta && deltaOnce && (deltaOnce.cash || deltaOnce.monthly) && (
-              <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-900/25 dark:text-emerald-300 dark:ring-emerald-800">
+              <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 ring-1 ring-emerald-200">
                 {deltaOnce.cash ? `+${money(deltaOnce.cash)}` : ""}{deltaOnce.cash && deltaOnce.monthly ? " • " : ""}{deltaOnce.monthly ? `+${money(Math.round(deltaOnce.monthly))}/mo` : ""}
               </span>
             )}
@@ -69,7 +69,7 @@ export default function StickyQuoteBar({
 
         <div className="flex items-center gap-1 sm:gap-2 shrink-0">
           {onSecondary && (
-            <button onClick={onSecondary} className="rounded-lg border border-slate-300 px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800">
+            <button onClick={onSecondary} className="rounded-lg border border-slate-300 px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm font-light text-slate-700 hover:opacity-80 transition-opacity min-h-[44px]">
               {secondaryLabel}
             </button>
           )}
