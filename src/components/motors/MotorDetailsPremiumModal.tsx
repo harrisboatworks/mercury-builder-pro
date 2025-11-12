@@ -552,41 +552,47 @@ export default function MotorDetailsPremiumModal({
                   </TabsContent>
                   
                   {/* RESOURCES TAB */}
-                  <TabsContent value="resources" className="space-y-6 mt-0 pt-6">
-                    {/* Documents Section */}
-                    {motor?.id && (
-                      <div>
-                        <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4">
-                          Downloads & Documentation
-                        </h3>
-                        <MotorDocumentsSection motorId={motor.id} />
+                  <TabsContent value="resources" className="relative space-y-5 mt-0">
+                    <ScrollArea className="h-[550px]">
+                      <div className="p-6 pt-8 pb-12 space-y-8">
+                        {/* Documents Section */}
+                        {motor?.id && (
+                          <div>
+                            <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4">
+                              Downloads & Documentation
+                            </h3>
+                            <MotorDocumentsSection motorId={motor.id} />
+                          </div>
+                        )}
+                        
+                        {/* Quick Actions */}
+                        <div className="border-t border-gray-100 dark:border-gray-700 pt-6">
+                          <button
+                            onClick={handleGenerateSpecSheet}
+                            disabled={specSheetLoading}
+                            className="w-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 py-3 px-4 text-sm font-light rounded-sm hover:bg-stone-50 dark:hover:bg-slate-700 transition-all duration-300 flex items-center justify-center gap-2"
+                          >
+                            <Download className="w-4 h-4" />
+                            {specSheetLoading ? 'Generating...' : 'Download Spec Sheet'}
+                          </button>
+                        </div>
+                        
+                        {/* Videos Section */}
+                        {motor?.id && (
+                          <div className="border-t border-gray-100 dark:border-gray-700 pt-6">
+                            <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4">
+                              Videos & Demonstrations
+                            </h3>
+                            <MotorVideosSection 
+                              motorId={motor.id} 
+                              motorFamily={motor.family || motor.model} 
+                            />
+                          </div>
+                        )}
                       </div>
-                    )}
-                    
-                    {/* Quick Actions */}
-                    <div className="border-t border-gray-100 dark:border-gray-700 pt-6">
-                      <button
-                        onClick={handleGenerateSpecSheet}
-                        disabled={specSheetLoading}
-                        className="w-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 py-3 px-4 text-sm font-light rounded-sm hover:bg-stone-50 dark:hover:bg-slate-700 transition-all duration-300 flex items-center justify-center gap-2"
-                      >
-                        <Download className="w-4 h-4" />
-                        {specSheetLoading ? 'Generating...' : 'Download Spec Sheet'}
-                      </button>
-                    </div>
-                    
-                    {/* Videos Section */}
-                    {motor?.id && (
-                      <div className="border-t border-gray-100 dark:border-gray-700 pt-6">
-                        <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4">
-                          Videos & Demonstrations
-                        </h3>
-                        <MotorVideosSection 
-                          motorId={motor.id} 
-                          motorFamily={motor.family || motor.model} 
-                        />
-                      </div>
-                    )}
+                    </ScrollArea>
+                    {/* Subtle fade indicator for scrolling */}
+                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white dark:from-slate-800 to-transparent pointer-events-none" />
                   </TabsContent>
                 </div>
               </div>
