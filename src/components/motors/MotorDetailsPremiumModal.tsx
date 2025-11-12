@@ -41,6 +41,7 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import MotorDocumentsSection from './MotorDocumentsSection';
 import MotorVideosSection from './MotorVideosSection';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { ScrollArea } from "../ui/scroll-area";
 import { FinanceCalculatorDrawer } from './FinanceCalculatorDrawer';
 import { StockStatusIndicator } from './StockStatusIndicator';
 import { TrustSignals } from './TrustSignals';
@@ -438,9 +439,11 @@ export default function MotorDetailsPremiumModal({
                   </TabsContent>
                   
                   {/* SPECS TAB */}
-                  <TabsContent value="specs" className="space-y-6 mt-0 pt-6">
-                    {/* Engine Specifications */}
-                    <div>
+                  <TabsContent value="specs" className="relative space-y-5 mt-0">
+                    <ScrollArea className="h-[550px]">
+                      <div className="p-6 pt-8 pb-12 space-y-8">
+                        {/* Engine Specifications */}
+                        <div>
                       <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
                         <Settings className="w-5 h-5 text-primary" />
                         Engine Specifications
@@ -490,18 +493,22 @@ export default function MotorDetailsPremiumModal({
                       </div>
                     </div>
 
-                    {/* Requirements */}
-                    <div>
-                      <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-                        <AlertCircle className="w-5 h-5 text-primary" />
-                        Requirements
-                      </h3>
-                      <div className="bg-slate-50 dark:bg-slate-700 rounded-lg divide-y divide-gray-200 dark:divide-gray-600">
-                        <SpecRow label="Battery" value={getBatteryRequirement(motor)} />
-                        <SpecRow label="Recommended Fuel" value={getFuelRequirement(motor)} />
-                        <SpecRow label="Oil Type" value={getOilRequirement(motor)} />
+                        {/* Requirements */}
+                        <div>
+                          <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+                            <AlertCircle className="w-5 h-5 text-primary" />
+                            Requirements
+                          </h3>
+                          <div className="bg-slate-50 dark:bg-slate-700 rounded-lg divide-y divide-gray-200 dark:divide-gray-600">
+                            <SpecRow label="Battery" value={getBatteryRequirement(motor)} />
+                            <SpecRow label="Recommended Fuel" value={getFuelRequirement(motor)} />
+                            <SpecRow label="Oil Type" value={getOilRequirement(motor)} />
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    </ScrollArea>
+                    {/* Subtle fade indicator for scrolling */}
+                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white dark:from-slate-800 to-transparent pointer-events-none" />
                   </TabsContent>
                   
                   {/* INCLUDED TAB */}
