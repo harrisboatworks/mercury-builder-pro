@@ -365,7 +365,7 @@ export default function MotorCardPreview({
               className="w-full border-2 border-black text-black py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-black hover:text-white transition-all duration-500 ease-out mt-8"
               onClick={handleMoreInfoClick}
             >
-              View Specifications
+              Build & Price
             </button>
           </div>
         </div>
