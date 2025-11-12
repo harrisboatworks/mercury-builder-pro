@@ -1025,6 +1025,48 @@ export default function MotorDetailsSheet({
                 </div>
               </div>
               
+            {/* Key Spec Badges - All Features - Mobile */}
+            <div className="flex flex-wrap gap-2 mb-2.5">
+              {/* HP Badge - Always shown first */}
+              <span className="px-2.5 py-1 bg-stone-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-light rounded-full">
+                {hp} HP
+              </span>
+              
+              {/* All Decoded Features */}
+              {(() => {
+                const decoded = decodeModelName(title, typeof hp === 'string' ? parseFloat(hp) : hp);
+                
+                // Helper to shorten badge text for compactness
+                const shortenMeaning = (meaning: string) => {
+                  return meaning
+                    .replace('Long Shaft (20")', 'Long (20")')
+                    .replace('Short Shaft (15")', 'Short (15")')
+                    .replace('Extra Long Shaft (25")', 'XL (25")')
+                    .replace('Extra Extra Long Shaft (30")', 'XXL (30")')
+                    .replace('Ultra Long Shaft (30")', 'XXL (30")')
+                    .replace('Power Trim & Tilt', 'Power Trim')
+                    .replace('Tiller Handle', 'Tiller')
+                    .replace('Electric Start', 'Electric')
+                    .replace('Manual Start', 'Manual')
+                    .replace('Remote Control', 'Remote')
+                    .replace('Electronic Fuel Injection', 'EFI')
+                    .replace('Digital Throttle & Shift', 'Digital')
+                    .replace('Gas Assist Tilt', 'Gas Assist')
+                    .replace('High Thrust', 'High Thrust')
+                    .replace('4-Stroke', 'FourStroke');
+                };
+                
+                return decoded.map((feature, idx) => (
+                  <span 
+                    key={`${feature.code}-${idx}`}
+                    className="px-2.5 py-1 bg-stone-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-light rounded-full"
+                  >
+                    {shortenMeaning(feature.meaning)}
+                  </span>
+                ));
+              })()}
+            </div>
+              
             {/* Trust Signals - Full Width */}
             <TrustSignals />
 

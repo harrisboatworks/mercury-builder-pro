@@ -7,7 +7,7 @@ import { useScrollCoordination } from "../../hooks/useScrollCoordination";
 import { money } from "../../lib/money";
 import { MotorImageGallery } from './MotorImageGallery';
 import { MonthlyPaymentDisplay } from '../quote-builder/MonthlyPaymentDisplay';
-import { requiresMercuryControls, getIncludedAccessories, getAdditionalRequirements, type Motor } from "../../lib/motor-helpers";
+import { decodeModelName, requiresMercuryControls, getIncludedAccessories, getAdditionalRequirements, type Motor } from "../../lib/motor-helpers";
 import { findMotorSpecs } from "../../lib/data/mercury-motors";
 import { pdf } from '@react-pdf/renderer';
 import CleanSpecSheetPDF, { type CleanSpecSheetData } from './CleanSpecSheetPDF';
@@ -574,19 +574,46 @@ export default function MotorDetailsPremiumModal({
                 )}
               </div>
               
-              {/* Key Spec Badges */}
+              {/* Key Spec Badges - All Features */}
               <div className="flex flex-wrap gap-2 border-t border-gray-100 dark:border-gray-700 pt-6">
+                {/* HP Badge - Always shown first */}
                 <span className="px-3 py-1 bg-stone-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-light rounded-full">
                   {hp} HP
                 </span>
-                {shaft && (
-                  <span className="px-3 py-1 bg-stone-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-light rounded-full">
-                    {shaft}
-                  </span>
-                )}
-                <span className="px-3 py-1 bg-stone-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-light rounded-full">
-                  {motorSpecs?.starting || 'Electric Start'}
-                </span>
+                
+                {/* All Decoded Features */}
+                {(() => {
+                  const decoded = decodeModelName(title, typeof hp === 'string' ? parseFloat(hp) : hp);
+                  
+                  // Helper to shorten badge text for compactness
+                  const shortenMeaning = (meaning: string) => {
+                    return meaning
+                      .replace('Long Shaft (20")', 'Long (20")')
+                      .replace('Short Shaft (15")', 'Short (15")')
+                      .replace('Extra Long Shaft (25")', 'XL (25")')
+                      .replace('Extra Extra Long Shaft (30")', 'XXL (30")')
+                      .replace('Ultra Long Shaft (30")', 'XXL (30")')
+                      .replace('Power Trim & Tilt', 'Power Trim')
+                      .replace('Tiller Handle', 'Tiller')
+                      .replace('Electric Start', 'Electric')
+                      .replace('Manual Start', 'Manual')
+                      .replace('Remote Control', 'Remote')
+                      .replace('Electronic Fuel Injection', 'EFI')
+                      .replace('Digital Throttle & Shift', 'Digital Controls')
+                      .replace('Gas Assist Tilt', 'Gas Assist')
+                      .replace('High Thrust', 'High Thrust')
+                      .replace('4-Stroke', 'FourStroke');
+                  };
+                  
+                  return decoded.map((feature, idx) => (
+                    <span 
+                      key={`${feature.code}-${idx}`}
+                      className="px-3 py-1 bg-stone-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-light rounded-full"
+                    >
+                      {shortenMeaning(feature.meaning)}
+                    </span>
+                  ));
+                })()}
               </div>
               
               {/* Trust Signals */}
