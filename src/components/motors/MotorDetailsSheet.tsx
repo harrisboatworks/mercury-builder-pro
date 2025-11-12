@@ -1028,18 +1028,18 @@ export default function MotorDetailsSheet({
                 </div>
               </div>
               
-              {/* Buttons Side-by-Side */}
-              <div className="flex gap-2 mt-2">
-                <button onClick={handleCalculatePayment} className="text-sm text-blue-600 hover:text-blue-700 underline">
-                  Calculate
-                </button>
-                <div className="flex-1">
-                  <TrustSignals />
-                  <Button onClick={handleSelectMotor} className="w-full bg-black text-white py-4 text-sm uppercase tracking-wider font-light hover:bg-gray-900 transition-colors duration-200">
-                    Add to Quote
-                  </Button>
-                </div>
-              </div>
+            {/* Trust Signals - Full Width */}
+            <TrustSignals />
+
+            {/* Buttons Row */}
+            <div className="flex gap-2 mt-2">
+              <button onClick={handleCalculatePayment} className="text-sm text-blue-600 hover:text-blue-700 underline whitespace-nowrap">
+                Calculate
+              </button>
+              <Button onClick={handleSelectMotor} className="flex-1 bg-black text-white py-4 text-sm uppercase tracking-wider font-light hover:bg-gray-900 transition-colors duration-200">
+                Add to Quote
+              </Button>
+            </div>
             </div>
             
             {/* Desktop: Side by side */}
