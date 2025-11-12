@@ -16,6 +16,13 @@
   }
 }
 
+/* Desktop header height */
+@media (min-width: 768px) {
+  :root {
+    --header-height: 80px; /* Desktop with utility bar */
+  }
+}
+
 /* Tablet-specific logo constraints */
 @media (min-width: 769px) and (max-width: 1024px) {
   .harris-logo {
@@ -103,6 +110,9 @@
 
 @layer base {
   :root {
+    /* Header Heights */
+    --header-height: 64px; /* Mobile */
+    
     /* Light Theme Colors - Harris Brand Blue Accent #2A4D69 */
     --background: 0 0% 100%;
     --foreground: 222 15% 13%;

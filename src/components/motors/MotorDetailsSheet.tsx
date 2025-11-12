@@ -371,12 +371,12 @@ export default function MotorDetailsSheet({
   const cleanedDescription = String(description || '').replace(/Can't find what you're looking for\?[\s\S]*/i, '').replace(/Videos you watch may be added to the TV's watch history[\s\S]*?computer\./i, '').trim();
 
   return (
-    <div className="fixed inset-0 z-50">
-      {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
+    <div className="fixed inset-0 z-40">
+      {/* Backdrop - Positioned below header */}
+      <div className="absolute inset-x-0 top-[var(--header-height)] bottom-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
       
-      {/* Modal - TWO COLUMN LAYOUT (60/40 split on desktop) */}
-      <div className="absolute inset-0 flex items-end sm:items-center justify-center sm:p-4">
+      {/* Modal - TWO COLUMN LAYOUT (60/40 split on desktop) - Opens under header */}
+      <div className="absolute inset-x-0 top-[var(--header-height)] bottom-0 flex items-end sm:items-center justify-center sm:p-4">
         <div className="relative bg-white w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-xl 
           lg:grid lg:grid-cols-[60fr_40fr] lg:max-w-6xl 
           flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-300">
