@@ -1,9 +1,11 @@
-import React from 'react';
-import { ShoppingCart } from 'lucide-react';
+import React, { useMemo } from 'react';
+import { ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useNavigate } from 'react-router-dom';
 import { money } from '@/lib/money';
+import { calculateMonthlyPayment } from '@/lib/finance';
+import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 
 export const CartHeader = () => {
   const { state, isStepAccessible } = useQuote();
@@ -57,8 +59,17 @@ export const CartHeader = () => {
     }
   };
 
+  const { promo } = useActiveFinancingPromo();
+  
   const hasItemsInCart = !!state.motor;
   const totalPrice = state.motor ? Math.round(state.motor.price * 1.13) : 0; // With tax
+
+  // Calculate monthly payment
+  const monthlyPayment = useMemo(() => {
+    if (!state.motor) return 0;
+    const { payment } = calculateMonthlyPayment(totalPrice, promo?.rate || null);
+    return Math.round(payment);
+  }, [totalPrice, state.motor, promo?.rate]);
 
   if (!hasItemsInCart) return null;
 
@@ -74,33 +85,37 @@ export const CartHeader = () => {
         console.log('CartHeader: Button clicked');
         handleCartClick();
       }}
-      className="relative flex items-center gap-2 p-2 text-muted-foreground hover:text-primary min-w-0 transition-colors"
+      className="relative flex items-center gap-3 px-3 py-2 min-w-0 transition-all duration-300 hover:opacity-80 cursor-pointer"
       aria-label={`View quote - ${motorDisplayName} - ${money(totalPrice)}`}
     >
-      <ShoppingCart className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
-      
-      {/* Mobile: Price only (< 640px) */}
-      <span className="text-xs font-medium truncate sm:hidden">
-        {money(totalPrice)}
-      </span>
-      
-      {/* Tablet: Motor HP + Price inline (640px - 1024px) */}
-      <div className="hidden sm:flex lg:hidden items-center gap-1.5 min-w-0">
-        <span className="text-xs font-medium truncate text-foreground">
-          {state.motor?.hp}HP
+      {/* Mobile: Price + Arrow (< 640px) */}
+      <div className="flex sm:hidden items-center gap-2">
+        <span className="text-sm font-light text-foreground">
+          {money(totalPrice)}
         </span>
-        <span className="text-xs text-muted-foreground font-medium">
+        <ChevronRight className="h-3 w-3 text-muted-foreground" />
+      </div>
+      
+      {/* Tablet: Label + Price (640px - 1024px) */}
+      <div className="hidden sm:flex lg:hidden flex-col items-end">
+        <span className="text-xs font-light text-muted-foreground uppercase tracking-wider">
+          Your Quote
+        </span>
+        <span className="text-sm font-light text-foreground">
           {money(totalPrice)}
         </span>
       </div>
       
-      {/* Desktop: Full details stacked (1024px+) */}
-      <div className="hidden lg:flex flex-col items-start min-w-0">
-        <span className="text-xs font-medium truncate max-w-full text-foreground">
-          {motorDisplayName}
+      {/* Desktop: Full luxury display (1024px+) */}
+      <div className="hidden lg:flex flex-col items-end gap-0.5">
+        <span className="text-xs font-light text-muted-foreground uppercase tracking-wider">
+          Your Configuration
         </span>
-        <span className="text-xs text-muted-foreground font-medium">
+        <span className="text-sm font-light text-foreground">
           {money(totalPrice)}
+        </span>
+        <span className="text-xs font-light text-muted-foreground">
+          From {money(monthlyPayment)}/mo
         </span>
       </div>
     </Button>
