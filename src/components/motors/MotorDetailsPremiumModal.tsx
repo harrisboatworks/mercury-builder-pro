@@ -18,6 +18,9 @@ import MotorDocumentsSection from './MotorDocumentsSection';
 import MotorVideosSection from './MotorVideosSection';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { FinanceCalculatorDrawer } from './FinanceCalculatorDrawer';
+import { MotorSpecBadges } from './MotorSpecBadges';
+import { StockStatusIndicator } from './StockStatusIndicator';
+import { TrustSignals } from './TrustSignals';
 
 interface MotorDetailsPremiumModalProps {
   open: boolean;
@@ -226,6 +229,9 @@ export default function MotorDetailsPremiumModal({
                     <h2 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 leading-tight">
                       {title}
                     </h2>
+                    
+                    {/* 3. Stock Status Indicator */}
+                    {motor && <StockStatusIndicator motor={motor} />}
                   </div>
                 </div>
                 
@@ -280,6 +286,9 @@ export default function MotorDetailsPremiumModal({
                     <h2 className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100 leading-tight">
                       {title}
                     </h2>
+                    
+                    {/* 3. Stock Status Indicator */}
+                    {motor && <StockStatusIndicator motor={motor} />}
                   </div>
                 </div>
                 
@@ -325,6 +334,9 @@ export default function MotorDetailsPremiumModal({
                         enhanced={true}
                       />
                     </div>
+                    
+                    {/* Motor Spec Badges */}
+                    <MotorSpecBadges title={title} hp={hp} />
                     
                     {/* What's Included - Simple Checklist */}
                     {includedAccessories.length > 0 && (
@@ -580,6 +592,9 @@ export default function MotorDetailsPremiumModal({
                 </span>
               </div>
               
+              {/* Trust Signals */}
+              <TrustSignals />
+              
               {/* ADD TO QUOTE Button */}
               <button
                 onClick={handleSelectMotor}
@@ -635,12 +650,15 @@ export default function MotorDetailsPremiumModal({
               </div>
               
               {/* ADD TO QUOTE Button */}
-              <button
-                onClick={handleSelectMotor}
-                className="flex-1 bg-black text-white py-3 text-xs tracking-widest uppercase font-light rounded-sm"
-              >
-                Configure This Motor
-              </button>
+              <div className="flex-1">
+                <TrustSignals />
+                <button
+                  onClick={handleSelectMotor}
+                  className="w-full bg-black text-white py-3 text-xs tracking-widest uppercase font-light rounded-sm"
+                >
+                  Configure This Motor
+                </button>
+              </div>
             </div>
           </div>
         </div>

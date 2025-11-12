@@ -23,6 +23,9 @@ import { enhanceImageUrls } from "@/lib/image-utils";
 import MotorDocumentsSection from './MotorDocumentsSection';
 import MotorVideosSection from './MotorVideosSection';
 import { FinanceCalculatorDrawer } from './FinanceCalculatorDrawer';
+import { MotorSpecBadges } from './MotorSpecBadges';
+import { StockStatusIndicator } from './StockStatusIndicator';
+import { TrustSignals } from './TrustSignals';
 
 export default function MotorDetailsSheet({
   open,
@@ -390,6 +393,7 @@ export default function MotorDetailsSheet({
               <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight">
                 {title}
               </h2>
+              {motor && <StockStatusIndicator motor={motor} />}
             </div>
           </div>
 
@@ -401,6 +405,9 @@ export default function MotorDetailsSheet({
               <div className="flex justify-center py-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
                 <MotorDetailsImageSection motor={motor} gallery={gallery} img={img} title={title} />
               </div>
+              
+              {/* Motor Spec Badges */}
+              <MotorSpecBadges title={title} hp={hp} />
               
               {/* Specifications Section */}
               <div className="space-y-4">
@@ -1026,9 +1033,12 @@ export default function MotorDetailsSheet({
                 <button onClick={handleCalculatePayment} className="text-sm text-blue-600 hover:text-blue-700 underline">
                   Calculate
                 </button>
-                <Button onClick={handleSelectMotor} className="flex-1 bg-black text-white py-4 text-sm uppercase tracking-wider font-light hover:bg-gray-900 transition-colors duration-200">
-                  Add to Quote
-                </Button>
+                <div className="flex-1">
+                  <TrustSignals />
+                  <Button onClick={handleSelectMotor} className="w-full bg-black text-white py-4 text-sm uppercase tracking-wider font-light hover:bg-gray-900 transition-colors duration-200">
+                    Add to Quote
+                  </Button>
+                </div>
               </div>
             </div>
             
