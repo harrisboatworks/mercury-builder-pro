@@ -1009,34 +1009,32 @@ export default function MotorDetailsSheet({
           {/* Compact Sticky Bottom Action Bar */}
           <div className="sticky bottom-0 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-2.5 sm:p-4 sm:rounded-b-xl">
             {/* Mobile: Space-Optimized Layout */}
-            <div className="sm:hidden">
+            <div className="sm:hidden space-y-2">
               {/* Price & Payment Info */}
-              <div className="mb-2">
-                <div className="flex justify-between items-center">
-                  <div>
-                    {msrp && typeof msrp === "number" && msrp !== price && (
-                      <p className="text-gray-500 line-through text-xs">MSRP {money(msrp)}</p>
-                    )}
-                    <p className="text-base font-light text-black">
-                      {typeof price === "number" ? money(price) : 'Call for Price'}
+              <div className="flex justify-between items-start">
+                <div>
+                  {msrp && typeof msrp === "number" && msrp !== price && (
+                    <p className="text-gray-500 line-through text-xs">MSRP {money(msrp)}</p>
+                  )}
+                  <p className="text-lg font-light text-black">
+                    {typeof price === "number" ? money(price) : 'Call for Price'}
+                  </p>
+                  {promoText && (
+                    <p className="text-xs text-orange-600 dark:text-orange-400 mt-0.5">{promoText}</p>
+                  )}
+                </div>
+                <div className="text-right">
+                  {typeof price === "number" && <MonthlyPaymentDisplay motorPrice={price} />}
+                  {activePromo && (
+                    <p className="text-xs text-blue-600 dark:text-blue-400 mt-0.5">
+                      {activePromo.rate}% APR
                     </p>
-                    {promoText && (
-                      <p className="text-xs text-orange-600 dark:text-orange-400">{promoText}</p>
-                    )}
-                  </div>
-                  <div className="text-right">
-                    {typeof price === "number" && <MonthlyPaymentDisplay motorPrice={price} />}
-                    {activePromo && (
-                      <p className="text-xs text-blue-600 dark:text-blue-400 mt-1">
-                        {activePromo.rate}% APR
-                      </p>
-                    )}
-                  </div>
+                  )}
                 </div>
               </div>
               
             {/* Key Spec Badges - All Features - Mobile */}
-            <div className="flex flex-wrap gap-2 mb-2">
+            <div className="flex flex-wrap gap-1.5 max-h-16 overflow-y-auto">
               {/* HP Badge - Always shown first */}
               <span className="px-2.5 py-1 bg-stone-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-light rounded-full">
                 {hp} HP
@@ -1076,19 +1074,14 @@ export default function MotorDetailsSheet({
                 ));
               })()}
             </div>
-              
-            {/* Trust Signals - Hidden on very small screens */}
-            <div className="hidden min-[400px]:block">
-              <TrustSignals />
-            </div>
 
             {/* Buttons Row */}
-            <div className="flex gap-2 mt-1.5">
+            <div className="flex gap-2 pt-1">
               <button onClick={handleCalculatePayment} className="text-sm text-blue-600 hover:text-blue-700 underline whitespace-nowrap">
                 Calculate
               </button>
-              <Button onClick={handleSelectMotor} className="flex-1 bg-black text-white py-4 text-sm uppercase tracking-wider font-light hover:bg-gray-900 transition-colors duration-200">
-                Add to Quote
+              <Button onClick={handleSelectMotor} className="flex-1 bg-black text-white py-3 text-sm uppercase tracking-wider font-light hover:bg-gray-900 transition-colors duration-200">
+                Configure This Motor
               </Button>
             </div>
             </div>
