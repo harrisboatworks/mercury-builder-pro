@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useHapticFeedback } from "@/hooks/useHapticFeedback";
 
 interface MobileFormNavigationProps {
   onBack?: () => void;
@@ -21,6 +22,8 @@ export function MobileFormNavigation({
   showBack = true,
   className,
 }: MobileFormNavigationProps) {
+  const { triggerHaptic } = useHapticFeedback();
+  
   return (
     <div 
       className={cn(
@@ -34,7 +37,10 @@ export function MobileFormNavigation({
           <Button
             type="button"
             variant="outline"
-            onClick={onBack}
+            onClick={(e) => {
+              triggerHaptic('light');
+              onBack();
+            }}
             disabled={isLoading}
             className="min-w-[100px] touch-manipulation h-11 text-base"
           >
@@ -45,7 +51,10 @@ export function MobileFormNavigation({
         
         <Button
           type="submit"
-          onClick={onNext}
+          onClick={() => {
+            triggerHaptic('light');
+            onNext?.();
+          }}
           disabled={isNextDisabled || isLoading}
           className="flex-1 touch-manipulation h-11 text-base font-semibold"
         >

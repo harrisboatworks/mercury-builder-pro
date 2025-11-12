@@ -6,10 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import { money } from '@/lib/money';
 import { calculateMonthlyPayment } from '@/lib/finance';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 
 export const CartHeader = () => {
   const { state, isStepAccessible } = useQuote();
   const navigate = useNavigate();
+  const { triggerHaptic } = useHapticFeedback();
   
   const findNextIncompleteStep = (): string => {
     // Check each step in order to find the first incomplete one
@@ -82,10 +84,11 @@ export const CartHeader = () => {
       onClick={(e) => {
         e.preventDefault();
         e.stopPropagation();
+        triggerHaptic('light');
         console.log('CartHeader: Button clicked');
         handleCartClick();
       }}
-      className="relative flex items-center gap-3 px-3 py-2 min-w-0 transition-all duration-300 hover:opacity-80 cursor-pointer"
+      className="relative flex items-center gap-3 px-3 py-2 min-w-0 transition-all duration-300 hover:opacity-80 active:scale-[0.98] active:opacity-70 cursor-pointer"
       aria-label={`View quote - ${motorDisplayName} - ${money(totalPrice)}`}
     >
       {/* Mobile: Price + Arrow (< 640px) */}

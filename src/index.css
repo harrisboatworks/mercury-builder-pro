@@ -446,6 +446,18 @@ html {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+  
+  /* Disable active state animations for accessibility */
+  .active\:scale-\[0\.97\],
+  .active\:scale-\[0\.98\],
+  .active\:scale-95 {
+    transform: none !important;
+  }
+  
+  button,
+  a {
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Premium Card Hover Effects */

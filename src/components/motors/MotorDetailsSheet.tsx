@@ -1077,10 +1077,16 @@ export default function MotorDetailsSheet({
 
             {/* Buttons Row */}
             <div className="flex gap-2 pt-1">
-              <button onClick={handleCalculatePayment} className="text-sm text-blue-600 hover:text-blue-700 underline whitespace-nowrap">
+              <button 
+                onClick={handleCalculatePayment} 
+                className="text-sm text-blue-600 hover:text-blue-700 underline whitespace-nowrap active:opacity-70 active:scale-[0.98] transition-all duration-100"
+              >
                 Calculate
               </button>
-              <Button onClick={handleSelectMotor} className="flex-1 bg-black text-white py-3 text-sm uppercase tracking-wider font-light hover:bg-gray-900 transition-colors duration-200">
+              <Button 
+                onClick={handleSelectMotor} 
+                className="flex-1 bg-black text-white py-3 text-sm uppercase tracking-wider font-light hover:bg-gray-900 active:scale-[0.97] active:bg-gray-950 transition-all duration-150"
+              >
                 Configure This Motor
               </Button>
             </div>
