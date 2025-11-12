@@ -7,10 +7,32 @@ export const DEALERPLAN_FEE = 299;
  * Get smart financing term based on price
  */
 export const getFinancingTerm = (price: number): number => {
-  if (price < 5000) return 36;          // Under $5k = 36 months
-  if (price < 10000) return 48;         // $5k-10k = 48 months  
-  if (price < 20000) return 60;         // $10k-20k = 60 months
-  return 120;                           // Over $20k = 120 months
+  if (price < 10000) return 48;          // Under $10k = 48 months (4 years)
+  if (price < 20000) return 60;          // $10k-20k = 60 months (5 years)
+  if (price < 30000) return 72;          // $20k-30k = 72 months (6 years)
+  if (price < 50000) return 84;          // $30k-50k = 84 months (7 years)
+  if (price < 100000) return 120;        // $50k-100k = 120 months (10 years)
+  return 120;                            // $100k+ = 120 months (10-20 years available)
+};
+
+/**
+ * Get 3 financing term options based on price (lower, recommended, higher)
+ */
+export const getFinancingTermOptions = (price: number): number[] => {
+  const recommendedTerm = getFinancingTerm(price);
+  
+  // Define adjacent terms for each tier
+  if (price < 10000) {
+    return [36, 48, 60];  // 3, 4, 5 years
+  } else if (price < 20000) {
+    return [48, 60, 72];  // 4, 5, 6 years
+  } else if (price < 30000) {
+    return [60, 72, 84];  // 5, 6, 7 years
+  } else if (price < 50000) {
+    return [72, 84, 120]; // 6, 7, 10 years
+  } else {
+    return [84, 120, 180]; // 7, 10, 15 years
+  }
 };
 
 /**
@@ -84,8 +106,14 @@ export const getFinancingDisplay = (price: number, currentPromoRate: number | nu
   }
   
   // Standard display (no rate shown for regular 7.99%)
-  if (termMonths === 120) {
-    return `From $${payment}/mo • 10 years`;  // Cleaner than "120 months"
+  if (termMonths === 180) {
+    return `From $${payment}/mo • 15 years`;
+  } else if (termMonths === 120) {
+    return `From $${payment}/mo • 10 years`;
+  } else if (termMonths === 84) {
+    return `From $${payment}/mo • 7 years`;
+  } else if (termMonths === 72) {
+    return `From $${payment}/mo • 6 years`;
   } else {
     return `From $${payment}/mo • ${termMonths} mo`;
   }
