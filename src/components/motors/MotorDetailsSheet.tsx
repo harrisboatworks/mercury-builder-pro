@@ -691,11 +691,11 @@ export default function MotorDetailsSheet({
                 <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 p-4 rounded-lg">
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Physical items included with your motor purchase:</p>
                   <ul className="text-sm grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1">
-                    {includedAccessories.length > 0 ? includedAccessories.map((accessory, i) => <li key={`acc-${i}`} className="flex items-start">
-                        <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                    {includedAccessories.length > 0 ? includedAccessories.map((accessory, i) => <li key={`acc-${i}`} className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 flex-shrink-0" />
                         <span className="text-slate-700 dark:text-slate-300">{accessory}</span>
-                      </li>) : <li className="flex items-start">
-                        <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                      </li>) : <li className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 flex-shrink-0" />
                         <span className="text-slate-700 dark:text-slate-300">Owner's manual & warranty documentation</span>
                       </li>}
                   </ul>
@@ -716,8 +716,8 @@ export default function MotorDetailsSheet({
                       
                       if (shaftInfo) {
                         return (
-                          <li className="flex items-start">
-                            <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
+                          <li className="flex items-center">
+                            <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 flex-shrink-0" />
                             <div className="flex-1 text-slate-700 dark:text-slate-300">
                               <span className="font-medium">Required Transom Height</span>
                               <span className="text-slate-500 dark:text-slate-400 ml-2">({shaftInfo.meaning})</span>
@@ -729,16 +729,16 @@ export default function MotorDetailsSheet({
                     })()}
                     
                     {motorSpecs && (
-                        <li className="flex items-start">
-                          <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
+                        <li className="flex items-center">
+                          <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 flex-shrink-0" />
                           <div className="flex-1 text-slate-700 dark:text-slate-300">
                             <span className="font-medium">Weight</span>
                             <span className="text-slate-500 dark:text-slate-400 ml-2">({motorSpecs.weight_kg} kg dry weight)</span>
                           </div>
                         </li>
                     )}
-                    {additionalRequirements.map((requirement, i) => <li key={`req-${i}`} className="flex items-start">
-                        <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
+                    {additionalRequirements.map((requirement, i) => <li key={`req-${i}`} className="flex items-center">
+                        <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 flex-shrink-0" />
                         <div className="flex-1 text-slate-700 dark:text-slate-300">
                           <span className="font-medium">{requirement.item}</span>
                           <span className="text-slate-500 dark:text-slate-400 ml-2">({requirement.cost})</span>
@@ -997,7 +997,7 @@ export default function MotorDetailsSheet({
           </div>
 
           {/* Compact Sticky Bottom Action Bar */}
-          <div className="sticky bottom-0 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-3 sm:p-4 sm:rounded-b-xl">
+          <div className="sticky bottom-0 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-2.5 sm:p-4 sm:rounded-b-xl">
             {/* Mobile: Space-Optimized Layout */}
             <div className="sm:hidden">
               {/* Price & Payment Info */}
@@ -1026,7 +1026,7 @@ export default function MotorDetailsSheet({
               </div>
               
             {/* Key Spec Badges - All Features - Mobile */}
-            <div className="flex flex-wrap gap-2 mb-2.5">
+            <div className="flex flex-wrap gap-2 mb-2">
               {/* HP Badge - Always shown first */}
               <span className="px-2.5 py-1 bg-stone-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-light rounded-full">
                 {hp} HP
@@ -1073,7 +1073,7 @@ export default function MotorDetailsSheet({
             </div>
 
             {/* Buttons Row */}
-            <div className="flex gap-2 mt-2">
+            <div className="flex gap-2 mt-1.5">
               <button onClick={handleCalculatePayment} className="text-sm text-blue-600 hover:text-blue-700 underline whitespace-nowrap">
                 Calculate
               </button>
