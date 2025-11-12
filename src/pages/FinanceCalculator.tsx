@@ -10,6 +10,7 @@ import { formatMotorTitle } from '@/lib/card-title';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { findMotorSpecs } from '@/lib/data/mercury-motors';
 import { calculatePaymentWithFrequency, type PaymentFrequency } from '@/lib/finance';
+import { LuxuryHeader } from '@/components/ui/luxury-header';
 
 interface DbMotor {
   id: string;
@@ -148,11 +149,13 @@ export default function FinanceCalculator() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <header className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Finance Calculator</h1>
-        <p className="text-muted-foreground">Estimate your monthly payment. Values are estimates and not a credit offer.</p>
-      </header>
+    <>
+      <LuxuryHeader />
+      <main className="container mx-auto px-4 py-8">
+        <header className="mb-6">
+          <h1 className="text-3xl font-bold tracking-tight">Finance Calculator</h1>
+          <p className="text-muted-foreground">Estimate your monthly payment. Values are estimates and not a credit offer.</p>
+        </header>
 
       {motor && (
         <Card className="mb-6">
@@ -275,5 +278,6 @@ export default function FinanceCalculator() {
         </CardContent>
       </Card>
     </main>
+    </>
   );
 }
