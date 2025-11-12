@@ -670,10 +670,10 @@ export default function MotorDetailsSheet({
                        ) : null;
                      })()}
                     {/* Original features */}
-                    {displayFeatures.slice(0, 8).map((feature, i) => <li key={`${feature}-${i}`} className="flex items-start">
-                        <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
-                        <span className="text-slate-700 dark:text-slate-300">{feature}</span>
-                      </li>)}
+                            {displayFeatures.slice(0, 8).map((feature, i) => <li key={`${feature}-${i}`} className="flex items-center">
+                              <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
+                              <span className="text-slate-700 dark:text-slate-300">{feature}</span>
+                            </li>)}
                   </ul>
                 </div>
               </div>
