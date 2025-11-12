@@ -585,7 +585,7 @@ export default function MotorDetailsPremiumModal({
                 onClick={handleSelectMotor}
                 className="w-full bg-black text-white py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-gray-900 transition-all duration-500"
               >
-                Add to Quote
+                Configure This Motor
               </button>
               
               {/* Calculate Payment Link */}
@@ -639,7 +639,7 @@ export default function MotorDetailsPremiumModal({
                 onClick={handleSelectMotor}
                 className="flex-1 bg-black text-white py-3 text-xs tracking-widest uppercase font-light rounded-sm"
               >
-                Add to Quote
+                Configure This Motor
               </button>
             </div>
           </div>
