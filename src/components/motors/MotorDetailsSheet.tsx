@@ -1067,8 +1067,10 @@ export default function MotorDetailsSheet({
               })()}
             </div>
               
-            {/* Trust Signals - Full Width */}
-            <TrustSignals />
+            {/* Trust Signals - Hidden on very small screens */}
+            <div className="hidden min-[400px]:block">
+              <TrustSignals />
+            </div>
 
             {/* Buttons Row */}
             <div className="flex gap-2 mt-2">
