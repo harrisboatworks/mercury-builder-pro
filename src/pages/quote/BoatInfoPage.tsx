@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { PageTransition } from '@/components/ui/page-transition';
 import { BoatInformation } from '@/components/quote-builder/BoatInformation';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
@@ -69,7 +70,7 @@ export default function BoatInfoPage() {
   };
 
   return (
-    <>
+    <PageTransition>
       <QuoteLayout>
         <div className="space-y-6">
           <div className="flex items-center gap-4">
@@ -88,6 +89,6 @@ export default function BoatInfoPage() {
           />
         </div>
       </QuoteLayout>
-    </>
+    </PageTransition>
   );
 }

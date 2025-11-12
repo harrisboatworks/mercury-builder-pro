@@ -13,6 +13,7 @@ import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
 import { Button } from '@/components/ui/button';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { PageTransition } from '@/components/ui/page-transition';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
@@ -431,23 +432,26 @@ export default function MotorSelectionPage() {
 
   if (loading) {
     return (
-      <QuoteLayout>
-        <div className="bg-stone-50 py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="grid gap-6 sm:gap-8 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <MotorCardSkeleton key={i} index={i} />
-              ))}
+      <PageTransition>
+        <QuoteLayout>
+          <div className="bg-stone-50 py-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              <div className="grid gap-6 sm:gap-8 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <MotorCardSkeleton key={i} index={i} />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </QuoteLayout>
+        </QuoteLayout>
+      </PageTransition>
     );
   }
 
   return (
-    <FinancingProvider>
-      <QuoteLayout showProgress={false}>
+    <PageTransition>
+      <FinancingProvider>
+        <QuoteLayout showProgress={false}>
         {/* Search Bar - Elegant minimal style */}
         <div className="sticky top-14 sm:top-16 md:top-[72px] z-40 bg-stone-50 border-b border-gray-200">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
@@ -606,5 +610,6 @@ export default function MotorSelectionPage() {
         </div>
       </QuoteLayout>
     </FinancingProvider>
+    </PageTransition>
   );
 }

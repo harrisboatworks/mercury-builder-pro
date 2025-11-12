@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { PageTransition } from '@/components/ui/page-transition';
 import InstallationConfig from '@/components/quote-builder/InstallationConfig';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
@@ -92,7 +93,7 @@ export default function InstallationPage() {
   }, [currentTotal, currentMonthly]);
 
   return (
-    <>
+    <PageTransition>
       <QuoteLayout>
         <div className="space-y-6">
           <div className="flex items-center gap-4">
@@ -114,6 +115,6 @@ export default function InstallationPage() {
           )}
         </div>
       </QuoteLayout>
-    </>
+    </PageTransition>
   );
 }

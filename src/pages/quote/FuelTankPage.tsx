@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { PageTransition } from '@/components/ui/page-transition';
 import FuelTankOptions from '@/components/quote-builder/FuelTankOptions';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
@@ -44,21 +45,23 @@ export default function FuelTankPage() {
   };
 
   return (
-    <QuoteLayout>
-      <div className="space-y-6">
-        <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm" onClick={handleBack} className="dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-800">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Purchase Path
-          </Button>
+    <PageTransition>
+      <QuoteLayout>
+        <div className="space-y-6">
+          <div className="flex items-center gap-4">
+            <Button variant="outline" size="sm" onClick={handleBack} className="dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-800">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Purchase Path
+            </Button>
+          </div>
+          
+          <FuelTankOptions 
+            selectedMotor={state.motor!}
+            onComplete={handleStepComplete}
+            onBack={handleBack}
+          />
         </div>
-        
-        <FuelTankOptions 
-          selectedMotor={state.motor!}
-          onComplete={handleStepComplete}
-          onBack={handleBack}
-        />
-      </div>
-    </QuoteLayout>
+      </QuoteLayout>
+    </PageTransition>
   );
 }

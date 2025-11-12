@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { PageTransition } from '@/components/ui/page-transition';
 import { ScheduleConsultation } from '@/components/quote-builder/ScheduleConsultation';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
@@ -35,21 +36,23 @@ export default function SchedulePage() {
   const quoteData = getQuoteData();
 
   return (
-    <QuoteLayout>
-      <div className="space-y-6">
-        <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm" onClick={handleBack} className="border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Quote
-          </Button>
+    <PageTransition>
+      <QuoteLayout>
+        <div className="space-y-6">
+          <div className="flex items-center gap-4">
+            <Button variant="outline" size="sm" onClick={handleBack} className="border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Quote
+            </Button>
+          </div>
+          
+          <ScheduleConsultation 
+            quoteData={quoteData}
+            onBack={handleBack}
+            purchasePath={state.purchasePath}
+          />
         </div>
-        
-        <ScheduleConsultation 
-          quoteData={quoteData}
-          onBack={handleBack}
-          purchasePath={state.purchasePath}
-        />
-      </div>
-    </QuoteLayout>
+      </QuoteLayout>
+    </PageTransition>
   );
 }

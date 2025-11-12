@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { PageTransition } from '@/components/ui/page-transition';
 import { TradeInValuation } from '@/components/quote-builder/TradeInValuation';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
@@ -115,29 +116,31 @@ export default function TradeInPage() {
   };
 
   return (
-    <QuoteLayout>
-      <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
-        <div className="flex items-center gap-4">
-          <Button 
-            variant="outline" 
-            size="sm" 
-            onClick={handleBack}
-            className="border-gray-300 dark:border-gray-600 hover:border-gray-900 dark:hover:border-gray-100 dark:text-gray-100 dark:hover:bg-gray-800 font-light"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back
-          </Button>
+    <PageTransition>
+      <QuoteLayout>
+        <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
+          <div className="flex items-center gap-4">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={handleBack}
+              className="border-gray-300 dark:border-gray-600 hover:border-gray-900 dark:hover:border-gray-100 dark:text-gray-100 dark:hover:bg-gray-800 font-light"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back
+            </Button>
+          </div>
+          
+          <TradeInValuation 
+            tradeInInfo={tradeInInfo}
+            onTradeInChange={handleTradeInChange}
+            onAutoAdvance={handleComplete}
+            currentMotorBrand={state.boatInfo?.currentMotorBrand}
+            currentHp={state.boatInfo?.currentHp}
+            currentMotorYear={state.boatInfo?.currentMotorYear}
+          />
         </div>
-        
-        <TradeInValuation 
-          tradeInInfo={tradeInInfo}
-          onTradeInChange={handleTradeInChange}
-          onAutoAdvance={handleComplete}
-          currentMotorBrand={state.boatInfo?.currentMotorBrand}
-          currentHp={state.boatInfo?.currentHp}
-          currentMotorYear={state.boatInfo?.currentMotorYear}
-        />
-      </div>
-    </QuoteLayout>
+      </QuoteLayout>
+    </PageTransition>
   );
 }
