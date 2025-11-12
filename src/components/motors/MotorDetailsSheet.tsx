@@ -377,12 +377,12 @@ export default function MotorDetailsSheet({
       
       {/* Modal - TWO COLUMN LAYOUT (60/40 split on desktop) */}
       <div className="absolute inset-0 flex items-end sm:items-center justify-center sm:p-4">
-        <div className="relative bg-white dark:bg-slate-900 w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-xl 
+        <div className="relative bg-white w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-xl 
           lg:grid lg:grid-cols-[60fr_40fr] lg:max-w-6xl 
           flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-300">
           
           {/* LEFT COLUMN: Scrollable Content with Tabs (Hidden on LG+ where it's in main content) */}
-          <div className="lg:hidden sticky top-0 z-40 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-sm sm:rounded-t-xl relative">
+          <div className="lg:hidden sticky top-0 z-40 bg-white border-b border-slate-200 shadow-sm sm:rounded-t-xl relative">
             {/* Close Button */}
             <button 
               onClick={onClose} 
@@ -394,7 +394,7 @@ export default function MotorDetailsSheet({
 
             {/* Mobile/Tablet Header */}
             <div className="p-4 sm:p-6 pr-16">
-              <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight">
+              <h2 className="text-lg sm:text-xl font-bold text-slate-900 leading-tight">
                 {title}
               </h2>
               {motor && <StockStatusIndicator motor={motor} />}
@@ -406,23 +406,23 @@ export default function MotorDetailsSheet({
             <div className="p-4 space-y-8">
               
               {/* Motor Image */}
-              <div className="flex justify-center py-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+              <div className="flex justify-center py-4 bg-slate-50 rounded-lg">
                 <MotorDetailsImageSection motor={motor} gallery={gallery} img={img} title={title} />
               </div>
               
               
               {/* Specifications Section */}
               <div className="space-y-4">
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                <h2 className="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2">
                   Specifications
                 </h2>
-                <h3 className="font-semibold text-lg text-slate-900 dark:text-white">About This Motor</h3>
+                <h3 className="font-semibold text-lg text-slate-900">About This Motor</h3>
                 {motor?.model_number && (
                   <p className="text-sm text-gray-500 mb-3">
                     Model Number: {motor.model_number}
                   </p>
                 )}
-                <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
+                <div className="bg-slate-50 rounded-lg p-4">
                   {hp && (() => {
                   const decoded = decodeModelName(title);
                   if (decoded.length === 0) return null;
@@ -431,17 +431,17 @@ export default function MotorDetailsSheet({
                   const infoText = decoded.map(item => item.meaning).join(' • ');
                   return <div className="space-y-3">
                         {/* Compact horizontal info bar */}
-                        <div className="text-sm font-medium text-slate-900 dark:text-white">
+                        <div className="text-sm font-medium text-slate-900">
                           {infoText}
                         </div>
                         
                         {/* Clean specs grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                           {decoded.map((item, idx) => <div key={idx} className="space-y-1">
-                              <div className="font-medium text-slate-700 dark:text-slate-300">
+                              <div className="font-medium text-slate-700">
                                 {item.code === 'M' ? 'Starting' : item.code === 'H' ? 'Control' : item.code === 'S' ? 'Shaft' : item.meaning}:
                               </div>
-                              <div className="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+                              <div className="text-slate-600 text-xs leading-relaxed">
                                 {item.benefit}
                               </div>
                             </div>)}
@@ -455,64 +455,64 @@ export default function MotorDetailsSheet({
               <div className="space-y-4">
                 {/* Engine Specifications */}
                 <div>
-                  <h3 className="font-semibold text-base text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                  <h3 className="font-semibold text-base text-slate-900 mb-3 flex items-center gap-2">
                     <Settings className="w-5 h-5 text-primary" />
                     Engine Specifications
                   </h3>
-                  <div className="bg-slate-50 dark:bg-slate-800 rounded-lg divide-y divide-gray-200 dark:divide-gray-600">
+                  <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Engine Type</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{generateCylinders(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
+                      <span className="text-sm font-light text-gray-600">Engine Type</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{generateCylinders(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
                     </div>
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Displacement</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{generateDisplacement(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
+                      <span className="text-sm font-light text-gray-600">Displacement</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{generateDisplacement(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
                     </div>
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Bore & Stroke</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{generateBoreStroke(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
+                      <span className="text-sm font-light text-gray-600">Bore & Stroke</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{generateBoreStroke(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
                     </div>
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Fuel System</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{generateFuelSystem(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
+                      <span className="text-sm font-light text-gray-600">Fuel System</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{generateFuelSystem(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
                     </div>
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Max RPM Range</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{motorSpecs?.max_rpm || generateRPMRange(typeof hp === 'string' ? parseInt(hp) : hp || 0)} RPM</span>
+                      <span className="text-sm font-light text-gray-600">Max RPM Range</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{motorSpecs?.max_rpm || generateRPMRange(typeof hp === 'string' ? parseInt(hp) : hp || 0)} RPM</span>
                     </div>
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Starting System</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{motor ? getStartType(motor.model) : 'Electric'}</span>
+                      <span className="text-sm font-light text-gray-600">Starting System</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{motor ? getStartType(motor.model) : 'Electric'}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Physical Specifications */}
                 <div>
-                  <h3 className="font-semibold text-base text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                  <h3 className="font-semibold text-base text-slate-900 mb-3 flex items-center gap-2">
                     <Package className="w-5 h-5 text-primary" />
                     Physical Specifications
                   </h3>
-                  <div className="bg-slate-50 dark:bg-slate-800 rounded-lg divide-y divide-gray-200 dark:divide-gray-600">
+                  <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Dry Weight</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{motorSpecs?.weight_kg ? `${Math.round(motorSpecs.weight_kg * 2.20462)} lbs` : generateWeight(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
+                      <span className="text-sm font-light text-gray-600">Dry Weight</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{motorSpecs?.weight_kg ? `${Math.round(motorSpecs.weight_kg * 2.20462)} lbs` : generateWeight(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
                     </div>
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Shaft Length</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{shaft || "Multiple options available"}</span>
+                      <span className="text-sm font-light text-gray-600">Shaft Length</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{shaft || "Multiple options available"}</span>
                     </div>
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Gear Ratio</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{motorSpecs?.gear_ratio || generateGearRatio(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
+                      <span className="text-sm font-light text-gray-600">Gear Ratio</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{motorSpecs?.gear_ratio || generateGearRatio(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
                     </div>
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Alternator Output</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{generateAlternator(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
+                      <span className="text-sm font-light text-gray-600">Alternator Output</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{generateAlternator(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
                     </div>
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Trim System</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{(() => {
+                      <span className="text-sm font-light text-gray-600">Trim System</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{(() => {
                         const decoded = decodeModelName(motor?.model || title);
                         return decoded.find(d => d.code === 'PT') ? "Power Trim & Tilt" : "Manual Tilt";
                       })()}</span>
@@ -522,48 +522,48 @@ export default function MotorDetailsSheet({
 
                 {/* Performance Data */}
                 <div>
-                  <h3 className="font-semibold text-base text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                  <h3 className="font-semibold text-base text-slate-900 mb-3 flex items-center gap-2">
                     <Gauge className="w-5 h-5 text-primary" />
                     Performance Estimates
                   </h3>
-                  <div className="bg-slate-50 dark:bg-slate-800 rounded-lg divide-y divide-gray-200 dark:divide-gray-600">
+                  <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Recommended Boat Size</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{getRecommendedBoatSize(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
+                      <span className="text-sm font-light text-gray-600">Recommended Boat Size</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{getRecommendedBoatSize(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
                     </div>
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Estimated Top Speed</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{getEstimatedSpeed(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
+                      <span className="text-sm font-light text-gray-600">Estimated Top Speed</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{getEstimatedSpeed(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
                     </div>
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Fuel Consumption</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{getFuelConsumption(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
+                      <span className="text-sm font-light text-gray-600">Fuel Consumption</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{getFuelConsumption(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
                     </div>
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Sound Level</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{getSoundLevel(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
+                      <span className="text-sm font-light text-gray-600">Sound Level</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{getSoundLevel(typeof hp === 'string' ? parseInt(hp) : hp || 0)}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Requirements */}
                 <div>
-                  <h3 className="font-semibold text-base text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                  <h3 className="font-semibold text-base text-slate-900 mb-3 flex items-center gap-2">
                     <AlertCircleIcon className="w-5 h-5 text-primary" />
                     Requirements
                   </h3>
-                  <div className="bg-slate-50 dark:bg-slate-800 rounded-lg divide-y divide-gray-200 dark:divide-gray-600">
+                  <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Battery</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{motor ? getBatteryRequirement(motor) : 'Required'}</span>
+                      <span className="text-sm font-light text-gray-600">Battery</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{motor ? getBatteryRequirement(motor) : 'Required'}</span>
                     </div>
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Recommended Fuel</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{motor ? getFuelRequirement(motor) : 'Unleaded 87 octane'}</span>
+                      <span className="text-sm font-light text-gray-600">Recommended Fuel</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{motor ? getFuelRequirement(motor) : 'Unleaded 87 octane'}</span>
                     </div>
                     <div className="flex justify-between items-center py-3 px-4">
-                      <span className="text-sm font-light text-gray-600 dark:text-gray-400">Oil Type</span>
-                      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{motor ? getOilRequirement(motor) : 'Mercury 4-stroke marine oil'}</span>
+                      <span className="text-sm font-light text-gray-600">Oil Type</span>
+                      <span className="text-sm text-gray-900 font-medium text-right">{motor ? getOilRequirement(motor) : 'Mercury 4-stroke marine oil'}</span>
                     </div>
                   </div>
                 </div>
@@ -571,7 +571,7 @@ export default function MotorDetailsSheet({
 
               {/* Key Features Section */}
               <div className="space-y-4">
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                <h2 className="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2">
                   Key Features
                 </h2>
                 
@@ -583,8 +583,8 @@ export default function MotorDetailsSheet({
                       if (categoryFeatures.length === 0) return null;
                       
                       return (
-                        <div key={category} className="bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-750 p-4 rounded-lg border border-slate-200 dark:border-slate-700">
-                          <h3 className="font-semibold text-slate-900 dark:text-white mb-3 text-sm uppercase tracking-wide">
+                        <div key={category} className="bg-gradient-to-r from-slate-50 to-slate-100 p-4 rounded-lg border border-slate-200">
+                          <h3 className="font-semibold text-slate-900 mb-3 text-sm uppercase tracking-wide">
                             {category}
                           </h3>
                           <div className="space-y-3">
@@ -600,14 +600,14 @@ export default function MotorDetailsSheet({
                               };
                               
                               return (
-                                <div key={index} className="bg-white dark:bg-slate-800 p-3 rounded-md border border-slate-200 dark:border-slate-600">
+                                <div key={index} className="bg-white p-3 rounded-md border border-slate-200">
                                   <div className="flex items-start gap-3">
                                     <span className="text-lg flex-shrink-0">{getFeatureIcon(feature.icon)}</span>
                                     <div>
-                                      <h4 className="font-medium text-slate-900 dark:text-white text-sm mb-1">
+                                      <h4 className="font-medium text-slate-900 text-sm mb-1">
                                         {feature.title}
                                       </h4>
-                                      <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                      <p className="text-xs text-slate-600 leading-relaxed">
                                         {feature.description}
                                       </p>
                                     </div>
@@ -623,8 +623,8 @@ export default function MotorDetailsSheet({
                 )}
 
                 {/* Technical Specifications */}
-                <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
-                  <h3 className="font-semibold text-slate-900 dark:text-white mb-3 text-sm uppercase tracking-wide">
+                <div className="bg-slate-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-slate-900 mb-3 text-sm uppercase tracking-wide">
                     Technical Specifications
                   </h3>
                   <ul className="text-sm grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
@@ -632,62 +632,62 @@ export default function MotorDetailsSheet({
                      {motorSpecs && <>
                        <li className="flex items-start">
                          <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
-                         <span className="text-slate-700 dark:text-slate-300">Fuel System: {motorSpecs.fuel_system}</span>
+                         <span className="text-slate-700">Fuel System: {motorSpecs.fuel_system}</span>
                        </li>
                        <li className="flex items-start">
                          <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
-                         <span className="text-slate-700 dark:text-slate-300">Alternator: {motorSpecs.alternator}</span>
+                         <span className="text-slate-700">Alternator: {motorSpecs.alternator}</span>
                        </li>
                        <li className="flex items-start">
                          <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
-                         <span className="text-slate-700 dark:text-slate-300">Starting: {motorSpecs.starting}</span>
+                         <span className="text-slate-700">Starting: {motorSpecs.starting}</span>
                        </li>
                        <li className="flex items-start">
                          <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
-                         <span className="text-slate-700 dark:text-slate-300">Steering: {motorSpecs.steering}</span>
+                         <span className="text-slate-700">Steering: {motorSpecs.steering}</span>
                        </li>
-                       {/* Enhanced shaft length display for high HP motors */}
+...
                        {(() => {
-                         const motorHP = typeof hp === 'string' ? parseInt(hp) : hp || 0;
-                         const titleUpper = (title || '').toUpperCase();
-                         let shaftInfo = '';
-                         
-                         if (motorHP >= 115) {
-                           // Check for shaft codes in high HP motor names
-                           if (titleUpper.includes('XXL')) {
-                             shaftInfo = 'Extra Extra Long Shaft 30"';
-                           } else if (titleUpper.includes('XL')) {
-                             shaftInfo = 'Extra Long Shaft 25"';
-                           } else if (titleUpper.includes('L') || titleUpper.match(/\d+L\b/)) {
-                             shaftInfo = 'Long Shaft 20"';
-                           }
-                         } else if (shaft) {
-                           shaftInfo = shaft;
-                         }
-                         
-                         return shaftInfo ? (
-                           <li className="flex items-start">
-                             <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
-                             <span className="text-slate-700 dark:text-slate-300">Shaft Length: {shaftInfo}</span>
-                           </li>
-                         ) : null;
-                       })()}
+                          const motorHP = typeof hp === 'string' ? parseInt(hp) : hp || 0;
+                          const titleUpper = (title || '').toUpperCase();
+                          let shaftInfo = '';
+                          
+                          if (motorHP >= 115) {
+                            // Check for shaft codes in high HP motor names
+                            if (titleUpper.includes('XXL')) {
+                              shaftInfo = 'Extra Extra Long Shaft 30"';
+                            } else if (titleUpper.includes('XL')) {
+                              shaftInfo = 'Extra Long Shaft 25"';
+                            } else if (titleUpper.includes('L') || titleUpper.match(/\d+L\b/)) {
+                              shaftInfo = 'Long Shaft 20"';
+                            }
+                          } else if (shaft) {
+                            shaftInfo = shaft;
+                          }
+                          
+                          return shaftInfo ? (
+                            <li className="flex items-start">
+                              <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
+                              <span className="text-slate-700">Shaft Length: {shaftInfo}</span>
+                            </li>
+                          ) : null;
+                        })()}
                      </>}
-                     
-                     {/* Automatic Power Trim for motors 40 HP and above */}
-                     {(() => {
-                       const motorHP = typeof hp === 'string' ? parseInt(hp) : hp || 0;
-                       return motorHP >= 40 ? (
-                         <li className="flex items-start">
-                           <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
-                           <span className="text-slate-700 dark:text-slate-300">Power Trim & Tilt: Standard on all Mercury motors 40 HP+</span>
-                         </li>
-                       ) : null;
-                     })()}
-                    {/* Original features */}
+                      
+                      {/* Automatic Power Trim for motors 40 HP and above */}
+                      {(() => {
+                        const motorHP = typeof hp === 'string' ? parseInt(hp) : hp || 0;
+                        return motorHP >= 40 ? (
+                          <li className="flex items-start">
+                            <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
+                            <span className="text-slate-700">Power Trim & Tilt: Standard on all Mercury motors 40 HP+</span>
+                          </li>
+                        ) : null;
+                      })()}
+                     {/* Original features */}
                             {displayFeatures.slice(0, 8).map((feature, i) => <li key={`${feature}-${i}`} className="flex items-center">
                               <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
-                              <span className="text-slate-700 dark:text-slate-300">{feature}</span>
+                              <span className="text-slate-700">{feature}</span>
                             </li>)}
                   </ul>
                 </div>
@@ -695,18 +695,18 @@ export default function MotorDetailsSheet({
 
               {/* What's Included Section */}
               <div className="space-y-4">
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                <h2 className="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2">
                   What's Included
                 </h2>
-                <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 p-4 rounded-lg">
-                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Physical items included with your motor purchase:</p>
+                <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                  <p className="text-sm text-slate-600 mb-3">Physical items included with your motor purchase:</p>
                   <ul className="text-sm grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1">
                     {includedAccessories.length > 0 ? includedAccessories.map((accessory, i) => <li key={`acc-${i}`} className="flex items-center">
-                        <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 flex-shrink-0" />
-                        <span className="text-slate-700 dark:text-slate-300">{accessory}</span>
+                        <CheckCircle className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
+                        <span className="text-slate-700">{accessory}</span>
                       </li>) : <li className="flex items-center">
-                        <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400 mr-2 flex-shrink-0" />
-                        <span className="text-slate-700 dark:text-slate-300">Owner's manual & warranty documentation</span>
+                        <CheckCircle className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
+                        <span className="text-slate-700">Owner's manual & warranty documentation</span>
                       </li>}
                   </ul>
                 </div>
@@ -714,10 +714,10 @@ export default function MotorDetailsSheet({
 
               {/* Installation Requirements Section */}
               <div className="space-y-4">
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                <h2 className="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2">
                   Installation Requirements
                 </h2>
-                <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-4 rounded-lg">
+                <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg">
                   <ul className="text-sm space-y-1">
                     {/* Use parsed model code for required transom height */}
                     {hp && (() => {
@@ -727,10 +727,10 @@ export default function MotorDetailsSheet({
                       if (shaftInfo) {
                         return (
                           <li className="flex items-center">
-                            <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 flex-shrink-0" />
-                            <div className="flex-1 text-slate-700 dark:text-slate-300">
+                            <AlertTriangle className="w-4 h-4 text-amber-600 mr-2 flex-shrink-0" />
+                            <div className="flex-1 text-slate-700">
                               <span className="font-medium">Required Transom Height</span>
-                              <span className="text-slate-500 dark:text-slate-400 ml-2">({shaftInfo.meaning})</span>
+                              <span className="text-slate-500 ml-2">({shaftInfo.meaning})</span>
                             </div>
                           </li>
                         );
@@ -740,28 +740,28 @@ export default function MotorDetailsSheet({
                     
                     {motorSpecs && (
                         <li className="flex items-center">
-                          <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 flex-shrink-0" />
-                          <div className="flex-1 text-slate-700 dark:text-slate-300">
+                          <AlertTriangle className="w-4 h-4 text-amber-600 mr-2 flex-shrink-0" />
+                          <div className="flex-1 text-slate-700">
                             <span className="font-medium">Weight</span>
-                            <span className="text-slate-500 dark:text-slate-400 ml-2">({motorSpecs.weight_kg} kg dry weight)</span>
+                            <span className="text-slate-500 ml-2">({motorSpecs.weight_kg} kg dry weight)</span>
                           </div>
                         </li>
                     )}
                     {additionalRequirements.map((requirement, i) => <li key={`req-${i}`} className="flex items-center">
-                        <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mr-2 flex-shrink-0" />
-                        <div className="flex-1 text-slate-700 dark:text-slate-300">
+                        <AlertTriangle className="w-4 h-4 text-amber-600 mr-2 flex-shrink-0" />
+                        <div className="flex-1 text-slate-700">
                           <span className="font-medium">{requirement.item}</span>
-                          <span className="text-slate-500 dark:text-slate-400 ml-2">({requirement.cost})</span>
+                          <span className="text-slate-500 ml-2">({requirement.cost})</span>
                         </div>
                       </li>)}
-                    {!motorSpecs && additionalRequirements.length === 0 && <li className="text-slate-600 dark:text-slate-400">Standard installation requirements apply. Our certified technicians will handle all setup.</li>}
+                    {!motorSpecs && additionalRequirements.length === 0 && <li className="text-slate-600">Standard installation requirements apply. Our certified technicians will handle all setup.</li>}
                   </ul>
                 </div>
               </div>
 
               {/* Controls & Installation Notice */}
               {motor && <div className="space-y-4">
-                  <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2">
+                  <h2 className="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2">
                     Controls & Installation
                   </h2>
                   {requiresMercuryControls(motor) ? <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 p-4 rounded-lg">

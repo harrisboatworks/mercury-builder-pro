@@ -96,7 +96,7 @@ export function MotorDetailsImageSection({ motor, gallery, img, title }: MotorDe
 
   if (loading) {
     return (
-      <div className="text-center text-slate-500 dark:text-slate-400 py-12">
+      <div className="text-center text-slate-500 py-12">
         Loading images...
       </div>
     );
@@ -112,7 +112,7 @@ export function MotorDetailsImageSection({ motor, gallery, img, title }: MotorDe
   }
 
   return (
-    <div className="text-center text-slate-500 dark:text-slate-400 py-12">
+    <div className="text-center text-slate-500 py-12">
       No images available
     </div>
   );

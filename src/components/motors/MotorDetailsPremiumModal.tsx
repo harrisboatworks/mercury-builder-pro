@@ -95,8 +95,8 @@ export default function MotorDetailsPremiumModal({
   // Component for consistent spec row formatting
   const SpecRow = ({ label, value }: { label: string; value: string }) => (
     <div className="flex justify-between items-center py-3 px-4">
-      <span className="text-sm font-light text-gray-600 dark:text-gray-400">{label}</span>
-      <span className="text-sm text-gray-900 dark:text-gray-100 font-medium text-right">{value}</span>
+      <span className="text-sm font-light text-gray-600">{label}</span>
+      <span className="text-sm text-gray-900 font-medium text-right">{value}</span>
     </div>
   );
 
@@ -233,7 +233,7 @@ export default function MotorDetailsPremiumModal({
       
       {/* Modal Container - TWO COLUMN LAYOUT (60/40) */}
       <div className="absolute inset-0 flex items-end sm:items-center justify-center sm:p-4">
-        <div className="relative bg-white dark:bg-slate-800 w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-xl 
+        <div className="relative bg-white w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-xl 
           lg:grid lg:grid-cols-[60fr_40fr] lg:max-w-6xl 
           flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-500">
           
@@ -241,11 +241,11 @@ export default function MotorDetailsPremiumModal({
           <div className="flex-1 overflow-hidden flex flex-col">
             <Tabs defaultValue="overview" className="w-full h-full flex flex-col">
               {/* Mobile/Tablet Header */}
-              <div className="lg:hidden sticky top-0 z-40 bg-white dark:bg-slate-800 shadow-sm">
-                <div className="p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-800">
+              <div className="lg:hidden sticky top-0 z-40 bg-white shadow-sm">
+                <div className="p-4 sm:p-6 border-b border-gray-200 bg-white">
                   <button 
                     onClick={onClose} 
-                    className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-100 transition-colors rounded-full" 
+                    className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full" 
                     aria-label="Close"
                   >
                     <X className="w-5 h-5" />
@@ -254,7 +254,7 @@ export default function MotorDetailsPremiumModal({
                   {/* Flexbox Column Layout - prevents overlap */}
                   <div className="flex flex-col space-y-4 pr-12">
                     {/* Motor Name - full line with proper spacing */}
-                    <h2 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 leading-tight">
+                    <h2 className="text-lg font-light tracking-wide text-gray-900 leading-tight">
                       {title}
                     </h2>
                     
@@ -264,28 +264,28 @@ export default function MotorDetailsPremiumModal({
                 </div>
                 
                 {/* 3. Tabs - separate section below name */}
-                <TabsList className="w-full justify-start border-b border-gray-200 dark:border-gray-700 rounded-none bg-white dark:bg-slate-800 p-0 h-auto">
+                <TabsList className="w-full justify-start border-b border-gray-200 rounded-none bg-white p-0 h-auto">
                   <TabsTrigger 
                     value="overview" 
-                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black dark:data-[state=active]:border-white rounded-none font-light px-4 py-3 dark:text-gray-300"
+                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-4 py-3"
                   >
                     Overview
                   </TabsTrigger>
                   <TabsTrigger 
                     value="specs"
-                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black dark:data-[state=active]:border-white rounded-none font-light px-4 py-3 dark:text-gray-300"
+                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-4 py-3"
                   >
                     Specs
                   </TabsTrigger>
                   <TabsTrigger 
                     value="included"
-                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black dark:data-[state=active]:border-white rounded-none font-light px-4 py-3 dark:text-gray-300"
+                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-4 py-3"
                   >
                     Included
                   </TabsTrigger>
                   <TabsTrigger 
                     value="resources"
-                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black dark:data-[state=active]:border-white rounded-none font-light px-4 py-3 dark:text-gray-300"
+                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-4 py-3"
                   >
                     Resources
                   </TabsTrigger>
@@ -293,11 +293,11 @@ export default function MotorDetailsPremiumModal({
               </div>
 
               {/* Desktop Header */}
-              <div className="hidden lg:block sticky top-0 z-40 bg-white dark:bg-slate-800 shadow-sm">
-                <div className="p-6 pb-0 border-b border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800">
+              <div className="hidden lg:block sticky top-0 z-40 bg-white shadow-sm">
+                <div className="p-6 pb-0 border-b border-gray-100 bg-white">
                   <button 
                     onClick={onClose} 
-                    className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-100 transition-colors rounded-full z-50" 
+                    className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full z-50" 
                     aria-label="Close"
                   >
                     <X className="w-5 h-5" />
@@ -306,7 +306,7 @@ export default function MotorDetailsPremiumModal({
                   {/* Flexbox Column Layout - crystal clear hierarchy */}
                   <div className="flex flex-col space-y-5 pr-12">
                     {/* Motor Name - 20px margin below (space-y-5) */}
-                    <h2 className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100 leading-tight">
+                    <h2 className="text-2xl font-light tracking-wide text-gray-900 leading-tight">
                       {title}
                     </h2>
                     
@@ -316,28 +316,28 @@ export default function MotorDetailsPremiumModal({
                 </div>
                 
                 {/* 3. Tabs - new line, clear separation */}
-                <TabsList className="w-full justify-start border-b border-gray-100 dark:border-gray-700 rounded-none bg-white dark:bg-slate-800 p-0 h-auto mt-5">
+                <TabsList className="w-full justify-start border-b border-gray-100 rounded-none bg-white p-0 h-auto mt-5">
                   <TabsTrigger 
                     value="overview" 
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black dark:data-[state=active]:border-white rounded-none font-light px-6 py-4 dark:text-gray-300"
+                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-6 py-4"
                   >
                     Overview
                   </TabsTrigger>
                   <TabsTrigger 
                     value="specs"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black dark:data-[state=active]:border-white rounded-none font-light px-6 py-4 dark:text-gray-300"
+                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-6 py-4"
                   >
                     Specs
                   </TabsTrigger>
                   <TabsTrigger 
                     value="included"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black dark:data-[state=active]:border-white rounded-none font-light px-6 py-4 dark:text-gray-300"
+                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-6 py-4"
                   >
                     Included
                   </TabsTrigger>
                   <TabsTrigger 
                     value="resources"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black dark:data-[state=active]:border-white rounded-none font-light px-6 py-4 dark:text-gray-300"
+                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-6 py-4"
                   >
                     Resources
                   </TabsTrigger>
@@ -350,7 +350,7 @@ export default function MotorDetailsPremiumModal({
                   {/* OVERVIEW TAB */}
                   <TabsContent value="overview" className="space-y-8 mt-4">
                     {/* Enhanced Image Gallery - 40% larger */}
-                    <div className="pt-10 pb-6 bg-gradient-to-b from-stone-50 to-white dark:from-slate-700 dark:to-slate-800 rounded-lg">
+                    <div className="pt-10 pb-6 bg-gradient-to-b from-stone-50 to-white rounded-lg">
                       <MotorImageGallery 
                         images={gallery.length > 0 ? gallery : (img ? [img] : [])} 
                         motorTitle={title}
@@ -363,7 +363,7 @@ export default function MotorDetailsPremiumModal({
                     {includedAccessories.length > 0 && (
                       <ul className="space-y-2.5">
                         {includedAccessories.map((item, idx) => (
-                          <li key={idx} className="flex items-center gap-3 text-base text-gray-700 dark:text-gray-200">
+                          <li key={idx} className="flex items-center gap-3 text-base text-gray-700">
                             <span className="text-green-600 text-lg leading-none">✓</span>
                             <span className="font-light">{item}</span>
                           </li>
@@ -374,14 +374,14 @@ export default function MotorDetailsPremiumModal({
                     {/* Key Features - Top 4 only */}
                     {features.length > 0 && (
                       <div className="space-y-4">
-                        <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100">
+                        <h3 className="text-lg font-light tracking-wide text-gray-900">
                           Key Features
                         </h3>
                         <ul className="space-y-3">
                           {features.slice(0, 4).map((feature, idx) => (
                             <li key={idx} className="flex items-start gap-3">
                               <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                              <span className="text-sm font-light text-gray-700 dark:text-gray-300">{feature}</span>
+                              <span className="text-sm font-light text-gray-700">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -390,18 +390,18 @@ export default function MotorDetailsPremiumModal({
                     
                     {/* Customer Review */}
                     {smartReview && (
-                      <div className="border-t border-gray-100 dark:border-gray-700 pt-6">
-                        <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4">
+                      <div className="border-t border-gray-100 pt-6">
+                        <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4">
                           Customer Review
                         </h3>
                         <div className="space-y-3">
                           <div className="flex items-center gap-1 text-yellow-500 text-sm">
                             <span>★★★★★</span>
                           </div>
-                          <blockquote className="text-sm font-light italic text-gray-700 dark:text-gray-300 pl-4 border-l-2 border-gray-200 dark:border-gray-600">
+                          <blockquote className="text-sm font-light italic text-gray-700 pl-4 border-l-2 border-gray-200">
                             "{smartReview.comment}"
                           </blockquote>
-                          <footer className="text-xs text-gray-500 dark:text-gray-400">
+                          <footer className="text-xs text-gray-500">
                             — {smartReview.reviewer}, {smartReview.location}
                           </footer>
                         </div>
@@ -443,12 +443,12 @@ export default function MotorDetailsPremiumModal({
                     <ScrollArea className="h-[550px]">
                       <div className="p-6 pt-8 pb-12 space-y-8">
                         {/* Engine Specifications */}
-                        <div>
-                      <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+                    <div>
+                      <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4 flex items-center gap-2">
                         <Settings className="w-5 h-5 text-primary" />
                         Engine Specifications
                       </h3>
-                      <div className="bg-slate-50 dark:bg-slate-700 rounded-lg divide-y divide-gray-200 dark:divide-gray-600">
+                      <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
                         <SpecRow label="Engine Type" value={generateCylinders(hpValue)} />
                         <SpecRow label="Displacement" value={generateDisplacement(hpValue)} />
                         <SpecRow label="Bore & Stroke" value={generateBoreStroke(hpValue)} />
@@ -460,46 +460,33 @@ export default function MotorDetailsPremiumModal({
 
                     {/* Physical Specifications */}
                     <div>
-                      <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+                      <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4 flex items-center gap-2">
                         <Package className="w-5 h-5 text-primary" />
                         Physical Specifications
                       </h3>
-                      <div className="bg-slate-50 dark:bg-slate-700 rounded-lg divide-y divide-gray-200 dark:divide-gray-600">
-                        <SpecRow 
-                          label="Dry Weight" 
-                          value={motorSpecs?.weight_kg ? `${Math.round(motorSpecs.weight_kg * 2.20462)} lbs` : generateWeight(hpValue)} 
-                        />
-                        <SpecRow label="Shaft Length" value={shaft || "Multiple options available"} />
-                        <SpecRow label="Gear Ratio" value={motorSpecs?.gear_ratio || generateGearRatio(hpValue)} />
-                        <SpecRow label="Alternator Output" value={generateAlternator(hpValue)} />
-                        <SpecRow 
-                          label="Trim System" 
-                          value={decoded.find(d => d.code === 'PT') ? "Power Trim & Tilt" : "Manual Tilt"} 
-                        />
+                      <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
+...
                       </div>
                     </div>
 
                     {/* Performance Data */}
                     <div>
-                      <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+                      <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4 flex items-center gap-2">
                         <Gauge className="w-5 h-5 text-primary" />
                         Performance Estimates
                       </h3>
-                      <div className="bg-slate-50 dark:bg-slate-700 rounded-lg divide-y divide-gray-200 dark:divide-gray-600">
-                        <SpecRow label="Recommended Boat Size" value={getRecommendedBoatSize(hpValue)} />
-                        <SpecRow label="Estimated Top Speed" value={getEstimatedSpeed(hpValue)} />
-                        <SpecRow label="Fuel Consumption" value={getFuelConsumption(hpValue)} />
-                        <SpecRow label="Sound Level" value={getSoundLevel(hpValue)} />
+                      <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
+...
                       </div>
                     </div>
 
                         {/* Requirements */}
                         <div>
-                          <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+                          <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4 flex items-center gap-2">
                             <AlertCircle className="w-5 h-5 text-primary" />
                             Requirements
                           </h3>
-                          <div className="bg-slate-50 dark:bg-slate-700 rounded-lg divide-y divide-gray-200 dark:divide-gray-600">
+                          <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
                             <SpecRow label="Battery" value={getBatteryRequirement(motor)} />
                             <SpecRow label="Recommended Fuel" value={getFuelRequirement(motor)} />
                             <SpecRow label="Oil Type" value={getOilRequirement(motor)} />
@@ -508,41 +495,41 @@ export default function MotorDetailsPremiumModal({
                       </div>
                     </ScrollArea>
                     {/* Subtle fade indicator for scrolling */}
-                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white dark:from-slate-800 to-transparent pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent pointer-events-none" />
                   </TabsContent>
                   
                   {/* INCLUDED TAB */}
                   <TabsContent value="included" className="space-y-6 mt-0 pt-6">
                     <div>
-                      <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4">
+                      <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4">
                         What's Included
                       </h3>
                       <ul className="space-y-2">
                         {includedAccessories.map((item, idx) => (
                           <li key={idx} className="flex items-center gap-3 text-left">
                             <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                            <span className="text-sm font-light text-gray-700 dark:text-gray-300 flex-1">{item}</span>
+                            <span className="text-sm font-light text-gray-700 flex-1">{item}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                     
                     {/* Warranty Info */}
-                    <div className="border-t border-gray-100 dark:border-gray-700 pt-6">
-                      <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4">
+                    <div className="border-t border-gray-100 pt-6">
+                      <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4">
                         Warranty Coverage
                       </h3>
                       <div className="space-y-3">
                         <div className="flex items-center gap-3 text-left">
                           <Shield className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                          <span className="text-sm font-light text-gray-700 dark:text-gray-300 flex-1">
+                          <span className="text-sm font-light text-gray-700 flex-1">
                             3-Year Mercury Factory Warranty
                           </span>
                         </div>
                         {activePromotions.some(p => p.warranty_extra_years) && (
                           <div className="flex items-center gap-3 text-left">
                             <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                            <span className="text-sm font-light text-gray-700 dark:text-gray-300 flex-1">
+                            <span className="text-sm font-light text-gray-700 flex-1">
                               +2 Year Extended Coverage (Promotional)
                             </span>
                           </div>
@@ -558,7 +545,7 @@ export default function MotorDetailsPremiumModal({
                         {/* Documents Section */}
                         {motor?.id && (
                           <div>
-                            <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4">
+                            <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4">
                               Downloads & Documentation
                             </h3>
                             <MotorDocumentsSection motorId={motor.id} />
@@ -566,11 +553,11 @@ export default function MotorDetailsPremiumModal({
                         )}
                         
                         {/* Quick Actions */}
-                        <div className="border-t border-gray-100 dark:border-gray-700 pt-6">
+                        <div className="border-t border-gray-100 pt-6">
                           <button
                             onClick={handleGenerateSpecSheet}
                             disabled={specSheetLoading}
-                            className="w-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 py-3 px-4 text-sm font-light rounded-sm hover:bg-stone-50 dark:hover:bg-slate-700 transition-all duration-300 flex items-center justify-center gap-2"
+                            className="w-full border border-gray-300 text-gray-700 py-3 px-4 text-sm font-light rounded-sm hover:bg-stone-50 transition-all duration-300 flex items-center justify-center gap-2"
                           >
                             <Download className="w-4 h-4" />
                             {specSheetLoading ? 'Generating...' : 'Download Spec Sheet'}
@@ -579,8 +566,8 @@ export default function MotorDetailsPremiumModal({
                         
                         {/* Videos Section */}
                         {motor?.id && (
-                          <div className="border-t border-gray-100 dark:border-gray-700 pt-6">
-                            <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 mb-4">
+                          <div className="border-t border-gray-100 pt-6">
+                            <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4">
                               Videos & Demonstrations
                             </h3>
                             <MotorVideosSection 
@@ -592,7 +579,7 @@ export default function MotorDetailsPremiumModal({
                       </div>
                     </ScrollArea>
                     {/* Subtle fade indicator for scrolling */}
-                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white dark:from-slate-800 to-transparent pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent pointer-events-none" />
                   </TabsContent>
                 </div>
               </div>
@@ -600,44 +587,44 @@ export default function MotorDetailsPremiumModal({
           </div>
 
           {/* RIGHT COLUMN: Sticky Pricing Card (Desktop Only) */}
-          <div className="hidden lg:block border-l border-gray-200 dark:border-gray-700">
+          <div className="hidden lg:block border-l border-gray-200">
             <div className="sticky top-0 p-6 space-y-6 max-h-[90vh] overflow-y-auto">
               {/* Motor Name & Thumbnail */}
               <div>
-                <h3 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100">
+                <h3 className="text-lg font-light tracking-wide text-gray-900">
                   {title}
                 </h3>
                 <img 
                   src={img || gallery?.[0]} 
                   alt={title}
-                  className="w-full h-32 object-contain mt-4 rounded-lg bg-stone-50 dark:bg-slate-700"
+                  className="w-full h-32 object-contain mt-4 rounded-lg bg-stone-50"
                 />
               </div>
               
               {/* Price Display */}
-              <div className="border-t border-gray-100 dark:border-gray-700 pt-6">
-                <p className="text-[10px] tracking-[0.15em] uppercase text-gray-400 dark:text-gray-500 font-light mb-2">
+              <div className="border-t border-gray-100 pt-6">
+                <p className="text-[10px] tracking-[0.15em] uppercase text-gray-400 font-light mb-2">
                   from
                 </p>
                 {msrp && typeof msrp === "number" && msrp !== price && (
-                  <p className="text-base text-gray-400 dark:text-gray-500 font-light line-through">
+                  <p className="text-base text-gray-400 font-light line-through">
                     {money(msrp)}
                   </p>
                 )}
-                <p className="text-5xl font-light tracking-tight text-gray-900 dark:text-gray-100 mt-1">
+                <p className="text-5xl font-light tracking-tight text-gray-900 mt-1">
                   {typeof price === "number" ? money(price) : 'Call for Price'}
                 </p>
                 {msrp && price && msrp > price && (
-                  <p className="text-sm text-red-600 dark:text-red-400 mt-2 font-light">
+                  <p className="text-sm text-red-600 mt-2 font-light">
                     SAVE {money(msrp - price)}
                   </p>
                 )}
               </div>
               
               {/* Key Spec Badges - All Features */}
-              <div className="flex flex-wrap gap-2 border-t border-gray-100 dark:border-gray-700 pt-6">
+              <div className="flex flex-wrap gap-2 border-t border-gray-100 pt-6">
                 {/* HP Badge - Always shown first */}
-                <span className="px-3 py-1 bg-stone-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-light rounded-full">
+                <span className="px-3 py-1 bg-stone-100 text-gray-700 text-xs font-light rounded-full">
                   {hp} HP
                 </span>
                 
@@ -668,7 +655,7 @@ export default function MotorDetailsPremiumModal({
                   return decoded.map((feature, idx) => (
                     <span 
                       key={`${feature.code}-${idx}`}
-                      className="px-3 py-1 bg-stone-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-light rounded-full"
+                      className="px-3 py-1 bg-stone-100 text-gray-700 text-xs font-light rounded-full"
                     >
                       {shortenMeaning(feature.meaning)}
                     </span>
@@ -690,14 +677,14 @@ export default function MotorDetailsPremiumModal({
               {/* Calculate Payment Link */}
               <button
                 onClick={handleCalculatePayment}
-                className="w-full flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-gray-200 font-light transition-colors"
+                className="w-full flex items-center justify-center gap-2 text-sm text-gray-600 hover:text-black font-light transition-colors"
               >
                 <Calculator className="w-4 h-4" />
                 Calculate Payment
               </button>
               
               {/* Promo Badges */}
-              <div className="space-y-2 border-t border-gray-100 dark:border-gray-700 pt-6">
+              <div className="space-y-2 border-t border-gray-100 pt-6">
                 {(() => {
                   const warrantyPromo = activePromotions.find(p => p.warranty_extra_years && p.warranty_extra_years > 0);
                   if (!warrantyPromo) return null;
@@ -706,14 +693,14 @@ export default function MotorDetailsPremiumModal({
                   const totalCoverage = standardWarranty + warrantyPromo.warranty_extra_years;
                   
                   return (
-                    <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 font-light">
+                    <div className="flex items-center gap-2 text-xs text-gray-600 font-light">
                       <Gift className="w-4 h-4" />
                       <span>{totalCoverage}-Year Total Coverage</span>
                     </div>
                   );
                 })()}
                 {activePromo && (
-                  <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 font-light">
+                  <div className="flex items-center gap-2 text-xs text-gray-600 font-light">
                     <BarChart3 className="w-4 h-4" />
                     <span>{activePromo.rate}% APR Available</span>
                   </div>
@@ -723,17 +710,17 @@ export default function MotorDetailsPremiumModal({
           </div>
 
           {/* Mobile: Fixed Bottom Pricing Bar */}
-          <div className="lg:hidden sticky bottom-0 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-800 p-4">
+          <div className="lg:hidden sticky bottom-0 border-t border-gray-200 bg-white p-4">
             <div className="flex items-center justify-between gap-4">
               {/* Compact Price Display */}
               <div>
-                <p className="text-lg font-light text-gray-900 dark:text-gray-100">
+                <p className="text-lg font-light text-gray-900">
                   {typeof price === "number" ? money(price) : 'Call'}
                 </p>
                 {typeof price === "number" && (
                   <button
                     onClick={handleCalculatePayment}
-                    className="mt-1 flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-400 font-light hover:text-gray-900 dark:hover:text-gray-200 underline decoration-dotted cursor-pointer transition-colors"
+                    className="mt-1 flex items-center gap-1.5 text-sm text-gray-600 font-light hover:text-gray-900 underline decoration-dotted cursor-pointer transition-colors"
                   >
                     <MonthlyPaymentDisplay motorPrice={price} />
                     <Calculator className="w-4 h-4 opacity-70" />
