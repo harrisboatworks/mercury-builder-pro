@@ -592,6 +592,16 @@ export default function MotorSelectionPage() {
               </Button>
             </div>
           )}
+          
+          {/* Financing Disclaimer */}
+          {filteredMotors.length > 0 && (
+            <div className="mt-12 pt-8 border-t border-gray-200">
+              <p className="text-xs font-light text-gray-500 text-center max-w-3xl mx-auto">
+                * Monthly payment estimates based on recommended financing term at 6.99% APR with $0 down, 
+                including HST and finance fee. Terms vary by purchase amount. Subject to credit approval.
+              </p>
+            </div>
+          )}
         </div>
         </div>
       </QuoteLayout>

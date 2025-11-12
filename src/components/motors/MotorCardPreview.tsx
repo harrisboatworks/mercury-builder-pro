@@ -11,6 +11,7 @@ import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery, decodeMod
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
+import { getFinancingTerm } from '@/lib/finance';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 export default function MotorCardPreview({ 
@@ -264,6 +265,20 @@ export default function MotorCardPreview({
   const deliveryStatus = getDeliveryStatus();
   const warrantyText = getWarrantyText();
 
+  // Calculate dynamic monthly payment estimate
+  const calculateMonthlyPayment = () => {
+    if (!price || price <= 0) return null;
+    
+    const term = getFinancingTerm(price);
+    const priceWithTax = price * 1.13; // 13% HST
+    const totalFinanced = priceWithTax + 299; // Add Dealerplan fee
+    const monthlyPayment = totalFinanced / term;
+    
+    return Math.round(monthlyPayment);
+  };
+
+  const monthlyPayment = calculateMonthlyPayment();
+
   return (
     <>
       <div 
@@ -346,6 +361,13 @@ export default function MotorCardPreview({
               <p className="text-4xl font-light tracking-tight text-gray-900 mt-1">
                 {price ? `$${price.toLocaleString()}` : 'Call for Price'}
               </p>
+              
+              {/* Monthly Payment Estimate */}
+              {monthlyPayment && (
+                <p className="text-base font-light text-gray-500 mt-2">
+                  <span className="italic">From</span> ${monthlyPayment}/month*
+                </p>
+              )}
             </div>
             
             {/* Delivery Status - Subtle with Icon */}
