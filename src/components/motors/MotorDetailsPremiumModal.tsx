@@ -219,12 +219,7 @@ export default function MotorDetailsPremiumModal({
                   
                   {/* Flexbox Column Layout - prevents overlap */}
                   <div className="flex flex-col space-y-4 pr-12">
-                    {/* 1. Step Indicator */}
-                    <div className="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 font-light">
-                      Building Your Quote • Step 1 of 3: Select Motor
-                    </div>
-                    
-                    {/* 2. Motor Name - full line with proper spacing */}
+                    {/* Motor Name - full line with proper spacing */}
                     <h2 className="text-lg font-light tracking-wide text-gray-900 dark:text-gray-100 leading-tight">
                       {title}
                     </h2>
@@ -276,12 +271,7 @@ export default function MotorDetailsPremiumModal({
                   
                   {/* Flexbox Column Layout - crystal clear hierarchy */}
                   <div className="flex flex-col space-y-5 pr-12">
-                    {/* 1. Step Indicator - 16px margin below (space-y-5 = 20px) */}
-                    <div className="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 font-light">
-                      Building Your Quote • Step 1 of 3: Select Motor
-                    </div>
-                    
-                    {/* 2. Motor Name - 20px margin below (space-y-5) */}
+                    {/* Motor Name - 20px margin below (space-y-5) */}
                     <h2 className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100 leading-tight">
                       {title}
                     </h2>

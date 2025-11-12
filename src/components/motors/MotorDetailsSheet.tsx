@@ -384,11 +384,6 @@ export default function MotorDetailsSheet({
 
             {/* Mobile/Tablet Header */}
             <div className="p-4 sm:p-6 pr-16">
-              {/* Quote Building Indicator */}
-              <div className="mb-3 text-xs uppercase tracking-widest text-gray-500 font-light">
-                Building Your Quote • Step 1 of 3: Select Motor
-              </div>
-              
               <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight">
                 {title}
               </h2>
