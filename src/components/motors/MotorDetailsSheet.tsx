@@ -23,7 +23,6 @@ import { enhanceImageUrls } from "@/lib/image-utils";
 import MotorDocumentsSection from './MotorDocumentsSection';
 import MotorVideosSection from './MotorVideosSection';
 import { FinanceCalculatorDrawer } from './FinanceCalculatorDrawer';
-import { MotorSpecBadges } from './MotorSpecBadges';
 import { StockStatusIndicator } from './StockStatusIndicator';
 import { TrustSignals } from './TrustSignals';
 
@@ -406,8 +405,6 @@ export default function MotorDetailsSheet({
                 <MotorDetailsImageSection motor={motor} gallery={gallery} img={img} title={title} />
               </div>
               
-              {/* Motor Spec Badges */}
-              <MotorSpecBadges title={title} hp={hp} />
               
               {/* Specifications Section */}
               <div className="space-y-4">

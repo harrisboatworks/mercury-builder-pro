@@ -18,7 +18,6 @@ import MotorDocumentsSection from './MotorDocumentsSection';
 import MotorVideosSection from './MotorVideosSection';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { FinanceCalculatorDrawer } from './FinanceCalculatorDrawer';
-import { MotorSpecBadges } from './MotorSpecBadges';
 import { StockStatusIndicator } from './StockStatusIndicator';
 import { TrustSignals } from './TrustSignals';
 
@@ -335,8 +334,6 @@ export default function MotorDetailsPremiumModal({
                       />
                     </div>
                     
-                    {/* Motor Spec Badges */}
-                    <MotorSpecBadges title={title} hp={hp} />
                     
                     {/* What's Included - Simple Checklist */}
                     {includedAccessories.length > 0 && (
