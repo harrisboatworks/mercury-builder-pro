@@ -40,6 +40,7 @@ import FinanceCalculator from "./pages/FinanceCalculator";
 import StagingImageSizing from "./pages/StagingImageSizing";
 import StagingImageSizingV2 from "./pages/StagingImageSizingV2";
 import StagingImageSizingFinal from "./pages/StagingImageSizingFinal";
+import Accessories from "./pages/Accessories";
 import TestEmail from "./pages/TestEmail";
 import TestFinancingEmails from "./pages/TestFinancingEmails";
 // Removed obsolete test pricing imports
@@ -289,6 +290,9 @@ function AnimatedRoutes() {
         <Route path="/financing/apply" element={<FinancingApplication />} />
         <Route path="/financing/resume" element={<FinancingResume />} />
         <Route path="/financing/success" element={<FinancingSuccess />} />
+        
+        {/* Accessories Page */}
+        <Route path="/accessories" element={<Accessories />} />
         
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />

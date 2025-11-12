@@ -178,18 +178,18 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
       <nav className="hidden md:block bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-8 h-12">
-            <Link 
-              to="/" 
-              className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
-            >
-              Engines
-            </Link>
-            <a 
-              href="#accessories" 
-              className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
-            >
-              Accessories
-            </a>
+              <Link 
+                to="/" 
+                className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+              >
+                Engines
+              </Link>
+              <Link 
+                to="/accessories" 
+                className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+              >
+                Accessories
+              </Link>
             <Link 
               to="/finance-calculator" 
               className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
