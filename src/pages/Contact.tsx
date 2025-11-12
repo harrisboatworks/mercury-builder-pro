@@ -15,6 +15,7 @@ import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { COMPANY_INFO } from '@/lib/companyInfo';
+import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { 
   Mail, 
   Phone, 
