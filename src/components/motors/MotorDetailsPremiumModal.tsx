@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle } from "lucide-react";
+import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift } from "lucide-react";
 import { supabase } from "../../integrations/supabase/client";
 import { useIsMobile } from "../../hooks/use-mobile";
 import { useScrollCoordination } from "../../hooks/useScrollCoordination";
@@ -685,12 +685,20 @@ export default function MotorDetailsPremiumModal({
               
               {/* Promo Badges */}
               <div className="space-y-2 border-t border-gray-100 dark:border-gray-700 pt-6">
-                {activePromotions.some(p => p.warranty_extra_years) && (
-                  <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 font-light">
-                    <Shield className="w-4 h-4" />
-                    <span>+2Y Warranty Included</span>
-                  </div>
-                )}
+                {(() => {
+                  const warrantyPromo = activePromotions.find(p => p.warranty_extra_years && p.warranty_extra_years > 0);
+                  if (!warrantyPromo) return null;
+                  
+                  const standardWarranty = 3; // Mercury's base warranty
+                  const totalCoverage = standardWarranty + warrantyPromo.warranty_extra_years;
+                  
+                  return (
+                    <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 font-light">
+                      <Gift className="w-4 h-4" />
+                      <span>{totalCoverage}-Year Total Coverage</span>
+                    </div>
+                  );
+                })()}
                 {activePromo && (
                   <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 font-light">
                     <BarChart3 className="w-4 h-4" />
