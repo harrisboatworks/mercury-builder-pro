@@ -20,7 +20,6 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      buffer: 'buffer/',
     },
   },
   build: {
@@ -97,11 +96,5 @@ export default defineConfig(({ mode }) => ({
       '@huggingface/transformers',
       'framer-motion',
     ],
-    esbuildOptions: {
-      target: 'es2020',
-    },
-  },
-  ssr: {
-    noExternal: ['@react-pdf/renderer'],
   },
 }));
