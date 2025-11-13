@@ -468,11 +468,23 @@ export default function QuoteSummaryPage() {
         },
         // Add accessory breakdown and trade-in
         accessoryBreakdown: accessoryBreakdown,
-        // Only include trade-in if explicitly selected AND has a valid estimated value
+        // Only include trade-in if explicitly selected AND has ALL valid fields
         ...((() => {
+          console.log('🔍 Trade-in validation check:', {
+            hasTradeIn: state.tradeInInfo?.hasTradeIn,
+            estimatedValue: state.tradeInInfo?.estimatedValue,
+            brand: state.tradeInInfo?.brand,
+            year: state.tradeInInfo?.year,
+            horsepower: state.tradeInInfo?.horsepower,
+            fullObject: state.tradeInInfo
+          });
+          
           const hasValidTradeIn = state.tradeInInfo?.hasTradeIn === true 
             && state.tradeInInfo?.estimatedValue 
-            && state.tradeInInfo.estimatedValue > 0;
+            && state.tradeInInfo.estimatedValue > 0
+            && state.tradeInInfo?.brand  // Must have brand
+            && state.tradeInInfo?.year > 0  // Must have valid year
+            && state.tradeInInfo?.horsepower > 0;  // Must have valid HP
           
           return hasValidTradeIn ? {
             tradeInValue: state.tradeInInfo.estimatedValue,
