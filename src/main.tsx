@@ -29,9 +29,8 @@ try {
   root.render(
     <QueryClientProvider client={queryClient}>
       <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
+        defaultTheme="light"
+        enableSystem={false}
         disableTransitionOnChange={false}
       >
         <App />

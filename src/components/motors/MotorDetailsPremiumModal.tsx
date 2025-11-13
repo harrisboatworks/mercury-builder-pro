@@ -33,9 +33,8 @@ import {
   generateAlternator,
 } from "../../lib/motor-spec-generators";
 import { findMotorSpecs } from "../../lib/data/mercury-motors";
-import { pdf } from '@react-pdf/renderer';
-import CleanSpecSheetPDF, { type CleanSpecSheetData } from './CleanSpecSheetPDF';
 import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
+import type { CleanSpecSheetData } from './CleanSpecSheetPDF';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import MotorDocumentsSection from './MotorDocumentsSection';
@@ -181,6 +180,10 @@ export default function MotorDetailsPremiumModal({
     setSpecSheetLoading(true);
     
     try {
+      // Dynamically import PDF libraries only when needed
+      const { pdf } = await import('@react-pdf/renderer');
+      const CleanSpecSheetPDF = (await import('./CleanSpecSheetPDF')).default;
+      
       const specData: CleanSpecSheetData = {
         motorModel: title || motor.model || 'Mercury Motor',
         horsepower: `${hp || motor.hp || ''}HP`,
@@ -216,6 +219,7 @@ export default function MotorDetailsPremiumModal({
       URL.revokeObjectURL(url);
     } catch (error) {
       console.error('Error generating spec sheet:', error);
+      alert('Unable to generate spec sheet. Please try again.');
     } finally {
       setSpecSheetLoading(false);
     }

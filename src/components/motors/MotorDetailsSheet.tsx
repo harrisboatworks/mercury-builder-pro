@@ -23,8 +23,7 @@ import {
 } from "../../lib/motor-spec-generators";
 import { MotorDetailsImageSection } from './MotorDetailsImageSection';
 import { findMotorSpecs, getMotorSpecs, type MercuryMotor } from "../../lib/data/mercury-motors";
-import { pdf } from '@react-pdf/renderer';
-import CleanSpecSheetPDF, { type CleanSpecSheetData } from './CleanSpecSheetPDF';
+import type { CleanSpecSheetData } from './CleanSpecSheetPDF';
 import { getReviewCount } from "../../lib/data/mercury-reviews";
 import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
@@ -242,6 +241,10 @@ export default function MotorDetailsSheet({
     setSpecSheetLoading(true);
     
     try {
+      // Dynamically import PDF libraries only when needed
+      const { pdf } = await import('@react-pdf/renderer');
+      const CleanSpecSheetPDF = (await import('./CleanSpecSheetPDF')).default;
+      
       // Transform motor data for the clean spec sheet
       const specData: CleanSpecSheetData = {
         motorModel: title || motor.model || 'Mercury Motor',
