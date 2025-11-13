@@ -450,6 +450,7 @@ export interface QuotePDFProps {
     monthlyPayment?: number;
     financingTerm?: number;
     financingRate?: number;
+    financingQrCode?: string;
     includesInstallation?: boolean;
   };
 }
@@ -686,19 +687,37 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             
             {/* Financing Available Section */}
             {quoteData.monthlyPayment && quoteData.financingTerm && (
-              <View style={styles.financingBox}>
-                <Text style={{ fontSize: 10, color: colors.text, marginBottom: 4, fontWeight: 'bold' }}>
-                  Financing Available
-                </Text>
-                <Text style={{ fontSize: 14, color: colors.text, marginBottom: 2, fontWeight: 'bold' }}>
-                  From ${quoteData.monthlyPayment}/month
-                </Text>
-                <Text style={{ fontSize: 9, color: colors.lightText, marginBottom: 2 }}>
-                  Over {quoteData.financingTerm} months at {quoteData.financingRate}% APR
-                </Text>
-                <Text style={{ fontSize: 8, color: colors.lightText, fontStyle: 'italic', marginTop: 4 }}>
-                  *Based on approved credit and standard financing terms
-                </Text>
+              <View style={[styles.financingBox, { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }]}>
+                {/* Left: Text Content */}
+                <View style={{ flex: 1, paddingRight: 8 }}>
+                  <Text style={{ fontSize: 10, color: colors.text, marginBottom: 4, fontWeight: 'bold' }}>
+                    Financing Available
+                  </Text>
+                  <Text style={{ fontSize: 14, color: colors.text, marginBottom: 2, fontWeight: 'bold' }}>
+                    From ${quoteData.monthlyPayment}/month
+                  </Text>
+                  <Text style={{ fontSize: 9, color: colors.lightText, marginBottom: 2 }}>
+                    Over {quoteData.financingTerm} months at {quoteData.financingRate}% APR
+                  </Text>
+                  <Text style={{ fontSize: 8, color: colors.lightText, fontStyle: 'italic', marginTop: 4 }}>
+                    *Based on approved credit and standard financing terms
+                  </Text>
+                  {quoteData.financingQrCode && (
+                    <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 6 }}>
+                      Scan to apply on your phone →
+                    </Text>
+                  )}
+                </View>
+                
+                {/* Right: QR Code */}
+                {quoteData.financingQrCode && (
+                  <View style={{ width: 70, height: 70, justifyContent: 'center', alignItems: 'center' }}>
+                    <Image
+                      src={quoteData.financingQrCode}
+                      style={{ width: 70, height: 70 }}
+                    />
+                  </View>
+                )}
               </View>
             )}
           </View>
