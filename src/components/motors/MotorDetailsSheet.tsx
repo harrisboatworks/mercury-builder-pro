@@ -240,27 +240,33 @@ export default function MotorDetailsSheet({
     setSpecSheetLoading(true);
     
     try {
-      // Call edge function to generate PDF server-side
+      // 1. Call edge function to get motor data
       const { data, error } = await supabase.functions.invoke('generate-motor-spec-sheet', {
         body: { motorId: motor.id }
       });
 
       if (error) throw error;
 
-      // Create blob from response and download
-      const blob = new Blob([data], { type: 'application/pdf' });
+      // 2. Dynamically import PDF components ONLY when button is clicked
+      const [{ pdf }, { CleanSpecSheetPDF }] = await Promise.all([
+        import('@react-pdf/renderer'),
+        import('@/components/motors/CleanSpecSheetPDF')
+      ]);
+
+      // 3. Generate PDF client-side
+      const blob = await pdf(<CleanSpecSheetPDF motorData={data} />).toBlob();
+
+      // 4. Download
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `${title.replace(/\s+/g, '-')}-Spec-Sheet.pdf`;
-      document.body.appendChild(link);
+      link.download = `${data.motorModel.replace(/\s+/g, '-')}-Specifications.pdf`;
       link.click();
-      document.body.removeChild(link);
       URL.revokeObjectURL(url);
       
-      console.log('PDF downloaded successfully');
+      console.log('Spec sheet downloaded successfully');
     } catch (error) {
-      console.error('Error generating PDF:', error);
+      console.error('Error generating spec sheet:', error);
       alert('Unable to generate spec sheet. Please try again.');
     } finally {
       setSpecSheetLoading(false);

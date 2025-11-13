@@ -57,59 +57,26 @@ serve(async (req) => {
       console.warn('Promotions fetch error:', promoError);
     }
 
-    console.log('Generating PDF for motor:', motor.model);
+    console.log('Fetching motor data for spec sheet:', motor.model);
 
-    // Generate HTML content
+    // Generate HTML content for reference
     const htmlContent = generateSpecSheetHTML(motor, promotions || []);
 
-    // Use PDF.co API to convert HTML to PDF
-    const pdfCoApiKey = Deno.env.get('PDF_CO_API_KEY');
-    
-    if (!pdfCoApiKey) {
-      console.error('PDF_CO_API_KEY not configured');
-      return new Response(
-        JSON.stringify({ error: 'PDF generation service not configured' }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 500 }
-      );
-    }
-
-    const pdfResponse = await fetch('https://api.pdf.co/v1/pdf/convert/from/html', {
-      method: 'POST',
-      headers: {
-        'x-api-key': pdfCoApiKey,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        html: htmlContent,
-        name: `Motor-Spec-${motor.model || 'Sheet'}.pdf`,
-        margins: '10mm',
-        paperSize: 'Letter',
-        orientation: 'Portrait',
+    // Return motor data and HTML as JSON for client-side PDF generation
+    return new Response(
+      JSON.stringify({
+        motorModel: motor.model || 'Motor Specifications',
+        htmlContent,
+        motor,
+        promotions: promotions || [],
       }),
-    });
-
-    const pdfResult = await pdfResponse.json();
-
-    if (!pdfResult.url) {
-      console.error('PDF.co error:', pdfResult);
-      return new Response(
-        JSON.stringify({ error: 'Failed to generate PDF', details: pdfResult }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 500 }
-      );
-    }
-
-    // Fetch the generated PDF
-    const pdfFileResponse = await fetch(pdfResult.url);
-    const pdfBlob = await pdfFileResponse.arrayBuffer();
-
-    // Return PDF as binary
-    return new Response(pdfBlob, {
-      headers: {
-        ...corsHeaders,
-        'Content-Type': 'application/pdf',
-        'Content-Disposition': `attachment; filename="Motor-Spec-${motor.model || 'Sheet'}.pdf"`,
-      },
-    });
+      { 
+        headers: { 
+          ...corsHeaders, 
+          'Content-Type': 'application/json' 
+        } 
+      }
+    );
 
   } catch (error) {
     console.error('Error generating spec sheet:', error);
