@@ -804,18 +804,6 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               )}
             </View>
 
-            {/* FINANCING BOX */}
-            {quoteData.monthlyPayment && (
-              <View style={styles.financingBox}>
-                <Text style={styles.summaryTitle}>Monthly Financing Available</Text>
-                <Text style={styles.summaryItem}>
-                  Starting from ${quoteData.monthlyPayment}/mo
-                </Text>
-                <Text style={{ fontSize: 8, color: colors.lightText, marginTop: 2 }}>
-                  OAC. Terms at checkout.
-                </Text>
-              </View>
-            )}
           </View>
         </View>
 
