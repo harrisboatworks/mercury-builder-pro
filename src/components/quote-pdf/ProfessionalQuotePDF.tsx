@@ -642,7 +642,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               )}
               
               {/* Estimated Trade Value */}
-              {quoteData.tradeInValue && quoteData.tradeInValue > 0 && (
+              {quoteData.tradeInInfo && quoteData.tradeInValue && quoteData.tradeInValue > 0 && (
                 <View style={styles.pricingRow}>
                   <Text style={styles.pricingLabel}>{formatTradeInLabel(quoteData.tradeInInfo)}</Text>
                   <Text style={[styles.pricingValue, styles.discountValue]}>
