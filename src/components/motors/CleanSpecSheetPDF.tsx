@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     padding: 12,
     marginVertical: 12,
     backgroundColor: 'transparent',
+    borderRadius: 0,
   },
   
   priceLabel: {
