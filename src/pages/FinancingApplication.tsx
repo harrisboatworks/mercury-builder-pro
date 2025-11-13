@@ -9,6 +9,7 @@ import { FinancingResumeDialog } from '@/components/financing/FinancingResumeDia
 import { FormProgressIndicator } from '@/components/financing/FormProgressIndicator';
 import { FinancingApplicationSkeleton } from '@/components/financing/FinancingApplicationSkeleton';
 import { AccessibleFormWrapper } from '@/components/financing/AccessibleFormWrapper';
+import { useToast } from '@/hooks/use-toast';
 import { Mail, ArrowLeft } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo.png';
 import '@/styles/financing-mobile.css';
@@ -55,6 +56,7 @@ export default function FinancingApplication() {
   const navigate = useNavigate();
   const { state: financingState, dispatch: financingDispatch } = useFinancing();
   const { state: quoteState } = useQuote();
+  const { toast } = useToast();
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   const [showResumeDialog, setShowResumeDialog] = useState(false);
   const [savedDraft, setSavedDraft] = useState<SavedDraft | null>(null);
@@ -118,7 +120,42 @@ export default function FinancingApplication() {
       return;
     }
 
-    // No draft found - proceed with quote pre-fill
+    // Check for URL parameters from QR code scan
+    const motorModel = searchParams.get('motorModel');
+    const motorPrice = searchParams.get('motorPrice');
+    const downPayment = searchParams.get('downPayment');
+    const tradeInValue = searchParams.get('tradeInValue');
+    const packageName = searchParams.get('packageName');
+    const fromQr = searchParams.get('fromQr') === 'true';
+
+    // Pre-fill from URL parameters if available (takes precedence over quote context)
+    if (motorModel && motorPrice) {
+      financingDispatch({
+        type: 'SET_PURCHASE_DETAILS',
+        payload: {
+          motorModel: packageName ? `${motorModel} (${packageName})` : motorModel,
+          motorPrice: parseFloat(motorPrice),
+          downPayment: parseFloat(downPayment || '0'),
+          tradeInValue: parseFloat(tradeInValue || '0'),
+          amountToFinance: Math.max(0, parseFloat(motorPrice) - parseFloat(downPayment || '0') - parseFloat(tradeInValue || '0')),
+        }
+      });
+
+      // Show confirmation toast if user came from QR code
+      if (fromQr) {
+        toast({
+          title: "Quote Details Loaded",
+          description: "Your motor and pricing information has been pre-filled from the PDF.",
+          duration: 4000,
+        });
+      }
+
+      // Skip quote context pre-fill since we have URL parameters
+      setIsLoading(false);
+      return;
+    }
+
+    // No draft or URL parameters found - proceed with quote pre-fill
     const quoteId = searchParams.get('quote');
     
     // Try to get quote data from localStorage (saved from quote summary)
