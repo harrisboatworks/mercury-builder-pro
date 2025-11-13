@@ -482,7 +482,8 @@ export default function QuoteSummaryPage() {
           const hasValidTradeIn = state.tradeInInfo?.hasTradeIn === true 
             && state.tradeInInfo?.estimatedValue 
             && state.tradeInInfo.estimatedValue > 0
-            && state.tradeInInfo?.brand  // Must have brand
+            && state.tradeInInfo?.brand 
+            && state.tradeInInfo.brand.trim().length > 0  // Must have non-empty brand
             && state.tradeInInfo?.year > 0  // Must have valid year
             && state.tradeInInfo?.horsepower > 0;  // Must have valid HP
           
