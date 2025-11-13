@@ -185,6 +185,74 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 10,
   },
+
+  featuresSection: {
+    marginTop: 12,
+    marginBottom: 12,
+  },
+  featuresGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+  },
+  featureItem: {
+    width: '48%',
+    padding: 6,
+    backgroundColor: '#f9fafb',
+    borderRadius: 4,
+  },
+  featureCode: {
+    fontSize: 10,
+    fontWeight: 'bold',
+    color: colors.primary,
+  },
+  featureMeaning: {
+    fontSize: 9,
+    color: colors.text,
+    marginTop: 2,
+  },
+  warrantyBox: {
+    marginTop: 12,
+    padding: 10,
+    backgroundColor: '#f0f9ff',
+    borderRadius: 4,
+    borderLeft: `3 solid ${colors.primary}`,
+  },
+  warrantyContent: {
+    marginTop: 6,
+  },
+  warrantyText: {
+    fontSize: 9,
+    color: colors.text,
+    marginBottom: 4,
+  },
+  includedSection: {
+    marginTop: 12,
+  },
+  includedList: {
+    marginTop: 6,
+  },
+  includedItem: {
+    fontSize: 9,
+    color: colors.text,
+    marginBottom: 3,
+  },
+  trustBadges: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 8,
+    gap: 8,
+  },
+  trustBadge: {
+    fontSize: 9,
+    color: colors.lightText,
+    fontWeight: 'bold',
+  },
+  badgeSeparator: {
+    fontSize: 9,
+    color: colors.lightText,
+  },
 });
 
 interface CleanSpecSheetPDFProps {
@@ -202,7 +270,7 @@ export function CleanSpecSheetPDF({ motorData }: CleanSpecSheetPDFProps) {
   // Extract HP from model name (e.g., "9.9HP FourStroke")
   const modelName = motor.model || motorModel;
   const hpMatch = modelName.match(/(\d+(?:\.\d+)?)\s*(?:HP|MH|ELH|ELPT|EXLPT)/i);
-  const hpNumber = hpMatch ? parseFloat(hpMatch[1]) : (motor.horsepower || 0);
+  const hpNumber = hpMatch ? parseFloat(hpMatch[1]) : (motor.hp || 0);
   
   const currentDate = new Date().toLocaleDateString('en-US', { 
     year: 'numeric', 
@@ -255,6 +323,21 @@ export function CleanSpecSheetPDF({ motorData }: CleanSpecSheetPDFProps) {
             <Text style={styles.priceValue}>
               ${((motor.msrp || motor.dealer_price || 0)).toLocaleString()}
             </Text>
+          </View>
+        )}
+
+        {/* Model Features Grid */}
+        {decodedFeatures.length > 0 && (
+          <View style={styles.featuresSection}>
+            <Text style={styles.sectionTitle}>Model Configuration</Text>
+            <View style={styles.featuresGrid}>
+              {decodedFeatures.slice(0, 8).map((feature, idx) => (
+                <View key={idx} style={styles.featureItem}>
+                  <Text style={styles.featureCode}>{feature.code}</Text>
+                  <Text style={styles.featureMeaning}>{feature.meaning}</Text>
+                </View>
+              ))}
+            </View>
           </View>
         )}
 
@@ -330,6 +413,32 @@ export function CleanSpecSheetPDF({ motorData }: CleanSpecSheetPDFProps) {
           </View>
         </View>
 
+        {/* Warranty & Service */}
+        <View style={styles.warrantyBox}>
+          <Text style={styles.sectionTitle}>Warranty & Service</Text>
+          <View style={styles.warrantyContent}>
+            <Text style={styles.warrantyText}>
+              • Standard 3-Year Limited Warranty{promotions.length > 0 && promotions[0].bonus_years ? ` + ${promotions[0].bonus_years} Bonus Years` : ''}
+            </Text>
+            <Text style={styles.warrantyText}>
+              • Service Intervals: Every 100 hours or annually
+            </Text>
+            <Text style={styles.warrantyText}>
+              • Certified Service Available Locally
+            </Text>
+          </View>
+        </View>
+
+        {/* What's Included */}
+        <View style={styles.includedSection}>
+          <Text style={styles.sectionTitle}>What's Included</Text>
+          <View style={styles.includedList}>
+            <Text style={styles.includedItem}>✓ Standard Propeller</Text>
+            <Text style={styles.includedItem}>✓ Owner's Manual & Warranty Documentation</Text>
+            <Text style={styles.includedItem}>✓ Fuel Tank & Hose (Portable Models)</Text>
+          </View>
+        </View>
+
         {/* Special Offers */}
         {promotions && promotions.length > 0 && (
           <View style={styles.section}>
@@ -351,6 +460,11 @@ export function CleanSpecSheetPDF({ motorData }: CleanSpecSheetPDFProps) {
 
         {/* Footer */}
         <View style={styles.footer}>
+          <View style={styles.trustBadges}>
+            <Text style={styles.trustBadge}>Mercury CSI Award Winner</Text>
+            <Text style={styles.badgeSeparator}>•</Text>
+            <Text style={styles.trustBadge}>Certified Repower Center</Text>
+          </View>
           <Text style={styles.footerText}>
             <Text style={styles.footerBold}>{COMPANY_INFO.name}</Text>
           </Text>
