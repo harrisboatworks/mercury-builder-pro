@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings, Video, Gift, Package, AlertCircle as AlertCircleIcon } from "lucide-react";
+import { pdf } from '@react-pdf/renderer';
 import { supabase } from "../../integrations/supabase/client";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
@@ -23,7 +24,7 @@ import {
 } from "../../lib/motor-spec-generators";
 import { MotorDetailsImageSection } from './MotorDetailsImageSection';
 import { findMotorSpecs, getMotorSpecs, type MercuryMotor } from "../../lib/data/mercury-motors";
-import type { CleanSpecSheetData } from './CleanSpecSheetPDF';
+import CleanSpecSheetPDF, { type CleanSpecSheetData } from './CleanSpecSheetPDF';
 import { getReviewCount } from "../../lib/data/mercury-reviews";
 import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
@@ -241,11 +242,6 @@ export default function MotorDetailsSheet({
     setSpecSheetLoading(true);
     
     try {
-      // Dynamically import PDF libraries only when needed
-      const { pdf } = await import('@react-pdf/renderer');
-      const CleanSpecSheetPDF = (await import('./CleanSpecSheetPDF')).default;
-      
-      // Transform motor data for the clean spec sheet
       const specData: CleanSpecSheetData = {
         motorModel: title || motor.model || 'Mercury Motor',
         horsepower: `${hp || motor.hp || ''}HP`,
@@ -254,7 +250,7 @@ export default function MotorDetailsSheet({
         sku: motor.sku,
         msrp: typeof price === "number" ? price.toLocaleString('en-CA', { minimumFractionDigits: 0 }) : motor.msrp?.toLocaleString('en-CA', { minimumFractionDigits: 0 }),
         modelNumber: motor.model_number,
-        motorPrice: typeof price === "number" ? price : motor.msrp, // Add motor price for financing
+        motorPrice: typeof price === "number" ? price : motor.msrp,
         image_url: motor?.image_url || img || motor?.images?.[0] || gallery?.[0] || undefined,
         specifications: {
           ...motor.specifications,
@@ -263,7 +259,6 @@ export default function MotorDetailsSheet({
           'Gear Ratio': motorSpecs?.gear_ratio || motor.gear_ratio,
           'Fuel System': motorSpecs?.fuel_type || motor.fuel_induction || 'Carburetor',
           'Oil Type': 'Mercury 25W-40 4-Stroke Marine Oil',
-          // REMOVED hardcoded Noise Level - only show if motor actually has this data
           'Control Type': isTillerMotor(title || '') ? 'Tiller Handle' : (motor.steering_type || 'Remote Control'),
           'Max RPM': motorSpecs?.max_rpm || motor.full_throttle_rpm,
           'Starting': motor.starting_type || 'Electric',
@@ -280,7 +275,6 @@ export default function MotorDetailsSheet({
         includedAccessories: getIncludedAccessories(motor),
         idealUses: getIdealUses(hp || motor.hp || 0),
         performanceData: {
-          // Only use REAL motor data if available, don't generate generic values
           recommendedBoatSize: motor.recommendedBoatSize || motor.boat_size_range || undefined,
           estimatedTopSpeed: motor.topSpeed || motor.max_speed || motor.estimated_top_speed || undefined,
           fuelConsumption: motor.fuelConsumption || motor.fuel_consumption || motor.gallons_per_hour || undefined,
@@ -291,11 +285,10 @@ export default function MotorDetailsSheet({
           name: activePromo.name,
           description: activePromo.promo_text || 'Extended warranty included',
           endDate: activePromo.promo_end_date ? new Date(activePromo.promo_end_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '',
-          rate: activePromo.rate // Include promo rate for financing calculations
+          rate: activePromo.rate
         } : undefined
       };
 
-      // Remove undefined values from specifications
       if (specData.specifications) {
         Object.keys(specData.specifications).forEach(key => {
           if (specData.specifications![key] === undefined || specData.specifications![key] === null) {
@@ -304,27 +297,19 @@ export default function MotorDetailsSheet({
         });
       }
 
-      // Generate PDF using React PDF
       const blob = await pdf(<CleanSpecSheetPDF specData={specData} warrantyPricing={warrantyPricing} activePromotions={activePromotions} />).toBlob();
-      
-      // Create download link
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      
       const modelName = title || motor.model || 'Mercury-Motor';
       const fileName = `${modelName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}-specifications.pdf`;
       link.download = fileName;
-      
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      
-      // Clean up
       URL.revokeObjectURL(url);
       
       console.log('✅ Clean Spec Sheet PDF Generated Successfully');
-      
     } catch (error) {
       console.error('❌ Error generating clean spec sheet:', error);
       alert('Unable to generate spec sheet at this time. Please try again or contact support.');

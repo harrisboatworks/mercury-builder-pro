@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift } from "lucide-react";
+import { pdf } from '@react-pdf/renderer';
 import { supabase } from "../../integrations/supabase/client";
 import { useIsMobile } from "../../hooks/use-mobile";
 import { useScrollCoordination } from "../../hooks/useScrollCoordination";
@@ -34,7 +35,7 @@ import {
 } from "../../lib/motor-spec-generators";
 import { findMotorSpecs } from "../../lib/data/mercury-motors";
 import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
-import type { CleanSpecSheetData } from './CleanSpecSheetPDF';
+import CleanSpecSheetPDF, { type CleanSpecSheetData } from './CleanSpecSheetPDF';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import MotorDocumentsSection from './MotorDocumentsSection';
@@ -180,10 +181,6 @@ export default function MotorDetailsPremiumModal({
     setSpecSheetLoading(true);
     
     try {
-      // Dynamically import PDF libraries only when needed
-      const { pdf } = await import('@react-pdf/renderer');
-      const CleanSpecSheetPDF = (await import('./CleanSpecSheetPDF')).default;
-      
       const specData: CleanSpecSheetData = {
         motorModel: title || motor.model || 'Mercury Motor',
         horsepower: `${hp || motor.hp || ''}HP`,
