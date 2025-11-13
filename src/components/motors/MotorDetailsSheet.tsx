@@ -240,43 +240,22 @@ export default function MotorDetailsSheet({
     setSpecSheetLoading(true);
     
     try {
-      // Fetch warranty pricing and promotions
-      const [warrantyData, promosData] = await Promise.all([
-        supabase.from('warranty_pricing').select('*').lte('hp_min', hpValue).gte('hp_max', hpValue).single(),
-        supabase.from('promotions').select('*').eq('is_active', true)
-      ]);
-      
-      // Dynamic import - Only load PDF library when button is clicked
-      const [{ pdf }, { default: CleanSpecSheetPDF }] = await Promise.all([
-        import('@react-pdf/renderer'),
-        import('./CleanSpecSheetPDF')
-      ]);
-      
-      const specData = {
-        motorModel: motor.model || title,
-        horsepower: `${hpValue}`,
-        category: motor.category || 'Outboard',
-        modelYear: motor.model_year || new Date().getFullYear(),
-        sku: motor.sku || undefined,
-        msrp: msrp ? `$${msrp.toLocaleString()}` : undefined,
-        motorPrice: price || msrp,
-        specifications: motor.specifications,
-        features: motor.features,
-        stockStatus: motor.stock_status,
-        controls: motor.controls
-      };
-      
-      const blob = await pdf(<CleanSpecSheetPDF 
-        specData={specData}
-        warrantyPricing={warrantyData.data}
-        activePromotions={promosData.data || []}
-      />).toBlob();
-      
+      // Call edge function to generate PDF server-side
+      const { data, error } = await supabase.functions.invoke('generate-motor-spec-sheet', {
+        body: { motorId: motor.id }
+      });
+
+      if (error) throw error;
+
+      // Create blob from response and download
+      const blob = new Blob([data], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
       link.download = `${title.replace(/\s+/g, '-')}-Spec-Sheet.pdf`;
+      document.body.appendChild(link);
       link.click();
+      document.body.removeChild(link);
       URL.revokeObjectURL(url);
       
       console.log('PDF downloaded successfully');
