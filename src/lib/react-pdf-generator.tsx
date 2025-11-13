@@ -1,6 +1,8 @@
 // Simplified PDF generator - Quote PDFs still use this
 // Motor spec sheets now use server-side generation via edge function
 import { supabase } from '@/integrations/supabase/client';
+import { pdf } from '@react-pdf/renderer';
+import ProfessionalQuotePDF from '@/components/quote-pdf/ProfessionalQuotePDF';
 
 export interface ReactPdfQuoteData {
   quoteNumber: string;
@@ -83,17 +85,53 @@ export async function generateMotorSpecSheet(data: ReactPdfQuoteData): Promise<s
 }
 
 /**
- * Generate a quote PDF using PDF.co API or other service
- * This is a placeholder - implement your preferred PDF generation service
+ * Generate a quote PDF using @react-pdf/renderer
  */
 export async function generateQuotePDF(data: ReactPdfQuoteData): Promise<string> {
-  // For now, return a data URL placeholder
-  // TODO: Implement actual PDF generation service integration
-  console.log('PDF generation requested for quote:', data.quoteNumber);
-
-  // Return a placeholder URL
-  // In production, this would call PDF.co or another service
-  return 'data:application/pdf;base64,placeholder';
+  try {
+    console.log('Generating quote PDF for:', data.quoteNumber);
+    
+    // Transform ReactPdfQuoteData to match QuotePDFProps format
+    const transformedData = {
+      quoteNumber: data.quoteNumber,
+      date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+      customerName: data.customerName,
+      customerEmail: data.customerEmail,
+      customerPhone: data.customerPhone || '',
+      customerId: '',
+      productName: data.motor?.model || '',
+      horsepower: `${data.motor?.hp || 0}HP`,
+      category: data.motor?.category || 'FourStroke',
+      modelYear: data.motor?.model_year || 2025,
+      msrp: (data.motor?.msrp || 0).toFixed(2),
+      dealerDiscount: '0.00',
+      promoSavings: '0.00',
+      motorSubtotal: (data.subtotal || 0).toFixed(2),
+      subtotal: (data.subtotal || 0).toFixed(2),
+      tax: (data.hst || 0).toFixed(2),
+      total: (data.total || 0).toFixed(2),
+      totalSavings: '0.00',
+      accessoryBreakdown: data.accessoryBreakdown || data.accessories,
+      tradeInValue: data.tradeInValue,
+      tradeInInfo: data.tradeInInfo,
+      selectedPackage: data.selectedPackage || undefined,
+      warrantyTargets: [],
+      monthlyPayment: data.financing?.monthlyPayment,
+      financingTerm: data.financing?.term,
+      financingRate: data.financing?.rate,
+      includesInstallation: data.includesInstallation,
+    };
+    
+    // Generate PDF blob using @react-pdf/renderer
+    const blob = await pdf(<ProfessionalQuotePDF quoteData={transformedData} />).toBlob();
+    
+    // Convert blob to URL for download
+    const url = URL.createObjectURL(blob);
+    return url;
+  } catch (error) {
+    console.error('Failed to generate quote PDF:', error);
+    throw error;
+  }
 }
 
 /**
