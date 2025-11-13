@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift } from "lucide-react";
 import { supabase } from "../../integrations/supabase/client";
 import { pdf } from '@react-pdf/renderer';
-import CleanSpecSheetPDF from './CleanSpecSheetPDF';
 import { useIsMobile } from "../../hooks/use-mobile";
 import { useScrollCoordination } from "../../hooks/useScrollCoordination";
 import { money } from "../../lib/money";
@@ -187,7 +186,9 @@ export default function MotorDetailsPremiumModal({
         supabase.from('promotions').select('*').eq('is_active', true)
       ]);
       
-      // Generate PDF directly with @react-pdf/renderer
+      // Dynamic import - Only load PDF component when button is clicked
+      const { default: CleanSpecSheetPDF } = await import('./CleanSpecSheetPDF');
+      
       const specData = {
         motorModel: motor.model || title,
         horsepower: `${hpValue}`,
