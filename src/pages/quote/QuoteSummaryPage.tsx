@@ -25,6 +25,8 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
 import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
+import QRCode from 'qrcode';
+import { SITE_URL } from '@/lib/site';
 
 // Package warranty year constants (module-level to prevent recreation on every render)
 const COMPLETE_TARGET_YEARS = 7; // Complete: 7 years total
@@ -446,6 +448,22 @@ export default function QuoteSummaryPage() {
       const promoRate = promo?.rate || null;
       const { payment, termMonths, rate } = calculateMonthlyPayment(amountToFinance, promoRate);
       
+      // Generate QR code for financing application
+      const financingUrl = `${SITE_URL}/financing-application`;
+      let qrCodeDataUrl = '';
+      try {
+        qrCodeDataUrl = await QRCode.toDataURL(financingUrl, {
+          width: 200,
+          margin: 1,
+          color: {
+            dark: '#111827',
+            light: '#ffffff'
+          }
+        });
+      } catch (error) {
+        console.error('QR code generation failed:', error);
+      }
+      
       // Transform quote data for React PDF
       const motorSubtotal = motorMSRP - motorDiscount - promoSavings;
       
@@ -519,7 +537,8 @@ export default function QuoteSummaryPage() {
         },
         monthlyPayment: payment,
         financingTerm: termMonths,
-        financingRate: rate
+        financingRate: rate,
+        financingQrCode: qrCodeDataUrl
       };
       
       // Save lead data when PDF is downloaded
