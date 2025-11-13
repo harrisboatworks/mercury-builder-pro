@@ -7,6 +7,16 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import type { TradeInInfo } from '@/lib/trade-valuation';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 export default function TradeInPage() {
   const navigate = useNavigate();
@@ -22,6 +32,11 @@ export default function TradeInPage() {
     estimatedValue: 0,
     confidenceLevel: 'medium' as const
   });
+  
+  // Track unsaved changes
+  const [isDirty, setIsDirty] = useState(false);
+  const [showExitDialog, setShowExitDialog] = useState(false);
+  const [pendingNavigation, setPendingNavigation] = useState<string | null>(null);
 
   useEffect(() => {
     // Trust navigation if we have required state
@@ -66,6 +81,15 @@ export default function TradeInPage() {
     });
     
     setTradeInInfo(updatedTradeInInfo);
+    
+    // Mark as dirty if user has selected "Yes" and filled any fields
+    const hasData = updatedTradeInInfo.hasTradeIn && (
+      updatedTradeInInfo.brand !== '' ||
+      updatedTradeInInfo.year > 0 ||
+      updatedTradeInInfo.horsepower > 0 ||
+      updatedTradeInInfo.model !== ''
+    );
+    setIsDirty(hasData);
     
     // Dispatch immediately to context (don't wait for handleComplete)
     dispatch({ type: 'SET_TRADE_IN_INFO', payload: updatedTradeInInfo });
@@ -116,12 +140,15 @@ export default function TradeInPage() {
       estimatedValue: finalTradeInInfo.estimatedValue
     });
     
+    // Reset dirty flag - data is saved
+    setIsDirty(false);
+    
     // Navigate immediately - React 18 batches state updates automatically
     const target = state.purchasePath === 'installed' ? '/quote/installation' : '/quote/summary';
     navigate(target);
   };
 
-  const handleBack = () => {
+  const navigateBack = () => {
     if (state.purchasePath === 'installed') {
       navigate('/quote/boat-info');
     } else {
@@ -133,6 +160,38 @@ export default function TradeInPage() {
       }
     }
   };
+
+  const handleBack = () => {
+    if (isDirty) {
+      // Show confirmation dialog instead of navigating immediately
+      const target = state.purchasePath === 'installed' 
+        ? '/quote/boat-info' 
+        : state.motor && state.motor.hp <= 9.9 && state.motor.type?.toLowerCase().includes('tiller')
+          ? '/quote/fuel-tank'
+          : '/quote/purchase-path';
+      setPendingNavigation(target);
+      setShowExitDialog(true);
+    } else {
+      // Safe to navigate - no changes
+      navigateBack();
+    }
+  };
+  
+  // Prevent browser navigation/reload with unsaved changes
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (isDirty) {
+        e.preventDefault();
+        e.returnValue = '';
+      }
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [isDirty]);
 
   return (
     <PageTransition>
@@ -160,6 +219,34 @@ export default function TradeInPage() {
           />
         </div>
       </QuoteLayout>
+      
+      <AlertDialog open={showExitDialog} onOpenChange={setShowExitDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Discard trade-in information?</AlertDialogTitle>
+            <AlertDialogDescription className="font-normal">
+              You have unsaved trade-in details. If you leave now, your trade-in information will be lost.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel className="font-normal">
+              Stay on Page
+            </AlertDialogCancel>
+            <AlertDialogAction
+              className="font-medium"
+              onClick={() => {
+                setIsDirty(false);
+                setShowExitDialog(false);
+                if (pendingNavigation) {
+                  navigate(pendingNavigation);
+                }
+              }}
+            >
+              Leave Without Saving
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </PageTransition>
   );
 }
