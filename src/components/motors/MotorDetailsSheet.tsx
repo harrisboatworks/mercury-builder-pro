@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings, Video, Gift, Package, AlertCircle as AlertCircleIcon } from "lucide-react";
-import { PDFDownloadLink } from '@react-pdf/renderer';
 import { supabase } from "../../integrations/supabase/client";
-import { CleanSpecSheetPDF } from '@/components/motors/CleanSpecSheetPDF';
 import { Button } from "../ui/button";
+import { toast } from "sonner";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { useIsMobile } from "../../hooks/use-mobile";
@@ -81,7 +80,8 @@ export default function MotorDetailsSheet({
   const [isLoading, setIsLoading] = useState(false);
   const [generatedSpecUrl, setGeneratedSpecUrl] = useState<string | null>(null);
   const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
-  const [showFullPricing, setShowFullPricing] = useState(false); // Mobile pricing expansion
+  const [showFullPricing, setShowFullPricing] = useState(false);
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const isMobile = useIsMobile();
   const { promo: activePromo } = useActiveFinancingPromo();
   const { promotions: activePromotions } = useActivePromotions();
@@ -233,6 +233,36 @@ export default function MotorDetailsSheet({
         motor_model: title,
         motor_price: price
       });
+    }
+  };
+
+  const handleDownloadSpecSheet = async () => {
+    setIsGeneratingPDF(true);
+    try {
+      const { pdf } = await import('@react-pdf/renderer');
+      const { CleanSpecSheetPDF } = await import('@/components/motors/CleanSpecSheetPDF');
+      
+      const blob = await pdf(
+        <CleanSpecSheetPDF 
+          motorData={{
+            motor: motor,
+            promotions: activePromotions,
+            motorModel: motor?.model || title
+          }} 
+        />
+      ).toBlob();
+      
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${(motor?.model || title).replace(/\s+/g, '-')}-Specifications.pdf`;
+      link.click();
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('PDF generation error:', error);
+      toast.error('Failed to generate PDF');
+    } finally {
+      setIsGeneratingPDF(false);
     }
   };
 
@@ -816,28 +846,18 @@ export default function MotorDetailsSheet({
                               Clean, professional specification sheet
                             </p>
                           </div>
-                          <PDFDownloadLink
-                            document={<CleanSpecSheetPDF motorData={{
-                              motor: motor,
-                              promotions: activePromotions,
-                              motorModel: motor?.model || title
-                            }} />}
-                            fileName={`${(motor?.model || title).replace(/\s+/g, '-')}-Specifications.pdf`}
+                          <Button 
+                            variant="outline"
+                            size="sm"
+                            disabled={isGeneratingPDF}
+                            onClick={handleDownloadSpecSheet}
                           >
-                            {({ loading }) => (
-                              <Button 
-                                variant="outline"
-                                size="sm"
-                                disabled={loading}
-                              >
-                                {loading ? (
-                                  <Loader2 className="w-4 h-4 animate-spin" />
-                                ) : (
-                                  <Download className="w-4 h-4" />
-                                )}
-                              </Button>
+                            {isGeneratingPDF ? (
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                            ) : (
+                              <Download className="w-4 h-4" />
                             )}
-                          </PDFDownloadLink>
+                          </Button>
                         </div>
                       </div>
 
