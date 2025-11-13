@@ -20,6 +20,7 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      buffer: 'buffer/',
     },
   },
   build: {
@@ -87,6 +88,7 @@ export default defineConfig(({ mode }) => ({
       '@tanstack/react-query',
       '@supabase/supabase-js',
       'lucide-react',
+      'buffer',
     ],
     exclude: [
       '@react-pdf/renderer',
