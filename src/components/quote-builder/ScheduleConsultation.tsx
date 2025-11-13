@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -24,6 +25,7 @@ interface ScheduleConsultationProps {
 export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: ScheduleConsultationProps) => {
   const { user } = useAuth();
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [contactInfo, setContactInfo] = useState({
     name: '',
     email: user?.email || '',
@@ -118,11 +120,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
     e.preventDefault();
     
     if (!validateForm()) {
-      toast({
-        title: "Validation Error",
-        description: "Please fix the errors in the form before submitting.",
-        variant: "destructive"
-      });
+      // Validation errors shown inline
       return;
     }
 
@@ -430,10 +428,8 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
       console.log('✅ [NOTIFICATIONS] Notification process complete');
 
-      toast({
-        title: "✅ Quote Submitted Successfully!",
-        description: `Thank you for your interest in the Mercury ${quoteData.motor?.model}. We'll contact you via ${contactInfo.contactMethod} to review your quote details. Check your email for your quote confirmation.`,
-      });
+      // Navigate to success page - provides better feedback than toast
+      navigate('/financing/success');
       
     } catch (error) {
       toast({
@@ -456,11 +452,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
   const generatePDF = async () => {
     if (!quoteData.motor) {
-      toast({
-        title: "Error",
-        description: "No motor selected for quote generation.",
-        variant: "destructive"
-      });
+      // Silent - button shouldn't be available without motor
       return;
     }
 
@@ -504,21 +496,13 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         }
       };
       
-      toast({
-        title: "Generating PDF...",
-        description: "Please wait while we create your professional quote.",
-      });
-      
       // Generate PDF using PDF.co API
       const pdfUrl = await generateQuotePDF(pdfData);
       
       // Download the PDF
       downloadPDF(pdfUrl, `Mercury-Quote-${quoteNumber}.pdf`);
       
-      toast({
-        title: "PDF Generated Successfully!",
-        description: "Your professional quote has been downloaded.",
-      });
+      // Silent success - browser download provides feedback
       
     } catch (error) {
       console.error('PDF Generation Error:', error);

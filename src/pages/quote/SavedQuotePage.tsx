@@ -66,16 +66,13 @@ export default function SavedQuotePage() {
             dispatch({ type: 'SET_INSTALL_CONFIG', payload: quoteData.installConfig });
           }
           if (quoteData.warrantyConfig) {
-            dispatch({ type: 'SET_WARRANTY_CONFIG', payload: quoteData.warrantyConfig });
-          }
+          dispatch({ type: 'SET_WARRANTY_CONFIG', payload: quoteData.warrantyConfig });
         }
+      }
 
-        toast({
-          title: "Quote loaded!",
-          description: "Your saved quote has been restored.",
-        });
+      // Silent success - navigation provides feedback
 
-        // Navigate to summary page
+      // Navigate to summary page
         navigate('/quote/summary');
       } catch (error) {
         console.error('Error loading saved quote:', error);

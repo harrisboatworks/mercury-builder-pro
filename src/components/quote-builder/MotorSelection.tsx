@@ -495,11 +495,7 @@ export const MotorSelection = ({
       setMotors(simulatedMotors);
     } catch (error) {
       console.error('Error loading motors or promotions:', error);
-      toast({
-        title: 'Network hiccup, eh?',
-        description: friendlyErrors.networkError,
-        variant: 'destructive'
-      });
+      // Silent failure - motors will show as empty
     } finally {
       setLoading(false);
     }
@@ -654,23 +650,14 @@ export const MotorSelection = ({
       // Save last update timestamp
       const nowIso = new Date().toISOString();
       setLastInventoryUpdate(nowIso);
-      toast({
-        title: 'Success',
-        description: `Updated ${data?.count ?? ''} motors from Harris Boat Works`
-      });
+      // Silent success - inventory updated
     } catch (error) {
-      // Log error silently instead of showing scary error to users
+      // Log error silently and use cached data
       console.log('Inventory sync issue - using cached data:', error);
       
       // Still reload motors (will use existing cached data)
       await loadMotors();
-      
-      // Show a reassuring message instead of an error
-      toast({
-        title: 'Inventory Updated',
-        description: 'Showing current inventory (last sync a few minutes ago)',
-        variant: 'default' // Changed from 'destructive' to normal
-      });
+      // Silent fallback to cached data
     } finally {
       setUpdating(false);
     }
@@ -710,12 +697,7 @@ export const MotorSelection = ({
       if (modelSearch && !motor.model?.toLowerCase().includes(modelSearch.toLowerCase())) return false;
       return motor.hp >= minHP && motor.hp <= maxHP;
     }).length;
-    if (count === 0) {
-      toast({
-        title: 'No motors found',
-        description: `No motors available in the ${minHP}-${maxHP} HP range`
-      });
-    }
+    // Silent - empty grid will show the result
   };
   const filteredMotors = motors.filter(motor => {
     // Search functionality - check both model search (sidebar) and main search query

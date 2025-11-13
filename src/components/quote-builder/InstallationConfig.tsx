@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import OptionGallery from "../OptionGallery";
 import { controlChoices, steeringChoices, gaugeChoices, tillerMountingChoices } from "@/config/visualChoices";
 import confetti from "canvas-confetti";
-import { useToast } from "@/hooks/use-toast";
 import { isTillerMotor } from "@/lib/utils";
 
 interface InstallationConfigProps {
@@ -23,7 +22,6 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
     removeOld: false,
     waterTest: true
   });
-  const { toast } = useToast();
 
   const totalSteps = isTiller ? 1 : 4;
 

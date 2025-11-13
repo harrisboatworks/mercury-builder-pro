@@ -101,10 +101,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
 
   const openReservationModal = () => setShowReservationModal(true);
   const handleReserveConfirm = () => {
-    toast({
-      title: 'Reservation placed',
-      description: 'Your motor has been reserved for 30 days.',
-    });
+    // Reservation confirmed - modal will close
     setShowReservationModal(false);
   };
 
@@ -252,13 +249,8 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
       });
 
       if (onEarnXP) onEarnXP(500);
-    } else if (type === 'finance') {
-      // Add visual feedback for finance selection
-      toast({
-        title: 'Financing selected',
-        description: `Monthly payment: ${formatCurrency(payments.monthly)} at ${effectiveRate}% APR`,
-      });
     }
+    // Silent selection for financing
   };
 
   const handleContinue = () => {
@@ -300,7 +292,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
         notes: hasTradeIn ? `Trade-in: ${state.tradeInInfo?.year} ${state.tradeInInfo?.brand} ${state.tradeInInfo?.model}` : undefined
       });
       
-      toast({ title: 'Quote saved!', description: 'Your quote has been saved to your account.' });
+      // Silent success - quote saved
     } catch (error) {
       console.error('Save quote error:', error);
       toast({ title: 'Error', description: 'Failed to save quote. Please try again.', variant: 'destructive' });
@@ -360,7 +352,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
       const { downloadPDF } = await import('@/lib/react-pdf-generator');
       downloadPDF(pdfUrl, `mercury-quote-${Date.now()}.pdf`);
       
-      toast({ title: 'Download complete!', description: 'Your quote PDF has been downloaded.' });
+      // Silent success - browser download provides feedback
     } catch (error) {
       console.error('PDF generation error:', error);
       toast({ title: 'Error', description: 'Failed to generate PDF. Please try again.', variant: 'destructive' });
@@ -369,11 +361,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
 
   const handleStripePayment = async () => {
     if (!user) {
-      toast({ 
-        title: 'Please sign in', 
-        description: 'You need to be signed in to secure your deal.',
-        variant: 'destructive'
-      });
+      // User not signed in - handled by disabled button state
       return;
     }
 
@@ -402,10 +390,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
 
       if (data?.url) {
         window.open(data.url, '_blank');
-        toast({ 
-          title: 'Securing your deal', 
-          description: 'Opening secure deposit payment...' 
-        });
+        // Silent - window opening provides feedback
       }
     } catch (error) {
       console.error('Deposit payment error:', error);

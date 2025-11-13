@@ -28,11 +28,7 @@ export const StripePaymentButton = ({
 
   const handleStripePayment = async () => {
     if (!user) {
-      toast({ 
-        title: 'Please sign in', 
-        description: 'You need to be signed in to complete your purchase.',
-        variant: 'destructive'
-      });
+      // User not signed in - handled by disabled button state
       return;
     }
 
@@ -61,10 +57,7 @@ export const StripePaymentButton = ({
       if (data?.url) {
         // Open Stripe checkout in a new window
         window.open(data.url, '_blank');
-        toast({ 
-          title: 'Redirecting to payment', 
-          description: 'Opening Stripe checkout in a new window...' 
-        });
+        // Silent - window opening provides feedback
       }
     } catch (error) {
       console.error('Stripe payment error:', error);

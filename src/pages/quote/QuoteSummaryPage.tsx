@@ -423,10 +423,7 @@ export default function QuoteSummaryPage() {
 
   // CTA handlers
   const handleReserveDeposit = () => {
-    toast({
-      title: "Reserve Your Motor",
-      description: "Deposit functionality would be integrated here.",
-    });
+    // Reservation functionality - placeholder
   };
 
   const handleDownloadPDF = async () => {
@@ -481,11 +478,6 @@ export default function QuoteSummaryPage() {
           savings: motorDiscount + promoSavings
         }
       };
-
-      toast({
-        title: "Generating PDF...",
-        description: "Please wait while we create your professional quote.",
-      });
       
       // Save lead data when PDF is downloaded
       try {
@@ -510,10 +502,7 @@ export default function QuoteSummaryPage() {
       // Download the PDF
       await downloadPDF(pdfUrl, `Mercury-Quote-${quoteNumber}.pdf`);
       
-      toast({
-        title: "PDF Generated Successfully!",
-        description: "Your professional quote has been downloaded.",
-      });
+      // Silent success - browser download provides feedback
       
     } catch (error) {
       console.error('PDF generation error:', error);
@@ -528,17 +517,11 @@ export default function QuoteSummaryPage() {
   };
 
   const handleEmailQuote = () => {
-    toast({
-      title: "Email Quote",
-      description: "Quote will be emailed to your address.",
-    });
+    // Email quote functionality - placeholder
   };
 
   const handleTextQuote = () => {
-    toast({
-      title: "Text Quote",
-      description: "Quote will be sent via SMS.",
-    });
+    // Text quote functionality - placeholder
   };
 
   const handleBookConsult = () => {

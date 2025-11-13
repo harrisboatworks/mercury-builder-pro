@@ -29,23 +29,20 @@ export function SaveQuoteDialog({
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
+  const [emailError, setEmailError] = useState("");
+
   const handleSave = async () => {
+    // Clear previous errors
+    setEmailError("");
+    
     if (!email) {
-      toast({
-        title: "Email required",
-        description: "Please enter your email address to save your quote.",
-        variant: "destructive",
-      });
+      setEmailError("Email address is required");
       return;
     }
 
     // Basic email validation
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      toast({
-        title: "Invalid email",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      });
+      setEmailError("Please enter a valid email address");
       return;
     }
 
@@ -83,11 +80,7 @@ export function SaveQuoteDialog({
         // Don't fail the save if email fails
       }
 
-      toast({
-        title: "Quote saved successfully!",
-        description: `We've sent your quote to ${email}. Check your inbox for the link.`,
-      });
-
+      // Silent success - dialog closes
       onOpenChange(false);
       setEmail("");
       setName("");
@@ -122,9 +115,16 @@ export function SaveQuoteDialog({
               type="email"
               placeholder="your.email@example.com"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setEmailError("");
+              }}
               disabled={isLoading}
+              className={emailError ? "border-destructive" : ""}
             />
+            {emailError && (
+              <p className="text-sm text-destructive">{emailError}</p>
+            )}
           </div>
           
           <div className="grid gap-2">
