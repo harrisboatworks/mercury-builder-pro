@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift } from "lucide-react";
-import { pdf } from '@react-pdf/renderer';
+import { PDFDownloadLink } from '@react-pdf/renderer';
 import { supabase } from "../../integrations/supabase/client";
 import { CleanSpecSheetPDF } from '@/components/motors/CleanSpecSheetPDF';
 import { useIsMobile } from "../../hooks/use-mobile";
@@ -78,7 +78,6 @@ export default function MotorDetailsPremiumModal({
   motor
 }: MotorDetailsPremiumModalProps) {
   const navigate = useNavigate();
-  const [specSheetLoading, setSpecSheetLoading] = useState(false);
   const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
   const [showFullPricing, setShowFullPricing] = useState(false);
   const isMobile = useIsMobile();
@@ -176,37 +175,6 @@ export default function MotorDetailsPremiumModal({
     onClose();
   };
 
-  const handleGenerateSpecSheet = async () => {
-    if (!motor?.id) return;
-    setSpecSheetLoading(true);
-    
-    try {
-      // 1. Call edge function to get motor data
-      const { data, error } = await supabase.functions.invoke('generate-motor-spec-sheet', {
-        body: { motorId: motor.id }
-      });
-
-      if (error) throw error;
-
-      // 2. Generate PDF client-side
-      const blob = await pdf(<CleanSpecSheetPDF motorData={data} />).toBlob();
-
-      // 3. Download
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `${data.motorModel.replace(/\s+/g, '-')}-Specifications.pdf`;
-      link.click();
-      URL.revokeObjectURL(url);
-      
-      console.log('Spec sheet downloaded successfully');
-    } catch (error) {
-      console.error('Error generating spec sheet:', error);
-      alert('Unable to generate spec sheet. Please try again.');
-    } finally {
-      setSpecSheetLoading(false);
-    }
-  };
 
   const includedAccessories = motor ? getIncludedAccessories(motor) : [];
   const additionalRequirements = motor ? getAdditionalRequirements(motor) : [];
@@ -541,14 +509,24 @@ export default function MotorDetailsPremiumModal({
                         
                         {/* Quick Actions */}
                         <div className="border-t border-gray-100 pt-6">
-                          <button
-                            onClick={handleGenerateSpecSheet}
-                            disabled={specSheetLoading}
-                            className="w-full border border-gray-300 text-gray-700 py-3 px-4 text-sm font-medium rounded-sm hover:bg-stone-50 transition-all duration-300 flex items-center justify-center gap-2"
+                          <PDFDownloadLink
+                            document={<CleanSpecSheetPDF motorData={{
+                              motor: motor,
+                              promotions: activePromotions,
+                              motorModel: motor?.model || title
+                            }} />}
+                            fileName={`${(motor?.model || title).replace(/\s+/g, '-')}-Specifications.pdf`}
                           >
-                            <Download className="w-4 h-4" />
-                            {specSheetLoading ? 'Generating...' : 'Download Spec Sheet'}
-                          </button>
+                            {({ loading }) => (
+                              <button
+                                disabled={loading}
+                                className="w-full border border-gray-300 text-gray-700 py-3 px-4 text-sm font-medium rounded-sm hover:bg-stone-50 transition-all duration-300 flex items-center justify-center gap-2"
+                              >
+                                <Download className="w-4 h-4" />
+                                {loading ? 'Generating...' : 'Download Spec Sheet'}
+                              </button>
+                            )}
+                          </PDFDownloadLink>
                         </div>
                         
                         {/* Videos Section */}
