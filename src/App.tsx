@@ -1,75 +1,83 @@
-import Dev from "./pages/Dev";
-import TestScraper from "./pages/TestScraper";
-import Contact from "./pages/Contact";
-// Removed obsolete test import
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { SITE_URL } from "./lib/site";
 import { Toaster } from "@/components/ui/toaster";
-import NewQuote from "./pages/NewQuote";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { QuoteProvider } from "@/contexts/QuoteContext";
 import { FinancingProvider } from "@/contexts/FinancingContext";
-
-// Quote builder pages
-import MotorSelectionPage from "@/pages/quote/MotorSelectionPage";
-import PurchasePathPage from "@/pages/quote/PurchasePathPage";
-import BoatInfoPage from "@/pages/quote/BoatInfoPage";
-import FuelTankPage from "@/pages/quote/FuelTankPage";
-import TradeInPage from "@/pages/quote/TradeInPage";
-import InstallationPage from "@/pages/quote/InstallationPage";
-import QuoteSummaryPage from "@/pages/quote/QuoteSummaryPage";
-import SchedulePage from "@/pages/quote/SchedulePage";
-import SavedQuotePage from "@/pages/quote/SavedQuotePage";
-import MyQuotes from "@/pages/MyQuotes";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { SecureRoute } from "@/components/auth/SecureRoute";
-import { ScrollToTop } from "@/components/ui/ScrollToTop";
-import Index from "./pages/Index";
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import NotFound from "./pages/NotFound";
-import AdminPromotions from "./pages/AdminPromotions";
-import AdminQuotes from "./pages/AdminQuotes";
-import AdminQuoteDetail from "./pages/AdminQuoteDetail";
-
-import FinanceCalculator from "./pages/FinanceCalculator";
-// Removed obsolete staging and test imports
-import StagingImageSizing from "./pages/StagingImageSizing";
-import StagingImageSizingV2 from "./pages/StagingImageSizingV2";
-import StagingImageSizingFinal from "./pages/StagingImageSizingFinal";
-import Accessories from "./pages/Accessories";
-import TestEmail from "./pages/TestEmail";
-import TestFinancingEmails from "./pages/TestFinancingEmails";
-// Removed obsolete test pricing imports
-// Removed more obsolete test imports
-import AdminConnectors from "./pages/AdminConnectors";
-import FinancingAdmin from "./components/admin/FinancingAdmin";
-import AdminSecurity from "./pages/AdminSecurity";
-import AdminZapier from "./pages/AdminZapier";
-import AdminEmail from "./pages/AdminEmail";
-import AdminPayments from "./pages/AdminPayments";
-import AdminSMS from "./pages/AdminSMS";
-import AdminInventory from "./pages/AdminInventory";
-import AdminStockSync from "./pages/AdminStockSync";
-import AdminCronMonitor from "./pages/AdminCronMonitor";
-import AdminSources from "./pages/AdminSources";
-import Deposits from "./pages/Deposits";
-import PaymentSuccess from "./pages/PaymentSuccess";
-import PaymentCanceled from "./pages/PaymentCanceled";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
-import Settings from "./pages/Settings";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { NotificationToast } from "@/components/notifications/NotificationToast";
 import { ContactButton } from "@/components/ui/contact-button";
 import { GlobalStickyQuoteBar } from "@/components/quote/GlobalStickyQuoteBar";
-import AdminPricingImport from "./pages/AdminPricingImport";
-import FinancingApplication from "./pages/FinancingApplication";
-import FinancingResume from "./pages/FinancingResume";
-import FinancingSuccess from "./pages/FinancingSuccess";
-import AdminFinancingApplications from "./pages/AdminFinancingApplications";
-import AdminSINEncryptionTest from "./pages/AdminSINEncryptionTest";
+import { RouteLoader } from "@/components/ui/RouteLoader";
+
+// Lazy load all pages for code splitting
+const Index = lazy(() => import("./pages/Index"));
+const Login = lazy(() => import("./pages/Login"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Settings = lazy(() => import("./pages/Settings"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+
+// Quote builder pages
+const MotorSelectionPage = lazy(() => import("@/pages/quote/MotorSelectionPage"));
+const PurchasePathPage = lazy(() => import("@/pages/quote/PurchasePathPage"));
+const BoatInfoPage = lazy(() => import("@/pages/quote/BoatInfoPage"));
+const FuelTankPage = lazy(() => import("@/pages/quote/FuelTankPage"));
+const TradeInPage = lazy(() => import("@/pages/quote/TradeInPage"));
+const InstallationPage = lazy(() => import("@/pages/quote/InstallationPage"));
+const QuoteSummaryPage = lazy(() => import("@/pages/quote/QuoteSummaryPage"));
+const SchedulePage = lazy(() => import("@/pages/quote/SchedulePage"));
+const SavedQuotePage = lazy(() => import("@/pages/quote/SavedQuotePage"));
+const MyQuotes = lazy(() => import("@/pages/MyQuotes"));
+
+// Admin pages
+const AdminPromotions = lazy(() => import("./pages/AdminPromotions"));
+const AdminQuotes = lazy(() => import("./pages/AdminQuotes"));
+const AdminQuoteDetail = lazy(() => import("./pages/AdminQuoteDetail"));
+const FinancingAdmin = lazy(() => import("./components/admin/FinancingAdmin"));
+const AdminFinancingApplications = lazy(() => import("./pages/AdminFinancingApplications"));
+const AdminSecurity = lazy(() => import("./pages/AdminSecurity"));
+const AdminSINEncryptionTest = lazy(() => import("./pages/AdminSINEncryptionTest"));
+const AdminZapier = lazy(() => import("./pages/AdminZapier"));
+const AdminEmail = lazy(() => import("./pages/AdminEmail"));
+const AdminPayments = lazy(() => import("./pages/AdminPayments"));
+const AdminSMS = lazy(() => import("./pages/AdminSMS"));
+const AdminInventory = lazy(() => import("./pages/AdminInventory"));
+const AdminStockSync = lazy(() => import("./pages/AdminStockSync"));
+const AdminCronMonitor = lazy(() => import("./pages/AdminCronMonitor"));
+const AdminConnectors = lazy(() => import("./pages/AdminConnectors"));
+const AdminSources = lazy(() => import("./pages/AdminSources"));
+const AdminPricingImport = lazy(() => import("./pages/AdminPricingImport"));
+
+// Payment pages
+const Deposits = lazy(() => import("./pages/Deposits"));
+const PaymentSuccess = lazy(() => import("./pages/PaymentSuccess"));
+const PaymentCanceled = lazy(() => import("./pages/PaymentCanceled"));
+
+// Financing pages
+const FinancingApplication = lazy(() => import("./pages/FinancingApplication"));
+const FinancingResume = lazy(() => import("./pages/FinancingResume"));
+const FinancingSuccess = lazy(() => import("./pages/FinancingSuccess"));
+
+// Other pages
+const FinanceCalculator = lazy(() => import("./pages/FinanceCalculator"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Accessories = lazy(() => import("./pages/Accessories"));
+const NewQuote = lazy(() => import("./pages/NewQuote"));
+
+// Test/Dev pages (low priority)
+const Dev = lazy(() => import("./pages/Dev"));
+const TestScraper = lazy(() => import("./pages/TestScraper"));
+const TestEmail = lazy(() => import("./pages/TestEmail"));
+const TestFinancingEmails = lazy(() => import("./pages/TestFinancingEmails"));
+const StagingImageSizing = lazy(() => import("./pages/StagingImageSizing"));
+const StagingImageSizingV2 = lazy(() => import("./pages/StagingImageSizingV2"));
+const StagingImageSizingFinal = lazy(() => import("./pages/StagingImageSizingFinal"));
 
 function Canonical() {
   useEffect(() => {
@@ -90,7 +98,8 @@ function AnimatedRoutes() {
   
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
+      <Suspense fallback={<RouteLoader />}>
+        <Routes location={location} key={location.pathname}>
         <Route path="/auth" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route 
@@ -297,7 +306,8 @@ function AnimatedRoutes() {
         
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
-      </Routes>
+        </Routes>
+      </Suspense>
     </AnimatePresence>
   );
 }
