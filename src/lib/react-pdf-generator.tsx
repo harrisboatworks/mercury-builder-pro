@@ -51,6 +51,10 @@ export interface ReactPdfQuoteData {
     term: number;
     rate: number;
   };
+  monthlyPayment?: number;
+  financingTerm?: number;
+  financingRate?: number;
+  financingQrCode?: string;
   pricing?: any;
 }
 
@@ -116,9 +120,10 @@ export async function generateQuotePDF(data: ReactPdfQuoteData): Promise<string>
       tradeInInfo: data.tradeInInfo,
       selectedPackage: data.selectedPackage || undefined,
       warrantyTargets: [],
-      monthlyPayment: data.financing?.monthlyPayment,
-      financingTerm: data.financing?.term,
-      financingRate: data.financing?.rate,
+      monthlyPayment: data.monthlyPayment,
+      financingTerm: data.financingTerm,
+      financingRate: data.financingRate,
+      financingQrCode: data.financingQrCode,
       includesInstallation: data.includesInstallation,
     };
     
