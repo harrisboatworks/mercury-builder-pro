@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift } from "lucide-react";
-import { pdf } from '@react-pdf/renderer';
 import { supabase } from "../../integrations/supabase/client";
 import { useIsMobile } from "../../hooks/use-mobile";
 import { useScrollCoordination } from "../../hooks/useScrollCoordination";
@@ -35,7 +34,6 @@ import {
 } from "../../lib/motor-spec-generators";
 import { findMotorSpecs } from "../../lib/data/mercury-motors";
 import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
-import CleanSpecSheetPDF, { type CleanSpecSheetData } from './CleanSpecSheetPDF';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import MotorDocumentsSection from './MotorDocumentsSection';
@@ -181,39 +179,35 @@ export default function MotorDetailsPremiumModal({
     setSpecSheetLoading(true);
     
     try {
-      const specData: CleanSpecSheetData = {
-        motorModel: title || motor.model || 'Mercury Motor',
-        horsepower: `${hp || motor.hp || ''}HP`,
-        category: motor.category || 'FourStroke',
-        modelYear: motor.year || new Date().getFullYear(),
-        sku: motor.sku,
-        msrp: typeof price === "number" ? price.toLocaleString('en-CA', { minimumFractionDigits: 0 }) : motor.msrp?.toLocaleString('en-CA', { minimumFractionDigits: 0 }),
-        modelNumber: motor.model_number,
-        motorPrice: typeof price === "number" ? price : motor.msrp,
-        image_url: motor?.image_url || img || motor?.images?.[0] || gallery?.[0] || undefined,
-        specifications: motor.specifications || {},
-        features: features.length > 0 ? features : ['Advanced corrosion protection', 'Integrated fuel system'],
-        includedAccessories: getIncludedAccessories(motor),
-        idealUses: [],
-        performanceData: {},
-        stockStatus: motor.availability || undefined,
-        currentPromotion: activePromo ? {
-          name: activePromo.name,
-          description: activePromo.promo_text || 'Extended warranty included',
-          endDate: activePromo.promo_end_date ? new Date(activePromo.promo_end_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '',
-          rate: activePromo.rate
-        } : undefined
-      };
+      // Call edge function to generate PDF server-side
+      const { data, error } = await supabase.functions.invoke('generate-motor-spec-sheet', {
+        body: { motorId: motor.id }
+      });
 
-      const blob = await pdf(<CleanSpecSheetPDF specData={specData} warrantyPricing={warrantyPricing} activePromotions={activePromotions} />).toBlob();
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `${title.toLowerCase().replace(/\s+/g, '-')}-specifications.pdf`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
+      if (error) throw error;
+      
+      // data.htmlContent contains the HTML - use jsPDF to convert
+      const jsPDF = (await import('jspdf')).default;
+      const doc = new jsPDF();
+      
+      // Create a temporary div to render HTML
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = data.htmlContent;
+      tempDiv.style.position = 'absolute';
+      tempDiv.style.left = '-9999px';
+      document.body.appendChild(tempDiv);
+      
+      // Use jsPDF's html method
+      await doc.html(tempDiv, {
+        callback: function(doc) {
+          doc.save(`${title.toLowerCase().replace(/\s+/g, '-')}-specifications.pdf`);
+          document.body.removeChild(tempDiv);
+        },
+        x: 10,
+        y: 10,
+        width: 190,
+        windowWidth: 800
+      });
     } catch (error) {
       console.error('Error generating spec sheet:', error);
       alert('Unable to generate spec sheet. Please try again.');

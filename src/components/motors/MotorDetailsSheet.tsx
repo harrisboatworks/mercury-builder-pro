@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings, Video, Gift, Package, AlertCircle as AlertCircleIcon } from "lucide-react";
-import { pdf } from '@react-pdf/renderer';
 import { supabase } from "../../integrations/supabase/client";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
@@ -24,7 +23,6 @@ import {
 } from "../../lib/motor-spec-generators";
 import { MotorDetailsImageSection } from './MotorDetailsImageSection';
 import { findMotorSpecs, getMotorSpecs, type MercuryMotor } from "../../lib/data/mercury-motors";
-import CleanSpecSheetPDF, { type CleanSpecSheetData } from './CleanSpecSheetPDF';
 import { getReviewCount } from "../../lib/data/mercury-reviews";
 import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
@@ -242,76 +240,40 @@ export default function MotorDetailsSheet({
     setSpecSheetLoading(true);
     
     try {
-      const specData: CleanSpecSheetData = {
-        motorModel: title || motor.model || 'Mercury Motor',
-        horsepower: `${hp || motor.hp || ''}HP`,
-        category: motor.category || 'FourStroke',
-        modelYear: motor.year || new Date().getFullYear(),
-        sku: motor.sku,
-        msrp: typeof price === "number" ? price.toLocaleString('en-CA', { minimumFractionDigits: 0 }) : motor.msrp?.toLocaleString('en-CA', { minimumFractionDigits: 0 }),
-        modelNumber: motor.model_number,
-        motorPrice: typeof price === "number" ? price : motor.msrp,
-        image_url: motor?.image_url || img || motor?.images?.[0] || gallery?.[0] || undefined,
-        specifications: {
-          ...motor.specifications,
-          'Weight': motorSpecs ? `${Math.round(motorSpecs.weight_kg * 2.20462)} lbs (${motorSpecs.weight_kg} kg)` : (weightLbs ? `${weightLbs} lbs` : undefined),
-          'Displacement': motorSpecs?.displacement || motor.displacement,
-          'Gear Ratio': motorSpecs?.gear_ratio || motor.gear_ratio,
-          'Fuel System': motorSpecs?.fuel_type || motor.fuel_induction || 'Carburetor',
-          'Oil Type': 'Mercury 25W-40 4-Stroke Marine Oil',
-          'Control Type': isTillerMotor(title || '') ? 'Tiller Handle' : (motor.steering_type || 'Remote Control'),
-          'Max RPM': motorSpecs?.max_rpm || motor.full_throttle_rpm,
-          'Starting': motor.starting_type || 'Electric',
-          'Cylinders': motor.cylinders,
-          'Alternator': motor.alternator,
-        },
-        features: features.length > 0 ? features : [
-          'Advanced corrosion protection',
-          'Integrated fuel system',
-          'Multi-function operation',
-          'Fresh water flush capability',
-          'Maintenance-free design'
-        ],
-        includedAccessories: getIncludedAccessories(motor),
-        idealUses: getIdealUses(hp || motor.hp || 0),
-        performanceData: {
-          recommendedBoatSize: motor.recommendedBoatSize || motor.boat_size_range || undefined,
-          estimatedTopSpeed: motor.topSpeed || motor.max_speed || motor.estimated_top_speed || undefined,
-          fuelConsumption: motor.fuelConsumption || motor.fuel_consumption || motor.gallons_per_hour || undefined,
-          operatingRange: motor.operatingRange || motor.range || undefined,
-        },
-        stockStatus: motor.availability || undefined,
-        currentPromotion: activePromo ? {
-          name: activePromo.name,
-          description: activePromo.promo_text || 'Extended warranty included',
-          endDate: activePromo.promo_end_date ? new Date(activePromo.promo_end_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '',
-          rate: activePromo.rate
-        } : undefined
-      };
+      // Call edge function to generate PDF server-side
+      const { data, error } = await supabase.functions.invoke('generate-motor-spec-sheet', {
+        body: { motorId: motor.id }
+      });
 
-      if (specData.specifications) {
-        Object.keys(specData.specifications).forEach(key => {
-          if (specData.specifications![key] === undefined || specData.specifications![key] === null) {
-            delete specData.specifications![key];
-          }
-        });
-      }
-
-      const blob = await pdf(<CleanSpecSheetPDF specData={specData} warrantyPricing={warrantyPricing} activePromotions={activePromotions} />).toBlob();
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      const modelName = title || motor.model || 'Mercury-Motor';
-      const fileName = `${modelName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}-specifications.pdf`;
-      link.download = fileName;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
+      if (error) throw error;
       
-      console.log('✅ Clean Spec Sheet PDF Generated Successfully');
+      // data.htmlContent contains the HTML - use jsPDF to convert
+      const jsPDF = (await import('jspdf')).default;
+      const doc = new jsPDF();
+      
+      // Create a temporary div to render HTML
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = data.htmlContent;
+      tempDiv.style.position = 'absolute';
+      tempDiv.style.left = '-9999px';
+      document.body.appendChild(tempDiv);
+      
+      // Use jsPDF's html method
+      await doc.html(tempDiv, {
+        callback: function(doc) {
+          const modelName = title || motor.model || 'Mercury-Motor';
+          const fileName = `${modelName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}-specifications.pdf`;
+          doc.save(fileName);
+          document.body.removeChild(tempDiv);
+          console.log('✅ Spec Sheet PDF Generated Successfully');
+        },
+        x: 10,
+        y: 10,
+        width: 190,
+        windowWidth: 800
+      });
     } catch (error) {
-      console.error('❌ Error generating clean spec sheet:', error);
+      console.error('❌ Error generating spec sheet:', error);
       alert('Unable to generate spec sheet at this time. Please try again or contact support.');
     } finally {
       setSpecSheetLoading(false);
