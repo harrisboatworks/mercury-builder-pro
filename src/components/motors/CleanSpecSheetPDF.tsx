@@ -3,6 +3,17 @@ import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/render
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
+import { decodeModelName } from '@/lib/motor-helpers';
+import {
+  generateDisplacement,
+  generateCylinders,
+  generateBoreStroke,
+  generateRPMRange,
+  generateFuelSystem,
+  generateWeight,
+  generateGearRatio,
+  generateAlternator
+} from '@/lib/motor-spec-generators';
 
 const colors = {
   text: '#111827',
@@ -187,12 +198,34 @@ interface CleanSpecSheetPDFProps {
 export function CleanSpecSheetPDF({ motorData }: CleanSpecSheetPDFProps) {
   const { motor, promotions, motorModel } = motorData;
   const specs = motor.specifications || {};
-  const hpNumber = motor.horsepower || 0;
+  
+  // Extract HP from model name (e.g., "9.9HP FourStroke")
+  const modelName = motor.model || motorModel;
+  const hpMatch = modelName.match(/(\d+(?:\.\d+)?)\s*(?:HP|MH|ELH|ELPT|EXLPT)/i);
+  const hpNumber = hpMatch ? parseFloat(hpMatch[1]) : (motor.horsepower || 0);
+  
   const currentDate = new Date().toLocaleDateString('en-US', { 
     year: 'numeric', 
     month: 'long', 
     day: 'numeric' 
   });
+
+  // Generate all specs from HP
+  const engineType = generateCylinders(hpNumber);
+  const displacement = generateDisplacement(hpNumber);
+  const weight = generateWeight(hpNumber);
+  const gearRatio = generateGearRatio(hpNumber);
+  const fuelSystem = generateFuelSystem(hpNumber);
+  const alternator = generateAlternator(hpNumber);
+  const boreStroke = generateBoreStroke(hpNumber);
+  const rpmRange = generateRPMRange(hpNumber);
+
+  // Decode model features for starting type and shaft length
+  const decodedFeatures = decodeModelName(modelName, hpNumber);
+  const startFeature = decodedFeatures.find(f => f.code === 'E' || f.code === 'M');
+  const startType = startFeature?.meaning || 'Electric Start';
+  const shaftFeature = decodedFeatures.find(f => ['S', 'L', 'X', 'XL', 'XX', 'XXL'].includes(f.code));
+  const shaftLength = shaftFeature?.meaning || '20"';
 
   return (
     <Document>
@@ -236,43 +269,63 @@ export function CleanSpecSheetPDF({ motorData }: CleanSpecSheetPDFProps) {
             
             <View style={styles.specItem}>
               <Text style={styles.specLabel}>Engine Type</Text>
-              <Text style={styles.specValue}>{specs['Engine Type'] || 'FourStroke'}</Text>
+              <Text style={styles.specValue}>{engineType}</Text>
             </View>
             
             <View style={styles.specItem}>
               <Text style={styles.specLabel}>Cylinders</Text>
               <Text style={styles.specValue}>
-                {specs['Cylinders'] || (hpNumber <= 15 ? '2' : '4')}
+                {hpNumber <= 15 ? '2' : '4'}
               </Text>
             </View>
             
             <View style={styles.specItem}>
               <Text style={styles.specLabel}>Displacement</Text>
               <Text style={styles.specValue}>
-                {specs['Displacement'] || 'Contact dealer'}
+                {displacement}
               </Text>
             </View>
             
             <View style={styles.specItem}>
               <Text style={styles.specLabel}>Starting</Text>
-              <Text style={styles.specValue}>{specs['Starting'] || 'Electric'}</Text>
+              <Text style={styles.specValue}>{startType}</Text>
             </View>
             
             <View style={styles.specItem}>
               <Text style={styles.specLabel}>Fuel System</Text>
-              <Text style={styles.specValue}>{specs['Fuel System'] || 'EFI'}</Text>
+              <Text style={styles.specValue}>{fuelSystem}</Text>
             </View>
             
             <View style={styles.specItem}>
               <Text style={styles.specLabel}>Weight</Text>
               <Text style={styles.specValue}>
-                {specs['Weight'] || 'Contact dealer'}
+                {weight}
               </Text>
             </View>
             
             <View style={styles.specItem}>
               <Text style={styles.specLabel}>Shaft Length</Text>
-              <Text style={styles.specValue}>{specs['Shaft Length'] || '20"'}</Text>
+              <Text style={styles.specValue}>{shaftLength}</Text>
+            </View>
+
+            <View style={styles.specItem}>
+              <Text style={styles.specLabel}>Gear Ratio</Text>
+              <Text style={styles.specValue}>{gearRatio}</Text>
+            </View>
+
+            <View style={styles.specItem}>
+              <Text style={styles.specLabel}>Bore & Stroke</Text>
+              <Text style={styles.specValue}>{boreStroke}</Text>
+            </View>
+
+            <View style={styles.specItem}>
+              <Text style={styles.specLabel}>Max RPM</Text>
+              <Text style={styles.specValue}>{rpmRange} RPM</Text>
+            </View>
+
+            <View style={styles.specItem}>
+              <Text style={styles.specLabel}>Alternator</Text>
+              <Text style={styles.specValue}>{alternator}</Text>
             </View>
           </View>
         </View>
