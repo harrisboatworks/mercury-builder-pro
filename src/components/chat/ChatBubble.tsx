@@ -47,8 +47,8 @@ export const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
     <div className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}>
       <div className={`max-w-xs lg:max-w-sm px-3 py-2 rounded-lg ${
         message.isUser 
-          ? 'bg-red-600 text-white font-light' 
-          : 'bg-gray-50 text-gray-900 border border-gray-200 font-light'
+          ? 'bg-red-600 text-white font-normal' 
+          : 'bg-gray-50 text-gray-900 border border-gray-200 font-normal'
       }`}>
         <p className="text-sm whitespace-pre-wrap">
           {renderParsedText(parseMessageText(message.text))}

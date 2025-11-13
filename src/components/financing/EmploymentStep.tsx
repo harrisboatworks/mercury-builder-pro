@@ -123,7 +123,7 @@ export function EmploymentStep() {
                   />
                 </div>
                   {errors.employerName && (
-                    <p className="text-sm text-destructive font-light">{errors.employerName.message}</p>
+                    <p className="text-sm text-destructive font-normal">{errors.employerName.message}</p>
                   )}
               </div>
 
@@ -157,7 +157,7 @@ export function EmploymentStep() {
                   />
                 </div>
                 {errors.employerPhone && (
-                  <p className="text-sm text-destructive font-light">{errors.employerPhone.message}</p>
+                  <p className="text-sm text-destructive font-normal">{errors.employerPhone.message}</p>
                 )}
               </div>
 
@@ -177,7 +177,7 @@ export function EmploymentStep() {
                   />
                 </div>
                   {errors.jobTitle && (
-                    <p className="text-sm text-destructive font-light">{errors.jobTitle.message}</p>
+                    <p className="text-sm text-destructive font-normal">{errors.jobTitle.message}</p>
                   )}
               </div>
 
@@ -199,7 +199,7 @@ export function EmploymentStep() {
                   </SelectContent>
                 </Select>
                 {errors.timeAtJob && (
-                  <p className="text-sm text-destructive font-light">{errors.timeAtJob.message}</p>
+                  <p className="text-sm text-destructive font-normal">{errors.timeAtJob.message}</p>
                 )}
               </div>
             </div>
@@ -216,7 +216,7 @@ export function EmploymentStep() {
                   <Info className="h-4 w-4 text-muted-foreground" />
                 </TooltipTrigger>
                   <TooltipContent>
-                    <p className="font-light">Required for credit assessment</p>
+                    <p className="font-normal">Required for credit assessment</p>
                   </TooltipContent>
               </Tooltip>
             </div>
@@ -244,7 +244,7 @@ export function EmploymentStep() {
                 step={5000}
                 className="w-full"
               />
-              <div className="flex justify-between text-xs text-muted-foreground font-light">
+              <div className="flex justify-between text-xs text-muted-foreground font-normal">
                 {incomeRanges.map((range) => (
                   <span key={range.value}>{range.label}</span>
                 ))}
@@ -256,7 +256,7 @@ export function EmploymentStep() {
               )}
             </div>
                   {errors.annualIncome && (
-                    <p className="text-sm text-destructive font-light">{errors.annualIncome.message}</p>
+                    <p className="text-sm text-destructive font-normal">{errors.annualIncome.message}</p>
                   )}
           </div>
 
@@ -271,7 +271,7 @@ export function EmploymentStep() {
                   placeholder="Previous company name"
                 />
                 {errors.previousEmployer?.name && (
-                  <p className="text-sm text-destructive font-light">{errors.previousEmployer.name.message}</p>
+                  <p className="text-sm text-destructive font-normal">{errors.previousEmployer.name.message}</p>
                 )}
               </div>
 
@@ -293,7 +293,7 @@ export function EmploymentStep() {
                   </SelectContent>
                 </Select>
                 {errors.previousEmployer?.timeAtJob && (
-                  <p className="text-sm text-destructive font-light">{errors.previousEmployer.timeAtJob.message}</p>
+                  <p className="text-sm text-destructive font-normal">{errors.previousEmployer.timeAtJob.message}</p>
                 )}
               </div>
             </Card>

@@ -32,7 +32,7 @@ export default function OptionGallery({
   return (
     <section className="my-6">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-xl font-light tracking-wide text-foreground">{title}</h3>
+        <h3 className="text-xl font-semibold tracking-wide text-foreground">{title}</h3>
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -101,7 +101,7 @@ export default function OptionGallery({
                 <div className="p-4 bg-card">
                   <div className="font-medium tracking-wide text-foreground">{choice.label}</div>
                   {choice.helper && (
-                    <div className="text-sm text-muted-foreground font-light mt-1">{choice.helper}</div>
+                    <div className="text-sm text-muted-foreground font-normal mt-1">{choice.helper}</div>
                   )}
                 </div>
               </motion.button>

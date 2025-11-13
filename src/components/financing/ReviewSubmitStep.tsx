@@ -393,7 +393,7 @@ export function ReviewSubmitStep() {
                 <Label htmlFor="creditCheckConsent" className="font-medium cursor-pointer">
                   Credit Check Authorization *
                 </Label>
-                <p className="text-sm text-muted-foreground font-light">
+                <p className="text-sm text-muted-foreground font-normal">
                   I authorize the company to obtain my credit report and verify information provided in this application.
                 </p>
               </div>

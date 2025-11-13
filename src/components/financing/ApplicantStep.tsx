@@ -79,7 +79,7 @@ export function ApplicantStep() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 animate-fade-in">
       <div className="space-y-2">
         <h2 className="text-2xl font-bold text-foreground">Tell Us About Yourself</h2>
-        <p className="text-muted-foreground font-light">We need this information for credit verification</p>
+        <p className="text-muted-foreground font-normal">We need this information for credit verification</p>
       </div>
 
       {/* Full Legal Name */}
@@ -96,7 +96,7 @@ export function ApplicantStep() {
             className={isFieldValid('firstName') ? 'border-green-500' : ''}
           />
           {errors.firstName && (
-            <p className="text-sm text-destructive font-light">{errors.firstName.message}</p>
+            <p className="text-sm text-destructive font-normal">{errors.firstName.message}</p>
           )}
         </div>
 
@@ -117,7 +117,7 @@ export function ApplicantStep() {
             className={isFieldValid('lastName') ? 'border-green-500' : ''}
           />
           {errors.lastName && (
-            <p className="text-sm text-destructive font-light">{errors.lastName.message}</p>
+            <p className="text-sm text-destructive font-normal">{errors.lastName.message}</p>
           )}
         </div>
 
@@ -153,10 +153,10 @@ export function ApplicantStep() {
           className={isFieldValid('dateOfBirth') ? 'border-green-500' : ''}
         />
         {age && age >= 18 && (
-          <p className="text-sm text-green-500 font-light">Age: {age} years old ✓</p>
+          <p className="text-sm text-green-500 font-normal">Age: {age} years old ✓</p>
         )}
         {errors.dateOfBirth && (
-          <p className="text-sm text-destructive font-light">{errors.dateOfBirth.message}</p>
+          <p className="text-sm text-destructive font-normal">{errors.dateOfBirth.message}</p>
         )}
       </div>
 
@@ -193,7 +193,7 @@ export function ApplicantStep() {
           )}
         />
         {errors.sin && (
-          <p className="text-sm text-destructive font-light">{errors.sin.message}</p>
+          <p className="text-sm text-destructive font-normal">{errors.sin.message}</p>
         )}
       </div>
 
@@ -213,7 +213,7 @@ export function ApplicantStep() {
             className={isFieldValid('email') ? 'border-green-500' : ''}
           />
           {errors.email && (
-            <p className="text-sm text-destructive font-light">{errors.email.message}</p>
+            <p className="text-sm text-destructive font-normal">{errors.email.message}</p>
           )}
         </div>
 
@@ -240,7 +240,7 @@ export function ApplicantStep() {
             )}
           />
           {errors.primaryPhone && (
-            <p className="text-sm text-destructive font-light">{errors.primaryPhone.message}</p>
+            <p className="text-sm text-destructive font-normal">{errors.primaryPhone.message}</p>
           )}
         </div>
       </div>
@@ -261,7 +261,7 @@ export function ApplicantStep() {
             className={isFieldValid('currentAddress.street') ? 'border-green-500' : ''}
           />
           {errors.currentAddress?.street && (
-            <p className="text-sm text-destructive font-light">{errors.currentAddress.street.message}</p>
+            <p className="text-sm text-destructive font-normal">{errors.currentAddress.street.message}</p>
           )}
         </div>
 
@@ -278,7 +278,7 @@ export function ApplicantStep() {
               className={isFieldValid('currentAddress.city') ? 'border-green-500' : ''}
             />
             {errors.currentAddress?.city && (
-              <p className="text-sm text-destructive font-light">{errors.currentAddress.city.message}</p>
+              <p className="text-sm text-destructive font-normal">{errors.currentAddress.city.message}</p>
             )}
           </div>
 
@@ -318,7 +318,7 @@ export function ApplicantStep() {
               )}
             />
             {errors.currentAddress?.postalCode && (
-              <p className="text-sm text-destructive font-light">{errors.currentAddress.postalCode.message}</p>
+              <p className="text-sm text-destructive font-normal">{errors.currentAddress.postalCode.message}</p>
             )}
           </div>
         </div>
@@ -362,7 +362,7 @@ export function ApplicantStep() {
           </div>
         </RadioGroup>
         {errors.housingStatus && (
-          <p className="text-sm text-destructive font-light">{errors.housingStatus.message}</p>
+          <p className="text-sm text-destructive font-normal">{errors.housingStatus.message}</p>
         )}
 
         <div className="space-y-2 pt-2">
@@ -379,7 +379,7 @@ export function ApplicantStep() {
             className={isFieldValid('monthlyHousingPayment') ? 'border-green-500' : ''}
           />
           {errors.monthlyHousingPayment && (
-            <p className="text-sm text-destructive font-light">{errors.monthlyHousingPayment.message}</p>
+            <p className="text-sm text-destructive font-normal">{errors.monthlyHousingPayment.message}</p>
           )}
         </div>
       </div>

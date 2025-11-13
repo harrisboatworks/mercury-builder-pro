@@ -111,7 +111,7 @@ export function FinancialStep() {
                   <Info className="h-4 w-4 text-muted-foreground" />
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p className="max-w-xs font-light">This is just an estimate - we'll verify with a credit check</p>
+                  <p className="max-w-xs font-normal">This is just an estimate - we'll verify with a credit check</p>
                 </TooltipContent>
               </Tooltip>
             </div>
@@ -136,14 +136,14 @@ export function FinancialStep() {
                     <Icon className={cn('h-6 w-6', creditScore === value ? textColor : 'text-muted-foreground')} />
                     <div className="text-center">
                       <div className={cn('font-semibold', creditScore === value && textColor)}>{label}</div>
-                      <div className="text-xs text-muted-foreground font-light">{subtitle}</div>
+                      <div className="text-xs text-muted-foreground font-normal">{subtitle}</div>
                     </div>
                   </Label>
                 </Card>
               ))}
             </RadioGroup>
                 {errors.creditScoreEstimate && (
-              <p className="text-sm text-destructive font-light">{errors.creditScoreEstimate.message}</p>
+              <p className="text-sm text-destructive font-normal">{errors.creditScoreEstimate.message}</p>
             )}
           </div>
 
@@ -182,7 +182,7 @@ export function FinancialStep() {
               </div>
               <FormErrorMessage error={errors.monthlyHousingPayment?.message} field="Monthly housing payment" />
               {housingPaymentFromStep2 && housingLocked && (
-                <p className="text-xs text-muted-foreground font-light">Pre-filled from your application</p>
+                <p className="text-xs text-muted-foreground font-normal">Pre-filled from your application</p>
               )}
             </div>
 
@@ -260,7 +260,7 @@ export function FinancialStep() {
                 <span className="text-2xl font-bold text-primary">{money(totalMonthlyObligations)}</span>
               </div>
               {annualIncome > 0 && (
-                <div className="mt-2 text-sm text-muted-foreground font-light">
+                <div className="mt-2 text-sm text-muted-foreground font-normal">
                   <p>Debt-to-income ratio: {debtToIncomeRatio.toFixed(1)}%</p>
                   {debtToIncomeRatio < 40 && (
                     <p className="text-green-700 dark:text-green-300">Excellent financial position</p>
@@ -322,7 +322,7 @@ export function FinancialStep() {
                     <Info className="h-4 w-4 text-muted-foreground" />
                   </TooltipTrigger>
                 <TooltipContent>
-                  <p className="font-light">We may need to verify your banking relationship</p>
+                  <p className="font-normal">We may need to verify your banking relationship</p>
                 </TooltipContent>
                 </Tooltip>
               </div>
@@ -353,7 +353,7 @@ export function FinancialStep() {
                   <Info className="h-4 w-4 text-muted-foreground" />
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p className="max-w-xs font-light">Required disclosure - won't automatically disqualify you</p>
+                  <p className="max-w-xs font-normal">Required disclosure - won't automatically disqualify you</p>
                 </TooltipContent>
               </Tooltip>
             </div>

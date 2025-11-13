@@ -38,10 +38,10 @@ export default function Accessories() {
       <main className="container mx-auto px-4 pt-2 pb-16">
         {/* Header Section */}
         <header className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-light tracking-wide mb-4">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide mb-4">
             Premium Marine Accessories
           </h1>
-          <p className="text-lg text-muted-foreground font-light max-w-2xl mx-auto">
+          <p className="text-base text-muted-foreground font-normal max-w-2xl mx-auto">
             Genuine Mercury parts and accessories to enhance your boating experience
           </p>
         </header>
@@ -51,7 +51,7 @@ export default function Accessories() {
           <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 gap-2 bg-transparent h-auto">
             <TabsTrigger 
               value="all" 
-              className="data-[state=active]:bg-foreground data-[state=active]:text-background font-light"
+              className="data-[state=active]:bg-foreground data-[state=active]:text-background font-medium"
             >
               All Products
             </TabsTrigger>
@@ -59,7 +59,7 @@ export default function Accessories() {
               <TabsTrigger 
                 key={key} 
                 value={key}
-                className="data-[state=active]:bg-foreground data-[state=active]:text-background font-light"
+                className="data-[state=active]:bg-foreground data-[state=active]:text-background font-medium"
               >
                 {category.name}
               </TabsTrigger>
@@ -70,7 +70,7 @@ export default function Accessories() {
         {/* Category Description */}
         {selectedCategory !== 'all' && (
           <div className="mb-8 text-center">
-            <p className="text-muted-foreground font-light">
+            <p className="text-muted-foreground font-normal">
               {ACCESSORY_CATEGORIES[selectedCategory as keyof typeof ACCESSORY_CATEGORIES].description}
             </p>
           </div>
@@ -86,7 +86,7 @@ export default function Accessories() {
         {/* Empty State */}
         {filteredAccessories.length === 0 && (
           <div className="text-center py-16">
-            <p className="text-muted-foreground font-light text-lg">
+            <p className="text-muted-foreground font-normal text-base">
               No accessories found in this category.
             </p>
           </div>
@@ -94,8 +94,8 @@ export default function Accessories() {
         
         {/* Bottom CTA Section */}
         <div className="mt-16 text-center border-t pt-12">
-          <h2 className="text-2xl font-light mb-4">Need Help Choosing?</h2>
-          <p className="text-muted-foreground font-light mb-6 max-w-xl mx-auto">
+          <h2 className="text-xl md:text-2xl font-semibold mb-4">Need Help Choosing?</h2>
+          <p className="text-muted-foreground font-normal mb-6 max-w-xl mx-auto">
             Our marine experts can help you select the perfect accessories for your setup
           </p>
           <Link to="/contact">

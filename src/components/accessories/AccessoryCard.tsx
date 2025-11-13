@@ -32,7 +32,7 @@ export function AccessoryCard({ accessory }: AccessoryCardProps) {
           {/* Stock Badge */}
           {accessory.inStock && (
             <div className="absolute top-4 left-4">
-              <Badge variant="default" className="bg-green-50 text-green-700 border-green-200 font-light">
+              <Badge variant="default" className="bg-green-50 text-green-700 border-green-200 font-medium">
                 In Stock
               </Badge>
             </div>
@@ -50,37 +50,37 @@ export function AccessoryCard({ accessory }: AccessoryCardProps) {
         {/* Content Section */}
         <CardContent className="p-6 space-y-4">
           {/* Product Name */}
-          <h3 className="text-xl font-light tracking-wide text-foreground">
+          <h3 className="text-xl font-semibold tracking-wide text-foreground">
             {accessory.name}
           </h3>
           
           {/* Part Number */}
           {accessory.partNumber && (
-            <p className="text-sm text-muted-foreground font-light">
+            <p className="text-sm text-muted-foreground font-normal">
               Part #: {accessory.partNumber}
             </p>
           )}
           
           {/* Short Description */}
-          <p className="text-sm text-muted-foreground font-light line-clamp-2">
+          <p className="text-sm text-muted-foreground font-normal line-clamp-2">
             {accessory.shortDescription}
           </p>
           
           {/* Pricing */}
           <div className="pt-2">
             {accessory.msrp && accessory.price && accessory.msrp > accessory.price && (
-              <p className="text-base text-muted-foreground line-through font-light">
+              <p className="text-sm text-muted-foreground line-through font-normal">
                 ${accessory.msrp.toLocaleString()}
               </p>
             )}
-            <p className="text-2xl font-light text-foreground">
+            <p className="text-xl font-bold text-foreground">
               {accessory.price ? `$${accessory.price.toLocaleString()}` : 'Call for Price'}
             </p>
           </div>
           
           {/* Compatibility */}
           {accessory.compatibility && (
-            <p className="text-xs text-muted-foreground italic font-light">
+            <p className="text-xs text-muted-foreground italic font-normal">
               {accessory.compatibility}
             </p>
           )}
@@ -91,14 +91,14 @@ export function AccessoryCard({ accessory }: AccessoryCardProps) {
               <DialogTrigger asChild>
                 <Button 
                   variant="outline" 
-                  className="flex-1 font-light hover:opacity-80"
+                  className="flex-1 font-medium hover:opacity-80"
                 >
                   View Details
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
-                  <DialogTitle className="text-2xl font-light tracking-wide">
+                  <DialogTitle className="text-xl md:text-2xl font-semibold tracking-wide">
                     {accessory.name}
                   </DialogTitle>
                 </DialogHeader>
@@ -116,12 +116,12 @@ export function AccessoryCard({ accessory }: AccessoryCardProps) {
                   {/* Part Number & Stock */}
                   <div className="flex items-center justify-between">
                     {accessory.partNumber && (
-                      <p className="text-sm text-muted-foreground font-light">
+                      <p className="text-sm text-muted-foreground font-normal">
                         Part #: {accessory.partNumber}
                       </p>
                     )}
                     {accessory.inStock && (
-                      <Badge variant="default" className="bg-green-50 text-green-700 border-green-200 font-light">
+                      <Badge variant="default" className="bg-green-50 text-green-700 border-green-200 font-medium">
                         In Stock
                       </Badge>
                     )}
@@ -130,11 +130,11 @@ export function AccessoryCard({ accessory }: AccessoryCardProps) {
                   {/* Pricing */}
                   <div>
                     {accessory.msrp && accessory.price && accessory.msrp > accessory.price && (
-                      <p className="text-lg text-muted-foreground line-through font-light">
+                      <p className="text-sm text-muted-foreground line-through font-normal">
                         MSRP: ${accessory.msrp.toLocaleString()}
                       </p>
                     )}
-                    <p className="text-3xl font-light text-foreground">
+                    <p className="text-2xl font-bold text-foreground">
                       {accessory.price ? `$${accessory.price.toLocaleString()}` : 'Call for Price'}
                     </p>
                   </div>
@@ -143,8 +143,8 @@ export function AccessoryCard({ accessory }: AccessoryCardProps) {
                   
                   {/* Description */}
                   <div>
-                    <h3 className="text-lg font-light mb-2">Description</h3>
-                    <p className="text-muted-foreground font-light leading-relaxed">
+                    <h3 className="text-base font-semibold mb-2">Description</h3>
+                    <p className="text-muted-foreground font-normal leading-relaxed">
                       {accessory.description}
                     </p>
                   </div>
@@ -152,14 +152,14 @@ export function AccessoryCard({ accessory }: AccessoryCardProps) {
                   {/* Specifications */}
                   {accessory.specifications && accessory.specifications.length > 0 && (
                     <div>
-                      <h3 className="text-lg font-light mb-3">Specifications</h3>
+                      <h3 className="text-base font-semibold mb-3">Specifications</h3>
                       <div className="grid grid-cols-2 gap-3">
                         {accessory.specifications.map((spec, index) => (
                           <div key={index} className="border rounded-lg p-3">
-                            <p className="text-xs text-muted-foreground font-light mb-1">
+                            <p className="text-xs text-muted-foreground font-medium mb-1">
                               {spec.label}
                             </p>
-                            <p className="text-sm font-light">
+                            <p className="text-sm font-normal">
                               {spec.value}
                             </p>
                           </div>
@@ -171,12 +171,12 @@ export function AccessoryCard({ accessory }: AccessoryCardProps) {
                   {/* Features */}
                   {accessory.features && accessory.features.length > 0 && (
                     <div>
-                      <h3 className="text-lg font-light mb-3">Features</h3>
+                      <h3 className="text-base font-semibold mb-3">Features</h3>
                       <ul className="space-y-2">
                         {accessory.features.map((feature, index) => (
                           <li key={index} className="flex items-start">
                             <span className="text-primary mr-2">•</span>
-                            <span className="text-muted-foreground font-light">{feature}</span>
+                            <span className="text-muted-foreground font-normal">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -186,8 +186,8 @@ export function AccessoryCard({ accessory }: AccessoryCardProps) {
                   {/* Compatibility */}
                   {accessory.compatibility && (
                     <div className="bg-muted/50 rounded-lg p-4">
-                      <h3 className="text-sm font-light mb-2">Compatibility</h3>
-                      <p className="text-sm text-muted-foreground font-light">
+                      <h3 className="text-sm font-semibold mb-2">Compatibility</h3>
+                      <p className="text-sm text-muted-foreground font-normal">
                         {accessory.compatibility}
                       </p>
                     </div>
@@ -197,13 +197,13 @@ export function AccessoryCard({ accessory }: AccessoryCardProps) {
                   
                   {/* Contact CTAs */}
                   <div className="space-y-3">
-                    <p className="text-sm text-muted-foreground font-light text-center">
+                    <p className="text-sm text-muted-foreground font-normal text-center">
                       Ready to order? Contact our team for availability and installation
                     </p>
                     <div className="grid grid-cols-2 gap-3">
                       <Button 
                         variant="outline" 
-                        className="font-light"
+                        className="font-medium"
                         asChild
                       >
                         <a href={`tel:${COMPANY_INFO.contact.phone}`}>
