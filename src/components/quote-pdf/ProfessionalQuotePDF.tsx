@@ -683,6 +683,24 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 Limited time offer - expires {validUntilString}
               </Text>
             )}
+            
+            {/* Financing Available Section */}
+            {quoteData.monthlyPayment && quoteData.financingTerm && (
+              <View style={styles.financingBox}>
+                <Text style={{ fontSize: 10, color: colors.text, marginBottom: 4, fontWeight: 'bold' }}>
+                  Financing Available
+                </Text>
+                <Text style={{ fontSize: 14, color: colors.text, marginBottom: 2, fontWeight: 'bold' }}>
+                  From ${quoteData.monthlyPayment}/month
+                </Text>
+                <Text style={{ fontSize: 9, color: colors.lightText, marginBottom: 2 }}>
+                  Over {quoteData.financingTerm} months at {quoteData.financingRate}% APR
+                </Text>
+                <Text style={{ fontSize: 8, color: colors.lightText, fontStyle: 'italic', marginTop: 4 }}>
+                  *Based on approved credit and standard financing terms
+                </Text>
+              </View>
+            )}
           </View>
 
           {/* Right Column */}
