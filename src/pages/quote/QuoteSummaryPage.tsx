@@ -468,13 +468,25 @@ export default function QuoteSummaryPage() {
         },
         // Add accessory breakdown and trade-in
         accessoryBreakdown: accessoryBreakdown,
-        tradeInValue: (state.tradeInInfo?.hasTradeIn && state.tradeInInfo?.estimatedValue) ? state.tradeInInfo.estimatedValue : undefined,
-        tradeInInfo: (state.tradeInInfo?.hasTradeIn && state.tradeInInfo.estimatedValue > 0) ? {
-          brand: state.tradeInInfo.brand,
-          year: state.tradeInInfo.year,
-          horsepower: state.tradeInInfo.horsepower,
-          model: state.tradeInInfo.model
-        } : undefined,
+        // Only include trade-in if explicitly selected AND has a valid estimated value
+        ...((() => {
+          const hasValidTradeIn = state.tradeInInfo?.hasTradeIn === true 
+            && state.tradeInInfo?.estimatedValue 
+            && state.tradeInInfo.estimatedValue > 0;
+          
+          return hasValidTradeIn ? {
+            tradeInValue: state.tradeInInfo.estimatedValue,
+            tradeInInfo: {
+              brand: state.tradeInInfo.brand,
+              year: state.tradeInInfo.year,
+              horsepower: state.tradeInInfo.horsepower,
+              model: state.tradeInInfo.model
+            }
+          } : {
+            tradeInValue: undefined,
+            tradeInInfo: undefined
+          };
+        })()),
         includesInstallation: state.purchasePath === 'installed',
         // Use the selected package's pricing (already includes everything)
         pricing: {
