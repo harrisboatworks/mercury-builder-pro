@@ -84,16 +84,24 @@ export default defineConfig(({ mode }) => ({
     include: [
       'react',
       'react-dom',
-      'react-router-dom',
+      '@radix-ui/react-dialog',
+      '@radix-ui/react-slot',
+      '@radix-ui/react-tabs',
+      '@radix-ui/react-tooltip',
       '@tanstack/react-query',
       '@supabase/supabase-js',
       'lucide-react',
-      'buffer',
     ],
     exclude: [
       '@react-pdf/renderer',
       '@huggingface/transformers',
       'framer-motion',
     ],
+    esbuildOptions: {
+      target: 'es2020',
+    },
+  },
+  ssr: {
+    noExternal: ['@react-pdf/renderer'],
   },
 }));
