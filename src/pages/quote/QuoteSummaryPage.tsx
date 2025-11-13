@@ -448,8 +448,24 @@ export default function QuoteSummaryPage() {
       const promoRate = promo?.rate || null;
       const { payment, termMonths, rate } = calculateMonthlyPayment(amountToFinance, promoRate);
       
-      // Generate QR code for financing application
-      const financingUrl = `${SITE_URL}/financing-application`;
+      // Generate QR code for financing application with pre-filled data
+      const motorModel = state.motor?.model || 'Motor';
+      const motorPrice = (packageTotal + DEALERPLAN_FEE).toFixed(2);
+      const packageName = selectedPackage === 'good' ? 'Essential' : selectedPackage === 'better' ? 'Complete' : 'Premium';
+      const downPayment = '0';
+      const tradeInValue = state.tradeInInfo?.hasTradeIn ? 
+        (state.tradeInInfo.estimatedValue || '0') : '0';
+
+      const financingParams = new URLSearchParams({
+        motor: motorModel,
+        price: motorPrice,
+        package: packageName,
+        down: downPayment,
+        trade: tradeInValue
+      });
+
+      const financingUrl = `${SITE_URL}/financing-application/from-quote?${financingParams.toString()}`;
+      
       let qrCodeDataUrl = '';
       try {
         qrCodeDataUrl = await QRCode.toDataURL(financingUrl, {

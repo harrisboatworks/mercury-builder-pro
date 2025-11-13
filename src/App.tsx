@@ -63,6 +63,7 @@ const PaymentCanceled = lazy(() => import("./pages/PaymentCanceled"));
 
 // Financing pages
 const FinancingApplication = lazy(() => import("./pages/FinancingApplication"));
+const FinancingFromQuote = lazy(() => import("./pages/financing/FinancingFromQuote"));
 const FinancingResume = lazy(() => import("./pages/FinancingResume"));
 const FinancingSuccess = lazy(() => import("./pages/FinancingSuccess"));
 
@@ -298,6 +299,7 @@ function AnimatedRoutes() {
         
         {/* Financing Application Routes */}
         <Route path="/financing-application" element={<FinancingApplication />} />
+        <Route path="/financing-application/from-quote" element={<FinancingFromQuote />} />
         <Route path="/financing/apply" element={<FinancingApplication />} />
         <Route path="/financing/resume" element={<FinancingResume />} />
         <Route path="/financing/success" element={<FinancingSuccess />} />
