@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift } from "lucide-react";
 import { supabase } from "../../integrations/supabase/client";
+import { pdf } from '@react-pdf/renderer';
+import CleanSpecSheetPDF from './CleanSpecSheetPDF';
 import { useIsMobile } from "../../hooks/use-mobile";
 import { useScrollCoordination } from "../../hooks/useScrollCoordination";
 import { money } from "../../lib/money";
@@ -185,13 +187,7 @@ export default function MotorDetailsPremiumModal({
         supabase.from('promotions').select('*').eq('is_active', true)
       ]);
       
-      // Dynamic import - Only load PDF library when button is clicked
-      const [{ pdf }, { default: CleanSpecSheetPDF }] = await Promise.all([
-        import('@react-pdf/renderer'),
-        import('./CleanSpecSheetPDF')
-      ]);
-      
-      // Generate PDF
+      // Generate PDF directly with @react-pdf/renderer
       const specData = {
         motorModel: motor.model || title,
         horsepower: `${hpValue}`,
@@ -219,9 +215,9 @@ export default function MotorDetailsPremiumModal({
       link.click();
       URL.revokeObjectURL(url);
       
-      console.log('✅ PDF downloaded successfully');
+      console.log('PDF downloaded successfully');
     } catch (error) {
-      console.error('❌ Error generating PDF:', error);
+      console.error('Error generating PDF:', error);
       alert('Unable to generate spec sheet. Please try again.');
     } finally {
       setSpecSheetLoading(false);
