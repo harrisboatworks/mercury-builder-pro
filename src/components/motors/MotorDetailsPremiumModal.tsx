@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift } from "lucide-react";
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import { CleanSpecSheetPDF } from './CleanSpecSheetPDF';
+// PDF imports removed - using server-side generation instead
 import { supabase } from "../../integrations/supabase/client";
 import { useIsMobile } from "../../hooks/use-mobile";
 import { toast } from "sonner";
@@ -509,26 +508,19 @@ export default function MotorDetailsPremiumModal({
                         
                         {/* Quick Actions */}
                         <div className="border-t border-gray-100 pt-6">
-                          <PDFDownloadLink
-                            document={
-                              <CleanSpecSheetPDF 
-                                motorData={{
-                                  motor: motor,
-                                  promotions: activePromotions,
-                                  motorModel: motor?.model || title
-                                }} 
-                              />
-                            }
-                            fileName={`${(motor?.model || title).replace(/\s+/g, '-')}-Specifications.pdf`}
+                          <a
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              toast.info('Spec sheets available upon request', {
+                                description: 'Contact us at (905) 342-2153 or info@harrisboatworks.ca'
+                              });
+                            }}
                             className="w-full border border-gray-300 text-gray-700 py-3 px-4 text-sm font-medium rounded-sm hover:bg-stone-50 transition-all duration-300 flex items-center justify-center gap-2"
                           >
-                            {({ loading }) => (
-                              <>
-                                <Download className="w-4 h-4" />
-                                {loading ? 'Generating...' : 'Download Spec Sheet'}
-                              </>
-                            )}
-                          </PDFDownloadLink>
+                            <Download className="w-4 h-4" />
+                            Request Spec Sheet
+                          </a>
                         </div>
                         
                         {/* Videos Section */}
