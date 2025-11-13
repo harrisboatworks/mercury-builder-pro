@@ -140,8 +140,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => {
-                    console.log('No trade-in clicked, resetting tradeInInfo');
-                    onTradeInChange({ 
+                    console.log('No trade-in clicked, clearing all trade-in data');
+                    const cleanTradeInInfo: TradeInInfo = { 
                       hasTradeIn: false,
                       brand: '',
                       year: 0,
@@ -150,8 +150,18 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       serialNumber: '',
                       condition: 'good' as const,
                       estimatedValue: 0,
-                      confidenceLevel: 'medium' as const
-                    });
+                      confidenceLevel: 'medium' as const,
+                      // Clear audit fields
+                      rangePrePenaltyLow: undefined,
+                      rangePrePenaltyHigh: undefined,
+                      rangeFinalLow: undefined,
+                      rangeFinalHigh: undefined,
+                      tradeinValuePrePenalty: undefined,
+                      tradeinValueFinal: undefined,
+                      penaltyApplied: undefined,
+                      penaltyFactor: undefined
+                    };
+                    onTradeInChange(cleanTradeInInfo);
                     onAutoAdvance?.();
                   }}
                   aria-pressed={!tradeInInfo.hasTradeIn}
