@@ -26,25 +26,19 @@ export default function TradeInPage() {
   useEffect(() => {
     // Trust navigation if we have required state
     if (state.motor && state.purchasePath) {
-      // Only load existing trade-in info if user previously said YES
-      if (state.tradeInInfo && state.tradeInInfo.hasTradeIn === true) {
-        console.log('📥 TradeInPage: Loading existing trade-in data', state.tradeInInfo);
-        setTradeInInfo(state.tradeInInfo);
-      } else {
-        console.log('🧹 TradeInPage: Clearing trade-in (no previous selection or user said NO)');
-        // Start fresh if no previous trade-in or user said NO
-        setTradeInInfo({
-          hasTradeIn: false,
-          brand: '',
-          year: 0,
-          horsepower: 0,
-          model: '',
-          serialNumber: '',
-          condition: 'good' as const,
-          estimatedValue: 0,
-          confidenceLevel: 'medium' as const
-        });
-      }
+      // Always start with clean trade-in state - no auto-loading from context
+      console.log('🧹 TradeInPage: Starting with clean trade-in state');
+      setTradeInInfo({
+        hasTradeIn: false,
+        brand: '',
+        year: 0,
+        horsepower: 0,
+        model: '',
+        serialNumber: '',
+        condition: 'good' as const,
+        estimatedValue: 0,
+        confidenceLevel: 'medium' as const
+      });
 
       document.title = 'Trade-In Valuation | Harris Boat Works';
       
@@ -93,6 +87,24 @@ export default function TradeInPage() {
       estimatedValue: 0,
       confidenceLevel: 'medium' as const
     };
+    
+    // If no trade-in, clear it from localStorage before navigating
+    if (!finalTradeInInfo.hasTradeIn) {
+      try {
+        const stored = localStorage.getItem('quoteBuilder');
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (parsed.state) {
+            parsed.state.tradeInInfo = finalTradeInInfo;
+            parsed.state.hasTradein = false;
+            localStorage.setItem('quoteBuilder', JSON.stringify(parsed));
+            console.log('🧹 Cleared trade-in from localStorage on navigation');
+          }
+        }
+      } catch (e) {
+        console.error('Failed to clear localStorage:', e);
+      }
+    }
     
     // Dispatch all state updates - React 18 will batch these automatically
     dispatch({ type: 'SET_TRADE_IN_INFO', payload: finalTradeInInfo });

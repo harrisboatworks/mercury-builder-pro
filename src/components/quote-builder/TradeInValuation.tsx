@@ -163,6 +163,23 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     };
                     onTradeInChange(cleanTradeInInfo);
                     console.log('✅ onTradeInChange called with clean state:', cleanTradeInInfo);
+                    
+                    // Aggressively clear trade-in from localStorage
+                    try {
+                      const stored = localStorage.getItem('quoteBuilder');
+                      if (stored) {
+                        const parsed = JSON.parse(stored);
+                        if (parsed.state) {
+                          parsed.state.tradeInInfo = cleanTradeInInfo;
+                          parsed.state.hasTradein = false;
+                          localStorage.setItem('quoteBuilder', JSON.stringify(parsed));
+                          console.log('🧹 Cleared trade-in from localStorage immediately');
+                        }
+                      }
+                    } catch (e) {
+                      console.error('Failed to clear localStorage:', e);
+                    }
+                    
                     onAutoAdvance?.();
                     console.log('🚀 onAutoAdvance called');
                   }}
