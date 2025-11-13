@@ -311,7 +311,7 @@ export default function MotorCardPreview({
               
               {/* HP Badge */}
               {hpNum && (
-                <div className="absolute top-4 right-4 bg-black text-white px-3 py-1 text-xs tracking-widest font-light uppercase">
+                <div className="absolute top-4 right-4 bg-black text-white px-3 py-1 text-xs tracking-widest font-medium uppercase">
                   {hpNum} HP
                 </div>
               )}
@@ -334,57 +334,57 @@ export default function MotorCardPreview({
           {/* Content Section - Premium Mobile Layout */}
           <div className="p-8 space-y-6">
             {/* Model Name - Prominent */}
-            <h3 className="text-2xl font-light tracking-wide text-gray-900">
+            <h3 className="text-xl font-semibold tracking-wide text-gray-900">
               {formatTitle(title)}
             </h3>
             
             {/* Model Number - Subtle */}
             {motor?.model_number && (
-              <p className="text-sm font-light text-gray-400 mt-1">
+              <p className="text-sm font-normal text-gray-400 mt-1">
                 Model: {motor.model_number}
               </p>
             )}
             
             {/* Simplified Specs - Single Line */}
-            <p className="text-base font-light text-gray-500 leading-relaxed mt-6">
+            <p className="text-sm font-normal text-gray-500 leading-relaxed mt-6">
               {getSimplifiedSpecs()}
             </p>
             
             {/* Pricing - Luxury minimal */}
             <div className="my-8">
-              <p className="text-[10px] tracking-[0.15em] uppercase text-gray-400 font-light">
+              <p className="text-[10px] tracking-[0.15em] uppercase text-gray-400 font-medium">
                 from
               </p>
               {msrp && price && msrp > price && (
-                <p className="text-base text-gray-400 font-light line-through mt-2">${msrp.toLocaleString()}</p>
+                <p className="text-sm text-gray-400 font-normal line-through mt-2">${msrp.toLocaleString()}</p>
               )}
-              <p className="text-4xl font-light tracking-tight text-gray-900 mt-1">
+              <p className="text-2xl font-bold tracking-tight text-gray-900 mt-1">
                 {price ? `$${price.toLocaleString()}` : 'Call for Price'}
               </p>
               
               {/* Monthly Payment Estimate */}
               {monthlyPayment && (
-                <p className="text-base font-light text-gray-500 mt-2">
+                <p className="text-sm font-normal text-gray-500 mt-2">
                   <span className="italic">From</span> ${monthlyPayment}/month*
                 </p>
               )}
             </div>
             
             {/* Delivery Status - Subtle with Icon */}
-            <p className="mt-4 text-sm font-light text-gray-600">
+            <p className="mt-4 text-sm font-normal text-gray-600">
               {deliveryStatus.text}
             </p>
             
             {/* Warranty - Clean Checkmark */}
             {warrantyText && (
-              <p className="text-sm font-light text-gray-600 mt-2">
+              <p className="text-sm font-normal text-gray-600 mt-2">
                 {warrantyText}
               </p>
             )}
             
             {/* Premium Black Button */}
             <button 
-              className="w-full border-2 border-black text-black py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-black hover:text-white transition-all duration-500 ease-out mt-8"
+              className="w-full border-2 border-black text-black py-4 text-xs tracking-widest uppercase font-medium rounded-sm hover:bg-black hover:text-white transition-all duration-500 ease-out mt-8"
               onClick={handleMoreInfoClick}
             >
               Build & Price
