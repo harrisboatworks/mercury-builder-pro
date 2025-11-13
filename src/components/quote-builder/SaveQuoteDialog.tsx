@@ -63,12 +63,39 @@ export function SaveQuoteDialog({
         quote_data: quoteData,
       });
 
+      // Save complete quote state to saved_quotes table for full restoration
+      const resumeToken = `quote_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days
+
+      const { data: savedQuote, error: savedQuoteError } = await supabase
+        .from('saved_quotes')
+        .insert({
+          email: email,
+          resume_token: resumeToken,
+          quote_state: quoteData, // Full QuoteContext state
+          user_id: null, // Anonymous for now
+          expires_at: expiresAt.toISOString(),
+        })
+        .select()
+        .single();
+
+      if (savedQuoteError) {
+        console.error('Error saving quote state:', savedQuoteError);
+        // Continue anyway - we have the customer_quotes record
+      } else if (savedQuote?.id) {
+        // Store saved quote ID for QR code generation
+        localStorage.setItem('current_saved_quote_id', savedQuote.id);
+        console.log('Saved quote ID for QR code:', savedQuote.id);
+      }
+
       // Send email with quote link
       const { error: emailError } = await supabase.functions.invoke('send-saved-quote-email', {
         body: {
           customerEmail: email,
           customerName: name || 'Valued Customer',
           quoteId: leadRecord.id,
+          savedQuoteId: savedQuote?.id, // NEW: Full restoration ID
+          resumeToken: resumeToken, // NEW: Security token
           motorModel: motorModel || 'Mercury Motor',
           finalPrice: finalPrice || 0,
           quoteData: quoteData,

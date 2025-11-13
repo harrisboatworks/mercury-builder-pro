@@ -1,5 +1,5 @@
 import { useEffect, useState, lazy, Suspense } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 import { useFinancing } from '@/contexts/FinancingContext';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Card } from '@/components/ui/card';
@@ -54,6 +54,7 @@ interface SavedDraft {
 export default function FinancingApplication() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const { state: financingState, dispatch: financingDispatch } = useFinancing();
   const { state: quoteState } = useQuote();
   const { toast } = useToast();
@@ -118,6 +119,72 @@ export default function FinancingApplication() {
       setShowResumeDialog(true);
       setIsLoading(false);
       return;
+    }
+
+    // Check for full quote restoration from saved_quotes (via quoteId)
+    const savedQuoteIdParam = searchParams.get('quoteId');
+    const restoredQuoteState = (location.state as any)?.savedQuoteState;
+
+    if (savedQuoteIdParam && restoredQuoteState) {
+      console.log('Restoring full quote state from database:', restoredQuoteState);
+      
+      // Calculate accurate total from saved state
+      const motorMSRP = parseFloat(restoredQuoteState.selectedMotor?.msrp) || 0;
+      const motorDiscount = parseFloat(restoredQuoteState.selectedMotor?.dealer_discount) || 0;
+      
+      // Get package-specific pricing
+      let packageTotal = motorMSRP - motorDiscount;
+      
+      // Add accessories based on package
+      if (restoredQuoteState.selectedPackage === 'better' || restoredQuoteState.selectedPackage === 'best') {
+        packageTotal += 180; // Battery
+      }
+      
+      // Add warranty if selected
+      if (restoredQuoteState.warranty?.warrantyPrice) {
+        packageTotal += parseFloat(restoredQuoteState.warranty.warrantyPrice);
+      }
+      
+      // Add installation costs
+      if (restoredQuoteState.installConfig?.installationType === 'professional') {
+        packageTotal += 450; // Professional installation
+      }
+      
+      // Add controls/rigging
+      if (restoredQuoteState.boatInfo?.controlsType === 'new') {
+        packageTotal += 1200;
+      } else if (restoredQuoteState.boatInfo?.controlsType === 'adapter') {
+        packageTotal += 125;
+      }
+      
+      // Subtract trade-in
+      const tradeInValue = parseFloat(restoredQuoteState.tradeInInfo?.estimatedValue) || 0;
+      
+      // Add tax and fees
+      const withTax = (packageTotal - tradeInValue) * 1.13;
+      const totalWithFees = withTax + 299; // Dealerplan fee
+      
+      // Dispatch to financing form
+      financingDispatch({
+        type: 'SET_PURCHASE_DETAILS',
+        payload: {
+          motorModel: restoredQuoteState.selectedMotor?.model || 'Motor',
+          motorPrice: Math.round(totalWithFees * 100) / 100,
+          downPayment: 0,
+          tradeInValue: tradeInValue,
+          amountToFinance: Math.round(totalWithFees * 100) / 100,
+        }
+      });
+      
+      // Show confirmation toast
+      toast({
+        title: "Quote Restored Successfully",
+        description: `Your ${restoredQuoteState.selectedMotor?.model || 'motor'} configuration has been loaded with all accessories and options.`,
+        duration: 5000,
+      });
+      
+      setIsLoading(false);
+      return; // Skip other pre-fill logic
     }
 
     // Check for URL parameters from QR code scan
