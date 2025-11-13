@@ -71,14 +71,14 @@ export default function StickyQuoteBar({
           </div>
         </div>
 
-        <div className="flex items-center gap-2 md:gap-2.5 shrink-0 mt-1 md:mt-0">
+        <div className="flex flex-row flex-nowrap items-center gap-1.5 md:gap-2.5 shrink-0 mt-1 md:mt-0">
           {onSecondary && (
-            <button onClick={onSecondary} className="rounded-lg border border-slate-300 px-3 py-2 md:px-4 text-xs md:text-sm font-light text-slate-700 hover:opacity-80 transition-opacity min-h-[44px] whitespace-nowrap">
+            <button onClick={onSecondary} className="rounded-lg border border-slate-300 px-2.5 py-2 md:px-4 text-xs md:text-sm font-light text-slate-700 hover:opacity-80 transition-opacity min-h-[44px] whitespace-nowrap">
               {secondaryLabel}
             </button>
           )}
           {onPrimary && (
-            <button onClick={onPrimary} className="rounded-lg bg-blue-600 px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-sm transition hover:scale-[1.01] hover:opacity-90 focus-visible:ring-2 focus-visible:ring-blue-500 min-h-[44px] whitespace-nowrap">
+            <button onClick={onPrimary} className="rounded-lg bg-blue-600 px-3 py-2 md:px-4 text-xs md:text-sm font-semibold text-white shadow-sm transition hover:scale-[1.01] hover:opacity-90 focus-visible:ring-2 focus-visible:ring-blue-500 min-h-[44px] whitespace-nowrap">
               {primaryLabel}
             </button>
           )}
