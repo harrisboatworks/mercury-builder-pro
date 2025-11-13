@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings, Video, Gift, Package, AlertCircle as AlertCircleIcon } from "lucide-react";
+import { pdf } from '@react-pdf/renderer';
 import { supabase } from "../../integrations/supabase/client";
+import { CleanSpecSheetPDF } from '@/components/motors/CleanSpecSheetPDF';
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
@@ -247,16 +249,10 @@ export default function MotorDetailsSheet({
 
       if (error) throw error;
 
-      // 2. Dynamically import PDF components ONLY when button is clicked
-      const [{ pdf }, { CleanSpecSheetPDF }] = await Promise.all([
-        import('@react-pdf/renderer'),
-        import('@/components/motors/CleanSpecSheetPDF')
-      ]);
-
-      // 3. Generate PDF client-side
+      // 2. Generate PDF client-side
       const blob = await pdf(<CleanSpecSheetPDF motorData={data} />).toBlob();
 
-      // 4. Download
+      // 3. Download
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
