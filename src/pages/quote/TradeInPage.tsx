@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
@@ -37,6 +37,10 @@ export default function TradeInPage() {
   const [isDirty, setIsDirty] = useState(false);
   const [showExitDialog, setShowExitDialog] = useState(false);
   const [pendingNavigation, setPendingNavigation] = useState<string | null>(null);
+  
+  // Track save indicator
+  const [showSaveIndicator, setShowSaveIndicator] = useState(false);
+  const saveIndicatorTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     // Trust navigation if we have required state
@@ -192,6 +196,39 @@ export default function TradeInPage() {
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, [isDirty]);
+  
+  // Show save indicator when trade-in data changes
+  useEffect(() => {
+    // Only show indicator if:
+    // 1. User has selected "Yes" for trade-in
+    // 2. There's meaningful data (not just the initial empty state)
+    
+    if (!state.tradeInInfo?.hasTradeIn) return;
+    
+    const hasData = state.tradeInInfo.brand !== '' || 
+                    state.tradeInInfo.year > 0 || 
+                    state.tradeInInfo.horsepower > 0;
+    
+    if (!hasData) return;
+    
+    // Show the indicator
+    setShowSaveIndicator(true);
+    
+    // Hide after 2 seconds
+    if (saveIndicatorTimeoutRef.current) {
+      clearTimeout(saveIndicatorTimeoutRef.current);
+    }
+    
+    saveIndicatorTimeoutRef.current = setTimeout(() => {
+      setShowSaveIndicator(false);
+    }, 2000);
+    
+    return () => {
+      if (saveIndicatorTimeoutRef.current) {
+        clearTimeout(saveIndicatorTimeoutRef.current);
+      }
+    };
+  }, [state.tradeInInfo]);
 
   return (
     <PageTransition>
@@ -208,6 +245,25 @@ export default function TradeInPage() {
               Back
             </Button>
           </div>
+          
+          {showSaveIndicator && (
+            <div className="flex items-center gap-2 text-xs text-green-600 animate-in fade-in slide-in-from-top-1 duration-300">
+              <svg 
+                className="w-3.5 h-3.5" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M5 13l4 4L19 7" 
+                />
+              </svg>
+              <span className="font-normal">Changes saved</span>
+            </div>
+          )}
           
           <TradeInValuation 
             tradeInInfo={tradeInInfo}
