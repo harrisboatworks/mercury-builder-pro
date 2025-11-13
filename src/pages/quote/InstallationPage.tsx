@@ -92,6 +92,18 @@ export default function InstallationPage() {
     }
   }, [currentTotal, currentMonthly]);
 
+  if (!state.motor || state.purchasePath !== 'installed') {
+    return (
+      <PageTransition>
+        <QuoteLayout>
+          <div className="text-center py-8">
+            <p>Redirecting to motor selection...</p>
+          </div>
+        </QuoteLayout>
+      </PageTransition>
+    );
+  }
+
   return (
     <PageTransition>
       <QuoteLayout>
@@ -103,16 +115,10 @@ export default function InstallationPage() {
             </Button>
           </div>
           
-          {state.motor ? (
-            <InstallationConfig 
-              selectedMotor={state.motor}
-              onComplete={handleStepComplete}
-            />
-          ) : (
-            <div className="text-center py-8">
-              <p>Loading installation configuration...</p>
-            </div>
-          )}
+          <InstallationConfig 
+            selectedMotor={state.motor}
+            onComplete={handleStepComplete}
+          />
         </div>
       </QuoteLayout>
     </PageTransition>

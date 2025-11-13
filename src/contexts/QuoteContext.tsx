@@ -228,8 +228,15 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   useEffect(() => {
     if (state.isLoading) return; // Don't save during initial load
     
+    // Initialize ref on first run if undefined
+    if (prevTradeInRef.current === undefined) {
+      prevTradeInRef.current = state.tradeInInfo;
+    }
+    
     // Check if trade-in specifically changed using deep comparison
-    const tradeInChanged = JSON.stringify(state.tradeInInfo) !== JSON.stringify(prevTradeInRef.current);
+    const currentTradeInStr = JSON.stringify(state.tradeInInfo);
+    const prevTradeInStr = JSON.stringify(prevTradeInRef.current);
+    const tradeInChanged = currentTradeInStr !== prevTradeInStr;
     
     if (tradeInChanged && state.tradeInInfo !== undefined) {
       prevTradeInRef.current = state.tradeInInfo;
