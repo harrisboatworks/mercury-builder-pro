@@ -449,7 +449,17 @@ export default function QuoteSummaryPage() {
         customerName: 'Valued Customer',
         customerEmail: '',
         customerPhone: '',
-        motor: quoteData.motor || {},
+        motor: {
+          model: motorName,
+          hp: hp,
+          msrp: motorMSRP,
+          base_price: motorMSRP - motorDiscount,
+          sale_price: motorMSRP - motorDiscount - promoSavings,
+          dealer_price: motorMSRP - motorDiscount,
+          model_year: modelYear || 2025,
+          category: motor?.category || 'FourStroke',
+          imageUrl: imageUrl
+        },
         selectedPackage: {
           id: selectedPackage,
           label: selectedPkg.label,
@@ -458,8 +468,8 @@ export default function QuoteSummaryPage() {
         },
         // Add accessory breakdown and trade-in
         accessoryBreakdown: accessoryBreakdown,
-        tradeInValue: state.tradeInInfo?.estimatedValue || 0,
-        tradeInInfo: state.tradeInInfo?.hasTradeIn ? {
+        tradeInValue: (state.tradeInInfo?.hasTradeIn && state.tradeInInfo?.estimatedValue) ? state.tradeInInfo.estimatedValue : undefined,
+        tradeInInfo: (state.tradeInInfo?.hasTradeIn && state.tradeInInfo.estimatedValue > 0) ? {
           brand: state.tradeInInfo.brand,
           year: state.tradeInInfo.year,
           horsepower: state.tradeInInfo.horsepower,
