@@ -62,7 +62,7 @@ export default function TradeInPage() {
     if (!state.motor) {
       navigate('/quote/motor-selection');
     }
-  }, [state.motor, state.purchasePath, state.tradeInInfo, navigate]);
+  }, [state.motor, state.purchasePath, navigate]);
 
   const handleTradeInChange = (updatedTradeInInfo: TradeInInfo) => {
     console.log('🔄 TradeInPage: Trade-in changed', {
