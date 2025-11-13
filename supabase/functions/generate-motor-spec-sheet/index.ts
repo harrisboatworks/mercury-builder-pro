@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
   },
 });
 
-// PDF Document Component
+// PDF Document Component using React.createElement (Deno doesn't support JSX)
 const SpecSheetDocument = ({ motor, promotions }: any) => {
   const currentDate = new Date().toLocaleDateString('en-US', { 
     year: 'numeric', 
@@ -140,103 +140,109 @@ const SpecSheetDocument = ({ motor, promotions }: any) => {
   const specs = motor.specifications || {};
   const hpNumber = motor.horsepower || 0;
 
-  return (
-    <Document>
-      <Page size="LETTER" style={styles.page}>
-        {/* Header */}
-        <View style={styles.header}>
-          <Text style={styles.companyName}>HARRIS BOAT WORKS</Text>
-          <Text style={styles.tagline}>Authorized Mercury Marine Dealer - Gores Landing, ON</Text>
-        </View>
+  const specItems = [
+    { label: 'Horsepower', value: `${hpNumber} HP` },
+    { label: 'Engine Type', value: specs['Engine Type'] || 'FourStroke' },
+    { label: 'Cylinders', value: specs['Cylinders'] || (hpNumber <= 15 ? '2' : '4') },
+    { label: 'Displacement', value: specs['Displacement'] || 'Contact dealer' },
+    { label: 'Starting', value: specs['Starting'] || 'Electric' },
+    { label: 'Fuel System', value: specs['Fuel System'] || 'EFI' },
+    { label: 'Weight', value: specs['Weight'] || 'Contact dealer' },
+    { label: 'Shaft Length', value: specs['Shaft Length'] || '20"' }
+  ];
 
-        {/* Motor Title */}
-        <Text style={styles.motorTitle}>{motor.model || 'Motor'}</Text>
-        <Text style={styles.motorSubtitle}>
-          {motor.model_year || 2025} Mercury Marine • {motor.horsepower || ''}HP
-        </Text>
-
-        {/* Price Box */}
-        {(motor.dealer_price || motor.msrp) && (
-          <View style={styles.priceBox}>
-            <Text style={styles.priceLabel}>MSRP</Text>
-            <Text style={styles.priceValue}>
-              ${motor.msrp || motor.dealer_price || 'Contact for Pricing'}
-            </Text>
-          </View>
-        )}
-
-        {/* Technical Specifications */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Technical Specifications</Text>
-          <View style={styles.specGrid}>
-            <View style={styles.specItem}>
-              <Text style={styles.specLabel}>Horsepower</Text>
-              <Text style={styles.specValue}>{hpNumber} HP</Text>
-            </View>
-            <View style={styles.specItem}>
-              <Text style={styles.specLabel}>Engine Type</Text>
-              <Text style={styles.specValue}>{specs['Engine Type'] || 'FourStroke'}</Text>
-            </View>
-            <View style={styles.specItem}>
-              <Text style={styles.specLabel}>Cylinders</Text>
-              <Text style={styles.specValue}>{specs['Cylinders'] || (hpNumber <= 15 ? '2' : '4')}</Text>
-            </View>
-            <View style={styles.specItem}>
-              <Text style={styles.specLabel}>Displacement</Text>
-              <Text style={styles.specValue}>{specs['Displacement'] || 'Contact dealer'}</Text>
-            </View>
-            <View style={styles.specItem}>
-              <Text style={styles.specLabel}>Starting</Text>
-              <Text style={styles.specValue}>{specs['Starting'] || 'Electric'}</Text>
-            </View>
-            <View style={styles.specItem}>
-              <Text style={styles.specLabel}>Fuel System</Text>
-              <Text style={styles.specValue}>{specs['Fuel System'] || 'EFI'}</Text>
-            </View>
-            <View style={styles.specItem}>
-              <Text style={styles.specLabel}>Weight</Text>
-              <Text style={styles.specValue}>{specs['Weight'] || 'Contact dealer'}</Text>
-            </View>
-            <View style={styles.specItem}>
-              <Text style={styles.specLabel}>Shaft Length</Text>
-              <Text style={styles.specValue}>{specs['Shaft Length'] || '20"'}</Text>
-            </View>
-          </View>
-        </View>
-
-        {/* Special Offers */}
-        {promotions && promotions.length > 0 && (
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Special Offers</Text>
-            <View style={styles.promoList}>
-              {promotions.map((promo: any, index: number) => (
-                <View key={index} style={styles.promoItem}>
-                  <Text style={styles.checkmark}>✓</Text>
-                  <Text>
-                    <Text style={{ fontWeight: 'bold' }}>{promo.name}</Text>
-                    {': '}
-                    {promo.bonus_description || promo.description || ''}
-                  </Text>
-                </View>
-              ))}
-            </View>
-          </View>
-        )}
-
-        {/* Footer */}
-        <View style={styles.footer}>
-          <Text style={{ fontWeight: 'bold' }}>Harris Boat Works</Text>
-          <Text>5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0</Text>
-          <View style={styles.contactInfo}>
-            <Text>Phone: (905) 342-2153 | Email: info@harrisboatworks.ca</Text>
-            <Text>quote.harrisboatworks.ca</Text>
-          </View>
-          <Text style={{ marginTop: 20, fontSize: 12 }}>
-            Generated on {currentDate}
-          </Text>
-        </View>
-      </Page>
-    </Document>
+  return React.createElement(
+    Document,
+    null,
+    React.createElement(
+      Page,
+      { size: 'LETTER', style: styles.page },
+      // Header
+      React.createElement(
+        View,
+        { style: styles.header },
+        React.createElement(Text, { style: styles.companyName }, 'HARRIS BOAT WORKS'),
+        React.createElement(Text, { style: styles.tagline }, 'Authorized Mercury Marine Dealer - Gores Landing, ON')
+      ),
+      // Motor Title
+      React.createElement(Text, { style: styles.motorTitle }, motor.model || 'Motor'),
+      React.createElement(
+        Text,
+        { style: styles.motorSubtitle },
+        `${motor.model_year || 2025} Mercury Marine • ${motor.horsepower || ''}HP`
+      ),
+      // Price Box
+      (motor.dealer_price || motor.msrp) && React.createElement(
+        View,
+        { style: styles.priceBox },
+        React.createElement(Text, { style: styles.priceLabel }, 'MSRP'),
+        React.createElement(
+          Text,
+          { style: styles.priceValue },
+          `$${motor.msrp || motor.dealer_price || 'Contact for Pricing'}`
+        )
+      ),
+      // Technical Specifications
+      React.createElement(
+        View,
+        { style: styles.section },
+        React.createElement(Text, { style: styles.sectionTitle }, 'Technical Specifications'),
+        React.createElement(
+          View,
+          { style: styles.specGrid },
+          ...specItems.map((spec, index) =>
+            React.createElement(
+              View,
+              { key: index, style: styles.specItem },
+              React.createElement(Text, { style: styles.specLabel }, spec.label),
+              React.createElement(Text, { style: styles.specValue }, spec.value)
+            )
+          )
+        )
+      ),
+      // Special Offers
+      promotions && promotions.length > 0 && React.createElement(
+        View,
+        { style: styles.section },
+        React.createElement(Text, { style: styles.sectionTitle }, 'Special Offers'),
+        React.createElement(
+          View,
+          { style: styles.promoList },
+          ...promotions.map((promo: any, index: number) =>
+            React.createElement(
+              View,
+              { key: index, style: styles.promoItem },
+              React.createElement(Text, { style: styles.checkmark }, '✓'),
+              React.createElement(
+                Text,
+                null,
+                React.createElement(Text, { style: { fontWeight: 'bold' } }, promo.name),
+                ': ',
+                promo.bonus_description || promo.description || ''
+              )
+            )
+          )
+        )
+      ),
+      // Footer
+      React.createElement(
+        View,
+        { style: styles.footer },
+        React.createElement(Text, { style: { fontWeight: 'bold' } }, 'Harris Boat Works'),
+        React.createElement(Text, null, '5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0'),
+        React.createElement(
+          View,
+          { style: styles.contactInfo },
+          React.createElement(Text, null, 'Phone: (905) 342-2153 | Email: info@harrisboatworks.ca'),
+          React.createElement(Text, null, 'quote.harrisboatworks.ca')
+        ),
+        React.createElement(
+          Text,
+          { style: { marginTop: 20, fontSize: 12 } },
+          `Generated on ${currentDate}`
+        )
+      )
+    )
   );
 };
 
