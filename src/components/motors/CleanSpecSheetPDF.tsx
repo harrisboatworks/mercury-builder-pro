@@ -18,17 +18,17 @@ import {
 const colors = {
   text: '#111827',
   lightText: '#6b7280',
-  primary: '#1e40af',
   discount: '#059669',
   border: '#cccccc',
   tableBg: '#f3f4f6',
+  infoBg: '#e5e7eb',
   white: '#ffffff'
 };
 
 const styles = StyleSheet.create({
   page: {
     backgroundColor: colors.white,
-    padding: 40,
+    padding: 12,
     fontFamily: 'Helvetica',
     fontSize: 10,
   },
@@ -37,9 +37,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 20,
-    paddingBottom: 15,
-    borderBottom: `3 solid ${colors.primary}`,
+    marginBottom: 12,
+    paddingBottom: 10,
+    borderBottom: `1.5 solid ${colors.border}`,
   },
   
   logoContainer: {
@@ -54,9 +54,9 @@ const styles = StyleSheet.create({
   },
   
   companyName: {
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: 'bold',
-    color: colors.primary,
+    color: colors.text,
     marginBottom: 3,
   },
   
@@ -66,63 +66,63 @@ const styles = StyleSheet.create({
   },
   
   motorTitle: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
     color: colors.text,
-    marginTop: 15,
+    marginTop: 8,
     marginBottom: 5,
   },
   
   motorSubtitle: {
     fontSize: 11,
     color: colors.lightText,
-    marginBottom: 15,
+    marginBottom: 8,
   },
   
   priceBox: {
-    backgroundColor: colors.primary,
-    padding: 15,
-    marginVertical: 15,
-    borderRadius: 4,
+    border: `2 solid ${colors.discount}`,
+    padding: 12,
+    marginVertical: 12,
+    backgroundColor: 'transparent',
   },
   
   priceLabel: {
     fontSize: 11,
-    color: colors.white,
-    opacity: 0.9,
+    color: colors.lightText,
   },
   
   priceValue: {
-    fontSize: 28,
+    fontSize: 22,
     fontWeight: 'bold',
-    color: colors.white,
+    color: colors.text,
     marginTop: 5,
   },
   
   section: {
-    marginTop: 20,
+    marginTop: 12,
   },
   
   sectionTitle: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: 'bold',
-    color: colors.primary,
-    marginBottom: 10,
-    paddingBottom: 8,
-    borderBottom: `2 solid ${colors.border}`,
+    color: colors.text,
+    marginBottom: 8,
+    paddingBottom: 5,
+    borderBottom: `1 solid ${colors.border}`,
   },
   
   specGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 10,
+    gap: 6,
   },
   
   specItem: {
     width: '48%',
-    backgroundColor: colors.tableBg,
-    padding: 10,
-    borderLeft: `3 solid ${colors.primary}`,
+    backgroundColor: 'transparent',
+    padding: 8,
+    marginBottom: 4,
+    borderBottom: `0.5 solid ${colors.border}`,
   },
   
   specLabel: {
@@ -162,9 +162,9 @@ const styles = StyleSheet.create({
   },
   
   footer: {
-    marginTop: 30,
-    paddingTop: 15,
-    borderTop: `2 solid ${colors.border}`,
+    marginTop: 20,
+    paddingTop: 10,
+    borderTop: `1 solid ${colors.border}`,
   },
   
   footerText: {
@@ -187,24 +187,25 @@ const styles = StyleSheet.create({
   },
 
   featuresSection: {
-    marginTop: 12,
-    marginBottom: 12,
+    marginTop: 8,
+    marginBottom: 8,
   },
   featuresGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 8,
+    gap: 6,
   },
   featureItem: {
     width: '48%',
     padding: 6,
-    backgroundColor: '#f9fafb',
-    borderRadius: 4,
+    backgroundColor: colors.tableBg,
+    borderRadius: 0,
+    borderLeft: `2 solid ${colors.border}`,
   },
   featureCode: {
-    fontSize: 10,
+    fontSize: 9,
     fontWeight: 'bold',
-    color: colors.primary,
+    color: colors.text,
   },
   featureMeaning: {
     fontSize: 9,
@@ -214,9 +215,9 @@ const styles = StyleSheet.create({
   warrantyBox: {
     marginTop: 12,
     padding: 10,
-    backgroundColor: '#f0f9ff',
-    borderRadius: 4,
-    borderLeft: `3 solid ${colors.primary}`,
+    backgroundColor: colors.infoBg,
+    borderRadius: 0,
+    borderLeft: `2 solid ${colors.border}`,
   },
   warrantyContent: {
     marginTop: 6,
@@ -245,9 +246,9 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   trustBadge: {
-    fontSize: 9,
+    fontSize: 8,
     color: colors.lightText,
-    fontWeight: 'bold',
+    fontWeight: 'normal',
   },
   badgeSeparator: {
     fontSize: 9,
