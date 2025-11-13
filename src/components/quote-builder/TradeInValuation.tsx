@@ -110,11 +110,18 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => {
-                     onTradeInChange({
-                       ...tradeInInfo,
-                       hasTradeIn: true
-                     });
-                   }}
+                    onTradeInChange({
+                      hasTradeIn: true,
+                      brand: '',
+                      year: 0,
+                      horsepower: 0,
+                      model: '',
+                      serialNumber: '',
+                      condition: 'good' as const,
+                      estimatedValue: 0,
+                      confidenceLevel: 'medium' as const
+                    });
+                  }}
                   aria-pressed={tradeInInfo.hasTradeIn}
                   className={`relative p-6 border-2 rounded-sm transition-all bg-white dark:bg-gray-900 text-left group ${
                     tradeInInfo.hasTradeIn 
