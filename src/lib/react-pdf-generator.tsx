@@ -1,6 +1,6 @@
 // Simplified PDF generator - Quote PDFs still use this
 // Motor spec sheets now use server-side generation via edge function
-import { supabase } from './supabase';
+import { supabase } from '@/integrations/supabase/client';
 
 export interface ReactPdfQuoteData {
   quoteNumber: string;
