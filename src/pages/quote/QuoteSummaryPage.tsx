@@ -441,6 +441,11 @@ export default function QuoteSummaryPage() {
       const packageTax = packageSubtotal * 0.13;
       const packageTotal = packageSubtotal + packageTax;
       
+      // Calculate financing details (same logic as FinancingCallout)
+      const amountToFinance = packageTotal + DEALERPLAN_FEE;
+      const promoRate = promo?.rate || null;
+      const { payment, termMonths, rate } = calculateMonthlyPayment(amountToFinance, promoRate);
+      
       // Transform quote data for React PDF
       const motorSubtotal = motorMSRP - motorDiscount - promoSavings;
       
@@ -511,7 +516,10 @@ export default function QuoteSummaryPage() {
           hst: packageTax,
           totalCashPrice: packageTotal,
           savings: motorDiscount + promoSavings
-        }
+        },
+        monthlyPayment: payment,
+        financingTerm: termMonths,
+        financingRate: rate
       };
       
       // Save lead data when PDF is downloaded
