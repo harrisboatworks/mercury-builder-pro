@@ -57,10 +57,10 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
       className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
     >
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-light tracking-wide text-gray-900 dark:text-gray-100 mb-3">
+        <h2 className="text-3xl md:text-4xl font-light tracking-wide text-gray-900 mb-3">
           Great Choice! {selectedMotor?.model}
         </h2>
-        <p className="text-gray-500 dark:text-gray-400 font-light">How would you like to purchase this motor?</p>
+        <p className="text-gray-500 font-light">How would you like to purchase this motor?</p>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto items-stretch">
@@ -74,15 +74,15 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
           <CardHeader className="pb-4">
             <div className="flex items-center gap-3 mb-3">
               <Package className="w-8 h-8 text-primary" />
-              <CardTitle className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">Loose Motor</CardTitle>
+              <CardTitle className="text-2xl font-light tracking-wide text-gray-900">Loose Motor</CardTitle>
             </div>
-            <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+            <p className="text-sm font-light text-gray-500">
               In-store pickup only • No installation
             </p>
           </CardHeader>
           
           <CardContent className="flex flex-col flex-1 pt-0">
-            <div className="flex flex-col gap-3 text-base font-light text-gray-600 dark:text-gray-300 flex-1 space-y-2 mb-6">
+            <div className="flex flex-col gap-3 text-base font-light text-gray-600 flex-1 space-y-2 mb-6">
               <div className="flex items-center gap-2">
                 <span className="text-green-600 text-sm">✓</span>
                 <span>Free Prep</span>
@@ -117,7 +117,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             
             <Button 
               variant="outline"
-              className="w-full border-2 border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100 py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-gray-900 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900 transition-all duration-500"
+              className="w-full border-2 border-gray-900 text-gray-900 py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-gray-900 hover:text-white transition-all duration-500"
             >
               Select Loose Motor
             </Button>
@@ -135,15 +135,15 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
           <CardHeader className="pb-4">
             <div className="flex items-center gap-3 mb-3">
               <Wrench className="w-8 h-8 text-primary" />
-              <CardTitle className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">Professional Installation</CardTitle>
+              <CardTitle className="text-2xl font-light tracking-wide text-gray-900">Professional Installation</CardTitle>
             </div>
-            <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+            <p className="text-sm font-light text-gray-500">
               {isTiller ? 'Complete motor prep & water test' : 'Complete rigging & water test'}
             </p>
           </CardHeader>
           
           <CardContent className="flex flex-col flex-1 pt-0">
-            <div className="flex flex-col gap-3 text-base font-light text-gray-600 dark:text-gray-300 flex-1 space-y-2 mb-6">
+            <div className="flex flex-col gap-3 text-base font-light text-gray-600 flex-1 space-y-2 mb-6">
               {!isTiller && (
                 <div className="flex items-center gap-2">
                   <span className="text-green-600 text-sm">✓</span>
@@ -172,7 +172,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             
             <Button 
               variant="outline"
-              className="w-full border-2 border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100 py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-gray-900 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900 transition-all duration-500"
+              className="w-full border-2 border-gray-900 text-gray-900 py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-gray-900 hover:text-white transition-all duration-500"
             >
               Select Installation
             </Button>

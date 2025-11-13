@@ -97,7 +97,7 @@ export default function InstallationPage() {
       <QuoteLayout>
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" onClick={handleBack} className="dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-800">
+            <Button variant="outline" size="sm" onClick={handleBack} className="border-gray-300 hover:border-gray-900 font-light">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Trade-In
             </Button>
