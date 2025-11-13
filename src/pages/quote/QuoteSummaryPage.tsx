@@ -456,15 +456,28 @@ export default function QuoteSummaryPage() {
       const tradeInValue = state.tradeInInfo?.hasTradeIn ? 
         (state.tradeInInfo.estimatedValue || '0') : '0';
 
-      const financingParams = new URLSearchParams({
-        motor: motorModel,
-        price: motorPrice,
-        package: packageName,
-        down: downPayment,
-        trade: tradeInValue
-      });
+      // Check if quote was saved (has a saved_quotes record)
+      const savedQuoteId = localStorage.getItem('current_saved_quote_id');
+      
+      let financingUrl: string;
+      
+      if (savedQuoteId) {
+        // Use short, clean URL with quote ID for full restoration
+        financingUrl = `${SITE_URL}/financing-application/from-quote?quoteId=${savedQuoteId}`;
+        console.log('QR code using saved quote ID:', savedQuoteId);
+      } else {
+        // Fallback to parameter-based URL (existing logic for unsaved quotes)
+        const financingParams = new URLSearchParams({
+          motor: motorModel,
+          price: motorPrice,
+          package: packageName,
+          down: downPayment,
+          trade: tradeInValue
+        });
 
-      const financingUrl = `${SITE_URL}/financing-application/from-quote?${financingParams.toString()}`;
+        financingUrl = `${SITE_URL}/financing-application/from-quote?${financingParams.toString()}`;
+        console.log('QR code using parameter-based URL (quote not saved)');
+      }
       
       let qrCodeDataUrl = '';
       try {

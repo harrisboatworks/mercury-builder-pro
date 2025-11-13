@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo.png';
+import { supabase } from '@/integrations/supabase/client';
 
 export default function FinancingFromQuote() {
   const [searchParams] = useSearchParams();
@@ -10,7 +11,70 @@ export default function FinancingFromQuote() {
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
 
   useEffect(() => {
-    // Parse URL parameters
+    const quoteId = searchParams.get('quoteId');
+    
+    if (quoteId) {
+      // NEW PATH: Restore complete quote from database
+      loadQuoteFromDatabase(quoteId);
+    } else {
+      // EXISTING PATH: Parse URL parameters (fallback)
+      loadQuoteFromParams();
+    }
+  }, [searchParams, navigate]);
+
+  async function loadQuoteFromDatabase(quoteId: string) {
+    try {
+      setStatus('loading');
+      
+      // Fetch saved quote from database
+      const { data: savedQuote, error } = await supabase
+        .from('saved_quotes')
+        .select('*')
+        .eq('id', quoteId)
+        .single();
+      
+      if (error || !savedQuote) {
+        console.error('Quote not found:', error);
+        setStatus('error');
+        setTimeout(() => navigate('/financing-application'), 2000);
+        return;
+      }
+      
+      // Validate expiration
+      if (new Date(savedQuote.expires_at) < new Date()) {
+        console.error('Quote expired');
+        setStatus('error');
+        setTimeout(() => navigate('/financing-application'), 2000);
+        return;
+      }
+      
+      // Update access count for analytics
+      await supabase
+        .from('saved_quotes')
+        .update({ 
+          access_count: (savedQuote.access_count || 0) + 1,
+          last_accessed: new Date().toISOString()
+        })
+        .eq('id', quoteId);
+      
+      setStatus('success');
+      
+      // Redirect with full quote state
+      setTimeout(() => {
+        navigate('/financing-application?quoteId=' + quoteId + '&fromQr=true', {
+          state: { savedQuoteState: savedQuote.quote_state }
+        });
+      }, 1500);
+      
+    } catch (error) {
+      console.error('Error loading quote:', error);
+      setStatus('error');
+      setTimeout(() => navigate('/financing-application'), 2000);
+    }
+  }
+
+  function loadQuoteFromParams() {
+    // EXISTING parameter-based logic (unchanged)
     const motorModel = searchParams.get('motor');
     const motorPrice = searchParams.get('price');
     const packageName = searchParams.get('package');
@@ -40,7 +104,7 @@ export default function FinancingFromQuote() {
 
       navigate(`/financing-application?${params.toString()}`);
     }, 1500);
-  }, [searchParams, navigate]);
+  }
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4">
