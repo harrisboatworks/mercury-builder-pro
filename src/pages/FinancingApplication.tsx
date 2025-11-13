@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useFinancing } from '@/contexts/FinancingContext';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -11,14 +11,16 @@ import { FinancingApplicationSkeleton } from '@/components/financing/FinancingAp
 import { AccessibleFormWrapper } from '@/components/financing/AccessibleFormWrapper';
 import { Mail, ArrowLeft } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo.png';
-import { PurchaseDetailsStep } from '@/components/financing/PurchaseDetailsStep';
-import { ApplicantStep } from '@/components/financing/ApplicantStep';
-import { EmploymentStep } from '@/components/financing/EmploymentStep';
-import { FinancialStep } from '@/components/financing/FinancialStep';
-import { CoApplicantStep } from '@/components/financing/CoApplicantStep';
-import { ReferencesStep } from '@/components/financing/ReferencesStep';
-import { ReviewSubmitStep } from '@/components/financing/ReviewSubmitStep';
 import '@/styles/financing-mobile.css';
+
+// Lazy load step components (~180KB total)
+const PurchaseDetailsStep = lazy(() => import('@/components/financing/PurchaseDetailsStep').then(m => ({ default: m.PurchaseDetailsStep })));
+const ApplicantStep = lazy(() => import('@/components/financing/ApplicantStep').then(m => ({ default: m.ApplicantStep })));
+const EmploymentStep = lazy(() => import('@/components/financing/EmploymentStep').then(m => ({ default: m.EmploymentStep })));
+const FinancialStep = lazy(() => import('@/components/financing/FinancialStep').then(m => ({ default: m.FinancialStep })));
+const CoApplicantStep = lazy(() => import('@/components/financing/CoApplicantStep').then(m => ({ default: m.CoApplicantStep })));
+const ReferencesStep = lazy(() => import('@/components/financing/ReferencesStep').then(m => ({ default: m.ReferencesStep })));
+const ReviewSubmitStep = lazy(() => import('@/components/financing/ReviewSubmitStep').then(m => ({ default: m.ReviewSubmitStep })));
 
 const stepTitles = {
   1: "Purchase Details",
@@ -245,7 +247,9 @@ export default function FinancingApplication() {
               stepTitle={stepTitles[financingState.currentStep as keyof typeof stepTitles]}
               totalSteps={7}
             >
-              <CurrentStepComponent />
+              <Suspense fallback={<FinancingApplicationSkeleton />}>
+                <CurrentStepComponent />
+              </Suspense>
             </AccessibleFormWrapper>
           ) : (
             <div className="text-center py-12" role="status">

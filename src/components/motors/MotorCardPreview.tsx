@@ -1,11 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
-import MotorDetailsPremiumModal from './MotorDetailsPremiumModal';
 import { Button } from '@/components/ui/button';
 import { LuxuryPriceDisplay } from '@/components/pricing/LuxuryPriceDisplay';
 import { StockBadge } from '@/components/inventory/StockBadge';
+import { ModalSkeleton } from '@/components/ui/ModalSkeleton';
 import type { Motor } from '../../lib/motor-helpers';
 import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery, decodeModelName, cleanMotorName } from '../../lib/motor-helpers';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -13,6 +13,9 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
 import { getFinancingTerm } from '@/lib/finance';
 import mercuryLogo from '@/assets/mercury-logo.png';
+
+// Lazy load heavy modal component (~120KB)
+const MotorDetailsPremiumModal = lazy(() => import('./MotorDetailsPremiumModal'));
 
 export default function MotorCardPreview({ 
   img, 
@@ -395,21 +398,23 @@ export default function MotorCardPreview({
       
       {/* Premium Details Modal */}
       {showDetailsSheet && createPortal(
-        <MotorDetailsPremiumModal
-          open={showDetailsSheet}
-          onClose={handleCloseModal}
-          onSelect={onSelect}
-          title={title}
-          img={imageUrl}
-          gallery={galleryImages}
-          msrp={msrp}
-          price={price}
-          promoText={promoText}
-          hp={hpNum}
-          shaft={shaft}
-          features={features}
-          motor={motor}
-        />,
+        <Suspense fallback={<ModalSkeleton />}>
+          <MotorDetailsPremiumModal
+            open={showDetailsSheet}
+            onClose={handleCloseModal}
+            onSelect={onSelect}
+            title={title}
+            img={imageUrl}
+            gallery={galleryImages}
+            msrp={msrp}
+            price={price}
+            promoText={promoText}
+            hp={hpNum}
+            shaft={shaft}
+            features={features}
+            motor={motor}
+          />
+        </Suspense>,
         document.body
       )}
     </>

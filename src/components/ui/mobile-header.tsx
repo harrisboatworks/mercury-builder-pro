@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
-import { ChatWidget } from '@/components/chat/ChatWidget';
+
+// Lazy load ChatWidget (~85KB)
+const ChatWidget = lazy(() => import('@/components/chat/ChatWidget').then(m => ({ default: m.ChatWidget })));
 
 interface MobileHeaderProps {
   title?: string;
@@ -60,7 +62,9 @@ export default function MobileHeader({ title, onMenuClick, showMenu = false }: M
               alt="Mercury Marine" 
               className="w-auto h-4 max-w-[80px] md:h-6 md:max-w-none lg:h-8 dark:invert"
             />
-            <ChatWidget />
+            <Suspense fallback={null}>
+              <ChatWidget />
+            </Suspense>
           </div>
         </div>
       </div>

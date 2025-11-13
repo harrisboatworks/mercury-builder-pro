@@ -1,6 +1,5 @@
 import React from 'react';
 import { pdf } from '@react-pdf/renderer';
-import ProfessionalQuotePDF from '@/components/quote-pdf/ProfessionalQuotePDF';
 import { calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE } from '@/lib/finance';
 
 export interface ReactPdfQuoteData {
@@ -100,7 +99,7 @@ export const transformQuoteData = (quoteData: any): ReactPdfQuoteData => {
   };
 };
 
-// Generate PDF blob for download
+// Generate PDF blob for download (dynamically imports PDF component)
 export const generateQuotePDF = async (quoteData: any): Promise<string> => {
   try {
     console.log('🔄 Generating React PDF with data:', { 
@@ -109,6 +108,9 @@ export const generateQuotePDF = async (quoteData: any): Promise<string> => {
       customerName: quoteData.customerName 
     });
 
+    // Dynamically import PDF component (~450KB)
+    const { default: ProfessionalQuotePDF } = await import('@/components/quote-pdf/ProfessionalQuotePDF');
+    
     const transformedData = transformQuoteData(quoteData);
     const blob = await pdf(<ProfessionalQuotePDF quoteData={transformedData} />).toBlob();
     
@@ -137,8 +139,11 @@ export const downloadPDF = async (pdfUrl: string, filename?: string) => {
   URL.revokeObjectURL(pdfUrl);
 };
 
-// Generate PDF blob for email attachment
+// Generate PDF blob for email attachment (dynamically imports PDF component)
 export const generatePDFBlob = async (quoteData: any): Promise<Blob> => {
+  // Dynamically import PDF component (~450KB)
+  const { default: ProfessionalQuotePDF } = await import('@/components/quote-pdf/ProfessionalQuotePDF');
+  
   const transformedData = transformQuoteData(quoteData);
   return await pdf(<ProfessionalQuotePDF quoteData={transformedData} />).toBlob();
 };

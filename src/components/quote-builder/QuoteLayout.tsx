@@ -9,7 +9,6 @@ import { cn } from '@/lib/utils';
 import { HamburgerMenu } from '@/components/ui/hamburger-menu';
 import { useState } from 'react';
 import { CartHeader } from '@/components/ui/cart-header';
-import { ChatWidget } from '@/components/chat/ChatWidget';
 import { CurrentStepIndicator } from './CurrentStepIndicator';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 
