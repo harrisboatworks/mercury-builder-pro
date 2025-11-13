@@ -1,5 +1,6 @@
 // Simplified PDF generator - Quote PDFs still use this
 // Motor spec sheets now use server-side generation via edge function
+import { supabase } from './supabase';
 
 export interface ReactPdfQuoteData {
   quoteNumber: string;
@@ -52,6 +53,36 @@ export interface ReactPdfQuoteData {
 }
 
 /**
+ * Generate a motor spec sheet PDF using the edge function
+ */
+export async function generateMotorSpecSheet(data: ReactPdfQuoteData): Promise<string> {
+  try {
+    console.log('Generating motor spec sheet for quote:', data.quoteNumber);
+
+    const { data: result, error } = await supabase.functions.invoke('generate-motor-spec-sheet', {
+      body: {
+        quoteData: data,
+        format: 'pdf'
+      }
+    });
+
+    if (error) {
+      console.error('Error generating spec sheet:', error);
+      throw error;
+    }
+
+    // The edge function returns HTML that should be converted to PDF
+    // Return the HTML as a data URL for now
+    const htmlContent = result.html || '';
+    const dataUrl = `data:text/html;charset=utf-8,${encodeURIComponent(htmlContent)}`;
+    return dataUrl;
+  } catch (error) {
+    console.error('Failed to generate spec sheet:', error);
+    throw error;
+  }
+}
+
+/**
  * Generate a quote PDF using PDF.co API or other service
  * This is a placeholder - implement your preferred PDF generation service
  */
@@ -59,7 +90,7 @@ export async function generateQuotePDF(data: ReactPdfQuoteData): Promise<string>
   // For now, return a data URL placeholder
   // TODO: Implement actual PDF generation service integration
   console.log('PDF generation requested for quote:', data.quoteNumber);
-  
+
   // Return a placeholder URL
   // In production, this would call PDF.co or another service
   return 'data:application/pdf;base64,placeholder';
