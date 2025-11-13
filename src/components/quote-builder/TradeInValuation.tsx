@@ -110,17 +110,10 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => {
-                     // Auto-populate from current motor details if available
-                     const autoPopulatedInfo = {
+                     onTradeInChange({
                        ...tradeInInfo,
-                       hasTradeIn: true,
-                       ...(currentMotorBrand && currentMotorBrand !== 'No Current Motor' && {
-                         brand: currentMotorBrand,
-                         horsepower: currentHp || 0,
-                         year: currentMotorYear || 0
-                       })
-                     };
-                     onTradeInChange(autoPopulatedInfo);
+                       hasTradeIn: true
+                     });
                    }}
                   aria-pressed={tradeInInfo.hasTradeIn}
                   className={`relative p-6 border-2 rounded-sm transition-all bg-white dark:bg-gray-900 text-left group ${
