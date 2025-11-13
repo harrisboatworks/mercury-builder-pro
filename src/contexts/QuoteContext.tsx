@@ -223,10 +223,30 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   }, []);
 
-  // Debounced save to localStorage - increased to 1000ms for better performance
+  // Debounced save to localStorage with immediate save for trade-in changes
   useEffect(() => {
     if (state.isLoading) return; // Don't save during initial load
     
+    // Immediate save for trade-in changes to prevent stale data
+    const tradeInChanged = state.tradeInInfo !== undefined;
+    if (tradeInChanged) {
+      try {
+        const dataToSave = {
+          state,
+          timestamp: Date.now()
+        };
+        localStorage.setItem('quoteBuilder', JSON.stringify(dataToSave));
+        console.log('💾 QuoteContext: Immediate save for trade-in change', {
+          hasTradeIn: state.tradeInInfo?.hasTradeIn,
+          estimatedValue: state.tradeInInfo?.estimatedValue
+        });
+        return; // Skip debounced save
+      } catch (error) {
+        console.error('❌ QuoteContext: Failed to save trade-in:', error);
+      }
+    }
+    
+    // Regular debounced save for other changes
     if (saveTimeoutRef.current) {
       clearTimeout(saveTimeoutRef.current);
     }
