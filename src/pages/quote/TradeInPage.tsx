@@ -38,9 +38,24 @@ export default function TradeInPage() {
   useEffect(() => {
     // Trust navigation if we have required state
     if (state.motor && state.purchasePath) {
-      // Load existing trade-in info if available
-      if (state.tradeInInfo) {
+      // Only load existing trade-in info if user previously said YES
+      if (state.tradeInInfo && state.tradeInInfo.hasTradeIn === true) {
+        console.log('📥 TradeInPage: Loading existing trade-in data', state.tradeInInfo);
         setTradeInInfo(state.tradeInInfo);
+      } else {
+        console.log('🧹 TradeInPage: Clearing trade-in (no previous selection or user said NO)');
+        // Start fresh if no previous trade-in or user said NO
+        setTradeInInfo({
+          hasTradeIn: false,
+          brand: '',
+          year: 0,
+          horsepower: 0,
+          model: '',
+          serialNumber: '',
+          condition: 'good' as const,
+          estimatedValue: 0,
+          confidenceLevel: 'medium' as const
+        });
       }
 
       document.title = 'Trade-In Valuation | Harris Boat Works';
@@ -62,7 +77,17 @@ export default function TradeInPage() {
   }, [state.motor, state.purchasePath, state.tradeInInfo, navigate]);
 
   const handleTradeInChange = (updatedTradeInInfo: TradeInInfo) => {
+    console.log('🔄 TradeInPage: Trade-in changed', {
+      hasTradeIn: updatedTradeInInfo.hasTradeIn,
+      brand: updatedTradeInInfo.brand,
+      estimatedValue: updatedTradeInInfo.estimatedValue
+    });
+    
     setTradeInInfo(updatedTradeInInfo);
+    
+    // Dispatch immediately to context (don't wait for handleComplete)
+    dispatch({ type: 'SET_TRADE_IN_INFO', payload: updatedTradeInInfo });
+    dispatch({ type: 'SET_HAS_TRADEIN', payload: updatedTradeInInfo.hasTradeIn });
   };
 
   const handleComplete = () => {

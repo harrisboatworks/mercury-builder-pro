@@ -140,7 +140,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => {
-                    console.log('No trade-in clicked, clearing all trade-in data');
+                    console.log('❌ No trade-in clicked, clearing all trade-in data');
                     const cleanTradeInInfo: TradeInInfo = { 
                       hasTradeIn: false,
                       brand: '',
@@ -162,7 +162,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       penaltyFactor: undefined
                     };
                     onTradeInChange(cleanTradeInInfo);
+                    console.log('✅ onTradeInChange called with clean state:', cleanTradeInInfo);
                     onAutoAdvance?.();
+                    console.log('🚀 onAutoAdvance called');
                   }}
                   aria-pressed={!tradeInInfo.hasTradeIn}
                   className={`relative p-6 border-2 rounded-sm transition-all bg-white dark:bg-gray-900 text-left group ${

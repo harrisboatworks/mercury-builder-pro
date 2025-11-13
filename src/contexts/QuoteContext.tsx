@@ -137,6 +137,7 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
 export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(quoteReducer, initialState);
   const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const prevTradeInRef = useRef<any>(undefined);
   const [navigationBlocked, setNavigationBlocked] = useState(false);
 
   // Load from localStorage on mount
@@ -227,9 +228,12 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   useEffect(() => {
     if (state.isLoading) return; // Don't save during initial load
     
-    // Immediate save for trade-in changes to prevent stale data
-    const tradeInChanged = state.tradeInInfo !== undefined;
-    if (tradeInChanged) {
+    // Check if trade-in specifically changed using deep comparison
+    const tradeInChanged = JSON.stringify(state.tradeInInfo) !== JSON.stringify(prevTradeInRef.current);
+    
+    if (tradeInChanged && state.tradeInInfo !== undefined) {
+      prevTradeInRef.current = state.tradeInInfo;
+      
       try {
         const dataToSave = {
           state,
@@ -238,7 +242,8 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         localStorage.setItem('quoteBuilder', JSON.stringify(dataToSave));
         console.log('💾 QuoteContext: Immediate save for trade-in change', {
           hasTradeIn: state.tradeInInfo?.hasTradeIn,
-          estimatedValue: state.tradeInInfo?.estimatedValue
+          estimatedValue: state.tradeInInfo?.estimatedValue,
+          brand: state.tradeInInfo?.brand
         });
         return; // Skip debounced save
       } catch (error) {
