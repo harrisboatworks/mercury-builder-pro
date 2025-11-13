@@ -45,8 +45,8 @@ export default function StickyQuoteBar({
       className="sticky bottom-0 z-30 border-t border-slate-300/50 bg-white/98 backdrop-blur supports-[backdrop-filter]:bg-white/90"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 p-2.5 md:flex-row md:items-center md:gap-3 md:p-3 md:justify-between lg:gap-4">
-        <div className="min-w-0 flex-1 text-center md:text-left">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 p-2.5 sm:flex-row sm:items-center sm:gap-2.5 sm:p-3 lg:gap-4 sm:justify-between">
+        <div className="min-w-0 flex-1 text-center sm:text-left">
           {model && <div className="text-sm md:text-base font-semibold text-slate-900 leading-tight truncate">{model}</div>}
           <div className="mt-0.5 flex flex-wrap items-center gap-1.5 md:gap-2 text-xs md:text-sm text-slate-700 font-light">
             {typeof total === "number" && <span><span className="hidden md:inline">Total: </span><span className="font-semibold">{money(total)}</span></span>}
@@ -71,14 +71,14 @@ export default function StickyQuoteBar({
           </div>
         </div>
 
-        <div className="flex flex-row flex-nowrap items-center justify-center md:justify-start gap-1.5 md:gap-2.5 shrink-0 mt-1 md:mt-0">
+        <div className="flex flex-row flex-nowrap items-center justify-center sm:justify-start gap-1.5 sm:gap-2.5 shrink-0 mt-1 sm:mt-0">
           {onSecondary && (
-            <button onClick={onSecondary} className="rounded-lg border border-slate-300 px-2.5 py-2 md:px-4 text-xs md:text-sm font-light text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-all min-h-[44px] whitespace-nowrap">
+            <button onClick={onSecondary} className="rounded-lg border border-slate-300 px-2.5 py-2 sm:px-3.5 lg:px-4 text-xs md:text-sm font-light text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-all min-h-[44px] whitespace-nowrap">
               {secondaryLabel}
             </button>
           )}
           {onPrimary && (
-            <button onClick={onPrimary} className="rounded-lg bg-slate-900 px-3 py-2 md:px-4 text-xs md:text-sm font-semibold text-white shadow-md transition hover:bg-slate-800 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-slate-700 min-h-[44px] whitespace-nowrap">
+            <button onClick={onPrimary} className="rounded-lg bg-slate-900 px-3 py-2 sm:px-3.5 lg:px-4 text-xs md:text-sm font-semibold text-white shadow-md transition hover:bg-slate-800 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-slate-700 min-h-[44px] whitespace-nowrap">
               {primaryLabel}
             </button>
           )}
