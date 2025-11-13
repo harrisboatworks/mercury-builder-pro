@@ -348,12 +348,6 @@ export default function MotorSelectionPage() {
     // Add motor to quote context
     dispatch({ type: 'SET_MOTOR', payload: motor });
     
-    // Show success feedback
-    toast({
-      title: "Motor added to quote!",
-      description: `${motor.model} has been added to your quote.`,
-    });
-    
     // Auto-navigate to next step
     setTimeout(() => {
       navigate('/quote/purchase-path');
