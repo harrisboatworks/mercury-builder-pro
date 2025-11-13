@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift } from "lucide-react";
 import { supabase } from "../../integrations/supabase/client";
+import { pdf } from '@react-pdf/renderer';
+import CleanSpecSheetPDF from './CleanSpecSheetPDF';
 import { useIsMobile } from "../../hooks/use-mobile";
 import { useScrollCoordination } from "../../hooks/useScrollCoordination";
 import { money } from "../../lib/money";
@@ -179,68 +181,43 @@ export default function MotorDetailsPremiumModal({
     setSpecSheetLoading(true);
     
     try {
-      console.log('Generating spec sheet for motor:', motor.id);
+      // Fetch warranty pricing and promotions
+      const [warrantyData, promosData] = await Promise.all([
+        supabase.from('warranty_pricing').select('*').lte('hp_min', hpValue).gte('hp_max', hpValue).single(),
+        supabase.from('promotions').select('*').eq('is_active', true)
+      ]);
       
-      // Call edge function to get HTML content
-      const { data, error } = await supabase.functions.invoke('generate-motor-spec-sheet', {
-        body: { motorId: motor.id }
-      });
-
-      if (error) {
-        console.error('Edge function error:', error);
-        throw error;
-      }
+      // Generate PDF directly with @react-pdf/renderer
+      const specData = {
+        motorModel: motor.model || title,
+        horsepower: `${hpValue}`,
+        category: motor.category || 'Outboard',
+        modelYear: motor.model_year || new Date().getFullYear(),
+        sku: motor.sku || undefined,
+        msrp: msrp ? `$${msrp.toLocaleString()}` : undefined,
+        motorPrice: price || msrp,
+        specifications: motor.specifications,
+        features: motor.features,
+        stockStatus: motor.stock_status,
+        controls: motor.controls
+      };
       
-      if (!data?.htmlContent) {
-        throw new Error('No HTML content received from edge function');
-      }
+      const blob = await pdf(<CleanSpecSheetPDF 
+        specData={specData}
+        warrantyPricing={warrantyData.data}
+        activePromotions={promosData.data || []}
+      />).toBlob();
       
-      console.log('Received HTML content, generating PDF...');
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${title.replace(/\s+/g, '-')}-Spec-Sheet.pdf`;
+      link.click();
+      URL.revokeObjectURL(url);
       
-      // Dynamically import jsPDF
-      const { default: jsPDF } = await import('jspdf');
-      
-      // Create a temporary container
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = data.htmlContent;
-      tempDiv.style.position = 'absolute';
-      tempDiv.style.left = '-9999px';
-      tempDiv.style.width = '210mm';
-      document.body.appendChild(tempDiv);
-      
-      try {
-        // Create PDF instance
-        const doc = new jsPDF({
-          orientation: 'portrait',
-          unit: 'mm',
-          format: 'a4',
-          compress: true
-        });
-        
-        // Convert HTML to PDF with proper options
-        await doc.html(tempDiv, {
-          callback: function(pdf) {
-            const fileName = `${title.toLowerCase().replace(/\s+/g, '-')}-specifications.pdf`;
-            pdf.save(fileName);
-            console.log('PDF generated successfully:', fileName);
-          },
-          x: 0,
-          y: 0,
-          width: 210,
-          windowWidth: 800,
-          html2canvas: {
-            scale: 0.8,
-            useCORS: true,
-            logging: false,
-            letterRendering: true
-          }
-        });
-      } finally {
-        // Clean up temp element
-        document.body.removeChild(tempDiv);
-      }
+      console.log('PDF downloaded successfully');
     } catch (error) {
-      console.error('Error generating spec sheet:', error);
+      console.error('Error generating PDF:', error);
       alert('Unable to generate spec sheet. Please try again.');
     } finally {
       setSpecSheetLoading(false);
