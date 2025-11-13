@@ -95,7 +95,7 @@ export default function MotorDetailsPremiumModal({
   // Component for consistent spec row formatting
   const SpecRow = ({ label, value }: { label: string; value: string }) => (
     <div className="flex justify-between items-center py-3 px-4">
-      <span className="text-sm font-light text-gray-600">{label}</span>
+      <span className="text-sm font-medium text-gray-600">{label}</span>
       <span className="text-sm text-gray-900 font-medium text-right">{value}</span>
     </div>
   );
@@ -254,7 +254,7 @@ export default function MotorDetailsPremiumModal({
                   {/* Flexbox Column Layout - prevents overlap */}
                   <div className="flex flex-col space-y-4 pr-12">
                     {/* Motor Name - full line with proper spacing */}
-                    <h2 className="text-lg font-light tracking-wide text-gray-900 leading-tight">
+                    <h2 className="text-lg font-semibold tracking-wide text-gray-900 leading-tight">
                       {title}
                     </h2>
                     
@@ -267,25 +267,25 @@ export default function MotorDetailsPremiumModal({
                 <TabsList className="w-full justify-start border-b border-gray-200 rounded-none bg-white p-0 h-auto">
                   <TabsTrigger 
                     value="overview" 
-                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-4 py-3"
+                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
                   >
                     Overview
                   </TabsTrigger>
                   <TabsTrigger 
                     value="specs"
-                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-4 py-3"
+                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
                   >
                     Specs
                   </TabsTrigger>
                   <TabsTrigger 
                     value="included"
-                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-4 py-3"
+                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
                   >
                     Included
                   </TabsTrigger>
                   <TabsTrigger 
                     value="resources"
-                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-4 py-3"
+                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
                   >
                     Resources
                   </TabsTrigger>
@@ -306,7 +306,7 @@ export default function MotorDetailsPremiumModal({
                   {/* Flexbox Column Layout - crystal clear hierarchy */}
                   <div className="flex flex-col space-y-5 pr-12">
                     {/* Motor Name - 20px margin below (space-y-5) */}
-                    <h2 className="text-2xl font-light tracking-wide text-gray-900 leading-tight">
+                    <h2 className="text-2xl font-semibold tracking-wide text-gray-900 leading-tight">
                       {title}
                     </h2>
                     
@@ -319,25 +319,25 @@ export default function MotorDetailsPremiumModal({
                 <TabsList className="w-full justify-start border-b border-gray-100 rounded-none bg-white p-0 h-auto mt-5">
                   <TabsTrigger 
                     value="overview" 
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-6 py-4"
+                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
                   >
                     Overview
                   </TabsTrigger>
                   <TabsTrigger 
                     value="specs"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-6 py-4"
+                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
                   >
                     Specs
                   </TabsTrigger>
                   <TabsTrigger 
                     value="included"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-6 py-4"
+                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
                   >
                     Included
                   </TabsTrigger>
                   <TabsTrigger 
                     value="resources"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-light px-6 py-4"
+                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
                   >
                     Resources
                   </TabsTrigger>
@@ -365,7 +365,7 @@ export default function MotorDetailsPremiumModal({
                         {includedAccessories.map((item, idx) => (
                           <li key={idx} className="flex items-center gap-3 text-base text-gray-700">
                             <span className="text-green-600 text-lg leading-none">✓</span>
-                            <span className="font-light">{item}</span>
+                            <span className="font-normal">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -374,14 +374,14 @@ export default function MotorDetailsPremiumModal({
                     {/* Key Features - Top 4 only */}
                     {features.length > 0 && (
                       <div className="space-y-4">
-                        <h3 className="text-lg font-light tracking-wide text-gray-900">
+                        <h3 className="text-lg font-semibold tracking-wide text-gray-900">
                           Key Features
                         </h3>
                         <ul className="space-y-3">
                           {features.slice(0, 4).map((feature, idx) => (
                             <li key={idx} className="flex items-start gap-3">
                               <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                              <span className="text-sm font-light text-gray-700">{feature}</span>
+                              <span className="text-sm font-normal text-gray-700">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -391,14 +391,14 @@ export default function MotorDetailsPremiumModal({
                     {/* Customer Review */}
                     {smartReview && (
                       <div className="border-t border-gray-100 pt-6">
-                        <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4">
+                        <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
                           Customer Review
                         </h3>
                         <div className="space-y-3">
                           <div className="flex items-center gap-1 text-yellow-500 text-sm">
                             <span>★★★★★</span>
                           </div>
-                          <blockquote className="text-sm font-light italic text-gray-700 pl-4 border-l-2 border-gray-200">
+                          <blockquote className="text-sm font-normal italic text-gray-700 pl-4 border-l-2 border-gray-200">
                             "{smartReview.comment}"
                           </blockquote>
                           <footer className="text-xs text-gray-500">
@@ -416,7 +416,7 @@ export default function MotorDetailsPremiumModal({
                             <Wrench className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                             <div>
                               <h4 className="font-medium text-blue-900 text-sm">Mercury Controls Required</h4>
-                              <p className="text-sm text-blue-800 font-light mt-1">
+                              <p className="text-sm text-blue-800 font-normal mt-1">
                                 Installation requires throttle & shift controls ($800-1,500)
                               </p>
                             </div>
@@ -428,7 +428,7 @@ export default function MotorDetailsPremiumModal({
                             <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                             <div>
                               <h4 className="font-medium text-green-900 text-sm">No Additional Controls Required</h4>
-                              <p className="text-sm text-green-800 font-light mt-1">
+                              <p className="text-sm text-green-800 font-normal mt-1">
                                 Tiller motor includes integrated controls - mount and go!
                               </p>
                             </div>
@@ -444,7 +444,7 @@ export default function MotorDetailsPremiumModal({
                       <div className="p-6 pt-8 pb-12 space-y-8">
                         {/* Engine Specifications */}
                     <div>
-                      <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4 flex items-center gap-2">
+                      <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
                         <Settings className="w-5 h-5 text-primary" />
                         Engine Specifications
                       </h3>
@@ -460,7 +460,7 @@ export default function MotorDetailsPremiumModal({
 
                     {/* Physical Specifications */}
                     <div>
-                      <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4 flex items-center gap-2">
+                      <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
                         <Package className="w-5 h-5 text-primary" />
                         Physical Specifications
                       </h3>
@@ -471,7 +471,7 @@ export default function MotorDetailsPremiumModal({
 
                     {/* Performance Data */}
                     <div>
-                      <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4 flex items-center gap-2">
+                      <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
                         <Gauge className="w-5 h-5 text-primary" />
                         Performance Estimates
                       </h3>
@@ -482,7 +482,7 @@ export default function MotorDetailsPremiumModal({
 
                         {/* Requirements */}
                         <div>
-                          <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4 flex items-center gap-2">
+                          <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
                             <AlertCircle className="w-5 h-5 text-primary" />
                             Requirements
                           </h3>
@@ -501,14 +501,14 @@ export default function MotorDetailsPremiumModal({
                   {/* INCLUDED TAB */}
                   <TabsContent value="included" className="space-y-6 mt-0 pt-6">
                     <div>
-                      <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4">
+                      <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
                         What's Included
                       </h3>
                       <ul className="space-y-2">
                         {includedAccessories.map((item, idx) => (
                           <li key={idx} className="flex items-center gap-3 text-left">
                             <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                            <span className="text-sm font-light text-gray-700 flex-1">{item}</span>
+                            <span className="text-sm font-normal text-gray-700 flex-1">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -516,20 +516,20 @@ export default function MotorDetailsPremiumModal({
                     
                     {/* Warranty Info */}
                     <div className="border-t border-gray-100 pt-6">
-                      <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4">
+                      <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
                         Warranty Coverage
                       </h3>
                       <div className="space-y-3">
                         <div className="flex items-center gap-3 text-left">
                           <Shield className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                          <span className="text-sm font-light text-gray-700 flex-1">
+                          <span className="text-sm font-normal text-gray-700 flex-1">
                             3-Year Mercury Factory Warranty
                           </span>
                         </div>
                         {activePromotions.some(p => p.warranty_extra_years) && (
                           <div className="flex items-center gap-3 text-left">
                             <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                            <span className="text-sm font-light text-gray-700 flex-1">
+                            <span className="text-sm font-normal text-gray-700 flex-1">
                               +2 Year Extended Coverage (Promotional)
                             </span>
                           </div>
@@ -545,7 +545,7 @@ export default function MotorDetailsPremiumModal({
                         {/* Documents Section */}
                         {motor?.id && (
                           <div>
-                            <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4">
+                            <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
                               Downloads & Documentation
                             </h3>
                             <MotorDocumentsSection motorId={motor.id} />
@@ -557,7 +557,7 @@ export default function MotorDetailsPremiumModal({
                           <button
                             onClick={handleGenerateSpecSheet}
                             disabled={specSheetLoading}
-                            className="w-full border border-gray-300 text-gray-700 py-3 px-4 text-sm font-light rounded-sm hover:bg-stone-50 transition-all duration-300 flex items-center justify-center gap-2"
+                            className="w-full border border-gray-300 text-gray-700 py-3 px-4 text-sm font-medium rounded-sm hover:bg-stone-50 transition-all duration-300 flex items-center justify-center gap-2"
                           >
                             <Download className="w-4 h-4" />
                             {specSheetLoading ? 'Generating...' : 'Download Spec Sheet'}
@@ -567,7 +567,7 @@ export default function MotorDetailsPremiumModal({
                         {/* Videos Section */}
                         {motor?.id && (
                           <div className="border-t border-gray-100 pt-6">
-                            <h3 className="text-lg font-light tracking-wide text-gray-900 mb-4">
+                            <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
                               Videos & Demonstrations
                             </h3>
                             <MotorVideosSection 
@@ -591,7 +591,7 @@ export default function MotorDetailsPremiumModal({
             <div className="sticky top-0 p-6 space-y-6 max-h-[90vh] overflow-y-auto">
               {/* Motor Name & Thumbnail */}
               <div>
-                <h3 className="text-lg font-light tracking-wide text-gray-900">
+                <h3 className="text-lg font-semibold tracking-wide text-gray-900">
                   {title}
                 </h3>
                 <img 
@@ -607,15 +607,15 @@ export default function MotorDetailsPremiumModal({
                   from
                 </p>
                 {msrp && typeof msrp === "number" && msrp !== price && (
-                  <p className="text-base text-gray-400 font-light line-through">
+                  <p className="text-base text-gray-400 font-normal line-through">
                     {money(msrp)}
                   </p>
                 )}
-                <p className="text-5xl font-light tracking-tight text-gray-900 mt-1">
+                <p className="text-3xl font-bold tracking-tight text-gray-900 mt-1">
                   {typeof price === "number" ? money(price) : 'Call for Price'}
                 </p>
                 {msrp && price && msrp > price && (
-                  <p className="text-sm text-red-600 mt-2 font-light">
+                  <p className="text-sm text-red-600 mt-2 font-normal">
                     SAVE {money(msrp - price)}
                   </p>
                 )}
@@ -624,7 +624,7 @@ export default function MotorDetailsPremiumModal({
               {/* Key Spec Badges - All Features */}
               <div className="flex flex-wrap gap-2 border-t border-gray-100 pt-6">
                 {/* HP Badge - Always shown first */}
-                <span className="px-3 py-1 bg-stone-100 text-gray-700 text-xs font-light rounded-full">
+                <span className="px-3 py-1 bg-stone-100 text-gray-700 text-xs font-medium rounded-full">
                   {hp} HP
                 </span>
                 
@@ -655,7 +655,7 @@ export default function MotorDetailsPremiumModal({
                   return decoded.map((feature, idx) => (
                     <span 
                       key={`${feature.code}-${idx}`}
-                      className="px-3 py-1 bg-stone-100 text-gray-700 text-xs font-light rounded-full"
+                      className="px-3 py-1 bg-stone-100 text-gray-700 text-xs font-medium rounded-full"
                     >
                       {shortenMeaning(feature.meaning)}
                     </span>
@@ -669,7 +669,7 @@ export default function MotorDetailsPremiumModal({
               {/* ADD TO QUOTE Button */}
               <button
                 onClick={handleSelectMotor}
-                className="w-full bg-black text-white py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-gray-900 transition-all duration-500"
+                className="w-full bg-black text-white py-4 text-xs tracking-widest uppercase font-medium rounded-sm hover:bg-gray-900 transition-all duration-500"
               >
                 Configure This Motor
               </button>
@@ -677,7 +677,7 @@ export default function MotorDetailsPremiumModal({
               {/* Calculate Payment Link */}
               <button
                 onClick={handleCalculatePayment}
-                className="w-full flex items-center justify-center gap-2 text-sm text-gray-600 hover:text-black font-light transition-colors"
+                className="w-full flex items-center justify-center gap-2 text-sm text-gray-600 hover:text-black font-medium transition-colors"
               >
                 <Calculator className="w-4 h-4" />
                 Calculate Payment
@@ -693,14 +693,14 @@ export default function MotorDetailsPremiumModal({
                   const totalCoverage = standardWarranty + warrantyPromo.warranty_extra_years;
                   
                   return (
-                    <div className="flex items-center gap-2 text-xs text-gray-600 font-light">
+                    <div className="flex items-center gap-2 text-xs text-gray-600 font-normal">
                       <Gift className="w-4 h-4" />
                       <span>{totalCoverage}-Year Total Coverage</span>
                     </div>
                   );
                 })()}
                 {activePromo && (
-                  <div className="flex items-center gap-2 text-xs text-gray-600 font-light">
+                  <div className="flex items-center gap-2 text-xs text-gray-600 font-normal">
                     <BarChart3 className="w-4 h-4" />
                     <span>{activePromo.rate}% APR Available</span>
                   </div>
@@ -714,13 +714,13 @@ export default function MotorDetailsPremiumModal({
             <div className="flex items-center justify-between gap-4">
               {/* Compact Price Display */}
               <div>
-                <p className="text-lg font-light text-gray-900">
+                <p className="text-xl font-bold text-gray-900">
                   {typeof price === "number" ? money(price) : 'Call'}
                 </p>
                 {typeof price === "number" && (
                   <button
                     onClick={handleCalculatePayment}
-                    className="mt-1 flex items-center gap-1.5 text-sm text-gray-600 font-light hover:text-gray-900 underline decoration-dotted cursor-pointer transition-colors"
+                    className="mt-1 flex items-center gap-1.5 text-sm text-gray-600 font-normal hover:text-gray-900 underline decoration-dotted cursor-pointer transition-colors"
                   >
                     <MonthlyPaymentDisplay motorPrice={price} />
                     <Calculator className="w-4 h-4 opacity-70" />
@@ -733,7 +733,7 @@ export default function MotorDetailsPremiumModal({
                 <TrustSignals />
                 <button
                   onClick={handleSelectMotor}
-                  className="w-full bg-black text-white py-3 text-xs tracking-widest uppercase font-light rounded-sm"
+                  className="w-full bg-black text-white py-3 text-xs tracking-widest uppercase font-medium rounded-sm"
                 >
                   Configure This Motor
                 </button>
