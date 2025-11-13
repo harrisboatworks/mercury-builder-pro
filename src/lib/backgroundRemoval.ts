@@ -1,8 +1,19 @@
-import { pipeline, env } from '@huggingface/transformers';
+// Dynamically import transformers only when needed (~450KB)
+let pipelineCache: any = null;
+let envCache: any = null;
 
-// Configure transformers.js to always download models
-env.allowLocalModels = false;
-env.useBrowserCache = false;
+const getTransformers = async () => {
+  if (!pipelineCache || !envCache) {
+    const transformers = await import('@huggingface/transformers');
+    pipelineCache = transformers.pipeline;
+    envCache = transformers.env;
+    
+    // Configure transformers.js to always download models
+    envCache.allowLocalModels = false;
+    envCache.useBrowserCache = false;
+  }
+  return { pipeline: pipelineCache, env: envCache };
+};
 
 const MAX_IMAGE_DIMENSION = 1024;
 
@@ -34,6 +45,10 @@ function resizeImageIfNeeded(canvas: HTMLCanvasElement, ctx: CanvasRenderingCont
 export const removeBackground = async (imageElement: HTMLImageElement): Promise<Blob> => {
   try {
     console.log('Starting background removal process...');
+    
+    // Dynamically load transformers library
+    const { pipeline } = await getTransformers();
+    
     const segmenter = await pipeline('image-segmentation', 'Xenova/segformer-b0-finetuned-ade-512-512',{
       device: 'webgpu',
     });

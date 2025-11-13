@@ -4,7 +4,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 import { QuoteProvider } from "@/contexts/QuoteContext";
 import { FinancingProvider } from "@/contexts/FinancingContext";
 import { AuthProvider } from "@/components/auth/AuthProvider";
@@ -15,6 +14,9 @@ import { NotificationToast } from "@/components/notifications/NotificationToast"
 import { ContactButton } from "@/components/ui/contact-button";
 import { GlobalStickyQuoteBar } from "@/components/quote/GlobalStickyQuoteBar";
 import { RouteLoader } from "@/components/ui/RouteLoader";
+
+// Note: Removed framer-motion AnimatePresence (~120KB) to reduce initial bundle
+// Page transitions now use CSS instead of JavaScript animations
 
 // Lazy load all pages for code splitting
 const Index = lazy(() => import("./pages/Index"));
@@ -97,9 +99,8 @@ function AnimatedRoutes() {
   const location = useLocation();
   
   return (
-    <AnimatePresence mode="wait">
-      <Suspense fallback={<RouteLoader />}>
-        <Routes location={location} key={location.pathname}>
+    <Suspense fallback={<RouteLoader />}>
+      <Routes location={location} key={location.pathname}>
         <Route path="/auth" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route 
@@ -306,9 +307,8 @@ function AnimatedRoutes() {
         
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
-    </AnimatePresence>
+      </Routes>
+    </Suspense>
   );
 }
 
