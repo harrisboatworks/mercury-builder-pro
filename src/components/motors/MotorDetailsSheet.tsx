@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings, Video, Gift, Package, AlertCircle as AlertCircleIcon } from "lucide-react";
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import { CleanSpecSheetPDF } from './CleanSpecSheetPDF';
 import { supabase } from "../../integrations/supabase/client";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
@@ -81,7 +83,6 @@ export default function MotorDetailsSheet({
   const [generatedSpecUrl, setGeneratedSpecUrl] = useState<string | null>(null);
   const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
   const [showFullPricing, setShowFullPricing] = useState(false);
-  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const isMobile = useIsMobile();
   const { promo: activePromo } = useActiveFinancingPromo();
   const { promotions: activePromotions } = useActivePromotions();
@@ -236,35 +237,6 @@ export default function MotorDetailsSheet({
     }
   };
 
-  const handleDownloadSpecSheet = async () => {
-    setIsGeneratingPDF(true);
-    try {
-      const { pdf } = await import('@react-pdf/renderer');
-      const { CleanSpecSheetPDF } = await import('@/components/motors/CleanSpecSheetPDF');
-      
-      const blob = await pdf(
-        <CleanSpecSheetPDF 
-          motorData={{
-            motor: motor,
-            promotions: activePromotions,
-            motorModel: motor?.model || title
-          }} 
-        />
-      ).toBlob();
-      
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `${(motor?.model || title).replace(/\s+/g, '-')}-Specifications.pdf`;
-      link.click();
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('PDF generation error:', error);
-      toast.error('Failed to generate PDF');
-    } finally {
-      setIsGeneratingPDF(false);
-    }
-  };
 
 
   const cleanedSpecUrl = cleanSpecSheetUrl(specSheetUrl);
@@ -846,18 +818,32 @@ export default function MotorDetailsSheet({
                               Clean, professional specification sheet
                             </p>
                           </div>
-                          <Button 
-                            variant="outline"
-                            size="sm"
-                            disabled={isGeneratingPDF}
-                            onClick={handleDownloadSpecSheet}
+                          <PDFDownloadLink
+                            document={
+                              <CleanSpecSheetPDF 
+                                motorData={{
+                                  motor: motor,
+                                  promotions: activePromotions,
+                                  motorModel: motor?.model || title
+                                }} 
+                              />
+                            }
+                            fileName={`${(motor?.model || title).replace(/\s+/g, '-')}-Specifications.pdf`}
                           >
-                            {isGeneratingPDF ? (
-                              <Loader2 className="w-4 h-4 animate-spin" />
-                            ) : (
-                              <Download className="w-4 h-4" />
+                            {({ loading }) => (
+                              <Button 
+                                variant="outline"
+                                size="sm"
+                                disabled={loading}
+                              >
+                                {loading ? (
+                                  <Loader2 className="w-4 h-4 animate-spin" />
+                                ) : (
+                                  <Download className="w-4 h-4" />
+                                )}
+                              </Button>
                             )}
-                          </Button>
+                          </PDFDownloadLink>
                         </div>
                       </div>
 

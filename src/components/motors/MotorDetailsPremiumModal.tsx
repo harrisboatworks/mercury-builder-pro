@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift } from "lucide-react";
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import { CleanSpecSheetPDF } from './CleanSpecSheetPDF';
 import { supabase } from "../../integrations/supabase/client";
 import { useIsMobile } from "../../hooks/use-mobile";
 import { toast } from "sonner";
@@ -79,7 +81,6 @@ export default function MotorDetailsPremiumModal({
   const navigate = useNavigate();
   const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
   const [showFullPricing, setShowFullPricing] = useState(false);
-  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const isMobile = useIsMobile();
   const { promo: activePromo } = useActiveFinancingPromo();
   const { promotions: activePromotions } = useActivePromotions();
@@ -174,37 +175,6 @@ export default function MotorDetailsPremiumModal({
     if (onSelect) onSelect();
     onClose();
   };
-
-  const handleDownloadSpecSheet = async () => {
-    setIsGeneratingPDF(true);
-    try {
-      const { pdf } = await import('@react-pdf/renderer');
-      const { CleanSpecSheetPDF } = await import('@/components/motors/CleanSpecSheetPDF');
-      
-      const blob = await pdf(
-        <CleanSpecSheetPDF 
-          motorData={{
-            motor: motor,
-            promotions: activePromotions,
-            motorModel: motor?.model || title
-          }} 
-        />
-      ).toBlob();
-      
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `${(motor?.model || title).replace(/\s+/g, '-')}-Specifications.pdf`;
-      link.click();
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('PDF generation error:', error);
-      toast.error('Failed to generate PDF');
-    } finally {
-      setIsGeneratingPDF(false);
-    }
-  };
-
 
   const includedAccessories = motor ? getIncludedAccessories(motor) : [];
   const additionalRequirements = motor ? getAdditionalRequirements(motor) : [];
@@ -539,14 +509,26 @@ export default function MotorDetailsPremiumModal({
                         
                         {/* Quick Actions */}
                         <div className="border-t border-gray-100 pt-6">
-                          <button
-                            onClick={handleDownloadSpecSheet}
-                            disabled={isGeneratingPDF}
+                          <PDFDownloadLink
+                            document={
+                              <CleanSpecSheetPDF 
+                                motorData={{
+                                  motor: motor,
+                                  promotions: activePromotions,
+                                  motorModel: motor?.model || title
+                                }} 
+                              />
+                            }
+                            fileName={`${(motor?.model || title).replace(/\s+/g, '-')}-Specifications.pdf`}
                             className="w-full border border-gray-300 text-gray-700 py-3 px-4 text-sm font-medium rounded-sm hover:bg-stone-50 transition-all duration-300 flex items-center justify-center gap-2"
                           >
-                            <Download className="w-4 h-4" />
-                            {isGeneratingPDF ? 'Generating...' : 'Download Spec Sheet'}
-                          </button>
+                            {({ loading }) => (
+                              <>
+                                <Download className="w-4 h-4" />
+                                {loading ? 'Generating...' : 'Download Spec Sheet'}
+                              </>
+                            )}
+                          </PDFDownloadLink>
                         </div>
                         
                         {/* Videos Section */}
