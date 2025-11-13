@@ -229,11 +229,11 @@ export default function MotorDetailsPremiumModal({
   return (
     <div className="fixed inset-0 z-50">
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
+      <div className="absolute inset-x-0 top-16 bottom-0 sm:inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
       
       {/* Modal Container - TWO COLUMN LAYOUT (60/40) */}
-      <div className="absolute inset-0 flex items-end sm:items-center justify-center sm:p-4">
-        <div className="relative bg-white w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-xl 
+      <div className="absolute inset-x-0 top-16 bottom-0 sm:inset-0 flex items-end sm:items-center justify-center sm:p-4">
+        <div className="relative bg-white w-full h-auto max-h-[calc(100vh-4rem)] sm:h-auto sm:max-h-[90vh] sm:rounded-xl 
           lg:grid lg:grid-cols-[60fr_40fr] lg:max-w-6xl 
           flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-500">
           
