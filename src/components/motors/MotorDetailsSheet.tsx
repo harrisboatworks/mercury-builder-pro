@@ -240,41 +240,70 @@ export default function MotorDetailsSheet({
     setSpecSheetLoading(true);
     
     try {
-      // Call edge function to generate PDF server-side
+      console.log('Generating spec sheet for motor:', motor.id);
+      
+      // Call edge function to get HTML content
       const { data, error } = await supabase.functions.invoke('generate-motor-spec-sheet', {
         body: { motorId: motor.id }
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Edge function error:', error);
+        throw error;
+      }
       
-      // data.htmlContent contains the HTML - use jsPDF to convert
-      const jsPDF = (await import('jspdf')).default;
-      const doc = new jsPDF();
+      if (!data?.htmlContent) {
+        throw new Error('No HTML content received from edge function');
+      }
       
-      // Create a temporary div to render HTML
+      console.log('Received HTML content, generating PDF...');
+      
+      // Dynamically import jsPDF
+      const { default: jsPDF } = await import('jspdf');
+      
+      // Create a temporary container
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = data.htmlContent;
       tempDiv.style.position = 'absolute';
       tempDiv.style.left = '-9999px';
+      tempDiv.style.width = '210mm';
       document.body.appendChild(tempDiv);
       
-      // Use jsPDF's html method
-      await doc.html(tempDiv, {
-        callback: function(doc) {
-          const modelName = title || motor.model || 'Mercury-Motor';
-          const fileName = `${modelName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}-specifications.pdf`;
-          doc.save(fileName);
-          document.body.removeChild(tempDiv);
-          console.log('✅ Spec Sheet PDF Generated Successfully');
-        },
-        x: 10,
-        y: 10,
-        width: 190,
-        windowWidth: 800
-      });
+      try {
+        // Create PDF instance
+        const doc = new jsPDF({
+          orientation: 'portrait',
+          unit: 'mm',
+          format: 'a4',
+          compress: true
+        });
+        
+        // Convert HTML to PDF with proper options
+        await doc.html(tempDiv, {
+          callback: function(pdf) {
+            const modelName = title || motor.model || 'Mercury-Motor';
+            const fileName = `${modelName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}-specifications.pdf`;
+            pdf.save(fileName);
+            console.log('PDF generated successfully:', fileName);
+          },
+          x: 0,
+          y: 0,
+          width: 210,
+          windowWidth: 800,
+          html2canvas: {
+            scale: 0.8,
+            useCORS: true,
+            logging: false,
+            letterRendering: true
+          }
+        });
+      } finally {
+        // Clean up temp element
+        document.body.removeChild(tempDiv);
+      }
     } catch (error) {
-      console.error('❌ Error generating spec sheet:', error);
-      alert('Unable to generate spec sheet at this time. Please try again or contact support.');
+      console.error('Error generating spec sheet:', error);
+      alert('Unable to generate spec sheet. Please try again.');
     } finally {
       setSpecSheetLoading(false);
     }
