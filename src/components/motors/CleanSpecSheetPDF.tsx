@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 12,
     paddingBottom: 10,
-    borderBottom: `1.5 solid ${colors.border}`,
+    borderBottom: '1.5 solid #cccccc',
   },
   
   logoContainer: {
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
   
   priceBox: {
-    border: `2 solid ${colors.discount}`,
+    border: '2 solid #059669',
     padding: 12,
     marginVertical: 12,
     backgroundColor: 'transparent',
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     color: colors.text,
     marginBottom: 8,
     paddingBottom: 5,
-    borderBottom: `1 solid ${colors.border}`,
+    borderBottom: '1 solid #cccccc',
   },
   
   specGrid: {
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     padding: 8,
     marginBottom: 4,
-    borderBottom: `0.5 solid ${colors.border}`,
+    borderBottom: '0.5 solid #cccccc',
   },
   
   specLabel: {
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
   footer: {
     marginTop: 20,
     paddingTop: 10,
-    borderTop: `1 solid ${colors.border}`,
+    borderTop: '1 solid #cccccc',
   },
   
   footerText: {
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
     padding: 6,
     backgroundColor: colors.tableBg,
     borderRadius: 0,
-    borderLeft: `2 solid ${colors.border}`,
+    borderLeft: '2 solid #cccccc',
   },
   featureCode: {
     fontSize: 9,
@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: colors.infoBg,
     borderRadius: 0,
-    borderLeft: `2 solid ${colors.border}`,
+    borderLeft: '2 solid #cccccc',
   },
   warrantyContent: {
     marginTop: 6,
