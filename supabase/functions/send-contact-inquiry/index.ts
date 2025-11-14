@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
 import { corsHeaders } from "../_shared/cors.ts";
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
@@ -14,16 +15,17 @@ const adminPhone = Deno.env.get('ADMIN_PHONE')!;
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 const resend = new Resend(resendApiKey);
 
-interface ContactInquiry {
-  name: string;
-  email: string;
-  phone?: string;
-  inquiry_type: string;
-  message: string;
-  preferred_contact_method: string;
-  urgency_level: string;
-  user_id?: string;
-}
+// Server-side validation schema
+const contactInquirySchema = z.object({
+  name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name too long"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email too long"),
+  phone: z.string().max(20, "Phone number too long").optional(),
+  inquiry_type: z.enum(['general', 'sales', 'service', 'parts', 'quote', 'warranty', 'other']),
+  message: z.string().trim().min(10, "Message must be at least 10 characters").max(2000, "Message too long"),
+  preferred_contact_method: z.enum(['email', 'phone', 'sms']),
+  urgency_level: z.enum(['low', 'medium', 'high', 'urgent']),
+  user_id: z.string().uuid().optional(),
+});
 
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === 'OPTIONS') {
@@ -31,7 +33,25 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const inquiryData: ContactInquiry = await req.json();
+    const rawData = await req.json();
+    
+    // Validate input with zod
+    const validationResult = contactInquirySchema.safeParse(rawData);
+    if (!validationResult.success) {
+      console.error('Validation failed:', validationResult.error.errors);
+      return new Response(
+        JSON.stringify({ 
+          error: 'Invalid input data', 
+          details: validationResult.error.errors 
+        }), 
+        { 
+          status: 400, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      );
+    }
+
+    const inquiryData = validationResult.data;
     
     console.log('Processing contact inquiry:', { 
       name: inquiryData.name, 

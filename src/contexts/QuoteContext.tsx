@@ -137,8 +137,31 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
 export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(quoteReducer, initialState);
   const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const inactivityTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const lastActivityRef = useRef<number>(Date.now());
   const prevTradeInRef = useRef<any>(undefined);
   const [navigationBlocked, setNavigationBlocked] = useState(false);
+
+  // Clear localStorage helper
+  const clearStoredQuote = useCallback(() => {
+    localStorage.removeItem('quoteBuilder');
+    console.log('🧹 Cleared quote from localStorage');
+  }, []);
+
+  // Reset inactivity timer
+  const resetInactivityTimer = useCallback(() => {
+    lastActivityRef.current = Date.now();
+    
+    if (inactivityTimeoutRef.current) {
+      clearTimeout(inactivityTimeoutRef.current);
+    }
+
+    // Auto-clear after 30 minutes of inactivity
+    inactivityTimeoutRef.current = setTimeout(() => {
+      console.log('⏰ 30 minutes of inactivity - clearing quote data');
+      clearStoredQuote();
+    }, 30 * 60 * 1000);
+  }, [clearStoredQuote]);
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -166,20 +189,23 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
           // Check if data structure is valid
           if (!parsedData.state || typeof parsedData.state !== 'object') {
             console.warn('⚠️ QuoteContext: Invalid data structure, removing');
-            localStorage.removeItem('quoteBuilder');
+            clearStoredQuote();
             dispatch({ type: 'SET_LOADING', payload: false });
             return;
           }
           
-          // Check if data is not too old (24 hours) and has valid timestamp
+          // Check if data is not too old (24 hours) and not inactive for 30 minutes
           const dataAge = parsedData.timestamp ? Date.now() - parsedData.timestamp : Infinity;
           const maxAge = 24 * 60 * 60 * 1000; // 24 hours
+          const lastActivity = parsedData.lastActivity || parsedData.timestamp || 0;
+          const inactivityDuration = Date.now() - lastActivity;
           
-          if (parsedData.timestamp && dataAge < maxAge) {
+          if (parsedData.timestamp && dataAge < maxAge && inactivityDuration < 30 * 60 * 1000) {
             console.log('✅ QuoteContext: Data is fresh, loading state', {
               ageHours: Math.round(dataAge / (60 * 60 * 1000) * 10) / 10
             });
             dispatch({ type: 'LOAD_FROM_STORAGE', payload: parsedData.state });
+            resetInactivityTimer();
             // Add a small delay to ensure the reducer has finished processing
             setTimeout(() => {
               dispatch({ type: 'SET_LOADING', payload: false });
@@ -187,11 +213,11 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             clearTimeout(loadingTimeout); // Clear the safety timeout
             return; // Exit early so we don't set isLoading = false again below
           } else {
-            console.log('⏰ QuoteContext: Data is stale or missing timestamp, removing', {
+            console.log('⏰ QuoteContext: Data is stale or inactive, removing', {
               hasTimestamp: !!parsedData.timestamp,
               ageHours: parsedData.timestamp ? Math.round(dataAge / (60 * 60 * 1000) * 10) / 10 : 'unknown'
             });
-            localStorage.removeItem('quoteBuilder');
+            clearStoredQuote();
             dispatch({ type: 'SET_LOADING', payload: false });
           }
         } catch (parseError) {
@@ -272,10 +298,13 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
     
     saveTimeoutRef.current = setTimeout(() => {
+      resetInactivityTimer(); // Reset on activity
+      
       try {
         const dataToSave = {
           state,
-          timestamp: Date.now()
+          timestamp: Date.now(),
+          lastActivity: Date.now()
         };
         localStorage.setItem('quoteBuilder', JSON.stringify(dataToSave));
         console.log('💾 QuoteContext: Quote data saved to localStorage', {
@@ -294,7 +323,7 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         clearTimeout(saveTimeoutRef.current);
       }
     };
-  }, [state]);
+  }, [state, resetInactivityTimer]);
 
   const isStepAccessible = useMemo(() => (step: number): boolean => {
     switch (step) {
