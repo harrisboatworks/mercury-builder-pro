@@ -198,7 +198,7 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
           console.error('❌ QuoteContext: JSON parse error:', parseError);
           console.log('🧹 QuoteContext: Cleaning up corrupted localStorage data');
           try {
-            localStorage.removeItem('quoteBuilder');
+            clearStoredQuote();
           } catch (cleanupError) {
             console.error('❌ QuoteContext: Failed to cleanup localStorage:', cleanupError);
           }
@@ -212,7 +212,7 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       console.error('❌ QuoteContext: Unexpected error during load:', error);
       // Try to clear potentially corrupted data
       try {
-        localStorage.removeItem('quoteBuilder');
+        clearStoredQuote();
         console.log('🧹 QuoteContext: Cleared localStorage after error');
       } catch (cleanupError) {
         console.error('❌ QuoteContext: Failed to cleanup after error:', cleanupError);
@@ -222,7 +222,13 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       clearTimeout(loadingTimeout);
       console.log('🏁 QuoteContext: Load process completed');
     }
-  }, []);
+
+    return () => {
+      if (inactivityTimeoutRef.current) {
+        clearTimeout(inactivityTimeoutRef.current);
+      }
+    };
+  }, [clearStoredQuote, resetInactivityTimer]);
 
   // Debounced save to localStorage with immediate save for trade-in changes
   useEffect(() => {
@@ -240,11 +246,13 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     
     if (tradeInChanged && state.tradeInInfo !== undefined) {
       prevTradeInRef.current = state.tradeInInfo;
+      resetInactivityTimer(); // Reset on activity
       
       try {
         const dataToSave = {
           state,
-          timestamp: Date.now()
+          timestamp: Date.now(),
+          lastActivity: Date.now()
         };
         localStorage.setItem('quoteBuilder', JSON.stringify(dataToSave));
         console.log('💾 QuoteContext: Immediate save for trade-in change', {

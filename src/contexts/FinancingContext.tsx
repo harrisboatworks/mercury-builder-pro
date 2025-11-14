@@ -137,6 +137,7 @@ interface FinancingContextType {
   saveToDatabase: () => Promise<void>;
   isStepComplete: (step: number) => boolean;
   canAccessStep: (step: number) => boolean;
+  clearStoredData: () => void;
 }
 
 const FinancingContext = createContext<FinancingContextType | null>(null);
@@ -144,6 +145,29 @@ const FinancingContext = createContext<FinancingContextType | null>(null);
 export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(financingReducer, initialState);
   const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const inactivityTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const lastActivityRef = useRef<number>(Date.now());
+
+  // Clear localStorage helper
+  const clearStoredData = useCallback(() => {
+    localStorage.removeItem('financingApplication');
+    console.log('🧹 Cleared financing application from localStorage');
+  }, []);
+
+  // Reset inactivity timer
+  const resetInactivityTimer = useCallback(() => {
+    lastActivityRef.current = Date.now();
+    
+    if (inactivityTimeoutRef.current) {
+      clearTimeout(inactivityTimeoutRef.current);
+    }
+
+    // Auto-clear after 30 minutes of inactivity
+    inactivityTimeoutRef.current = setTimeout(() => {
+      console.log('⏰ 30 minutes of inactivity - clearing sensitive data');
+      clearStoredData();
+    }, 30 * 60 * 1000);
+  }, [clearStoredData]);
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -151,18 +175,29 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        // Check if data is not too old (7 days)
-        if (parsed.timestamp && Date.now() - parsed.timestamp < 7 * 24 * 60 * 60 * 1000) {
+        // Check if data is not too old (7 days) and not inactive for 30 minutes
+        const age = Date.now() - (parsed.timestamp || 0);
+        const lastActivity = parsed.lastActivity || parsed.timestamp || 0;
+        const inactivityDuration = Date.now() - lastActivity;
+        
+        if (parsed.timestamp && age < 7 * 24 * 60 * 60 * 1000 && inactivityDuration < 30 * 60 * 1000) {
           dispatch({ type: 'LOAD_FROM_STORAGE', payload: parsed.state });
+          resetInactivityTimer();
         } else {
-          localStorage.removeItem('financingApplication');
+          clearStoredData();
         }
       } catch (error) {
         console.error('Failed to load financing application from localStorage:', error);
-        localStorage.removeItem('financingApplication');
+        clearStoredData();
       }
     }
-  }, []);
+
+    return () => {
+      if (inactivityTimeoutRef.current) {
+        clearTimeout(inactivityTimeoutRef.current);
+      }
+    };
+  }, [clearStoredData, resetInactivityTimer]);
 
   // Auto-save to localStorage (debounced 1 second)
   useEffect(() => {
@@ -173,6 +208,8 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     }
 
     saveTimeoutRef.current = setTimeout(() => {
+      resetInactivityTimer(); // Reset timer on save activity
+      
       const dataToSave = {
         state: {
           applicationId: state.applicationId,
@@ -189,6 +226,7 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
           quoteId: state.quoteId,
         },
         timestamp: Date.now(),
+        lastActivity: Date.now(),
       };
       localStorage.setItem('financingApplication', JSON.stringify(dataToSave));
     }, 1000);
@@ -302,6 +340,7 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         saveToDatabase,
         isStepComplete,
         canAccessStep,
+        clearStoredData,
       }}
     >
       {children}
