@@ -121,6 +121,42 @@ export default function FinancingApplication() {
       return;
     }
 
+    // Check for calculator pre-fill (from Finance Calculator)
+    const calculatorState = (location.state as any)?.fromCalculator ? location.state : null;
+
+    if (calculatorState) {
+      console.log('Loading financing data from calculator:', calculatorState);
+      
+      // Map frequency to appropriate term
+      let termMapping: "36" | "48" | "60" | "72" | "84" | "120" | "180" = "60";
+      if (calculatorState.frequency === 'bi-weekly') {
+        termMapping = "120"; // ~5 years bi-weekly
+      } else if (calculatorState.frequency === 'weekly') {
+        termMapping = "180"; // ~3.5 years weekly
+      }
+      
+      financingDispatch({
+        type: 'SET_PURCHASE_DETAILS',
+        payload: {
+          motorModel: calculatorState.motorModel || 'Motor',
+          motorPrice: calculatorState.totalFinanced || 0,
+          downPayment: calculatorState.downPayment || 0,
+          tradeInValue: 0,
+          amountToFinance: Math.max(0, (calculatorState.totalFinanced || 0) - (calculatorState.downPayment || 0)),
+          preferredTerm: termMapping,
+        }
+      });
+      
+      toast({
+        title: "Calculator Data Loaded",
+        description: "Your financing estimate has been pre-filled from the calculator.",
+        duration: 4000,
+      });
+      
+      setIsLoading(false);
+      return;
+    }
+
     // Check for full quote restoration from saved_quotes (via quoteId)
     const savedQuoteIdParam = searchParams.get('quoteId');
     const restoredQuoteState = (location.state as any)?.savedQuoteState;

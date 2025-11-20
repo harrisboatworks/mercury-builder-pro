@@ -1,4 +1,5 @@
 import { useMemo, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
@@ -32,11 +33,30 @@ interface FinanceCalculatorDrawerProps {
 }
 
 export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCalculatorDrawerProps) {
+  const navigate = useNavigate();
   const [totalFinanced, setTotalFinanced] = useState<number>(0);
   const [down, setDown] = useState<number>(0);
   const [apr, setApr] = useState<number>(6.99);
   const [frequency, setFrequency] = useState<PaymentFrequency>('monthly');
   const { promo } = useActiveFinancingPromo();
+
+  const handleApplyForFinancing = () => {
+    navigate('/financing-application', {
+      state: {
+        motorId: motor.id,
+        motorModel: motor.model,
+        motorYear: motor.year,
+        motorPrice: motor.price,
+        totalFinanced,
+        downPayment: down,
+        apr,
+        frequency,
+        estimatedPayment: paymentCalculation.amount,
+        fromCalculator: true,
+      }
+    });
+    onOpenChange(false); // Close drawer after navigation
+  };
 
   // Initialize values when motor changes or drawer opens
   useEffect(() => {
@@ -224,7 +244,14 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
           </div>
         </ScrollArea>
 
-        <DrawerFooter>
+        <DrawerFooter className="gap-2">
+          <Button 
+            onClick={handleApplyForFinancing}
+            className="w-full"
+            disabled={!motor.id || paymentCalculation.amount === 0}
+          >
+            Apply for Financing
+          </Button>
           <DrawerClose asChild>
             <Button variant="outline" className="w-full">Close</Button>
           </DrawerClose>
