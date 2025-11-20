@@ -195,15 +195,29 @@ export default function FinanceCalculator() {
               <Label htmlFor="totalFinanced">Total Financed</Label>
               <Input 
                 id="totalFinanced" 
-                type="number" 
-                inputMode="numeric" 
+                type="text" 
+                inputMode="numeric"
+                pattern="[0-9]*"
                 value={totalFinanced} 
-                onChange={(e) => setTotalFinanced(Number(e.target.value || 0))} 
+                onChange={(e) => {
+                  const value = e.target.value.replace(/[^0-9]/g, '');
+                  setTotalFinanced(Number(value || 0));
+                }} 
               />
             </div>
             <div>
               <Label htmlFor="down">Down Payment</Label>
-              <Input id="down" type="number" inputMode="numeric" value={down} onChange={(e) => setDown(Number(e.target.value || 0))} />
+              <Input 
+                id="down" 
+                type="text" 
+                inputMode="numeric"
+                pattern="[0-9]*"
+                value={down} 
+                onChange={(e) => {
+                  const value = e.target.value.replace(/[^0-9]/g, '');
+                  setDown(Number(value || 0));
+                }} 
+              />
             </div>
             <div>
               <Label htmlFor="apr">APR (%)</Label>
