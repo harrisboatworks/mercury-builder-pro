@@ -148,6 +148,25 @@ export default function FinanceCalculator() {
     }
   };
 
+  const handleApplyForFinancing = () => {
+    if (!motor) return;
+    
+    navigate('/financing-application', {
+      state: {
+        motorId: motor.id,
+        motorModel: motor.model,
+        motorYear: motor.year,
+        motorPrice: motor.base_price || motor.sale_price || 0,
+        totalFinanced,
+        downPayment: down,
+        apr,
+        frequency,
+        estimatedPayment: paymentCalculation.amount,
+        fromCalculator: true,
+      }
+    });
+  };
+
   return (
     <>
       <LuxuryHeader />
@@ -276,10 +295,15 @@ export default function FinanceCalculator() {
             </div>
           )}
 
-          <div className="mt-6 flex gap-3">
+          <div className="mt-6 flex flex-wrap gap-3">
             <Button onClick={handleGoBack}>
               {navState.fromModal ? 'Back' : 'Back to Motors'}
             </Button>
+            {motor && (
+              <Button onClick={handleApplyForFinancing}>
+                Apply for Financing
+              </Button>
+            )}
             <Button variant="outline" asChild>
               <Link to="/">Browse Motors</Link>
             </Button>
