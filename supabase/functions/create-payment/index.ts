@@ -121,15 +121,65 @@ serve(async (req) => {
       });
     }
 
-    // Quote payment flow (existing logic)
+    // Quote payment flow with server-side validation
     if (!quoteData) throw new Error("Quote data is required for quote payments");
     logStep("Quote data received", { totalPrice: quoteData.totalPrice });
 
-    // Create line items for the quote
+    // Server-side price validation using service role key
+    const supabaseService = createClient(
+      Deno.env.get("SUPABASE_URL") ?? "",
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
+      { auth: { persistSession: false } }
+    );
+
+    // Validate motor price if motorId is provided
+    let validatedMotorPrice = quoteData.motorPrice || 0;
+    if (quoteData.motorId) {
+      const { data: motor, error: motorError } = await supabaseService
+        .from('motor_models')
+        .select('dealer_price, sale_price, base_price, msrp')
+        .eq('id', quoteData.motorId)
+        .single();
+
+      if (motorError) {
+        logStep("Motor lookup failed", { error: motorError.message });
+        throw new Error("Failed to validate motor pricing");
+      }
+
+      if (!motor) {
+        throw new Error("Motor not found");
+      }
+
+      // Use the most appropriate price
+      const serverMotorPrice = motor.dealer_price || motor.sale_price || motor.base_price || motor.msrp || 0;
+      
+      // Validate with tolerance for rounding differences
+      const tolerance = 1.0; // Allow $1 difference for rounding
+      const priceDifference = Math.abs(serverMotorPrice - (quoteData.motorPrice || 0));
+      
+      logStep("Motor price validation", {
+        clientPrice: quoteData.motorPrice,
+        serverPrice: serverMotorPrice,
+        difference: priceDifference
+      });
+
+      if (priceDifference > tolerance) {
+        logStep("Price mismatch detected - possible tampering", {
+          expected: serverMotorPrice,
+          received: quoteData.motorPrice,
+          difference: priceDifference
+        });
+        throw new Error("Price validation failed. Please refresh and try again.");
+      }
+
+      validatedMotorPrice = serverMotorPrice;
+    }
+
+    // Create line items using validated prices
     const lineItems = [];
     
-    // Main motor item
-    if (quoteData.motorPrice > 0) {
+    // Main motor item with validated price
+    if (validatedMotorPrice > 0) {
       lineItems.push({
         price_data: {
           currency: "cad",
@@ -137,13 +187,13 @@ serve(async (req) => {
             name: `${quoteData.motorModel} Motor`,
             description: `${quoteData.horsepower}HP Mercury Motor`
           },
-          unit_amount: Math.round(quoteData.motorPrice * 100), // Convert to cents
+          unit_amount: Math.round(validatedMotorPrice * 100), // Convert to cents
         },
         quantity: 1,
       });
     }
 
-    // Accessories
+    // Accessories (server-validated in future iterations)
     if (quoteData.accessoryCosts > 0) {
       lineItems.push({
         price_data: {
@@ -158,7 +208,7 @@ serve(async (req) => {
       });
     }
 
-    // Installation
+    // Installation (server-validated in future iterations)
     if (quoteData.installationCost > 0) {
       lineItems.push({
         price_data: {
@@ -207,13 +257,7 @@ serve(async (req) => {
 
     logStep("Stripe checkout session created", { sessionId: session.id, url: session.url });
 
-    // Store quote with Stripe session info using service role key
-    const supabaseService = createClient(
-      Deno.env.get("SUPABASE_URL") ?? "",
-      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
-      { auth: { persistSession: false } }
-    );
-
+    // Store quote with Stripe session info (supabaseService already initialized above)
     const { data: quoteResult, error: quoteError } = await supabaseService.from("quotes").insert({
       user_id: user?.id,
       customer_name: quoteData.customerName || userEmail,
