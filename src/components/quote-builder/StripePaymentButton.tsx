@@ -35,8 +35,9 @@ export const StripePaymentButton = ({
     setLoading(true);
     
     try {
-      // Prepare quote data for Stripe
+      // Prepare quote data for Stripe with motor ID for server-side validation
       const stripeQuoteData = {
+        motorId: quoteData.motor?.id, // Include motor ID for server-side price validation
         motorModel: quoteData.motor?.model || 'Mercury Motor',
         horsepower: quoteData.motor?.hp || 0,
         motorPrice,
