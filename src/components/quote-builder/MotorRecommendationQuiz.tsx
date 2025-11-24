@@ -134,7 +134,7 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
           </DialogTitle>
         </DialogHeader>
 
-        {!showResults ? (
+        {!showResults && currentQuizStep ? (
           <div className="space-y-6 py-4">
             {/* Progress indicator */}
             <div className="flex items-center gap-2">
@@ -159,7 +159,7 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
 
             {/* Options */}
             <div className="grid gap-3">
-              {currentQuizStep.options.map((option) => (
+              {currentQuizStep.options?.map((option) => (
                 <Card
                   key={option.value}
                   className={`p-4 cursor-pointer transition-all hover:border-blue-600 hover:shadow-md ${
@@ -186,7 +186,7 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
               </div>
             )}
           </div>
-        ) : (
+        ) : showResults ? (
           <div className="space-y-6 py-4">
             <div className="text-center space-y-2">
               <h3 className="text-2xl font-semibold">Your Recommended Motors</h3>
@@ -249,7 +249,7 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
               </Button>
             </div>
           </div>
-        )}
+        ) : null}
       </DialogContent>
     </Dialog>
   );
