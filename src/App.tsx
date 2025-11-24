@@ -27,6 +27,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Quote builder pages
 const MotorSelectionPage = lazy(() => import("@/pages/quote/MotorSelectionPage"));
+const OptionsPage = lazy(() => import("@/pages/quote/OptionsPage"));
 const PurchasePathPage = lazy(() => import("@/pages/quote/PurchasePathPage"));
 const BoatInfoPage = lazy(() => import("@/pages/quote/BoatInfoPage"));
 const FuelTankPage = lazy(() => import("@/pages/quote/FuelTankPage"));
@@ -55,6 +56,9 @@ const AdminCronMonitor = lazy(() => import("./pages/AdminCronMonitor"));
 const AdminConnectors = lazy(() => import("./pages/AdminConnectors"));
 const AdminSources = lazy(() => import("./pages/AdminSources"));
 const AdminPricingImport = lazy(() => import("./pages/AdminPricingImport"));
+const MotorOptionsCatalog = lazy(() => import("./components/admin/options/MotorOptionsCatalog"));
+const MotorOptionsManager = lazy(() => import("./components/admin/options/MotorOptionsManager"));
+const MotorOptionRules = lazy(() => import("./components/admin/options/MotorOptionRules"));
 
 // Payment pages
 const Deposits = lazy(() => import("./pages/Deposits"));
@@ -126,6 +130,7 @@ function AnimatedRoutes() {
         {/* Quote Builder Routes */}
         <Route path="/quote" element={<MotorSelectionPage />} />
         <Route path="/quote/motor-selection" element={<MotorSelectionPage />} />
+        <Route path="/quote/options" element={<OptionsPage />} />
         <Route path="/quote/purchase-path" element={<PurchasePathPage />} />
         <Route path="/quote/boat-info" element={<BoatInfoPage />} />
         <Route path="/quote/fuel-tank" element={<FuelTankPage />} />
@@ -264,6 +269,30 @@ function AnimatedRoutes() {
           element={
             <SecureRoute requireAdmin={true}>
               <AdminSources />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/options-catalog"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <MotorOptionsCatalog />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/options-manager"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <MotorOptionsManager />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/option-rules"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <MotorOptionRules />
             </SecureRoute>
           }
         />

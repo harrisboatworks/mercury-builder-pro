@@ -8,6 +8,15 @@ interface WarrantyConfig {
   totalYears: number;
 }
 
+interface SelectedOption {
+  optionId: string;
+  name: string;
+  price: number;
+  category: string;
+  assignmentType: 'required' | 'recommended' | 'available';
+  isIncluded: boolean;
+}
+
 interface QuoteState {
   motor: Motor | null;
   motorSpecs: MercuryMotor | null; // Full specs available for AI assistant
@@ -23,6 +32,7 @@ interface QuoteState {
   };
   warrantyConfig: WarrantyConfig | null;
   hasTradein: boolean;
+  selectedOptions: SelectedOption[];
   completedSteps: number[];
   currentStep: number;
   isLoading: boolean;
@@ -41,6 +51,7 @@ type QuoteAction =
   | { type: 'SET_FINANCING'; payload: { downPayment: number; term: number; rate: number } }
   | { type: 'SET_WARRANTY_CONFIG'; payload: WarrantyConfig }
   | { type: 'SET_HAS_TRADEIN'; payload: boolean }
+  | { type: 'SET_SELECTED_OPTIONS'; payload: SelectedOption[] }
   | { type: 'COMPLETE_STEP'; payload: number }
   | { type: 'SET_CURRENT_STEP'; payload: number }
   | { type: 'LOAD_FROM_STORAGE'; payload: QuoteState }
@@ -63,6 +74,7 @@ const initialState: QuoteState = {
   },
   warrantyConfig: null,
   hasTradein: false,
+  selectedOptions: [],
   completedSteps: [],
   currentStep: 1,
   isLoading: true,
@@ -108,6 +120,8 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
       return { ...state, warrantyConfig: action.payload };
     case 'SET_HAS_TRADEIN':
       return { ...state, hasTradein: action.payload };
+    case 'SET_SELECTED_OPTIONS':
+      return { ...state, selectedOptions: action.payload };
     case 'COMPLETE_STEP':
       return { 
         ...state, 

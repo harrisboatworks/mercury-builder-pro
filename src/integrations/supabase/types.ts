@@ -1149,6 +1149,176 @@ export type Database = {
           },
         ]
       }
+      motor_option_assignments: {
+        Row: {
+          assignment_type: string
+          created_at: string | null
+          created_by: string | null
+          display_order: number | null
+          id: string
+          is_active: boolean | null
+          is_included: boolean | null
+          motor_id: string
+          notes: string | null
+          option_id: string
+          price_override: number | null
+          updated_at: string | null
+        }
+        Insert: {
+          assignment_type?: string
+          created_at?: string | null
+          created_by?: string | null
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          is_included?: boolean | null
+          motor_id: string
+          notes?: string | null
+          option_id: string
+          price_override?: number | null
+          updated_at?: string | null
+        }
+        Update: {
+          assignment_type?: string
+          created_at?: string | null
+          created_by?: string | null
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          is_included?: boolean | null
+          motor_id?: string
+          notes?: string | null
+          option_id?: string
+          price_override?: number | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "motor_option_assignments_motor_id_fkey"
+            columns: ["motor_id"]
+            isOneToOne: false
+            referencedRelation: "motor_models"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "motor_option_assignments_option_id_fkey"
+            columns: ["option_id"]
+            isOneToOne: false
+            referencedRelation: "motor_options"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      motor_option_rules: {
+        Row: {
+          assignment_type: string
+          conditions: Json
+          created_at: string | null
+          created_by: string | null
+          description: string | null
+          id: string
+          is_active: boolean | null
+          option_id: string
+          price_override: number | null
+          priority: number | null
+          rule_name: string
+          updated_at: string | null
+        }
+        Insert: {
+          assignment_type?: string
+          conditions?: Json
+          created_at?: string | null
+          created_by?: string | null
+          description?: string | null
+          id?: string
+          is_active?: boolean | null
+          option_id: string
+          price_override?: number | null
+          priority?: number | null
+          rule_name: string
+          updated_at?: string | null
+        }
+        Update: {
+          assignment_type?: string
+          conditions?: Json
+          created_at?: string | null
+          created_by?: string | null
+          description?: string | null
+          id?: string
+          is_active?: boolean | null
+          option_id?: string
+          price_override?: number | null
+          priority?: number | null
+          rule_name?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "motor_option_rules_option_id_fkey"
+            columns: ["option_id"]
+            isOneToOne: false
+            referencedRelation: "motor_options"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      motor_options: {
+        Row: {
+          base_price: number
+          category: string
+          created_at: string | null
+          description: string | null
+          display_order: number | null
+          features: Json | null
+          id: string
+          image_url: string | null
+          is_active: boolean | null
+          is_taxable: boolean | null
+          msrp: number | null
+          name: string
+          part_number: string | null
+          short_description: string | null
+          specifications: Json | null
+          updated_at: string | null
+        }
+        Insert: {
+          base_price?: number
+          category?: string
+          created_at?: string | null
+          description?: string | null
+          display_order?: number | null
+          features?: Json | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          is_taxable?: boolean | null
+          msrp?: number | null
+          name: string
+          part_number?: string | null
+          short_description?: string | null
+          specifications?: Json | null
+          updated_at?: string | null
+        }
+        Update: {
+          base_price?: number
+          category?: string
+          created_at?: string | null
+          description?: string | null
+          display_order?: number | null
+          features?: Json | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          is_taxable?: boolean | null
+          msrp?: number | null
+          name?: string
+          part_number?: string | null
+          short_description?: string | null
+          specifications?: Json | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       notifications: {
         Row: {
           channel: string | null
