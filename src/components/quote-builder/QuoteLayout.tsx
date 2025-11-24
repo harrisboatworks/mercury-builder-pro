@@ -11,6 +11,7 @@ import { useState } from 'react';
 import { CartHeader } from '@/components/ui/cart-header';
 import { CurrentStepIndicator } from './CurrentStepIndicator';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { QuoteProgressStepper } from './QuoteProgressStepper';
 
 interface QuoteLayoutProps {
   children: React.ReactNode;
@@ -112,6 +113,9 @@ export const QuoteLayout = ({
   return <div className="min-h-screen bg-white dark:bg-gray-950">
       {/* Luxury Header System */}
       <LuxuryHeader />
+
+      {/* Quote Progress Stepper */}
+      {showProgress && <QuoteProgressStepper />}
 
       {/* Progress Indicator for Mobile */}
       {showProgress && (

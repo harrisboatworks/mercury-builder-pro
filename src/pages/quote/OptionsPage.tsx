@@ -139,7 +139,9 @@ export default function OptionsPage() {
   return (
     <>
       <LuxuryHeader />
-      <div className="container mx-auto px-4 py-8 max-w-5xl">
+      <QuoteProgressStepper />
+      <div className="min-h-screen bg-background pb-32">
+        <div className="container mx-auto px-4 py-8 max-w-5xl">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Customize Your Motor Package</h1>
@@ -226,6 +228,7 @@ export default function OptionsPage() {
               <ChevronRight className="h-4 w-4 ml-2" />
             </Button>
           </div>
+        </div>
         </div>
       </div>
     </>

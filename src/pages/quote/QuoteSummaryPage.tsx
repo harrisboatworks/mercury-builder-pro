@@ -1,6 +1,9 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { ScrollToTop } from '@/components/ui/ScrollToTop';
+import { QuoteProgressStepper } from '@/components/quote-builder/QuoteProgressStepper';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
@@ -718,17 +721,21 @@ export default function QuoteSummaryPage() {
   });
 
   return (
-    <PageTransition>
-      <QuoteLayout>
-        {!isMounted ? (
-          <div className="flex items-center justify-center min-h-screen">
-            <div className="text-center space-y-4">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
-              <p className="text-muted-foreground dark:text-gray-400">Loading your quote...</p>
+    <>
+      <LuxuryHeader />
+      <QuoteProgressStepper />
+      <ScrollToTop />
+      <PageTransition>
+        <QuoteLayout showProgress={false}>
+          {!isMounted ? (
+            <div className="flex items-center justify-center min-h-screen">
+              <div className="text-center space-y-4">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+                <p className="text-muted-foreground dark:text-gray-400">Loading your quote...</p>
+              </div>
             </div>
-          </div>
-        ) : (
-        <div className="max-w-7xl mx-auto space-y-8">
+          ) : (
+          <div className="max-w-7xl mx-auto space-y-8">
           <div className="grid lg:grid-cols-[1fr_360px] gap-8">
             {/* Main Content - Left Column */}
             <div className="space-y-6">
@@ -914,7 +921,8 @@ export default function QuoteSummaryPage() {
         motorModel={motorName}
         finalPrice={packageSpecificTotals.total}
       />
-    </QuoteLayout>
-    </PageTransition>
+        </QuoteLayout>
+      </PageTransition>
+    </>
   );
 }
