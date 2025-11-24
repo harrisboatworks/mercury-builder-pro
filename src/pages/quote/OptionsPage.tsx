@@ -7,8 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ChevronLeft, ChevronRight, PackagePlus, CheckCircle2 } from 'lucide-react';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
-import { QuoteProgressStepper } from '@/components/quote-builder/QuoteProgressStepper';
+import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { toast } from 'sonner';
 
 export default function OptionsPage() {
@@ -113,12 +112,11 @@ export default function OptionsPage() {
 
   if (isLoading) {
     return (
-      <>
-        <LuxuryHeader />
+      <QuoteLayout>
         <div className="container mx-auto px-4 py-8">
           <div className="text-center py-12">Loading motor options...</div>
         </div>
-      </>
+      </QuoteLayout>
     );
   }
 
@@ -138,11 +136,8 @@ export default function OptionsPage() {
   const optionsTotal = calculateTotal();
 
   return (
-    <>
-      <LuxuryHeader />
-      <QuoteProgressStepper />
-      <div className="min-h-screen bg-background pb-32">
-        <div className="container mx-auto px-4 py-8 max-w-5xl">
+    <QuoteLayout>
+      <div className="container mx-auto px-4 py-8 max-w-5xl pb-32">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Customize Your Motor Package</h1>
@@ -229,10 +224,9 @@ export default function OptionsPage() {
               <ChevronRight className="h-4 w-4 ml-2" />
             </Button>
           </div>
+          </div>
         </div>
-        </div>
-      </div>
-    </>
+    </QuoteLayout>
   );
 }
 
