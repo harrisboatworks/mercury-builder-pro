@@ -14,6 +14,7 @@ import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
 import { Button } from '@/components/ui/button';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
+import { MotorRecommendationQuiz } from '@/components/quote-builder/MotorRecommendationQuiz';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
@@ -104,6 +105,7 @@ export default function MotorSelectionPage() {
   const [showHpSuggestions, setShowHpSuggestions] = useState(false);
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0);
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const [showQuiz, setShowQuiz] = useState(false);
   // Remove selectedMotor state since we're not doing inline selection anymore
 
   // Auto-trigger background image scraping for motors without images
@@ -487,6 +489,20 @@ export default function MotorSelectionPage() {
                   />
                 )}
               </div>
+              
+              {/* Motor Recommendation Quiz Button */}
+              <div className="mt-3 flex justify-center">
+                <button
+                  onClick={() => setShowQuiz(true)}
+                  className="inline-flex items-center gap-2 px-4 py-2 text-sm text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                  Help me find the right motor
+                </button>
+              </div>
+              
               {searchQuery && (
                 <div className="text-center mt-2 text-xs text-luxury-gray">
                   {filteredMotors.length} results
@@ -601,9 +617,17 @@ export default function MotorSelectionPage() {
             </div>
           )}
         </div>
-        </div>
-      </QuoteLayout>
-    </FinancingProvider>
+          </div>
+        </QuoteLayout>
+        
+        {/* Motor Recommendation Quiz Modal */}
+        <MotorRecommendationQuiz
+          isOpen={showQuiz}
+          onClose={() => setShowQuiz(false)}
+          motors={processedMotors}
+          onSelectMotor={handleMotorSelect}
+        />
+      </FinancingProvider>
     </PageTransition>
   );
 }
