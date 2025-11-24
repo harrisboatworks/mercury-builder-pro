@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
-import { QuoteProgressStepper } from '@/components/quote-builder/QuoteProgressStepper';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { TradeInValuation } from '@/components/quote-builder/TradeInValuation';
@@ -233,11 +231,8 @@ export default function TradeInPage() {
   }, [state.tradeInInfo]);
 
   return (
-    <>
-      <LuxuryHeader />
-      <QuoteProgressStepper />
-      <PageTransition>
-        <QuoteLayout>
+    <PageTransition>
+      <QuoteLayout>
           <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
             <div className="flex items-center gap-4">
               <Button 
@@ -307,8 +302,7 @@ export default function TradeInPage() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-        </QuoteLayout>
-      </PageTransition>
-    </>
+      </QuoteLayout>
+    </PageTransition>
   );
 }

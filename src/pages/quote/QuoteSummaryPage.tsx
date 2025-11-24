@@ -1,9 +1,7 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { ScrollToTop } from '@/components/ui/ScrollToTop';
-import { QuoteProgressStepper } from '@/components/quote-builder/QuoteProgressStepper';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
@@ -722,8 +720,6 @@ export default function QuoteSummaryPage() {
 
   return (
     <>
-      <LuxuryHeader />
-      <QuoteProgressStepper />
       <ScrollToTop />
       <PageTransition>
         <QuoteLayout showProgress={false}>
