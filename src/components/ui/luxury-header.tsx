@@ -59,7 +59,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
         }`}
       >
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 h-full">
-          <div className="grid grid-cols-[auto_1fr_auto] md:grid-cols-[180px_1fr_180px] lg:grid-cols-[1fr_auto_1fr] items-center h-full gap-2 md:gap-6">
+          <div className="grid grid-cols-[auto_1fr_auto] md:grid-cols-[auto_1fr_auto] lg:grid-cols-[1fr_auto_1fr] items-center h-full gap-2 md:gap-6 min-w-0">
             
             {/* Left: Mobile Menu Button */}
             <button
@@ -71,7 +71,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
             </button>
 
             {/* Left: Logos (Desktop Only) */}
-            <Link to="/" className="hidden md:flex items-center gap-2 lg:gap-4 justify-self-start">
+            <Link to="/" className="hidden md:flex items-center gap-2 lg:gap-4 justify-self-start keep-flex">
               <img 
                 src={harrisLogo} 
                 alt="Harris Boat Works" 
@@ -101,7 +101,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
             </Link>
 
             {/* Center: Trust Badges - Compact on Tablet, Full on Desktop */}
-            <div className="hidden md:flex items-center justify-center space-x-2 md:space-x-3 lg:space-x-6 text-sm lg:text-base text-luxury-gray dark:text-gray-300">
+            <div className="hidden md:flex items-center justify-center space-x-2 md:space-x-3 lg:space-x-6 text-sm lg:text-base text-luxury-gray dark:text-gray-300 max-w-full overflow-hidden keep-flex">
               <div className="flex items-center gap-2 lg:gap-3 group cursor-pointer transition-all duration-300 hover:scale-105">
                 <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-6 md:h-8 lg:h-10 w-auto dark:bg-white dark:p-1 dark:rounded transition-all duration-300 group-hover:drop-shadow-lg" />
                 <span className="hidden lg:inline font-medium transition-colors duration-300 group-hover:text-luxury-ink dark:group-hover:text-white">Award-Winning Service</span>
@@ -114,7 +114,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
             </div>
 
             {/* Right: Actions */}
-            <div className="flex items-center justify-end gap-1 md:gap-2 min-w-[40px]">
+            <div className="flex items-center justify-end gap-1 md:gap-2 min-w-[40px] keep-flex">
               {/* Quote/Cart Button */}
               <Button
                 variant="ghost"
@@ -140,7 +140,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
               </div>
 
               {/* User Menu (Desktop) */}
-              <div className="hidden md:flex items-center gap-2">
+              <div className="hidden md:flex items-center gap-2 keep-flex">
                 {user ? (
                   <div className="flex items-center gap-2">
                     <Button
