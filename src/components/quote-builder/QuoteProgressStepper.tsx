@@ -180,7 +180,7 @@ export const QuoteProgressStepper = () => {
           </div>
 
           {/* Mobile Step Dots */}
-          <div className="flex items-center justify-center gap-2 mt-3">
+          <div className="flex items-center justify-center gap-2 mt-3 keep-flex">
             {visibleSteps.map((step, index) => {
               const completed = isCompleted(index);
               const current = isCurrentStep(index);
@@ -191,7 +191,7 @@ export const QuoteProgressStepper = () => {
                   onClick={() => handleStepClick(step, index)}
                   disabled={!isAccessible(step, index)}
                   className={cn(
-                    "w-2 h-2 rounded-full transition-all duration-200",
+                    "w-2 h-2 !min-w-0 !min-h-0 rounded-full transition-all duration-200",
                     completed && "bg-primary w-2.5 h-2.5",
                     current && !completed && "bg-primary w-3 h-3",
                     !completed && !current && "bg-muted"
