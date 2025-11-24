@@ -6,7 +6,9 @@ export const controlChoices = [
     value: "side_mount",
     image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=400&h=300&fit=crop",
     helper: "Mounts on side of console",
-    xpReward: 15
+    xpReward: 15,
+    price: 1200,
+    priceLabel: "+$1,200"
   },
   {
     id: "bin",
@@ -14,7 +16,9 @@ export const controlChoices = [
     value: "binnacle",
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc61?w=400&h=300&fit=crop",
     helper: "Top-mount throttle/shift",
-    xpReward: 15
+    xpReward: 15,
+    price: 1200,
+    priceLabel: "+$1,200"
   },
   {
     id: "dts",
@@ -23,7 +27,9 @@ export const controlChoices = [
     image: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=400&h=300&fit=crop",
     helper: "Smooth digital precision",
     xpReward: 25,
-    badge: "Tech Savvy"
+    badge: "Tech Savvy",
+    price: 1200,
+    priceLabel: "+$1,200"
   }
 ];
 
@@ -34,7 +40,9 @@ export const steeringChoices = [
     value: "cable",
     image: "https://images.unsplash.com/photo-1510154328089-bdd27fc4ff66?w=400&h=300&fit=crop",
     helper: "Mechanical cable system",
-    xpReward: 10
+    xpReward: 10,
+    price: 0,
+    priceLabel: "Included"
   },
   {
     id: "hydraulic",
@@ -43,7 +51,9 @@ export const steeringChoices = [
     image: "https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?w=400&h=300&fit=crop",
     helper: "Smooth hydraulic control",
     xpReward: 20,
-    badge: "Smooth Operator"
+    badge: "Smooth Operator",
+    price: 0,
+    priceLabel: "Included"
   }
 ];
 
@@ -54,7 +64,9 @@ export const gaugeChoices = [
     value: "tach_basic",
     image: "https://images.unsplash.com/photo-1493238792000-8113da705763?w=400&h=300&fit=crop",
     helper: "Essential RPM gauge",
-    xpReward: 10
+    xpReward: 10,
+    price: 0,
+    priceLabel: "Included"
   },
   {
     id: "sc",
@@ -62,7 +74,9 @@ export const gaugeChoices = [
     value: "smartcraft",
     image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop",
     helper: "Digital monitoring suite",
-    xpReward: 20
+    xpReward: 20,
+    price: 0,
+    priceLabel: "Included"
   },
   {
     id: "vv",
@@ -71,7 +85,9 @@ export const gaugeChoices = [
     image: "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=400&h=300&fit=crop",
     helper: "Full glass cockpit display",
     xpReward: 30,
-    badge: "Captain's Choice"
+    badge: "Captain's Choice",
+    price: 0,
+    priceLabel: "Included"
   }
 ];
 
@@ -85,6 +101,7 @@ export const tillerMountingChoices = [
     helper: "Permanent bolt-through mounting",
     xpReward: 15,
     price: 99,
+    priceLabel: "+$99",
     recommendedPackage: "better"
   },
   {
@@ -95,6 +112,7 @@ export const tillerMountingChoices = [
     helper: "Removable clamp mounting",
     xpReward: 10,
     price: 0,
+    priceLabel: "Included",
     recommendedPackage: "good"
   }
 ];
