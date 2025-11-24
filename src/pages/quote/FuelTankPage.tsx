@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { QuoteProgressStepper } from '@/components/quote-builder/QuoteProgressStepper';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import FuelTankOptions from '@/components/quote-builder/FuelTankOptions';
@@ -45,9 +47,12 @@ export default function FuelTankPage() {
   };
 
   return (
-    <PageTransition>
-      <QuoteLayout>
-        <div className="space-y-6">
+    <>
+      <LuxuryHeader />
+      <QuoteProgressStepper />
+      <PageTransition>
+        <QuoteLayout>
+          <div className="space-y-6">
           <div className="flex items-center gap-4">
             <Button variant="outline" size="sm" onClick={handleBack} className="border-gray-300 hover:border-gray-900 font-light">
               <ArrowLeft className="w-4 h-4 mr-2" />
@@ -61,7 +66,8 @@ export default function FuelTankPage() {
             onBack={handleBack}
           />
         </div>
-      </QuoteLayout>
-    </PageTransition>
+        </QuoteLayout>
+      </PageTransition>
+    </>
   );
 }
