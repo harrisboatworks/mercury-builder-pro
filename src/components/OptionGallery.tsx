@@ -11,6 +11,9 @@ export type Choice = {
   helper?: string;
   xpReward?: number;
   badge?: string;
+  price?: number;
+  priceLabel?: string;
+  recommendedPackage?: string;
 };
 
 interface OptionGalleryProps {
@@ -80,6 +83,17 @@ export default function OptionGallery({
                     <div className="absolute top-2 left-2 bg-foreground text-background px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
                       <Award className="w-3 h-3" />
                       {choice.badge}
+                    </div>
+                  )}
+                  
+                  {/* Price Badge */}
+                  {choice.priceLabel && (
+                    <div className={`absolute top-2 right-2 px-3 py-1.5 rounded-lg text-sm font-medium shadow-lg ${
+                      choice.price === 0 
+                        ? 'bg-green-500 text-white' 
+                        : 'bg-white text-gray-900 border border-gray-200'
+                    }`}>
+                      {choice.priceLabel}
                     </div>
                   )}
                   
