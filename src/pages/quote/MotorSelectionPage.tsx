@@ -348,16 +348,16 @@ export default function MotorSelectionPage() {
     // Add motor to quote context
     dispatch({ type: 'SET_MOTOR', payload: motor });
     
-    // Auto-navigate to next step
+    // Auto-navigate to options step
     setTimeout(() => {
-      navigate('/quote/purchase-path');
+      navigate('/quote/options');
     }, 500);
   };
 
   const handleContinue = () => {
     if (!state.motor) return;
     dispatch({ type: 'COMPLETE_STEP', payload: 1 });
-    navigate('/quote/purchase-path');
+    navigate('/quote/options');
   };
 
   const handleHpSuggestionSelect = (hp: number) => {
