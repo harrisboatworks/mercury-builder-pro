@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ChevronLeft, ChevronRight, PackagePlus, CheckCircle2 } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { QuoteProgressStepper } from '@/components/quote-builder/QuoteProgressStepper';
 import { toast } from 'sonner';
 
 export default function OptionsPage() {
