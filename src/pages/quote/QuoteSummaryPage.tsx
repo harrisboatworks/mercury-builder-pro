@@ -199,11 +199,14 @@ export default function QuoteSummaryPage() {
   // Get promotional savings dynamically
   const promoSavings = getTotalPromotionalSavings?.(motorMSRP) || 0;
   
-  // Calculate complete pricing with proper structure
+  // Calculate selected options total
+  const selectedOptionsTotal = (state.selectedOptions || []).reduce((sum, opt) => sum + opt.price, 0);
+  
+  // Calculate complete pricing with proper structure (including selected options)
   const totals = calculateQuotePricing({
     motorMSRP,
     motorDiscount,
-    accessoryTotal: baseAccessoryCost,
+    accessoryTotal: baseAccessoryCost + selectedOptionsTotal,
     warrantyPrice,
     promotionalSavings: promoSavings,
     tradeInValue: state.tradeInInfo?.estimatedValue || 0,
@@ -269,8 +272,8 @@ export default function QuoteSummaryPage() {
     }
   }, [isMounted, completeWarrantyCost, currentCoverageYears, dispatch]);
 
-  // Calculate base subtotal (motor + base accessories, NO battery)
-  const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
+  // Calculate base subtotal (motor + base accessories + selected options, NO battery)
+  const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost + selectedOptionsTotal - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
 
   // Package options with ACTUAL warranty costs included
   const packages: PackageOption[] = [
@@ -347,6 +350,17 @@ export default function QuoteSummaryPage() {
 
   // Build accessory breakdown based on motor requirements and selected package
   const accessoryBreakdown = [];
+  
+  // Add selected motor options first (if any)
+  if (state.selectedOptions && state.selectedOptions.length > 0) {
+    state.selectedOptions.forEach(option => {
+      accessoryBreakdown.push({
+        name: option.name,
+        price: option.price,
+        description: option.isIncluded ? 'Included with motor' : undefined
+      });
+    });
+  }
   
   // Add tiller installation cost if applicable
   if (isManualTiller && tillerInstallCost > 0) {
