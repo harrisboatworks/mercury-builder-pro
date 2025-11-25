@@ -64,7 +64,9 @@ export const ContactButton = () => {
               className="flex items-center gap-3 p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:bg-gray-50 active:scale-[0.98] active:bg-gray-100 transition-all duration-100"
               onClick={(e) => {
                 triggerHaptic('light');
-                if (!isMobile) {
+                // Check if device has touch capability (likely can send SMS)
+                const canSendSMS = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+                if (!canSendSMS) {
                   e.preventDefault();
                   copyToClipboard('647-952-2153', 'Text number');
                 }
