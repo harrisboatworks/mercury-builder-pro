@@ -328,7 +328,7 @@ Deno.serve(async (req) => {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              from: 'Motor Inventory Sync <onboarding@resend.dev>',
+              from: 'Motor Inventory Sync <system@hbwsales.ca>',
               to: [adminEmail],
               subject: `⚠️ ${unmatchedModels.length} Unmatched Motors in Sync`,
               html: emailHtml,
