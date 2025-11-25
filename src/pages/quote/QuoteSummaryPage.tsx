@@ -203,7 +203,7 @@ export default function QuoteSummaryPage() {
   const warrantyPrice = state.warrantyConfig?.warrantyPrice || 0;
   
   // Calculate proper MSRP and discount from motor data
-  const motorMSRP = quoteData.motor?.basePrice || 0;
+  const motorMSRP = quoteData.motor?.msrp || quoteData.motor?.basePrice || 0;
   const motorSalePrice = quoteData.motor?.salePrice || quoteData.motor?.price || motorMSRP;
   const motorDiscount = motorMSRP - motorSalePrice;
   

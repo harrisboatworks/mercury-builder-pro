@@ -19,6 +19,7 @@ export interface Motor {
   model: string;
   hp: number;
   price: number;
+  msrp?: number; // Manufacturer's suggested retail price
   specifications?: any;
   features?: string[];
   description?: string;

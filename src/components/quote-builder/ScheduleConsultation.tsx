@@ -92,7 +92,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
   // Calculate pricing dynamically (same logic as GlobalStickyQuoteBar)
   const motorPrice = quoteData.motor?.price || 0;
-  const motorMSRP = quoteData.motor?.basePrice || motorPrice;
+  const motorMSRP = quoteData.motor?.msrp || quoteData.motor?.basePrice || motorPrice;
   const motorDiscount = motorMSRP - motorPrice;
   
   // Calculate accessories dynamically
