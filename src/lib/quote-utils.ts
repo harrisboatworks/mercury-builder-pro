@@ -28,8 +28,8 @@ export function money(amount: number): string {
   return new Intl.NumberFormat('en-CA', {
     style: 'currency',
     currency: 'CAD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
   }).format(amount);
 }
 

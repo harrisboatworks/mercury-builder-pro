@@ -102,9 +102,21 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   if (quoteData.boatInfo?.controlsOption === 'none') accessoryTotal += 1200;
   else if (quoteData.boatInfo?.controlsOption === 'adapter') accessoryTotal += 125;
   
-  // Installation labor for remote motors
+  // Installation labor for remote motors (only if installed path)
   const isTiller = quoteData.motor?.model?.includes('TLR') || quoteData.motor?.model?.includes('MH');
-  if (!isTiller) accessoryTotal += 450;
+  if ((purchasePath === 'installed' || quoteData.purchasePath === 'installed') && !isTiller) {
+    accessoryTotal += 450; // Professional installation labor
+  }
+  
+  // Add mounting hardware for tillers (installConfig)
+  if (quoteData.installConfig?.installationCost) {
+    accessoryTotal += quoteData.installConfig.installationCost;
+  }
+  
+  // Add fuel tank for small tillers (fuelTankConfig)
+  if (quoteData.fuelTankConfig?.tankCost) {
+    accessoryTotal += quoteData.fuelTankConfig.tankCost;
+  }
   
   // Warranty
   const warrantyPrice = quoteData.warrantyConfig?.warrantyPrice || 0;
@@ -112,8 +124,8 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   
   // Calculate totals
   const subtotal = motorPrice + accessoryTotal;
-  const hasTradeIn = quoteData.boatInfo?.tradeIn?.hasTradeIn || false;
-  const tradeInValue = quoteData.boatInfo?.tradeIn?.estimatedValue || 0;
+  const hasTradeIn = quoteData.tradeInInfo?.hasTradeIn || false;
+  const tradeInValue = quoteData.tradeInInfo?.estimatedValue || 0;
   const subtotalAfterTrade = subtotal - (hasTradeIn ? tradeInValue : 0);
   const hst = subtotalAfterTrade * 0.13;
   const totalCashPrice = subtotalAfterTrade + hst;
