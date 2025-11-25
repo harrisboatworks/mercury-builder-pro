@@ -19,8 +19,8 @@ export function FormProgressIndicator({
 
   return (
     <div className="space-y-4 mb-8">
-      {/* Mobile-friendly compact progress */}
-      <div className="md:hidden">
+      {/* Mobile and tablet compact progress */}
+      <div className="lg:hidden">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-medium text-foreground">
             Step {currentStep} of {totalSteps}
@@ -36,7 +36,7 @@ export function FormProgressIndicator({
       </div>
 
       {/* Desktop full progress with all steps */}
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <div className="flex items-center justify-between mb-4">
           <h1 className="text-2xl font-bold text-foreground">Financing Application</h1>
           <span className="text-sm text-muted-foreground">
