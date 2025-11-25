@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift } from "lucide-react";
+import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft } from "lucide-react";
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { CleanSpecSheetPDF } from './CleanSpecSheetPDF';
 import { supabase } from "../../integrations/supabase/client";
@@ -143,6 +143,24 @@ export default function MotorDetailsPremiumModal({
     return () => document.removeEventListener('keydown', handleEscape);
   }, [open, onClose]);
 
+  // Browser history management - handle back button
+  useEffect(() => {
+    if (open) {
+      // Push a history state so back button closes modal instead of navigating away
+      window.history.pushState({ modalOpen: true }, '');
+      
+      const handlePopState = () => {
+        onClose();
+      };
+      
+      window.addEventListener('popstate', handlePopState);
+      
+      return () => {
+        window.removeEventListener('popstate', handlePopState);
+      };
+    }
+  }, [open, onClose]);
+
   // Fetch warranty pricing
   useEffect(() => {
     const fetchWarrantyPricing = async () => {
@@ -197,25 +215,22 @@ export default function MotorDetailsPremiumModal({
             <Tabs defaultValue="overview" className="w-full h-full flex flex-col">
               {/* Mobile/Tablet Header */}
               <div className="lg:hidden sticky top-0 z-40 bg-white shadow-sm">
-                <div className="p-4 sm:p-6 border-b border-gray-200 bg-white">
+                {/* Prominent Mobile Back Header */}
+                <div className="flex items-center gap-3 p-4 border-b border-gray-100">
                   <button 
                     onClick={onClose} 
-                    className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full" 
-                    aria-label="Close"
+                    className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px]" 
+                    aria-label="Go back"
                   >
-                    <X className="w-5 h-5" />
+                    <ChevronLeft className="w-6 h-6" />
+                    <span className="text-base font-medium">Back</span>
                   </button>
-                  
-                  {/* Flexbox Column Layout - prevents overlap */}
-                  <div className="flex flex-col space-y-4 pr-12">
-                    {/* Motor Name - full line with proper spacing */}
-                    <h2 className="text-lg font-semibold tracking-wide text-gray-900 leading-tight">
-                      {title}
-                    </h2>
-                    
-                    {/* 3. Stock Status Indicator */}
-                    {motor && <StockStatusIndicator motor={motor} />}
-                  </div>
+                </div>
+                
+                {/* Stock Status and Title */}
+                <div className="px-4 py-3 border-b border-gray-200 bg-white">
+                  <h2 className="text-lg font-semibold text-gray-900 mb-1">{title}</h2>
+                  {motor && <StockStatusIndicator motor={motor} />}
                 </div>
                 
                 {/* 3. Tabs - separate section below name */}
@@ -252,10 +267,10 @@ export default function MotorDetailsPremiumModal({
                 <div className="p-6 pb-0 border-b border-gray-100 bg-white">
                   <button 
                     onClick={onClose} 
-                    className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full z-50" 
+                    className="absolute top-6 right-6 p-3 bg-gray-100/90 text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition-colors rounded-full shadow-sm active:scale-95 z-50" 
                     aria-label="Close"
                   >
-                    <X className="w-5 h-5" />
+                    <X className="w-6 h-6" />
                   </button>
                   
                   {/* Flexbox Column Layout - crystal clear hierarchy */}
