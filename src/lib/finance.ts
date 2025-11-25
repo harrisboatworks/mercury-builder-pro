@@ -4,6 +4,15 @@
 export const DEALERPLAN_FEE = 299;
 
 /**
+ * Get default financing rate based on price tier
+ * Under $10,000: 8.99% APR
+ * $10,000 and up: 7.99% APR
+ */
+export const getDefaultFinancingRate = (price: number): number => {
+  return price < 10000 ? 8.99 : 7.99;
+};
+
+/**
  * Get smart financing term based on price
  */
 export const getFinancingTerm = (price: number): number => {
@@ -61,7 +70,8 @@ export const calculatePaymentWithFrequency = (
   promoRate: number | null = null
 ) => {
   const termMonths = getFinancingTerm(price);
-  const rate = promoRate || 7.99;
+  const defaultRate = getDefaultFinancingRate(price);
+  const rate = promoRate || defaultRate;
   const paymentsPerYear = getPaymentFrequencyMultiplier(frequency);
   
   // Convert term to payment periods for the selected frequency
@@ -93,9 +103,10 @@ export const calculateMonthlyPayment = (price: number, promoRate: number | null 
  */
 export const getFinancingDisplay = (price: number, currentPromoRate: number | null = null) => {
   const { payment, termMonths, rate } = calculateMonthlyPayment(price, currentPromoRate);
+  const defaultRate = getDefaultFinancingRate(price);
   
-  // If there's a promo rate active (different from default 7.99%)
-  if (currentPromoRate !== null && currentPromoRate < 7.99) {
+  // If there's a promo rate active (different from tiered default)
+  if (currentPromoRate !== null && currentPromoRate < defaultRate) {
     if (currentPromoRate === 0) {
       // 0% gets special treatment
       return `$${payment}/mo • ${termMonths} mo • 0% INTEREST`;
@@ -122,8 +133,9 @@ export const getFinancingDisplay = (price: number, currentPromoRate: number | nu
 /**
  * Legacy function for backward compatibility
  */
-export const calculateMonthly = (amount: number, rate = 7.99, termMonths = 60) => {
-  const r = rate / 100 / 12;
+export const calculateMonthly = (amount: number, rate?: number, termMonths = 60) => {
+  const effectiveRate = rate ?? getDefaultFinancingRate(amount);
+  const r = effectiveRate / 100 / 12;
   if (r === 0) return amount / termMonths;
   return (amount * r) / (1 - Math.pow(1 + r, -termMonths));
 };
