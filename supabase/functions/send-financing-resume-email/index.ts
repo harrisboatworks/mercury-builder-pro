@@ -131,21 +131,14 @@ const handler = async (req: Request): Promise<Response> => {
 
     const html = createBrandedEmailTemplate(emailContent, 'Resume your financing application');
 
-    // TEMPORARY: Send to verified email for testing until domain is verified at resend.com/domains
-    // Once domain is verified, change 'from' to 'Harris Boat Works <noreply@harrisboatworks.com>' and 'to' back to [email]
-    const testRecipient = 'harrisboatworks@hotmail.com'; // Your verified Resend email
-    const isTestMode = email !== testRecipient;
-    
-    console.log(`Sending email to: ${isTestMode ? `${testRecipient} (test mode, intended for: ${email})` : email}`);
+    console.log('Sending resume email to:', email);
 
     // Send email
     const emailResponse = await resend.emails.send({
-      from: 'Harris Boat Works <onboarding@resend.dev>',
+      from: 'Harris Boat Works <noreply@hbwsales.ca>',
       reply_to: ['info@harrisboatworks.ca'],
-      to: [testRecipient], // Temporary: always send to verified email
-      subject: isTestMode 
-        ? `[TEST] Resume Your Financing Application (for ${email})`
-        : 'Resume Your Financing Application',
+      to: [email],
+      subject: 'Resume Your Financing Application',
       html,
     });
 

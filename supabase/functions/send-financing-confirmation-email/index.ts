@@ -125,20 +125,13 @@ const handler = async (req: Request): Promise<Response> => {
       `Application #${referenceNumber} received`
     );
 
-    // TEMPORARY: Send to verified email for testing until domain is verified at resend.com/domains
-    // Once domain is verified, change 'from' to 'Harris Boat Works <noreply@harrisboatworks.com>' and 'to' back to [applicantEmail]
-    const testRecipient = 'harrisboatworks@hotmail.com'; // Your verified Resend email
-    const isTestMode = applicantEmail !== testRecipient;
-    
-    console.log(`Sending confirmation email to: ${isTestMode ? `${testRecipient} (test mode, intended for: ${applicantEmail})` : applicantEmail}`);
+    console.log('Sending confirmation email to:', applicantEmail);
 
     const applicantEmailResponse = await resend.emails.send({
-      from: 'Harris Boat Works Financing <onboarding@resend.dev>',
+      from: 'Harris Boat Works Financing <financing@hbwsales.ca>',
       reply_to: ['info@harrisboatworks.ca'],
-      to: [testRecipient], // Temporary: always send to verified email
-      subject: isTestMode
-        ? `[TEST] Financing Application Received - Ref #${referenceNumber} (for ${applicantEmail})`
-        : `Financing Application Received - Ref #${referenceNumber}`,
+      to: [applicantEmail],
+      subject: `Financing Application Received - Ref #${referenceNumber}`,
       html: applicantHtml,
     });
 
@@ -195,7 +188,7 @@ const handler = async (req: Request): Promise<Response> => {
       );
 
       adminEmailResponse = await resend.emails.send({
-        from: 'Harris Boat Works System <onboarding@resend.dev>',
+        from: 'Harris Boat Works System <noreply@hbwsales.ca>',
         reply_to: ['info@harrisboatworks.ca'],
         to: [adminEmail],
         subject: `New Financing Application - ${applicantName} - $${amountToFinance.toLocaleString()}`,

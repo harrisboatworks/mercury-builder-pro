@@ -39,7 +39,7 @@ const handler = async (req: Request): Promise<Response> => {
     }).format(finalPrice);
 
     const emailResponse = await resend.emails.send({
-      from: "Mercury Motors <onboarding@resend.dev>",
+      from: "Harris Boat Works <quotes@hbwsales.ca>",
       to: [customerEmail],
       subject: `Your Saved Quote - ${motorModel}`,
       html: `
