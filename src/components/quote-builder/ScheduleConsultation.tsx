@@ -454,8 +454,8 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
       console.log('✅ [NOTIFICATIONS] Notification process complete');
 
-      // Navigate to success page - provides better feedback than toast
-      navigate('/financing/success');
+      // Navigate to quote success page with reference number
+      navigate(`/quote/success?ref=${quoteNumber}`);
       
     } catch (error) {
       toast({
