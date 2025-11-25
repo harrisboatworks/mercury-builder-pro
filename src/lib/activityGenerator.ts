@@ -91,3 +91,23 @@ export function generateActivityMessages(count = 60, date = new Date()): string[
 export function getDailyKey(date = new Date()) {
   return todayKey(date);
 }
+
+export function generateSocialProofMessage(date = new Date()): string {
+  const key = todayKey(date);
+  const seedFn = xmur3(`social-proof-${key}`);
+  const rng = mulberry32(seedFn());
+  
+  // Generate a realistic-looking number (200-450 range)
+  const baseCount = 200 + Math.floor(rng() * 250);
+  
+  // Variations of the social proof message
+  const messages = [
+    `Join ${baseCount}+ boaters who got quotes this month`,
+    `${baseCount}+ Ontario boaters trust us`,
+    `${baseCount} quotes sent this month`,
+    `Trusted by ${baseCount}+ local boaters`,
+    `Join ${baseCount}+ customers this month`,
+  ];
+  
+  return messages[Math.floor(rng() * messages.length)];
+}

@@ -7,6 +7,7 @@ import { Loader2 } from "lucide-react";
 import { saveLead } from "@/lib/leadCapture";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { generateSocialProofMessage } from "@/lib/activityGenerator";
 
 interface SaveQuoteDialogProps {
   open: boolean;
@@ -178,9 +179,9 @@ export function SaveQuoteDialog({
             />
           </div>
           
-          <p className="text-sm text-muted-foreground">
-            Join 247+ boaters who got quotes this month
-          </p>
+              <p className="text-sm text-muted-foreground">
+                {generateSocialProofMessage()}
+              </p>
         </div>
 
         <DialogFooter>
