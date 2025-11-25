@@ -91,7 +91,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
         <img
           src={validImages[selectedIndex]}
           alt={`${motorTitle} - Image ${selectedIndex + 1}`}
-          className={`${enhanced ? 'h-96' : 'h-48'} w-full rounded-xl object-contain bg-slate-50 dark:bg-slate-800 transition-all duration-200 group-hover:scale-[1.02]`}
+          className={`${enhanced ? 'h-96' : 'h-48'} w-full rounded-xl object-contain bg-stone-100 transition-all duration-200 group-hover:scale-[1.02]`}
           onError={() => handleImageError(selectedIndex)}
         />
         
