@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useMotorOptions, type MotorOption } from '@/hooks/useMotorOptions';
@@ -14,6 +14,7 @@ export default function OptionsPage() {
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
   const [localSelectedIds, setLocalSelectedIds] = useState<Set<string>>(new Set());
+  const hasNavigatedRef = useRef(false);
   
   const { data: categorizedOptions, isLoading } = useMotorOptions(
     state.motor?.id,
@@ -47,13 +48,14 @@ export default function OptionsPage() {
 
   // Auto-skip to purchase path if no options available
   useEffect(() => {
-    if (!isLoading && categorizedOptions) {
+    if (!isLoading && categorizedOptions && !hasNavigatedRef.current) {
       const hasOptions = 
         categorizedOptions.required.length > 0 ||
         categorizedOptions.recommended.length > 0 ||
         categorizedOptions.available.length > 0;
       
       if (!hasOptions) {
+        hasNavigatedRef.current = true;
         dispatch({ type: 'SET_SELECTED_OPTIONS', payload: [] });
         navigate('/quote/purchase-path');
       }
@@ -161,7 +163,7 @@ export default function OptionsPage() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Customize Your Motor Package</h1>
           <p className="text-muted-foreground">
-            Select additional options and accessories for your {state.motor.model}
+            Select additional options and accessories for your {state.motor?.model || 'motor'}
           </p>
         </div>
 
@@ -243,8 +245,8 @@ export default function OptionsPage() {
               <ChevronRight className="h-4 w-4 ml-2" />
             </Button>
           </div>
-          </div>
         </div>
+      </div>
     </QuoteLayout>
   );
 }
