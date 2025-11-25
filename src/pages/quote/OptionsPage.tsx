@@ -38,6 +38,28 @@ export default function OptionsPage() {
     }
   }, [categorizedOptions, state.selectedOptions]);
 
+  // Redirect if no motor selected
+  useEffect(() => {
+    if (!state.motor) {
+      navigate('/quote/motor-selection');
+    }
+  }, [state.motor, navigate]);
+
+  // Auto-skip to purchase path if no options available
+  useEffect(() => {
+    if (!isLoading && categorizedOptions) {
+      const hasOptions = 
+        categorizedOptions.required.length > 0 ||
+        categorizedOptions.recommended.length > 0 ||
+        categorizedOptions.available.length > 0;
+      
+      if (!hasOptions) {
+        dispatch({ type: 'SET_SELECTED_OPTIONS', payload: [] });
+        navigate('/quote/purchase-path');
+      }
+    }
+  }, [isLoading, categorizedOptions, dispatch, navigate]);
+
   const toggleOption = (option: MotorOption) => {
     // Cannot deselect required options
     if (option.assignment_type === 'required' && localSelectedIds.has(option.id)) {
@@ -106,8 +128,7 @@ export default function OptionsPage() {
   };
 
   if (!state.motor) {
-    navigate('/quote/motor-selection');
-    return null;
+    return null; // Navigation happens in useEffect
   }
 
   if (isLoading) {
@@ -126,10 +147,8 @@ export default function OptionsPage() {
     categorizedOptions.available.length > 0
   );
 
-  // If no options available, skip to purchase path
+  // If no options available, return null (navigation happens in useEffect)
   if (!hasOptions) {
-    dispatch({ type: 'SET_SELECTED_OPTIONS', payload: [] });
-    navigate('/quote/purchase-path');
     return null;
   }
 
