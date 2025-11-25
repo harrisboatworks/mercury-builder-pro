@@ -285,7 +285,7 @@ export default function MotorCardPreview({
   return (
     <>
       <div 
-        className="group bg-white shadow-sm rounded-lg border border-gray-100 overflow-hidden transition-all duration-700 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
+        className="group bg-white shadow-sm rounded-lg border border-gray-100 overflow-hidden transition-all duration-200 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-pointer active:scale-[0.98] active:opacity-95 touch-action-manipulation"
         onClick={handleCardClick}
       >
         <div className="relative">
