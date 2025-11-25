@@ -11,6 +11,7 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { findMotorSpecs } from '@/lib/data/mercury-motors';
 import { calculatePaymentWithFrequency, type PaymentFrequency } from '@/lib/finance';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { useQuote } from '@/contexts/QuoteContext';
 
 interface DbMotor {
   id: string;
@@ -46,6 +47,7 @@ export default function FinanceCalculator() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [motor, setMotor] = useState<DbMotor | null>(null);
+  const { state: quoteState } = useQuote();
 
   const modelId = params.get('model');
   
@@ -71,6 +73,11 @@ export default function FinanceCalculator() {
 
   useEffect(() => {
     const run = async () => {
+      // Priority order:
+      // 1. Navigation state from modal
+      // 2. QuoteContext motor (shopping cart)
+      // 3. Database lookup via URL param
+      
       // If we have navigation state from modal, use it first
       if (navState.motorPrice && navState.motorModel) {
         // Calculate total financed from motor price
@@ -89,6 +96,24 @@ export default function FinanceCalculator() {
         return;
       }
       
+      // Check QuoteContext for motor in shopping cart
+      if (quoteState.motor) {
+        const contextMotor = quoteState.motor;
+        const motorPrice = contextMotor.price || 0;
+        const totalWithFees = motorPrice * 1.13 + 299;
+        setTotalFinanced(Math.round(totalWithFees));
+        
+        const pseudoMotor: DbMotor = {
+          id: contextMotor.id || 'quote-context',
+          model: contextMotor.model || '',
+          year: contextMotor.year || new Date().getFullYear(),
+          base_price: motorPrice,
+          sale_price: motorPrice
+        };
+        setMotor(pseudoMotor);
+        return;
+      }
+      
       // Fallback to database lookup
       if (!modelId) return;
       setLoading(true);
@@ -102,7 +127,7 @@ export default function FinanceCalculator() {
       setLoading(false);
     };
     run();
-  }, [modelId, navState]);
+  }, [modelId, navState, quoteState.motor]);
 
   useEffect(() => {
     if (promo?.rate) {
