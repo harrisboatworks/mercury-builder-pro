@@ -211,7 +211,7 @@ export default function MotorDetailsPremiumModal({
           flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-500">
           
           {/* LEFT COLUMN: Tabbed Content (Desktop & Mobile) */}
-          <div className="flex-1 overflow-hidden flex flex-col">
+          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto flex flex-col">
             <Tabs defaultValue="overview" className="w-full h-full flex flex-col" onValueChange={() => {
               scrollContainerRef.current?.scrollTo(0, 0);
             }}>
@@ -317,8 +317,7 @@ export default function MotorDetailsPremiumModal({
               </div>
               
               {/* Scrollable Tab Content */}
-              <div ref={scrollContainerRef} className="flex-1 overflow-y-auto scroll-pt-4">
-                <div className="p-6 pt-4 pb-12 space-y-8">
+              <div className="p-6 pt-4 pb-12 space-y-8">
                   {/* OVERVIEW TAB */}
                   <TabsContent value="overview" className="space-y-8 mt-4">
                     {/* Enhanced Image Gallery - 40% larger */}
