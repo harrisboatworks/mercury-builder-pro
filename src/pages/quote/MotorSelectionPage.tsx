@@ -135,11 +135,22 @@ export default function MotorSelectionPage() {
         if (motorsError) throw motorsError;
         
         // Filter out Jet models and excluded motors (same as original)
-        const filteredMotors = motorsData?.filter(motor => 
+        const filteredMotors = (motorsData?.filter(motor => 
           !motor.model?.toLowerCase().includes('jet') &&
           motor.horsepower <= 600 && // HP cap same as original
           motor.availability !== 'Exclude' // Exclude motors marked as "Exclude"
-        ) || [];
+        ) || []).map(motor => {
+          // Normalize features: extract title if features are objects
+          if (motor.features && Array.isArray(motor.features) && motor.features.length > 0) {
+            const firstFeature = motor.features[0];
+            if (typeof firstFeature === 'object' && firstFeature !== null && 'title' in firstFeature) {
+              motor.features = motor.features.map((f: any) => 
+                typeof f === 'object' && f !== null && f.title ? f.title : String(f)
+              );
+            }
+          }
+          return motor;
+        });
         
         setMotors(filteredMotors);
 
