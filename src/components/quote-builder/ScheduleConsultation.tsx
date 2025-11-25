@@ -90,28 +90,52 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
            (Math.pow(1 + monthlyRate, numPayments) - 1);
   };
 
-  // Use same pricing calculations as QuoteSummaryPage
-  const motorPrice = quoteData.motor?.salePrice || quoteData.motor?.basePrice || quoteData.motor?.price || 0;
+  // Calculate pricing dynamically (same logic as GlobalStickyQuoteBar)
+  const motorPrice = quoteData.motor?.price || 0;
+  const motorMSRP = quoteData.motor?.basePrice || motorPrice;
+  const motorDiscount = motorMSRP - motorPrice;
   
-  // Calculate pricing breakdown using same logic as summary page
-  const data = {
-    msrp: motorPrice + 2500, // Motor + base accessories
-    discount: 546,
-    promoValue: 400,
-    subtotal: motorPrice + 2500 - 546 - 400,
-    tax: (motorPrice + 2500 - 546 - 400) * 0.13,
-    total: (motorPrice + 2500 - 546 - 400) * 1.13,
-  };
+  // Calculate accessories dynamically
+  let accessoryTotal = 0;
   
-  const totals = computeTotals(data);
+  // Controls cost from boat info
+  if (quoteData.boatInfo?.controlsOption === 'none') accessoryTotal += 1200;
+  else if (quoteData.boatInfo?.controlsOption === 'adapter') accessoryTotal += 125;
   
+  // Installation labor for remote motors
+  const isTiller = quoteData.motor?.model?.includes('TLR') || quoteData.motor?.model?.includes('MH');
+  if (!isTiller) accessoryTotal += 450;
+  
+  // Warranty
+  const warrantyPrice = quoteData.warrantyConfig?.warrantyPrice || 0;
+  accessoryTotal += warrantyPrice;
+  
+  // Calculate totals
+  const subtotal = motorPrice + accessoryTotal;
   const hasTradeIn = quoteData.boatInfo?.tradeIn?.hasTradeIn || false;
   const tradeInValue = quoteData.boatInfo?.tradeIn?.estimatedValue || 0;
-  
-  // Adjust for trade-in if present
-  const subtotalAfterTrade = totals.subtotal - (hasTradeIn ? tradeInValue : 0);
+  const subtotalAfterTrade = subtotal - (hasTradeIn ? tradeInValue : 0);
   const hst = subtotalAfterTrade * 0.13;
   const totalCashPrice = subtotalAfterTrade + hst;
+  
+  // Create pricing data object for use throughout component
+  const data = {
+    msrp: motorMSRP + accessoryTotal,
+    discount: motorDiscount,
+    promoValue: 0,
+    motorSubtotal: motorPrice,
+    subtotal: subtotal,
+    savings: motorDiscount
+  };
+  
+  // Create totals object for backward compatibility
+  const totals = {
+    msrp: data.msrp,
+    discount: data.discount,
+    promoValue: data.promoValue,
+    subtotal: data.subtotal,
+    savings: data.savings
+  };
 
   const calculateTotalCost = () => {
     const monthlyPayment = calculateMonthlyPayment();
