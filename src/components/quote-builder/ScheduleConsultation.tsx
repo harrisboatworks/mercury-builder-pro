@@ -11,7 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
 import { contactInfoSchema, sanitizeInput, formatPhoneNumber } from '@/lib/validation';
-import { ArrowLeft, Calendar, Download, Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { ArrowLeft, Calendar, Download, Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
 import { computeTotals } from '@/lib/finance';
 import { z } from 'zod';
@@ -35,6 +35,8 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSendingEmail, setIsSendingEmail] = useState(false);
+  const [isSendingText, setIsSendingText] = useState(false);
 
   const formatPhoneAsUserTypes = (value: string) => {
     // Remove all non-digits
@@ -514,6 +516,180 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
     }
   };
 
+  const handleSendByEmail = async () => {
+    if (!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSendingEmail(true);
+    try {
+      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+      
+      // Generate PDF first
+      const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
+      const pdfQuoteData = {
+        quoteNumber,
+        customerName: contactInfo.name || 'Customer',
+        customerEmail: contactInfo.email,
+        customerPhone: contactInfo.phone,
+        motor: quoteData.motor,
+        pricing: {
+          msrp: data.msrp,
+          discount: data.discount,
+          promoValue: data.promoValue,
+          motorSubtotal: motorPrice,
+          subtotal: subtotalAfterTrade,
+          hst: hst,
+          totalCashPrice: totalCashPrice
+        },
+        financing: quoteData.financing,
+        tradeInValue: hasTradeIn ? tradeInValue : undefined,
+        tradeInInfo: hasTradeIn ? quoteData.boatInfo?.tradeIn : undefined
+      };
+      
+      const pdfBlob = await generatePDFBlob(pdfQuoteData);
+      
+      // Upload to Supabase Storage
+      const fileName = `quote-${quoteNumber}-${Date.now()}.pdf`;
+      const filePath = `temp/${fileName}`;
+      
+      const { error: uploadError } = await supabase.storage
+        .from('spec-sheets')
+        .upload(filePath, pdfBlob, {
+          contentType: 'application/pdf',
+          upsert: false
+        });
+      
+      if (uploadError) throw uploadError;
+      
+      // Get public URL
+      const { data: { publicUrl } } = supabase.storage
+        .from('spec-sheets')
+        .getPublicUrl(filePath);
+      
+      // Send email
+      const { error: emailError } = await supabase.functions.invoke('send-quote-email', {
+        body: {
+          customerEmail: contactInfo.email,
+          customerName: contactInfo.name || 'Customer',
+          quoteNumber,
+          motorModel: quoteData.motor?.model || 'Mercury Motor',
+          totalPrice: Math.round(totalCashPrice),
+          pdfUrl: publicUrl,
+          emailType: 'quote_delivery'
+        }
+      });
+      
+      if (emailError) throw emailError;
+      
+      toast({
+        title: "Quote Sent!",
+        description: `Quote sent to ${contactInfo.email}`
+      });
+    } catch (error) {
+      console.error('Send by email error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send quote. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSendingEmail(false);
+    }
+  };
+
+  const handleSendByText = async () => {
+    const cleanPhone = contactInfo.phone.replace(/\D/g, '');
+    if (cleanPhone.length !== 10) {
+      toast({
+        title: "Invalid Phone",
+        description: "Please enter a valid 10-digit phone number",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSendingText(true);
+    try {
+      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+      const formattedPhone = `+1${cleanPhone}`;
+      
+      // Generate PDF first
+      const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
+      const pdfQuoteData = {
+        quoteNumber,
+        customerName: contactInfo.name || 'Customer',
+        customerEmail: contactInfo.email,
+        customerPhone: contactInfo.phone,
+        motor: quoteData.motor,
+        pricing: {
+          msrp: data.msrp,
+          discount: data.discount,
+          promoValue: data.promoValue,
+          motorSubtotal: motorPrice,
+          subtotal: subtotalAfterTrade,
+          hst: hst,
+          totalCashPrice: totalCashPrice
+        },
+        financing: quoteData.financing,
+        tradeInValue: hasTradeIn ? tradeInValue : undefined,
+        tradeInInfo: hasTradeIn ? quoteData.boatInfo?.tradeIn : undefined
+      };
+      
+      const pdfBlob = await generatePDFBlob(pdfQuoteData);
+      
+      // Upload to Supabase Storage
+      const fileName = `quote-${quoteNumber}-${Date.now()}.pdf`;
+      const filePath = `temp/${fileName}`;
+      
+      const { error: uploadError } = await supabase.storage
+        .from('spec-sheets')
+        .upload(filePath, pdfBlob, {
+          contentType: 'application/pdf',
+          upsert: false
+        });
+      
+      if (uploadError) throw uploadError;
+      
+      // Get public URL
+      const { data: { publicUrl } } = supabase.storage
+        .from('spec-sheets')
+        .getPublicUrl(filePath);
+      
+      // Send SMS with link
+      const message = `Hi${contactInfo.name ? ` ${contactInfo.name}` : ''}! Here's your Mercury motor quote for ${quoteData.motor?.model || 'your motor'}: ${publicUrl} - Harris Boat Works`;
+      
+      const { error: smsError } = await supabase.functions.invoke('send-sms', {
+        body: {
+          to: formattedPhone,
+          message,
+          messageType: 'quote_confirmation'
+        }
+      });
+      
+      if (smsError) throw smsError;
+      
+      toast({
+        title: "Quote Sent!",
+        description: `Quote sent to ${contactInfo.phone}`
+      });
+    } catch (error) {
+      console.error('Send by text error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send quote. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSendingText(false);
+    }
+  };
+
 
   return (
     <div className="max-w-6xl mx-auto space-y-8">
@@ -606,10 +782,41 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               )}
             </div>
 
-            <Button onClick={generatePDF} variant="outline" className="w-full border-gray-900 dark:border-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-sm font-light tracking-wide">
-              <Download className="w-4 h-4 mr-2" />
-              Download Quote PDF
-            </Button>
+            <div className="space-y-3">
+              <h4 className="text-sm font-light text-muted-foreground">Send Quote To:</h4>
+              
+              {/* Send via Email */}
+              <Button 
+                onClick={handleSendByEmail}
+                disabled={!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email) || isSendingEmail}
+                variant="outline" 
+                className="w-full border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide disabled:opacity-50"
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                {isSendingEmail ? 'Sending...' : 'Send to Email'}
+              </Button>
+              
+              {/* Send via Text */}
+              <Button 
+                onClick={handleSendByText}
+                disabled={!contactInfo.phone || contactInfo.phone.replace(/\D/g, '').length !== 10 || isSendingText}
+                variant="outline" 
+                className="w-full border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide disabled:opacity-50"
+              >
+                <MessageSquare className="w-4 h-4 mr-2" />
+                {isSendingText ? 'Sending...' : 'Send by Text'}
+              </Button>
+              
+              {/* Download as tertiary option */}
+              <Button 
+                onClick={generatePDF}
+                variant="ghost" 
+                className="w-full text-muted-foreground hover:text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Download PDF
+              </Button>
+            </div>
           </div>
         </Card>
 
@@ -697,7 +904,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
             <Button type="submit" className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-sm border border-gray-900 font-light tracking-wide" disabled={isSubmitting}>
               <Calendar className="w-4 h-4 mr-2" />
-              {isSubmitting ? 'Saving Quote...' : 'Generate Quote'}
+              {isSubmitting ? 'Submitting...' : 'Submit Quote'}
             </Button>
           </form>
         </Card>
