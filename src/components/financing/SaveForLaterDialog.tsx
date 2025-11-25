@@ -20,7 +20,7 @@ interface SaveForLaterDialogProps {
 }
 
 export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogProps) {
-  const { state } = useFinancing();
+  const { state, saveToDatabase } = useFinancing();
   const { toast } = useToast();
   const [email, setEmail] = useState(state.applicant?.email || '');
   const [isSending, setIsSending] = useState(false);
@@ -51,13 +51,17 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
     setIsSending(true);
     
     try {
-      // Make sure application is saved to database first
+      // Save to database first to ensure applicationId and resumeToken exist
+      await saveToDatabase();
+      
+      // Now check if the save was successful
       if (!state.applicationId || !state.resumeToken) {
         toast({
           title: "Error",
-          description: "Application not found. Please try again.",
+          description: "Failed to save application. Please try again.",
           variant: "destructive",
         });
+        setIsSending(false);
         return;
       }
 
