@@ -268,6 +268,7 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
 
   // Save to database
   const saveToDatabase = useCallback(async () => {
+    console.log('💾 [saveToDatabase] Starting save operation...');
     dispatch({ type: 'SET_SAVING', payload: true });
     
     try {
@@ -286,13 +287,18 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
 
       if (state.applicationId) {
         // Update existing application
+        console.log('💾 [saveToDatabase] Updating existing application:', state.applicationId);
         const { error } = await supabase
           .from('financing_applications')
           .update(applicationData)
           .eq('id', state.applicationId);
 
-        if (error) throw error;
+        if (error) {
+          console.error('❌ [saveToDatabase] Update failed:', error);
+          throw error;
+        }
         
+        console.log('✅ [saveToDatabase] Update successful');
         // Return existing IDs
         return {
           applicationId: state.applicationId,
@@ -300,6 +306,7 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         };
       } else {
         // Create new application
+        console.log('💾 [saveToDatabase] Creating new application...');
         const { data: { user } } = await supabase.auth.getUser();
         
         const { data, error } = await supabase
@@ -313,8 +320,13 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
           .select()
           .single();
 
-        if (error) throw error;
+        if (error) {
+          console.error('❌ [saveToDatabase] Insert failed:', error);
+          throw error;
+        }
+        
         if (data) {
+          console.log('✅ [saveToDatabase] Insert successful:', data.id);
           dispatch({ type: 'SET_APPLICATION_ID', payload: data.id });
           dispatch({ type: 'SET_RESUME_TOKEN', payload: data.resume_token });
           
@@ -323,10 +335,14 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
             applicationId: data.id,
             resumeToken: data.resume_token
           };
+        } else {
+          // Edge case: No error but also no data returned
+          console.error('⚠️ [saveToDatabase] No data returned after insert (unexpected)');
+          return undefined;
         }
       }
     } catch (error) {
-      console.error('Failed to save financing application:', error);
+      console.error('❌ [saveToDatabase] Save operation failed:', error);
       throw error;
     } finally {
       dispatch({ type: 'SET_SAVING', payload: false });

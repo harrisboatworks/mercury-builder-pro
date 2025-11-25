@@ -51,11 +51,42 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
     setIsSending(true);
     
     try {
-      // Save to database and get IDs directly (avoids race condition)
-      const savedData = await saveToDatabase();
+      console.log('📧 [SaveForLater] Starting save and email process...');
       
-      // Check if the save was successful
+      // Save to database and get IDs directly (avoids race condition)
+      let savedData = await saveToDatabase();
+      console.log('📧 [SaveForLater] saveToDatabase returned:', savedData);
+      
+      // Fallback: If savedData is undefined, try to fetch the most recent application
       if (!savedData?.applicationId || !savedData?.resumeToken) {
+        console.log('⚠️ [SaveForLater] savedData is incomplete, attempting fallback query...');
+        
+        const { data: { user } } = await supabase.auth.getUser();
+        if (user) {
+          const { data: recentApp, error: fetchError } = await supabase
+            .from('financing_applications')
+            .select('id, resume_token')
+            .eq('user_id', user.id)
+            .eq('status', 'draft')
+            .order('created_at', { ascending: false })
+            .limit(1)
+            .single();
+          
+          if (!fetchError && recentApp) {
+            console.log('✅ [SaveForLater] Fallback successful, found application:', recentApp.id);
+            savedData = {
+              applicationId: recentApp.id,
+              resumeToken: recentApp.resume_token
+            };
+          } else {
+            console.error('❌ [SaveForLater] Fallback failed:', fetchError);
+          }
+        }
+      }
+      
+      // Final check - if still no data, show error
+      if (!savedData?.applicationId || !savedData?.resumeToken) {
+        console.error('❌ [SaveForLater] Unable to retrieve application data after save and fallback');
         toast({
           title: "Error",
           description: "Failed to save application. Please try again.",
@@ -68,8 +99,10 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
       // Generate resume URL using returned values
       const resumeLink = `${window.location.origin}/financing/resume?token=${savedData.resumeToken}`;
       setResumeUrl(resumeLink);
+      console.log('📧 [SaveForLater] Resume link generated:', resumeLink);
       
       // Send the resume email with proper error handling
+      console.log('📧 [SaveForLater] Invoking send-financing-resume-email edge function...');
       const { data: emailResponse, error: emailError } = await supabase.functions.invoke('send-financing-resume-email', {
         body: {
           applicationId: savedData.applicationId,
@@ -81,9 +114,11 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
         }
       });
 
+      console.log('📧 [SaveForLater] Edge function response:', { emailResponse, emailError });
+
       // Check if email sending failed
       if (emailError) {
-        console.error('Email send failed:', emailError);
+        console.error('❌ [SaveForLater] Email send failed:', emailError);
         toast({
           title: "Application Saved",
           description: "Application saved, but email failed to send. Please copy the link below.",
@@ -95,7 +130,7 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
 
       // Check for edge function errors in the response
       if (emailResponse?.error) {
-        console.error('Email delivery error:', emailResponse.error);
+        console.error('❌ [SaveForLater] Email delivery error:', emailResponse.error);
         toast({
           title: "Application Saved",
           description: "Application saved, but email failed to send. Please copy the link below.",
@@ -106,6 +141,7 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
       }
 
       // Success - email was sent
+      console.log('✅ [SaveForLater] Email sent successfully');
       setEmailSent(true);
       
       toast({
@@ -113,7 +149,7 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
         description: "Check your email for the resume link, or copy it below.",
       });
     } catch (error) {
-      console.error('Error saving application:', error);
+      console.error('❌ [SaveForLater] Unexpected error:', error);
       toast({
         title: "Failed to save application",
         description: "Please try again or contact support.",
