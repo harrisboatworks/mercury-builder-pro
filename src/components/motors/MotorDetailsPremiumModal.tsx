@@ -212,17 +212,19 @@ export default function MotorDetailsPremiumModal({
           
           {/* LEFT COLUMN: Tabbed Content (Desktop & Mobile) */}
           <div className="flex-1 overflow-hidden flex flex-col">
-            <Tabs defaultValue="overview" className="w-full h-full flex flex-col">
+            <Tabs defaultValue="overview" className="w-full h-full flex flex-col" onValueChange={() => {
+              scrollContainerRef.current?.scrollTo(0, 0);
+            }}>
               {/* Mobile/Tablet Header */}
               <div className="lg:hidden sticky top-0 z-40 bg-white shadow-sm">
                 {/* Prominent Mobile Back Header */}
-                <div className="flex items-center gap-3 p-4 border-b border-gray-100">
+                <div className="flex justify-start items-center p-4 border-b border-gray-100">
                   <button 
                     onClick={onClose} 
-                    className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px]" 
+                    className="inline-flex flex-row items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px] px-2" 
                     aria-label="Go back"
                   >
-                    <ChevronLeft className="w-6 h-6" />
+                    <ChevronLeft className="w-6 h-6 flex-shrink-0" />
                     <span className="text-base font-medium">Back</span>
                   </button>
                 </div>
@@ -315,12 +317,12 @@ export default function MotorDetailsPremiumModal({
               </div>
               
               {/* Scrollable Tab Content */}
-              <div ref={scrollContainerRef} className="flex-1 overflow-y-auto">
-                <div className="p-6 pt-8 pb-12 space-y-8">
+              <div ref={scrollContainerRef} className="flex-1 overflow-y-auto scroll-pt-4">
+                <div className="p-6 pt-4 pb-12 space-y-8">
                   {/* OVERVIEW TAB */}
                   <TabsContent value="overview" className="space-y-8 mt-4">
                     {/* Enhanced Image Gallery - 40% larger */}
-                    <div className="pt-10 pb-6 bg-gradient-to-b from-stone-50 to-white rounded-lg">
+                    <div className="pt-4 pb-6 bg-gradient-to-b from-stone-50 to-white rounded-lg">
                       <MotorImageGallery 
                         images={gallery.length > 0 ? gallery : (img ? [img] : [])} 
                         motorTitle={title}
