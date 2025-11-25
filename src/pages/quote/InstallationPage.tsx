@@ -37,9 +37,12 @@ export default function InstallationPage() {
       return;
     }
 
-    // Redirect if no motor or wrong path
-    if (!state.motor || state.purchasePath !== 'installed') {
+    // Redirect to appropriate page based on state
+    if (!state.motor) {
       navigate('/quote/motor-selection');
+    } else if (state.purchasePath !== 'installed') {
+      // If user has motor but wrong path, send them to summary
+      navigate('/quote/summary');
     }
   }, [state.motor, state.purchasePath, navigate]);
 
