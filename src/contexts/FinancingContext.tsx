@@ -134,7 +134,7 @@ function financingReducer(state: FinancingState, action: FinancingAction): Finan
 interface FinancingContextType {
   state: FinancingState;
   dispatch: React.Dispatch<FinancingAction>;
-  saveToDatabase: () => Promise<void>;
+  saveToDatabase: () => Promise<{ applicationId: string; resumeToken: string } | undefined>;
   isStepComplete: (step: number) => boolean;
   canAccessStep: (step: number) => boolean;
   clearStoredData: () => void;
@@ -292,6 +292,12 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
           .eq('id', state.applicationId);
 
         if (error) throw error;
+        
+        // Return existing IDs
+        return {
+          applicationId: state.applicationId,
+          resumeToken: state.resumeToken!
+        };
       } else {
         // Create new application
         const { data: { user } } = await supabase.auth.getUser();
@@ -311,6 +317,12 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         if (data) {
           dispatch({ type: 'SET_APPLICATION_ID', payload: data.id });
           dispatch({ type: 'SET_RESUME_TOKEN', payload: data.resume_token });
+          
+          // Return new IDs
+          return {
+            applicationId: data.id,
+            resumeToken: data.resume_token
+          };
         }
       }
     } catch (error) {
