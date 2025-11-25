@@ -44,7 +44,6 @@
 .motor-card, [class*="motor-card"] {
   transform: none !important;
   filter: none !important;
-  will-change: auto !important;
 }
 
 /* Ensure modal is truly on top */

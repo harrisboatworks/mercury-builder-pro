@@ -83,6 +83,12 @@
   }
 }
 
+/* Mobile touch optimization - eliminate 300ms tap delay */
+a, button, [role="button"], .cursor-pointer {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Ensure motor grid is properly spaced on mobile */
 @media (max-width: 640px) {
   .motors-grid {

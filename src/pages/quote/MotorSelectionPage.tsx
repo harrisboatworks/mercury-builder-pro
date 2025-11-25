@@ -537,8 +537,8 @@ export default function MotorSelectionPage() {
                 visible: {
                   opacity: 1,
                   transition: {
-                    staggerChildren: 0.08,
-                    delayChildren: 0.1
+                    staggerChildren: 0.03,
+                    delayChildren: 0.05
                   }
                 }
               }}
@@ -567,17 +567,17 @@ export default function MotorSelectionPage() {
                  return (
                    <motion.div
                      key={motor.id}
-                     variants={{
-                       hidden: { opacity: 0, y: 20 },
-                       visible: {
-                         opacity: 1,
-                         y: 0,
-                         transition: {
-                           duration: 0.4,
-                           ease: "easeOut"
-                         }
-                       }
-                     }}
+                      variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        visible: {
+                          opacity: 1,
+                          y: 0,
+                          transition: {
+                            duration: 0.2,
+                            ease: "easeOut"
+                          }
+                        }
+                      }}
                    >
                    <MotorCardPreview
                    img={heroImageUrl}
