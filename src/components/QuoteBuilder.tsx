@@ -118,6 +118,10 @@ export interface QuoteData {
     totalYears: number;
   } | null;
   hasTradein: boolean;
+  purchasePath?: 'loose' | 'installed' | null;
+  installConfig?: any | null;
+  fuelTankConfig?: any | null;
+  tradeInInfo?: any | null;
 }
 
 const QuoteBuilder = () => {

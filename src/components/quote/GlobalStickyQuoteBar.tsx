@@ -46,7 +46,7 @@ export function GlobalStickyQuoteBar() {
     }
 
     // Add installation labor for remote motors
-    const isTiller = state.motor.model?.includes('TLR');
+    const isTiller = state.motor.model?.includes('TLR') || state.motor.model?.includes('MH');
     if (state.purchasePath === 'installed' && !isTiller) {
       total += 450; // Professional installation labor
     }
