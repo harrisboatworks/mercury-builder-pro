@@ -126,9 +126,23 @@ export const BoatInformation = ({
   }];
 
   // Parse HP range and check if motor fits
-  const isMotorCompatibleWithBoatType = (motorHP: number, recommendedHPRange: string): boolean => {
+  const isMotorCompatibleWithBoatType = (
+    motorHP: number, 
+    recommendedHPRange: string,
+    motorModel?: string,
+    boatTypeId?: string
+  ): boolean => {
     if (!recommendedHPRange) return true; // "Motor Only" has no range
     
+    // Special case: ProKicker models are compatible with V-Hull and Center Console
+    const isProKicker = motorModel?.toLowerCase().includes('prokicker');
+    const isLargerFishingBoat = boatTypeId === 'v-hull-fishing' || boatTypeId === 'center-console';
+    
+    if (isProKicker && isLargerFishingBoat) {
+      return true; // ProKicker is always compatible with these boat types
+    }
+    
+    // Standard HP range check for all other motors
     const rangeParts = recommendedHPRange.split('-');
     if (rangeParts.length !== 2) return true; // Fallback to show if parsing fails
     
@@ -517,7 +531,12 @@ export const BoatInformation = ({
                   
                   {boatTypes
                     .filter(t => t.id !== 'motor-only')
-                    .filter(type => !selectedMotor || isMotorCompatibleWithBoatType(selectedMotor.hp, type.recommendedHP))
+                    .filter(type => !selectedMotor || isMotorCompatibleWithBoatType(
+                      selectedMotor.hp, 
+                      type.recommendedHP,
+                      selectedMotor.model,
+                      type.id
+                    ))
                     .length === 0 && selectedMotor && (
                     <Alert className="mb-4">
                       <Info className="h-4 w-4" />
@@ -531,7 +550,12 @@ export const BoatInformation = ({
                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                      {boatTypes
                        .filter(t => t.id !== 'motor-only')
-                       .filter(type => !selectedMotor || isMotorCompatibleWithBoatType(selectedMotor.hp, type.recommendedHP))
+                       .filter(type => !selectedMotor || isMotorCompatibleWithBoatType(
+                         selectedMotor.hp, 
+                         type.recommendedHP,
+                         selectedMotor.model,
+                         type.id
+                       ))
                         .map(type => <button type="button" key={type.id} onClick={() => setBoatInfo(prev => ({
                    ...prev,
                    type: type.id
