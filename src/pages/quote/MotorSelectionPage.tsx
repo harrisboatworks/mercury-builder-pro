@@ -190,9 +190,9 @@ export default function MotorSelectionPage() {
   // Convert DB motor to Motor type and apply promotions (same logic as original)
   const processedMotors = useMemo(() => {
     return motors.map(dbMotor => {
-      // Apply promotions - prioritize manual overrides
+      // Apply promotions - prioritize manual overrides, then msrp
       const manualOverrides = dbMotor.manual_overrides || {};
-      const basePrice = manualOverrides.base_price || dbMotor.base_price || dbMotor.msrp || 0;
+      const basePrice = manualOverrides.base_price || dbMotor.msrp || dbMotor.base_price || 0;
       const salePrice = manualOverrides.sale_price || 
                        dbMotor.sale_price || 
                        (dbMotor.dealer_price && dbMotor.dealer_price < (dbMotor.msrp || basePrice) ? dbMotor.dealer_price : null);
@@ -260,6 +260,7 @@ export default function MotorSelectionPage() {
         specs: `${dbMotor.horsepower}HP ${dbMotor.motor_type || 'FourStroke'}`,
         basePrice: basePrice,
         salePrice: salePrice,
+        msrp: dbMotor.msrp || basePrice, // Preserve original MSRP from database
         originalPrice: basePrice, // Use calculated basePrice with msrp fallback
         savings: Math.max(0, basePrice - effectivePrice), // Ensure savings is never negative
         appliedPromotions: promoTexts,

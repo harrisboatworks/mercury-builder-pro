@@ -42,6 +42,7 @@ export interface Motor {
   // Optional pricing metadata
   basePrice?: number;
   salePrice?: number | null;
+  msrp?: number; // Manufacturer's suggested retail price
   originalPrice?: number; // base or sale before promos
   savings?: number; // total savings applied
   appliedPromotions?: string[];
