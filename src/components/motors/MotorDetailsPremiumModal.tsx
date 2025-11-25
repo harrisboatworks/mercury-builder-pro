@@ -211,7 +211,7 @@ export default function MotorDetailsPremiumModal({
           flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-500">
           
           {/* LEFT COLUMN: Tabbed Content (Desktop & Mobile) */}
-          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto flex flex-col">
+          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto">
             <Tabs defaultValue="overview" className="w-full" onValueChange={() => {
               scrollContainerRef.current?.scrollTo(0, 0);
             }}>
@@ -692,34 +692,31 @@ export default function MotorDetailsPremiumModal({
           </div>
 
           {/* Mobile: Fixed Bottom Pricing Bar */}
-          <div className="lg:hidden sticky bottom-0 border-t border-gray-200 bg-white p-4">
-            <div className="flex items-center justify-between gap-4">
+          <div className="lg:hidden sticky bottom-0 border-t border-gray-200 bg-white px-4 py-3">
+            <div className="flex items-center justify-between gap-3">
               {/* Compact Price Display */}
-              <div>
-                <p className="text-xl font-bold text-gray-900">
+              <div className="flex flex-col">
+                <p className="text-lg font-bold text-gray-900">
                   {typeof price === "number" ? money(price) : 'Call'}
                 </p>
                 {typeof price === "number" && (
                   <button
                     onClick={handleCalculatePayment}
-                    className="mt-1 flex items-center gap-1.5 text-sm text-gray-600 font-normal hover:text-gray-900 underline decoration-dotted cursor-pointer transition-colors"
+                    className="flex items-center gap-1 text-xs text-gray-600 font-normal hover:text-gray-900 transition-colors"
                   >
                     <MonthlyPaymentDisplay motorPrice={price} />
-                    <Calculator className="w-4 h-4 opacity-70" />
+                    <Calculator className="w-3.5 h-3.5 opacity-70" />
                   </button>
                 )}
               </div>
               
-              {/* ADD TO QUOTE Button */}
-              <div className="flex-1">
-                <TrustSignals />
-                <button
-                  onClick={handleSelectMotor}
-                  className="w-full bg-black text-white py-3 text-xs tracking-widest uppercase font-medium rounded-sm"
-                >
-                  Configure This Motor
-                </button>
-              </div>
+              {/* Compact CTA Button */}
+              <button
+                onClick={handleSelectMotor}
+                className="bg-black text-white px-6 py-2.5 text-xs tracking-widest uppercase font-medium rounded-sm whitespace-nowrap"
+              >
+                Configure
+              </button>
             </div>
           </div>
         </div>
