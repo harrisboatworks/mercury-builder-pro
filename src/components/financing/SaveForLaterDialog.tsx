@@ -51,11 +51,11 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
     setIsSending(true);
     
     try {
-      // Save to database first to ensure applicationId and resumeToken exist
-      await saveToDatabase();
+      // Save to database and get IDs directly (avoids race condition)
+      const savedData = await saveToDatabase();
       
-      // Now check if the save was successful
-      if (!state.applicationId || !state.resumeToken) {
+      // Check if the save was successful
+      if (!savedData?.applicationId || !savedData?.resumeToken) {
         toast({
           title: "Error",
           description: "Failed to save application. Please try again.",
@@ -65,14 +65,14 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
         return;
       }
 
-      // Generate resume URL
-      const resumeLink = `${window.location.origin}/financing/resume?token=${state.resumeToken}`;
+      // Generate resume URL using returned values
+      const resumeLink = `${window.location.origin}/financing/resume?token=${savedData.resumeToken}`;
       setResumeUrl(resumeLink);
       
       // Send the resume email with proper error handling
       const { data: emailResponse, error: emailError } = await supabase.functions.invoke('send-financing-resume-email', {
         body: {
-          applicationId: state.applicationId,
+          applicationId: savedData.applicationId,
           email: email,
           applicantName: state.applicant 
             ? `${state.applicant.firstName} ${state.applicant.lastName}`
