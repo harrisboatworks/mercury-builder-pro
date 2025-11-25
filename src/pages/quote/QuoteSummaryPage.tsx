@@ -25,6 +25,7 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
+import confetti from 'canvas-confetti';
 import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 import QRCode from 'qrcode';
 import { SITE_URL } from '@/lib/site';
@@ -105,6 +106,15 @@ export default function QuoteSummaryPage() {
       document.head.appendChild(desc);
     }
     desc.content = 'Review your complete Mercury outboard motor quote with pricing, financing options, and bonus offers.';
+  }, []);
+
+  // Celebration animation on first load
+  useEffect(() => {
+    confetti({
+      particleCount: 200,
+      spread: 100,
+      origin: { y: 0.6 }
+    });
   }, []);
 
   const handleStepComplete = () => {
