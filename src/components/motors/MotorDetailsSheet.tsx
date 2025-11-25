@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings, Video, Gift, Package, AlertCircle as AlertCircleIcon } from "lucide-react";
+import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings, Video, Gift, Package, AlertCircle as AlertCircleIcon, ChevronLeft } from "lucide-react";
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { CleanSpecSheetPDF } from './CleanSpecSheetPDF';
 import { supabase } from "../../integrations/supabase/client";
@@ -203,6 +203,24 @@ export default function MotorDetailsSheet({
     };
   }, [open]);
 
+  // Browser history management - handle back button
+  useEffect(() => {
+    if (open) {
+      // Push a history state so back button closes modal instead of navigating away
+      window.history.pushState({ modalOpen: true }, '');
+      
+      const handlePopState = () => {
+        onClose();
+      };
+      
+      window.addEventListener('popstate', handlePopState);
+      
+      return () => {
+        window.removeEventListener('popstate', handlePopState);
+      };
+    }
+  }, [open, onClose]);
+
   // Close on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -290,19 +308,31 @@ export default function MotorDetailsSheet({
           lg:grid lg:grid-cols-[60fr_40fr] lg:max-w-6xl 
           flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-300">
           
+          {/* Desktop Close Button - Only visible on large screens */}
+          <button 
+            onClick={onClose} 
+            className="hidden lg:block absolute top-4 right-4 z-50 p-3 bg-gray-100/90 text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition-colors rounded-full shadow-sm active:scale-95 touch-action-manipulation" 
+            aria-label="Close"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          
           {/* LEFT COLUMN: Scrollable Content with Tabs (Hidden on LG+ where it's in main content) */}
           <div className="lg:hidden sticky top-0 z-40 bg-white border-b border-slate-200 shadow-sm sm:rounded-t-xl relative">
-            {/* Close Button */}
-            <button 
-              onClick={onClose} 
-              className="absolute top-4 right-4 z-50 p-2 text-gray-400 hover:text-gray-600 transition-colors rounded-full" 
-              aria-label="Close"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            {/* Mobile-Friendly Back Button */}
+            <div className="flex items-center gap-3 p-4 border-b border-gray-100">
+              <button 
+                onClick={onClose} 
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation" 
+                aria-label="Go back"
+              >
+                <ChevronLeft className="w-5 h-5" />
+                <span className="text-sm font-medium">Back</span>
+              </button>
+            </div>
 
             {/* Mobile/Tablet Header */}
-            <div className="p-4 sm:p-6 pr-16">
+            <div className="p-4 sm:p-6">
               <h2 className="text-lg sm:text-xl font-bold text-slate-900 leading-tight">
                 {title}
               </h2>
