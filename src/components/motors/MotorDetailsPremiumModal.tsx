@@ -212,7 +212,7 @@ export default function MotorDetailsPremiumModal({
           
           {/* LEFT COLUMN: Tabbed Content (Desktop & Mobile) */}
           <div ref={scrollContainerRef} className="flex-1 overflow-y-auto flex flex-col">
-            <Tabs defaultValue="overview" className="w-full h-full flex flex-col" onValueChange={() => {
+            <Tabs defaultValue="overview" className="w-full" onValueChange={() => {
               scrollContainerRef.current?.scrollTo(0, 0);
             }}>
               {/* Mobile/Tablet Header */}
