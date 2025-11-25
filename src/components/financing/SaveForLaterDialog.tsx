@@ -69,23 +69,43 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
       const resumeLink = `${window.location.origin}/financing/resume?token=${state.resumeToken}`;
       setResumeUrl(resumeLink);
       
-      // Send the resume email (non-blocking - don't fail if email fails)
-      try {
-        await supabase.functions.invoke('send-financing-resume-email', {
-          body: {
-            applicationId: state.applicationId,
-            email: email,
-            applicantName: state.applicant 
-              ? `${state.applicant.firstName} ${state.applicant.lastName}`
-              : undefined,
-            completedSteps: state.completedSteps.length,
-          }
+      // Send the resume email with proper error handling
+      const { data: emailResponse, error: emailError } = await supabase.functions.invoke('send-financing-resume-email', {
+        body: {
+          applicationId: state.applicationId,
+          email: email,
+          applicantName: state.applicant 
+            ? `${state.applicant.firstName} ${state.applicant.lastName}`
+            : undefined,
+          completedSteps: state.completedSteps.length,
+        }
+      });
+
+      // Check if email sending failed
+      if (emailError) {
+        console.error('Email send failed:', emailError);
+        toast({
+          title: "Application Saved",
+          description: "Application saved, but email failed to send. Please copy the link below.",
+          variant: "destructive",
         });
-      } catch (emailError) {
-        console.error('Email send failed (non-critical):', emailError);
-        // Continue anyway - user can still copy the link
+        setEmailSent(true); // Still show the link so user can copy it
+        return;
       }
 
+      // Check for edge function errors in the response
+      if (emailResponse?.error) {
+        console.error('Email delivery error:', emailResponse.error);
+        toast({
+          title: "Application Saved",
+          description: "Application saved, but email failed to send. Please copy the link below.",
+          variant: "destructive",
+        });
+        setEmailSent(true); // Still show the link so user can copy it
+        return;
+      }
+
+      // Success - email was sent
       setEmailSent(true);
       
       toast({
@@ -196,7 +216,14 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
           <div className="space-y-4">
             <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-sm">
               <p className="text-green-800">
-                We've sent an email to <strong>{email}</strong> with your resume link.
+                {email === 'harrisboatworks@hotmail.com' ? (
+                  <>We've sent a resume link to <strong>{email}</strong>.</>
+                ) : (
+                  <>
+                    We've sent a <strong>test email</strong> to{' '}
+                    <strong>harrisboatworks@hotmail.com</strong> (intended for: {email})
+                  </>
+                )}
               </p>
             </div>
 
