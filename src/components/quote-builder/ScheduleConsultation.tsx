@@ -781,42 +781,6 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 </Alert>
               )}
             </div>
-
-            <div className="space-y-3">
-              <h4 className="text-sm font-light text-muted-foreground">Send Quote To:</h4>
-              
-              {/* Send via Email */}
-              <Button 
-                onClick={handleSendByEmail}
-                disabled={!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email) || isSendingEmail}
-                variant="outline" 
-                className="w-full border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide disabled:opacity-50"
-              >
-                <Mail className="w-4 h-4 mr-2" />
-                {isSendingEmail ? 'Sending...' : 'Send to Email'}
-              </Button>
-              
-              {/* Send via Text */}
-              <Button 
-                onClick={handleSendByText}
-                disabled={!contactInfo.phone || contactInfo.phone.replace(/\D/g, '').length !== 10 || isSendingText}
-                variant="outline" 
-                className="w-full border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide disabled:opacity-50"
-              >
-                <MessageSquare className="w-4 h-4 mr-2" />
-                {isSendingText ? 'Sending...' : 'Send by Text'}
-              </Button>
-              
-              {/* Download as tertiary option */}
-              <Button 
-                onClick={generatePDF}
-                variant="ghost" 
-                className="w-full text-muted-foreground hover:text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Download PDF
-              </Button>
-            </div>
           </div>
         </Card>
 
@@ -900,6 +864,43 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 className="border-gray-200 focus:border-gray-400 rounded-sm transition-colors duration-300"
               />
               <p className="text-xs text-muted-foreground dark:text-gray-400 font-light">{contactInfo.notes.length}/500 characters</p>
+            </div>
+
+            {/* Send Quote Options */}
+            <div className="space-y-3">
+              <h4 className="text-sm font-light text-muted-foreground">Send Quote To:</h4>
+              
+              {/* Send via Email */}
+              <Button 
+                onClick={handleSendByEmail}
+                disabled={!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email) || isSendingEmail}
+                variant="outline" 
+                className="w-full border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide disabled:opacity-50"
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                {isSendingEmail ? 'Sending...' : 'Send to Email'}
+              </Button>
+              
+              {/* Send via Text */}
+              <Button 
+                onClick={handleSendByText}
+                disabled={!contactInfo.phone || contactInfo.phone.replace(/\D/g, '').length !== 10 || isSendingText}
+                variant="outline" 
+                className="w-full border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide disabled:opacity-50"
+              >
+                <MessageSquare className="w-4 h-4 mr-2" />
+                {isSendingText ? 'Sending...' : 'Send by Text'}
+              </Button>
+              
+              {/* Download as tertiary option */}
+              <Button 
+                onClick={generatePDF}
+                variant="ghost" 
+                className="w-full text-muted-foreground hover:text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Download PDF
+              </Button>
             </div>
 
             <Button type="submit" className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-sm border border-gray-900 font-light tracking-wide" disabled={isSubmitting}>
