@@ -100,8 +100,8 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
               />
             </Link>
 
-            {/* Center: Trust Badges - Compact on Tablet, Full on Desktop */}
-            <div className="hidden md:flex items-center justify-center space-x-2 md:space-x-3 lg:space-x-6 text-sm lg:text-base text-luxury-gray dark:text-gray-300 max-w-full overflow-hidden keep-flex">
+            {/* Center: Trust Badges - Desktop Only */}
+            <div className="hidden lg:flex items-center justify-center space-x-6 text-base text-luxury-gray dark:text-gray-300 max-w-full overflow-hidden keep-flex">
               <div className="flex items-center gap-2 lg:gap-3 group cursor-pointer transition-all duration-300 hover:scale-105">
                 <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-6 md:h-8 lg:h-10 w-auto dark:bg-white dark:p-1 dark:rounded transition-all duration-300 group-hover:drop-shadow-lg" />
                 <span className="hidden lg:inline font-medium transition-colors duration-300 group-hover:text-luxury-ink dark:group-hover:text-white">Award-Winning Service</span>
