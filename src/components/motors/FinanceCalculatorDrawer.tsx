@@ -17,7 +17,7 @@ import {
 } from '@/components/ui/drawer';
 import { formatMotorTitle } from '@/lib/card-title';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
-import { calculatePaymentWithFrequency, type PaymentFrequency } from '@/lib/finance';
+import { calculatePaymentWithFrequency, getDefaultFinancingRate, type PaymentFrequency } from '@/lib/finance';
 import { DollarSign, Calculator } from 'lucide-react';
 
 interface FinanceCalculatorDrawerProps {
@@ -36,7 +36,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
   const navigate = useNavigate();
   const [totalFinanced, setTotalFinanced] = useState<number>(0);
   const [down, setDown] = useState<number>(0);
-  const [apr, setApr] = useState<number>(6.99);
+  const [apr, setApr] = useState<number>(8.99);
   const [frequency, setFrequency] = useState<PaymentFrequency>('monthly');
   const { promo } = useActiveFinancingPromo();
 
@@ -65,15 +65,25 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
       const totalWithFees = motorPrice * 1.13 + 299;
       setTotalFinanced(Math.round(totalWithFees));
       setDown(0);
+      
+      // Set correct tiered APR based on total financed amount
+      // Only if no active promo (promo effect will override if needed)
+      if (!promo?.rate) {
+        setApr(getDefaultFinancingRate(Math.round(totalWithFees)));
+      }
     }
-  }, [open, motor.price]);
+  }, [open, motor.price, promo?.rate]);
 
   // Apply promotional rate if available
   useEffect(() => {
-    if (promo?.rate) {
-      setApr(Number(promo.rate));
+    if (promo?.rate && totalFinanced > 0) {
+      const tieredRate = getDefaultFinancingRate(totalFinanced);
+      // Only apply promo if it's actually better than the default tiered rate
+      if (promo.rate < tieredRate) {
+        setApr(Number(promo.rate));
+      }
     }
-  }, [promo]);
+  }, [promo, totalFinanced]);
 
   const paymentCalculation = useMemo(() => {
     const principal = Math.max(0, totalFinanced - down);
