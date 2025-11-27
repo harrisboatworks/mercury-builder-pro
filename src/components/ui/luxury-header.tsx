@@ -1,7 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
-import { ShoppingCart, User, LogOut, Menu } from 'lucide-react';
+import { User, LogOut, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { HamburgerMenu } from './hamburger-menu';
@@ -21,7 +20,6 @@ interface LuxuryHeaderProps {
 export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { state } = useQuote();
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
 
@@ -33,9 +31,6 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Get quote item count
-  const quoteItemCount = state.motor ? 1 : 0;
 
   return (
     <>
@@ -115,23 +110,6 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
 
             {/* Right: Actions */}
             <div className="flex items-center justify-end gap-1 md:gap-2 min-w-[40px] keep-flex">
-              {/* Quote/Cart Button */}
-              <Button
-                variant="ghost"
-                size="sm"
-                className="relative p-2 text-luxury-ink dark:text-white hover:text-luxury-gray dark:hover:text-gray-300 hover:bg-luxury-stage dark:hover:bg-gray-800"
-              >
-                <ShoppingCart className="h-5 w-5" />
-                {quoteItemCount > 0 && (
-                  <Badge 
-                    variant="secondary" 
-                    className="absolute -top-1 -right-1 h-5 w-5 p-0 bg-luxury-ink dark:bg-white text-white dark:text-gray-900 text-xs flex items-center justify-center"
-                  >
-                    {quoteItemCount}
-                  </Badge>
-                )}
-              </Button>
-
               {/* Chat Widget (Desktop) */}
               <div className="hidden md:block">
                 <Suspense fallback={null}>
