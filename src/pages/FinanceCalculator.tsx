@@ -9,7 +9,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { formatMotorTitle } from '@/lib/card-title';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { findMotorSpecs } from '@/lib/data/mercury-motors';
-import { calculatePaymentWithFrequency, type PaymentFrequency } from '@/lib/finance';
+import { calculatePaymentWithFrequency, getDefaultFinancingRate, type PaymentFrequency } from '@/lib/finance';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { useQuote } from '@/contexts/QuoteContext';
 
@@ -62,7 +62,7 @@ export default function FinanceCalculator() {
 
   const [totalFinanced, setTotalFinanced] = useState<number>(0);
   const [down, setDown] = useState<number>(0);
-  const [apr, setApr] = useState<number>(6.99);
+  const [apr, setApr] = useState<number>(8.99);
   const [term, setTerm] = useState<number>(60);
   const [frequency, setFrequency] = useState<PaymentFrequency>('monthly');
   const { promo } = useActiveFinancingPromo();
@@ -84,6 +84,10 @@ export default function FinanceCalculator() {
         const motorPrice = Math.round(navState.motorPrice);
         const totalWithFees = motorPrice * 1.13 + 299;
         setTotalFinanced(Math.round(totalWithFees));
+        // Set tiered APR if no promo
+        if (!promo?.rate) {
+          setApr(getDefaultFinancingRate(Math.round(totalWithFees)));
+        }
         // Create a pseudo-motor object from navigation state
         const pseudoMotor: DbMotor = {
           id: navState.motorId || 'nav-state',
@@ -102,6 +106,10 @@ export default function FinanceCalculator() {
         const motorPrice = contextMotor.price || 0;
         const totalWithFees = motorPrice * 1.13 + 299;
         setTotalFinanced(Math.round(totalWithFees));
+        // Set tiered APR if no promo
+        if (!promo?.rate) {
+          setApr(getDefaultFinancingRate(Math.round(totalWithFees)));
+        }
         
         const pseudoMotor: DbMotor = {
           id: contextMotor.id || 'quote-context',
@@ -123,6 +131,10 @@ export default function FinanceCalculator() {
         const motorPrice = (data.sale_price && data.sale_price > 0 ? data.sale_price : data.base_price) || 0;
         const totalWithFees = motorPrice * 1.13 + 299;
         setTotalFinanced(Math.round(totalWithFees));
+        // Set tiered APR if no promo
+        if (!promo?.rate) {
+          setApr(getDefaultFinancingRate(Math.round(totalWithFees)));
+        }
       }
       setLoading(false);
     };
@@ -130,10 +142,14 @@ export default function FinanceCalculator() {
   }, [modelId, navState, quoteState.motor]);
 
   useEffect(() => {
-    if (promo?.rate) {
-      setApr(Number(promo.rate));
+    if (promo?.rate && totalFinanced > 0) {
+      const tieredRate = getDefaultFinancingRate(totalFinanced);
+      // Only apply promo if it's actually better than the default tiered rate
+      if (promo.rate < tieredRate) {
+        setApr(Number(promo.rate));
+      }
     }
-  }, [promo]);
+  }, [promo, totalFinanced]);
 
   const paymentCalculation = useMemo(() => {
     const principal = Math.max(0, totalFinanced - down);
