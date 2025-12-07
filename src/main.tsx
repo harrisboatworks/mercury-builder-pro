@@ -30,6 +30,7 @@ try {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider
         defaultTheme="light"
+        forcedTheme="light"
         enableSystem={false}
         disableTransitionOnChange={false}
       >
