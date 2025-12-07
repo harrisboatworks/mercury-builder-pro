@@ -731,7 +731,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
     <div className="max-w-6xl mx-auto space-y-8">
       {/* Header */}
       <div className="text-center space-y-4">
-        <h2 className="text-4xl md:text-5xl font-light tracking-wide text-foreground">Submit Your Quote</h2>
+        <h2 className="text-4xl md:text-5xl font-light tracking-wide text-slate-900">Submit Your Quote</h2>
         <p className="text-lg text-muted-foreground font-light">
           Complete your contact information and we'll reach out to finalize the details
         </p>
