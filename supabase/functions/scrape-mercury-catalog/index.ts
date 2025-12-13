@@ -12,10 +12,13 @@ interface ScrapeResult {
   model: string;
   hp: number;
   success: boolean;
-  source: 'static-database' | 'perplexity' | 'firecrawl' | 'failed';
+  source: 'perplexity' | 'firecrawl' | 'static-database' | 'failed';
   updatedFields: string[];
   error?: string;
 }
+
+// PROTECTED FIELDS - Never touch pricing from scraper
+const PROTECTED_PRICE_FIELDS = ['price', 'msrp', 'basePrice', 'base_price', 'dealer_price', 'cost', 'sale_price'];
 
 // Extract HP from model string
 function extractHp(model: string): number | null {
@@ -25,9 +28,9 @@ function extractHp(model: string): number | null {
   }
   
   const patterns = [
-    /^(\d+(?:\.\d+)?)\s+/,  // Number at start
-    /\s(\d+(?:\.\d+)?)\s*$/,  // Number at end
-    /(?:fourstroke|pro\s*xs|prokicker|verado)\s*(\d+)/i,  // After family name
+    /^(\d+(?:\.\d+)?)\s+/,
+    /\s(\d+(?:\.\d+)?)\s*$/,
+    /(?:fourstroke|pro\s*xs|prokicker|verado)\s*(\d+)/i,
   ];
   
   for (const pattern of patterns) {
@@ -43,11 +46,10 @@ function extractHp(model: string): number | null {
   return null;
 }
 
-// Enhanced family detection with more variants
+// Enhanced family detection
 function extractFamily(model: string): string | null {
   const modelLower = model.toLowerCase();
   
-  // Check for specific families in order of specificity
   if (modelLower.includes('verado')) return 'Verado';
   if (modelLower.includes('pro xs') || modelLower.includes('proxs') || modelLower.includes('pro-xs')) return 'Pro XS';
   if (modelLower.includes('prokicker') || modelLower.includes('pro kicker')) return 'ProKicker';
@@ -60,25 +62,19 @@ function extractFamily(model: string): string | null {
   return null;
 }
 
-// Clean and validate description content - CRITICAL for filtering promotional content
+// Clean and validate description content
 function cleanDescription(text: string | undefined | null): string | null {
   if (!text || typeof text !== 'string') return null;
   
   let cleaned = text;
   
-  // Remove markdown images
+  // Remove markdown images and links
   cleaned = cleaned.replace(/!\[.*?\]\(.*?\)/g, '');
-  
-  // Remove markdown links but keep text
   cleaned = cleaned.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
-  
-  // Remove URLs
   cleaned = cleaned.replace(/https?:\/\/[^\s]+/g, '');
-  
-  // Remove HTML tags
   cleaned = cleaned.replace(/<[^>]+>/g, '');
   
-  // Promotional/banner content patterns to reject entirely
+  // Reject promotional content
   const promotionalPatterns = [
     /step up to the all-new/i,
     /get the facts/i,
@@ -92,35 +88,27 @@ function cleanDescription(text: string | undefined | null): string | null {
     /^outboard$/i,
     /carousel/i,
     /banner/i,
-    /\|\s*$/,  // Trailing pipe (table remnants)
+    /\|\s*$/,
   ];
   
   for (const pattern of promotionalPatterns) {
     if (pattern.test(cleaned)) {
-      console.log('Rejected promotional content:', cleaned.substring(0, 100));
       return null;
     }
   }
   
-  // Clean up whitespace
   cleaned = cleaned.replace(/\s+/g, ' ').trim();
   
-  // Remove lines that are too short or are navigation text
   const lines = cleaned.split(/[.!?]/).filter(line => {
     const trimmed = line.trim();
     return trimmed.length > 20 && !trimmed.match(/^(home|engines|outboard|about|contact)/i);
   });
   
   cleaned = lines.join('. ').trim();
-  if (!cleaned.endsWith('.')) cleaned += '.';
+  if (cleaned && !cleaned.endsWith('.')) cleaned += '.';
   
-  // Validate length - too short or too long is suspicious
-  if (cleaned.length < 50) {
-    console.log('Rejected: too short after cleaning:', cleaned);
-    return null;
-  }
+  if (cleaned.length < 50) return null;
   if (cleaned.length > 1000) {
-    // Truncate to first 1000 chars at sentence boundary
     cleaned = cleaned.substring(0, 1000);
     const lastPeriod = cleaned.lastIndexOf('.');
     if (lastPeriod > 500) {
@@ -131,7 +119,7 @@ function cleanDescription(text: string | undefined | null): string | null {
   return cleaned;
 }
 
-// Clean features array - remove promotional items
+// Clean features array
 function cleanFeatures(features: any): string[] | null {
   if (!Array.isArray(features)) return null;
   
@@ -139,54 +127,82 @@ function cleanFeatures(features: any): string[] | null {
     .filter((f): f is string => typeof f === 'string')
     .map(f => f.trim())
     .filter(f => {
-      // Must be reasonable length
       if (f.length < 10 || f.length > 200) return false;
-      
-      // No URLs or markdown
       if (f.includes('http') || f.includes('[') || f.includes('](')) return false;
-      
-      // No promotional text
       if (/learn more|click|visit|browse|shop now/i.test(f)) return false;
-      
       return true;
     });
   
   return cleanedFeatures.length > 0 ? cleanedFeatures.slice(0, 12) : null;
 }
 
-// Get data from static database - PRIMARY SOURCE
-function getStaticDatabaseData(hp: number, family: string | null): {
-  description: string | null;
-  features: string[] | null;
-  specifications: Record<string, any> | null;
-  url: string | null;
-} | null {
-  const staticSpecs = findMercurySpecs(hp, family || undefined);
+// Validate scraped specifications are legitimate
+function validateSpecs(specs: Record<string, any>): Record<string, any> {
+  const validated: Record<string, any> = {};
   
-  if (!staticSpecs) {
-    console.log(`No static specs for ${hp}hp ${family || 'FourStroke'}`);
-    return null;
+  for (const [key, value] of Object.entries(specs)) {
+    // Skip price-related fields
+    if (PROTECTED_PRICE_FIELDS.some(pf => key.toLowerCase().includes(pf))) {
+      continue;
+    }
+    
+    // Validate specific fields
+    if (key === 'displacement' || key === 'cc') {
+      const num = typeof value === 'string' ? parseFloat(value.replace(/[^\d.]/g, '')) : value;
+      if (num && num > 50 && num < 10000) {
+        validated.displacement = `${num} cc`;
+      }
+    } else if (key === 'cylinders') {
+      const num = typeof value === 'number' ? value : parseInt(value);
+      if (num && num >= 1 && num <= 8) {
+        validated.cylinders = num;
+      }
+    } else if (key === 'weight' || key === 'dryWeight') {
+      const numMatch = String(value).match(/(\d+)/);
+      if (numMatch) {
+        const weight = parseInt(numMatch[1]);
+        if (weight > 20 && weight < 1500) {
+          validated.weight = value;
+        }
+      }
+    } else if (key === 'gearRatio') {
+      if (/\d+\.?\d*\s*:\s*1/.test(String(value))) {
+        validated.gearRatio = value;
+      }
+    } else if (value && typeof value === 'string' && value.length < 200) {
+      validated[key] = value;
+    } else if (typeof value === 'number') {
+      validated[key] = value;
+    }
   }
   
-  console.log(`Found static specs for ${hp}hp ${staticSpecs.family}`);
-  
-  return {
-    description: staticSpecs.description,
-    features: staticSpecs.features,
-    specifications: staticSpecs.specifications,
-    url: staticSpecs.url,
-  };
+  return validated;
 }
 
-// Try Perplexity for supplementary info - SECONDARY SOURCE
+// Merge specs while protecting price fields
+function mergeSpecs(existing: Record<string, any>, scraped: Record<string, any>): Record<string, any> {
+  const merged = { ...existing };
+  
+  for (const [key, value] of Object.entries(scraped)) {
+    // Never overwrite price fields
+    if (PROTECTED_PRICE_FIELDS.some(pf => key.toLowerCase().includes(pf))) {
+      continue;
+    }
+    merged[key] = value;
+  }
+  
+  return merged;
+}
+
+// PRIORITY 1: Perplexity - PRIMARY source for structured specs
 async function searchWithPerplexity(hp: number, family: string | null, apiKey: string): Promise<{
   description?: string;
   features?: string[];
   specifications?: Record<string, any>;
 } | null> {
   try {
-    const query = `Mercury Marine ${hp}hp ${family || 'FourStroke'} outboard motor. What are the key features and selling points?`;
-    console.log('Perplexity search:', query);
+    const motorName = `${hp}hp ${family || 'FourStroke'}`;
+    console.log(`[Perplexity] Searching: Mercury ${motorName}`);
     
     const response = await fetch('https://api.perplexity.ai/chat/completions', {
       method: 'POST',
@@ -199,22 +215,37 @@ async function searchWithPerplexity(hp: number, family: string | null, apiKey: s
         messages: [
           { 
             role: 'system', 
-            content: `You are a marine engine expert. Provide factual information about Mercury outboard motors. Return ONLY valid JSON:
+            content: `You are extracting official Mercury Marine outboard motor specifications.
+Return ONLY valid JSON with this exact structure for a Mercury ${motorName}:
 {
-  "description": "1-2 sentences about this specific motor model",
-  "features": ["feature 1", "feature 2", "...max 8 features"],
-  "specifications": {"key": "value"}
+  "description": "2-3 sentences about this motor's key benefits, target applications, and what makes it stand out. Focus on boating use cases.",
+  "features": ["8-10 key features like fuel efficiency, reliability, technology, etc"],
+  "specifications": {
+    "displacement": "cc value with unit",
+    "cylinders": number,
+    "boreStroke": "bore x stroke in mm",
+    "fuelSystem": "type (EFI, carbureted, etc)",
+    "startingType": "manual, electric, or both",
+    "weight": "dry weight in lbs",
+    "shaftLengths": ["available shaft lengths"],
+    "gearRatio": "ratio:1",
+    "alternatorOutput": "amp output",
+    "fullThrottleRPM": "RPM range",
+    "fuelTankCapacity": "if integrated",
+    "oilCapacity": "quarts/liters"
+  }
 }
-No markdown, no explanations, just the JSON object.`
+Use ONLY official Mercury Marine specifications. No markdown, no explanations, just the JSON object.
+Do NOT include any pricing information.`
           },
-          { role: 'user', content: query }
+          { role: 'user', content: `What are the official specifications and features of the Mercury Marine ${motorName} outboard motor?` }
         ],
-        search_domain_filter: ['mercurymarine.com', 'boatingmag.com'],
+        search_domain_filter: ['mercurymarine.com', 'boattest.com', 'boats.com', 'boatingmag.com'],
       }),
     });
 
     if (!response.ok) {
-      console.log('Perplexity failed:', response.status);
+      console.log(`[Perplexity] Failed: ${response.status}`);
       return null;
     }
 
@@ -228,31 +259,43 @@ No markdown, no explanations, just the JSON object.`
       try {
         const parsed = JSON.parse(jsonMatch[0]);
         
-        // Clean the results
-        return {
-          description: cleanDescription(parsed.description) || undefined,
-          features: cleanFeatures(parsed.features) || undefined,
-          specifications: parsed.specifications,
-        };
+        const result: any = {};
+        
+        const cleanedDesc = cleanDescription(parsed.description);
+        if (cleanedDesc) result.description = cleanedDesc;
+        
+        const cleanedFeatures = cleanFeatures(parsed.features);
+        if (cleanedFeatures) result.features = cleanedFeatures;
+        
+        if (parsed.specifications && typeof parsed.specifications === 'object') {
+          const validatedSpecs = validateSpecs(parsed.specifications);
+          if (Object.keys(validatedSpecs).length > 0) {
+            result.specifications = validatedSpecs;
+          }
+        }
+        
+        console.log(`[Perplexity] Got: desc=${!!result.description}, features=${result.features?.length || 0}, specs=${Object.keys(result.specifications || {}).length}`);
+        return Object.keys(result).length > 0 ? result : null;
       } catch (e) {
-        console.log('Perplexity JSON parse failed');
+        console.log('[Perplexity] JSON parse failed');
       }
     }
 
     return null;
   } catch (error) {
-    console.error('Perplexity error:', error);
+    console.error('[Perplexity] Error:', error);
     return null;
   }
 }
 
-// Firecrawl - LAST RESORT with strict filtering
+// PRIORITY 2: Firecrawl with spec table extraction
 async function scrapeWithFirecrawl(url: string, apiKey: string): Promise<{
   description?: string;
   features?: string[];
+  specifications?: Record<string, any>;
 } | null> {
   try {
-    console.log('Firecrawl scrape:', url);
+    console.log(`[Firecrawl] Scraping: ${url}`);
     
     const response = await fetch('https://api.firecrawl.dev/v1/scrape', {
       method: 'POST',
@@ -269,7 +312,7 @@ async function scrapeWithFirecrawl(url: string, apiKey: string): Promise<{
     });
 
     if (!response.ok) {
-      console.log('Firecrawl failed:', response.status);
+      console.log(`[Firecrawl] Failed: ${response.status}`);
       return null;
     }
 
@@ -277,13 +320,13 @@ async function scrapeWithFirecrawl(url: string, apiKey: string): Promise<{
     const markdown = data.data?.markdown || data.markdown;
     
     if (!markdown || markdown.length < 100) {
-      console.log('Firecrawl: no content');
+      console.log('[Firecrawl] No content');
       return null;
     }
 
-    const result: { description?: string; features?: string[] } = {};
+    const result: { description?: string; features?: string[]; specifications?: Record<string, any> } = {};
     
-    // Try to extract a clean description from the first substantial paragraph
+    // Extract description from first substantial paragraph
     const paragraphs = markdown.split(/\n\n+/);
     for (const para of paragraphs) {
       const cleaned = cleanDescription(para);
@@ -293,7 +336,7 @@ async function scrapeWithFirecrawl(url: string, apiKey: string): Promise<{
       }
     }
     
-    // Extract bullet point features with strict filtering
+    // Extract features from bullet points
     const features: string[] = [];
     const bulletMatches = markdown.matchAll(/[-•*]\s+([^\n]+)/g);
     for (const match of bulletMatches) {
@@ -310,191 +353,113 @@ async function scrapeWithFirecrawl(url: string, apiKey: string): Promise<{
       result.features = cleanedFeatures;
     }
     
+    // Extract specifications from tables and key-value pairs
+    const specs: Record<string, any> = {};
+    
+    // Pattern 1: Markdown table rows (| Key | Value |)
+    const tableRowMatches = markdown.matchAll(/\|\s*([^|]+)\s*\|\s*([^|]+)\s*\|/g);
+    for (const match of tableRowMatches) {
+      const key = match[1].trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+      const value = match[2].trim();
+      if (key && value && value !== '---' && !key.includes('price')) {
+        specs[normalizeSpecKey(key)] = value;
+      }
+    }
+    
+    // Pattern 2: Key: Value patterns
+    const kvMatches = markdown.matchAll(/(?:^|\n)\s*([A-Za-z][^:\n]{2,30}):\s*([^\n]+)/g);
+    for (const match of kvMatches) {
+      const key = match[1].trim().toLowerCase();
+      const value = match[2].trim();
+      if (key && value && !key.includes('price') && !key.includes('msrp')) {
+        specs[normalizeSpecKey(key)] = value;
+      }
+    }
+    
+    // Pattern 3: Bullet specs (- Displacement: 123 cc)
+    const bulletSpecMatches = markdown.matchAll(/[-•*]\s*([^:]+):\s*([^\n]+)/g);
+    for (const match of bulletSpecMatches) {
+      const key = match[1].trim().toLowerCase();
+      const value = match[2].trim();
+      if (key && value && !key.includes('price')) {
+        specs[normalizeSpecKey(key)] = value;
+      }
+    }
+    
+    const validatedSpecs = validateSpecs(specs);
+    if (Object.keys(validatedSpecs).length > 0) {
+      result.specifications = validatedSpecs;
+    }
+    
+    console.log(`[Firecrawl] Got: desc=${!!result.description}, features=${result.features?.length || 0}, specs=${Object.keys(result.specifications || {}).length}`);
     return Object.keys(result).length > 0 ? result : null;
   } catch (error) {
-    console.error('Firecrawl error:', error);
+    console.error('[Firecrawl] Error:', error);
     return null;
   }
 }
 
-// Main scrape function - PRIORITY: Static DB > Perplexity > Firecrawl
-async function scrapeMotor(
-  motor: any,
-  supabase: any,
-  firecrawlKey: string | undefined,
-  perplexityKey: string | undefined,
-  forceRefresh: boolean = false
-): Promise<ScrapeResult> {
-  const result: ScrapeResult = {
-    motorId: motor.id,
-    model: motor.model,
-    hp: motor.horsepower || 0,
-    success: false,
-    source: 'failed',
-    updatedFields: [],
+// Normalize spec key names to standard format
+function normalizeSpecKey(key: string): string {
+  const keyMap: Record<string, string> = {
+    'displacement': 'displacement',
+    'cc': 'displacement',
+    'engine displacement': 'displacement',
+    'horsepower': 'hp',
+    'hp': 'hp',
+    'cylinders': 'cylinders',
+    'cylinder': 'cylinders',
+    'bore and stroke': 'boreStroke',
+    'bore stroke': 'boreStroke',
+    'borestroke': 'boreStroke',
+    'gear ratio': 'gearRatio',
+    'gearratio': 'gearRatio',
+    'dry weight': 'weight',
+    'weight': 'weight',
+    'dryweight': 'weight',
+    'shaft length': 'shaftLengths',
+    'shaftlength': 'shaftLengths',
+    'alternator': 'alternatorOutput',
+    'alternator output': 'alternatorOutput',
+    'full throttle rpm': 'fullThrottleRPM',
+    'wot rpm': 'fullThrottleRPM',
+    'fuel system': 'fuelSystem',
+    'fuel injection': 'fuelSystem',
+    'starting': 'startingType',
+    'start type': 'startingType',
+    'oil capacity': 'oilCapacity',
+    'fuel tank': 'fuelTankCapacity',
   };
-
-  // Extract HP if not in database
-  if (!result.hp) {
-    result.hp = extractHp(motor.model) || extractHp(motor.model_display || '') || 0;
-  }
-
-  if (!result.hp) {
-    result.error = 'Could not determine HP';
-    return result;
-  }
-
-  const family = extractFamily(motor.model) || extractFamily(motor.model_display || '');
   
-  console.log(`Processing: ${motor.model} (${result.hp}hp ${family || 'FourStroke'})`);
-  
-  // ============ PRIORITY 1: STATIC DATABASE (Primary Source) ============
-  const staticData = getStaticDatabaseData(result.hp, family);
-  
-  let finalDescription: string | null = null;
-  let finalFeatures: string[] | null = null;
-  let finalSpecs: Record<string, any> | null = null;
-  
-  if (staticData) {
-    finalDescription = staticData.description;
-    finalFeatures = staticData.features;
-    finalSpecs = staticData.specifications;
-    result.source = 'static-database';
-    console.log(`Static DB: Got description (${finalDescription?.length || 0} chars), ${finalFeatures?.length || 0} features, ${Object.keys(finalSpecs || {}).length} specs`);
-  }
-  
-  // ============ PRIORITY 2: PERPLEXITY (Supplementary) ============
-  // Only use if we're missing data from static DB
-  if (perplexityKey && (!finalDescription || !finalFeatures)) {
-    const perplexityData = await searchWithPerplexity(result.hp, family, perplexityKey);
-    
-    if (perplexityData) {
-      if (!finalDescription && perplexityData.description) {
-        finalDescription = perplexityData.description;
-        result.source = 'perplexity';
-      }
-      
-      if (!finalFeatures && perplexityData.features) {
-        finalFeatures = perplexityData.features;
-        if (!staticData) result.source = 'perplexity';
-      }
-      
-      // Merge specs if static didn't have them
-      if (perplexityData.specifications) {
-        finalSpecs = { ...(perplexityData.specifications || {}), ...(finalSpecs || {}) };
-      }
-      
-      console.log(`Perplexity: Supplemented with description=${!!perplexityData.description}, features=${perplexityData.features?.length || 0}`);
-    }
-  }
-  
-  // ============ PRIORITY 3: FIRECRAWL (Last Resort) ============
-  // Only if we still have no description
-  if (firecrawlKey && !finalDescription) {
-    const mercuryUrl = staticData?.url || constructMercuryUrl(result.hp, family);
-    
-    if (mercuryUrl) {
-      const firecrawlData = await scrapeWithFirecrawl(mercuryUrl, firecrawlKey);
-      
-      if (firecrawlData) {
-        if (!finalDescription && firecrawlData.description) {
-          finalDescription = firecrawlData.description;
-          result.source = 'firecrawl';
-        }
-        
-        if (!finalFeatures && firecrawlData.features) {
-          finalFeatures = firecrawlData.features;
-        }
-        
-        console.log(`Firecrawl: Got description=${!!firecrawlData.description}, features=${firecrawlData.features?.length || 0}`);
-      }
-    }
-  }
-  
-  // ============ PREPARE UPDATE ============
-  if (!finalDescription && !finalFeatures && !finalSpecs) {
-    result.error = 'No data from any source';
-    return result;
-  }
-  
-  const updateData: any = {};
-  
-  // Update description if new or refreshing
-  if (finalDescription && (forceRefresh || !motor.description || motor.description.length < 50 || isPromotionalContent(motor.description))) {
-    updateData.description = finalDescription;
-    result.updatedFields.push('description');
-  }
-  
-  // Update features - merge new with existing valid ones
-  if (finalFeatures && finalFeatures.length > 0) {
-    const existingFeatures = cleanFeatures(motor.features) || [];
-    const allFeatures = [...new Set([...finalFeatures, ...existingFeatures])];
-    
-    if (forceRefresh || allFeatures.length > existingFeatures.length || existingFeatures.length === 0) {
-      updateData.features = allFeatures.slice(0, 12);
-      result.updatedFields.push('features');
-    }
-  }
-  
-  // Update specifications - static DB takes precedence
-  if (finalSpecs && Object.keys(finalSpecs).length > 0) {
-    const existingSpecs = (motor.specifications && typeof motor.specifications === 'object') 
-      ? motor.specifications 
-      : {};
-    
-    // Static specs override existing, then merge any additional
-    const mergedSpecs = { ...existingSpecs, ...finalSpecs };
-    
-    if (forceRefresh || Object.keys(mergedSpecs).length > Object.keys(existingSpecs).length) {
-      updateData.specifications = mergedSpecs;
-      result.updatedFields.push('specifications');
-    }
-  }
-  
-  // Perform update
-  if (Object.keys(updateData).length > 0) {
-    updateData.last_scraped = new Date().toISOString();
-    updateData.last_enriched = new Date().toISOString();
-    
-    const { error } = await supabase
-      .from('motor_models')
-      .update(updateData)
-      .eq('id', motor.id);
-
-    if (error) {
-      result.error = `Database update failed: ${error.message}`;
-      return result;
-    }
-    
-    result.success = true;
-    console.log(`Updated ${motor.model}: ${result.updatedFields.join(', ')}`);
-  } else {
-    result.success = true;
-    result.error = 'No new data to update';
-  }
-
-  return result;
+  const normalized = key.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+  return keyMap[normalized] || key.replace(/[^a-zA-Z0-9]/g, '');
 }
 
-// Check if existing description is promotional/garbage
-function isPromotionalContent(text: string | null): boolean {
-  if (!text) return false;
+// PRIORITY 3: Static database - FALLBACK only
+function getStaticDatabaseData(hp: number, family: string | null): {
+  description: string | null;
+  features: string[] | null;
+  specifications: Record<string, any> | null;
+  url: string | null;
+} | null {
+  const staticSpecs = findMercurySpecs(hp, family || undefined);
   
-  const promotionalIndicators = [
-    /step up to/i,
-    /get the facts/i,
-    /zero compromises/i,
-    /!\[/,  // Markdown images
-    /\[.*\]\(/,  // Markdown links
-    /https?:\/\//,  // URLs
-    /browse our/i,
-    /learn more/i,
-  ];
+  if (!staticSpecs) {
+    console.log(`[Static] No specs for ${hp}hp ${family || 'FourStroke'}`);
+    return null;
+  }
   
-  return promotionalIndicators.some(pattern => pattern.test(text));
+  console.log(`[Static] Found fallback specs for ${hp}hp ${staticSpecs.family}`);
+  
+  return {
+    description: staticSpecs.description,
+    features: staticSpecs.features,
+    specifications: staticSpecs.specifications,
+    url: staticSpecs.url,
+  };
 }
 
-// Construct Mercury URL based on HP
+// Construct Mercury URL based on HP and family
 function constructMercuryUrl(hp: number, family: string | null): string | null {
   const baseUrl = 'https://www.mercurymarine.com/en/us/engines/outboard';
   
@@ -526,6 +491,195 @@ function constructMercuryUrl(hp: number, family: string | null): string | null {
   return null;
 }
 
+// Check if existing description is promotional/garbage
+function isPromotionalContent(text: string | null): boolean {
+  if (!text) return false;
+  
+  const promotionalIndicators = [
+    /step up to/i,
+    /get the facts/i,
+    /zero compromises/i,
+    /!\[/,
+    /\[.*\]\(/,
+    /https?:\/\//,
+    /browse our/i,
+    /learn more/i,
+  ];
+  
+  return promotionalIndicators.some(pattern => pattern.test(text));
+}
+
+// Main scrape function - NEW PRIORITY: Perplexity > Firecrawl > Static (fallback)
+async function scrapeMotor(
+  motor: any,
+  supabase: any,
+  firecrawlKey: string | undefined,
+  perplexityKey: string | undefined,
+  forceRefresh: boolean = false
+): Promise<ScrapeResult> {
+  const result: ScrapeResult = {
+    motorId: motor.id,
+    model: motor.model,
+    hp: motor.horsepower || 0,
+    success: false,
+    source: 'failed',
+    updatedFields: [],
+  };
+
+  // Extract HP if not in database
+  if (!result.hp) {
+    result.hp = extractHp(motor.model) || extractHp(motor.model_display || '') || 0;
+  }
+
+  if (!result.hp) {
+    result.error = 'Could not determine HP';
+    return result;
+  }
+
+  const family = extractFamily(motor.model) || extractFamily(motor.model_display || '');
+  
+  console.log(`\n=== Processing: ${motor.model} (${result.hp}hp ${family || 'FourStroke'}) ===`);
+  
+  let finalDescription: string | null = null;
+  let finalFeatures: string[] | null = null;
+  let finalSpecs: Record<string, any> | null = null;
+  
+  // ============ PRIORITY 1: PERPLEXITY (Primary Source) ============
+  if (perplexityKey) {
+    const perplexityData = await searchWithPerplexity(result.hp, family, perplexityKey);
+    
+    if (perplexityData) {
+      if (perplexityData.description) {
+        finalDescription = perplexityData.description;
+        result.source = 'perplexity';
+      }
+      if (perplexityData.features) {
+        finalFeatures = perplexityData.features;
+      }
+      if (perplexityData.specifications) {
+        finalSpecs = perplexityData.specifications;
+      }
+    }
+  }
+  
+  // ============ PRIORITY 2: FIRECRAWL (If missing data) ============
+  if (firecrawlKey && (!finalDescription || !finalSpecs)) {
+    const mercuryUrl = constructMercuryUrl(result.hp, family);
+    
+    if (mercuryUrl) {
+      const firecrawlData = await scrapeWithFirecrawl(mercuryUrl, firecrawlKey);
+      
+      if (firecrawlData) {
+        if (!finalDescription && firecrawlData.description) {
+          finalDescription = firecrawlData.description;
+          result.source = result.source === 'failed' ? 'firecrawl' : result.source;
+        }
+        
+        if (!finalFeatures && firecrawlData.features) {
+          finalFeatures = firecrawlData.features;
+        }
+        
+        if (firecrawlData.specifications) {
+          finalSpecs = mergeSpecs(finalSpecs || {}, firecrawlData.specifications);
+        }
+      }
+    }
+  }
+  
+  // ============ PRIORITY 3: STATIC DATABASE (Fallback) ============
+  if (!finalDescription || !finalFeatures) {
+    const staticData = getStaticDatabaseData(result.hp, family);
+    
+    if (staticData) {
+      if (!finalDescription && staticData.description) {
+        finalDescription = staticData.description;
+        result.source = result.source === 'failed' ? 'static-database' : result.source;
+      }
+      
+      if (!finalFeatures && staticData.features) {
+        finalFeatures = staticData.features;
+      }
+      
+      if (staticData.specifications) {
+        // Static specs fill in gaps, don't override scraped data
+        finalSpecs = mergeSpecs(staticData.specifications, finalSpecs || {});
+      }
+    }
+  }
+  
+  // ============ PREPARE UPDATE ============
+  if (!finalDescription && !finalFeatures && !finalSpecs) {
+    result.error = 'No data from any source';
+    return result;
+  }
+  
+  const updateData: any = {};
+  
+  // Update description if new or refreshing
+  if (finalDescription && (forceRefresh || !motor.description || motor.description.length < 50 || isPromotionalContent(motor.description))) {
+    updateData.description = finalDescription;
+    result.updatedFields.push('description');
+  }
+  
+  // Update features
+  if (finalFeatures && finalFeatures.length > 0) {
+    const existingFeatures = cleanFeatures(motor.features) || [];
+    const allFeatures = [...new Set([...finalFeatures, ...existingFeatures])];
+    
+    if (forceRefresh || allFeatures.length > existingFeatures.length || existingFeatures.length === 0) {
+      updateData.features = allFeatures.slice(0, 12);
+      result.updatedFields.push('features');
+    }
+  }
+  
+  // Update specifications - NEVER touch price fields
+  if (finalSpecs && Object.keys(finalSpecs).length > 0) {
+    const existingSpecs = (motor.specifications && typeof motor.specifications === 'object') 
+      ? motor.specifications 
+      : {};
+    
+    // Preserve any existing price fields
+    const pricePreserved: Record<string, any> = {};
+    for (const key of Object.keys(existingSpecs)) {
+      if (PROTECTED_PRICE_FIELDS.some(pf => key.toLowerCase().includes(pf))) {
+        pricePreserved[key] = existingSpecs[key];
+      }
+    }
+    
+    const mergedSpecs = { ...existingSpecs, ...finalSpecs, ...pricePreserved };
+    
+    if (forceRefresh || Object.keys(mergedSpecs).length > Object.keys(existingSpecs).length) {
+      updateData.specifications = mergedSpecs;
+      result.updatedFields.push('specifications');
+    }
+  }
+  
+  // Perform update
+  if (Object.keys(updateData).length > 0) {
+    updateData.last_scraped = new Date().toISOString();
+    updateData.last_enriched = new Date().toISOString();
+    
+    const { error } = await supabase
+      .from('motor_models')
+      .update(updateData)
+      .eq('id', motor.id);
+
+    if (error) {
+      result.error = `Database update failed: ${error.message}`;
+      return result;
+    }
+    
+    result.success = true;
+    console.log(`✓ Updated ${motor.model}: ${result.updatedFields.join(', ')} [${result.source}]`);
+  } else {
+    result.success = true;
+    result.error = 'No new data to update';
+    console.log(`- Skipped ${motor.model}: no changes needed`);
+  }
+
+  return result;
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -546,24 +700,27 @@ serve(async (req) => {
       motor_id,
       prioritize_missing = true,
       background = false,
-      refresh = false,  // NEW: Force refresh all data
-      clear_bad_data = false  // NEW: Clear promotional content first
+      refresh = false,
+      clear_bad_data = false
     } = body;
 
-    console.log('Mercury catalog scrape started', { 
+    console.log('\n========== Mercury Catalog Scrape ==========');
+    console.log('Config:', { 
       batch_size, 
       offset, 
-      motor_id,
+      motor_id: motor_id || 'all',
       background,
       refresh,
       clear_bad_data,
-      hasFirecrawl: !!firecrawlKey, 
-      hasPerplexity: !!perplexityKey 
+      hasPerplexity: !!perplexityKey,
+      hasFirecrawl: !!firecrawlKey,
     });
+    console.log('Priority: Perplexity → Firecrawl → Static (fallback)');
+    console.log('Protected fields (never updated):', PROTECTED_PRICE_FIELDS.join(', '));
 
-    // NEW: Clear bad/promotional data if requested
+    // Clear bad/promotional data if requested
     if (clear_bad_data) {
-      console.log('Clearing promotional descriptions...');
+      console.log('\nClearing promotional descriptions...');
       const { data: badDescriptions, error: clearError } = await supabase
         .from('motor_models')
         .update({ 
@@ -591,12 +748,10 @@ serve(async (req) => {
     if (motor_id) {
       query = query.eq('id', motor_id);
     } else if (refresh) {
-      // Refresh mode: process all motors
       query = query
         .order('horsepower', { ascending: true })
         .range(offset, offset + batch_size - 1);
     } else if (prioritize_missing) {
-      // Prioritize motors without descriptions or with promotional content
       query = query
         .or('description.is.null,description.eq.,features.is.null')
         .order('horsepower', { ascending: true })
@@ -625,18 +780,17 @@ serve(async (req) => {
       );
     }
 
-    console.log(`Processing ${motors.length} motors`);
+    console.log(`\nProcessing ${motors.length} motors...`);
 
     async function processMotors() {
       const results: ScrapeResult[] = [];
       
       for (const motor of motors) {
-        const result = await scrapeMotor(motor, supabase, firecrawlKey, perplexityKey, refresh);
-        results.push(result);
-        console.log(`${result.success ? '✓' : '✗'} ${motor.model}: ${result.source} (${result.updatedFields.join(', ') || 'no changes'})`);
+        const motorResult = await scrapeMotor(motor, supabase, firecrawlKey, perplexityKey, refresh);
+        results.push(motorResult);
         
         // Delay to avoid rate limiting
-        await new Promise(r => setTimeout(r, 300));
+        await new Promise(r => setTimeout(r, 500));
       }
 
       const summary = {
@@ -645,13 +799,14 @@ serve(async (req) => {
         noChanges: results.filter(r => r.success && r.updatedFields.length === 0).length,
         failed: results.filter(r => !r.success).length,
         sources: {
-          staticDatabase: results.filter(r => r.source === 'static-database').length,
           perplexity: results.filter(r => r.source === 'perplexity').length,
           firecrawl: results.filter(r => r.source === 'firecrawl').length,
+          staticDatabase: results.filter(r => r.source === 'static-database').length,
         }
       };
 
-      console.log('Scrape completed:', summary);
+      console.log('\n========== Scrape Completed ==========');
+      console.log('Summary:', summary);
       return { results, summary };
     }
 
@@ -664,8 +819,8 @@ serve(async (req) => {
           message: `Background processing started for ${motors.length} motors`,
           motorsQueued: motors.length,
           next_offset: offset + batch_size,
-          refresh,
-          clear_bad_data
+          priority: 'Perplexity → Firecrawl → Static',
+          protectedFields: PROTECTED_PRICE_FIELDS
         }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
@@ -676,7 +831,7 @@ serve(async (req) => {
     return new Response(
       JSON.stringify({
         success: true,
-        message: `Processed ${summary.total} motors, updated ${summary.updated}, from static DB: ${summary.sources.staticDatabase}`,
+        message: `Processed ${summary.total} motors: ${summary.updated} updated, ${summary.noChanges} unchanged`,
         results,
         summary,
         next_offset: offset + batch_size
