@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MessageSquare, Sparkles } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
-import { useIsMobile } from '@/hooks/use-mobile';
+import { useIsMobileOrTablet } from '@/hooks/use-mobile';
 import { motion } from 'framer-motion';
 
 interface AIChatButtonProps {
@@ -13,7 +13,7 @@ interface AIChatButtonProps {
 export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }) => {
   const location = useLocation();
   const { state } = useQuote();
-  const isMobile = useIsMobile();
+  const isMobileOrTablet = useIsMobileOrTablet();
   const [hasInteracted, setHasInteracted] = useState(false);
   const [showPulse, setShowPulse] = useState(true);
 
@@ -53,8 +53,8 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
     onOpenChat();
   };
 
-  // Hide on mobile (handled by UnifiedMobileBar) or when chat is open
-  if (isMobile || isOpen) return null;
+  // Hide on mobile/tablet (handled by UnifiedMobileBar) or when chat is open
+  if (isMobileOrTablet || isOpen) return null;
 
   return (
     <motion.button
