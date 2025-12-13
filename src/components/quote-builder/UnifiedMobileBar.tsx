@@ -4,7 +4,7 @@ import { ChevronUp, MessageCircle, Phone, Sparkles, ArrowRight, Shield, Award, D
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAIChat } from '@/components/chat/GlobalAIChat';
-import { useIsMobile } from '@/hooks/use-mobile';
+import { useIsMobileOrTablet } from '@/hooks/use-mobile';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
@@ -190,7 +190,7 @@ const breathingAnimation = {
 };
 
 export const UnifiedMobileBar: React.FC = () => {
-  const isMobile = useIsMobile();
+  const isMobileOrTablet = useIsMobileOrTablet();
   const location = useLocation();
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
@@ -226,14 +226,14 @@ export const UnifiedMobileBar: React.FC = () => {
     setIdleSeconds(0);
   }, [location.pathname]);
 
-  // Check if we should show the bar
+  // Check if we should show the bar (mobile + tablet, under 1024px)
   const shouldShow = useMemo(() => {
-    if (!isMobile) return false;
+    if (!isMobileOrTablet) return false;
     if (HIDE_ON_PAGES.some(path => location.pathname.startsWith(path))) return false;
     return SHOW_ON_PAGES.some(path => 
       location.pathname === path || location.pathname.startsWith(path + '/')
     );
-  }, [isMobile, location.pathname]);
+  }, [isMobileOrTablet, location.pathname]);
 
   // Use preview motor if available (viewing modal), otherwise use selected motor
   const displayMotor = state.previewMotor || state.motor;
