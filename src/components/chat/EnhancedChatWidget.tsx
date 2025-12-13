@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { X, Send, Minimize2, Sparkles, Loader2 } from 'lucide-react';
+import { X, Send, MessageCircle } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -33,6 +32,25 @@ interface EnhancedChatWidgetProps {
   onClose: () => void;
   initialMessage?: string;
 }
+
+// Typing indicator with bouncing dots
+const TypingIndicator = () => (
+  <div className="flex items-center gap-1 px-2 py-1">
+    {[0, 1, 2].map((i) => (
+      <motion.span
+        key={i}
+        className="w-2 h-2 bg-gray-400 rounded-full"
+        animate={{ y: [0, -6, 0] }}
+        transition={{
+          duration: 0.6,
+          repeat: Infinity,
+          delay: i * 0.15,
+          ease: "easeInOut"
+        }}
+      />
+    ))}
+  </div>
+);
 
 export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedChatWidgetProps>(
   ({ isOpen, onClose, initialMessage }, ref) => {
@@ -229,131 +247,147 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
     return (
       <AnimatePresence>
         <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          initial={{ opacity: 0, y: 30, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 20, scale: 0.95 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          className="fixed bottom-4 right-4 left-4 sm:left-auto sm:w-96 z-50"
+          exit={{ opacity: 0, y: 30, scale: 0.9 }}
+          transition={{ 
+            type: 'spring', 
+            stiffness: 400, 
+            damping: 28,
+            mass: 0.8
+          }}
+          className="fixed bottom-4 right-4 left-4 sm:left-auto sm:w-[380px] z-50"
         >
-          <Card className="shadow-2xl border border-border overflow-hidden">
-            {/* Header */}
-            <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-foreground to-foreground/90 text-background">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
-                  <Sparkles className="w-4 h-4 text-white" />
+          {/* Glass container */}
+          <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-[0_8px_60px_-15px_rgba(0,0,0,0.2)] border border-gray-200/50 overflow-hidden">
+            
+            {/* Header - Light & Elegant */}
+            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 bg-white/80">
+              <div className="flex items-center gap-3">
+                {/* Glowing orb icon */}
+                <div className="relative">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center shadow-lg">
+                    <MessageCircle className="w-5 h-5 text-white" />
+                  </div>
+                  {/* Online indicator */}
+                  <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-400 rounded-full border-2 border-white" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-sm">Mercury Expert</h3>
-                  <p className="text-xs opacity-70">AI-Powered Assistant</p>
+                  <h3 className="font-medium text-gray-900 text-[15px]">Mercury Expert</h3>
+                  <p className="text-xs text-gray-500 font-light">Always here to help</p>
                 </div>
               </div>
-              <div className="flex items-center gap-1">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setIsMinimized(!isMinimized)}
-                  className="text-background/70 hover:text-background hover:bg-background/10 h-8 w-8 p-0 hidden sm:flex"
-                >
-                  <Minimize2 className="w-4 h-4" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={onClose}
-                  className="text-background/70 hover:text-background hover:bg-background/10 h-8 w-8 p-0"
-                >
-                  <X className="w-4 h-4" />
-                </Button>
-              </div>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={onClose}
+                className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 h-9 w-9 p-0 rounded-full transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </Button>
             </div>
 
             {!isMinimized && (
-              <CardContent className="p-0 flex flex-col h-[60vh] sm:h-96">
-                {/* Messages */}
-                <div className="flex-1 overflow-y-auto p-4 space-y-4">
-                  {messages.map((message) => (
-                    <div
-                      key={message.id}
-                      className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
-                    >
-                      <div
-                        className={`max-w-[85%] rounded-2xl px-4 py-2.5 ${
-                          message.isUser
-                            ? 'bg-foreground text-background rounded-br-md'
-                            : 'bg-muted text-foreground rounded-bl-md'
-                        }`}
+              <div className="flex flex-col h-[60vh] sm:h-[420px]">
+                {/* Messages Area */}
+                <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3 bg-gradient-to-b from-gray-50/50 to-white">
+                  <AnimatePresence initial={false}>
+                    {messages.map((message, index) => (
+                      <motion.div
+                        key={message.id}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.2, delay: index === messages.length - 1 ? 0 : 0 }}
+                        className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
                       >
-                        {message.isStreaming && message.text === '' ? (
-                          <div className="flex items-center gap-2">
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                            <span className="text-sm">Thinking...</span>
-                          </div>
-                        ) : (
-                          <>
-                            <p className="text-sm whitespace-pre-wrap leading-relaxed">
-                              {message.text}
-                              {message.isStreaming && (
-                                <span className="inline-block w-1.5 h-4 bg-current ml-0.5 animate-pulse" />
+                        <div
+                          className={`max-w-[80%] px-4 py-3 ${
+                            message.isUser
+                              ? 'bg-gray-900 text-white rounded-2xl rounded-br-lg shadow-sm'
+                              : 'bg-white text-gray-800 rounded-2xl rounded-bl-lg shadow-[0_2px_8px_-2px_rgba(0,0,0,0.08)] border border-gray-100'
+                          }`}
+                        >
+                          {message.isStreaming && message.text === '' ? (
+                            <TypingIndicator />
+                          ) : (
+                            <>
+                              <p className="text-[14px] whitespace-pre-wrap leading-relaxed font-light">
+                                {message.text}
+                                {message.isStreaming && (
+                                  <motion.span 
+                                    className="inline-block w-0.5 h-4 bg-current ml-0.5"
+                                    animate={{ opacity: [1, 0] }}
+                                    transition={{ duration: 0.5, repeat: Infinity }}
+                                  />
+                                )}
+                              </p>
+                              {message.comparisonData && (
+                                <MotorComparisonCard
+                                  motor1={message.comparisonData.motor1}
+                                  motor2={message.comparisonData.motor2}
+                                  recommendation={message.comparisonData.recommendation}
+                                />
                               )}
-                            </p>
-                            {message.comparisonData && (
-                              <MotorComparisonCard
-                                motor1={message.comparisonData.motor1}
-                                motor2={message.comparisonData.motor2}
-                                recommendation={message.comparisonData.recommendation}
-                              />
-                            )}
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  ))}
+                            </>
+                          )}
+                        </div>
+                      </motion.div>
+                    ))}
+                  </AnimatePresence>
                   <div ref={messagesEndRef} />
                 </div>
 
-                {/* Suggested Questions (contextual) */}
+                {/* Suggested Questions - Pill Style */}
                 {messages.length <= 1 && !isLoading && (
-                  <div className="px-4 pb-2">
-                    <p className="text-xs text-muted-foreground mb-2">Quick questions:</p>
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="px-5 pb-3"
+                  >
+                    <p className="text-[11px] text-gray-400 mb-2 uppercase tracking-wide">Suggested</p>
                     <div className="flex flex-wrap gap-2">
-                      {contextualPrompts.map((q) => (
-                        <button
+                      {contextualPrompts.map((q, i) => (
+                        <motion.button
                           key={q}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.4 + i * 0.1 }}
                           onClick={() => handleSend(q)}
-                          className="text-xs px-3 py-1.5 rounded-full bg-muted hover:bg-muted/80 text-foreground transition-colors"
+                          className="text-[13px] px-3.5 py-1.5 rounded-full border border-gray-200 hover:border-gray-300 hover:bg-gray-50 text-gray-600 transition-all duration-200 font-light"
                         >
                           {q}
-                        </button>
+                        </motion.button>
                       ))}
                     </div>
-                  </div>
+                  </motion.div>
                 )}
 
-                {/* Input */}
-                <div className="p-4 border-t border-border bg-background">
-                  <div className="flex gap-2">
+                {/* Input Area - Clean & Minimal */}
+                <div className="px-4 py-4 bg-white border-t border-gray-100">
+                  <div className="flex items-center gap-2 bg-gray-50 rounded-full px-2 py-1 focus-within:ring-2 focus-within:ring-gray-200 transition-shadow">
                     <input
                       ref={inputRef}
                       type="text"
                       value={inputText}
                       onChange={(e) => setInputText(e.target.value)}
                       onKeyPress={handleKeyPress}
-                      placeholder="Ask anything about Mercury motors..."
-                      className="flex-1 px-4 py-2.5 bg-muted border-0 rounded-full focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm placeholder:text-muted-foreground"
+                      placeholder="Ask anything..."
+                      className="flex-1 px-3 py-2.5 bg-transparent border-0 focus:outline-none text-[14px] text-gray-800 placeholder:text-gray-400 font-light"
                       disabled={isLoading}
                     />
                     <Button
                       onClick={() => handleSend()}
                       disabled={!inputText.trim() || isLoading}
-                      className="h-10 w-10 p-0 rounded-full bg-foreground hover:bg-foreground/90 text-background"
+                      className="h-9 w-9 p-0 rounded-full bg-gray-900 hover:bg-gray-800 text-white transition-all duration-200 disabled:opacity-40 disabled:bg-gray-300"
                     >
                       <Send className="w-4 h-4" />
                     </Button>
                   </div>
                 </div>
-              </CardContent>
+              </div>
             )}
-          </Card>
+          </div>
         </motion.div>
       </AnimatePresence>
     );
