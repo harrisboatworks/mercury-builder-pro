@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft, Bell, Sparkles } from "lucide-react";
+import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft, Bell, Sparkles, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useAIChat } from '../chat/GlobalAIChat';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { CleanSpecSheetPDF } from './CleanSpecSheetPDF';
@@ -92,6 +93,8 @@ export default function MotorDetailsPremiumModal({
   const { state } = useQuote();
   
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollMore, setCanScrollMore] = useState(true);
+  const [hasScrolled, setHasScrolled] = useState(false);
   const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
   const smartReview = useSmartReviewRotation(hpValue, title);
   const motorSpecs = motor ? findMotorSpecs(hpValue, title) : undefined;
@@ -165,6 +168,22 @@ export default function MotorDetailsPremiumModal({
       };
     }
   }, [open, onClose]);
+
+  // Scroll tracking for hint indicator
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container || !open) return;
+    
+    const handleScroll = () => {
+      const { scrollTop, scrollHeight, clientHeight } = container;
+      setHasScrolled(scrollTop > 20);
+      setCanScrollMore(scrollTop + clientHeight < scrollHeight - 50);
+    };
+    
+    container.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, [open]);
 
   // Fetch warranty pricing
   useEffect(() => {
@@ -722,43 +741,20 @@ export default function MotorDetailsPremiumModal({
             </div>
           </div>
 
-          {/* Mobile: Fixed Bottom Pricing Bar */}
-          <div className="lg:hidden sticky bottom-0 border-t border-gray-200 bg-white px-4 py-3">
-            <div className="flex items-center justify-between gap-3">
-              {/* Compact Price Display */}
-              <div className="flex flex-col">
-                <p className="text-lg font-bold text-gray-900">
-                  {typeof price === "number" ? money(price) : 'Call'}
-                </p>
-                {typeof price === "number" && (
-                  <button
-                    onClick={handleCalculatePayment}
-                    className="flex items-center gap-1 text-xs text-gray-600 font-normal hover:text-gray-900 transition-colors"
-                  >
-                    <MonthlyPaymentDisplay motorPrice={price} />
-                    <Calculator className="w-3.5 h-3.5 opacity-70" />
-                  </button>
-                )}
-              </div>
-              
-              {/* AI Button - Mobile */}
-              <button
-                onClick={handleAskAI}
-                className="flex items-center justify-center w-11 h-11 rounded-full bg-amber-50 text-amber-600 hover:bg-amber-100 transition-colors"
-                aria-label="Ask AI about this motor"
+          {/* Mobile scroll hint - fades out after scrolling */}
+          <AnimatePresence>
+            {canScrollMore && !hasScrolled && (
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                className="lg:hidden fixed bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-gray-400 pointer-events-none z-50"
               >
-                <Sparkles className="w-5 h-5" />
-              </button>
-              
-              {/* Compact CTA Button */}
-              <button
-                onClick={handleSelectMotor}
-                className="bg-black text-white px-6 py-2.5 text-xs tracking-widest uppercase font-medium rounded-sm whitespace-nowrap"
-              >
-                Configure
-              </button>
-            </div>
-          </div>
+                <span className="text-xs font-normal bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">Swipe up for more</span>
+                <ChevronDown className="w-4 h-4 animate-bounce" />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
 

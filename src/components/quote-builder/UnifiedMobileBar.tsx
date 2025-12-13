@@ -102,7 +102,7 @@ export const UnifiedMobileBar: React.FC = () => {
   const isMobile = useIsMobile();
   const location = useLocation();
   const navigate = useNavigate();
-  const { state } = useQuote();
+  const { state, dispatch } = useQuote();
   const { openChat } = useAIChat();
   const { triggerHaptic } = useHapticFeedback();
   const { promo } = useActiveFinancingPromo();
@@ -144,44 +144,51 @@ export const UnifiedMobileBar: React.FC = () => {
     );
   }, [isMobile, location.pathname]);
 
-  const hasMotor = !!state.motor;
+  // Use preview motor if available (viewing modal), otherwise use selected motor
+  const displayMotor = state.previewMotor || state.motor;
+  const hasMotor = !!displayMotor;
+  const isPreview = !!state.previewMotor;
 
   // Calculate running total
   const runningTotal = useMemo(() => {
-    const motorPrice = state.motor?.price || state.motor?.basePrice || state.motor?.msrp || 0;
+    const motorPrice = displayMotor?.price || displayMotor?.basePrice || displayMotor?.msrp || 0;
     if (!motorPrice) return 0;
 
     let total = motorPrice;
 
-    if (state.boatInfo?.controlsOption) {
-      if (state.boatInfo.controlsOption === 'none') total += 1200;
-      else if (state.boatInfo.controlsOption === 'adapter') total += 125;
-    }
+    // Only add extras if not previewing (actual selected motor)
+    if (!isPreview) {
+      if (state.boatInfo?.controlsOption) {
+        if (state.boatInfo.controlsOption === 'none') total += 1200;
+        else if (state.boatInfo.controlsOption === 'adapter') total += 125;
+      }
 
-    const isTiller = state.motor?.model?.includes('TLR') || state.motor?.model?.includes('MH');
-    if (state.purchasePath === 'installed' && !isTiller) {
-      total += 450;
-    }
+      const isTiller = state.motor?.model?.includes('TLR') || state.motor?.model?.includes('MH');
+      if (state.purchasePath === 'installed' && !isTiller) {
+        total += 450;
+      }
 
-    if (state.installConfig?.installationCost) {
-      total += state.installConfig.installationCost;
-    }
+      if (state.installConfig?.installationCost) {
+        total += state.installConfig.installationCost;
+      }
 
-    if (state.fuelTankConfig?.tankCost) {
-      total += state.fuelTankConfig.tankCost;
-    }
+      if (state.fuelTankConfig?.tankCost) {
+        total += state.fuelTankConfig.tankCost;
+      }
 
-    if (state.warrantyConfig?.warrantyPrice) {
-      total += state.warrantyConfig.warrantyPrice;
-    }
+      if (state.warrantyConfig?.warrantyPrice) {
+        total += state.warrantyConfig.warrantyPrice;
+      }
 
-    if (state.tradeInInfo?.estimatedValue) {
-      total -= state.tradeInInfo.estimatedValue;
+      if (state.tradeInInfo?.estimatedValue) {
+        total -= state.tradeInInfo.estimatedValue;
+      }
     }
 
     return total;
   }, [
-    state.motor?.price, state.motor?.basePrice, state.motor?.msrp, state.motor?.model,
+    displayMotor?.price, displayMotor?.basePrice, displayMotor?.msrp,
+    isPreview, state.motor?.model,
     state.boatInfo?.controlsOption, state.purchasePath,
     state.installConfig?.installationCost, state.fuelTankConfig?.tankCost,
     state.warrantyConfig?.warrantyPrice, state.tradeInInfo?.estimatedValue
@@ -244,6 +251,10 @@ export const UnifiedMobileBar: React.FC = () => {
   };
 
   const getPrimaryLabel = (): string => {
+    // When previewing a motor on motor-selection, show Configure
+    if (isPreview && location.pathname === '/quote/motor-selection') {
+      return 'Configure';
+    }
     if (typeof pageConfig.primaryLabel === 'function') {
       return pageConfig.primaryLabel(state, hasMotor);
     }
@@ -277,14 +288,18 @@ export const UnifiedMobileBar: React.FC = () => {
 
   const handlePrimary = () => {
     triggerHaptic('light');
+    // If previewing a motor on selection page, select it first
+    if (isPreview && location.pathname === '/quote/motor-selection' && state.previewMotor) {
+      dispatch({ type: 'SET_MOTOR', payload: state.previewMotor });
+    }
     navigate(pageConfig.nextPath);
   };
 
   const handleOpenAI = () => {
     triggerHaptic('medium');
     setIdleSeconds(0);
-    const motorContext = state.motor?.hp 
-      ? `I'm configuring a ${state.motor.hp}HP ${state.motor.model}. ${pageConfig.aiMessage}`
+    const motorContext = displayMotor?.hp 
+      ? `I'm looking at a ${displayMotor.hp}HP ${displayMotor.model}. ${pageConfig.aiMessage}`
       : pageConfig.aiMessage;
     openChat(motorContext);
   };
@@ -314,11 +329,11 @@ export const UnifiedMobileBar: React.FC = () => {
     return '';
   };
   
-  const motorHP = state.motor?.hp;
-  const motorFamily = getMotorFamily(state.motor?.model);
+  const motorHP = displayMotor?.hp;
+  const motorFamily = getMotorFamily(displayMotor?.model);
   const compactMotorName = motorHP ? `${motorHP} HP ${motorFamily}`.trim() : '';
   
-  const displayTotal = runningTotal || state.motor?.price || state.motor?.basePrice || state.motor?.msrp || 0;
+  const displayTotal = runningTotal || displayMotor?.price || displayMotor?.basePrice || displayMotor?.msrp || 0;
 
   // Get contextual empty state message based on current page
   const getEmptyStateMessage = () => {
@@ -422,6 +437,12 @@ export const UnifiedMobileBar: React.FC = () => {
                   }}
                   className="h-1 rounded-full bg-gray-300 mb-0.5" 
                 />
+                {/* Preview indicator */}
+                {isPreview && (
+                  <span className="text-[10px] text-primary font-medium tracking-wide uppercase">
+                    Previewing
+                  </span>
+                )}
                 {/* Line 1: HP + Motor Family */}
                 <span className="text-sm font-semibold text-gray-900">
                   {compactMotorName || 'Motor Selected'}
