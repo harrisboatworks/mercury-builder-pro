@@ -60,7 +60,17 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
     const [isMinimized, setIsMinimized] = useState(false);
     const [messages, setMessages] = useState<Message[]>([]);
     const [inputText, setInputText] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoadingLocal, setIsLoadingLocal] = useState(false);
+    
+    // Import setIsLoading from GlobalAIChat to sync loading state
+    const { setIsLoading: setGlobalLoading } = require('@/components/chat/GlobalAIChat').useAIChat();
+    
+    // Sync local loading state with global context
+    const setIsLoading = (loading: boolean) => {
+      setIsLoadingLocal(loading);
+      setGlobalLoading(loading);
+    };
+    const isLoading = isLoadingLocal;
     const [conversationHistory, setConversationHistory] = useState<any[]>([]);
     const [showHistoryBanner, setShowHistoryBanner] = useState(false);
     const [hasInitialized, setHasInitialized] = useState(false);

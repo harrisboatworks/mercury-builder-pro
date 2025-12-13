@@ -6,6 +6,8 @@ interface AIChatContextType {
   openChat: (initialMessage?: string) => void;
   closeChat: () => void;
   isOpen: boolean;
+  isLoading: boolean;
+  setIsLoading: (loading: boolean) => void;
 }
 
 const AIChatContext = createContext<AIChatContextType | null>(null);
@@ -20,6 +22,7 @@ export const useAIChat = () => {
 
 export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [initialMessage, setInitialMessage] = useState<string | undefined>();
   const chatRef = useRef<EnhancedChatWidgetHandle>(null);
 
@@ -34,7 +37,7 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
   }, []);
 
   return (
-    <AIChatContext.Provider value={{ openChat, closeChat, isOpen }}>
+    <AIChatContext.Provider value={{ openChat, closeChat, isOpen, isLoading, setIsLoading }}>
       {children}
       
       {/* Floating AI Button */}

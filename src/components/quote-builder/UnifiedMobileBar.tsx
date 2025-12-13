@@ -194,7 +194,7 @@ export const UnifiedMobileBar: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
-  const { openChat } = useAIChat();
+  const { openChat, isOpen, isLoading } = useAIChat();
   const { triggerHaptic } = useHapticFeedback();
   const { promo } = useActiveFinancingPromo();
   
@@ -602,29 +602,52 @@ export const UnifiedMobileBar: React.FC = () => {
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
         {/* Always-Visible Tappable Prompt Bar */}
-        <button
+        <motion.button
           onClick={handleOpenAI}
-          className="w-full overflow-hidden text-left"
+          whileTap={{ scale: 0.98 }}
+          className="w-full overflow-hidden text-left relative"
         >
+          {/* Tap ripple effect overlay */}
+          <motion.span
+            initial={false}
+            className="absolute inset-0 bg-black/5 opacity-0 pointer-events-none"
+            whileTap={{ opacity: 1 }}
+            transition={{ duration: 0.15 }}
+          />
           <AnimatePresence mode="wait">
             <motion.div
-              key={activeNudge?.message || 'default-prompt'}
+              key={isLoading && isOpen ? 'typing' : (activeNudge?.message || 'default-prompt')}
               initial={{ opacity: 0, y: -5 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 5 }}
               transition={{ duration: 0.2 }}
               className={cn(
                 "px-4 py-2 border-b text-center transition-colors",
-                activeNudge?.type === 'tip' && "bg-gradient-to-r from-gray-50 to-gray-100/80 border-gray-200/60 text-gray-600 active:bg-gray-100",
-                activeNudge?.type === 'success' && "bg-gradient-to-r from-emerald-50 to-emerald-100/50 border-emerald-200/60 text-emerald-700 active:bg-emerald-100",
-                activeNudge?.type === 'celebration' && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary active:bg-primary/15",
-                activeNudge?.type === 'progress' && "bg-gradient-to-r from-amber-50 to-amber-100/50 border-amber-200/60 text-amber-700 active:bg-amber-100",
-                activeNudge?.type === 'social-proof' && "bg-gradient-to-r from-slate-50 to-slate-100/80 border-slate-200/60 text-slate-600 active:bg-slate-100",
-                !activeNudge && "bg-gray-50/80 border-gray-200/50 text-gray-500 active:bg-gray-100",
+                isLoading && isOpen && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
+                !isLoading && activeNudge?.type === 'tip' && "bg-gradient-to-r from-gray-50 to-gray-100/80 border-gray-200/60 text-gray-600",
+                !isLoading && activeNudge?.type === 'success' && "bg-gradient-to-r from-emerald-50 to-emerald-100/50 border-emerald-200/60 text-emerald-700",
+                !isLoading && activeNudge?.type === 'celebration' && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
+                !isLoading && activeNudge?.type === 'progress' && "bg-gradient-to-r from-amber-50 to-amber-100/50 border-amber-200/60 text-amber-700",
+                !isLoading && activeNudge?.type === 'social-proof' && "bg-gradient-to-r from-slate-50 to-slate-100/80 border-slate-200/60 text-slate-600",
+                !isLoading && !activeNudge && "bg-gray-50/80 border-gray-200/50 text-gray-500",
               )}
             >
-              <span className="text-xs font-medium inline-flex items-center">
-                {activeNudge ? (
+              <span className="text-xs font-medium inline-flex items-center justify-center">
+                {isLoading && isOpen ? (
+                  <>
+                    <span className="mr-1.5">AI is thinking</span>
+                    <span className="inline-flex gap-0.5">
+                      {[0, 1, 2].map((i) => (
+                        <motion.span
+                          key={i}
+                          className="w-1 h-1 bg-current rounded-full"
+                          animate={{ y: [0, -3, 0] }}
+                          transition={{ duration: 0.5, repeat: Infinity, delay: i * 0.12 }}
+                        />
+                      ))}
+                    </span>
+                  </>
+                ) : activeNudge ? (
                   <>
                     <NudgeIcon icon={activeNudge.icon} />
                     {activeNudge.message}
@@ -638,7 +661,7 @@ export const UnifiedMobileBar: React.FC = () => {
               </span>
             </motion.div>
           </AnimatePresence>
-        </button>
+        </motion.button>
 
         <div 
           className="flex flex-row items-center h-14 min-[375px]:h-16 keep-flex
