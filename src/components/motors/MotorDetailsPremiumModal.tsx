@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft } from "lucide-react";
+import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft, Bell } from "lucide-react";
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { CleanSpecSheetPDF } from './CleanSpecSheetPDF';
 import { supabase } from "../../integrations/supabase/client";
@@ -8,6 +8,7 @@ import { useIsMobile } from "../../hooks/use-mobile";
 import { toast } from "sonner";
 import { useScrollCoordination } from "../../hooks/useScrollCoordination";
 import { money } from "../../lib/money";
+import { PromoReminderModal } from "../quote-builder/PromoReminderModal";
 import { MotorImageGallery } from './MotorImageGallery';
 import { MonthlyPaymentDisplay } from '../quote-builder/MonthlyPaymentDisplay';
 import { 
@@ -184,6 +185,7 @@ export default function MotorDetailsPremiumModal({
   }, [hpValue, motor?.id]);
 
   const [calculatorOpen, setCalculatorOpen] = useState(false);
+  const [promoReminderOpen, setPromoReminderOpen] = useState(false);
 
   const handleCalculatePayment = () => {
     setCalculatorOpen(true);
@@ -665,6 +667,15 @@ export default function MotorDetailsPremiumModal({
                 Calculate Payment
               </button>
               
+              {/* Notify Me of Sales Button */}
+              <button
+                onClick={() => setPromoReminderOpen(true)}
+                className="w-full flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-foreground font-normal transition-colors py-2"
+              >
+                <Bell className="w-4 h-4" />
+                Notify me of sales
+              </button>
+              
               {/* Promo Badges */}
               <div className="space-y-2 border-t border-gray-100 pt-6">
                 {(() => {
@@ -731,6 +742,18 @@ export default function MotorDetailsPremiumModal({
           year: new Date().getFullYear(),
           price: price || 0,
           hp: hpValue
+        }}
+      />
+
+      {/* Promo Reminder Modal */}
+      <PromoReminderModal
+        isOpen={promoReminderOpen}
+        onClose={() => setPromoReminderOpen(false)}
+        motorId={motor?.id || null}
+        motorDetails={{
+          model: title,
+          horsepower: hpValue,
+          price: price || 0
         }}
       />
     </div>
