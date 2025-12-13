@@ -2,6 +2,7 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
+import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { LuxuryPriceDisplay } from '@/components/pricing/LuxuryPriceDisplay';
 import { StockBadge } from '@/components/inventory/StockBadge';
@@ -60,11 +61,21 @@ export default function MotorCardPreview({
 }) {
   const hpNum = typeof hp === "string" ? parseFloat(hp) : (typeof hp === "number" ? hp : undefined);
   const { promotions } = useActivePromotions();
+  const { dispatch } = useQuote();
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [galleryImages, setGalleryImages] = useState<string[]>([]);
   const isMobile = useIsMobile();
   const navigate = useNavigate();
+
+  // Dispatch preview motor when modal opens/closes
+  useEffect(() => {
+    if (showDetailsSheet && motor) {
+      dispatch({ type: 'SET_PREVIEW_MOTOR', payload: motor as any });
+    } else if (!showDetailsSheet) {
+      dispatch({ type: 'SET_PREVIEW_MOTOR', payload: null });
+    }
+  }, [showDetailsSheet, motor, dispatch]);
   
   // Get the best available image URL using priority logic
   const [imageInfo, setImageInfo] = useState<{ url: string }>({
