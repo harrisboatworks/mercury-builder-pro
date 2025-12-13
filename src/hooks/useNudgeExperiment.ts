@@ -166,9 +166,12 @@ export function useNudgeExperiment(
     experimentIdRef.current = null;
   }, [triggerType]);
 
+  // Defensive fallback for empty variants
+  const safeVariants = Array.isArray(variants) && variants.length > 0 ? variants : [{ id: 'default', message: '' }];
+  
   return {
-    variantId: selectedVariant?.variantId || variants[0]?.id || 'A',
-    message: selectedVariant?.message || variants[0]?.message || '',
+    variantId: selectedVariant?.variantId || safeVariants[0]?.id || 'A',
+    message: selectedVariant?.message || safeVariants[0]?.message || '',
     isGraduatedWinner: explorationMode === 'graduated',
     explorationMode,
     trackImpression,

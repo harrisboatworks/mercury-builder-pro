@@ -151,10 +151,14 @@ export const useBehaviorTriggers = (isChatOpen: boolean): BehaviorTriggerResult 
     }
   }, [location.pathname, triggerNudge]);
 
-  // Reset page time when route changes
+  // Reset page time and variants when route changes
   useEffect(() => {
     pageTimeRef.current = 0;
     scrollDepthRef.current = 0;
+    hasTriggeredRef.current = false;
+    setCurrentVariants([]);
+    setTriggerType(null);
+    setShouldShowNudge(false);
   }, [location.pathname]);
 
   // Time tracking
