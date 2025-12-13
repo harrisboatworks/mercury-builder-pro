@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { UnifiedInventoryDashboard } from '@/components/admin/UnifiedInventoryDashboard';
 import { RawHTMLViewer } from '@/components/admin/RawHTMLViewer';
 import { XMLDebugAnalyzer } from '@/components/admin/XMLDebugAnalyzer';
+import { ScrapeMotorSpecs } from '@/components/admin/ScrapeMotorSpecs';
 import AdminNav from '@/components/admin/AdminNav';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
@@ -183,6 +184,7 @@ export default function AdminInventory() {
             </CardContent>
           </Card>
           
+          <ScrapeMotorSpecs />
           <XMLDebugAnalyzer />
           <RawHTMLViewer />
           <UnifiedInventoryDashboard />
