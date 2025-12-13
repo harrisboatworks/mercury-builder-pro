@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
@@ -15,39 +15,8 @@ import { format } from 'date-fns';
 import useEmblaCarousel from 'embla-carousel-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
-// Curated testimonials emphasizing loyalty and long-term relationships
-const testimonials = [
-  {
-    quote: "My dad bought his first Merc from Harris in 1971. Still go there.",
-    name: "Tony Russo",
-    location: "Oshawa",
-    rating: 5
-  },
-  {
-    quote: "Drive past 3 dealers to get to Harris. Worth it.",
-    name: "Derek Thompson",
-    location: "Whitby",
-    rating: 5
-  },
-  {
-    quote: "Been dealing with Harris since the 80s. They know their stuff.",
-    name: "Jim Crawford",
-    location: "Peterborough",
-    rating: 5
-  },
-  {
-    quote: "Third generation buying from Harris. Reliable and honest service.",
-    name: "Rob Peterson",
-    location: "Cobourg",
-    rating: 5
-  },
-  {
-    quote: "Harris treats customers like family. Been going there for 20 years.",
-    name: "Linda Davies",
-    location: "Bowmanville",
-    rating: 5
-  }
-];
+import { generateDailyTestimonials, generateReviewCount } from '@/lib/activityGenerator';
+import { allTestimonials } from '@/lib/testimonialData';
 
 const csiAwardBadge = "/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png";
 
@@ -217,19 +186,30 @@ export default function Promotions() {
         clearInterval(interval);
       };
     }, [emblaApi, onSelect]);
+    // Generate daily testimonials deterministically
+    const dailyTestimonials = useMemo(() => 
+      generateDailyTestimonials(allTestimonials, 6), 
+      []
+    );
+    const reviewCount = useMemo(() => generateReviewCount(), []);
 
     return (
       <section className="bg-stone-50 py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground mb-12">
-            What Our Customers Say
-          </h2>
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
+              What Our Customers Say
+            </h2>
+            <p className="text-muted-foreground">
+              <span className="font-medium text-foreground">{reviewCount}+</span> five-star reviews from Ontario boaters
+            </p>
+          </div>
           
           <div className="relative">
             {/* Carousel */}
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex gap-6">
-                {testimonials.map((testimonial, index) => (
+                {dailyTestimonials.map((testimonial, index) => (
                   <div 
                     key={index}
                     className="flex-[0_0_100%] md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)] min-w-0"
@@ -248,10 +228,15 @@ export default function Promotions() {
                       </p>
                       
                       {/* Author */}
-                      <div className="text-sm mb-3">
+                      <div className="text-sm">
                         <span className="font-medium text-foreground">{testimonial.name}</span>
                         <span className="text-muted-foreground"> — {testimonial.location}</span>
                       </div>
+                      
+                      {/* Date */}
+                      <p className="text-xs text-muted-foreground mt-1 mb-3">
+                        {testimonial.dateLabel}
+                      </p>
                       
                       {/* Mercury Owner Badge */}
                       <div className="flex items-center gap-2 pt-3 border-t border-border">
@@ -281,7 +266,7 @@ export default function Promotions() {
 
           {/* Dots */}
           <div className="flex justify-center gap-2 mt-6">
-            {testimonials.map((_, index) => (
+            {dailyTestimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => emblaApi?.scrollTo(index)}
