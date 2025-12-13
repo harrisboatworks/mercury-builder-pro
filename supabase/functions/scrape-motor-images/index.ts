@@ -8,6 +8,7 @@ interface ScrapeOptions {
   hpMin?: number;
   hpMax?: number;
   batchSize?: number;
+  offset?: number;
   specificMotorId?: string;
 }
 
@@ -398,6 +399,7 @@ Deno.serve(async (req) => {
       hpMin: body.hpMin,
       hpMax: body.hpMax,
       batchSize: body.batchSize ?? 10,
+      offset: body.offset ?? 0,
       specificMotorId: body.specificMotorId,
     };
 
@@ -421,7 +423,9 @@ Deno.serve(async (req) => {
       }
     }
 
-    query = query.limit(options.batchSize);
+    // Apply offset and limit using range
+    const offset = options.offset ?? 0;
+    query = query.range(offset, offset + options.batchSize - 1);
 
     const { data: motors, error: fetchError } = await query;
 
