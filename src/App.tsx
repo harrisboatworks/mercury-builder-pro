@@ -77,6 +77,7 @@ const FinanceCalculator = lazy(() => import("./pages/FinanceCalculator"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Accessories = lazy(() => import("./pages/Accessories"));
 const NewQuote = lazy(() => import("./pages/NewQuote"));
+const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 
 // Test/Dev pages (low priority)
 const Dev = lazy(() => import("./pages/Dev"));
@@ -337,6 +338,9 @@ function AnimatedRoutes() {
         
         {/* Accessories Page */}
         <Route path="/accessories" element={<Accessories />} />
+        
+        {/* Unsubscribe Route */}
+        <Route path="/unsubscribe/:token" element={<Unsubscribe />} />
         
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />

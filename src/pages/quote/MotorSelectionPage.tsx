@@ -8,6 +8,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 import { useHpSuggestions } from '@/hooks/useHpSuggestions';
+import { useExitIntent } from '@/hooks/useExitIntent';
 import { HpSuggestionsDropdown } from '@/components/motors/HpSuggestionsDropdown';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
@@ -15,10 +16,10 @@ import { Button } from '@/components/ui/button';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { MotorRecommendationQuiz } from '@/components/quote-builder/MotorRecommendationQuiz';
+import { PromoReminderModal } from '@/components/quote-builder/PromoReminderModal';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
-// Removed obsolete pricing importer import
 
 // Database types
 interface DbMotor {
@@ -106,7 +107,28 @@ export default function MotorSelectionPage() {
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const [showQuiz, setShowQuiz] = useState(false);
-  // Remove selectedMotor state since we're not doing inline selection anymore
+  
+  // Exit intent for promo reminder
+  const { showExitIntent, dismiss: dismissExitIntent } = useExitIntent({
+    delay: 10000, // Show after 10 seconds on page
+    triggerOnce: true,
+    storageKey: 'promo_reminder_motor_selection'
+  });
+  
+  // Get the currently viewed motor for the promo modal
+  const exitIntentMotor = useMemo(() => {
+    // If user has selected a motor, use that
+    if (state.motor) {
+      return {
+        id: state.motor.id,
+        model: state.motor.model,
+        horsepower: state.motor.hp,
+        price: state.motor.price
+      };
+    }
+    // Otherwise use first motor in filtered list
+    return null;
+  }, [state.motor]);
 
   // Auto-trigger background image scraping for motors without images
   const imageScrapeStatus = useAutoImageScraping(motors.map(motor => ({
@@ -638,6 +660,23 @@ export default function MotorSelectionPage() {
           onClose={() => setShowQuiz(false)}
           motors={processedMotors}
           onSelectMotor={handleMotorSelect}
+        />
+        
+        {/* Exit Intent Promo Reminder Modal */}
+        <PromoReminderModal
+          isOpen={showExitIntent && !!exitIntentMotor}
+          onClose={dismissExitIntent}
+          motorId={exitIntentMotor?.id}
+          motorDetails={exitIntentMotor ? {
+            model: exitIntentMotor.model,
+            horsepower: exitIntentMotor.horsepower,
+            price: exitIntentMotor.price
+          } : undefined}
+          quoteConfig={state.motor ? {
+            motorId: state.motor.id,
+            boatInfo: state.boatInfo,
+            purchasePath: state.purchasePath
+          } : undefined}
         />
       </FinancingProvider>
     </PageTransition>

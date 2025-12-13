@@ -1,5 +1,5 @@
 export interface SMSTemplate {
-  type: 'hot_lead' | 'quote_confirmation' | 'follow_up' | 'reminder' | 'manual' | 'unmatched_motors';
+  type: 'hot_lead' | 'quote_confirmation' | 'follow_up' | 'reminder' | 'manual' | 'unmatched_motors' | 'promo_active' | 'promo_subscription';
   generateMessage: (data: any) => string;
 }
 
@@ -51,6 +51,24 @@ export const SMS_TEMPLATES: Record<string, SMSTemplate> = {
         .map(m => `- ${m.model_display || m.name}`)
         .join('\n');
       return `🔧 Mercury Inventory Alert\n\n${count} motors need matching review:\n${motorList}${count > 3 ? '\n...' : ''}\n\nReview: quote.harrisboatworks.ca/admin/stock-sync\n\n- Harris Boat Works`;
+    }
+  },
+
+  promo_active: {
+    type: 'promo_active',
+    generateMessage: (data) => {
+      const { customerName, motorModel, discountText, expiresIn, quoteUrl } = data;
+      const nameGreeting = customerName ? `, ${customerName}` : '';
+      const expiryNote = expiresIn ? ` Ends in ${expiresIn} days!` : '';
+      return `🎉 Great news${nameGreeting}!\n\nThe ${motorModel} is now ${discountText}.${expiryNote}\n\nView your quote: ${quoteUrl}\n\n- Harris Boat Works\n\nReply STOP to unsubscribe`;
+    }
+  },
+
+  promo_subscription: {
+    type: 'promo_subscription',
+    generateMessage: (data) => {
+      const { motorModel } = data;
+      return `Harris Boat Works: You're subscribed! We'll text you when ${motorModel} goes on sale. Reply STOP to unsubscribe.`;
     }
   }
 };
