@@ -196,7 +196,7 @@ export const UnifiedMobileBar: React.FC = () => {
         className="fixed bottom-0 left-0 right-0 z-[60] bg-white border-t border-gray-200 shadow-lg"
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
-        <div className="flex flex-row items-center h-16 px-3 gap-2">
+        <div className="flex flex-row items-center h-16 px-3 gap-2 keep-flex">
           {/* AI Button with label */}
           <button
             onClick={handleOpenAI}
