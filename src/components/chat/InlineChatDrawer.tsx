@@ -3,8 +3,7 @@ import { Button } from '@/components/ui/button';
 import { X, Send, MessageCircle, RefreshCw, ChevronDown } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Drawer, DrawerContent } from '@/components/ui/drawer';
+import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
 import { getContextualPrompts } from './getContextualPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
@@ -338,171 +337,205 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     }
   };
 
+  // Handle swipe down to close
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    if (info.offset.y > 100 || info.velocity.y > 500) {
+      onClose();
+    }
+  };
+
   return (
-    <Drawer 
-      open={isOpen} 
-      onOpenChange={(open) => !open && onClose()}
-      shouldScaleBackground={false}
-    >
-      <DrawerContent 
-        hideOverlay
-        bottomOffset="calc(5.5rem + env(safe-area-inset-bottom))"
-        className="mx-0 rounded-t-2xl focus:outline-none shadow-[0_-8px_30px_-12px_rgba(0,0,0,0.15)] border-t border-gray-200"
-        style={{ maxHeight: 'calc(70vh)' }}
-      >
-        {/* Chat Container */}
-        <div className="flex flex-col h-[60vh] max-h-[450px]">
-          {/* Header - Compact and premium */}
-          <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-white shrink-0">
-            <div className="flex items-center gap-3">
-              <div className="relative">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center shadow-sm">
-                  <MessageCircle className="w-4 h-4 text-white" />
-                </div>
-                <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-white" />
-              </div>
-              <div>
-                <h3 className="font-medium text-gray-900 text-sm">Mercury Expert</h3>
-                <p className="text-[11px] text-gray-500 font-light">Swipe down to close</p>
-              </div>
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          {/* Backdrop - tap to close */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[70] bg-black/20"
+            onClick={onClose}
+            style={{ bottom: 'calc(5rem + env(safe-area-inset-bottom))' }}
+          />
+          
+          {/* Chat Panel */}
+          <motion.div
+            initial={{ y: '100%', opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: '100%', opacity: 0 }}
+            transition={{ type: 'spring', damping: 28, stiffness: 350 }}
+            drag="y"
+            dragConstraints={{ top: 0, bottom: 0 }}
+            dragElastic={{ top: 0, bottom: 0.5 }}
+            onDragEnd={handleDragEnd}
+            className="fixed inset-x-0 z-[75] bg-white rounded-t-2xl shadow-[0_-8px_30px_-12px_rgba(0,0,0,0.2)] border-t border-gray-200"
+            style={{ 
+              bottom: 'calc(5rem + env(safe-area-inset-bottom))',
+              maxHeight: '70vh',
+              touchAction: 'none'
+            }}
+          >
+            {/* Drag handle */}
+            <div className="flex justify-center pt-2 pb-1 cursor-grab active:cursor-grabbing">
+              <div className="w-10 h-1 bg-gray-300 rounded-full" />
             </div>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={onClose}
-              className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 h-8 w-8 p-0 rounded-full transition-colors"
-            >
-              <ChevronDown className="w-5 h-5" />
-            </Button>
-          </div>
-
-          {/* History Banner */}
-          {showHistoryBanner && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              className="px-4 py-2 bg-gray-50 border-b border-gray-100 flex items-center justify-between shrink-0"
-            >
-              <p className="text-xs text-gray-500">
-                ✨ Continuing your chat...
-              </p>
-              <button
-                onClick={handleStartFresh}
-                className="flex items-center gap-1 text-xs text-gray-400 hover:text-gray-600 transition-colors"
-              >
-                <RefreshCw className="w-3 h-3" />
-                Start fresh
-              </button>
-            </motion.div>
-          )}
-
-          {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3 bg-gradient-to-b from-gray-50/30 to-white">
-            <AnimatePresence initial={false}>
-              {messages.map((message) => (
-                <motion.div
-                  key={message.id}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.15 }}
-                  className={`flex flex-col ${message.isUser ? 'items-end' : 'items-start'}`}
-                >
-                  <div
-                    className={cn(
-                      "max-w-[85%] px-3.5 py-2.5 text-[14px]",
-                      message.isUser
-                        ? 'bg-gray-900 text-white rounded-2xl rounded-br-md shadow-sm'
-                        : 'bg-white text-gray-800 rounded-2xl rounded-bl-md shadow-[0_1px_4px_-1px_rgba(0,0,0,0.08)] border border-gray-100'
-                    )}
-                  >
-                    {message.isStreaming && message.text === '' ? (
-                      <TypingIndicator />
-                    ) : (
-                      <p className="whitespace-pre-wrap leading-relaxed font-light">
-                        {message.text}
-                        {message.isStreaming && (
-                          <motion.span 
-                            className="inline-block w-0.5 h-4 bg-current ml-0.5"
-                            animate={{ opacity: [1, 0] }}
-                            transition={{ duration: 0.5, repeat: Infinity }}
-                          />
-                        )}
-                      </p>
-                    )}
+            
+            {/* Chat Container */}
+            <div className="flex flex-col h-[60vh] max-h-[420px]">
+              {/* Header - Compact and premium */}
+              <div className="flex items-center justify-between px-4 py-2 border-b border-gray-100 bg-white shrink-0">
+                <div className="flex items-center gap-3">
+                  <div className="relative">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center shadow-sm">
+                      <MessageCircle className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-white" />
                   </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900 text-sm">Mercury Expert</h3>
+                    <p className="text-[11px] text-gray-500 font-light">Swipe down to close</p>
+                  </div>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={onClose}
+                  className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 h-8 w-8 p-0 rounded-full transition-colors"
+                >
+                  <ChevronDown className="w-5 h-5" />
+                </Button>
+              </div>
 
-                  {/* Comparison Card */}
-                  {message.comparisonData && (
-                    <div className="mt-2 max-w-[85%]">
-                      <MotorComparisonCard 
-                        motor1={message.comparisonData.motor1}
-                        motor2={message.comparisonData.motor2}
-                        recommendation={message.comparisonData.recommendation}
-                      />
-                    </div>
-                  )}
-
-                  {/* Reactions for AI messages */}
-                  {!message.isUser && !message.isStreaming && message.id !== 'welcome' && (
-                    <div className="mt-1">
-                      <MessageReactions
-                        messageId={message.id}
-                        currentReaction={message.reaction || null}
-                        onReact={handleReaction}
-                      />
-                    </div>
-                  )}
-                </motion.div>
-              ))}
-            </AnimatePresence>
-            <div ref={messagesEndRef} />
-          </div>
-
-          {/* Suggested Prompts (only when few messages) */}
-          {messages.length <= 2 && !isLoading && (
-            <div className="px-4 py-2 border-t border-gray-100 bg-white shrink-0">
-              <div className="flex flex-wrap gap-1.5">
-                {contextualPrompts.slice(0, 3).map((prompt, index) => (
+              {/* History Banner */}
+              {showHistoryBanner && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  className="px-4 py-2 bg-gray-50 border-b border-gray-100 flex items-center justify-between shrink-0"
+                >
+                  <p className="text-xs text-gray-500">
+                    ✨ Continuing your chat...
+                  </p>
                   <button
-                    key={index}
-                    onClick={() => handleSend(prompt)}
-                    className="px-2.5 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 
-                      text-gray-700 rounded-full transition-colors font-light"
+                    onClick={handleStartFresh}
+                    className="flex items-center gap-1 text-xs text-gray-400 hover:text-gray-600 transition-colors"
                   >
-                    {prompt}
+                    <RefreshCw className="w-3 h-3" />
+                    Start fresh
                   </button>
-                ))}
+                </motion.div>
+              )}
+
+              {/* Messages Area */}
+              <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3 bg-gradient-to-b from-gray-50/30 to-white">
+                <AnimatePresence initial={false}>
+                  {messages.map((message) => (
+                    <motion.div
+                      key={message.id}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.15 }}
+                      className={`flex flex-col ${message.isUser ? 'items-end' : 'items-start'}`}
+                    >
+                      <div
+                        className={cn(
+                          "max-w-[85%] px-3.5 py-2.5 text-[14px]",
+                          message.isUser
+                            ? 'bg-gray-900 text-white rounded-2xl rounded-br-md shadow-sm'
+                            : 'bg-white text-gray-800 rounded-2xl rounded-bl-md shadow-[0_1px_4px_-1px_rgba(0,0,0,0.08)] border border-gray-100'
+                        )}
+                      >
+                        {message.isStreaming && message.text === '' ? (
+                          <TypingIndicator />
+                        ) : (
+                          <p className="whitespace-pre-wrap leading-relaxed font-light">
+                            {message.text}
+                            {message.isStreaming && (
+                              <motion.span 
+                                className="inline-block w-0.5 h-4 bg-current ml-0.5"
+                                animate={{ opacity: [1, 0] }}
+                                transition={{ duration: 0.5, repeat: Infinity }}
+                              />
+                            )}
+                          </p>
+                        )}
+                      </div>
+
+                      {/* Comparison Card */}
+                      {message.comparisonData && (
+                        <div className="mt-2 max-w-[85%]">
+                          <MotorComparisonCard 
+                            motor1={message.comparisonData.motor1}
+                            motor2={message.comparisonData.motor2}
+                            recommendation={message.comparisonData.recommendation}
+                          />
+                        </div>
+                      )}
+
+                      {/* Reactions for AI messages */}
+                      {!message.isUser && !message.isStreaming && message.id !== 'welcome' && (
+                        <div className="mt-1">
+                          <MessageReactions
+                            messageId={message.id}
+                            currentReaction={message.reaction || null}
+                            onReact={handleReaction}
+                          />
+                        </div>
+                      )}
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+                <div ref={messagesEndRef} />
+              </div>
+
+              {/* Suggested Prompts (only when few messages) */}
+              {messages.length <= 2 && !isLoading && (
+                <div className="px-4 py-2 border-t border-gray-100 bg-white shrink-0">
+                  <div className="flex flex-wrap gap-1.5">
+                    {contextualPrompts.slice(0, 3).map((prompt, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleSend(prompt)}
+                        className="px-2.5 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 
+                          text-gray-700 rounded-full transition-colors font-light"
+                      >
+                        {prompt}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Input Area - Horizontal layout */}
+              <div className="px-4 py-3 border-t border-gray-100 bg-white shrink-0">
+                <div className="flex flex-row items-center gap-2 bg-gray-50 rounded-xl border border-gray-200 px-3 py-2">
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    value={inputText}
+                    onChange={(e) => setInputText(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                    placeholder="Ask anything..."
+                    disabled={isLoading}
+                    className="flex-1 min-w-0 bg-transparent border-none focus:outline-none 
+                      text-sm text-gray-900 placeholder:text-gray-400 font-light h-8"
+                  />
+                  <Button
+                    size="sm"
+                    onClick={() => handleSend()}
+                    disabled={!inputText.trim() || isLoading}
+                    className="h-8 w-8 p-0 rounded-lg bg-gray-900 hover:bg-gray-800 
+                      disabled:opacity-40 disabled:bg-gray-400 shrink-0 flex items-center justify-center"
+                  >
+                    <Send className="h-4 w-4" />
+                  </Button>
+                </div>
               </div>
             </div>
-          )}
-
-          {/* Input Area - Horizontal layout */}
-          <div className="px-4 py-3 border-t border-gray-100 bg-white shrink-0">
-            <div className="flex items-center gap-2 bg-gray-50 rounded-xl border border-gray-200 px-3 py-2">
-              <input
-                ref={inputRef}
-                type="text"
-                value={inputText}
-                onChange={(e) => setInputText(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Ask anything..."
-                disabled={isLoading}
-                className="flex-1 min-w-0 bg-transparent border-none focus:outline-none 
-                  text-sm text-gray-900 placeholder:text-gray-400 font-light h-8"
-              />
-              <Button
-                size="sm"
-                onClick={() => handleSend()}
-                disabled={!inputText.trim() || isLoading}
-                className="h-8 w-8 p-0 rounded-lg bg-gray-900 hover:bg-gray-800 
-                  disabled:opacity-40 disabled:bg-gray-400 shrink-0 flex items-center justify-center"
-              >
-                <Send className="h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </DrawerContent>
-    </Drawer>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
   );
 };
