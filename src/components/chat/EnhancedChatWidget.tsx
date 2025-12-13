@@ -503,9 +503,9 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                   </motion.div>
                 )}
 
-                {/* Input Area */}
-                <div className="px-4 py-4 bg-white border-t border-gray-100">
-                  <div className="flex items-center gap-2 bg-gray-50 rounded-full px-2 py-1 focus-within:ring-2 focus-within:ring-gray-200 transition-shadow">
+                {/* Input Area - Compact */}
+                <div className="px-3 py-2 bg-white border-t border-gray-100">
+                  <div className="flex items-center gap-2 bg-gray-50 rounded-full px-3 h-11 focus-within:ring-2 focus-within:ring-gray-200 transition-shadow">
                     <input
                       ref={inputRef}
                       type="text"
@@ -513,15 +513,15 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                       onChange={(e) => setInputText(e.target.value)}
                       onKeyPress={handleKeyPress}
                       placeholder="Ask anything..."
-                      className="flex-1 px-3 py-2.5 bg-transparent border-0 focus:outline-none text-[14px] text-gray-800 placeholder:text-gray-400 font-light"
+                      className="flex-1 px-1 py-0 h-full bg-transparent border-0 focus:outline-none text-[14px] text-gray-800 placeholder:text-gray-400 font-light"
                       disabled={isLoading}
                     />
                     <Button
                       onClick={() => handleSend()}
                       disabled={!inputText.trim() || isLoading}
-                      className="h-9 w-9 p-0 rounded-full bg-gray-900 hover:bg-gray-800 text-white transition-all duration-200 disabled:opacity-40 disabled:bg-gray-300"
+                      className="h-8 w-8 p-0 rounded-full bg-gray-900 hover:bg-gray-800 text-white transition-all duration-200 disabled:opacity-40 disabled:bg-gray-300"
                     >
-                      <Send className="w-4 h-4" />
+                      <Send className="w-3.5 h-3.5" />
                     </Button>
                   </div>
                 </div>

@@ -589,7 +589,12 @@ export const UnifiedMobileBar: React.FC = () => {
           )}
         </AnimatePresence>
 
-        <div className="flex flex-row items-center h-16 px-3 gap-2 keep-flex">
+        <div 
+          className="flex flex-row items-center h-14 min-[375px]:h-16 keep-flex
+            px-2 min-[375px]:px-3 min-[428px]:px-4
+            gap-1.5 min-[375px]:gap-2 min-[428px]:gap-3"
+          style={{ paddingLeft: 'max(0.5rem, env(safe-area-inset-left))', paddingRight: 'max(0.5rem, env(safe-area-inset-right))' }}
+        >
           {/* AI Button - Breathing animation */}
           <motion.button
             whileTap={{ scale: 0.92 }}
@@ -603,13 +608,14 @@ export const UnifiedMobileBar: React.FC = () => {
               }
             }}
             onClick={handleOpenAI}
-            className="flex flex-col items-center justify-center h-11 w-11 shrink-0 
+            className="flex flex-col items-center justify-center shrink-0 
+              h-10 w-10 min-[375px]:h-11 min-[375px]:w-11
               rounded-xl bg-gradient-to-br from-primary/15 to-primary/5
               border border-primary/20"
             aria-label="Ask AI assistant"
           >
-            <MessageCircle className="h-4.5 w-4.5 text-primary" />
-            <span className="text-[9px] font-semibold text-primary/80 mt-0.5">AI</span>
+            <MessageCircle className="h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5 text-primary" />
+            <span className="text-[8px] min-[375px]:text-[9px] font-semibold text-primary/80 mt-0.5">AI</span>
           </motion.button>
 
           {/* Center: Motor Info Card (tappable) or Prompt */}
@@ -618,7 +624,7 @@ export const UnifiedMobileBar: React.FC = () => {
             transition={springConfig}
             onClick={handleOpenDrawer}
             disabled={!hasMotor}
-            className="flex-1 min-w-0 flex flex-col items-center justify-center py-1.5 px-3 
+            className="flex-1 min-w-0 flex flex-col items-center justify-center py-1 px-2 min-[375px]:py-1.5 min-[375px]:px-3 
               rounded-xl bg-gray-50/80 border border-gray-200/60
               disabled:opacity-50"
           >
@@ -628,27 +634,27 @@ export const UnifiedMobileBar: React.FC = () => {
                 <motion.div 
                   animate={{ 
                     opacity: [0.4, 0.7, 0.4],
-                    width: ['32px', '40px', '32px']
+                    width: ['24px', '32px', '24px']
                   }}
                   transition={{ 
                     duration: 2.5, 
                     repeat: Infinity, 
                     ease: "easeInOut" 
                   }}
-                  className="h-1 rounded-full bg-gray-300 mb-0.5" 
+                  className="h-0.5 min-[375px]:h-1 rounded-full bg-gray-300 mb-0.5" 
                 />
                 {/* Preview indicator */}
                 {isPreview && (
-                  <span className="text-[10px] text-primary font-medium tracking-wide uppercase">
+                  <span className="text-[9px] min-[375px]:text-[10px] text-primary font-medium tracking-wide uppercase">
                     Previewing
                   </span>
                 )}
                 {/* Line 1: HP + Motor Family */}
-                <span className="text-sm font-semibold text-gray-900">
+                <span className="text-xs min-[375px]:text-sm font-semibold text-gray-900 truncate max-w-full">
                   {compactMotorName || 'Motor Selected'}
                 </span>
                 {/* Line 2: Animated Price + Monthly */}
-                <div className="flex items-center gap-1.5 text-xs">
+                <div className="flex items-center gap-1 min-[375px]:gap-1.5 text-[10px] min-[375px]:text-xs">
                   <motion.span 
                     key={displayTotal}
                     initial={{ scale: 1.15, color: '#22c55e' }}
@@ -660,8 +666,8 @@ export const UnifiedMobileBar: React.FC = () => {
                   </motion.span>
                   {monthlyPayment > 0 && (
                     <>
-                      <span className="text-gray-300">•</span>
-                      <span className="text-gray-500">≈{money(monthlyPayment)}/mo</span>
+                      <span className="text-gray-300 hidden min-[375px]:inline">•</span>
+                      <span className="text-gray-500 hidden min-[375px]:inline">≈{money(monthlyPayment)}/mo</span>
                     </>
                   )}
                   <ChevronUp className={`h-3 w-3 text-gray-400 transition-transform duration-200 ${isDrawerOpen ? 'rotate-180' : ''}`} />
@@ -669,11 +675,11 @@ export const UnifiedMobileBar: React.FC = () => {
               </>
             ) : (
               <div className="flex flex-col items-center">
-                <span className="text-sm text-gray-600 flex items-center gap-1.5">
-                  <Sparkles className="h-4 w-4" />
+                <span className="text-xs min-[375px]:text-sm text-gray-600 flex items-center gap-1 min-[375px]:gap-1.5">
+                  <Sparkles className="h-3.5 w-3.5 min-[375px]:h-4 min-[375px]:w-4" />
                   {getEmptyStateMessage()}
                 </span>
-                <span className="text-[10px] text-gray-400 mt-0.5">Tap to explore</span>
+                <span className="text-[9px] min-[375px]:text-[10px] text-gray-400 mt-0.5">Tap to explore</span>
               </div>
             )}
           </motion.button>
@@ -683,12 +689,13 @@ export const UnifiedMobileBar: React.FC = () => {
             whileTap={{ scale: 0.92 }}
             transition={springConfig}
             onClick={handleOpenContact}
-            className="flex flex-col items-center justify-center h-11 w-11 shrink-0 
+            className="flex flex-col items-center justify-center shrink-0 
+              h-10 w-10 min-[375px]:h-11 min-[375px]:w-11
               rounded-xl hover:bg-gray-100/80"
             aria-label="Contact us"
           >
-            <Phone className="h-4.5 w-4.5 text-gray-500" />
-            <span className="text-[9px] font-medium text-gray-500 mt-0.5">Contact</span>
+            <Phone className="h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5 text-gray-500" />
+            <span className="text-[8px] min-[375px]:text-[9px] font-medium text-gray-500 mt-0.5">Contact</span>
           </motion.button>
 
           {/* Primary CTA - Smart contextual label */}
@@ -698,14 +705,15 @@ export const UnifiedMobileBar: React.FC = () => {
               transition={springConfig}
               onClick={handlePrimary}
               disabled={!hasMotor}
-              className="shrink-0 h-11 px-4 rounded-xl text-sm font-semibold
+              className="shrink-0 rounded-xl font-semibold
+                h-10 px-2.5 text-xs min-[375px]:h-11 min-[375px]:px-3 min-[375px]:text-sm min-[428px]:px-4
                 bg-gray-900 text-white 
                 shadow-lg shadow-gray-900/20
                 disabled:opacity-40 disabled:bg-gray-400 disabled:shadow-none
-                flex items-center gap-1.5"
+                flex items-center gap-1"
             >
               {getPrimaryLabel()}
-              <ArrowRight className="h-3.5 w-3.5" />
+              <ArrowRight className="h-3 w-3 min-[375px]:h-3.5 min-[375px]:w-3.5" />
             </motion.button>
           )}
         </div>
