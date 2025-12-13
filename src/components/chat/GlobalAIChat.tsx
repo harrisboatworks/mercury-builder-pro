@@ -52,6 +52,7 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
         isOpen={isOpen}
         onClose={closeChat}
         initialMessage={initialMessage}
+        onLoadingChange={setIsLoading}
       />
     </AIChatContext.Provider>
   );

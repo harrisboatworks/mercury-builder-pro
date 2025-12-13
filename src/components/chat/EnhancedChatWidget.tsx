@@ -34,6 +34,7 @@ interface EnhancedChatWidgetProps {
   isOpen: boolean;
   onClose: () => void;
   initialMessage?: string;
+  onLoadingChange?: (loading: boolean) => void;
 }
 
 // Typing indicator with bouncing dots
@@ -56,20 +57,17 @@ const TypingIndicator = () => (
 );
 
 export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedChatWidgetProps>(
-  ({ isOpen, onClose, initialMessage }, ref) => {
+  ({ isOpen, onClose, initialMessage, onLoadingChange }, ref) => {
     const [isMinimized, setIsMinimized] = useState(false);
     const [messages, setMessages] = useState<Message[]>([]);
     const [inputText, setInputText] = useState('');
     const [isLoadingLocal, setIsLoadingLocal] = useState(false);
     
-    // Import setIsLoading from GlobalAIChat to sync loading state
-    const { setIsLoading: setGlobalLoading } = require('@/components/chat/GlobalAIChat').useAIChat();
-    
-    // Sync local loading state with global context
-    const setIsLoading = (loading: boolean) => {
+    // Sync local loading state with parent context
+    const setIsLoading = useCallback((loading: boolean) => {
       setIsLoadingLocal(loading);
-      setGlobalLoading(loading);
-    };
+      onLoadingChange?.(loading);
+    }, [onLoadingChange]);
     const isLoading = isLoadingLocal;
     const [conversationHistory, setConversationHistory] = useState<any[]>([]);
     const [showHistoryBanner, setShowHistoryBanner] = useState(false);
