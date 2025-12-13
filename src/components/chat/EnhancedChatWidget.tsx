@@ -1,11 +1,13 @@
-import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
+import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { X, Send, Minimize2, Sparkles, Loader2 } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
+import { getContextualPrompts } from './getContextualPrompts';
+import { MotorComparisonCard } from './MotorComparisonCard';
 
 interface Message {
   id: string;
@@ -13,6 +15,11 @@ interface Message {
   isUser: boolean;
   timestamp: Date;
   isStreaming?: boolean;
+  comparisonData?: {
+    motor1: { model: string; hp: number; price: number };
+    motor2: { model: string; hp: number; price: number };
+    recommendation?: string;
+  };
 }
 
 export interface EnhancedChatWidgetHandle {
@@ -52,6 +59,16 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
         inputRef.current.focus();
       }
     }, [isOpen, isMinimized]);
+
+    // Get contextual prompts based on motor and page
+    const contextualPrompts = useMemo(() => {
+      const motor = state.motor ? {
+        model: state.motor.model || '',
+        hp: state.motor.hp || 0
+      } : null;
+      
+      return getContextualPrompts(motor, state.boatInfo, location.pathname);
+    }, [state.motor, state.boatInfo, location.pathname]);
 
     // Get contextual welcome message
     const getWelcomeMessage = (): string => {
@@ -116,62 +133,75 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
         isStreaming: true
       }]);
 
+      // Check if this is a comparison query
+      const comparison = detectComparisonQuery(text.trim());
+
       try {
-        const { data, error } = await supabase.functions.invoke('ai-chatbot-stream', {
-          body: {
-            message: text.trim(),
-            conversationHistory,
-            context: {
-              currentMotor: state.motor ? {
-                model: state.motor.model,
-                hp: state.motor.hp,
-                price: state.motor.msrp || state.motor.price
-              } : null,
-              currentPage: location.pathname
-            }
+        // Use streaming with typewriter effect
+        await streamChat({
+          message: text.trim(),
+          conversationHistory,
+          context: {
+            currentMotor: state.motor ? {
+              model: state.motor.model,
+              hp: state.motor.hp,
+              price: state.motor.msrp || state.motor.price
+            } : null,
+            currentPage: location.pathname,
+            boatInfo: state.boatInfo
+          },
+          onDelta: (chunk) => {
+            // Update message with each new chunk (typewriter effect)
+            setMessages(prev => prev.map(msg => 
+              msg.id === streamingId 
+                ? { ...msg, text: msg.text + chunk, isStreaming: true }
+                : msg
+            ));
+            scrollToBottom();
+          },
+          onDone: (fullResponse) => {
+            // Mark streaming as complete
+            setMessages(prev => prev.map(msg => 
+              msg.id === streamingId 
+                ? { ...msg, isStreaming: false }
+                : msg
+            ));
+            
+            // Update conversation history
+            setConversationHistory(prev => [
+              ...prev,
+              { role: 'user', content: text.trim() },
+              { role: 'assistant', content: fullResponse }
+            ]);
+            
+            setIsLoading(false);
+          },
+          onError: (error) => {
+            console.error('Stream error:', error);
+            setMessages(prev => prev.map(msg => 
+              msg.id === streamingId 
+                ? { 
+                    ...msg, 
+                    text: "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.",
+                    isStreaming: false 
+                  }
+                : msg
+            ));
+            setIsLoading(false);
           }
         });
 
-        if (error) throw error;
-
-        // Update streaming message with final content
-        setMessages(prev => prev.map(msg => 
-          msg.id === streamingId 
-            ? { ...msg, text: data.reply, isStreaming: false }
-            : msg
-        ));
-        
-        setConversationHistory(data.conversationHistory || []);
-
       } catch (error) {
         console.error('Chat error:', error);
-        
-        // Fallback to non-streaming endpoint
-        try {
-          const { data, error: fallbackError } = await supabase.functions.invoke('ai-chatbot', {
-            body: { message: text.trim(), conversationHistory }
-          });
-
-          if (fallbackError) throw fallbackError;
-
-          setMessages(prev => prev.map(msg => 
-            msg.id === streamingId 
-              ? { ...msg, text: data.reply, isStreaming: false }
-              : msg
-          ));
-          setConversationHistory(data.conversationHistory || []);
-        } catch (fallbackErr) {
-          setMessages(prev => prev.map(msg => 
-            msg.id === streamingId 
-              ? { 
-                  ...msg, 
-                  text: "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.",
-                  isStreaming: false 
-                }
-              : msg
-          ));
-        }
-      } finally {
+        setMessages(prev => prev.map(msg => 
+          msg.id === streamingId 
+            ? { 
+                ...msg, 
+                text: "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.",
+                isStreaming: false 
+              }
+            : msg
+        ));
         setIsLoading(false);
       }
     };
@@ -253,15 +283,27 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                             : 'bg-muted text-foreground rounded-bl-md'
                         }`}
                       >
-                        {message.isStreaming ? (
+                        {message.isStreaming && message.text === '' ? (
                           <div className="flex items-center gap-2">
                             <Loader2 className="w-4 h-4 animate-spin" />
                             <span className="text-sm">Thinking...</span>
                           </div>
                         ) : (
-                          <p className="text-sm whitespace-pre-wrap leading-relaxed">
-                            {message.text}
-                          </p>
+                          <>
+                            <p className="text-sm whitespace-pre-wrap leading-relaxed">
+                              {message.text}
+                              {message.isStreaming && (
+                                <span className="inline-block w-1.5 h-4 bg-current ml-0.5 animate-pulse" />
+                              )}
+                            </p>
+                            {message.comparisonData && (
+                              <MotorComparisonCard
+                                motor1={message.comparisonData.motor1}
+                                motor2={message.comparisonData.motor2}
+                                recommendation={message.comparisonData.recommendation}
+                              />
+                            )}
+                          </>
                         )}
                       </div>
                     </div>
@@ -269,16 +311,12 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                   <div ref={messagesEndRef} />
                 </div>
 
-                {/* Suggested Questions (for first interaction) */}
+                {/* Suggested Questions (contextual) */}
                 {messages.length <= 1 && !isLoading && (
                   <div className="px-4 pb-2">
                     <p className="text-xs text-muted-foreground mb-2">Quick questions:</p>
                     <div className="flex flex-wrap gap-2">
-                      {[
-                        "What motor fits my boat?",
-                        "Current promotions?",
-                        "Financing options?"
-                      ].map((q) => (
+                      {contextualPrompts.map((q) => (
                         <button
                           key={q}
                           onClick={() => handleSend(q)}
