@@ -350,7 +350,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
             damping: 28,
             mass: 0.8
           }}
-          className="fixed bottom-4 right-4 left-4 sm:left-auto sm:w-[380px] z-50"
+          className="fixed bottom-20 right-4 left-4 sm:bottom-4 sm:left-auto sm:w-[380px] z-[70]"
         >
           <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-[0_8px_60px_-15px_rgba(0,0,0,0.2)] border border-gray-200/50 overflow-hidden">
             

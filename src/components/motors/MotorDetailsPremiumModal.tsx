@@ -229,7 +229,7 @@ export default function MotorDetailsPremiumModal({
               scrollContainerRef.current?.scrollTo(0, 0);
             }}>
               {/* Mobile/Tablet Header */}
-              <div className="lg:hidden sticky top-0 z-40 bg-white shadow-sm">
+              <div className="lg:hidden sticky top-0 z-50 bg-white shadow-md">
                 {/* Prominent Mobile Back Header */}
                 <div className="flex justify-start items-center p-4 border-b border-gray-100">
                   <button 
@@ -249,7 +249,7 @@ export default function MotorDetailsPremiumModal({
                 </div>
                 
                 {/* 3. Tabs - separate section below name */}
-                <TabsList className="w-full justify-start border-b border-gray-200 rounded-none bg-white p-0 h-auto">
+                <TabsList className="w-full justify-start border-b border-gray-200 rounded-none bg-white p-0 h-auto relative z-50">
                   <TabsTrigger 
                     value="overview" 
                     className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
@@ -278,7 +278,7 @@ export default function MotorDetailsPremiumModal({
               </div>
 
               {/* Desktop Header */}
-              <div className="hidden lg:block sticky top-0 z-40 bg-white shadow-sm">
+              <div className="hidden lg:block sticky top-0 z-50 bg-white shadow-md">
                 <div className="p-6 pb-0 border-b border-gray-100 bg-white">
                   <button 
                     onClick={onClose} 

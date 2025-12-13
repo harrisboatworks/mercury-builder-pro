@@ -238,9 +238,8 @@ export const UnifiedMobileBar: React.FC = () => {
       {/* Unified Mobile Bar - Premium Glass-Morphism Design */}
       <div
         className="fixed bottom-0 left-0 right-0 z-[60] 
-          bg-white/85 backdrop-blur-xl 
-          border-t border-white/60 
-          shadow-[0_-4px_30px_rgba(0,0,0,0.1)]"
+          bg-white border-t border-gray-200
+          shadow-[0_-2px_20px_rgba(0,0,0,0.06)]"
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
         <div className="flex flex-row items-center h-16 px-3 gap-2 keep-flex">
@@ -314,19 +313,21 @@ export const UnifiedMobileBar: React.FC = () => {
             <span className="text-[9px] font-medium text-gray-500 mt-0.5">Contact</span>
           </motion.button>
 
-          {/* Primary CTA - Luxury black button */}
-          <motion.button
-            whileTap={{ scale: 0.95 }}
-            transition={springConfig}
-            onClick={handlePrimary}
-            disabled={!hasMotor}
-            className="shrink-0 h-11 px-5 rounded-xl text-sm font-semibold
-              bg-gray-900 text-white 
-              shadow-lg shadow-gray-900/20
-              disabled:opacity-40 disabled:bg-gray-400 disabled:shadow-none"
-          >
-            {pageConfig.primaryLabel}
-          </motion.button>
+          {/* Primary CTA - Luxury black button (hidden on motor-selection when no motor) */}
+          {(hasMotor || location.pathname !== '/quote/motor-selection') && (
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              transition={springConfig}
+              onClick={handlePrimary}
+              disabled={!hasMotor}
+              className="shrink-0 h-11 px-5 rounded-xl text-sm font-semibold
+                bg-gray-900 text-white 
+                shadow-lg shadow-gray-900/20
+                disabled:opacity-40 disabled:bg-gray-400 disabled:shadow-none"
+            >
+              {pageConfig.primaryLabel}
+            </motion.button>
+          )}
         </div>
       </div>
 
