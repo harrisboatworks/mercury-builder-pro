@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ChevronUp, MessageCircle, Phone, Sparkles, ArrowRight } from 'lucide-react';
+import { ChevronUp, MessageCircle, Phone, Sparkles, ArrowRight, Shield, Award, DollarSign, Check, Flag, Heart, RefreshCw } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAIChat } from '@/components/chat/GlobalAIChat';
@@ -11,61 +11,152 @@ import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { MobileQuoteDrawer } from './MobileQuoteDrawer';
 import { ContactModal } from '@/components/ui/contact-button';
+import { cn } from '@/lib/utils';
 
-// Page-specific configuration for button labels and AI messages
+// Nudge types for different visual treatments
+type NudgeType = 'tip' | 'success' | 'celebration' | 'progress' | 'social-proof' | 'info';
+
+interface NudgeMessage {
+  delay: number;
+  message: string;
+  icon?: string;
+}
+
+interface PageNudges {
+  idle: NudgeMessage[];
+  withSelection?: string;
+  withoutSelection?: string;
+  encouragement?: string;
+  contextHint?: string;
+}
+
 interface PageConfig {
   primaryLabel: string | ((state: any, hasMotor: boolean) => string);
   nextPath: string;
   aiMessage: string;
-  idleNudge?: string;
+  nudges: PageNudges;
 }
 
+// Rich nudge content for each page
 const PAGE_CONFIG: Record<string, PageConfig> = {
   '/quote/motor-selection': {
     primaryLabel: 'Configure',
     nextPath: '/quote/options',
     aiMessage: 'Help me find the right motor for my boat',
-    idleNudge: 'Not sure which motor? Tap AI →'
+    nudges: {
+      idle: [
+        { delay: 15, message: 'Not sure which motor? Tap AI →', icon: 'sparkles' },
+        { delay: 25, message: "We'll match the perfect motor to your boat", icon: 'heart' },
+        { delay: 40, message: '60 years of Mercury expertise at your service', icon: 'award' },
+      ],
+      encouragement: "Excellent choice! Let's customize it",
+      contextHint: 'Great specs for your boat type',
+    }
   },
   '/quote/options': {
     primaryLabel: (state) => state.selectedPackage ? 'Continue' : 'Skip Options',
     nextPath: '/quote/purchase-path',
     aiMessage: 'Need help choosing options or accessories?',
-    idleNudge: 'Packages include warranty & accessories'
+    nudges: {
+      idle: [
+        { delay: 15, message: 'Packages save you money vs à la carte', icon: 'dollar' },
+        { delay: 25, message: 'Complete includes everything for peace of mind', icon: 'shield' },
+        { delay: 40, message: 'Not sure? AI can compare packages for you →', icon: 'sparkles' },
+      ],
+      withSelection: 'Smart choice! Full protection included',
+      withoutSelection: 'Most customers choose Complete for worry-free boating',
+      encouragement: 'Perfect package! Moving forward →',
+    }
   },
   '/quote/purchase-path': {
     primaryLabel: 'Boat Info',
     nextPath: '/quote/boat-info',
     aiMessage: 'Need help choosing between installation options?',
-    idleNudge: 'Most customers choose professional install'
+    nudges: {
+      idle: [
+        { delay: 15, message: 'Most customers choose professional install', icon: 'check' },
+        { delay: 25, message: 'We handle permits, rigging & sea trials', icon: 'shield' },
+        { delay: 40, message: 'Our techs average 15+ years experience', icon: 'award' },
+      ],
+      encouragement: "Great! Let's get your boat details",
+    }
   },
   '/quote/boat-info': {
     primaryLabel: 'Continue',
     nextPath: '/quote/trade-in',
-    aiMessage: 'Questions about boat compatibility or controls?'
+    aiMessage: 'Questions about boat compatibility or controls?',
+    nudges: {
+      idle: [
+        { delay: 15, message: 'This helps us ensure a perfect fit', icon: 'check' },
+        { delay: 25, message: 'Compatibility matters for performance & safety', icon: 'shield' },
+        { delay: 40, message: 'Questions? Tap AI for expert guidance →', icon: 'sparkles' },
+      ],
+      encouragement: 'Perfect fit confirmed! Almost there →',
+    }
   },
   '/quote/trade-in': {
     primaryLabel: (state) => state.tradeInInfo?.estimatedValue ? 'Apply Trade-In' : 'Skip Trade-In',
     nextPath: '/quote/installation',
     aiMessage: 'Curious about trade-in values or the process?',
-    idleNudge: 'Have a motor to trade? Get instant value'
+    nudges: {
+      idle: [
+        { delay: 15, message: 'Have a motor to trade? Get instant value', icon: 'refresh' },
+        { delay: 25, message: 'Trade-ins reduce your upfront cost', icon: 'dollar' },
+        { delay: 40, message: 'We accept most outboard motors', icon: 'check' },
+      ],
+      withSelection: "Nice! That's ${value} toward your new motor",
+      withoutSelection: 'No trade-in? No problem →',
+      encouragement: 'Great savings applied!',
+    }
   },
   '/quote/installation': {
     primaryLabel: 'Continue',
     nextPath: '/quote/fuel-tank',
-    aiMessage: 'Questions about installation or rigging?'
+    aiMessage: 'Questions about installation or rigging?',
+    nudges: {
+      idle: [
+        { delay: 15, message: 'Professional installation includes sea trial', icon: 'check' },
+        { delay: 25, message: 'Full rigging & setup by certified techs', icon: 'shield' },
+        { delay: 40, message: 'Average install time: 4-6 hours', icon: 'award' },
+      ],
+      encouragement: 'Expert installation confirmed!',
+    }
   },
   '/quote/fuel-tank': {
     primaryLabel: 'View Summary',
     nextPath: '/quote/summary',
-    aiMessage: 'Need help choosing a fuel tank size?'
+    aiMessage: 'Need help choosing a fuel tank size?',
+    nudges: {
+      idle: [
+        { delay: 15, message: 'Tank size affects your range on the water', icon: 'check' },
+        { delay: 25, message: "We'll recommend the right fit for your boat", icon: 'heart' },
+        { delay: 40, message: 'Larger tanks = fewer fill-ups', icon: 'dollar' },
+      ],
+      encouragement: 'Ready for the water! Final step →',
+    }
   },
   '/quote/schedule': {
     primaryLabel: 'Submit Quote',
     nextPath: '/quote/summary',
-    aiMessage: 'Questions about scheduling or what happens next?'
+    aiMessage: 'Questions about scheduling or what happens next?',
+    nudges: {
+      idle: [
+        { delay: 15, message: 'Review your quote and submit when ready', icon: 'check' },
+        { delay: 25, message: 'Questions? Tap AI or call us', icon: 'sparkles' },
+        { delay: 40, message: 'We typically respond within 24 hours', icon: 'award' },
+      ],
+      encouragement: "You're all set!",
+    }
   }
 };
+
+// Social proof messages (shown occasionally)
+const SOCIAL_PROOF_NUDGES = [
+  '127+ quotes generated this month',
+  'Trusted by Ontario boaters since 1947',
+  'CSI 5-Star Award winner',
+  'Mercury Dealer of the Year',
+];
 
 // Pages where the unified bar should NOT show
 const HIDE_ON_PAGES = [
@@ -247,7 +338,12 @@ export const UnifiedMobileBar: React.FC = () => {
   const pageConfig = PAGE_CONFIG[location.pathname] || {
     primaryLabel: 'Continue',
     nextPath: '/quote/summary',
-    aiMessage: 'Questions about your motor configuration?'
+    aiMessage: 'Questions about your motor configuration?',
+    nudges: {
+      idle: [
+        { delay: 20, message: 'Questions? Tap AI for help', icon: 'sparkles' },
+      ]
+    }
   };
 
   const getPrimaryLabel = (): string => {
@@ -261,30 +357,121 @@ export const UnifiedMobileBar: React.FC = () => {
     return pageConfig.primaryLabel;
   };
 
-  // Proactive nudge message based on idle time and context
-  const nudgeMessage = useMemo(() => {
-    if (idleSeconds < 15) return null;
-    
-    // Page-specific idle nudges
-    if (pageConfig.idleNudge && idleSeconds >= 20) {
-      return pageConfig.idleNudge;
+  // Track recent meaningful actions for celebrations
+  const [recentAction, setRecentAction] = useState<string | null>(null);
+  const prevMotorRef = useRef(state.motor?.id);
+  const prevOptionsRef = useRef(state.selectedOptions?.length || 0);
+  const prevTradeInRef = useRef(state.tradeInInfo?.estimatedValue);
+
+  // Detect meaningful actions for micro-celebrations
+  useEffect(() => {
+    // Motor selected
+    if (state.motor?.id && state.motor.id !== prevMotorRef.current) {
+      setRecentAction('motor-selected');
+      triggerHaptic('medium');
+      const timer = setTimeout(() => setRecentAction(null), 4000);
+      prevMotorRef.current = state.motor.id;
+      return () => clearTimeout(timer);
     }
-    
-    // Generic nudges
-    if (!hasMotor && location.pathname === '/quote/motor-selection' && idleSeconds >= 25) {
-      return 'Tap AI for personalized recommendations →';
+    prevMotorRef.current = state.motor?.id;
+  }, [state.motor?.id, triggerHaptic]);
+
+  useEffect(() => {
+    // Options selected
+    const currentOptionsLength = state.selectedOptions?.length || 0;
+    if (currentOptionsLength > 0 && currentOptionsLength !== prevOptionsRef.current) {
+      setRecentAction('package-selected');
+      triggerHaptic('light');
+      const timer = setTimeout(() => setRecentAction(null), 4000);
+      prevOptionsRef.current = currentOptionsLength;
+      return () => clearTimeout(timer);
     }
-    
-    if (hasMotor && idleSeconds >= 30 && quoteProgress.remaining <= 2) {
-      return `Almost there! ${quoteProgress.remaining} step${quoteProgress.remaining > 1 ? 's' : ''} left`;
+    prevOptionsRef.current = currentOptionsLength;
+  }, [state.selectedOptions?.length, triggerHaptic]);
+
+  useEffect(() => {
+    // Trade-in applied
+    if (state.tradeInInfo?.estimatedValue && state.tradeInInfo.estimatedValue !== prevTradeInRef.current) {
+      setRecentAction('tradein-applied');
+      triggerHaptic('medium');
+      const timer = setTimeout(() => setRecentAction(null), 4000);
+      prevTradeInRef.current = state.tradeInInfo.estimatedValue;
+      return () => clearTimeout(timer);
     }
-    
-    if (hasMotor && idleSeconds >= 35) {
-      return 'Ready to continue? →';
+    prevTradeInRef.current = state.tradeInInfo?.estimatedValue;
+  }, [state.tradeInInfo?.estimatedValue, triggerHaptic]);
+
+  // Smart nudge selection with priority layers
+  const activeNudge = useMemo((): { message: string; type: NudgeType; icon?: string } | null => {
+    const nudges = pageConfig.nudges;
+    if (!nudges) return null;
+
+    // Priority 1: Micro-celebration for recent actions
+    if (recentAction === 'motor-selected' && nudges.encouragement) {
+      return { message: nudges.encouragement, type: 'celebration', icon: 'sparkles' };
     }
-    
+    if (recentAction === 'package-selected' && nudges.withSelection) {
+      return { message: nudges.withSelection, type: 'success', icon: 'check' };
+    }
+    if (recentAction === 'tradein-applied' && nudges.withSelection) {
+      const msg = nudges.withSelection.replace('${value}', money(state.tradeInInfo?.estimatedValue || 0));
+      return { message: msg, type: 'success', icon: 'dollar' };
+    }
+
+    // Priority 2: Progress encouragement when near completion
+    if (hasMotor && quoteProgress.remaining <= 2 && quoteProgress.remaining > 0 && idleSeconds >= 20) {
+      return { 
+        message: `Almost there! ${quoteProgress.remaining} step${quoteProgress.remaining > 1 ? 's' : ''} to go`,
+        type: 'progress',
+        icon: 'flag'
+      };
+    }
+
+    // Priority 3: Context-aware state messages
+    if (location.pathname === '/quote/trade-in' && state.tradeInInfo?.estimatedValue) {
+      const msg = (nudges.withSelection || '').replace('${value}', money(state.tradeInInfo.estimatedValue));
+      if (msg) return { message: msg, type: 'success', icon: 'dollar' };
+    }
+    if (location.pathname === '/quote/options' && state.selectedOptions?.length) {
+      if (nudges.withSelection) return { message: nudges.withSelection, type: 'success', icon: 'shield' };
+    }
+
+    // Priority 4: Rotating idle nudges
+    if (nudges.idle && idleSeconds >= 15) {
+      const applicableNudges = nudges.idle.filter(n => idleSeconds >= n.delay);
+      if (applicableNudges.length > 0) {
+        const nudge = applicableNudges[applicableNudges.length - 1];
+        return { message: nudge.message, type: 'tip', icon: nudge.icon };
+      }
+    }
+
+    // Priority 5: Occasional social proof (every ~60s idle, cycling through)
+    if (idleSeconds >= 60 && idleSeconds % 20 < 5) {
+      const proofIndex = Math.floor(idleSeconds / 20) % SOCIAL_PROOF_NUDGES.length;
+      return { message: SOCIAL_PROOF_NUDGES[proofIndex], type: 'social-proof', icon: 'award' };
+    }
+
     return null;
-  }, [idleSeconds, hasMotor, location.pathname, pageConfig.idleNudge, quoteProgress.remaining]);
+  }, [
+    pageConfig.nudges, recentAction, idleSeconds, hasMotor, quoteProgress.remaining,
+    location.pathname, state.tradeInInfo?.estimatedValue, state.selectedOptions?.length
+  ]);
+
+  // Helper to render nudge icon
+  const NudgeIcon = ({ icon }: { icon?: string }) => {
+    const className = "h-3.5 w-3.5 mr-1.5 inline-block";
+    switch (icon) {
+      case 'sparkles': return <Sparkles className={className} />;
+      case 'shield': return <Shield className={className} />;
+      case 'award': return <Award className={className} />;
+      case 'dollar': return <DollarSign className={className} />;
+      case 'check': return <Check className={className} />;
+      case 'flag': return <Flag className={className} />;
+      case 'heart': return <Heart className={className} />;
+      case 'refresh': return <RefreshCw className={className} />;
+      default: return null;
+    }
+  };
 
   const handlePrimary = () => {
     triggerHaptic('light');
@@ -369,21 +556,34 @@ export const UnifiedMobileBar: React.FC = () => {
           shadow-[0_-2px_20px_rgba(0,0,0,0.06)]"
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
-        {/* Proactive Nudge Banner */}
-        <AnimatePresence>
-          {nudgeMessage && (
+        {/* Proactive Nudge Banner with Type-Specific Styling */}
+        <AnimatePresence mode="wait">
+          {activeNudge && (
             <motion.div
+              key={activeNudge.message}
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.25 }}
               className="overflow-hidden"
             >
-              <div className="px-4 py-1.5 bg-gradient-to-r from-primary/5 to-primary/10 
-                border-b border-primary/10 text-center">
-                <span className="text-xs font-medium text-primary/80">
-                  {nudgeMessage}
-                </span>
+              <div className={cn(
+                "px-4 py-2 border-b text-center",
+                activeNudge.type === 'tip' && "bg-gradient-to-r from-gray-50 to-gray-100/80 border-gray-200/60 text-gray-600",
+                activeNudge.type === 'success' && "bg-gradient-to-r from-emerald-50 to-emerald-100/50 border-emerald-200/60 text-emerald-700",
+                activeNudge.type === 'celebration' && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
+                activeNudge.type === 'progress' && "bg-gradient-to-r from-amber-50 to-amber-100/50 border-amber-200/60 text-amber-700",
+                activeNudge.type === 'social-proof' && "bg-gradient-to-r from-slate-50 to-slate-100/80 border-slate-200/60 text-slate-600",
+              )}>
+                <motion.span 
+                  initial={{ y: 5, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.1 }}
+                  className="text-xs font-medium inline-flex items-center"
+                >
+                  <NudgeIcon icon={activeNudge.icon} />
+                  {activeNudge.message}
+                </motion.span>
               </div>
             </motion.div>
           )}
