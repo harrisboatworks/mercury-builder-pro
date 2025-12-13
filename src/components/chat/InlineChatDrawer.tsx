@@ -347,11 +347,9 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     >
       <DrawerContent 
         hideOverlay
+        bottomOffset="calc(5.5rem + env(safe-area-inset-bottom))"
         className="mx-0 rounded-t-2xl focus:outline-none shadow-[0_-8px_30px_-12px_rgba(0,0,0,0.15)] border-t border-gray-200"
-        style={{ 
-          bottom: 'calc(5.5rem + env(safe-area-inset-bottom))',
-          maxHeight: 'calc(70vh)'
-        }}
+        style={{ maxHeight: 'calc(70vh)' }}
       >
         {/* Chat Container */}
         <div className="flex flex-col h-[60vh] max-h-[450px]">
