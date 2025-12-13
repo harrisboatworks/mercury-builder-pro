@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import { User, LogOut, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -8,9 +8,6 @@ import { COMPANY_INFO } from '@/lib/companyInfo';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { useNavigate, Link } from 'react-router-dom';
-
-// Lazy load ChatWidget (~85KB)
-const ChatWidget = lazy(() => import('@/components/chat/ChatWidget').then(m => ({ default: m.ChatWidget })));
 
 interface LuxuryHeaderProps {
   onSearchFocus?: () => void;
@@ -110,13 +107,6 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
 
             {/* Right: Actions */}
             <div className="flex items-center justify-end gap-1 md:gap-2 min-w-[40px] keep-flex">
-              {/* Chat Widget (Desktop) */}
-              <div className="hidden md:block">
-                <Suspense fallback={null}>
-                  <ChatWidget />
-                </Suspense>
-              </div>
-
               {/* User Menu (Desktop) */}
               <div className="hidden md:flex items-center gap-2 keep-flex">
                 {user ? (

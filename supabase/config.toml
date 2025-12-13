@@ -30,6 +30,9 @@ verify_jwt = false
 [functions.ai-chatbot]
 verify_jwt = false
 
+[functions.ai-chatbot-stream]
+verify_jwt = false
+
 [functions.create-payment]
 verify_jwt = true
 

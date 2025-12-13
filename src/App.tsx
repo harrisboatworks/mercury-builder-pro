@@ -14,6 +14,7 @@ import { NotificationToast } from "@/components/notifications/NotificationToast"
 import { ContactButton } from "@/components/ui/contact-button";
 import { GlobalStickyQuoteBar } from "@/components/quote/GlobalStickyQuoteBar";
 import { RouteLoader } from "@/components/ui/RouteLoader";
+import { GlobalAIChat } from "@/components/chat/GlobalAIChat";
 
 // Note: Removed framer-motion AnimatePresence (~120KB) to reduce initial bundle
 // Page transitions now use CSS instead of JavaScript animations
@@ -361,6 +362,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <GlobalAIChat>
             <>
               <ScrollToTop />
               <NotificationToast />
@@ -376,6 +378,7 @@ const App = () => (
                 </div>
               </footer>
             </>
+          </GlobalAIChat>
         </BrowserRouter>
         </TooltipProvider>
       </QuoteProvider>
