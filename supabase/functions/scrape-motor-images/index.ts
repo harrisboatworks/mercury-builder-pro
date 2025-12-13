@@ -63,7 +63,7 @@ function getCategoryPath(hp: number, modelDisplay: string): string {
 function buildProductUrl(modelDisplay: string, hp: number): string {
   const category = getCategoryPath(hp, modelDisplay);
   const slug = buildAlberniSlug(modelDisplay);
-  return `https://www.albernipowermarine.com/boat-engines-outboard-motors-for-sale/mercury-outboards/${category}/${slug}`;
+  return `https://www.albernipowermarine.com/product/mercury-outboards/${category}/${slug}`;
 }
 
 // Generate alternate URL patterns to try
@@ -71,7 +71,7 @@ function getAlternateUrls(modelDisplay: string, hp: number): string[] {
   const baseUrl = buildProductUrl(modelDisplay, hp);
   const slug = buildAlberniSlug(modelDisplay);
   const category = getCategoryPath(hp, modelDisplay);
-  const baseCategory = `https://www.albernipowermarine.com/boat-engines-outboard-motors-for-sale/mercury-outboards/${category}`;
+  const baseCategory = `https://www.albernipowermarine.com/product/mercury-outboards/${category}`;
   
   const alternates: string[] = [baseUrl];
   
