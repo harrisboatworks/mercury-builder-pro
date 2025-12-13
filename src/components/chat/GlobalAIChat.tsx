@@ -1,14 +1,16 @@
-import React, { useState, useRef, createContext, useContext } from 'react';
+import React, { useState, useRef, createContext, useContext, useCallback } from 'react';
 import { AIChatButton } from './AIChatButton';
 import { EnhancedChatWidget, EnhancedChatWidgetHandle } from './EnhancedChatWidget';
+import { ProactiveChatNudge } from './ProactiveChatNudge';
+import { useBehaviorTriggers } from '@/hooks/useBehaviorTriggers';
 
-interface AIChtatContextType {
+interface AIChatContextType {
   openChat: (initialMessage?: string) => void;
   closeChat: () => void;
   isOpen: boolean;
 }
 
-const AIChatContext = createContext<AIChtatContextType | null>(null);
+const AIChatContext = createContext<AIChatContextType | null>(null);
 
 export const useAIChat = () => {
   const context = useContext(AIChatContext);
@@ -23,19 +25,39 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
   const [initialMessage, setInitialMessage] = useState<string | undefined>();
   const chatRef = useRef<EnhancedChatWidgetHandle>(null);
 
-  const openChat = (message?: string) => {
+  const openChat = useCallback((message?: string) => {
     setInitialMessage(message);
     setIsOpen(true);
-  };
+  }, []);
 
-  const closeChat = () => {
+  const closeChat = useCallback(() => {
     setIsOpen(false);
     setInitialMessage(undefined);
-  };
+  }, []);
+
+  // Proactive behavior triggers
+  const { 
+    shouldShowNudge, 
+    nudgeMessage, 
+    dismissNudge 
+  } = useBehaviorTriggers(isOpen);
+
+  const handleNudgeAccept = useCallback(() => {
+    dismissNudge();
+    openChat(nudgeMessage);
+  }, [dismissNudge, openChat, nudgeMessage]);
 
   return (
     <AIChatContext.Provider value={{ openChat, closeChat, isOpen }}>
       {children}
+      
+      {/* Proactive Chat Nudge */}
+      <ProactiveChatNudge
+        isVisible={shouldShowNudge}
+        message={nudgeMessage}
+        onAccept={handleNudgeAccept}
+        onDismiss={dismissNudge}
+      />
       
       {/* Floating AI Button */}
       <AIChatButton 
