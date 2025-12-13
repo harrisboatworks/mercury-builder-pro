@@ -263,45 +263,7 @@ a, button, [role="button"], .cursor-pointer {
     --letter-spacing-caps: 0.04em; /* +4% for small caps */
   }
 
-  .dark {
-    /* Dark Theme Colors - Proper dark mode implementation */
-    --background: 222 20% 8%;
-    --foreground: 210 40% 98%;
-
-    --card: 222 16% 12%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 16% 12%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 211 48% 35%;  /* Slightly lighter Harris Blue for dark mode */
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 222 16% 16%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 222 16% 16%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 211 48% 40%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 50%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 211 48% 35%;
-
-    --sidebar-background: 222 16% 10%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 210 40% 98%;
-    --sidebar-primary-foreground: 222 16% 10%;
-    --sidebar-accent: 222 16% 16%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 215 27.9% 16.9%;
-    --sidebar-ring: 211 48% 35%;
-  }
+  /* Dark mode disabled - light theme only */
 
   /* Typography Standards - Match Quote Summary Page */
   .heading-1 {
