@@ -98,3 +98,6 @@ verify_jwt = false
 
 [functions.unsubscribe-promo-reminder]
 verify_jwt = false
+
+[functions.scrape-mercury-catalog]
+verify_jwt = false
