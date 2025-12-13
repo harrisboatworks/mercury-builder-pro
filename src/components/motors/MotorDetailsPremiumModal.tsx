@@ -361,6 +361,34 @@ export default function MotorDetailsPremiumModal({
                       />
                     </div>
                     
+                    {/* About This Motor - Description */}
+                    {motor?.description && (
+                      <div className="space-y-3">
+                        <h3 className="text-lg font-semibold tracking-wide text-gray-900">
+                          About This Motor
+                        </h3>
+                        <p className="text-base text-gray-700 font-normal leading-relaxed">
+                          {motor.description}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Key Takeaways - Customer Benefits */}
+                    {motor?.spec_json?.keyTakeaways && Array.isArray(motor.spec_json.keyTakeaways) && motor.spec_json.keyTakeaways.length > 0 && (
+                      <div className="space-y-3">
+                        <h3 className="text-lg font-semibold tracking-wide text-gray-900">
+                          Why You'll Love It
+                        </h3>
+                        <ul className="space-y-2">
+                          {motor.spec_json.keyTakeaways.map((takeaway: string, idx: number) => (
+                            <li key={idx} className="flex items-start gap-3 text-base text-gray-700">
+                              <span className="text-green-600 text-lg leading-none mt-0.5">✓</span>
+                              <span className="font-normal">{takeaway}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                     
                     {/* What's Included - Simple Checklist */}
                     {includedAccessories.length > 0 && (
