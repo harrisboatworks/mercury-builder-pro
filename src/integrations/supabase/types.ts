@@ -1451,6 +1451,62 @@ export type Database = {
         }
         Relationships: []
       }
+      promo_reminder_subscriptions: {
+        Row: {
+          created_at: string
+          customer_email: string | null
+          customer_name: string | null
+          customer_phone: string | null
+          id: string
+          is_active: boolean | null
+          motor_details: Json | null
+          motor_model_id: string | null
+          notified_at: string | null
+          preferred_channel: string
+          quote_config: Json | null
+          unsubscribe_token: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          customer_email?: string | null
+          customer_name?: string | null
+          customer_phone?: string | null
+          id?: string
+          is_active?: boolean | null
+          motor_details?: Json | null
+          motor_model_id?: string | null
+          notified_at?: string | null
+          preferred_channel?: string
+          quote_config?: Json | null
+          unsubscribe_token?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          customer_email?: string | null
+          customer_name?: string | null
+          customer_phone?: string | null
+          id?: string
+          is_active?: boolean | null
+          motor_details?: Json | null
+          motor_model_id?: string | null
+          notified_at?: string | null
+          preferred_channel?: string
+          quote_config?: Json | null
+          unsubscribe_token?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "promo_reminder_subscriptions_motor_model_id_fkey"
+            columns: ["motor_model_id"]
+            isOneToOne: false
+            referencedRelation: "motor_models"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       promotions: {
         Row: {
           bonus_description: string | null
