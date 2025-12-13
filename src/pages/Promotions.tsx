@@ -464,13 +464,15 @@ export default function Promotions() {
               key={index}
               className="bg-white rounded-xl border border-border p-6 hover:shadow-md transition-shadow"
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-stone-100 rounded-full flex items-center justify-center mb-4">
-                {reason.useMercuryLogo ? (
-                  <img src={mercuryLogo} alt="Mercury" className="h-5 md:h-6" />
-                ) : (
-                  reason.icon && <reason.icon className="w-5 h-5 md:w-6 md:h-6 text-foreground" />
-                )}
-              </div>
+              {reason.useMercuryLogo ? (
+                <div className="h-10 md:h-12 flex items-center mb-4">
+                  <img src={mercuryLogo} alt="Mercury Marine" className="h-6 md:h-8" />
+                </div>
+              ) : (
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-stone-100 rounded-full flex items-center justify-center mb-4">
+                  {reason.icon && <reason.icon className="w-5 h-5 md:w-6 md:h-6 text-foreground" />}
+                </div>
+              )}
               <h3 className="font-semibold text-foreground mb-2">{reason.title}</h3>
               <p className="text-sm text-muted-foreground">{reason.description}</p>
             </div>
