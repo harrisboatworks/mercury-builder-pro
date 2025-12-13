@@ -19,6 +19,7 @@ import { PromoReminderModal } from '@/components/quote-builder/PromoReminderModa
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
+import { getMotorImages } from '@/lib/mercury-product-images';
 
 // Database types
 interface DbMotor {
@@ -256,6 +257,11 @@ export default function MotorSelectionPage() {
         }
       });
 
+      // Get static product images based on HP
+      const productImages = getMotorImages(dbMotor.horsepower);
+      const heroImage = productImages?.heroImage || dbMotor.image_url || '';
+      const galleryImages = productImages?.galleryImages || (dbMotor.images as string[]) || [];
+
       // Convert to Motor type (same as original)
       const convertedMotor: Motor = {
         id: dbMotor.id,
@@ -263,7 +269,7 @@ export default function MotorSelectionPage() {
         year: dbMotor.year,
         hp: Number(dbMotor.horsepower),
         price: Math.round(effectivePrice),
-        image: dbMotor.image_url || '',
+        image: heroImage,
         stockStatus: dbMotor.in_stock ? 'In Stock' : 'On Order',
         stockNumber: dbMotor.stock_number,
         model_number: dbMotor.model_number,
@@ -302,7 +308,7 @@ export default function MotorSelectionPage() {
         spec_json: dbMotor.spec_json,
         features: dbMotor.features,
         shaft: dbMotor.shaft,
-        images: dbMotor.images
+        images: galleryImages
       };
       
       return convertedMotor;
