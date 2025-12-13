@@ -4,7 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { 
   Bell, ChevronRight, Calendar, Tag, Gift, Sparkles, Mail, MessageSquare,
-  Award, BadgeCheck, Wrench, Waves, MapPin, Star, ChevronLeft
+  Award, Wrench, Waves, MapPin, Star, ChevronLeft
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -13,7 +13,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { toast } from 'sonner';
 import { format } from 'date-fns';
 import useEmblaCarousel from 'embla-carousel-react';
-
+import mercuryLogo from '@/assets/mercury-logo.png';
 // Curated testimonials emphasizing loyalty and long-term relationships
 const testimonials = [
   {
@@ -60,7 +60,8 @@ const whyBuyReasons = [
     description: "78 years of family-owned marine expertise on Rice Lake"
   },
   {
-    icon: BadgeCheck,
+    icon: null,
+    useMercuryLogo: true,
     title: "Mercury Dealer Since 1965",
     description: "60 years as an authorized Mercury dealer and service center"
   },
@@ -243,9 +244,15 @@ export default function Promotions() {
                       </p>
                       
                       {/* Author */}
-                      <div className="text-sm">
+                      <div className="text-sm mb-3">
                         <span className="font-medium text-foreground">{testimonial.name}</span>
                         <span className="text-muted-foreground"> — {testimonial.location}</span>
+                      </div>
+                      
+                      {/* Mercury Owner Badge */}
+                      <div className="flex items-center gap-2 pt-3 border-t border-border">
+                        <img src={mercuryLogo} alt="Mercury" className="h-4" />
+                        <span className="text-xs text-muted-foreground">Mercury Owner</span>
                       </div>
                     </div>
                   </div>
@@ -292,6 +299,10 @@ export default function Promotions() {
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-stone-50 to-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <img src={mercuryLogo} alt="Mercury Marine" className="h-10" />
+            <span className="text-sm text-muted-foreground font-medium">Official Mercury Promotions</span>
+          </div>
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Sparkles className="w-4 h-4" />
             Limited Time Offers
@@ -455,7 +466,11 @@ export default function Promotions() {
               className="bg-white rounded-xl border border-border p-6 hover:shadow-md transition-shadow"
             >
               <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-4">
-                <reason.icon className="w-6 h-6 text-foreground" />
+                {reason.useMercuryLogo ? (
+                  <img src={mercuryLogo} alt="Mercury" className="h-6" />
+                ) : (
+                  reason.icon && <reason.icon className="w-6 h-6 text-foreground" />
+                )}
               </div>
               <h3 className="font-semibold text-foreground mb-2">{reason.title}</h3>
               <p className="text-sm text-muted-foreground">{reason.description}</p>
@@ -467,6 +482,10 @@ export default function Promotions() {
       {/* Newsletter Signup */}
       <section className="bg-stone-50 py-16 px-4">
         <div className="max-w-xl mx-auto text-center">
+          <div className="flex flex-col items-center gap-2 mb-6">
+            <img src={mercuryLogo} alt="Mercury Marine" className="h-8" />
+            <span className="text-xs text-muted-foreground">Authorized Mercury Dealer</span>
+          </div>
           <Bell className="w-10 h-10 text-muted-foreground mx-auto mb-4" />
           <h2 className="text-2xl font-semibold text-foreground mb-2">
             Get Notified of Future Sales
