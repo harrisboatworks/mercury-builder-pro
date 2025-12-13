@@ -9,7 +9,7 @@ import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Gift, Shield, CreditCard, ChevronRight } from 'lucide-react';
+import { Gift, Shield, CreditCard, ChevronRight, X } from 'lucide-react';
 
 interface MobileQuoteDrawerProps {
   isOpen: boolean;
@@ -143,8 +143,15 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
           </div>
         ) : (
           <div className="overflow-y-auto">
-            <DrawerHeader className="border-b border-border/50 pb-3">
+            <DrawerHeader className="border-b border-border/50 pb-3 relative">
               <DrawerTitle className="text-base font-semibold">Your Configuration</DrawerTitle>
+              <button
+                onClick={onClose}
+                className="absolute right-4 top-1/2 -translate-y-1/2 h-10 w-10 flex items-center justify-center rounded-full hover:bg-gray-100 active:bg-gray-200 transition-colors"
+                aria-label="Close drawer"
+              >
+                <X className="h-5 w-5 text-muted-foreground" />
+              </button>
             </DrawerHeader>
 
             <div className="px-4 pb-6 space-y-4">
