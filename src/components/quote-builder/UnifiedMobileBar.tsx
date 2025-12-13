@@ -193,69 +193,69 @@ export const UnifiedMobileBar: React.FC = () => {
     <>
       {/* Unified Mobile Bar - Single Row Premium Design */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-t border-border/50 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]"
+        className="fixed bottom-0 left-0 right-0 z-[60] bg-white border-t border-gray-200 shadow-lg"
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
-        <div className="flex flex-row flex-nowrap items-center h-14 px-2 gap-1.5">
-          {/* AI Button */}
-          <Button
-            variant="ghost"
-            size="icon"
+        <div className="flex flex-row items-center h-16 px-3 gap-2">
+          {/* AI Button with label */}
+          <button
             onClick={handleOpenAI}
-            className="h-10 w-10 shrink-0 rounded-full bg-primary/5 hover:bg-primary/10"
+            className="flex flex-col items-center justify-center h-12 w-12 shrink-0 rounded-lg bg-primary/10 hover:bg-primary/20 active:scale-95 transition-all"
             aria-label="Ask AI assistant"
           >
             <MessageCircle className="h-5 w-5 text-primary" />
-          </Button>
+            <span className="text-[10px] font-medium text-primary mt-0.5">AI</span>
+          </button>
 
           {/* Center: Motor Info (tappable) or Prompt */}
           <button
             onClick={handleOpenDrawer}
             disabled={!hasMotor}
-            className="flex-1 min-w-0 flex flex-row flex-nowrap items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-muted/50 hover:bg-muted transition-colors disabled:opacity-60"
+            className="flex-1 min-w-0 flex flex-col items-center justify-center py-1.5 px-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors disabled:opacity-50"
           >
             {hasMotor ? (
               <>
-                <ChevronUp className={`h-3.5 w-3.5 shrink-0 text-muted-foreground transition-transform ${isDrawerOpen ? 'rotate-180' : ''}`} />
-                <span className="text-sm font-medium truncate">{displayName}</span>
-                <span className="text-sm text-muted-foreground shrink-0">
-                  {money(runningTotal)}
-                </span>
-                {monthlyPayment > 0 && (
-                  <span className="text-xs text-muted-foreground shrink-0">
-                    ≈{money(monthlyPayment)}/mo
-                  </span>
-                )}
+                <div className="flex items-center gap-1.5 w-full justify-center">
+                  <span className="text-sm font-semibold text-gray-900 truncate max-w-[120px]">{displayName}</span>
+                  <ChevronUp className={`h-3.5 w-3.5 shrink-0 text-gray-500 transition-transform ${isDrawerOpen ? 'rotate-180' : ''}`} />
+                </div>
+                <div className="flex items-center gap-2 text-xs text-gray-600">
+                  <span className="font-medium">{money(runningTotal)}</span>
+                  {monthlyPayment > 0 && (
+                    <>
+                      <span className="text-gray-400">•</span>
+                      <span>{money(monthlyPayment)}/mo</span>
+                    </>
+                  )}
+                </div>
               </>
             ) : (
-              <span className="text-sm text-muted-foreground flex items-center gap-1.5">
+              <span className="text-sm text-gray-500 flex items-center gap-1.5">
                 <Sparkles className="h-4 w-4" />
-                Select a motor
+                Select a motor to begin
               </span>
             )}
           </button>
 
-          {/* Contact Button */}
-          <Button
-            variant="ghost"
-            size="icon"
+          {/* Contact Button with label */}
+          <button
             onClick={handleOpenContact}
-            className="h-10 w-10 shrink-0 rounded-full hover:bg-muted"
+            className="flex flex-col items-center justify-center h-12 w-12 shrink-0 rounded-lg hover:bg-gray-100 active:scale-95 transition-all"
             aria-label="Contact us"
           >
-            <Phone className="h-5 w-5 text-muted-foreground" />
-          </Button>
+            <Phone className="h-5 w-5 text-gray-600" />
+            <span className="text-[10px] font-medium text-gray-600 mt-0.5">Call</span>
+          </button>
 
-          {/* Primary CTA - Only show when motor selected */}
-          {hasMotor && (
-            <Button
-              size="sm"
-              onClick={handlePrimary}
-              className="shrink-0 h-10 px-3 text-xs font-medium"
-            >
-              {pageConfig.primaryLabel} →
-            </Button>
-          )}
+          {/* Primary CTA - Always visible but styled differently when no motor */}
+          <Button
+            size="sm"
+            onClick={handlePrimary}
+            disabled={!hasMotor}
+            className="shrink-0 h-12 px-4 text-sm font-semibold disabled:opacity-40"
+          >
+            {pageConfig.primaryLabel}
+          </Button>
         </div>
       </div>
 

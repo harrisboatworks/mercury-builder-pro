@@ -246,13 +246,6 @@ export default function MotorDetailsPremiumModal({
                 <div className="px-4 py-3 border-b border-gray-200 bg-white">
                   <h2 className="text-lg font-semibold text-gray-900 mb-1">{title}</h2>
                   {motor && <StockStatusIndicator motor={motor} />}
-                  {motor && (
-                    <MotorCompatibilityBadge 
-                      motor={{ model: motor.model || title, hp: hpValue, horsepower: hpValue }}
-                      boatInfo={state.boatInfo}
-                      className="mt-3"
-                    />
-                  )}
                 </div>
                 
                 {/* 3. Tabs - separate section below name */}
@@ -302,16 +295,8 @@ export default function MotorDetailsPremiumModal({
                       {title}
                     </h2>
                     
-                    {/* 3. Stock Status Indicator */}
+                    {/* Stock Status Indicator */}
                     {motor && <StockStatusIndicator motor={motor} />}
-                    
-                    {/* 4. Compatibility Badge */}
-                    {motor && (
-                      <MotorCompatibilityBadge 
-                        motor={{ model: motor.model || title, hp: hpValue, horsepower: hpValue }}
-                        boatInfo={state.boatInfo}
-                      />
-                    )}
                   </div>
                 </div>
                 
