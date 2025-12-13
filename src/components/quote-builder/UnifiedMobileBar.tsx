@@ -530,6 +530,51 @@ export const UnifiedMobileBar: React.FC = () => {
     return 'Select a motor to begin';
   };
 
+  // Get contextual default prompt message for each page when no active nudge
+  const getDefaultPromptMessage = (): string => {
+    const path = location.pathname;
+    
+    if (path === '/' || path === '/motors') {
+      return hasMotor 
+        ? `Ask about your ${displayMotor?.hp || ''}HP motor →`
+        : 'Ask about Mercury motors or get help choosing →';
+    }
+    if (path.includes('/motor-selection')) {
+      return hasMotor 
+        ? `Ask about ${displayMotor?.hp}HP specs or compare motors →`
+        : 'Need help choosing? Ask me anything →';
+    }
+    if (path.includes('/options')) {
+      return 'Compare packages or ask about warranties →';
+    }
+    if (path.includes('/purchase-path')) {
+      return 'Questions about installation vs loose motor? →';
+    }
+    if (path.includes('/boat-info')) {
+      return 'Ask about compatibility or control options →';
+    }
+    if (path.includes('/trade-in')) {
+      return 'Curious about trade-in values? Ask me →';
+    }
+    if (path.includes('/installation')) {
+      return 'Questions about professional installation? →';
+    }
+    if (path.includes('/fuel-tank')) {
+      return 'Help me choose the right fuel tank size →';
+    }
+    if (path.includes('/schedule')) {
+      return 'Questions about next steps? Ask here →';
+    }
+    if (path.includes('/promotions')) {
+      return 'Ask about current Mercury promotions →';
+    }
+    if (path.includes('/financing')) {
+      return 'Questions about financing options? →';
+    }
+    
+    return 'Ask me anything about Mercury motors →';
+  };
+
   return (
     <>
       {/* Savings Celebration Toast */}
@@ -556,8 +601,11 @@ export const UnifiedMobileBar: React.FC = () => {
           shadow-[0_-2px_20px_rgba(0,0,0,0.06)]"
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
-        {/* Always-Visible Proactive Prompt Bar */}
-        <div className="overflow-hidden">
+        {/* Always-Visible Tappable Prompt Bar */}
+        <button
+          onClick={handleOpenAI}
+          className="w-full overflow-hidden text-left"
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={activeNudge?.message || 'default-prompt'}
@@ -566,13 +614,13 @@ export const UnifiedMobileBar: React.FC = () => {
               exit={{ opacity: 0, y: 5 }}
               transition={{ duration: 0.2 }}
               className={cn(
-                "px-4 py-2 border-b text-center",
-                activeNudge?.type === 'tip' && "bg-gradient-to-r from-gray-50 to-gray-100/80 border-gray-200/60 text-gray-600",
-                activeNudge?.type === 'success' && "bg-gradient-to-r from-emerald-50 to-emerald-100/50 border-emerald-200/60 text-emerald-700",
-                activeNudge?.type === 'celebration' && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
-                activeNudge?.type === 'progress' && "bg-gradient-to-r from-amber-50 to-amber-100/50 border-amber-200/60 text-amber-700",
-                activeNudge?.type === 'social-proof' && "bg-gradient-to-r from-slate-50 to-slate-100/80 border-slate-200/60 text-slate-600",
-                !activeNudge && "bg-gray-50/80 border-gray-200/50 text-gray-500",
+                "px-4 py-2 border-b text-center transition-colors",
+                activeNudge?.type === 'tip' && "bg-gradient-to-r from-gray-50 to-gray-100/80 border-gray-200/60 text-gray-600 active:bg-gray-100",
+                activeNudge?.type === 'success' && "bg-gradient-to-r from-emerald-50 to-emerald-100/50 border-emerald-200/60 text-emerald-700 active:bg-emerald-100",
+                activeNudge?.type === 'celebration' && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary active:bg-primary/15",
+                activeNudge?.type === 'progress' && "bg-gradient-to-r from-amber-50 to-amber-100/50 border-amber-200/60 text-amber-700 active:bg-amber-100",
+                activeNudge?.type === 'social-proof' && "bg-gradient-to-r from-slate-50 to-slate-100/80 border-slate-200/60 text-slate-600 active:bg-slate-100",
+                !activeNudge && "bg-gray-50/80 border-gray-200/50 text-gray-500 active:bg-gray-100",
               )}
             >
               <span className="text-xs font-medium inline-flex items-center">
@@ -584,15 +632,13 @@ export const UnifiedMobileBar: React.FC = () => {
                 ) : (
                   <>
                     <Sparkles className="h-3.5 w-3.5 mr-1.5 inline-block" />
-                    {hasMotor 
-                      ? `Ask about your ${displayMotor?.hp || ''}HP motor →` 
-                      : 'Tap AI for help finding the right motor →'}
+                    {getDefaultPromptMessage()}
                   </>
                 )}
               </span>
             </motion.div>
           </AnimatePresence>
-        </div>
+        </button>
 
         <div 
           className="flex flex-row items-center h-14 min-[375px]:h-16 keep-flex
