@@ -343,16 +343,18 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
       open={isOpen} 
       onOpenChange={(open) => !open && onClose()}
       shouldScaleBackground={false}
+      modal={false}
     >
       <DrawerContent 
-        className="mx-0 max-h-[calc(100vh-5rem)] rounded-t-2xl focus:outline-none"
+        hideOverlay
+        className="mx-0 rounded-t-2xl focus:outline-none shadow-[0_-8px_30px_-12px_rgba(0,0,0,0.15)] border-t border-gray-200"
         style={{ 
-          bottom: 'calc(5rem + env(safe-area-inset-bottom))',
-          maxHeight: 'calc(85vh - 5rem)'
+          bottom: 'calc(5.5rem + env(safe-area-inset-bottom))',
+          maxHeight: 'calc(70vh)'
         }}
       >
         {/* Chat Container */}
-        <div className="flex flex-col h-[70vh] max-h-[500px]">
+        <div className="flex flex-col h-[60vh] max-h-[450px]">
           {/* Header - Compact and premium */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-white shrink-0">
             <div className="flex items-center gap-3">
@@ -477,9 +479,9 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
             </div>
           )}
 
-          {/* Input Area */}
-          <div className="px-3 py-3 border-t border-gray-100 bg-white shrink-0">
-            <div className="flex items-center gap-2 bg-gray-50 rounded-xl border border-gray-200 px-3 py-1.5">
+          {/* Input Area - Horizontal layout */}
+          <div className="px-4 py-3 border-t border-gray-100 bg-white shrink-0">
+            <div className="flex items-center gap-2 bg-gray-50 rounded-xl border border-gray-200 px-3 py-2">
               <input
                 ref={inputRef}
                 type="text"
@@ -488,15 +490,15 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                 onKeyPress={handleKeyPress}
                 placeholder="Ask anything..."
                 disabled={isLoading}
-                className="flex-1 bg-transparent border-none focus:outline-none 
-                  text-sm text-gray-900 placeholder:text-gray-400 font-light"
+                className="flex-1 min-w-0 bg-transparent border-none focus:outline-none 
+                  text-sm text-gray-900 placeholder:text-gray-400 font-light h-8"
               />
               <Button
                 size="sm"
                 onClick={() => handleSend()}
                 disabled={!inputText.trim() || isLoading}
                 className="h-8 w-8 p-0 rounded-lg bg-gray-900 hover:bg-gray-800 
-                  disabled:opacity-40 disabled:bg-gray-400 shrink-0"
+                  disabled:opacity-40 disabled:bg-gray-400 shrink-0 flex items-center justify-center"
               >
                 <Send className="h-4 w-4" />
               </Button>
