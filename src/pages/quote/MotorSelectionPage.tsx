@@ -43,9 +43,11 @@ interface DbMotor {
   description?: string | null;
   features?: string[] | null;
   specifications?: Record<string, any> | null;
+  spec_json?: Record<string, any> | null;
   detail_url?: string | null;
   manual_overrides?: Record<string, any> | null;
   images?: any[] | null;
+  shaft?: string | null;
   hero_media_id?: string | null;
   // Hero media joined data
   hero_media?: {
@@ -293,7 +295,14 @@ export default function MotorSelectionPage() {
             termsUrl: promo.terms_url,
             highlight: promo.highlight
           } : null;
-        }).filter(Boolean) as any[]
+        }).filter(Boolean) as any[],
+        // Pass through database fields for accurate specs and descriptions
+        specifications: dbMotor.specifications,
+        description: dbMotor.description,
+        spec_json: dbMotor.spec_json,
+        features: dbMotor.features,
+        shaft: dbMotor.shaft,
+        images: dbMotor.images
       };
       
       return convertedMotor;
