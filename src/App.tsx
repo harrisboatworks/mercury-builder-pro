@@ -364,7 +364,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <GlobalAIChat>
-            <>
+            <div data-vaul-drawer-wrapper className="min-h-screen bg-background">
               <ScrollToTop />
               <NotificationToast />
               <ContactButton />
@@ -379,7 +379,7 @@ const App = () => (
                   <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 md:h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                 </div>
               </footer>
-            </>
+            </div>
           </GlobalAIChat>
         </BrowserRouter>
         </TooltipProvider>

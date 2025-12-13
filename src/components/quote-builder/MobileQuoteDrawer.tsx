@@ -136,7 +136,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
 
   return (
     <Drawer open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DrawerContent className="max-h-[85vh] bg-white">
+      <DrawerContent className="max-h-[85vh] bg-white pb-safe">
         {(!pricing || !state.motor) ? (
           <div className="p-8 text-center">
             <p className="text-muted-foreground">Select a motor to view your configuration</p>
