@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
-import { Bell, ChevronRight, Calendar, Tag, Gift, Sparkles } from 'lucide-react';
+import { Bell, ChevronRight, Calendar, Tag, Gift, Sparkles, Mail, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { toast } from 'sonner';
 import { format } from 'date-fns';
 
@@ -28,6 +30,8 @@ export default function Promotions() {
   const [promotions, setPromotions] = useState<Promotion[]>([]);
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [channel, setChannel] = useState<'email' | 'sms' | 'both'>('email');
   const [subscribing, setSubscribing] = useState(false);
 
   useEffect(() => {
@@ -54,18 +58,38 @@ export default function Promotions() {
     }
   };
 
+  const formatPhone = (value: string) => {
+    const digits = value.replace(/\D/g, '');
+    if (digits.length <= 3) return digits;
+    if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+    return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 10)}`;
+  };
+
   const handleGeneralSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    
+    if (channel === 'email' && !email) {
+      toast.error('Please enter an email address');
+      return;
+    }
+    if (channel === 'sms' && !phone) {
+      toast.error('Please enter a phone number');
+      return;
+    }
+    if (channel === 'both' && (!email || !phone)) {
+      toast.error('Please enter both email and phone number');
+      return;
+    }
 
     setSubscribing(true);
     try {
       const { error } = await supabase.functions.invoke('subscribe-promo-reminder', {
         body: {
-          email,
-          name: '',
-          channel: 'email',
-          motorId: null, // General subscription
+          customerEmail: email || null,
+          customerPhone: phone || null,
+          customerName: null,
+          preferredChannel: channel,
+          motorModelId: null,
           motorDetails: null,
           quoteConfig: null
         }
@@ -74,6 +98,7 @@ export default function Promotions() {
       if (error) throw error;
       toast.success('You\'re subscribed! We\'ll notify you of future promotions.');
       setEmail('');
+      setPhone('');
     } catch (error) {
       console.error('Subscription error:', error);
       toast.error('Failed to subscribe. Please try again.');
@@ -254,19 +279,80 @@ export default function Promotions() {
           <p className="text-muted-foreground mb-6">
             Be the first to know when we launch new promotions. No spam, just savings.
           </p>
-          <form onSubmit={handleGeneralSubscribe} className="flex gap-3 max-w-md mx-auto">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="flex-1"
-            />
-            <Button type="submit" disabled={subscribing}>
+          
+          <form onSubmit={handleGeneralSubscribe} className="max-w-md mx-auto space-y-4">
+            {/* Channel Toggle */}
+            <div className="space-y-3">
+              <Label className="text-sm font-medium text-left block">How should we notify you?</Label>
+              <RadioGroup
+                value={channel}
+                onValueChange={(v) => setChannel(v as 'email' | 'sms' | 'both')}
+                className="flex gap-2"
+              >
+                <label
+                  className={`flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border cursor-pointer transition-colors ${
+                    channel === 'email' 
+                      ? 'border-primary bg-primary/5' 
+                      : 'border-border hover:border-muted-foreground'
+                  }`}
+                >
+                  <RadioGroupItem value="email" id="general-email-option" className="sr-only" />
+                  <Mail className="h-4 w-4" />
+                  <span className="text-sm font-medium">Email</span>
+                </label>
+                <label
+                  className={`flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border cursor-pointer transition-colors ${
+                    channel === 'sms' 
+                      ? 'border-primary bg-primary/5' 
+                      : 'border-border hover:border-muted-foreground'
+                  }`}
+                >
+                  <RadioGroupItem value="sms" id="general-sms-option" className="sr-only" />
+                  <MessageSquare className="h-4 w-4" />
+                  <span className="text-sm font-medium">Text</span>
+                </label>
+                <label
+                  className={`flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border cursor-pointer transition-colors ${
+                    channel === 'both' 
+                      ? 'border-primary bg-primary/5' 
+                      : 'border-border hover:border-muted-foreground'
+                  }`}
+                >
+                  <RadioGroupItem value="both" id="general-both-option" className="sr-only" />
+                  <span className="text-sm font-medium">Both</span>
+                </label>
+              </RadioGroup>
+            </div>
+
+            {/* Email Input */}
+            {(channel === 'email' || channel === 'both') && (
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required={channel === 'email' || channel === 'both'}
+                className="bg-white"
+              />
+            )}
+
+            {/* Phone Input */}
+            {(channel === 'sms' || channel === 'both') && (
+              <Input
+                type="tel"
+                placeholder="(555) 123-4567"
+                value={phone}
+                onChange={(e) => setPhone(formatPhone(e.target.value))}
+                required={channel === 'sms' || channel === 'both'}
+                className="bg-white"
+              />
+            )}
+
+            <Button type="submit" disabled={subscribing} className="w-full">
               {subscribing ? 'Subscribing...' : 'Subscribe'}
             </Button>
           </form>
+          
           <p className="text-xs text-muted-foreground mt-4">
             You can unsubscribe at any time. We respect your privacy.
           </p>
