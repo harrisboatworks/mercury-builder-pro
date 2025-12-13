@@ -9,6 +9,7 @@ import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { money } from '@/lib/money';
+import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
 import { MobileQuoteDrawer } from './MobileQuoteDrawer';
 import { ContactModal } from '@/components/ui/contact-button';
 
@@ -189,8 +190,13 @@ export const UnifiedMobileBar: React.FC = () => {
 
   if (!shouldShow) return null;
 
-  const motorName = state.motor?.model || '';
-  const displayName = motorName.length > 18 ? motorName.substring(0, 18) + '...' : motorName;
+  // Use formatted motor name for proper spacing/capitalization
+  const displayName = state.motor?.model 
+    ? formatMotorDisplayName(state.motor.model) 
+    : '';
+  
+  // Calculate price with fallback
+  const displayTotal = runningTotal || state.motor?.price || 0;
 
   return (
     <>
@@ -232,11 +238,11 @@ export const UnifiedMobileBar: React.FC = () => {
             {hasMotor ? (
               <>
                 <div className="flex items-center gap-1.5 w-full justify-center">
-                  <span className="text-sm font-semibold text-gray-900 truncate max-w-[150px]">{displayName}</span>
+                  <span className="text-sm font-semibold text-gray-900 truncate max-w-[180px]">{displayName || 'Motor Selected'}</span>
                   <ChevronUp className={`h-3.5 w-3.5 shrink-0 text-gray-400 transition-transform duration-200 ${isDrawerOpen ? 'rotate-180' : ''}`} />
                 </div>
                 <div className="flex items-center gap-2 text-xs text-gray-600">
-                  <span className="font-semibold text-gray-900">{money(runningTotal)}</span>
+                  <span className="font-semibold text-gray-900">{money(displayTotal)}</span>
                   {monthlyPayment > 0 && (
                     <>
                       <span className="text-gray-300">•</span>

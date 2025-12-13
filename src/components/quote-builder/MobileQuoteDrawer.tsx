@@ -119,8 +119,6 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
   // Active promotions
   const activePromos = promotions || [];
 
-  if (!pricing || !state.motor) return null;
-
   const handleViewSummary = () => {
     onClose();
     navigate('/quote/summary');
@@ -128,120 +126,126 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
 
   return (
     <Drawer open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DrawerContent className="max-h-[85vh]">
-        <div className="overflow-y-auto">
-          <DrawerHeader className="border-b border-border/50 pb-3">
-            <DrawerTitle className="text-base font-semibold">Your Configuration</DrawerTitle>
-          </DrawerHeader>
-
-          <div className="px-4 pb-6 space-y-4">
-            {/* Motor Summary */}
-            <div className="pt-3">
-              <div className="flex items-center justify-between">
-                <span className="font-medium">{state.motor.model}</span>
-                <Badge variant="secondary" className="text-xs">
-                  <Shield className="h-3 w-3 mr-1" />
-                  {packageInfo.name}
-                </Badge>
-              </div>
-              <p className="text-sm text-muted-foreground mt-1">
-                {state.warrantyConfig?.totalYears || 5}-year warranty coverage
-              </p>
-            </div>
-
-            <Separator />
-
-            {/* Pricing Breakdown */}
-            <div className="space-y-2">
-              <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                Pricing Breakdown
-              </h4>
-              
-              {pricing.lineItems.map((item, idx) => (
-                <div key={idx} className="flex justify-between text-sm">
-                  <span className={item.isCredit ? 'text-green-600' : 'text-muted-foreground'}>
-                    {item.label}
-                  </span>
-                  <span className={item.isCredit ? 'text-green-600 font-medium' : ''}>
-                    {item.isCredit ? '-' : ''}{money(item.value)}
-                  </span>
-                </div>
-              ))}
-
-              <Separator className="my-2" />
-
-              <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Subtotal</span>
-                <span>{money(pricing.subtotal)}</span>
-              </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">HST (13%)</span>
-                <span>{money(pricing.hst)}</span>
-              </div>
-
-              <Separator className="my-2" />
-
-              <div className="flex justify-between font-semibold">
-                <span>Estimated Total</span>
-                <span className="text-lg">{money(pricing.total)}</span>
-              </div>
-            </div>
-
-            {/* Active Promotions */}
-            {activePromos.length > 0 && (
-              <>
-                <Separator />
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <Gift className="h-4 w-4 text-green-600" />
-                    <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                      Active Promotions
-                    </h4>
-                  </div>
-                  {activePromos.slice(0, 2).map((promo) => (
-                    <div 
-                      key={promo.id} 
-                      className="bg-green-50 border border-green-100 rounded-lg p-2.5"
-                    >
-                      <p className="text-sm font-medium text-green-800">
-                        {promo.bonus_title || promo.name}
-                      </p>
-                      {promo.end_date && (
-                        <p className="text-xs text-green-600 mt-0.5">
-                          Ends {new Date(promo.end_date).toLocaleDateString()}
-                        </p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
-
-            {/* Financing Estimate */}
-            <div className="bg-muted/50 rounded-xl p-4">
-              <div className="flex items-center gap-2 mb-1">
-                <CreditCard className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium">Monthly Financing</span>
-              </div>
-              <p className="text-2xl font-semibold">
-                ≈ {money(pricing.monthly)}<span className="text-sm font-normal text-muted-foreground">/mo</span>
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                {pricing.termMonths} months @ {pricing.rate}% APR OAC
-              </p>
-            </div>
-
-            {/* View Summary Button */}
-            <Button 
-              onClick={handleViewSummary}
-              variant="outline"
-              className="w-full"
-            >
-              View Full Summary
-              <ChevronRight className="h-4 w-4 ml-1" />
-            </Button>
+      <DrawerContent className="max-h-[85vh] bg-white">
+        {(!pricing || !state.motor) ? (
+          <div className="p-8 text-center">
+            <p className="text-muted-foreground">Select a motor to view your configuration</p>
           </div>
-        </div>
+        ) : (
+          <div className="overflow-y-auto">
+            <DrawerHeader className="border-b border-border/50 pb-3">
+              <DrawerTitle className="text-base font-semibold">Your Configuration</DrawerTitle>
+            </DrawerHeader>
+
+            <div className="px-4 pb-6 space-y-4">
+              {/* Motor Summary */}
+              <div className="pt-3">
+                <div className="flex items-center justify-between">
+                  <span className="font-medium">{state.motor.model}</span>
+                  <Badge variant="secondary" className="text-xs">
+                    <Shield className="h-3 w-3 mr-1" />
+                    {packageInfo.name}
+                  </Badge>
+                </div>
+                <p className="text-sm text-muted-foreground mt-1">
+                  {state.warrantyConfig?.totalYears || 5}-year warranty coverage
+                </p>
+              </div>
+
+              <Separator />
+
+              {/* Pricing Breakdown */}
+              <div className="space-y-2">
+                <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                  Pricing Breakdown
+                </h4>
+                
+                {pricing.lineItems.map((item, idx) => (
+                  <div key={idx} className="flex justify-between text-sm">
+                    <span className={item.isCredit ? 'text-green-600' : 'text-muted-foreground'}>
+                      {item.label}
+                    </span>
+                    <span className={item.isCredit ? 'text-green-600 font-medium' : ''}>
+                      {item.isCredit ? '-' : ''}{money(item.value)}
+                    </span>
+                  </div>
+                ))}
+
+                <Separator className="my-2" />
+
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">Subtotal</span>
+                  <span>{money(pricing.subtotal)}</span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">HST (13%)</span>
+                  <span>{money(pricing.hst)}</span>
+                </div>
+
+                <Separator className="my-2" />
+
+                <div className="flex justify-between font-semibold">
+                  <span>Estimated Total</span>
+                  <span className="text-lg">{money(pricing.total)}</span>
+                </div>
+              </div>
+
+              {/* Active Promotions */}
+              {activePromos.length > 0 && (
+                <>
+                  <Separator />
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <Gift className="h-4 w-4 text-green-600" />
+                      <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        Active Promotions
+                      </h4>
+                    </div>
+                    {activePromos.slice(0, 2).map((promo) => (
+                      <div 
+                        key={promo.id} 
+                        className="bg-green-50 border border-green-100 rounded-lg p-2.5"
+                      >
+                        <p className="text-sm font-medium text-green-800">
+                          {promo.bonus_title || promo.name}
+                        </p>
+                        {promo.end_date && (
+                          <p className="text-xs text-green-600 mt-0.5">
+                            Ends {new Date(promo.end_date).toLocaleDateString()}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {/* Financing Estimate */}
+              <div className="bg-muted/50 rounded-xl p-4">
+                <div className="flex items-center gap-2 mb-1">
+                  <CreditCard className="h-4 w-4 text-primary" />
+                  <span className="text-sm font-medium">Monthly Financing</span>
+                </div>
+                <p className="text-2xl font-semibold">
+                  ≈ {money(pricing.monthly)}<span className="text-sm font-normal text-muted-foreground">/mo</span>
+                </p>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {pricing.termMonths} months @ {pricing.rate}% APR OAC
+                </p>
+              </div>
+
+              {/* View Summary Button */}
+              <Button 
+                onClick={handleViewSummary}
+                variant="outline"
+                className="w-full"
+              >
+                View Full Summary
+                <ChevronRight className="h-4 w-4 ml-1" />
+              </Button>
+            </div>
+          </div>
+        )}
       </DrawerContent>
     </Drawer>
   );
