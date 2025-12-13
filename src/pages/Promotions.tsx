@@ -49,9 +49,12 @@ const testimonials = [
   }
 ];
 
+const csiAwardBadge = "/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png";
+
 const whyBuyReasons = [
   {
-    icon: Award,
+    icon: null,
+    useCsiLogo: true,
     title: "CSI Award-Winning Service",
     description: "Mercury's highest honor for customer satisfaction — earned, not given"
   },
@@ -464,7 +467,11 @@ export default function Promotions() {
               key={index}
               className="bg-white rounded-xl border border-border p-6 hover:shadow-md transition-shadow"
             >
-              {reason.useMercuryLogo ? (
+              {reason.useCsiLogo ? (
+                <div className="h-10 md:h-12 flex items-center mb-4">
+                  <img src={csiAwardBadge} alt="Mercury CSI Award" className="h-8 md:h-10" />
+                </div>
+              ) : reason.useMercuryLogo ? (
                 <div className="h-10 md:h-12 flex items-center mb-4">
                   <img src={mercuryLogo} alt="Mercury Marine" className="h-6 md:h-8" />
                 </div>
