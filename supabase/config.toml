@@ -101,3 +101,6 @@ verify_jwt = false
 
 [functions.scrape-mercury-catalog]
 verify_jwt = false
+
+[functions.scrape-motor-images]
+verify_jwt = false
