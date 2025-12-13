@@ -314,10 +314,7 @@ async function scrapeMotor(
     }
   }
   
-  if (detailUrl && !motor.detail_url) {
-    updateData.detail_url = detailUrl;
-    result.updatedFields.push('detail_url');
-  }
+  // Skip detail_url to avoid unique constraint issues (multiple motors share same Mercury page)
 
   // Update if we have changes
   if (Object.keys(updateData).length > 0) {
@@ -391,13 +388,15 @@ serve(async (req) => {
       batch_size = 10, 
       offset = 0,
       motor_id,  // Optional: scrape specific motor
-      prioritize_missing = true  // Prioritize motors without descriptions
+      prioritize_missing = true,  // Prioritize motors without descriptions
+      background = false  // Run as background task
     } = body;
 
     console.log('Mercury catalog scrape started', { 
       batch_size, 
       offset, 
       motor_id,
+      background,
       hasFirecrawl: !!firecrawlKey, 
       hasPerplexity: !!perplexityKey 
     });
@@ -442,30 +441,51 @@ serve(async (req) => {
 
     console.log(`Processing ${motors.length} motors`);
 
-    // Process motors
-    const results: ScrapeResult[] = [];
-    
-    for (const motor of motors) {
-      const result = await scrapeMotor(motor, supabase, firecrawlKey, perplexityKey);
-      results.push(result);
-      console.log(`Processed ${motor.model}: ${result.success ? 'success' : 'failed'} (${result.source})`);
+    // Background processing function
+    async function processMotors() {
+      const results: ScrapeResult[] = [];
       
-      // Small delay between requests to avoid rate limiting
-      await new Promise(r => setTimeout(r, 500));
+      for (const motor of motors) {
+        const result = await scrapeMotor(motor, supabase, firecrawlKey, perplexityKey);
+        results.push(result);
+        console.log(`Processed ${motor.model}: ${result.success ? 'success' : 'failed'} (${result.source})`);
+        
+        // Small delay between requests to avoid rate limiting
+        await new Promise(r => setTimeout(r, 500));
+      }
+
+      const summary = {
+        total: results.length,
+        updated: results.filter(r => r.success && r.updatedFields.length > 0).length,
+        failed: results.filter(r => !r.success).length,
+        sources: {
+          firecrawl: results.filter(r => r.source === 'firecrawl').length,
+          perplexity: results.filter(r => r.source === 'perplexity').length,
+          staticDatabase: results.filter(r => r.source === 'static-database').length,
+        }
+      };
+
+      console.log('Scrape completed:', summary);
+      return { results, summary };
     }
 
-    const summary = {
-      total: results.length,
-      updated: results.filter(r => r.success && r.updatedFields.length > 0).length,
-      failed: results.filter(r => !r.success).length,
-      sources: {
-        firecrawl: results.filter(r => r.source === 'firecrawl').length,
-        perplexity: results.filter(r => r.source === 'perplexity').length,
-        staticDatabase: results.filter(r => r.source === 'static-database').length,
-      }
-    };
+    if (background) {
+      // Run as background task - return immediately
+      EdgeRuntime.waitUntil(processMotors());
+      
+      return new Response(
+        JSON.stringify({
+          success: true,
+          message: `Background processing started for ${motors.length} motors`,
+          motorsQueued: motors.length,
+          next_offset: offset + batch_size
+        }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
 
-    console.log('Scrape completed:', summary);
+    // Synchronous processing
+    const { results, summary } = await processMotors();
 
     return new Response(
       JSON.stringify({
