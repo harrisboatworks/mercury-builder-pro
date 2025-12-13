@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo, useRef } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -7,9 +7,8 @@ import { FinancingProvider } from '@/contexts/FinancingContext';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
-import { useHpSuggestions } from '@/hooks/useHpSuggestions';
 import { useExitIntent } from '@/hooks/useExitIntent';
-import { HpSuggestionsDropdown } from '@/components/motors/HpSuggestionsDropdown';
+import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
 import { Button } from '@/components/ui/button';
@@ -103,9 +102,6 @@ export default function MotorSelectionPage() {
   const [promotionRules, setPromotionRules] = useState<PromotionRule[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
-  const [showHpSuggestions, setShowHpSuggestions] = useState(false);
-  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0);
-  const searchInputRef = useRef<HTMLInputElement>(null);
   const [showQuiz, setShowQuiz] = useState(false);
   
   // Exit intent for promo reminder
@@ -305,8 +301,6 @@ export default function MotorSelectionPage() {
   }, [motors, promotions, promotionRules]);
 
   // Calculate monthly payments for each motor
-  // HP suggestions for autocomplete
-  const hpSuggestions = useHpSuggestions(searchQuery, processedMotors);
   
   const monthlyPayments = useMemo(() => {
     const payments: Record<string, number | null> = {};
@@ -398,36 +392,6 @@ export default function MotorSelectionPage() {
 
   const handleHpSuggestionSelect = (hp: number) => {
     setSearchQuery(hp.toString());
-    setShowHpSuggestions(false);
-    setSelectedSuggestionIndex(0);
-    searchInputRef.current?.focus();
-  };
-
-  const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (!showHpSuggestions || hpSuggestions.length === 0) return;
-
-    switch (e.key) {
-      case 'ArrowDown':
-        e.preventDefault();
-        setSelectedSuggestionIndex(prev => 
-          prev < hpSuggestions.length - 1 ? prev + 1 : prev
-        );
-        break;
-      case 'ArrowUp':
-        e.preventDefault();
-        setSelectedSuggestionIndex(prev => prev > 0 ? prev - 1 : 0);
-        break;
-      case 'Enter':
-        e.preventDefault();
-        if (hpSuggestions[selectedSuggestionIndex]) {
-          handleHpSuggestionSelect(hpSuggestions[selectedSuggestionIndex].hp);
-        }
-        break;
-      case 'Escape':
-        setShowHpSuggestions(false);
-        setSelectedSuggestionIndex(0);
-        break;
-    }
   };
 
   const getModelString = () => {
@@ -485,44 +449,13 @@ export default function MotorSelectionPage() {
         {/* Search Bar - Elegant minimal style */}
         <div className="sticky top-14 sm:top-16 md:top-[72px] z-40 bg-stone-50 border-b border-gray-200">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
-              <div className="relative">
-                <input
-                  ref={searchInputRef}
-                  type="text"
-                  placeholder="Find your perfect Mercury..."
-                  value={searchQuery}
-                  onChange={(e) => {
-                    setSearchQuery(e.target.value);
-                    setShowHpSuggestions(true);
-                    setSelectedSuggestionIndex(0);
-                  }}
-                  onFocus={() => setShowHpSuggestions(true)}
-                  onKeyDown={handleSearchKeyDown}
-                  className="w-full h-16 px-6 pr-12 text-base font-light tracking-wide rounded-sm border border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:border-gray-400 transition-all duration-500"
-                />
-                {searchQuery && (
-                  <button
-                    onClick={() => {
-                      setSearchQuery('');
-                      setShowHpSuggestions(false);
-                    }}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-luxury-gray hover:text-luxury-ink transition-colors"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                )}
-                
-                {showHpSuggestions && hpSuggestions.length > 0 && (
-                  <HpSuggestionsDropdown
-                    suggestions={hpSuggestions}
-                    onSelect={handleHpSuggestionSelect}
-                    onClose={() => setShowHpSuggestions(false)}
-                    selectedIndex={selectedSuggestionIndex}
-                  />
-                )}
-              </div>
+              <HybridMotorSearch
+                query={searchQuery}
+                onQueryChange={setSearchQuery}
+                motors={processedMotors}
+                onHpSelect={handleHpSuggestionSelect}
+                className="w-full"
+              />
               
               {/* Motor Recommendation Quiz Button */}
               <div className="mt-3 flex justify-center">
