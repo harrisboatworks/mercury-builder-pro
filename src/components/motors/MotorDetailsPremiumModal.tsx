@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft, Bell } from "lucide-react";
+import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft, Bell, Sparkles } from "lucide-react";
+import { useAIChat } from '../chat/GlobalAIChat';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { CleanSpecSheetPDF } from './CleanSpecSheetPDF';
 import { supabase } from "../../integrations/supabase/client";
@@ -186,9 +187,16 @@ export default function MotorDetailsPremiumModal({
 
   const [calculatorOpen, setCalculatorOpen] = useState(false);
   const [promoReminderOpen, setPromoReminderOpen] = useState(false);
+  const { openChat } = useAIChat();
 
   const handleCalculatePayment = () => {
     setCalculatorOpen(true);
+  };
+
+  const handleAskAI = () => {
+    const contextualPrompt = `Tell me about the ${title}. What makes it a good choice? What type of boats is it best for?`;
+    openChat(contextualPrompt);
+    onClose();
   };
 
   const handleSelectMotor = () => {
@@ -676,6 +684,15 @@ export default function MotorDetailsPremiumModal({
                 Notify me of sales
               </button>
               
+              {/* Ask AI Button */}
+              <button
+                onClick={handleAskAI}
+                className="w-full flex items-center justify-center gap-2 text-sm text-amber-600 hover:text-amber-700 font-normal transition-colors py-2"
+              >
+                <Sparkles className="w-4 h-4" />
+                Ask AI about this motor
+              </button>
+              
               {/* Promo Badges */}
               <div className="space-y-2 border-t border-gray-100 pt-6">
                 {(() => {
@@ -720,6 +737,15 @@ export default function MotorDetailsPremiumModal({
                   </button>
                 )}
               </div>
+              
+              {/* AI Button - Mobile */}
+              <button
+                onClick={handleAskAI}
+                className="flex items-center justify-center w-11 h-11 rounded-full bg-amber-50 text-amber-600 hover:bg-amber-100 transition-colors"
+                aria-label="Ask AI about this motor"
+              >
+                <Sparkles className="w-5 h-5" />
+              </button>
               
               {/* Compact CTA Button */}
               <button
