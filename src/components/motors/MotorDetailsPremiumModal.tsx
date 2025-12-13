@@ -468,7 +468,10 @@ export default function MotorDetailsPremiumModal({
                         Physical Specifications
                       </h3>
                       <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
-...
+                        <SpecRow label="Dry Weight" value={generateWeight(hpValue)} />
+                        <SpecRow label="Gear Ratio" value={generateGearRatio(hpValue)} />
+                        <SpecRow label="Alternator Output" value={generateAlternator(hpValue)} />
+                        <SpecRow label="Shaft Length" value={motor?.shaft || shaft || "20\""} />
                       </div>
                     </div>
 
@@ -479,7 +482,10 @@ export default function MotorDetailsPremiumModal({
                         Performance Estimates
                       </h3>
                       <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
-...
+                        <SpecRow label="Recommended Boat Size" value={getRecommendedBoatSize(hpValue)} />
+                        <SpecRow label="Estimated Top Speed" value={getEstimatedSpeed(hpValue)} />
+                        <SpecRow label="Fuel Consumption" value={getFuelConsumption(hpValue)} />
+                        <SpecRow label="Sound Level" value={getSoundLevel(hpValue)} />
                       </div>
                     </div>
 
