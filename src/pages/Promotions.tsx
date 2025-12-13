@@ -14,6 +14,7 @@ import { toast } from 'sonner';
 import { format } from 'date-fns';
 import useEmblaCarousel from 'embla-carousel-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
+import { CountdownTimer } from '@/components/ui/countdown-timer';
 // Curated testimonials emphasizing loyalty and long-term relationships
 const testimonials = [
   {
@@ -392,18 +393,16 @@ export default function Promotions() {
                       )}
                     </div>
                     
-                    {/* Expiry */}
+                    {/* Countdown Timer */}
                     {promo.end_date && (
-                      <div className="flex items-center gap-2 text-sm">
-                        <Calendar className="w-4 h-4 text-muted-foreground" />
-                        <span className="text-muted-foreground">
-                          Ends {format(new Date(promo.end_date), 'MMM d, yyyy')}
-                        </span>
-                        {daysRemaining !== null && daysRemaining <= 14 && (
-                          <span className="text-red-600 font-medium">
-                            ({daysRemaining} day{daysRemaining !== 1 ? 's' : ''} left)
+                      <div className="space-y-2">
+                        <CountdownTimer endDate={promo.end_date} />
+                        <div className="flex items-center gap-2 text-sm">
+                          <Calendar className="w-4 h-4 text-muted-foreground" />
+                          <span className="text-muted-foreground">
+                            Ends {format(new Date(promo.end_date), 'MMM d, yyyy')}
                           </span>
-                        )}
+                        </div>
                       </div>
                     )}
                     
