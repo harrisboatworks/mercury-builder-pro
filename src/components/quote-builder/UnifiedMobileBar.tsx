@@ -45,12 +45,9 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     aiMessage: 'Help me find the right motor for my boat',
     nudges: {
       idle: [
-        { delay: 10, message: 'What size is your boat? We can help →', icon: 'sparkles' },
-        { delay: 18, message: 'Fishing or cruising? Tell us →', icon: 'heart' },
-        { delay: 26, message: 'First time buying? Ask our AI →', icon: 'sparkles' },
-        { delay: 35, message: '60 years of Mercury expertise at your service', icon: 'award' },
-        { delay: 45, message: "What's your budget? We'll find your match →", icon: 'dollar' },
-        { delay: 55, message: 'Not sure which HP? Tap AI for guidance →', icon: 'sparkles' },
+        { delay: 15, message: 'Not sure which motor? Tap AI →', icon: 'sparkles' },
+        { delay: 25, message: "We'll match the perfect motor to your boat", icon: 'heart' },
+        { delay: 40, message: '60 years of Mercury expertise at your service', icon: 'award' },
       ],
       encouragement: "Excellent choice! Let's customize it",
       contextHint: 'Great specs for your boat type',
@@ -62,10 +59,9 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     aiMessage: 'Need help choosing options or accessories?',
     nudges: {
       idle: [
-        { delay: 12, message: 'Is extended warranty worth it? Ask us →', icon: 'sparkles' },
-        { delay: 22, message: 'What protection level do you need? →', icon: 'shield' },
-        { delay: 32, message: 'Packages save you money vs à la carte', icon: 'dollar' },
-        { delay: 42, message: 'Not sure? AI can compare packages for you →', icon: 'sparkles' },
+        { delay: 15, message: 'Packages save you money vs à la carte', icon: 'dollar' },
+        { delay: 25, message: 'Complete includes everything for peace of mind', icon: 'shield' },
+        { delay: 40, message: 'Not sure? AI can compare packages for you →', icon: 'sparkles' },
       ],
       withSelection: 'Smart choice! Full protection included',
       withoutSelection: 'Most customers choose Complete for worry-free boating',
@@ -91,10 +87,9 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     aiMessage: 'Questions about boat compatibility or controls?',
     nudges: {
       idle: [
-        { delay: 12, message: 'Not sure about controls? We can explain →', icon: 'sparkles' },
-        { delay: 22, message: 'What type of boat do you have? →', icon: 'heart' },
-        { delay: 32, message: 'Compatibility matters for performance & safety', icon: 'shield' },
-        { delay: 42, message: 'Questions? Tap AI for expert guidance →', icon: 'sparkles' },
+        { delay: 15, message: 'This helps us ensure a perfect fit', icon: 'check' },
+        { delay: 25, message: 'Compatibility matters for performance & safety', icon: 'shield' },
+        { delay: 40, message: 'Questions? Tap AI for expert guidance →', icon: 'sparkles' },
       ],
       encouragement: 'Perfect fit confirmed! Almost there →',
     }
@@ -105,10 +100,9 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     aiMessage: 'Curious about trade-in values or the process?',
     nudges: {
       idle: [
-        { delay: 12, message: 'Got an old motor? What is it worth? →', icon: 'sparkles' },
-        { delay: 22, message: 'How does trade-in work? Ask AI →', icon: 'sparkles' },
-        { delay: 32, message: 'Trade-ins reduce your upfront cost', icon: 'dollar' },
-        { delay: 42, message: 'We accept most outboard motors', icon: 'check' },
+        { delay: 15, message: 'Have a motor to trade? Get instant value', icon: 'refresh' },
+        { delay: 25, message: 'Trade-ins reduce your upfront cost', icon: 'dollar' },
+        { delay: 40, message: 'We accept most outboard motors', icon: 'check' },
       ],
       withSelection: "Nice! That's ${value} toward your new motor",
       withoutSelection: 'No trade-in? No problem →',
