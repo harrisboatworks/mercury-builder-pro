@@ -556,38 +556,43 @@ export const UnifiedMobileBar: React.FC = () => {
           shadow-[0_-2px_20px_rgba(0,0,0,0.06)]"
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
-        {/* Proactive Nudge Banner with Type-Specific Styling */}
-        <AnimatePresence mode="wait">
-          {activeNudge && (
+        {/* Always-Visible Proactive Prompt Bar */}
+        <div className="overflow-hidden">
+          <AnimatePresence mode="wait">
             <motion.div
-              key={activeNudge.message}
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              className="overflow-hidden"
-            >
-              <div className={cn(
+              key={activeNudge?.message || 'default-prompt'}
+              initial={{ opacity: 0, y: -5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 5 }}
+              transition={{ duration: 0.2 }}
+              className={cn(
                 "px-4 py-2 border-b text-center",
-                activeNudge.type === 'tip' && "bg-gradient-to-r from-gray-50 to-gray-100/80 border-gray-200/60 text-gray-600",
-                activeNudge.type === 'success' && "bg-gradient-to-r from-emerald-50 to-emerald-100/50 border-emerald-200/60 text-emerald-700",
-                activeNudge.type === 'celebration' && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
-                activeNudge.type === 'progress' && "bg-gradient-to-r from-amber-50 to-amber-100/50 border-amber-200/60 text-amber-700",
-                activeNudge.type === 'social-proof' && "bg-gradient-to-r from-slate-50 to-slate-100/80 border-slate-200/60 text-slate-600",
-              )}>
-                <motion.span 
-                  initial={{ y: 5, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.1 }}
-                  className="text-xs font-medium inline-flex items-center"
-                >
-                  <NudgeIcon icon={activeNudge.icon} />
-                  {activeNudge.message}
-                </motion.span>
-              </div>
+                activeNudge?.type === 'tip' && "bg-gradient-to-r from-gray-50 to-gray-100/80 border-gray-200/60 text-gray-600",
+                activeNudge?.type === 'success' && "bg-gradient-to-r from-emerald-50 to-emerald-100/50 border-emerald-200/60 text-emerald-700",
+                activeNudge?.type === 'celebration' && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
+                activeNudge?.type === 'progress' && "bg-gradient-to-r from-amber-50 to-amber-100/50 border-amber-200/60 text-amber-700",
+                activeNudge?.type === 'social-proof' && "bg-gradient-to-r from-slate-50 to-slate-100/80 border-slate-200/60 text-slate-600",
+                !activeNudge && "bg-gray-50/80 border-gray-200/50 text-gray-500",
+              )}
+            >
+              <span className="text-xs font-medium inline-flex items-center">
+                {activeNudge ? (
+                  <>
+                    <NudgeIcon icon={activeNudge.icon} />
+                    {activeNudge.message}
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="h-3.5 w-3.5 mr-1.5 inline-block" />
+                    {hasMotor 
+                      ? `Ask about your ${displayMotor?.hp || ''}HP motor →` 
+                      : 'Tap AI for help finding the right motor →'}
+                  </>
+                )}
+              </span>
             </motion.div>
-          )}
-        </AnimatePresence>
+          </AnimatePresence>
+        </div>
 
         <div 
           className="flex flex-row items-center h-14 min-[375px]:h-16 keep-flex
