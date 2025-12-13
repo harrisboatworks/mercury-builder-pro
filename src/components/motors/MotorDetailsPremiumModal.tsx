@@ -12,6 +12,8 @@ import { money } from "../../lib/money";
 import { PromoReminderModal } from "../quote-builder/PromoReminderModal";
 import { MotorImageGallery } from './MotorImageGallery';
 import { MonthlyPaymentDisplay } from '../quote-builder/MonthlyPaymentDisplay';
+import { MotorCompatibilityBadge } from './MotorCompatibilityBadge';
+import { useQuote } from "../../contexts/QuoteContext";
 import { 
   decodeModelName, 
   requiresMercuryControls, 
@@ -87,6 +89,7 @@ export default function MotorDetailsPremiumModal({
   const { promo: activePromo } = useActiveFinancingPromo();
   const { promotions: activePromotions } = useActivePromotions();
   const { setScrollLock } = useScrollCoordination();
+  const { state } = useQuote();
   
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
@@ -243,6 +246,13 @@ export default function MotorDetailsPremiumModal({
                 <div className="px-4 py-3 border-b border-gray-200 bg-white">
                   <h2 className="text-lg font-semibold text-gray-900 mb-1">{title}</h2>
                   {motor && <StockStatusIndicator motor={motor} />}
+                  {motor && (
+                    <MotorCompatibilityBadge 
+                      motor={{ model: motor.model || title, hp: hpValue, horsepower: hpValue }}
+                      boatInfo={state.boatInfo}
+                      className="mt-3"
+                    />
+                  )}
                 </div>
                 
                 {/* 3. Tabs - separate section below name */}
@@ -294,6 +304,14 @@ export default function MotorDetailsPremiumModal({
                     
                     {/* 3. Stock Status Indicator */}
                     {motor && <StockStatusIndicator motor={motor} />}
+                    
+                    {/* 4. Compatibility Badge */}
+                    {motor && (
+                      <MotorCompatibilityBadge 
+                        motor={{ model: motor.model || title, hp: hpValue, horsepower: hpValue }}
+                        boatInfo={state.boatInfo}
+                      />
+                    )}
                   </div>
                 </div>
                 
