@@ -111,3 +111,48 @@ export function generateSocialProofMessage(date = new Date()): string {
   
   return messages[Math.floor(rng() * messages.length)];
 }
+
+// Time phrases for testimonial dates
+const testimonialTimePhrases = [
+  "1 week ago",
+  "2 weeks ago",
+  "3 weeks ago",
+  "1 month ago",
+  "5 weeks ago",
+  "6 weeks ago",
+  "2 months ago",
+  "3 months ago",
+];
+
+export interface DailyTestimonial {
+  quote: string;
+  name: string;
+  location: string;
+  rating: number;
+  dateLabel: string;
+}
+
+export function generateDailyTestimonials(
+  testimonials: Array<{ quote: string; name: string; location: string }>,
+  count = 5,
+  date = new Date()
+): DailyTestimonial[] {
+  const key = todayKey(date);
+  const shuffled = seededShuffle(testimonials, `testimonials-${key}`);
+  const seedFn = xmur3(`testimonial-dates-${key}`);
+  const rng = mulberry32(seedFn());
+
+  return shuffled.slice(0, count).map((t) => ({
+    ...t,
+    rating: 5,
+    dateLabel: pick(testimonialTimePhrases, rng),
+  }));
+}
+
+export function generateReviewCount(date = new Date()): number {
+  const key = todayKey(date);
+  const seedFn = xmur3(`review-count-${key}`);
+  const rng = mulberry32(seedFn());
+  // Generate count between 150-220
+  return 150 + Math.floor(rng() * 70);
+}
