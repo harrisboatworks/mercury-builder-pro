@@ -30,8 +30,19 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
 
   // Calculate all pricing details
   const pricing = useMemo(() => {
-    const motorPrice = state.motor?.price || state.motor?.basePrice || state.motor?.msrp || 0;
-    if (!motorPrice) return null;
+    // Only bail if no motor exists at all
+    if (!state.motor) return null;
+    
+    const motorPrice = state.motor.price || state.motor.basePrice || state.motor.msrp || 0;
+    
+    // Debug logging
+    console.log('🎯 MobileQuoteDrawer pricing:', {
+      motorModel: state.motor.model,
+      price: state.motor.price,
+      basePrice: state.motor.basePrice,
+      msrp: state.motor.msrp,
+      calculatedMotorPrice: motorPrice
+    });
     
     let subtotal = motorPrice;
     const lineItems: { label: string; value: number; isCredit?: boolean }[] = [];
