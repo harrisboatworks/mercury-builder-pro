@@ -254,17 +254,36 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       try {
         let fullResponse = '';
         
+        // Build rich context for AI including motor details, quote progress, trade-in
+        const activeMotor = state.previewMotor || state.motor;
+        const quoteProgress = {
+          step: location.pathname.includes('motor-selection') ? 1 :
+                location.pathname.includes('options') ? 2 :
+                location.pathname.includes('purchase-path') ? 3 :
+                location.pathname.includes('trade-in') ? 4 :
+                location.pathname.includes('schedule') ? 5 :
+                location.pathname.includes('summary') ? 6 : 1,
+          total: 6,
+          selectedPackage: state.selectedOptions?.length > 0 ? 'Complete Package' : null,
+          tradeInValue: state.tradeInInfo?.estimatedValue || null
+        };
+        
         await streamChat({
           message: text.trim(),
           conversationHistory,
           context: {
-            currentMotor: state.motor ? {
-              model: state.motor.model,
-              hp: state.motor.hp,
-              price: state.motor.msrp || state.motor.price
+            currentMotor: activeMotor ? {
+              id: (activeMotor as any).id,
+              model: activeMotor.model || (activeMotor as any).model_display || '',
+              hp: activeMotor.hp || (activeMotor as any).horsepower || 0,
+              price: activeMotor.msrp || activeMotor.price || (activeMotor as any).sale_price || activeMotor.salePrice,
+              family: (activeMotor as any).family,
+              description: (activeMotor as any).description,
+              features: (activeMotor as any).features
             } : null,
             currentPage: location.pathname,
-            boatInfo: state.boatInfo
+            boatInfo: state.boatInfo,
+            quoteProgress
           },
           onDelta: (chunk) => {
             fullResponse += chunk;

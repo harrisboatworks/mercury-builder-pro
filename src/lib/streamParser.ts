@@ -7,12 +7,22 @@ export interface StreamChatParams {
   conversationHistory: Array<{ role: string; content: string }>;
   context?: {
     currentMotor?: {
+      id?: string;
       model: string;
       hp: number;
       price?: number;
+      family?: string;
+      description?: string;
+      features?: any;
     };
     currentPage?: string;
     boatInfo?: any;
+    quoteProgress?: {
+      step: number;
+      total: number;
+      selectedPackage?: string | null;
+      tradeInValue?: number | null;
+    };
   };
   onDelta: (chunk: string) => void;
   onDone: (fullResponse: string) => void;
