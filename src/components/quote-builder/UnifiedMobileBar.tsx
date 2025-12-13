@@ -107,9 +107,10 @@ export const UnifiedMobileBar: React.FC = () => {
 
   // Calculate running total
   const runningTotal = useMemo(() => {
-    if (!state.motor?.price) return 0;
+    const motorPrice = state.motor?.price || state.motor?.basePrice || state.motor?.msrp || 0;
+    if (!motorPrice) return 0;
 
-    let total = state.motor.price;
+    let total = motorPrice;
 
     // Add controls cost from boat info
     if (state.boatInfo?.controlsOption) {
@@ -196,7 +197,7 @@ export const UnifiedMobileBar: React.FC = () => {
     : '';
   
   // Calculate price with fallback
-  const displayTotal = runningTotal || state.motor?.price || 0;
+  const displayTotal = runningTotal || state.motor?.price || state.motor?.basePrice || state.motor?.msrp || 0;
 
   return (
     <>
@@ -230,7 +231,7 @@ export const UnifiedMobileBar: React.FC = () => {
             transition={springConfig}
             onClick={handleOpenDrawer}
             disabled={!hasMotor}
-            className="flex-1 min-w-0 flex flex-col items-center justify-center py-2 px-3 
+            className="flex-1 min-w-0 flex flex-col items-center justify-center py-1.5 px-3 
               rounded-xl bg-gray-50/80 border border-gray-200/60
               shadow-sm
               disabled:opacity-50 disabled:shadow-none"
@@ -238,9 +239,9 @@ export const UnifiedMobileBar: React.FC = () => {
             {hasMotor ? (
               <>
                 {/* Drag Handle Indicator */}
-                <div className="w-8 h-1 rounded-full bg-gray-300 mb-1.5" />
+                <div className="w-8 h-1 rounded-full bg-gray-300 mb-1" />
                 <div className="flex items-center gap-1.5 w-full justify-center">
-                  <span className="text-sm font-semibold text-gray-900 truncate max-w-[180px]">{displayName || 'Motor Selected'}</span>
+                  <span className="text-sm font-semibold text-gray-900 truncate max-w-[220px]">{displayName || 'Motor Selected'}</span>
                   <ChevronUp className={`h-4 w-4 shrink-0 text-gray-400 transition-transform duration-200 ${isDrawerOpen ? 'rotate-180' : ''}`} />
                 </div>
                 <div className="flex items-center gap-2 text-xs text-gray-600">
