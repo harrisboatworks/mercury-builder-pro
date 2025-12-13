@@ -9,16 +9,24 @@ import { Progress } from '@/components/ui/progress';
 import { Loader2, RefreshCw, Image, Download, Play, Square, CheckCircle2, Clock, AlertCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
+// Smaller batches (8-12 motors each) to avoid timeout
 const HP_BATCHES = [
-  { label: "2.5-10 HP", min: 2.5, max: 10, estimatedCount: 29 },
-  { label: "15-20 HP", min: 15, max: 20, estimatedCount: 24 },
-  { label: "25-30 HP", min: 25, max: 30, estimatedCount: 17 },
-  { label: "40-150 HP", min: 40, max: 150, estimatedCount: 23 },
-  { label: "175-250 HP", min: 175, max: 250, estimatedCount: 24 },
+  { label: "2.5-5 HP", min: 2.5, max: 5, estimatedCount: 8 },
+  { label: "6-8 HP", min: 6, max: 8, estimatedCount: 6 },
+  { label: "9.9 HP", min: 9.9, max: 9.9, estimatedCount: 12 },
+  { label: "15 HP", min: 15, max: 15, estimatedCount: 12 },
+  { label: "20 HP", min: 20, max: 20, estimatedCount: 12 },
+  { label: "25-30 HP", min: 25, max: 30, estimatedCount: 10 },
+  { label: "40-60 HP", min: 40, max: 60, estimatedCount: 8 },
+  { label: "75-115 HP", min: 75, max: 115, estimatedCount: 8 },
+  { label: "150 HP", min: 150, max: 150, estimatedCount: 7 },
+  { label: "175-200 HP", min: 175, max: 200, estimatedCount: 8 },
+  { label: "225-250 HP", min: 225, max: 250, estimatedCount: 10 },
   { label: "300 HP", min: 300, max: 300, estimatedCount: 11 },
 ];
 
-const DELAY_BETWEEN_BATCHES = 45000; // 45 seconds
+const DELAY_BETWEEN_BATCHES = 30000; // 30 seconds (reduced since batches are smaller)
+const FETCH_TIMEOUT = 120000; // 2 minutes
 
 interface BatchResult {
   label: string;
@@ -65,7 +73,7 @@ export default function UpdateMotorImages() {
 
     toast({
       title: dryRun ? "Starting automated dry run..." : "Starting automated processing...",
-      description: `Processing all 128 motors in 6 batches with 45s delays.`,
+      description: `Processing ~128 motors in ${HP_BATCHES.length} small batches with 30s delays.`,
     });
 
     let runningStats = { motors: 0, images: 0, success: 0, failed: 0 };
@@ -87,16 +95,39 @@ export default function UpdateMotorImages() {
       ));
 
       try {
-        const { data, error } = await supabase.functions.invoke('scrape-motor-images', {
-          body: { 
-            dryRun, 
-            hpMin: batch.min, 
-            hpMax: batch.max, 
-            batchSize: 30 
-          }
-        });
+        // Use raw fetch with explicit 2-minute timeout to avoid client timeout issues
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) throw new Error('Not authenticated');
 
-        if (error) throw error;
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
+
+        const response = await fetch(
+          `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/scrape-motor-images`,
+          {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${session.access_token}`,
+              'Content-Type': 'application/json',
+              'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU',
+            },
+            body: JSON.stringify({ 
+              dryRun, 
+              hpMin: batch.min, 
+              hpMax: batch.max, 
+              batchSize: 12 
+            }),
+            signal: controller.signal,
+          }
+        );
+
+        clearTimeout(timeoutId);
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${await response.text()}`);
+        }
+
+        const data = await response.json();
 
         const batchMotors = data?.totalProcessed || 0;
         const batchImages = data?.totalImagesUploaded || 0;
@@ -291,7 +322,7 @@ export default function UpdateMotorImages() {
             Process All Motors Automatically
           </CardTitle>
           <CardDescription>
-            Automatically process all 128 motors in 6 HP range batches with 45-second delays between batches to respect API rate limits. Estimated time: 20-30 minutes.
+            Automatically process all ~128 motors in {HP_BATCHES.length} small batches (8-12 motors each) with 30-second delays. Uses 2-minute timeout per batch to avoid failures. Estimated time: 15-25 minutes.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
