@@ -65,7 +65,6 @@ const PAGE_CONFIG: Record<string, {
 const HIDE_ON_PAGES = [
   '/quote/summary',
   '/quote/success',
-  '/financing',
   '/login',
   '/auth',
   '/dashboard',
@@ -75,11 +74,11 @@ const HIDE_ON_PAGES = [
   '/staging',
   '/my-quotes',
   '/deposits',
-  '/accessories',
   '/contact',
-  '/calculator',
-  '/promotions',
 ];
+
+// Pages where the unified bar SHOULD show (customer journey paths)
+const SHOW_ON_PAGES = ['/', '/motors', '/quote', '/promotions', '/financing', '/accessories'];
 
 // Spring animation config for snappy micro-interactions
 const springConfig = { type: 'spring', stiffness: 400, damping: 17 };
@@ -96,11 +95,17 @@ export const UnifiedMobileBar: React.FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
 
-  // Check if we should show the bar
+  // Check if we should show the bar - now shows on all customer journey pages
   const shouldShow = useMemo(() => {
     if (!isMobile) return false;
-    if (!location.pathname.startsWith('/quote')) return false;
-    return !HIDE_ON_PAGES.some(path => location.pathname.startsWith(path));
+    
+    // Hide on admin/auth/utility pages
+    if (HIDE_ON_PAGES.some(path => location.pathname.startsWith(path))) return false;
+    
+    // Show on designated customer journey pages
+    return SHOW_ON_PAGES.some(path => 
+      location.pathname === path || location.pathname.startsWith(path + '/')
+    );
   }, [isMobile, location.pathname]);
 
   const hasMotor = !!state.motor;
@@ -202,13 +207,31 @@ export const UnifiedMobileBar: React.FC = () => {
 
   if (!shouldShow) return null;
 
-  // Use formatted motor name for proper spacing/capitalization
-  const displayName = state.motor?.model 
-    ? formatMotorDisplayName(state.motor.model) 
-    : '';
+  // Extract HP and motor family for compact display (e.g., "9.9 HP FourStroke")
+  const getMotorFamily = (model: string | undefined): string => {
+    if (!model) return '';
+    const lowerModel = model.toLowerCase();
+    if (lowerModel.includes('verado')) return 'Verado';
+    if (lowerModel.includes('pro xs')) return 'Pro XS';
+    if (lowerModel.includes('seapro')) return 'SeaPro';
+    if (lowerModel.includes('fourstroke')) return 'FourStroke';
+    return '';
+  };
+  
+  const motorHP = state.motor?.hp;
+  const motorFamily = getMotorFamily(state.motor?.model);
+  const compactMotorName = motorHP ? `${motorHP} HP ${motorFamily}`.trim() : '';
   
   // Calculate price with fallback
   const displayTotal = runningTotal || state.motor?.price || state.motor?.basePrice || state.motor?.msrp || 0;
+  
+  // Get contextual empty state message based on current page
+  const getEmptyStateMessage = () => {
+    if (location.pathname === '/') return 'Browse Mercury Motors';
+    if (location.pathname.startsWith('/promotions')) return 'View Current Promos';
+    if (location.pathname.startsWith('/financing')) return 'Explore Financing';
+    return 'Select a motor to begin';
+  };
 
   return (
     <>
@@ -250,12 +273,13 @@ export const UnifiedMobileBar: React.FC = () => {
             {hasMotor ? (
               <>
                 {/* Drag Handle Indicator */}
-                <div className="w-8 h-1 rounded-full bg-gray-300 mb-1" />
-                <div className="flex items-center gap-1 w-full justify-center">
-                  <span className="text-sm font-semibold text-gray-900 truncate">{displayName || 'Motor Selected'}</span>
-                  <ChevronUp className={`h-3.5 w-3.5 shrink-0 text-gray-400 transition-transform duration-200 ${isDrawerOpen ? 'rotate-180' : ''}`} />
-                </div>
-                <div className="flex items-center gap-2 text-xs text-gray-600">
+                <div className="w-8 h-1 rounded-full bg-gray-300 mb-0.5" />
+                {/* Line 1: HP + Motor Family (compact, no truncation) */}
+                <span className="text-sm font-semibold text-gray-900">
+                  {compactMotorName || 'Motor Selected'}
+                </span>
+                {/* Line 2: Price + Monthly */}
+                <div className="flex items-center gap-1.5 text-xs">
                   <span className="font-semibold text-gray-900">{money(displayTotal)}</span>
                   {monthlyPayment > 0 && (
                     <>
@@ -263,13 +287,17 @@ export const UnifiedMobileBar: React.FC = () => {
                       <span className="text-gray-500">≈{money(monthlyPayment)}/mo</span>
                     </>
                   )}
+                  <ChevronUp className={`h-3 w-3 text-gray-400 transition-transform duration-200 ${isDrawerOpen ? 'rotate-180' : ''}`} />
                 </div>
               </>
             ) : (
-              <span className="text-sm text-gray-500 flex items-center gap-1.5">
-                <Sparkles className="h-4 w-4" />
-                Select a motor to begin
-              </span>
+              <div className="flex flex-col items-center">
+                <span className="text-sm text-gray-600 flex items-center gap-1.5">
+                  <Sparkles className="h-4 w-4" />
+                  {getEmptyStateMessage()}
+                </span>
+                <span className="text-[10px] text-gray-400 mt-0.5">Tap to explore</span>
+              </div>
             )}
           </motion.button>
 
