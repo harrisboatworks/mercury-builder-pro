@@ -119,7 +119,22 @@ function cleanDescription(text: string | undefined | null): string | null {
   return cleaned;
 }
 
-// Clean features array
+// Marketing buzzwords to filter out
+const MARKETING_BUZZWORDS = [
+  'innovative', 'cutting-edge', 'unmatched', 'revolutionary', 
+  'industry-leading', 'best-in-class', 'state-of-the-art',
+  'exceptional', 'outstanding', 'extraordinary', 'unparalleled',
+  'world-class', 'next-generation', 'groundbreaking', 'game-changing',
+  'premium quality', 'ultimate', 'unrivaled', 'superior performance'
+];
+
+// Check if text contains marketing buzzwords
+function containsBuzzwords(text: string): boolean {
+  const lowerText = text.toLowerCase();
+  return MARKETING_BUZZWORDS.some(bw => lowerText.includes(bw));
+}
+
+// Clean features array - filter out marketing speak
 function cleanFeatures(features: any): string[] | null {
   if (!Array.isArray(features)) return null;
   
@@ -130,10 +145,28 @@ function cleanFeatures(features: any): string[] | null {
       if (f.length < 10 || f.length > 200) return false;
       if (f.includes('http') || f.includes('[') || f.includes('](')) return false;
       if (/learn more|click|visit|browse|shop now/i.test(f)) return false;
+      if (containsBuzzwords(f)) return false;
       return true;
     });
   
   return cleanedFeatures.length > 0 ? cleanedFeatures.slice(0, 12) : null;
+}
+
+// Clean key takeaways - ensure conversational tone
+function cleanKeyTakeaways(takeaways: any): string[] | null {
+  if (!Array.isArray(takeaways)) return null;
+  
+  const cleanedTakeaways = takeaways
+    .filter((t): t is string => typeof t === 'string')
+    .map(t => t.trim())
+    .filter(t => {
+      if (t.length < 15 || t.length > 150) return false;
+      if (t.includes('http') || containsBuzzwords(t)) return false;
+      // Prefer conversational starters
+      return true;
+    });
+  
+  return cleanedTakeaways.length > 0 ? cleanedTakeaways.slice(0, 6) : null;
 }
 
 // Validate scraped specifications are legitimate
@@ -194,15 +227,27 @@ function mergeSpecs(existing: Record<string, any>, scraped: Record<string, any>)
   return merged;
 }
 
-// PRIORITY 1: Perplexity - PRIMARY source for structured specs
+// PRIORITY 1: Perplexity - PRIMARY source for structured specs with CONVERSATIONAL tone
 async function searchWithPerplexity(hp: number, family: string | null, apiKey: string): Promise<{
   description?: string;
+  keyTakeaways?: string[];
   features?: string[];
   specifications?: Record<string, any>;
 } | null> {
   try {
     const motorName = `${hp}hp ${family || 'FourStroke'}`;
     console.log(`[Perplexity] Searching: Mercury ${motorName}`);
+    
+    // Determine motor category for better targeting
+    const isSmallPortable = hp <= 15;
+    const isMidRange = hp > 15 && hp <= 75;
+    const isHighPower = hp > 75;
+    
+    const targetAudience = isSmallPortable 
+      ? "cottage owners, tender users, small fishing boat owners" 
+      : isMidRange 
+        ? "pontoon owners, fishing enthusiasts, recreational boaters"
+        : "serious anglers, performance boaters, offshore fishermen";
     
     const response = await fetch('https://api.perplexity.ai/chat/completions', {
       method: 'POST',
@@ -215,30 +260,49 @@ async function searchWithPerplexity(hp: number, family: string | null, apiKey: s
         messages: [
           { 
             role: 'system', 
-            content: `You are extracting official Mercury Marine outboard motor specifications.
-Return ONLY valid JSON with this exact structure for a Mercury ${motorName}:
+            content: `You are a friendly, knowledgeable boat salesperson at a Mercury Marine dealership.
+Your job is to explain motors in simple, engaging language - like you're chatting with a customer in the showroom.
+
+Return ONLY valid JSON for a Mercury ${motorName}:
 {
-  "description": "2-3 sentences about this motor's key benefits, target applications, and what makes it stand out. Focus on boating use cases.",
-  "features": ["8-10 key features like fuel efficiency, reliability, technology, etc"],
+  "description": "Write 2-3 sentences like you're talking to a customer. Start with WHO this motor is perfect for (${targetAudience}). Then explain WHAT makes it great in everyday terms. Avoid buzzwords like 'innovative', 'cutting-edge', 'unmatched'. Use friendly phrases like 'you'll love', 'perfect for', 'great choice for'. Example tone: 'This is our go-to motor for cottage weekends - light enough to carry yourself and quiet enough to enjoy the water.'",
+  
+  "keyTakeaways": [
+    "5-6 bullet points written like you're chatting with a friend",
+    "Start each with an action verb or benefit",
+    "Examples: 'Runs quietly so you won't spook the fish'",
+    "'Light enough to throw in your truck by yourself'",
+    "'Sips fuel - a tank lasts all weekend'",
+    "'Starts first pull, every time'"
+  ],
+  
+  "features": ["6-8 technical features for the specs section"],
+  
   "specifications": {
-    "displacement": "cc value with unit",
+    "displacement": "cc value",
     "cylinders": number,
-    "boreStroke": "bore x stroke in mm",
-    "fuelSystem": "type (EFI, carbureted, etc)",
-    "startingType": "manual, electric, or both",
-    "weight": "dry weight in lbs",
-    "shaftLengths": ["available shaft lengths"],
+    "boreStroke": "bore x stroke mm",
+    "fuelSystem": "EFI or Carburetor",
+    "startingType": "Manual/Electric",
+    "weight": "lbs (kg)",
+    "shaftLengths": ["15\\"", "20\\""],
     "gearRatio": "ratio:1",
-    "alternatorOutput": "amp output",
-    "fullThrottleRPM": "RPM range",
-    "fuelTankCapacity": "if integrated",
-    "oilCapacity": "quarts/liters"
+    "alternatorOutput": "amp",
+    "fullThrottleRPM": "RPM range"
   }
 }
-Use ONLY official Mercury Marine specifications. No markdown, no explanations, just the JSON object.
+
+IMPORTANT TONE GUIDELINES:
+- Write like you're explaining to a neighbor who just bought a fishing boat
+- Focus on real benefits (quiet, light, reliable, fuel-efficient) not marketing claims
+- Use "you" and "your" to make it personal
+- Keep it simple - no jargon or spec-speak in descriptions
+- Make the customer feel excited about owning this motor
+
+Use ONLY official Mercury Marine specifications. No markdown, just JSON.
 Do NOT include any pricing information.`
           },
-          { role: 'user', content: `What are the official specifications and features of the Mercury Marine ${motorName} outboard motor?` }
+          { role: 'user', content: `Tell me about the Mercury ${motorName} outboard motor - who is it for and why would someone love it?` }
         ],
         search_domain_filter: ['mercurymarine.com', 'boattest.com', 'boats.com', 'boatingmag.com'],
       }),
@@ -264,6 +328,9 @@ Do NOT include any pricing information.`
         const cleanedDesc = cleanDescription(parsed.description);
         if (cleanedDesc) result.description = cleanedDesc;
         
+        const cleanedTakeaways = cleanKeyTakeaways(parsed.keyTakeaways);
+        if (cleanedTakeaways) result.keyTakeaways = cleanedTakeaways;
+        
         const cleanedFeatures = cleanFeatures(parsed.features);
         if (cleanedFeatures) result.features = cleanedFeatures;
         
@@ -274,7 +341,7 @@ Do NOT include any pricing information.`
           }
         }
         
-        console.log(`[Perplexity] Got: desc=${!!result.description}, features=${result.features?.length || 0}, specs=${Object.keys(result.specifications || {}).length}`);
+        console.log(`[Perplexity] Got: desc=${!!result.description}, takeaways=${result.keyTakeaways?.length || 0}, features=${result.features?.length || 0}, specs=${Object.keys(result.specifications || {}).length}`);
         return Object.keys(result).length > 0 ? result : null;
       } catch (e) {
         console.log('[Perplexity] JSON parse failed');
@@ -541,6 +608,7 @@ async function scrapeMotor(
   console.log(`\n=== Processing: ${motor.model} (${result.hp}hp ${family || 'FourStroke'}) ===`);
   
   let finalDescription: string | null = null;
+  let finalKeyTakeaways: string[] | null = null;
   let finalFeatures: string[] | null = null;
   let finalSpecs: Record<string, any> | null = null;
   
@@ -552,6 +620,9 @@ async function scrapeMotor(
       if (perplexityData.description) {
         finalDescription = perplexityData.description;
         result.source = 'perplexity';
+      }
+      if (perplexityData.keyTakeaways) {
+        finalKeyTakeaways = perplexityData.keyTakeaways;
       }
       if (perplexityData.features) {
         finalFeatures = perplexityData.features;
@@ -608,7 +679,7 @@ async function scrapeMotor(
   }
   
   // ============ PREPARE UPDATE ============
-  if (!finalDescription && !finalFeatures && !finalSpecs) {
+  if (!finalDescription && !finalFeatures && !finalSpecs && !finalKeyTakeaways) {
     result.error = 'No data from any source';
     return result;
   }
@@ -619,6 +690,15 @@ async function scrapeMotor(
   if (finalDescription && (forceRefresh || !motor.description || motor.description.length < 50 || isPromotionalContent(motor.description))) {
     updateData.description = finalDescription;
     result.updatedFields.push('description');
+  }
+  
+  // Update key takeaways (store in spec_json for now as custom field)
+  if (finalKeyTakeaways && finalKeyTakeaways.length > 0) {
+    const existingSpecJson = (motor.spec_json && typeof motor.spec_json === 'object') 
+      ? motor.spec_json 
+      : {};
+    updateData.spec_json = { ...existingSpecJson, keyTakeaways: finalKeyTakeaways };
+    result.updatedFields.push('keyTakeaways');
   }
   
   // Update features
