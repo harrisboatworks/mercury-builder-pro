@@ -15,6 +15,7 @@ import { ContactButton } from "@/components/ui/contact-button";
 import { GlobalStickyQuoteBar } from "@/components/quote/GlobalStickyQuoteBar";
 import { RouteLoader } from "@/components/ui/RouteLoader";
 import { GlobalAIChat } from "@/components/chat/GlobalAIChat";
+import { UnifiedMobileBar } from "@/components/quote-builder/UnifiedMobileBar";
 
 // Note: Removed framer-motion AnimatePresence (~120KB) to reduce initial bundle
 // Page transitions now use CSS instead of JavaScript animations
@@ -369,6 +370,7 @@ const App = () => (
               <ContactButton />
               <AnimatedRoutes />
               <GlobalStickyQuoteBar />
+              <UnifiedMobileBar />
               <Canonical />
 
               <footer className="mt-12 border-t border-border bg-muted/30">

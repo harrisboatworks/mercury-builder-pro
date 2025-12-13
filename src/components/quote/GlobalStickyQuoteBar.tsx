@@ -2,12 +2,14 @@ import { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import StickyQuoteBar from './StickyQuoteBar';
 
 export function GlobalStickyQuoteBar() {
   const { state } = useQuote();
   const location = useLocation();
+  const isMobile = useIsMobile();
   const navigate = useNavigate();
   const { promo } = useActiveFinancingPromo();
 
@@ -30,7 +32,8 @@ export function GlobalStickyQuoteBar() {
     '/calculator',
   ];
 
-  const shouldShowBar = state.motor && !hideOnPages.some(path => location.pathname.startsWith(path));
+  // Hide on mobile (handled by UnifiedMobileBar) or on excluded pages
+  const shouldShowBar = !isMobile && state.motor && !hideOnPages.some(path => location.pathname.startsWith(path));
 
   // Calculate running total dynamically
   const runningTotal = useMemo(() => {
