@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ChevronUp, MessageCircle, Phone, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAIChat } from '@/components/chat/GlobalAIChat';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -8,7 +9,6 @@ import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { money } from '@/lib/money';
-import { Button } from '@/components/ui/button';
 import { MobileQuoteDrawer } from './MobileQuoteDrawer';
 import { ContactModal } from '@/components/ui/contact-button';
 
@@ -79,6 +79,9 @@ const HIDE_ON_PAGES = [
   '/calculator',
   '/promotions',
 ];
+
+// Spring animation config for snappy micro-interactions
+const springConfig = { type: 'spring', stiffness: 400, damping: 17 };
 
 export const UnifiedMobileBar: React.FC = () => {
   const isMobile = useIsMobile();
@@ -187,44 +190,57 @@ export const UnifiedMobileBar: React.FC = () => {
   if (!shouldShow) return null;
 
   const motorName = state.motor?.model || '';
-  const displayName = motorName.length > 16 ? motorName.substring(0, 16) + '...' : motorName;
+  const displayName = motorName.length > 18 ? motorName.substring(0, 18) + '...' : motorName;
 
   return (
     <>
-      {/* Unified Mobile Bar - Single Row Premium Design */}
+      {/* Unified Mobile Bar - Premium Glass-Morphism Design */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-[60] bg-white border-t border-gray-200 shadow-lg"
+        className="fixed bottom-0 left-0 right-0 z-[60] 
+          bg-white/85 backdrop-blur-xl 
+          border-t border-white/60 
+          shadow-[0_-4px_30px_rgba(0,0,0,0.1)]"
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
         <div className="flex flex-row items-center h-16 px-3 gap-2 keep-flex">
-          {/* AI Button with label */}
-          <button
+          {/* AI Button - Premium gradient accent */}
+          <motion.button
+            whileTap={{ scale: 0.92 }}
+            transition={springConfig}
             onClick={handleOpenAI}
-            className="flex flex-col items-center justify-center h-12 w-12 shrink-0 rounded-lg bg-primary/10 hover:bg-primary/20 active:scale-95 transition-all"
+            className="flex flex-col items-center justify-center h-11 w-11 shrink-0 
+              rounded-xl bg-gradient-to-br from-primary/15 to-primary/5
+              border border-primary/20
+              shadow-sm"
             aria-label="Ask AI assistant"
           >
-            <MessageCircle className="h-5 w-5 text-primary" />
-            <span className="text-[10px] font-medium text-primary mt-0.5">AI</span>
-          </button>
+            <MessageCircle className="h-4.5 w-4.5 text-primary" />
+            <span className="text-[9px] font-semibold text-primary/80 mt-0.5">AI</span>
+          </motion.button>
 
-          {/* Center: Motor Info (tappable) or Prompt */}
-          <button
+          {/* Center: Motor Info Card (tappable) or Prompt */}
+          <motion.button
+            whileTap={{ scale: 0.98 }}
+            transition={springConfig}
             onClick={handleOpenDrawer}
             disabled={!hasMotor}
-            className="flex-1 min-w-0 flex flex-col items-center justify-center py-1.5 px-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors disabled:opacity-50"
+            className="flex-1 min-w-0 flex flex-col items-center justify-center py-2 px-3 
+              rounded-xl bg-gray-50/80 border border-gray-200/60
+              shadow-sm
+              disabled:opacity-50 disabled:shadow-none"
           >
             {hasMotor ? (
               <>
                 <div className="flex items-center gap-1.5 w-full justify-center">
-                  <span className="text-sm font-semibold text-gray-900 truncate max-w-[120px]">{displayName}</span>
-                  <ChevronUp className={`h-3.5 w-3.5 shrink-0 text-gray-500 transition-transform ${isDrawerOpen ? 'rotate-180' : ''}`} />
+                  <span className="text-sm font-semibold text-gray-900 truncate max-w-[150px]">{displayName}</span>
+                  <ChevronUp className={`h-3.5 w-3.5 shrink-0 text-gray-400 transition-transform duration-200 ${isDrawerOpen ? 'rotate-180' : ''}`} />
                 </div>
                 <div className="flex items-center gap-2 text-xs text-gray-600">
-                  <span className="font-medium">{money(runningTotal)}</span>
+                  <span className="font-semibold text-gray-900">{money(runningTotal)}</span>
                   {monthlyPayment > 0 && (
                     <>
-                      <span className="text-gray-400">•</span>
-                      <span>{money(monthlyPayment)}/mo</span>
+                      <span className="text-gray-300">•</span>
+                      <span className="text-gray-500">≈{money(monthlyPayment)}/mo</span>
                     </>
                   )}
                 </div>
@@ -235,32 +251,39 @@ export const UnifiedMobileBar: React.FC = () => {
                 Select a motor to begin
               </span>
             )}
-          </button>
+          </motion.button>
 
-          {/* Contact Button with label */}
-          <button
+          {/* Contact Button - Minimal ghost style */}
+          <motion.button
+            whileTap={{ scale: 0.92 }}
+            transition={springConfig}
             onClick={handleOpenContact}
-            className="flex flex-col items-center justify-center h-12 w-12 shrink-0 rounded-lg hover:bg-gray-100 active:scale-95 transition-all"
+            className="flex flex-col items-center justify-center h-11 w-11 shrink-0 
+              rounded-xl hover:bg-gray-100/80"
             aria-label="Contact us"
           >
-            <Phone className="h-5 w-5 text-gray-600" />
-            <span className="text-[10px] font-medium text-gray-600 mt-0.5">Call</span>
-          </button>
+            <Phone className="h-4.5 w-4.5 text-gray-500" />
+            <span className="text-[9px] font-medium text-gray-500 mt-0.5">Contact</span>
+          </motion.button>
 
-          {/* Primary CTA - Always visible but styled differently when no motor */}
-          <Button
-            size="sm"
+          {/* Primary CTA - Luxury black button */}
+          <motion.button
+            whileTap={{ scale: 0.95 }}
+            transition={springConfig}
             onClick={handlePrimary}
             disabled={!hasMotor}
-            className="shrink-0 h-12 px-4 text-sm font-semibold disabled:opacity-40"
+            className="shrink-0 h-11 px-5 rounded-xl text-sm font-semibold
+              bg-gray-900 text-white 
+              shadow-lg shadow-gray-900/20
+              disabled:opacity-40 disabled:bg-gray-400 disabled:shadow-none"
           >
             {pageConfig.primaryLabel}
-          </Button>
+          </motion.button>
         </div>
       </div>
 
       {/* Spacer */}
-      <div className="h-14" style={{ marginBottom: 'env(safe-area-inset-bottom)' }} />
+      <div className="h-16" style={{ marginBottom: 'env(safe-area-inset-bottom)' }} />
 
       {/* Expandable Drawer */}
       <MobileQuoteDrawer
