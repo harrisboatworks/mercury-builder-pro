@@ -26,6 +26,7 @@ interface ScrapeResult {
   success: boolean;
   url?: string;
   imagesFound: number;
+  imagesUploaded: number;
   heroImage?: string;
   galleryImages?: string[];
   error?: string;
@@ -140,6 +141,78 @@ function filterValidImages(imageUrls: string[]): string[] {
   return [...new Set(validImages)]; // Remove duplicates
 }
 
+// Download image from external URL
+async function downloadImage(url: string): Promise<{
+  buffer: Uint8Array;
+  contentType: string;
+} | null> {
+  try {
+    console.log(`Downloading image: ${url}`);
+    const response = await fetch(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; HarrisBoatWorks/1.0)',
+      },
+    });
+    
+    if (!response.ok) {
+      console.error(`Failed to download ${url}: ${response.status}`);
+      return null;
+    }
+    
+    const arrayBuffer = await response.arrayBuffer();
+    const contentType = response.headers.get('content-type') || 'image/jpeg';
+    
+    return { 
+      buffer: new Uint8Array(arrayBuffer), 
+      contentType 
+    };
+  } catch (error) {
+    console.error(`Error downloading ${url}:`, error);
+    return null;
+  }
+}
+
+// Upload image to Supabase Storage
+async function uploadToStorage(
+  supabase: ReturnType<typeof import('https://esm.sh/@supabase/supabase-js@2').createClient>,
+  motorId: string,
+  imageIndex: number,
+  imageData: Uint8Array,
+  contentType: string
+): Promise<string | null> {
+  try {
+    const ext = contentType.includes('png') ? 'png' : 
+                contentType.includes('webp') ? 'webp' : 'jpg';
+    const path = `mercury/${motorId}/${imageIndex}.${ext}`;
+    
+    console.log(`Uploading to storage: ${path}`);
+    
+    const { data, error } = await supabase.storage
+      .from('motor-images')
+      .upload(path, imageData, {
+        contentType,
+        upsert: true, // Replace existing
+        cacheControl: '31536000', // 1 year cache
+      });
+      
+    if (error) {
+      console.error(`Upload error for ${path}:`, error);
+      return null;
+    }
+    
+    // Return the public URL
+    const { data: urlData } = supabase.storage
+      .from('motor-images')
+      .getPublicUrl(path);
+      
+    console.log(`Uploaded successfully: ${urlData.publicUrl}`);
+    return urlData.publicUrl;
+  } catch (error) {
+    console.error(`Error uploading image:`, error);
+    return null;
+  }
+}
+
 // Scrape a single product page using Firecrawl
 async function scrapeProductPage(url: string, apiKey: string): Promise<string[]> {
   try {
@@ -210,10 +283,11 @@ async function scrapeProductPage(url: string, apiKey: string): Promise<string[]>
   }
 }
 
-// Main scraping function for a single motor
+// Main scraping function for a single motor - now with download and upload
 async function scrapeMotorImages(
   motor: MotorModel,
   apiKey: string,
+  supabase: ReturnType<typeof import('https://esm.sh/@supabase/supabase-js@2').createClient>,
   dryRun: boolean
 ): Promise<ScrapeResult> {
   const result: ScrapeResult = {
@@ -222,19 +296,20 @@ async function scrapeMotorImages(
     hp: motor.horsepower,
     success: false,
     imagesFound: 0,
+    imagesUploaded: 0,
   };
 
   try {
     const urls = getAlternateUrls(motor.model_display, motor.horsepower);
-    let images: string[] = [];
+    let scrapedImageUrls: string[] = [];
     let successUrl = '';
 
     // Try each URL until we find images
     for (const url of urls) {
       result.url = url;
-      images = await scrapeProductPage(url, apiKey);
+      scrapedImageUrls = await scrapeProductPage(url, apiKey);
       
-      if (images.length >= 2) {
+      if (scrapedImageUrls.length >= 2) {
         successUrl = url;
         break;
       }
@@ -243,14 +318,61 @@ async function scrapeMotorImages(
       await new Promise(resolve => setTimeout(resolve, 1500));
     }
 
-    if (images.length > 0) {
-      result.success = true;
-      result.url = successUrl || urls[0];
-      result.heroImage = images[0];
-      result.galleryImages = images.slice(0, 8); // Max 8 gallery images
-      result.imagesFound = images.length;
-    } else {
+    result.imagesFound = scrapedImageUrls.length;
+
+    if (scrapedImageUrls.length === 0) {
       result.error = 'No valid images found on any URL variant';
+      return result;
+    }
+
+    result.url = successUrl || urls[0];
+
+    // If dry run, just report what we found
+    if (dryRun) {
+      result.success = true;
+      result.heroImage = scrapedImageUrls[0];
+      result.galleryImages = scrapedImageUrls.slice(0, 8);
+      return result;
+    }
+
+    // Download and upload images to our storage
+    const uploadedUrls: string[] = [];
+    const maxImages = Math.min(scrapedImageUrls.length, 8); // Max 8 images per motor
+
+    for (let i = 0; i < maxImages; i++) {
+      const sourceUrl = scrapedImageUrls[i];
+      
+      // Download the image
+      const imageData = await downloadImage(sourceUrl);
+      if (!imageData) {
+        console.log(`Failed to download image ${i} for motor ${motor.id}`);
+        continue;
+      }
+
+      // Upload to our storage
+      const uploadedUrl = await uploadToStorage(
+        supabase,
+        motor.id,
+        i,
+        imageData.buffer,
+        imageData.contentType
+      );
+
+      if (uploadedUrl) {
+        uploadedUrls.push(uploadedUrl);
+      }
+
+      // Small delay between image downloads
+      await new Promise(resolve => setTimeout(resolve, 500));
+    }
+
+    if (uploadedUrls.length > 0) {
+      result.success = true;
+      result.heroImage = uploadedUrls[0];
+      result.galleryImages = uploadedUrls;
+      result.imagesUploaded = uploadedUrls.length;
+    } else {
+      result.error = 'Failed to download/upload any images';
     }
 
     return result;
@@ -334,20 +456,31 @@ Deno.serve(async (req) => {
     const results: ScrapeResult[] = [];
     let successCount = 0;
     let failCount = 0;
+    let totalImagesUploaded = 0;
 
     // Process motors sequentially with rate limiting
     for (const motor of motors) {
-      const result = await scrapeMotorImages(motor, firecrawlApiKey, options.dryRun);
+      const result = await scrapeMotorImages(motor, firecrawlApiKey, supabase, options.dryRun);
       results.push(result);
 
       if (result.success) {
         successCount++;
+        totalImagesUploaded += result.imagesUploaded;
 
         // Update database if not dry run
         if (!options.dryRun && result.heroImage) {
+          // Build images array with metadata
+          const imagesArray = result.galleryImages?.map((url, idx) => ({
+            url,
+            type: idx === 0 ? 'hero' : 'gallery',
+            source: 'alberni_scraped',
+            uploaded_at: new Date().toISOString(),
+          })) || [];
+
           const updateData: Record<string, unknown> = {
             image_url: result.heroImage,
-            images: result.galleryImages,
+            hero_image_url: result.heroImage,
+            images: imagesArray,
             updated_at: new Date().toISOString(),
           };
 
@@ -360,19 +493,21 @@ Deno.serve(async (req) => {
             console.error(`Failed to update motor ${motor.id}:`, updateError);
             result.error = `DB update failed: ${updateError.message}`;
           } else {
-            console.log(`Updated motor ${motor.id} with ${result.imagesFound} images`);
+            console.log(`Updated motor ${motor.id} with ${result.imagesUploaded} images (stored in our bucket)`);
           }
 
           // Log to enrichment log
           await supabase.from('motor_enrichment_log').insert({
             motor_id: motor.id,
             source_name: 'alberni_power_marine',
-            action: 'image_scrape',
+            action: 'image_scrape_and_upload',
             success: true,
             data_added: {
               image_url: result.heroImage,
               images_count: result.galleryImages?.length || 0,
+              images_uploaded: result.imagesUploaded,
               url_scraped: result.url,
+              storage_bucket: 'motor-images',
             },
           });
         }
@@ -385,7 +520,7 @@ Deno.serve(async (req) => {
           await supabase.from('motor_enrichment_log').insert({
             motor_id: motor.id,
             source_name: 'alberni_power_marine',
-            action: 'image_scrape',
+            action: 'image_scrape_and_upload',
             success: false,
             error_message: result.error,
           });
@@ -402,18 +537,21 @@ Deno.serve(async (req) => {
       totalProcessed: motors.length,
       successCount,
       failCount,
+      totalImagesUploaded,
+      storageBucket: 'motor-images',
       results: results.map(r => ({
         modelDisplay: r.modelDisplay,
         hp: r.hp,
         success: r.success,
         imagesFound: r.imagesFound,
+        imagesUploaded: r.imagesUploaded,
         url: r.url,
         heroImage: r.heroImage,
         error: r.error,
       })),
     };
 
-    console.log(`Scraping complete. Success: ${successCount}, Failed: ${failCount}`);
+    console.log(`Scraping complete. Success: ${successCount}, Failed: ${failCount}, Images uploaded: ${totalImagesUploaded}`);
 
     return new Response(
       JSON.stringify(response),
