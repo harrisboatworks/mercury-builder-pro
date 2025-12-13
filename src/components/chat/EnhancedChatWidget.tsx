@@ -1,12 +1,14 @@
-import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle, useMemo } from 'react';
+import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle, useMemo, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
-import { X, Send, MessageCircle } from 'lucide-react';
+import { X, Send, MessageCircle, RefreshCw } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
 import { getContextualPrompts } from './getContextualPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
+import { MessageReactions } from './MessageReactions';
+import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
 
 interface Message {
   id: string;
@@ -14,6 +16,7 @@ interface Message {
   isUser: boolean;
   timestamp: Date;
   isStreaming?: boolean;
+  reaction?: 'thumbs_up' | 'thumbs_down' | null;
   comparisonData?: {
     motor1: { model: string; hp: number; price: number };
     motor2: { model: string; hp: number; price: number };
@@ -59,10 +62,24 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
     const [inputText, setInputText] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [conversationHistory, setConversationHistory] = useState<any[]>([]);
+    const [showHistoryBanner, setShowHistoryBanner] = useState(false);
+    const [hasInitialized, setHasInitialized] = useState(false);
+    
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
+    const messageIdMap = useRef<Map<string, string>>(new Map()); // local id -> db id
+    
     const location = useLocation();
     const { state } = useQuote();
+    
+    const {
+      isLoading: isPersistenceLoading,
+      hasHistory,
+      loadMessages,
+      saveMessage,
+      updateReaction,
+      clearConversation,
+    } = useChatPersistence();
 
     const scrollToBottom = () => {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -107,25 +124,100 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       return "Hi there! I'm your Mercury Marine expert. I can help you find the perfect outboard motor, answer technical questions, or explain our current promotions. What can I help you with?";
     };
 
-    // Initialize with welcome message when opened
-    useEffect(() => {
-      if (isOpen && messages.length === 0) {
-        const welcomeMessage: Message = {
-          id: 'welcome',
-          text: getWelcomeMessage(),
-          isUser: false,
-          timestamp: new Date(),
+    // Convert persisted messages to UI format
+    const convertPersistedMessages = useCallback((persisted: PersistedMessage[]): Message[] => {
+      return persisted.map(msg => {
+        const localId = `db_${msg.id}`;
+        messageIdMap.current.set(localId, msg.id);
+        return {
+          id: localId,
+          text: msg.content,
+          isUser: msg.role === 'user',
+          timestamp: new Date(msg.created_at),
+          reaction: msg.reaction,
         };
-        setMessages([welcomeMessage]);
+      });
+    }, []);
+
+    // Load history and initialize
+    useEffect(() => {
+      const initChat = async () => {
+        if (!isOpen || hasInitialized || isPersistenceLoading) return;
         
-        // If there's an initial message, send it after welcome
-        if (initialMessage) {
-          setTimeout(() => {
-            handleSend(initialMessage);
-          }, 500);
+        const persistedMessages = await loadMessages();
+        
+        if (persistedMessages.length > 0) {
+          // Has history - load it
+          const loadedMessages = convertPersistedMessages(persistedMessages);
+          setMessages(loadedMessages);
+          setShowHistoryBanner(true);
+          
+          // Rebuild conversation history for AI context
+          const history = persistedMessages.map(msg => ({
+            role: msg.role,
+            content: msg.content
+          }));
+          setConversationHistory(history);
+        } else {
+          // No history - show welcome
+          const welcomeMessage: Message = {
+            id: 'welcome',
+            text: getWelcomeMessage(),
+            isUser: false,
+            timestamp: new Date(),
+          };
+          setMessages([welcomeMessage]);
+          
+          // Save welcome message
+          const dbId = await saveMessage(welcomeMessage.text, 'assistant');
+          if (dbId) messageIdMap.current.set(welcomeMessage.id, dbId);
+          
+          // Send initial message if provided
+          if (initialMessage) {
+            setTimeout(() => handleSend(initialMessage), 500);
+          }
         }
+        
+        setHasInitialized(true);
+      };
+      
+      initChat();
+    }, [isOpen, hasInitialized, isPersistenceLoading, loadMessages, convertPersistedMessages, saveMessage, initialMessage]);
+
+    // Handle reaction updates
+    const handleReaction = useCallback(async (messageId: string, reaction: 'thumbs_up' | 'thumbs_down' | null) => {
+      // Update local state immediately
+      setMessages(prev => prev.map(msg => 
+        msg.id === messageId ? { ...msg, reaction } : msg
+      ));
+      
+      // Get database ID and persist
+      const dbId = messageIdMap.current.get(messageId);
+      if (dbId) {
+        await updateReaction(dbId, reaction);
       }
-    }, [isOpen]);
+    }, [updateReaction]);
+
+    // Start fresh conversation
+    const handleStartFresh = useCallback(async () => {
+      await clearConversation();
+      setMessages([]);
+      setConversationHistory([]);
+      setShowHistoryBanner(false);
+      messageIdMap.current.clear();
+      
+      // Show new welcome
+      const welcomeMessage: Message = {
+        id: 'welcome_' + Date.now(),
+        text: getWelcomeMessage(),
+        isUser: false,
+        timestamp: new Date(),
+      };
+      setMessages([welcomeMessage]);
+      
+      const dbId = await saveMessage(welcomeMessage.text, 'assistant');
+      if (dbId) messageIdMap.current.set(welcomeMessage.id, dbId);
+    }, [clearConversation, saveMessage]);
 
     const handleSend = async (text: string = inputText) => {
       if (!text.trim() || isLoading) return;
@@ -140,6 +232,11 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       setMessages(prev => [...prev, userMessage]);
       setInputText('');
       setIsLoading(true);
+      setShowHistoryBanner(false);
+
+      // Save user message to DB
+      const userDbId = await saveMessage(userMessage.text, 'user');
+      if (userDbId) messageIdMap.current.set(userMessage.id, userDbId);
 
       // Add streaming placeholder
       const streamingId = (Date.now() + 1).toString();
@@ -155,7 +252,8 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       const comparison = detectComparisonQuery(text.trim());
 
       try {
-        // Use streaming with typewriter effect
+        let fullResponse = '';
+        
         await streamChat({
           message: text.trim(),
           conversationHistory,
@@ -169,7 +267,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
             boatInfo: state.boatInfo
           },
           onDelta: (chunk) => {
-            // Update message with each new chunk (typewriter effect)
+            fullResponse += chunk;
             setMessages(prev => prev.map(msg => 
               msg.id === streamingId 
                 ? { ...msg, text: msg.text + chunk, isStreaming: true }
@@ -177,47 +275,44 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
             ));
             scrollToBottom();
           },
-          onDone: (fullResponse) => {
-            // Mark streaming as complete
+          onDone: async (finalResponse) => {
             setMessages(prev => prev.map(msg => 
               msg.id === streamingId 
                 ? { ...msg, isStreaming: false }
                 : msg
             ));
             
-            // Update conversation history
+            // Save assistant message to DB
+            const assistantDbId = await saveMessage(finalResponse, 'assistant');
+            if (assistantDbId) messageIdMap.current.set(streamingId, assistantDbId);
+            
             setConversationHistory(prev => [
               ...prev,
               { role: 'user', content: text.trim() },
-              { role: 'assistant', content: fullResponse }
+              { role: 'assistant', content: finalResponse }
             ]);
             
             setIsLoading(false);
           },
           onError: (error) => {
             console.error('Stream error:', error);
+            const errorText = "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.";
             setMessages(prev => prev.map(msg => 
               msg.id === streamingId 
-                ? { 
-                    ...msg, 
-                    text: "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.",
-                    isStreaming: false 
-                  }
+                ? { ...msg, text: errorText, isStreaming: false }
                 : msg
             ));
+            saveMessage(errorText, 'assistant');
             setIsLoading(false);
           }
         });
 
       } catch (error) {
         console.error('Chat error:', error);
+        const errorText = "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.";
         setMessages(prev => prev.map(msg => 
           msg.id === streamingId 
-            ? { 
-                ...msg, 
-                text: "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.",
-                isStreaming: false 
-              }
+            ? { ...msg, text: errorText, isStreaming: false }
             : msg
         ));
         setIsLoading(false);
@@ -231,7 +326,6 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       }
     };
 
-    // Expose methods via ref
     useImperativeHandle(ref, () => ({
       open: (msg?: string) => {
         if (msg) {
@@ -258,18 +352,15 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
           }}
           className="fixed bottom-4 right-4 left-4 sm:left-auto sm:w-[380px] z-50"
         >
-          {/* Glass container */}
           <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-[0_8px_60px_-15px_rgba(0,0,0,0.2)] border border-gray-200/50 overflow-hidden">
             
-            {/* Header - Light & Elegant */}
+            {/* Header */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 bg-white/80">
               <div className="flex items-center gap-3">
-                {/* Glowing orb icon */}
                 <div className="relative">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center shadow-lg">
                     <MessageCircle className="w-5 h-5 text-white" />
                   </div>
-                  {/* Online indicator */}
                   <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-400 rounded-full border-2 border-white" />
                 </div>
                 <div>
@@ -289,6 +380,27 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
 
             {!isMinimized && (
               <div className="flex flex-col h-[60vh] sm:h-[420px]">
+                
+                {/* History Banner */}
+                {showHistoryBanner && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    className="px-4 py-2.5 bg-gray-50 border-b border-gray-100 flex items-center justify-between"
+                  >
+                    <p className="text-xs text-gray-500">
+                      ✨ Continuing your chat...
+                    </p>
+                    <button
+                      onClick={handleStartFresh}
+                      className="flex items-center gap-1 text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                    >
+                      <RefreshCw className="w-3 h-3" />
+                      Start fresh
+                    </button>
+                  </motion.div>
+                )}
+
                 {/* Messages Area */}
                 <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3 bg-gradient-to-b from-gray-50/50 to-white">
                   <AnimatePresence initial={false}>
@@ -297,8 +409,8 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                         key={message.id}
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.2, delay: index === messages.length - 1 ? 0 : 0 }}
-                        className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
+                        transition={{ duration: 0.2 }}
+                        className={`flex flex-col ${message.isUser ? 'items-end' : 'items-start'}`}
                       >
                         <div
                           className={`max-w-[80%] px-4 py-3 ${
@@ -331,13 +443,22 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                             </>
                           )}
                         </div>
+                        
+                        {/* Reactions for AI messages */}
+                        {!message.isUser && !message.isStreaming && message.id !== 'welcome' && (
+                          <MessageReactions
+                            messageId={message.id}
+                            currentReaction={message.reaction || null}
+                            onReact={handleReaction}
+                          />
+                        )}
                       </motion.div>
                     ))}
                   </AnimatePresence>
                   <div ref={messagesEndRef} />
                 </div>
 
-                {/* Suggested Questions - Pill Style */}
+                {/* Suggested Questions */}
                 {messages.length <= 1 && !isLoading && (
                   <motion.div 
                     initial={{ opacity: 0, y: 10 }}
@@ -363,7 +484,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                   </motion.div>
                 )}
 
-                {/* Input Area - Clean & Minimal */}
+                {/* Input Area */}
                 <div className="px-4 py-4 bg-white border-t border-gray-100">
                   <div className="flex items-center gap-2 bg-gray-50 rounded-full px-2 py-1 focus-within:ring-2 focus-within:ring-gray-200 transition-shadow">
                     <input
