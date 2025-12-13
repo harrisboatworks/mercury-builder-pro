@@ -193,7 +193,7 @@ export const UnifiedMobileBar: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
-  const { openChat, isOpen, isLoading } = useAIChat();
+  const { openChat, closeChat, isOpen, isLoading } = useAIChat();
   const { triggerHaptic } = useHapticFeedback();
   const { promo } = useActiveFinancingPromo();
   
@@ -483,6 +483,13 @@ export const UnifiedMobileBar: React.FC = () => {
   const handleOpenAI = () => {
     triggerHaptic('medium');
     setIdleSeconds(0);
+    
+    // Toggle: close if already open
+    if (isOpen) {
+      closeChat();
+      return;
+    }
+    
     const motorContext = displayMotor?.hp 
       ? `I'm looking at a ${displayMotor.hp}HP ${displayMotor.model}. ${pageConfig.aiMessage}`
       : pageConfig.aiMessage;
