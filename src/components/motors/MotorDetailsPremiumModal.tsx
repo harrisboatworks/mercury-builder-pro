@@ -247,8 +247,8 @@ export default function MotorDetailsPremiumModal({
             <Tabs defaultValue="overview" className="w-full" onValueChange={() => {
               scrollContainerRef.current?.scrollTo(0, 0);
             }}>
-              {/* Mobile/Tablet Header */}
-              <div className="lg:hidden sticky top-0 z-50 bg-white shadow-md">
+              {/* Mobile/Tablet Header - scrolls with content */}
+              <div className="lg:hidden bg-white border-b border-gray-200">
                 {/* Prominent Mobile Back Header */}
                 <div className="flex justify-start items-center p-4 border-b border-gray-100">
                   <button 
