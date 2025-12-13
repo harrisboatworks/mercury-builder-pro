@@ -118,7 +118,7 @@ function isInvalidImageUrl(url: string): boolean {
   
   const lowerUrl = url.toLowerCase();
   
-  // Filter out only obvious non-image URLs (be less aggressive)
+  // Filter out obvious non-image URLs
   const invalidPatterns = [
     'facebook.com/tr',
     'googletagmanager',
@@ -133,7 +133,33 @@ function isInvalidImageUrl(url: string): boolean {
     'data:text/html'
   ];
   
-  return invalidPatterns.some(pattern => lowerUrl.includes(pattern));
+  // Filter out promotional banners scraped from homepage carousels
+  const bannerPatterns = [
+    'homepage-banner',
+    'homepage-hero', 
+    'homepage-desktop',
+    'homepage-mobile',
+    'carousel/item_',
+    '/pagesection_',
+    'campaign',
+    'giftguide',
+    'freeshipping',
+    '1920x360',
+    '1920x300',
+    '770x770',
+    '1080x1080',
+    'etw-desktop',
+    'etw-mobile',
+    'slide',
+    'promo-banner',
+    'hero-banner',
+    'repower-banner'
+  ];
+  
+  const isInvalid = invalidPatterns.some(pattern => lowerUrl.includes(pattern));
+  const isBanner = bannerPatterns.some(pattern => lowerUrl.includes(pattern));
+  
+  return isInvalid || isBanner;
 }
 
 /**
