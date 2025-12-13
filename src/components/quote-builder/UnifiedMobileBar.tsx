@@ -616,24 +616,30 @@ export const UnifiedMobileBar: React.FC = () => {
           />
           <AnimatePresence mode="wait">
             <motion.div
-              key={isLoading && isOpen ? 'typing' : (activeNudge?.message || 'default-prompt')}
+              key={isOpen ? 'chat-open' : (isLoading ? 'typing' : (activeNudge?.message || 'default-prompt'))}
               initial={{ opacity: 0, y: -5 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 5 }}
               transition={{ duration: 0.2 }}
               className={cn(
                 "px-4 py-2 border-b text-center transition-colors",
-                isLoading && isOpen && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
-                !isLoading && activeNudge?.type === 'tip' && "bg-gradient-to-r from-gray-50 to-gray-100/80 border-gray-200/60 text-gray-600",
-                !isLoading && activeNudge?.type === 'success' && "bg-gradient-to-r from-emerald-50 to-emerald-100/50 border-emerald-200/60 text-emerald-700",
-                !isLoading && activeNudge?.type === 'celebration' && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
-                !isLoading && activeNudge?.type === 'progress' && "bg-gradient-to-r from-amber-50 to-amber-100/50 border-amber-200/60 text-amber-700",
-                !isLoading && activeNudge?.type === 'social-proof' && "bg-gradient-to-r from-slate-50 to-slate-100/80 border-slate-200/60 text-slate-600",
-                !isLoading && !activeNudge && "bg-gray-50/80 border-gray-200/50 text-gray-500",
+                isOpen && "bg-gradient-to-r from-primary/15 to-primary/10 border-primary/30 text-primary",
+                !isOpen && isLoading && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
+                !isOpen && !isLoading && activeNudge?.type === 'tip' && "bg-gradient-to-r from-gray-50 to-gray-100/80 border-gray-200/60 text-gray-600",
+                !isOpen && !isLoading && activeNudge?.type === 'success' && "bg-gradient-to-r from-emerald-50 to-emerald-100/50 border-emerald-200/60 text-emerald-700",
+                !isOpen && !isLoading && activeNudge?.type === 'celebration' && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
+                !isOpen && !isLoading && activeNudge?.type === 'progress' && "bg-gradient-to-r from-amber-50 to-amber-100/50 border-amber-200/60 text-amber-700",
+                !isOpen && !isLoading && activeNudge?.type === 'social-proof' && "bg-gradient-to-r from-slate-50 to-slate-100/80 border-slate-200/60 text-slate-600",
+                !isOpen && !isLoading && !activeNudge && "bg-gray-50/80 border-gray-200/50 text-gray-500",
               )}
             >
               <span className="text-xs font-medium inline-flex items-center justify-center">
-                {isLoading && isOpen ? (
+                {isOpen ? (
+                  <>
+                    <MessageCircle className="h-3.5 w-3.5 mr-1.5 inline-block" />
+                    Chat is open • Swipe down to close
+                  </>
+                ) : isLoading ? (
                   <>
                     <span className="mr-1.5">AI is thinking</span>
                     <span className="inline-flex gap-0.5">
@@ -669,10 +675,10 @@ export const UnifiedMobileBar: React.FC = () => {
             gap-1.5 min-[375px]:gap-2 min-[428px]:gap-3"
           style={{ paddingLeft: 'max(0.5rem, env(safe-area-inset-left))', paddingRight: 'max(0.5rem, env(safe-area-inset-right))' }}
         >
-          {/* AI Button - Breathing animation */}
+          {/* AI Button - Breathing animation, active state when chat is open */}
           <motion.button
             whileTap={{ scale: 0.92 }}
-            animate={breathingAnimation}
+            animate={isOpen ? {} : breathingAnimation}
             transition={{
               ...springConfig,
               boxShadow: {
@@ -682,14 +688,23 @@ export const UnifiedMobileBar: React.FC = () => {
               }
             }}
             onClick={handleOpenAI}
-            className="flex flex-col items-center justify-center shrink-0 
-              h-10 w-10 min-[375px]:h-11 min-[375px]:w-11
-              rounded-xl bg-gradient-to-br from-primary/15 to-primary/5
-              border border-primary/20"
+            className={cn(
+              "flex flex-col items-center justify-center shrink-0",
+              "h-10 w-10 min-[375px]:h-11 min-[375px]:w-11 rounded-xl",
+              isOpen 
+                ? "bg-primary text-white border border-primary shadow-lg shadow-primary/30" 
+                : "bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/20"
+            )}
             aria-label="Ask AI assistant"
           >
-            <MessageCircle className="h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5 text-primary" />
-            <span className="text-[8px] min-[375px]:text-[9px] font-semibold text-primary/80 mt-0.5">AI</span>
+            <MessageCircle className={cn(
+              "h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5",
+              isOpen ? "text-white" : "text-primary"
+            )} />
+            <span className={cn(
+              "text-[8px] min-[375px]:text-[9px] font-semibold mt-0.5",
+              isOpen ? "text-white/90" : "text-primary/80"
+            )}>AI</span>
           </motion.button>
 
           {/* Center: Motor Info Card (tappable) or Prompt */}
