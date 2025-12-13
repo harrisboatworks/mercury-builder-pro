@@ -9,24 +9,28 @@ import { Progress } from '@/components/ui/progress';
 import { Loader2, RefreshCw, Image, Download, Play, Square, CheckCircle2, Clock, AlertCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
-// Smaller batches (8-12 motors each) to avoid timeout
+// Smaller batches (6-8 motors each) with offset support to avoid timeout
 const HP_BATCHES = [
-  { label: "2.5-5 HP", min: 2.5, max: 5, estimatedCount: 8 },
-  { label: "6-8 HP", min: 6, max: 8, estimatedCount: 6 },
-  { label: "9.9 HP", min: 9.9, max: 9.9, estimatedCount: 12 },
-  { label: "15 HP", min: 15, max: 15, estimatedCount: 12 },
-  { label: "20 HP", min: 20, max: 20, estimatedCount: 12 },
-  { label: "25-30 HP", min: 25, max: 30, estimatedCount: 10 },
-  { label: "40-60 HP", min: 40, max: 60, estimatedCount: 8 },
-  { label: "75-115 HP", min: 75, max: 115, estimatedCount: 8 },
-  { label: "150 HP", min: 150, max: 150, estimatedCount: 7 },
-  { label: "175-200 HP", min: 175, max: 200, estimatedCount: 8 },
-  { label: "225-250 HP", min: 225, max: 250, estimatedCount: 10 },
-  { label: "300 HP", min: 300, max: 300, estimatedCount: 11 },
+  { label: "2.5-5 HP", min: 2.5, max: 5, batchSize: 8, offset: 0, estimatedCount: 8 },
+  { label: "6-8 HP", min: 6, max: 8, batchSize: 6, offset: 0, estimatedCount: 6 },
+  { label: "9.9 HP (Part 1)", min: 9.9, max: 9.9, batchSize: 6, offset: 0, estimatedCount: 6 },
+  { label: "9.9 HP (Part 2)", min: 9.9, max: 9.9, batchSize: 6, offset: 6, estimatedCount: 6 },
+  { label: "15 HP (Part 1)", min: 15, max: 15, batchSize: 6, offset: 0, estimatedCount: 6 },
+  { label: "15 HP (Part 2)", min: 15, max: 15, batchSize: 6, offset: 6, estimatedCount: 6 },
+  { label: "20 HP (Part 1)", min: 20, max: 20, batchSize: 6, offset: 0, estimatedCount: 6 },
+  { label: "20 HP (Part 2)", min: 20, max: 20, batchSize: 6, offset: 6, estimatedCount: 6 },
+  { label: "25-30 HP", min: 25, max: 30, batchSize: 8, offset: 0, estimatedCount: 10 },
+  { label: "40-60 HP", min: 40, max: 60, batchSize: 8, offset: 0, estimatedCount: 8 },
+  { label: "75-115 HP", min: 75, max: 115, batchSize: 8, offset: 0, estimatedCount: 8 },
+  { label: "150 HP", min: 150, max: 150, batchSize: 7, offset: 0, estimatedCount: 7 },
+  { label: "175-200 HP", min: 175, max: 200, batchSize: 8, offset: 0, estimatedCount: 8 },
+  { label: "225-250 HP", min: 225, max: 250, batchSize: 8, offset: 0, estimatedCount: 10 },
+  { label: "300 HP (Part 1)", min: 300, max: 300, batchSize: 6, offset: 0, estimatedCount: 6 },
+  { label: "300 HP (Part 2)", min: 300, max: 300, batchSize: 6, offset: 6, estimatedCount: 5 },
 ];
 
-const DELAY_BETWEEN_BATCHES = 30000; // 30 seconds (reduced since batches are smaller)
-const FETCH_TIMEOUT = 120000; // 2 minutes
+const DELAY_BETWEEN_BATCHES = 30000; // 30 seconds
+const FETCH_TIMEOUT = 180000; // 3 minutes
 
 interface BatchResult {
   label: string;
@@ -115,7 +119,8 @@ export default function UpdateMotorImages() {
               dryRun, 
               hpMin: batch.min, 
               hpMax: batch.max, 
-              batchSize: 12 
+              batchSize: batch.batchSize,
+              offset: batch.offset 
             }),
             signal: controller.signal,
           }
