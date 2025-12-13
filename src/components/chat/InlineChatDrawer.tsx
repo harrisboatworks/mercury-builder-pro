@@ -414,7 +414,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
             >
               {/* Header - Premium dual-logo branding */}
               <div className="flex items-center justify-between px-4 py-2.5 border-b border-gray-100 bg-white shrink-0">
-                <div className="flex items-center gap-3">
+                <div className="flex flex-row items-center gap-3">
                   <img 
                     src={harrisLogo} 
                     alt="Harris Boat Works" 
