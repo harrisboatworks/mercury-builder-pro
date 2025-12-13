@@ -119,7 +119,7 @@ export const UnifiedMobileBar: React.FC = () => {
     }
 
     // Add installation labor for remote motors
-    const isTiller = state.motor.model?.includes('TLR') || state.motor.model?.includes('MH');
+    const isTiller = state.motor?.model?.includes('TLR') || state.motor?.model?.includes('MH');
     if (state.purchasePath === 'installed' && !isTiller) {
       total += 450;
     }
@@ -145,7 +145,18 @@ export const UnifiedMobileBar: React.FC = () => {
     }
 
     return total;
-  }, [state]);
+  }, [
+    state.motor?.price,
+    state.motor?.basePrice,
+    state.motor?.msrp,
+    state.motor?.model,
+    state.boatInfo?.controlsOption,
+    state.purchasePath,
+    state.installConfig?.installationCost,
+    state.fuelTankConfig?.tankCost,
+    state.warrantyConfig?.warrantyPrice,
+    state.tradeInInfo?.estimatedValue
+  ]);
 
   // Calculate monthly payment
   const monthlyPayment = useMemo(() => {
@@ -240,9 +251,9 @@ export const UnifiedMobileBar: React.FC = () => {
               <>
                 {/* Drag Handle Indicator */}
                 <div className="w-8 h-1 rounded-full bg-gray-300 mb-1" />
-                <div className="flex items-center gap-1.5 w-full justify-center">
-                  <span className="text-sm font-semibold text-gray-900 truncate max-w-[220px]">{displayName || 'Motor Selected'}</span>
-                  <ChevronUp className={`h-4 w-4 shrink-0 text-gray-400 transition-transform duration-200 ${isDrawerOpen ? 'rotate-180' : ''}`} />
+                <div className="flex items-center gap-1 w-full justify-center">
+                  <span className="text-sm font-semibold text-gray-900 truncate">{displayName || 'Motor Selected'}</span>
+                  <ChevronUp className={`h-3.5 w-3.5 shrink-0 text-gray-400 transition-transform duration-200 ${isDrawerOpen ? 'rotate-180' : ''}`} />
                 </div>
                 <div className="flex items-center gap-2 text-xs text-gray-600">
                   <span className="font-semibold text-gray-900">{money(displayTotal)}</span>
