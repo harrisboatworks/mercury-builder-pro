@@ -6,8 +6,10 @@ import { Button } from '@/components/ui/button';
 interface ProactiveChatNudgeProps {
   isVisible: boolean;
   message: string;
+  variantId?: string;
   onAccept: () => void;
   onDismiss: () => void;
+  onAutoDismiss?: () => void;
 }
 
 const AUTO_DISMISS_DELAY = 12000; // 12 seconds
@@ -15,8 +17,10 @@ const AUTO_DISMISS_DELAY = 12000; // 12 seconds
 export const ProactiveChatNudge: React.FC<ProactiveChatNudgeProps> = ({
   isVisible,
   message,
+  variantId,
   onAccept,
-  onDismiss
+  onDismiss,
+  onAutoDismiss
 }) => {
   const [progress, setProgress] = useState(100);
 
@@ -34,12 +38,17 @@ export const ProactiveChatNudge: React.FC<ProactiveChatNudgeProps> = ({
       setProgress(remaining);
 
       if (remaining === 0) {
-        onDismiss();
+        // Use auto-dismiss callback if provided, otherwise fall back to dismiss
+        if (onAutoDismiss) {
+          onAutoDismiss();
+        } else {
+          onDismiss();
+        }
       }
     }, 50);
 
     return () => clearInterval(interval);
-  }, [isVisible, onDismiss]);
+  }, [isVisible, onDismiss, onAutoDismiss]);
 
   return (
     <AnimatePresence>

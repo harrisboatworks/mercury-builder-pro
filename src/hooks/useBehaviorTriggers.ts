@@ -1,51 +1,76 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import type { MessageVariant } from './useNudgeExperiment';
 
 interface TriggerConfig {
   timeThreshold: number; // seconds
   scrollThreshold: number; // percentage 0-100
   idleThreshold: number; // seconds
-  message: string;
+  variants: MessageVariant[];
 }
 
-interface BehaviorTriggerResult {
+export interface BehaviorTriggerResult {
   shouldShowNudge: boolean;
-  nudgeMessage: string;
   triggerType: 'time' | 'scroll' | 'idle' | 'revisit' | null;
+  variants: MessageVariant[];
+  timeOnPage: number;
+  scrollDepth: number;
   dismissNudge: () => void;
   resetTriggers: () => void;
 }
 
+// Multi-variant configurations for A/B testing
 const PAGE_TRIGGERS: Record<string, TriggerConfig> = {
   '/quote/motor-selection': {
     timeThreshold: 45,
     scrollThreshold: 80,
     idleThreshold: 30,
-    message: "Taking your time? I can help you compare motors!"
+    variants: [
+      { id: 'A', message: "Taking your time? I can help you compare motors!" },
+      { id: 'B', message: "Need help choosing? Tell me about your boat!" },
+      { id: 'C', message: "🎯 What's your boat type? I'll find perfect matches!" },
+      { id: 'D', message: "Comparing options? Let me highlight key differences!" }
+    ]
   },
   '/quote/summary': {
     timeThreshold: 60,
     scrollThreshold: 90,
     idleThreshold: 30,
-    message: "Questions about your quote? I'm here to help!"
+    variants: [
+      { id: 'A', message: "Questions about your quote? I'm here to help!" },
+      { id: 'B', message: "Want me to explain any of these charges?" },
+      { id: 'C', message: "💬 Get instant answers about your quote" }
+    ]
   },
   '/financing-application': {
     timeThreshold: 90,
     scrollThreshold: 70,
     idleThreshold: 60,
-    message: "Need help with the application? Ask me anything!"
+    variants: [
+      { id: 'A', message: "Need help with the application? Ask me anything!" },
+      { id: 'B', message: "Stuck on a field? I can explain what's needed!" },
+      { id: 'C', message: "📋 Quick help available - just ask!" }
+    ]
   },
   '/promotions': {
     timeThreshold: 60,
     scrollThreshold: 80,
     idleThreshold: 45,
-    message: "Want to find the best deal for your boat?"
+    variants: [
+      { id: 'A', message: "Want to find the best deal for your boat?" },
+      { id: 'B', message: "I know which promos apply to your setup!" },
+      { id: 'C', message: "💰 Let me find the perfect savings for you!" }
+    ]
   },
   '/': {
     timeThreshold: 30,
     scrollThreshold: 70,
     idleThreshold: 40,
-    message: "Looking for a new motor? I can help you find the perfect fit!"
+    variants: [
+      { id: 'A', message: "Looking for a new motor? I can help you find the perfect fit!" },
+      { id: 'B', message: "First time buying? Let me guide you through options!" },
+      { id: 'C', message: "🚤 Tell me about your boat - I'll recommend motors!" }
+    ]
   }
 };
 
@@ -53,18 +78,27 @@ const DEFAULT_TRIGGER: TriggerConfig = {
   timeThreshold: 60,
   scrollThreshold: 85,
   idleThreshold: 45,
-  message: "Have questions? I'm here to help!"
+  variants: [
+    { id: 'A', message: "Have questions? I'm here to help!" },
+    { id: 'B', message: "Need assistance? Just ask!" }
+  ]
 };
 
 const SESSION_KEY = 'chat_nudge_dismissed';
 const REVISIT_KEY = 'pages_visited_this_session';
 const MIN_SITE_TIME = 15; // seconds before any trigger can fire
 
+const REVISIT_VARIANTS: MessageVariant[] = [
+  { id: 'R1', message: "Welcome back! Still deciding? I can help!" },
+  { id: 'R2', message: "Good to see you again! Need some guidance?" },
+  { id: 'R3', message: "Back for more? Let me help you compare!" }
+];
+
 export const useBehaviorTriggers = (isChatOpen: boolean): BehaviorTriggerResult => {
   const location = useLocation();
   const [shouldShowNudge, setShouldShowNudge] = useState(false);
-  const [nudgeMessage, setNudgeMessage] = useState('');
   const [triggerType, setTriggerType] = useState<'time' | 'scroll' | 'idle' | 'revisit' | null>(null);
+  const [currentVariants, setCurrentVariants] = useState<MessageVariant[]>([]);
   
   const pageTimeRef = useRef(0);
   const siteTimeRef = useRef(0);
@@ -90,14 +124,14 @@ export const useBehaviorTriggers = (isChatOpen: boolean): BehaviorTriggerResult 
     setTriggerType(null);
   }, []);
 
-  const triggerNudge = useCallback((type: 'time' | 'scroll' | 'idle' | 'revisit', message: string) => {
+  const triggerNudge = useCallback((type: 'time' | 'scroll' | 'idle' | 'revisit', variants: MessageVariant[]) => {
     if (hasTriggeredRef.current || isChatOpen) return;
     if (siteTimeRef.current < MIN_SITE_TIME) return;
     if (sessionStorage.getItem(SESSION_KEY) === 'true') return;
 
     hasTriggeredRef.current = true;
     setTriggerType(type);
-    setNudgeMessage(message);
+    setCurrentVariants(variants);
     setShouldShowNudge(true);
   }, [isChatOpen]);
 
@@ -107,9 +141,8 @@ export const useBehaviorTriggers = (isChatOpen: boolean): BehaviorTriggerResult 
     const currentPath = location.pathname;
     
     if (visitedPages.includes(currentPath) && currentPath === '/quote/motor-selection') {
-      // Small delay before showing revisit trigger
       const timeout = setTimeout(() => {
-        triggerNudge('revisit', "Welcome back! Still deciding? I can help!");
+        triggerNudge('revisit', REVISIT_VARIANTS);
       }, 3000);
       return () => clearTimeout(timeout);
     } else {
@@ -133,7 +166,7 @@ export const useBehaviorTriggers = (isChatOpen: boolean): BehaviorTriggerResult 
         
         const config = getConfig();
         if (pageTimeRef.current >= config.timeThreshold) {
-          triggerNudge('time', config.message);
+          triggerNudge('time', config.variants);
         }
       }
     }, 1000);
@@ -155,7 +188,7 @@ export const useBehaviorTriggers = (isChatOpen: boolean): BehaviorTriggerResult 
         
         const config = getConfig();
         if (scrollPercent >= config.scrollThreshold) {
-          triggerNudge('scroll', config.message);
+          triggerNudge('scroll', config.variants);
         }
       }
     };
@@ -175,7 +208,7 @@ export const useBehaviorTriggers = (isChatOpen: boolean): BehaviorTriggerResult 
       const config = getConfig();
       
       if (idleTime >= config.idleThreshold && pageTimeRef.current > 10) {
-        triggerNudge('idle', config.message);
+        triggerNudge('idle', config.variants);
       }
     }, 5000);
 
@@ -202,8 +235,10 @@ export const useBehaviorTriggers = (isChatOpen: boolean): BehaviorTriggerResult 
 
   return {
     shouldShowNudge,
-    nudgeMessage,
     triggerType,
+    variants: currentVariants,
+    timeOnPage: pageTimeRef.current,
+    scrollDepth: scrollDepthRef.current,
     dismissNudge,
     resetTriggers
   };

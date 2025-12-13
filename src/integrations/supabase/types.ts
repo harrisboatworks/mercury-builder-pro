@@ -1429,6 +1429,105 @@ export type Database = {
         }
         Relationships: []
       }
+      nudge_experiments: {
+        Row: {
+          accepted_at: string | null
+          auto_dismissed_at: string | null
+          created_at: string | null
+          device_type: string | null
+          dismissed_at: string | null
+          id: string
+          impression_at: string | null
+          message_text: string
+          page_path: string
+          scroll_depth_percent: number | null
+          session_id: string
+          time_on_page_seconds: number | null
+          trigger_type: string
+          user_id: string | null
+          variant_id: string
+        }
+        Insert: {
+          accepted_at?: string | null
+          auto_dismissed_at?: string | null
+          created_at?: string | null
+          device_type?: string | null
+          dismissed_at?: string | null
+          id?: string
+          impression_at?: string | null
+          message_text: string
+          page_path: string
+          scroll_depth_percent?: number | null
+          session_id: string
+          time_on_page_seconds?: number | null
+          trigger_type: string
+          user_id?: string | null
+          variant_id: string
+        }
+        Update: {
+          accepted_at?: string | null
+          auto_dismissed_at?: string | null
+          created_at?: string | null
+          device_type?: string | null
+          dismissed_at?: string | null
+          id?: string
+          impression_at?: string | null
+          message_text?: string
+          page_path?: string
+          scroll_depth_percent?: number | null
+          session_id?: string
+          time_on_page_seconds?: number | null
+          trigger_type?: string
+          user_id?: string | null
+          variant_id?: string
+        }
+        Relationships: []
+      }
+      nudge_variant_stats: {
+        Row: {
+          accepts: number | null
+          auto_dismissals: number | null
+          confidence_level: number | null
+          dismissals: number | null
+          graduated_at: string | null
+          id: string
+          impressions: number | null
+          is_winner: boolean | null
+          page_path: string
+          trigger_type: string
+          updated_at: string | null
+          variant_id: string
+        }
+        Insert: {
+          accepts?: number | null
+          auto_dismissals?: number | null
+          confidence_level?: number | null
+          dismissals?: number | null
+          graduated_at?: string | null
+          id?: string
+          impressions?: number | null
+          is_winner?: boolean | null
+          page_path: string
+          trigger_type: string
+          updated_at?: string | null
+          variant_id: string
+        }
+        Update: {
+          accepts?: number | null
+          auto_dismissals?: number | null
+          confidence_level?: number | null
+          dismissals?: number | null
+          graduated_at?: string | null
+          id?: string
+          impressions?: number | null
+          is_winner?: boolean | null
+          page_path?: string
+          trigger_type?: string
+          updated_at?: string | null
+          variant_id?: string
+        }
+        Relationships: []
+      }
       pending_motor_matches: {
         Row: {
           confidence_score: number | null
