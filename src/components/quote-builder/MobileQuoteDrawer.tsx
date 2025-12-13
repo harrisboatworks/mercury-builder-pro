@@ -9,7 +9,8 @@ import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Gift, Shield, CreditCard, ChevronRight, X } from 'lucide-react';
+import { Gift, Shield, CreditCard, ChevronRight, X, Phone, MessageSquare, Mail } from 'lucide-react';
+import { toast } from 'sonner';
 
 interface MobileQuoteDrawerProps {
   isOpen: boolean;
@@ -260,6 +261,46 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                 View Full Summary
                 <ChevronRight className="h-4 w-4 ml-1" />
               </Button>
+
+              <Separator />
+
+              {/* Need Help Section */}
+              <div className="space-y-3">
+                <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wide text-center">
+                  Need Help?
+                </h4>
+                <div className="grid grid-cols-3 gap-2">
+                  <a
+                    href="tel:(905) 342-2153"
+                    className="flex flex-col items-center gap-1.5 p-3 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all"
+                  >
+                    <Phone className="h-5 w-5 text-muted-foreground" />
+                    <span className="text-xs text-muted-foreground">Call</span>
+                  </a>
+                  <a
+                    href="sms:647-952-2153"
+                    onClick={(e) => {
+                      const canSendSMS = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+                      if (!canSendSMS) {
+                        e.preventDefault();
+                        navigator.clipboard.writeText('647-952-2153');
+                        toast.success('Text number copied to clipboard');
+                      }
+                    }}
+                    className="flex flex-col items-center gap-1.5 p-3 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all"
+                  >
+                    <MessageSquare className="h-5 w-5 text-muted-foreground" />
+                    <span className="text-xs text-muted-foreground">Text</span>
+                  </a>
+                  <a
+                    href="mailto:info@harrisboatworks.ca"
+                    className="flex flex-col items-center gap-1.5 p-3 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all"
+                  >
+                    <Mail className="h-5 w-5 text-muted-foreground" />
+                    <span className="text-xs text-muted-foreground">Email</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         )}

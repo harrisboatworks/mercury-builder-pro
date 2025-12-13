@@ -10,7 +10,6 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { MobileQuoteDrawer } from './MobileQuoteDrawer';
-import { ContactModal } from '@/components/ui/contact-button';
 import { cn } from '@/lib/utils';
 
 // Nudge types for different visual treatments
@@ -199,7 +198,6 @@ export const UnifiedMobileBar: React.FC = () => {
   const { promo } = useActiveFinancingPromo();
   
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [isContactOpen, setIsContactOpen] = useState(false);
   const [idleSeconds, setIdleSeconds] = useState(0);
   const [showSavingsCelebration, setShowSavingsCelebration] = useState(false);
   const [savingsAmount, setSavingsAmount] = useState(0);
@@ -491,11 +489,6 @@ export const UnifiedMobileBar: React.FC = () => {
     openChat(motorContext);
   };
 
-  const handleOpenContact = () => {
-    triggerHaptic('medium');
-    setIsContactOpen(true);
-  };
-
   const handleOpenDrawer = () => {
     if (hasMotor) {
       triggerHaptic('light');
@@ -773,19 +766,6 @@ export const UnifiedMobileBar: React.FC = () => {
             )}
           </motion.button>
 
-          {/* Contact Button */}
-          <motion.button
-            whileTap={{ scale: 0.92 }}
-            transition={springConfig}
-            onClick={handleOpenContact}
-            className="flex flex-col items-center justify-center shrink-0 
-              h-10 w-10 min-[375px]:h-11 min-[375px]:w-11
-              rounded-xl hover:bg-gray-100/80"
-            aria-label="Contact us"
-          >
-            <Phone className="h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5 text-gray-500" />
-            <span className="text-[8px] min-[375px]:text-[9px] font-medium text-gray-500 mt-0.5">Contact</span>
-          </motion.button>
 
           {/* Primary CTA - Smart contextual label */}
           {(hasMotor || location.pathname !== '/quote/motor-selection') && (
@@ -817,11 +797,6 @@ export const UnifiedMobileBar: React.FC = () => {
         onClose={() => setIsDrawerOpen(false)}
       />
 
-      {/* Contact Modal */}
-      <ContactModal
-        isOpen={isContactOpen}
-        onClose={() => setIsContactOpen(false)}
-      />
     </>
   );
 };
