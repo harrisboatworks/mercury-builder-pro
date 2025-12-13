@@ -4,7 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { 
   Bell, ChevronRight, Calendar, Tag, Gift, Sparkles, Mail, MessageSquare,
-  Award, Wrench, Waves, MapPin, Star, ChevronLeft
+  Award, Wrench, Waves, MapPin, Star, ChevronLeft, BadgeCheck
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -238,10 +238,16 @@ export default function Promotions() {
                         {testimonial.dateLabel}
                       </p>
                       
-                      {/* Mercury Owner Badge */}
-                      <div className="flex items-center gap-2 pt-3 border-t border-border">
-                        <img src={mercuryLogo} alt="Mercury" className="h-4" />
-                        <span className="text-xs text-muted-foreground">Mercury Owner</span>
+                      {/* Footer badges */}
+                      <div className="flex items-center justify-between pt-3 border-t border-border">
+                        <div className="flex items-center gap-2">
+                          <img src={mercuryLogo} alt="Mercury" className="h-4" />
+                          <span className="text-xs text-muted-foreground">Mercury Owner</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-emerald-600">
+                          <BadgeCheck className="w-3.5 h-3.5" />
+                          <span className="text-xs font-medium">Verified</span>
+                        </div>
                       </div>
                     </div>
                   </div>
