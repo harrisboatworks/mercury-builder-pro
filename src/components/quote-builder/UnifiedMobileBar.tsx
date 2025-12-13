@@ -20,8 +20,13 @@ const PAGE_CONFIG: Record<string, {
 }> = {
   '/quote/motor-selection': {
     primaryLabel: 'Configure',
-    nextPath: '/quote/purchase-path',
+    nextPath: '/quote/options',
     aiMessage: 'Help me find the right motor for my boat'
+  },
+  '/quote/options': {
+    primaryLabel: 'Purchase Path',
+    nextPath: '/quote/purchase-path',
+    aiMessage: 'Need help choosing options or accessories?'
   },
   '/quote/purchase-path': {
     primaryLabel: 'Boat Info',
