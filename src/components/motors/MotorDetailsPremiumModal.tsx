@@ -479,13 +479,13 @@ export default function MotorDetailsPremiumModal({
                         <Settings className="w-5 h-5 text-primary" />
                         Engine Specifications
                       </h3>
-                      <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
-                        <SpecRow label="Engine Type" value={generateCylinders(hpValue)} />
-                        <SpecRow label="Displacement" value={generateDisplacement(hpValue)} />
-                        <SpecRow label="Bore & Stroke" value={generateBoreStroke(hpValue)} />
-                        <SpecRow label="Fuel System" value={generateFuelSystem(hpValue)} />
-                        <SpecRow label="Max RPM Range" value={`${motorSpecs?.max_rpm || generateRPMRange(hpValue)} RPM`} />
-                        <SpecRow label="Starting System" value={getStartType(motor.model)} />
+                        <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
+                        <SpecRow label="Engine Type" value={motor?.specifications?.cylinders || generateCylinders(hpValue)} />
+                        <SpecRow label="Displacement" value={motor?.specifications?.displacement || generateDisplacement(hpValue)} />
+                        <SpecRow label="Bore & Stroke" value={motor?.specifications?.boreStroke || generateBoreStroke(hpValue)} />
+                        <SpecRow label="Fuel System" value={motor?.specifications?.fuelSystem || generateFuelSystem(hpValue)} />
+                        <SpecRow label="Max RPM Range" value={`${motor?.specifications?.fullThrottleRPM || motorSpecs?.max_rpm || generateRPMRange(hpValue)} RPM`} />
+                        <SpecRow label="Starting System" value={motor?.specifications?.startingSystem || getStartType(motor.model)} />
                       </div>
                     </div>
 
@@ -496,10 +496,10 @@ export default function MotorDetailsPremiumModal({
                         Physical Specifications
                       </h3>
                       <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
-                        <SpecRow label="Dry Weight" value={generateWeight(hpValue)} />
-                        <SpecRow label="Gear Ratio" value={generateGearRatio(hpValue)} />
-                        <SpecRow label="Alternator Output" value={generateAlternator(hpValue)} />
-                        <SpecRow label="Shaft Length" value={motor?.shaft || shaft || "20\""} />
+                        <SpecRow label="Dry Weight" value={motor?.specifications?.weight ? `${motor.specifications.weight} lbs` : generateWeight(hpValue)} />
+                        <SpecRow label="Gear Ratio" value={motor?.specifications?.gearRatio || generateGearRatio(hpValue)} />
+                        <SpecRow label="Alternator Output" value={motor?.specifications?.alternatorOutput || generateAlternator(hpValue)} />
+                        <SpecRow label="Shaft Length" value={motor?.specifications?.shaftLength || motor?.shaft || shaft || "20\""} />
                       </div>
                     </div>
 
