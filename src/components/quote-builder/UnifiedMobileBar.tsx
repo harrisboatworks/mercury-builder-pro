@@ -596,7 +596,7 @@ export const UnifiedMobileBar: React.FC = () => {
 
       {/* Unified Mobile Bar */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-[60] 
+        className="fixed bottom-0 left-0 right-0 z-[80] 
           bg-white border-t border-gray-200
           shadow-[0_-2px_20px_rgba(0,0,0,0.06)]"
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}

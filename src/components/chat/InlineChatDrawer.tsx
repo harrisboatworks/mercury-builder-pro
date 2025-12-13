@@ -343,7 +343,6 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
       open={isOpen} 
       onOpenChange={(open) => !open && onClose()}
       shouldScaleBackground={false}
-      modal={false}
     >
       <DrawerContent 
         hideOverlay
