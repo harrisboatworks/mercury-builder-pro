@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { MessageSquare, Sparkles, X } from 'lucide-react';
+import { MessageSquare, Sparkles } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { motion } from 'framer-motion';
 
 interface AIChatButtonProps {
   onOpenChat: () => void;
@@ -12,6 +13,7 @@ interface AIChatButtonProps {
 export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }) => {
   const location = useLocation();
   const { state } = useQuote();
+  const isMobile = useIsMobile();
   const [hasInteracted, setHasInteracted] = useState(false);
   const [showPulse, setShowPulse] = useState(true);
 
@@ -51,7 +53,8 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
     onOpenChat();
   };
 
-  if (isOpen) return null;
+  // Hide on mobile (handled by UnifiedMobileBar) or when chat is open
+  if (isMobile || isOpen) return null;
 
   return (
     <motion.button
@@ -74,13 +77,10 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
         <Sparkles className="absolute -top-1 -right-1 w-3 h-3 text-amber-400" />
       </div>
       
-      {/* Text - hidden on very small screens */}
-      <span className="hidden sm:inline text-sm font-medium whitespace-nowrap">
+      {/* Text - visible on desktop */}
+      <span className="text-sm font-medium whitespace-nowrap">
         {getContextualText()}
       </span>
-      
-      {/* Mobile: just show icon with AI indicator */}
-      <span className="sm:hidden text-xs font-medium">AI</span>
     </motion.button>
   );
 };
