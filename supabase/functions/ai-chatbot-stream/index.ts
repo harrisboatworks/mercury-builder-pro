@@ -118,6 +118,76 @@ async function getActivePromotions() {
   return promotions || [];
 }
 
+// Detect if question needs external knowledge (Perplexity fallback)
+function needsExternalKnowledge(message: string): boolean {
+  const lowerMsg = message.toLowerCase();
+  const externalPatterns = [
+    /what('s| is) (the |a )?(new|latest|2024|2025)/i,
+    /how does .+ work/i,
+    /technical spec(ification)?s? (for|of|on)/i,
+    /fuel consumption|fuel economy|mpg|gph/i,
+    /weight (of|for)|dry weight/i,
+    /warranty (cover|include|policy)/i,
+    /compare (to|with|against) (yamaha|honda|suzuki|evinrude)/i,
+    /compatible with|fit (on|my)/i,
+    /prop(eller)? (size|pitch|recommendation)/i,
+    /oil (type|capacity|change)/i,
+    /maintenance (schedule|interval|requirement)/i,
+  ];
+  return externalPatterns.some(pattern => pattern.test(lowerMsg));
+}
+
+// Search with Perplexity for detailed/technical questions
+async function searchWithPerplexity(query: string): Promise<string | null> {
+  const PERPLEXITY_API_KEY = Deno.env.get('PERPLEXITY_API_KEY');
+  if (!PERPLEXITY_API_KEY) {
+    console.log('Perplexity API key not configured, skipping fallback');
+    return null;
+  }
+
+  try {
+    console.log('Searching Perplexity for:', query);
+    const response = await fetch('https://api.perplexity.ai/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${PERPLEXITY_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'sonar',
+        messages: [
+          { 
+            role: 'system', 
+            content: 'You are a marine engine expert. Provide accurate, concise technical information about Mercury Marine outboard motors. Focus on specifications, features, and practical advice. Keep responses under 200 words.' 
+          },
+          { role: 'user', content: query }
+        ],
+        search_domain_filter: ['mercurymarine.com', 'boatingmag.com', 'boats.com'],
+        search_recency_filter: 'year',
+      }),
+    });
+
+    if (!response.ok) {
+      console.error('Perplexity API error:', response.status);
+      return null;
+    }
+
+    const data = await response.json();
+    const content = data.choices?.[0]?.message?.content;
+    const citations = data.citations || [];
+    
+    console.log('Perplexity response received, citations:', citations.length);
+    
+    if (content) {
+      return `\n\n## VERIFIED TECHNICAL INFO (from Mercury Marine)\n${content}${citations.length > 0 ? `\n\nSources: ${citations.slice(0, 2).join(', ')}` : ''}`;
+    }
+    return null;
+  } catch (error) {
+    console.error('Perplexity search error:', error);
+    return null;
+  }
+}
+
 // Build rich system prompt with all knowledge sources
 function buildSystemPrompt(
   motors: any[], 
@@ -279,6 +349,7 @@ serve(async (req) => {
     // Detect topics and comparisons
     const detectedTopics = detectTopics(message);
     const comparison = detectComparisonQuery(message);
+    const needsPerplexity = needsExternalKnowledge(message);
     
     let comparisonContext = '';
     if (comparison.isComparison && comparison.hp1 && comparison.hp2) {
@@ -302,6 +373,12 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       }
     }
 
+    // Fetch Perplexity context for technical questions
+    let perplexityContext = '';
+    if (needsPerplexity) {
+      perplexityContext = await searchWithPerplexity(message) || '';
+    }
+
     // Fetch motor details if viewing specific motor
     let motorDetails = null;
     if (context?.currentMotor?.id) {
@@ -320,6 +397,7 @@ Provide a helpful, balanced comparison covering: power difference, price differe
     // Build the rich system prompt
     let systemPrompt = buildSystemPrompt(motors, promotions, context, detectedTopics);
     if (comparisonContext) systemPrompt += comparisonContext;
+    if (perplexityContext) systemPrompt += perplexityContext;
 
     // Prepare messages
     const recentHistory = conversationHistory.slice(-8);
@@ -335,6 +413,7 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       isComparison: comparison.isComparison, 
       detectedTopics,
       hasMotorContext: !!context?.currentMotor,
+      usedPerplexity: !!perplexityContext,
       streaming: stream 
     });
 
