@@ -122,20 +122,9 @@ function filterValidImages(imageUrls: string[]): string[] {
     if (lowerUrl.includes('icon')) continue;
     if (lowerUrl.includes('button')) continue;
     
-    // Prefer actual motor images
-    if (
-      lowerUrl.includes('mercury-marine') ||
-      lowerUrl.includes('mercury-') ||
-      lowerUrl.includes('fourstroke') ||
-      lowerUrl.includes('hp') ||
-      lowerUrl.includes('detail-image') ||
-      lowerUrl.includes('port') ||
-      lowerUrl.includes('stbd') ||
-      lowerUrl.includes('rear') ||
-      lowerUrl.includes('front')
-    ) {
-      validImages.push(url);
-    }
+    // Include all images from AWS CDN that passed the exclusion filters above
+    // This is more permissive - any product image from their CDN is likely a motor image
+    validImages.push(url);
   }
   
   return [...new Set(validImages)]; // Remove duplicates
