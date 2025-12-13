@@ -9,6 +9,7 @@ import { getContextualPrompts } from './getContextualPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
 import { MessageReactions } from './MessageReactions';
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { cn } from '@/lib/utils';
 
 interface Message {
@@ -77,6 +78,8 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   
   const location = useLocation();
   const { state } = useQuote();
+  const { triggerHaptic } = useHapticFeedback();
+  const prevIsOpenRef = useRef(isOpen);
   
   const {
     isLoading: isPersistenceLoading,
@@ -94,6 +97,18 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Haptic feedback on open/close transitions
+  useEffect(() => {
+    if (prevIsOpenRef.current !== isOpen) {
+      if (isOpen) {
+        triggerHaptic('medium'); // Engaging open feedback
+      } else {
+        triggerHaptic('light'); // Subtle close feedback
+      }
+      prevIsOpenRef.current = isOpen;
+    }
+  }, [isOpen, triggerHaptic]);
 
   useEffect(() => {
     if (isOpen && inputRef.current) {
@@ -340,6 +355,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   // Handle swipe down to close
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     if (info.offset.y > 100 || info.velocity.y > 500) {
+      triggerHaptic('light'); // Tactile confirmation of drag-close
       onClose();
     }
   };
