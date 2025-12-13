@@ -237,9 +237,11 @@ export const UnifiedMobileBar: React.FC = () => {
           >
             {hasMotor ? (
               <>
+                {/* Drag Handle Indicator */}
+                <div className="w-8 h-1 rounded-full bg-gray-300 mb-1.5" />
                 <div className="flex items-center gap-1.5 w-full justify-center">
                   <span className="text-sm font-semibold text-gray-900 truncate max-w-[180px]">{displayName || 'Motor Selected'}</span>
-                  <ChevronUp className={`h-3.5 w-3.5 shrink-0 text-gray-400 transition-transform duration-200 ${isDrawerOpen ? 'rotate-180' : ''}`} />
+                  <ChevronUp className={`h-4 w-4 shrink-0 text-gray-400 transition-transform duration-200 ${isDrawerOpen ? 'rotate-180' : ''}`} />
                 </div>
                 <div className="flex items-center gap-2 text-xs text-gray-600">
                   <span className="font-semibold text-gray-900">{money(displayTotal)}</span>
