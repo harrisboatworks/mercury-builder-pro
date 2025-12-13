@@ -66,6 +66,10 @@ export interface Motor {
   features?: string[];
   description?: string | null;
   detailUrl?: string | null;
+  // Additional database fields for accurate specs
+  spec_json?: Record<string, any>;
+  shaft?: string | null;
+  images?: any[];
 }
 
 export interface BoatInfo {
