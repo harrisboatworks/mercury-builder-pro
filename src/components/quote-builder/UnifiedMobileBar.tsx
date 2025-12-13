@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ChevronUp, MessageSquare, Phone, Sparkles } from 'lucide-react';
+import { ChevronUp, MessageCircle, Phone, Sparkles } from 'lucide-react';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAIChat } from '@/components/chat/GlobalAIChat';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -17,45 +17,48 @@ const PAGE_CONFIG: Record<string, {
   primaryLabel: string; 
   nextPath: string; 
   aiMessage: string;
-  secondaryLabel?: string;
 }> = {
+  '/quote/motor-selection': {
+    primaryLabel: 'Configure',
+    nextPath: '/quote/purchase-path',
+    aiMessage: 'Help me find the right motor for my boat'
+  },
   '/quote/purchase-path': {
-    primaryLabel: 'Next: Boat Info',
+    primaryLabel: 'Boat Info',
     nextPath: '/quote/boat-info',
     aiMessage: 'Need help choosing between installation options?'
   },
   '/quote/boat-info': {
-    primaryLabel: 'Next: Trade-In',
+    primaryLabel: 'Continue',
     nextPath: '/quote/trade-in',
     aiMessage: 'Questions about boat compatibility or controls?'
   },
   '/quote/trade-in': {
-    primaryLabel: 'Next: Installation',
+    primaryLabel: 'Continue',
     nextPath: '/quote/installation',
     aiMessage: 'Curious about trade-in values or the process?'
   },
   '/quote/installation': {
-    primaryLabel: 'View Summary',
-    nextPath: '/quote/summary',
+    primaryLabel: 'Continue',
+    nextPath: '/quote/fuel-tank',
     aiMessage: 'Questions about installation or rigging?'
   },
   '/quote/fuel-tank': {
-    primaryLabel: 'View Summary',
+    primaryLabel: 'Summary',
     nextPath: '/quote/summary',
     aiMessage: 'Need help choosing a fuel tank size?'
   },
   '/quote/schedule': {
-    primaryLabel: 'Submit Quote',
+    primaryLabel: 'Submit',
     nextPath: '/quote/summary',
-    aiMessage: 'Questions about scheduling or what happens next?',
-    secondaryLabel: 'Back to Summary'
+    aiMessage: 'Questions about scheduling or what happens next?'
   }
 };
 
 // Pages where the unified bar should NOT show
 const HIDE_ON_PAGES = [
-  '/quote/motor-selection',
   '/quote/summary',
+  '/quote/success',
   '/financing',
   '/login',
   '/auth',
@@ -87,13 +90,15 @@ export const UnifiedMobileBar: React.FC = () => {
   // Check if we should show the bar
   const shouldShow = useMemo(() => {
     if (!isMobile) return false;
-    if (!state.motor) return false;
+    if (!location.pathname.startsWith('/quote')) return false;
     return !HIDE_ON_PAGES.some(path => location.pathname.startsWith(path));
-  }, [isMobile, state.motor, location.pathname]);
+  }, [isMobile, location.pathname]);
+
+  const hasMotor = !!state.motor;
 
   // Calculate running total
   const runningTotal = useMemo(() => {
-    if (!state.motor?.price) return null;
+    if (!state.motor?.price) return 0;
 
     let total = state.motor.price;
 
@@ -129,14 +134,14 @@ export const UnifiedMobileBar: React.FC = () => {
       total -= state.tradeInInfo.estimatedValue;
     }
 
-    // Apply HST (13%)
-    return total * 1.13;
+    return total;
   }, [state]);
 
   // Calculate monthly payment
   const monthlyPayment = useMemo(() => {
-    if (!runningTotal) return null;
-    const priceWithFee = runningTotal + DEALERPLAN_FEE;
+    if (!runningTotal) return 0;
+    const priceWithHST = runningTotal * 1.13;
+    const priceWithFee = priceWithHST + DEALERPLAN_FEE;
     const promoRate = promo?.rate || null;
     const { payment } = calculateMonthlyPayment(priceWithFee, promoRate);
     return payment;
@@ -154,15 +159,6 @@ export const UnifiedMobileBar: React.FC = () => {
     navigate(pageConfig.nextPath);
   };
 
-  const handleSecondary = () => {
-    triggerHaptic('light');
-    if (pageConfig.secondaryLabel === 'Back to Summary') {
-      navigate('/quote/summary');
-    } else {
-      navigate('/quote/summary');
-    }
-  };
-
   const handleOpenAI = () => {
     triggerHaptic('medium');
     const motorContext = state.motor?.hp 
@@ -177,91 +173,89 @@ export const UnifiedMobileBar: React.FC = () => {
   };
 
   const handleOpenDrawer = () => {
-    triggerHaptic('light');
-    setIsDrawerOpen(true);
+    if (hasMotor) {
+      triggerHaptic('light');
+      setIsDrawerOpen(true);
+    }
   };
 
   if (!shouldShow) return null;
 
+  const motorName = state.motor?.model || '';
+  const displayName = motorName.length > 16 ? motorName.substring(0, 16) + '...' : motorName;
+
   return (
     <>
-      {/* Unified Mobile Bar */}
+      {/* Unified Mobile Bar - Single Row Premium Design */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-40 bg-white/98 backdrop-blur-lg border-t border-border shadow-lg"
+        className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-t border-border/50 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]"
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
-        {/* Row 1: Motor Info (tappable to expand) */}
-        <button
-          onClick={handleOpenDrawer}
-          className="w-full flex items-center justify-between px-4 py-2.5 border-b border-border/50 active:bg-muted/50 transition-colors"
-        >
-          <div className="flex items-center gap-2 min-w-0">
-            <ChevronUp className="h-4 w-4 text-muted-foreground shrink-0" />
-            <span className="font-medium text-foreground truncate text-sm">
-              {state.motor?.model}
-            </span>
-          </div>
-          <div className="flex items-center gap-2 text-sm shrink-0">
-            {runningTotal && (
-              <span className="font-semibold text-foreground">{money(runningTotal)}</span>
-            )}
-            {monthlyPayment && (
-              <span className="text-muted-foreground">≈ {money(monthlyPayment)}/mo</span>
-            )}
-            {state.warrantyConfig?.totalYears && (
-              <span className="text-muted-foreground">{state.warrantyConfig.totalYears}yr</span>
-            )}
-          </div>
-        </button>
-
-        {/* Row 2: Actions */}
-        <div className="flex items-center gap-2 px-3 py-2.5">
+        <div className="flex flex-row flex-nowrap items-center h-14 px-2 gap-1.5">
           {/* AI Button */}
           <Button
             variant="ghost"
             size="icon"
             onClick={handleOpenAI}
-            className="h-11 w-11 shrink-0 relative"
+            className="h-10 w-10 shrink-0 rounded-full bg-primary/5 hover:bg-primary/10"
             aria-label="Ask AI assistant"
           >
-            <MessageSquare className="h-5 w-5" />
-            <Sparkles className="absolute -top-0.5 -right-0.5 h-3 w-3 text-amber-500" />
+            <MessageCircle className="h-5 w-5 text-primary" />
           </Button>
+
+          {/* Center: Motor Info (tappable) or Prompt */}
+          <button
+            onClick={handleOpenDrawer}
+            disabled={!hasMotor}
+            className="flex-1 min-w-0 flex flex-row flex-nowrap items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-muted/50 hover:bg-muted transition-colors disabled:opacity-60"
+          >
+            {hasMotor ? (
+              <>
+                <ChevronUp className={`h-3.5 w-3.5 shrink-0 text-muted-foreground transition-transform ${isDrawerOpen ? 'rotate-180' : ''}`} />
+                <span className="text-sm font-medium truncate">{displayName}</span>
+                <span className="text-sm text-muted-foreground shrink-0">
+                  {money(runningTotal)}
+                </span>
+                {monthlyPayment > 0 && (
+                  <span className="text-xs text-muted-foreground shrink-0">
+                    ≈{money(monthlyPayment)}/mo
+                  </span>
+                )}
+              </>
+            ) : (
+              <span className="text-sm text-muted-foreground flex items-center gap-1.5">
+                <Sparkles className="h-4 w-4" />
+                Select a motor
+              </span>
+            )}
+          </button>
 
           {/* Contact Button */}
           <Button
             variant="ghost"
             size="icon"
             onClick={handleOpenContact}
-            className="h-11 w-11 shrink-0"
+            className="h-10 w-10 shrink-0 rounded-full hover:bg-muted"
             aria-label="Contact us"
           >
-            <Phone className="h-5 w-5" />
+            <Phone className="h-5 w-5 text-muted-foreground" />
           </Button>
 
-          {/* Spacer */}
-          <div className="flex-1" />
-
-          {/* Secondary Action */}
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={handleSecondary}
-            className="h-11 px-3 text-xs font-normal"
-          >
-            {pageConfig.secondaryLabel || 'Summary'}
-          </Button>
-
-          {/* Primary Action */}
-          <Button
-            size="sm"
-            onClick={handlePrimary}
-            className="h-11 px-4 text-xs font-semibold"
-          >
-            {pageConfig.primaryLabel}
-          </Button>
+          {/* Primary CTA - Only show when motor selected */}
+          {hasMotor && (
+            <Button
+              size="sm"
+              onClick={handlePrimary}
+              className="shrink-0 h-10 px-3 text-xs font-medium"
+            >
+              {pageConfig.primaryLabel} →
+            </Button>
+          )}
         </div>
       </div>
+
+      {/* Spacer */}
+      <div className="h-14" style={{ marginBottom: 'env(safe-area-inset-bottom)' }} />
 
       {/* Expandable Drawer */}
       <MobileQuoteDrawer
