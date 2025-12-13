@@ -1,12 +1,34 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
-import { Loader2, RefreshCw, Image, Download } from 'lucide-react';
+import { Progress } from '@/components/ui/progress';
+import { Loader2, RefreshCw, Image, Download, Play, Square, CheckCircle2, Clock, AlertCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+
+const HP_BATCHES = [
+  { label: "2.5-10 HP", min: 2.5, max: 10, estimatedCount: 29 },
+  { label: "15-20 HP", min: 15, max: 20, estimatedCount: 24 },
+  { label: "25-30 HP", min: 25, max: 30, estimatedCount: 17 },
+  { label: "40-150 HP", min: 40, max: 150, estimatedCount: 23 },
+  { label: "175-250 HP", min: 175, max: 250, estimatedCount: 24 },
+  { label: "300 HP", min: 300, max: 300, estimatedCount: 11 },
+];
+
+const DELAY_BETWEEN_BATCHES = 45000; // 45 seconds
+
+interface BatchResult {
+  label: string;
+  status: 'pending' | 'running' | 'complete' | 'error' | 'cancelled';
+  motorsProcessed?: number;
+  imagesUploaded?: number;
+  successCount?: number;
+  failCount?: number;
+  error?: string;
+}
 
 export default function UpdateMotorImages() {
   const [loading, setLoading] = useState(false);
@@ -16,6 +38,134 @@ export default function UpdateMotorImages() {
   const [hpMax, setHpMax] = useState('');
   const [batchSize, setBatchSize] = useState('10');
   const { toast } = useToast();
+
+  // Automated batch processing state
+  const [isAutomatedRunning, setIsAutomatedRunning] = useState(false);
+  const [currentBatchIndex, setCurrentBatchIndex] = useState(-1);
+  const [batchResults, setBatchResults] = useState<BatchResult[]>([]);
+  const [countdown, setCountdown] = useState(0);
+  const [totalStats, setTotalStats] = useState({ motors: 0, images: 0, success: 0, failed: 0 });
+  const cancelRef = useRef(false);
+
+  const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+  const runAllBatchesAutomatically = async () => {
+    cancelRef.current = false;
+    setIsAutomatedRunning(true);
+    setCurrentBatchIndex(0);
+    setTotalStats({ motors: 0, images: 0, success: 0, failed: 0 });
+    setResult(null);
+
+    // Initialize batch results
+    const initialResults: BatchResult[] = HP_BATCHES.map(batch => ({
+      label: batch.label,
+      status: 'pending'
+    }));
+    setBatchResults(initialResults);
+
+    toast({
+      title: dryRun ? "Starting automated dry run..." : "Starting automated processing...",
+      description: `Processing all 128 motors in 6 batches with 45s delays.`,
+    });
+
+    let runningStats = { motors: 0, images: 0, success: 0, failed: 0 };
+
+    for (let i = 0; i < HP_BATCHES.length; i++) {
+      if (cancelRef.current) {
+        setBatchResults(prev => prev.map((r, idx) => 
+          idx >= i ? { ...r, status: 'cancelled' } : r
+        ));
+        break;
+      }
+
+      const batch = HP_BATCHES[i];
+      setCurrentBatchIndex(i);
+
+      // Update current batch to running
+      setBatchResults(prev => prev.map((r, idx) => 
+        idx === i ? { ...r, status: 'running' } : r
+      ));
+
+      try {
+        const { data, error } = await supabase.functions.invoke('scrape-motor-images', {
+          body: { 
+            dryRun, 
+            hpMin: batch.min, 
+            hpMax: batch.max, 
+            batchSize: 30 
+          }
+        });
+
+        if (error) throw error;
+
+        const batchMotors = data?.totalProcessed || 0;
+        const batchImages = data?.totalImagesUploaded || 0;
+        const batchSuccess = data?.successCount || 0;
+        const batchFail = data?.failCount || 0;
+
+        runningStats = {
+          motors: runningStats.motors + batchMotors,
+          images: runningStats.images + batchImages,
+          success: runningStats.success + batchSuccess,
+          failed: runningStats.failed + batchFail,
+        };
+        setTotalStats(runningStats);
+
+        setBatchResults(prev => prev.map((r, idx) => 
+          idx === i ? { 
+            ...r, 
+            status: 'complete',
+            motorsProcessed: batchMotors,
+            imagesUploaded: batchImages,
+            successCount: batchSuccess,
+            failCount: batchFail,
+          } : r
+        ));
+
+      } catch (error) {
+        const errorMessage = (error as Error).message;
+        setBatchResults(prev => prev.map((r, idx) => 
+          idx === i ? { ...r, status: 'error', error: errorMessage } : r
+        ));
+        runningStats.failed++;
+        setTotalStats(runningStats);
+      }
+
+      // Wait between batches (except for last batch)
+      if (i < HP_BATCHES.length - 1 && !cancelRef.current) {
+        for (let s = DELAY_BETWEEN_BATCHES / 1000; s > 0; s--) {
+          if (cancelRef.current) break;
+          setCountdown(s);
+          await sleep(1000);
+        }
+        setCountdown(0);
+      }
+    }
+
+    setIsAutomatedRunning(false);
+    setCurrentBatchIndex(-1);
+
+    if (!cancelRef.current) {
+      toast({
+        title: dryRun ? "Dry run complete!" : "All batches complete!",
+        description: `Processed ${runningStats.motors} motors, uploaded ${runningStats.images} images.`,
+      });
+    } else {
+      toast({
+        title: "Processing cancelled",
+        description: `Stopped after ${runningStats.motors} motors processed.`,
+        variant: "destructive",
+      });
+    }
+  };
+
+  const cancelProcessing = () => {
+    cancelRef.current = true;
+    toast({
+      title: "Cancelling...",
+      description: "Will stop after current batch completes.",
+    });
+  };
 
   const scrapeAlberniImages = async () => {
     setLoading(true);
@@ -128,22 +278,155 @@ export default function UpdateMotorImages() {
     }
   };
 
+  const completedBatches = batchResults.filter(b => b.status === 'complete').length;
+  const progressPercent = HP_BATCHES.length > 0 ? (completedBatches / HP_BATCHES.length) * 100 : 0;
+
   return (
     <div className="container mx-auto p-8 space-y-6">
-      {/* Alberni Power Marine Scraper Card */}
-      <Card className="max-w-2xl mx-auto border-primary/20">
+      {/* Automated Batch Processing Card */}
+      <Card className="max-w-2xl mx-auto border-primary/30 bg-gradient-to-br from-background to-muted/30">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Image className="h-5 w-5" />
-            Scrape from Alberni Power Marine
+            <Play className="h-5 w-5" />
+            Process All Motors Automatically
           </CardTitle>
           <CardDescription>
-            Use Firecrawl to scrape high-quality motor images from Alberni Power Marine's product pages.
-            Each motor will be matched to its correct product page using model display names.
+            Automatically process all 128 motors in 6 HP range batches with 45-second delays between batches to respect API rate limits. Estimated time: 20-30 minutes.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+            <div>
+              <Label htmlFor="autoDryRun" className="font-medium">Dry Run Mode</Label>
+              <p className="text-xs text-muted-foreground">
+                Preview what will be scraped without making changes
+              </p>
+            </div>
+            <Switch
+              id="autoDryRun"
+              checked={dryRun}
+              onCheckedChange={setDryRun}
+              disabled={isAutomatedRunning}
+            />
+          </div>
+
+          {!isAutomatedRunning ? (
+            <Button 
+              onClick={runAllBatchesAutomatically}
+              disabled={loading}
+              className="w-full h-12 text-lg"
+              variant={dryRun ? "outline" : "default"}
+            >
+              <Play className="mr-2 h-5 w-5" />
+              {dryRun ? "Preview All 128 Motors (Dry Run)" : "Process All 128 Motors"}
+            </Button>
+          ) : (
+            <Button 
+              onClick={cancelProcessing}
+              variant="destructive"
+              className="w-full h-12"
+            >
+              <Square className="mr-2 h-4 w-4" />
+              Cancel Processing
+            </Button>
+          )}
+
+          {/* Progress Section */}
+          {batchResults.length > 0 && (
+            <div className="space-y-4 pt-4 border-t">
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm">
+                  <span>Overall Progress</span>
+                  <span>{completedBatches}/{HP_BATCHES.length} batches</span>
+                </div>
+                <Progress value={progressPercent} className="h-2" />
+              </div>
+
+              {/* Countdown Timer */}
+              {countdown > 0 && (
+                <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted p-2 rounded">
+                  <Clock className="h-4 w-4" />
+                  Waiting {countdown}s before next batch...
+                </div>
+              )}
+
+              {/* Batch Status List */}
+              <div className="space-y-2">
+                {batchResults.map((batch, idx) => (
+                  <div 
+                    key={batch.label}
+                    className={`flex items-center justify-between p-3 rounded-lg border ${
+                      batch.status === 'running' ? 'bg-primary/5 border-primary/30' :
+                      batch.status === 'complete' ? 'bg-green-500/5 border-green-500/30' :
+                      batch.status === 'error' ? 'bg-destructive/5 border-destructive/30' :
+                      batch.status === 'cancelled' ? 'bg-muted border-muted' :
+                      'bg-background border-border'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      {batch.status === 'pending' && <Clock className="h-4 w-4 text-muted-foreground" />}
+                      {batch.status === 'running' && <Loader2 className="h-4 w-4 animate-spin text-primary" />}
+                      {batch.status === 'complete' && <CheckCircle2 className="h-4 w-4 text-green-500" />}
+                      {batch.status === 'error' && <AlertCircle className="h-4 w-4 text-destructive" />}
+                      {batch.status === 'cancelled' && <Square className="h-4 w-4 text-muted-foreground" />}
+                      <div>
+                        <p className="font-medium text-sm">Batch {idx + 1}: {batch.label}</p>
+                        {batch.status === 'complete' && (
+                          <p className="text-xs text-muted-foreground">
+                            {batch.motorsProcessed} motors • {batch.imagesUploaded} images uploaded
+                          </p>
+                        )}
+                        {batch.status === 'error' && (
+                          <p className="text-xs text-destructive">{batch.error}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      ~{HP_BATCHES[idx].estimatedCount} motors
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Total Stats */}
+              {(totalStats.motors > 0 || totalStats.images > 0) && (
+                <div className="grid grid-cols-4 gap-2 p-3 bg-muted rounded-lg text-center">
+                  <div>
+                    <p className="text-lg font-semibold">{totalStats.motors}</p>
+                    <p className="text-xs text-muted-foreground">Motors</p>
+                  </div>
+                  <div>
+                    <p className="text-lg font-semibold">{totalStats.images}</p>
+                    <p className="text-xs text-muted-foreground">Images</p>
+                  </div>
+                  <div>
+                    <p className="text-lg font-semibold text-green-600">{totalStats.success}</p>
+                    <p className="text-xs text-muted-foreground">Success</p>
+                  </div>
+                  <div>
+                    <p className="text-lg font-semibold text-destructive">{totalStats.failed}</p>
+                    <p className="text-xs text-muted-foreground">Failed</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Manual Scraper Card */}
+      <Card className="max-w-2xl mx-auto border-border/50">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Image className="h-5 w-5" />
+            Manual Batch Scrape
+          </CardTitle>
+          <CardDescription>
+            Manually scrape a specific HP range or batch size.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-3 gap-4">
             <div className="space-y-2">
               <Label htmlFor="hpMin">Min HP</Label>
               <Input
@@ -164,41 +447,23 @@ export default function UpdateMotorImages() {
                 onChange={(e) => setHpMax(e.target.value)}
               />
             </div>
-          </div>
-          
-          <div className="space-y-2">
-            <Label htmlFor="batchSize">Batch Size</Label>
-            <Input
-              id="batchSize"
-              type="number"
-              placeholder="10"
-              value={batchSize}
-              onChange={(e) => setBatchSize(e.target.value)}
-            />
-            <p className="text-xs text-muted-foreground">
-              Number of motors to process per run. Higher = longer runtime.
-            </p>
-          </div>
-          
-          <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
-            <div>
-              <Label htmlFor="dryRun" className="font-medium">Dry Run Mode</Label>
-              <p className="text-xs text-muted-foreground">
-                Preview what will be scraped without updating the database
-              </p>
+            <div className="space-y-2">
+              <Label htmlFor="batchSize">Batch Size</Label>
+              <Input
+                id="batchSize"
+                type="number"
+                placeholder="10"
+                value={batchSize}
+                onChange={(e) => setBatchSize(e.target.value)}
+              />
             </div>
-            <Switch
-              id="dryRun"
-              checked={dryRun}
-              onCheckedChange={setDryRun}
-            />
           </div>
           
           <Button 
             onClick={scrapeAlberniImages}
-            disabled={loading}
+            disabled={loading || isAutomatedRunning}
             className="w-full"
-            variant={dryRun ? "outline" : "default"}
+            variant="outline"
           >
             {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             <Download className="mr-2 h-4 w-4" />
@@ -208,7 +473,7 @@ export default function UpdateMotorImages() {
       </Card>
 
       {/* Legacy Tools Card */}
-      <Card className="max-w-2xl mx-auto">
+      <Card className="max-w-2xl mx-auto opacity-60">
         <CardHeader>
           <CardTitle>Legacy Image Tools</CardTitle>
           <CardDescription>
@@ -219,7 +484,7 @@ export default function UpdateMotorImages() {
           <div className="grid gap-4">
             <Button 
               onClick={migrateMotorImages}
-              disabled={loading}
+              disabled={loading || isAutomatedRunning}
               variant="outline"
               className="w-full"
             >
@@ -230,7 +495,7 @@ export default function UpdateMotorImages() {
             
             <Button 
               onClick={updateMotorImages}
-              disabled={loading}
+              disabled={loading || isAutomatedRunning}
               variant="outline"
               className="w-full"
             >
