@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
-import { X, Send, MessageCircle, RefreshCw, ChevronDown } from 'lucide-react';
+import { Send, RefreshCw, ChevronDown } from 'lucide-react';
+import harrisLogo from '@/assets/harris-logo.png';
+import mercuryLogo from '@/assets/mercury-logo.png';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
@@ -410,19 +412,21 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
               animate={{ opacity: 1 }}
               transition={{ delay: 0.1, duration: 0.2, ease: 'easeOut' }}
             >
-              {/* Header - Compact and premium */}
-              <div className="flex items-center justify-between px-4 py-2 border-b border-gray-100 bg-white shrink-0">
+              {/* Header - Premium dual-logo branding */}
+              <div className="flex items-center justify-between px-4 py-2.5 border-b border-gray-100 bg-white shrink-0">
                 <div className="flex items-center gap-3">
-                  <div className="relative">
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center shadow-sm">
-                      <MessageCircle className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-gray-900 text-sm">Mercury Expert</h3>
-                    <p className="text-[11px] text-gray-500 font-light">Swipe down to close</p>
-                  </div>
+                  <img 
+                    src={harrisLogo} 
+                    alt="Harris Boat Works" 
+                    className="h-6 w-auto"
+                  />
+                  <div className="w-px h-5 bg-gray-200" />
+                  <img 
+                    src={mercuryLogo} 
+                    alt="Mercury Marine" 
+                    className="h-6 w-auto"
+                  />
+                  <span className="w-2 h-2 bg-emerald-400 rounded-full ml-1" />
                 </div>
                 <Button
                   variant="ghost"
