@@ -321,8 +321,9 @@ export default function FinancingApplication() {
 
   const handleContinue = () => {
     if (savedDraft) {
+      // Use LOAD_FROM_STORAGE since localStorage data uses camelCase format
       financingDispatch({ 
-        type: 'LOAD_FROM_DATABASE', 
+        type: 'LOAD_FROM_STORAGE', 
         payload: savedDraft.data 
       });
     }
