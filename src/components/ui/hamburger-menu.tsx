@@ -30,7 +30,7 @@ export const HamburgerMenu = ({ isOpen, onClose, totalXP, user, loading, signOut
         </div>
 
         {/* Content */}
-        <div className="flex-1 p-4 space-y-6">
+        <div className="flex-1 p-4 space-y-6 overflow-y-auto pb-24">
           {/* XP Display */}
           {totalXP && totalXP > 0 && (
             <div className="flex items-center justify-center gap-2 bg-gradient-to-r from-secondary to-accent px-4 py-3 rounded-lg">
