@@ -2,6 +2,8 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { money } from '@/lib/money';
 import {
   ConversationalNudge,
@@ -15,14 +17,18 @@ import {
   OFFER_HELP,
   MOTOR_FAMILY_TIPS,
   HP_SPECIFIC_MESSAGES,
+  PROMO_MESSAGES,
+  FINANCING_PROMO_MESSAGES,
+  PROMO_REACTION_MESSAGES,
   pickRandom,
   pickRandomFiltered,
   filterByHP,
   getMotorFamilyKey,
   getHPRange,
+  formatPromoMessage,
 } from './conversationalMessages';
 
-export type NudgeType = 'welcome' | 'action' | 'question' | 'correction' | 'reaction' | 'progress' | 'social' | 'offer-help' | 'default';
+export type NudgeType = 'welcome' | 'action' | 'question' | 'correction' | 'reaction' | 'progress' | 'social' | 'offer-help' | 'promo' | 'default';
 
 export interface ActiveNudge extends ConversationalNudge {
   type: NudgeType;
@@ -39,6 +45,12 @@ export const useConversationalFeedback = () => {
   const location = useLocation();
   const { state } = useQuote();
   
+  // Get active promotions
+  const { getWarrantyPromotions } = useActivePromotions();
+  const { promo: financingPromo } = useActiveFinancingPromo();
+  const warrantyPromos = getWarrantyPromotions();
+  const warrantyPromo = warrantyPromos[0]; // First active warranty promo
+  
   const [feedbackState, setFeedbackState] = useState<FeedbackState>({
     activeNudge: null,
     recentAction: null,
@@ -52,6 +64,7 @@ export const useConversationalFeedback = () => {
   const prevTradeInRef = useRef(state.tradeInInfo?.estimatedValue);
   const prevBoatInfoRef = useRef(state.boatInfo?.type);
   const prevPathRef = useRef(location.pathname);
+  const promoShownThisPageRef = useRef(false);
 
   // Display motor (preview or selected)
   const displayMotor = state.previewMotor || state.motor;
@@ -80,6 +93,7 @@ export const useConversationalFeedback = () => {
         recentAction: null,
       }));
       prevPathRef.current = location.pathname;
+      promoShownThisPageRef.current = false; // Reset promo shown flag
     }
   }, [location.pathname]);
 
@@ -223,6 +237,17 @@ export const useConversationalFeedback = () => {
         return { ...reaction, message, type: 'reaction' };
       }
     }
+    
+    // Priority 0.5: Promo reaction after motor selection (occasional)
+    if (recentAction === 'motor-selected' && warrantyPromo && Math.random() < 0.4) {
+      const promoReaction = pickRandom(PROMO_REACTION_MESSAGES);
+      const message = formatPromoMessage(promoReaction.message, {
+        warranty_extra_years: warrantyPromo.warranty_extra_years,
+        end_date: warrantyPromo.end_date,
+      });
+      promoShownThisPageRef.current = true;
+      return { ...promoReaction, message, type: 'promo' };
+    }
 
     // Priority 1: Welcome message (0-3 seconds)
     if (secondsOnPage < 3 && WELCOME_MESSAGES[path]) {
@@ -260,6 +285,30 @@ export const useConversationalFeedback = () => {
       if (filtered.length > 0) {
         const index = Math.floor((secondsOnPage - 8) / 3) % filtered.length;
         return { ...filtered[index], type: 'action' };
+      }
+    }
+    
+    // Priority 4.5: Promo mention (12-18 seconds, once per page)
+    if (secondsOnPage >= 12 && secondsOnPage < 18 && !promoShownThisPageRef.current) {
+      // Warranty promo
+      if (warrantyPromo && PROMO_MESSAGES[path]) {
+        const promoMsg = pickRandom(PROMO_MESSAGES[path]);
+        const message = formatPromoMessage(promoMsg.message, {
+          warranty_extra_years: warrantyPromo.warranty_extra_years,
+          end_date: warrantyPromo.end_date,
+        });
+        promoShownThisPageRef.current = true;
+        return { ...promoMsg, message, type: 'promo' };
+      }
+      // Financing promo (on options or schedule page)
+      if (financingPromo && (path === '/quote/options' || path === '/quote/schedule')) {
+        const finMsg = pickRandom(FINANCING_PROMO_MESSAGES);
+        const message = formatPromoMessage(finMsg.message, {
+          rate: financingPromo.rate,
+          end_date: financingPromo.promo_end_date,
+        });
+        promoShownThisPageRef.current = true;
+        return { ...finMsg, message, type: 'promo' };
       }
     }
 
@@ -315,6 +364,8 @@ export const useConversationalFeedback = () => {
     displayMotor?.hp,
     isPreview,
     quoteProgress.completed,
+    warrantyPromo,
+    financingPromo,
   ]);
 
   // Update active nudge in state
