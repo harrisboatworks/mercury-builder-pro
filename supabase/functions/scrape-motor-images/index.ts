@@ -110,16 +110,39 @@ function getAlternateUrls(modelDisplay: string, hp: number): string[] {
   return [...new Set(alternates)]; // Remove duplicates
 }
 
-// Filter valid motor images from scraped URLs
-function filterValidImages(imageUrls: string[]): string[] {
+// Extract HP from a URL string (e.g., "20-hp" → 20, "9-9" → 9.9)
+function extractHpFromUrl(url: string): number | null {
+  const lowerUrl = url.toLowerCase();
+  
+  // Pattern: "XX-hp" or "XXhp"
+  const hpMatch = lowerUrl.match(/(\d+(?:-\d)?)\s*-?\s*hp/);
+  if (hpMatch) {
+    return parseFloat(hpMatch[1].replace('-', '.'));
+  }
+  
+  // Pattern: HP at start of product slug (e.g., "/20elpt-" or "/9-9elh-")
+  const slugMatch = lowerUrl.match(/\/(\d+(?:-\d)?)\s*(?:elh|elpt|exlpt|mh|mlh|xl|xxl|cxl|tlr)/);
+  if (slugMatch) {
+    return parseFloat(slugMatch[1].replace('-', '.'));
+  }
+  
+  return null;
+}
+
+// Filter valid motor images from scraped URLs - HP-aware to reject "Similar Items"
+function filterValidImages(imageUrls: string[], targetHp: number): string[] {
   const validImages: string[] = [];
+  
+  // Normalize target HP for comparison (9.9 and 9-9 should match)
+  const normalizedTargetHp = targetHp;
   
   for (const url of imageUrls) {
     // Must be from Alberni's AWS CDN
     if (!url.includes('aws.albernipowermarine.com')) continue;
     
-    // Skip logos and promotional images
     const lowerUrl = url.toLowerCase();
+    
+    // Skip logos and promotional images
     if (lowerUrl.includes('apm-brand')) continue;
     if (lowerUrl.includes('go-boldly')) continue;
     if (lowerUrl.includes('logo')) continue;
@@ -133,8 +156,19 @@ function filterValidImages(imageUrls: string[]): string[] {
     if (lowerUrl.includes('icon')) continue;
     if (lowerUrl.includes('button')) continue;
     
-    // Include all images from AWS CDN that passed the exclusion filters above
-    // This is more permissive - any product image from their CDN is likely a motor image
+    // Skip small thumbnail images (often from "Similar Items" sections)
+    if (lowerUrl.includes('-320-') || lowerUrl.includes('-320.')) continue;
+    if (lowerUrl.includes('_thumb') || lowerUrl.includes('-thumb')) continue;
+    if (lowerUrl.includes('/small/') || lowerUrl.includes('/thumbs/')) continue;
+    
+    // HP-based filtering: Check if image URL contains a DIFFERENT HP than target
+    const urlHp = extractHpFromUrl(url);
+    if (urlHp !== null && Math.abs(urlHp - normalizedTargetHp) > 0.5) {
+      // URL contains a different HP - this is likely a "Similar Items" image
+      console.log(`🚫 Rejecting mismatched HP image: ${url} (found HP ${urlHp}, expected ${normalizedTargetHp})`);
+      continue;
+    }
+    
     validImages.push(url);
   }
   
@@ -214,7 +248,7 @@ async function uploadToStorage(
 }
 
 // Scrape a single product page using Firecrawl
-async function scrapeProductPage(url: string, apiKey: string): Promise<string[]> {
+async function scrapeProductPage(url: string, apiKey: string, targetHp: number): Promise<string[]> {
   try {
     console.log(`Scraping: ${url}`);
     
@@ -276,7 +310,7 @@ async function scrapeProductPage(url: string, apiKey: string): Promise<string[]>
       }
     }
     
-    return filterValidImages(imageUrls);
+    return filterValidImages(imageUrls, targetHp);
   } catch (error) {
     console.error(`Error scraping ${url}:`, error);
     return [];
@@ -307,7 +341,7 @@ async function scrapeMotorImages(
     // Try each URL until we find images
     for (const url of urls) {
       result.url = url;
-      scrapedImageUrls = await scrapeProductPage(url, apiKey);
+      scrapedImageUrls = await scrapeProductPage(url, apiKey, motor.horsepower);
       
       if (scrapedImageUrls.length >= 2) {
         successUrl = url;
