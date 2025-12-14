@@ -166,6 +166,35 @@ class AudioQueue {
   }
 }
 
+// Request microphone permission immediately (iOS Safari requirement)
+// Must be called directly from user gesture before any async operations
+export async function requestMicrophonePermission(): Promise<MediaStream> {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ 
+      audio: {
+        echoCancellation: true,
+        noiseSuppression: true,
+        autoGainControl: true
+      }
+    });
+    console.log('Microphone permission granted');
+    return stream;
+  } catch (error: any) {
+    console.error('Microphone permission error:', error);
+    
+    // Provide user-friendly error messages
+    if (error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError') {
+      throw new Error('Microphone access denied. Please allow microphone access in your browser settings and try again.');
+    } else if (error.name === 'NotFoundError') {
+      throw new Error('No microphone found. Please connect a microphone and try again.');
+    } else if (error.name === 'NotReadableError') {
+      throw new Error('Microphone is in use by another application. Please close other apps using your microphone.');
+    } else {
+      throw new Error(`Could not access microphone: ${error.message || 'Unknown error'}`);
+    }
+  }
+}
+
 // Main realtime voice chat class using WebRTC
 export class RealtimeVoiceChat {
   private pc: RTCPeerConnection | null = null;
@@ -174,6 +203,7 @@ export class RealtimeVoiceChat {
   private recorder: AudioRecorder | null = null;
   private audioContext: AudioContext | null = null;
   private audioQueue: AudioQueue | null = null;
+  private mediaStream: MediaStream | null = null;
 
   constructor(
     private onTranscript: (text: string, isFinal: boolean) => void,
@@ -183,13 +213,19 @@ export class RealtimeVoiceChat {
   ) {
     this.audioEl = document.createElement("audio");
     this.audioEl.autoplay = true;
+    // iOS Safari requires playsinline attribute
+    this.audioEl.setAttribute('playsinline', 'true');
   }
 
-  async connect(motorContext?: any, currentPage?: string) {
+  async connect(motorContext?: any, currentPage?: string, existingStream?: MediaStream) {
     try {
+      // Use existing stream if provided (iOS Safari - permission already granted)
+      // Otherwise request permission now (desktop browsers)
+      this.mediaStream = existingStream || await requestMicrophonePermission();
+      
       // Get ephemeral token from edge function
       const tokenResponse = await fetch(
-        `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/realtime-session`,
+        `https://eutsoqdpjuutknjsshxes.supabase.co/functions/v1/realtime-session`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -207,17 +243,28 @@ export class RealtimeVoiceChat {
 
       // Create peer connection
       this.pc = new RTCPeerConnection();
+      
+      // Create AudioContext and resume if suspended (iOS requirement)
       this.audioContext = new AudioContext({ sampleRate: 24000 });
+      if (this.audioContext.state === 'suspended') {
+        console.log('Resuming suspended AudioContext...');
+        await this.audioContext.resume();
+      }
       this.audioQueue = new AudioQueue(this.audioContext);
 
       // Set up remote audio
       this.pc.ontrack = (e) => {
         this.audioEl.srcObject = e.streams[0];
+        // iOS Safari: explicitly play to handle autoplay restrictions
+        this.audioEl.play().catch(err => console.log('Audio autoplay blocked:', err));
       };
 
-      // Add local audio track
-      const ms = await navigator.mediaDevices.getUserMedia({ audio: true });
-      this.pc.addTrack(ms.getTracks()[0]);
+      // Add local audio track from our stream
+      const audioTrack = this.mediaStream.getAudioTracks()[0];
+      if (!audioTrack) {
+        throw new Error('No audio track available from microphone');
+      }
+      this.pc.addTrack(audioTrack, this.mediaStream);
 
       // Set up data channel
       this.dc = this.pc.createDataChannel("oai-events");
@@ -371,6 +418,11 @@ export class RealtimeVoiceChat {
     this.dc?.close();
     this.pc?.close();
     this.audioContext?.close();
+    // Stop all tracks on the media stream
+    if (this.mediaStream) {
+      this.mediaStream.getTracks().forEach(track => track.stop());
+      this.mediaStream = null;
+    }
     this.audioEl.srcObject = null;
     this.onConnectionChange(false);
   }

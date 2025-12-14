@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { RealtimeVoiceChat } from '@/lib/RealtimeVoice';
+import { RealtimeVoiceChat, requestMicrophonePermission } from '@/lib/RealtimeVoice';
 import { useToast } from '@/hooks/use-toast';
 
 interface VoiceState {
@@ -88,6 +88,12 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     transcriptRef.current = '';
 
     try {
+      // CRITICAL: Request microphone permission FIRST, directly from user tap
+      // This is required for iOS Safari - must happen before any async operations
+      console.log('Requesting microphone permission...');
+      const stream = await requestMicrophonePermission();
+      console.log('Microphone permission granted, creating voice chat...');
+      
       chatRef.current = new RealtimeVoiceChat(
         handleTranscript,
         handleSpeakingChange,
@@ -95,16 +101,28 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
         handleConnectionChange
       );
       
-      await chatRef.current.connect(motorContext, currentPage);
+      // Pass the already-acquired stream to connect
+      await chatRef.current.connect(motorContext, currentPage, stream);
     } catch (error) {
+      console.error('Voice chat start error:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Failed to connect';
+      
       setState(prev => ({ 
         ...prev, 
         isConnecting: false,
-        error: error instanceof Error ? error.message : 'Failed to connect'
+        error: errorMessage
       }));
+      
+      // Show specific toast for permission errors
+      toast({
+        title: "Voice chat unavailable",
+        description: errorMessage,
+        variant: "destructive",
+      });
+      
       chatRef.current = null;
     }
-  }, [motorContext, currentPage, handleTranscript, handleSpeakingChange, handleError, handleConnectionChange]);
+  }, [motorContext, currentPage, handleTranscript, handleSpeakingChange, handleError, handleConnectionChange, toast]);
 
   const endVoiceChat = useCallback(() => {
     chatRef.current?.disconnect();
