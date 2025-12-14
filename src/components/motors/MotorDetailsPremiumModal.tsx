@@ -367,7 +367,7 @@ export default function MotorDetailsPremiumModal({
               </div>
               
               {/* Scrollable Tab Content */}
-              <div className="p-6 pt-4 pb-12 space-y-8">
+              <div className="p-6 pt-4 pb-24 space-y-8">
                   {/* OVERVIEW TAB */}
                   <TabsContent value="overview" className="space-y-8 mt-4">
                     {/* Enhanced Image Gallery - 40% larger */}
