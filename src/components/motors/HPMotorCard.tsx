@@ -14,11 +14,11 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
   const { hp, variants, priceRange, features, families, inStockCount, heroImage } = group;
   const [imageLoaded, setImageLoaded] = useState(false);
   
-  // Smart image scaling - scales up small images, keeps large ones at 1x
+  // Smart image scaling - aggressive scaling for small motor images
   const { scale: imageScale, handleImageLoad } = useSmartImageScale({
-    minExpectedDimension: 400,
-    maxScale: 1.4,
-    defaultScale: 1.15
+    minExpectedDimension: 380,
+    maxScale: 2.0,
+    defaultScale: 1.3
   });
 
   // Combined image load handler
@@ -81,15 +81,15 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
       onClick={() => onConfigure(group)}
     >
       {/* Image Section */}
-      <div className="relative bg-gradient-to-b from-stone-50 to-white p-6">
+      <div className="relative bg-white p-6 overflow-hidden">
         {/* Shimmer loading overlay */}
         {!imageLoaded && (
-          <div className="absolute inset-0 bg-gradient-to-b from-stone-100 to-stone-50 animate-shimmer z-10" />
+          <div className="absolute inset-0 bg-white animate-shimmer z-10" />
         )}
         <img 
           src={heroImage} 
           alt={`${hp} HP Mercury Outboard`}
-          className={`h-48 md:h-72 w-full object-contain mix-blend-multiply transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`h-48 md:h-72 w-full object-contain transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           loading="lazy"
           onLoad={onImageLoad}
           style={{ transform: `scale(${imageScale})` }}

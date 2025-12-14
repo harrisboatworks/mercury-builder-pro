@@ -72,11 +72,11 @@ export default function MotorCardPreview({
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   
-  // Smart image scaling - more aggressive for small motor images
+  // Smart image scaling - aggressive scaling for small motor images
   const { scale: imageScale, handleImageLoad } = useSmartImageScale({
-    minExpectedDimension: 350,
-    maxScale: 1.6,
-    defaultScale: 1.2
+    minExpectedDimension: 380,
+    maxScale: 2.0,
+    defaultScale: 1.3
   });
 
   // Combined image load handler
@@ -321,7 +321,7 @@ export default function MotorCardPreview({
         <div className="relative">
           {/* Image Section */}
           {imageUrl && (
-            <div className="relative bg-white p-6">
+            <div className="relative bg-white p-6 overflow-hidden">
               {/* Shimmer loading overlay */}
               {!imageLoaded && (
                 <div className="absolute inset-0 bg-white animate-shimmer z-10" />

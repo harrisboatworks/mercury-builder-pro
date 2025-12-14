@@ -18,11 +18,11 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   const [lightboxEnhancedUrls, setLightboxEnhancedUrls] = useState<string[]>([]);
   const [imageLoaded, setImageLoaded] = useState(false);
   
-  // Smart image scaling for gallery - more aggressive for small motor images
+  // Smart image scaling for gallery - aggressive scaling for small motor images
   const { scale: mainImageScale, handleImageLoad: handleMainImageLoad } = useSmartImageScale({
-    minExpectedDimension: 350,
-    maxScale: 1.6,
-    defaultScale: 1.2
+    minExpectedDimension: 380,
+    maxScale: 2.0,
+    defaultScale: 1.3
   });
 
   // Reset image loaded state when switching images
@@ -107,7 +107,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   return (
     <div className="space-y-3">
       {/* Main Image */}
-      <div className="relative group cursor-pointer" onClick={handleMainImageClick}>
+      <div className="relative group cursor-pointer overflow-hidden rounded-xl" onClick={handleMainImageClick}>
         {/* Shimmer overlay while loading */}
         {!imageLoaded && (
           <div className="absolute inset-0 rounded-xl bg-white overflow-hidden z-10">
