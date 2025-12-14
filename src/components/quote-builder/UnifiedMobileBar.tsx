@@ -525,21 +525,45 @@ export const UnifiedMobileBar: React.FC = () => {
       if (nudges.withSelection) return { message: nudges.withSelection, type: 'success', icon: 'shield' };
     }
 
-    // Priority 4: Rotating idle nudges (with dynamic value interpolation for summary page)
+    // Priority 4: Rotating idle nudges (with dynamic nudges for summary page)
     if (nudges.idle && idleSeconds >= (location.pathname === '/quote/summary' ? 0 : 15)) {
-      const applicableNudges = nudges.idle.filter(n => idleSeconds >= n.delay);
-      if (applicableNudges.length > 0) {
-        const nudge = applicableNudges[applicableNudges.length - 1];
-        
-        // Interpolate dynamic values for summary page
-        let message = nudge.message;
-        if (location.pathname === '/quote/summary') {
-          message = message
-            .replace('${savings}', money(currentSavings))
-            .replace('${monthly}', money(monthlyPayment));
+      // Build dynamic nudges array for summary page
+      let allNudges = [...nudges.idle];
+      
+      if (location.pathname === '/quote/summary') {
+        // Add dynamic savings nudge only when currentSavings > 0
+        if (currentSavings > 0) {
+          allNudges.push({ 
+            delay: 54, 
+            message: `You're saving ${money(currentSavings)} on this package`, 
+            icon: 'dollar' 
+          });
         }
         
-        return { message, type: 'tip', icon: nudge.icon };
+        // Add promo rate nudge when active promo exists
+        if (promo) {
+          const formatPromoDate = (dateStr: string): string => {
+            try {
+              return new Date(dateStr).toLocaleDateString('en-CA', { 
+                month: 'short', 
+                day: 'numeric' 
+              });
+            } catch {
+              return dateStr;
+            }
+          };
+          
+          const promoMessage = promo.promo_end_date 
+            ? `Promo rate: ${promo.rate}% APR — ends ${formatPromoDate(promo.promo_end_date)}`
+            : `Special rate: ${promo.rate}% APR — locked in for you`;
+          allNudges.push({ delay: 60, message: promoMessage, icon: 'sparkles' });
+        }
+      }
+      
+      const applicableNudges = allNudges.filter(n => idleSeconds >= n.delay);
+      if (applicableNudges.length > 0) {
+        const nudge = applicableNudges[applicableNudges.length - 1];
+        return { message: nudge.message, type: 'tip', icon: nudge.icon };
       }
     }
 
@@ -554,7 +578,7 @@ export const UnifiedMobileBar: React.FC = () => {
     pageConfig.nudges, recentAction, idleSeconds, hasMotor, quoteProgress.remaining,
     location.pathname, state.tradeInInfo?.estimatedValue, state.selectedOptions?.length,
     isPreview, displayMotor?.hp, displayMotor?.id, displayMotor?.model, state.configuratorStep,
-    currentSavings, monthlyPayment
+    currentSavings, monthlyPayment, promo
   ]);
 
   // Helper to render nudge icon
