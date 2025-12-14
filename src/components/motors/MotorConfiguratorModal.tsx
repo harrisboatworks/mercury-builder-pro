@@ -40,6 +40,22 @@ export const CONTROL_IMAGES = {
   remote: CONFIGURATOR_IMAGE_URLS[1]
 };
 
+// Animation variants for step transitions
+const stepVariants = {
+  enter: (direction: 'forward' | 'backward') => ({
+    x: direction === 'forward' ? 40 : -40,
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction: 'forward' | 'backward') => ({
+    x: direction === 'forward' ? -40 : 40,
+    opacity: 0,
+  }),
+};
+
 export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: MotorConfiguratorModalProps) {
   const [step, setStep] = useState<Step>('start');
   const [config, setConfig] = useState<ConfigState>({
@@ -51,6 +67,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
   const [showTransomCalculator, setShowTransomCalculator] = useState(false);
   const [motorForDetails, setMotorForDetails] = useState<Motor | null>(null);
   const [imagesLoaded, setImagesLoaded] = useState({ tiller: false, remote: false });
+  const [animationDirection, setAnimationDirection] = useState<'forward' | 'backward'>('forward');
   const { dispatch } = useQuote();
   const { triggerHaptic } = useHapticFeedback();
   const isNavigatingBack = useRef(false);
@@ -262,6 +279,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     const currentIndex = steps.indexOf(step);
     if (currentIndex > 0) {
       isNavigatingBack.current = true;
+      setAnimationDirection('backward');
       const prevStep = steps[currentIndex - 1];
       setStep(prevStep);
       dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: prevStep });
@@ -271,6 +289,8 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
   const handleNext = () => {
     const steps: Step[] = ['start', 'shaft', 'control', 'features', 'result'];
     const currentIndex = steps.indexOf(step);
+    
+    setAnimationDirection('forward');
     
     const goToStep = (newStep: Step) => {
       setStep(newStep);
@@ -399,6 +419,16 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
               
               {/* Scrollable Content */}
               <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden p-4 pb-4 modal-content">
+                <AnimatePresence mode="wait" custom={animationDirection}>
+                  <motion.div
+                    key={step}
+                    custom={animationDirection}
+                    variants={stepVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ type: 'tween', duration: 0.2, ease: 'easeOut' }}
+                  >
                 {/* Step 1: Start Type */}
                 {step === 'start' && (
                   <div className="space-y-6">
@@ -710,6 +740,8 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
                     )}
                   </div>
                 )}
+                  </motion.div>
+                </AnimatePresence>
               </div>
               
               {/* Navigation - Fixed at bottom of modal */}
