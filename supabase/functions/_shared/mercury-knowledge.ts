@@ -200,6 +200,104 @@ export const MOTOR_USE_CASES = {
   }
 };
 
+// ========== REPOWER KNOWLEDGE ==========
+
+// The 6 reasons customers repower (from Mercury Repower Report)
+export const REPOWER_VALUE_PROPS = {
+  reliability: {
+    headline: "No more breakdowns",
+    message: "Older engines lose reliability. A new Mercury means more time on the water, less time worrying.",
+    stat: "Reliability is the #1 reason boaters repower"
+  },
+  technology: {
+    headline: "Modern tech",
+    message: "SmartCraft displays, VesselView, Active Trim, Digital Throttle & Shift — features that didn't exist when your boat was new.",
+    stat: "Today's engines are smarter, smoother, and more connected"
+  },
+  maintenance: {
+    headline: "Lower maintenance",
+    message: "Old engines need frequent repairs. New Mercury engines cut those costs significantly with 100-hour service intervals.",
+    stat: "Newer engines require less maintenance and fewer repairs"
+  },
+  warranty: {
+    headline: "Fresh warranty",
+    message: "Factory warranty up to 3 years, plus extended options up to 8 years total. Peace of mind included.",
+    stat: "New engines come with comprehensive warranty protection"
+  },
+  love_your_boat: {
+    headline: "Keep what you love",
+    message: "Your boat is set up exactly how you like it — rigged for your style. Repowering keeps everything perfect, just upgrades the power.",
+    stat: "Many boaters have deep emotional connections to their boats"
+  },
+  fuel_efficiency: {
+    headline: "Save on fuel",
+    message: "Modern 4-stroke tech saves money every trip. Better fuel economy = longer days on the water.",
+    stat: "Fuel efficiency has improved dramatically in the last decade"
+  }
+};
+
+// Real customer repower stories for AI to reference
+export const CUSTOMER_STORIES = [
+  {
+    boat: "1977 Boston Whaler Revenge",
+    motor: "200hp Pro XS V8",
+    highlight: "Multigenerational family boat — now faster with modern tech and fuel efficiency",
+    quote: "We've had this boat for decades. The new V8 brought it back to life."
+  },
+  {
+    boat: "1999 Triton TR-21 Bass Boat",
+    motor: "250hp Pro XS V8",
+    highlight: "Went from mid-60s to 75 mph, plus VesselView and digital controls",
+    quote: "The hole shot is unreal. Competition-ready performance."
+  },
+  {
+    boat: "Regulator 23",
+    motor: "250hp FourStroke V8",
+    highlight: "90 lbs lighter than old motor, quieter, better top speed without losing fuel economy",
+    quote: "Smoother, quieter, and we actually save on fuel. Win-win-win."
+  },
+  {
+    boat: "21ft Pontoon",
+    motor: "150hp FourStroke",
+    highlight: "Replaced tired 115hp 2-stroke with modern 4-stroke for better performance and reliability",
+    quote: "The family finally trusts the boat again. No more breakdowns."
+  }
+];
+
+// Discovery questions for AI to ask customers considering repower
+export const DISCOVERY_QUESTIONS = [
+  "How old is your current engine?",
+  "What's been giving you trouble with your current motor?",
+  "Looking for more speed, better hole shot, or improved fuel economy?",
+  "Interested in modern tech like digital controls and SmartCraft connectivity?",
+  "Planning to keep your boat for a while?",
+  "What do you use your boat for mostly — fishing, cruising, watersports?"
+];
+
+// SmartCraft technology benefits for sales conversations
+export const SMARTCRAFT_BENEFITS = {
+  vesselview: {
+    name: "VesselView Mobile",
+    benefit: "Connect your phone to see real-time engine data, fuel usage, and maintenance alerts",
+    selling_point: "Know exactly what your engine is doing at all times"
+  },
+  active_trim: {
+    name: "Active Trim",
+    benefit: "Automatically adjusts trim for optimal performance — set it and forget it",
+    selling_point: "Perfect trim at every speed without touching the button"
+  },
+  digital_throttle: {
+    name: "Digital Throttle & Shift",
+    benefit: "Butter-smooth, cable-free shifting with precise control",
+    selling_point: "No cables to maintain, smoother than any mechanical system"
+  },
+  troll_control: {
+    name: "Troll Control",
+    benefit: "Dial in exact RPM in 10-increment adjustments for precise trolling speed",
+    selling_point: "Perfect for anglers who need exact trolling speeds"
+  }
+};
+
 export function getMotorFamilyInfo(familyName: string): string {
   const normalizedName = familyName?.toLowerCase().replace(/[^a-z]/g, '') || '';
   
@@ -231,4 +329,15 @@ export function getHPRecommendation(boatLength: number): string {
   if (boatLength < 22) return MERCURY_COMPARISONS.size_recommendations["20-22ft"].hp + " HP - " + MERCURY_COMPARISONS.size_recommendations["20-22ft"].note;
   if (boatLength < 24) return MERCURY_COMPARISONS.size_recommendations["22-24ft"].hp + " HP - " + MERCURY_COMPARISONS.size_recommendations["22-24ft"].note;
   return MERCURY_COMPARISONS.size_recommendations["over_24ft"].hp + " HP - " + MERCURY_COMPARISONS.size_recommendations["over_24ft"].note;
+}
+
+// Get a random repower value prop for conversations
+export function getRepowerValueProp(): { headline: string; message: string } {
+  const props = Object.values(REPOWER_VALUE_PROPS);
+  return props[Math.floor(Math.random() * props.length)];
+}
+
+// Get a customer story for social proof
+export function getCustomerStory(): typeof CUSTOMER_STORIES[0] {
+  return CUSTOMER_STORIES[Math.floor(Math.random() * CUSTOMER_STORIES.length)];
 }

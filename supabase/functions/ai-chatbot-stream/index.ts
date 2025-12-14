@@ -8,6 +8,10 @@ import {
   MERCURY_TECHNOLOGIES, 
   MERCURY_COMPARISONS, 
   MOTOR_USE_CASES,
+  REPOWER_VALUE_PROPS,
+  CUSTOMER_STORIES,
+  DISCOVERY_QUESTIONS,
+  SMARTCRAFT_BENEFITS,
   getMotorFamilyInfo,
   getHPRecommendation 
 } from '../_shared/mercury-knowledge.ts';
@@ -301,6 +305,18 @@ ${familyKnowledge}
 
 ## KEY TECHNOLOGIES
 ${techKnowledge}
+
+## WHY CUSTOMERS REPOWER (Replace old motor with new Mercury)
+${Object.values(REPOWER_VALUE_PROPS).map(p => `- **${p.headline}**: ${p.message}`).join('\n')}
+
+## SMARTCRAFT TECHNOLOGY BENEFITS
+${Object.values(SMARTCRAFT_BENEFITS).map(s => `- **${s.name}**: ${s.benefit} — ${s.selling_point}`).join('\n')}
+
+## DISCOVERY QUESTIONS (Ask to understand their needs)
+${DISCOVERY_QUESTIONS.map(q => `- "${q}"`).join('\n')}
+
+## REAL CUSTOMER STORIES (Use for social proof)
+${CUSTOMER_STORIES.map(s => `- **${s.boat}** repowered with ${s.motor}: "${s.quote}"`).join('\n')}
 
 ## CURRENT INVENTORY (Sample)
 ${motorSummary || 'Contact us for current inventory'}
