@@ -284,6 +284,9 @@ export default function MotorDetailsPremiumModal({
                 {/* Stock Status and Title */}
                 <div className="px-4 py-3 border-b border-gray-200 bg-white">
                   <h2 className="text-lg font-semibold text-gray-900 mb-1">{title}</h2>
+                  {motor?.model_number && (
+                    <p className="text-xs font-mono text-gray-400 mb-1">{motor.model_number}</p>
+                  )}
                   {motor && <StockStatusIndicator motor={motor} />}
                 </div>
                 
@@ -328,11 +331,14 @@ export default function MotorDetailsPremiumModal({
                   </button>
                   
                   {/* Flexbox Column Layout - crystal clear hierarchy */}
-                  <div className="flex flex-col space-y-5 pr-12">
-                    {/* Motor Name - 20px margin below (space-y-5) */}
+                  <div className="flex flex-col space-y-3 pr-12">
+                    {/* Motor Name */}
                     <h2 className="text-2xl font-semibold tracking-wide text-gray-900 leading-tight">
                       {title}
                     </h2>
+                    {motor?.model_number && (
+                      <p className="text-sm font-mono text-gray-400">{motor.model_number}</p>
+                    )}
                     
                     {/* Stock Status Indicator */}
                     {motor && <StockStatusIndicator motor={motor} />}
@@ -504,6 +510,12 @@ export default function MotorDetailsPremiumModal({
                         Engine Specifications
                       </h3>
                         <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
+                        {motor?.model_number && (
+                          <div className="flex justify-between items-center py-3 px-4">
+                            <span className="text-sm text-muted-foreground">Mercury Model #</span>
+                            <span className="text-sm font-mono tracking-wide">{motor.model_number}</span>
+                          </div>
+                        )}
                         <SpecRow label="Engine Type" value={motor?.specifications?.cylinders || generateCylinders(hpValue)} />
                         <SpecRow label="Displacement" value={motor?.specifications?.displacement || generateDisplacement(hpValue)} />
                         <SpecRow label="Bore & Stroke" value={motor?.specifications?.boreStroke || generateBoreStroke(hpValue)} />

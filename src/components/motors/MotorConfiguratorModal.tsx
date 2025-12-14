@@ -810,7 +810,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
                           </div>
                           <div className="flex-1">
                             <h4 className="font-semibold text-foreground">{motor.model}</h4>
-                            <p className="text-sm text-muted-foreground">{motor.specs}</p>
+                            <p className="text-sm text-muted-foreground font-mono tracking-wide">{motor.model_number || motor.specs}</p>
                             <p className="text-lg font-bold text-foreground mt-1">
                               ${motor.price.toLocaleString()}
                             </p>
