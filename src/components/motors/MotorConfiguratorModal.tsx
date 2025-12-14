@@ -10,6 +10,7 @@ import { TransomHeightCalculator } from './TransomHeightCalculator';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
 import { cn } from '@/lib/utils';
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 
 // Lazy load the motor details modal
 const MotorDetailsPremiumModal = lazy(() => import('./MotorDetailsPremiumModal'));
@@ -51,6 +52,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
   const [motorForDetails, setMotorForDetails] = useState<Motor | null>(null);
   const [imagesLoaded, setImagesLoaded] = useState({ tiller: false, remote: false });
   const { dispatch } = useQuote();
+  const { triggerHaptic } = useHapticFeedback();
   
   // Reset when modal opens and sync configurator step
   useEffect(() => {
@@ -699,11 +701,11 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
               {/* Navigation - Fixed at bottom of modal */}
               {step !== 'start' && step !== 'result' && (
                 <div className="flex-shrink-0 flex justify-between p-4 pt-3 border-t bg-background shadow-[0_-4px_12px_rgba(0,0,0,0.08)] rounded-b-2xl">
-                  <Button variant="ghost" onClick={handleBack}>
+                  <Button variant="ghost" onClick={() => { triggerHaptic('medium'); handleBack(); }}>
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Back
                   </Button>
-                  <Button variant="outline" onClick={handleNext}>
+                  <Button variant="outline" onClick={() => { triggerHaptic('medium'); handleNext(); }}>
                     Skip
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
@@ -712,7 +714,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
               
               {step === 'result' && filteredVariants.length > 0 && (
                 <div className="flex-shrink-0 flex justify-start p-4 pt-3 border-t bg-background shadow-[0_-4px_12px_rgba(0,0,0,0.08)] rounded-b-2xl">
-                  <Button variant="ghost" onClick={handleBack}>
+                  <Button variant="ghost" onClick={() => { triggerHaptic('medium'); handleBack(); }}>
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Back to Options
                   </Button>
