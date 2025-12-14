@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ChevronUp, MessageCircle, Phone, Sparkles, ArrowRight, Shield, Award, DollarSign, Check, Flag, Heart, RefreshCw, Mic, Volume2, Eye } from 'lucide-react';
+import { ChevronUp, MessageCircle, Phone, Sparkles, ArrowRight, Shield, Award, DollarSign, Check, Flag, Heart, RefreshCw, Mic, Volume2, Eye, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAIChat } from '@/components/chat/GlobalAIChat';
@@ -164,6 +164,26 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
       ],
       encouragement: "You're all set!",
     }
+  },
+  '/quote/summary': {
+    primaryLabel: 'Submit Quote',
+    nextPath: '/quote/schedule',
+    aiMessage: 'Questions about your quote or financing?',
+    nudges: {
+      idle: [
+        { delay: 0, message: "Your price is locked — take your time", icon: 'shield' },
+        { delay: 6, message: "Quote valid for 30 days — no rush", icon: 'check' },
+        { delay: 12, message: "Family-owned since 1947", icon: 'heart' },
+        { delay: 18, message: "Mercury dealer since 1965 — we know these motors", icon: 'award' },
+        { delay: 24, message: "Download PDF to share or review later", icon: 'check' },
+        { delay: 30, message: "Financing available — tap to see options", icon: 'dollar' },
+        { delay: 36, message: "Questions? Tap to chat or call us", icon: 'sparkles' },
+        { delay: 42, message: "Most customers take a few days to decide", icon: 'clock' },
+        { delay: 48, message: "Text us anytime: 647-952-2153", icon: 'phone' },
+      ],
+      encouragement: "Great choices — ready when you are",
+      contextHint: "Everything in one place",
+    }
   }
 };
 
@@ -177,7 +197,6 @@ const SOCIAL_PROOF_NUDGES = [
 
 // Pages where the unified bar should NOT show
 const HIDE_ON_PAGES = [
-  '/quote/summary',
   '/quote/success',
   '/login',
   '/auth',
@@ -506,12 +525,21 @@ export const UnifiedMobileBar: React.FC = () => {
       if (nudges.withSelection) return { message: nudges.withSelection, type: 'success', icon: 'shield' };
     }
 
-    // Priority 4: Rotating idle nudges
-    if (nudges.idle && idleSeconds >= 15) {
+    // Priority 4: Rotating idle nudges (with dynamic value interpolation for summary page)
+    if (nudges.idle && idleSeconds >= (location.pathname === '/quote/summary' ? 0 : 15)) {
       const applicableNudges = nudges.idle.filter(n => idleSeconds >= n.delay);
       if (applicableNudges.length > 0) {
         const nudge = applicableNudges[applicableNudges.length - 1];
-        return { message: nudge.message, type: 'tip', icon: nudge.icon };
+        
+        // Interpolate dynamic values for summary page
+        let message = nudge.message;
+        if (location.pathname === '/quote/summary') {
+          message = message
+            .replace('${savings}', money(currentSavings))
+            .replace('${monthly}', money(monthlyPayment));
+        }
+        
+        return { message, type: 'tip', icon: nudge.icon };
       }
     }
 
@@ -525,7 +553,8 @@ export const UnifiedMobileBar: React.FC = () => {
   }, [
     pageConfig.nudges, recentAction, idleSeconds, hasMotor, quoteProgress.remaining,
     location.pathname, state.tradeInInfo?.estimatedValue, state.selectedOptions?.length,
-    isPreview, displayMotor?.hp, displayMotor?.id, displayMotor?.model, state.configuratorStep
+    isPreview, displayMotor?.hp, displayMotor?.id, displayMotor?.model, state.configuratorStep,
+    currentSavings, monthlyPayment
   ]);
 
   // Helper to render nudge icon
@@ -541,6 +570,8 @@ export const UnifiedMobileBar: React.FC = () => {
       case 'heart': return <Heart className={className} />;
       case 'refresh': return <RefreshCw className={className} />;
       case 'eye': return <Eye className={className} />;
+      case 'clock': return <Clock className={className} />;
+      case 'phone': return <Phone className={className} />;
       default: return null;
     }
   };
