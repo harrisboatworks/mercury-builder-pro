@@ -359,7 +359,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
               className={cn(
                 "fixed z-50 bg-background rounded-t-2xl shadow-2xl flex flex-col",
-                "inset-x-0 bottom-[72px] top-16", // Sits flush above the unified mobile bar
+                "inset-x-0 bottom-[120px] top-16", // Extra buffer above unified mobile bar + nudge
                 "md:inset-x-4 md:bottom-20 md:top-20 md:rounded-2xl", // More padding on tablet
                 "lg:inset-x-auto lg:left-1/2 lg:-translate-x-1/2 lg:w-full lg:max-w-2xl lg:top-24 lg:bottom-24" // Centered on desktop
               )}
