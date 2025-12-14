@@ -104,3 +104,6 @@ verify_jwt = false
 
 [functions.scrape-motor-images]
 verify_jwt = false
+
+[functions.download-control-images]
+verify_jwt = false
