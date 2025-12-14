@@ -14,10 +14,10 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
   const { hp, variants, priceRange, features, families, inStockCount, heroImage } = group;
   const [imageLoaded, setImageLoaded] = useState(false);
   
-  // Smart image scaling - only upscale genuinely small images
+  // Smart image scaling - moderate scaling for card thumbnails
   const { scale: imageScale, handleImageLoad } = useSmartImageScale({
-    minExpectedDimension: 400,
-    maxScale: 1.4,
+    minExpectedDimension: 300,
+    maxScale: 1.6,
     defaultScale: 1.0
   });
 
