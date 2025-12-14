@@ -300,3 +300,58 @@ export const getMotorFamilyKey = (model: string | undefined): string | null => {
   if (lower.includes('fourstroke')) return 'fourstroke';
   return null;
 };
+
+// ========== PROMO MESSAGES ==========
+
+// Warranty promo messages per page
+export const PROMO_MESSAGES: Record<string, ConversationalNudge[]> = {
+  '/quote/motor-selection': [
+    { message: "FYI — there's a +{years}yr warranty bonus running right now 🎁", icon: 'gift' },
+    { message: "Good news: extra warranty on all motors till {endDate}", icon: 'shield' },
+    { message: "Bonus warranty included free on any motor right now", icon: 'gift' },
+  ],
+  '/quote/options': [
+    { message: "The promo stacks — bonus warranty on top of any package", icon: 'shield' },
+    { message: "Extended warranty included free with current promo", icon: 'gift' },
+    { message: "+{years}yr warranty bonus applies to your quote", icon: 'shield' },
+  ],
+  '/quote/schedule': [
+    { message: "Your quote includes the +{years}yr warranty promo ✓", icon: 'check' },
+    { message: "Good timing — this promo ends {endDate}", icon: 'gift' },
+  ],
+};
+
+// Financing promo messages
+export const FINANCING_PROMO_MESSAGES: ConversationalNudge[] = [
+  { message: "Financing as low as {rate}% if you need it", icon: 'dollar' },
+  { message: "Special {rate}% financing available right now", icon: 'dollar' },
+  { message: "Low rate financing at {rate}% — promo ends {endDate}", icon: 'dollar' },
+];
+
+// Promo reaction after motor selection
+export const PROMO_REACTION_MESSAGES: ConversationalNudge[] = [
+  { message: "Nice pick — plus you get +{years}yr warranty bonus 👍", icon: 'gift' },
+  { message: "Great choice! Bonus warranty included with this one", icon: 'shield' },
+];
+
+// Format promo end date nicely
+const formatPromoEndDate = (endDate: string | null | undefined): string => {
+  if (!endDate) return 'soon';
+  try {
+    const date = new Date(endDate);
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  } catch {
+    return 'soon';
+  }
+};
+
+// Format promo message with real values
+export const formatPromoMessage = (
+  message: string,
+  promo: { warranty_extra_years?: number | null; end_date?: string | null; rate?: number | null }
+): string => {
+  return message
+    .replace('{years}', String(promo.warranty_extra_years || 2))
+    .replace('{endDate}', formatPromoEndDate(promo.end_date))
+    .replace('{rate}', promo.rate ? promo.rate.toFixed(2) : '6.99');
+};
