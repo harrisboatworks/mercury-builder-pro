@@ -99,6 +99,10 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     
     if (config.startType) {
       variants = variants.filter(m => {
+        // Large motors (150+ HP) are all electric start - no E in model string
+        if ((m.hp || 0) >= 150) {
+          return config.startType === 'electric';
+        }
         const model = m.model.toUpperCase();
         if (config.startType === 'electric') {
           return model.includes('E') && !model.includes('SEA');
@@ -121,6 +125,10 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     
     if (config.controlType) {
       variants = variants.filter(m => {
+        // Large motors (150+ HP) are all remote control - no H in model string
+        if ((m.hp || 0) >= 150) {
+          return config.controlType === 'remote';
+        }
         const model = m.model.toUpperCase();
         if (config.controlType === 'tiller') {
           return model.includes('H') || model.includes('TILLER');
@@ -192,9 +200,16 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     };
   }, [filteredVariants, group]);
   
-  // Auto-skip start step if only one start type available
+  // Auto-skip start step if only one start type available OR large motor
   useEffect(() => {
     if (!open || !group || step !== 'start') return;
+    
+    // Large motors (150+ HP) are all electric start - auto-skip
+    if (group.hp >= 150) {
+      setConfig(prev => ({ ...prev, startType: 'electric' }));
+      setStep('shaft');
+      return;
+    }
     
     const variants = group.variants;
     const hasElectric = variants.some(m => m.model.toUpperCase().includes('E') && !m.model.toUpperCase().includes('SEA'));
@@ -236,6 +251,18 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
   const handleNext = () => {
     const steps: Step[] = ['start', 'shaft', 'control', 'features', 'result'];
     const currentIndex = steps.indexOf(step);
+    
+    // Auto-skip control step for large motors (150+ HP) - all remote
+    if (step === 'shaft' && group && group.hp >= 150) {
+      setConfig(prev => ({ ...prev, controlType: 'remote' }));
+      // Skip to features or result
+      if (!availableOptions.hasCT && !availableOptions.hasPT) {
+        setStep('result');
+      } else {
+        setStep('features');
+      }
+      return;
+    }
     
     // Auto-skip control step if only one option available
     if (step === 'shaft') {
