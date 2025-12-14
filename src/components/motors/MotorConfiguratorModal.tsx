@@ -325,6 +325,30 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     }
   }, [open, group, step, availableOptions.hasTiller, availableOptions.hasRemote, availableOptions.hasCT, availableOptions.hasPT, dispatch]);
   
+  // Auto-skip features step if only one feature available
+  useEffect(() => {
+    if (!open || !group || step !== 'features') return;
+    
+    // Don't auto-skip when navigating back
+    if (isNavigatingBack.current) {
+      isNavigatingBack.current = false;
+      return;
+    }
+    
+    const onlyPT = availableOptions.hasPT && !availableOptions.hasCT;
+    const onlyCT = availableOptions.hasCT && !availableOptions.hasPT;
+    
+    if (onlyPT) {
+      setConfig(prev => ({ ...prev, features: ['pt'] }));
+      setStep('result');
+      dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: 'result' });
+    } else if (onlyCT) {
+      setConfig(prev => ({ ...prev, features: ['ct'] }));
+      setStep('result');
+      dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: 'result' });
+    }
+  }, [open, group, step, availableOptions.hasPT, availableOptions.hasCT, dispatch]);
+  
   const handleBack = () => {
     const steps: Step[] = ['start', 'shaft', 'control', 'features', 'result'];
     const currentIndex = steps.indexOf(step);
@@ -386,10 +410,26 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
       }
     }
     
-    // Skip features step if no features available
-    if (step === 'control' && !availableOptions.hasCT && !availableOptions.hasPT) {
-      goToStep('result');
-      return;
+    // Skip features step if no features OR only one feature available
+    if (step === 'control') {
+      if (!availableOptions.hasCT && !availableOptions.hasPT) {
+        goToStep('result');
+        return;
+      }
+      
+      const onlyPT = availableOptions.hasPT && !availableOptions.hasCT;
+      const onlyCT = availableOptions.hasCT && !availableOptions.hasPT;
+      
+      if (onlyPT) {
+        setConfig(prev => ({ ...prev, features: ['pt'] }));
+        goToStep('result');
+        return;
+      }
+      if (onlyCT) {
+        setConfig(prev => ({ ...prev, features: ['ct'] }));
+        goToStep('result');
+        return;
+      }
     }
     
     if (currentIndex < steps.length - 1) {
