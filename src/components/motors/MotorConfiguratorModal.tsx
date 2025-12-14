@@ -117,7 +117,33 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     const steps: Step[] = ['start', 'shaft', 'control', 'features', 'result'];
     const currentIndex = steps.indexOf(step);
     
-    // Skip steps that don't apply
+    // Auto-skip control step if only one option available
+    if (step === 'shaft') {
+      const onlyTiller = availableOptions.hasTiller && !availableOptions.hasRemote;
+      const onlyRemote = availableOptions.hasRemote && !availableOptions.hasTiller;
+      
+      if (onlyTiller) {
+        setConfig(prev => ({ ...prev, controlType: 'tiller' }));
+        // Skip to features or result
+        if (!availableOptions.hasCT && !availableOptions.hasPT) {
+          setStep('result');
+        } else {
+          setStep('features');
+        }
+        return;
+      }
+      if (onlyRemote) {
+        setConfig(prev => ({ ...prev, controlType: 'remote' }));
+        if (!availableOptions.hasCT && !availableOptions.hasPT) {
+          setStep('result');
+        } else {
+          setStep('features');
+        }
+        return;
+      }
+    }
+    
+    // Skip features step if no features available
     if (step === 'control' && !availableOptions.hasCT && !availableOptions.hasPT) {
       setStep('result');
       return;
@@ -250,7 +276,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
                 
                 <button
                   onClick={() => setShowTransomCalculator(true)}
-                  className="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-2"
+                  className="w-full text-sm text-gray-600 hover:text-gray-900 flex items-center justify-center gap-2 py-3 border-t border-gray-100 mt-4 transition-colors"
                 >
                   <HelpCircle className="w-4 h-4" />
                   Not sure? Measure your transom
@@ -278,7 +304,11 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
                           : 'border-gray-200 hover:border-gray-400'
                       }`}
                     >
-                      <span className="text-3xl block mb-3">🎛️</span>
+                      <img 
+                        src="https://www.mercurymarine.com/sp/en/gauges-and-controls/controls/tiller-handles/_jcr_content/root/container/pagesection_52925364/columnrow_copy_copy_/item_1695064113060/image_copy.coreimg.100.1280.png/1742304095249/mm-ga-co-controls-tiller-product-3.png"
+                        alt="Tiller Handle"
+                        className="w-12 h-12 object-contain mb-3"
+                      />
                       <span className="font-semibold text-gray-900 block">Tiller Handle</span>
                       <span className="text-sm text-gray-500 mt-1 block">
                         Sit at the back, steer directly
