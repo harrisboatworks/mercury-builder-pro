@@ -30,24 +30,20 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
           </DialogTitle>
         </DialogHeader>
         
-        <div className="space-y-3 py-4">
-          {/* Call Option */}
+        <div className="grid grid-cols-3 gap-3 py-4">
+          {/* Call */}
           <a 
             href={`tel:${COMPANY_INFO.contact.phone}`}
             onClick={() => triggerHaptic('light')}
-            className="flex items-center gap-3 p-4 rounded-lg border border-border hover:border-border/80 hover:bg-muted/50 active:scale-[0.98] active:bg-muted transition-all duration-100"
+            className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all"
           >
-            <Phone className="h-5 w-5 text-muted-foreground" />
-            <div>
-              <p className="text-sm font-medium text-foreground">Call</p>
-              <p className="text-sm text-muted-foreground">{COMPANY_INFO.contact.phone}</p>
-            </div>
+            <Phone className="h-6 w-6 text-muted-foreground" />
+            <span className="text-sm text-muted-foreground">Call</span>
           </a>
 
-          {/* Text Option */}
+          {/* Text */}
           <a 
             href="sms:647-952-2153"
-            className="flex items-center gap-3 p-4 rounded-lg border border-border hover:border-border/80 hover:bg-muted/50 active:scale-[0.98] active:bg-muted transition-all duration-100"
             onClick={(e) => {
               triggerHaptic('light');
               const canSendSMS = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -56,25 +52,20 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 copyToClipboard('647-952-2153', 'Text number');
               }
             }}
+            className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all"
           >
-            <MessageSquare className="h-5 w-5 text-muted-foreground" />
-            <div>
-              <p className="text-sm font-medium text-foreground">Text</p>
-              <p className="text-sm text-muted-foreground">647-952-2153</p>
-            </div>
+            <MessageSquare className="h-6 w-6 text-muted-foreground" />
+            <span className="text-sm text-muted-foreground">Text</span>
           </a>
 
-          {/* Email Option */}
+          {/* Email */}
           <a 
             href={`mailto:${COMPANY_INFO.contact.email}`}
             onClick={() => triggerHaptic('light')}
-            className="flex items-center gap-3 p-4 rounded-lg border border-border hover:border-border/80 hover:bg-muted/50 active:scale-[0.98] active:bg-muted transition-all duration-100"
+            className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all"
           >
-            <Mail className="h-5 w-5 text-muted-foreground" />
-            <div>
-              <p className="text-sm font-medium text-foreground">Email</p>
-              <p className="text-sm text-muted-foreground">{COMPANY_INFO.contact.email}</p>
-            </div>
+            <Mail className="h-6 w-6 text-muted-foreground" />
+            <span className="text-sm text-muted-foreground">Email</span>
           </a>
         </div>
       </DialogContent>
