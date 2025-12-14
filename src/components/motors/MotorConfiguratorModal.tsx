@@ -320,7 +320,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
               exit={{ opacity: 0, y: 50 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
               className={cn(
-                "fixed z-50 bg-background rounded-t-2xl shadow-2xl overflow-hidden",
+                "fixed z-50 bg-background rounded-t-2xl shadow-2xl",
                 "inset-x-0 bottom-[72px] top-16", // Sits flush above the unified mobile bar
                 "md:inset-x-4 md:bottom-20 md:top-20 md:rounded-2xl", // More padding on tablet
                 "lg:inset-x-auto lg:left-1/2 lg:-translate-x-1/2 lg:w-full lg:max-w-2xl lg:top-24 lg:bottom-24" // Centered on desktop
@@ -346,7 +346,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
               </div>
               
               {/* Scrollable Content */}
-              <div className="overflow-y-auto h-[calc(100%-60px)] p-4 pb-32">
+              <div className="overflow-y-auto overflow-x-hidden h-[calc(100%-60px)] p-4 pb-32">
                 {/* Step 1: Start Type */}
                 {step === 'start' && (
                   <div className="space-y-6">
@@ -662,7 +662,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
               
               {/* Navigation - Fixed at bottom of modal */}
               {step !== 'start' && step !== 'result' && (
-                <div className="absolute bottom-2 left-0 right-0 flex justify-between p-4 pt-3 border-t bg-background shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
+                <div className="absolute bottom-0 left-0 right-0 z-20 flex justify-between p-4 pt-3 border-t bg-background shadow-[0_-4px_12px_rgba(0,0,0,0.08)] rounded-b-2xl">
                   <Button variant="ghost" onClick={handleBack}>
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Back
@@ -675,7 +675,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
               )}
               
               {step === 'result' && filteredVariants.length > 0 && (
-                <div className="absolute bottom-2 left-0 right-0 flex justify-start p-4 pt-3 border-t bg-background shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
+                <div className="absolute bottom-0 left-0 right-0 z-20 flex justify-start p-4 pt-3 border-t bg-background shadow-[0_-4px_12px_rgba(0,0,0,0.08)] rounded-b-2xl">
                   <Button variant="ghost" onClick={handleBack}>
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Back to Options
