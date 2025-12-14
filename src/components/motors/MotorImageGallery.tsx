@@ -20,9 +20,9 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   
   // Smart image scaling for gallery - aggressive scaling for small motor images
   const { scale: mainImageScale, handleImageLoad: handleMainImageLoad } = useSmartImageScale({
-    minExpectedDimension: 380,
+    minExpectedDimension: 600,
     maxScale: 2.0,
-    defaultScale: 1.3
+    defaultScale: 1.5
   });
 
   // Reset image loaded state when switching images
