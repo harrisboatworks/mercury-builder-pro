@@ -126,6 +126,20 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     chatRef.current.sendTextMessage(text);
   }, []);
 
+  const updateContext = useCallback((
+    newMotorContext?: { model: string; hp: number; price?: number } | null,
+    newCurrentPage?: string
+  ) => {
+    chatRef.current?.updateContext(newMotorContext, newCurrentPage);
+  }, []);
+
+  // Auto-update context when motor or page changes during active session
+  useEffect(() => {
+    if (state.isConnected && (motorContext || currentPage)) {
+      chatRef.current?.updateContext(motorContext, currentPage);
+    }
+  }, [state.isConnected, motorContext, currentPage]);
+
   // Cleanup on unmount
   useEffect(() => {
     return () => {
@@ -138,5 +152,6 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     startVoiceChat,
     endVoiceChat,
     sendTextMessage,
+    updateContext,
   };
 }

@@ -333,6 +333,38 @@ export class RealtimeVoiceChat {
     this.dc.send(JSON.stringify({ type: 'response.create' }));
   }
 
+  updateContext(motorContext?: { model: string; hp: number; price?: number } | null, currentPage?: string) {
+    if (!this.dc || this.dc.readyState !== 'open') {
+      console.log('Cannot update context: data channel not ready');
+      return;
+    }
+
+    const contextParts: string[] = [];
+    if (motorContext) {
+      contextParts.push(`User is now viewing ${motorContext.model} (${motorContext.hp}HP) priced at $${motorContext.price?.toLocaleString() || 'N/A'}`);
+    }
+    if (currentPage) {
+      contextParts.push(`Current page: ${currentPage}`);
+    }
+
+    if (contextParts.length === 0) return;
+
+    const contextMessage = {
+      type: 'conversation.item.create',
+      item: {
+        type: 'message',
+        role: 'user',
+        content: [{
+          type: 'input_text',
+          text: `[Context Update: ${contextParts.join('. ')}]`
+        }]
+      }
+    };
+
+    console.log('Sending context update:', contextMessage);
+    this.dc.send(JSON.stringify(contextMessage));
+  }
+
   disconnect() {
     this.recorder?.stop();
     this.audioQueue?.clear();
