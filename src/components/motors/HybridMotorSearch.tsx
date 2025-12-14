@@ -61,6 +61,19 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   const { triggerHaptic } = useHapticFeedback();
   const hpSuggestions = useHpSuggestions(query, motors);
 
+  // Keyboard shortcut "/" to focus search
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName || '')) {
+        e.preventDefault();
+        inputRef.current?.focus();
+      }
+    };
+    
+    document.addEventListener('keydown', handleKeyPress);
+    return () => document.removeEventListener('keydown', handleKeyPress);
+  }, []);
+
   // Cycle through placeholder phrases (pause on hover)
   useEffect(() => {
     if (isHovered) return;
@@ -272,6 +285,23 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           `}
         />
         
+        {/* Keyboard Shortcut Hint */}
+        <AnimatePresence>
+          {!isFocused && !query && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-1.5"
+            >
+              <kbd className="px-2 py-1 text-xs font-mono bg-gray-100 border border-gray-200 rounded text-gray-500 shadow-sm">
+                /
+              </kbd>
+              <span className="text-xs text-gray-400 font-light">to search</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {query && (
           <button
             onClick={handleClear}
@@ -314,10 +344,21 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-medium text-amber-600 mb-1">AI Assistant</p>
                     {isLoadingAI ? (
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-amber-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                        <div className="w-2 h-2 bg-amber-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                        <div className="w-2 h-2 bg-amber-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                      <div className="space-y-2">
+                        {[100, 85, 60].map((width, i) => (
+                          <motion.div
+                            key={i}
+                            className="h-3 rounded bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 bg-[length:200%_100%]"
+                            style={{ width: `${width}%` }}
+                            animate={{ backgroundPosition: ['200% 0', '-200% 0'] }}
+                            transition={{
+                              duration: 1.5,
+                              repeat: Infinity,
+                              ease: "linear",
+                              delay: i * 0.1
+                            }}
+                          />
+                        ))}
                       </div>
                     ) : (
                       <p className="text-sm text-gray-700 font-light leading-relaxed">
