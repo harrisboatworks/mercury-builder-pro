@@ -19,22 +19,17 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
     steering: '',
     gauges: '',
     mounting: '',
-    removeOld: false,
-    waterTest: true
+    waterTest: true // Always included - shows on quote for added value
   });
 
   // Refs for scroll targets
-  const servicesRef = useRef<HTMLDivElement>(null);
   const step2Ref = useRef<HTMLDivElement>(null);
   const step3Ref = useRef<HTMLDivElement>(null);
-  const step4Ref = useRef<HTMLDivElement>(null);
-
-  const totalSteps = isTiller ? 1 : 4;
 
   // Scroll to new step when it appears (non-tiller flow)
   useEffect(() => {
     if (!isTiller && step >= 2) {
-      const refs = [null, null, step2Ref, step3Ref, step4Ref];
+      const refs = [null, null, step2Ref, step3Ref];
       const targetRef = refs[step];
       if (targetRef?.current) {
         setTimeout(() => {
@@ -44,27 +39,9 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
     }
   }, [step, isTiller]);
 
-  const handleOptionSelect = (field: string, value: string) => {
-    setConfig(prev => ({ ...prev, [field]: value }));
-    
-    if (isTiller) {
-      // For tiller motors, scroll to additional services section after mounting selection
-      setTimeout(() => {
-        servicesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 300);
-    } else {
-      // Auto-advance to next step for non-tiller motors
-      setTimeout(() => {
-        if (step < totalSteps) {
-          setStep(step + 1);
-        }
-      }, 500);
-    }
-  };
-
-  const handleComplete = () => {
+  const triggerComplete = (updatedConfig: typeof config) => {
     // Get selected mounting option details for tiller motors
-    const selectedMounting = tillerMountingChoices.find(choice => choice.value === config.mounting);
+    const selectedMounting = tillerMountingChoices.find(choice => choice.value === updatedConfig.mounting);
     const installationCost = selectedMounting?.price || 0;
     const recommendedPackage = selectedMounting?.recommendedPackage || 'good';
     
@@ -77,10 +54,32 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
     
     // Pass installation cost and recommended package to parent
     onComplete({
-      ...config,
+      ...updatedConfig,
       installationCost,
       recommendedPackage
     });
+  };
+
+  const handleOptionSelect = (field: string, value: string) => {
+    const updatedConfig = { ...config, [field]: value };
+    setConfig(updatedConfig);
+    
+    if (isTiller) {
+      // For tiller motors, auto-complete after mounting selection
+      setTimeout(() => {
+        triggerComplete(updatedConfig);
+      }, 400);
+    } else {
+      // For non-tiller motors, advance to next step or complete
+      setTimeout(() => {
+        if (field === 'gauges') {
+          // Final step - auto-complete
+          triggerComplete(updatedConfig);
+        } else if (step < 3) {
+          setStep(step + 1);
+        }
+      }, 400);
+    }
   };
 
   return (
@@ -95,7 +94,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
         </h2>
         <p className="text-gray-600 font-light mb-8">
           {isTiller 
-            ? `Select your mounting and service options for the ${selectedMotor?.model}`
+            ? `Select your mounting option for the ${selectedMotor?.model}`
             : `Select your rigging options for the ${selectedMotor?.model}`
           }
         </p>
@@ -160,71 +159,6 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
               value={config.gauges}
               onChange={(val) => handleOptionSelect('gauges', val)}
             />
-          </motion.div>
-        )}
-
-        {/* Additional Services */}
-        {(isTiller || (!isTiller && step >= 4)) && (
-          <motion.div
-            ref={isTiller ? servicesRef : step4Ref}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="bg-card border border-border rounded-xl p-6 mt-6"
-          >
-            <h3 className="text-xl font-light tracking-wide mb-4">{isTiller ? 'Additional Services' : 'Step 4: Additional Services'}</h3>
-            <div className="space-y-3">
-              <motion.label 
-                whileHover={{ x: 4 }}
-                className="flex items-center gap-3 p-3 bg-background border border-border rounded-lg cursor-pointer hover:border-foreground/20 transition-colors"
-              >
-                <input
-                  type="checkbox"
-                  checked={config.removeOld}
-                  onChange={(e) => {
-                    setConfig(prev => ({ ...prev, removeOld: e.target.checked }));
-                  }}
-                  className="w-5 h-5"
-                />
-                <div className="flex-1">
-                  <span className="font-medium text-gray-900">Remove & Dispose Old Motor</span>
-                  <span className="text-sm text-gray-600 ml-2">+2 hours labour</span>
-                </div>
-              </motion.label>
-              
-              <motion.label 
-                whileHover={{ x: 4 }}
-                className="flex items-center gap-3 p-3 bg-background border border-border rounded-lg cursor-pointer hover:border-foreground/20 transition-colors"
-              >
-                <input
-                  type="checkbox"
-                  checked={config.waterTest}
-                  onChange={(e) => {
-                    setConfig(prev => ({ ...prev, waterTest: e.target.checked }));
-                  }}
-                  className="w-5 h-5"
-                />
-                <div className="flex-1">
-                  <span className="font-medium text-gray-900">Water Test & Prop Optimization</span>
-                  <span className="text-sm text-gray-600 ml-2">Recommended</span>
-                </div>
-              </motion.label>
-            </div>
-          </motion.div>
-        )}
-
-        {/* Complete Button */}
-        {(isTiller ? config.mounting : (config.controls && config.steering && config.gauges)) && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mt-8"
-          >
-            <button
-              onClick={handleComplete}
-              className="w-full py-4 bg-foreground text-background rounded-xl font-light tracking-wide text-lg hover:opacity-90 transition-opacity"
-            >
-              Complete Configuration & View Quote
-            </button>
           </motion.div>
         )}
       </motion.div>
