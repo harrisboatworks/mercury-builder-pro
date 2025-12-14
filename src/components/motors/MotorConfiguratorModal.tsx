@@ -5,7 +5,7 @@ import { MotorGroup } from '@/hooks/useGroupedMotors';
 import { Motor } from '@/components/QuoteBuilder';
 import { MOTOR_CODES, SHAFT_LENGTHS } from '@/lib/motor-codes';
 import { hasElectricStart, hasManualStart, hasTillerControl, hasRemoteControl } from '@/lib/motor-config-utils';
-import { ArrowLeft, ArrowRight, Check, HelpCircle, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, ChevronRight, HelpCircle, X } from 'lucide-react';
 import { TransomHeightCalculator } from './TransomHeightCalculator';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -711,20 +711,11 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
                               ${motor.price.toLocaleString()}
                             </p>
                           </div>
-                          <div className="text-right">
+                          <div className="flex flex-col items-end gap-1">
                             {motor.in_stock && (
                               <span className="text-xs text-green-600 font-medium">In Stock</span>
                             )}
-                            <Button 
-                              size="sm" 
-                              className="mt-2"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setMotorForDetails(motor);
-                              }}
-                            >
-                              View Details
-                            </Button>
+                            <ChevronRight className="w-5 h-5 text-muted-foreground" />
                           </div>
                         </div>
                       ))}
