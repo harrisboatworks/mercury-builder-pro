@@ -29,6 +29,15 @@ const SUGGESTED_PROMPTS = [
   "Best motor for a pontoon boat?"
 ];
 
+// Cycling placeholder phrases - short for mobile
+const PLACEHOLDER_PHRASES = [
+  "Search by HP...",
+  "Ask a question...",
+  "Compare motors...",
+  "Find promotions...",
+  "Best for fishing?",
+  "Search models..."
+];
 export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   query,
   onQueryChange,
@@ -41,11 +50,21 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0);
   const [aiResponse, setAiResponse] = useState<string | null>(null);
   const [isLoadingAI, setIsLoadingAI] = useState(false);
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
   
   const { openChat } = useAIChat();
   const hpSuggestions = useHpSuggestions(query, motors);
+
+  // Cycle through placeholder phrases
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPlaceholderIndex((prev) => (prev + 1) % PLACEHOLDER_PHRASES.length);
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   // Detect if query is an AI question
   const isAIQuery = useMemo(() => {
@@ -168,10 +187,28 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           )}
         </div>
         
+        {/* Animated Placeholder Overlay */}
+        {!query && (
+          <div className="absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={placeholderIndex}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="text-gray-400 font-light text-base"
+              >
+                {PLACEHOLDER_PHRASES[placeholderIndex]}
+              </motion.span>
+            </AnimatePresence>
+          </div>
+        )}
+        
         <input
           ref={inputRef}
           type="text"
-          placeholder="Search motors or ask a question..."
+          placeholder=""
           value={query}
           onChange={(e) => {
             onQueryChange(e.target.value);
@@ -185,7 +222,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           onKeyDown={handleKeyDown}
           className={`
             w-full h-16 pl-14 pr-12 text-base font-light tracking-wide rounded-sm
-            bg-white text-gray-900 placeholder:text-gray-400
+            bg-white text-gray-900
             focus:outline-none transition-all duration-300
             ${isAIQuery 
               ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.1)]' 
