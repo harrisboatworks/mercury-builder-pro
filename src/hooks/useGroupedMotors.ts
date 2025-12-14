@@ -85,8 +85,9 @@ export function useGroupedMotors(motors: Motor[]): MotorGroup[] {
       // Count in-stock variants
       const inStockCount = variants.filter(m => m.in_stock).length;
       
-      // Get hero image from first variant with an image
-      const heroImage = variants.find(m => m.image)?.image || '/lovable-uploads/speedboat-transparent.png';
+      // Get hero image from lowest-priced variant with an image (for accurate Simple mode display)
+      const sortedByPrice = [...variants].sort((a, b) => (a.price || 0) - (b.price || 0));
+      const heroImage = sortedByPrice.find(m => m.image)?.image || '/lovable-uploads/speedboat-transparent.png';
       
       result.push({
         hp,
