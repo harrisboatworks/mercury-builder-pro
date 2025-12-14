@@ -14,6 +14,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
 import { getFinancingTerm } from '@/lib/finance';
 import { MotorCodeTooltip } from './MotorCodeTooltip';
+import { preloadConfiguratorImagesHighPriority } from '@/lib/configurator-preload';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 // Lazy load heavy modal component (~120KB)
@@ -299,6 +300,8 @@ export default function MotorCardPreview({
       <div 
         className="group bg-white shadow-sm rounded-lg border border-gray-100 overflow-hidden transition-all duration-200 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-pointer active:scale-[0.98] active:opacity-95 touch-action-manipulation"
         onClick={handleCardClick}
+        onMouseEnter={preloadConfiguratorImagesHighPriority}
+        onTouchStart={preloadConfiguratorImagesHighPriority}
       >
         <div className="relative">
           {/* Image Section */}

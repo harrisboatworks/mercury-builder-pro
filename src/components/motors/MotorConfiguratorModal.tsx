@@ -29,10 +29,13 @@ interface ConfigState {
   features: string[];
 }
 
+// Import preloader URLs for consistency
+import { CONFIGURATOR_IMAGE_URLS } from '@/lib/configurator-preload';
+
 // Self-hosted control images on Supabase Storage for faster loading
-const CONTROL_IMAGES = {
-  tiller: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/controls/tiller-handle.png',
-  remote: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/controls/remote-control.png'
+export const CONTROL_IMAGES = {
+  tiller: CONFIGURATOR_IMAGE_URLS[0],
+  remote: CONFIGURATOR_IMAGE_URLS[1]
 };
 
 export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: MotorConfiguratorModalProps) {
