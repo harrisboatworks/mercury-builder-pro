@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { RealtimeVoiceChat, requestMicrophonePermission } from '@/lib/RealtimeVoice';
+import { RealtimeVoiceChat, requestMicrophonePermission, checkMicrophonePermission } from '@/lib/RealtimeVoice';
 import { useToast } from '@/hooks/use-toast';
 
 interface VoiceState {
@@ -9,6 +9,8 @@ interface VoiceState {
   isListening: boolean; // User mic is active
   transcript: string;
   error: string | null;
+  permissionState: 'granted' | 'denied' | 'prompt' | null;
+  showPermissionDialog: boolean;
 }
 
 interface UseRealtimeVoiceOptions {
@@ -32,6 +34,8 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     isListening: false,
     transcript: '',
     error: null,
+    permissionState: null,
+    showPermissionDialog: false,
   });
   
   const chatRef = useRef<RealtimeVoiceChat | null>(null);
@@ -79,17 +83,17 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     }
   }, [toast]);
 
-  const startVoiceChat = useCallback(async () => {
-    if (chatRef.current) {
-      return; // Already connected
-    }
+  const closePermissionDialog = useCallback(() => {
+    setState(prev => ({ ...prev, showPermissionDialog: false }));
+  }, []);
 
-    setState(prev => ({ ...prev, isConnecting: true, error: null }));
+  const attemptConnection = useCallback(async () => {
+    if (chatRef.current) return;
+
+    setState(prev => ({ ...prev, isConnecting: true, error: null, showPermissionDialog: false }));
     transcriptRef.current = '';
 
     try {
-      // CRITICAL: Request microphone permission FIRST, directly from user tap
-      // This is required for iOS Safari - must happen before any async operations
       console.log('Requesting microphone permission...');
       const stream = await requestMicrophonePermission();
       console.log('Microphone permission granted, creating voice chat...');
@@ -101,28 +105,51 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
         handleConnectionChange
       );
       
-      // Pass the already-acquired stream to connect
       await chatRef.current.connect(motorContext, currentPage, stream);
     } catch (error) {
       console.error('Voice chat start error:', error);
       const errorMessage = error instanceof Error ? error.message : 'Failed to connect';
+      const isDenied = errorMessage.includes('denied') || errorMessage.includes('blocked');
       
       setState(prev => ({ 
         ...prev, 
         isConnecting: false,
-        error: errorMessage
+        error: errorMessage,
+        permissionState: isDenied ? 'denied' : prev.permissionState,
+        showPermissionDialog: isDenied,
       }));
       
-      // Show specific toast for permission errors
-      toast({
-        title: "Voice chat unavailable",
-        description: errorMessage,
-        variant: "destructive",
-      });
+      if (!isDenied) {
+        toast({
+          title: "Voice chat unavailable",
+          description: errorMessage,
+          variant: "destructive",
+        });
+      }
       
       chatRef.current = null;
     }
   }, [motorContext, currentPage, handleTranscript, handleSpeakingChange, handleError, handleConnectionChange, toast]);
+
+  const startVoiceChat = useCallback(async () => {
+    if (chatRef.current) return;
+
+    // Check permission state first
+    const permState = await checkMicrophonePermission();
+    console.log('Microphone permission state:', permState);
+    
+    if (permState === 'denied') {
+      setState(prev => ({ 
+        ...prev, 
+        permissionState: 'denied',
+        showPermissionDialog: true 
+      }));
+      return;
+    }
+    
+    // Permission is 'granted' or 'prompt' - proceed with connection
+    await attemptConnection();
+  }, [attemptConnection]);
 
   const endVoiceChat = useCallback(() => {
     chatRef.current?.disconnect();
@@ -134,6 +161,8 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
       isListening: false,
       transcript: '',
       error: null,
+      permissionState: null,
+      showPermissionDialog: false,
     });
   }, []);
 
@@ -171,5 +200,7 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     endVoiceChat,
     sendTextMessage,
     updateContext,
+    closePermissionDialog,
+    retryPermission: attemptConnection,
   };
 }
