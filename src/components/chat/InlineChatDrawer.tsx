@@ -108,6 +108,13 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     scrollToBottom();
   }, [messages]);
 
+  // Scroll to bottom when chat opens to show latest messages
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => scrollToBottom(), 150);
+    }
+  }, [isOpen]);
+
   // Haptic feedback on open/close transitions
   useEffect(() => {
     if (prevIsOpenRef.current !== isOpen) {
