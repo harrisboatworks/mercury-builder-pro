@@ -117,8 +117,12 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
         const inches = parseInt(config.shaftLength!);
         if (inches === 30) return model.includes('XXL');
         if (inches === 25) return model.includes('XL') && !model.includes('XXL');
-        if (inches === 20) return model.includes('L') && !model.includes('XL');
-        if (inches === 15) return model.includes('MH') || model.includes('S');
+        if (inches === 20) return model.includes('L') && !model.includes('XL') && !model.includes('XXL');
+        // Short shaft (15"): No L, XL, or XXL in model - these are the default short shaft motors
+        if (inches === 15) {
+          const hasLongShaft = model.includes('L');
+          return !hasLongShaft;
+        }
         return true;
       });
     }
@@ -179,9 +183,8 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
       if (model.includes('XXL') || model.includes('30"')) shaftSet.add('30"');
       else if (model.includes('XL') || model.includes('25"')) shaftSet.add('25"');
       else if (model.includes('L') || model.includes('20"')) shaftSet.add('20"');
-      // Check for short shaft - MH or S (but not SEA/SEAPRO)
-      if (model.includes('MH') || model.includes('15"') || 
-          (model.match(/\bS\b/) && !model.includes('SEA'))) shaftSet.add('15"');
+      // Short shaft (15"): No L in model means it's short shaft (default)
+      if (!model.includes('L') || model.includes('15"')) shaftSet.add('15"');
     });
     
     return {
