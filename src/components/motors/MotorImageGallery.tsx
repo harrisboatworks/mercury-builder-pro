@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, X, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { enhanceImageUrl, isThumbnailUrl } from '@/lib/image-utils';
 import { useSmartImageScale } from '@/hooks/useSmartImageScale';
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 
 interface MotorImageGalleryProps {
   images: string[];
@@ -26,7 +27,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   const [initialPinchDistance, setInitialPinchDistance] = useState<number | null>(null);
   const [basePinchScale, setBasePinchScale] = useState(1);
   const [lastTapTime, setLastTapTime] = useState(0);
-  
+  const { triggerHaptic } = useHapticFeedback();
   // Smart image scaling for gallery - aggressive scaling for small motor images
   const { scale: rawMainImageScale, handleImageLoad: handleMainImageLoad } = useSmartImageScale({
     minExpectedDimension: 600,
@@ -58,6 +59,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
         e.preventDefault();
         setPinchScale(1);
         setLastTapTime(0);
+        triggerHaptic('light');
       } else {
         setLastTapTime(now);
       }
