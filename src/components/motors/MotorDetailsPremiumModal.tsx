@@ -393,31 +393,36 @@ export default function MotorDetailsPremiumModal({
 
                     {/* Key Takeaways - Customer Benefits */}
                     {motor?.spec_json?.keyTakeaways && Array.isArray(motor.spec_json.keyTakeaways) && motor.spec_json.keyTakeaways.length > 0 && (
-                      <div className="space-y-3">
+                      <div className="space-y-2">
                         <h3 className="text-lg font-semibold tracking-wide text-gray-900">
                           Why You'll Love It
                         </h3>
-                        <ul className="space-y-2">
+                        <div className="grid gap-1.5">
                           {motor.spec_json.keyTakeaways.map((takeaway: string, idx: number) => (
-                            <li key={idx} className="flex items-start gap-3 text-base text-gray-700">
-                              <span className="text-green-600 text-lg leading-none mt-0.5">✓</span>
-                              <span className="font-normal">{takeaway}</span>
-                            </li>
+                            <div key={idx} className="flex items-start gap-2 text-left">
+                              <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                              <span className="text-sm text-gray-700 font-normal">{takeaway}</span>
+                            </div>
                           ))}
-                        </ul>
+                        </div>
                       </div>
                     )}
                     
-                    {/* What's Included - Simple Checklist */}
+                    {/* What's Included - Compact Inline Checklist */}
                     {includedAccessories.length > 0 && (
-                      <ul className="space-y-2.5">
-                        {includedAccessories.map((item, idx) => (
-                          <li key={idx} className="flex items-center gap-3 text-base text-gray-700">
-                            <span className="text-green-600 text-lg leading-none">✓</span>
-                            <span className="font-normal">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="space-y-2">
+                        <h3 className="text-lg font-semibold tracking-wide text-gray-900">
+                          What's Included
+                        </h3>
+                        <div className="grid gap-1.5">
+                          {includedAccessories.map((item, idx) => (
+                            <div key={idx} className="flex items-start gap-2 text-left">
+                              <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                              <span className="text-sm text-gray-700 font-normal">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     )}
 
                     {/* Key Features - Top 4 only */}
@@ -556,17 +561,17 @@ export default function MotorDetailsPremiumModal({
                   {/* INCLUDED TAB */}
                   <TabsContent value="included" className="space-y-6 mt-0 pt-6">
                     <div>
-                      <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
+                      <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-3">
                         What's Included
                       </h3>
-                      <ul className="space-y-2">
+                      <div className="grid gap-1.5">
                         {includedAccessories.map((item, idx) => (
-                          <li key={idx} className="flex items-center gap-3 text-left">
-                            <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                            <span className="text-sm font-normal text-gray-700 flex-1">{item}</span>
-                          </li>
+                          <div key={idx} className="flex items-start gap-2 text-left">
+                            <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-gray-700 font-normal">{item}</span>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                     
                     {/* Warranty Info */}
