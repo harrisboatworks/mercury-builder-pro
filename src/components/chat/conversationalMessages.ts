@@ -330,6 +330,57 @@ export const getMotorFamilyKey = (model: string | undefined): string | null => {
   return null;
 };
 
+// Motor family-specific configurator tips - highlighting unique features per family
+export const MOTOR_FAMILY_CONFIGURATOR_TIPS: Record<string, Array<{ step: string; message: string; icon: string }>> = {
+  'pro xs': [
+    { step: 'start', message: 'Electric start standard on Pro XS — race-ready', icon: 'sparkles' },
+    { step: 'shaft', message: 'Torque Master II HD gearcase handles the extra power', icon: 'shield' },
+    { step: 'control', message: 'Digital Throttle & Shift for instant response', icon: 'sparkles' },
+    { step: 'features', message: 'Transient Spark tech = fastest hole shot in class', icon: 'check' },
+    { step: 'result', message: 'Tournament-proven — built to win', icon: 'heart' },
+  ],
+  'verado': [
+    { step: 'start', message: 'Verado is pure electric — smoothest start around', icon: 'sparkles' },
+    { step: 'shaft', message: 'Match shaft to your transom for best performance', icon: 'check' },
+    { step: 'control', message: 'Electro-hydraulic steering included — butter smooth', icon: 'sparkles' },
+    { step: 'features', message: 'Advanced Sound Control = quietest in class', icon: 'shield' },
+    { step: 'result', message: 'Premium choice — tap to see the difference', icon: 'heart' },
+  ],
+  'fourstroke': [
+    { step: 'start', message: 'Electric start adds convenience — worth it!', icon: 'check' },
+    { step: 'shaft', message: '20" fits most boats — measure if unsure', icon: 'check' },
+    { step: 'control', message: 'Tiller for simplicity, remote for larger boats', icon: 'check' },
+    { step: 'features', message: "FourStroke's known for reliability and fuel economy", icon: 'dollar' },
+    { step: 'result', message: 'Solid all-rounder — great choice', icon: 'heart' },
+  ],
+  'seapro': [
+    { step: 'start', message: 'Built for commercial duty — electric start standard', icon: 'shield' },
+    { step: 'shaft', message: 'Extra-long shafts available for commercial hulls', icon: 'check' },
+    { step: 'control', message: 'Remote control with heavy-duty throttle', icon: 'check' },
+    { step: 'features', message: 'Commercial-grade durability for daily use', icon: 'shield' },
+    { step: 'result', message: 'Workhorse reliability — tap to review specs', icon: 'heart' },
+  ],
+  'prokicker': [
+    { step: 'start', message: 'Electric start for easy trolling motor operation', icon: 'check' },
+    { step: 'shaft', message: 'Match your main motor shaft length', icon: 'check' },
+    { step: 'control', message: 'Tiller control keeps it simple for trolling', icon: 'check' },
+    { step: 'features', message: 'Perfect kicker motor for fishing boats', icon: 'heart' },
+    { step: 'result', message: 'Tournament anglers love this one', icon: 'heart' },
+  ],
+};
+
+// Get motor family-specific configurator tip for a step
+export const getMotorFamilyConfiguratorTip = (
+  family: string | null,
+  step: string
+): ConversationalNudge | null => {
+  if (!family) return null;
+  const familyTips = MOTOR_FAMILY_CONFIGURATOR_TIPS[family];
+  if (!familyTips) return null;
+  const tip = familyTips.find(t => t.step === step);
+  return tip ? { message: tip.message, icon: tip.icon } : null;
+};
+
 // ========== PROMO MESSAGES ==========
 
 // Warranty promo messages per page

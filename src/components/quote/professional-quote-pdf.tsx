@@ -372,7 +372,7 @@ export const ProfessionalQuotePDF: React.FC<ProfessionalQuotePDFProps> = ({ quot
               <Image src={mercuryLogo} style={styles.mercuryLogo} />
               <View style={styles.companyInfo}>
                 <Text style={styles.companyTitle}>Harris Boat Works</Text>
-                <Text style={styles.tagline}>Your Trusted Mercury Dealer Since 1947</Text>
+                <Text style={styles.tagline}>Your Trusted Mercury Dealer Since 1965</Text>
               </View>
             </View>
             <View style={styles.quoteInfo}>

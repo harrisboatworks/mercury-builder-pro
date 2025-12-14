@@ -30,7 +30,7 @@ const trustModals: Record<string, TrustModal> = {
     title: "Platinum Mercury Dealer",
     description: "Family owned since 1947, serving Rice Lake area",
     details: [
-      "Over 75 years of marine experience",
+      "Over 75 years serving Ontario boaters",
       "Trusted by generations of boaters"
     ]
   }

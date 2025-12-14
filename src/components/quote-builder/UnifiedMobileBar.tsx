@@ -12,7 +12,7 @@ import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { MobileQuoteDrawer } from './MobileQuoteDrawer';
 import { cn } from '@/lib/utils';
-import { getHPRange, HP_SPECIFIC_MESSAGES, MOTOR_FAMILY_TIPS, getMotorFamilyKey } from '@/components/chat/conversationalMessages';
+import { getHPRange, HP_SPECIFIC_MESSAGES, MOTOR_FAMILY_TIPS, getMotorFamilyKey, getMotorFamilyConfiguratorTip } from '@/components/chat/conversationalMessages';
 
 // Nudge types for different visual treatments
 type NudgeType = 'tip' | 'success' | 'celebration' | 'progress' | 'social-proof' | 'info';
@@ -191,7 +191,7 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
 const SOCIAL_PROOF_NUDGES = [
   '127+ quotes generated this month',
   'Trusted by Ontario boaters since 1947',
-  'CSI 5-Star Award winner',
+  'CSI Award Winner',
   'Mercury dealer since 1965',
 ];
 
@@ -462,10 +462,21 @@ export const UnifiedMobileBar: React.FC = () => {
     if (!nudges) return null;
 
     // Priority 0: Configurator-specific tips - instantly react to step changes
-    if (state.configuratorStep && location.pathname === '/quote/motor-selection' && nudges.configuratorTips) {
-      const stepTip = nudges.configuratorTips.find(t => t.step === state.configuratorStep);
-      if (stepTip) {
-        return { message: stepTip.message, type: 'tip', icon: stepTip.icon };
+    // Prioritize motor family-specific tips (Pro XS, Verado, etc.) over generic tips
+    if (state.configuratorStep && location.pathname === '/quote/motor-selection') {
+      const motorFamily = displayMotor?.model ? getMotorFamilyKey(displayMotor.model) : null;
+      const familyTip = getMotorFamilyConfiguratorTip(motorFamily, state.configuratorStep);
+      
+      if (familyTip) {
+        return { message: familyTip.message, type: 'tip', icon: familyTip.icon };
+      }
+      
+      // Fall back to generic configurator tips
+      if (nudges.configuratorTips) {
+        const stepTip = nudges.configuratorTips.find(t => t.step === state.configuratorStep);
+        if (stepTip) {
+          return { message: stepTip.message, type: 'tip', icon: stepTip.icon };
+        }
       }
     }
 
