@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { money } from "@/lib/money";
 import { calculateMonthly, DEALERPLAN_FEE } from "@/lib/finance";
 import { cn } from "@/lib/utils";
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 
 const packageItemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -43,6 +44,8 @@ export function PackageCards({
   rate = 7.99,
   termMonths = 60,
 }: PackageCardsProps) {
+  const { triggerHaptic } = useHapticFeedback();
+  
   return (
     <section aria-label="Packages" className="grid gap-3 sm:grid-cols-3">
       {options.map((p) => {
@@ -53,10 +56,13 @@ export function PackageCards({
           <motion.button
             key={p.id}
             variants={packageItemVariants}
-            onClick={() => onSelect(p.id)}
+            onClick={() => {
+              triggerHaptic('light');
+              onSelect(p.id);
+            }}
             className={cn(
               "group relative flex flex-col rounded-2xl border p-6 text-left transition",
-              "hover:shadow-md hover:scale-[1.02]",
+              "hover:shadow-md hover:scale-[1.02] active:scale-[0.98]",
               isSelected
                 ? "border-blue-600 ring-2 ring-blue-600/20 dark:border-blue-400 dark:ring-blue-400/30"
                 : "border-slate-200 dark:border-slate-700"

@@ -276,7 +276,8 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                   <a
                     href="tel:(905) 342-2153"
                     onClick={() => triggerHaptic('light')}
-                    className="flex flex-col items-center gap-1.5 p-3 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all"
+                    className="flex flex-col items-center gap-1.5 p-3 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all animate-fade-in"
+                    style={{ animationDelay: '0ms' }}
                   >
                     <Phone className="h-5 w-5 text-muted-foreground" />
                     <span className="text-xs text-muted-foreground">Call</span>
@@ -292,7 +293,8 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                         toast.success('Text number copied to clipboard');
                       }
                     }}
-                    className="flex flex-col items-center gap-1.5 p-3 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all"
+                    className="flex flex-col items-center gap-1.5 p-3 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all animate-fade-in"
+                    style={{ animationDelay: '75ms' }}
                   >
                     <MessageSquare className="h-5 w-5 text-muted-foreground" />
                     <span className="text-xs text-muted-foreground">Text</span>
@@ -300,7 +302,8 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                   <a
                     href="mailto:info@harrisboatworks.ca"
                     onClick={() => triggerHaptic('light')}
-                    className="flex flex-col items-center gap-1.5 p-3 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all"
+                    className="flex flex-col items-center gap-1.5 p-3 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all animate-fade-in"
+                    style={{ animationDelay: '150ms' }}
                   >
                     <Mail className="h-5 w-5 text-muted-foreground" />
                     <span className="text-xs text-muted-foreground">Email</span>
