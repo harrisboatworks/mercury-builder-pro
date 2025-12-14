@@ -113,9 +113,11 @@ function MotorSelectionContent() {
   const [promotionRules, setPromotionRules] = useState<PromotionRule[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
-  const [showQuiz, setShowQuiz] = useState(false);
   const [selectedGroup, setSelectedGroup] = useState<MotorGroup | null>(null);
   const [showConfigurator, setShowConfigurator] = useState(false);
+  
+  // Quiz state from context (can be triggered from AI chat)
+  const { showQuiz, setShowQuiz } = useMotorView();
   
   // Exit intent for promo reminder
   const { showExitIntent, dismiss: dismissExitIntent } = useExitIntent({

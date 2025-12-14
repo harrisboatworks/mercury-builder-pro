@@ -19,6 +19,17 @@ export function getContextualPrompts(
   boatInfo: BoatInfo | null,
   currentPage: string
 ): string[] {
+  // Motor selection page - include quiz trigger
+  if (currentPage === '/' || currentPage.includes('/quote/motor')) {
+    if (!motor) {
+      return [
+        "Help me find the right motor 💡",
+        "What motor fits my boat?",
+        "Current promotions & deals"
+      ];
+    }
+  }
+
   // Page-specific prompts
   if (currentPage.includes('/quote/summary')) {
     return [
