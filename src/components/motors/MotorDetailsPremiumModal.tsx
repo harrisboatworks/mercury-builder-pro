@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useNavigate } from "react-router-dom";
 import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft, Bell, Sparkles, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -92,6 +93,7 @@ export default function MotorDetailsPremiumModal({
   const { promotions: activePromotions } = useActivePromotions();
   const { setScrollLock } = useScrollCoordination();
   const { state } = useQuote();
+  const { triggerHaptic } = useHapticFeedback();
   
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollMore, setCanScrollMore] = useState(true);
@@ -731,7 +733,10 @@ export default function MotorDetailsPremiumModal({
               
               {/* ADD TO QUOTE Button */}
               <button
-                onClick={handleSelectMotor}
+                onClick={() => {
+                  triggerHaptic('medium');
+                  handleSelectMotor();
+                }}
                 className="w-full bg-black text-white py-4 text-xs tracking-widest uppercase font-medium rounded-sm hover:bg-gray-900 transition-all duration-500"
               >
                 Configure This Motor

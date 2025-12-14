@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, DollarSign, AlertTriangle, CheckCircle2, Sparkles, CircleCheck, AlertCircle, Wrench } from 'lucide-react';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, type TradeValueEstimate, type TradeInInfo } from '@/lib/trade-valuation';
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 
 interface TradeInValuationProps {
   tradeInInfo: TradeInInfo;
@@ -25,6 +26,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
   const [showValidation, setShowValidation] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
+  const { triggerHaptic } = useHapticFeedback();
 
   // Auto-scroll to form when "Yes, I have a trade-in" is clicked
   useEffect(() => {
@@ -148,6 +150,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => {
+                    triggerHaptic('light');
                     onTradeInChange({
                       hasTradeIn: true,
                       brand: '',
@@ -178,6 +181,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => {
+                    triggerHaptic('light');
                     console.log('❌ No trade-in clicked, clearing all trade-in data');
                     const cleanTradeInInfo: TradeInInfo = { 
                       hasTradeIn: false,

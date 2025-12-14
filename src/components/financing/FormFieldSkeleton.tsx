@@ -10,7 +10,7 @@ export function FormFieldSkeleton({ label, count = 1 }: FormFieldSkeletonProps) 
   return (
     <div className="space-y-2">
       {label && <Label className="text-muted-foreground">{label}</Label>}
-      <Skeleton className="h-10 w-full" />
+      <Skeleton className="h-10 w-full animate-shimmer" />
     </div>
   );
 }
