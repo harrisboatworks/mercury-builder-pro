@@ -45,3 +45,9 @@ export function useMotorView() {
   }
   return context;
 }
+
+// Safe hook that returns null if not within provider (for components outside provider tree)
+export function useMotorViewSafe() {
+  const context = useContext(MotorViewContext);
+  return context;
+}

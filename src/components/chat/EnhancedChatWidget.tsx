@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { X, Send, MessageCircle, RefreshCw } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
-import { useMotorView } from '@/contexts/MotorViewContext';
+import { useMotorViewSafe } from '@/contexts/MotorViewContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
 import { getContextualPrompts } from './getContextualPrompts';
@@ -80,7 +80,8 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
     
     const location = useLocation();
     const { state } = useQuote();
-    const { setShowQuiz } = useMotorView();
+    const motorViewContext = useMotorViewSafe();
+    const setShowQuiz = motorViewContext?.setShowQuiz;
     
     const {
       isLoading: isPersistenceLoading,
@@ -504,7 +505,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: 0.4 + i * 0.1 }}
                           onClick={() => {
-                            if (q.includes('Help me find the right motor')) {
+                            if (q.includes('Help me find the right motor') && setShowQuiz) {
                               setShowQuiz(true);
                               onClose();
                             } else {
