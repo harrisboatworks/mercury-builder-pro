@@ -211,6 +211,7 @@ export const UnifiedMobileBar: React.FC = () => {
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
   const { openChat, closeChat, isOpen, isLoading } = useAIChat();
+  const voice = useVoiceSafe(); // Fix: Move hook to top level (was inside JSX)
   const { triggerHaptic } = useHapticFeedback();
   const { promo } = useActiveFinancingPromo();
   
@@ -421,13 +422,12 @@ export const UnifiedMobileBar: React.FC = () => {
     const nudges = pageConfig.nudges;
     if (!nudges) return null;
 
-    // Priority 0: Configurator-specific tips when previewing a motor
-    if (isPreview && location.pathname === '/quote/motor-selection' && nudges.configuratorTips) {
-      // Cycle through configurator tips based on idle time
-      const tipIndex = Math.floor(idleSeconds / 8) % nudges.configuratorTips.length;
-      const tip = nudges.configuratorTips[tipIndex];
-      if (tip) {
-        return { message: tip.message, type: 'tip', icon: tip.icon };
+    // Priority 0: Configurator-specific tips - instantly react to step changes
+    if (state.configuratorStep && location.pathname === '/quote/motor-selection' && nudges.configuratorTips) {
+      // Find tip for current configurator step (instant, not time-based)
+      const stepTip = nudges.configuratorTips.find(t => t.step === state.configuratorStep);
+      if (stepTip) {
+        return { message: stepTip.message, type: 'tip', icon: stepTip.icon };
       }
     }
 
@@ -704,70 +704,61 @@ export const UnifiedMobileBar: React.FC = () => {
           style={{ paddingLeft: 'max(0.5rem, env(safe-area-inset-left))', paddingRight: 'max(0.5rem, env(safe-area-inset-right))' }}
         >
           {/* AI Button - Shows voice status when active, otherwise breathing animation */}
-          {(() => {
-            const voice = useVoiceSafe();
-            const isVoiceActive = voice?.isConnected;
-            const isVoiceSpeaking = voice?.isSpeaking;
-            const isVoiceListening = voice?.isListening;
-            
-            return (
-              <motion.button
-                whileTap={{ scale: 0.92 }}
-                animate={isVoiceActive ? {
-                  boxShadow: [
-                    '0 0 0 0 rgba(34, 197, 94, 0)',
-                    '0 0 0 8px rgba(34, 197, 94, 0.3)',
-                    '0 0 0 0 rgba(34, 197, 94, 0)'
-                  ]
-                } : (isOpen ? {} : breathingAnimation)}
-                transition={{
-                  ...springConfig,
-                  boxShadow: {
-                    duration: isVoiceActive ? 1.5 : 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }
-                }}
-                onClick={handleOpenAI}
-                className={cn(
-                  "flex flex-col items-center justify-center shrink-0 relative",
-                  "h-10 w-10 min-[375px]:h-11 min-[375px]:w-11 rounded-xl",
-                  isVoiceActive
-                    ? isVoiceSpeaking
-                      ? "bg-gradient-to-br from-primary to-primary/80 text-white border border-primary shadow-lg shadow-primary/40"
-                      : "bg-gradient-to-br from-green-500 to-green-600 text-white border border-green-500 shadow-lg shadow-green-500/40"
-                    : isOpen 
-                      ? "bg-primary text-white border border-primary shadow-lg shadow-primary/30" 
-                      : "bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/20"
-                )}
-                aria-label={isVoiceActive ? "Voice chat active" : "Ask AI assistant"}
-              >
-                {isVoiceActive ? (
-                  <>
-                    {isVoiceSpeaking ? (
-                      <Volume2 className="h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5 text-white animate-pulse" />
-                    ) : (
-                      <Mic className="h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5 text-white" />
-                    )}
-                    <span className="text-[7px] min-[375px]:text-[8px] font-bold mt-0.5 text-white tracking-wide">
-                      LIVE
-                    </span>
-                  </>
+          <motion.button
+            whileTap={{ scale: 0.92 }}
+            animate={voice?.isConnected ? {
+              boxShadow: [
+                '0 0 0 0 rgba(34, 197, 94, 0)',
+                '0 0 0 8px rgba(34, 197, 94, 0.3)',
+                '0 0 0 0 rgba(34, 197, 94, 0)'
+              ]
+            } : (isOpen ? {} : breathingAnimation)}
+            transition={{
+              ...springConfig,
+              boxShadow: {
+                duration: voice?.isConnected ? 1.5 : 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }
+            }}
+            onClick={handleOpenAI}
+            className={cn(
+              "flex flex-col items-center justify-center shrink-0 relative",
+              "h-10 w-10 min-[375px]:h-11 min-[375px]:w-11 rounded-xl",
+              voice?.isConnected
+                ? voice?.isSpeaking
+                  ? "bg-gradient-to-br from-primary to-primary/80 text-white border border-primary shadow-lg shadow-primary/40"
+                  : "bg-gradient-to-br from-green-500 to-green-600 text-white border border-green-500 shadow-lg shadow-green-500/40"
+                : isOpen 
+                  ? "bg-primary text-white border border-primary shadow-lg shadow-primary/30" 
+                  : "bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/20"
+            )}
+            aria-label={voice?.isConnected ? "Voice chat active" : "Ask AI assistant"}
+          >
+            {voice?.isConnected ? (
+              <>
+                {voice?.isSpeaking ? (
+                  <Volume2 className="h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5 text-white animate-pulse" />
                 ) : (
-                  <>
-                    <MessageCircle className={cn(
-                      "h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5",
-                      isOpen ? "text-white" : "text-primary"
-                    )} />
-                    <span className={cn(
-                      "text-[8px] min-[375px]:text-[9px] font-semibold mt-0.5",
-                      isOpen ? "text-white/90" : "text-primary/80"
-                    )}>AI</span>
-                  </>
+                  <Mic className="h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5 text-white" />
                 )}
-              </motion.button>
-            );
-          })()}
+                <span className="text-[7px] min-[375px]:text-[8px] font-bold mt-0.5 text-white tracking-wide">
+                  LIVE
+                </span>
+              </>
+            ) : (
+              <>
+                <MessageCircle className={cn(
+                  "h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5",
+                  isOpen ? "text-white" : "text-primary"
+                )} />
+                <span className={cn(
+                  "text-[8px] min-[375px]:text-[9px] font-semibold mt-0.5",
+                  isOpen ? "text-white/90" : "text-primary/80"
+                )}>AI</span>
+              </>
+            )}
+          </motion.button>
 
           {/* Center: Motor Info Card (tappable) or Prompt */}
           <motion.button

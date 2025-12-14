@@ -21,6 +21,7 @@ interface QuoteState {
   motor: Motor | null;
   previewMotor: Motor | null; // Motor being viewed in modal before selection
   motorSpecs: MercuryMotor | null; // Full specs available for AI assistant
+  configuratorStep: string | null; // Current step in motor configurator for reactive nudges
   purchasePath: 'loose' | 'installed' | null;
   boatInfo: BoatInfo | null;
   tradeInInfo: any | null;
@@ -45,6 +46,7 @@ interface QuoteState {
 type QuoteAction = 
   | { type: 'SET_MOTOR'; payload: Motor }
   | { type: 'SET_PREVIEW_MOTOR'; payload: Motor | null }
+  | { type: 'SET_CONFIGURATOR_STEP'; payload: string | null }
   | { type: 'SET_PURCHASE_PATH'; payload: 'loose' | 'installed' }
   | { type: 'SET_BOAT_INFO'; payload: BoatInfo }
   | { type: 'SET_TRADE_IN_INFO'; payload: any }
@@ -65,6 +67,7 @@ const initialState: QuoteState = {
   motor: null,
   previewMotor: null,
   motorSpecs: null,
+  configuratorStep: null,
   purchasePath: null,
   boatInfo: null,
   tradeInInfo: null,
@@ -106,9 +109,11 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
   switch (action.type) {
     case 'SET_MOTOR':
       const motorSpecs = findMotorSpecs(action.payload.hp, action.payload.model);
-      return { ...state, motor: action.payload, motorSpecs, previewMotor: null };
+      return { ...state, motor: action.payload, motorSpecs, previewMotor: null, configuratorStep: null };
     case 'SET_PREVIEW_MOTOR':
       return { ...state, previewMotor: action.payload };
+    case 'SET_CONFIGURATOR_STEP':
+      return { ...state, configuratorStep: action.payload };
     case 'SET_PURCHASE_PATH':
       return { ...state, purchasePath: action.payload };
     case 'SET_BOAT_INFO':
