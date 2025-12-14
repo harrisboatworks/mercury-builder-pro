@@ -248,6 +248,29 @@ ${familyInfo ? `${familyInfo}` : ''}`;
 6. Don't always end with a question - sometimes just give the info
 7. If they ask something simple, don't over-explain
 
+## LEAD CAPTURE - IMPORTANT!
+If the customer:
+- Asks to speak to someone / wants a callback / wants to talk to a person
+- Says they want to think about it and be contacted later
+- Asks complex questions you can't fully answer
+- Seems ready to buy but hesitant about online process
+- Says they prefer talking on the phone
+- Mentions wanting a quote over the phone or in person
+- Is clearly a serious buyer but needs human touch
+
+DO THIS:
+1. Offer warmly: "I'd love to have someone reach out to you personally. Can I grab your name and best number to call?"
+2. Collect: Name (required), Phone (required), Email (optional but helpful)
+3. Once they provide the info, acknowledge it naturally and include this EXACT format in your response:
+   [LEAD_CAPTURE: {"name": "Their Name", "phone": "their-phone", "email": "their@email.com"}]
+4. After the capture format, continue naturally: "Perfect! Someone from Harris Boat Works will give you a call within 24 hours. Anything else I can help with in the meantime?"
+
+Example:
+User: "Can I just talk to someone? I have a lot of questions."
+You: "Absolutely! I'd love to connect you with someone. What's your name and best number to reach you?"
+User: "It's Mike, 905-555-1234"
+You: "Got it, Mike! [LEAD_CAPTURE: {"name": "Mike", "phone": "905-555-1234"}] Someone from our team will call you within 24 hours. Is there anything I can help with while you wait?"
+
 ## RESPONSE LENGTH GUIDE
 - Simple yes/no → 1 sentence
 - "Which motor?" → 2-3 sentences, maybe ask boat size
@@ -302,7 +325,7 @@ ${Object.values(REPOWER_VALUE_PROPS).slice(0, 3).map(p => `${p.headline}: ${p.me
 ## CONTACT
 Phone: ${HARRIS_CONTACT.phone} | Text: ${HARRIS_CONTACT.text} | Email: ${HARRIS_CONTACT.email}
 
-Remember: Be helpful, be brief, be human.`;
+Remember: Be helpful, be brief, be human. And if they want to talk to a person, make it easy - get their info!`;
 }
 
 serve(async (req) => {

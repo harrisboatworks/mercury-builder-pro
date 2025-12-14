@@ -12,6 +12,8 @@ import { MessageReactions } from './MessageReactions';
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
 import { VoiceButton } from './VoiceButton';
 import { useVoice } from '@/contexts/VoiceContext';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 
 interface Message {
   id: string;
@@ -311,20 +313,67 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
             scrollToBottom();
           },
           onDone: async (finalResponse) => {
+            // Check for lead capture pattern and process it
+            let displayResponse = finalResponse;
+            const leadMatch = finalResponse.match(/\[LEAD_CAPTURE:\s*(\{[^}]+\})\]/);
+            
+            if (leadMatch) {
+              try {
+                const leadData = JSON.parse(leadMatch[1]);
+                console.log('[Chat] Lead capture detected:', leadData);
+                
+                // Remove the marker from the displayed message
+                displayResponse = finalResponse.replace(/\[LEAD_CAPTURE:\s*\{[^}]+\}\]/, '').trim();
+                
+                // Get conversation context (last few exchanges)
+                const recentContext = conversationHistory.slice(-4).map(h => 
+                  `${h.role}: ${h.content.substring(0, 100)}`
+                ).join(' | ');
+                
+                // Get motor context
+                const activeMotor = state.previewMotor || state.motor;
+                
+                // Submit lead to edge function
+                const { error: leadError } = await supabase.functions.invoke('capture-chat-lead', {
+                  body: {
+                    name: leadData.name,
+                    phone: leadData.phone,
+                    email: leadData.email,
+                    conversationContext: recentContext || 'Customer requested callback',
+                    currentPage: location.pathname,
+                    motorContext: activeMotor ? {
+                      model: activeMotor.model || (activeMotor as any).model_display,
+                      hp: activeMotor.hp || (activeMotor as any).horsepower,
+                      price: activeMotor.msrp || activeMotor.price || (activeMotor as any).sale_price
+                    } : undefined
+                  }
+                });
+                
+                if (leadError) {
+                  console.error('[Chat] Failed to capture lead:', leadError);
+                } else {
+                  console.log('[Chat] Lead captured successfully');
+                  toast.success("We've got your info! Someone will call you soon.");
+                }
+              } catch (parseError) {
+                console.error('[Chat] Failed to parse lead capture:', parseError);
+              }
+            }
+            
             setMessages(prev => prev.map(msg => 
               msg.id === streamingId 
-                ? { ...msg, isStreaming: false }
+                ? { ...msg, text: displayResponse, isStreaming: false }
                 : msg
             ));
             
-            // Save assistant message to DB
-            const assistantDbId = await saveMessage(finalResponse, 'assistant');
+            // Save assistant message to DB (without the lead capture marker)
+            const assistantDbId = await saveMessage(displayResponse, 'assistant');
             if (assistantDbId) messageIdMap.current.set(streamingId, assistantDbId);
             
             setConversationHistory(prev => [
               ...prev,
               { role: 'user', content: text.trim() },
-              { role: 'assistant', content: finalResponse }
+              { role: 'assistant', content: displayResponse }
             ]);
             
             setIsLoading(false);
