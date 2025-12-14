@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft, Bell, Sparkles, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -51,6 +51,7 @@ import { ScrollArea } from "../ui/scroll-area";
 import { FinanceCalculatorDrawer } from './FinanceCalculatorDrawer';
 import { StockStatusIndicator } from './StockStatusIndicator';
 import { TrustSignals } from './TrustSignals';
+import { generateMotorDescription, isDescriptionSuspicious } from "../../lib/motor-description-generator";
 
 interface MotorDetailsPremiumModalProps {
   open: boolean;
@@ -99,6 +100,23 @@ export default function MotorDetailsPremiumModal({
   const smartReview = useSmartReviewRotation(hpValue, title);
   const motorSpecs = motor ? findMotorSpecs(hpValue, title) : undefined;
   const decoded = decodeModelName(motor?.model || title, hpValue);
+
+  // Generate fallback description if missing or suspicious
+  const displayDescription = useMemo(() => {
+    if (!motor?.description || isDescriptionSuspicious(motor.description, { 
+      hp: hpValue, 
+      family: motor.family || '', 
+      modelDisplay: motor.model_display || motor.model || title 
+    })) {
+      return generateMotorDescription({
+        hp: hpValue,
+        family: motor?.family || 'FourStroke',
+        model: motor?.model,
+        modelDisplay: motor?.model_display || title
+      });
+    }
+    return motor.description;
+  }, [motor, hpValue, title]);
 
   // Component for consistent spec row formatting
   const SpecRow = ({ label, value }: { label: string; value: string }) => (
@@ -361,14 +379,14 @@ export default function MotorDetailsPremiumModal({
                       />
                     </div>
                     
-                    {/* About This Motor - Description */}
-                    {motor?.description && (
+                    {/* About This Motor - Description with fallback */}
+                    {displayDescription && (
                       <div className="space-y-3">
                         <h3 className="text-lg font-semibold tracking-wide text-gray-900">
                           About This Motor
                         </h3>
                         <p className="text-base text-gray-700 font-normal leading-relaxed">
-                          {motor.description}
+                          {displayDescription}
                         </p>
                       </div>
                     )}
