@@ -13,6 +13,7 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
 import { getFinancingTerm } from '@/lib/finance';
+import { MotorCodeTooltip } from './MotorCodeTooltip';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 // Lazy load heavy modal component (~120KB)
@@ -347,10 +348,13 @@ export default function MotorCardPreview({
           
           {/* Content Section - Premium Mobile Layout */}
           <div className="p-8 space-y-6">
-            {/* Model Name - Prominent */}
-            <h3 className="text-xl font-semibold tracking-wide text-gray-900">
-              {formatTitle(title)}
-            </h3>
+            {/* Model Name - Prominent with Code Decoder */}
+            <div className="flex items-start gap-2">
+              <h3 className="text-xl font-semibold tracking-wide text-gray-900">
+                {formatTitle(title)}
+              </h3>
+              <MotorCodeTooltip modelName={title} className="mt-1.5" />
+            </div>
             
             {/* Model Number - Subtle */}
             {motor?.model_number && (
