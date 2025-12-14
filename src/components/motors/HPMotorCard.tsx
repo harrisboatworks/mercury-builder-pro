@@ -11,6 +11,9 @@ interface HPMotorCardProps {
 export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
   const { hp, variants, priceRange, features, families, inStockCount, heroImage } = group;
   
+  // Check if Pro XS variants are available
+  const hasProXS = families.includes('Pro XS');
+  
   // Get description based on HP
   const getHPDescription = (hp: number): string => {
     if (hp <= 6) return "Perfect for tenders & small inflatables";
@@ -48,6 +51,11 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
     featurePills.push('Command Thrust Available');
   }
   
+  // Add Pro XS as first feature pill when available
+  if (hasProXS) {
+    featurePills.unshift('Pro XS Available');
+  }
+  
   return (
     <div 
       className="group bg-white shadow-sm rounded-lg border border-gray-100 overflow-hidden transition-all duration-200 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-pointer active:scale-[0.98] active:opacity-95"
@@ -69,6 +77,13 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
               motor={{ in_stock: true, stock_quantity: inStockCount }}
               variant="default"
             />
+          </div>
+        )}
+        
+        {/* Pro XS Badge */}
+        {hasProXS && (
+          <div className="absolute top-4 right-20 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-3 py-1 text-xs tracking-widest font-bold uppercase shadow-md">
+            Pro XS
           </div>
         )}
         
