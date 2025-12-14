@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { ImageIcon } from 'lucide-react';
 import { MotorImageGallery } from './MotorImageGallery';
 import { getMotorImageGallery } from '../../lib/motor-helpers';
 import { enhanceImageUrls } from '@/lib/image-utils';
@@ -96,8 +97,14 @@ export function MotorDetailsImageSection({ motor, gallery, img, title }: MotorDe
 
   if (loading) {
     return (
-      <div className="text-center text-slate-500 py-12">
-        Loading images...
+      <div className="space-y-3">
+        {/* Main image skeleton with shimmer */}
+        <div className="relative h-96 w-full rounded-xl bg-gradient-to-b from-stone-50 to-stone-100 overflow-hidden">
+          <div className="absolute inset-0 animate-shimmer" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <ImageIcon className="h-12 w-12 text-stone-300" />
+          </div>
+        </div>
       </div>
     );
   }

@@ -16,6 +16,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   const [imageLoadErrors, setImageLoadErrors] = useState<Set<number>>(new Set());
   const [lightboxImageLoading, setLightboxImageLoading] = useState(false);
   const [lightboxEnhancedUrls, setLightboxEnhancedUrls] = useState<string[]>([]);
+  const [imageLoaded, setImageLoaded] = useState(false);
   
   // Smart image scaling for gallery - slightly larger threshold
   const { scale: mainImageScale, handleImageLoad: handleMainImageLoad } = useSmartImageScale({
@@ -23,6 +24,17 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
     maxScale: 1.35,
     defaultScale: 1.1
   });
+
+  // Reset image loaded state when switching images
+  useEffect(() => {
+    setImageLoaded(false);
+  }, [selectedIndex]);
+
+  // Combined image load handler
+  const onMainImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    handleMainImageLoad(e);
+    setImageLoaded(true);
+  };
 
   // Fallback to main image if no gallery images
   if (!images || images.length === 0) {
@@ -96,11 +108,17 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
     <div className="space-y-3">
       {/* Main Image */}
       <div className="relative group cursor-pointer" onClick={handleMainImageClick}>
+        {/* Shimmer overlay while loading */}
+        {!imageLoaded && (
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-stone-50 to-stone-100 overflow-hidden z-10">
+            <div className="absolute inset-0 animate-shimmer" />
+          </div>
+        )}
         <img
           src={validImages[selectedIndex]}
           alt={`${motorTitle} - Image ${selectedIndex + 1}`}
-          className={`${enhanced ? 'h-96' : 'h-48'} w-full rounded-xl object-contain bg-gradient-to-b from-stone-50 to-white mix-blend-multiply transition-all duration-200`}
-          onLoad={handleMainImageLoad}
+          className={`${enhanced ? 'h-96' : 'h-48'} w-full rounded-xl object-contain bg-gradient-to-b from-stone-50 to-white mix-blend-multiply transition-all duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          onLoad={onMainImageLoad}
           onError={() => handleImageError(selectedIndex)}
           style={{ transform: `scale(${mainImageScale})` }}
         />
