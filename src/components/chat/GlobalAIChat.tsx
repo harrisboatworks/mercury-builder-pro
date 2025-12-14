@@ -12,6 +12,9 @@ interface AIChatContextType {
   isOpen: boolean;
   isLoading: boolean;
   setIsLoading: (loading: boolean) => void;
+  unreadCount: number;
+  incrementUnread: () => void;
+  clearUnread: () => void;
 }
 
 const AIChatContext = createContext<AIChatContextType | null>(null);
@@ -28,12 +31,14 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [initialMessage, setInitialMessage] = useState<string | undefined>();
+  const [unreadCount, setUnreadCount] = useState(0);
   const chatRef = useRef<EnhancedChatWidgetHandle>(null);
   const isMobileOrTablet = useIsMobileOrTablet();
 
   const openChat = useCallback((message?: string) => {
     setInitialMessage(message);
     setIsOpen(true);
+    setUnreadCount(0); // Clear unread when opening
   }, []);
 
   const closeChat = useCallback(() => {
@@ -41,9 +46,19 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
     setInitialMessage(undefined);
   }, []);
 
+  const incrementUnread = useCallback(() => {
+    if (!isOpen) {
+      setUnreadCount(prev => prev + 1);
+    }
+  }, [isOpen]);
+
+  const clearUnread = useCallback(() => {
+    setUnreadCount(0);
+  }, []);
+
   return (
     <VoiceProvider>
-      <AIChatContext.Provider value={{ openChat, closeChat, isOpen, isLoading, setIsLoading }}>
+      <AIChatContext.Provider value={{ openChat, closeChat, isOpen, isLoading, setIsLoading, unreadCount, incrementUnread, clearUnread }}>
         {children}
         
         {/* Floating AI Button - Only show on desktop (mobile uses unified bar) */}
@@ -64,6 +79,7 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
             onClose={closeChat}
             initialMessage={initialMessage}
             onLoadingChange={setIsLoading}
+            onAIResponse={incrementUnread}
           />
         ) : (
           <EnhancedChatWidget
@@ -72,6 +88,7 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
             onClose={closeChat}
             initialMessage={initialMessage}
             onLoadingChange={setIsLoading}
+            onAIResponse={incrementUnread}
           />
         )}
       </AIChatContext.Provider>

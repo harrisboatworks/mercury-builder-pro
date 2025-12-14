@@ -36,6 +36,7 @@ interface InlineChatDrawerProps {
   onClose: () => void;
   initialMessage?: string;
   onLoadingChange?: (loading: boolean) => void;
+  onAIResponse?: () => void;
 }
 
 // Typing indicator with bouncing dots
@@ -61,7 +62,8 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   isOpen,
   onClose,
   initialMessage,
-  onLoadingChange
+  onLoadingChange,
+  onAIResponse
 }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState('');
@@ -358,6 +360,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
           ]);
           
           setIsLoading(false);
+          onAIResponse?.(); // Notify parent that AI responded
         },
         onError: (error) => {
           console.error('Stream error:', error);
