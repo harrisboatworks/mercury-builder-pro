@@ -166,6 +166,21 @@ class AudioQueue {
   }
 }
 
+// Check microphone permission state (not all browsers support this)
+export async function checkMicrophonePermission(): Promise<'granted' | 'denied' | 'prompt'> {
+  try {
+    if (navigator.permissions?.query) {
+      const result = await navigator.permissions.query({ name: 'microphone' as PermissionName });
+      return result.state as 'granted' | 'denied' | 'prompt';
+    }
+    // Fallback: assume we need to prompt
+    return 'prompt';
+  } catch {
+    // Some browsers don't support querying microphone permission
+    return 'prompt';
+  }
+}
+
 // Request microphone permission immediately (iOS Safari requirement)
 // Must be called directly from user gesture before any async operations
 export async function requestMicrophonePermission(): Promise<MediaStream> {

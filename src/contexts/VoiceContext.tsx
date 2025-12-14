@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useRealtimeVoice } from '@/hooks/useRealtimeVoice';
 import { useQuote } from '@/contexts/QuoteContext';
+import { MicrophonePermissionDialog } from '@/components/chat/MicrophonePermissionDialog';
 
 interface VoiceContextType {
   isConnected: boolean;
@@ -10,6 +11,7 @@ interface VoiceContextType {
   isListening: boolean;
   transcript: string;
   error: string | null;
+  permissionState: 'granted' | 'denied' | 'prompt' | null;
   startVoiceChat: () => Promise<void>;
   endVoiceChat: () => void;
   sendTextMessage: (text: string) => void;
@@ -66,9 +68,32 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   }, [voice.isConnected, activeMotor?.id, location.pathname, motorContext, voice]);
 
+  // Create the context value without dialog-specific fields
+  const contextValue: VoiceContextType = {
+    isConnected: voice.isConnected,
+    isConnecting: voice.isConnecting,
+    isSpeaking: voice.isSpeaking,
+    isListening: voice.isListening,
+    transcript: voice.transcript,
+    error: voice.error,
+    permissionState: voice.permissionState,
+    startVoiceChat: voice.startVoiceChat,
+    endVoiceChat: voice.endVoiceChat,
+    sendTextMessage: voice.sendTextMessage,
+    updateContext: voice.updateContext,
+  };
+
   return (
-    <VoiceContext.Provider value={voice}>
+    <VoiceContext.Provider value={contextValue}>
       {children}
+      
+      {/* Microphone Permission Dialog */}
+      <MicrophonePermissionDialog
+        open={voice.showPermissionDialog}
+        onClose={voice.closePermissionDialog}
+        permissionState={voice.permissionState === 'denied' ? 'denied' : 'prompt'}
+        onRetry={voice.retryPermission}
+      />
     </VoiceContext.Provider>
   );
 };
