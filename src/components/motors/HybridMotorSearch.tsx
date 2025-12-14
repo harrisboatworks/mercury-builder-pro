@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useHpSuggestions, HpSuggestion } from '@/hooks/useHpSuggestions';
 import { HpSuggestionsDropdown } from '@/components/motors/HpSuggestionsDropdown';
 import { useAIChat } from '@/components/chat/GlobalAIChat';
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { supabase } from '@/integrations/supabase/client';
 import type { Motor } from '@/components/QuoteBuilder';
 
@@ -51,20 +52,32 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   const [aiResponse, setAiResponse] = useState<string | null>(null);
   const [isLoadingAI, setIsLoadingAI] = useState(false);
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [iconPulse, setIconPulse] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
   
   const { openChat } = useAIChat();
+  const { triggerHaptic } = useHapticFeedback();
   const hpSuggestions = useHpSuggestions(query, motors);
 
-  // Cycle through placeholder phrases
+  // Cycle through placeholder phrases (pause on hover)
   useEffect(() => {
+    if (isHovered) return;
+    
     const interval = setInterval(() => {
       setPlaceholderIndex((prev) => (prev + 1) % PLACEHOLDER_PHRASES.length);
     }, 3000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [isHovered]);
+
+  // Trigger icon pulse when placeholder changes
+  useEffect(() => {
+    setIconPulse(true);
+    const timeout = setTimeout(() => setIconPulse(false), 500);
+    return () => clearTimeout(timeout);
+  }, [placeholderIndex]);
 
   // Detect if query is an AI question
   const isAIQuery = useMemo(() => {
@@ -175,21 +188,33 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   return (
     <div className={`relative ${className}`}>
       {/* Search Input */}
-      <div className="relative">
-        <div className={`
-          absolute left-5 top-1/2 -translate-y-1/2 transition-colors duration-300
-          ${isAIQuery ? 'text-amber-500' : 'text-gray-400'}
-        `}>
+      <div 
+        className="relative"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {/* Animated Search Icon with Pulse */}
+        <motion.div
+          animate={iconPulse ? { 
+            scale: [1, 1.15, 1],
+            opacity: [1, 0.8, 1]
+          } : {}}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className={`
+            absolute left-5 top-1/2 -translate-y-1/2 transition-colors duration-300
+            ${isAIQuery ? 'text-amber-500' : 'text-gray-400'}
+          `}
+        >
           {isAIQuery ? (
             <Sparkles className="w-5 h-5" />
           ) : (
             <Search className="w-5 h-5" />
           )}
-        </div>
+        </motion.div>
         
-        {/* Animated Placeholder Overlay */}
+        {/* Animated Placeholder Overlay with Typing Cursor */}
         {!query && (
-          <div className="absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none overflow-hidden">
+          <div className="absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none overflow-hidden flex items-center">
             <AnimatePresence mode="wait">
               <motion.span
                 key={placeholderIndex}
@@ -202,6 +227,17 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
                 {PLACEHOLDER_PHRASES[placeholderIndex]}
               </motion.span>
             </AnimatePresence>
+            {/* Blinking Typing Cursor */}
+            <motion.span
+              animate={{ opacity: [1, 0] }}
+              transition={{ 
+                duration: 0.7, 
+                repeat: Infinity, 
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }}
+              className="inline-block w-0.5 h-5 bg-gray-400 ml-0.5"
+            />
           </div>
         )}
         
@@ -217,7 +253,10 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
               setSelectedSuggestionIndex(0);
             }
           }}
-          onFocus={() => setIsFocused(true)}
+          onFocus={() => {
+            setIsFocused(true);
+            triggerHaptic('light');
+          }}
           onBlur={() => setTimeout(() => setIsFocused(false), 200)}
           onKeyDown={handleKeyDown}
           className={`
