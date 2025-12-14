@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MotorGroup } from '@/hooks/useGroupedMotors';
 import { StockBadge } from '@/components/inventory/StockBadge';
 import mercuryLogo from '@/assets/mercury-logo.png';
@@ -12,6 +12,7 @@ interface HPMotorCardProps {
 
 export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
   const { hp, variants, priceRange, features, families, inStockCount, heroImage } = group;
+  const [imageLoaded, setImageLoaded] = useState(false);
   
   // Smart image scaling - scales up small images, keeps large ones at 1x
   const { scale: imageScale, handleImageLoad } = useSmartImageScale({
@@ -19,6 +20,12 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
     maxScale: 1.4,
     defaultScale: 1.15
   });
+
+  // Combined image load handler
+  const onImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    handleImageLoad(e);
+    setImageLoaded(true);
+  };
   
   // Check if Pro XS variants are available
   const hasProXS = families.includes('Pro XS');
@@ -75,12 +82,16 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
     >
       {/* Image Section */}
       <div className="relative bg-gradient-to-b from-stone-50 to-white p-6">
+        {/* Shimmer loading overlay */}
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-gradient-to-b from-stone-100 to-stone-50 animate-shimmer z-10" />
+        )}
         <img 
           src={heroImage} 
           alt={`${hp} HP Mercury Outboard`}
-          className="h-48 md:h-72 w-full object-contain mix-blend-multiply transition-transform duration-300"
+          className={`h-48 md:h-72 w-full object-contain mix-blend-multiply transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           loading="lazy"
-          onLoad={handleImageLoad}
+          onLoad={onImageLoad}
           style={{ transform: `scale(${imageScale})` }}
         />
         
