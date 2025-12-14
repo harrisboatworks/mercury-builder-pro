@@ -212,8 +212,82 @@ export const MOTOR_FAMILY_TIPS: Record<string, ConversationalNudge[]> = {
   ],
 };
 
+// HP range categories
+export type HPRange = 'portable' | 'mid-range' | 'high-power' | 'none';
+
+export const getHPRange = (hp: number | undefined): HPRange => {
+  if (!hp) return 'none';
+  if (hp <= 15) return 'portable';
+  if (hp <= 60) return 'mid-range';
+  return 'high-power';
+};
+
+// HP-specific messages for each range
+export const HP_SPECIFIC_MESSAGES: Record<HPRange, ConversationalNudge[]> = {
+  'portable': [
+    { message: "Light and easy to carry — perfect for small boats", icon: 'check' },
+    { message: "Great for dinghies, inflatables, and jon boats", icon: 'heart' },
+    { message: "This size is super fuel-efficient", icon: 'dollar' },
+    { message: "Simple and reliable — that's what portables are all about", icon: 'shield' },
+  ],
+  'mid-range': [
+    { message: "Solid mid-range choice — handles most boats well", icon: 'check' },
+    { message: "Think about tiller vs remote for your setup", icon: 'sparkles' },
+    { message: "Good balance of power and fuel economy", icon: 'dollar' },
+  ],
+  'high-power': [
+    { message: "Serious power for serious boats 💪", icon: 'sparkles' },
+    { message: "Command Thrust available for heavy loads", icon: 'shield' },
+    { message: "These motors really move some water", icon: 'check' },
+    { message: "Pro install recommended for this size", icon: 'award' },
+  ],
+  'none': [],
+};
+
+// Keywords that indicate big-motor-only topics
+const BIG_MOTOR_KEYWORDS = ['command thrust', 'tournament', 'power trim', 'racing', 'top speed'];
+
+// Keywords that indicate small-motor-only topics
+const SMALL_MOTOR_KEYWORDS = ['portable', 'carry', 'lightweight', 'dinghy', 'inflatable'];
+
+// Filter message based on HP relevance
+export const isMessageRelevant = (message: string, hp: number | undefined): boolean => {
+  if (!hp) return true; // No motor = show generic messages
+  
+  const lower = message.toLowerCase();
+  
+  // Filter out big-motor topics for small motors
+  if (hp < 40) {
+    for (const keyword of BIG_MOTOR_KEYWORDS) {
+      if (lower.includes(keyword)) return false;
+    }
+  }
+  
+  // Filter out small-motor topics for big motors
+  if (hp >= 75) {
+    for (const keyword of SMALL_MOTOR_KEYWORDS) {
+      if (lower.includes(keyword)) return false;
+    }
+  }
+  
+  return true;
+};
+
+// Filter an array of nudges by HP relevance
+export const filterByHP = <T extends ConversationalNudge>(nudges: T[], hp: number | undefined): T[] => {
+  if (!hp) return nudges;
+  return nudges.filter(n => isMessageRelevant(n.message, hp));
+};
+
 // Get a random item from an array
 export const pickRandom = <T>(arr: T[]): T => arr[Math.floor(Math.random() * arr.length)];
+
+// Pick random from HP-filtered array
+export const pickRandomFiltered = <T extends ConversationalNudge>(arr: T[], hp: number | undefined): T | null => {
+  const filtered = filterByHP(arr, hp);
+  if (filtered.length === 0) return null;
+  return pickRandom(filtered);
+};
 
 // Get motor family from model string
 export const getMotorFamilyKey = (model: string | undefined): string | null => {
