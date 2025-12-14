@@ -114,14 +114,20 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
             <div className="absolute inset-0 animate-shimmer" />
           </div>
         )}
-        <img
-          src={validImages[selectedIndex]}
-          alt={`${motorTitle} - Image ${selectedIndex + 1}`}
-          className={`${enhanced ? 'h-96' : 'h-48'} w-full rounded-xl object-contain bg-white transition-all duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-          onLoad={onMainImageLoad}
-          onError={() => handleImageError(selectedIndex)}
-          style={{ transform: `scale(${mainImageScale})` }}
-        />
+        {/* Fixed-height container that centers the scaled image */}
+        <div className={`${enhanced ? 'h-96' : 'h-48'} w-full bg-white rounded-xl flex items-center justify-center overflow-hidden`}>
+          <img
+            src={validImages[selectedIndex]}
+            alt={`${motorTitle} - Image ${selectedIndex + 1}`}
+            className={`max-h-full max-w-full object-contain transition-all duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={onMainImageLoad}
+            onError={() => handleImageError(selectedIndex)}
+            style={{ 
+              transform: `scale(${mainImageScale})`,
+              transformOrigin: 'center center'
+            }}
+          />
+        </div>
         
         {/* Click to expand hint */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200">
