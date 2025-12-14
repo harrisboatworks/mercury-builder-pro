@@ -16,6 +16,7 @@ import { getFinancingTerm } from '@/lib/finance';
 import { MotorCodeTooltip } from './MotorCodeTooltip';
 import { preloadConfiguratorImagesHighPriority } from '@/lib/configurator-preload';
 import mercuryLogo from '@/assets/mercury-logo.png';
+import { useSmartImageScale } from '@/hooks/useSmartImageScale';
 
 // Lazy load heavy modal component (~120KB)
 const MotorDetailsPremiumModal = lazy(() => import('./MotorDetailsPremiumModal'));
@@ -69,6 +70,13 @@ export default function MotorCardPreview({
   const [galleryImages, setGalleryImages] = useState<string[]>([]);
   const isMobile = useIsMobile();
   const navigate = useNavigate();
+  
+  // Smart image scaling - scales up small images, keeps large ones at 1x
+  const { scale: imageScale, handleImageLoad } = useSmartImageScale({
+    minExpectedDimension: 400,
+    maxScale: 1.4,
+    defaultScale: 1.15
+  });
 
   // Dispatch preview motor when modal opens/closes
   useEffect(() => {
@@ -313,7 +321,8 @@ export default function MotorCardPreview({
                 className="h-48 md:h-72 w-full object-contain mix-blend-multiply transition-transform duration-300"
                 loading="lazy"
                 decoding="async"
-                style={{ transform: 'scale(1.15)' }}
+                onLoad={handleImageLoad}
+                style={{ transform: `scale(${imageScale})` }}
               />
               
               {/* Stock Badge - Top Left */}

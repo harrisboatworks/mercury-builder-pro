@@ -3,6 +3,7 @@ import { MotorGroup } from '@/hooks/useGroupedMotors';
 import { StockBadge } from '@/components/inventory/StockBadge';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import proXSLogo from '@/assets/pro-xs-logo.png';
+import { useSmartImageScale } from '@/hooks/useSmartImageScale';
 
 interface HPMotorCardProps {
   group: MotorGroup;
@@ -11,6 +12,13 @@ interface HPMotorCardProps {
 
 export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
   const { hp, variants, priceRange, features, families, inStockCount, heroImage } = group;
+  
+  // Smart image scaling - scales up small images, keeps large ones at 1x
+  const { scale: imageScale, handleImageLoad } = useSmartImageScale({
+    minExpectedDimension: 400,
+    maxScale: 1.4,
+    defaultScale: 1.15
+  });
   
   // Check if Pro XS variants are available
   const hasProXS = families.includes('Pro XS');
@@ -72,7 +80,8 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
           alt={`${hp} HP Mercury Outboard`}
           className="h-48 md:h-72 w-full object-contain mix-blend-multiply transition-transform duration-300"
           loading="lazy"
-          style={{ transform: 'scale(1.15)' }}
+          onLoad={handleImageLoad}
+          style={{ transform: `scale(${imageScale})` }}
         />
         
         {/* Stock Badge */}

@@ -107,6 +107,7 @@ export function MotorDetailsImageSection({ motor, gallery, img, title }: MotorDe
       <MotorImageGallery 
         images={allImages}
         motorTitle={title}
+        enhanced={true}
       />
     );
   }

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, X, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { enhanceImageUrl, isThumbnailUrl } from '@/lib/image-utils';
+import { useSmartImageScale } from '@/hooks/useSmartImageScale';
 
 interface MotorImageGalleryProps {
   images: string[];
@@ -15,6 +16,13 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   const [imageLoadErrors, setImageLoadErrors] = useState<Set<number>>(new Set());
   const [lightboxImageLoading, setLightboxImageLoading] = useState(false);
   const [lightboxEnhancedUrls, setLightboxEnhancedUrls] = useState<string[]>([]);
+  
+  // Smart image scaling for gallery - slightly larger threshold
+  const { scale: mainImageScale, handleImageLoad: handleMainImageLoad } = useSmartImageScale({
+    minExpectedDimension: 500,
+    maxScale: 1.35,
+    defaultScale: 1.1
+  });
 
   // Fallback to main image if no gallery images
   if (!images || images.length === 0) {
@@ -91,8 +99,10 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
         <img
           src={validImages[selectedIndex]}
           alt={`${motorTitle} - Image ${selectedIndex + 1}`}
-          className={`${enhanced ? 'h-96' : 'h-48'} w-full rounded-xl object-contain bg-stone-100 transition-all duration-200 group-hover:scale-[1.02]`}
+          className={`${enhanced ? 'h-96' : 'h-48'} w-full rounded-xl object-contain bg-gradient-to-b from-stone-50 to-white mix-blend-multiply transition-all duration-200`}
+          onLoad={handleMainImageLoad}
           onError={() => handleImageError(selectedIndex)}
+          style={{ transform: `scale(${mainImageScale})` }}
         />
         
         {/* Click to expand hint */}
