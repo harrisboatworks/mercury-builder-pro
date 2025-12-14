@@ -34,17 +34,27 @@ interface ScrapeResult {
 }
 
 // Build URL slug from model_display
+// Example: "Mercury 40 ELPT FourStroke" → "40elpt-fourstroke"
 function buildAlberniSlug(modelDisplay: string): string {
   if (!modelDisplay) return '';
   
-  return modelDisplay
+  let slug = modelDisplay
     .toLowerCase()
+    .replace(/^mercury\s*/i, '')          // Remove "Mercury " prefix
     .replace(/®/g, '')                    // Remove ® symbol
-    .replace(/\./g, '-')                   // 9.9 → 9-9
-    .replace(/\s+/g, '-')                  // spaces → dashes
-    .replace(/-+/g, '-')                   // collapse multiple dashes
-    .replace(/^-|-$/g, '')                 // trim leading/trailing dashes
+    .replace(/\s*fourstroke\s*/gi, '')    // Remove "FourStroke" temporarily
+    .replace(/\./g, '-')                  // 9.9 → 9-9
+    .replace(/\s+/g, '')                  // Remove ALL spaces: "40 ELPT" → "40elpt"
+    .replace(/-+/g, '-')                  // Collapse multiple dashes
+    .replace(/^-|-$/g, '')                // Trim leading/trailing dashes
     .trim();
+  
+  // Append -fourstroke
+  if (!slug.endsWith('-fourstroke')) {
+    slug += '-fourstroke';
+  }
+  
+  return slug;
 }
 
 // Get category path based on HP
