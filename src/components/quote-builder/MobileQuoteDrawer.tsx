@@ -29,21 +29,16 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
   const { promotions } = useActivePromotions();
   const { promo: financingPromo } = useActiveFinancingPromo();
 
+  // Use preview motor if available, otherwise selected motor (matches UnifiedMobileBar behavior)
+  const displayMotor = state.previewMotor || state.motor;
+  const isPreview = !!state.previewMotor;
+
   // Calculate all pricing details
   const pricing = useMemo(() => {
     // Only bail if no motor exists at all
-    if (!state.motor) return null;
+    if (!displayMotor) return null;
     
-    const motorPrice = state.motor.price || state.motor.basePrice || state.motor.msrp || 0;
-    
-    // Debug logging
-    console.log('🎯 MobileQuoteDrawer pricing:', {
-      motorModel: state.motor.model,
-      price: state.motor.price,
-      basePrice: state.motor.basePrice,
-      msrp: state.motor.msrp,
-      calculatedMotorPrice: motorPrice
-    });
+    const motorPrice = displayMotor.price || displayMotor.basePrice || displayMotor.msrp || 0;
     
     let subtotal = motorPrice;
     const lineItems: { label: string; value: number; isCredit?: boolean }[] = [];
@@ -72,7 +67,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
     }
 
     // Installation labor for remote motors
-    const isTiller = state.motor.model?.includes('TLR') || state.motor.model?.includes('MH');
+    const isTiller = displayMotor.model?.includes('TLR') || displayMotor.model?.includes('MH');
     if (state.purchasePath === 'installed' && !isTiller) {
       subtotal += 450;
       lineItems.push({ label: 'Installation Labor', value: 450 });
@@ -117,7 +112,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
       termMonths,
       rate
     };
-  }, [state, financingPromo]);
+  }, [displayMotor, state, financingPromo]);
 
   // Get package info
   const packageInfo = useMemo(() => {
@@ -138,7 +133,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
   return (
     <Drawer open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DrawerContent className="max-h-[85vh] bg-white pb-safe">
-        {(!pricing || !state.motor) ? (
+        {(!pricing || !displayMotor) ? (
           <div className="p-8 text-center">
             <p className="text-muted-foreground">Select a motor to view your configuration</p>
           </div>
@@ -159,11 +154,18 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
               {/* Motor Summary */}
               <div className="pt-3">
                 <div className="flex items-center justify-between">
-                  <span className="font-medium">{state.motor.model}</span>
-                  <Badge variant="secondary" className="text-xs">
-                    <Shield className="h-3 w-3 mr-1" />
-                    {packageInfo.name}
-                  </Badge>
+                  <span className="font-medium">{displayMotor.model}</span>
+                  <div className="flex items-center gap-2">
+                    {isPreview && (
+                      <Badge variant="outline" className="text-xs bg-blue-50 text-blue-600 border-blue-200">
+                        Previewing
+                      </Badge>
+                    )}
+                    <Badge variant="secondary" className="text-xs">
+                      <Shield className="h-3 w-3 mr-1" />
+                      {packageInfo.name}
+                    </Badge>
+                  </div>
                 </div>
                 <p className="text-sm text-muted-foreground mt-1">
                   {state.warrantyConfig?.totalYears || 5}-year warranty coverage
