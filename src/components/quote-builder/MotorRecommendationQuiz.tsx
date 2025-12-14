@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ChevronRight, Lightbulb, Ship, Activity, Ruler, DollarSign } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface QuizAnswers {
   boatType: string;
@@ -124,15 +125,30 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
   const currentQuizStep = quizSteps[currentStep];
   const StepIcon = currentQuizStep?.icon;
 
+  const handleDragEnd = (_: any, info: { offset: { y: number } }) => {
+    if (info.offset.y > 100) {
+      handleClose();
+    }
+  };
+
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="flex items-center gap-2 text-xl font-light tracking-wide text-black">
-            <Lightbulb className="w-5 h-5 text-gray-600" />
-            Find Your Perfect Motor
-          </DialogTitle>
-        </DialogHeader>
+        <motion.div
+          drag="y"
+          dragConstraints={{ top: 0, bottom: 0 }}
+          dragElastic={0.2}
+          onDragEnd={handleDragEnd}
+        >
+          {/* Drag handle for mobile */}
+          <div className="w-12 h-1.5 bg-gray-300 rounded-full mx-auto mb-4 cursor-grab md:hidden" />
+          
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2 text-xl font-light tracking-wide text-black">
+              <Lightbulb className="w-5 h-5 text-gray-600" />
+              Find Your Perfect Motor
+            </DialogTitle>
+          </DialogHeader>
 
         {!showResults && currentQuizStep ? (
           <div className="space-y-6 py-4">
@@ -250,6 +266,7 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
             </div>
           </div>
         ) : null}
+        </motion.div>
       </DialogContent>
     </Dialog>
   );
