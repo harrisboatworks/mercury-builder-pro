@@ -311,7 +311,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
               className={cn(
                 "fixed z-50 bg-background rounded-t-2xl shadow-2xl overflow-hidden",
-                "inset-x-0 bottom-[140px] top-16", // Leave space for header, navigation footer, and bottom bar
+                "inset-x-0 bottom-[72px] top-16", // Sits flush above the unified mobile bar
                 "md:inset-x-4 md:bottom-20 md:top-20 md:rounded-2xl", // More padding on tablet
                 "lg:inset-x-auto lg:left-1/2 lg:-translate-x-1/2 lg:w-full lg:max-w-2xl lg:top-24 lg:bottom-24" // Centered on desktop
               )}
@@ -480,7 +480,11 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
                               : 'border-border hover:border-muted-foreground'
                           }`}
                         >
-                          <span className="text-3xl block mb-3">🚗</span>
+                          <img 
+                            src="https://www.mercurymarine.com/us/en/gauges-and-controls/controls/mechanical/_jcr_content/root/container/pagesection_2099454495/columnrow_copy_copy_/item_1638780568902_c/image_copy_copy.coreimg.100.1280.png/1696350068622/mm-ga-co-controls-mechanical-product-4.png"
+                            alt="Remote Control"
+                            className="w-12 h-12 object-contain mb-3"
+                          />
                           <span className="font-semibold text-foreground block">Remote Control</span>
                           <span className="text-sm text-muted-foreground mt-1 block">
                             Steering wheel & console
