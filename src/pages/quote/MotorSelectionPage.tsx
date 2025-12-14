@@ -22,6 +22,7 @@ import { PageTransition } from '@/components/ui/page-transition';
 import { MotorRecommendationQuiz } from '@/components/quote-builder/MotorRecommendationQuiz';
 import { PromoReminderModal } from '@/components/quote-builder/PromoReminderModal';
 import { fuzzySearch } from '@/lib/fuzzySearch';
+import { preloadConfiguratorImages } from '@/lib/configurator-preload';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
@@ -220,6 +221,13 @@ function MotorSelectionContent() {
 
     loadData();
   }, [toast]);
+
+  // Preload configurator images after motors load (non-blocking)
+  useEffect(() => {
+    if (!loading && motors.length > 0) {
+      preloadConfiguratorImages();
+    }
+  }, [loading, motors.length]);
 
   // Convert DB motor to Motor type and apply promotions (same logic as original)
   const processedMotors = useMemo(() => {
