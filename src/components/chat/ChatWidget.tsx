@@ -105,7 +105,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ className }) => {
     if (messages.length === 0) {
       const welcomeMessage: Message = {
         id: 'welcome',
-        text: "Hi there! I'm here to help you with Mercury outboard motors, pricing, and technical questions. How can I assist you today?",
+        text: "Hey! 👋 Looking at motors or have a question? Fire away.",
         isUser: false,
         timestamp: new Date(),
       };
