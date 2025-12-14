@@ -11,6 +11,7 @@ import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 import { useExitIntent } from '@/hooks/useExitIntent';
 import { useGroupedMotors } from '@/hooks/useGroupedMotors';
 import { usePullToRefresh } from '@/hooks/usePullToRefresh';
+import { useAIChat } from '@/components/chat/GlobalAIChat';
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
@@ -111,6 +112,7 @@ function MotorSelectionContent() {
   const { state, dispatch } = useQuote();
   const { toast } = useToast();
   const { viewMode } = useMotorView();
+  const { isOpen: isChatOpen } = useAIChat();
   
   const [motors, setMotors] = useState<DbMotor[]>([]);
   const [promotions, setPromotions] = useState<Promotion[]>([]);
@@ -234,7 +236,7 @@ function MotorSelectionContent() {
         description: "Showing latest inventory and prices."
       });
     },
-    disabled: loading
+    disabled: loading || isChatOpen
   });
 
   // Preload configurator images after motors load (non-blocking)
