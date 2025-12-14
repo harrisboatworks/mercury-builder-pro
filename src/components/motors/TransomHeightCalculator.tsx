@@ -107,7 +107,12 @@ export function TransomHeightCalculator({ open, onClose, onApply }: TransomHeigh
                 {SHAFT_LENGTHS.map(shaft => (
                   <tr 
                     key={shaft.code}
-                    className={recommendation?.code === shaft.code ? 'bg-green-50' : ''}
+                    onClick={() => {
+                      onApply(shaft.inches);
+                      onClose();
+                      setMeasurement('');
+                    }}
+                    className={`cursor-pointer transition-colors hover:bg-gray-100 ${recommendation?.code === shaft.code ? 'bg-green-50 hover:bg-green-100' : ''}`}
                   >
                     <td className="px-4 py-2 font-medium">
                       {shaft.name} ({shaft.inches}")
@@ -139,7 +144,9 @@ export function TransomHeightCalculator({ open, onClose, onApply }: TransomHeigh
               disabled={!recommendation}
               className="flex-1"
             >
-              Apply {recommendation?.inches}" Shaft
+              {recommendation 
+                ? `Apply ${recommendation.inches}" Shaft`
+                : 'Enter measurement above'}
             </Button>
           </div>
         </div>
