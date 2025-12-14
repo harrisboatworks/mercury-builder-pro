@@ -166,6 +166,29 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     };
   }, [filteredVariants, group]);
   
+  // Auto-skip start step if only one start type available
+  useEffect(() => {
+    if (!open || !group || step !== 'start') return;
+    
+    const variants = group.variants;
+    const hasElectric = variants.some(m => m.model.toUpperCase().includes('E') && !m.model.toUpperCase().includes('SEA'));
+    const hasManual = variants.some(m => m.model.toUpperCase().includes('M') && !m.model.toUpperCase().includes('COMMAND'));
+    
+    // Only electric available - auto-select and skip
+    if (hasElectric && !hasManual) {
+      setConfig(prev => ({ ...prev, startType: 'electric' }));
+      setStep('shaft');
+      return;
+    }
+    
+    // Only manual available - auto-select and skip
+    if (hasManual && !hasElectric) {
+      setConfig(prev => ({ ...prev, startType: 'manual' }));
+      setStep('shaft');
+      return;
+    }
+  }, [open, group, step]);
+  
   const handleBack = () => {
     const steps: Step[] = ['start', 'shaft', 'control', 'features', 'result'];
     const currentIndex = steps.indexOf(step);
