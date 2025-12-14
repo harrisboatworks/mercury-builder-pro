@@ -16,6 +16,7 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { MotorRecommendationQuiz } from '@/components/quote-builder/MotorRecommendationQuiz';
 import { PromoReminderModal } from '@/components/quote-builder/PromoReminderModal';
+import { fuzzySearch } from '@/lib/fuzzySearch';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
@@ -337,7 +338,7 @@ export default function MotorSelectionPage() {
     return payments;
   }, [processedMotors]);
 
-  // Filter motors with intelligent search
+  // Filter motors with intelligent search + fuzzy matching
   const filteredMotors = useMemo(() => {
     // Always include critical in-stock models
     const criticalMotors = processedMotors.filter(motor => 
@@ -354,39 +355,41 @@ export default function MotorSelectionPage() {
 
     const query = searchQuery.toLowerCase().trim();
     
-    return processedMotors.filter(motor => {
-      // Parse advanced search syntax
-      if (query.includes('hp:')) {
-        const hpMatch = query.match(/hp:(\d+(?:\.\d+)?)/);
-        if (hpMatch) return motor.hp === Number(hpMatch[1]);
-      }
-      
-      if (query.includes('hp:>')) {
-        const hpMatch = query.match(/hp:>(\d+(?:\.\d+)?)/);
-        if (hpMatch) return motor.hp > Number(hpMatch[1]);
-      }
-      
-      if (query.includes('hp:<')) {
-        const hpMatch = query.match(/hp:<(\d+(?:\.\d+)?)/);
-        if (hpMatch) return motor.hp < Number(hpMatch[1]);
-      }
-      
-      if (query.includes('stock') || query.includes('instock')) {
-        return motor.in_stock === true;
-      }
-      
-      // Standard text search - prioritize exact HP match for numeric queries
-      const isNumericQuery = /^\d+(\.\d+)?$/.test(query);
-      const hpMatches = isNumericQuery 
-        ? Number(motor.hp) === Number(query) 
-        : motor.hp.toString().includes(query);
-      
-      const matches = hpMatches ||
-        motor.model.toLowerCase().includes(query) ||
-        motor.type?.toLowerCase().includes(query);
-      
-      return matches;
+    // Parse advanced search syntax first
+    if (query.includes('hp:')) {
+      const hpMatch = query.match(/hp:(\d+(?:\.\d+)?)/);
+      if (hpMatch) return processedMotors.filter(m => m.hp === Number(hpMatch[1]));
+    }
+    
+    if (query.includes('hp:>')) {
+      const hpMatch = query.match(/hp:>(\d+(?:\.\d+)?)/);
+      if (hpMatch) return processedMotors.filter(m => m.hp > Number(hpMatch[1]));
+    }
+    
+    if (query.includes('hp:<')) {
+      const hpMatch = query.match(/hp:<(\d+(?:\.\d+)?)/);
+      if (hpMatch) return processedMotors.filter(m => m.hp < Number(hpMatch[1]));
+    }
+    
+    if (query.includes('stock') || query.includes('instock')) {
+      return processedMotors.filter(m => m.in_stock === true);
+    }
+    
+    // Numeric queries: exact HP match
+    const isNumericQuery = /^\d+(\.\d+)?$/.test(query);
+    if (isNumericQuery) {
+      return processedMotors.filter(motor => 
+        Number(motor.hp) === Number(query) || motor.hp.toString().includes(query)
+      );
+    }
+    
+    // Use fuzzy search for text queries
+    const fuzzyResults = fuzzySearch(processedMotors, query, ['model', 'type', 'model_number'], {
+      threshold: 0.35,
+      maxResults: 50
     });
+    
+    return fuzzyResults.map(r => r.item);
   }, [processedMotors, searchQuery]);
 
   const handleMotorSelect = (motor: Motor) => {
