@@ -5,7 +5,7 @@ import { MotorGroup } from '@/hooks/useGroupedMotors';
 import { Motor } from '@/components/QuoteBuilder';
 import { MOTOR_CODES, SHAFT_LENGTHS } from '@/lib/motor-codes';
 import { hasElectricStart, hasManualStart, hasTillerControl, hasRemoteControl } from '@/lib/motor-config-utils';
-import { ArrowLeft, ArrowRight, Check, ChevronRight, HelpCircle, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, ChevronRight, HelpCircle, X, Zap, Wrench } from 'lucide-react';
 import { TransomHeightCalculator } from './TransomHeightCalculator';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -443,13 +443,16 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
                             setConfig(prev => ({ ...prev, startType: 'electric' }));
                             handleNext();
                           }}
-                          className={`p-6 rounded-lg border-2 transition-all text-left ${
+                          className={cn(
+                            "p-6 rounded-lg border-2 transition-all text-left group",
                             config.startType === 'electric'
                               ? 'border-foreground bg-muted'
                               : 'border-border hover:border-muted-foreground'
-                          }`}
+                          )}
                         >
-                          <span className="text-3xl block mb-3">⚡</span>
+                          <div className="relative w-12 h-12 mb-3 flex items-center justify-center bg-muted/50 rounded-lg">
+                            <Zap className="w-7 h-7 text-foreground transition-transform duration-200 group-hover:scale-110" />
+                          </div>
                           <span className="font-semibold text-foreground block">Electric Start</span>
                           <span className="text-sm text-muted-foreground mt-1 block">
                             Push-button convenience
@@ -463,13 +466,16 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
                             setConfig(prev => ({ ...prev, startType: 'manual' }));
                             handleNext();
                           }}
-                          className={`p-6 rounded-lg border-2 transition-all text-left ${
+                          className={cn(
+                            "p-6 rounded-lg border-2 transition-all text-left group",
                             config.startType === 'manual'
                               ? 'border-foreground bg-muted'
                               : 'border-border hover:border-muted-foreground'
-                          }`}
+                          )}
                         >
-                          <span className="text-3xl block mb-3">🔧</span>
+                          <div className="relative w-12 h-12 mb-3 flex items-center justify-center bg-muted/50 rounded-lg">
+                            <Wrench className="w-7 h-7 text-foreground transition-transform duration-200 group-hover:scale-110" />
+                          </div>
                           <span className="font-semibold text-foreground block">Manual Start</span>
                           <span className="text-sm text-muted-foreground mt-1 block">
                             Pull cord — simple & reliable
