@@ -66,12 +66,13 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
       onClick={() => onConfigure(group)}
     >
       {/* Image Section */}
-      <div className="relative bg-gradient-to-b from-stone-50 to-white p-12">
+      <div className="relative bg-gradient-to-b from-stone-50 to-white p-6">
         <img 
           src={heroImage} 
           alt={`${hp} HP Mercury Outboard`}
-          className="h-48 md:h-72 w-full object-contain"
+          className="h-48 md:h-72 w-full object-contain mix-blend-multiply transition-transform duration-300"
           loading="lazy"
+          style={{ transform: 'scale(1.15)' }}
         />
         
         {/* Stock Badge */}

@@ -306,13 +306,14 @@ export default function MotorCardPreview({
         <div className="relative">
           {/* Image Section */}
           {imageUrl && (
-            <div className="relative bg-gradient-to-b from-stone-50 to-white p-12">
+            <div className="relative bg-gradient-to-b from-stone-50 to-white p-6">
               <img 
                 src={imageUrl} 
                 alt={title} 
-                className="h-48 md:h-72 w-full object-contain"
+                className="h-48 md:h-72 w-full object-contain mix-blend-multiply transition-transform duration-300"
                 loading="lazy"
                 decoding="async"
+                style={{ transform: 'scale(1.15)' }}
               />
               
               {/* Stock Badge - Top Left */}
