@@ -2,6 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== Premium Scroll Behavior ===== */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* iOS momentum scrolling */
+  overscroll-behavior: none; /* Prevent overscroll bounce */
+}
+
+body {
+  overscroll-behavior-y: none; /* Prevent pull-to-refresh interference with native */
+}
+
+/* Scroll containers get momentum scrolling */
+.overflow-y-auto,
+.overflow-auto,
+[class*="overflow-y-scroll"],
+.scroll-smooth {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+/* ===== Safe Area Utilities for Notched Phones ===== */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .mb-safe {
+    margin-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .mt-safe {
+    margin-top: env(safe-area-inset-top);
+  }
+}
+
 /* Mobile-only fixes for header, logo, and search issues */
 @media (max-width: 768px) {
   /* FIX 1: Harris logo getting cut off - make it larger */
