@@ -72,11 +72,11 @@ export default function MotorCardPreview({
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   
-  // Smart image scaling - aggressive scaling for small motor images
+  // Smart image scaling - only upscale genuinely small images
   const { scale: imageScale, handleImageLoad } = useSmartImageScale({
-    minExpectedDimension: 380,
-    maxScale: 2.0,
-    defaultScale: 1.3
+    minExpectedDimension: 400,
+    maxScale: 1.4,
+    defaultScale: 1.0
   });
 
   // Combined image load handler
