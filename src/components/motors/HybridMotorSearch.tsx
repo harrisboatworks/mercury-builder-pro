@@ -6,6 +6,7 @@ import { HpSuggestionsDropdown } from '@/components/motors/HpSuggestionsDropdown
 import { useAIChat } from '@/components/chat/GlobalAIChat';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { supabase } from '@/integrations/supabase/client';
+import { fuzzySearch } from '@/lib/fuzzySearch';
 import type { Motor } from '@/components/QuoteBuilder';
 
 // Web Speech API types
@@ -126,8 +127,8 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   const { triggerHaptic } = useHapticFeedback();
   const hpSuggestions = useHpSuggestions(query, motors);
 
-  // Motor autocomplete suggestions
-  const motorSuggestions = useMemo(() => {
+  // Motor autocomplete suggestions with fuzzy search
+  const motorSuggestionResults = useMemo(() => {
     if (!query || query.length < 2 || /^\d+(\.\d+)?$/.test(query.trim())) return [];
     
     const normalizedQuery = query.toLowerCase().trim();
@@ -135,18 +136,22 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
     // Skip if it's an AI query
     if (AI_TRIGGER_WORDS.some(word => normalizedQuery.includes(word))) return [];
     
-    return motors
-      .filter(motor => {
-        const model = motor.model?.toLowerCase() || '';
-        const type = motor.type?.toLowerCase() || '';
-        const modelNumber = motor.model_number?.toLowerCase() || '';
-        
-        return model.includes(normalizedQuery) ||
-               type.includes(normalizedQuery) ||
-               modelNumber.includes(normalizedQuery);
-      })
-      .slice(0, 6);
+    return fuzzySearch(motors, normalizedQuery, ['model', 'type', 'model_number'], {
+      threshold: 0.4,
+      maxResults: 6
+    });
   }, [motors, query]);
+
+  const motorSuggestions = useMemo(() => 
+    motorSuggestionResults.map(r => r.item), 
+    [motorSuggestionResults]
+  );
+
+  // Check if we're showing fuzzy matches (typo corrections)
+  const hasFuzzyMatches = useMemo(() => 
+    motorSuggestionResults.some(r => r.matchType === 'fuzzy'),
+    [motorSuggestionResults]
+  );
 
   // Reset motor index when suggestions change
   useEffect(() => {
