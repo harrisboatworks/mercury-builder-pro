@@ -29,6 +29,12 @@ interface ConfigState {
   features: string[];
 }
 
+// Self-hosted control images on Supabase Storage for faster loading
+const CONTROL_IMAGES = {
+  tiller: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/controls/tiller-handle.png',
+  remote: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/controls/remote-control.png'
+};
+
 export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: MotorConfiguratorModalProps) {
   const [step, setStep] = useState<Step>('start');
   const [config, setConfig] = useState<ConfigState>({
@@ -39,6 +45,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
   });
   const [showTransomCalculator, setShowTransomCalculator] = useState(false);
   const [motorForDetails, setMotorForDetails] = useState<Motor | null>(null);
+  const [imagesLoaded, setImagesLoaded] = useState({ tiller: false, remote: false });
   const { dispatch } = useQuote();
   
   // Reset when modal opens
@@ -450,17 +457,28 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
                             setConfig(prev => ({ ...prev, controlType: 'tiller' }));
                             handleNext();
                           }}
-                          className={`p-6 rounded-lg border-2 transition-all text-left ${
+                          className={cn(
+                            "p-6 rounded-lg border-2 transition-all text-left group",
                             config.controlType === 'tiller'
                               ? 'border-foreground bg-muted'
                               : 'border-border hover:border-muted-foreground'
-                          }`}
+                          )}
                         >
-                          <img 
-                            src="https://www.mercurymarine.com/sp/en/gauges-and-controls/controls/tiller-handles/_jcr_content/root/container/pagesection_52925364/columnrow_copy_copy_/item_1695064113060/image_copy.coreimg.100.1280.png/1742304095249/mm-ga-co-controls-tiller-product-3.png"
-                            alt="Tiller Handle"
-                            className="w-12 h-12 object-contain mb-3"
-                          />
+                          <div className="relative w-12 h-12 mb-3">
+                            {!imagesLoaded.tiller && (
+                              <div className="absolute inset-0 bg-muted animate-pulse rounded" />
+                            )}
+                            <img 
+                              src={CONTROL_IMAGES.tiller}
+                              alt="Tiller Handle"
+                              className={cn(
+                                "w-full h-full object-contain transition-all duration-200",
+                                imagesLoaded.tiller ? "opacity-100" : "opacity-0",
+                                "group-hover:scale-110"
+                              )}
+                              onLoad={() => setImagesLoaded(prev => ({ ...prev, tiller: true }))}
+                            />
+                          </div>
                           <span className="font-semibold text-foreground block">Tiller Handle</span>
                           <span className="text-sm text-muted-foreground mt-1 block">
                             Sit at the back, steer directly
@@ -474,17 +492,28 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
                             setConfig(prev => ({ ...prev, controlType: 'remote' }));
                             handleNext();
                           }}
-                          className={`p-6 rounded-lg border-2 transition-all text-left ${
+                          className={cn(
+                            "p-6 rounded-lg border-2 transition-all text-left group",
                             config.controlType === 'remote'
                               ? 'border-foreground bg-muted'
                               : 'border-border hover:border-muted-foreground'
-                          }`}
+                          )}
                         >
-                          <img 
-                            src="https://www.mercurymarine.com/us/en/gauges-and-controls/controls/mechanical/_jcr_content/root/container/pagesection_2099454495/columnrow_copy_copy_/item_1638780568902_c/image_copy_copy.coreimg.100.1280.png/1696350068622/mm-ga-co-controls-mechanical-product-4.png"
-                            alt="Remote Control"
-                            className="w-12 h-12 object-contain mb-3"
-                          />
+                          <div className="relative w-12 h-12 mb-3">
+                            {!imagesLoaded.remote && (
+                              <div className="absolute inset-0 bg-muted animate-pulse rounded" />
+                            )}
+                            <img 
+                              src={CONTROL_IMAGES.remote}
+                              alt="Remote Control"
+                              className={cn(
+                                "w-full h-full object-contain transition-all duration-200",
+                                imagesLoaded.remote ? "opacity-100" : "opacity-0",
+                                "group-hover:scale-110"
+                              )}
+                              onLoad={() => setImagesLoaded(prev => ({ ...prev, remote: true }))}
+                            />
+                          </div>
                           <span className="font-semibold text-foreground block">Remote Control</span>
                           <span className="text-sm text-muted-foreground mt-1 block">
                             Steering wheel & console
