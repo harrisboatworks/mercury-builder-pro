@@ -369,15 +369,65 @@ export const MOTOR_FAMILY_CONFIGURATOR_TIPS: Record<string, Array<{ step: string
   ],
 };
 
+// Available options interface for filtering tips
+export interface ConfiguratorOptionsForTips {
+  hasElectric: boolean;
+  hasManual: boolean;
+  hasTiller: boolean;
+  hasRemote: boolean;
+}
+
+// Fallback tips when only one option is available
+const SINGLE_OPTION_TIPS: Record<string, Record<string, { message: string; icon: string }>> = {
+  start: {
+    onlyManual: { message: "Manual start — simple & proven reliable", icon: 'check' },
+    onlyElectric: { message: "Electric start standard — push-button easy", icon: 'sparkles' },
+  },
+  control: {
+    onlyTiller: { message: "Tiller control — direct and responsive", icon: 'check' },
+    onlyRemote: { message: "Remote control standard on this model", icon: 'check' },
+  },
+};
+
 // Get motor family-specific configurator tip for a step
 export const getMotorFamilyConfiguratorTip = (
   family: string | null,
-  step: string
+  step: string,
+  availableOptions?: ConfiguratorOptionsForTips | null
 ): ConversationalNudge | null => {
+  // First check if we should show a single-option fallback tip
+  if (availableOptions && step === 'start') {
+    if (!availableOptions.hasElectric && availableOptions.hasManual) {
+      return SINGLE_OPTION_TIPS.start.onlyManual;
+    }
+    if (availableOptions.hasElectric && !availableOptions.hasManual) {
+      return SINGLE_OPTION_TIPS.start.onlyElectric;
+    }
+  }
+  
+  if (availableOptions && step === 'control') {
+    if (!availableOptions.hasRemote && availableOptions.hasTiller) {
+      return SINGLE_OPTION_TIPS.control.onlyTiller;
+    }
+    if (availableOptions.hasRemote && !availableOptions.hasTiller) {
+      return SINGLE_OPTION_TIPS.control.onlyRemote;
+    }
+  }
+
   if (!family) return null;
   const familyTips = MOTOR_FAMILY_CONFIGURATOR_TIPS[family];
   if (!familyTips) return null;
   const tip = familyTips.find(t => t.step === step);
+  
+  // Filter out irrelevant tips based on available options
+  if (tip && availableOptions) {
+    const msg = tip.message.toLowerCase();
+    // Don't show electric start tip if no electric option
+    if (step === 'start' && msg.includes('electric') && !availableOptions.hasElectric) {
+      return null;
+    }
+  }
+  
   return tip ? { message: tip.message, icon: tip.icon } : null;
 };
 

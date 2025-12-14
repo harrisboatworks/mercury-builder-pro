@@ -217,6 +217,19 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
       shaftLengths: Array.from(shaftSet).sort((a, b) => parseInt(a) - parseInt(b))
     };
   }, [filteredVariants, group]);
+
+  // Dispatch available options to context for nudge system
+  useEffect(() => {
+    if (open && availableOptions) {
+      dispatch({ type: 'SET_CONFIGURATOR_OPTIONS', payload: availableOptions });
+    }
+    return () => {
+      // Clear options when modal closes
+      if (!open) {
+        dispatch({ type: 'SET_CONFIGURATOR_OPTIONS', payload: null });
+      }
+    };
+  }, [open, availableOptions, dispatch]);
   
   // Auto-skip start step if only one start type available OR large motor
   useEffect(() => {

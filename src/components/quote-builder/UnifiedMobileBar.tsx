@@ -463,9 +463,14 @@ export const UnifiedMobileBar: React.FC = () => {
 
     // Priority 0: Configurator-specific tips - instantly react to step changes
     // Prioritize motor family-specific tips (Pro XS, Verado, etc.) over generic tips
+    // Now includes available options awareness for contextually accurate tips
     if (state.configuratorStep && location.pathname === '/quote/motor-selection') {
       const motorFamily = displayMotor?.model ? getMotorFamilyKey(displayMotor.model) : null;
-      const familyTip = getMotorFamilyConfiguratorTip(motorFamily, state.configuratorStep);
+      const familyTip = getMotorFamilyConfiguratorTip(
+        motorFamily, 
+        state.configuratorStep,
+        state.configuratorOptions // Pass available options for filtering
+      );
       
       if (familyTip) {
         return { message: familyTip.message, type: 'tip', icon: familyTip.icon };
@@ -589,7 +594,7 @@ export const UnifiedMobileBar: React.FC = () => {
     pageConfig.nudges, recentAction, idleSeconds, hasMotor, quoteProgress.remaining,
     location.pathname, state.tradeInInfo?.estimatedValue, state.selectedOptions?.length,
     isPreview, displayMotor?.hp, displayMotor?.id, displayMotor?.model, state.configuratorStep,
-    currentSavings, monthlyPayment, promo
+    state.configuratorOptions, currentSavings, monthlyPayment, promo
   ]);
 
   // Helper to render nudge icon
