@@ -705,7 +705,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Back
                   </Button>
-                  <Button variant="outline" onClick={() => { triggerHaptic('medium'); handleNext(); }}>
+                  <Button variant="ghost" onClick={() => { triggerHaptic('medium'); handleNext(); }}>
                     Skip
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
