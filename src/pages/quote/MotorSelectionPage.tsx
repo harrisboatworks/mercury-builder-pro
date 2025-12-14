@@ -42,6 +42,7 @@ interface DbMotor {
   motor_type: string;
   engine_type?: string | null;
   image_url?: string | null;
+  hero_image_url?: string | null;
   availability?: string | null;
   stock_number?: string | null;
   stock_quantity?: number | null;
@@ -269,10 +270,12 @@ function MotorSelectionContent() {
         }
       });
 
-      // Get static product images based on HP
-      const productImages = getMotorImages(dbMotor.horsepower);
-      const heroImage = productImages?.heroImage || dbMotor.image_url || '';
-      const galleryImages = productImages?.galleryImages || (dbMotor.images as string[]) || [];
+      // Prioritize database-scraped images over static fallbacks
+      const heroImage = dbMotor.hero_image_url || dbMotor.image_url || getMotorImages(dbMotor.horsepower)?.heroImage || '';
+      const dbImages = Array.isArray(dbMotor.images) 
+        ? (dbMotor.images as Array<{url: string} | string>).map(img => typeof img === 'string' ? img : img.url)
+        : [];
+      const galleryImages = dbImages.length > 0 ? dbImages : (getMotorImages(dbMotor.horsepower)?.galleryImages || []);
 
       // Convert to Motor type (same as original)
       const convertedMotor: Motor = {
