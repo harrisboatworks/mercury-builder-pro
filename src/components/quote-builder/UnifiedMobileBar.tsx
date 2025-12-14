@@ -66,7 +66,7 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
         { step: 'shaft', message: '20" shaft fits most boats — measure transom if unsure', icon: 'check' },
         { step: 'control', message: 'Tiller for boats under 16ft, remote for larger', icon: 'check' },
         { step: 'features', message: 'Command Thrust adds control for heavy boats', icon: 'shield' },
-        { step: 'result', message: 'Tap a motor to add it to your quote!', icon: 'heart' },
+        { step: 'result', message: 'Tap to review specs, then select your motor', icon: 'heart' },
       ],
     }
   },
@@ -192,7 +192,7 @@ const SOCIAL_PROOF_NUDGES = [
   '127+ quotes generated this month',
   'Trusted by Ontario boaters since 1947',
   'CSI 5-Star Award winner',
-  'Mercury Dealer of the Year',
+  'Mercury dealer since 1965',
 ];
 
 // Pages where the unified bar should NOT show
