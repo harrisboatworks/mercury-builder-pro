@@ -1,4 +1,5 @@
 // Dynamic contextual prompts based on motor type, boat info, and current page
+// Written in friendly, conversational language
 
 interface Motor {
   model: string;
@@ -14,52 +15,92 @@ interface BoatInfo {
   model?: string;
 }
 
+// Conversational prompts that feel like asking a friend
 export function getContextualPrompts(
   motor: Motor | null,
   boatInfo: BoatInfo | null,
   currentPage: string
 ): string[] {
-  // Motor selection page - include quiz trigger
+  // Motor selection page
   if (currentPage === '/' || currentPage.includes('/quote/motor')) {
     if (!motor) {
       return [
-        "Help me find the right motor 💡",
-        "What motor fits my boat?",
-        "Current promotions & deals"
+        "Help me pick the right motor",
+        "What size do I need for my boat?",
+        "Any deals going on right now?"
       ];
     }
   }
 
-  // Page-specific prompts
+  // Quote summary page
   if (currentPage.includes('/quote/summary')) {
     return [
-      "Can I get a better price?",
-      "What financing options are available?",
-      "Is my trade-in value accurate?"
+      "Can you get me a better price?",
+      "What are my financing options?",
+      "Walk me through my quote"
     ];
   }
 
+  // Options page
+  if (currentPage.includes('/quote/options')) {
+    return [
+      "What's in the Complete package?",
+      "Is the warranty worth it?",
+      "Help me pick a package"
+    ];
+  }
+
+  // Purchase path page
+  if (currentPage.includes('/quote/purchase-path')) {
+    return [
+      "What's included in pro install?",
+      "Can I install it myself?",
+      "How long does install take?"
+    ];
+  }
+
+  // Boat info page
+  if (currentPage.includes('/quote/boat-info')) {
+    return [
+      "Will this motor fit my boat?",
+      "What controls do I need?",
+      "Help me with my boat setup"
+    ];
+  }
+
+  // Trade-in page
+  if (currentPage.includes('/quote/trade-in')) {
+    return [
+      "What's my motor worth?",
+      "What do you accept for trade?",
+      "How do trade-ins work?"
+    ];
+  }
+
+  // Promotions page
   if (currentPage.includes('/promotions')) {
     return [
-      "When do these promotions end?",
-      "Can I combine multiple promotions?",
-      "What's the best current deal?"
+      "What's the best deal right now?",
+      "When do these promos end?",
+      "Can I stack promotions?"
     ];
   }
 
+  // Financing page
   if (currentPage.includes('/financing')) {
     return [
+      "What's the monthly payment?",
       "What credit score do I need?",
-      "Can I pay off early?",
-      "What documents do I need?"
+      "Can I pay it off early?"
     ];
   }
 
+  // Contact page
   if (currentPage.includes('/contact')) {
     return [
       "What are your hours?",
-      "Do you offer test runs?",
-      "Can I visit the dealership?"
+      "Can I come see the motors?",
+      "Do you do test runs?"
     ];
   }
 
@@ -67,59 +108,56 @@ export function getContextualPrompts(
   if (!motor) {
     return [
       "What motor fits my boat?",
-      "What are current promotions?",
-      "Tell me about financing options"
+      "Any good deals right now?",
+      "Tell me about financing"
     ];
   }
 
-  // Get HP value
+  // Get HP value and model info
   const hp = motor.hp || motor.horsepower || 0;
   const modelLower = motor.model?.toLowerCase() || '';
 
   // Tiller-specific prompts
-  const isTiller = modelLower.includes('tiller');
-  if (isTiller) {
+  if (modelLower.includes('tiller') || modelLower.includes('tlr') || modelLower.includes('mh')) {
     return [
-      `What boats work with a ${hp}HP tiller?`,
-      "Clamp-on vs bolt-on mounting?",
-      "Best tiller motor for fishing?"
+      `Good tiller motor for fishing?`,
+      "Clamp-on or bolt-on?",
+      `Best boats for this ${hp}HP?`
     ];
   }
 
   // ProKicker-specific prompts
-  const isProKicker = modelLower.includes('prokicker');
-  if (isProKicker) {
+  if (modelLower.includes('prokicker')) {
     return [
-      "What is a ProKicker used for?",
-      "Best trolling speeds with ProKicker?",
-      "ProKicker vs standard 9.9HP?"
+      "What's a ProKicker for?",
+      "Best trolling speed?",
+      "ProKicker vs regular 9.9?"
     ];
   }
 
   // High HP motors (115+)
   if (hp >= 115) {
-    const compareHP = hp >= 200 ? hp - 50 : hp + 40;
     return [
-      `Compare ${hp}HP vs ${compareHP}HP`,
-      "Fuel consumption at cruising speed?",
-      "What's Command Thrust technology?"
+      `Compare to the ${hp >= 200 ? hp - 50 : hp + 40}HP`,
+      "Fuel economy at cruise?",
+      "Is this too much power?"
     ];
   }
 
   // Mid-range motors (40-114)
   if (hp >= 40) {
     return [
-      `Is ${hp}HP enough for my boat?`,
-      "What warranty is included?",
-      `Compare ${hp}HP vs ${hp + 25}HP`
+      `Is ${hp}HP enough for me?`,
+      "What warranty comes with it?",
+      `${hp} vs ${hp + 25}HP — which one?`
     ];
   }
 
   // Small motors (<40HP)
   return [
-    `What boats suit a ${hp}HP motor?`,
-    "Is this good for fishing?",
-    "Fuel efficiency of this motor?"
+    `What boats work with ${hp}HP?`,
+    "Good for fishing?",
+    "How's the fuel economy?"
   ];
 }
 

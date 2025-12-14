@@ -132,23 +132,45 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     return getContextualPrompts(motor, state.boatInfo, location.pathname);
   }, [state.motor, state.boatInfo, location.pathname]);
 
-  // Get contextual welcome message
+  // Get contextual welcome message - friendly and conversational
   const getWelcomeMessage = (): string => {
     const path = location.pathname;
+    const activeMotor = state.previewMotor || state.motor;
     
-    if (state.motor) {
-      return `Hi! I see you're looking at the ${state.motor.model} (${state.motor.hp}HP). How can I help you with this motor?`;
+    // If they're looking at a specific motor
+    if (activeMotor) {
+      const hp = activeMotor.hp || 0;
+      const family = activeMotor.model?.toLowerCase().includes('verado') ? 'Verado' :
+                     activeMotor.model?.toLowerCase().includes('pro xs') ? 'Pro XS' :
+                     'FourStroke';
+      return `Hey! Checking out the ${hp}HP ${family}? Solid choice — what do you want to know about it?`;
+    }
+    
+    // Page-specific greetings
+    if (path.includes('/quote/options')) {
+      return "Hey! Need help picking a package? I can break down what's in each one.";
+    }
+    if (path.includes('/quote/purchase-path')) {
+      return "Hey! Deciding between pro install or DIY? I can walk you through the options.";
+    }
+    if (path.includes('/quote/boat-info')) {
+      return "Hey! Got questions about compatibility or controls? I'm here to help.";
+    }
+    if (path.includes('/quote/trade-in')) {
+      return "Hey! Got something to trade? Tell me what you've got and I'll give you a ballpark.";
     }
     if (path.includes('/quote/summary')) {
-      return "Hi! I see you're reviewing your quote. Do you have any questions about pricing, financing, or your motor selection?";
+      return "Hey! Looking over your quote? Let me know if you have any questions about pricing or next steps.";
     }
     if (path.includes('/financing')) {
-      return "Hi! I can help with financing questions. What would you like to know about our financing options?";
+      return "Hey! Curious about financing? I can help you figure out monthly payments and options.";
     }
     if (path.includes('/promotions')) {
-      return "Hi! Looking at our promotions? I can help explain the current offers and find the best deal for you.";
+      return "Hey! Looking at the current deals? I can help you find the best one for what you need.";
     }
-    return "Hi there! I'm your Mercury Marine expert. I can help you find the perfect outboard motor, answer technical questions, or explain our current promotions. What can I help you with?";
+    
+    // Default friendly greeting
+    return "Hey! I'm here to help you find the perfect Mercury motor. What are you looking for?";
   };
 
   // Convert persisted messages to UI format
