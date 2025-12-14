@@ -10,6 +10,8 @@ import { getContextualPrompts } from './getContextualPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
 import { MessageReactions } from './MessageReactions';
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
+import { VoiceButton } from './VoiceButton';
+import { useRealtimeVoice } from '@/hooks/useRealtimeVoice';
 
 interface Message {
   id: string;
@@ -91,6 +93,32 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       updateReaction,
       clearConversation,
     } = useChatPersistence();
+
+    // Voice chat integration
+    const activeMotor = state.previewMotor || state.motor;
+    const motorContext = activeMotor ? {
+      model: activeMotor.model || '',
+      hp: activeMotor.hp || 0,
+      price: activeMotor.msrp || activeMotor.price || activeMotor.salePrice,
+    } : null;
+    
+    const voice = useRealtimeVoice({
+      motorContext,
+      currentPage: location.pathname,
+      onTranscriptComplete: (transcript) => {
+        // Add AI transcript as message
+        if (transcript) {
+          const voiceMessage: Message = {
+            id: `voice_${Date.now()}`,
+            text: transcript,
+            isUser: false,
+            timestamp: new Date(),
+          };
+          setMessages(prev => [...prev, voiceMessage]);
+          saveMessage(transcript, 'assistant');
+        }
+      },
+    });
 
     const scrollToBottom = () => {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -524,19 +552,28 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                 {/* Input Area - Compact */}
                 <div className="px-3 py-2 bg-white border-t border-gray-100">
                   <div className="flex items-center gap-2 bg-gray-50 rounded-full px-3 h-11 focus-within:ring-2 focus-within:ring-gray-200 transition-shadow">
+                    <VoiceButton
+                      isConnected={voice.isConnected}
+                      isConnecting={voice.isConnecting}
+                      isSpeaking={voice.isSpeaking}
+                      isListening={voice.isListening}
+                      onStart={voice.startVoiceChat}
+                      onEnd={voice.endVoiceChat}
+                      size="sm"
+                    />
                     <input
                       ref={inputRef}
                       type="text"
                       value={inputText}
                       onChange={(e) => setInputText(e.target.value)}
                       onKeyPress={handleKeyPress}
-                      placeholder="Ask anything..."
+                      placeholder={voice.isConnected ? "Voice chat active..." : "Ask anything..."}
                       className="flex-1 px-1 py-0 h-full bg-transparent border-0 focus:outline-none text-[14px] text-gray-800 placeholder:text-gray-400 font-light"
-                      disabled={isLoading}
+                      disabled={isLoading || voice.isConnected}
                     />
                     <Button
                       onClick={() => handleSend()}
-                      disabled={!inputText.trim() || isLoading}
+                      disabled={!inputText.trim() || isLoading || voice.isConnected}
                       className="h-8 w-8 p-0 rounded-full bg-gray-900 hover:bg-gray-800 text-white transition-all duration-200 disabled:opacity-40 disabled:bg-gray-300"
                     >
                       <Send className="w-3.5 h-3.5" />
@@ -551,5 +588,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
     );
   }
 );
+
+EnhancedChatWidget.displayName = 'EnhancedChatWidget';
 
 EnhancedChatWidget.displayName = 'EnhancedChatWidget';

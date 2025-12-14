@@ -36,9 +36,6 @@ verify_jwt = false
 [functions.create-payment]
 verify_jwt = true
 
-# [functions.send-notification]
-# verify_jwt = true
-
 [functions.process-notifications]
 verify_jwt = false
 
@@ -106,4 +103,7 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.download-control-images]
+verify_jwt = false
+
+[functions.realtime-session]
 verify_jwt = false

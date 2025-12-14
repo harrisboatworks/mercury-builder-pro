@@ -14,6 +14,8 @@ import { MessageReactions } from './MessageReactions';
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { cn } from '@/lib/utils';
+import { VoiceButton } from './VoiceButton';
+import { useRealtimeVoice } from '@/hooks/useRealtimeVoice';
 
 interface Message {
   id: string;
@@ -94,6 +96,31 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     updateReaction,
     clearConversation,
   } = useChatPersistence();
+
+  // Voice chat integration
+  const activeMotor = state.previewMotor || state.motor;
+  const motorContext = activeMotor ? {
+    model: activeMotor.model || '',
+    hp: activeMotor.hp || 0,
+    price: activeMotor.msrp || activeMotor.price || activeMotor.salePrice,
+  } : null;
+  
+  const voice = useRealtimeVoice({
+    motorContext,
+    currentPage: location.pathname,
+    onTranscriptComplete: (transcript) => {
+      if (transcript) {
+        const voiceMessage: Message = {
+          id: `voice_${Date.now()}`,
+          text: transcript,
+          isUser: false,
+          timestamp: new Date(),
+        };
+        setMessages(prev => [...prev, voiceMessage]);
+        saveMessage(transcript, 'assistant');
+      }
+    },
+  });
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -573,21 +600,30 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
               {/* Input Area - Horizontal layout */}
               <div className="px-4 py-3 border-t border-gray-100 bg-white shrink-0">
                 <div className="flex flex-row items-center gap-2 bg-gray-50 rounded-xl border border-gray-200 px-3 py-2">
+                  <VoiceButton
+                    isConnected={voice.isConnected}
+                    isConnecting={voice.isConnecting}
+                    isSpeaking={voice.isSpeaking}
+                    isListening={voice.isListening}
+                    onStart={voice.startVoiceChat}
+                    onEnd={voice.endVoiceChat}
+                    size="sm"
+                  />
                   <input
                     ref={inputRef}
                     type="text"
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    placeholder="Ask anything..."
-                    disabled={isLoading}
+                    placeholder={voice.isConnected ? "Voice chat active..." : "Ask anything..."}
+                    disabled={isLoading || voice.isConnected}
                     className="flex-1 min-w-0 bg-transparent border-none focus:outline-none 
                       text-sm text-gray-900 placeholder:text-gray-400 font-light h-8"
                   />
                   <Button
                     size="sm"
                     onClick={() => handleSend()}
-                    disabled={!inputText.trim() || isLoading}
+                    disabled={!inputText.trim() || isLoading || voice.isConnected}
                     className="h-8 w-8 p-0 rounded-lg bg-gray-900 hover:bg-gray-800 
                       disabled:opacity-40 disabled:bg-gray-400 shrink-0 flex items-center justify-center"
                   >
