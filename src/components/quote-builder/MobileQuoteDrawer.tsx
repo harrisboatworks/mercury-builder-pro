@@ -150,7 +150,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
               </button>
             </DrawerHeader>
 
-            <div className="px-4 pb-6 space-y-4">
+            <div className="px-4 pb-24 space-y-4">
               {/* Motor Summary */}
               <div className="pt-3">
                 <div className="flex items-center justify-between">
