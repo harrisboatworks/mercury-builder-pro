@@ -1,9 +1,10 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ChevronUp, MessageCircle, Phone, Sparkles, ArrowRight, Shield, Award, DollarSign, Check, Flag, Heart, RefreshCw } from 'lucide-react';
+import { ChevronUp, MessageCircle, Phone, Sparkles, ArrowRight, Shield, Award, DollarSign, Check, Flag, Heart, RefreshCw, Mic, Volume2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAIChat } from '@/components/chat/GlobalAIChat';
+import { useVoiceSafe } from '@/contexts/VoiceContext';
 import { useIsMobileOrTablet } from '@/hooks/use-mobile';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
@@ -702,37 +703,71 @@ export const UnifiedMobileBar: React.FC = () => {
             gap-1.5 min-[375px]:gap-2 min-[428px]:gap-3"
           style={{ paddingLeft: 'max(0.5rem, env(safe-area-inset-left))', paddingRight: 'max(0.5rem, env(safe-area-inset-right))' }}
         >
-          {/* AI Button - Breathing animation, active state when chat is open */}
-          <motion.button
-            whileTap={{ scale: 0.92 }}
-            animate={isOpen ? {} : breathingAnimation}
-            transition={{
-              ...springConfig,
-              boxShadow: {
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }
-            }}
-            onClick={handleOpenAI}
-            className={cn(
-              "flex flex-col items-center justify-center shrink-0",
-              "h-10 w-10 min-[375px]:h-11 min-[375px]:w-11 rounded-xl",
-              isOpen 
-                ? "bg-primary text-white border border-primary shadow-lg shadow-primary/30" 
-                : "bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/20"
-            )}
-            aria-label="Ask AI assistant"
-          >
-            <MessageCircle className={cn(
-              "h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5",
-              isOpen ? "text-white" : "text-primary"
-            )} />
-            <span className={cn(
-              "text-[8px] min-[375px]:text-[9px] font-semibold mt-0.5",
-              isOpen ? "text-white/90" : "text-primary/80"
-            )}>AI</span>
-          </motion.button>
+          {/* AI Button - Shows voice status when active, otherwise breathing animation */}
+          {(() => {
+            const voice = useVoiceSafe();
+            const isVoiceActive = voice?.isConnected;
+            const isVoiceSpeaking = voice?.isSpeaking;
+            const isVoiceListening = voice?.isListening;
+            
+            return (
+              <motion.button
+                whileTap={{ scale: 0.92 }}
+                animate={isVoiceActive ? {
+                  boxShadow: [
+                    '0 0 0 0 rgba(34, 197, 94, 0)',
+                    '0 0 0 8px rgba(34, 197, 94, 0.3)',
+                    '0 0 0 0 rgba(34, 197, 94, 0)'
+                  ]
+                } : (isOpen ? {} : breathingAnimation)}
+                transition={{
+                  ...springConfig,
+                  boxShadow: {
+                    duration: isVoiceActive ? 1.5 : 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }
+                }}
+                onClick={handleOpenAI}
+                className={cn(
+                  "flex flex-col items-center justify-center shrink-0 relative",
+                  "h-10 w-10 min-[375px]:h-11 min-[375px]:w-11 rounded-xl",
+                  isVoiceActive
+                    ? isVoiceSpeaking
+                      ? "bg-gradient-to-br from-primary to-primary/80 text-white border border-primary shadow-lg shadow-primary/40"
+                      : "bg-gradient-to-br from-green-500 to-green-600 text-white border border-green-500 shadow-lg shadow-green-500/40"
+                    : isOpen 
+                      ? "bg-primary text-white border border-primary shadow-lg shadow-primary/30" 
+                      : "bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/20"
+                )}
+                aria-label={isVoiceActive ? "Voice chat active" : "Ask AI assistant"}
+              >
+                {isVoiceActive ? (
+                  <>
+                    {isVoiceSpeaking ? (
+                      <Volume2 className="h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5 text-white animate-pulse" />
+                    ) : (
+                      <Mic className="h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5 text-white" />
+                    )}
+                    <span className="text-[7px] min-[375px]:text-[8px] font-bold mt-0.5 text-white tracking-wide">
+                      LIVE
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <MessageCircle className={cn(
+                      "h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5",
+                      isOpen ? "text-white" : "text-primary"
+                    )} />
+                    <span className={cn(
+                      "text-[8px] min-[375px]:text-[9px] font-semibold mt-0.5",
+                      isOpen ? "text-white/90" : "text-primary/80"
+                    )}>AI</span>
+                  </>
+                )}
+              </motion.button>
+            );
+          })()}
 
           {/* Center: Motor Info Card (tappable) or Prompt */}
           <motion.button
