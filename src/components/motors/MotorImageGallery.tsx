@@ -18,11 +18,11 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   const [lightboxEnhancedUrls, setLightboxEnhancedUrls] = useState<string[]>([]);
   const [imageLoaded, setImageLoaded] = useState(false);
   
-  // Smart image scaling for gallery - slightly larger threshold
+  // Smart image scaling for gallery - more aggressive for small motor images
   const { scale: mainImageScale, handleImageLoad: handleMainImageLoad } = useSmartImageScale({
-    minExpectedDimension: 500,
-    maxScale: 1.35,
-    defaultScale: 1.1
+    minExpectedDimension: 350,
+    maxScale: 1.6,
+    defaultScale: 1.2
   });
 
   // Reset image loaded state when switching images
@@ -110,14 +110,14 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
       <div className="relative group cursor-pointer" onClick={handleMainImageClick}>
         {/* Shimmer overlay while loading */}
         {!imageLoaded && (
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-stone-50 to-stone-100 overflow-hidden z-10">
+          <div className="absolute inset-0 rounded-xl bg-white overflow-hidden z-10">
             <div className="absolute inset-0 animate-shimmer" />
           </div>
         )}
         <img
           src={validImages[selectedIndex]}
           alt={`${motorTitle} - Image ${selectedIndex + 1}`}
-          className={`${enhanced ? 'h-96' : 'h-48'} w-full rounded-xl object-contain bg-gradient-to-b from-stone-50 to-white mix-blend-multiply transition-all duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`${enhanced ? 'h-96' : 'h-48'} w-full rounded-xl object-contain bg-white transition-all duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={onMainImageLoad}
           onError={() => handleImageError(selectedIndex)}
           style={{ transform: `scale(${mainImageScale})` }}

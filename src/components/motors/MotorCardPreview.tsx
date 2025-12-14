@@ -72,11 +72,11 @@ export default function MotorCardPreview({
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   
-  // Smart image scaling - scales up small images, keeps large ones at 1x
+  // Smart image scaling - more aggressive for small motor images
   const { scale: imageScale, handleImageLoad } = useSmartImageScale({
-    minExpectedDimension: 400,
-    maxScale: 1.4,
-    defaultScale: 1.15
+    minExpectedDimension: 350,
+    maxScale: 1.6,
+    defaultScale: 1.2
   });
 
   // Combined image load handler
@@ -321,15 +321,15 @@ export default function MotorCardPreview({
         <div className="relative">
           {/* Image Section */}
           {imageUrl && (
-            <div className="relative bg-gradient-to-b from-stone-50 to-white p-6">
+            <div className="relative bg-white p-6">
               {/* Shimmer loading overlay */}
               {!imageLoaded && (
-                <div className="absolute inset-0 bg-gradient-to-b from-stone-100 to-stone-50 animate-shimmer z-10" />
+                <div className="absolute inset-0 bg-white animate-shimmer z-10" />
               )}
               <img 
                 src={imageUrl} 
                 alt={title} 
-                className={`h-48 md:h-72 w-full object-contain mix-blend-multiply transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`h-48 md:h-72 w-full object-contain transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                 loading="lazy"
                 decoding="async"
                 onLoad={onImageLoad}
