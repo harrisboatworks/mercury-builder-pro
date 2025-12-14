@@ -107,6 +107,19 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
 
             {/* Right: Actions */}
             <div className="flex items-center justify-end gap-1 md:gap-2 min-w-[40px] keep-flex">
+              {/* Mobile User Icon */}
+              <div className="md:hidden">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => navigate(user ? '/dashboard' : '/auth')}
+                  className="p-1.5 text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
+                  title={user ? "View Dashboard" : "Sign In"}
+                >
+                  <User className="h-5 w-5" />
+                </Button>
+              </div>
+
               {/* User Menu (Desktop) */}
               <div className="hidden md:flex items-center gap-2 keep-flex">
                 {user ? (
