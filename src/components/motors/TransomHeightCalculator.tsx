@@ -27,45 +27,21 @@ export function TransomHeightCalculator({ open, onClose, onApply }: TransomHeigh
   
   return (
     <Dialog open={open} onOpenChange={(o) => { if (!o) onClose(); }}>
-      <DialogContent className="max-w-lg">
+      <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-xl font-semibold flex items-center gap-2">
             📐 Transom Height Guide
           </DialogTitle>
         </DialogHeader>
         
-        <div className="mt-4 space-y-6">
-          {/* Visual Diagram */}
-          <div className="bg-gray-50 rounded-lg p-6">
-            <svg viewBox="0 0 200 150" className="w-full h-40">
-              {/* Boat outline */}
-              <path 
-                d="M 20 60 L 60 40 L 180 40 L 180 80 L 20 80 Z" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2"
-                className="text-gray-400"
-              />
-              
-              {/* Transom */}
-              <line x1="180" y1="40" x2="180" y2="120" stroke="currentColor" strokeWidth="3" className="text-gray-700" />
-              
-              {/* Water line */}
-              <line x1="0" y1="120" x2="200" y2="120" stroke="currentColor" strokeWidth="1" strokeDasharray="5,5" className="text-blue-400" />
-              <text x="10" y="130" className="text-xs fill-blue-500">Water line</text>
-              
-              {/* Measurement arrow */}
-              <line x1="160" y1="80" x2="160" y2="120" stroke="currentColor" strokeWidth="2" className="text-green-600" />
-              <line x1="155" y1="85" x2="160" y2="80" stroke="currentColor" strokeWidth="2" className="text-green-600" />
-              <line x1="165" y1="85" x2="160" y2="80" stroke="currentColor" strokeWidth="2" className="text-green-600" />
-              <line x1="155" y1="115" x2="160" y2="120" stroke="currentColor" strokeWidth="2" className="text-green-600" />
-              <line x1="165" y1="115" x2="160" y2="120" stroke="currentColor" strokeWidth="2" className="text-green-600" />
-              
-              {/* Labels */}
-              <text x="100" y="35" className="text-xs fill-gray-500 text-center">BOAT</text>
-              <text x="185" y="60" className="text-xs fill-gray-700">Transom</text>
-              <text x="130" y="100" className="text-xs fill-green-600">Measure here</text>
-            </svg>
+        <div className="mt-6 space-y-6">
+          {/* Visual Diagram - Real image */}
+          <div className="bg-gray-50 rounded-lg p-4">
+            <img 
+              src="/lovable-uploads/cb45570a-2b96-4b08-af3d-412c7607a66e.png" 
+              alt="Transom height measurement guide showing how to measure from transom top to waterline"
+              className="w-full max-w-md mx-auto rounded-lg"
+            />
           </div>
           
           {/* Instructions */}
@@ -156,7 +132,7 @@ export function TransomHeightCalculator({ open, onClose, onApply }: TransomHeigh
           {/* Actions */}
           <div className="flex gap-3 pt-4">
             <Button variant="outline" onClick={onClose} className="flex-1">
-              Cancel
+              ← Back
             </Button>
             <Button 
               onClick={handleApply} 
