@@ -230,7 +230,7 @@ export const UnifiedMobileBar: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
-  const { openChat, closeChat, isOpen, isLoading } = useAIChat();
+  const { openChat, closeChat, isOpen, isLoading, unreadCount } = useAIChat();
   const voice = useVoiceSafe(); // Fix: Move hook to top level (was inside JSX)
   const { triggerHaptic } = useHapticFeedback();
   const { promo } = useActiveFinancingPromo();
@@ -836,6 +836,17 @@ export const UnifiedMobileBar: React.FC = () => {
             )}
             aria-label={voice?.isConnected ? "Voice chat active" : "Ask AI assistant"}
           >
+            {/* Unread badge */}
+            {unreadCount > 0 && !isOpen && !voice?.isConnected && (
+              <motion.span
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 text-white text-[9px] font-bold flex items-center justify-center shadow-md z-10"
+              >
+                {unreadCount > 9 ? '9+' : unreadCount}
+              </motion.span>
+            )}
+            
             {voice?.isConnected ? (
               <>
                 {voice?.isSpeaking ? (
@@ -846,6 +857,20 @@ export const UnifiedMobileBar: React.FC = () => {
                 <span className="text-[7px] min-[375px]:text-[8px] font-bold mt-0.5 text-white tracking-wide">
                   LIVE
                 </span>
+              </>
+            ) : isLoading && !isOpen ? (
+              <>
+                <div className="flex gap-0.5 items-center">
+                  {[0, 1, 2].map(i => (
+                    <motion.span
+                      key={i}
+                      className="w-1.5 h-1.5 bg-primary rounded-full"
+                      animate={{ y: [0, -3, 0] }}
+                      transition={{ duration: 0.5, repeat: Infinity, delay: i * 0.1 }}
+                    />
+                  ))}
+                </div>
+                <span className="text-[7px] min-[375px]:text-[8px] font-semibold mt-0.5 text-primary/80">...</span>
               </>
             ) : (
               <>

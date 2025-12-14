@@ -3,6 +3,7 @@ import { MessageSquare, Sparkles } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useIsMobileOrTablet } from '@/hooks/use-mobile';
+import { useAIChat } from './GlobalAIChat';
 import { motion } from 'framer-motion';
 
 interface AIChatButtonProps {
@@ -14,6 +15,7 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
   const location = useLocation();
   const { state } = useQuote();
   const isMobileOrTablet = useIsMobileOrTablet();
+  const { unreadCount, isLoading } = useAIChat();
   const [hasInteracted, setHasInteracted] = useState(false);
   const [showPulse, setShowPulse] = useState(true);
 
@@ -71,15 +73,41 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
         <span className="absolute inset-0 rounded-full bg-foreground/30 animate-ping" />
       )}
       
-      {/* Icon */}
+      {/* Unread badge */}
+      {unreadCount > 0 && (
+        <motion.span
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-red-500 text-white text-xs font-bold flex items-center justify-center shadow-lg z-10"
+        >
+          {unreadCount > 9 ? '9+' : unreadCount}
+        </motion.span>
+      )}
+      
+      {/* Icon or Typing Indicator */}
       <div className="relative flex items-center justify-center w-6 h-6">
-        <MessageSquare className="w-5 h-5 transition-transform group-hover:scale-110" />
-        <Sparkles className="absolute -top-1 -right-1 w-3 h-3 text-amber-400" />
+        {isLoading ? (
+          <div className="flex gap-0.5 items-center">
+            {[0, 1, 2].map(i => (
+              <motion.span
+                key={i}
+                className="w-1.5 h-1.5 bg-background rounded-full"
+                animate={{ y: [0, -4, 0] }}
+                transition={{ duration: 0.5, repeat: Infinity, delay: i * 0.1 }}
+              />
+            ))}
+          </div>
+        ) : (
+          <>
+            <MessageSquare className="w-5 h-5 transition-transform group-hover:scale-110" />
+            <Sparkles className="absolute -top-1 -right-1 w-3 h-3 text-amber-400" />
+          </>
+        )}
       </div>
       
       {/* Text - visible on desktop */}
       <span className="text-sm font-medium whitespace-nowrap">
-        {getContextualText()}
+        {isLoading ? 'AI is thinking...' : getContextualText()}
       </span>
     </motion.button>
   );

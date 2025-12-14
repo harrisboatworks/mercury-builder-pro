@@ -40,6 +40,7 @@ interface EnhancedChatWidgetProps {
   onClose: () => void;
   initialMessage?: string;
   onLoadingChange?: (loading: boolean) => void;
+  onAIResponse?: () => void;
 }
 
 // Typing indicator with bouncing dots
@@ -62,7 +63,7 @@ const TypingIndicator = () => (
 );
 
 export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedChatWidgetProps>(
-  ({ isOpen, onClose, initialMessage, onLoadingChange }, ref) => {
+  ({ isOpen, onClose, initialMessage, onLoadingChange, onAIResponse }, ref) => {
     const [isMinimized, setIsMinimized] = useState(false);
     const [messages, setMessages] = useState<Message[]>([]);
     const [inputText, setInputText] = useState('');
@@ -389,6 +390,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
             ]);
             
             setIsLoading(false);
+            onAIResponse?.(); // Notify parent that AI responded
           },
           onError: (error) => {
             console.error('Stream error:', error);
