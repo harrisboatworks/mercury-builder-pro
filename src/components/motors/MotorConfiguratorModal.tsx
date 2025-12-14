@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useCallback, lazy, Suspense } from 'react';
+import React, { useState, useMemo, useEffect, useCallback, lazy, Suspense, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Button } from '@/components/ui/button';
 import { MotorGroup } from '@/hooks/useGroupedMotors';
@@ -53,6 +53,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
   const [imagesLoaded, setImagesLoaded] = useState({ tiller: false, remote: false });
   const { dispatch } = useQuote();
   const { triggerHaptic } = useHapticFeedback();
+  const isNavigatingBack = useRef(false);
   
   // Reset when modal opens and sync configurator step
   useEffect(() => {
@@ -204,6 +205,12 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
   useEffect(() => {
     if (!open || !group || step !== 'start') return;
     
+    // Don't auto-skip when navigating back
+    if (isNavigatingBack.current) {
+      isNavigatingBack.current = false;
+      return;
+    }
+    
     // Large motors (150+ HP) are all electric start - auto-skip
     if (group.hp >= 150) {
       setConfig(prev => ({ ...prev, startType: 'electric' }));
@@ -237,6 +244,12 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
   useEffect(() => {
     if (!open || !group || step !== 'shaft') return;
     
+    // Don't auto-skip when navigating back
+    if (isNavigatingBack.current) {
+      isNavigatingBack.current = false;
+      return;
+    }
+    
     if (availableOptions.shaftLengths.length === 1) {
       setConfig(prev => ({ ...prev, shaftLength: availableOptions.shaftLengths[0] }));
       setStep('control');
@@ -248,6 +261,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     const steps: Step[] = ['start', 'shaft', 'control', 'features', 'result'];
     const currentIndex = steps.indexOf(step);
     if (currentIndex > 0) {
+      isNavigatingBack.current = true;
       const prevStep = steps[currentIndex - 1];
       setStep(prevStep);
       dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: prevStep });
