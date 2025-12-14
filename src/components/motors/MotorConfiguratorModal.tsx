@@ -675,7 +675,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
               )}
               
               {step === 'result' && filteredVariants.length > 0 && (
-                <div className="absolute bottom-0 left-0 right-0 flex justify-start p-4 pt-3 border-t bg-background">
+                <div className="absolute bottom-2 left-0 right-0 flex justify-start p-4 pt-3 border-t bg-background">
                   <Button variant="ghost" onClick={handleBack}>
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Back to Options
