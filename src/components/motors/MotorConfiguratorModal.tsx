@@ -273,6 +273,44 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
       dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: 'control' });
     }
   }, [open, group, step, availableOptions.shaftLengths, dispatch]);
+
+  // Auto-skip control step if only one control type available
+  useEffect(() => {
+    if (!open || !group || step !== 'control') return;
+    
+    // Don't auto-skip when navigating back
+    if (isNavigatingBack.current) {
+      isNavigatingBack.current = false;
+      return;
+    }
+    
+    // Large motors (150+ HP) are always remote
+    if (group.hp >= 150) {
+      setConfig(prev => ({ ...prev, controlType: 'remote' }));
+      if (!availableOptions.hasCT && !availableOptions.hasPT) {
+        setStep('result');
+        dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: 'result' });
+      } else {
+        setStep('features');
+        dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: 'features' });
+      }
+      return;
+    }
+    
+    const onlyTiller = availableOptions.hasTiller && !availableOptions.hasRemote;
+    const onlyRemote = availableOptions.hasRemote && !availableOptions.hasTiller;
+    
+    if (onlyTiller || onlyRemote) {
+      setConfig(prev => ({ ...prev, controlType: onlyTiller ? 'tiller' : 'remote' }));
+      if (!availableOptions.hasCT && !availableOptions.hasPT) {
+        setStep('result');
+        dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: 'result' });
+      } else {
+        setStep('features');
+        dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: 'features' });
+      }
+    }
+  }, [open, group, step, availableOptions.hasTiller, availableOptions.hasRemote, availableOptions.hasCT, availableOptions.hasPT, dispatch]);
   
   const handleBack = () => {
     const steps: Step[] = ['start', 'shaft', 'control', 'features', 'result'];
