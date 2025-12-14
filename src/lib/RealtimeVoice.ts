@@ -303,21 +303,32 @@ export class RealtimeVoiceChat {
       const offer = await this.pc.createOffer();
       await this.pc.setLocalDescription(offer);
 
-      // Connect to OpenAI's Realtime API
-      const baseUrl = "https://api.openai.com/v1/realtime";
-      const model = "gpt-4o-realtime-preview-2024-12-17";
-      const sdpResponse = await fetch(`${baseUrl}?model=${model}`, {
-        method: "POST",
-        body: offer.sdp,
-        headers: {
-          Authorization: `Bearer ${EPHEMERAL_KEY}`,
-          "Content-Type": "application/sdp"
-        },
-      });
+      // Proxy SDP exchange through edge function (avoids CORS issues)
+      console.log('Proxying SDP exchange through edge function...');
+      const sdpResponse = await fetch(
+        `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/realtime-sdp-exchange`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            sdpOffer: offer.sdp,
+            ephemeralKey: EPHEMERAL_KEY
+          }),
+        }
+      );
+
+      if (!sdpResponse.ok) {
+        const errorData = await sdpResponse.text();
+        console.error('SDP exchange failed:', errorData);
+        throw new Error(`SDP exchange failed: ${sdpResponse.status}`);
+      }
+
+      const answerSdp = await sdpResponse.text();
+      console.log('SDP exchange successful');
 
       const answer = {
         type: "answer" as RTCSdpType,
-        sdp: await sdpResponse.text(),
+        sdp: answerSdp,
       };
       
       await this.pc.setRemoteDescription(answer);
