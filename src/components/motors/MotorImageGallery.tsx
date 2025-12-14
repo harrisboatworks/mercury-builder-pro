@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, X, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { enhanceImageUrl, isThumbnailUrl } from '@/lib/image-utils';
@@ -18,12 +18,60 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   const [lightboxEnhancedUrls, setLightboxEnhancedUrls] = useState<string[]>([]);
   const [imageLoaded, setImageLoaded] = useState(false);
   
+  // Hover zoom state
+  const [isHovered, setIsHovered] = useState(false);
+  
+  // Mobile pinch-to-zoom state
+  const [pinchScale, setPinchScale] = useState(1);
+  const [initialPinchDistance, setInitialPinchDistance] = useState<number | null>(null);
+  const [basePinchScale, setBasePinchScale] = useState(1);
+  
   // Smart image scaling for gallery - aggressive scaling for small motor images
   const { scale: mainImageScale, handleImageLoad: handleMainImageLoad } = useSmartImageScale({
     minExpectedDimension: 600,
     maxScale: 2.0,
     defaultScale: 1.5
   });
+  
+  // Calculate distance between two touch points
+  const getTouchDistance = useCallback((touches: React.TouchList): number => {
+    if (touches.length < 2) return 0;
+    const dx = touches[0].clientX - touches[1].clientX;
+    const dy = touches[0].clientY - touches[1].clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+  }, []);
+  
+  // Touch event handlers for pinch-to-zoom
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      const distance = getTouchDistance(e.touches);
+      setInitialPinchDistance(distance);
+      setBasePinchScale(pinchScale);
+    }
+  }, [getTouchDistance, pinchScale]);
+  
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    if (e.touches.length === 2 && initialPinchDistance !== null) {
+      e.preventDefault();
+      const currentDistance = getTouchDistance(e.touches);
+      const scaleChange = currentDistance / initialPinchDistance;
+      const newScale = Math.min(3, Math.max(1, basePinchScale * scaleChange));
+      setPinchScale(newScale);
+    }
+  }, [getTouchDistance, initialPinchDistance, basePinchScale]);
+  
+  const handleTouchEnd = useCallback(() => {
+    setInitialPinchDistance(null);
+    // Reset pinch scale after a delay if back to 1
+    if (pinchScale <= 1.1) {
+      setPinchScale(1);
+    }
+  }, [pinchScale]);
+  
+  // Calculate combined scale: base * hover * pinch
+  const effectiveScale = isHovered ? mainImageScale * 1.1 : mainImageScale;
+  const finalScale = effectiveScale * pinchScale;
 
   // Reset image loaded state when switching images
   useEffect(() => {
@@ -115,7 +163,15 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
           </div>
         )}
         {/* Fixed-height container that centers the scaled image */}
-        <div className={`${enhanced ? 'h-96' : 'h-48'} w-full bg-white rounded-xl flex items-center justify-center overflow-hidden border border-stone-100 shadow-sm`}>
+        <div 
+          className={`${enhanced ? 'h-96' : 'h-48'} w-full bg-white rounded-xl flex items-center justify-center overflow-hidden border border-stone-100 shadow-sm`}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          style={{ touchAction: 'pan-y' }}
+        >
           <img
             src={validImages[selectedIndex]}
             alt={`${motorTitle} - Image ${selectedIndex + 1}`}
@@ -123,7 +179,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
             onLoad={onMainImageLoad}
             onError={() => handleImageError(selectedIndex)}
             style={{ 
-              transform: `scale(${mainImageScale})`,
+              transform: `scale(${finalScale})`,
               transformOrigin: 'center center'
             }}
           />
