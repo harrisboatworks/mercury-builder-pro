@@ -23,6 +23,7 @@ interface TradeInValuationProps {
 export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp, currentMotorYear }: TradeInValuationProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
+  const [showValidation, setShowValidation] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll to form when "Yes, I have a trade-in" is clicked
@@ -36,6 +37,30 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       }, 100);
     }
   }, [tradeInInfo.hasTradeIn]);
+
+  // Clear validation when all required fields are filled
+  useEffect(() => {
+    if (showValidation && tradeInInfo.brand && tradeInInfo.year && tradeInInfo.horsepower && tradeInInfo.condition) {
+      setShowValidation(false);
+    }
+  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition, showValidation]);
+
+  // Check if required fields are missing
+  const missingFields = {
+    brand: !tradeInInfo.brand,
+    year: !tradeInInfo.year,
+    horsepower: !tradeInInfo.horsepower,
+    condition: !tradeInInfo.condition
+  };
+  const hasMissingFields = Object.values(missingFields).some(Boolean);
+
+  const handleValidatedEstimate = () => {
+    if (hasMissingFields) {
+      setShowValidation(true);
+      return;
+    }
+    handleGetEstimate();
+  };
 
 
   const brandOptions = [
@@ -245,7 +270,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     value={tradeInInfo.brand} 
                     onValueChange={(value) => onTradeInChange({ ...tradeInInfo, brand: value })}
                   >
-                    <SelectTrigger className="min-h-[48px] rounded-sm border-gray-300 dark:border-gray-700 font-light">
+                    <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
+                      showValidation && missingFields.brand 
+                        ? 'border-red-500 ring-1 ring-red-500' 
+                        : 'border-gray-300 dark:border-gray-700'
+                    }`}>
                       <SelectValue placeholder="Select brand" />
                     </SelectTrigger>
                     <SelectContent>
@@ -254,6 +283,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       ))}
                     </SelectContent>
                   </Select>
+                  {showValidation && missingFields.brand && (
+                    <p className="text-sm text-red-600 font-light mt-1">Required</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -264,7 +296,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     value={tradeInInfo.year?.toString() || ''} 
                     onValueChange={(value) => onTradeInChange({ ...tradeInInfo, year: parseInt(value) })}
                   >
-                    <SelectTrigger className="min-h-[48px] rounded-sm border-gray-300 dark:border-gray-700 font-light">
+                    <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
+                      showValidation && missingFields.year 
+                        ? 'border-red-500 ring-1 ring-red-500' 
+                        : 'border-gray-300 dark:border-gray-700'
+                    }`}>
                       <SelectValue placeholder="Select year" />
                     </SelectTrigger>
                     <SelectContent>
@@ -273,6 +309,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       ))}
                     </SelectContent>
                   </Select>
+                  {showValidation && missingFields.year && (
+                    <p className="text-sm text-red-600 font-light mt-1">Required</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -287,8 +326,15 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     placeholder="e.g., 115"
                     min="1"
                     max="600"
-                    className="min-h-[48px] rounded-sm border-gray-300 dark:border-gray-700 font-light"
+                    className={`min-h-[48px] rounded-sm font-light ${
+                      showValidation && missingFields.horsepower 
+                        ? 'border-red-500 ring-1 ring-red-500' 
+                        : 'border-gray-300 dark:border-gray-700'
+                    }`}
                   />
+                  {showValidation && missingFields.horsepower && (
+                    <p className="text-sm text-red-600 font-light mt-1">Required</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -324,7 +370,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 <Label className="text-base font-light tracking-wide text-gray-900 dark:text-gray-100">
                   Motor Condition *
                 </Label>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 ${
+                  showValidation && missingFields.condition ? 'ring-2 ring-red-500 rounded-sm p-2' : ''
+                }`}>
                   {conditionOptions.map((option) => (
                     <motion.div
                       key={option.value}
@@ -362,14 +410,32 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </motion.div>
                   ))}
                 </div>
+                {showValidation && missingFields.condition && (
+                  <p className="text-sm text-red-600 font-light mt-1">Please select a condition</p>
+                )}
               </div>
+
+              {/* Validation Alert */}
+              {showValidation && hasMissingFields && (
+                <Alert className="border-red-200 bg-red-50">
+                  <AlertCircle className="w-4 h-4 text-red-600" />
+                  <AlertDescription className="text-red-700 font-light">
+                    Please complete all required fields: {[
+                      missingFields.brand && 'Brand',
+                      missingFields.year && 'Year',
+                      missingFields.horsepower && 'Horsepower',
+                      missingFields.condition && 'Condition'
+                    ].filter(Boolean).join(', ')}
+                  </AlertDescription>
+                </Alert>
+              )}
 
               {/* Get Estimate Button */}
               <Button 
-                onClick={handleGetEstimate}
-                disabled={!tradeInInfo.brand || !tradeInInfo.year || !tradeInInfo.horsepower || !tradeInInfo.condition || isLoading}
+                onClick={handleValidatedEstimate}
+                disabled={isLoading}
                 className={`w-full min-h-[56px] border-2 rounded-sm font-light text-base tracking-widest uppercase transition-all ${
-                  !tradeInInfo.brand || !tradeInInfo.year || !tradeInInfo.horsepower || !tradeInInfo.condition || isLoading
+                  isLoading
                     ? 'border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 cursor-not-allowed' 
                     : 'border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 hover:bg-gray-900 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900'
                 }`}
