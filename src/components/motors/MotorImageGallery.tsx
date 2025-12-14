@@ -25,6 +25,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   const [pinchScale, setPinchScale] = useState(1);
   const [initialPinchDistance, setInitialPinchDistance] = useState<number | null>(null);
   const [basePinchScale, setBasePinchScale] = useState(1);
+  const [lastTapTime, setLastTapTime] = useState(0);
   
   // Smart image scaling for gallery - aggressive scaling for small motor images
   const { scale: rawMainImageScale, handleImageLoad: handleMainImageLoad } = useSmartImageScale({
@@ -45,15 +46,31 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
     return Math.sqrt(dx * dx + dy * dy);
   }, []);
   
-  // Touch event handlers for pinch-to-zoom
+  // Touch event handlers for pinch-to-zoom and double-tap to reset
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    // Double-tap to reset zoom (single finger)
+    if (e.touches.length === 1) {
+      const now = Date.now();
+      const DOUBLE_TAP_DELAY = 300;
+      
+      if (now - lastTapTime < DOUBLE_TAP_DELAY && pinchScale > 1) {
+        // Double-tap detected - reset zoom with smooth transition
+        e.preventDefault();
+        setPinchScale(1);
+        setLastTapTime(0);
+      } else {
+        setLastTapTime(now);
+      }
+    }
+    
+    // Pinch-to-zoom (two fingers)
     if (e.touches.length === 2) {
       e.preventDefault();
       const distance = getTouchDistance(e.touches);
       setInitialPinchDistance(distance);
       setBasePinchScale(pinchScale);
     }
-  }, [getTouchDistance, pinchScale]);
+  }, [getTouchDistance, pinchScale, lastTapTime]);
   
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
     if (e.touches.length === 2 && initialPinchDistance !== null) {
