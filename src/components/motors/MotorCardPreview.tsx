@@ -68,6 +68,7 @@ export default function MotorCardPreview({
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [galleryImages, setGalleryImages] = useState<string[]>([]);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   
@@ -77,6 +78,12 @@ export default function MotorCardPreview({
     maxScale: 1.4,
     defaultScale: 1.15
   });
+
+  // Combined image load handler
+  const onImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    handleImageLoad(e);
+    setImageLoaded(true);
+  };
 
   // Dispatch preview motor when modal opens/closes
   useEffect(() => {
@@ -315,13 +322,17 @@ export default function MotorCardPreview({
           {/* Image Section */}
           {imageUrl && (
             <div className="relative bg-gradient-to-b from-stone-50 to-white p-6">
+              {/* Shimmer loading overlay */}
+              {!imageLoaded && (
+                <div className="absolute inset-0 bg-gradient-to-b from-stone-100 to-stone-50 animate-shimmer z-10" />
+              )}
               <img 
                 src={imageUrl} 
                 alt={title} 
-                className="h-48 md:h-72 w-full object-contain mix-blend-multiply transition-transform duration-300"
+                className={`h-48 md:h-72 w-full object-contain mix-blend-multiply transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                 loading="lazy"
                 decoding="async"
-                onLoad={handleImageLoad}
+                onLoad={onImageLoad}
                 style={{ transform: `scale(${imageScale})` }}
               />
               

@@ -564,6 +564,34 @@ html {
     }
   }
 
+  /* Image Shimmer Loading Effect */
+  @keyframes shimmer-sweep {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animate-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+    animation: shimmer-sweep 1.5s infinite ease-in-out;
+  }
+
   /* Ripple effect animation */
   .ripple-effect {
     position: absolute;
