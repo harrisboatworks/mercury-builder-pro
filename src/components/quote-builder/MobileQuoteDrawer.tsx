@@ -11,7 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Gift, Shield, CreditCard, ChevronRight, X, Phone, MessageSquare, Mail } from 'lucide-react';
 import { toast } from 'sonner';
-
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 interface MobileQuoteDrawerProps {
   isOpen: boolean;
   onClose: () => void;
@@ -28,6 +28,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
   const { state } = useQuote();
   const { promotions } = useActivePromotions();
   const { promo: financingPromo } = useActiveFinancingPromo();
+  const { triggerHaptic } = useHapticFeedback();
 
   // Use preview motor if available, otherwise selected motor (matches UnifiedMobileBar behavior)
   const displayMotor = state.previewMotor || state.motor;
@@ -274,6 +275,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                 <div className="grid grid-cols-3 gap-2">
                   <a
                     href="tel:(905) 342-2153"
+                    onClick={() => triggerHaptic('light')}
                     className="flex flex-col items-center gap-1.5 p-3 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all"
                   >
                     <Phone className="h-5 w-5 text-muted-foreground" />
@@ -282,6 +284,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                   <a
                     href="sms:647-952-2153"
                     onClick={(e) => {
+                      triggerHaptic('light');
                       const canSendSMS = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
                       if (!canSendSMS) {
                         e.preventDefault();
@@ -296,6 +299,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                   </a>
                   <a
                     href="mailto:info@harrisboatworks.ca"
+                    onClick={() => triggerHaptic('light')}
                     className="flex flex-col items-center gap-1.5 p-3 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all"
                   >
                     <Mail className="h-5 w-5 text-muted-foreground" />
