@@ -28,12 +28,15 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
   
   // Format feature pills
   const featurePills: string[] = [];
-  if (features.hasElectricStart && features.hasManualStart) {
-    featurePills.push('Electric or Manual Start');
-  } else if (features.hasElectricStart) {
-    featurePills.push('Electric Start');
-  } else if (features.hasManualStart) {
-    featurePills.push('Manual Start');
+  // Only show start type for smaller motors where it's a differentiator
+  if (hp < 40) {
+    if (features.hasElectricStart && features.hasManualStart) {
+      featurePills.push('Electric or Manual Start');
+    } else if (features.hasElectricStart) {
+      featurePills.push('Electric Start');
+    } else if (features.hasManualStart) {
+      featurePills.push('Manual Start');
+    }
   }
   
   if (features.shaftLengths.length > 1) {
