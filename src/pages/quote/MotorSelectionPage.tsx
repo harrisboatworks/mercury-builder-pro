@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -10,6 +10,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 import { useExitIntent } from '@/hooks/useExitIntent';
 import { useGroupedMotors } from '@/hooks/useGroupedMotors';
+import { usePullToRefresh } from '@/hooks/usePullToRefresh';
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
@@ -21,6 +22,7 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { MotorRecommendationQuiz } from '@/components/quote-builder/MotorRecommendationQuiz';
 import { PromoReminderModal } from '@/components/quote-builder/PromoReminderModal';
+import { PullToRefreshIndicator } from '@/components/ui/pull-to-refresh';
 import { fuzzySearch } from '@/lib/fuzzySearch';
 import { preloadConfiguratorImages } from '@/lib/configurator-preload';
 import '@/styles/premium-motor.css';
@@ -152,75 +154,88 @@ function MotorSelectionContent() {
     detail_url: motor.detail_url
   })));
 
-  // Load motors and promotions from Supabase (same as original MotorSelection)
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        // Load motors with hero media data
-        const { data: motorsData, error: motorsError } = await supabase
-          .from('motor_models')
-          .select(`
-            *,
-            hero_media:motor_media!hero_media_id(
-              media_url
-            )
-          `)
-          .order('horsepower', { ascending: true });
+  // Load motors and promotions from Supabase
+  const loadData = useCallback(async () => {
+    try {
+      // Load motors with hero media data
+      const { data: motorsData, error: motorsError } = await supabase
+        .from('motor_models')
+        .select(`
+          *,
+          hero_media:motor_media!hero_media_id(
+            media_url
+          )
+        `)
+        .order('horsepower', { ascending: true });
 
-        if (motorsError) throw motorsError;
-        
-        // Filter out Jet models and excluded motors (same as original)
-        const filteredMotors = (motorsData?.filter(motor => 
-          !motor.model?.toLowerCase().includes('jet') &&
-          motor.horsepower <= 600 && // HP cap same as original
-          motor.availability !== 'Exclude' // Exclude motors marked as "Exclude"
-        ) || []).map(motor => {
-          // Normalize features: extract title if features are objects
-          if (motor.features && Array.isArray(motor.features) && motor.features.length > 0) {
-            const firstFeature = motor.features[0];
-            if (typeof firstFeature === 'object' && firstFeature !== null && 'title' in firstFeature) {
-              motor.features = motor.features.map((f: any) => 
-                typeof f === 'object' && f !== null && f.title ? f.title : String(f)
-              );
-            }
+      if (motorsError) throw motorsError;
+      
+      // Filter out Jet models and excluded motors (same as original)
+      const filteredMotors = (motorsData?.filter(motor => 
+        !motor.model?.toLowerCase().includes('jet') &&
+        motor.horsepower <= 600 && // HP cap same as original
+        motor.availability !== 'Exclude' // Exclude motors marked as "Exclude"
+      ) || []).map(motor => {
+        // Normalize features: extract title if features are objects
+        if (motor.features && Array.isArray(motor.features) && motor.features.length > 0) {
+          const firstFeature = motor.features[0];
+          if (typeof firstFeature === 'object' && firstFeature !== null && 'title' in firstFeature) {
+            motor.features = motor.features.map((f: any) => 
+              typeof f === 'object' && f !== null && f.title ? f.title : String(f)
+            );
           }
-          return motor;
-        });
-        
-        setMotors(filteredMotors);
+        }
+        return motor;
+      });
+      
+      setMotors(filteredMotors);
 
-        // Load promotions (same as original)
-        const { data: promoData, error: promoError } = await supabase
-          .from('promotions')
-          .select('*')
-          .eq('is_active', true)
-          .order('priority', { ascending: false });
+      // Load promotions (same as original)
+      const { data: promoData, error: promoError } = await supabase
+        .from('promotions')
+        .select('*')
+        .eq('is_active', true)
+        .order('priority', { ascending: false });
 
-        if (promoError) throw promoError;
-        setPromotions(promoData || []);
+      if (promoError) throw promoError;
+      setPromotions(promoData || []);
 
-        // Load promotion rules (same as original)
-        const { data: rulesData, error: rulesError } = await supabase
-          .from('promotions_rules')
-          .select('*');
+      // Load promotion rules (same as original)
+      const { data: rulesData, error: rulesError } = await supabase
+        .from('promotions_rules')
+        .select('*');
 
-        if (rulesError) throw rulesError;
-        setPromotionRules(rulesData || []);
-        
-      } catch (error) {
-        console.error('Error loading motor data:', error);
-        toast({
-          title: "Error loading motors",
-          description: "Please refresh the page to try again.",
-          variant: "destructive"
-        });
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadData();
+      if (rulesError) throw rulesError;
+      setPromotionRules(rulesData || []);
+      
+    } catch (error) {
+      console.error('Error loading motor data:', error);
+      toast({
+        title: "Error loading motors",
+        description: "Please refresh the page to try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
+    }
   }, [toast]);
+
+  // Initial data load
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
+
+  // Pull-to-refresh for mobile
+  const { pullDistance, isRefreshing } = usePullToRefresh({
+    onRefresh: async () => {
+      await loadData();
+      toast({
+        title: "Motors refreshed",
+        description: "Showing latest inventory and prices."
+      });
+    },
+    disabled: loading
+  });
 
   // Preload configurator images after motors load (non-blocking)
   useEffect(() => {
@@ -507,6 +522,12 @@ function MotorSelectionContent() {
     <PageTransition>
       <FinancingProvider>
         <QuoteLayout showProgress={false}>
+        {/* Pull-to-refresh indicator for mobile */}
+        <PullToRefreshIndicator 
+          pullDistance={pullDistance} 
+          isRefreshing={isRefreshing} 
+        />
+        
         {/* Search Bar - Elegant minimal style */}
         <div className="sticky top-14 sm:top-16 md:top-[72px] z-40 bg-stone-50 border-b border-gray-200">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
