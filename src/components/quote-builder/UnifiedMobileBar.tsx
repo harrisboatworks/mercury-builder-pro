@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ChevronUp, MessageCircle, Phone, Sparkles, ArrowRight, Shield, Award, DollarSign, Check, Flag, Heart, RefreshCw, Mic, Volume2 } from 'lucide-react';
+import { ChevronUp, MessageCircle, Phone, Sparkles, ArrowRight, Shield, Award, DollarSign, Check, Flag, Heart, RefreshCw, Mic, Volume2, Eye } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAIChat } from '@/components/chat/GlobalAIChat';
@@ -12,6 +12,7 @@ import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { MobileQuoteDrawer } from './MobileQuoteDrawer';
 import { cn } from '@/lib/utils';
+import { getHPRange, HP_SPECIFIC_MESSAGES, MOTOR_FAMILY_TIPS, getMotorFamilyKey } from '@/components/chat/conversationalMessages';
 
 // Nudge types for different visual treatments
 type NudgeType = 'tip' | 'success' | 'celebration' | 'progress' | 'social-proof' | 'info';
@@ -417,6 +418,25 @@ export const UnifiedMobileBar: React.FC = () => {
     prevTradeInRef.current = state.tradeInInfo?.estimatedValue;
   }, [state.tradeInInfo?.estimatedValue, triggerHaptic]);
 
+  // Generate motor-specific social proof with seeded randomness
+  const getMotorSocialProof = (motorId: string, hp: number): { message: string; icon: string } => {
+    // Simple seeded random based on motor ID for consistency
+    let hash = 0;
+    for (let i = 0; i < motorId.length; i++) {
+      hash = ((hash << 5) - hash) + motorId.charCodeAt(i);
+      hash |= 0;
+    }
+    const viewCount = 8 + Math.abs(hash % 25); // 8-32 views
+    
+    const hpRange = getHPRange(hp);
+    if (hpRange === 'high-power') {
+      return { message: `${viewCount} pros checked this out today`, icon: 'eye' };
+    } else if (hpRange === 'portable') {
+      return { message: `Popular with cottage owners — ${viewCount} views`, icon: 'eye' };
+    }
+    return { message: `${viewCount} Ontario boaters viewed this week`, icon: 'eye' };
+  };
+
   // Smart nudge selection with priority layers
   const activeNudge = useMemo((): { message: string; type: NudgeType; icon?: string } | null => {
     const nudges = pageConfig.nudges;
@@ -424,11 +444,36 @@ export const UnifiedMobileBar: React.FC = () => {
 
     // Priority 0: Configurator-specific tips - instantly react to step changes
     if (state.configuratorStep && location.pathname === '/quote/motor-selection' && nudges.configuratorTips) {
-      // Find tip for current configurator step (instant, not time-based)
       const stepTip = nudges.configuratorTips.find(t => t.step === state.configuratorStep);
       if (stepTip) {
         return { message: stepTip.message, type: 'tip', icon: stepTip.icon };
       }
+    }
+
+    // Priority 0.5: HP-aware tips + Social proof when previewing a motor
+    if (isPreview && displayMotor?.hp) {
+      const hpRange = getHPRange(displayMotor.hp);
+      const hpMessages = HP_SPECIFIC_MESSAGES[hpRange] || [];
+      
+      // Get motor family tips if available (Pro XS, Verado, etc.)
+      const familyKey = getMotorFamilyKey(displayMotor.model || '');
+      const familyTips = familyKey ? MOTOR_FAMILY_TIPS[familyKey] || [] : [];
+      
+      // Generate motor-specific social proof
+      const socialProof = getMotorSocialProof(displayMotor.id || 'default', displayMotor.hp);
+      
+      // Combine all messages: HP tips + Family tips + Social proof + CTA
+      const allMessages: { message: string; icon: string; type: NudgeType }[] = [
+        ...hpMessages.map(m => ({ message: m.message, icon: m.icon || 'check', type: 'tip' as NudgeType })),
+        ...familyTips.map(m => ({ message: m.message, icon: m.icon || 'sparkles', type: 'tip' as NudgeType })),
+        { message: socialProof.message, icon: socialProof.icon, type: 'social-proof' as NudgeType },
+        { message: "Like what you see? Tap Configure!", icon: 'sparkles', type: 'tip' as NudgeType },
+      ];
+      
+      // Rotate every 5 seconds
+      const msgIndex = Math.floor(idleSeconds / 5) % allMessages.length;
+      const msg = allMessages[msgIndex];
+      return { message: msg.message, type: msg.type, icon: msg.icon };
     }
 
     // Priority 1: Micro-celebration for recent actions
@@ -480,7 +525,7 @@ export const UnifiedMobileBar: React.FC = () => {
   }, [
     pageConfig.nudges, recentAction, idleSeconds, hasMotor, quoteProgress.remaining,
     location.pathname, state.tradeInInfo?.estimatedValue, state.selectedOptions?.length,
-    isPreview
+    isPreview, displayMotor?.hp, displayMotor?.id, displayMotor?.model, state.configuratorStep
   ]);
 
   // Helper to render nudge icon
@@ -495,6 +540,7 @@ export const UnifiedMobileBar: React.FC = () => {
       case 'flag': return <Flag className={className} />;
       case 'heart': return <Heart className={className} />;
       case 'refresh': return <RefreshCw className={className} />;
+      case 'eye': return <Eye className={className} />;
       default: return null;
     }
   };
