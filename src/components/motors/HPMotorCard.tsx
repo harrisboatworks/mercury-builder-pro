@@ -2,7 +2,7 @@ import React from 'react';
 import { MotorGroup } from '@/hooks/useGroupedMotors';
 import { StockBadge } from '@/components/inventory/StockBadge';
 import mercuryLogo from '@/assets/mercury-logo.png';
-import proXSLogo from '@/assets/pro-xs-logo.jpg';
+import proXSLogo from '@/assets/pro-xs-logo.png';
 
 interface HPMotorCardProps {
   group: MotorGroup;
@@ -87,7 +87,7 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
             <img 
               src={proXSLogo} 
               alt="Pro XS Available" 
-              className="h-6 w-auto drop-shadow-md"
+              className="h-10 w-auto drop-shadow-md"
             />
           </div>
         )}
