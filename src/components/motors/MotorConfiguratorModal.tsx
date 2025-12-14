@@ -155,6 +155,18 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
   const availableOptions = useMemo(() => {
     const variants = filteredVariants.length > 0 ? filteredVariants : group?.variants || [];
     
+    // Calculate shaft lengths from filtered variants (not whole group)
+    const shaftSet = new Set<string>();
+    variants.forEach(m => {
+      const model = m.model.toUpperCase();
+      if (model.includes('XXL') || model.includes('30"')) shaftSet.add('30"');
+      else if (model.includes('XL') || model.includes('25"')) shaftSet.add('25"');
+      else if (model.includes('L') || model.includes('20"')) shaftSet.add('20"');
+      // Check for short shaft - MH or S (but not SEA/SEAPRO)
+      if (model.includes('MH') || model.includes('15"') || 
+          (model.match(/\bS\b/) && !model.includes('SEA'))) shaftSet.add('15"');
+    });
+    
     return {
       hasElectric: variants.some(m => m.model.toUpperCase().includes('E') && !m.model.toUpperCase().includes('SEA')),
       hasManual: variants.some(m => m.model.toUpperCase().includes('M') && !m.model.toUpperCase().includes('COMMAND')),
@@ -162,7 +174,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
       hasRemote: variants.some(m => !m.model.toUpperCase().includes('H')),
       hasCT: variants.some(m => m.model.toUpperCase().includes('CT')),
       hasPT: variants.some(m => m.model.toUpperCase().includes('PT')),
-      shaftLengths: group?.features.shaftLengths || []
+      shaftLengths: Array.from(shaftSet).sort((a, b) => parseInt(a) - parseInt(b))
     };
   }, [filteredVariants, group]);
   
@@ -188,6 +200,16 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
       return;
     }
   }, [open, group, step]);
+  
+  // Auto-skip shaft step if only one shaft length available
+  useEffect(() => {
+    if (!open || !group || step !== 'shaft') return;
+    
+    if (availableOptions.shaftLengths.length === 1) {
+      setConfig(prev => ({ ...prev, shaftLength: availableOptions.shaftLengths[0] }));
+      setStep('control');
+    }
+  }, [open, group, step, availableOptions.shaftLengths]);
   
   const handleBack = () => {
     const steps: Step[] = ['start', 'shaft', 'control', 'features', 'result'];
