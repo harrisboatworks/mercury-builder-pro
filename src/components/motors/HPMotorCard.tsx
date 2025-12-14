@@ -87,7 +87,7 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
             <img 
               src={proXSLogo} 
               alt="Pro XS Available" 
-              className="h-10 w-auto drop-shadow-md"
+              className="h-8 w-auto drop-shadow-md"
             />
           </div>
         )}
