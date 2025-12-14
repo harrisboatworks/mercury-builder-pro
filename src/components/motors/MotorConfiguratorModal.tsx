@@ -52,13 +52,16 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
   const [imagesLoaded, setImagesLoaded] = useState({ tiller: false, remote: false });
   const { dispatch } = useQuote();
   
-  // Reset when modal opens
+  // Reset when modal opens and sync configurator step
   useEffect(() => {
     if (open) {
       setStep('start');
       setConfig({ startType: null, shaftLength: null, controlType: null, features: [] });
+      dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: 'start' });
+    } else {
+      dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: null });
     }
-  }, [open]);
+  }, [open, dispatch]);
   
   // Body scroll lock and history management
   useEffect(() => {
@@ -200,6 +203,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     if (group.hp >= 150) {
       setConfig(prev => ({ ...prev, startType: 'electric' }));
       setStep('shaft');
+      dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: 'shaft' });
       return;
     }
     
@@ -211,6 +215,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     if (hasElectric && !hasManual) {
       setConfig(prev => ({ ...prev, startType: 'electric' }));
       setStep('shaft');
+      dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: 'shaft' });
       return;
     }
     
@@ -218,9 +223,10 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     if (hasManual && !hasElectric) {
       setConfig(prev => ({ ...prev, startType: 'manual' }));
       setStep('shaft');
+      dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: 'shaft' });
       return;
     }
-  }, [open, group, step]);
+  }, [open, group, step, dispatch]);
   
   // Auto-skip shaft step if only one shaft length available
   useEffect(() => {
@@ -229,14 +235,17 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     if (availableOptions.shaftLengths.length === 1) {
       setConfig(prev => ({ ...prev, shaftLength: availableOptions.shaftLengths[0] }));
       setStep('control');
+      dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: 'control' });
     }
-  }, [open, group, step, availableOptions.shaftLengths]);
+  }, [open, group, step, availableOptions.shaftLengths, dispatch]);
   
   const handleBack = () => {
     const steps: Step[] = ['start', 'shaft', 'control', 'features', 'result'];
     const currentIndex = steps.indexOf(step);
     if (currentIndex > 0) {
-      setStep(steps[currentIndex - 1]);
+      const prevStep = steps[currentIndex - 1];
+      setStep(prevStep);
+      dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: prevStep });
     }
   };
   
@@ -244,14 +253,19 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     const steps: Step[] = ['start', 'shaft', 'control', 'features', 'result'];
     const currentIndex = steps.indexOf(step);
     
+    const goToStep = (newStep: Step) => {
+      setStep(newStep);
+      dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: newStep });
+    };
+    
     // Auto-skip control step for large motors (150+ HP) - all remote
     if (step === 'shaft' && group && group.hp >= 150) {
       setConfig(prev => ({ ...prev, controlType: 'remote' }));
       // Skip to features or result
       if (!availableOptions.hasCT && !availableOptions.hasPT) {
-        setStep('result');
+        goToStep('result');
       } else {
-        setStep('features');
+        goToStep('features');
       }
       return;
     }
@@ -265,18 +279,18 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
         setConfig(prev => ({ ...prev, controlType: 'tiller' }));
         // Skip to features or result
         if (!availableOptions.hasCT && !availableOptions.hasPT) {
-          setStep('result');
+          goToStep('result');
         } else {
-          setStep('features');
+          goToStep('features');
         }
         return;
       }
       if (onlyRemote) {
         setConfig(prev => ({ ...prev, controlType: 'remote' }));
         if (!availableOptions.hasCT && !availableOptions.hasPT) {
-          setStep('result');
+          goToStep('result');
         } else {
-          setStep('features');
+          goToStep('features');
         }
         return;
       }
@@ -284,12 +298,12 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     
     // Skip features step if no features available
     if (step === 'control' && !availableOptions.hasCT && !availableOptions.hasPT) {
-      setStep('result');
+      goToStep('result');
       return;
     }
     
     if (currentIndex < steps.length - 1) {
-      setStep(steps[currentIndex + 1]);
+      goToStep(steps[currentIndex + 1]);
     }
   };
   
