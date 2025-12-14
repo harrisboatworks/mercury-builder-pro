@@ -35,7 +35,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
           <a 
             href={`tel:${COMPANY_INFO.contact.phone}`}
             onClick={() => triggerHaptic('light')}
-            className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all"
+            className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all animate-fade-in"
+            style={{ animationDelay: '0ms' }}
           >
             <Phone className="h-6 w-6 text-muted-foreground" />
             <span className="text-sm text-muted-foreground">Call</span>
@@ -52,7 +53,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 copyToClipboard('647-952-2153', 'Text number');
               }
             }}
-            className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all"
+            className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all animate-fade-in"
+            style={{ animationDelay: '75ms' }}
           >
             <MessageSquare className="h-6 w-6 text-muted-foreground" />
             <span className="text-sm text-muted-foreground">Text</span>
@@ -62,7 +64,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
           <a 
             href={`mailto:${COMPANY_INFO.contact.email}`}
             onClick={() => triggerHaptic('light')}
-            className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all"
+            className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border hover:bg-muted/50 active:scale-[0.98] transition-all animate-fade-in"
+            style={{ animationDelay: '150ms' }}
           >
             <Mail className="h-6 w-6 text-muted-foreground" />
             <span className="text-sm text-muted-foreground">Email</span>
