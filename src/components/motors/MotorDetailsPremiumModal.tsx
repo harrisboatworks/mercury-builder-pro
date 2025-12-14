@@ -493,10 +493,9 @@ export default function MotorDetailsPremiumModal({
                   </TabsContent>
                   
                   {/* SPECS TAB */}
-                  <TabsContent value="specs" className="relative space-y-5 mt-0">
-                    <ScrollArea className="h-[550px]">
-                      <div className="p-6 pt-8 pb-12 space-y-8">
-                        {/* Engine Specifications */}
+                  <TabsContent value="specs" className="space-y-5 mt-0">
+                    <div className="p-6 pt-8 pb-12 space-y-8">
+                      {/* Engine Specifications */}
                     <div>
                       <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
                         <Settings className="w-5 h-5 text-primary" />
@@ -540,22 +539,19 @@ export default function MotorDetailsPremiumModal({
                       </div>
                     </div>
 
-                        {/* Requirements */}
-                        <div>
-                          <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
-                            <AlertCircle className="w-5 h-5 text-primary" />
-                            Requirements
-                          </h3>
-                          <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
-                            <SpecRow label="Battery" value={getBatteryRequirement(motor)} />
-                            <SpecRow label="Recommended Fuel" value={getFuelRequirement(motor)} />
-                            <SpecRow label="Oil Type" value={getOilRequirement(motor)} />
-                          </div>
+                      {/* Requirements */}
+                      <div>
+                        <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
+                          <AlertCircle className="w-5 h-5 text-primary" />
+                          Requirements
+                        </h3>
+                        <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
+                          <SpecRow label="Battery" value={getBatteryRequirement(motor)} />
+                          <SpecRow label="Recommended Fuel" value={getFuelRequirement(motor)} />
+                          <SpecRow label="Oil Type" value={getOilRequirement(motor)} />
                         </div>
                       </div>
-                    </ScrollArea>
-                    {/* Subtle fade indicator for scrolling */}
-                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+                    </div>
                   </TabsContent>
                   
                   {/* INCLUDED TAB */}
@@ -599,59 +595,55 @@ export default function MotorDetailsPremiumModal({
                   </TabsContent>
                   
                   {/* RESOURCES TAB */}
-                  <TabsContent value="resources" className="relative space-y-5 mt-0">
-                    <ScrollArea className="h-[550px]">
-                      <div className="p-6 pt-8 pb-12 space-y-8">
-                        {/* Documents Section */}
-                        {motor?.id && (
-                          <div>
-                            <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
-                              Downloads & Documentation
-                            </h3>
-                            <MotorDocumentsSection motorId={motor.id} />
-                          </div>
-                        )}
-                        
-                        {/* Quick Actions */}
-                        <div className="border-t border-gray-100 pt-6">
-                          <PDFDownloadLink
-                            document={
-                              <CleanSpecSheetPDF 
-                                motorData={{
-                                  motor: motor,
-                                  promotions: activePromotions,
-                                  motorModel: motor?.model || title
-                                }} 
-                              />
-                            }
-                            fileName={`${(motor?.model || title).replace(/\s+/g, '-')}-Specifications.pdf`}
-                            className="w-full border border-gray-300 text-gray-700 py-3 px-4 text-sm font-medium rounded-sm hover:bg-stone-50 transition-all duration-300 flex items-center justify-center gap-2"
-                          >
-                            {({ loading }) => (
-                              <>
-                                <Download className="w-4 h-4" />
-                                {loading ? 'Generating...' : 'Download Spec Sheet'}
-                              </>
-                            )}
-                          </PDFDownloadLink>
+                  <TabsContent value="resources" className="space-y-5 mt-0">
+                    <div className="p-6 pt-8 pb-12 space-y-8">
+                      {/* Documents Section */}
+                      {motor?.id && (
+                        <div>
+                          <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
+                            Downloads & Documentation
+                          </h3>
+                          <MotorDocumentsSection motorId={motor.id} />
                         </div>
-                        
-                        {/* Videos Section */}
-                        {motor?.id && (
-                          <div className="border-t border-gray-100 pt-6">
-                            <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
-                              Videos & Demonstrations
-                            </h3>
-                            <MotorVideosSection 
-                              motorId={motor.id} 
-                              motorFamily={motor.family || motor.model} 
+                      )}
+                      
+                      {/* Quick Actions */}
+                      <div className="border-t border-gray-100 pt-6">
+                        <PDFDownloadLink
+                          document={
+                            <CleanSpecSheetPDF 
+                              motorData={{
+                                motor: motor,
+                                promotions: activePromotions,
+                                motorModel: motor?.model || title
+                              }} 
                             />
-                          </div>
-                        )}
+                          }
+                          fileName={`${(motor?.model || title).replace(/\s+/g, '-')}-Specifications.pdf`}
+                          className="w-full border border-gray-300 text-gray-700 py-3 px-4 text-sm font-medium rounded-sm hover:bg-stone-50 transition-all duration-300 flex items-center justify-center gap-2"
+                        >
+                          {({ loading }) => (
+                            <>
+                              <Download className="w-4 h-4" />
+                              {loading ? 'Generating...' : 'Download Spec Sheet'}
+                            </>
+                          )}
+                        </PDFDownloadLink>
                       </div>
-                    </ScrollArea>
-                    {/* Subtle fade indicator for scrolling */}
-                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+                      
+                      {/* Videos Section */}
+                      {motor?.id && (
+                        <div className="border-t border-gray-100 pt-6">
+                          <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
+                            Videos & Demonstrations
+                          </h3>
+                          <MotorVideosSection 
+                            motorId={motor.id} 
+                            motorFamily={motor.family || motor.model} 
+                          />
+                        </div>
+                      )}
+                    </div>
                   </TabsContent>
                 </div>
             </Tabs>
