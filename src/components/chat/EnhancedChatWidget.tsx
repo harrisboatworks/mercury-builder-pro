@@ -305,9 +305,11 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
           },
           onDelta: (chunk) => {
             fullResponse += chunk;
+            // Strip lead capture marker during streaming to hide it from user
+            const displayText = fullResponse.replace(/\[LEAD_CAPTURE:.*$/s, '').trim();
             setMessages(prev => prev.map(msg => 
               msg.id === streamingId 
-                ? { ...msg, text: msg.text + chunk, isStreaming: true }
+                ? { ...msg, text: displayText, isStreaming: true }
                 : msg
             ));
             scrollToBottom();
