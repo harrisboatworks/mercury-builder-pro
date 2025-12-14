@@ -1,16 +1,16 @@
 import { useState, useCallback } from 'react';
 
 interface UseSmartImageScaleOptions {
-  minExpectedDimension?: number; // Images below this size get scaled up
-  maxScale?: number; // Maximum scale factor (e.g., 1.4)
-  defaultScale?: number; // Default scale before image loads
+  minExpectedDimension?: number; // Images below this size get scaled up (default: 400)
+  maxScale?: number; // Maximum scale factor (default: 1.4 = 40% max enlargement)
+  defaultScale?: number; // Default scale before image loads (default: 1.0)
 }
 
 export function useSmartImageScale(options: UseSmartImageScaleOptions = {}) {
   const {
     minExpectedDimension = 400,
     maxScale = 1.4,
-    defaultScale = 1.15
+    defaultScale = 1.0  // Start at 100% - no scaling until we know image size
   } = options;
   
   const [scale, setScale] = useState(defaultScale);
