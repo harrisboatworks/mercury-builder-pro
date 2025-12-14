@@ -27,11 +27,15 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   const [basePinchScale, setBasePinchScale] = useState(1);
   
   // Smart image scaling for gallery - aggressive scaling for small motor images
-  const { scale: mainImageScale, handleImageLoad: handleMainImageLoad } = useSmartImageScale({
+  const { scale: rawMainImageScale, handleImageLoad: handleMainImageLoad } = useSmartImageScale({
     minExpectedDimension: 600,
-    maxScale: 2.0,
-    defaultScale: 1.5
+    maxScale: 2.5,
+    defaultScale: 1.6
   });
+  
+  // Force minimum scale of 1.6x for enhanced gallery (motor details modal)
+  const minScale = enhanced ? 1.6 : 1.0;
+  const mainImageScale = Math.max(rawMainImageScale, minScale);
   
   // Calculate distance between two touch points
   const getTouchDistance = useCallback((touches: React.TouchList): number => {
