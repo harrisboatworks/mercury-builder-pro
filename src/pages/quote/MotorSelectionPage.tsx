@@ -10,8 +10,6 @@ import { useToast } from '@/hooks/use-toast';
 import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 import { useExitIntent } from '@/hooks/useExitIntent';
 import { useGroupedMotors } from '@/hooks/useGroupedMotors';
-import { usePullToRefresh } from '@/hooks/usePullToRefresh';
-import { useAIChat } from '@/components/chat/GlobalAIChat';
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
@@ -23,7 +21,7 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { MotorRecommendationQuiz } from '@/components/quote-builder/MotorRecommendationQuiz';
 import { PromoReminderModal } from '@/components/quote-builder/PromoReminderModal';
-import { PullToRefreshIndicator } from '@/components/ui/pull-to-refresh';
+
 import { fuzzySearch } from '@/lib/fuzzySearch';
 import { preloadConfiguratorImages } from '@/lib/configurator-preload';
 import '@/styles/premium-motor.css';
@@ -112,7 +110,7 @@ function MotorSelectionContent() {
   const { state, dispatch } = useQuote();
   const { toast } = useToast();
   const { viewMode } = useMotorView();
-  const { isOpen: isChatOpen } = useAIChat();
+  
   
   const [motors, setMotors] = useState<DbMotor[]>([]);
   const [promotions, setPromotions] = useState<Promotion[]>([]);
@@ -227,17 +225,6 @@ function MotorSelectionContent() {
     loadData();
   }, [loadData]);
 
-  // Pull-to-refresh for mobile
-  const { pullDistance, isRefreshing } = usePullToRefresh({
-    onRefresh: async () => {
-      await loadData();
-      toast({
-        title: "Motors refreshed",
-        description: "Showing latest inventory and prices."
-      });
-    },
-    disabled: loading || isChatOpen
-  });
 
   // Preload configurator images after motors load (non-blocking)
   useEffect(() => {
@@ -524,11 +511,6 @@ function MotorSelectionContent() {
     <PageTransition>
       <FinancingProvider>
         <QuoteLayout showProgress={false}>
-        {/* Pull-to-refresh indicator for mobile */}
-        <PullToRefreshIndicator 
-          pullDistance={pullDistance} 
-          isRefreshing={isRefreshing} 
-        />
         
         {/* Search Bar - Elegant minimal style */}
         <div className="sticky top-14 sm:top-16 md:top-[72px] z-40 bg-stone-50 border-b border-gray-200">
