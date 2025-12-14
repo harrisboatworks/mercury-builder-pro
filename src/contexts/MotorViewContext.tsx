@@ -1,10 +1,12 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 export type ViewMode = 'simple' | 'expert';
 
 interface MotorViewContextType {
   viewMode: ViewMode;
   setViewMode: (mode: ViewMode) => void;
+  showQuiz: boolean;
+  setShowQuiz: (show: boolean) => void;
 }
 
 const MotorViewContext = createContext<MotorViewContextType | undefined>(undefined);
@@ -22,13 +24,15 @@ export function MotorViewProvider({ children }: { children: ReactNode }) {
     return 'simple'; // Default to simple mode for new users
   });
 
+  const [showQuiz, setShowQuiz] = useState(false);
+
   const setViewMode = (mode: ViewMode) => {
     setViewModeState(mode);
     localStorage.setItem(STORAGE_KEY, mode);
   };
 
   return (
-    <MotorViewContext.Provider value={{ viewMode, setViewMode }}>
+    <MotorViewContext.Provider value={{ viewMode, setViewMode, showQuiz, setShowQuiz }}>
       {children}
     </MotorViewContext.Provider>
   );

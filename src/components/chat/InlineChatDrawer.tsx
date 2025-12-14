@@ -5,6 +5,7 @@ import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
+import { useMotorView } from '@/contexts/MotorViewContext';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
 import { getContextualPrompts } from './getContextualPrompts';
@@ -80,6 +81,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   
   const location = useLocation();
   const { state } = useQuote();
+  const { setShowQuiz } = useMotorView();
   const { triggerHaptic } = useHapticFeedback();
   const prevIsOpenRef = useRef(isOpen);
   
@@ -527,7 +529,14 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                     {contextualPrompts.slice(0, 3).map((prompt, index) => (
                       <button
                         key={index}
-                        onClick={() => handleSend(prompt)}
+                        onClick={() => {
+                          if (prompt.includes('Help me find the right motor')) {
+                            setShowQuiz(true);
+                            onClose();
+                          } else {
+                            handleSend(prompt);
+                          }
+                        }}
                         className="px-2.5 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 
                           text-gray-700 rounded-full transition-colors font-light"
                       >
