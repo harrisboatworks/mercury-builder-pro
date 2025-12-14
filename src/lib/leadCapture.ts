@@ -11,7 +11,7 @@ export interface LeadData {
   customer_email?: string;
   customer_phone?: string;
   lead_status: 'downloaded' | 'scheduled' | 'contacted' | 'closed';
-  lead_source: 'pdf_download' | 'consultation';
+  lead_source: 'pdf_download' | 'consultation' | 'ai_chat';
   anonymous_session_id?: string;
   quote_data?: any;
 }

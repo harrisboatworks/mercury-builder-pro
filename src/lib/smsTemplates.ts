@@ -1,5 +1,5 @@
 export interface SMSTemplate {
-  type: 'hot_lead' | 'quote_confirmation' | 'follow_up' | 'reminder' | 'manual' | 'unmatched_motors' | 'promo_active' | 'promo_subscription';
+  type: 'hot_lead' | 'quote_confirmation' | 'follow_up' | 'reminder' | 'manual' | 'unmatched_motors' | 'promo_active' | 'promo_subscription' | 'chat_lead';
   generateMessage: (data: any) => string;
 }
 
@@ -69,6 +69,16 @@ export const SMS_TEMPLATES: Record<string, SMSTemplate> = {
     generateMessage: (data) => {
       const { motorModel } = data;
       return `Harris Boat Works: You're subscribed! We'll text you when ${motorModel} goes on sale. Reply STOP to unsubscribe.`;
+    }
+  },
+
+  chat_lead: {
+    type: 'chat_lead',
+    generateMessage: (data) => {
+      const { customerName, customerPhone, customerEmail, context, motorModel, leadScore } = data;
+      const emailLine = customerEmail ? `\nEmail: ${customerEmail}` : '';
+      const motorLine = motorModel ? `\nMotor: ${motorModel}` : '';
+      return `💬 CHAT LEAD!\n\nName: ${customerName}\nPhone: ${customerPhone}${emailLine}${motorLine}\nContext: ${context || 'Requested callback from chat'}\nLead Score: ${leadScore || 'N/A'}/100\n\nAction: Call within 24hrs!\n\n- Harris Boat Works AI`;
     }
   }
 };
