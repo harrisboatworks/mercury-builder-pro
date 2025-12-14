@@ -58,59 +58,57 @@ export function FinancingResumeDialog({
 
   return (
     <AlertDialog open={open}>
-      <AlertDialogContent className="max-w-md">
-        <AlertDialogHeader>
+      <AlertDialogContent className="max-w-md text-left">
+        <AlertDialogHeader className="text-left">
           <AlertDialogTitle className="text-xl font-semibold">
             Welcome Back!
           </AlertDialogTitle>
-          <AlertDialogDescription asChild>
-            <span className="text-base font-light text-muted-foreground">
-              We found your saved financing application:
-            </span>
+          <AlertDialogDescription className="text-base font-light text-muted-foreground">
+            We found your saved financing application:
           </AlertDialogDescription>
         </AlertDialogHeader>
         
-        {/* Bullet list outside AlertDialogDescription for proper inline layout */}
-        <ul className="space-y-2 text-sm text-muted-foreground">
-          <li className="flex items-center gap-2">
-            <span className="text-foreground">•</span>
+        {/* Bullet list with proper inline layout */}
+        <ul className="space-y-2 text-sm text-muted-foreground text-left">
+          <li className="flex flex-row items-center gap-2">
+            <span className="text-foreground shrink-0">•</span>
             <span>Step {draftData.currentStep} of 7: {stepTitles[draftData.currentStep]}</span>
           </li>
           
           {draftData.motorModel && (
-            <li className="flex items-center gap-2">
-              <span className="text-foreground">•</span>
+            <li className="flex flex-row items-center gap-2">
+              <span className="text-foreground shrink-0">•</span>
               <span>Motor: {draftData.motorModel}</span>
             </li>
           )}
           
           {draftData.amountToFinance && (
-            <li className="flex items-center gap-2">
-              <span className="text-foreground">•</span>
+            <li className="flex flex-row items-center gap-2">
+              <span className="text-foreground shrink-0">•</span>
               <span>Amount to Finance: ${draftData.amountToFinance.toLocaleString()}</span>
             </li>
           )}
           
-          <li className="flex items-center gap-2">
-            <span className="text-foreground">•</span>
+          <li className="flex flex-row items-center gap-2">
+            <span className="text-foreground shrink-0">•</span>
             <span>Last saved: {formatRelativeTime(draftData.lastSaved)}</span>
           </li>
         </ul>
         
-        <p className="text-sm text-muted-foreground pt-2">
+        <p className="text-sm text-muted-foreground pt-2 text-left">
           Would you like to continue where you left off?
         </p>
         
-        <AlertDialogFooter className="flex-col sm:flex-row gap-3 pt-2">
+        <AlertDialogFooter className="flex-col-reverse sm:flex-row gap-3 pt-2">
           <AlertDialogCancel
             onClick={onStartFresh}
-            className="font-light sm:order-1"
+            className="font-light"
           >
             Start Fresh
           </AlertDialogCancel>
           <AlertDialogAction
             onClick={onContinue}
-            className="font-light sm:order-2"
+            className="font-light"
           >
             Continue Application
           </AlertDialogAction>
