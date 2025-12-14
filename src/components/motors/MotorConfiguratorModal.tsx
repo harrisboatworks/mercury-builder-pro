@@ -456,7 +456,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
               </div>
               
               {/* Scrollable Content */}
-              <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden p-4 pb-20 modal-content">
+              <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden overscroll-contain p-4 pb-20 modal-content">
                 <AnimatePresence mode="wait" custom={animationDirection}>
                   <motion.div
                     key={step}
