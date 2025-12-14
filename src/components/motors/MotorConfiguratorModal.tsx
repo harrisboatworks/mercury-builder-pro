@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import React, { useState, useMemo, useEffect, useCallback, lazy, Suspense } from 'react';
 import { createPortal } from 'react-dom';
 import { Button } from '@/components/ui/button';
 import { MotorGroup } from '@/hooks/useGroupedMotors';
@@ -9,6 +9,9 @@ import { TransomHeightCalculator } from './TransomHeightCalculator';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
 import { cn } from '@/lib/utils';
+
+// Lazy load the motor details modal
+const MotorDetailsPremiumModal = lazy(() => import('./MotorDetailsPremiumModal'));
 
 interface MotorConfiguratorModalProps {
   open: boolean;
@@ -35,6 +38,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     features: []
   });
   const [showTransomCalculator, setShowTransomCalculator] = useState(false);
+  const [motorForDetails, setMotorForDetails] = useState<Motor | null>(null);
   const { dispatch } = useQuote();
   
   // Reset when modal opens
@@ -575,7 +579,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
                         <div
                           key={motor.id}
                           className="p-4 rounded-lg border border-border hover:border-muted-foreground transition-all cursor-pointer flex items-center gap-4"
-                          onClick={() => handleSelectMotor(motor)}
+                          onClick={() => setMotorForDetails(motor)}
                         >
                           <img 
                             src={motor.image || '/lovable-uploads/speedboat-transparent.png'} 
@@ -593,8 +597,15 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
                             {motor.in_stock && (
                               <span className="text-xs text-green-600 font-medium">In Stock</span>
                             )}
-                            <Button size="sm" className="mt-2">
-                              Select
+                            <Button 
+                              size="sm" 
+                              className="mt-2"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setMotorForDetails(motor);
+                              }}
+                            >
+                              View Details
                             </Button>
                           </div>
                         </div>
@@ -646,6 +657,26 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
         onClose={() => setShowTransomCalculator(false)}
         onApply={handleShaftFromCalculator}
       />
+      
+      {/* Motor Details Modal - Shows full specs before selection */}
+      {motorForDetails && (
+        <Suspense fallback={<div className="fixed inset-0 z-[60] bg-black/50" />}>
+          <MotorDetailsPremiumModal
+            open={!!motorForDetails}
+            onClose={() => setMotorForDetails(null)}
+            onSelect={() => {
+              handleSelectMotor(motorForDetails);
+              setMotorForDetails(null);
+            }}
+            title={motorForDetails.model}
+            img={motorForDetails.image}
+            msrp={motorForDetails.msrp || motorForDetails.basePrice}
+            price={motorForDetails.price}
+            hp={motorForDetails.hp}
+            motor={motorForDetails}
+          />
+        </Suspense>
+      )}
     </>,
     document.body
   );
