@@ -20,6 +20,9 @@ import {
   PROMO_MESSAGES,
   FINANCING_PROMO_MESSAGES,
   PROMO_REACTION_MESSAGES,
+  REPOWER_MESSAGES,
+  TECHNOLOGY_HIGHLIGHTS,
+  EMOTIONAL_REPOWER_MESSAGES,
   pickRandom,
   pickRandomFiltered,
   filterByHP,
@@ -338,7 +341,25 @@ export const useConversationalFeedback = () => {
       }
     }
 
-    // Priority 8: Social proof (35-50 seconds)
+    // Priority 8: Repower messages (on motor selection, 25-35 seconds, occasional)
+    if (path === '/quote/motor-selection' && secondsOnPage >= 25 && secondsOnPage < 35 && Math.random() < 0.3) {
+      const repowerMsg = pickRandom(REPOWER_MESSAGES);
+      return { ...repowerMsg, type: 'action' };
+    }
+
+    // Priority 8.5: Technology highlights (for 60+ HP motors on options page, 20-30 seconds)
+    if (path === '/quote/options' && motorHP && motorHP >= 60 && secondsOnPage >= 20 && secondsOnPage < 30) {
+      const techMsg = pickRandom(TECHNOLOGY_HIGHLIGHTS);
+      return { ...techMsg, type: 'action' };
+    }
+
+    // Priority 8.7: Emotional repower messages (on trade-in page, 15-25 seconds)
+    if (path === '/quote/trade-in' && secondsOnPage >= 15 && secondsOnPage < 25) {
+      const emotionalMsg = pickRandom(EMOTIONAL_REPOWER_MESSAGES);
+      return { ...emotionalMsg, type: 'action' };
+    }
+
+    // Priority 9: Social proof (35-50 seconds)
     if (secondsOnPage >= 35 && secondsOnPage < 50) {
       const filtered = filterByHP(SOCIAL_PROOF, motorHP);
       if (filtered.length > 0) {
@@ -347,7 +368,7 @@ export const useConversationalFeedback = () => {
       }
     }
 
-    // Priority 9: Offer help (50+ seconds)
+    // Priority 10: Offer help (50+ seconds)
     if (secondsOnPage >= 50) {
       const index = Math.floor((secondsOnPage - 50) / 15) % OFFER_HELP.length;
       return { ...OFFER_HELP[index], type: 'offer-help' };

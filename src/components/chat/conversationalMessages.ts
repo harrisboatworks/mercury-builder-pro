@@ -188,6 +188,35 @@ export const OFFER_HELP: ConversationalNudge[] = [
   { message: "Questions? I've got answers →", icon: 'sparkles', aiPrompt: "I have questions about my options" },
 ];
 
+// ========== REPOWER MESSAGES ==========
+// For customers replacing old motors
+
+export const REPOWER_MESSAGES: ConversationalNudge[] = [
+  { message: "Keeping your boat but upgrading power? Smart move 👍", icon: 'refresh', aiPrompt: "Tell me about repowering my boat" },
+  { message: "New motors are way more fuel-efficient than 10-year-old ones", icon: 'dollar', aiPrompt: "How much fuel can I save with a new motor?" },
+  { message: "No more worrying about breakdowns with a new engine", icon: 'shield', aiPrompt: "Tell me about Mercury reliability" },
+  { message: "Your old boat + new power = best of both worlds", icon: 'heart', aiPrompt: "Why should I repower instead of buying a new boat?" },
+  { message: "Modern engines have tech that didn't exist 10 years ago", icon: 'sparkles', aiPrompt: "What new technology do Mercury motors have?" },
+  { message: "Fresh warranty, fresh start — peace of mind included", icon: 'shield', aiPrompt: "What warranty comes with a new Mercury?" },
+];
+
+// Technology highlights for mid/high HP motors
+export const TECHNOLOGY_HIGHLIGHTS: ConversationalNudge[] = [
+  { message: "VesselView connects to your phone for real-time data", icon: 'sparkles', aiPrompt: "Tell me about VesselView" },
+  { message: "Active Trim adjusts automatically — set it and forget it", icon: 'check', aiPrompt: "What is Active Trim?" },
+  { message: "Digital Throttle & Shift = butter-smooth shifting", icon: 'sparkles', aiPrompt: "How does digital throttle work?" },
+  { message: "Troll Control lets you dial in 10 RPM increments", icon: 'heart', aiPrompt: "What is Troll Control?" },
+  { message: "SmartCraft tells you everything about your engine", icon: 'check', aiPrompt: "What does SmartCraft do?" },
+];
+
+// Emotional "love your boat" messages (great for trade-in page)
+export const EMOTIONAL_REPOWER_MESSAGES: ConversationalNudge[] = [
+  { message: "Keep making memories with the boat you love", icon: 'heart' },
+  { message: "Your boat, your setup — just better power", icon: 'heart' },
+  { message: "Repowering breathes new life into your favorite boat", icon: 'refresh' },
+  { message: "Why start over? Upgrade what you already know", icon: 'check' },
+];
+
 // Motor-family-specific messages
 export const MOTOR_FAMILY_TIPS: Record<string, ConversationalNudge[]> = {
   'verado': [
