@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { Search, Sparkles, X, MessageCircle } from 'lucide-react';
+import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
+import { Search, Sparkles, X, MessageCircle, Mic, History } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useHpSuggestions, HpSuggestion } from '@/hooks/useHpSuggestions';
 import { HpSuggestionsDropdown } from '@/components/motors/HpSuggestionsDropdown';
@@ -8,6 +8,57 @@ import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { supabase } from '@/integrations/supabase/client';
 import type { Motor } from '@/components/QuoteBuilder';
 
+// Web Speech API types
+interface SpeechRecognitionEvent extends Event {
+  results: SpeechRecognitionResultList;
+}
+
+interface SpeechRecognitionResultList {
+  length: number;
+  item(index: number): SpeechRecognitionResult;
+  [index: number]: SpeechRecognitionResult;
+}
+
+interface SpeechRecognitionResult {
+  length: number;
+  item(index: number): SpeechRecognitionAlternative;
+  [index: number]: SpeechRecognitionAlternative;
+  isFinal: boolean;
+}
+
+interface SpeechRecognitionAlternative {
+  transcript: string;
+  confidence: number;
+}
+
+interface SpeechRecognitionErrorEvent extends Event {
+  error: string;
+  message: string;
+}
+
+interface SpeechRecognitionInstance extends EventTarget {
+  continuous: boolean;
+  interimResults: boolean;
+  lang: string;
+  onresult: ((event: SpeechRecognitionEvent) => void) | null;
+  onend: (() => void) | null;
+  onerror: ((event: SpeechRecognitionErrorEvent) => void) | null;
+  start(): void;
+  stop(): void;
+  abort(): void;
+}
+
+interface SpeechRecognitionConstructor {
+  new(): SpeechRecognitionInstance;
+}
+
+declare global {
+  interface Window {
+    SpeechRecognition: SpeechRecognitionConstructor;
+    webkitSpeechRecognition: SpeechRecognitionConstructor;
+  }
+}
+
 interface HybridMotorSearchProps {
   query: string;
   onQueryChange: (query: string) => void;
@@ -15,6 +66,9 @@ interface HybridMotorSearchProps {
   onHpSelect: (hp: number) => void;
   className?: string;
 }
+
+const RECENT_SEARCHES_KEY = 'motor-search-recent';
+const MAX_RECENT_SEARCHES = 5;
 
 // Words that trigger AI mode
 const AI_TRIGGER_WORDS = [
@@ -39,6 +93,7 @@ const PLACEHOLDER_PHRASES = [
   "Best for fishing?",
   "Search models..."
 ];
+
 export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   query,
   onQueryChange,
@@ -54,12 +109,121 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [iconPulse, setIconPulse] = useState(false);
+  
+  // Voice search state
+  const [isListening, setIsListening] = useState(false);
+  const [speechSupported, setSpeechSupported] = useState(false);
+  const recognitionRef = useRef<SpeechRecognitionInstance | null>(null);
+  
+  // Recent searches state
+  const [recentSearches, setRecentSearches] = useState<string[]>([]);
+  
   const inputRef = useRef<HTMLInputElement>(null);
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
   
   const { openChat } = useAIChat();
   const { triggerHaptic } = useHapticFeedback();
   const hpSuggestions = useHpSuggestions(query, motors);
+
+  // Load recent searches from localStorage
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(RECENT_SEARCHES_KEY);
+      if (stored) {
+        setRecentSearches(JSON.parse(stored));
+      }
+    } catch (e) {
+      console.error('Failed to load recent searches:', e);
+    }
+  }, []);
+
+  // Check for Speech Recognition support
+  useEffect(() => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    setSpeechSupported(!!SpeechRecognition);
+    
+    if (SpeechRecognition) {
+      const recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = true;
+      recognition.lang = 'en-US';
+      
+      recognition.onresult = (event) => {
+        const transcript = Array.from(event.results)
+          .map(result => result[0].transcript)
+          .join('');
+        onQueryChange(transcript);
+      };
+      
+      recognition.onend = () => {
+        setIsListening(false);
+      };
+      
+      recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+        setIsListening(false);
+      };
+      
+      recognitionRef.current = recognition;
+    }
+    
+    return () => {
+      if (recognitionRef.current) {
+        recognitionRef.current.abort();
+      }
+    };
+  }, [onQueryChange]);
+
+  // Save search to recent searches
+  const saveRecentSearch = useCallback((searchQuery: string) => {
+    if (!searchQuery.trim() || searchQuery.length < 2) return;
+    
+    setRecentSearches(prev => {
+      // Remove duplicates (case-insensitive)
+      const filtered = prev.filter(s => s.toLowerCase() !== searchQuery.toLowerCase());
+      const updated = [searchQuery, ...filtered].slice(0, MAX_RECENT_SEARCHES);
+      
+      try {
+        localStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(updated));
+      } catch (e) {
+        console.error('Failed to save recent searches:', e);
+      }
+      
+      return updated;
+    });
+  }, []);
+
+  // Clear recent searches
+  const clearRecentSearches = useCallback(() => {
+    setRecentSearches([]);
+    try {
+      localStorage.removeItem(RECENT_SEARCHES_KEY);
+    } catch (e) {
+      console.error('Failed to clear recent searches:', e);
+    }
+    triggerHaptic('light');
+  }, [triggerHaptic]);
+
+  // Toggle voice search
+  const toggleVoiceSearch = useCallback(() => {
+    if (!recognitionRef.current) return;
+    
+    if (isListening) {
+      recognitionRef.current.stop();
+      setIsListening(false);
+    } else {
+      triggerHaptic('medium');
+      recognitionRef.current.start();
+      setIsListening(true);
+    }
+  }, [isListening, triggerHaptic]);
+
+  // Handle recent search click
+  const handleRecentSearchClick = useCallback((search: string) => {
+    onQueryChange(search);
+    triggerHaptic('light');
+    inputRef.current?.focus();
+  }, [onQueryChange, triggerHaptic]);
 
   // Keyboard shortcut "/" to focus search
   useEffect(() => {
@@ -168,6 +332,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
         if (hpSuggestions[selectedSuggestionIndex]) {
           onHpSelect(hpSuggestions[selectedSuggestionIndex].hp);
           setShowHpSuggestions(false);
+          saveRecentSearch(query);
         }
         break;
       case 'Escape':
@@ -181,7 +346,26 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
     onQueryChange('');
     setShowHpSuggestions(false);
     setAiResponse(null);
+    if (isListening && recognitionRef.current) {
+      recognitionRef.current.stop();
+      setIsListening(false);
+    }
     inputRef.current?.focus();
+  };
+
+  // Save search on blur
+  const handleBlur = () => {
+    setTimeout(() => setIsFocused(false), 200);
+    if (query.trim()) {
+      saveRecentSearch(query);
+    }
+  };
+
+  const handleKeyDownWithSave = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && query.trim() && !showHpSuggestions) {
+      saveRecentSearch(query);
+    }
+    handleKeyDown(e);
   };
 
   const handlePromptClick = (prompt: string) => {
@@ -215,10 +399,17 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           transition={{ duration: 0.4, ease: "easeOut" }}
           className={`
             absolute left-5 top-1/2 -translate-y-1/2 transition-colors duration-300
-            ${isAIQuery ? 'text-amber-500' : 'text-gray-400'}
+            ${isListening ? 'text-red-500' : isAIQuery ? 'text-amber-500' : 'text-gray-400'}
           `}
         >
-          {isAIQuery ? (
+          {isListening ? (
+            <motion.div
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 0.5, repeat: Infinity }}
+            >
+              <Mic className="w-5 h-5" />
+            </motion.div>
+          ) : isAIQuery ? (
             <Sparkles className="w-5 h-5" />
           ) : (
             <Search className="w-5 h-5" />
@@ -226,7 +417,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
         </motion.div>
         
         {/* Animated Placeholder Overlay with Typing Cursor */}
-        {!query && (
+        {!query && !isListening && (
           <div className="absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none overflow-hidden flex items-center">
             <AnimatePresence mode="wait">
               <motion.span
@@ -253,6 +444,13 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
             />
           </div>
         )}
+
+        {/* Listening indicator */}
+        {isListening && !query && (
+          <div className="absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none">
+            <span className="text-red-500 font-light text-base">Listening...</span>
+          </div>
+        )}
         
         <input
           ref={inputRef}
@@ -270,39 +468,82 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
             setIsFocused(true);
             triggerHaptic('light');
           }}
-          onBlur={() => setTimeout(() => setIsFocused(false), 200)}
-          onKeyDown={handleKeyDown}
+          onBlur={handleBlur}
+          onKeyDown={handleKeyDownWithSave}
           className={`
             w-full h-16 pl-14 pr-12 text-base font-light tracking-wide rounded-sm
             bg-white text-gray-900
             focus:outline-none transition-all duration-300
-            ${isAIQuery 
-              ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.1)]' 
-              : isFocused
-                ? 'border border-gray-400 shadow-[0_0_20px_rgba(0,0,0,0.08),0_0_0_3px_rgba(0,0,0,0.03)]'
-                : 'border border-gray-200 hover:border-gray-300'
+            ${isListening
+              ? 'border-2 border-red-400 shadow-[0_0_0_3px_rgba(239,68,68,0.1)]'
+              : isAIQuery 
+                ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.1)]' 
+                : isFocused
+                  ? 'border border-gray-400 shadow-[0_0_20px_rgba(0,0,0,0.08),0_0_0_3px_rgba(0,0,0,0.03)]'
+                  : 'border border-gray-200 hover:border-gray-300'
             }
           `}
         />
         
-        {/* Keyboard Shortcut Hint */}
+        {/* Keyboard Shortcut Hint & Voice Search */}
         <AnimatePresence>
-          {!isFocused && !query && (
+          {!isFocused && !query && !isListening && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-1.5"
+              className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2"
             >
-              <kbd className="px-2 py-1 text-xs font-mono bg-gray-100 border border-gray-200 rounded text-gray-500 shadow-sm">
-                /
-              </kbd>
-              <span className="text-xs text-gray-400 font-light">to search</span>
+              {/* Voice Search Button - Mobile Only */}
+              {speechSupported && (
+                <button
+                  onClick={toggleVoiceSearch}
+                  className="md:hidden p-2 text-gray-400 hover:text-gray-600 transition-colors"
+                  aria-label="Voice search"
+                >
+                  <Mic className="w-5 h-5" />
+                </button>
+              )}
+              
+              {/* Keyboard Shortcut - Desktop Only */}
+              <div className="hidden md:flex items-center gap-1.5">
+                <kbd className="px-2 py-1 text-xs font-mono bg-gray-100 border border-gray-200 rounded text-gray-500 shadow-sm">
+                  /
+                </kbd>
+                <span className="text-xs text-gray-400 font-light">to search</span>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {query && (
+        {/* Voice Search Active Indicator */}
+        <AnimatePresence>
+          {isListening && (
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              onClick={toggleVoiceSearch}
+              className="absolute right-4 top-1/2 -translate-y-1/2 p-2"
+              aria-label="Stop listening"
+            >
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 1, repeat: Infinity }}
+                className="relative"
+              >
+                <Mic className="w-5 h-5 text-red-500" />
+                <motion.div
+                  className="absolute inset-0 rounded-full bg-red-500/20"
+                  animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
+                  transition={{ duration: 1, repeat: Infinity }}
+                />
+              </motion.div>
+            </motion.button>
+          )}
+        </AnimatePresence>
+
+        {query && !isListening && (
           <button
             onClick={handleClear}
             className="absolute right-4 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 transition-colors"
@@ -319,6 +560,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           onSelect={(hp) => {
             onHpSelect(hp);
             setShowHpSuggestions(false);
+            saveRecentSearch(query);
           }}
           onClose={() => setShowHpSuggestions(false)}
           selectedIndex={selectedSuggestionIndex}
@@ -377,6 +619,44 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
                     Continue conversation
                   </button>
                 )}
+              </div>
+            )}
+
+            {/* Recent Searches (when empty and has history) */}
+            {!query && recentSearches.length > 0 && (
+              <div className="p-4 border-b border-gray-100">
+                <div className="flex items-center justify-between mb-3">
+                  <motion.p 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="text-xs font-medium text-gray-500 uppercase tracking-wide"
+                  >
+                    Recent
+                  </motion.p>
+                  <motion.button
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    onClick={clearRecentSearches}
+                    className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                  >
+                    Clear
+                  </motion.button>
+                </div>
+                <div className="space-y-1">
+                  {recentSearches.map((search, index) => (
+                    <motion.button
+                      key={search}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      onClick={() => handleRecentSearchClick(search)}
+                      className="w-full text-left px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-md transition-colors flex items-center gap-2"
+                    >
+                      <History className="w-4 h-4 text-gray-400" />
+                      <span className="truncate">{search}</span>
+                    </motion.button>
+                  ))}
+                </div>
               </div>
             )}
 
