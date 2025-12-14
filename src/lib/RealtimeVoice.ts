@@ -225,7 +225,7 @@ export class RealtimeVoiceChat {
       
       // Get ephemeral token from edge function
       const tokenResponse = await fetch(
-        `https://eutsoqdpjuutknjsshxes.supabase.co/functions/v1/realtime-session`,
+        `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/realtime-session`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
