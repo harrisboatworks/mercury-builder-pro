@@ -346,7 +346,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
               </div>
               
               {/* Scrollable Content */}
-              <div className="overflow-y-auto h-[calc(100%-60px)] p-4 pb-24">
+              <div className="overflow-y-auto h-[calc(100%-60px)] p-4 pb-32">
                 {/* Step 1: Start Type */}
                 {step === 'start' && (
                   <div className="space-y-6">
@@ -662,7 +662,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
               
               {/* Navigation - Fixed at bottom of modal */}
               {step !== 'start' && step !== 'result' && (
-                <div className="absolute bottom-0 left-0 right-0 flex justify-between p-4 pt-3 border-t bg-background">
+                <div className="absolute bottom-2 left-0 right-0 flex justify-between p-4 pt-3 border-t bg-background shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
                   <Button variant="ghost" onClick={handleBack}>
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Back
@@ -675,7 +675,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
               )}
               
               {step === 'result' && filteredVariants.length > 0 && (
-                <div className="absolute bottom-2 left-0 right-0 flex justify-start p-4 pt-3 border-t bg-background">
+                <div className="absolute bottom-2 left-0 right-0 flex justify-start p-4 pt-3 border-t bg-background shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
                   <Button variant="ghost" onClick={handleBack}>
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Back to Options
