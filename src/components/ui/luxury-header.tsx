@@ -113,7 +113,7 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
                   variant="ghost"
                   size="sm"
                   onClick={() => navigate(user ? '/dashboard' : '/auth')}
-                  className="p-1.5 text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage"
+                  className="p-1.5 text-luxury-ink dark:text-white hover:text-luxury-gray dark:hover:text-gray-300 hover:bg-luxury-stage dark:hover:bg-gray-800 transition-colors"
                   title={user ? "View Dashboard" : "Sign In"}
                 >
                   <User className="h-5 w-5" />
