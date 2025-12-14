@@ -1,5 +1,5 @@
 // src/components/quote-builder/InstallationConfig.tsx
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import OptionGallery from "../OptionGallery";
 import { controlChoices, steeringChoices, gaugeChoices, tillerMountingChoices } from "@/config/visualChoices";
@@ -23,15 +23,39 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
     waterTest: true
   });
 
+  // Refs for scroll targets
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const step2Ref = useRef<HTMLDivElement>(null);
+  const step3Ref = useRef<HTMLDivElement>(null);
+  const step4Ref = useRef<HTMLDivElement>(null);
+
   const totalSteps = isTiller ? 1 : 4;
+
+  // Scroll to new step when it appears (non-tiller flow)
+  useEffect(() => {
+    if (!isTiller && step >= 2) {
+      const refs = [null, null, step2Ref, step3Ref, step4Ref];
+      const targetRef = refs[step];
+      if (targetRef?.current) {
+        setTimeout(() => {
+          targetRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [step, isTiller]);
 
   const handleOptionSelect = (field: string, value: string) => {
     setConfig(prev => ({ ...prev, [field]: value }));
     
-    // Auto-advance to next step (only for non-tiller motors)
-    if (!isTiller) {
+    if (isTiller) {
+      // For tiller motors, scroll to additional services section after mounting selection
       setTimeout(() => {
-        if (step < totalSteps - 1) {
+        servicesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    } else {
+      // Auto-advance to next step for non-tiller motors
+      setTimeout(() => {
+        if (step < totalSteps) {
           setStep(step + 1);
         }
       }, 500);
@@ -111,6 +135,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
 
         {!isTiller && step >= 2 && (
           <motion.div
+            ref={step2Ref}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
           >
@@ -125,6 +150,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
 
         {!isTiller && step >= 3 && (
           <motion.div
+            ref={step3Ref}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
           >
@@ -140,6 +166,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
         {/* Additional Services */}
         {(isTiller || (!isTiller && step >= 4)) && (
           <motion.div
+            ref={isTiller ? servicesRef : step4Ref}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="bg-card border border-border rounded-xl p-6 mt-6"
