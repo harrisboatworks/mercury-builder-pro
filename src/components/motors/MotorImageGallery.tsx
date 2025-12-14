@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, X, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { enhanceImageUrl, isThumbnailUrl } from '@/lib/image-utils';
-import { useSmartImageScale } from '@/hooks/useSmartImageScale';
+import { useContainerAwareScale } from '@/hooks/useContainerAwareScale';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 
 interface MotorImageGalleryProps {
@@ -28,11 +28,12 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   const [basePinchScale, setBasePinchScale] = useState(1);
   const [lastTapTime, setLastTapTime] = useState(0);
   const { triggerHaptic } = useHapticFeedback();
-  // Smart image scaling - only upscale genuinely small images
-  const { scale: mainImageScale, handleImageLoad: handleMainImageLoad } = useSmartImageScale({
-    minExpectedDimension: 400,  // Only upscale if image is smaller than 400px
-    maxScale: 1.4,             // Max 40% enlargement (subtle)
-    defaultScale: 1.0          // Start at 100% until image loads
+  
+  // Container-aware adaptive scaling - scales images to fill container optimally
+  const { scale: mainImageScale, containerRef, handleImageLoad: handleMainImageLoad } = useContainerAwareScale({
+    targetFillPercent: enhanced ? 0.85 : 0.80,  // Fill 85% of modal, 80% of regular
+    maxScale: 2.0,                               // Allow up to 2x for small images
+    minScale: 1.0                                // Never shrink images
   });
   
   // Calculate distance between two touch points
@@ -183,6 +184,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
         )}
         {/* Fixed-height container that centers the scaled image */}
         <div 
+          ref={containerRef}
           className={`${enhanced ? 'h-96' : 'h-48'} w-full bg-white rounded-xl flex items-center justify-center overflow-hidden border border-stone-100 shadow-sm`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
