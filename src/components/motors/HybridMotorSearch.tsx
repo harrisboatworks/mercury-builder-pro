@@ -104,6 +104,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   const [isFocused, setIsFocused] = useState(false);
   const [showHpSuggestions, setShowHpSuggestions] = useState(false);
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0);
+  const [selectedMotorIndex, setSelectedMotorIndex] = useState(-1);
   const [aiResponse, setAiResponse] = useState<string | null>(null);
   const [isLoadingAI, setIsLoadingAI] = useState(false);
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
@@ -124,6 +125,58 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   const { openChat } = useAIChat();
   const { triggerHaptic } = useHapticFeedback();
   const hpSuggestions = useHpSuggestions(query, motors);
+
+  // Motor autocomplete suggestions
+  const motorSuggestions = useMemo(() => {
+    if (!query || query.length < 2 || /^\d+(\.\d+)?$/.test(query.trim())) return [];
+    
+    const normalizedQuery = query.toLowerCase().trim();
+    
+    // Skip if it's an AI query
+    if (AI_TRIGGER_WORDS.some(word => normalizedQuery.includes(word))) return [];
+    
+    return motors
+      .filter(motor => {
+        const model = motor.model?.toLowerCase() || '';
+        const type = motor.type?.toLowerCase() || '';
+        const modelNumber = motor.model_number?.toLowerCase() || '';
+        
+        return model.includes(normalizedQuery) ||
+               type.includes(normalizedQuery) ||
+               modelNumber.includes(normalizedQuery);
+      })
+      .slice(0, 6);
+  }, [motors, query]);
+
+  // Reset motor index when suggestions change
+  useEffect(() => {
+    setSelectedMotorIndex(-1);
+  }, [motorSuggestions.length]);
+
+  // Highlight matching text in suggestions
+  const highlightMatch = useCallback((text: string, searchQuery: string) => {
+    if (!searchQuery) return text;
+    const index = text.toLowerCase().indexOf(searchQuery.toLowerCase());
+    if (index === -1) return text;
+    
+    return (
+      <>
+        {text.slice(0, index)}
+        <span className="font-semibold text-gray-900">
+          {text.slice(index, index + searchQuery.length)}
+        </span>
+        {text.slice(index + searchQuery.length)}
+      </>
+    );
+  }, []);
+
+  // Handle motor suggestion click
+  const handleMotorSuggestionClick = useCallback((motor: Motor) => {
+    onQueryChange(motor.model);
+    saveRecentSearch(motor.model);
+    triggerHaptic('light');
+    inputRef.current?.blur();
+  }, [onQueryChange, triggerHaptic]);
 
   // Load recent searches from localStorage
   useEffect(() => {
@@ -314,6 +367,34 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   }, [query, isAIQuery]);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    // Handle motor suggestions navigation
+    if (motorSuggestions.length > 0 && !isNumericQuery && !isAIQuery) {
+      switch (e.key) {
+        case 'ArrowDown':
+          e.preventDefault();
+          setSelectedMotorIndex(prev => 
+            prev < motorSuggestions.length - 1 ? prev + 1 : prev
+          );
+          return;
+        case 'ArrowUp':
+          e.preventDefault();
+          setSelectedMotorIndex(prev => prev > -1 ? prev - 1 : -1);
+          return;
+        case 'Enter':
+          if (selectedMotorIndex >= 0 && motorSuggestions[selectedMotorIndex]) {
+            e.preventDefault();
+            handleMotorSuggestionClick(motorSuggestions[selectedMotorIndex]);
+            return;
+          }
+          break;
+        case 'Escape':
+          setSelectedMotorIndex(-1);
+          inputRef.current?.blur();
+          return;
+      }
+    }
+
+    // Handle HP suggestions navigation
     if (!showHpSuggestions || hpSuggestions.length === 0) return;
 
     switch (e.key) {
@@ -379,6 +460,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   const showDropdown = isFocused && (
     (isAIQuery && (aiResponse || isLoadingAI)) ||
     (isNumericQuery && hpSuggestions.length > 0) ||
+    (!isNumericQuery && !isAIQuery && motorSuggestions.length > 0) ||
     (!query && isFocused)
   );
 
@@ -619,6 +701,64 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
                     Continue conversation
                   </button>
                 )}
+              </div>
+            )}
+
+            {/* Motor Autocomplete Suggestions */}
+            {query && !isNumericQuery && !isAIQuery && motorSuggestions.length > 0 && (
+              <div className="p-4 border-b border-gray-100">
+                <p className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-wide">
+                  Matching Motors
+                </p>
+                <div className="space-y-1">
+                  {motorSuggestions.map((motor, index) => (
+                    <motion.button
+                      key={motor.id}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.04 }}
+                      onClick={() => handleMotorSuggestionClick(motor)}
+                      onMouseEnter={() => setSelectedMotorIndex(index)}
+                      className={`
+                        w-full text-left px-3 py-2.5 rounded-md transition-colors 
+                        flex items-center justify-between gap-3
+                        ${selectedMotorIndex === index 
+                          ? 'bg-gray-100' 
+                          : 'hover:bg-gray-50'
+                        }
+                      `}
+                    >
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="w-10 h-10 rounded bg-gray-100 overflow-hidden flex-shrink-0">
+                          {motor.image ? (
+                            <img 
+                              src={motor.image} 
+                              alt="" 
+                              className="w-full h-full object-cover" 
+                            />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center text-gray-400 text-xs">
+                              {motor.hp}HP
+                            </div>
+                          )}
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-sm text-gray-700 truncate">
+                            {highlightMatch(motor.model, query)}
+                          </p>
+                          <p className="text-xs text-gray-500">
+                            {motor.hp}HP • {motor.type || 'Outboard'}
+                          </p>
+                        </div>
+                      </div>
+                      {motor.price && motor.price > 0 && (
+                        <span className="text-sm text-gray-600 font-medium flex-shrink-0">
+                          ${motor.price.toLocaleString()}
+                        </span>
+                      )}
+                    </motion.button>
+                  ))}
+                </div>
               </div>
             )}
 
