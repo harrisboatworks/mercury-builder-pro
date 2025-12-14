@@ -65,7 +65,7 @@ export function MobileSummaryBar({
             </SheetTrigger>
 
             {/* Expandable Summary Sheet */}
-            <SheetContent side="bottom" className="space-y-6">
+            <SheetContent side="bottom" className="space-y-6 pb-24">
               <SheetHeader>
                 <SheetTitle className="capitalize">
                   {selectedPackage} Package Summary

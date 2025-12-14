@@ -119,7 +119,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
         </DrawerHeader>
 
         <ScrollArea className="px-4 overflow-y-auto">
-          <div className="space-y-4 pb-6">
+          <div className="space-y-4 pb-20">
             {/* Motor Breakdown Card */}
             <Card>
               <CardContent className="pt-4">
