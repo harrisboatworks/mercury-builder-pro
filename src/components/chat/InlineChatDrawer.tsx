@@ -15,7 +15,7 @@ import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { cn } from '@/lib/utils';
 import { VoiceButton } from './VoiceButton';
-import { useRealtimeVoice } from '@/hooks/useRealtimeVoice';
+import { useVoice } from '@/contexts/VoiceContext';
 
 interface Message {
   id: string;
@@ -97,30 +97,8 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     clearConversation,
   } = useChatPersistence();
 
-  // Voice chat integration
-  const activeMotor = state.previewMotor || state.motor;
-  const motorContext = activeMotor ? {
-    model: activeMotor.model || '',
-    hp: activeMotor.hp || 0,
-    price: activeMotor.msrp || activeMotor.price || activeMotor.salePrice,
-  } : null;
-  
-  const voice = useRealtimeVoice({
-    motorContext,
-    currentPage: location.pathname,
-    onTranscriptComplete: (transcript) => {
-      if (transcript) {
-        const voiceMessage: Message = {
-          id: `voice_${Date.now()}`,
-          text: transcript,
-          isUser: false,
-          timestamp: new Date(),
-        };
-        setMessages(prev => [...prev, voiceMessage]);
-        saveMessage(transcript, 'assistant');
-      }
-    },
-  });
+  // Voice chat integration - use global context for persistence
+  const voice = useVoice();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });

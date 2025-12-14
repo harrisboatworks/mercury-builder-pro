@@ -2,6 +2,8 @@ import React, { useState, useRef, createContext, useContext, useCallback } from 
 import { AIChatButton } from './AIChatButton';
 import { EnhancedChatWidget, EnhancedChatWidgetHandle } from './EnhancedChatWidget';
 import { InlineChatDrawer } from './InlineChatDrawer';
+import { VoiceIndicator } from './VoiceIndicator';
+import { VoiceProvider } from '@/contexts/VoiceContext';
 import { useIsMobileOrTablet } from '@/hooks/use-mobile';
 
 interface AIChatContextType {
@@ -40,34 +42,39 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
   }, []);
 
   return (
-    <AIChatContext.Provider value={{ openChat, closeChat, isOpen, isLoading, setIsLoading }}>
-      {children}
-      
-      {/* Floating AI Button - Only show on desktop (mobile uses unified bar) */}
-      {!isMobileOrTablet && (
-        <AIChatButton 
-          onOpenChat={() => openChat()} 
-          isOpen={isOpen} 
-        />
-      )}
-      
-      {/* Chat Widget - Inline drawer on mobile, floating widget on desktop */}
-      {isMobileOrTablet ? (
-        <InlineChatDrawer
-          isOpen={isOpen}
-          onClose={closeChat}
-          initialMessage={initialMessage}
-          onLoadingChange={setIsLoading}
-        />
-      ) : (
-        <EnhancedChatWidget
-          ref={chatRef}
-          isOpen={isOpen}
-          onClose={closeChat}
-          initialMessage={initialMessage}
-          onLoadingChange={setIsLoading}
-        />
-      )}
-    </AIChatContext.Provider>
+    <VoiceProvider>
+      <AIChatContext.Provider value={{ openChat, closeChat, isOpen, isLoading, setIsLoading }}>
+        {children}
+        
+        {/* Floating AI Button - Only show on desktop (mobile uses unified bar) */}
+        {!isMobileOrTablet && (
+          <AIChatButton 
+            onOpenChat={() => openChat()} 
+            isOpen={isOpen} 
+          />
+        )}
+        
+        {/* Voice Indicator - Shows when voice active but chat minimized */}
+        <VoiceIndicator isChatOpen={isOpen} onOpenChat={() => openChat()} />
+        
+        {/* Chat Widget - Inline drawer on mobile, floating widget on desktop */}
+        {isMobileOrTablet ? (
+          <InlineChatDrawer
+            isOpen={isOpen}
+            onClose={closeChat}
+            initialMessage={initialMessage}
+            onLoadingChange={setIsLoading}
+          />
+        ) : (
+          <EnhancedChatWidget
+            ref={chatRef}
+            isOpen={isOpen}
+            onClose={closeChat}
+            initialMessage={initialMessage}
+            onLoadingChange={setIsLoading}
+          />
+        )}
+      </AIChatContext.Provider>
+    </VoiceProvider>
   );
 };
