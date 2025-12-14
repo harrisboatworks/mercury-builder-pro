@@ -107,6 +107,16 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       scrollToBottom();
     }, [messages]);
 
+    // Scroll to bottom when chat opens
+    useEffect(() => {
+      if (isOpen && !isMinimized) {
+        // Small delay to ensure messages are rendered
+        setTimeout(() => {
+          scrollToBottom();
+        }, 100);
+      }
+    }, [isOpen, isMinimized]);
+
     useEffect(() => {
       if (isOpen && !isMinimized && inputRef.current) {
         inputRef.current.focus();
