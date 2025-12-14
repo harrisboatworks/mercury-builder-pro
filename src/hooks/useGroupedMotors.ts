@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import type { Motor } from '@/components/QuoteBuilder';
+import { hasElectricStart, hasManualStart, hasTillerControl, hasRemoteControl } from '@/lib/motor-config-utils';
 
 export interface MotorGroup {
   hp: number;
@@ -41,22 +42,12 @@ export function useGroupedMotors(motors: Motor[]): MotorGroup[] {
       const maxPrice = prices.length > 0 ? Math.max(...prices) : 0;
       const modelUpper = (m: Motor) => (m.model || '').toUpperCase();
       
-      // Analyze features across all variants
-      const hasElectricStart = variants.some(m => 
-        modelUpper(m).includes('E') && !modelUpper(m).includes('SEA')
-      );
-      const hasManualStart = variants.some(m => 
-        modelUpper(m).includes('M') && !modelUpper(m).includes('COMMAND')
-      );
-      const hasTiller = variants.some(m => 
-        modelUpper(m).includes('H') || modelUpper(m).includes('TILLER')
-      );
-      const hasRemote = variants.some(m => 
-        !modelUpper(m).includes('H') || modelUpper(m).includes('REMOTE')
-      );
-      const hasPowerTrim = variants.some(m => 
-        modelUpper(m).includes('PT')
-      );
+      // Analyze features across all variants using accurate model code parsing
+      const hasElectric = variants.some(m => hasElectricStart(m.model));
+      const hasManual = variants.some(m => hasManualStart(m.model));
+      const hasTiller = variants.some(m => hasTillerControl(m.model));
+      const hasRemote = variants.some(m => hasRemoteControl(m.model));
+      const hasPowerTrim = variants.some(m => modelUpper(m).includes('PT'));
       const hasCommandThrust = variants.some(m => 
         modelUpper(m).includes('CT') || modelUpper(m).includes('COMMAND THRUST')
       );
@@ -97,8 +88,8 @@ export function useGroupedMotors(motors: Motor[]): MotorGroup[] {
           max: maxPrice
         },
         features: {
-          hasElectricStart,
-          hasManualStart,
+          hasElectricStart: hasElectric,
+          hasManualStart: hasManual,
           hasTiller,
           hasRemote,
           hasPowerTrim,

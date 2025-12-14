@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { MotorGroup } from '@/hooks/useGroupedMotors';
 import { Motor } from '@/components/QuoteBuilder';
 import { MOTOR_CODES, SHAFT_LENGTHS } from '@/lib/motor-codes';
+import { hasElectricStart, hasManualStart, hasTillerControl, hasRemoteControl } from '@/lib/motor-config-utils';
 import { ArrowLeft, ArrowRight, Check, HelpCircle, X } from 'lucide-react';
 import { TransomHeightCalculator } from './TransomHeightCalculator';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -99,15 +100,11 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     
     if (config.startType) {
       variants = variants.filter(m => {
-        // Large motors (150+ HP) are all electric start - no E in model string
-        if ((m.hp || 0) >= 150) {
-          return config.startType === 'electric';
-        }
-        const model = m.model.toUpperCase();
-        if (config.startType === 'electric') {
-          return model.includes('E') && !model.includes('SEA');
-        }
-        return model.includes('M') && !model.includes('COMMAND');
+        const isElectric = hasElectricStart(m.model);
+        const isManual = hasManualStart(m.model);
+        if (config.startType === 'electric') return isElectric;
+        if (config.startType === 'manual') return isManual;
+        return true;
       });
     }
     
@@ -125,15 +122,10 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     
     if (config.controlType) {
       variants = variants.filter(m => {
-        // Large motors (150+ HP) are all remote control - no H in model string
-        if ((m.hp || 0) >= 150) {
-          return config.controlType === 'remote';
-        }
-        const model = m.model.toUpperCase();
-        if (config.controlType === 'tiller') {
-          return model.includes('H') || model.includes('TILLER');
-        }
-        return !model.includes('H') || model.includes('REMOTE');
+        const isTiller = hasTillerControl(m.model);
+        if (config.controlType === 'tiller') return isTiller;
+        if (config.controlType === 'remote') return !isTiller;
+        return true;
       });
     }
     
@@ -190,10 +182,10 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     });
     
     return {
-      hasElectric: variants.some(m => m.model.toUpperCase().includes('E') && !m.model.toUpperCase().includes('SEA')),
-      hasManual: variants.some(m => m.model.toUpperCase().includes('M') && !m.model.toUpperCase().includes('COMMAND')),
-      hasTiller: variants.some(m => m.model.toUpperCase().includes('H')),
-      hasRemote: variants.some(m => !m.model.toUpperCase().includes('H')),
+      hasElectric: variants.some(m => hasElectricStart(m.model)),
+      hasManual: variants.some(m => hasManualStart(m.model)),
+      hasTiller: variants.some(m => hasTillerControl(m.model)),
+      hasRemote: variants.some(m => hasRemoteControl(m.model)),
       hasCT: variants.some(m => m.model.toUpperCase().includes('CT')),
       hasPT: variants.some(m => m.model.toUpperCase().includes('PT')),
       shaftLengths: Array.from(shaftSet).sort((a, b) => parseInt(a) - parseInt(b))
@@ -212,8 +204,8 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
     }
     
     const variants = group.variants;
-    const hasElectric = variants.some(m => m.model.toUpperCase().includes('E') && !m.model.toUpperCase().includes('SEA'));
-    const hasManual = variants.some(m => m.model.toUpperCase().includes('M') && !m.model.toUpperCase().includes('COMMAND'));
+    const hasElectric = variants.some(m => hasElectricStart(m.model));
+    const hasManual = variants.some(m => hasManualStart(m.model));
     
     // Only electric available - auto-select and skip
     if (hasElectric && !hasManual) {
