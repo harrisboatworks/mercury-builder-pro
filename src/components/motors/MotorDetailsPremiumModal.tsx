@@ -393,32 +393,32 @@ export default function MotorDetailsPremiumModal({
 
                     {/* Key Takeaways - Customer Benefits */}
                     {motor?.spec_json?.keyTakeaways && Array.isArray(motor.spec_json.keyTakeaways) && motor.spec_json.keyTakeaways.length > 0 && (
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         <h3 className="text-lg font-semibold tracking-wide text-gray-900">
                           Why You'll Love It
                         </h3>
-                        <div className="grid gap-1.5">
+                        <div className="space-y-3">
                           {motor.spec_json.keyTakeaways.map((takeaway: string, idx: number) => (
-                            <div key={idx} className="flex items-start gap-2 text-left">
-                              <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                              <span className="text-sm text-gray-700 font-normal">{takeaway}</span>
+                            <div key={idx} className="flex flex-row items-start gap-3">
+                              <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                              <span className="text-base text-gray-700">{takeaway}</span>
                             </div>
                           ))}
                         </div>
                       </div>
                     )}
                     
-                    {/* What's Included - Compact Inline Checklist */}
+                    {/* What's Included */}
                     {includedAccessories.length > 0 && (
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         <h3 className="text-lg font-semibold tracking-wide text-gray-900">
                           What's Included
                         </h3>
-                        <div className="grid gap-1.5">
+                        <div className="space-y-3">
                           {includedAccessories.map((item, idx) => (
-                            <div key={idx} className="flex items-start gap-2 text-left">
-                              <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                              <span className="text-sm text-gray-700 font-normal">{item}</span>
+                            <div key={idx} className="flex flex-row items-start gap-3">
+                              <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                              <span className="text-base text-gray-700">{item}</span>
                             </div>
                           ))}
                         </div>
@@ -561,14 +561,14 @@ export default function MotorDetailsPremiumModal({
                   {/* INCLUDED TAB */}
                   <TabsContent value="included" className="space-y-6 mt-0 pt-6">
                     <div>
-                      <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-3">
+                      <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
                         What's Included
                       </h3>
-                      <div className="grid gap-1.5">
+                      <div className="space-y-3">
                         {includedAccessories.map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-2 text-left">
-                            <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-gray-700 font-normal">{item}</span>
+                          <div key={idx} className="flex flex-row items-start gap-3">
+                            <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                            <span className="text-base text-gray-700">{item}</span>
                           </div>
                         ))}
                       </div>
