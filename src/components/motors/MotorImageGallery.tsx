@@ -115,7 +115,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
           </div>
         )}
         {/* Fixed-height container that centers the scaled image */}
-        <div className={`${enhanced ? 'h-96' : 'h-48'} w-full bg-white rounded-xl flex items-center justify-center overflow-hidden`}>
+        <div className={`${enhanced ? 'h-96' : 'h-48'} w-full bg-white rounded-xl flex items-center justify-center overflow-hidden border border-stone-100 shadow-sm`}>
           <img
             src={validImages[selectedIndex]}
             alt={`${motorTitle} - Image ${selectedIndex + 1}`}
