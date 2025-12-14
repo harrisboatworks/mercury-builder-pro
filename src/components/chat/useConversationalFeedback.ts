@@ -14,8 +14,12 @@ import {
   SOCIAL_PROOF,
   OFFER_HELP,
   MOTOR_FAMILY_TIPS,
+  HP_SPECIFIC_MESSAGES,
   pickRandom,
+  pickRandomFiltered,
+  filterByHP,
   getMotorFamilyKey,
+  getHPRange,
 } from './conversationalMessages';
 
 export type NudgeType = 'welcome' | 'action' | 'question' | 'correction' | 'reaction' | 'progress' | 'social' | 'offer-help' | 'default';
@@ -205,73 +209,98 @@ export const useConversationalFeedback = () => {
   const activeNudge = useMemo((): ActiveNudge | null => {
     const path = location.pathname;
     const { secondsOnPage, recentAction } = feedbackState;
+    const motorHP = displayMotor?.hp;
+    const hpRange = getHPRange(motorHP);
     
     // Priority 0: Reaction to recent action (highest priority)
     if (recentAction && REACTION_MESSAGES[recentAction]) {
-      const reaction = pickRandom(REACTION_MESSAGES[recentAction]);
-      // Replace placeholders
-      let message = reaction.message;
-      if (recentAction === 'trade-in-applied' && state.tradeInInfo?.estimatedValue) {
-        message = `Boom! ${money(state.tradeInInfo.estimatedValue)} coming off the top 🎉`;
+      const reaction = pickRandomFiltered(REACTION_MESSAGES[recentAction], motorHP);
+      if (reaction) {
+        let message = reaction.message;
+        if (recentAction === 'trade-in-applied' && state.tradeInInfo?.estimatedValue) {
+          message = `Boom! ${money(state.tradeInInfo.estimatedValue)} coming off the top 🎉`;
+        }
+        return { ...reaction, message, type: 'reaction' };
       }
-      return { ...reaction, message, type: 'reaction' };
     }
 
     // Priority 1: Welcome message (0-3 seconds)
     if (secondsOnPage < 3 && WELCOME_MESSAGES[path]) {
-      const welcome = pickRandom(WELCOME_MESSAGES[path]);
-      return { ...welcome, type: 'welcome' };
-    }
-
-    // Priority 2: Motor family tip when previewing (3-10 seconds)
-    if (isPreview && secondsOnPage >= 3 && secondsOnPage < 10) {
-      const familyKey = getMotorFamilyKey(displayMotor?.model);
-      if (familyKey && MOTOR_FAMILY_TIPS[familyKey]) {
-        const tip = pickRandom(MOTOR_FAMILY_TIPS[familyKey]);
-        return { ...tip, type: 'action' };
+      const filtered = filterByHP(WELCOME_MESSAGES[path], motorHP);
+      if (filtered.length > 0) {
+        const welcome = pickRandom(filtered);
+        return { ...welcome, type: 'welcome' };
       }
     }
 
-    // Priority 3: Action prompt (3-10 seconds)
-    if (secondsOnPage >= 3 && secondsOnPage < 10 && ACTION_PROMPTS[path]) {
-      const prompts = ACTION_PROMPTS[path];
-      const index = Math.floor(secondsOnPage / 3) % prompts.length;
-      return { ...prompts[index], type: 'action' };
+    // Priority 2: HP-specific message when viewing a motor (3-8 seconds)
+    if (hasMotor && secondsOnPage >= 3 && secondsOnPage < 8 && hpRange !== 'none') {
+      const hpMessages = HP_SPECIFIC_MESSAGES[hpRange];
+      if (hpMessages.length > 0) {
+        const msg = pickRandom(hpMessages);
+        return { ...msg, type: 'action' };
+      }
     }
 
-    // Priority 4: Engaging question (10-20 seconds)
-    if (secondsOnPage >= 10 && secondsOnPage < 20 && ENGAGING_QUESTIONS[path]) {
-      const questions = ENGAGING_QUESTIONS[path];
-      const index = Math.floor((secondsOnPage - 10) / 5) % questions.length;
-      return { ...questions[index], type: 'question' };
+    // Priority 3: Motor family tip when previewing (8-12 seconds)
+    if (isPreview && secondsOnPage >= 8 && secondsOnPage < 12) {
+      const familyKey = getMotorFamilyKey(displayMotor?.model);
+      if (familyKey && MOTOR_FAMILY_TIPS[familyKey]) {
+        const filtered = filterByHP(MOTOR_FAMILY_TIPS[familyKey], motorHP);
+        if (filtered.length > 0) {
+          const tip = pickRandom(filtered);
+          return { ...tip, type: 'action' };
+        }
+      }
     }
 
-    // Priority 5: Progress encouragement (20-30 seconds, if making progress)
-    if (secondsOnPage >= 20 && secondsOnPage < 30 && quoteProgress.completed >= 1) {
+    // Priority 4: Action prompt (8-15 seconds, filtered by HP)
+    if (secondsOnPage >= 8 && secondsOnPage < 15 && ACTION_PROMPTS[path]) {
+      const filtered = filterByHP(ACTION_PROMPTS[path], motorHP);
+      if (filtered.length > 0) {
+        const index = Math.floor((secondsOnPage - 8) / 3) % filtered.length;
+        return { ...filtered[index], type: 'action' };
+      }
+    }
+
+    // Priority 5: Engaging question (15-25 seconds, filtered by HP)
+    if (secondsOnPage >= 15 && secondsOnPage < 25 && ENGAGING_QUESTIONS[path]) {
+      const filtered = filterByHP(ENGAGING_QUESTIONS[path], motorHP);
+      if (filtered.length > 0) {
+        const index = Math.floor((secondsOnPage - 15) / 5) % filtered.length;
+        return { ...filtered[index], type: 'question' };
+      }
+    }
+
+    // Priority 6: Progress encouragement (25-35 seconds, if making progress)
+    if (secondsOnPage >= 25 && secondsOnPage < 35 && quoteProgress.completed >= 1) {
       const progressMsg = PROGRESS_MESSAGES[quoteProgress.completed];
       if (progressMsg) {
         return { ...progressMsg, type: 'progress' };
       }
     }
 
-    // Priority 6: Gentle correction if needed
-    if (secondsOnPage >= 15) {
+    // Priority 7: Gentle correction if needed
+    if (secondsOnPage >= 20) {
       const hasOptions = (state.selectedOptions?.length || 0) > 0;
       // Check for skipping options quickly
-      if (path === '/quote/purchase-path' && !hasOptions && secondsOnPage < 20) {
+      if (path === '/quote/purchase-path' && !hasOptions && secondsOnPage < 30) {
         return { ...CORRECTION_NUDGES['skipping-options-fast'], type: 'correction' };
       }
     }
 
-    // Priority 7: Social proof (30-45 seconds)
-    if (secondsOnPage >= 30 && secondsOnPage < 45) {
-      const index = Math.floor((secondsOnPage - 30) / 5) % SOCIAL_PROOF.length;
-      return { ...SOCIAL_PROOF[index], type: 'social' };
+    // Priority 8: Social proof (35-50 seconds)
+    if (secondsOnPage >= 35 && secondsOnPage < 50) {
+      const filtered = filterByHP(SOCIAL_PROOF, motorHP);
+      if (filtered.length > 0) {
+        const index = Math.floor((secondsOnPage - 35) / 5) % filtered.length;
+        return { ...filtered[index], type: 'social' };
+      }
     }
 
-    // Priority 8: Offer help (45+ seconds)
-    if (secondsOnPage >= 45) {
-      const index = Math.floor((secondsOnPage - 45) / 15) % OFFER_HELP.length;
+    // Priority 9: Offer help (50+ seconds)
+    if (secondsOnPage >= 50) {
+      const index = Math.floor((secondsOnPage - 50) / 15) % OFFER_HELP.length;
       return { ...OFFER_HELP[index], type: 'offer-help' };
     }
 
