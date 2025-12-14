@@ -9,7 +9,7 @@ export function TrustSignals() {
       </div>
       <div className="flex items-center gap-2 text-sm font-light text-gray-600">
         <Shield className="w-4 h-4 text-gray-400" />
-        <span>Backed by 75+ years Mercury service</span>
+        <span>60 years as your Mercury dealer</span>
       </div>
     </div>
   );
