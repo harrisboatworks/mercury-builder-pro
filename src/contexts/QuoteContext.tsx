@@ -17,11 +17,22 @@ interface SelectedOption {
   isIncluded: boolean;
 }
 
+export interface ConfiguratorOptions {
+  hasElectric: boolean;
+  hasManual: boolean;
+  hasTiller: boolean;
+  hasRemote: boolean;
+  hasCT: boolean;
+  hasPT: boolean;
+  shaftLengths: string[];
+}
+
 interface QuoteState {
   motor: Motor | null;
   previewMotor: Motor | null; // Motor being viewed in modal before selection
   motorSpecs: MercuryMotor | null; // Full specs available for AI assistant
   configuratorStep: string | null; // Current step in motor configurator for reactive nudges
+  configuratorOptions: ConfiguratorOptions | null; // Available options in current configurator
   purchasePath: 'loose' | 'installed' | null;
   boatInfo: BoatInfo | null;
   tradeInInfo: any | null;
@@ -47,6 +58,7 @@ type QuoteAction =
   | { type: 'SET_MOTOR'; payload: Motor }
   | { type: 'SET_PREVIEW_MOTOR'; payload: Motor | null }
   | { type: 'SET_CONFIGURATOR_STEP'; payload: string | null }
+  | { type: 'SET_CONFIGURATOR_OPTIONS'; payload: ConfiguratorOptions | null }
   | { type: 'SET_PURCHASE_PATH'; payload: 'loose' | 'installed' }
   | { type: 'SET_BOAT_INFO'; payload: BoatInfo }
   | { type: 'SET_TRADE_IN_INFO'; payload: any }
@@ -68,6 +80,7 @@ const initialState: QuoteState = {
   previewMotor: null,
   motorSpecs: null,
   configuratorStep: null,
+  configuratorOptions: null,
   purchasePath: null,
   boatInfo: null,
   tradeInInfo: null,
@@ -109,11 +122,13 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
   switch (action.type) {
     case 'SET_MOTOR':
       const motorSpecs = findMotorSpecs(action.payload.hp, action.payload.model);
-      return { ...state, motor: action.payload, motorSpecs, previewMotor: null, configuratorStep: null };
+      return { ...state, motor: action.payload, motorSpecs, previewMotor: null, configuratorStep: null, configuratorOptions: null };
     case 'SET_PREVIEW_MOTOR':
       return { ...state, previewMotor: action.payload };
     case 'SET_CONFIGURATOR_STEP':
       return { ...state, configuratorStep: action.payload };
+    case 'SET_CONFIGURATOR_OPTIONS':
+      return { ...state, configuratorOptions: action.payload };
     case 'SET_PURCHASE_PATH':
       return { ...state, purchasePath: action.payload };
     case 'SET_BOAT_INFO':
