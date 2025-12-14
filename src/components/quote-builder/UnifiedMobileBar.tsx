@@ -27,6 +27,7 @@ interface PageNudges {
   withoutSelection?: string;
   encouragement?: string;
   contextHint?: string;
+  configuratorTips?: { step: string; message: string; icon?: string }[];
 }
 
 interface PageConfig {
@@ -39,17 +40,32 @@ interface PageConfig {
 // Rich nudge content for each page
 const PAGE_CONFIG: Record<string, PageConfig> = {
   '/quote/motor-selection': {
-    primaryLabel: 'Configure',
+    primaryLabel: (state, hasMotor) => {
+      // When previewing a motor (configurator open), show "Select This Motor"
+      if (state.previewMotor) return 'Select This Motor';
+      // When motor is selected, show "Continue"
+      if (hasMotor) return 'Continue';
+      return 'Configure';
+    },
     nextPath: '/quote/options',
     aiMessage: 'Help me find the right motor for my boat',
     nudges: {
       idle: [
-        { delay: 15, message: 'Not sure which motor? Tap AI →', icon: 'sparkles' },
+        { delay: 10, message: '20" shaft fits most boats — 15" for small tenders', icon: 'check' },
+        { delay: 18, message: 'Electric start = push-button convenience', icon: 'sparkles' },
         { delay: 25, message: "We'll match the perfect motor to your boat", icon: 'heart' },
-        { delay: 40, message: '60 years of Mercury expertise at your service', icon: 'award' },
+        { delay: 35, message: 'Not sure? Tap AI for expert help →', icon: 'sparkles' },
+        { delay: 45, message: '60 years of Mercury expertise at your service', icon: 'award' },
       ],
       encouragement: "Excellent choice! Let's customize it",
       contextHint: 'Great specs for your boat type',
+      configuratorTips: [
+        { step: 'start', message: 'Electric start is more popular, manual is simpler', icon: 'sparkles' },
+        { step: 'shaft', message: '20" shaft fits most boats — measure transom if unsure', icon: 'check' },
+        { step: 'control', message: 'Tiller for boats under 16ft, remote for larger', icon: 'check' },
+        { step: 'features', message: 'Command Thrust adds control for heavy boats', icon: 'shield' },
+        { step: 'result', message: 'Tap a motor to add it to your quote!', icon: 'heart' },
+      ],
     }
   },
   '/quote/options': {
@@ -404,6 +420,16 @@ export const UnifiedMobileBar: React.FC = () => {
     const nudges = pageConfig.nudges;
     if (!nudges) return null;
 
+    // Priority 0: Configurator-specific tips when previewing a motor
+    if (isPreview && location.pathname === '/quote/motor-selection' && nudges.configuratorTips) {
+      // Cycle through configurator tips based on idle time
+      const tipIndex = Math.floor(idleSeconds / 8) % nudges.configuratorTips.length;
+      const tip = nudges.configuratorTips[tipIndex];
+      if (tip) {
+        return { message: tip.message, type: 'tip', icon: tip.icon };
+      }
+    }
+
     // Priority 1: Micro-celebration for recent actions
     if (recentAction === 'motor-selected' && nudges.encouragement) {
       return { message: nudges.encouragement, type: 'celebration', icon: 'sparkles' };
@@ -452,7 +478,8 @@ export const UnifiedMobileBar: React.FC = () => {
     return null;
   }, [
     pageConfig.nudges, recentAction, idleSeconds, hasMotor, quoteProgress.remaining,
-    location.pathname, state.tradeInInfo?.estimatedValue, state.selectedOptions?.length
+    location.pathname, state.tradeInInfo?.estimatedValue, state.selectedOptions?.length,
+    isPreview
   ]);
 
   // Helper to render nudge icon
