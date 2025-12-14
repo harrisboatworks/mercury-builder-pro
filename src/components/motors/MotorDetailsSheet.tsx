@@ -345,7 +345,7 @@ export default function MotorDetailsSheet({
             <div className="p-4 space-y-8">
               
               {/* Motor Image */}
-              <div className="flex justify-center py-4 bg-slate-50 rounded-lg">
+              <div className="flex justify-center py-4 bg-white rounded-lg">
                 <MotorDetailsImageSection motor={motor} gallery={gallery} img={img} title={title} />
               </div>
               
