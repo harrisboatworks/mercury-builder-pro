@@ -37,6 +37,8 @@ export function useGroupedMotors(motors: Motor[]): MotorGroup[] {
     
     groups.forEach((variants, hp) => {
       const prices = variants.map(m => m.price).filter(p => p > 0);
+      const minPrice = prices.length > 0 ? Math.min(...prices) : 0;
+      const maxPrice = prices.length > 0 ? Math.max(...prices) : 0;
       const modelUpper = (m: Motor) => (m.model || '').toUpperCase();
       
       // Analyze features across all variants
@@ -90,8 +92,8 @@ export function useGroupedMotors(motors: Motor[]): MotorGroup[] {
         hp,
         variants,
         priceRange: {
-          min: Math.min(...prices, 0),
-          max: Math.max(...prices, 0)
+          min: minPrice,
+          max: maxPrice
         },
         features: {
           hasElectricStart,
