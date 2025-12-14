@@ -261,7 +261,7 @@ export default function MotorDetailsPremiumModal({
           flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-500">
           
           {/* LEFT COLUMN: Tabbed Content (Desktop & Mobile) */}
-          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto">
+          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto modal-content">
             <Tabs defaultValue="overview" className="w-full" onValueChange={() => {
               scrollContainerRef.current?.scrollTo(0, 0);
             }}>
