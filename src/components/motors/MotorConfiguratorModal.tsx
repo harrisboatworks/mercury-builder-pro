@@ -696,14 +696,21 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
                       {filteredVariants.map(motor => (
                         <div
                           key={motor.id}
-                          className="p-4 rounded-lg border border-border hover:border-muted-foreground transition-all cursor-pointer flex items-center gap-4"
+                          className="p-4 rounded-lg border border-border hover:border-muted-foreground hover:bg-stone-50 transition-all cursor-pointer flex items-center gap-4"
                           onClick={() => setMotorForDetails(motor)}
                         >
-                          <img 
-                            src={motor.image || '/lovable-uploads/speedboat-transparent.png'} 
-                            alt={motor.model}
-                            className="w-20 h-20 object-contain"
-                          />
+                          <div className="relative w-20 h-20 flex-shrink-0">
+                            <div className="absolute inset-0 bg-muted animate-pulse rounded" />
+                            <img 
+                              src={motor.image || '/lovable-uploads/speedboat-transparent.png'} 
+                              alt={motor.model}
+                              className="w-full h-full object-contain relative opacity-0 animate-fade-in"
+                              onLoad={(e) => {
+                                (e.target as HTMLImageElement).classList.remove('opacity-0');
+                                (e.target as HTMLImageElement).previousElementSibling?.classList.add('hidden');
+                              }}
+                            />
+                          </div>
                           <div className="flex-1">
                             <h4 className="font-semibold text-foreground">{motor.model}</h4>
                             <p className="text-sm text-muted-foreground">{motor.specs}</p>
