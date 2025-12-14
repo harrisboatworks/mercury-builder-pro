@@ -265,7 +265,9 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
             focus:outline-none transition-all duration-300
             ${isAIQuery 
               ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.1)]' 
-              : 'border border-gray-200 focus:border-gray-400'
+              : isFocused
+                ? 'border border-gray-400 shadow-[0_0_20px_rgba(0,0,0,0.08),0_0_0_3px_rgba(0,0,0,0.03)]'
+                : 'border border-gray-200 hover:border-gray-300'
             }
           `}
         />
@@ -337,20 +339,34 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
               </div>
             )}
 
-            {/* Suggested Prompts (when empty) */}
+            {/* Suggested Prompts (when empty) - Staggered Animation */}
             {!query && (
               <div className="p-4">
-                <p className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-wide">Try asking</p>
+                <motion.p 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.1 }}
+                  className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-wide"
+                >
+                  Try asking
+                </motion.p>
                 <div className="space-y-2">
                   {SUGGESTED_PROMPTS.map((prompt, index) => (
-                    <button
+                    <motion.button
                       key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ 
+                        delay: 0.15 + (index * 0.08),
+                        duration: 0.3,
+                        ease: "easeOut"
+                      }}
                       onClick={() => handlePromptClick(prompt)}
                       className="w-full text-left px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-md transition-colors flex items-center gap-2"
                     >
                       <Sparkles className="w-4 h-4 text-amber-500" />
                       {prompt}
-                    </button>
+                    </motion.button>
                   ))}
                 </div>
               </div>
