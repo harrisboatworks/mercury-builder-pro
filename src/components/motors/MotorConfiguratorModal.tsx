@@ -10,6 +10,7 @@ import { TransomHeightCalculator } from './TransomHeightCalculator';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
 import { cn } from '@/lib/utils';
+import { StockStatusIndicator } from './StockStatusIndicator';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 
 // Lazy load the motor details modal
@@ -845,9 +846,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, in
                             </p>
                           </div>
                           <div className="flex flex-col items-end gap-1">
-                            {motor.in_stock && (
-                              <span className="text-xs text-green-600 font-medium">In Stock</span>
-                            )}
+                            <StockStatusIndicator motor={motor} />
                             <ChevronRight className="w-5 h-5 text-muted-foreground" />
                           </div>
                         </div>
