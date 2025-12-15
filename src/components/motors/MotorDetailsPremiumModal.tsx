@@ -765,11 +765,6 @@ export default function MotorDetailsPremiumModal({
                     <h3 className="text-lg font-semibold tracking-wide text-gray-900">
                       {title}
                     </h3>
-                    <img 
-                      src={img || gallery?.[0]} 
-                      alt={title}
-                      className="w-full h-32 object-contain mt-4 rounded-lg bg-stone-50"
-                    />
                   </div>
                   
                   {/* Price Display */}
