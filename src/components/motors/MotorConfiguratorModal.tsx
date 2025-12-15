@@ -371,11 +371,44 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, in
   
   const handleBack = () => {
     const steps: Step[] = ['start', 'shaft', 'control', 'features', 'result'];
-    const currentIndex = steps.indexOf(step);
+    let currentIndex = steps.indexOf(step);
+    
     if (currentIndex > 0) {
       isNavigatingBack.current = true;
       setAnimationDirection('backward');
-      const prevStep = steps[currentIndex - 1];
+      
+      let targetIndex = currentIndex - 1;
+      
+      // Skip 'features' if no CT and no PT available
+      if (steps[targetIndex] === 'features' && !availableOptions.hasCT && !availableOptions.hasPT) {
+        targetIndex--;
+      }
+      
+      // Skip 'control' if only one control type available or large motor
+      if (targetIndex >= 0 && steps[targetIndex] === 'control') {
+        const onlyOne = (availableOptions.hasTiller && !availableOptions.hasRemote) ||
+                        (availableOptions.hasRemote && !availableOptions.hasTiller);
+        if (onlyOne || (group && group.hp >= 150)) {
+          targetIndex--;
+        }
+      }
+      
+      // Skip 'shaft' if only one shaft length available
+      if (targetIndex >= 0 && steps[targetIndex] === 'shaft' && availableOptions.shaftLengths.length === 1) {
+        targetIndex--;
+      }
+      
+      // Skip 'start' for large motors or if only one start type
+      if (targetIndex >= 0 && steps[targetIndex] === 'start') {
+        const onlyOneStart = (availableOptions.hasElectric && !availableOptions.hasManual) ||
+                             (availableOptions.hasManual && !availableOptions.hasElectric);
+        if (onlyOneStart || (group && group.hp >= 150)) {
+          handleClose();
+          return;
+        }
+      }
+      
+      const prevStep = steps[Math.max(0, targetIndex)];
       setStep(prevStep);
       dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: prevStep });
     }
