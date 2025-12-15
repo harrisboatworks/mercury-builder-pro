@@ -377,6 +377,14 @@ function detectQueryCategory(message: string): QueryCategory {
     /warranty (price|cost|pricing|quote)/i,
     /maintenance require|proof of maintenance/i,
     /consumable|wear.?(and|&)?.*tear/i,
+    // SmartCraft Connect & connectivity
+    /smartcraft connect|connect mobile|vesselview/i,
+    /mercury (marine )?app|phone app|mobile app/i,
+    /engine (data|monitoring|diagnostics)|real.?time data/i,
+    /bluetooth|wireless.*connect|wifi.*engine/i,
+    /simrad|garmin|raymarine|nmea.?2000/i,
+    /over.?the.?air|ota update|software update/i,
+    /fuel (tracking|monitoring)|maintenance (tracker|log|alert)/i,
   ];
   
   // Harris Boat Works - business, services, facilities, about
@@ -903,6 +911,75 @@ Coverage pricing varies by horsepower range. Sample ranges:
 - When asked about claims: Explain the dealer service + $50 deductible process
 - Always mention the warranty page link for detailed quotes
 - Emphasize maintenance requirements - it matters for coverage!
+
+## SMARTCRAFT CONNECT (Engine Connectivity)
+
+### Product Overview
+**Two products, one ecosystem:**
+1. **SmartCraft Connect** - Gateway module for chartplotter integration (Simrad, Garmin, Raymarine)
+2. **SmartCraft Connect Mobile** - Bluetooth module for smartphone connectivity via Mercury Marine app
+
+**Note**: Formerly known as "VesselView Mobile" - same product, rebranded.
+
+### Compatibility Requirements
+| Engine Type | Requirements |
+|-------------|--------------|
+| Mercury Outboards 40hp+ | Model year 2004 and newer |
+| Mercury 25-30hp | Model year 2022 and newer |
+| MerCruiser | All SmartCraft-capable engines |
+| Avator Electric | Included on 20e and higher |
+
+**Not compatible**: Outboards under 25hp, older 25-30hp (pre-2022), non-SmartCraft engines.
+
+### SmartCraft Connect (Chartplotter Integration)
+Turns compatible chartplotter into full engine command center:
+- **Simrad**: NSX, NSS evo3/evo3S
+- **Garmin**: GPSMAP 84/86/87xx, ECHOMAP Ultra/UHD
+- **Raymarine**: Lighthouse 4.1+ displays
+
+**Features on chartplotter:**
+- Engine RPM, speed, fuel consumption
+- Trim position, oil pressure, water temp
+- Fault codes and alerts
+- Over-the-air software updates via SmartCraft Manager app
+
+### Mercury Marine App (Free - iOS & Android)
+**Digital dashboard features:**
+- Customizable gauges - tach, speed, fuel, temps
+- Real-time fuel burn rate
+- Battery voltage monitoring
+- GPS range rings ("How far can I go on remaining fuel?")
+
+**Maintenance & tracking:**
+- Service reminders based on hours
+- Maintenance history log
+- Fault code notifications via text
+- Access owner's manuals and how-to videos
+
+**Dealer connection:**
+- Connect with preferred dealer (that's us!)
+- Schedule service directly from app
+- Share engine data for troubleshooting
+
+### Part Numbers (Reference)
+| Part | Number | Location |
+|------|--------|----------|
+| SmartCraft Connect (under cowl, single engine) | 8M0173128 | Connects at engine |
+| SmartCraft Connect (under helm, 1-4 engines) | 8M0173129 | Connects at helm |
+
+### Installation
+- **Plug-and-play** - connects to 10-pin SmartCraft diagnostic port
+- Under cowl or at helm (depending on part number)
+- DIY-friendly for handy customers
+- We can install as part of rigging/installation package
+
+### SmartCraft Connect Response Guidelines
+- When asked about phone connectivity → Explain SmartCraft Connect Mobile + Mercury Marine app
+- When asked about chartplotter integration → Explain SmartCraft Connect gateway
+- When asked "is my motor compatible?" → Check HP + model year requirements
+- When asked about VesselView Mobile → Explain it's now called SmartCraft Connect
+- Always mention the free Mercury Marine app (iOS/Android)
+- For older motors (pre-2004 or small HP) → "Unfortunately that motor predates SmartCraft connectivity"
 
 ## RESPONSE LENGTH GUIDE
 - Simple yes/no → 1 sentence
