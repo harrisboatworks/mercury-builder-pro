@@ -88,12 +88,12 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
   '/quote/purchase-path': {
     primaryLabel: 'Boat Info',
     nextPath: '/quote/boat-info',
-    aiMessage: 'Need help choosing between installation options?',
+    aiMessage: 'Should I pick up the motor loose or have Harris install it?',
     nudges: {
       idle: [
         { delay: 15, message: 'Most customers choose professional install', icon: 'check' },
-        { delay: 25, message: 'We handle permits, rigging & sea trials', icon: 'shield' },
-        { delay: 40, message: 'Our techs average 15+ years experience', icon: 'award' },
+        { delay: 25, message: 'We handle rigging, controls & sea trials', icon: 'shield' },
+        { delay: 40, message: 'Loose motor? Great for DIYers', icon: 'wrench' },
       ],
       encouragement: "Great! Let's get your boat details",
     }

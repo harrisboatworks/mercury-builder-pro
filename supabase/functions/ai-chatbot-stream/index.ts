@@ -604,6 +604,25 @@ ${familyInfo ? `${familyInfo}` : ''}`;
     quoteContext = `\nQuote: Step ${progress.step || 1}/${progress.total || 6}${progress.selectedPackage ? ` • ${progress.selectedPackage}` : ''}`;
   }
 
+  // Build page-specific context to guide AI responses
+  let pageContext = '';
+  if (context?.currentPage?.includes('/quote/purchase-path')) {
+    pageContext = `
+## CURRENT PAGE: PURCHASE PATH (Loose vs Installed)
+The customer is choosing HOW they want to get the motor - this is NOT about tiller vs remote steering (that was already decided during motor configuration).
+
+Two options:
+1. **Loose Motor** - They pick up the motor and install it themselves (or have another shop do it)
+2. **Professional Installation** - Harris installs it on their boat with full rigging, controls, and sea trial
+
+If they ask about installation, explain:
+- Pro install includes: full rigging, controls hookup, fuel line, sea trial, water test
+- Pro install typically takes 4-6 hours for single engines
+- Loose motors are great for DIYers or if they have their own mechanic
+- Tiller vs remote is ALREADY decided by their motor selection - don't bring this up!
+`;
+  }
+
   // Build complete grouped inventory summary
   const motorSummary = buildGroupedInventorySummary(motors);
   const hpRange = motors.length > 0 ? 
@@ -796,6 +815,7 @@ When facility questions come up, give the answer AND the link. For directions, a
 
 ## CURRENT SEASON: ${season.toUpperCase()}
 ${seasonInfo.context}
+${pageContext}
 ${currentMotorContext}
 ${quoteContext}
 
