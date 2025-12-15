@@ -20,6 +20,7 @@ interface MotorConfiguratorModalProps {
   onClose: () => void;
   group: MotorGroup | null;
   onSelectMotor: (motor: Motor) => void;
+  initialMotorId?: string | null;  // Deep link: auto-open this motor's details
 }
 
 type Step = 'start' | 'shaft' | 'control' | 'features' | 'result';
@@ -56,7 +57,7 @@ const stepVariants = {
   }),
 };
 
-export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: MotorConfiguratorModalProps) {
+export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, initialMotorId }: MotorConfiguratorModalProps) {
   const [step, setStep] = useState<Step>('start');
   const [config, setConfig] = useState<ConfigState>({
     startType: null,
@@ -82,6 +83,17 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor }: 
       dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: null });
     }
   }, [open, dispatch]);
+  
+  // Auto-open motor details if initialMotorId is provided (from deep link)
+  useEffect(() => {
+    if (open && initialMotorId && group) {
+      const targetMotor = group.variants.find(v => v.id === initialMotorId);
+      if (targetMotor) {
+        // Skip configurator steps, go directly to motor details
+        setMotorForDetails(targetMotor);
+      }
+    }
+  }, [open, initialMotorId, group]);
   
   // Body scroll lock and history management
   useEffect(() => {
