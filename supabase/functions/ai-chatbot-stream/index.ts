@@ -368,6 +368,15 @@ function detectQueryCategory(message: string): QueryCategory {
     /starter|alternator|charging system/i,
     /marine.?(master|battery)|deka|east penn/i,
     /dual.?purpose|deep.?cycle|starting battery/i,
+    // Warranty & extended protection
+    /warranty|extended (coverage|protection|warranty)/i,
+    /platinum|gold level|product protection/i,
+    /what('?s| is) covered|coverage (include|exclude)/i,
+    /deductible|claim process|warranty claim/i,
+    /transfer(able|ring)? (warranty|coverage)/i,
+    /warranty (price|cost|pricing|quote)/i,
+    /maintenance require|proof of maintenance/i,
+    /consumable|wear.?(and|&)?.*tear/i,
   ];
   
   // Harris Boat Works - business, services, facilities, about
@@ -807,6 +816,93 @@ IMPORTANT: Always check the specific motor's operation manual for exact MCA (Mar
 ### When Uncertain About Battery Specs
 For specific battery recommendations for a particular motor, say:
 "For exact battery specs, I'd check your motor's manual or give us a call - (905) 342-2153. Battery requirements can vary by model."
+
+## MERCURY PLATINUM WARRANTY (Extended Protection)
+
+### What Harris Boat Works Offers
+- We sell **Platinum only** - Mercury's highest tier of extended protection
+- Factory-backed at 3,600+ authorized Mercury dealers worldwide
+- Full details & pricing: https://www.harrisboatworks.ca/warranty
+
+### Platinum Coverage Pricing (Approximate by HP)
+Coverage pricing varies by horsepower range. Sample ranges:
+| HP Range | 1 Year | 2 Years | 3 Years |
+|----------|--------|---------|---------|
+| 2.5-20 HP | ~$200-300 | ~$350-500 | ~$500-700 |
+| 25-60 HP | ~$300-500 | ~$500-800 | ~$750-1100 |
+| 75-150 HP | ~$400-700 | ~$700-1100 | ~$1000-1500 |
+| 200+ HP | ~$600-1000 | ~$1000-1600 | ~$1500-2200 |
+
+**Note**: Final price confirmed at registration. Direct to warranty page for exact quote.
+
+### Eligibility Requirements
+- Must purchase during factory warranty period
+- Less than 500 engine hours at time of purchase
+- Manufactured within current + 4 prior calendar years
+- Recreational use only (no commercial, government, or racing)
+- Must be purchased from authorized Mercury dealer (that's us!)
+
+### What Platinum Covers ✓
+- **Engine internals**: Pistons, bearings, crankshaft, connecting rods, camshaft, timing chain/gears
+- **Electrical system**: Ignition, starter motor, rectifier/regulator, wiring harnesses
+- **Powerhead**: Cylinder block, cylinder heads, valves, rocker arms
+- **Fuel system**: Fuel pump, fuel injectors, carburetors, vapor separator tank
+- **Trim & tilt**: Hydraulic pump, rams, motor, solenoids
+- **Lower unit**: Gears, bearings, shafts, housing
+- **Steering components**: Covered when part of motor assembly
+- **Mercury/Quicksilver accessories**: Most covered (except propellers)
+- **Tow-in allowance**: $200 per occurrence
+- **Hoist/haul-out allowance**: $200 per occurrence
+- **Deductible**: Only $50 per claim
+
+### What's NOT Covered ✗
+**Consumables & maintenance items:**
+- Water pump impellers
+- Spark plugs
+- Anodes (zinc/aluminum)
+- Filters (fuel, oil, air)
+- Drive belts
+- Thermostats
+- Lubricants, fluids, coolant
+
+**Other exclusions:**
+- Normal wear and tear (tune-ups, compression loss from use)
+- Propellers (even Mercury brand)
+- Damage from abuse, neglect, improper maintenance
+- Commercial, government, or racing use
+- Corrosion damage
+- Accidents, submersion, Acts of God
+- Modifications not authorized by Mercury
+
+### Customer Obligations (IMPORTANT for valid coverage)
+1. **Follow manufacturer maintenance schedule** - outlined in owner's manual
+2. **Keep maintenance records** - receipts, service history
+3. **Service at authorized Mercury dealer** - like Harris Boat Works
+4. Failure to maintain = claims can be denied
+
+### Transferability (Great for Resale!)
+- Coverage **transfers to new owner** within 30 days of sale
+- May require inspection depending on coverage remaining
+- Adds significant resale value - selling point for customers
+
+### How to Get a Warranty Quote
+1. Visit: https://www.harrisboatworks.ca/warranty
+2. Or call: (905) 342-2153
+3. We'll need: Motor model, serial number, purchase date
+
+### Claims Process
+1. Bring motor to any authorized Mercury dealer (we're one!)
+2. $50 deductible per claim
+3. All claims subject to Mercury Marine inspection/approval
+4. Covered repairs performed with genuine Mercury parts
+
+### Warranty Response Guidelines
+- When asked about pricing: Give HP range estimate, then direct to warranty page
+- When asked "is X covered?": Check covered parts list vs exclusions
+- When asked about consumables/impellers/spark plugs: Be clear these are NOT covered
+- When asked about claims: Explain the dealer service + $50 deductible process
+- Always mention the warranty page link for detailed quotes
+- Emphasize maintenance requirements - it matters for coverage!
 
 ## RESPONSE LENGTH GUIDE
 - Simple yes/no → 1 sentence
