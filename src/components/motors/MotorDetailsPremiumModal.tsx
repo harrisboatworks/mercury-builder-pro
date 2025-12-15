@@ -272,11 +272,11 @@ export default function MotorDetailsPremiumModal({
       {/* Modal Container - TWO COLUMN LAYOUT (60/40) */}
       <div className="absolute inset-x-0 top-16 bottom-0 sm:inset-0 flex items-start sm:items-center justify-center sm:p-4">
         <div className="relative bg-white w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-xl 
-          lg:grid lg:grid-cols-[60fr_40fr] lg:max-w-6xl 
+          lg:grid lg:grid-cols-[60fr_40fr] lg:max-w-6xl lg:h-[90vh] lg:overflow-hidden
           flex flex-col animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-500">
           
           {/* LEFT COLUMN: Tabbed Content (Desktop & Mobile) */}
-          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto modal-content">
+          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto modal-content lg:h-full">
             <Tabs value={activeTab} className="w-full" onValueChange={(value) => {
               if (value === 'chat') {
                 handleAskAI();
