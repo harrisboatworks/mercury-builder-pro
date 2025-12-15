@@ -69,6 +69,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState('');
   const [isLoadingLocal, setIsLoadingLocal] = useState(false);
+  const [keyboardVisible, setKeyboardVisible] = useState(false);
   
   const setIsLoading = useCallback((loading: boolean) => {
     setIsLoadingLocal(loading);
@@ -79,6 +80,25 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const [conversationHistory, setConversationHistory] = useState<any[]>([]);
   const [showHistoryBanner, setShowHistoryBanner] = useState(false);
   const [hasInitialized, setHasInitialized] = useState(false);
+
+  // Keyboard-aware positioning for iOS
+  useEffect(() => {
+    const viewport = window.visualViewport;
+    if (!viewport) return;
+    
+    const handleResize = () => {
+      // Keyboard is likely open if viewport height is significantly less than window height
+      const isKeyboard = viewport.height < window.innerHeight * 0.75;
+      setKeyboardVisible(isKeyboard);
+    };
+    
+    viewport.addEventListener('resize', handleResize);
+    viewport.addEventListener('scroll', handleResize);
+    return () => {
+      viewport.removeEventListener('resize', handleResize);
+      viewport.removeEventListener('scroll', handleResize);
+    };
+  }, []);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -442,8 +462,8 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
             onDragEnd={handleDragEnd}
             className="fixed inset-x-0 z-[75] bg-white rounded-t-2xl shadow-[0_-8px_30px_-12px_rgba(0,0,0,0.25)] border-t border-gray-200"
             style={{ 
-              bottom: 'calc(5rem + env(safe-area-inset-bottom))',
-              maxHeight: '70vh',
+              bottom: keyboardVisible ? '0px' : 'calc(5rem + env(safe-area-inset-bottom))',
+              maxHeight: keyboardVisible ? '100vh' : '70vh',
               touchAction: 'none'
             }}
           >
