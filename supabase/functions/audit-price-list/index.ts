@@ -1,4 +1,5 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { Resend } from "npm:resend@2.0.0";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -20,14 +21,24 @@ interface DatabaseMotor {
   dealer_price: number | null;
   msrp: number | null;
   horsepower: number | null;
+  is_brochure: boolean | null;
 }
 
 interface Discrepancy {
-  type: 'missing_in_db' | 'extra_in_db' | 'name_mismatch' | 'price_mismatch';
+  type: 'missing_in_db' | 'extra_in_db' | 'name_mismatch' | 'price_mismatch' | 'msrp_mismatch' | 'hp_mismatch';
   model_number: string;
   price_list_value?: string | number;
   database_value?: string | number;
   details?: string;
+  fixed?: boolean;
+}
+
+interface ChangeRecord {
+  model_number: string;
+  model_display: string;
+  field: string;
+  old_value: string | number | null;
+  new_value: string | number;
 }
 
 Deno.serve(async (req) => {
@@ -39,6 +50,7 @@ Deno.serve(async (req) => {
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    const resendApiKey = Deno.env.get('RESEND_API_KEY');
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
     // Parse request body for options
@@ -99,7 +111,8 @@ Deno.serve(async (req) => {
     console.log(`[audit-price-list] Found ${dbMotors?.length || 0} motors in database`);
 
     const discrepancies: Discrepancy[] = [];
-    const autoFixUpdates: { model_number: string; updates: Record<string, any> }[] = [];
+    const changesApplied: ChangeRecord[] = [];
+    const motorsInserted: PriceListMotor[] = [];
 
     // Create a map of database motors by model_number
     const dbMotorMap: Map<string, DatabaseMotor> = new Map();
@@ -120,9 +133,50 @@ Deno.serve(async (req) => {
           model_number: modelNumber,
           price_list_value: plMotor.model_display,
           details: `${plMotor.horsepower}HP - $${plMotor.dealer_price} dealer / $${plMotor.msrp} MSRP`,
+          fixed: false,
         });
+
+        // Auto-insert new motor if autoFix enabled
+        if (autoFix && !dryRun) {
+          console.log(`[audit-price-list] Auto-inserting new motor: ${modelNumber}`);
+          
+          // Determine motor type from model display
+          let motorType = 'Outboard';
+          const displayLower = plMotor.model_display.toLowerCase();
+          if (displayLower.includes('verado')) motorType = 'Verado';
+          else if (displayLower.includes('pro xs')) motorType = 'Pro XS';
+          else if (displayLower.includes('seapro')) motorType = 'SeaPro';
+          else if (displayLower.includes('prokicker')) motorType = 'ProKicker';
+          else if (displayLower.includes('fourstroke')) motorType = 'FourStroke';
+
+          const { error: insertError } = await supabase
+            .from('motor_models')
+            .insert({
+              model_number: modelNumber,
+              model_display: plMotor.model_display,
+              dealer_price: plMotor.dealer_price,
+              msrp: plMotor.msrp,
+              horsepower: plMotor.horsepower,
+              motor_type: motorType,
+              model: 'Outboard',
+              is_brochure: true,
+              year: new Date().getFullYear(),
+              created_at: new Date().toISOString(),
+              updated_at: new Date().toISOString(),
+            });
+
+          if (!insertError) {
+            motorsInserted.push(plMotor);
+            discrepancies[discrepancies.length - 1].fixed = true;
+          } else {
+            console.error(`[audit-price-list] Failed to insert ${modelNumber}: ${insertError.message}`);
+          }
+        }
         continue;
       }
+
+      // Build updates object for this motor
+      const updates: Record<string, any> = {};
 
       // Check for name mismatch
       const plDisplayClean = (plMotor.model_display || '').trim().toLowerCase();
@@ -134,19 +188,15 @@ Deno.serve(async (req) => {
           model_number: modelNumber,
           price_list_value: plMotor.model_display,
           database_value: dbMotor.model_display,
+          fixed: false,
         });
-
-        if (autoFix && !dryRun) {
-          autoFixUpdates.push({
-            model_number: modelNumber,
-            updates: { model_display: plMotor.model_display },
-          });
-        }
+        updates.model_display = plMotor.model_display;
       }
 
-      // Check for price mismatch (allow 1% tolerance)
-      if (plMotor.dealer_price > 0 && dbMotor.dealer_price) {
-        const priceDiff = Math.abs(plMotor.dealer_price - dbMotor.dealer_price);
+      // Check for dealer price mismatch (allow 1% tolerance)
+      if (plMotor.dealer_price > 0) {
+        const dbPrice = dbMotor.dealer_price || 0;
+        const priceDiff = Math.abs(plMotor.dealer_price - dbPrice);
         const tolerance = plMotor.dealer_price * 0.01;
         
         if (priceDiff > tolerance) {
@@ -156,45 +206,90 @@ Deno.serve(async (req) => {
             price_list_value: plMotor.dealer_price,
             database_value: dbMotor.dealer_price,
             details: `Difference: $${priceDiff.toFixed(2)}`,
+            fixed: false,
           });
+          updates.dealer_price = plMotor.dealer_price;
+        }
+      }
+
+      // Check for MSRP mismatch (allow 1% tolerance)
+      if (plMotor.msrp > 0) {
+        const dbMsrp = dbMotor.msrp || 0;
+        const msrpDiff = Math.abs(plMotor.msrp - dbMsrp);
+        const tolerance = plMotor.msrp * 0.01;
+        
+        if (msrpDiff > tolerance) {
+          discrepancies.push({
+            type: 'msrp_mismatch',
+            model_number: modelNumber,
+            price_list_value: plMotor.msrp,
+            database_value: dbMotor.msrp,
+            details: `Difference: $${msrpDiff.toFixed(2)}`,
+            fixed: false,
+          });
+          updates.msrp = plMotor.msrp;
+        }
+      }
+
+      // Check for HP mismatch
+      if (plMotor.horsepower > 0 && dbMotor.horsepower !== plMotor.horsepower) {
+        discrepancies.push({
+          type: 'hp_mismatch',
+          model_number: modelNumber,
+          price_list_value: plMotor.horsepower,
+          database_value: dbMotor.horsepower,
+          fixed: false,
+        });
+        updates.horsepower = plMotor.horsepower;
+      }
+
+      // Apply updates if autoFix enabled and there are changes
+      if (autoFix && !dryRun && Object.keys(updates).length > 0) {
+        console.log(`[audit-price-list] Updating ${modelNumber}:`, updates);
+        
+        const { error: updateError } = await supabase
+          .from('motor_models')
+          .update({ ...updates, updated_at: new Date().toISOString() })
+          .eq('model_number', modelNumber);
+
+        if (!updateError) {
+          // Mark discrepancies as fixed and record changes
+          for (const [field, newValue] of Object.entries(updates)) {
+            const oldValue = (dbMotor as any)[field];
+            changesApplied.push({
+              model_number: modelNumber,
+              model_display: plMotor.model_display,
+              field,
+              old_value: oldValue,
+              new_value: newValue,
+            });
+          }
+          
+          // Mark related discrepancies as fixed
+          for (const d of discrepancies) {
+            if (d.model_number === modelNumber && !d.fixed) {
+              d.fixed = true;
+            }
+          }
+        } else {
+          console.error(`[audit-price-list] Failed to update ${modelNumber}: ${updateError.message}`);
         }
       }
     }
 
-    // Check for motors in database but not in price list (inventory only)
+    // Check for motors in database but not in price list
     for (const [modelNumber, dbMotor] of dbMotorMap) {
       if (!priceListMotors.has(modelNumber)) {
-        // Only flag if it's marked as a brochure motor (official catalog)
-        // Inventory motors might not be in the price list
         discrepancies.push({
           type: 'extra_in_db',
           model_number: modelNumber,
           database_value: dbMotor.model_display,
-          details: `${dbMotor.horsepower}HP - Not found in official price list`,
+          details: `${dbMotor.horsepower}HP - Not found in official price list (is_brochure: ${dbMotor.is_brochure})`,
         });
       }
     }
 
-    // Apply auto-fixes if enabled
-    let fixedCount = 0;
-    if (autoFix && !dryRun && autoFixUpdates.length > 0) {
-      console.log(`[audit-price-list] Applying ${autoFixUpdates.length} auto-fixes`);
-      
-      for (const fix of autoFixUpdates) {
-        const { error: updateError } = await supabase
-          .from('motor_models')
-          .update({ ...fix.updates, updated_at: new Date().toISOString() })
-          .eq('model_number', fix.model_number);
-
-        if (!updateError) {
-          fixedCount++;
-        } else {
-          console.error(`[audit-price-list] Failed to update ${fix.model_number}: ${updateError.message}`);
-        }
-      }
-    }
-
-    // Log results to cron_job_logs
+    // Build summary
     const summary = {
       price_list_count: priceListMotors.size,
       database_count: dbMotorMap.size,
@@ -203,8 +298,12 @@ Deno.serve(async (req) => {
       extra_in_db: discrepancies.filter(d => d.type === 'extra_in_db').length,
       name_mismatches: discrepancies.filter(d => d.type === 'name_mismatch').length,
       price_mismatches: discrepancies.filter(d => d.type === 'price_mismatch').length,
-      auto_fixed: fixedCount,
+      msrp_mismatches: discrepancies.filter(d => d.type === 'msrp_mismatch').length,
+      hp_mismatches: discrepancies.filter(d => d.type === 'hp_mismatch').length,
+      changes_applied: changesApplied.length,
+      motors_inserted: motorsInserted.length,
       dry_run: dryRun,
+      auto_fix: autoFix,
     };
 
     console.log(`[audit-price-list] Audit complete:`, summary);
@@ -216,17 +315,125 @@ Deno.serve(async (req) => {
       started_at: new Date().toISOString(),
       completed_at: new Date().toISOString(),
       motors_found: priceListMotors.size,
-      motors_updated: fixedCount,
+      motors_updated: changesApplied.length + motorsInserted.length,
       result: {
         summary,
-        discrepancies: discrepancies.slice(0, 100), // Limit to first 100 for storage
+        changes_applied: changesApplied.slice(0, 50),
+        motors_inserted: motorsInserted.slice(0, 50),
+        discrepancies: discrepancies.slice(0, 100),
       },
     });
+
+    // Send email summary if there were changes or issues
+    if (resendApiKey && !dryRun && (changesApplied.length > 0 || motorsInserted.length > 0 || discrepancies.length > 0)) {
+      try {
+        const resend = new Resend(resendApiKey);
+        
+        // Format price changes for email
+        const priceChangesHtml = changesApplied
+          .filter(c => c.field === 'dealer_price' || c.field === 'msrp')
+          .map(c => `<tr>
+            <td style="padding: 8px; border-bottom: 1px solid #e5e7eb;">${c.model_display}</td>
+            <td style="padding: 8px; border-bottom: 1px solid #e5e7eb;">${c.field}</td>
+            <td style="padding: 8px; border-bottom: 1px solid #e5e7eb;">$${typeof c.old_value === 'number' ? c.old_value.toLocaleString() : c.old_value || 'N/A'}</td>
+            <td style="padding: 8px; border-bottom: 1px solid #e5e7eb;">$${typeof c.new_value === 'number' ? c.new_value.toLocaleString() : c.new_value}</td>
+          </tr>`)
+          .join('');
+
+        const newMotorsHtml = motorsInserted
+          .map(m => `<tr>
+            <td style="padding: 8px; border-bottom: 1px solid #e5e7eb;">${m.model_number}</td>
+            <td style="padding: 8px; border-bottom: 1px solid #e5e7eb;">${m.model_display}</td>
+            <td style="padding: 8px; border-bottom: 1px solid #e5e7eb;">${m.horsepower}HP</td>
+            <td style="padding: 8px; border-bottom: 1px solid #e5e7eb;">$${m.dealer_price.toLocaleString()}</td>
+          </tr>`)
+          .join('');
+
+        const unresolvedIssues = discrepancies.filter(d => !d.fixed && d.type !== 'extra_in_db');
+        const unresolvedHtml = unresolvedIssues.length > 0 
+          ? unresolvedIssues.slice(0, 20).map(d => `<li>${d.model_number}: ${d.type} - ${d.details || ''}</li>`).join('')
+          : '<li>None</li>';
+
+        const emailHtml = `
+          <div style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto;">
+            <h1 style="color: #1e3a5f; border-bottom: 2px solid #1e3a5f; padding-bottom: 10px;">
+              🔄 Price List Sync Report
+            </h1>
+            
+            <p style="color: #6b7280;">
+              Automated sync completed on ${new Date().toLocaleDateString('en-CA', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+
+            <div style="background: #f0f9ff; border-radius: 8px; padding: 20px; margin: 20px 0;">
+              <h2 style="margin-top: 0; color: #1e3a5f;">📊 Summary</h2>
+              <ul style="list-style: none; padding: 0;">
+                <li>✅ <strong>${changesApplied.length}</strong> updates applied</li>
+                <li>➕ <strong>${motorsInserted.length}</strong> new motors added</li>
+                <li>⚠️ <strong>${unresolvedIssues.length}</strong> issues need attention</li>
+              </ul>
+            </div>
+
+            ${priceChangesHtml ? `
+            <h2 style="color: #1e3a5f;">💰 Price Updates Applied</h2>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+              <thead>
+                <tr style="background: #f3f4f6;">
+                  <th style="padding: 10px; text-align: left;">Motor</th>
+                  <th style="padding: 10px; text-align: left;">Field</th>
+                  <th style="padding: 10px; text-align: left;">Old Price</th>
+                  <th style="padding: 10px; text-align: left;">New Price</th>
+                </tr>
+              </thead>
+              <tbody>${priceChangesHtml}</tbody>
+            </table>
+            ` : ''}
+
+            ${newMotorsHtml ? `
+            <h2 style="color: #1e3a5f;">➕ New Motors Added</h2>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+              <thead>
+                <tr style="background: #f3f4f6;">
+                  <th style="padding: 10px; text-align: left;">Model #</th>
+                  <th style="padding: 10px; text-align: left;">Name</th>
+                  <th style="padding: 10px; text-align: left;">HP</th>
+                  <th style="padding: 10px; text-align: left;">Price</th>
+                </tr>
+              </thead>
+              <tbody>${newMotorsHtml}</tbody>
+            </table>
+            ` : ''}
+
+            <h2 style="color: #1e3a5f;">⚠️ Issues Requiring Attention</h2>
+            <ul>${unresolvedHtml}</ul>
+
+            <hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e7eb;">
+            <p style="color: #9ca3af; font-size: 12px;">
+              This is an automated report from the Harris Boat Works price list sync system.
+              <br>View full details in the <a href="https://supabase.com/dashboard/project/eutsoqdpjurknjsshxes/editor/29614">cron_job_logs table</a>.
+            </p>
+          </div>
+        `;
+
+        await resend.emails.send({
+          from: 'system@hbwsales.ca',
+          to: ['info@harrisboatworks.ca'],
+          reply_to: 'info@harrisboatworks.ca',
+          subject: `🔄 Price List Sync: ${changesApplied.length} updates, ${motorsInserted.length} new motors`,
+          html: emailHtml,
+        });
+
+        console.log('[audit-price-list] Email summary sent successfully');
+      } catch (emailError) {
+        console.error('[audit-price-list] Failed to send email:', emailError);
+      }
+    }
 
     return new Response(
       JSON.stringify({
         success: true,
         summary,
+        changes_applied: changesApplied,
+        motors_inserted: motorsInserted,
         discrepancies,
       }),
       { 
