@@ -364,7 +364,7 @@ function detectQueryCategory(message: string): QueryCategory {
     /\b(service|repair|maintenance) (department|team|work)/i,
     /\b(parts|quicksilver)\b/i,
     /\b(delivery|pick.?up|shipping)\b/i,
-    /\b(water test|sea trial|demo)\b/i,
+    /\b(water test|lake test|demo)\b/i,
     /\b(certified|authorized|dealer|dealership)\b/i,
   ];
   
@@ -613,10 +613,10 @@ The customer is choosing HOW they want to get the motor - this is NOT about till
 
 Two options:
 1. **Loose Motor** - They pick up the motor and install it themselves (or have another shop do it)
-2. **Professional Installation** - Harris installs it on their boat with full rigging, controls, and sea trial
+2. **Professional Installation** - Harris installs it on their boat with full rigging, controls, and lake test
 
 If they ask about installation, explain:
-- Pro install includes: full rigging, controls hookup, fuel line, sea trial, water test
+- Pro install includes: full rigging, controls hookup, fuel line, lake test
 - Pro install typically takes 4-6 hours for single engines
 - Loose motors are great for DIYers or if they have their own mechanic
 - Tiller vs remote is ALREADY decided by their motor selection - don't bring this up!
