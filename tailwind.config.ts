@@ -24,6 +24,15 @@ export default {
 			},
 			colors: {
 				border: 'hsl(var(--border))',
+				// Luxury Header System Colors
+				luxury: {
+					'near-black': 'hsl(var(--luxury-near-black))',
+					ink: 'hsl(var(--luxury-ink))',
+					gray: 'hsl(var(--luxury-gray))',
+					hairline: 'hsl(var(--luxury-hairline))',
+					stage: 'hsl(var(--luxury-stage))',
+					action: 'hsl(var(--luxury-action))',
+				},
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
