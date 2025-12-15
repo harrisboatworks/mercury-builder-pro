@@ -131,20 +131,20 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className="p-8 border-gray-200">
+      <Card className="p-8 border-gray-200 bg-white">
         <div className="space-y-8">
           <div className="space-y-4">
             <div className="space-y-2">
-              <h2 className="text-3xl font-light tracking-wide text-gray-900 dark:text-gray-100">
+              <h2 className="text-3xl font-light tracking-wide text-gray-900">
                 Trade-In Valuation
               </h2>
-              <p className="text-base font-light text-gray-600 dark:text-gray-400">
+              <p className="text-base font-light text-gray-600">
                 Get an instant estimate for your current motor
               </p>
             </div>
             
             <div className="flex flex-col gap-4 mt-6">
-              <p className="text-lg font-light text-gray-900 dark:text-gray-100">Do you have a motor to trade?</p>
+              <p className="text-lg font-light text-gray-900">Do you have a motor to trade?</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
@@ -164,18 +164,18 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     });
                   }}
                   aria-pressed={tradeInInfo.hasTradeIn}
-                  className={`relative p-6 border-2 rounded-sm transition-all bg-white dark:bg-gray-900 text-left group ${
+                  className={`relative p-6 border-2 rounded-sm transition-all bg-white text-left group ${
                     tradeInInfo.hasTradeIn 
-                      ? 'border-gray-900 dark:border-gray-100 shadow-lg' 
-                      : 'border-gray-300 dark:border-gray-700 hover:border-gray-900 dark:hover:border-gray-100 hover:shadow-lg'
+                      ? 'border-gray-900 shadow-lg' 
+                      : 'border-gray-300 hover:border-gray-900 hover:shadow-lg'
                   }`}
                   type="button"
                 >
                   <CheckCircle2 className={`w-6 h-6 mb-3 transition-transform ${
-                    tradeInInfo.hasTradeIn ? 'text-gray-900 dark:text-gray-100' : 'text-gray-400 dark:text-gray-600'
+                    tradeInInfo.hasTradeIn ? 'text-gray-900' : 'text-gray-400'
                   }`} />
-                  <div className="font-light text-lg text-gray-900 dark:text-gray-100 tracking-wide">Yes, I have a trade-in</div>
-                  <div className="text-sm font-light text-gray-600 dark:text-gray-400 mt-1">We'll estimate your value instantly</div>
+                  <div className="font-light text-lg text-gray-900 tracking-wide">Yes, I have a trade-in</div>
+                  <div className="text-sm font-light text-gray-600 mt-1">We'll estimate your value instantly</div>
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.02 }}
@@ -226,18 +226,18 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     console.log('🚀 onAutoAdvance called');
                   }}
                   aria-pressed={!tradeInInfo.hasTradeIn}
-                  className={`relative p-6 border-2 rounded-sm transition-all bg-white dark:bg-gray-900 text-left group ${
+                  className={`relative p-6 border-2 rounded-sm transition-all bg-white text-left group ${
                     !tradeInInfo.hasTradeIn 
-                      ? 'border-gray-900 dark:border-gray-100 shadow-lg' 
-                      : 'border-gray-300 dark:border-gray-700 hover:border-gray-900 dark:hover:border-gray-100 hover:shadow-lg'
+                      ? 'border-gray-900 shadow-lg' 
+                      : 'border-gray-300 hover:border-gray-900 hover:shadow-lg'
                   }`}
                   type="button"
                 >
                   <AlertTriangle className={`w-6 h-6 mb-3 transition-transform ${
-                    !tradeInInfo.hasTradeIn ? 'text-gray-900 dark:text-gray-100' : 'text-gray-400 dark:text-gray-600'
+                    !tradeInInfo.hasTradeIn ? 'text-gray-900' : 'text-gray-400'
                   }`} />
-                  <div className="font-light text-lg text-gray-900 dark:text-gray-100 tracking-wide">No trade-in</div>
-                  <div className="text-sm font-light text-gray-600 dark:text-gray-400 mt-1">Skip valuation and continue</div>
+                  <div className="font-light text-lg text-gray-900 tracking-wide">No trade-in</div>
+                  <div className="text-sm font-light text-gray-600 mt-1">Skip valuation and continue</div>
                 </motion.button>
               </div>
             </div>
@@ -255,19 +255,19 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
               
               {/* Pre-filled notice */}
               {currentMotorBrand && currentMotorBrand !== 'No Current Motor' && (
-                <div className="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-sm p-4">
-                  <div className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
+                <div className="bg-gray-50 border border-gray-200 rounded-sm p-4">
+                  <div className="flex items-center gap-2 text-gray-900">
                     <CheckCircle2 className="w-4 h-4" />
                     <span className="text-sm font-light">Pre-filled from your current motor details</span>
                   </div>
-                  <p className="text-xs font-light text-gray-600 dark:text-gray-400 mt-1">You can adjust any details below if needed.</p>
+                  <p className="text-xs font-light text-gray-600 mt-1">You can adjust any details below if needed.</p>
                 </div>
               )}
               
               {/* Trade-In Details */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="trade-brand" className="text-sm font-light tracking-wide text-gray-900 dark:text-gray-100">
+                  <Label htmlFor="trade-brand" className="text-sm font-light tracking-wide text-gray-900">
                     Brand *
                   </Label>
                   <Select 
@@ -277,7 +277,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.brand 
                         ? 'border-red-500 ring-1 ring-red-500' 
-                        : 'border-gray-300 dark:border-gray-700'
+                        : 'border-gray-300'
                     }`}>
                       <SelectValue placeholder="Select brand" />
                     </SelectTrigger>
@@ -293,7 +293,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="trade-year" className="text-sm font-light tracking-wide text-gray-900 dark:text-gray-100">
+                  <Label htmlFor="trade-year" className="text-sm font-light tracking-wide text-gray-900">
                     Year *
                   </Label>
                   <Select 
@@ -303,7 +303,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.year 
                         ? 'border-red-500 ring-1 ring-red-500' 
-                        : 'border-gray-300 dark:border-gray-700'
+                        : 'border-gray-300'
                     }`}>
                       <SelectValue placeholder="Select year" />
                     </SelectTrigger>
@@ -319,7 +319,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="trade-hp" className="text-sm font-light tracking-wide text-gray-900 dark:text-gray-100">
+                  <Label htmlFor="trade-hp" className="text-sm font-light tracking-wide text-gray-900">
                     Horsepower *
                   </Label>
                   <Input
@@ -333,7 +333,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.horsepower 
                         ? 'border-red-500 ring-1 ring-red-500' 
-                        : 'border-gray-300 dark:border-gray-700'
+                        : 'border-gray-300'
                     }`}
                   />
                   {showValidation && missingFields.horsepower && (
@@ -342,7 +342,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="trade-model" className="text-sm font-light tracking-wide text-gray-900 dark:text-gray-100">
+                  <Label htmlFor="trade-model" className="text-sm font-light tracking-wide text-gray-900">
                     Model (Optional)
                   </Label>
                   <Input
@@ -350,13 +350,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     value={tradeInInfo.model}
                     onChange={(e) => onTradeInChange({ ...tradeInInfo, model: e.target.value })}
                     placeholder="e.g., OptiMax Pro XS"
-                    className="min-h-[48px] rounded-sm border-gray-300 dark:border-gray-700 font-light"
+                    className="min-h-[48px] rounded-sm border-gray-300 font-light"
                   />
                 </div>
 
                 {/* Serial Number */}
                 <div className="space-y-2">
-                  <Label htmlFor="trade-serial" className="text-sm font-light tracking-wide text-gray-900 dark:text-gray-100">
+                  <Label htmlFor="trade-serial" className="text-sm font-light tracking-wide text-gray-900">
                     Serial Number (Optional)
                   </Label>
                   <Input
@@ -364,14 +364,14 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     value={tradeInInfo.serialNumber}
                     onChange={(e) => onTradeInChange({ ...tradeInInfo, serialNumber: e.target.value })}
                     placeholder="Motor serial number"
-                    className="min-h-[48px] rounded-sm border-gray-300 dark:border-gray-700 font-light"
+                    className="min-h-[48px] rounded-sm border-gray-300 font-light"
                   />
                 </div>
               </div>
 
               {/* Enhanced Condition Selection */}
               <div className="space-y-4">
-                <Label className="text-base font-light tracking-wide text-gray-900 dark:text-gray-100">
+                <Label className="text-base font-light tracking-wide text-gray-900">
                   Motor Condition *
                 </Label>
                 <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 ${
@@ -384,190 +384,82 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       whileTap={{ scale: 0.98 }}
                       className={`cursor-pointer border-2 rounded-sm p-4 text-center transition-all duration-300 ${
                         tradeInInfo.condition === option.value 
-                          ? 'border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-800 shadow-lg' 
-                          : 'border-gray-300 dark:border-gray-700 hover:border-gray-900 dark:hover:border-gray-100 hover:shadow-md'
+                          ? 'border-gray-900 bg-gray-50 shadow-md' 
+                          : 'border-gray-300 hover:border-gray-900'
                       }`}
                       onClick={() => onTradeInChange({ ...tradeInInfo, condition: option.value as any })}
                     >
-                      {/* Icon based on condition */}
-                      <div className="mb-3 flex justify-center">
-                        {option.value === 'excellent' && <Sparkles className="w-8 h-8 text-gray-900 dark:text-gray-100" strokeWidth={1.5} />}
-                        {option.value === 'good' && <CircleCheck className="w-8 h-8 text-gray-900 dark:text-gray-100" strokeWidth={1.5} />}
-                        {option.value === 'fair' && <AlertCircle className="w-8 h-8 text-gray-900 dark:text-gray-100" strokeWidth={1.5} />}
-                        {option.value === 'poor' && <Wrench className="w-8 h-8 text-gray-900 dark:text-gray-100" strokeWidth={1.5} />}
-                      </div>
-                      <div className="font-light text-base tracking-wide text-gray-900 dark:text-gray-100">{option.label}</div>
-                      <div className="text-sm font-light text-gray-600 dark:text-gray-400 mt-1">{option.description}</div>
-                      <div className="text-xs font-light text-gray-500 dark:text-gray-400 mt-1">
-                        {option.value === 'excellent' && '<100 hours'}
-                        {option.value === 'good' && '100-500 hours'}
-                        {option.value === 'fair' && '500-1000 hours'}
-                        {option.value === 'poor' && '1000+ hours'}
-                      </div>
-                      
-                      {/* Selection indicator */}
-                      {tradeInInfo.condition === option.value && (
-                        <div className="mt-2 text-gray-900 dark:text-gray-100">
-                          <CheckCircle2 className="w-5 h-5 mx-auto" />
-                        </div>
-                      )}
+                      <div className="font-light text-lg text-gray-900">{option.label}</div>
+                      <div className="text-xs font-light text-gray-500 mt-1">{option.description}</div>
                     </motion.div>
                   ))}
                 </div>
                 {showValidation && missingFields.condition && (
-                  <p className="text-sm text-red-600 font-light mt-1">Please select a condition</p>
+                  <p className="text-sm text-red-600 font-light">Please select a condition</p>
                 )}
               </div>
-
-              {/* Validation Alert */}
-              {showValidation && hasMissingFields && (
-                <Alert className="border-red-200 bg-red-50">
-                  <AlertCircle className="w-4 h-4 text-red-600" />
-                  <AlertDescription className="text-red-700 font-light">
-                    Please complete all required fields: {[
-                      missingFields.brand && 'Brand',
-                      missingFields.year && 'Year',
-                      missingFields.horsepower && 'Horsepower',
-                      missingFields.condition && 'Condition'
-                    ].filter(Boolean).join(', ')}
-                  </AlertDescription>
-                </Alert>
-              )}
 
               {/* Get Estimate Button */}
-              <Button 
-                onClick={handleValidatedEstimate}
-                disabled={isLoading}
-                className={`w-full min-h-[56px] border-2 rounded-sm font-light text-base tracking-widest uppercase transition-all ${
-                  isLoading
-                    ? 'border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 cursor-not-allowed' 
-                    : 'border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 hover:bg-gray-900 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900'
-                }`}
-              >
-                {isLoading ? (
-                  <>
-                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                    Calculating Value...
-                  </>
-                ) : (
-                  'Get Instant Estimate'
-                )}
-              </Button>
-
-              {/* Trade Value Display */}
-              {estimate && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3 }}
+              <div className="pt-4">
+                <Button
+                  type="button"
+                  onClick={handleValidatedEstimate}
+                  disabled={isLoading}
+                  className="w-full min-h-[56px] text-lg font-light bg-gray-900 hover:bg-gray-800 text-white"
                 >
-                  <Card className="bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700">
-                    <div className="p-6 space-y-6">
-                      <div className="text-center space-y-3">
-                        <h3 className="text-sm font-light tracking-widest uppercase text-gray-600 dark:text-gray-400">
-                          ESTIMATED TRADE VALUE
-                        </h3>
-                        <div className="text-5xl font-light text-gray-900 dark:text-gray-100 tracking-tight">
-                          ${medianValue.toLocaleString()}
-                        </div>
-                        <p className="text-sm font-light text-gray-600 dark:text-gray-400">
-                          Based on {tradeInInfo.condition} condition
-                        </p>
-                      </div>
-
-                      <div className="space-y-3 pt-4 border-t border-gray-200 dark:border-gray-700">
-                        <p className="text-sm font-light tracking-wide text-gray-900 dark:text-gray-100">We pay more for:</p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          {tradeInInfo.brand && tradeInInfo.brand.toLowerCase() === 'mercury' && (
-                            <div className="flex items-center space-x-2 text-sm font-light">
-                              <CheckCircle2 className="w-4 h-4 text-green-600 dark:text-green-400 flex-shrink-0" />
-                              <span className="text-gray-700 dark:text-gray-300">Mercury motors (bonus applied!)</span>
-                            </div>
-                          )}
-                          <div className="flex items-center space-x-2 text-sm font-light">
-                            <CheckCircle2 className="w-4 h-4 text-green-600 dark:text-green-400 flex-shrink-0" />
-                            <span className="text-gray-700 dark:text-gray-300">Recent service history</span>
-                          </div>
-                          <div className="flex items-center space-x-2 text-sm font-light">
-                            <CheckCircle2 className="w-4 h-4 text-green-600 dark:text-green-400 flex-shrink-0" />
-                            <span className="text-gray-700 dark:text-gray-300">Low hours</span>
-                          </div>
-                          <div className="flex items-center space-x-2 text-sm font-light">
-                            <CheckCircle2 className="w-4 h-4 text-green-600 dark:text-green-400 flex-shrink-0" />
-                            <span className="text-gray-700 dark:text-gray-300">Power trim/tilt models</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-sm p-4">
-                        <p className="text-sm font-light text-green-700 dark:text-green-300">
-                          💰 Excellent condition could add 10–15% more
-                        </p>
-                      </div>
-
-                      {/* Brand penalty notice */}
-                      {getBrandPenaltyFactor(tradeInInfo.brand) < 1 && (
-                        <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-sm p-4">
-                          <div className="flex items-start gap-3">
-                            <AlertTriangle className="w-4 h-4 text-orange-700 dark:text-orange-300 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm font-light text-orange-700 dark:text-orange-300">
-                              Adjusted for brand (-50%) — Manufacturer out of business; parts & service availability limited.
-                            </span>
-                          </div>
-                        </div>
-                      )}
-
-                      {estimate.factors.length > 0 && (
-                        <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                          <p className="text-sm font-light tracking-wide text-gray-900 dark:text-gray-100 mb-2">Applied Adjustments:</p>
-                          <ul className="text-sm font-light space-y-2">
-                            {estimate.factors.map((factor, index) => (
-                              <li key={index} className="flex items-center space-x-2 text-gray-700 dark:text-gray-300">
-                                <div className="w-1.5 h-1.5 bg-gray-900 dark:bg-gray-100 rounded-full flex-shrink-0"></div>
-                                <span>{factor}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      <Alert className="border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
-                        <AlertTriangle className="w-4 h-4 text-gray-900 dark:text-gray-100" />
-                        <AlertDescription className="text-gray-700 dark:text-gray-300 font-light">
-                          Final value subject to in-person inspection by our certified technicians.
-                        </AlertDescription>
-                      </Alert>
-                    </div>
-                  </Card>
-                </motion.div>
-              )}
-
-              {/* Repower Center Authority */}
-              <div className="text-center">
-                <img
-                  src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
-                  alt="Official Mercury Repower Center badge"
-                  loading="lazy"
-                  className="h-12 mx-auto mb-3 w-auto"
-                />
-                <p className="font-light tracking-wide text-gray-900 dark:text-gray-100 text-base mb-2">
-                  As a Certified Mercury Repower Center, we offer:
-                </p>
-                <ul className="space-y-1.5 text-sm font-light text-gray-700 dark:text-gray-300">
-                  <li>✓ Competitive trade-in options</li>
-                  <li>✓ Expert repower consultation</li>
-                  <li>✓ Up to $1,000 in Mercury rebates</li>
-                </ul>
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                      Calculating...
+                    </>
+                  ) : (
+                    <>
+                      <DollarSign className="w-5 h-5 mr-2" />
+                      Get Instant Estimate
+                    </>
+                  )}
+                </Button>
               </div>
 
-              {/* Continue Button - shown after estimate */}
+              {/* Estimate Result */}
               {estimate && (
-                <Button 
-                  onClick={onAutoAdvance}
-                  className="w-full min-h-[56px] border-2 rounded-sm font-light text-base tracking-widest uppercase transition-all border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 hover:bg-gray-900 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900"
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="space-y-4"
                 >
-                  Continue to Next Step
-                </Button>
+                  <Card className="p-6 bg-green-50 border-green-200">
+                    <div className="flex items-center gap-3 mb-4">
+                      <CircleCheck className="w-6 h-6 text-green-600" />
+                      <h3 className="text-lg font-light text-gray-900">Your Estimated Trade Value</h3>
+                    </div>
+                    
+                    <div className="text-center space-y-2">
+                      <div className="text-4xl font-light text-green-700">
+                        ${medianValue.toLocaleString()}
+                      </div>
+                      <div className="text-sm font-light text-gray-600">
+                        Range: ${estimate.low.toLocaleString()} - ${estimate.high.toLocaleString()}
+                      </div>
+                    </div>
+
+                    {(estimate as any).penaltyMessage && (
+                      <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-sm">
+                        <div className="flex items-start gap-2">
+                          <AlertCircle className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                          <p className="text-sm font-light text-amber-800">{(estimate as any).penaltyMessage}</p>
+                        </div>
+                      </div>
+                    )}
+                  </Card>
+
+                  <Alert className="border-blue-200 bg-blue-50">
+                    <Wrench className="w-4 h-4 text-blue-600" />
+                    <AlertDescription className="text-sm font-light text-blue-800">
+                      Final trade value confirmed after in-person inspection. This estimate helps you plan your budget.
+                    </AlertDescription>
+                  </Alert>
+                </motion.div>
               )}
             </motion.div>
           )}
