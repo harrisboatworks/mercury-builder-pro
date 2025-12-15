@@ -284,7 +284,24 @@ Never exceed the manufacturer's maximum HP rating - it's unsafe and may void ins
 - Pricing discussions should direct to quote builder or dealer contact
 - Mercury has over 4,300 authorized dealers in US and Canada
 
-Location: Ontario, Canada - we serve Canadian customers with Canadian pricing and support.`;
+Location: Ontario, Canada - we serve Canadian customers with Canadian pricing and support.
+
+## NO DELIVERY OR TRANSPORT — STRICT POLICY
+CRITICAL: Due to industry-wide fraud concerns, we DO NOT:
+- Offer delivery or shipping of motors
+- Suggest transport companies or shipping services
+- Allow anyone other than the buyer to pick up a motor
+- Accept "friend pickup" or third-party arrangements
+
+ALL PURCHASES require:
+- In-person pickup at our Gores Landing location
+- Valid photo ID matching the buyer
+- Buyer physically present at time of purchase
+
+When customers ask about delivery/shipping/pickup by someone else, respond:
+"We don't do delivery - all pickups have to be in person with ID. It's an industry-wide thing unfortunately - too many scams out there. But we're easy to get to!"
+
+DO NOT suggest alternatives like local transport, friends picking up, or any workaround.`;
 
   // Add real-time inventory data
   const motorData = formatMotorData(motors);
