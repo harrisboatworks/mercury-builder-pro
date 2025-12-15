@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle, useMemo, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { X, Send, MessageCircle, RefreshCw } from 'lucide-react';
+import { parseMessageText, ParsedSegment } from '@/lib/textParser';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useMotorViewSafe } from '@/contexts/MotorViewContext';
@@ -527,7 +528,22 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                           ) : (
                             <>
                               <p className="text-[14px] whitespace-pre-wrap leading-relaxed font-light">
-                                {message.text}
+                                {parseMessageText(message.text).map((segment, idx) => {
+                                  if (segment.type === 'text') {
+                                    return <span key={idx}>{segment.content}</span>;
+                                  }
+                                  return (
+                                    <a
+                                      key={idx}
+                                      href={segment.href}
+                                      className="underline text-blue-600 hover:text-blue-800 transition-colors"
+                                      target={segment.type === 'url' ? '_blank' : undefined}
+                                      rel={segment.type === 'url' ? 'noopener noreferrer' : undefined}
+                                    >
+                                      {segment.content}
+                                    </a>
+                                  );
+                                })}
                                 {message.isStreaming && (
                                   <motion.span 
                                     className="inline-block w-0.5 h-4 bg-current ml-0.5"
