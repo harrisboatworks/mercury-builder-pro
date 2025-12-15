@@ -487,7 +487,7 @@ async function searchWithPerplexity(query: string, category: QueryCategory): Pro
       mercury: {
         prefix: '2026 Mercury Marine outboard',
         systemPrompt: 'You are a marine engine expert specializing in Mercury Marine outboards. Provide accurate, concise technical information about features, specifications, maintenance, and comparisons. Focus on practical, actionable advice. Keep responses under 200 words.',
-        domains: ['mercurymarine.com', 'boatingmag.com', 'boats.com', 'discoverboating.com'],
+        domains: ['mercurymarine.com', 'anyflip.com/bookcase/iuuc', 'boatingmag.com', 'boats.com', 'discoverboating.com'],
         header: '## VERIFIED MERCURY INFO'
       },
       harris: {
@@ -535,7 +535,7 @@ async function searchWithPerplexity(query: string, category: QueryCategory): Pro
       accessories: {
         prefix: 'Mercury Marine boat accessories',
         systemPrompt: 'You are a marine accessories expert. Provide helpful information about props, gauges, rigging, and boat upgrades. Focus on Mercury and compatible accessories. Keep responses practical. Note: Harris Boat Works has an online marine catalogue at marinecatalogue.ca with priced parts.',
-        domains: ['mercurymarine.com', 'boatingmag.com', 'discoverboating.com', 'marinecatalogue.ca'],
+        domains: ['mercurymarine.com', 'anyflip.com/bookcase/iuuc', 'boatingmag.com', 'discoverboating.com', 'marinecatalogue.ca'],
         header: '## ACCESSORIES'
       },
       environmental: {
@@ -553,13 +553,13 @@ async function searchWithPerplexity(query: string, category: QueryCategory): Pro
       compatibility: {
         prefix: 'boat motor compatibility',
         systemPrompt: 'You are a marine expert helping match motors to boats. Provide accurate information about HP limits, transom heights, and motor compatibility for various boat brands. Keep responses practical and safety-focused.',
-        domains: ['discoverboating.com', 'boatus.com', 'boats.com'],
+        domains: ['discoverboating.com', 'boatus.com', 'boats.com', 'anyflip.com/bookcase/iuuc'],
         header: '## BOAT COMPATIBILITY'
       },
       troubleshooting: {
         prefix: 'outboard motor troubleshooting',
         systemPrompt: 'You are a marine mechanic providing general troubleshooting guidance for outboard motors. Give common causes and basic checks. Always emphasize that professional diagnosis is recommended for safety. Keep responses helpful but cautious.',
-        domains: ['mercurymarine.com', 'boatus.com', 'iboats.com'],
+        domains: ['mercurymarine.com', 'anyflip.com/bookcase/iuuc', 'boatus.com', 'iboats.com'],
         header: '## TROUBLESHOOTING (General Guidance)'
       },
       general: {
