@@ -335,6 +335,7 @@ function detectQueryCategory(message: string): QueryCategory {
     /max(imum)? rpm|wot|wide open throttle/i,
     /what('s| is) (the )?(max|rpm|wot|spec|weight|fuel)/i,
     /\bspec(s|ification)?s?\b/i,
+    /spark ?plug|plug gap|ignition/i,
     /oil (type|capacity|change|grade)|quicksilver/i,
     /maintenance|winteriz|break-?in|service (interval|schedule)/i,
     /warranty|extend(ed)? (coverage|warranty)/i,
