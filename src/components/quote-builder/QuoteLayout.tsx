@@ -26,7 +26,7 @@ export const QuoteLayout = ({
   const location = useLocation();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  return <div className="min-h-screen bg-white dark:bg-gray-950">
+  return <div className="min-h-screen bg-white">
       {/* Luxury Header System */}
       <LuxuryHeader />
 
@@ -35,7 +35,7 @@ export const QuoteLayout = ({
 
 
       {/* Main Content */}
-      <main className="bg-stone-50 dark:bg-gray-900 min-h-screen">
+      <main className="bg-stone-50 min-h-screen">
         {children}
       </main>
 

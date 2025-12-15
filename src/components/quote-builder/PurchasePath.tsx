@@ -57,32 +57,32 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
       className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
     >
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-light tracking-wide text-slate-900 mb-3">
+        <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground mb-3">
           Great Choice! {selectedMotor?.model}
         </h2>
-        <p className="text-slate-700 font-light">How would you like to purchase this motor?</p>
+        <p className="text-muted-foreground font-light">How would you like to purchase this motor?</p>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto items-stretch">
         <motion.div variants={cardVariants}>
-          <Card className="relative hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
+          <Card className="relative bg-white hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
                 onClick={handleLooseMotorSelect}>
-          <Badge className="absolute -top-2 -right-2 bg-slate-900 hover:bg-slate-900 text-white text-[10px] tracking-[0.15em] uppercase font-light">
+          <Badge className="absolute -top-2 -right-2 bg-foreground hover:bg-foreground text-background text-[10px] tracking-[0.15em] uppercase font-light">
             Quick & Easy
           </Badge>
           
           <CardHeader className="pb-4">
             <div className="flex items-center gap-3 mb-3">
               <Package className="w-8 h-8 text-primary" />
-              <CardTitle className="text-2xl font-light tracking-wide text-slate-900">Loose Motor</CardTitle>
+              <CardTitle className="text-2xl font-light tracking-wide text-foreground">Loose Motor</CardTitle>
             </div>
-            <p className="text-sm font-light text-slate-500">
+            <p className="text-sm font-light text-muted-foreground">
               In-store pickup only • No installation
             </p>
           </CardHeader>
           
           <CardContent className="flex flex-col flex-1 pt-0">
-            <div className="space-y-3 text-base font-light text-slate-600 flex-1 mb-6">
+            <div className="space-y-3 text-base font-light text-muted-foreground flex-1 mb-6">
               <div className="flex flex-row items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <span className="text-left">Free Prep</span>
@@ -117,7 +117,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             
             <Button 
               variant="outline"
-              className="w-full border-2 border-slate-900 text-slate-900 py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-slate-900 hover:text-white transition-all duration-500"
+              className="w-full border-2 border-foreground text-foreground py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-foreground hover:text-background transition-all duration-500"
             >
               Select Loose Motor
             </Button>
@@ -126,24 +126,24 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
         </motion.div>
         
         <motion.div variants={cardVariants}>
-          <Card className="relative hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
+          <Card className="relative bg-white hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
                 onClick={handleInstalledSelect}>
-          <Badge className="absolute -top-2 -right-2 bg-slate-900 hover:bg-slate-900 text-white text-[10px] tracking-[0.15em] uppercase font-light">
+          <Badge className="absolute -top-2 -right-2 bg-foreground hover:bg-foreground text-background text-[10px] tracking-[0.15em] uppercase font-light">
             Full Service
           </Badge>
           
           <CardHeader className="pb-4">
             <div className="flex items-center gap-3 mb-3">
               <Wrench className="w-8 h-8 text-primary" />
-              <CardTitle className="text-2xl font-light tracking-wide text-slate-900">Professional Installation</CardTitle>
+              <CardTitle className="text-2xl font-light tracking-wide text-foreground">Professional Installation</CardTitle>
             </div>
-            <p className="text-sm font-light text-slate-500">
+            <p className="text-sm font-light text-muted-foreground">
               {isTiller ? 'Complete motor prep & water test' : 'Complete rigging & water test'}
             </p>
           </CardHeader>
           
           <CardContent className="flex flex-col flex-1 pt-0">
-            <div className="space-y-3 text-base font-light text-slate-600 flex-1 mb-6">
+            <div className="space-y-3 text-base font-light text-muted-foreground flex-1 mb-6">
               {!isTiller && (
                 <div className="flex flex-row items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -172,7 +172,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             
             <Button 
               variant="outline"
-              className="w-full border-2 border-slate-900 text-slate-900 py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-slate-900 hover:text-white transition-all duration-500"
+              className="w-full border-2 border-foreground text-foreground py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-foreground hover:text-background transition-all duration-500"
             >
               Select Installation
             </Button>
