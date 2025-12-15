@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { parseMessageText, ParsedSegment, getInternalPath } from '@/lib/textParser';
+import { useAIChat } from './GlobalAIChat';
 
 interface Message {
   id: string;
@@ -15,6 +16,7 @@ interface ChatBubbleProps {
 
 export const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
   const navigate = useNavigate();
+  const { closeChat } = useAIChat();
 
   const renderParsedText = (segments: ParsedSegment[]) => {
     return segments.map((segment, index) => {
@@ -33,7 +35,10 @@ export const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
         return (
           <button
             key={index}
-            onClick={() => navigate(getInternalPath(segment.href!))}
+            onClick={() => {
+              closeChat();  // Minimize chat first
+              navigate(getInternalPath(segment.href!));
+            }}
             className={linkClasses}
           >
             {segment.content}
