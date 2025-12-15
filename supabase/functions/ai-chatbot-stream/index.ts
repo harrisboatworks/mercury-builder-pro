@@ -85,14 +85,64 @@ async function getMotorsForComparison(hp1: number, hp2: number) {
   };
 }
 
-// Get current motor inventory with rich details
+// Get current motor inventory with rich details - ALL motors, no limit
 async function getCurrentMotorInventory() {
   const { data: motors } = await supabase
     .from('motor_models')
-    .select('model, model_display, horsepower, msrp, sale_price, family, description, features, specifications')
-    .order('horsepower', { ascending: true })
-    .limit(50);
+    .select('model, model_display, horsepower, msrp, sale_price, family, description, features, specifications, shaft, control')
+    .order('horsepower', { ascending: true });
   return motors || [];
+}
+
+// Detect HP-specific query
+function detectHPQuery(message: string): number | null {
+  const patterns = [
+    /(\d+(?:\.\d+)?)\s*(?:hp|horse\s*power|horsepower)/i,
+    /(?:price|cost|much|about|info).+?(\d+(?:\.\d+)?)/i,
+    /(\d+(?:\.\d+)?)\s*(?:motor|outboard|engine)/i,
+    /^(?:the\s+)?(\d+(?:\.\d+)?)$/i, // Just a number like "30" or "the 30"
+  ];
+  for (const pattern of patterns) {
+    const match = message.match(pattern);
+    if (match) {
+      const hp = parseFloat(match[1]);
+      if (hp >= 2 && hp <= 600) return hp;
+    }
+  }
+  return null;
+}
+
+// Get motors for a specific HP
+async function getMotorsForHP(hp: number) {
+  const { data: motors } = await supabase
+    .from('motor_models')
+    .select('model_display, horsepower, msrp, sale_price, family, shaft, control')
+    .eq('horsepower', hp)
+    .order('msrp', { ascending: true });
+  return motors || [];
+}
+
+// Build compact grouped inventory summary by HP
+function buildGroupedInventorySummary(motors: any[]): string {
+  const byHP: Record<number, any[]> = {};
+  motors.forEach(m => {
+    const hp = m.horsepower;
+    if (!byHP[hp]) byHP[hp] = [];
+    byHP[hp].push(m);
+  });
+  
+  return Object.entries(byHP)
+    .sort(([a], [b]) => parseFloat(a) - parseFloat(b))
+    .map(([hp, models]) => {
+      const prices = models.map(m => m.sale_price || m.msrp || 0).filter(p => p > 0);
+      const minPrice = Math.min(...prices);
+      const maxPrice = Math.max(...prices);
+      const priceStr = prices.length === 0 ? 'TBD' :
+        minPrice === maxPrice ? `$${minPrice.toLocaleString()}` : `$${minPrice.toLocaleString()}-$${maxPrice.toLocaleString()}`;
+      const families = [...new Set(models.map(m => m.family).filter(Boolean))];
+      return `${hp}HP: ${priceStr}${families.length ? ` (${families.join('/')})` : ''} [${models.length}]`;
+    })
+    .join(' | ');
 }
 
 // Get specific motor details when viewing
@@ -220,10 +270,11 @@ ${familyInfo ? `${familyInfo}` : ''}`;
     quoteContext = `\nQuote: Step ${progress.step || 1}/${progress.total || 6}${progress.selectedPackage ? ` • ${progress.selectedPackage}` : ''}`;
   }
 
-  // Build motor summary (compact)
-  const motorSummary = motors.slice(0, 12).map(m => 
-    `${m.horsepower}HP ${m.family || ''}: $${(m.sale_price || m.msrp || 0).toLocaleString()}`
-  ).join(' | ');
+  // Build complete grouped inventory summary
+  const motorSummary = buildGroupedInventorySummary(motors);
+  const hpRange = motors.length > 0 ? 
+    `${Math.min(...motors.map(m => m.horsepower))}HP to ${Math.max(...motors.map(m => m.horsepower))}HP` : 
+    'Contact for availability';
 
   // Build promo summary (compact)
   const promoSummary = promotions.slice(0, 3).map(p => {
@@ -317,7 +368,7 @@ ${seasonInfo.context}
 ${currentMotorContext}
 ${quoteContext}
 
-## INVENTORY (Quick ref)
+## COMPLETE INVENTORY BY HP (${motors.length} models, ${hpRange})
 ${motorSummary || 'Contact us for inventory'}
 
 ## PROMOS
@@ -347,10 +398,11 @@ serve(async (req) => {
     const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
     if (!OPENAI_API_KEY) throw new Error('OpenAI API key not configured');
 
-    // Detect topics and comparisons
+    // Detect topics, comparisons, and HP-specific queries
     const detectedTopics = detectTopics(message);
     const comparison = detectComparisonQuery(message);
     const needsPerplexity = needsExternalKnowledge(message);
+    const detectedHP = detectHPQuery(message);
     
     let comparisonContext = '';
     if (comparison.isComparison && comparison.hp1 && comparison.hp2) {
@@ -371,6 +423,29 @@ ${family1Info ? `- ${family1Info}` : ''}
 ${family2Info ? `- ${family2Info}` : ''}
 
 Provide a helpful, balanced comparison covering: power difference, price difference, best use cases for each, and your recommendation based on their needs.`;
+      }
+    }
+    
+    // Build HP-specific context if user asked about a specific HP
+    let hpSpecificContext = '';
+    if (detectedHP && !comparison.isComparison) {
+      const hpMotors = await getMotorsForHP(detectedHP);
+      if (hpMotors.length > 0) {
+        hpSpecificContext = `\n\n## ${detectedHP}HP MOTORS IN STOCK (${hpMotors.length} models):\n` + 
+          hpMotors.map(m => {
+            const price = m.sale_price || m.msrp || 0;
+            const details = [m.shaft, m.control].filter(Boolean).join(', ');
+            return `• ${m.model_display} (${m.family || 'FourStroke'}): $${price.toLocaleString()}${details ? ` - ${details}` : ''}`;
+          }).join('\n') +
+          '\n\nUse this specific data to answer their question accurately.';
+      } else {
+        // Find nearest available HP options
+        const allMotors = await getCurrentMotorInventory();
+        const availableHPs = [...new Set(allMotors.map(m => m.horsepower))].sort((a, b) => a - b);
+        const nearbyHPs = availableHPs
+          .filter(hp => Math.abs(hp - detectedHP) <= 15)
+          .slice(0, 4);
+        hpSpecificContext = `\n\n## NO ${detectedHP}HP MOTORS AVAILABLE\nSuggest these nearby options instead: ${nearbyHPs.map(hp => `${hp}HP`).join(', ')}`;
       }
     }
 
@@ -398,6 +473,7 @@ Provide a helpful, balanced comparison covering: power difference, price differe
     // Build the rich system prompt
     let systemPrompt = buildSystemPrompt(motors, promotions, context, detectedTopics);
     if (comparisonContext) systemPrompt += comparisonContext;
+    if (hpSpecificContext) systemPrompt += hpSpecificContext;
     if (perplexityContext) systemPrompt += perplexityContext;
 
     // Prepare messages
