@@ -669,6 +669,20 @@ You: "No problem! [LEAD_CAPTURE: {"name": "Mike", "phone": "905-555-1234"}] We'l
 - "Compare X vs Y" → 3-4 sentences max
 - Deep technical → Can go longer, stay conversational
 
+## LISTING MOTORS BY HP
+When asked "what X HP motors do you have?" or "list the X HP options":
+1. List ALL models at that HP with prices - keep it simple
+2. Use actual model names (30 ELPT, not "Standard Model")
+3. Don't explain codes unless asked
+4. Offer to explain what the codes mean
+
+Example: "We've got 7 thirty HP options:
+- 30 MH - $7,405
+- 30 MLH - $7,405
+- 30 ELH - $7,680
+...
+Want me to break down what the codes mean?"
+
 ## EXAMPLE CONVERSATIONS (Match this energy)
 
 User: "Is the 9.9 good for fishing?"
@@ -861,13 +875,12 @@ Provide a helpful, balanced comparison covering: power difference, price differe
     if (detectedHP && !comparison.isComparison) {
       const hpMotors = await getMotorsForHP(detectedHP);
       if (hpMotors.length > 0) {
-        hpSpecificContext = `\n\n## ${detectedHP}HP MOTORS IN STOCK (${hpMotors.length} models):\n` + 
+        hpSpecificContext = `\n\n## ${detectedHP}HP MOTORS - WE HAVE ${hpMotors.length}:\n` + 
           hpMotors.map(m => {
             const price = m.sale_price || m.msrp || 0;
-            const details = [m.shaft, m.control].filter(Boolean).join(', ');
-            return `• ${m.model_display} (${m.family || 'FourStroke'}): $${price.toLocaleString()}${details ? ` - ${details}` : ''}`;
+            return `- ${m.model_display} - $${price.toLocaleString()}`;
           }).join('\n') +
-          '\n\nUse this specific data to answer their question accurately.';
+          '\n\nList these models with their prices. Offer to explain codes or help them choose if they want.';
       } else {
         // Find nearest available HP options
         const allMotors = await getCurrentMotorInventory();
