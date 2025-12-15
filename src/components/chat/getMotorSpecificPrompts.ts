@@ -40,9 +40,9 @@ export function getMotorSpecificPrompts(context: MotorContext): string[] {
   if (familyLower.includes('pro xs') || modelLower.includes('pro xs')) {
     return [
       "Pro XS vs standard FourStroke?",
-      "Best prop for top speed?",
+      "What RPM should I see at WOT?",
       "Tournament legal?",
-      "WOT fuel burn?"
+      "Prop pitch for top speed?"
     ];
   }
 
@@ -50,9 +50,9 @@ export function getMotorSpecificPrompts(context: MotorContext): string[] {
   if (familyLower.includes('seapro') || modelLower.includes('seapro')) {
     return [
       "Commercial warranty options?",
-      "Best for heavy use?",
-      "SeaPro vs FourStroke?",
-      "Maintenance schedule?"
+      "Heavy-duty maintenance schedule?",
+      "SeaPro vs FourStroke durability?",
+      "Hour meter included?"
     ];
   }
 
@@ -71,33 +71,27 @@ export function getMotorSpecificPrompts(context: MotorContext): string[] {
     return [
       "How heavy is this to carry?",
       "Good for a canoe or kayak?",
-      "Fuel tank built-in?",
-      "Electric start available?"
+      "Break-in procedure?",
+      "What oil does it need?"
     ];
   }
 
   // Small motors (8-15HP) - emphasis on boat fit, planing, efficiency
   if (hp <= 15) {
-    const prompts = [
+    return [
       "Will this plane my boat?",
       "How quiet at trolling?",
-      "Miles per gallon?"
+      "Break-in procedure?",
+      "First service schedule?"
     ];
-    // Add power trim question for 9.9+
-    if (hp >= 9.9) {
-      prompts.push("Power tilt worth it?");
-    } else {
-      prompts.push("Good for inflatables?");
-    }
-    return prompts;
   }
 
   // Mid-small motors (20-30HP) - power trim emphasis
   if (hp <= 30) {
     return [
       "Power trim included?",
-      `Is ${hp}HP enough for my boat?`,
-      "Manual vs electric tilt?",
+      "Best prop for my use?",
+      "Break-in procedure?",
       "Fuel consumption at cruise?"
     ];
   }
@@ -106,9 +100,9 @@ export function getMotorSpecificPrompts(context: MotorContext): string[] {
   if (hp <= 60) {
     return [
       `Compare to the ${hp + 10}HP`,
-      "Best for pontoons?",
-      "Fuel economy at cruise?",
-      "What boats does this fit?"
+      "Best prop for my use?",
+      "Break-in procedure?",
+      "Fuel economy at cruise?"
     ];
   }
 
@@ -117,17 +111,17 @@ export function getMotorSpecificPrompts(context: MotorContext): string[] {
     return [
       "Command Thrust worth it?",
       "Break-in procedure?",
-      "Is this overkill for fishing?",
-      "Fuel burn at WOT?"
+      "Prop pitch for best hole shot?",
+      "Annual maintenance cost?"
     ];
   }
 
   // Premium/Performance (175HP+) - investment and high-performance
   return [
-    "Verado vs Pro XS?",
-    "Warranty coverage details?",
-    "Best prop for my use?",
-    "Financing options?"
+    "Verado vs Pro XS differences?",
+    "Break-in procedure?",
+    "Best prop options?",
+    "Warranty coverage details?"
   ];
 }
 
