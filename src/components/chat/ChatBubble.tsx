@@ -16,7 +16,7 @@ interface ChatBubbleProps {
 
 export const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
   const navigate = useNavigate();
-  const { closeChat } = useAIChat();
+  const { closeChat, notifyChatMinimized } = useAIChat();
 
   const renderParsedText = (segments: ParsedSegment[]) => {
     return segments.map((segment, index) => {
@@ -37,6 +37,7 @@ export const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
             key={index}
             onClick={() => {
               closeChat();  // Minimize chat first
+              notifyChatMinimized();  // Show notification in nudge bar
               navigate(getInternalPath(segment.href!));
             }}
             className={linkClasses}

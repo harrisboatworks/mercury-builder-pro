@@ -15,6 +15,8 @@ interface AIChatContextType {
   unreadCount: number;
   incrementUnread: () => void;
   clearUnread: () => void;
+  chatMinimizedAt: number | null;
+  notifyChatMinimized: () => void;
 }
 
 const AIChatContext = createContext<AIChatContextType | null>(null);
@@ -32,7 +34,9 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
   const [isLoading, setIsLoading] = useState(false);
   const [initialMessage, setInitialMessage] = useState<string | undefined>();
   const [unreadCount, setUnreadCount] = useState(0);
+  const [chatMinimizedAt, setChatMinimizedAt] = useState<number | null>(null);
   const chatRef = useRef<EnhancedChatWidgetHandle>(null);
+  const minimizedTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isMobileOrTablet = useIsMobileOrTablet();
 
   const openChat = useCallback((message?: string) => {
@@ -56,9 +60,21 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
     setUnreadCount(0);
   }, []);
 
+  const notifyChatMinimized = useCallback(() => {
+    // Clear any existing timer
+    if (minimizedTimerRef.current) {
+      clearTimeout(minimizedTimerRef.current);
+    }
+    setChatMinimizedAt(Date.now());
+    // Auto-clear after 30 seconds
+    minimizedTimerRef.current = setTimeout(() => {
+      setChatMinimizedAt(null);
+    }, 30000);
+  }, []);
+
   return (
     <VoiceProvider>
-      <AIChatContext.Provider value={{ openChat, closeChat, isOpen, isLoading, setIsLoading, unreadCount, incrementUnread, clearUnread }}>
+      <AIChatContext.Provider value={{ openChat, closeChat, isOpen, isLoading, setIsLoading, unreadCount, incrementUnread, clearUnread, chatMinimizedAt, notifyChatMinimized }}>
         {children}
         
         {/* Floating AI Button - Only show on desktop (mobile uses unified bar) */}
