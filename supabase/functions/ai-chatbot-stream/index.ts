@@ -174,22 +174,98 @@ async function getActivePromotions() {
 }
 
 // Query categories for intelligent Perplexity routing
-type QueryCategory = 'mercury' | 'harris' | 'local' | 'boating' | 'licensing' | 'general' | 'none';
+type QueryCategory = 'mercury' | 'harris' | 'local' | 'boating' | 'licensing' | 
+                     'towing' | 'seasonal' | 'promotions' | 'accessories' | 
+                     'environmental' | 'events' | 'compatibility' | 'troubleshooting' |
+                     'financing' | 'tradein_redirect' | 'general' | 'none';
 
 // Detect query category for smart Perplexity context
 function detectQueryCategory(message: string): QueryCategory {
   const lowerMsg = message.toLowerCase();
   
-  // Licensing & Legal - check first for discount code opportunity
+  // REDIRECT CATEGORIES - Check first, no Perplexity needed
+  
+  // Trade-in/Resale - Redirect to quote builder
+  const tradeinPatterns = [
+    /\b(trade.?in|what('s| is) my.*(worth|value)|resale|sell my|apprais|value of my)\b/i,
+    /\b(how much.*(get|worth)|what (can|will).*(get|offer))\b/i,
+  ];
+  if (tradeinPatterns.some(p => p.test(lowerMsg))) return 'tradein_redirect';
+  
+  // Financing - Smart response (encourage online application)
+  const financingPatterns = [
+    /\b(financ|loan|credit|monthly payment|interest rate|apr|down payment)\b/i,
+    /\b(pre.?approv|qualify|credit (check|score)|payment (plan|option))\b/i,
+    /\b(can i (afford|finance)|pay (over|monthly)|spread.*(payment|cost))\b/i,
+  ];
+  if (financingPatterns.some(p => p.test(lowerMsg))) return 'financing';
+  
+  // Licensing & Legal - check for discount code opportunity
   const licensingPatterns = [
     /\b(boat (card|license|licence)|pcoc|pleasure craft.*(card|license|operator))\b/i,
     /\b(operator card|boating (course|test|exam|certification))\b/i,
     /\b(registration|license plate|vessel (number|registration))\b/i,
-    /\b(insurance|liability|coverage)\b/i,
     /\b(legal|requirement|regulation|law|rule|bylaw|allowed|permitted)\b/i,
     /\b(age (requirement|limit)|how old|can (my kid|a minor|children))\b/i,
     /\b(transport canada|coast guard|ministry)\b/i,
     /\b(need.*(license|licence|card)|do i need)\b/i,
+  ];
+  
+  // Troubleshooting - Use Perplexity but add disclaimer + service link
+  const troubleshootingPatterns = [
+    /\b(problem|issue|trouble|won't start|not starting|stall|rough idle)\b/i,
+    /\b(overheat|beep|alarm|warning|error|fault)\b/i,
+    /\b(smoke|vibrat|noise|knock|shimmy|shake)\b/i,
+    /\b(diagnos|fix|repair|what's wrong|help me)\b/i,
+    /\b(leak|drip|water in|oil in)\b/i,
+  ];
+  
+  // Towing & Transportation
+  const towingPatterns = [
+    /\b(tow|trailer|hitch|backing|launch|ramp|boat launch)\b/i,
+    /\b(tongue weight|ball|coupler|tie.?down|strap)\b/i,
+    /\b(road|highway|transport|haul)\b/i,
+  ];
+  
+  // Seasonal & Weather
+  const seasonalPatterns = [
+    /\b(ice.?out|freeze|water temp|spring|fall|season start|when (does|can))\b/i,
+    /\b(best time|conditions|waves?|wind|rough water)\b/i,
+  ];
+  
+  // Mercury Promotions & Rebates
+  const promotionsPatterns = [
+    /\b(rebate|mercury.*(deal|offer|promotion)|manufacturer.*(rebate|discount))\b/i,
+    /\b(current (deal|offer|promo)|seasonal (deal|sale))\b/i,
+  ];
+  
+  // Accessories & Upgrades
+  const accessoriesPatterns = [
+    /\b(prop|propeller|pitch|gauge|rigging|electronics|fishfinder)\b/i,
+    /\b(steering|throttle|control|cable|binnacle)\b/i,
+    /\b(trim tab|jack plate|hydrofoil|stabilizer)\b/i,
+    /\b(trolling motor|bow mount|transom mount)\b/i,
+  ];
+  
+  // Environmental & Fuel
+  const environmentalPatterns = [
+    /\b(ethanol|e10|fuel (treatment|stabilizer)|stabil)\b/i,
+    /\b(non.?ethanol|marina fuel|premium gas)\b/i,
+    /\b(environment|eco|clean water|invasive species)\b/i,
+  ];
+  
+  // Events & Community
+  const eventsPatterns = [
+    /\b(boat show|fishing derby|tournament|club|association)\b/i,
+    /\b(event|rendezvous|rally|gathering)\b/i,
+    /\b(marina|yacht club|boating community)\b/i,
+  ];
+  
+  // Boat Brands & Compatibility
+  const compatibilityPatterns = [
+    /\b(lund|tracker|princecraft|legend|crestliner|alumacraft|g3|starcraft)\b/i,
+    /\b(fit (on|my)|compatible|transom (height|size)|mount(ing)?)\b/i,
+    /\b(what (size|motor|engine) for|max hp|horsepower limit)\b/i,
   ];
   
   // Mercury Marine - motors, technology, maintenance, specs
@@ -200,7 +276,6 @@ function detectQueryCategory(message: string): QueryCategory {
     /fuel (consumption|economy|efficiency)|mpg|gph|gallons? per/i,
     /weight|dry weight|shaft length/i,
     /rpm|thrust|torque|top speed/i,
-    /prop(eller)?|pitch|blade|cupped/i,
     /oil (type|capacity|change|grade)|quicksilver/i,
     /maintenance|winteriz|break-?in|service (interval|schedule)/i,
     /warranty|extend(ed)? (coverage|warranty)/i,
@@ -208,7 +283,7 @@ function detectQueryCategory(message: string): QueryCategory {
     /(yamaha|honda|suzuki|evinrude|tohatsu).*(compare|vs|versus|better)/i,
     /what('s| is) (the )?(new|latest|2024|2025|2026)/i,
     /how does .+ work/i,
-    /compatible with|fit (on|my)|transom height/i,
+    /compatible with|transom height/i,
     /tiller|remote|electric start|pull start/i,
     /gear ratio|displacement|cylinder/i,
     /power trim|hydraulic/i,
@@ -222,10 +297,9 @@ function detectQueryCategory(message: string): QueryCategory {
     /\b(parking|dock|boat ramp|launch.*(ramp|area))\b/i,
     /\b(reviews?|rating|reputation|testimonial)\b/i,
     /\b(harris|your) (history|story|about|team|staff|technicians?)\b/i,
-    /\b(trade.?in|what('s| is) my.*(worth|value)|apprais)/i,
     /\b(installation|repower|install|mounting|rigging)\b/i,
     /\b(service|repair|maintenance) (department|team|work)/i,
-    /\b(parts|accessories|quicksilver)\b/i,
+    /\b(parts|quicksilver)\b/i,
     /\b(delivery|pick.?up|shipping)\b/i,
     /\b(water test|sea trial|demo)\b/i,
     /\b(certified|authorized|dealer|dealership)\b/i,
@@ -237,7 +311,7 @@ function detectQueryCategory(message: string): QueryCategory {
     /\b(fishing|fish|walleye|bass|muskie|muskellunge|pike|perch|trout|salmon|panfish)\b/i,
     /\b(boat launch|ramp|marina|dock.*(slip|space)|mooring)\b/i,
     /\b(gores landing|cobourg|peterborough|port hope|brighton|colborne|bewdley|harwood)\b/i,
-    /\b(ice fish|ice.?out|spring run|fall fishing)\b/i,
+    /\b(ice fish|spring run|fall fishing)\b/i,
     /\b(catch|limit|fishing (season|regulation|license))\b/i,
     /\b(depth|weed.?bed|structure|spawn)/i,
     /\b(local|area|nearby|around here|this region)\b/i,
@@ -248,21 +322,24 @@ function detectQueryCategory(message: string): QueryCategory {
   const boatingPatterns = [
     /\b(hp limit|horsepower (limit|rating|restriction)|capacity plate)\b/i,
     /\b(pontoon|bass boat|fishing boat|aluminum|fibreglass|inflatable|jon ?boat|runabout|bowrider)\b/i,
-    /\b(trolling motor|kicker|auxiliary)\b/i,
-    /\b(trim|tilt|throttle|shifting|neutral|reverse|forward gear)\b/i,
     /\b(cavitation|ventilation|porpoising|chine walk)\b/i,
     /\b(anchoring|anchor|dock(ing)?|mooring)\b/i,
     /\b(safety|life jacket|pfd|fire extinguisher|flare|whistle)\b/i,
     /\b(navigation|nav lights|rules? of.*(road|water)|right.?of.?way)\b/i,
-    /\b(weather|waves?|wind|chop|rough water|sea state)\b/i,
-    /\b(fuel (tank|line|filter|stabilizer)|ethanol|non-ethanol)\b/i,
     /\b(storage|cover|shrink wrap|winterize)/i,
     /\b(break.?in|new motor|first (run|time|use))\b/i,
-    /\b(trailer|launch|backing up)\b/i,
   ];
   
   // Check patterns in priority order
+  if (troubleshootingPatterns.some(p => p.test(lowerMsg))) return 'troubleshooting';
   if (licensingPatterns.some(p => p.test(lowerMsg))) return 'licensing';
+  if (towingPatterns.some(p => p.test(lowerMsg))) return 'towing';
+  if (seasonalPatterns.some(p => p.test(lowerMsg))) return 'seasonal';
+  if (promotionsPatterns.some(p => p.test(lowerMsg))) return 'promotions';
+  if (accessoriesPatterns.some(p => p.test(lowerMsg))) return 'accessories';
+  if (environmentalPatterns.some(p => p.test(lowerMsg))) return 'environmental';
+  if (eventsPatterns.some(p => p.test(lowerMsg))) return 'events';
+  if (compatibilityPatterns.some(p => p.test(lowerMsg))) return 'compatibility';
   if (mercuryPatterns.some(p => p.test(lowerMsg))) return 'mercury';
   if (harrisPatterns.some(p => p.test(lowerMsg))) return 'harris';
   if (localPatterns.some(p => p.test(lowerMsg))) return 'local';
@@ -284,11 +361,12 @@ async function searchWithPerplexity(query: string, category: QueryCategory): Pro
     return null;
   }
 
-  if (category === 'none') return null;
+  // Skip Perplexity for redirect categories and none
+  if (category === 'none' || category === 'financing' || category === 'tradein_redirect') return null;
 
   try {
     // Category-specific configurations for optimal search results
-    const categoryConfig: Record<Exclude<QueryCategory, 'none'>, { 
+    const categoryConfig: Record<string, { 
       prefix: string; 
       systemPrompt: string; 
       domains: string[];
@@ -324,6 +402,54 @@ async function searchWithPerplexity(query: string, category: QueryCategory): Pro
         domains: ['tc.canada.ca', 'boaterexam.com', 'myboatcard.com'],
         header: '## LICENSING INFO'
       },
+      towing: {
+        prefix: 'boat trailer boating',
+        systemPrompt: 'You are a boating expert helping with trailer, towing, and boat launch questions. Provide practical, safety-focused advice about trailers, hitches, backing up, and launching. Keep responses concise and helpful.',
+        domains: ['discoverboating.com', 'boatus.com', 'boatingmag.com'],
+        header: '## TOWING & TRANSPORT'
+      },
+      seasonal: {
+        prefix: 'Ontario Canada boating',
+        systemPrompt: 'You are a local Ontario boating expert. Provide accurate information about seasonal conditions, ice-out dates, water temperatures, and best boating times in Ontario. Keep responses specific and helpful.',
+        domains: [],
+        header: '## SEASONAL INFO'
+      },
+      promotions: {
+        prefix: '2025 2026 Mercury Marine rebate promotion',
+        systemPrompt: 'You are looking for current Mercury Marine promotions, rebates, and deals. Focus on manufacturer programs available at authorized dealers. Keep responses current and accurate.',
+        domains: ['mercurymarine.com'],
+        header: '## MERCURY PROMOTIONS'
+      },
+      accessories: {
+        prefix: 'Mercury Marine boat accessories',
+        systemPrompt: 'You are a marine accessories expert. Provide helpful information about props, gauges, rigging, and boat upgrades. Focus on Mercury and compatible accessories. Keep responses practical.',
+        domains: ['mercurymarine.com', 'boatingmag.com', 'discoverboating.com'],
+        header: '## ACCESSORIES'
+      },
+      environmental: {
+        prefix: 'boat fuel ethanol marine',
+        systemPrompt: 'You are a marine fuel and environmental expert. Provide accurate information about fuel types, ethanol issues, fuel treatment, and environmental best practices for boaters. Keep responses practical.',
+        domains: ['boatus.com', 'discoverboating.com', 'mercurymarine.com'],
+        header: '## FUEL & ENVIRONMENT'
+      },
+      events: {
+        prefix: 'Ontario boating fishing event',
+        systemPrompt: 'You are a local Ontario boating community expert. Provide information about boat shows, fishing derbies, clubs, and community events in the Rice Lake, Kawartha, and greater Ontario region. Keep responses helpful.',
+        domains: [],
+        header: '## EVENTS & COMMUNITY'
+      },
+      compatibility: {
+        prefix: 'boat motor compatibility',
+        systemPrompt: 'You are a marine expert helping match motors to boats. Provide accurate information about HP limits, transom heights, and motor compatibility for various boat brands. Keep responses practical and safety-focused.',
+        domains: ['discoverboating.com', 'boatus.com', 'boats.com'],
+        header: '## BOAT COMPATIBILITY'
+      },
+      troubleshooting: {
+        prefix: 'outboard motor troubleshooting',
+        systemPrompt: 'You are a marine mechanic providing general troubleshooting guidance for outboard motors. Give common causes and basic checks. Always emphasize that professional diagnosis is recommended for safety. Keep responses helpful but cautious.',
+        domains: ['mercurymarine.com', 'boatus.com', 'iboats.com'],
+        header: '## TROUBLESHOOTING (General Guidance)'
+      },
       general: {
         prefix: '',
         systemPrompt: 'Provide helpful, accurate information. If this relates to boating, Mercury Marine, or Ontario, focus on that context. Keep responses concise and practical.',
@@ -333,6 +459,8 @@ async function searchWithPerplexity(query: string, category: QueryCategory): Pro
     };
 
     const config = categoryConfig[category];
+    if (!config) return null;
+    
     const enhancedQuery = config.prefix ? `${config.prefix} ${query}` : query;
     
     console.log('Searching Perplexity for:', enhancedQuery, 'category:', category);
@@ -372,6 +500,10 @@ async function searchWithPerplexity(query: string, category: QueryCategory): Pro
     console.log('Perplexity response received, category:', category, 'citations:', citations.length);
     
     if (content) {
+      // Add special disclaimer for troubleshooting
+      if (category === 'troubleshooting') {
+        return `\n\n${config.header}\n${content}\n\n**Note:** These are general troubleshooting suggestions. For Mercury motors, our certified techs can diagnose it properly. Start a service request: http://hbw.wiki/service`;
+      }
       return `\n\n${config.header}\n${content}${citations.length > 0 ? `\n\nSources: ${citations.slice(0, 2).join(', ')}` : ''}`;
     }
     return null;
@@ -535,10 +667,40 @@ Location: 6989 Gores Landing Rd, Gores Landing, ON
 ## YOUR KNOWLEDGE CAPABILITIES
 You can answer questions about:
 - Mercury Marine: Features, specs, maintenance, oil, winterization, props, fuel economy, comparisons
-- Harris Boat Works: Hours, location, services, trade-ins, installation, water tests
+- Harris Boat Works: Hours, location, services, installation, water tests
 - Rice Lake & Local: Fishing spots, species, boat launches, Kawarthas, Trent-Severn, local conditions
-- Boating General: HP limits, boat types, operation, safety requirements, winterization, trailers
-- Licensing: PCOC requirements, boat registration, age limits, regulations
+- Boating General: HP limits, boat types, operation, safety requirements, winterization
+- Licensing: PCOC requirements, boat registration, age limits, regulations → mention HARRIS15 discount!
+- Towing & Trailering: Trailer types, hitches, launching, ramp tips, backing up
+- Seasonal Conditions: Ice-out, water temps, best times to boat in Ontario
+- Mercury Promotions: Current manufacturer rebates and deals
+- Accessories: Props, gauges, rigging, trolling motors, upgrades
+- Environmental: Fuel types, ethanol, treatment, eco-friendly boating
+- Events: Boat shows, fishing derbies, local clubs, marinas
+- Boat Compatibility: Motor sizing, transom fit, HP limits for brands
+- Troubleshooting: General guidance + service link for proper diagnosis
+
+## FINANCING QUESTIONS
+When someone asks about financing, monthly payments, interest rates, or getting pre-approved:
+- YES we offer financing through Dealerplan
+- Rates: 7.99% for $10k+, 8.99% under $10k
+- **Encourage them to apply online**: /financing-application
+- They can get PRE-APPROVED before selecting a motor
+- OR if they've already built a quote, their details auto-fill
+- The application takes about 5 minutes and is fully secure
+- For complex rate/term questions, they can also call ${HARRIS_CONTACT.phone}
+
+Example: "Yeah, we've got financing! You can apply right on the site. Takes about 5 minutes. If you've already picked a motor, your quote details get pre-filled. Or get pre-approved first, then pick your motor - totally up to you."
+
+## TRADE-IN & RESALE VALUES
+- Don't answer trade-in value questions - we can't appraise without seeing it
+- Direct them to: "Use the quote builder on the site - there's a trade-in section. Or give us a call!"
+
+## TROUBLESHOOTING - SPECIAL HANDLING
+When someone asks about motor problems:
+1. Provide general troubleshooting suggestions
+2. ALWAYS add disclaimer: "These are just general possibilities - for an accurate diagnosis, especially on Mercury motors, our certified techs can take a proper look."
+3. ALWAYS mention the service link: "Start a service request here: http://hbw.wiki/service"
 
 ## CRITICAL: BE CONFIDENT OR REDIRECT
 - You have access to verified information for the topics above
