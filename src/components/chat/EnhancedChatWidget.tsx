@@ -203,15 +203,20 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
         }
         
         setHasInitialized(true);
-        
-        // Always send initial message regardless of history
-        if (initialMessage) {
-          setTimeout(() => handleSend(initialMessage), 500);
-        }
       };
       
       initChat();
-    }, [isOpen, hasInitialized, isPersistenceLoading, loadMessages, convertPersistedMessages, saveMessage, initialMessage]);
+    }, [isOpen, hasInitialized, isPersistenceLoading, loadMessages, convertPersistedMessages, saveMessage]);
+
+    // Handle new initial messages (when chat reopens with a question from search bar)
+    const initialMessageSentRef = useRef<string | null>(null);
+    
+    useEffect(() => {
+      if (isOpen && hasInitialized && initialMessage && !isLoading && initialMessageSentRef.current !== initialMessage) {
+        initialMessageSentRef.current = initialMessage;
+        setTimeout(() => handleSend(initialMessage), 300);
+      }
+    }, [initialMessage, isOpen, hasInitialized, isLoading]);
 
     // Handle reaction updates
     const handleReaction = useCallback(async (messageId: string, reaction: 'thumbs_up' | 'thumbs_down' | null) => {
