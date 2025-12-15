@@ -609,7 +609,25 @@ async function searchWithPerplexity(query: string, category: QueryCategory): Pro
     const content = data.choices?.[0]?.message?.content;
     const citations = data.citations || [];
     
-    console.log('Perplexity response received, category:', category, 'citations:', citations.length);
+    // Log detailed citation information for debugging flipbook and domain usage
+    const extractedDomains = citations.map((url: string) => {
+      try {
+        return new URL(url).hostname;
+      } catch {
+        return url;
+      }
+    });
+    const flipbookCitations = citations.filter((url: string) => url.includes('anyflip.com'));
+    const marineCatalogueCitations = citations.filter((url: string) => url.includes('marinecatalogue.ca'));
+    
+    console.log('Perplexity response received:', JSON.stringify({
+      category,
+      citationCount: citations.length,
+      citationUrls: citations,
+      domainsUsed: extractedDomains,
+      flipbookCitations: flipbookCitations.length > 0 ? flipbookCitations : undefined,
+      marineCatalogueCitations: marineCatalogueCitations.length > 0 ? marineCatalogueCitations : undefined
+    }, null, 2));
     
     if (content) {
       // Add special disclaimer for troubleshooting
