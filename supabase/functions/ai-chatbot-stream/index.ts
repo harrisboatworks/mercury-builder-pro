@@ -22,6 +22,7 @@ import {
   HARRIS_TEAM,
   HARRIS_PERSONALITY,
   HARRIS_CONTACT,
+  HARRIS_PARTNERS,
   ONTARIO_LAKES,
   SEASONAL_CONTEXT,
   getCurrentSeason,
@@ -172,111 +173,182 @@ async function getActivePromotions() {
   return promotions || [];
 }
 
-// Detect if question needs external knowledge (Perplexity fallback)
-function needsExternalKnowledge(message: string): boolean {
+// Query categories for intelligent Perplexity routing
+type QueryCategory = 'mercury' | 'harris' | 'local' | 'boating' | 'licensing' | 'general' | 'none';
+
+// Detect query category for smart Perplexity context
+function detectQueryCategory(message: string): QueryCategory {
   const lowerMsg = message.toLowerCase();
   
-  // Business info patterns - use Perplexity to verify from Google Business Profile
-  const businessPatterns = [
-    /\b(hours?|open|closed|when (are|do) you)\b/i,
-    /\b(location|address|where (are|is) (you|harris)|directions?|how (do i |to )?(get (there|to you)|find you))\b/i,
-    /\b(reviews?|rating|reputation|google)\b/i,
-    /\b(parking|dock|boat ramp|launch|marina)\b/i,
+  // Licensing & Legal - check first for discount code opportunity
+  const licensingPatterns = [
+    /\b(boat (card|license|licence)|pcoc|pleasure craft.*(card|license|operator))\b/i,
+    /\b(operator card|boating (course|test|exam|certification))\b/i,
+    /\b(registration|license plate|vessel (number|registration))\b/i,
+    /\b(insurance|liability|coverage)\b/i,
+    /\b(legal|requirement|regulation|law|rule|bylaw|allowed|permitted)\b/i,
+    /\b(age (requirement|limit)|how old|can (my kid|a minor|children))\b/i,
+    /\b(transport canada|coast guard|ministry)\b/i,
+    /\b(need.*(license|licence|card)|do i need)\b/i,
   ];
   
-  // Technical/product patterns
-  const technicalPatterns = [
-    /what('s| is) (the |a )?(new|latest|2024|2025|2026)/i,
+  // Mercury Marine - motors, technology, maintenance, specs
+  const mercuryPatterns = [
+    /verado|pro ?xs|seapro|fourstroke|command ?thrust|jet ?drive|racing/i,
+    /mercury .*(feature|technology|system|innovation)/i,
+    /joystick|active ?trim|skyhook|smartcraft|vessel ?view/i,
+    /fuel (consumption|economy|efficiency)|mpg|gph|gallons? per/i,
+    /weight|dry weight|shaft length/i,
+    /rpm|thrust|torque|top speed/i,
+    /prop(eller)?|pitch|blade|cupped/i,
+    /oil (type|capacity|change|grade)|quicksilver/i,
+    /maintenance|winteriz|break-?in|service (interval|schedule)/i,
+    /warranty|extend(ed)? (coverage|warranty)/i,
+    /compare.*(yamaha|honda|suzuki|evinrude|tohatsu)/i,
+    /(yamaha|honda|suzuki|evinrude|tohatsu).*(compare|vs|versus|better)/i,
+    /what('s| is) (the )?(new|latest|2024|2025|2026)/i,
     /how does .+ work/i,
-    /technical spec(ification)?s? (for|of|on)/i,
-    /fuel consumption|fuel economy|mpg|gph/i,
-    /weight (of|for)|dry weight/i,
-    /warranty (cover|include|policy)/i,
-    /compare (to|with|against) (yamaha|honda|suzuki|evinrude)/i,
-    /compatible with|fit (on|my)/i,
-    /prop(eller)? (size|pitch|recommendation)/i,
-    /oil (type|capacity|change)/i,
-    /maintenance (schedule|interval|requirement)/i,
+    /compatible with|fit (on|my)|transom height/i,
+    /tiller|remote|electric start|pull start/i,
+    /gear ratio|displacement|cylinder/i,
+    /power trim|hydraulic/i,
     /what (is|are|does) .*(verado|pro xs|seapro|fourstroke|command thrust)/i,
-    /joystick|active trim|skyhook|smartcraft/i,
-    /rpm|top speed|thrust|torque/i,
-    /(yamaha|honda|suzuki|evinrude)/i,
-    /mercury .*(feature|technology|innovation|system)/i,
   ];
   
-  if (businessPatterns.some(p => p.test(lowerMsg))) return true;
-  if (technicalPatterns.some(p => p.test(lowerMsg))) return true;
+  // Harris Boat Works - business, services, about
+  const harrisPatterns = [
+    /\b(hours?|open|closed|when (are|do) you)\b/i,
+    /\b(location|address|where (are|is) (you|harris)|directions?|how.*(get|find) (you|there))\b/i,
+    /\b(parking|dock|boat ramp|launch.*(ramp|area))\b/i,
+    /\b(reviews?|rating|reputation|testimonial)\b/i,
+    /\b(harris|your) (history|story|about|team|staff|technicians?)\b/i,
+    /\b(trade.?in|what('s| is) my.*(worth|value)|apprais)/i,
+    /\b(installation|repower|install|mounting|rigging)\b/i,
+    /\b(service|repair|maintenance) (department|team|work)/i,
+    /\b(parts|accessories|quicksilver)\b/i,
+    /\b(delivery|pick.?up|shipping)\b/i,
+    /\b(water test|sea trial|demo)\b/i,
+    /\b(certified|authorized|dealer|dealership)\b/i,
+  ];
+  
+  // Rice Lake & Local Ontario - fishing, lakes, launches
+  const localPatterns = [
+    /\b(rice lake|kawartha|simcoe|georgian bay|muskoka|ontario lake|trent.?severn)\b/i,
+    /\b(fishing|fish|walleye|bass|muskie|muskellunge|pike|perch|trout|salmon|panfish)\b/i,
+    /\b(boat launch|ramp|marina|dock.*(slip|space)|mooring)\b/i,
+    /\b(gores landing|cobourg|peterborough|port hope|brighton|colborne|bewdley|harwood)\b/i,
+    /\b(ice fish|ice.?out|spring run|fall fishing)\b/i,
+    /\b(catch|limit|fishing (season|regulation|license))\b/i,
+    /\b(depth|weed.?bed|structure|spawn)/i,
+    /\b(local|area|nearby|around here|this region)\b/i,
+    /\b(otonabee|little lake|stony lake|chemong|pigeon lake|sturgeon lake)\b/i,
+  ];
+  
+  // Boating General - operation, safety, types
+  const boatingPatterns = [
+    /\b(hp limit|horsepower (limit|rating|restriction)|capacity plate)\b/i,
+    /\b(pontoon|bass boat|fishing boat|aluminum|fibreglass|inflatable|jon ?boat|runabout|bowrider)\b/i,
+    /\b(trolling motor|kicker|auxiliary)\b/i,
+    /\b(trim|tilt|throttle|shifting|neutral|reverse|forward gear)\b/i,
+    /\b(cavitation|ventilation|porpoising|chine walk)\b/i,
+    /\b(anchoring|anchor|dock(ing)?|mooring)\b/i,
+    /\b(safety|life jacket|pfd|fire extinguisher|flare|whistle)\b/i,
+    /\b(navigation|nav lights|rules? of.*(road|water)|right.?of.?way)\b/i,
+    /\b(weather|waves?|wind|chop|rough water|sea state)\b/i,
+    /\b(fuel (tank|line|filter|stabilizer)|ethanol|non-ethanol)\b/i,
+    /\b(storage|cover|shrink wrap|winterize)/i,
+    /\b(break.?in|new motor|first (run|time|use))\b/i,
+    /\b(trailer|launch|backing up)\b/i,
+  ];
+  
+  // Check patterns in priority order
+  if (licensingPatterns.some(p => p.test(lowerMsg))) return 'licensing';
+  if (mercuryPatterns.some(p => p.test(lowerMsg))) return 'mercury';
+  if (harrisPatterns.some(p => p.test(lowerMsg))) return 'harris';
+  if (localPatterns.some(p => p.test(lowerMsg))) return 'local';
+  if (boatingPatterns.some(p => p.test(lowerMsg))) return 'boating';
   
   // General question catch-all - if it's a question not about pricing/inventory
   const isQuestion = message.includes('?');
   const isPricingQuery = /(price|cost|how much|in stock|available|inventory)/i.test(lowerMsg);
-  if (isQuestion && !isPricingQuery) return true;
+  if (isQuestion && !isPricingQuery) return 'general';
   
-  return false;
+  return 'none';
 }
 
-// Check if we should use Perplexity as a fallback for unanswered questions
-function shouldUsePerplexityFallback(message: string, hpMotorsFound: number, hasMotorContext: boolean): boolean {
-  // If asking about specific HP and we found motors, no fallback needed
-  if (hpMotorsFound > 0) return false;
-  
-  // If viewing a motor and asking about it, no fallback needed
-  if (hasMotorContext && message.toLowerCase().includes('this')) return false;
-  
-  // Mercury-related questions that need research
-  const mercuryPatterns = [
-    /mercury .*(feature|technology|innovation|system)/i,
-    /what (is|are|does) .*(verado|pro xs|seapro|fourstroke|command thrust)/i,
-    /joystick|active trim|skyhook|smartcraft/i,
-    /rpm|top speed|thrust|torque/i,
-    /(yamaha|honda|suzuki|evinrude)/i, // Competitor mentions
-    /how (much|many|long|fast)/i,
-    /best (motor|outboard|engine) for/i,
-    /recommend|suggestion/i,
-  ];
-  
-  return mercuryPatterns.some(p => p.test(message));
-}
-
-// Search with Perplexity for detailed/technical questions
-async function searchWithPerplexity(query: string): Promise<string | null> {
+// Search with Perplexity using category-specific context
+async function searchWithPerplexity(query: string, category: QueryCategory): Promise<string | null> {
   const PERPLEXITY_API_KEY = Deno.env.get('PERPLEXITY_API_KEY');
   if (!PERPLEXITY_API_KEY) {
     console.log('Perplexity API key not configured, skipping fallback');
     return null;
   }
 
+  if (category === 'none') return null;
+
   try {
-    // Detect if this is a business-related question vs technical question
-    const isBusinessQuestion = /(hours?|open|closed|location|address|where|directions?|parking|dock|reviews?|rating)/i.test(query);
+    // Category-specific configurations for optimal search results
+    const categoryConfig: Record<Exclude<QueryCategory, 'none'>, { 
+      prefix: string; 
+      systemPrompt: string; 
+      domains: string[];
+      header: string;
+    }> = {
+      mercury: {
+        prefix: '2026 Mercury Marine outboard',
+        systemPrompt: 'You are a marine engine expert specializing in Mercury Marine outboards. Provide accurate, concise technical information about features, specifications, maintenance, and comparisons. Focus on practical, actionable advice. Keep responses under 200 words.',
+        domains: ['mercurymarine.com', 'boatingmag.com', 'boats.com', 'discoverboating.com'],
+        header: '## VERIFIED MERCURY INFO'
+      },
+      harris: {
+        prefix: 'Harris Boat Works Gores Landing Ontario Rice Lake',
+        systemPrompt: 'You are looking up business information for Harris Boat Works, a Mercury Marine dealer in Gores Landing, Ontario on Rice Lake. Founded 1947, Mercury dealer since 1965. Provide accurate information from their Google Business Profile, website, or reviews. Keep responses concise.',
+        domains: [],
+        header: '## VERIFIED BUSINESS INFO'
+      },
+      local: {
+        prefix: 'Ontario Canada',
+        systemPrompt: 'You are a local Ontario boating and fishing expert. Provide accurate information about lakes, fishing spots, boat launches, regulations, and local conditions in the Rice Lake, Kawartha Lakes, Trent-Severn Waterway, and greater Peterborough region. Keep responses helpful and specific.',
+        domains: [],
+        header: '## LOCAL INFO'
+      },
+      boating: {
+        prefix: 'boating',
+        systemPrompt: 'You are an experienced Canadian boating expert. Provide practical, accurate advice about boat operation, safety, maintenance, and general boating topics. Focus on helpful tips for recreational boaters. Keep responses clear and concise.',
+        domains: ['discoverboating.com', 'boatus.com', 'boatingmag.com', 'tc.canada.ca'],
+        header: '## BOATING INFO'
+      },
+      licensing: {
+        prefix: 'Canada pleasure craft operator card PCOC boating license Ontario',
+        systemPrompt: 'You are an expert on Canadian boating regulations and licensing. Provide accurate information about the Pleasure Craft Operator Card (PCOC) and boating requirements in Canada. The PCOC is required for anyone operating a powered watercraft in Canada. Keep responses clear and factual.',
+        domains: ['tc.canada.ca', 'boaterexam.com', 'myboatcard.com'],
+        header: '## LICENSING INFO'
+      },
+      general: {
+        prefix: '',
+        systemPrompt: 'Provide helpful, accurate information. If this relates to boating, Mercury Marine, or Ontario, focus on that context. Keep responses concise and practical.',
+        domains: [],
+        header: '## ADDITIONAL INFO'
+      }
+    };
+
+    const config = categoryConfig[category];
+    const enhancedQuery = config.prefix ? `${config.prefix} ${query}` : query;
     
-    // Enhance query with appropriate context
-    const enhancedQuery = isBusinessQuestion 
-      ? `Harris Boat Works Gores Landing Ontario ${query}`
-      : `2026 Mercury Marine ${query}`;
-    
-    const systemPrompt = isBusinessQuestion
-      ? 'You are looking up business information for Harris Boat Works, a Mercury Marine dealer in Gores Landing, Ontario. Provide accurate, current information from their Google Business Profile or website. Keep responses concise and factual.'
-      : 'You are a marine engine expert specializing in 2026 Mercury Marine outboard motors. Provide accurate, concise technical information. Focus on specifications, features, and practical advice. Keep responses under 200 words.';
-    
-    const domainFilter = isBusinessQuestion
-      ? [] // Let Perplexity search broadly for business info
-      : ['mercurymarine.com', 'boatingmag.com', 'boats.com'];
-    
-    console.log('Searching Perplexity for:', enhancedQuery, 'isBusinessQuestion:', isBusinessQuestion);
+    console.log('Searching Perplexity for:', enhancedQuery, 'category:', category);
     
     const requestBody: any = {
       model: 'sonar',
       messages: [
-        { role: 'system', content: systemPrompt },
+        { role: 'system', content: config.systemPrompt },
         { role: 'user', content: enhancedQuery }
       ],
       search_recency_filter: 'year',
     };
     
-    // Only add domain filter if we have domains to filter
-    if (domainFilter.length > 0) {
-      requestBody.search_domain_filter = domainFilter;
+    // Only add domain filter if we have specific domains
+    if (config.domains.length > 0) {
+      requestBody.search_domain_filter = config.domains;
     }
     
     const response = await fetch('https://api.perplexity.ai/chat/completions', {
@@ -297,13 +369,10 @@ async function searchWithPerplexity(query: string): Promise<string | null> {
     const content = data.choices?.[0]?.message?.content;
     const citations = data.citations || [];
     
-    console.log('Perplexity response received, citations:', citations.length);
+    console.log('Perplexity response received, category:', category, 'citations:', citations.length);
     
     if (content) {
-      const header = isBusinessQuestion 
-        ? '## VERIFIED BUSINESS INFO' 
-        : '## VERIFIED TECHNICAL INFO (from Mercury Marine)';
-      return `\n\n${header}\n${content}${citations.length > 0 ? `\n\nSources: ${citations.slice(0, 2).join(', ')}` : ''}`;
+      return `\n\n${config.header}\n${content}${citations.length > 0 ? `\n\nSources: ${citations.slice(0, 2).join(', ')}` : ''}`;
     }
     return null;
   } catch (error) {
@@ -450,13 +519,31 @@ ${Object.values(REPOWER_VALUE_PROPS).slice(0, 3).map(p => `${p.headline}: ${p.me
 ## FINANCING
 7.99% for $10k+, 8.99% under $10k. Terms: 36-60 months.
 
+## BOAT LICENSE / PCOC - ALWAYS MENTION DISCOUNT!
+If anyone asks about boat licenses, PCOC, or operator cards:
+- Required for operating any powered watercraft in Canada
+- We partner with MyBoatCard.com for online certification
+- Link: ${HARRIS_PARTNERS.boat_license.url}
+- **DISCOUNT CODE: ${HARRIS_PARTNERS.boat_license.discount_code} (${HARRIS_PARTNERS.boat_license.discount_amount} - never expires!)**
+- ALWAYS mention this discount when licensing comes up!
+
 ## CONTACT & HOURS
 Phone: ${HARRIS_CONTACT.phone} | Text: ${HARRIS_CONTACT.text} | Email: ${HARRIS_CONTACT.email}
 Hours: ${HARRIS_CONTACT.hours.season} (Apr-Oct) | ${HARRIS_CONTACT.hours.offseason} (Nov-Mar)
 Location: 6989 Gores Landing Rd, Gores Landing, ON
 
-## CRITICAL: NEVER GUESS
-If you're unsure about specific details (hours, policies, technical specs you don't have), say "I'd double-check that by giving us a call at ${HARRIS_CONTACT.phone}" rather than making something up.
+## YOUR KNOWLEDGE CAPABILITIES
+You can answer questions about:
+- Mercury Marine: Features, specs, maintenance, oil, winterization, props, fuel economy, comparisons
+- Harris Boat Works: Hours, location, services, trade-ins, installation, water tests
+- Rice Lake & Local: Fishing spots, species, boat launches, Kawarthas, Trent-Severn, local conditions
+- Boating General: HP limits, boat types, operation, safety requirements, winterization, trailers
+- Licensing: PCOC requirements, boat registration, age limits, regulations
+
+## CRITICAL: BE CONFIDENT OR REDIRECT
+- You have access to verified information for the topics above
+- If you're uncertain about specific details, say "I'd double-check that by giving us a call at ${HARRIS_CONTACT.phone}"
+- Never make up specs, prices, or policies
 
 Remember: Be helpful, be brief, be human. And if they want to talk to a person, make it easy - get their info!`;
 }
@@ -473,10 +560,10 @@ serve(async (req) => {
     const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
     if (!OPENAI_API_KEY) throw new Error('OpenAI API key not configured');
 
-    // Detect topics, comparisons, and HP-specific queries
+    // Detect topics, comparisons, categories, and HP-specific queries
     const detectedTopics = detectTopics(message);
     const comparison = detectComparisonQuery(message);
-    const needsPerplexity = needsExternalKnowledge(message);
+    const queryCategory = detectQueryCategory(message);
     const detectedHP = detectHPQuery(message);
     
     let comparisonContext = '';
@@ -524,10 +611,10 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       }
     }
 
-    // Fetch Perplexity context for technical questions
+    // Fetch Perplexity context based on query category
     let perplexityContext = '';
-    if (needsPerplexity) {
-      perplexityContext = await searchWithPerplexity(message) || '';
+    if (queryCategory !== 'none') {
+      perplexityContext = await searchWithPerplexity(message, queryCategory) || '';
     }
 
     // Fetch motor details if viewing specific motor
@@ -563,6 +650,7 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       messageLength: message.length, 
       historyLength: recentHistory.length, 
       isComparison: comparison.isComparison, 
+      queryCategory,
       detectedTopics,
       hasMotorContext: !!context?.currentMotor,
       usedPerplexity: !!perplexityContext,
