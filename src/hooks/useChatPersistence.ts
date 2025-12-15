@@ -35,29 +35,61 @@ export function useChatPersistence() {
 
   const sessionId = getOrCreateSessionId();
 
-  // Get or create conversation
+  // Get or create conversation with smart recovery
   const initializeConversation = useCallback(async (context?: ChatContext) => {
     try {
-      // Check for existing active conversation
-      const { data: existing, error: fetchError } = await supabase
+      // First: try existing session ID from localStorage
+      const existingSessionId = localStorage.getItem(SESSION_KEY);
+      
+      if (existingSessionId) {
+        const { data: existing } = await supabase
+          .from('chat_conversations')
+          .select('id')
+          .eq('session_id', existingSessionId)
+          .eq('is_active', true)
+          .order('last_message_at', { ascending: false })
+          .limit(1)
+          .single();
+
+        if (existing) {
+          setConversationId(existing.id);
+          return existing.id;
+        }
+      }
+
+      // FALLBACK: No valid session - try to recover most recent conversation with messages
+      const { data: recentConvo } = await supabase
         .from('chat_conversations')
-        .select('id')
-        .eq('session_id', sessionId)
+        .select('id, session_id')
         .eq('is_active', true)
         .order('last_message_at', { ascending: false })
         .limit(1)
         .single();
 
-      if (existing && !fetchError) {
-        setConversationId(existing.id);
-        return existing.id;
+      if (recentConvo) {
+        // Check if this conversation has messages
+        const { count } = await supabase
+          .from('chat_messages')
+          .select('id', { count: 'exact', head: true })
+          .eq('conversation_id', recentConvo.id);
+
+        if (count && count > 0) {
+          // Found a conversation with messages - recover it
+          localStorage.setItem(SESSION_KEY, recentConvo.session_id || '');
+          setConversationId(recentConvo.id);
+          setHasHistory(true);
+          return recentConvo.id;
+        }
       }
 
-      // Create new conversation
+      // No recoverable conversation - create new one
+      const newSessionId = `chat_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      localStorage.setItem(SESSION_KEY, newSessionId);
+      
       const { data: newConvo, error: createError } = await supabase
         .from('chat_conversations')
         .insert({
-          session_id: sessionId,
+          session_id: newSessionId,
           context: context || {},
         })
         .select('id')
@@ -71,7 +103,7 @@ export function useChatPersistence() {
       console.error('Failed to initialize conversation:', error);
       return null;
     }
-  }, [sessionId]);
+  }, []);
 
   // Load messages from database
   const loadMessages = useCallback(async (): Promise<PersistedMessage[]> => {
