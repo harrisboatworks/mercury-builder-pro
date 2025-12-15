@@ -335,11 +335,11 @@ export default function Promotions() {
                 >
                   {/* Promo Image */}
                   {promo.image_url && (
-                    <div className="aspect-[2/1] bg-stone-100">
+                    <div className="bg-stone-100">
                       <img
                         src={promo.image_url}
                         alt={promo.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-auto object-contain"
                       />
                     </div>
                   )}
