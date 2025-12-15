@@ -733,6 +733,15 @@ export default function MotorDetailsPremiumModal({
                     )}
                   </div>
                   
+                  {/* Ask AI - Prominent placement after price */}
+                  <button
+                    onClick={handleAskAI}
+                    className="w-full flex items-center justify-center gap-2 py-3 text-sm text-amber-600 hover:text-amber-700 bg-amber-50 hover:bg-amber-100 rounded-lg font-medium transition-all"
+                  >
+                    <Sparkles className="w-4 h-4" />
+                    Ask AI about this motor
+                  </button>
+                  
                   {/* Key Spec Badges - All Features */}
                   <div className="flex flex-wrap gap-2 border-t border-gray-100 pt-6">
                     {/* HP Badge - Always shown first */}
@@ -805,15 +814,6 @@ export default function MotorDetailsPremiumModal({
                   >
                     <Bell className="w-4 h-4" />
                     Notify me of sales
-                  </button>
-                  
-                  {/* Ask AI Button */}
-                  <button
-                    onClick={handleAskAI}
-                    className="w-full flex items-center justify-center gap-2 text-sm text-amber-600 hover:text-amber-700 font-normal transition-colors py-2"
-                  >
-                    <Sparkles className="w-4 h-4" />
-                    Ask AI about this motor
                   </button>
                   
                   {/* Promo Badges */}
