@@ -59,6 +59,7 @@ const stepVariants = {
 
 export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, initialMotorId }: MotorConfiguratorModalProps) {
   const [step, setStep] = useState<Step>('start');
+  const [stepHistory, setStepHistory] = useState<Step[]>([]); // Track visited steps for back navigation
   const [config, setConfig] = useState<ConfigState>({
     startType: null,
     shaftLength: null,
@@ -77,6 +78,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, in
   useEffect(() => {
     if (open) {
       setStep('start');
+      setStepHistory([]); // Clear history on modal open
       setConfig({ startType: null, shaftLength: null, controlType: null, features: [] });
       dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: 'start' });
     } else {
@@ -370,10 +372,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, in
   }, [open, group, step, availableOptions.hasPT, availableOptions.hasCT, dispatch]);
   
   const handleBack = () => {
-    const steps: Step[] = ['start', 'shaft', 'control', 'features', 'result'];
-    let targetIndex = steps.indexOf(step) - 1;
-    
-    if (targetIndex < 0) {
+    if (stepHistory.length === 0) {
       handleClose();
       return;
     }
@@ -381,37 +380,13 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, in
     isNavigatingBack.current = true;
     setAnimationDirection('backward');
     
-    // Find the first valid step going backward (stop when we find one)
-    while (targetIndex >= 0) {
-      const targetStep = steps[targetIndex];
-      let shouldSkip = false;
-      
-      if (targetStep === 'features') {
-        shouldSkip = !availableOptions.hasCT && !availableOptions.hasPT;
-      } else if (targetStep === 'control') {
-        const onlyOne = (availableOptions.hasTiller && !availableOptions.hasRemote) ||
-                        (availableOptions.hasRemote && !availableOptions.hasTiller);
-        shouldSkip = onlyOne || (group && group.hp >= 150);
-      } else if (targetStep === 'shaft') {
-        shouldSkip = availableOptions.shaftLengths.length === 1;
-      } else if (targetStep === 'start') {
-        const onlyOneStart = (availableOptions.hasElectric && !availableOptions.hasManual) ||
-                             (availableOptions.hasManual && !availableOptions.hasElectric);
-        shouldSkip = onlyOneStart || (group && group.hp >= 150);
-      }
-      
-      if (!shouldSkip) {
-        // Found a valid step - go there and stop
-        setStep(targetStep);
-        dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: targetStep });
-        return;
-      }
-      
-      targetIndex--;
-    }
+    // Pop the last visited step from history
+    const newHistory = [...stepHistory];
+    const previousStep = newHistory.pop()!;
     
-    // If we've gone past all steps, close the modal
-    handleClose();
+    setStepHistory(newHistory);
+    setStep(previousStep);
+    dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: previousStep });
   };
   
   const handleNext = () => {
@@ -421,6 +396,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, in
     setAnimationDirection('forward');
     
     const goToStep = (newStep: Step) => {
+      setStepHistory(prev => [...prev, step]); // Record current step before leaving
       setStep(newStep);
       dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: newStep });
     };
