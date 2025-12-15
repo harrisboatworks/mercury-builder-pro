@@ -371,47 +371,47 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, in
   
   const handleBack = () => {
     const steps: Step[] = ['start', 'shaft', 'control', 'features', 'result'];
-    let currentIndex = steps.indexOf(step);
+    let targetIndex = steps.indexOf(step) - 1;
     
-    if (currentIndex > 0) {
-      isNavigatingBack.current = true;
-      setAnimationDirection('backward');
+    if (targetIndex < 0) {
+      handleClose();
+      return;
+    }
+    
+    isNavigatingBack.current = true;
+    setAnimationDirection('backward');
+    
+    // Find the first valid step going backward (stop when we find one)
+    while (targetIndex >= 0) {
+      const targetStep = steps[targetIndex];
+      let shouldSkip = false;
       
-      let targetIndex = currentIndex - 1;
-      
-      // Skip 'features' if no CT and no PT available
-      if (steps[targetIndex] === 'features' && !availableOptions.hasCT && !availableOptions.hasPT) {
-        targetIndex--;
-      }
-      
-      // Skip 'control' if only one control type available or large motor
-      if (targetIndex >= 0 && steps[targetIndex] === 'control') {
+      if (targetStep === 'features') {
+        shouldSkip = !availableOptions.hasCT && !availableOptions.hasPT;
+      } else if (targetStep === 'control') {
         const onlyOne = (availableOptions.hasTiller && !availableOptions.hasRemote) ||
                         (availableOptions.hasRemote && !availableOptions.hasTiller);
-        if (onlyOne || (group && group.hp >= 150)) {
-          targetIndex--;
-        }
-      }
-      
-      // Skip 'shaft' if only one shaft length available
-      if (targetIndex >= 0 && steps[targetIndex] === 'shaft' && availableOptions.shaftLengths.length === 1) {
-        targetIndex--;
-      }
-      
-      // Skip 'start' for large motors or if only one start type
-      if (targetIndex >= 0 && steps[targetIndex] === 'start') {
+        shouldSkip = onlyOne || (group && group.hp >= 150);
+      } else if (targetStep === 'shaft') {
+        shouldSkip = availableOptions.shaftLengths.length === 1;
+      } else if (targetStep === 'start') {
         const onlyOneStart = (availableOptions.hasElectric && !availableOptions.hasManual) ||
                              (availableOptions.hasManual && !availableOptions.hasElectric);
-        if (onlyOneStart || (group && group.hp >= 150)) {
-          handleClose();
-          return;
-        }
+        shouldSkip = onlyOneStart || (group && group.hp >= 150);
       }
       
-      const prevStep = steps[Math.max(0, targetIndex)];
-      setStep(prevStep);
-      dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: prevStep });
+      if (!shouldSkip) {
+        // Found a valid step - go there and stop
+        setStep(targetStep);
+        dispatch({ type: 'SET_CONFIGURATOR_STEP', payload: targetStep });
+        return;
+      }
+      
+      targetIndex--;
     }
+    
+    // If we've gone past all steps, close the modal
+    handleClose();
   };
   
   const handleNext = () => {
