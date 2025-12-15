@@ -37,7 +37,7 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2">Fuel Tank Configuration</h1>
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-gray-600">
             {isInternalOnlyTiller && `Your ${selectedMotor?.horsepower}HP tiller motor has a built-in internal fuel system - no external connection available`}
             {isSmallTiller && `Your ${selectedMotor?.horsepower}HP tiller motor includes an internal fuel tank and propeller`}
             {isMediumTiller && `Your ${selectedMotor?.horsepower}HP tiller motor includes valuable extras worth $598!`}
@@ -86,8 +86,8 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
                 <span>Ready for customer pickup - no installation required</span>
               </div>
               {isInternalOnlyTiller && (
-                <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-md">
-                  <p className="text-sm text-blue-800 dark:text-blue-300">
+                <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-md">
+                  <p className="text-sm text-blue-800">
                     <strong>Note:</strong> This motor is designed with a built-in fuel system and does not have 
                     an external fuel connection port. The internal tank provides reliable fuel supply for typical use.
                   </p>
@@ -119,7 +119,7 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
                       <span className="font-medium">12L External Fuel Tank & Hose</span>
                       <Badge variant="secondary">+$199</Badge>
                     </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                    <p className="text-sm text-gray-600">
                       Essential for extended operation. Tank connects to your motor's fuel inlet for reliable fuel supply.
                     </p>
                   </label>
@@ -158,10 +158,10 @@ export default function FuelTankOptions({ selectedMotor, onComplete, onBack }: F
         )}
 
         <div className="flex items-center justify-between">
-          <Button variant="outline" onClick={onBack} className="dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-800">
+          <Button variant="outline" onClick={onBack}>
             Back
           </Button>
-          <Button onClick={handleComplete} className="dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90">
+          <Button onClick={handleComplete}>
             Continue to Quote
           </Button>
         </div>
