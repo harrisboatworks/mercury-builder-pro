@@ -200,14 +200,14 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
           // Save welcome message
           const dbId = await saveMessage(welcomeMessage.text, 'assistant');
           if (dbId) messageIdMap.current.set(welcomeMessage.id, dbId);
-          
-          // Send initial message if provided
-          if (initialMessage) {
-            setTimeout(() => handleSend(initialMessage), 500);
-          }
         }
         
         setHasInitialized(true);
+        
+        // Always send initial message regardless of history
+        if (initialMessage) {
+          setTimeout(() => handleSend(initialMessage), 500);
+        }
       };
       
       initChat();
