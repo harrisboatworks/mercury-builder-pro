@@ -726,21 +726,24 @@ export default function MotorDetailsPremiumModal({
                     <p className="text-3xl font-bold tracking-tight text-gray-900 mt-1">
                       {typeof price === "number" ? money(price) : 'Call for Price'}
                     </p>
-                    {msrp && price && msrp > price && (
-                      <p className="text-sm text-red-600 mt-2 font-normal">
-                        SAVE {money(msrp - price)}
-                      </p>
-                    )}
+                    {/* SAVE + Ask AI inline */}
+                    <div className="flex items-center justify-between mt-2">
+                      {msrp && price && msrp > price ? (
+                        <p className="text-sm text-red-600 font-normal">
+                          SAVE {money(msrp - price)}
+                        </p>
+                      ) : (
+                        <div />
+                      )}
+                      <button
+                        onClick={handleAskAI}
+                        className="flex items-center gap-1.5 text-xs text-amber-600 hover:text-amber-700 font-medium transition-colors"
+                      >
+                        <Sparkles className="w-3.5 h-3.5" />
+                        Ask AI
+                      </button>
+                    </div>
                   </div>
-                  
-                  {/* Ask AI - Prominent placement after price */}
-                  <button
-                    onClick={handleAskAI}
-                    className="w-full flex items-center justify-center gap-2 py-3 text-sm text-amber-600 hover:text-amber-700 bg-amber-50 hover:bg-amber-100 rounded-lg font-medium transition-all"
-                  >
-                    <Sparkles className="w-4 h-4" />
-                    Ask AI about this motor
-                  </button>
                   
                   {/* Key Spec Badges - All Features */}
                   <div className="flex flex-wrap gap-2 border-t border-gray-100 pt-6">
