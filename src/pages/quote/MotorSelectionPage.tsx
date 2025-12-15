@@ -425,7 +425,10 @@ function MotorSelectionContent() {
   // Handle URL parameter for deep-linking to a specific motor (from AI chat links)
   useEffect(() => {
     const motorId = searchParams.get('motor') || searchParams.get('select');
-    if (motorId && processedMotors.length > 0 && groupedMotors.length > 0) {
+    if (!motorId || processedMotors.length === 0 || groupedMotors.length === 0) return;
+    
+    // Small delay to ensure state is fully computed
+    const timer = setTimeout(() => {
       // Find the group containing this motor
       const targetGroup = groupedMotors.find(g => 
         g.variants.some(v => v.id === motorId)
@@ -438,7 +441,9 @@ function MotorSelectionContent() {
         searchParams.delete('select');
         setSearchParams(searchParams, { replace: true });
       }
-    }
+    }, 150);
+    
+    return () => clearTimeout(timer);
   }, [processedMotors, groupedMotors, searchParams, setSearchParams]);
   
   // Filter groups based on search

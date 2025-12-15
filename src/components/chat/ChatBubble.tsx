@@ -1,5 +1,6 @@
 import React from 'react';
-import { parseMessageText, ParsedSegment } from '@/lib/textParser';
+import { useNavigate } from 'react-router-dom';
+import { parseMessageText, ParsedSegment, getInternalPath } from '@/lib/textParser';
 
 interface Message {
   id: string;
@@ -13,9 +14,7 @@ interface ChatBubbleProps {
 }
 
 export const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
-  const formatTime = (date: Date) => {
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  };
+  const navigate = useNavigate();
 
   const renderParsedText = (segments: ParsedSegment[]) => {
     return segments.map((segment, index) => {
@@ -23,12 +22,26 @@ export const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
         return <span key={index}>{segment.content}</span>;
       }
       
-      const linkClasses = `underline ${
+      const linkClasses = `underline cursor-pointer ${
         message.isUser 
           ? 'text-red-100 hover:text-white' 
           : 'text-primary hover:text-primary/80'
       } transition-colors`;
       
+      // For internal links, use React Router navigation (no new tab)
+      if (segment.type === 'internal-link' && segment.href) {
+        return (
+          <button
+            key={index}
+            onClick={() => navigate(getInternalPath(segment.href!))}
+            className={linkClasses}
+          >
+            {segment.content}
+          </button>
+        );
+      }
+      
+      // For external URLs, open in new tab
       return (
         <a
           key={index}

@@ -872,15 +872,14 @@ Provide a helpful, balanced comparison covering: power difference, price differe
     
     // Build HP-specific context if user asked about a specific HP
     let hpSpecificContext = '';
-    const SITE_URL = Deno.env.get('APP_URL') || 'https://harrisboatworks.com';
     if (detectedHP && !comparison.isComparison) {
       const hpMotors = await getMotorsForHP(detectedHP);
       if (hpMotors.length > 0) {
         hpSpecificContext = `\n\n## ${detectedHP}HP MOTORS - WE HAVE ${hpMotors.length}:\n` + 
           hpMotors.map(m => {
             const price = m.sale_price || m.msrp || 0;
-            const link = `${SITE_URL}/quote/motor-selection?motor=${m.id}`;
-            return `- [${m.model_display}](${link}) - $${price.toLocaleString()}`;
+            // Use relative URLs for cleaner display and proper internal routing
+            return `- [${m.model_display}](/quote/motor-selection?motor=${m.id}) - $${price.toLocaleString()}`;
           }).join('\n') +
           '\n\nProvide these as clickable links. Customer can tap to view that motor.';
       } else {
