@@ -76,6 +76,10 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   // Track which motor the user has already interacted with (asked questions about)
   const [interactedMotorId, setInteractedMotorId] = useState<string | null>(null);
   
+  // Track motor banner visibility with auto-hide
+  const [showMotorBanner, setShowMotorBanner] = useState(false);
+  const bannerTimerRef = useRef<NodeJS.Timeout | null>(null);
+  
   const setIsLoading = useCallback((loading: boolean) => {
     setIsLoadingLocal(loading);
     onLoadingChange?.(loading);
@@ -321,6 +325,29 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     if (!activeMotor) return null;
     return getMotorContextLabel(activeMotor.hp || 0, activeMotor.model);
   }, [state.previewMotor, state.motor]);
+
+  // Show banner briefly when motor context changes, then auto-hide after 4 seconds
+  const prevMotorIdRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (currentMotorId && currentMotorId !== prevMotorIdRef.current) {
+      // Clear existing timer
+      if (bannerTimerRef.current) {
+        clearTimeout(bannerTimerRef.current);
+      }
+      // Show banner
+      setShowMotorBanner(true);
+      // Auto-hide after 4 seconds
+      bannerTimerRef.current = setTimeout(() => {
+        setShowMotorBanner(false);
+      }, 4000);
+      prevMotorIdRef.current = currentMotorId;
+    }
+    return () => {
+      if (bannerTimerRef.current) {
+        clearTimeout(bannerTimerRef.current);
+      }
+    };
+  }, [currentMotorId]);
 
   const handleReaction = useCallback(async (messageId: string, reaction: 'thumbs_up' | 'thumbs_down' | null) => {
     setMessages(prev => prev.map(msg => 
@@ -680,21 +707,24 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                 <div ref={messagesEndRef} />
               </motion.div>
 
-              {/* Motor Context Banner - shows current motor being viewed */}
-              {currentMotorLabel && (
-                <motion.div
-                  key={currentMotorId}
-                  initial={{ opacity: 0, y: -5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="mx-4 mt-2 px-3 py-2 bg-amber-50/60 border border-amber-100 rounded-lg flex items-center gap-2 shrink-0"
-                >
-                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                  <span className="text-xs text-amber-700 font-light">
-                    <span className="opacity-60">Viewing:</span> {currentMotorLabel}
-                  </span>
-                </motion.div>
-              )}
+              {/* Motor Context Banner - shows briefly when motor changes, then auto-hides */}
+              <AnimatePresence>
+                {showMotorBanner && currentMotorLabel && (
+                  <motion.div
+                    key={currentMotorId}
+                    initial={{ opacity: 0, y: -5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.2 }}
+                    className="mx-4 mt-2 px-3 py-2 bg-amber-50/60 border border-amber-100 rounded-lg flex items-center gap-2 shrink-0"
+                  >
+                    <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                    <span className="text-xs text-amber-700 font-light">
+                      <span className="opacity-60">Viewing:</span> {currentMotorLabel}
+                    </span>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Suggested Prompts - HP-aware, refreshes when motor changes */}
               {(messages.length <= 2 || shouldShowMotorPrompts) && !isLoading && (
@@ -753,7 +783,11 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                     ref={inputRef}
                     type="text"
                     value={inputText}
-                    onChange={(e) => setInputText(e.target.value)}
+                    onChange={(e) => {
+                      setInputText(e.target.value);
+                      // Hide banner when user starts typing
+                      if (e.target.value && showMotorBanner) setShowMotorBanner(false);
+                    }}
                     onKeyPress={handleKeyPress}
                     placeholder={voice.isConnected ? "Voice chat active..." : "Ask anything..."}
                     disabled={voice.isConnected}
