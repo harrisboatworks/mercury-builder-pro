@@ -802,8 +802,14 @@ ${quoteContext}
 ## COMPLETE INVENTORY BY HP (${motors.length} models, ${hpRange})
 ${motorSummary || 'Contact us for inventory'}
 
-## PROMOS
+## CURRENT PROMOTIONS - ALWAYS LINK!
 ${promoSummary || 'Ask about current offers'}
+
+When mentioning ANY promotion:
+- ALWAYS include a link: [See all promos](/promotions) or [Check out the details](/promotions)
+- Mention the end date to create urgency
+- Explain what the customer gets (warranty extension, $ off, etc.)
+- Example: "The Mercury Get 5 Promo gets you +2 years extended warranty FREE! Ends Feb 8th. [Check out the details](/promotions)"
 
 ## REPOWER BENEFITS (If relevant)
 ${Object.values(REPOWER_VALUE_PROPS).slice(0, 3).map(p => `${p.headline}: ${p.message}`).join(' | ')}
