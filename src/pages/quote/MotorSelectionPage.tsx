@@ -402,12 +402,17 @@ function MotorSelectionContent() {
       return processedMotors.filter(m => m.in_stock === true);
     }
     
-    // Numeric queries: exact HP match
+    // Numeric queries: smart HP match
     const isNumericQuery = /^\d+(\.\d+)?$/.test(query);
     if (isNumericQuery) {
-      return processedMotors.filter(motor => 
-        Number(motor.hp) === Number(query) || motor.hp.toString().includes(query)
-      );
+      const searchHP = Number(query);
+      return processedMotors.filter(motor => {
+        // Exact match
+        if (Number(motor.hp) === searchHP) return true;
+        // Allow "9" to match "9.9" (user typed integer, motor has decimal)
+        if (Number.isInteger(searchHP) && Math.floor(motor.hp) === searchHP && motor.hp !== Math.floor(motor.hp)) return true;
+        return false;
+      });
     }
     
     // Use fuzzy search for text queries
