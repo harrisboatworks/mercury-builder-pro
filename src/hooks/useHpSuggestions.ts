@@ -32,16 +32,17 @@ export function useHpSuggestions(query: string, motors: Motor[]): HpSuggestion[]
     // Convert to suggestions and filter by query
     const queryNum = parseFloat(trimmedQuery);
     const suggestions: HpSuggestion[] = [];
-    
     hpGroups.forEach((counts, hp) => {
-      const hpString = hp.toString();
+      // Exact match
+      const isExact = hp === queryNum;
+      // Smart match: "9" matches "9.9" (integer typed, decimal HP)
+      const isSmartMatch = Number.isInteger(queryNum) && Math.floor(hp) === queryNum && hp !== Math.floor(hp);
       
-      // Include if HP string contains the query OR starts with it
-      if (hpString.includes(trimmedQuery) || hpString.startsWith(trimmedQuery)) {
+      if (isExact || isSmartMatch) {
         suggestions.push({
           hp,
           count: counts.total,
-          isExactMatch: hp === queryNum,
+          isExactMatch: isExact,
           inStockCount: counts.inStock,
         });
       }
