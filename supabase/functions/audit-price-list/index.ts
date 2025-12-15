@@ -10,7 +10,6 @@ interface PriceListMotor {
   model_number: string;
   model_display: string;
   dealer_price: number;
-  msrp: number;
   horsepower: number;
 }
 
@@ -25,7 +24,7 @@ interface DatabaseMotor {
 }
 
 interface Discrepancy {
-  type: 'missing_in_db' | 'extra_in_db' | 'name_mismatch' | 'price_mismatch' | 'msrp_mismatch' | 'hp_mismatch';
+  type: 'missing_in_db' | 'extra_in_db' | 'name_mismatch' | 'price_mismatch' | 'hp_mismatch';
   model_number: string;
   price_list_value?: string | number;
   database_value?: string | number;
@@ -91,8 +90,7 @@ Deno.serve(async (req) => {
         priceListMotors.set(item.model_number, {
           model_number: item.model_number,
           model_display: item.model_display || item.description || '',
-          dealer_price: parseFloat(item.dealer_price) || 0,
-          msrp: parseFloat(item.msrp) || 0,
+          dealer_price: parseFloat(item.dealer_price || item.our_price || item.price) || 0,
           horsepower: parseFloat(item.horsepower || item.hp) || 0,
         });
       }
@@ -132,7 +130,7 @@ Deno.serve(async (req) => {
           type: 'missing_in_db',
           model_number: modelNumber,
           price_list_value: plMotor.model_display,
-          details: `${plMotor.horsepower}HP - $${plMotor.dealer_price} dealer / $${plMotor.msrp} MSRP`,
+          details: `${plMotor.horsepower}HP - $${plMotor.dealer_price}`,
           fixed: false,
         });
 
@@ -155,7 +153,6 @@ Deno.serve(async (req) => {
               model_number: modelNumber,
               model_display: plMotor.model_display,
               dealer_price: plMotor.dealer_price,
-              msrp: plMotor.msrp,
               horsepower: plMotor.horsepower,
               motor_type: motorType,
               model: 'Outboard',
@@ -212,24 +209,8 @@ Deno.serve(async (req) => {
         }
       }
 
-      // Check for MSRP mismatch (allow 1% tolerance)
-      if (plMotor.msrp > 0) {
-        const dbMsrp = dbMotor.msrp || 0;
-        const msrpDiff = Math.abs(plMotor.msrp - dbMsrp);
-        const tolerance = plMotor.msrp * 0.01;
-        
-        if (msrpDiff > tolerance) {
-          discrepancies.push({
-            type: 'msrp_mismatch',
-            model_number: modelNumber,
-            price_list_value: plMotor.msrp,
-            database_value: dbMotor.msrp,
-            details: `Difference: $${msrpDiff.toFixed(2)}`,
-            fixed: false,
-          });
-          updates.msrp = plMotor.msrp;
-        }
-      }
+      // Note: MSRP is NOT synced from price list (not available there)
+      // MSRP comes from Mercury official sources and is maintained separately
 
       // Check for HP mismatch
       if (plMotor.horsepower > 0 && dbMotor.horsepower !== plMotor.horsepower) {
@@ -298,7 +279,6 @@ Deno.serve(async (req) => {
       extra_in_db: discrepancies.filter(d => d.type === 'extra_in_db').length,
       name_mismatches: discrepancies.filter(d => d.type === 'name_mismatch').length,
       price_mismatches: discrepancies.filter(d => d.type === 'price_mismatch').length,
-      msrp_mismatches: discrepancies.filter(d => d.type === 'msrp_mismatch').length,
       hp_mismatches: discrepancies.filter(d => d.type === 'hp_mismatch').length,
       changes_applied: changesApplied.length,
       motors_inserted: motorsInserted.length,
