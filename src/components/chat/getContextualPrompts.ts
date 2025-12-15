@@ -50,12 +50,12 @@ export function getContextualPrompts(
     ];
   }
 
-  // Purchase path page
+  // Purchase path page - LOOSE vs INSTALLED decision (NOT tiller vs remote)
   if (currentPage.includes('/quote/purchase-path')) {
     return [
+      "Should I do DIY or pro install?",
       "What's included in pro install?",
-      "Can I install it myself?",
-      "How long does install take?"
+      "Can I pick it up and install later?"
     ];
   }
 
