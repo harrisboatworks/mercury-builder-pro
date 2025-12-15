@@ -175,7 +175,17 @@ async function getActivePromotions() {
 // Detect if question needs external knowledge (Perplexity fallback)
 function needsExternalKnowledge(message: string): boolean {
   const lowerMsg = message.toLowerCase();
-  const externalPatterns = [
+  
+  // Business info patterns - use Perplexity to verify from Google Business Profile
+  const businessPatterns = [
+    /\b(hours?|open|closed|when (are|do) you)\b/i,
+    /\b(location|address|where (are|is) (you|harris)|directions?|how (do i |to )?(get (there|to you)|find you))\b/i,
+    /\b(reviews?|rating|reputation|google)\b/i,
+    /\b(parking|dock|boat ramp|launch|marina)\b/i,
+  ];
+  
+  // Technical/product patterns
+  const technicalPatterns = [
     /what('s| is) (the |a )?(new|latest|2024|2025|2026)/i,
     /how does .+ work/i,
     /technical spec(ification)?s? (for|of|on)/i,
@@ -187,14 +197,22 @@ function needsExternalKnowledge(message: string): boolean {
     /prop(eller)? (size|pitch|recommendation)/i,
     /oil (type|capacity|change)/i,
     /maintenance (schedule|interval|requirement)/i,
-    // Additional patterns for broader Perplexity fallback
     /what (is|are|does) .*(verado|pro xs|seapro|fourstroke|command thrust)/i,
     /joystick|active trim|skyhook|smartcraft/i,
     /rpm|top speed|thrust|torque/i,
-    /(yamaha|honda|suzuki|evinrude)/i, // Competitor mentions
+    /(yamaha|honda|suzuki|evinrude)/i,
     /mercury .*(feature|technology|innovation|system)/i,
   ];
-  return externalPatterns.some(pattern => pattern.test(lowerMsg));
+  
+  if (businessPatterns.some(p => p.test(lowerMsg))) return true;
+  if (technicalPatterns.some(p => p.test(lowerMsg))) return true;
+  
+  // General question catch-all - if it's a question not about pricing/inventory
+  const isQuestion = message.includes('?');
+  const isPricingQuery = /(price|cost|how much|in stock|available|inventory)/i.test(lowerMsg);
+  if (isQuestion && !isPricingQuery) return true;
+  
+  return false;
 }
 
 // Check if we should use Perplexity as a fallback for unanswered questions
@@ -229,27 +247,45 @@ async function searchWithPerplexity(query: string): Promise<string | null> {
   }
 
   try {
-    // Enhance query with 2026 Mercury context
-    const enhancedQuery = `2026 Mercury Marine ${query}`;
-    console.log('Searching Perplexity for:', enhancedQuery);
+    // Detect if this is a business-related question vs technical question
+    const isBusinessQuestion = /(hours?|open|closed|location|address|where|directions?|parking|dock|reviews?|rating)/i.test(query);
+    
+    // Enhance query with appropriate context
+    const enhancedQuery = isBusinessQuestion 
+      ? `Harris Boat Works Gores Landing Ontario ${query}`
+      : `2026 Mercury Marine ${query}`;
+    
+    const systemPrompt = isBusinessQuestion
+      ? 'You are looking up business information for Harris Boat Works, a Mercury Marine dealer in Gores Landing, Ontario. Provide accurate, current information from their Google Business Profile or website. Keep responses concise and factual.'
+      : 'You are a marine engine expert specializing in 2026 Mercury Marine outboard motors. Provide accurate, concise technical information. Focus on specifications, features, and practical advice. Keep responses under 200 words.';
+    
+    const domainFilter = isBusinessQuestion
+      ? [] // Let Perplexity search broadly for business info
+      : ['mercurymarine.com', 'boatingmag.com', 'boats.com'];
+    
+    console.log('Searching Perplexity for:', enhancedQuery, 'isBusinessQuestion:', isBusinessQuestion);
+    
+    const requestBody: any = {
+      model: 'sonar',
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: enhancedQuery }
+      ],
+      search_recency_filter: 'year',
+    };
+    
+    // Only add domain filter if we have domains to filter
+    if (domainFilter.length > 0) {
+      requestBody.search_domain_filter = domainFilter;
+    }
+    
     const response = await fetch('https://api.perplexity.ai/chat/completions', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${PERPLEXITY_API_KEY}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        model: 'sonar',
-        messages: [
-          { 
-            role: 'system', 
-            content: 'You are a marine engine expert specializing in 2026 Mercury Marine outboard motors. Provide accurate, concise technical information. Focus on specifications, features, and practical advice. Keep responses under 200 words.' 
-          },
-          { role: 'user', content: enhancedQuery }
-        ],
-        search_domain_filter: ['mercurymarine.com', 'boatingmag.com', 'boats.com'],
-        search_recency_filter: 'year',
-      }),
+      body: JSON.stringify(requestBody),
     });
 
     if (!response.ok) {
@@ -264,7 +300,10 @@ async function searchWithPerplexity(query: string): Promise<string | null> {
     console.log('Perplexity response received, citations:', citations.length);
     
     if (content) {
-      return `\n\n## VERIFIED TECHNICAL INFO (from Mercury Marine)\n${content}${citations.length > 0 ? `\n\nSources: ${citations.slice(0, 2).join(', ')}` : ''}`;
+      const header = isBusinessQuestion 
+        ? '## VERIFIED BUSINESS INFO' 
+        : '## VERIFIED TECHNICAL INFO (from Mercury Marine)';
+      return `\n\n${header}\n${content}${citations.length > 0 ? `\n\nSources: ${citations.slice(0, 2).join(', ')}` : ''}`;
     }
     return null;
   } catch (error) {
@@ -411,8 +450,13 @@ ${Object.values(REPOWER_VALUE_PROPS).slice(0, 3).map(p => `${p.headline}: ${p.me
 ## FINANCING
 7.99% for $10k+, 8.99% under $10k. Terms: 36-60 months.
 
-## CONTACT
+## CONTACT & HOURS
 Phone: ${HARRIS_CONTACT.phone} | Text: ${HARRIS_CONTACT.text} | Email: ${HARRIS_CONTACT.email}
+Hours: ${HARRIS_CONTACT.hours.season} (Apr-Oct) | ${HARRIS_CONTACT.hours.offseason} (Nov-Mar)
+Location: 6989 Gores Landing Rd, Gores Landing, ON
+
+## CRITICAL: NEVER GUESS
+If you're unsure about specific details (hours, policies, technical specs you don't have), say "I'd double-check that by giving us a call at ${HARRIS_CONTACT.phone}" rather than making something up.
 
 Remember: Be helpful, be brief, be human. And if they want to talk to a person, make it easy - get their info!`;
 }
