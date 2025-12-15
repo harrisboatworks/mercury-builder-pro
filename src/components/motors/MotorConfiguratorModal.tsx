@@ -176,7 +176,15 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, in
       variants = variants.filter(m => m.model.toUpperCase().includes('PT'));
     }
     
-    return variants;
+    // Sort in-stock motors first, then by price
+    return variants.sort((a, b) => {
+      // In-stock first
+      const aInStock = a.in_stock ? 1 : 0;
+      const bInStock = b.in_stock ? 1 : 0;
+      if (bInStock !== aInStock) return bInStock - aInStock;
+      // Then by price (lowest first)
+      return (a.price || 0) - (b.price || 0);
+    });
   }, [group, config]);
   
   // Update preview motor whenever filtered variants change
