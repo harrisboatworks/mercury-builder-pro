@@ -475,7 +475,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
           <motion.div
             initial={{ y: '100%', opacity: 0, scale: 0.97 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
-            exit={{ y: '100%', opacity: 0, scale: 0.97 }}
+            exit={{ y: 'calc(100% + 5rem)', opacity: 0, scale: 0.97 }}
             transition={{ 
               type: 'spring', 
               damping: 25, 
