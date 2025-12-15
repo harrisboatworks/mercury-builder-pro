@@ -231,6 +231,7 @@ export default function MotorDetailsPremiumModal({
   const [calculatorOpen, setCalculatorOpen] = useState(false);
   const [promoReminderOpen, setPromoReminderOpen] = useState(false);
   const [inlineChatOpen, setInlineChatOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('overview');
   const { openChat } = useAIChat();
 
   const handleCalculatePayment = () => {
@@ -273,8 +274,14 @@ export default function MotorDetailsPremiumModal({
           
           {/* LEFT COLUMN: Tabbed Content (Desktop & Mobile) */}
           <div ref={scrollContainerRef} className="flex-1 overflow-y-auto modal-content">
-            <Tabs defaultValue="overview" className="w-full" onValueChange={() => {
-              scrollContainerRef.current?.scrollTo(0, 0);
+            <Tabs value={activeTab} className="w-full" onValueChange={(value) => {
+              if (value === 'chat') {
+                handleAskAI();
+                // Don't switch to chat tab - it's an action, not a content tab
+              } else {
+                setActiveTab(value);
+                scrollContainerRef.current?.scrollTo(0, 0);
+              }
             }}>
               {/* Mobile/Tablet Header - scrolls with content */}
               <div className="lg:hidden bg-white border-b border-gray-200">
@@ -324,6 +331,13 @@ export default function MotorDetailsPremiumModal({
                     className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
                   >
                     Resources
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="chat"
+                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
+                  >
+                    <MessageCircle className="w-3 h-3 inline mr-1" />
+                    Chat
                   </TabsTrigger>
                 </TabsList>
               </div>
@@ -379,6 +393,13 @@ export default function MotorDetailsPremiumModal({
                     className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
                   >
                     Resources
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="chat"
+                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
+                  >
+                    <MessageCircle className="w-4 h-4 inline mr-1" />
+                    Chat
                   </TabsTrigger>
                 </TabsList>
               </div>
