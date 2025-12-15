@@ -246,5 +246,13 @@ export const HARRIS_PARTNERS = {
     discount_amount: "15% off",
     expires: "Never expires",
     description: "Get your Pleasure Craft Operator Card (PCOC) online - required for operating any powered watercraft in Canada"
+  },
+  financing: {
+    url: "/financing-application",
+    description: "Apply for motor financing online - get pre-approved or complete after selecting a motor"
+  },
+  service_request: {
+    url: "http://hbw.wiki/service",
+    description: "Start a service request online for motor repairs and maintenance"
   }
 };
