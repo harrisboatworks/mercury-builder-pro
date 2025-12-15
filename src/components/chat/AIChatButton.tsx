@@ -35,8 +35,11 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
   const getContextualText = () => {
     const path = location.pathname;
     
-    if (path.includes('/quote/motor-selection') && state.motor) {
-      return `Ask about ${state.motor.hp}HP`;
+    // Prioritize preview motor (being viewed) over selected motor
+    const activeMotor = state.previewMotor || state.motor;
+    
+    if (path.includes('/quote/motor-selection') && activeMotor) {
+      return `Ask about ${activeMotor.hp}HP`;
     }
     if (path.includes('/quote/summary')) {
       return 'Questions about your quote?';
