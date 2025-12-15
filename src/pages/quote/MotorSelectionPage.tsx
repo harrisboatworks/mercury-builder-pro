@@ -422,6 +422,9 @@ function MotorSelectionContent() {
   // Group motors by HP for simple view
   const groupedMotors = useGroupedMotors(processedMotors);
 
+  // Track deep-linked motor ID for direct modal opening
+  const [deepLinkedMotorId, setDeepLinkedMotorId] = useState<string | null>(null);
+  
   // Handle URL parameter for deep-linking to a specific motor (from AI chat links)
   useEffect(() => {
     const motorId = searchParams.get('motor') || searchParams.get('select');
@@ -435,6 +438,7 @@ function MotorSelectionContent() {
       );
       if (targetGroup) {
         setSelectedGroup(targetGroup);
+        setDeepLinkedMotorId(motorId);  // Store the specific motor ID for direct modal
         setShowConfigurator(true);
         // Clear the param so refresh doesn't re-trigger
         searchParams.delete('motor');
@@ -735,9 +739,13 @@ function MotorSelectionContent() {
         {/* Motor Configurator Modal */}
         <MotorConfiguratorModal
           open={showConfigurator}
-          onClose={() => setShowConfigurator(false)}
+          onClose={() => {
+            setShowConfigurator(false);
+            setDeepLinkedMotorId(null);  // Clear when closing
+          }}
           group={selectedGroup}
           onSelectMotor={handleMotorSelect}
+          initialMotorId={deepLinkedMotorId}
         />
       </FinancingProvider>
     </PageTransition>
