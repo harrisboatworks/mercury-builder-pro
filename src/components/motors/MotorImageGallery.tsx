@@ -280,7 +280,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
             <img
               src={lightboxEnhancedUrls[selectedIndex] || validImages[selectedIndex]}
               alt={`${motorTitle} - Full size`}
-              className="max-w-full max-h-full object-contain"
+              className="max-w-[85vw] max-h-[75vh] md:max-w-[70vw] md:max-h-[70vh] object-contain"
               onError={() => handleImageError(selectedIndex)}
             />
             
