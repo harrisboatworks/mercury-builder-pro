@@ -246,16 +246,20 @@ export default function MotorCardPreview({
 
   // Get delivery status with clean indicator
   const getDeliveryStatus = () => {
-    if (inStock) {
-      return {
-        text: "🟢 In Stock Today",
-        dotColor: "bg-green-500"
-      };
+    // Harris physical stock
+    if (inStock || motor?.in_stock === true) {
+      return { text: "In Stock Today", dotColor: "bg-green-500" };
     }
-    return {
-      text: "○ Quick availability",
-      dotColor: "bg-gray-400"
-    };
+    // Mercury warehouse stock
+    if (motor?.availability?.includes('Mercury Warehouse')) {
+      return { text: "In Stock at Mercury", dotColor: "bg-amber-500" };
+    }
+    // Estimated availability date
+    if (motor?.availability?.startsWith('Est.')) {
+      return { text: motor.availability, dotColor: "bg-gray-400" };
+    }
+    // Brochure / factory order - no lead time promised
+    return { text: "Available to Order", dotColor: "bg-gray-400" };
   };
 
   // Get warranty text if applicable
