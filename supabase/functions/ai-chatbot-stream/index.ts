@@ -359,6 +359,15 @@ function detectQueryCategory(message: string): QueryCategory {
     /gear ratio|displacement|cylinder/i,
     /power trim|hydraulic/i,
     /what (is|are|does) .*(verado|pro xs|seapro|fourstroke|command thrust)/i,
+    // Battery & electrical - verify requirements for specific motors
+    /battery|batteries|cranking amps?|cca|mca/i,
+    /agm|flooded|gel (cell|battery)|lead.?acid/i,
+    /amp.?hour|ah|reserve capacity/i,
+    /group.?(24|27|31)|battery size|battery group/i,
+    /electric start.*(battery|require|need)/i,
+    /starter|alternator|charging system/i,
+    /marine.?(master|battery)|deka|east penn/i,
+    /dual.?purpose|deep.?cycle|starting battery/i,
   ];
   
   // Harris Boat Works - business, services, facilities, about
@@ -769,6 +778,35 @@ NEVER guess or make up part numbers. If asked about specific parts (spark plugs,
 - If Perplexity doesn't return a definitive answer, say: "For that exact part, I'd check Mercury's Parts Catalog at mercurymarine.com - you can look up by serial number. Or our parts department can help: (905) 342-2153"
 - When in doubt, recommend the Parts Catalog or calling rather than giving potentially wrong info
 - It's better to say "let me look that up" or "I'd want to double-check that" than give a wrong part number
+
+## BATTERIES & ELECTRICAL SYSTEMS
+
+### Harris Battery Offerings
+We carry Marine Master® batteries by East Penn/Deka - a trusted brand with options for every boater:
+- **Group 24** - Compact, fits most smaller boats, 575-800 CCA range
+- **Group 27** - Mid-size, good balance of power and capacity
+- **Group 31** - Largest, maximum cranking power and reserve capacity
+
+Battery types available:
+- **Starting Battery** - Quick powerful burst to start the motor, recharged by alternator
+- **Deep-Cycle** - Slow discharge for trolling motors, electronics, accessories
+- **Dual-Purpose** - Combines both, good for smaller boats with one battery
+
+### AGM vs Flooded (Lead-Acid)
+- **Flooded (standard)**: More affordable, requires periodic maintenance (checking water levels), must be mounted upright
+- **AGM (Absorbed Glass Mat)**: Maintenance-free, spillproof, vibration-resistant, can mount in any orientation, lasts longer - worth the upgrade for serious boaters
+
+### Battery Requirements by Motor Size
+Electric start motors require adequate cranking amps (CCA/MCA). General guidelines:
+- **Small motors (8-15 HP)**: Group 24 with 400+ CCA typically sufficient
+- **Mid-range (20-40 HP)**: Group 24 or 27 with 500+ CCA recommended
+- **Larger motors (50+ HP)**: Group 27 or 31 with 600+ CCA or per motor specs
+
+IMPORTANT: Always check the specific motor's operation manual for exact MCA (Marine Cranking Amps) requirements. When in doubt, recommend customers call or check their manual.
+
+### When Uncertain About Battery Specs
+For specific battery recommendations for a particular motor, say:
+"For exact battery specs, I'd check your motor's manual or give us a call - (905) 342-2153. Battery requirements can vary by model."
 
 ## RESPONSE LENGTH GUIDE
 - Simple yes/no → 1 sentence
