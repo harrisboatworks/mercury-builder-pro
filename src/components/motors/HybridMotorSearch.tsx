@@ -84,7 +84,15 @@ const AI_TRIGGER_WORDS = [
   // Info-related
   'about', 'info', 'specs', 'specification', 'feature', 'features',
   // Comparison/fit
-  'vs', 'versus', 'or', 'right', 'fit', 'work'
+  'vs', 'versus', 'or', 'right', 'fit', 'work',
+  // Performance & fuel-related
+  'fuel', 'economy', 'mpg', 'gph', 'consumption', 'efficient', 'efficiency',
+  'speed', 'fast', 'rpm', 'thrust', 'torque', 'power',
+  // Weight & dimensions
+  'weight', 'heavy', 'light', 'pounds', 'lbs', 'dimensions',
+  // Technical specs
+  'warranty', 'year', 'years', 'rating', 'review', 'reliable', 'reliability',
+  'maintenance', 'service', 'oil', 'break-in'
 ];
 
 const SUGGESTED_PROMPTS = [
@@ -338,7 +346,17 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   const isAIQuery = useMemo(() => {
     if (!query.trim()) return false;
     const lowerQuery = query.toLowerCase();
-    return AI_TRIGGER_WORDS.some(word => lowerQuery.includes(word));
+    
+    // Check trigger words first
+    if (AI_TRIGGER_WORDS.some(word => lowerQuery.includes(word))) return true;
+    
+    // Fallback: HP number + technical context (e.g., "fuel economy of a 9.9")
+    const hasHpNumber = /\b(\d+(?:\.\d+)?)\b/.test(lowerQuery);
+    const hasTechnicalContext = /(fuel|economy|weight|speed|thrust|torque|rpm|warranty|specs?|power|rating|gph|mpg|consumption|efficient)/i.test(lowerQuery);
+    
+    if (hasHpNumber && hasTechnicalContext) return true;
+    
+    return false;
   }, [query]);
 
   // Detect if query is numeric (for HP suggestions)
