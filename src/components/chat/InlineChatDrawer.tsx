@@ -73,8 +73,8 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const [keyboardVisible, setKeyboardVisible] = useState(false);
   const [sendState, setSendState] = useState<'idle' | 'sending' | 'success'>('idle');
   
-  // Track which motor the prompts were last shown for (to detect context changes)
-  const [promptMotorId, setPromptMotorId] = useState<string | null>(null);
+  // Track which motor the user has already interacted with (asked questions about)
+  const [interactedMotorId, setInteractedMotorId] = useState<string | null>(null);
   
   const setIsLoading = useCallback((loading: boolean) => {
     setIsLoadingLocal(loading);
@@ -311,16 +311,9 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     return contextualPrompts;
   }, [state.previewMotor, state.motor, motorContext, contextualPrompts]);
 
-  // Detect if motor context changed (to show fresh prompts even with history)
+  // Detect if motor context changed (to show fresh prompts for new motor)
   const currentMotorId = (state.previewMotor as any)?.id || (state.motor as any)?.id || null;
-  const hasMotorContextChanged = currentMotorId && currentMotorId !== promptMotorId;
-  
-  // Update prompt motor ID when user starts viewing a different motor
-  useEffect(() => {
-    if (currentMotorId && currentMotorId !== promptMotorId) {
-      setPromptMotorId(currentMotorId);
-    }
-  }, [currentMotorId, promptMotorId]);
+  const shouldShowMotorPrompts = currentMotorId && currentMotorId !== interactedMotorId;
 
   // Get current motor context label for banner
   const currentMotorLabel = useMemo(() => {
@@ -704,7 +697,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
               )}
 
               {/* Suggested Prompts - HP-aware, refreshes when motor changes */}
-              {(messages.length <= 2 || hasMotorContextChanged || currentMotorLabel) && !isLoading && (
+              {(messages.length <= 2 || shouldShowMotorPrompts) && !isLoading && (
                 <motion.div
                   key={`prompts-${currentMotorId || 'default'}`}
                   initial={{ opacity: 0, y: 10 }}
@@ -720,6 +713,8 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                       <button
                         key={`${currentMotorId}-${index}`}
                         onClick={() => {
+                          // Mark this motor as interacted with to hide prompts
+                          if (currentMotorId) setInteractedMotorId(currentMotorId);
                           if (prompt.includes('Help me find the right motor') && setShowQuiz) {
                             setShowQuiz(true);
                             onClose();
