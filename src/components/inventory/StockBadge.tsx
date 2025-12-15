@@ -1,5 +1,5 @@
 import { Badge } from '@/components/ui/badge';
-import { Check, X, Package } from 'lucide-react';
+import { Check, Package, Truck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface StockBadgeProps {
@@ -19,12 +19,25 @@ export function StockBadge({ motor, variant = 'default', className }: StockBadge
   const isInStock = motor.in_stock === true || hasRealStock;
   const quantity = motor.stock_quantity || 0;
   const isCompact = variant === 'compact';
+  const availability = motor.availability || '';
 
-  if (!isInStock) {
-    return null;
-  }
+  // Harris physical stock - Green
+  if (isInStock) {
+    if (quantity > 1) {
+      return (
+        <Badge 
+          className={cn(
+            "bg-green-600 text-white",
+            isCompact ? "text-xs px-2 py-0" : "",
+            className
+          )}
+        >
+          <Package className={cn("mr-1", isCompact ? "w-2 h-2" : "w-3 h-3")} />
+          {isCompact ? `${quantity}` : `${quantity} In Stock`}
+        </Badge>
+      );
+    }
 
-  if (quantity > 1) {
     return (
       <Badge 
         className={cn(
@@ -33,22 +46,43 @@ export function StockBadge({ motor, variant = 'default', className }: StockBadge
           className
         )}
       >
-        <Package className={cn("mr-1", isCompact ? "w-2 h-2" : "w-3 h-3")} />
-        {isCompact ? `${quantity}` : `${quantity} In Stock`}
+        <Check className={cn("mr-1", isCompact ? "w-2 h-2" : "w-3 h-3")} />
+        In Stock
       </Badge>
     );
   }
 
-  return (
-    <Badge 
-      className={cn(
-        "bg-green-600 text-white",
-        isCompact ? "text-xs px-2 py-0" : "",
-        className
-      )}
-    >
-      <Check className={cn("mr-1", isCompact ? "w-2 h-2" : "w-3 h-3")} />
-      In Stock
-    </Badge>
-  );
+  // Mercury Warehouse stock - Amber
+  if (availability.includes('Mercury Warehouse')) {
+    return (
+      <Badge 
+        className={cn(
+          "bg-amber-500 text-white",
+          isCompact ? "text-xs px-2 py-0" : "",
+          className
+        )}
+      >
+        <Truck className={cn("mr-1", isCompact ? "w-2 h-2" : "w-3 h-3")} />
+        {isCompact ? "Mercury" : "In Stock at Mercury"}
+      </Badge>
+    );
+  }
+
+  // Estimated availability date - Gray
+  if (availability.startsWith('Est.')) {
+    return (
+      <Badge 
+        className={cn(
+          "bg-gray-500 text-white",
+          isCompact ? "text-xs px-2 py-0" : "",
+          className
+        )}
+      >
+        {isCompact ? availability.replace('Est. ', '') : availability}
+      </Badge>
+    );
+  }
+
+  // Brochure / factory order - no badge
+  return null;
 }
