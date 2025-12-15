@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useNavigate } from "react-router-dom";
-import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft, Bell, Sparkles, ChevronDown } from "lucide-react";
+import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft, Bell, Sparkles, ChevronDown, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAIChat } from '../chat/GlobalAIChat';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { CleanSpecSheetPDF } from './CleanSpecSheetPDF';
 import { supabase } from "../../integrations/supabase/client";
 import { useIsMobile } from "../../hooks/use-mobile";
+import { MotorInlineChatPanel } from './MotorInlineChatPanel';
 import { toast } from "sonner";
 import { useScrollCoordination } from "../../hooks/useScrollCoordination";
 import { money } from "../../lib/money";
@@ -229,6 +230,7 @@ export default function MotorDetailsPremiumModal({
 
   const [calculatorOpen, setCalculatorOpen] = useState(false);
   const [promoReminderOpen, setPromoReminderOpen] = useState(false);
+  const [inlineChatOpen, setInlineChatOpen] = useState(false);
   const { openChat } = useAIChat();
 
   const handleCalculatePayment = () => {
@@ -236,9 +238,15 @@ export default function MotorDetailsPremiumModal({
   };
 
   const handleAskAI = () => {
-    const contextualPrompt = `Tell me about the ${title}. What makes it a good choice? What type of boats is it best for?`;
-    openChat(contextualPrompt);
-    onClose();
+    if (isMobile) {
+      // Mobile: use the global chat with modal close
+      const contextualPrompt = `Tell me about the ${title}. What makes it a good choice? What type of boats is it best for?`;
+      openChat(contextualPrompt);
+      onClose();
+    } else {
+      // Desktop: open inline chat panel
+      setInlineChatOpen(true);
+    }
   };
 
   const handleSelectMotor = () => {
@@ -663,148 +671,177 @@ export default function MotorDetailsPremiumModal({
             </Tabs>
           </div>
 
-          {/* RIGHT COLUMN: Sticky Pricing Card (Desktop Only) */}
+          {/* RIGHT COLUMN: Sticky Pricing Card OR Inline Chat (Desktop Only) */}
           <div className="hidden lg:block border-l border-gray-200">
-            <div className="sticky top-0 p-6 space-y-6 max-h-[90vh] overflow-y-auto">
-              {/* Motor Name & Thumbnail */}
-              <div>
-                <h3 className="text-lg font-semibold tracking-wide text-gray-900">
-                  {title}
-                </h3>
-                <img 
-                  src={img || gallery?.[0]} 
-                  alt={title}
-                  className="w-full h-32 object-contain mt-4 rounded-lg bg-stone-50"
-                />
-              </div>
-              
-              {/* Price Display */}
-              <div className="border-t border-gray-100 pt-6">
-                <p className="text-[10px] tracking-[0.15em] uppercase text-gray-400 font-light mb-2">
-                  from
-                </p>
-                {msrp && typeof msrp === "number" && msrp !== price && (
-                  <p className="text-base text-gray-400 font-normal line-through">
-                    {money(msrp)}
-                  </p>
-                )}
-                <p className="text-3xl font-bold tracking-tight text-gray-900 mt-1">
-                  {typeof price === "number" ? money(price) : 'Call for Price'}
-                </p>
-                {msrp && price && msrp > price && (
-                  <p className="text-sm text-red-600 mt-2 font-normal">
-                    SAVE {money(msrp - price)}
-                  </p>
-                )}
-              </div>
-              
-              {/* Key Spec Badges - All Features */}
-              <div className="flex flex-wrap gap-2 border-t border-gray-100 pt-6">
-                {/* HP Badge - Always shown first */}
-                <span className="px-3 py-1 bg-stone-100 text-gray-700 text-xs font-medium rounded-full">
-                  {hp} HP
-                </span>
-                
-                {/* All Decoded Features */}
-                {(() => {
-                  const decoded = decodeModelName(title, typeof hp === 'string' ? parseFloat(hp) : hp);
-                  
-                  // Helper to shorten badge text for compactness
-                  const shortenMeaning = (meaning: string) => {
-                    return meaning
-                      .replace('Long Shaft (20")', 'Long (20")')
-                      .replace('Short Shaft (15")', 'Short (15")')
-                      .replace('Extra Long Shaft (25")', 'XL (25")')
-                      .replace('Extra Extra Long Shaft (30")', 'XXL (30")')
-                      .replace('Ultra Long Shaft (30")', 'XXL (30")')
-                      .replace('Power Trim & Tilt', 'Power Trim')
-                      .replace('Tiller Handle', 'Tiller')
-                      .replace('Electric Start', 'Electric')
-                      .replace('Manual Start', 'Manual')
-                      .replace('Remote Control', 'Remote')
-                      .replace('Electronic Fuel Injection', 'EFI')
-                      .replace('Digital Throttle & Shift', 'Digital Controls')
-                      .replace('Gas Assist Tilt', 'Gas Assist')
-                      .replace('High Thrust', 'High Thrust')
-                      .replace('4-Stroke', 'FourStroke');
-                  };
-                  
-                  return decoded.map((feature, idx) => (
-                    <span 
-                      key={`${feature.code}-${idx}`}
-                      className="px-3 py-1 bg-stone-100 text-gray-700 text-xs font-medium rounded-full"
-                    >
-                      {shortenMeaning(feature.meaning)}
-                    </span>
-                  ));
-                })()}
-              </div>
-              
-              {/* Trust Signals */}
-              <TrustSignals />
-              
-              {/* ADD TO QUOTE Button */}
-              <button
-                onClick={() => {
-                  triggerHaptic('medium');
-                  handleSelectMotor();
-                }}
-                className="w-full bg-black text-white py-4 text-xs tracking-widest uppercase font-medium rounded-sm hover:bg-gray-900 transition-all duration-500"
-              >
-                Configure This Motor
-              </button>
-              
-              {/* Calculate Payment Link */}
-              <button
-                onClick={handleCalculatePayment}
-                className="w-full flex items-center justify-center gap-2 text-sm text-gray-600 hover:text-black font-medium transition-colors"
-              >
-                <Calculator className="w-4 h-4" />
-                Calculate Payment
-              </button>
-              
-              {/* Notify Me of Sales Button */}
-              <button
-                onClick={() => setPromoReminderOpen(true)}
-                className="w-full flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-foreground font-normal transition-colors py-2"
-              >
-                <Bell className="w-4 h-4" />
-                Notify me of sales
-              </button>
-              
-              {/* Ask AI Button */}
-              <button
-                onClick={handleAskAI}
-                className="w-full flex items-center justify-center gap-2 text-sm text-amber-600 hover:text-amber-700 font-normal transition-colors py-2"
-              >
-                <Sparkles className="w-4 h-4" />
-                Ask AI about this motor
-              </button>
-              
-              {/* Promo Badges */}
-              <div className="space-y-2 border-t border-gray-100 pt-6">
-                {(() => {
-                  const warrantyPromo = activePromotions.find(p => p.warranty_extra_years && p.warranty_extra_years > 0);
-                  if (!warrantyPromo) return null;
-                  
-                  const standardWarranty = 3; // Mercury's base warranty
-                  const totalCoverage = standardWarranty + warrantyPromo.warranty_extra_years;
-                  
-                  return (
-                    <div className="flex items-center gap-2 text-xs text-gray-600 font-normal">
-                      <Gift className="w-4 h-4" />
-                      <span>{totalCoverage}-Year Total Coverage</span>
-                    </div>
-                  );
-                })()}
-                {activePromo && (
-                  <div className="flex items-center gap-2 text-xs text-gray-600 font-normal">
-                    <BarChart3 className="w-4 h-4" />
-                    <span>{activePromo.rate}% APR Available</span>
+            <AnimatePresence mode="wait">
+              {inlineChatOpen ? (
+                <motion.div 
+                  key="chat"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="h-[90vh]"
+                >
+                  <MotorInlineChatPanel
+                    motor={motor!}
+                    motorTitle={title}
+                    hp={hpValue}
+                    price={price || 0}
+                    onClose={() => setInlineChatOpen(false)}
+                    initialQuestion={`Tell me about the ${title}. What makes it a good choice?`}
+                  />
+                </motion.div>
+              ) : (
+                <motion.div 
+                  key="pricing"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="sticky top-0 p-6 space-y-6 max-h-[90vh] overflow-y-auto"
+                >
+                  {/* Motor Name & Thumbnail */}
+                  <div>
+                    <h3 className="text-lg font-semibold tracking-wide text-gray-900">
+                      {title}
+                    </h3>
+                    <img 
+                      src={img || gallery?.[0]} 
+                      alt={title}
+                      className="w-full h-32 object-contain mt-4 rounded-lg bg-stone-50"
+                    />
                   </div>
-                )}
-              </div>
-            </div>
+                  
+                  {/* Price Display */}
+                  <div className="border-t border-gray-100 pt-6">
+                    <p className="text-[10px] tracking-[0.15em] uppercase text-gray-400 font-light mb-2">
+                      from
+                    </p>
+                    {msrp && typeof msrp === "number" && msrp !== price && (
+                      <p className="text-base text-gray-400 font-normal line-through">
+                        {money(msrp)}
+                      </p>
+                    )}
+                    <p className="text-3xl font-bold tracking-tight text-gray-900 mt-1">
+                      {typeof price === "number" ? money(price) : 'Call for Price'}
+                    </p>
+                    {msrp && price && msrp > price && (
+                      <p className="text-sm text-red-600 mt-2 font-normal">
+                        SAVE {money(msrp - price)}
+                      </p>
+                    )}
+                  </div>
+                  
+                  {/* Key Spec Badges - All Features */}
+                  <div className="flex flex-wrap gap-2 border-t border-gray-100 pt-6">
+                    {/* HP Badge - Always shown first */}
+                    <span className="px-3 py-1 bg-stone-100 text-gray-700 text-xs font-medium rounded-full">
+                      {hp} HP
+                    </span>
+                    
+                    {/* All Decoded Features */}
+                    {(() => {
+                      const decoded = decodeModelName(title, typeof hp === 'string' ? parseFloat(hp) : hp);
+                      
+                      // Helper to shorten badge text for compactness
+                      const shortenMeaning = (meaning: string) => {
+                        return meaning
+                          .replace('Long Shaft (20")', 'Long (20")')
+                          .replace('Short Shaft (15")', 'Short (15")')
+                          .replace('Extra Long Shaft (25")', 'XL (25")')
+                          .replace('Extra Extra Long Shaft (30")', 'XXL (30")')
+                          .replace('Ultra Long Shaft (30")', 'XXL (30")')
+                          .replace('Power Trim & Tilt', 'Power Trim')
+                          .replace('Tiller Handle', 'Tiller')
+                          .replace('Electric Start', 'Electric')
+                          .replace('Manual Start', 'Manual')
+                          .replace('Remote Control', 'Remote')
+                          .replace('Electronic Fuel Injection', 'EFI')
+                          .replace('Digital Throttle & Shift', 'Digital Controls')
+                          .replace('Gas Assist Tilt', 'Gas Assist')
+                          .replace('High Thrust', 'High Thrust')
+                          .replace('4-Stroke', 'FourStroke');
+                      };
+                      
+                      return decoded.map((feature, idx) => (
+                        <span 
+                          key={`${feature.code}-${idx}`}
+                          className="px-3 py-1 bg-stone-100 text-gray-700 text-xs font-medium rounded-full"
+                        >
+                          {shortenMeaning(feature.meaning)}
+                        </span>
+                      ));
+                    })()}
+                  </div>
+                  
+                  {/* Trust Signals */}
+                  <TrustSignals />
+                  
+                  {/* ADD TO QUOTE Button */}
+                  <button
+                    onClick={() => {
+                      triggerHaptic('medium');
+                      handleSelectMotor();
+                    }}
+                    className="w-full bg-black text-white py-4 text-xs tracking-widest uppercase font-medium rounded-sm hover:bg-gray-900 transition-all duration-500"
+                  >
+                    Configure This Motor
+                  </button>
+                  
+                  {/* Calculate Payment Link */}
+                  <button
+                    onClick={handleCalculatePayment}
+                    className="w-full flex items-center justify-center gap-2 text-sm text-gray-600 hover:text-black font-medium transition-colors"
+                  >
+                    <Calculator className="w-4 h-4" />
+                    Calculate Payment
+                  </button>
+                  
+                  {/* Notify Me of Sales Button */}
+                  <button
+                    onClick={() => setPromoReminderOpen(true)}
+                    className="w-full flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-foreground font-normal transition-colors py-2"
+                  >
+                    <Bell className="w-4 h-4" />
+                    Notify me of sales
+                  </button>
+                  
+                  {/* Ask AI Button */}
+                  <button
+                    onClick={handleAskAI}
+                    className="w-full flex items-center justify-center gap-2 text-sm text-amber-600 hover:text-amber-700 font-normal transition-colors py-2"
+                  >
+                    <Sparkles className="w-4 h-4" />
+                    Ask AI about this motor
+                  </button>
+                  
+                  {/* Promo Badges */}
+                  <div className="space-y-2 border-t border-gray-100 pt-6">
+                    {(() => {
+                      const warrantyPromo = activePromotions.find(p => p.warranty_extra_years && p.warranty_extra_years > 0);
+                      if (!warrantyPromo) return null;
+                      
+                      const standardWarranty = 3; // Mercury's base warranty
+                      const totalCoverage = standardWarranty + warrantyPromo.warranty_extra_years;
+                      
+                      return (
+                        <div className="flex items-center gap-2 text-xs text-gray-600 font-normal">
+                          <Gift className="w-4 h-4" />
+                          <span>{totalCoverage}-Year Total Coverage</span>
+                        </div>
+                      );
+                    })()}
+                    {activePromo && (
+                      <div className="flex items-center gap-2 text-xs text-gray-600 font-normal">
+                        <BarChart3 className="w-4 h-4" />
+                        <span>{activePromo.rate}% APR Available</span>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Mobile scroll hint - fades out after scrolling */}
