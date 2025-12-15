@@ -3,9 +3,9 @@
 
 export const HARRIS_HISTORY = {
   founded: 1947,
-  years_in_business: 78, // 2025 - 1947
+  years_in_business: 79, // 2026 - 1947
   mercury_dealer_since: 1965,
-  years_as_mercury_dealer: 60, // 2025 - 1965
+  years_as_mercury_dealer: 61, // 2026 - 1965
   location: "Gores Landing, Rice Lake, Ontario",
   generations: "3 generations of family ownership",
   service_area: "Greater Toronto Area, Durham Region, Peterborough, Northumberland, and all of Ontario",
@@ -18,7 +18,7 @@ export const HARRIS_HISTORY = {
     { year: 2023, event: "Awarded CSI 5-Star Award - Top 5% of Mercury dealers" }
   ],
   
-  story: `Harris Boat Works has been serving Ontario boaters since 1947, when we first opened our doors on the shores of Rice Lake in Gores Landing. What started as a small boat repair shop has grown into one of Ontario's most trusted Mercury dealerships. We've been an authorized Mercury dealer since 1965 - that's 60 years of Mercury expertise. Three generations of the Harris family have dedicated their lives to helping boaters find the perfect motor and keeping them on the water. We're not just selling motors - we're building relationships that last generations.`
+  story: `Harris Boat Works has been serving Ontario boaters since 1947, when we first opened our doors on the shores of Rice Lake in Gores Landing. What started as a small boat repair shop has grown into one of Ontario's most trusted Mercury dealerships. We've been an authorized Mercury dealer since 1965 - that's 61 years of Mercury expertise. Three generations of the Harris family have dedicated their lives to helping boaters find the perfect motor and keeping them on the water. We're not just selling motors - we're building relationships that last generations.`
 };
 
 export const HARRIS_AWARDS = [

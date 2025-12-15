@@ -538,9 +538,9 @@ function convertXMLToMotorData(item: XMLItem): MotorData | null {
     const title = item.title;
     const description = item.description;
 
-    // Extract year (default to 2025 if not found)
+    // Extract year (default to 2026 if not found)
     const yearMatch = title.match(/(\d{4})/);
-    const year = yearMatch ? parseInt(yearMatch[1]) : 2025;
+    const year = yearMatch ? parseInt(yearMatch[1]) : 2026;
 
     // Extract horsepower
     const hpMatch = title.match(/(\d+\.?\d*)\s*hp/i) || description.match(/(\d+\.?\d*)\s*hp/i);

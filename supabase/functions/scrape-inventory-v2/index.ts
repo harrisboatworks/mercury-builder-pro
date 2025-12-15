@@ -49,7 +49,7 @@ function parseMotorFromUnit(u: any): Motor {
   return {
     model_raw: title,
     model: title,
-    year: 2025,
+    year: 2026,
     motor_type,
     horsepower,
     fuel_type,
@@ -1342,7 +1342,7 @@ serve(async (req) => {
         const hpExplicit   = toNum(iHP    >= 0 ? row[iHP]    : null);
         const seriesRaw    = norm(iSeries >= 0 ? row[iSeries] : "");
         const price        = toNum(iPrice >= 0 ? row[iPrice] : null) ?? 0;
-        const year         = toNum(iYear  >= 0 ? row[iYear]  : null) ?? 2025;
+        const year         = toNum(iYear  >= 0 ? row[iYear]  : null) ?? 2026;
 
         const inferred = deriveFromText(model_number, description);
         const horsepower = hpExplicit ?? inferred.horsepower;
@@ -1584,7 +1584,7 @@ serve(async (req) => {
               const motor: Motor = {
                 model_raw,
                 model: cleanText(model),
-                year: year ?? 2025,
+                year: year ?? 2026,
                 motor_type: motor_type ?? 'FourStroke',
                 horsepower: horsepower ?? null,
                 fuel_type: fuel_type ?? '',
@@ -1786,7 +1786,7 @@ serve(async (req) => {
             make: 'Mercury',
             model: m.model,
             model_key: modelKey,
-            year: m.year || 2025,
+            year: m.year || 2026,
             motor_type: m.motor_type || 'FourStroke',
             sale_price: m.sale_price,
             base_price: m.msrp || m.sale_price,

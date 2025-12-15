@@ -104,7 +104,7 @@ export default function MyQuotes() {
         },
         specs: [
           { label: "HP", value: `${quote.quote_data?.motor?.hp || 0}` },
-          { label: "Year", value: `${quote.quote_data?.motor?.year || 2025}` }
+          { label: "Year", value: `${quote.quote_data?.motor?.year || 2026}` }
         ].filter(spec => spec.value && spec.value !== '0')
       });
 
