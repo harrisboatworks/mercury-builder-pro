@@ -385,6 +385,14 @@ function detectQueryCategory(message: string): QueryCategory {
     /simrad|garmin|raymarine|nmea.?2000/i,
     /over.?the.?air|ota update|software update/i,
     /fuel (tracking|monitoring)|maintenance (tracker|log|alert)/i,
+    // Break-in procedure
+    /break.?in|breaking in|first (10|ten) hours/i,
+    /new (motor|engine|outboard) (procedure|process)/i,
+    /ring seat|piston ring|seating/i,
+    /first (hour|run|use|ride)|initial hours/i,
+    /how (to|do i) run.*(new|first)/i,
+    /wide.?open throttle.*new|wot.*break/i,
+    /vary (throttle|rpm|speed)/i,
   ];
   
   // Harris Boat Works - business, services, facilities, about
@@ -980,6 +988,78 @@ Turns compatible chartplotter into full engine command center:
 - When asked about VesselView Mobile → Explain it's now called SmartCraft Connect
 - Always mention the free Mercury Marine app (iOS/Android)
 - For older motors (pre-2004 or small HP) → "Unfortunately that motor predates SmartCraft connectivity"
+
+## ENGINE BREAK-IN PROCEDURE
+
+### Official Mercury 10-Hour Break-In Process
+
+**Phase 1: First Hour (0-1 hours)**
+- Maximum RPM: 3500
+- Vary throttle constantly - never hold steady speed
+- Light loads only (minimal passengers/gear)
+- Check for leaks, unusual sounds, warning lights
+
+**Phase 2: Second Hour (1-2 hours)**
+- Maximum RPM: 4500
+- Continue varying throttle
+- Still no wide-open throttle (WOT)
+- Monitor oil pressure and temperature
+
+**Phase 3: Hours 3-10**
+- Normal operation permitted
+- WOT allowed but MAX 5 minutes at a time
+- Continue varying speeds when possible
+- Full break-in complete at 10 hours
+
+### Critical Do's
+- ✅ Vary throttle settings constantly (prevents ring glazing)
+- ✅ Check oil before every outing during break-in
+- ✅ Use SmartCraft Connect/app to track hours precisely
+- ✅ Keep loads light initially
+- ✅ Monitor for leaks, unusual sounds, warning lights
+- ✅ Keep a simple log (date, hours, RPM ranges, any issues)
+
+### Critical Don'ts
+- ❌ Don't hold steady RPM for extended periods (causes ring glazing)
+- ❌ Don't run at WOT at all in first 2 hours
+- ❌ Don't run at WOT for more than 5 minutes (hours 3-10)
+- ❌ Don't idle for extended periods
+- ❌ Don't skip the first service after break-in
+- ❌ Don't tow heavy loads or water toys during break-in
+
+### Engine Family Notes
+| Family | Special Considerations |
+|--------|----------------------|
+| FourStroke | Oil checks critical, change oil/filter after break-in (typically 20-25 hours) |
+| Pro XS | Performance engine - break-in even more critical, follow procedure carefully |
+| Verado | Gentle throttle early, soft acceleration, limit boost pressure |
+| SeaPro | Commercial duty - same break-in, then ready for hard work |
+| Portable (2.5-20hp) | Same principles, just lower absolute RPM limits |
+
+### First Service After Break-In
+Schedule service at Harris after break-in (check manual for exact hours - typically 20-25):
+- Change engine oil and filter
+- Check/replace gear lube
+- Inspect for leaks and wear
+- Check all connections and hardware
+- Verify proper operation
+
+**Link to schedule service**: [Harris Service](http://hbw.wiki/service)
+
+### Why Break-In Matters
+- Allows piston rings to seat properly against cylinder walls
+- Prevents ring glazing that causes oil consumption issues
+- Ensures proper bearing wear-in for long engine life
+- **Protects warranty** - improper break-in may affect warranty claims
+
+### Break-In Response Guidelines
+- When asked about break-in → Provide the 3-phase structure clearly (1 hour / 1 hour / 8 hours)
+- When asked "do I really need to?" → YES, explain warranty implications and long-term engine health
+- When asked about WOT → "After 2 hours yes, but max 5 minutes at a time until 10 hours complete"
+- When asked about first service → Recommend scheduling at Harris after 20-25 hours (check manual for specific model)
+- For model-specific questions → Use Perplexity to find exact details
+- Always mention: "Check your owner's manual for your specific model's requirements"
+- Link to Mercury's official guide: https://www.mercurymarine.com/us/en/lifestyle/dockline/how-to-break-in-a-new-mercury-outboard
 
 ## RESPONSE LENGTH GUIDE
 - Simple yes/no → 1 sentence
