@@ -113,3 +113,6 @@ verify_jwt = false
 
 [functions.capture-chat-lead]
 verify_jwt = false
+
+[functions.audit-price-list]
+verify_jwt = false
