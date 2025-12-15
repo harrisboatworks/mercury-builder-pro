@@ -87,8 +87,8 @@ const SUGGESTED_PROMPTS = [
 
 // Cycling placeholder phrases - short for mobile
 const PLACEHOLDER_PHRASES = [
-  "Search by HP...",
-  "Ask a question...",
+  "Search or ask a question...",
+  "Ask me anything...",
   "Compare motors...",
   "Find promotions...",
   "Best for fishing?",
@@ -448,8 +448,20 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   };
 
   const handleKeyDownWithSave = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && query.trim() && !showHpSuggestions) {
-      saveRecentSearch(query);
+    if (e.key === 'Enter' && query.trim()) {
+      // If it's an AI query, open the chat with the question
+      if (isAIQuery) {
+        e.preventDefault();
+        openChat(query);
+        onQueryChange('');
+        inputRef.current?.blur();
+        return;
+      }
+      
+      // Otherwise just save the search
+      if (!showHpSuggestions) {
+        saveRecentSearch(query);
+      }
     }
     handleKeyDown(e);
   };
@@ -627,6 +639,22 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
                 />
               </motion.div>
             </motion.button>
+          )}
+        </AnimatePresence>
+
+        {/* AI Mode Enter Hint */}
+        <AnimatePresence>
+          {isAIQuery && query.length >= 5 && !isListening && (
+            <motion.div
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 10 }}
+              className="absolute right-12 top-1/2 -translate-y-1/2"
+            >
+              <kbd className="px-2 py-1 text-xs font-mono bg-amber-50 border border-amber-200 rounded text-amber-600">
+                Enter ↵
+              </kbd>
+            </motion.div>
           )}
         </AnimatePresence>
 
