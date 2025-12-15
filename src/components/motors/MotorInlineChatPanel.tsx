@@ -54,6 +54,22 @@ const RenderSegment = ({ segment, idx }: { segment: ParsedSegment; idx: number }
     return <span key={idx}>{segment.content}</span>;
   }
   
+  // Handle images
+  if (segment.type === 'image') {
+    return (
+      <img
+        key={idx}
+        src={segment.href}
+        alt={segment.alt || 'Product image'}
+        className="max-w-full rounded-lg my-2 border border-gray-200"
+        style={{ maxHeight: '180px' }}
+        onError={(e) => {
+          (e.target as HTMLImageElement).style.display = 'none';
+        }}
+      />
+    );
+  }
+  
   // All other types are links
   const isExternal = segment.type === 'url' || segment.type === 'email';
   return (

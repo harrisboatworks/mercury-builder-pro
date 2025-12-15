@@ -116,3 +116,6 @@ verify_jwt = false
 
 [functions.audit-price-list]
 verify_jwt = false
+
+[functions.mercury-parts-lookup]
+verify_jwt = false

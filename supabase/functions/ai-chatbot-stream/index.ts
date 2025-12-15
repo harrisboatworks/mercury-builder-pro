@@ -215,6 +215,73 @@ function getCatalogueSection(message: string): { url: string; label: string } | 
   return null;
 }
 
+// Detect Mercury part numbers in message (format: 8M0XXXXXX or similar)
+function detectMercuryPartNumbers(message: string): string[] {
+  // Common Mercury Marine part number patterns
+  const patterns = [
+    /\b8M0\d{6}\b/gi,          // Most common: 8M0 followed by 6 digits
+    /\b8M\d{7}\b/gi,           // 8M followed by 7 digits
+    /\b35-\d{5,8}\b/gi,        // Legacy format: 35-XXXXX
+    /\b91-\d{5,8}\b/gi,        // Gasket/seal format: 91-XXXXX
+    /\b47-\d{5,8}\b/gi,        // Impeller format: 47-XXXXX
+    /\b32-\d{5,8}\b/gi,        // Hardware format: 32-XXXXX
+    /\b84-\d{5,8}\b/gi,        // Electrical format: 84-XXXXX
+    /\b879288\w*\b/gi,         // Other common patterns
+    /\b878\d{5,8}\b/gi,
+  ];
+  
+  const found: string[] = [];
+  for (const pattern of patterns) {
+    const matches = message.match(pattern);
+    if (matches) {
+      found.push(...matches.map(m => m.toUpperCase()));
+    }
+  }
+  
+  return [...new Set(found)]; // Deduplicate
+}
+
+// Lookup Mercury part details from cache or scrape
+async function lookupMercuryPart(partNumber: string): Promise<{
+  partNumber: string;
+  name: string | null;
+  cadPrice: number | null;
+  imageUrl: string | null;
+  sourceUrl: string;
+} | null> {
+  try {
+    // First check our cache
+    const { data: cached } = await supabase
+      .from('mercury_parts_cache')
+      .select('*')
+      .eq('part_number', partNumber.toUpperCase())
+      .single();
+    
+    if (cached && cached.cad_price) {
+      console.log(`Found cached part info for ${partNumber}`);
+      return {
+        partNumber: cached.part_number,
+        name: cached.name,
+        cadPrice: cached.cad_price,
+        imageUrl: cached.image_url,
+        sourceUrl: 'https://www.harrisboatworks.ca/mercuryparts'
+      };
+    }
+    
+    // If not cached, return the deep link info
+    return {
+      partNumber: partNumber.toUpperCase(),
+      name: null,
+      cadPrice: null,
+      imageUrl: null,
+      sourceUrl: 'https://www.harrisboatworks.ca/mercuryparts'
+    };
+  } catch (error) {
+    console.error(`Error looking up part ${partNumber}:`, error);
+    return null;
+  }
+}
+
 // Get active promotions
 async function getActivePromotions() {
   const today = new Date().toISOString().split('T')[0];
@@ -1402,6 +1469,31 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       perplexityContext = await searchWithPerplexity(message, queryCategory, context) || '';
     }
 
+    // Detect and lookup Mercury part numbers
+    let partsContext = '';
+    const detectedPartNumbers = detectMercuryPartNumbers(message);
+    if (detectedPartNumbers.length > 0) {
+      console.log('Detected Mercury part numbers:', detectedPartNumbers);
+      const partLookups = await Promise.all(
+        detectedPartNumbers.slice(0, 3).map(pn => lookupMercuryPart(pn))
+      );
+      
+      const partsInfo = partLookups.filter(Boolean);
+      if (partsInfo.length > 0) {
+        partsContext = `\n\n## MERCURY PARTS MENTIONED\n`;
+        for (const part of partsInfo) {
+          if (part) {
+            partsContext += `**Part #${part.partNumber}**`;
+            if (part.name) partsContext += ` - ${part.name}`;
+            if (part.cadPrice) partsContext += ` - $${part.cadPrice.toFixed(2)} CAD`;
+            if (part.imageUrl) partsContext += `\n![${part.name || 'Part Image'}](${part.imageUrl})`;
+            partsContext += `\n[Look up current pricing](${part.sourceUrl})\n`;
+          }
+        }
+        partsContext += `\nFor current CAD pricing on Mercury parts, customers can use our online parts lookup at: https://www.harrisboatworks.ca/mercuryparts\n`;
+      }
+    }
+
     // Fetch motor details if viewing specific motor
     let motorDetails = null;
     if (context?.currentMotor?.id) {
@@ -1422,6 +1514,7 @@ Provide a helpful, balanced comparison covering: power difference, price differe
     if (comparisonContext) systemPrompt += comparisonContext;
     if (hpSpecificContext) systemPrompt += hpSpecificContext;
     if (perplexityContext) systemPrompt += perplexityContext;
+    if (partsContext) systemPrompt += partsContext;
 
     // Prepare messages
     const recentHistory = conversationHistory.slice(-8);

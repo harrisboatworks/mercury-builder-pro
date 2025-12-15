@@ -24,6 +24,23 @@ export const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
         return <span key={index}>{segment.content}</span>;
       }
       
+      // Render images
+      if (segment.type === 'image') {
+        return (
+          <img
+            key={index}
+            src={segment.href}
+            alt={segment.alt || 'Product image'}
+            className="max-w-full rounded-lg my-2 border border-gray-200"
+            style={{ maxHeight: '200px' }}
+            onError={(e) => {
+              // Hide broken images
+              (e.target as HTMLImageElement).style.display = 'none';
+            }}
+          />
+        );
+      }
+      
       const linkClasses = `underline cursor-pointer ${
         message.isUser 
           ? 'text-red-100 hover:text-white' 

@@ -1,7 +1,8 @@
 export interface ParsedSegment {
-  type: 'text' | 'url' | 'phone' | 'sms' | 'email' | 'internal-link';
+  type: 'text' | 'url' | 'phone' | 'sms' | 'email' | 'internal-link' | 'image';
   content: string;
   href?: string;
+  alt?: string;
 }
 
 // Check if a URL is internal (should use React Router navigation)
@@ -26,21 +27,39 @@ export const getInternalPath = (url: string): string => {
 export const parseMessageText = (text: string): ParsedSegment[] => {
   const segments: ParsedSegment[] = [];
   
-  // First, handle markdown links [text](url)
-  const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  // First, handle markdown images ![alt](url)
+  const markdownImageRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
   let processedText = text;
-  const markdownLinks: { placeholder: string; content: string; href: string }[] = [];
+  const markdownImages: { placeholder: string; alt: string; src: string }[] = [];
   
   let match;
   let placeholderIndex = 0;
-  while ((match = markdownLinkRegex.exec(text)) !== null) {
+  while ((match = markdownImageRegex.exec(text)) !== null) {
+    const placeholder = `__MDIMG_${placeholderIndex}__`;
+    markdownImages.push({
+      placeholder,
+      alt: match[1],
+      src: match[2]
+    });
+    processedText = processedText.replace(match[0], placeholder);
+    placeholderIndex++;
+  }
+  
+  // Then handle markdown links [text](url)
+  const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const markdownLinks: { placeholder: string; content: string; href: string }[] = [];
+  
+  // Reset regex for links (use a fresh regex on processedText)
+  let linkMatch;
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  while ((linkMatch = linkRegex.exec(processedText)) !== null) {
     const placeholder = `__MDLINK_${placeholderIndex}__`;
     markdownLinks.push({
       placeholder,
-      content: match[1],
-      href: match[2]
+      content: linkMatch[1],
+      href: linkMatch[2]
     });
-    processedText = processedText.replace(match[0], placeholder);
+    processedText = processedText.replace(linkMatch[0], placeholder);
     placeholderIndex++;
   }
   
@@ -112,12 +131,31 @@ export const parseMessageText = (text: string): ParsedSegment[] => {
     });
   }
 
-  // Now replace placeholders with actual markdown link segments
+  // Now replace placeholders with actual markdown segments (images and links)
   const finalSegments: ParsedSegment[] = [];
   for (const segment of segments) {
     if (segment.type === 'text') {
-      // Check if this text contains any markdown link placeholders
       let remainingText = segment.content;
+      
+      // Process images first
+      for (const image of markdownImages) {
+        if (remainingText.includes(image.placeholder)) {
+          const parts = remainingText.split(image.placeholder);
+          if (parts[0]) {
+            finalSegments.push({ type: 'text', content: parts[0] });
+          }
+          // Add the image
+          finalSegments.push({
+            type: 'image',
+            content: image.src,
+            href: image.src,
+            alt: image.alt
+          });
+          remainingText = parts.slice(1).join(image.placeholder);
+        }
+      }
+      
+      // Then process links
       for (const link of markdownLinks) {
         if (remainingText.includes(link.placeholder)) {
           const parts = remainingText.split(link.placeholder);
@@ -133,6 +171,7 @@ export const parseMessageText = (text: string): ParsedSegment[] => {
           remainingText = parts.slice(1).join(link.placeholder);
         }
       }
+      
       if (remainingText) {
         finalSegments.push({ type: 'text', content: remainingText });
       }

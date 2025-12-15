@@ -725,6 +725,45 @@ export type Database = {
         }
         Relationships: []
       }
+      mercury_parts_cache: {
+        Row: {
+          cad_price: number | null
+          created_at: string
+          description: string | null
+          id: string
+          image_url: string | null
+          last_updated: string
+          lookup_count: number | null
+          name: string | null
+          part_number: string
+          source_url: string | null
+        }
+        Insert: {
+          cad_price?: number | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          last_updated?: string
+          lookup_count?: number | null
+          name?: string | null
+          part_number: string
+          source_url?: string | null
+        }
+        Update: {
+          cad_price?: number | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          last_updated?: string
+          lookup_count?: number | null
+          name?: string | null
+          part_number?: string
+          source_url?: string | null
+        }
+        Relationships: []
+      }
       motor_custom_sources: {
         Row: {
           created_at: string
