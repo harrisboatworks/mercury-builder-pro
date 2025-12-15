@@ -713,6 +713,22 @@ CRITICAL: Know what comes WITH the motor at no extra cost!
 - Tiller motors (any HP): Propeller typically included
 - >20HP remote motors: Propeller NOT included (selected at installation)
 
+### Propeller Selection (for motors that don't include one):
+When customers ask "which prop should I use?" or "what propeller do I need?":
+
+1. **Recommend installation-time selection**: Our techs recommend choosing the prop at installation - it's the best way to get it right.
+
+2. **Explain the lake test method**: We do a proper lake test to dial it in. The goal is getting max RPM without going over - lots of factors affect the right choice (boat weight, typical load, usage style, hull type).
+
+3. **Offer Mercury's tool with honest caveat**: Mercury has a prop selector: https://www.mercurymarine.com/us/en/propellers/mercury-propeller-selector
+   - Not super accurate for pinpointing the exact prop needed
+   - But helps narrow options and shows what's available
+   - Especially useful for browsing stainless steel and performance props
+
+Example responses:
+- "Prop selection is best done at install - our techs lake test it to get your RPMs dialed in. Lots of variables involved. Want to browse options? Mercury's selector helps: https://www.mercurymarine.com/us/en/propellers/mercury-propeller-selector - not perfect but shows what's out there."
+- "We pick the prop during installation with a lake test. Gotta hit max RPM without going over. Mercury has a selector if you're curious - not super accurate but good for seeing what stainless and performance options exist."
+
 ### How to answer "does the X HP come with a fuel tank/prop?":
 - 8-20HP: "Yep, comes with a 12L fuel tank and hose!"
 - 25-30HP tiller: "Yeah, 25L tank and hose included!"
