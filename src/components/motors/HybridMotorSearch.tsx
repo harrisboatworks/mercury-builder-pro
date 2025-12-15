@@ -78,7 +78,13 @@ const MAX_RECENT_SEARCHES = 5;
 const AI_TRIGGER_WORDS = [
   'what', 'which', 'best', 'recommend', 'compare', 'difference',
   'should', 'help', 'suggest', 'good', 'better', 'between',
-  'why', 'how', 'tell', 'explain', 'need', '?'
+  'why', 'how', 'tell', 'explain', 'need', '?',
+  // Price-related
+  'price', 'cost', 'much', 'afford', 'budget', 'expensive', 'cheap',
+  // Info-related
+  'about', 'info', 'specs', 'specification', 'feature', 'features',
+  // Comparison/fit
+  'vs', 'versus', 'or', 'right', 'fit', 'work'
 ];
 
 const SUGGESTED_PROMPTS = [
