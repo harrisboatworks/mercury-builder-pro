@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Send, RefreshCw, ChevronDown } from 'lucide-react';
+import { parseMessageText, ParsedSegment } from '@/lib/textParser';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { useLocation } from 'react-router-dom';
@@ -527,7 +528,22 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                           <TypingIndicator />
                         ) : (
                           <p className="whitespace-pre-wrap leading-relaxed font-light">
-                            {message.text}
+                            {parseMessageText(message.text).map((segment, idx) => {
+                              if (segment.type === 'text') {
+                                return <span key={idx}>{segment.content}</span>;
+                              }
+                              return (
+                                <a
+                                  key={idx}
+                                  href={segment.href}
+                                  className="underline text-blue-600 hover:text-blue-800 transition-colors"
+                                  target={segment.type === 'url' ? '_blank' : undefined}
+                                  rel={segment.type === 'url' ? 'noopener noreferrer' : undefined}
+                                >
+                                  {segment.content}
+                                </a>
+                              );
+                            })}
                             {message.isStreaming && (
                               <motion.span 
                                 className="inline-block w-0.5 h-4 bg-current ml-0.5"
