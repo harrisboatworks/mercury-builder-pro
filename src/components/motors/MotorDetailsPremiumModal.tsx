@@ -239,15 +239,17 @@ export default function MotorDetailsPremiumModal({
   };
 
   const handleAskAI = () => {
-    if (isMobile) {
-      // Mobile: open chat with motor context (no auto-send message)
-      // Pass motor context as metadata for banner display only
+    // Use lg breakpoint (1024px) to match when the right column with inline chat is visible
+    const isDesktopWithInlineChat = window.innerWidth >= 1024;
+    
+    if (isDesktopWithInlineChat) {
+      // Desktop: open inline chat panel (visible in right column)
+      setInlineChatOpen(true);
+    } else {
+      // Mobile/tablet: open chat drawer with motor context
       const motorContextMsg = `__MOTOR_CONTEXT__:${motor?.horsepower || 0}:${title}`;
       openChat(motorContextMsg);
       onClose();
-    } else {
-      // Desktop: open inline chat panel
-      setInlineChatOpen(true);
     }
   };
 
