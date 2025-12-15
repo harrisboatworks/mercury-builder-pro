@@ -886,35 +886,6 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
         )}
       </AnimatePresence>
 
-      {/* Always-Visible AI Prompts (below search bar, not inside dropdown) */}
-      <AnimatePresence>
-        {!query && !isFocused && (
-          <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-            className="flex flex-wrap items-center gap-2 mt-3"
-          >
-            <span className="text-xs text-muted-foreground">Try asking:</span>
-            {contextualPrompts.slice(0, 3).map((prompt, index) => (
-              <motion.button
-                key={prompt}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.08 }}
-                onClick={() => handlePromptClick(prompt)}
-                className="text-xs px-3 py-1.5 bg-amber-50 hover:bg-amber-100 
-                           text-amber-700 rounded-full border border-amber-200
-                           transition-colors flex items-center gap-1.5"
-              >
-                <Sparkles className="w-3 h-3" />
-                {prompt}
-              </motion.button>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };
