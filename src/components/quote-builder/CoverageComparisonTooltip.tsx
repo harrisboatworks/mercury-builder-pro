@@ -55,16 +55,16 @@ export default function CoverageComparisonTooltip() {
 
   return (
     <div className="inline-flex items-center gap-2">
-      <span className="text-sm text-slate-600 dark:text-slate-300">Coverage</span>
+      <span className="text-sm text-slate-600">Coverage</span>
       <div className="relative group">
         <button
           aria-label="Compare coverage levels"
-          className="flex h-5 w-5 items-center justify-center rounded-full border border-slate-300 text-xs font-semibold text-slate-600 hover:border-slate-400 dark:border-slate-600 dark:text-slate-300 dark:hover:border-slate-500"
+          className="flex h-5 w-5 items-center justify-center rounded-full border border-slate-300 text-xs font-semibold text-slate-600 hover:border-slate-400"
           title="Compare coverage levels"
         >
           i
         </button>
-        <div className="invisible absolute left-1/2 z-40 mt-2 w-72 -translate-x-1/2 rounded-lg border border-slate-200/70 bg-white p-3 text-sm text-slate-700 shadow-lg opacity-0 transition group-hover:visible group-hover:opacity-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+        <div className="invisible absolute left-1/2 z-40 mt-2 w-72 -translate-x-1/2 rounded-lg border border-slate-200/70 bg-white p-3 text-sm text-slate-700 shadow-lg opacity-0 transition group-hover:visible group-hover:opacity-100">
           <div className="mb-2 font-semibold">How we get your total</div>
           <ul className="space-y-1.5">
             <li className="flex justify-between">
@@ -80,7 +80,7 @@ export default function CoverageComparisonTooltip() {
               <span className="font-medium">+{extended} years</span>
             </li>
           </ul>
-          <div className="mt-3 flex justify-between border-t border-slate-200/70 pt-2 font-semibold text-slate-800 dark:border-slate-700 dark:text-white">
+          <div className="mt-3 flex justify-between border-t border-slate-200/70 pt-2 font-semibold text-slate-800">
             <span>Total coverage:</span>
             <span>{selectedTotal} years</span>
           </div>
@@ -95,7 +95,7 @@ export default function CoverageComparisonTooltip() {
             </button>
           )}
 
-          <div className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+          <div className="mt-2 text-xs text-slate-500">
             Monthly shown is an estimate OAC. Final terms at checkout.
           </div>
         </div>

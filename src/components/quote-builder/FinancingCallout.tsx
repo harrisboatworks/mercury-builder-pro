@@ -23,7 +23,7 @@ export function FinancingCallout({ totalPrice, onApplyForFinancing }: FinancingC
   
   return (
     <div className="flex items-center justify-between">
-      <div className="text-base text-gray-900 dark:text-white font-medium">
+      <div className="text-base text-gray-900 font-medium">
         From ${financingDetails.payment}/month
         {financingDetails.isPromo && financingDetails.rate < 7.99 && (
           <span className="ml-2 text-xs text-green-600 font-normal">
@@ -35,7 +35,7 @@ export function FinancingCallout({ totalPrice, onApplyForFinancing }: FinancingC
       {onApplyForFinancing && (
         <button
           onClick={onApplyForFinancing}
-          className="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 transition-all duration-200 ease hover:translate-x-0.5 min-h-[44px] px-2"
+          className="text-sm text-gray-700 hover:text-gray-900 transition-all duration-200 ease hover:translate-x-0.5 min-h-[44px] px-2"
         >
           Apply for Financing →
         </button>
