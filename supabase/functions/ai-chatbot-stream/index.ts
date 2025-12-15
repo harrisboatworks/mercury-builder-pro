@@ -159,6 +159,62 @@ async function getMotorDetails(motorId: string) {
   return motor;
 }
 
+// Get catalogue section based on message content
+function getCatalogueSection(message: string): { url: string; label: string } | null {
+  const msg = message.toLowerCase();
+  const base = "https://www.marinecatalogue.ca";
+  
+  // Map keywords to catalogue sections
+  if (/prop(eller)?s?|pitch|trim tab/i.test(msg)) 
+    return { url: `${base}/#page=1039`, label: "Propellers & Trim Tabs" };
+  if (/trolling motor|minn kota|motorguide/i.test(msg)) 
+    return { url: `${base}/#page=243`, label: "Trolling Motors" };
+  if (/fish ?finder|gps|chart ?plotter|electronics?/i.test(msg)) 
+    return { url: `${base}/#page=1`, label: "Electronics" };
+  if (/anchor|mooring|dock line/i.test(msg)) 
+    return { url: `${base}/#page=325`, label: "Anchoring / Mooring" };
+  if (/trailer|winch|tie.?down|tongue/i.test(msg)) 
+    return { url: `${base}/#page=415`, label: "Trailering" };
+  if (/seat|pedestal|cushion/i.test(msg)) 
+    return { url: `${base}/#page=300`, label: "Seating" };
+  if (/cover|bimini|top|canvas/i.test(msg)) 
+    return { url: `${base}/#page=385`, label: "Covers / Tops" };
+  if (/steer(ing)?|helm|wheel|cable/i.test(msg)) 
+    return { url: `${base}/#page=991`, label: "Steering" };
+  if (/safety|life ?jacket|pfd|flare|horn/i.test(msg)) 
+    return { url: `${base}/#page=165`, label: "Safety" };
+  if (/fish(ing)?|rod|tackle|livewell/i.test(msg)) 
+    return { url: `${base}/#page=268`, label: "Fishing" };
+  if (/fuel|tank|line|filter/i.test(msg)) 
+    return { url: `${base}/#page=1239`, label: "Fuel" };
+  if (/anode|zinc|sacrificial/i.test(msg)) 
+    return { url: `${base}/#page=1100`, label: "Anodes" };
+  if (/maintenance|oil|grease|clean/i.test(msg)) 
+    return { url: `${base}/#page=491`, label: "Maintenance" };
+  if (/electrical|wire|fuse|switch|light/i.test(msg)) 
+    return { url: `${base}/#page=609`, label: "Electrical" };
+  if (/paint|gel ?coat|anti ?foul/i.test(msg)) 
+    return { url: `${base}/#page=575`, label: "Paint" };
+  if (/engine|motor part|impeller|thermostat/i.test(msg)) 
+    return { url: `${base}/#page=1113`, label: "Engine" };
+  if (/hardware|hinge|latch|cleat/i.test(msg)) 
+    return { url: `${base}/#page=809`, label: "Hardware" };
+  if (/watersport|tube|ski|wake/i.test(msg)) 
+    return { url: `${base}/#page=191`, label: "Watersports" };
+  if (/plumb|pump|hose|bilge/i.test(msg)) 
+    return { url: `${base}/#page=905`, label: "Plumbing" };
+  if (/navig|compass|depth/i.test(msg)) 
+    return { url: `${base}/#page=120`, label: "Navigation" };
+  if (/vent|blower/i.test(msg)) 
+    return { url: `${base}/#page=791`, label: "Ventilation" };
+  
+  // Generic accessories request
+  if (/accessor(y|ies)|parts?|catalogue|catalog/i.test(msg)) 
+    return { url: base, label: "Marine Catalogue" };
+  
+  return null;
+}
+
 // Get active promotions
 async function getActivePromotions() {
   const today = new Date().toISOString().split('T')[0];
@@ -422,8 +478,8 @@ async function searchWithPerplexity(query: string, category: QueryCategory): Pro
       },
       accessories: {
         prefix: 'Mercury Marine boat accessories',
-        systemPrompt: 'You are a marine accessories expert. Provide helpful information about props, gauges, rigging, and boat upgrades. Focus on Mercury and compatible accessories. Keep responses practical.',
-        domains: ['mercurymarine.com', 'boatingmag.com', 'discoverboating.com'],
+        systemPrompt: 'You are a marine accessories expert. Provide helpful information about props, gauges, rigging, and boat upgrades. Focus on Mercury and compatible accessories. Keep responses practical. Note: Harris Boat Works has an online marine catalogue at marinecatalogue.ca with priced parts.',
+        domains: ['mercurymarine.com', 'boatingmag.com', 'discoverboating.com', 'marinecatalogue.ca'],
         header: '## ACCESSORIES'
       },
       environmental: {
@@ -674,11 +730,30 @@ You can answer questions about:
 - Towing & Trailering: Trailer types, hitches, launching, ramp tips, backing up
 - Seasonal Conditions: Ice-out, water temps, best times to boat in Ontario
 - Mercury Promotions: Current manufacturer rebates and deals
-- Accessories: Props, gauges, rigging, trolling motors, upgrades
+- Accessories: Props, gauges, rigging, trolling motors, upgrades → **link to marine catalogue!**
 - Environmental: Fuel types, ethanol, treatment, eco-friendly boating
 - Events: Boat shows, fishing derbies, local clubs, marinas
 - Boat Compatibility: Motor sizing, transom fit, HP limits for brands
 - Troubleshooting: General guidance + service link for proper diagnosis
+
+## PARTS & ACCESSORIES CATALOGUE - ALWAYS LINK!
+When customers ask about marine parts, accessories, or specific products:
+- We have an online priced marine catalogue: https://www.marinecatalogue.ca
+- Direct them to the relevant section with a direct page link:
+  • Propellers & Trim Tabs: https://www.marinecatalogue.ca/#page=1039
+  • Trolling Motors: https://www.marinecatalogue.ca/#page=243
+  • Electronics: https://www.marinecatalogue.ca/#page=1
+  • Fishing Gear: https://www.marinecatalogue.ca/#page=268
+  • Trailer Parts: https://www.marinecatalogue.ca/#page=415
+  • Safety Equipment: https://www.marinecatalogue.ca/#page=165
+  • Engine Parts: https://www.marinecatalogue.ca/#page=1113
+  • Seating: https://www.marinecatalogue.ca/#page=300
+  • Anchoring/Mooring: https://www.marinecatalogue.ca/#page=325
+  • Steering: https://www.marinecatalogue.ca/#page=991
+  • Electrical: https://www.marinecatalogue.ca/#page=609
+  • Fuel: https://www.marinecatalogue.ca/#page=1239
+  
+Example: "Looking for props? Check our catalogue - here's the propeller section: https://www.marinecatalogue.ca/#page=1039 - all priced in CAD."
 
 ## FINANCING QUESTIONS
 When someone asks about financing, monthly payments, interest rates, or getting pre-approved:

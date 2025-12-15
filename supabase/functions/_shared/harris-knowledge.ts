@@ -254,5 +254,35 @@ export const HARRIS_PARTNERS = {
   service_request: {
     url: "http://hbw.wiki/service",
     description: "Start a service request online for motor repairs and maintenance"
+  },
+  marine_catalogue: {
+    url: "https://www.marinecatalogue.ca",
+    description: "2025 Marine Parts & Accessories Catalogue - priced for Canada",
+    sections: {
+      electronics: { page: 1, label: "Electronics" },
+      navigation: { page: 120, label: "Navigation" },
+      general_boating: { page: 127, label: "General Boating" },
+      safety: { page: 165, label: "Safety" },
+      watersports: { page: 191, label: "Watersports & Boats" },
+      trolling_motors: { page: 243, label: "Trolling Motors" },
+      fishing: { page: 268, label: "Fishing" },
+      seating: { page: 300, label: "Seating" },
+      anchoring: { page: 325, label: "Anchoring / Mooring" },
+      covers: { page: 385, label: "Covers / Tops" },
+      trailering: { page: 415, label: "Trailering" },
+      maintenance: { page: 491, label: "Maintenance" },
+      paint: { page: 575, label: "Paint" },
+      electrical: { page: 609, label: "Electrical" },
+      ventilation: { page: 791, label: "Ventilation" },
+      hardware: { page: 809, label: "Hardware" },
+      sailing: { page: 873, label: "Sailing" },
+      fasteners: { page: 889, label: "Fasteners" },
+      plumbing: { page: 905, label: "Plumbing" },
+      steering: { page: 991, label: "Steering" },
+      propellers: { page: 1039, label: "Propellers & Trim Tabs" },
+      anodes: { page: 1100, label: "Anodes" },
+      engine: { page: 1113, label: "Engine" },
+      fuel: { page: 1239, label: "Fuel" }
+    }
   }
 };
