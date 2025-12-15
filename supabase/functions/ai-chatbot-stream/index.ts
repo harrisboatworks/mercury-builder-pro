@@ -610,10 +610,26 @@ ${familyInfo ? `${familyInfo}` : ''}`;
     `${Math.min(...motors.map(m => m.horsepower))}HP to ${Math.max(...motors.map(m => m.horsepower))}HP` : 
     'Contact for availability';
 
-  // Build promo summary (compact)
+  // Build promo summary (compact) - includes discounts, warranty bonuses, and end dates
   const promoSummary = promotions.slice(0, 3).map(p => {
-    const discount = p.discount_percentage > 0 ? `${p.discount_percentage}% off` : `$${p.discount_fixed_amount} off`;
-    return `${p.name}: ${discount}`;
+    const benefits: string[] = [];
+    
+    if (p.discount_percentage > 0) {
+      benefits.push(`${p.discount_percentage}% off`);
+    }
+    if (p.discount_fixed_amount > 0) {
+      benefits.push(`$${p.discount_fixed_amount} off`);
+    }
+    if (p.warranty_extra_years > 0) {
+      benefits.push(`+${p.warranty_extra_years} year${p.warranty_extra_years > 1 ? 's' : ''} extended warranty FREE`);
+    }
+    if (p.bonus_title && !p.bonus_title.toLowerCase().includes('warranty')) {
+      benefits.push(p.bonus_title);
+    }
+    
+    const endDateStr = p.end_date ? ` (ends ${new Date(p.end_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })})` : '';
+    const benefitText = benefits.length > 0 ? benefits.join(' + ') : 'Special offer';
+    return `${p.name}: ${benefitText}${endDateStr}`;
   }).join(' | ');
 
   // Personality injection based on detected topics
