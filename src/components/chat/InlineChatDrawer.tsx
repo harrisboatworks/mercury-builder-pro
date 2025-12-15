@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
-import { Send, RefreshCw, ChevronDown, Sparkles } from 'lucide-react';
+import { Send, RefreshCw, ChevronDown, Sparkles, Check } from 'lucide-react';
 import { parseMessageText, ParsedSegment } from '@/lib/textParser';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
@@ -71,6 +71,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const [inputText, setInputText] = useState('');
   const [isLoadingLocal, setIsLoadingLocal] = useState(false);
   const [keyboardVisible, setKeyboardVisible] = useState(false);
+  const [sendState, setSendState] = useState<'idle' | 'sending' | 'success'>('idle');
   
   const setIsLoading = useCallback((loading: boolean) => {
     setIsLoadingLocal(loading);
@@ -329,6 +330,9 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const handleSend = async (text: string = inputText) => {
     if (!text.trim() || isLoading) return;
 
+    setSendState('sending');
+    triggerHaptic('messageSent');
+
     const userMessage: Message = {
       id: Date.now().toString(),
       text: text.trim(),
@@ -343,6 +347,10 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
 
     const userDbId = await saveMessage(userMessage.text, 'user');
     if (userDbId) messageIdMap.current.set(userMessage.id, userDbId);
+    
+    // Brief success flash after message saved
+    setSendState('success');
+    setTimeout(() => setSendState('idle'), 400);
 
     const streamingId = (Date.now() + 1).toString();
     setMessages(prev => [...prev, {
@@ -404,6 +412,8 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
               : msg
           ));
           
+          triggerHaptic('responseReceived');
+          
           const assistantDbId = await saveMessage(finalResponse, 'assistant');
           if (assistantDbId) messageIdMap.current.set(streamingId, assistantDbId);
           
@@ -418,6 +428,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
         },
         onError: (error) => {
           console.error('Stream error:', error);
+          triggerHaptic('error');
           const errorText = "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.";
           setMessages(prev => prev.map(msg => 
             msg.id === streamingId 
@@ -431,6 +442,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
 
     } catch (error) {
       console.error('Chat error:', error);
+      triggerHaptic('error');
       const errorText = "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.";
       setMessages(prev => prev.map(msg => 
         msg.id === streamingId 
@@ -714,15 +726,45 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                     className="flex-1 min-w-0 bg-transparent border-none focus:outline-none 
                       text-sm text-gray-900 placeholder:text-gray-400 font-light h-8"
                   />
-                  <Button
-                    size="sm"
-                    onClick={() => handleSend()}
-                    disabled={!inputText.trim() || isLoading || voice.isConnected}
-                    className="h-8 w-8 p-0 rounded-lg bg-gray-900 hover:bg-gray-800 
-                      disabled:opacity-40 disabled:bg-gray-400 shrink-0 flex items-center justify-center"
+                  <motion.div
+                    animate={{ 
+                      scale: sendState === 'sending' ? [1, 0.85, 1.1, 1] : 1,
+                      rotate: sendState === 'sending' ? [0, -8, 8, 0] : 0
+                    }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
                   >
-                    <Send className="h-4 w-4" />
-                  </Button>
+                    <Button
+                      size="sm"
+                      onClick={() => handleSend()}
+                      disabled={!inputText.trim() || isLoading || voice.isConnected}
+                      className="h-8 w-8 p-0 rounded-lg bg-gray-900 hover:bg-gray-800 
+                        disabled:opacity-40 disabled:bg-gray-400 shrink-0 flex items-center justify-center"
+                    >
+                      <AnimatePresence mode="wait">
+                        {sendState === 'success' ? (
+                          <motion.div
+                            key="check"
+                            initial={{ scale: 0, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0, opacity: 0 }}
+                            transition={{ duration: 0.15 }}
+                          >
+                            <Check className="h-4 w-4" />
+                          </motion.div>
+                        ) : (
+                          <motion.div
+                            key="send"
+                            initial={{ scale: 0, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0, opacity: 0 }}
+                            transition={{ duration: 0.15 }}
+                          >
+                            <Send className="h-4 w-4" />
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </Button>
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
