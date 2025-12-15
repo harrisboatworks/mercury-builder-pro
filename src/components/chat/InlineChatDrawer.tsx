@@ -161,13 +161,15 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
 
   // Get contextual prompts based on motor and page
   const contextualPrompts = useMemo(() => {
-    const motor = state.motor ? {
-      model: state.motor.model || '',
-      hp: state.motor.hp || 0
+    // Use preview motor (currently viewing) or selected motor
+    const activeMotor = state.previewMotor || state.motor;
+    const motor = activeMotor ? {
+      model: activeMotor.model || '',
+      hp: activeMotor.hp || 0
     } : null;
     
     return getContextualPrompts(motor, state.boatInfo, location.pathname);
-  }, [state.motor, state.boatInfo, location.pathname]);
+  }, [state.previewMotor, state.motor, state.boatInfo, location.pathname]);
 
   // Get contextual welcome message - friendly and conversational
   const getWelcomeMessage = (): string => {
@@ -291,11 +293,20 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   
   // Get smart prompts based on motor context or page context
   const smartPrompts = useMemo(() => {
+    // Priority: preview motor > selected motor > initial context > page context
+    const activeMotor = state.previewMotor || state.motor;
+    if (activeMotor) {
+      return getMotorSpecificPrompts({ 
+        hp: activeMotor.hp || 0, 
+        model: activeMotor.model || '',
+        family: (activeMotor as any).family || ''
+      });
+    }
     if (motorContext) {
       return getMotorSpecificPrompts({ hp: motorContext.hp, model: motorContext.model });
     }
     return contextualPrompts;
-  }, [motorContext, contextualPrompts]);
+  }, [state.previewMotor, state.motor, motorContext, contextualPrompts]);
 
   const handleReaction = useCallback(async (messageId: string, reaction: 'thumbs_up' | 'thumbs_down' | null) => {
     setMessages(prev => prev.map(msg => 
