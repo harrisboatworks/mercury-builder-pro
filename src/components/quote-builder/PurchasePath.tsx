@@ -60,7 +60,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
         <h2 className="text-3xl md:text-4xl font-light tracking-wide text-slate-900 mb-3">
           Great Choice! {selectedMotor?.model}
         </h2>
-        <p className="text-slate-500 font-light">How would you like to purchase this motor?</p>
+        <p className="text-slate-700 font-light">How would you like to purchase this motor?</p>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto items-stretch">
