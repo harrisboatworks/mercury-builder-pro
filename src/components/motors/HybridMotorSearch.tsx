@@ -1,12 +1,15 @@
 import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import { Search, Sparkles, X, MessageCircle, Mic, History } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import { useHpSuggestions, HpSuggestion } from '@/hooks/useHpSuggestions';
 import { HpSuggestionsDropdown } from '@/components/motors/HpSuggestionsDropdown';
 import { useAIChat } from '@/components/chat/GlobalAIChat';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { supabase } from '@/integrations/supabase/client';
 import { fuzzySearch } from '@/lib/fuzzySearch';
+import { useQuote } from '@/contexts/QuoteContext';
+import { getContextualPrompts } from '@/components/chat/getContextualPrompts';
 import type { Motor } from '@/components/QuoteBuilder';
 
 // Web Speech API types
@@ -125,7 +128,18 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   
   const { openChat } = useAIChat();
   const { triggerHaptic } = useHapticFeedback();
+  const { state } = useQuote();
+  const location = useLocation();
   const hpSuggestions = useHpSuggestions(query, motors);
+
+  // Get dynamic contextual prompts based on motor, boat info, and current page
+  const contextualPrompts = useMemo(() => {
+    return getContextualPrompts(
+      state.previewMotor || state.motor,
+      state.boatInfo,
+      location.pathname
+    );
+  }, [state.previewMotor, state.motor, state.boatInfo, location.pathname]);
 
   // Motor autocomplete suggestions with fuzzy search
   const motorSuggestionResults = useMemo(() => {
@@ -466,9 +480,12 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
     handleKeyDown(e);
   };
 
-  const handlePromptClick = (prompt: string) => {
+  const handlePromptClick = useCallback((prompt: string) => {
     openChat(prompt);
-  };
+    triggerHaptic('light');
+    setIsFocused(false);
+    inputRef.current?.blur();
+  }, [openChat, triggerHaptic]);
 
   const handleContinueConversation = () => {
     openChat(query);
@@ -840,12 +857,12 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.1 }}
-                  className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-wide"
+                  className="text-xs font-medium text-muted-foreground mb-3 uppercase tracking-wide"
                 >
                   Try asking
                 </motion.p>
                 <div className="space-y-2">
-                  {SUGGESTED_PROMPTS.map((prompt, index) => (
+                  {contextualPrompts.map((prompt, index) => (
                     <motion.button
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
@@ -856,7 +873,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
                         ease: "easeOut"
                       }}
                       onClick={() => handlePromptClick(prompt)}
-                      className="w-full text-left px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-md transition-colors flex items-center gap-2"
+                      className="w-full text-left px-3 py-2.5 text-sm text-foreground hover:bg-muted/50 rounded-md transition-colors flex items-center gap-2"
                     >
                       <Sparkles className="w-4 h-4 text-amber-500" />
                       {prompt}
@@ -865,6 +882,36 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
                 </div>
               </div>
             )}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Always-Visible AI Prompts (below search bar, not inside dropdown) */}
+      <AnimatePresence>
+        {!query && !isFocused && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+            className="flex flex-wrap items-center gap-2 mt-3"
+          >
+            <span className="text-xs text-muted-foreground">Try asking:</span>
+            {contextualPrompts.slice(0, 3).map((prompt, index) => (
+              <motion.button
+                key={prompt}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.08 }}
+                onClick={() => handlePromptClick(prompt)}
+                className="text-xs px-3 py-1.5 bg-amber-50 hover:bg-amber-100 
+                           text-amber-700 rounded-full border border-amber-200
+                           transition-colors flex items-center gap-1.5"
+              >
+                <Sparkles className="w-3 h-3" />
+                {prompt}
+              </motion.button>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
