@@ -336,11 +336,10 @@ export default function MotorDetailsPremiumModal({
                   </TabsTrigger>
                   <TabsTrigger 
                     value="chat"
-                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3 animate-[ai-tab-pulse_3s_ease-in-out_infinite]"
+                    className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
                   >
                     <MessageCircle className="w-3 h-3 inline mr-1" />
                     Chat
-                    <span className="ml-1.5 text-[9px] bg-blue-100 text-blue-600 px-1 py-0.5 rounded font-semibold">AI</span>
                   </TabsTrigger>
                 </TabsList>
               </div>
@@ -399,11 +398,10 @@ export default function MotorDetailsPremiumModal({
                   </TabsTrigger>
                   <TabsTrigger 
                     value="chat"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4 animate-[ai-tab-pulse_3s_ease-in-out_infinite]"
+                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
                   >
                     <MessageCircle className="w-4 h-4 inline mr-1" />
                     Chat
-                    <span className="ml-2 text-[10px] bg-blue-100 text-blue-600 px-1.5 py-0.5 rounded font-semibold">AI</span>
                   </TabsTrigger>
                 </TabsList>
               </div>
