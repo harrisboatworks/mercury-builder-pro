@@ -44,13 +44,13 @@ export function PricingTable({
   onApplyForFinancing
 }: PricingTableProps) {
   return (
-    <Card className="p-6 space-y-1">
+    <Card className="p-6 space-y-1 bg-white">
       <div className="mb-4 space-y-1">
         <h3 className="text-lg font-semibold text-primary">
           Pricing Breakdown
         </h3>
         {motorName && (
-          <p className="text-base font-semibold text-slate-900 dark:text-white">
+          <p className="text-base font-semibold text-slate-900">
             {motorName}
           </p>
         )}
@@ -146,8 +146,8 @@ export function PricingTable({
       </div>
 
       {/* Financing Callout - Subtle and Minimal */}
-      <div className="mt-6 mb-4 pt-6 border-t border-gray-200 dark:border-gray-700 space-y-2">
-        <div className="text-sm text-gray-600 dark:text-gray-400 font-normal">
+      <div className="mt-6 mb-4 pt-6 border-t border-gray-200 space-y-2">
+        <div className="text-sm text-gray-600 font-normal">
           Flexible financing available
         </div>
         
@@ -156,7 +156,7 @@ export function PricingTable({
           onApplyForFinancing={onApplyForFinancing}
         />
         
-        <div className="text-xs text-gray-500 dark:text-gray-400 italic mt-1">
+        <div className="text-xs text-gray-500 italic mt-1">
           *Based on default financing terms, subject to approval
         </div>
       </div>

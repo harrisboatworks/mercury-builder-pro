@@ -20,10 +20,10 @@ import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
 import { MobileFormNavigation } from './MobileFormNavigation';
 
 const creditScoreOptions = [
-  { value: 'excellent', label: 'Excellent', subtitle: '750+', icon: Star, bgColor: 'bg-green-50 dark:bg-green-950', borderColor: 'border-green-300 dark:border-green-700', textColor: 'text-green-700 dark:text-green-300' },
-  { value: 'good', label: 'Good', subtitle: '700-749', icon: CheckCircle, bgColor: 'bg-emerald-50 dark:bg-emerald-950', borderColor: 'border-emerald-300 dark:border-emerald-700', textColor: 'text-emerald-700 dark:text-emerald-300' },
-  { value: 'fair', label: 'Fair', subtitle: '650-699', icon: BarChart3, bgColor: 'bg-yellow-50 dark:bg-yellow-950', borderColor: 'border-yellow-300 dark:border-yellow-700', textColor: 'text-yellow-700 dark:text-yellow-300' },
-  { value: 'poor', label: 'Poor', subtitle: 'Below 650', icon: AlertTriangle, bgColor: 'bg-orange-50 dark:bg-orange-950', borderColor: 'border-orange-300 dark:border-orange-700', textColor: 'text-orange-700 dark:text-orange-300' },
+  { value: 'excellent', label: 'Excellent', subtitle: '750+', icon: Star, bgColor: 'bg-green-50', borderColor: 'border-green-300', textColor: 'text-green-700' },
+  { value: 'good', label: 'Good', subtitle: '700-749', icon: CheckCircle, bgColor: 'bg-emerald-50', borderColor: 'border-emerald-300', textColor: 'text-emerald-700' },
+  { value: 'fair', label: 'Fair', subtitle: '650-699', icon: BarChart3, bgColor: 'bg-yellow-50', borderColor: 'border-yellow-300', textColor: 'text-yellow-700' },
+  { value: 'poor', label: 'Poor', subtitle: 'Below 650', icon: AlertTriangle, bgColor: 'bg-orange-50', borderColor: 'border-orange-300', textColor: 'text-orange-700' },
   { value: 'unknown', label: "Don't Know", subtitle: 'Not sure', icon: HelpCircle, bgColor: 'bg-muted', borderColor: 'border-muted-foreground/20', textColor: 'text-muted-foreground' },
 ];
 
@@ -124,7 +124,7 @@ export function FinancialStep() {
                 <Card
                   key={value}
                   className={cn(
-                    'relative cursor-pointer transition-all min-h-[80px]',
+                    'relative cursor-pointer transition-all min-h-[80px] bg-white',
                     creditScore === value
                       ? `${bgColor} ${borderColor} border-2 shadow-lg`
                       : 'hover:border-primary/50 border-2 border-transparent'
@@ -248,11 +248,11 @@ export function FinancialStep() {
 
             {/* Total Monthly Obligations */}
             <Card className={cn(
-              'p-4 border-2',
+              'p-4 border-2 bg-white',
               debtToIncomeRatio > 0 && debtToIncomeRatio < 40
-                ? 'bg-green-50 dark:bg-green-950 border-green-300 dark:border-green-700'
+                ? 'bg-green-50 border-green-300'
                 : debtToIncomeRatio >= 40 && debtToIncomeRatio < 60
-                ? 'bg-yellow-50 dark:bg-yellow-950 border-yellow-300 dark:border-yellow-700'
+                ? 'bg-yellow-50 border-yellow-300'
                 : 'bg-background border-border'
             )}>
               <div className="flex items-center justify-between">
@@ -263,7 +263,7 @@ export function FinancialStep() {
                 <div className="mt-2 text-sm text-muted-foreground font-normal">
                   <p>Debt-to-income ratio: {debtToIncomeRatio.toFixed(1)}%</p>
                   {debtToIncomeRatio < 40 && (
-                    <p className="text-green-700 dark:text-green-300">Excellent financial position</p>
+                    <p className="text-green-700">Excellent financial position</p>
                   )}
                 </div>
               )}
@@ -378,7 +378,7 @@ export function FinancialStep() {
             </RadioGroup>
 
             {showBankruptcyDetails && (
-              <Card className="p-4 space-y-4 animate-fade-in border-primary/30">
+              <Card className="p-4 space-y-4 animate-fade-in border-primary/30 bg-white">
                 <div className="space-y-2">
                   <Label>Bankruptcy/Proposal Date</Label>
                   <Popover>
@@ -391,49 +391,47 @@ export function FinancialStep() {
                         )}
                       >
                         <CalendarIcon className="mr-2 h-4 w-4" />
-                        {bankruptcyDate ? format(bankruptcyDate, 'PPP') : 'Pick a date'}
+                        {bankruptcyDate ? format(bankruptcyDate, 'PPP') : <span>Pick a date</span>}
                       </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0">
+                    <PopoverContent className="w-auto p-0" align="start">
                       <Calendar
                         mode="single"
                         selected={bankruptcyDate}
                         onSelect={setBankruptcyDate}
-                        disabled={(date) => date > new Date()}
                         initialFocus
-                        className={cn("p-3 pointer-events-auto")}
                       />
                     </PopoverContent>
-                    </Popover>
-                  </div>
+                  </Popover>
+                </div>
 
-                  <div className="space-y-2">
-                  <Label htmlFor="bankruptcyDetails.status">Status</Label>
+                <div className="space-y-2">
+                  <Label>Current Status</Label>
                   <Select
                     value={watch('bankruptcyDetails.status')}
-                    onValueChange={(value) => setValue('bankruptcyDetails.status', value as any, { shouldValidate: true })}
+                    onValueChange={(value) => setValue('bankruptcyDetails.status', value as any)}
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Select status" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="discharged">Discharged</SelectItem>
-                      <SelectItem value="active">Active</SelectItem>
+                      <SelectItem value="undischarged">Undischarged</SelectItem>
+                      <SelectItem value="consumer_proposal_active">Consumer Proposal (Active)</SelectItem>
+                      <SelectItem value="consumer_proposal_completed">Consumer Proposal (Completed)</SelectItem>
                     </SelectContent>
                   </Select>
-                  {errors.bankruptcyDetails?.status && (
-                    <p className="text-sm text-destructive">{errors.bankruptcyDetails.status.message}</p>
-                  )}
                 </div>
               </Card>
             )}
           </div>
         </div>
 
+        {/* Navigation */}
         <MobileFormNavigation
           onBack={handleBack}
           onNext={handleSubmit(onSubmit)}
-          nextLabel="Continue"
+          nextLabel="Continue to References"
           isNextDisabled={!isValid}
         />
       </form>

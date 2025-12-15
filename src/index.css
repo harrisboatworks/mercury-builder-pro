@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== Premium Scroll Behavior ===== */
+/* ===== Force Light Mode Globally ===== */
 html {
+  color-scheme: light !important;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch; /* iOS momentum scrolling */
   overscroll-behavior: none; /* Prevent overscroll bounce */
+}
+
+/* Prevent any dark mode rendering - ensures light mode before React hydration */
+html, body, #root {
+  background-color: hsl(0, 0%, 100%) !important;
+  color: hsl(222, 47%, 11%) !important;
 }
 
 body {
