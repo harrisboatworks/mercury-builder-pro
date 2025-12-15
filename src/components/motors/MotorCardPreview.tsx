@@ -355,6 +355,13 @@ export default function MotorCardPreview({
                 </div>
               )}
               
+              {/* Command Thrust Badge */}
+              {(motor?.has_command_thrust || title?.toLowerCase().includes('command thrust')) && (
+                <div className="absolute top-4 right-24 bg-[hsl(var(--primary))] text-white px-2 py-1 text-[10px] tracking-wider font-semibold uppercase rounded-sm">
+                  CT
+                </div>
+              )}
+              
               
               {/* Mercury Logo - Enhanced interaction */}
               <div className="absolute bottom-4 right-4 opacity-30 group-hover:opacity-50 transition-opacity duration-300">
