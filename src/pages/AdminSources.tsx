@@ -304,7 +304,7 @@ export default function AdminSources() {
           family: motor.section || 'FourStroke',
           fuel_type: '', // Not available in simple interface
           motor_type: 'Outboard',
-          year: 2025,
+          year: 2026,
           is_brochure: true
         };
       });

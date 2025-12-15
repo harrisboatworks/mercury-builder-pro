@@ -339,7 +339,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
         },
         specs: [
           { label: "HP", value: `${pdfData.motor.hp}` },
-          { label: "Year", value: `${pdfData.motor.year || 2025}` }
+          { label: "Year", value: `${pdfData.motor.year || 2026}` }
         ].filter(spec => spec.value && spec.value !== '0'),
         financing: {
           monthlyPayment: Math.round(monthlyPayment),

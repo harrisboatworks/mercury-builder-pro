@@ -228,7 +228,7 @@ function generateSpecSheetHTML(motor: any, promotions: any[]): string {
   </div>
 
   <div class="motor-title">${motor.model || 'Motor'}</div>
-  <div class="motor-subtitle">${motor.model_year || 2025} Mercury Marine • ${motor.horsepower || ''}HP</div>
+  <div class="motor-subtitle">${motor.model_year || 2026} Mercury Marine • ${motor.horsepower || ''}HP</div>
 
   ${motor.dealer_price || motor.msrp ? `
   <div class="price-box">

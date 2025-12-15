@@ -41,7 +41,7 @@ serve(async (req) => {
           make: motor.make || 'Mercury',
           model: motor.model,
           horsepower: parseFloat(motor.horsepower) || 0,
-          year: parseInt(motor.year) || 2025,
+          year: parseInt(motor.year) || 2026,
           motor_type: motor.motor_type || 'Outboard',
           base_price: parseFloat(motor.price) || null,
           availability: motor.availability || 'In Stock',

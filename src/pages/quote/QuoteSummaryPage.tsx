@@ -533,7 +533,7 @@ export default function QuoteSummaryPage() {
           base_price: motorMSRP - motorDiscount,
           sale_price: motorMSRP - motorDiscount - promoSavings,
           dealer_price: motorMSRP - motorDiscount,
-          model_year: modelYear || 2025,
+          model_year: modelYear || 2026,
           category: motor?.category || 'FourStroke',
           imageUrl: imageUrl
         },

@@ -176,7 +176,7 @@ async function getActivePromotions() {
 function needsExternalKnowledge(message: string): boolean {
   const lowerMsg = message.toLowerCase();
   const externalPatterns = [
-    /what('s| is) (the |a )?(new|latest|2024|2025)/i,
+    /what('s| is) (the |a )?(new|latest|2024|2025|2026)/i,
     /how does .+ work/i,
     /technical spec(ification)?s? (for|of|on)/i,
     /fuel consumption|fuel economy|mpg|gph/i,
@@ -187,8 +187,37 @@ function needsExternalKnowledge(message: string): boolean {
     /prop(eller)? (size|pitch|recommendation)/i,
     /oil (type|capacity|change)/i,
     /maintenance (schedule|interval|requirement)/i,
+    // Additional patterns for broader Perplexity fallback
+    /what (is|are|does) .*(verado|pro xs|seapro|fourstroke|command thrust)/i,
+    /joystick|active trim|skyhook|smartcraft/i,
+    /rpm|top speed|thrust|torque/i,
+    /(yamaha|honda|suzuki|evinrude)/i, // Competitor mentions
+    /mercury .*(feature|technology|innovation|system)/i,
   ];
   return externalPatterns.some(pattern => pattern.test(lowerMsg));
+}
+
+// Check if we should use Perplexity as a fallback for unanswered questions
+function shouldUsePerplexityFallback(message: string, hpMotorsFound: number, hasMotorContext: boolean): boolean {
+  // If asking about specific HP and we found motors, no fallback needed
+  if (hpMotorsFound > 0) return false;
+  
+  // If viewing a motor and asking about it, no fallback needed
+  if (hasMotorContext && message.toLowerCase().includes('this')) return false;
+  
+  // Mercury-related questions that need research
+  const mercuryPatterns = [
+    /mercury .*(feature|technology|innovation|system)/i,
+    /what (is|are|does) .*(verado|pro xs|seapro|fourstroke|command thrust)/i,
+    /joystick|active trim|skyhook|smartcraft/i,
+    /rpm|top speed|thrust|torque/i,
+    /(yamaha|honda|suzuki|evinrude)/i, // Competitor mentions
+    /how (much|many|long|fast)/i,
+    /best (motor|outboard|engine) for/i,
+    /recommend|suggestion/i,
+  ];
+  
+  return mercuryPatterns.some(p => p.test(message));
 }
 
 // Search with Perplexity for detailed/technical questions
@@ -200,7 +229,9 @@ async function searchWithPerplexity(query: string): Promise<string | null> {
   }
 
   try {
-    console.log('Searching Perplexity for:', query);
+    // Enhance query with 2026 Mercury context
+    const enhancedQuery = `2026 Mercury Marine ${query}`;
+    console.log('Searching Perplexity for:', enhancedQuery);
     const response = await fetch('https://api.perplexity.ai/chat/completions', {
       method: 'POST',
       headers: {
@@ -212,9 +243,9 @@ async function searchWithPerplexity(query: string): Promise<string | null> {
         messages: [
           { 
             role: 'system', 
-            content: 'You are a marine engine expert. Provide accurate, concise technical information about Mercury Marine outboard motors. Focus on specifications, features, and practical advice. Keep responses under 200 words.' 
+            content: 'You are a marine engine expert specializing in 2026 Mercury Marine outboard motors. Provide accurate, concise technical information. Focus on specifications, features, and practical advice. Keep responses under 200 words.' 
           },
-          { role: 'user', content: query }
+          { role: 'user', content: enhancedQuery }
         ],
         search_domain_filter: ['mercurymarine.com', 'boatingmag.com', 'boats.com'],
         search_recency_filter: 'year',
