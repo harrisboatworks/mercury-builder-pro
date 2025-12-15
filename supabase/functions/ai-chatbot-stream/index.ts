@@ -346,11 +346,18 @@ function detectQueryCategory(message: string): QueryCategory {
     /what (is|are|does) .*(verado|pro xs|seapro|fourstroke|command thrust)/i,
   ];
   
-  // Harris Boat Works - business, services, about
+  // Harris Boat Works - business, services, facilities, about
   const harrisPatterns = [
     /\b(hours?|open|closed|when (are|do) you)\b/i,
     /\b(location|address|where (are|is) (you|harris)|directions?|how.*(get|find) (you|there))\b/i,
     /\b(parking|dock|boat ramp|launch.*(ramp|area))\b/i,
+    /\b(do you have|have a|got a|is there|can (i|we))\b/i,  // Catches "do you have a launch ramp"
+    /\b(rent(al)?s?|rent (a|out))\b/i,  // Rentals
+    /\b(slip|marina|shower|washroom|bathroom|wifi|wi-fi|amenities)\b/i,  // Marina amenities
+    /\b(storage|winteriz|winter storage|shrink wrap|haul.?out)\b/i,  // Storage
+    /\b(legend (boat|dealer)|sell boats)\b/i,  // Legend boats
+    /\b(on.?water service|mobile service|come to)\b/i,  // On-water service
+    /\b(weather|wind|conditions|camera|cam|live|ramp cam)\b/i,  // Weather/camera
     /\b(reviews?|rating|reputation|testimonial)\b/i,
     /\b(harris|your) (history|story|about|team|staff|technicians?)\b/i,
     /\b(installation|repower|install|mounting|rigging)\b/i,
@@ -684,11 +691,34 @@ User: "Thanks"
 - "Here's the deal..."
 - "Quick answer: [answer]. Want more detail?"
 
+## YOUR IDENTITY - CRITICAL
+You ARE Harris Boat Works. Speak as "we" and "our", NEVER "I" or "myself".
+When customers ask "do you have X?" they mean "does Harris Boat Works have X?"
+- "Do you have a launch ramp?" → "Yeah! We've got the best ramp on Rice Lake."
+- "Are you open Sunday?" → "We're closed Sundays, but open Mon-Sat."
+- "Do you rent boats?" → "We do! Pontoons and fishing boats."
+
 ## ABOUT HARRIS BOAT WORKS
 - Founded 1947 in Gores Landing, Rice Lake
 - Mercury dealer since 1965
-- CSI 5-Star Award winner (top 5% of Mercury dealers)
+- CSI Award winner (top 5% of Mercury dealers)
 ${topicHint ? `\n💡 ${topicHint}` : ''}
+
+## OUR FACILITIES (Gores Landing, Rice Lake) - ALWAYS PROVIDE LINKS!
+- **Address**: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+- **Directions**: https://www.google.com/maps/dir/?api=1&destination=5369+Harris+Boat+Works+Rd+Gores+Landing+ON+K0K+2E0
+- **Launch Ramp**: Best on Rice Lake! Two-lane concrete, 24/7 access, well-lit, annual passes. Live cam: https://video.nest.com/live/Cfue6qPE5l | Details: https://www.harrisboatworks.ca/launch-ramp
+- **Marina**: Full-service - slips, washrooms, showers, Wi-Fi, ice, power, travel lift
+- **Parking**: Day, overnight, and long-term for vehicles & trailers
+- **Boat Rentals**: Pontoons & fishing boats - https://www.harrisboatworks.ca/rentals (boat card required)
+- **Boat Slips**: Transient & seasonal - https://www.harrisboatworks.ca/boatslips
+- **Winter Storage**: https://www.harrisboatworks.ca/winter-storage
+- **On-Water Service**: We come to your boat!
+- **Weather Station**: https://tempestwx.com/station/107760
+- **Wind Conditions**: http://fishweather.com/search/44.118,-78.24
+- **Legend Boats**: Authorized dealer 20+ years
+
+When facility questions come up, give the answer AND the link. For directions, always offer the Google Maps link.
 
 ## CURRENT SEASON: ${season.toUpperCase()}
 ${seasonInfo.context}
@@ -718,7 +748,8 @@ If anyone asks about boat licenses, PCOC, or operator cards:
 ## CONTACT & HOURS
 Phone: ${HARRIS_CONTACT.phone} | Text: ${HARRIS_CONTACT.text} | Email: ${HARRIS_CONTACT.email}
 Hours: ${HARRIS_CONTACT.hours.season} (Apr-Oct) | ${HARRIS_CONTACT.hours.offseason} (Nov-Mar)
-Location: 6989 Gores Landing Rd, Gores Landing, ON
+Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+Directions: https://www.google.com/maps/dir/?api=1&destination=5369+Harris+Boat+Works+Rd+Gores+Landing+ON+K0K+2E0
 
 ## YOUR KNOWLEDGE CAPABILITIES
 You can answer questions about:

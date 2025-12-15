@@ -153,12 +153,69 @@ export const HARRIS_CONTACT = {
   phone: "(905) 342-2153",
   text: "647-952-2153",
   email: "info@harrisboatworks.ca",
-  address: "Gores Landing, ON",
+  address: "5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0",
   hours: {
     season: "Mon-Sat 9am-5pm (Apr-Oct)",
     offseason: "Mon-Fri 9am-4pm (Nov-Mar)"
   },
   response_time: "Usually respond within a few hours during business hours"
+};
+
+// Harris Boat Works Facilities - for AI chatbot context
+export const HARRIS_FACILITIES = {
+  address: {
+    street: "5369 Harris Boat Works Rd",
+    city: "Gores Landing",
+    province: "ON",
+    postal: "K0K 2E0",
+    full: "5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0",
+    google_maps: "https://www.google.com/maps/search/?api=1&query=5369+Harris+Boat+Works+Rd+Gores+Landing+ON+K0K+2E0",
+    directions: "https://www.google.com/maps/dir/?api=1&destination=5369+Harris+Boat+Works+Rd+Gores+Landing+ON+K0K+2E0"
+  },
+  launch_ramp: {
+    available: true,
+    description: "Best Launch Ramp on Rice Lake",
+    details: "Two-lane concrete ramp, well-lit, 24/7 access, annual passes available, secure parking",
+    live_camera: "https://video.nest.com/live/Cfue6qPE5l",
+    url: "https://www.harrisboatworks.ca/launch-ramp"
+  },
+  marina: {
+    available: true,
+    description: "Full-service marina on Rice Lake",
+    services: ["Docking", "Boat slips (transient & seasonal)", "Washrooms", "Showers", "Wi-Fi", "Ice", "Power hookups", "Travel lift for haul-out"]
+  },
+  parking: {
+    available: true,
+    description: "Ample day, overnight, and long-term parking for vehicles and trailers"
+  },
+  boat_rentals: {
+    available: true,
+    types: ["Pontoon boats", "Fishing boats"],
+    url: "https://www.harrisboatworks.ca/rentals",
+    note: "Boat operator's card required"
+  },
+  boat_slips: {
+    available: true,
+    types: ["Transient", "Seasonal"],
+    url: "https://www.harrisboatworks.ca/boatslips"
+  },
+  winterization_storage: {
+    available: true,
+    url: "https://www.harrisboatworks.ca/winter-storage"
+  },
+  on_water_service: {
+    available: true,
+    description: "We can service your boat right on the water"
+  },
+  weather_resources: {
+    weather_station: "https://tempestwx.com/station/107760",
+    wind_conditions: "http://fishweather.com/search/44.118,-78.24"
+  },
+  legend_boats: {
+    authorized_dealer: true,
+    years_as_dealer: 20,
+    description: "New fishing boats, pontoons, and family cruisers"
+  }
 };
 
 export const SEASONAL_CONTEXT = {
