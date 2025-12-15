@@ -338,6 +338,17 @@ function detectQueryCategory(message: string): QueryCategory {
     /spark ?plug|plug gap|ignition/i,
     /oil (type|capacity|change|grade)|quicksilver/i,
     /maintenance|winteriz|break-?in|service (interval|schedule)/i,
+    // Parts & consumables - ALWAYS verify via Perplexity, never guess part numbers
+    /filter|fuel filter|oil filter|water separator|spin-on/i,
+    /anode|zinc|sacrificial|corrosion/i,
+    /thermostat|temp(erature)? sensor/i,
+    /impeller|water pump|pump kit/i,
+    /gear (oil|lube)|lower unit (oil|lube|service)/i,
+    /fuel (line|hose)|primer (bulb|ball)/i,
+    /gasket|seal|o-?ring/i,
+    /flush(ing)?|flush kit|ear muffs/i,
+    /prop(eller)? (nut|hardware)|shear pin|cotter/i,
+    /part ?number|oem|quicksilver part|mercury part/i,
     /warranty|extend(ed)? (coverage|warranty)/i,
     /compare.*(yamaha|honda|suzuki|evinrude|tohatsu)/i,
     /(yamaha|honda|suzuki|evinrude|tohatsu).*(compare|vs|versus|better)/i,
@@ -747,6 +758,14 @@ When asked about specific specs (RPM, WOT, fuel consumption, weight, etc.) for a
 - Mercury's spec sheets are the source of truth
 - If uncertain, say "Let me check the exact specs for that model..." then provide verified data
 - Example: "The 50 ELPT has a WOT range of 5500-6000 RPM" (with actual verified numbers)
+
+## PARTS & PART NUMBERS - CRITICAL
+NEVER guess or make up part numbers. If asked about specific parts (spark plugs, filters, anodes, impellers, thermostats, gear oil, etc.):
+- ALWAYS use Perplexity to verify the correct part number for that specific motor model
+- Quicksilver/Mercury part numbers are model-specific - what works on one motor may NOT work on another
+- If Perplexity doesn't return a definitive answer, say: "I'm not 100% certain on that exact part number - our parts department can confirm: (905) 342-2153"
+- When in doubt, recommend calling or stopping by for verification rather than giving potentially wrong info
+- It's better to say "let me look that up" or "I'd want to double-check that" than give a wrong part number
 
 ## RESPONSE LENGTH GUIDE
 - Simple yes/no → 1 sentence
