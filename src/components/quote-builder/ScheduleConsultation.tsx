@@ -732,7 +732,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       {/* Header */}
       <div className="text-center space-y-4">
         <h2 className="text-4xl md:text-5xl font-light tracking-wide text-slate-900">Submit Your Quote</h2>
-        <p className="text-lg text-muted-foreground font-light">
+        <p className="text-lg text-slate-600 font-light">
           Complete your contact information and we'll reach out to finalize the details
         </p>
       </div>
@@ -759,14 +759,14 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               </div>
 
               {totals.discount > 0 && (
-                <div className="flex justify-between text-gray-700 dark:text-gray-300 text-sm font-light">
+                <div className="flex justify-between text-gray-700 text-sm font-light">
                   <span>Discount:</span>
                   <span>-${totals.discount.toLocaleString()}</span>
                 </div>
               )}
 
               {totals.promoValue > 0 && (
-                <div className="flex justify-between text-gray-700 dark:text-gray-300 text-sm font-light">
+                <div className="flex justify-between text-gray-700 text-sm font-light">
                   <span>Promo Value:</span>
                   <span>-${totals.promoValue.toLocaleString()}</span>
                 </div>
@@ -778,7 +778,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               </div>
 
               {hasTradeIn && (
-                <div className="flex justify-between text-gray-700 dark:text-gray-300 font-light">
+                <div className="flex justify-between text-gray-700 font-light">
                   <span className="text-muted-foreground">Estimated Trade Value</span>
                   <span>-${tradeInValue.toLocaleString()}</span>
                 </div>
@@ -802,15 +802,15 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               </div>
 
               {totals.savings > 0 && (
-                <div className="bg-stone-50 dark:bg-stone-950/20 p-3 rounded-sm border border-gray-200 dark:border-gray-700">
-                  <div className="text-gray-700 dark:text-gray-300 text-sm font-light">
+                <div className="bg-stone-50 p-3 rounded-sm border border-gray-200">
+                  <div className="text-gray-700 text-sm font-light">
                     You Save ${totals.savings.toLocaleString()}
                   </div>
                 </div>
               )}
 
               {hasTradeIn && (
-                <Alert className="border-gray-300 bg-stone-50 dark:bg-stone-950/20 rounded-sm">
+                <Alert className="border-gray-300 bg-stone-50 rounded-sm">
                   <AlertDescription className="font-light text-muted-foreground">
                     Estimated trade value subject to physical inspection during consultation
                   </AlertDescription>
@@ -825,7 +825,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <h3 className="text-xl font-light tracking-wide">Contact Information</h3>
-              <p className="text-muted-foreground dark:text-gray-400 font-light mt-2">We'll reach out as soon as possible to discuss your quote and schedule your consultation</p>
+              <p className="text-slate-600 font-light mt-2">We'll reach out as soon as possible to discuss your quote and schedule your consultation</p>
             </div>
             
             <div className="space-y-2">

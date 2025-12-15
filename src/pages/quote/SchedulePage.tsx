@@ -40,7 +40,7 @@ export default function SchedulePage() {
       <QuoteLayout>
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" onClick={handleBack} className="border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide">
+            <Button variant="outline" size="sm" onClick={handleBack} className="bg-white border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Quote
             </Button>
