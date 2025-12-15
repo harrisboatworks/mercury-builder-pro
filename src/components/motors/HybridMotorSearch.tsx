@@ -467,7 +467,10 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
       if (isAIQuery) {
         e.preventDefault();
         openChat(query);
-        onQueryChange('');
+        // Clear search bar after chat opens (use timeout to ensure state updates complete)
+        setTimeout(() => {
+          onQueryChange('');
+        }, 0);
         inputRef.current?.blur();
         return;
       }
@@ -484,8 +487,9 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
     openChat(prompt);
     triggerHaptic('light');
     setIsFocused(false);
+    onQueryChange(''); // Clear any text in search bar
     inputRef.current?.blur();
-  }, [openChat, triggerHaptic]);
+  }, [openChat, triggerHaptic, onQueryChange]);
 
   const handleContinueConversation = () => {
     openChat(query);
