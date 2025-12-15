@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle, useMemo, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
-import { X, Send, MessageCircle, RefreshCw } from 'lucide-react';
+import { X, Send, MessageCircle, RefreshCw, Sparkles } from 'lucide-react';
 import { parseMessageText, ParsedSegment } from '@/lib/textParser';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -8,6 +8,7 @@ import { useMotorViewSafe } from '@/contexts/MotorViewContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
 import { getContextualPrompts } from './getContextualPrompts';
+import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
 import { MessageReactions } from './MessageReactions';
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
@@ -209,15 +210,41 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       initChat();
     }, [isOpen, hasInitialized, isPersistenceLoading, loadMessages, convertPersistedMessages, saveMessage]);
 
-    // Handle new initial messages (when chat reopens with a question from search bar)
+    // Parse motor context from initialMessage (if it's a context marker, not a question)
+    const motorContext = useMemo(() => {
+      if (!initialMessage) return null;
+      // Check for motor context marker: __MOTOR_CONTEXT__:hp:model
+      if (initialMessage.startsWith('__MOTOR_CONTEXT__:')) {
+        const parts = initialMessage.split(':');
+        if (parts.length >= 3) {
+          const hp = parseInt(parts[1], 10);
+          const model = parts.slice(2).join(':');
+          return { hp, model, label: getMotorContextLabel(hp, model) };
+        }
+      }
+      return null;
+    }, [initialMessage]);
+
+    // Handle new initial messages (when chat reopens with a REAL question from search bar)
     const initialMessageSentRef = useRef<string | null>(null);
     
     useEffect(() => {
+      // Don't auto-send if it's a motor context marker (let customer lead)
+      if (motorContext) return;
+      
       if (isOpen && hasInitialized && initialMessage && !isLoading && initialMessageSentRef.current !== initialMessage) {
         initialMessageSentRef.current = initialMessage;
         setTimeout(() => handleSend(initialMessage), 300);
       }
-    }, [initialMessage, isOpen, hasInitialized, isLoading]);
+    }, [initialMessage, isOpen, hasInitialized, isLoading, motorContext]);
+    
+    // Get smart prompts based on motor context or page context
+    const smartPrompts = useMemo(() => {
+      if (motorContext) {
+        return getMotorSpecificPrompts({ hp: motorContext.hp, model: motorContext.model });
+      }
+      return contextualPrompts;
+    }, [motorContext, contextualPrompts]);
 
     // Handle reaction updates
     const handleReaction = useCallback(async (messageId: string, reaction: 'thumbs_up' | 'thumbs_down' | null) => {
@@ -577,7 +604,21 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                   <div ref={messagesEndRef} />
                 </div>
 
-                {/* Suggested Questions */}
+                {/* Motor Context Banner - when opened from motor view */}
+                {motorContext && messages.length <= 1 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mx-4 mt-2 px-3 py-2 bg-amber-50/60 border border-amber-100 rounded-lg flex items-center gap-2"
+                  >
+                    <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                    <span className="text-xs text-amber-700 font-light">
+                      <span className="opacity-60">Viewing:</span> {motorContext.label}
+                    </span>
+                  </motion.div>
+                )}
+
+                {/* Suggested Questions - HP-aware when motor context exists */}
                 {messages.length <= 1 && !isLoading && (
                   <motion.div 
                     initial={{ opacity: 0, y: 10 }}
@@ -585,9 +626,11 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                     transition={{ delay: 0.3 }}
                     className="px-5 pb-3"
                   >
-                    <p className="text-[11px] text-gray-400 mb-2 uppercase tracking-wide">Suggested</p>
+                    <p className="text-[11px] text-gray-400 mb-2 uppercase tracking-wide">
+                      {motorContext ? 'Common Questions' : 'Suggested'}
+                    </p>
                     <div className="flex flex-wrap gap-2">
-                      {contextualPrompts.map((q, i) => (
+                      {smartPrompts.map((q, i) => (
                         <motion.button
                           key={q}
                           initial={{ opacity: 0, scale: 0.9 }}

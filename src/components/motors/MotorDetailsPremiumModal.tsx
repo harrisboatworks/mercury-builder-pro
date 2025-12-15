@@ -239,9 +239,10 @@ export default function MotorDetailsPremiumModal({
 
   const handleAskAI = () => {
     if (isMobile) {
-      // Mobile: use the global chat with modal close
-      const contextualPrompt = `Tell me about the ${title}. What makes it a good choice? What type of boats is it best for?`;
-      openChat(contextualPrompt);
+      // Mobile: open chat with motor context (no auto-send message)
+      // Pass motor context as metadata for banner display only
+      const motorContextMsg = `__MOTOR_CONTEXT__:${motor?.horsepower || 0}:${title}`;
+      openChat(motorContextMsg);
       onClose();
     } else {
       // Desktop: open inline chat panel

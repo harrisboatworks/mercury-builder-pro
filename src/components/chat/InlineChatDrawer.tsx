@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
-import { Send, RefreshCw, ChevronDown } from 'lucide-react';
+import { Send, RefreshCw, ChevronDown, Sparkles } from 'lucide-react';
 import { parseMessageText, ParsedSegment } from '@/lib/textParser';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
@@ -10,6 +10,7 @@ import { useMotorViewSafe } from '@/contexts/MotorViewContext';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
 import { getContextualPrompts } from './getContextualPrompts';
+import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
 import { MessageReactions } from './MessageReactions';
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
@@ -259,15 +260,41 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     initChat();
   }, [isOpen, hasInitialized, isPersistenceLoading, loadMessages, convertPersistedMessages, saveMessage]);
 
-  // Handle new initial messages (when chat reopens with a question from search bar)
+  // Parse motor context from initialMessage (if it's a context marker, not a question)
+  const motorContext = useMemo(() => {
+    if (!initialMessage) return null;
+    // Check for motor context marker: __MOTOR_CONTEXT__:hp:model
+    if (initialMessage.startsWith('__MOTOR_CONTEXT__:')) {
+      const parts = initialMessage.split(':');
+      if (parts.length >= 3) {
+        const hp = parseInt(parts[1], 10);
+        const model = parts.slice(2).join(':');
+        return { hp, model, label: getMotorContextLabel(hp, model) };
+      }
+    }
+    return null;
+  }, [initialMessage]);
+
+  // Handle new initial messages (when chat reopens with a REAL question from search bar)
   const initialMessageSentRef = useRef<string | null>(null);
   
   useEffect(() => {
+    // Don't auto-send if it's a motor context marker (let customer lead)
+    if (motorContext) return;
+    
     if (isOpen && hasInitialized && initialMessage && !isLoading && initialMessageSentRef.current !== initialMessage) {
       initialMessageSentRef.current = initialMessage;
       setTimeout(() => handleSend(initialMessage), 300);
     }
-  }, [initialMessage, isOpen, hasInitialized, isLoading]);
+  }, [initialMessage, isOpen, hasInitialized, isLoading, motorContext]);
+  
+  // Get smart prompts based on motor context or page context
+  const smartPrompts = useMemo(() => {
+    if (motorContext) {
+      return getMotorSpecificPrompts({ hp: motorContext.hp, model: motorContext.model });
+    }
+    return contextualPrompts;
+  }, [motorContext, contextualPrompts]);
 
   const handleReaction = useCallback(async (messageId: string, reaction: 'thumbs_up' | 'thumbs_down' | null) => {
     setMessages(prev => prev.map(msg => 
@@ -602,11 +629,24 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                 <div ref={messagesEndRef} />
               </div>
 
-              {/* Suggested Prompts (only when few messages) */}
+              {/* Motor Context Banner - when opened from motor view */}
+              {motorContext && messages.length <= 2 && (
+                <div className="mx-4 mt-2 px-3 py-2 bg-amber-50/60 border border-amber-100 rounded-lg flex items-center gap-2 shrink-0">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                  <span className="text-xs text-amber-700 font-light">
+                    <span className="opacity-60">Viewing:</span> {motorContext.label}
+                  </span>
+                </div>
+              )}
+
+              {/* Suggested Prompts - HP-aware when motor context exists */}
               {messages.length <= 2 && !isLoading && (
                 <div className="px-4 py-2 border-t border-gray-100 bg-white shrink-0">
+                  <p className="text-[10px] text-gray-400 mb-1.5 uppercase tracking-wide">
+                    {motorContext ? 'Common Questions' : 'Suggested'}
+                  </p>
                   <div className="flex flex-wrap gap-1.5">
-                    {contextualPrompts.slice(0, 3).map((prompt, index) => (
+                    {smartPrompts.slice(0, 4).map((prompt, index) => (
                       <button
                         key={index}
                         onClick={() => {
