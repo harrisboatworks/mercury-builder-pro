@@ -474,7 +474,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
             
             {/* Chat Container with staggered content fade-in */}
             <motion.div 
-              className="flex flex-col h-[60vh] max-h-[420px]"
+              className="flex flex-col h-[58vh] max-h-[400px]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.1, duration: 0.2, ease: 'easeOut' }}
@@ -628,8 +628,8 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
               )}
 
               {/* Input Area - Horizontal layout */}
-              <div className="px-4 py-3 border-t border-gray-100 bg-white shrink-0">
-                <div className="flex flex-row items-center gap-2 bg-gray-50 rounded-xl border border-gray-200 px-3 py-2">
+              <div className="px-4 py-3 pb-4 border-t border-gray-100 bg-white shrink-0">
+                <div className="flex flex-row items-center gap-2 bg-gray-50 rounded-xl border border-gray-200 px-3 py-2.5">
                   <VoiceButton
                     isConnected={voice.isConnected}
                     isConnecting={voice.isConnecting}
@@ -646,7 +646,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                     onChange={(e) => setInputText(e.target.value)}
                     onKeyPress={handleKeyPress}
                     placeholder={voice.isConnected ? "Voice chat active..." : "Ask anything..."}
-                    disabled={isLoading || voice.isConnected}
+                    disabled={voice.isConnected}
                     className="flex-1 min-w-0 bg-transparent border-none focus:outline-none 
                       text-sm text-gray-900 placeholder:text-gray-400 font-light h-8"
                   />
