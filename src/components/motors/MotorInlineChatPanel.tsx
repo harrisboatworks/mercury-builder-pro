@@ -1,10 +1,11 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { ChevronLeft, Send, Sparkles, RefreshCw, Mic } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { streamChat } from '@/lib/streamParser';
 import { useChatPersistence } from '@/hooks/useChatPersistence';
 import { parseMessageText, ParsedSegment } from '@/lib/textParser';
 import { MessageReactions } from '../chat/MessageReactions';
+import { getMotorSpecificPrompts } from '../chat/getMotorSpecificPrompts';
 import { useVoice } from '@/contexts/VoiceContext';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -111,13 +112,13 @@ export function MotorInlineChatPanel({
     setTimeout(() => inputRef.current?.focus(), 300);
   }, []);
 
-  // Initialize chat with motor-specific welcome
+  // Initialize chat with brief welcome - let customer lead
   useEffect(() => {
     if (hasInitialized) return;
     
     const welcomeMessage: Message = {
       id: 'inline_welcome_' + Date.now(),
-      text: `I'm here to help with the ${motorTitle}. What would you like to know?`,
+      text: `What would you like to know about this motor?`,
       isUser: false,
       timestamp: new Date(),
     };
@@ -127,13 +128,8 @@ export function MotorInlineChatPanel({
     setHasInitialized(true);
   }, [hasInitialized, motorTitle, saveMessage]);
 
-  // Auto-send initial question after initialization
-  useEffect(() => {
-    if (hasInitialized && initialQuestion && !initialSentRef.current && !isLoading) {
-      initialSentRef.current = true;
-      setTimeout(() => handleSend(initialQuestion), 400);
-    }
-  }, [hasInitialized, initialQuestion, isLoading]);
+  // Don't auto-send initial question - let customer lead the conversation
+  // The initialQuestion prop is no longer used for auto-sending
 
   const handleReaction = useCallback(async (messageId: string, reaction: 'thumbs_up' | 'thumbs_down' | null) => {
     setMessages(prev => prev.map(msg => 
@@ -348,6 +344,30 @@ export function MotorInlineChatPanel({
             </div>
           </div>
         ))}
+        
+        {/* HP-aware Smart Prompts - show when just welcome message */}
+        {messages.length <= 1 && !isLoading && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="pt-2"
+          >
+            <p className="text-[10px] text-gray-400 mb-2 uppercase tracking-wide px-1">Common Questions</p>
+            <div className="flex flex-wrap gap-1.5">
+              {getMotorSpecificPrompts({ hp, family: motor.family, model: motor.model }).map((prompt, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => handleSend(prompt)}
+                  className="px-3 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 
+                    text-gray-700 rounded-full transition-colors font-light"
+                >
+                  {prompt}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
         <div ref={messagesEndRef} />
       </div>
 
