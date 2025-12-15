@@ -456,10 +456,22 @@ export const UnifiedMobileBar: React.FC = () => {
     return { message: `${viewCount} Ontario boaters viewed this week`, icon: 'eye' };
   };
 
+  // Get chatMinimizedAt from AI chat context
+  const { chatMinimizedAt } = useAIChat();
+
   // Smart nudge selection with priority layers
   const activeNudge = useMemo((): { message: string; type: NudgeType; icon?: string } | null => {
     const nudges = pageConfig.nudges;
     if (!nudges) return null;
+
+    // Priority -1 (HIGHEST): Chat minimized notification
+    if (chatMinimizedAt && (Date.now() - chatMinimizedAt < 30000)) {
+      return { 
+        message: 'Chat minimized — tap to continue', 
+        type: 'info', 
+        icon: 'sparkles' 
+      };
+    }
 
     // Priority 0: Configurator-specific tips - instantly react to step changes
     // Prioritize motor family-specific tips (Pro XS, Verado, etc.) over generic tips
@@ -591,7 +603,7 @@ export const UnifiedMobileBar: React.FC = () => {
 
     return null;
   }, [
-    pageConfig.nudges, recentAction, idleSeconds, hasMotor, quoteProgress.remaining,
+    chatMinimizedAt, pageConfig.nudges, recentAction, idleSeconds, hasMotor, quoteProgress.remaining,
     location.pathname, state.tradeInInfo?.estimatedValue, state.selectedOptions?.length,
     isPreview, displayMotor?.hp, displayMotor?.id, displayMotor?.model, state.configuratorStep,
     state.configuratorOptions, currentSavings, monthlyPayment, promo
