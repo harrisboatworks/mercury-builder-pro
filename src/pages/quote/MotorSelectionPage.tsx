@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Motor } from '@/components/QuoteBuilder';
@@ -107,6 +107,7 @@ const CRITICAL_MODELS = ['1A10201LK', '1C08201LK']; // 9.9MH, 8MH - popular port
 
 function MotorSelectionContent() {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const { state, dispatch } = useQuote();
   const { toast } = useToast();
   const { viewMode } = useMotorView();
@@ -420,6 +421,25 @@ function MotorSelectionContent() {
 
   // Group motors by HP for simple view
   const groupedMotors = useGroupedMotors(processedMotors);
+
+  // Handle URL parameter for deep-linking to a specific motor (from AI chat links)
+  useEffect(() => {
+    const motorId = searchParams.get('motor') || searchParams.get('select');
+    if (motorId && processedMotors.length > 0 && groupedMotors.length > 0) {
+      // Find the group containing this motor
+      const targetGroup = groupedMotors.find(g => 
+        g.variants.some(v => v.id === motorId)
+      );
+      if (targetGroup) {
+        setSelectedGroup(targetGroup);
+        setShowConfigurator(true);
+        // Clear the param so refresh doesn't re-trigger
+        searchParams.delete('motor');
+        searchParams.delete('select');
+        setSearchParams(searchParams, { replace: true });
+      }
+    }
+  }, [processedMotors, groupedMotors, searchParams, setSearchParams]);
   
   // Filter groups based on search
   const filteredGroups = useMemo(() => {
