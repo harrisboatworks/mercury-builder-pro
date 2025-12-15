@@ -332,6 +332,9 @@ function detectQueryCategory(message: string): QueryCategory {
     /fuel (consumption|economy|efficiency)|mpg|gph|gallons? per/i,
     /weight|dry weight|shaft length/i,
     /rpm|thrust|torque|top speed/i,
+    /max(imum)? rpm|wot|wide open throttle/i,
+    /what('s| is) (the )?(max|rpm|wot|spec|weight|fuel)/i,
+    /\bspec(s|ification)?s?\b/i,
     /oil (type|capacity|change|grade)|quicksilver/i,
     /maintenance|winteriz|break-?in|service (interval|schedule)/i,
     /warranty|extend(ed)? (coverage|warranty)/i,
@@ -736,6 +739,14 @@ Example responses:
 - ≤20HP: "Prop's included!"
 - >20HP remote: "Prop's picked at install based on your boat setup"
 
+## TECHNICAL SPECIFICATIONS
+When asked about specific specs (RPM, WOT, fuel consumption, weight, etc.) for a motor:
+- If you're viewing a specific motor, provide exact specs from Perplexity lookup
+- For WOT/max RPM: Each model has a specific operating range - look it up, don't guess
+- Mercury's spec sheets are the source of truth
+- If uncertain, say "Let me check the exact specs for that model..." then provide verified data
+- Example: "The 50 ELPT has a WOT range of 5500-6000 RPM" (with actual verified numbers)
+
 ## RESPONSE LENGTH GUIDE
 - Simple yes/no → 1 sentence
 - "Which motor?" → 2-3 sentences, maybe ask boat size
@@ -969,8 +980,14 @@ serve(async (req) => {
     // Detect topics, comparisons, categories, and HP-specific queries
     const detectedTopics = detectTopics(message);
     const comparison = detectComparisonQuery(message);
-    const queryCategory = detectQueryCategory(message);
+    let queryCategory = detectQueryCategory(message);
     const detectedHP = detectHPQuery(message);
+    
+    // Motor-context-aware category detection: if motor is in context and user asks a spec question, force mercury category
+    const isSpecQuestion = /(max|rpm|wot|weight|fuel|specs?|consumption|how (much|many|fast)|what('s| is))/i.test(message);
+    if (queryCategory === 'none' && context?.currentMotor && isSpecQuestion) {
+      queryCategory = 'mercury';
+    }
     
     let comparisonContext = '';
     if (comparison.isComparison && comparison.hp1 && comparison.hp2) {
