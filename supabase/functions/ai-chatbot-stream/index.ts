@@ -117,7 +117,7 @@ function detectHPQuery(message: string): number | null {
 async function getMotorsForHP(hp: number) {
   const { data: motors } = await supabase
     .from('motor_models')
-    .select('model_display, horsepower, msrp, sale_price, family, shaft, control')
+    .select('id, model_display, horsepower, msrp, sale_price, family, shaft, control')
     .eq('horsepower', hp)
     .order('msrp', { ascending: true });
   return motors || [];
@@ -872,15 +872,17 @@ Provide a helpful, balanced comparison covering: power difference, price differe
     
     // Build HP-specific context if user asked about a specific HP
     let hpSpecificContext = '';
+    const SITE_URL = Deno.env.get('APP_URL') || 'https://harrisboatworks.com';
     if (detectedHP && !comparison.isComparison) {
       const hpMotors = await getMotorsForHP(detectedHP);
       if (hpMotors.length > 0) {
         hpSpecificContext = `\n\n## ${detectedHP}HP MOTORS - WE HAVE ${hpMotors.length}:\n` + 
           hpMotors.map(m => {
             const price = m.sale_price || m.msrp || 0;
-            return `- ${m.model_display} - $${price.toLocaleString()}`;
+            const link = `${SITE_URL}/quote/motor-selection?motor=${m.id}`;
+            return `- [${m.model_display}](${link}) - $${price.toLocaleString()}`;
           }).join('\n') +
-          '\n\nList these models with their prices. Offer to explain codes or help them choose if they want.';
+          '\n\nProvide these as clickable links. Customer can tap to view that motor.';
       } else {
         // Find nearest available HP options
         const allMotors = await getCurrentMotorInventory();
