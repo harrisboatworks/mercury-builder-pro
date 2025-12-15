@@ -73,6 +73,9 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const [keyboardVisible, setKeyboardVisible] = useState(false);
   const [sendState, setSendState] = useState<'idle' | 'sending' | 'success'>('idle');
   
+  // Track which motor the prompts were last shown for (to detect context changes)
+  const [promptMotorId, setPromptMotorId] = useState<string | null>(null);
+  
   const setIsLoading = useCallback((loading: boolean) => {
     setIsLoadingLocal(loading);
     onLoadingChange?.(loading);
@@ -307,6 +310,24 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     }
     return contextualPrompts;
   }, [state.previewMotor, state.motor, motorContext, contextualPrompts]);
+
+  // Detect if motor context changed (to show fresh prompts even with history)
+  const currentMotorId = (state.previewMotor as any)?.id || (state.motor as any)?.id || null;
+  const hasMotorContextChanged = currentMotorId && currentMotorId !== promptMotorId;
+  
+  // Update prompt motor ID when user starts viewing a different motor
+  useEffect(() => {
+    if (currentMotorId && currentMotorId !== promptMotorId) {
+      setPromptMotorId(currentMotorId);
+    }
+  }, [currentMotorId, promptMotorId]);
+
+  // Get current motor context label for banner
+  const currentMotorLabel = useMemo(() => {
+    const activeMotor = state.previewMotor || state.motor;
+    if (!activeMotor) return null;
+    return getMotorContextLabel(activeMotor.hp || 0, activeMotor.model);
+  }, [state.previewMotor, state.motor]);
 
   const handleReaction = useCallback(async (messageId: string, reaction: 'thumbs_up' | 'thumbs_down' | null) => {
     setMessages(prev => prev.map(msg => 
@@ -666,31 +687,38 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                 <div ref={messagesEndRef} />
               </motion.div>
 
-              {/* Motor Context Banner - when opened from motor view */}
-              {motorContext && messages.length <= 2 && (
-                <div className="mx-4 mt-2 px-3 py-2 bg-amber-50/60 border border-amber-100 rounded-lg flex items-center gap-2 shrink-0">
+              {/* Motor Context Banner - shows current motor being viewed */}
+              {currentMotorLabel && (
+                <motion.div
+                  key={currentMotorId}
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="mx-4 mt-2 px-3 py-2 bg-amber-50/60 border border-amber-100 rounded-lg flex items-center gap-2 shrink-0"
+                >
                   <Sparkles className="w-3.5 h-3.5 text-amber-500" />
                   <span className="text-xs text-amber-700 font-light">
-                    <span className="opacity-60">Viewing:</span> {motorContext.label}
+                    <span className="opacity-60">Viewing:</span> {currentMotorLabel}
                   </span>
-                </div>
+                </motion.div>
               )}
 
-              {/* Suggested Prompts - HP-aware when motor context exists */}
-              {messages.length <= 2 && !isLoading && (
+              {/* Suggested Prompts - HP-aware, refreshes when motor changes */}
+              {(messages.length <= 2 || hasMotorContextChanged || currentMotorLabel) && !isLoading && (
                 <motion.div
+                  key={`prompts-${currentMotorId || 'default'}`}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.14, duration: 0.2, ease: 'easeOut' }}
                   className="px-4 py-2 border-t border-gray-100 bg-white shrink-0"
                 >
                   <p className="text-[10px] text-gray-400 mb-1.5 uppercase tracking-wide">
-                    {motorContext ? 'Common Questions' : 'Suggested'}
+                    {currentMotorLabel ? 'Common Questions' : 'Suggested'}
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {smartPrompts.slice(0, 4).map((prompt, index) => (
                       <button
-                        key={index}
+                        key={`${currentMotorId}-${index}`}
                         onClick={() => {
                           if (prompt.includes('Help me find the right motor') && setShowQuiz) {
                             setShowQuiz(true);
