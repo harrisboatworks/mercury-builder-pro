@@ -216,13 +216,20 @@ const SHOW_ON_PAGES = ['/', '/motors', '/quote', '/promotions', '/financing', '/
 // Spring animation config for snappy micro-interactions
 const springConfig = { type: 'spring', stiffness: 400, damping: 17 };
 
-// Breathing animation for AI button
+// Enhanced breathing animation for AI button - premium layered glow
 const breathingAnimation = {
   boxShadow: [
-    '0 0 0 0 rgba(59, 130, 246, 0)',
-    '0 0 0 6px rgba(59, 130, 246, 0.15)',
-    '0 0 0 0 rgba(59, 130, 246, 0)'
+    '0 0 0 0 rgba(59, 130, 246, 0), 0 0 0 0 rgba(59, 130, 246, 0)',
+    '0 0 0 8px rgba(59, 130, 246, 0.25), 0 0 12px 4px rgba(59, 130, 246, 0.15)',
+    '0 0 0 0 rgba(59, 130, 246, 0), 0 0 0 0 rgba(59, 130, 246, 0)'
   ]
+};
+
+// Sparkle rotation animation for micro-interaction
+const sparkleAnimation = {
+  rotate: [0, 15, -15, 0],
+  scale: [1, 1.1, 1],
+  opacity: [0.6, 1, 0.6]
 };
 
 export const UnifiedMobileBar: React.FC = () => {
@@ -832,7 +839,7 @@ export const UnifiedMobileBar: React.FC = () => {
             gap-1.5 min-[375px]:gap-2 min-[428px]:gap-3"
           style={{ paddingLeft: 'max(0.5rem, env(safe-area-inset-left))', paddingRight: 'max(0.5rem, env(safe-area-inset-right))' }}
         >
-          {/* AI Button - Shows voice status when active, otherwise breathing animation */}
+          {/* AI Button - Premium with enhanced glow, sparkle, and badge */}
           <motion.button
             whileTap={{ scale: 0.92 }}
             animate={voice?.isConnected ? {
@@ -847,12 +854,12 @@ export const UnifiedMobileBar: React.FC = () => {
               boxShadow: {
                 duration: voice?.isConnected ? 1.5 : 3,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: [0.4, 0, 0.2, 1] // Faster in, slower out for premium feel
               }
             }}
             onClick={handleOpenAI}
             className={cn(
-              "flex flex-col items-center justify-center shrink-0 relative",
+              "flex flex-col items-center justify-center shrink-0 relative overflow-visible",
               "h-10 w-10 min-[375px]:h-11 min-[375px]:w-11 rounded-xl",
               voice?.isConnected
                 ? voice?.isSpeaking
@@ -860,18 +867,59 @@ export const UnifiedMobileBar: React.FC = () => {
                   : "bg-gradient-to-br from-green-500 to-green-600 text-white border border-green-500 shadow-lg shadow-green-500/40"
                 : isOpen 
                   ? "bg-primary text-white border border-primary shadow-lg shadow-primary/30" 
-                  : "bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/20"
+                  : "bg-gradient-to-br from-primary/20 via-primary/10 to-blue-400/10 border-2 border-primary/30"
             )}
             aria-label={voice?.isConnected ? "Voice chat active" : "Ask AI assistant"}
           >
+            {/* Premium inner glow ring */}
+            {!isOpen && !voice?.isConnected && !isLoading && (
+              <motion.span
+                className="absolute inset-[2px] rounded-[10px] border border-primary/20 pointer-events-none"
+                animate={{ opacity: [0.3, 0.6, 0.3] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              />
+            )}
+            
+            {/* Sparkle micro-animation overlay */}
+            {!isOpen && !voice?.isConnected && !isLoading && (
+              <motion.span
+                className="absolute -top-0.5 -right-0.5 pointer-events-none"
+                animate={sparkleAnimation}
+                transition={{ 
+                  duration: 2.5, 
+                  repeat: Infinity, 
+                  ease: "easeInOut",
+                  times: [0, 0.3, 0.7, 1]
+                }}
+              >
+                <Sparkles className="h-3 w-3 text-primary/70" />
+              </motion.span>
+            )}
+            
             {/* Unread badge */}
             {unreadCount > 0 && !isOpen && !voice?.isConnected && (
               <motion.span
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
-                className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 text-white text-[9px] font-bold flex items-center justify-center shadow-md z-10"
+                className="absolute -top-1.5 -right-1.5 h-4 w-4 rounded-full bg-red-500 text-white text-[9px] font-bold flex items-center justify-center shadow-md z-10"
               >
                 {unreadCount > 9 ? '9+' : unreadCount}
+              </motion.span>
+            )}
+            
+            {/* AI Badge - always visible when not in special states */}
+            {!voice?.isConnected && !isLoading && (
+              <motion.span
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                className={cn(
+                  "absolute -bottom-1 left-1/2 -translate-x-1/2 px-1.5 py-0.5 rounded-full text-[7px] font-bold tracking-wider shadow-sm z-10",
+                  isOpen 
+                    ? "bg-white text-primary" 
+                    : "bg-gradient-to-r from-primary to-blue-500 text-white"
+                )}
+              >
+                AI
               </motion.span>
             )}
             
@@ -901,16 +949,10 @@ export const UnifiedMobileBar: React.FC = () => {
                 <span className="text-[7px] min-[375px]:text-[8px] font-semibold mt-0.5 text-primary/80">...</span>
               </>
             ) : (
-              <>
-                <MessageCircle className={cn(
-                  "h-4 w-4 min-[375px]:h-4.5 min-[375px]:w-4.5",
-                  isOpen ? "text-white" : "text-primary"
-                )} />
-                <span className={cn(
-                  "text-[8px] min-[375px]:text-[9px] font-semibold mt-0.5",
-                  isOpen ? "text-white/90" : "text-primary/80"
-                )}>AI</span>
-              </>
+              <MessageCircle className={cn(
+                "h-5 w-5 min-[375px]:h-5.5 min-[375px]:w-5.5 -mt-0.5",
+                isOpen ? "text-white" : "text-primary"
+              )} />
             )}
           </motion.button>
 
