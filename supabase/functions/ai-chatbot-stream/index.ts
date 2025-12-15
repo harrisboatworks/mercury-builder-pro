@@ -329,7 +329,7 @@ function detectQueryCategory(message: string): QueryCategory {
     /verado|pro ?xs|seapro|fourstroke|command ?thrust|jet ?drive|racing/i,
     /mercury .*(feature|technology|system|innovation)/i,
     /joystick|active ?trim|skyhook|smartcraft|vessel ?view/i,
-    /fuel (consumption|economy|efficiency)|mpg|gph|gallons? per/i,
+    /fuel (consumption|economy|efficiency)|mpg|gph|gallons? per|miles per gallon|litres? per hour|how many gallons/i,
     /weight|dry weight|shaft length/i,
     /rpm|thrust|torque|top speed/i,
     /max(imum)? rpm|wot|wide open throttle/i,
@@ -466,7 +466,7 @@ function detectQueryCategory(message: string): QueryCategory {
 }
 
 // Search with Perplexity using category-specific context
-async function searchWithPerplexity(query: string, category: QueryCategory): Promise<string | null> {
+async function searchWithPerplexity(query: string, category: QueryCategory, context?: any): Promise<string | null> {
   const PERPLEXITY_API_KEY = Deno.env.get('PERPLEXITY_API_KEY');
   if (!PERPLEXITY_API_KEY) {
     console.log('Perplexity API key not configured, skipping fallback');
@@ -573,7 +573,16 @@ async function searchWithPerplexity(query: string, category: QueryCategory): Pro
     const config = categoryConfig[category];
     if (!config) return null;
     
-    const enhancedQuery = config.prefix ? `${config.prefix} ${query}` : query;
+    let enhancedQuery = config.prefix ? `${config.prefix} ${query}` : query;
+    
+    // If we have motor context, automatically include it in the query for more specific results
+    if (context?.currentMotor) {
+      const hp = context.currentMotor.hp || context.currentMotor.horsepower;
+      const family = context.currentMotor.family || context.currentMotor.model_display?.split(' ').slice(1).join(' ') || 'outboard';
+      const motorInfo = `Mercury ${hp}HP ${family}`;
+      enhancedQuery = `${motorInfo} ${enhancedQuery}`;
+      console.log('Added motor context to Perplexity query:', motorInfo);
+    }
     
     console.log('Searching Perplexity for:', enhancedQuery, 'category:', category);
     
@@ -1316,9 +1325,13 @@ serve(async (req) => {
     const detectedHP = detectHPQuery(message);
     
     // Motor-context-aware category detection: if motor is in context and user asks a spec question, force mercury category
-    const isSpecQuestion = /(max|rpm|wot|weight|fuel|specs?|consumption|how (much|many|fast)|what('s| is))/i.test(message);
-    if (queryCategory === 'none' && context?.currentMotor && isSpecQuestion) {
+    const isSpecQuestion = /(max|rpm|wot|weight|fuel|specs?|consumption|efficiency|mpg|gph|miles per gallon|gallons? per|how (much|many|fast|quiet|loud|heavy)|what('s| is))/i.test(message);
+    const isMotorRelatedQuestion = /(fuel|mpg|gph|miles|gallon|weight|speed|consumption|efficiency|fast|quiet|loud|noise|rpm|power|thrust|heavy|carry|lift)/i.test(message);
+    
+    // Upgrade to mercury category if we have motor context and it's a motor-related question
+    if ((queryCategory === 'none' || queryCategory === 'general') && context?.currentMotor && (isSpecQuestion || isMotorRelatedQuestion)) {
       queryCategory = 'mercury';
+      console.log('Upgraded category to mercury due to motor context:', context.currentMotor.hp || context.currentMotor.horsepower, 'HP');
     }
     
     let comparisonContext = '';
@@ -1369,7 +1382,7 @@ Provide a helpful, balanced comparison covering: power difference, price differe
     // Fetch Perplexity context based on query category
     let perplexityContext = '';
     if (queryCategory !== 'none') {
-      perplexityContext = await searchWithPerplexity(message, queryCategory) || '';
+      perplexityContext = await searchWithPerplexity(message, queryCategory, context) || '';
     }
 
     // Fetch motor details if viewing specific motor
