@@ -56,7 +56,7 @@ export const ACTION_PROMPTS: Record<string, ConversationalNudge[]> = {
     { message: "Not sure what you need? Let's figure it out →", icon: 'sparkles', aiPrompt: "Help me understand the package options" },
   ],
   '/quote/purchase-path': [
-    { message: "Pro install includes rigging and sea trial", icon: 'shield' },
+    { message: "Pro install includes rigging and lake test", icon: 'shield' },
     { message: "Going DIY? We'll set it up so you're ready", icon: 'check' },
     { message: "Questions about install? Ask away →", icon: 'sparkles', aiPrompt: "What's included in professional installation?" },
   ],
@@ -72,7 +72,7 @@ export const ACTION_PROMPTS: Record<string, ConversationalNudge[]> = {
   ],
   '/quote/installation': [
     { message: "Our guys average 15+ years doing this", icon: 'award' },
-    { message: "Pro install includes a full sea trial", icon: 'shield' },
+    { message: "Pro install includes a full lake test", icon: 'shield' },
   ],
   '/quote/fuel-tank': [
     { message: "Bigger tank = longer days on the water", icon: 'check' },

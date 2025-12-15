@@ -92,7 +92,7 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     nudges: {
       idle: [
         { delay: 15, message: 'Most customers choose professional install', icon: 'check' },
-        { delay: 25, message: 'We handle rigging, controls & sea trials', icon: 'shield' },
+        { delay: 25, message: 'We handle rigging, controls & lake test', icon: 'shield' },
         { delay: 40, message: 'Loose motor? Great for DIYers', icon: 'wrench' },
       ],
       encouragement: "Great! Let's get your boat details",

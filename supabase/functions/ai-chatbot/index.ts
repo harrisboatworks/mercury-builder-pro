@@ -254,7 +254,7 @@ Never exceed the manufacturer's maximum HP rating - it's unsafe and may void ins
 - Wiring harness and gauges
 - Propeller selection and installation
 - Rigging and setup
-- Sea trial and delivery
+- Lake test and delivery
 - Typical installation cost: $800-$2,000
 
 ### Financing Available:
