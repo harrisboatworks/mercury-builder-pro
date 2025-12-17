@@ -79,7 +79,7 @@ export default function Repower() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/">
               <Button size="lg" className="w-full sm:w-auto gap-2">
-                Get Your Free Quote
+                Build Your Quote
                 <ChevronRight className="w-4 h-4" />
               </Button>
             </Link>
