@@ -394,7 +394,7 @@ export default function Repower() {
             Serving Ontario Boaters
           </h2>
           <p className="text-muted-foreground mb-6">
-            Located in Gores Landing, 10 minutes from the boat launch. We serve boaters throughout:
+            Located in Gores Landing with our own private boat launch on Rice Lake. We serve boaters throughout:
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             {['Rice Lake', 'Kawarthas', 'Peterborough', 'Cobourg', 'Port Hope', 'Northumberland', 'Durham', 'GTA', 'Toronto'].map((area) => (
