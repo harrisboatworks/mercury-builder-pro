@@ -412,14 +412,19 @@ export type Database = {
           current_step: number
           customer_name: string | null
           email: string
+          email_clicks: number | null
+          email_opens: number | null
           emails_sent: number
           id: string
+          last_clicked_at: string | null
+          last_opened_at: string | null
           last_sent_at: string | null
           lead_id: string | null
           metadata: Json | null
           next_send_at: string | null
           sequence_type: string
           status: string
+          tracking_events: Json | null
           unsubscribe_token: string
           updated_at: string
         }
@@ -428,14 +433,19 @@ export type Database = {
           current_step?: number
           customer_name?: string | null
           email: string
+          email_clicks?: number | null
+          email_opens?: number | null
           emails_sent?: number
           id?: string
+          last_clicked_at?: string | null
+          last_opened_at?: string | null
           last_sent_at?: string | null
           lead_id?: string | null
           metadata?: Json | null
           next_send_at?: string | null
           sequence_type?: string
           status?: string
+          tracking_events?: Json | null
           unsubscribe_token?: string
           updated_at?: string
         }
@@ -444,14 +454,19 @@ export type Database = {
           current_step?: number
           customer_name?: string | null
           email?: string
+          email_clicks?: number | null
+          email_opens?: number | null
           emails_sent?: number
           id?: string
+          last_clicked_at?: string | null
+          last_opened_at?: string | null
           last_sent_at?: string | null
           lead_id?: string | null
           metadata?: Json | null
           next_send_at?: string | null
           sequence_type?: string
           status?: string
+          tracking_events?: Json | null
           unsubscribe_token?: string
           updated_at?: string
         }
@@ -2307,7 +2322,23 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      email_analytics_summary: {
+        Row: {
+          active: number | null
+          click_rate: number | null
+          completed: number | null
+          engaged_leads: number | null
+          open_rate: number | null
+          paused: number | null
+          sequence_type: string | null
+          total_clicks: number | null
+          total_emails_sent: number | null
+          total_opens: number | null
+          total_sequences: number | null
+          unsubscribed: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       audit_orphaned_customer_data: {

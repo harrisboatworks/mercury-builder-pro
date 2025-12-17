@@ -13,6 +13,15 @@ const corsHeaders = {
 
 const PDF_DOWNLOAD_URL = "https://www.dropbox.com/scl/fi/abc123/cottage-repower-guide.pdf?dl=1";
 const APP_URL = Deno.env.get("APP_URL") || "https://eutsoqdpjurknjsshxes.lovableproject.com";
+const FUNCTIONS_URL = `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1`;
+
+// Helper to wrap URLs with click tracking
+const trackClick = (url: string, token: string, step: number) => 
+  `${FUNCTIONS_URL}/track-email-event?type=click&token=${token}&step=${step}&url=${encodeURIComponent(url)}`;
+
+// Helper to get tracking pixel
+const trackingPixel = (token: string, step: number) => 
+  `<img src="${FUNCTIONS_URL}/track-email-event?type=open&token=${token}&step=${step}" width="1" height="1" style="display:none" alt="" />`;
 
 interface RequestBody {
   email: string;
@@ -135,7 +144,7 @@ serve(async (req: Request): Promise<Response> => {
       
       <!-- Download Button -->
       <div style="text-align: center; margin: 32px 0;">
-        <a href="${PDF_DOWNLOAD_URL}" style="display: inline-block; background: #1e40af; color: white; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 600; font-size: 16px;">
+        <a href="${trackClick(PDF_DOWNLOAD_URL, unsubscribeToken, 1)}" style="display: inline-block; background: #1e40af; color: white; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 600; font-size: 16px;">
           Download Your Guide
         </a>
       </div>
@@ -158,7 +167,7 @@ serve(async (req: Request): Promise<Response> => {
         <p style="color: white; font-size: 16px; margin: 0 0 16px 0;">
           Ready to discuss your boat's repower options?
         </p>
-        <a href="${APP_URL}/quote/motor-selection" style="display: inline-block; background: white; color: #1e40af; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600;">
+        <a href="${trackClick(`${APP_URL}/quote/motor-selection`, unsubscribeToken, 1)}" style="display: inline-block; background: white; color: #1e40af; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600;">
           Build Your Quote
         </a>
       </div>
@@ -185,6 +194,7 @@ serve(async (req: Request): Promise<Response> => {
       </p>
     </div>
   </div>
+  ${trackingPixel(unsubscribeToken, 1)}
 </body>
 </html>
     `;
