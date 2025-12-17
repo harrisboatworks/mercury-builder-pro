@@ -406,6 +406,65 @@ export type Database = {
         }
         Relationships: []
       }
+      email_sequence_queue: {
+        Row: {
+          created_at: string
+          current_step: number
+          customer_name: string | null
+          email: string
+          emails_sent: number
+          id: string
+          last_sent_at: string | null
+          lead_id: string | null
+          metadata: Json | null
+          next_send_at: string | null
+          sequence_type: string
+          status: string
+          unsubscribe_token: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          current_step?: number
+          customer_name?: string | null
+          email: string
+          emails_sent?: number
+          id?: string
+          last_sent_at?: string | null
+          lead_id?: string | null
+          metadata?: Json | null
+          next_send_at?: string | null
+          sequence_type?: string
+          status?: string
+          unsubscribe_token?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          current_step?: number
+          customer_name?: string | null
+          email?: string
+          emails_sent?: number
+          id?: string
+          last_sent_at?: string | null
+          lead_id?: string | null
+          metadata?: Json | null
+          next_send_at?: string | null
+          sequence_type?: string
+          status?: string
+          unsubscribe_token?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "email_sequence_queue_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "customer_quotes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       email_templates: {
         Row: {
           created_at: string
