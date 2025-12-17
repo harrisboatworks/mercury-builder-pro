@@ -59,7 +59,7 @@ export default function Repower() {
               <img 
                 src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" 
                 alt="Mercury Certified Repower Center" 
-                className="h-12" 
+                className="h-16 md:h-20 lg:h-24" 
               />
             </div>
           
