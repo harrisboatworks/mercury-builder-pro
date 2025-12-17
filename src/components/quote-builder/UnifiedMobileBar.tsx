@@ -11,8 +11,21 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { MobileQuoteDrawer } from './MobileQuoteDrawer';
+import { ContactModal } from '@/components/ui/contact-button';
 import { cn } from '@/lib/utils';
 import { getHPRange, HP_SPECIFIC_MESSAGES, MOTOR_FAMILY_TIPS, getMotorFamilyKey, getMotorFamilyConfiguratorTip } from '@/components/chat/conversationalMessages';
+
+// Helper to detect phone numbers in nudge messages and determine action type
+const extractPhoneAction = (message: string): { type: 'sms' | 'tel'; number: string } | null => {
+  // Match patterns like "647-952-2153" or "(905) 342-2153"
+  const phoneMatch = message.match(/\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/);
+  if (!phoneMatch) return null;
+  
+  const number = phoneMatch[0].replace(/[-()\s.]/g, '');
+  // If message mentions "text", use SMS, otherwise call
+  const type = message.toLowerCase().includes('text') ? 'sms' : 'tel';
+  return { type, number };
+};
 
 // Nudge types for different visual treatments
 type NudgeType = 'tip' | 'success' | 'celebration' | 'progress' | 'social-proof' | 'info';
@@ -262,6 +275,7 @@ export const UnifiedMobileBar: React.FC = () => {
   const { promo } = useActiveFinancingPromo();
   
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
   const [idleSeconds, setIdleSeconds] = useState(0);
   const [showSavingsCelebration, setShowSavingsCelebration] = useState(false);
   const [savingsAmount, setSavingsAmount] = useState(0);
@@ -787,7 +801,19 @@ export const UnifiedMobileBar: React.FC = () => {
       >
         {/* Always-Visible Tappable Prompt Bar */}
         <motion.button
-          onClick={handleOpenAI}
+          onClick={() => {
+            // Check if nudge contains a phone number for direct action
+            if (activeNudge) {
+              const phoneAction = extractPhoneAction(activeNudge.message);
+              if (phoneAction) {
+                triggerHaptic('light');
+                window.location.href = `${phoneAction.type}:${phoneAction.number}`;
+                return;
+              }
+            }
+            // Default: open AI chat
+            handleOpenAI();
+          }}
           whileTap={{ scale: 0.98 }}
           className="w-full overflow-hidden text-left relative"
         >
@@ -839,7 +865,12 @@ export const UnifiedMobileBar: React.FC = () => {
                   </>
                 ) : activeNudge ? (
                   <>
-                    <NudgeIcon icon={activeNudge.icon} />
+                    {/* Show phone icon if nudge contains a phone number */}
+                    {extractPhoneAction(activeNudge.message) ? (
+                      <Phone className="h-3.5 w-3.5 mr-1.5 inline-block" />
+                    ) : (
+                      <NudgeIcon icon={activeNudge.icon} />
+                    )}
                     {activeNudge.message}
                   </>
                 ) : (
@@ -976,6 +1007,21 @@ export const UnifiedMobileBar: React.FC = () => {
             )}
           </motion.button>
 
+          {/* Contact Button - Quick access to Call/Text/Email */}
+          <motion.button
+            whileTap={{ scale: 0.92 }}
+            onClick={() => {
+              triggerHaptic('light');
+              setIsContactOpen(true);
+            }}
+            className="relative shrink-0 w-9 h-9 min-[375px]:w-10 min-[375px]:h-10 
+              rounded-xl bg-gray-100 border border-gray-200/60
+              flex items-center justify-center"
+            aria-label="Contact us"
+          >
+            <Phone className="h-4 w-4 text-gray-600" />
+          </motion.button>
+
           {/* Center: Motor Info Card (tappable) or Prompt */}
           <motion.button
             whileTap={{ scale: 0.98 }}
@@ -1071,6 +1117,12 @@ export const UnifiedMobileBar: React.FC = () => {
       <MobileQuoteDrawer
         isOpen={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
+      />
+
+      {/* Contact Modal */}
+      <ContactModal 
+        isOpen={isContactOpen} 
+        onClose={() => setIsContactOpen(false)} 
       />
 
     </>
