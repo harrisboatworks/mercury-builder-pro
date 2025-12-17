@@ -79,7 +79,7 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
       {/* Lightbox Modal */}
       {isExpanded && (
         <div 
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
           onClick={handleOverlayClick}
         >
           {/* Close Button */}
@@ -91,19 +91,30 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
             <X className="w-5 h-5 text-gray-700" />
           </button>
 
-          {/* Expanded Image */}
-          <div className="relative max-w-full max-h-full flex items-center justify-center">
+          {/* Expanded Image - with pinch-to-zoom support on mobile */}
+          <div 
+            className="relative w-full h-full overflow-auto flex items-center justify-center p-4"
+            style={{ touchAction: 'pinch-zoom pan-x pan-y' }}
+            onClick={handleOverlayClick}
+          >
             <img
               src={src}
               alt={alt}
-              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-              style={{ maxHeight: '90vh', maxWidth: '90vw' }}
+              className="max-w-none object-contain select-none rounded-lg shadow-2xl"
+              style={{ 
+                minWidth: '100%',
+                height: 'auto',
+                maxHeight: '90vh',
+                width: 'auto'
+              }}
+              onClick={(e) => e.stopPropagation()}
             />
           </div>
 
-          {/* Instructions */}
+          {/* Instructions - different for mobile vs desktop */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
-            Tap outside image or press ESC to close
+            <span className="hidden md:inline">Click outside or press ESC to close</span>
+            <span className="md:hidden">Pinch to zoom • Tap outside to close</span>
           </div>
         </div>
       )}

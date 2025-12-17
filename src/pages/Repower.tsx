@@ -5,6 +5,7 @@ import { RepowerFAQ } from '@/components/repower/RepowerFAQ';
 import { RepowerPageSEO } from '@/components/seo/RepowerPageSEO';
 import { RepowerROICalculator } from '@/components/repower/RepowerROICalculator';
 import { RepowerGuideDownloadDialog } from '@/components/repower/RepowerGuideDownloadDialog';
+import { ExpandableImage } from '@/components/ui/expandable-image';
 import { Button } from '@/components/ui/button';
 import { 
   AlertTriangle, Zap, Fuel, Volume2, Wrench, Calendar, Award, 
@@ -242,7 +243,7 @@ export default function Repower() {
           <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8">
             The Complete Repower Guide
           </h2>
-          <img 
+          <ExpandableImage 
             src="/repower-assets/hbw-repower-infographic.png" 
             alt="Harris Boat Works Mercury Repower Infographic - 70% of the benefit for 30% of the cost. Warning signs, process, and pricing guide for boat motor replacement"
             className="w-full rounded-xl shadow-lg mb-6"
