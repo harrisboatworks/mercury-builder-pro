@@ -1,20 +1,22 @@
 // src/lib/invokeEdge.ts
+import { supabase } from '@/integrations/supabase/client';
+
 const SUPABASE_URL =
   (import.meta as any)?.env?.VITE_SUPABASE_URL ||
-  (globalThis as any)?.process?.env?.NEXT_PUBLIC_SUPABASE_URL ||
   'https://eutsoqdpjurknjsshxes.supabase.co';
-
-const SUPABASE_ANON_KEY =
-  (import.meta as any)?.env?.VITE_SUPABASE_ANON_KEY ||
-  (globalThis as any)?.process?.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
 
 export const EDGE_URL = `${SUPABASE_URL}/functions/v1/universal-pricing-import`;
 
-function buildHeaders(json = true) {
+async function buildHeaders(json = true): Promise<Record<string, string>> {
+  // Get the current user's session token for authentication
+  const { data: { session } } = await supabase.auth.getSession();
+  
+  if (!session?.access_token) {
+    throw new Error('Not authenticated. Please sign in as an admin to import pricing data.');
+  }
+  
   const h: Record<string, string> = {
-    apikey: SUPABASE_ANON_KEY,
-    Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+    Authorization: `Bearer ${session.access_token}`,
     'x-client-info': 'admin-ui',
   };
   if (json) h['Content-Type'] = 'application/json';
@@ -27,22 +29,31 @@ export async function invokeEdge(payload: any, timeoutMs = 30000) {
 
   let res: Response;
   try {
+    const headers = await buildHeaders(true);
+    
     res = await fetch(EDGE_URL, {
       method: 'POST',
       mode: 'cors',
       cache: 'no-store',
-      headers: buildHeaders(true),
+      headers,
       body: JSON.stringify(payload ?? {}),
       signal: controller.signal,
     });
   } catch (err: any) {
     clearTimeout(timer);
+    
+    // Check if it's an auth error
+    if (err?.message?.includes('Not authenticated')) {
+      return { ok: false, step: 'auth', status: 401, error: err.message };
+    }
+    
     return { ok: false, step: 'invoke', status: 0, error: `Network error: ${err?.message || String(err)}` };
   }
   clearTimeout(timer);
 
   const raw = await res.text();
   let json: any = null; try { json = raw ? JSON.parse(raw) : null; } catch {}
+  
   if (!res.ok) {
     return {
       ok: false,
@@ -57,11 +68,13 @@ export async function invokeEdge(payload: any, timeoutMs = 30000) {
 
 export async function pingEdge() {
   const url = `${EDGE_URL}?ping=1`;
+  const headers = await buildHeaders(false);
+  
   const res = await fetch(url, {
     method: 'GET',
     mode: 'cors',
     cache: 'no-store',
-    headers: buildHeaders(false),
+    headers,
   });
   const raw = await res.text();
   let json: any = null; try { json = raw ? JSON.parse(raw) : null; } catch {}

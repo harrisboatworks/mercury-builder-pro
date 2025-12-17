@@ -1,11 +1,6 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 import { corsHeaders } from '../_shared/cors.ts'
 
-const supabase = createClient(
-  Deno.env.get('SUPABASE_URL') ?? '',
-  Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
-)
-
 interface PricingRecord {
   model_number: string
   description: string
@@ -177,6 +172,71 @@ Deno.serve(async (req) => {
   try {
     console.log('🚀 Starting universal pricing import...')
     
+    // ========== AUTHENTICATION CHECK ==========
+    const authHeader = req.headers.get('Authorization')
+    if (!authHeader) {
+      console.error('❌ Missing Authorization header')
+      return new Response(JSON.stringify({ 
+        success: false, 
+        error: 'Missing Authorization header' 
+      }), {
+        status: 401,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      })
+    }
+
+    const jwt = authHeader.replace('Bearer ', '')
+    
+    // Create client with anon key for auth verification
+    const supabaseAuth = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_ANON_KEY') ?? ''
+    )
+    
+    // Verify the JWT and get user
+    const { data: { user }, error: authError } = await supabaseAuth.auth.getUser(jwt)
+    
+    if (authError || !user) {
+      console.error('❌ Authentication failed:', authError?.message || 'Invalid token')
+      return new Response(JSON.stringify({ 
+        success: false, 
+        error: 'Unauthorized: Invalid or expired token' 
+      }), {
+        status: 401,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      })
+    }
+
+    console.log(`✓ Authenticated user: ${user.id}`)
+
+    // Create service role client for role check and data operations
+    const supabase = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+    )
+
+    // Verify admin role
+    const { data: roleData, error: roleError } = await supabase
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', user.id)
+      .eq('role', 'admin')
+      .single()
+    
+    if (roleError || !roleData) {
+      console.error('❌ Admin role check failed:', roleError?.message || 'Not an admin')
+      return new Response(JSON.stringify({ 
+        success: false, 
+        error: 'Forbidden: Admin access required' 
+      }), {
+        status: 403,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      })
+    }
+
+    console.log(`✓ Admin role verified for user: ${user.id}`)
+    // ========== END AUTHENTICATION CHECK ==========
+    
     const body = await req.json()
     const { content, filename, preview_only = false } = body
     
@@ -265,6 +325,16 @@ Deno.serve(async (req) => {
 
     console.log(`🔄 Processing ${priceUpdates} price updates and ${newModels} new models`)
 
+    // Log the import action to audit trail
+    await supabase
+      .from('security_audit_log')
+      .insert({
+        user_id: user.id,
+        action: 'pricing_import',
+        table_name: 'motor_models',
+        created_at: new Date().toISOString()
+      })
+
     // Batch update existing records
     if (updatesNeeded.length > 0) {
       const batchSize = 100
@@ -305,7 +375,7 @@ Deno.serve(async (req) => {
       }
     }
 
-    console.log(`✅ Import completed: ${priceUpdates} updates, ${newModels} new models`)
+    console.log(`✅ Import completed by admin ${user.id}: ${priceUpdates} updates, ${newModels} new models`)
 
     return new Response(JSON.stringify({
       success: true,
