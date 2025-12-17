@@ -128,3 +128,6 @@ verify_jwt = false
 
 [functions.unsubscribe-email-sequence]
 verify_jwt = false
+
+[functions.track-email-event]
+verify_jwt = false

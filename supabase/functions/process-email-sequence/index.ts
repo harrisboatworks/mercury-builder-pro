@@ -12,6 +12,15 @@ const corsHeaders = {
 };
 
 const APP_URL = Deno.env.get("APP_URL") || "https://eutsoqdpjurknjsshxes.lovableproject.com";
+const FUNCTIONS_URL = `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1`;
+
+// Helper to wrap URLs with click tracking
+const trackClick = (url: string, token: string, step: number) => 
+  `${FUNCTIONS_URL}/track-email-event?type=click&token=${token}&step=${step}&url=${encodeURIComponent(url)}`;
+
+// Helper to get tracking pixel
+const trackingPixel = (token: string, step: number) => 
+  `<img src="${FUNCTIONS_URL}/track-email-event?type=open&token=${token}&step=${step}" width="1" height="1" style="display:none" alt="" />`;
 
 // Email templates for the sequence
 const emailTemplates = {
@@ -58,7 +67,7 @@ const emailTemplates = {
         <p style="color: rgba(255,255,255,0.9); font-size: 14px; margin: 0 0 16px 0;">
           Extended warranty offers and special financing
         </p>
-        <a href="${APP_URL}/promotions" style="display: inline-block; background: white; color: #1e40af; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600;">
+        <a href="${trackClick(`${APP_URL}/promotions`, unsubscribeToken, 2)}" style="display: inline-block; background: white; color: #1e40af; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600;">
           View Current Deals
         </a>
       </div>
@@ -77,6 +86,7 @@ const emailTemplates = {
       </p>
     </div>
   </div>
+  ${trackingPixel(unsubscribeToken, 2)}
 </body>
 </html>
     `,
@@ -134,7 +144,7 @@ const emailTemplates = {
       </div>
       
       <div style="text-align: center; margin-top: 32px;">
-        <a href="${APP_URL}/quote/motor-selection" style="display: inline-block; background: #1e40af; color: white; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-weight: 600;">
+        <a href="${trackClick(`${APP_URL}/quote/motor-selection`, unsubscribeToken, 3)}" style="display: inline-block; background: #1e40af; color: white; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-weight: 600;">
           Build Your Quote Online
         </a>
       </div>
@@ -146,6 +156,7 @@ const emailTemplates = {
       </p>
     </div>
   </div>
+  ${trackingPixel(unsubscribeToken, 3)}
 </body>
 </html>
     `,
