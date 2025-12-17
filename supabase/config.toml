@@ -119,3 +119,12 @@ verify_jwt = false
 
 [functions.mercury-parts-lookup]
 verify_jwt = false
+
+[functions.send-repower-guide-email]
+verify_jwt = false
+
+[functions.process-email-sequence]
+verify_jwt = false
+
+[functions.unsubscribe-email-sequence]
+verify_jwt = false

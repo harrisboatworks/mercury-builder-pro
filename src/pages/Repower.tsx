@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
+import { useState, useMemo } from 'react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { RepowerFAQ } from '@/components/repower/RepowerFAQ';
 import { RepowerPageSEO } from '@/components/seo/RepowerPageSEO';
+import { RepowerROICalculator } from '@/components/repower/RepowerROICalculator';
+import { RepowerGuideDownloadDialog } from '@/components/repower/RepowerGuideDownloadDialog';
 import { Button } from '@/components/ui/button';
 import { 
   AlertTriangle, Zap, Fuel, Volume2, Wrench, Calendar, Award, 
@@ -10,7 +13,6 @@ import {
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { generateDailyTestimonials, generateReviewCount } from '@/lib/activityGenerator';
 import { allTestimonials } from '@/lib/testimonialData';
-import { useMemo } from 'react';
 
 const warningSignsData = [
   { icon: AlertTriangle, title: "Hard Starting or Stalling", description: "Unreliable starts, especially when warm" },
@@ -40,6 +42,7 @@ const whyHarrisData = [
 ];
 
 export default function Repower() {
+  const [guideDialogOpen, setGuideDialogOpen] = useState(false);
   const dailyTestimonials = useMemo(() => generateDailyTestimonials(allTestimonials, 3), []);
   const reviewCount = useMemo(() => generateReviewCount(), []);
 
@@ -244,18 +247,19 @@ export default function Repower() {
             alt="Harris Boat Works Mercury Repower Infographic - 70% of the benefit for 30% of the cost. Warning signs, process, and pricing guide for boat motor replacement"
             className="w-full rounded-xl shadow-lg mb-6"
           />
-          <a 
-            href="https://www.dropbox.com/scl/fi/y62hund2y8bewio56nwhx/Cottage_Boat_Repower_Guide.pdf?rlkey=b25z6yoys2f8squm23byop4rg&dl=1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button variant="outline" className="gap-2">
-              <Download className="w-4 h-4" />
-              Download Full Repower Guide (PDF)
-            </Button>
-          </a>
+          <Button variant="outline" className="gap-2" onClick={() => setGuideDialogOpen(true)}>
+            <Download className="w-4 h-4" />
+            Download Full Repower Guide (PDF)
+          </Button>
         </div>
       </section>
+
+      {/* ROI Calculator */}
+      <section className="py-16 px-4 bg-white">
+        <RepowerROICalculator />
+      </section>
+
+      <RepowerGuideDownloadDialog open={guideDialogOpen} onOpenChange={setGuideDialogOpen} />
 
       {/* Pricing Section */}
       <section className="py-16 px-4 bg-stone-50">
