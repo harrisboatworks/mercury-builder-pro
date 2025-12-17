@@ -86,6 +86,16 @@ export function getContextualPrompts(
     ];
   }
 
+  // Repower page - lead capture and quote building focus
+  if (currentPage.includes('/repower')) {
+    return [
+      "Is repowering worth it for my boat?",
+      "How much does a typical repower cost?",
+      "What HP motor fits my boat?",
+      "What's the repower process?"
+    ];
+  }
+
   // Financing page
   if (currentPage.includes('/financing')) {
     return [

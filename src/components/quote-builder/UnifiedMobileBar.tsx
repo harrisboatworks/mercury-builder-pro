@@ -184,6 +184,25 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
       encouragement: "Great choices — ready when you are",
       contextHint: "Everything in one place",
     }
+  },
+  '/repower': {
+    primaryLabel: 'Build Your Quote',
+    nextPath: '/quote/motor-selection',
+    aiMessage: 'Questions about repowering your boat?',
+    nudges: {
+      idle: [
+        { delay: 5, message: "Keeping your boat? Smart. New motor = new life", icon: 'refresh' },
+        { delay: 12, message: "70% of the benefit for 30% of the cost 👍", icon: 'dollar' },
+        { delay: 20, message: "Modern motors are 30-40% more fuel efficient", icon: 'check' },
+        { delay: 28, message: "Free quote takes 2 minutes — tap to start →", icon: 'sparkles' },
+        { delay: 36, message: "Mercury dealer since 1965 — we know repower", icon: 'award' },
+        { delay: 44, message: "Questions? Tap here to chat with an expert →", icon: 'sparkles' },
+        { delay: 52, message: "Winter is the best time to repower — no wait!", icon: 'shield' },
+        { delay: 60, message: "Your old boat + new power = best of both worlds", icon: 'heart' },
+      ],
+      encouragement: "Let's find the right motor for your boat!",
+      contextHint: "We handle everything — rigging, controls, lake test",
+    }
   }
 };
 
@@ -211,7 +230,7 @@ const HIDE_ON_PAGES = [
 ];
 
 // Pages where the unified bar SHOULD show (customer journey paths)
-const SHOW_ON_PAGES = ['/', '/motors', '/quote', '/promotions', '/financing', '/accessories'];
+const SHOW_ON_PAGES = ['/', '/motors', '/quote', '/promotions', '/financing', '/accessories', '/repower'];
 
 // Spring animation config for snappy micro-interactions
 const springConfig = { type: 'spring', stiffness: 400, damping: 17 };
