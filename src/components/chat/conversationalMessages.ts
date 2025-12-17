@@ -13,6 +13,11 @@ export const WELCOME_MESSAGES: Record<string, ConversationalNudge[]> = {
     { message: "Tap any motor to check it out", icon: 'sparkles' },
     { message: "Browse around — I'm here if you need help", icon: 'heart' },
   ],
+  '/repower': [
+    { message: "Thinking about a new motor? You're in the right place", icon: 'check' },
+    { message: "Your boat + new power = best of both worlds", icon: 'heart' },
+    { message: "Repowering saves big vs buying new — let me show you", icon: 'dollar' },
+  ],
   '/quote/options': [
     { message: "Pick a package or skip — totally up to you", icon: 'check' },
     { message: "Most folks grab Complete, but you do you", icon: 'shield' },
@@ -49,6 +54,12 @@ export const ACTION_PROMPTS: Record<string, ConversationalNudge[]> = {
     { message: "Tap a motor to see specs and pricing", icon: 'sparkles', aiPrompt: "Help me understand the motor specs" },
     { message: "Use the HP tabs to filter by size", icon: 'check' },
     { message: "Not sure which one? I can help narrow it down →", icon: 'sparkles', aiPrompt: "Help me find the right motor for my boat" },
+  ],
+  '/repower': [
+    { message: "Our ROI calculator shows your exact savings", icon: 'dollar', aiPrompt: "Help me calculate if repowering makes sense" },
+    { message: "Download the free guide — no strings attached", icon: 'check' },
+    { message: "Questions about the process? Ask away →", icon: 'sparkles', aiPrompt: "How does the repower process work?" },
+    { message: "Build a quote in 2 minutes — see real pricing", icon: 'sparkles', aiPrompt: "Help me build a quote for repowering" },
   ],
   '/quote/options': [
     { message: "Complete covers you for pretty much everything", icon: 'shield' },
@@ -91,6 +102,12 @@ export const ENGAGING_QUESTIONS: Record<string, ConversationalNudge[]> = {
     { message: "More important to you: fuel economy or power?", icon: 'sparkles', aiPrompt: "Help me decide between fuel economy and power" },
     { message: "Mostly fishing or general cruising?", icon: 'heart', aiPrompt: "Recommend a motor for fishing" },
     { message: "How big's your boat? That narrows things down", icon: 'check', aiPrompt: "What motor size do I need for my boat length?" },
+  ],
+  '/repower': [
+    { message: "What HP is your current motor?", icon: 'refresh', aiPrompt: "What motor should I upgrade to from my current one?" },
+    { message: "Hard starting? Losing power? Those are signs...", icon: 'check', aiPrompt: "How do I know if I need to repower?" },
+    { message: "What kind of boat do you have?", icon: 'heart', aiPrompt: "Recommend a motor for my boat type" },
+    { message: "Is your motor over 10 years old?", icon: 'dollar', aiPrompt: "Is it worth repowering a boat with a 10+ year old motor?" },
   ],
   '/quote/options': [
     { message: "Want worry-free boating? Check out Complete", icon: 'shield', aiPrompt: "What's included in the Complete package?" },

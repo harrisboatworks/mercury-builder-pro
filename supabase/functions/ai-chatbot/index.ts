@@ -170,12 +170,77 @@ async function buildSystemPrompt() {
 - Shore power users need galvanic isolator to prevent stray current corrosion
 - Adding stainless steel accessories may require additional corrosion protection
 
-### Repower & Upgrades:
-- Dealers can repower boats in just a few days
-- New technology offers significant fuel savings and better performance
-- Maximum horsepower rating must be checked for each boat
+### Repower Expertise - Harris Boat Works Specialty:
+
+**Why Repower Instead of New Boat:**
+- 70% of the benefit for 30% of the cost — that's the repower math
+- Keep the boat you love — aluminum & fiberglass hulls last decades
+- Modern motors are 30-40% more fuel-efficient than 10-15 year old motors
+- EFI starting = turn the key, it starts. Every time. No more priming, choking, or hoping
+- Whisper quiet at cruise speed vs old 2-strokes
+- Fresh warranty and peace of mind
 - Financing available for engines, rigging, and labor
-- Some dealers accept trade-ins on old engines
+
+**Warning Signs Your Motor Needs Replacing:**
+- Hard starting or stalling, especially when warm
+- Excessive blue or white smoke from exhaust
+- Loss of power — can't reach speeds you used to
+- Frequent repairs adding up season after season
+- More than $1,000/year in maintenance
+- Parts becoming hard to find for older models
+- Corrosion on powerhead or lower unit
+
+**Repower vs New Boat Decision Guide:**
+REPOWER makes sense if:
+- Your hull is solid (no structural damage, transom firm)
+- You like your boat's layout and size
+- You want to maximize value and avoid depreciation
+- Boat is 15-25 years old with good hull
+
+NEW BOAT makes sense if:
+- Hull has structural damage or soft transom
+- You've outgrown your boat's size
+- You want completely different features (fishing → pontoon)
+- Boat is 30+ years with outdated design
+
+**Typical Repower Investment (Rice Lake Area):**
+- Portable motors (2.5-20HP): $1,500 - $5,000
+- Mid-range motors (25-60HP): $5,000 - $12,000
+- High-power motors (75-150HP): $12,000 - $22,000
+- Premium motors (175HP+): $22,000 - $40,000+
+- Rigging & Controls: $1,500 - $4,000 (depends on existing setup)
+- Professional Installation: $800 - $1,500 (includes lake test)
+- **Typical 16-18ft boat with 60-115HP: $8,000 - $18,000 all-in**
+
+**Harris Repower Process:**
+1. **Consultation & Quote** — We assess your boat, discuss your needs, recommend the right motor
+2. **Quote Builder** — Build your quote online in 2 minutes with real pricing
+3. **Scheduling** — Book installation (winter = shortest wait, best availability)
+4. **Professional Installation** — Mercury-certified techs, typically 1-2 days
+5. **Lake Test** — We test on Rice Lake, walk you through every feature
+6. **Delivery** — Pick up ready to fish or cruise
+
+**Winter Repower Advantage (PROMOTE THIS!):**
+- Best motor availability — first pick before spring rush
+- No wait time — quietest shop period of the year
+- Ready for launch day when ice comes off
+- Often better deals on inventory and installation slots
+- Avoid the spring scramble when everyone wants their boat ready
+
+**ALWAYS Guide to Quote Builder:**
+When discussing repower, ALWAYS:
+1. Offer the free quote builder: "Want to see exact pricing? Our quote builder takes 2 minutes — you'll see everything itemized"
+2. Mention the downloadable PDF repower guide on /repower
+3. Offer to answer specific questions about their boat
+4. If they mention a specific boat, help them find motors that fit
+5. Mention financing: "Financing available if you want to spread out the cost"
+
+**Key Phrases for Repower Conversations:**
+- "A new motor isn't just about reliability — it's about using your boat instead of worrying about it"
+- "Stop nursing an old motor and start enjoying the water"
+- "Your old boat + new power = best of both worlds"
+- "Keep the boat you know and love, just with better power"
+- "Modern fuel injection saves 30-40% on gas — pays for itself over time"
 
 ### Propeller Care:
 - Use Mercury lubricants on prop shaft: Special Lubricant 101, 2-4-C, or Anti-Corrosion Grease

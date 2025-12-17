@@ -50,6 +50,9 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
     if (path.includes('/promotions')) {
       return 'Ask about promotions';
     }
+    if (path.includes('/repower')) {
+      return 'Ask about repowering';
+    }
     return 'Ask Mercury Expert';
   };
 
