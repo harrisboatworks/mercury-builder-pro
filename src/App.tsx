@@ -82,6 +82,7 @@ const Accessories = lazy(() => import("./pages/Accessories"));
 const NewQuote = lazy(() => import("./pages/NewQuote"));
 const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 const Promotions = lazy(() => import("./pages/Promotions"));
+const Repower = lazy(() => import("./pages/Repower"));
 
 // Test/Dev pages (low priority)
 const Dev = lazy(() => import("./pages/Dev"));
@@ -353,6 +354,9 @@ function AnimatedRoutes() {
         
         {/* Promotions Page */}
         <Route path="/promotions" element={<Promotions />} />
+        
+        {/* Repower Page */}
+        <Route path="/repower" element={<Repower />} />
         
         {/* Unsubscribe Route */}
         <Route path="/unsubscribe/:token" element={<Unsubscribe />} />

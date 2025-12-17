@@ -202,6 +202,33 @@ export const MOTOR_USE_CASES = {
 
 // ========== REPOWER KNOWLEDGE ==========
 
+// Comprehensive repower knowledge from Harris Boat Works Repower Guide
+export const REPOWER_GUIDE = {
+  key_stat: "70% of the benefit of a new boat for 30% of the cost",
+  typical_price_range: "$8,000 - $18,000 for a 16-18ft boat with 60-115 HP, all-in",
+  pricing_breakdown: {
+    motor: "$1,500 - $35,000+ depending on HP",
+    rigging_controls: "$1,500 - $4,000 depending on existing setup",
+    installation: "$800 - $1,500 including lake test"
+  },
+  warning_signs: [
+    "Hard starting or stalling",
+    "Excessive smoke from exhaust",
+    "Loss of power",
+    "Frequent repairs adding up"
+  ],
+  one_more_season_trap: "Stop nursing an old motor. A new motor isn't just about reliability—it's about USING your boat instead of worrying about it.",
+  winter_tip: "Best time to repower: Winter. First pick before spring rush, no wait for installation, ready for launch day.",
+  modern_benefits: [
+    "30-40% better fuel economy",
+    "Quiet operation - hold a conversation at cruise",
+    "No oil mixing",
+    "Instant EFI starting every time",
+    "Mercury SmartCraft technology"
+  ],
+  repower_page: "/repower"
+};
+
 // The 6 reasons customers repower (from Mercury Repower Report)
 export const REPOWER_VALUE_PROPS = {
   reliability: {
@@ -231,7 +258,7 @@ export const REPOWER_VALUE_PROPS = {
   },
   fuel_efficiency: {
     headline: "Save on fuel",
-    message: "Modern 4-stroke tech saves money every trip. Better fuel economy = longer days on the water.",
+    message: "Modern 4-stroke tech saves 30-40% on fuel every trip. Better fuel economy = longer days on the water.",
     stat: "Fuel efficiency has improved dramatically in the last decade"
   }
 };
