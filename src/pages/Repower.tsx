@@ -83,7 +83,7 @@ export default function Repower() {
               </Button>
             </Link>
             <a href="tel:9053422153">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2 bg-transparent">
                 <Phone className="w-4 h-4" />
                 (905) 342-2153
               </Button>
@@ -463,7 +463,7 @@ export default function Repower() {
               </Button>
             </Link>
             <a href="tel:9053422153">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto gap-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto gap-2 bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
                 <Phone className="w-4 h-4" />
                 (905) 342-2153
               </Button>
