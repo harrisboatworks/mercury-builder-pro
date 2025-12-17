@@ -166,15 +166,15 @@ export default function Repower() {
               </h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <span className="text-green-600 mt-1">✓</span>
+                  <span className="text-green-600 mt-1 shrink-0">✓</span>
                   Your hull is solid (aluminum & fiberglass last decades)
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-600 mt-1">✓</span>
+                  <span className="text-green-600 mt-1 shrink-0">✓</span>
                   You like your boat—it fits your needs and is the right size
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-600 mt-1">✓</span>
+                  <span className="text-green-600 mt-1 shrink-0">✓</span>
                   The numbers work: 70% of the benefit for 30% of the cost
                 </li>
               </ul>
@@ -186,15 +186,15 @@ export default function Repower() {
               </h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <span className="text-stone-400 mt-1">•</span>
+                  <span className="text-stone-400 mt-1 shrink-0">•</span>
                   Your hull has structural damage or significant issues
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-stone-400 mt-1">•</span>
+                  <span className="text-stone-400 mt-1 shrink-0">•</span>
                   You've outgrown your current boat
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-stone-400 mt-1">•</span>
+                  <span className="text-stone-400 mt-1 shrink-0">•</span>
                   You want completely different features or layout
                 </li>
               </ul>
