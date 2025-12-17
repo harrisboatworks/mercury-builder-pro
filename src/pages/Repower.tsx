@@ -55,10 +55,13 @@ export default function Repower() {
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-stone-100 to-white py-16 md:py-24 px-4">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 mb-6">
-            <img src={mercuryLogo} alt="Mercury Marine" className="h-8" />
-            <span className="text-sm font-medium text-muted-foreground">Certified Repower Center</span>
-          </div>
+            <div className="inline-flex items-center gap-2 mb-6">
+              <img 
+                src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" 
+                alt="Mercury Certified Repower Center" 
+                className="h-12" 
+              />
+            </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-4">
             Mercury Outboard Repower
