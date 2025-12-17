@@ -6,9 +6,11 @@ import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import { supabase } from '@/integrations/supabase/client';
 
-// Motor pricing based on HP (from repower guide)
-const motorPriceRanges: Record<number, { min: number; max: number; avg: number }> = {
+// Fallback motor pricing (used while loading or if query fails)
+const fallbackMotorPrices: Record<number, { min: number; max: number; avg: number }> = {
   40: { min: 4500, max: 6000, avg: 5250 },
   60: { min: 6000, max: 8500, avg: 7250 },
   75: { min: 8000, max: 10500, avg: 9250 },
@@ -46,6 +48,49 @@ export function RepowerROICalculator() {
   const [riggingCondition, setRiggingCondition] = useState('upgrade');
   const [newBoatValue, setNewBoatValue] = useState(45000);
   const [activePreset, setActivePreset] = useState<string | null>(null);
+
+  // Fetch live motor prices from database
+  const { data: liveMotorPrices } = useQuery({
+    queryKey: ['motor-price-ranges-repower'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('motor_models')
+        .select('horsepower, base_price')
+        .in('horsepower', hpOptions)
+        .not('base_price', 'is', null)
+        .gt('base_price', 0);
+
+      if (error) throw error;
+
+      // Group by HP and calculate min/max/avg
+      const grouped: Record<number, number[]> = {};
+      data?.forEach(motor => {
+        const hp = motor.horsepower;
+        if (hp && hpOptions.includes(hp)) {
+          if (!grouped[hp]) grouped[hp] = [];
+          grouped[hp].push(motor.base_price);
+        }
+      });
+
+      const result: Record<number, { min: number; max: number; avg: number }> = {};
+      Object.entries(grouped).forEach(([hp, prices]) => {
+        const hpNum = Number(hp);
+        result[hpNum] = {
+          min: Math.min(...prices),
+          max: Math.max(...prices),
+          avg: Math.round(prices.reduce((a, b) => a + b, 0) / prices.length),
+        };
+      });
+
+      return result;
+    },
+    staleTime: 24 * 60 * 60 * 1000, // Cache for 24 hours
+  });
+
+  // Use live prices if available, fallback to hardcoded
+  const motorPriceRanges = liveMotorPrices && Object.keys(liveMotorPrices).length > 0 
+    ? { ...fallbackMotorPrices, ...liveMotorPrices }
+    : fallbackMotorPrices;
 
   const toggleHP = (hp: number) => {
     if (selectedHPs.includes(hp)) {
