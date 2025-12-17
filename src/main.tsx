@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ThemeProvider } from 'next-themes'
+import { HelmetProvider } from 'react-helmet-async'
 import App from './App.tsx'
 import './index.css'
 
@@ -27,16 +28,18 @@ try {
   
   console.log('✅ React root created, rendering App...');
   root.render(
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider
-        defaultTheme="light"
-        forcedTheme="light"
-        enableSystem={false}
-        disableTransitionOnChange={false}
-      >
-        <App />
-      </ThemeProvider>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider
+          defaultTheme="light"
+          forcedTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange={false}
+        >
+          <App />
+        </ThemeProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
   
   console.log('✅ App rendered successfully!');
