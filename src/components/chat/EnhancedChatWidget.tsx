@@ -152,6 +152,9 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       if (path.includes('/promotions')) {
         return "Hi! Looking at our promotions? I can help explain the current offers and find the best deal for you.";
       }
+      if (path.includes('/repower')) {
+        return "Hi! I can help you figure out if repowering makes sense for your boat. What kind of boat do you have, and what motor is on it now?";
+      }
       return "Hi there! I'm your Mercury Marine expert. I can help you find the perfect outboard motor, answer technical questions, or explain our current promotions. What can I help you with?";
     };
 
