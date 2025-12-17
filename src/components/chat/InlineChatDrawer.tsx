@@ -214,6 +214,9 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     if (path.includes('/promotions')) {
       return "Hey! Looking at the current deals? I can help you find the best one for what you need.";
     }
+    if (path.includes('/repower')) {
+      return "Hey! Thinking about repowering? Tell me about your boat — I'll help you figure out if it makes sense and what motor would work best.";
+    }
     
     // Default friendly greeting
     return "Hey! I'm here to help you find the perfect Mercury motor. What are you looking for?";
