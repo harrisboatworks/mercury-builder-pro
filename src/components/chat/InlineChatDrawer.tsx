@@ -237,12 +237,49 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     });
   }, []);
 
-  // Load history and initialize
+  // Get page category for context-aware chat reset
+  const getPageCategory = (pathname: string): string => {
+    if (pathname.includes('/repower')) return 'repower';
+    if (pathname.includes('/quote/')) return 'quote';
+    if (pathname.includes('/financing')) return 'financing';
+    if (pathname.includes('/promotions')) return 'promotions';
+    if (pathname.includes('/contact')) return 'contact';
+    return 'general';
+  };
+
+  // Load history and initialize - with context-aware reset
   useEffect(() => {
     const initChat = async () => {
       if (!isOpen || hasInitialized || isPersistenceLoading) return;
       
+      const currentCategory = getPageCategory(location.pathname);
+      const storedCategory = localStorage.getItem('chat_page_category');
+      
+      // Check if page context changed significantly (different category)
+      const contextChanged = storedCategory && storedCategory !== currentCategory;
+      
       const persistedMessages = await loadMessages();
+      
+      // If context changed significantly and we have old history, start fresh
+      if (contextChanged && persistedMessages.length > 0) {
+        console.log(`[Chat] Context changed from ${storedCategory} to ${currentCategory}, starting fresh`);
+        await clearConversation();
+        localStorage.setItem('chat_page_category', currentCategory);
+        
+        const welcomeMessage: Message = {
+          id: 'welcome_' + Date.now(),
+          text: getWelcomeMessage(),
+          isUser: false,
+          timestamp: new Date(),
+        };
+        setMessages([welcomeMessage]);
+        
+        const dbId = await saveMessage(welcomeMessage.text, 'assistant');
+        if (dbId) messageIdMap.current.set(welcomeMessage.id, dbId);
+        
+        setHasInitialized(true);
+        return;
+      }
       
       if (persistedMessages.length > 0) {
         const loadedMessages = convertPersistedMessages(persistedMessages);
@@ -255,6 +292,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
         }));
         setConversationHistory(history);
       } else {
+        localStorage.setItem('chat_page_category', currentCategory);
         const welcomeMessage: Message = {
           id: 'welcome',
           text: getWelcomeMessage(),
@@ -271,7 +309,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     };
     
     initChat();
-  }, [isOpen, hasInitialized, isPersistenceLoading, loadMessages, convertPersistedMessages, saveMessage]);
+  }, [isOpen, hasInitialized, isPersistenceLoading, loadMessages, convertPersistedMessages, saveMessage, clearConversation, location.pathname]);
 
   // Parse motor context from initialMessage (if it's a context marker, not a question)
   const motorContext = useMemo(() => {
