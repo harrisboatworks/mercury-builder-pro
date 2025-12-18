@@ -34,38 +34,36 @@ import { SITE_URL } from '@/lib/site';
 const COMPLETE_TARGET_YEARS = 7; // Complete: 7 years total
 const PREMIUM_TARGET_YEARS = 8;  // Premium: 8 years max
 
-// Animation variants
+// Animation variants - using transform-only animations for iOS compatibility
 const packageContainerVariants = {
-  hidden: { opacity: 0 },
+  hidden: { y: 10 },
   visible: {
-    opacity: 1,
+    y: 0,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2
+      staggerChildren: 0.08,
+      delayChildren: 0.1
     }
   }
 };
 
 const pricingTableVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { y: 15 },
   visible: {
-    opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
       ease: "easeOut",
-      delay: 0.5
+      delay: 0.2
     }
   }
 };
 
 const sectionVariants = {
-  hidden: { opacity: 0, y: 10 },
+  hidden: { y: 8 },
   visible: {
-    opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
+      duration: 0.3,
       ease: "easeOut"
     }
   }

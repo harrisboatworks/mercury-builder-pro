@@ -20,6 +20,35 @@ body {
   overscroll-behavior-y: none; /* Prevent pull-to-refresh interference with native */
 }
 
+/* ===== iOS Animation Safety - Prevent Faded Content ===== */
+@supports (-webkit-touch-callout: none) {
+  /* iOS-specific: Force opacity on animated content */
+  .quote-content,
+  [class*="motion"],
+  [data-state="open"],
+  section,
+  main,
+  article {
+    opacity: 1 !important;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  /* Ensure package cards are always visible */
+  section[aria-label="Packages"] > * {
+    opacity: 1 !important;
+  }
+}
+
+/* Fallback for all mobile browsers */
+@media (max-width: 768px) {
+  /* Force animated elements to be visible */
+  [class*="animate-"],
+  [style*="opacity"] {
+    opacity: 1 !important;
+  }
+}
+
 /* Scroll containers get momentum scrolling */
 .overflow-y-auto,
 .overflow-auto,
