@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
 import { getContextualPrompts } from './getContextualPrompts';
 import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
+import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
 import { MessageReactions } from './MessageReactions';
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
@@ -279,13 +280,27 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       }
     }, [initialMessage, isOpen, hasInitialized, isLoading, motorContext]);
     
-    // Get smart prompts based on motor context or page context
-    const smartPrompts = useMemo(() => {
+    // Get rotating smart prompts based on motor context
+    const motorPromptContext = useMemo(() => {
       if (motorContext) {
-        return getMotorSpecificPrompts({ hp: motorContext.hp, model: motorContext.model });
+        return { hp: motorContext.hp, model: motorContext.model };
       }
-      return contextualPrompts;
-    }, [motorContext, contextualPrompts]);
+      if (state.motor) {
+        return { hp: state.motor.hp || 0, model: state.motor.model || '' };
+      }
+      return null;
+    }, [motorContext, state.motor]);
+
+    // Use rotating prompts hook
+    const { prompts: rotatingPrompts, isRotating: promptsRotating } = useRotatingPrompts({
+      context: motorPromptContext,
+      rotationInterval: 45000,
+      promptCount: 4,
+      enabled: isOpen && !isMinimized && messages.length <= 2,
+    });
+    
+    // Fall back to contextual prompts if no motor context
+    const smartPrompts = motorPromptContext ? rotatingPrompts : contextualPrompts;
 
     // Handle reaction updates
     const handleReaction = useCallback(async (messageId: string, reaction: 'thumbs_up' | 'thumbs_down' | null) => {

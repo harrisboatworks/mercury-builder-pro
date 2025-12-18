@@ -6,6 +6,7 @@ import { useChatPersistence } from '@/hooks/useChatPersistence';
 import { parseMessageText, ParsedSegment } from '@/lib/textParser';
 import { MessageReactions } from '../chat/MessageReactions';
 import { getMotorSpecificPrompts } from '../chat/getMotorSpecificPrompts';
+import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
 import { useVoice } from '@/contexts/VoiceContext';
 import { useLocation } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -82,6 +83,60 @@ const RenderSegment = ({ segment, idx }: { segment: ParsedSegment; idx: number }
     >
       {segment.content}
     </a>
+  );
+};
+
+// Rotating prompts section with animation
+const RotatingPromptSection = ({ 
+  motor, 
+  hp, 
+  isLoading, 
+  messageCount,
+  onSend 
+}: { 
+  motor: Motor; 
+  hp: number; 
+  isLoading: boolean;
+  messageCount: number;
+  onSend: (text: string) => void;
+}) => {
+  const { prompts, isRotating } = useRotatingPrompts({
+    context: { hp, family: motor.family, model: motor.model },
+    rotationInterval: 45000,
+    promptCount: 4,
+    enabled: messageCount <= 1 && !isLoading,
+  });
+
+  if (messageCount > 1 || isLoading || prompts.length === 0) return null;
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={prompts.join(',')}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: isRotating ? 0.5 : 1, y: 0 }}
+        exit={{ opacity: 0, y: -5 }}
+        transition={{ duration: 0.25 }}
+        className="pt-2"
+      >
+        <p className="text-[10px] text-gray-400 mb-2 uppercase tracking-wide px-1">Common Questions</p>
+        <div className="flex flex-wrap gap-1.5">
+          {prompts.map((prompt, idx) => (
+            <motion.button
+              key={`${prompt}-${idx}`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: idx * 0.05, duration: 0.2 }}
+              onClick={() => onSend(prompt)}
+              className="px-3 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 
+                text-gray-700 rounded-full transition-all font-light hover:scale-[1.02]"
+            >
+              {prompt}
+            </motion.button>
+          ))}
+        </div>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
@@ -361,29 +416,14 @@ export function MotorInlineChatPanel({
           </div>
         ))}
         
-        {/* HP-aware Smart Prompts - show when just welcome message */}
-        {messages.length <= 1 && !isLoading && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="pt-2"
-          >
-            <p className="text-[10px] text-gray-400 mb-2 uppercase tracking-wide px-1">Common Questions</p>
-            <div className="flex flex-wrap gap-1.5">
-              {getMotorSpecificPrompts({ hp, family: motor.family, model: motor.model }).map((prompt, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => handleSend(prompt)}
-                  className="px-3 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 
-                    text-gray-700 rounded-full transition-colors font-light"
-                >
-                  {prompt}
-                </button>
-              ))}
-            </div>
-          </motion.div>
-        )}
+        {/* HP-aware Smart Prompts - rotates every 45s when idle */}
+        <RotatingPromptSection 
+          motor={motor}
+          hp={hp}
+          isLoading={isLoading}
+          messageCount={messages.length}
+          onSend={handleSend}
+        />
         <div ref={messagesEndRef} />
       </div>
 

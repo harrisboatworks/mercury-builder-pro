@@ -10,11 +10,12 @@ import { useMotorViewSafe } from '@/contexts/MotorViewContext';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
 import { getContextualPrompts } from './getContextualPrompts';
-import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
+import { getMotorSpecificPrompts, refreshMotorPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
 import { MessageReactions } from './MessageReactions';
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
+import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
 import { cn } from '@/lib/utils';
 import { VoiceButton } from './VoiceButton';
 import { useVoice } from '@/contexts/VoiceContext';
@@ -339,22 +340,32 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     }
   }, [initialMessage, isOpen, hasInitialized, isLoading, motorContext]);
   
-  // Get smart prompts based on motor context or page context
-  const smartPrompts = useMemo(() => {
-    // Priority: preview motor > selected motor > initial context > page context
-    const activeMotor = state.previewMotor || state.motor;
+  // Get rotating smart prompts based on motor context
+  const activeMotor = state.previewMotor || state.motor;
+  const motorPromptContext = useMemo(() => {
     if (activeMotor) {
-      return getMotorSpecificPrompts({ 
+      return { 
         hp: activeMotor.hp || 0, 
         model: activeMotor.model || '',
         family: (activeMotor as any).family || ''
-      });
+      };
     }
     if (motorContext) {
-      return getMotorSpecificPrompts({ hp: motorContext.hp, model: motorContext.model });
+      return { hp: motorContext.hp, model: motorContext.model };
     }
-    return contextualPrompts;
-  }, [state.previewMotor, state.motor, motorContext, contextualPrompts]);
+    return null;
+  }, [activeMotor, motorContext]);
+
+  // Use rotating prompts hook - refreshes every 45 seconds when idle
+  const { prompts: rotatingPrompts, isRotating: promptsRotating } = useRotatingPrompts({
+    context: motorPromptContext,
+    rotationInterval: 45000,
+    promptCount: 4,
+    enabled: isOpen && messages.length <= 2,
+  });
+  
+  // Fall back to contextual prompts if no motor context
+  const smartPrompts = motorPromptContext ? rotatingPrompts : contextualPrompts;
 
   // Detect if motor context changed (to show fresh prompts for new motor)
   const currentMotorId = (state.previewMotor as any)?.id || (state.motor as any)?.id || null;
@@ -767,41 +778,47 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                 )}
               </AnimatePresence>
 
-              {/* Suggested Prompts - HP-aware, refreshes when motor changes */}
-              {(messages.length <= 2 || shouldShowMotorPrompts) && !isLoading && (
-                <motion.div
-                  key={`prompts-${currentMotorId || 'default'}`}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.14, duration: 0.2, ease: 'easeOut' }}
-                  className="px-4 py-2 border-t border-gray-100 bg-white shrink-0"
-                >
-                  <p className="text-[10px] text-gray-400 mb-1.5 uppercase tracking-wide">
-                    {currentMotorLabel ? 'Common Questions' : 'Suggested'}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {smartPrompts.slice(0, 4).map((prompt, index) => (
-                      <button
-                        key={`${currentMotorId}-${index}`}
-                        onClick={() => {
-                          // Mark this motor as interacted with to hide prompts
-                          if (currentMotorId) setInteractedMotorId(currentMotorId);
-                          if (prompt.includes('Help me find the right motor') && setShowQuiz) {
-                            setShowQuiz(true);
-                            onClose();
-                          } else {
-                            handleSend(prompt);
-                          }
-                        }}
-                        className="px-2.5 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 
-                          text-gray-700 rounded-full transition-colors font-light"
-                      >
-                        {prompt}
-                      </button>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
+              {/* Suggested Prompts - HP-aware, rotates every 45s when idle */}
+              <AnimatePresence mode="wait">
+                {(messages.length <= 2 || shouldShowMotorPrompts) && !isLoading && smartPrompts.length > 0 && (
+                  <motion.div
+                    key={`prompts-${currentMotorId || 'default'}-${smartPrompts.join(',')}`}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: promptsRotating ? 0.5 : 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.25, ease: 'easeOut' }}
+                    className="px-4 py-2 border-t border-gray-100 bg-white shrink-0"
+                  >
+                    <p className="text-[10px] text-gray-400 mb-1.5 uppercase tracking-wide">
+                      {currentMotorLabel ? 'Common Questions' : 'Suggested'}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {smartPrompts.slice(0, 4).map((prompt, index) => (
+                        <motion.button
+                          key={`${prompt}-${index}`}
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: index * 0.05, duration: 0.2 }}
+                          onClick={() => {
+                            // Mark this motor as interacted with to hide prompts
+                            if (currentMotorId) setInteractedMotorId(currentMotorId);
+                            if (prompt.includes('Help me find the right motor') && setShowQuiz) {
+                              setShowQuiz(true);
+                              onClose();
+                            } else {
+                              handleSend(prompt);
+                            }
+                          }}
+                          className="px-2.5 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 
+                            text-gray-700 rounded-full transition-all font-light hover:scale-[1.02]"
+                        >
+                          {prompt}
+                        </motion.button>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Input Area with staggered fade */}
               <motion.div
