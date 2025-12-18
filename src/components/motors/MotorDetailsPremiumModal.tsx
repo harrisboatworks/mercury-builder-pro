@@ -266,8 +266,15 @@ export default function MotorDetailsPremiumModal({
 
   return (
     <div className="fixed inset-0 z-50">
-      {/* Backdrop */}
-      <div className="absolute inset-x-0 top-16 bottom-0 sm:inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
+      {/* Backdrop with enhanced animation */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        className="absolute inset-x-0 top-16 bottom-0 sm:inset-0 bg-black/60 backdrop-blur-sm" 
+        onClick={onClose} 
+      />
       
       {/* Modal Container - TWO COLUMN LAYOUT (60/40) */}
       <div className="absolute inset-x-0 top-16 bottom-0 sm:inset-0 flex items-start sm:items-center justify-center sm:p-4">
@@ -367,7 +374,10 @@ export default function MotorDetailsPremiumModal({
                 <div className="p-6 pb-0 border-b border-gray-100 bg-white">
                   <button 
                     onClick={onClose} 
-                    className="absolute top-6 right-6 p-3 bg-gray-100/90 text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition-colors rounded-full shadow-sm active:scale-95 z-50" 
+                    className="absolute top-6 right-6 p-3 bg-gray-100/90 text-gray-700 rounded-full shadow-sm z-50
+                      transition-all duration-300 ease-out
+                      hover:bg-gray-200 hover:text-gray-900 hover:scale-110 hover:shadow-md
+                      active:scale-95" 
                     aria-label="Close"
                   >
                     <X className="w-6 h-6" />
@@ -850,7 +860,11 @@ export default function MotorDetailsPremiumModal({
                       triggerHaptic('medium');
                       handleSelectMotor();
                     }}
-                    className="w-full bg-black text-white py-4 text-xs tracking-widest uppercase font-medium rounded-sm hover:bg-gray-900 transition-all duration-500"
+                    className="w-full bg-black text-white py-4 text-xs tracking-widest uppercase font-medium rounded-sm 
+                      transition-all duration-300 ease-out
+                      hover:bg-gray-900 hover:shadow-lg hover:scale-[1.01]
+                      active:scale-[0.98]
+                      premium-pulse"
                   >
                     Configure This Motor
                   </button>
@@ -858,7 +872,10 @@ export default function MotorDetailsPremiumModal({
                   {/* Calculate Payment Link */}
                   <button
                     onClick={handleCalculatePayment}
-                    className="w-full flex items-center justify-center gap-2 text-sm text-gray-600 hover:text-black font-medium transition-colors"
+                    className="w-full flex items-center justify-center gap-2 text-sm text-gray-600 font-medium 
+                      transition-all duration-200 ease-out
+                      hover:text-black hover:scale-[1.02]
+                      active:scale-[0.98]"
                   >
                     <Calculator className="w-4 h-4" />
                     Calculate Payment

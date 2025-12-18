@@ -116,3 +116,116 @@ body > .modal-portal {
     background: rgba(255, 255, 255, 0.2);
   }
 }
+
+/* ========================================
+   PREMIUM MICRO-ANIMATION UTILITIES
+   ======================================== */
+
+/* Premium hover glow effect */
+.premium-glow-hover {
+  transition: box-shadow 0.4s ease-out, transform 0.3s ease-out;
+}
+.premium-glow-hover:hover {
+  box-shadow: 0 0 30px rgba(0, 82, 204, 0.12), 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* Subtle breathing pulse for CTAs - draws attention */
+.premium-pulse {
+  animation: premium-pulse 3s ease-in-out infinite;
+}
+@keyframes premium-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  50% { 
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* Premium focus ring */
+.premium-focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(0, 82, 204, 0.25);
+}
+
+/* Shimmer loading animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Smooth card entrance with scale */
+@keyframes card-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-card-entrance {
+  animation: card-entrance 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+/* Tab content fade transition */
+@keyframes tab-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.animate-tab-content {
+  animation: tab-fade-in 0.3s ease-out forwards;
+}
+
+/* Spec row stagger animation */
+@keyframes spec-row-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.spec-row-animate {
+  animation: spec-row-reveal 0.4s ease-out forwards;
+}
+
+/* Premium button hover scale */
+.premium-btn-hover {
+  transition: transform 0.2s ease-out, box-shadow 0.3s ease-out;
+}
+.premium-btn-hover:hover {
+  transform: scale(1.02);
+}
+.premium-btn-hover:active {
+  transform: scale(0.98);
+}
+
+/* Image crossfade transition */
+.image-crossfade {
+  transition: opacity 0.4s ease-out;
+}
+
+/* Stagger delay utilities for spec rows */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.3s; }
+.stagger-7 { animation-delay: 0.35s; }
+.stagger-8 { animation-delay: 0.4s; }
