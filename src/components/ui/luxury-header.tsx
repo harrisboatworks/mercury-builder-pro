@@ -246,10 +246,16 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
               Financing
             </Link>
             <Link 
+              to="/about" 
+              className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
+              About
+            </Link>
+            <Link 
               to="/contact" 
               className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
             >
-              Contact Us
+              Contact
             </Link>
           </div>
         </div>
