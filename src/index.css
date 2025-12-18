@@ -20,6 +20,24 @@ body {
   overscroll-behavior-y: none; /* Prevent pull-to-refresh interference with native */
 }
 
+/* ===== Accessibility: Respect Reduced Motion Preference ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Disable framer-motion animations */
+  [style*="opacity"],
+  [style*="transform"] {
+    transition: none !important;
+  }
+}
+
 /* ===== iOS Animation Safety - Prevent Faded Content ===== */
 @supports (-webkit-touch-callout: none) {
   /* iOS-specific: Force opacity on animated content */
