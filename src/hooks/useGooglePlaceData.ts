@@ -10,6 +10,16 @@ export interface GoogleReview {
   relativeTime: string;
 }
 
+export interface GooglePhoto {
+  name: string;
+  url: string;
+}
+
+export interface PlaceLocation {
+  latitude: number;
+  longitude: number;
+}
+
 export interface OpeningHours {
   isOpen: boolean;
   weekdayText: string[];
@@ -24,6 +34,8 @@ export interface PlaceData {
   phone?: string;
   address?: string;
   website?: string;
+  photos?: GooglePhoto[];
+  location?: PlaceLocation;
 }
 
 async function fetchGooglePlaceData(): Promise<PlaceData | null> {

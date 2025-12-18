@@ -29,6 +29,7 @@ import confetti from 'canvas-confetti';
 import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 import QRCode from 'qrcode';
 import { SITE_URL } from '@/lib/site';
+import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 
 // Package warranty year constants (module-level to prevent recreation on every render)
 const COMPLETE_TARGET_YEARS = 7; // Complete: 7 years total
@@ -761,6 +762,11 @@ export default function QuoteSummaryPage() {
                   onBack={handleBack}
                 />
               </motion.div>
+
+              {/* Trust Badge */}
+              <div className="flex justify-center">
+                <GoogleRatingBadge variant="full" />
+              </div>
 
               {/* Current Promotions */}
               <motion.div
