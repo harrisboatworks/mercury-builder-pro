@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { toast } from 'sonner';
 import { format } from 'date-fns';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -17,6 +18,7 @@ import mercuryLogo from '@/assets/mercury-logo.png';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
 import { generateDailyTestimonials, generateReviewCount } from '@/lib/activityGenerator';
 import { allTestimonials } from '@/lib/testimonialData';
+import { PromotionsPageSEO } from '@/components/seo/PromotionsPageSEO';
 
 const csiAwardBadge = "/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png";
 
@@ -287,8 +289,18 @@ export default function Promotions() {
     );
   };
 
+  const promotionFaqs = [
+    { question: "How do I claim a Mercury promotion?", answer: "Mercury promotions are automatically applied when you build your quote on our website. Simply select your motor, and any applicable promotions will be shown in your quote summary." },
+    { question: "Can I combine multiple Mercury promotions?", answer: "Some Mercury promotions can be stacked, while others cannot. Stackable promotions will automatically combine in your quote. Our sales team can help identify all eligible promotions." },
+    { question: "What is the Mercury Get 5 Extended Warranty?", answer: "The Mercury Get 5 promotion extends your factory warranty to 5 years of coverage at no additional cost when you purchase qualifying Mercury outboard motors." },
+    { question: "Do promotions apply to all Mercury motors?", answer: "Promotions vary by motor model and horsepower range. Most apply to specific motor families like FourStroke, Pro XS, or Verado. Check our quote builder to see which promotions apply." },
+    { question: "How long do Mercury promotions last?", answer: "Mercury runs seasonal promotions that typically last 1-3 months. We display countdown timers so you know exactly how long each deal is available." },
+    { question: "Are there financing promotions available?", answer: "Yes! Mercury and our financing partners offer promotional financing rates as low as 6.99% APR on qualifying purchases." }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
+      <PromotionsPageSEO promotions={promotions} />
       <LuxuryHeader />
       
       {/* Hero Section */}
@@ -475,6 +487,26 @@ export default function Promotions() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="max-w-3xl mx-auto px-4 py-16">
+        <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground mb-4">
+          Promotion FAQs
+        </h2>
+        <p className="text-muted-foreground text-center mb-10">
+          Common questions about Mercury promotions and rebates.
+        </p>
+        <Accordion type="single" collapsible className="space-y-3">
+          {promotionFaqs.map((faq, index) => (
+            <AccordionItem key={index} value={`faq-${index}`} className="bg-white rounded-lg border-0 shadow-sm px-6">
+              <AccordionTrigger className="text-left hover:no-underline py-4">
+                <span className="font-medium text-foreground">{faq.question}</span>
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground pb-4">{faq.answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </section>
 
       {/* Newsletter Signup */}
