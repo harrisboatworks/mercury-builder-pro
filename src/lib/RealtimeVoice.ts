@@ -230,6 +230,9 @@ export class RealtimeVoiceChat {
     this.audioEl.autoplay = true;
     // iOS Safari requires playsinline attribute
     this.audioEl.setAttribute('playsinline', 'true');
+    // Add to DOM - some browsers need this for audio to work
+    this.audioEl.style.display = 'none';
+    document.body.appendChild(this.audioEl);
   }
 
   async connect(motorContext?: any, currentPage?: string, existingStream?: MediaStream) {
@@ -278,19 +281,39 @@ export class RealtimeVoiceChat {
        }
        this.audioQueue = new AudioQueue(this.audioContext);
 
-      // Set up remote audio
+      // Set up remote audio - this receives AI's voice via WebRTC
       this.pc.ontrack = (e) => {
-        this.audioEl.srcObject = e.streams[0];
-        // iOS Safari: explicitly play to handle autoplay restrictions
-        this.audioEl.play().catch(err => console.log('Audio autoplay blocked:', err));
+        console.log('🎧 Received remote track:', e.track.kind, 'readyState:', e.track.readyState, 'streams:', e.streams.length);
+        if (e.streams && e.streams[0]) {
+          console.log('Setting audio srcObject with stream:', e.streams[0].id);
+          this.audioEl.srcObject = e.streams[0];
+          
+          // Play with comprehensive error handling
+          this.audioEl.play()
+            .then(() => {
+              console.log('✅ Audio playback started successfully');
+            })
+            .catch(err => {
+              console.error('❌ Audio play failed:', err);
+              // Try playing on next user interaction (autoplay policy)
+              const playOnInteraction = () => {
+                this.audioEl.play()
+                  .then(() => console.log('✅ Audio playback started after user interaction'))
+                  .catch(e => console.error('Still failed:', e));
+                document.removeEventListener('click', playOnInteraction);
+              };
+              document.addEventListener('click', playOnInteraction, { once: true });
+            });
+        }
       };
 
-      // Add local audio track from our stream
+      // Add local audio track from our stream (microphone → AI)
       const audioTrack = this.mediaStream.getAudioTracks()[0];
       if (!audioTrack) {
         throw new Error('No audio track available from microphone');
       }
-      this.pc.addTrack(audioTrack, this.mediaStream);
+      const sender = this.pc.addTrack(audioTrack, this.mediaStream);
+      console.log('🎤 Added local audio track:', audioTrack.label, 'enabled:', audioTrack.enabled);
 
       // Set up data channel
       this.dc = this.pc.createDataChannel("oai-events");
@@ -387,7 +410,43 @@ export class RealtimeVoiceChat {
       };
       
       await this.pc.setRemoteDescription(answer);
-      console.log("WebRTC connection established");
+      console.log("WebRTC SDP exchange complete, waiting for connection...");
+      
+      // Wait for WebRTC connection to be fully established
+      await new Promise<void>((resolve, reject) => {
+        if (!this.pc) return reject(new Error('No peer connection'));
+        
+        if (this.pc.connectionState === 'connected') {
+          console.log('✅ WebRTC already connected');
+          return resolve();
+        }
+        
+        const onConnectionChange = () => {
+          console.log('Connection state changed to:', this.pc?.connectionState);
+          if (this.pc?.connectionState === 'connected') {
+            this.pc.removeEventListener('connectionstatechange', onConnectionChange);
+            console.log('✅ WebRTC fully connected - audio should now flow');
+            resolve();
+          } else if (this.pc?.connectionState === 'failed' || this.pc?.connectionState === 'disconnected') {
+            this.pc.removeEventListener('connectionstatechange', onConnectionChange);
+            reject(new Error('WebRTC connection failed'));
+          }
+        };
+        
+        this.pc.addEventListener('connectionstatechange', onConnectionChange);
+        
+        // Timeout after 10 seconds
+        setTimeout(() => {
+          this.pc?.removeEventListener('connectionstatechange', onConnectionChange);
+          // If still connecting, proceed anyway (data channel may still work)
+          if (this.pc?.connectionState === 'connecting') {
+            console.log('Connection still in progress, proceeding...');
+            resolve();
+          } else if (this.pc?.connectionState !== 'connected') {
+            reject(new Error('WebRTC connection timed out'));
+          }
+        }, 10000);
+      });
 
     } catch (error) {
       console.error("Error connecting:", error);
@@ -494,6 +553,7 @@ export class RealtimeVoiceChat {
   }
 
   disconnect() {
+    console.log('Disconnecting voice chat...');
     this.recorder?.stop();
     this.audioQueue?.clear();
     this.dc?.close();
@@ -505,6 +565,10 @@ export class RealtimeVoiceChat {
       this.mediaStream = null;
     }
     this.audioEl.srcObject = null;
+    // Remove audio element from DOM
+    if (this.audioEl.parentNode) {
+      this.audioEl.parentNode.removeChild(this.audioEl);
+    }
     this.onConnectionChange(false);
   }
 }
