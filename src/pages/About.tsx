@@ -8,6 +8,8 @@ import { AboutPageSEO } from '@/components/seo/AboutPageSEO';
 import { GoogleReviewsCarousel } from '@/components/reviews/GoogleReviewsCarousel';
 import { GoogleMapEmbed } from '@/components/maps/GoogleMapEmbed';
 import { OpeningHoursDisplay } from '@/components/business/OpeningHoursDisplay';
+import { GooglePhotoGallery } from '@/components/business/GooglePhotoGallery';
+import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 import { useGooglePlaceData } from '@/hooks/useGooglePlaceData';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
@@ -189,8 +191,22 @@ export default function About() {
           </div>
         </section>
 
-        {/* Services Section */}
+        {/* Photo Gallery Section */}
         <section className="py-16 md:py-20 bg-muted/30">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
+            <h2 className="text-2xl md:text-3xl font-light text-center mb-4">
+              Our <span className="font-medium">Location</span>
+            </h2>
+            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+              Photos from our shop on the shores of Rice Lake.
+            </p>
+            
+            <GooglePhotoGallery />
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section className="py-16 md:py-20">
           <div className="max-w-6xl mx-auto px-4 md:px-6">
             <h2 className="text-2xl md:text-3xl font-light text-center mb-4">
               What We <span className="font-medium">Offer</span>

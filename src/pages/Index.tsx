@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ShoppingCart, RotateCcw, ArrowRight, User, FileText, LogOut, Trash2, AlertTriangle, MessageSquare, DollarSign, Calendar, Shield, Wrench } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo.png';
+import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 import { money } from '@/lib/money';
 import { calculateMonthly } from '@/lib/finance';
 import TestFunctionButton from '@/components/TestFunctionButton';
@@ -375,11 +376,14 @@ const Index = () => {
       <header className="border-b border-border bg-background/95 backdrop-blur">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <img 
-              src={harrisLogo} 
-              alt="Harris Boat Works" 
-              className="h-8 w-auto"
-            />
+            <div className="flex items-center gap-4">
+              <img 
+                src={harrisLogo} 
+                alt="Harris Boat Works" 
+                className="h-8 w-auto"
+              />
+              <GoogleRatingBadge variant="compact" className="hidden md:flex" />
+            </div>
             <div className="flex items-center gap-4">
               <StatusIndicator />
               {user ? (

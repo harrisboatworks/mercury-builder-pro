@@ -16,6 +16,7 @@ import { GlobalStickyQuoteBar } from "@/components/quote/GlobalStickyQuoteBar";
 import { RouteLoader } from "@/components/ui/RouteLoader";
 import { GlobalAIChat } from "@/components/chat/GlobalAIChat";
 import { UnifiedMobileBar } from "@/components/quote-builder/UnifiedMobileBar";
+import { GoogleRatingBadge } from "@/components/business/GoogleRatingBadge";
 
 // Note: Removed framer-motion AnimatePresence (~120KB) to reduce initial bundle
 // Page transitions now use CSS instead of JavaScript animations
@@ -400,9 +401,12 @@ const App = () => (
               <Canonical />
 
               <footer className="mt-12 border-t border-border bg-muted/30">
-                <div className="container mx-auto px-4 py-6 flex flex-row items-center justify-center gap-4 md:gap-8">
-                  <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-12 md:h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                  <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 md:h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                  <div className="flex items-center gap-4 md:gap-8">
+                    <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-12 md:h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 md:h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                  </div>
+                  <GoogleRatingBadge variant="compact" />
                 </div>
               </footer>
             </div>
