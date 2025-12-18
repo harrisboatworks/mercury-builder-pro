@@ -5,6 +5,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { AboutPageSEO } from '@/components/seo/AboutPageSEO';
+import { GoogleReviewsCarousel } from '@/components/reviews/GoogleReviewsCarousel';
+import { GoogleMapEmbed } from '@/components/maps/GoogleMapEmbed';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
@@ -213,6 +215,20 @@ export default function About() {
           </div>
         </section>
 
+        {/* Google Reviews Section */}
+        <section className="py-16 md:py-20">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
+            <h2 className="text-2xl md:text-3xl font-light text-center mb-4">
+              What Our <span className="font-medium">Customers Say</span>
+            </h2>
+            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+              Real reviews from real boaters in the Kawartha Lakes region.
+            </p>
+            
+            <GoogleReviewsCarousel />
+          </div>
+        </section>
+
         {/* Location Section */}
         <section className="py-16 md:py-20">
           <div className="max-w-6xl mx-auto px-4 md:px-6">
@@ -280,20 +296,8 @@ export default function About() {
                 </div>
               </div>
               
-              {/* Map placeholder */}
-              <div className="relative aspect-video md:aspect-square rounded-xl overflow-hidden bg-muted">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2871.234567890123!2d-78.25!3d44.1167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sHarris+Boat+Works!5e0!3m2!1sen!2sca!4v1234567890"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Harris Boat Works Location"
-                  className="absolute inset-0"
-                />
-              </div>
+              {/* Google Map */}
+              <GoogleMapEmbed className="aspect-video md:aspect-square" />
             </div>
           </div>
         </section>
