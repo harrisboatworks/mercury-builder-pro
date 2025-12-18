@@ -228,6 +228,8 @@ export class RealtimeVoiceChat {
   ) {
     this.audioEl = document.createElement("audio");
     this.audioEl.autoplay = true;
+    this.audioEl.muted = false;
+    this.audioEl.volume = 1;
     // iOS Safari requires playsinline attribute
     this.audioEl.setAttribute('playsinline', 'true');
     // Add to DOM - some browsers need this for audio to work
@@ -261,6 +263,15 @@ export class RealtimeVoiceChat {
 
        // Create peer connection
        this.pc = new RTCPeerConnection();
+
+       // Ensure we explicitly negotiate receiving remote audio
+       // (some browsers won't fire ontrack reliably without a transceiver)
+       try {
+         this.pc.addTransceiver('audio', { direction: 'sendrecv' });
+         console.log('🎛️ Added audio transceiver (sendrecv)');
+       } catch (e) {
+         console.log('Audio transceiver not added (non-fatal):', e);
+       }
 
        this.pc.addEventListener('connectionstatechange', () => {
          console.log('RTCPeerConnection state:', this.pc?.connectionState);
