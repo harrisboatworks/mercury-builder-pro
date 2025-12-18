@@ -303,28 +303,43 @@ export class RealtimeVoiceChat {
       const offer = await this.pc.createOffer();
       await this.pc.setLocalDescription(offer);
 
-      // Proxy SDP exchange through edge function (avoids CORS issues)
-      console.log('Proxying SDP exchange through edge function...');
-      const sdpResponse = await fetch(
-        `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/realtime-sdp-exchange`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            sdpOffer: offer.sdp,
-            ephemeralKey: EPHEMERAL_KEY
-          }),
+      // Exchange SDP directly with OpenAI (ephemeral key is designed for client use)
+      console.log('Exchanging SDP directly with OpenAI...');
+      
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000); // 15s timeout
+      
+      try {
+        const sdpResponse = await fetch(
+          'https://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview-2024-12-17',
+          {
+            method: 'POST',
+            body: offer.sdp,
+            headers: {
+              Authorization: `Bearer ${EPHEMERAL_KEY}`,
+              'Content-Type': 'application/sdp',
+            },
+            signal: controller.signal,
+          }
+        );
+        
+        clearTimeout(timeoutId);
+
+        if (!sdpResponse.ok) {
+          const errorData = await sdpResponse.text();
+          console.error('SDP exchange failed:', sdpResponse.status, errorData);
+          throw new Error(`OpenAI connection failed: ${sdpResponse.status}`);
         }
-      );
 
-      if (!sdpResponse.ok) {
-        const errorData = await sdpResponse.text();
-        console.error('SDP exchange failed:', errorData);
-        throw new Error(`SDP exchange failed: ${sdpResponse.status}`);
+        var answerSdp = await sdpResponse.text();
+        console.log('SDP exchange successful');
+      } catch (err: any) {
+        clearTimeout(timeoutId);
+        if (err.name === 'AbortError') {
+          throw new Error('Connection timed out. Please try again.');
+        }
+        throw err;
       }
-
-      const answerSdp = await sdpResponse.text();
-      console.log('SDP exchange successful');
 
       const answer = {
         type: "answer" as RTCSdpType,
