@@ -1,75 +1,13 @@
-import { useState, useEffect } from 'react';
 import { Star, Quote, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
-import { supabase } from '@/integrations/supabase/client';
-
-interface GoogleReview {
-  authorName: string;
-  authorPhoto?: string;
-  rating: number;
-  text: string;
-  time: number;
-  relativeTime: string;
-}
-
-interface PlaceData {
-  name: string;
-  rating: number;
-  totalReviews: number;
-  reviews: GoogleReview[];
-}
+import { useGooglePlaceData } from '@/hooks/useGooglePlaceData';
 
 export function GoogleReviewsCarousel() {
-  const [placeData, setPlaceData] = useState<PlaceData | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const { data: placeData, isLoading, error } = useGooglePlaceData();
 
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        // First, find the place ID for Harris Boat Works
-        const { data: findData, error: findError } = await supabase.functions.invoke('google-places', {
-          body: null,
-          headers: { 'Content-Type': 'application/json' },
-        });
-
-        if (findError) throw findError;
-        
-        // If we got the default placeholder, try to find the real place ID
-        if (!findData || findData.error) {
-          // Use find place to get the actual place ID
-          const searchResponse = await fetch(
-            `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/google-places?action=findPlace&query=Harris+Boat+Works+Gores+Landing+Ontario`
-          );
-          const searchData = await searchResponse.json();
-          
-          if (searchData.candidates && searchData.candidates.length > 0) {
-            const placeId = searchData.candidates[0].place_id;
-            
-            // Now fetch details with the found place ID
-            const detailsResponse = await fetch(
-              `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/google-places?placeId=${placeId}`
-            );
-            const details = await detailsResponse.json();
-            setPlaceData(details);
-          }
-        } else {
-          setPlaceData(findData);
-        }
-      } catch (err) {
-        console.error('[GoogleReviews] Error fetching reviews:', err);
-        setError('Unable to load reviews');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchReviews();
-  }, []);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="space-y-4">
         <div className="flex items-center gap-4 mb-6">
@@ -92,7 +30,6 @@ export function GoogleReviewsCarousel() {
   }
 
   if (error || !placeData) {
-    // Fallback to showing nothing or a minimal message
     return null;
   }
 
