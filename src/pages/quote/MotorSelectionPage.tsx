@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Motor } from '@/components/QuoteBuilder';
 import { FinancingProvider } from '@/contexts/FinancingContext';
-import { MotorViewProvider, useMotorView } from '@/contexts/MotorViewContext';
+import { MotorViewProvider } from '@/contexts/MotorViewContext';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
@@ -17,7 +17,7 @@ import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
 import { HPMotorCard } from '@/components/motors/HPMotorCard';
-import { ViewModeToggle } from '@/components/motors/ViewModeToggle';
+// ViewModeToggle removed - using expert view only
 import { MotorConfiguratorModal } from '@/components/motors/MotorConfiguratorModal';
 import { QuickHPFilters } from '@/components/motors/QuickHPFilters';
 import { RecentlyViewedBar } from '@/components/motors/RecentlyViewedBar';
@@ -117,7 +117,7 @@ function MotorSelectionContent() {
   const [searchParams, setSearchParams] = useSearchParams();
   const { state, dispatch } = useQuote();
   const { toast } = useToast();
-  const { viewMode } = useMotorView();
+  
   
   // UX feature hooks
   const { 
@@ -141,8 +141,8 @@ function MotorSelectionContent() {
   const [selectedGroup, setSelectedGroup] = useState<MotorGroup | null>(null);
   const [showConfigurator, setShowConfigurator] = useState(false);
   
-  // Quiz state from context (can be triggered from AI chat)
-  const { showQuiz, setShowQuiz } = useMotorView();
+  // Quiz state - local state since we removed the view mode toggle
+  const [showQuiz, setShowQuiz] = useState(false);
   
   // Exit intent for promo reminder
   const { showExitIntent, dismiss: dismissExitIntent } = useExitIntent({
@@ -611,10 +611,6 @@ function MotorSelectionContent() {
                 />
               </div>
               
-              {/* View Mode Toggle - Centered */}
-              <div className="mt-3 flex justify-center">
-                <ViewModeToggle />
-              </div>
               
               {searchQuery && (
                 <div className="text-center mt-2 text-xs text-luxury-gray">
@@ -631,50 +627,13 @@ function MotorSelectionContent() {
           onClear={clearRecentlyViewed}
         />
 
-        <div className="bg-stone-50 py-12">
+        <div className="bg-gradient-to-b from-stone-50 to-white py-16">
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Motors Grid - Simple or Expert View */}
-          {viewMode === 'simple' ? (
-            /* HP-First Simple View */
-            filteredGroups.length > 0 ? (
-              <motion.div 
-                className="grid gap-6 sm:gap-8 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
-                initial="hidden"
-                animate="visible"
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: {
-                    opacity: 1,
-                    transition: { staggerChildren: 0.03, delayChildren: 0.05 }
-                  }
-                }}
-              >
-                {filteredGroups.map(group => (
-                  <motion.div
-                    key={group.hp}
-                    variants={{
-                      hidden: { opacity: 0, y: 20 },
-                      visible: { opacity: 1, y: 0, transition: { duration: 0.2 } }
-                    }}
-                  >
-                    <HPMotorCard group={group} onConfigure={handleConfigureGroup} />
-                  </motion.div>
-                ))}
-              </motion.div>
-            ) : (
-              <div className="bg-white rounded-xl border border-gray-200 p-6 text-center">
-                <p className="text-gray-600 mb-3">No motors match your search.</p>
-                <Button variant="outline" size="sm" onClick={() => setSearchQuery('')}>
-                  Clear search
-                </Button>
-              </div>
-            )
-          ) : (
-            /* Expert View - Original Full Variant List */
-            filteredMotors.length > 0 ? (
+          {/* Motors Grid - Expert View Only */}
+          {filteredMotors.length > 0 ? (
             <motion.div 
-              className="grid gap-6 sm:gap-8 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+              className="grid gap-8 sm:gap-10 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
               initial="hidden"
               animate="visible"
               variants={{
@@ -749,24 +708,23 @@ function MotorSelectionContent() {
              })}
            </motion.div>
           ) : (
-            <div className="bg-white rounded-xl border border-gray-200 p-6 text-center">
-              <p className="text-gray-600 mb-3">
+            <div className="bg-white rounded-2xl border border-gray-100 p-8 text-center">
+              <p className="text-gray-500 font-light mb-4">
                 No motors match your current filters.
               </p>
               <Button
                 variant="outline"
                 size="sm"
-                className="rounded-lg border-gray-300 text-gray-700 hover:bg-gray-50"
+                className="rounded-full border-gray-200 text-gray-600 hover:bg-gray-50"
                 onClick={() => setSearchQuery('')}
               >
                 Clear search
               </Button>
             </div>
-          )
           )}
           
           {/* Financing Disclaimer */}
-          {(viewMode === 'simple' ? filteredGroups.length > 0 : filteredMotors.length > 0) && (
+          {filteredMotors.length > 0 && (
             <div className="mt-12 pt-8 border-t border-gray-200">
               <p className="text-xs font-light text-gray-500 text-center max-w-3xl mx-auto">
                 * Monthly payment estimates based on recommended financing term at 6.99% APR with $0 down, 
