@@ -35,7 +35,13 @@ export function QuickHPFilters({ motors, activeFilter, onFilterChange, className
   const hasMotors = (filter: string): boolean => getCount(filter) > 0;
 
   return (
-    <div className={cn('flex gap-3 overflow-x-auto scrollbar-hide pb-2 -mx-1 px-1', className)}>
+    <div 
+      className={cn(
+        'flex flex-row gap-2 md:gap-3 overflow-x-auto scrollbar-hide pb-2 -mx-1 px-1',
+        className
+      )}
+      style={{ WebkitOverflowScrolling: 'touch' }}
+    >
       {HP_FILTERS.map(({ label, value }) => {
         const isActive = activeFilter === value || (value === '' && !activeFilter);
         const hasStock = hasMotors(value);
@@ -46,7 +52,7 @@ export function QuickHPFilters({ motors, activeFilter, onFilterChange, className
             onClick={() => onFilterChange(value)}
             disabled={!hasStock && value !== ''}
             className={cn(
-              'flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-light tracking-wide transition-all duration-300 ease-out',
+              'flex-shrink-0 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-light tracking-wide transition-all duration-300 ease-out',
               'whitespace-nowrap relative overflow-hidden',
               isActive 
                 ? 'bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-lg shadow-gray-900/20' 
@@ -56,7 +62,8 @@ export function QuickHPFilters({ motors, activeFilter, onFilterChange, className
             )}
           >
             <span className="relative z-10">
-              {label === 'All' ? 'All Motors' : `${label} HP`}
+              <span className="md:hidden">{label === 'All' ? 'All' : label}</span>
+              <span className="hidden md:inline">{label === 'All' ? 'All Motors' : `${label} HP`}</span>
             </span>
           </button>
         );
