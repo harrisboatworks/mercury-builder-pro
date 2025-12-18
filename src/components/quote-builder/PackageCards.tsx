@@ -5,13 +5,14 @@ import { calculateMonthly, DEALERPLAN_FEE } from "@/lib/finance";
 import { cn } from "@/lib/utils";
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 
+// Safe animation that starts visible and only animates transform (not opacity)
 const packageItemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { y: 15, scale: 0.98 },
   visible: {
-    opacity: 1,
     y: 0,
+    scale: 1,
     transition: {
-      duration: 0.4,
+      duration: 0.3,
       ease: "easeOut"
     }
   }
