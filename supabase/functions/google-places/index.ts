@@ -5,9 +5,6 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// Harris Boat Works Place ID (search for it using Places API if needed)
-const PLACE_ID = 'ChIJN1t_tDeuEmsRUsoyG83frY4'; // This will be updated with actual place ID
-
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -21,71 +18,73 @@ serve(async (req) => {
 
     const url = new URL(req.url);
     const action = url.searchParams.get('action') || 'details';
-    const searchQuery = url.searchParams.get('query');
+    const searchQuery = url.searchParams.get('query') || 'Harris Boat Works Gores Landing Ontario';
 
-    // If we need to find the Place ID first
-    if (action === 'findPlace' && searchQuery) {
-      const searchUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${encodeURIComponent(searchQuery)}&inputtype=textquery&fields=place_id,name,formatted_address&key=${apiKey}`;
-      
-      const searchResponse = await fetch(searchUrl);
-      const searchData = await searchResponse.json();
-      
-      console.log('[google-places] Find place result:', searchData);
-      
-      return new Response(JSON.stringify(searchData), {
+    // Step 1: Search for the place using Places API (New)
+    console.log('[google-places] Searching for place:', searchQuery);
+    
+    const searchUrl = `https://places.googleapis.com/v1/places:searchText`;
+    const searchResponse = await fetch(searchUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Goog-Api-Key': apiKey,
+        'X-Goog-FieldMask': 'places.id,places.displayName,places.formattedAddress,places.rating,places.userRatingCount,places.reviews,places.currentOpeningHours,places.nationalPhoneNumber,places.websiteUri,places.photos,places.location'
+      },
+      body: JSON.stringify({
+        textQuery: searchQuery,
+        maxResultCount: 1
+      })
+    });
+
+    const searchData = await searchResponse.json();
+    
+    if (searchData.error) {
+      console.error('[google-places] Search API error:', searchData.error);
+      throw new Error(`Google Places API error: ${searchData.error.message || searchData.error.status}`);
+    }
+
+    if (!searchData.places || searchData.places.length === 0) {
+      console.log('[google-places] No places found');
+      return new Response(JSON.stringify({ 
+        error: 'Place not found',
+        reviews: [] 
+      }), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
     }
 
-    // Get place details including reviews
-    const placeId = url.searchParams.get('placeId') || PLACE_ID;
-    const fields = 'name,rating,user_ratings_total,reviews,opening_hours,formatted_phone_number,formatted_address,website,photos,geometry';
-    
-    const detailsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=${fields}&key=${apiKey}`;
-    
-    console.log('[google-places] Fetching place details for:', placeId);
-    
-    const detailsResponse = await fetch(detailsUrl);
-    const detailsData = await detailsResponse.json();
-    
-    if (detailsData.status !== 'OK') {
-      console.error('[google-places] API error:', detailsData);
-      throw new Error(`Google Places API error: ${detailsData.status}`);
-    }
+    const place = searchData.places[0];
+    console.log('[google-places] Found place:', place.displayName?.text);
 
-    const result = detailsData.result;
-    
     // Format the response
     const formattedResponse = {
-      name: result.name,
-      rating: result.rating,
-      totalReviews: result.user_ratings_total,
-      reviews: result.reviews?.map((review: any) => ({
-        authorName: review.author_name,
-        authorPhoto: review.profile_photo_url,
+      name: place.displayName?.text,
+      rating: place.rating,
+      totalReviews: place.userRatingCount,
+      reviews: place.reviews?.map((review: any) => ({
+        authorName: review.authorAttribution?.displayName || 'Customer',
+        authorPhoto: review.authorAttribution?.photoUri,
         rating: review.rating,
-        text: review.text,
-        time: review.time,
-        relativeTime: review.relative_time_description,
+        text: review.text?.text || review.originalText?.text || '',
+        time: review.publishTime ? new Date(review.publishTime).getTime() / 1000 : Date.now() / 1000,
+        relativeTime: review.relativePublishTimeDescription || 'Recently',
       })) || [],
-      openingHours: result.opening_hours ? {
-        isOpen: result.opening_hours.open_now,
-        weekdayText: result.opening_hours.weekday_text,
-        periods: result.opening_hours.periods,
+      openingHours: place.currentOpeningHours ? {
+        isOpen: place.currentOpeningHours.openNow,
+        weekdayText: place.currentOpeningHours.weekdayDescriptions,
       } : null,
-      phone: result.formatted_phone_number,
-      address: result.formatted_address,
-      website: result.website,
-      location: result.geometry?.location,
-      photos: result.photos?.slice(0, 5).map((photo: any) => ({
-        reference: photo.photo_reference,
-        width: photo.width,
-        height: photo.height,
-        url: `https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=${photo.photo_reference}&key=${apiKey}`,
+      phone: place.nationalPhoneNumber,
+      address: place.formattedAddress,
+      website: place.websiteUri,
+      location: place.location,
+      photos: place.photos?.slice(0, 5).map((photo: any) => ({
+        name: photo.name,
+        url: `https://places.googleapis.com/v1/${photo.name}/media?maxHeightPx=800&key=${apiKey}`,
       })) || [],
     };
 
-    console.log('[google-places] Returning formatted response with', formattedResponse.reviews?.length, 'reviews');
+    console.log('[google-places] Returning', formattedResponse.reviews?.length, 'reviews');
 
     return new Response(JSON.stringify(formattedResponse), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
