@@ -10,12 +10,19 @@ import { useToast } from '@/hooks/use-toast';
 import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 import { useExitIntent } from '@/hooks/useExitIntent';
 import { useGroupedMotors } from '@/hooks/useGroupedMotors';
+import { useMotorComparison } from '@/hooks/useMotorComparison';
+import { useFavoriteMotors } from '@/hooks/useFavoriteMotors';
+import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
 import { HPMotorCard } from '@/components/motors/HPMotorCard';
 import { ViewModeToggle } from '@/components/motors/ViewModeToggle';
 import { MotorConfiguratorModal } from '@/components/motors/MotorConfiguratorModal';
+import { QuickHPFilters } from '@/components/motors/QuickHPFilters';
+import { RecentlyViewedBar } from '@/components/motors/RecentlyViewedBar';
+import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
+import { ComparisonFloatingPill } from '@/components/motors/ComparisonFloatingPill';
 import { Button } from '@/components/ui/button';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
@@ -112,6 +119,19 @@ function MotorSelectionContent() {
   const { toast } = useToast();
   const { viewMode } = useMotorView();
   
+  // UX feature hooks
+  const { 
+    comparisonList, 
+    toggleComparison, 
+    isInComparison, 
+    removeFromComparison, 
+    clearComparison, 
+    count: comparisonCount, 
+    isFull: comparisonFull 
+  } = useMotorComparison();
+  const { toggleFavorite, isFavorite } = useFavoriteMotors();
+  const { recentlyViewed, addToRecentlyViewed, clearRecentlyViewed } = useRecentlyViewed();
+  const [showComparison, setShowComparison] = useState(false);
   
   const [motors, setMotors] = useState<DbMotor[]>([]);
   const [promotions, setPromotions] = useState<Promotion[]>([]);
@@ -492,6 +512,31 @@ function MotorSelectionContent() {
   const handleHpSuggestionSelect = (hp: number) => {
     setSearchQuery(hp.toString());
   };
+  
+  // Handle recently viewed click - open motor details
+  const handleRecentlyViewedClick = (motorId: string) => {
+    const motor = processedMotors.find(m => m.id === motorId);
+    if (motor) {
+      // Find the group containing this motor and open configurator
+      const targetGroup = groupedMotors.find(g => 
+        g.variants.some(v => v.id === motorId)
+      );
+      if (targetGroup) {
+        setSelectedGroup(targetGroup);
+        setDeepLinkedMotorId(motorId);
+        setShowConfigurator(true);
+      }
+    }
+  };
+  
+  // Handle comparison motor select
+  const handleComparisonSelect = (motor: any) => {
+    const fullMotor = processedMotors.find(m => m.id === motor.id);
+    if (fullMotor) {
+      handleMotorSelect(fullMotor);
+      setShowComparison(false);
+    }
+  };
 
   const getModelString = () => {
     if (!state.motor) return undefined;
@@ -557,6 +602,15 @@ function MotorSelectionContent() {
                 className="w-full"
               />
               
+              {/* Quick HP Filters */}
+              <div className="mt-3">
+                <QuickHPFilters 
+                  motors={processedMotors}
+                  activeFilter={searchQuery}
+                  onFilterChange={setSearchQuery}
+                />
+              </div>
+              
               {/* View Mode Toggle - Centered */}
               <div className="mt-3 flex justify-center">
                 <ViewModeToggle />
@@ -569,6 +623,13 @@ function MotorSelectionContent() {
               )}
           </div>
         </div>
+        
+        {/* Recently Viewed Bar */}
+        <RecentlyViewedBar 
+          items={recentlyViewed}
+          onSelect={handleRecentlyViewedClick}
+          onClear={clearRecentlyViewed}
+        />
 
         <div className="bg-stone-50 py-12">
         
@@ -751,6 +812,22 @@ function MotorSelectionContent() {
           group={selectedGroup}
           onSelectMotor={handleMotorSelect}
           initialMotorId={deepLinkedMotorId}
+        />
+        
+        {/* Comparison Floating Pill */}
+        <ComparisonFloatingPill 
+          count={comparisonCount}
+          onClick={() => setShowComparison(true)}
+        />
+        
+        {/* Comparison Drawer */}
+        <ComparisonDrawer 
+          isOpen={showComparison}
+          onClose={() => setShowComparison(false)}
+          motors={comparisonList}
+          onRemove={removeFromComparison}
+          onClear={clearComparison}
+          onSelectMotor={handleComparisonSelect}
         />
       </FinancingProvider>
     </PageTransition>

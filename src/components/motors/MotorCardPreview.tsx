@@ -8,6 +8,11 @@ import { LuxuryPriceDisplay } from '@/components/pricing/LuxuryPriceDisplay';
 import { StockBadge } from '@/components/inventory/StockBadge';
 import { ModalSkeleton } from '@/components/ui/ModalSkeleton';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { CompareButton } from './CompareButton';
+import { FavoriteButton } from './FavoriteButton';
+import { useMotorComparison } from '@/hooks/useMotorComparison';
+import { useFavoriteMotors } from '@/hooks/useFavoriteMotors';
+import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
 import type { Motor } from '../../lib/motor-helpers';
 import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery, decodeModelName, cleanMotorName } from '../../lib/motor-helpers';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -73,6 +78,11 @@ export default function MotorCardPreview({
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   
+  // UX feature hooks
+  const { toggleComparison, isInComparison, count: comparisonCount, isFull: comparisonFull } = useMotorComparison();
+  const { toggleFavorite, isFavorite } = useFavoriteMotors();
+  const { addToRecentlyViewed } = useRecentlyViewed();
+  
   // Smart image scaling - moderate scaling for card thumbnails
   const { scale: imageScale, handleImageLoad } = useSmartImageScale({
     minExpectedDimension: 300,
@@ -86,14 +96,22 @@ export default function MotorCardPreview({
     setImageLoaded(true);
   };
 
-  // Dispatch preview motor when modal opens/closes
+  // Dispatch preview motor when modal opens/closes + track recently viewed
   useEffect(() => {
     if (showDetailsSheet && motor) {
       dispatch({ type: 'SET_PREVIEW_MOTOR', payload: motor as any });
+      // Track as recently viewed
+      addToRecentlyViewed({
+        id: motor.id,
+        model: motor.model,
+        hp: motor.hp,
+        price: motor.price,
+        image: motor.image
+      });
     } else if (!showDetailsSheet) {
       dispatch({ type: 'SET_PREVIEW_MOTOR', payload: null });
     }
-  }, [showDetailsSheet, motor, dispatch]);
+  }, [showDetailsSheet, motor, dispatch, addToRecentlyViewed]);
   
   // Get the best available image URL using priority logic
   const [imageInfo, setImageInfo] = useState<{ url: string }>({
@@ -386,6 +404,22 @@ export default function MotorCardPreview({
                   className="h-6 w-auto"
                 />
               </div>
+              
+              {/* Compare & Favorite Buttons */}
+              {motor && (
+                <div className="absolute bottom-4 left-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <CompareButton 
+                    isInComparison={isInComparison(motor.id)}
+                    isFull={comparisonFull}
+                    onToggle={() => toggleComparison(motor as any)}
+                    count={comparisonCount}
+                  />
+                  <FavoriteButton 
+                    isFavorite={isFavorite(motor.id)}
+                    onToggle={() => toggleFavorite(motor.id)}
+                  />
+                </div>
+              )}
             </div>
           )}
           
