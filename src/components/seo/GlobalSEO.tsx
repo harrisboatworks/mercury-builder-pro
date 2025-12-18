@@ -146,6 +146,52 @@ export function GlobalSEO() {
           "target": "https://quote.harrisboatworks.ca/quote/motor-selection?search={search_term_string}",
           "query-input": "required name=search_term_string"
         }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://quote.harrisboatworks.ca/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What types of Mercury motors do you carry?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We carry the full Mercury Marine lineup including FourStroke (2.5-150HP), Pro XS (115-400HP), Verado (175-600HP), and SeaPro commercial motors. Our inventory includes over 120 models with various shaft lengths and configurations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the online quote builder work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our quote builder lets you select a Mercury motor, customize your package with accessories and warranty options, and see instant pricing. You can save your quote, apply for financing, or contact us directly—all online with no pressure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I finance a Mercury motor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! We offer competitive financing through Dealerplan with rates as low as 7.99% APR on purchases over $10,000. Apply online in minutes and get pre-approved before your visit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer motor installation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we provide professional installation on Rice Lake including rigging, controls setup, propeller selection, and lake testing. Our Mercury-certified technicians ensure your motor is set up perfectly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What areas do you serve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We serve boaters throughout Central Ontario including Peterborough, Cobourg, Port Hope, Lindsay, and the Kawarthas. We're located on Rice Lake in Gores Landing, easily accessible from the GTA."
+            }
+          }
+        ]
       }
     ]
   };

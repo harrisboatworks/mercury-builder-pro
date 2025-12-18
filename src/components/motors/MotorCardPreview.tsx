@@ -10,6 +10,7 @@ import { ModalSkeleton } from '@/components/ui/ModalSkeleton';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { CompareButton } from './CompareButton';
 import { FavoriteButton } from './FavoriteButton';
+import { AskQuestionButton } from './AskQuestionButton';
 import { useMotorComparison } from '@/hooks/useMotorComparison';
 import { useFavoriteMotors } from '@/hooks/useFavoriteMotors';
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
@@ -405,7 +406,7 @@ export default function MotorCardPreview({
                 />
               </div>
               
-              {/* Compare & Favorite Buttons */}
+              {/* Compare, Favorite & Ask Buttons */}
               {motor && (
                 <div className="absolute bottom-4 left-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                   <CompareButton 
@@ -417,6 +418,10 @@ export default function MotorCardPreview({
                   <FavoriteButton 
                     isFavorite={isFavorite(motor.id)}
                     onToggle={() => toggleFavorite(motor.id)}
+                  />
+                  <AskQuestionButton 
+                    motorModel={title}
+                    hp={hp}
                   />
                 </div>
               )}
