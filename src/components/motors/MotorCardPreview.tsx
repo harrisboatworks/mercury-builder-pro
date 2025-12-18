@@ -337,23 +337,22 @@ export default function MotorCardPreview({
   return (
     <>
       <div 
-        className="group bg-white shadow-sm rounded-lg border border-gray-100 overflow-hidden transition-all duration-200 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-pointer active:scale-[0.98] active:opacity-95 touch-action-manipulation"
+        className="group bg-white rounded-2xl border border-gray-100/80 overflow-hidden transition-all duration-500 ease-out hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.12)] hover:-translate-y-1 cursor-pointer active:scale-[0.99] touch-action-manipulation"
         onClick={handleCardClick}
         onMouseEnter={preloadConfiguratorImagesHighPriority}
         onTouchStart={preloadConfiguratorImagesHighPriority}
       >
-        <div className="relative">
-          {/* Image Section */}
+          <div className="relative">
           {imageUrl && (
-            <div className="relative bg-white p-6 overflow-hidden">
+            <div className="relative bg-gradient-to-b from-gray-50 to-white p-8 overflow-hidden">
               {/* Shimmer loading overlay */}
               {!imageLoaded && (
-                <div className="absolute inset-0 bg-white animate-shimmer z-10" />
+                <div className="absolute inset-0 bg-gray-50 animate-shimmer z-10" />
               )}
               <img 
                 src={imageUrl} 
                 alt={title} 
-                className={`h-48 md:h-72 w-full object-contain transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`h-48 md:h-64 w-full object-contain transition-all duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                 loading="lazy"
                 decoding="async"
                 onLoad={onImageLoad}
@@ -372,9 +371,9 @@ export default function MotorCardPreview({
                 />
               </div>
               
-              {/* HP Badge */}
+              {/* HP Badge - Premium pill style */}
               {hpNum && (
-                <div className="absolute top-4 right-4 bg-black text-white px-3 py-1 text-xs tracking-widest font-medium uppercase">
+                <div className="absolute top-4 right-4 bg-gray-900 text-white px-4 py-1.5 text-xs tracking-[0.15em] font-medium rounded-full shadow-lg">
                   {hpNum} HP
                 </div>
               )}
@@ -431,63 +430,54 @@ export default function MotorCardPreview({
           {/* Subtle Top Border */}
           <div className="border-t border-gray-200"></div>
           
-          {/* Content Section - Premium Mobile Layout */}
-          <div className="p-8 space-y-6">
-            {/* Model Name - Prominent with Code Decoder */}
+          {/* Content Section - Premium Layout */}
+          <div className="p-6 md:p-8 space-y-4">
+            {/* Model Name - Refined Typography */}
             <div className="flex items-start gap-2">
-              <h3 className="text-xl font-semibold tracking-wide text-gray-900">
+              <h3 className="text-lg md:text-xl font-medium tracking-tight text-gray-900">
                 {formatTitle(title)}
               </h3>
-              <MotorCodeTooltip modelName={title} className="mt-1.5" />
+              <MotorCodeTooltip modelName={title} className="mt-1" />
             </div>
             
-            {/* Model Number - Subtle */}
+            {/* Model Number - Very Subtle */}
             {motor?.model_number && (
-              <p className="text-sm font-normal text-gray-400 mt-1">
-                Model: {motor.model_number}
+              <p className="text-xs font-light text-gray-400 tracking-wide">
+                {motor.model_number}
               </p>
             )}
             
-            {/* Simplified Specs - Single Line */}
-            <p className="text-sm font-normal text-gray-500 leading-relaxed mt-6">
+            {/* Simplified Specs - Elegant Single Line */}
+            <p className="text-sm font-light text-gray-500 leading-relaxed">
               {getSimplifiedSpecs()}
             </p>
             
-            {/* Pricing - Luxury minimal */}
-            <div className="my-8">
-              <p className="text-[10px] tracking-[0.15em] uppercase text-gray-400 font-medium">
-                from
-              </p>
+            {/* Pricing - Refined Hierarchy */}
+            <div className="pt-4 pb-2">
               {msrp && price && msrp > price && (
-                <p className="text-sm text-gray-400 font-normal line-through mt-2">${msrp.toLocaleString()}</p>
+                <p className="text-sm text-gray-400 font-light line-through">${msrp.toLocaleString()}</p>
               )}
-              <p className="text-2xl font-bold tracking-tight text-gray-900 mt-1">
+              <p className="text-2xl font-semibold tracking-tight text-gray-900">
                 {price ? `$${price.toLocaleString()}` : 'Call for Price'}
               </p>
               
               {/* Monthly Payment Estimate */}
               {monthlyPayment && (
-                <p className="text-sm font-normal text-gray-500 mt-2">
-                  <span className="italic">From</span> ${monthlyPayment}/month*
+                <p className="text-sm font-light text-gray-500 mt-1">
+                  or ${monthlyPayment}/mo*
                 </p>
               )}
             </div>
             
-            {/* Delivery Status - Subtle with Icon */}
-            <p className="mt-4 text-sm font-normal text-gray-600">
-              {deliveryStatus.text}
-            </p>
+            {/* Delivery & Warranty - Compact */}
+            <div className="space-y-1.5 text-sm font-light text-gray-500">
+              <p>{deliveryStatus.text}</p>
+              {warrantyText && <p>{warrantyText}</p>}
+            </div>
             
-            {/* Warranty - Clean Checkmark */}
-            {warrantyText && (
-              <p className="text-sm font-normal text-gray-600 mt-2">
-                {warrantyText}
-              </p>
-            )}
-            
-            {/* Premium Black Button */}
+            {/* Premium CTA Button */}
             <button 
-              className="w-full border-2 border-black text-black py-4 text-xs tracking-widest uppercase font-medium rounded-sm hover:bg-black hover:text-white transition-all duration-500 ease-out mt-8"
+              className="w-full bg-gray-900 text-white py-3.5 text-xs tracking-[0.2em] uppercase font-medium rounded-lg hover:bg-gray-800 transition-all duration-300 ease-out mt-4 shadow-sm hover:shadow-md"
               onClick={handleMoreInfoClick}
             >
               Build & Price

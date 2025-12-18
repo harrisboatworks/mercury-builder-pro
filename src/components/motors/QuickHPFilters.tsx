@@ -35,9 +35,8 @@ export function QuickHPFilters({ motors, activeFilter, onFilterChange, className
   const hasMotors = (filter: string): boolean => getCount(filter) > 0;
 
   return (
-    <div className={cn('flex gap-2 overflow-x-auto scrollbar-hide pb-1 -mx-1 px-1', className)}>
+    <div className={cn('flex gap-3 overflow-x-auto scrollbar-hide pb-2 -mx-1 px-1', className)}>
       {HP_FILTERS.map(({ label, value }) => {
-        const count = getCount(value);
         const isActive = activeFilter === value || (value === '' && !activeFilter);
         const hasStock = hasMotors(value);
         
@@ -47,24 +46,18 @@ export function QuickHPFilters({ motors, activeFilter, onFilterChange, className
             onClick={() => onFilterChange(value)}
             disabled={!hasStock && value !== ''}
             className={cn(
-              'flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200',
-              'border whitespace-nowrap',
+              'flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-light tracking-wide transition-all duration-300 ease-out',
+              'whitespace-nowrap relative overflow-hidden',
               isActive 
-                ? 'bg-black text-white border-black' 
+                ? 'bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-lg shadow-gray-900/20' 
                 : hasStock
-                  ? 'bg-white text-gray-700 border-gray-200 hover:border-gray-400 hover:bg-gray-50'
-                  : 'bg-gray-50 text-gray-300 border-gray-100 cursor-not-allowed'
+                  ? 'bg-white text-gray-600 border border-gray-200 hover:border-gray-300 hover:shadow-md hover:scale-[1.02]'
+                  : 'bg-gray-50 text-gray-300 border border-gray-100 cursor-not-allowed opacity-60'
             )}
           >
-            {label === 'All' ? label : `${label} HP`}
-            {count > 0 && value !== '' && (
-              <span className={cn(
-                'ml-1.5 text-[10px]',
-                isActive ? 'text-white/70' : 'text-gray-400'
-              )}>
-                ({count})
-              </span>
-            )}
+            <span className="relative z-10">
+              {label === 'All' ? 'All Motors' : `${label} HP`}
+            </span>
           </button>
         );
       })}
