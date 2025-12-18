@@ -254,18 +254,29 @@ export class RealtimeVoiceChat {
         throw new Error("Failed to get ephemeral token");
       }
 
-      const EPHEMERAL_KEY = data.client_secret.value;
+       const EPHEMERAL_KEY = data.client_secret.value;
 
-      // Create peer connection
-      this.pc = new RTCPeerConnection();
-      
-      // Create AudioContext and resume if suspended (iOS requirement)
-      this.audioContext = new AudioContext({ sampleRate: 24000 });
-      if (this.audioContext.state === 'suspended') {
-        console.log('Resuming suspended AudioContext...');
-        await this.audioContext.resume();
-      }
-      this.audioQueue = new AudioQueue(this.audioContext);
+       // Create peer connection
+       this.pc = new RTCPeerConnection();
+
+       this.pc.addEventListener('connectionstatechange', () => {
+         console.log('RTCPeerConnection state:', this.pc?.connectionState);
+         if (this.pc?.connectionState === 'failed') {
+           this.onError(new Error('Voice connection failed (network/WebRTC).'));
+         }
+       });
+
+       this.pc.addEventListener('iceconnectionstatechange', () => {
+         console.log('ICE connection state:', this.pc?.iceConnectionState);
+       });
+       
+       // Create AudioContext and resume if suspended (iOS requirement)
+       this.audioContext = new AudioContext({ sampleRate: 24000 });
+       if (this.audioContext.state === 'suspended') {
+         console.log('Resuming suspended AudioContext...');
+         await this.audioContext.resume();
+       }
+       this.audioQueue = new AudioQueue(this.audioContext);
 
       // Set up remote audio
       this.pc.ontrack = (e) => {
@@ -303,6 +314,35 @@ export class RealtimeVoiceChat {
       const offer = await this.pc.createOffer();
       await this.pc.setLocalDescription(offer);
 
+      // Wait for ICE candidates to be gathered (critical for some networks/browsers)
+      console.log('Waiting for ICE gathering to complete...');
+      await new Promise<void>((resolve) => {
+        if (!this.pc) return resolve();
+        if (this.pc.iceGatheringState === 'complete') return resolve();
+
+        const onStateChange = () => {
+          console.log('ICE gathering state:', this.pc?.iceGatheringState);
+          if (this.pc?.iceGatheringState === 'complete') {
+            this.pc?.removeEventListener('icegatheringstatechange', onStateChange);
+            resolve();
+          }
+        };
+
+        this.pc.addEventListener('icegatheringstatechange', onStateChange);
+
+        // Safety timeout: don't hang forever
+        setTimeout(() => {
+          this.pc?.removeEventListener('icegatheringstatechange', onStateChange);
+          console.log('ICE gathering wait timed out; continuing');
+          resolve();
+        }, 2000);
+      });
+
+      const localSdp = this.pc.localDescription?.sdp;
+      if (!localSdp) {
+        throw new Error('Failed to generate local SDP');
+      }
+
       // Exchange SDP directly with OpenAI (ephemeral key is designed for client use)
       console.log('Exchanging SDP directly with OpenAI...');
       
@@ -314,7 +354,7 @@ export class RealtimeVoiceChat {
           'https://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview-2024-12-17',
           {
             method: 'POST',
-            body: offer.sdp,
+            body: localSdp,
             headers: {
               Authorization: `Bearer ${EPHEMERAL_KEY}`,
               'Content-Type': 'application/sdp',
