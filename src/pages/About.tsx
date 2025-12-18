@@ -7,6 +7,8 @@ import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { AboutPageSEO } from '@/components/seo/AboutPageSEO';
 import { GoogleReviewsCarousel } from '@/components/reviews/GoogleReviewsCarousel';
 import { GoogleMapEmbed } from '@/components/maps/GoogleMapEmbed';
+import { OpeningHoursDisplay } from '@/components/business/OpeningHoursDisplay';
+import { useGooglePlaceData } from '@/hooks/useGooglePlaceData';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
@@ -93,6 +95,8 @@ const faqs = [
 ];
 
 export default function About() {
+  const { data: placeData, isLoading: hoursLoading, error: hoursError } = useGooglePlaceData();
+
   return (
     <>
       <AboutPageSEO />
@@ -272,9 +276,11 @@ export default function About() {
                     <Clock className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="font-medium text-foreground">Hours</p>
-                      <p className="text-muted-foreground">Mon-Fri: 8:00 AM - 5:00 PM</p>
-                      <p className="text-muted-foreground">Saturday: 9:00 AM - 2:00 PM</p>
-                      <p className="text-muted-foreground">Sunday: Closed</p>
+                      <OpeningHoursDisplay 
+                        openingHours={placeData?.openingHours} 
+                        loading={hoursLoading}
+                        error={!!hoursError}
+                      />
                     </div>
                   </div>
                 </div>
