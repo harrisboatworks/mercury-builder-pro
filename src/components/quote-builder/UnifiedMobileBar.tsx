@@ -230,7 +230,7 @@ const HIDE_ON_PAGES = [
 ];
 
 // Pages where the unified bar SHOULD show (customer journey paths)
-const SHOW_ON_PAGES = ['/', '/motors', '/quote', '/promotions', '/financing', '/accessories', '/repower'];
+const SHOW_ON_PAGES = ['/', '/motors', '/quote', '/financing', '/accessories', '/repower'];
 
 // Spring animation config for snappy micro-interactions
 const springConfig = { type: 'spring', stiffness: 400, damping: 17 };
