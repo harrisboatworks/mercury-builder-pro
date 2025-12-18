@@ -30,6 +30,7 @@ export function GlobalStickyQuoteBar() {
     '/accessories',
     '/contact',
     '/calculator',
+    '/promotions',
   ];
 
   // Hide on mobile (handled by UnifiedMobileBar) or on excluded pages
