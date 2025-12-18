@@ -273,6 +273,15 @@ export class RealtimeVoiceChat {
          console.log('Audio transceiver not added (non-fatal):', e);
        }
 
+       // ICE candidate logging
+       this.pc.onicecandidate = (e) => {
+         if (e.candidate) {
+           console.log('🧊 ICE candidate:', e.candidate.type, e.candidate.protocol, e.candidate.address || '(no address)');
+         } else {
+           console.log('🧊 ICE gathering complete (null candidate)');
+         }
+       };
+
        this.pc.addEventListener('connectionstatechange', () => {
          console.log('RTCPeerConnection state:', this.pc?.connectionState);
          if (this.pc?.connectionState === 'failed') {
@@ -283,6 +292,40 @@ export class RealtimeVoiceChat {
        this.pc.addEventListener('iceconnectionstatechange', () => {
          console.log('ICE connection state:', this.pc?.iceConnectionState);
        });
+
+       // Start monitoring audio transmission stats
+       const statsInterval = setInterval(() => {
+         if (!this.pc || this.pc.connectionState === 'closed') {
+           clearInterval(statsInterval);
+           return;
+         }
+         
+         // Monitor outbound audio (mic → OpenAI)
+         this.pc.getSenders().forEach(sender => {
+           if (sender.track?.kind === 'audio') {
+             sender.getStats().then(stats => {
+               stats.forEach(report => {
+                 if (report.type === 'outbound-rtp' && report.bytesSent !== undefined) {
+                   console.log('📤 Audio OUT:', report.bytesSent, 'bytes,', report.packetsSent, 'packets');
+                 }
+               });
+             });
+           }
+         });
+         
+         // Monitor inbound audio (OpenAI → us)
+         this.pc.getReceivers().forEach(receiver => {
+           if (receiver.track?.kind === 'audio') {
+             receiver.getStats().then(stats => {
+               stats.forEach(report => {
+                 if (report.type === 'inbound-rtp' && report.bytesReceived !== undefined) {
+                   console.log('📥 Audio IN:', report.bytesReceived, 'bytes,', report.packetsReceived, 'packets');
+                 }
+               });
+             });
+           }
+         });
+       }, 3000);
        
        // Create AudioContext and resume if suspended (iOS requirement)
        this.audioContext = new AudioContext({ sampleRate: 24000 });
@@ -295,9 +338,26 @@ export class RealtimeVoiceChat {
       // Set up remote audio - this receives AI's voice via WebRTC
       this.pc.ontrack = (e) => {
         console.log('🎧 Received remote track:', e.track.kind, 'readyState:', e.track.readyState, 'streams:', e.streams.length);
+        console.log('🎧 Track details - id:', e.track.id, 'label:', e.track.label, 'muted:', e.track.muted);
+        
+        // Log audio element state before setting
+        console.log('🔊 Audio element BEFORE:', {
+          paused: this.audioEl.paused,
+          muted: this.audioEl.muted,
+          volume: this.audioEl.volume,
+          readyState: this.audioEl.readyState,
+          autoplay: this.audioEl.autoplay
+        });
+        
         if (e.streams && e.streams[0]) {
           console.log('Setting audio srcObject with stream:', e.streams[0].id);
           this.audioEl.srcObject = e.streams[0];
+          
+          // Log audio element state after setting
+          console.log('🔊 Audio element AFTER srcObject set:', {
+            srcObject: !!this.audioEl.srcObject,
+            paused: this.audioEl.paused
+          });
           
           // Play with comprehensive error handling
           this.audioEl.play()
@@ -315,6 +375,8 @@ export class RealtimeVoiceChat {
               };
               document.addEventListener('click', playOnInteraction, { once: true });
             });
+        } else {
+          console.warn('🎧 ontrack fired but no streams available!');
         }
       };
 
@@ -332,6 +394,20 @@ export class RealtimeVoiceChat {
       this.dc.addEventListener("open", () => {
         console.log("Data channel opened");
         this.onConnectionChange(true);
+        
+        // Trigger initial AI greeting to bypass VAD wait
+        setTimeout(() => {
+          if (this.dc?.readyState === 'open') {
+            console.log('🎤 Triggering initial AI greeting...');
+            this.dc.send(JSON.stringify({
+              type: 'response.create',
+              response: {
+                modalities: ['audio', 'text'],
+                instructions: 'Greet the customer briefly and ask how you can help them today.'
+              }
+            }));
+          }
+        }, 1000);
       });
       
       this.dc.addEventListener("close", () => {
@@ -471,15 +547,11 @@ export class RealtimeVoiceChat {
     
     switch (event.type) {
       case 'response.audio.delta':
+        // In WebRTC mode, audio comes through ontrack (RTCPeerConnection), NOT here
+        // This event is only sent in WebSocket mode
+        // Just update the speaking state indicator
         this.onSpeakingChange(true);
-        if (event.delta && this.audioQueue) {
-          const binaryString = atob(event.delta);
-          const bytes = new Uint8Array(binaryString.length);
-          for (let i = 0; i < binaryString.length; i++) {
-            bytes[i] = binaryString.charCodeAt(i);
-          }
-          this.audioQueue.addToQueue(bytes);
-        }
+        console.log('📢 response.audio.delta received (WebRTC audio flows via ontrack)');
         break;
         
       case 'response.audio.done':
