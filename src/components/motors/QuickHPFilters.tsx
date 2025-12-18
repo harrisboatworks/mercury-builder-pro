@@ -52,12 +52,14 @@ export function QuickHPFilters({ motors, activeFilter, onFilterChange, className
             onClick={() => onFilterChange(value)}
             disabled={!hasStock && value !== ''}
             className={cn(
-              'flex-shrink-0 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-light tracking-wide transition-all duration-300 ease-out',
+              'flex-shrink-0 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-light tracking-wide',
               'whitespace-nowrap relative overflow-hidden',
+              'transition-all duration-300 ease-out',
+              'active:scale-[0.97]',
               isActive 
-                ? 'bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-lg shadow-gray-900/20' 
+                ? 'bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-lg shadow-gray-900/25 scale-[1.02]' 
                 : hasStock
-                  ? 'bg-white text-gray-600 border border-gray-200 hover:border-gray-300 hover:shadow-md hover:scale-[1.02]'
+                  ? 'bg-white text-gray-600 border border-gray-200 hover:border-gray-400 hover:shadow-lg hover:shadow-gray-200/50 hover:scale-[1.03] hover:-translate-y-0.5'
                   : 'bg-gray-50 text-gray-300 border border-gray-100 cursor-not-allowed opacity-60'
             )}
           >

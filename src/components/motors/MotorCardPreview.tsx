@@ -337,7 +337,11 @@ export default function MotorCardPreview({
   return (
     <>
       <div 
-        className="group bg-white rounded-2xl border border-gray-100/80 overflow-hidden transition-all duration-500 ease-out hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.12)] hover:-translate-y-1 cursor-pointer active:scale-[0.99] touch-action-manipulation"
+        className="group bg-white rounded-2xl border border-gray-100/80 overflow-hidden cursor-pointer touch-action-manipulation
+          transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]
+          hover:shadow-[0_25px_80px_-15px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.03)] 
+          hover:-translate-y-1.5 hover:border-gray-200/90
+          active:scale-[0.98] active:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)]"
         onClick={handleCardClick}
         onMouseEnter={preloadConfiguratorImagesHighPriority}
         onTouchStart={preloadConfiguratorImagesHighPriority}
@@ -352,7 +356,7 @@ export default function MotorCardPreview({
               <img 
                 src={imageUrl} 
                 alt={title} 
-                className={`h-48 md:h-64 w-full object-contain transition-all duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`h-48 md:h-64 w-full object-contain transition-all duration-700 ease-out group-hover:scale-[1.03] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                 loading="lazy"
                 decoding="async"
                 onLoad={onImageLoad}
@@ -477,7 +481,11 @@ export default function MotorCardPreview({
             
             {/* Premium CTA Button */}
             <button 
-              className="w-full bg-gray-900 text-white py-3.5 text-xs tracking-[0.2em] uppercase font-medium rounded-lg hover:bg-gray-800 transition-all duration-300 ease-out mt-4 shadow-sm hover:shadow-md"
+              className="w-full bg-gray-900 text-white py-3.5 text-xs tracking-[0.2em] uppercase font-medium rounded-lg 
+                transition-all duration-300 ease-out mt-4 shadow-sm
+                hover:bg-gray-800 hover:shadow-lg hover:scale-[1.01] hover:-translate-y-0.5
+                active:scale-[0.98] active:shadow-sm
+                premium-pulse"
               onClick={handleMoreInfoClick}
             >
               Build & Price
