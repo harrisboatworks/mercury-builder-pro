@@ -7,6 +7,10 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+// Maximum groups to process per invocation to prevent timeout
+const MAX_GROUPS_PER_RUN = 5;
+const SCRAPE_TIMEOUT_MS = 60000; // 60 seconds per scrape
+
 type MotorFamily = 'Verado' | 'Pro XS' | 'FourStroke' | 'ProKicker' | 'SeaPro';
 
 interface Motor {
@@ -22,6 +26,14 @@ interface HpFamilyGroup {
   hp: number;
   family: MotorFamily;
   motors: Motor[];
+}
+
+interface ScrapeResult {
+  success: boolean;
+  images: string[];
+  html?: string;
+  screenshot?: string;
+  error?: string;
 }
 
 // Classify motor into family based on model display
@@ -65,8 +77,6 @@ function groupMotorsByHpFamily(motors: Motor[]): HpFamilyGroup[] {
 function buildProductKnowledgeUrl(hp: number, family: MotorFamily): string {
   const baseUrl = 'https://productknowledge.mercurymarine.com/#/products/outboards';
   
-  // Map family to Product Knowledge Portal paths
-  // Based on structure: /#/products/outboards/{category}/{hp}
   const familyPath: Record<MotorFamily, string> = {
     'Verado': 'v6-verado',
     'Pro XS': 'pro-xs',
@@ -75,10 +85,8 @@ function buildProductKnowledgeUrl(hp: number, family: MotorFamily): string {
     'SeaPro': 'seapro',
   };
   
-  // Adjust path based on HP range
   let path = familyPath[family] || 'v6-fourstroke';
   
-  // Handle FourStroke HP ranges for different categories
   if (family === 'FourStroke') {
     if (hp <= 20) {
       path = 'portable-fourstroke';
@@ -96,96 +104,208 @@ function buildProductKnowledgeUrl(hp: number, family: MotorFamily): string {
   return `${baseUrl}/${path}/${hp}`;
 }
 
-// Scrape Product Knowledge Portal using Firecrawl with automated login
-async function scrapeProductKnowledgePortal(
-  url: string, 
+// Scrape using Firecrawl Agent Mode (FIRE-1) for automated login
+async function scrapeWithAgentMode(
+  url: string,
   firecrawlApiKey: string,
   dealerEmail: string,
-  dealerPassword: string
-): Promise<{ success: boolean; images: string[]; html?: string; error?: string }> {
-  console.log('[Mercury Scrape] Scraping Product Knowledge Portal:', url);
-  console.log('[Mercury Scrape] Using automated login with dealer credentials');
-
+  dealerPassword: string,
+  hp: number,
+  family: string
+): Promise<ScrapeResult> {
+  console.log('[Agent Mode] Scraping with FIRE-1 agent:', url);
+  
   try {
-    // Start directly at the product URL - site will redirect to login if not authenticated
-    // After login, use executeJavascript to navigate back to the product page
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), SCRAPE_TIMEOUT_MS);
+    
     const response = await fetch('https://api.firecrawl.dev/v1/scrape', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${firecrawlApiKey}`,
         'Content-Type': 'application/json',
       },
+      signal: controller.signal,
       body: JSON.stringify({
-        url: url, // Start at product URL directly - will redirect to login
-        formats: ['html', 'links'],
-        waitFor: 5000,
-        timeout: 120000,
-        actions: [
-          // Wait for SPA/redirect to login page
-          { type: 'wait', milliseconds: 3000 },
-          
-          // Fill in login form
-          { type: 'click', selector: 'input[type="email"], input[name="email"], input[name="username"], input[id*="email"], input[placeholder*="email" i], input[placeholder*="user" i]' },
-          { type: 'write', text: dealerEmail },
-          
-          { type: 'click', selector: 'input[type="password"], input[name="password"], input[id*="password"]' },
-          { type: 'write', text: dealerPassword },
-          
-          { type: 'wait', milliseconds: 500 },
-          
-          // Submit login
-          { type: 'click', selector: 'button[type="submit"], input[type="submit"], .login-button, .btn-login' },
-          
-          // Wait for authentication
-          { type: 'wait', milliseconds: 8000 },
-          
-          // Navigate to the product page using JavaScript (replacing invalid 'goto')
-          { type: 'executeJavascript', script: `window.location.href = '${url}';` },
-          
-          // Wait for product page to load
-          { type: 'wait', milliseconds: 6000 },
-          
-          // Scroll to load lazy images
-          { type: 'scroll', direction: 'down', amount: 1000 },
-          { type: 'wait', milliseconds: 1500 },
-          { type: 'scroll', direction: 'down', amount: 1000 },
-          { type: 'wait', milliseconds: 1500 },
-          { type: 'scroll', direction: 'down', amount: 1000 },
-          { type: 'wait', milliseconds: 2000 },
-        ],
+        url: 'https://productknowledge.mercurymarine.com',
+        formats: ['html', 'links', 'screenshot'],
+        timeout: 90000,
+        waitFor: 3000,
+        agent: {
+          model: 'FIRE-1',
+          prompt: `You are logging into a Mercury Marine dealer portal.
+
+1. First, you'll see a login page. Fill in the login form:
+   - Email/Username field: Enter "${dealerEmail}"
+   - Password field: Enter "${dealerPassword}"
+   - Click the login/submit button
+
+2. After logging in successfully, navigate to the products section for outboard motors.
+
+3. Navigate to find ${hp} horsepower ${family} motors. Look for product images.
+
+4. Once you find the product page with motor images, scroll down to load all images.
+
+5. The goal is to capture all product images of Mercury ${hp}HP ${family} outboard motors.`,
+        },
       }),
     });
+    
+    clearTimeout(timeoutId);
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('[Mercury Scrape] Firecrawl error:', response.status, errorText);
-      return { success: false, images: [], error: `Firecrawl returned ${response.status}: ${errorText}` };
+      console.error('[Agent Mode] Firecrawl error:', response.status, errorText);
+      return { success: false, images: [], error: `Agent mode returned ${response.status}: ${errorText}` };
     }
 
     const data = await response.json();
-    console.log('[Mercury Scrape] Firecrawl response success:', data.success);
+    console.log('[Agent Mode] Response success:', data.success);
     
     const html = data.data?.html || data.html || '';
+    const screenshot = data.data?.screenshot || data.screenshot || '';
     
-    if (!html) {
-      console.log('[Mercury Scrape] No HTML content returned');
-      return { success: false, images: [], error: 'No HTML content returned - login may have failed' };
+    if (screenshot) {
+      console.log('[Agent Mode] Screenshot captured (base64 length):', screenshot.length);
     }
     
-    // Check if we got a login page instead of content
-    if (html.toLowerCase().includes('sign in') && html.toLowerCase().includes('password') && !html.toLowerCase().includes('product')) {
-      console.log('[Mercury Scrape] Still on login page - authentication failed');
-      return { success: false, images: [], error: 'Authentication failed - still on login page' };
+    if (!html) {
+      console.log('[Agent Mode] No HTML content returned');
+      return { 
+        success: false, 
+        images: [], 
+        screenshot,
+        error: 'No HTML content returned from agent' 
+      };
     }
     
     const imageUrls = extractImageUrls(html);
-    console.log('[Mercury Scrape] Found', imageUrls.length, 'images from Product Knowledge Portal');
+    console.log('[Agent Mode] Found', imageUrls.length, 'images');
     
-    return { success: true, images: imageUrls, html };
+    return { success: true, images: imageUrls, html, screenshot };
   } catch (error) {
-    console.error('[Mercury Scrape] Error:', error);
+    if (error instanceof Error && error.name === 'AbortError') {
+      console.error('[Agent Mode] Request timed out after', SCRAPE_TIMEOUT_MS, 'ms');
+      return { success: false, images: [], error: 'Request timed out' };
+    }
+    console.error('[Agent Mode] Error:', error);
     return { success: false, images: [], error: (error as Error).message };
   }
+}
+
+// Fallback: Simple scrape with manual actions
+async function scrapeWithActions(
+  url: string, 
+  firecrawlApiKey: string,
+  dealerEmail: string,
+  dealerPassword: string
+): Promise<ScrapeResult> {
+  console.log('[Actions Mode] Scraping with manual actions:', url);
+
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), SCRAPE_TIMEOUT_MS);
+    
+    const response = await fetch('https://api.firecrawl.dev/v1/scrape', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${firecrawlApiKey}`,
+        'Content-Type': 'application/json',
+      },
+      signal: controller.signal,
+      body: JSON.stringify({
+        url: 'https://productknowledge.mercurymarine.com',
+        formats: ['html', 'links', 'screenshot'],
+        waitFor: 3000,
+        timeout: 60000,
+        actions: [
+          { type: 'wait', milliseconds: 2000 },
+          { type: 'screenshot' },
+          { type: 'click', selector: 'input[type="email"], input[name="email"], input[name="username"], #email, #username' },
+          { type: 'write', text: dealerEmail },
+          { type: 'click', selector: 'input[type="password"], input[name="password"], #password' },
+          { type: 'write', text: dealerPassword },
+          { type: 'wait', milliseconds: 300 },
+          { type: 'click', selector: 'button[type="submit"], input[type="submit"], .login-btn, .btn-primary' },
+          { type: 'wait', milliseconds: 5000 },
+          { type: 'screenshot' },
+          { type: 'executeJavascript', script: `window.location.href = '${url}';` },
+          { type: 'wait', milliseconds: 4000 },
+          { type: 'scroll', direction: 'down', amount: 800 },
+          { type: 'wait', milliseconds: 1000 },
+          { type: 'scroll', direction: 'down', amount: 800 },
+          { type: 'wait', milliseconds: 1000 },
+        ],
+      }),
+    });
+    
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('[Actions Mode] Firecrawl error:', response.status, errorText);
+      return { success: false, images: [], error: `Actions mode returned ${response.status}: ${errorText}` };
+    }
+
+    const data = await response.json();
+    console.log('[Actions Mode] Response success:', data.success);
+    
+    const html = data.data?.html || data.html || '';
+    const screenshot = data.data?.screenshot || data.screenshot || '';
+    
+    if (screenshot) {
+      console.log('[Actions Mode] Screenshot captured');
+    }
+    
+    if (!html) {
+      return { success: false, images: [], screenshot, error: 'No HTML content returned' };
+    }
+    
+    // Check if still on login page
+    if (html.toLowerCase().includes('sign in') && html.toLowerCase().includes('password') && !html.toLowerCase().includes('outboard')) {
+      console.log('[Actions Mode] Still on login page - authentication failed');
+      return { success: false, images: [], screenshot, error: 'Authentication failed - still on login page' };
+    }
+    
+    const imageUrls = extractImageUrls(html);
+    console.log('[Actions Mode] Found', imageUrls.length, 'images');
+    
+    return { success: true, images: imageUrls, html, screenshot };
+  } catch (error) {
+    if (error instanceof Error && error.name === 'AbortError') {
+      console.error('[Actions Mode] Request timed out');
+      return { success: false, images: [], error: 'Request timed out' };
+    }
+    console.error('[Actions Mode] Error:', error);
+    return { success: false, images: [], error: (error as Error).message };
+  }
+}
+
+// Main scrape function that tries Agent mode first, then falls back to Actions
+async function scrapeProductKnowledgePortal(
+  url: string, 
+  firecrawlApiKey: string,
+  dealerEmail: string,
+  dealerPassword: string,
+  hp: number,
+  family: string
+): Promise<ScrapeResult> {
+  console.log('[Scrape] Starting scrape for:', url);
+  
+  // Try Agent mode first (FIRE-1)
+  let result = await scrapeWithAgentMode(url, firecrawlApiKey, dealerEmail, dealerPassword, hp, family);
+  
+  if (result.success && result.images.length > 0) {
+    console.log('[Scrape] Agent mode succeeded with', result.images.length, 'images');
+    return result;
+  }
+  
+  console.log('[Scrape] Agent mode failed or no images, trying Actions mode...');
+  
+  // Fallback to Actions mode
+  result = await scrapeWithActions(url, firecrawlApiKey, dealerEmail, dealerPassword);
+  
+  return result;
 }
 
 // Extract image URLs from HTML content
@@ -266,7 +386,6 @@ function isValidMotorImage(url: string): boolean {
     return false;
   }
   
-  // Look for motor-related keywords in URL
   const hasMotorKeyword = lowerUrl.includes('motor') || 
                           lowerUrl.includes('engine') || 
                           lowerUrl.includes('outboard') ||
@@ -328,7 +447,6 @@ async function uploadImageToStorage(
     if (contentType.includes('png')) ext = 'png';
     else if (contentType.includes('webp')) ext = 'webp';
     
-    // Use group-based path: mercury/{HP}-{Family}/{index}.jpg
     const fileName = `mercury/${groupKey}/${index}.${ext}`;
     
     const { data, error } = await supabase.storage
@@ -391,13 +509,66 @@ async function insertMotorMedia(
   }
 }
 
+// Save debug screenshot to storage
+async function saveDebugScreenshot(
+  supabase: any,
+  screenshot: string,
+  groupKey: string,
+  mode: string
+): Promise<string | null> {
+  if (!screenshot) return null;
+  
+  try {
+    // Screenshot is base64, decode it
+    const base64Data = screenshot.replace(/^data:image\/\w+;base64,/, '');
+    const binaryStr = atob(base64Data);
+    const bytes = new Uint8Array(binaryStr.length);
+    for (let i = 0; i < binaryStr.length; i++) {
+      bytes[i] = binaryStr.charCodeAt(i);
+    }
+    
+    const fileName = `mercury/debug/${groupKey}-${mode}-${Date.now()}.png`;
+    
+    const { error } = await supabase.storage
+      .from('motor-images')
+      .upload(fileName, bytes, {
+        contentType: 'image/png',
+        upsert: true,
+      });
+    
+    if (error) {
+      console.error('[Debug] Failed to save screenshot:', error);
+      return null;
+    }
+    
+    const { data: { publicUrl } } = supabase.storage
+      .from('motor-images')
+      .getPublicUrl(fileName);
+    
+    console.log('[Debug] Screenshot saved:', publicUrl);
+    return publicUrl;
+  } catch (e) {
+    console.error('[Debug] Error saving screenshot:', e);
+    return null;
+  }
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const { motorIds, dryRun = false, batchSize = 50, maxImagesPerGroup = 10, includeOutOfStock = true } = await req.json();
+    const { 
+      motorIds, 
+      dryRun = false, 
+      batchSize = 50, 
+      maxImagesPerGroup = 10, 
+      includeOutOfStock = true,
+      maxGroups = MAX_GROUPS_PER_RUN,
+      startFromGroup = 0,
+      saveScreenshots = true,
+    } = await req.json();
 
     const firecrawlApiKey = Deno.env.get('FIRECRAWL_API_KEY');
     if (!firecrawlApiKey) {
@@ -415,8 +586,9 @@ serve(async (req) => {
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-    console.log('[Main] Starting Mercury Product Knowledge Portal scrape with automated login...');
-    console.log('[Main] Target: productknowledge.mercurymarine.com');
+    console.log('[Main] Starting Mercury scrape with Agent Mode (FIRE-1)...');
+    console.log('[Main] Max groups per run:', maxGroups);
+    console.log('[Main] Starting from group:', startFromGroup);
 
     // Get motors to process
     let query = supabase
@@ -438,30 +610,56 @@ serve(async (req) => {
     }
 
     // Group motors by HP + Family
-    const groups = groupMotorsByHpFamily(motors || []);
-    console.log('[Main] Found', groups.length, 'unique HP+Family groups from', motors?.length || 0, 'motors');
+    const allGroups = groupMotorsByHpFamily(motors || []);
+    
+    // Apply pagination - only process a subset of groups to prevent timeout
+    const groups = allGroups.slice(startFromGroup, startFromGroup + maxGroups);
+    const hasMoreGroups = allGroups.length > startFromGroup + maxGroups;
+    
+    console.log('[Main] Total groups:', allGroups.length);
+    console.log('[Main] Processing groups', startFromGroup, 'to', startFromGroup + groups.length);
 
     const results = {
       processed: 0,
       groupsProcessed: 0,
+      totalGroups: allGroups.length,
+      startedFromGroup: startFromGroup,
+      hasMoreGroups,
+      nextStartGroup: hasMoreGroups ? startFromGroup + maxGroups : null,
       totalMotorsUpdated: 0,
       totalImagesFound: 0,
       totalImagesUploaded: 0,
       errors: [] as string[],
       groups: [] as any[],
+      debugScreenshots: [] as string[],
     };
 
     for (const group of groups) {
       try {
-        console.log(`[Main] Processing group: ${group.key} (${group.motors.length} motors)`);
+        console.log(`[Main] Processing group ${results.groupsProcessed + 1}/${groups.length}: ${group.key}`);
         
         const searchUrl = buildProductKnowledgeUrl(group.hp, group.family);
         const scrapeResult = await scrapeProductKnowledgePortal(
           searchUrl, 
           firecrawlApiKey,
           dealerEmail,
-          dealerPassword
+          dealerPassword,
+          group.hp,
+          group.family
         );
+        
+        // Save debug screenshot if available
+        if (saveScreenshots && scrapeResult.screenshot) {
+          const screenshotUrl = await saveDebugScreenshot(
+            supabase, 
+            scrapeResult.screenshot, 
+            group.key,
+            scrapeResult.success ? 'success' : 'failed'
+          );
+          if (screenshotUrl) {
+            results.debugScreenshots.push(screenshotUrl);
+          }
+        }
         
         if (!scrapeResult.success || scrapeResult.images.length === 0) {
           results.errors.push(`Group ${group.key}: ${scrapeResult.error || 'No images found'}`);
@@ -473,6 +671,7 @@ serve(async (req) => {
             status: 'no_images',
             url: searchUrl,
             error: scrapeResult.error,
+            hasScreenshot: !!scrapeResult.screenshot,
           });
           continue;
         }
@@ -492,6 +691,7 @@ serve(async (req) => {
             imagesFound: imagesToProcess.length,
             imageUrls: imagesToProcess.slice(0, 5),
             targetUrl: searchUrl,
+            hasScreenshot: !!scrapeResult.screenshot,
           });
         } else {
           // Upload images for this group
@@ -558,8 +758,8 @@ serve(async (req) => {
         results.groupsProcessed++;
         results.processed++;
 
-        // Rate limiting
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        // Short delay between groups
+        await new Promise(resolve => setTimeout(resolve, 2000));
       } catch (error) {
         console.error('[Main] Error processing group:', group.key, error);
         results.errors.push(`${group.key}: ${(error as Error).message}`);
@@ -573,6 +773,10 @@ serve(async (req) => {
       message: dryRun 
         ? `Dry run complete. Found ${results.totalImagesFound} images across ${results.groupsProcessed} groups.`
         : `Scraped ${results.totalImagesUploaded} images and updated ${results.totalMotorsUpdated} motors.`,
+      nextBatch: hasMoreGroups ? {
+        startFromGroup: startFromGroup + maxGroups,
+        remainingGroups: allGroups.length - (startFromGroup + maxGroups),
+      } : null,
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
