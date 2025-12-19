@@ -131,69 +131,26 @@ function getContentType(filename: string): string {
   }
 }
 
-// List folder contents using sharing API (requires only sharing.read scope)
-async function listSharedFolderContents(
+// List folder contents using direct folder access (files/list_folder)
+async function listFolderContents(
   dropboxToken: string,
-  sharedLinkUrl: string,
-  path: string = ''
+  folderPath: string
 ): Promise<{ entries: DropboxEntry[]; error?: string }> {
-  console.log(`Listing shared folder contents: path="${path}"`)
+  console.log(`Listing folder contents: path="${folderPath}"`)
   
   try {
-    // Use sharing/get_shared_link_metadata first to validate the link
-    const metadataResponse = await fetch('https://api.dropboxapi.com/2/sharing/get_shared_link_metadata', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${dropboxToken}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        url: sharedLinkUrl,
-        path: path || undefined,
-      }),
-    })
-
-    if (!metadataResponse.ok) {
-      const errorText = await metadataResponse.text()
-      console.error('Metadata API error:', errorText)
-      
-      // Check for specific scope errors
-      if (errorText.includes('sharing.read')) {
-        return { entries: [], error: 'Missing sharing.read scope. Please enable this in Dropbox App Console > Permissions.' }
-      }
-      
-      return { entries: [], error: `Dropbox API error: ${errorText}` }
-    }
-
-    const metadata = await metadataResponse.json()
-    console.log('Shared link metadata:', JSON.stringify(metadata).substring(0, 200))
-
-    // Check if it's a folder
-    if (metadata['.tag'] !== 'folder') {
-      console.log('Shared link is not a folder, it is:', metadata['.tag'])
-      // If it's a file, return it as a single entry
-      if (metadata['.tag'] === 'file') {
-        return { entries: [metadata as DropboxEntry] }
-      }
-      return { entries: [], error: 'Shared link is not a folder' }
-    }
-
-    // For folders, we need to use list_folder with shared_link parameter
-    // This requires files.metadata.read scope, but let's try an alternative approach
-    // We'll use the sharing/list_folder_members endpoint to verify access, then try listing
+    // Ensure path starts with / for non-root folders
+    const normalizedPath = folderPath === '' || folderPath === '/' ? '' : 
+      (folderPath.startsWith('/') ? folderPath : `/${folderPath}`)
     
-    // Try the sharing/list_shared_links to get folder info
-    const listResponse = await fetch('https://api.dropboxapi.com/2/files/list_folder', {
+    const response = await fetch('https://api.dropboxapi.com/2/files/list_folder', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${dropboxToken}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        path: path || '',
-        shared_link: {
-          url: sharedLinkUrl,
-        },
+        path: normalizedPath,
         recursive: false,
         include_media_info: false,
         include_deleted: false,
@@ -201,29 +158,99 @@ async function listSharedFolderContents(
       }),
     })
 
-    if (!listResponse.ok) {
-      const errorText = await listResponse.text()
+    if (!response.ok) {
+      const errorText = await response.text()
       console.error('List folder error:', errorText)
       
-      // Check for scope errors and provide helpful message
+      // Check for specific scope errors
       if (errorText.includes('files.metadata.read')) {
         return { 
           entries: [], 
-          error: 'Missing files.metadata.read scope. Please go to Dropbox App Console > Permissions tab, enable "files.metadata.read", click Submit, then generate a new access token.' 
+          error: 'Missing files.metadata.read scope. Please enable this in Dropbox App Console > Permissions tab, then generate a new access token.' 
         }
       }
+      
+      // Parse error for more helpful message
+      try {
+        const errorData = JSON.parse(errorText)
+        if (errorData.error_summary?.includes('path/not_found')) {
+          return { entries: [], error: `Folder not found: ${folderPath}. Make sure the path exists in your Dropbox.` }
+        }
+      } catch {}
       
       return { entries: [], error: `Failed to list folder: ${errorText}` }
     }
 
-    const listData = await listResponse.json()
-    console.log(`Found ${listData.entries?.length || 0} entries in folder`)
+    const data = await response.json()
+    let allEntries: DropboxEntry[] = data.entries || []
     
-    return { entries: listData.entries || [] }
+    // Handle pagination if there are more results
+    let hasMore = data.has_more
+    let cursor = data.cursor
+    
+    while (hasMore) {
+      console.log('Fetching more entries with cursor...')
+      const continueResponse = await fetch('https://api.dropboxapi.com/2/files/list_folder/continue', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${dropboxToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ cursor }),
+      })
+      
+      if (!continueResponse.ok) {
+        console.error('Continue pagination error:', await continueResponse.text())
+        break
+      }
+      
+      const continueData = await continueResponse.json()
+      allEntries = allEntries.concat(continueData.entries || [])
+      hasMore = continueData.has_more
+      cursor = continueData.cursor
+    }
+    
+    console.log(`Found ${allEntries.length} entries in folder`)
+    return { entries: allEntries }
     
   } catch (error) {
     console.error('Error listing folder:', error)
     return { entries: [], error: error.message }
+  }
+}
+
+// Download file using direct file access (files/download)
+async function downloadFile(
+  dropboxToken: string,
+  filePath: string
+): Promise<{ data: ArrayBuffer | null; error?: string }> {
+  try {
+    const response = await fetch('https://content.dropboxapi.com/2/files/download', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${dropboxToken}`,
+        'Dropbox-API-Arg': JSON.stringify({ path: filePath }),
+      },
+    })
+
+    if (!response.ok) {
+      const errorText = await response.text()
+      console.error(`Download failed for ${filePath}:`, errorText)
+      
+      if (errorText.includes('files.content.read')) {
+        return { 
+          data: null, 
+          error: 'Missing files.content.read scope. Please enable this in Dropbox App Console > Permissions tab.' 
+        }
+      }
+      
+      return { data: null, error: `Download failed: ${errorText.substring(0, 100)}` }
+    }
+
+    const data = await response.arrayBuffer()
+    return { data }
+  } catch (error) {
+    return { data: null, error: error.message }
   }
 }
 
@@ -241,11 +268,11 @@ Deno.serve(async (req) => {
     const { parentFolderUrl, dryRun = true, replaceExisting = false } = await req.json()
     
     if (!parentFolderUrl) {
-      throw new Error('parentFolderUrl is required')
+      throw new Error('parentFolderUrl is required (folder path like "/Motor Images" or "/Mercury Photos")')
     }
 
     console.log('=== Smart Dropbox Motor Folder Sync ===')
-    console.log('Parent folder URL:', parentFolderUrl)
+    console.log('Input:', parentFolderUrl)
     console.log('Dry run:', dryRun)
     console.log('Replace existing:', replaceExisting)
 
@@ -254,20 +281,29 @@ Deno.serve(async (req) => {
       throw new Error('DROPBOX_ACCESS_TOKEN not configured')
     }
 
-    // Normalize the Dropbox URL
-    let sharedLinkUrl = parentFolderUrl.trim()
-    if (sharedLinkUrl.startsWith('scl/fo/') || sharedLinkUrl.startsWith('/scl/fo/')) {
-      sharedLinkUrl = `https://www.dropbox.com/${sharedLinkUrl.replace(/^\//, '')}`
-    } else if (sharedLinkUrl.startsWith('s/') || sharedLinkUrl.startsWith('/s/')) {
-      sharedLinkUrl = `https://www.dropbox.com/${sharedLinkUrl.replace(/^\//, '')}`
-    } else if (!sharedLinkUrl.startsWith('https://')) {
-      throw new Error('Invalid Dropbox URL format')
+    // Normalize input - accept either a folder path or a shared link URL
+    let folderPath: string
+    
+    if (parentFolderUrl.includes('dropbox.com')) {
+      // Legacy: if someone pastes a URL, try to explain
+      throw new Error(
+        'Please provide a folder path instead of a URL. ' +
+        'Use a direct folder path like "/Motor Images" or "/Mercury 2025 Photos". ' +
+        'You can find the path by looking at your Dropbox folder structure.'
+      )
+    } else {
+      // Direct folder path
+      folderPath = parentFolderUrl.trim()
+      // Ensure it starts with / for non-root paths
+      if (folderPath && !folderPath.startsWith('/')) {
+        folderPath = '/' + folderPath
+      }
     }
 
-    console.log('Normalized URL:', sharedLinkUrl)
+    console.log('Folder path:', folderPath)
 
-    // List contents of parent folder using our helper function
-    const { entries, error: listError } = await listSharedFolderContents(dropboxToken, sharedLinkUrl)
+    // List contents of parent folder using direct access
+    const { entries, error: listError } = await listFolderContents(dropboxToken, folderPath)
     
     if (listError) {
       throw new Error(listError)
@@ -276,6 +312,19 @@ Deno.serve(async (req) => {
     // Find all subfolders (these represent motors)
     const subfolders = entries.filter(e => e['.tag'] === 'folder')
     console.log(`Found ${subfolders.length} subfolders in parent folder`)
+
+    if (subfolders.length === 0) {
+      // Check if there are files directly in this folder
+      const files = entries.filter(e => e['.tag'] === 'file')
+      if (files.length > 0) {
+        throw new Error(
+          `Found ${files.length} files but no subfolders in "${folderPath}". ` +
+          'This sync expects the parent folder to contain subfolders named after motors (e.g., "150HP FourStroke"), ' +
+          'with images inside each subfolder.'
+        )
+      }
+      throw new Error(`No subfolders found in "${folderPath}". Please check the folder path.`)
+    }
 
     // Fetch all motors for matching
     const { data: allMotors, error: motorsError } = await supabaseClient
@@ -345,10 +394,9 @@ Deno.serve(async (req) => {
           console.log(`Runner up: ${scoredMotors[1].model_display} (score: ${scoredMotors[1].score})`)
         }
 
-        // List images in this subfolder
-        const { entries: subfolderEntries, error: subfolderError } = await listSharedFolderContents(
+        // List images in this subfolder using direct folder access
+        const { entries: subfolderEntries, error: subfolderError } = await listFolderContents(
           dropboxToken, 
-          sharedLinkUrl, 
           folder.path_lower
         )
 
@@ -406,25 +454,16 @@ Deno.serve(async (req) => {
               continue
             }
 
-            // Download from Dropbox using sharing/get_shared_link_file (requires sharing.read)
-            const downloadResponse = await fetch('https://content.dropboxapi.com/2/sharing/get_shared_link_file', {
-              method: 'POST',
-              headers: {
-                'Authorization': `Bearer ${dropboxToken}`,
-                'Dropbox-API-Arg': JSON.stringify({
-                  url: sharedLinkUrl,
-                  path: file.path_lower,
-                }),
-              },
-            })
+            // Download from Dropbox using direct file access
+            const { data: fileBuffer, error: downloadError } = await downloadFile(
+              dropboxToken,
+              file.path_lower
+            )
 
-            if (!downloadResponse.ok) {
-              const errorText = await downloadResponse.text()
-              console.error(`Download failed for ${file.name}:`, errorText)
-              throw new Error(`Download failed: ${errorText.substring(0, 100)}`)
+            if (downloadError || !fileBuffer) {
+              throw new Error(downloadError || 'Download returned no data')
             }
 
-            const fileBuffer = await downloadResponse.arrayBuffer()
             const sanitizedFolderName = folder.name.replace(/[^a-zA-Z0-9-_]/g, '_')
             const fileName = `dropbox-curated/${bestMatch.id}/${sanitizedFolderName}/${Date.now()}-${file.name}`
 
@@ -522,6 +561,7 @@ Deno.serve(async (req) => {
     const summary = {
       success: true,
       dryRun,
+      folderPath,
       totalFolders: subfolders.length,
       foldersProcessed: totalFoldersProcessed,
       foldersMatched: results.filter(r => r.motorId).length,
@@ -532,6 +572,7 @@ Deno.serve(async (req) => {
     }
 
     console.log('\n=== Sync Summary ===')
+    console.log(`Folder path: ${folderPath}`)
     console.log(`Folders: ${summary.foldersMatched} matched, ${summary.foldersUnmatched} unmatched`)
     console.log(`Images: ${summary.totalImagesSynced} synced`)
 
