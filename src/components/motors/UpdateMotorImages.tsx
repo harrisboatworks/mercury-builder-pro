@@ -8,9 +8,18 @@ import { Switch } from '@/components/ui/switch';
 import { Progress } from '@/components/ui/progress';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
-import { Loader2, RefreshCw, Image, Download, Play, Square, CheckCircle2, Clock, AlertCircle, Zap, Users } from 'lucide-react';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Loader2, RefreshCw, Image, Download, Play, Square, CheckCircle2, Clock, AlertCircle, Zap, Users, Globe } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { classifyMotorFamily, type MotorFamily } from '@/lib/motor-family-classifier';
+
+const PUBLIC_FAMILY_OPTIONS = [
+  { value: 'FourStroke', label: 'FourStroke' },
+  { value: 'Pro XS', label: 'Pro XS' },
+  { value: 'Verado', label: 'Verado' },
+  { value: 'SeaPro', label: 'SeaPro' },
+  { value: 'ProKicker', label: 'ProKicker' },
+];
 
 const FAMILY_OPTIONS = [
   { value: 'all', label: 'All Families' },
@@ -90,6 +99,13 @@ export default function UpdateMotorImages() {
   const [hpFamilyGroups, setHpFamilyGroups] = useState<HpFamilyGroup[]>([]);
   const [loadingGroups, setLoadingGroups] = useState(false);
   const [includeOutOfStock, setIncludeOutOfStock] = useState(true);
+
+  // Public Mercury scraper state
+  const [publicLoading, setPublicLoading] = useState(false);
+  const [publicResult, setPublicResult] = useState<any>(null);
+  const [publicHp, setPublicHp] = useState('');
+  const [publicFamily, setPublicFamily] = useState('FourStroke');
+  const [publicDryRun, setPublicDryRun] = useState(true);
 
   // Automated batch processing state
   const [isAutomatedRunning, setIsAutomatedRunning] = useState(false);
@@ -424,8 +440,142 @@ export default function UpdateMotorImages() {
     }
   };
 
+  // Scrape public Mercury website (no login required)
+  const scrapePublicMercury = async () => {
+    if (!publicHp) {
+      toast({ title: "HP required", description: "Enter an HP value", variant: "destructive" });
+      return;
+    }
+
+    setPublicLoading(true);
+    setPublicResult(null);
+
+    try {
+      const hp = parseFloat(publicHp);
+      
+      toast({
+        title: publicDryRun ? "Preview mode..." : "Scraping public Mercury site...",
+        description: `Looking for ${hp}HP ${publicFamily} images`,
+      });
+
+      const { data, error } = await supabase.functions.invoke('scrape-mercury-public', {
+        body: { hp, family: publicFamily, dryRun: publicDryRun },
+      });
+
+      if (error) throw error;
+
+      setPublicResult(data);
+      toast({
+        title: data?.success ? "Success!" : "Completed with issues",
+        description: `Found ${data?.imagesFound || 0} images, uploaded ${data?.imagesUploaded || 0}`,
+        variant: data?.success ? "default" : "destructive",
+      });
+    } catch (error) {
+      console.error('Public scrape error:', error);
+      setPublicResult({ error: (error as Error).message });
+      toast({ title: "Error", description: (error as Error).message, variant: "destructive" });
+    } finally {
+      setPublicLoading(false);
+    }
+  };
+
   return (
     <div className="container mx-auto p-8 space-y-6">
+      {/* Public Mercury Scraper - NEW */}
+      <Card className="max-w-3xl mx-auto border-green-500 bg-gradient-to-br from-green-500/5 to-green-500/10">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Globe className="h-5 w-5 text-green-600" />
+            Scrape Public Mercury Images
+          </CardTitle>
+          <CardDescription>
+            Scrape images from Mercury's public website (no login required). Uses Firecrawl.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="public-hp">Horsepower</Label>
+              <Input
+                id="public-hp"
+                type="number"
+                placeholder="e.g. 150"
+                value={publicHp}
+                onChange={(e) => setPublicHp(e.target.value)}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="public-family">Motor Family</Label>
+              <Select value={publicFamily} onValueChange={setPublicFamily}>
+                <SelectTrigger id="public-family">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {PUBLIC_FAMILY_OPTIONS.map((opt) => (
+                    <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <Checkbox
+              id="public-dry-run"
+              checked={publicDryRun}
+              onCheckedChange={(checked) => setPublicDryRun(checked as boolean)}
+            />
+            <Label htmlFor="public-dry-run" className="text-sm">
+              Dry run (preview only, don't upload)
+            </Label>
+          </div>
+
+          <div className="flex gap-2">
+            <Button 
+              onClick={scrapePublicMercury} 
+              disabled={publicLoading || !publicHp}
+              className="flex-1"
+            >
+              {publicLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Scraping...
+                </>
+              ) : (
+                <>
+                  <Image className="mr-2 h-4 w-4" />
+                  {publicDryRun ? "Preview Images" : "Scrape & Upload"}
+                </>
+              )}
+            </Button>
+          </div>
+
+          {publicResult && (
+            <div className="mt-4 p-3 bg-muted rounded-lg text-sm">
+              {publicResult.error ? (
+                <p className="text-destructive">{publicResult.error}</p>
+              ) : (
+                <div className="space-y-2">
+                  <p><strong>Page:</strong> {publicResult.pageUrl}</p>
+                  <p><strong>Images Found:</strong> {publicResult.imagesFound || 0}</p>
+                  <p><strong>Images Uploaded:</strong> {publicResult.imagesUploaded || 0}</p>
+                  {publicResult.imageUrls?.length > 0 && (
+                    <div>
+                      <p className="font-medium mb-1">Preview:</p>
+                      <div className="flex gap-2 flex-wrap">
+                        {publicResult.imageUrls.slice(0, 4).map((url: string, i: number) => (
+                          <img key={i} src={url} alt={`Preview ${i}`} className="w-16 h-16 object-cover rounded" />
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
       {/* Mercury Portal Card - Primary */}
       <Card className="max-w-3xl mx-auto border-primary bg-gradient-to-br from-primary/5 to-primary/10">
         <CardHeader>
