@@ -133,6 +133,41 @@ async function uploadInventoryImage(imageUrl: string, modelKey: string, supabase
   }
 }
 
+// Poll for extraction completion - Firecrawl extract is async
+async function pollForExtraction(jobId: string, apiKey: string, maxWaitMs = 60000): Promise<any> {
+  const startTime = Date.now();
+  let attempts = 0;
+  
+  while (Date.now() - startTime < maxWaitMs) {
+    attempts++;
+    await new Promise(r => setTimeout(r, 2000)); // Wait 2 seconds between polls
+    
+    console.log(`[Firecrawl FIRE-1] Poll attempt ${attempts} for job ${jobId}`);
+    
+    const response = await fetch(`https://api.firecrawl.dev/v1/extract/${jobId}`, {
+      headers: { 'Authorization': `Bearer ${apiKey}` }
+    });
+    
+    if (!response.ok) {
+      console.error(`[Firecrawl FIRE-1] Poll error: ${response.status}`);
+      continue;
+    }
+    
+    const result = await response.json();
+    console.log(`[Firecrawl FIRE-1] Poll status: ${result.status}`);
+    
+    if (result.status === 'completed') {
+      return result.data;
+    }
+    
+    if (result.status === 'failed') {
+      throw new Error(`Extraction failed: ${result.error || 'Unknown error'}`);
+    }
+  }
+  
+  throw new Error('Extraction timeout - exceeded 60 seconds');
+}
+
 // FIRE-1 agent extraction - replaces all manual regex parsing
 async function scrapeWithFire1Agent(url: string, apiKey: string, modelName?: string): Promise<ScrapeResult> {
   console.log(`[Firecrawl FIRE-1] Extracting motor details from: ${url}`);
@@ -199,14 +234,22 @@ Be accurate and thorough. Only include information that is explicitly stated on 
     }
 
     const data = await response.json();
-    console.log(`[Firecrawl FIRE-1] Extraction response:`, JSON.stringify(data).substring(0, 500));
+    console.log(`[Firecrawl FIRE-1] Initial response:`, JSON.stringify(data).substring(0, 500));
     
     if (!data.success) {
       throw new Error(data.error || 'Firecrawl FIRE-1 extraction failed');
     }
 
-    // Extract from the response - handle both array and direct object formats
-    const extractedData = Array.isArray(data.data) ? data.data[0] : data.data;
+    // Handle async job - poll for completion if we get a job ID
+    let extractedData;
+    if (data.id && !data.data) {
+      console.log(`[Firecrawl FIRE-1] Got job ID ${data.id}, polling for completion...`);
+      const pollResult = await pollForExtraction(data.id, apiKey);
+      extractedData = Array.isArray(pollResult) ? pollResult[0] : pollResult;
+    } else {
+      // Immediate result (shouldn't happen with FIRE-1 but handle it)
+      extractedData = Array.isArray(data.data) ? data.data[0] : data.data;
+    }
     
     if (!extractedData) {
       console.log('[Firecrawl FIRE-1] No data extracted, returning empty result');
