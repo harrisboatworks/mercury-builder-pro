@@ -81,17 +81,17 @@ function buildDealerPortalSearchUrl(hp: number, family: MotorFamily): string {
   return `${baseUrl}/en/us/products/engines/outboard/${path}/`;
 }
 
-// Scrape Mercury Dealer Portal using Firecrawl with authentication
+// Scrape Mercury Dealer Portal using Firecrawl with cookie-based authentication
 async function scrapeMercuryDealerPortal(
   url: string, 
   firecrawlApiKey: string,
-  dealerEmail: string,
-  dealerPassword: string
+  sessionCookie: string
 ): Promise<{ success: boolean; images: string[]; html?: string; error?: string }> {
   console.log('[Mercury Scrape] Scraping dealer portal URL:', url);
+  console.log('[Mercury Scrape] Using cookie-based authentication');
 
   try {
-    // Use Firecrawl with actions to handle login
+    // Use Firecrawl with headers/cookies for authenticated session
     const response = await fetch('https://api.firecrawl.dev/v1/scrape', {
       method: 'POST',
       headers: {
@@ -101,22 +101,15 @@ async function scrapeMercuryDealerPortal(
       body: JSON.stringify({
         url,
         formats: ['html', 'screenshot', 'links'],
-        waitFor: 8000,
+        waitFor: 5000,
         timeout: 60000,
-        // Actions to perform login before scraping
+        // Pass session cookie as header for authenticated access
+        headers: {
+          'Cookie': sessionCookie,
+        },
+        // Scroll to load all images after page loads
         actions: [
-          // Wait for page to load
           { type: 'wait', milliseconds: 2000 },
-          // Check if we need to login (look for login form)
-          { type: 'click', selector: 'a[href*="login"], button[class*="login"], .login-btn, #login-link', optional: true },
-          { type: 'wait', milliseconds: 1000 },
-          // Fill in credentials if login form appears
-          { type: 'write', selector: 'input[type="email"], input[name="email"], input[name="username"], #email, #username', text: dealerEmail, optional: true },
-          { type: 'write', selector: 'input[type="password"], input[name="password"], #password', text: dealerPassword, optional: true },
-          // Submit login
-          { type: 'click', selector: 'button[type="submit"], input[type="submit"], .login-submit, #login-button', optional: true },
-          { type: 'wait', milliseconds: 3000 },
-          // Scroll to load all images
           { type: 'scroll', direction: 'down', amount: 2000 },
           { type: 'wait', milliseconds: 1000 },
         ],
@@ -133,8 +126,8 @@ async function scrapeMercuryDealerPortal(
     const html = data.data?.html || data.html || '';
     
     if (!html) {
-      console.log('[Mercury Scrape] No HTML content returned');
-      return { success: false, images: [], error: 'No HTML content' };
+      console.log('[Mercury Scrape] No HTML content returned - cookie may be expired');
+      return { success: false, images: [], error: 'No HTML content - session cookie may be expired' };
     }
     
     const imageUrls = extractImageUrls(html);
@@ -349,19 +342,16 @@ serve(async (req) => {
       throw new Error('FIRECRAWL_API_KEY not configured');
     }
 
-    const dealerEmail = Deno.env.get('MERCURY_DEALER_EMAIL');
-    const dealerPassword = Deno.env.get('MERCURY_DEALER_PASSWORD');
-    
-    if (!dealerEmail || !dealerPassword) {
-      throw new Error('Mercury dealer credentials not configured (MERCURY_DEALER_EMAIL, MERCURY_DEALER_PASSWORD)');
+    const sessionCookie = Deno.env.get('MERCURY_DEALER_SESSION_COOKIE');
+    if (!sessionCookie) {
+      throw new Error('MERCURY_DEALER_SESSION_COOKIE not configured - please add your Mercury dealer portal session cookies as a secret');
     }
 
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-    console.log('[Main] Starting Mercury Dealer Portal scrape with Firecrawl authentication...');
-    console.log('[Main] Using dealer email:', dealerEmail);
+    console.log('[Main] Starting Mercury Dealer Portal scrape with cookie-based authentication...');
 
     // Get motors to process - includes ALL motors by default
     let query = supabase
@@ -405,8 +395,7 @@ serve(async (req) => {
         const scrapeResult = await scrapeMercuryDealerPortal(
           searchUrl, 
           firecrawlApiKey,
-          dealerEmail,
-          dealerPassword
+          sessionCookie
         );
         
         if (!scrapeResult.success || scrapeResult.images.length === 0) {

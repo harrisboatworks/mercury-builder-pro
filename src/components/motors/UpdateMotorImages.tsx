@@ -103,11 +103,17 @@ export default function UpdateMotorImages() {
   const loadGroupPreview = async () => {
     setLoadingGroups(true);
     try {
-      const { data: motors, error } = await supabase
+      let query = supabase
         .from('motor_models')
         .select('id, model_display, horsepower')
-        .eq('in_stock', true)
         .order('horsepower');
+
+      // Only filter by stock if toggle is off
+      if (!includeOutOfStock) {
+        query = query.eq('in_stock', true);
+      }
+
+      const { data: motors, error } = await query;
 
       if (error) throw error;
 
@@ -142,7 +148,7 @@ export default function UpdateMotorImages() {
 
   useEffect(() => {
     loadGroupPreview();
-  }, []);
+  }, [includeOutOfStock]);
 
   // Mercury Portal scraping with group-based approach
   const scrapeMercuryPortal = async () => {
