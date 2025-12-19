@@ -61,37 +61,55 @@ function groupMotorsByHpFamily(motors: Motor[]): HpFamilyGroup[] {
   return Array.from(groups.values()).sort((a, b) => a.hp - b.hp);
 }
 
-// Build Mercury Dealer Portal URL for searching
-function buildDealerPortalSearchUrl(hp: number, family: MotorFamily): string {
-  // Mercury Dealer Portal product pages
-  const baseUrl = 'https://dealer.mercurymarine.com';
+// Build Product Knowledge Portal URL for motor family/HP
+function buildProductKnowledgeUrl(hp: number, family: MotorFamily): string {
+  const baseUrl = 'https://productknowledge.mercurymarine.com/#/products/outboards';
   
-  // Map family to category paths on dealer portal
+  // Map family to Product Knowledge Portal paths
+  // Based on structure: /#/products/outboards/{category}/{hp}
   const familyPath: Record<MotorFamily, string> = {
-    'Verado': 'verado',
+    'Verado': 'v6-verado',
     'Pro XS': 'pro-xs',
-    'FourStroke': 'fourstroke',
-    'ProKicker': 'prokicker',
+    'FourStroke': 'v6-fourstroke',
+    'ProKicker': 'portable-fourstroke',
     'SeaPro': 'seapro',
   };
   
-  const path = familyPath[family] || 'fourstroke';
+  // Adjust path based on HP range
+  let path = familyPath[family] || 'v6-fourstroke';
   
-  // Use product catalog search - adjust URL pattern based on portal structure
-  return `${baseUrl}/en/us/products/engines/outboard/${path}/`;
+  // Handle FourStroke HP ranges for different categories
+  if (family === 'FourStroke') {
+    if (hp <= 20) {
+      path = 'portable-fourstroke';
+    } else if (hp <= 30) {
+      path = 'portable-fourstroke';
+    } else if (hp <= 60) {
+      path = 'mid-power-fourstroke';
+    } else if (hp <= 115) {
+      path = 'v4-fourstroke';
+    } else {
+      path = 'v6-fourstroke';
+    }
+  }
+  
+  return `${baseUrl}/${path}/${hp}`;
 }
 
-// Scrape Mercury Dealer Portal using Firecrawl with cookie-based authentication
-async function scrapeMercuryDealerPortal(
+// Scrape Product Knowledge Portal using Firecrawl with automated login
+async function scrapeProductKnowledgePortal(
   url: string, 
   firecrawlApiKey: string,
-  sessionCookie: string
+  dealerEmail: string,
+  dealerPassword: string
 ): Promise<{ success: boolean; images: string[]; html?: string; error?: string }> {
-  console.log('[Mercury Scrape] Scraping dealer portal URL:', url);
-  console.log('[Mercury Scrape] Using cookie-based authentication');
+  console.log('[Mercury Scrape] Scraping Product Knowledge Portal:', url);
+  console.log('[Mercury Scrape] Using automated login with dealer credentials');
+
+  const loginUrl = 'https://productknowledge.mercurymarine.com';
 
   try {
-    // Use Firecrawl with headers/cookies for authenticated session
+    // Use Firecrawl with actions for automated login
     const response = await fetch('https://api.firecrawl.dev/v1/scrape', {
       method: 'POST',
       headers: {
@@ -99,19 +117,45 @@ async function scrapeMercuryDealerPortal(
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        url,
-        formats: ['html', 'screenshot', 'links'],
+        url: loginUrl,
+        formats: ['html', 'links'],
         waitFor: 5000,
-        timeout: 60000,
-        // Pass session cookie as header for authenticated access
-        headers: {
-          'Cookie': sessionCookie,
-        },
-        // Scroll to load all images after page loads
+        timeout: 120000,
+        // Actions for automated login and navigation
         actions: [
-          { type: 'wait', milliseconds: 2000 },
-          { type: 'scroll', direction: 'down', amount: 2000 },
+          // Wait for SPA to load
+          { type: 'wait', milliseconds: 3000 },
+          
+          // Click on email input and enter dealer email
+          { type: 'click', selector: 'input[type="email"], input[name="email"], input[name="username"], input[id*="email"], input[placeholder*="email" i], input[placeholder*="user" i]' },
+          { type: 'write', text: dealerEmail },
+          
+          // Click on password input and enter password
+          { type: 'click', selector: 'input[type="password"], input[name="password"], input[id*="password"]' },
+          { type: 'write', text: dealerPassword },
+          
+          // Wait a moment for form validation
+          { type: 'wait', milliseconds: 500 },
+          
+          // Click login/submit button
+          { type: 'click', selector: 'button[type="submit"], input[type="submit"], button:contains("Login"), button:contains("Sign In"), button:contains("Log In"), .login-button, .btn-login, [data-testid="login-button"]' },
+          
+          // Wait for authentication to complete
+          { type: 'wait', milliseconds: 8000 },
+          
+          // Navigate to the target product page
+          { type: 'goto', url: url },
+          
+          // Wait for product page to load
+          { type: 'wait', milliseconds: 5000 },
+          
+          // Scroll down to load all images (lazy loading)
+          { type: 'scroll', direction: 'down', amount: 1000 },
           { type: 'wait', milliseconds: 1000 },
+          { type: 'scroll', direction: 'down', amount: 1000 },
+          { type: 'wait', milliseconds: 1000 },
+          { type: 'scroll', direction: 'down', amount: 1000 },
+          { type: 'wait', milliseconds: 2000 },
         ],
       }),
     });
@@ -119,19 +163,27 @@ async function scrapeMercuryDealerPortal(
     if (!response.ok) {
       const errorText = await response.text();
       console.error('[Mercury Scrape] Firecrawl error:', response.status, errorText);
-      return { success: false, images: [], error: `Firecrawl returned ${response.status}` };
+      return { success: false, images: [], error: `Firecrawl returned ${response.status}: ${errorText}` };
     }
 
     const data = await response.json();
+    console.log('[Mercury Scrape] Firecrawl response success:', data.success);
+    
     const html = data.data?.html || data.html || '';
     
     if (!html) {
-      console.log('[Mercury Scrape] No HTML content returned - cookie may be expired');
-      return { success: false, images: [], error: 'No HTML content - session cookie may be expired' };
+      console.log('[Mercury Scrape] No HTML content returned');
+      return { success: false, images: [], error: 'No HTML content returned - login may have failed' };
+    }
+    
+    // Check if we got a login page instead of content
+    if (html.toLowerCase().includes('sign in') && html.toLowerCase().includes('password') && !html.toLowerCase().includes('product')) {
+      console.log('[Mercury Scrape] Still on login page - authentication failed');
+      return { success: false, images: [], error: 'Authentication failed - still on login page' };
     }
     
     const imageUrls = extractImageUrls(html);
-    console.log('[Mercury Scrape] Found', imageUrls.length, 'images from dealer portal');
+    console.log('[Mercury Scrape] Found', imageUrls.length, 'images from Product Knowledge Portal');
     
     return { success: true, images: imageUrls, html };
   } catch (error) {
@@ -183,6 +235,15 @@ function extractImageUrls(html: string): string[] {
     }
   }
   
+  // Match any Mercury CDN image URLs in the HTML
+  const cdnMatches = html.matchAll(/https?:\/\/[^"'\s]*(?:mercury|productknowledge)[^"'\s]*\.(?:jpg|jpeg|png|webp)/gi);
+  for (const match of cdnMatches) {
+    const src = match[0];
+    if (isValidMotorImage(src)) {
+      images.push(normalizeImageUrl(src));
+    }
+  }
+  
   // Deduplicate
   return [...new Set(images)];
 }
@@ -203,6 +264,8 @@ function isValidMotorImage(url: string): boolean {
       lowerUrl.includes('tracking') ||
       lowerUrl.includes('pixel') ||
       lowerUrl.includes('spacer') ||
+      lowerUrl.includes('favicon') ||
+      lowerUrl.includes('spinner') ||
       lowerUrl.length < 10) {
     return false;
   }
@@ -214,7 +277,10 @@ function isValidMotorImage(url: string): boolean {
                           lowerUrl.includes('product') ||
                           lowerUrl.includes('mercury') ||
                           lowerUrl.includes('verado') ||
-                          lowerUrl.includes('fourstroke');
+                          lowerUrl.includes('fourstroke') ||
+                          lowerUrl.includes('seapro') ||
+                          lowerUrl.includes('prokicker') ||
+                          lowerUrl.includes('pro-xs');
   
   const hasImageExt = lowerUrl.includes('.jpg') || 
                       lowerUrl.includes('.jpeg') || 
@@ -230,7 +296,7 @@ function normalizeImageUrl(url: string): string {
     return 'https:' + url;
   }
   if (url.startsWith('/')) {
-    return 'https://dealer.mercurymarine.com' + url;
+    return 'https://productknowledge.mercurymarine.com' + url;
   }
   return url;
 }
@@ -248,7 +314,7 @@ async function uploadImageToStorage(
     const response = await fetch(imageUrl, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        'Referer': 'https://dealer.mercurymarine.com/',
+        'Referer': 'https://productknowledge.mercurymarine.com/',
       },
     });
     
@@ -310,7 +376,7 @@ async function insertMotorMedia(
       display_order: index,
       is_active: true,
       metadata: { 
-        source: 'mercury_dealer_portal', 
+        source: 'mercury_product_knowledge', 
         hp_family: groupKey,
         scraped_at: new Date().toISOString()
       }
@@ -342,23 +408,25 @@ serve(async (req) => {
       throw new Error('FIRECRAWL_API_KEY not configured');
     }
 
-    const sessionCookie = Deno.env.get('MERCURY_DEALER_SESSION_COOKIE');
-    if (!sessionCookie) {
-      throw new Error('MERCURY_DEALER_SESSION_COOKIE not configured - please add your Mercury dealer portal session cookies as a secret');
+    const dealerEmail = Deno.env.get('MERCURY_DEALER_EMAIL');
+    const dealerPassword = Deno.env.get('MERCURY_DEALER_PASSWORD');
+    
+    if (!dealerEmail || !dealerPassword) {
+      throw new Error('MERCURY_DEALER_EMAIL and MERCURY_DEALER_PASSWORD must be configured');
     }
 
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-    console.log('[Main] Starting Mercury Dealer Portal scrape with cookie-based authentication...');
+    console.log('[Main] Starting Mercury Product Knowledge Portal scrape with automated login...');
+    console.log('[Main] Target: productknowledge.mercurymarine.com');
 
-    // Get motors to process - includes ALL motors by default
+    // Get motors to process
     let query = supabase
       .from('motor_models')
       .select('id, model_display, horsepower, model_number, family');
     
-    // Only filter by stock if explicitly requested (includeOutOfStock = false)
     if (!includeOutOfStock) {
       query = query.eq('in_stock', true);
     }
@@ -391,14 +459,16 @@ serve(async (req) => {
       try {
         console.log(`[Main] Processing group: ${group.key} (${group.motors.length} motors)`);
         
-        const searchUrl = buildDealerPortalSearchUrl(group.hp, group.family);
-        const scrapeResult = await scrapeMercuryDealerPortal(
+        const searchUrl = buildProductKnowledgeUrl(group.hp, group.family);
+        const scrapeResult = await scrapeProductKnowledgePortal(
           searchUrl, 
           firecrawlApiKey,
-          sessionCookie
+          dealerEmail,
+          dealerPassword
         );
         
         if (!scrapeResult.success || scrapeResult.images.length === 0) {
+          results.errors.push(`Group ${group.key}: ${scrapeResult.error || 'No images found'}`);
           results.groups.push({
             key: group.key,
             hp: group.hp,
@@ -425,9 +495,10 @@ serve(async (req) => {
             status: 'dry_run',
             imagesFound: imagesToProcess.length,
             imageUrls: imagesToProcess.slice(0, 5),
+            targetUrl: searchUrl,
           });
         } else {
-          // Upload ALL images for this group
+          // Upload images for this group
           const uploadedImages: { url: string; index: number }[] = [];
           
           for (let i = 0; i < imagesToProcess.length; i++) {
@@ -445,16 +516,14 @@ serve(async (req) => {
           }
 
           if (uploadedImages.length > 0) {
-            // Build images array for motor_models
             const imagesArray = uploadedImages.map((img, idx) => ({
               url: img.url,
               type: idx === 0 ? 'hero' : 'gallery',
-              source: 'mercury_dealer_portal'
+              source: 'mercury_product_knowledge'
             }));
 
-            // Update ALL motors in this group with the same images
+            // Update ALL motors in this group
             for (const motor of group.motors) {
-              // Update motor_models record
               await supabase
                 .from('motor_models')
                 .update({ 
@@ -464,7 +533,6 @@ serve(async (req) => {
                 })
                 .eq('id', motor.id);
 
-              // Insert into motor_media table
               for (const img of uploadedImages) {
                 await insertMotorMedia(
                   supabase,
@@ -494,23 +562,32 @@ serve(async (req) => {
         results.groupsProcessed++;
         results.processed++;
 
-        // Rate limiting - wait between group scrapes
-        await new Promise(resolve => setTimeout(resolve, 3000));
+        // Rate limiting
+        await new Promise(resolve => setTimeout(resolve, 5000));
       } catch (error) {
         console.error('[Main] Error processing group:', group.key, error);
         results.errors.push(`${group.key}: ${(error as Error).message}`);
       }
     }
 
-    return new Response(
-      JSON.stringify({ success: true, ...results }),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-    );
+    return new Response(JSON.stringify({
+      success: true,
+      dryRun,
+      results,
+      message: dryRun 
+        ? `Dry run complete. Found ${results.totalImagesFound} images across ${results.groupsProcessed} groups.`
+        : `Scraped ${results.totalImagesUploaded} images and updated ${results.totalMotorsUpdated} motors.`,
+    }), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
   } catch (error) {
-    console.error('[Main] Error:', error);
-    return new Response(
-      JSON.stringify({ success: false, error: (error as Error).message }),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 500 }
-    );
+    console.error('[Main] Fatal error:', error);
+    return new Response(JSON.stringify({
+      success: false,
+      error: (error as Error).message,
+    }), {
+      status: 500,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
   }
 });
