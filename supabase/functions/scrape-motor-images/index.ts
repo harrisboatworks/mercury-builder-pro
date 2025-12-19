@@ -64,6 +64,46 @@ function normalizeFamily(family?: string): string {
   return 'fourstroke';
 }
 
+const FAMILY_URL_EXCLUSIONS: Record<string, string[]> = {
+  fourstroke: ['verado', 'v10', 'v12', 'proxs', 'pro-xs', 'seapro', 'sea-pro', 'prokicker', 'jet', '_jet_'],
+  proxs: ['verado', 'v10', 'v12', 'fourstroke', 'four-stroke', 'seapro', 'sea-pro', 'prokicker', 'jet', '_jet_'],
+  verado: ['fourstroke', 'four-stroke', 'proxs', 'pro-xs', 'seapro', 'sea-pro', 'prokicker', 'jet', '_jet_'],
+  seapro: ['verado', 'v10', 'v12', 'proxs', 'pro-xs', 'fourstroke', 'prokicker'],
+};
+
+function inferControlType(modelDisplay?: string): 'tiller' | 'remote' | 'unknown' {
+  const s = (modelDisplay || '').toLowerCase();
+  if (s.includes('tiller')) return 'tiller';
+  if (s.includes('remote')) return 'remote';
+  return 'unknown';
+}
+
+function isImageMostlyBlank(bytes: Uint8Array): boolean {
+  // Quick check: if file is very small, it might be corrupt
+  if (bytes.length < 8000) return true;
+
+  const sampleStart = Math.min(1000, Math.floor(bytes.length * 0.1));
+  const sampleEnd = Math.min(bytes.length - 100, sampleStart + 2000);
+  if (sampleEnd <= sampleStart) return false;
+
+  let uniformCount = 0;
+  const threshold = 250; // near-white
+
+  for (let i = sampleStart; i < sampleEnd; i += 3) {
+    if (bytes[i] > threshold && bytes[i + 1] > threshold && bytes[i + 2] > threshold) {
+      uniformCount++;
+    }
+  }
+
+  const sampleSize = (sampleEnd - sampleStart) / 3;
+  return (uniformCount / sampleSize) > 0.8;
+}
+
+function urlLooksTiller(url: string): boolean {
+  const u = url.toLowerCase();
+  return u.includes('tiller') || u.includes('tiller-handle') || u.includes('_t_') || u.includes('-t-');
+}
+
 // Build URL slug from model_display with family awareness
 function buildAlberniSlug(modelDisplay: string, family?: string, hp?: number): string {
   if (!modelDisplay) return '';
@@ -153,19 +193,29 @@ async function downloadImage(url: string): Promise<{
         'User-Agent': 'Mozilla/5.0 (compatible; HarrisBoatWorks/1.0)',
       },
     });
-    
+
     if (!response.ok) {
       console.error(`Failed to download ${url}: ${response.status}`);
       return null;
     }
-    
+
     const arrayBuffer = await response.arrayBuffer();
     const contentType = response.headers.get('content-type') || 'image/jpeg';
-    
-    return { 
-      buffer: new Uint8Array(arrayBuffer), 
-      contentType 
-    };
+    const buffer = new Uint8Array(arrayBuffer);
+
+    // Minimum size check (~10KB) to avoid tiny icons/thumbnails
+    if (buffer.length < 10000) {
+      console.log(`Image too small (${buffer.length} bytes), skipping: ${url.substring(0, 80)}`);
+      return null;
+    }
+
+    // Skip blank/mostly-white images (often transparent PNGs rendered on white)
+    if (isImageMostlyBlank(buffer)) {
+      console.log(`Image appears mostly blank, skipping: ${url.substring(0, 80)}`);
+      return null;
+    }
+
+    return { buffer, contentType };
   } catch (error) {
     console.error(`Error downloading ${url}:`, error);
     return null;
@@ -247,65 +297,84 @@ async function pollForExtraction(jobId: string, apiKey: string, maxWaitMs = 6000
   throw new Error('Extraction timeout - exceeded 60 seconds');
 }
 
-// Validate if image URL matches expected HP (filter wrong-HP images)
-function validateImageHpMatch(imageUrl: string, targetHp: number): boolean {
+// Validate if image URL matches expected motor (avoid wrong-family and wrong-control images)
+function validateImageMatch(imageUrl: string, targetHp: number, family?: string, modelDisplay?: string): boolean {
   const url = imageUrl.toLowerCase();
-  
-  // Extract HP numbers from URL patterns
+
+  // 1) Reject images that clearly contain a different HP number
   const hpPatterns = [
     /(\d+(?:\.\d+)?)\s*hp/gi,
     /(\d+(?:\.\d+)?)-hp/gi,
     /-(\d+)-(?:fourstroke|outboard|motor)/gi,
     /\/(\d+)hp\//gi,
   ];
-  
+
   for (const pattern of hpPatterns) {
     let match;
     while ((match = pattern.exec(url)) !== null) {
       const foundHp = parseFloat(match[1]);
-      // If we find a different HP in the URL, reject it
       if (foundHp > 1 && foundHp <= 600 && Math.abs(foundHp - targetHp) > 2) {
         console.log(`[HP Validation] Rejecting image with HP ${foundHp}, expected ${targetHp}: ${imageUrl}`);
         return false;
       }
     }
   }
-  
-  // Check for "related products" or "similar items" in path
+
+  // 2) Reject obvious related/similar products sections
   if (url.includes('related') || url.includes('similar') || url.includes('also-like')) {
-    console.log(`[HP Validation] Rejecting related product image: ${imageUrl}`);
+    console.log(`[Validation] Rejecting related product image: ${imageUrl}`);
     return false;
   }
-  
+
+  // 3) Reject wrong-family keywords
+  const normalizedFamily = normalizeFamily(family);
+  const exclusions = FAMILY_URL_EXCLUSIONS[normalizedFamily] || [];
+  for (const excl of exclusions) {
+    if (url.includes(excl)) {
+      console.log(`[Family Validation] Rejecting image (wrong family: ${excl}): ${imageUrl}`);
+      return false;
+    }
+  }
+
+  // 4) Reject tiller images if this motor is not a tiller model
+  const control = inferControlType(modelDisplay);
+  if ((control === 'remote' || control === 'unknown') && urlLooksTiller(url)) {
+    console.log(`[Control Validation] Rejecting tiller image for non-tiller motor: ${imageUrl}`);
+    return false;
+  }
+
   return true;
 }
 
 // FIRE-1 agent extraction for images
-async function scrapeImagesWithFire1(url: string, apiKey: string, hp: number): Promise<string[]> {
-  console.log(`[Firecrawl FIRE-1] Extracting images from: ${url} for ${hp} HP motor`);
-  
-  const extractionPrompt = `
-You are extracting product images from a marine dealer website for a ${hp} HP outboard motor.
+async function scrapeImagesWithFire1(url: string, apiKey: string, hp: number, family?: string, modelDisplay?: string): Promise<string[]> {
+  const normalizedFamily = normalizeFamily(family);
+  const control = inferControlType(modelDisplay);
 
-CRITICAL: Only extract images showing a ${hp} HP motor. The HP number "${hp}" should be visible on the motor cowling in photos, or the page context should clearly indicate this is the ${hp} HP model.
+  console.log(`[Firecrawl FIRE-1] Extracting images from: ${url} for ${hp} HP motor (${normalizedFamily}, ${control})`);
+
+  const extractionPrompt = `
+You are extracting product images from a marine dealer website for a Mercury ${hp} HP outboard motor.
+
+CONTEXT:
+- Motor family: ${normalizedFamily}
+- Control type: ${control}
+- Model name: ${modelDisplay || ''}
 
 EXTRACTION REQUIREMENTS:
-1. Extract ONLY product images of the ${hp} HP motor/engine itself
+1. Extract ONLY product images of THIS motor listing (the motor/engine itself)
 2. Prioritize high-quality images (large, clear, professional photos)
-3. The hero image should be the main product shot showing the ${hp} HP motor
+3. Prefer cutout/clean product shots (white background) and profile views
 
-STRICTLY EXCLUDE these types of images:
-- Company logos and branding images
-- Navigation icons and buttons
-- Social media icons
+STRICTLY EXCLUDE:
+- Company logos, icons, UI elements
 - Promotional banners and sale graphics
 - Thumbnails (URLs containing 'thumb', 'small', '-320', 'icon')
 - Images from "Similar Items", "Related Products", "You May Also Like" sections
-- Images of different HP motors - if you see a motor showing a different HP number (like 20, 40, 60, etc. that is NOT ${hp}), do NOT include it
-- Lifestyle/action shots that don't clearly show the motor
-- Cart icons, wishlist icons, comparison icons
+- Images clearly belonging to other Mercury families (Verado, Pro XS, Jet, SeaPro, ProKicker)
+- If control type is remote/unknown: exclude tiller-handle images
 
-Return full absolute URLs only. Quality over quantity - only include images you're confident show the ${hp} HP motor.
+Return full absolute URLs only. Quality over quantity.
 `;
 
   try {
@@ -371,11 +440,11 @@ Return full absolute URLs only. Quality over quantity - only include images you'
       }
     }
 
-    // PHASE 2: Validate images match target HP
-    const validatedImages = rawImages.filter(imgUrl => validateImageHpMatch(imgUrl, hp));
-    
-    console.log(`[Firecrawl FIRE-1] Found ${rawImages.length} images, ${validatedImages.length} passed HP validation for ${hp} HP`);
-    return validatedImages.slice(0, 10); // Max 10 images
+    // PHASE 2: Validate images match expected motor (hp/family/control)
+    const validatedImages = rawImages.filter((imgUrl) => validateImageMatch(imgUrl, hp, family, modelDisplay));
+
+    console.log(`[Firecrawl FIRE-1] Found ${rawImages.length} images, ${validatedImages.length} passed validation for ${hp} HP`);
+    return validatedImages.slice(0, 5); // Max 5 images for quality
 
   } catch (error) {
     console.error('[Firecrawl FIRE-1] Image extraction error:', error);
@@ -402,9 +471,9 @@ async function scrapeMotorImages(
   try {
     const productUrl = buildProductUrl(motor.model_display, motor.horsepower, motor.family);
     result.url = productUrl;
-    
+
     // Use FIRE-1 agent for image extraction
-    const scrapedImageUrls = await scrapeImagesWithFire1(productUrl, apiKey, motor.horsepower);
+    const scrapedImageUrls = await scrapeImagesWithFire1(productUrl, apiKey, motor.horsepower, motor.family, motor.model_display);
     
     result.imagesFound = scrapedImageUrls.length;
 
@@ -423,7 +492,7 @@ async function scrapeMotorImages(
 
     // Download and upload images to our storage
     const uploadedUrls: string[] = [];
-    const maxImages = Math.min(scrapedImageUrls.length, 8);
+    const maxImages = Math.min(scrapedImageUrls.length, 5);
 
     for (let i = 0; i < maxImages; i++) {
       const sourceUrl = scrapedImageUrls[i];
