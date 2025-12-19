@@ -19,147 +19,53 @@ interface ScrapeResult {
   images: string[];
 }
 
-async function firecrawlScrape(url: string, apiKey: string): Promise<{ html?: string; markdown?: string }> {
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 30000); // 30s timeout
-  const res = await fetch('https://api.firecrawl.dev/v1/scrape', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
+// Schema for FIRE-1 agent structured extraction
+const motorDataSchema = {
+  type: "object",
+  properties: {
+    description: { 
+      type: "string", 
+      description: "2-3 sentence conversational product description focusing on benefits and use cases. Do NOT include pricing." 
     },
-    body: JSON.stringify({ url, formats: ['html','markdown'], onlyMainContent: true }),
-    signal: controller.signal,
-  });
-  clearTimeout(timeoutId);
-  if (!res.ok) {
-    throw new Error(`Firecrawl scrape failed: ${res.status} ${await res.text()}`);
-  }
-  const data = await res.json();
-  // Support multiple possible shapes
-  const html = data?.data?.html || data?.html || null;
-  const markdown = data?.data?.markdown || data?.markdown || null;
-  return { html: html || undefined, markdown: markdown || undefined };
-}
-
-function firstNonEmptyParagraph(md?: string | null): string | null {
-  if (!md) return null;
-  const lines = md.split(/\r?\n/);
-  for (const raw of lines) {
-    const line = raw.trim();
-    if (!line) continue;
-    if (line.startsWith('#') || line.startsWith('- ') || line.startsWith('* ') || line.startsWith('|')) continue;
-    if (line.length < 40) continue; // prefer substantive text
-    return line;
-  }
-  return null;
-}
-
-function extractMetaDescription(html?: string | null): string | null {
-  if (!html) return null;
-  const m = html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["'][^>]*>/i);
-  return m ? m[1].trim() : null;
-}
-
-function extractFeatures(md?: string | null): string[] {
-  if (!md) return [];
-  const out: string[] = [];
-  const lines = md.split(/\r?\n/);
-  let inFeatures = false;
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
-    const isHeader = /^#{1,6}\s+/.test(line);
-    if (isHeader && /feature/i.test(line)) { inFeatures = true; continue; }
-    if (isHeader && inFeatures) break; // next section
-    if (inFeatures && (/^-\s+/.test(line) || /^\*\s+/.test(line))) {
-      out.push(line.replace(/^[-*]\s+/, '').trim());
-      if (out.length >= 12) break;
+    features: { 
+      type: "array", 
+      items: { type: "string" },
+      description: "6-10 key features and benefits as concise bullet points"
+    },
+    specifications: {
+      type: "object",
+      properties: {
+        displacement: { type: "string", description: "Engine displacement in cc or L" },
+        cylinders: { type: "string", description: "Number of cylinders" },
+        boreStroke: { type: "string", description: "Bore x stroke dimensions" },
+        gearRatio: { type: "string", description: "Gear ratio" },
+        weight: { type: "string", description: "Dry weight" },
+        fuelSystem: { type: "string", description: "Fuel injection type (EFI, Carburetor, etc.)" },
+        ignition: { type: "string", description: "Ignition system type" },
+        exhaustSystem: { type: "string", description: "Exhaust system type" },
+        engineType: { type: "string", description: "Engine type (inline, V, etc.)" },
+        alternatorOutput: { type: "string", description: "Alternator output in amps" },
+        recommendedFuel: { type: "string", description: "Recommended fuel type/octane" },
+        oilCapacity: { type: "string", description: "Oil capacity" },
+        coolingSystem: { type: "string", description: "Cooling system type" },
+        propShaftHorsepower: { type: "string", description: "Prop shaft horsepower rating" },
+        maxRPM: { type: "string", description: "Maximum RPM range" },
+        shaftLengths: { type: "array", items: { type: "string" }, description: "Available shaft lengths" },
+        steering: { type: "string", description: "Steering type" },
+        tiltTrim: { type: "string", description: "Tilt and trim system" },
+        starting: { type: "string", description: "Starting system (Electric/Manual)" },
+        controls: { type: "string", description: "Control type (Remote/Tiller)" }
+      },
+      description: "Technical specifications extracted from the page"
+    },
+    images: {
+      type: "array",
+      items: { type: "string" },
+      description: "Product image URLs (full absolute URLs only, no icons/logos/thumbnails)"
     }
-  }
-  // Fallback: collect any top-level bullets if none found under a Features header
-  if (out.length === 0) {
-    for (const raw of lines) {
-      const line = raw.trim();
-      if (/^[-*]\s+/.test(line)) out.push(line.replace(/^[-*]\s+/, '').trim());
-      if (out.length >= 8) break;
-    }
-  }
-  return out;
-}
-
-function extractSpecifications(md?: string | null): Record<string, unknown> {
-  const specs: Record<string, unknown> = {};
-  if (!md) return specs;
-  const lines = md.split(/\r?\n/);
-  let inSpecs = false;
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
-    const isHeader = /^#{1,6}\s+/.test(line);
-    if (isHeader && /(spec|specification)/i.test(line)) { inSpecs = true; continue; }
-    if (isHeader && inSpecs) break; // next section ends specs
-    if (!inSpecs) continue;
-    // Parse table-style key | value
-    if (/^\|/.test(line) && line.split('|').length >= 3) {
-      const parts = line.split('|').map(s => s.trim()).filter(Boolean);
-      if (parts.length >= 2 && !/^[-:]+$/.test(parts[0]) && !/^[-:]+$/.test(parts[1])) {
-        const key = parts[0].replace(/\*\*/g, '').trim();
-        const val = parts[1].replace(/\*\*/g, '').trim();
-        if (key && val) specs[key] = val;
-      }
-      continue;
-    }
-    // Parse bullet "Key: Value"
-    const m = line.match(/^[*-]\s*([^:]+):\s*(.+)$/);
-    if (m) {
-      const key = m[1].trim();
-      const val = m[2].trim();
-      if (key && val) specs[key] = val;
-    }
-  }
-  return specs;
-}
-
-function extractImages(html?: string | null, baseUrl?: string): string[] {
-  if (!html) return [];
-
-  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
-  const images: string[] = [];
-  let match;
-
-  while ((match = imgRegex.exec(html)) !== null) {
-    let imgUrl = match[1];
-    
-    // Skip unwanted images but be more selective for motor images
-    if (imgUrl.includes('icon') || imgUrl.includes('logo') || imgUrl.includes('nav') || 
-        imgUrl.includes('social') || imgUrl.includes('footer') || imgUrl.includes('header') ||
-        imgUrl.includes('sprite') || imgUrl.includes('placeholder') || imgUrl.includes('loader')) {
-      continue;
-    }
-
-    // Prioritize high-quality motor images
-    const isHighQuality = imgUrl.includes('detail') || imgUrl.includes('large') || 
-                         imgUrl.includes('gallery') || imgUrl.includes('product') ||
-                         imgUrl.includes('motor') || imgUrl.includes('engine');
-    
-    // Make relative URLs absolute
-    if (imgUrl.startsWith('/')) {
-      if (baseUrl) {
-        const base = new URL(baseUrl);
-        imgUrl = `${base.protocol}//${base.host}${imgUrl}`;
-      }
-    } else if (!imgUrl.startsWith('http')) {
-      if (baseUrl) {
-        imgUrl = new URL(imgUrl, baseUrl).href;
-      }
-    }
-    
-    images.push(imgUrl);
-  }
-  
-  // Return unique images, prioritized by quality
-  const uniqueImages = [...new Set(images)];
-  return uniqueImages.slice(0, 10); // Limit to 10 images max
-}
+  },
+  required: ["description", "features", "specifications"]
+};
 
 function normalizeDetailUrl(input: string): string {
   const base = 'https://www.harrisboatworks.ca';
@@ -169,7 +75,7 @@ function normalizeDetailUrl(input: string): string {
     // Fix duplicated domain pattern
     s = s.replace(/https?:\/\/(?:www\.)?harrisboatworks\.ca\/?https?:\/\/(?:www\.)?harrisboatworks\.ca/i, 'https://www.harrisboatworks.ca');
     const u = new URL(s.startsWith('http') ? s : s.startsWith('/') ? `${base}${s}` : `${base}/${s}`);
-    // Remove duplicated host fragment in pathname (e.g., //www.harrisboatworks.ca/...) and collapse slashes
+    // Remove duplicated host fragment in pathname and collapse slashes
     const dupHost = `//${u.host}`;
     let path = u.pathname.startsWith(dupHost) ? u.pathname.slice(dupHost.length) : u.pathname;
     path = path.replace(/\/+/, '/');
@@ -227,246 +133,120 @@ async function uploadInventoryImage(imageUrl: string, modelKey: string, supabase
   }
 }
 
-async function scrapeDetails(url: string, apiKey: string, modelName?: string): Promise<ScrapeResult> {
-  let html: string | undefined;
-  let markdown: string | undefined;
+// FIRE-1 agent extraction - replaces all manual regex parsing
+async function scrapeWithFire1Agent(url: string, apiKey: string, modelName?: string): Promise<ScrapeResult> {
+  console.log(`[Firecrawl FIRE-1] Extracting motor details from: ${url}`);
+  
+  const extractionPrompt = `
+You are extracting outboard motor product information from a dealer or manufacturer website.
+${modelName ? `The motor model is: ${modelName}` : ''}
+
+EXTRACTION REQUIREMENTS:
+1. Description: Write a 2-3 sentence conversational description focusing on what makes this motor special and ideal use cases. Do NOT include pricing information.
+
+2. Features: Extract 6-10 key features and benefits. Format as concise bullet points. Include information about:
+   - Fuel efficiency
+   - Power and performance
+   - Reliability features
+   - Special technology (EFI, SmartCraft, etc.)
+
+3. Specifications: Extract ALL technical specifications you can find, including:
+   - Displacement (cc or L)
+   - Number of cylinders
+   - Bore x stroke
+   - Gear ratio
+   - Weight (dry weight, lbs or kg)
+   - Fuel system type
+   - Ignition system
+   - Alternator output (amps)
+   - Available shaft lengths
+   - Maximum RPM
+   - Starting system (electric/manual)
+   - Control type (remote/tiller)
+
+4. Images: Extract full product image URLs only. Exclude:
+   - Icons, logos, navigation images
+   - Thumbnails (URLs containing 'thumb', 'small', '-320')
+   - Social media icons
+   - Placeholder images
+
+Be accurate and thorough. Only include information that is explicitly stated on the page.
+`;
+
   try {
-    console.log('Attempting to scrape:', url);
-    const res = await firecrawlScrape(url, apiKey);
-    html = res.html;
-    markdown = res.markdown;
-    console.log('Scrape successful for:', url);
-  } catch (e) {
-    console.error('Scrape failed for:', url, e);
-    console.warn('Firecrawl error, falling back to direct fetch:', e);
-    try {
-      const resp = await fetch(url);
-      if (resp.ok) html = await resp.text();
-    } catch (err) {
-      console.error('Direct fetch failed for:', url, err);
+    const response = await fetch('https://api.firecrawl.dev/v1/extract', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        urls: [url],
+        schema: motorDataSchema,
+        prompt: extractionPrompt,
+        enableWebSearch: false,
+        allowExternalLinks: false,
+        agent: {
+          model: 'FIRE-1'
+        }
+      }),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`[Firecrawl FIRE-1] API error: ${response.status} - ${errorText}`);
+      throw new Error(`Firecrawl FIRE-1 API error: ${response.status}`);
     }
-  }
 
-  // Baseline extraction from markdown/meta
-  let description: string | null = firstNonEmptyParagraph(markdown) || extractMetaDescription(html) || null;
-  let features: string[] = extractFeatures(markdown);
-  let specifications: Record<string, unknown> = extractSpecifications(markdown);
-  let images: string[] = extractImages(html, url);
+    const data = await response.json();
+    console.log(`[Firecrawl FIRE-1] Extraction response:`, JSON.stringify(data).substring(0, 500));
+    
+    if (!data.success) {
+      throw new Error(data.error || 'Firecrawl FIRE-1 extraction failed');
+    }
 
-  // Targeted extraction from HTML to avoid picking up navigation links
-  try {
-    const textMd = markdown || '';
-    const textHtml = html || '';
+    // Extract from the response - handle both array and direct object formats
+    const extractedData = Array.isArray(data.data) ? data.data[0] : data.data;
+    
+    if (!extractedData) {
+      console.log('[Firecrawl FIRE-1] No data extracted, returning empty result');
+      return {
+        description: null,
+        features: [],
+        specifications: {},
+        images: []
+      };
+    }
 
-    // Common spec patterns found on product pages
-    const specPatterns: Record<string, RegExp> = {
-      weight: /Weight[:\s]+([0-9,.]+ ?(?:lbs?|kg))/i,
-      shaft_length: /Shaft(?: Length)?[:\s]+([\d\s"',]+)/i,
-      displacement: /Displacement[:\s]+([0-9,.]+ ?cc)/i,
-      cylinders: /Cylinders?[:\s]+(\d+)/i,
-      starting: /Start(?:ing)?[:\s]+(Electric|Manual|Both)/i,
-      controls: /Control[:\s]+(Tiller|Remote|Both)/i,
-      fuel_system: /Fuel(?: System)?[:\s]+(EFI|Carb|Carburetor|Electronic Fuel Injection)/i,
+    // Flatten specifications object if nested
+    let specifications = extractedData.specifications || {};
+    if (specifications.specifications) {
+      specifications = { ...specifications, ...specifications.specifications };
+      delete specifications.specifications;
+    }
+
+    const result: ScrapeResult = {
+      description: extractedData.description || null,
+      features: Array.isArray(extractedData.features) ? extractedData.features : [],
+      specifications,
+      images: Array.isArray(extractedData.images) ? extractedData.images.filter((url: string) => 
+        typeof url === 'string' && url.startsWith('http')
+      ) : [],
     };
 
-    for (const [key, pattern] of Object.entries(specPatterns)) {
-      const m = textMd.match(pattern) || textHtml.match(pattern);
-      if (m && m[1]) {
-        (specifications as Record<string, string>)[key] = m[1].trim();
-      }
-    }
-
-    // Additionally, parse spec tables (tr/td) commonly used on dealer pages
-    try {
-      const tableRegex = /<table[\s\S]*?<\/table>/gi;
-      const rowRegex = /<tr[\s\S]*?<\/tr>/gi;
-      const cellRegex = /<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi;
-      const tables = textHtml.match(tableRegex) || [];
-      for (const tbl of tables) {
-        const rows = tbl.match(rowRegex) || [];
-        for (const row of rows) {
-          const cells = row.match(cellRegex) || [];
-          if (cells.length >= 2) {
-            const label = cells[0].replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
-            const value = cells[1].replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
-            if (!label || !value) continue;
-            const map = (lab: string) => {
-              if (/weight/i.test(lab)) return 'weight';
-              if (/shaft/i.test(lab)) return 'shaft_length';
-              if (/displacement/i.test(lab)) return 'displacement';
-              if (/cylinder/i.test(lab)) return 'cylinders';
-              if (/start/i.test(lab)) return 'starting';
-              if (/control/i.test(lab)) return 'controls';
-              if (/gear.*ratio/i.test(lab)) return 'gearRatio';
-              if (/fuel/i.test(lab)) return 'fuel_system';
-              if (/cooling/i.test(lab)) return 'cooling';
-              if (/bore/i.test(lab)) return 'bore';
-              if (/stroke/i.test(lab)) return 'stroke';
-              if (/alternator/i.test(lab)) return 'alternator';
-              if (/prop/i.test(lab)) return 'propeller';
-              return '';
-            };
-            const key = map(label);
-            if (key && !(key in specifications)) (specifications as Record<string, string>)[key] = value;
-          }
-        }
-      }
-    } catch {}
-
-    // Parse definition lists (dl/dt/dd)
-    try {
-      const dlRegex = /<dl[\s\S]*?<\/dl>/gi;
-      const itemRegex = /<dt[^>]*>([\s\S]*?)<\/dt>\s*<dd[^>]*>([\s\S]*?)<\/dd>/gi;
-      const dls = textHtml.match(dlRegex) || [];
-      for (const dl of dls) {
-        let mItem: RegExpExecArray | null;
-        while ((mItem = itemRegex.exec(dl))) {
-          const label = (mItem[1] || '').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
-          const value = (mItem[2] || '').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
-          if (!label || !value) continue;
-          const map = (lab: string) => {
-            if (/weight/i.test(lab)) return 'weight';
-            if (/shaft/i.test(lab)) return 'shaft_length';
-            if (/displacement/i.test(lab)) return 'displacement';
-            if (/cylinder/i.test(lab)) return 'cylinders';
-            if (/start/i.test(lab)) return 'starting';
-            if (/control/i.test(lab)) return 'controls';
-            if (/gear.*ratio/i.test(lab)) return 'gearRatio';
-            if (/fuel/i.test(lab)) return 'fuel_system';
-            if (/cooling/i.test(lab)) return 'cooling';
-            if (/bore/i.test(lab)) return 'bore';
-            if (/stroke/i.test(lab)) return 'stroke';
-            if (/alternator/i.test(lab)) return 'alternator';
-            if (/prop/i.test(lab)) return 'propeller';
-            return '';
-          };
-          const key = map(label);
-          if (key && !(key in specifications)) (specifications as Record<string, string>)[key] = value;
-        }
-      }
-    } catch {}
-
-    // If weight still missing, try more text patterns
-    if (!(specifications as any).weight) {
-      const weightPatterns = [
-        /Weight[:\s]+([0-9,.]+ ?(lbs?|kg))/i,
-        /Dry Weight[:\s]+([0-9,.]+ ?(lbs?|kg))/i,
-        /(\d+\.?\d*)\s*(lbs?|kg)\s*\(?dry weight\)?/i,
-        /weighs?\s+(\d+\.?\d*)\s*(lbs?|kg)/i,
-      ];
-      for (const pat of weightPatterns) {
-        const m = textMd.match(pat) || textHtml.match(pat);
-        if (m) { (specifications as any).weight = `${m[1]} ${m[2] || 'lbs'}`.trim(); break; }
-      }
-    }
-
-    // Extract features from lists that look like product features/specs (not nav)
-    const ulRegex = /<ul[^>]*class="[^"]*(?:feature|spec)[^"]*"[^>]*>([\s\S]*?)<\/ul>/gi;
-    const liRegex = /<li[^>]*>([\s\S]*?)<\/li>/gi;
-    const candidateItems: string[] = [];
-    let mUl: RegExpExecArray | null;
-    while ((mUl = ulRegex.exec(textHtml))) {
-      const inner = mUl[1];
-      const items = inner.match(liRegex) || [];
-      for (const li of items) {
-        const t = li.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
-        if (t) candidateItems.push(t);
-      }
-    }
-    const filtered = candidateItems.filter((t) => {
-      const lower = t.toLowerCase();
-      return (
-        !/[\[\]]/.test(t) &&
-        !lower.includes('home') &&
-        !lower.includes('inventory') &&
-        !lower.includes('search') &&
-        !lower.includes('login') &&
-        !lower.includes('account') &&
-        !lower.includes('privacy') &&
-        !lower.includes('terms') &&
-        !t.includes('http') &&
-        t.length > 5 &&
-        t.length < 140
-      );
+    console.log(`[Firecrawl FIRE-1] Extraction successful:`, {
+      hasDescription: !!result.description,
+      featuresCount: result.features.length,
+      specsCount: Object.keys(result.specifications).length,
+      imagesCount: result.images.length
     });
-    if (filtered.length) {
-      features = filtered.slice(0, 12);
-    }
 
-    // Description from known content blocks
-    const descRegex = /<div[^>]*class="[^"]*(?:description|overview|product-info)[^"]*"[^>]*>([\s\S]*?)<\/div>/i;
-    const d = textHtml.match(descRegex);
-    if (d && d[1]) {
-      const plain = d[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-      if (plain) description = plain;
-    }
-  } catch (err) {
-    console.warn('Targeted HTML extraction failed:', (err as Error).message);
+    return result;
+    
+  } catch (error) {
+    console.error('[Firecrawl FIRE-1] Extraction error:', error);
+    throw error;
   }
-
-  // Intelligent fallbacks based on model name if data is still weak
-  const hasSpecs = Object.keys(specifications || {}).length > 0;
-  if (!hasSpecs && modelName) {
-    const s: Record<string, string> = {};
-    const f: string[] = [];
-    const hpMatch = modelName.match(/(\d+\.?\d*)\s*HP/i);
-    if (hpMatch) {
-      const hp = parseFloat(hpMatch[1]);
-      if (hp <= 6) s.weight = '57-60 lbs';
-      else if (hp <= 15) s.weight = '80-100 lbs';
-      else if (hp <= 30) s.weight = '110-130 lbs';
-      else if (hp <= 60) s.weight = '200-250 lbs';
-      else s.weight = '350+ lbs';
-
-      if (hp <= 6) s.shaft_length = '15" or 20"';
-      else if (hp <= 30) s.shaft_length = '15", 20" or 25"';
-      else s.shaft_length = '20", 25" or 30"';
-    }
-    if (/ELPT/i.test(modelName)) {
-      s.starting = 'Electric';
-      f.push('Power Tilt');
-    } else if (/EH/i.test(modelName)) {
-      s.starting = 'Electric';
-      s.controls = 'Tiller Handle';
-    } else if (/MH/i.test(modelName)) {
-      s.starting = 'Manual';
-      s.controls = 'Tiller Handle';
-    }
-    if (/EFI/i.test(modelName)) {
-      s.fuel_system = 'Electronic Fuel Injection';
-    }
-
-    specifications = { ...specifications, ...s };
-    if (!features.length && f.length) features = f;
-  }
-
-  // Secondary fallback: standard Mercury specs by HP if few specs extracted
-  try {
-    if (modelName && Object.keys(specifications || {}).length < 3) {
-      const hpMatch2 = modelName.match(/(\d+\.?\d*)\s*HP/i);
-      if (hpMatch2) {
-        const hpKey = `${parseFloat(hpMatch2[1])}HP`;
-        const mercuryStandardSpecs: Record<string, Record<string, string>> = {
-          '2.5HP': { weight: '57 lbs', displacement: '85.5 cc', cylinders: '1', bore: '2.13" (55mm)', stroke: '1.73" (44mm)', gearRatio: '2.15:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
-          '3.5HP': { weight: '59 lbs', displacement: '85.5 cc', cylinders: '1', bore: '2.13" (55mm)', stroke: '1.73" (44mm)', gearRatio: '2.15:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
-          '5HP':   { weight: '60 lbs', displacement: '123 cc', cylinders: '1', bore: '2.36" (60mm)', stroke: '2.17" (55mm)', gearRatio: '2.15:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
-          '9.9HP': { weight: '84 lbs', displacement: '209 cc', cylinders: '2', bore: '2.56" (65mm)', stroke: '1.97" (50mm)', gearRatio: '2.08:1', cooling: 'Water cooled', shaft_length: '15", 20", or 25"' },
-          '15HP':  { weight: '99-104 lbs', displacement: '333 cc', cylinders: '2', bore: '2.36" (60mm)', stroke: '2.95" (75mm)', gearRatio: '2.15:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
-          '20HP':  { weight: '99-104 lbs', displacement: '333 cc', cylinders: '2', bore: '2.36" (60mm)', stroke: '2.95" (75mm)', gearRatio: '2.08:1', cooling: 'Water cooled', shaft_length: '15" or 20"' },
-          '115HP': { weight: '363 lbs', displacement: '2064 cc', cylinders: '4', bore: '3.23" (82mm)', stroke: '3.06" (77.8mm)', gearRatio: '2.07:1', cooling: 'Water cooled', shaft_length: '20" or 25"' },
-          '115HP EXLPT': { weight: '363 lbs' },
-        };
-        const std = mercuryStandardSpecs[hpKey];
-        if (std) {
-          for (const [k, v] of Object.entries(std)) {
-            if (!(k in (specifications as any))) (specifications as any)[k] = v;
-          }
-        }
-      }
-    }
-  } catch {}
-
-  return { description, features, specifications, images };
 }
 
 serve(async (req) => {
@@ -505,7 +285,7 @@ serve(async (req) => {
       modelName = motor?.model ? String(motor.model).trim() : undefined;
     }
 
-    // Normalize any malformed URLs (e.g., duplicated domain, missing host)
+    // Normalize any malformed URLs
     detailUrl = normalizeDetailUrl(detailUrl);
 
     if (!detailUrl) {
@@ -514,11 +294,12 @@ serve(async (req) => {
 
     console.log(JSON.stringify({ event: 'scrape_motor_details_start', motorId, detailUrl }));
 
-    const result = await scrapeDetails(detailUrl, FIRECRAWL_API_KEY, modelName);
+    // Use FIRE-1 agent for extraction
+    const result = await scrapeWithFire1Agent(detailUrl, FIRECRAWL_API_KEY, modelName);
 
-    // Update DB if motor id provided or if we can match by detail_url
+    // Update DB if motor id provided
     if (motorId) {
-      // Get existing motor data to determine if this is an in-stock page
+      // Get existing motor data
       const { data: existingMotor } = await supabase
         .from('motor_models')
         .select('*')
@@ -528,7 +309,7 @@ serve(async (req) => {
       const existingImages = Array.isArray(existingMotor?.images) ? existingMotor.images : [];
       const newImageUrls = result.images || [];
       
-      // Determine if this is an in-stock page (contains inventory/stock info)
+      // Determine if this is an in-stock page
       const isInStockPage = detailUrl.includes('inventory') || 
                            detailUrl.includes('stock') || 
                            result.description?.toLowerCase().includes('in stock');
@@ -536,7 +317,7 @@ serve(async (req) => {
       let updatedImages = existingImages;
       let setInStock = false;
       
-      // If this is an in-stock page and we have a good main image, upload it to inventory
+      // If this is an in-stock page and we have a good main image, upload it
       if (isInStockPage && newImageUrls.length > 0) {
         const mainImage = newImageUrls[0];
         const modelKey = existingMotor?.model_key || 
@@ -545,7 +326,6 @@ serve(async (req) => {
         const inventoryImageUrl = await uploadInventoryImage(mainImage, modelKey, supabase);
         
         if (inventoryImageUrl) {
-          // Add the inventory image to the beginning of the images array
           updatedImages = [{
             url: inventoryImageUrl,
             type: 'inventory',
@@ -558,61 +338,43 @@ serve(async (req) => {
       
       // Merge and deduplicate regular images
       for (const newUrl of newImageUrls) {
-        const exists = updatedImages.some(img => img.url === newUrl);
+        const exists = updatedImages.some((img: any) => img.url === newUrl);
         if (!exists) {
           updatedImages.push({
             url: newUrl,
             type: newUrl.includes('detail') ? 'detail' : 
                   newUrl.includes('gallery') ? 'gallery' : 'main',
-            source: 'scraped',
+            source: 'scraped_fire1',
             scraped_at: new Date().toISOString()
           });
         }
       }
 
       // Prepare update data
-      const updateData: any = {
+      const updateData: Record<string, any> = {
         description: result.description,
         features: result.features,
         specifications: result.specifications,
         last_scraped: new Date().toISOString(),
-        images: updatedImages.slice(0, 15), // Limit to 15 images max
+        images: updatedImages.slice(0, 15),
         updated_at: new Date().toISOString()
       };
       
-      // Set in_stock=true if we processed an inventory image
       if (setInStock) {
         updateData.in_stock = true;
       }
 
-      // Smart merge: check if this is a brochure record being updated with inventory data
-      const { data: existingRecord, error: selectError } = await supabase
-        .from('motor_models')
-        .select('*')
-        .eq('id', motorId)
-        .single();
-
-      if (selectError) {
-        console.error('Error fetching existing record:', selectError);
-      } else if (existingRecord && existingRecord.is_brochure && setInStock) {
-        // Smart merge for brochure records getting inventory updates
-        const smartMergeData = {
-          ...updateData,
-          // Keep brochure data
-          hero_image_url: existingRecord.hero_image_url,
-          dealer_price: existingRecord.dealer_price,
-          msrp: existingRecord.msrp,
-          // Only update price_source if we have explicit sale price
-          price_source: existingRecord.price_source,
-          msrp_source: existingRecord.msrp_source,
-          // Prefer inventory image but keep hero for gallery
-          image_url: updatedImages[0] || existingRecord.image_url,
-        };
-        updateData = smartMergeData;
+      // Smart merge for brochure records
+      if (existingMotor && existingMotor.is_brochure && setInStock) {
+        updateData.hero_image_url = existingMotor.hero_image_url;
+        updateData.dealer_price = existingMotor.dealer_price;
+        updateData.msrp = existingMotor.msrp;
+        updateData.price_source = existingMotor.price_source;
+        updateData.msrp_source = existingMotor.msrp_source;
+        updateData.image_url = updatedImages[0]?.url || existingMotor.image_url;
         console.log(`Smart merging brochure record ${motorId} with inventory data`);
       }
 
-      // Update the motor_models table with enhanced data
       const { error: upErr } = await supabase
         .from('motor_models')
         .update(updateData)
@@ -622,67 +384,31 @@ serve(async (req) => {
       
       console.log(`Successfully updated motor ${motorId}${setInStock ? ' (marked as in-stock)' : ''}`);
     } else {
-      // Fallback: update by detail_url with smart merge logic
-      const modelKey = buildModelKey(detailUrl); // Generate from URL as fallback
-      
-      // Check for existing brochure record with same model_key
-      const { data: brochureRecords, error: brochureError } = await supabase
+      // Update by detail_url
+      const { error: upErr } = await supabase
         .from('motor_models')
-        .select('*')
-        .eq('model_key', modelKey)
-        .eq('is_brochure', true);
-
-      if (!brochureError && brochureRecords && brochureRecords.length > 0) {
-        // Smart merge into existing brochure record
-        const existing = brochureRecords[0];
-        const smartMergeData = {
+        .update({
           description: result.description,
           features: result.features,
           specifications: result.specifications,
           images: result.images,
           updated_at: new Date().toISOString(),
-          detail_url: detailUrl,
-          in_stock: true,
-          last_scraped: new Date().toISOString(),
-          // Keep brochure pricing data
-          hero_image_url: existing.hero_image_url,
-          dealer_price: existing.dealer_price,
-          msrp: existing.msrp,
-          price_source: existing.price_source,
-          msrp_source: existing.msrp_source,
-          // Prefer inventory image
-          image_url: result.images && result.images.length > 0 ? result.images[0] : existing.image_url,
-        };
-
-        const { error: mergeError } = await supabase
-          .from('motor_models')
-          .update(smartMergeData)
-          .eq('id', existing.id);
-
-        if (!mergeError) {
-          console.log(`Smart merged brochure record for model_key: ${modelKey}`);
-        } else {
-          console.warn('Smart merge error:', mergeError.message);
-        }
-      } else {
-        // Standard update by detail_url
-        const { error: upErr } = await supabase
-          .from('motor_models')
-          .update({
-            description: result.description,
-            features: result.features,
-            specifications: result.specifications,
-            images: result.images,
-            updated_at: new Date().toISOString(),
-          })
-          .eq('detail_url', detailUrl);
-        if (upErr) console.warn('Update by detail_url warning:', upErr?.message);
-      }
+        })
+        .eq('detail_url', detailUrl);
+      if (upErr) console.warn('Update by detail_url warning:', upErr?.message);
     }
 
-    console.log(JSON.stringify({ event: 'scrape_motor_details_done', motorId, featuresCount: result.features.length, specsKeys: Object.keys(result.specifications).length }));
+    console.log(JSON.stringify({ event: 'scrape_motor_details_done', featuresCount: result.features.length, specsKeys: Object.keys(result.specifications).length }));
 
-    return new Response(JSON.stringify({ success: true, motor_id: motorId || null, detail_url: detailUrl, ...result }), {
+    return new Response(JSON.stringify({ 
+      success: true, 
+      motor_id: motorId || null, 
+      detail_url: detailUrl,
+      description: result.description,
+      features: result.features,
+      specifications: result.specifications,
+      images: result.images
+    }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       status: 200,
     });
