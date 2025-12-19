@@ -198,28 +198,65 @@ async function pollForExtraction(jobId: string, apiKey: string, maxWaitMs = 6000
   throw new Error('Extraction timeout - exceeded 60 seconds');
 }
 
+// Validate if image URL matches expected HP (filter wrong-HP images)
+function validateImageHpMatch(imageUrl: string, targetHp: number): boolean {
+  const url = imageUrl.toLowerCase();
+  
+  // Extract HP numbers from URL patterns
+  const hpPatterns = [
+    /(\d+(?:\.\d+)?)\s*hp/gi,
+    /(\d+(?:\.\d+)?)-hp/gi,
+    /-(\d+)-(?:fourstroke|outboard|motor)/gi,
+    /\/(\d+)hp\//gi,
+  ];
+  
+  for (const pattern of hpPatterns) {
+    let match;
+    while ((match = pattern.exec(url)) !== null) {
+      const foundHp = parseFloat(match[1]);
+      // If we find a different HP in the URL, reject it
+      if (foundHp > 1 && foundHp <= 600 && Math.abs(foundHp - targetHp) > 2) {
+        console.log(`[HP Validation] Rejecting image with HP ${foundHp}, expected ${targetHp}: ${imageUrl}`);
+        return false;
+      }
+    }
+  }
+  
+  // Check for "related products" or "similar items" in path
+  if (url.includes('related') || url.includes('similar') || url.includes('also-like')) {
+    console.log(`[HP Validation] Rejecting related product image: ${imageUrl}`);
+    return false;
+  }
+  
+  return true;
+}
+
 // FIRE-1 agent extraction for images
 async function scrapeImagesWithFire1(url: string, apiKey: string, hp: number): Promise<string[]> {
-  console.log(`[Firecrawl FIRE-1] Extracting images from: ${url}`);
+  console.log(`[Firecrawl FIRE-1] Extracting images from: ${url} for ${hp} HP motor`);
   
   const extractionPrompt = `
 You are extracting product images from a marine dealer website for a ${hp} HP outboard motor.
 
-EXTRACTION REQUIREMENTS:
-1. Extract ONLY product images of the motor/engine itself
-2. Prioritize high-quality images (large, clear, professional photos)
-3. The hero image should be the main product shot
+CRITICAL: Only extract images showing a ${hp} HP motor. The HP number "${hp}" should be visible on the motor cowling in photos, or the page context should clearly indicate this is the ${hp} HP model.
 
-EXCLUDE these types of images:
+EXTRACTION REQUIREMENTS:
+1. Extract ONLY product images of the ${hp} HP motor/engine itself
+2. Prioritize high-quality images (large, clear, professional photos)
+3. The hero image should be the main product shot showing the ${hp} HP motor
+
+STRICTLY EXCLUDE these types of images:
 - Company logos and branding images
 - Navigation icons and buttons
 - Social media icons
 - Promotional banners and sale graphics
-- Thumbnails (URLs containing 'thumb', 'small', '-320')
-- Images from "Similar Items" or "Related Products" sections
-- Images of different HP motors (we want ${hp} HP only)
+- Thumbnails (URLs containing 'thumb', 'small', '-320', 'icon')
+- Images from "Similar Items", "Related Products", "You May Also Like" sections
+- Images of different HP motors - if you see a motor showing a different HP number (like 20, 40, 60, etc. that is NOT ${hp}), do NOT include it
+- Lifestyle/action shots that don't clearly show the motor
+- Cart icons, wishlist icons, comparison icons
 
-Return full absolute URLs only.
+Return full absolute URLs only. Quality over quantity - only include images you're confident show the ${hp} HP motor.
 `;
 
   try {
@@ -271,22 +308,25 @@ Return full absolute URLs only.
     }
 
     // Collect images, prioritizing hero image first
-    const images: string[] = [];
+    const rawImages: string[] = [];
     
     if (extractedData.heroImage && typeof extractedData.heroImage === 'string') {
-      images.push(extractedData.heroImage);
+      rawImages.push(extractedData.heroImage);
     }
     
     if (Array.isArray(extractedData.productImages)) {
       for (const img of extractedData.productImages) {
-        if (typeof img === 'string' && img.startsWith('http') && !images.includes(img)) {
-          images.push(img);
+        if (typeof img === 'string' && img.startsWith('http') && !rawImages.includes(img)) {
+          rawImages.push(img);
         }
       }
     }
 
-    console.log(`[Firecrawl FIRE-1] Found ${images.length} valid images`);
-    return images.slice(0, 10); // Max 10 images
+    // PHASE 2: Validate images match target HP
+    const validatedImages = rawImages.filter(imgUrl => validateImageHpMatch(imgUrl, hp));
+    
+    console.log(`[Firecrawl FIRE-1] Found ${rawImages.length} images, ${validatedImages.length} passed HP validation for ${hp} HP`);
+    return validatedImages.slice(0, 10); // Max 10 images
 
   } catch (error) {
     console.error('[Firecrawl FIRE-1] Image extraction error:', error);

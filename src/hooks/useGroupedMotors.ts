@@ -18,6 +18,33 @@ export interface MotorGroup {
   families: string[];
   inStockCount: number;
   heroImage: string;
+  isRepresentativeImage: boolean; // Flag when image is from sibling motor
+}
+
+/**
+ * Check if a motor has its own scraped images (not fallback)
+ */
+function hasOwnImages(motor: Motor): boolean {
+  // Has database images array with content
+  if (motor.images && Array.isArray(motor.images) && motor.images.length > 0) {
+    return true;
+  }
+  
+  // Has hero_media_id (assigned media)
+  if (motor.hero_media_id) {
+    return true;
+  }
+  
+  // Has image that's not from static fallback (mercurymarine.com CDN or supabase storage)
+  if (motor.image && (
+    motor.image.includes('supabase') || 
+    motor.image.includes('harrisboatworks') ||
+    motor.image.includes('albernipowermarine')
+  )) {
+    return true;
+  }
+  
+  return false;
 }
 
 export function useGroupedMotors(motors: Motor[]): MotorGroup[] {
@@ -76,9 +103,35 @@ export function useGroupedMotors(motors: Motor[]): MotorGroup[] {
       // Count in-stock variants
       const inStockCount = variants.filter(m => m.in_stock).length;
       
-      // Get hero image from lowest-priced variant with an image (for accurate Simple mode display)
-      const sortedByPrice = [...variants].sort((a, b) => (a.price || 0) - (b.price || 0));
-      const heroImage = sortedByPrice.find(m => m.image)?.image || '/lovable-uploads/speedboat-transparent.png';
+      // IMPROVED IMAGE SELECTION:
+      // 1. First, find variants with their own images (scraped/uploaded)
+      // 2. Prefer in-stock variants with images
+      // 3. Fall back to any variant with images
+      // 4. Only use static fallback as last resort
+      
+      const variantsWithImages = variants.filter(m => hasOwnImages(m) && m.image);
+      const inStockWithImages = variantsWithImages.filter(m => m.in_stock);
+      
+      let heroImage = '/lovable-uploads/speedboat-transparent.png';
+      let isRepresentativeImage = false;
+      
+      if (inStockWithImages.length > 0) {
+        // Best case: in-stock variant with its own image
+        heroImage = inStockWithImages[0].image!;
+        isRepresentativeImage = false;
+      } else if (variantsWithImages.length > 0) {
+        // Good case: any variant with its own image (same HP, different config)
+        heroImage = variantsWithImages[0].image!;
+        isRepresentativeImage = true; // It's from a sibling motor
+      } else {
+        // Fall back to lowest-priced variant's image (may be static fallback)
+        const sortedByPrice = [...variants].sort((a, b) => (a.price || 0) - (b.price || 0));
+        const firstWithImage = sortedByPrice.find(m => m.image);
+        if (firstWithImage?.image) {
+          heroImage = firstWithImage.image;
+          isRepresentativeImage = true; // Static fallback
+        }
+      }
       
       result.push({
         hp,
@@ -98,7 +151,8 @@ export function useGroupedMotors(motors: Motor[]): MotorGroup[] {
         },
         families: Array.from(familySet),
         inStockCount,
-        heroImage
+        heroImage,
+        isRepresentativeImage
       });
     });
     
