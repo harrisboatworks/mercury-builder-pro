@@ -114,6 +114,23 @@ function isHashBasedUrl(url: string): boolean {
   return hashPattern.test(url);
 }
 
+// Marketing/accessory content to exclude
+const MARKETING_EXCLUSIONS = [
+  'experience-fragment', 'gauges_and_controls', 'gauge', 'gauges',
+  'joystick', 'joystick-piloting', 'vesselview', 'smartcraft',
+  'appscreen', 'app-and-connectivity', 'display', 'screen',
+  'controls', 'controlpanel', 'control-panel', 'helm',
+  'rigging', 'propeller', 'prop', 'hardware', 'accessories',
+  'warranty', 'trophy', 'award', 'icon', 'badge', 'label',
+];
+
+// Keywords that indicate a real motor image
+const MOTOR_KEYWORDS = [
+  'hp', 'outboard', 'engine', 'motor', 'fourstroke', 'four-stroke',
+  'verado', 'proxs', 'pro-xs', 'seapro', 'sea-pro', 'prokicker',
+  'port', 'stbd', 'starboard', 'profile', 'webgrouping',
+];
+
 // Filter images to only keep high-quality, relevant ones for the specific HP and family
 function filterImages(urls: string[], hp: number, family: string, controlType?: string): { url: string; score: number }[] {
   const urlLower = (url: string) => url.toLowerCase();
@@ -143,6 +160,15 @@ function filterImages(urls: string[], hp: number, family: string, controlType?: 
         lower.includes('fishing') || lower.includes('action') || lower.includes('hero-image') ||
         lower.includes('carousel') || lower.includes('slider')) {
       excluded = true;
+    }
+    
+    // NEW: Exclude marketing/accessory content (gauges, joysticks, displays, app screens)
+    for (const excl of MARKETING_EXCLUSIONS) {
+      if (lower.includes(excl)) {
+        console.log(`[Public] Excluding marketing content (${excl}): ${url.substring(0, 80)}`);
+        excluded = true;
+        break;
+      }
     }
     
     // Exclude wrong motor families
@@ -209,6 +235,15 @@ function filterImages(urls: string[], hp: number, family: string, controlType?: 
       return { url, score: -1000 };
     }
     
+    // === MOTOR IMAGE REQUIREMENT ===
+    // Check if URL contains any motor-related keywords
+    const hasMotorKeyword = MOTOR_KEYWORDS.some(kw => lower.includes(kw));
+    if (!hasMotorKeyword) {
+      // No motor keywords at all - this is probably not a motor image
+      console.log(`[Public] Penalizing URL with no motor keywords: ${url.substring(0, 80)}`);
+      score -= 40; // Heavy penalty for non-motor images
+    }
+    
     // === SCORING BONUSES ===
     
     // HEAVILY penalize hash-based URLs (can't verify content)
@@ -262,9 +297,9 @@ function filterImages(urls: string[], hp: number, family: string, controlType?: 
     return { url, score };
   });
   
-  // Filter out excluded images and sort by score descending
+  // Filter out excluded images AND low-scoring non-motor images, sort by score descending
   return scored
-    .filter(item => item.score > -1000)
+    .filter(item => item.score > -50) // Must have at least some positive indicators
     .sort((a, b) => b.score - a.score);
 }
 

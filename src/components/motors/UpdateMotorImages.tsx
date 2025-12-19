@@ -105,6 +105,7 @@ export default function UpdateMotorImages() {
   const [publicResult, setPublicResult] = useState<any>(null);
   const [publicHp, setPublicHp] = useState('');
   const [publicFamily, setPublicFamily] = useState('FourStroke');
+  const [publicControlType, setPublicControlType] = useState('Remote');
   const [publicDryRun, setPublicDryRun] = useState(true);
 
   // Automated batch processing state
@@ -464,7 +465,7 @@ export default function UpdateMotorImages() {
       });
 
       const { data, error } = await supabase.functions.invoke('scrape-mercury-public', {
-        body: { hp, family: publicFamily, dryRun: isDryRun, batchUpdate },
+        body: { hp, family: publicFamily, controlType: publicControlType, dryRun: isDryRun, batchUpdate },
       });
 
       if (error) throw error;
@@ -533,6 +534,20 @@ export default function UpdateMotorImages() {
                 </SelectContent>
               </Select>
             </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="public-control">Control Type (excludes opposite type images)</Label>
+            <Select value={publicControlType} onValueChange={setPublicControlType}>
+              <SelectTrigger id="public-control">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="Remote">Remote (excludes tiller images)</SelectItem>
+                <SelectItem value="Tiller">Tiller (excludes remote images)</SelectItem>
+                <SelectItem value="">Any (no filtering)</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           <div className="flex items-center space-x-2">
