@@ -106,10 +106,9 @@ async function scrapeProductKnowledgePortal(
   console.log('[Mercury Scrape] Scraping Product Knowledge Portal:', url);
   console.log('[Mercury Scrape] Using automated login with dealer credentials');
 
-  const loginUrl = 'https://productknowledge.mercurymarine.com';
-
   try {
-    // Use Firecrawl with actions for automated login
+    // Start directly at the product URL - site will redirect to login if not authenticated
+    // After login, use executeJavascript to navigate back to the product page
     const response = await fetch('https://api.firecrawl.dev/v1/scrape', {
       method: 'POST',
       headers: {
@@ -117,43 +116,40 @@ async function scrapeProductKnowledgePortal(
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        url: loginUrl,
+        url: url, // Start at product URL directly - will redirect to login
         formats: ['html', 'links'],
         waitFor: 5000,
         timeout: 120000,
-        // Actions for automated login and navigation
         actions: [
-          // Wait for SPA to load
+          // Wait for SPA/redirect to login page
           { type: 'wait', milliseconds: 3000 },
           
-          // Click on email input and enter dealer email
+          // Fill in login form
           { type: 'click', selector: 'input[type="email"], input[name="email"], input[name="username"], input[id*="email"], input[placeholder*="email" i], input[placeholder*="user" i]' },
           { type: 'write', text: dealerEmail },
           
-          // Click on password input and enter password
           { type: 'click', selector: 'input[type="password"], input[name="password"], input[id*="password"]' },
           { type: 'write', text: dealerPassword },
           
-          // Wait a moment for form validation
           { type: 'wait', milliseconds: 500 },
           
-          // Click login/submit button
-          { type: 'click', selector: 'button[type="submit"], input[type="submit"], button:contains("Login"), button:contains("Sign In"), button:contains("Log In"), .login-button, .btn-login, [data-testid="login-button"]' },
+          // Submit login
+          { type: 'click', selector: 'button[type="submit"], input[type="submit"], .login-button, .btn-login' },
           
-          // Wait for authentication to complete
+          // Wait for authentication
           { type: 'wait', milliseconds: 8000 },
           
-          // Navigate to the target product page
-          { type: 'goto', url: url },
+          // Navigate to the product page using JavaScript (replacing invalid 'goto')
+          { type: 'executeJavascript', script: `window.location.href = '${url}';` },
           
           // Wait for product page to load
-          { type: 'wait', milliseconds: 5000 },
+          { type: 'wait', milliseconds: 6000 },
           
-          // Scroll down to load all images (lazy loading)
+          // Scroll to load lazy images
           { type: 'scroll', direction: 'down', amount: 1000 },
-          { type: 'wait', milliseconds: 1000 },
+          { type: 'wait', milliseconds: 1500 },
           { type: 'scroll', direction: 'down', amount: 1000 },
-          { type: 'wait', milliseconds: 1000 },
+          { type: 'wait', milliseconds: 1500 },
           { type: 'scroll', direction: 'down', amount: 1000 },
           { type: 'wait', milliseconds: 2000 },
         ],
