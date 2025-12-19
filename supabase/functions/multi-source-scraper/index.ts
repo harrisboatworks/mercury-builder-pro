@@ -23,6 +23,52 @@ interface ScrapeResult {
   images?: string[];
 }
 
+// Schema for FIRE-1 agent structured extraction
+const motorDataSchema = {
+  type: "object",
+  properties: {
+    description: { 
+      type: "string", 
+      description: "2-3 sentence conversational product description focusing on benefits and use cases" 
+    },
+    features: { 
+      type: "array", 
+      items: { type: "string" },
+      description: "6-10 key features and benefits as bullet points"
+    },
+    specifications: {
+      type: "object",
+      properties: {
+        displacement: { type: "string", description: "Engine displacement in cc or L" },
+        cylinders: { type: "number", description: "Number of cylinders" },
+        boreStroke: { type: "string", description: "Bore x stroke dimensions" },
+        gearRatio: { type: "string", description: "Gear ratio" },
+        weight: { type: "string", description: "Dry weight" },
+        fuelSystem: { type: "string", description: "Fuel injection type" },
+        ignition: { type: "string", description: "Ignition system type" },
+        exhaustSystem: { type: "string", description: "Exhaust system type" },
+        engineType: { type: "string", description: "Engine type (inline, V, etc.)" },
+        alternatorOutput: { type: "string", description: "Alternator output in amps" },
+        recommendedFuel: { type: "string", description: "Recommended fuel type/octane" },
+        oilCapacity: { type: "string", description: "Oil capacity" },
+        coolingSystem: { type: "string", description: "Cooling system type" },
+        propShaftHorsepower: { type: "string", description: "Prop shaft horsepower rating" },
+        maxRPM: { type: "string", description: "Maximum RPM range" },
+        shaftLengths: { type: "array", items: { type: "string" }, description: "Available shaft lengths" },
+        steering: { type: "string", description: "Steering type" },
+        tiltTrim: { type: "string", description: "Tilt and trim system" }
+      },
+      description: "Technical specifications extracted from the page"
+    },
+    images: {
+      type: "array",
+      items: { type: "string" },
+      description: "Product image URLs (full URLs only)"
+    }
+  },
+  required: ["description", "features", "specifications"]
+};
+
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
@@ -114,7 +160,7 @@ serve(async (req) => {
         console.log(`Scraping from custom URL: ${body.custom_url}`);
         
         try {
-          const sourceData = await scrapeCustomUrl(body.custom_url, firecrawlApiKey);
+          const sourceData = await scrapeWithFirecrawlAgent(body.custom_url, firecrawlApiKey);
           
           // Merge data from custom URL
           if (sourceData.description && !enrichedData.description) {
@@ -138,6 +184,7 @@ serve(async (req) => {
             scraped_at: new Date().toISOString(),
             success: true,
             url: body.custom_url,
+            agent: 'FIRE-1',
           };
 
         } catch (error) {
@@ -167,7 +214,7 @@ serve(async (req) => {
               case 'google_drive':
               case 'pdf_url':
               case 'api_endpoint':
-                sourceData = await scrapeCustomUrl(customSource.source_url, firecrawlApiKey);
+                sourceData = await scrapeWithFirecrawlAgent(customSource.source_url, firecrawlApiKey);
                 break;
             }
 
@@ -203,6 +250,7 @@ serve(async (req) => {
               success: true,
               source_name: customSource.source_name,
               source_type: customSource.source_type,
+              agent: 'FIRE-1',
             };
 
           } catch (error) {
@@ -275,6 +323,7 @@ serve(async (req) => {
           enrichedData.data_sources[source.name] = {
             scraped_at: new Date().toISOString(),
             success: true,
+            agent: source.name === 'mercury_official' ? 'FIRE-1' : undefined,
           };
 
           // Update source success rate
@@ -387,36 +436,89 @@ async function scrapeHarris(detailUrl: string, apiKey: string): Promise<ScrapeRe
 
 async function scrapeMercuryOfficial(model: string, horsepower: number, apiKey: string): Promise<ScrapeResult> {
   try {
-    // Search Mercury Marine website
+    // Build Mercury Marine product URL
     const searchUrl = `https://www.mercurymarine.com/en/us/engines/outboard/?q=${encodeURIComponent(model + ' ' + horsepower)}`;
     
-    const firecrawlResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
+    console.log(`[Firecrawl FIRE-1] Extracting Mercury official data from: ${searchUrl}`);
+    
+    const extractionPrompt = `
+You are extracting outboard motor product information from Mercury Marine's official website.
+
+EXTRACTION REQUIREMENTS:
+1. Description: Write a 2-3 sentence conversational description focusing on what makes this motor special and ideal use cases. Do NOT include pricing information.
+
+2. Features: Extract 6-10 key features and benefits. Format as concise bullet points.
+
+3. Specifications: Extract all technical specifications you can find including:
+   - Displacement, cylinders, bore/stroke
+   - Weight, gear ratio
+   - Fuel system, ignition
+   - Alternator output, cooling system
+   - Available shaft lengths
+   - Maximum RPM range
+
+4. Images: Extract full product image URLs only (not icons or thumbnails).
+
+Focus on official Mercury Marine specifications. Be accurate and thorough.
+`;
+
+    const response = await fetch('https://api.firecrawl.dev/v1/extract', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        url: searchUrl,
-        formats: ['markdown', 'html'],
+        urls: [searchUrl],
+        schema: motorDataSchema,
+        prompt: extractionPrompt,
+        enableWebSearch: false,
+        allowExternalLinks: false,
+        agent: {
+          model: 'FIRE-1'
+        }
       }),
     });
 
-    if (!firecrawlResponse.ok) {
-      throw new Error(`Firecrawl API error: ${firecrawlResponse.status}`);
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`[Firecrawl FIRE-1] API error: ${response.status} - ${errorText}`);
+      throw new Error(`Firecrawl FIRE-1 API error: ${response.status}`);
     }
 
-    const data = await firecrawlResponse.json();
+    const data = await response.json();
+    console.log(`[Firecrawl FIRE-1] Mercury extraction response:`, JSON.stringify(data).substring(0, 500));
     
-    return {
-      description: extractMercuryDescription(data.markdown),
-      features: extractMercuryFeatures(data.markdown),
-      specifications: extractMercurySpecs(data.markdown),
-      images: extractMercuryImages(data.html, 'https://www.mercurymarine.com'),
+    if (!data.success) {
+      throw new Error(data.error || 'Firecrawl FIRE-1 extraction failed');
+    }
+
+    // Extract from the response - handle both array and direct object formats
+    const extractedData = Array.isArray(data.data) ? data.data[0] : data.data;
+    
+    if (!extractedData) {
+      console.log('[Firecrawl FIRE-1] No data extracted from Mercury page');
+      return {};
+    }
+
+    const result: ScrapeResult = {
+      description: extractedData.description || null,
+      features: extractedData.features || [],
+      specifications: extractedData.specifications || {},
+      images: extractedData.images || [],
     };
+
+    console.log(`[Firecrawl FIRE-1] Mercury extraction successful:`, {
+      hasDescription: !!result.description,
+      featuresCount: result.features?.length || 0,
+      specsCount: Object.keys(result.specifications || {}).length,
+      imagesCount: result.images?.length || 0
+    });
+
+    return result;
     
   } catch (error) {
-    console.error('Mercury scraping error:', error);
+    console.error('[Firecrawl FIRE-1] Mercury scraping error:', error);
     return {};
   }
 }
@@ -437,248 +539,96 @@ async function scrapeReviews(model: string, horsepower: number, apiKey: string):
   }
 }
 
-function extractMercuryDescription(markdown: string): string | null {
-  if (!markdown) return null;
-  
-  const lines = markdown.split('\n');
-  for (const line of lines) {
-    if (line.includes('outboard') && line.length > 50 && line.length < 300) {
-      return line.trim();
-    }
-  }
-  return null;
-}
-
-function extractMercuryFeatures(markdown: string): string[] {
-  if (!markdown) return [];
-  
-  const features: string[] = [];
-  const featurePatterns = [
-    /•\s*(.+)/g,
-    /\*\s*(.+)/g,
-    /Features?:\s*(.+)/gi,
-  ];
-  
-  for (const pattern of featurePatterns) {
-    let match;
-    while ((match = pattern.exec(markdown)) !== null) {
-      const feature = match[1].trim();
-      if (feature.length > 5 && feature.length < 100) {
-        features.push(feature);
-      }
-    }
-  }
-  
-  return [...new Set(features)].slice(0, 10);
-}
-
-function extractMercurySpecs(markdown: string): any {
-  if (!markdown) return {};
-  
-  const specs: any = {};
-  const specPatterns = [
-    /(\w+(?:\s+\w+)*?):\s*([^\n]+)/g,
-    /(\w+)\s*-\s*([^\n]+)/g,
-  ];
-  
-  for (const pattern of specPatterns) {
-    let match;
-    while ((match = pattern.exec(markdown)) !== null) {
-      const key = match[1].trim().toLowerCase();
-      const value = match[2].trim();
-      
-      if (value.length < 50 && !specs[key]) {
-        specs[key] = value;
-      }
-    }
-  }
-  
-  return specs;
-}
-
-function extractMercuryImages(html: string, baseUrl: string): string[] {
-  if (!html) return [];
-  
-  const imageRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
-  const images: string[] = [];
-  let match;
-  
-  while ((match = imageRegex.exec(html)) !== null) {
-    let imageUrl = match[1];
-    if (imageUrl.startsWith('/')) {
-      imageUrl = baseUrl + imageUrl;
-    }
-    
-    if (imageUrl.includes('outboard') || imageUrl.includes('motor') || imageUrl.includes('engine')) {
-      images.push(imageUrl);
-    }
-  }
-  
-  return [...new Set(images)].slice(0, 5);
-}
-
-async function scrapeCustomUrl(url: string, apiKey: string): Promise<ScrapeResult> {
+// Unified FIRE-1 agent extraction for custom URLs
+async function scrapeWithFirecrawlAgent(url: string, apiKey: string): Promise<ScrapeResult> {
   if (!apiKey) {
     console.warn('Firecrawl API key not available for custom URL scraping');
     return {};
   }
 
   try {
-    console.log(`Scraping custom URL with Firecrawl: ${url}`);
+    console.log(`[Firecrawl FIRE-1] Extracting motor data from: ${url}`);
     
-    // Use Firecrawl to scrape the custom URL
-    const response = await fetch('https://api.firecrawl.dev/v1/scrape', {
+    const extractionPrompt = `
+You are extracting outboard motor product information from a dealer or manufacturer website.
+
+EXTRACTION REQUIREMENTS:
+1. Description: Write a 2-3 sentence conversational description focusing on what makes this motor special and ideal use cases. Do NOT include pricing information.
+
+2. Features: Extract 6-10 key features and benefits. Format as concise bullet points.
+
+3. Specifications: Extract all technical specifications you can find including:
+   - Displacement, cylinders, bore/stroke
+   - Weight, gear ratio
+   - Fuel system, ignition
+   - Alternator output, cooling system
+   - Available shaft lengths
+   - Maximum RPM range
+
+4. Images: Extract full product image URLs only (not icons or thumbnails).
+
+Be accurate and thorough. Only include information that is explicitly stated on the page.
+`;
+
+    const response = await fetch('https://api.firecrawl.dev/v1/extract', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        url: url,
-        formats: ['markdown', 'html'],
-        scrapeOptions: {
-          waitFor: 1000
+        urls: [url],
+        schema: motorDataSchema,
+        prompt: extractionPrompt,
+        enableWebSearch: false,
+        allowExternalLinks: false,
+        agent: {
+          model: 'FIRE-1'
         }
       }),
     });
 
     if (!response.ok) {
-      throw new Error(`Firecrawl API error: ${response.statusText}`);
+      const errorText = await response.text();
+      console.error(`[Firecrawl FIRE-1] API error: ${response.status} - ${errorText}`);
+      throw new Error(`Firecrawl FIRE-1 API error: ${response.status}`);
     }
 
     const data = await response.json();
+    console.log(`[Firecrawl FIRE-1] Custom URL extraction response:`, JSON.stringify(data).substring(0, 500));
     
     if (!data.success) {
-      throw new Error('Firecrawl scraping failed');
+      throw new Error(data.error || 'Firecrawl FIRE-1 extraction failed');
     }
 
-    const markdown = data.data?.markdown || '';
-    const html = data.data?.html || '';
+    // Extract from the response - handle both array and direct object formats
+    const extractedData = Array.isArray(data.data) ? data.data[0] : data.data;
     
-    // Extract motor information from the scraped content
+    if (!extractedData) {
+      console.log('[Firecrawl FIRE-1] No data extracted from custom URL');
+      return {};
+    }
+
     const result: ScrapeResult = {
-      description: extractGenericDescription(markdown),
-      features: extractGenericFeatures(markdown),
-      specifications: extractGenericSpecifications(markdown),
-      images: extractGenericImages(html, url),
+      description: extractedData.description || null,
+      features: extractedData.features || [],
+      specifications: extractedData.specifications || {},
+      images: extractedData.images || [],
     };
 
-    console.log('Custom URL scraping result:', result);
+    console.log(`[Firecrawl FIRE-1] Custom URL extraction successful:`, {
+      hasDescription: !!result.description,
+      featuresCount: result.features?.length || 0,
+      specsCount: Object.keys(result.specifications || {}).length,
+      imagesCount: result.images?.length || 0
+    });
+
     return result;
 
   } catch (error) {
-    console.error('Error scraping custom URL:', error);
+    console.error('[Firecrawl FIRE-1] Error extracting from custom URL:', error);
     throw error;
   }
-}
-
-// Generic extraction functions for custom URLs
-function extractGenericDescription(markdown: string): string | null {
-  if (!markdown) return null;
-  
-  // Look for description patterns
-  const descPatterns = [
-    /(?:description|overview|about):\s*(.+?)(?:\n\n|\n#)/gis,
-    /^(.+?)(?:\n\s*\n|\n#)/s, // First paragraph
-  ];
-  
-  for (const pattern of descPatterns) {
-    const match = pattern.exec(markdown);
-    if (match && match[1]) {
-      const desc = match[1].trim();
-      if (desc.length > 50 && desc.length < 500) {
-        return desc;
-      }
-    }
-  }
-  
-  // Fallback: take first substantial paragraph
-  const paragraphs = markdown.split('\n').filter(line => line.trim().length > 50);
-  return paragraphs[0]?.trim() || null;
-}
-
-function extractGenericFeatures(markdown: string): string[] {
-  if (!markdown) return [];
-  
-  const features: string[] = [];
-  const featurePatterns = [
-    /•\s*(.+)/g,
-    /\*\s*(.+)/g,
-    /-\s*(.+)/g,
-    /features?:\s*(.+?)(?:\n\n|\n#)/gis,
-  ];
-  
-  for (const pattern of featurePatterns) {
-    let match;
-    while ((match = pattern.exec(markdown)) !== null) {
-      const feature = match[1].trim();
-      if (feature.length > 5 && feature.length < 150) {
-        features.push(feature);
-      }
-    }
-  }
-  
-  return [...new Set(features)].slice(0, 15);
-}
-
-function extractGenericSpecifications(markdown: string): any {
-  if (!markdown) return {};
-  
-  const specs: any = {};
-  const specPatterns = [
-    /(\w+(?:\s+\w+)*?):\s*([^\n]+)/g,
-    /(\w+)\s*-\s*([^\n]+)/g,
-    /(\w+)\s*=\s*([^\n]+)/g,
-  ];
-  
-  for (const pattern of specPatterns) {
-    let match;
-    while ((match = pattern.exec(markdown)) !== null) {
-      const key = match[1].trim().toLowerCase();
-      const value = match[2].trim();
-      
-      // Filter out common non-spec patterns
-      if (value.length < 100 && !specs[key] && 
-          !key.includes('http') && 
-          !value.includes('http') &&
-          !key.includes('click') &&
-          !key.includes('more')) {
-        specs[key] = value;
-      }
-    }
-  }
-  
-  return specs;
-}
-
-function extractGenericImages(html: string, baseUrl: string): string[] {
-  if (!html) return [];
-  
-  const images: string[] = [];
-  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
-  const base = new URL(baseUrl).origin;
-  
-  let match;
-  while ((match = imgRegex.exec(html)) !== null) {
-    let imgUrl = match[1];
-    
-    // Convert relative URLs to absolute
-    if (imgUrl.startsWith('/')) {
-      imgUrl = base + imgUrl;
-    } else if (!imgUrl.startsWith('http')) {
-      imgUrl = baseUrl + '/' + imgUrl;
-    }
-    
-    // Filter for likely motor images
-    if (imgUrl.includes('motor') || 
-        imgUrl.includes('engine') || 
-        imgUrl.includes('outboard') ||
-        imgUrl.match(/\.(jpg|jpeg|png|webp)/i)) {
-      images.push(imgUrl);
-    }
-  }
-  
-  return [...new Set(images)].slice(0, 10);
 }
 
 function calculateQualityScore(data: any): number {
