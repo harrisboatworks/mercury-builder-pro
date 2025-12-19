@@ -326,7 +326,7 @@ serve(async (req) => {
   }
 
   try {
-    const { motorIds, dryRun = false, batchSize = 50, maxImagesPerGroup = 10 } = await req.json();
+    const { motorIds, dryRun = false, batchSize = 50, maxImagesPerGroup = 10, includeOutOfStock = true } = await req.json();
 
     const firecrawlApiKey = Deno.env.get('FIRECRAWL_API_KEY');
     if (!firecrawlApiKey) {
@@ -351,11 +351,15 @@ serve(async (req) => {
       );
     }
 
-    // Get motors to process
+    // Get motors to process - now includes ALL motors by default
     let query = supabase
       .from('motor_models')
-      .select('id, model_display, horsepower, model_number, family')
-      .eq('in_stock', true);
+      .select('id, model_display, horsepower, model_number, family');
+    
+    // Only filter by stock if explicitly requested (includeOutOfStock = false)
+    if (!includeOutOfStock) {
+      query = query.eq('in_stock', true);
+    }
 
     if (motorIds && motorIds.length > 0) {
       query = query.in('id', motorIds);
