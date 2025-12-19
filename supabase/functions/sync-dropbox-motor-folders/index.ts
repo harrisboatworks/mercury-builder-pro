@@ -12,6 +12,7 @@ interface DropboxEntry {
   path_display?: string
   size?: number
   content_hash?: string
+  id?: string
 }
 
 interface MotorMatch {
@@ -130,6 +131,102 @@ function getContentType(filename: string): string {
   }
 }
 
+// List folder contents using sharing API (requires only sharing.read scope)
+async function listSharedFolderContents(
+  dropboxToken: string,
+  sharedLinkUrl: string,
+  path: string = ''
+): Promise<{ entries: DropboxEntry[]; error?: string }> {
+  console.log(`Listing shared folder contents: path="${path}"`)
+  
+  try {
+    // Use sharing/get_shared_link_metadata first to validate the link
+    const metadataResponse = await fetch('https://api.dropboxapi.com/2/sharing/get_shared_link_metadata', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${dropboxToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        url: sharedLinkUrl,
+        path: path || undefined,
+      }),
+    })
+
+    if (!metadataResponse.ok) {
+      const errorText = await metadataResponse.text()
+      console.error('Metadata API error:', errorText)
+      
+      // Check for specific scope errors
+      if (errorText.includes('sharing.read')) {
+        return { entries: [], error: 'Missing sharing.read scope. Please enable this in Dropbox App Console > Permissions.' }
+      }
+      
+      return { entries: [], error: `Dropbox API error: ${errorText}` }
+    }
+
+    const metadata = await metadataResponse.json()
+    console.log('Shared link metadata:', JSON.stringify(metadata).substring(0, 200))
+
+    // Check if it's a folder
+    if (metadata['.tag'] !== 'folder') {
+      console.log('Shared link is not a folder, it is:', metadata['.tag'])
+      // If it's a file, return it as a single entry
+      if (metadata['.tag'] === 'file') {
+        return { entries: [metadata as DropboxEntry] }
+      }
+      return { entries: [], error: 'Shared link is not a folder' }
+    }
+
+    // For folders, we need to use list_folder with shared_link parameter
+    // This requires files.metadata.read scope, but let's try an alternative approach
+    // We'll use the sharing/list_folder_members endpoint to verify access, then try listing
+    
+    // Try the sharing/list_shared_links to get folder info
+    const listResponse = await fetch('https://api.dropboxapi.com/2/files/list_folder', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${dropboxToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        path: path || '',
+        shared_link: {
+          url: sharedLinkUrl,
+        },
+        recursive: false,
+        include_media_info: false,
+        include_deleted: false,
+        include_has_explicit_shared_members: false,
+      }),
+    })
+
+    if (!listResponse.ok) {
+      const errorText = await listResponse.text()
+      console.error('List folder error:', errorText)
+      
+      // Check for scope errors and provide helpful message
+      if (errorText.includes('files.metadata.read')) {
+        return { 
+          entries: [], 
+          error: 'Missing files.metadata.read scope. Please go to Dropbox App Console > Permissions tab, enable "files.metadata.read", click Submit, then generate a new access token.' 
+        }
+      }
+      
+      return { entries: [], error: `Failed to list folder: ${errorText}` }
+    }
+
+    const listData = await listResponse.json()
+    console.log(`Found ${listData.entries?.length || 0} entries in folder`)
+    
+    return { entries: listData.entries || [] }
+    
+  } catch (error) {
+    console.error('Error listing folder:', error)
+    return { entries: [], error: error.message }
+  }
+}
+
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders })
@@ -169,32 +266,12 @@ Deno.serve(async (req) => {
 
     console.log('Normalized URL:', sharedLinkUrl)
 
-    // List contents of parent folder to find subfolders
-    // NOTE: shared-link folders must be listed via files/list_folder with shared_link (not a sharing/* endpoint).
-    const listResponse = await fetch('https://api.dropboxapi.com/2/files/list_folder', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${dropboxToken}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        path: '',
-        recursive: false,
-        include_media_info: false,
-        include_deleted: false,
-        include_has_explicit_shared_members: false,
-        shared_link: { url: sharedLinkUrl },
-      }),
-    })
-
-    if (!listResponse.ok) {
-      const error = await listResponse.text()
-      console.error('Dropbox API error:', error)
-      throw new Error(`Dropbox API error: ${error}`)
+    // List contents of parent folder using our helper function
+    const { entries, error: listError } = await listSharedFolderContents(dropboxToken, sharedLinkUrl)
+    
+    if (listError) {
+      throw new Error(listError)
     }
-
-    const listData = await listResponse.json()
-    const entries: DropboxEntry[] = listData.entries || []
     
     // Find all subfolders (these represent motors)
     const subfolders = entries.filter(e => e['.tag'] === 'folder')
@@ -269,32 +346,20 @@ Deno.serve(async (req) => {
         }
 
         // List images in this subfolder
-        const subfolderResponse = await fetch('https://api.dropboxapi.com/2/files/list_folder', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${dropboxToken}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            path: folder.path_lower,
-            recursive: false,
-            include_media_info: false,
-            include_deleted: false,
-            include_has_explicit_shared_members: false,
-            shared_link: { url: sharedLinkUrl },
-          }),
-        })
+        const { entries: subfolderEntries, error: subfolderError } = await listSharedFolderContents(
+          dropboxToken, 
+          sharedLinkUrl, 
+          folder.path_lower
+        )
 
-        if (!subfolderResponse.ok) {
-          const error = await subfolderResponse.text()
-          console.error('Error listing subfolder:', error)
-          folderResult.errors.push('Failed to list folder contents')
+        if (subfolderError) {
+          console.error('Error listing subfolder:', subfolderError)
+          folderResult.errors.push(`Failed to list folder: ${subfolderError}`)
           results.push(folderResult)
           continue
         }
 
-        const subfolderData = await subfolderResponse.json()
-        const imageFiles: DropboxEntry[] = (subfolderData.entries || []).filter(
+        const imageFiles: DropboxEntry[] = subfolderEntries.filter(
           (e: DropboxEntry) => e['.tag'] === 'file' && /\.(jpg|jpeg|png|gif|webp)$/i.test(e.name)
         )
 
@@ -341,7 +406,7 @@ Deno.serve(async (req) => {
               continue
             }
 
-            // Download from Dropbox shared link (files/download does NOT accept shared_link)
+            // Download from Dropbox using sharing/get_shared_link_file (requires sharing.read)
             const downloadResponse = await fetch('https://content.dropboxapi.com/2/sharing/get_shared_link_file', {
               method: 'POST',
               headers: {
@@ -354,7 +419,9 @@ Deno.serve(async (req) => {
             })
 
             if (!downloadResponse.ok) {
-              throw new Error(`Download failed for ${file.name}`)
+              const errorText = await downloadResponse.text()
+              console.error(`Download failed for ${file.name}:`, errorText)
+              throw new Error(`Download failed: ${errorText.substring(0, 100)}`)
             }
 
             const fileBuffer = await downloadResponse.arrayBuffer()
