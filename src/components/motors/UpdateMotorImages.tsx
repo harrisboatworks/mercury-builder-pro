@@ -9,9 +9,10 @@ import { Progress } from '@/components/ui/progress';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Loader2, RefreshCw, Image, Download, Play, Square, CheckCircle2, Clock, AlertCircle, Zap, Users, Globe, FolderSync, FolderOpen } from 'lucide-react';
+import { Loader2, RefreshCw, Image, Download, Play, Square, CheckCircle2, Clock, AlertCircle, Zap, Users, Globe, FolderSync, FolderOpen, Search } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { classifyMotorFamily, type MotorFamily } from '@/lib/motor-family-classifier';
+import { DropboxFolderBrowser } from './DropboxFolderBrowser';
 
 const PUBLIC_FAMILY_OPTIONS = [
   { value: 'FourStroke', label: 'FourStroke' },
@@ -114,6 +115,7 @@ export default function UpdateMotorImages() {
   const [dropboxResult, setDropboxResult] = useState<any>(null);
   const [dropboxDryRun, setDropboxDryRun] = useState(true);
   const [dropboxReplaceExisting, setDropboxReplaceExisting] = useState(false);
+  const [showDropboxBrowser, setShowDropboxBrowser] = useState(false);
 
   // Automated batch processing state
   const [isAutomatedRunning, setIsAutomatedRunning] = useState(false);
@@ -724,18 +726,35 @@ export default function UpdateMotorImages() {
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="dropbox-folder-url">Dropbox Folder Path</Label>
-            <Input
-              id="dropbox-folder-url"
-              type="text"
-              placeholder="/Motor Images or /Mercury 2025 Photos"
-              value={dropboxFolderUrl}
-              onChange={(e) => setDropboxFolderUrl(e.target.value)}
-            />
+            <div className="flex gap-2">
+              <Input
+                id="dropbox-folder-url"
+                type="text"
+                placeholder="/Motor Images or /Mercury 2025 Photos"
+                value={dropboxFolderUrl}
+                onChange={(e) => setDropboxFolderUrl(e.target.value)}
+                className="flex-1"
+              />
+              <Button 
+                variant="outline" 
+                onClick={() => setShowDropboxBrowser(true)}
+                type="button"
+              >
+                <Search className="h-4 w-4 mr-1" />
+                Browse
+              </Button>
+            </div>
             <p className="text-xs text-muted-foreground">
-              Enter a folder path (e.g., "/Mercury Images") <span className="font-medium">or paste a Dropbox shared link</span>.
+              Enter a folder path or <button type="button" className="text-primary hover:underline font-medium" onClick={() => setShowDropboxBrowser(true)}>browse your Dropbox</button>.
               This folder should contain subfolders named like "150HP FourStroke" with images inside.
             </p>
           </div>
+
+          <DropboxFolderBrowser 
+            open={showDropboxBrowser} 
+            onOpenChange={setShowDropboxBrowser}
+            onSelectFolder={(path) => setDropboxFolderUrl(path)}
+          />
 
           <div className="flex items-center gap-4">
             <div className="flex items-center space-x-2">
