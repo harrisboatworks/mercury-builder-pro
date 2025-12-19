@@ -6,9 +6,17 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { Progress } from '@/components/ui/progress';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Loader2, RefreshCw, Image, Download, Play, Square, CheckCircle2, Clock, AlertCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
+const FAMILY_OPTIONS = [
+  { value: '', label: 'All Families' },
+  { value: 'proxs', label: 'ProXS (~17 motors)' },
+  { value: 'seapro', label: 'SeaPro' },
+  { value: 'verado', label: 'Verado' },
+  { value: 'fourstroke', label: 'FourStroke' },
+];
 // Smaller batches (6-8 motors each) with offset support to avoid timeout
 const HP_BATCHES = [
   { label: "2.5-5 HP", min: 2.5, max: 5, batchSize: 8, offset: 0, estimatedCount: 8 },
@@ -49,6 +57,7 @@ export default function UpdateMotorImages() {
   const [hpMin, setHpMin] = useState('');
   const [hpMax, setHpMax] = useState('');
   const [batchSize, setBatchSize] = useState('10');
+  const [selectedFamily, setSelectedFamily] = useState('');
   const { toast } = useToast();
 
   // Automated batch processing state
@@ -220,6 +229,7 @@ export default function UpdateMotorImages() {
       
       if (hpMin) options.hpMin = parseFloat(hpMin);
       if (hpMax) options.hpMax = parseFloat(hpMax);
+      if (selectedFamily) options.family = selectedFamily;
 
       const { data, error } = await supabase.functions.invoke('scrape-motor-images', {
         body: options
@@ -458,10 +468,34 @@ export default function UpdateMotorImages() {
             Manual Batch Scrape
           </CardTitle>
           <CardDescription>
-            Manually scrape a specific HP range or batch size.
+            Manually scrape a specific HP range, family, or batch size.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
+          {/* Family Selector */}
+          <div className="space-y-2">
+            <Label htmlFor="familySelect">Motor Family</Label>
+            <Select value={selectedFamily || "all"} onValueChange={(val) => setSelectedFamily(val === "all" ? "" : val)}>
+              <SelectTrigger id="familySelect">
+                <SelectValue placeholder="Select motor family..." />
+              </SelectTrigger>
+              <SelectContent>
+                {FAMILY_OPTIONS.map((option) => (
+                  <SelectItem key={option.value || "all"} value={option.value || "all"}>
+                    {option.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <p className="text-xs text-muted-foreground">
+              {selectedFamily === 'proxs' && "Will scrape only ProXS motors with correct URLs"}
+              {selectedFamily === 'seapro' && "Will scrape only SeaPro motors"}
+              {selectedFamily === 'verado' && "Will scrape only Verado motors"}
+              {selectedFamily === 'fourstroke' && "Will scrape only standard FourStroke motors"}
+              {(!selectedFamily || selectedFamily === 'all') && "Leave empty to scrape all families"}
+            </p>
+          </div>
+          
           <div className="grid grid-cols-3 gap-4">
             <div className="space-y-2">
               <Label htmlFor="hpMin">Min HP</Label>
@@ -504,6 +538,7 @@ export default function UpdateMotorImages() {
             {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             <Download className="mr-2 h-4 w-4" />
             {dryRun ? "Preview Scrape (Dry Run)" : "Scrape & Update Images"}
+            {selectedFamily && ` - ${FAMILY_OPTIONS.find(f => f.value === selectedFamily)?.label}`}
           </Button>
         </CardContent>
       </Card>

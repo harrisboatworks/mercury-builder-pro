@@ -12,6 +12,7 @@ interface ScrapeOptions {
   batchSize?: number;
   offset?: number;
   specificMotorId?: string;
+  family?: string; // 'proxs', 'seapro', 'verado', 'fourstroke', or undefined for all
 }
 
 interface MotorModel {
@@ -485,6 +486,7 @@ Deno.serve(async (req) => {
       batchSize: body.batchSize ?? 10,
       offset: body.offset ?? 0,
       specificMotorId: body.specificMotorId,
+      family: body.family,
     };
 
     console.log('Scrape options:', options);
@@ -504,6 +506,22 @@ Deno.serve(async (req) => {
       }
       if (options.hpMax !== undefined) {
         query = query.lte('horsepower', options.hpMax);
+      }
+      
+      // Filter by family if specified
+      if (options.family) {
+        const familyFilter = options.family.toLowerCase();
+        if (familyFilter === 'proxs') {
+          query = query.or('family.ilike.%proxs%,family.ilike.%pro xs%,family.ilike.%pro-xs%');
+        } else if (familyFilter === 'seapro') {
+          query = query.or('family.ilike.%seapro%,family.ilike.%sea pro%,family.ilike.%sea-pro%');
+        } else if (familyFilter === 'verado') {
+          query = query.ilike('family', '%verado%');
+        } else if (familyFilter === 'fourstroke') {
+          // FourStroke = null family, empty, or explicitly FourStroke
+          query = query.or('family.is.null,family.eq.,family.ilike.%fourstroke%,family.ilike.%four stroke%');
+        }
+        console.log(`Filtering by family: ${familyFilter}`);
       }
     }
 
