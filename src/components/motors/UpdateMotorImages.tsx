@@ -13,7 +13,7 @@ import { useToast } from '@/hooks/use-toast';
 import { classifyMotorFamily, type MotorFamily } from '@/lib/motor-family-classifier';
 
 const FAMILY_OPTIONS = [
-  { value: '', label: 'All Families' },
+  { value: 'all', label: 'All Families' },
   { value: 'proxs', label: 'ProXS (~17 motors)' },
   { value: 'seapro', label: 'SeaPro' },
   { value: 'verado', label: 'Verado' },
@@ -81,7 +81,7 @@ export default function UpdateMotorImages() {
   const [hpMin, setHpMin] = useState('');
   const [hpMax, setHpMax] = useState('');
   const [batchSize, setBatchSize] = useState('50');
-  const [selectedFamily, setSelectedFamily] = useState('');
+  const [selectedFamily, setSelectedFamily] = useState('all');
   const { toast } = useToast();
 
   // Mercury Portal state
@@ -364,7 +364,7 @@ export default function UpdateMotorImages() {
       
       if (hpMin) options.hpMin = parseFloat(hpMin);
       if (hpMax) options.hpMax = parseFloat(hpMax);
-      if (selectedFamily) options.family = selectedFamily;
+      if (selectedFamily && selectedFamily !== 'all') options.family = selectedFamily;
 
       const response = await fetch(
         `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/scrape-motor-images`,
