@@ -175,9 +175,9 @@ serve(async (req) => {
   }
 
   try {
-    const { hp, family, motorId, dryRun = false } = await req.json();
+    const { hp, family, motorId, dryRun = false, batchUpdate = false } = await req.json();
     
-    console.log(`[Public] Starting scrape for HP=${hp}, Family=${family}, Motor=${motorId}`);
+    console.log(`[Public] Starting scrape for HP=${hp}, Family=${family}, Motor=${motorId}, BatchUpdate=${batchUpdate}`);
     
     const firecrawlApiKey = Deno.env.get('FIRECRAWL_API_KEY');
     if (!firecrawlApiKey) {
@@ -238,6 +238,46 @@ serve(async (req) => {
     const filteredUrls = filterImages(allImageUrls, hp);
     console.log(`[Public] Filtered to ${filteredUrls.length} quality images`);
     
+    // If batch update mode, find all matching motors
+    let matchingMotors: { id: string; model_display: string }[] = [];
+    if (batchUpdate) {
+      // Build family filter based on the family parameter
+      const familyFilters: string[] = [];
+      if (family === 'FourStroke') {
+        familyFilters.push('FourStroke', 'fourstroke', 'Four Stroke');
+      } else if (family === 'Pro XS') {
+        familyFilters.push('Pro XS', 'ProXS', 'proxs');
+      } else if (family === 'Verado') {
+        familyFilters.push('Verado', 'verado');
+      } else if (family === 'SeaPro') {
+        familyFilters.push('SeaPro', 'seapro', 'Sea Pro');
+      } else if (family === 'ProKicker') {
+        familyFilters.push('ProKicker', 'prokicker', 'Pro Kicker');
+      }
+      
+      // Query for motors matching HP and family
+      let query = supabase
+        .from('motor_models')
+        .select('id, model_display')
+        .eq('horsepower', hp);
+      
+      // Filter by family if we have filters
+      if (familyFilters.length > 0) {
+        // Use model_display ILIKE patterns to match family
+        const familyPattern = familyFilters.map(f => `%${f}%`).join(',');
+        query = query.or(familyFilters.map(f => `model_display.ilike.%${f}%`).join(','));
+      }
+      
+      const { data: motors, error: motorsError } = await query;
+      
+      if (motorsError) {
+        console.error(`[Public] Error fetching motors:`, motorsError);
+      } else {
+        matchingMotors = motors || [];
+        console.log(`[Public] Found ${matchingMotors.length} matching motors for HP=${hp}, Family=${family}`);
+      }
+    }
+    
     if (dryRun) {
       return new Response(
         JSON.stringify({
@@ -246,17 +286,21 @@ serve(async (req) => {
           productPageUrl,
           imagesFound: filteredUrls.length,
           imageUrls: filteredUrls.slice(0, 20), // Return first 20 for preview
+          matchingMotors: batchUpdate ? matchingMotors.map(m => ({ id: m.id, display: m.model_display })) : [],
+          matchingMotorCount: matchingMotors.length,
         }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
     
     // Download and upload images
+    // Use a shared folder for batch updates, individual motor folder otherwise
+    const uploadFolder = batchUpdate ? `${hp}hp-${family.toLowerCase().replace(/\s+/g, '-')}` : (motorId || 'unknown');
     const uploadedUrls: string[] = [];
-    const limit = Math.min(filteredUrls.length, 10); // Max 10 images per motor
+    const limit = Math.min(filteredUrls.length, 10); // Max 10 images per batch
     
     for (let i = 0; i < limit; i++) {
-      const uploadedUrl = await downloadAndUploadImage(supabase, filteredUrls[i], motorId, i);
+      const uploadedUrl = await downloadAndUploadImage(supabase, filteredUrls[i], uploadFolder, i);
       if (uploadedUrl) {
         uploadedUrls.push(uploadedUrl);
       }
@@ -264,22 +308,49 @@ serve(async (req) => {
     
     console.log(`[Public] Uploaded ${uploadedUrls.length} images`);
     
-    // Update motor record if we have images and a motorId
-    if (motorId && uploadedUrls.length > 0) {
-      const { error: updateError } = await supabase
-        .from('motor_models')
-        .update({
-          images: uploadedUrls,
-          image_url: uploadedUrls[0], // Set first as primary
-          hero_image_url: uploadedUrls[0],
-          updated_at: new Date().toISOString(),
-        })
-        .eq('id', motorId);
-      
-      if (updateError) {
-        console.error(`[Public] Failed to update motor:`, updateError);
-      } else {
-        console.log(`[Public] Updated motor ${motorId} with ${uploadedUrls.length} images`);
+    // Track which motors were updated
+    const updatedMotors: { id: string; display: string }[] = [];
+    
+    if (uploadedUrls.length > 0) {
+      if (batchUpdate && matchingMotors.length > 0) {
+        // Batch update all matching motors
+        for (const motor of matchingMotors) {
+          const { error: updateError } = await supabase
+            .from('motor_models')
+            .update({
+              images: uploadedUrls,
+              image_url: uploadedUrls[0],
+              hero_image_url: uploadedUrls[0],
+              updated_at: new Date().toISOString(),
+            })
+            .eq('id', motor.id);
+          
+          if (updateError) {
+            console.error(`[Public] Failed to update motor ${motor.id}:`, updateError);
+          } else {
+            console.log(`[Public] Updated motor ${motor.id} (${motor.model_display})`);
+            updatedMotors.push({ id: motor.id, display: motor.model_display || '' });
+          }
+        }
+        console.log(`[Public] Batch updated ${updatedMotors.length}/${matchingMotors.length} motors`);
+      } else if (motorId) {
+        // Single motor update (original behavior)
+        const { error: updateError } = await supabase
+          .from('motor_models')
+          .update({
+            images: uploadedUrls,
+            image_url: uploadedUrls[0],
+            hero_image_url: uploadedUrls[0],
+            updated_at: new Date().toISOString(),
+          })
+          .eq('id', motorId);
+        
+        if (updateError) {
+          console.error(`[Public] Failed to update motor:`, updateError);
+        } else {
+          console.log(`[Public] Updated motor ${motorId} with ${uploadedUrls.length} images`);
+          updatedMotors.push({ id: motorId, display: '' });
+        }
       }
     }
     
@@ -290,6 +361,9 @@ serve(async (req) => {
         imagesFound: filteredUrls.length,
         imagesUploaded: uploadedUrls.length,
         uploadedUrls,
+        batchUpdate,
+        motorsUpdated: updatedMotors.length,
+        updatedMotors,
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
