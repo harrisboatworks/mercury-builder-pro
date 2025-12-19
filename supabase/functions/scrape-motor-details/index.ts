@@ -168,13 +168,58 @@ async function pollForExtraction(jobId: string, apiKey: string, maxWaitMs = 6000
   throw new Error('Extraction timeout - exceeded 60 seconds');
 }
 
+// Validate if image URL matches expected HP (filter wrong-HP images)
+function validateImageHpMatch(imageUrl: string, targetHp: number): boolean {
+  const url = imageUrl.toLowerCase();
+  
+  // Extract HP numbers from URL patterns
+  const hpPatterns = [
+    /(\d+(?:\.\d+)?)\s*hp/gi,
+    /(\d+(?:\.\d+)?)-hp/gi,
+    /-(\d+)-(?:fourstroke|outboard|motor)/gi,
+    /\/(\d+)hp\//gi,
+  ];
+  
+  for (const pattern of hpPatterns) {
+    let match;
+    while ((match = pattern.exec(url)) !== null) {
+      const foundHp = parseFloat(match[1]);
+      // If we find a different HP in the URL, reject it
+      if (foundHp > 1 && foundHp <= 600 && Math.abs(foundHp - targetHp) > 2) {
+        console.log(`[HP Validation] Rejecting image with HP ${foundHp}, expected ${targetHp}: ${imageUrl}`);
+        return false;
+      }
+    }
+  }
+  
+  // Check for "related products" or "similar items" in path
+  if (url.includes('related') || url.includes('similar') || url.includes('also-like')) {
+    return false;
+  }
+  
+  return true;
+}
+
+// Extract HP from model name for validation
+function extractHpFromModel(modelName: string): number | null {
+  const hpMatch = modelName.match(/(\d+(?:\.\d+)?)\s*(?:HP|MH|EFI|EXLPT|ELPT|MLH)?/i);
+  if (hpMatch) {
+    return parseFloat(hpMatch[1]);
+  }
+  return null;
+}
+
 // FIRE-1 agent extraction - replaces all manual regex parsing
 async function scrapeWithFire1Agent(url: string, apiKey: string, modelName?: string): Promise<ScrapeResult> {
   console.log(`[Firecrawl FIRE-1] Extracting motor details from: ${url}`);
   
+  // Try to extract HP from model name for image validation
+  const targetHp = modelName ? extractHpFromModel(modelName) : null;
+  
   const extractionPrompt = `
 You are extracting outboard motor product information from a dealer or manufacturer website.
 ${modelName ? `The motor model is: ${modelName}` : ''}
+${targetHp ? `The motor is ${targetHp} HP - only extract images of this specific HP motor.` : ''}
 
 EXTRACTION REQUIREMENTS:
 1. Description: Write a 2-3 sentence conversational description focusing on what makes this motor special and ideal use cases. Do NOT include pricing information.
@@ -199,11 +244,13 @@ EXTRACTION REQUIREMENTS:
    - Starting system (electric/manual)
    - Control type (remote/tiller)
 
-4. Images: Extract full product image URLs only. Exclude:
+4. Images: Extract full product image URLs only.${targetHp ? ` ONLY include images showing the ${targetHp} HP motor.` : ''} Exclude:
    - Icons, logos, navigation images
    - Thumbnails (URLs containing 'thumb', 'small', '-320')
    - Social media icons
    - Placeholder images
+   - Images from "Related Products" or "Similar Items" sections
+   - Images of motors with DIFFERENT HP ratings${targetHp ? ` (we only want ${targetHp} HP)` : ''}
 
 Be accurate and thorough. Only include information that is explicitly stated on the page.
 `;
@@ -268,13 +315,23 @@ Be accurate and thorough. Only include information that is explicitly stated on 
       delete specifications.specifications;
     }
 
+    // Filter images: basic validation + HP matching if we know the target HP
+    const rawImages = Array.isArray(extractedData.images) ? extractedData.images.filter((url: string) => 
+      typeof url === 'string' && url.startsWith('http')
+    ) : [];
+    
+    // Apply HP validation if we extracted a target HP from the model name
+    const validatedImages = targetHp 
+      ? rawImages.filter((url: string) => validateImageHpMatch(url, targetHp))
+      : rawImages;
+    
+    console.log(`[Firecrawl FIRE-1] Images: ${rawImages.length} raw, ${validatedImages.length} after HP validation`);
+
     const result: ScrapeResult = {
       description: extractedData.description || null,
       features: Array.isArray(extractedData.features) ? extractedData.features : [],
       specifications,
-      images: Array.isArray(extractedData.images) ? extractedData.images.filter((url: string) => 
-        typeof url === 'string' && url.startsWith('http')
-      ) : [],
+      images: validatedImages,
     };
 
     console.log(`[Firecrawl FIRE-1] Extraction successful:`, {
