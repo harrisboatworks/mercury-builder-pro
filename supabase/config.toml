@@ -131,3 +131,6 @@ verify_jwt = false
 
 [functions.firecrawl-inventory-agent]
 verify_jwt = false
+
+[functions.scrape-mercury-portal]
+verify_jwt = true
