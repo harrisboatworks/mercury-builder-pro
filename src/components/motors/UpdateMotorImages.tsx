@@ -89,6 +89,7 @@ export default function UpdateMotorImages() {
   const [mercuryResult, setMercuryResult] = useState<any>(null);
   const [hpFamilyGroups, setHpFamilyGroups] = useState<HpFamilyGroup[]>([]);
   const [loadingGroups, setLoadingGroups] = useState(false);
+  const [includeOutOfStock, setIncludeOutOfStock] = useState(true);
 
   // Automated batch processing state
   const [isAutomatedRunning, setIsAutomatedRunning] = useState(false);
@@ -170,6 +171,7 @@ export default function UpdateMotorImages() {
             dryRun,
             batchSize: parseInt(batchSize) || 50,
             maxImagesPerGroup: 10,
+            includeOutOfStock,
           }),
         }
       );
@@ -494,6 +496,15 @@ export default function UpdateMotorImages() {
                   disabled={mercuryLoading}
                 />
                 <Label htmlFor="mercuryDryRun">Dry Run</Label>
+              </div>
+              <div className="flex items-center gap-2">
+                <Switch
+                  id="includeOutOfStock"
+                  checked={includeOutOfStock}
+                  onCheckedChange={setIncludeOutOfStock}
+                  disabled={mercuryLoading}
+                />
+                <Label htmlFor="includeOutOfStock">Include Out-of-Stock Motors</Label>
               </div>
             </div>
           </div>
