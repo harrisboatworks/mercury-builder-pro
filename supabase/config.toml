@@ -9,12 +9,6 @@ verify_jwt = false
 [functions.multi-source-scraper]
 verify_jwt = false
 
-[functions.scrape-inventory-v2]
-verify_jwt = false
-
-[functions.scrape-inventory]
-verify_jwt = false
-
 [functions.auth-health-summary]
 verify_jwt = true
 
