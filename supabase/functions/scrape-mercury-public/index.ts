@@ -89,23 +89,123 @@ function extractImageUrls(content: string, links: string[]): string[] {
   return Array.from(imageUrls);
 }
 
-// Filter images to only keep high-quality, relevant ones
-function filterImages(urls: string[], hp: number): string[] {
-  return urls.filter(url => {
-    // Skip obvious thumbnails and icons
-    if (url.includes('thumb') || url.includes('icon') || url.includes('logo')) {
-      return false;
+// Family keywords to exclude when scraping a specific family
+const FAMILY_EXCLUSIONS: Record<string, string[]> = {
+  'FourStroke': ['verado', 'v10', 'v12', 'proxs', 'pro-xs', 'seapro', 'sea-pro', 'prokicker', 'jet'],
+  'Pro XS': ['verado', 'v10', 'v12', 'fourstroke', 'four-stroke', 'seapro', 'sea-pro', 'prokicker'],
+  'Verado': ['fourstroke', 'four-stroke', 'proxs', 'pro-xs', 'seapro', 'sea-pro', 'prokicker'],
+  'SeaPro': ['verado', 'v10', 'v12', 'proxs', 'pro-xs', 'fourstroke', 'prokicker'],
+  'ProKicker': ['verado', 'v10', 'v12', 'proxs', 'pro-xs', 'seapro', 'fourstroke'],
+};
+
+// Filter images to only keep high-quality, relevant ones for the specific HP and family
+function filterImages(urls: string[], hp: number, family: string): { url: string; score: number }[] {
+  const urlLower = (url: string) => url.toLowerCase();
+  const exclusions = FAMILY_EXCLUSIONS[family] || [];
+  
+  const scored = urls.map(url => {
+    const lower = urlLower(url);
+    let score = 0;
+    let excluded = false;
+    
+    // === EXCLUSION CHECKS ===
+    
+    // Skip obvious thumbnails, icons, logos
+    if (lower.includes('thumb') || lower.includes('icon') || lower.includes('logo')) {
+      excluded = true;
     }
-    // Skip very small dimension indicators
+    
+    // Skip very small dimension indicators (e.g., 100x100)
     if (url.match(/[_-](\d{2,3})x(\d{2,3})\./)) {
-      return false;
+      excluded = true;
     }
-    // Prefer larger images
-    if (url.includes('large') || url.includes('detail') || url.includes('hero')) {
-      return true;
+    
+    // Skip gallery/lifestyle/promotional images
+    if (lower.includes('gallery') || lower.includes('lifestyle') || lower.includes('dealer') || 
+        lower.includes('banner') || lower.includes('promo') || lower.includes('boat-') ||
+        lower.includes('fishing') || lower.includes('action')) {
+      excluded = true;
     }
-    return true;
+    
+    // Exclude wrong motor families
+    for (const excl of exclusions) {
+      if (lower.includes(excl)) {
+        console.log(`[Public] Excluding image (wrong family: ${excl}): ${url.substring(0, 80)}`);
+        excluded = true;
+        break;
+      }
+    }
+    
+    // Check for HP values in the URL and exclude if wrong HP
+    const hpMatch = lower.match(/(\d+)hp/);
+    if (hpMatch) {
+      const imageHp = parseInt(hpMatch[1], 10);
+      if (imageHp !== hp) {
+        // Allow close HP values (within same family range is ok for generic shots)
+        // But exclude definitely wrong ones (e.g., 105hp jet when looking for 150hp)
+        const hpDiff = Math.abs(imageHp - hp);
+        if (hpDiff > 25) {
+          console.log(`[Public] Excluding image (wrong HP: ${imageHp} vs ${hp}): ${url.substring(0, 80)}`);
+          excluded = true;
+        } else {
+          // Close HP, slight penalty
+          score -= 5;
+        }
+      } else {
+        // Exact HP match - big bonus!
+        score += 30;
+      }
+    }
+    
+    if (excluded) {
+      return { url, score: -1000 };
+    }
+    
+    // === SCORING BONUSES ===
+    
+    // Prefer images with target HP in filename
+    if (lower.includes(`${hp}hp`)) {
+      score += 25;
+    }
+    
+    // Prefer product/engine shots from shop CDN (hash-based URLs are usually product shots)
+    if (lower.includes('shop.mercurymarine.com/media/catalog/product')) {
+      score += 20;
+    }
+    
+    // Prefer images with family name
+    const familyLower = family.toLowerCase().replace(/\s+/g, '');
+    if (lower.includes(familyLower) || lower.includes(family.toLowerCase().replace(/\s+/g, '-'))) {
+      score += 15;
+    }
+    
+    // Prefer larger/detail images
+    if (lower.includes('large') || lower.includes('detail') || lower.includes('hero')) {
+      score += 10;
+    }
+    
+    // Prefer webgrouping images (Mercury's standard product shots)
+    if (lower.includes('webgrouping')) {
+      score += 20;
+    }
+    
+    // Prefer port-side or starboard profile shots
+    if (lower.includes('port') || lower.includes('stbd') || lower.includes('starboard') || lower.includes('profile')) {
+      score += 10;
+    }
+    
+    // Prefer PNG (usually higher quality cutouts)
+    if (lower.endsWith('.png')) {
+      score += 5;
+    }
+    
+    return { url, score };
   });
+  
+  // Filter out excluded images and sort by score descending
+  return scored
+    .filter(item => item.score > -1000)
+    .sort((a, b) => b.score - a.score);
 }
 
 // Download image and upload to Supabase Storage
@@ -234,9 +334,10 @@ serve(async (req) => {
     const allImageUrls = extractImageUrls(content, links);
     console.log(`[Public] Found ${allImageUrls.length} total image URLs`);
     
-    // Filter to high-quality images
-    const filteredUrls = filterImages(allImageUrls, hp);
-    console.log(`[Public] Filtered to ${filteredUrls.length} quality images`);
+    // Filter to high-quality images with HP and family awareness
+    const scoredUrls = filterImages(allImageUrls, hp, family);
+    const filteredUrls = scoredUrls.slice(0, 15).map(item => item.url); // Take top 15 scored images
+    console.log(`[Public] Filtered to ${filteredUrls.length} quality images (from ${allImageUrls.length} total)`);
     
     // If batch update mode, find all matching motors
     let matchingMotors: { id: string; model_display: string }[] = [];
