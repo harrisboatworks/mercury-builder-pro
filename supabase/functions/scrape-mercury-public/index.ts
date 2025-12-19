@@ -5,27 +5,27 @@ import { corsHeaders } from "../_shared/cors.ts";
 // Mercury public product page URLs by HP range and family
 const MERCURY_PRODUCT_PAGES: Record<string, { url: string; hpRange: [number, number] }[]> = {
   'FourStroke': [
-    { url: 'https://www.mercurymarine.com/en/us/engines/outboard/fourstroke/2.5-15hp/', hpRange: [2.5, 15] },
-    { url: 'https://www.mercurymarine.com/en/us/engines/outboard/fourstroke/15-20hp/', hpRange: [15, 20] },
-    { url: 'https://www.mercurymarine.com/en/us/engines/outboard/fourstroke/25-60hp/', hpRange: [25, 60] },
-    { url: 'https://www.mercurymarine.com/en/us/engines/outboard/fourstroke/75-150hp/', hpRange: [75, 150] },
-    { url: 'https://www.mercurymarine.com/en/us/engines/outboard/fourstroke/175-300hp/', hpRange: [175, 300] },
+    { url: 'https://www.mercurymarine.com/us/en/engines/outboard/fourstroke/fourstroke-2.5-15hp', hpRange: [2.5, 15] },
+    { url: 'https://www.mercurymarine.com/us/en/engines/outboard/fourstroke/fourstroke-15-20hp', hpRange: [15, 20] },
+    { url: 'https://www.mercurymarine.com/us/en/engines/outboard/fourstroke/fourstroke-25-60hp', hpRange: [25, 60] },
+    { url: 'https://www.mercurymarine.com/us/en/engines/outboard/fourstroke/fourstroke-75-150hp', hpRange: [75, 150] },
+    { url: 'https://www.mercurymarine.com/us/en/engines/outboard/fourstroke/fourstroke-175-300hp', hpRange: [175, 300] },
   ],
   'Pro XS': [
-    { url: 'https://www.mercurymarine.com/en/us/engines/outboard/pro-xs/115hp/', hpRange: [115, 115] },
-    { url: 'https://www.mercurymarine.com/en/us/engines/outboard/pro-xs/150hp/', hpRange: [150, 150] },
-    { url: 'https://www.mercurymarine.com/en/us/engines/outboard/pro-xs/175-300hp/', hpRange: [175, 300] },
+    { url: 'https://www.mercurymarine.com/us/en/engines/outboard/pro-xs/pro-xs-115hp', hpRange: [115, 115] },
+    { url: 'https://www.mercurymarine.com/us/en/engines/outboard/pro-xs/pro-xs-150hp', hpRange: [150, 150] },
+    { url: 'https://www.mercurymarine.com/us/en/engines/outboard/pro-xs/pro-xs-175-300hp', hpRange: [175, 300] },
   ],
   'Verado': [
-    { url: 'https://www.mercurymarine.com/en/us/engines/outboard/verado/175-300hp/', hpRange: [175, 300] },
-    { url: 'https://www.mercurymarine.com/en/us/engines/outboard/verado/350-400hp/', hpRange: [350, 400] },
-    { url: 'https://www.mercurymarine.com/en/us/engines/outboard/verado/v10/', hpRange: [400, 450] },
+    { url: 'https://www.mercurymarine.com/us/en/engines/outboard/verado/verado-175-300hp', hpRange: [175, 300] },
+    { url: 'https://www.mercurymarine.com/us/en/engines/outboard/verado/verado-350-400hp', hpRange: [350, 400] },
+    { url: 'https://www.mercurymarine.com/us/en/engines/outboard/verado/v10', hpRange: [400, 450] },
   ],
   'SeaPro': [
-    { url: 'https://www.mercurymarine.com/en/us/engines/outboard/seapro/seapro-fourstroke/', hpRange: [15, 300] },
+    { url: 'https://www.mercurymarine.com/us/en/engines/outboard/seapro/seapro-fourstroke', hpRange: [15, 300] },
   ],
   'ProKicker': [
-    { url: 'https://www.mercurymarine.com/en/us/engines/outboard/prokicker/', hpRange: [9.9, 25] },
+    { url: 'https://www.mercurymarine.com/us/en/engines/outboard/prokicker', hpRange: [9.9, 25] },
   ],
 };
 
