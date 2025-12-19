@@ -105,7 +105,7 @@ export default function UpdateMotorImages() {
   const [publicResult, setPublicResult] = useState<any>(null);
   const [publicHp, setPublicHp] = useState('');
   const [publicFamily, setPublicFamily] = useState('FourStroke');
-  const [publicControlType, setPublicControlType] = useState('Remote');
+  const [publicControlType, setPublicControlType] = useState('remote');
   const [publicDryRun, setPublicDryRun] = useState(true);
 
   // Dropbox folder sync state
@@ -472,7 +472,7 @@ export default function UpdateMotorImages() {
       });
 
       const { data, error } = await supabase.functions.invoke('scrape-mercury-public', {
-        body: { hp, family: publicFamily, controlType: publicControlType, dryRun: isDryRun, batchUpdate },
+        body: { hp, family: publicFamily, controlType: publicControlType === 'any' ? '' : publicControlType, dryRun: isDryRun, batchUpdate },
       });
 
       if (error) throw error;
@@ -592,9 +592,9 @@ export default function UpdateMotorImages() {
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="Remote">Remote (excludes tiller images)</SelectItem>
-                <SelectItem value="Tiller">Tiller (excludes remote images)</SelectItem>
-                <SelectItem value="">Any (no filtering)</SelectItem>
+                <SelectItem value="remote">Remote (excludes tiller images)</SelectItem>
+                <SelectItem value="tiller">Tiller (excludes remote images)</SelectItem>
+                <SelectItem value="any">Any (no filtering)</SelectItem>
               </SelectContent>
             </Select>
           </div>
