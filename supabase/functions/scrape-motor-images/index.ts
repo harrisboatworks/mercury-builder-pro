@@ -64,7 +64,7 @@ function normalizeFamily(family?: string): string {
 }
 
 // Build URL slug from model_display with family awareness
-function buildAlberniSlug(modelDisplay: string, family?: string): string {
+function buildAlberniSlug(modelDisplay: string, family?: string, hp?: number): string {
   if (!modelDisplay) return '';
   
   const normalizedFamily = normalizeFamily(family);
@@ -79,6 +79,8 @@ function buildAlberniSlug(modelDisplay: string, family?: string): string {
     .replace(/\s*seapro\s*/gi, '')
     .replace(/\s*sea\s*pro\s*/gi, '')
     .replace(/\s*verado\s*/gi, '')
+    .replace(/\s*dts\s*/gi, '') // Remove DTS suffix
+    .replace(/\s*torquemaster\s*/gi, '') // Remove TorqueMaster
     .replace(/\./g, '-')
     .replace(/\s+/g, '')
     .replace(/-+/g, '-')
@@ -89,6 +91,10 @@ function buildAlberniSlug(modelDisplay: string, family?: string): string {
   switch (normalizedFamily) {
     case 'proxs':
       slug += '-pro-xs';
+      // ProXS motors 175HP and above need -r suffix for correct Alberni URLs
+      if (hp && hp >= 175) {
+        slug += '-r';
+      }
       break;
     case 'seapro':
       slug += '-seapro';
@@ -130,7 +136,7 @@ function getCategoryPath(hp: number, family?: string): string {
 // Build the full product URL with family awareness
 function buildProductUrl(modelDisplay: string, hp: number, family?: string): string {
   const category = getCategoryPath(hp, family);
-  const slug = buildAlberniSlug(modelDisplay, family);
+  const slug = buildAlberniSlug(modelDisplay, family, hp); // Pass hp for ProXS -r suffix
   return `https://www.albernipowermarine.com/product/mercury-outboards/${category}/${slug}`;
 }
 
