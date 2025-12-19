@@ -61,69 +61,39 @@ function groupMotorsByHpFamily(motors: Motor[]): HpFamilyGroup[] {
   return Array.from(groups.values()).sort((a, b) => a.hp - b.hp);
 }
 
-// Mercury Portal authentication
-async function authenticateMercuryPortal(): Promise<{ cookies: string; token: string } | null> {
-  const email = Deno.env.get('MERCURY_DEALER_EMAIL');
-  const password = Deno.env.get('MERCURY_DEALER_PASSWORD');
-  
-  if (!email || !password) {
-    console.error('[Mercury Auth] Missing dealer credentials');
-    return null;
-  }
-
-  console.log('[Mercury Auth] Attempting login for:', email);
-  
-  try {
-    const loginResponse = await fetch('https://productknowledge.mercurymarine.com/api/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-      },
-      body: JSON.stringify({ email, password, rememberMe: true }),
-    });
-
-    if (!loginResponse.ok) {
-      console.error('[Mercury Auth] Login failed:', loginResponse.status, await loginResponse.text());
-      return null;
-    }
-
-    const setCookieHeaders = loginResponse.headers.getSetCookie?.() || [];
-    const cookies = setCookieHeaders.map(c => c.split(';')[0]).join('; ');
-    const loginData = await loginResponse.json();
-    const token = loginData.token || loginData.accessToken || '';
-    
-    console.log('[Mercury Auth] Login successful, got session cookies:', cookies.length > 0);
-    return { cookies, token };
-  } catch (error) {
-    console.error('[Mercury Auth] Login error:', error);
-    return null;
-  }
-}
-
-// Build Mercury portal search URL for HP + Family
+// Build Mercury Marine public website URL for HP + Family (no auth required)
 function buildMercurySearchUrl(hp: number, family: MotorFamily): string {
-  const searchTerm = `${hp} hp ${family}`;
-  return `https://productknowledge.mercurymarine.com/#/search?q=${encodeURIComponent(searchTerm)}`;
+  // Map family to URL-friendly slug
+  const familySlug: Record<MotorFamily, string> = {
+    'Verado': 'verado',
+    'Pro XS': 'pro-xs',
+    'FourStroke': 'fourstroke',
+    'ProKicker': 'prokicker',
+    'SeaPro': 'sea-pro',
+  };
+  
+  const slug = familySlug[family] || 'fourstroke';
+  
+  // Use public Mercury Marine product pages - no authentication required
+  if (family === 'Verado') {
+    return `https://www.mercurymarine.com/en/us/engines/outboard/verado/`;
+  } else if (family === 'Pro XS') {
+    return `https://www.mercurymarine.com/en/us/engines/outboard/pro-xs/`;
+  } else if (family === 'SeaPro') {
+    return `https://www.mercurymarine.com/en/us/engines/outboard/seapro-commercial/`;
+  } else if (family === 'ProKicker') {
+    return `https://www.mercurymarine.com/en/us/engines/outboard/prokicker/`;
+  } else {
+    return `https://www.mercurymarine.com/en/us/engines/outboard/fourstroke/`;
+  }
 }
 
-// Scrape Mercury portal with authentication using Firecrawl
+// Scrape Mercury Marine public website using Firecrawl (no auth required)
 async function scrapeMercuryWithFirecrawl(
   url: string, 
-  session: { cookies: string; token: string },
   firecrawlApiKey: string
 ): Promise<{ success: boolean; images: string[]; html?: string }> {
   console.log('[Mercury Scrape] Scraping URL:', url);
-  
-  const headers: Record<string, string> = {
-    'Cookie': session.cookies,
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-  };
-  
-  if (session.token) {
-    headers['Authorization'] = `Bearer ${session.token}`;
-  }
 
   try {
     const response = await fetch('https://api.firecrawl.dev/v1/scrape', {
@@ -135,7 +105,6 @@ async function scrapeMercuryWithFirecrawl(
       body: JSON.stringify({
         url,
         formats: ['html', 'markdown'],
-        headers,
         waitFor: 5000,
         timeout: 30000,
       }),
@@ -222,7 +191,7 @@ function normalizeImageUrl(url: string): string {
     return 'https:' + url;
   }
   if (url.startsWith('/')) {
-    return 'https://productknowledge.mercurymarine.com' + url;
+    return 'https://www.mercurymarine.com' + url;
   }
   return url;
 }
@@ -337,19 +306,7 @@ serve(async (req) => {
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-    // Authenticate with Mercury portal
-    console.log('[Main] Authenticating with Mercury portal...');
-    const session = await authenticateMercuryPortal();
-    
-    if (!session) {
-      return new Response(
-        JSON.stringify({ 
-          success: false, 
-          error: 'Failed to authenticate with Mercury portal. Check credentials.' 
-        }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 401 }
-      );
-    }
+    console.log('[Main] Starting Mercury Marine public website scrape (no auth required)...');
 
     // Get motors to process - now includes ALL motors by default
     let query = supabase
@@ -390,7 +347,7 @@ serve(async (req) => {
         console.log(`[Main] Processing group: ${group.key} (${group.motors.length} motors)`);
         
         const searchUrl = buildMercurySearchUrl(group.hp, group.family);
-        const scrapeResult = await scrapeMercuryWithFirecrawl(searchUrl, session, firecrawlApiKey);
+        const scrapeResult = await scrapeMercuryWithFirecrawl(searchUrl, firecrawlApiKey);
         
         if (!scrapeResult.success || scrapeResult.images.length === 0) {
           results.groups.push({
