@@ -255,6 +255,41 @@ export function InventoryMonitor() {
     }
   };
 
+  const triggerFirecrawlAgent = async () => {
+    setUpdating(true);
+    try {
+      toast({
+        title: "Starting Firecrawl Agent...",
+        description: "Using FIRE-1 AI to extract inventory data",
+      });
+
+      const { data, error } = await supabase.functions.invoke('firecrawl-inventory-agent', {
+        body: { syncToDb: true }
+      });
+
+      if (error) throw error;
+
+      if (data?.success) {
+        toast({
+          title: "Firecrawl Agent Complete",
+          description: `Extracted ${data.summary?.motorsExtracted || 0} motors. Inserted: ${data.summary?.inserted || 0}, Updated: ${data.summary?.updated || 0}`,
+        });
+        await fetchInventoryData();
+      } else {
+        throw new Error(data?.error || 'Agent extraction failed');
+      }
+    } catch (error: any) {
+      console.error('Firecrawl agent error:', error);
+      toast({
+        title: "Firecrawl Agent Failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    } finally {
+      setUpdating(false);
+    }
+  };
+
   const updateMotorAvailability = async (motorId: string, availability: string) => {
     try {
       const { error } = await supabase
@@ -410,10 +445,18 @@ export function InventoryMonitor() {
                 )}
               </CardDescription>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap">
               <Button onClick={() => triggerInventoryUpdate()} disabled={loading || updating}>
                 <RefreshCw className={`h-4 w-4 mr-2 ${updating ? 'animate-spin' : ''}`} />
                 {updating ? 'Updating...' : 'Update Inventory'}
+              </Button>
+              <Button 
+                variant="secondary" 
+                size="sm"
+                onClick={() => triggerFirecrawlAgent()}
+                disabled={loading || updating}
+              >
+                🤖 Firecrawl Agent
               </Button>
               <Button 
                 variant="outline" 
