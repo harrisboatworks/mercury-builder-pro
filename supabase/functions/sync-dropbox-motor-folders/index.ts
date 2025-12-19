@@ -170,16 +170,21 @@ Deno.serve(async (req) => {
     console.log('Normalized URL:', sharedLinkUrl)
 
     // List contents of parent folder to find subfolders
-    const listResponse = await fetch('https://api.dropboxapi.com/2/sharing/list_folder', {
+    // NOTE: shared-link folders must be listed via files/list_folder with shared_link (not a sharing/* endpoint).
+    const listResponse = await fetch('https://api.dropboxapi.com/2/files/list_folder', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${dropboxToken}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        path: '',
+        recursive: false,
+        include_media_info: false,
+        include_deleted: false,
+        include_has_explicit_shared_members: false,
         shared_link: { url: sharedLinkUrl },
-        path: ''
-      })
+      }),
     })
 
     if (!listResponse.ok) {
@@ -264,16 +269,20 @@ Deno.serve(async (req) => {
         }
 
         // List images in this subfolder
-        const subfolderResponse = await fetch('https://api.dropboxapi.com/2/sharing/list_folder', {
+        const subfolderResponse = await fetch('https://api.dropboxapi.com/2/files/list_folder', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${dropboxToken}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
+            path: folder.path_lower,
+            recursive: false,
+            include_media_info: false,
+            include_deleted: false,
+            include_has_explicit_shared_members: false,
             shared_link: { url: sharedLinkUrl },
-            path: folder.path_lower
-          })
+          }),
         })
 
         if (!subfolderResponse.ok) {
@@ -332,16 +341,16 @@ Deno.serve(async (req) => {
               continue
             }
 
-            // Download from Dropbox
-            const downloadResponse = await fetch('https://content.dropboxapi.com/2/files/download', {
+            // Download from Dropbox shared link (files/download does NOT accept shared_link)
+            const downloadResponse = await fetch('https://content.dropboxapi.com/2/sharing/get_shared_link_file', {
               method: 'POST',
               headers: {
                 'Authorization': `Bearer ${dropboxToken}`,
                 'Dropbox-API-Arg': JSON.stringify({
+                  url: sharedLinkUrl,
                   path: file.path_lower,
-                  shared_link: { url: sharedLinkUrl }
-                })
-              }
+                }),
+              },
             })
 
             if (!downloadResponse.ok) {
