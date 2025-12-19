@@ -441,7 +441,7 @@ export default function UpdateMotorImages() {
   };
 
   // Scrape public Mercury website (no login required)
-  const scrapePublicMercury = async () => {
+  const scrapePublicMercury = async (batchUpdate = false) => {
     if (!publicHp) {
       toast({ title: "HP required", description: "Enter an HP value", variant: "destructive" });
       return;
@@ -452,24 +452,40 @@ export default function UpdateMotorImages() {
 
     try {
       const hp = parseFloat(publicHp);
+      const isDryRun = batchUpdate ? false : publicDryRun; // Batch update always runs for real
       
       toast({
-        title: publicDryRun ? "Preview mode..." : "Scraping public Mercury site...",
-        description: `Looking for ${hp}HP ${publicFamily} images`,
+        title: batchUpdate 
+          ? `Batch updating all ${hp}HP ${publicFamily} motors...` 
+          : (publicDryRun ? "Preview mode..." : "Scraping public Mercury site..."),
+        description: batchUpdate 
+          ? "Scraping images and updating all matching motor records"
+          : `Looking for ${hp}HP ${publicFamily} images`,
       });
 
       const { data, error } = await supabase.functions.invoke('scrape-mercury-public', {
-        body: { hp, family: publicFamily, dryRun: publicDryRun },
+        body: { hp, family: publicFamily, dryRun: isDryRun, batchUpdate },
       });
 
       if (error) throw error;
 
       setPublicResult(data);
-      toast({
-        title: data?.success ? "Success!" : "Completed with issues",
-        description: `Found ${data?.imagesFound || 0} images, uploaded ${data?.imagesUploaded || 0}`,
-        variant: data?.success ? "default" : "destructive",
-      });
+      
+      if (batchUpdate) {
+        toast({
+          title: data?.success ? "Batch update complete!" : "Completed with issues",
+          description: `Updated ${data?.motorsUpdated || 0} motors with ${data?.imagesUploaded || 0} images`,
+          variant: data?.success ? "default" : "destructive",
+        });
+      } else {
+        toast({
+          title: data?.success ? "Success!" : "Completed with issues",
+          description: publicDryRun 
+            ? `Found ${data?.imagesFound || 0} images, ${data?.matchingMotorCount || 0} matching motors`
+            : `Found ${data?.imagesFound || 0} images, uploaded ${data?.imagesUploaded || 0}`,
+          variant: data?.success ? "default" : "destructive",
+        });
+      }
     } catch (error) {
       console.error('Public scrape error:', error);
       setPublicResult({ error: (error as Error).message });
@@ -532,9 +548,10 @@ export default function UpdateMotorImages() {
 
           <div className="flex gap-2">
             <Button 
-              onClick={scrapePublicMercury} 
+              onClick={() => scrapePublicMercury(false)} 
               disabled={publicLoading || !publicHp}
               className="flex-1"
+              variant="outline"
             >
               {publicLoading ? (
                 <>
@@ -548,6 +565,24 @@ export default function UpdateMotorImages() {
                 </>
               )}
             </Button>
+            
+            <Button 
+              onClick={() => scrapePublicMercury(true)} 
+              disabled={publicLoading || !publicHp}
+              className="flex-1"
+            >
+              {publicLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Updating...
+                </>
+              ) : (
+                <>
+                  <Users className="mr-2 h-4 w-4" />
+                  Batch Update All Motors
+                </>
+              )}
+            </Button>
           </div>
 
           {publicResult && (
@@ -556,9 +591,43 @@ export default function UpdateMotorImages() {
                 <p className="text-destructive">{publicResult.error}</p>
               ) : (
                 <div className="space-y-2">
-                  <p><strong>Page:</strong> {publicResult.pageUrl}</p>
+                  <p><strong>Page:</strong> {publicResult.productPageUrl}</p>
                   <p><strong>Images Found:</strong> {publicResult.imagesFound || 0}</p>
-                  <p><strong>Images Uploaded:</strong> {publicResult.imagesUploaded || 0}</p>
+                  {publicResult.dryRun && publicResult.matchingMotorCount > 0 && (
+                    <p><strong>Matching Motors:</strong> {publicResult.matchingMotorCount}</p>
+                  )}
+                  {publicResult.imagesUploaded !== undefined && (
+                    <p><strong>Images Uploaded:</strong> {publicResult.imagesUploaded}</p>
+                  )}
+                  {publicResult.motorsUpdated !== undefined && (
+                    <p className="text-green-600 font-medium">
+                      <CheckCircle2 className="inline h-4 w-4 mr-1" />
+                      Updated {publicResult.motorsUpdated} motor records
+                    </p>
+                  )}
+                  {publicResult.updatedMotors?.length > 0 && (
+                    <div className="mt-2">
+                      <p className="font-medium mb-1">Updated Motors:</p>
+                      <ul className="text-xs space-y-1 max-h-32 overflow-y-auto">
+                        {publicResult.updatedMotors.map((motor: { id: string; display: string }, i: number) => (
+                          <li key={i} className="flex items-center gap-1">
+                            <CheckCircle2 className="h-3 w-3 text-green-500" />
+                            {motor.display || motor.id}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {publicResult.matchingMotors?.length > 0 && publicResult.dryRun && (
+                    <div className="mt-2">
+                      <p className="font-medium mb-1">Motors that will be updated:</p>
+                      <ul className="text-xs space-y-1 max-h-32 overflow-y-auto">
+                        {publicResult.matchingMotors.map((motor: { id: string; display: string }, i: number) => (
+                          <li key={i}>{motor.display || motor.id}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                   {publicResult.imageUrls?.length > 0 && (
                     <div>
                       <p className="font-medium mb-1">Preview:</p>
