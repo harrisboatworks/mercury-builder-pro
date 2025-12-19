@@ -541,13 +541,13 @@ async function saveDebugScreenshot(
       bytes = new Uint8Array(arrayBuffer);
     } else {
       // It's base64, possibly with data: prefix
-      const base64Data = screenshot.replace(/^data:image\/\w+;base64,/, '');
+      // Remove data: prefix and any whitespace/newlines
+      let base64Data = screenshot.replace(/^data:image\/\w+;base64,/, '');
+      base64Data = base64Data.replace(/[\s\r\n]/g, ''); // Remove all whitespace
       
-      // Validate base64 before decoding
-      if (!/^[A-Za-z0-9+/]*={0,2}$/.test(base64Data)) {
-        console.error('[Debug] Invalid base64 string');
-        return null;
-      }
+      console.log('[Debug] Base64 first 100 chars:', base64Data.substring(0, 100));
+      console.log('[Debug] Base64 last 50 chars:', base64Data.substring(base64Data.length - 50));
+      console.log('[Debug] Base64 cleaned length:', base64Data.length);
       
       try {
         const binaryStr = atob(base64Data);
@@ -555,8 +555,10 @@ async function saveDebugScreenshot(
         for (let i = 0; i < binaryStr.length; i++) {
           bytes[i] = binaryStr.charCodeAt(i);
         }
+        console.log('[Debug] Decoded to', bytes.length, 'bytes');
       } catch (decodeError) {
         console.error('[Debug] Failed to decode base64:', decodeError);
+        console.error('[Debug] Base64 sample causing error:', base64Data.substring(0, 200));
         return null;
       }
     }
