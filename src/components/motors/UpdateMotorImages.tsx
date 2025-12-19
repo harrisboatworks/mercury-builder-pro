@@ -723,16 +723,17 @@ export default function UpdateMotorImages() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="dropbox-folder-url">Parent Folder URL</Label>
+            <Label htmlFor="dropbox-folder-url">Dropbox Folder Path</Label>
             <Input
               id="dropbox-folder-url"
               type="text"
-              placeholder="https://www.dropbox.com/scl/fo/..."
+              placeholder="/Motor Images or /Mercury 2025 Photos"
               value={dropboxFolderUrl}
               onChange={(e) => setDropboxFolderUrl(e.target.value)}
             />
             <p className="text-xs text-muted-foreground">
-              This folder should contain subfolders named like "150HP FourStroke L" with images inside
+              Enter the folder path from your Dropbox (e.g., "/Mercury Images"). 
+              This folder should contain subfolders named like "150HP FourStroke" with images inside.
             </p>
           </div>
 
