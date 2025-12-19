@@ -421,31 +421,64 @@ serve(async (req) => {
 
 async function scrapeHarris(detailUrl: string, apiKey: string): Promise<ScrapeResult> {
   // Use existing scrape-motor-details function
-  const response = await fetch(`${Deno.env.get('SUPABASE_URL')}/functions/v1/scrape-motor-details`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')}`,
-    },
-    body: JSON.stringify({ detail_url: detailUrl }),
-  });
-  
-  const result = await response.json();
-  return result.success ? result.data : {};
+  try {
+    const response = await fetch(`${Deno.env.get('SUPABASE_URL')}/functions/v1/scrape-motor-details`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')}`,
+      },
+      body: JSON.stringify({ detail_url: detailUrl }),
+    });
+    
+    const result = await response.json();
+    
+    // Handle both success formats - result may contain data at top level or nested
+    if (result.success) {
+      return {
+        description: result.description || result.data?.description || null,
+        features: result.features || result.data?.features || [],
+        specifications: result.specifications || result.data?.specifications || {},
+        images: result.images || result.data?.images || [],
+      };
+    }
+    
+    console.log('[scrapeHarris] Request failed:', result.error);
+    return {};
+  } catch (error) {
+    console.error('[scrapeHarris] Error:', error);
+    return {};
+  }
 }
 
 async function scrapeMercuryOfficial(model: string, horsepower: number, apiKey: string): Promise<ScrapeResult> {
   try {
-    // Build Mercury Marine product URL
-    const searchUrl = `https://www.mercurymarine.com/en/us/engines/outboard/?q=${encodeURIComponent(model + ' ' + horsepower)}`;
+    // Build Mercury Marine product URL - use direct product page instead of search
+    // Mercury URL structure: /en/us/engines/outboard/fourstroke/{hp-range}/
+    let hpCategory = '';
+    if (horsepower <= 3.5) hpCategory = '2-5hp-3-5hp';
+    else if (horsepower <= 6) hpCategory = '4hp-6hp';
+    else if (horsepower <= 10) hpCategory = '8hp-9-9hp-10hp';
+    else if (horsepower <= 20) hpCategory = '15hp-20hp';
+    else if (horsepower <= 30) hpCategory = '25hp-30hp';
+    else if (horsepower <= 40) hpCategory = '30hp-40hp';
+    else if (horsepower <= 60) hpCategory = '40hp-60hp';
+    else if (horsepower <= 100) hpCategory = '75hp-90hp-100hp-115hp';
+    else if (horsepower <= 150) hpCategory = '135hp-150hp';
+    else if (horsepower <= 225) hpCategory = '175hp-200hp-225hp';
+    else if (horsepower <= 300) hpCategory = '250hp-300hp';
+    else hpCategory = '350hp-400hp-450hp-500hp-600hp';
     
-    console.log(`[Firecrawl FIRE-1] Extracting Mercury official data from: ${searchUrl}`);
+    const productUrl = `https://www.mercurymarine.com/en/us/engines/outboard/fourstroke/${hpCategory}/`;
+    
+    console.log(`[Firecrawl FIRE-1] Extracting Mercury official data from: ${productUrl} for ${horsepower}HP`);
     
     const extractionPrompt = `
 You are extracting outboard motor product information from Mercury Marine's official website.
+Focus on the ${horsepower} HP motor model specifically.
 
 EXTRACTION REQUIREMENTS:
-1. Description: Write a 2-3 sentence conversational description focusing on what makes this motor special and ideal use cases. Do NOT include pricing information.
+1. Description: Write a 2-3 sentence conversational description focusing on what makes this ${horsepower}HP motor special and ideal use cases. Do NOT include pricing information.
 
 2. Features: Extract 6-10 key features and benefits. Format as concise bullet points.
 
@@ -459,7 +492,7 @@ EXTRACTION REQUIREMENTS:
 
 4. Images: Extract full product image URLs only (not icons or thumbnails).
 
-Focus on official Mercury Marine specifications. Be accurate and thorough.
+Focus on official Mercury Marine specifications for the ${horsepower}HP model. Be accurate and thorough.
 `;
 
     const response = await fetch('https://api.firecrawl.dev/v1/extract', {
@@ -469,11 +502,11 @@ Focus on official Mercury Marine specifications. Be accurate and thorough.
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        urls: [searchUrl],
+        urls: [productUrl],
         schema: motorDataSchema,
         prompt: extractionPrompt,
-        enableWebSearch: false,
-        allowExternalLinks: false,
+        enableWebSearch: true, // Enable web search to find the right product page
+        allowExternalLinks: true,
         agent: {
           model: 'FIRE-1'
         }

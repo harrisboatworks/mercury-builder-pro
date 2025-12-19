@@ -1,3 +1,5 @@
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
@@ -33,23 +35,38 @@ interface ScrapeResult {
   error?: string;
 }
 
+// Schema for FIRE-1 agent image extraction
+const imageExtractionSchema = {
+  type: "object",
+  properties: {
+    productImages: {
+      type: "array",
+      items: { type: "string" },
+      description: "Full absolute URLs of product images only (motors, engines). Exclude logos, icons, thumbnails, banners, promotional images, and social media icons."
+    },
+    heroImage: {
+      type: "string",
+      description: "The main/hero product image URL - typically the largest, highest quality image of the motor"
+    }
+  },
+  required: ["productImages"]
+};
+
 // Build URL slug from model_display
-// Example: "Mercury 40 ELPT FourStroke" → "40elpt-fourstroke"
 function buildAlberniSlug(modelDisplay: string): string {
   if (!modelDisplay) return '';
   
   let slug = modelDisplay
     .toLowerCase()
-    .replace(/^mercury\s*/i, '')          // Remove "Mercury " prefix
-    .replace(/®/g, '')                    // Remove ® symbol
-    .replace(/\s*fourstroke\s*/gi, '')    // Remove "FourStroke" temporarily
-    .replace(/\./g, '-')                  // 9.9 → 9-9
-    .replace(/\s+/g, '')                  // Remove ALL spaces: "40 ELPT" → "40elpt"
-    .replace(/-+/g, '-')                  // Collapse multiple dashes
-    .replace(/^-|-$/g, '')                // Trim leading/trailing dashes
+    .replace(/^mercury\s*/i, '')
+    .replace(/®/g, '')
+    .replace(/\s*fourstroke\s*/gi, '')
+    .replace(/\./g, '-')
+    .replace(/\s+/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
     .trim();
   
-  // Append -fourstroke
   if (!slug.endsWith('-fourstroke')) {
     slug += '-fourstroke';
   }
@@ -59,8 +76,6 @@ function buildAlberniSlug(modelDisplay: string): string {
 
 // Get category path based on HP
 function getCategoryPath(hp: number, modelDisplay: string): string {
-  const isProXS = modelDisplay?.toLowerCase().includes('proxs');
-  
   if (hp <= 30) {
     return '2.5-30-hp-mercury-fourstroke';
   } else if (hp <= 150) {
@@ -75,104 +90,6 @@ function buildProductUrl(modelDisplay: string, hp: number): string {
   const category = getCategoryPath(hp, modelDisplay);
   const slug = buildAlberniSlug(modelDisplay);
   return `https://www.albernipowermarine.com/product/mercury-outboards/${category}/${slug}`;
-}
-
-// Generate alternate URL patterns to try
-function getAlternateUrls(modelDisplay: string, hp: number): string[] {
-  const baseUrl = buildProductUrl(modelDisplay, hp);
-  const slug = buildAlberniSlug(modelDisplay);
-  const category = getCategoryPath(hp, modelDisplay);
-  const baseCategory = `https://www.albernipowermarine.com/product/mercury-outboards/${category}`;
-  
-  const alternates: string[] = [baseUrl];
-  
-  // Try with -01 suffix (common for variants)
-  alternates.push(`${baseCategory}/${slug}-01`);
-  
-  // Try without "efi" if present
-  if (slug.includes('-efi')) {
-    alternates.push(`${baseCategory}/${slug.replace('-efi', '')}`);
-  }
-  
-  // Try with just HP and basic model code
-  const hpSlug = hp.toString().replace('.', '-');
-  const modelCodes = ['elh', 'elpt', 'exlpt', 'mh', 'mlh', 'xl', 'xxl', 'cxl'];
-  
-  for (const code of modelCodes) {
-    if (slug.includes(code)) {
-      // Try simplified version: {hp}{code}-fourstroke
-      alternates.push(`${baseCategory}/${hpSlug}${code}-fourstroke`);
-      alternates.push(`${baseCategory}/${hpSlug}-${code}-fourstroke`);
-      break;
-    }
-  }
-  
-  return [...new Set(alternates)]; // Remove duplicates
-}
-
-// Extract HP from a URL string (e.g., "20-hp" → 20, "9-9" → 9.9)
-function extractHpFromUrl(url: string): number | null {
-  const lowerUrl = url.toLowerCase();
-  
-  // Pattern: "XX-hp" or "XXhp"
-  const hpMatch = lowerUrl.match(/(\d+(?:-\d)?)\s*-?\s*hp/);
-  if (hpMatch) {
-    return parseFloat(hpMatch[1].replace('-', '.'));
-  }
-  
-  // Pattern: HP at start of product slug (e.g., "/20elpt-" or "/9-9elh-")
-  const slugMatch = lowerUrl.match(/\/(\d+(?:-\d)?)\s*(?:elh|elpt|exlpt|mh|mlh|xl|xxl|cxl|tlr)/);
-  if (slugMatch) {
-    return parseFloat(slugMatch[1].replace('-', '.'));
-  }
-  
-  return null;
-}
-
-// Filter valid motor images from scraped URLs - HP-aware to reject "Similar Items"
-function filterValidImages(imageUrls: string[], targetHp: number): string[] {
-  const validImages: string[] = [];
-  
-  // Normalize target HP for comparison (9.9 and 9-9 should match)
-  const normalizedTargetHp = targetHp;
-  
-  for (const url of imageUrls) {
-    // Must be from Alberni's AWS CDN
-    if (!url.includes('aws.albernipowermarine.com')) continue;
-    
-    const lowerUrl = url.toLowerCase();
-    
-    // Skip logos and promotional images
-    if (lowerUrl.includes('apm-brand')) continue;
-    if (lowerUrl.includes('go-boldly')) continue;
-    if (lowerUrl.includes('logo')) continue;
-    if (lowerUrl.includes('youtube')) continue;
-    if (lowerUrl.includes('thumbnail')) continue;
-    if (lowerUrl.includes('banner')) continue;
-    if (lowerUrl.includes('promo')) continue;
-    if (lowerUrl.includes('sale')) continue;
-    if (lowerUrl.includes('clearance')) continue;
-    if (lowerUrl.includes('boat-show')) continue;
-    if (lowerUrl.includes('icon')) continue;
-    if (lowerUrl.includes('button')) continue;
-    
-    // Skip small thumbnail images (often from "Similar Items" sections)
-    if (lowerUrl.includes('-320-') || lowerUrl.includes('-320.')) continue;
-    if (lowerUrl.includes('_thumb') || lowerUrl.includes('-thumb')) continue;
-    if (lowerUrl.includes('/small/') || lowerUrl.includes('/thumbs/')) continue;
-    
-    // HP-based filtering: Check if image URL contains a DIFFERENT HP than target
-    const urlHp = extractHpFromUrl(url);
-    if (urlHp !== null && Math.abs(urlHp - normalizedTargetHp) > 0.5) {
-      // URL contains a different HP - this is likely a "Similar Items" image
-      console.log(`🚫 Rejecting mismatched HP image: ${url} (found HP ${urlHp}, expected ${normalizedTargetHp})`);
-      continue;
-    }
-    
-    validImages.push(url);
-  }
-  
-  return [...new Set(validImages)]; // Remove duplicates
 }
 
 // Download image from external URL
@@ -208,7 +125,7 @@ async function downloadImage(url: string): Promise<{
 
 // Upload image to Supabase Storage
 async function uploadToStorage(
-  supabase: ReturnType<typeof import('https://esm.sh/@supabase/supabase-js@2').createClient>,
+  supabase: ReturnType<typeof createClient>,
   motorId: string,
   imageIndex: number,
   imageData: Uint8Array,
@@ -225,8 +142,8 @@ async function uploadToStorage(
       .from('motor-images')
       .upload(path, imageData, {
         contentType,
-        upsert: true, // Replace existing
-        cacheControl: '31536000', // 1 year cache
+        upsert: true,
+        cacheControl: '31536000',
       });
       
     if (error) {
@@ -234,7 +151,6 @@ async function uploadToStorage(
       return null;
     }
     
-    // Return the public URL
     const { data: urlData } = supabase.storage
       .from('motor-images')
       .getPublicUrl(path);
@@ -247,81 +163,99 @@ async function uploadToStorage(
   }
 }
 
-// Scrape a single product page using Firecrawl
-async function scrapeProductPage(url: string, apiKey: string, targetHp: number): Promise<string[]> {
+// FIRE-1 agent extraction for images
+async function scrapeImagesWithFire1(url: string, apiKey: string, hp: number): Promise<string[]> {
+  console.log(`[Firecrawl FIRE-1] Extracting images from: ${url}`);
+  
+  const extractionPrompt = `
+You are extracting product images from a marine dealer website for a ${hp} HP outboard motor.
+
+EXTRACTION REQUIREMENTS:
+1. Extract ONLY product images of the motor/engine itself
+2. Prioritize high-quality images (large, clear, professional photos)
+3. The hero image should be the main product shot
+
+EXCLUDE these types of images:
+- Company logos and branding images
+- Navigation icons and buttons
+- Social media icons
+- Promotional banners and sale graphics
+- Thumbnails (URLs containing 'thumb', 'small', '-320')
+- Images from "Similar Items" or "Related Products" sections
+- Images of different HP motors (we want ${hp} HP only)
+
+Return full absolute URLs only.
+`;
+
   try {
-    console.log(`Scraping: ${url}`);
-    
-    const response = await fetch('https://api.firecrawl.dev/v1/scrape', {
+    const response = await fetch('https://api.firecrawl.dev/v1/extract', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        url,
-        formats: ['html', 'links'],
-        onlyMainContent: false,
-        waitFor: 2000,
+        urls: [url],
+        schema: imageExtractionSchema,
+        prompt: extractionPrompt,
+        enableWebSearch: false,
+        allowExternalLinks: false,
+        agent: {
+          model: 'FIRE-1'
+        }
       }),
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error(`Firecrawl error for ${url}:`, errorData);
+      const errorText = await response.text();
+      console.error(`[Firecrawl FIRE-1] API error: ${response.status} - ${errorText}`);
       return [];
     }
 
     const data = await response.json();
+    console.log(`[Firecrawl FIRE-1] Image extraction response:`, JSON.stringify(data).substring(0, 500));
     
-    // Extract image URLs from HTML content
-    const imageUrls: string[] = [];
+    if (!data.success) {
+      console.error('[Firecrawl FIRE-1] Extraction failed:', data.error);
+      return [];
+    }
+
+    const extractedData = Array.isArray(data.data) ? data.data[0] : data.data;
     
-    // Get links that are images
-    if (data.data?.links) {
-      for (const link of data.data.links) {
-        if (typeof link === 'string' && link.match(/\.(jpg|jpeg|png|webp)$/i)) {
-          imageUrls.push(link);
+    if (!extractedData) {
+      console.log('[Firecrawl FIRE-1] No images extracted');
+      return [];
+    }
+
+    // Collect images, prioritizing hero image first
+    const images: string[] = [];
+    
+    if (extractedData.heroImage && typeof extractedData.heroImage === 'string') {
+      images.push(extractedData.heroImage);
+    }
+    
+    if (Array.isArray(extractedData.productImages)) {
+      for (const img of extractedData.productImages) {
+        if (typeof img === 'string' && img.startsWith('http') && !images.includes(img)) {
+          images.push(img);
         }
       }
     }
-    
-    // Parse HTML for image src attributes
-    if (data.data?.html) {
-      const imgMatches = data.data.html.match(/src=["']([^"']+aws\.albernipowermarine\.com[^"']+)["']/gi);
-      if (imgMatches) {
-        for (const match of imgMatches) {
-          const urlMatch = match.match(/src=["']([^"']+)["']/i);
-          if (urlMatch && urlMatch[1]) {
-            imageUrls.push(urlMatch[1]);
-          }
-        }
-      }
-      
-      // Also try data-src for lazy-loaded images
-      const dataSrcMatches = data.data.html.match(/data-src=["']([^"']+aws\.albernipowermarine\.com[^"']+)["']/gi);
-      if (dataSrcMatches) {
-        for (const match of dataSrcMatches) {
-          const urlMatch = match.match(/data-src=["']([^"']+)["']/i);
-          if (urlMatch && urlMatch[1]) {
-            imageUrls.push(urlMatch[1]);
-          }
-        }
-      }
-    }
-    
-    return filterValidImages(imageUrls, targetHp);
+
+    console.log(`[Firecrawl FIRE-1] Found ${images.length} valid images`);
+    return images.slice(0, 10); // Max 10 images
+
   } catch (error) {
-    console.error(`Error scraping ${url}:`, error);
+    console.error('[Firecrawl FIRE-1] Image extraction error:', error);
     return [];
   }
 }
 
-// Main scraping function for a single motor - now with download and upload
+// Main scraping function for a single motor
 async function scrapeMotorImages(
   motor: MotorModel,
   apiKey: string,
-  supabase: ReturnType<typeof import('https://esm.sh/@supabase/supabase-js@2').createClient>,
+  supabase: ReturnType<typeof createClient>,
   dryRun: boolean
 ): Promise<ScrapeResult> {
   const result: ScrapeResult = {
@@ -334,32 +268,18 @@ async function scrapeMotorImages(
   };
 
   try {
-    const urls = getAlternateUrls(motor.model_display, motor.horsepower);
-    let scrapedImageUrls: string[] = [];
-    let successUrl = '';
-
-    // Try each URL until we find images
-    for (const url of urls) {
-      result.url = url;
-      scrapedImageUrls = await scrapeProductPage(url, apiKey, motor.horsepower);
-      
-      if (scrapedImageUrls.length >= 2) {
-        successUrl = url;
-        break;
-      }
-      
-      // Rate limiting - wait 1.5 seconds between requests
-      await new Promise(resolve => setTimeout(resolve, 1500));
-    }
-
+    const productUrl = buildProductUrl(motor.model_display, motor.horsepower);
+    result.url = productUrl;
+    
+    // Use FIRE-1 agent for image extraction
+    const scrapedImageUrls = await scrapeImagesWithFire1(productUrl, apiKey, motor.horsepower);
+    
     result.imagesFound = scrapedImageUrls.length;
 
     if (scrapedImageUrls.length === 0) {
-      result.error = 'No valid images found on any URL variant';
+      result.error = 'No valid images found';
       return result;
     }
-
-    result.url = successUrl || urls[0];
 
     // If dry run, just report what we found
     if (dryRun) {
@@ -371,19 +291,17 @@ async function scrapeMotorImages(
 
     // Download and upload images to our storage
     const uploadedUrls: string[] = [];
-    const maxImages = Math.min(scrapedImageUrls.length, 8); // Max 8 images per motor
+    const maxImages = Math.min(scrapedImageUrls.length, 8);
 
     for (let i = 0; i < maxImages; i++) {
       const sourceUrl = scrapedImageUrls[i];
       
-      // Download the image
       const imageData = await downloadImage(sourceUrl);
       if (!imageData) {
         console.log(`Failed to download image ${i} for motor ${motor.id}`);
         continue;
       }
 
-      // Upload to our storage
       const uploadedUrl = await uploadToStorage(
         supabase,
         motor.id,
@@ -396,7 +314,7 @@ async function scrapeMotorImages(
         uploadedUrls.push(uploadedUrl);
       }
 
-      // Small delay between image downloads
+      // Small delay between downloads
       await new Promise(resolve => setTimeout(resolve, 500));
     }
 
@@ -432,8 +350,6 @@ Deno.serve(async (req) => {
 
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-    
-    const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
     const supabase = createClient(supabaseUrl, supabaseKey);
 
     // Parse options
@@ -467,9 +383,8 @@ Deno.serve(async (req) => {
       }
     }
 
-    // Apply offset and limit using range
     const offset = options.offset ?? 0;
-    query = query.range(offset, offset + options.batchSize - 1);
+    query = query.range(offset, offset + (options.batchSize ?? 10) - 1);
 
     const { data: motors, error: fetchError } = await query;
 
@@ -488,55 +403,49 @@ Deno.serve(async (req) => {
       );
     }
 
-    console.log(`Processing ${motors.length} motors...`);
+    console.log(`Processing ${motors.length} motors with FIRE-1 agent...`);
 
     const results: ScrapeResult[] = [];
     let successCount = 0;
     let failCount = 0;
     let totalImagesUploaded = 0;
 
-    // Process motors sequentially with rate limiting
     for (const motor of motors) {
-      const result = await scrapeMotorImages(motor, firecrawlApiKey, supabase, options.dryRun);
+      const result = await scrapeMotorImages(motor, firecrawlApiKey, supabase, options.dryRun ?? false);
       results.push(result);
 
       if (result.success) {
         successCount++;
         totalImagesUploaded += result.imagesUploaded;
 
-        // Update database if not dry run
         if (!options.dryRun && result.heroImage) {
-          // Build images array with metadata
           const imagesArray = result.galleryImages?.map((url, idx) => ({
             url,
             type: idx === 0 ? 'hero' : 'gallery',
-            source: 'alberni_scraped',
+            source: 'fire1_scraped',
             uploaded_at: new Date().toISOString(),
           })) || [];
 
-          const updateData: Record<string, unknown> = {
-            image_url: result.heroImage,
-            hero_image_url: result.heroImage,
-            images: imagesArray,
-            updated_at: new Date().toISOString(),
-          };
-
           const { error: updateError } = await supabase
             .from('motor_models')
-            .update(updateData)
+            .update({
+              image_url: result.heroImage,
+              hero_image_url: result.heroImage,
+              images: imagesArray,
+              updated_at: new Date().toISOString(),
+            })
             .eq('id', motor.id);
 
           if (updateError) {
             console.error(`Failed to update motor ${motor.id}:`, updateError);
             result.error = `DB update failed: ${updateError.message}`;
           } else {
-            console.log(`Updated motor ${motor.id} with ${result.imagesUploaded} images (stored in our bucket)`);
+            console.log(`Updated motor ${motor.id} with ${result.imagesUploaded} images`);
           }
 
-          // Log to enrichment log
           await supabase.from('motor_enrichment_log').insert({
             motor_id: motor.id,
-            source_name: 'alberni_power_marine',
+            source_name: 'fire1_image_scraper',
             action: 'image_scrape_and_upload',
             success: true,
             data_added: {
@@ -544,7 +453,6 @@ Deno.serve(async (req) => {
               images_count: result.galleryImages?.length || 0,
               images_uploaded: result.imagesUploaded,
               url_scraped: result.url,
-              storage_bucket: 'motor-images',
             },
           });
         }
@@ -552,11 +460,10 @@ Deno.serve(async (req) => {
         failCount++;
         console.log(`No images found for ${motor.model_display} (${motor.horsepower}HP)`);
 
-        // Log failure
         if (!options.dryRun) {
           await supabase.from('motor_enrichment_log').insert({
             motor_id: motor.id,
-            source_name: 'alberni_power_marine',
+            source_name: 'fire1_image_scraper',
             action: 'image_scrape_and_upload',
             success: false,
             error_message: result.error,
@@ -564,13 +471,14 @@ Deno.serve(async (req) => {
         }
       }
 
-      // Rate limiting between motors
+      // Rate limiting
       await new Promise(resolve => setTimeout(resolve, 2000));
     }
 
     const response = {
       success: true,
       dryRun: options.dryRun,
+      agent: 'FIRE-1',
       totalProcessed: motors.length,
       successCount,
       failCount,
