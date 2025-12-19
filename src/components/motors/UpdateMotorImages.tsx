@@ -9,7 +9,7 @@ import { Progress } from '@/components/ui/progress';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Loader2, RefreshCw, Image, Download, Play, Square, CheckCircle2, Clock, AlertCircle, Zap, Users, Globe } from 'lucide-react';
+import { Loader2, RefreshCw, Image, Download, Play, Square, CheckCircle2, Clock, AlertCircle, Zap, Users, Globe, FolderSync, FolderOpen } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { classifyMotorFamily, type MotorFamily } from '@/lib/motor-family-classifier';
 
@@ -107,6 +107,13 @@ export default function UpdateMotorImages() {
   const [publicFamily, setPublicFamily] = useState('FourStroke');
   const [publicControlType, setPublicControlType] = useState('Remote');
   const [publicDryRun, setPublicDryRun] = useState(true);
+
+  // Dropbox folder sync state
+  const [dropboxFolderUrl, setDropboxFolderUrl] = useState('');
+  const [dropboxLoading, setDropboxLoading] = useState(false);
+  const [dropboxResult, setDropboxResult] = useState<any>(null);
+  const [dropboxDryRun, setDropboxDryRun] = useState(true);
+  const [dropboxReplaceExisting, setDropboxReplaceExisting] = useState(false);
 
   // Automated batch processing state
   const [isAutomatedRunning, setIsAutomatedRunning] = useState(false);
@@ -496,6 +503,48 @@ export default function UpdateMotorImages() {
     }
   };
 
+  // Sync Dropbox motor folders
+  const syncDropboxFolders = async () => {
+    if (!dropboxFolderUrl) {
+      toast({ title: "URL required", description: "Enter a Dropbox folder URL", variant: "destructive" });
+      return;
+    }
+
+    setDropboxLoading(true);
+    setDropboxResult(null);
+
+    try {
+      toast({
+        title: dropboxDryRun ? "Scanning Dropbox folders..." : "Syncing Dropbox folders...",
+        description: "Looking for motor subfolders and matching them to your inventory",
+      });
+
+      const { data, error } = await supabase.functions.invoke('sync-dropbox-motor-folders', {
+        body: { 
+          parentFolderUrl: dropboxFolderUrl, 
+          dryRun: dropboxDryRun,
+          replaceExisting: dropboxReplaceExisting 
+        },
+      });
+
+      if (error) throw error;
+
+      setDropboxResult(data);
+      
+      toast({
+        title: data?.success ? (dropboxDryRun ? "Preview complete!" : "Sync complete!") : "Completed with issues",
+        description: `Found ${data?.totalFolders || 0} folders, matched ${data?.foldersMatched || 0} motors, ${dropboxDryRun ? 'would sync' : 'synced'} ${data?.totalImagesSynced || 0} images`,
+        variant: data?.success ? "default" : "destructive",
+      });
+    } catch (error) {
+      console.error('Dropbox sync error:', error);
+      setDropboxResult({ error: (error as Error).message });
+      toast({ title: "Error", description: (error as Error).message, variant: "destructive" });
+    } finally {
+      setDropboxLoading(false);
+    }
+  };
+
   return (
     <div className="container mx-auto p-8 space-y-6">
       {/* Public Mercury Scraper - NEW */}
@@ -654,6 +703,135 @@ export default function UpdateMotorImages() {
                     </div>
                   )}
                 </div>
+              )}
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Dropbox Smart Folder Sync - NEW */}
+      <Card className="max-w-3xl mx-auto border-purple-500 bg-gradient-to-br from-purple-500/5 to-purple-500/10">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <FolderSync className="h-5 w-5 text-purple-600" />
+            Smart Dropbox Folder Sync
+          </CardTitle>
+          <CardDescription>
+            Sync images from Dropbox by naming folders after motors (e.g., "150HP FourStroke L"). 
+            The system will auto-match each folder to the correct motor.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="dropbox-folder-url">Parent Folder URL</Label>
+            <Input
+              id="dropbox-folder-url"
+              type="text"
+              placeholder="https://www.dropbox.com/scl/fo/..."
+              value={dropboxFolderUrl}
+              onChange={(e) => setDropboxFolderUrl(e.target.value)}
+            />
+            <p className="text-xs text-muted-foreground">
+              This folder should contain subfolders named like "150HP FourStroke L" with images inside
+            </p>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id="dropbox-dry-run"
+                checked={dropboxDryRun}
+                onCheckedChange={(checked) => setDropboxDryRun(checked as boolean)}
+              />
+              <Label htmlFor="dropbox-dry-run" className="text-sm">
+                Preview only
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id="dropbox-replace"
+                checked={dropboxReplaceExisting}
+                onCheckedChange={(checked) => setDropboxReplaceExisting(checked as boolean)}
+              />
+              <Label htmlFor="dropbox-replace" className="text-sm">
+                Replace existing
+              </Label>
+            </div>
+          </div>
+
+          <Button 
+            onClick={syncDropboxFolders} 
+            disabled={dropboxLoading || !dropboxFolderUrl}
+            className="w-full"
+          >
+            {dropboxLoading ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                {dropboxDryRun ? "Scanning..." : "Syncing..."}
+              </>
+            ) : (
+              <>
+                <FolderOpen className="mr-2 h-4 w-4" />
+                {dropboxDryRun ? "Preview Folder Matches" : "Sync All Folders"}
+              </>
+            )}
+          </Button>
+
+          {dropboxResult && (
+            <div className="mt-4 p-3 bg-muted rounded-lg text-sm space-y-3">
+              {dropboxResult.error ? (
+                <p className="text-destructive">{dropboxResult.error}</p>
+              ) : (
+                <>
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="p-2 bg-background rounded">
+                      <div className="text-lg font-bold">{dropboxResult.totalFolders || 0}</div>
+                      <div className="text-xs text-muted-foreground">Folders Found</div>
+                    </div>
+                    <div className="p-2 bg-background rounded">
+                      <div className="text-lg font-bold text-green-600">{dropboxResult.foldersMatched || 0}</div>
+                      <div className="text-xs text-muted-foreground">Matched</div>
+                    </div>
+                    <div className="p-2 bg-background rounded">
+                      <div className="text-lg font-bold text-blue-600">{dropboxResult.totalImagesSynced || 0}</div>
+                      <div className="text-xs text-muted-foreground">{dropboxResult.dryRun ? "Would Sync" : "Synced"}</div>
+                    </div>
+                  </div>
+
+                  {dropboxResult.results?.length > 0 && (
+                    <div className="max-h-64 overflow-y-auto space-y-2">
+                      {dropboxResult.results.map((folder: any, i: number) => (
+                        <div key={i} className={`p-2 rounded border text-xs ${
+                          folder.motorId 
+                            ? 'bg-green-500/10 border-green-300' 
+                            : 'bg-yellow-500/10 border-yellow-300'
+                        }`}>
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <span className="font-medium">{folder.folderName}</span>
+                              {folder.motorDisplay && (
+                                <span className="text-green-700 ml-2">→ {folder.motorDisplay}</span>
+                              )}
+                            </div>
+                            <Badge variant={folder.motorId ? "default" : "secondary"} className="text-xs">
+                              {folder.imagesFound} images
+                            </Badge>
+                          </div>
+                          {folder.matchScore > 0 && (
+                            <div className="text-muted-foreground mt-1">
+                              Match score: {folder.matchScore}
+                            </div>
+                          )}
+                          {folder.errors?.length > 0 && (
+                            <div className="text-destructive mt-1">
+                              {folder.errors.join(', ')}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </>
               )}
             </div>
           )}
