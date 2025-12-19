@@ -151,49 +151,43 @@ export default function UpdateMotorImages() {
   }, [includeOutOfStock]);
 
   // Mercury Portal scraping with group-based approach
-  const scrapeMercuryPortal = async () => {
+  const scrapeMercuryPortal = async (testSingleGroup = false) => {
     setMercuryLoading(true);
     setMercuryResult(null);
     
     try {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (!session) throw new Error('Not authenticated - please log in');
-
       toast({
-        title: dryRun ? "Starting Mercury Portal dry run..." : "Starting Mercury Portal scrape...",
-        description: `Processing ${hpFamilyGroups.length} HP+Family groups...`,
+        title: testSingleGroup 
+          ? "Testing single group..." 
+          : (dryRun ? "Starting Mercury Portal dry run..." : "Starting Mercury Portal scrape..."),
+        description: testSingleGroup 
+          ? "Processing just 1 group for debugging..."
+          : `Processing ${hpFamilyGroups.length} HP+Family groups...`,
       });
 
-      const response = await fetch(
-        `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/scrape-mercury-portal`,
-        {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${session.access_token}`,
-            'Content-Type': 'application/json',
-            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU',
-          },
-          body: JSON.stringify({
-            dryRun,
-            batchSize: parseInt(batchSize) || 50,
-            maxImagesPerGroup: 10,
-            includeOutOfStock,
-          }),
-        }
-      );
+      // Use supabase.functions.invoke() for better timeout handling
+      const { data, error } = await supabase.functions.invoke('scrape-mercury-portal', {
+        body: {
+          dryRun,
+          batchSize: parseInt(batchSize) || 50,
+          maxImagesPerGroup: 10,
+          includeOutOfStock,
+          maxGroups: testSingleGroup ? 1 : 5, // Test mode: only 1 group
+          saveScreenshots: true,
+        },
+      });
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`HTTP ${response.status}: ${errorText}`);
+      if (error) {
+        throw new Error(error.message || 'Edge function error');
       }
 
-      const data = await response.json();
       setMercuryResult(data);
       
+      const results = data?.results || data;
       toast({
-        title: data.success ? "Mercury Portal scrape complete!" : "Scrape completed with issues",
-        description: `Processed ${data.groupsProcessed || 0} groups, found ${data.totalImagesFound || 0} images, updated ${data.totalMotorsUpdated || 0} motors`,
-        variant: data.success ? "default" : "destructive",
+        title: data?.success ? "Mercury Portal scrape complete!" : "Scrape completed with issues",
+        description: `Processed ${results?.groupsProcessed || 0} groups, found ${results?.totalImagesFound || 0} images. ${results?.debugScreenshots?.length ? `${results.debugScreenshots.length} debug screenshots saved.` : ''}`,
+        variant: data?.success ? "default" : "destructive",
       });
     } catch (error) {
       console.error('Error scraping Mercury portal:', error);
@@ -515,24 +509,38 @@ export default function UpdateMotorImages() {
             </div>
           </div>
 
-          <Button 
-            onClick={scrapeMercuryPortal}
-            disabled={mercuryLoading}
-            className="w-full"
-            variant={dryRun ? "outline" : "default"}
-          >
-            {mercuryLoading ? (
-              <>
+          <div className="flex gap-2">
+            <Button 
+              onClick={() => scrapeMercuryPortal(true)}
+              disabled={mercuryLoading}
+              variant="outline"
+            >
+              {mercuryLoading ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Scraping Mercury Portal...
-              </>
-            ) : (
-              <>
+              ) : (
                 <Zap className="mr-2 h-4 w-4" />
-                {dryRun ? "Preview Mercury Images" : "Scrape All Mercury Images"}
-              </>
-            )}
-          </Button>
+              )}
+              Test 1 Group
+            </Button>
+            <Button 
+              onClick={() => scrapeMercuryPortal(false)}
+              disabled={mercuryLoading}
+              className="flex-1"
+              variant={dryRun ? "outline" : "default"}
+            >
+              {mercuryLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Scraping...
+                </>
+              ) : (
+                <>
+                  <Download className="mr-2 h-4 w-4" />
+                  {dryRun ? "Preview All" : "Scrape All"}
+                </>
+              )}
+            </Button>
+          </div>
 
           {/* Mercury Results */}
           {mercuryResult && (
