@@ -217,10 +217,16 @@ export default function UpdateMotorImages() {
     setResult(null);
     
     try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) throw new Error('Not authenticated');
+
       toast({
         title: dryRun ? "Starting dry run..." : "Starting image scraping...",
-        description: "Scraping Alberni Power Marine for motor images.",
+        description: "This may take 1-3 minutes. Please wait...",
       });
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
 
       const options: Record<string, unknown> = {
         dryRun,
@@ -231,12 +237,27 @@ export default function UpdateMotorImages() {
       if (hpMax) options.hpMax = parseFloat(hpMax);
       if (selectedFamily) options.family = selectedFamily;
 
-      const { data, error } = await supabase.functions.invoke('scrape-motor-images', {
-        body: options
-      });
+      const response = await fetch(
+        `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/scrape-motor-images`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json',
+            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU',
+          },
+          body: JSON.stringify(options),
+          signal: controller.signal,
+        }
+      );
+
+      clearTimeout(timeoutId);
       
-      if (error) throw error;
-      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${await response.text()}`);
+      }
+
+      const data = await response.json();
       setResult(data);
       toast({
         title: dryRun ? "Dry run complete!" : "Image scraping complete!",
@@ -244,7 +265,9 @@ export default function UpdateMotorImages() {
       });
     } catch (error) {
       console.error('Error scraping images:', error);
-      const errorMessage = (error as Error).message;
+      const errorMessage = (error as Error).name === 'AbortError' 
+        ? 'Request timed out after 3 minutes' 
+        : (error as Error).message;
       setResult({ error: errorMessage });
       toast({
         title: "Error scraping images",
