@@ -519,15 +519,50 @@ async function saveDebugScreenshot(
   if (!screenshot) return null;
   
   try {
-    // Screenshot is base64, decode it
-    const base64Data = screenshot.replace(/^data:image\/\w+;base64,/, '');
-    const binaryStr = atob(base64Data);
-    const bytes = new Uint8Array(binaryStr.length);
-    for (let i = 0; i < binaryStr.length; i++) {
-      bytes[i] = binaryStr.charCodeAt(i);
+    console.log('[Debug] Saving screenshot, input length:', screenshot.length);
+    
+    // Firecrawl may return screenshot as:
+    // 1. data:image/png;base64,... (with prefix)
+    // 2. Pure base64 string (no prefix)
+    // 3. URL to the screenshot
+    
+    let bytes: Uint8Array;
+    
+    // Check if it's a URL
+    if (screenshot.startsWith('http://') || screenshot.startsWith('https://')) {
+      console.log('[Debug] Screenshot is URL, fetching...');
+      const response = await fetch(screenshot);
+      if (!response.ok) {
+        console.error('[Debug] Failed to fetch screenshot URL:', response.status);
+        return null;
+      }
+      const blob = await response.blob();
+      const arrayBuffer = await blob.arrayBuffer();
+      bytes = new Uint8Array(arrayBuffer);
+    } else {
+      // It's base64, possibly with data: prefix
+      const base64Data = screenshot.replace(/^data:image\/\w+;base64,/, '');
+      
+      // Validate base64 before decoding
+      if (!/^[A-Za-z0-9+/]*={0,2}$/.test(base64Data)) {
+        console.error('[Debug] Invalid base64 string');
+        return null;
+      }
+      
+      try {
+        const binaryStr = atob(base64Data);
+        bytes = new Uint8Array(binaryStr.length);
+        for (let i = 0; i < binaryStr.length; i++) {
+          bytes[i] = binaryStr.charCodeAt(i);
+        }
+      } catch (decodeError) {
+        console.error('[Debug] Failed to decode base64:', decodeError);
+        return null;
+      }
     }
     
-    const fileName = `mercury/debug/${groupKey}-${mode}-${Date.now()}.png`;
+    const fileName = `mercury/debug/${groupKey.replace(/[^a-zA-Z0-9-]/g, '_')}-${mode}-${Date.now()}.png`;
+    console.log('[Debug] Uploading to:', fileName, 'size:', bytes.length);
     
     const { error } = await supabase.storage
       .from('motor-images')
