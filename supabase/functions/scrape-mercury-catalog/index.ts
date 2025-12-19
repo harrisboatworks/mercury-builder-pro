@@ -355,113 +355,135 @@ Do NOT include any pricing information.`
   }
 }
 
-// PRIORITY 2: Firecrawl with spec table extraction
-async function scrapeWithFirecrawl(url: string, apiKey: string): Promise<{
+// PRIORITY 2: Firecrawl FIRE-1 Agent with structured spec extraction
+async function scrapeWithFirecrawl(url: string, apiKey: string, hp: number, family: string | null): Promise<{
   description?: string;
+  keyTakeaways?: string[];
   features?: string[];
   specifications?: Record<string, any>;
 } | null> {
   try {
-    console.log(`[Firecrawl] Scraping: ${url}`);
+    const motorName = `${hp}hp ${family || 'FourStroke'}`;
+    console.log(`[Firecrawl FIRE-1] Extracting specs for Mercury ${motorName} from: ${url}`);
     
-    const response = await fetch('https://api.firecrawl.dev/v1/scrape', {
+    // Schema for structured extraction
+    const specsSchema = {
+      type: "object",
+      properties: {
+        description: { 
+          type: "string", 
+          description: "A 2-3 sentence product description focusing on who this motor is for and what makes it great. Use conversational, friendly tone. Avoid marketing buzzwords like 'innovative', 'cutting-edge', 'unmatched'. Do NOT include any pricing information."
+        },
+        keyTakeaways: { 
+          type: "array", 
+          items: { type: "string" },
+          description: "5-6 bullet points highlighting key benefits in conversational tone. Start with action verbs. Examples: 'Runs quietly so you won't spook the fish', 'Light enough to carry yourself', 'Starts first pull, every time'."
+        },
+        features: { 
+          type: "array", 
+          items: { type: "string" },
+          description: "6-8 technical features for the specifications section."
+        },
+        specifications: {
+          type: "object",
+          properties: {
+            displacement: { type: "string", description: "Engine displacement in cc, e.g. '123 cc'" },
+            cylinders: { type: "number", description: "Number of cylinders" },
+            boreStroke: { type: "string", description: "Bore x Stroke in mm, e.g. '73 x 69 mm'" },
+            fuelSystem: { type: "string", description: "Fuel system type, e.g. 'Electronic Fuel Injection'" },
+            startingType: { type: "string", description: "Starting method, e.g. 'Electric' or 'Manual'" },
+            weight: { type: "string", description: "Dry weight in lbs (kg), e.g. '352 lbs (160 kg)'" },
+            shaftLengths: { type: "array", items: { type: "string" }, description: "Available shaft lengths, e.g. ['20\"', '25\"']" },
+            gearRatio: { type: "string", description: "Gear ratio, e.g. '2.08:1'" },
+            alternatorOutput: { type: "string", description: "Alternator output in amps, e.g. '60 amp'" },
+            fullThrottleRPM: { type: "string", description: "Full throttle RPM range, e.g. '5000-6000'" },
+            oilCapacity: { type: "string", description: "Oil capacity, e.g. '6 qts (5.7 L)'" },
+            recommendedFuel: { type: "string", description: "Recommended fuel type" },
+            steering: { type: "string", description: "Steering type" },
+            trimMethod: { type: "string", description: "Trim/tilt method" }
+          },
+          description: "Technical specifications. Do NOT include any price, MSRP, cost, or dealer price information."
+        }
+      },
+      required: ["description", "features", "specifications"]
+    };
+    
+    const response = await fetch('https://api.firecrawl.dev/v1/extract', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        url,
-        formats: ['markdown'],
-        onlyMainContent: true,
-        waitFor: 3000,
+        urls: [url],
+        agent: { model: 'FIRE-1' },
+        schema: specsSchema,
+        prompt: `Extract detailed specifications for this Mercury ${motorName} outboard motor.
+        
+IMPORTANT GUIDELINES:
+- Write the description in a friendly, conversational tone - like a salesperson chatting with a customer
+- Focus on WHO this motor is perfect for and WHY they would love it
+- Avoid marketing buzzwords like 'innovative', 'cutting-edge', 'unmatched', 'revolutionary'
+- Use specific, measurable benefits (quiet, light, fuel-efficient, reliable)
+- NEVER include any pricing information (MSRP, dealer price, cost, etc.)
+- Extract accurate technical specifications from the page
+- If a spec is not available on the page, omit it rather than guessing`,
       }),
     });
 
     if (!response.ok) {
-      console.log(`[Firecrawl] Failed: ${response.status}`);
+      const errorText = await response.text();
+      console.log(`[Firecrawl FIRE-1] API error ${response.status}: ${errorText}`);
       return null;
     }
 
     const data = await response.json();
-    const markdown = data.data?.markdown || data.markdown;
     
-    if (!markdown || markdown.length < 100) {
-      console.log('[Firecrawl] No content');
+    // Handle FIRE-1 response structure
+    const extractedData = data.data?.[0] || data.data || data;
+    
+    if (!extractedData || typeof extractedData !== 'object') {
+      console.log('[Firecrawl FIRE-1] No extracted data');
       return null;
     }
 
-    const result: { description?: string; features?: string[]; specifications?: Record<string, any> } = {};
+    const result: { 
+      description?: string; 
+      keyTakeaways?: string[];
+      features?: string[]; 
+      specifications?: Record<string, any> 
+    } = {};
     
-    // Extract description from first substantial paragraph
-    const paragraphs = markdown.split(/\n\n+/);
-    for (const para of paragraphs) {
-      const cleaned = cleanDescription(para);
-      if (cleaned) {
-        result.description = cleaned;
-        break;
-      }
+    // Process description
+    const cleanedDesc = cleanDescription(extractedData.description);
+    if (cleanedDesc) {
+      result.description = cleanedDesc;
     }
     
-    // Extract features from bullet points
-    const features: string[] = [];
-    const bulletMatches = markdown.matchAll(/[-•*]\s+([^\n]+)/g);
-    for (const match of bulletMatches) {
-      const feature = match[1].trim();
-      if (feature.length > 15 && feature.length < 150 && 
-          !feature.includes('http') && 
-          !feature.match(/learn more|click|browse/i)) {
-        features.push(feature);
-      }
+    // Process key takeaways
+    const cleanedTakeaways = cleanKeyTakeaways(extractedData.keyTakeaways);
+    if (cleanedTakeaways) {
+      result.keyTakeaways = cleanedTakeaways;
     }
     
-    const cleanedFeatures = cleanFeatures(features);
+    // Process features
+    const cleanedFeatures = cleanFeatures(extractedData.features);
     if (cleanedFeatures) {
       result.features = cleanedFeatures;
     }
     
-    // Extract specifications from tables and key-value pairs
-    const specs: Record<string, any> = {};
-    
-    // Pattern 1: Markdown table rows (| Key | Value |)
-    const tableRowMatches = markdown.matchAll(/\|\s*([^|]+)\s*\|\s*([^|]+)\s*\|/g);
-    for (const match of tableRowMatches) {
-      const key = match[1].trim().toLowerCase().replace(/[^a-z0-9]/g, '');
-      const value = match[2].trim();
-      if (key && value && value !== '---' && !key.includes('price')) {
-        specs[normalizeSpecKey(key)] = value;
+    // Process specifications
+    if (extractedData.specifications && typeof extractedData.specifications === 'object') {
+      const validatedSpecs = validateSpecs(extractedData.specifications);
+      if (Object.keys(validatedSpecs).length > 0) {
+        result.specifications = validatedSpecs;
       }
     }
     
-    // Pattern 2: Key: Value patterns
-    const kvMatches = markdown.matchAll(/(?:^|\n)\s*([A-Za-z][^:\n]{2,30}):\s*([^\n]+)/g);
-    for (const match of kvMatches) {
-      const key = match[1].trim().toLowerCase();
-      const value = match[2].trim();
-      if (key && value && !key.includes('price') && !key.includes('msrp')) {
-        specs[normalizeSpecKey(key)] = value;
-      }
-    }
-    
-    // Pattern 3: Bullet specs (- Displacement: 123 cc)
-    const bulletSpecMatches = markdown.matchAll(/[-•*]\s*([^:]+):\s*([^\n]+)/g);
-    for (const match of bulletSpecMatches) {
-      const key = match[1].trim().toLowerCase();
-      const value = match[2].trim();
-      if (key && value && !key.includes('price')) {
-        specs[normalizeSpecKey(key)] = value;
-      }
-    }
-    
-    const validatedSpecs = validateSpecs(specs);
-    if (Object.keys(validatedSpecs).length > 0) {
-      result.specifications = validatedSpecs;
-    }
-    
-    console.log(`[Firecrawl] Got: desc=${!!result.description}, features=${result.features?.length || 0}, specs=${Object.keys(result.specifications || {}).length}`);
+    console.log(`[Firecrawl FIRE-1] Extracted: desc=${!!result.description}, takeaways=${result.keyTakeaways?.length || 0}, features=${result.features?.length || 0}, specs=${Object.keys(result.specifications || {}).length}`);
     return Object.keys(result).length > 0 ? result : null;
   } catch (error) {
-    console.error('[Firecrawl] Error:', error);
+    console.error('[Firecrawl FIRE-1] Error:', error);
     return null;
   }
 }
@@ -633,17 +655,21 @@ async function scrapeMotor(
     }
   }
   
-  // ============ PRIORITY 2: FIRECRAWL (If missing data) ============
+  // ============ PRIORITY 2: FIRECRAWL FIRE-1 (If missing data) ============
   if (firecrawlKey && (!finalDescription || !finalSpecs)) {
     const mercuryUrl = constructMercuryUrl(result.hp, family);
     
     if (mercuryUrl) {
-      const firecrawlData = await scrapeWithFirecrawl(mercuryUrl, firecrawlKey);
+      const firecrawlData = await scrapeWithFirecrawl(mercuryUrl, firecrawlKey, result.hp, family);
       
       if (firecrawlData) {
         if (!finalDescription && firecrawlData.description) {
           finalDescription = firecrawlData.description;
           result.source = result.source === 'failed' ? 'firecrawl' : result.source;
+        }
+        
+        if (!finalKeyTakeaways && firecrawlData.keyTakeaways) {
+          finalKeyTakeaways = firecrawlData.keyTakeaways;
         }
         
         if (!finalFeatures && firecrawlData.features) {
@@ -795,7 +821,7 @@ serve(async (req) => {
       hasPerplexity: !!perplexityKey,
       hasFirecrawl: !!firecrawlKey,
     });
-    console.log('Priority: Perplexity → Firecrawl → Static (fallback)');
+    console.log('Priority: Perplexity → Firecrawl FIRE-1 Agent → Static (fallback)');
     console.log('Protected fields (never updated):', PROTECTED_PRICE_FIELDS.join(', '));
 
     // Clear bad/promotional data if requested
@@ -899,7 +925,7 @@ serve(async (req) => {
           message: `Background processing started for ${motors.length} motors`,
           motorsQueued: motors.length,
           next_offset: offset + batch_size,
-          priority: 'Perplexity → Firecrawl → Static',
+          priority: 'Perplexity → Firecrawl FIRE-1 Agent → Static',
           protectedFields: PROTECTED_PRICE_FIELDS
         }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
