@@ -254,6 +254,44 @@ async function downloadFile(
   }
 }
 
+// Resolve a Dropbox shared link URL to a direct path (so we can use files/list_folder)
+async function resolveSharedLinkToPath(
+  dropboxToken: string,
+  sharedUrl: string
+): Promise<{ path: string | null; error?: string }> {
+  try {
+    const response = await fetch('https://api.dropboxapi.com/2/sharing/get_shared_link_metadata', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${dropboxToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ url: sharedUrl }),
+    })
+
+    if (!response.ok) {
+      const errorText = await response.text()
+      console.error('Shared link metadata error:', errorText)
+      return { path: null, error: `Could not read shared link metadata: ${errorText}` }
+    }
+
+    const data = await response.json()
+    const path = data.path_lower || null
+
+    if (!path) {
+      return {
+        path: null,
+        error: 'Shared link did not include a Dropbox path. Try using a folder path like "/Motor Images".',
+      }
+    }
+
+    return { path }
+  } catch (error) {
+    console.error('resolveSharedLinkToPath error:', error)
+    return { path: null, error: error.message }
+  }
+}
+
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders })
@@ -283,22 +321,31 @@ Deno.serve(async (req) => {
 
     // Normalize input - accept either a folder path or a shared link URL
     let folderPath: string
-    
+
     if (parentFolderUrl.includes('dropbox.com')) {
-      // Legacy: if someone pastes a URL, try to explain
-      throw new Error(
-        'Please provide a folder path instead of a URL. ' +
-        'Use a direct folder path like "/Motor Images" or "/Mercury 2025 Photos". ' +
-        'You can find the path by looking at your Dropbox folder structure.'
-      )
+      const { path, error: sharedError } = await resolveSharedLinkToPath(dropboxToken, parentFolderUrl.trim())
+      if (sharedError) throw new Error(sharedError)
+      if (!path) throw new Error('Could not resolve shared link to a folder path')
+      folderPath = path
     } else {
       // Direct folder path
       folderPath = parentFolderUrl.trim()
-      // Ensure it starts with / for non-root paths
-      if (folderPath && !folderPath.startsWith('/')) {
-        folderPath = '/' + folderPath
-      }
     }
+
+    // Decode any url-encoded characters users might paste (e.g., %20)
+    try {
+      folderPath = decodeURIComponent(folderPath)
+    } catch {
+      // ignore
+    }
+
+    // Ensure it starts with / for non-root paths
+    if (folderPath && folderPath !== '/' && !folderPath.startsWith('/')) {
+      folderPath = '/' + folderPath
+    }
+
+    // Normalize root
+    if (folderPath === '/') folderPath = ''
 
     console.log('Folder path:', folderPath)
 

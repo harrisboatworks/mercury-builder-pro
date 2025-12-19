@@ -732,7 +732,7 @@ export default function UpdateMotorImages() {
               onChange={(e) => setDropboxFolderUrl(e.target.value)}
             />
             <p className="text-xs text-muted-foreground">
-              Enter the folder path from your Dropbox (e.g., "/Mercury Images"). 
+              Enter a folder path (e.g., "/Mercury Images") <span className="font-medium">or paste a Dropbox shared link</span>.
               This folder should contain subfolders named like "150HP FourStroke" with images inside.
             </p>
           </div>
