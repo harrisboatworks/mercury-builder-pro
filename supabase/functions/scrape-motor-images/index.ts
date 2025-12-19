@@ -52,43 +52,84 @@ const imageExtractionSchema = {
   required: ["productImages"]
 };
 
-// Build URL slug from model_display
-function buildAlberniSlug(modelDisplay: string): string {
+// Normalize motor family string for consistent matching
+function normalizeFamily(family?: string): string {
+  if (!family) return 'fourstroke';
+  const f = family.toLowerCase().replace(/\s+/g, '');
+  if (f.includes('proxs') || f.includes('pro-xs')) return 'proxs';
+  if (f.includes('seapro') || f.includes('sea-pro')) return 'seapro';
+  if (f.includes('verado')) return 'verado';
+  return 'fourstroke';
+}
+
+// Build URL slug from model_display with family awareness
+function buildAlberniSlug(modelDisplay: string, family?: string): string {
   if (!modelDisplay) return '';
   
+  const normalizedFamily = normalizeFamily(family);
+  
+  // Clean the model display: remove Mercury prefix, registered marks, and all family names
   let slug = modelDisplay
     .toLowerCase()
     .replace(/^mercury\s*/i, '')
     .replace(/®/g, '')
     .replace(/\s*fourstroke\s*/gi, '')
+    .replace(/\s*pro\s*xs\s*/gi, '')
+    .replace(/\s*seapro\s*/gi, '')
+    .replace(/\s*sea\s*pro\s*/gi, '')
+    .replace(/\s*verado\s*/gi, '')
     .replace(/\./g, '-')
     .replace(/\s+/g, '')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '')
     .trim();
   
-  if (!slug.endsWith('-fourstroke')) {
-    slug += '-fourstroke';
+  // Add the correct family suffix based on actual family
+  switch (normalizedFamily) {
+    case 'proxs':
+      slug += '-pro-xs';
+      break;
+    case 'seapro':
+      slug += '-seapro';
+      break;
+    case 'verado':
+      slug += '-verado';
+      break;
+    default:
+      slug += '-fourstroke';
   }
   
   return slug;
 }
 
-// Get category path based on HP
-function getCategoryPath(hp: number, modelDisplay: string): string {
-  if (hp <= 30) {
-    return '2.5-30-hp-mercury-fourstroke';
-  } else if (hp <= 150) {
-    return '40-150-hp-mercury-fourstroke';
-  } else {
-    return '200-300-hp-mercury-fourstroke';
+// Get category path based on HP and family
+function getCategoryPath(hp: number, family?: string): string {
+  const normalizedFamily = normalizeFamily(family);
+  
+  switch (normalizedFamily) {
+    case 'proxs':
+      // Pro XS: 115-300 HP range
+      return '115-300-hp-mercury-pro-xs';
+    case 'seapro':
+      // SeaPro ranges
+      if (hp <= 60) return '15-60-hp-mercury-seapro';
+      if (hp <= 100) return '75-100-hp-mercury-seapro';
+      return '115-200-hp-mercury-seapro';
+    case 'verado':
+      // Verado: typically 175-400 HP range
+      return '200-400-hp-mercury-verado';
+    default:
+      // FourStroke ranges
+      if (hp <= 30) return '2.5-30-hp-mercury-fourstroke';
+      if (hp <= 150) return '40-150-hp-mercury-fourstroke';
+      return '200-300-hp-mercury-fourstroke';
   }
 }
 
-// Build the full product URL
-function buildProductUrl(modelDisplay: string, hp: number): string {
-  const category = getCategoryPath(hp, modelDisplay);
-  const slug = buildAlberniSlug(modelDisplay);
+// Build the full product URL with family awareness
+function buildProductUrl(modelDisplay: string, hp: number, family?: string): string {
+  const category = getCategoryPath(hp, family);
+  const slug = buildAlberniSlug(modelDisplay, family);
   return `https://www.albernipowermarine.com/product/mercury-outboards/${category}/${slug}`;
 }
 
@@ -351,7 +392,7 @@ async function scrapeMotorImages(
   };
 
   try {
-    const productUrl = buildProductUrl(motor.model_display, motor.horsepower);
+    const productUrl = buildProductUrl(motor.model_display, motor.horsepower, motor.family);
     result.url = productUrl;
     
     // Use FIRE-1 agent for image extraction
