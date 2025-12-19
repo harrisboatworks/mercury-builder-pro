@@ -50,6 +50,8 @@ interface BatchResult {
   error?: string;
 }
 
+type ImageSource = 'alberni' | 'mercury';
+
 export default function UpdateMotorImages() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
@@ -58,6 +60,9 @@ export default function UpdateMotorImages() {
   const [hpMax, setHpMax] = useState('');
   const [batchSize, setBatchSize] = useState('10');
   const [selectedFamily, setSelectedFamily] = useState('');
+  const [imageSource, setImageSource] = useState<ImageSource>('alberni');
+  const [mercuryLoading, setMercuryLoading] = useState(false);
+  const [mercuryResult, setMercuryResult] = useState<any>(null);
   const { toast } = useToast();
 
   // Automated batch processing state
@@ -67,6 +72,63 @@ export default function UpdateMotorImages() {
   const [countdown, setCountdown] = useState(0);
   const [totalStats, setTotalStats] = useState({ motors: 0, images: 0, success: 0, failed: 0 });
   const cancelRef = useRef(false);
+
+  // Mercury Portal scraping
+  const scrapeMercuryPortal = async () => {
+    setMercuryLoading(true);
+    setMercuryResult(null);
+    
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) throw new Error('Not authenticated - please log in');
+
+      toast({
+        title: dryRun ? "Starting Mercury Portal dry run..." : "Starting Mercury Portal scrape...",
+        description: "Authenticating with dealer credentials...",
+      });
+
+      const response = await fetch(
+        `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/scrape-mercury-portal`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json',
+            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU',
+          },
+          body: JSON.stringify({
+            dryRun,
+            batchSize: parseInt(batchSize) || 5,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`HTTP ${response.status}: ${errorText}`);
+      }
+
+      const data = await response.json();
+      setMercuryResult(data);
+      
+      toast({
+        title: data.success ? "Mercury Portal scrape complete!" : "Scrape completed with issues",
+        description: `Processed ${data.processed || 0} motors, found ${data.imagesFound || 0} images`,
+        variant: data.success ? "default" : "destructive",
+      });
+    } catch (error) {
+      console.error('Error scraping Mercury portal:', error);
+      const errorMessage = (error as Error).message;
+      setMercuryResult({ error: errorMessage });
+      toast({
+        title: "Mercury Portal error",
+        description: errorMessage,
+        variant: "destructive",
+      });
+    } finally {
+      setMercuryLoading(false);
+    }
+  };
 
   const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -478,6 +540,70 @@ export default function UpdateMotorImages() {
                   </div>
                 </div>
               )}
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Mercury Portal Card - Authenticated Scraping */}
+      <Card className="max-w-2xl mx-auto border-blue-500/30 bg-gradient-to-br from-background to-blue-500/5">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Download className="h-5 w-5 text-blue-500" />
+            Mercury Product Knowledge Portal
+          </CardTitle>
+          <CardDescription>
+            Scrape high-quality images from Mercury's official dealer portal using your stored credentials.
+            <span className="block mt-1 text-xs text-blue-500/80">🔐 Authenticated with dealer credentials</span>
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+            <div>
+              <Label htmlFor="mercuryDryRun" className="font-medium">Dry Run Mode</Label>
+              <p className="text-xs text-muted-foreground">
+                Preview available images without downloading
+              </p>
+            </div>
+            <Switch
+              id="mercuryDryRun"
+              checked={dryRun}
+              onCheckedChange={setDryRun}
+              disabled={mercuryLoading}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="mercuryBatchSize">Batch Size</Label>
+            <Input
+              id="mercuryBatchSize"
+              type="number"
+              placeholder="5"
+              value={batchSize}
+              onChange={(e) => setBatchSize(e.target.value)}
+              disabled={mercuryLoading}
+            />
+            <p className="text-xs text-muted-foreground">
+              Number of motors to process per request (lower = more reliable)
+            </p>
+          </div>
+
+          <Button 
+            onClick={scrapeMercuryPortal}
+            disabled={mercuryLoading || isAutomatedRunning || loading}
+            className="w-full"
+            variant={dryRun ? "outline" : "default"}
+          >
+            {mercuryLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            {dryRun ? "Preview Mercury Portal Images" : "Scrape from Mercury Portal"}
+          </Button>
+
+          {mercuryResult && (
+            <div className="mt-4 p-4 bg-muted rounded-lg">
+              <h3 className="font-semibold mb-2">Mercury Portal Result:</h3>
+              <pre className="text-sm whitespace-pre-wrap overflow-auto max-h-60">
+                {JSON.stringify(mercuryResult, null, 2)}
+              </pre>
             </div>
           )}
         </CardContent>
