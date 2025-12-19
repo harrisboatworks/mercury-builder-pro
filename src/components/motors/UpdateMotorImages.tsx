@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -7,8 +7,10 @@ import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { Progress } from '@/components/ui/progress';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Loader2, RefreshCw, Image, Download, Play, Square, CheckCircle2, Clock, AlertCircle } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Loader2, RefreshCw, Image, Download, Play, Square, CheckCircle2, Clock, AlertCircle, Zap, Users } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { classifyMotorFamily, type MotorFamily } from '@/lib/motor-family-classifier';
 
 const FAMILY_OPTIONS = [
   { value: '', label: 'All Families' },
@@ -16,8 +18,9 @@ const FAMILY_OPTIONS = [
   { value: 'seapro', label: 'SeaPro' },
   { value: 'verado', label: 'Verado' },
   { value: 'fourstroke', label: 'FourStroke' },
+  { value: 'prokicker', label: 'ProKicker' },
 ];
-// Smaller batches (6-8 motors each) with offset support to avoid timeout
+
 const HP_BATCHES = [
   { label: "2.5-5 HP", min: 2.5, max: 5, batchSize: 8, offset: 0, estimatedCount: 8 },
   { label: "6-8 HP", min: 6, max: 8, batchSize: 6, offset: 0, estimatedCount: 6 },
@@ -37,8 +40,8 @@ const HP_BATCHES = [
   { label: "300 HP (Part 2)", min: 300, max: 300, batchSize: 6, offset: 6, estimatedCount: 5 },
 ];
 
-const DELAY_BETWEEN_BATCHES = 30000; // 30 seconds
-const FETCH_TIMEOUT = 180000; // 3 minutes
+const DELAY_BETWEEN_BATCHES = 30000;
+const FETCH_TIMEOUT = 180000;
 
 interface BatchResult {
   label: string;
@@ -50,7 +53,26 @@ interface BatchResult {
   error?: string;
 }
 
-type ImageSource = 'alberni' | 'mercury';
+interface HpFamilyGroup {
+  key: string;
+  hp: number;
+  family: MotorFamily;
+  motors: { id: string; model_display: string }[];
+}
+
+interface MercuryGroupResult {
+  key: string;
+  hp: number;
+  family: string;
+  motorCount: number;
+  status: string;
+  imagesFound?: number;
+  imagesUploaded?: number;
+  motorsUpdated?: number;
+  imageUrls?: string[];
+  motorDisplays?: string[];
+  heroImage?: string;
+}
 
 export default function UpdateMotorImages() {
   const [loading, setLoading] = useState(false);
@@ -58,12 +80,15 @@ export default function UpdateMotorImages() {
   const [dryRun, setDryRun] = useState(true);
   const [hpMin, setHpMin] = useState('');
   const [hpMax, setHpMax] = useState('');
-  const [batchSize, setBatchSize] = useState('10');
+  const [batchSize, setBatchSize] = useState('50');
   const [selectedFamily, setSelectedFamily] = useState('');
-  const [imageSource, setImageSource] = useState<ImageSource>('alberni');
+  const { toast } = useToast();
+
+  // Mercury Portal state
   const [mercuryLoading, setMercuryLoading] = useState(false);
   const [mercuryResult, setMercuryResult] = useState<any>(null);
-  const { toast } = useToast();
+  const [hpFamilyGroups, setHpFamilyGroups] = useState<HpFamilyGroup[]>([]);
+  const [loadingGroups, setLoadingGroups] = useState(false);
 
   // Automated batch processing state
   const [isAutomatedRunning, setIsAutomatedRunning] = useState(false);
@@ -73,7 +98,52 @@ export default function UpdateMotorImages() {
   const [totalStats, setTotalStats] = useState({ motors: 0, images: 0, success: 0, failed: 0 });
   const cancelRef = useRef(false);
 
-  // Mercury Portal scraping
+  // Load HP+Family groups preview
+  const loadGroupPreview = async () => {
+    setLoadingGroups(true);
+    try {
+      const { data: motors, error } = await supabase
+        .from('motor_models')
+        .select('id, model_display, horsepower')
+        .eq('in_stock', true)
+        .order('horsepower');
+
+      if (error) throw error;
+
+      // Group motors by HP + Family
+      const groups = new Map<string, HpFamilyGroup>();
+      for (const motor of motors || []) {
+        const hp = motor.horsepower || 0;
+        const family = classifyMotorFamily(hp, motor.model_display || '');
+        const key = `${hp}-${family}`;
+        
+        if (!groups.has(key)) {
+          groups.set(key, { key, hp, family, motors: [] });
+        }
+        groups.get(key)!.motors.push({ 
+          id: motor.id, 
+          model_display: motor.model_display || '' 
+        });
+      }
+      
+      setHpFamilyGroups(Array.from(groups.values()).sort((a, b) => a.hp - b.hp));
+    } catch (error) {
+      console.error('Error loading groups:', error);
+      toast({
+        title: "Error loading groups",
+        description: (error as Error).message,
+        variant: "destructive",
+      });
+    } finally {
+      setLoadingGroups(false);
+    }
+  };
+
+  useEffect(() => {
+    loadGroupPreview();
+  }, []);
+
+  // Mercury Portal scraping with group-based approach
   const scrapeMercuryPortal = async () => {
     setMercuryLoading(true);
     setMercuryResult(null);
@@ -84,7 +154,7 @@ export default function UpdateMotorImages() {
 
       toast({
         title: dryRun ? "Starting Mercury Portal dry run..." : "Starting Mercury Portal scrape...",
-        description: "Authenticating with dealer credentials...",
+        description: `Processing ${hpFamilyGroups.length} HP+Family groups...`,
       });
 
       const response = await fetch(
@@ -98,7 +168,8 @@ export default function UpdateMotorImages() {
           },
           body: JSON.stringify({
             dryRun,
-            batchSize: parseInt(batchSize) || 5,
+            batchSize: parseInt(batchSize) || 50,
+            maxImagesPerGroup: 10,
           }),
         }
       );
@@ -113,7 +184,7 @@ export default function UpdateMotorImages() {
       
       toast({
         title: data.success ? "Mercury Portal scrape complete!" : "Scrape completed with issues",
-        description: `Processed ${data.processed || 0} motors, found ${data.imagesFound || 0} images`,
+        description: `Processed ${data.groupsProcessed || 0} groups, found ${data.totalImagesFound || 0} images, updated ${data.totalMotorsUpdated || 0} motors`,
         variant: data.success ? "default" : "destructive",
       });
     } catch (error) {
@@ -139,7 +210,6 @@ export default function UpdateMotorImages() {
     setTotalStats({ motors: 0, images: 0, success: 0, failed: 0 });
     setResult(null);
 
-    // Initialize batch results
     const initialResults: BatchResult[] = HP_BATCHES.map(batch => ({
       label: batch.label,
       status: 'pending'
@@ -164,13 +234,11 @@ export default function UpdateMotorImages() {
       const batch = HP_BATCHES[i];
       setCurrentBatchIndex(i);
 
-      // Update current batch to running
       setBatchResults(prev => prev.map((r, idx) => 
         idx === i ? { ...r, status: 'running' } : r
       ));
 
       try {
-        // Use raw fetch with explicit 2-minute timeout to avoid client timeout issues
         const { data: { session } } = await supabase.auth.getSession();
         if (!session) throw new Error('Not authenticated');
 
@@ -238,7 +306,6 @@ export default function UpdateMotorImages() {
         setTotalStats(runningStats);
       }
 
-      // Wait between batches (except for last batch)
       if (i < HP_BATCHES.length - 1 && !cancelRef.current) {
         for (let s = DELAY_BETWEEN_BATCHES / 1000; s > 0; s--) {
           if (cancelRef.current) break;
@@ -341,88 +408,208 @@ export default function UpdateMotorImages() {
     }
   };
 
-  const updateMotorImages = async () => {
-    setLoading(true);
-    setResult(null);
-    
-    try {
-      toast({
-        title: "Starting image collection...",
-        description: "This will scrape motor details and collect images from manufacturer pages.",
-      });
-
-      const { data, error } = await supabase.functions.invoke('update-motor-images');
-      
-      if (error) throw error;
-      
-      setResult(data);
-      toast({
-        title: "Motor images updated successfully!",
-        description: `Updated ${data?.updated || 0} motors with new images.`,
-      });
-    } catch (error) {
-      console.error('Error updating motor images:', error);
-      const errorMessage = (error as Error).message;
-      setResult({ error: errorMessage });
-      toast({
-        title: "Error updating images",
-        description: errorMessage,
-        variant: "destructive",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const migrateMotorImages = async () => {
-    setLoading(true);
-    setResult(null);
-    
-    try {
-      toast({
-        title: "Starting image migration...",
-        description: "Downloading and storing motor images in Supabase Storage.",
-      });
-
-      const { data, error } = await supabase.functions.invoke('migrate-motor-images', {
-        body: { batchSize: 10, forceRedownload: false }
-      });
-      
-      if (error) throw error;
-      
-      setResult(data);
-      toast({
-        title: "Image migration completed!",
-        description: `Migrated ${data?.successful || 0} of ${data?.processed || 0} motor images.`,
-      });
-    } catch (error) {
-      console.error('Error migrating images:', error);
-      const errorMessage = (error as Error).message;
-      setResult({ error: errorMessage });
-      toast({
-        title: "Error migrating images",
-        description: errorMessage,
-        variant: "destructive",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const completedBatches = batchResults.filter(b => b.status === 'complete').length;
   const progressPercent = HP_BATCHES.length > 0 ? (completedBatches / HP_BATCHES.length) * 100 : 0;
 
+  const getFamilyColor = (family: string) => {
+    switch (family) {
+      case 'Verado': return 'bg-red-500/20 text-red-700 border-red-300';
+      case 'Pro XS': return 'bg-orange-500/20 text-orange-700 border-orange-300';
+      case 'FourStroke': return 'bg-blue-500/20 text-blue-700 border-blue-300';
+      case 'ProKicker': return 'bg-green-500/20 text-green-700 border-green-300';
+      case 'SeaPro': return 'bg-slate-500/20 text-slate-700 border-slate-300';
+      default: return 'bg-muted text-muted-foreground';
+    }
+  };
+
   return (
     <div className="container mx-auto p-8 space-y-6">
+      {/* Mercury Portal Card - Primary */}
+      <Card className="max-w-3xl mx-auto border-primary bg-gradient-to-br from-primary/5 to-primary/10">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Zap className="h-5 w-5 text-primary" />
+            Mercury Product Knowledge Portal
+          </CardTitle>
+          <CardDescription>
+            Scrape ALL images by HP + Family grouping. Each group shares the same images across all variants.
+            {hpFamilyGroups.length > 0 && (
+              <span className="block mt-1 text-foreground font-medium">
+                {hpFamilyGroups.length} unique groups will be scraped
+              </span>
+            )}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {/* Group Preview */}
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <Label className="font-medium">HP + Family Groups Preview</Label>
+              <Button variant="ghost" size="sm" onClick={loadGroupPreview} disabled={loadingGroups}>
+                <RefreshCw className={`h-4 w-4 mr-1 ${loadingGroups ? 'animate-spin' : ''}`} />
+                Refresh
+              </Button>
+            </div>
+            
+            {loadingGroups ? (
+              <div className="flex items-center justify-center p-4">
+                <Loader2 className="h-5 w-5 animate-spin" />
+              </div>
+            ) : (
+              <div className="max-h-48 overflow-y-auto border rounded-lg p-3 bg-muted/30">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                  {hpFamilyGroups.map((group) => (
+                    <div key={group.key} className="flex items-center gap-2 text-sm">
+                      <Badge variant="outline" className={getFamilyColor(group.family)}>
+                        {group.hp} HP
+                      </Badge>
+                      <span className="text-muted-foreground">{group.family}</span>
+                      <span className="text-xs text-muted-foreground">
+                        ({group.motors.length})
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <Label htmlFor="mercuryBatchSize">Max Motors</Label>
+              <Input
+                id="mercuryBatchSize"
+                type="number"
+                value={batchSize}
+                onChange={(e) => setBatchSize(e.target.value)}
+                placeholder="50"
+              />
+            </div>
+            <div className="flex items-end">
+              <div className="flex items-center gap-2 p-3 bg-muted rounded-lg w-full">
+                <Switch
+                  id="mercuryDryRun"
+                  checked={dryRun}
+                  onCheckedChange={setDryRun}
+                  disabled={mercuryLoading}
+                />
+                <Label htmlFor="mercuryDryRun">Dry Run</Label>
+              </div>
+            </div>
+          </div>
+
+          <Button 
+            onClick={scrapeMercuryPortal}
+            disabled={mercuryLoading}
+            className="w-full"
+            variant={dryRun ? "outline" : "default"}
+          >
+            {mercuryLoading ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Scraping Mercury Portal...
+              </>
+            ) : (
+              <>
+                <Zap className="mr-2 h-4 w-4" />
+                {dryRun ? "Preview Mercury Images" : "Scrape All Mercury Images"}
+              </>
+            )}
+          </Button>
+
+          {/* Mercury Results */}
+          {mercuryResult && (
+            <div className="mt-4 space-y-3">
+              {mercuryResult.error ? (
+                <div className="p-3 bg-destructive/10 border border-destructive/30 rounded-lg text-destructive text-sm">
+                  {mercuryResult.error}
+                </div>
+              ) : (
+                <>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div className="p-3 bg-muted rounded-lg text-center">
+                      <div className="text-2xl font-bold">{mercuryResult.groupsProcessed || 0}</div>
+                      <div className="text-xs text-muted-foreground">Groups</div>
+                    </div>
+                    <div className="p-3 bg-muted rounded-lg text-center">
+                      <div className="text-2xl font-bold">{mercuryResult.totalImagesFound || 0}</div>
+                      <div className="text-xs text-muted-foreground">Images Found</div>
+                    </div>
+                    <div className="p-3 bg-muted rounded-lg text-center">
+                      <div className="text-2xl font-bold">{mercuryResult.totalImagesUploaded || 0}</div>
+                      <div className="text-xs text-muted-foreground">Uploaded</div>
+                    </div>
+                    <div className="p-3 bg-muted rounded-lg text-center">
+                      <div className="text-2xl font-bold">{mercuryResult.totalMotorsUpdated || 0}</div>
+                      <div className="text-xs text-muted-foreground">Motors Updated</div>
+                    </div>
+                  </div>
+
+                  {/* Group details */}
+                  {mercuryResult.groups && mercuryResult.groups.length > 0 && (
+                    <div className="max-h-64 overflow-y-auto border rounded-lg">
+                      <table className="w-full text-sm">
+                        <thead className="bg-muted sticky top-0">
+                          <tr>
+                            <th className="text-left p-2">Group</th>
+                            <th className="text-left p-2">Family</th>
+                            <th className="text-center p-2">Motors</th>
+                            <th className="text-center p-2">Images</th>
+                            <th className="text-left p-2">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {(mercuryResult.groups as MercuryGroupResult[]).map((group) => (
+                            <tr key={group.key} className="border-t">
+                              <td className="p-2 font-mono">{group.hp} HP</td>
+                              <td className="p-2">
+                                <Badge variant="outline" className={getFamilyColor(group.family)}>
+                                  {group.family}
+                                </Badge>
+                              </td>
+                              <td className="p-2 text-center">{group.motorCount}</td>
+                              <td className="p-2 text-center">
+                                {group.imagesFound || group.imagesUploaded || 0}
+                              </td>
+                              <td className="p-2">
+                                {group.status === 'success' && (
+                                  <span className="text-green-600 flex items-center gap-1">
+                                    <CheckCircle2 className="h-4 w-4" /> Success
+                                  </span>
+                                )}
+                                {group.status === 'dry_run' && (
+                                  <span className="text-blue-600 flex items-center gap-1">
+                                    <Clock className="h-4 w-4" /> Preview
+                                  </span>
+                                )}
+                                {group.status === 'no_images' && (
+                                  <span className="text-yellow-600 flex items-center gap-1">
+                                    <AlertCircle className="h-4 w-4" /> No images
+                                  </span>
+                                )}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
       {/* Automated Batch Processing Card */}
-      <Card className="max-w-2xl mx-auto border-primary/30 bg-gradient-to-br from-background to-muted/30">
+      <Card className="max-w-2xl mx-auto border-muted">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Play className="h-5 w-5" />
-            Process All Motors Automatically
+            Alberni Automated Batch Processing
           </CardTitle>
           <CardDescription>
-            Automatically process all ~128 motors in {HP_BATCHES.length} small batches (8-12 motors each) with 30-second delays. Uses 2-minute timeout per batch to avoid failures. Estimated time: 15-25 minutes.
+            Process all ~128 motors in {HP_BATCHES.length} small batches with 30-second delays.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -444,12 +631,12 @@ export default function UpdateMotorImages() {
           {!isAutomatedRunning ? (
             <Button 
               onClick={runAllBatchesAutomatically}
-              disabled={loading}
+              disabled={loading || mercuryLoading}
               className="w-full h-12 text-lg"
               variant={dryRun ? "outline" : "default"}
             >
               <Play className="mr-2 h-5 w-5" />
-              {dryRun ? "Preview All 128 Motors (Dry Run)" : "Process All 128 Motors"}
+              {dryRun ? "Preview All Motors (Dry Run)" : "Process All Motors"}
             </Button>
           ) : (
             <Button 
@@ -473,273 +660,157 @@ export default function UpdateMotorImages() {
                 <Progress value={progressPercent} className="h-2" />
               </div>
 
-              {/* Countdown Timer */}
               {countdown > 0 && (
-                <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted p-2 rounded">
-                  <Clock className="h-4 w-4" />
-                  Waiting {countdown}s before next batch...
+                <div className="text-center text-sm text-muted-foreground">
+                  <Clock className="inline h-4 w-4 mr-1" />
+                  Next batch in {countdown}s...
                 </div>
               )}
 
-              {/* Batch Status List */}
-              <div className="space-y-2">
+              <div className="grid grid-cols-4 gap-2 text-center text-sm">
+                <div className="p-2 bg-muted rounded">
+                  <div className="font-bold">{totalStats.motors}</div>
+                  <div className="text-xs text-muted-foreground">Motors</div>
+                </div>
+                <div className="p-2 bg-muted rounded">
+                  <div className="font-bold">{totalStats.images}</div>
+                  <div className="text-xs text-muted-foreground">Images</div>
+                </div>
+                <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded">
+                  <div className="font-bold text-green-700 dark:text-green-400">{totalStats.success}</div>
+                  <div className="text-xs text-muted-foreground">Success</div>
+                </div>
+                <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded">
+                  <div className="font-bold text-red-700 dark:text-red-400">{totalStats.failed}</div>
+                  <div className="text-xs text-muted-foreground">Failed</div>
+                </div>
+              </div>
+
+              <div className="max-h-48 overflow-y-auto space-y-1">
                 {batchResults.map((batch, idx) => (
                   <div 
                     key={batch.label}
-                    className={`flex items-center justify-between p-3 rounded-lg border ${
-                      batch.status === 'running' ? 'bg-primary/5 border-primary/30' :
-                      batch.status === 'complete' ? 'bg-green-500/5 border-green-500/30' :
-                      batch.status === 'error' ? 'bg-destructive/5 border-destructive/30' :
-                      batch.status === 'cancelled' ? 'bg-muted border-muted' :
-                      'bg-background border-border'
+                    className={`flex items-center justify-between p-2 rounded text-sm ${
+                      batch.status === 'running' ? 'bg-primary/10 border border-primary/30' :
+                      batch.status === 'complete' ? 'bg-green-50 dark:bg-green-900/20' :
+                      batch.status === 'error' ? 'bg-red-50 dark:bg-red-900/20' :
+                      batch.status === 'cancelled' ? 'bg-muted' :
+                      'bg-background'
                     }`}
                   >
-                    <div className="flex items-center gap-3">
-                      {batch.status === 'pending' && <Clock className="h-4 w-4 text-muted-foreground" />}
+                    <span className="flex items-center gap-2">
                       {batch.status === 'running' && <Loader2 className="h-4 w-4 animate-spin text-primary" />}
-                      {batch.status === 'complete' && <CheckCircle2 className="h-4 w-4 text-green-500" />}
-                      {batch.status === 'error' && <AlertCircle className="h-4 w-4 text-destructive" />}
+                      {batch.status === 'complete' && <CheckCircle2 className="h-4 w-4 text-green-600" />}
+                      {batch.status === 'error' && <AlertCircle className="h-4 w-4 text-red-600" />}
+                      {batch.status === 'pending' && <Clock className="h-4 w-4 text-muted-foreground" />}
                       {batch.status === 'cancelled' && <Square className="h-4 w-4 text-muted-foreground" />}
-                      <div>
-                        <p className="font-medium text-sm">Batch {idx + 1}: {batch.label}</p>
-                        {batch.status === 'complete' && (
-                          <p className="text-xs text-muted-foreground">
-                            {batch.motorsProcessed} motors • {batch.imagesUploaded} images uploaded
-                          </p>
-                        )}
-                        {batch.status === 'error' && (
-                          <p className="text-xs text-destructive">{batch.error}</p>
-                        )}
-                      </div>
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      ~{HP_BATCHES[idx].estimatedCount} motors
-                    </div>
+                      {batch.label}
+                    </span>
+                    <span className="text-muted-foreground">
+                      {batch.status === 'complete' && `${batch.imagesUploaded || 0} imgs`}
+                      {batch.status === 'error' && 'Error'}
+                    </span>
                   </div>
                 ))}
               </div>
+            </div>
+          )}
+        </CardContent>
+      </Card>
 
-              {/* Total Stats */}
-              {(totalStats.motors > 0 || totalStats.images > 0) && (
-                <div className="grid grid-cols-4 gap-2 p-3 bg-muted rounded-lg text-center">
-                  <div>
-                    <p className="text-lg font-semibold">{totalStats.motors}</p>
-                    <p className="text-xs text-muted-foreground">Motors</p>
-                  </div>
-                  <div>
-                    <p className="text-lg font-semibold">{totalStats.images}</p>
-                    <p className="text-xs text-muted-foreground">Images</p>
-                  </div>
-                  <div>
-                    <p className="text-lg font-semibold text-green-600">{totalStats.success}</p>
-                    <p className="text-xs text-muted-foreground">Success</p>
-                  </div>
-                  <div>
-                    <p className="text-lg font-semibold text-destructive">{totalStats.failed}</p>
-                    <p className="text-xs text-muted-foreground">Failed</p>
-                  </div>
-                </div>
+      {/* Manual Scraping Card */}
+      <Card className="max-w-2xl mx-auto">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Image className="h-5 w-5" />
+            Manual Alberni Scraper
+          </CardTitle>
+          <CardDescription>
+            Scrape images for specific HP ranges or families
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <Label htmlFor="hpMin">HP Min</Label>
+              <Input
+                id="hpMin"
+                type="number"
+                value={hpMin}
+                onChange={(e) => setHpMin(e.target.value)}
+                placeholder="e.g., 9.9"
+              />
+            </div>
+            <div>
+              <Label htmlFor="hpMax">HP Max</Label>
+              <Input
+                id="hpMax"
+                type="number"
+                value={hpMax}
+                onChange={(e) => setHpMax(e.target.value)}
+                placeholder="e.g., 15"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <Label htmlFor="family">Family</Label>
+              <Select value={selectedFamily} onValueChange={setSelectedFamily}>
+                <SelectTrigger>
+                  <SelectValue placeholder="All Families" />
+                </SelectTrigger>
+                <SelectContent>
+                  {FAMILY_OPTIONS.map(opt => (
+                    <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div>
+              <Label htmlFor="manualBatchSize">Batch Size</Label>
+              <Input
+                id="manualBatchSize"
+                type="number"
+                value={batchSize}
+                onChange={(e) => setBatchSize(e.target.value)}
+                placeholder="10"
+              />
+            </div>
+          </div>
+
+          <Button 
+            onClick={scrapeAlberniImages}
+            disabled={loading || isAutomatedRunning || mercuryLoading}
+            className="w-full"
+            variant="outline"
+          >
+            {loading ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Scraping...
+              </>
+            ) : (
+              <>
+                <Download className="mr-2 h-4 w-4" />
+                {dryRun ? "Preview (Dry Run)" : "Scrape Images"}
+              </>
+            )}
+          </Button>
+
+          {result && (
+            <div className="mt-4 p-4 bg-muted rounded-lg">
+              {result.error ? (
+                <p className="text-destructive">{result.error}</p>
+              ) : (
+                <pre className="text-xs overflow-auto max-h-48">
+                  {JSON.stringify(result, null, 2)}
+                </pre>
               )}
             </div>
           )}
         </CardContent>
       </Card>
-
-      {/* Mercury Portal Card - Authenticated Scraping */}
-      <Card className="max-w-2xl mx-auto border-blue-500/30 bg-gradient-to-br from-background to-blue-500/5">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Download className="h-5 w-5 text-blue-500" />
-            Mercury Product Knowledge Portal
-          </CardTitle>
-          <CardDescription>
-            Scrape high-quality images from Mercury's official dealer portal using your stored credentials.
-            <span className="block mt-1 text-xs text-blue-500/80">🔐 Authenticated with dealer credentials</span>
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
-            <div>
-              <Label htmlFor="mercuryDryRun" className="font-medium">Dry Run Mode</Label>
-              <p className="text-xs text-muted-foreground">
-                Preview available images without downloading
-              </p>
-            </div>
-            <Switch
-              id="mercuryDryRun"
-              checked={dryRun}
-              onCheckedChange={setDryRun}
-              disabled={mercuryLoading}
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="mercuryBatchSize">Batch Size</Label>
-            <Input
-              id="mercuryBatchSize"
-              type="number"
-              placeholder="5"
-              value={batchSize}
-              onChange={(e) => setBatchSize(e.target.value)}
-              disabled={mercuryLoading}
-            />
-            <p className="text-xs text-muted-foreground">
-              Number of motors to process per request (lower = more reliable)
-            </p>
-          </div>
-
-          <Button 
-            onClick={scrapeMercuryPortal}
-            disabled={mercuryLoading || isAutomatedRunning || loading}
-            className="w-full"
-            variant={dryRun ? "outline" : "default"}
-          >
-            {mercuryLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            {dryRun ? "Preview Mercury Portal Images" : "Scrape from Mercury Portal"}
-          </Button>
-
-          {mercuryResult && (
-            <div className="mt-4 p-4 bg-muted rounded-lg">
-              <h3 className="font-semibold mb-2">Mercury Portal Result:</h3>
-              <pre className="text-sm whitespace-pre-wrap overflow-auto max-h-60">
-                {JSON.stringify(mercuryResult, null, 2)}
-              </pre>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-
-      {/* Manual Scraper Card */}
-      <Card className="max-w-2xl mx-auto border-border/50">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Image className="h-5 w-5" />
-            Manual Batch Scrape
-          </CardTitle>
-          <CardDescription>
-            Manually scrape a specific HP range, family, or batch size.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {/* Family Selector */}
-          <div className="space-y-2">
-            <Label htmlFor="familySelect">Motor Family</Label>
-            <Select value={selectedFamily || "all"} onValueChange={(val) => setSelectedFamily(val === "all" ? "" : val)}>
-              <SelectTrigger id="familySelect">
-                <SelectValue placeholder="Select motor family..." />
-              </SelectTrigger>
-              <SelectContent>
-                {FAMILY_OPTIONS.map((option) => (
-                  <SelectItem key={option.value || "all"} value={option.value || "all"}>
-                    {option.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            <p className="text-xs text-muted-foreground">
-              {selectedFamily === 'proxs' && "Will scrape only ProXS motors with correct URLs"}
-              {selectedFamily === 'seapro' && "Will scrape only SeaPro motors"}
-              {selectedFamily === 'verado' && "Will scrape only Verado motors"}
-              {selectedFamily === 'fourstroke' && "Will scrape only standard FourStroke motors"}
-              {(!selectedFamily || selectedFamily === 'all') && "Leave empty to scrape all families"}
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-3 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="hpMin">Min HP</Label>
-              <Input
-                id="hpMin"
-                type="number"
-                placeholder="e.g., 2.5"
-                value={hpMin}
-                onChange={(e) => setHpMin(e.target.value)}
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="hpMax">Max HP</Label>
-              <Input
-                id="hpMax"
-                type="number"
-                placeholder="e.g., 300"
-                value={hpMax}
-                onChange={(e) => setHpMax(e.target.value)}
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="batchSize">Batch Size</Label>
-              <Input
-                id="batchSize"
-                type="number"
-                placeholder="10"
-                value={batchSize}
-                onChange={(e) => setBatchSize(e.target.value)}
-              />
-            </div>
-          </div>
-          
-          <Button 
-            onClick={scrapeAlberniImages}
-            disabled={loading || isAutomatedRunning}
-            className="w-full"
-            variant="outline"
-          >
-            {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            <Download className="mr-2 h-4 w-4" />
-            {dryRun ? "Preview Scrape (Dry Run)" : "Scrape & Update Images"}
-            {selectedFamily && ` - ${FAMILY_OPTIONS.find(f => f.value === selectedFamily)?.label}`}
-          </Button>
-        </CardContent>
-      </Card>
-
-      {/* Legacy Tools Card */}
-      <Card className="max-w-2xl mx-auto opacity-60">
-        <CardHeader>
-          <CardTitle>Legacy Image Tools</CardTitle>
-          <CardDescription>
-            Previous image management tools for migration and updates.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="grid gap-4">
-            <Button 
-              onClick={migrateMotorImages}
-              disabled={loading || isAutomatedRunning}
-              variant="outline"
-              className="w-full"
-            >
-              {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-              <RefreshCw className="mr-2 h-4 w-4" />
-              Migrate Images to Storage
-            </Button>
-            
-            <Button 
-              onClick={updateMotorImages}
-              disabled={loading || isAutomatedRunning}
-              variant="outline"
-              className="w-full"
-            >
-              {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-              <RefreshCw className="mr-2 h-4 w-4" />
-              Update External Image URLs
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Results Display */}
-      {result && (
-        <Card className="max-w-2xl mx-auto">
-          <CardHeader>
-            <CardTitle>Results</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <pre className="text-sm whitespace-pre-wrap overflow-auto max-h-96 bg-muted p-4 rounded-lg">
-              {JSON.stringify(result, null, 2)}
-            </pre>
-          </CardContent>
-        </Card>
-      )}
     </div>
   );
 }

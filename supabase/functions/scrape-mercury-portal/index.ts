@@ -7,6 +7,60 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+type MotorFamily = 'Verado' | 'Pro XS' | 'FourStroke' | 'ProKicker' | 'SeaPro';
+
+interface Motor {
+  id: string;
+  model_display?: string;
+  horsepower?: number;
+  model_number?: string;
+  family?: string;
+}
+
+interface HpFamilyGroup {
+  key: string;
+  hp: number;
+  family: MotorFamily;
+  motors: Motor[];
+}
+
+// Classify motor into family based on model display
+function classifyMotorFamily(modelDisplay: string): MotorFamily {
+  const model = (modelDisplay || '').toUpperCase();
+  
+  if (model.includes('PROKICKER') || model.includes('PRO KICKER') || model.includes('PRO-KICKER')) {
+    return 'ProKicker';
+  }
+  if (model.includes('PRO XS') || model.includes('PROXS') || model.includes('PRO-XS')) {
+    return 'Pro XS';
+  }
+  if (model.includes('SEAPRO') || model.includes('SEA PRO') || model.includes('SEA-PRO')) {
+    return 'SeaPro';
+  }
+  if (model.includes('VERADO')) {
+    return 'Verado';
+  }
+  return 'FourStroke';
+}
+
+// Group motors by HP + Family
+function groupMotorsByHpFamily(motors: Motor[]): HpFamilyGroup[] {
+  const groups = new Map<string, HpFamilyGroup>();
+  
+  for (const motor of motors) {
+    const hp = motor.horsepower || 0;
+    const family = classifyMotorFamily(motor.model_display || '');
+    const key = `${hp}-${family}`;
+    
+    if (!groups.has(key)) {
+      groups.set(key, { key, hp, family, motors: [] });
+    }
+    groups.get(key)!.motors.push(motor);
+  }
+  
+  return Array.from(groups.values()).sort((a, b) => a.hp - b.hp);
+}
+
 // Mercury Portal authentication
 async function authenticateMercuryPortal(): Promise<{ cookies: string; token: string } | null> {
   const email = Deno.env.get('MERCURY_DEALER_EMAIL');
@@ -20,7 +74,6 @@ async function authenticateMercuryPortal(): Promise<{ cookies: string; token: st
   console.log('[Mercury Auth] Attempting login for:', email);
   
   try {
-    // Mercury portal uses a standard login endpoint
     const loginResponse = await fetch('https://productknowledge.mercurymarine.com/api/auth/login', {
       method: 'POST',
       headers: {
@@ -28,11 +81,7 @@ async function authenticateMercuryPortal(): Promise<{ cookies: string; token: st
         'Accept': 'application/json',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
       },
-      body: JSON.stringify({ 
-        email, 
-        password,
-        rememberMe: true 
-      }),
+      body: JSON.stringify({ email, password, rememberMe: true }),
     });
 
     if (!loginResponse.ok) {
@@ -40,21 +89,23 @@ async function authenticateMercuryPortal(): Promise<{ cookies: string; token: st
       return null;
     }
 
-    // Extract cookies from response
     const setCookieHeaders = loginResponse.headers.getSetCookie?.() || [];
     const cookies = setCookieHeaders.map(c => c.split(';')[0]).join('; ');
-    
-    // Also try to get auth token from response body
     const loginData = await loginResponse.json();
     const token = loginData.token || loginData.accessToken || '';
     
     console.log('[Mercury Auth] Login successful, got session cookies:', cookies.length > 0);
-    
     return { cookies, token };
   } catch (error) {
     console.error('[Mercury Auth] Login error:', error);
     return null;
   }
+}
+
+// Build Mercury portal search URL for HP + Family
+function buildMercurySearchUrl(hp: number, family: MotorFamily): string {
+  const searchTerm = `${hp} hp ${family}`;
+  return `https://productknowledge.mercurymarine.com/#/search?q=${encodeURIComponent(searchTerm)}`;
 }
 
 // Scrape Mercury portal with authentication using Firecrawl
@@ -85,7 +136,7 @@ async function scrapeMercuryWithFirecrawl(
         url,
         formats: ['html', 'markdown'],
         headers,
-        waitFor: 5000, // Wait for dynamic content
+        waitFor: 5000,
         timeout: 30000,
       }),
     });
@@ -97,8 +148,6 @@ async function scrapeMercuryWithFirecrawl(
 
     const data = await response.json();
     const html = data.data?.html || data.html || '';
-    
-    // Extract image URLs from HTML
     const imageUrls = extractImageUrls(html);
     console.log('[Mercury Scrape] Found', imageUrls.length, 'images');
     
@@ -144,11 +193,10 @@ function extractImageUrls(html: string): string[] {
   return [...new Set(images)];
 }
 
-// Check if URL is a valid motor image (not icon, logo, etc.)
+// Check if URL is a valid motor image
 function isValidMotorImage(url: string): boolean {
   const lowerUrl = url.toLowerCase();
   
-  // Skip common non-product images
   if (lowerUrl.includes('logo') || 
       lowerUrl.includes('icon') || 
       lowerUrl.includes('sprite') ||
@@ -162,7 +210,6 @@ function isValidMotorImage(url: string): boolean {
     return false;
   }
   
-  // Must be an image format
   return lowerUrl.includes('.jpg') || 
          lowerUrl.includes('.jpeg') || 
          lowerUrl.includes('.png') || 
@@ -180,19 +227,11 @@ function normalizeImageUrl(url: string): string {
   return url;
 }
 
-// Build Mercury portal product URL from motor info
-function buildMercuryProductUrl(motor: { model_display?: string; horsepower?: number; model_number?: string }): string {
-  // Mercury portal URL patterns - will need discovery/adjustment
-  // Try search-based approach first
-  const searchTerm = motor.model_display || motor.model_number || '';
-  return `https://productknowledge.mercurymarine.com/#/search?q=${encodeURIComponent(searchTerm)}`;
-}
-
-// Upload image to Supabase storage
+// Upload image to Supabase storage with group-based path
 async function uploadImageToStorage(
   supabase: any,
   imageUrl: string,
-  motorId: string,
+  groupKey: string,
   index: number
 ): Promise<string | null> {
   try {
@@ -214,12 +253,12 @@ async function uploadImageToStorage(
     const arrayBuffer = await blob.arrayBuffer();
     const uint8Array = new Uint8Array(arrayBuffer);
     
-    // Determine file extension
     let ext = 'jpg';
     if (contentType.includes('png')) ext = 'png';
     else if (contentType.includes('webp')) ext = 'webp';
     
-    const fileName = `${motorId}/mercury-${index}.${ext}`;
+    // Use group-based path: mercury/{HP}-{Family}/{index}.jpg
+    const fileName = `mercury/${groupKey}/${index}.${ext}`;
     
     const { data, error } = await supabase.storage
       .from('motor-images')
@@ -233,7 +272,6 @@ async function uploadImageToStorage(
       return null;
     }
     
-    // Get public URL
     const { data: { publicUrl } } = supabase.storage
       .from('motor-images')
       .getPublicUrl(fileName);
@@ -246,13 +284,49 @@ async function uploadImageToStorage(
   }
 }
 
+// Insert image into motor_media table
+async function insertMotorMedia(
+  supabase: any,
+  motorId: string,
+  imageUrl: string,
+  groupKey: string,
+  index: number
+): Promise<boolean> {
+  try {
+    const { error } = await supabase.from('motor_media').upsert({
+      motor_id: motorId,
+      media_url: imageUrl,
+      media_type: 'image',
+      media_category: index === 0 ? 'hero' : 'gallery',
+      display_order: index,
+      is_active: true,
+      metadata: { 
+        source: 'mercury_portal', 
+        hp_family: groupKey,
+        scraped_at: new Date().toISOString()
+      }
+    }, {
+      onConflict: 'motor_id,media_url'
+    });
+    
+    if (error) {
+      console.error('[Motor Media] Insert error:', error);
+      return false;
+    }
+    return true;
+  } catch (error) {
+    console.error('[Motor Media] Error:', error);
+    return false;
+  }
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const { motorIds, dryRun = false, batchSize = 5 } = await req.json();
+    const { motorIds, dryRun = false, batchSize = 50, maxImagesPerGroup = 10 } = await req.json();
 
     const firecrawlApiKey = Deno.env.get('FIRECRAWL_API_KEY');
     if (!firecrawlApiKey) {
@@ -280,7 +354,7 @@ serve(async (req) => {
     // Get motors to process
     let query = supabase
       .from('motor_models')
-      .select('id, model_display, horsepower, model_number, image_url, family')
+      .select('id, model_display, horsepower, model_number, family')
       .eq('in_stock', true);
 
     if (motorIds && motorIds.length > 0) {
@@ -293,79 +367,127 @@ serve(async (req) => {
       throw motorsError;
     }
 
-    console.log('[Main] Processing', motors?.length || 0, 'motors');
+    // Group motors by HP + Family
+    const groups = groupMotorsByHpFamily(motors || []);
+    console.log('[Main] Found', groups.length, 'unique HP+Family groups from', motors?.length || 0, 'motors');
 
     const results = {
       processed: 0,
-      imagesFound: 0,
-      imagesUploaded: 0,
+      groupsProcessed: 0,
+      totalMotorsUpdated: 0,
+      totalImagesFound: 0,
+      totalImagesUploaded: 0,
       errors: [] as string[],
-      details: [] as any[],
+      groups: [] as any[],
     };
 
-    for (const motor of motors || []) {
+    for (const group of groups) {
       try {
-        console.log('[Main] Processing motor:', motor.model_display);
+        console.log(`[Main] Processing group: ${group.key} (${group.motors.length} motors)`);
         
-        const productUrl = buildMercuryProductUrl(motor);
-        const scrapeResult = await scrapeMercuryWithFirecrawl(productUrl, session, firecrawlApiKey);
+        const searchUrl = buildMercurySearchUrl(group.hp, group.family);
+        const scrapeResult = await scrapeMercuryWithFirecrawl(searchUrl, session, firecrawlApiKey);
         
         if (!scrapeResult.success || scrapeResult.images.length === 0) {
-          results.details.push({
-            motorId: motor.id,
-            modelDisplay: motor.model_display,
+          results.groups.push({
+            key: group.key,
+            hp: group.hp,
+            family: group.family,
+            motorCount: group.motors.length,
             status: 'no_images',
-            url: productUrl,
+            url: searchUrl,
           });
           continue;
         }
 
-        results.imagesFound += scrapeResult.images.length;
+        const imagesToProcess = scrapeResult.images.slice(0, maxImagesPerGroup);
+        results.totalImagesFound += imagesToProcess.length;
 
         if (dryRun) {
-          results.details.push({
-            motorId: motor.id,
-            modelDisplay: motor.model_display,
+          results.groups.push({
+            key: group.key,
+            hp: group.hp,
+            family: group.family,
+            motorCount: group.motors.length,
+            motorIds: group.motors.map(m => m.id),
+            motorDisplays: group.motors.map(m => m.model_display),
             status: 'dry_run',
-            imagesFound: scrapeResult.images.length,
-            imageUrls: scrapeResult.images.slice(0, 3), // Show first 3
+            imagesFound: imagesToProcess.length,
+            imageUrls: imagesToProcess.slice(0, 5),
           });
         } else {
-          // Upload best image (first one, usually main product image)
-          const uploadedUrl = await uploadImageToStorage(
-            supabase,
-            scrapeResult.images[0],
-            motor.id,
-            0
-          );
+          // Upload ALL images for this group
+          const uploadedImages: { url: string; index: number }[] = [];
+          
+          for (let i = 0; i < imagesToProcess.length; i++) {
+            const uploadedUrl = await uploadImageToStorage(
+              supabase,
+              imagesToProcess[i],
+              group.key,
+              i
+            );
+            
+            if (uploadedUrl) {
+              uploadedImages.push({ url: uploadedUrl, index: i });
+              results.totalImagesUploaded++;
+            }
+          }
 
-          if (uploadedUrl) {
-            // Update motor with new image
-            await supabase
-              .from('motor_models')
-              .update({ 
-                image_url: uploadedUrl,
-                updated_at: new Date().toISOString(),
-              })
-              .eq('id', motor.id);
+          if (uploadedImages.length > 0) {
+            // Build images array for motor_models
+            const imagesArray = uploadedImages.map((img, idx) => ({
+              url: img.url,
+              type: idx === 0 ? 'hero' : 'gallery',
+              source: 'mercury_portal'
+            }));
 
-            results.imagesUploaded++;
-            results.details.push({
-              motorId: motor.id,
-              modelDisplay: motor.model_display,
+            // Update ALL motors in this group with the same images
+            for (const motor of group.motors) {
+              // Update motor_models record
+              await supabase
+                .from('motor_models')
+                .update({ 
+                  hero_image_url: uploadedImages[0].url,
+                  images: imagesArray,
+                  updated_at: new Date().toISOString(),
+                })
+                .eq('id', motor.id);
+
+              // Insert into motor_media table
+              for (const img of uploadedImages) {
+                await insertMotorMedia(
+                  supabase,
+                  motor.id,
+                  img.url,
+                  group.key,
+                  img.index
+                );
+              }
+              
+              results.totalMotorsUpdated++;
+            }
+
+            results.groups.push({
+              key: group.key,
+              hp: group.hp,
+              family: group.family,
+              motorCount: group.motors.length,
               status: 'success',
-              imageUrl: uploadedUrl,
+              imagesUploaded: uploadedImages.length,
+              motorsUpdated: group.motors.length,
+              heroImage: uploadedImages[0].url,
             });
           }
         }
 
+        results.groupsProcessed++;
         results.processed++;
 
-        // Rate limiting - wait between requests
+        // Rate limiting - wait between group scrapes
         await new Promise(resolve => setTimeout(resolve, 2000));
       } catch (error) {
-        console.error('[Main] Error processing motor:', motor.id, error);
-        results.errors.push(`${motor.model_display}: ${(error as Error).message}`);
+        console.error('[Main] Error processing group:', group.key, error);
+        results.errors.push(`${group.key}: ${(error as Error).message}`);
       }
     }
 
