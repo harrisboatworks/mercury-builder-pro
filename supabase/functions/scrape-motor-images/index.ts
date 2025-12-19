@@ -13,6 +13,7 @@ interface ScrapeOptions {
   offset?: number;
   specificMotorId?: string;
   family?: string; // 'proxs', 'seapro', 'verado', 'fourstroke', or undefined for all
+  includeOutOfStock?: boolean; // Default true - include motors regardless of stock status
 }
 
 interface MotorModel {
@@ -493,6 +494,7 @@ Deno.serve(async (req) => {
       offset: body.offset ?? 0,
       specificMotorId: body.specificMotorId,
       family: body.family,
+      includeOutOfStock: body.includeOutOfStock ?? true, // Default to include all motors
     };
 
     console.log('Scrape options:', options);
@@ -503,6 +505,14 @@ Deno.serve(async (req) => {
       .select('id, model_display, horsepower, family, motor_type')
       .not('model_display', 'is', null)
       .order('horsepower', { ascending: true });
+
+    // Only filter by stock status if explicitly set to false
+    if (options.includeOutOfStock === false) {
+      query = query.eq('in_stock', true);
+      console.log('Filtering to only in-stock motors');
+    } else {
+      console.log('Including all motors regardless of stock status');
+    }
 
     if (options.specificMotorId) {
       query = query.eq('id', options.specificMotorId);
