@@ -289,6 +289,9 @@ function getPdfCategory(filename: string): string {
   if (lower.includes('service') || lower.includes('maintenance')) {
     return 'service'
   }
+  if (lower.includes('sell') || lower.includes('sellsheet') || lower.includes('sell-sheet') || lower.includes('sales')) {
+    return 'sell-sheet'
+  }
   
   return 'general'
 }
