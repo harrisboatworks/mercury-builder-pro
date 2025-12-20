@@ -7,10 +7,26 @@ export interface BlogArticle {
   author: string;
   datePublished: string;
   dateModified: string;
+  publishDate?: string; // ISO date for scheduled publishing (defaults to datePublished if not set)
   category: string;
   readTime: string;
   faqs?: { question: string; answer: string }[];
   keywords: string[];
+}
+
+// Helper to check if an article is published
+export function isArticlePublished(article: BlogArticle): boolean {
+  const publishDate = article.publishDate || article.datePublished;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const articleDate = new Date(publishDate);
+  articleDate.setHours(0, 0, 0, 0);
+  return articleDate <= today;
+}
+
+// Get all published articles (filters out future-dated articles)
+export function getPublishedArticles(): BlogArticle[] {
+  return blogArticles.filter(isArticlePublished);
 }
 
 export const blogArticles: BlogArticle[] = [
@@ -463,11 +479,16 @@ When you purchase from Harris Boat Works, we walk you through the break-in proce
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
-  return blogArticles.find(article => article.slug === slug);
+  const article = blogArticles.find(article => article.slug === slug);
+  // Return undefined if article exists but is not yet published
+  if (article && !isArticlePublished(article)) {
+    return undefined;
+  }
+  return article;
 }
 
 export function getRelatedArticles(currentSlug: string, limit: number = 3): BlogArticle[] {
   return blogArticles
-    .filter(article => article.slug !== currentSlug)
+    .filter(article => article.slug !== currentSlug && isArticlePublished(article))
     .slice(0, limit);
 }

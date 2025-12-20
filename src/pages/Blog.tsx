@@ -1,9 +1,11 @@
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { BlogIndexSEO } from '@/components/seo/BlogIndexSEO';
 import { BlogCard } from '@/components/blog/BlogCard';
-import { blogArticles } from '@/data/blogArticles';
+import { getPublishedArticles } from '@/data/blogArticles';
 
 export default function Blog() {
+  const publishedArticles = getPublishedArticles();
+  
   return (
     <div className="min-h-screen bg-background">
       <BlogIndexSEO />
@@ -22,15 +24,15 @@ export default function Blog() {
         </div>
 
         {/* Featured Article */}
-        {blogArticles.length > 0 && (
+        {publishedArticles.length > 0 && (
           <div className="mb-12">
-            <BlogCard article={blogArticles[0]} />
+            <BlogCard article={publishedArticles[0]} />
           </div>
         )}
 
         {/* Article Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogArticles.slice(1).map(article => (
+          {publishedArticles.slice(1).map(article => (
             <BlogCard key={article.slug} article={article} />
           ))}
         </div>
