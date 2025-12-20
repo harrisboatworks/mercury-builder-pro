@@ -465,8 +465,14 @@ Deno.serve(async (req) => {
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     )
 
-    const { parentFolderUrl, dryRun = true, replaceExisting = false } = await req.json()
-    
+    const {
+      parentFolderUrl,
+      dryRun = true,
+      replaceExisting = false,
+      startAfter = null,
+      maxFolders = 2,
+    } = await req.json()
+
     if (!parentFolderUrl) {
       throw new Error('parentFolderUrl is required (folder path like "/Motor Images" or "/Mercury Photos")')
     }
@@ -520,9 +526,11 @@ Deno.serve(async (req) => {
     
     // Find all subfolders (these represent motors)
     const subfolders = entries.filter(e => e['.tag'] === 'folder')
-    console.log(`Found ${subfolders.length} subfolders in parent folder`)
+    const sortedSubfolders = subfolders.sort((a, b) => a.name.localeCompare(b.name))
 
-    if (subfolders.length === 0) {
+    console.log(`Found ${sortedSubfolders.length} subfolders in parent folder`)
+
+    if (sortedSubfolders.length === 0) {
       // Check if there are files directly in this folder
       const files = entries.filter(e => e['.tag'] === 'file')
       if (files.length > 0) {
@@ -534,6 +542,23 @@ Deno.serve(async (req) => {
       }
       throw new Error(`No subfolders found in "${folderPath}". Please check the folder path.`)
     }
+
+    // Batch controls (to avoid Edge Function timeouts)
+    const startIndex = startAfter
+      ? Math.max(0, sortedSubfolders.findIndex((f) => f.name === startAfter) + 1)
+      : 0
+
+    const foldersToProcess = sortedSubfolders.slice(
+      startIndex,
+      Math.max(startIndex, startIndex + Math.max(1, Number(maxFolders) || 1))
+    )
+
+    const hasMore = startIndex + foldersToProcess.length < sortedSubfolders.length
+    const nextStartAfter = hasMore && foldersToProcess.length > 0 ? foldersToProcess[foldersToProcess.length - 1].name : null
+
+    console.log(
+      `Processing folders ${startIndex + 1}-${startIndex + foldersToProcess.length} of ${sortedSubfolders.length} (maxFolders=${maxFolders})`
+    )
 
     // Fetch all motors for matching
     const { data: allMotors, error: motorsError } = await supabaseClient
@@ -552,8 +577,8 @@ Deno.serve(async (req) => {
     let totalPdfsSynced = 0
     let totalFoldersProcessed = 0
 
-    // Process each subfolder
-    for (const folder of subfolders) {
+    // Process each subfolder (batched)
+    for (const folder of foldersToProcess) {
       const folderResult: FolderResult = {
         folderName: folder.name,
         motorId: null,
@@ -885,7 +910,7 @@ Deno.serve(async (req) => {
       success: true,
       dryRun,
       folderPath,
-      totalFolders: subfolders.length,
+      totalFolders: sortedSubfolders.length,
       foldersProcessed: totalFoldersProcessed,
       foldersMatched: results.filter(r => r.motorId).length,
       foldersUnmatched: results.filter(r => !r.motorId).length,
@@ -893,7 +918,9 @@ Deno.serve(async (req) => {
       totalImagesSynced: dryRun ? results.reduce((sum, r) => sum + r.imagesFound, 0) : totalImagesSynced,
       totalPdfsFound: results.reduce((sum, r) => sum + r.pdfsFound, 0),
       totalPdfsSynced: dryRun ? results.reduce((sum, r) => sum + r.pdfsFound, 0) : totalPdfsSynced,
-      results
+      hasMore,
+      nextStartAfter,
+      results,
     }
 
     console.log('\n=== Sync Summary ===')
