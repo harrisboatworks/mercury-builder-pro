@@ -269,9 +269,8 @@ export default function MotorDetailsPremiumModal({
       // Desktop: open inline chat panel (visible in right column)
       setInlineChatOpen(true);
     } else {
-      // Mobile/tablet: open chat drawer with motor context
-      const motorContextMsg = `__MOTOR_CONTEXT__:${motor?.horsepower || 0}:${title}`;
-      openChat(motorContextMsg);
+      // Mobile/tablet: open chat drawer - motor context flows through QuoteContext.previewMotor
+      openChat();
       onClose();
     }
   };
