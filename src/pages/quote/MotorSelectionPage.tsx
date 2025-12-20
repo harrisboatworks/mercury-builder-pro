@@ -140,6 +140,7 @@ function MotorSelectionContent() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGroup, setSelectedGroup] = useState<MotorGroup | null>(null);
   const [showConfigurator, setShowConfigurator] = useState(false);
+  const [hasInitiallyLoaded, setHasInitiallyLoaded] = useState(false);
   
   // Quiz state - local state since we removed the view mode toggle
   const [showQuiz, setShowQuiz] = useState(false);
@@ -165,6 +166,26 @@ function MotorSelectionContent() {
     // Otherwise use first motor in filtered list
     return null;
   }, [state.motor]);
+
+  // Scroll to top of motor grid when filter changes (not on initial load)
+  useEffect(() => {
+    if (searchQuery && hasInitiallyLoaded) {
+      const gridSection = document.querySelector('.motor-grid-section');
+      if (gridSection) {
+        const headerOffset = 180;
+        const elementPosition = gridSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: Math.max(0, offsetPosition), behavior: 'instant' });
+      }
+    }
+  }, [searchQuery, hasInitiallyLoaded]);
+
+  // Track initial load to avoid scroll/animation issues on filter changes
+  useEffect(() => {
+    if (motors.length > 0 && !hasInitiallyLoaded) {
+      setHasInitiallyLoaded(true);
+    }
+  }, [motors.length, hasInitiallyLoaded]);
 
   // Auto-trigger background image scraping for motors without images
   const imageScrapeStatus = useAutoImageScraping(motors.map(motor => ({
@@ -627,14 +648,14 @@ function MotorSelectionContent() {
           onClear={clearRecentlyViewed}
         />
 
-        <div className="bg-gradient-to-b from-stone-50 to-white py-16">
+        <div className="bg-gradient-to-b from-stone-50 to-white py-16 motor-grid-section">
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Motors Grid - Expert View Only */}
           {filteredMotors.length > 0 ? (
             <motion.div 
               className="grid gap-8 sm:gap-10 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
-              initial="hidden"
+              initial={hasInitiallyLoaded ? false : "hidden"}
               animate="visible"
               variants={{
                 hidden: { opacity: 0 },
