@@ -281,10 +281,10 @@ export function ComparisonDrawer({
             className="fixed bottom-0 left-0 right-0 z-[90] bg-white rounded-t-2xl shadow-2xl max-h-[85vh] overflow-hidden"
           >
             {/* Header - 2 rows on mobile */}
-            <div className="sticky top-0 bg-white border-b border-gray-100 px-4 py-3">
+            <div className="sticky top-0 bg-white border-b border-gray-100 px-4 py-3 z-10">
               {/* Row 1: Title + Close */}
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold">Compare Motors ({motors.length}/3)</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Compare Motors ({motors.length}/3)</h3>
                 <button 
                   onClick={onClose}
                   className="p-2 hover:bg-gray-100 rounded-full transition-colors -mr-2"
@@ -293,14 +293,14 @@ export function ComparisonDrawer({
                 </button>
               </div>
               
-              {/* Row 2: Action buttons */}
+              {/* Row 2: Action buttons - horizontal row */}
               {motors.length > 0 && (
-                <div className="flex items-center gap-2 mt-2">
+                <div className="flex flex-row items-center gap-2 mt-3 pt-3 border-t border-gray-100">
                   <Button 
                     variant="outline" 
                     size="sm" 
                     onClick={handleShare}
-                    className="gap-1.5 px-2 sm:px-3"
+                    className="h-8 gap-1 text-xs"
                   >
                     <Share2 size={14} />
                     <span className="hidden sm:inline">Share</span>
@@ -309,7 +309,7 @@ export function ComparisonDrawer({
                     variant="outline" 
                     size="sm" 
                     onClick={handleOpenFullComparison}
-                    className="gap-1.5 px-2 sm:px-3"
+                    className="h-8 gap-1 text-xs"
                   >
                     <ExternalLink size={14} />
                     <span className="hidden sm:inline">Full View</span>
@@ -318,10 +318,10 @@ export function ComparisonDrawer({
                     variant="ghost" 
                     size="sm" 
                     onClick={onClear}
-                    className="text-gray-500 hover:text-red-500 ml-auto px-2 sm:px-3"
+                    className="h-8 text-xs text-gray-500 hover:text-red-500 ml-auto"
                   >
-                    <Trash2 size={16} />
-                    <span className="hidden sm:inline ml-1">Clear All</span>
+                    <Trash2 size={14} />
+                    <span className="hidden sm:inline ml-1">Clear</span>
                   </Button>
                 </div>
               )}
