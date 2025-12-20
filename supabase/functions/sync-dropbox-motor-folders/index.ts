@@ -1,4 +1,5 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.39.3'
+import { isDetailShotByUrl, selectBestHeroImage, logImageValidation } from '../_shared/image-validation.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -670,9 +671,28 @@ Deno.serve(async (req) => {
           (e: DropboxEntry) => e['.tag'] === 'file' && /\.pdf$/i.test(e.name)
         )
 
+        // Validate images and sort: full motor shots first, detail shots last
+        const validatedImages = imageFiles.map(file => ({
+          file,
+          validation: isDetailShotByUrl(file.name)
+        })).sort((a, b) => {
+          // Detail shots go to the end
+          if (a.validation.isDetailShot && !b.validation.isDetailShot) return 1
+          if (!a.validation.isDetailShot && b.validation.isDetailShot) return -1
+          // Higher score = better hero candidate
+          return b.validation.score - a.validation.score
+        })
+
+        // Log validation results
+        const detailShots = validatedImages.filter(v => v.validation.isDetailShot)
+        if (detailShots.length > 0) {
+          console.log(`⚠️ Found ${detailShots.length} detail shots that won't be used as hero:`, 
+            detailShots.map(d => `${d.file.name} (${d.validation.reason})`).join(', '))
+        }
+
         folderResult.imagesFound = imageFiles.length
         folderResult.pdfsFound = pdfFiles.length
-        console.log(`Found ${imageFiles.length} images and ${pdfFiles.length} PDFs in folder`)
+        console.log(`Found ${imageFiles.length} images (${imageFiles.length - detailShots.length} hero candidates) and ${pdfFiles.length} PDFs`)
 
         if (dryRun) {
           // In dry run mode, just report what would happen
@@ -700,9 +720,10 @@ Deno.serve(async (req) => {
 
         const sanitizedFolderName = folder.name.replace(/[^a-zA-Z0-9-_]/g, '_')
 
-        // Download and sync each image
-        for (let i = 0; i < imageFiles.length; i++) {
-          const file = imageFiles[i]
+        // Download and sync each image (using validated/sorted order)
+        let heroAssigned = false
+        for (let i = 0; i < validatedImages.length; i++) {
+          const { file, validation } = validatedImages[i]
           
           try {
             // Check if already synced (by dropbox_path)
@@ -746,13 +767,27 @@ Deno.serve(async (req) => {
               .from('motor-images')
               .getPublicUrl(fileName)
 
+            // Determine media category: only use non-detail shots as hero
+            // First non-detail shot becomes hero, rest are gallery
+            let mediaCategory: string
+            if (!heroAssigned && !validation.isDetailShot) {
+              mediaCategory = 'hero'
+              heroAssigned = true
+              console.log(`✓ Selected hero image: ${file.name} (score: ${validation.score})`)
+            } else {
+              mediaCategory = validation.isDetailShot ? 'detail' : 'gallery'
+              if (validation.isDetailShot) {
+                console.log(`ℹ️ Marked as detail shot: ${file.name}`)
+              }
+            }
+
             // Create motor_media record
             const { error: mediaError } = await supabaseClient
               .from('motor_media')
               .insert({
                 motor_id: bestMatch.id,
                 media_type: 'image',
-                media_category: i === 0 ? 'hero' : 'gallery',
+                media_category: mediaCategory,
                 media_url: publicUrl,
                 original_filename: file.name,
                 dropbox_path: file.path_lower,
@@ -763,7 +798,12 @@ Deno.serve(async (req) => {
                   parsed_hp: parsed.hp,
                   parsed_family: parsed.family,
                   parsed_shaft: parsed.shaft,
-                  match_score: bestMatch.score
+                  match_score: bestMatch.score,
+                  image_validation: {
+                    isDetailShot: validation.isDetailShot,
+                    score: validation.score,
+                    reason: validation.reason
+                  }
                 },
                 title: file.name.replace(/\.[^/.]+$/, ''),
                 file_size: file.size || 0,
