@@ -106,7 +106,7 @@ export function useGroupedMotors(motors: Motor[]): MotorGroup[] {
       // IMPROVED IMAGE SELECTION:
       // 1. First, find variants with their own images (scraped/uploaded)
       // 2. Prefer in-stock variants with images
-      // 3. Fall back to any variant with images
+      // 3. Fall back to any variant with images  
       // 4. Only use static fallback as last resort
       
       const variantsWithImages = variants.filter(m => hasOwnImages(m) && m.image);
@@ -124,12 +124,15 @@ export function useGroupedMotors(motors: Motor[]): MotorGroup[] {
         heroImage = variantsWithImages[0].image!;
         isRepresentativeImage = true; // It's from a sibling motor
       } else {
-        // Fall back to lowest-priced variant's image (may be static fallback)
-        const sortedByPrice = [...variants].sort((a, b) => (a.price || 0) - (b.price || 0));
-        const firstWithImage = sortedByPrice.find(m => m.image);
-        if (firstWithImage?.image) {
-          heroImage = firstWithImage.image;
-          isRepresentativeImage = true; // Static fallback
+        // Try any variant that has a real image (not placeholder)
+        const anyWithRealImage = variants.find(m => 
+          m.image && 
+          !m.image.includes('placeholder') && 
+          !m.image.includes('speedboat-transparent')
+        );
+        if (anyWithRealImage?.image) {
+          heroImage = anyWithRealImage.image;
+          isRepresentativeImage = true;
         }
       }
       
