@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Share2, Save, Check, X, ExternalLink, Scale, Printer, Minimize2 } from 'lucide-react';
+import { ArrowLeft, Share2, Save, Check, X, ExternalLink, Scale, Printer } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -265,71 +265,59 @@ export default function Compare() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
-      {/* Header */}
+      {/* Header - Single compact row */}
       <div className="sticky top-0 z-40 bg-white shadow-sm border-b border-border">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-3 sm:py-4">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
-            <div className="flex items-center gap-2 sm:gap-4">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2 sm:py-3">
+          <div className="flex items-center justify-between gap-2">
+            {/* Left: Back + Title */}
+            <div className="flex items-center gap-2 min-w-0">
               <Button
                 variant="ghost"
-                size="sm"
+                size="icon"
                 onClick={() => navigate(-1)}
-                className="gap-1 sm:gap-2 px-2 sm:px-3"
+                className="h-8 w-8 flex-shrink-0"
               >
-                <ArrowLeft size={16} />
-                <span className="hidden sm:inline">Back</span>
+                <ArrowLeft size={18} />
               </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => navigate(-1)}
-                className="gap-1.5 px-2 sm:px-3"
-                title="Return to drawer view"
-              >
-                <Minimize2 size={16} />
-                <span className="hidden sm:inline">Minimize</span>
-              </Button>
-              <div>
-                <h1 className="text-base sm:text-xl font-bold text-foreground flex items-center gap-2">
-                  <Scale className="text-primary" size={18} />
-                  <span className="hidden xs:inline">Motor </span>Comparison
+              <div className="min-w-0">
+                <h1 className="text-sm sm:text-lg font-bold text-foreground truncate flex items-center gap-1.5">
+                  <Scale className="text-primary flex-shrink-0" size={16} />
+                  <span className="truncate">Comparison</span>
                 </h1>
-                <p className="text-xs sm:text-sm text-muted-foreground">
-                  Comparing {motors.length} motor{motors.length !== 1 ? 's' : ''}
+                <p className="text-xs text-muted-foreground">
+                  {motors.length} motors
                 </p>
               </div>
             </div>
             
-            <div className="flex items-center gap-1.5 sm:gap-2 ml-auto">
+            {/* Right: Action buttons */}
+            <div className="flex items-center gap-1 flex-shrink-0">
               <Button
-                variant="outline"
-                size="sm"
-                onClick={handlePrint}
-                className="gap-1.5 hidden sm:flex"
-              >
-                <Printer size={16} />
-                Print
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
+                variant="ghost"
+                size="icon"
                 onClick={() => setShowShareModal(true)}
-                className="gap-1.5 px-2 sm:px-3"
+                className="h-8 w-8"
               >
                 <Share2 size={16} />
-                <span className="hidden sm:inline">Share</span>
               </Button>
               {user && (
                 <Button
-                  variant="outline"
-                  size="sm"
+                  variant="ghost"
+                  size="icon"
                   onClick={() => setShowSaveModal(true)}
-                  className="gap-1.5 px-2 sm:px-3"
+                  className="h-8 w-8"
                 >
                   <Save size={16} />
-                  <span className="hidden sm:inline">Save</span>
                 </Button>
               )}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={handlePrint}
+                className="h-8 w-8 hidden sm:flex"
+              >
+                <Printer size={16} />
+              </Button>
             </div>
           </div>
         </div>
@@ -362,7 +350,7 @@ export default function Compare() {
             <div style={{ minWidth: `${Math.max(500, 120 + motors.length * 140)}px` }}>
               {/* Motor Headers - Sticky below page header */}
               <div 
-                className="grid border-b border-border sticky top-[52px] sm:top-[64px] z-20 bg-white shadow-sm" 
+                className="grid border-b border-border sticky top-[44px] sm:top-[52px] z-20 bg-white shadow-sm" 
                 style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}
               >
                 <div className="p-3 sm:p-6 bg-muted/30">
