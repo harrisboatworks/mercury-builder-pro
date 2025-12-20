@@ -6,6 +6,23 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
 import type { ComparisonMotor } from '@/hooks/useMotorComparison';
+import { 
+  getEstimatedSpeed, 
+  getFuelConsumption, 
+  getRecommendedBoatSize, 
+  getMaxBoatWeight,
+  getStartType,
+  includesFuelTank,
+  includesPropeller
+} from '@/lib/motor-helpers';
+import {
+  generateDisplacement,
+  generateCylinders,
+  generateWeight,
+  generateAlternator,
+  generateGearRatio,
+  generateRPMRange
+} from '@/lib/motor-spec-generators';
 
 interface ComparisonDrawerProps {
   isOpen: boolean;
@@ -21,40 +38,154 @@ type ComparisonField = {
   getValue: (m: ComparisonMotor) => string | number | boolean | undefined;
   compare?: 'lowest' | 'highest';
   format?: (v: any) => string;
+  category?: string;
+};
+
+// Helper to get "Best For" label based on motor type
+const getBestForLabel = (type: string | undefined): string => {
+  if (!type) return '—';
+  const t = type.toLowerCase();
+  if (t.includes('verado')) return 'Premium & Quiet';
+  if (t.includes('proxs') || t.includes('pro xs')) return 'Performance';
+  if (t.includes('seapro') || t.includes('sea pro')) return 'Commercial';
+  if (t.includes('fourstroke') || t.includes('four stroke')) return 'All-Around';
+  return type;
 };
 
 const COMPARISON_FIELDS: ComparisonField[] = [
+  // Pricing
   { 
-    label: 'Price', 
+    label: 'Our Price', 
     getValue: (m) => m.price, 
     compare: 'lowest',
-    format: (v) => `$${v?.toLocaleString() || '—'}`
-  },
-  { 
-    label: 'Horsepower', 
-    getValue: (m) => m.hp, 
-    compare: 'highest',
-    format: (v) => `${v} HP`
+    format: (v) => v ? `$${v.toLocaleString()}` : '—',
+    category: 'Pricing'
   },
   { 
     label: 'MSRP', 
     getValue: (m) => m.msrp,
-    format: (v) => v ? `$${v.toLocaleString()}` : '—'
+    format: (v) => v ? `$${v.toLocaleString()}` : '—',
+    category: 'Pricing'
   },
   { 
-    label: 'Type', 
+    label: 'You Save', 
+    getValue: (m) => m.msrp && m.price ? m.msrp - m.price : undefined,
+    compare: 'highest',
+    format: (v) => v > 0 ? `$${v.toLocaleString()}` : '—',
+    category: 'Pricing'
+  },
+  
+  // Performance
+  { 
+    label: 'Horsepower', 
+    getValue: (m) => m.hp, 
+    compare: 'highest',
+    format: (v) => v ? `${v} HP` : '—',
+    category: 'Performance'
+  },
+  { 
+    label: 'Est. Top Speed', 
+    getValue: (m) => m.hp,
+    format: (v) => v ? getEstimatedSpeed(v) : '—',
+    category: 'Performance'
+  },
+  { 
+    label: 'RPM Range', 
+    getValue: (m) => m.hp,
+    format: (v) => v ? generateRPMRange(v) : '—',
+    category: 'Performance'
+  },
+  { 
+    label: 'Fuel Economy', 
+    getValue: (m) => m.hp,
+    format: (v) => v ? getFuelConsumption(v) : '—',
+    category: 'Performance'
+  },
+  
+  // Engine Specs
+  { 
+    label: 'Displacement', 
+    getValue: (m) => m.hp,
+    format: (v) => v ? generateDisplacement(v) : '—',
+    category: 'Engine'
+  },
+  { 
+    label: 'Cylinders', 
+    getValue: (m) => m.hp,
+    format: (v) => v ? generateCylinders(v) : '—',
+    category: 'Engine'
+  },
+  { 
+    label: 'Weight', 
+    getValue: (m) => m.hp,
+    compare: 'lowest',
+    format: (v) => v ? generateWeight(v) : '—',
+    category: 'Engine'
+  },
+  { 
+    label: 'Alternator', 
+    getValue: (m) => m.hp,
+    compare: 'highest',
+    format: (v) => v ? generateAlternator(v) : '—',
+    category: 'Engine'
+  },
+  { 
+    label: 'Gear Ratio', 
+    getValue: (m) => m.hp,
+    format: (v) => v ? generateGearRatio(v) : '—',
+    category: 'Engine'
+  },
+  
+  // Compatibility
+  { 
+    label: 'Best For', 
     getValue: (m) => m.type,
-    format: (v) => v || '—'
+    format: (v) => getBestForLabel(v),
+    category: 'Compatibility'
+  },
+  { 
+    label: 'Boat Size', 
+    getValue: (m) => m.hp,
+    format: (v) => v ? getRecommendedBoatSize(v) : '—',
+    category: 'Compatibility'
+  },
+  { 
+    label: 'Max Boat Weight', 
+    getValue: (m) => m.hp,
+    format: (v) => v ? getMaxBoatWeight(v) : '—',
+    category: 'Compatibility'
   },
   { 
     label: 'Shaft', 
     getValue: (m) => m.shaft,
-    format: (v) => v || '—'
+    format: (v) => v || '—',
+    category: 'Compatibility'
+  },
+  { 
+    label: 'Start Type', 
+    getValue: (m) => m.model,
+    format: (v) => v ? getStartType(v) : '—',
+    category: 'Compatibility'
+  },
+  
+  // Included
+  { 
+    label: 'Fuel Tank Incl.', 
+    getValue: (m) => includesFuelTank({ hp: m.hp, model: m.model } as any),
+    format: (v) => v ? '✓ Yes' : '✗ No',
+    category: 'Included'
+  },
+  { 
+    label: 'Prop Incl.', 
+    getValue: (m) => includesPropeller({ hp: m.hp, model: m.model } as any),
+    format: (v) => v ? '✓ Yes' : '✗ No',
+    category: 'Included'
   },
   { 
     label: 'In Stock', 
     getValue: (m) => m.in_stock,
-    format: (v) => v ? 'Yes' : 'No'
+    format: (v) => v ? '✓ Yes' : '✗ No',
+    category: 'Availability'
   }
 ];
 
@@ -236,7 +367,7 @@ export function ComparisonDrawer({
                           <div className="relative">
                             <button
                               onClick={() => onRemove(motor.id)}
-                              className="absolute -top-1 -right-1 p-1 bg-gray-100 hover:bg-red-100 hover:text-red-500 rounded-full transition-colors"
+                              className="absolute -top-1 -right-1 p-1 bg-gray-100 hover:bg-red-100 hover:text-red-500 rounded-full transition-colors hidden md:flex items-center justify-center"
                             >
                               <X size={14} />
                             </button>
