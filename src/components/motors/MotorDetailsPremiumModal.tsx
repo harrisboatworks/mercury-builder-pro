@@ -31,6 +31,7 @@ import {
   getFuelRequirement,
   getOilRequirement,
   getStartType,
+  getMotorImageGallery,
   type Motor 
 } from "../../lib/motor-helpers";
 import {
@@ -228,6 +229,27 @@ export default function MotorDetailsPremiumModal({
     
     if (motor?.id) fetchWarrantyPricing();
   }, [hpValue, motor?.id]);
+
+  // Fetch images from motor_media table directly
+  const [loadedGalleryImages, setLoadedGalleryImages] = useState<string[]>([]);
+  const [imagesLoading, setImagesLoading] = useState(true);
+  
+  useEffect(() => {
+    if (open && motor?.id) {
+      setImagesLoading(true);
+      getMotorImageGallery(motor).then(images => {
+        setLoadedGalleryImages(images);
+        setImagesLoading(false);
+      }).catch(() => {
+        setLoadedGalleryImages([]);
+        setImagesLoading(false);
+      });
+    } else if (!open) {
+      // Reset when modal closes
+      setLoadedGalleryImages([]);
+      setImagesLoading(true);
+    }
+  }, [open, motor?.id]);
 
   const [calculatorOpen, setCalculatorOpen] = useState(false);
   const [promoReminderOpen, setPromoReminderOpen] = useState(false);
@@ -453,51 +475,20 @@ export default function MotorDetailsPremiumModal({
               
               {/* Scrollable Tab Content */}
               <div className="p-6 pt-4 pb-24 space-y-8">
-                  <TabsContent value="overview" className="space-y-8 mt-4">
-                    {/* Enhanced Image Gallery - 40% larger */}
+                <TabsContent value="overview" className="space-y-8 mt-4">
+                    {/* Enhanced Image Gallery - Fetched from motor_media table */}
                     <div className="pt-4 pb-6 bg-gradient-to-b from-stone-50 to-white rounded-lg">
-                      <MotorImageGallery 
-                        images={(() => {
-                          // Build gallery from multiple sources
-                          const allImages: string[] = [];
-                          
-                          // Add passed gallery images first
-                          if (gallery.length > 0) {
-                            gallery.forEach(url => {
-                              if (url && !allImages.includes(url)) allImages.push(url);
-                            });
-                          }
-                          
-                          // Add motor's hero_image_url if available
-                          if (motor?.hero_image_url && !allImages.includes(motor.hero_image_url)) {
-                            allImages.unshift(motor.hero_image_url); // Put at start as it's the hero
-                          }
-                          
-                          // Add passed img prop
-                          if (img && !allImages.includes(img)) {
-                            allImages.push(img);
-                          }
-                          
-                          // Add motor's image_url as fallback
-                          if (motor?.image_url && !allImages.includes(motor.image_url)) {
-                            allImages.push(motor.image_url);
-                          }
-                          
-                          // Add motor's image as fallback
-                          if (motor?.image && !allImages.includes(motor.image)) {
-                            allImages.push(motor.image);
-                          }
-                          
-                          // Filter out placeholders
-                          return allImages.filter(url => 
-                            url && 
-                            !url.includes('placeholder') && 
-                            !url.includes('speedboat-transparent')
-                          );
-                        })()}
-                        motorTitle={title}
-                        enhanced={true}
-                      />
+                      {imagesLoading ? (
+                        <div className="flex items-center justify-center h-64">
+                          <Loader2 className="w-8 h-8 animate-spin text-gray-400" />
+                        </div>
+                      ) : (
+                        <MotorImageGallery 
+                          images={loadedGalleryImages}
+                          motorTitle={title}
+                          enhanced={true}
+                        />
+                      )}
                     </div>
                     
                     {/* About This Motor - Description with fallback */}
