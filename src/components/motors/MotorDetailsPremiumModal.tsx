@@ -361,37 +361,6 @@ export default function MotorDetailsPremiumModal({
                     <p className="text-xs font-mono text-gray-400 mb-1">{motor.model_number}</p>
                   )}
                   {motor && <StockStatusIndicator motor={motor} />}
-                  
-                  {/* Model Code Breakdown - Mobile/Tablet */}
-                  {decoded.length > 0 && (
-                    <div className="flex flex-wrap gap-1.5 mt-3">
-                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-stone-100 text-gray-700">
-                        {hpValue} HP
-                      </span>
-                      {decoded.map((feature, idx) => (
-                        <span 
-                          key={`${feature.code}-${idx}`}
-                          className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs bg-stone-100 text-gray-700"
-                        >
-                          <span className="font-mono font-semibold text-gray-600">{feature.code}</span>
-                          <span className="text-gray-500">·</span>
-                          <span>{feature.meaning
-                            .replace('Long Shaft (20")', 'Long 20"')
-                            .replace('Short Shaft (15")', 'Short 15"')
-                            .replace('Extra Long Shaft (25")', 'XL 25"')
-                            .replace('Extra Extra Long Shaft (30")', 'XXL 30"')
-                            .replace('Power Trim & Tilt', 'Power Trim')
-                            .replace('Tiller Handle', 'Tiller')
-                            .replace('Electric Start', 'Electric')
-                            .replace('Manual Start', 'Manual')
-                            .replace('Remote Control', 'Remote')
-                            .replace('Electronic Fuel Injection', 'EFI')
-                            .replace('Digital Throttle & Shift', 'Digital')
-                          }</span>
-                        </span>
-                      ))}
-                    </div>
-                  )}
                 </div>
                 
                 {/* 3. Tabs - separate section below name */}
@@ -529,6 +498,37 @@ export default function MotorDetailsPremiumModal({
                         />
                       )}
                     </div>
+                    
+                    {/* Model Code Breakdown - Below Image */}
+                    {decoded.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-stone-100 text-gray-700">
+                          {hpValue} HP
+                        </span>
+                        {decoded.map((feature, idx) => (
+                          <span 
+                            key={`${feature.code}-${idx}`}
+                            className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs bg-stone-100 text-gray-700"
+                          >
+                            <span className="font-mono font-semibold text-gray-600">{feature.code}</span>
+                            <span className="text-gray-500">·</span>
+                            <span>{feature.meaning
+                              .replace('Long Shaft (20")', 'Long 20"')
+                              .replace('Short Shaft (15")', 'Short 15"')
+                              .replace('Extra Long Shaft (25")', 'XL 25"')
+                              .replace('Extra Extra Long Shaft (30")', 'XXL 30"')
+                              .replace('Power Trim & Tilt', 'Power Trim')
+                              .replace('Tiller Handle', 'Tiller')
+                              .replace('Electric Start', 'Electric')
+                              .replace('Manual Start', 'Manual')
+                              .replace('Remote Control', 'Remote')
+                              .replace('Electronic Fuel Injection', 'EFI')
+                              .replace('Digital Throttle & Shift', 'Digital')
+                            }</span>
+                          </span>
+                        ))}
+                      </div>
+                    )}
                     
                     {/* About This Motor - Description with fallback */}
                     {displayDescription && (
