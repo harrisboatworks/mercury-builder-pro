@@ -280,50 +280,50 @@ export function ComparisonDrawer({
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className="fixed bottom-0 left-0 right-0 z-[90] bg-white rounded-t-2xl shadow-2xl max-h-[85vh] overflow-hidden"
           >
-            {/* Header - 2 rows on mobile */}
+            {/* Header - Single row with all controls */}
             <div className="sticky top-0 bg-white border-b border-gray-100 px-4 py-3 z-10">
-              {/* Row 1: Title + Close */}
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-gray-900">Compare Motors ({motors.length}/3)</h3>
-                <button 
-                  onClick={onClose}
-                  className="p-2 hover:bg-gray-100 rounded-full transition-colors -mr-2"
-                >
-                  <X size={20} />
-                </button>
-              </div>
-              
-              {/* Row 2: Action buttons - horizontal row with visible labels */}
-              {motors.length > 0 && (
-                <div className="flex flex-row items-center gap-2 mt-3 pt-3 border-t border-gray-100">
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    onClick={handleShare}
-                    className="h-8 gap-1.5 text-xs px-3"
+              <div className="flex items-center justify-between gap-2">
+                <h3 className="text-lg font-semibold text-gray-900 flex-shrink-0">
+                  Compare Motors ({motors.length}/3)
+                </h3>
+                
+                {/* Right side: Action buttons + Close */}
+                <div className="flex items-center gap-1">
+                  {motors.length > 0 && (
+                    <>
+                      <Button 
+                        variant="ghost" 
+                        size="icon"
+                        onClick={handleShare}
+                        className="h-8 w-8"
+                      >
+                        <Share2 size={16} />
+                      </Button>
+                      <Button 
+                        variant="ghost" 
+                        size="icon"
+                        onClick={onClear}
+                        className="h-8 w-8 text-muted-foreground hover:text-destructive"
+                      >
+                        <Trash2 size={16} />
+                      </Button>
+                    </>
+                  )}
+                  <button 
+                    onClick={onClose}
+                    className="p-2 hover:bg-gray-100 rounded-full transition-colors"
                   >
-                    <Share2 size={14} />
-                    <span>Share</span>
-                  </Button>
-                  <div className="flex-1" />
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
-                    onClick={onClear}
-                    className="h-8 gap-1.5 text-xs text-muted-foreground hover:text-destructive px-3"
-                  >
-                    <Trash2 size={14} />
-                    <span>Clear</span>
-                  </Button>
+                    <X size={20} className="text-gray-500" />
+                  </button>
                 </div>
-              )}
+              </div>
             </div>
             
             {/* Content */}
             <div 
               ref={scrollContainerRef}
               onScroll={handleScroll}
-              className="relative overflow-x-auto overflow-y-auto max-h-[calc(85vh-180px)]"
+              className="relative overflow-x-auto overflow-y-auto max-h-[calc(85vh-120px)]"
             >
               {/* Swipe hint overlay */}
               <AnimatePresence>
