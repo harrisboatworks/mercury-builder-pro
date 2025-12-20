@@ -518,25 +518,95 @@ export default function UpdateMotorImages() {
     try {
       toast({
         title: dropboxDryRun ? "Scanning Dropbox folders..." : "Syncing Dropbox folders...",
-        description: "Looking for motor subfolders and matching them to your inventory",
+        description: dropboxDryRun
+          ? "Looking for motor subfolders and matching them to your inventory"
+          : "Sync runs in small batches to avoid Edge Function timeouts",
       });
 
-      const { data, error } = await supabase.functions.invoke('sync-dropbox-motor-folders', {
-        body: { 
-          parentFolderUrl: dropboxFolderUrl, 
-          dryRun: dropboxDryRun,
-          replaceExisting: dropboxReplaceExisting 
-        },
-      });
+      // Dry run is fast: single request
+      if (dropboxDryRun) {
+        const { data, error } = await supabase.functions.invoke('sync-dropbox-motor-folders', {
+          body: {
+            parentFolderUrl: dropboxFolderUrl,
+            dryRun: true,
+            replaceExisting: false,
+          },
+        });
 
-      if (error) throw error;
+        if (error) throw error;
 
-      setDropboxResult(data);
-      
+        setDropboxResult(data);
+
+        toast({
+          title: data?.success ? "Preview complete!" : "Completed with issues",
+          description: `Found ${data?.totalFolders || 0} folders, matched ${data?.foldersMatched || 0} motors, would sync ${data?.totalImagesSynced || 0} images and ${data?.totalPdfsSynced || 0} PDFs`,
+          variant: data?.success ? "default" : "destructive",
+        });
+
+        return;
+      }
+
+      // Real sync can take too long for one Edge Function call; loop through batches.
+      let startAfter: string | null = null;
+      let totalFolders: number | null = null;
+      const allResults: any[] = [];
+      let safety = 0;
+
+      while (true) {
+        safety++;
+        if (safety > 500) throw new Error('Safety stop: too many batches');
+
+        const { data, error } = await supabase.functions.invoke('sync-dropbox-motor-folders', {
+          body: {
+            parentFolderUrl: dropboxFolderUrl,
+            dryRun: false,
+            replaceExisting: dropboxReplaceExisting,
+            // keep batches small; replaceExisting does extra deletes so be conservative
+            maxFolders: dropboxReplaceExisting ? 1 : 2,
+            startAfter,
+          },
+        });
+
+        if (error) throw error;
+
+        if (totalFolders === null) totalFolders = data?.totalFolders ?? null;
+        const batchResults = Array.isArray(data?.results) ? data.results : [];
+        allResults.push(...batchResults);
+
+        const processedSoFar = allResults.length;
+        toast({
+          title: "Dropbox sync running...",
+          description: totalFolders
+            ? `Processed ${processedSoFar}/${totalFolders} folders...`
+            : `Processed ${processedSoFar} folders...`,
+        });
+
+        if (!data?.hasMore) break;
+        startAfter = data?.nextStartAfter ?? null;
+        if (!startAfter) break;
+      }
+
+      const totalImagesSynced = allResults.reduce((sum, r) => sum + (r?.imagesSynced || 0), 0);
+      const totalPdfsSynced = allResults.reduce((sum, r) => sum + (r?.pdfsSynced || 0), 0);
+      const foldersMatched = allResults.filter((r) => r?.motorId).length;
+
+      const finalSummary = {
+        success: true,
+        dryRun: false,
+        folderPath: dropboxFolderUrl,
+        totalFolders: totalFolders ?? allResults.length,
+        foldersProcessed: allResults.length,
+        foldersMatched,
+        totalImagesSynced,
+        totalPdfsSynced,
+        results: allResults,
+      };
+
+      setDropboxResult(finalSummary);
+
       toast({
-        title: data?.success ? (dropboxDryRun ? "Preview complete!" : "Sync complete!") : "Completed with issues",
-        description: `Found ${data?.totalFolders || 0} folders, matched ${data?.foldersMatched || 0} motors, ${dropboxDryRun ? 'would sync' : 'synced'} ${data?.totalImagesSynced || 0} images`,
-        variant: data?.success ? "default" : "destructive",
+        title: "Sync complete!",
+        description: `Processed ${finalSummary.foldersProcessed} folders, synced ${totalImagesSynced} images and ${totalPdfsSynced} PDFs`,
       });
     } catch (error) {
       console.error('Dropbox sync error:', error);
