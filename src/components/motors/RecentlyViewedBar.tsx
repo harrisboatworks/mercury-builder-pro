@@ -47,7 +47,7 @@ export function RecentlyViewedBar({ items, onSelect, onClear, className }: Recen
                     />
                   )}
                   <span className="text-xs font-medium text-gray-700 whitespace-nowrap">
-                    {item.hp} HP
+                    {item.model}
                   </span>
                   <span className="text-xs text-gray-400 whitespace-nowrap">
                     ${item.price.toLocaleString()}
