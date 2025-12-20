@@ -489,16 +489,16 @@ When you purchase from Harris Boat Works, we walk you through the break-in proce
   // NEW SCHEDULED ARTICLES - Weekly from Jan 6, 2025
   // ============================================
 
-  // Week 1: January 6, 2025
+  // Week 1: January 5, 2026
   {
     slug: 'why-harris-boat-works-mercury-dealer',
     title: 'Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust',
     description: 'Discover why Harris Boat Works has been Ontario\'s trusted Mercury dealer since 1965. Learn about our expertise, inventory, service, and commitment to boaters.',
     image: '/lovable-uploads/mercury-family-lineup.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-01-06',
-    dateModified: '2025-01-06',
-    publishDate: '2025-01-06',
+    datePublished: '2026-01-05',
+    dateModified: '2026-01-05',
+    publishDate: '2026-01-05',
     category: 'About Us',
     readTime: '8 min read',
     keywords: ['mercury dealer ontario', 'harris boat works', 'mercury outboard dealer', 'mercury sales peterborough', 'trusted boat dealer ontario'],
@@ -579,16 +579,16 @@ We're boaters ourselves. We fish these lakes, we know these conditions, and we s
     ]
   },
 
-  // Week 2: January 13, 2025
+  // Week 2: January 12, 2026
   {
     slug: 'best-mercury-outboard-aluminum-fishing-boats',
-    title: 'Best Mercury Outboard for Aluminum Fishing Boats (2025 Guide)',
+    title: 'Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)',
     description: 'Find the perfect Mercury outboard for your aluminum fishing boat. Compare the best motors from 25HP to 150HP for Lund, Tracker, Crestliner, and more.',
     image: '/lovable-uploads/mercury-fishing.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-01-13',
-    dateModified: '2025-01-13',
-    publishDate: '2025-01-13',
+    datePublished: '2026-01-12',
+    dateModified: '2026-01-12',
+    publishDate: '2026-01-12',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury for aluminum boat', 'best outboard aluminum fishing boat', 'mercury 60hp fishing', 'lund boat motor', 'tracker boat outboard'],
@@ -695,16 +695,16 @@ For the typical Ontario angler fishing inland lakes with a 16ft aluminum boat:
     ]
   },
 
-  // Week 3: January 20, 2025
+  // Week 3: January 19, 2026
   {
     slug: 'best-mercury-outboard-pontoon-boats',
-    title: 'Best Mercury Outboard for Pontoon Boats: 2025 Buyer\'s Guide',
+    title: 'Best Mercury Outboard for Pontoon Boats: 2026 Buyer\'s Guide',
     description: 'Find the ideal Mercury outboard for your pontoon. Compare FourStroke, Verado, and SeaPro options for 18-28ft pontoons from Bennington, Harris, and more.',
     image: '/lovable-uploads/mercury-pontoon.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-01-20',
-    dateModified: '2025-01-20',
-    publishDate: '2025-01-20',
+    datePublished: '2026-01-19',
+    dateModified: '2026-01-19',
+    publishDate: '2026-01-19',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury for pontoon boat', 'best pontoon outboard', 'pontoon motor hp', 'verado pontoon', 'mercury 115 pontoon'],
@@ -816,16 +816,16 @@ Mercury FourStroke and Verado are notably quiet—important when you're entertai
     ]
   },
 
-  // Week 4: January 27, 2025
+  // Week 4: January 26, 2026
   {
     slug: 'mercury-75-vs-90-vs-115-comparison',
     title: 'Mercury 75 vs 90 vs 115: Finding the Sweet Spot for Your Boat',
     description: 'Compare Mercury 75HP, 90HP, and 115HP outboards. Discover the best horsepower choice for your fishing boat, pontoon, or runabout with real-world advice.',
     image: '/lovable-uploads/mercury-comparison.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-01-27',
-    dateModified: '2025-01-27',
-    publishDate: '2025-01-27',
+    datePublished: '2026-01-26',
+    dateModified: '2026-01-26',
+    publishDate: '2026-01-26',
     category: 'Comparison',
     readTime: '9 min read',
     keywords: ['mercury 75 vs 90', 'mercury 90 vs 115', 'best mercury hp', 'mercury 75hp review', 'mercury 115 fourstroke'],
@@ -956,16 +956,16 @@ However, if you're running a smaller boat and prioritize fuel economy over absol
     ]
   },
 
-  // Week 5: February 3, 2025
+  // Week 5: February 2, 2026
   {
     slug: 'ontario-cottage-boat-motor-repower-guide',
     title: 'Ontario Cottage Owner\'s Guide: Is It Time to Repower Your Boat?',
     description: 'Should you repower your cottage boat? Learn the signs, costs, and benefits of replacing your outboard motor. Guide for Ontario cottage owners.',
     image: '/lovable-uploads/repower-hero.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-02-03',
-    dateModified: '2025-02-03',
-    publishDate: '2025-02-03',
+    datePublished: '2026-02-02',
+    dateModified: '2026-02-02',
+    publishDate: '2026-02-02',
     category: 'Repowering',
     readTime: '10 min read',
     keywords: ['repower cottage boat', 'replace outboard motor', 'cottage boat motor', 'boat repower ontario', 'when to replace outboard'],
@@ -1071,16 +1071,16 @@ Repower during winter for:
     ]
   },
 
-  // Week 6: February 10, 2025
+  // Week 6: February 9, 2026
   {
     slug: 'best-mercury-outboard-rice-lake-fishing',
     title: 'Best Mercury Outboard for Rice Lake Fishing: Local Expert\'s Guide',
     description: 'Discover the ideal Mercury outboard for Rice Lake fishing. Local recommendations for walleye, bass, and musky boats from 14-20ft on Kawartha waters.',
     image: '/lovable-uploads/mercury-fishing.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-02-10',
-    dateModified: '2025-02-10',
-    publishDate: '2025-02-10',
+    datePublished: '2026-02-09',
+    dateModified: '2026-02-09',
+    publishDate: '2026-02-09',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['rice lake fishing boat motor', 'kawartha lakes outboard', 'best motor rice lake', 'walleye boat motor', 'mercury fishing motor ontario'],
@@ -1184,16 +1184,16 @@ Stop by and we'll set you up with exactly what you need for Rice Lake success.
     ]
   },
 
-  // Week 7: February 17, 2025
+  // Week 7: February 16, 2026
   {
     slug: 'mercury-fourstroke-vs-verado-comparison',
     title: 'Mercury FourStroke vs Verado: Which Premium Motor Is Right for You?',
     description: 'Compare Mercury FourStroke and Verado outboards. Learn the key differences in technology, performance, and value to make the right choice.',
     image: '/lovable-uploads/mercury-comparison.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-02-17',
-    dateModified: '2025-02-17',
-    publishDate: '2025-02-17',
+    datePublished: '2026-02-16',
+    dateModified: '2026-02-16',
+    publishDate: '2026-02-16',
     category: 'Comparison',
     readTime: '11 min read',
     keywords: ['mercury fourstroke vs verado', 'verado worth it', 'mercury outboard comparison', 'verado review', 'best mercury motor'],
@@ -1324,16 +1324,16 @@ For most Ontario boaters on inland lakes, the **FourStroke** provides everything
     ]
   },
 
-  // Week 8: February 24, 2025
+  // Week 8: February 23, 2026
   {
     slug: 'complete-guide-boat-repower-kawarthas',
     title: 'Complete Guide to Repowering Your Boat in the Kawarthas',
     description: 'Everything you need to know about repowering your boat in Kawartha Lakes. Costs, timeline, motor selection, and what to expect from start to finish.',
     image: '/lovable-uploads/repower-hero.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-02-24',
-    dateModified: '2025-02-24',
-    publishDate: '2025-02-24',
+    datePublished: '2026-02-23',
+    dateModified: '2026-02-23',
+    publishDate: '2026-02-23',
     category: 'Repowering',
     readTime: '12 min read',
     keywords: ['boat repower kawarthas', 'repower cost ontario', 'mercury repower', 'outboard replacement', 'boat motor upgrade'],
@@ -1465,16 +1465,16 @@ Mercury SmartCraft gauges work with older motors. If you're upgrading to a motor
     ]
   },
 
-  // Week 9: March 3, 2025
+  // Week 9: March 2, 2026
   {
     slug: 'mercury-warranty-what-you-need-to-know',
     title: 'Mercury Outboard Warranty: What Every Boat Owner Needs to Know',
     description: 'Understand Mercury\'s outboard warranty coverage, extended warranty options, and how to protect your investment. Complete guide to Mercury warranty terms.',
     image: '/lovable-uploads/mercury-service.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-03-03',
-    dateModified: '2025-03-03',
-    publishDate: '2025-03-03',
+    datePublished: '2026-03-02',
+    dateModified: '2026-03-02',
+    publishDate: '2026-03-02',
     category: 'New Owner',
     readTime: '8 min read',
     keywords: ['mercury warranty', 'mercury extended warranty', 'outboard warranty coverage', 'mercury motor warranty', 'warranty registration mercury'],
@@ -1595,16 +1595,16 @@ Mercury warranties **can transfer** to new owners:
     ]
   },
 
-  // Week 10: March 10, 2025
+  // Week 10: March 9, 2026
   {
     slug: 'bass-boat-mercury-motor-buying-guide',
-    title: 'Best Mercury Motor for Bass Boats: 2025 Buyer\'s Guide',
+    title: 'Best Mercury Motor for Bass Boats: 2026 Buyer\'s Guide',
     description: 'Find the perfect Mercury outboard for your bass boat. Compare Pro XS, FourStroke, and Verado options for tournament and recreational bass fishing.',
     image: '/lovable-uploads/mercury-fishing.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-03-10',
-    dateModified: '2025-03-10',
-    publishDate: '2025-03-10',
+    datePublished: '2026-03-09',
+    dateModified: '2026-03-09',
+    publishDate: '2026-03-09',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['bass boat motor', 'mercury pro xs bass', 'best bass boat outboard', 'tournament bass motor', 'mercury 200 bass boat'],
@@ -1725,16 +1725,16 @@ If budget is tighter and you fish recreationally, the **Mercury FourStroke** at 
     ]
   },
 
-  // Week 11: March 17, 2025
+  // Week 11: March 16, 2026
   {
     slug: 'mercury-outboard-fuel-efficiency-guide',
     title: 'Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water',
     description: 'Learn how to get the best fuel economy from your Mercury outboard. Tips on prop selection, trim, speed, and maintenance that save you money at the fuel dock.',
     image: '/lovable-uploads/mercury-service.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-03-17',
-    dateModified: '2025-03-17',
-    publishDate: '2025-03-17',
+    datePublished: '2026-03-16',
+    dateModified: '2026-03-16',
+    publishDate: '2026-03-16',
     category: 'Tips',
     readTime: '9 min read',
     keywords: ['outboard fuel efficiency', 'mercury mpg', 'boat fuel economy', 'save fuel boating', 'outboard consumption'],
@@ -1865,16 +1865,16 @@ Limits RPM for maximum fuel economy.
     ]
   },
 
-  // Week 12: March 24, 2025
+  // Week 12: March 23, 2026
   {
     slug: 'center-console-mercury-motor-guide',
-    title: 'Best Mercury Outboards for Center Console Boats: 2025 Guide',
+    title: 'Best Mercury Outboards for Center Console Boats: 2026 Guide',
     description: 'Find the ideal Mercury motors for your center console. From single 115HP to quad 450HP setups, we cover every option for offshore and inshore boats.',
     image: '/lovable-uploads/mercury-family-lineup.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-03-24',
-    dateModified: '2025-03-24',
-    publishDate: '2025-03-24',
+    datePublished: '2026-03-23',
+    dateModified: '2026-03-23',
+    publishDate: '2026-03-23',
     category: 'Buying Guide',
     readTime: '11 min read',
     keywords: ['center console outboard', 'twin mercury outboard', 'mercury 300 verado', 'offshore motor', 'center console motor choice'],
@@ -1992,16 +1992,16 @@ Mercury's Joystick Piloting for Outboards is a game-changer for docking:
     ]
   },
 
-  // Week 13: March 31, 2025
+  // Week 13: March 30, 2026
   {
     slug: 'spring-outboard-commissioning-checklist',
     title: 'Spring Outboard Commissioning: Complete Checklist for Ontario Boaters',
     description: 'Get your Mercury outboard ready for the season. Complete spring commissioning checklist covering everything from fuel to propeller before your first trip.',
     image: '/lovable-uploads/mercury-service.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-03-31',
-    dateModified: '2025-03-31',
-    publishDate: '2025-03-31',
+    datePublished: '2026-03-30',
+    dateModified: '2026-03-30',
+    publishDate: '2026-03-30',
     category: 'Maintenance',
     readTime: '9 min read',
     keywords: ['spring boat commissioning', 'outboard commissioning', 'spring boat startup', 'mercury spring maintenance', 'boat season prep'],
@@ -2128,16 +2128,16 @@ Harris Boat Works offers complete spring commissioning service. We'll do everyth
     ]
   },
 
-  // Week 14: April 7, 2025
+  // Week 14: April 6, 2026
   {
     slug: 'tiller-vs-remote-steering-outboard-guide',
     title: 'Tiller vs Remote Steering: Which Is Right for Your Boat?',
     description: 'Compare tiller and remote steering for outboard motors. Learn the pros, cons, and best applications for each control type. Expert guide for boat owners.',
     image: '/lovable-uploads/mercury-fishing.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-04-07',
-    dateModified: '2025-04-07',
-    publishDate: '2025-04-07',
+    datePublished: '2026-04-06',
+    dateModified: '2026-04-06',
+    publishDate: '2026-04-06',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['tiller vs remote outboard', 'tiller steering boat', 'outboard remote steering', 'boat steering options', 'mercury tiller motor'],
@@ -2251,16 +2251,16 @@ One of the first decisions when choosing an outboard is tiller or remote steerin
     ]
   },
 
-  // Week 15: April 14, 2025
+  // Week 15: April 13, 2026
   {
     slug: 'mercury-propeller-selection-guide',
     title: 'Mercury Propeller Selection: Complete Guide to Choosing the Right Prop',
     description: 'Learn how to choose the perfect Mercury propeller for your boat. Pitch, diameter, blade count, and material explained for optimal performance.',
     image: '/lovable-uploads/mercury-service.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-04-14',
-    dateModified: '2025-04-14',
-    publishDate: '2025-04-14',
+    datePublished: '2026-04-13',
+    dateModified: '2026-04-13',
+    publishDate: '2026-04-13',
     category: 'Tips',
     readTime: '10 min read',
     keywords: ['mercury propeller selection', 'outboard prop guide', 'boat propeller size', 'mercury prop chart', 'propeller pitch explained'],
@@ -2370,16 +2370,16 @@ Many boats leave the factory with a "one size fits most" prop. A proper selectio
     ]
   },
 
-  // Week 16: April 21, 2025
+  // Week 16: April 20, 2026
   {
     slug: 'mercury-seapro-commercial-outboard-guide',
     title: 'Mercury SeaPro: The Best Commercial Outboard for Guides and Heavy Use',
     description: 'Discover why Mercury SeaPro is the choice for commercial operators. Built for high-hour use, extended service intervals, and maximum reliability.',
     image: '/lovable-uploads/mercury-family-lineup.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-04-21',
-    dateModified: '2025-04-21',
-    publishDate: '2025-04-21',
+    datePublished: '2026-04-20',
+    dateModified: '2026-04-20',
+    publishDate: '2026-04-20',
     category: 'Buying Guide',
     readTime: '9 min read',
     keywords: ['mercury seapro', 'commercial outboard', 'guide motor', 'heavy duty outboard', 'commercial boat motor'],
@@ -2491,16 +2491,16 @@ We support fishing guides throughout the Kawarthas with SeaPro motors. They appr
     ]
   },
 
-  // Week 17: April 28, 2025
+  // Week 17: April 27, 2026
   {
     slug: 'portable-outboard-mercury-guide-2-20hp',
     title: 'Mercury Portable Outboards (2.5-20HP): Complete Buyer\'s Guide',
     description: 'Choose the right Mercury portable outboard for your tender, dinghy, or small boat. Compare 2.5HP to 20HP options for inflatable and small craft.',
     image: '/lovable-uploads/mercury-family-lineup.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-04-28',
-    dateModified: '2025-04-28',
-    publishDate: '2025-04-28',
+    datePublished: '2026-04-27',
+    dateModified: '2026-04-27',
+    publishDate: '2026-04-27',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['portable outboard', 'small boat motor', 'dinghy motor', 'mercury portable', 'tender motor'],
@@ -2605,16 +2605,16 @@ Smaller motors have built-in tanks. Larger (15HP+) typically use external.
     ]
   },
 
-  // Week 18: May 5, 2025
+  // Week 18: May 4, 2026
   {
     slug: 'electric-trolling-motor-kicker-guide',
     title: 'Trolling Motor vs Kicker: Which Auxiliary Setup Is Right for You?',
     description: 'Compare electric trolling motors and gas kicker motors. Learn the pros and cons of each for fishing boats in Ontario waters.',
     image: '/lovable-uploads/mercury-fishing.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-05-05',
-    dateModified: '2025-05-05',
-    publishDate: '2025-05-05',
+    datePublished: '2026-05-04',
+    dateModified: '2026-05-04',
+    publishDate: '2026-05-04',
     category: 'Comparison',
     readTime: '9 min read',
     keywords: ['trolling motor vs kicker', 'kicker motor fishing', 'trolling motor boat', 'mercury kicker', 'auxiliary outboard'],
@@ -2735,16 +2735,16 @@ This setup covers every fishing situation.
     ]
   },
 
-  // Week 19: May 12, 2025
+  // Week 19: May 11, 2026
   {
     slug: 'boat-motor-size-calculator-guide',
     title: 'What Size Motor Does My Boat Need? Complete Calculator Guide',
     description: 'Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and real-world examples for accurate motor selection.',
     image: '/lovable-uploads/mercury-family-lineup.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-05-12',
-    dateModified: '2025-05-12',
-    publishDate: '2025-05-12',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['boat motor size', 'outboard motor calculator', 'hp for boat weight', 'motor sizing guide', 'boat horsepower'],
@@ -2858,16 +2858,16 @@ Bring us your boat info and tell us how you fish. We'll recommend the right moto
     ]
   },
 
-  // Week 20: May 19, 2025
+  // Week 20: May 18, 2026
   {
     slug: 'mercury-smartcraft-gauges-guide',
     title: 'Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays',
     description: 'Understand Mercury SmartCraft digital gauges and displays. Features, benefits, and options for VesselView, SC1000, and analog gauge upgrades.',
     image: '/lovable-uploads/mercury-comparison.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-05-19',
-    dateModified: '2025-05-19',
-    publishDate: '2025-05-19',
+    datePublished: '2026-05-18',
+    dateModified: '2026-05-18',
+    publishDate: '2026-05-18',
     category: 'Tips',
     readTime: '10 min read',
     keywords: ['mercury smartcraft', 'vesselview', 'boat gauges', 'digital boat display', 'mercury gauges'],
@@ -2992,16 +2992,16 @@ We can help you plan and install the right SmartCraft setup.
     ]
   },
 
-  // Week 21: May 26, 2025
+  // Week 21: May 25, 2026
   {
     slug: 'boat-motor-financing-guide-ontario',
     title: 'Financing a New Boat Motor: What Ontario Boaters Need to Know',
     description: 'Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a new Mercury outboard purchase.',
     image: '/lovable-uploads/mercury-family-lineup.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-05-26',
-    dateModified: '2025-05-26',
-    publishDate: '2025-05-26',
+    datePublished: '2026-05-25',
+    dateModified: '2026-05-25',
+    publishDate: '2026-05-25',
     category: 'Buying Guide',
     readTime: '7 min read',
     keywords: ['boat motor financing', 'outboard financing ontario', 'mercury financing', 'boat loan', 'marine financing'],
@@ -3105,16 +3105,16 @@ We offer:
     ]
   },
 
-  // Week 22: June 2, 2025
+  // Week 22: June 1, 2026
   {
     slug: 'new-vs-used-outboard-motor-guide',
     title: 'New vs Used Outboard Motor: Complete Buyer\'s Comparison Guide',
     description: 'Should you buy new or used? Compare costs, risks, and benefits of new and pre-owned outboard motors. Make the right decision for your budget.',
     image: '/lovable-uploads/mercury-comparison.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-06-02',
-    dateModified: '2025-06-02',
-    publishDate: '2025-06-02',
+    datePublished: '2026-06-01',
+    dateModified: '2026-06-01',
+    publishDate: '2026-06-01',
     category: 'Comparison',
     readTime: '10 min read',
     keywords: ['new vs used outboard', 'used boat motor', 'pre-owned outboard', 'buying used outboard', 'used mercury motor'],
@@ -3249,16 +3249,16 @@ Private sale? You're on your own.
     ]
   },
 
-  // Week 23: June 9, 2025
+  // Week 23: June 8, 2026
   {
     slug: 'outboard-motor-storage-tips',
     title: 'Outboard Motor Storage: Best Practices for Off-Season Care',
     description: 'Protect your investment with proper outboard storage. Learn how to store your Mercury motor during the off-season, whether winterizing or mid-season breaks.',
     image: '/lovable-uploads/mercury-service.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-06-09',
-    dateModified: '2025-06-09',
-    publishDate: '2025-06-09',
+    datePublished: '2026-06-08',
+    dateModified: '2026-06-08',
+    publishDate: '2026-06-08',
     category: 'Maintenance',
     readTime: '8 min read',
     keywords: ['outboard storage', 'motor winterization', 'boat motor storage', 'store outboard motor', 'off season boat care'],
@@ -3389,16 +3389,16 @@ When ready to recommission:
     ]
   },
 
-  // Week 24: June 16, 2025
+  // Week 24: June 15, 2026
   {
     slug: 'mercury-v8-outboard-comparison',
     title: 'Mercury V8 Outboards: Comparing the 200-300HP Powerhouses',
     description: 'Explore Mercury\'s V8 outboard lineup from 200HP to 300HP. Compare FourStroke, Pro XS, and Verado options for maximum performance.',
     image: '/lovable-uploads/mercury-comparison.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-06-16',
-    dateModified: '2025-06-16',
-    publishDate: '2025-06-16',
+    datePublished: '2026-06-15',
+    dateModified: '2026-06-15',
+    publishDate: '2026-06-15',
     category: 'Comparison',
     readTime: '11 min read',
     keywords: ['mercury v8 outboard', 'mercury 250', 'mercury 300', 'v8 outboard comparison', 'large outboard motor'],
@@ -3525,16 +3525,16 @@ The differences are in feel, sound, and refinement—not raw capability.
     ]
   },
 
-  // Week 25: June 23, 2025
+  // Week 25: June 22, 2026
   {
     slug: 'boat-motor-trade-in-guide',
     title: 'Trading In Your Boat Motor: How to Get the Best Value',
     description: 'Learn how to maximize trade-in value when upgrading your outboard motor. Tips for preparation, timing, and negotiation from experienced dealers.',
     image: '/lovable-uploads/mercury-family-lineup.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-06-23',
-    dateModified: '2025-06-23',
-    publishDate: '2025-06-23',
+    datePublished: '2026-06-22',
+    dateModified: '2026-06-22',
+    publishDate: '2026-06-22',
     category: 'Tips',
     readTime: '7 min read',
     keywords: ['trade in boat motor', 'outboard trade in value', 'sell boat motor', 'upgrade outboard', 'boat motor value'],
@@ -3657,16 +3657,16 @@ Upgrading your outboard? Your current motor has value. Here's how to get the bes
     ]
   },
 
-  // Week 26: June 30, 2025
+  // Week 26: June 29, 2026
   {
     slug: 'mercury-digital-throttle-shift-guide',
     title: 'Mercury Digital Throttle & Shift (DTS): What You Need to Know',
     description: 'Understand Mercury Digital Throttle & Shift technology. Learn benefits, compatibility, and whether DTS is right for your boating application.',
     image: '/lovable-uploads/mercury-comparison.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-06-30',
-    dateModified: '2025-06-30',
-    publishDate: '2025-06-30',
+    datePublished: '2026-06-29',
+    dateModified: '2026-06-29',
+    publishDate: '2026-06-29',
     category: 'Tips',
     readTime: '9 min read',
     keywords: ['mercury dts', 'digital throttle shift', 'mercury controls', 'binnacle control', 'boat throttle system'],
@@ -3786,16 +3786,16 @@ DTS enables Mercury Joystick Piloting:
     ]
   },
 
-  // Week 27: July 7, 2025
+  // Week 27: July 6, 2026
   {
     slug: 'musky-boat-motor-guide-kawarthas',
     title: 'Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide',
     description: 'Choose the right Mercury outboard for musky fishing in Ontario\'s Kawartha Lakes. Power recommendations and setup tips from local musky anglers.',
     image: '/lovable-uploads/mercury-fishing.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-07-07',
-    dateModified: '2025-07-07',
-    publishDate: '2025-07-07',
+    datePublished: '2026-07-06',
+    dateModified: '2026-07-06',
+    publishDate: '2026-07-06',
     category: 'Buying Guide',
     readTime: '9 min read',
     keywords: ['musky boat motor', 'kawartha musky fishing', 'musky boat setup', 'mercury for musky', 'musky fishing boat'],
@@ -3906,16 +3906,16 @@ This covers all musky fishing scenarios in the Kawarthas.
     ]
   },
 
-  // Week 28: July 14, 2025
+  // Week 28: July 13, 2026
   {
     slug: 'best-motor-small-lakes-ontario',
     title: 'Best Outboard Motors for Ontario\'s Small Lakes and Cottage Country',
     description: 'Find the perfect motor for small lake boating. Recommendations for horsepower-restricted waters and cottage lake applications across Ontario.',
     image: '/lovable-uploads/mercury-fishing.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-07-14',
-    dateModified: '2025-07-14',
-    publishDate: '2025-07-14',
+    datePublished: '2026-07-13',
+    dateModified: '2026-07-13',
+    publishDate: '2026-07-13',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['small lake motor', 'cottage lake outboard', 'hp restricted lake', 'electric motor limit lake', 'ontario lake motor'],
@@ -4028,16 +4028,16 @@ Contact us about electric options
     ]
   },
 
-  // Week 29: July 21, 2025
+  // Week 29: July 20, 2026
   {
     slug: 'pre-owned-mercury-what-to-check',
     title: 'Buying a Pre-Owned Mercury: Complete Inspection Checklist',
     description: 'Know what to look for when buying a used Mercury outboard. Expert inspection checklist to avoid costly surprises and find good value.',
     image: '/lovable-uploads/mercury-service.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-07-21',
-    dateModified: '2025-07-21',
-    publishDate: '2025-07-21',
+    datePublished: '2026-07-20',
+    dateModified: '2026-07-20',
+    publishDate: '2026-07-20',
     category: 'Tips',
     readTime: '10 min read',
     keywords: ['used mercury outboard', 'pre-owned motor inspection', 'buying used outboard', 'used boat motor checklist', 'mercury inspection'],
@@ -4175,16 +4175,16 @@ Before buying any used motor privately, have it inspected by a qualified technic
     ]
   },
 
-  // Week 30: July 28, 2025
+  // Week 30: July 27, 2026
   {
     slug: 'mercury-service-schedule-complete-guide',
     title: 'Mercury Outboard Service Schedule: Complete Maintenance Timeline',
     description: 'Know when to service your Mercury outboard. Complete maintenance schedule for all service intervals from 20 hours to 1000+ hours of operation.',
     image: '/lovable-uploads/mercury-service.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-07-28',
-    dateModified: '2025-07-28',
-    publishDate: '2025-07-28',
+    datePublished: '2026-07-27',
+    dateModified: '2026-07-27',
+    publishDate: '2026-07-27',
     category: 'Maintenance',
     readTime: '10 min read',
     keywords: ['mercury service schedule', 'outboard maintenance schedule', 'mercury oil change', 'boat motor service', 'when to service outboard'],
@@ -4315,16 +4315,16 @@ Before first use:
     ]
   },
 
-  // Week 31: August 4, 2025
+  // Week 31: August 3, 2026
   {
     slug: 'troubleshooting-outboard-overheating',
     title: 'Outboard Motor Overheating: Causes, Prevention, and Emergency Response',
     description: 'Learn why outboards overheat and what to do about it. Prevention tips, warning signs, and emergency response for Mercury outboard overheating.',
     image: '/lovable-uploads/mercury-service.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-08-04',
-    dateModified: '2025-08-04',
-    publishDate: '2025-08-04',
+    datePublished: '2026-08-03',
+    dateModified: '2026-08-03',
+    publishDate: '2026-08-03',
     category: 'Maintenance',
     readTime: '8 min read',
     keywords: ['outboard overheating', 'motor overheat warning', 'boat motor temperature', 'mercury overheating', 'cooling system problems'],
@@ -4451,16 +4451,16 @@ An overheating outboard can cause serious damage in minutes. Know the causes, pr
     ]
   },
 
-  // Week 32: August 11, 2025
+  // Week 32: August 10, 2026
   {
     slug: 'ontario-boating-season-tips',
     title: 'Making the Most of Ontario\'s Short Boating Season',
     description: 'Maximize your time on Ontario waters. Tips for extending your season, shoulder-season boating, and getting the most from May to October.',
     image: '/lovable-uploads/mercury-fishing.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-08-11',
-    dateModified: '2025-08-11',
-    publishDate: '2025-08-11',
+    datePublished: '2026-08-10',
+    dateModified: '2026-08-10',
+    publishDate: '2026-08-10',
     category: 'Tips',
     readTime: '7 min read',
     keywords: ['ontario boating season', 'extend boat season', 'fall boating ontario', 'spring boating tips', 'shoulder season boat'],
@@ -4562,16 +4562,16 @@ Ontario's boating season is precious—roughly May through October. Here's how t
     ]
   },
 
-  // Week 33: August 18, 2025
+  // Week 33: August 17, 2026
   {
     slug: 'understanding-mercury-model-numbers',
     title: 'Understanding Mercury Model Numbers and Designations',
     description: 'Decode Mercury outboard model numbers and designations. Learn what Pro XS, EFI, CT, and other codes mean for your motor purchase decision.',
     image: '/lovable-uploads/mercury-family-lineup.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-08-18',
-    dateModified: '2025-08-18',
-    publishDate: '2025-08-18',
+    datePublished: '2026-08-17',
+    dateModified: '2026-08-17',
+    publishDate: '2026-08-17',
     category: 'Tips',
     readTime: '8 min read',
     keywords: ['mercury model numbers', 'mercury designations', 'what does pro xs mean', 'mercury efi meaning', 'mercury outboard codes'],
@@ -4658,16 +4658,16 @@ Mercury uses serial number prefixes for year:
     ]
   },
 
-  // Week 40: October 6, 2025
+  // Week 40: October 5, 2026
   {
     slug: 'fall-winterization-guide-complete',
     title: 'Complete Fall Winterization Guide for Mercury Outboards',
     description: 'Step-by-step winterization instructions for Mercury outboard motors. Protect your investment with proper fall storage preparation.',
     image: '/lovable-uploads/mercury-service.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-10-06',
-    dateModified: '2025-10-06',
-    publishDate: '2025-10-06',
+    datePublished: '2026-10-05',
+    dateModified: '2026-10-05',
+    publishDate: '2026-10-05',
     category: 'Maintenance',
     readTime: '10 min read',
     keywords: ['winterize outboard', 'fall boat storage', 'mercury winterization', 'boat winterize steps', 'outboard winter prep'],
@@ -4776,16 +4776,16 @@ Proper winterization prevents spring headaches and protects your investment. Her
     ]
   },
 
-  // Week 45: November 10, 2025
+  // Week 45: November 9, 2026
   {
     slug: 'winter-repower-planning-guide',
     title: 'Winter Repower Planning: Get Ready for Spring',
     description: 'Plan your winter repower project now for a spring-ready boat. Timeline, considerations, and benefits of off-season motor replacement.',
     image: '/lovable-uploads/repower-hero.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-11-10',
-    dateModified: '2025-11-10',
-    publishDate: '2025-11-10',
+    datePublished: '2026-11-09',
+    dateModified: '2026-11-09',
+    publishDate: '2026-11-09',
     category: 'Repowering',
     readTime: '8 min read',
     keywords: ['winter repower', 'off season repower', 'plan boat repower', 'repower timeline', 'spring ready boat'],
@@ -4889,16 +4889,16 @@ If yes to most, repower makes sense.
     ]
   },
 
-  // Week 50: December 15, 2025
+  // Week 50: December 14, 2026
   {
     slug: '2026-mercury-model-preview',
-    title: '2026 Mercury Outboard Preview: What\'s New and What to Expect',
-    description: 'Preview of 2026 Mercury outboard lineup. Expected updates, new features, and recommendations for buyers considering a 2025 vs 2026 purchase.',
+    title: '2027 Mercury Outboard Preview: What\'s New and What to Expect',
+    description: 'Preview of 2027 Mercury outboard lineup. Expected updates, new features, and recommendations for buyers considering a 2026 vs 2027 purchase.',
     image: '/lovable-uploads/mercury-family-lineup.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-12-15',
-    dateModified: '2025-12-15',
-    publishDate: '2025-12-15',
+    datePublished: '2026-12-14',
+    dateModified: '2026-12-14',
+    publishDate: '2026-12-14',
     category: 'New Products',
     readTime: '7 min read',
     keywords: ['2026 mercury outboard', 'new mercury motors', 'mercury model year', 'mercury updates', 'new outboard models'],
@@ -4982,16 +4982,16 @@ We'll provide:
     ]
   },
 
-  // Week 52: December 29, 2025
+  // Week 52: December 28, 2026
   {
     slug: 'year-end-boat-motor-buying-guide',
     title: 'Year-End Boat Motor Buying: Best Time for Deals?',
     description: 'Is year-end the best time to buy a boat motor? Analysis of seasonal pricing, promotions, and the best time to purchase a new Mercury outboard.',
     image: '/lovable-uploads/mercury-family-lineup.jpg',
     author: 'Harris Boat Works',
-    datePublished: '2025-12-29',
-    dateModified: '2025-12-29',
-    publishDate: '2025-12-29',
+    datePublished: '2026-12-28',
+    dateModified: '2026-12-28',
+    publishDate: '2026-12-28',
     category: 'Buying Guide',
     readTime: '6 min read',
     keywords: ['best time buy boat motor', 'year end boat deals', 'boat motor sales', 'outboard discounts', 'when to buy outboard'],
