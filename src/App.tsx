@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { QuoteProvider } from "@/contexts/QuoteContext";
 import { FinancingProvider } from "@/contexts/FinancingContext";
+import { MotorComparisonProvider } from "@/contexts/MotorComparisonContext";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { SecureRoute } from "@/components/auth/SecureRoute";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
@@ -396,33 +397,35 @@ const App = () => (
   <AuthProvider>
     <FinancingProvider>
       <QuoteProvider>
-        <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <GlobalAIChat>
-            <div data-vaul-drawer-wrapper className="min-h-screen bg-background">
-              <ScrollToTop />
-              <NotificationToast />
-              <ContactButton />
-              <AnimatedRoutes />
-              <GlobalStickyQuoteBar />
-              <UnifiedMobileBar />
-              <Canonical />
+        <MotorComparisonProvider>
+          <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <GlobalAIChat>
+              <div data-vaul-drawer-wrapper className="min-h-screen bg-background">
+                <ScrollToTop />
+                <NotificationToast />
+                <ContactButton />
+                <AnimatedRoutes />
+                <GlobalStickyQuoteBar />
+                <UnifiedMobileBar />
+                <Canonical />
 
-              <footer className="mt-12 border-t border-border bg-muted/30">
-                <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-                  <div className="flex items-center gap-4 md:gap-8">
-                    <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-12 md:h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 md:h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                <footer className="mt-12 border-t border-border bg-muted/30">
+                  <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                    <div className="flex items-center gap-4 md:gap-8">
+                      <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner badge" loading="lazy" className="h-12 md:h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                      <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 md:h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    </div>
+                    <GoogleRatingBadge variant="compact" />
                   </div>
-                  <GoogleRatingBadge variant="compact" />
-                </div>
-              </footer>
-            </div>
-          </GlobalAIChat>
-        </BrowserRouter>
-        </TooltipProvider>
+                </footer>
+              </div>
+            </GlobalAIChat>
+          </BrowserRouter>
+          </TooltipProvider>
+        </MotorComparisonProvider>
       </QuoteProvider>
     </FinancingProvider>
   </AuthProvider>
