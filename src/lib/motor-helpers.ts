@@ -760,14 +760,30 @@ export const getMotorImageByPriority = async (motor: any): Promise<{ url: string
     try {
       const { data: mediaData, error } = await supabase
         .from('motor_media')
-        .select('media_url, media_type')
+        .select('media_url')
         .eq('motor_id', motor.id)
         .eq('is_active', true)
         .eq('media_type', 'image')
         .order('display_order', { ascending: true });
-      
+
       if (!error && mediaData && mediaData.length > 0) {
         return { url: mediaData[0].media_url, isInventory: false };
+      }
+
+      // If this exact motor has no assigned media, fall back to a "template" motor
+      // with the same horsepower (common for low-HP models that share imagery).
+      const hp = motor?.horsepower ?? motor?.hp;
+      if (typeof hp === 'number') {
+        const { data: templateMotors, error: templateError } = await supabase
+          .from('motor_models')
+          .select('id, hero_image_url')
+          .eq('horsepower', hp)
+          .not('hero_image_url', 'is', null)
+          .limit(1);
+
+        if (!templateError && templateMotors && templateMotors.length > 0) {
+          return { url: templateMotors[0].hero_image_url as string, isInventory: false };
+        }
       }
     } catch (err) {
       console.warn('Failed to fetch motor media:', err);
@@ -812,13 +828,45 @@ export const getMotorImageGallery = async (motor: any): Promise<string[]> => {
         .eq('is_active', true)
         .eq('media_type', 'image')
         .order('display_order', { ascending: true });
-      
+
       if (!error && mediaData && mediaData.length > 0) {
-        mediaData.forEach(media => {
+        mediaData.forEach((media) => {
           if (media.media_url && !allImages.includes(media.media_url)) {
             allImages.push(media.media_url);
           }
         });
+      }
+
+      // If this motor has no motor_media images at all, try a template motor with same HP
+      const hp = motor?.horsepower ?? motor?.hp;
+      if ((!mediaData || mediaData.length === 0) && typeof hp === 'number') {
+        const { data: templateMotors, error: templateError } = await supabase
+          .from('motor_models')
+          .select('id')
+          .eq('horsepower', hp)
+          .limit(10);
+
+        if (!templateError && templateMotors) {
+          const templateId = templateMotors.find((m) => m.id !== motor.id)?.id;
+          if (templateId) {
+            const { data: templateMedia, error: templateMediaError } = await supabase
+              .from('motor_media')
+              .select('media_url')
+              .eq('motor_id', templateId)
+              .eq('is_active', true)
+              .eq('media_type', 'image')
+              .order('display_order', { ascending: true })
+              .limit(12);
+
+            if (!templateMediaError && templateMedia) {
+              templateMedia.forEach((media) => {
+                if (media.media_url && !allImages.includes(media.media_url)) {
+                  allImages.push(media.media_url);
+                }
+              });
+            }
+          }
+        }
       }
     } catch (err) {
       console.warn('Failed to fetch motor media gallery:', err);
