@@ -31,6 +31,8 @@ interface FolderResult {
   matchScore: number
   imagesFound: number
   imagesSynced: number
+  pdfsFound: number
+  pdfsSynced: number
   errors: string[]
 }
 
@@ -255,9 +257,40 @@ function getContentType(filename: string): string {
       return 'image/gif'
     case 'webp':
       return 'image/webp'
+    case 'pdf':
+      return 'application/pdf'
     default:
-      return 'image/jpeg'
+      return 'application/octet-stream'
   }
+}
+
+// Auto-detect PDF category from filename
+function getPdfCategory(filename: string): string {
+  const lower = filename.toLowerCase()
+  
+  if (lower.includes('manual') || lower.includes('owner') || lower.includes('operator')) {
+    return 'manual'
+  }
+  if (lower.includes('brochure') || lower.includes('catalog') || lower.includes('catalogue')) {
+    return 'brochure'
+  }
+  if (lower.includes('spec') || lower.includes('specification') || lower.includes('data sheet') || lower.includes('datasheet')) {
+    return 'specifications'
+  }
+  if (lower.includes('warranty')) {
+    return 'warranty'
+  }
+  if (lower.includes('install') || lower.includes('rigging') || lower.includes('setup')) {
+    return 'installation'
+  }
+  if (lower.includes('parts') || lower.includes('diagram')) {
+    return 'parts'
+  }
+  if (lower.includes('service') || lower.includes('maintenance')) {
+    return 'service'
+  }
+  
+  return 'general'
 }
 
 // List folder contents using direct folder access (files/list_folder)
@@ -516,6 +549,7 @@ Deno.serve(async (req) => {
 
     const results: FolderResult[] = []
     let totalImagesSynced = 0
+    let totalPdfsSynced = 0
     let totalFoldersProcessed = 0
 
     // Process each subfolder
@@ -527,6 +561,8 @@ Deno.serve(async (req) => {
         matchScore: 0,
         imagesFound: 0,
         imagesSynced: 0,
+        pdfsFound: 0,
+        pdfsSynced: 0,
         errors: []
       }
 
@@ -585,7 +621,7 @@ Deno.serve(async (req) => {
           console.log(`Runner up: ${scoredMotors[1].model_display} (score: ${scoredMotors[1].score})`)
         }
 
-        // List images in this subfolder using direct folder access
+        // List files in this subfolder using direct folder access
         const { entries: subfolderEntries, error: subfolderError } = await listFolderContents(
           dropboxToken, 
           folder.path_lower
@@ -598,22 +634,28 @@ Deno.serve(async (req) => {
           continue
         }
 
+        // Separate images and PDFs
         const imageFiles: DropboxEntry[] = subfolderEntries.filter(
           (e: DropboxEntry) => e['.tag'] === 'file' && /\.(jpg|jpeg|png|gif|webp)$/i.test(e.name)
         )
+        const pdfFiles: DropboxEntry[] = subfolderEntries.filter(
+          (e: DropboxEntry) => e['.tag'] === 'file' && /\.pdf$/i.test(e.name)
+        )
 
         folderResult.imagesFound = imageFiles.length
-        console.log(`Found ${imageFiles.length} images in folder`)
+        folderResult.pdfsFound = pdfFiles.length
+        console.log(`Found ${imageFiles.length} images and ${pdfFiles.length} PDFs in folder`)
 
         if (dryRun) {
           // In dry run mode, just report what would happen
           folderResult.imagesSynced = imageFiles.length
+          folderResult.pdfsSynced = pdfFiles.length
           results.push(folderResult)
           totalFoldersProcessed++
           continue
         }
 
-        // If replacing existing, delete old dropbox-curated images for this motor
+        // If replacing existing, delete old dropbox-curated media for this motor (both images and PDFs)
         if (replaceExisting) {
           const { error: deleteError } = await supabaseClient
             .from('motor_media')
@@ -624,9 +666,11 @@ Deno.serve(async (req) => {
           if (deleteError) {
             console.error('Error deleting existing media:', deleteError)
           } else {
-            console.log('Deleted existing dropbox-curated images for this motor')
+            console.log('Deleted existing dropbox-curated media for this motor')
           }
         }
+
+        const sanitizedFolderName = folder.name.replace(/[^a-zA-Z0-9-_]/g, '_')
 
         // Download and sync each image
         for (let i = 0; i < imageFiles.length; i++) {
@@ -655,7 +699,6 @@ Deno.serve(async (req) => {
               throw new Error(downloadError || 'Download returned no data')
             }
 
-            const sanitizedFolderName = folder.name.replace(/[^a-zA-Z0-9-_]/g, '_')
             const fileName = `dropbox-curated/${bestMatch.id}/${sanitizedFolderName}/${Date.now()}-${file.name}`
 
             // Upload to Supabase Storage
@@ -706,10 +749,99 @@ Deno.serve(async (req) => {
 
             folderResult.imagesSynced++
             totalImagesSynced++
-            console.log(`Synced: ${file.name}`)
+            console.log(`Synced image: ${file.name}`)
 
           } catch (fileError) {
             console.error(`Error syncing ${file.name}:`, fileError)
+            folderResult.errors.push(`${file.name}: ${fileError.message}`)
+          }
+        }
+
+        // Download and sync each PDF
+        for (let i = 0; i < pdfFiles.length; i++) {
+          const file = pdfFiles[i]
+          
+          try {
+            // Check if already synced (by dropbox_path)
+            const { data: existing } = await supabaseClient
+              .from('motor_media')
+              .select('id')
+              .eq('dropbox_path', file.path_lower)
+              .single()
+
+            if (existing && !replaceExisting) {
+              console.log(`Already synced PDF: ${file.name}`)
+              continue
+            }
+
+            // Download from Dropbox
+            const { data: fileBuffer, error: downloadError } = await downloadFile(
+              dropboxToken,
+              file.path_lower
+            )
+
+            if (downloadError || !fileBuffer) {
+              throw new Error(downloadError || 'Download returned no data')
+            }
+
+            const fileName = `dropbox-curated/${bestMatch.id}/${sanitizedFolderName}/pdfs/${Date.now()}-${file.name}`
+
+            // Upload to Supabase Storage (using motor-images bucket with pdfs subfolder)
+            const { error: uploadError } = await supabaseClient.storage
+              .from('motor-images')
+              .upload(fileName, fileBuffer, {
+                contentType: 'application/pdf',
+                upsert: true
+              })
+
+            if (uploadError) {
+              throw new Error(`PDF upload failed: ${uploadError.message}`)
+            }
+
+            // Get public URL
+            const { data: { publicUrl } } = supabaseClient.storage
+              .from('motor-images')
+              .getPublicUrl(fileName)
+
+            // Auto-detect PDF category from filename
+            const pdfCategory = getPdfCategory(file.name)
+
+            // Create motor_media record for PDF
+            const { error: mediaError } = await supabaseClient
+              .from('motor_media')
+              .insert({
+                motor_id: bestMatch.id,
+                media_type: 'pdf',
+                media_category: pdfCategory,
+                media_url: publicUrl,
+                original_filename: file.name,
+                dropbox_path: file.path_lower,
+                dropbox_sync_status: 'synced',
+                assignment_type: 'dropbox-curated',
+                assignment_rules: {
+                  source_folder: folder.name,
+                  parsed_hp: parsed.hp,
+                  parsed_family: parsed.family,
+                  parsed_shaft: parsed.shaft,
+                  match_score: bestMatch.score,
+                  auto_category: pdfCategory
+                },
+                title: file.name.replace(/\.[^/.]+$/, ''),
+                file_size: file.size || 0,
+                mime_type: 'application/pdf',
+                display_order: imageFiles.length + i // After images
+              })
+
+            if (mediaError) {
+              throw new Error(`PDF media record failed: ${mediaError.message}`)
+            }
+
+            folderResult.pdfsSynced++
+            totalPdfsSynced++
+            console.log(`Synced PDF: ${file.name} (category: ${pdfCategory})`)
+
+          } catch (fileError) {
+            console.error(`Error syncing PDF ${file.name}:`, fileError)
             folderResult.errors.push(`${file.name}: ${fileError.message}`)
           }
         }
@@ -759,6 +891,8 @@ Deno.serve(async (req) => {
       foldersUnmatched: results.filter(r => !r.motorId).length,
       totalImagesFound: results.reduce((sum, r) => sum + r.imagesFound, 0),
       totalImagesSynced: dryRun ? results.reduce((sum, r) => sum + r.imagesFound, 0) : totalImagesSynced,
+      totalPdfsFound: results.reduce((sum, r) => sum + r.pdfsFound, 0),
+      totalPdfsSynced: dryRun ? results.reduce((sum, r) => sum + r.pdfsFound, 0) : totalPdfsSynced,
       results
     }
 
@@ -766,6 +900,7 @@ Deno.serve(async (req) => {
     console.log(`Folder path: ${folderPath}`)
     console.log(`Folders: ${summary.foldersMatched} matched, ${summary.foldersUnmatched} unmatched`)
     console.log(`Images: ${summary.totalImagesSynced} synced`)
+    console.log(`PDFs: ${summary.totalPdfsSynced} synced`)
 
     return new Response(JSON.stringify(summary), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
