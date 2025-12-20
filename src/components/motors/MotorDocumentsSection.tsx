@@ -43,6 +43,26 @@ const getMediaIcon = (type: string, category: string) => {
   }
 };
 
+// Format raw Dropbox filenames into clean display titles
+const formatTitle = (title: string | undefined, category: string): string => {
+  if (!title) return `${category.charAt(0).toUpperCase() + category.slice(1)} Document`;
+  
+  let cleaned = title
+    .replace(/^[a-f0-9]{20,}-/, '') // Remove Dropbox IDs like "53109f81934d5f0a00bd62f6-"
+    .replace(/\.[^/.]+$/, '') // Remove file extension
+    .replace(/[-_]/g, ' ') // Replace dashes/underscores with spaces
+    .replace(/\s+/g, ' ') // Normalize multiple spaces
+    .trim();
+  
+  if (!cleaned) return `${category.charAt(0).toUpperCase() + category.slice(1)} Document`;
+  
+  // Capitalize each word
+  return cleaned
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
+};
+
 const getCategoryBadgeColor = (category: string) => {
   const colorMap: Record<string, string> = {
     'manual': 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-300',
@@ -50,6 +70,9 @@ const getCategoryBadgeColor = (category: string) => {
     'specifications': 'bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-300',
     'warranty': 'bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-300',
     'installation': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-300',
+    'parts': 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/20 dark:text-cyan-300',
+    'service': 'bg-rose-100 text-rose-800 dark:bg-rose-900/20 dark:text-rose-300',
+    'sell-sheet': 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/20 dark:text-indigo-300',
     'general': 'bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-300'
   };
   return colorMap[category] || colorMap.general;
@@ -190,7 +213,7 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
     return acc;
   }, {} as Record<string, MediaItem[]>);
 
-  const categoryOrder = ['manual', 'brochure', 'specifications', 'warranty', 'installation', 'general'];
+  const categoryOrder = ['manual', 'brochure', 'specifications', 'warranty', 'installation', 'parts', 'service', 'sell-sheet', 'general'];
   const sortedCategories = Object.keys(groupedDocuments).sort((a, b) => {
     const aIndex = categoryOrder.indexOf(a);
     const bIndex = categoryOrder.indexOf(b);
@@ -235,7 +258,7 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2 mb-1">
                       <h5 className="font-medium text-sm truncate">
-                        {document.title || `${document.media_category} Document`}
+                        {formatTitle(document.title, document.media_category)}
                       </h5>
                       <Badge className={`text-xs ${getCategoryBadgeColor(document.media_category)}`}>
                         {document.media_type.toUpperCase()}
