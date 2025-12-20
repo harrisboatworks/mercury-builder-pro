@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
@@ -23,6 +23,20 @@ export function DropboxFolderBrowser({ open, onOpenChange, onSelectFolder }: Dro
   const [loading, setLoading] = useState(false);
   const [initialized, setInitialized] = useState(false);
 
+  // Load folders when dialog opens
+  useEffect(() => {
+    if (open && !initialized) {
+      setInitialized(true);
+      loadFolders('');
+    }
+    if (!open) {
+      setInitialized(false);
+      setFolders([]);
+      setCurrentPath('/');
+      setParentPath(null);
+    }
+  }, [open, initialized]);
+
   const loadFolders = async (path: string) => {
     setLoading(true);
     try {
@@ -46,18 +60,7 @@ export function DropboxFolderBrowser({ open, onOpenChange, onSelectFolder }: Dro
     }
   };
 
-  // Load root folders when dialog opens
   const handleOpenChange = (isOpen: boolean) => {
-    if (isOpen && !initialized) {
-      setInitialized(true);
-      loadFolders('');
-    }
-    if (!isOpen) {
-      setInitialized(false);
-      setFolders([]);
-      setCurrentPath('/');
-      setParentPath(null);
-    }
     onOpenChange(isOpen);
   };
 
