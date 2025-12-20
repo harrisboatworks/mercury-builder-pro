@@ -362,6 +362,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   }, [activeMotor]);
 
   // Show banner briefly when motor context changes, then auto-hide after 4 seconds
+  // Also clear conversation history when motor changes to prevent AI confusion
   const prevMotorIdRef = useRef<string | null>(null);
   useEffect(() => {
     if (currentMotorId && currentMotorId !== prevMotorIdRef.current) {
@@ -369,6 +370,19 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
       if (bannerTimerRef.current) {
         clearTimeout(bannerTimerRef.current);
       }
+      
+      // If switching from one motor to another, clear conversation history
+      // to prevent AI from getting confused by old motor context
+      if (prevMotorIdRef.current && conversationHistory.length > 0) {
+        setConversationHistory([]);
+        // Keep only welcome message when motor changes
+        setMessages(prev => {
+          const welcome = prev.find(m => m.id.startsWith('welcome'));
+          return welcome ? [welcome] : [];
+        });
+        messageIdMap.current.clear();
+      }
+      
       // Show banner
       setShowMotorBanner(true);
       // Auto-hide after 4 seconds
@@ -382,7 +396,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
         clearTimeout(bannerTimerRef.current);
       }
     };
-  }, [currentMotorId]);
+  }, [currentMotorId, conversationHistory.length]);
 
   const handleReaction = useCallback(async (messageId: string, reaction: 'thumbs_up' | 'thumbs_down' | null) => {
     setMessages(prev => prev.map(msg => 
@@ -466,8 +480,16 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
         tradeInValue: state.tradeInInfo?.estimatedValue || null
       };
       
+      // Prepend motor context to message to ensure AI knows which motor we're asking about
+      let messageWithContext = text.trim();
+      if (activeMotor) {
+        const motorLabel = (activeMotor as any).model_display || activeMotor.model || '';
+        const hp = activeMotor.hp || (activeMotor as any).horsepower || 0;
+        messageWithContext = `[About: ${motorLabel} ${hp}HP] ${text.trim()}`;
+      }
+      
       await streamChat({
-        message: text.trim(),
+        message: messageWithContext,
         conversationHistory,
         context: {
           currentMotor: activeMotor ? {
