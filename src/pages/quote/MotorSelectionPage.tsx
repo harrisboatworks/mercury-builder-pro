@@ -22,7 +22,7 @@ import { MotorConfiguratorModal } from '@/components/motors/MotorConfiguratorMod
 import { QuickHPFilters } from '@/components/motors/QuickHPFilters';
 import { RecentlyViewedBar } from '@/components/motors/RecentlyViewedBar';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
-import { ComparisonFloatingPill } from '@/components/motors/ComparisonFloatingPill';
+// ComparisonFloatingPill removed - comparison now integrated into UnifiedMobileBar
 import { Button } from '@/components/ui/button';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
@@ -794,11 +794,7 @@ function MotorSelectionContent() {
           initialMotorId={deepLinkedMotorId}
         />
         
-        {/* Comparison Floating Pill */}
-        <ComparisonFloatingPill 
-          count={comparisonCount}
-          onClick={() => setShowComparison(true)}
-        />
+        {/* Comparison Floating Pill removed - now integrated into UnifiedMobileBar */}
         
         {/* Comparison Drawer */}
         <ComparisonDrawer 
