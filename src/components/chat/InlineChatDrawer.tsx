@@ -351,9 +351,11 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const shouldShowMotorPrompts = currentMotorId && currentMotorId !== interactedMotorId;
 
   // Get current motor context label for banner (from previewMotor set by AskQuestionButton)
+  // Use model_display for specific variant info (e.g., "6 MLH FourStroke" includes shaft length, start type)
   const currentMotorLabel = useMemo(() => {
     if (!activeMotor) return null;
-    return getMotorContextLabel(activeMotor.hp || 0, activeMotor.model);
+    const modelName = (activeMotor as any).model_display || activeMotor.model;
+    return getMotorContextLabel(activeMotor.hp || 0, modelName);
   }, [activeMotor]);
 
   // Show banner briefly when motor context changes, then auto-hide after 4 seconds
@@ -467,7 +469,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
         context: {
           currentMotor: activeMotor ? {
             id: (activeMotor as any).id,
-            model: activeMotor.model || (activeMotor as any).model_display || '',
+            model: (activeMotor as any).model_display || activeMotor.model || '',
             hp: activeMotor.hp || (activeMotor as any).horsepower || 0,
             price: activeMotor.msrp || activeMotor.price || (activeMotor as any).sale_price || activeMotor.salePrice,
             family: (activeMotor as any).family,
