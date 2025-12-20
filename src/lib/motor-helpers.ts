@@ -838,34 +838,27 @@ export const getMotorImageGallery = async (motor: any): Promise<string[]> => {
       }
 
       // If this motor has no motor_media images at all, try a template motor with same HP
+      // that ACTUALLY HAS images assigned
       const hp = motor?.horsepower ?? motor?.hp;
-      if ((!mediaData || mediaData.length === 0) && typeof hp === 'number') {
-        const { data: templateMotors, error: templateError } = await supabase
-          .from('motor_models')
-          .select('id')
-          .eq('horsepower', hp)
-          .limit(10);
+      if (allImages.length === 0 && typeof hp === 'number') {
+        // Query motor_media directly to find a motor with the same HP that has images
+        const { data: templateMedia, error: templateMediaError } = await supabase
+          .from('motor_media')
+          .select('motor_id, media_url, motor_models!inner(horsepower)')
+          .eq('is_active', true)
+          .eq('media_type', 'image')
+          .eq('motor_models.horsepower', hp)
+          .neq('motor_id', motor.id)
+          .order('display_order', { ascending: true })
+          .limit(12);
 
-        if (!templateError && templateMotors) {
-          const templateId = templateMotors.find((m) => m.id !== motor.id)?.id;
-          if (templateId) {
-            const { data: templateMedia, error: templateMediaError } = await supabase
-              .from('motor_media')
-              .select('media_url')
-              .eq('motor_id', templateId)
-              .eq('is_active', true)
-              .eq('media_type', 'image')
-              .order('display_order', { ascending: true })
-              .limit(12);
-
-            if (!templateMediaError && templateMedia) {
-              templateMedia.forEach((media) => {
-                if (media.media_url && !allImages.includes(media.media_url)) {
-                  allImages.push(media.media_url);
-                }
-              });
+        if (!templateMediaError && templateMedia && templateMedia.length > 0) {
+          console.log(`Found ${templateMedia.length} template images for ${hp}HP motor from motor_media`);
+          templateMedia.forEach((media) => {
+            if (media.media_url && !allImages.includes(media.media_url)) {
+              allImages.push(media.media_url);
             }
-          }
+          });
         }
       }
     } catch (err) {

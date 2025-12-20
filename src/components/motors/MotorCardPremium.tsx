@@ -244,6 +244,12 @@ export default function MotorCardPremium({
                 src={imageUrl} 
                 alt={title} 
                 className="h-32 md:h-48 w-full object-contain aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  if (!target.src.includes('speedboat-transparent.png')) {
+                    target.src = '/lovable-uploads/speedboat-transparent.png';
+                  }
+                }}
               />
               
               {/* Stock Badge - Top Left */}
