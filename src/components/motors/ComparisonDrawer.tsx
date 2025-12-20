@@ -331,7 +331,7 @@ export function ComparisonDrawer({
             <div 
               ref={scrollContainerRef}
               onScroll={handleScroll}
-              className="relative overflow-x-auto overflow-y-auto max-h-[calc(85vh-60px)]"
+              className="relative overflow-x-auto overflow-y-auto max-h-[calc(85vh-120px)]"
             >
               {/* Swipe hint overlay */}
               <AnimatePresence>
@@ -348,10 +348,7 @@ export function ComparisonDrawer({
                 )}
               </AnimatePresence>
               
-              {/* Right edge gradient hint */}
-              {motors.length >= 2 && (
-                <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-white to-transparent pointer-events-none z-[5]" />
-              )}
+              {/* Right edge gradient hint removed - was causing white line through images */}
               
               {motors.length === 0 ? (
                 <div className="p-8 text-center text-gray-500">
@@ -362,7 +359,7 @@ export function ComparisonDrawer({
                 <table className="w-full min-w-[600px]">
                   <thead>
                     <tr className="border-b border-gray-100">
-                      <th className="p-4 text-left text-sm font-medium text-gray-500 w-32">
+                      <th className="p-4 text-left text-sm font-medium text-gray-500 w-32 sticky left-0 bg-white z-[5]">
                         Feature
                       </th>
                       {motors.map((motor) => (
@@ -392,7 +389,7 @@ export function ComparisonDrawer({
                       const winnerId = getWinner(field);
                       return (
                         <tr key={field.label} className="border-b border-gray-50">
-                          <td className="p-4 text-sm font-medium text-gray-600">
+                          <td className="p-4 text-sm font-medium text-gray-600 sticky left-0 bg-white z-[5]">
                             {field.label}
                           </td>
                           {motors.map((motor) => {
