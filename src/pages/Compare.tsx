@@ -118,6 +118,7 @@ export default function Compare() {
   const [showShareModal, setShowShareModal] = useState(false);
   const [showSaveModal, setShowSaveModal] = useState(false);
   const [user, setUser] = useState<any>(null);
+  const [showSwipeHint, setShowSwipeHint] = useState(true);
 
   // Get motor IDs from URL or comparison list
   const motorIdsFromUrl = searchParams.get('motors')?.split(',').filter(Boolean) || [];
@@ -126,6 +127,14 @@ export default function Compare() {
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => setUser(data.user));
   }, []);
+
+  // Swipe hint auto-hide
+  useEffect(() => {
+    if (motors.length >= 2) {
+      const timer = setTimeout(() => setShowSwipeHint(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [motors.length]);
 
   // Fetch motors based on URL params or comparison list
   useEffect(() => {
@@ -253,16 +262,6 @@ export default function Compare() {
   if (motors.length === 0) {
     return <ComparisonEmptyState />;
   }
-
-  // Swipe hint state for mobile
-  const [showSwipeHint, setShowSwipeHint] = useState(motors.length >= 2);
-
-  useEffect(() => {
-    if (motors.length >= 2) {
-      const timer = setTimeout(() => setShowSwipeHint(false), 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [motors.length]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
