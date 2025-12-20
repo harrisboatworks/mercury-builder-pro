@@ -317,8 +317,8 @@ export default function MotorDetailsPremiumModal({
             }}>
               {/* Mobile/Tablet Header - scrolls with content */}
               <div className="lg:hidden bg-white border-b border-gray-200">
-                {/* Prominent Mobile Back Header */}
-                <div className="flex justify-start items-center p-4 border-b border-gray-100">
+                {/* Mobile Header with Back and X buttons */}
+                <div className="flex justify-between items-center p-4 border-b border-gray-100">
                   <button 
                     onClick={onClose} 
                     className="inline-flex flex-row items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px] px-2" 
@@ -326,6 +326,15 @@ export default function MotorDetailsPremiumModal({
                   >
                     <ChevronLeft className="w-6 h-6 flex-shrink-0" />
                     <span className="text-base font-medium">Back</span>
+                  </button>
+                  
+                  {/* X close button */}
+                  <button 
+                    onClick={onClose} 
+                    className="p-2 text-gray-400 hover:text-gray-700 transition-colors active:scale-95 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full hover:bg-gray-100" 
+                    aria-label="Close"
+                  >
+                    <X className="w-5 h-5" />
                   </button>
                 </div>
                 
