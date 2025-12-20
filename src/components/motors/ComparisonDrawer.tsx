@@ -280,48 +280,51 @@ export function ComparisonDrawer({
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className="fixed bottom-0 left-0 right-0 z-[90] bg-white rounded-t-2xl shadow-2xl max-h-[85vh] overflow-hidden"
           >
-            {/* Header */}
-            <div className="sticky top-0 bg-white border-b border-gray-100 px-4 py-3 flex items-center justify-between">
-              <h3 className="text-lg font-semibold">Compare Motors ({motors.length}/3)</h3>
-              <div className="flex items-center gap-2">
-                {motors.length > 0 && (
-                  <>
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      onClick={handleShare}
-                      className="gap-1.5"
-                    >
-                      <Share2 size={14} />
-                      Share
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      onClick={handleOpenFullComparison}
-                      className="gap-1.5"
-                    >
-                      <ExternalLink size={14} />
-                      Full View
-                    </Button>
-                  </>
-                )}
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  onClick={onClear}
-                  className="text-gray-500 hover:text-red-500"
-                >
-                  <Trash2 size={16} className="mr-1" />
-                  Clear All
-                </Button>
+            {/* Header - 2 rows on mobile */}
+            <div className="sticky top-0 bg-white border-b border-gray-100 px-4 py-3">
+              {/* Row 1: Title + Close */}
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold">Compare Motors ({motors.length}/3)</h3>
                 <button 
                   onClick={onClose}
-                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors -mr-2"
                 >
                   <X size={20} />
                 </button>
               </div>
+              
+              {/* Row 2: Action buttons */}
+              {motors.length > 0 && (
+                <div className="flex items-center gap-2 mt-2">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    onClick={handleShare}
+                    className="gap-1.5 px-2 sm:px-3"
+                  >
+                    <Share2 size={14} />
+                    <span className="hidden sm:inline">Share</span>
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    onClick={handleOpenFullComparison}
+                    className="gap-1.5 px-2 sm:px-3"
+                  >
+                    <ExternalLink size={14} />
+                    <span className="hidden sm:inline">Full View</span>
+                  </Button>
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    onClick={onClear}
+                    className="text-gray-500 hover:text-red-500 ml-auto px-2 sm:px-3"
+                  >
+                    <Trash2 size={16} />
+                    <span className="hidden sm:inline ml-1">Clear All</span>
+                  </Button>
+                </div>
+              )}
             </div>
             
             {/* Content */}
