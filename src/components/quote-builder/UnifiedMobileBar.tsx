@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ChevronUp, MessageCircle, Phone, Sparkles, ArrowRight, Shield, Award, DollarSign, Check, Flag, Heart, RefreshCw, Mic, Volume2, Eye, Clock } from 'lucide-react';
+import { ChevronUp, MessageCircle, Phone, Sparkles, ArrowRight, Shield, Award, DollarSign, Check, Flag, Heart, RefreshCw, Mic, Volume2, Eye, Clock, Scale } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAIChat } from '@/components/chat/GlobalAIChat';
@@ -8,14 +8,16 @@ import { useVoiceSafe } from '@/contexts/VoiceContext';
 import { useIsMobileOrTablet } from '@/hooks/use-mobile';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { useMotorComparison } from '@/hooks/useMotorComparison';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { MobileQuoteDrawer } from './MobileQuoteDrawer';
+import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { cn } from '@/lib/utils';
 import { getHPRange, HP_SPECIFIC_MESSAGES, MOTOR_FAMILY_TIPS, getMotorFamilyKey, getMotorFamilyConfiguratorTip } from '@/components/chat/conversationalMessages';
 
 // Nudge types for different visual treatments
-type NudgeType = 'tip' | 'success' | 'celebration' | 'progress' | 'social-proof' | 'info';
+type NudgeType = 'tip' | 'success' | 'celebration' | 'progress' | 'social-proof' | 'info' | 'comparison';
 
 interface NudgeMessage {
   delay: number;
@@ -260,8 +262,15 @@ export const UnifiedMobileBar: React.FC = () => {
   const voice = useVoiceSafe(); // Fix: Move hook to top level (was inside JSX)
   const { triggerHaptic } = useHapticFeedback();
   const { promo } = useActiveFinancingPromo();
+  const { 
+    comparisonList, 
+    count: comparisonCount, 
+    removeFromComparison, 
+    clearComparison 
+  } = useMotorComparison();
   
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [showComparisonDrawer, setShowComparisonDrawer] = useState(false);
   const [idleSeconds, setIdleSeconds] = useState(0);
   const [showSavingsCelebration, setShowSavingsCelebration] = useState(false);
   const [savingsAmount, setSavingsAmount] = useState(0);
@@ -490,7 +499,16 @@ export const UnifiedMobileBar: React.FC = () => {
     const nudges = pageConfig.nudges;
     if (!nudges) return null;
 
-    // Priority -1 (HIGHEST): Chat minimized notification
+    // Priority -2 (HIGHEST): Comparison active - show in nudge bar
+    if (comparisonCount > 0) {
+      return { 
+        message: `Compare ${comparisonCount} motor${comparisonCount > 1 ? 's' : ''} — tap to view`, 
+        type: 'comparison', 
+        icon: 'scale' 
+      };
+    }
+
+    // Priority -1: Chat minimized notification
     if (chatMinimizedAt && (Date.now() - chatMinimizedAt < 30000)) {
       return { 
         message: 'Chat minimized — tap to continue', 
@@ -629,7 +647,7 @@ export const UnifiedMobileBar: React.FC = () => {
 
     return null;
   }, [
-    chatMinimizedAt, pageConfig.nudges, recentAction, idleSeconds, hasMotor, quoteProgress.remaining,
+    comparisonCount, chatMinimizedAt, pageConfig.nudges, recentAction, idleSeconds, hasMotor, quoteProgress.remaining,
     location.pathname, state.tradeInInfo?.estimatedValue, state.selectedOptions?.length,
     isPreview, displayMotor?.hp, displayMotor?.id, displayMotor?.model, state.configuratorStep,
     state.configuratorOptions, currentSavings, monthlyPayment, promo
@@ -650,6 +668,7 @@ export const UnifiedMobileBar: React.FC = () => {
       case 'eye': return <Eye className={className} />;
       case 'clock': return <Clock className={className} />;
       case 'phone': return <Phone className={className} />;
+      case 'scale': return <Scale className={className} />;
       default: return null;
     }
   };
@@ -759,9 +778,16 @@ export const UnifiedMobileBar: React.FC = () => {
     return { type, number };
   };
 
-  // Handle nudge bar tap - phone numbers open native apps, otherwise open AI chat
+  // Handle nudge bar tap - phone numbers open native apps, comparison opens drawer, otherwise open AI chat
   const handleNudgeClick = () => {
     if (activeNudge) {
+      // If comparison nudge, open comparison drawer
+      if (activeNudge.type === 'comparison') {
+        triggerHaptic('light');
+        setShowComparisonDrawer(true);
+        return;
+      }
+      
       const phoneAction = extractPhoneAction(activeNudge.message);
       if (phoneAction) {
         triggerHaptic('light');
@@ -771,6 +797,13 @@ export const UnifiedMobileBar: React.FC = () => {
     }
     // Default: open AI chat
     handleOpenAI();
+  };
+  
+  // Handle motor selection from comparison drawer
+  const handleComparisonSelect = (motor: any) => {
+    dispatch({ type: 'SET_MOTOR', payload: motor });
+    setShowComparisonDrawer(false);
+    navigate('/quote/options');
   };
 
   return (
@@ -823,6 +856,7 @@ export const UnifiedMobileBar: React.FC = () => {
                 "px-4 py-2 border-b text-center transition-colors",
                 isOpen && "bg-gradient-to-r from-primary/15 to-primary/10 border-primary/30 text-primary",
                 !isOpen && isLoading && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
+                !isOpen && !isLoading && activeNudge?.type === 'comparison' && "bg-gradient-to-r from-indigo-50 to-purple-100/50 border-indigo-200/60 text-indigo-700",
                 !isOpen && !isLoading && activeNudge?.type === 'tip' && "bg-gradient-to-r from-gray-50 to-gray-100/80 border-gray-200/60 text-gray-600",
                 !isOpen && !isLoading && activeNudge?.type === 'success' && "bg-gradient-to-r from-emerald-50 to-emerald-100/50 border-emerald-200/60 text-emerald-700",
                 !isOpen && !isLoading && activeNudge?.type === 'celebration' && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
@@ -1089,6 +1123,16 @@ export const UnifiedMobileBar: React.FC = () => {
       <MobileQuoteDrawer
         isOpen={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
+      />
+
+      {/* Comparison Drawer */}
+      <ComparisonDrawer 
+        isOpen={showComparisonDrawer}
+        onClose={() => setShowComparisonDrawer(false)}
+        motors={comparisonList}
+        onRemove={removeFromComparison}
+        onClear={clearComparison}
+        onSelectMotor={handleComparisonSelect}
       />
 
     </>
