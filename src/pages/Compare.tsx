@@ -330,57 +330,56 @@ export default function Compare() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
       {/* Header - Single compact row */}
-      <div className="sticky top-0 z-50 bg-white shadow-sm border-b border-border isolate">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2 sm:py-3">
-          <div className="flex items-center justify-between gap-2">
-            {/* Left: Back + Title */}
-            <div className="flex items-center gap-2 min-w-0">
+      <div className="sticky top-0 z-50 bg-white border-b border-border shadow-md">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4">
+          <div className="flex items-center justify-between">
+            {/* Left: Back arrow + Title + Motor count - all inline */}
+            <div className="flex items-center gap-3">
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => navigate(-1)}
-                className="h-8 w-8 flex-shrink-0"
+                className="h-9 w-9"
               >
-                <ArrowLeft size={18} />
+                <ArrowLeft size={20} />
               </Button>
-              <div className="min-w-0">
-                <h1 className="text-sm sm:text-lg font-bold text-foreground truncate flex items-center gap-1.5">
-                  <Scale className="text-primary flex-shrink-0" size={16} />
-                  <span className="truncate">Comparison</span>
-                </h1>
-                <p className="text-xs text-muted-foreground">
-                  {motors.length} motors
-                </p>
+              <div className="flex items-center gap-2">
+                <Scale className="text-primary" size={20} />
+                <h1 className="text-lg sm:text-xl font-bold text-foreground">Comparison</h1>
+                <span className="text-sm text-muted-foreground">• {motors.length} motors</span>
               </div>
             </div>
             
             {/* Right: Action buttons */}
-            <div className="flex items-center gap-1 flex-shrink-0">
+            <div className="flex items-center gap-2">
               <Button
-                variant="ghost"
-                size="icon"
+                variant="outline"
+                size="sm"
                 onClick={() => setShowShareModal(true)}
-                className="h-8 w-8"
+                className="h-9"
               >
-                <Share2 size={16} />
+                <Share2 size={16} className="mr-1.5" />
+                <span className="hidden sm:inline">Share</span>
               </Button>
               {user && (
                 <Button
-                  variant="ghost"
-                  size="icon"
+                  variant="outline"
+                  size="sm"
                   onClick={() => setShowSaveModal(true)}
-                  className="h-8 w-8"
+                  className="h-9"
                 >
-                  <Save size={16} />
+                  <Save size={16} className="mr-1.5" />
+                  <span className="hidden sm:inline">Save</span>
                 </Button>
               )}
               <Button
-                variant="ghost"
-                size="icon"
+                variant="outline"
+                size="sm"
                 onClick={handlePrint}
-                className="h-8 w-8 hidden sm:flex"
+                className="h-9 hidden sm:flex"
               >
-                <Printer size={16} />
+                <Printer size={16} className="mr-1.5" />
+                Print
               </Button>
             </div>
           </div>
@@ -417,9 +416,7 @@ export default function Compare() {
                 className="grid border-b border-border bg-white" 
                 style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}
               >
-                <div className="p-3 sm:p-6 bg-muted/30">
-                  <span className="text-xs sm:text-sm font-medium text-muted-foreground">Compare</span>
-                </div>
+                <div className="p-3 sm:p-6 bg-muted/30" />
                 {motors.map((motor, idx) => (
                   <div key={motor.id} className="p-3 sm:p-6 text-center border-l border-border">
                     {motor.image && (
