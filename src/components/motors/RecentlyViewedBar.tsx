@@ -21,7 +21,7 @@ export function RecentlyViewedBar({ items, onSelect, onClear, className }: Recen
   if (items.length === 0) return null;
 
   return (
-    <div className={cn('bg-white border-b border-gray-100', className)}>
+    <div className={cn('hidden sm:block bg-white border-b border-gray-100', className)}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
         <div className="flex items-center gap-3">
           {/* Label */}
