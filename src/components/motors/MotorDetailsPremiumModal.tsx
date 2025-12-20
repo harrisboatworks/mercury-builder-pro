@@ -357,10 +357,41 @@ export default function MotorDetailsPremiumModal({
                       </TooltipProvider>
                     )}
                   </div>
-                  {motor?.model_number && (
+                {motor?.model_number && (
                     <p className="text-xs font-mono text-gray-400 mb-1">{motor.model_number}</p>
                   )}
                   {motor && <StockStatusIndicator motor={motor} />}
+                  
+                  {/* Model Code Breakdown - Mobile/Tablet */}
+                  {decoded.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mt-3">
+                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-stone-100 text-gray-700">
+                        {hpValue} HP
+                      </span>
+                      {decoded.map((feature, idx) => (
+                        <span 
+                          key={`${feature.code}-${idx}`}
+                          className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs bg-stone-100 text-gray-700"
+                        >
+                          <span className="font-mono font-semibold text-gray-600">{feature.code}</span>
+                          <span className="text-gray-500">·</span>
+                          <span>{feature.meaning
+                            .replace('Long Shaft (20")', 'Long 20"')
+                            .replace('Short Shaft (15")', 'Short 15"')
+                            .replace('Extra Long Shaft (25")', 'XL 25"')
+                            .replace('Extra Extra Long Shaft (30")', 'XXL 30"')
+                            .replace('Power Trim & Tilt', 'Power Trim')
+                            .replace('Tiller Handle', 'Tiller')
+                            .replace('Electric Start', 'Electric')
+                            .replace('Manual Start', 'Manual')
+                            .replace('Remote Control', 'Remote')
+                            .replace('Electronic Fuel Injection', 'EFI')
+                            .replace('Digital Throttle & Shift', 'Digital')
+                          }</span>
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 
                 {/* 3. Tabs - separate section below name */}
@@ -615,6 +646,33 @@ export default function MotorDetailsPremiumModal({
                   {/* SPECS TAB */}
                   <TabsContent value="specs" className="space-y-5 mt-0">
                     <div className="p-6 pt-8 pb-12 space-y-8">
+                      {/* Model Code Breakdown - First in Specs */}
+                      {decoded.length > 0 && (
+                        <div>
+                          <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
+                            📖 Model Code Breakdown
+                          </h3>
+                          <div className="bg-gradient-to-br from-stone-50 to-slate-50 rounded-lg border border-gray-100 divide-y divide-gray-100">
+                            {decoded.map((feature, idx) => (
+                              <div key={`spec-${feature.code}-${idx}`} className="flex justify-between items-center py-3 px-4">
+                                <div className="flex items-center gap-3">
+                                  <span className="font-mono font-bold text-gray-900 bg-white px-2 py-1 rounded border border-gray-200 text-sm">{feature.code}</span>
+                                </div>
+                                <div className="text-right max-w-[65%]">
+                                  <span className="text-sm text-gray-900 font-medium">{feature.meaning}</span>
+                                  {feature.benefit && (
+                                    <p className="text-xs text-gray-500 mt-0.5">{feature.benefit}</p>
+                                  )}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                          <p className="text-xs text-gray-400 mt-2 italic">
+                            Understanding the model code helps you identify exactly what features this motor includes.
+                          </p>
+                        </div>
+                      )}
+
                       {/* Engine Specifications */}
                     <div>
                       <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
