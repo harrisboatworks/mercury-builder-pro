@@ -20,9 +20,10 @@ export function AskQuestionButton({ motor, className = '', variant = 'icon' }: A
     e.stopPropagation();
     
     // Convert the helper Motor to QuoteBuilder Motor format for context
+    // Use model_display for specific variant info (e.g., "6 MLH FourStroke" includes shaft length, start type)
     const quoteMotor: QuoteMotor = {
       id: motor.id,
-      model: motor.model,
+      model: motor.model_display || motor.model,
       year: motor.year || new Date().getFullYear(),
       hp: motor.hp,
       price: motor.price,
