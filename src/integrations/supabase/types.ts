@@ -1960,6 +1960,33 @@ export type Database = {
         }
         Relationships: []
       }
+      saved_comparisons: {
+        Row: {
+          created_at: string | null
+          id: string
+          motor_ids: string[]
+          name: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          motor_ids: string[]
+          name?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          motor_ids?: string[]
+          name?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       saved_quotes: {
         Row: {
           access_count: number | null

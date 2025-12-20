@@ -88,6 +88,7 @@ const Repower = lazy(() => import("./pages/Repower"));
 const About = lazy(() => import("./pages/About"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
+const Compare = lazy(() => import("./pages/Compare"));
 
 // Test/Dev pages (low priority)
 const Dev = lazy(() => import("./pages/Dev"));
@@ -370,6 +371,9 @@ function AnimatedRoutes() {
         
         {/* Repower Page */}
         <Route path="/repower" element={<Repower />} />
+        
+        {/* Compare Page */}
+        <Route path="/compare" element={<Compare />} />
         
         {/* About Page */}
         <Route path="/about" element={<About />} />

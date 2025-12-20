@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 import type { Motor } from '@/lib/motor-helpers';
 
 const STORAGE_KEY = 'motor-comparison-list';
@@ -17,8 +19,17 @@ export interface ComparisonMotor {
   type?: string;
 }
 
+export interface SavedComparison {
+  id: string;
+  name: string | null;
+  motor_ids: string[];
+  created_at: string;
+}
+
 export function useMotorComparison() {
   const [comparisonList, setComparisonList] = useState<ComparisonMotor[]>([]);
+  const [savedComparisons, setSavedComparisons] = useState<SavedComparison[]>([]);
+  const [loadingSaved, setLoadingSaved] = useState(false);
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -83,6 +94,107 @@ export function useMotorComparison() {
     }
   }, [isInComparison, removeFromComparison, addToComparison]);
 
+  // Generate shareable URL
+  const getShareableUrl = useCallback(() => {
+    const ids = comparisonList.map(m => m.id).join(',');
+    return `${window.location.origin}/compare?motors=${ids}`;
+  }, [comparisonList]);
+
+  // Copy shareable link to clipboard
+  const shareComparison = useCallback(async () => {
+    if (comparisonList.length === 0) {
+      toast.error('Add motors to compare first');
+      return;
+    }
+    
+    const url = getShareableUrl();
+    try {
+      await navigator.clipboard.writeText(url);
+      toast.success('Comparison link copied!');
+    } catch (err) {
+      toast.error('Failed to copy link');
+    }
+  }, [getShareableUrl, comparisonList.length]);
+
+  // Save comparison to database
+  const saveComparison = useCallback(async (name?: string) => {
+    if (comparisonList.length === 0) {
+      toast.error('Add motors to compare first');
+      return null;
+    }
+
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+      toast.error('Please log in to save comparisons');
+      return null;
+    }
+
+    try {
+      const { data, error } = await supabase
+        .from('saved_comparisons')
+        .insert({
+          user_id: user.id,
+          name: name || `Comparison ${new Date().toLocaleDateString()}`,
+          motor_ids: comparisonList.map(m => m.id)
+        })
+        .select()
+        .single();
+
+      if (error) throw error;
+      
+      toast.success('Comparison saved!');
+      await loadSavedComparisons();
+      return data;
+    } catch (err) {
+      console.error('Error saving comparison:', err);
+      toast.error('Failed to save comparison');
+      return null;
+    }
+  }, [comparisonList]);
+
+  // Load saved comparisons for current user
+  const loadSavedComparisons = useCallback(async () => {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+      setSavedComparisons([]);
+      return;
+    }
+
+    setLoadingSaved(true);
+    try {
+      const { data, error } = await supabase
+        .from('saved_comparisons')
+        .select('id, name, motor_ids, created_at')
+        .eq('user_id', user.id)
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      setSavedComparisons(data || []);
+    } catch (err) {
+      console.error('Error loading saved comparisons:', err);
+    } finally {
+      setLoadingSaved(false);
+    }
+  }, []);
+
+  // Delete a saved comparison
+  const deleteSavedComparison = useCallback(async (comparisonId: string) => {
+    try {
+      const { error } = await supabase
+        .from('saved_comparisons')
+        .delete()
+        .eq('id', comparisonId);
+
+      if (error) throw error;
+      
+      toast.success('Comparison deleted');
+      await loadSavedComparisons();
+    } catch (err) {
+      console.error('Error deleting comparison:', err);
+      toast.error('Failed to delete comparison');
+    }
+  }, [loadSavedComparisons]);
+
   return {
     comparisonList,
     addToComparison,
@@ -92,6 +204,14 @@ export function useMotorComparison() {
     toggleComparison,
     count: comparisonList.length,
     isFull: comparisonList.length >= MAX_MOTORS,
-    maxMotors: MAX_MOTORS
+    maxMotors: MAX_MOTORS,
+    // New sharing/saving functions
+    getShareableUrl,
+    shareComparison,
+    saveComparison,
+    savedComparisons,
+    loadSavedComparisons,
+    deleteSavedComparison,
+    loadingSaved
   };
 }
