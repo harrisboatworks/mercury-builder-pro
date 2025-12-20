@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, lazy, Suspense } from "react";
+import { ImageIcon } from "lucide-react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { useQuote } from '@/contexts/QuoteContext';
@@ -158,7 +159,9 @@ export default function MotorCardPreview({
     loadImageInfo();
   }, [motor, img]);
   
-  const imageUrl = imageInfo.url || '/lovable-uploads/speedboat-transparent.png';
+  const imageUrl = imageInfo.url || '';
+  const [imageError, setImageError] = useState(false);
+  const hasValidImage = imageUrl && !imageError;
 
   const handleCardClick = () => {
     setScrollPosition(window.scrollY);
@@ -352,22 +355,27 @@ export default function MotorCardPreview({
                 <div className="absolute inset-0 bg-gray-50 animate-shimmer z-10" />
               )}
               <div className="flex items-center justify-center h-48 md:h-64 max-h-[220px] md:max-h-[280px]">
-              <img 
-                  src={imageUrl} 
-                  alt={title} 
-                  className={`max-h-full max-w-full object-contain transition-all duration-700 ease-out group-hover:scale-[1.03] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-                  loading="lazy"
-                  decoding="async"
-                  onLoad={onImageLoad}
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    if (!target.src.includes('speedboat-transparent.png')) {
-                      target.src = '/lovable-uploads/speedboat-transparent.png';
+                {hasValidImage ? (
+                  <img 
+                    src={imageUrl} 
+                    alt={title} 
+                    className={`max-h-full max-w-full object-contain transition-all duration-700 ease-out group-hover:scale-[1.03] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                    loading="lazy"
+                    decoding="async"
+                    onLoad={onImageLoad}
+                    onError={() => {
+                      setImageError(true);
                       setImageLoaded(true);
-                    }
-                  }}
-                  style={{ transform: `scale(${imageScale})` }}
-                />
+                    }}
+                    style={{ transform: `scale(${imageScale})` }}
+                  />
+                ) : (
+                  <div className="flex flex-col items-center justify-center h-full text-slate-400">
+                    <ImageIcon className="h-16 w-16 mb-3 opacity-40" />
+                    <span className="text-sm font-medium">No Image</span>
+                    <span className="text-xs opacity-70">Available</span>
+                  </div>
+                )}
               </div>
               
               {/* Stock Badge - Top Left */}
