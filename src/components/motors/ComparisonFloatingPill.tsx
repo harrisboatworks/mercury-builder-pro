@@ -20,11 +20,12 @@ export function ComparisonFloatingPill({ count, onClick, className }: Comparison
           transition={{ type: 'spring', damping: 20, stiffness: 300 }}
           onClick={onClick}
           className={cn(
-            'fixed bottom-20 sm:bottom-6 left-1/2 -translate-x-1/2 z-40',
-            'flex items-center gap-2 px-4 py-2.5',
-            'bg-black text-white rounded-full shadow-lg',
-            'hover:bg-gray-800 transition-colors',
+            'fixed bottom-24 sm:bottom-8 left-1/2 -translate-x-1/2 z-50',
+            'flex items-center gap-2 px-5 py-3',
+            'bg-black text-white rounded-full shadow-xl',
+            'hover:bg-gray-800 transition-all duration-200',
             'active:scale-95',
+            'border border-white/10',
             className
           )}
         >
