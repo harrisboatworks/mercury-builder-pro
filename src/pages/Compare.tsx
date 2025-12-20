@@ -329,90 +329,102 @@ export default function Compare() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
-      {/* Header - Single compact row */}
+      {/* Header */}
       <div className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/75 shadow-sm pt-[env(safe-area-inset-top)]">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-4">
-          <div className="flex items-center justify-between gap-2">
-            {/* Left: Back + Title */}
-            <div className="flex items-center gap-3 min-w-0">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-3">
+          
+          {/* Mobile/Tablet: Two rows */}
+          <div className="flex flex-col gap-2 md:hidden">
+            {/* Row 1: Back + Actions */}
+            <div className="flex items-center justify-between">
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => navigate(-1)}
-                className="h-9 w-9 flex-shrink-0"
+                className="h-8 w-8"
               >
-                <ArrowLeft size={20} />
+                <ArrowLeft size={18} />
               </Button>
-
-              <div className="flex items-center gap-2 min-w-0">
-                <Scale className="text-primary flex-shrink-0" size={20} />
-                <h1 className="text-base sm:text-xl font-bold text-foreground truncate">
-                  Comparison
-                </h1>
-                <span className="text-sm text-muted-foreground hidden sm:inline">
-                  • {motors.length} motors
-                </span>
-              </div>
-            </div>
-
-            {/* Right: Actions - icon-only on mobile, labeled on desktop */}
-            <div className="flex items-center gap-1.5 flex-shrink-0">
-              {/* Share */}
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={() => setShowShareModal(true)}
-                className="h-9 w-9 sm:hidden"
-                aria-label="Share comparison"
-              >
-                <Share2 size={16} />
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setShowShareModal(true)}
-                className="h-9 hidden sm:inline-flex"
-              >
-                <Share2 size={16} className="mr-1.5" />
-                Share
-              </Button>
-
-              {/* Save */}
-              {user && (
-                <>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={() => setShowSaveModal(true)}
-                    className="h-9 w-9 sm:hidden"
-                    aria-label="Save comparison"
-                  >
-                    <Save size={16} />
-                  </Button>
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setShowShareModal(true)}
+                  className="h-8 px-3 text-xs"
+                >
+                  <Share2 size={14} className="mr-1" />
+                  Share
+                </Button>
+                {user && (
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={() => setShowSaveModal(true)}
-                    className="h-9 hidden sm:inline-flex"
+                    className="h-8 px-3 text-xs"
                   >
-                    <Save size={16} className="mr-1.5" />
+                    <Save size={14} className="mr-1" />
                     Save
                   </Button>
-                </>
+                )}
+              </div>
+            </div>
+            
+            {/* Row 2: Title */}
+            <div className="flex items-center gap-2">
+              <Scale className="text-primary" size={18} />
+              <h1 className="text-base font-bold text-foreground">Comparison</h1>
+              <span className="text-sm text-muted-foreground">• {motors.length} motors</span>
+            </div>
+          </div>
+          
+          {/* Desktop: Single row */}
+          <div className="hidden md:flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => navigate(-1)}
+                className="h-9 w-9"
+              >
+                <ArrowLeft size={20} />
+              </Button>
+              <Scale className="text-primary" size={20} />
+              <h1 className="text-xl font-bold text-foreground">Comparison</h1>
+              <span className="text-sm text-muted-foreground">• {motors.length} motors</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setShowShareModal(true)}
+                className="h-9"
+              >
+                <Share2 size={16} className="mr-1.5" />
+                Share
+              </Button>
+              {user && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setShowSaveModal(true)}
+                  className="h-9"
+                >
+                  <Save size={16} className="mr-1.5" />
+                  Save
+                </Button>
               )}
-
-              {/* Print (desktop only) */}
               <Button
                 variant="outline"
                 size="sm"
                 onClick={handlePrint}
-                className="h-9 hidden sm:inline-flex"
+                className="h-9"
               >
                 <Printer size={16} className="mr-1.5" />
                 Print
               </Button>
             </div>
           </div>
+          
         </div>
       </div>
 
