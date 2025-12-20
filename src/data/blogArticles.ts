@@ -42,7 +42,7 @@ export const blogArticles: BlogArticle[] = [
     slug: 'how-to-choose-right-horsepower-boat',
     title: 'How to Choose the Right Horsepower for Your Boat',
     description: 'A complete guide to selecting the perfect HP outboard motor for your boat size, type, and intended use. Learn from 60 years of Mercury dealer expertise.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/How_to_Choose_HP.png',
     author: 'Harris Boat Works',
     datePublished: '2024-06-15',
     dateModified: '2024-12-01',
@@ -88,6 +88,8 @@ For most recreational boaters, we recommend 70-80% of maximum rated horsepower. 
 - Lower operating costs
 
 ### Get Expert Advice
+
+![Customer consulting with Mercury specialist about horsepower selection](/lovable-uploads/Guy_talking_to_salesperson_Mercury.png)
 
 At Harris Boat Works, we've helped Ontario boaters choose the right motor for 60+ years. Bring in your boat specs, or tell us about your ideal day on the water—we'll recommend the perfect match.
     `,
