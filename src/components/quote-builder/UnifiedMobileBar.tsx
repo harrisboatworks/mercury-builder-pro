@@ -686,20 +686,8 @@ export const UnifiedMobileBar: React.FC = () => {
 
   if (!shouldShow) return null;
 
-  // Extract HP and motor family for compact display
-  const getMotorFamily = (model: string | undefined): string => {
-    if (!model) return '';
-    const lowerModel = model.toLowerCase();
-    if (lowerModel.includes('verado')) return 'Verado';
-    if (lowerModel.includes('pro xs')) return 'Pro XS';
-    if (lowerModel.includes('seapro')) return 'SeaPro';
-    if (lowerModel.includes('fourstroke')) return 'FourStroke';
-    return '';
-  };
-  
-  const motorHP = displayMotor?.hp;
-  const motorFamily = getMotorFamily(displayMotor?.model);
-  const compactMotorName = motorHP ? `${motorHP} HP ${motorFamily}`.trim() : '';
+  // Use full model name directly (e.g., "6 MLH FourStroke")
+  const compactMotorName = displayMotor?.model || '';
   
   const displayTotal = runningTotal || displayMotor?.price || displayMotor?.basePrice || displayMotor?.msrp || 0;
 
