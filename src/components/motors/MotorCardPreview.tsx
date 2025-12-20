@@ -437,10 +437,7 @@ export default function MotorCardPreview({
                     isFavorite={isFavorite(motor.id)}
                     onToggle={() => toggleFavorite(motor.id)}
                   />
-                  <AskQuestionButton 
-                    motorModel={title}
-                    hp={hp}
-                  />
+                  <AskQuestionButton motor={motor} />
                 </div>
               )}
             </div>
