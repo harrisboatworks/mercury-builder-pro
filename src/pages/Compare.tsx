@@ -68,9 +68,64 @@ const DETAILED_COMPARISON_FIELDS: ComparisonField[] = [
     format: (v) => v || 'FourStroke',
     category: 'specs'
   },
-  { 
+{ 
     label: 'Shaft Length', 
-    getValue: (m) => m.shaft,
+    getValue: (m) => {
+      if (m.shaft) return m.shaft;
+      const specs = m.specifications as any;
+      if (specs?.shaftLengths && Array.isArray(specs.shaftLengths)) {
+        return specs.shaftLengths.join(', ');
+      }
+      return undefined;
+    },
+    format: (v) => v || '—',
+    category: 'specs'
+  },
+  { 
+    label: 'Displacement', 
+    getValue: (m) => (m.specifications as any)?.displacement,
+    format: (v) => v || '—',
+    category: 'specs'
+  },
+  { 
+    label: 'Weight', 
+    getValue: (m) => (m.specifications as any)?.weight,
+    format: (v) => v || '—',
+    category: 'specs'
+  },
+  { 
+    label: 'Cylinders', 
+    getValue: (m) => (m.specifications as any)?.cylinders,
+    format: (v) => v ? `${v} Cylinder` : '—',
+    category: 'specs'
+  },
+  { 
+    label: 'Gear Ratio', 
+    getValue: (m) => (m.specifications as any)?.gearRatio,
+    format: (v) => v || '—',
+    category: 'specs'
+  },
+  { 
+    label: 'Fuel System', 
+    getValue: (m) => (m.specifications as any)?.fuelSystem,
+    format: (v) => v || '—',
+    category: 'specs'
+  },
+  { 
+    label: 'Alternator Output', 
+    getValue: (m) => (m.specifications as any)?.alternatorOutput,
+    format: (v) => v || '—',
+    category: 'specs'
+  },
+  { 
+    label: 'Starting Type', 
+    getValue: (m) => (m.specifications as any)?.startingType,
+    format: (v) => v ? v.charAt(0).toUpperCase() + v.slice(1) : '—',
+    category: 'specs'
+  },
+  { 
+    label: 'Recommended Fuel', 
+    getValue: (m) => (m.specifications as any)?.recommendedFuel,
     format: (v) => v || '—',
     category: 'specs'
   },
