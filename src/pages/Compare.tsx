@@ -21,6 +21,7 @@ import { ComparisonEmptyState } from '@/components/motors/ComparisonEmptyState';
 interface MotorWithDetails extends ComparisonMotor {
   specifications?: any;
   description?: string;
+  rigging_code?: string;
 }
 
 type ComparisonField = {
@@ -71,11 +72,18 @@ const DETAILED_COMPARISON_FIELDS: ComparisonField[] = [
 { 
     label: 'Shaft Length', 
     getValue: (m) => {
+      // First try direct shaft field
       if (m.shaft) return m.shaft;
-      const specs = m.specifications as any;
-      if (specs?.shaftLengths && Array.isArray(specs.shaftLengths)) {
-        return specs.shaftLengths.join(', ');
-      }
+      
+      // Parse rigging_code to determine actual shaft length
+      const riggingCode = (m as any).rigging_code || '';
+      if (riggingCode.includes('XXL')) return '30"';
+      if (riggingCode.includes('XL')) return '25"';
+      if (riggingCode.includes('L')) return '20"';
+      
+      // If rigging code exists but no L, it's short shaft
+      if (riggingCode) return '15"';
+      
       return undefined;
     },
     format: (v) => v || '—',
@@ -239,6 +247,7 @@ export default function Compare() {
           in_stock: m.in_stock,
           type: m.motor_type,
           shaft: m.shaft,
+          rigging_code: m.rigging_code,
           features: Array.isArray(m.features) ? m.features : [],
           specifications: m.specifications,
           description: m.description
@@ -403,9 +412,9 @@ export default function Compare() {
             onScroll={() => setShowSwipeHint(false)}
           >
             <div style={{ minWidth: `${Math.max(500, 120 + motors.length * 140)}px` }}>
-              {/* Motor Headers - Sticky below page header */}
+              {/* Motor Headers */}
               <div 
-                className="grid border-b border-border sticky top-[52px] sm:top-[60px] z-30 bg-white" 
+                className="grid border-b border-border bg-white" 
                 style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}
               >
                 <div className="p-3 sm:p-6 bg-muted/30">
