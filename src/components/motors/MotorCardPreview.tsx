@@ -354,13 +354,20 @@ export default function MotorCardPreview({
                 <div className="absolute inset-0 bg-gray-50 animate-shimmer z-10" />
               )}
               <div className="flex items-center justify-center h-48 md:h-64 max-h-[220px] md:max-h-[280px]">
-                <img 
+              <img 
                   src={imageUrl} 
                   alt={title} 
                   className={`max-h-full max-w-full object-contain transition-all duration-700 ease-out group-hover:scale-[1.03] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                   loading="lazy"
                   decoding="async"
                   onLoad={onImageLoad}
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (!target.src.includes('speedboat-transparent.png')) {
+                      target.src = '/lovable-uploads/speedboat-transparent.png';
+                      setImageLoaded(true);
+                    }
+                  }}
                   style={{ transform: `scale(${imageScale})` }}
                 />
               </div>

@@ -303,8 +303,8 @@ function MotorSelectionContent() {
         }
       });
 
-      // Prioritize database-scraped images over static fallbacks
-      const heroImage = dbMotor.hero_image_url || dbMotor.image_url || getMotorImages(dbMotor.horsepower)?.heroImage || '';
+      // Use database images only - let MotorCardPreview handle fallback via getMotorImageByPriority
+      const heroImage = dbMotor.hero_image_url || dbMotor.image_url || '';
       const dbImages = Array.isArray(dbMotor.images) 
         ? (dbMotor.images as Array<{url: string} | string>).map(img => typeof img === 'string' ? img : img.url)
         : [];
