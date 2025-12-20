@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { X, Trash2, ArrowRight, Check, Share2, ExternalLink } from 'lucide-react';
+import { X, Trash2, ArrowRight, Check, Share2, ExternalLink, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -67,6 +67,24 @@ export function ComparisonDrawer({
   onSelectMotor 
 }: ComparisonDrawerProps) {
   const navigate = useNavigate();
+  const [showSwipeHint, setShowSwipeHint] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Show swipe hint when drawer opens with 2+ motors
+  useEffect(() => {
+    if (isOpen && motors.length >= 2) {
+      setShowSwipeHint(true);
+      const timer = setTimeout(() => setShowSwipeHint(false), 2500);
+      return () => clearTimeout(timer);
+    } else {
+      setShowSwipeHint(false);
+    }
+  }, [isOpen, motors.length]);
+
+  // Hide hint on scroll
+  const handleScroll = () => {
+    if (showSwipeHint) setShowSwipeHint(false);
+  };
 
   // Find winner for each comparable field
   const getWinner = (field: ComparisonField): string | null => {
@@ -176,7 +194,31 @@ export function ComparisonDrawer({
             </div>
             
             {/* Content */}
-            <div className="overflow-x-auto overflow-y-auto max-h-[calc(85vh-60px)]">
+            <div 
+              ref={scrollContainerRef}
+              onScroll={handleScroll}
+              className="relative overflow-x-auto overflow-y-auto max-h-[calc(85vh-60px)]"
+            >
+              {/* Swipe hint overlay */}
+              <AnimatePresence>
+                {showSwipeHint && motors.length >= 2 && (
+                  <motion.div
+                    initial={{ opacity: 0, x: 10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0 }}
+                    className="absolute right-3 top-20 flex items-center gap-1.5 bg-gray-900/80 text-white text-sm px-3 py-2 rounded-full pointer-events-none z-10"
+                  >
+                    <span>Swipe</span>
+                    <ChevronRight size={16} className="animate-pulse" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+              
+              {/* Right edge gradient hint */}
+              {motors.length >= 2 && (
+                <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-white to-transparent pointer-events-none z-[5]" />
+              )}
+              
               {motors.length === 0 ? (
                 <div className="p-8 text-center text-gray-500">
                   <p>No motors added to comparison yet.</p>
