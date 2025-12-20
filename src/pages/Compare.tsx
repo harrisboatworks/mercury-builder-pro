@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Share2, Save, Check, X, ExternalLink, Scale, Printer } from 'lucide-react';
+import { ArrowLeft, Share2, Save, Check, X, ExternalLink, Scale, Printer, Minimize2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -266,7 +266,7 @@ export default function Compare() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-border">
+      <div className="sticky top-0 z-40 bg-white shadow-sm border-b border-border">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 py-3 sm:py-4">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
             <div className="flex items-center gap-2 sm:gap-4">
@@ -278,6 +278,16 @@ export default function Compare() {
               >
                 <ArrowLeft size={16} />
                 <span className="hidden sm:inline">Back</span>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => navigate(-1)}
+                className="gap-1.5 px-2 sm:px-3"
+                title="Return to drawer view"
+              >
+                <Minimize2 size={16} />
+                <span className="hidden sm:inline">Minimize</span>
               </Button>
               <div>
                 <h1 className="text-base sm:text-xl font-bold text-foreground flex items-center gap-2">
@@ -350,8 +360,11 @@ export default function Compare() {
             onScroll={() => setShowSwipeHint(false)}
           >
             <div style={{ minWidth: `${Math.max(500, 120 + motors.length * 140)}px` }}>
-              {/* Motor Headers */}
-              <div className="grid border-b border-border" style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}>
+              {/* Motor Headers - Sticky below page header */}
+              <div 
+                className="grid border-b border-border sticky top-[52px] sm:top-[64px] z-20 bg-white shadow-sm" 
+                style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}
+              >
                 <div className="p-3 sm:p-6 bg-muted/30">
                   <span className="text-xs sm:text-sm font-medium text-muted-foreground">Compare</span>
                 </div>
