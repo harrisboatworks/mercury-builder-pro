@@ -330,53 +330,83 @@ export default function Compare() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
       {/* Header - Single compact row */}
-      <div className="sticky top-0 z-50 bg-white border-b border-border shadow-md">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4">
-          <div className="flex items-center justify-between">
-            {/* Left: Back arrow + Title + Motor count - all inline */}
-            <div className="flex items-center gap-3">
+      <div className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/75 shadow-sm pt-[env(safe-area-inset-top)]">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-4">
+          <div className="flex items-center justify-between gap-2">
+            {/* Left: Back + Title */}
+            <div className="flex items-center gap-3 min-w-0">
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => navigate(-1)}
-                className="h-9 w-9"
+                className="h-9 w-9 flex-shrink-0"
               >
                 <ArrowLeft size={20} />
               </Button>
-              <div className="flex items-center gap-2">
-                <Scale className="text-primary" size={20} />
-                <h1 className="text-lg sm:text-xl font-bold text-foreground">Comparison</h1>
-                <span className="text-sm text-muted-foreground">• {motors.length} motors</span>
+
+              <div className="flex items-center gap-2 min-w-0">
+                <Scale className="text-primary flex-shrink-0" size={20} />
+                <h1 className="text-base sm:text-xl font-bold text-foreground truncate">
+                  Comparison
+                </h1>
+                <span className="text-sm text-muted-foreground hidden sm:inline">
+                  • {motors.length} motors
+                </span>
               </div>
             </div>
-            
-            {/* Right: Action buttons */}
-            <div className="flex items-center gap-2">
+
+            {/* Right: Actions - icon-only on mobile, labeled on desktop */}
+            <div className="flex items-center gap-1.5 flex-shrink-0">
+              {/* Share */}
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setShowShareModal(true)}
+                className="h-9 w-9 sm:hidden"
+                aria-label="Share comparison"
+              >
+                <Share2 size={16} />
+              </Button>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => setShowShareModal(true)}
-                className="h-9"
+                className="h-9 hidden sm:inline-flex"
               >
                 <Share2 size={16} className="mr-1.5" />
-                <span className="hidden sm:inline">Share</span>
+                Share
               </Button>
+
+              {/* Save */}
               {user && (
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setShowSaveModal(true)}
-                  className="h-9"
-                >
-                  <Save size={16} className="mr-1.5" />
-                  <span className="hidden sm:inline">Save</span>
-                </Button>
+                <>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={() => setShowSaveModal(true)}
+                    className="h-9 w-9 sm:hidden"
+                    aria-label="Save comparison"
+                  >
+                    <Save size={16} />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setShowSaveModal(true)}
+                    className="h-9 hidden sm:inline-flex"
+                  >
+                    <Save size={16} className="mr-1.5" />
+                    Save
+                  </Button>
+                </>
               )}
+
+              {/* Print (desktop only) */}
               <Button
                 variant="outline"
                 size="sm"
                 onClick={handlePrint}
-                className="h-9 hidden sm:flex"
+                className="h-9 hidden sm:inline-flex"
               >
                 <Printer size={16} className="mr-1.5" />
                 Print
