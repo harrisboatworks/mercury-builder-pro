@@ -22,6 +22,12 @@ const DETAIL_SHOT_KEYWORDS = [
   'gauge', 'gauges', 'speedometer', 'tachometer',
   'battery', 'wiring', 'cable-', '_cable_',
   
+  // Charts, comparisons, and infographics (NOT motor images)
+  'displacement', 'comparison', 'chart', 'infographic', 'graph',
+  'focus-mounts', 'vibration', 'management', 'technology',
+  'specs', 'specification', 'performance-data', 'diagram',
+  'cutaway', 'cross-section', 'schematic', 'illustration',
+  
   // Other details
   'close-up', 'closeup', 'close_up', 'detail-',
   'accessory', 'accessories',
