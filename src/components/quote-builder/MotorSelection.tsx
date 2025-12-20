@@ -64,10 +64,13 @@ interface DbMotor {
   motor_type: string;
   engine_type?: string | null;
   image_url?: string | null;
+  hero_image_url?: string | null;
   availability?: string | null;
   stock_number?: string | null;
   year: number;
   make: string;
+  family?: string | null;
+  shaft?: string | null;
   // New enhanced fields
   description?: string | null;
   features?: string[] | null;
@@ -401,7 +404,16 @@ export const MotorSelection = ({
       }, {
         data: rules,
         error: rulesError
-      }] = await Promise.all([supabase.from('motor_models').select('*').order('horsepower'), supabase.from('promotions').select('*'), supabase.from('promotions_rules').select('*')]);
+      }] = await Promise.all([
+        // Optimized query: only select fields needed for motor cards display
+        supabase.from('motor_models').select(`
+          id, model, model_display, horsepower, base_price, sale_price, msrp, dealer_price,
+          motor_type, engine_type, image_url, hero_image_url, availability, stock_number, year, make,
+          description, features, specifications, detail_url, family, shaft
+        `).order('horsepower'), 
+        supabase.from('promotions').select('*'), 
+        supabase.from('promotions_rules').select('*')
+      ]);
       if (motorsError) throw motorsError;
       if (promosError) throw promosError;
       if (rulesError) throw rulesError;
@@ -447,7 +459,7 @@ export const MotorSelection = ({
           year: m.year,
           hp: Number(m.horsepower),
           price: effectivePrice,
-          image: m.image_url || '/placeholder.svg',
+          image: m.hero_image_url || m.image_url || '/placeholder.svg',
           stockStatus: m.availability === 'In Stock' ? 'In Stock' : 
                       m.availability === 'Sold' ? 'Sold' :
                       m.availability === 'On Order' ? 'On Order' : 'Order Now',
