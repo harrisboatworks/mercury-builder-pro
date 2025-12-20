@@ -316,6 +316,9 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const initialMessageSentRef = useRef<string | null>(null);
   
   useEffect(() => {
+    // Skip legacy motor context markers - context now flows through QuoteContext.previewMotor
+    if (initialMessage?.startsWith('__MOTOR_CONTEXT__:')) return;
+    
     if (isOpen && hasInitialized && initialMessage && !isLoading && initialMessageSentRef.current !== initialMessage) {
       initialMessageSentRef.current = initialMessage;
       setTimeout(() => handleSend(initialMessage), 300);

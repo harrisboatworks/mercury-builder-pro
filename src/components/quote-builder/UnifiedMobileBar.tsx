@@ -673,11 +673,8 @@ export const UnifiedMobileBar: React.FC = () => {
       return;
     }
     
-      // Use motor context marker (like desktop) - prevents auto-sending, shows smart prompts instead
-      const motorContext = displayMotor?.hp 
-        ? `__MOTOR_CONTEXT__:${displayMotor.hp}:${displayMotor.model}`
-        : undefined;
-      openChat(motorContext);
+    // Motor context flows through QuoteContext.previewMotor - no marker needed
+    openChat();
   };
 
   const handleOpenDrawer = () => {
