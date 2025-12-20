@@ -158,7 +158,7 @@ export default function MotorCardPreview({
     loadImageInfo();
   }, [motor, img]);
   
-  const imageUrl = imageInfo.url;
+  const imageUrl = imageInfo.url || '/lovable-uploads/speedboat-transparent.png';
 
   const handleCardClick = () => {
     setScrollPosition(window.scrollY);
@@ -346,9 +346,7 @@ export default function MotorCardPreview({
         onMouseEnter={preloadConfiguratorImagesHighPriority}
         onTouchStart={preloadConfiguratorImagesHighPriority}
       >
-          <div className="relative">
-          {imageUrl && (
-            <div className="relative bg-gradient-to-b from-gray-50 to-white p-8 overflow-hidden">
+        <div className="relative bg-gradient-to-b from-gray-50 to-white p-8 overflow-hidden">
               {/* Shimmer loading overlay */}
               {!imageLoaded && (
                 <div className="absolute inset-0 bg-gray-50 animate-shimmer z-10" />
@@ -438,7 +436,6 @@ export default function MotorCardPreview({
                 </div>
               )}
             </div>
-          )}
           
           {/* Subtle Top Border */}
           <div className="border-t border-gray-200"></div>
@@ -501,7 +498,6 @@ export default function MotorCardPreview({
             </button>
           </div>
         </div>
-      </div>
       
       {/* Premium Details Modal */}
       {showDetailsSheet && createPortal(
