@@ -15,8 +15,10 @@ export function AskQuestionButton({ motorModel, hp, className = '', variant = 'i
 
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    const message = `__MOTOR_CONTEXT__:${hp}:${motorModel} I'm looking at the ${hp}HP ${motorModel}. Can you tell me more about it?`;
-    openChat(message);
+    // Send only the context marker - chat will show motor-specific prompts
+    // and display a "Viewing: XXhp Motor" banner
+    const contextMarker = `__MOTOR_CONTEXT__:${hp}:${motorModel}`;
+    openChat(contextMarker);
   };
 
   if (variant === 'text') {

@@ -2,6 +2,7 @@ import React from 'react';
 import { Scale } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { toast } from 'sonner';
 
 interface CompareButtonProps {
   isInComparison: boolean;
@@ -26,6 +27,12 @@ export function CompareButton({
     e.stopPropagation();
     if (!disabled) {
       onToggle();
+      // Show toast feedback
+      if (isInComparison) {
+        toast.info('Removed from comparison');
+      } else {
+        toast.success(`Added to comparison (${count + 1}/3)`);
+      }
     }
   };
 
