@@ -106,7 +106,7 @@ export default function MotorCardPreview({
       // Track as recently viewed
       addToRecentlyViewed({
         id: motor.id,
-        model: motor.model,
+        model: (motor as any).model_display || motor.model,
         hp: motor.hp,
         price: motor.price,
         image: motor.image
