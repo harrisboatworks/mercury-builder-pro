@@ -254,39 +254,49 @@ export default function Compare() {
     return <ComparisonEmptyState />;
   }
 
+  // Swipe hint state for mobile
+  const [showSwipeHint, setShowSwipeHint] = useState(motors.length >= 2);
+
+  useEffect(() => {
+    if (motors.length >= 2) {
+      const timer = setTimeout(() => setShowSwipeHint(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [motors.length]);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-3 sm:py-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => navigate(-1)}
-                className="gap-2"
+                className="gap-1 sm:gap-2 px-2 sm:px-3"
               >
                 <ArrowLeft size={16} />
-                Back
+                <span className="hidden sm:inline">Back</span>
               </Button>
               <div>
-                <h1 className="text-xl font-bold text-foreground flex items-center gap-2">
-                  <Scale className="text-primary" size={20} />
-                  Motor Comparison
+                <h1 className="text-base sm:text-xl font-bold text-foreground flex items-center gap-2">
+                  <Scale className="text-primary" size={18} />
+                  <span className="hidden xs:inline">Motor </span>Comparison
                 </h1>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xs sm:text-sm text-muted-foreground">
                   Comparing {motors.length} motor{motors.length !== 1 ? 's' : ''}
                 </p>
               </div>
             </div>
             
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2 ml-auto">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={handlePrint}
-                className="gap-2 hidden sm:flex"
+                className="gap-1.5 hidden sm:flex"
               >
                 <Printer size={16} />
                 Print
@@ -295,20 +305,20 @@ export default function Compare() {
                 variant="outline"
                 size="sm"
                 onClick={() => setShowShareModal(true)}
-                className="gap-2"
+                className="gap-1.5 px-2 sm:px-3"
               >
                 <Share2 size={16} />
-                Share
+                <span className="hidden sm:inline">Share</span>
               </Button>
               {user && (
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => setShowSaveModal(true)}
-                  className="gap-2"
+                  className="gap-1.5 px-2 sm:px-3"
                 >
                   <Save size={16} />
-                  Save
+                  <span className="hidden sm:inline">Save</span>
                 </Button>
               )}
             </div>
@@ -317,228 +327,249 @@ export default function Compare() {
       </div>
 
       {/* Comparison Table */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 py-4 sm:py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl shadow-lg border border-border overflow-hidden"
+          className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-border overflow-hidden relative"
         >
-          {/* Motor Headers */}
-          <div className="grid border-b border-border" style={{ gridTemplateColumns: `200px repeat(${motors.length}, 1fr)` }}>
-            <div className="p-6 bg-muted/30">
-              <span className="text-sm font-medium text-muted-foreground">Compare</span>
-            </div>
-            {motors.map((motor, idx) => (
-              <div key={motor.id} className="p-6 text-center border-l border-border">
-                {motor.image && (
-                  <img 
-                    src={motor.image} 
-                    alt={motor.model}
-                    className="w-32 h-32 object-contain mx-auto mb-4"
-                  />
-                )}
-                <h3 className="font-bold text-foreground text-lg mb-1">{motor.model}</h3>
-                <p className="text-2xl font-bold text-primary">
-                  ${motor.price?.toLocaleString()}
-                </p>
-                {motor.in_stock ? (
-                  <span className="inline-flex items-center gap-1 text-xs text-green-600 mt-2">
-                    <Check size={12} /> In Stock
-                  </span>
-                ) : (
-                  <span className="text-xs text-muted-foreground mt-2">Special Order</span>
-                )}
+          {/* Swipe Hint for Mobile */}
+          {showSwipeHint && (
+            <div className="absolute top-1/2 right-2 z-20 sm:hidden animate-pulse">
+              <div className="bg-foreground/80 text-background text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                Swipe <ArrowLeft size={12} className="rotate-180" />
               </div>
-            ))}
-          </div>
-
-          {/* Pricing Section */}
-          <div className="border-b border-border">
-            <div className="grid bg-primary/5" style={{ gridTemplateColumns: `200px repeat(${motors.length}, 1fr)` }}>
-              <div className="p-4 font-semibold text-primary">Pricing</div>
-              {motors.map(m => <div key={m.id} className="border-l border-border" />)}
             </div>
-            {groupedFields.pricing.map((field) => {
-              const winnerId = getWinner(field);
-              return (
-                <div 
-                  key={field.label}
-                  className="grid border-t border-border/50"
-                  style={{ gridTemplateColumns: `200px repeat(${motors.length}, 1fr)` }}
-                >
-                  <div className="p-4 text-sm font-medium text-muted-foreground bg-muted/20">
-                    {field.label}
-                  </div>
-                  {motors.map((motor) => {
-                    const value = field.getValue(motor);
-                    const isWinner = winnerId === motor.id;
-                    return (
-                      <div 
-                        key={motor.id} 
-                        className={cn(
-                          'p-4 text-center text-sm border-l border-border/50',
-                          isWinner && 'bg-green-50'
-                        )}
-                      >
-                        <span className={cn(
-                          'font-medium',
-                          isWinner && 'text-green-700'
-                        )}>
-                          {field.format ? field.format(value, motor) : String(value || '—')}
-                        </span>
-                        {isWinner && (
-                          <Check size={14} className="inline-block ml-1 text-green-600" />
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Specs Section */}
-          <div className="border-b border-border">
-            <div className="grid bg-primary/5" style={{ gridTemplateColumns: `200px repeat(${motors.length}, 1fr)` }}>
-              <div className="p-4 font-semibold text-primary">Specifications</div>
-              {motors.map(m => <div key={m.id} className="border-l border-border" />)}
-            </div>
-            {groupedFields.specs.map((field) => {
-              const winnerId = getWinner(field);
-              return (
-                <div 
-                  key={field.label}
-                  className="grid border-t border-border/50"
-                  style={{ gridTemplateColumns: `200px repeat(${motors.length}, 1fr)` }}
-                >
-                  <div className="p-4 text-sm font-medium text-muted-foreground bg-muted/20">
-                    {field.label}
-                  </div>
-                  {motors.map((motor) => {
-                    const value = field.getValue(motor);
-                    const isWinner = winnerId === motor.id;
-                    return (
-                      <div 
-                        key={motor.id} 
-                        className={cn(
-                          'p-4 text-center text-sm border-l border-border/50',
-                          isWinner && 'bg-green-50'
-                        )}
-                      >
-                        <span className={cn(
-                          'font-medium',
-                          isWinner && 'text-green-700'
-                        )}>
-                          {field.format ? field.format(value, motor) : String(value || '—')}
-                        </span>
-                        {isWinner && (
-                          <Check size={14} className="inline-block ml-1 text-green-600" />
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Compatibility Section */}
-          <div className="border-b border-border">
-            <div className="grid bg-primary/5" style={{ gridTemplateColumns: `200px repeat(${motors.length}, 1fr)` }}>
-              <div className="p-4 font-semibold text-primary">Compatibility</div>
-              {motors.map(m => <div key={m.id} className="border-l border-border" />)}
-            </div>
-            {groupedFields.compatibility.map((field) => {
-              const winnerId = getWinner(field);
-              return (
-                <div 
-                  key={field.label}
-                  className="grid border-t border-border/50"
-                  style={{ gridTemplateColumns: `200px repeat(${motors.length}, 1fr)` }}
-                >
-                  <div className="p-4 text-sm font-medium text-muted-foreground bg-muted/20">
-                    {field.label}
-                  </div>
-                  {motors.map((motor) => {
-                    const value = field.getValue(motor);
-                    const isWinner = winnerId === motor.id;
-                    return (
-                      <div 
-                        key={motor.id} 
-                        className={cn(
-                          'p-4 text-center text-sm border-l border-border/50',
-                          isWinner && 'bg-green-50'
-                        )}
-                      >
-                        <span className={cn(
-                          'font-medium',
-                          isWinner && 'text-green-700'
-                        )}>
-                          {field.format ? field.format(value, motor) : String(value || '—')}
-                        </span>
-                        {isWinner && (
-                          <Check size={14} className="inline-block ml-1 text-green-600" />
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Features Section */}
-          <div className="border-b border-border">
-            <div className="grid bg-primary/5" style={{ gridTemplateColumns: `200px repeat(${motors.length}, 1fr)` }}>
-              <div className="p-4 font-semibold text-primary">Key Features</div>
-              {motors.map(m => <div key={m.id} className="border-l border-border" />)}
-            </div>
-            <div 
-              className="grid border-t border-border/50"
-              style={{ gridTemplateColumns: `200px repeat(${motors.length}, 1fr)` }}
-            >
-              <div className="p-4 text-sm font-medium text-muted-foreground bg-muted/20">
-                Decoded Features
-              </div>
-              {motors.map((motor) => {
-                const decoded = decodeModelName(motor.model, motor.hp);
-                return (
-                  <div key={motor.id} className="p-4 border-l border-border/50">
-                    <ul className="space-y-2">
-                      {decoded.slice(0, 6).map((item, idx) => (
-                        <li key={idx} className="text-xs">
-                          <span className="font-semibold text-primary">{item.code}</span>
-                          <span className="text-muted-foreground"> — {item.meaning}</span>
-                        </li>
-                      ))}
-                      {decoded.length === 0 && (
-                        <li className="text-xs text-muted-foreground">Standard configuration</li>
-                      )}
-                    </ul>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Action Row */}
+          )}
+          
+          {/* Right edge fade indicator for mobile */}
+          <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-white to-transparent pointer-events-none z-10 sm:hidden" />
+          
+          {/* Scrollable container */}
           <div 
-            className="grid"
-            style={{ gridTemplateColumns: `200px repeat(${motors.length}, 1fr)` }}
+            className="overflow-x-auto"
+            onScroll={() => setShowSwipeHint(false)}
           >
-            <div className="p-6 bg-muted/20" />
-            {motors.map((motor) => (
-              <div key={motor.id} className="p-6 text-center border-l border-border">
-                <Button
-                  onClick={() => handleSelectMotor(motor)}
-                  className="w-full max-w-xs mx-auto"
-                  size="lg"
-                >
-                  Select This Motor
-                  <ExternalLink size={16} className="ml-2" />
-                </Button>
+            <div style={{ minWidth: `${Math.max(500, 120 + motors.length * 140)}px` }}>
+              {/* Motor Headers */}
+              <div className="grid border-b border-border" style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}>
+                <div className="p-3 sm:p-6 bg-muted/30">
+                  <span className="text-xs sm:text-sm font-medium text-muted-foreground">Compare</span>
+                </div>
+                {motors.map((motor, idx) => (
+                  <div key={motor.id} className="p-3 sm:p-6 text-center border-l border-border">
+                    {motor.image && (
+                      <img 
+                        src={motor.image} 
+                        alt={motor.model}
+                        className="w-20 h-20 sm:w-32 sm:h-32 object-contain mx-auto mb-2 sm:mb-4"
+                      />
+                    )}
+                    <h3 className="font-bold text-foreground text-sm sm:text-lg mb-1 line-clamp-2">{motor.model}</h3>
+                    <p className="text-lg sm:text-2xl font-bold text-primary">
+                      ${motor.price?.toLocaleString()}
+                    </p>
+                    {motor.in_stock ? (
+                      <span className="inline-flex items-center gap-1 text-xs text-green-600 mt-1 sm:mt-2">
+                        <Check size={12} /> In Stock
+                      </span>
+                    ) : (
+                      <span className="text-xs text-muted-foreground mt-1 sm:mt-2 block">Special Order</span>
+                    )}
+                  </div>
+                ))}
               </div>
-            ))}
+
+              {/* Pricing Section */}
+              <div className="border-b border-border">
+                <div className="grid bg-primary/5" style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}>
+                  <div className="p-3 sm:p-4 font-semibold text-primary text-sm sm:text-base">Pricing</div>
+                  {motors.map(m => <div key={m.id} className="border-l border-border" />)}
+                </div>
+                {groupedFields.pricing.map((field) => {
+                  const winnerId = getWinner(field);
+                  return (
+                    <div 
+                      key={field.label}
+                      className="grid border-t border-border/50"
+                      style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}
+                    >
+                      <div className="p-3 sm:p-4 text-xs sm:text-sm font-medium text-muted-foreground bg-muted/20">
+                        {field.label}
+                      </div>
+                      {motors.map((motor) => {
+                        const value = field.getValue(motor);
+                        const isWinner = winnerId === motor.id;
+                        return (
+                          <div 
+                            key={motor.id} 
+                            className={cn(
+                              'p-3 sm:p-4 text-center text-xs sm:text-sm border-l border-border/50',
+                              isWinner && 'bg-green-50'
+                            )}
+                          >
+                            <span className={cn(
+                              'font-medium',
+                              isWinner && 'text-green-700'
+                            )}>
+                              {field.format ? field.format(value, motor) : String(value || '—')}
+                            </span>
+                            {isWinner && (
+                              <Check size={14} className="inline-block ml-1 text-green-600" />
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Specs Section */}
+              <div className="border-b border-border">
+                <div className="grid bg-primary/5" style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}>
+                  <div className="p-3 sm:p-4 font-semibold text-primary text-sm sm:text-base">Specifications</div>
+                  {motors.map(m => <div key={m.id} className="border-l border-border" />)}
+                </div>
+                {groupedFields.specs.map((field) => {
+                  const winnerId = getWinner(field);
+                  return (
+                    <div 
+                      key={field.label}
+                      className="grid border-t border-border/50"
+                      style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}
+                    >
+                      <div className="p-3 sm:p-4 text-xs sm:text-sm font-medium text-muted-foreground bg-muted/20">
+                        {field.label}
+                      </div>
+                      {motors.map((motor) => {
+                        const value = field.getValue(motor);
+                        const isWinner = winnerId === motor.id;
+                        return (
+                          <div 
+                            key={motor.id} 
+                            className={cn(
+                              'p-3 sm:p-4 text-center text-xs sm:text-sm border-l border-border/50',
+                              isWinner && 'bg-green-50'
+                            )}
+                          >
+                            <span className={cn(
+                              'font-medium',
+                              isWinner && 'text-green-700'
+                            )}>
+                              {field.format ? field.format(value, motor) : String(value || '—')}
+                            </span>
+                            {isWinner && (
+                              <Check size={14} className="inline-block ml-1 text-green-600" />
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Compatibility Section */}
+              <div className="border-b border-border">
+                <div className="grid bg-primary/5" style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}>
+                  <div className="p-3 sm:p-4 font-semibold text-primary text-sm sm:text-base">Compatibility</div>
+                  {motors.map(m => <div key={m.id} className="border-l border-border" />)}
+                </div>
+                {groupedFields.compatibility.map((field) => {
+                  const winnerId = getWinner(field);
+                  return (
+                    <div 
+                      key={field.label}
+                      className="grid border-t border-border/50"
+                      style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}
+                    >
+                      <div className="p-3 sm:p-4 text-xs sm:text-sm font-medium text-muted-foreground bg-muted/20">
+                        {field.label}
+                      </div>
+                      {motors.map((motor) => {
+                        const value = field.getValue(motor);
+                        const isWinner = winnerId === motor.id;
+                        return (
+                          <div 
+                            key={motor.id} 
+                            className={cn(
+                              'p-3 sm:p-4 text-center text-xs sm:text-sm border-l border-border/50',
+                              isWinner && 'bg-green-50'
+                            )}
+                          >
+                            <span className={cn(
+                              'font-medium',
+                              isWinner && 'text-green-700'
+                            )}>
+                              {field.format ? field.format(value, motor) : String(value || '—')}
+                            </span>
+                            {isWinner && (
+                              <Check size={14} className="inline-block ml-1 text-green-600" />
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Features Section */}
+              <div className="border-b border-border">
+                <div className="grid bg-primary/5" style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}>
+                  <div className="p-3 sm:p-4 font-semibold text-primary text-sm sm:text-base">Key Features</div>
+                  {motors.map(m => <div key={m.id} className="border-l border-border" />)}
+                </div>
+                <div 
+                  className="grid border-t border-border/50"
+                  style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}
+                >
+                  <div className="p-3 sm:p-4 text-xs sm:text-sm font-medium text-muted-foreground bg-muted/20">
+                    Decoded Features
+                  </div>
+                  {motors.map((motor) => {
+                    const decoded = decodeModelName(motor.model, motor.hp);
+                    return (
+                      <div key={motor.id} className="p-3 sm:p-4 border-l border-border/50">
+                        <ul className="space-y-1.5 sm:space-y-2">
+                          {decoded.slice(0, 6).map((item, idx) => (
+                            <li key={idx} className="text-xs">
+                              <span className="font-semibold text-primary">{item.code}</span>
+                              <span className="text-muted-foreground"> — {item.meaning}</span>
+                            </li>
+                          ))}
+                          {decoded.length === 0 && (
+                            <li className="text-xs text-muted-foreground">Standard configuration</li>
+                          )}
+                        </ul>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Action Row */}
+              <div 
+                className="grid"
+                style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}
+              >
+                <div className="p-3 sm:p-6 bg-muted/20" />
+                {motors.map((motor) => (
+                  <div key={motor.id} className="p-3 sm:p-6 text-center border-l border-border">
+                    <Button
+                      onClick={() => handleSelectMotor(motor)}
+                      className="w-full max-w-xs mx-auto text-xs sm:text-sm"
+                      size="sm"
+                    >
+                      <span className="hidden sm:inline">Select This Motor</span>
+                      <span className="sm:hidden">Select</span>
+                      <ExternalLink size={14} className="ml-1 sm:ml-2" />
+                    </Button>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
 
