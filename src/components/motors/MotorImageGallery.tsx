@@ -113,11 +113,16 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   const validImages = images.filter((img, index) => img && typeof img === 'string' && !imageLoadErrors.has(index));
 
   const handleImageError = (index: number) => {
+    console.warn(`Image failed to load at index ${index}:`, images[index]);
     setImageLoadErrors(prev => new Set([...prev, index]));
     // If current selected image fails, move to next valid image
     if (index === selectedIndex) {
-      const nextValidIndex = validImages.findIndex((_, i) => i > selectedIndex);
-      setSelectedIndex(nextValidIndex >= 0 ? nextValidIndex : 0);
+      const nextValidIndex = images.findIndex((img, i) => 
+        i !== index && img && typeof img === 'string' && !imageLoadErrors.has(i)
+      );
+      if (nextValidIndex >= 0) {
+        setSelectedIndex(nextValidIndex);
+      }
     }
   };
 

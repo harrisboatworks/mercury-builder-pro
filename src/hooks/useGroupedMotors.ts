@@ -25,6 +25,11 @@ export interface MotorGroup {
  * Check if a motor has its own scraped images (not fallback)
  */
 function hasOwnImages(motor: Motor): boolean {
+  // Has hero_image_url from database
+  if (motor.hero_image_url) {
+    return true;
+  }
+  
   // Has database images array with content
   if (motor.images && Array.isArray(motor.images) && motor.images.length > 0) {
     return true;

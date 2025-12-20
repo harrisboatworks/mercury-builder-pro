@@ -460,6 +460,8 @@ export const MotorSelection = ({
           hp: Number(m.horsepower),
           price: effectivePrice,
           image: m.hero_image_url || m.image_url || '/placeholder.svg',
+          hero_image_url: m.hero_image_url || null, // Preserve original for gallery
+          image_url: m.image_url || null, // Preserve original for gallery
           stockStatus: m.availability === 'In Stock' ? 'In Stock' : 
                       m.availability === 'Sold' ? 'Sold' :
                       m.availability === 'On Order' ? 'On Order' : 'Order Now',
@@ -481,7 +483,9 @@ export const MotorSelection = ({
           }),
           features: Array.isArray(m.features) ? m.features as string[] : [],
           description: m.description || null,
-          detailUrl: m.detail_url || null
+          detailUrl: m.detail_url || null,
+          family: m.family || null,
+          shaft: m.shaft || null
         };
       });
 

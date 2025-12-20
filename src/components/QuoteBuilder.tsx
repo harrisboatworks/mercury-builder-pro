@@ -27,6 +27,8 @@ export interface Motor {
   hp: number;
   price: number; // effective price shown to user
   image: string;
+  hero_image_url?: string | null; // Original hero image URL from database
+  image_url?: string | null; // Original image_url from database
   stockStatus: 'In Stock' | 'On Order' | 'Order Now' | 'Sold';
   stockNumber?: string | null; // subtle stock number display
   model_number?: string | null; // Mercury model number display
@@ -70,6 +72,7 @@ export interface Motor {
   spec_json?: Record<string, any>;
   shaft?: string | null;
   images?: any[];
+  family?: string | null;
 }
 
 export interface BoatInfo {
