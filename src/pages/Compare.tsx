@@ -266,7 +266,7 @@ export default function Compare() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
       {/* Header - Single compact row */}
-      <div className="sticky top-0 z-40 bg-white shadow-sm border-b border-border">
+      <div className="sticky top-0 z-50 bg-white shadow-sm border-b border-border">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2 sm:py-3">
           <div className="flex items-center justify-between gap-2">
             {/* Left: Back + Title */}
@@ -349,8 +349,8 @@ export default function Compare() {
           >
             <div style={{ minWidth: `${Math.max(500, 120 + motors.length * 140)}px` }}>
               {/* Motor Headers - Sticky below page header */}
-              <div 
-                className="grid border-b border-border sticky top-[44px] sm:top-[52px] z-20 bg-white shadow-sm" 
+          <div 
+            className="grid border-b border-border sticky top-[48px] sm:top-[56px] z-30 bg-white shadow-sm" 
                 style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}
               >
                 <div className="p-3 sm:p-6 bg-muted/30">
