@@ -42,6 +42,9 @@ interface ParsedFolderInfo {
   hasCommandThrust: boolean
   hasProKicker: boolean
   hasTiller: boolean
+  hasProXS: boolean
+  hasSeaPro: boolean
+  hasVerado: boolean
   folderName: string
 }
 
@@ -59,7 +62,7 @@ function parseFolderName(folderName: string): ParsedFolderInfo {
   const shaftMatch = name.match(/\b(XXL|CXL|XL|L)\b/i)
   const shaft = shaftMatch ? shaftMatch[1].toUpperCase() : null
   
-  // Detect special features from folder name
+  // Detect special features/variants from folder name
   const hasCommandThrust = nameLower.includes('ct') || 
     nameLower.includes('command thrust') || 
     nameLower.includes('commandthrust')
@@ -71,15 +74,24 @@ function parseFolderName(folderName: string): ParsedFolderInfo {
   
   const hasTiller = nameLower.includes('tiller')
   
-  // Extract family - common Mercury families
-  // Note: ProKicker is a feature, not a family - it goes with FourStroke
+  // Motor line/variant flags - these are mutually exclusive product lines
+  const hasProXS = nameLower.includes('pro xs') || 
+    nameLower.includes('proxs') || 
+    nameLower.includes('pro-xs')
+  
+  const hasSeaPro = nameLower.includes('sea pro') || 
+    nameLower.includes('seapro')
+  
+  const hasVerado = nameLower.includes('verado')
+  
+  // Extract family for database column matching
   let family: string | null = null
   
-  if (nameLower.includes('pro xs') || nameLower.includes('proxs') || nameLower.includes('pro-xs')) {
+  if (hasProXS) {
     family = 'Pro XS'
-  } else if (nameLower.includes('sea pro') || nameLower.includes('seapro')) {
+  } else if (hasSeaPro) {
     family = 'SeaPro'
-  } else if (nameLower.includes('verado')) {
+  } else if (hasVerado) {
     family = 'Verado'
   } else if (nameLower.includes('fourstroke') || nameLower.includes('four stroke') || nameLower.includes('4-stroke')) {
     family = 'FourStroke'
@@ -95,13 +107,19 @@ function parseFolderName(folderName: string): ParsedFolderInfo {
     family = 'FourStroke'
   }
   
-  return { hp, family, shaft, hasCommandThrust, hasProKicker, hasTiller, folderName: name }
+  return { 
+    hp, family, shaft, 
+    hasCommandThrust, hasProKicker, hasTiller, 
+    hasProXS, hasSeaPro, hasVerado,
+    folderName: name 
+  }
 }
 
 // Score how well a motor matches the parsed folder info
 function scoreMotorMatch(motor: any, parsed: ParsedFolderInfo): number {
   let score = 0
   const modelLower = (motor.model_display || '').toLowerCase()
+  const motorFamily = (motor.family || '').toLowerCase()
   
   // HP match (most important) - must be exact or very close for decimals
   if (parsed.hp !== null && motor.horsepower !== null) {
@@ -114,19 +132,7 @@ function scoreMotorMatch(motor: any, parsed: ParsedFolderInfo): number {
     } else if (hpDiff <= 2) {
       score += 30 // Close HP (e.g., 114 vs 115)
     }
-    // Remove the ±5 loose matching - it caused bad matches
-  }
-  
-  // Family match from database column
-  if (parsed.family && motor.family) {
-    const motorFamily = motor.family.toLowerCase().replace(/[\s-]/g, '')
-    const parsedFamily = parsed.family.toLowerCase().replace(/[\s-]/g, '')
-    
-    if (motorFamily === parsedFamily) {
-      score += 30
-    } else if (motorFamily.includes(parsedFamily) || parsedFamily.includes(motorFamily)) {
-      score += 15
-    }
+    // No loose matching - it caused bad matches
   }
   
   // Shaft match
@@ -137,46 +143,95 @@ function scoreMotorMatch(motor: any, parsed: ParsedFolderInfo): number {
     }
   }
   
-  // === SPECIAL FEATURE MATCHING via model_display ===
+  // === MOTOR LINE/VARIANT MATCHING ===
+  // These are mutually exclusive - a motor is either Pro XS, SeaPro, Verado, or base FourStroke
   
-  // Command Thrust (CT) matching - check model_display for "Command Thrust"
-  if (parsed.hasCommandThrust) {
-    if (modelLower.includes('command thrust')) {
-      score += 35 // Strong bonus for CT match
+  const isMotorProXS = motorFamily.includes('pro xs') || modelLower.includes('proxs')
+  const isMotorSeaPro = motorFamily.includes('seapro') || motorFamily.includes('sea pro')
+  const isMotorVerado = motorFamily.includes('verado')
+  
+  // Pro XS matching
+  if (parsed.hasProXS) {
+    if (isMotorProXS) {
+      score += 35 // Strong bonus for Pro XS match
     } else {
-      score -= 20 // Penalty if folder says CT but motor isn't CT
+      score -= 30 // Strong penalty - folder says ProXS but motor isn't
     }
   } else {
-    // If folder doesn't mention CT, slight penalty for CT motors
-    if (modelLower.includes('command thrust')) {
-      score -= 10
+    // Folder doesn't say ProXS - penalize Pro XS motors
+    if (isMotorProXS) {
+      score -= 25 // Plain "115" folder should NOT match Pro XS motors
     }
   }
   
-  // ProKicker matching - check model_display for "ProKicker"
-  if (parsed.hasProKicker) {
-    if (modelLower.includes('prokicker')) {
-      score += 40 // Very strong bonus - ProKicker is specific
+  // SeaPro matching
+  if (parsed.hasSeaPro) {
+    if (isMotorSeaPro) {
+      score += 35
     } else {
-      score -= 25 // Penalty if folder says ProKicker but motor isn't
+      score -= 30
     }
   } else {
-    // If folder doesn't mention ProKicker, penalty for ProKicker motors
-    if (modelLower.includes('prokicker')) {
-      score -= 15
+    if (isMotorSeaPro) {
+      score -= 25
+    }
+  }
+  
+  // Verado matching
+  if (parsed.hasVerado) {
+    if (isMotorVerado) {
+      score += 35
+    } else {
+      score -= 30
+    }
+  } else {
+    if (isMotorVerado) {
+      score -= 25
+    }
+  }
+  
+  // === SPECIAL FEATURE MATCHING via model_display ===
+  
+  // Command Thrust (CT) matching
+  const isMotorCT = modelLower.includes('command thrust')
+  if (parsed.hasCommandThrust) {
+    if (isMotorCT) {
+      score += 35 // Strong bonus for CT match
+    } else {
+      score -= 25 // Penalty if folder says CT but motor isn't CT
+    }
+  } else {
+    // Folder doesn't mention CT - penalize CT motors
+    if (isMotorCT) {
+      score -= 20 // Plain "115" should NOT match CT models
+    }
+  }
+  
+  // ProKicker matching
+  const isMotorProKicker = modelLower.includes('prokicker')
+  if (parsed.hasProKicker) {
+    if (isMotorProKicker) {
+      score += 40 // Very strong bonus - ProKicker is specific
+    } else {
+      score -= 30 // Penalty if folder says ProKicker but motor isn't
+    }
+  } else {
+    if (isMotorProKicker) {
+      score -= 25 // Plain folder should NOT match ProKicker models
     }
   }
   
   // Tiller matching
+  const isMotorTiller = modelLower.includes('tiller')
   if (parsed.hasTiller) {
-    if (modelLower.includes('tiller')) {
+    if (isMotorTiller) {
       score += 25
     } else {
-      score -= 15
+      score -= 20
     }
   } else {
-    if (modelLower.includes('tiller')) {
-      score -= 10
+    if (isMotorTiller) {
+      score -= 15
     }
   }
   
