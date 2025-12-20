@@ -1,8 +1,10 @@
 import React from 'react';
-import { X, Trash2, ArrowRight, Check } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { X, Trash2, ArrowRight, Check, Share2, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { toast } from 'sonner';
 import type { ComparisonMotor } from '@/hooks/useMotorComparison';
 
 interface ComparisonDrawerProps {
@@ -64,6 +66,8 @@ export function ComparisonDrawer({
   onClear,
   onSelectMotor 
 }: ComparisonDrawerProps) {
+  const navigate = useNavigate();
+
   // Find winner for each comparable field
   const getWinner = (field: ComparisonField): string | null => {
     if (!field.compare || motors.length < 2) return null;
@@ -80,6 +84,30 @@ export function ComparisonDrawer({
       const max = Math.max(...values.map(v => Number(v.value)));
       return values.find(v => Number(v.value) === max)?.id || null;
     }
+  };
+
+  const handleShare = async () => {
+    if (motors.length === 0) {
+      toast.error('Add motors to compare first');
+      return;
+    }
+    
+    const ids = motors.map(m => m.id).join(',');
+    const url = `${window.location.origin}/compare?motors=${ids}`;
+    
+    try {
+      await navigator.clipboard.writeText(url);
+      toast.success('Comparison link copied!');
+    } catch (err) {
+      toast.error('Failed to copy link');
+    }
+  };
+
+  const handleOpenFullComparison = () => {
+    if (motors.length === 0) return;
+    const ids = motors.map(m => m.id).join(',');
+    navigate(`/compare?motors=${ids}`);
+    onClose();
   };
 
   return (
@@ -107,6 +135,28 @@ export function ComparisonDrawer({
             <div className="sticky top-0 bg-white border-b border-gray-100 px-4 py-3 flex items-center justify-between">
               <h3 className="text-lg font-semibold">Compare Motors ({motors.length}/3)</h3>
               <div className="flex items-center gap-2">
+                {motors.length > 0 && (
+                  <>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      onClick={handleShare}
+                      className="gap-1.5"
+                    >
+                      <Share2 size={14} />
+                      Share
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      onClick={handleOpenFullComparison}
+                      className="gap-1.5"
+                    >
+                      <ExternalLink size={14} />
+                      Full View
+                    </Button>
+                  </>
+                )}
                 <Button 
                   variant="ghost" 
                   size="sm" 
