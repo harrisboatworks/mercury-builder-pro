@@ -353,15 +353,17 @@ export default function MotorCardPreview({
               {!imageLoaded && (
                 <div className="absolute inset-0 bg-gray-50 animate-shimmer z-10" />
               )}
-              <img 
-                src={imageUrl} 
-                alt={title} 
-                className={`h-48 md:h-64 w-full object-contain transition-all duration-700 ease-out group-hover:scale-[1.03] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-                loading="lazy"
-                decoding="async"
-                onLoad={onImageLoad}
-                style={{ transform: `scale(${imageScale})` }}
-              />
+              <div className="flex items-center justify-center h-48 md:h-64 max-h-[220px] md:max-h-[280px]">
+                <img 
+                  src={imageUrl} 
+                  alt={title} 
+                  className={`max-h-full max-w-full object-contain transition-all duration-700 ease-out group-hover:scale-[1.03] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                  loading="lazy"
+                  decoding="async"
+                  onLoad={onImageLoad}
+                  style={{ transform: `scale(${imageScale})` }}
+                />
+              </div>
               
               {/* Stock Badge - Top Left */}
               <div className="absolute top-4 left-4">
