@@ -341,8 +341,14 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   }, [initialMessage, isOpen, hasInitialized, isLoading, motorContext]);
   
   // Get rotating smart prompts based on motor context
+  // PRIORITY: motorContext from button click > activeMotor from quote state
   const activeMotor = state.previewMotor || state.motor;
   const motorPromptContext = useMemo(() => {
+    // PRIORITY 1: Motor context from "Ask Question" button click (explicit user action)
+    if (motorContext) {
+      return { hp: motorContext.hp, model: motorContext.model };
+    }
+    // PRIORITY 2: Active motor from quote/preview state
     if (activeMotor) {
       return { 
         hp: activeMotor.hp || 0, 
@@ -350,11 +356,8 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
         family: (activeMotor as any).family || ''
       };
     }
-    if (motorContext) {
-      return { hp: motorContext.hp, model: motorContext.model };
-    }
     return null;
-  }, [activeMotor, motorContext]);
+  }, [motorContext, activeMotor]);
 
   // Use rotating prompts hook - refreshes every 45 seconds when idle
   const { prompts: rotatingPrompts, isRotating: promptsRotating } = useRotatingPrompts({
@@ -372,11 +375,17 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const shouldShowMotorPrompts = currentMotorId && currentMotorId !== interactedMotorId;
 
   // Get current motor context label for banner
+  // PRIORITY: motorContext from button click > activeMotor from quote state
   const currentMotorLabel = useMemo(() => {
+    // PRIORITY 1: Motor context from "Ask Question" button click
+    if (motorContext) {
+      return motorContext.label;
+    }
+    // PRIORITY 2: Active motor from quote state
     const activeMotor = state.previewMotor || state.motor;
     if (!activeMotor) return null;
     return getMotorContextLabel(activeMotor.hp || 0, activeMotor.model);
-  }, [state.previewMotor, state.motor]);
+  }, [motorContext, state.previewMotor, state.motor]);
 
   // Show banner briefly when motor context changes, then auto-hide after 4 seconds
   const prevMotorIdRef = useRef<string | null>(null);
