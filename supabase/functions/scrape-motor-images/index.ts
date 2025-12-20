@@ -1,4 +1,5 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { isDetailShotByUrl, selectBestHeroImage, logImageValidation } from '../_shared/image-validation.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -297,9 +298,16 @@ async function pollForExtraction(jobId: string, apiKey: string, maxWaitMs = 6000
   throw new Error('Extraction timeout - exceeded 60 seconds');
 }
 
-// Validate if image URL matches expected motor (avoid wrong-family and wrong-control images)
+// Validate if image URL matches expected motor (avoid wrong-family, wrong-control, and detail shots)
 function validateImageMatch(imageUrl: string, targetHp: number, family?: string, modelDisplay?: string): boolean {
   const url = imageUrl.toLowerCase();
+
+  // 0) Check if this is a detail/close-up shot (not suitable for hero images)
+  const detailCheck = isDetailShotByUrl(url);
+  if (detailCheck.isDetailShot) {
+    console.log(`[Detail Shot Validation] Rejecting: ${detailCheck.reason} - ${imageUrl}`);
+    return false;
+  }
 
   // 1) Reject images that clearly contain a different HP number
   const hpPatterns = [
