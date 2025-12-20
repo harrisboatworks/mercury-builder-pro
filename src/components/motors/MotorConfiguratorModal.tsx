@@ -912,7 +912,12 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, in
               setMotorForDetails(null);
             }}
             title={motorForDetails.model}
-            img={motorForDetails.image}
+            img={motorForDetails.hero_image_url || motorForDetails.image_url || motorForDetails.image}
+            gallery={[
+              motorForDetails.hero_image_url,
+              motorForDetails.image_url,
+              motorForDetails.image
+            ].filter((url): url is string => !!url && url !== '/placeholder.svg' && !url.includes('speedboat-transparent'))}
             msrp={motorForDetails.msrp || motorForDetails.basePrice}
             price={motorForDetails.price}
             hp={motorForDetails.hp}

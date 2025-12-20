@@ -453,12 +453,48 @@ export default function MotorDetailsPremiumModal({
               
               {/* Scrollable Tab Content */}
               <div className="p-6 pt-4 pb-24 space-y-8">
-                  {/* OVERVIEW TAB */}
                   <TabsContent value="overview" className="space-y-8 mt-4">
                     {/* Enhanced Image Gallery - 40% larger */}
                     <div className="pt-4 pb-6 bg-gradient-to-b from-stone-50 to-white rounded-lg">
                       <MotorImageGallery 
-                        images={gallery.length > 0 ? gallery : (img ? [img] : [])} 
+                        images={(() => {
+                          // Build gallery from multiple sources
+                          const allImages: string[] = [];
+                          
+                          // Add passed gallery images first
+                          if (gallery.length > 0) {
+                            gallery.forEach(url => {
+                              if (url && !allImages.includes(url)) allImages.push(url);
+                            });
+                          }
+                          
+                          // Add motor's hero_image_url if available
+                          if (motor?.hero_image_url && !allImages.includes(motor.hero_image_url)) {
+                            allImages.unshift(motor.hero_image_url); // Put at start as it's the hero
+                          }
+                          
+                          // Add passed img prop
+                          if (img && !allImages.includes(img)) {
+                            allImages.push(img);
+                          }
+                          
+                          // Add motor's image_url as fallback
+                          if (motor?.image_url && !allImages.includes(motor.image_url)) {
+                            allImages.push(motor.image_url);
+                          }
+                          
+                          // Add motor's image as fallback
+                          if (motor?.image && !allImages.includes(motor.image)) {
+                            allImages.push(motor.image);
+                          }
+                          
+                          // Filter out placeholders
+                          return allImages.filter(url => 
+                            url && 
+                            !url.includes('placeholder') && 
+                            !url.includes('speedboat-transparent')
+                          );
+                        })()}
                         motorTitle={title}
                         enhanced={true}
                       />
