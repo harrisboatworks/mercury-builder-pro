@@ -34,23 +34,48 @@ interface FolderResult {
   errors: string[]
 }
 
-// Parse folder name to extract HP, family, and shaft
-function parseFolderName(folderName: string): { hp: number | null; family: string | null; shaft: string | null } {
+// Parsed folder info with feature flags
+interface ParsedFolderInfo {
+  hp: number | null
+  family: string | null
+  shaft: string | null
+  hasCommandThrust: boolean
+  hasProKicker: boolean
+  hasTiller: boolean
+  folderName: string
+}
+
+// Parse folder name to extract HP, family, shaft, and special features
+function parseFolderName(folderName: string): ParsedFolderInfo {
   const name = folderName.trim()
+  const nameLower = name.toLowerCase()
   
-  // Extract HP - look for patterns like "150HP", "150 HP", "150hp", "200"
-  const hpMatch = name.match(/(\d+)\s*(?:hp|HP)?/i)
-  const hp = hpMatch ? parseInt(hpMatch[1], 10) : null
+  // Extract HP - look for patterns like "150HP", "150 HP", "9.9hp", "200"
+  // Updated regex to handle decimal HP values like 9.9, 4.5, etc.
+  const hpMatch = name.match(/(\d+(?:\.\d+)?)\s*(?:hp|HP)?/i)
+  const hp = hpMatch ? parseFloat(hpMatch[1]) : null
   
   // Extract shaft - L, XL, XXL, CXL at the end or standalone
   const shaftMatch = name.match(/\b(XXL|CXL|XL|L)\b/i)
   const shaft = shaftMatch ? shaftMatch[1].toUpperCase() : null
   
-  // Extract family - common Mercury families
-  let family: string | null = null
-  const nameLower = name.toLowerCase()
+  // Detect special features from folder name
+  const hasCommandThrust = nameLower.includes('ct') || 
+    nameLower.includes('command thrust') || 
+    nameLower.includes('commandthrust')
   
-  if (nameLower.includes('pro xs') || nameLower.includes('proxs')) {
+  const hasProKicker = nameLower.includes('prokicker') || 
+    nameLower.includes('pro kicker') || 
+    nameLower.includes('pro-kicker') ||
+    nameLower.includes('kicker')
+  
+  const hasTiller = nameLower.includes('tiller')
+  
+  // Extract family - common Mercury families
+  // Note: ProKicker is a feature, not a family - it goes with FourStroke
+  let family: string | null = null
+  
+  if (nameLower.includes('pro xs') || nameLower.includes('proxs') || nameLower.includes('pro-xs')) {
     family = 'Pro XS'
   } else if (nameLower.includes('sea pro') || nameLower.includes('seapro')) {
     family = 'SeaPro'
@@ -58,8 +83,6 @@ function parseFolderName(folderName: string): { hp: number | null; family: strin
     family = 'Verado'
   } else if (nameLower.includes('fourstroke') || nameLower.includes('four stroke') || nameLower.includes('4-stroke')) {
     family = 'FourStroke'
-  } else if (nameLower.includes('pro kicker') || nameLower.includes('prokicker')) {
-    family = 'Pro Kicker'
   } else if (nameLower.includes('jet')) {
     family = 'Jet'
   } else if (nameLower.includes('racing')) {
@@ -67,24 +90,34 @@ function parseFolderName(folderName: string): { hp: number | null; family: strin
   } else if (nameLower.includes('avator') || nameLower.includes('electric')) {
     family = 'Avator'
   }
+  // If folder has ProKicker but no family, it's likely a FourStroke
+  else if (hasProKicker) {
+    family = 'FourStroke'
+  }
   
-  return { hp, family, shaft }
+  return { hp, family, shaft, hasCommandThrust, hasProKicker, hasTiller, folderName: name }
 }
 
 // Score how well a motor matches the parsed folder info
-function scoreMotorMatch(motor: any, parsed: { hp: number | null; family: string | null; shaft: string | null }): number {
+function scoreMotorMatch(motor: any, parsed: ParsedFolderInfo): number {
   let score = 0
+  const modelLower = (motor.model_display || '').toLowerCase()
   
-  // HP match (most important)
-  if (parsed.hp && motor.horsepower) {
-    if (motor.horsepower === parsed.hp) {
-      score += 50
-    } else if (Math.abs(motor.horsepower - parsed.hp) <= 5) {
-      score += 20 // Close HP
+  // HP match (most important) - must be exact or very close for decimals
+  if (parsed.hp !== null && motor.horsepower !== null) {
+    const hpDiff = Math.abs(motor.horsepower - parsed.hp)
+    
+    if (hpDiff === 0) {
+      score += 50 // Exact HP match
+    } else if (hpDiff <= 0.5) {
+      score += 45 // Very close (handles 9.9 vs 10 edge cases)
+    } else if (hpDiff <= 2) {
+      score += 30 // Close HP (e.g., 114 vs 115)
     }
+    // Remove the ±5 loose matching - it caused bad matches
   }
   
-  // Family match
+  // Family match from database column
   if (parsed.family && motor.family) {
     const motorFamily = motor.family.toLowerCase().replace(/[\s-]/g, '')
     const parsedFamily = parsed.family.toLowerCase().replace(/[\s-]/g, '')
@@ -104,10 +137,46 @@ function scoreMotorMatch(motor: any, parsed: { hp: number | null; family: string
     }
   }
   
-  // Bonus for model_display containing the HP
-  if (parsed.hp && motor.model_display) {
-    if (motor.model_display.includes(`${parsed.hp}HP`) || motor.model_display.includes(`${parsed.hp} HP`)) {
-      score += 10
+  // === SPECIAL FEATURE MATCHING via model_display ===
+  
+  // Command Thrust (CT) matching - check model_display for "Command Thrust"
+  if (parsed.hasCommandThrust) {
+    if (modelLower.includes('command thrust')) {
+      score += 35 // Strong bonus for CT match
+    } else {
+      score -= 20 // Penalty if folder says CT but motor isn't CT
+    }
+  } else {
+    // If folder doesn't mention CT, slight penalty for CT motors
+    if (modelLower.includes('command thrust')) {
+      score -= 10
+    }
+  }
+  
+  // ProKicker matching - check model_display for "ProKicker"
+  if (parsed.hasProKicker) {
+    if (modelLower.includes('prokicker')) {
+      score += 40 // Very strong bonus - ProKicker is specific
+    } else {
+      score -= 25 // Penalty if folder says ProKicker but motor isn't
+    }
+  } else {
+    // If folder doesn't mention ProKicker, penalty for ProKicker motors
+    if (modelLower.includes('prokicker')) {
+      score -= 15
+    }
+  }
+  
+  // Tiller matching
+  if (parsed.hasTiller) {
+    if (modelLower.includes('tiller')) {
+      score += 25
+    } else {
+      score -= 15
+    }
+  } else {
+    if (modelLower.includes('tiller')) {
+      score -= 10
     }
   }
   
@@ -416,17 +485,32 @@ Deno.serve(async (req) => {
         }
 
         // Score all motors and find best match
+        // Minimum score threshold of 40 to avoid weak matches
+        const MIN_MATCH_SCORE = 40
+        
         const scoredMotors = allMotors
           ?.map(motor => ({
             ...motor,
             score: scoreMotorMatch(motor, parsed)
           }))
-          .filter(m => m.score > 0)
+          .filter(m => m.score >= MIN_MATCH_SCORE)
           .sort((a, b) => b.score - a.score) || []
+        
+        // Log rejected weak matches for debugging
+        const weakMatches = allMotors
+          ?.map(motor => ({ model_display: motor.model_display, score: scoreMotorMatch(motor, parsed) }))
+          .filter(m => m.score > 0 && m.score < MIN_MATCH_SCORE)
+          .sort((a, b) => b.score - a.score)
+          .slice(0, 3) || []
+        
+        if (weakMatches.length > 0) {
+          console.log(`Rejected ${weakMatches.length} weak matches (score < ${MIN_MATCH_SCORE}):`, 
+            weakMatches.map(m => `${m.model_display}(${m.score})`).join(', '))
+        }
 
         if (scoredMotors.length === 0) {
-          console.log('No matching motors found')
-          folderResult.errors.push('No matching motor found in database')
+          console.log('No matching motors found with sufficient score')
+          folderResult.errors.push(`No motor matched with score >= ${MIN_MATCH_SCORE}. Check folder name format.`)
           results.push(folderResult)
           continue
         }
