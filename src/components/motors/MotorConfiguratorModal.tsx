@@ -199,12 +199,7 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, in
     }
   }, [open, filteredVariants, dispatch]);
   
-  // Clear preview when modal closes
-  useEffect(() => {
-    if (!open) {
-      dispatch({ type: 'SET_PREVIEW_MOTOR', payload: null });
-    }
-  }, [open, dispatch]);
+  // Don't clear preview when modal closes - motor stays in bar until user picks another
   
   // Also set preview when modal first opens with group
   useEffect(() => {
@@ -482,9 +477,9 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, in
   };
   
   const handleClose = useCallback(() => {
-    dispatch({ type: 'SET_PREVIEW_MOTOR', payload: null });
+    // Don't clear preview - motor stays in bar until user picks another
     onClose();
-  }, [dispatch, onClose]);
+  }, [onClose]);
   
   if (!group) return null;
   

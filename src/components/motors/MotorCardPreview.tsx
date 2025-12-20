@@ -98,7 +98,8 @@ export default function MotorCardPreview({
     setImageLoaded(true);
   };
 
-  // Dispatch preview motor when modal opens/closes + track recently viewed
+  // Dispatch preview motor when modal opens + track recently viewed
+  // Don't clear on close - motor stays in bar until user picks another
   useEffect(() => {
     if (showDetailsSheet && motor) {
       dispatch({ type: 'SET_PREVIEW_MOTOR', payload: motor as any });
@@ -110,8 +111,6 @@ export default function MotorCardPreview({
         price: motor.price,
         image: motor.image
       });
-    } else if (!showDetailsSheet) {
-      dispatch({ type: 'SET_PREVIEW_MOTOR', payload: null });
     }
   }, [showDetailsSheet, motor, dispatch, addToRecentlyViewed]);
   
