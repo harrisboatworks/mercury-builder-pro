@@ -119,7 +119,7 @@ export function ComparisonDrawer({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 z-50"
+            className="fixed inset-0 bg-black/50 z-[90]"
             onClick={onClose}
           />
           
@@ -129,7 +129,7 @@ export function ComparisonDrawer({
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-2xl shadow-2xl max-h-[85vh] overflow-hidden"
+            className="fixed bottom-0 left-0 right-0 z-[90] bg-white rounded-t-2xl shadow-2xl max-h-[85vh] overflow-hidden"
           >
             {/* Header */}
             <div className="sticky top-0 bg-white border-b border-gray-100 px-4 py-3 flex items-center justify-between">
