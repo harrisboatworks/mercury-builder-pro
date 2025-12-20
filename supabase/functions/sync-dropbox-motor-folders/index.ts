@@ -72,7 +72,10 @@ function parseFolderName(folderName: string): ParsedFolderInfo {
     nameLower.includes('pro-kicker') ||
     nameLower.includes('kicker')
   
-  const hasTiller = nameLower.includes('tiller')
+  // Detect tiller - either explicit "tiller" or "H" in rigging codes like ELHPT, ELH, MH, MLH
+  // The H before PT or at the end of codes like MH, ELH indicates tiller (handle) control
+  const tillerRiggingPattern = /\b(?:E?L?H(?:PT)?|M(?:L|XL)?H)\b/i
+  const hasTiller = nameLower.includes('tiller') || tillerRiggingPattern.test(name)
   
   // Motor line/variant flags - these are mutually exclusive product lines
   const hasProXS = nameLower.includes('pro xs') || 
@@ -221,17 +224,19 @@ function scoreMotorMatch(motor: any, parsed: ParsedFolderInfo): number {
     }
   }
   
-  // Tiller matching
-  const isMotorTiller = modelLower.includes('tiller')
+  // Tiller matching - check for "tiller" text OR "H" in rigging codes (ELHPT, ELH, MH, etc.)
+  // The H before PT or at end of codes indicates tiller/handle control
+  const tillerRiggingPattern = /\b(?:E?L?H(?:PT)?|M(?:L|XL)?H)\b/i
+  const isMotorTiller = modelLower.includes('tiller') || tillerRiggingPattern.test(motor.model_display || '')
   if (parsed.hasTiller) {
     if (isMotorTiller) {
-      score += 25
+      score += 30 // Bonus for matching tiller
     } else {
-      score -= 20
+      score -= 25 // Strong penalty - folder has H/tiller but motor doesn't
     }
   } else {
     if (isMotorTiller) {
-      score -= 15
+      score -= 20 // Folder doesn't have tiller indicator, penalize tiller motors
     }
   }
   
