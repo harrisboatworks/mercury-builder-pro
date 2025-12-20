@@ -17,6 +17,7 @@ import { GlobalStickyQuoteBar } from "@/components/quote/GlobalStickyQuoteBar";
 import { RouteLoader } from "@/components/ui/RouteLoader";
 import { GlobalAIChat } from "@/components/chat/GlobalAIChat";
 import { UnifiedMobileBar } from "@/components/quote-builder/UnifiedMobileBar";
+import { ComparisonDesktopButton } from "@/components/motors/ComparisonDesktopButton";
 import { GoogleRatingBadge } from "@/components/business/GoogleRatingBadge";
 
 // Note: Removed framer-motion AnimatePresence (~120KB) to reduce initial bundle
@@ -410,6 +411,7 @@ const App = () => (
                 <AnimatedRoutes />
                 <GlobalStickyQuoteBar />
                 <UnifiedMobileBar />
+                <ComparisonDesktopButton />
                 <Canonical />
 
                 <footer className="mt-12 border-t border-border bg-muted/30">
