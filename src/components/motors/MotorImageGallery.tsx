@@ -104,20 +104,25 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
     setImageLoaded(true);
   };
 
-  // Fallback to main image if no gallery images
-  if (!images || images.length === 0) {
-    return null;
-  }
+  // Placeholder image for when no valid images exist - use a simple SVG data URI
+  const PLACEHOLDER_IMAGE = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHJlY3QgZmlsbD0iI2YxZjVmOSIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiLz48dGV4dCB4PSI1MCUiIHk9IjQ1JSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzY0NzQ4YiIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIxNiI+Tm8gSW1hZ2U8L3RleHQ+PHRleHQgeD0iNTAlIiB5PSI1OCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5NGE0YjgiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWkiIGZvbnQtc2l6ZT0iMTIiPkF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=';
+  
+  // Fallback to placeholder if no gallery images
+  const effectiveImages = (!images || images.length === 0) ? [PLACEHOLDER_IMAGE] : images;
+  const isPlaceholder = effectiveImages[0] === PLACEHOLDER_IMAGE;
 
   // Filter out images that failed to load and ensure we have valid images
-  const validImages = images.filter((img, index) => img && typeof img === 'string' && !imageLoadErrors.has(index));
+  const validImages = effectiveImages.filter((img, index) => img && typeof img === 'string' && !imageLoadErrors.has(index));
+  
+  // If all images failed, show placeholder
+  const displayImages = validImages.length > 0 ? validImages : [PLACEHOLDER_IMAGE];
 
   const handleImageError = (index: number) => {
-    console.warn(`Image failed to load at index ${index}:`, images[index]);
+    console.warn(`Image failed to load at index ${index}:`, effectiveImages[index]);
     setImageLoadErrors(prev => new Set([...prev, index]));
     // If current selected image fails, move to next valid image
     if (index === selectedIndex) {
-      const nextValidIndex = images.findIndex((img, i) => 
+      const nextValidIndex = effectiveImages.findIndex((img, i) => 
         i !== index && img && typeof img === 'string' && !imageLoadErrors.has(i)
       );
       if (nextValidIndex >= 0) {
@@ -127,11 +132,11 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   };
 
   const handlePrevious = () => {
-    setSelectedIndex((prev) => (prev === 0 ? validImages.length - 1 : prev - 1));
+    setSelectedIndex((prev) => (prev === 0 ? displayImages.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setSelectedIndex((prev) => (prev === validImages.length - 1 ? 0 : prev + 1));
+    setSelectedIndex((prev) => (prev === displayImages.length - 1 ? 0 : prev + 1));
   };
 
   const handleThumbnailClick = (index: number) => {
@@ -139,9 +144,12 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   };
 
   const handleMainImageClick = () => {
+    // Don't open lightbox for placeholder
+    if (displayImages[0] === PLACEHOLDER_IMAGE) return;
+    
     setLightboxImageLoading(true);
     // Pre-enhance images for lightbox (get full-size versions)
-    const enhanced = validImages.map(url => enhanceImageUrl(url));
+    const enhanced = displayImages.map(url => enhanceImageUrl(url));
     setLightboxEnhancedUrls(enhanced);
     setShowLightbox(true);
     setLightboxImageLoading(false);
@@ -172,10 +180,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [showLightbox]);
 
-  // Early return if no valid images
-  if (validImages.length === 0) {
-    return null;
-  }
+  // No early return - we always show placeholder as fallback
 
   return (
     <div className="space-y-3">
@@ -199,7 +204,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
           style={{ touchAction: 'pan-y' }}
         >
           <img
-            src={validImages[selectedIndex]}
+            src={displayImages[selectedIndex]}
             alt={`${motorTitle} - Image ${selectedIndex + 1}`}
             className={`max-h-full max-w-full object-contain transition-all duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             onLoad={onMainImageLoad}
@@ -211,29 +216,31 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
           />
         </div>
         
-        {/* Click to expand hint */}
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200">
-          <div className="bg-white/90 text-slate-700 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-            {lightboxImageLoading ? (
-              <>
-                <Loader2 className="h-3 w-3 animate-spin" />
-                Loading...
-              </>
-            ) : (
-              'Click to expand'
-            )}
+        {/* Click to expand hint - only show for non-placeholder */}
+        {displayImages[0] !== PLACEHOLDER_IMAGE && (
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200">
+            <div className="bg-white/90 text-slate-700 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+              {lightboxImageLoading ? (
+                <>
+                  <Loader2 className="h-3 w-3 animate-spin" />
+                  Loading...
+                </>
+              ) : (
+                'Click to expand'
+              )}
+            </div>
           </div>
-        </div>
+        )}
         
         {/* Image quality indicator */}
-        {isThumbnailUrl(validImages[selectedIndex]) && (
+        {isThumbnailUrl(displayImages[selectedIndex]) && (
           <div className="absolute top-2 left-2 bg-orange-500/90 text-white text-xs px-2 py-1 rounded-full">
             Thumbnail
           </div>
         )}
         
         {/* Navigation arrows for main image */}
-        {validImages.length > 1 && (
+        {displayImages.length > 1 && displayImages[0] !== PLACEHOLDER_IMAGE && (
           <>
             <Button
               variant="ghost"
@@ -261,9 +268,9 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
         )}
         
         {/* Image counter */}
-        {validImages.length > 1 && (
+        {displayImages.length > 1 && displayImages[0] !== PLACEHOLDER_IMAGE && (
           <div className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-            {selectedIndex + 1} / {validImages.length}
+            {selectedIndex + 1} / {displayImages.length}
           </div>
         )}
       </div>
@@ -283,20 +290,20 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
             </Button>
             
             <img
-              src={lightboxEnhancedUrls[selectedIndex] || validImages[selectedIndex]}
+              src={lightboxEnhancedUrls[selectedIndex] || displayImages[selectedIndex]}
               alt={`${motorTitle} - Full size`}
               className="max-w-[85vw] max-h-[75vh] md:max-w-[70vw] md:max-h-[70vh] object-contain"
               onError={() => handleImageError(selectedIndex)}
             />
             
             {/* Image counter in lightbox */}
-            {validImages.length > 1 && (
+            {displayImages.length > 1 && (
               <div className="absolute top-4 left-4 bg-black/60 text-white text-sm px-3 py-1 rounded-full">
-                {selectedIndex + 1} of {validImages.length}
+                {selectedIndex + 1} of {displayImages.length}
               </div>
             )}
             
-            {validImages.length > 1 && (
+            {displayImages.length > 1 && (
               <>
                 <Button
                   variant="ghost"
