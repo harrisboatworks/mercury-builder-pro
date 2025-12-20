@@ -505,28 +505,48 @@ export default function MotorDetailsPremiumModal({
                         <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-stone-100 text-gray-700">
                           {hpValue} HP
                         </span>
-                        {decoded.map((feature, idx) => (
-                          <span 
-                            key={`${feature.code}-${idx}`}
-                            className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs bg-stone-100 text-gray-700"
-                          >
-                            <span className="font-mono font-semibold text-gray-600">{feature.code}</span>
-                            <span className="text-gray-500">·</span>
-                            <span>{feature.meaning
-                              .replace('Long Shaft (20")', 'Long 20"')
-                              .replace('Short Shaft (15")', 'Short 15"')
-                              .replace('Extra Long Shaft (25")', 'XL 25"')
-                              .replace('Extra Extra Long Shaft (30")', 'XXL 30"')
-                              .replace('Power Trim & Tilt', 'Power Trim')
-                              .replace('Tiller Handle', 'Tiller')
-                              .replace('Electric Start', 'Electric')
-                              .replace('Manual Start', 'Manual')
-                              .replace('Remote Control', 'Remote')
-                              .replace('Electronic Fuel Injection', 'EFI')
-                              .replace('Digital Throttle & Shift', 'Digital')
-                            }</span>
-                          </span>
-                        ))}
+                        {(() => {
+                          // Define logical order: Start type → Shaft → Trim/Tilt → Engine family → Control → Other
+                          const FEATURE_ORDER = [
+                            'E', 'M',              // Start type
+                            'S', 'L', 'XL', 'XX',  // Shaft length
+                            'PT', 'T', 'GA',       // Trim/Tilt
+                            'FourStroke', 'SeaPro', 'ProKicker', 'Jet', 'BigFoot', 'PXS',  // Engine family
+                            'RC', 'H',             // Control type
+                            'CT',                  // Command Thrust
+                            'EFI', 'DTS'           // Other features
+                          ];
+                          const sortedDecoded = [...decoded].sort((a, b) => {
+                            const indexA = FEATURE_ORDER.indexOf(a.code);
+                            const indexB = FEATURE_ORDER.indexOf(b.code);
+                            if (indexA === -1 && indexB === -1) return 0;
+                            if (indexA === -1) return 1;
+                            if (indexB === -1) return -1;
+                            return indexA - indexB;
+                          });
+                          return sortedDecoded.map((feature, idx) => (
+                            <span 
+                              key={`${feature.code}-${idx}`}
+                              className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs bg-stone-100 text-gray-700"
+                            >
+                              <span className="font-mono font-semibold text-gray-600">{feature.code}</span>
+                              <span className="text-gray-500">·</span>
+                              <span>{feature.meaning
+                                .replace('Long Shaft (20")', 'Long 20"')
+                                .replace('Short Shaft (15")', 'Short 15"')
+                                .replace('Extra Long Shaft (25")', 'XL 25"')
+                                .replace('Extra Extra Long Shaft (30")', 'XXL 30"')
+                                .replace('Power Trim & Tilt', 'Power Trim')
+                                .replace('Tiller Handle', 'Tiller')
+                                .replace('Electric Start', 'Electric')
+                                .replace('Manual Start', 'Manual')
+                                .replace('Remote Control', 'Remote')
+                                .replace('Electronic Fuel Injection', 'EFI')
+                                .replace('Digital Throttle & Shift', 'Digital')
+                              }</span>
+                            </span>
+                          ));
+                        })()}
                       </div>
                     )}
                     
