@@ -293,35 +293,27 @@ export function ComparisonDrawer({
                 </button>
               </div>
               
-              {/* Row 2: Action buttons - horizontal row */}
+              {/* Row 2: Action buttons - horizontal row with visible labels */}
               {motors.length > 0 && (
                 <div className="flex flex-row items-center gap-2 mt-3 pt-3 border-t border-gray-100">
                   <Button 
                     variant="outline" 
                     size="sm" 
                     onClick={handleShare}
-                    className="h-8 gap-1 text-xs"
+                    className="h-8 gap-1.5 text-xs px-3"
                   >
                     <Share2 size={14} />
-                    <span className="hidden sm:inline">Share</span>
+                    <span>Share</span>
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    onClick={handleOpenFullComparison}
-                    className="h-8 gap-1 text-xs"
-                  >
-                    <ExternalLink size={14} />
-                    <span className="hidden sm:inline">Full View</span>
-                  </Button>
+                  <div className="flex-1" />
                   <Button 
                     variant="ghost" 
                     size="sm" 
                     onClick={onClear}
-                    className="h-8 text-xs text-gray-500 hover:text-red-500 ml-auto"
+                    className="h-8 gap-1.5 text-xs text-muted-foreground hover:text-destructive px-3"
                   >
                     <Trash2 size={14} />
-                    <span className="hidden sm:inline ml-1">Clear</span>
+                    <span>Clear</span>
                   </Button>
                 </div>
               )}
@@ -331,7 +323,7 @@ export function ComparisonDrawer({
             <div 
               ref={scrollContainerRef}
               onScroll={handleScroll}
-              className="relative overflow-x-auto overflow-y-auto max-h-[calc(85vh-120px)]"
+              className="relative overflow-x-auto overflow-y-auto max-h-[calc(85vh-180px)]"
             >
               {/* Swipe hint overlay */}
               <AnimatePresence>
@@ -438,6 +430,20 @@ export function ComparisonDrawer({
                 </table>
               )}
             </div>
+            
+            {/* Floating Full Compare Button - prominent on mobile */}
+            {motors.length >= 2 && (
+              <div className="sticky bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-white via-white to-white/80 border-t border-gray-100">
+                <Button
+                  onClick={handleOpenFullComparison}
+                  className="w-full h-12 gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold shadow-lg"
+                >
+                  <ExternalLink size={18} />
+                  Full Comparison View
+                  <ChevronRight size={18} />
+                </Button>
+              </div>
+            )}
           </motion.div>
         </>
       )}
