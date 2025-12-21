@@ -21,43 +21,161 @@ export default function BlogArticle() {
 
   const relatedArticles = getRelatedArticles(article.slug, 3);
 
+  // Process inline markdown formatting (bold, italic, links, code)
+  const processInlineFormatting = (text: string): React.ReactNode[] => {
+    const parts: React.ReactNode[] = [];
+    let remaining = text;
+    let keyIndex = 0;
+
+    while (remaining.length > 0) {
+      // Find the earliest match
+      const patterns = [
+        { regex: /\*\*(.+?)\*\*/, type: 'bold' },
+        { regex: /\*([^*]+)\*/, type: 'italic' },
+        { regex: /_([^_]+)_/, type: 'italic' },
+        { regex: /`([^`]+)`/, type: 'code' },
+        { regex: /\[([^\]]+)\]\(([^)]+)\)/, type: 'link' },
+      ];
+
+      let earliestMatch: { index: number; match: RegExpMatchArray; type: string } | null = null;
+
+      for (const pattern of patterns) {
+        const match = remaining.match(pattern.regex);
+        if (match && match.index !== undefined) {
+          if (!earliestMatch || match.index < earliestMatch.index) {
+            earliestMatch = { index: match.index, match, type: pattern.type };
+          }
+        }
+      }
+
+      if (earliestMatch) {
+        // Add text before match
+        if (earliestMatch.index > 0) {
+          parts.push(remaining.slice(0, earliestMatch.index));
+        }
+
+        const { match, type } = earliestMatch;
+
+        switch (type) {
+          case 'bold':
+            parts.push(<strong key={keyIndex++} className="font-semibold text-foreground">{match[1]}</strong>);
+            break;
+          case 'italic':
+            parts.push(<em key={keyIndex++} className="italic">{match[1]}</em>);
+            break;
+          case 'code':
+            parts.push(<code key={keyIndex++} className="px-1.5 py-0.5 bg-muted rounded text-sm font-mono">{match[1]}</code>);
+            break;
+          case 'link':
+            const isInternal = match[2].startsWith('/') || match[2].includes('harrisboatworks');
+            if (isInternal) {
+              parts.push(
+                <Link key={keyIndex++} to={match[2].replace(/https?:\/\/[^/]+/, '')} className="text-primary hover:underline">
+                  {match[1]}
+                </Link>
+              );
+            } else {
+              parts.push(
+                <a key={keyIndex++} href={match[2]} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                  {match[1]}
+                </a>
+              );
+            }
+            break;
+        }
+
+        remaining = remaining.slice(earliestMatch.index + match[0].length);
+      } else {
+        // No more matches, add remaining text
+        parts.push(remaining);
+        break;
+      }
+    }
+
+    return parts;
+  };
+
   // Convert markdown-style content to HTML
   const renderContent = (content: string) => {
+    let inCodeBlock = false;
+    let codeBlockContent: string[] = [];
+    let codeBlockLang = '';
+
     return content
       .split('\n')
       .map((line, index) => {
+        // Code block handling
+        if (line.startsWith('```')) {
+          if (!inCodeBlock) {
+            inCodeBlock = true;
+            codeBlockLang = line.slice(3).trim();
+            codeBlockContent = [];
+            return null;
+          } else {
+            inCodeBlock = false;
+            const code = codeBlockContent.join('\n');
+            return (
+              <pre key={index} className="bg-muted/50 border border-border rounded-lg p-4 my-4 overflow-x-auto">
+                <code className="text-sm font-mono text-foreground">{code}</code>
+              </pre>
+            );
+          }
+        }
+
+        if (inCodeBlock) {
+          codeBlockContent.push(line);
+          return null;
+        }
+
+        // Markdown images ![alt](url)
+        if (line.match(/^!\[.*?\]\(.*?\)$/)) {
+          const imageMatch = line.match(/!\[(.*?)\]\((.*?)\)/);
+          if (imageMatch) {
+            return (
+              <img 
+                key={index}
+                src={imageMatch[2]}
+                alt={imageMatch[1]}
+                className="w-full rounded-lg my-6"
+              />
+            );
+          }
+        }
+
         // Headers
         if (line.startsWith('## ')) {
-          return <h2 key={index} className="text-2xl font-semibold text-foreground mt-8 mb-4">{line.slice(3)}</h2>;
+          return <h2 key={index} className="text-2xl font-semibold text-foreground mt-8 mb-4">{processInlineFormatting(line.slice(3))}</h2>;
         }
         if (line.startsWith('### ')) {
-          return <h3 key={index} className="text-xl font-medium text-foreground mt-6 mb-3">{line.slice(4)}</h3>;
+          return <h3 key={index} className="text-xl font-medium text-foreground mt-6 mb-3">{processInlineFormatting(line.slice(4))}</h3>;
         }
-        // Bold text lines
+        // Bold text lines (standalone)
         if (line.startsWith('**') && line.endsWith('**:')) {
           return <p key={index} className="font-semibold text-foreground mt-4 mb-2">{line.slice(2, -3)}:</p>;
         }
         // List items
         if (line.startsWith('- ')) {
-          return <li key={index} className="ml-6 text-muted-foreground mb-1">{line.slice(2)}</li>;
+          return <li key={index} className="ml-6 text-muted-foreground mb-1">{processInlineFormatting(line.slice(2))}</li>;
         }
         if (line.match(/^\d+\. /)) {
-          return <li key={index} className="ml-6 text-muted-foreground mb-1 list-decimal">{line.slice(3)}</li>;
+          const numMatch = line.match(/^(\d+)\. /);
+          const numLen = numMatch ? numMatch[0].length : 3;
+          return <li key={index} className="ml-6 text-muted-foreground mb-1 list-decimal">{processInlineFormatting(line.slice(numLen))}</li>;
         }
         // Emoji indicators
         if (line.startsWith('❌')) {
-          return <p key={index} className="text-destructive ml-4 mb-1">{line}</p>;
+          return <p key={index} className="text-destructive ml-4 mb-1">{processInlineFormatting(line)}</p>;
         }
         // Tables (simplified)
         if (line.startsWith('|')) {
-          return null; // Skip tables for now
+          return null;
         }
         // Empty lines
         if (line.trim() === '') {
           return <br key={index} />;
         }
-        // Regular paragraphs
-        return <p key={index} className="text-muted-foreground mb-3 leading-relaxed">{line}</p>;
+        // Regular paragraphs with inline formatting
+        return <p key={index} className="text-muted-foreground mb-3 leading-relaxed">{processInlineFormatting(line)}</p>;
       });
   };
 
