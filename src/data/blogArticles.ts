@@ -2504,7 +2504,7 @@ We support fishing guides throughout the Kawarthas with SeaPro motors. They appr
     slug: 'portable-outboard-mercury-guide-2-20hp',
     title: 'Mercury Portable Outboards (2.5-20HP): Complete Buyer\'s Guide',
     description: 'Choose the right Mercury portable outboard for your tender, dinghy, or small boat. Compare 2.5HP to 20HP options for inflatable and small craft.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/Mercury_Portable_Outboards.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-27',
     dateModified: '2026-04-27',
