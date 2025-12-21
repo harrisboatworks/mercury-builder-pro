@@ -42,7 +42,7 @@ export const blogArticles: BlogArticle[] = [
     slug: 'how-to-choose-right-horsepower-boat',
     title: 'How to Choose the Right Horsepower for Your Boat',
     description: 'A complete guide to selecting the perfect HP outboard motor for your boat size, type, and intended use. Learn from 60 years of Mercury dealer expertise.',
-    image: '/lovable-uploads/How_to_Choose_HP.png',
+    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
     author: 'Harris Boat Works',
     datePublished: '2024-06-15',
     dateModified: '2024-12-01',
