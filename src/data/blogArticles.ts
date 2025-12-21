@@ -130,6 +130,8 @@ At Harris Boat Works, we've helped Ontario boaters choose the right motor for 60
 
 Proper maintenance is the key to long engine life and reliable performance. Here's a seasonal guide to keeping your Mercury running like new.
 
+![Mercury Marine Seasonal Performance and Maintenance Guide](/images/blog/mercury-seasonal-maintenance-guide.png)
+
 ### Spring Startup Checklist
 
 Before your first trip:
