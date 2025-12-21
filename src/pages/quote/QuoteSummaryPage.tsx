@@ -341,6 +341,21 @@ export default function QuoteSummaryPage() {
     }
   }, [isManualTiller, state.installConfig?.recommendedPackage, isMounted]);
 
+  // Sync selected package to context for UnifiedMobileBar
+  useEffect(() => {
+    const selectedPkg = packages.find(p => p.id === selectedPackage);
+    if (selectedPkg) {
+      dispatch({ 
+        type: 'SET_SELECTED_PACKAGE', 
+        payload: { 
+          id: selectedPkg.id, 
+          label: selectedPkg.label, 
+          priceBeforeTax: selectedPkg.priceBeforeTax 
+        } 
+      });
+    }
+  }, [selectedPackage, packages, dispatch]);
+
   // Helper function for controls description
   const getControlsDescription = (): string => {
     const controlsOption = state.boatInfo?.controlsOption;
