@@ -1,8 +1,9 @@
 "use client";
+import { motion, AnimatePresence } from 'framer-motion';
 import { money } from "@/lib/money";
 import CoverageComparisonTooltip from "@/components/quote-builder/CoverageComparisonTooltip";
 import { Button } from "@/components/ui/button";
-import { Download, CreditCard } from "lucide-react";
+import { Download, CreditCard, ArrowUp, Sparkles } from "lucide-react";
 
 type StickySummaryProps = {
   packageLabel: string;
@@ -19,6 +20,12 @@ type StickySummaryProps = {
   onSaveForLater?: () => void;
   onApplyForFinancing?: () => void;
   isGeneratingPDF?: boolean;
+  // Upgrade prompt props
+  showUpgradePrompt?: boolean;
+  upgradeToLabel?: string;
+  upgradeCostDelta?: number; // Monthly difference
+  upgradeCoverageGain?: number; // Years gained
+  onUpgradeClick?: () => void;
 };
 
 export default function StickySummary({
@@ -36,6 +43,12 @@ export default function StickySummary({
   onSaveForLater,
   onApplyForFinancing,
   isGeneratingPDF = false,
+  // Upgrade prompt props
+  showUpgradePrompt = false,
+  upgradeToLabel,
+  upgradeCostDelta,
+  upgradeCoverageGain,
+  onUpgradeClick,
 }: StickySummaryProps) {
   return (
     <>
@@ -78,6 +91,41 @@ export default function StickySummary({
             Includes +{promoWarrantyYears} yrs promo warranty
           </div>
         ) : null}
+
+        {/* Upgrade prompt - shown when on Essential */}
+        <AnimatePresence>
+          {showUpgradePrompt && upgradeToLabel && upgradeCostDelta != null && onUpgradeClick && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className="mt-3 overflow-hidden"
+            >
+              <button
+                onClick={onUpgradeClick}
+                className="w-full rounded-lg border border-blue-200 bg-blue-50/50 p-3 text-left transition hover:bg-blue-50 dark:border-blue-800 dark:bg-blue-950/30 dark:hover:bg-blue-950/50"
+              >
+                <div className="flex items-center gap-2 text-xs font-semibold text-blue-600 dark:text-blue-400">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  <span>Want more coverage?</span>
+                </div>
+                <div className="mt-1 text-sm text-slate-700 dark:text-slate-300">
+                  Upgrade to <span className="font-semibold">{upgradeToLabel}</span> for just{' '}
+                  <span className="font-semibold text-emerald-600 dark:text-emerald-400">
+                    +{money(Math.round(upgradeCostDelta))}/mo
+                  </span>
+                </div>
+                {upgradeCoverageGain != null && upgradeCoverageGain > 0 && (
+                  <div className="mt-0.5 flex items-center gap-1 text-xs text-blue-600 dark:text-blue-400">
+                    <ArrowUp className="h-3 w-3" />
+                    <span>+{upgradeCoverageGain} years extra protection</span>
+                  </div>
+                )}
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <ul className="mt-3 space-y-0.5 lg:space-y-1 text-sm text-slate-700 dark:text-slate-300">
           {bullets.slice(0, 3).map((b, i) => (

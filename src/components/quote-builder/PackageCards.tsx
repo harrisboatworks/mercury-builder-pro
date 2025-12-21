@@ -1,9 +1,10 @@
 "use client";
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { money } from "@/lib/money";
 import { calculateMonthly, DEALERPLAN_FEE } from "@/lib/finance";
 import { cn } from "@/lib/utils";
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
+import { TrendingUp, Shield } from 'lucide-react';
 
 // Safe animation that starts visible and only animates transform (not opacity)
 const packageItemVariants = {
@@ -36,6 +37,8 @@ type PackageCardsProps = {
   selectedId?: string;
   rate?: number;
   termMonths?: number;
+  showUpgradeDeltas?: boolean; // Enable comparison mode
+  basePackageId?: string; // Package to compare against (default: first package)
 };
 
 export function PackageCards({
@@ -44,14 +47,26 @@ export function PackageCards({
   selectedId,
   rate = 7.99,
   termMonths = 60,
+  showUpgradeDeltas = true,
+  basePackageId,
 }: PackageCardsProps) {
   const { triggerHaptic } = useHapticFeedback();
   
+  // Find base package for comparison (default to first/Essential)
+  const basePackage = options.find(p => p.id === (basePackageId || 'good')) || options[0];
+  const baseMonthly = basePackage.monthly ?? calculateMonthly((basePackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE, rate, termMonths);
+  const baseCoverageYears = basePackage.coverageYears || 3;
+
   return (
     <section aria-label="Packages" className="grid gap-3 sm:grid-cols-3">
       {options.map((p) => {
         const monthly = p.monthly ?? calculateMonthly((p.priceBeforeTax * 1.13) + DEALERPLAN_FEE, rate, termMonths);
         const isSelected = selectedId === p.id;
+        const isBase = p.id === (basePackageId || 'good');
+        
+        // Calculate deltas from base package
+        const monthlyDelta = monthly - baseMonthly;
+        const coverageDelta = (p.coverageYears || 3) - baseCoverageYears;
 
         return (
           <motion.button
@@ -95,8 +110,32 @@ export function PackageCards({
               From <span className="font-semibold">{money(Math.round(monthly))}/mo</span>
             </div>
 
+            {/* Upgrade delta badges - show for non-base packages */}
+            {showUpgradeDeltas && !isBase && (coverageDelta > 0 || monthlyDelta > 0) && (
+              <AnimatePresence>
+                <motion.div 
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-2 flex flex-wrap gap-1.5"
+                >
+                  {coverageDelta > 0 && (
+                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:ring-emerald-800">
+                      <Shield className="h-3 w-3" />
+                      +{coverageDelta}yr coverage
+                    </span>
+                  )}
+                  {monthlyDelta > 0 && (
+                    <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:ring-blue-800">
+                      <TrendingUp className="h-3 w-3" />
+                      +{money(Math.round(monthlyDelta))}/mo
+                    </span>
+                  )}
+                </motion.div>
+              </AnimatePresence>
+            )}
+
             {p.coverageYears != null && (
-              <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+              <div className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                 Coverage: <span className="font-medium">{p.coverageYears} years total</span>
               </div>
             )}
