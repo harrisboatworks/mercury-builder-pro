@@ -405,7 +405,7 @@ As a Mercury Certified Repower Center, Harris Boat Works has the expertise to ha
     slug: 'breaking-in-new-mercury-motor-guide',
     title: 'Breaking In Your New Mercury Motor: Complete Guide',
     description: 'Proper break-in ensures long engine life. Learn the correct procedure for breaking in your new Mercury outboard motor from certified technicians.',
-    image: '/lovable-uploads/new-motor-breakin.jpg',
+    image: '/lovable-uploads/Breaking_In_New_Mercury_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
     dateModified: '2024-11-20',
