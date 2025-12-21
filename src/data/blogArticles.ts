@@ -2383,7 +2383,7 @@ Many boats leave the factory with a "one size fits most" prop. A proper selectio
     slug: 'mercury-seapro-commercial-outboard-guide',
     title: 'Mercury SeaPro: The Best Commercial Outboard for Guides and Heavy Use',
     description: 'Discover why Mercury SeaPro is the choice for commercial operators. Built for high-hour use, extended service intervals, and maximum reliability.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/Mercury_SeaPro.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-20',
     dateModified: '2026-04-20',
