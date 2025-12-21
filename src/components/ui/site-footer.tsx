@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Youtube, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { Facebook, Instagram, Youtube, MapPin, Phone, Mail } from 'lucide-react';
+import { COMPANY_INFO } from '@/lib/companyInfo';
+import { useGooglePlaceData } from '@/hooks/useGooglePlaceData';
+import { OpeningHoursDisplay } from '@/components/business/OpeningHoursDisplay';
 
 interface SiteFooterProps {
   className?: string;
@@ -7,6 +10,7 @@ interface SiteFooterProps {
 
 export function SiteFooter({ className = '' }: SiteFooterProps) {
   const currentYear = new Date().getFullYear();
+  const { data: placeData, isLoading: hoursLoading, error: hoursError } = useGooglePlaceData();
 
   const navigationLinks = [
     { label: 'Motors', href: '/quote/motor-selection' },
@@ -23,6 +27,9 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
     { icon: Instagram, href: 'https://instagram.com/harrisboatworks', label: 'Instagram' },
     { icon: Youtube, href: 'https://youtube.com/@harrisboatworks', label: 'YouTube' },
   ];
+
+  // Format phone for tel: link (remove formatting)
+  const phoneLink = COMPANY_INFO.contact.phone.replace(/[^0-9]/g, '');
 
   return (
     <footer className={`bg-muted/50 border-t border-border ${className}`}>
@@ -56,46 +63,41 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
               <li className="flex items-start gap-2.5 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
                 <span>
-                  1234 Marina Drive<br />
-                  Peterborough, ON K9J 7B5
+                  {COMPANY_INFO.address.street}<br />
+                  {COMPANY_INFO.address.city}, {COMPANY_INFO.address.province} {COMPANY_INFO.address.postal}
                 </span>
               </li>
               <li>
                 <a 
-                  href="tel:+17057421234" 
+                  href={`tel:+1${phoneLink}`} 
                   className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Phone className="h-4 w-4 shrink-0 text-primary" />
-                  (705) 742-1234
+                  {COMPANY_INFO.contact.phone}
                 </a>
               </li>
               <li>
                 <a 
-                  href="mailto:info@harrisboatworks.ca" 
+                  href={`mailto:${COMPANY_INFO.contact.email}`} 
                   className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Mail className="h-4 w-4 shrink-0 text-primary" />
-                  info@harrisboatworks.ca
+                  {COMPANY_INFO.contact.email}
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Hours */}
+          {/* Hours - Live from Google */}
           <div>
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
               Hours
             </h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li className="flex items-start gap-2.5">
-                <Clock className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
-                <div>
-                  <p>Mon - Fri: 8am - 5pm</p>
-                  <p>Saturday: 9am - 3pm</p>
-                  <p>Sunday: Closed</p>
-                </div>
-              </li>
-            </ul>
+            <OpeningHoursDisplay 
+              openingHours={placeData?.openingHours}
+              loading={hoursLoading}
+              error={!!hoursError}
+            />
           </div>
 
           {/* Social & Trust */}
@@ -131,7 +133,7 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Harris Boat Works. All rights reserved.
+            © {currentYear} {COMPANY_INFO.name}. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
             <Link to="/privacy" className="hover:text-primary transition-colors">
