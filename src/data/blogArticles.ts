@@ -5746,7 +5746,7 @@ Watersports demand specific characteristics from your outboard—quick accelerat
     slug: 'mercury-150-200hp-v6-performance',
     title: 'Mercury 150-200hp V6: Performance Made Practical',
     description: 'Compare Mercury 150-200hp V6 outboards. Learn about the 3.4L platform, Pro XS variants, and which configuration suits your boat best.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/Mercury_150-200hp_V6_Performance_Made_Practical_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-11-30',
     dateModified: '2026-11-30',
