@@ -704,7 +704,7 @@ For the typical Ontario angler fishing inland lakes with a 16ft aluminum boat:
     slug: 'best-mercury-outboard-pontoon-boats',
     title: 'Best Mercury Outboard for Pontoon Boats: 2026 Buyer\'s Guide',
     description: 'Find the ideal Mercury outboard for your pontoon. Compare FourStroke, Verado, and SeaPro options for 18-28ft pontoons from Bennington, Harris, and more.',
-    image: '/lovable-uploads/mercury-pontoon.jpg',
+    image: '/lovable-uploads/Mercury_Pontoon_Buyers_Guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-01-19',
     dateModified: '2026-01-19',
