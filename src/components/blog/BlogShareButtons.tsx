@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Share2, Link2, Check, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 interface BlogShareButtonsProps {
   url: string;
@@ -9,6 +10,8 @@ interface BlogShareButtonsProps {
   description: string;
   image?: string;
   variant?: 'inline' | 'full';
+  articleSlug?: string;
+  location?: 'header' | 'footer';
 }
 
 // Custom SVG icons for social platforms
@@ -36,10 +39,30 @@ const PinterestIcon = () => (
   </svg>
 );
 
-export function BlogShareButtons({ url, title, description, image, variant = 'inline' }: BlogShareButtonsProps) {
+export function BlogShareButtons({ 
+  url, 
+  title, 
+  description, 
+  image, 
+  variant = 'inline',
+  articleSlug,
+  location = 'header'
+}: BlogShareButtonsProps) {
   const [copied, setCopied] = useState(false);
   const [canShare] = useState(() => typeof navigator !== 'undefined' && !!navigator.share);
   const { toast } = useToast();
+
+  const trackShare = async (platform: string) => {
+    if (!articleSlug) return;
+    try {
+      await supabase.functions.invoke('track-share-event', {
+        body: { articleSlug, platform, shareLocation: location }
+      });
+    } catch (err) {
+      // Fire-and-forget - don't block the share
+      console.error('Failed to track share:', err);
+    }
+  };
 
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
@@ -55,6 +78,7 @@ export function BlogShareButtons({ url, title, description, image, variant = 'in
   };
 
   const handleNativeShare = async () => {
+    trackShare('native');
     if (navigator.share) {
       try {
         await navigator.share({
@@ -72,6 +96,7 @@ export function BlogShareButtons({ url, title, description, image, variant = 'in
   };
 
   const handleCopyLink = async () => {
+    trackShare('copy');
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);
@@ -89,8 +114,9 @@ export function BlogShareButtons({ url, title, description, image, variant = 'in
     }
   };
 
-  const openShareWindow = (url: string, name: string) => {
-    window.open(url, name, 'width=600,height=400,menubar=no,toolbar=no');
+  const openShareWindow = (shareUrl: string, platform: string) => {
+    trackShare(platform);
+    window.open(shareUrl, platform, 'width=600,height=400,menubar=no,toolbar=no');
   };
 
   if (variant === 'inline') {
@@ -216,6 +242,7 @@ export function BlogShareButtons({ url, title, description, image, variant = 'in
             variant="outline"
             asChild
             className="gap-2"
+            onClick={() => trackShare('email')}
           >
             <a href={shareLinks.email}>
               <Mail className="h-4 w-4" />
