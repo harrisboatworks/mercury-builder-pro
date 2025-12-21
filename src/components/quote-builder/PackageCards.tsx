@@ -1,7 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from 'framer-motion';
 import { money } from "@/lib/money";
-import { calculateMonthly, DEALERPLAN_FEE } from "@/lib/finance";
+import { calculateMonthlyPayment, DEALERPLAN_FEE } from "@/lib/finance";
 import { cn } from "@/lib/utils";
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { TrendingUp, Shield } from 'lucide-react';
@@ -35,8 +35,7 @@ type PackageCardsProps = {
   options: PackageOption[];
   onSelect: (id: string) => void;
   selectedId?: string;
-  rate?: number;
-  termMonths?: number;
+  promoRate?: number | null; // Promotional financing rate (null = use tiered defaults)
   showUpgradeDeltas?: boolean; // Enable comparison mode
   basePackageId?: string; // Package to compare against (default: first package)
 };
@@ -45,8 +44,7 @@ export function PackageCards({
   options,
   onSelect,
   selectedId,
-  rate = 7.99,
-  termMonths = 60,
+  promoRate = null,
   showUpgradeDeltas = true,
   basePackageId,
 }: PackageCardsProps) {
@@ -54,13 +52,15 @@ export function PackageCards({
   
   // Find base package for comparison (default to first/Essential)
   const basePackage = options.find(p => p.id === (basePackageId || 'good')) || options[0];
-  const baseMonthly = basePackage.monthly ?? calculateMonthly((basePackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE, rate, termMonths);
+  const baseAmountToFinance = (basePackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE;
+  const baseMonthly = basePackage.monthly ?? calculateMonthlyPayment(baseAmountToFinance, promoRate).payment;
   const baseCoverageYears = basePackage.coverageYears || 3;
 
   return (
     <section aria-label="Packages" className="grid gap-3 sm:grid-cols-3">
       {options.map((p) => {
-        const monthly = p.monthly ?? calculateMonthly((p.priceBeforeTax * 1.13) + DEALERPLAN_FEE, rate, termMonths);
+        const amountToFinance = (p.priceBeforeTax * 1.13) + DEALERPLAN_FEE;
+        const monthly = p.monthly ?? calculateMonthlyPayment(amountToFinance, promoRate).payment;
         const isSelected = selectedId === p.id;
         const isBase = p.id === (basePackageId || 'good');
         
