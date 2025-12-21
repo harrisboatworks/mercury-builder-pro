@@ -4468,7 +4468,7 @@ An overheating outboard can cause serious damage in minutes. Know the causes, pr
     slug: 'ontario-boating-season-tips',
     title: 'Making the Most of Ontario\'s Short Boating Season',
     description: 'Maximize your time on Ontario waters. Tips for extending your season, shoulder-season boating, and getting the most from May to October.',
-    image: '/lovable-uploads/mercury-fishing.jpg',
+    image: '/lovable-uploads/Ontario_Short_Boating_Season_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-08-10',
     dateModified: '2026-08-10',
@@ -4509,6 +4509,8 @@ Ontario's boating season is precious—roughly May through October. Here's how t
 - Top up fuel treatment
 
 ### Shoulder Season (September-October)
+
+![Fall boating on Ontario waters](/lovable-uploads/Ontario_Short_Boating_Season_Fall.png)
 
 **Extending Into Fall**:
 - Best fishing of the year
