@@ -5306,7 +5306,7 @@ We'll provide:
     slug: 'year-end-boat-motor-buying-guide',
     title: 'Year-End Boat Motor Buying: Best Time for Deals?',
     description: 'Is year-end the best time to buy a boat motor? Analysis of seasonal pricing, promotions, and the best time to purchase a new Mercury outboard.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/Year_End_Deals.png',
     author: 'Harris Boat Works',
     datePublished: '2026-12-28',
     dateModified: '2026-12-28',
