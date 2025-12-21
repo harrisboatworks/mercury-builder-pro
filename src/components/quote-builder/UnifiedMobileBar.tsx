@@ -219,6 +219,7 @@ const SOCIAL_PROOF_NUDGES = [
 // Pages where the unified bar should NOT show
 const HIDE_ON_PAGES = [
   '/quote/success',
+  '/quote/summary',
   '/login',
   '/auth',
   '/dashboard',
