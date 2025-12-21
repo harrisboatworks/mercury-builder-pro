@@ -5213,7 +5213,7 @@ If yes to most, repower makes sense.
     slug: '2026-mercury-model-preview',
     title: '2027 Mercury Outboard Preview: What\'s New and What to Expect',
     description: 'Preview of 2027 Mercury outboard lineup. Expected updates, new features, and recommendations for buyers considering a 2026 vs 2027 purchase.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/2027_Mercury_Preview.png',
     author: 'Harris Boat Works',
     datePublished: '2026-12-14',
     dateModified: '2026-12-14',
