@@ -203,7 +203,7 @@ At Harris Boat Works, our Mercury-certified technicians handle everything from b
     slug: 'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
     title: 'Understanding Mercury Motor Families: FourStroke vs Pro XS vs Verado',
     description: 'Compare Mercury\'s motor families to find the perfect match. Learn the key differences between FourStroke, Pro XS, SeaPro, and Verado outboards.',
-    image: '/lovable-uploads/mercury-comparison.jpg',
+    image: '/lovable-uploads/Comparing_Motor_Families.png',
     author: 'Harris Boat Works',
     datePublished: '2024-04-10',
     dateModified: '2024-12-10',
