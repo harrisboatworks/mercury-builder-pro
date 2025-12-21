@@ -4886,7 +4886,7 @@ Ontario's boating season is precious—roughly May through October. Here's how t
     slug: 'understanding-mercury-model-numbers',
     title: 'Understanding Mercury Model Numbers and Designations',
     description: 'Decode Mercury outboard model numbers and designations. Learn what Pro XS, EFI, CT, and other codes mean for your motor purchase decision.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/Understanding_Mercury_Model_Numbers_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-08-17',
     dateModified: '2026-08-17',
