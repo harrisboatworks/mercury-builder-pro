@@ -8,6 +8,12 @@ interface BlogSEOProps {
 export function BlogSEO({ article }: BlogSEOProps) {
   const url = `https://quote.harrisboatworks.ca/blog/${article.slug}`;
   
+  // Calculate word count from content
+  const wordCount = article.content.trim().split(/\s+/).length;
+  
+  // Parse read time to minutes for timeRequired (e.g., "8 min read" -> 8)
+  const readTimeMinutes = parseInt(article.readTime) || 5;
+  
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -30,7 +36,29 @@ export function BlogSEO({ article }: BlogSEOProps) {
         "datePublished": article.datePublished,
         "dateModified": article.dateModified,
         "mainEntityOfPage": url,
-        "keywords": article.keywords.join(", ")
+        "keywords": article.keywords.join(", "),
+        "wordCount": wordCount,
+        "inLanguage": "en-CA",
+        "isAccessibleForFree": true,
+        "timeRequired": `PT${readTimeMinutes}M`,
+        "about": [
+          { "@type": "Thing", "name": "Mercury Marine Outboard Motors" },
+          { "@type": "Thing", "name": "Boat Motors" }
+        ],
+        "mentions": [
+          { "@type": "Organization", "name": "Mercury Marine" }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        "url": url,
+        "name": article.title,
+        "inLanguage": "en-CA",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".article-intro", ".faq-answer", "h1", "h2"]
+        }
       },
       {
         "@type": "BreadcrumbList",
@@ -55,7 +83,23 @@ export function BlogSEO({ article }: BlogSEOProps) {
           }
         ]
       },
-      ...(article.faqs ? [{
+      // HowTo schema for instructional articles
+      ...(article.howToSteps && article.howToSteps.length > 0 ? [{
+        "@type": "HowTo",
+        "@id": `${url}#howto`,
+        "name": article.title,
+        "description": article.description,
+        "totalTime": `PT${readTimeMinutes}M`,
+        "step": article.howToSteps.map((step, index) => ({
+          "@type": "HowToStep",
+          "position": index + 1,
+          "name": step.name,
+          "text": step.text,
+          ...(step.image ? { "image": `https://quote.harrisboatworks.ca${step.image}` } : {})
+        }))
+      }] : []),
+      // FAQ schema
+      ...(article.faqs && article.faqs.length > 0 ? [{
         "@type": "FAQPage",
         "@id": `${url}#faq`,
         "mainEntity": article.faqs.map(faq => ({
@@ -83,6 +127,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       <meta property="og:image" content={`https://quote.harrisboatworks.ca${article.image}`} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content="article" />
+      <meta property="og:locale" content="en_CA" />
       <meta property="article:published_time" content={article.datePublished} />
       <meta property="article:modified_time" content={article.dateModified} />
       <meta property="article:author" content="Harris Boat Works" />

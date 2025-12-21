@@ -6,7 +6,9 @@ import { BlogSEO } from '@/components/seo/BlogSEO';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogShareButtons } from '@/components/blog/BlogShareButtons';
 import { FloatingShareBar } from '@/components/blog/FloatingShareBar';
+import { TableOfContents } from '@/components/blog/TableOfContents';
 import { getArticleBySlug, getRelatedArticles } from '@/data/blogArticles';
+import { slugify, extractHeaders } from '@/utils/slugify';
 import { 
   Accordion, 
   AccordionContent, 
@@ -31,6 +33,7 @@ export default function BlogArticle() {
   }
 
   const relatedArticles = getRelatedArticles(article.slug, 3);
+  const tocItems = extractHeaders(article.content);
 
   // Process inline markdown formatting (bold, italic, links, code)
   const processInlineFormatting = (text: string): React.ReactNode[] => {
@@ -106,7 +109,7 @@ export default function BlogArticle() {
     return parts;
   };
 
-  // Convert markdown-style content to HTML
+  // Convert markdown-style content to HTML with anchor IDs
   const renderContent = (content: string) => {
     let inCodeBlock = false;
     let codeBlockContent: string[] = [];
@@ -153,12 +156,32 @@ export default function BlogArticle() {
           }
         }
 
-        // Headers
+        // Headers with anchor IDs
         if (line.startsWith('## ')) {
-          return <h2 key={index} className="text-2xl font-semibold text-foreground mt-8 mb-4">{processInlineFormatting(line.slice(3))}</h2>;
+          const text = line.slice(3);
+          const id = slugify(text);
+          return (
+            <h2 
+              key={index} 
+              id={id}
+              className="text-2xl font-semibold text-foreground mt-8 mb-4 scroll-mt-24"
+            >
+              {processInlineFormatting(text)}
+            </h2>
+          );
         }
         if (line.startsWith('### ')) {
-          return <h3 key={index} className="text-xl font-medium text-foreground mt-6 mb-3">{processInlineFormatting(line.slice(4))}</h3>;
+          const text = line.slice(4);
+          const id = slugify(text);
+          return (
+            <h3 
+              key={index} 
+              id={id}
+              className="text-xl font-medium text-foreground mt-6 mb-3 scroll-mt-24"
+            >
+              {processInlineFormatting(text)}
+            </h3>
+          );
         }
         // Bold text lines (standalone)
         if (line.startsWith('**') && line.endsWith('**:')) {
@@ -284,6 +307,11 @@ export default function BlogArticle() {
             />
           </div>
 
+          {/* Table of Contents */}
+          {tocItems.length > 0 && (
+            <TableOfContents items={tocItems} />
+          )}
+
           {/* Content */}
           <div className="prose prose-gray max-w-none">
             {renderContent(article.content)}
@@ -301,7 +329,7 @@ export default function BlogArticle() {
                     <AccordionTrigger className="text-left font-medium">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
+                    <AccordionContent className="text-muted-foreground faq-answer">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
