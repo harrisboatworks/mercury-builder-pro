@@ -219,7 +219,6 @@ const SOCIAL_PROOF_NUDGES = [
 // Pages where the unified bar should NOT show
 const HIDE_ON_PAGES = [
   '/quote/success',
-  '/quote/summary',
   '/login',
   '/auth',
   '/dashboard',
@@ -419,6 +418,10 @@ export const UnifiedMobileBar: React.FC = () => {
   };
 
   const getPrimaryLabel = (): string => {
+    // Summary page shows Reserve CTA
+    if (location.pathname === '/quote/summary') {
+      return 'Reserve $200';
+    }
     // When previewing a motor on motor-selection, show Configure
     if (isPreview && location.pathname === '/quote/motor-selection') {
       return 'Configure';

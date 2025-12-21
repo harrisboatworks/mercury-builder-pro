@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { Button } from '@/components/ui/button';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -9,7 +9,7 @@ import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Gift, Shield, CreditCard, ChevronRight, X, Phone, MessageSquare, Mail } from 'lucide-react';
+import { Gift, Shield, CreditCard, ChevronRight, X, Phone, MessageSquare, Mail, Download, FileText } from 'lucide-react';
 import { toast } from 'sonner';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 interface MobileQuoteDrawerProps {
@@ -25,10 +25,13 @@ const PACKAGE_LABELS: Record<string, { name: string; years: number }> = {
 
 export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { state } = useQuote();
   const { promotions } = useActivePromotions();
   const { promo: financingPromo } = useActiveFinancingPromo();
   const { triggerHaptic } = useHapticFeedback();
+
+  const isSummaryPage = location.pathname === '/quote/summary';
 
   // Use preview motor if available, otherwise selected motor (matches UnifiedMobileBar behavior)
   const displayMotor = state.previewMotor || state.motor;
@@ -255,15 +258,63 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                 </p>
               </div>
 
-              {/* View Summary Button */}
-              <Button 
-                onClick={handleViewSummary}
-                variant="outline"
-                className="w-full"
-              >
-                View Full Summary
-                <ChevronRight className="h-4 w-4 ml-1" />
-              </Button>
+              {/* Summary Page Actions */}
+              {isSummaryPage ? (
+                <div className="space-y-2">
+                  <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                    Quick Actions
+                  </h4>
+                  <div className="grid grid-cols-2 gap-2">
+                    <Button 
+                      variant="outline"
+                      className="w-full"
+                      onClick={() => {
+                        triggerHaptic('light');
+                        // Trigger PDF download via custom event
+                        window.dispatchEvent(new CustomEvent('download-quote-pdf'));
+                        onClose();
+                      }}
+                    >
+                      <Download className="h-4 w-4 mr-2" />
+                      Download PDF
+                    </Button>
+                    <Button 
+                      variant="outline"
+                      className="w-full"
+                      onClick={() => {
+                        triggerHaptic('light');
+                        // Trigger email quote via custom event
+                        window.dispatchEvent(new CustomEvent('email-quote'));
+                        onClose();
+                      }}
+                    >
+                      <Mail className="h-4 w-4 mr-2" />
+                      Email Quote
+                    </Button>
+                  </div>
+                  <Button 
+                    variant="default"
+                    className="w-full"
+                    onClick={() => {
+                      triggerHaptic('medium');
+                      navigate('/financing/apply');
+                      onClose();
+                    }}
+                  >
+                    <FileText className="h-4 w-4 mr-2" />
+                    Apply for Financing
+                  </Button>
+                </div>
+              ) : (
+                <Button 
+                  onClick={handleViewSummary}
+                  variant="outline"
+                  className="w-full"
+                >
+                  View Full Summary
+                  <ChevronRight className="h-4 w-4 ml-1" />
+                </Button>
+              )}
 
               <Separator />
 
