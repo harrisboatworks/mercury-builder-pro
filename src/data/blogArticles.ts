@@ -3007,7 +3007,7 @@ We can help you plan and install the right SmartCraft setup.
     slug: 'boat-motor-financing-guide-ontario',
     title: 'Financing a New Boat Motor: What Ontario Boaters Need to Know',
     description: 'Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a new Mercury outboard purchase.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/Financing_A_New_Boat_Motor_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
     dateModified: '2026-05-25',
