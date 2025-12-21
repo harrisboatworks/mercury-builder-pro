@@ -1,4 +1,5 @@
 import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { BlogIndexSEO } from '@/components/seo/BlogIndexSEO';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogSubscribeForm } from '@/components/blog/BlogSubscribeForm';
@@ -60,6 +61,8 @@ export default function Blog() {
           </a>
         </div>
       </main>
+      
+      <SiteFooter />
     </div>
   );
 }

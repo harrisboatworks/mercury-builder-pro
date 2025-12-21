@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, Calendar, Clock, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { BlogSEO } from '@/components/seo/BlogSEO';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogShareButtons } from '@/components/blog/BlogShareButtons';
@@ -12,6 +13,14 @@ import {
   AccordionItem, 
   AccordionTrigger 
 } from '@/components/ui/accordion';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 
 export default function BlogArticle() {
   const { slug } = useParams<{ slug: string }>();
@@ -198,13 +207,25 @@ export default function BlogArticle() {
       
       <main className="container mx-auto px-4 py-8 md:py-12">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-          <Link to="/" className="hover:text-primary transition-colors">Home</Link>
-          <ChevronRight className="h-4 w-4" />
-          <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
-          <ChevronRight className="h-4 w-4" />
-          <span className="text-foreground truncate max-w-[200px]">{article.title}</span>
-        </nav>
+        <Breadcrumb className="mb-8">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/blog">Blog</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage className="truncate max-w-[200px]">{article.title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
         <article className="max-w-3xl mx-auto">
           {/* Back Link */}
@@ -341,6 +362,8 @@ export default function BlogArticle() {
           </section>
         )}
       </main>
+      
+      <SiteFooter />
     </div>
   );
 }
