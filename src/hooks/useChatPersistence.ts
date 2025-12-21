@@ -19,10 +19,17 @@ interface ChatContext {
 const SESSION_KEY = 'chat_session_id';
 const MAX_MESSAGES_TO_LOAD = 20;
 
+// Generate cryptographically secure session IDs to prevent enumeration attacks
+function generateSecureSessionId(): string {
+  const array = new Uint8Array(32);
+  crypto.getRandomValues(array);
+  return `chat_${Array.from(array, b => b.toString(16).padStart(2, '0')).join('')}`;
+}
+
 function getOrCreateSessionId(): string {
   let sessionId = localStorage.getItem(SESSION_KEY);
   if (!sessionId) {
-    sessionId = `chat_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    sessionId = generateSecureSessionId();
     localStorage.setItem(SESSION_KEY, sessionId);
   }
   return sessionId;
@@ -82,8 +89,8 @@ export function useChatPersistence() {
         }
       }
 
-      // No recoverable conversation - create new one
-      const newSessionId = `chat_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      // No recoverable conversation - create new one with secure session ID
+      const newSessionId = generateSecureSessionId();
       localStorage.setItem(SESSION_KEY, newSessionId);
       
       const { data: newConvo, error: createError } = await supabase
