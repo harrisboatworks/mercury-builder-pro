@@ -87,6 +87,8 @@ For most recreational boaters, we recommend 70-80% of maximum rated horsepower. 
 - Reduced engine strain
 - Lower operating costs
 
+![Infographic showing how to choose the right horsepower for your boat](/lovable-uploads/How_to_Choose_Horsepower_Infographic.png)
+
 ### Get Expert Advice
 
 ![Customer consulting with Mercury specialist about horsepower selection](/lovable-uploads/Guy_talking_to_salesperson_Mercury.png)
