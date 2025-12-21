@@ -5391,6 +5391,979 @@ A fair deal when you need it beats waiting indefinitely for a perfect deal. That
         answer: 'Depends on your needs. If 2025 meets your requirements and good pricing is available, buy now. If you want latest features and can wait, 2026 will arrive soon.'
       }
     ]
+  },
+
+  // Week 46: November 16, 2026
+  {
+    slug: 'best-mercury-for-family-runabouts',
+    title: 'Best Mercury Outboard for Family Runabouts',
+    description: 'Find the perfect Mercury outboard for your family runabout. Expert recommendations for 16-22ft boats covering horsepower, features, and family-friendly options.',
+    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    author: 'Harris Boat Works',
+    datePublished: '2026-11-16',
+    dateModified: '2026-11-16',
+    publishDate: '2026-11-16',
+    category: 'Buying Guide',
+    readTime: '10 min read',
+    keywords: ['mercury family boat motor', 'family runabout outboard', 'mercury for pontoon', 'best mercury for recreation', 'family boat motor size'],
+    content: `
+## Finding the Right Mercury for Your Family Boat
+
+Family runabouts need motors that balance power, reliability, and ease of use. Here's how to match the right Mercury to your family's boat.
+
+### Understanding Your Boat's Needs
+
+**Key Factors**:
+- Boat length and weight
+- Typical passenger count
+- Primary activities (cruising, watersports, fishing)
+- Lake conditions and distances traveled
+
+### Horsepower Recommendations by Boat Size
+
+#### 16-17 Foot Runabouts
+
+**Recommended Range**: 75-115hp
+
+| Motor | Best For | Key Features |
+|-------|----------|--------------|
+| Mercury 75hp FourStroke | Budget-friendly, light use | Quiet, efficient |
+| Mercury 90hp FourStroke | Most families, good balance | Reliable, proven |
+| Mercury 115hp FourStroke | Heavier boats, more passengers | Strong performance |
+
+**Our Pick**: Mercury 90hp FourStroke for most 16-17ft family runabouts
+
+#### 18-19 Foot Runabouts
+
+**Recommended Range**: 115-150hp
+
+| Motor | Best For | Key Features |
+|-------|----------|--------------|
+| Mercury 115hp FourStroke | Lighter boats, efficiency focus | Great fuel economy |
+| Mercury 115hp Pro XS | Performance preference | Quicker acceleration |
+| Mercury 150hp FourStroke | Heavier loads, watersports | Strong and reliable |
+
+**Our Pick**: Mercury 150hp FourStroke for versatility and future-proofing
+
+#### 20-22 Foot Runabouts
+
+**Recommended Range**: 150-225hp
+
+| Motor | Best For | Key Features |
+|-------|----------|--------------|
+| Mercury 150hp FourStroke | Budget-conscious, lighter boats | Efficient, reliable |
+| Mercury 175-200hp V6 | Most versatile choice | Excellent power-to-weight |
+| Mercury 225hp V6 | Maximum performance | Best acceleration |
+
+**Our Pick**: Mercury 200hp V6 FourStroke for optimal performance and efficiency
+
+### FourStroke vs Pro XS for Families
+
+**Mercury FourStroke** (Recommended for Most Families):
+- Optimized for fuel efficiency
+- Quieter operation
+- Smooth, predictable power
+- Lower operating costs
+- Ideal for cruising and general recreation
+
+**Mercury Pro XS** (Consider If):
+- Watersports are primary use
+- You prefer snappy acceleration
+- Performance is priority over economy
+- You want the sportiest option
+
+### Key Features for Family Use
+
+**Essential**:
+- Power steering (on larger motors)
+- Easy-access trim controls
+- Quiet operation for conversation
+- Reliable starting
+
+**Nice to Have**:
+- SmartCraft gauges
+- VesselView integration
+- Digital throttle (DTS) for smooth control
+- Joystick capability (for twins)
+
+### Fuel Efficiency Considerations
+
+**Typical Family Use**:
+- Cruising at 3500-4000 RPM
+- Weekend trips of 3-4 hours
+- Mixed use with some skiing
+
+**Fuel Consumption Guide** (at cruise):
+| Motor | GPH at Cruise |
+|-------|---------------|
+| 90hp | 3-4 GPH |
+| 115hp | 4-5 GPH |
+| 150hp | 5-7 GPH |
+| 200hp V6 | 7-9 GPH |
+
+### Budget Considerations
+
+**Entry Level**: Mercury 90-115hp FourStroke
+- $10,000-15,000 installed
+- Best value for smaller runabouts
+- Lower fuel and maintenance costs
+
+**Mid-Range**: Mercury 150hp FourStroke
+- $15,000-20,000 installed
+- Most popular family choice
+- Excellent balance of power and economy
+
+**Premium**: Mercury 175-225hp V6
+- $20,000-30,000 installed
+- Maximum performance
+- Best for larger boats or serious watersports
+
+### Common Mistakes to Avoid
+
+**Do Not Under-Power**:
+- Struggling at cruise is no fun
+- Consider future needs (bigger family, more gear)
+- Resale is easier with adequate power
+
+**Do Not Over-Power**:
+- Higher fuel costs
+- More expensive maintenance
+- Check boat max HP rating
+
+**[Get a Family Runabout Quote](/quote)**
+    `,
+    faqs: [
+      {
+        question: 'Is 90hp enough for a family runabout?',
+        answer: 'For boats 17ft and under with light loads, 90hp works well. For 18ft+ or heavier use, consider 115hp or more. Better to have a bit more power than constantly run at full throttle.'
+      },
+      {
+        question: 'Should I choose FourStroke or Pro XS for family use?',
+        answer: 'FourStroke is ideal for most families—quieter, more fuel-efficient, and optimized for cruising. Choose Pro XS if watersports performance is your priority.'
+      },
+      {
+        question: 'What is the best Mercury for pulling tubes and skiers?',
+        answer: 'For serious watersports, we recommend at least 150hp for 18-19ft boats, or 175-200hp V6 for 20ft+. Pro XS variants offer quicker hole shots for skiers.'
+      },
+      {
+        question: 'How much does fuel cost to run a family runabout?',
+        answer: 'At typical cruise, expect 4-8 GPH depending on motor size. A 4-hour outing might use 20-35 gallons. Mercury FourStrokes are among the most fuel-efficient in their class.'
+      }
+    ]
+  },
+
+  // Week 47: November 23, 2026
+  {
+    slug: 'best-mercury-for-ski-wakeboard-boats',
+    title: 'Best Mercury for Ski and Wakeboard Boats',
+    description: 'Choose the right Mercury outboard for skiing, wakeboarding, and wakesurfing. Learn horsepower requirements, Pro XS advantages, and setup tips.',
+    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    author: 'Harris Boat Works',
+    datePublished: '2026-11-23',
+    dateModified: '2026-11-23',
+    publishDate: '2026-11-23',
+    category: 'Buying Guide',
+    readTime: '12 min read',
+    keywords: ['mercury ski boat motor', 'wakeboard boat outboard', 'mercury for watersports', 'best outboard for skiing', 'wakesurf outboard motor'],
+    content: `
+## Choosing Mercury Power for Watersports
+
+Watersports demand specific characteristics from your outboard—quick acceleration, consistent power, and reliability. Here is how to choose the right Mercury.
+
+### Understanding Watersports Power Needs
+
+**Key Requirements**:
+- Strong hole shot (getting skiers up quickly)
+- Consistent speed at pull
+- Enough torque for weighted boats
+- Reliable performance under load
+
+### Power by Watersport Type
+
+#### Recreational Skiing
+
+**Requirements**:
+- Moderate acceleration
+- Consistent 28-36 MPH speeds
+- Standard trim capability
+
+**Recommended**: Mercury 150-200hp FourStroke
+
+#### Competitive Skiing
+
+**Requirements**:
+- Precise speed control
+- Quick response
+- Smooth, consistent pull
+
+**Recommended**: Mercury 175-225hp Pro XS with DTS
+
+#### Wakeboarding
+
+**Requirements**:
+- Strong hole shot
+- Handle weighted boats
+- Power at 18-24 MPH
+
+**Recommended**: Mercury 200-225hp V6 or 250hp Verado
+
+#### Wakesurfing (Outboard)
+
+**Requirements**:
+- Significant power for ballast
+- Smooth idle-to-surf transition
+- Outboard-specific considerations
+
+**Recommended**: Mercury 250-300hp Verado (twin configuration ideal)
+
+### Motor Recommendations by Boat Size
+
+#### 18-19 Foot Ski/Wake Boats
+
+| Motor | Application | Notes |
+|-------|-------------|-------|
+| 150hp FourStroke | Light skiing | Budget option |
+| 150hp Pro XS | Recreational skiing | Better acceleration |
+| 175hp V6 | Wakeboarding | Good balance |
+| 200hp V6 | Serious watersports | Recommended |
+
+**Our Pick**: Mercury 175-200hp Pro XS
+
+#### 20-22 Foot Ski/Wake Boats
+
+| Motor | Application | Notes |
+|-------|-------------|-------|
+| 200hp V6 | Skiing, light boarding | Adequate power |
+| 225hp Pro XS | Most watersports | Excellent choice |
+| 250hp Verado | Heavy boarding, ballast | Premium option |
+
+**Our Pick**: Mercury 225hp Pro XS
+
+#### 23+ Foot Wake/Surf Boats
+
+| Motor | Application | Notes |
+|-------|-------------|-------|
+| Twin 150hp | Wakesurfing | Surf wake on either side |
+| Twin 175-200hp | Serious surfing | Better wave shaping |
+| 300hp Verado | Single-engine power | Maximum single power |
+
+**Our Pick**: Twin Mercury 175-200hp V6 for wakesurfing
+
+### Pro XS vs FourStroke for Watersports
+
+**Mercury Pro XS Advantages**:
+- Tuned for acceleration
+- Faster time to plane
+- More responsive throttle
+- Lighter for same HP (some models)
+- Performance propellers standard
+
+**When to Choose Pro XS**:
+- Primary use is watersports
+- Quick hole shots are important
+- Performance matters more than economy
+- Wakeboarding or competitive skiing
+
+**Mercury FourStroke Advantages**:
+- Better fuel economy
+- Quieter operation
+- Lower purchase price
+- Smoother at cruise
+- Good for mixed use
+
+**When to Choose FourStroke**:
+- Watersports are occasional
+- Fuel economy matters
+- Budget is primary concern
+- Quieter operation preferred
+
+### Digital Throttle and Shift (DTS)
+
+**Benefits for Watersports**:
+- Precise speed control
+- Smoother acceleration
+- Programmable cruise speeds
+- Easy single-hand operation
+- Essential for ski courses
+
+**Available On**:
+- All Verado models
+- V6 FourStroke and Pro XS (optional)
+- Required for joystick systems
+
+### Propeller Selection
+
+**Standard Props**: General purpose
+**High-Performance Props**: Better hole shot
+**Specialty Props**: Specific applications
+
+**Watersports Recommendations**:
+- Mercury Enertia or similar performance prop
+- Match pitch to boat/load
+- Consider quick-adjust hub
+
+### Setup Tips for Watersports
+
+**Trim Position**:
+- Start with motor trimmed down
+- Helps with hole shot
+- Adjust for speed once planed
+
+**Ballast Considerations**:
+- Account for added weight
+- May need more HP than expected
+- Fuel consumption increases with load
+
+**Transom Height**:
+- Verify proper mounting
+- Affects performance significantly
+- Professional installation recommended
+
+**[Get Watersports Motor Quote](/quote)**
+    `,
+    faqs: [
+      {
+        question: 'Can I wakesurf behind an outboard motor?',
+        answer: 'Yes, but with precautions. Use outboard-specific surf systems that deflect exhaust and prop wash. Twin outboards create better waves than singles. Always maintain safe distance from the running motor.'
+      },
+      {
+        question: 'Is Pro XS worth the extra cost for watersports?',
+        answer: 'For dedicated watersports boats, yes. Pro XS provides noticeably quicker hole shots and better acceleration—exactly what skiing and wakeboarding require. For occasional watersports, FourStroke works fine.'
+      },
+      {
+        question: 'How much power do I need to pull an adult skier?',
+        answer: 'Minimum 75hp for light adults behind small boats. For reliable performance, 115hp+ is recommended. For wakeboarding or heavier adults, 150hp+ ensures comfortable pulls every time.'
+      },
+      {
+        question: 'What propeller is best for watersports?',
+        answer: 'Performance props with appropriate pitch for your boat and load. Mercury Enertia series works well. Have a pro match the prop—wrong pitch hurts both hole shot and top speed.'
+      }
+    ]
+  },
+
+  // Week 48: November 30, 2026
+  {
+    slug: 'mercury-150-200hp-v6-performance',
+    title: 'Mercury 150-200hp V6: Performance Made Practical',
+    description: 'Compare Mercury 150-200hp V6 outboards. Learn about the 3.4L platform, Pro XS variants, and which configuration suits your boat best.',
+    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    author: 'Harris Boat Works',
+    datePublished: '2026-11-30',
+    dateModified: '2026-11-30',
+    publishDate: '2026-11-30',
+    category: 'Buying Guide',
+    readTime: '11 min read',
+    keywords: ['mercury 150 200 v6', 'mercury 3.4 v6', 'mercury v6 vs inline', 'mercury 175 pro xs', 'mercury v6 comparison'],
+    content: `
+## Mercury 3.4L V6 Platform: The Sweet Spot
+
+The Mercury 3.4L V6 platform (150-225hp) represents the best balance of power, efficiency, and value for mid-size boats. Here is everything you need to know.
+
+### The V6 Advantage
+
+**Why V6 Matters**:
+- Smoother power delivery
+- Better torque curve
+- Lower vibration than inline-4
+- Proven, reliable platform
+- Excellent power-to-weight ratio
+
+### The Mercury 3.4L V6 Lineup
+
+| Model | HP | Weight | Best For |
+|-------|-----|--------|----------|
+| 150 V6 FourStroke | 150 | 498 lbs | Efficiency focus |
+| 175 V6 FourStroke | 175 | 498 lbs | Best balance |
+| 200 V6 FourStroke | 200 | 498 lbs | More performance |
+| 225 V6 FourStroke | 225 | 498 lbs | Maximum power |
+| 175 V6 Pro XS | 175 | 498 lbs | Sport performance |
+| 200 V6 Pro XS | 200 | 498 lbs | Top seller |
+| 225 V6 Pro XS | 225 | 498 lbs | Ultimate performance |
+
+*Weights are approximate and vary by configuration*
+
+### V6 vs Inline-4: When to Choose Each
+
+**Mercury Inline-4 (75-115hp)**:
+- Lighter boats (16-18ft)
+- Budget priority
+- Light duty use
+- Maximum efficiency
+
+**Mercury V6 (150-225hp)**:
+- Boats 18-24ft
+- Heavier loads
+- Watersports use
+- Performance priority
+- Better resale
+
+**The Crossover Point**: Around 150hp, the V6 platform makes sense for most applications due to better power delivery and longevity under load.
+
+### FourStroke vs Pro XS V6
+
+**V6 FourStroke**:
+- Tuned for efficiency
+- Quieter operation
+- Slightly lower price
+- Better fuel economy
+- Ideal for cruising
+
+**V6 Pro XS**:
+- Tuned for acceleration
+- Performance calibration
+- Enhanced cooling
+- Sport propeller included
+- Ideal for performance
+
+**Price Difference**: Pro XS typically adds $1,000-1,500
+
+### Recommended Boat Matches
+
+#### 175hp V6 (Sweet Spot for Many)
+
+**Ideal For**:
+- 18-20ft runabouts
+- Light offshore use
+- Fuel-conscious boaters
+- Mixed-use boats
+
+**Real-World Performance**:
+- Efficient at cruise
+- Good hole shot
+- Excellent reliability
+- Lower operating cost than 200+
+
+#### 200hp V6 (Most Popular)
+
+**Ideal For**:
+- 19-22ft runabouts
+- Watersports boats
+- Pontoons 21-24ft
+- All-around performance
+
+**Real-World Performance**:
+- Strong acceleration
+- Confident power in all conditions
+- Good fuel economy at cruise
+- Excellent resale value
+
+#### 225hp V6 (Maximum Power)
+
+**Ideal For**:
+- 22-24ft boats
+- Heavy loads
+- Offshore use
+- Performance priority
+
+**Real-World Performance**:
+- Best-in-class acceleration
+- Handles any load
+- Premium price but premium performance
+- Top of naturally-aspirated range
+
+### Understanding the Pro XS Difference
+
+**What Mercury Does Different**:
+- ECU tuning for acceleration
+- Enhanced cooling system
+- Performance propeller
+- Optimized gear ratio
+- Competition heritage
+
+**Measurable Differences**:
+- Faster time to plane
+- Higher top speed (typically 2-4 MPH)
+- Better hole shot
+- Slightly higher fuel consumption at WOT
+
+### Command Thrust Option
+
+**What It Is**: Larger gearcase with more blade area
+
+**Benefits**:
+- Better thrust at low speeds
+- Improved shallow-water performance
+- Better for heavy boats
+- Enhanced stern lift
+
+**Consider CT If**:
+- Running heavy loads regularly
+- Need shallow-water capability
+- Boat tends to bow-rise
+- Trolling is important
+
+### Technology Features
+
+**Standard on V6 Platform**:
+- Electronic fuel injection
+- 32-bit ECU
+- Adaptive Speed Control available
+- SmartCraft compatible
+- DTS optional (standard on some)
+
+**Available Options**:
+- Digital Throttle and Shift (DTS)
+- Joystick Piloting (twin)
+- VesselView displays
+- Active Trim
+
+### Maintenance Considerations
+
+**Service Intervals**: Every 100 hours or annually
+
+**Typical Costs** (Parts + Labor):
+- 100-hour service: $400-600
+- 300-hour service: $700-1,000
+- Impeller/belt: Every 2 years
+
+**V6 Reliability**: Excellent track record when maintained
+
+**[Configure Your V6 Mercury](/quote)**
+    `,
+    faqs: [
+      {
+        question: 'Is the V6 worth it over the 150hp inline-4?',
+        answer: 'For boats 19ft+, yes. The V6 provides smoother power, better torque, and handles loads more confidently. The inline-4 150hp is lighter and more economical for smaller boats.'
+      },
+      {
+        question: 'What is the real-world fuel economy of a 200hp V6?',
+        answer: 'At efficient cruise (3500-4000 RPM), expect 4-6 MPG depending on boat and load. At WOT, consumption increases significantly. The V6 is among the most efficient in its class.'
+      },
+      {
+        question: 'Should I get Command Thrust (CT)?',
+        answer: 'CT is ideal for heavy boats, shallow water, or if you need maximum low-speed thrust. Standard gearcase is fine for most recreational use and is slightly more efficient at speed.'
+      },
+      {
+        question: 'How does the V6 compare to the Verado?',
+        answer: 'The V6 FourStroke/Pro XS is naturally aspirated (more simple, less expensive). Verado is supercharged (more power per displacement, quieter, more premium). V6 is best value; Verado is best refinement.'
+      }
+    ]
+  },
+
+  // Week 49: December 7, 2026
+  {
+    slug: 'mercury-pricing-promotions-2026',
+    title: '2026 Mercury Buying: Pricing, Promotions and Smart Timing',
+    description: 'Navigate 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages, and financing options.',
+    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    author: 'Harris Boat Works',
+    datePublished: '2026-12-07',
+    dateModified: '2026-12-07',
+    publishDate: '2026-12-07',
+    category: 'Buying Guide',
+    readTime: '10 min read',
+    keywords: ['mercury outboard price 2026', 'mercury promotions', 'mercury dealer pricing', 'best time buy outboard', 'mercury financing options'],
+    content: `
+## Navigating Mercury Pricing in 2026
+
+Understanding how Mercury pricing works helps you make smarter buying decisions. Here is the complete guide to pricing, promotions, and timing.
+
+### Understanding Mercury Pricing Structure
+
+**MSRP (Manufacturer Suggested Retail Price)**:
+- Published pricing baseline
+- Rarely what you actually pay
+- Starting point for negotiation
+- Does not include rigging/installation
+
+**MAP (Minimum Advertised Price)**:
+- What dealers can advertise
+- Usually slightly below MSRP
+- Competitive across dealers
+- Online pricing typically at MAP
+
+**Street Price (What You Actually Pay)**:
+- Negotiated between you and dealer
+- Below MAP for in-stock units
+- Includes installation and rigging
+- Varies by season and inventory
+
+### Current 2026 MSRP Ranges
+
+| Motor Category | MSRP Range |
+|----------------|------------|
+| 75-115hp FourStroke | $8,500-14,000 |
+| 150hp FourStroke | $14,000-17,000 |
+| 175-225hp V6 | $17,000-24,000 |
+| 200-300hp Verado | $24,000-35,000 |
+| 250-400hp Verado | $35,000-50,000+ |
+
+*Prices are motor only; rigging adds $1,500-3,000+*
+
+### Seasonal Promotional Programs
+
+**Spring (February-May)**:
+- Boat show specials
+- Spring Repower promotions
+- Extended warranty offers
+- Financing incentives
+
+**Summer (June-August)**:
+- Minimal promotions
+- Highest demand period
+- Full pricing typical
+- Inventory may be limited
+
+**Fall (September-November)**:
+- Fall Into Mercury program typical
+- Extended warranties common
+- End-of-year clearance begins
+- Good negotiation window
+
+**Winter (December-February)**:
+- Best negotiation leverage
+- Dealers need cash flow
+- Lowest demand = best deals
+- Spring delivery available
+
+### The Winter Buying Advantage
+
+**Why Winter Is Often Best**:
+- Dealers have time to negotiate
+- Inventory from fall remains
+- No urgency from other buyers
+- Shop service slots available
+- Early spring installation
+
+**What You Might Get**:
+- Better pricing flexibility
+- Priority spring installation
+- Time to research thoroughly
+- Potential for extras included
+
+**The Trade-Off**:
+- Cannot water test immediately
+- Promotional programs may pause
+- Some models may be sold out
+- Must wait for on-water enjoyment
+
+### Mercury Promotional Programs
+
+**Extended Warranty Promotions**:
+- Most common promotion type
+- Extra 1-3 years coverage
+- Significant value ($500-1,500+)
+- Available with new purchase
+
+**Repower Incentives**:
+- Rebates for replacing old motors
+- Often $500-2,000 depending on model
+- May require trade-in documentation
+- Seasonal availability
+
+**Financing Promotions**:
+- Reduced APR offers
+- Deferred payment periods
+- Low monthly payments
+- Through Mercury Marine credit
+
+### Financing Your Mercury
+
+**Mercury Marine Credit**:
+- Factory financing option
+- Competitive rates
+- Promotional periods available
+- Integrated with purchase
+
+**Typical Terms**:
+- 12-84 month terms
+- Rates vary by credit and promotion
+- May require minimum purchase
+- Quick approval process
+
+**Alternative Financing**:
+- Bank/credit union loans
+- Home equity options
+- Dealer financing alternatives
+- Compare all options
+
+### What Is Negotiable
+
+**Usually Negotiable**:
+- Final price (especially off-season)
+- Installation labor
+- Rigging package contents
+- Service credits
+- Accessories bundle
+
+**Rarely Negotiable**:
+- Promotional program terms
+- Extended warranty pricing
+- MAP-protected pricing in-season
+- Special order deposits
+
+### Getting the Best Deal
+
+**Preparation Steps**:
+1. Research MSRP for your model
+2. Understand what is included (rigging, controls, etc.)
+3. Get quotes from multiple dealers
+4. Ask about current promotions
+5. Consider timing your purchase
+
+**Questions to Ask**:
+- What promotions are currently running?
+- What is included in this price?
+- Is there flexibility on installation?
+- What warranty is included?
+- When can you install it?
+
+### The Total Cost Picture
+
+**Beyond Motor Price**:
+
+| Item | Typical Cost |
+|------|--------------|
+| Controls | $300-800 |
+| Gauges | $200-1,500 |
+| Wiring harness | $150-400 |
+| Prop | Included or $300-600 |
+| Installation labor | $800-2,000+ |
+| Misc hardware | $100-300 |
+
+**Total Rigged Cost**: Add $2,000-5,000+ to motor price
+
+**[Get Current Pricing](/quote)**
+    `,
+    faqs: [
+      {
+        question: 'When do Mercury promotions typically run?',
+        answer: 'Major promotions run spring (Feb-May) and fall (Sept-Nov). Boat show season (Jan-Mar) often has enhanced offers. Summer typically has minimal promotions. Check with your dealer for current programs.'
+      },
+      {
+        question: 'Can I negotiate below advertised price?',
+        answer: 'Often yes, especially for in-stock motors in the off-season. Dealers have more flexibility when inventory is high and demand is low. Always ask—the worst they can say is no.'
+      },
+      {
+        question: 'Is Mercury financing worth it vs my bank?',
+        answer: 'Compare both. Mercury promotional rates may beat bank rates. However, your credit union might offer competitive terms. Get quotes from both before deciding.'
+      },
+      {
+        question: 'Why are rigged prices so different from MSRP?',
+        answer: 'MSRP is motor only. Rigging (controls, gauges, prop, wiring, installation) adds $2,000-5,000+ depending on configuration. Always ask for rigged and installed pricing for accurate comparison.'
+      }
+    ]
+  },
+
+  // Week 50: December 14, 2026
+  {
+    slug: 'mercury-ordering-process',
+    title: 'Ordering Your Mercury: What to Expect',
+    description: 'Complete guide to ordering a Mercury outboard. Understand the 6-step process from configuration to water test, timeline expectations, and what to prepare.',
+    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    author: 'Harris Boat Works',
+    datePublished: '2026-12-14',
+    dateModified: '2026-12-14',
+    publishDate: '2026-12-14',
+    category: 'Buying Guide',
+    readTime: '9 min read',
+    keywords: ['mercury outboard ordering process', 'how to order mercury', 'mercury repower timeline', 'ordering outboard motor', 'mercury installation process'],
+    content: `
+## The Mercury Ordering Process: A Complete Guide
+
+Whether buying in-stock or ordering, understanding the process ensures a smooth experience. Here is what to expect at each step.
+
+### Overview: The 6-Step Process
+
+1. **Configuration** - Choose your motor and options
+2. **Consultation** - Review with your dealer
+3. **Deposit** - Secure your order
+4. **Preparation** - Motor and boat prep
+5. **Installation** - Professional mounting and rigging
+6. **Water Test** - Verification and handover
+
+### Step 1: Configuration
+
+**What Happens**:
+- Determine horsepower needs
+- Choose motor family (FourStroke, Pro XS, Verado)
+- Select shaft length
+- Pick options (CT, DTS, color, etc.)
+
+**Your Preparation**:
+- Know your boat max HP rating
+- Measure transom height accurately
+- List must-have features
+- Set your budget range
+
+**Timeline**: Can be done in one visit or over several discussions
+
+### Step 2: Consultation
+
+**What Happens**:
+- Review motor selection with dealer
+- Discuss rigging requirements
+- Review controls and gauges
+- Get complete pricing quote
+- Understand timeline
+
+**Key Questions**:
+- Is this motor in stock or ordered?
+- What is included in the price?
+- How long until installation?
+- What warranty is included?
+
+**Dealer Actions**:
+- Check inventory/order availability
+- Assess your boat (if repower)
+- Identify any needed modifications
+- Provide written quote
+
+### Step 3: Deposit
+
+**Typical Deposit**: 25-50% depending on dealer and order type
+
+**What It Covers**:
+- Reserves your motor
+- Commits installation slot
+- Locks current pricing (usually)
+- Starts the order process
+
+**Payment Options**:
+- Cash/check
+- Credit card
+- Financing (if pre-approved)
+
+**Important Documents**:
+- Written sales agreement
+- Itemized pricing
+- Estimated completion date
+- Deposit terms (refundability)
+
+### Step 4: Preparation
+
+**Dealer Preparation**:
+- Order motor if not in-stock
+- Receive and inspect motor
+- Pre-rig controls and gauges
+- Prepare installation materials
+
+**Your Preparation**:
+- Deliver boat if repower
+- Remove old motor (or pay dealer)
+- Address any transom issues
+- Clear boat for work
+
+**Boat Assessment**:
+- Transom condition
+- Existing wiring
+- Steering system
+- Fuel system compatibility
+
+### Step 5: Installation
+
+**What Is Involved**:
+- Mount motor on transom
+- Install controls (throttle, shift)
+- Connect wiring and gauges
+- Install fuel line connections
+- Set up steering
+- Initial programming
+
+**Timeline**: 
+- New boat rigging: 4-8 hours
+- Repower: 6-16 hours
+- Complex jobs: 2-3 days
+
+**Quality Checks**:
+- All connections tight
+- Electrical tested
+- Controls function properly
+- No leaks anywhere
+
+### Step 6: Water Test
+
+**What Happens**:
+- Motor run-in procedure
+- Verify proper operation
+- Adjust trim and settings
+- Test all controls
+- Check gauges accuracy
+
+**Your Participation**:
+- Be present if possible
+- Learn motor operation
+- Ask questions
+- Note any concerns
+
+**Handover Includes**:
+- Owner manual review
+- Break-in instructions
+- Warranty registration
+- Service schedule
+- Emergency procedures
+
+### Timeline Expectations
+
+**In-Stock Motor**:
+| Step | Timeframe |
+|------|-----------|
+| Consultation to deposit | 1-7 days |
+| Scheduling installation | 1-4 weeks |
+| Installation | 1-3 days |
+| Water test | Same day or next |
+| **Total** | **2-6 weeks** |
+
+**Ordered Motor**:
+| Step | Timeframe |
+|------|-----------|
+| Order placement | 1-2 weeks |
+| Motor delivery | 2-12 weeks |
+| Installation scheduling | 1-2 weeks |
+| Installation | 1-3 days |
+| **Total** | **6-16 weeks** |
+
+*Timelines vary by season—summer is busiest*
+
+### What to Prepare
+
+**For Repower Projects**:
+- Current motor info (for trade assessment)
+- Boat registration
+- Previous service records
+- List of any known issues
+
+**For New Boats**:
+- Purchase documentation
+- Any dealer requirements
+- Trailer considerations
+
+**For All Purchases**:
+- Financing pre-approval (if using)
+- Insurance information
+- Planned use details
+
+### Common Questions During Process
+
+**Can I speed this up?**
+Sometimes. In-stock motors and flexible installation dates help. Rush orders may be possible at premium.
+
+**What if something changes?**
+Communicate early. Most dealers work with you on timing changes. Specification changes may affect pricing/timeline.
+
+**When do I pay the balance?**
+Typically when motor is installed and ready for water test. Review payment terms in your agreement.
+
+**[Start Your Order](/quote)**
+    `,
+    faqs: [
+      {
+        question: 'How long does the whole process take?',
+        answer: 'For in-stock motors, typically 2-6 weeks from deposit to water test. Ordered motors add 2-12 weeks for delivery. Summer season is busiest and may extend timelines.'
+      },
+      {
+        question: 'What deposit is required?',
+        answer: 'Typically 25-50% depending on the dealer and whether the motor is in-stock or ordered. Special orders may require larger deposits. Terms vary—ask for them in writing.'
+      },
+      {
+        question: 'Can I install my own motor?',
+        answer: 'Yes, but warranty may require dealer installation. DIY installation also means you handle rigging, programming, and any issues. Professional installation is recommended for most owners.'
+      },
+      {
+        question: 'What if there is a problem during water test?',
+        answer: 'Issues found during water test are addressed before handover. This is exactly why we test—any problems are warranty covered and fixed before you take delivery.'
+      }
+    ]
   }
 ];
 
