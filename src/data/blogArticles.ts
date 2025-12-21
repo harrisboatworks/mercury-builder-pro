@@ -586,7 +586,7 @@ We're boaters ourselves. We fish these lakes, we know these conditions, and we s
     slug: 'best-mercury-outboard-aluminum-fishing-boats',
     title: 'Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)',
     description: 'Find the perfect Mercury outboard for your aluminum fishing boat. Compare the best motors from 25HP to 150HP for Lund, Tracker, Crestliner, and more.',
-    image: '/lovable-uploads/mercury-fishing.jpg',
+    image: '/lovable-uploads/Best_Mercury_Outboard_Aluminum_Fishing_Boats.png',
     author: 'Harris Boat Works',
     datePublished: '2026-01-12',
     dateModified: '2026-01-12',
