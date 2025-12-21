@@ -3540,7 +3540,7 @@ The differences are in feel, sound, and refinement—not raw capability.
     slug: 'boat-motor-trade-in-guide',
     title: 'Trading In Your Boat Motor: How to Get the Best Value',
     description: 'Learn how to maximize trade-in value when upgrading your outboard motor. Tips for preparation, timing, and negotiation from experienced dealers.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/Trading_In_Your_Boat_Motor_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-22',
     dateModified: '2026-06-22',
