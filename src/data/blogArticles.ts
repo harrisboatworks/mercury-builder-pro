@@ -2137,7 +2137,7 @@ Harris Boat Works offers complete spring commissioning service. We'll do everyth
     slug: 'tiller-vs-remote-steering-outboard-guide',
     title: 'Tiller vs Remote Steering: Which Is Right for Your Boat?',
     description: 'Compare tiller and remote steering for outboard motors. Learn the pros, cons, and best applications for each control type. Expert guide for boat owners.',
-    image: '/lovable-uploads/mercury-fishing.jpg',
+    image: '/lovable-uploads/Tiller_vs_Remote_Steering_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-06',
     dateModified: '2026-04-06',
@@ -2217,6 +2217,8 @@ One of the first decisions when choosing an outboard is tiller or remote steerin
 - Watersports use
 - Rough water operation
 - Electronics integration
+
+![Tiller vs Remote Steering comparison infographic](/lovable-uploads/Tiller_vs_Remote_Steering_Comparison.png)
 
 ### What About Power Steering?
 
