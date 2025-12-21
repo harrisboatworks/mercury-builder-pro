@@ -1,3 +1,9 @@
+export interface HowToStep {
+  name: string;
+  text: string;
+  image?: string;
+}
+
 export interface BlogArticle {
   slug: string;
   title: string;
@@ -12,6 +18,7 @@ export interface BlogArticle {
   readTime: string;
   faqs?: { question: string; answer: string }[];
   keywords: string[];
+  howToSteps?: HowToStep[]; // For instructional articles - enables HowTo schema
 }
 
 // Helper to check if an article is published
@@ -182,6 +189,24 @@ Proper winterization prevents 90% of spring problems:
 
 At Harris Boat Works, our Mercury-certified technicians handle everything from basic maintenance to major repairs. We've been servicing Mercury motors since 1965 and know these engines inside and out.
     `,
+    howToSteps: [
+      {
+        name: 'Spring Startup Checklist',
+        text: 'Check the lower unit oil for milky color indicating water intrusion. Inspect the propeller for dings and fishing line. Replace fuel filters. Check battery connections and clean corrosion. Inspect fuel lines for cracks. Test the kill switch.',
+      },
+      {
+        name: 'Mid-Season Maintenance (Every 50-100 Hours)',
+        text: 'Check oil level on 4-stroke motors. Inspect spark plugs for fouling or wear. Clean the fuel/water separator. Lubricate all grease fittings. Check steering cable play. Inspect sacrificial anodes.',
+      },
+      {
+        name: 'Fall Winterization',
+        text: 'Stabilize the fuel with Mercury Quickstor or similar. Fog the engine to protect internal components. Change lower unit oil. Disconnect battery and store in cool, dry place. Store motor upright to prevent water pooling.',
+      },
+      {
+        name: 'Schedule Professional Service',
+        text: 'Annual service (100 hours or yearly) includes full inspection, gear oil change, spark plug replacement, thermostat check, and water pump inspection. Major service (300 hours or every 3 years) includes water pump impeller replacement.',
+      },
+    ],
     faqs: [
       {
         question: 'How often should I change the oil in my Mercury 4-stroke?',
@@ -475,6 +500,24 @@ Once you've completed the 10-hour break-in and 20-hour oil change, your motor is
 
 When you purchase from Harris Boat Works, we walk you through the break-in procedure and offer complimentary first oil change at 20 hours. We want your motor to last as long as possible.
     `,
+    howToSteps: [
+      {
+        name: 'First Hour (0-1 hours)',
+        text: 'Start engine and warm up at idle for 5 minutes. Run at varying speeds below 3000 RPM. Never hold steady throttle for more than a few minutes. Avoid hard acceleration.',
+      },
+      {
+        name: 'Hours 2-3',
+        text: 'Gradually increase to 3/4 throttle. Continue varying speed every few minutes. Brief full-throttle bursts okay (under 30 seconds). Allow engine to cool between runs.',
+      },
+      {
+        name: 'Hours 4-10',
+        text: 'Normal operation at varying speeds. Occasional full-throttle runs (1-2 minutes max). Avoid extended trolling at same speed. Vary your throttle position regularly.',
+      },
+      {
+        name: 'First Oil Change at 20 Hours',
+        text: 'Schedule your first oil change at 20 hours. This is critical as the oil captures metal particles from the break-in process that need to be removed before they cause wear.',
+      },
+    ],
     faqs: [
       {
         question: 'What happens if I don\'t break in my motor properly?',
