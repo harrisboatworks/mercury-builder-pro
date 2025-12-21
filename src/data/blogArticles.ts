@@ -305,7 +305,7 @@ For most Ontario boaters, the **Mercury FourStroke** offers the best overall val
     slug: 'boat-repowering-guide-when-to-replace-motor',
     title: 'Boat Repowering 101: When to Replace Your Outboard Motor',
     description: 'Is it time to repower your boat? Learn the signs your motor needs replacing, cost considerations, and why repowering often beats buying new.',
-    image: '/lovable-uploads/repower-hero.jpg',
+    image: '/lovable-uploads/Boat_Repowering_101_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2024-03-05',
     dateModified: '2024-12-15',
@@ -359,6 +359,8 @@ That's 70% of the benefit at 30-40% of the cost.
 4. **Installation**: Professional mounting and rigging
 5. **Lake Testing**: Verifying performance and setup
 6. **Setup & Tuning**: Propeller selection and trimming
+
+![Boat repowering in progress - old motor being replaced with new Mercury Pro XS](/lovable-uploads/Boat_Repowering_In_Progress.png)
 
 ### Timeline & Cost
 
