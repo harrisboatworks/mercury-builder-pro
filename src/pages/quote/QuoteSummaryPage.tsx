@@ -6,6 +6,7 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
 import StickySummary from '@/components/quote-builder/StickySummary';
+import { UpgradeNudgeBar } from '@/components/quote-builder/UpgradeNudgeBar';
 import { PromoPanel } from '@/components/quote-builder/PromoPanel';
 import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
@@ -76,7 +77,7 @@ export default function QuoteSummaryPage() {
   const { promo } = useActiveFinancingPromo();
   const { getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings } = useActivePromotions();
   const { toast } = useToast();
-  const [selectedPackage, setSelectedPackage] = useState<string>('better');
+  const [selectedPackage, setSelectedPackage] = useState<string>('good');
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
@@ -265,22 +266,20 @@ export default function QuoteSummaryPage() {
     }
   }, [motorHP, currentCoverageYears]);
 
-  // Initialize warranty config to match default selected package (Complete)
+  // Initialize warranty config to match default selected package (Essential - no extended warranty)
   useEffect(() => {
-    if (isMounted && completeWarrantyCost > 0) {
-      const totalYears = COMPLETE_TARGET_YEARS;
-      const extendedYears = Math.max(0, totalYears - currentCoverageYears);
-      
+    if (isMounted) {
+      // Essential package starts with base coverage only (no warranty extension)
       dispatch({
         type: 'SET_WARRANTY_CONFIG',
         payload: {
-          totalYears,
-          extendedYears,
-          warrantyPrice: completeWarrantyCost
+          totalYears: currentCoverageYears,
+          extendedYears: 0,
+          warrantyPrice: 0
         }
       });
     }
-  }, [isMounted, completeWarrantyCost, currentCoverageYears, dispatch]);
+  }, [isMounted, currentCoverageYears, dispatch]);
 
   // Calculate base subtotal (motor + base accessories + selected options, NO battery)
   const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost + selectedOptionsTotal - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
@@ -708,7 +707,24 @@ export default function QuoteSummaryPage() {
     }
   };
 
-  const selectedPackageData = packages.find(p => p.id === selectedPackage) || packages[1];
+  const selectedPackageData = packages.find(p => p.id === selectedPackage) || packages[0];
+
+  // Calculate monthly payments for upgrade comparison
+  const essentialPackage = packages.find(p => p.id === 'good') || packages[0];
+  const completePackage = packages.find(p => p.id === 'better') || packages[1];
+  
+  const essentialMonthly = calculateMonthlyPayment(
+    (essentialPackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
+    promo?.rate || null
+  ).payment;
+  
+  const completeMonthly = calculateMonthlyPayment(
+    (completePackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
+    promo?.rate || null
+  ).payment;
+  
+  const monthlyDeltaToComplete = completeMonthly - essentialMonthly;
+  const coverageGainToComplete = (completePackage.coverageYears || COMPLETE_TARGET_YEARS) - (essentialPackage.coverageYears || currentCoverageYears);
 
   // Calculate totals for the SELECTED PACKAGE (not just base motor)
   const packageSpecificTotals = calculateQuotePricing({
@@ -791,12 +807,23 @@ export default function QuoteSummaryPage() {
                 variants={packageContainerVariants}
                 initial="hidden"
                 animate="visible"
+                className="space-y-4"
               >
                 <PackageCards
                   options={packages}
                   selectedId={selectedPackage}
                   onSelect={handlePackageSelect}
                   rate={financingRate}
+                  showUpgradeDeltas={true}
+                />
+                
+                {/* Upgrade Nudge Bar - shown when Essential is selected */}
+                <UpgradeNudgeBar
+                  isVisible={selectedPackage === 'good'}
+                  coverageGain={coverageGainToComplete}
+                  monthlyDelta={monthlyDeltaToComplete}
+                  upgradeToLabel="Complete"
+                  onUpgrade={() => handlePackageSelect('better')}
                 />
               </motion.div>
 
@@ -918,6 +945,12 @@ export default function QuoteSummaryPage() {
               onSaveForLater={() => setShowSaveDialog(true)}
               onApplyForFinancing={handleApplyForFinancing}
               isGeneratingPDF={isGeneratingPDF}
+              // Upgrade prompt - shown when Essential is selected
+              showUpgradePrompt={selectedPackage === 'good'}
+              upgradeToLabel="Complete"
+              upgradeCostDelta={monthlyDeltaToComplete}
+              upgradeCoverageGain={coverageGainToComplete}
+              onUpgradeClick={() => handlePackageSelect('better')}
             />
           </div>
         </div>
