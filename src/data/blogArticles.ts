@@ -4463,6 +4463,143 @@ An overheating outboard can cause serious damage in minutes. Know the causes, pr
     ]
   },
 
+  // Week 31.5: Getting Your Boat Ready for Walleye Opener
+  {
+    slug: 'walleye-opener-boat-prep',
+    title: 'Getting Your Boat Ready for Walleye Opener',
+    description: 'Complete checklist for Ontario walleye opener. Boat, motor, and tackle preparation for opening day success on Kawartha waters.',
+    image: '/lovable-uploads/Walleye_Opener_Ready_Hero.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-01',
+    dateModified: '2026-05-01',
+    publishDate: '2026-05-01',
+    category: 'Tips',
+    readTime: '8 min read',
+    keywords: ['walleye opener', 'ontario walleye season', 'boat prep checklist', 'fishing opener prep', 'walleye opener checklist'],
+    content: `
+## Getting Your Boat Ready for Walleye Opener
+
+Ontario's walleye opener is one of the most anticipated days on the fishing calendar. Here's how to make sure you're ready.
+
+### Pre-Season Motor Checks
+
+**Essential Motor Prep**:
+- Change lower unit oil
+- Inspect propeller for damage
+- Check fuel lines and primer bulb
+- Test battery and connections
+- Run motor to operating temperature
+
+**Fuel System**:
+- Fresh fuel with stabilizer
+- New fuel filter if needed
+- Check for ethanol damage
+- Inspect tank and lines
+
+### Electronics Readiness
+
+**Fish Finder/GPS**:
+- Update software and maps
+- Check transducer mounting
+- Test all functions on water
+- Pre-load waypoints for your lake
+
+**Communication**:
+- VHF radio test
+- Charged phone/backup battery
+- Emergency contact plan
+
+### Safety Gear Check
+
+**Required Equipment**:
+- PFDs (one per person, proper size)
+- Throwable flotation device
+- Fire extinguisher (charged)
+- Sound signaling device
+- Navigation lights (working)
+
+**Recommended Additions**:
+- First aid kit
+- Anchor and line
+- Paddle or oar
+- Bailing device
+
+### Tackle Preparation
+
+![Walleye opener success on Ontario waters](/lovable-uploads/Walleye_Opener_Catch.png)
+
+**Must-Have Walleye Tackle**:
+- Jigging combos ready
+- Trolling rods rigged
+- Fresh line on reels
+- Tackle organized
+
+**Live Bait Plan**:
+- Order minnows early
+- Know bait shop hours
+- Have backup plan
+- Proper bait bucket/aerator
+
+### Trailer and Towing
+
+**Trailer Checklist**:
+- Wheel bearings greased
+- Lights working
+- Tires properly inflated
+- Winch strap in good condition
+- Safety chains connected
+
+**Launching Practice**:
+- Do a practice launch before opener
+- Check ramp conditions
+- Know backup ramps
+
+### Day-Before Prep
+
+**Night Before**:
+- Load and organize boat
+- Check weather forecast
+- Gas up truck and boat
+- Set alarms
+- Confirm plans with fishing partners
+
+**Pack**:
+- Licenses (on phone or paper)
+- Warm layers (it's cold in May!)
+- Rain gear
+- Snacks and drinks
+- Camera for trophy shots
+
+### Opening Morning
+
+**Early Start Essentials**:
+- Coffee/breakfast ready
+- Route planned to avoid traffic
+- Launch time scheduled
+- Patience at the ramp
+
+**[Book Pre-Season Motor Service](/contact)**
+    `,
+    faqs: [
+      {
+        question: 'When is Ontario walleye opener?',
+        answer: 'The third Saturday in May for most zones. Always check current Ontario Fishing Regulations for your specific zone as dates can vary.'
+      },
+      {
+        question: "What if my motor won't start on opener morning?",
+        answer: 'This is why pre-season service matters! If you face issues, check basics: fuel, battery, kill switch. Better yet, run your motor a week before opener to catch problems early.'
+      },
+      {
+        question: 'Should I service my motor before opener?',
+        answer: 'Absolutely. Schedule service in April to avoid the May rush. Basic service includes oil change, lower unit oil, and inspection. This ensures reliability on opening day.'
+      },
+      {
+        question: "What's the best time to launch on opener?",
+        answer: 'Arrive at least 30-45 minutes before legal fishing time. Popular ramps get crowded. First light is prime time, but afternoon can be excellent too with less pressure.'
+      }
+    ]
+  },
+
   // Week 32: August 10, 2026
   {
     slug: 'ontario-boating-season-tips',
