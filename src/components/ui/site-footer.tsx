@@ -34,13 +34,13 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
   return (
     <footer className={`bg-muted/50 border-t border-border ${className}`}>
       <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Navigation */}
-          <div>
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12">
+          {/* Navigation - full width on mobile */}
+          <div className="col-span-2 md:col-span-1">
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
               Navigation
             </h3>
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-2">
               {navigationLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -100,33 +100,47 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
             />
           </div>
 
-          {/* Social & Trust */}
-          <div>
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-              Follow Us
-            </h3>
-            <div className="flex gap-3 mb-6">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
-                  aria-label={social.label}
-                >
-                  <social.icon className="h-4 w-4" />
-                </a>
-              ))}
+          {/* Social & Trust - full width on mobile */}
+          <div className="col-span-2 md:col-span-1">
+            <div className="flex flex-row items-start justify-between md:flex-col gap-4">
+              {/* Social Icons */}
+              <div>
+                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+                  Follow Us
+                </h3>
+                <div className="flex flex-row gap-3">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+                      aria-label={social.label}
+                    >
+                      <social.icon className="h-4 w-4" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Trust Badges */}
+              <div className="flex flex-row items-center gap-3">
+                <img 
+                  src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" 
+                  alt="Mercury CSI Award Winner" 
+                  className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                />
+                <img 
+                  src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" 
+                  alt="Mercury Certified Repower Center" 
+                  className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                />
+              </div>
             </div>
-            <div className="space-y-2">
-              <p className="text-xs text-muted-foreground">
-                Mercury Authorized Dealer
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Serving Ontario Since 1965
-              </p>
-            </div>
+            <p className="text-xs text-muted-foreground mt-4">
+              Serving Ontario Since 1965
+            </p>
           </div>
         </div>
 
