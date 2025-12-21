@@ -143,12 +143,20 @@ export const AutomationDashboard = () => {
     try {
       setRefreshing(true);
       
-      // Trigger the full automation pipeline
+      // Get the current user's session for admin authentication
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      if (!session?.access_token) {
+        throw new Error('You must be logged in as an admin to trigger manual updates');
+      }
+      
+      // Trigger the full automation pipeline with admin JWT auth
+      // Note: The endpoint should validate admin role server-side
       const response = await fetch('/api/cron/update-inventory', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.CRON_SECRET || 'manual-trigger'}`
+          'Authorization': `Bearer ${session.access_token}`
         }
       });
 
@@ -164,14 +172,14 @@ export const AutomationDashboard = () => {
         // Refresh status after a delay
         setTimeout(() => loadStatus(), 2000);
       } else {
-        throw new Error(result.error);
+        throw new Error(result.error || 'Failed to trigger automation');
       }
 
     } catch (error) {
       console.error('Failed to trigger automation:', error);
       toast({
         title: 'Error',
-        description: 'Failed to trigger automation pipeline',
+        description: error instanceof Error ? error.message : 'Failed to trigger automation pipeline',
         variant: 'destructive',
         duration: 3000,
       });
