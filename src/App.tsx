@@ -92,6 +92,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
 const AdminBlog = lazy(() => import("./pages/AdminBlog"));
 const RssFeed = lazy(() => import("./pages/RssFeed"));
+const BlogUnsubscribe = lazy(() => import("./pages/BlogUnsubscribe"));
 const Compare = lazy(() => import("./pages/Compare"));
 
 // Test/Dev pages (low priority)
@@ -385,7 +386,7 @@ function AnimatedRoutes() {
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
-        <Route path="/blog/unsubscribe" element={<Unsubscribe />} />
+        <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
         <Route path="/rss.xml" element={<RssFeed />} />
         <Route path="/admin/blog" element={<SecureRoute><AdminBlog /></SecureRoute>} />
         
