@@ -955,6 +955,11 @@ export default function QuoteSummaryPage() {
               upgradeCostDelta={monthlyDeltaToComplete}
               upgradeCoverageGain={coverageGainToComplete}
               onUpgradeClick={() => handlePackageSelect('better')}
+              // Mobile sheet props
+              packageInclusions={selectedPackageData.features}
+              onEmailQuote={handleEmailQuote}
+              onTextQuote={handleTextQuote}
+              onBookConsult={handleBookConsult}
             />
           </div>
         </div>
