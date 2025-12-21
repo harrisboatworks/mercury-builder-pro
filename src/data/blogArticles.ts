@@ -4600,6 +4600,172 @@ Ontario's walleye opener is one of the most anticipated days on the fishing cale
     ]
   },
 
+  // Week 31.6: Late Season Boating Safety
+  {
+    slug: 'late-season-boating-safety',
+    title: 'Late Season Boating Safety: Fall Tips for Ontario Waters',
+    description: 'Stay safe during fall boating in Ontario. Cold water considerations, essential gear, weather awareness, and emergency procedures for shoulder season boating.',
+    image: '/lovable-uploads/Late_Season_Boating_Safety_Hero.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-05',
+    dateModified: '2026-05-05',
+    publishDate: '2026-05-05',
+    category: 'Tips',
+    readTime: '9 min read',
+    keywords: ['fall boating safety', 'cold water safety', 'ontario fall boating', 'late season boating', 'hypothermia prevention', 'shoulder season boating'],
+    content: `
+## Late Season Boating Safety: Fall Tips for Ontario Waters
+
+Fall on Ontario's waters offers some of the best boating conditions—fewer crowds, stunning colours, and excellent fishing. But cooling water temperatures demand extra safety awareness.
+
+### The Cold Water Reality
+
+**Why Fall Water is Dangerous**:
+Ontario waters cool rapidly in fall. By October, surface temperatures can drop to 10-15°C—cold enough for hypothermia to set in within minutes of immersion.
+
+**Cold Water Shock**:
+- Initial gasp reflex (dangerous if underwater)
+- Rapid breathing and panic
+- Increased heart rate and blood pressure
+- Impaired swimming ability within minutes
+
+**Hypothermia Timeline**:
+| Water Temp | Time to Exhaustion | Survival Time |
+|------------|-------------------|---------------|
+| 15°C (59°F) | 30-40 minutes | 1-2 hours |
+| 10°C (50°F) | 15-20 minutes | 30-40 minutes |
+| 5°C (41°F) | 5-10 minutes | 15-20 minutes |
+
+### Essential Fall Safety Gear
+
+**Personal Flotation**:
+- Wear your PFD at all times (not just carry it)
+- Consider a float coat for warmth and flotation
+- Inflatable PFDs work but manual activation preferred in cold
+- Bright colours for visibility
+
+**Layering System**:
+- Moisture-wicking base layer
+- Insulating mid-layer (fleece or wool)
+- Waterproof/windproof outer layer
+- Avoid cotton (holds moisture)
+
+**Additional Gear**:
+- Waterproof gloves
+- Warm hat (most heat lost through head)
+- Spare dry clothes in waterproof bag
+- Emergency blanket
+
+### Weather Awareness
+
+**Fall Weather Patterns**:
+Ontario fall weather changes rapidly. A calm morning can turn to dangerous conditions by afternoon.
+
+**Check Before You Go**:
+- Environment Canada marine forecast
+- Wind predictions (especially NW winds)
+- Approaching cold fronts
+- Fog forecasts for early morning
+
+**Warning Signs on the Water**:
+- Rapidly dropping temperature
+- Building winds from the north
+- Dark clouds on horizon
+- Sudden fog
+
+![Fall boating on Ontario waters requires extra vigilance](/lovable-uploads/Late_Season_Boating_Safety_Fall.png)
+
+### Communication & Float Plans
+
+**Always Tell Someone**:
+- Where you're going
+- Expected return time
+- Who's with you
+- Your boat description
+
+**Communication Devices**:
+- VHF radio (channel 16 for emergencies)
+- Cell phone in waterproof case
+- Personal locator beacon (PLB) for remote areas
+- Whistle attached to PFD
+
+**Cell Coverage Reality**:
+Many Ontario lakes have spotty coverage. Don't rely solely on your phone.
+
+### Motor Reliability Matters More
+
+**Why Fall Demands Reliability**:
+A breakdown in July is an inconvenience. A breakdown in October can be life-threatening with cold water and early darkness.
+
+**Pre-Fall Motor Checks**:
+- Fresh fuel (treat for ethanol)
+- Test battery and charging system
+- Check all safety shutoffs
+- Verify starting reliability
+
+**Cold Start Considerations**:
+- Allow proper warm-up time
+- Don't over-choke
+- Check fuel lines for stiffness
+- Carry spare spark plugs
+
+**[Book Fall Motor Service](/contact)**
+
+### Emergency Procedures
+
+**If Someone Falls In**:
+1. Throw flotation immediately
+2. Approach carefully (don't create another victim)
+3. Get them out quickly—every second counts
+4. Get them warm immediately
+5. Call for help
+
+**Self-Rescue**:
+- Stay calm—control your breathing
+- Don't try to swim immediately (wait for cold shock to pass)
+- Use the HELP position (Heat Escape Lessening Posture)
+- Swim to boat, not shore, if possible
+
+**Treating Hypothermia**:
+- Remove wet clothing
+- Warm core first (armpits, groin, neck)
+- Avoid rubbing extremities
+- No alcohol
+- Seek medical attention
+
+### When to Call It a Season
+
+**Signs It's Time**:
+- Water temperature below 10°C
+- Ice forming on shorelines
+- Unable to dress appropriately for conditions
+- Motor becoming unreliable in cold
+
+**Winterization Matters**:
+Proper fall shutdown protects your motor for spring. Schedule winterization before hard freezes.
+
+**[Schedule Winterization Service](/contact)**
+    `,
+    faqs: [
+      {
+        question: 'When should I stop boating in Ontario for the season?',
+        answer: 'Most Ontario boaters wrap up by late October or early November. Key factors: water temperature below 10°C, ice forming on shorelines, and inability to dress appropriately for conditions. Safety margins shrink dramatically in cold water.'
+      },
+      {
+        question: 'What water temperature is dangerous for immersion?',
+        answer: 'Any water below 21°C (70°F) can cause hypothermia. Below 15°C is dangerous within 30-40 minutes. Below 10°C is immediately dangerous. Ontario fall waters typically range from 10-18°C.'
+      },
+      {
+        question: "What's the most important safety gear for fall boating?",
+        answer: 'A worn PFD—not just carried. In cold water, you have seconds to minutes before losing the ability to swim. A float coat combines warmth and flotation, making it ideal for fall conditions.'
+      },
+      {
+        question: 'Should I always wear a PFD in fall?',
+        answer: 'Absolutely. Cold water shock can incapacitate you in seconds. You may not have time to put on a PFD if you fall in. Transport Canada recommends wearing PFDs whenever on the water, especially in cold conditions.'
+      }
+    ]
+  },
+
   // Week 32: August 10, 2026
   {
     slug: 'ontario-boating-season-tips',
