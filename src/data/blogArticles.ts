@@ -2750,7 +2750,7 @@ This setup covers every fishing situation.
     slug: 'boat-motor-size-calculator-guide',
     title: 'What Size Motor Does My Boat Need? Complete Calculator Guide',
     description: 'Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and real-world examples for accurate motor selection.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/What_Size_Motor_Does_My_Boat_Need_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-11',
     dateModified: '2026-05-11',
