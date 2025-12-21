@@ -4,6 +4,7 @@ import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { BlogSEO } from '@/components/seo/BlogSEO';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogShareButtons } from '@/components/blog/BlogShareButtons';
+import { FloatingShareBar } from '@/components/blog/FloatingShareBar';
 import { getArticleBySlug, getRelatedArticles } from '@/data/blogArticles';
 import { 
   Accordion, 
@@ -180,10 +181,20 @@ export default function BlogArticle() {
       });
   };
 
+  const articleUrl = `https://harrisboatworks.ca/blog/${article.slug}`;
+
   return (
     <div className="min-h-screen bg-background">
       <BlogSEO article={article} />
       <LuxuryHeader />
+      
+      {/* Floating Share Bar */}
+      <FloatingShareBar
+        url={articleUrl}
+        title={article.title}
+        description={article.description}
+        articleSlug={article.slug}
+      />
       
       <main className="container mx-auto px-4 py-8 md:py-12">
         {/* Breadcrumb */}
@@ -232,11 +243,13 @@ export default function BlogArticle() {
                 </span>
               </div>
               <BlogShareButtons
-                url={`https://harrisboatworks.ca/blog/${article.slug}`}
+                url={articleUrl}
                 title={article.title}
                 description={article.description}
                 image={article.image}
                 variant="inline"
+                articleSlug={article.slug}
+                location="header"
               />
             </div>
           </header>
@@ -279,11 +292,13 @@ export default function BlogArticle() {
           {/* Share Section */}
           <div className="mt-12 pt-8 border-t border-border">
             <BlogShareButtons
-              url={`https://harrisboatworks.ca/blog/${article.slug}`}
+              url={articleUrl}
               title={article.title}
               description={article.description}
               image={article.image}
               variant="full"
+              articleSlug={article.slug}
+              location="footer"
             />
           </div>
 

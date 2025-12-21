@@ -149,3 +149,6 @@ verify_jwt = false
 
 [functions.send-blog-notification]
 verify_jwt = false
+
+[functions.track-share-event]
+verify_jwt = false

@@ -2106,6 +2106,36 @@ export type Database = {
         }
         Relationships: []
       }
+      share_analytics: {
+        Row: {
+          article_slug: string
+          created_at: string | null
+          id: string
+          platform: string
+          referrer: string | null
+          share_location: string
+          user_agent: string | null
+        }
+        Insert: {
+          article_slug: string
+          created_at?: string | null
+          id?: string
+          platform: string
+          referrer?: string | null
+          share_location: string
+          user_agent?: string | null
+        }
+        Update: {
+          article_slug?: string
+          created_at?: string | null
+          id?: string
+          platform?: string
+          referrer?: string | null
+          share_location?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       sin_audit_log: {
         Row: {
           action: string
