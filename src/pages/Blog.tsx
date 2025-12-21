@@ -1,6 +1,7 @@
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { BlogIndexSEO } from '@/components/seo/BlogIndexSEO';
 import { BlogCard } from '@/components/blog/BlogCard';
+import { BlogSubscribeForm } from '@/components/blog/BlogSubscribeForm';
 import { getPublishedArticles } from '@/data/blogArticles';
 
 export default function Blog() {
@@ -37,8 +38,13 @@ export default function Blog() {
           ))}
         </div>
 
+        {/* Subscribe Section */}
+        <div className="mt-16">
+          <BlogSubscribeForm />
+        </div>
+
         {/* CTA Section */}
-        <div className="mt-16 text-center bg-muted/30 rounded-2xl p-8 md:p-12">
+        <div className="mt-12 text-center bg-muted/30 rounded-2xl p-8 md:p-12">
           <h2 className="text-2xl font-light text-foreground mb-3">
             Ready to Find Your Motor?
           </h2>
