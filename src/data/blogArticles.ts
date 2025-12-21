@@ -1876,7 +1876,7 @@ Limits RPM for maximum fuel economy.
     slug: 'center-console-mercury-motor-guide',
     title: 'Best Mercury Outboards for Center Console Boats: 2026 Guide',
     description: 'Find the ideal Mercury motors for your center console. From single 115HP to quad 450HP setups, we cover every option for offshore and inshore boats.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/Best_Mercury_Outboards_Center_Console_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-23',
     dateModified: '2026-03-23',
