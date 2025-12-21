@@ -3921,7 +3921,7 @@ This covers all musky fishing scenarios in the Kawarthas.
     slug: 'best-motor-small-lakes-ontario',
     title: 'Best Outboard Motors for Ontario\'s Small Lakes and Cottage Country',
     description: 'Find the perfect motor for small lake boating. Recommendations for horsepower-restricted waters and cottage lake applications across Ontario.',
-    image: '/lovable-uploads/mercury-fishing.jpg',
+    image: '/lovable-uploads/Ontario_Small_Lakes_Cottage_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-07-13',
     dateModified: '2026-07-13',
@@ -3994,6 +3994,8 @@ Just because there's no limit doesn't mean you need maximum power:
 - Keep noise reasonable
 
 ### Electric Motor Advantages
+
+![Cottage fishing on Ontario's small lakes](/lovable-uploads/Ontario_Small_Lakes_Cottage_Fishing.png)
 
 For cottage use, electric is gaining popularity:
 - Silent operation
