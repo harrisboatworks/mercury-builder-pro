@@ -3799,7 +3799,7 @@ DTS enables Mercury Joystick Piloting:
     slug: 'musky-boat-motor-guide-kawarthas',
     title: 'Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide',
     description: 'Choose the right Mercury outboard for musky fishing in Ontario\'s Kawartha Lakes. Power recommendations and setup tips from local musky anglers.',
-    image: '/lovable-uploads/mercury-fishing.jpg',
+    image: '/lovable-uploads/Musky_Boat_Motor_Kawarthas_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-07-06',
     dateModified: '2026-07-06',
@@ -3873,6 +3873,8 @@ Many musky anglers add a kicker motor:
 - Mercury 9.9HP Pro Kicker
 - Mercury 15HP
 - Mercury 20HP
+
+![Musky fishing guide for the Kawarthas](/lovable-uploads/Musky_Boat_Motor_Kawarthas_Guide.png)
 
 ### Trolling Motor Integration
 
