@@ -417,6 +417,8 @@ As a Mercury Certified Repower Center, Harris Boat Works has the expertise to ha
 
 Congratulations on your new Mercury motor! Proper break-in during the first 10 hours ensures your engine delivers peak performance and long life.
 
+![Mercury Motor Break-In Infographic](/lovable-uploads/Break_In_Infographic.png)
+
 ### Why Break-In Matters
 
 During manufacturing, engine components are machined to precise tolerances. The break-in period allows:
