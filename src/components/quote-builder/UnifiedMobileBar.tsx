@@ -313,6 +313,11 @@ export const UnifiedMobileBar: React.FC = () => {
 
   // Calculate running total
   const runningTotal = useMemo(() => {
+    // On summary page, use the selected package price from context
+    if (location.pathname === '/quote/summary' && state.selectedPackage?.priceBeforeTax) {
+      return state.selectedPackage.priceBeforeTax;
+    }
+
     const motorPrice = displayMotor?.price || displayMotor?.basePrice || displayMotor?.msrp || 0;
     if (!motorPrice) return 0;
 
@@ -349,6 +354,7 @@ export const UnifiedMobileBar: React.FC = () => {
 
     return total;
   }, [
+    location.pathname, state.selectedPackage?.priceBeforeTax,
     displayMotor?.price, displayMotor?.basePrice, displayMotor?.msrp,
     isPreview, state.motor?.model,
     state.boatInfo?.controlsOption, state.purchasePath,

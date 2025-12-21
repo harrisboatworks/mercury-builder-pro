@@ -27,6 +27,12 @@ export interface ConfiguratorOptions {
   shaftLengths: string[];
 }
 
+interface SelectedPackage {
+  id: string;
+  label: string;
+  priceBeforeTax: number;
+}
+
 interface QuoteState {
   motor: Motor | null;
   previewMotor: Motor | null; // Motor being viewed in modal before selection
@@ -46,6 +52,7 @@ interface QuoteState {
   warrantyConfig: WarrantyConfig | null;
   hasTradein: boolean;
   selectedOptions: SelectedOption[];
+  selectedPackage: SelectedPackage | null; // Selected package from summary page
   completedSteps: number[];
   currentStep: number;
   isLoading: boolean;
@@ -68,6 +75,7 @@ type QuoteAction =
   | { type: 'SET_WARRANTY_CONFIG'; payload: WarrantyConfig }
   | { type: 'SET_HAS_TRADEIN'; payload: boolean }
   | { type: 'SET_SELECTED_OPTIONS'; payload: SelectedOption[] }
+  | { type: 'SET_SELECTED_PACKAGE'; payload: SelectedPackage | null }
   | { type: 'COMPLETE_STEP'; payload: number }
   | { type: 'SET_CURRENT_STEP'; payload: number }
   | { type: 'LOAD_FROM_STORAGE'; payload: QuoteState }
@@ -94,6 +102,7 @@ const initialState: QuoteState = {
   warrantyConfig: null,
   hasTradein: false,
   selectedOptions: [],
+  selectedPackage: null,
   completedSteps: [],
   currentStep: 1,
   isLoading: true,
@@ -147,6 +156,8 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
       return { ...state, hasTradein: action.payload };
     case 'SET_SELECTED_OPTIONS':
       return { ...state, selectedOptions: action.payload };
+    case 'SET_SELECTED_PACKAGE':
+      return { ...state, selectedPackage: action.payload };
     case 'COMPLETE_STEP':
       return { 
         ...state, 
