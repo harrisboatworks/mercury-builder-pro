@@ -5557,7 +5557,7 @@ Family runabouts need motors that balance power, reliability, and ease of use. H
     slug: 'best-mercury-for-ski-wakeboard-boats',
     title: 'Best Mercury for Ski and Wakeboard Boats',
     description: 'Choose the right Mercury outboard for skiing, wakeboarding, and wakesurfing. Learn horsepower requirements, Pro XS advantages, and setup tips.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/Best_Mercury_for_Ski_and_Wakeboard_Boats_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-11-23',
     dateModified: '2026-11-23',
