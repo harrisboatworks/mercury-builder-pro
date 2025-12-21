@@ -25,10 +25,10 @@ const navItems = [
   { label: "SIN Encryption", to: "/admin/sin-encryption-test" },
   { label: "Zapier Integration", to: "/admin/zapier" },
   { label: "Email Management", to: "/admin/email" },
+  { label: "Blog", to: "/admin/blog" },
   { label: "Payments", to: "/admin/payments" },
   { label: "SMS Alerts", to: "/admin/sms" },
 ];
-
 export default function AdminNav() {
   // Query for pending financing applications count
   const { data: pendingCount = 0, refetch } = useQuery({

@@ -140,3 +140,12 @@ verify_jwt = false
 
 [functions.browse-dropbox-folders]
 verify_jwt = false
+
+[functions.subscribe-blog]
+verify_jwt = false
+
+[functions.unsubscribe-blog]
+verify_jwt = false
+
+[functions.send-blog-notification]
+verify_jwt = false
