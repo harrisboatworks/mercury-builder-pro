@@ -1,11 +1,10 @@
 // Shared HTML parsing helpers for pricing import functionality
 // Used for consistent parsing across different import sources
 
-// HTML entity decoder
+// HTML entity decoder - uses DOMParser which doesn't execute scripts (XSS-safe)
 function decodeEntities(str: string): string {
-  const textarea = document.createElement('textarea');
-  textarea.innerHTML = str;
-  return textarea.value;
+  const doc = new DOMParser().parseFromString(str, 'text/html');
+  return doc.body.textContent || '';
 }
 
 // Parse HTML tables from the price list - Enhanced to detect multiple sections
