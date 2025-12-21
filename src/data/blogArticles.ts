@@ -2657,6 +2657,8 @@ Many fishing boats benefit from auxiliary power. Should you go electric or gas? 
 | Speed Control | Infinite | Good with EFI |
 | Hands-Free | Yes (with pedal) | No |
 
+![Trolling Motor vs Kicker comparison infographic](/lovable-uploads/Trolling_Motor_vs_Kicker_Comparison.png)
+
 ### When to Choose Electric Trolling Motor
 
 **Best For**:
