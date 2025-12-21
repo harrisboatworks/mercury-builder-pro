@@ -708,6 +708,10 @@ export default function QuoteSummaryPage() {
   };
 
   const selectedPackageData = packages.find(p => p.id === selectedPackage) || packages[0];
+  
+  // Calculate selected package monthly payment using smart term selection
+  const selectedPkgAmountToFinance = (selectedPackageData.priceBeforeTax * 1.13) + DEALERPLAN_FEE;
+  const selectedPkgMonthly = calculateMonthlyPayment(selectedPkgAmountToFinance, promo?.rate || null).payment;
 
   // Calculate monthly payments for upgrade comparison
   const essentialPackage = packages.find(p => p.id === 'good') || packages[0];
@@ -813,7 +817,7 @@ export default function QuoteSummaryPage() {
                   options={packages}
                   selectedId={selectedPackage}
                   onSelect={handlePackageSelect}
-                  rate={financingRate}
+                  promoRate={promo?.rate || null}
                   showUpgradeDeltas={true}
                 />
                 
@@ -936,7 +940,7 @@ export default function QuoteSummaryPage() {
               packageLabel={selectedPackageData.label}
               yourPriceBeforeTax={selectedPackageData.priceBeforeTax}
               totalSavings={selectedPackageData.savings}
-              monthly={undefined}
+              monthly={selectedPkgMonthly}
               bullets={selectedPackageData.features}
               onReserve={handleReserveDeposit}
               depositAmount={200}
