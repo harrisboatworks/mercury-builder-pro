@@ -6150,7 +6150,7 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
     slug: 'mercury-ordering-process',
     title: 'Ordering Your Mercury: What to Expect',
     description: 'Complete guide to ordering a Mercury outboard. Understand the 6-step process from configuration to water test, timeline expectations, and what to prepare.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/Ordering_Your_Mercury_What_to_Expect_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-12-14',
     dateModified: '2026-12-14',
