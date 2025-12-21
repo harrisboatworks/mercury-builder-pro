@@ -5945,7 +5945,7 @@ The Mercury 3.4L V6 platform (150-225hp) represents the best balance of power, e
     slug: 'mercury-pricing-promotions-2026',
     title: '2026 Mercury Buying: Pricing, Promotions and Smart Timing',
     description: 'Navigate 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages, and financing options.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/2026_Mercury_Buying_Pricing_Promotions_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-12-07',
     dateModified: '2026-12-07',
