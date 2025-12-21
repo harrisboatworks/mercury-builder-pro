@@ -1335,7 +1335,7 @@ For most Ontario boaters on inland lakes, the **FourStroke** provides everything
     slug: 'complete-guide-boat-repower-kawarthas',
     title: 'Complete Guide to Repowering Your Boat in the Kawarthas',
     description: 'Everything you need to know about repowering your boat in Kawartha Lakes. Costs, timeline, motor selection, and what to expect from start to finish.',
-    image: '/lovable-uploads/repower-hero.jpg',
+    image: '/lovable-uploads/Repowering_Boat_Kawarthas_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-23',
     dateModified: '2026-02-23',
