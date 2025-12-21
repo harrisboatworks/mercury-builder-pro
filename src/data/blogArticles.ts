@@ -5398,7 +5398,7 @@ A fair deal when you need it beats waiting indefinitely for a perfect deal. That
     slug: 'best-mercury-for-family-runabouts',
     title: 'Best Mercury Outboard for Family Runabouts',
     description: 'Find the perfect Mercury outboard for your family runabout. Expert recommendations for 16-22ft boats covering horsepower, features, and family-friendly options.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/Best_Mercury_Outboard_for_Family_Runabouts_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-11-16',
     dateModified: '2026-11-16',
