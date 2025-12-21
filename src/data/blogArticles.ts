@@ -1078,7 +1078,7 @@ Repower during winter for:
     slug: 'best-mercury-outboard-rice-lake-fishing',
     title: 'Best Mercury Outboard for Rice Lake Fishing: Local Expert\'s Guide',
     description: 'Discover the ideal Mercury outboard for Rice Lake fishing. Local recommendations for walleye, bass, and musky boats from 14-20ft on Kawartha waters.',
-    image: '/lovable-uploads/mercury-fishing.jpg',
+    image: '/lovable-uploads/Best_Mercury_Outboard_Rice_Lake_Fishing.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-09',
     dateModified: '2026-02-09',
