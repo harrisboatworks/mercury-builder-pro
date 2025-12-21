@@ -3,6 +3,7 @@ import { ArrowLeft, Calendar, Clock, ChevronRight } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { BlogSEO } from '@/components/seo/BlogSEO';
 import { BlogCard } from '@/components/blog/BlogCard';
+import { BlogShareButtons } from '@/components/blog/BlogShareButtons';
 import { getArticleBySlug, getRelatedArticles } from '@/data/blogArticles';
 import { 
   Accordion, 
@@ -215,19 +216,28 @@ export default function BlogArticle() {
             <p className="text-lg text-muted-foreground font-light mb-4">
               {article.description}
             </p>
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span className="flex items-center gap-1.5">
-                <Calendar className="h-4 w-4" />
-                {new Date(article.datePublished).toLocaleDateString('en-US', { 
-                  month: 'long', 
-                  day: 'numeric', 
-                  year: 'numeric' 
-                })}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Clock className="h-4 w-4" />
-                {article.readTime}
-              </span>
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <span className="flex items-center gap-1.5">
+                  <Calendar className="h-4 w-4" />
+                  {new Date(article.datePublished).toLocaleDateString('en-US', { 
+                    month: 'long', 
+                    day: 'numeric', 
+                    year: 'numeric' 
+                  })}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Clock className="h-4 w-4" />
+                  {article.readTime}
+                </span>
+              </div>
+              <BlogShareButtons
+                url={`https://harrisboatworks.ca/blog/${article.slug}`}
+                title={article.title}
+                description={article.description}
+                image={article.image}
+                variant="inline"
+              />
             </div>
           </header>
 
@@ -265,6 +275,17 @@ export default function BlogArticle() {
               </Accordion>
             </section>
           )}
+
+          {/* Share Section */}
+          <div className="mt-12 pt-8 border-t border-border">
+            <BlogShareButtons
+              url={`https://harrisboatworks.ca/blog/${article.slug}`}
+              title={article.title}
+              description={article.description}
+              image={article.image}
+              variant="full"
+            />
+          </div>
 
           {/* CTA */}
           <div className="mt-12 p-6 md:p-8 bg-muted/30 rounded-xl text-center">
