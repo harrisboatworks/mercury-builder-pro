@@ -500,7 +500,7 @@ When you purchase from Harris Boat Works, we walk you through the break-in proce
     slug: 'why-harris-boat-works-mercury-dealer',
     title: 'Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust',
     description: 'Discover why Harris Boat Works has been Ontario\'s trusted Mercury dealer since 1965. Learn about our expertise, inventory, service, and commitment to boaters.',
-    image: '/lovable-uploads/mercury-family-lineup.jpg',
+    image: '/lovable-uploads/Boaters_Trust_HBW.png',
     author: 'Harris Boat Works',
     datePublished: '2026-01-05',
     dateModified: '2026-01-05',
