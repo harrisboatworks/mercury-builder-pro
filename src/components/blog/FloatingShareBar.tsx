@@ -80,12 +80,24 @@ export function FloatingShareBar({ url, title, description, articleSlug }: Float
   };
 
   const handleNativeShare = async () => {
-    trackShare('native');
     if (navigator.share) {
       try {
+        // Call share FIRST to maintain user gesture context
         await navigator.share({ title, text: description, url });
+        // Track AFTER successful share (fire-and-forget)
+        trackShare('native');
       } catch (err) {
-        if (err instanceof Error && err.name !== 'AbortError') {
+        if (err instanceof Error) {
+          // User cancelled - don't show error
+          if (err.name === 'AbortError') {
+            return;
+          }
+          // Permission denied or not allowed - fallback to copy link
+          if (err.name === 'NotAllowedError') {
+            console.warn('Native share not allowed, falling back to copy');
+            handleCopyLink();
+            return;
+          }
           console.error('Share failed:', err);
         }
       }
