@@ -40,10 +40,10 @@ export function MotorCodeTooltip({ modelName, showIcon = true, className = '' }:
       <Popover>
         <PopoverTrigger asChild>
           <button 
-            className={`inline-flex items-center gap-1 text-gray-400 hover:text-gray-600 ${className}`}
+            className={`inline-flex items-center text-gray-400 hover:text-gray-600 ${className}`}
             onClick={(e) => e.stopPropagation()}
           >
-            {showIcon && <HelpCircle className="w-3.5 h-3.5" />}
+            {showIcon && <HelpCircle className="w-3 h-3" />}
           </button>
         </PopoverTrigger>
         <PopoverContent className="w-72 p-4" align="start">
@@ -58,7 +58,7 @@ export function MotorCodeTooltip({ modelName, showIcon = true, className = '' }:
       <Tooltip delayDuration={300}>
         <TooltipTrigger asChild>
           <button 
-            className={`inline-flex items-center gap-1 text-gray-400 hover:text-gray-600 ${className}`}
+            className={`inline-flex items-center text-gray-400 hover:text-gray-600 ${className}`}
             onClick={(e) => e.stopPropagation()}
           >
             {showIcon && <HelpCircle className="w-3.5 h-3.5" />}
