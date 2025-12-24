@@ -290,13 +290,16 @@ export default function MotorDetailsPremiumModal({
 
   return (
     <div className="fixed inset-0 z-[60]">
-      {/* Backdrop - full screen coverage to prevent content bleeding through */}
+      {/* Invisible click-blocker - covers full screen to prevent interaction with content under header gap */}
+      <div className="absolute inset-0" onClick={onClose} />
+      
+      {/* Visible backdrop - only below header so header remains visible */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="absolute inset-0 bg-black/70" 
+        className="absolute inset-x-0 top-14 bottom-0 bg-black/70" 
         onClick={onClose} 
       />
       
