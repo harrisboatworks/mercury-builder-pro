@@ -77,6 +77,9 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   // Track which motor the user has already interacted with (asked questions about)
   const [interactedMotorId, setInteractedMotorId] = useState<string | null>(null);
   
+  // Track if a prompt was selected (to auto-hide prompts after selection)
+  const [promptSelected, setPromptSelected] = useState(false);
+  
   // Track motor banner visibility with auto-hide
   const [showMotorBanner, setShowMotorBanner] = useState(false);
   const bannerTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -398,8 +401,15 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     };
   }, [currentMotorId, conversationHistory.length]);
 
+  // Reset promptSelected when motor context changes so new motors show their prompts
+  useEffect(() => {
+    if (currentMotorId !== prevMotorIdRef.current) {
+      setPromptSelected(false);
+    }
+  }, [currentMotorId]);
+
   const handleReaction = useCallback(async (messageId: string, reaction: 'thumbs_up' | 'thumbs_down' | null) => {
-    setMessages(prev => prev.map(msg => 
+    setMessages(prev => prev.map(msg =>
       msg.id === messageId ? { ...msg, reaction } : msg
     ));
     
@@ -783,9 +793,9 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                 )}
               </AnimatePresence>
 
-              {/* Suggested Prompts - HP-aware, rotates every 45s when idle */}
+              {/* Suggested Prompts - HP-aware, rotates every 45s when idle, hides after selection */}
               <AnimatePresence mode="wait">
-                {(messages.length <= 2 || shouldShowMotorPrompts) && !isLoading && smartPrompts.length > 0 && (
+                {(messages.length <= 2 || shouldShowMotorPrompts) && !isLoading && !promptSelected && smartPrompts.length > 0 && (
                   <motion.div
                     key={`prompts-${currentMotorId || 'default'}-${smartPrompts.join(',')}`}
                     initial={{ opacity: 0, y: 10 }}
@@ -805,7 +815,8 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: index * 0.05, duration: 0.2 }}
                           onClick={() => {
-                            // Mark this motor as interacted with to hide prompts
+                            // Hide prompts after selection for more reading space
+                            setPromptSelected(true);
                             if (currentMotorId) setInteractedMotorId(currentMotorId);
                             if (prompt.includes('Help me find the right motor') && setShowQuiz) {
                               setShowQuiz(true);
