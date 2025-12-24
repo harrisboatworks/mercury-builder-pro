@@ -7,13 +7,15 @@ interface ExpandableImageProps {
   alt: string;
   className?: string;
   containerClassName?: string;
+  caption?: string;
 }
 
 export const ExpandableImage: React.FC<ExpandableImageProps> = ({
   src,
   alt,
   className,
-  containerClassName
+  containerClassName,
+  caption
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -53,28 +55,37 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
   return (
     <>
       {/* Main Image */}
-      <div className={cn("relative group cursor-pointer", containerClassName)}>
-        <img
-          src={src}
-          alt={alt}
-          className={cn("w-full h-auto rounded-lg shadow-sm transition-all duration-200 group-hover:shadow-md", className)}
-          loading="lazy"
-          onClick={handleImageClick}
-          onLoad={() => setImageLoaded(true)}
-        />
-        
-        {/* Expand Hint */}
-        <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/10 transition-all duration-200 rounded-lg">
-          <div className="opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
-            <Expand className="w-4 h-4 text-gray-700" />
+      <figure className={cn("relative", containerClassName)}>
+        <div className="relative group cursor-pointer">
+          <img
+            src={src}
+            alt={alt}
+            className={cn("w-full h-auto rounded-lg shadow-sm transition-all duration-200 group-hover:shadow-md", className)}
+            loading="lazy"
+            onClick={handleImageClick}
+            onLoad={() => setImageLoaded(true)}
+          />
+          
+          {/* Expand Hint */}
+          <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/10 transition-all duration-200 rounded-lg">
+            <div className="opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
+              <Expand className="w-4 h-4 text-gray-700" />
+            </div>
+          </div>
+          
+          {/* Mobile hint - always visible on small screens */}
+          <div className="absolute top-2 right-2 md:hidden bg-white/90 backdrop-blur-sm rounded-full p-1.5 shadow-sm">
+            <Expand className="w-3 h-3 text-gray-600" />
           </div>
         </div>
         
-        {/* Mobile hint - always visible on small screens */}
-        <div className="absolute top-2 right-2 md:hidden bg-white/90 backdrop-blur-sm rounded-full p-1.5 shadow-sm">
-          <Expand className="w-3 h-3 text-gray-600" />
-        </div>
-      </div>
+        {/* Caption */}
+        {caption && (
+          <figcaption className="text-sm text-muted-foreground text-center mt-2 italic">
+            {caption}
+          </figcaption>
+        )}
+      </figure>
 
       {/* Lightbox Modal */}
       {isExpanded && (
