@@ -75,7 +75,6 @@ export default function MotorCardPreview({
   const { promotions } = useActivePromotions();
   const { dispatch } = useQuote();
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [galleryImages, setGalleryImages] = useState<string[]>([]);
   const [imageLoaded, setImageLoaded] = useState(false);
   const isMobile = useIsMobile();
@@ -164,26 +163,17 @@ export default function MotorCardPreview({
   const hasValidImage = imageUrl && !imageError;
 
   const handleCardClick = () => {
-    setScrollPosition(window.scrollY);
     setShowDetailsSheet(true);
   };
 
   const handleMoreInfoClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setScrollPosition(window.scrollY);
     setShowDetailsSheet(true);
   };
 
   const handleCloseModal = useCallback(() => {
     setShowDetailsSheet(false);
   }, []);
-
-  const handleExitComplete = useCallback(() => {
-    window.scrollTo({
-      top: scrollPosition,
-      behavior: 'instant'
-    });
-  }, [scrollPosition]);
 
   // Get shaft length for display
   const getShaftLength = () => {
@@ -488,7 +478,7 @@ export default function MotorCardPreview({
       
       {/* Premium Details Modal */}
       {createPortal(
-        <AnimatePresence onExitComplete={handleExitComplete}>
+        <AnimatePresence>
           {showDetailsSheet && (
             <Suspense fallback={<ModalSkeleton />}>
               <MotorDetailsPremiumModal
