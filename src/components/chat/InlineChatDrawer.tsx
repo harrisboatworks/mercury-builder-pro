@@ -630,7 +630,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
             </div>
             
             {/* Chat Container with staggered content cascade */}
-            <div className="flex flex-col h-[58vh] max-h-[400px]">
+            <div className="flex flex-col h-[62vh] max-h-[500px]">
               {/* Header with staggered fade */}
               <motion.div
                 initial={{ opacity: 0, y: 6 }}
@@ -687,7 +687,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.2, ease: 'easeOut' }}
-                className="flex-1 overflow-y-auto px-4 py-3 space-y-3 bg-gradient-to-b from-gray-50/30 to-white"
+                className="flex-1 overflow-y-auto min-h-0 px-4 py-3 space-y-3 bg-gradient-to-b from-gray-50/30 to-white"
               >
                 <AnimatePresence initial={false}>
                   {messages.map((message) => (
