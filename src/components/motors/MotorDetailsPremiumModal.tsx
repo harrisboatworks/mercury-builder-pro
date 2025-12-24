@@ -312,7 +312,7 @@ export default function MotorDetailsPremiumModal({
           flex flex-col">
           
           {/* LEFT COLUMN: Tabbed Content (Desktop & Mobile) */}
-          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto modal-content lg:h-full [-webkit-overflow-scrolling:touch] overscroll-y-auto">
+          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto modal-content lg:h-full">
             <Tabs value={activeTab} className="w-full" onValueChange={(value) => {
               if (value === 'chat') {
                 handleAskAI();
@@ -323,7 +323,7 @@ export default function MotorDetailsPremiumModal({
               }
             }}>
               {/* Mobile/Tablet Header - sticky under modal top */}
-              <div className={`lg:hidden sticky top-0 z-40 bg-white border-b border-gray-200 transition-shadow duration-200 ${hasScrolled ? 'shadow-md' : 'shadow-none'}`}>
+              <div className="lg:hidden sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
                 {/* Mobile Header with Back and X buttons */}
                 <div className="flex justify-between items-center p-4 border-b border-gray-100">
                   <button 
