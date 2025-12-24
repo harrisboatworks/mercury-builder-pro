@@ -124,6 +124,19 @@ export function LuxuryHeader({
 
             {/* Right: Actions */}
             <div className="flex items-center justify-end gap-1 md:gap-2 min-w-[40px] keep-flex">
+              {/* Mobile Search Icon - Always visible */}
+              {showSearchIcon && onSearchClick && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={onSearchClick}
+                  className="md:hidden p-1.5 text-luxury-ink hover:text-luxury-gray hover:bg-luxury-stage transition-colors"
+                  title="Search motors"
+                >
+                  <Search className="h-5 w-5" />
+                </Button>
+              )}
+              
               {/* Mobile User Icon with Dropdown */}
               <div className="md:hidden">
                 {user ? (
