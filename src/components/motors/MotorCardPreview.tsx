@@ -1,5 +1,6 @@
 "use client";
-import React, { useState, useEffect, lazy, Suspense } from "react";
+import React, { useState, useEffect, lazy, Suspense, useCallback } from "react";
+import { AnimatePresence } from "framer-motion";
 import { ImageIcon } from "lucide-react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
@@ -173,15 +174,16 @@ export default function MotorCardPreview({
     setShowDetailsSheet(true);
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = useCallback(() => {
     setShowDetailsSheet(false);
-    setTimeout(() => {
-      window.scrollTo({
-        top: scrollPosition,
-        behavior: 'instant'
-      });
-    }, 10);
-  };
+  }, []);
+
+  const handleExitComplete = useCallback(() => {
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: 'instant'
+    });
+  }, [scrollPosition]);
 
   // Get shaft length for display
   const getShaftLength = () => {
@@ -504,24 +506,28 @@ export default function MotorCardPreview({
         </div>
       
       {/* Premium Details Modal */}
-      {showDetailsSheet && createPortal(
-        <Suspense fallback={<ModalSkeleton />}>
-          <MotorDetailsPremiumModal
-            open={showDetailsSheet}
-            onClose={handleCloseModal}
-            onSelect={onSelect}
-            title={title}
-            img={imageUrl}
-            gallery={galleryImages}
-            msrp={msrp}
-            price={price}
-            promoText={promoText}
-            hp={hpNum}
-            shaft={shaft}
-            features={features}
-            motor={motor}
-          />
-        </Suspense>,
+      {createPortal(
+        <AnimatePresence onExitComplete={handleExitComplete}>
+          {showDetailsSheet && (
+            <Suspense fallback={<ModalSkeleton />}>
+              <MotorDetailsPremiumModal
+                open={showDetailsSheet}
+                onClose={handleCloseModal}
+                onSelect={onSelect}
+                title={title}
+                img={imageUrl}
+                gallery={galleryImages}
+                msrp={msrp}
+                price={price}
+                promoText={promoText}
+                hp={hpNum}
+                shaft={shaft}
+                features={features}
+                motor={motor}
+              />
+            </Suspense>
+          )}
+        </AnimatePresence>,
         document.body
       )}
     </>
