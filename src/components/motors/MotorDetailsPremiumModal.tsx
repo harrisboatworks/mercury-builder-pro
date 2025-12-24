@@ -289,9 +289,9 @@ export default function MotorDetailsPremiumModal({
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[60]">
-      {/* Invisible click-blocker - starts below header so header remains clickable */}
-      <div className="absolute inset-x-0 top-14 bottom-0" onClick={onClose} />
+    <div className="fixed inset-0 z-[60] pointer-events-none">
+      {/* Click-blocker - starts below header so header remains clickable */}
+      <div className="absolute inset-x-0 top-14 bottom-0 pointer-events-auto" onClick={onClose} />
       
       {/* Visible backdrop - only below header so header remains visible */}
       <motion.div 
@@ -299,13 +299,13 @@ export default function MotorDetailsPremiumModal({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="absolute inset-x-0 top-14 bottom-0 bg-black/70" 
+        className="absolute inset-x-0 top-14 bottom-0 bg-black/70 pointer-events-auto" 
         onClick={onClose} 
       />
       
       {/* Modal Container - TWO COLUMN LAYOUT (60/40) */}
-      <div className="absolute inset-x-0 top-14 bottom-0 sm:inset-0 flex items-start sm:items-center justify-center sm:p-4">
-        <motion.div 
+      <div className="absolute inset-x-0 top-14 bottom-0 sm:inset-0 flex items-start sm:items-center justify-center sm:p-4 pointer-events-auto">
+        <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 10, scale: 0.98 }}
