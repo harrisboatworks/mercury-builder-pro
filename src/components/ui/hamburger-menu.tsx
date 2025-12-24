@@ -15,7 +15,7 @@ export const HamburgerMenu = ({ isOpen, onClose, totalXP, user, loading, signOut
   if (!isOpen) return null;
 
   return (
-    <div id="mobile-menu" className="fixed inset-0 bg-background z-50">
+    <div id="mobile-menu" className="fixed inset-0 bg-background z-[70]">
       <div className="flex flex-col h-full">
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-border">
