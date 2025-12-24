@@ -398,22 +398,6 @@ export default function MotorCardPreview({
                 </div>
               )}
               
-              {/* Command Thrust Badge with Tooltip */}
-              {(motor?.has_command_thrust || title?.toLowerCase().includes('command thrust')) && (
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <div className="absolute top-4 right-24 bg-[hsl(var(--primary))] text-white px-2 py-1 text-[10px] tracking-wider font-semibold uppercase rounded-sm cursor-help">
-                        CT
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent side="bottom" className="max-w-xs">
-                      <p className="font-semibold text-sm">Command Thrust</p>
-                      <p className="text-xs text-muted-foreground mt-1">Larger gearcase for superior thrust and control at low speeds. Ideal for heavy boats, pontoons, and trolling.</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              )}
               
               
               {/* Mercury Logo - Enhanced interaction */}

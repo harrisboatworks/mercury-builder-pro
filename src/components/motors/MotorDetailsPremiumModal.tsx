@@ -349,21 +349,6 @@ export default function MotorDetailsPremiumModal({
                 <div className="px-4 py-3 border-b border-gray-200 bg-white">
                   <div className="flex items-center gap-2 mb-1">
                     <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
-                    {(motor?.has_command_thrust || title?.toLowerCase().includes('command thrust')) && (
-                      <TooltipProvider>
-                        <Tooltip>
-                          <TooltipTrigger asChild>
-                            <span className="inline-flex items-center px-1.5 py-0.5 text-[9px] tracking-wider uppercase bg-[hsl(var(--primary))] text-white rounded-sm font-semibold cursor-help">
-                              CT
-                            </span>
-                          </TooltipTrigger>
-                          <TooltipContent side="bottom" className="max-w-xs">
-                            <p className="font-semibold text-sm">Command Thrust</p>
-                            <p className="text-xs text-muted-foreground mt-1">Larger gearcase for superior thrust and control at low speeds. Ideal for heavy boats, pontoons, and trolling.</p>
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
-                    )}
                   </div>
                 {motor?.model_number && (
                     <p className="text-xs font-mono text-gray-400 mb-1">{motor.model_number}</p>
@@ -423,27 +408,10 @@ export default function MotorDetailsPremiumModal({
                   
                   {/* Flexbox Column Layout - crystal clear hierarchy */}
                   <div className="flex flex-col space-y-3 pr-12">
-                    {/* Motor Name with Command Thrust Badge */}
-                    <div className="flex items-center gap-3">
-                      <h2 className="text-2xl font-semibold tracking-wide text-gray-900 leading-tight">
-                        {title}
-                      </h2>
-                      {(motor?.has_command_thrust || title?.toLowerCase().includes('command thrust')) && (
-                        <TooltipProvider>
-                          <Tooltip>
-                            <TooltipTrigger asChild>
-                              <span className="inline-flex items-center px-2 py-0.5 text-[10px] tracking-wider uppercase bg-[hsl(var(--primary))] text-white rounded-sm font-semibold cursor-help">
-                                CT
-                              </span>
-                            </TooltipTrigger>
-                            <TooltipContent side="bottom" className="max-w-xs">
-                              <p className="font-semibold text-sm">Command Thrust</p>
-                              <p className="text-xs text-muted-foreground mt-1">Larger gearcase for superior thrust and control at low speeds. Ideal for heavy boats, pontoons, and trolling.</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      )}
-                    </div>
+                    {/* Motor Name */}
+                    <h2 className="text-2xl font-semibold tracking-wide text-gray-900 leading-tight">
+                      {title}
+                    </h2>
                     {motor?.model_number && (
                       <p className="text-sm font-mono text-gray-400">{motor.model_number}</p>
                     )}
