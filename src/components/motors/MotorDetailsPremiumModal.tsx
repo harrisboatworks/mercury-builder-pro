@@ -322,10 +322,9 @@ export default function MotorDetailsPremiumModal({
                 scrollContainerRef.current?.scrollTo(0, 0);
               }
             }}>
-              {/* Mobile/Tablet Header - sticky under modal top */}
-              <div className="lg:hidden sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
-                {/* Mobile Header with Back and X buttons */}
-                <div className="flex justify-between items-center p-4 border-b border-gray-100">
+              {/* Mobile/Tablet Sticky Navigation - Back/X buttons only */}
+              <div className="lg:hidden sticky top-0 z-40 bg-white border-b border-gray-100 shadow-sm">
+                <div className="flex justify-between items-center p-4">
                   <button 
                     onClick={onClose} 
                     className="inline-flex flex-row items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px] px-2" 
@@ -335,7 +334,6 @@ export default function MotorDetailsPremiumModal({
                     <span className="text-base font-medium">Back</span>
                   </button>
                   
-                  {/* X close button */}
                   <button 
                     onClick={onClose} 
                     className="p-2 text-gray-400 hover:text-gray-700 transition-colors active:scale-95 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full hover:bg-gray-100" 
@@ -344,20 +342,23 @@ export default function MotorDetailsPremiumModal({
                     <X className="w-5 h-5" />
                   </button>
                 </div>
-                
+              </div>
+
+              {/* Mobile/Tablet Scrollable Header - Title and Tabs */}
+              <div className="lg:hidden bg-white">
                 {/* Stock Status and Title */}
-                <div className="px-4 py-3 border-b border-gray-200 bg-white">
+                <div className="px-4 py-3 border-b border-gray-200">
                   <div className="flex items-center gap-2 mb-1">
                     <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
                   </div>
-                {motor?.model_number && (
+                  {motor?.model_number && (
                     <p className="text-xs font-mono text-gray-400 mb-1">{motor.model_number}</p>
                   )}
                   {motor && <StockStatusIndicator motor={motor} />}
                 </div>
                 
-                {/* 3. Tabs - separate section below name */}
-                <TabsList className="w-full justify-start border-b border-gray-200 rounded-none bg-white p-0 h-auto relative z-50">
+                {/* Tabs - scrolls with content */}
+                <TabsList className="w-full justify-start border-b border-gray-200 rounded-none bg-white p-0 h-auto">
                   <TabsTrigger 
                     value="overview" 
                     className="text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
