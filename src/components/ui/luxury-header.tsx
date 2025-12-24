@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { User, LogOut, Menu, Bell, Settings } from 'lucide-react';
+import { User, LogOut, Menu, Bell, Settings, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
@@ -8,7 +8,7 @@ import { HamburgerMenu } from './hamburger-menu';
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,14 +20,22 @@ import {
 interface LuxuryHeaderProps {
   onSearchFocus?: () => void;
   showUtilityBar?: boolean;
+  onSearchClick?: () => void;
+  showSearchIcon?: boolean;
 }
 
-export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHeaderProps) {
+export function LuxuryHeader({ 
+  onSearchFocus, 
+  showUtilityBar = true,
+  onSearchClick,
+  showSearchIcon = false
+}: LuxuryHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, signOut } = useAuth();
   const { unreadCount } = useNotifications();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -211,58 +219,112 @@ export function LuxuryHeader({ onSearchFocus, showUtilityBar = true }: LuxuryHea
         </div>
       </header>
 
-      {/* Desktop Navigation Bar */}
-      <nav className="hidden md:block bg-background border-b border-border">
+      {/* Desktop Navigation Bar - Now Sticky */}
+      <nav className="hidden md:block sticky top-[72px] z-40 bg-background border-b border-border shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-center gap-8 h-12">
+          <div className="flex items-center justify-between h-12">
+            {/* Spacer for balance */}
+            <div className="w-10" />
+            
+            {/* Navigation Links - Centered */}
+            <div className="flex items-center justify-center gap-8">
               <Link 
                 to="/" 
-                className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+                className={`relative text-sm font-medium transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${
+                  location.pathname === '/' || location.pathname === '/quote/motors' 
+                    ? 'text-foreground after:scale-x-100' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
                 Engines
               </Link>
               <Link 
                 to="/accessories" 
-                className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+                className={`relative text-sm font-medium transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${
+                  location.pathname === '/accessories' 
+                    ? 'text-foreground after:scale-x-100' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
                 Accessories
               </Link>
               <Link 
                 to="/promotions" 
-                className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+                className={`relative text-sm font-medium transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${
+                  location.pathname === '/promotions' 
+                    ? 'text-foreground after:scale-x-100' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
                 Promotions
               </Link>
               <Link 
                 to="/repower" 
-                className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+                className={`relative text-sm font-medium transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${
+                  location.pathname === '/repower' 
+                    ? 'text-foreground after:scale-x-100' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
                 Repower
               </Link>
-            <Link 
-              to="/finance-calculator" 
-              className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
-            >
-              Financing
-            </Link>
-            <Link 
-              to="/about" 
-              className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
-            >
-              About
-            </Link>
-            <Link 
-              to="/blog" 
-              className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
-            >
-              Blog
-            </Link>
-            <Link 
-              to="/contact"
-              className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
-            >
-              Contact
-            </Link>
+              <Link 
+                to="/finance-calculator" 
+                className={`relative text-sm font-medium transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${
+                  location.pathname === '/finance-calculator' 
+                    ? 'text-foreground after:scale-x-100' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Financing
+              </Link>
+              <Link 
+                to="/about" 
+                className={`relative text-sm font-medium transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${
+                  location.pathname === '/about' 
+                    ? 'text-foreground after:scale-x-100' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                About
+              </Link>
+              <Link 
+                to="/blog" 
+                className={`relative text-sm font-medium transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${
+                  location.pathname.startsWith('/blog') 
+                    ? 'text-foreground after:scale-x-100' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Blog
+              </Link>
+              <Link 
+                to="/contact"
+                className={`relative text-sm font-medium transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${
+                  location.pathname === '/contact' 
+                    ? 'text-foreground after:scale-x-100' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Contact
+              </Link>
+            </div>
+            
+            {/* Search Icon - Only show when prop is true */}
+            {showSearchIcon && onSearchClick ? (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={onSearchClick}
+                className="h-9 w-9 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                title="Search motors (Press /)"
+              >
+                <Search className="h-4 w-4" />
+                <span className="sr-only">Search</span>
+              </Button>
+            ) : (
+              <div className="w-10" />
+            )}
           </div>
         </div>
       </nav>
