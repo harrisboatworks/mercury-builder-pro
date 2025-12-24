@@ -13,7 +13,7 @@ import { useGroupedMotors } from '@/hooks/useGroupedMotors';
 import { useMotorComparison } from '@/hooks/useMotorComparison';
 import { useFavoriteMotors } from '@/hooks/useFavoriteMotors';
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
-import { useScrollDirection } from '@/hooks/useScrollDirection';
+// useScrollDirection removed - search bar scrolls naturally now
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
 import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
@@ -135,8 +135,7 @@ function MotorSelectionContent() {
   const { recentlyViewed, addToRecentlyViewed, clearRecentlyViewed } = useRecentlyViewed();
   const [showComparison, setShowComparison] = useState(false);
   
-  // Smart scroll direction for search bar reveal
-  const { isScrollingDown, isAtTop, scrollY } = useScrollDirection({ threshold: 15 });
+  // Search overlay state - triggered from header search icon
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
   
   const [motors, setMotors] = useState<DbMotor[]>([]);
@@ -613,95 +612,42 @@ function MotorSelectionContent() {
     );
   }
 
-  // Determine if we should show the search bar based on scroll behavior
-  // Desktop: Show initially, hide after scrolling past threshold (user can use nav icon)
-  // Mobile: Smart reveal - hide on scroll down, show on scroll up
-  const showMobileSearch = isAtTop || !isScrollingDown;
-  const showDesktopSearch = scrollY < 150; // Hide desktop search after 150px scroll
-
   return (
     <PageTransition>
       <FinancingProvider>
         <QuoteLayout 
           showProgress={false}
           onSearchClick={() => setShowSearchOverlay(true)}
-          showSearchIcon={!showDesktopSearch}
+          showSearchIcon={true}
         >
         
-        {/* Mobile Search Bar - Smart Scroll Reveal */}
-        <AnimatePresence>
-          {showMobileSearch && (
-            <motion.div 
-              className="md:hidden sticky top-14 sm:top-16 z-40 bg-stone-50 border-b border-gray-200"
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -100, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            >
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
-                <HybridMotorSearch
-                  query={searchQuery}
-                  onQueryChange={setSearchQuery}
-                  motors={processedMotors}
-                  onHpSelect={handleHpSuggestionSelect}
-                  className="w-full"
-                />
-                
-                {/* Quick HP Filters */}
-                <div className="mt-3">
-                  <QuickHPFilters 
-                    motors={processedMotors}
-                    activeFilter={searchQuery}
-                    onFilterChange={setSearchQuery}
-                  />
-                </div>
-                
-                {searchQuery && (
-                  <div className="text-center mt-2 text-xs text-luxury-gray">
-                    {filteredMotors.length} results
-                  </div>
-                )}
+        {/* Search Bar - Scrolls naturally with content */}
+        <div className="bg-stone-50 border-b border-gray-200">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
+            <HybridMotorSearch
+              query={searchQuery}
+              onQueryChange={setSearchQuery}
+              motors={processedMotors}
+              onHpSelect={handleHpSuggestionSelect}
+              className="w-full"
+            />
+            
+            {/* Quick HP Filters */}
+            <div className="mt-3">
+              <QuickHPFilters 
+                motors={processedMotors}
+                activeFilter={searchQuery}
+                onFilterChange={setSearchQuery}
+              />
+            </div>
+            
+            {searchQuery && (
+              <div className="text-center mt-2 text-xs text-luxury-gray">
+                {filteredMotors.length} results
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-        
-        {/* Desktop Search Bar - Visible initially, hides on scroll */}
-        <AnimatePresence>
-          {showDesktopSearch && (
-            <motion.div 
-              className="hidden md:block sticky top-[120px] z-40 bg-stone-50 border-b border-gray-200"
-              initial={{ opacity: 1 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
-                <HybridMotorSearch
-                  query={searchQuery}
-                  onQueryChange={setSearchQuery}
-                  motors={processedMotors}
-                  onHpSelect={handleHpSuggestionSelect}
-                  className="w-full"
-                />
-                
-                {/* Quick HP Filters */}
-                <div className="mt-3">
-                  <QuickHPFilters 
-                    motors={processedMotors}
-                    activeFilter={searchQuery}
-                    onFilterChange={setSearchQuery}
-                  />
-                </div>
-                
-                {searchQuery && (
-                  <div className="text-center mt-2 text-xs text-luxury-gray">
-                    {filteredMotors.length} results
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            )}
+          </div>
+        </div>
         
         {/* Search Overlay for Desktop (opens from nav icon) */}
         <SearchOverlay
