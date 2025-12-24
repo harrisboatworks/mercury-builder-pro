@@ -74,7 +74,7 @@ export function ScrollToTop() {
     const timer = setTimeout(() => {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: 'instant'
       });
 
       // Focus on the main content for accessibility

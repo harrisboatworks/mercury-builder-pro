@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { BlogIndexSEO } from '@/components/seo/BlogIndexSEO';
@@ -53,12 +54,12 @@ export default function Blog() {
             Use our online quote builder to explore Mercury motors and get instant pricing. 
             No pressure, no hassle.
           </p>
-          <a 
-            href="/quote/motor-selection"
+          <Link 
+            to="/quote/motor-selection"
             className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
           >
             Browse Motors
-          </a>
+          </Link>
         </div>
       </main>
       
