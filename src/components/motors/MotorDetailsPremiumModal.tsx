@@ -289,19 +289,19 @@ export default function MotorDetailsPremiumModal({
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50">
-      {/* Backdrop - optimized for performance */}
+    <div className="fixed inset-0 z-[60]">
+      {/* Backdrop - full screen coverage to prevent content bleeding through */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="absolute inset-x-0 top-16 bottom-0 sm:inset-0 bg-black/70" 
+        className="absolute inset-0 bg-black/70" 
         onClick={onClose} 
       />
       
       {/* Modal Container - TWO COLUMN LAYOUT (60/40) */}
-      <div className="absolute inset-x-0 top-16 bottom-0 sm:inset-0 flex items-start sm:items-center justify-center sm:p-4">
+      <div className="absolute inset-x-0 top-14 bottom-0 sm:inset-0 flex items-start sm:items-center justify-center sm:p-4">
         <motion.div 
           initial={{ opacity: 0, y: 20, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
