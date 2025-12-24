@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { ExpandableImage } from '@/components/ui/expandable-image';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
@@ -141,16 +142,17 @@ export default function BlogArticle() {
           return null;
         }
 
-        // Markdown images ![alt](url)
+        // Markdown images ![alt](url) - use expandable image for lightbox/zoom
         if (line.match(/^!\[.*?\]\(.*?\)$/)) {
           const imageMatch = line.match(/!\[(.*?)\]\((.*?)\)/);
           if (imageMatch) {
             return (
-              <img 
+              <ExpandableImage 
                 key={index}
                 src={imageMatch[2]}
                 alt={imageMatch[1]}
-                className="w-full rounded-lg my-6"
+                className="w-full rounded-lg"
+                containerClassName="my-6"
               />
             );
           }
