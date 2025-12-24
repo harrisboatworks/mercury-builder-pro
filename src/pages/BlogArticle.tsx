@@ -142,15 +142,16 @@ export default function BlogArticle() {
           return null;
         }
 
-        // Markdown images ![alt](url) - use expandable image for lightbox/zoom
+        // Markdown images ![alt](url) or ![alt](url "caption") - use expandable image for lightbox/zoom
         if (line.match(/^!\[.*?\]\(.*?\)$/)) {
-          const imageMatch = line.match(/!\[(.*?)\]\((.*?)\)/);
+          const imageMatch = line.match(/!\[(.*?)\]\((\S+?)(?:\s+"([^"]*)")?\)/);
           if (imageMatch) {
             return (
               <ExpandableImage 
                 key={index}
                 src={imageMatch[2]}
                 alt={imageMatch[1]}
+                caption={imageMatch[3]}
                 className="w-full rounded-lg"
                 containerClassName="my-6"
               />
