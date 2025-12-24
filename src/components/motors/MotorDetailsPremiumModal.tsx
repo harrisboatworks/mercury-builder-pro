@@ -322,8 +322,8 @@ export default function MotorDetailsPremiumModal({
                 scrollContainerRef.current?.scrollTo(0, 0);
               }
             }}>
-              {/* Mobile/Tablet Header - scrolls with content */}
-              <div className="lg:hidden bg-white border-b border-gray-200">
+              {/* Mobile/Tablet Header - sticky under modal top */}
+              <div className="lg:hidden sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
                 {/* Mobile Header with Back and X buttons */}
                 <div className="flex justify-between items-center p-4 border-b border-gray-100">
                   <button 
