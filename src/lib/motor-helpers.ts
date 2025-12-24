@@ -34,12 +34,23 @@ export interface Motor {
   [key: string]: any;
 }
 
+// Memoization caches for performance
+const decodeCache = new Map<string, { code: string; meaning: string; benefit: string }[]>();
+const tillerCache = new Map<string, boolean>();
+
 export const decodeModelName = (modelName: string, actualHP?: number) => {
   type Item = {
     code: string;
     meaning: string;
     benefit: string;
   };
+  
+  // Check cache first
+  const cacheKey = `${modelName}|${actualHP ?? ''}`;
+  if (decodeCache.has(cacheKey)) {
+    return decodeCache.get(cacheKey)!;
+  }
+  
   const decoded: Item[] = [];
   const name = modelName || '';
   const upper = name.toUpperCase();
@@ -58,8 +69,6 @@ export const decodeModelName = (modelName: string, actualHP?: number) => {
   // Use actual HP if provided, otherwise extract from model name
   const hpMatch = upper.match(/(\d+(?:\.\d+)?)HP/);
   const hp = actualHP || (hpMatch ? parseFloat(hpMatch[1]) : 0);
-  
-  console.log(`decodeModelName: actualHP=${actualHP}, extracted HP=${hpMatch ? parseFloat(hpMatch[1]) : 0}, using HP=${hp} for model: ${modelName}`);
 
   // Special handling for 115+ HP motors with shaft codes in model name
   const isHighHPMotor = hp >= 115;
@@ -72,7 +81,6 @@ export const decodeModelName = (modelName: string, actualHP?: number) => {
     if (highHPShaftMatch) {
       const shaftCode = highHPShaftMatch[2];
       highHPShaftDetected = true;
-      console.log(`High HP motor detected: ${hp}HP with shaft code: ${shaftCode} from model: ${name}`);
       
       switch (shaftCode) {
         case 'L':
@@ -191,6 +199,9 @@ export const decodeModelName = (modelName: string, actualHP?: number) => {
   if (hasWord('E') && !added.has('E')) add('E', 'Electric Start', 'Push-button convenience');
   if (hasWord('M') && !added.has('M')) add('M', 'Manual Start', 'Pull cord — simple & reliable');
   if (hp <= 30 && hasWord('H') && !added.has('H')) add('H', 'Tiller Handle', 'Steer directly from motor');
+  
+  // Cache the result before returning
+  decodeCache.set(cacheKey, decoded);
   return decoded;
 };
 
@@ -434,86 +445,41 @@ export const getStartType = (model: string): string => {
 };
 
 export const isTillerMotor = (model: string) => {
-  if (!model) {
-    console.log('🔧 isTillerMotor: Empty model provided');
-    return false;
+  if (!model) return false;
+
+  // Check cache first
+  if (tillerCache.has(model)) {
+    return tillerCache.get(model)!;
   }
 
   const upperModel = model.toUpperCase().trim();
-  console.log('🔧 isTillerMotor: Checking model:', model, '→ upperModel:', upperModel);
-  
-  // Test cases for validation
-  const testCases = [
-    { input: '3.5MLH FourStroke', expected: true },
-    { input: '4 MH FourStroke', expected: true },
-    { input: '15 MLH FourStroke', expected: true },
-    { input: '9.9 ELHPT Command Thrust ProKicker EFI FourStroke', expected: true },
-    { input: '25 EXLPT FourStroke', expected: false }
-  ];
-  
-  // Run test if this is a test case
-  const isTestCase = testCases.find(tc => tc.input === model);
-  if (isTestCase) {
-    console.log('🧪 Running test case for:', model);
-  }
   
   // Check for explicit tiller indicators
   if (upperModel.includes('BIG TILLER') || upperModel.includes('TILLER')) {
-    console.log('✅ isTillerMotor: Found explicit TILLER in model');
+    tillerCache.set(model, true);
     return true;
   }
   
-  // Enhanced regex patterns with more flexibility
-  // Allow for optional spaces, punctuation, and case variations
+  // Tiller patterns - H suffix indicates tiller handle
   const tillerPatterns = [
-    // MLH = Manual start + Long shaft + tiller Handle
-    { pattern: /\b(\d+\.?\d*)\s*MLH\b/i, name: 'MLH' },
-    
-    // ELH = Electric start + Long shaft + tiller Handle  
-    { pattern: /\b(\d+\.?\d*)\s*ELH\b/i, name: 'ELH' },
-    
-    // EXLH = Electric start + eXtra Long shaft + tiller Handle
-    { pattern: /\b(\d+\.?\d*)\s*EXLH\b/i, name: 'EXLH' },
-    
-    // ELHPT = Electric start + Long shaft + tiller Handle + Power Tilt
-    { pattern: /\b(\d+\.?\d*)\s*ELHPT\b/i, name: 'ELHPT' },
-    
-    // EXLHPT = Electric start + eXtra Long shaft + tiller Handle + Power Tilt
-    { pattern: /\b(\d+\.?\d*)\s*EXLHPT\b/i, name: 'EXLHPT' },
-    
-    // MH = Manual start + tiller Handle
-    { pattern: /\b(\d+\.?\d*)\s*MH(?!\w)/i, name: 'MH' },
-    
-    // EH = Electric start + tiller Handle
-    { pattern: /\b(\d+\.?\d*)\s*EH(?!\w)/i, name: 'EH' },
-    
-    // Check for standalone H pattern after numbers (but avoid HP, FH, etc.)
-    { pattern: /\b(\d+\.?\d*)\s*H(?!\w|P)/i, name: 'H' }
+    /\b(\d+\.?\d*)\s*MLH\b/i,    // MLH = Manual + Long + Handle
+    /\b(\d+\.?\d*)\s*ELH\b/i,    // ELH = Electric + Long + Handle
+    /\b(\d+\.?\d*)\s*EXLH\b/i,   // EXLH = Electric + XL + Handle
+    /\b(\d+\.?\d*)\s*ELHPT\b/i,  // ELHPT = Electric + Long + Handle + Power Tilt
+    /\b(\d+\.?\d*)\s*EXLHPT\b/i, // EXLHPT = Electric + XL + Handle + Power Tilt
+    /\b(\d+\.?\d*)\s*MH(?!\w)/i, // MH = Manual + Handle
+    /\b(\d+\.?\d*)\s*EH(?!\w)/i, // EH = Electric + Handle
+    /\b(\d+\.?\d*)\s*H(?!\w|P)/i // Standalone H (avoid HP, FH)
   ];
   
-  // Test each pattern
-  for (const { pattern, name } of tillerPatterns) {
-    const match = pattern.exec(upperModel);
-    if (match) {
-      console.log(`✅ isTillerMotor: Found tiller pattern '${name}' in model:`, model);
-      console.log(`   → Matched: '${match[0]}' with HP: '${match[1]}'`);
-      
-      // Validate test case result
-      if (isTestCase && !isTestCase.expected) {
-        console.error(`❌ TEST FAILED: Expected '${model}' to NOT be tiller, but detected '${name}' pattern`);
-      }
-      
+  for (const pattern of tillerPatterns) {
+    if (pattern.test(upperModel)) {
+      tillerCache.set(model, true);
       return true;
     }
   }
   
-  console.log('❌ isTillerMotor: No tiller patterns found in model:', model);
-  
-  // Validate test case result
-  if (isTestCase && isTestCase.expected) {
-    console.error(`❌ TEST FAILED: Expected '${model}' to be tiller, but no patterns matched`);
-  }
-  
+  tillerCache.set(model, false);
   return false;
 };
 
@@ -573,28 +539,8 @@ export const getIncludedAccessories = (motor: Motor) => {
 
 export const requiresMercuryControls = (motor: Motor) => {
   const modelDisplay = motor.model_display || motor.model || '';
-  console.log('🔧 requiresMercuryControls: Checking motor:', {
-    model_display: motor.model_display,
-    model: motor.model,
-    hp: motor.hp,
-    id: motor.id
-  });
-  
-  if (!modelDisplay) {
-    console.log('❌ requiresMercuryControls: No model found, defaulting to requires controls');
-    return true;
-  }
-  
-  const isTiller = isTillerMotor(modelDisplay);
-  const requiresControls = !isTiller;
-  
-  console.log('🔧 requiresMercuryControls: Result:', {
-    modelDisplay,
-    isTiller,
-    requiresControls
-  });
-  
-  return requiresControls;
+  if (!modelDisplay) return true;
+  return !isTillerMotor(modelDisplay);
 };
 
 export const getAdditionalRequirements = (motor: Motor) => {
