@@ -582,14 +582,14 @@ export default function MotorDetailsPremiumModal({
                         <h3 className="text-lg font-semibold tracking-wide text-gray-900">
                           Key Features
                         </h3>
-                        <ul className="space-y-3">
+                        <div className="space-y-3">
                           {features.slice(0, 4).map((feature, idx) => (
-                            <li key={idx} className="flex items-start gap-3">
-                              <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                              <span className="text-sm font-normal text-gray-700">{feature}</span>
-                            </li>
+                            <div key={idx} className="flex flex-row items-start gap-3">
+                              <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                              <span className="text-base text-gray-700">{feature}</span>
+                            </div>
                           ))}
-                        </ul>
+                        </div>
                       </div>
                     )}
                     
