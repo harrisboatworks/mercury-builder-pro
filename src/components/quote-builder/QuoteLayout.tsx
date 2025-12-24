@@ -14,10 +14,14 @@ import { QuoteProgressStepper } from './QuoteProgressStepper';
 interface QuoteLayoutProps {
   children: React.ReactNode;
   showProgress?: boolean;
+  onSearchClick?: () => void;
+  showSearchIcon?: boolean;
 }
 export const QuoteLayout = ({
   children,
-  showProgress = true
+  showProgress = true,
+  onSearchClick,
+  showSearchIcon = false
 }: QuoteLayoutProps) => {
   const {
     user,
@@ -28,7 +32,10 @@ export const QuoteLayout = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return <div className="min-h-screen bg-white">
       {/* Luxury Header System */}
-      <LuxuryHeader />
+      <LuxuryHeader 
+        onSearchClick={onSearchClick}
+        showSearchIcon={showSearchIcon}
+      />
 
       {/* Quote Progress Stepper */}
       {showProgress && <QuoteProgressStepper />}
