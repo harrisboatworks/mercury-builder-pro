@@ -323,7 +323,7 @@ export default function MotorDetailsPremiumModal({
               }
             }}>
               {/* Mobile/Tablet Sticky Navigation - Back/X buttons only */}
-              <div className="lg:hidden sticky top-0 z-40 bg-white border-b border-gray-100 shadow-sm">
+              <div className="lg:hidden sticky top-0 z-40 bg-white">
                 <div className="flex justify-between items-center p-4">
                   <button 
                     onClick={onClose} 
@@ -345,7 +345,7 @@ export default function MotorDetailsPremiumModal({
               </div>
 
               {/* Mobile/Tablet Scrollable Header - Title and Tabs */}
-              <div className="lg:hidden bg-white">
+              <div className="lg:hidden bg-white border-t border-gray-100">
                 {/* Stock Status and Title */}
                 <div className="px-4 py-3 border-b border-gray-200">
                   <div className="flex items-center gap-2 mb-1">
