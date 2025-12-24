@@ -433,12 +433,10 @@ export default function MotorCardPreview({
           {/* Content Section - Premium Layout */}
           <div className="p-6 md:p-8 space-y-4">
             {/* Model Name - Refined Typography */}
-            <div className="flex items-start gap-2">
-              <h3 className="text-lg md:text-xl font-medium tracking-tight text-gray-900">
-                {formatTitle(title)}
-              </h3>
-              <MotorCodeTooltip modelName={title} className="mt-1" />
-            </div>
+            <h3 className="text-lg md:text-xl font-medium tracking-tight text-gray-900">
+              {formatTitle(title)}
+              <MotorCodeTooltip modelName={title} className="inline-flex align-middle ml-1" />
+            </h3>
             
             {/* Model Number - Very Subtle */}
             {motor?.model_number && (
