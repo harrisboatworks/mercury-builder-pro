@@ -104,6 +104,7 @@ const TestFinancingEmails = lazy(() => import("./pages/TestFinancingEmails"));
 const StagingImageSizing = lazy(() => import("./pages/StagingImageSizing"));
 const StagingImageSizingV2 = lazy(() => import("./pages/StagingImageSizingV2"));
 const StagingImageSizingFinal = lazy(() => import("./pages/StagingImageSizingFinal"));
+const VoiceTest = lazy(() => import("./pages/VoiceTest"));
 
 function Canonical() {
   useEffect(() => {
@@ -334,6 +335,7 @@ function AnimatedRoutes() {
         <Route path="/finance-calculator" element={<FinanceCalculator />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/dev" element={<Dev />} />
+        <Route path="/voice-test" element={<VoiceTest />} />
         <Route path="/test/scraper" element={<TestScraper />} />
         {/* Removed obsolete test routes */}
         <Route path="/quotes/new" element={<NewQuote />} />

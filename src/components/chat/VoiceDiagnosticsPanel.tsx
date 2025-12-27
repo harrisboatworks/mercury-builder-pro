@@ -150,8 +150,16 @@ export const VoiceDiagnosticsPanel: React.FC<VoiceDiagnosticsPanelProps> = ({
         )}
       </div>
 
-      <div className="mt-2 text-[11px] text-muted-foreground">
-        Toggle: <span className="font-mono">⌥ Option</span>+<span className="font-mono">Shift</span>+<span className="font-mono">D</span>
+      <div className="mt-2 flex items-center justify-between text-[11px] text-muted-foreground">
+        <span>
+          Toggle: <span className="font-mono">⌥ Option</span>+<span className="font-mono">Shift</span>+<span className="font-mono">D</span>
+        </span>
+        <a
+          href="/voice-test"
+          className="text-primary hover:underline"
+        >
+          Run full diagnostics →
+        </a>
       </div>
     </aside>
   );
