@@ -33,7 +33,7 @@ serve(async (req) => {
       if (currentPage.includes('financing')) contextInfo += 'They are exploring financing options. ';
     }
 
-    // Request ephemeral token from OpenAI
+    // Request ephemeral token from OpenAI with FULL session configuration
     const response = await fetch("https://api.openai.com/v1/realtime/sessions", {
       method: "POST",
       headers: {
@@ -42,7 +42,16 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         model: "gpt-4o-realtime-preview-2024-12-17",
+        modalities: ["audio", "text"],
         voice: "alloy",
+        input_audio_format: "pcm16",
+        output_audio_format: "pcm16",
+        turn_detection: {
+          type: "server_vad",
+          threshold: 0.5,
+          prefix_padding_ms: 300,
+          silence_duration_ms: 200,
+        },
         instructions: `You're Harris from Harris Boat Works — a friendly, knowledgeable Mercury Marine expert. ${contextInfo}
 
 GOLDEN RULES:
