@@ -312,6 +312,9 @@ export default function VoiceTest() {
       dataChannelOpen: false,
       sessionCreated: false,
       sessionUpdated: false,
+      sessionModalities: null as string[] | null,
+      sessionVoice: null as string | null,
+      sessionOutputFormat: null as string | null,
       trackReceived: false,
       audioElementPlaying: false,
       autoplayError: null as string | null,
@@ -329,12 +332,17 @@ export default function VoiceTest() {
       // NEW: WebAudio output RMS
       outputRMS: 0,
     };
-    
+
     const updateDiagnosticDetails = () => {
+      const sessionBits = diagnostics.sessionModalities
+        ? `session[modalities=${diagnostics.sessionModalities.join(',')}; voice=${diagnostics.sessionVoice ?? '-'}; out=${diagnostics.sessionOutputFormat ?? '-'}]`
+        : 'session[?]';
+
       const parts = [
         `Token: ${diagnostics.tokenReceived ? '✓' : '✗'}`,
         `DataChannel: ${diagnostics.dataChannelOpen ? '✓' : '✗'}`,
         `Session: ${diagnostics.sessionCreated ? 'created' : 'waiting'}${diagnostics.sessionUpdated ? '/updated' : ''}`,
+        sessionBits,
         `Track: ${diagnostics.trackReceived ? '✓' : '✗'}`,
         `Response: ${diagnostics.responseCreated ? 'started' : '-'}/${diagnostics.responseDone ? 'done' : '-'}`,
         `InboundBytes: ${diagnostics.inboundAudioBytes}`,
@@ -530,9 +538,30 @@ export default function VoiceTest() {
             if (event.type === 'session.created') {
               diagnostics.sessionCreated = true;
               diagnostics.sessionUpdated = true; // Mark as updated since we're skipping it
+
+              const sess = event.session ?? event?.session;
+              diagnostics.sessionModalities = Array.isArray(sess?.modalities) ? sess.modalities : null;
+              diagnostics.sessionVoice = typeof sess?.voice === 'string' ? sess.voice : null;
+              diagnostics.sessionOutputFormat = typeof sess?.output_audio_format === 'string' ? sess.output_audio_format : null;
+
+              console.log('[VoiceTest] Session created payload:', sess);
+
+              // If the server didn't actually enable audio modalities, fail fast with a clear message.
+              if (diagnostics.sessionModalities && !diagnostics.sessionModalities.includes('audio')) {
+                diagnostics.errorMessage = 'Session modalities do not include audio';
+                clearTimeout(connectionTimeout);
+                cleanup();
+                updateStep('playback', {
+                  status: 'failed',
+                  details: `Session created but audio is disabled. ${updateDiagnosticDetails()}`,
+                });
+                resolve(false);
+                return;
+              }
+
               console.log('[VoiceTest] Session created (pre-configured), sending test message directly...');
-              updateStep('playback', { status: 'running', details: 'Session ready, sending test message...' });
-              
+              updateStep('playback', { status: 'running', details: `Session ready, sending test message... ${updateDiagnosticDetails()}` });
+
               // Send test message directly - no session.update needed
               dc.send(JSON.stringify({
                 type: 'conversation.item.create',
@@ -541,20 +570,20 @@ export default function VoiceTest() {
                   role: 'user',
                   content: [{
                     type: 'input_text',
-                    text: 'Say "Voice test successful" in a brief, friendly way.'
+                    text: 'Say "Voice test successful" out loud, briefly, with a friendly tone.'
                   }]
                 }
               }));
-              
-              // Request audio response
-              dc.send(JSON.stringify({ 
+
+              // Force an audio+text response
+              dc.send(JSON.stringify({
                 type: 'response.create',
                 response: {
-                  modalities: ['audio', 'text']
+                  modalities: ['audio', 'text'],
                 }
               }));
-              
-              updateStep('playback', { status: 'running', details: 'Waiting for AI voice response...' });
+
+              updateStep('playback', { status: 'running', details: `Waiting for AI voice response... ${updateDiagnosticDetails()}` });
             }
             
             // session.updated is no longer expected since we skip session.update

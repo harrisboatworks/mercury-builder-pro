@@ -25,14 +25,15 @@ serve(async (req) => {
     console.log('Proxying SDP exchange to OpenAI...');
 
     // Proxy the SDP exchange to OpenAI
+    // NOTE: using the known-working realtime model endpoint.
     const response = await fetch(
-      "https://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview-2024-12-17",
+      "https://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview-2024-10-01",
       {
         method: "POST",
         body: sdpOffer,
         headers: {
           Authorization: `Bearer ${ephemeralKey}`,
-          "Content-Type": "application/sdp"
+          "Content-Type": "application/sdp",
         },
       }
     );
