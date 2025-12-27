@@ -40,6 +40,18 @@ export async function prewarmEdgeFunctions() {
   return Promise.all(warmups);
 }
 
+// Turn timing for performance tracking
+export interface TurnTiming {
+  turnStart: number | null;        // When user started speaking (transcript received)
+  transcriptAt: number | null;     // When transcript was processed
+  toolStartAt: number | null;      // When tool call started  
+  toolEndAt: number | null;        // When tool call finished
+  agentStartAt: number | null;     // When agent started speaking
+}
+
+// Computed phase for UI display
+export type VoicePhase = 'idle' | 'listening' | 'thinking' | 'searching' | 'speaking';
+
 interface VoiceState {
   isConnected: boolean;
   isConnecting: boolean;
@@ -59,6 +71,8 @@ interface VoiceState {
   textOnlyMode: boolean;
   audioFailCount: number;
   inactivityWarningShown: boolean;
+  turnTiming: TurnTiming;
+  currentPhase: VoicePhase;
 }
 
 export interface QuoteContext {
@@ -888,6 +902,15 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   // Voice session persistence
   const voiceSession = useVoiceSessionPersistence();
   
+  // Initial turn timing
+  const initialTurnTiming: TurnTiming = {
+    turnStart: null,
+    transcriptAt: null,
+    toolStartAt: null,
+    toolEndAt: null,
+    agentStartAt: null,
+  };
+
   const [state, setState] = useState<VoiceState>({
     isConnected: false,
     isConnecting: false,
@@ -907,6 +930,8 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     textOnlyMode: false,
     audioFailCount: 0,
     inactivityWarningShown: false,
+    turnTiming: initialTurnTiming,
+    currentPhase: 'idle',
   });
 
   const transcriptRef = useRef<string>('');
@@ -932,14 +957,19 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     searchMessage: string = 'Checking...'
   ) => {
     return async (...args: T): Promise<R> => {
-      const startTime = Date.now();
+      const startTime = performance.now();
       console.log(`[Tool] ${toolName} starting...`);
       
-      // Set searching state immediately
+      // Set searching state and record tool start time
       setStateRef.current(prev => ({ 
         ...prev, 
         isSearching: true, 
-        searchingMessage: searchMessage 
+        searchingMessage: searchMessage,
+        currentPhase: 'searching',
+        turnTiming: {
+          ...prev.turnTiming,
+          toolStartAt: startTime,
+        },
       }));
       
       // Play instant audio acknowledgement (only if agent hasn't spoken yet)
@@ -948,14 +978,21 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       
       try {
         const result = await handler(...args);
-        console.log(`[Tool] ${toolName} completed in ${Date.now() - startTime}ms`);
+        const endTime = performance.now();
+        console.log(`[Tool] ${toolName} completed in ${(endTime - startTime).toFixed(0)}ms`);
         return result;
       } finally {
-        // Clear searching state
+        // Clear searching state and record tool end time
+        const toolEndTime = performance.now();
         setStateRef.current(prev => ({ 
           ...prev, 
           isSearching: false, 
-          searchingMessage: null 
+          searchingMessage: null,
+          currentPhase: prev.isSpeaking ? 'speaking' : 'thinking',
+          turnTiming: {
+            ...prev.turnTiming,
+            toolEndAt: toolEndTime,
+          },
         }));
       }
     };
@@ -1015,6 +1052,8 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       textOnlyMode: false,
       audioFailCount: 0,
       inactivityWarningShown: false,
+      turnTiming: initialTurnTiming,
+      currentPhase: 'idle',
     });
   }, [voiceSession]);
 
@@ -1084,16 +1123,22 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   // Mark that the agent has responded (either started speaking or sent a response)
   const markAgentResponded = useCallback(() => {
     if (!agentRespondedRef.current) {
+      const now = performance.now();
       console.log('[Voice] Agent responded - clearing thinking watchdog');
       agentRespondedRef.current = true;
       clearThinkingWatchdog();
 
-      // Clear "thinking" UI immediately (user should now see speaking/listening/searching)
-      setStateRef.current(prev => (
-        prev.isThinking || prev.thinkingMessage
-          ? { ...prev, isThinking: false, thinkingMessage: null }
-          : prev
-      ));
+      // Clear "thinking" UI immediately and record agent start time
+      setStateRef.current(prev => ({
+        ...prev,
+        isThinking: false,
+        thinkingMessage: null,
+        currentPhase: 'speaking',
+        turnTiming: {
+          ...prev.turnTiming,
+          agentStartAt: now,
+        },
+      }));
     }
   }, [clearThinkingWatchdog]);
 
@@ -1128,6 +1173,8 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         isListening: true,
         diagnostics: createDiagnostics(true),
         inactivityWarningShown: false,
+        currentPhase: 'listening',
+        turnTiming: initialTurnTiming,
       }));
       // Start inactivity timer when connected
       resetInactivityTimer();
@@ -1160,15 +1207,25 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         const event = msg.user_transcription_event as Record<string, unknown> | undefined;
         const userTranscript = event?.user_transcript as string | undefined;
         if (userTranscript) {
+          const now = performance.now();
           console.log('[Voice] User transcript received:', userTranscript.substring(0, 50));
           transcriptRef.current = userTranscript;
 
           // Immediate on-screen acknowledgement (covers the "dead air" period)
+          // Also start new turn timing
           setState(prev => ({
             ...prev,
             transcript: userTranscript,
             isThinking: true,
             thinkingMessage: "Hang on — checking…",
+            currentPhase: 'thinking',
+            turnTiming: {
+              turnStart: now,
+              transcriptAt: now,
+              toolStartAt: null,
+              toolEndAt: null,
+              agentStartAt: null,
+            },
           }));
 
           onTranscriptComplete?.(userTranscript);
@@ -1415,12 +1472,26 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     conversationRef.current = conversation;
   }, [conversation]);
 
-  // Track speaking state from conversation - also reset timer
+  // Track speaking state from conversation - also update phase
   useEffect(() => {
     setState(prev => {
       // Only update if value actually changed
       if (prev.isSpeaking === conversation.isSpeaking) return prev;
-      return { ...prev, isSpeaking: conversation.isSpeaking };
+      
+      // Update phase based on speaking state
+      let newPhase = prev.currentPhase;
+      if (conversation.isSpeaking) {
+        newPhase = 'speaking';
+      } else if (prev.isSpeaking && !conversation.isSpeaking) {
+        // Just finished speaking - go back to listening
+        newPhase = 'listening';
+      }
+      
+      return { 
+        ...prev, 
+        isSpeaking: conversation.isSpeaking,
+        currentPhase: newPhase,
+      };
     });
   }, [conversation.isSpeaking]);
   
@@ -1442,7 +1513,12 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     setState(prev => {
       // Only update if values actually changed
       if (prev.isConnected === connected && prev.isListening === connected) return prev;
-      return { ...prev, isConnected: connected, isListening: connected };
+      return { 
+        ...prev, 
+        isConnected: connected, 
+        isListening: connected,
+        currentPhase: connected ? 'listening' : 'idle',
+      };
     });
   }, [conversation.status]);
 
@@ -1669,6 +1745,8 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       textOnlyMode: false,
       audioFailCount: 0,
       inactivityWarningShown: false,
+      turnTiming: initialTurnTiming,
+      currentPhase: 'idle',
     });
   }, [conversation, voiceSession]);
 
