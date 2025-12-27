@@ -35,7 +35,8 @@ export class AudioRecorder {
         }
       });
       
-      this.audioContext = new AudioContext({ sampleRate: 24000 });
+      // Don't force sampleRate - iOS Safari crashes with unsupported rates
+      this.audioContext = new AudioContext();
       this.source = this.audioContext.createMediaStreamSource(this.stream);
       this.processor = this.audioContext.createScriptProcessor(4096, 1, 1);
       
@@ -251,40 +252,83 @@ export async function requestMicrophonePermission(): Promise<MediaStream> {
 let sharedOutputAudioContext: AudioContext | null = null;
 let audioUnlocked = false;
 
+// Detect iOS/Safari for audio routing preferences
+export const isIOS = (): boolean => {
+  if (typeof navigator === 'undefined') return false;
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+};
+
+export const isSafari = (): boolean => {
+  if (typeof navigator === 'undefined') return false;
+  return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+};
+
+/**
+ * Safely create an AudioContext without crashing on iOS
+ * iOS Safari can crash with unsupported sampleRate values
+ */
+export function safeCreateAudioContext(): AudioContext | null {
+  try {
+    // Never force sampleRate - let the browser use its default (usually 44100 or 48000)
+    return new AudioContext();
+  } catch (e) {
+    console.error('Failed to create AudioContext:', e);
+    return null;
+  }
+}
+
 /**
  * Unlock audio output on Safari/iOS. MUST be called directly from a user gesture (click/tap).
  * This creates or resumes the shared AudioContext and plays a tiny silent buffer
  * to satisfy autoplay policies.
  */
-export async function unlockAudioOutput(): Promise<AudioContext> {
+export async function unlockAudioOutput(): Promise<AudioContext | null> {
   console.log('🔓 Attempting to unlock audio output...');
   
   if (!sharedOutputAudioContext) {
-    sharedOutputAudioContext = new AudioContext({ sampleRate: 24000 });
+    sharedOutputAudioContext = safeCreateAudioContext();
+    if (!sharedOutputAudioContext) {
+      console.error('🔓 Failed to create AudioContext');
+      return null;
+    }
     console.log('🔓 Created shared AudioContext, state:', sharedOutputAudioContext.state);
   }
   
   // Resume if suspended (Safari requires this from user gesture)
   if (sharedOutputAudioContext.state === 'suspended') {
     console.log('🔓 Resuming suspended AudioContext...');
-    await sharedOutputAudioContext.resume();
-    console.log('🔓 AudioContext resumed, state:', sharedOutputAudioContext.state);
+    try {
+      await sharedOutputAudioContext.resume();
+      console.log('🔓 AudioContext resumed, state:', sharedOutputAudioContext.state);
+    } catch (e) {
+      console.warn('🔓 Failed to resume AudioContext:', e);
+    }
   }
   
-  // Play an audible 0.2s test beep to confirm speakers work
+  // Play an audible 0.2s test beep to confirm speakers work (use separate context to avoid issues)
   if (!audioUnlocked) {
     try {
-      const oscillator = sharedOutputAudioContext.createOscillator();
-      const gainNode = sharedOutputAudioContext.createGain();
-      oscillator.type = 'sine';
-      oscillator.frequency.value = 880; // A5 note - clearly audible
-      gainNode.gain.value = 0.3; // Audible but not too loud
-      oscillator.connect(gainNode);
-      gainNode.connect(sharedOutputAudioContext.destination);
-      oscillator.start();
-      oscillator.stop(sharedOutputAudioContext.currentTime + 0.2); // 0.2 second beep
-      audioUnlocked = true;
-      console.log('🔓 Audio output unlocked with test beep');
+      // Use a separate context for the beep to avoid interfering with main audio
+      const beepContext = safeCreateAudioContext();
+      if (beepContext) {
+        if (beepContext.state === 'suspended') {
+          await beepContext.resume();
+        }
+        const oscillator = beepContext.createOscillator();
+        const gainNode = beepContext.createGain();
+        oscillator.type = 'sine';
+        oscillator.frequency.value = 880; // A5 note - clearly audible
+        gainNode.gain.value = 0.3; // Audible but not too loud
+        oscillator.connect(gainNode);
+        gainNode.connect(beepContext.destination);
+        oscillator.start();
+        oscillator.stop(beepContext.currentTime + 0.2);
+        // Close the beep context after it's done
+        setTimeout(() => beepContext.close(), 500);
+        audioUnlocked = true;
+        console.log('🔓 Audio output unlocked with test beep');
+      }
     } catch (e) {
       console.warn('🔓 Test beep failed:', e);
     }
@@ -444,6 +488,7 @@ export class RealtimeVoiceChat {
   /**
    * Route remote audio stream to speakers with retry capability.
    * This method can be called multiple times safely.
+   * On iOS/Safari, prioritize HTMLAudioElement for better compatibility.
    */
   private async routeRemoteAudio() {
     if (!this.remoteStream) {
@@ -451,11 +496,53 @@ export class RealtimeVoiceChat {
       return;
     }
     
-    console.log('🔊 Attempting to route remote audio, AudioContext state:', this.audioContext?.state);
+    const isiOSDevice = isIOS();
+    const isSafariBrowser = isSafari();
+    console.log('🔊 Attempting to route remote audio, iOS:', isiOSDevice, 'Safari:', isSafariBrowser, 'AudioContext state:', this.audioContext?.state);
 
-    // Ensure AudioContext exists and is running
+    // On iOS/Safari, prioritize HTML Audio Element (more reliable)
+    if ((isiOSDevice || isSafariBrowser) && !this.audioElementPlaying) {
+      this.audioEl.srcObject = this.remoteStream;
+      console.log('🔊 [iOS/Safari] Audio element srcObject set (primary method)');
+
+      try {
+        await this.audioEl.play();
+        console.log('✅ [iOS/Safari] Audio element playback started');
+        this.audioElementPlaying = true;
+        this.audioIsPlaying = true;
+        this.lastPlayError = null;
+        this.updateDiagnostics();
+        return; // On iOS/Safari, we're done - don't try Web Audio
+      } catch (err: any) {
+        console.warn('🔊 [iOS/Safari] Audio element play failed:', err.message);
+        this.lastPlayError = err?.message || 'Audio element play failed';
+        this.audioElementPlaying = false;
+        this.updateDiagnostics();
+        // Continue to try Web Audio as fallback
+      }
+    }
+
+    // Ensure AudioContext exists and is running (safe creation)
     if (!this.audioContext) {
-      this.audioContext = sharedOutputAudioContext || new AudioContext({ sampleRate: 24000 });
+      this.audioContext = sharedOutputAudioContext || safeCreateAudioContext();
+      if (!this.audioContext) {
+        console.warn('🔊 AudioContext creation failed - using HTML audio only');
+        // Fall back to HTML audio element
+        if (!this.audioElementPlaying) {
+          this.audioEl.srcObject = this.remoteStream;
+          try {
+            await this.audioEl.play();
+            this.audioElementPlaying = true;
+            this.audioIsPlaying = true;
+            console.log('✅ Audio element playback started (AudioContext fallback)');
+          } catch (e: any) {
+            this.lastPlayError = e?.message || 'Audio playback failed';
+            this.onAudioIssue?.();
+          }
+          this.updateDiagnostics();
+        }
+        return;
+      }
       console.log('🔊 Created new AudioContext');
     }
     
@@ -468,7 +555,7 @@ export class RealtimeVoiceChat {
       }
     }
 
-    // PRIMARY: Route through Web Audio API (more reliable for output level monitoring)
+    // PRIMARY (non-iOS): Route through Web Audio API for output level monitoring
     if (this.audioContext.state === 'running' && !this.webAudioRouted) {
       try {
         // Disconnect previous source if any
@@ -500,10 +587,10 @@ export class RealtimeVoiceChat {
       }
     }
 
-    // FALLBACK: Also try HTML audio element
+    // FALLBACK: Also try HTML audio element (for non-iOS browsers where Web Audio failed)
     if (!this.audioElementPlaying) {
       this.audioEl.srcObject = this.remoteStream;
-      console.log('🔊 Audio element srcObject set');
+      console.log('🔊 Audio element srcObject set (fallback)');
 
       try {
         await this.audioEl.play();
@@ -526,6 +613,7 @@ export class RealtimeVoiceChat {
     if (!this.outputAnalyser) return;
     
     const dataArray = new Float32Array(this.outputAnalyser.fftSize);
+    let lastReportedLevel = 0;
     
     this.outputLevelInterval = setInterval(() => {
       if (!this.outputAnalyser) {
@@ -540,8 +628,9 @@ export class RealtimeVoiceChat {
       const { rms } = calculateAudioLevels(dataArray);
       this.outputAudioLevel = rms;
       
-      // Only update diagnostics if level changed significantly
-      if (Math.abs(rms - this.outputAudioLevel) > 0.01) {
+      // Only update diagnostics if level changed significantly (compare to LAST reported, not current)
+      if (Math.abs(rms - lastReportedLevel) > 0.01) {
+        lastReportedLevel = rms;
         this.updateDiagnostics();
       }
     }, 50);
@@ -567,13 +656,17 @@ export class RealtimeVoiceChat {
       this.startMicLevelMonitoring();
       this.updateDiagnostics();
       
-      // Use the shared unlocked AudioContext for output
-      this.audioContext = sharedOutputAudioContext || new AudioContext({ sampleRate: 24000 });
-      if (this.audioContext.state === 'suspended') {
-        console.log('Resuming AudioContext in connect...');
-        await this.audioContext.resume();
+      // Use the shared unlocked AudioContext for output (safe creation - no forced sampleRate)
+      this.audioContext = sharedOutputAudioContext || safeCreateAudioContext();
+      if (this.audioContext) {
+        if (this.audioContext.state === 'suspended') {
+          console.log('Resuming AudioContext in connect...');
+          await this.audioContext.resume();
+        }
+        this.audioQueue = new AudioQueue(this.audioContext);
+      } else {
+        console.warn('AudioContext not available - will use HTML audio element fallback');
       }
-      this.audioQueue = new AudioQueue(this.audioContext);
       
       // Get ephemeral token from edge function
       const tokenResponse = await fetch(
