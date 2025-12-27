@@ -419,6 +419,379 @@ function handleSetPurchasePath(params: {
   return JSON.stringify({ success: true, path: normalizedPath, message });
 }
 
+// Client tool handler for scheduling callbacks
+async function handleScheduleCallback(params: {
+  customer_name: string;
+  customer_phone: string;
+  preferred_time?: string;
+  notes?: string;
+  motor_interest?: string;
+  motor_context?: { model: string; hp: number } | null;
+}): Promise<string> {
+  console.log('[ClientTool] schedule_callback', params);
+  
+  try {
+    const { data, error } = await supabase.functions.invoke('voice-schedule-callback', {
+      body: params
+    });
+    
+    if (error) {
+      console.error('[ClientTool] Schedule callback error:', error);
+      return JSON.stringify({ error: 'Failed to schedule callback. Please try again.' });
+    }
+    
+    return JSON.stringify(data);
+  } catch (err) {
+    console.error('[ClientTool] Schedule callback exception:', err);
+    return JSON.stringify({ error: 'Unable to schedule callback right now.' });
+  }
+}
+
+// Client tool handler for creating reminders
+async function handleCreateReminder(params: {
+  customer_phone: string;
+  customer_name?: string;
+  reminder_type: 'motor' | 'promotion' | 'service' | 'custom';
+  when: string;
+  reminder_content?: Record<string, unknown>;
+  custom_note?: string;
+}): Promise<string> {
+  console.log('[ClientTool] set_reminder', params);
+  
+  try {
+    const { data, error } = await supabase.functions.invoke('voice-create-reminder', {
+      body: params
+    });
+    
+    if (error) {
+      console.error('[ClientTool] Create reminder error:', error);
+      return JSON.stringify({ error: 'Failed to create reminder. Please try again.' });
+    }
+    
+    return JSON.stringify(data);
+  } catch (err) {
+    console.error('[ClientTool] Create reminder exception:', err);
+    return JSON.stringify({ error: 'Unable to set reminder right now.' });
+  }
+}
+
+// Client tool handler for service cost estimates
+function handleServiceEstimate(params: {
+  service_type: string;
+  motor_hp?: number;
+  motor_model?: string;
+}): string {
+  console.log('[ClientTool] estimate_service_cost', params);
+  
+  const serviceType = (params.service_type || '').toLowerCase().replace(/\s+/g, '_');
+  const hp = params.motor_hp || 100; // Default to medium HP
+  
+  // Service type mapping
+  const serviceMap: Record<string, { minPrice: number; maxPrice: number; includes: string }> = {
+    '100_hour': { minPrice: 400, maxPrice: 600, includes: 'oil change, filter, gear lube, spark plugs, and full inspection' },
+    'annual': { minPrice: 400, maxPrice: 600, includes: 'oil change, filter, gear lube, spark plugs, and full inspection' },
+    'winterization': { minPrice: 250, maxPrice: 400, includes: 'fuel stabilizer, fogging oil, gear lube, and anti-freeze flush' },
+    'winterize': { minPrice: 250, maxPrice: 400, includes: 'fuel stabilizer, fogging oil, gear lube, and anti-freeze flush' },
+    'spring': { minPrice: 300, maxPrice: 450, includes: 'de-winterization, fresh fuel, battery service, and test run' },
+    'commissioning': { minPrice: 300, maxPrice: 450, includes: 'de-winterization, fresh fuel, battery service, and test run' },
+    'impeller': { minPrice: 350, maxPrice: 500, includes: 'impeller kit, gaskets, and test run' },
+    'water_pump': { minPrice: 350, maxPrice: 500, includes: 'impeller kit, gaskets, and test run' },
+    'lower_unit': { minPrice: 150, maxPrice: 250, includes: 'gear lube drain and refill, seal inspection' },
+    'gear_lube': { minPrice: 150, maxPrice: 250, includes: 'gear lube drain and refill, seal inspection' },
+    'prop': { minPrice: 75, maxPrice: 125, includes: 'prop removal, hub inspection, and installation' },
+  };
+  
+  // Adjust for HP
+  const hpMultiplier = hp <= 30 ? 0.7 : hp <= 115 ? 1.0 : hp <= 300 ? 1.3 : 1.6;
+  
+  // Find matching service
+  let serviceKey = Object.keys(serviceMap).find(key => serviceType.includes(key));
+  if (!serviceKey) {
+    // Try partial match
+    if (serviceType.includes('oil') || serviceType.includes('100')) serviceKey = '100_hour';
+    else if (serviceType.includes('winter')) serviceKey = 'winterization';
+    else if (serviceType.includes('spring') || serviceType.includes('commission')) serviceKey = 'spring';
+    else if (serviceType.includes('impeller') || serviceType.includes('water') || serviceType.includes('pump')) serviceKey = 'impeller';
+    else if (serviceType.includes('lower') || serviceType.includes('gear')) serviceKey = 'lower_unit';
+    else if (serviceType.includes('prop')) serviceKey = 'prop';
+  }
+  
+  if (!serviceKey) {
+    return JSON.stringify({
+      error: "I don't have pricing for that specific service. Our service team can give you an exact quote."
+    });
+  }
+  
+  const service = serviceMap[serviceKey];
+  const minPrice = Math.round(service.minPrice * hpMultiplier / 25) * 25;
+  const maxPrice = Math.round(service.maxPrice * hpMultiplier / 25) * 25;
+  
+  const motorRef = params.motor_model || (params.motor_hp ? `${params.motor_hp} horsepower motor` : 'your motor');
+  
+  return JSON.stringify({
+    success: true,
+    estimate: { minPrice, maxPrice },
+    message: `For ${serviceKey.replace(/_/g, ' ')} on ${motorRef}, you're looking at about $${minPrice} to $${maxPrice}. That includes ${service.includes}. Want me to have our service team reach out to schedule?`
+  });
+}
+
+// Client tool handler for trade-in estimates
+function handleTradeInEstimate(params: {
+  brand: string;
+  year: number;
+  horsepower: number;
+  condition?: 'excellent' | 'good' | 'fair' | 'rough';
+}): string {
+  console.log('[ClientTool] estimate_trade_value', params);
+  
+  const currentYear = new Date().getFullYear();
+  const age = currentYear - params.year;
+  const condition = params.condition || 'good';
+  
+  // Brand multipliers
+  const brandMultipliers: Record<string, number> = {
+    mercury: 1.0, yamaha: 0.95, honda: 0.90, suzuki: 0.85,
+    evinrude: 0.70, johnson: 0.60, tohatsu: 0.75
+  };
+  const brandMult = brandMultipliers[params.brand.toLowerCase()] || 0.65;
+  
+  // Condition multipliers
+  const condMult = { excellent: 1.15, good: 1.0, fair: 0.80, rough: 0.55 }[condition];
+  
+  // Base value by HP
+  let baseValue: number;
+  if (params.horsepower <= 10) baseValue = params.horsepower * 400;
+  else if (params.horsepower <= 30) baseValue = params.horsepower * 350;
+  else if (params.horsepower <= 75) baseValue = params.horsepower * 250;
+  else if (params.horsepower <= 150) baseValue = params.horsepower * 180;
+  else baseValue = params.horsepower * 140;
+  
+  // Depreciation
+  let depreciation: number;
+  if (age <= 1) depreciation = 0.80;
+  else if (age <= 3) depreciation = 0.65;
+  else if (age <= 5) depreciation = 0.50;
+  else if (age <= 10) depreciation = 0.35;
+  else depreciation = 0.25;
+  
+  const estimatedValue = baseValue * brandMult * condMult * depreciation;
+  const lowValue = Math.round(estimatedValue * 0.85 / 100) * 100;
+  const highValue = Math.round(estimatedValue * 1.15 / 100) * 100;
+  
+  return JSON.stringify({
+    success: true,
+    estimate: { lowValue: Math.max(lowValue, 200), highValue: Math.max(highValue, 500) },
+    message: `A ${params.year} ${params.brand} ${params.horsepower} horsepower in ${condition} condition typically trades around $${Math.max(lowValue, 200).toLocaleString()} to $${Math.max(highValue, 500).toLocaleString()}. Final value depends on inspection, but that's a solid ballpark. Want me to add that to your quote?`
+  });
+}
+
+// Client tool handler for motor recommendations
+async function handleRecommendMotor(params: {
+  boat_length?: number;
+  boat_type?: 'aluminum' | 'fiberglass' | 'pontoon' | 'inflatable';
+  usage?: 'fishing' | 'cruising' | 'watersports' | 'commercial';
+  priority?: 'speed' | 'fuel_economy' | 'price' | 'reliability';
+  max_budget?: number;
+}): Promise<string> {
+  console.log('[ClientTool] recommend_motor', params);
+  
+  // Calculate recommended HP range
+  const boatLength = params.boat_length || 16;
+  const boatType = params.boat_type || 'aluminum';
+  
+  // HP multiplier by boat type
+  const typeMultipliers: Record<string, number> = {
+    inflatable: 2, aluminum: 3, fiberglass: 4, pontoon: 4.5
+  };
+  const mult = typeMultipliers[boatType] || 3;
+  
+  const minHp = Math.round(boatLength * mult * 0.6);
+  const maxHp = Math.round(boatLength * mult * 1.2);
+  
+  try {
+    const { data, error } = await supabase.functions.invoke('voice-inventory-lookup', {
+      body: { 
+        action: 'check_inventory', 
+        params: { 
+          min_hp: minHp, 
+          max_hp: maxHp, 
+          in_stock: true 
+        } 
+      }
+    });
+    
+    if (error || !data?.result?.found) {
+      return JSON.stringify({
+        success: true,
+        recommendedRange: { minHp, maxHp },
+        message: `For a ${boatLength}-foot ${boatType}, you'd want something in the ${minHp} to ${maxHp} horsepower range. Let me check what we have in stock...`
+      });
+    }
+    
+    const motors = data.result.motors.slice(0, 3);
+    const motorList = motors.map((m: { model: string; horsepower: number; price: number }) => 
+      `${m.model} at $${m.price?.toLocaleString() || 'call for price'}`
+    ).join(', ');
+    
+    return JSON.stringify({
+      success: true,
+      recommendedRange: { minHp, maxHp },
+      topPicks: motors,
+      message: `For a ${boatLength}-foot ${boatType}, you'd do great with ${minHp} to ${maxHp} horsepower. I'd look at the ${motorList}. ${params.usage === 'fishing' ? 'The FourStrokes are super quiet for fishing.' : ''} Want me to compare any of these?`
+    });
+  } catch (err) {
+    return JSON.stringify({
+      success: true,
+      recommendedRange: { minHp, maxHp },
+      message: `For a ${boatLength}-foot ${boatType}, you'd want ${minHp} to ${maxHp} horsepower. I can show you what we have in that range.`
+    });
+  }
+}
+
+// Client tool handler for motor comparison
+async function handleCompareMotors(params: {
+  motor1: string;
+  motor2: string;
+}): Promise<string> {
+  console.log('[ClientTool] compare_motors', params);
+  
+  try {
+    // Fetch both motors
+    const [result1, result2] = await Promise.all([
+      supabase.functions.invoke('voice-inventory-lookup', {
+        body: { action: 'get_motor_price', params: { model: params.motor1 } }
+      }),
+      supabase.functions.invoke('voice-inventory-lookup', {
+        body: { action: 'get_motor_price', params: { model: params.motor2 } }
+      })
+    ]);
+    
+    const motor1 = result1.data?.result;
+    const motor2 = result2.data?.result;
+    
+    if (!motor1?.found || !motor2?.found) {
+      return JSON.stringify({
+        error: "I couldn't find both of those motors. Could you be more specific about the models?"
+      });
+    }
+    
+    const hpDiff = Math.abs(motor1.horsepower - motor2.horsepower);
+    const priceDiff = Math.abs((motor1.msrp || 0) - (motor2.msrp || 0));
+    
+    let comparison = `Comparing the ${motor1.model} and ${motor2.model}: `;
+    
+    if (hpDiff > 0) {
+      const moreHp = motor1.horsepower > motor2.horsepower ? motor1.model : motor2.model;
+      comparison += `The ${moreHp} has ${hpDiff} more horsepower. `;
+    }
+    
+    if (priceDiff > 0) {
+      const cheaper = (motor1.msrp || 0) < (motor2.msrp || 0) ? motor1.model : motor2.model;
+      comparison += `The ${cheaper} is about $${priceDiff.toLocaleString()} less. `;
+    }
+    
+    // Add recommendations based on differences
+    if (motor1.horsepower > motor2.horsepower) {
+      comparison += `Go with the ${motor1.model} if you want more power for bigger water or heavier loads.`;
+    } else if (motor2.horsepower > motor1.horsepower) {
+      comparison += `Go with the ${motor2.model} if you want more power for bigger water or heavier loads.`;
+    } else {
+      comparison += `They're pretty similar - comes down to preference and budget.`;
+    }
+    
+    return JSON.stringify({
+      success: true,
+      motor1: { model: motor1.model, hp: motor1.horsepower, price: motor1.msrp },
+      motor2: { model: motor2.model, hp: motor2.horsepower, price: motor2.msrp },
+      message: comparison
+    });
+  } catch (err) {
+    console.error('[ClientTool] Compare motors error:', err);
+    return JSON.stringify({ error: 'Unable to compare those motors right now.' });
+  }
+}
+
+// Client tool handler for sending motor photos via SMS
+async function handleSendMotorPhotos(params: {
+  customer_phone: string;
+  motor_model?: string;
+}, currentMotor: { model: string; hp: number } | null): Promise<string> {
+  console.log('[ClientTool] send_motor_photos', params);
+  
+  const motorModel = params.motor_model || currentMotor?.model;
+  if (!motorModel) {
+    return JSON.stringify({ error: "Which motor would you like photos of?" });
+  }
+  
+  const cleanPhone = (params.customer_phone || '').replace(/\D/g, '');
+  if (cleanPhone.length < 10) {
+    return JSON.stringify({ error: "I'll need your phone number to send those photos." });
+  }
+  
+  try {
+    const { data, error } = await supabase.functions.invoke('voice-send-follow-up', {
+      body: {
+        customer_phone: cleanPhone,
+        customer_name: 'Voice Customer',
+        message_type: 'general',
+        motor_model: motorModel,
+        custom_note: `Here's the link to view photos and details of the ${motorModel}:`
+      }
+    });
+    
+    if (error) {
+      return JSON.stringify({ error: 'Unable to send photos right now.' });
+    }
+    
+    return JSON.stringify({
+      success: true,
+      message: `I've texted you a link to see all the photos and specs for the ${motorModel}. Check your phone!`
+    });
+  } catch (err) {
+    return JSON.stringify({ error: 'Unable to send photos right now.' });
+  }
+}
+
+// Client tool handler for getting current deals
+async function handleCheckCurrentDeals(params: {
+  motor_model?: string;
+  hp_range?: string;
+}): Promise<string> {
+  console.log('[ClientTool] check_current_deals', params);
+  
+  try {
+    const { data, error } = await supabase
+      .from('promotions')
+      .select('name, discount_percentage, discount_fixed_amount, bonus_title, end_date')
+      .eq('is_active', true)
+      .order('priority', { ascending: false })
+      .limit(5);
+    
+    if (error || !data || data.length === 0) {
+      return JSON.stringify({
+        success: true,
+        message: "I don't see any specific promotions running right now, but we're always competitive on pricing. Want me to build you a quote?"
+      });
+    }
+    
+    const promoList = data.map(p => {
+      let desc = p.name;
+      if (p.discount_percentage > 0) desc += ` - ${p.discount_percentage}% off`;
+      if (p.discount_fixed_amount > 0) desc += ` - $${p.discount_fixed_amount} off`;
+      if (p.bonus_title) desc += ` plus ${p.bonus_title}`;
+      return desc;
+    }).join('. ');
+    
+    return JSON.stringify({
+      success: true,
+      promotions: data,
+      message: `Here's what's running right now: ${promoList}. Want me to show you what motors qualify?`
+    });
+  } catch (err) {
+    return JSON.stringify({ error: 'Unable to check promotions right now.' });
+  }
+}
+
 export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   const { onTranscriptComplete } = options;
   const { toast } = useToast();
@@ -608,6 +981,75 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         auto_search?: boolean;
       }) => {
         return await handleAccessoriesCatalogueSearch(params);
+      },
+      // Schedule a callback request
+      schedule_callback: async (params: {
+        customer_name: string;
+        customer_phone: string;
+        preferred_time?: string;
+        notes?: string;
+      }) => {
+        return await handleScheduleCallback({
+          ...params,
+          motor_interest: options.motorContext?.model,
+          motor_context: options.motorContext
+        });
+      },
+      // Set a reminder to follow up
+      set_reminder: async (params: {
+        customer_phone: string;
+        customer_name?: string;
+        reminder_type: 'motor' | 'promotion' | 'service' | 'custom';
+        when: string;
+        custom_note?: string;
+      }) => {
+        return await handleCreateReminder({
+          ...params,
+          reminder_content: options.motorContext ? { motor_model: options.motorContext.model, motor_hp: options.motorContext.hp } : undefined
+        });
+      },
+      // Estimate service costs
+      estimate_service_cost: (params: {
+        service_type: string;
+        motor_hp?: number;
+        motor_model?: string;
+      }) => {
+        return handleServiceEstimate({
+          ...params,
+          motor_hp: params.motor_hp || options.motorContext?.hp,
+          motor_model: params.motor_model || options.motorContext?.model
+        });
+      },
+      // Estimate trade-in value
+      estimate_trade_value: (params: {
+        brand: string;
+        year: number;
+        horsepower: number;
+        condition?: 'excellent' | 'good' | 'fair' | 'rough';
+      }) => {
+        return handleTradeInEstimate(params);
+      },
+      // Recommend a motor based on boat/usage
+      recommend_motor: async (params: {
+        boat_length?: number;
+        boat_type?: 'aluminum' | 'fiberglass' | 'pontoon' | 'inflatable';
+        usage?: 'fishing' | 'cruising' | 'watersports' | 'commercial';
+        priority?: 'speed' | 'fuel_economy' | 'price' | 'reliability';
+        max_budget?: number;
+      }) => {
+        return await handleRecommendMotor(params);
+      },
+      // Compare two motors
+      compare_motors: async (params: { motor1: string; motor2: string }) => {
+        return await handleCompareMotors(params);
+      },
+      // Send motor photos via SMS
+      send_motor_photos: async (params: { customer_phone: string; motor_model?: string }) => {
+        return await handleSendMotorPhotos(params, options.motorContext ?? null);
+      },
+      // Check current deals and promotions
+      check_current_deals: async (params: { motor_model?: string; hp_range?: string }) => {
+        return await handleCheckCurrentDeals(params);
       },
     },
   });
