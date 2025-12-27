@@ -17,15 +17,28 @@ const THINKING_WATCHDOG_MS = 1500; // 1.5 seconds
 const THINKING_NUDGE_MESSAGE = "[SYSTEM: You haven't started responding yet. Give a VERY quick acknowledgement like 'One sec...' or 'Let me check...' - just 2-3 words - then continue processing.]";
 
 // Pre-warm edge functions to eliminate cold start on first question
-async function prewarmEdgeFunctions() {
+// Export so VoiceButton can call it on hover/visibility
+export async function prewarmEdgeFunctions() {
   console.log('[Voice] Pre-warming edge functions...');
   const startTime = Date.now();
   
-  // Fire and forget - warm up commonly used edge functions in background
-  supabase.functions.invoke('voice-inventory-lookup', {
-    body: { action: 'check_inventory', params: { hp_range: '0' } }
-  }).then(() => console.log(`[Voice] Inventory function warmed in ${Date.now() - startTime}ms`))
-    .catch(() => {}); // Ignore errors, this is just a warm-up
+  // Fire all warmup requests in parallel - don't await, just fire
+  const warmups = [
+    // Warm inventory lookup (most commonly used tool)
+    supabase.functions.invoke('voice-inventory-lookup', {
+      body: { action: 'check_inventory', params: { hp_range: '0' } }
+    }).then(() => console.log(`[Voice] Inventory function warmed in ${Date.now() - startTime}ms`))
+      .catch(() => {}),
+    
+    // Warm conversation token endpoint (called on every connect)
+    supabase.functions.invoke('elevenlabs-conversation-token', {
+      body: { warmup: true }
+    }).then(() => console.log(`[Voice] Token function warmed in ${Date.now() - startTime}ms`))
+      .catch(() => {}),
+  ];
+  
+  // Return promise that resolves when all are warmed (for parallel use)
+  return Promise.all(warmups);
 }
 
 interface VoiceState {
@@ -1346,13 +1359,13 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         return;
       }
 
-      // PARALLELIZED: Load previous context AND get token at the same time
+      // PARALLELIZED: Load previous context, get token, AND prewarm edge functions simultaneously
       console.log('Fetching ElevenLabs conversation token...');
       let tokenData: { token: string } | null = null;
       let previousContext: any = null;
       
       try {
-        // Run both in parallel for faster startup
+        // Run ALL in parallel for fastest startup
         const [prevContextResult, tokenResult] = await Promise.all([
           voiceSession.loadPreviousSessionContext().catch(err => {
             console.warn('[Voice] Failed to load previous context:', err);
@@ -1365,7 +1378,9 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
               quoteContext: options.quoteContext,
               // Note: previousSessionContext added after we get it
             }
-          })
+          }),
+          // Pre-warm inventory function while we wait for token
+          prewarmEdgeFunctions().catch(() => {}),
         ]);
         
         previousContext = prevContextResult;
