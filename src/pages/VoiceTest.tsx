@@ -206,8 +206,8 @@ export default function VoiceTest() {
     updateStep('webrtc', { status: 'running', details: 'Fetching token...' });
     
     try {
-      // Fetch ephemeral token
-      const { data, error } = await supabase.functions.invoke('realtime-voice-token');
+      // Fetch ephemeral token using the correct edge function
+      const { data, error } = await supabase.functions.invoke('realtime-session');
       
       if (error || !data?.client_secret?.value) {
         updateStep('webrtc', { 
