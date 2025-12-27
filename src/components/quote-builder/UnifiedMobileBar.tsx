@@ -240,9 +240,9 @@ const springConfig = { type: 'spring', stiffness: 400, damping: 17 };
 // Enhanced breathing animation for AI button - premium layered glow
 const breathingAnimation = {
   boxShadow: [
-    '0 0 0 0 rgba(59, 130, 246, 0), 0 0 0 0 rgba(59, 130, 246, 0)',
-    '0 0 0 8px rgba(59, 130, 246, 0.25), 0 0 12px 4px rgba(59, 130, 246, 0.15)',
-    '0 0 0 0 rgba(59, 130, 246, 0), 0 0 0 0 rgba(59, 130, 246, 0)'
+    '0 0 0 0 rgba(59, 130, 246, 0)',
+    '0 0 0 5px rgba(59, 130, 246, 0.12)',
+    '0 0 0 0 rgba(59, 130, 246, 0)'
   ]
 };
 
@@ -952,21 +952,6 @@ export const UnifiedMobileBar: React.FC = () => {
               />
             )}
             
-            {/* Sparkle micro-animation overlay */}
-            {!isOpen && (
-              <motion.span
-                className="absolute -top-0.5 -right-0.5 pointer-events-none"
-                animate={sparkleAnimation}
-                transition={{ 
-                  duration: 2.5, 
-                  repeat: Infinity, 
-                  ease: "easeInOut",
-                  times: [0, 0.3, 0.7, 1]
-                }}
-              >
-                <Sparkles className="h-3 w-3 text-primary/70" />
-              </motion.span>
-            )}
             
             {/* Unread badge */}
             {unreadCount > 0 && !isOpen && (
@@ -1076,7 +1061,7 @@ export const UnifiedMobileBar: React.FC = () => {
               </>
             ) : (
               <>
-                <Phone className="h-5 w-5 min-[375px]:h-5.5 min-[375px]:w-5.5 text-green-600" />
+                <Mic className="h-5 w-5 min-[375px]:h-5.5 min-[375px]:w-5.5 text-green-600" />
                 <span className="text-[7px] min-[375px]:text-[8px] font-bold mt-0.5 text-green-600 tracking-wide">
                   Voice
                 </span>
