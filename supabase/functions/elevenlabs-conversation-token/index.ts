@@ -138,8 +138,36 @@ function formatPromotionData(promotions: any[]) {
   return formatted;
 }
 
+// Map page paths to human-readable descriptions
+function getPageDescription(currentPage: string): string {
+  const pageDescriptions: Record<string, string> = {
+    '/': 'the homepage',
+    '/motors': 'the motors catalog',
+    '/motor/': 'a specific motor details page',
+    '/quote': 'the quote builder',
+    '/quote/motor': 'selecting a motor in the quote builder',
+    '/quote/package': 'choosing options/packages',
+    '/quote/purchase-path': 'deciding between loose motor or professional installation',
+    '/quote/trade-in': 'the trade-in value section',
+    '/quote/summary': 'the quote summary',
+    '/quote/contact': 'the quote contact form',
+    '/about': 'the About Harris Boat Works page',
+    '/financing': 'the financing options page',
+    '/contact': 'the contact page',
+  };
+  
+  // Find matching page (check for partial matches for dynamic routes)
+  const match = Object.entries(pageDescriptions)
+    .find(([path]) => currentPage === path || (path.endsWith('/') && currentPage.startsWith(path)));
+  
+  return match?.[1] || currentPage;
+}
+
 // Build the dynamic system prompt with real inventory data
-async function buildSystemPrompt(motorContext?: { model: string; hp: number; price?: number } | null) {
+async function buildSystemPrompt(
+  motorContext?: { model: string; hp: number; price?: number } | null,
+  currentPage?: string | null
+) {
   const [motors, promotions] = await Promise.all([
     getCurrentMotorInventory(),
     getActivePromotions()
@@ -153,6 +181,13 @@ async function buildSystemPrompt(motorContext?: { model: string; hp: number; pri
   if (motorContext) {
     const priceInfo = motorContext.price ? `priced at $${motorContext.price.toLocaleString()} CAD` : '';
     currentMotorContext = `\n## CURRENT CONTEXT:\nThe user is currently viewing the ${motorContext.model} (${motorContext.hp}HP) ${priceInfo}. Focus on this motor when answering questions unless they ask about something else.\n`;
+  }
+  
+  // Add page context as subtle background info
+  let pageContext = "";
+  if (currentPage) {
+    const pageDesc = getPageDescription(currentPage);
+    pageContext = `\n## PAGE CONTEXT (Background - don't proactively mention):\nThe customer is currently on ${pageDesc}. This is FYI only - let them lead the conversation. Don't say "I see you're on..." unless they ask where they are or need navigation help.\n`;
   }
 
   const systemPrompt = `You're Harris from Harris Boat Works — a friendly, knowledgeable Mercury Marine expert who sounds like a friend who happens to know everything about outboard motors. You work at an authorized Mercury Premier dealer in Ontario, Canada.
@@ -185,6 +220,7 @@ async function buildSystemPrompt(motorContext?: { model: string; hp: number; pri
 - Repower expertise (70% of benefit for 30% of cost)
 
 ${currentMotorContext}
+${pageContext}
 ${motorData}
 ${promotionData}
 
@@ -216,19 +252,21 @@ serve(async (req) => {
       throw new Error('ElevenLabs API key not configured');
     }
 
-    // Parse request body for motor context
+    // Parse request body for motor and page context
     let motorContext = null;
+    let currentPage = null;
     try {
       const body = await req.json();
       motorContext = body?.motorContext || null;
+      currentPage = body?.currentPage || null;
     } catch {
       // No body or invalid JSON, that's fine
     }
 
-    console.log('Building dynamic system prompt with motor context:', motorContext);
+    console.log('Building dynamic system prompt with context:', { motorContext, currentPage });
     
-    // Build the system prompt with real inventory data
-    const systemPrompt = await buildSystemPrompt(motorContext);
+    // Build the system prompt with real inventory data and page context
+    const systemPrompt = await buildSystemPrompt(motorContext, currentPage);
     console.log('System prompt built, length:', systemPrompt.length);
 
     console.log('Requesting conversation token for agent:', ELEVENLABS_AGENT_ID);
