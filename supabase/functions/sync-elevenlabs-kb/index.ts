@@ -3,7 +3,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { corsHeaders } from "../_shared/cors.ts";
 
 const ELEVENLABS_API_KEY = Deno.env.get("ELEVENLABS_API_KEY");
-const ELEVENLABS_AGENT_ID = "agent_01jxb4xfj6e8fqahwf3sp7p3x6";
+const ELEVENLABS_AGENT_ID = "agent_0501kdexvsfkfx8a240g7ts27dy1"; // Same as conversation-token
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
 
