@@ -453,22 +453,24 @@ export class RealtimeVoiceChat {
         throw new Error('Failed to generate local SDP');
       }
 
-      // Exchange SDP directly with OpenAI (ephemeral key is designed for client use)
-      console.log('Exchanging SDP directly with OpenAI...');
+      // Exchange SDP via edge function proxy (avoids CORS issues)
+      console.log('Exchanging SDP via edge function proxy...');
       
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 15000); // 15s timeout
       
       try {
         const sdpResponse = await fetch(
-          'https://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview-2024-12-17',
+          'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/realtime-sdp-exchange',
           {
             method: 'POST',
-            body: localSdp,
             headers: {
-              Authorization: `Bearer ${EPHEMERAL_KEY}`,
-              'Content-Type': 'application/sdp',
+              'Content-Type': 'application/json',
             },
+            body: JSON.stringify({
+              sdpOffer: localSdp,
+              ephemeralKey: EPHEMERAL_KEY,
+            }),
             signal: controller.signal,
           }
         );
