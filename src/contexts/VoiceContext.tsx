@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useMemo, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useElevenLabsVoice } from '@/hooks/useElevenLabsVoice';
+import { useElevenLabsVoice, type TurnTiming, type VoicePhase } from '@/hooks/useElevenLabsVoice';
 import { useQuote } from '@/contexts/QuoteContext';
 import { MicrophonePermissionDialog } from '@/components/chat/MicrophonePermissionDialog';
 import { NoMicrophoneDialog } from '@/components/chat/NoMicrophoneDialog';
@@ -22,6 +22,8 @@ interface VoiceContextType {
   error: string | null;
   permissionState: 'granted' | 'denied' | 'prompt' | null;
   textOnlyMode: boolean;
+  turnTiming: TurnTiming;
+  currentPhase: VoicePhase;
   startVoiceChat: () => Promise<void>;
   endVoiceChat: () => void;
   sendTextMessage: (text: string) => void;
@@ -280,6 +282,8 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     error: voice.error,
     permissionState: voice.permissionState,
     textOnlyMode: voice.textOnlyMode,
+    turnTiming: voice.turnTiming,
+    currentPhase: voice.currentPhase,
     startVoiceChat: voice.startVoiceChat,
     endVoiceChat: voice.endVoiceChat,
     sendTextMessage: voice.sendTextMessage,
