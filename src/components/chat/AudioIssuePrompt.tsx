@@ -7,12 +7,14 @@ interface AudioIssuePromptProps {
   show: boolean;
   onEnableAudio: () => void;
   onDismiss: () => void;
+  onSwitchToText?: () => void;
 }
 
 export const AudioIssuePrompt: React.FC<AudioIssuePromptProps> = ({
   show,
   onEnableAudio,
   onDismiss,
+  onSwitchToText,
 }) => {
   return (
     <AnimatePresence>
@@ -41,20 +43,36 @@ export const AudioIssuePrompt: React.FC<AudioIssuePromptProps> = ({
                 Your browser may be blocking audio playback. Tap the button below to enable sound.
               </p>
               
-              <div className="flex gap-2 mt-4">
+              <div className="flex flex-col gap-2 mt-4">
                 <Button
                   onClick={onEnableAudio}
                   size="default"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground w-full"
                 >
                   <Volume2 className="w-4 h-4 mr-2" />
                   Tap to Enable Audio
                 </Button>
+                
+                {onSwitchToText && (
+                  <Button
+                    onClick={onSwitchToText}
+                    variant="outline"
+                    size="default"
+                    className="w-full"
+                  >
+                    Switch to Text Chat
+                  </Button>
+                )}
               </div>
               
-              <p className="text-xs text-muted-foreground mt-3">
-                This is a one-time browser security check. Your audio should work normally after enabling.
-              </p>
+              <div className="flex items-center gap-2 mt-3">
+                <a
+                  href="/voice-test"
+                  className="text-xs text-primary hover:underline"
+                >
+                  Run voice diagnostics →
+                </a>
+              </div>
             </div>
           </div>
         </motion.div>

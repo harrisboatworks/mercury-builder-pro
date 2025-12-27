@@ -21,6 +21,9 @@ interface VoiceState {
   showNoMicrophoneDialog: boolean;
   showAudioIssuePrompt: boolean;
   diagnostics: VoiceDiagnostics | null;
+  // Text-only fallback mode
+  textOnlyMode: boolean;
+  audioFailCount: number;
 }
 
 interface UseRealtimeVoiceOptions {
@@ -49,6 +52,8 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     showNoMicrophoneDialog: false,
     showAudioIssuePrompt: false,
     diagnostics: null,
+    textOnlyMode: false,
+    audioFailCount: 0,
   });
   
   const chatRef = useRef<RealtimeVoiceChat | null>(null);
@@ -102,13 +107,41 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
 
   const handleAudioIssue = useCallback(() => {
     console.log('Audio issue detected - prompting user');
-    setState(prev => ({ ...prev, showAudioIssuePrompt: true }));
-    toast({
-      title: "Can't hear Harris?",
-      description: "Tap 'Enable Audio' or try using Chrome browser.",
-      duration: 10000,
+    setState(prev => {
+      const newFailCount = prev.audioFailCount + 1;
+      
+      // If we've failed twice, switch to text-only mode
+      if (newFailCount >= 2) {
+        console.log('Audio failed twice, switching to text-only mode');
+        toast({
+          title: "Switched to text mode",
+          description: "Voice audio isn't working. You can still chat by typing.",
+          duration: 5000,
+        });
+        return { 
+          ...prev, 
+          audioFailCount: newFailCount,
+          textOnlyMode: true,
+          showAudioIssuePrompt: false,
+        };
+      }
+      
+      return { 
+        ...prev, 
+        audioFailCount: newFailCount,
+        showAudioIssuePrompt: true,
+      };
     });
-  }, [toast]);
+    
+    // Only show toast for first failure
+    if (state.audioFailCount === 0) {
+      toast({
+        title: "Can't hear Harris?",
+        description: "Tap 'Enable Audio' or try using Chrome browser.",
+        duration: 10000,
+      });
+    }
+  }, [toast, state.audioFailCount]);
 
   const closePermissionDialog = useCallback(() => {
     setState(prev => ({ ...prev, showPermissionDialog: false }));
@@ -247,8 +280,37 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
       showNoMicrophoneDialog: false,
       showAudioIssuePrompt: false,
       diagnostics: null,
+      textOnlyMode: false,
+      audioFailCount: 0,
     });
   }, []);
+
+  const exitTextOnlyMode = useCallback(() => {
+    setState(prev => ({ 
+      ...prev, 
+      textOnlyMode: false, 
+      audioFailCount: 0,
+      showAudioIssuePrompt: false,
+    }));
+    // Retry audio playback
+    chatRef.current?.retryAudioPlayback();
+    toast({
+      title: "Retrying voice audio",
+      description: "Let's try that again...",
+    });
+  }, [toast]);
+
+  const switchToTextMode = useCallback(() => {
+    setState(prev => ({ 
+      ...prev, 
+      textOnlyMode: true,
+      showAudioIssuePrompt: false,
+    }));
+    toast({
+      title: "Text mode enabled",
+      description: "You can continue chatting by typing.",
+    });
+  }, [toast]);
 
   const sendTextMessage = useCallback((text: string) => {
     if (!chatRef.current) {
@@ -301,5 +363,7 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     retryPermission: attemptConnection,
     closeAudioIssuePrompt,
     retryAudioPlayback,
+    exitTextOnlyMode,
+    switchToTextMode,
   };
 }

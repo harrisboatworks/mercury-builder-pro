@@ -8,8 +8,10 @@ interface VoiceButtonProps {
   isConnecting: boolean;
   isSpeaking: boolean;
   isListening: boolean;
+  textOnlyMode?: boolean;
   onStart: () => void;
   onEnd: () => void;
+  onExitTextMode?: () => void;
   className?: string;
   size?: 'sm' | 'md' | 'lg';
 }
@@ -19,8 +21,10 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
   isConnecting,
   isSpeaking,
   isListening,
+  textOnlyMode = false,
   onStart,
   onEnd,
+  onExitTextMode,
   className,
   size = 'md',
 }) => {
@@ -37,6 +41,10 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
   };
 
   const handleClick = () => {
+    if (textOnlyMode && onExitTextMode) {
+      onExitTextMode();
+      return;
+    }
     if (isConnected) {
       onEnd();
     } else {
@@ -46,6 +54,7 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
 
   // Determine state for visuals
   const getStateColor = () => {
+    if (textOnlyMode) return 'bg-amber-100 text-amber-600 hover:bg-amber-200';
     if (isConnecting) return 'bg-amber-100 text-amber-600';
     if (isSpeaking) return 'bg-emerald-500 text-white';
     if (isListening) return 'bg-red-500 text-white';
@@ -53,6 +62,9 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
   };
 
   const getIcon = () => {
+    if (textOnlyMode) {
+      return <MicOff className={iconSizes[size]} />;
+    }
     if (isConnecting) {
       return <Loader2 className={cn(iconSizes[size], 'animate-spin')} />;
     }
@@ -129,12 +141,18 @@ export const VoiceButtonInline: React.FC<VoiceButtonProps & { label?: string }> 
   isConnecting,
   isSpeaking,
   isListening,
+  textOnlyMode = false,
   onStart,
   onEnd,
+  onExitTextMode,
   label,
   className,
 }) => {
   const handleClick = () => {
+    if (textOnlyMode && onExitTextMode) {
+      onExitTextMode();
+      return;
+    }
     if (isConnected) {
       onEnd();
     } else {
@@ -143,6 +161,7 @@ export const VoiceButtonInline: React.FC<VoiceButtonProps & { label?: string }> 
   };
 
   const getLabel = () => {
+    if (textOnlyMode) return 'Voice unavailable – tap to retry';
     if (isConnecting) return 'Connecting...';
     if (isSpeaking) return 'Harris is speaking...';
     if (isListening) return 'Listening...';
@@ -150,6 +169,7 @@ export const VoiceButtonInline: React.FC<VoiceButtonProps & { label?: string }> 
   };
 
   const getIcon = () => {
+    if (textOnlyMode) return <MicOff className="w-4 h-4" />;
     if (isConnecting) return <Loader2 className="w-4 h-4 animate-spin" />;
     if (isSpeaking) return <Volume2 className="w-4 h-4" />;
     if (isListening) return <MicOff className="w-4 h-4" />;
@@ -162,13 +182,15 @@ export const VoiceButtonInline: React.FC<VoiceButtonProps & { label?: string }> 
       disabled={isConnecting}
       className={cn(
         'flex items-center gap-2 px-3 py-1.5 rounded-full text-sm transition-colors',
-        isConnecting
-          ? 'bg-amber-100 text-amber-700'
-          : isConnected
-            ? isSpeaking
-              ? 'bg-emerald-100 text-emerald-700'
-              : 'bg-red-100 text-red-700'
-            : 'bg-gray-100 text-gray-600 hover:bg-gray-200',
+        textOnlyMode
+          ? 'bg-amber-100 text-amber-700 hover:bg-amber-200'
+          : isConnecting
+            ? 'bg-amber-100 text-amber-700'
+            : isConnected
+              ? isSpeaking
+                ? 'bg-emerald-100 text-emerald-700'
+                : 'bg-red-100 text-red-700'
+              : 'bg-gray-100 text-gray-600 hover:bg-gray-200',
         className
       )}
       whileHover={{ scale: 1.02 }}

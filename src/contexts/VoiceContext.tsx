@@ -15,10 +15,13 @@ interface VoiceContextType {
   transcript: string;
   error: string | null;
   permissionState: 'granted' | 'denied' | 'prompt' | null;
+  textOnlyMode: boolean;
   startVoiceChat: () => Promise<void>;
   endVoiceChat: () => void;
   sendTextMessage: (text: string) => void;
   updateContext: (motorContext?: { model: string; hp: number; price?: number } | null, currentPage?: string) => void;
+  exitTextOnlyMode: () => void;
+  switchToTextMode: () => void;
 }
 
 const VoiceContext = createContext<VoiceContextType | null>(null);
@@ -86,10 +89,13 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     transcript: voice.transcript,
     error: voice.error,
     permissionState: voice.permissionState,
+    textOnlyMode: voice.textOnlyMode,
     startVoiceChat: voice.startVoiceChat,
     endVoiceChat: voice.endVoiceChat,
     sendTextMessage: voice.sendTextMessage,
     updateContext: voice.updateContext,
+    exitTextOnlyMode: voice.exitTextOnlyMode,
+    switchToTextMode: voice.switchToTextMode,
   };
 
   return (
@@ -119,6 +125,7 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         show={voice.showAudioIssuePrompt}
         onEnableAudio={voice.retryAudioPlayback}
         onDismiss={voice.closeAudioIssuePrompt}
+        onSwitchToText={voice.switchToTextMode}
       />
     </VoiceContext.Provider>
   );
