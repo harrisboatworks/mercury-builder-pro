@@ -52,6 +52,34 @@ async function handleInventoryLookup(action: string, params: Record<string, unkn
   }
 }
 
+// Client tool handler for sending follow-up SMS
+async function handleSendFollowUpSMS(params: {
+  customer_name: string;
+  customer_phone: string;
+  message_type: 'quote_interest' | 'inventory_alert' | 'service_reminder' | 'general';
+  motor_model?: string;
+  custom_note?: string;
+}): Promise<string> {
+  console.log('[ClientTool] send_follow_up_sms', params);
+  
+  try {
+    const { data, error } = await supabase.functions.invoke('voice-send-follow-up', {
+      body: params
+    });
+
+    if (error) {
+      console.error('[ClientTool] SMS Error:', error);
+      return JSON.stringify({ error: 'Failed to send text message. Please try again.' });
+    }
+
+    console.log('[ClientTool] SMS Result:', data);
+    return JSON.stringify(data || { error: 'No response from SMS service' });
+  } catch (err) {
+    console.error('[ClientTool] SMS Exception:', err);
+    return JSON.stringify({ error: 'Text message failed to send' });
+  }
+}
+
 export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   const { onTranscriptComplete } = options;
   const { toast } = useToast();
@@ -172,6 +200,16 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       // Get motors in a horsepower range
       get_hp_range: async (params: { min_hp: number; max_hp: number }) => {
         return await handleInventoryLookup('get_hp_range', params);
+      },
+      // Send follow-up SMS to customer (requires customer consent)
+      send_follow_up_sms: async (params: {
+        customer_name: string;
+        customer_phone: string;
+        message_type: 'quote_interest' | 'inventory_alert' | 'service_reminder' | 'general';
+        motor_model?: string;
+        custom_note?: string;
+      }) => {
+        return await handleSendFollowUpSMS(params);
       },
     },
   });
