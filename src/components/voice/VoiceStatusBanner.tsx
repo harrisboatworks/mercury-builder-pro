@@ -80,24 +80,22 @@ export function VoiceStatusBanner({ className }: { className?: string }) {
     return () => clearInterval(interval);
   }, [voice?.isConnected]);
 
-  // Don't render if not connected
-  if (!voice?.isConnected) return null;
+  // Extract with safe defaults for hook dependencies
+  const turnTiming = voice?.turnTiming ?? { turnStart: null, transcriptAt: null, toolStartAt: null, toolEndAt: null, agentStartAt: null };
+  const currentPhase = voice?.currentPhase ?? 'idle';
 
-  const { turnTiming, currentPhase, isSearching, searchingMessage, isThinking, thinkingMessage } = voice;
-
-  // Calculate elapsed times for each phase
+  // Calculate elapsed times for each phase - MUST be called before any returns
   const phaseElapsed = useMemo(() => {
     if (!turnTiming.turnStart) {
       return { listening: null, thinking: null, searching: null, speaking: null };
     }
 
-    const transcriptTime = turnTiming.transcriptAt || now;
     const toolStartTime = turnTiming.toolStartAt || null;
     const toolEndTime = turnTiming.toolEndAt || null;
     const agentStartTime = turnTiming.agentStartAt || null;
 
     // Calculate durations for completed phases
-    const listeningDuration = null; // We don't track listening start separately
+    const listeningDuration: number | null = null;
     
     let thinkingDuration: number | null = null;
     if (turnTiming.transcriptAt) {
@@ -109,16 +107,14 @@ export function VoiceStatusBanner({ className }: { className?: string }) {
     }
 
     let searchingDuration: number | null = null;
-    if (toolStartTime) {
-      if (toolEndTime) {
-        searchingDuration = toolEndTime - toolStartTime;
-      }
+    if (toolStartTime && toolEndTime) {
+      searchingDuration = toolEndTime - toolStartTime;
     }
 
     // Calculate live elapsed for active phase
     let activeElapsed: number | null = null;
     if (currentPhase === 'listening') {
-      activeElapsed = null; // No specific timer for listening
+      activeElapsed = null;
     } else if (currentPhase === 'thinking' && turnTiming.transcriptAt) {
       activeElapsed = now - turnTiming.transcriptAt;
     } else if (currentPhase === 'searching' && toolStartTime) {
@@ -135,15 +131,19 @@ export function VoiceStatusBanner({ className }: { className?: string }) {
     };
   }, [turnTiming, currentPhase, now]);
 
-  // Calculate total turn time
+  // Calculate total turn time - MUST be called before any returns
   const totalTurnTime = useMemo(() => {
     if (!turnTiming.turnStart) return null;
     if (turnTiming.agentStartAt) {
       return turnTiming.agentStartAt - turnTiming.turnStart;
     }
-    // Still in progress
     return now - turnTiming.turnStart;
   }, [turnTiming, now]);
+
+  // Don't render if not connected - AFTER all hooks
+  if (!voice?.isConnected) return null;
+
+  const { isSearching, searchingMessage, isThinking, thinkingMessage } = voice;
 
   // Active message to show
   const activeMessage = isSearching
