@@ -516,17 +516,19 @@ serve(async (req) => {
     if (req.method === "GET") {
       console.log("[MCP] SSE connection established");
 
-      // Many MCP SSE clients expect a per-session messages endpoint.
+      // Many MCP SSE clients (including ElevenLabs) expect a host-relative messages endpoint.
       const sessionId = crypto.randomUUID();
       const baseUrl = `${Deno.env.get("SUPABASE_URL")}/functions/v1/elevenlabs-mcp-server`;
+      const messagesPath = `/functions/v1/elevenlabs-mcp-server/messages?session_id=${encodeURIComponent(sessionId)}`;
       const messagesUrl = `${baseUrl}/messages?session_id=${encodeURIComponent(sessionId)}`;
 
       const encoder = new TextEncoder();
       const stream = new ReadableStream<Uint8Array>({
         start(controller) {
           // Per MCP SSE spec: send endpoint event first
+          // IMPORTANT: send host-relative path (ElevenLabs expects this)
           controller.enqueue(
-            encoder.encode(`event: endpoint\ndata: ${messagesUrl}\n\n`),
+            encoder.encode(`event: endpoint\ndata: ${messagesPath}\n\n`),
           );
           console.log(`[MCP] Sent endpoint event: ${messagesUrl}`);
 
