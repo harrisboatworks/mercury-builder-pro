@@ -285,14 +285,10 @@ async function executeTool(toolName: string, args: Record<string, unknown>): Pro
       const currentYear = new Date().getFullYear();
       const age = currentYear - year;
       
-      // Base value estimation
-      let baseValue = hp * 50; // $50 per HP as starting point
-      
-      // Age depreciation (10% per year, max 70%)
+      let baseValue = hp * 50;
       const ageDepreciation = Math.min(age * 0.10, 0.70);
       baseValue *= (1 - ageDepreciation);
       
-      // Condition adjustments
       const conditionMultipliers: Record<string, number> = {
         excellent: 1.2,
         good: 1.0,
@@ -301,7 +297,6 @@ async function executeTool(toolName: string, args: Record<string, unknown>): Pro
       };
       baseValue *= conditionMultipliers[condition] || 1.0;
       
-      // Brand premium for Mercury
       if ((args.brand as string)?.toLowerCase().includes("mercury")) {
         baseValue *= 1.15;
       }
@@ -321,11 +316,9 @@ async function executeTool(toolName: string, args: Record<string, unknown>): Pro
       const boatLength = args.boat_length as number;
       const boatType = args.boat_type as string;
       
-      // HP recommendations based on boat length
       let minHp = Math.round(boatLength * 3);
       let maxHp = Math.round(boatLength * 6);
       
-      // Adjust for boat type
       if (boatType === "pontoon") {
         minHp = Math.round(boatLength * 4);
         maxHp = Math.round(boatLength * 8);
@@ -334,7 +327,6 @@ async function executeTool(toolName: string, args: Record<string, unknown>): Pro
         maxHp = Math.round(boatLength * 10);
       }
       
-      // Query database for motors in range
       const { data: motors } = await supabase
         .from("motor_models")
         .select("model_display, horsepower, msrp, family, in_stock")
@@ -440,14 +432,19 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         return deal;
       }).join("\n");
       
-      return { content: [{ type: "text", text: `Current deals:\n\n${promoList}\n\nWant me to apply any of these to a quote?` }] };
+      return { 
+        content: [{ 
+          type: "text", 
+          text: `Here are our current promotions:\n\n${promoList}\n\nWant details on any of these?` 
+        }] 
+      };
     }
     
     case "get_quote_summary": {
       return { 
         content: [{ 
           type: "text", 
-          text: "I can see your quote in progress. To get the full details, just ask me what you'd like to know - the motor, price, financing options, or the complete summary." 
+          text: "To get your personalized quote summary, please visit harrisboatworks.ca/quote or tell me what motor you're interested in and I can help build a quote for you." 
         }] 
       };
     }
@@ -456,23 +453,23 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       return { 
         content: [{ 
           type: "text", 
-          text: `Got it! I've noted your boat: ${args.boat_year} ${args.boat_make} ${args.boat_model}${args.boat_length ? `, ${args.boat_length}ft` : ''}. This helps us recommend the right motor and rigging.` 
+          text: `Got it! I've noted your boat details: ${args.boat_year} ${args.boat_make} ${args.boat_model}${args.boat_length ? `, ${args.boat_length} feet` : ''}. This will help me recommend the perfect motor for you.` 
         }] 
       };
     }
     
     case "go_to_quote_step": {
-      const stepNames: Record<string, string> = {
+      const stepDescriptions: Record<string, string> = {
         boat: "boat information",
-        motor: "motor selection",
-        addons: "add-ons and accessories",
+        motor: "motor selection", 
+        addons: "accessories and add-ons",
         financing: "financing options",
         review: "quote review"
       };
       return { 
         content: [{ 
           type: "text", 
-          text: `I'll take you to the ${stepNames[args.step as string] || args.step} section. You should see it on your screen now.` 
+          text: `To update your ${stepDescriptions[args.step as string] || args.step}, please visit harrisboatworks.ca/quote or tell me what you'd like to change.` 
         }] 
       };
     }
@@ -482,8 +479,8 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
   }
 }
 
-// MCP Protocol handlers
-function handleInitialize(): Record<string, unknown> {
+// MCP Protocol Handlers
+function handleInitialize() {
   return {
     protocolVersion: "2024-11-05",
     capabilities: {
@@ -496,7 +493,7 @@ function handleInitialize(): Record<string, unknown> {
   };
 }
 
-function handleToolsList(): { tools: typeof TOOLS } {
+function handleToolsList() {
   return { tools: TOOLS };
 }
 
@@ -515,27 +512,28 @@ serve(async (req) => {
   console.log(`[MCP] ${req.method} ${url.pathname}`);
 
   try {
-    // SSE endpoint for MCP
-    if (req.method === "GET" && (url.pathname === "/" || url.pathname === "/sse")) {
-      // Return SSE stream for tool discovery
+    // SSE endpoint for MCP - this is where clients connect first
+    if (req.method === "GET") {
+      console.log("[MCP] SSE connection established");
+      
+      // Build the POST endpoint URL for messages
+      const baseUrl = `${Deno.env.get("SUPABASE_URL")}/functions/v1/elevenlabs-mcp-server`;
+      
       const encoder = new TextEncoder();
       const stream = new ReadableStream({
         start(controller) {
-          // Send capabilities
-          const initMessage = {
-            jsonrpc: "2.0",
-            method: "notifications/initialized",
-            params: handleInitialize()
-          };
-          controller.enqueue(encoder.encode(`data: ${JSON.stringify(initMessage)}\n\n`));
+          // Per MCP spec: First send the endpoint event telling client where to POST
+          controller.enqueue(encoder.encode(`event: endpoint\ndata: ${baseUrl}\n\n`));
+          console.log(`[MCP] Sent endpoint event: ${baseUrl}`);
           
-          // Send tools list
-          const toolsMessage = {
-            jsonrpc: "2.0",
-            method: "notifications/tools/list_changed",
-            params: handleToolsList()
-          };
-          controller.enqueue(encoder.encode(`data: ${JSON.stringify(toolsMessage)}\n\n`));
+          // Keep connection alive with periodic pings
+          const keepAlive = setInterval(() => {
+            try {
+              controller.enqueue(encoder.encode(`: ping\n\n`));
+            } catch {
+              clearInterval(keepAlive);
+            }
+          }, 30000);
         }
       });
       
@@ -549,43 +547,52 @@ serve(async (req) => {
       });
     }
 
-    // Handle JSON-RPC messages
+    // Handle JSON-RPC messages via POST
     if (req.method === "POST") {
       const body = await req.json();
       console.log("[MCP] Request:", JSON.stringify(body));
       
-      let response: unknown;
+      let result: unknown;
       
       switch (body.method) {
         case "initialize":
-          response = { result: handleInitialize() };
+          result = handleInitialize();
           break;
           
         case "tools/list":
-          response = { result: handleToolsList() };
+          result = handleToolsList();
           break;
           
         case "tools/call":
-          response = { result: await handleToolCall(body.params) };
+          result = await handleToolCall(body.params);
           break;
           
         case "ping":
-          response = { result: {} };
+          result = {};
+          break;
+          
+        case "notifications/initialized":
+          // Client acknowledges initialization - no response needed
+          result = {};
           break;
           
         default:
-          response = { 
+          return new Response(JSON.stringify({
+            jsonrpc: "2.0",
+            id: body.id,
             error: { 
               code: -32601, 
               message: `Method not found: ${body.method}` 
-            } 
-          };
+            }
+          }), {
+            headers: { ...corsHeaders, "Content-Type": "application/json" }
+          });
       }
       
       const jsonRpcResponse = {
         jsonrpc: "2.0",
         id: body.id,
-        ...response
+        result
       };
       
       console.log("[MCP] Response:", JSON.stringify(jsonRpcResponse));
