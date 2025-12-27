@@ -112,12 +112,14 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   }, [voice.isConnected, activeMotor?.id, location.pathname, motorContext, voice]);
 
-  // Listen for voice navigation events (add motor to quote, set purchase path)
+  // Listen for voice navigation events (add motor to quote, set purchase path, boat info, trade-in, etc.)
   useEffect(() => {
-    const handleVoiceNav = (e: CustomEvent<{ type: string; payload: { motor?: MotorForQuote; path?: 'loose' | 'installed' } }>) => {
+    const handleVoiceNav = (e: CustomEvent<{ type: string; payload: Record<string, unknown> }>) => {
+      const { type, payload } = e.detail;
+      
       // Handle add motor to quote
-      if (e.detail.type === 'add_motor_to_quote' && e.detail.payload?.motor) {
-        const motor = e.detail.payload.motor;
+      if (type === 'add_motor_to_quote' && payload?.motor) {
+        const motor = payload.motor as MotorForQuote;
         console.log('[VoiceContext] Adding motor to quote:', motor);
         
         // Determine category based on HP
@@ -154,8 +156,8 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       }
       
       // Handle set purchase path
-      if (e.detail.type === 'set_purchase_path' && e.detail.payload?.path) {
-        const path = e.detail.payload.path;
+      if (type === 'set_purchase_path' && payload?.path) {
+        const path = payload.path as 'loose' | 'installed';
         console.log('[VoiceContext] Setting purchase path:', path);
         
         dispatch({ type: 'SET_PURCHASE_PATH', payload: path });
@@ -167,6 +169,92 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             ? "You'll take the motor home for self-installation" 
             : "We'll handle the complete installation",
         });
+      }
+      
+      // Handle update boat info
+      if (type === 'update_boat_info' && payload?.boatInfo) {
+        const boatInfoPayload = payload.boatInfo as { length?: number; type?: string; make?: string; currentHp?: number };
+        console.log('[VoiceContext] Updating boat info:', boatInfoPayload);
+        
+        // Merge with existing boat info to preserve other fields
+        // Note: length from voice is a number, but BoatInfo expects string
+        const updatedBoatInfo = {
+          ...state.boatInfo,
+          length: boatInfoPayload.length ? String(boatInfoPayload.length) : (state.boatInfo?.length || ''),
+          type: boatInfoPayload.type ?? state.boatInfo?.type ?? '',
+          make: boatInfoPayload.make ?? state.boatInfo?.make ?? '',
+          currentHp: boatInfoPayload.currentHp ?? state.boatInfo?.currentHp ?? 0,
+          model: state.boatInfo?.model || '',
+          currentMotorBrand: state.boatInfo?.currentMotorBrand || '',
+          serialNumber: state.boatInfo?.serialNumber || '',
+          controlType: state.boatInfo?.controlType || '',
+          shaftLength: state.boatInfo?.shaftLength || '',
+        };
+        
+        dispatch({ type: 'SET_BOAT_INFO', payload: updatedBoatInfo });
+        
+        toast({
+          title: "Boat info updated",
+          description: `Updated your boat details`,
+        });
+      }
+      
+      // Handle apply trade-in
+      if (type === 'apply_trade_in' && payload?.tradeInInfo) {
+        const tradeIn = payload.tradeInInfo as { brand: string; year: number; horsepower: number; estimatedValue: number };
+        console.log('[VoiceContext] Applying trade-in:', tradeIn);
+        
+        dispatch({ 
+          type: 'SET_TRADE_IN_INFO', 
+          payload: {
+            hasTradeIn: true,
+            brand: tradeIn.brand,
+            year: tradeIn.year,
+            horsepower: tradeIn.horsepower,
+            model: '',
+            serialNumber: '',
+            condition: 'good',
+            estimatedValue: tradeIn.estimatedValue,
+            confidenceLevel: 'medium',
+          }
+        });
+        
+        toast({
+          title: "Trade-in added",
+          description: `Trade-in value: $${tradeIn.estimatedValue.toLocaleString()}`,
+        });
+      }
+      
+      // Handle navigate quote step
+      if (type === 'navigate_quote_step' && payload?.step) {
+        const stepMap: Record<string, number> = {
+          'motor': 1,
+          'path': 2,
+          'boat': 3,
+          'trade-in': 4,
+          'summary': 5,
+        };
+        const stepNum = stepMap[payload.step as string] || 1;
+        console.log('[VoiceContext] Navigating to step:', payload.step, stepNum);
+        
+        // Dispatch navigation event for QuoteBuilder to handle
+        window.dispatchEvent(new CustomEvent('voice:navigate-step', { detail: { step: stepNum } }));
+      }
+      
+      // Handle read quote summary (dispatches event for UI to read current state)
+      if (type === 'read_quote_summary') {
+        console.log('[VoiceContext] Reading quote summary');
+        // This is handled by the client tool reading from state
+      }
+      
+      // Handle compare motors (informational, handled by client tool)
+      if (type === 'compare_motors') {
+        console.log('[VoiceContext] Comparing motors:', payload);
+      }
+      
+      // Handle send motor photos (informational, handled by client tool)
+      if (type === 'send_motor_photos') {
+        console.log('[VoiceContext] Sending motor photos:', payload);
       }
     };
     

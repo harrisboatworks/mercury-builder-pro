@@ -353,6 +353,139 @@ serve(async (req) => {
         break;
       }
 
+      case "compare_motors": {
+        // Compare two motors side by side
+        const motor1Query = params?.motor1 || '';
+        const motor2Query = params?.motor2 || '';
+        
+        const { data: motors, error } = await supabase
+          .from("motor_models")
+          .select("id, model, model_display, horsepower, family, msrp, dealer_price, in_stock, stock_quantity, specifications")
+          .or(`model_display.ilike.%${motor1Query}%,model_display.ilike.%${motor2Query}%,model.ilike.%${motor1Query}%,model.ilike.%${motor2Query}%`)
+          .limit(10);
+        
+        if (error) throw error;
+        
+        const motor1 = motors?.find(m => 
+          (m.model_display || m.model).toLowerCase().includes(motor1Query.toLowerCase())
+        );
+        const motor2 = motors?.find(m => 
+          (m.model_display || m.model).toLowerCase().includes(motor2Query.toLowerCase())
+        );
+        
+        if (!motor1 && !motor2) {
+          result = { found: false, message: "Couldn't find either motor. Can you be more specific about which models?" };
+        } else if (!motor1) {
+          result = { found: false, message: `Found ${motor2?.model_display || motor2?.model} but couldn't find the first motor.` };
+        } else if (!motor2) {
+          result = { found: false, message: `Found ${motor1?.model_display || motor1?.model} but couldn't find the second motor.` };
+        } else {
+          const config1 = parseMotorConfig(motor1.model_display || motor1.model);
+          const config2 = parseMotorConfig(motor2.model_display || motor2.model);
+          
+          result = {
+            found: true,
+            comparison: {
+              motor1: {
+                model: motor1.model_display || motor1.model,
+                horsepower: motor1.horsepower,
+                price: motor1.msrp || motor1.dealer_price,
+                family: motor1.family,
+                inStock: motor1.in_stock && (motor1.stock_quantity || 0) > 0,
+                ...config1,
+              },
+              motor2: {
+                model: motor2.model_display || motor2.model,
+                horsepower: motor2.horsepower,
+                price: motor2.msrp || motor2.dealer_price,
+                family: motor2.family,
+                inStock: motor2.in_stock && (motor2.stock_quantity || 0) > 0,
+                ...config2,
+              },
+              differences: {
+                hpDifference: (motor2.horsepower || 0) - (motor1.horsepower || 0),
+                priceDifference: ((motor2.msrp || motor2.dealer_price || 0) - (motor1.msrp || motor1.dealer_price || 0)),
+              }
+            }
+          };
+        }
+        break;
+      }
+
+      case "recommend_motor": {
+        // Recommend motors based on boat info and usage
+        const boatLength = params?.boat_length || 0;
+        const boatType = params?.boat_type || 'aluminum';
+        const usage = params?.usage || 'general';
+        const maxBudget = params?.max_budget || 999999;
+        
+        // Calculate ideal HP range based on boat
+        let minHp = 0;
+        let maxHp = 999;
+        
+        if (boatLength) {
+          // Rule of thumb: 5-10 HP per foot for aluminum, 8-12 for fiberglass
+          const multiplier = boatType === 'fiberglass' ? 10 : boatType === 'pontoon' ? 6 : 7;
+          minHp = Math.round(boatLength * (multiplier * 0.6));
+          maxHp = Math.round(boatLength * (multiplier * 1.2));
+        }
+        
+        // Adjust for usage
+        if (usage === 'fishing') {
+          maxHp = Math.round(maxHp * 0.9); // Slightly lower HP, prioritize fuel economy
+        } else if (usage === 'watersports') {
+          minHp = Math.round(minHp * 1.2); // Need more power for pulling
+        }
+        
+        const { data: motors, error } = await supabase
+          .from("motor_models")
+          .select("id, model, model_display, horsepower, family, msrp, dealer_price, in_stock, stock_quantity")
+          .gte("horsepower", minHp)
+          .lte("horsepower", maxHp)
+          .lte("msrp", maxBudget)
+          .eq("in_stock", true)
+          .gt("stock_quantity", 0)
+          .order("horsepower", { ascending: true })
+          .limit(20);
+        
+        if (error) throw error;
+        
+        if (!motors || motors.length === 0) {
+          result = { 
+            found: false, 
+            message: `No motors found for a ${boatLength}ft ${boatType}. Try expanding your budget or we can look at what's available.`,
+            suggestedHpRange: { min: minHp, max: maxHp }
+          };
+        } else {
+          // Score motors based on usage fit
+          const scoredMotors = motors.map(m => {
+            let score = 100;
+            const family = (m.family || '').toLowerCase();
+            
+            // Usage-based scoring
+            if (usage === 'fishing' && family.includes('fourstroke')) score += 20;
+            if (usage === 'watersports' && family.includes('pro')) score += 20;
+            if (usage === 'commercial' && family.includes('seapro')) score += 30;
+            if (boatType === 'pontoon' && family.includes('fourstroke')) score += 15;
+            
+            // In-stock bonus
+            if (m.in_stock && (m.stock_quantity || 0) > 0) score += 10;
+            
+            return { ...buildMotorResponse(m), score };
+          });
+          
+          scoredMotors.sort((a, b) => b.score - a.score);
+          
+          result = {
+            found: true,
+            recommendations: scoredMotors.slice(0, 3),
+            reasoning: `For a ${boatLength}ft ${boatType} used for ${usage}, I'd recommend ${minHp}-${maxHp}HP.`,
+            suggestedHpRange: { min: minHp, max: maxHp }
+          };
+        }
+        break;
+      }
+
       default:
         result = { error: `Unknown action: ${action}` };
     }
