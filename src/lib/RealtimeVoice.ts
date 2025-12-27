@@ -287,6 +287,7 @@ export class RealtimeVoiceChat {
   private inboundAudioBytes = 0;
   private lastPlayError: string | null = null;
   private watchdogTimeout: ReturnType<typeof setTimeout> | null = null;
+  private tokenReceived = false;
 
   constructor(
     private onTranscript: (text: string, isFinal: boolean) => void,
@@ -310,7 +311,7 @@ export class RealtimeVoiceChat {
   getDiagnostics(): VoiceDiagnostics {
     return {
       micPermission: !!this.mediaStream,
-      tokenReceived: true, // set true after connect starts
+      tokenReceived: this.tokenReceived,
       sdpExchanged: !!this.pc?.remoteDescription,
       webrtcState: this.pc?.connectionState || 'none',
       dataChannelOpen: this.dc?.readyState === 'open',
@@ -357,10 +358,17 @@ export class RealtimeVoiceChat {
       }
 
       const EPHEMERAL_KEY = data.client_secret.value;
+      this.tokenReceived = true;
       console.log('✅ Ephemeral token received');
+      this.updateDiagnostics();
 
-      // Create peer connection
-      this.pc = new RTCPeerConnection();
+      // Create peer connection (explicit STUN improves reliability on some networks)
+      this.pc = new RTCPeerConnection({
+        iceServers: [
+          { urls: 'stun:stun.l.google.com:19302' },
+          { urls: 'stun:stun1.l.google.com:19302' },
+        ],
+      });
 
       // Ensure we explicitly negotiate receiving remote audio
       // (some browsers won't fire ontrack reliably without a transceiver)
@@ -431,65 +439,81 @@ export class RealtimeVoiceChat {
       // Set up remote audio - this receives AI's voice via WebRTC
       this.pc.ontrack = (e) => {
         this.hasReceivedRemoteTrack = true;
-        console.log('🎧 Received remote track:', e.track.kind, 'readyState:', e.track.readyState, 'streams:', e.streams.length);
-        console.log('🎧 Track details - id:', e.track.id, 'label:', e.track.label, 'muted:', e.track.muted);
+        console.log(
+          '🎧 Received remote track:',
+          e.track.kind,
+          'readyState:',
+          e.track.readyState,
+          'streams:',
+          e.streams.length
+        );
+        console.log(
+          '🎧 Track details - id:',
+          e.track.id,
+          'label:',
+          e.track.label,
+          'muted:',
+          e.track.muted
+        );
         this.updateDiagnostics();
 
-        if (e.streams && e.streams[0]) {
-          const remoteStream = e.streams[0];
-          console.log('Setting audio srcObject with stream:', remoteStream.id);
-          
-          // PRIMARY: Route through Web Audio API (more reliable on Safari/Mac)
-          if (this.audioContext && this.audioContext.state === 'running') {
-            try {
-              // Disconnect previous source if any
-              this.webAudioSource?.disconnect();
-              
-              this.webAudioSource = this.audioContext.createMediaStreamSource(remoteStream);
-              this.webAudioSource.connect(this.audioContext.destination);
-              console.log('✅ Remote audio routed through Web Audio API');
-              this.audioIsPlaying = true;
-              this.updateDiagnostics();
-            } catch (err) {
-              console.error('❌ Web Audio routing failed:', err);
-            }
-          }
-          
-          // FALLBACK: Also set on audio element (some browsers prefer this)
-          this.audioEl.srcObject = remoteStream;
-          console.log('🔊 Audio element srcObject set');
-
-          // Play with comprehensive error handling
-          this.audioEl
-            .play()
-            .then(() => {
-              console.log('✅ Audio element playback started successfully');
-              this.audioIsPlaying = true;
-              this.lastPlayError = null;
-              this.updateDiagnostics();
-            })
-            .catch((err) => {
-              console.error('❌ Audio element play failed:', err);
-              this.lastPlayError = err.message;
-              this.updateDiagnostics();
-              
-              // Try playing on next user interaction (autoplay policy)
-              const playOnInteraction = () => {
-                this.audioEl
-                  .play()
-                  .then(() => {
-                    console.log('✅ Audio playback started after user interaction');
-                    this.audioIsPlaying = true;
-                    this.lastPlayError = null;
-                    this.updateDiagnostics();
-                  })
-                  .catch((e2) => console.error('Still failed:', e2));
-              };
-              document.addEventListener('click', playOnInteraction, { once: true });
-            });
-        } else {
-          console.warn('🎧 ontrack fired but no streams available!');
+        const remoteStream = e.streams?.[0] ?? new MediaStream([e.track]);
+        if (!e.streams?.[0]) {
+          console.warn('🎧 ontrack fired without streams; using MediaStream([track]) fallback');
         }
+
+        console.log('Setting audio srcObject with stream:', remoteStream.id);
+
+        // PRIMARY: Route through Web Audio API (more reliable on Safari/Mac)
+        if (this.audioContext && this.audioContext.state === 'running') {
+          try {
+            // Disconnect previous source if any
+            this.webAudioSource?.disconnect();
+
+            this.webAudioSource = this.audioContext.createMediaStreamSource(remoteStream);
+            this.webAudioSource.connect(this.audioContext.destination);
+            console.log('✅ Remote audio routed through Web Audio API');
+            this.audioIsPlaying = true;
+            this.updateDiagnostics();
+          } catch (err: any) {
+            console.error('❌ Web Audio routing failed:', err);
+            this.lastPlayError = err?.message || 'Web Audio routing failed';
+            this.updateDiagnostics();
+          }
+        }
+
+        // FALLBACK: Also set on audio element (some browsers prefer this)
+        this.audioEl.srcObject = remoteStream;
+        console.log('🔊 Audio element srcObject set');
+
+        // Play with comprehensive error handling
+        this.audioEl
+          .play()
+          .then(() => {
+            console.log('✅ Audio element playback started successfully');
+            this.audioIsPlaying = true;
+            this.lastPlayError = null;
+            this.updateDiagnostics();
+          })
+          .catch((err) => {
+            console.error('❌ Audio element play failed:', err);
+            this.lastPlayError = err?.message || 'Audio element play failed';
+            this.updateDiagnostics();
+
+            // Try playing on next user interaction (autoplay policy)
+            const playOnInteraction = () => {
+              this.audioEl
+                .play()
+                .then(() => {
+                  console.log('✅ Audio playback started after user interaction');
+                  this.audioIsPlaying = true;
+                  this.lastPlayError = null;
+                  this.updateDiagnostics();
+                })
+                .catch((e2) => console.error('Still failed:', e2));
+            };
+            document.addEventListener('click', playOnInteraction, { once: true });
+          });
       };
 
       // Add local audio track from our stream (microphone → AI)
@@ -518,10 +542,21 @@ export class RealtimeVoiceChat {
               type: 'response.create',
               response: {
                 modalities: ['audio', 'text'],
-                instructions: "Greet the user warmly as Harris (1 short sentence). Say something like 'Hey there, I'm Harris — what can I help you with today?'",
+                instructions:
+                  "Greet the user warmly as Harris (1 short sentence). Say something like 'Hey there, I'm Harris — what can I help you with today?'",
               },
             })
           );
+
+          // Extra diagnostics check: if we never get a remote track soon, surface it clearly.
+          setTimeout(() => {
+            const d = this.getDiagnostics();
+            console.log('🧪 Post-greeting diagnostics:', d);
+            if (!d.remoteTrackReceived && d.inboundAudioBytes === 0) {
+              console.warn('⚠️ No remote audio track/bytes after greeting request');
+              this.onAudioIssue?.();
+            }
+          }, 3000);
         }
 
         // Start audio watchdog - if no audio received after 5s, notify user

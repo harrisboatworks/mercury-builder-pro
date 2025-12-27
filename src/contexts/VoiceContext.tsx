@@ -4,6 +4,7 @@ import { useRealtimeVoice } from '@/hooks/useRealtimeVoice';
 import { useQuote } from '@/contexts/QuoteContext';
 import { MicrophonePermissionDialog } from '@/components/chat/MicrophonePermissionDialog';
 import { AudioIssuePrompt } from '@/components/chat/AudioIssuePrompt';
+import { VoiceDiagnosticsPanel } from '@/components/chat/VoiceDiagnosticsPanel';
 
 interface VoiceContextType {
   isConnected: boolean;
@@ -93,7 +94,10 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   return (
     <VoiceContext.Provider value={contextValue}>
       {children}
-      
+
+      {/* Diagnostics panel (Alt+Shift+D) */}
+      <VoiceDiagnosticsPanel diagnostics={voice.diagnostics} />
+
       {/* Microphone Permission Dialog */}
       <MicrophonePermissionDialog
         open={voice.showPermissionDialog}
@@ -101,7 +105,7 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         permissionState={voice.permissionState === 'denied' ? 'denied' : 'prompt'}
         onRetry={voice.retryPermission}
       />
-      
+
       {/* Audio Issue Prompt */}
       <AudioIssuePrompt
         show={voice.showAudioIssuePrompt}
