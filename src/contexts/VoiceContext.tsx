@@ -16,6 +16,8 @@ interface VoiceContextType {
   isListening: boolean;
   isSearching: boolean;
   searchingMessage: string | null;
+  isThinking: boolean;
+  thinkingMessage: string | null;
   transcript: string;
   error: string | null;
   permissionState: 'granted' | 'denied' | 'prompt' | null;
@@ -272,6 +274,8 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     isListening: voice.isListening,
     isSearching: voice.isSearching,
     searchingMessage: voice.searchingMessage,
+    isThinking: voice.isThinking,
+    thinkingMessage: voice.thinkingMessage,
     transcript: voice.transcript,
     error: voice.error,
     permissionState: voice.permissionState,

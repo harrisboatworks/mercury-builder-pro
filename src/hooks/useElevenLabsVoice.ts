@@ -13,7 +13,7 @@ const WARNING_SYSTEM_MESSAGE = "[SYSTEM: The user has been silent for a while. G
 const GOODBYE_SYSTEM_MESSAGE = "[SYSTEM: The user hasn't responded. Say a friendly goodbye like 'Alright, if you need anything, just tap the voice button. Talk soon!' and end naturally.]";
 
 // Thinking watchdog - prompt agent to acknowledge if no response within this time after user speaks
-const THINKING_WATCHDOG_MS = 1500; // 1.5 seconds
+const THINKING_WATCHDOG_MS = 600; // 0.6s (reduce perceived "dead air")
 const THINKING_NUDGE_MESSAGE = "[SYSTEM: You haven't started responding yet. Give a VERY quick acknowledgement like 'One sec...' or 'Let me check...' - just 2-3 words - then continue processing.]";
 
 // Pre-warm edge functions to eliminate cold start on first question
@@ -21,23 +21,22 @@ const THINKING_NUDGE_MESSAGE = "[SYSTEM: You haven't started responding yet. Giv
 export async function prewarmEdgeFunctions() {
   console.log('[Voice] Pre-warming edge functions...');
   const startTime = Date.now();
-  
-  // Fire all warmup requests in parallel - don't await, just fire
+
+  // Fire all warmup requests in parallel
   const warmups = [
-    // Warm inventory lookup (most commonly used tool)
-    supabase.functions.invoke('voice-inventory-lookup', {
-      body: { action: 'check_inventory', params: { hp_range: '0' } }
-    }).then(() => console.log(`[Voice] Inventory function warmed in ${Date.now() - startTime}ms`))
+    // Warm inventory lookup with a no-op ping (keeps this cheap + fast)
+    supabase.functions
+      .invoke('voice-inventory-lookup', { body: { action: 'ping', params: {} } })
+      .then(() => console.log(`[Voice] Inventory function warmed in ${Date.now() - startTime}ms`))
       .catch(() => {}),
-    
-    // Warm conversation token endpoint (called on every connect)
-    supabase.functions.invoke('elevenlabs-conversation-token', {
-      body: { warmup: true }
-    }).then(() => console.log(`[Voice] Token function warmed in ${Date.now() - startTime}ms`))
+
+    // Warm conversation token endpoint (now short-circuits on warmup)
+    supabase.functions
+      .invoke('elevenlabs-conversation-token', { body: { warmup: true } })
+      .then(() => console.log(`[Voice] Token function warmed in ${Date.now() - startTime}ms`))
       .catch(() => {}),
   ];
-  
-  // Return promise that resolves when all are warmed (for parallel use)
+
   return Promise.all(warmups);
 }
 
@@ -46,8 +45,10 @@ interface VoiceState {
   isConnecting: boolean;
   isSpeaking: boolean;
   isListening: boolean;
-  isSearching: boolean; // NEW: indicates a tool call is in progress
-  searchingMessage: string | null; // NEW: what we're searching for
+  isSearching: boolean;
+  searchingMessage: string | null;
+  isThinking: boolean;
+  thinkingMessage: string | null;
   transcript: string;
   error: string | null;
   permissionState: 'granted' | 'denied' | 'prompt' | null;
@@ -88,35 +89,45 @@ const SEARCH_ACKNOWLEDGEMENTS = [
   "Just a moment...",
 ];
 
-// Play instant audio feedback using Web Speech API (synchronous, no network)
-// This gives immediate acknowledgement while the actual tool call runs
+// Play instant audio feedback using Web Speech API (best-effort, no network)
+// This is a backup acknowledgement while the actual tool call runs.
 let lastAckTime = 0;
 function playInstantAcknowledgement(): void {
-  // Debounce - don't spam if multiple tool calls happen quickly
   const now = Date.now();
   if (now - lastAckTime < 3000) return; // Max once per 3 seconds
   lastAckTime = now;
-  
-  // Skip if speech synthesis unavailable
-  if (!window.speechSynthesis) {
-    console.log('[Voice] Speech synthesis unavailable for instant ack');
-    return;
-  }
-  
+
+  if (!window.speechSynthesis) return;
+
   const phrase = SEARCH_ACKNOWLEDGEMENTS[Math.floor(Math.random() * SEARCH_ACKNOWLEDGEMENTS.length)];
-  console.log('[Voice] Playing instant acknowledgement:', phrase);
-  
-  const utterance = new SpeechSynthesisUtterance(phrase);
-  utterance.rate = 1.1; // Slightly faster
-  utterance.pitch = 1.0;
-  utterance.volume = 0.8;
-  
-  // Use a natural voice if available
-  const voices = window.speechSynthesis.getVoices();
-  const preferredVoice = voices.find(v => v.name.includes('Samantha') || v.name.includes('Google') || v.lang.startsWith('en'));
-  if (preferredVoice) utterance.voice = preferredVoice;
-  
-  window.speechSynthesis.speak(utterance);
+
+  try {
+    // Cancel any queued utterances so this one plays immediately.
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(phrase);
+    utterance.rate = 1.1;
+    utterance.pitch = 1.0;
+    utterance.volume = 0.9;
+
+    // Some browsers populate voices async; pick a voice if available but don't block.
+    const voices = window.speechSynthesis.getVoices();
+    const preferred = voices.find(
+      (v) => v.lang?.toLowerCase().startsWith('en') && /google|samantha|alex/i.test(v.name)
+    );
+    if (preferred) utterance.voice = preferred;
+
+    // Defer one tick to improve reliability after cancel().
+    setTimeout(() => {
+      try {
+        window.speechSynthesis.speak(utterance);
+      } catch {
+        // ignore
+      }
+    }, 0);
+  } catch {
+    // ignore
+  }
 }
 
 // Client tool handler for inventory lookups
@@ -884,6 +895,8 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     isListening: false,
     isSearching: false,
     searchingMessage: null,
+    isThinking: false,
+    thinkingMessage: null,
     transcript: '',
     error: null,
     permissionState: null,
@@ -990,6 +1003,8 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       isListening: false,
       isSearching: false,
       searchingMessage: null,
+      isThinking: false,
+      thinkingMessage: null,
       transcript: '',
       error: null,
       permissionState: null,
@@ -1072,6 +1087,13 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       console.log('[Voice] Agent responded - clearing thinking watchdog');
       agentRespondedRef.current = true;
       clearThinkingWatchdog();
+
+      // Clear "thinking" UI immediately (user should now see speaking/listening/searching)
+      setStateRef.current(prev => (
+        prev.isThinking || prev.thinkingMessage
+          ? { ...prev, isThinking: false, thinkingMessage: null }
+          : prev
+      ));
     }
   }, [clearThinkingWatchdog]);
 
@@ -1140,11 +1162,20 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         if (userTranscript) {
           console.log('[Voice] User transcript received:', userTranscript.substring(0, 50));
           transcriptRef.current = userTranscript;
-          setState(prev => ({ ...prev, transcript: userTranscript }));
+
+          // Immediate on-screen acknowledgement (covers the "dead air" period)
+          setState(prev => ({
+            ...prev,
+            transcript: userTranscript,
+            isThinking: true,
+            thinkingMessage: "Hang on — checking…",
+          }));
+
           onTranscriptComplete?.(userTranscript);
+
           // Track message for session persistence
           voiceSession.incrementMessageCount();
-          
+
           // Start the thinking watchdog - if agent doesn't respond quickly, nudge it
           startThinkingWatchdog();
         }
@@ -1626,6 +1657,8 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       isListening: false,
       isSearching: false,
       searchingMessage: null,
+      isThinking: false,
+      thinkingMessage: null,
       transcript: '',
       error: null,
       permissionState: null,

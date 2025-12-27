@@ -117,6 +117,13 @@ serve(async (req) => {
     const { action, params } = await req.json();
     console.log(`Voice inventory lookup: ${action}`, params);
 
+    // Ultra-cheap warmup (avoids a DB query)
+    if (action === 'ping') {
+      return new Response(JSON.stringify({ result: { ok: true } }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
