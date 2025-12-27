@@ -171,35 +171,28 @@ async function handleVerifySpecs(params: {
 
     if (error) {
       console.error('[ClientTool] Perplexity Error:', error);
-      return JSON.stringify({ 
-        error: 'Failed to verify specs. Please try again.',
-        fallback: "I couldn't verify that right now. Let me connect you with our team."
-      });
+      return "I couldn't verify that information right now. Please contact our parts department for accurate details.";
     }
 
     console.log('[ClientTool] Perplexity Result:', data);
     
-    if (!data?.success) {
-      return JSON.stringify({ 
-        error: data?.error || 'Lookup failed',
-        fallback: data?.fallback || "I couldn't find verified information on that."
-      });
+    if (!data?.success || !data?.answer) {
+      return data?.fallback || "I couldn't find verified information on that. Our parts team can help.";
     }
 
-    // Return structured response for agent
-    return JSON.stringify({
-      success: true,
-      answer: data.answer,
-      confidence: data.confidence,
-      sources: data.sources?.slice(0, 2), // Limit sources for voice
-      category: data.category
-    });
+    // Return just the answer text for the agent to speak naturally
+    // Strip markdown formatting for voice
+    const cleanAnswer = data.answer
+      .replace(/\*\*/g, '')  // Remove bold
+      .replace(/\[(\d+)\]/g, '')  // Remove citation numbers like [1][3]
+      .replace(/\n+/g, ' ')  // Replace newlines with spaces
+      .trim();
+
+    console.log('[ClientTool] Returning clean answer:', cleanAnswer);
+    return cleanAnswer;
   } catch (err) {
     console.error('[ClientTool] Perplexity Exception:', err);
-    return JSON.stringify({ 
-      error: 'Spec verification failed',
-      fallback: "I ran into an issue. Our service team can help with those details."
-    });
+    return "I ran into an issue looking that up. Our service team can help with those details.";
   }
 }
 
