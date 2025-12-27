@@ -84,7 +84,7 @@ const faqs = [
   },
   {
     question: "Do you offer financing?",
-    answer: "Yes! We offer competitive marine financing with rates starting from 6.99% APR. You can apply online through our website and get pre-approved in as little as 24 hours."
+    answer: "Yes! We offer competitive marine financing with rates starting from 6.99% APR*. You can apply online through our website and get pre-approved in as little as 24 hours. *Promotional rates subject to change."
   },
   {
     question: "Can you service motors from other brands?",

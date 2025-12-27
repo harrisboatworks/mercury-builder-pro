@@ -13,6 +13,9 @@ import { useGroupedMotors } from '@/hooks/useGroupedMotors';
 import { useMotorComparison } from '@/hooks/useMotorComparison';
 import { useFavoriteMotors } from '@/hooks/useFavoriteMotors';
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
+import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { daysUntil } from '@/lib/finance';
+import { Clock } from 'lucide-react';
 // useScrollDirection removed - search bar scrolls naturally now
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
@@ -438,13 +441,17 @@ function MotorSelectionContent() {
 
   // Calculate monthly payments for each motor
   
+  // Get active financing promo for dynamic rate
+  const { promo: financingPromo } = useActiveFinancingPromo();
+  const currentFinancingRate = financingPromo?.rate ?? 7.99;
+  
   const monthlyPayments = useMemo(() => {
     const payments: Record<string, number | null> = {};
     
     processedMotors.forEach(motor => {
       // Simple calculation without hook - matches useMotorMonthlyPayment logic
       if (motor.price > 5000) {
-        const annualRate = 6.99; // Default rate
+        const annualRate = currentFinancingRate; // Dynamic rate from promo
         const monthlyRate = annualRate / 100 / 12;
         const termMonths = 60;
         const priceWithHST = motor.price * 1.13;
@@ -456,7 +463,7 @@ function MotorSelectionContent() {
     });
     
     return payments;
-  }, [processedMotors]);
+  }, [processedMotors, currentFinancingRate]);
 
   // Filter motors with intelligent search + fuzzy matching
   const filteredMotors = useMemo(() => {
@@ -816,8 +823,14 @@ function MotorSelectionContent() {
           {filteredMotors.length > 0 && (
             <div className="mt-12 pt-8 border-t border-gray-200">
               <p className="text-xs font-light text-gray-500 text-center max-w-3xl mx-auto">
-                * Monthly payment estimates based on recommended financing term at 6.99% APR with $0 down, 
+                * Monthly payment estimates based on recommended financing term at {currentFinancingRate}% APR with $0 down, 
                 including HST and finance fee. Terms vary by purchase amount. Subject to credit approval.
+                {financingPromo?.promo_end_date && (
+                  <span className="ml-2 inline-flex items-center gap-1 text-emerald-600 font-medium">
+                    <Clock className="h-3 w-3" />
+                    Promo rate ends in {daysUntil(financingPromo.promo_end_date)} days
+                  </span>
+                )}
               </p>
             </div>
           )}

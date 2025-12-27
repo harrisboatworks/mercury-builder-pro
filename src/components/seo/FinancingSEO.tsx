@@ -103,7 +103,7 @@ export function FinancingSEO() {
             "name": "What are the current financing rates for Mercury outboards?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Current rates start from 6.99% APR for qualified buyers. Promotional rates as low as 6.99% may be available during special promotions. Rates are tiered: 8.99% APR for amounts under $10,000, and 7.99% APR for amounts $10,000 and up."
+              "text": "Current promotional rates start from 6.99% APR for qualified buyers. Standard rates are 8.99% APR for amounts under $10,000, and 7.99% APR for amounts $10,000 and up. Promotional rates are subject to availability and may change."
             }
           },
           {
@@ -129,21 +129,21 @@ export function FinancingSEO() {
 
   return (
     <Helmet>
-      <title>Boat Motor Financing | Apply Online | Rates from 6.99% APR | Harris Boat Works</title>
-      <meta name="description" content="Finance your Mercury outboard motor with competitive rates from 6.99% APR. Easy online application, quick approval. Flexible terms from 36-180 months. No prepayment penalties." />
+      <title>Boat Motor Financing | Apply Online | Rates Starting from 6.99% APR | Harris Boat Works</title>
+      <meta name="description" content="Finance your Mercury outboard motor with competitive rates starting from 6.99% APR*. Easy online application, quick approval. Flexible terms from 36-180 months. *Promotional rates subject to availability." />
       <meta name="keywords" content="boat motor financing, outboard motor loan, Mercury financing, marine financing Canada, boat loan Ontario, outboard financing rates" />
       <link rel="canonical" href="https://quote.harrisboatworks.ca/financing-application" />
       
       {/* Open Graph */}
       <meta property="og:title" content="Boat Motor Financing | Harris Boat Works" />
-      <meta property="og:description" content="Finance your Mercury outboard with rates from 6.99% APR. Easy online application." />
+      <meta property="og:description" content="Finance your Mercury outboard with rates starting from 6.99% APR*. Easy online application." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://quote.harrisboatworks.ca/financing-application" />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Boat Motor Financing | Harris Boat Works" />
-      <meta name="twitter:description" content="Competitive boat motor financing. Rates from 6.99% APR." />
+      <meta name="twitter:description" content="Competitive boat motor financing. Rates starting from 6.99% APR*." />
       
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
