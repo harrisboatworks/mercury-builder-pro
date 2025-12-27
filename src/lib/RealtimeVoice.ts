@@ -234,18 +234,22 @@ export async function unlockAudioOutput(): Promise<AudioContext> {
     console.log('🔓 AudioContext resumed, state:', sharedOutputAudioContext.state);
   }
   
-  // Play a tiny silent buffer to fully unlock audio output
+  // Play an audible 0.2s test beep to confirm speakers work
   if (!audioUnlocked) {
     try {
-      const buffer = sharedOutputAudioContext.createBuffer(1, 1, 24000);
-      const source = sharedOutputAudioContext.createBufferSource();
-      source.buffer = buffer;
-      source.connect(sharedOutputAudioContext.destination);
-      source.start(0);
+      const oscillator = sharedOutputAudioContext.createOscillator();
+      const gainNode = sharedOutputAudioContext.createGain();
+      oscillator.type = 'sine';
+      oscillator.frequency.value = 880; // A5 note - clearly audible
+      gainNode.gain.value = 0.3; // Audible but not too loud
+      oscillator.connect(gainNode);
+      gainNode.connect(sharedOutputAudioContext.destination);
+      oscillator.start();
+      oscillator.stop(sharedOutputAudioContext.currentTime + 0.2); // 0.2 second beep
       audioUnlocked = true;
-      console.log('🔓 Audio output unlocked with silent buffer');
+      console.log('🔓 Audio output unlocked with test beep');
     } catch (e) {
-      console.warn('🔓 Silent buffer unlock failed:', e);
+      console.warn('🔓 Test beep failed:', e);
     }
   }
   
