@@ -30,6 +30,28 @@ interface UseElevenLabsVoiceOptions {
   currentPage?: string;
 }
 
+// Client tool handler for inventory lookups
+async function handleInventoryLookup(action: string, params: Record<string, unknown>): Promise<string> {
+  console.log(`[ClientTool] ${action}`, params);
+  
+  try {
+    const { data, error } = await supabase.functions.invoke('voice-inventory-lookup', {
+      body: { action, params }
+    });
+
+    if (error) {
+      console.error('[ClientTool] Error:', error);
+      return JSON.stringify({ error: 'Failed to check inventory. Please try again.' });
+    }
+
+    console.log('[ClientTool] Result:', data);
+    return JSON.stringify(data?.result || { error: 'No data returned' });
+  } catch (err) {
+    console.error('[ClientTool] Exception:', err);
+    return JSON.stringify({ error: 'Inventory lookup failed' });
+  }
+}
+
 export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   const { onTranscriptComplete } = options;
   const { toast } = useToast();
@@ -72,7 +94,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     outputAudioLevel: 0,
   });
 
-  // ElevenLabs useConversation hook
+  // ElevenLabs useConversation hook with client tools for real-time inventory access
   const conversation = useConversation({
     onConnect: () => {
       console.log('ElevenLabs: Connected to agent');
@@ -127,6 +149,30 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         description: errorMessage,
         variant: "destructive",
       });
+    },
+    // Client tools for real-time inventory access
+    // These must be configured in the ElevenLabs agent dashboard with matching names
+    clientTools: {
+      // Check inventory by horsepower, family, or stock status
+      check_inventory: async (params: { horsepower?: number; family?: string; in_stock?: boolean; min_hp?: number; max_hp?: number }) => {
+        return await handleInventoryLookup('check_inventory', params);
+      },
+      // Get price for a specific motor
+      get_motor_price: async (params: { model: string }) => {
+        return await handleInventoryLookup('get_motor_price', params);
+      },
+      // Check if a specific motor is in stock
+      check_availability: async (params: { model: string }) => {
+        return await handleInventoryLookup('check_availability', params);
+      },
+      // List all motors currently in stock
+      list_in_stock: async () => {
+        return await handleInventoryLookup('list_in_stock', {});
+      },
+      // Get motors in a horsepower range
+      get_hp_range: async (params: { min_hp: number; max_hp: number }) => {
+        return await handleInventoryLookup('get_hp_range', params);
+      },
     },
   });
 
@@ -203,10 +249,9 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         throw new Error(error?.message || 'Failed to get conversation token');
       }
 
-      console.log('Starting ElevenLabs conversation (using agent default prompt)...');
+      console.log('Starting ElevenLabs conversation with client tools...');
       
-      // Start the conversation with WebRTC - use agent's default prompt from dashboard
-      // Note: prompt overrides were causing connection drops, disabled temporarily
+      // Start the conversation with WebRTC
       await conversation.startSession({
         conversationToken: data.token,
         connectionType: 'webrtc',
