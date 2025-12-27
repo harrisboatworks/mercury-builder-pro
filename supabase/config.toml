@@ -176,3 +176,6 @@ verify_jwt = false
 
 [functions.voice-create-reminder]
 verify_jwt = false
+
+[functions.elevenlabs-mcp-server]
+verify_jwt = false
