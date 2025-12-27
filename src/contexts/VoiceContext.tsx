@@ -61,9 +61,38 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     [activeMotor?.model, activeMotor?.hp, activeMotor?.msrp, activeMotor?.price, activeMotor?.salePrice]
   );
 
+  // Build quote context for voice (boat info, quote progress)
+  const quoteContext = useMemo(() => {
+    const hasBoatInfo = state.boatInfo && (state.boatInfo.type || state.boatInfo.length);
+    const hasQuoteProgress = state.motor || state.selectedPackage || state.purchasePath;
+    
+    if (!hasBoatInfo && !hasQuoteProgress) return null;
+    
+    return {
+      boatInfo: hasBoatInfo ? {
+        type: state.boatInfo?.type || null,
+        length: state.boatInfo?.length || null,
+        make: state.boatInfo?.make || null,
+        currentHp: state.boatInfo?.currentHp || null,
+      } : null,
+      selectedMotor: state.motor ? {
+        model: state.motor.model || '',
+        hp: state.motor.hp || 0,
+      } : null,
+      packageSelection: state.selectedPackage?.label || null,
+      purchasePath: state.purchasePath || null,
+      tradeInValue: state.tradeInInfo?.estimatedValue || null,
+    };
+  }, [
+    state.boatInfo?.type, state.boatInfo?.length, state.boatInfo?.make, state.boatInfo?.currentHp,
+    state.motor?.model, state.motor?.hp,
+    state.selectedPackage?.label, state.purchasePath, state.tradeInInfo?.estimatedValue
+  ]);
+
   const voice = useElevenLabsVoice({
     motorContext,
     currentPage: location.pathname,
+    quoteContext,
   });
 
   // Auto-update context when motor or page changes during active session

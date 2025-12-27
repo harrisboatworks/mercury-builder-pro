@@ -163,10 +163,57 @@ function getPageDescription(currentPage: string): string {
   return match?.[1] || currentPage;
 }
 
+// Build quote context section for the prompt
+function buildQuoteContextPrompt(quoteContext: any): string {
+  if (!quoteContext) return "";
+  
+  const parts: string[] = [];
+  
+  if (quoteContext.boatInfo) {
+    const boat = quoteContext.boatInfo;
+    const boatParts = [];
+    if (boat.length) boatParts.push(`${boat.length} ft`);
+    if (boat.type) boatParts.push(boat.type);
+    if (boat.make) boatParts.push(boat.make);
+    if (boat.currentHp) boatParts.push(`currently powered by ${boat.currentHp}HP`);
+    if (boatParts.length > 0) {
+      parts.push(`- Their boat: ${boatParts.join(' ')}`);
+    }
+  }
+  
+  if (quoteContext.selectedMotor) {
+    parts.push(`- Motor in their quote: ${quoteContext.selectedMotor.model} (${quoteContext.selectedMotor.hp}HP)`);
+  }
+  
+  if (quoteContext.packageSelection) {
+    parts.push(`- Package selected: ${quoteContext.packageSelection}`);
+  }
+  
+  if (quoteContext.purchasePath) {
+    const pathDesc = quoteContext.purchasePath === 'loose' 
+      ? 'Taking motor home (loose purchase)' 
+      : 'Professional installation at the shop';
+    parts.push(`- Purchase type: ${pathDesc}`);
+  }
+  
+  if (quoteContext.tradeInValue) {
+    parts.push(`- Trade-in value: $${quoteContext.tradeInValue.toLocaleString()}`);
+  }
+  
+  if (parts.length === 0) return "";
+  
+  return `
+## CUSTOMER'S QUOTE PROGRESS (Use naturally if relevant - don't announce it):
+${parts.join('\n')}
+This is background info to help you give personalized answers. Reference their boat specs or quote naturally when relevant, but don't say "I see you have a boat in your quote..." - just use the info conversationally.
+`;
+}
+
 // Build the dynamic system prompt with real inventory data
 async function buildSystemPrompt(
   motorContext?: { model: string; hp: number; price?: number } | null,
-  currentPage?: string | null
+  currentPage?: string | null,
+  quoteContext?: any
 ) {
   const [motors, promotions] = await Promise.all([
     getCurrentMotorInventory(),
@@ -189,6 +236,9 @@ async function buildSystemPrompt(
     const pageDesc = getPageDescription(currentPage);
     pageContext = `\n## PAGE CONTEXT (Background - don't proactively mention):\nThe customer is currently on ${pageDesc}. This is FYI only - let them lead the conversation. Don't say "I see you're on..." unless they ask where they are or need navigation help.\n`;
   }
+  
+  // Add quote/boat context
+  const quoteContextPrompt = buildQuoteContextPrompt(quoteContext);
 
   const systemPrompt = `You're Harris from Harris Boat Works — a friendly, knowledgeable Mercury Marine expert who sounds like a friend who happens to know everything about outboard motors. You work at an authorized Mercury Premier dealer in Ontario, Canada.
 
@@ -221,6 +271,7 @@ async function buildSystemPrompt(
 
 ${currentMotorContext}
 ${pageContext}
+${quoteContextPrompt}
 ${motorData}
 ${promotionData}
 
@@ -252,21 +303,23 @@ serve(async (req) => {
       throw new Error('ElevenLabs API key not configured');
     }
 
-    // Parse request body for motor and page context
+    // Parse request body for motor, page, and quote context
     let motorContext = null;
     let currentPage = null;
+    let quoteContext = null;
     try {
       const body = await req.json();
       motorContext = body?.motorContext || null;
       currentPage = body?.currentPage || null;
+      quoteContext = body?.quoteContext || null;
     } catch {
       // No body or invalid JSON, that's fine
     }
 
-    console.log('Building dynamic system prompt with context:', { motorContext, currentPage });
+    console.log('Building dynamic system prompt with context:', { motorContext, currentPage, hasQuoteContext: !!quoteContext });
     
-    // Build the system prompt with real inventory data and page context
-    const systemPrompt = await buildSystemPrompt(motorContext, currentPage);
+    // Build the system prompt with real inventory data, page context, and quote context
+    const systemPrompt = await buildSystemPrompt(motorContext, currentPage, quoteContext);
     console.log('System prompt built, length:', systemPrompt.length);
 
     console.log('Requesting conversation token for agent:', ELEVENLABS_AGENT_ID);
