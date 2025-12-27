@@ -68,13 +68,47 @@ function formatMotorData(motors: any[]) {
     const price = motor.dealer_price || motor.msrp;
     const priceStr = price ? `$${Math.round(price).toLocaleString()} CAD` : 'Call for pricing';
     const stockStr = motor.in_stock ? 'IN STOCK' : (motor.availability || 'Available');
-    const modelCode = motor.model_number ? ` [Code: ${motor.model_number}]` : '';
     const displayName = motor.model_display || motor.model;
-    formatted += `- ${displayName} - ${motor.horsepower}HP - ${priceStr} - ${stockStr}${modelCode}\n`;
+    formatted += `- ${displayName} - ${motor.horsepower}HP - ${priceStr} - ${stockStr}\n`;
   });
   
-  formatted += "\n## MODEL CODE REFERENCE:\n";
-  formatted += "Model codes like '1A10201LK' are Mercury part numbers. If a customer mentions a code, match it to the model above.\n";
+  formatted += `
+## MODEL SUFFIX DECODER (CRITICAL - Use this to explain models to customers):
+
+**Start Type:**
+- M = Manual pull-start
+- E = Electric start (with manual backup)
+
+**Shaft Length (Transom Height):**
+- H = Short shaft (15" transom - rare, mostly dinghies)
+- L = Long shaft (20" transom - most common for aluminum boats)
+- XL = Extra-long shaft (25" transom - fiberglass boats, larger vessels)
+- XXL = Extra-extra-long (30" transom - large offshore boats)
+
+**Steering/Control Type:**
+- H (at end) = Tiller handle (operator steers from motor)
+- PT = Power Trim (hydraulic trim/tilt)
+- No suffix = Remote steering (console-mounted controls)
+
+**Common Combinations Explained:**
+- MH = Manual start, tiller Handle (simplest, budget-friendly)
+- ELH = Electric start, Long shaft, tiller Handle (popular for fishing boats)
+- ELPT = Electric start, Long shaft, Power Trim (remote steering)
+- EXLPT = Electric start, Extra-Long shaft, Power Trim
+
+**Special Designations:**
+- CT = Command Thrust (high-thrust lower unit for heavy boats/pontoons)
+- DTS = Digital Throttle & Shift (fly-by-wire controls)
+- CMS = Command Module System
+- JPO = Jet Pump Outboard
+
+**Example Conversations:**
+- Customer: "What's the difference between 9.9MH and 9.9ELH?"
+  You: "The MH is manual pull-start with a tiller. The ELH adds electric start - just turn a key. Both are tiller-steered for 20-inch transoms. The electric start is about $800 more but worth it if you're starting the motor a lot."
+
+- Customer: "I have a pontoon, what do I need?"
+  You: "For pontoons I'd look at the Command Thrust models - they have CT in the name. The bigger prop pushes more water at low speeds which is perfect for heavy boats like pontoons."
+`;
   
   return formatted;
 }
