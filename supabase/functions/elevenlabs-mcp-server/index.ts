@@ -482,14 +482,14 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
 // MCP Protocol Handlers
 function handleInitialize() {
   return {
-    protocolVersion: "2024-11-05",
+    protocolVersion: "2025-03-26",
     capabilities: {
-      tools: {}
+      tools: {},
     },
     serverInfo: {
       name: "harris-boat-works-mcp",
-      version: "1.0.0"
-    }
+      version: "1.0.0",
+    },
   };
 }
 
