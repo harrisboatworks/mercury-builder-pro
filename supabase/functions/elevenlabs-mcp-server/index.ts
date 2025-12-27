@@ -512,112 +512,144 @@ serve(async (req) => {
   console.log(`[MCP] ${req.method} ${url.pathname}`);
 
   try {
-    // SSE endpoint for MCP - this is where clients connect first
+    // MCP SSE handshake endpoint (clients connect here first)
     if (req.method === "GET") {
       console.log("[MCP] SSE connection established");
-      
-      // Build the POST endpoint URL for messages
+
+      // Many MCP SSE clients expect a per-session messages endpoint.
+      const sessionId = crypto.randomUUID();
       const baseUrl = `${Deno.env.get("SUPABASE_URL")}/functions/v1/elevenlabs-mcp-server`;
-      
+      const messagesUrl = `${baseUrl}/messages?session_id=${encodeURIComponent(sessionId)}`;
+
       const encoder = new TextEncoder();
-      const stream = new ReadableStream({
-        start(controller) {
-          // Per MCP spec: First send the endpoint event telling client where to POST
-          controller.enqueue(encoder.encode(`event: endpoint\ndata: ${baseUrl}\n\n`));
-          console.log(`[MCP] Sent endpoint event: ${baseUrl}`);
-          
-          // Keep connection alive with periodic pings
-          const keepAlive = setInterval(() => {
-            try {
-              controller.enqueue(encoder.encode(`: ping\n\n`));
-            } catch {
-              clearInterval(keepAlive);
-            }
-          }, 30000);
+      const { readable, writable } = new TransformStream();
+      const writer = writable.getWriter();
+
+      // Per MCP SSE spec: send endpoint event first
+      await writer.write(encoder.encode(`event: endpoint\ndata: ${messagesUrl}\n\n`));
+      console.log(`[MCP] Sent endpoint event: ${messagesUrl}`);
+
+      // Keepalive pings (SSE comments)
+      const keepAlive = setInterval(async () => {
+        try {
+          await writer.write(encoder.encode(`: ping\n\n`));
+        } catch {
+          // ignore
         }
-      });
-      
-      return new Response(stream, {
+      }, 15000);
+
+      const abort = () => {
+        clearInterval(keepAlive);
+        try {
+          writer.close();
+        } catch {
+          // ignore
+        }
+      };
+
+      req.signal.addEventListener("abort", abort, { once: true });
+
+      return new Response(readable, {
         headers: {
           ...corsHeaders,
           "Content-Type": "text/event-stream",
-          "Cache-Control": "no-cache",
-          "Connection": "keep-alive"
-        }
+          "Cache-Control": "no-cache, no-transform",
+          "Connection": "keep-alive",
+          "X-Accel-Buffering": "no",
+        },
       });
     }
 
-    // Handle JSON-RPC messages via POST
+    // JSON-RPC messages endpoint (clients POST here after endpoint event)
     if (req.method === "POST") {
+      // Supabase edge functions route extra paths under the same function.
+      // Accept both:
+      // - /functions/v1/elevenlabs-mcp-server
+      // - /functions/v1/elevenlabs-mcp-server/messages
+      const isBase = url.pathname.endsWith("/elevenlabs-mcp-server");
+      const isMessages = url.pathname.endsWith("/elevenlabs-mcp-server/messages");
+
+      if (!isBase && !isMessages) {
+        return new Response(JSON.stringify({ error: "Not found" }), {
+          status: 404,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+
       const body = await req.json();
       console.log("[MCP] Request:", JSON.stringify(body));
-      
+
       let result: unknown;
-      
+
       switch (body.method) {
         case "initialize":
           result = handleInitialize();
           break;
-          
+
         case "tools/list":
           result = handleToolsList();
           break;
-          
+
         case "tools/call":
           result = await handleToolCall(body.params);
           break;
-          
+
         case "ping":
           result = {};
           break;
-          
+
         case "notifications/initialized":
-          // Client acknowledges initialization - no response needed
           result = {};
           break;
-          
+
         default:
-          return new Response(JSON.stringify({
-            jsonrpc: "2.0",
-            id: body.id,
-            error: { 
-              code: -32601, 
-              message: `Method not found: ${body.method}` 
-            }
-          }), {
-            headers: { ...corsHeaders, "Content-Type": "application/json" }
-          });
+          return new Response(
+            JSON.stringify({
+              jsonrpc: "2.0",
+              id: body.id,
+              error: {
+                code: -32601,
+                message: `Method not found: ${body.method}`,
+              },
+            }),
+            {
+              headers: { ...corsHeaders, "Content-Type": "application/json" },
+            },
+          );
       }
-      
+
       const jsonRpcResponse = {
         jsonrpc: "2.0",
         id: body.id,
-        result
+        result,
       };
-      
+
       console.log("[MCP] Response:", JSON.stringify(jsonRpcResponse));
-      
+
       return new Response(JSON.stringify(jsonRpcResponse), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" }
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
     return new Response(JSON.stringify({ error: "Method not allowed" }), {
       status: 405,
-      headers: { ...corsHeaders, "Content-Type": "application/json" }
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
-
   } catch (error) {
     console.error("[MCP] Error:", error);
-    return new Response(JSON.stringify({ 
-      jsonrpc: "2.0",
-      error: { 
-        code: -32603, 
-        message: error instanceof Error ? error.message : "Internal error" 
-      }
-    }), {
-      status: 500,
-      headers: { ...corsHeaders, "Content-Type": "application/json" }
-    });
+    return new Response(
+      JSON.stringify({
+        jsonrpc: "2.0",
+        error: {
+          code: -32603,
+          message: error instanceof Error ? error.message : "Internal error",
+        },
+      }),
+      {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      },
+    );
   }
 });
+
