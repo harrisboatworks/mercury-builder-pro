@@ -841,7 +841,6 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       clearTimeout(warningTimerRef.current);
       warningTimerRef.current = null;
     }
-    setState(prev => ({ ...prev, inactivityWarningShown: false }));
   }, []);
 
   // Handle goodbye and auto-disconnect
@@ -1167,36 +1166,46 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   });
 
   // Keep conversationRef updated
-  conversationRef.current = conversation;
+  useEffect(() => {
+    conversationRef.current = conversation;
+  }, [conversation]);
 
   // Track speaking state from conversation - also reset timer
   useEffect(() => {
-    setState(prev => ({
-      ...prev,
-      isSpeaking: conversation.isSpeaking,
-    }));
-    // Reset inactivity timer when speaking state changes (agent talking = activity)
-    if (conversation.isSpeaking) {
+    setState(prev => {
+      // Only update if value actually changed
+      if (prev.isSpeaking === conversation.isSpeaking) return prev;
+      return { ...prev, isSpeaking: conversation.isSpeaking };
+    });
+  }, [conversation.isSpeaking]);
+  
+  // Reset inactivity timer when agent starts speaking (agent talking = activity)
+  const isSpeakingRef = useRef(conversation.isSpeaking);
+  useEffect(() => {
+    if (conversation.isSpeaking && !isSpeakingRef.current) {
+      // Agent just started speaking - reset timer
       resetInactivityTimer();
     }
+    isSpeakingRef.current = conversation.isSpeaking;
   }, [conversation.isSpeaking, resetInactivityTimer]);
 
   // Track connection status
   useEffect(() => {
     const connected = conversation.status === 'connected';
-    setState(prev => ({
-      ...prev,
-      isConnected: connected,
-      isListening: connected,
-    }));
+    setState(prev => {
+      // Only update if values actually changed
+      if (prev.isConnected === connected && prev.isListening === connected) return prev;
+      return { ...prev, isConnected: connected, isListening: connected };
+    });
   }, [conversation.status]);
 
   // Cleanup timers on unmount
   useEffect(() => {
     return () => {
-      clearInactivityTimers();
+      if (inactivityTimerRef.current) clearTimeout(inactivityTimerRef.current);
+      if (warningTimerRef.current) clearTimeout(warningTimerRef.current);
     };
-  }, [clearInactivityTimers]);
+  }, []);
 
   const checkMicrophoneDevices = useCallback(async (): Promise<boolean> => {
     try {
