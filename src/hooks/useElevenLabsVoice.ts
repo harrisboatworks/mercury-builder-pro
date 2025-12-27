@@ -12,6 +12,10 @@ const FINAL_TIMEOUT_MS = 15000; // 15 more seconds after warning to disconnect
 const WARNING_SYSTEM_MESSAGE = "[SYSTEM: The user has been silent for a while. Gently check if they're still there with something brief like 'Still there? I'm here if you need anything.']";
 const GOODBYE_SYSTEM_MESSAGE = "[SYSTEM: The user hasn't responded. Say a friendly goodbye like 'Alright, if you need anything, just tap the voice button. Talk soon!' and end naturally.]";
 
+// Thinking watchdog - prompt agent to acknowledge if no response within this time after user speaks
+const THINKING_WATCHDOG_MS = 1500; // 1.5 seconds
+const THINKING_NUDGE_MESSAGE = "[SYSTEM: You haven't started responding yet. Give a VERY quick acknowledgement like 'One sec...' or 'Let me check...' - just 2-3 words - then continue processing.]";
+
 interface VoiceState {
   isConnected: boolean;
   isConnecting: boolean;
@@ -830,6 +834,11 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   const inactivityTimerRef = useRef<NodeJS.Timeout | null>(null);
   const warningTimerRef = useRef<NodeJS.Timeout | null>(null);
   const conversationRef = useRef<ReturnType<typeof useConversation> | null>(null);
+  
+  // Thinking watchdog refs - detect when agent is slow to respond
+  const thinkingWatchdogRef = useRef<NodeJS.Timeout | null>(null);
+  const agentRespondedRef = useRef<boolean>(false);
+  const thinkingNudgeSentRef = useRef<boolean>(false);
 
   // Clear all inactivity timers
   const clearInactivityTimers = useCallback(() => {
@@ -910,6 +919,52 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     }, INACTIVITY_WARNING_MS);
   }, [clearInactivityTimers, triggerGoodbyeAndDisconnect]);
 
+  // Clear the thinking watchdog timer
+  const clearThinkingWatchdog = useCallback(() => {
+    if (thinkingWatchdogRef.current) {
+      clearTimeout(thinkingWatchdogRef.current);
+      thinkingWatchdogRef.current = null;
+    }
+  }, []);
+
+  // Start the thinking watchdog after user finishes speaking
+  // If agent doesn't respond within THINKING_WATCHDOG_MS, nudge it to acknowledge
+  const startThinkingWatchdog = useCallback(() => {
+    // Clear any existing watchdog
+    clearThinkingWatchdog();
+    
+    // Reset flags
+    agentRespondedRef.current = false;
+    thinkingNudgeSentRef.current = false;
+    
+    console.log('[Voice] Starting thinking watchdog timer...');
+    
+    thinkingWatchdogRef.current = setTimeout(() => {
+      // Only nudge if agent hasn't responded and we haven't already nudged
+      if (!agentRespondedRef.current && !thinkingNudgeSentRef.current) {
+        console.log('[Voice] Thinking watchdog triggered - agent slow to respond, sending nudge');
+        thinkingNudgeSentRef.current = true;
+        
+        if (conversationRef.current?.status === 'connected') {
+          try {
+            conversationRef.current.sendUserMessage(THINKING_NUDGE_MESSAGE);
+          } catch (e) {
+            console.log('[Voice] Could not send thinking nudge:', e);
+          }
+        }
+      }
+    }, THINKING_WATCHDOG_MS);
+  }, [clearThinkingWatchdog]);
+
+  // Mark that the agent has responded (either started speaking or sent a response)
+  const markAgentResponded = useCallback(() => {
+    if (!agentRespondedRef.current) {
+      console.log('[Voice] Agent responded - clearing thinking watchdog');
+      agentRespondedRef.current = true;
+      clearThinkingWatchdog();
+    }
+  }, [clearThinkingWatchdog]);
+
   // Helper to create ElevenLabs-compatible diagnostics
   const createDiagnostics = (connected: boolean, error: string | null = null): VoiceDiagnostics => ({
     micPermission: true,
@@ -952,6 +1007,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     onDisconnect: () => {
       console.log('ElevenLabs: Disconnected from agent');
       clearInactivityTimers();
+      clearThinkingWatchdog();
       setState(prev => ({
         ...prev,
         isConnected: false,
@@ -972,17 +1028,28 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         const event = msg.user_transcription_event as Record<string, unknown> | undefined;
         const userTranscript = event?.user_transcript as string | undefined;
         if (userTranscript) {
+          console.log('[Voice] User transcript received:', userTranscript.substring(0, 50));
           transcriptRef.current = userTranscript;
           setState(prev => ({ ...prev, transcript: userTranscript }));
           onTranscriptComplete?.(userTranscript);
           // Track message for session persistence
           voiceSession.incrementMessageCount();
+          
+          // Start the thinking watchdog - if agent doesn't respond quickly, nudge it
+          startThinkingWatchdog();
         }
       }
       
-      // Also track agent responses
+      // Agent response received - mark as responded and clear watchdog
       if (msg.type === 'agent_response') {
+        console.log('[Voice] Agent response received');
+        markAgentResponded();
         voiceSession.incrementMessageCount();
+      }
+      
+      // Also clear watchdog on audio delta (agent started speaking)
+      if (msg.type === 'response.audio.delta' || msg.type === 'audio') {
+        markAgentResponded();
       }
     },
     onError: (error: unknown) => {
@@ -1179,15 +1246,17 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     });
   }, [conversation.isSpeaking]);
   
-  // Reset inactivity timer when agent starts speaking (agent talking = activity)
+  // Reset inactivity timer and clear thinking watchdog when agent starts speaking
   const isSpeakingRef = useRef(conversation.isSpeaking);
   useEffect(() => {
     if (conversation.isSpeaking && !isSpeakingRef.current) {
-      // Agent just started speaking - reset timer
+      // Agent just started speaking - reset timer and clear thinking watchdog
+      console.log('[Voice] Agent started speaking - clearing watchdogs');
       resetInactivityTimer();
+      markAgentResponded();
     }
     isSpeakingRef.current = conversation.isSpeaking;
-  }, [conversation.isSpeaking, resetInactivityTimer]);
+  }, [conversation.isSpeaking, resetInactivityTimer, markAgentResponded]);
 
   // Track connection status
   useEffect(() => {
@@ -1379,7 +1448,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   }, [conversation, checkMicrophoneDevices, toast, options.motorContext, options.currentPage, options.quoteContext]);
 
   const endVoiceChat = useCallback(async (endReason: 'user_ended' | 'timeout' | 'goodbye' | 'error' = 'user_ended') => {
-    // Clear inactivity timers
+    // Clear all timers
     if (inactivityTimerRef.current) {
       clearTimeout(inactivityTimerRef.current);
       inactivityTimerRef.current = null;
@@ -1387,6 +1456,10 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     if (warningTimerRef.current) {
       clearTimeout(warningTimerRef.current);
       warningTimerRef.current = null;
+    }
+    if (thinkingWatchdogRef.current) {
+      clearTimeout(thinkingWatchdogRef.current);
+      thinkingWatchdogRef.current = null;
     }
     
     // End the voice session in database
