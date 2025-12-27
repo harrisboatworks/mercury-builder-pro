@@ -21,14 +21,24 @@ interface VoiceState {
   audioFailCount: number;
 }
 
-interface UseElevenLabsVoiceOptions {
-  onTranscriptComplete?: (transcript: string) => void;
-  motorContext?: {
-    model: string;
-    hp: number;
-    price?: number;
+export interface QuoteContext {
+  boatInfo?: {
+    type: string | null;
+    length: string | null;
+    make: string | null;
+    currentHp: number | null;
   } | null;
+  selectedMotor?: { model: string; hp: number } | null;
+  packageSelection?: string | null;
+  purchasePath?: string | null;
+  tradeInValue?: number | null;
+}
+
+export interface UseElevenLabsVoiceOptions {
+  onTranscriptComplete?: (transcript: string) => void;
+  motorContext?: { model: string; hp: number; price?: number } | null;
   currentPage?: string;
+  quoteContext?: QuoteContext | null;
 }
 
 // Client tool handler for inventory lookups
@@ -311,7 +321,8 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       const { data, error } = await supabase.functions.invoke('elevenlabs-conversation-token', {
         body: { 
           motorContext: options.motorContext,
-          currentPage: options.currentPage
+          currentPage: options.currentPage,
+          quoteContext: options.quoteContext
         }
       });
       
