@@ -3,7 +3,7 @@ import { useConversation } from '@elevenlabs/react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import type { VoiceDiagnostics } from '@/lib/RealtimeVoice';
-import { dispatchVoiceNavigation } from '@/lib/voiceNavigation';
+import { dispatchVoiceNavigation, type MotorForQuote } from '@/lib/voiceNavigation';
 
 interface VoiceState {
   isConnected: boolean;
@@ -60,6 +60,71 @@ async function handleInventoryLookup(action: string, params: Record<string, unkn
   } catch (err) {
     console.error('[ClientTool] Exception:', err);
     return JSON.stringify({ error: 'Inventory lookup failed' });
+  }
+}
+
+// Client tool handler for adding motor to quote
+async function handleAddMotorToQuote(
+  params: { motor_model?: string; use_current_motor?: boolean },
+  currentMotor: { model: string; hp: number; price?: number } | null
+): Promise<string> {
+  console.log('[ClientTool] add_motor_to_quote', params, 'currentMotor:', currentMotor);
+  
+  try {
+    // If using current motor being viewed
+    if (params.use_current_motor && currentMotor) {
+      // Lookup full motor data from inventory
+      const { data, error } = await supabase.functions.invoke('voice-inventory-lookup', {
+        body: { action: 'get_motor_for_quote', params: { model: currentMotor.model } }
+      });
+      
+      if (error) {
+        console.error('[ClientTool] Motor lookup error:', error);
+        return JSON.stringify({ error: 'Failed to find motor details.' });
+      }
+      
+      if (data?.result?.motor) {
+        const motor: MotorForQuote = data.result.motor;
+        dispatchVoiceNavigation({ type: 'add_motor_to_quote', payload: { motor } });
+        return JSON.stringify({ 
+          success: true, 
+          message: `Added ${motor.model} to your quote!`,
+          motor: { model: motor.model, horsepower: motor.horsepower, price: motor.msrp }
+        });
+      }
+      return JSON.stringify({ error: `Couldn't find motor: ${currentMotor.model}` });
+    }
+    
+    // If specific motor requested by name
+    if (params.motor_model) {
+      const { data, error } = await supabase.functions.invoke('voice-inventory-lookup', {
+        body: { action: 'get_motor_for_quote', params: { model: params.motor_model } }
+      });
+      
+      if (error) {
+        console.error('[ClientTool] Motor lookup error:', error);
+        return JSON.stringify({ error: 'Failed to find motor details.' });
+      }
+      
+      if (data?.result?.motor) {
+        const motor: MotorForQuote = data.result.motor;
+        dispatchVoiceNavigation({ type: 'add_motor_to_quote', payload: { motor } });
+        return JSON.stringify({ 
+          success: true, 
+          message: `Added ${motor.model} to your quote!`,
+          motor: { model: motor.model, horsepower: motor.horsepower, price: motor.msrp }
+        });
+      }
+      return JSON.stringify({ error: `Couldn't find motor: ${params.motor_model}` });
+    }
+    
+    return JSON.stringify({ 
+      error: 'Please specify a motor or be viewing one to add it.',
+      hint: 'Say "add this motor" when viewing a motor, or specify a model like "add the 115 ELPT"'
+    });
+  } catch (err) {
+    console.error('[ClientTool] Add to quote exception:', err);
+    return JSON.stringify({ error: 'Failed to add motor to quote' });
   }
 }
 
@@ -249,6 +314,10 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           success: true, 
           message: `Now showing ${filterDesc} on screen.` 
         });
+      },
+      // Add motor to customer's quote
+      add_motor_to_quote: async (params: { motor_model?: string; use_current_motor?: boolean }) => {
+        return await handleAddMotorToQuote(params, options.motorContext ?? null);
       },
     },
   });

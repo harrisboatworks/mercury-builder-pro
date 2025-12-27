@@ -6,6 +6,8 @@ import { MicrophonePermissionDialog } from '@/components/chat/MicrophonePermissi
 import { NoMicrophoneDialog } from '@/components/chat/NoMicrophoneDialog';
 import { AudioIssuePrompt } from '@/components/chat/AudioIssuePrompt';
 import { VoiceDiagnosticsPanel } from '@/components/chat/VoiceDiagnosticsPanel';
+import { VOICE_NAVIGATION_EVENT, type MotorForQuote } from '@/lib/voiceNavigation';
+import { useToast } from '@/hooks/use-toast';
 
 interface VoiceContextType {
   isConnected: boolean;
@@ -41,7 +43,8 @@ export const useVoiceSafe = () => {
 
 export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
-  const { state } = useQuote();
+  const { state, dispatch } = useQuote();
+  const { toast } = useToast();
   const prevMotorIdRef = useRef<string | null>(null);
   const prevPathRef = useRef<string>(location.pathname);
   
@@ -108,6 +111,51 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       prevPathRef.current = location.pathname;
     }
   }, [voice.isConnected, activeMotor?.id, location.pathname, motorContext, voice]);
+
+  // Listen for voice navigation events (add motor to quote)
+  useEffect(() => {
+    const handleVoiceNav = (e: CustomEvent<{ type: string; payload: { motor: MotorForQuote } }>) => {
+      if (e.detail.type === 'add_motor_to_quote' && e.detail.payload?.motor) {
+        const motor = e.detail.payload.motor;
+        console.log('[VoiceContext] Adding motor to quote:', motor);
+        
+        // Determine category based on HP
+        const hp = motor.horsepower || 0;
+        let category: 'portable' | 'mid-range' | 'high-performance' | 'v8-racing' = 'mid-range';
+        if (hp <= 30) category = 'portable';
+        else if (hp >= 200 && hp < 300) category = 'high-performance';
+        else if (hp >= 300) category = 'v8-racing';
+        
+        // Dispatch SET_MOTOR action to QuoteContext with full Motor structure
+        dispatch({ 
+          type: 'SET_MOTOR', 
+          payload: {
+            id: motor.id,
+            model: motor.model,
+            year: new Date().getFullYear(),
+            hp: motor.horsepower,
+            price: motor.salePrice || motor.msrp || 0,
+            image: '',
+            stockStatus: motor.inStock ? 'In Stock' : 'On Order',
+            in_stock: motor.inStock,
+            category,
+            type: 'Outboard',
+            specs: `${motor.horsepower} HP`,
+            msrp: motor.msrp,
+            salePrice: motor.salePrice,
+          }
+        });
+        
+        toast({
+          title: "Motor added to quote",
+          description: `${motor.model} has been added to your quote!`,
+        });
+      }
+    };
+    
+    window.addEventListener(VOICE_NAVIGATION_EVENT, handleVoiceNav as EventListener);
+    return () => window.removeEventListener(VOICE_NAVIGATION_EVENT, handleVoiceNav as EventListener);
+  }, [dispatch, toast]);
 
   // Create the context value without dialog-specific fields
   const contextValue: VoiceContextType = {
