@@ -175,11 +175,12 @@ Understanding Mercury model names:
   return doc;
 }
 
-// Create a new KB document
+// Create a new KB document from text
+// Endpoint: POST /v1/convai/knowledge-base/text
 async function createKnowledgeBaseDocument(content: string, name: string): Promise<string | null> {
   console.log(`Creating KB document: ${name}`);
   
-  const response = await fetch("https://api.elevenlabs.io/v1/convai/knowledge-base/documents", {
+  const response = await fetch("https://api.elevenlabs.io/v1/convai/knowledge-base/text", {
     method: "POST",
     headers: {
       "xi-api-key": ELEVENLABS_API_KEY!,
@@ -203,10 +204,11 @@ async function createKnowledgeBaseDocument(content: string, name: string): Promi
 }
 
 // Delete a KB document
+// Endpoint: DELETE /v1/convai/knowledge-base/{document_id}
 async function deleteKnowledgeBaseDocument(documentId: string): Promise<boolean> {
   console.log(`Deleting KB document: ${documentId}`);
   
-  const response = await fetch(`https://api.elevenlabs.io/v1/convai/knowledge-base/documents/${documentId}`, {
+  const response = await fetch(`https://api.elevenlabs.io/v1/convai/knowledge-base/${documentId}`, {
     method: "DELETE",
     headers: {
       "xi-api-key": ELEVENLABS_API_KEY!,
@@ -224,10 +226,11 @@ async function deleteKnowledgeBaseDocument(documentId: string): Promise<boolean>
 }
 
 // Update agent to use new KB document
-async function updateAgentKnowledgeBase(agentId: string, documentId: string): Promise<boolean> {
+// Based on ElevenLabs SDK, the knowledge_base is nested under conversation_config.agent.prompt.knowledge_base
+async function updateAgentKnowledgeBase(agentId: string, documentId: string, documentName: string): Promise<boolean> {
   console.log(`Updating agent ${agentId} with KB document ${documentId}`);
   
-  // First, get current agent config
+  // First, get current agent config to see structure
   const getResponse = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${agentId}`, {
     method: "GET",
     headers: {
@@ -242,9 +245,10 @@ async function updateAgentKnowledgeBase(agentId: string, documentId: string): Pr
   }
 
   const agentConfig = await getResponse.json();
-  console.log("Current agent knowledge base:", agentConfig.agent_config?.knowledge_base);
+  console.log("Current agent config structure:", JSON.stringify(agentConfig, null, 2).slice(0, 500));
 
   // Update agent with new document in knowledge base
+  // The structure is: conversation_config.agent.prompt.knowledge_base
   const updateResponse = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${agentId}`, {
     method: "PATCH",
     headers: {
@@ -252,9 +256,19 @@ async function updateAgentKnowledgeBase(agentId: string, documentId: string): Pr
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      agent_config: {
-        knowledge_base: [documentId],
-      },
+      conversation_config: {
+        agent: {
+          prompt: {
+            knowledge_base: [
+              {
+                type: "text",
+                name: documentName,
+                id: documentId,
+              }
+            ]
+          }
+        }
+      }
     }),
   });
 
@@ -328,7 +342,7 @@ serve(async (req) => {
 
     // Update agent to use new document
     console.log("Updating agent with new KB document...");
-    await updateAgentKnowledgeBase(ELEVENLABS_AGENT_ID, newDocumentId);
+    await updateAgentKnowledgeBase(ELEVENLABS_AGENT_ID, newDocumentId, docName);
 
     // Calculate stats
     const inStockCount = motors?.filter(m => m.in_stock && (m.stock_quantity || 0) > 0).length || 0;
