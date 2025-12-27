@@ -27,17 +27,19 @@ function parseMotorConfig(modelDisplay: string) {
   }
   
   // Shaft length from code patterns
-  let shaftLength = 'standard';
+  // Default to short (15") if no L/XL suffix found
+  // L = Long (20"), XL = Extra Long (25"), XXL = Extra Extra Long (30")
+  // The H suffix indicates tiller control, NOT shaft length
+  let shaftLength = 'short (15")';
   if (code.includes('XXL')) {
     shaftLength = 'extra-extra-long (30")';
   } else if (code.includes('XL')) {
     shaftLength = 'extra-long (25")';
-  } else if (code.match(/[\d.]+\s*[EM]?L/)) {
+  } else if (code.match(/[\d.]+\s*[EM]?L/) || code.includes('LH') || code.includes('LPT')) {
+    // L suffix (including ELH, MLH, ELPT, etc.) = long shaft
     shaftLength = 'long (20")';
-  } else if (code.match(/[\d.]+\s*[EM]?[SH]/) && !code.includes('XL')) {
-    // MH, EH patterns = short shaft with tiller
-    shaftLength = 'short (15")';
   }
+  // If no L/XL pattern found, stays as 'short (15")'
   
   // Control type: H suffix = tiller, otherwise remote
   const isTiller = /[\d.]+\s*[EM]?[LXSM]*H(?!PT)/i.test(code) || 
