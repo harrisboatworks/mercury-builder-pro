@@ -369,24 +369,43 @@ export default function VoiceTest() {
           };
           
           dc.send(JSON.stringify(event));
-          dc.send(JSON.stringify({ type: 'response.create' }));
+          
+          // CRITICAL: Request audio response explicitly
+          dc.send(JSON.stringify({ 
+            type: 'response.create',
+            response: {
+              modalities: ['audio', 'text']
+            }
+          }));
           
           updateStep('playback', { status: 'running', details: 'Waiting for AI voice response...' });
         });
+        
+        let receivedTextOnly = false;
+        let receivedAudioDelta = false;
         
         dc.addEventListener('message', (e) => {
           try {
             const event = JSON.parse(e.data);
             console.log('[VoiceTest] Event:', event.type);
             
-            if (event.type === 'response.audio.delta' && trackReceived) {
-              updateStep('playback', { status: 'running', details: 'Receiving AI audio...' });
+            // Detect text-only response (no audio)
+            if (event.type === 'response.text.delta' || event.type === 'response.audio_transcript.delta') {
+              if (!receivedAudioDelta) {
+                receivedTextOnly = true;
+              }
+            }
+            
+            if (event.type === 'response.audio.delta') {
+              receivedAudioDelta = true;
+              receivedTextOnly = false;
+              updateStep('playback', { status: 'running', details: 'Receiving AI audio stream...' });
             }
             
             if (event.type === 'response.done') {
               clearTimeout(connectionTimeout);
               
-              // Give a moment for audio to start/finish playing
+              // Give time for audio to finish playing
               setTimeout(() => {
                 pc.close();
                 ms.getTracks().forEach(t => t.stop());
@@ -396,25 +415,44 @@ export default function VoiceTest() {
                 if (heardAudio) {
                   updateStep('playback', { 
                     status: 'passed',
-                    details: 'AI voice response played (you should have heard it).',
+                    details: 'AI voice response played successfully!',
                   });
                   resolve(true);
+                  return;
+                }
+
+                // Diagnose specific failure modes
+                if (!receivedAudioDelta && receivedTextOnly) {
+                  updateStep('playback', {
+                    status: 'failed',
+                    details: 'AI responded with text only (no audio generated). This may be a server-side issue.',
+                  });
+                  resolve(false);
                   return;
                 }
 
                 if (trackReceived && autoplayError) {
                   updateStep('playback', {
                     status: 'failed',
-                    details: `Audio track received but playback was blocked: ${autoplayError}`,
+                    details: `Audio blocked by browser: ${autoplayError}. Try tapping the screen first or check autoplay settings.`,
                   });
                   resolve(false);
                   return;
                 }
 
-                if (trackReceived) {
+                if (receivedAudioDelta && trackReceived) {
                   updateStep('playback', { 
                     status: 'failed',
-                    details: 'Audio track received but did not start playing (volume/output route issue).',
+                    details: 'Audio received but not playing. Check: volume up, not muted, correct output device, silent switch off (iOS).',
+                  });
+                  resolve(false);
+                  return;
+                }
+
+                if (receivedAudioDelta && !trackReceived) {
+                  updateStep('playback', { 
+                    status: 'failed',
+                    details: 'Audio data received but WebRTC track not connected. Try refreshing the page.',
                   });
                   resolve(false);
                   return;
@@ -422,16 +460,18 @@ export default function VoiceTest() {
 
                 updateStep('playback', { 
                   status: 'failed',
-                  details: 'AI responded but no audio track was received',
+                  details: 'No audio response from AI. The connection may have failed silently.',
                 });
                 resolve(false);
-              }, 2500);
+              }, 3000);
             }
             
             if (event.type === 'error') {
               clearTimeout(connectionTimeout);
               pc.close();
               ms.getTracks().forEach(t => t.stop());
+              audioEl.srcObject = null;
+              audioEl.remove();
               updateStep('playback', { 
                 status: 'failed',
                 details: `AI error: ${event.error?.message || 'Unknown error'}`,
@@ -541,9 +581,26 @@ export default function VoiceTest() {
     }
     
     // Step 5: Playback
-    await runPlaybackTest();
+    const playbackPassed = await runPlaybackTest();
     
-    setRecommendation('All tests passed! Voice chat should work correctly.');
+    // Generate specific recommendations based on results
+    if (playbackPassed) {
+      setRecommendation('All tests passed! Voice chat should work correctly.');
+    } else {
+      const playbackStep = steps.find(s => s.id === 'playback');
+      const details = playbackStep?.details || '';
+      
+      if (details.includes('text only')) {
+        setRecommendation('The AI responded without audio. Try again or contact support if the issue persists.');
+      } else if (details.includes('blocked')) {
+        setRecommendation('Your browser blocked audio autoplay. Try: 1) Tap the screen before starting voice chat, 2) Check browser autoplay settings, 3) Use headphones.');
+      } else if (details.includes('not playing') || details.includes('silent switch')) {
+        setRecommendation('Audio is reaching your device but not playing. Check: 1) Volume is up, 2) Not muted, 3) Correct output device selected, 4) iOS silent switch is off.');
+      } else {
+        setRecommendation('Voice playback test failed. Try using headphones, a different browser, or check your audio output device.');
+      }
+    }
+    
     setIsComplete(true);
     setIsRunning(false);
   }, [heardBeep]);
