@@ -13,6 +13,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import FinancingForm, { FinancingFormValues } from '@/components/admin/FinancingForm';
 import { toast } from 'sonner';
 import AdminNav from '@/components/admin/AdminNav';
+import { Mic, CheckCircle2, AlertCircle } from 'lucide-react';
 interface DbMotor {
   id: string;
   model: string;
@@ -411,6 +412,19 @@ const AdminPromotions = () => {
     return map;
   }, [promotions, rules, motors]);
 
+  // Count active promotions for voice agent display
+  const activePromotionsForVoice = useMemo(() => {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    
+    return promotions.filter(promo => {
+      if (!promo.is_active) return false;
+      if (promo.start_date && new Date(promo.start_date) > now) return false;
+      if (promo.end_date && new Date(promo.end_date) < now) return false;
+      return true;
+    });
+  }, [promotions]);
+
   return (
     <main className="container mx-auto px-4 py-8">
       <AdminNav />
@@ -418,6 +432,56 @@ const AdminPromotions = () => {
         <h1 className="text-3xl font-bold">Promotions Manager</h1>
         <p className="text-muted-foreground">Create sales and bonus promos. Assign rules by model, motor type, or HP range.</p>
       </header>
+
+      {/* Voice Agent Knowledge Status */}
+      <Card className="mb-8 border-primary/20 bg-primary/5">
+        <CardHeader className="pb-3">
+          <div className="flex items-center gap-2">
+            <Mic className="h-5 w-5 text-primary" />
+            <CardTitle className="text-lg">Voice Agent Knowledge</CardTitle>
+          </div>
+          <CardDescription>
+            Active promotions are automatically synced to the voice agent when conversations start.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="flex items-center gap-2">
+              {activePromotionsForVoice.length > 0 ? (
+                <CheckCircle2 className="h-4 w-4 text-green-500" />
+              ) : (
+                <AlertCircle className="h-4 w-4 text-amber-500" />
+              )}
+              <span className="text-sm font-medium">
+                {activePromotionsForVoice.length} active promotion{activePromotionsForVoice.length !== 1 ? 's' : ''} synced
+              </span>
+            </div>
+            
+            {activePromotionsForVoice.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {activePromotionsForVoice.slice(0, 5).map(promo => (
+                  <Badge key={promo.id} variant="secondary" className="text-xs">
+                    {promo.name}
+                    {promo.kind === 'discount' && promo.discount_percentage > 0 && ` (${promo.discount_percentage}% off)`}
+                    {promo.kind === 'discount' && promo.discount_fixed_amount > 0 && ` ($${promo.discount_fixed_amount} off)`}
+                    {promo.kind === 'bonus' && promo.bonus_short_badge && ` (${promo.bonus_short_badge})`}
+                  </Badge>
+                ))}
+                {activePromotionsForVoice.length > 5 && (
+                  <Badge variant="outline" className="text-xs">
+                    +{activePromotionsForVoice.length - 5} more
+                  </Badge>
+                )}
+              </div>
+            )}
+          </div>
+          
+          <p className="text-xs text-muted-foreground mt-3">
+            The voice agent can tell customers about these promotions during conversations. 
+            Changes take effect on the next voice chat session.
+          </p>
+        </CardContent>
+      </Card>
 
       {/* Create Promotion */}
       <Card className="p-6 mb-8">
