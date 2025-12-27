@@ -1,4 +1,4 @@
-import { X, Sparkles, User, Star, MessageCircle } from "lucide-react";
+import { X, Sparkles, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -53,20 +53,6 @@ export const HamburgerMenu = ({ isOpen, onClose, totalXP, user, loading, signOut
             </div>
           </nav>
 
-          {/* Reviews & Testimonials */}
-          <div className="space-y-4 pt-6 border-t border-border">
-            <h3 className="font-semibold text-foreground">Reviews & Social Proof</h3>
-            <div className="space-y-2">
-              <button className="flex items-center gap-2 py-2 text-muted-foreground hover:text-foreground w-full text-left">
-                <Star className="w-4 h-4 text-yellow-500" />
-                Customer Reviews (4.6/5 ⭐)
-              </button>
-              <button className="flex items-center gap-2 py-2 text-muted-foreground hover:text-foreground w-full text-left">
-                <MessageCircle className="w-4 h-4" />
-                Customer Testimonials
-              </button>
-            </div>
-          </div>
 
           {/* User Section */}
           <div className="space-y-4 pt-6 border-t border-border">
