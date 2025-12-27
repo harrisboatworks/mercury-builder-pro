@@ -16,6 +16,18 @@ const GOODBYE_SYSTEM_MESSAGE = "[SYSTEM: The user hasn't responded. Say a friend
 const THINKING_WATCHDOG_MS = 1500; // 1.5 seconds
 const THINKING_NUDGE_MESSAGE = "[SYSTEM: You haven't started responding yet. Give a VERY quick acknowledgement like 'One sec...' or 'Let me check...' - just 2-3 words - then continue processing.]";
 
+// Pre-warm edge functions to eliminate cold start on first question
+async function prewarmEdgeFunctions() {
+  console.log('[Voice] Pre-warming edge functions...');
+  const startTime = Date.now();
+  
+  // Fire and forget - warm up commonly used edge functions in background
+  supabase.functions.invoke('voice-inventory-lookup', {
+    body: { action: 'check_inventory', params: { hp_range: '0' } }
+  }).then(() => console.log(`[Voice] Inventory function warmed in ${Date.now() - startTime}ms`))
+    .catch(() => {}); // Ignore errors, this is just a warm-up
+}
+
 interface VoiceState {
   isConnected: boolean;
   isConnecting: boolean;
@@ -1405,6 +1417,10 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           });
           
           console.log('WebRTC connection successful!');
+          
+          // Pre-warm edge functions to eliminate cold start on first question
+          prewarmEdgeFunctions();
+          
           return; // Success - exit the function
           
         } catch (rtcError) {
