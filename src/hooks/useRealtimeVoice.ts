@@ -181,11 +181,23 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
   }, []);
 
   // Auto-update context when motor or page changes during active session
+  const prevContextKeyRef = useRef<string>('');
+
   useEffect(() => {
-    if (state.isConnected && (motorContext || currentPage)) {
-      chatRef.current?.updateContext(motorContext, currentPage);
-    }
-  }, [state.isConnected, motorContext, currentPage]);
+    if (!state.isConnected) return;
+
+    const key = JSON.stringify({
+      motorContext: motorContext
+        ? { model: motorContext.model, hp: motorContext.hp, price: motorContext.price }
+        : null,
+      currentPage: currentPage || null,
+    });
+
+    if (key === prevContextKeyRef.current) return;
+    prevContextKeyRef.current = key;
+
+    chatRef.current?.updateContext(motorContext, currentPage);
+  }, [state.isConnected, motorContext?.model, motorContext?.hp, motorContext?.price, currentPage]);
 
   // Cleanup on unmount
   useEffect(() => {
