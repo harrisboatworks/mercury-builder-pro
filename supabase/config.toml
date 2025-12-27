@@ -164,3 +164,6 @@ verify_jwt = false
 
 [functions.voice-send-follow-up]
 verify_jwt = false
+
+[functions.voice-perplexity-lookup]
+verify_jwt = false
