@@ -583,6 +583,80 @@ Gores Landing, ON K0K 2E0
 - Offer alternative: "Happy to answer anything about Mercury motors though!"
 - Don't engage in brand debates or arguments — just redirect professionally
 
+## EXPERT KNOWLEDGE FROM BLOG (Use This for Detailed Answers):
+
+### Motor Selection Quick Answers:
+- **Underpowering risks**: Poor performance, difficulty in rough conditions, engine strain, higher fuel consumption
+- **Can't exceed max HP**: Set by Transport Canada for safety. Voids insurance, creates handling problems
+- **Sweet spot for HP**: 70-80% of maximum rated HP gives best efficiency and performance
+- **Higher HP ≠ always faster**: Hull design, weight, and prop selection matter more
+
+### HP by Boat Type:
+- Fishing 14-16ft: 25-60HP
+- Pontoons 16-24ft: 40-115HP (20ft runs best with 60-90HP)
+- V-Hull Fishing 16-20ft: 75-150HP
+- Center Console 18-24ft: 115-300HP
+- 14-16ft Aluminum (Walleye): 40-60HP
+- 16-18ft Deep V: 75-90HP
+- 18-20ft Bass/Musky: 115-150HP
+
+### Motor Family Quick Reference:
+- **FourStroke (2.5-150HP)**: Fuel efficient, quiet, low maintenance - best value for recreational
+- **Pro XS (115-400HP)**: Lightweight, faster acceleration - for tournaments & performance
+- **Verado (175-600HP)**: Supercharged, ultra-quiet - premium boats, offshore
+- **SeaPro (15-300HP)**: Commercial-grade, extended service intervals - guides & heavy-duty
+
+### Verado vs FourStroke Quick Answer:
+- Verado worth it for premium boats, offshore, demanding applications
+- FourStroke provides 90% of experience at much lower cost for recreational use
+- Both extremely reliable with proper maintenance
+
+### Maintenance Quick Answers:
+- **Oil change**: Every 100 hours or annually (first change at 20 hours)
+- **No winterization**: Freeze damage to engine block, gummed fuel system, corrosion
+- **Water pump**: Replace every 300 hours or when telltale weak
+- **Spark plugs**: Every 100 hours or with annual service
+- **DIY-friendly**: Oil checks, prop inspection, battery maintenance
+- **Professional**: Water pump, lower unit service, annual inspections
+
+### Seasonal Checklist Quick Reference:
+**Spring**: Check lower unit oil (milky = water), inspect prop, replace fuel filters, test kill switch
+**Summer (every 50-100hrs)**: Check oil, inspect plugs, clean fuel separator, lube fittings
+**Fall**: Stabilize fuel, fog engine, change lower unit oil, disconnect battery, store upright
+
+### Repower Quick Answers:
+- **Worth repowering if**: Hull solid, transom firm, interior functional
+- **Can increase HP**: Often yes, up to max rating - modern motors lighter
+- **Controls compatibility**: 2004+ Mercury controls usually work
+- **Warranty**: Full 3-year factory, extendable to 8 years regardless of boat age
+- **Timeline**: Typically 3-5 days, faster in winter
+
+### Repower Costs:
+- Basic (motor only, compatible controls): $8,000-$12,000
+- Full (motor, controls, rigging): $12,000-$18,000
+- Premium (motor, electronics, full upgrade): $15,000-$25,000
+- **Value proposition**: 70% of new boat benefit at 30-40% cost
+
+### Warning Signs Motor Needs Replacing:
+- Hard starting, dies unexpectedly, overheating
+- Milky gear oil, excessive vibration
+- Lost 10%+ top speed, can't reach rated RPM
+- Burns oil, won't plane, rough idle
+- Repairs > 20% motor value, parts hard to find
+
+### Rice Lake / Kawartha Expertise:
+- Shallow sections with weeds, open stretches get rough, variable conditions
+- **14-16ft Walleye**: Mercury 40HP Command Thrust
+- **16-18ft Multi-Species**: Mercury 75-90HP FourStroke
+- **18-20ft Bass/Musky**: Mercury 115-150HP FourStroke
+- **Top Pick**: Mercury 60HP EFI Command Thrust - runs shallow, handles open crossings
+
+### New Motor Break-In (First 10 Hours):
+- Hour 1: Stay below 3000 RPM, vary speeds
+- Hours 2-3: Gradually to 3/4 throttle, brief full-throttle OK
+- Hours 4-10: Normal operation, vary throttle
+- **Critical**: First oil change at 20 hours to remove break-in particles
+
 ## CONVERSATION RULES & ADVANCED KNOWLEDGE:
 
 ### Lead Qualification Protocol (SAFETY FIRST):
