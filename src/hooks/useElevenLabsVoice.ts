@@ -3,6 +3,7 @@ import { useConversation } from '@elevenlabs/react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import type { VoiceDiagnostics } from '@/lib/RealtimeVoice';
+import { dispatchVoiceNavigation } from '@/lib/voiceNavigation';
 
 interface VoiceState {
   isConnected: boolean;
@@ -210,6 +211,34 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         custom_note?: string;
       }) => {
         return await handleSendFollowUpSMS(params);
+      },
+      // Navigate to motors page with filters applied
+      navigate_to_motors: async (params: {
+        horsepower?: number;
+        model_search?: string;
+        in_stock_only?: boolean;
+      }) => {
+        console.log('[ClientTool] navigate_to_motors', params);
+        
+        dispatchVoiceNavigation({
+          type: 'filter_motors',
+          payload: {
+            horsepower: params.horsepower,
+            model: params.model_search,
+            inStock: params.in_stock_only
+          }
+        });
+        
+        const filterDesc = params.horsepower 
+          ? `${params.horsepower}HP motors` 
+          : params.model_search 
+            ? `"${params.model_search}" motors`
+            : 'filtered motors';
+        
+        return JSON.stringify({ 
+          success: true, 
+          message: `Now showing ${filterDesc} on screen.` 
+        });
       },
     },
   });
