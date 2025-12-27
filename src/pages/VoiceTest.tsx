@@ -444,10 +444,12 @@ export default function VoiceTest() {
               updateStep('playback', { status: 'running', details: 'Session created, configuring audio...' });
               
               // Send session.update with audio configuration (matches RealtimeVoice.ts)
+              // CRITICAL: Must include 'voice' parameter for audio output!
               const sessionUpdate = {
                 type: 'session.update',
                 session: {
                   modalities: ['text', 'audio'],
+                  voice: 'alloy', // REQUIRED for audio output
                   input_audio_format: 'pcm16',
                   output_audio_format: 'pcm16',
                   input_audio_transcription: {
@@ -517,7 +519,8 @@ export default function VoiceTest() {
                 audioEl.srcObject = null;
                 audioEl.remove();
                 
-                if (diagnostics.audioElementPlaying) {
+                // Success = we actually received audio data from AI
+                if (diagnostics.receivedAudioDelta) {
                   updateStep('playback', { 
                     status: 'passed',
                     details: 'AI voice response played successfully!',
