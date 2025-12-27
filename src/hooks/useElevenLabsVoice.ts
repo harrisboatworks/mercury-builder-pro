@@ -203,19 +203,13 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         throw new Error(error?.message || 'Failed to get conversation token');
       }
 
-      console.log('Starting ElevenLabs conversation with dynamic system prompt...');
+      console.log('Starting ElevenLabs conversation (using agent default prompt)...');
       
-      // Start the conversation with WebRTC and prompt overrides
+      // Start the conversation with WebRTC - use agent's default prompt from dashboard
+      // Note: prompt overrides were causing connection drops, disabled temporarily
       await conversation.startSession({
         conversationToken: data.token,
         connectionType: 'webrtc',
-        overrides: data.systemPrompt ? {
-          agent: {
-            prompt: {
-              prompt: data.systemPrompt,
-            },
-          },
-        } : undefined,
       });
 
     } catch (error) {
