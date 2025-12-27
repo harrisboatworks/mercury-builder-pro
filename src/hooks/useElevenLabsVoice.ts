@@ -470,30 +470,90 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
 
       // Request microphone permission
       console.log('Requesting microphone permission...');
-      await navigator.mediaDevices.getUserMedia({ audio: true });
-      console.log('Microphone permission granted');
-
-      // Get conversation token AND system prompt from edge function
-      console.log('Fetching ElevenLabs conversation token with dynamic prompt...');
-      const { data, error } = await supabase.functions.invoke('elevenlabs-conversation-token', {
-        body: { 
-          motorContext: options.motorContext,
-          currentPage: options.currentPage,
-          quoteContext: options.quoteContext
-        }
-      });
-      
-      if (error || !data?.token) {
-        throw new Error(error?.message || 'Failed to get conversation token');
+      try {
+        await navigator.mediaDevices.getUserMedia({ audio: true });
+        console.log('Microphone permission granted');
+      } catch (micError) {
+        const micErrorMessage = micError instanceof Error ? micError.message : 'Permission denied';
+        console.error('Microphone permission error:', micError);
+        setState(prev => ({
+          ...prev,
+          isConnecting: false,
+          error: 'Microphone access denied',
+          permissionState: 'denied',
+          showPermissionDialog: true,
+        }));
+        return;
       }
 
-      console.log('Starting ElevenLabs conversation with client tools...');
+      // Get conversation token from edge function
+      console.log('Fetching ElevenLabs conversation token...');
+      let tokenData: { token: string } | null = null;
       
-      // Start the conversation with WebRTC
-      await conversation.startSession({
-        conversationToken: data.token,
-        connectionType: 'webrtc',
-      });
+      try {
+        const { data, error } = await supabase.functions.invoke('elevenlabs-conversation-token', {
+          body: { 
+            motorContext: options.motorContext,
+            currentPage: options.currentPage,
+            quoteContext: options.quoteContext
+          }
+        });
+        
+        if (error) {
+          console.error('Token fetch error:', error);
+          throw new Error('Unable to get voice session. Please check your connection.');
+        }
+        
+        if (!data?.token) {
+          throw new Error('Voice service unavailable. Please try again.');
+        }
+        
+        tokenData = data;
+        console.log('Token received successfully');
+      } catch (tokenError) {
+        console.error('Token fetch failed:', tokenError);
+        throw new Error(tokenError instanceof Error ? tokenError.message : 'Failed to connect to voice service');
+      }
+
+      // Retry WebRTC connection with exponential backoff
+      const MAX_RETRIES = 3;
+      let lastError: Error | null = null;
+      
+      for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+        try {
+          console.log(`WebRTC connection attempt ${attempt}/${MAX_RETRIES}...`);
+          
+          if (attempt > 1) {
+            toast({
+              title: "Retrying connection...",
+              description: `Attempt ${attempt} of ${MAX_RETRIES}`,
+            });
+          }
+          
+          await conversation.startSession({
+            conversationToken: tokenData.token,
+            connectionType: 'webrtc',
+          });
+          
+          console.log('WebRTC connection successful!');
+          return; // Success - exit the function
+          
+        } catch (rtcError) {
+          lastError = rtcError instanceof Error ? rtcError : new Error('WebRTC connection failed');
+          console.warn(`WebRTC attempt ${attempt} failed:`, rtcError);
+          
+          if (attempt < MAX_RETRIES) {
+            // Exponential backoff: 1s, 2s, 4s
+            const delay = Math.pow(2, attempt - 1) * 1000;
+            console.log(`Waiting ${delay}ms before retry...`);
+            await new Promise(r => setTimeout(r, delay));
+          }
+        }
+      }
+      
+      // All retries failed
+      console.error('All WebRTC connection attempts failed');
+      throw new Error('Unable to connect to voice server. Please check your network and try again.');
 
     } catch (error) {
       console.error('Voice chat start error:', error);
@@ -511,12 +571,12 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       if (!isDenied) {
         toast({
           title: "Voice chat unavailable",
-          description: errorMessage,
+          description: `${errorMessage}. Tap the mic to retry.`,
           variant: "destructive",
         });
       }
     }
-  }, [conversation, checkMicrophoneDevices, toast, options.motorContext]);
+  }, [conversation, checkMicrophoneDevices, toast, options.motorContext, options.currentPage, options.quoteContext]);
 
   const endVoiceChat = useCallback(async () => {
     await conversation.endSession();
