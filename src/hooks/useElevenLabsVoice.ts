@@ -162,38 +162,54 @@ async function handleVerifySpecs(params: {
   category?: 'specs' | 'parts' | 'warranty' | 'maintenance' | 'troubleshooting';
   motor_context?: string;
 }): Promise<string> {
-  console.log('[ClientTool] verify_specs', params);
+  console.log('[ClientTool] verify_specs called with:', params);
   
-  try {
-    const { data, error } = await supabase.functions.invoke('voice-perplexity-lookup', {
-      body: params
-    });
+  // 8-second timeout to prevent ElevenLabs tool timeout
+  const timeoutPromise = new Promise<string>((resolve) => {
+    setTimeout(() => {
+      console.warn('[ClientTool] Perplexity lookup timed out after 8s');
+      resolve("Let me look that up for you. One moment please.");
+    }, 8000);
+  });
+  
+  const lookupPromise = (async (): Promise<string> => {
+    try {
+      const { data, error } = await supabase.functions.invoke('voice-perplexity-lookup', {
+        body: {
+          query: params.query,
+          category: params.category,
+          motor_context: params.motor_context
+        }
+      });
 
-    if (error) {
-      console.error('[ClientTool] Perplexity Error:', error);
-      return "I couldn't verify that information right now. Please contact our parts department for accurate details.";
+      if (error) {
+        console.error('[ClientTool] Perplexity Error:', error);
+        return "I couldn't verify that information right now. Please contact our parts department for accurate details.";
+      }
+
+      console.log('[ClientTool] Perplexity Result:', data);
+      
+      if (!data?.success || !data?.answer) {
+        return data?.fallback || "I couldn't find verified information on that. Our parts team can help.";
+      }
+
+      // Return just the answer text for the agent to speak naturally
+      // Strip markdown formatting for voice
+      const cleanAnswer = data.answer
+        .replace(/\*\*/g, '')  // Remove bold
+        .replace(/\[(\d+)\]/g, '')  // Remove citation numbers like [1][3]
+        .replace(/\n+/g, ' ')  // Replace newlines with spaces
+        .trim();
+
+      console.log('[ClientTool] Returning clean answer:', cleanAnswer);
+      return cleanAnswer;
+    } catch (err) {
+      console.error('[ClientTool] Perplexity Exception:', err);
+      return "I ran into an issue looking that up. Our service team can help with those details.";
     }
-
-    console.log('[ClientTool] Perplexity Result:', data);
-    
-    if (!data?.success || !data?.answer) {
-      return data?.fallback || "I couldn't find verified information on that. Our parts team can help.";
-    }
-
-    // Return just the answer text for the agent to speak naturally
-    // Strip markdown formatting for voice
-    const cleanAnswer = data.answer
-      .replace(/\*\*/g, '')  // Remove bold
-      .replace(/\[(\d+)\]/g, '')  // Remove citation numbers like [1][3]
-      .replace(/\n+/g, ' ')  // Replace newlines with spaces
-      .trim();
-
-    console.log('[ClientTool] Returning clean answer:', cleanAnswer);
-    return cleanAnswer;
-  } catch (err) {
-    console.error('[ClientTool] Perplexity Exception:', err);
-    return "I ran into an issue looking that up. Our service team can help with those details.";
-  }
+  })();
+  
+  return Promise.race([lookupPromise, timeoutPromise]);
 }
 
 // Client tool handler for setting purchase path
