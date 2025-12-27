@@ -18,9 +18,9 @@ async function getCurrentMotorInventory() {
   try {
     const { data: motors, error } = await supabase
       .from('motor_models')
-      .select('model, model_display, horsepower, sale_price, base_price, msrp, availability, motor_type, year, in_stock')
+      .select('model, model_display, model_number, horsepower, dealer_price, msrp, availability, motor_type, year, in_stock')
       .order('horsepower', { ascending: true })
-      .limit(50);
+      .limit(100);
     
     if (error) {
       console.error('Error fetching motors:', error);
@@ -61,14 +61,20 @@ async function getActivePromotions() {
 function formatMotorData(motors: any[]) {
   if (!motors.length) return "\n[No inventory data available]\n";
   
-  let formatted = "\n## CURRENT INVENTORY:\n";
+  let formatted = "\n## CURRENT INVENTORY (REAL-TIME DATA):\n";
+  formatted += "You have access to live inventory and pricing. Use these exact prices when customers ask.\n\n";
   
   motors.forEach(motor => {
-    const price = motor.sale_price || motor.base_price || motor.msrp;
-    const priceStr = price ? `$${price.toLocaleString()} CAD` : 'Call for pricing';
-    const stockStr = motor.in_stock ? 'In Stock' : (motor.availability || 'Available');
-    formatted += `- ${motor.model_display || motor.model} (${motor.horsepower}HP) - ${priceStr} - ${stockStr}\n`;
+    const price = motor.dealer_price || motor.msrp;
+    const priceStr = price ? `$${Math.round(price).toLocaleString()} CAD` : 'Call for pricing';
+    const stockStr = motor.in_stock ? 'IN STOCK' : (motor.availability || 'Available');
+    const modelCode = motor.model_number ? ` [Code: ${motor.model_number}]` : '';
+    const displayName = motor.model_display || motor.model;
+    formatted += `- ${displayName} - ${motor.horsepower}HP - ${priceStr} - ${stockStr}${modelCode}\n`;
   });
+  
+  formatted += "\n## MODEL CODE REFERENCE:\n";
+  formatted += "Model codes like '1A10201LK' are Mercury part numbers. If a customer mentions a code, match it to the model above.\n";
   
   return formatted;
 }
