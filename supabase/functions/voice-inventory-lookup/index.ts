@@ -324,6 +324,35 @@ serve(async (req) => {
         break;
       }
 
+      case "get_motor_for_quote": {
+        // Get full motor data for adding to quote
+        const { data, error } = await supabase
+          .from("motor_models")
+          .select("id, model, model_display, horsepower, msrp, sale_price, in_stock, stock_quantity")
+          .or(`model_display.ilike.%${params?.model || ''}%,model.ilike.%${params?.model || ''}%`)
+          .limit(1);
+
+        if (error) throw error;
+
+        if (!data || data.length === 0) {
+          result = { found: false, message: `No motor found matching "${params?.model}".` };
+        } else {
+          const m = data[0];
+          result = {
+            found: true,
+            motor: {
+              id: m.id,
+              model: m.model_display || m.model,
+              horsepower: m.horsepower,
+              msrp: m.msrp,
+              salePrice: m.sale_price,
+              inStock: m.in_stock && (m.stock_quantity || 0) > 0,
+            }
+          };
+        }
+        break;
+      }
+
       default:
         result = { error: `Unknown action: ${action}` };
     }

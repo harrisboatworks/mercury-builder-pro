@@ -6,7 +6,18 @@
 export type VoiceNavigationEvent = 
   | { type: 'filter_motors'; payload: { horsepower?: number; model?: string; inStock?: boolean } }
   | { type: 'navigate'; payload: { path: string } }
-  | { type: 'show_motor'; payload: { motorId: string } };
+  | { type: 'show_motor'; payload: { motorId: string } }
+  | { type: 'add_motor_to_quote'; payload: { motor: MotorForQuote } };
+
+// Motor data structure for adding to quote
+export interface MotorForQuote {
+  id: string;
+  model: string;
+  horsepower: number;
+  msrp?: number;
+  salePrice?: number;
+  inStock?: boolean;
+}
 
 export const VOICE_NAVIGATION_EVENT = 'voice-navigation';
 
