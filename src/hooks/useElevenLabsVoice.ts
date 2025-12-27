@@ -46,6 +46,8 @@ interface VoiceState {
   isConnecting: boolean;
   isSpeaking: boolean;
   isListening: boolean;
+  isSearching: boolean; // NEW: indicates a tool call is in progress
+  searchingMessage: string | null; // NEW: what we're searching for
   transcript: string;
   error: string | null;
   permissionState: 'granted' | 'denied' | 'prompt' | null;
@@ -76,6 +78,45 @@ export interface UseElevenLabsVoiceOptions {
   motorContext?: { model: string; hp: number; price?: number } | null;
   currentPage?: string;
   quoteContext?: QuoteContext | null;
+}
+
+// Instant audio feedback phrases - short acknowledgements while tool runs
+const SEARCH_ACKNOWLEDGEMENTS = [
+  "One sec...",
+  "Let me check...",
+  "Checking on that...",
+  "Just a moment...",
+];
+
+// Play instant audio feedback using Web Speech API (synchronous, no network)
+// This gives immediate acknowledgement while the actual tool call runs
+let lastAckTime = 0;
+function playInstantAcknowledgement(): void {
+  // Debounce - don't spam if multiple tool calls happen quickly
+  const now = Date.now();
+  if (now - lastAckTime < 3000) return; // Max once per 3 seconds
+  lastAckTime = now;
+  
+  // Skip if speech synthesis unavailable
+  if (!window.speechSynthesis) {
+    console.log('[Voice] Speech synthesis unavailable for instant ack');
+    return;
+  }
+  
+  const phrase = SEARCH_ACKNOWLEDGEMENTS[Math.floor(Math.random() * SEARCH_ACKNOWLEDGEMENTS.length)];
+  console.log('[Voice] Playing instant acknowledgement:', phrase);
+  
+  const utterance = new SpeechSynthesisUtterance(phrase);
+  utterance.rate = 1.1; // Slightly faster
+  utterance.pitch = 1.0;
+  utterance.volume = 0.8;
+  
+  // Use a natural voice if available
+  const voices = window.speechSynthesis.getVoices();
+  const preferredVoice = voices.find(v => v.name.includes('Samantha') || v.name.includes('Google') || v.lang.startsWith('en'));
+  if (preferredVoice) utterance.voice = preferredVoice;
+  
+  window.speechSynthesis.speak(utterance);
 }
 
 // Client tool handler for inventory lookups
@@ -841,6 +882,8 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     isConnecting: false,
     isSpeaking: false,
     isListening: false,
+    isSearching: false,
+    searchingMessage: null,
     transcript: '',
     error: null,
     permissionState: null,
@@ -855,6 +898,10 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
 
   const transcriptRef = useRef<string>('');
   
+  // Ref to allow client tools to update state
+  const setStateRef = useRef(setState);
+  setStateRef.current = setState;
+  
   // Inactivity timeout refs
   const inactivityTimerRef = useRef<NodeJS.Timeout | null>(null);
   const warningTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -864,6 +911,42 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   const thinkingWatchdogRef = useRef<NodeJS.Timeout | null>(null);
   const agentRespondedRef = useRef<boolean>(false);
   const thinkingNudgeSentRef = useRef<boolean>(false);
+  
+  // Wrap a tool handler to show searching state and play instant feedback
+  const withSearchingFeedback = useCallback(<T extends unknown[], R>(
+    toolName: string,
+    handler: (...args: T) => Promise<R> | R,
+    searchMessage: string = 'Checking...'
+  ) => {
+    return async (...args: T): Promise<R> => {
+      const startTime = Date.now();
+      console.log(`[Tool] ${toolName} starting...`);
+      
+      // Set searching state immediately
+      setStateRef.current(prev => ({ 
+        ...prev, 
+        isSearching: true, 
+        searchingMessage: searchMessage 
+      }));
+      
+      // Play instant audio acknowledgement (only if agent hasn't spoken yet)
+      // This fires synchronously while the actual tool call runs
+      playInstantAcknowledgement();
+      
+      try {
+        const result = await handler(...args);
+        console.log(`[Tool] ${toolName} completed in ${Date.now() - startTime}ms`);
+        return result;
+      } finally {
+        // Clear searching state
+        setStateRef.current(prev => ({ 
+          ...prev, 
+          isSearching: false, 
+          searchingMessage: null 
+        }));
+      }
+    };
+  }, []);
 
   // Clear all inactivity timers
   const clearInactivityTimers = useCallback(() => {
@@ -905,6 +988,8 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       isConnecting: false,
       isSpeaking: false,
       isListening: false,
+      isSearching: false,
+      searchingMessage: null,
       transcript: '',
       error: null,
       permissionState: null,
@@ -1095,27 +1180,48 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     },
     // Client tools for real-time inventory access
     // These must be configured in the ElevenLabs agent dashboard with matching names
+    // Wrapped with withSearchingFeedback for instant audio acknowledgement
     clientTools: {
       // Check inventory by horsepower, family, or stock status
-      check_inventory: async (params: { horsepower?: number; family?: string; in_stock?: boolean; min_hp?: number; max_hp?: number }) => {
-        return await handleInventoryLookup('check_inventory', params);
-      },
+      check_inventory: withSearchingFeedback(
+        'check_inventory',
+        async (params: { horsepower?: number; family?: string; in_stock?: boolean; min_hp?: number; max_hp?: number }) => {
+          return await handleInventoryLookup('check_inventory', params);
+        },
+        'Checking inventory...'
+      ),
       // Get price for a specific motor
-      get_motor_price: async (params: { model: string }) => {
-        return await handleInventoryLookup('get_motor_price', params);
-      },
+      get_motor_price: withSearchingFeedback(
+        'get_motor_price',
+        async (params: { model: string }) => {
+          return await handleInventoryLookup('get_motor_price', params);
+        },
+        'Looking up price...'
+      ),
       // Check if a specific motor is in stock
-      check_availability: async (params: { model: string }) => {
-        return await handleInventoryLookup('check_availability', params);
-      },
+      check_availability: withSearchingFeedback(
+        'check_availability',
+        async (params: { model: string }) => {
+          return await handleInventoryLookup('check_availability', params);
+        },
+        'Checking availability...'
+      ),
       // List all motors currently in stock
-      list_in_stock: async () => {
-        return await handleInventoryLookup('list_in_stock', {});
-      },
+      list_in_stock: withSearchingFeedback(
+        'list_in_stock',
+        async () => {
+          return await handleInventoryLookup('list_in_stock', {});
+        },
+        'Checking stock...'
+      ),
       // Get motors in a horsepower range
-      get_hp_range: async (params: { min_hp: number; max_hp: number }) => {
-        return await handleInventoryLookup('get_hp_range', params);
-      },
+      get_hp_range: withSearchingFeedback(
+        'get_hp_range',
+        async (params: { min_hp: number; max_hp: number }) => {
+          return await handleInventoryLookup('get_hp_range', params);
+        },
+        'Finding motors...'
+      ),
       // Send follow-up SMS to customer (requires customer consent)
       send_follow_up_sms: async (params: {
         customer_name: string;
@@ -1163,28 +1269,40 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         return handleSetPurchasePath(params);
       },
       // Verify technical specs, part numbers, or unknown info via Perplexity
-      verify_specs: async (params: {
-        query: string;
-        category?: 'specs' | 'parts' | 'warranty' | 'maintenance' | 'troubleshooting';
-        motor_context?: string;
-      }) => {
-        return await handleVerifySpecs(params);
-      },
+      verify_specs: withSearchingFeedback(
+        'verify_specs',
+        async (params: {
+          query: string;
+          category?: 'specs' | 'parts' | 'warranty' | 'maintenance' | 'troubleshooting';
+          motor_context?: string;
+        }) => {
+          return await handleVerifySpecs(params);
+        },
+        'Looking that up...'
+      ),
       // Check parts and accessories inventory via Locally API
-      check_parts_inventory: async (params: {
-        part_number?: string;
-        upc?: string;
-        search_query?: string;
-      }) => {
-        return await handleLocallyInventoryLookup(params);
-      },
+      check_parts_inventory: withSearchingFeedback(
+        'check_parts_inventory',
+        async (params: {
+          part_number?: string;
+          upc?: string;
+          search_query?: string;
+        }) => {
+          return await handleLocallyInventoryLookup(params);
+        },
+        'Checking parts...'
+      ),
       // Search marine accessories catalogue for non-Mercury boat accessories
-      search_accessories_catalogue: async (params: {
-        query: string;
-        auto_search?: boolean;
-      }) => {
-        return await handleAccessoriesCatalogueSearch(params);
-      },
+      search_accessories_catalogue: withSearchingFeedback(
+        'search_accessories_catalogue',
+        async (params: {
+          query: string;
+          auto_search?: boolean;
+        }) => {
+          return await handleAccessoriesCatalogueSearch(params);
+        },
+        'Searching catalogue...'
+      ),
       // Schedule a callback request
       schedule_callback: async (params: {
         customer_name: string;
@@ -1233,15 +1351,19 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         return handleTradeInEstimate(params);
       },
       // Recommend a motor based on boat/usage
-      recommend_motor: async (params: {
-        boat_length?: number;
-        boat_type?: 'aluminum' | 'fiberglass' | 'pontoon' | 'inflatable';
-        usage?: 'fishing' | 'cruising' | 'watersports' | 'commercial';
-        priority?: 'speed' | 'fuel_economy' | 'price' | 'reliability';
-        max_budget?: number;
-      }) => {
-        return await handleRecommendMotor(params);
-      },
+      recommend_motor: withSearchingFeedback(
+        'recommend_motor',
+        async (params: {
+          boat_length?: number;
+          boat_type?: 'aluminum' | 'fiberglass' | 'pontoon' | 'inflatable';
+          usage?: 'fishing' | 'cruising' | 'watersports' | 'commercial';
+          priority?: 'speed' | 'fuel_economy' | 'price' | 'reliability';
+          max_budget?: number;
+        }) => {
+          return await handleRecommendMotor(params);
+        },
+        'Finding recommendations...'
+      ),
       // Compare two motors
       compare_motors: async (params: { motor1: string; motor2: string }) => {
         return await handleCompareMotors(params);
@@ -1502,6 +1624,8 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       isConnecting: false,
       isSpeaking: false,
       isListening: false,
+      isSearching: false,
+      searchingMessage: null,
       transcript: '',
       error: null,
       permissionState: null,

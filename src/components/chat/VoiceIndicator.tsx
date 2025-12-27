@@ -21,7 +21,7 @@ export const VoiceIndicator: React.FC<VoiceIndicatorProps> = ({
   // Don't render on mobile (uses unified bar) or if voice not available
   if (isMobileOrTablet || !voice) return null;
 
-  const { isConnected, isSpeaking, isListening, endVoiceChat } = voice;
+  const { isConnected, isSpeaking, isListening, isSearching, searchingMessage, endVoiceChat } = voice;
 
   // Only show when voice is active AND chat is closed
   const shouldShow = isConnected && !isChatOpen;
@@ -92,7 +92,14 @@ export const VoiceIndicator: React.FC<VoiceIndicatorProps> = ({
           >
             {/* Animated icon */}
             <div className="relative">
-              {isSpeaking ? (
+              {isSearching ? (
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
+                >
+                  <div className="w-5 h-5 border-2 border-amber-500 border-t-transparent rounded-full" />
+                </motion.div>
+              ) : isSpeaking ? (
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ repeat: Infinity, duration: 1 }}
@@ -111,19 +118,25 @@ export const VoiceIndicator: React.FC<VoiceIndicatorProps> = ({
               )}
               
               {/* Pulse ring */}
-              <motion.div
-                className={cn(
-                  "absolute inset-0 rounded-full",
-                  isSpeaking ? "bg-blue-400" : "bg-green-400"
-                )}
-                animate={{ scale: [1, 2], opacity: [0.4, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
-              />
+              {!isSearching && (
+                <motion.div
+                  className={cn(
+                    "absolute inset-0 rounded-full",
+                    isSpeaking ? "bg-blue-400" : "bg-green-400"
+                  )}
+                  animate={{ scale: [1, 2], opacity: [0.4, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5 }}
+                />
+              )}
             </div>
 
             {/* Status text */}
             <span className="text-sm font-medium text-stone-700">
-              {isSpeaking ? 'Harris is speaking...' : 'Voice chat active'}
+              {isSearching 
+                ? (searchingMessage || 'Checking...') 
+                : isSpeaking 
+                  ? 'Harris is speaking...' 
+                  : 'Voice chat active'}
             </span>
           </motion.button>
 

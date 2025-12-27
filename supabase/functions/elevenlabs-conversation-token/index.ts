@@ -226,26 +226,35 @@ serve(async (req) => {
   }
 
   try {
+    // Parse body first to check for warmup
+    let body: any = {};
+    try {
+      body = await req.json();
+    } catch {
+      // No body or invalid JSON, that's fine
+    }
+    
+    // WARMUP SHORTCUT: If this is just a warmup call, return immediately
+    // This warms the Deno runtime without expensive DB/ElevenLabs calls
+    if (body?.warmup === true) {
+      console.log('[Token] Warmup request - returning early (function is warm)');
+      return new Response(
+        JSON.stringify({ ok: true, warmed: true, timestamp: Date.now() }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+    
     const ELEVENLABS_API_KEY = Deno.env.get('ELEVENLABS_API_KEY');
     if (!ELEVENLABS_API_KEY) {
       console.error('ELEVENLABS_API_KEY is not set');
       throw new Error('ElevenLabs API key not configured');
     }
 
-    // Parse request body for motor, page, and quote context
-    let motorContext = null;
-    let currentPage = null;
-    let quoteContext = null;
-    let previousSessionContext = null;
-    try {
-      const body = await req.json();
-      motorContext = body?.motorContext || null;
-      currentPage = body?.currentPage || null;
-      quoteContext = body?.quoteContext || null;
-      previousSessionContext = body?.previousSessionContext || null;
-    } catch {
-      // No body or invalid JSON, that's fine
-    }
+    // Extract context from body
+    const motorContext = body?.motorContext || null;
+    const currentPage = body?.currentPage || null;
+    const quoteContext = body?.quoteContext || null;
+    const previousSessionContext = body?.previousSessionContext || null;
 
     console.log('Building dynamic system prompt with context:', { motorContext, currentPage, hasQuoteContext: !!quoteContext, hasReturningContext: !!previousSessionContext });
     
