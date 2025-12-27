@@ -39,7 +39,7 @@ export function UpgradeNudgeBar({
             damping: 25,
             delay: 0.2
           }}
-          className="relative overflow-hidden rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50 via-white to-blue-50 p-4 shadow-sm"
+          className="relative overflow-hidden rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50 via-white to-blue-50 p-3 sm:p-4 shadow-sm"
         >
           {/* Animated background shimmer */}
           <motion.div
@@ -54,7 +54,7 @@ export function UpgradeNudgeBar({
             }}
           />
 
-          <div className="relative flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="relative flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
             {/* Left side - Benefits */}
             <div className="flex items-center gap-3">
               {/* Shield icon - hidden on mobile for cleaner look */}
@@ -88,7 +88,7 @@ export function UpgradeNudgeBar({
                     {' '}more coverage
                   </span>
                 </div>
-                <p className="text-sm text-slate-600">
+                <p className="text-xs sm:text-sm text-slate-600">
                   Upgrade to {upgradeToLabel} for just{' '}
                   <span className="font-semibold text-emerald-600">
                     +{money(Math.round(monthlyDelta))}/mo
@@ -105,12 +105,13 @@ export function UpgradeNudgeBar({
               className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
             >
               <span>Upgrade to {upgradeToLabel}</span>
-              <motion.div
+              <motion.span
+                className="inline-flex"
                 animate={{ x: [0, 4, 0] }}
                 transition={{ duration: 1, repeat: Infinity }}
               >
                 <ArrowRight className="h-4 w-4" />
-              </motion.div>
+              </motion.span>
             </motion.button>
           </div>
         </motion.div>
