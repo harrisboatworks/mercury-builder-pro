@@ -71,6 +71,10 @@ export const VoiceDiagnosticsPanel: React.FC<VoiceDiagnosticsPanelProps> = ({
         value: diagnostics.remoteTrackReceived ? '✅ received' : '❌ not received',
       },
       { label: 'Inbound bytes', value: String(diagnostics.inboundAudioBytes || 0) },
+      // New audio output diagnostics
+      { label: 'AudioContext', value: diagnostics.audioContextState || 'none' },
+      { label: 'Web Audio routed', value: diagnostics.webAudioRouted ? '✅' : '❌' },
+      { label: 'Audio element', value: diagnostics.audioElementPlaying ? '✅ playing' : '❌' },
       { label: 'Audio playing', value: diagnostics.audioPlaying ? '✅' : '❌' },
       { label: 'Last error', value: diagnostics.lastError || '—' },
     ];
@@ -81,6 +85,7 @@ export const VoiceDiagnosticsPanel: React.FC<VoiceDiagnosticsPanelProps> = ({
       ...rows.map(r => `${r.label}: ${r.value}`),
       `Mic input level: ${diagnostics?.micInputLevel?.toFixed(4) || 0}`,
       `Mic peak level: ${diagnostics?.micPeakLevel?.toFixed(4) || 0}`,
+      `Output level: ${diagnostics?.outputAudioLevel?.toFixed(4) || 0}`,
     ].join('\n');
     navigator.clipboard.writeText(text);
   };
@@ -120,6 +125,16 @@ export const VoiceDiagnosticsPanel: React.FC<VoiceDiagnosticsPanelProps> = ({
             level={diagnostics?.micInputLevel || 0}
             peak={diagnostics?.micPeakLevel || 0}
             isActive={!!diagnostics?.micPermission}
+          />
+        </div>
+        
+        {/* Output audio level meter */}
+        <div className="text-muted-foreground">Output level</div>
+        <div className="font-mono text-foreground">
+          <MicLevelMeter
+            level={diagnostics?.outputAudioLevel || 0}
+            peak={diagnostics?.outputAudioLevel || 0}
+            isActive={!!diagnostics?.webAudioRouted}
           />
         </div>
         

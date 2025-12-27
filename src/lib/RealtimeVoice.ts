@@ -307,6 +307,11 @@ export interface VoiceDiagnostics {
   lastError: string | null;
   micInputLevel: number; // 0-1 RMS
   micPeakLevel: number;  // 0-1 peak
+  // New audio output diagnostics
+  audioContextState: string;
+  webAudioRouted: boolean;
+  audioElementPlaying: boolean;
+  outputAudioLevel: number; // 0-1 RMS of output audio
 }
 
 // Main realtime voice chat class using WebRTC
@@ -319,6 +324,7 @@ export class RealtimeVoiceChat {
   private audioQueue: AudioQueue | null = null;
   private mediaStream: MediaStream | null = null;
   private webAudioSource: MediaStreamAudioSourceNode | null = null;
+  private remoteStream: MediaStream | null = null;
 
   // Mic level monitoring
   private micAnalyserContext: AudioContext | null = null;
@@ -326,6 +332,16 @@ export class RealtimeVoiceChat {
   private micLevelInterval: ReturnType<typeof setInterval> | null = null;
   private micInputLevel = 0;
   private micPeakLevel = 0;
+
+  // Output audio level monitoring
+  private outputAnalyser: AnalyserNode | null = null;
+  private outputLevelInterval: ReturnType<typeof setInterval> | null = null;
+  private outputAudioLevel = 0;
+  private webAudioRouted = false;
+  private audioElementPlaying = false;
+
+  // Audio routing retry
+  private audioRoutingRetryInterval: ReturnType<typeof setInterval> | null = null;
 
   // Diagnostics / UX
   private hasReceivedRemoteTrack = false;
@@ -370,6 +386,11 @@ export class RealtimeVoiceChat {
       lastError: this.lastPlayError,
       micInputLevel: this.micInputLevel,
       micPeakLevel: this.micPeakLevel,
+      // New output diagnostics
+      audioContextState: this.audioContext?.state || 'none',
+      webAudioRouted: this.webAudioRouted,
+      audioElementPlaying: this.audioElementPlaying,
+      outputAudioLevel: this.outputAudioLevel,
     };
   }
 
@@ -418,6 +439,124 @@ export class RealtimeVoiceChat {
     this.micAnalyser = null;
     this.micInputLevel = 0;
     this.micPeakLevel = 0;
+  }
+
+  /**
+   * Route remote audio stream to speakers with retry capability.
+   * This method can be called multiple times safely.
+   */
+  private async routeRemoteAudio() {
+    if (!this.remoteStream) {
+      console.log('🔊 No remote stream to route');
+      return;
+    }
+    
+    console.log('🔊 Attempting to route remote audio, AudioContext state:', this.audioContext?.state);
+
+    // Ensure AudioContext exists and is running
+    if (!this.audioContext) {
+      this.audioContext = sharedOutputAudioContext || new AudioContext({ sampleRate: 24000 });
+      console.log('🔊 Created new AudioContext');
+    }
+    
+    if (this.audioContext.state === 'suspended') {
+      try {
+        await this.audioContext.resume();
+        console.log('🔊 AudioContext resumed, state:', this.audioContext.state);
+      } catch (e) {
+        console.warn('🔊 Failed to resume AudioContext:', e);
+      }
+    }
+
+    // PRIMARY: Route through Web Audio API (more reliable for output level monitoring)
+    if (this.audioContext.state === 'running' && !this.webAudioRouted) {
+      try {
+        // Disconnect previous source if any
+        this.webAudioSource?.disconnect();
+        this.outputAnalyser?.disconnect();
+
+        // Create source and analyser
+        this.webAudioSource = this.audioContext.createMediaStreamSource(this.remoteStream);
+        this.outputAnalyser = this.audioContext.createAnalyser();
+        this.outputAnalyser.fftSize = 256;
+        
+        // Route: source -> analyser -> destination
+        this.webAudioSource.connect(this.outputAnalyser);
+        this.outputAnalyser.connect(this.audioContext.destination);
+        
+        this.webAudioRouted = true;
+        this.audioIsPlaying = true;
+        console.log('✅ Remote audio routed through Web Audio API with analyser');
+        
+        // Start output level monitoring
+        this.startOutputLevelMonitoring();
+        
+        this.updateDiagnostics();
+      } catch (err: any) {
+        console.error('❌ Web Audio routing failed:', err);
+        this.lastPlayError = err?.message || 'Web Audio routing failed';
+        this.webAudioRouted = false;
+        this.updateDiagnostics();
+      }
+    }
+
+    // FALLBACK: Also try HTML audio element
+    if (!this.audioElementPlaying) {
+      this.audioEl.srcObject = this.remoteStream;
+      console.log('🔊 Audio element srcObject set');
+
+      try {
+        await this.audioEl.play();
+        console.log('✅ Audio element playback started');
+        this.audioElementPlaying = true;
+        this.audioIsPlaying = true;
+        this.lastPlayError = null;
+        this.updateDiagnostics();
+      } catch (err: any) {
+        console.warn('🔊 Audio element play failed (will retry):', err.message);
+        this.lastPlayError = err?.message || 'Audio element play failed';
+        this.audioElementPlaying = false;
+        this.updateDiagnostics();
+      }
+    }
+  }
+
+  private startOutputLevelMonitoring() {
+    if (this.outputLevelInterval) return; // Already monitoring
+    if (!this.outputAnalyser) return;
+    
+    const dataArray = new Float32Array(this.outputAnalyser.fftSize);
+    
+    this.outputLevelInterval = setInterval(() => {
+      if (!this.outputAnalyser) {
+        if (this.outputLevelInterval) {
+          clearInterval(this.outputLevelInterval);
+          this.outputLevelInterval = null;
+        }
+        return;
+      }
+      
+      this.outputAnalyser.getFloatTimeDomainData(dataArray);
+      const { rms } = calculateAudioLevels(dataArray);
+      this.outputAudioLevel = rms;
+      
+      // Only update diagnostics if level changed significantly
+      if (Math.abs(rms - this.outputAudioLevel) > 0.01) {
+        this.updateDiagnostics();
+      }
+    }, 50);
+    
+    console.log('🔊 Output level monitoring started');
+  }
+
+  private stopOutputLevelMonitoring() {
+    if (this.outputLevelInterval) {
+      clearInterval(this.outputLevelInterval);
+      this.outputLevelInterval = null;
+    }
+    this.outputAnalyser?.disconnect();
+    this.outputAnalyser = null;
+    this.outputAudioLevel = 0;
   }
 
   async connect(motorContext?: any, currentPage?: string, existingStream?: MediaStream) {
@@ -550,65 +689,47 @@ export class RealtimeVoiceChat {
           'muted:',
           e.track.muted
         );
-        this.updateDiagnostics();
-
-        const remoteStream = e.streams?.[0] ?? new MediaStream([e.track]);
+        
+        // Store the remote stream for retry logic
+        this.remoteStream = e.streams?.[0] ?? new MediaStream([e.track]);
         if (!e.streams?.[0]) {
           console.warn('🎧 ontrack fired without streams; using MediaStream([track]) fallback');
         }
+        
+        this.updateDiagnostics();
 
-        console.log('Setting audio srcObject with stream:', remoteStream.id);
-
-        // PRIMARY: Route through Web Audio API (more reliable on Safari/Mac)
-        if (this.audioContext && this.audioContext.state === 'running') {
-          try {
-            // Disconnect previous source if any
-            this.webAudioSource?.disconnect();
-
-            this.webAudioSource = this.audioContext.createMediaStreamSource(remoteStream);
-            this.webAudioSource.connect(this.audioContext.destination);
-            console.log('✅ Remote audio routed through Web Audio API');
-            this.audioIsPlaying = true;
-            this.updateDiagnostics();
-          } catch (err: any) {
-            console.error('❌ Web Audio routing failed:', err);
-            this.lastPlayError = err?.message || 'Web Audio routing failed';
-            this.updateDiagnostics();
-          }
+        // Try to route audio immediately
+        this.routeRemoteAudio();
+        
+        // Retry routing every 100ms until successful (max 5 seconds)
+        // This handles cases where AudioContext isn't ready yet
+        if (this.audioRoutingRetryInterval) {
+          clearInterval(this.audioRoutingRetryInterval);
         }
-
-        // FALLBACK: Also set on audio element (some browsers prefer this)
-        this.audioEl.srcObject = remoteStream;
-        console.log('🔊 Audio element srcObject set');
-
-        // Play with comprehensive error handling
-        this.audioEl
-          .play()
-          .then(() => {
-            console.log('✅ Audio element playback started successfully');
-            this.audioIsPlaying = true;
-            this.lastPlayError = null;
-            this.updateDiagnostics();
-          })
-          .catch((err) => {
-            console.error('❌ Audio element play failed:', err);
-            this.lastPlayError = err?.message || 'Audio element play failed';
-            this.updateDiagnostics();
-
-            // Try playing on next user interaction (autoplay policy)
-            const playOnInteraction = () => {
-              this.audioEl
-                .play()
-                .then(() => {
-                  console.log('✅ Audio playback started after user interaction');
-                  this.audioIsPlaying = true;
-                  this.lastPlayError = null;
-                  this.updateDiagnostics();
-                })
-                .catch((e2) => console.error('Still failed:', e2));
-            };
-            document.addEventListener('click', playOnInteraction, { once: true });
-          });
+        
+        let retryCount = 0;
+        const maxRetries = 50; // 5 seconds at 100ms intervals
+        
+        this.audioRoutingRetryInterval = setInterval(() => {
+          retryCount++;
+          
+          // Stop retrying if audio is playing or we've tried too long
+          if (this.audioIsPlaying || retryCount >= maxRetries || !this.remoteStream) {
+            if (this.audioRoutingRetryInterval) {
+              clearInterval(this.audioRoutingRetryInterval);
+              this.audioRoutingRetryInterval = null;
+            }
+            
+            if (retryCount >= maxRetries && !this.audioIsPlaying) {
+              console.warn('⚠️ Audio routing retry limit reached - audio may not play');
+              this.onAudioIssue?.();
+            }
+            return;
+          }
+          
+          console.log(`🔁 Audio routing retry ${retryCount}/${maxRetries}...`);
+          this.routeRemoteAudio();
+        }, 100);
       };
 
       // Add local audio track from our stream (microphone → AI)
@@ -941,23 +1062,37 @@ export class RealtimeVoiceChat {
    * Retry audio playback - call this from a user gesture if audio didn't start
    */
   async retryAudioPlayback() {
-    console.log('🔁 Retrying audio playback...');
+    console.log('🔁 Retrying audio playback from user gesture...');
+    
+    // Reset routing flags to allow retry
+    this.webAudioRouted = false;
+    this.audioElementPlaying = false;
     
     // Re-unlock audio context
     if (this.audioContext && this.audioContext.state === 'suspended') {
       await this.audioContext.resume();
-      console.log('AudioContext resumed');
+      console.log('AudioContext resumed, state:', this.audioContext.state);
     }
     
-    // Retry audio element play
+    // Retry routing with the stored remote stream
+    if (this.remoteStream) {
+      await this.routeRemoteAudio();
+    } else {
+      console.warn('No remote stream available to retry');
+    }
+    
+    // Also try audio element directly
     try {
       await this.audioEl.play();
       console.log('Audio element play succeeded on retry');
       this.audioIsPlaying = true;
+      this.audioElementPlaying = true;
       this.lastPlayError = null;
       this.updateDiagnostics();
-    } catch (e) {
+    } catch (e: any) {
       console.error('Audio element play failed on retry:', e);
+      this.lastPlayError = e?.message || 'Retry failed';
+      this.updateDiagnostics();
     }
   }
 
@@ -970,8 +1105,15 @@ export class RealtimeVoiceChat {
       this.watchdogTimeout = null;
     }
     
-    // Stop mic level monitoring
+    // Clear audio routing retry interval
+    if (this.audioRoutingRetryInterval) {
+      clearInterval(this.audioRoutingRetryInterval);
+      this.audioRoutingRetryInterval = null;
+    }
+    
+    // Stop level monitoring
     this.stopMicLevelMonitoring();
+    this.stopOutputLevelMonitoring();
     
     this.recorder?.stop();
     this.audioQueue?.clear();
@@ -986,6 +1128,7 @@ export class RealtimeVoiceChat {
       this.mediaStream.getTracks().forEach(track => track.stop());
       this.mediaStream = null;
     }
+    this.remoteStream = null;
     this.audioEl.srcObject = null;
     // Remove audio element from DOM
     if (this.audioEl.parentNode) {
@@ -999,6 +1142,9 @@ export class RealtimeVoiceChat {
     this.audioIsPlaying = false;
     this.inboundAudioBytes = 0;
     this.lastPlayError = null;
+    this.webAudioRouted = false;
+    this.audioElementPlaying = false;
+    this.outputAudioLevel = 0;
     
     this.onConnectionChange(false);
   }
