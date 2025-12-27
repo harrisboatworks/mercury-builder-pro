@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useRealtimeVoice } from '@/hooks/useRealtimeVoice';
 import { useQuote } from '@/contexts/QuoteContext';
 import { MicrophonePermissionDialog } from '@/components/chat/MicrophonePermissionDialog';
+import { AudioIssuePrompt } from '@/components/chat/AudioIssuePrompt';
 
 interface VoiceContextType {
   isConnected: boolean;
@@ -99,6 +100,13 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         onClose={voice.closePermissionDialog}
         permissionState={voice.permissionState === 'denied' ? 'denied' : 'prompt'}
         onRetry={voice.retryPermission}
+      />
+      
+      {/* Audio Issue Prompt */}
+      <AudioIssuePrompt
+        show={voice.showAudioIssuePrompt}
+        onEnableAudio={voice.retryAudioPlayback}
+        onDismiss={voice.closeAudioIssuePrompt}
       />
     </VoiceContext.Provider>
   );

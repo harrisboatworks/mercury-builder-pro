@@ -1,5 +1,11 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { RealtimeVoiceChat, requestMicrophonePermission, checkMicrophonePermission } from '@/lib/RealtimeVoice';
+import { 
+  RealtimeVoiceChat, 
+  requestMicrophonePermission, 
+  checkMicrophonePermission,
+  unlockAudioOutput,
+  VoiceDiagnostics
+} from '@/lib/RealtimeVoice';
 import { useToast } from '@/hooks/use-toast';
 
 interface VoiceState {
@@ -11,6 +17,8 @@ interface VoiceState {
   error: string | null;
   permissionState: 'granted' | 'denied' | 'prompt' | null;
   showPermissionDialog: boolean;
+  showAudioIssuePrompt: boolean;
+  diagnostics: VoiceDiagnostics | null;
 }
 
 interface UseRealtimeVoiceOptions {
@@ -36,6 +44,8 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     error: null,
     permissionState: null,
     showPermissionDialog: false,
+    showAudioIssuePrompt: false,
+    diagnostics: null,
   });
   
   const chatRef = useRef<RealtimeVoiceChat | null>(null);
@@ -78,19 +88,53 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     if (connected) {
       toast({
         title: "Voice chat connected",
-        description: "Start speaking to chat with Harris",
+        description: "Harris is here — say something!",
       });
     }
+  }, [toast]);
+
+  const handleDiagnosticsChange = useCallback((diagnostics: VoiceDiagnostics) => {
+    setState(prev => ({ ...prev, diagnostics }));
+  }, []);
+
+  const handleAudioIssue = useCallback(() => {
+    console.log('Audio issue detected - prompting user');
+    setState(prev => ({ ...prev, showAudioIssuePrompt: true }));
+    toast({
+      title: "Can't hear Harris?",
+      description: "Tap 'Enable Audio' or try using Chrome browser.",
+      duration: 10000,
+    });
   }, [toast]);
 
   const closePermissionDialog = useCallback(() => {
     setState(prev => ({ ...prev, showPermissionDialog: false }));
   }, []);
 
+  const closeAudioIssuePrompt = useCallback(() => {
+    setState(prev => ({ ...prev, showAudioIssuePrompt: false }));
+  }, []);
+
+  const retryAudioPlayback = useCallback(async () => {
+    console.log('User triggered audio retry');
+    await chatRef.current?.retryAudioPlayback();
+    setState(prev => ({ ...prev, showAudioIssuePrompt: false }));
+    toast({
+      title: "Audio enabled",
+      description: "You should hear Harris now.",
+    });
+  }, [toast]);
+
   const attemptConnection = useCallback(async () => {
     if (chatRef.current) return;
 
-    setState(prev => ({ ...prev, isConnecting: true, error: null, showPermissionDialog: false }));
+    setState(prev => ({ 
+      ...prev, 
+      isConnecting: true, 
+      error: null, 
+      showPermissionDialog: false,
+      showAudioIssuePrompt: false,
+    }));
     transcriptRef.current = '';
 
     try {
@@ -102,7 +146,9 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
         handleTranscript,
         handleSpeakingChange,
         handleError,
-        handleConnectionChange
+        handleConnectionChange,
+        handleDiagnosticsChange,
+        handleAudioIssue
       );
       
       await chatRef.current.connect(motorContext, currentPage, stream);
@@ -129,12 +175,22 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
       
       chatRef.current = null;
     }
-  }, [motorContext, currentPage, handleTranscript, handleSpeakingChange, handleError, handleConnectionChange, toast]);
+  }, [motorContext, currentPage, handleTranscript, handleSpeakingChange, handleError, handleConnectionChange, handleDiagnosticsChange, handleAudioIssue, toast]);
 
   const startVoiceChat = useCallback(async () => {
     if (chatRef.current) return;
 
-    // Check permission state first
+    // CRITICAL: Unlock audio output FIRST, directly in user gesture context
+    // This must happen before ANY async operations (permission check, token fetch, etc.)
+    console.log('🔓 Unlocking audio output on user gesture...');
+    try {
+      await unlockAudioOutput();
+      console.log('🔓 Audio output unlocked successfully');
+    } catch (e) {
+      console.warn('Audio unlock failed:', e);
+    }
+
+    // Now check permission state
     const permState = await checkMicrophonePermission();
     console.log('Microphone permission state:', permState);
     
@@ -163,6 +219,8 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
       error: null,
       permissionState: null,
       showPermissionDialog: false,
+      showAudioIssuePrompt: false,
+      diagnostics: null,
     });
   }, []);
 
@@ -214,5 +272,7 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     updateContext,
     closePermissionDialog,
     retryPermission: attemptConnection,
+    closeAudioIssuePrompt,
+    retryAudioPlayback,
   };
 }

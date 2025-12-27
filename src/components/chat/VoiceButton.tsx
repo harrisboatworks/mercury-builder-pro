@@ -46,7 +46,7 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
 
   // Determine state for visuals
   const getStateColor = () => {
-    if (isConnecting) return 'bg-gray-100 text-gray-400';
+    if (isConnecting) return 'bg-amber-100 text-amber-600';
     if (isSpeaking) return 'bg-emerald-500 text-white';
     if (isListening) return 'bg-red-500 text-white';
     return 'bg-gray-100 text-gray-600 hover:bg-gray-200';
@@ -104,6 +104,19 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
         )}
       </AnimatePresence>
 
+      {/* Connecting pulse */}
+      <AnimatePresence>
+        {isConnecting && (
+          <motion.div
+            className="absolute inset-0 rounded-full bg-amber-400"
+            initial={{ opacity: 0.3, scale: 1 }}
+            animate={{ opacity: 0, scale: 1.3 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, repeat: Infinity }}
+          />
+        )}
+      </AnimatePresence>
+
       {/* Icon */}
       <span className="relative z-10">{getIcon()}</span>
     </motion.button>
@@ -149,11 +162,13 @@ export const VoiceButtonInline: React.FC<VoiceButtonProps & { label?: string }> 
       disabled={isConnecting}
       className={cn(
         'flex items-center gap-2 px-3 py-1.5 rounded-full text-sm transition-colors',
-        isConnected
-          ? isSpeaking
-            ? 'bg-emerald-100 text-emerald-700'
-            : 'bg-red-100 text-red-700'
-          : 'bg-gray-100 text-gray-600 hover:bg-gray-200',
+        isConnecting
+          ? 'bg-amber-100 text-amber-700'
+          : isConnected
+            ? isSpeaking
+              ? 'bg-emerald-100 text-emerald-700'
+              : 'bg-red-100 text-red-700'
+            : 'bg-gray-100 text-gray-600 hover:bg-gray-200',
         className
       )}
       whileHover={{ scale: 1.02 }}

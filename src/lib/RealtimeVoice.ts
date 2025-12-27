@@ -210,6 +210,61 @@ export async function requestMicrophonePermission(): Promise<MediaStream> {
   }
 }
 
+// Shared AudioContext for output audio - unlocked on first user gesture
+let sharedOutputAudioContext: AudioContext | null = null;
+let audioUnlocked = false;
+
+/**
+ * Unlock audio output on Safari/iOS. MUST be called directly from a user gesture (click/tap).
+ * This creates or resumes the shared AudioContext and plays a tiny silent buffer
+ * to satisfy autoplay policies.
+ */
+export async function unlockAudioOutput(): Promise<AudioContext> {
+  console.log('🔓 Attempting to unlock audio output...');
+  
+  if (!sharedOutputAudioContext) {
+    sharedOutputAudioContext = new AudioContext({ sampleRate: 24000 });
+    console.log('🔓 Created shared AudioContext, state:', sharedOutputAudioContext.state);
+  }
+  
+  // Resume if suspended (Safari requires this from user gesture)
+  if (sharedOutputAudioContext.state === 'suspended') {
+    console.log('🔓 Resuming suspended AudioContext...');
+    await sharedOutputAudioContext.resume();
+    console.log('🔓 AudioContext resumed, state:', sharedOutputAudioContext.state);
+  }
+  
+  // Play a tiny silent buffer to fully unlock audio output
+  if (!audioUnlocked) {
+    try {
+      const buffer = sharedOutputAudioContext.createBuffer(1, 1, 24000);
+      const source = sharedOutputAudioContext.createBufferSource();
+      source.buffer = buffer;
+      source.connect(sharedOutputAudioContext.destination);
+      source.start(0);
+      audioUnlocked = true;
+      console.log('🔓 Audio output unlocked with silent buffer');
+    } catch (e) {
+      console.warn('🔓 Silent buffer unlock failed:', e);
+    }
+  }
+  
+  return sharedOutputAudioContext;
+}
+
+// Diagnostic state exposed for debugging
+export interface VoiceDiagnostics {
+  micPermission: boolean;
+  tokenReceived: boolean;
+  sdpExchanged: boolean;
+  webrtcState: string;
+  dataChannelOpen: boolean;
+  remoteTrackReceived: boolean;
+  audioPlaying: boolean;
+  inboundAudioBytes: number;
+  lastError: string | null;
+}
+
 // Main realtime voice chat class using WebRTC
 export class RealtimeVoiceChat {
   private pc: RTCPeerConnection | null = null;
@@ -219,16 +274,23 @@ export class RealtimeVoiceChat {
   private audioContext: AudioContext | null = null;
   private audioQueue: AudioQueue | null = null;
   private mediaStream: MediaStream | null = null;
+  private webAudioSource: MediaStreamAudioSourceNode | null = null;
 
   // Diagnostics / UX
   private hasReceivedRemoteTrack = false;
   private hasSentGreeting = false;
+  private audioIsPlaying = false;
+  private inboundAudioBytes = 0;
+  private lastPlayError: string | null = null;
+  private watchdogTimeout: ReturnType<typeof setTimeout> | null = null;
 
   constructor(
     private onTranscript: (text: string, isFinal: boolean) => void,
     private onSpeakingChange: (isSpeaking: boolean) => void,
     private onError: (error: Error) => void,
-    private onConnectionChange: (connected: boolean) => void
+    private onConnectionChange: (connected: boolean) => void,
+    private onDiagnosticsChange?: (diagnostics: VoiceDiagnostics) => void,
+    private onAudioIssue?: () => void
   ) {
     this.audioEl = document.createElement("audio");
     this.audioEl.autoplay = true;
@@ -241,11 +303,38 @@ export class RealtimeVoiceChat {
     document.body.appendChild(this.audioEl);
   }
 
+  getDiagnostics(): VoiceDiagnostics {
+    return {
+      micPermission: !!this.mediaStream,
+      tokenReceived: true, // set true after connect starts
+      sdpExchanged: !!this.pc?.remoteDescription,
+      webrtcState: this.pc?.connectionState || 'none',
+      dataChannelOpen: this.dc?.readyState === 'open',
+      remoteTrackReceived: this.hasReceivedRemoteTrack,
+      audioPlaying: this.audioIsPlaying,
+      inboundAudioBytes: this.inboundAudioBytes,
+      lastError: this.lastPlayError,
+    };
+  }
+
+  private updateDiagnostics() {
+    this.onDiagnosticsChange?.(this.getDiagnostics());
+  }
+
   async connect(motorContext?: any, currentPage?: string, existingStream?: MediaStream) {
     try {
       // Use existing stream if provided (iOS Safari - permission already granted)
       // Otherwise request permission now (desktop browsers)
       this.mediaStream = existingStream || await requestMicrophonePermission();
+      this.updateDiagnostics();
+      
+      // Use the shared unlocked AudioContext for output
+      this.audioContext = sharedOutputAudioContext || new AudioContext({ sampleRate: 24000 });
+      if (this.audioContext.state === 'suspended') {
+        console.log('Resuming AudioContext in connect...');
+        await this.audioContext.resume();
+      }
+      this.audioQueue = new AudioQueue(this.audioContext);
       
       // Get ephemeral token from edge function
       const tokenResponse = await fetch(
@@ -263,120 +352,133 @@ export class RealtimeVoiceChat {
         throw new Error("Failed to get ephemeral token");
       }
 
-       const EPHEMERAL_KEY = data.client_secret.value;
+      const EPHEMERAL_KEY = data.client_secret.value;
+      console.log('✅ Ephemeral token received');
 
-       // Create peer connection
-       this.pc = new RTCPeerConnection();
+      // Create peer connection
+      this.pc = new RTCPeerConnection();
 
-       // Ensure we explicitly negotiate receiving remote audio
-       // (some browsers won't fire ontrack reliably without a transceiver)
-       try {
-         this.pc.addTransceiver('audio', { direction: 'sendrecv' });
-         console.log('🎛️ Added audio transceiver (sendrecv)');
-       } catch (e) {
-         console.log('Audio transceiver not added (non-fatal):', e);
-       }
+      // Ensure we explicitly negotiate receiving remote audio
+      // (some browsers won't fire ontrack reliably without a transceiver)
+      try {
+        this.pc.addTransceiver('audio', { direction: 'sendrecv' });
+        console.log('🎛️ Added audio transceiver (sendrecv)');
+      } catch (e) {
+        console.log('Audio transceiver not added (non-fatal):', e);
+      }
 
-       // ICE candidate logging
-       this.pc.onicecandidate = (e) => {
-         if (e.candidate) {
-           console.log('🧊 ICE candidate:', e.candidate.type, e.candidate.protocol, e.candidate.address || '(no address)');
-         } else {
-           console.log('🧊 ICE gathering complete (null candidate)');
-         }
-       };
+      // ICE candidate logging
+      this.pc.onicecandidate = (e) => {
+        if (e.candidate) {
+          console.log('🧊 ICE candidate:', e.candidate.type, e.candidate.protocol, e.candidate.address || '(no address)');
+        } else {
+          console.log('🧊 ICE gathering complete (null candidate)');
+        }
+      };
 
-       this.pc.addEventListener('connectionstatechange', () => {
-         console.log('RTCPeerConnection state:', this.pc?.connectionState);
-         if (this.pc?.connectionState === 'failed') {
-           this.onError(new Error('Voice connection failed (network/WebRTC).'));
-         }
-       });
+      this.pc.addEventListener('connectionstatechange', () => {
+        console.log('RTCPeerConnection state:', this.pc?.connectionState);
+        this.updateDiagnostics();
+        if (this.pc?.connectionState === 'failed') {
+          this.onError(new Error('Voice connection failed (network/WebRTC).'));
+        }
+      });
 
-       this.pc.addEventListener('iceconnectionstatechange', () => {
-         console.log('ICE connection state:', this.pc?.iceConnectionState);
-       });
+      this.pc.addEventListener('iceconnectionstatechange', () => {
+        console.log('ICE connection state:', this.pc?.iceConnectionState);
+      });
 
-       // Start monitoring audio transmission stats
-       const statsInterval = setInterval(() => {
-         if (!this.pc || this.pc.connectionState === 'closed') {
-           clearInterval(statsInterval);
-           return;
-         }
-         
-         // Monitor outbound audio (mic → OpenAI)
-         this.pc.getSenders().forEach(sender => {
-           if (sender.track?.kind === 'audio') {
-             sender.getStats().then(stats => {
-               stats.forEach(report => {
-                 if (report.type === 'outbound-rtp' && report.bytesSent !== undefined) {
-                   console.log('📤 Audio OUT:', report.bytesSent, 'bytes,', report.packetsSent, 'packets');
-                 }
-               });
-             });
-           }
-         });
-         
-         // Monitor inbound audio (OpenAI → us)
-         this.pc.getReceivers().forEach(receiver => {
-           if (receiver.track?.kind === 'audio') {
-             receiver.getStats().then(stats => {
-               stats.forEach(report => {
-                 if (report.type === 'inbound-rtp' && report.bytesReceived !== undefined) {
-                   console.log('📥 Audio IN:', report.bytesReceived, 'bytes,', report.packetsReceived, 'packets');
-                 }
-               });
-             });
-           }
-         });
-       }, 3000);
-       
-       // Create AudioContext and resume if suspended (iOS requirement)
-       this.audioContext = new AudioContext({ sampleRate: 24000 });
-       if (this.audioContext.state === 'suspended') {
-         console.log('Resuming suspended AudioContext...');
-         await this.audioContext.resume();
-       }
-       this.audioQueue = new AudioQueue(this.audioContext);
+      // Start monitoring audio transmission stats
+      const statsInterval = setInterval(() => {
+        if (!this.pc || this.pc.connectionState === 'closed') {
+          clearInterval(statsInterval);
+          return;
+        }
+        
+        // Monitor outbound audio (mic → OpenAI)
+        this.pc.getSenders().forEach(sender => {
+          if (sender.track?.kind === 'audio') {
+            sender.getStats().then(stats => {
+              stats.forEach(report => {
+                if (report.type === 'outbound-rtp' && report.bytesSent !== undefined) {
+                  console.log('📤 Audio OUT:', report.bytesSent, 'bytes,', report.packetsSent, 'packets');
+                }
+              });
+            });
+          }
+        });
+        
+        // Monitor inbound audio (OpenAI → us)
+        this.pc.getReceivers().forEach(receiver => {
+          if (receiver.track?.kind === 'audio') {
+            receiver.getStats().then(stats => {
+              stats.forEach(report => {
+                if (report.type === 'inbound-rtp' && report.bytesReceived !== undefined) {
+                  this.inboundAudioBytes = report.bytesReceived as number;
+                  console.log('📥 Audio IN:', report.bytesReceived, 'bytes,', report.packetsReceived, 'packets');
+                  this.updateDiagnostics();
+                }
+              });
+            });
+          }
+        });
+      }, 3000);
 
       // Set up remote audio - this receives AI's voice via WebRTC
       this.pc.ontrack = (e) => {
         this.hasReceivedRemoteTrack = true;
         console.log('🎧 Received remote track:', e.track.kind, 'readyState:', e.track.readyState, 'streams:', e.streams.length);
         console.log('🎧 Track details - id:', e.track.id, 'label:', e.track.label, 'muted:', e.track.muted);
-
-        // Log audio element state before setting
-        console.log('🔊 Audio element BEFORE:', {
-          paused: this.audioEl.paused,
-          muted: this.audioEl.muted,
-          volume: this.audioEl.volume,
-          readyState: this.audioEl.readyState,
-          autoplay: this.audioEl.autoplay,
-        });
+        this.updateDiagnostics();
 
         if (e.streams && e.streams[0]) {
-          console.log('Setting audio srcObject with stream:', e.streams[0].id);
-          this.audioEl.srcObject = e.streams[0];
-
-          // Log audio element state after setting
-          console.log('🔊 Audio element AFTER srcObject set:', {
-            srcObject: !!this.audioEl.srcObject,
-            paused: this.audioEl.paused,
-          });
+          const remoteStream = e.streams[0];
+          console.log('Setting audio srcObject with stream:', remoteStream.id);
+          
+          // PRIMARY: Route through Web Audio API (more reliable on Safari/Mac)
+          if (this.audioContext && this.audioContext.state === 'running') {
+            try {
+              // Disconnect previous source if any
+              this.webAudioSource?.disconnect();
+              
+              this.webAudioSource = this.audioContext.createMediaStreamSource(remoteStream);
+              this.webAudioSource.connect(this.audioContext.destination);
+              console.log('✅ Remote audio routed through Web Audio API');
+              this.audioIsPlaying = true;
+              this.updateDiagnostics();
+            } catch (err) {
+              console.error('❌ Web Audio routing failed:', err);
+            }
+          }
+          
+          // FALLBACK: Also set on audio element (some browsers prefer this)
+          this.audioEl.srcObject = remoteStream;
+          console.log('🔊 Audio element srcObject set');
 
           // Play with comprehensive error handling
           this.audioEl
             .play()
             .then(() => {
-              console.log('✅ Audio playback started successfully');
+              console.log('✅ Audio element playback started successfully');
+              this.audioIsPlaying = true;
+              this.lastPlayError = null;
+              this.updateDiagnostics();
             })
             .catch((err) => {
-              console.error('❌ Audio play failed:', err);
+              console.error('❌ Audio element play failed:', err);
+              this.lastPlayError = err.message;
+              this.updateDiagnostics();
+              
               // Try playing on next user interaction (autoplay policy)
               const playOnInteraction = () => {
                 this.audioEl
                   .play()
-                  .then(() => console.log('✅ Audio playback started after user interaction'))
+                  .then(() => {
+                    console.log('✅ Audio playback started after user interaction');
+                    this.audioIsPlaying = true;
+                    this.lastPlayError = null;
+                    this.updateDiagnostics();
+                  })
                   .catch((e2) => console.error('Still failed:', e2));
               };
               document.addEventListener('click', playOnInteraction, { once: true });
@@ -397,52 +499,40 @@ export class RealtimeVoiceChat {
       // Set up data channel
       this.dc = this.pc.createDataChannel("oai-events");
       
-       this.dc.addEventListener("open", () => {
-         console.log("Data channel opened");
-         this.onConnectionChange(true);
+      this.dc.addEventListener("open", () => {
+        console.log("Data channel opened");
+        this.onConnectionChange(true);
+        this.updateDiagnostics();
 
-         // Trigger an initial voice greeting as soon as the channel is ready.
-         // This provides immediate feedback that the connection is working.
-         if (!this.hasSentGreeting && this.dc?.readyState === 'open') {
-           this.hasSentGreeting = true;
-           console.log('👋 Triggering initial AI voice greeting...');
-           this.dc.send(
-             JSON.stringify({
-               type: 'response.create',
-               response: {
-                 modalities: ['audio', 'text'],
-                 instructions: "Start with a quick 1-sentence greeting (Harris), then say: 'I can hear you — what are you looking for today?'",
-               },
-             })
-           );
-         }
+        // Trigger an initial voice greeting as soon as the channel is ready.
+        // This provides immediate feedback that the connection is working.
+        if (!this.hasSentGreeting && this.dc?.readyState === 'open') {
+          this.hasSentGreeting = true;
+          console.log('👋 Triggering initial AI voice greeting...');
+          this.dc.send(
+            JSON.stringify({
+              type: 'response.create',
+              response: {
+                modalities: ['audio', 'text'],
+                instructions: "Greet the user warmly as Harris (1 short sentence). Say something like 'Hey there, I'm Harris — what can I help you with today?'",
+              },
+            })
+          );
+        }
 
-         // If we still haven't received a remote track shortly after connecting,
-         // retry the greeting once (some Mac/Safari setups are finicky).
-         setTimeout(() => {
-           if (!this.hasReceivedRemoteTrack && this.dc?.readyState === 'open') {
-             console.log('🔁 No remote track yet — retrying greeting + nudging audio playback...');
-             try {
-               this.audioEl.play().catch(() => undefined);
-             } catch {
-               // ignore
-             }
-             this.dc.send(
-               JSON.stringify({
-                 type: 'response.create',
-                 response: {
-                   modalities: ['audio', 'text'],
-                   instructions: 'Give the user a short voice greeting now (1 sentence).',
-                 },
-               })
-             );
-           }
-         }, 2500);
-       });
+        // Start audio watchdog - if no audio received after 5s, notify user
+        this.watchdogTimeout = setTimeout(() => {
+          if (this.inboundAudioBytes === 0 && !this.audioIsPlaying) {
+            console.warn('⚠️ Watchdog: No audio received after 5s');
+            this.onAudioIssue?.();
+          }
+        }, 5000);
+      });
       
       this.dc.addEventListener("close", () => {
         console.log("Data channel closed");
         this.onConnectionChange(false);
+        this.updateDiagnostics();
       });
       
       this.dc.addEventListener("message", (e) => {
@@ -515,6 +605,7 @@ export class RealtimeVoiceChat {
 
         var answerSdp = await sdpResponse.text();
         console.log('SDP exchange successful');
+        this.updateDiagnostics();
       } catch (err: any) {
         clearTimeout(timeoutId);
         if (err.name === 'AbortError') {
@@ -667,13 +758,47 @@ export class RealtimeVoiceChat {
     this.dc.send(JSON.stringify(contextMessage));
   }
 
+  /**
+   * Retry audio playback - call this from a user gesture if audio didn't start
+   */
+  async retryAudioPlayback() {
+    console.log('🔁 Retrying audio playback...');
+    
+    // Re-unlock audio context
+    if (this.audioContext && this.audioContext.state === 'suspended') {
+      await this.audioContext.resume();
+      console.log('AudioContext resumed');
+    }
+    
+    // Retry audio element play
+    try {
+      await this.audioEl.play();
+      console.log('Audio element play succeeded on retry');
+      this.audioIsPlaying = true;
+      this.lastPlayError = null;
+      this.updateDiagnostics();
+    } catch (e) {
+      console.error('Audio element play failed on retry:', e);
+    }
+  }
+
   disconnect() {
     console.log('Disconnecting voice chat...');
+    
+    // Clear watchdog
+    if (this.watchdogTimeout) {
+      clearTimeout(this.watchdogTimeout);
+      this.watchdogTimeout = null;
+    }
+    
     this.recorder?.stop();
     this.audioQueue?.clear();
+    this.webAudioSource?.disconnect();
+    this.webAudioSource = null;
     this.dc?.close();
     this.pc?.close();
-    this.audioContext?.close();
+    // Don't close the shared audioContext - it can be reused
+    // this.audioContext?.close();
     // Stop all tracks on the media stream
     if (this.mediaStream) {
       this.mediaStream.getTracks().forEach(track => track.stop());
@@ -684,6 +809,14 @@ export class RealtimeVoiceChat {
     if (this.audioEl.parentNode) {
       this.audioEl.parentNode.removeChild(this.audioEl);
     }
+    
+    // Reset state
+    this.hasReceivedRemoteTrack = false;
+    this.hasSentGreeting = false;
+    this.audioIsPlaying = false;
+    this.inboundAudioBytes = 0;
+    this.lastPlayError = null;
+    
     this.onConnectionChange(false);
   }
 }
