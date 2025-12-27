@@ -2420,6 +2420,65 @@ export type Database = {
         }
         Relationships: []
       }
+      voice_sessions: {
+        Row: {
+          context: Json | null
+          conversation_id: string | null
+          created_at: string
+          duration_seconds: number | null
+          end_reason: string | null
+          ended_at: string | null
+          id: string
+          messages_exchanged: number | null
+          motor_context: Json | null
+          session_id: string
+          started_at: string
+          summary: string | null
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          context?: Json | null
+          conversation_id?: string | null
+          created_at?: string
+          duration_seconds?: number | null
+          end_reason?: string | null
+          ended_at?: string | null
+          id?: string
+          messages_exchanged?: number | null
+          motor_context?: Json | null
+          session_id: string
+          started_at?: string
+          summary?: string | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          context?: Json | null
+          conversation_id?: string | null
+          created_at?: string
+          duration_seconds?: number | null
+          end_reason?: string | null
+          ended_at?: string | null
+          id?: string
+          messages_exchanged?: number | null
+          motor_context?: Json | null
+          session_id?: string
+          started_at?: string
+          summary?: string | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "voice_sessions_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "chat_conversations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       warranty_pricing: {
         Row: {
           created_at: string
