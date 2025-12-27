@@ -260,6 +260,7 @@ export async function unlockAudioOutput(): Promise<AudioContext> {
 export interface VoiceDiagnostics {
   micPermission: boolean;
   tokenReceived: boolean;
+  sessionCreatedReceived: boolean;
   sdpExchanged: boolean;
   webrtcState: string;
   dataChannelOpen: boolean;
@@ -283,6 +284,7 @@ export class RealtimeVoiceChat {
   // Diagnostics / UX
   private hasReceivedRemoteTrack = false;
   private hasSentGreeting = false;
+  private sessionCreatedReceived = false;
   private audioIsPlaying = false;
   private inboundAudioBytes = 0;
   private lastPlayError: string | null = null;
@@ -312,6 +314,7 @@ export class RealtimeVoiceChat {
     return {
       micPermission: !!this.mediaStream,
       tokenReceived: this.tokenReceived,
+      sessionCreatedReceived: this.sessionCreatedReceived,
       sdpExchanged: !!this.pc?.remoteDescription,
       webrtcState: this.pc?.connectionState || 'none',
       dataChannelOpen: this.dc?.readyState === 'open',
@@ -532,40 +535,16 @@ export class RealtimeVoiceChat {
         this.onConnectionChange(true);
         this.updateDiagnostics();
 
-        // Trigger an initial voice greeting as soon as the channel is ready.
-        // This provides immediate feedback that the connection is working.
-        if (!this.hasSentGreeting && this.dc?.readyState === 'open') {
-          this.hasSentGreeting = true;
-          console.log('👋 Triggering initial AI voice greeting...');
-          this.dc.send(
-            JSON.stringify({
-              type: 'response.create',
-              response: {
-                modalities: ['audio', 'text'],
-                instructions:
-                  "Greet the user warmly as Harris (1 short sentence). Say something like 'Hey there, I'm Harris — what can I help you with today?'",
-              },
-            })
-          );
+        // DON'T send greeting here - wait for session.created event in handleEvent
+        // This ensures the session is fully established before we try to trigger a response
 
-          // Extra diagnostics check: if we never get a remote track soon, surface it clearly.
-          setTimeout(() => {
-            const d = this.getDiagnostics();
-            console.log('🧪 Post-greeting diagnostics:', d);
-            if (!d.remoteTrackReceived && d.inboundAudioBytes === 0) {
-              console.warn('⚠️ No remote audio track/bytes after greeting request');
-              this.onAudioIssue?.();
-            }
-          }, 3000);
-        }
-
-        // Start audio watchdog - if no audio received after 5s, notify user
+        // Start audio watchdog - if no audio received after 8s, notify user
         this.watchdogTimeout = setTimeout(() => {
           if (this.inboundAudioBytes === 0 && !this.audioIsPlaying) {
-            console.warn('⚠️ Watchdog: No audio received after 5s');
+            console.warn('⚠️ Watchdog: No audio received after 8s');
             this.onAudioIssue?.();
           }
-        }, 5000);
+        }, 8000);
       });
       
       this.dc.addEventListener("close", () => {
@@ -708,6 +687,75 @@ export class RealtimeVoiceChat {
     console.log("Received event:", event.type);
     
     switch (event.type) {
+      case 'session.created':
+        console.log('✅ Session created - now configuring and sending greeting');
+        this.sessionCreatedReceived = true;
+        this.updateDiagnostics();
+        
+        // Send session.update with explicit audio configuration
+        if (this.dc?.readyState === 'open') {
+          const sessionUpdate = {
+            type: 'session.update',
+            session: {
+              modalities: ['text', 'audio'],
+              input_audio_format: 'pcm16',
+              output_audio_format: 'pcm16',
+              input_audio_transcription: {
+                model: 'whisper-1'
+              },
+              turn_detection: {
+                type: 'server_vad',
+                threshold: 0.5,
+                prefix_padding_ms: 300,
+                silence_duration_ms: 1000
+              }
+            }
+          };
+          console.log('📤 Sending session.update with audio config');
+          this.dc.send(JSON.stringify(sessionUpdate));
+          
+          // Now send the initial greeting
+          if (!this.hasSentGreeting) {
+            this.hasSentGreeting = true;
+            console.log('👋 Triggering initial AI voice greeting...');
+            
+            // Send a conversation item first, then request response
+            this.dc.send(JSON.stringify({
+              type: 'conversation.item.create',
+              item: {
+                type: 'message',
+                role: 'user',
+                content: [{
+                  type: 'input_text',
+                  text: '[System: User just connected to voice chat. Greet them warmly as Harris in 1 short sentence.]'
+                }]
+              }
+            }));
+            
+            this.dc.send(JSON.stringify({
+              type: 'response.create',
+              response: {
+                modalities: ['audio', 'text']
+              }
+            }));
+
+            // Extra diagnostics check after greeting
+            setTimeout(() => {
+              const d = this.getDiagnostics();
+              console.log('🧪 Post-greeting diagnostics:', d);
+              if (!d.remoteTrackReceived && d.inboundAudioBytes === 0) {
+                console.warn('⚠️ No remote audio track/bytes after greeting request');
+                this.onAudioIssue?.();
+              }
+            }, 3000);
+          }
+        }
+        break;
+        
+      case 'session.updated':
+        console.log('✅ Session updated successfully');
+        break;
+        
       case 'response.audio.delta':
         // In WebRTC mode, audio comes through ontrack (RTCPeerConnection), NOT here
         // This event is only sent in WebSocket mode
@@ -852,6 +900,7 @@ export class RealtimeVoiceChat {
     // Reset state
     this.hasReceivedRemoteTrack = false;
     this.hasSentGreeting = false;
+    this.sessionCreatedReceived = false;
     this.audioIsPlaying = false;
     this.inboundAudioBytes = 0;
     this.lastPlayError = null;
