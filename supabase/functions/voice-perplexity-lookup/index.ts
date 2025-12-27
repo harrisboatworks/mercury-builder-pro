@@ -114,19 +114,16 @@ serve(async (req) => {
         messages: [
           {
             role: 'system',
-            content: `You are a Mercury Marine technical expert. Provide concise, accurate answers optimized for voice responses.
-Keep answers under 100 words unless technical detail requires more.
-Always cite official sources when possible (mercurymarine.com, owner's manuals).
-For part numbers, always verify against Mercury parts catalogs.
-For troubleshooting, always recommend professional service for repairs.
-If you're not 100% certain, say so - it's better to recommend confirming with a dealer.`
+            content: `You are a Mercury Marine expert. Give short, direct answers for voice. Under 50 words. Include part numbers when asked. If unsure, say so.`
           },
           {
             role: 'user',
             content: prompt
           }
         ],
-        search_domain_filter: ['mercurymarine.com', 'mercury.com', 'boats.com'],
+        max_tokens: 150,
+        temperature: 0.1,
+        search_domain_filter: ['mercurymarine.com'],
         search_recency_filter: 'year'
       }),
     });
