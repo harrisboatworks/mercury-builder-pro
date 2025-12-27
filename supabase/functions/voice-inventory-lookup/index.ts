@@ -6,6 +6,106 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
+// Parse motor configuration from model display name
+function parseMotorConfig(modelDisplay: string) {
+  const code = (modelDisplay || '')
+    .replace(/FourStroke|Verado|Pro\s*XS|SeaPro|ProKicker|EFI|Sail\s*Power|Command\s*Thrust/gi, '')
+    .trim()
+    .toUpperCase();
+  
+  // Extract HP
+  const hpMatch = code.match(/^([\d.]+)/);
+  const hp = hpMatch ? parseFloat(hpMatch[1]) : null;
+  
+  // Start type: M = Manual, E = Electric (motors 40HP+ default to electric)
+  const startMatch = code.match(/^[\d.]+\s*([EM])/);
+  let startType: 'electric' | 'manual' | 'unknown' = 'unknown';
+  if (startMatch) {
+    startType = startMatch[1] === 'E' ? 'electric' : 'manual';
+  } else if (hp && hp >= 40) {
+    startType = 'electric';
+  }
+  
+  // Shaft length from code patterns
+  let shaftLength = 'standard';
+  if (code.includes('XXL')) {
+    shaftLength = 'extra-extra-long (30")';
+  } else if (code.includes('XL')) {
+    shaftLength = 'extra-long (25")';
+  } else if (code.match(/[\d.]+\s*[EM]?L/)) {
+    shaftLength = 'long (20")';
+  } else if (code.match(/[\d.]+\s*[EM]?[SH]/) && !code.includes('XL')) {
+    // MH, EH patterns = short shaft with tiller
+    shaftLength = 'short (15")';
+  }
+  
+  // Control type: H suffix = tiller, otherwise remote
+  const isTiller = /[\d.]+\s*[EM]?[LXSM]*H(?!PT)/i.test(code) || 
+                   code.includes('MH') || 
+                   code.includes('EH') ||
+                   code.includes('MLH') ||
+                   code.includes('ELH');
+  const controlType = isTiller ? 'tiller' : 'remote';
+  
+  return {
+    startType,
+    shaftLength,
+    controlType,
+    hasPowerTrim: code.includes('PT') || code.includes('ELPT') || code.includes('EXLPT'),
+    isCommandThrust: modelDisplay.toLowerCase().includes('command thrust') || code.includes('CT'),
+    isProKicker: modelDisplay.toLowerCase().includes('prokicker'),
+  };
+}
+
+// Check if motor matches configuration filters
+function matchesConfigFilters(config: ReturnType<typeof parseMotorConfig>, params: Record<string, unknown>): boolean {
+  if (params?.start_type) {
+    const wantedStart = String(params.start_type).toLowerCase();
+    if (wantedStart === 'electric' && config.startType !== 'electric') return false;
+    if (wantedStart === 'manual' && config.startType !== 'manual') return false;
+  }
+  
+  if (params?.shaft_length) {
+    const wantedShaft = String(params.shaft_length).toLowerCase();
+    if (wantedShaft === 'short' && !config.shaftLength.includes('short')) return false;
+    if (wantedShaft === 'long' && !config.shaftLength.includes('long (20')) return false;
+    if (wantedShaft === 'extra-long' && !config.shaftLength.includes('extra-long')) return false;
+  }
+  
+  if (params?.control_type) {
+    const wantedControl = String(params.control_type).toLowerCase();
+    if (wantedControl === 'tiller' && config.controlType !== 'tiller') return false;
+    if (wantedControl === 'remote' && config.controlType !== 'remote') return false;
+  }
+  
+  if (params?.has_power_trim === true && !config.hasPowerTrim) return false;
+  
+  return true;
+}
+
+// Build motor object with parsed configuration
+function buildMotorResponse(m: Record<string, unknown>) {
+  const modelDisplay = (m.model_display || m.model) as string;
+  const config = parseMotorConfig(modelDisplay);
+  
+  return {
+    model: modelDisplay,
+    horsepower: m.horsepower,
+    family: m.family,
+    inStock: m.in_stock && ((m.stock_quantity as number) || 0) > 0,
+    quantity: m.stock_quantity || 0,
+    price: m.msrp || m.dealer_price,
+    availability: m.availability,
+    // Decoded configuration
+    startType: config.startType,
+    shaftLength: config.shaftLength,
+    controlType: config.controlType,
+    hasPowerTrim: config.hasPowerTrim,
+    isCommandThrust: config.isCommandThrust,
+    isProKicker: config.isProKicker,
+  };
+}
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -45,28 +145,37 @@ serve(async (req) => {
           query = query.lte("horsepower", params.max_hp);
         }
 
-        const { data, error } = await query.limit(10);
+        // Fetch more results to allow for config filtering
+        const { data, error } = await query.limit(50);
         
         if (error) throw error;
 
         if (!data || data.length === 0) {
           result = { found: false, message: "No motors found matching your criteria." };
         } else {
-          const motors = data.map(m => ({
-            model: m.model_display || m.model,
-            horsepower: m.horsepower,
-            family: m.family,
-            inStock: m.in_stock && (m.stock_quantity || 0) > 0,
-            quantity: m.stock_quantity || 0,
-            price: m.msrp || m.dealer_price,
-            availability: m.availability,
-          }));
-          result = { 
-            found: true, 
-            count: motors.length,
-            motors,
-            summary: `Found ${motors.length} motor${motors.length > 1 ? 's' : ''} matching your criteria.`
-          };
+          // Build motor objects with config and apply config filters
+          let motors = data
+            .map(m => buildMotorResponse(m))
+            .filter(motor => {
+              const config = parseMotorConfig(motor.model);
+              return matchesConfigFilters(config, params);
+            })
+            .slice(0, 10);
+
+          if (motors.length === 0) {
+            result = { 
+              found: false, 
+              message: "No motors found matching those specific configuration requirements.",
+              hint: "Try relaxing the shaft length or start type requirements."
+            };
+          } else {
+            result = { 
+              found: true, 
+              count: motors.length,
+              motors,
+              summary: `Found ${motors.length} motor${motors.length > 1 ? 's' : ''} matching your criteria.`
+            };
+          }
         }
         break;
       }
@@ -85,6 +194,7 @@ serve(async (req) => {
           result = { found: false, message: `No motor found matching "${params?.model}".` };
         } else {
           const motor = data[0];
+          const config = parseMotorConfig(motor.model_display || motor.model);
           result = {
             found: true,
             model: motor.model_display || motor.model,
@@ -92,6 +202,7 @@ serve(async (req) => {
             msrp: motor.msrp,
             salePrice: motor.sale_price,
             inStock: motor.in_stock && (motor.stock_quantity || 0) > 0,
+            ...config,
           };
         }
         break;
@@ -111,6 +222,7 @@ serve(async (req) => {
           result = { found: false, message: `No motor found matching "${params?.model}".` };
         } else {
           const motor = data[0];
+          const config = parseMotorConfig(motor.model_display || motor.model);
           const inStock = motor.in_stock && (motor.stock_quantity || 0) > 0;
           result = {
             found: true,
@@ -119,6 +231,7 @@ serve(async (req) => {
             inStock,
             quantity: motor.stock_quantity || 0,
             availability: motor.availability || (inStock ? "In Stock" : "Out of Stock"),
+            ...config,
           };
         }
         break;
@@ -132,26 +245,35 @@ serve(async (req) => {
           .eq("in_stock", true)
           .gt("stock_quantity", 0)
           .order("horsepower", { ascending: true })
-          .limit(20);
+          .limit(50);
 
         if (error) throw error;
 
         if (!data || data.length === 0) {
           result = { found: false, message: "No motors currently in stock." };
         } else {
-          const motors = data.map(m => ({
-            model: m.model_display || m.model,
-            horsepower: m.horsepower,
-            family: m.family,
-            quantity: m.stock_quantity,
-            price: m.msrp,
-          }));
-          result = {
-            found: true,
-            count: motors.length,
-            motors,
-            summary: `${motors.length} motor${motors.length > 1 ? 's' : ''} currently in stock.`
-          };
+          // Apply config filters if provided
+          let motors = data
+            .map(m => buildMotorResponse(m))
+            .filter(motor => {
+              const config = parseMotorConfig(motor.model);
+              return matchesConfigFilters(config, params);
+            })
+            .slice(0, 20);
+
+          if (motors.length === 0) {
+            result = { 
+              found: false, 
+              message: "No in-stock motors match those configuration requirements." 
+            };
+          } else {
+            result = {
+              found: true,
+              count: motors.length,
+              motors,
+              summary: `${motors.length} motor${motors.length > 1 ? 's' : ''} currently in stock.`
+            };
+          }
         }
         break;
       }
@@ -167,26 +289,35 @@ serve(async (req) => {
           .gte("horsepower", minHp)
           .lte("horsepower", maxHp)
           .order("horsepower", { ascending: true })
-          .limit(15);
+          .limit(50);
 
         if (error) throw error;
 
         if (!data || data.length === 0) {
           result = { found: false, message: `No motors found between ${minHp} and ${maxHp} HP.` };
         } else {
-          const motors = data.map(m => ({
-            model: m.model_display || m.model,
-            horsepower: m.horsepower,
-            family: m.family,
-            inStock: m.in_stock && (m.stock_quantity || 0) > 0,
-            price: m.msrp,
-          }));
-          result = {
-            found: true,
-            count: motors.length,
-            motors,
-            summary: `Found ${motors.length} motor${motors.length > 1 ? 's' : ''} between ${minHp} and ${maxHp} HP.`
-          };
+          // Apply config filters if provided
+          let motors = data
+            .map(m => buildMotorResponse(m))
+            .filter(motor => {
+              const config = parseMotorConfig(motor.model);
+              return matchesConfigFilters(config, params);
+            })
+            .slice(0, 15);
+
+          if (motors.length === 0) {
+            result = { 
+              found: false, 
+              message: `No motors between ${minHp} and ${maxHp} HP match those configuration requirements.` 
+            };
+          } else {
+            result = {
+              found: true,
+              count: motors.length,
+              motors,
+              summary: `Found ${motors.length} motor${motors.length > 1 ? 's' : ''} between ${minHp} and ${maxHp} HP.`
+            };
+          }
         }
         break;
       }
