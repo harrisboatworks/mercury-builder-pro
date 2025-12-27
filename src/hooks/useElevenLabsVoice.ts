@@ -95,54 +95,6 @@ export interface UseElevenLabsVoiceOptions {
   quoteContext?: QuoteContext | null;
 }
 
-// Instant audio feedback phrases - short acknowledgements while tool runs
-const SEARCH_ACKNOWLEDGEMENTS = [
-  "One sec...",
-  "Let me check...",
-  "Checking on that...",
-  "Just a moment...",
-];
-
-// Play instant audio feedback using Web Speech API (best-effort, no network)
-// This is a backup acknowledgement while the actual tool call runs.
-let lastAckTime = 0;
-function playInstantAcknowledgement(): void {
-  const now = Date.now();
-  if (now - lastAckTime < 3000) return; // Max once per 3 seconds
-  lastAckTime = now;
-
-  if (!window.speechSynthesis) return;
-
-  const phrase = SEARCH_ACKNOWLEDGEMENTS[Math.floor(Math.random() * SEARCH_ACKNOWLEDGEMENTS.length)];
-
-  try {
-    // Cancel any queued utterances so this one plays immediately.
-    window.speechSynthesis.cancel();
-
-    const utterance = new SpeechSynthesisUtterance(phrase);
-    utterance.rate = 1.1;
-    utterance.pitch = 1.0;
-    utterance.volume = 0.9;
-
-    // Some browsers populate voices async; pick a voice if available but don't block.
-    const voices = window.speechSynthesis.getVoices();
-    const preferred = voices.find(
-      (v) => v.lang?.toLowerCase().startsWith('en') && /google|samantha|alex/i.test(v.name)
-    );
-    if (preferred) utterance.voice = preferred;
-
-    // Defer one tick to improve reliability after cancel().
-    setTimeout(() => {
-      try {
-        window.speechSynthesis.speak(utterance);
-      } catch {
-        // ignore
-      }
-    }, 0);
-  } catch {
-    // ignore
-  }
-}
 
 // Client tool handler for inventory lookups
 async function handleInventoryLookup(action: string, params: Record<string, unknown>): Promise<string> {
@@ -971,10 +923,6 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           toolStartAt: startTime,
         },
       }));
-      
-      // Play instant audio acknowledgement (only if agent hasn't spoken yet)
-      // This fires synchronously while the actual tool call runs
-      playInstantAcknowledgement();
       
       try {
         const result = await handler(...args);
