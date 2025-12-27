@@ -8,7 +8,13 @@ export type VoiceNavigationEvent =
   | { type: 'navigate'; payload: { path: string } }
   | { type: 'show_motor'; payload: { motorId: string } }
   | { type: 'add_motor_to_quote'; payload: { motor: MotorForQuote } }
-  | { type: 'set_purchase_path'; payload: { path: 'loose' | 'installed' } };
+  | { type: 'set_purchase_path'; payload: { path: 'loose' | 'installed' } }
+  | { type: 'read_quote_summary'; payload: Record<string, never> }
+  | { type: 'update_boat_info'; payload: { length?: number; type?: string; make?: string; currentHp?: number } }
+  | { type: 'navigate_quote_step'; payload: { step: 'motor' | 'path' | 'boat' | 'trade-in' | 'summary' | 'schedule' } }
+  | { type: 'apply_trade_in'; payload: { brand: string; year: number; horsepower: number; condition?: string } }
+  | { type: 'compare_motors'; payload: { motorIds: string[] } }
+  | { type: 'send_motor_photos'; payload: { phone: string; motorModel: string } };
 
 // Motor data structure for adding to quote
 export interface MotorForQuote {

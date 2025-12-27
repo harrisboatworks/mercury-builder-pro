@@ -2339,6 +2339,87 @@ export type Database = {
         }
         Relationships: []
       }
+      voice_callbacks: {
+        Row: {
+          callback_status: string | null
+          completed_at: string | null
+          completed_by: string | null
+          created_at: string | null
+          customer_name: string | null
+          customer_phone: string
+          id: string
+          motor_context: Json | null
+          motor_interest: string | null
+          notes: string | null
+          preferred_time: string | null
+          scheduled_for: string | null
+        }
+        Insert: {
+          callback_status?: string | null
+          completed_at?: string | null
+          completed_by?: string | null
+          created_at?: string | null
+          customer_name?: string | null
+          customer_phone: string
+          id?: string
+          motor_context?: Json | null
+          motor_interest?: string | null
+          notes?: string | null
+          preferred_time?: string | null
+          scheduled_for?: string | null
+        }
+        Update: {
+          callback_status?: string | null
+          completed_at?: string | null
+          completed_by?: string | null
+          created_at?: string | null
+          customer_name?: string | null
+          customer_phone?: string
+          id?: string
+          motor_context?: Json | null
+          motor_interest?: string | null
+          notes?: string | null
+          preferred_time?: string | null
+          scheduled_for?: string | null
+        }
+        Relationships: []
+      }
+      voice_reminders: {
+        Row: {
+          created_at: string | null
+          customer_name: string | null
+          customer_phone: string
+          id: string
+          remind_at: string
+          reminder_content: Json | null
+          reminder_type: string | null
+          sent: boolean | null
+          sent_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          customer_name?: string | null
+          customer_phone: string
+          id?: string
+          remind_at: string
+          reminder_content?: Json | null
+          reminder_type?: string | null
+          sent?: boolean | null
+          sent_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          customer_name?: string | null
+          customer_phone?: string
+          id?: string
+          remind_at?: string
+          reminder_content?: Json | null
+          reminder_type?: string | null
+          sent?: boolean | null
+          sent_at?: string | null
+        }
+        Relationships: []
+      }
       warranty_pricing: {
         Row: {
           created_at: string
