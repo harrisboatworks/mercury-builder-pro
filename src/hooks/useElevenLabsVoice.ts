@@ -1265,48 +1265,55 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         return;
       }
 
-      // Get conversation token from edge function with previous session context
+      // PARALLELIZED: Load previous context AND get token at the same time
       console.log('Fetching ElevenLabs conversation token...');
       let tokenData: { token: string } | null = null;
-      
-      // Load previous session context for returning customers
-      const previousContext = await voiceSession.loadPreviousSessionContext();
-      if (previousContext) {
-        console.log('[Voice] Returning customer detected:', previousContext.totalPreviousChats, 'previous chats');
-      }
+      let previousContext: any = null;
       
       try {
-        const { data, error } = await supabase.functions.invoke('elevenlabs-conversation-token', {
-          body: { 
-            motorContext: options.motorContext,
-            currentPage: options.currentPage,
-            quoteContext: options.quoteContext,
-            previousSessionContext: previousContext, // Pass to edge function for agent prompt
-          }
-        });
+        // Run both in parallel for faster startup
+        const [prevContextResult, tokenResult] = await Promise.all([
+          voiceSession.loadPreviousSessionContext().catch(err => {
+            console.warn('[Voice] Failed to load previous context:', err);
+            return null;
+          }),
+          supabase.functions.invoke('elevenlabs-conversation-token', {
+            body: { 
+              motorContext: options.motorContext,
+              currentPage: options.currentPage,
+              quoteContext: options.quoteContext,
+              // Note: previousSessionContext added after we get it
+            }
+          })
+        ]);
         
-        if (error) {
-          console.error('Token fetch error:', error);
+        previousContext = prevContextResult;
+        if (previousContext?.totalPreviousChats > 0) {
+          console.log('[Voice] Returning customer:', previousContext.totalPreviousChats, 'previous chats');
+        }
+        
+        if (tokenResult.error) {
+          console.error('Token fetch error:', tokenResult.error);
           throw new Error('Unable to get voice session. Please check your connection.');
         }
         
-        if (!data?.token) {
+        if (!tokenResult.data?.token) {
           throw new Error('Voice service unavailable. Please try again.');
         }
         
-        tokenData = data;
+        tokenData = tokenResult.data;
         console.log('Token received successfully');
       } catch (tokenError) {
         console.error('Token fetch failed:', tokenError);
         throw new Error(tokenError instanceof Error ? tokenError.message : 'Failed to connect to voice service');
       }
 
-      // Start voice session in database for persistence
-      await voiceSession.startSession(
+      // Start voice session in database (fire-and-forget, don't block)
+      voiceSession.startSession(
         options.motorContext,
         options.currentPage,
-        undefined // conversationId - could link to chat if needed
-      );
+        undefined
+      ).catch(err => console.warn('[Voice] Session start failed:', err));
 
       // Retry WebRTC connection with exponential backoff
       const MAX_RETRIES = 3;

@@ -13,38 +13,18 @@ const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Fetch current motor inventory
-async function getCurrentMotorInventory() {
-  try {
-    const { data: motors, error } = await supabase
-      .from('motor_models')
-      .select('model, model_display, model_number, horsepower, dealer_price, msrp, availability, motor_type, year, in_stock')
-      .order('horsepower', { ascending: true })
-      .limit(100);
-    
-    if (error) {
-      console.error('Error fetching motors:', error);
-      return [];
-    }
-    return motors || [];
-  } catch (error) {
-    console.error('Error in getCurrentMotorInventory:', error);
-    return [];
-  }
-}
-
-// Fetch active promotions
+// Fetch active promotions only - no full inventory (agent uses tools for real-time lookups)
 async function getActivePromotions() {
   try {
     const today = new Date().toISOString().split('T')[0];
     const { data: promotions, error } = await supabase
       .from('promotions')
-      .select('name, discount_percentage, discount_fixed_amount, bonus_title, bonus_description, end_date')
+      .select('name, discount_percentage, discount_fixed_amount, bonus_title, end_date')
       .eq('is_active', true)
       .or(`start_date.is.null,start_date.lte.${today}`)
       .or(`end_date.is.null,end_date.gte.${today}`)
       .order('priority', { ascending: false })
-      .limit(5);
+      .limit(3);
     
     if (error) {
       console.error('Error fetching promotions:', error);
@@ -57,84 +37,27 @@ async function getActivePromotions() {
   }
 }
 
-// Format motor data for the prompt
-function formatMotorData(motors: any[]) {
-  if (!motors.length) return "\n[No inventory data available]\n";
-  
-  let formatted = "\n## CURRENT INVENTORY (REAL-TIME DATA):\n";
-  formatted += "You have access to live inventory and pricing. Use these exact prices when customers ask.\n\n";
-  
-  motors.forEach(motor => {
-    const price = motor.dealer_price || motor.msrp;
-    const priceStr = price ? `$${Math.round(price).toLocaleString()} CAD` : 'Call for pricing';
-    const stockStr = motor.in_stock ? 'IN STOCK' : (motor.availability || 'Available');
-    const displayName = motor.model_display || motor.model;
-    formatted += `- ${displayName} - ${motor.horsepower}HP - ${priceStr} - ${stockStr}\n`;
-  });
-  
-  formatted += `
-## MODEL SUFFIX DECODER (CRITICAL - Use this to explain models to customers):
-
-**Start Type:**
-- M = Manual pull-start
-- E = Electric start (with manual backup)
-
-**Shaft Length (Transom Height):**
-- H = Short shaft (15" transom - rare, mostly dinghies)
-- L = Long shaft (20" transom - most common for aluminum boats)
-- XL = Extra-long shaft (25" transom - fiberglass boats, larger vessels)
-- XXL = Extra-extra-long (30" transom - large offshore boats)
-
-**Steering/Control Type:**
-- H (at end) = Tiller handle (operator steers from motor)
-- PT = Power Trim (hydraulic trim/tilt)
-- No suffix = Remote steering (console-mounted controls)
-
-**Common Combinations Explained:**
-- MH = Manual start, tiller Handle (simplest, budget-friendly)
-- ELH = Electric start, Long shaft, tiller Handle (popular for fishing boats)
-- ELPT = Electric start, Long shaft, Power Trim (remote steering)
-- EXLPT = Electric start, Extra-Long shaft, Power Trim
-
-**Special Designations:**
-- CT = Command Thrust (high-thrust lower unit for heavy boats/pontoons)
-- DTS = Digital Throttle & Shift (fly-by-wire controls)
-- CMS = Command Module System
-- JPO = Jet Pump Outboard
-
-**Example Conversations:**
-- Customer: "What's the difference between 9.9MH and 9.9ELH?"
-  You: "The MH is manual pull-start with a tiller. The ELH adds electric start - just turn a key. Both are tiller-steered for 20-inch transoms. The electric start is about $800 more but worth it if you're starting the motor a lot."
-
-- Customer: "I have a pontoon, what do I need?"
-  You: "For pontoons I'd look at the Command Thrust models - they have CT in the name. The bigger prop pushes more water at low speeds which is perfect for heavy boats like pontoons."
+// Model suffix decoder - kept compact for quick reference
+const MODEL_SUFFIX_GUIDE = `
+## MODEL SUFFIX DECODER:
+- M = Manual pull-start, E = Electric start
+- H = Short shaft (15"), L = Long (20"), XL = Extra-long (25"), XXL = 30"
+- PT = Power Trim, CT = Command Thrust (for heavy boats/pontoons)
+- Example: 9.9ELH = 9.9HP Electric start, Long shaft, tiller Handle
 `;
-  
-  return formatted;
-}
 
-// Format promotion data for the prompt
+// Format promotion data - kept minimal
 function formatPromotionData(promotions: any[]) {
   if (!promotions.length) return "";
   
   let formatted = "\n## CURRENT PROMOTIONS:\n";
-  
   promotions.forEach(promo => {
-    formatted += `**${promo.name}**\n`;
-    if (promo.discount_percentage > 0) {
-      formatted += `- ${promo.discount_percentage}% off\n`;
-    }
-    if (promo.discount_fixed_amount > 0) {
-      formatted += `- $${promo.discount_fixed_amount} off\n`;
-    }
-    if (promo.bonus_title) {
-      formatted += `- Bonus: ${promo.bonus_title}\n`;
-    }
-    if (promo.end_date) {
-      formatted += `- Valid until: ${promo.end_date}\n`;
-    }
+    const discount = promo.discount_percentage > 0 ? `${promo.discount_percentage}% off` : 
+                     promo.discount_fixed_amount > 0 ? `$${promo.discount_fixed_amount} off` : '';
+    const bonus = promo.bonus_title ? ` + ${promo.bonus_title}` : '';
+    const endDate = promo.end_date ? ` (until ${promo.end_date})` : '';
+    formatted += `- ${promo.name}: ${discount}${bonus}${endDate}\n`;
   });
-  
   return formatted;
 }
 
@@ -230,89 +153,62 @@ function buildReturningCustomerPrompt(previousContext: any): string {
   return parts.join('\n');
 }
 
-// Build the dynamic system prompt with real inventory data
+// Build the dynamic system prompt - OPTIMIZED: no full inventory, uses tools instead
 async function buildSystemPrompt(
   motorContext?: { model: string; hp: number; price?: number } | null,
   currentPage?: string | null,
   quoteContext?: any,
   previousSessionContext?: any
 ) {
-  const [motors, promotions] = await Promise.all([
-    getCurrentMotorInventory(),
-    getActivePromotions()
-  ]);
-  
-  const motorData = formatMotorData(motors);
+  // Only fetch promotions - inventory is accessed via tools
+  const promotions = await getActivePromotions();
   const promotionData = formatPromotionData(promotions);
   
-  // Add specific motor context if provided
+  // Current motor context if viewing one
   let currentMotorContext = "";
   if (motorContext) {
     const priceInfo = motorContext.price ? `priced at $${motorContext.price.toLocaleString()} CAD` : '';
-    currentMotorContext = `\n## CURRENT CONTEXT:\nThe user is currently viewing the ${motorContext.model} (${motorContext.hp}HP) ${priceInfo}. Focus on this motor when answering questions unless they ask about something else.\n`;
+    currentMotorContext = `\n## CURRENT MOTOR: ${motorContext.model} (${motorContext.hp}HP) ${priceInfo}\n`;
   }
   
-  // Add page context as subtle background info
+  // Page context
   let pageContext = "";
   if (currentPage) {
     const pageDesc = getPageDescription(currentPage);
-    pageContext = `\n## PAGE CONTEXT (Background - don't proactively mention):\nThe customer is currently on ${pageDesc}. This is FYI only - let them lead the conversation. Don't say "I see you're on..." unless they ask where they are or need navigation help.\n`;
+    pageContext = `Customer is on ${pageDesc}. `;
   }
   
-  // Add quote/boat context
+  // Quote/boat context
   const quoteContextPrompt = buildQuoteContextPrompt(quoteContext);
   
-  // Add returning customer context
+  // Returning customer context
   const returningCustomerPrompt = buildReturningCustomerPrompt(previousSessionContext);
 
-  const systemPrompt = `You're Harris from Harris Boat Works — a friendly, knowledgeable Mercury Marine expert who sounds like a friend who happens to know everything about outboard motors. You work at an authorized Mercury Premier dealer in Ontario, Canada.
+  const systemPrompt = `You're Harris from Harris Boat Works — a friendly Mercury Marine expert in Ontario, Canada.
 
-## VOICE CONVERSATION RULES:
-1. Keep responses SHORT - 1-3 sentences max for voice
-2. Sound natural and conversational, like talking to a friend
-3. NEVER say "Great question!" or "Absolutely!" or other corporate phrases
-4. Match their energy - short question = short answer
-5. It's OK to not know something — just say so naturally
-6. Don't end every response with a question
+## VOICE RULES:
+- Keep responses SHORT: 1-3 sentences max
+- Sound natural, like a friend who knows motors
+- Never say "Great question!" or corporate phrases
+- Use your tools to check inventory/prices in real-time
 
-## NATURAL PHRASES TO USE:
-- "Yeah, that'd work great for..."
-- "Honestly, I'd go with..."
-- "Here's the deal..."
-- "For what you're describing, I'd look at..."
-- "That's a solid choice"
-
-## PRICING RULES (CRITICAL):
-- When asked about pricing, give the EXACT price from inventory if available
-- Always say "Canadian dollars" or "CAD" when mentioning prices
-- If price isn't in inventory, say "I'd need to check the current price on that one"
-- Guide to quote builder for exact quotes: "Want the exact breakdown? Check our quote builder"
-
-## Your Expertise:
-- Mercury outboard motors, features, and specifications
-- Helping customers find the right motor for their boat
-- Current inventory and promotions
-- Repower expertise (70% of benefit for 30% of cost)
-
+## INVENTORY ACCESS:
+You have tools to check motors, prices, and availability. Use them when customers ask about specific motors.
 ${currentMotorContext}
-${pageContext}
+${MODEL_SUFFIX_GUIDE}
+${promotionData}
 ${quoteContextPrompt}
 ${returningCustomerPrompt}
-${motorData}
-${promotionData}
 
 ## KEY KNOWLEDGE:
 - FourStroke: Fuel efficient, quiet, perfect for fishing/pontoons
 - Pro XS: Racing/tournament performance
-- SeaPro: Commercial/heavy duty
+- SeaPro: Commercial/heavy duty  
 - Verado: Premium supercharged performance
 
-## NO DELIVERY POLICY:
-We DO NOT deliver motors. All pickups must be in-person at Gores Landing with valid ID.
-If asked about delivery: "We don't do delivery - all pickups have to be in person with ID. It's an industry thing - too many scams. But we're easy to get to!"
-
-## LOCATION:
-Harris Boat Works, Gores Landing, Ontario, Canada. We serve Canadian customers with Canadian pricing.`;
+## POLICIES:
+${pageContext}- All prices in CAD. No delivery - in-person pickup only at Gores Landing, ON.
+- Guide customers to quote builder for exact pricing.`;
 
   return systemPrompt;
 }
