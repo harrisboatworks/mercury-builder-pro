@@ -19,52 +19,6 @@ function formatMs(ms: number | null): string {
   return `${(ms / 1000).toFixed(1)}s`;
 }
 
-// Phase pill component with live timer
-function PhasePill({
-  phase,
-  isActive,
-  elapsed,
-  duration,
-}: {
-  phase: VoicePhase;
-  isActive: boolean;
-  elapsed: number | null;
-  duration: number | null;
-}) {
-  const config = phaseConfig[phase];
-  const Icon = config.icon;
-
-  // Show elapsed for active phase, duration for completed phases
-  const timeDisplay = isActive ? elapsed : duration;
-
-  return (
-    <div
-      className={cn(
-        "inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium transition-all",
-        isActive
-          ? "bg-card border border-border shadow-sm"
-          : "opacity-60"
-      )}
-    >
-      <Icon
-        className={cn(
-          "h-3 w-3",
-          config.color,
-          isActive && "animate-pulse"
-        )}
-      />
-      <span className={cn(isActive ? config.color : "text-muted-foreground")}>
-        {config.label}
-      </span>
-      {timeDisplay !== null && (
-        <span className="text-muted-foreground tabular-nums">
-          {formatMs(timeDisplay)}
-        </span>
-      )}
-    </div>
-  );
-}
-
 export function VoiceStatusBanner({ className }: { className?: string }) {
   const voice = useVoiceSafe();
   const [now, setNow] = useState(performance.now());
@@ -156,9 +110,17 @@ export function VoiceStatusBanner({ className }: { className?: string }) {
           ? "Listening..."
           : null;
 
-  // Only show if we have an active turn or just connected
   const hasTurn = turnTiming.turnStart !== null;
-  const phases: VoicePhase[] = ['listening', 'thinking', 'searching', 'speaking'];
+
+  // Get current phase elapsed time
+  const currentElapsed = 
+    currentPhase === 'thinking' ? phaseElapsed.thinking :
+    currentPhase === 'searching' ? phaseElapsed.searching :
+    currentPhase === 'speaking' ? phaseElapsed.speaking :
+    null;
+
+  const config = phaseConfig[currentPhase];
+  const Icon = config.icon;
 
   return (
     <div
@@ -172,83 +134,30 @@ export function VoiceStatusBanner({ className }: { className?: string }) {
       aria-live="polite"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2">
-        <div className="flex items-center justify-between gap-4">
-          {/* Left: Status message */}
-          <div className="flex items-center gap-2 min-w-0">
-            <span
+        <div className="flex items-center justify-between">
+          {/* Single unified status: Icon + Label + Timer */}
+          <div className="flex items-center gap-2">
+            <Icon
               className={cn(
-                "inline-block h-2 w-2 rounded-full flex-shrink-0",
-                currentPhase === 'speaking' ? "bg-primary animate-pulse" :
-                currentPhase === 'searching' ? "bg-blue-500 animate-pulse" :
-                currentPhase === 'thinking' ? "bg-amber-500 animate-pulse" :
-                "bg-green-500"
+                "h-4 w-4",
+                config.color,
+                currentPhase !== 'idle' && "animate-pulse"
               )}
             />
-            <span className="text-sm text-foreground truncate">
-              {activeMessage || "Voice active"}
+            <span className={cn("text-sm font-medium", config.color)}>
+              {activeMessage || config.label}
             </span>
-          </div>
-
-          {/* Right: Phase timeline (show on larger screens or when turn active) */}
-          <div className="hidden sm:flex items-center gap-1">
-            {hasTurn ? (
-              <>
-                {phases.map((phase) => {
-                  // Only show phases that have started
-                  const hasStarted = 
-                    phase === 'listening' ? true :
-                    phase === 'thinking' ? turnTiming.transcriptAt !== null :
-                    phase === 'searching' ? turnTiming.toolStartAt !== null :
-                    phase === 'speaking' ? turnTiming.agentStartAt !== null :
-                    false;
-
-                  if (!hasStarted && phase !== currentPhase) return null;
-
-                  return (
-                    <PhasePill
-                      key={phase}
-                      phase={phase}
-                      isActive={currentPhase === phase}
-                      elapsed={phaseElapsed[phase]}
-                      duration={phaseElapsed[phase]}
-                    />
-                  );
-                })}
-
-                {/* Total time indicator */}
-                {totalTurnTime !== null && turnTiming.turnStart && (
-                  <div className="ml-2 pl-2 border-l border-border text-xs text-muted-foreground tabular-nums">
-                    Total: {formatMs(totalTurnTime)}
-                  </div>
-                )}
-              </>
-            ) : (
-              <PhasePill
-                phase="listening"
-                isActive={true}
-                elapsed={null}
-                duration={null}
-              />
+            {currentElapsed !== null && (
+              <span className="text-sm text-muted-foreground tabular-nums">
+                {formatMs(currentElapsed)}
+              </span>
             )}
           </div>
-        </div>
 
-        {/* Mobile: Show compact phase indicator */}
-        <div className="sm:hidden flex items-center gap-1 mt-1">
-          <PhasePill
-            phase={currentPhase}
-            isActive={true}
-            elapsed={
-              currentPhase === 'thinking' ? phaseElapsed.thinking :
-              currentPhase === 'searching' ? phaseElapsed.searching :
-              currentPhase === 'speaking' ? phaseElapsed.speaking :
-              null
-            }
-            duration={null}
-          />
+          {/* Total turn time (right side) */}
           {totalTurnTime !== null && hasTurn && (
-            <span className="text-xs text-muted-foreground tabular-nums ml-2">
-              Turn: {formatMs(totalTurnTime)}
+            <span className="text-xs text-muted-foreground tabular-nums">
+              Total: {formatMs(totalTurnTime)}
             </span>
           )}
         </div>
