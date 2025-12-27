@@ -522,34 +522,37 @@ serve(async (req) => {
       const messagesUrl = `${baseUrl}/messages?session_id=${encodeURIComponent(sessionId)}`;
 
       const encoder = new TextEncoder();
-      const { readable, writable } = new TransformStream();
-      const writer = writable.getWriter();
+      const stream = new ReadableStream<Uint8Array>({
+        start(controller) {
+          // Per MCP SSE spec: send endpoint event first
+          controller.enqueue(
+            encoder.encode(`event: endpoint\ndata: ${messagesUrl}\n\n`),
+          );
+          console.log(`[MCP] Sent endpoint event: ${messagesUrl}`);
 
-      // Per MCP SSE spec: send endpoint event first
-      await writer.write(encoder.encode(`event: endpoint\ndata: ${messagesUrl}\n\n`));
-      console.log(`[MCP] Sent endpoint event: ${messagesUrl}`);
+          // Keepalive pings (SSE comments)
+          const keepAlive = setInterval(() => {
+            try {
+              controller.enqueue(encoder.encode(`: ping\n\n`));
+            } catch {
+              // ignore
+            }
+          }, 15000);
 
-      // Keepalive pings (SSE comments)
-      const keepAlive = setInterval(async () => {
-        try {
-          await writer.write(encoder.encode(`: ping\n\n`));
-        } catch {
-          // ignore
-        }
-      }, 15000);
+          const abort = () => {
+            clearInterval(keepAlive);
+            try {
+              controller.close();
+            } catch {
+              // ignore
+            }
+          };
 
-      const abort = () => {
-        clearInterval(keepAlive);
-        try {
-          writer.close();
-        } catch {
-          // ignore
-        }
-      };
+          req.signal.addEventListener("abort", abort, { once: true });
+        },
+      });
 
-      req.signal.addEventListener("abort", abort, { once: true });
-
-      return new Response(readable, {
+      return new Response(stream, {
         headers: {
           ...corsHeaders,
           "Content-Type": "text/event-stream",
