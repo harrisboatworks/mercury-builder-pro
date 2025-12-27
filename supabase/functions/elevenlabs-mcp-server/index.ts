@@ -177,6 +177,99 @@ const TOOLS = [
       },
       required: ["step"]
     }
+  },
+  // ===== NEW TOOLS =====
+  {
+    name: "check_inventory",
+    description: "Search motor inventory. Use when customers ask about what motors are in stock, available, or looking for specific configurations.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        horsepower: { type: "number", description: "Specific HP to search for" },
+        min_hp: { type: "number", description: "Minimum HP (for range search)" },
+        max_hp: { type: "number", description: "Maximum HP (for range search)" },
+        family: { 
+          type: "string", 
+          enum: ["FourStroke", "ProXS", "SeaPro", "Verado"],
+          description: "Motor family" 
+        },
+        in_stock_only: { type: "boolean", description: "Only show motors in stock (default true)" }
+      }
+    }
+  },
+  {
+    name: "get_motor_price",
+    description: "Get the price for a specific motor model. Use when customers ask 'how much is...' or 'what's the price of...'",
+    inputSchema: {
+      type: "object",
+      properties: {
+        model: { type: "string", description: "Motor model name (e.g., 'Mercury 150 FourStroke', '200 Verado')" },
+        horsepower: { type: "number", description: "Motor horsepower (helps narrow down)" }
+      },
+      required: ["model"]
+    }
+  },
+  {
+    name: "schedule_service_appointment",
+    description: "Schedule a service appointment for boat motor service. Use when customers want to book winterization, tune-up, oil change, or other services.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        customer_name: { type: "string", description: "Customer's name" },
+        customer_phone: { type: "string", description: "Customer's phone number" },
+        service_type: { 
+          type: "string", 
+          enum: ["winterization", "spring-commissioning", "100-hour", "oil-change", "tune-up", "lower-unit", "diagnostic", "other"],
+          description: "Type of service needed" 
+        },
+        motor_info: { type: "string", description: "Customer's motor details (brand, HP, year)" },
+        preferred_date: { type: "string", description: "Preferred date or timeframe" },
+        notes: { type: "string", description: "Additional details or notes" }
+      },
+      required: ["customer_name", "customer_phone", "service_type"]
+    }
+  },
+  {
+    name: "get_warranty_pricing",
+    description: "Get extended warranty pricing for a motor. Use when customers ask about warranty costs, coverage, or extended protection.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        horsepower: { type: "number", description: "Motor horsepower" },
+        years: { 
+          type: "number", 
+          enum: [1, 2, 3, 4, 5],
+          description: "Number of additional warranty years" 
+        }
+      },
+      required: ["horsepower"]
+    }
+  },
+  {
+    name: "check_financing_options",
+    description: "Explain financing availability and estimate monthly payments. Use when customers ask about financing, payment plans, or credit.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        purchase_amount: { type: "number", description: "Approximate purchase amount (optional)" }
+      }
+    }
+  },
+  {
+    name: "get_store_hours",
+    description: "Get store hours and availability. Use when customers ask when you're open, business hours, or if you're open today.",
+    inputSchema: {
+      type: "object",
+      properties: {}
+    }
+  },
+  {
+    name: "get_directions",
+    description: "Provide store location and directions. Use when customers ask where you're located, your address, or how to get there.",
+    inputSchema: {
+      type: "object",
+      properties: {}
+    }
   }
 ];
 
@@ -470,6 +563,278 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         content: [{ 
           type: "text", 
           text: `To update your ${stepDescriptions[args.step as string] || args.step}, please visit harrisboatworks.ca/quote or tell me what you'd like to change.` 
+        }] 
+      };
+    }
+    
+    // ===== NEW TOOL HANDLERS =====
+    
+    case "check_inventory": {
+      const inStockOnly = args.in_stock_only !== false; // Default to true
+      let query = supabase
+        .from("motor_models")
+        .select("model_display, model, horsepower, msrp, family, in_stock, shaft, control_type")
+        .order("horsepower");
+      
+      if (args.horsepower) {
+        query = query.eq("horsepower", args.horsepower);
+      } else {
+        if (args.min_hp) query = query.gte("horsepower", args.min_hp);
+        if (args.max_hp) query = query.lte("horsepower", args.max_hp);
+      }
+      
+      if (args.family) query = query.eq("family", args.family);
+      if (inStockOnly) query = query.eq("in_stock", true);
+      
+      const { data: motors, error } = await query.limit(10);
+      
+      if (error || !motors?.length) {
+        return { 
+          content: [{ 
+            type: "text", 
+            text: inStockOnly 
+              ? "I don't see any motors matching those specs in stock right now. Would you like me to check what we can order, or look at different options?" 
+              : "I couldn't find any motors matching those specifications. Let me know what you're looking for and I can help." 
+          }] 
+        };
+      }
+      
+      const motorList = motors.map(m => {
+        const name = m.model_display || `${m.family} ${m.horsepower}HP`;
+        const price = m.msrp ? `$${m.msrp.toLocaleString()}` : "Call for price";
+        const stock = m.in_stock ? "✓ In Stock" : "Available to order";
+        return `• ${name}: ${price} (${stock})`;
+      }).join("\n");
+      
+      const stockCount = motors.filter(m => m.in_stock).length;
+      
+      return { 
+        content: [{ 
+          type: "text", 
+          text: `Found ${motors.length} motors${args.family ? ` in the ${args.family} family` : ''}${args.horsepower ? ` at ${args.horsepower}HP` : ''}:\n\n${motorList}\n\n${stockCount} are in stock and ready. Want details on any of these?` 
+        }] 
+      };
+    }
+    
+    case "get_motor_price": {
+      const searchModel = args.model as string;
+      const hp = args.horsepower as number | undefined;
+      
+      let query = supabase
+        .from("motor_models")
+        .select("model_display, model, horsepower, msrp, dealer_price, sale_price, family, in_stock")
+        .or(`model_display.ilike.%${searchModel}%,model.ilike.%${searchModel}%,family.ilike.%${searchModel}%`);
+      
+      if (hp) query = query.eq("horsepower", hp);
+      
+      const { data: motors } = await query.limit(5);
+      
+      if (!motors?.length) {
+        return { 
+          content: [{ 
+            type: "text", 
+            text: `I couldn't find a motor matching "${searchModel}". Could you give me the horsepower or be more specific? For example, "150 FourStroke" or "200 Verado".` 
+          }] 
+        };
+      }
+      
+      if (motors.length === 1) {
+        const m = motors[0];
+        const name = m.model_display || `${m.family} ${m.horsepower}HP`;
+        const hasDiscount = m.sale_price && m.sale_price < (m.msrp || 0);
+        
+        let priceText = m.msrp ? `$${m.msrp.toLocaleString()} CAD` : "Call for pricing";
+        if (hasDiscount) {
+          priceText = `$${m.sale_price!.toLocaleString()} CAD (was $${m.msrp!.toLocaleString()})`;
+        }
+        
+        return { 
+          content: [{ 
+            type: "text", 
+            text: `The ${name} is ${priceText}. ${m.in_stock ? "It's in stock and ready!" : "We can order this for you."} Would you like a full quote with financing options?` 
+          }] 
+        };
+      }
+      
+      // Multiple matches
+      const priceList = motors.map(m => {
+        const name = m.model_display || `${m.family} ${m.horsepower}HP`;
+        const price = m.msrp ? `$${m.msrp.toLocaleString()}` : "Call";
+        return `• ${name}: ${price}`;
+      }).join("\n");
+      
+      return { 
+        content: [{ 
+          type: "text", 
+          text: `I found a few options:\n\n${priceList}\n\nWhich one are you interested in?` 
+        }] 
+      };
+    }
+    
+    case "schedule_service_appointment": {
+      // Insert into voice_callbacks table with service context
+      const { error } = await supabase
+        .from("voice_callbacks")
+        .insert({
+          customer_name: args.customer_name,
+          customer_phone: args.customer_phone,
+          motor_interest: `Service: ${args.service_type}`,
+          motor_context: {
+            type: "service_appointment",
+            service_type: args.service_type,
+            motor_info: args.motor_info || null,
+            preferred_date: args.preferred_date || null
+          },
+          notes: args.notes || `Service request: ${args.service_type}${args.motor_info ? ` for ${args.motor_info}` : ''}${args.preferred_date ? `. Preferred: ${args.preferred_date}` : ''}`,
+          callback_status: "pending"
+        });
+      
+      if (error) {
+        console.error("[MCP] Error scheduling service:", error);
+        return { 
+          content: [{ 
+            type: "text", 
+            text: "I had trouble scheduling that appointment. Please call us directly at (905) 342-9980 to book your service." 
+          }] 
+        };
+      }
+      
+      const serviceNames: Record<string, string> = {
+        "winterization": "winterization",
+        "spring-commissioning": "spring commissioning",
+        "100-hour": "100-hour service",
+        "oil-change": "oil change",
+        "tune-up": "tune-up",
+        "lower-unit": "lower unit service",
+        "diagnostic": "diagnostic check",
+        "other": "service"
+      };
+      
+      return { 
+        content: [{ 
+          type: "text", 
+          text: `I've scheduled your ${serviceNames[args.service_type as string] || args.service_type} appointment request for ${args.customer_name}. Our service team will call you at ${args.customer_phone} to confirm the date and time${args.preferred_date ? ` (you mentioned ${args.preferred_date})` : ''}. Is there anything else I can help with?` 
+        }] 
+      };
+    }
+    
+    case "get_warranty_pricing": {
+      const hp = args.horsepower as number;
+      const years = args.years as number || null;
+      
+      const { data: pricing } = await supabase
+        .from("warranty_pricing")
+        .select("*")
+        .lte("hp_min", hp)
+        .gte("hp_max", hp)
+        .limit(1)
+        .single();
+      
+      if (!pricing) {
+        return { 
+          content: [{ 
+            type: "text", 
+            text: `For extended warranty on a ${hp}HP motor, I'd recommend speaking with our team for accurate pricing. Call us at (905) 342-9980 or I can have someone call you back.` 
+          }] 
+        };
+      }
+      
+      if (years) {
+        const yearKey = `year_${years}_price` as keyof typeof pricing;
+        const price = pricing[yearKey] as number;
+        
+        if (price) {
+          return { 
+            content: [{ 
+              type: "text", 
+              text: `A ${years}-year extended warranty for your ${hp}HP motor is $${price.toLocaleString()} CAD. This covers parts and labor beyond the factory warranty. Want me to include this in your quote?` 
+            }] 
+          };
+        }
+      }
+      
+      // Show all years pricing
+      const allPricing = [1, 2, 3, 4, 5].map(y => {
+        const key = `year_${y}_price` as keyof typeof pricing;
+        const p = pricing[key] as number;
+        return p ? `${y} year: $${p.toLocaleString()}` : null;
+      }).filter(Boolean).join("\n");
+      
+      return { 
+        content: [{ 
+          type: "text", 
+          text: `Extended warranty options for your ${hp}HP motor:\n\n${allPricing}\n\nWhich coverage period works best for you?` 
+        }] 
+      };
+    }
+    
+    case "check_financing_options": {
+      const amount = args.purchase_amount as number | undefined;
+      
+      // Get finance settings
+      const { data: settings } = await supabase
+        .from("finance_settings")
+        .select("*")
+        .limit(1)
+        .single();
+      
+      const interestRate = settings?.interest_rate || 7.5;
+      const depositPct = settings?.deposit_percentage || 20;
+      const maxTerm = settings?.max_term_months || 60;
+      
+      if (!amount) {
+        return { 
+          content: [{ 
+            type: "text", 
+            text: `Yes, we offer financing! With as little as ${depositPct}% down, you can finance your motor purchase over up to ${maxTerm} months. Current rates start at ${interestRate}% APR. Tell me which motor you're looking at and I can calculate your monthly payment.` 
+          }] 
+        };
+      }
+      
+      // Calculate estimated monthly payment
+      const deposit = amount * (depositPct / 100);
+      const financed = amount - deposit;
+      const monthlyRate = interestRate / 100 / 12;
+      const months = maxTerm;
+      const monthly = financed * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+      
+      return { 
+        content: [{ 
+          type: "text", 
+          text: `For a $${amount.toLocaleString()} purchase:\n\n• Down payment (${depositPct}%): $${deposit.toLocaleString()}\n• Financed amount: $${financed.toLocaleString()}\n• Estimated monthly payment: $${Math.round(monthly)}/month over ${months} months\n• Rate: ${interestRate}% APR\n\nThis is an estimate - final terms depend on credit approval. Want me to help you start a quote?` 
+          }] 
+      };
+    }
+    
+    case "get_store_hours": {
+      // Harris Boat Works store hours
+      const hours = {
+        monday: "8:00 AM - 5:00 PM",
+        tuesday: "8:00 AM - 5:00 PM",
+        wednesday: "8:00 AM - 5:00 PM",
+        thursday: "8:00 AM - 5:00 PM",
+        friday: "8:00 AM - 5:00 PM",
+        saturday: "9:00 AM - 3:00 PM",
+        sunday: "Closed"
+      };
+      
+      const days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+      const today = days[new Date().getDay()];
+      const todayHours = hours[today as keyof typeof hours];
+      
+      return { 
+        content: [{ 
+          type: "text", 
+          text: `We're open ${todayHours === "Closed" ? "closed today" : `today until ${todayHours.split(" - ")[1]}`}.\n\nOur hours are:\nMonday-Friday: 8 AM - 5 PM\nSaturday: 9 AM - 3 PM\nSunday: Closed\n\nWant to schedule a visit or have someone call you?` 
+        }] 
+      };
+    }
+    
+    case "get_directions": {
+      return { 
+        content: [{ 
+          type: "text", 
+          text: `Harris Boat Works is located at:\n\n📍 1230 County Road 2\nGrafton, Ontario K0K 2G0\n\nWe're right on Highway 2, about 15 minutes west of Cobourg. Look for the Mercury Marine sign!\n\n📞 Phone: (905) 342-9980\n\nWant me to text you the Google Maps link?` 
         }] 
       };
     }
