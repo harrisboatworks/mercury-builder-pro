@@ -3,6 +3,7 @@ import {
   RealtimeVoiceChat, 
   requestMicrophonePermission, 
   checkMicrophonePermission,
+  checkAudioInputDevices,
   unlockAudioOutput,
   VoiceDiagnostics
 } from '@/lib/RealtimeVoice';
@@ -17,6 +18,7 @@ interface VoiceState {
   error: string | null;
   permissionState: 'granted' | 'denied' | 'prompt' | null;
   showPermissionDialog: boolean;
+  showNoMicrophoneDialog: boolean;
   showAudioIssuePrompt: boolean;
   diagnostics: VoiceDiagnostics | null;
 }
@@ -44,6 +46,7 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     error: null,
     permissionState: null,
     showPermissionDialog: false,
+    showNoMicrophoneDialog: false,
     showAudioIssuePrompt: false,
     diagnostics: null,
   });
@@ -109,6 +112,10 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
 
   const closePermissionDialog = useCallback(() => {
     setState(prev => ({ ...prev, showPermissionDialog: false }));
+  }, []);
+
+  const closeNoMicrophoneDialog = useCallback(() => {
+    setState(prev => ({ ...prev, showNoMicrophoneDialog: false }));
   }, []);
 
   const closeAudioIssuePrompt = useCallback(() => {
@@ -190,6 +197,24 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
       console.warn('Audio unlock failed:', e);
     }
 
+    // Check if any audio input devices exist
+    const { hasDevices, deviceCount } = await checkAudioInputDevices();
+    console.log('Audio input devices check:', hasDevices, deviceCount);
+    
+    if (!hasDevices) {
+      setState(prev => ({ 
+        ...prev, 
+        showNoMicrophoneDialog: true,
+        error: 'No microphone found'
+      }));
+      toast({
+        title: "No microphone detected",
+        description: "Please connect a microphone to use voice chat.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     // Now check permission state
     const permState = await checkMicrophonePermission();
     console.log('Microphone permission state:', permState);
@@ -205,7 +230,7 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     
     // Permission is 'granted' or 'prompt' - proceed with connection
     await attemptConnection();
-  }, [attemptConnection]);
+  }, [attemptConnection, toast]);
 
   const endVoiceChat = useCallback(() => {
     chatRef.current?.disconnect();
@@ -219,6 +244,7 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
       error: null,
       permissionState: null,
       showPermissionDialog: false,
+      showNoMicrophoneDialog: false,
       showAudioIssuePrompt: false,
       diagnostics: null,
     });
@@ -271,6 +297,7 @@ export function useRealtimeVoice(options: UseRealtimeVoiceOptions = {}) {
     sendTextMessage,
     updateContext,
     closePermissionDialog,
+    closeNoMicrophoneDialog,
     retryPermission: attemptConnection,
     closeAudioIssuePrompt,
     retryAudioPlayback,
