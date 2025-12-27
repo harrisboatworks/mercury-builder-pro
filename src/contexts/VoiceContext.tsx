@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useMemo, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useRealtimeVoice } from '@/hooks/useRealtimeVoice';
+import { useElevenLabsVoice } from '@/hooks/useElevenLabsVoice';
 import { useQuote } from '@/contexts/QuoteContext';
 import { MicrophonePermissionDialog } from '@/components/chat/MicrophonePermissionDialog';
 import { NoMicrophoneDialog } from '@/components/chat/NoMicrophoneDialog';
@@ -61,7 +61,7 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     [activeMotor?.model, activeMotor?.hp, activeMotor?.msrp, activeMotor?.price, activeMotor?.salePrice]
   );
 
-  const voice = useRealtimeVoice({
+  const voice = useElevenLabsVoice({
     motorContext,
     currentPage: location.pathname,
   });
