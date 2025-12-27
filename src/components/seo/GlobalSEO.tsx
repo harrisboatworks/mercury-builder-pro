@@ -172,7 +172,7 @@ export function GlobalSEO() {
             "name": "Can I finance a Mercury motor?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! We offer competitive financing through Dealerplan with rates as low as 7.99% APR on purchases over $10,000. Apply online in minutes and get pre-approved before your visit."
+              "text": "Yes! We offer competitive financing through Dealerplan with rates starting from 6.99% APR* on purchases over $10,000. Apply online in minutes and get pre-approved before your visit. *Promotional rates subject to availability."
             }
           },
           {

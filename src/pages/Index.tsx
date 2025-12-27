@@ -192,7 +192,7 @@ const Index = () => {
         icon: Calendar, 
         label: 'Monthly Payment', 
         value: money(monthlyPayment) + '/mo',
-        subtext: '60 mo @ 7.99% APR'
+        subtext: 'Rates from 6.99% APR*'
       });
     }
     
