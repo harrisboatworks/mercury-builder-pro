@@ -270,6 +270,33 @@ const TOOLS = [
       type: "object",
       properties: {}
     }
+  },
+  {
+    name: "email_quote_to_customer",
+    description: "Send the current quote summary via email. Use when customers want a quote emailed to them.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        customer_email: { type: "string", description: "Customer's email address" },
+        customer_name: { type: "string", description: "Customer's name" },
+        motor_model: { type: "string", description: "Motor model being quoted" },
+        total_price: { type: "number", description: "Total price (optional, will look up if not provided)" },
+        customer_phone: { type: "string", description: "Customer's phone number (optional)" }
+      },
+      required: ["customer_email", "customer_name", "motor_model"]
+    }
+  },
+  {
+    name: "check_parts_availability",
+    description: "Look up Mercury parts information by part number. Use when customers ask about specific parts, part numbers, or parts availability.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        part_number: { type: "string", description: "Mercury part number (e.g., '8M0151274', '35-892665')" },
+        part_description: { type: "string", description: "Description of what the part is (optional, helps with context)" }
+      },
+      required: ["part_number"]
+    }
   }
 ];
 
@@ -837,6 +864,129 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
           text: `Harris Boat Works is located at:\n\n📍 1230 County Road 2\nGrafton, Ontario K0K 2G0\n\nWe're right on Highway 2, about 15 minutes west of Cobourg. Look for the Mercury Marine sign!\n\n📞 Phone: (905) 342-9980\n\nWant me to text you the Google Maps link?` 
         }] 
       };
+    }
+    
+    case "email_quote_to_customer": {
+      const customerEmail = args.customer_email as string;
+      const customerName = args.customer_name as string;
+      const motorModel = args.motor_model as string;
+      let totalPrice = args.total_price as number | undefined;
+      const customerPhone = args.customer_phone as string | undefined;
+      
+      // Look up motor price if not provided
+      if (!totalPrice) {
+        const { data: motor } = await supabase
+          .from("motor_models")
+          .select("msrp, sale_price, model_display")
+          .or(`model_display.ilike.%${motorModel}%,model.ilike.%${motorModel}%`)
+          .limit(1)
+          .single();
+        
+        if (motor) {
+          totalPrice = motor.sale_price || motor.msrp || 0;
+        }
+      }
+      
+      // Generate quote number
+      const quoteNumber = `VQ-${Date.now()}`;
+      
+      try {
+        const response = await fetch(
+          `${Deno.env.get("SUPABASE_URL")}/functions/v1/send-quote-email`,
+          {
+            method: "POST",
+            headers: { 
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")}`
+            },
+            body: JSON.stringify({
+              customerEmail,
+              customerName,
+              customerPhone: customerPhone || "",
+              quoteNumber,
+              motorDetails: motorModel,
+              totalPrice: totalPrice || 0,
+              emailType: "quote_delivery"
+            })
+          }
+        );
+        
+        const result = await response.json();
+        
+        if (!response.ok || result.error) {
+          console.error("[MCP] Error sending quote email:", result);
+          return { 
+            content: [{ 
+              type: "text", 
+              text: `I had trouble sending that email. Please give me your email address again or I can have someone from our team follow up with you.` 
+            }] 
+          };
+        }
+        
+        return { 
+          content: [{ 
+            type: "text", 
+            text: `I've sent your quote for the ${motorModel} to ${customerEmail}. Quote number is ${quoteNumber}. Check your inbox - it should arrive in the next few minutes. Is there anything else you'd like to know?` 
+          }] 
+        };
+      } catch (error) {
+        console.error("[MCP] Email error:", error);
+        return { 
+          content: [{ 
+            type: "text", 
+            text: `I wasn't able to send the email right now. Would you like me to have someone from our team call you instead?` 
+          }] 
+        };
+      }
+    }
+    
+    case "check_parts_availability": {
+      const partNumber = args.part_number as string;
+      const partDescription = args.part_description as string | undefined;
+      
+      try {
+        const response = await fetch(
+          `${Deno.env.get("SUPABASE_URL")}/functions/v1/mercury-parts-lookup`,
+          {
+            method: "POST",
+            headers: { 
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")}`
+            },
+            body: JSON.stringify({ partNumber })
+          }
+        );
+        
+        const result = await response.json();
+        
+        if (!response.ok || result.error) {
+          return { 
+            content: [{ 
+              type: "text", 
+              text: `I couldn't find part number ${partNumber} in our system. Could you double-check the number? Mercury part numbers are usually 8-10 digits like "8M0151274" or have a dash like "35-892665".` 
+            }] 
+          };
+        }
+        
+        const partName = result.name || partDescription || "Mercury Part";
+        const partDesc = result.description || "";
+        const priceInfo = result.cadPrice ? `$${result.cadPrice.toLocaleString()} CAD` : "Contact us for pricing";
+        
+        return { 
+          content: [{ 
+            type: "text", 
+            text: `Part ${partNumber} - ${partName}${partDesc ? `\n${partDesc}` : ''}\n\nPrice: ${priceInfo}\n\nFor live inventory and ordering, visit harrisboatworks.ca/mercuryparts or call us at (905) 342-9980. Want me to have someone check availability and call you back?` 
+          }] 
+        };
+      } catch (error) {
+        console.error("[MCP] Parts lookup error:", error);
+        return { 
+          content: [{ 
+            type: "text", 
+            text: `I had trouble looking up that part. Please call us at (905) 342-9980 and our parts department can help you with part number ${partNumber}.` 
+          }] 
+        };
+      }
     }
     
     default:
