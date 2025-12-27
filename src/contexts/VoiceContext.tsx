@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useRef } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useRealtimeVoice } from '@/hooks/useRealtimeVoice';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -41,13 +41,19 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   
   // Get the active motor (preview or selected)
   const activeMotor = state.previewMotor || state.motor;
-  
-  // Build motor context for voice
-  const motorContext = activeMotor ? {
-    model: activeMotor.model || '',
-    hp: activeMotor.hp || 0,
-    price: activeMotor.msrp || activeMotor.price || activeMotor.salePrice,
-  } : null;
+
+  // Build motor context for voice (memoized to avoid re-render loops)
+  const motorContext = useMemo(
+    () =>
+      activeMotor
+        ? {
+            model: activeMotor.model || '',
+            hp: activeMotor.hp || 0,
+            price: activeMotor.msrp || activeMotor.price || activeMotor.salePrice,
+          }
+        : null,
+    [activeMotor?.model, activeMotor?.hp, activeMotor?.msrp, activeMotor?.price, activeMotor?.salePrice]
+  );
 
   const voice = useRealtimeVoice({
     motorContext,
