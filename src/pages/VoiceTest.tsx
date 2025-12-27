@@ -218,10 +218,15 @@ export default function VoiceTest() {
         return false;
       }
       
-      updateStep('webrtc', { status: 'running', details: 'Token received, testing SDP exchange...' });
+      updateStep('webrtc', { status: 'running', details: 'Token received, testing SDP exchange via proxy...' });
       
       // Create a simple peer connection to test SDP exchange
-      const pc = new RTCPeerConnection();
+      const pc = new RTCPeerConnection({
+        iceServers: [
+          { urls: 'stun:stun.l.google.com:19302' },
+          { urls: 'stun:stun1.l.google.com:19302' },
+        ],
+      });
       
       // Add a transceiver for audio
       pc.addTransceiver('audio', { direction: 'sendrecv' });
@@ -229,23 +234,43 @@ export default function VoiceTest() {
       const offer = await pc.createOffer();
       await pc.setLocalDescription(offer);
       
-      // Try to exchange SDP with OpenAI
-      const baseUrl = 'https://api.openai.com/v1/realtime';
-      const model = 'gpt-4o-realtime-preview-2024-12-17';
+      // Wait for ICE gathering
+      await new Promise<void>((resolve) => {
+        if (pc.iceGatheringState === 'complete') return resolve();
+        
+        const onGatheringChange = () => {
+          if (pc.iceGatheringState === 'complete') {
+            pc.removeEventListener('icegatheringstatechange', onGatheringChange);
+            resolve();
+          }
+        };
+        pc.addEventListener('icegatheringstatechange', onGatheringChange);
+        setTimeout(() => {
+          pc.removeEventListener('icegatheringstatechange', onGatheringChange);
+          resolve();
+        }, 2000);
+      });
       
+      const localSdp = pc.localDescription?.sdp;
+      if (!localSdp) throw new Error('Failed to generate local SDP');
+      
+      // Use the SDP proxy edge function (matches production flow)
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 10000);
       
       try {
-        const sdpResponse = await fetch(`${baseUrl}?model=${model}`, {
-          method: 'POST',
-          body: offer.sdp,
-          headers: {
-            Authorization: `Bearer ${data.client_secret.value}`,
-            'Content-Type': 'application/sdp',
-          },
-          signal: controller.signal,
-        });
+        const sdpResponse = await fetch(
+          'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/realtime-sdp-exchange',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              sdpOffer: localSdp,
+              ephemeralKey: data.client_secret.value,
+            }),
+            signal: controller.signal,
+          }
+        );
         
         clearTimeout(timeout);
         
@@ -261,7 +286,7 @@ export default function VoiceTest() {
         
         updateStep('webrtc', { 
           status: 'passed',
-          details: 'Token: received | SDP Exchange: success',
+          details: 'Token: received | SDP Exchange (via proxy): success',
         });
         return true;
       } catch (e) {
@@ -281,6 +306,33 @@ export default function VoiceTest() {
   const runPlaybackTest = async (): Promise<boolean> => {
     updateStep('playback', { status: 'running', details: 'Connecting to AI for voice test...' });
     
+    // Diagnostic state
+    const diagnostics = {
+      tokenReceived: false,
+      dataChannelOpen: false,
+      sessionCreated: false,
+      sessionUpdated: false,
+      trackReceived: false,
+      audioElementPlaying: false,
+      autoplayError: null as string | null,
+      receivedAudioDelta: false,
+      receivedTextOnly: false,
+      pcConnectionState: 'new',
+      iceConnectionState: 'new',
+    };
+    
+    const updateDiagnosticDetails = () => {
+      const parts = [
+        `Token: ${diagnostics.tokenReceived ? '✓' : '✗'}`,
+        `DataChannel: ${diagnostics.dataChannelOpen ? '✓' : '✗'}`,
+        `Session: ${diagnostics.sessionCreated ? 'created' : 'waiting'}${diagnostics.sessionUpdated ? '/updated' : ''}`,
+        `Track: ${diagnostics.trackReceived ? '✓' : '✗'}`,
+        `Audio: ${diagnostics.audioElementPlaying ? 'playing' : diagnostics.autoplayError ? `blocked: ${diagnostics.autoplayError}` : 'waiting'}`,
+        `PC: ${diagnostics.pcConnectionState}`,
+      ];
+      return parts.join(' | ');
+    };
+    
     try {
       // Fetch ephemeral token
       const { data, error } = await supabase.functions.invoke('realtime-session');
@@ -289,10 +341,22 @@ export default function VoiceTest() {
         throw new Error('Failed to get session token');
       }
       
-      updateStep('playback', { status: 'running', details: 'Establishing audio connection...' });
+      diagnostics.tokenReceived = true;
+      updateStep('playback', { status: 'running', details: 'Token received, establishing audio connection...' });
       
-      // Create peer connection with audio
-      const pc = new RTCPeerConnection();
+      const EPHEMERAL_KEY = data.client_secret.value;
+      
+      // Create peer connection with STUN servers (matches RealtimeVoice.ts)
+      const pc = new RTCPeerConnection({
+        iceServers: [
+          { urls: 'stun:stun.l.google.com:19302' },
+          { urls: 'stun:stun1.l.google.com:19302' },
+        ],
+      });
+      
+      // Add transceiver for receiving audio
+      pc.addTransceiver('audio', { direction: 'sendrecv' });
+      
       const audioEl = document.createElement('audio');
       audioEl.autoplay = true;
       (audioEl as any).playsInline = true;
@@ -306,27 +370,37 @@ export default function VoiceTest() {
       // Ensure audio output is unlocked (helps on Safari/iOS)
       await unlockAudioOutput();
 
-      let trackReceived = false;
-      let heardAudio = false;
-      let autoplayError: string | null = null;
       let connectionTimeout: ReturnType<typeof setTimeout>;
 
+      // Track connection state changes
+      pc.onconnectionstatechange = () => {
+        diagnostics.pcConnectionState = pc.connectionState;
+        console.log('[VoiceTest] PC state:', pc.connectionState);
+      };
+      
+      pc.oniceconnectionstatechange = () => {
+        diagnostics.iceConnectionState = pc.iceConnectionState;
+        console.log('[VoiceTest] ICE state:', pc.iceConnectionState);
+      };
+
       audioEl.onplaying = () => {
-        heardAudio = true;
+        diagnostics.audioElementPlaying = true;
         console.log('[VoiceTest] Audio element is playing');
       };
 
       // Set up remote audio track
       pc.ontrack = (e) => {
-        console.log('[VoiceTest] Received audio track');
-        audioEl.srcObject = e.streams[0];
-        trackReceived = true;
+        diagnostics.trackReceived = true;
+        console.log('[VoiceTest] Received audio track:', e.track.kind, 'streams:', e.streams.length);
+        
+        const stream = e.streams[0] ?? new MediaStream([e.track]);
+        audioEl.srcObject = stream;
 
         const playPromise = audioEl.play();
         if (playPromise) {
           playPromise.catch((err) => {
-            autoplayError = err instanceof Error ? err.message : String(err);
-            console.warn('[VoiceTest] audioEl.play() failed:', autoplayError);
+            diagnostics.autoplayError = err instanceof Error ? err.message : String(err);
+            console.warn('[VoiceTest] audioEl.play() failed:', diagnostics.autoplayError);
           });
         }
       };
@@ -346,59 +420,90 @@ export default function VoiceTest() {
           audioEl.remove();
           updateStep('playback', { 
             status: 'failed',
-            details: 'Connection timeout - no audio received within 15 seconds',
+            details: `Timeout after 20s. ${updateDiagnosticDetails()}`,
           });
           resolve(false);
-        }, 15000);
+        }, 20000);
         
-        dc.addEventListener('open', async () => {
-          console.log('[VoiceTest] Data channel open, sending test message...');
-          updateStep('playback', { status: 'running', details: 'Sending test message to AI...' });
-          
-          // Send a text message to trigger AI response
-          const event = {
-            type: 'conversation.item.create',
-            item: {
-              type: 'message',
-              role: 'user',
-              content: [{
-                type: 'input_text',
-                text: 'Say "Voice test successful" in a brief, friendly way.'
-              }]
-            }
-          };
-          
-          dc.send(JSON.stringify(event));
-          
-          // CRITICAL: Request audio response explicitly
-          dc.send(JSON.stringify({ 
-            type: 'response.create',
-            response: {
-              modalities: ['audio', 'text']
-            }
-          }));
-          
-          updateStep('playback', { status: 'running', details: 'Waiting for AI voice response...' });
+        dc.addEventListener('open', () => {
+          diagnostics.dataChannelOpen = true;
+          console.log('[VoiceTest] Data channel open, waiting for session.created...');
+          updateStep('playback', { status: 'running', details: 'Data channel open, waiting for session...' });
+          // DON'T send messages here - wait for session.created first!
         });
-        
-        let receivedTextOnly = false;
-        let receivedAudioDelta = false;
         
         dc.addEventListener('message', (e) => {
           try {
             const event = JSON.parse(e.data);
             console.log('[VoiceTest] Event:', event.type);
             
+            // CRITICAL: Wait for session.created, then send session.update
+            if (event.type === 'session.created') {
+              diagnostics.sessionCreated = true;
+              console.log('[VoiceTest] Session created, sending session.update with audio config...');
+              updateStep('playback', { status: 'running', details: 'Session created, configuring audio...' });
+              
+              // Send session.update with audio configuration (matches RealtimeVoice.ts)
+              const sessionUpdate = {
+                type: 'session.update',
+                session: {
+                  modalities: ['text', 'audio'],
+                  input_audio_format: 'pcm16',
+                  output_audio_format: 'pcm16',
+                  input_audio_transcription: {
+                    model: 'whisper-1'
+                  },
+                  turn_detection: {
+                    type: 'server_vad',
+                    threshold: 0.5,
+                    prefix_padding_ms: 300,
+                    silence_duration_ms: 1000
+                  }
+                }
+              };
+              dc.send(JSON.stringify(sessionUpdate));
+            }
+            
+            // After session.updated, send the test message
+            if (event.type === 'session.updated') {
+              diagnostics.sessionUpdated = true;
+              console.log('[VoiceTest] Session updated, now sending test message...');
+              updateStep('playback', { status: 'running', details: 'Session configured, sending test message...' });
+              
+              // Send test message
+              dc.send(JSON.stringify({
+                type: 'conversation.item.create',
+                item: {
+                  type: 'message',
+                  role: 'user',
+                  content: [{
+                    type: 'input_text',
+                    text: 'Say "Voice test successful" in a brief, friendly way.'
+                  }]
+                }
+              }));
+              
+              // Request audio response
+              dc.send(JSON.stringify({ 
+                type: 'response.create',
+                response: {
+                  modalities: ['audio', 'text']
+                }
+              }));
+              
+              updateStep('playback', { status: 'running', details: 'Waiting for AI voice response...' });
+            }
+            
             // Detect text-only response (no audio)
             if (event.type === 'response.text.delta' || event.type === 'response.audio_transcript.delta') {
-              if (!receivedAudioDelta) {
-                receivedTextOnly = true;
+              if (!diagnostics.receivedAudioDelta) {
+                diagnostics.receivedTextOnly = true;
               }
             }
             
             if (event.type === 'response.audio.delta') {
-              receivedAudioDelta = true;
-              receivedTextOnly = false;
+              diagnostics.receivedAudioDelta = true;
+              diagnostics.receivedTextOnly = false;
               updateStep('playback', { status: 'running', details: 'Receiving AI audio stream...' });
             }
             
@@ -412,7 +517,7 @@ export default function VoiceTest() {
                 audioEl.srcObject = null;
                 audioEl.remove();
                 
-                if (heardAudio) {
+                if (diagnostics.audioElementPlaying) {
                   updateStep('playback', { 
                     status: 'passed',
                     details: 'AI voice response played successfully!',
@@ -421,38 +526,56 @@ export default function VoiceTest() {
                   return;
                 }
 
-                // Diagnose specific failure modes
-                if (!receivedAudioDelta && receivedTextOnly) {
+                // Diagnose specific failure modes with detailed info
+                if (!diagnostics.sessionCreated) {
                   updateStep('playback', {
                     status: 'failed',
-                    details: 'AI responded with text only (no audio generated). This may be a server-side issue.',
+                    details: `Never received session.created. ${updateDiagnosticDetails()}`,
                   });
                   resolve(false);
                   return;
                 }
-
-                if (trackReceived && autoplayError) {
+                
+                if (!diagnostics.sessionUpdated) {
                   updateStep('playback', {
                     status: 'failed',
-                    details: `Audio blocked by browser: ${autoplayError}. Try tapping the screen first or check autoplay settings.`,
+                    details: `session.update was not acknowledged. ${updateDiagnosticDetails()}`,
                   });
                   resolve(false);
                   return;
                 }
 
-                if (receivedAudioDelta && trackReceived) {
-                  updateStep('playback', { 
+                if (!diagnostics.receivedAudioDelta && diagnostics.receivedTextOnly) {
+                  updateStep('playback', {
                     status: 'failed',
-                    details: 'Audio received but not playing. Check: volume up, not muted, correct output device, silent switch off (iOS).',
+                    details: `AI responded with text only (no audio). Session may not have audio enabled. ${updateDiagnosticDetails()}`,
                   });
                   resolve(false);
                   return;
                 }
 
-                if (receivedAudioDelta && !trackReceived) {
+                if (diagnostics.trackReceived && diagnostics.autoplayError) {
+                  updateStep('playback', {
+                    status: 'failed',
+                    details: `Autoplay blocked: ${diagnostics.autoplayError}. Try tapping screen first.`,
+                  });
+                  resolve(false);
+                  return;
+                }
+
+                if (diagnostics.receivedAudioDelta && diagnostics.trackReceived) {
                   updateStep('playback', { 
                     status: 'failed',
-                    details: 'Audio data received but WebRTC track not connected. Try refreshing the page.',
+                    details: 'Audio received but not playing. Check: volume, mute, output device, iOS silent switch.',
+                  });
+                  resolve(false);
+                  return;
+                }
+
+                if (diagnostics.receivedAudioDelta && !diagnostics.trackReceived) {
+                  updateStep('playback', { 
+                    status: 'failed',
+                    details: `Audio delta received but no WebRTC track. ${updateDiagnosticDetails()}`,
                   });
                   resolve(false);
                   return;
@@ -460,7 +583,7 @@ export default function VoiceTest() {
 
                 updateStep('playback', { 
                   status: 'failed',
-                  details: 'No audio response from AI. The connection may have failed silently.',
+                  details: `No audio response. ${updateDiagnosticDetails()}`,
                 });
                 resolve(false);
               }, 3000);
@@ -483,30 +606,59 @@ export default function VoiceTest() {
           }
         });
         
-        // Start WebRTC handshake
+        // Start WebRTC handshake via edge function proxy (matches RealtimeVoice.ts)
         (async () => {
           try {
             const offer = await pc.createOffer();
             await pc.setLocalDescription(offer);
             
-            const baseUrl = 'https://api.openai.com/v1/realtime';
-            const model = 'gpt-4o-realtime-preview-2024-12-17';
-            
-            const sdpResponse = await fetch(`${baseUrl}?model=${model}`, {
-              method: 'POST',
-              body: offer.sdp,
-              headers: {
-                Authorization: `Bearer ${data.client_secret.value}`,
-                'Content-Type': 'application/sdp',
-              },
+            // Wait for ICE gathering (helps on some networks)
+            await new Promise<void>((resolveIce) => {
+              if (pc.iceGatheringState === 'complete') return resolveIce();
+              
+              const onGatheringChange = () => {
+                if (pc.iceGatheringState === 'complete') {
+                  pc.removeEventListener('icegatheringstatechange', onGatheringChange);
+                  resolveIce();
+                }
+              };
+              pc.addEventListener('icegatheringstatechange', onGatheringChange);
+              
+              // Timeout after 2s
+              setTimeout(() => {
+                pc.removeEventListener('icegatheringstatechange', onGatheringChange);
+                resolveIce();
+              }, 2000);
             });
             
+            const localSdp = pc.localDescription?.sdp;
+            if (!localSdp) throw new Error('Failed to generate local SDP');
+            
+            updateStep('playback', { status: 'running', details: 'Exchanging SDP via proxy...' });
+            
+            // Use the SDP proxy edge function (not direct OpenAI call)
+            const sdpResponse = await fetch(
+              'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/realtime-sdp-exchange',
+              {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  sdpOffer: localSdp,
+                  ephemeralKey: EPHEMERAL_KEY,
+                }),
+              }
+            );
+            
             if (!sdpResponse.ok) {
-              throw new Error('SDP exchange failed');
+              const errorText = await sdpResponse.text();
+              throw new Error(`SDP exchange failed: ${sdpResponse.status} - ${errorText.slice(0, 100)}`);
             }
             
             const answerSdp = await sdpResponse.text();
             await pc.setRemoteDescription({ type: 'answer', sdp: answerSdp });
+            
+            console.log('[VoiceTest] SDP exchange complete, waiting for session.created...');
+            updateStep('playback', { status: 'running', details: 'Connected, waiting for session.created...' });
           } catch (err) {
             clearTimeout(connectionTimeout);
             pc.close();
