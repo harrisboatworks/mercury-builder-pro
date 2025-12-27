@@ -30,6 +30,7 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { MotorRecommendationQuiz } from '@/components/quote-builder/MotorRecommendationQuiz';
 import { PromoReminderModal } from '@/components/quote-builder/PromoReminderModal';
+import { VoiceStatusBanner } from '@/components/voice/VoiceStatusBanner';
 
 import { fuzzySearch } from '@/lib/fuzzySearch';
 import { preloadConfiguratorImages } from '@/lib/configurator-preload';
@@ -666,6 +667,8 @@ function MotorSelectionContent() {
           onSearchClick={() => setShowSearchOverlay(true)}
           showSearchIcon={true}
         >
+
+        <VoiceStatusBanner />
         
         {/* Search Bar - Scrolls naturally with content */}
         <div className="bg-stone-50 border-b border-gray-200">

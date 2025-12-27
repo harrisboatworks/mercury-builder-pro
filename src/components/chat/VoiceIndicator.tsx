@@ -21,7 +21,7 @@ export const VoiceIndicator: React.FC<VoiceIndicatorProps> = ({
   // Don't render on mobile (uses unified bar) or if voice not available
   if (isMobileOrTablet || !voice) return null;
 
-  const { isConnected, isSpeaking, isListening, isSearching, searchingMessage, endVoiceChat } = voice;
+  const { isConnected, isSpeaking, isListening, isSearching, searchingMessage, isThinking, thinkingMessage, endVoiceChat } = voice;
 
   // Only show when voice is active AND chat is closed
   const shouldShow = isConnected && !isChatOpen;
@@ -36,6 +36,14 @@ export const VoiceIndicator: React.FC<VoiceIndicatorProps> = ({
     });
     window.dispatchEvent(event);
   };
+
+  const statusText = isSearching
+    ? (searchingMessage || 'Checking...')
+    : isThinking
+      ? (thinkingMessage || 'Hang on...')
+      : isSpeaking
+        ? 'Harris is speaking...'
+        : 'Voice chat active';
 
   return (
     <AnimatePresence>
@@ -99,6 +107,13 @@ export const VoiceIndicator: React.FC<VoiceIndicatorProps> = ({
                 >
                   <div className="w-5 h-5 border-2 border-amber-500 border-t-transparent rounded-full" />
                 </motion.div>
+              ) : isThinking ? (
+                <motion.div
+                  animate={{ opacity: [0.6, 1, 0.6] }}
+                  transition={{ repeat: Infinity, duration: 1.2 }}
+                >
+                  <Phone className="w-5 h-5 text-amber-600" />
+                </motion.div>
               ) : isSpeaking ? (
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
@@ -118,7 +133,7 @@ export const VoiceIndicator: React.FC<VoiceIndicatorProps> = ({
               )}
               
               {/* Pulse ring */}
-              {!isSearching && (
+              {!isSearching && !isThinking && (
                 <motion.div
                   className={cn(
                     "absolute inset-0 rounded-full",
@@ -132,11 +147,7 @@ export const VoiceIndicator: React.FC<VoiceIndicatorProps> = ({
 
             {/* Status text */}
             <span className="text-sm font-medium text-stone-700">
-              {isSearching 
-                ? (searchingMessage || 'Checking...') 
-                : isSpeaking 
-                  ? 'Harris is speaking...' 
-                  : 'Voice chat active'}
+              {statusText}
             </span>
           </motion.button>
 
