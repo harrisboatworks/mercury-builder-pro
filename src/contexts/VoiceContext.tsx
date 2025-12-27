@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useRealtimeVoice } from '@/hooks/useRealtimeVoice';
 import { useQuote } from '@/contexts/QuoteContext';
 import { MicrophonePermissionDialog } from '@/components/chat/MicrophonePermissionDialog';
+import { NoMicrophoneDialog } from '@/components/chat/NoMicrophoneDialog';
 import { AudioIssuePrompt } from '@/components/chat/AudioIssuePrompt';
 import { VoiceDiagnosticsPanel } from '@/components/chat/VoiceDiagnosticsPanel';
 
@@ -97,6 +98,13 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
       {/* Diagnostics panel (Alt+Shift+D) */}
       <VoiceDiagnosticsPanel diagnostics={voice.diagnostics} />
+
+      {/* No Microphone Dialog */}
+      <NoMicrophoneDialog
+        open={voice.showNoMicrophoneDialog}
+        onClose={voice.closeNoMicrophoneDialog}
+        onRetry={voice.startVoiceChat}
+      />
 
       {/* Microphone Permission Dialog */}
       <MicrophonePermissionDialog

@@ -189,6 +189,20 @@ class AudioQueue {
   }
 }
 
+// Check if any audio input devices exist
+export async function checkAudioInputDevices(): Promise<{ hasDevices: boolean; deviceCount: number }> {
+  try {
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    const audioInputs = devices.filter(d => d.kind === 'audioinput');
+    // Note: Before permission is granted, device labels may be empty but devices are still listed
+    console.log('Audio input devices found:', audioInputs.length, audioInputs.map(d => d.label || '(unlabeled)'));
+    return { hasDevices: audioInputs.length > 0, deviceCount: audioInputs.length };
+  } catch (error) {
+    console.error('Error enumerating devices:', error);
+    return { hasDevices: false, deviceCount: 0 };
+  }
+}
+
 // Check microphone permission state (not all browsers support this)
 export async function checkMicrophonePermission(): Promise<'granted' | 'denied' | 'prompt'> {
   try {
