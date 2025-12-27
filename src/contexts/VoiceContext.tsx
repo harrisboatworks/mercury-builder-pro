@@ -112,9 +112,10 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   }, [voice.isConnected, activeMotor?.id, location.pathname, motorContext, voice]);
 
-  // Listen for voice navigation events (add motor to quote)
+  // Listen for voice navigation events (add motor to quote, set purchase path)
   useEffect(() => {
-    const handleVoiceNav = (e: CustomEvent<{ type: string; payload: { motor: MotorForQuote } }>) => {
+    const handleVoiceNav = (e: CustomEvent<{ type: string; payload: { motor?: MotorForQuote; path?: 'loose' | 'installed' } }>) => {
+      // Handle add motor to quote
       if (e.detail.type === 'add_motor_to_quote' && e.detail.payload?.motor) {
         const motor = e.detail.payload.motor;
         console.log('[VoiceContext] Adding motor to quote:', motor);
@@ -149,6 +150,22 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         toast({
           title: "Motor added to quote",
           description: `${motor.model} has been added to your quote!`,
+        });
+      }
+      
+      // Handle set purchase path
+      if (e.detail.type === 'set_purchase_path' && e.detail.payload?.path) {
+        const path = e.detail.payload.path;
+        console.log('[VoiceContext] Setting purchase path:', path);
+        
+        dispatch({ type: 'SET_PURCHASE_PATH', payload: path });
+        dispatch({ type: 'COMPLETE_STEP', payload: 2 });
+        
+        toast({
+          title: path === 'loose' ? "Loose motor selected" : "Professional installation selected",
+          description: path === 'loose' 
+            ? "You'll take the motor home for self-installation" 
+            : "We'll handle the complete installation",
         });
       }
     };

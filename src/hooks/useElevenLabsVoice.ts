@@ -156,6 +156,35 @@ async function handleSendFollowUpSMS(params: {
   }
 }
 
+// Client tool handler for setting purchase path
+function handleSetPurchasePath(params: { 
+  purchase_type: string 
+}): string {
+  console.log('[ClientTool] set_purchase_path', params);
+  
+  // Normalize the input to our two valid values
+  let normalizedPath: 'loose' | 'installed';
+  const type = (params.purchase_type || '').toLowerCase();
+  
+  if (['loose', 'take_home', 'pickup', 'myself', 'diy', 'self'].some(t => type.includes(t))) {
+    normalizedPath = 'loose';
+  } else if (['install', 'professional', 'full', 'dealer', 'rigging', 'rig'].some(t => type.includes(t))) {
+    normalizedPath = 'installed';
+  } else {
+    return JSON.stringify({ 
+      error: 'Please clarify: would you like to take the motor home (loose motor) or have professional installation?' 
+    });
+  }
+  
+  dispatchVoiceNavigation({ type: 'set_purchase_path', payload: { path: normalizedPath } });
+  
+  const message = normalizedPath === 'loose' 
+    ? "I've set you up for a loose motor - you can take it home and install it yourself or at your preferred shop."
+    : "I've set you up for professional installation - we'll handle everything including rigging and sea trial.";
+    
+  return JSON.stringify({ success: true, path: normalizedPath, message });
+}
+
 export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   const { onTranscriptComplete } = options;
   const { toast } = useToast();
@@ -318,6 +347,10 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       // Add motor to customer's quote
       add_motor_to_quote: async (params: { motor_model?: string; use_current_motor?: boolean }) => {
         return await handleAddMotorToQuote(params, options.motorContext ?? null);
+      },
+      // Set purchase path (loose vs professional installation)
+      set_purchase_path: (params: { purchase_type: string }) => {
+        return handleSetPurchasePath(params);
       },
     },
   });
