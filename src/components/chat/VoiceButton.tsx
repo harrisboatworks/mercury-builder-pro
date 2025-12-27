@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mic, MicOff, Volume2, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { prewarmEdgeFunctions } from '@/hooks/useElevenLabsVoice';
 
 interface VoiceButtonProps {
   isConnected: boolean;
@@ -28,6 +29,21 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
   className,
   size = 'md',
 }) => {
+  const hasPrewarmed = useRef(false);
+  
+  // Pre-warm edge functions on mount (once only)
+  useEffect(() => {
+    if (!hasPrewarmed.current) {
+      hasPrewarmed.current = true;
+      console.log('[VoiceButton] Pre-warming on mount...');
+      prewarmEdgeFunctions();
+    }
+  }, []);
+  
+  // Also prewarm on hover for extra assurance
+  const handleMouseEnter = () => {
+    prewarmEdgeFunctions();
+  };
   const sizeClasses = {
     sm: 'w-8 h-8',
     md: 'w-10 h-10',
@@ -80,6 +96,7 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
   return (
     <motion.button
       onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
       disabled={isConnecting}
       className={cn(
         'relative rounded-full flex items-center justify-center transition-colors',
