@@ -9,10 +9,11 @@ const corsHeaders = {
 // Locally API base URL
 const LOCALLY_API_BASE = "https://www.locally.com";
 
-// Harris Boat Works location for geo queries
-const HARRIS_LOCATION = {
-  lat: "44.2619", // Burlington, Ontario approximate
-  lng: "-79.7893",
+// Harris Boat Works store configuration
+const HARRIS_STORE = {
+  store_id: 422544,
+  lat: "43.3255",
+  lng: "-79.7990",
 };
 
 interface LocallyParams {
@@ -97,16 +98,9 @@ serve(async (req) => {
     // Build the store_data URL with required parameters
     const urlParams = new URLSearchParams({
       map_distance_unit: 'mi',
-      map_distance_diag: params.store_id ? '1' : '50',
+      map_distance_diag: '1',
+      only_store_id: String(HARRIS_STORE.store_id),
     });
-
-    // Add location or store_id
-    if (params.store_id) {
-      urlParams.set('only_store_id', String(params.store_id));
-    } else {
-      urlParams.set('map_center_lat', HARRIS_LOCATION.lat);
-      urlParams.set('map_center_lng', HARRIS_LOCATION.lng);
-    }
 
     // Add company_id if provided
     if (params.company_id) {
