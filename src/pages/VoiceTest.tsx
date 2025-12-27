@@ -278,16 +278,165 @@ export default function VoiceTest() {
   };
 
   const runPlaybackTest = async (): Promise<boolean> => {
-    updateStep('playback', { status: 'running', details: 'This test requires a full voice session...' });
+    updateStep('playback', { status: 'running', details: 'Connecting to AI for voice test...' });
     
-    // For now, mark as passed if WebRTC worked - full playback test requires actual session
-    await new Promise(r => setTimeout(r, 1000));
-    
-    updateStep('playback', { 
-      status: 'passed',
-      details: 'WebRTC connection verified. Full playback test available in voice chat.',
-    });
-    return true;
+    try {
+      // Fetch ephemeral token
+      const { data, error } = await supabase.functions.invoke('realtime-session');
+      
+      if (error || !data?.client_secret?.value) {
+        throw new Error('Failed to get session token');
+      }
+      
+      updateStep('playback', { status: 'running', details: 'Establishing audio connection...' });
+      
+      // Create peer connection with audio
+      const pc = new RTCPeerConnection();
+      const audioEl = document.createElement('audio');
+      audioEl.autoplay = true;
+      
+      let audioReceived = false;
+      let connectionTimeout: NodeJS.Timeout;
+      
+      // Set up remote audio track
+      pc.ontrack = (e) => {
+        console.log('[VoiceTest] Received audio track');
+        audioEl.srcObject = e.streams[0];
+        audioReceived = true;
+      };
+      
+      // Add local audio track (required for bidirectional)
+      const ms = await navigator.mediaDevices.getUserMedia({ audio: true });
+      pc.addTrack(ms.getTracks()[0]);
+      
+      // Create data channel for sending messages
+      const dc = pc.createDataChannel('oai-events');
+      
+      return new Promise((resolve) => {
+        connectionTimeout = setTimeout(() => {
+          pc.close();
+          ms.getTracks().forEach(t => t.stop());
+          updateStep('playback', { 
+            status: 'failed',
+            details: 'Connection timeout - no audio received within 15 seconds',
+          });
+          resolve(false);
+        }, 15000);
+        
+        dc.addEventListener('open', async () => {
+          console.log('[VoiceTest] Data channel open, sending test message...');
+          updateStep('playback', { status: 'running', details: 'Sending test message to AI...' });
+          
+          // Send a text message to trigger AI response
+          const event = {
+            type: 'conversation.item.create',
+            item: {
+              type: 'message',
+              role: 'user',
+              content: [{
+                type: 'input_text',
+                text: 'Say "Voice test successful" in a brief, friendly way.'
+              }]
+            }
+          };
+          
+          dc.send(JSON.stringify(event));
+          dc.send(JSON.stringify({ type: 'response.create' }));
+          
+          updateStep('playback', { status: 'running', details: 'Waiting for AI voice response...' });
+        });
+        
+        dc.addEventListener('message', (e) => {
+          try {
+            const event = JSON.parse(e.data);
+            console.log('[VoiceTest] Event:', event.type);
+            
+            if (event.type === 'response.audio.delta' && audioReceived) {
+              updateStep('playback', { status: 'running', details: 'Playing AI audio...' });
+            }
+            
+            if (event.type === 'response.done') {
+              clearTimeout(connectionTimeout);
+              
+              // Give a moment for audio to finish playing
+              setTimeout(() => {
+                pc.close();
+                ms.getTracks().forEach(t => t.stop());
+                
+                if (audioReceived) {
+                  updateStep('playback', { 
+                    status: 'passed',
+                    details: 'AI voice response received and played successfully!',
+                  });
+                  resolve(true);
+                } else {
+                  updateStep('playback', { 
+                    status: 'failed',
+                    details: 'AI responded but no audio was received',
+                  });
+                  resolve(false);
+                }
+              }, 2000);
+            }
+            
+            if (event.type === 'error') {
+              clearTimeout(connectionTimeout);
+              pc.close();
+              ms.getTracks().forEach(t => t.stop());
+              updateStep('playback', { 
+                status: 'failed',
+                details: `AI error: ${event.error?.message || 'Unknown error'}`,
+              });
+              resolve(false);
+            }
+          } catch (err) {
+            console.error('[VoiceTest] Error parsing message:', err);
+          }
+        });
+        
+        // Start WebRTC handshake
+        (async () => {
+          try {
+            const offer = await pc.createOffer();
+            await pc.setLocalDescription(offer);
+            
+            const baseUrl = 'https://api.openai.com/v1/realtime';
+            const model = 'gpt-4o-realtime-preview-2024-12-17';
+            
+            const sdpResponse = await fetch(`${baseUrl}?model=${model}`, {
+              method: 'POST',
+              body: offer.sdp,
+              headers: {
+                Authorization: `Bearer ${data.client_secret.value}`,
+                'Content-Type': 'application/sdp',
+              },
+            });
+            
+            if (!sdpResponse.ok) {
+              throw new Error('SDP exchange failed');
+            }
+            
+            const answerSdp = await sdpResponse.text();
+            await pc.setRemoteDescription({ type: 'answer', sdp: answerSdp });
+          } catch (err) {
+            clearTimeout(connectionTimeout);
+            pc.close();
+            ms.getTracks().forEach(t => t.stop());
+            updateStep('playback', { 
+              status: 'failed',
+              details: err instanceof Error ? err.message : 'Connection failed',
+            });
+            resolve(false);
+          }
+        })();
+      });
+    } catch (e) {
+      updateStep('playback', { 
+        status: 'failed',
+        details: e instanceof Error ? e.message : 'Playback test failed',
+      });
+      return false;
+    }
   };
 
   const runAllTests = useCallback(async () => {
