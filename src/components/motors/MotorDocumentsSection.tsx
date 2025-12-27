@@ -105,7 +105,23 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
         .order('title');
 
       if (error) throw error;
-      setDocuments(data || []);
+      
+      // Filter out video URLs (YouTube, Vimeo) - these should only appear in MotorVideosSection
+      const filteredData = (data || []).filter(item => {
+        // Exclude items categorized as video
+        if (item.media_category === 'video') return false;
+        
+        // Exclude YouTube/Vimeo URLs
+        if (item.media_type === 'url') {
+          const url = item.media_url.toLowerCase();
+          if (url.includes('youtube.') || url.includes('youtu.be') || url.includes('vimeo.')) {
+            return false;
+          }
+        }
+        return true;
+      });
+      
+      setDocuments(filteredData);
     } catch (error) {
       console.error('Error loading documents:', error);
     } finally {
