@@ -16,6 +16,7 @@ export interface Accessory {
   compatibility?: string;
   inStock?: boolean;
   partNumber?: string;
+  upc?: string; // Optional UPC for Locally API lookup
 }
 
 export const ACCESSORY_CATEGORIES = {

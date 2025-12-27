@@ -1,20 +1,183 @@
 import { useState } from 'react';
-import { Phone, Mail, X } from 'lucide-react';
+import { Phone, Mail, Loader2, AlertCircle, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Separator } from '@/components/ui/separator';
+import { Skeleton } from '@/components/ui/skeleton';
 import { Accessory } from '@/lib/accessories-data';
 import { COMPANY_INFO } from '@/lib/companyInfo';
+import { useLocallyInventory } from '@/hooks/useLocallyInventory';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 interface AccessoryCardProps {
   accessory: Accessory;
 }
 
+function LiveStockBadge({ 
+  liveStock, 
+  isLoading, 
+  error, 
+  fallbackInStock,
+  onRefresh 
+}: { 
+  liveStock: { inStock: boolean; quantity?: number } | null;
+  isLoading: boolean;
+  error: string | null;
+  fallbackInStock?: boolean;
+  onRefresh: () => void;
+}) {
+  if (isLoading) {
+    return <Skeleton className="h-6 w-24" />;
+  }
+
+  if (error || !liveStock) {
+    // Fall back to static data with indicator
+    if (fallbackInStock) {
+      return (
+        <div className="flex items-center gap-2">
+          <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200 font-medium">
+            In Stock
+          </Badge>
+          <span className="text-xs text-muted-foreground">(unverified)</span>
+        </div>
+      );
+    }
+    return (
+      <Badge variant="outline" className="text-muted-foreground">
+        Check Availability
+      </Badge>
+    );
+  }
+
+  const { inStock, quantity } = liveStock;
+
+  if (!inStock) {
+    return (
+      <div className="flex items-center gap-2">
+        <Badge variant="destructive" className="font-medium">
+          Out of Stock
+        </Badge>
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className="h-6 w-6" 
+          onClick={onRefresh}
+          title="Refresh stock"
+        >
+          <RefreshCw className="h-3 w-3" />
+        </Button>
+      </div>
+    );
+  }
+
+  if (quantity !== undefined && quantity > 0) {
+    const isLowStock = quantity <= 2;
+    return (
+      <div className="flex items-center gap-2">
+        <Badge 
+          variant="default" 
+          className={`font-medium ${
+            isLowStock 
+              ? 'bg-amber-50 text-amber-700 border-amber-200' 
+              : 'bg-green-50 text-green-700 border-green-200'
+          }`}
+        >
+          {isLowStock ? 'Low Stock' : 'In Stock'} ({quantity})
+        </Badge>
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className="h-6 w-6" 
+          onClick={onRefresh}
+          title="Refresh stock"
+        >
+          <RefreshCw className="h-3 w-3" />
+        </Button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex items-center gap-2">
+      <Badge variant="default" className="bg-green-50 text-green-700 border-green-200 font-medium">
+        In Stock
+      </Badge>
+      <Button 
+        variant="ghost" 
+        size="icon" 
+        className="h-6 w-6" 
+        onClick={onRefresh}
+        title="Refresh stock"
+      >
+        <RefreshCw className="h-3 w-3" />
+      </Button>
+    </div>
+  );
+}
+
+function LivePriceDisplay({
+  liveStock,
+  isLoading,
+  staticPrice,
+  staticMsrp,
+}: {
+  liveStock: { price?: number } | null;
+  isLoading: boolean;
+  staticPrice: number | null;
+  staticMsrp?: number | null;
+}) {
+  if (isLoading) {
+    return (
+      <div className="space-y-1">
+        <Skeleton className="h-4 w-16" />
+        <Skeleton className="h-8 w-24" />
+      </div>
+    );
+  }
+
+  const displayPrice = liveStock?.price ?? staticPrice;
+  const showLiveIndicator = liveStock?.price !== undefined && liveStock.price !== staticPrice;
+
+  return (
+    <div>
+      {staticMsrp && displayPrice && staticMsrp > displayPrice && (
+        <p className="text-sm text-muted-foreground line-through font-normal">
+          MSRP: ${staticMsrp.toLocaleString()}
+        </p>
+      )}
+      <div className="flex items-center gap-2">
+        <p className="text-2xl font-bold text-foreground">
+          {displayPrice ? `$${displayPrice.toLocaleString()}` : 'Call for Price'}
+        </p>
+        {showLiveIndicator && (
+          <Badge variant="outline" className="text-xs bg-blue-50 text-blue-700 border-blue-200">
+            Live
+          </Badge>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function formatTimeAgo(date: Date): string {
+  const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
+  
+  if (seconds < 10) return 'just now';
+  if (seconds < 60) return `${seconds}s ago`;
+  if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+  return `${Math.floor(seconds / 3600)}h ago`;
+}
+
 export function AccessoryCard({ accessory }: AccessoryCardProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  
+  // Fetch live inventory when dialog is open
+  const { liveStock, isLoading, error, refetch } = useLocallyInventory({
+    partNumber: accessory.partNumber,
+    enabled: isDialogOpen,
+  });
   
   return (
     <>
@@ -29,7 +192,7 @@ export function AccessoryCard({ accessory }: AccessoryCardProps) {
             loading="lazy"
           />
           
-          {/* Stock Badge */}
+          {/* Stock Badge (static on card) */}
           {accessory.inStock && (
             <div className="absolute top-4 left-4">
               <Badge variant="default" className="bg-green-50 text-green-700 border-green-200 font-medium">
@@ -113,31 +276,44 @@ export function AccessoryCard({ accessory }: AccessoryCardProps) {
                     />
                   </div>
                   
-                  {/* Part Number & Stock */}
-                  <div className="flex items-center justify-between">
+                  {/* Part Number & Live Stock */}
+                  <div className="flex items-center justify-between flex-wrap gap-2">
                     {accessory.partNumber && (
                       <p className="text-sm text-muted-foreground font-normal">
                         Part #: {accessory.partNumber}
                       </p>
                     )}
-                    {accessory.inStock && (
-                      <Badge variant="default" className="bg-green-50 text-green-700 border-green-200 font-medium">
-                        In Stock
-                      </Badge>
-                    )}
+                    <LiveStockBadge 
+                      liveStock={liveStock}
+                      isLoading={isLoading}
+                      error={error}
+                      fallbackInStock={accessory.inStock}
+                      onRefresh={refetch}
+                    />
                   </div>
                   
-                  {/* Pricing */}
-                  <div>
-                    {accessory.msrp && accessory.price && accessory.msrp > accessory.price && (
-                      <p className="text-sm text-muted-foreground line-through font-normal">
-                        MSRP: ${accessory.msrp.toLocaleString()}
-                      </p>
-                    )}
-                    <p className="text-2xl font-bold text-foreground">
-                      {accessory.price ? `$${accessory.price.toLocaleString()}` : 'Call for Price'}
+                  {/* Error message */}
+                  {error && (
+                    <div className="flex items-center gap-2 text-sm text-amber-600 bg-amber-50 p-2 rounded">
+                      <AlertCircle className="h-4 w-4" />
+                      <span>Couldn't verify live inventory. Showing cached data.</span>
+                    </div>
+                  )}
+                  
+                  {/* Live Pricing */}
+                  <LivePriceDisplay
+                    liveStock={liveStock}
+                    isLoading={isLoading}
+                    staticPrice={accessory.price}
+                    staticMsrp={accessory.msrp}
+                  />
+                  
+                  {/* Last checked timestamp */}
+                  {liveStock?.lastChecked && !isLoading && (
+                    <p className="text-xs text-muted-foreground">
+                      Inventory checked {formatTimeAgo(liveStock.lastChecked)}
                     </p>
-                  </div>
+                  )}
                   
                   <Separator />
                   

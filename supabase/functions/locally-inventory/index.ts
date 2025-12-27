@@ -52,10 +52,9 @@ serve(async (req) => {
 
     // Action: discover - Try to find company/store info associated with API key
     if (params.action === 'discover') {
-      // Try multiple discovery endpoints to find our company/store info
       const results: Record<string, any> = {};
       
-      // 1. Try the conversion start endpoint (requires some default values)
+      // 1. Try the conversion start endpoint
       try {
         const startUrl = `${LOCALLY_API_BASE}/headless/api/1.0/conversion/start?style=test&company_id=1`;
         const response = await fetch(startUrl, { headers });
@@ -69,7 +68,7 @@ serve(async (req) => {
       try {
         const storeDataUrl = `${LOCALLY_API_BASE}/headless/api/1.0/conversion/store_data?` +
           `map_distance_unit=mi&map_distance_diag=50&` +
-          `map_center_lat=${HARRIS_LOCATION.lat}&map_center_lng=${HARRIS_LOCATION.lng}`;
+          `map_center_lat=${HARRIS_STORE.lat}&map_center_lng=${HARRIS_STORE.lng}`;
         console.log('[Locally] Trying store_data URL:', storeDataUrl);
         const response = await fetch(storeDataUrl, { headers });
         const text = await response.text();
@@ -78,7 +77,7 @@ serve(async (req) => {
         results.store_data = { error: String(e) };
       }
 
-      // 3. Try v2 brand API to see what brands we have access to
+      // 3. Try v2 brand API
       try {
         const brandsUrl = `${LOCALLY_API_BASE}/api/v2/brands`;
         const response = await fetch(brandsUrl, { headers });
@@ -94,8 +93,7 @@ serve(async (req) => {
       );
     }
 
-    // Standard inventory lookup
-    // Build the store_data URL with required parameters
+    // Standard inventory lookup - build the store_data URL
     const urlParams = new URLSearchParams({
       map_distance_unit: 'mi',
       map_distance_diag: '1',
@@ -110,6 +108,18 @@ serve(async (req) => {
     // Add UPC if searching by UPC
     if (params.upc) {
       urlParams.set('upc', params.upc);
+    }
+
+    // If searching by part number, we can try adding it as a query or UPC
+    // Mercury part numbers sometimes work as UPCs with leading zeros
+    if (params.part_number && !params.upc) {
+      // Try the part number as-is first (some systems use part numbers directly)
+      urlParams.set('upc', params.part_number);
+    }
+
+    // If searching by query string
+    if (params.query) {
+      urlParams.set('query', params.query);
     }
 
     const searchUrl = `${LOCALLY_API_BASE}/headless/api/1.0/conversion/store_data?${urlParams.toString()}`;
@@ -142,7 +152,7 @@ serve(async (req) => {
         JSON.stringify({ 
           success: false, 
           error: data.msg || 'API error',
-          error_code: data.error_code,
+          error_code: data.error_code || 'api_error',
           query: params.query || params.upc || params.part_number,
         }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -150,7 +160,7 @@ serve(async (req) => {
     }
 
     // Process successful response
-    const inventory = extractInventoryInfo(data, params.query || params.upc || '');
+    const inventory = extractInventoryInfo(data, params.query || params.upc || params.part_number || '');
 
     return new Response(
       JSON.stringify({ 
@@ -190,6 +200,8 @@ function extractInventoryInfo(data: any, searchTerm: string): any {
           store_id: store.store_id,
           store_name: store.name,
           in_stock: true,
+          price: item.price || null,
+          quantity: item.quantity || null,
         });
       }
     }
@@ -219,5 +231,7 @@ function extractInventoryInfo(data: any, searchTerm: string): any {
       phone: s.phone,
     })),
     products,
+    search_term: searchTerm,
+    checked_at: new Date().toISOString(),
   };
 }
