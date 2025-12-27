@@ -1,4 +1,4 @@
-import { X, Sparkles, User } from "lucide-react";
+import { X, Sparkles, User, Phone, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -39,6 +39,25 @@ export const HamburgerMenu = ({ isOpen, onClose, totalXP, user, loading, signOut
             </div>
           )}
 
+          {/* Quick Actions */}
+          <div className="space-y-3">
+            <a 
+              href="tel:+19053422153" 
+              className="flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+            >
+              <Phone className="w-5 h-5" />
+              Call (905) 342-2153
+            </a>
+            <Link 
+              to="/contact" 
+              onClick={onClose}
+              className="flex items-center justify-center gap-2 border border-border py-3 rounded-lg font-medium hover:bg-muted transition-colors"
+            >
+              <MessageSquare className="w-5 h-5" />
+              Request a Quote
+            </Link>
+          </div>
+
           {/* Navigation */}
           <nav className="space-y-4">
             <h3 className="font-semibold text-foreground">Navigation</h3>
@@ -47,15 +66,25 @@ export const HamburgerMenu = ({ isOpen, onClose, totalXP, user, loading, signOut
               <Link to="/accessories" onClick={onClose} className="block py-2 text-muted-foreground hover:text-foreground">Accessories</Link>
               <Link to="/promotions" onClick={onClose} className="block py-2 text-muted-foreground hover:text-foreground">Promotions</Link>
               <Link to="/repower" onClick={onClose} className="block py-2 text-muted-foreground hover:text-foreground">Repower</Link>
+              <Link to="/compare" onClick={onClose} className="block py-2 text-muted-foreground hover:text-foreground">Compare Engines</Link>
               <Link to="/finance-calculator" onClick={onClose} className="block py-2 text-muted-foreground hover:text-foreground">Financing</Link>
               <Link to="/blog" onClick={onClose} className="block py-2 text-muted-foreground hover:text-foreground">Blog</Link>
+              <Link to="/about" onClick={onClose} className="block py-2 text-muted-foreground hover:text-foreground">About Us</Link>
               <Link to="/contact" onClick={onClose} className="block py-2 text-muted-foreground hover:text-foreground">Contact Us</Link>
             </div>
           </nav>
 
+          {/* Dealer Credentials */}
+          <div className="space-y-3 pt-4 border-t border-border">
+            <h3 className="font-semibold text-foreground text-center text-sm">Dealer Credentials</h3>
+            <div className="flex items-center justify-center gap-4 py-3 bg-muted/50 rounded-lg">
+              <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="CSI Award" className="h-10 object-contain" />
+              <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Certified Repower" className="h-10 object-contain" />
+            </div>
+          </div>
 
           {/* User Section */}
-          <div className="space-y-4 pt-6 border-t border-border">
+          <div className="space-y-4 pt-4 border-t border-border">
             <h3 className="font-semibold text-foreground flex items-center gap-2">
               <User className="w-4 h-4" />
               Account
@@ -79,6 +108,13 @@ export const HamburgerMenu = ({ isOpen, onClose, totalXP, user, loading, signOut
                 </Link>
               )
             )}
+          </div>
+
+          {/* Location Footer */}
+          <div className="pt-4 border-t border-border text-center text-sm text-muted-foreground">
+            <p className="font-medium text-foreground">Harris Boat Works</p>
+            <p>5369 Harris Boat Works Rd, Gores Landing, ON</p>
+            <p className="text-xs mt-1 text-primary">Mercury Premier Dealer</p>
           </div>
         </div>
       </div>
