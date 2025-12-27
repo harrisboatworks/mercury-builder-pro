@@ -1,11 +1,20 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
+interface FulfillmentOptions {
+  bopis: boolean;
+  localDelivery: boolean;
+  sameDayDelivery: boolean;
+  curbsidePickup: boolean;
+}
+
 interface LocallyInventoryData {
   inStock: boolean;
   quantity?: number;
   price?: number;
   storeName?: string;
+  stockStatus?: string;
+  fulfillment?: FulfillmentOptions;
   lastChecked: Date;
 }
 
@@ -73,14 +82,33 @@ export function useLocallyInventory({
       // Extract inventory data from response
       const inventory = data.inventory;
       const products = inventory?.products || [];
+      const storeFulfillment = inventory?.fulfillment;
+      
+      // Map fulfillment options
+      const fulfillment: FulfillmentOptions | undefined = storeFulfillment ? {
+        bopis: storeFulfillment.bopis ?? false,
+        localDelivery: storeFulfillment.local_delivery ?? false,
+        sameDayDelivery: storeFulfillment.same_day_delivery ?? false,
+        curbsidePickup: storeFulfillment.curbside_pickup ?? false,
+      } : undefined;
       
       if (products.length > 0) {
         const product = products[0];
+        // Use product-level fulfillment if available, otherwise store-level
+        const productFulfillment = product.fulfillment ? {
+          bopis: product.fulfillment.bopis ?? false,
+          localDelivery: product.fulfillment.local_delivery ?? false,
+          sameDayDelivery: product.fulfillment.same_day_delivery ?? false,
+          curbsidePickup: product.fulfillment.curbside_pickup ?? false,
+        } : fulfillment;
+
         setLiveStock({
           inStock: product.in_stock ?? true,
           quantity: product.quantity,
           price: product.price,
           storeName: product.store_name || 'Harris Boat Works',
+          stockStatus: product.stock_status,
+          fulfillment: productFulfillment,
           lastChecked: new Date(),
         });
       } else {
@@ -90,6 +118,7 @@ export function useLocallyInventory({
           setLiveStock({
             inStock: true,
             storeName: stores[0].name || 'Harris Boat Works',
+            fulfillment,
             lastChecked: new Date(),
           });
         } else {

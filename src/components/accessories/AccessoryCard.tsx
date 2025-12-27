@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, Loader2, AlertCircle, RefreshCw } from 'lucide-react';
+import { Phone, Mail, AlertCircle, RefreshCw, Store, Truck, Package } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -11,8 +11,43 @@ import { COMPANY_INFO } from '@/lib/companyInfo';
 import { useLocallyInventory } from '@/hooks/useLocallyInventory';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
+interface FulfillmentOptions {
+  bopis: boolean;
+  localDelivery: boolean;
+  sameDayDelivery: boolean;
+  curbsidePickup: boolean;
+}
+
 interface AccessoryCardProps {
   accessory: Accessory;
+}
+
+function FulfillmentBadges({ fulfillment }: { fulfillment?: FulfillmentOptions }) {
+  if (!fulfillment) return null;
+  
+  const badges = [];
+  
+  if (fulfillment.bopis || fulfillment.curbsidePickup) {
+    badges.push(
+      <Badge key="pickup" variant="outline" className="bg-blue-50 text-blue-700 border-blue-200 text-xs gap-1">
+        <Store className="h-3 w-3" />
+        {fulfillment.curbsidePickup ? 'Curbside Pickup' : 'In-Store Pickup'}
+      </Badge>
+    );
+  }
+  
+  if (fulfillment.localDelivery || fulfillment.sameDayDelivery) {
+    badges.push(
+      <Badge key="delivery" variant="outline" className="bg-purple-50 text-purple-700 border-purple-200 text-xs gap-1">
+        <Truck className="h-3 w-3" />
+        {fulfillment.sameDayDelivery ? 'Same-Day Delivery' : 'Local Delivery'}
+      </Badge>
+    );
+  }
+  
+  if (badges.length === 0) return null;
+  
+  return <div className="flex flex-wrap gap-2">{badges}</div>;
 }
 
 function LiveStockBadge({ 
@@ -22,7 +57,7 @@ function LiveStockBadge({
   fallbackInStock,
   onRefresh 
 }: { 
-  liveStock: { inStock: boolean; quantity?: number } | null;
+  liveStock: { inStock: boolean; quantity?: number; stockStatus?: string } | null;
   isLoading: boolean;
   error: string | null;
   fallbackInStock?: boolean;
@@ -307,6 +342,16 @@ export function AccessoryCard({ accessory }: AccessoryCardProps) {
                     staticPrice={accessory.price}
                     staticMsrp={accessory.msrp}
                   />
+                  
+                  {/* Fulfillment Options */}
+                  {liveStock?.fulfillment && !isLoading && (
+                    <div className="space-y-2">
+                      <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        Available Options
+                      </p>
+                      <FulfillmentBadges fulfillment={liveStock.fulfillment} />
+                    </div>
+                  )}
                   
                   {/* Last checked timestamp */}
                   {liveStock?.lastChecked && !isLoading && (
