@@ -191,6 +191,14 @@ function extractInventoryInfo(data: any, searchTerm: string): any {
   const products: any[] = [];
 
   for (const store of stores) {
+    // Extract fulfillment options from store
+    const fulfillment = {
+      bopis: store.bopis ?? false,
+      local_delivery: store.local_delivery ?? false,
+      same_day_delivery: store.same_day_delivery ?? false,
+      curbside_pickup: store.curbside_pickup ?? false,
+    };
+
     if (store.in_stock_upcs && Array.isArray(store.in_stock_upcs)) {
       for (const item of store.in_stock_upcs) {
         products.push({
@@ -201,7 +209,9 @@ function extractInventoryInfo(data: any, searchTerm: string): any {
           store_name: store.name,
           in_stock: true,
           price: item.price || null,
-          quantity: item.quantity || null,
+          quantity: item.qoh ?? item.quantity ?? null, // qoh = quantity on hand
+          stock_status: item.stock_status || 'in_stock',
+          fulfillment,
         });
       }
     }
@@ -215,10 +225,26 @@ function extractInventoryInfo(data: any, searchTerm: string): any {
         upc: p.upc,
         price: p.price,
         in_stock: p.in_stock ?? true,
-        quantity: p.quantity,
+        quantity: p.qoh ?? p.quantity ?? null,
+        stock_status: p.stock_status || (p.in_stock ? 'in_stock' : 'out_of_stock'),
+        fulfillment: {
+          bopis: p.bopis ?? false,
+          local_delivery: p.local_delivery ?? false,
+          same_day_delivery: p.same_day_delivery ?? false,
+          curbside_pickup: p.curbside_pickup ?? false,
+        },
       });
     }
   }
+
+  // Extract store-level fulfillment for display
+  const storeFulfillment = stores.length > 0 ? {
+    bopis: stores[0].bopis ?? false,
+    local_delivery: stores[0].local_delivery ?? false,
+    same_day_delivery: stores[0].same_day_delivery ?? false,
+    curbside_pickup: stores[0].curbside_pickup ?? false,
+    store_hours: stores[0].store_hours || null,
+  } : null;
 
   return {
     stores_count: stores.length,
@@ -229,8 +255,11 @@ function extractInventoryInfo(data: any, searchTerm: string): any {
       city: s.city,
       state: s.state,
       phone: s.phone,
+      bopis: s.bopis,
+      local_delivery: s.local_delivery,
     })),
     products,
+    fulfillment: storeFulfillment,
     search_term: searchTerm,
     checked_at: new Date().toISOString(),
   };
