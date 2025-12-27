@@ -170,3 +170,9 @@ verify_jwt = false
 
 [functions.locally-inventory]
 verify_jwt = false
+
+[functions.voice-schedule-callback]
+verify_jwt = false
+
+[functions.voice-create-reminder]
+verify_jwt = false
