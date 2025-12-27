@@ -156,6 +156,53 @@ async function handleSendFollowUpSMS(params: {
   }
 }
 
+// Client tool handler for Perplexity spec verification
+async function handleVerifySpecs(params: {
+  query: string;
+  category?: 'specs' | 'parts' | 'warranty' | 'maintenance' | 'troubleshooting';
+  motor_context?: string;
+}): Promise<string> {
+  console.log('[ClientTool] verify_specs', params);
+  
+  try {
+    const { data, error } = await supabase.functions.invoke('voice-perplexity-lookup', {
+      body: params
+    });
+
+    if (error) {
+      console.error('[ClientTool] Perplexity Error:', error);
+      return JSON.stringify({ 
+        error: 'Failed to verify specs. Please try again.',
+        fallback: "I couldn't verify that right now. Let me connect you with our team."
+      });
+    }
+
+    console.log('[ClientTool] Perplexity Result:', data);
+    
+    if (!data?.success) {
+      return JSON.stringify({ 
+        error: data?.error || 'Lookup failed',
+        fallback: data?.fallback || "I couldn't find verified information on that."
+      });
+    }
+
+    // Return structured response for agent
+    return JSON.stringify({
+      success: true,
+      answer: data.answer,
+      confidence: data.confidence,
+      sources: data.sources?.slice(0, 2), // Limit sources for voice
+      category: data.category
+    });
+  } catch (err) {
+    console.error('[ClientTool] Perplexity Exception:', err);
+    return JSON.stringify({ 
+      error: 'Spec verification failed',
+      fallback: "I ran into an issue. Our service team can help with those details."
+    });
+  }
+}
+
 // Client tool handler for setting purchase path
 function handleSetPurchasePath(params: { 
   purchase_type: string 
@@ -351,6 +398,14 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       // Set purchase path (loose vs professional installation)
       set_purchase_path: (params: { purchase_type: string }) => {
         return handleSetPurchasePath(params);
+      },
+      // Verify technical specs, part numbers, or unknown info via Perplexity
+      verify_specs: async (params: {
+        query: string;
+        category?: 'specs' | 'parts' | 'warranty' | 'maintenance' | 'troubleshooting';
+        motor_context?: string;
+      }) => {
+        return await handleVerifySpecs(params);
       },
     },
   });
