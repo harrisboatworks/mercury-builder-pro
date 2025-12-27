@@ -440,39 +440,14 @@ export default function VoiceTest() {
             // CRITICAL: Wait for session.created, then send session.update
             if (event.type === 'session.created') {
               diagnostics.sessionCreated = true;
-              console.log('[VoiceTest] Session created, sending session.update with audio config...');
-              updateStep('playback', { status: 'running', details: 'Session created, configuring audio...' });
+              console.log('[VoiceTest] Session created, session is pre-configured by server');
+              updateStep('playback', { status: 'running', details: 'Session ready, sending test message...' });
               
-              // Send session.update with audio configuration (matches RealtimeVoice.ts)
-              // CRITICAL: Must include 'voice' parameter for audio output!
-              const sessionUpdate = {
-                type: 'session.update',
-                session: {
-                  modalities: ['text', 'audio'],
-                  voice: 'alloy', // REQUIRED for audio output
-                  input_audio_format: 'pcm16',
-                  output_audio_format: 'pcm16',
-                  input_audio_transcription: {
-                    model: 'whisper-1'
-                  },
-                  turn_detection: {
-                    type: 'server_vad',
-                    threshold: 0.5,
-                    prefix_padding_ms: 300,
-                    silence_duration_ms: 1000
-                  }
-                }
-              };
-              dc.send(JSON.stringify(sessionUpdate));
-            }
-            
-            // After session.updated, send the test message
-            if (event.type === 'session.updated') {
-              diagnostics.sessionUpdated = true;
-              console.log('[VoiceTest] Session updated, now sending test message...');
-              updateStep('playback', { status: 'running', details: 'Session configured, sending test message...' });
+              // DON'T send session.update! The /realtime-session endpoint 
+              // already configured the session with voice, modalities, etc.
+              // Sending session.update here would OVERRIDE that config.
               
-              // Send test message
+              // Instead, go straight to sending the test message
               dc.send(JSON.stringify({
                 type: 'conversation.item.create',
                 item: {
@@ -495,6 +470,8 @@ export default function VoiceTest() {
               
               updateStep('playback', { status: 'running', details: 'Waiting for AI voice response...' });
             }
+            
+            // session.updated is no longer sent, so remove this handler
             
             // Detect text-only response (no audio)
             if (event.type === 'response.text.delta' || event.type === 'response.audio_transcript.delta') {
@@ -534,15 +511,6 @@ export default function VoiceTest() {
                   updateStep('playback', {
                     status: 'failed',
                     details: `Never received session.created. ${updateDiagnosticDetails()}`,
-                  });
-                  resolve(false);
-                  return;
-                }
-                
-                if (!diagnostics.sessionUpdated) {
-                  updateStep('playback', {
-                    status: 'failed',
-                    details: `session.update was not acknowledged. ${updateDiagnosticDetails()}`,
                   });
                   resolve(false);
                   return;
