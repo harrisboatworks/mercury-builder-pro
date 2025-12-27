@@ -9,6 +9,7 @@ import {
   checkMicrophonePermission,
   requestMicrophonePermission,
   safeCreateAudioContext,
+  unlockAudioOutput,
 } from '@/lib/RealtimeVoice';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -294,15 +295,40 @@ export default function VoiceTest() {
       const pc = new RTCPeerConnection();
       const audioEl = document.createElement('audio');
       audioEl.autoplay = true;
-      
-      let audioReceived = false;
-      let connectionTimeout: NodeJS.Timeout;
-      
+      (audioEl as any).playsInline = true;
+      audioEl.muted = false;
+      audioEl.volume = 1;
+      audioEl.style.position = 'fixed';
+      audioEl.style.left = '-9999px';
+      audioEl.style.top = '-9999px';
+      document.body.appendChild(audioEl);
+
+      // Ensure audio output is unlocked (helps on Safari/iOS)
+      await unlockAudioOutput();
+
+      let trackReceived = false;
+      let heardAudio = false;
+      let autoplayError: string | null = null;
+      let connectionTimeout: ReturnType<typeof setTimeout>;
+
+      audioEl.onplaying = () => {
+        heardAudio = true;
+        console.log('[VoiceTest] Audio element is playing');
+      };
+
       // Set up remote audio track
       pc.ontrack = (e) => {
         console.log('[VoiceTest] Received audio track');
         audioEl.srcObject = e.streams[0];
-        audioReceived = true;
+        trackReceived = true;
+
+        const playPromise = audioEl.play();
+        if (playPromise) {
+          playPromise.catch((err) => {
+            autoplayError = err instanceof Error ? err.message : String(err);
+            console.warn('[VoiceTest] audioEl.play() failed:', autoplayError);
+          });
+        }
       };
       
       // Add local audio track (required for bidirectional)
@@ -316,6 +342,8 @@ export default function VoiceTest() {
         connectionTimeout = setTimeout(() => {
           pc.close();
           ms.getTracks().forEach(t => t.stop());
+          audioEl.srcObject = null;
+          audioEl.remove();
           updateStep('playback', { 
             status: 'failed',
             details: 'Connection timeout - no audio received within 15 seconds',
@@ -351,32 +379,53 @@ export default function VoiceTest() {
             const event = JSON.parse(e.data);
             console.log('[VoiceTest] Event:', event.type);
             
-            if (event.type === 'response.audio.delta' && audioReceived) {
-              updateStep('playback', { status: 'running', details: 'Playing AI audio...' });
+            if (event.type === 'response.audio.delta' && trackReceived) {
+              updateStep('playback', { status: 'running', details: 'Receiving AI audio...' });
             }
             
             if (event.type === 'response.done') {
               clearTimeout(connectionTimeout);
               
-              // Give a moment for audio to finish playing
+              // Give a moment for audio to start/finish playing
               setTimeout(() => {
                 pc.close();
                 ms.getTracks().forEach(t => t.stop());
+                audioEl.srcObject = null;
+                audioEl.remove();
                 
-                if (audioReceived) {
+                if (heardAudio) {
                   updateStep('playback', { 
                     status: 'passed',
-                    details: 'AI voice response received and played successfully!',
+                    details: 'AI voice response played (you should have heard it).',
                   });
                   resolve(true);
-                } else {
-                  updateStep('playback', { 
+                  return;
+                }
+
+                if (trackReceived && autoplayError) {
+                  updateStep('playback', {
                     status: 'failed',
-                    details: 'AI responded but no audio was received',
+                    details: `Audio track received but playback was blocked: ${autoplayError}`,
                   });
                   resolve(false);
+                  return;
                 }
-              }, 2000);
+
+                if (trackReceived) {
+                  updateStep('playback', { 
+                    status: 'failed',
+                    details: 'Audio track received but did not start playing (volume/output route issue).',
+                  });
+                  resolve(false);
+                  return;
+                }
+
+                updateStep('playback', { 
+                  status: 'failed',
+                  details: 'AI responded but no audio track was received',
+                });
+                resolve(false);
+              }, 2500);
             }
             
             if (event.type === 'error') {
