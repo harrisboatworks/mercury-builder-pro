@@ -1036,8 +1036,8 @@ export const UnifiedMobileBar: React.FC = () => {
             onClick={() => {
               triggerHaptic('medium');
               if (voice?.isConnected) {
-                // If already connected, open chat to show voice UI
-                openChat();
+                // If already connected, end the voice chat
+                voice?.endVoiceChat();
               } else {
                 // Start voice chat directly
                 voice?.startVoiceChat();
