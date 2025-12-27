@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Settings2 } from 'lucide-react';
 import type { VoiceDiagnostics } from '@/lib/RealtimeVoice';
+import { MicLevelMeter } from './MicLevelMeter';
 
 interface VoiceDiagnosticsPanelProps {
   diagnostics: VoiceDiagnostics | null;
@@ -76,7 +77,11 @@ export const VoiceDiagnosticsPanel: React.FC<VoiceDiagnosticsPanelProps> = ({
   }, [diagnostics]);
 
   const copyDiagnostics = () => {
-    const text = rows.map(r => `${r.label}: ${r.value}`).join('\n');
+    const text = [
+      ...rows.map(r => `${r.label}: ${r.value}`),
+      `Mic input level: ${diagnostics?.micInputLevel?.toFixed(4) || 0}`,
+      `Mic peak level: ${diagnostics?.micPeakLevel?.toFixed(4) || 0}`,
+    ].join('\n');
     navigator.clipboard.writeText(text);
   };
 
@@ -108,6 +113,16 @@ export const VoiceDiagnosticsPanel: React.FC<VoiceDiagnosticsPanelProps> = ({
       </div>
 
       <div className="mt-2 grid grid-cols-[8rem_1fr] gap-x-2 gap-y-1 text-xs">
+        {/* Mic input level meter - prominent at top */}
+        <div className="text-muted-foreground">Mic input</div>
+        <div className="font-mono text-foreground">
+          <MicLevelMeter
+            level={diagnostics?.micInputLevel || 0}
+            peak={diagnostics?.micPeakLevel || 0}
+            isActive={!!diagnostics?.micPermission}
+          />
+        </div>
+        
         {rows.length === 0 ? (
           <div className="col-span-2 text-muted-foreground">No diagnostics yet.</div>
         ) : (

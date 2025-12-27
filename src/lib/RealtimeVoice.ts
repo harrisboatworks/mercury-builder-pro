@@ -1,3 +1,16 @@
+// Calculate RMS and peak from audio samples
+export const calculateAudioLevels = (samples: Float32Array): { rms: number; peak: number } => {
+  let sum = 0;
+  let peak = 0;
+  for (let i = 0; i < samples.length; i++) {
+    const abs = Math.abs(samples[i]);
+    sum += samples[i] * samples[i];
+    if (abs > peak) peak = abs;
+  }
+  const rms = Math.sqrt(sum / samples.length);
+  return { rms, peak };
+};
+
 // Audio recorder for capturing microphone input at 24kHz PCM
 export class AudioRecorder {
   private stream: MediaStream | null = null;
@@ -5,7 +18,10 @@ export class AudioRecorder {
   private processor: ScriptProcessorNode | null = null;
   private source: MediaStreamAudioSourceNode | null = null;
 
-  constructor(private onAudioData: (audioData: Float32Array) => void) {}
+  constructor(
+    private onAudioData: (audioData: Float32Array) => void,
+    private onAudioLevel?: (rms: number, peak: number) => void
+  ) {}
 
   async start() {
     try {
@@ -25,7 +41,14 @@ export class AudioRecorder {
       
       this.processor.onaudioprocess = (e) => {
         const inputData = e.inputBuffer.getChannelData(0);
-        this.onAudioData(new Float32Array(inputData));
+        const audioData = new Float32Array(inputData);
+        this.onAudioData(audioData);
+        
+        // Calculate and report audio levels
+        if (this.onAudioLevel) {
+          const { rms, peak } = calculateAudioLevels(audioData);
+          this.onAudioLevel(rms, peak);
+        }
       };
       
       this.source.connect(this.processor);
@@ -268,6 +291,8 @@ export interface VoiceDiagnostics {
   audioPlaying: boolean;
   inboundAudioBytes: number;
   lastError: string | null;
+  micInputLevel: number; // 0-1 RMS
+  micPeakLevel: number;  // 0-1 peak
 }
 
 // Main realtime voice chat class using WebRTC
@@ -280,6 +305,13 @@ export class RealtimeVoiceChat {
   private audioQueue: AudioQueue | null = null;
   private mediaStream: MediaStream | null = null;
   private webAudioSource: MediaStreamAudioSourceNode | null = null;
+
+  // Mic level monitoring
+  private micAnalyserContext: AudioContext | null = null;
+  private micAnalyser: AnalyserNode | null = null;
+  private micLevelInterval: ReturnType<typeof setInterval> | null = null;
+  private micInputLevel = 0;
+  private micPeakLevel = 0;
 
   // Diagnostics / UX
   private hasReceivedRemoteTrack = false;
@@ -322,6 +354,8 @@ export class RealtimeVoiceChat {
       audioPlaying: this.audioIsPlaying,
       inboundAudioBytes: this.inboundAudioBytes,
       lastError: this.lastPlayError,
+      micInputLevel: this.micInputLevel,
+      micPeakLevel: this.micPeakLevel,
     };
   }
 
@@ -329,11 +363,55 @@ export class RealtimeVoiceChat {
     this.onDiagnosticsChange?.(this.getDiagnostics());
   }
 
+  private startMicLevelMonitoring() {
+    if (!this.mediaStream) return;
+    
+    try {
+      this.micAnalyserContext = new AudioContext();
+      const source = this.micAnalyserContext.createMediaStreamSource(this.mediaStream);
+      this.micAnalyser = this.micAnalyserContext.createAnalyser();
+      this.micAnalyser.fftSize = 256;
+      source.connect(this.micAnalyser);
+      
+      const dataArray = new Float32Array(this.micAnalyser.fftSize);
+      
+      this.micLevelInterval = setInterval(() => {
+        if (!this.micAnalyser) return;
+        
+        this.micAnalyser.getFloatTimeDomainData(dataArray);
+        const { rms, peak } = calculateAudioLevels(dataArray);
+        
+        this.micInputLevel = rms;
+        this.micPeakLevel = peak;
+        this.updateDiagnostics();
+      }, 50); // Update 20 times per second
+      
+      console.log('🎤 Mic level monitoring started');
+    } catch (e) {
+      console.warn('Could not start mic level monitoring:', e);
+    }
+  }
+
+  private stopMicLevelMonitoring() {
+    if (this.micLevelInterval) {
+      clearInterval(this.micLevelInterval);
+      this.micLevelInterval = null;
+    }
+    if (this.micAnalyserContext) {
+      this.micAnalyserContext.close();
+      this.micAnalyserContext = null;
+    }
+    this.micAnalyser = null;
+    this.micInputLevel = 0;
+    this.micPeakLevel = 0;
+  }
+
   async connect(motorContext?: any, currentPage?: string, existingStream?: MediaStream) {
     try {
       // Use existing stream if provided (iOS Safari - permission already granted)
       // Otherwise request permission now (desktop browsers)
       this.mediaStream = existingStream || await requestMicrophonePermission();
+      this.startMicLevelMonitoring();
       this.updateDiagnostics();
       
       // Use the shared unlocked AudioContext for output
@@ -877,6 +955,9 @@ export class RealtimeVoiceChat {
       clearTimeout(this.watchdogTimeout);
       this.watchdogTimeout = null;
     }
+    
+    // Stop mic level monitoring
+    this.stopMicLevelMonitoring();
     
     this.recorder?.stop();
     this.audioQueue?.clear();
