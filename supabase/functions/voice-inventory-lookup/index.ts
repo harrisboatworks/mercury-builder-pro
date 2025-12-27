@@ -85,10 +85,58 @@ function matchesConfigFilters(config: ReturnType<typeof parseMotorConfig>, param
   return true;
 }
 
+// Format price for natural voice readout
+function formatPriceForVoice(price: number | null | undefined): string | null {
+  if (!price || price <= 0) return null;
+  
+  // Round to nearest dollar
+  const rounded = Math.round(price);
+  
+  // Format naturally for voice: "$4,655" → "forty-six fifty-five dollars"
+  // For prices over $1000, we want clear articulation
+  if (rounded >= 10000) {
+    // e.g., $12,345 → "twelve thousand three forty-five dollars"
+    const thousands = Math.floor(rounded / 1000);
+    const remainder = rounded % 1000;
+    if (remainder === 0) {
+      return `${thousands} thousand dollars`;
+    } else if (remainder < 100) {
+      return `${thousands} thousand ${remainder} dollars`;
+    } else {
+      const hundreds = Math.floor(remainder / 100);
+      const tens = remainder % 100;
+      if (tens === 0) {
+        return `${thousands} thousand ${hundreds} hundred dollars`;
+      }
+      return `${thousands} thousand ${hundreds} ${tens.toString().padStart(2, '0')} dollars`;
+    }
+  } else if (rounded >= 1000) {
+    // e.g., $4,655 → "four thousand six fifty-five dollars"
+    const thousands = Math.floor(rounded / 1000);
+    const remainder = rounded % 1000;
+    if (remainder === 0) {
+      return `${thousands} thousand dollars`;
+    } else if (remainder < 100) {
+      return `${thousands} thousand ${remainder} dollars`;
+    } else {
+      const hundreds = Math.floor(remainder / 100);
+      const tens = remainder % 100;
+      if (tens === 0) {
+        return `${thousands} thousand ${hundreds} hundred dollars`;
+      }
+      return `${thousands} thousand ${hundreds} ${tens.toString().padStart(2, '0')} dollars`;
+    }
+  } else {
+    // Under $1000 - just say it directly
+    return `${rounded} dollars`;
+  }
+}
+
 // Build motor object with parsed configuration
 function buildMotorResponse(m: Record<string, unknown>) {
   const modelDisplay = (m.model_display || m.model) as string;
   const config = parseMotorConfig(modelDisplay);
+  const price = (m.msrp || m.dealer_price) as number | null;
   
   return {
     model: modelDisplay,
@@ -96,7 +144,8 @@ function buildMotorResponse(m: Record<string, unknown>) {
     family: m.family,
     inStock: m.in_stock && ((m.stock_quantity as number) || 0) > 0,
     quantity: m.stock_quantity || 0,
-    price: m.msrp || m.dealer_price,
+    price: price,
+    priceSpoken: formatPriceForVoice(price), // Natural voice readout
     availability: m.availability,
     // Decoded configuration
     startType: config.startType,
