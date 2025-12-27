@@ -525,39 +525,15 @@ export default function VoiceTest() {
             const event = JSON.parse(e.data);
             console.log('[VoiceTest] Event:', event.type);
             
-            // Handle session.created - send session.update
+            // Handle session.created - session is ALREADY pre-configured by server
+            // Do NOT send session.update - it can break audio output
             if (event.type === 'session.created') {
               diagnostics.sessionCreated = true;
-              console.log('[VoiceTest] Session created, sending session.update...');
-              updateStep('playback', { status: 'running', details: 'Session created, configuring audio...' });
+              diagnostics.sessionUpdated = true; // Mark as updated since we're skipping it
+              console.log('[VoiceTest] Session created (pre-configured), sending test message directly...');
+              updateStep('playback', { status: 'running', details: 'Session ready, sending test message...' });
               
-              // Send session.update to ensure audio is enabled
-              dc.send(JSON.stringify({
-                type: 'session.update',
-                session: {
-                  modalities: ['text', 'audio'],
-                  voice: 'alloy',
-                  input_audio_format: 'pcm16',
-                  output_audio_format: 'pcm16',
-                  input_audio_transcription: {
-                    model: 'whisper-1'
-                  },
-                  turn_detection: {
-                    type: 'server_vad',
-                    threshold: 0.5,
-                    prefix_padding_ms: 300,
-                    silence_duration_ms: 1000
-                  }
-                }
-              }));
-            }
-            
-            // Handle session.updated - now send test message
-            if (event.type === 'session.updated') {
-              diagnostics.sessionUpdated = true;
-              console.log('[VoiceTest] Session updated, sending test message...');
-              updateStep('playback', { status: 'running', details: 'Session configured, sending test message...' });
-              
+              // Send test message directly - no session.update needed
               dc.send(JSON.stringify({
                 type: 'conversation.item.create',
                 item: {
@@ -580,6 +556,8 @@ export default function VoiceTest() {
               
               updateStep('playback', { status: 'running', details: 'Waiting for AI voice response...' });
             }
+            
+            // session.updated is no longer expected since we skip session.update
             
             // Track response events
             if (event.type === 'response.created') {
