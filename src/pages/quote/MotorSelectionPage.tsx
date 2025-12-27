@@ -37,6 +37,7 @@ import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
 import { getMotorImages } from '@/lib/mercury-product-images';
+import { VOICE_NAVIGATION_EVENT, type VoiceNavigationEvent } from '@/lib/voiceNavigation';
 import type { MotorGroup } from '@/hooks/useGroupedMotors';
 
 // Database types
@@ -191,6 +192,51 @@ function MotorSelectionContent() {
       setHasInitiallyLoaded(true);
     }
   }, [motors.length, hasInitiallyLoaded]);
+
+  // Listen for voice navigation events from the voice agent
+  useEffect(() => {
+    const handleVoiceNavigation = (e: CustomEvent<VoiceNavigationEvent>) => {
+      const event = e.detail;
+      
+      if (event.type === 'filter_motors') {
+        const { horsepower, model, inStock } = event.payload;
+        
+        // Set search query based on the filter type
+        if (horsepower) {
+          setSearchQuery(String(horsepower));
+        } else if (model) {
+          setSearchQuery(model);
+        } else if (inStock) {
+          setSearchQuery('stock');
+        }
+        
+        // Scroll to the motor grid
+        setTimeout(() => {
+          const gridSection = document.querySelector('.motor-grid-section');
+          if (gridSection) {
+            const headerOffset = 180;
+            const elementPosition = gridSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({ top: Math.max(0, offsetPosition), behavior: 'smooth' });
+          }
+        }, 100);
+        
+        // Show toast notification
+        const filterDesc = horsepower 
+          ? `${horsepower}HP motors` 
+          : model 
+            ? `"${model}" motors`
+            : 'in-stock motors';
+        toast({
+          title: "Motors filtered",
+          description: `Showing ${filterDesc}`,
+        });
+      }
+    };
+    
+    window.addEventListener(VOICE_NAVIGATION_EVENT, handleVoiceNavigation as EventListener);
+    return () => window.removeEventListener(VOICE_NAVIGATION_EVENT, handleVoiceNavigation as EventListener);
+  }, [toast]);
 
   // Auto-trigger background image scraping for motors without images
   const imageScrapeStatus = useAutoImageScraping(motors.map(motor => ({
