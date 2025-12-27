@@ -354,6 +354,42 @@ function handleVerifySpecs(params: {
   return "That's a great question! I'm searching that for you now - check the chat on your screen in just a moment for the detailed answer.";
 }
 
+// Client tool handler for non-Mercury accessories/boat parts via catalogue search
+async function handleAccessoriesCatalogueSearch(params: {
+  query: string;
+  auto_search?: boolean;
+}): Promise<string> {
+  console.log('[ClientTool] search_accessories_catalogue:', params);
+  
+  const query = params.query.toLowerCase();
+  
+  // Determine catalogue section for better context
+  let section = 'general accessories';
+  if (/trolling|minn kota|motorguide/.test(query)) section = 'trolling motors';
+  else if (/fish finder|depth|gps|chartplotter|garmin|lowrance|humminbird/.test(query)) section = 'electronics';
+  else if (/rod holder|tackle|livewell|fishing/.test(query)) section = 'fishing accessories';
+  else if (/trailer|hitch|winch|tire|bearing|coupler/.test(query)) section = 'trailer parts';
+  else if (/life jacket|pfd|flare|fire extinguisher|safety/.test(query)) section = 'safety equipment';
+  else if (/seat|pedestal|captain chair|cushion/.test(query)) section = 'seating';
+  else if (/anchor|dock|mooring|cleat|rope|fender/.test(query)) section = 'anchoring and docking';
+  else if (/bilge|pump|switch|fuse|wire|light|led/.test(query)) section = 'electrical';
+  else if (/fuel tank|fuel line|vent|primer/.test(query)) section = 'fuel systems';
+  else if (/cover|bimini|canvas|enclosure/.test(query)) section = 'covers and canvas';
+  
+  // Always auto-search for accessories - customers want quick answers
+  if (params.auto_search !== false) {
+    // Trigger text chat to do the deep Perplexity search
+    triggerTextChatSearch(`accessories: ${params.query}`);
+    
+    return `Great question! I'm searching our marine accessories catalogue for ${params.query} right now. ` +
+           `Check the chat on your screen - you'll see results with links and pricing from our ${section} section in just a moment.`;
+  }
+  
+  // If explicit permission needed
+  return `I can search our accessories catalogue for ${params.query}. ` +
+         `Would you like me to look that up? You'll see the results in the chat with links to browse.`;
+}
+
 // Client tool handler for setting purchase path
 function handleSetPurchasePath(params: { 
   purchase_type: string 
@@ -565,6 +601,13 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         search_query?: string;
       }) => {
         return await handleLocallyInventoryLookup(params);
+      },
+      // Search marine accessories catalogue for non-Mercury boat accessories
+      search_accessories_catalogue: async (params: {
+        query: string;
+        auto_search?: boolean;
+      }) => {
+        return await handleAccessoriesCatalogueSearch(params);
       },
     },
   });
