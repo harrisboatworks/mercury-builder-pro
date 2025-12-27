@@ -4,6 +4,13 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import type { VoiceDiagnostics } from '@/lib/RealtimeVoice';
 import { dispatchVoiceNavigation, type MotorForQuote } from '@/lib/voiceNavigation';
+import { useVoiceSessionPersistence } from './useVoiceSessionPersistence';
+
+// Timeout configuration (in milliseconds)
+const INACTIVITY_WARNING_MS = 30000; // 30 seconds of silence before warning
+const FINAL_TIMEOUT_MS = 15000; // 15 more seconds after warning to disconnect
+const WARNING_SYSTEM_MESSAGE = "[SYSTEM: The user has been silent for a while. Gently check if they're still there with something brief like 'Still there? I'm here if you need anything.']";
+const GOODBYE_SYSTEM_MESSAGE = "[SYSTEM: The user hasn't responded. Say a friendly goodbye like 'Alright, if you need anything, just tap the voice button. Talk soon!' and end naturally.]";
 
 interface VoiceState {
   isConnected: boolean;
@@ -19,6 +26,7 @@ interface VoiceState {
   diagnostics: VoiceDiagnostics | null;
   textOnlyMode: boolean;
   audioFailCount: number;
+  inactivityWarningShown: boolean;
 }
 
 export interface QuoteContext {
@@ -796,6 +804,9 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   const { onTranscriptComplete } = options;
   const { toast } = useToast();
   
+  // Voice session persistence
+  const voiceSession = useVoiceSessionPersistence();
+  
   const [state, setState] = useState<VoiceState>({
     isConnected: false,
     isConnecting: false,
@@ -810,9 +821,95 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     diagnostics: null,
     textOnlyMode: false,
     audioFailCount: 0,
+    inactivityWarningShown: false,
   });
 
   const transcriptRef = useRef<string>('');
+  
+  // Inactivity timeout refs
+  const inactivityTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const warningTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const conversationRef = useRef<ReturnType<typeof useConversation> | null>(null);
+
+  // Clear all inactivity timers
+  const clearInactivityTimers = useCallback(() => {
+    if (inactivityTimerRef.current) {
+      clearTimeout(inactivityTimerRef.current);
+      inactivityTimerRef.current = null;
+    }
+    if (warningTimerRef.current) {
+      clearTimeout(warningTimerRef.current);
+      warningTimerRef.current = null;
+    }
+    setState(prev => ({ ...prev, inactivityWarningShown: false }));
+  }, []);
+
+  // Handle goodbye and auto-disconnect
+  const triggerGoodbyeAndDisconnect = useCallback(async () => {
+    console.log('[Voice] Triggering goodbye due to inactivity timeout');
+    
+    // Send goodbye message to agent
+    if (conversationRef.current?.status === 'connected') {
+      try {
+        conversationRef.current.sendUserMessage(GOODBYE_SYSTEM_MESSAGE);
+        // Give agent time to say goodbye (max 5 seconds)
+        await new Promise(resolve => setTimeout(resolve, 5000));
+      } catch (e) {
+        console.log('[Voice] Could not send goodbye message:', e);
+      }
+    }
+    
+    // End session with goodbye reason
+    await voiceSession.endSession('goodbye');
+    
+    // Disconnect
+    if (conversationRef.current) {
+      await conversationRef.current.endSession();
+    }
+    
+    setState({
+      isConnected: false,
+      isConnecting: false,
+      isSpeaking: false,
+      isListening: false,
+      transcript: '',
+      error: null,
+      permissionState: null,
+      showPermissionDialog: false,
+      showNoMicrophoneDialog: false,
+      showAudioIssuePrompt: false,
+      diagnostics: null,
+      textOnlyMode: false,
+      audioFailCount: 0,
+      inactivityWarningShown: false,
+    });
+  }, [voiceSession]);
+
+  // Start or reset the inactivity timer
+  const resetInactivityTimer = useCallback(() => {
+    clearInactivityTimers();
+    
+    // Only set timers if connected
+    if (conversationRef.current?.status !== 'connected') return;
+    
+    // Set warning timer (30s)
+    inactivityTimerRef.current = setTimeout(() => {
+      console.log('[Voice] Inactivity warning - checking if user is still there');
+      setState(prev => ({ ...prev, inactivityWarningShown: true }));
+      
+      // Send warning message to agent
+      if (conversationRef.current?.status === 'connected') {
+        conversationRef.current.sendUserMessage(WARNING_SYSTEM_MESSAGE);
+      }
+      
+      // Set final timeout (15s after warning)
+      warningTimerRef.current = setTimeout(() => {
+        console.log('[Voice] Final timeout reached - triggering goodbye');
+        triggerGoodbyeAndDisconnect();
+      }, FINAL_TIMEOUT_MS);
+      
+    }, INACTIVITY_WARNING_MS);
+  }, [clearInactivityTimers, triggerGoodbyeAndDisconnect]);
 
   // Helper to create ElevenLabs-compatible diagnostics
   const createDiagnostics = (connected: boolean, error: string | null = null): VoiceDiagnostics => ({
@@ -844,7 +941,10 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         isConnecting: false,
         isListening: true,
         diagnostics: createDiagnostics(true),
+        inactivityWarningShown: false,
       }));
+      // Start inactivity timer when connected
+      resetInactivityTimer();
       toast({
         title: "Voice chat connected",
         description: "Harris is here — say something!",
@@ -852,15 +952,20 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     },
     onDisconnect: () => {
       console.log('ElevenLabs: Disconnected from agent');
+      clearInactivityTimers();
       setState(prev => ({
         ...prev,
         isConnected: false,
         isListening: false,
         isSpeaking: false,
+        inactivityWarningShown: false,
       }));
     },
     onMessage: (message: unknown) => {
       console.log('ElevenLabs message:', message);
+      
+      // Reset inactivity timer on any message (user or agent activity)
+      resetInactivityTimer();
       
       // Handle transcript events
       const msg = message as Record<string, unknown>;
@@ -871,7 +976,14 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           transcriptRef.current = userTranscript;
           setState(prev => ({ ...prev, transcript: userTranscript }));
           onTranscriptComplete?.(userTranscript);
+          // Track message for session persistence
+          voiceSession.incrementMessageCount();
         }
+      }
+      
+      // Also track agent responses
+      if (msg.type === 'agent_response') {
+        voiceSession.incrementMessageCount();
       }
     },
     onError: (error: unknown) => {
@@ -1054,13 +1166,20 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     },
   });
 
-  // Track speaking state from conversation
+  // Keep conversationRef updated
+  conversationRef.current = conversation;
+
+  // Track speaking state from conversation - also reset timer
   useEffect(() => {
     setState(prev => ({
       ...prev,
       isSpeaking: conversation.isSpeaking,
     }));
-  }, [conversation.isSpeaking]);
+    // Reset inactivity timer when speaking state changes (agent talking = activity)
+    if (conversation.isSpeaking) {
+      resetInactivityTimer();
+    }
+  }, [conversation.isSpeaking, resetInactivityTimer]);
 
   // Track connection status
   useEffect(() => {
@@ -1071,6 +1190,13 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       isListening: connected,
     }));
   }, [conversation.status]);
+
+  // Cleanup timers on unmount
+  useEffect(() => {
+    return () => {
+      clearInactivityTimers();
+    };
+  }, [clearInactivityTimers]);
 
   const checkMicrophoneDevices = useCallback(async (): Promise<boolean> => {
     try {
@@ -1130,16 +1256,23 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         return;
       }
 
-      // Get conversation token from edge function
+      // Get conversation token from edge function with previous session context
       console.log('Fetching ElevenLabs conversation token...');
       let tokenData: { token: string } | null = null;
+      
+      // Load previous session context for returning customers
+      const previousContext = await voiceSession.loadPreviousSessionContext();
+      if (previousContext) {
+        console.log('[Voice] Returning customer detected:', previousContext.totalPreviousChats, 'previous chats');
+      }
       
       try {
         const { data, error } = await supabase.functions.invoke('elevenlabs-conversation-token', {
           body: { 
             motorContext: options.motorContext,
             currentPage: options.currentPage,
-            quoteContext: options.quoteContext
+            quoteContext: options.quoteContext,
+            previousSessionContext: previousContext, // Pass to edge function for agent prompt
           }
         });
         
@@ -1158,6 +1291,13 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         console.error('Token fetch failed:', tokenError);
         throw new Error(tokenError instanceof Error ? tokenError.message : 'Failed to connect to voice service');
       }
+
+      // Start voice session in database for persistence
+      await voiceSession.startSession(
+        options.motorContext,
+        options.currentPage,
+        undefined // conversationId - could link to chat if needed
+      );
 
       // Retry WebRTC connection with exponential backoff
       const MAX_RETRIES = 3;
@@ -1222,7 +1362,20 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     }
   }, [conversation, checkMicrophoneDevices, toast, options.motorContext, options.currentPage, options.quoteContext]);
 
-  const endVoiceChat = useCallback(async () => {
+  const endVoiceChat = useCallback(async (endReason: 'user_ended' | 'timeout' | 'goodbye' | 'error' = 'user_ended') => {
+    // Clear inactivity timers
+    if (inactivityTimerRef.current) {
+      clearTimeout(inactivityTimerRef.current);
+      inactivityTimerRef.current = null;
+    }
+    if (warningTimerRef.current) {
+      clearTimeout(warningTimerRef.current);
+      warningTimerRef.current = null;
+    }
+    
+    // End the voice session in database
+    await voiceSession.endSession(endReason);
+    
     await conversation.endSession();
     setState({
       isConnected: false,
@@ -1238,8 +1391,9 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       diagnostics: null,
       textOnlyMode: false,
       audioFailCount: 0,
+      inactivityWarningShown: false,
     });
-  }, [conversation]);
+  }, [conversation, voiceSession]);
 
   const sendTextMessage = useCallback((text: string) => {
     if (conversation.status !== 'connected') {

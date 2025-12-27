@@ -209,11 +209,33 @@ This is background info to help you give personalized answers. Reference their b
 `;
 }
 
+// Build returning customer context for personalization
+function buildReturningCustomerPrompt(previousContext: any): string {
+  if (!previousContext || previousContext.totalPreviousChats === 0) return "";
+  
+  const parts: string[] = [];
+  parts.push(`\n## RETURNING CUSTOMER (Use naturally - don't be creepy about it):`);
+  parts.push(`This customer has talked with us ${previousContext.totalPreviousChats} time(s) before.`);
+  
+  if (previousContext.lastVisitDate) {
+    parts.push(`Last visit: ${previousContext.lastVisitDate}`);
+  }
+  
+  if (previousContext.recentMotorsViewed?.length > 0) {
+    parts.push(`Motors they've looked at: ${previousContext.recentMotorsViewed.slice(0, 3).join(', ')}`);
+  }
+  
+  parts.push(`\nYou can greet them warmly like "Hey, good to hear from you again!" but don't announce that you remember them - just use the context naturally.`);
+  
+  return parts.join('\n');
+}
+
 // Build the dynamic system prompt with real inventory data
 async function buildSystemPrompt(
   motorContext?: { model: string; hp: number; price?: number } | null,
   currentPage?: string | null,
-  quoteContext?: any
+  quoteContext?: any,
+  previousSessionContext?: any
 ) {
   const [motors, promotions] = await Promise.all([
     getCurrentMotorInventory(),
@@ -239,6 +261,9 @@ async function buildSystemPrompt(
   
   // Add quote/boat context
   const quoteContextPrompt = buildQuoteContextPrompt(quoteContext);
+  
+  // Add returning customer context
+  const returningCustomerPrompt = buildReturningCustomerPrompt(previousSessionContext);
 
   const systemPrompt = `You're Harris from Harris Boat Works — a friendly, knowledgeable Mercury Marine expert who sounds like a friend who happens to know everything about outboard motors. You work at an authorized Mercury Premier dealer in Ontario, Canada.
 
@@ -272,6 +297,7 @@ async function buildSystemPrompt(
 ${currentMotorContext}
 ${pageContext}
 ${quoteContextPrompt}
+${returningCustomerPrompt}
 ${motorData}
 ${promotionData}
 
@@ -307,19 +333,21 @@ serve(async (req) => {
     let motorContext = null;
     let currentPage = null;
     let quoteContext = null;
+    let previousSessionContext = null;
     try {
       const body = await req.json();
       motorContext = body?.motorContext || null;
       currentPage = body?.currentPage || null;
       quoteContext = body?.quoteContext || null;
+      previousSessionContext = body?.previousSessionContext || null;
     } catch {
       // No body or invalid JSON, that's fine
     }
 
-    console.log('Building dynamic system prompt with context:', { motorContext, currentPage, hasQuoteContext: !!quoteContext });
+    console.log('Building dynamic system prompt with context:', { motorContext, currentPage, hasQuoteContext: !!quoteContext, hasReturningContext: !!previousSessionContext });
     
-    // Build the system prompt with real inventory data, page context, and quote context
-    const systemPrompt = await buildSystemPrompt(motorContext, currentPage, quoteContext);
+    // Build the system prompt with real inventory data, page context, quote context, and returning customer context
+    const systemPrompt = await buildSystemPrompt(motorContext, currentPage, quoteContext, previousSessionContext);
     console.log('System prompt built, length:', systemPrompt.length);
 
     console.log('Requesting conversation token for agent:', ELEVENLABS_AGENT_ID);
