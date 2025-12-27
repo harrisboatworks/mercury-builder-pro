@@ -220,6 +220,10 @@ export class RealtimeVoiceChat {
   private audioQueue: AudioQueue | null = null;
   private mediaStream: MediaStream | null = null;
 
+  // Diagnostics / UX
+  private hasReceivedRemoteTrack = false;
+  private hasSentGreeting = false;
+
   constructor(
     private onTranscript: (text: string, isFinal: boolean) => void,
     private onSpeakingChange: (isSpeaking: boolean) => void,
@@ -337,41 +341,43 @@ export class RealtimeVoiceChat {
 
       // Set up remote audio - this receives AI's voice via WebRTC
       this.pc.ontrack = (e) => {
+        this.hasReceivedRemoteTrack = true;
         console.log('🎧 Received remote track:', e.track.kind, 'readyState:', e.track.readyState, 'streams:', e.streams.length);
         console.log('🎧 Track details - id:', e.track.id, 'label:', e.track.label, 'muted:', e.track.muted);
-        
+
         // Log audio element state before setting
         console.log('🔊 Audio element BEFORE:', {
           paused: this.audioEl.paused,
           muted: this.audioEl.muted,
           volume: this.audioEl.volume,
           readyState: this.audioEl.readyState,
-          autoplay: this.audioEl.autoplay
+          autoplay: this.audioEl.autoplay,
         });
-        
+
         if (e.streams && e.streams[0]) {
           console.log('Setting audio srcObject with stream:', e.streams[0].id);
           this.audioEl.srcObject = e.streams[0];
-          
+
           // Log audio element state after setting
           console.log('🔊 Audio element AFTER srcObject set:', {
             srcObject: !!this.audioEl.srcObject,
-            paused: this.audioEl.paused
+            paused: this.audioEl.paused,
           });
-          
+
           // Play with comprehensive error handling
-          this.audioEl.play()
+          this.audioEl
+            .play()
             .then(() => {
               console.log('✅ Audio playback started successfully');
             })
-            .catch(err => {
+            .catch((err) => {
               console.error('❌ Audio play failed:', err);
               // Try playing on next user interaction (autoplay policy)
               const playOnInteraction = () => {
-                this.audioEl.play()
+                this.audioEl
+                  .play()
                   .then(() => console.log('✅ Audio playback started after user interaction'))
-                  .catch(e => console.error('Still failed:', e));
-                document.removeEventListener('click', playOnInteraction);
+                  .catch((e2) => console.error('Still failed:', e2));
               };
               document.addEventListener('click', playOnInteraction, { once: true });
             });
@@ -391,24 +397,48 @@ export class RealtimeVoiceChat {
       // Set up data channel
       this.dc = this.pc.createDataChannel("oai-events");
       
-      this.dc.addEventListener("open", () => {
-        console.log("Data channel opened");
-        this.onConnectionChange(true);
-        
-        // Trigger initial AI greeting to bypass VAD wait
-        setTimeout(() => {
-          if (this.dc?.readyState === 'open') {
-            console.log('🎤 Triggering initial AI greeting...');
-            this.dc.send(JSON.stringify({
-              type: 'response.create',
-              response: {
-                modalities: ['audio', 'text'],
-                instructions: 'Greet the customer briefly and ask how you can help them today.'
-              }
-            }));
-          }
-        }, 1000);
-      });
+       this.dc.addEventListener("open", () => {
+         console.log("Data channel opened");
+         this.onConnectionChange(true);
+
+         // Trigger an initial voice greeting as soon as the channel is ready.
+         // This provides immediate feedback that the connection is working.
+         if (!this.hasSentGreeting && this.dc?.readyState === 'open') {
+           this.hasSentGreeting = true;
+           console.log('👋 Triggering initial AI voice greeting...');
+           this.dc.send(
+             JSON.stringify({
+               type: 'response.create',
+               response: {
+                 modalities: ['audio', 'text'],
+                 instructions: "Start with a quick 1-sentence greeting (Harris), then say: 'I can hear you — what are you looking for today?'",
+               },
+             })
+           );
+         }
+
+         // If we still haven't received a remote track shortly after connecting,
+         // retry the greeting once (some Mac/Safari setups are finicky).
+         setTimeout(() => {
+           if (!this.hasReceivedRemoteTrack && this.dc?.readyState === 'open') {
+             console.log('🔁 No remote track yet — retrying greeting + nudging audio playback...');
+             try {
+               this.audioEl.play().catch(() => undefined);
+             } catch {
+               // ignore
+             }
+             this.dc.send(
+               JSON.stringify({
+                 type: 'response.create',
+                 response: {
+                   modalities: ['audio', 'text'],
+                   instructions: 'Give the user a short voice greeting now (1 sentence).',
+                 },
+               })
+             );
+           }
+         }, 2500);
+       });
       
       this.dc.addEventListener("close", () => {
         console.log("Data channel closed");
