@@ -7,7 +7,8 @@ export type VoiceNavigationEvent =
   | { type: 'filter_motors'; payload: { horsepower?: number; model?: string; inStock?: boolean } }
   | { type: 'navigate'; payload: { path: string } }
   | { type: 'show_motor'; payload: { motorId: string } }
-  | { type: 'add_motor_to_quote'; payload: { motor: MotorForQuote } };
+  | { type: 'add_motor_to_quote'; payload: { motor: MotorForQuote } }
+  | { type: 'set_purchase_path'; payload: { path: 'loose' | 'installed' } };
 
 // Motor data structure for adding to quote
 export interface MotorForQuote {
@@ -51,4 +52,11 @@ export function navigateToPath(path: string): void {
  */
 export function showMotor(motorId: string): void {
   dispatchVoiceNavigation({ type: 'show_motor', payload: { motorId } });
+}
+
+/**
+ * Helper to set the purchase path (loose vs installed)
+ */
+export function setPurchasePath(path: 'loose' | 'installed'): void {
+  dispatchVoiceNavigation({ type: 'set_purchase_path', payload: { path } });
 }
