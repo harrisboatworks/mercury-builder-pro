@@ -439,6 +439,48 @@ export type Database = {
         }
         Relationships: []
       }
+      elevenlabs_sync_state: {
+        Row: {
+          agent_id: string
+          created_at: string | null
+          document_id: string | null
+          document_name: string | null
+          error_message: string | null
+          id: string
+          in_stock_count: number | null
+          last_synced_at: string | null
+          motor_count: number | null
+          sync_status: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          agent_id: string
+          created_at?: string | null
+          document_id?: string | null
+          document_name?: string | null
+          error_message?: string | null
+          id?: string
+          in_stock_count?: number | null
+          last_synced_at?: string | null
+          motor_count?: number | null
+          sync_status?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          agent_id?: string
+          created_at?: string | null
+          document_id?: string | null
+          document_name?: string | null
+          error_message?: string | null
+          id?: string
+          in_stock_count?: number | null
+          last_synced_at?: string | null
+          motor_count?: number | null
+          sync_status?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       email_sequence_queue: {
         Row: {
           created_at: string
