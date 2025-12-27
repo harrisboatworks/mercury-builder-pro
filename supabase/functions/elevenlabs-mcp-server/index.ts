@@ -570,14 +570,18 @@ serve(async (req) => {
       });
     }
 
-    // GET requests: Streamable HTTP doesn't require the old SSE endpoint pattern
-    // Return 405 - we don't need server-initiated messages for this use case
+    // GET requests: Return 200 OK for probe/discovery
+    // ElevenLabs may send a GET first even with Streamable HTTP transport
     if (req.method === "GET") {
-      console.log("[MCP] GET request received - Streamable HTTP uses POST only");
+      console.log("[MCP] GET request received - returning OK for probe");
       return new Response(
-        JSON.stringify({ error: "Use POST for MCP requests" }),
+        JSON.stringify({ 
+          status: "ok",
+          message: "MCP Streamable HTTP server. Use POST for JSON-RPC requests.",
+          protocolVersion: "2025-03-26"
+        }),
         {
-          status: 405,
+          status: 200,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         },
       );
