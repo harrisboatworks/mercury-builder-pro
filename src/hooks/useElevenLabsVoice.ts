@@ -193,20 +193,29 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       await navigator.mediaDevices.getUserMedia({ audio: true });
       console.log('Microphone permission granted');
 
-      // Get conversation token from edge function
-      console.log('Fetching ElevenLabs conversation token...');
-      const { data, error } = await supabase.functions.invoke('elevenlabs-conversation-token');
+      // Get conversation token AND system prompt from edge function
+      console.log('Fetching ElevenLabs conversation token with dynamic prompt...');
+      const { data, error } = await supabase.functions.invoke('elevenlabs-conversation-token', {
+        body: { motorContext: options.motorContext }
+      });
       
       if (error || !data?.token) {
         throw new Error(error?.message || 'Failed to get conversation token');
       }
 
-      console.log('Starting ElevenLabs conversation...');
+      console.log('Starting ElevenLabs conversation with dynamic system prompt...');
       
-      // Start the conversation with WebRTC
+      // Start the conversation with WebRTC and prompt overrides
       await conversation.startSession({
         conversationToken: data.token,
         connectionType: 'webrtc',
+        overrides: data.systemPrompt ? {
+          agent: {
+            prompt: {
+              prompt: data.systemPrompt,
+            },
+          },
+        } : undefined,
       });
 
     } catch (error) {
@@ -230,7 +239,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         });
       }
     }
-  }, [conversation, checkMicrophoneDevices, toast]);
+  }, [conversation, checkMicrophoneDevices, toast, options.motorContext]);
 
   const endVoiceChat = useCallback(async () => {
     await conversation.endSession();
@@ -258,16 +267,38 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     conversation.sendUserMessage(text);
   }, [conversation]);
 
-  // Context updates not directly supported by ElevenLabs SDK in same way
-  // The agent's system prompt is configured in ElevenLabs dashboard
+  // Send contextual update to the agent during an active session
   const updateContext = useCallback((
-    _newMotorContext?: { model: string; hp: number; price?: number } | null,
-    _newCurrentPage?: string
+    newMotorContext?: { model: string; hp: number; price?: number } | null,
+    newCurrentPage?: string
   ) => {
-    // ElevenLabs agent context is set in the dashboard
-    // For dynamic context, we could use client tools or sendContextualUpdate
-    console.log('Context update requested - ElevenLabs uses dashboard configuration');
-  }, []);
+    if (conversation.status !== 'connected') {
+      console.log('Cannot update context - not connected');
+      return;
+    }
+    
+    // Use sendContextualUpdate to inform the agent without triggering a response
+    if (newMotorContext) {
+      const priceInfo = newMotorContext.price ? ` priced at $${newMotorContext.price.toLocaleString()} CAD` : '';
+      const contextMessage = `[Context: User is now viewing the ${newMotorContext.model} (${newMotorContext.hp}HP)${priceInfo}]`;
+      console.log('Sending contextual update:', contextMessage);
+      
+      // Note: sendContextualUpdate is not available in all SDK versions
+      // Fall back to just logging for now - the initial prompt has the context
+      try {
+        // @ts-ignore - sendContextualUpdate may not be typed
+        if (typeof conversation.sendContextualUpdate === 'function') {
+          conversation.sendContextualUpdate(contextMessage);
+        }
+      } catch (e) {
+        console.log('sendContextualUpdate not available, context was set at session start');
+      }
+    }
+    
+    if (newCurrentPage) {
+      console.log('Page context update:', newCurrentPage);
+    }
+  }, [conversation]);
 
   const closePermissionDialog = useCallback(() => {
     setState(prev => ({ ...prev, showPermissionDialog: false }));
