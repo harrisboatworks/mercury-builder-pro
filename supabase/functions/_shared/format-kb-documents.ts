@@ -13,6 +13,20 @@ import {
 } from "./harris-knowledge.ts";
 
 import {
+  MOTOR_SELECTION_FAQS,
+  MAINTENANCE_FAQS,
+  REPOWER_FAQS,
+  COMPARISON_FAQS,
+  NEW_OWNER_TIPS,
+  SEASONAL_MAINTENANCE,
+  HP_BY_BOAT_TYPE,
+  REPOWER_COSTS,
+  REPOWER_WARNING_SIGNS,
+  LOCAL_RECOMMENDATIONS,
+  MOTOR_FAMILIES_QUICK,
+} from "./blog-knowledge.ts";
+
+import {
   MERCURY_FAMILIES,
   MERCURY_TECHNOLOGIES,
   MERCURY_COMPARISONS,
@@ -525,6 +539,111 @@ We stock common Mercury parts and can order specialty items quickly.
 `;
 }
 
+// ========== BLOG KNOWLEDGE & EXPERT TIPS ==========
+export function formatBlogKnowledge(): string {
+  const now = new Date().toISOString().split('T')[0];
+  
+  return `# Mercury Expert Tips & FAQs
+Updated: ${now}
+(Compiled from Harris Boat Works Blog)
+
+## Motor Selection Questions
+
+${MOTOR_SELECTION_FAQS.map(faq => `**Q: ${faq.question}**
+A: ${faq.answer}`).join('\n\n')}
+
+## HP Recommendations by Boat Type
+
+| Boat Type | Recommended HP | Notes |
+|-----------|----------------|-------|
+${HP_BY_BOAT_TYPE.map(rec => `| ${rec.boat} | ${rec.hp} | ${rec.note} |`).join('\n')}
+
+## Motor Families Quick Reference
+
+### Mercury FourStroke
+- **HP Range:** ${MOTOR_FAMILIES_QUICK.fourStroke.hpRange}
+- **Best For:** ${MOTOR_FAMILIES_QUICK.fourStroke.bestFor}
+- **Key Benefits:** ${MOTOR_FAMILIES_QUICK.fourStroke.keyBenefits}
+
+### Mercury Pro XS
+- **HP Range:** ${MOTOR_FAMILIES_QUICK.proXS.hpRange}
+- **Best For:** ${MOTOR_FAMILIES_QUICK.proXS.bestFor}
+- **Key Benefits:** ${MOTOR_FAMILIES_QUICK.proXS.keyBenefits}
+
+### Mercury Verado
+- **HP Range:** ${MOTOR_FAMILIES_QUICK.verado.hpRange}
+- **Best For:** ${MOTOR_FAMILIES_QUICK.verado.bestFor}
+- **Key Benefits:** ${MOTOR_FAMILIES_QUICK.verado.keyBenefits}
+
+### Mercury SeaPro
+- **HP Range:** ${MOTOR_FAMILIES_QUICK.seaPro.hpRange}
+- **Best For:** ${MOTOR_FAMILIES_QUICK.seaPro.bestFor}
+- **Key Benefits:** ${MOTOR_FAMILIES_QUICK.seaPro.keyBenefits}
+
+## Motor Comparison Questions
+
+${COMPARISON_FAQS.map(faq => `**Q: ${faq.question}**
+A: ${faq.answer}`).join('\n\n')}
+
+## Maintenance Questions
+
+${MAINTENANCE_FAQS.map(faq => `**Q: ${faq.question}**
+A: ${faq.answer}`).join('\n\n')}
+
+## Seasonal Maintenance Guide
+
+### ${SEASONAL_MAINTENANCE.spring.title}
+${SEASONAL_MAINTENANCE.spring.tasks.map(task => `- ${task}`).join('\n')}
+
+### ${SEASONAL_MAINTENANCE.summer.title}
+${SEASONAL_MAINTENANCE.summer.tasks.map(task => `- ${task}`).join('\n')}
+
+### ${SEASONAL_MAINTENANCE.fall.title}
+${SEASONAL_MAINTENANCE.fall.tasks.map(task => `- ${task}`).join('\n')}
+
+## New Owner Tips
+
+${NEW_OWNER_TIPS.map(tip => `### ${tip.topic}
+${tip.tip}`).join('\n\n')}
+
+## Repowering Questions
+
+${REPOWER_FAQS.map(faq => `**Q: ${faq.question}**
+A: ${faq.answer}`).join('\n\n')}
+
+## Repower Cost Guide
+
+- **Basic Repower:** ${REPOWER_COSTS.basicRepower}
+- **Full Repower:** ${REPOWER_COSTS.fullRepower}
+- **Premium Repower:** ${REPOWER_COSTS.premiumRepower}
+- **Example:** ${REPOWER_COSTS.cottageBoatExample}
+- **Value Proposition:** ${REPOWER_COSTS.comparison}
+
+## Warning Signs Your Motor Needs Replacing
+
+${REPOWER_WARNING_SIGNS.map(sign => `- ${sign}`).join('\n')}
+
+## Rice Lake & Kawartha Lakes Recommendations
+
+### Rice Lake Conditions
+${LOCAL_RECOMMENDATIONS.riceLake.conditions.map(c => `- ${c}`).join('\n')}
+
+### Motor Recommendations for Rice Lake
+${LOCAL_RECOMMENDATIONS.riceLake.motorRecommendations.map(rec => `- **${rec.boat}:** ${rec.motor} - ${rec.reason}`).join('\n')}
+
+### Top Pick for Rice Lake
+${LOCAL_RECOMMENDATIONS.riceLake.topPick}
+
+## Important Notes for Conversations
+
+- All pricing is Canadian Dollars (CAD)
+- Guide customers to the quote builder for exact pricing
+- Rice Lake/Kawartha conditions are local expertise - use it
+- Winter repowering has advantages: faster turnaround, better availability
+- Always verify boat's maximum HP rating before recommending motors
+`;
+}
+
 // Export all document generators
 export const KB_DOCUMENTS = {
   harris_guide: {
@@ -546,5 +665,10 @@ export const KB_DOCUMENTS = {
     name: "Service & Maintenance FAQ",
     generator: formatServiceFAQ,
     description: "Winterization, maintenance, warranty, installation details"
+  },
+  blog_knowledge: {
+    name: "Mercury Expert Tips & FAQs",
+    generator: formatBlogKnowledge,
+    description: "Expert advice from blog: motor selection, maintenance, repowering, local tips"
   }
 };
