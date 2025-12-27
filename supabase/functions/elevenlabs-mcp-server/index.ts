@@ -503,84 +503,17 @@ async function handleToolCall(params: { name: string; arguments?: Record<string,
 }
 
 serve(async (req) => {
-  // Handle CORS
+  // Handle CORS preflight
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   const url = new URL(req.url);
-  console.log(`[MCP] ${req.method} ${url.pathname}`);
+  console.log(`[MCP Streamable HTTP] ${req.method} ${url.pathname}`);
 
   try {
-    // MCP SSE handshake endpoint (clients connect here first)
-    if (req.method === "GET") {
-      console.log("[MCP] SSE connection established");
-
-      // Many MCP SSE clients (including ElevenLabs) expect a host-relative messages endpoint.
-      const sessionId = crypto.randomUUID();
-      const baseUrl = `${Deno.env.get("SUPABASE_URL")}/functions/v1/elevenlabs-mcp-server`;
-      const messagesPath = `/functions/v1/elevenlabs-mcp-server/messages?session_id=${encodeURIComponent(sessionId)}`;
-      const messagesUrl = `${baseUrl}/messages?session_id=${encodeURIComponent(sessionId)}`;
-
-      const encoder = new TextEncoder();
-      const stream = new ReadableStream<Uint8Array>({
-        start(controller) {
-          // Per MCP SSE spec: send endpoint event first
-          // IMPORTANT: send host-relative path (ElevenLabs expects this)
-          controller.enqueue(
-            encoder.encode(`event: endpoint\ndata: ${messagesPath}\n\n`),
-          );
-          console.log(`[MCP] Sent endpoint event: ${messagesUrl}`);
-
-          // Keepalive pings (SSE comments)
-          const keepAlive = setInterval(() => {
-            try {
-              controller.enqueue(encoder.encode(`: ping\n\n`));
-            } catch {
-              // ignore
-            }
-          }, 15000);
-
-          const abort = () => {
-            clearInterval(keepAlive);
-            try {
-              controller.close();
-            } catch {
-              // ignore
-            }
-          };
-
-          req.signal.addEventListener("abort", abort, { once: true });
-        },
-      });
-
-      return new Response(stream, {
-        headers: {
-          ...corsHeaders,
-          "Content-Type": "text/event-stream",
-          "Cache-Control": "no-cache, no-transform",
-          "Connection": "keep-alive",
-          "X-Accel-Buffering": "no",
-        },
-      });
-    }
-
-    // JSON-RPC messages endpoint (clients POST here after endpoint event)
+    // Streamable HTTP Transport (2025-03-26): POST for all JSON-RPC messages
     if (req.method === "POST") {
-      // Supabase edge functions route extra paths under the same function.
-      // Accept both:
-      // - /functions/v1/elevenlabs-mcp-server
-      // - /functions/v1/elevenlabs-mcp-server/messages
-      const isBase = url.pathname.endsWith("/elevenlabs-mcp-server");
-      const isMessages = url.pathname.endsWith("/elevenlabs-mcp-server/messages");
-
-      if (!isBase && !isMessages) {
-        return new Response(JSON.stringify({ error: "Not found" }), {
-          status: 404,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
-      }
-
       const body = await req.json();
       console.log("[MCP] Request:", JSON.stringify(body));
 
@@ -608,6 +541,7 @@ serve(async (req) => {
           break;
 
         default:
+          console.log(`[MCP] Unknown method: ${body.method}`);
           return new Response(
             JSON.stringify({
               jsonrpc: "2.0",
@@ -634,6 +568,19 @@ serve(async (req) => {
       return new Response(JSON.stringify(jsonRpcResponse), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
+    }
+
+    // GET requests: Streamable HTTP doesn't require the old SSE endpoint pattern
+    // Return 405 - we don't need server-initiated messages for this use case
+    if (req.method === "GET") {
+      console.log("[MCP] GET request received - Streamable HTTP uses POST only");
+      return new Response(
+        JSON.stringify({ error: "Use POST for MCP requests" }),
+        {
+          status: 405,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        },
+      );
     }
 
     return new Response(JSON.stringify({ error: "Method not allowed" }), {
