@@ -309,7 +309,10 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       // Get conversation token AND system prompt from edge function
       console.log('Fetching ElevenLabs conversation token with dynamic prompt...');
       const { data, error } = await supabase.functions.invoke('elevenlabs-conversation-token', {
-        body: { motorContext: options.motorContext }
+        body: { 
+          motorContext: options.motorContext,
+          currentPage: options.currentPage
+        }
       });
       
       if (error || !data?.token) {
